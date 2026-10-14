@@ -112,3 +112,73 @@ class WeekLoaderTests(TestCase):
         self.assertEqual((lines[0]["name"], lines[0]["emotion_ru"], lines[1]["emotion_ru"]), ("Том", "удивлённо", ""))
         self.assertEqual((lines[1]["ru"], lines[1]["kind"], lines[1]["emotion"]), ("Привет", "speech", "neutral"))
         self.assertEqual([s["id"] for s in speakers], ["tom", "anna"])
+
+
+from django.urls import reverse
+from tests.test_audit_weeks import VALID
+
+
+class WeekPageTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+        cls.week = Week.objects.get(level__code="A1", number=1)
+        WeekScene.objects.create(week=cls.week, can_do_ru="Я смогу представиться.", mission_ru="Скажите своё имя.", script=VALID)
+        TongueTwister.objects.create(number=1, week=cls.week, series="sounds", text="[T2]This[/] [D1]is[/] [T2]this[/].", ipa="/ðɪs ɪz ðɪs/", source="original")
+
+    def test_week_without_scene_is_200(self):
+        response = self.client.get(reverse("curriculum:week", args=["a1", 5]))
+        self.assertContains(response, "Магазин у дома")
+        self.assertContains(response, "Неделя готовится")
+
+    def test_week_with_scene_shows_blocks(self):
+        response = self.client.get(reverse("curriculum:week", args=["a1", 1]))
+        html = response.content.decode()
+        ids = [f'id="{block}"' for block in ("goal", "dialogue", "lessons", "chunks", "role", "twister", "mission")]
+        self.assertEqual(response.status_code, 200)
+        for item in ids:
+            self.assertIn(item, html)
+        self.assertEqual([html.index(item) for item in ids], sorted(html.index(item) for item in ids))
+        self.assertContains(response, "generate_audio.bat")
+
+    def test_level_lists_weeks(self):
+        response = self.client.get(reverse("curriculum:level", args=["a1"]))
+        for number in range(1, 15):
+            self.assertContains(response, reverse("curriculum:week", args=["a1", number]))
+        self.assertContains(response, "Знакомство и люди")
+        self.assertContains(response, "готовится")
+
+    def test_guest_goal_redirects_to_login(self):
+        response = self.client.post(reverse("learning:week_goal", args=[self.week.pk]), {"status": "done"})
+        self.assertEqual(response.status_code, 302)
+        self.assertIn("login", response["Location"])
+        self.assertFalse(WeekGoal.objects.exists())
+
+    def test_learner_goal_saved_and_bad_status_400(self):
+        user = User.objects.create_user("goal@example.com", "s3cret-pass-123")
+        self.client.force_login(user)
+        url = reverse("learning:week_goal", args=[self.week.pk])
+        response = self.client.post(url, {"status": "done"})
+        self.assertRedirects(response, reverse("curriculum:week", args=["a1", 1]))
+        self.assertEqual(WeekGoal.objects.get(user=user, week=self.week).status, "done")
+        response = self.client.post(url, {"status": "not_yet"})
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(WeekGoal.objects.filter(user=user, week=self.week).count(), 1)
+        self.assertEqual(WeekGoal.objects.get(user=user, week=self.week).status, "not_yet")
+        self.assertEqual(self.client.post(url, {"status": "invalid"}).status_code, 400)
+        self.assertEqual(self.client.get(url).status_code, 405)
+        self.assertContains(self.client.get(reverse("curriculum:week", args=["a1", 1])), 'name="csrfmiddlewaretoken"')
+
+    def test_guest_sees_register_hint(self):
+        response = self.client.get(reverse("curriculum:week", args=["a1", 1]))
+        self.assertContains(response, reverse("accounts:signup"))
+        self.assertContains(response, "зарегистрируйтесь")
+
+    def test_goal_is_personal_and_missing_week_is_404(self):
+        first = User.objects.create_user("first@example.com", "s3cret-pass-123")
+        second = User.objects.create_user("second@example.com", "s3cret-pass-123")
+        WeekGoal.objects.create(user=first, week=self.week, status="done")
+        self.client.force_login(second)
+        self.client.post(reverse("learning:week_goal", args=[self.week.pk]), {"status": "not_yet"})
+        self.assertEqual(WeekGoal.objects.get(user=first, week=self.week).status, "done")
+        self.assertEqual(self.client.post(reverse("learning:week_goal", args=[999999]), {"status": "done"}).status_code, 404)

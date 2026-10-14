@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load markers static ru %}
+{% block title %}Неделя {{ week.number }} · {{ week.situation_ru }} · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'curriculum:level' week.level.slug %}">{{ week.level.code }}</a> / неделя {{ week.number }}</p>
+    <h1>{{ week.situation_ru|default:week.theme_ru }}</h1>
+    <p>{{ week.get_sphere_display }}{% if week.grammar_ru %} · {{ week.grammar_ru }}{% endif %}</p>
+  </header>
+  {% if scene %}
+  <div class="lesson-grid">
+    <article class="prose">
+      <section class="layer" id="goal" aria-labelledby="goal-t">
+        <h2 id="goal-t">Я смогу…</h2><p>{{ scene.can_do_ru }}</p>
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'learning:week_goal' week.pk %}" class="week-goal">{% csrf_token %}
+          <p>В конце недели отметьте, как получилось.</p>
+          <button type="submit" name="status" value="done" class="btn btn-small {% if goal.status == 'done' %}btn-primary{% else %}btn-quiet{% endif %}">Получилось</button>
+          <button type="submit" name="status" value="not_yet" class="btn btn-small {% if goal.status == 'not_yet' %}btn-primary{% else %}btn-quiet{% endif %}">Ещё нет</button>
+          {% if goal %}<p role="status">Ваша отметка: {{ goal.get_status_display }}.</p>{% endif %}
+        </form>
+        {% else %}<p>Чтобы сохранить отметку, <a href="{% url 'accounts:signup' %}">зарегистрируйтесь</a> или <a href="{% url 'accounts:login' %}">войдите</a>.</p>{% endif %}
+      </section>
+      <section class="layer" id="dialogue" aria-labelledby="dialogue-t">
+        <h2 id="dialogue-t">Диалог недели</h2>
+        <p>Послушайте без текста, затем с текстом и с разметкой.</p>
+        {% include "components/script_player.html" with listen_modes=True role_section=True %}
+        {% if not audio %}<p class="drill-hint">Озвучка появится после generate_audio.bat. Пока прочитайте диалог вслух.</p>{% endif %}
+      </section>
+      <section class="layer" id="lessons" aria-labelledby="lessons-t">
+        <h2 id="lessons-t">Уроки недели</h2>
+        <div class="studio-lessons">{% for lesson in lessons %}<a class="studio-lesson-card" href="{% url 'lessons:detail' lesson.slug %}"><span class="studio-lesson-no">{{ lesson.order|stringformat:'02d' }}</span><div><h3>{{ lesson.title }}</h3><p>{{ lesson.minutes }} минут · 7 слоёв</p></div><span class="studio-card-arrow" aria-hidden="true">↗</span></a>{% empty %}<p>Уроки готовятся.</p>{% endfor %}</div>
+      </section>
+      <section class="layer" id="chunks" aria-labelledby="chunks-t">
+        <h2 id="chunks-t">Готовые фразы</h2>
+        {% for unit in scene.chunks.all %}<p><a href="{% url 'lexicon:detail' unit.uid %}" lang="en">{{ unit.lemma }}</a> — {{ unit.translation_ru }}<br><span class="ipa">{{ unit.ipa_us }}</span> {{ unit|ru_tr }}</p>{% empty %}<p>Фразы готовятся.</p>{% endfor %}
+      </section>
+      <section class="layer" id="role" aria-labelledby="role-t">
+        <h2 id="role-t">Сыграть роль</h2>
+        <p>Выберите героя. Его голос замолчит, а вы скажете реплики сами.</p>
+        <label for="week-role">Ваша роль</label>
+        <select id="week-role" data-role-mute{% if not audio %} disabled{% endif %}><option value="">Слушать всех</option>{% for speaker in speakers %}<option value="{{ speaker.id }}">{{ speaker.name }}</option>{% endfor %}</select>
+        <p><a href="#dialogue">Вернуться к диалогу</a>{% if not audio %} · Сыграть роль можно после появления озвучки.{% endif %}</p>
+      </section>
+      <section class="layer" id="twister" aria-labelledby="twister-t">
+        <h2 id="twister-t">Скороговорка недели</h2>
+        {% if twister %}
+        <p class="annotated" lang="en">{{ twister.text|annotate }}</p>
+        <p><span class="ipa">{{ twister.ipa }}</span> {{ twister|ru_tr }}</p>
+        {% if twister.full_form %}<p lang="en">{{ twister.full_form }}</p>{% endif %}
+        {% include "components/sound_legend.html" %}
+        {% if twister.audio %}
+        <div data-twister-player><audio controls preload="metadata" aria-label="Скороговорка" src="{% static twister.audio.very_slow.file %}"></audio>
+          <div class="player-modes" aria-label="Темп скороговорки">
+            <button class="btn btn-quiet btn-small" type="button" data-twister-src="{% static twister.audio.very_slow.file %}" aria-pressed="true">Очень медленно</button>
+            <button class="btn btn-quiet btn-small" type="button" data-twister-src="{% static twister.audio.slow.file %}" aria-pressed="false">Медленно</button>
+            <button class="btn btn-quiet btn-small" type="button" data-twister-src="{% static twister.audio.natural.file %}" aria-pressed="false">Как в жизни</button>
+          </div>
+        </div>{% else %}<p class="drill-hint">Озвучка появится после generate_audio.bat.</p>{% endif %}
+        {% else %}<p>Скороговорка готовится.</p>{% endif %}
+      </section>
+      <section class="layer" id="mission" aria-labelledby="mission-t"><h2 id="mission-t">Задание в жизнь</h2><p>{{ scene.mission_ru }}</p></section>
+      <section class="layer" id="review" aria-labelledby="review-t"><h2 id="review-t">Повторение</h2><p><a href="{% url 'learning:review' %}">Повторить изученные слова</a></p></section>
+    </article>
+    <aside class="aside"><div class="aside-box"><h2>Шаги недели</h2><ol class="toc">
+      <li><a href="#goal">Я смогу…</a></li><li><a href="#dialogue">Диалог</a></li><li><a href="#lessons">Уроки</a></li><li><a href="#chunks">Готовые фразы</a></li><li><a href="#role">Сыграть роль</a></li><li><a href="#twister">Скороговорка</a></li><li><a href="#mission">Задание в жизнь</a></li><li><a href="#review">Повторение</a></li>
+    </ol></div></aside>
+  </div>
+  {% else %}<section class="layer"><h2>Неделя готовится</h2><p>Ситуация уже есть в плане. Диалог, уроки и скороговорка появятся позже.</p></section>{% endif %}
+  {% if next_week %}<p><a class="btn btn-quiet" href="{% url 'curriculum:week' week.level.slug next_week.number %}">Следующая неделя: {{ next_week.situation_ru|default:next_week.theme_ru }}</a></p>{% endif %}
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'js/audio-player.js' %}" defer></script>{% endblock %}

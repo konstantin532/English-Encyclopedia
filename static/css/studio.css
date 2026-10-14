@@ -127,3 +127,12 @@ h1,h2,h3{letter-spacing:-.025em}a{text-underline-offset:.22em}
   .contractions-table { font-size: .75em; table-layout: fixed; }
   .contractions-table th, .contractions-table td { padding: .6em .25em; }
 }
+
+.week-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.week-card { display: flex; flex-direction: column; gap: 6px; padding: 18px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; background: var(--paper); }
+.week-card span, .week-card small { color: var(--ink-soft); }
+.week-card:hover { border-color: var(--accent); }
+.week-goal .btn { margin: 4px 4px 4px 0; }
+[data-twister-player] audio { width: 100%; }
+[data-twister-player] .player-modes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+@media (max-width: 600px) { .week-list { grid-template-columns: 1fr; } }

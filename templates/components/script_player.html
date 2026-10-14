@@ -23,7 +23,7 @@
     <label>Голос <input type="range" min="0" max="100" value="100" data-voice-vol></label>
     {% if audio.ambience %}<label>Фон сцены <input type="range" min="0" max="100" value="0" data-amb-vol></label>{% endif %}
     {% if audio.slow.music %}<label>Музыка <input type="range" min="0" max="100" value="100" data-music-vol></label>{% endif %}
-    {% if speakers|length > 1 %}<label>Сыграть роль
+    {% if not role_section and speakers|length > 1 %}<label>Сыграть роль
       <select data-role-mute><option value="">— слушать всех —</option>{% for s in speakers %}<option value="{{ s.id }}">{{ s.name }}</option>{% endfor %}</select></label>{% endif %}
   </div>
   <p class="drill-hint">Голоса синтезированы нейросетью{% if not audio.verified %}, произношение ещё не проверено человеком{% endif %}. Нажмите на реплику, чтобы послушать её.</p>

@@ -23,7 +23,7 @@
   const timeEl = box.querySelector("[data-time]");
   const voiceVol = box.querySelector("[data-voice-vol]");
   const ambVol = box.querySelector("[data-amb-vol]");
-  const roleMute = box.querySelector("[data-role-mute]");
+  const roleMute = document.querySelector("[data-role-mute]");
   const lines = [...document.querySelectorAll("[data-line]")];
   let current = -1;
   const rateInput = box.querySelector("[data-rate]");
@@ -175,5 +175,19 @@
   choices.forEach((choice) => choice.addEventListener("change", () => {
     apply(choice.value);
     try { localStorage.setItem("ee-speech-mode", choice.value); } catch (e) { /* нет хранилища */ }
+  }));
+})();
+
+// Скороговорка: три подготовленные записи без изменения высоты голоса.
+(() => {
+  const box = document.querySelector("[data-twister-player]");
+  if (!box) return;
+  const audio = box.querySelector("audio");
+  const buttons = [...box.querySelectorAll("[data-twister-src]")];
+  buttons.forEach((button) => button.addEventListener("click", () => {
+    const playing = !audio.paused;
+    audio.src = button.dataset.twisterSrc;
+    buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+    if (playing) audio.play().catch(() => {});
   }));
 })();
