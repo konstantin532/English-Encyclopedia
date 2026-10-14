@@ -14,11 +14,7 @@ from apps.taxonomy.markup import strip_markup
 from apps.taxonomy.models import PartOfSpeech
 
 from .models import Story
-
-
-def voice_roles() -> dict:
-    path = Path(settings.CONTENT_DIR) / "manifests" / "voices.yaml"
-    return yaml.safe_load(path.read_text(encoding="utf-8")).get("roles", {}) if path.exists() else {}
+from .script import build_lines
 
 
 def course_map(request):
@@ -35,13 +31,7 @@ def course_map(request):
 def story_detail(request, number):
     story = get_object_or_404(Story.objects.select_related("level", "week"), number=number, is_published=True)
     paragraphs = [p for p in story.body.split("\n\n") if p.strip()]
-    roles = voice_roles()
-    lines = [{"i": i, "speaker": l["speaker"], "kind": l.get("kind", "speech"), "text": l["text"],
-              "name": roles.get(l["speaker"], {}).get("name_ru", l["speaker"])} for i, l in enumerate(story.script)]
-    speakers = []
-    for l in lines:
-        if l["speaker"] not in [s["id"] for s in speakers]:
-            speakers.append({"id": l["speaker"], "name": l["name"]})
+    lines, speakers = build_lines(story.script)
     return render(request, "stories/detail.html", {
         "story": story,
         "paragraphs": paragraphs,
