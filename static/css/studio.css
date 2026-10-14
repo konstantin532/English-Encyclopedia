@@ -104,3 +104,12 @@ h1,h2,h3{letter-spacing:-.025em}a{text-underline-offset:.22em}
 .sound-legend td:first-child .snd{font-size:17px}
 #sound-notes .ru-tr{font-size:17px}
 @media(max-width:700px){.ru-tr{white-space:normal}#sound-notes .ru-tr{display:block;margin-left:0}.sound-legend th:nth-child(2),.sound-legend td:nth-child(2){display:none}}
+/* Реплики: эмоция, перевод, режимы слушания, музыка */
+.script-line .emotion{color:var(--ink-faint);font-weight:400}
+.script-line .line-ru{display:block;margin-top:2px;font:13px/1.6 var(--font-ui);color:var(--ink-soft)}
+.listen-modes{display:flex;flex-wrap:wrap;gap:6px 18px;margin:18px 0 6px;font:13px/1.5 var(--font-ui);color:var(--ink-soft)}
+.listen-modes label{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;cursor:pointer}
+.listen-hidden .line-text,.listen-hidden .line-ru{visibility:hidden}
+.listen-hidden .script-line{min-height:2.4em}
+.listen-text .mk{text-decoration:none!important}
+.listen-text .mk::before,.listen-text .mk::after{display:none!important}
