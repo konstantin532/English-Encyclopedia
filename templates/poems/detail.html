@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load markers static %}
+{% load markers static ru %}
 {% block title %}{{ poem.title }} · {{ SITE_NAME }}{% endblock %}
 {% block content %}
 <div class="wrap">
@@ -19,7 +19,7 @@
         <h2 id="pt2"><span class="layer-num">2</span>Ударения, паузы, связки</h2>
         <p>Заглавные буквы — ударный слог, <span class="ipa">|</span> — пауза, <span class="ipa">‿</span> — слова сливаются.</p>
         <ol class="pron">
-          {% for line, pr in rows %}{% if pr %}<li><span class="pron-stress" lang="en">{{ pr.stress|annotate }}</span><span class="ipa">{{ pr.ipa }}</span></li>{% endif %}{% endfor %}
+          {% for line, pr in rows %}{% if pr %}<li><span class="pron-stress" lang="en">{{ pr.stress|annotate }}</span><span class="ipa">{{ pr.ipa }}</span>{{ pr|ru_tr }}</li>{% endif %}{% endfor %}
         </ol>
         <p><strong>Фонетические задачи:</strong></p>
         <ul>{% for g in poem.phonetic_goals %}<li>{{ g }}</li>{% endfor %}</ul>

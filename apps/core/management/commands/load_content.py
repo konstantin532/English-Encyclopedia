@@ -17,7 +17,7 @@ from apps.taxonomy.markup import find_issues
 from apps.taxonomy.models import PartOfSpeech, SemanticClass
 
 UNIT_FIELDS = [
-    "lemma", "meaning", "unit_type", "grammar_features", "forms", "cefr", "ipa_us", "stress_note", "translation_ru",
+    "lemma", "meaning", "unit_type", "grammar_features", "forms", "cefr", "ipa_us", "ipa_ru", "stress_note", "translation_ru",
     "frequency_source", "verification_status", "verification_note", "collocations", "chunks",
     "grammar_dependencies", "example_en", "example_ru", "pattern", "substitutions", "situation",
     "typical_error", "usage_note",

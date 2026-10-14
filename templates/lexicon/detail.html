@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load markers %}
+{% load markers ru %}
 {% block title %}{{ unit.lemma }} · {{ SITE_NAME }}{% endblock %}
 {% block content %}
 <div class="wrap">
@@ -11,6 +11,7 @@
       <h1 class="entry-word annotated" lang="en"><span class="mk" data-cat="{{ unit.part_of_speech.code }}" data-cls="{{ unit.semantic_class.number }}" data-label="{{ unit.part_of_speech.name_ru }}: {{ unit.semantic_class.name_ru }}">{{ unit.lemma }}</span></h1>
       <div class="entry-sub">
         <span class="ipa">{{ unit.ipa_us }}</span>
+        {{ unit|ru_tr }}
         <span>{{ unit.translation_ru }}</span>
         <span>{{ unit.part_of_speech.grammar_term_ru }}</span>
       </div>
@@ -28,6 +29,7 @@
         {% if unit.usage_note %}<dt>Как употребляют</dt><dd>{{ unit.usage_note }}</dd>{% endif %}
         {% if unit.typical_error %}<dt>Типичная ошибка</dt><dd class="error-note">{{ unit.typical_error }}</dd>{% endif %}
       </dl>
+      {% include "components/sound_legend.html" %}
     </div>
     <aside class="aside">
       <div class="aside-box">

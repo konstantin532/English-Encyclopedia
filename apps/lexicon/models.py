@@ -52,6 +52,8 @@ class LexicalUnit(models.Model):
     internal_level = models.ForeignKey(Level, on_delete=models.PROTECT, related_name="units")
     week = models.ForeignKey(Week, on_delete=models.SET_NULL, null=True, blank=True, related_name="units")
     ipa_us = models.CharField(max_length=80, blank=True)
+    ipa_ru = models.CharField(max_length=80, blank=True,
+                              help_text="Ручная русская транскрипция. Пусто — строится автоматически из IPA")
     stress_note = models.CharField(max_length=120, blank=True)
     translation_ru = models.CharField(max_length=160)
     frequency_source = models.CharField(max_length=120, blank=True)

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load markers static %}
+{% load markers static ru %}
 {% block title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
 {% block content %}
 <div class="wrap">
@@ -20,8 +20,9 @@
         <section class="layer" id="sound-notes" aria-labelledby="sound-notes-t">
           <h2 id="sound-notes-t">Как это звучит</h2>
           {% for item in lesson.sound_notes %}
-          <p><span lang="en">{{ item.text }}</span> <span class="ipa">{{ item.ipa }}</span><br>{{ item.note_ru }}</p>
+          <p><span lang="en">{{ item.text }}</span> <span class="ipa">{{ item.ipa }}</span> {{ item|ru_tr }}<br>{{ item.note_ru }}</p>
           {% endfor %}
+          {% include "components/sound_legend.html" %}
         </section>
         {% endif %}
         {% endfor %}

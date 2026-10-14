@@ -10,6 +10,7 @@ from apps.curriculum.registry import LEVEL_BY_CODE, LEVELS, NEW_WORDS_PER_STORY,
 from apps.drills.models import Exercise
 from apps.lessons.models import Lesson, LessonLayer
 from apps.lexicon.models import CEFR, LexicalUnit
+from apps.lexicon.phonetics import unknown_symbols
 from apps.poems.models import Poem
 from apps.stories.models import Story
 from apps.taxonomy.markup import find_issues, strip_markup
@@ -104,6 +105,25 @@ def audit_contractions(r: AuditReport, where: str, text: str) -> None:
         r.errors.append(f"{where}: {match.group()} — слитная форма: основа и n't должны иметь отдельные маркеры.")
 
 
+def audit_russian_transcription(r: AuditReport, units) -> None:
+    """Русская транскрипция строится из IPA по таблице; неизвестный символ — пробел в записи."""
+    items = [(f"{u.uid} {u.lemma}", u.ipa_us, u.ipa_ru) for u in units]
+    for lesson in Lesson.objects.all():
+        items += [(f"{lesson.slug}/как это звучит «{n['text']}»", n.get("ipa", ""), n.get("ru", ""))
+                  for n in lesson.sound_notes]
+    for poem in Poem.objects.all():
+        items += [(f"стих {poem.number}, строка {i}", pr.get("ipa", ""), pr.get("ru", ""))
+                  for i, pr in enumerate(poem.pronunciation, 1)]
+    for where, ipa, manual in items:
+        if manual:
+            continue
+        if not ipa:
+            r.warnings.append(f"{where}: нет транскрипции — ни IPA, ни ручной русской.")
+        elif bad := unknown_symbols(ipa):
+            r.warnings.append(f"{where}: русская транскрипция неполная, неизвестные символы IPA: "
+                              f"{' '.join(sorted(bad))}. Добавьте их в таблицу или впишите ручной вариант.")
+
+
 def run_audit() -> AuditReport:
     r = AuditReport()
     r.errors += validate_plan()
@@ -126,6 +146,8 @@ def run_audit() -> AuditReport:
     for u in units:
         if u.cefr != CEFR.UNVERIFIED and u.verification_status == "pending":
             r.errors.append(f"{u.uid}: уровень {u.cefr} указан без подтверждения источником.")
+
+    audit_russian_transcription(r, units)
 
     for u in units:
         for i in find_issues(u.example_en):
