@@ -24,6 +24,8 @@ class WeekAuditTests(TestCase):
 
     def setUp(self):
         self.week = Week.objects.get(level__code="A1", number=1)
+        WeekScene.objects.filter(week=self.week).delete()
+        TongueTwister.objects.all().delete()
         self.scene = WeekScene.objects.create(week=self.week, can_do_ru="Я смогу представиться.",
                                               mission_ru="Скажите имя вслух.", script=[dict(l) for l in VALID])
 

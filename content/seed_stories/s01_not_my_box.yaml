@@ -11,35 +11,50 @@ ambience: morning_home
 script:
   - speaker: anna
     kind: narration
+    emotion: neutral
     music: morning
     text: "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]. [T8]It[/] [D1]is[/] [T1]a[/] [J4]busy[/] [S7]morning[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S3]coffee[/]."
+    spoken: "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]. [T8]It[/][D1]'s[/] [T1]a[/] [J4]busy[/] [S7]morning[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S3]coffee[/]."
   - speaker: anna
     kind: narration
+    emotion: neutral
     text: "[S1]Tom[/] [D1]has[/] [T1]a[/] [J1]big[/] [S2]box[/]."
   - speaker: tom
     kind: speech
+    emotion: happy
     text: "“Good [S7]morning[/], [S1]Anna[/]! [D1]Is[/] [T2]this[/] [T3]your[/] [S2]box[/]?”"
   - speaker: anna
     kind: speech
+    emotion: surprised
     text: "“[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/].”"
+    spoken: "“[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]box[/].”"
   - speaker: anna
     kind: narration
+    emotion: worried
     text: "[D1]Is[/] [T8]it[/] [T1]a[/] [S2]book[/]? [O4]No[/]. [D1]Is[/] [T8]it[/] [T1]a[/] [S2]phone[/]? [O4]No[/]."
   - speaker: anna
     kind: narration
+    emotion: excited
+    music: happy
     text: "[T8]It[/] [D1]is[/] [T1]a[/] [S6]cat[/]!"
+    spoken: "[T8]It[/][D1]'s[/] [T1]a[/] [S6]cat[/]!"
   - speaker: anna
     kind: speech
+    emotion: surprised
     text: "“[D1]Is[/] [T8]it[/] [T3]your[/] [S6]cat[/], [S1]Tom[/]?”"
   - speaker: tom
     kind: speech
+    emotion: surprised
     text: "“[O4]No[/]!”"
   - speaker: anna
     kind: narration
+    emotion: happy
     text: "[T8]It[/] [D3]likes[/] [T3]my[/] [S3]coffee[/]. [T8]I[/] [D3]like[/] [T8]it[/]."
   - speaker: anna
     kind: speech
+    emotion: happy
     text: "“[S1]Tom[/], [T8]it[/] [D1]is[/] [T3]my[/] [S6]cat[/]! [T8]It[/] [D1]has[/] [T1]a[/] [S9]name[/]: [S1]Box[/].”"
+    spoken: "“[S1]Tom[/], [T8]it[/][D1]'s[/] [T3]my[/] [S6]cat[/]! [T8]It[/] [D1]has[/] [T1]a[/] [S9]name[/]: [S1]Box[/].”"
 questions:
   - q: "Где происходит история?"
     a: "This is my new house. — В новом доме Анны."

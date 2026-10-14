@@ -73,6 +73,8 @@ class WeekLoaderTests(TestCase):
             root = tmp / "content"
             shutil.copytree(settings.CONTENT_DIR, root)
             (root / "seed_weeks").mkdir(exist_ok=True)
+            for path in (root / "seed_weeks").glob("*.yaml"):
+                path.unlink()
             (root / "seed_weeks" / "a1_w01.yaml").write_text(text, encoding="utf-8")
             with override_settings(CONTENT_DIR=root):
                 yield root
@@ -123,6 +125,8 @@ class WeekPageTests(TestCase):
     def setUpTestData(cls):
         call_command("load_content", verbosity=0)
         cls.week = Week.objects.get(level__code="A1", number=1)
+        WeekScene.objects.filter(week=cls.week).delete()
+        TongueTwister.objects.filter(week=cls.week).delete()
         WeekScene.objects.create(week=cls.week, can_do_ru="Я смогу представиться.", mission_ru="Скажите своё имя.", script=VALID)
         TongueTwister.objects.create(number=1, week=cls.week, series="sounds", text="[T2]This[/] [D1]is[/] [T2]this[/].", ipa="/ðɪs ɪz ðɪs/", source="original")
 
@@ -182,3 +186,52 @@ class WeekPageTests(TestCase):
         self.client.post(reverse("learning:week_goal", args=[self.week.pk]), {"status": "not_yet"})
         self.assertEqual(WeekGoal.objects.get(user=first, week=self.week).status, "done")
         self.assertEqual(self.client.post(reverse("learning:week_goal", args=[999999]), {"status": "done"}).status_code, 404)
+
+
+class SeedWeekContentTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_first_two_weeks_are_complete_and_audited(self):
+        from apps.publishing.audit import run_audit, text_tokens
+        for number in (1, 2):
+            week = Week.objects.get(level__code="A1", number=number)
+            scene = WeekScene.objects.get(week=week)
+            self.assertTrue(scene.can_do_ru)
+            self.assertTrue(scene.mission_ru)
+            self.assertTrue(6 <= len(scene.script) <= 10)
+            self.assertTrue(40 <= len(text_tokens(" ".join(line["text"] for line in scene.script))) <= 90)
+            self.assertGreaterEqual(len({line["emotion"] for line in scene.script}), 3)
+            self.assertTrue(all(line.get("ru") for line in scene.script))
+            self.assertTrue(5 <= scene.chunks.count() <= 8)
+            self.assertTrue(all(unit.unit_type == "phrase" and unit.cefr == "unverified" for unit in scene.chunks.all()))
+            self.assertEqual(week.twister.source, "original")
+            self.assertEqual(week.twister.series, "sounds")
+        report = run_audit()
+        self.assertEqual(report.errors, [])
+        self.assertFalse([w for w in report.warnings if "Неделя A1-" in w or "можно сократить" in w])
+
+    def test_lesson_contractions_are_loaded(self):
+        from apps.lessons.models import Lesson
+        pairs = Lesson.objects.get(slug="a1-verb-be").contractions
+        self.assertEqual({p["short"] for p in pairs}, {"I'm", "you're", "it's", "isn't", "aren't"})
+        for slug in ("a1-verb-be", "a1-determiners-a-the-this-my", "a1-have-like-can-do"):
+            lesson = Lesson.objects.get(slug=slug)
+            self.assertTrue(lesson.contractions)
+            self.assertTrue(all(p["ipa"] and p["note_ru"] for p in lesson.contractions))
+
+    def test_phrase_words_are_known_only_from_their_week(self):
+        from apps.lexicon.models import LexicalUnit
+        from apps.publishing.audit import known_vocabulary, vocab_until
+        unit = LexicalUnit.objects.get(uid="LX-00001")
+        unit.pk = None
+        unit.uid = "LX-99999"
+        unit.lemma = "A purple house"
+        unit.forms = []
+        unit.unit_type = "phrase"
+        unit.week = Week.objects.get(level__code="A1", number=2)
+        unit.save()
+        self.assertNotIn("purple", vocab_until(unit.internal_level, 1))
+        self.assertIn("purple", vocab_until(unit.internal_level, 2))
+        self.assertIn("purple", known_vocabulary())

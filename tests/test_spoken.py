@@ -28,6 +28,7 @@ class SpokenTests(TestCase):
 
     def setUp(self):
         self.week = Week.objects.get(level__code="A1", number=1)
+        WeekScene.objects.filter(week=self.week).delete()
         self.scene = WeekScene.objects.create(week=self.week, can_do_ru="Я смогу…", mission_ru="…",
                                               script=[dict(l) for l in VALID])
 
@@ -44,6 +45,10 @@ class SpokenTests(TestCase):
         self.assertIn("полностью:", html)
 
     def test_no_switch_without_spoken(self):
+        story = Story.objects.get(number=1)
+        for line in story.script:
+            line.pop("spoken", None)
+        story.save()
         html = self.client.get(reverse("stories:detail", args=[1])).content.decode()
         self.assertNotIn('name="speech"', html)
 
