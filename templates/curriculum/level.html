@@ -17,10 +17,14 @@
     <div class="stat"><b>{{ plan.poem_count }}</b><span>стихотворений, № {{ plan.poems.0 }}–{{ plan.poems.1 }}</span></div>
     <div class="stat"><b>{{ units_ready }}</b><span>единиц уже в словаре</span></div>
   </div>
+  <section class="section" aria-labelledby="weeks-title">
+    <div class="section-head"><h2 id="weeks-title">Недели курса</h2></div>
+    <div class="week-list">{% for week in weeks %}<a class="week-card" href="{% url 'curriculum:week' level.slug week.number %}"><strong>{{ week.number }} · {{ week.situation_ru|default:week.theme_ru }}</strong><span>{{ week.get_sphere_display }}</span>{% if not week.scene %}<small>готовится</small>{% endif %}</a>{% endfor %}</div>
+  </section>
   <section class="section" aria-labelledby="lessons-title" style="padding-top: var(--space-6)">
     <div class="section-head"><h2 id="lessons-title">Уроки</h2></div>
     {% if lessons %}
-      <div class="studio-lessons">{% for l in lessons %}<a class="studio-lesson-card" href="{% url 'lessons:detail' l.slug %}"><span class="studio-lesson-no">{{ l.order|stringformat:'02d' }}</span><div><h3>{{ l.title }}</h3><p>Неделя {{ l.week.number }} · {{ l.minutes }} минут · 7 слоёв</p></div><span class="studio-card-arrow" aria-hidden="true">↗</span></a>{% endfor %}</div>
+      <div class="studio-lessons">{% for l in lessons %}<div class="studio-lesson-card"><span class="visually-hidden">Урок</span><span class="studio-lesson-no">{{ l.order|stringformat:'02d' }}</span><div><h3><a href="{% url 'lessons:detail' l.slug %}">{{ l.title }}</a></h3><p>{% if l.week %}<a href="{% url 'curriculum:week' l.level.slug l.week.number %}">Неделя {{ l.week.number }}</a> · {% endif %}{{ l.minutes }} минут · 7 слоёв</p></div><span class="studio-card-arrow" aria-hidden="true">↗</span></div>{% endfor %}</div>
     {% else %}
       <p>Уроки этого уровня ещё не созданы. Курс строится по порядку: сначала A1.</p>
     {% endif %}

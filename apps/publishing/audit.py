@@ -9,7 +9,7 @@ from django.conf import settings
 from apps.curriculum.registry import LEVEL_BY_CODE, LEVELS, NEW_WORDS_PER_STORY, STORY_COVERAGE, validate_plan
 from apps.drills.models import Exercise
 from apps.lessons.models import Lesson, LessonLayer
-from apps.lexicon.models import CEFR, LexicalUnit
+from apps.lexicon.models import CEFR, LexicalUnit, UnitType
 from apps.lexicon.phonetics import unknown_symbols
 from apps.poems.models import Poem
 from apps.stories.models import Story
@@ -43,14 +43,16 @@ def character_names() -> set[str]:
 
 def known_vocabulary() -> set[str]:
     words = set(character_names())
-    for lemma, forms in LexicalUnit.objects.values_list("lemma", "forms"):
-        words.add(lemma.lower())
-        words.update(f.lower() for f in forms or [])
+    for unit in LexicalUnit.objects.all():
+        words |= unit_words(unit)
     return words
 
 
 def unit_words(unit) -> set[str]:
-    return {unit.lemma.lower(), *(f.lower() for f in unit.forms or [])}
+    words = {unit.lemma.lower(), *(f.lower() for f in unit.forms or [])}
+    if unit.unit_type == UnitType.PHRASE:
+        words.update(token.lower() for token in text_tokens(unit.lemma))
+    return words
 
 
 def vocab_until(level, week_number: int, exclude_ids=()) -> set[str]:
@@ -158,6 +160,9 @@ def run_audit() -> AuditReport:
             r.errors.append(f"{layer.lesson.slug}, слой {layer.number}: {i.token} — {i.problem}")
 
     audit_stories_and_poems(r)
+    from apps.publishing.audit_weeks import audit_weeks
+
+    audit_weeks(r)
 
     vocab = known_vocabulary()
     for where, text in english_lines():

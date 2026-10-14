@@ -1,0 +1,82 @@
+# Готовые фразы недели 2; CEFR не сверялся.
+level: A1
+week: 2
+units:
+  - uid: LX-00049
+    lemma: "This is my home."
+    meaning: "Showing your home"
+    class: D1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ðɪs ɪz maɪ ˈhoʊm/"
+    translation_ru: "Это мой дом."
+    example_en: "This is my home."
+    example_ru: "Это мой дом."
+    situation: "Мой новый дом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+  - uid: LX-00050
+    lemma: "That is your room."
+    meaning: "Showing someone their room"
+    class: D1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ðæt ɪz jɚ ˈrum/"
+    translation_ru: "Это ваша комната."
+    example_en: "That is your room."
+    example_ru: "Это ваша комната."
+    situation: "Мой новый дом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+  - uid: LX-00051
+    lemma: "Do you like it?"
+    meaning: "Asking whether someone likes something"
+    class: D1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/də jə ˈlaɪk ɪt/"
+    translation_ru: "Вам это нравится?"
+    example_en: "Do you like it?"
+    example_ru: "Вам это нравится?"
+    situation: "Мой новый дом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+  - uid: LX-00052
+    lemma: "Yes, I do."
+    meaning: "A short positive answer with do"
+    class: O4
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/jes aɪ ˈdu/"
+    translation_ru: "Да."
+    example_en: "Yes, I do."
+    example_ru: "Да."
+    situation: "Мой новый дом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+  - uid: LX-00053
+    lemma: "Can I have water, please?"
+    meaning: "Politely asking for water"
+    class: D7
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/kən aɪ hæv ˈwɑt̬ɚ pliz/"
+    translation_ru: "Можно мне воды, пожалуйста?"
+    example_en: "Can I have water, please?"
+    example_ru: "Можно мне воды, пожалуйста?"
+    situation: "Мой новый дом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+  - uid: LX-00054
+    lemma: "It is not my box."
+    meaning: "Saying that a box is not yours"
+    class: X1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ɪt ɪz nɑt maɪ ˈbɑks/"
+    translation_ru: "Это не моя коробка."
+    example_en: "It is not my box."
+    example_ru: "Это не моя коробка."
+    situation: "Мой новый дом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."

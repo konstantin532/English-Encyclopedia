@@ -61,3 +61,45 @@ class MarkupTests(SimpleTestCase):
 
     def test_strip(self):
         self.assertEqual(strip_markup("[T3]My[/] [S2]book[/]."), "My book.")
+
+
+from pathlib import Path
+
+import yaml
+
+CONTENT = Path(__file__).resolve().parent.parent / "content"
+
+
+class WeeksRegistryTests(SimpleTestCase):
+    def test_spheres_and_norms(self):
+        from apps.curriculum.registry import DIALOGUE_LINES, DIALOGUE_WORDS, SPHERES, TWISTER_SERIES, global_week
+
+        self.assertEqual(len(SPHERES), 12)
+        self.assertEqual(DIALOGUE_LINES["A1"], (6, 10))
+        self.assertEqual(DIALOGUE_WORDS["A1"], (40, 90))
+        self.assertEqual(set(TWISTER_SERIES), {lv.code for lv in LEVELS})
+        self.assertEqual(TWISTER_SERIES["A1"], "sounds")
+        self.assertEqual(TWISTER_SERIES["B2+"], "fast")
+        self.assertEqual(global_week("A1", 1), 1)
+        self.assertEqual(global_week("A1+", 1), 15)
+        self.assertEqual(global_week("B2+", 22), 150)
+
+    def test_voices_manifest_lists(self):
+        v = yaml.safe_load((CONTENT / "manifests/voices.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(set(v["emotions"]),
+                         {"neutral", "happy", "surprised", "sad", "tired", "angry", "worried", "whisper", "excited"})
+        self.assertEqual(v["emotions"]["whisper"], {"name_ru": "шёпотом", "speed": 0.92, "gain_db": -8, "pause": 1.2})
+        self.assertEqual(set(v["music_moods"]), {"none", "calm", "morning", "mystery", "sad", "happy", "tense"})
+        self.assertEqual(v["music_gain_db"]["A1"], -26)
+        self.assertEqual(v["music_gain_db"]["B2+"], -19)
+
+    def test_weeks_plan_a1(self):
+        from apps.curriculum.registry import SPHERES
+
+        plan = yaml.safe_load((CONTENT / "manifests/weeks_plan.yaml").read_text(encoding="utf-8"))["weeks"]
+        a1 = [w for w in plan if w["level"] == "A1"]
+        self.assertEqual([w["week"] for w in a1], list(range(1, 15)))
+        self.assertEqual({w["sphere"] for w in a1}, set(SPHERES))
+        self.assertEqual(a1[0]["grammar_markers"], ["D1"])
+        self.assertEqual(a1[7]["grammar_markers"], ["P1", "A6"])
+        self.assertEqual(a1[13]["grammar_markers"], [])

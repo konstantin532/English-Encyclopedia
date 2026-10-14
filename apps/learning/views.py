@@ -1,14 +1,15 @@
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
-from django.shortcuts import redirect, render
+from django.http import HttpResponseBadRequest, JsonResponse
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 from django.views.decorators.http import require_POST
 
 from apps.lessons.models import Lesson
+from apps.curriculum.models import Week
 
 from django.views.decorators.csrf import ensure_csrf_cookie
 
-from .models import ExerciseAttempt, Status, UnitProgress
+from .models import ExerciseAttempt, Status, UnitProgress, WeekGoal
 from .services import build_review
 
 
@@ -47,3 +48,14 @@ def review(request):
     upcoming = (UnitProgress.objects.filter(user=request.user, next_review_at__gt=timezone.now())
                 .order_by("next_review_at").first())
     return render(request, "learning/review.html", {"items": items, "upcoming": upcoming})
+
+
+@login_required
+@require_POST
+def week_goal(request, week_id):
+    week = get_object_or_404(Week.objects.select_related("level"), pk=week_id)
+    status = request.POST.get("status")
+    if status not in WeekGoal.GoalStatus.values:
+        return HttpResponseBadRequest("Выберите «Получилось» или «Ещё нет».")
+    WeekGoal.objects.update_or_create(user=request.user, week=week, defaults={"status": status})
+    return redirect("curriculum:week", slug=week.level.slug, number=week.number)

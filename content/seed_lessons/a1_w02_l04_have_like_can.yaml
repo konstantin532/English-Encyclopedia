@@ -17,9 +17,20 @@ sound_notes:
   - text: "No, I don't."
     ipa: "/ˈnoʊ aɪ ˈdoʊnt/"
     note_ru: "don't всегда ударное и чёткое"
+contractions:
+  - full: "do not"
+    short: "don't"
+    ipa: "/doʊnt/"
+    note_ru: "Не теряйте дифтонг /oʊ/ и конечное /nt/."
+  - full: "can not"
+    short: "can't"
+    ipa: "/kænt/"
+    note_ru: "Отрицательная форма обычно под ударением; ясно произносите /æ/."
 layers:
   - number: 1
     body: |
+      > [O4]Yes[/], [T8]you[/] [D7]can[/]. [T8]I[/] [D1]have[/] [S3]water[/]. [D1]Do[/] [T8]you[/] [D3]like[/] [T1]the[/] [S2]house[/]? — Да, конечно. У меня есть вода. Вам нравится дом?
+
       Три глагола, без которых не обойтись в первый же день:
 
       > [T8]I[/] [D1]have[/] [T1]a[/] [S2]phone[/]. — У меня есть телефон.

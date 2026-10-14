@@ -7,7 +7,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
-from apps.curriculum.models import Level, Week
+from apps.curriculum.models import Level, TongueTwister, Week, WeekScene
 from apps.drills.models import Exercise
 from apps.lessons.models import Lesson, LessonLayer
 from apps.lexicon.models import LexicalUnit
@@ -31,12 +31,15 @@ class Command(BaseCommand):
         root = Path(settings.CONTENT_DIR)
         with transaction.atomic():
             n_units = sum(self.load_units(p) for p in sorted((root / "seed_lexicon").glob("*.yaml")))
+            self.load_weeks_plan(root / "manifests" / "weeks_plan.yaml")
             n_lessons = sum(self.load_lesson(p) for p in sorted((root / "seed_lessons").glob("*.yaml")))
             self.load_course_map(root / "manifests" / "course_map.yaml")
             n_stories = sum(self.load_story(p) for p in sorted((root / "seed_stories").glob("*.yaml")))
             n_poems = sum(self.load_poem(p) for p in sorted((root / "seed_poems").glob("*.yaml")))
+            n_weeks = sum(self.load_week(p) for p in sorted((root / "seed_weeks").glob("*.yaml")))
         self.stdout.write(self.style.SUCCESS(
-            f"Единиц: {n_units}, уроков: {n_lessons}, историй с текстом: {n_stories}, стихов с текстом: {n_poems}"))
+            f"Единиц: {n_units}, уроков: {n_lessons}, историй с текстом: {n_stories}, стихов с текстом: {n_poems}, "
+            f"недель с диалогом: {n_weeks}"))
 
     def _check_markup(self, where: str, *texts: str):
         for text in texts:
@@ -71,7 +74,7 @@ class Command(BaseCommand):
                 level=level, week=Week.objects.filter(level=level, number=data.get("week")).first(),
                 order=data.get("order", 1), title=data["title"], summary=data["summary"],
                 focus=PartOfSpeech.objects.filter(code=data.get("focus")).first(), minutes=data.get("minutes", 40),
-                sound_notes=data.get("sound_notes", []),
+                sound_notes=data.get("sound_notes", []), contractions=data.get("contractions", []),
             ),
         )
         lesson.units.set(LexicalUnit.objects.filter(uid__in=data.get("units", [])))
@@ -124,7 +127,7 @@ class Command(BaseCommand):
             for line in story.script:
                 if line["speaker"] not in roles:
                     raise CommandError(f"{path.name}: роли {line['speaker']} нет в content/manifests/voices.yaml")
-                self._check_markup(f"{path.name}: реплика", line["text"])
+                self._check_markup(f"{path.name}: реплика", line["text"], line.get("spoken", ""))
             story.body = "\n\n".join(line["text"] for line in story.script)
         manifest = Path(settings.BASE_DIR) / "static" / "audio" / "stories" / f"s{story.number:02d}" / "manifest.json"
         story.audio = json.loads(manifest.read_text(encoding="utf-8")) if manifest.exists() else {}
@@ -145,4 +148,47 @@ class Command(BaseCommand):
         poem.is_published = True
         poem.save()
         poem.target_units.set(LexicalUnit.objects.filter(uid__in=data.get("target_units", [])))
+        return 1
+
+    def _audio_manifest(self, *parts: str) -> dict:
+        path = Path(settings.BASE_DIR) / "static" / "audio" / Path(*parts) / "manifest.json"
+        return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+
+    def load_weeks_plan(self, path: Path) -> int:
+        if not path.exists():
+            return 0
+        weeks = yaml.safe_load(path.read_text(encoding="utf-8")).get("weeks", [])
+        for item in weeks:
+            week = Week.objects.get(level__code=item["level"], number=item["week"])
+            week.situation_ru, week.sphere = item["situation_ru"], item["sphere"]
+            week.grammar_ru, week.grammar_markers = item.get("grammar_ru", ""), item.get("grammar_markers", [])
+            week.save()
+        return len(weeks)
+
+    def load_week(self, path: Path) -> int:
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        week = Week.objects.select_related("level").get(level__code=data["level"], number=data["week"])
+        roles = self._voice_roles()
+        for line in data.get("script", []):
+            if line["speaker"] not in roles:
+                raise CommandError(f"{path.name}: роли {line['speaker']} нет в content/manifests/voices.yaml")
+            self._check_markup(f"{path.name}: реплика", line["text"], line.get("spoken", ""))
+        folder = f"{week.level.slug}-w{week.number:02d}"
+        scene, _ = WeekScene.objects.update_or_create(week=week, defaults=dict(
+            can_do_ru=data["can_do_ru"], mission_ru=data["mission_ru"], script=data.get("script", []),
+            ambience=data.get("ambience", ""), audio=self._audio_manifest("weeks", folder)))
+        scene.chunks.set(LexicalUnit.objects.filter(uid__in=data.get("chunks", [])))
+        missing = set(data.get("chunks", [])) - set(scene.chunks.values_list("uid", flat=True))
+        if missing:
+            raise CommandError(f"{path.name}: незарегистрированные готовые фразы {sorted(missing)}")
+        tw = data.get("twister")
+        if tw:
+            self._check_markup(f"{path.name}: скороговорка", tw["text"])
+            TongueTwister.objects.filter(number=tw["number"]).exclude(week=week).delete()
+            TongueTwister.objects.update_or_create(week=week, defaults=dict(
+                number=tw["number"], series=tw["series"], text=tw["text"], ipa=tw.get("ipa", ""), ru=tw.get("ru", ""),
+                focus_sounds=tw.get("focus_sounds", []), full_form=tw.get("full_form", ""), source=tw["source"],
+                source_note=tw.get("source_note", ""), audio=self._audio_manifest("twisters", f"t{tw['number']:03d}")))
+        else:
+            TongueTwister.objects.filter(week=week).delete()
         return 1

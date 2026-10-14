@@ -1,0 +1,17 @@
+# План недель: ситуация, сфера жизни, грамматика и маркеры, которые обязаны встретиться в диалоге.
+# Спецификация: docs/specs/2026-10-14-situation-weeks.md, раздел 5.
+weeks:
+- {level: A1, week: 1, situation_ru: "Знакомство с соседом", sphere: meet, grammar_ru: "существительные; be: I'm, you're, it's", grammar_markers: [D1]}
+- {level: A1, week: 2, situation_ru: "Мой новый дом", sphere: home, grammar_ru: "a / the, this / that, my / your; have, like, can", grammar_markers: [T1, T2, T3]}
+- {level: A1, week: 3, situation_ru: "В кафе: заказать", sphere: food, grammar_ru: "Can I have…?; числа 1–20; please, thanks", grammar_markers: [D1, N1, O2]}
+- {level: A1, week: 4, situation_ru: "Семья на фото", sphere: meet, grammar_ru: "his / her; 's (Tom's); вопросы с be", grammar_markers: [T3, D1]}
+- {level: A1, week: 5, situation_ru: "Магазин у дома", sphere: shop, grammar_ru: "there is / there are; How much…?; some", grammar_markers: [D1, N6]}
+- {level: A1, week: 6, situation_ru: "Мой обычный день", sphere: home, grammar_ru: "Present Simple: I / you; время (at seven)", grammar_markers: [D2, N3]}
+- {level: A1, week: 7, situation_ru: "Кто где работает", sphere: work, grammar_ru: "Present Simple: he / she + -s; профессии", grammar_markers: [D2]}
+- {level: A1, week: 8, situation_ru: "Как пройти?", sphere: city, grammar_ru: "предлоги места; Where is…?; Turn left", grammar_markers: [P1, A6]}
+- {level: A1, week: 9, situation_ru: "Телефон и сообщения", sphere: connect, grammar_ru: "вопросы с do / does; диктовка по буквам", grammar_markers: [D1, N7]}
+- {level: A1, week: 10, situation_ru: "Выходные и хобби", sphere: free, grammar_ru: "always / never; like + действие", grammar_markers: [A1, D3]}
+- {level: A1, week: 11, situation_ru: "У врача", sphere: health, grammar_ru: "I have a headache; can't; …hurts", grammar_markers: [S5, X1]}
+- {level: A1, week: 12, situation_ru: "На почте", sphere: service, grammar_ru: "don't / doesn't; адрес", grammar_markers: [X1]}
+- {level: A1, week: 13, situation_ru: "Курсы английского", sphere: study, grammar_ru: "can / can't — умения; Why? Because…", grammar_markers: [D1, C3]}
+- {level: A1, week: 14, situation_ru: "Поездка на автобусе", sphere: travel, grammar_ru: "повторение всего A1: билет, расписание", grammar_markers: []}

@@ -1,0 +1,53 @@
+{% load markers static %}
+{% comment %}Плеер реплик по ролям: истории и диалоги недель. Нужны audio (манифест), lines и speakers (build_lines).{% endcomment %}
+{% if audio %}
+<div class="story-player" data-story-player
+     {% if audio.very_slow %}data-very-slow="{% static audio.very_slow.file %}"{% endif %} data-slow="{% static audio.slow.file %}" data-natural="{% static audio.natural.file %}"
+     {% if audio.ambience %}data-ambience="{% static audio.ambience %}" data-ambience-db="{{ audio.ambience_gain_db }}"{% endif %}
+     {% if audio.slow.music %}{% if audio.very_slow.music %}data-music-very_slow="{% static audio.very_slow.music %}" data-music-db-very_slow="{{ audio.very_slow.music_gain_db }}"{% endif %}
+     data-music-slow="{% static audio.slow.music %}" data-music-db-slow="{{ audio.slow.music_gain_db }}"
+     data-music-natural="{% static audio.natural.music %}" data-music-db-natural="{{ audio.natural.music_gain_db }}"{% endif %}>
+  {% if audio.very_slow %}{{ audio.very_slow.timings|json_script:"timings-very_slow" }}{% endif %}{{ audio.slow.timings|json_script:"timings-slow" }}{{ audio.natural.timings|json_script:"timings-natural" }}
+  <div class="player-row">
+    <button class="btn btn-primary btn-small" type="button" data-play aria-pressed="false"><span data-play-label>Слушать</span></button>
+    <div class="player-modes" role="radiogroup" aria-label="Темп">
+      {% if audio.very_slow %}<label><input type="radio" name="tempo" value="very_slow" checked> Очень медленно</label>{% endif %}
+      <label><input type="radio" name="tempo" value="slow"{% if not audio.very_slow %} checked{% endif %}> Медленно</label>
+      <label><input type="radio" name="tempo" value="natural"> Как в жизни</label>
+    </div>
+    <span class="player-time" data-time aria-live="off">0:00</span>
+  </div>
+  <div class="player-row player-mix">
+    <label>Скорость <input type="range" min="50" max="125" step="5" value="100" data-rate> <output data-rate-out>1.0×</output></label>
+    <label><input type="checkbox" data-pause-lines> Пауза после каждой реплики</label>
+    <label>Голос <input type="range" min="0" max="100" value="100" data-voice-vol></label>
+    {% if audio.ambience %}<label>Фон сцены <input type="range" min="0" max="100" value="0" data-amb-vol></label>{% endif %}
+    {% if audio.slow.music %}<label>Музыка <input type="range" min="0" max="100" value="100" data-music-vol></label>{% endif %}
+    {% if not role_section and speakers|length > 1 %}<label>Сыграть роль
+      <select data-role-mute><option value="">— слушать всех —</option>{% for s in speakers %}<option value="{{ s.id }}">{{ s.name }}</option>{% endfor %}</select></label>{% endif %}
+  </div>
+  <p class="drill-hint">Голоса синтезированы нейросетью{% if not audio.verified %}, произношение ещё не проверено человеком{% endif %}. Нажмите на реплику, чтобы послушать её.</p>
+</div>
+{% endif %}
+{% if lines %}
+{% if listen_modes %}
+<div class="player-modes listen-modes" role="radiogroup" aria-label="Как слушать" data-listen-modes>
+  <label><input type="radio" name="listen" value="hidden"> Без текста</label>
+  <label><input type="radio" name="listen" value="text"> С текстом</label>
+  <label><input type="radio" name="listen" value="marked" checked> С разметкой</label>
+</div>
+{% endif %}
+{% if lines|has_spoken %}
+<div class="player-modes speech-modes" role="radiogroup" aria-label="Вариант речи" data-speech-modes>
+  <label><input type="radio" name="speech" value="written" checked> Как написано</label>
+  <label><input type="radio" name="speech" value="spoken"> Как говорят</label>
+</div>
+{% endif %}
+<div class="story-text story-script annotated" lang="en" data-story-text data-script-lines>
+  {% for l in lines %}<p class="script-line script-{{ l.kind }}" data-line="{{ l.i }}" data-speaker="{{ l.speaker }}"><span class="speaker speaker-{{ l.speaker }}" lang="ru">{{ l.name }}{% if l.kind == "narration" %} · рассказ{% endif %}{% if l.emotion_ru %}<span class="emotion"> · {{ l.emotion_ru }}</span>{% endif %}</span><span class="line-text">{% if l.spoken %}<span class="line-written">{{ l.text|annotate }}</span><span class="line-spoken">{{ l.spoken|annotate }}</span><span class="line-full"><span lang="ru">полностью:</span> {{ l.text|plain }}</span>{% else %}{{ l.text|annotate }}{% endif %}</span>{% if l.ru %}<span class="line-ru" lang="ru">{{ l.ru }}</span>{% endif %}</p>{% endfor %}
+</div>
+{% elif paragraphs %}
+<div class="story-text annotated" lang="en" data-story-text>
+  {% for p in paragraphs %}<p>{{ p|annotate }}</p>{% endfor %}
+</div>
+{% endif %}

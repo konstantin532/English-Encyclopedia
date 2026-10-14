@@ -69,3 +69,19 @@ class ExerciseAttempt(models.Model):
     class Meta:
         ordering = ["-created_at"]
         indexes = [models.Index(fields=["user", "-created_at"])]
+
+
+class WeekGoal(models.Model):
+    """Самооценка ученика по цели недели «Я смогу…»."""
+
+    class GoalStatus(models.TextChoices):
+        DONE = "done", "Получилось"
+        NOT_YET = "not_yet", "Ещё нет"
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="week_goals")
+    week = models.ForeignKey("curriculum.Week", on_delete=models.CASCADE, related_name="goals")
+    status = models.CharField(max_length=8, choices=GoalStatus.choices)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=["user", "week"], name="uniq_goal_per_week")]

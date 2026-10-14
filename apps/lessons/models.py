@@ -27,6 +27,7 @@ class Lesson(models.Model):
     units = models.ManyToManyField(LexicalUnit, blank=True, related_name="lessons")
     minutes = models.PositiveSmallIntegerField(default=40)
     sound_notes = models.JSONField(default=list, blank=True)
+    contractions = models.JSONField(default=list, blank=True)
     is_published = models.BooleanField(default=True)
 
     class Meta:

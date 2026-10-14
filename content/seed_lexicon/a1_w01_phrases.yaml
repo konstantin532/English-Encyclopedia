@@ -1,0 +1,95 @@
+# Готовые фразы недели 1; CEFR не сверялся.
+level: A1
+week: 1
+units:
+  - uid: LX-00042
+    lemma: "Good morning!"
+    meaning: "A morning greeting"
+    class: O1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ɡʊd ˈmɔrnɪŋ/"
+    translation_ru: "Доброе утро!"
+    example_en: "Good morning!"
+    example_ru: "Доброе утро!"
+    situation: "Знакомство с соседом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+  - uid: LX-00043
+    lemma: "My name is Anna."
+    meaning: "Introducing yourself by name"
+    class: F1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/maɪ ˈneɪm ɪz ˈænə/"
+    translation_ru: "Меня зовут Анна."
+    example_en: "My name is Anna."
+    example_ru: "Меня зовут Анна."
+    situation: "Знакомство с соседом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+  - uid: LX-00044
+    lemma: "What is your name?"
+    meaning: "Asking for a name"
+    class: F1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/wʌt ɪz jɚ ˈneɪm/"
+    translation_ru: "Как вас зовут?"
+    example_en: "What is your name?"
+    example_ru: "Как вас зовут?"
+    situation: "Знакомство с соседом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+  - uid: LX-00045
+    lemma: "I am from Russia."
+    meaning: "Saying where you are from"
+    class: D1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/aɪ æm frəm ˈrʌʃə/"
+    translation_ru: "Я из России."
+    example_en: "I am from Russia."
+    example_ru: "Я из России."
+    situation: "Знакомство с соседом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+  - uid: LX-00046
+    lemma: "Nice to meet you."
+    meaning: "A polite greeting on first meeting"
+    class: O1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/naɪs tə ˈmit ju/"
+    translation_ru: "Приятно познакомиться."
+    example_en: "Nice to meet you."
+    example_ru: "Приятно познакомиться."
+    situation: "Знакомство с соседом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+  - uid: LX-00047
+    lemma: "I am your neighbor."
+    meaning: "Introducing yourself as a neighbor"
+    class: D1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/aɪ æm jɚ ˈneɪbɚ/"
+    translation_ru: "Я ваш сосед."
+    example_en: "I am your neighbor."
+    example_ru: "Я ваш сосед."
+    situation: "Знакомство с соседом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+  - uid: LX-00048
+    lemma: "Have a nice day!"
+    meaning: "A polite daytime farewell"
+    class: O1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/hæv ə naɪs ˈdeɪ/"
+    translation_ru: "Хорошего дня!"
+    example_en: "Have a nice day!"
+    example_ru: "Хорошего дня!"
+    situation: "Знакомство с соседом"
+    usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
