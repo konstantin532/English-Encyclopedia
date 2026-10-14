@@ -7,6 +7,18 @@ echo.
 echo === English Encyclopedia: запуск ===
 echo.
 
+rem --- 0. Свежие изменения с GitHub (если папка связана через connect_github.bat) ---
+if not exist ".git" goto no_git
+where git >nul 2>nul
+if not %errorlevel%==0 goto no_git
+echo [0/5] Скачиваю свежие изменения с GitHub...
+git pull --ff-only
+if not %errorlevel%==0 echo Не удалось скачать изменения, запускаю то, что есть на компьютере.
+goto uv_step
+:no_git
+echo [0/5] Папка не связана с GitHub: запустите один раз connect_github.bat.
+:uv_step
+
 rem --- 1. uv (менеджер Python) ---
 where uv >nul 2>nul
 if %errorlevel%==0 goto have_uv
