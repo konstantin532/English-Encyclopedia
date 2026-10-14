@@ -74,7 +74,7 @@ class Command(BaseCommand):
                 level=level, week=Week.objects.filter(level=level, number=data.get("week")).first(),
                 order=data.get("order", 1), title=data["title"], summary=data["summary"],
                 focus=PartOfSpeech.objects.filter(code=data.get("focus")).first(), minutes=data.get("minutes", 40),
-                sound_notes=data.get("sound_notes", []),
+                sound_notes=data.get("sound_notes", []), contractions=data.get("contractions", []),
             ),
         )
         lesson.units.set(LexicalUnit.objects.filter(uid__in=data.get("units", [])))
@@ -127,7 +127,7 @@ class Command(BaseCommand):
             for line in story.script:
                 if line["speaker"] not in roles:
                     raise CommandError(f"{path.name}: роли {line['speaker']} нет в content/manifests/voices.yaml")
-                self._check_markup(f"{path.name}: реплика", line["text"])
+                self._check_markup(f"{path.name}: реплика", line["text"], line.get("spoken", ""))
             story.body = "\n\n".join(line["text"] for line in story.script)
         manifest = Path(settings.BASE_DIR) / "static" / "audio" / "stories" / f"s{story.number:02d}" / "manifest.json"
         story.audio = json.loads(manifest.read_text(encoding="utf-8")) if manifest.exists() else {}

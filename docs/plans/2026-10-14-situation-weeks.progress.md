@@ -20,3 +20,9 @@ Task 5: complete (commits af840f5..32c11ac, tests: .venv/bin/python manage.py te
 Task 6: note: заметил старое поведение — при переключении на «как в жизни» во время игры фон сцены включает громкость 100, но сам не запускается до следующего «Слушать»; в задачу не входит
 Task 6: complete (commits 32c11ac..585dd1c, tests: .venv/bin/python manage.py test tests → Destroying test database for alias 'default'...)
 Task 7: IN PROGRESS — tests/test_spoken.py написан, 6 тестов красные (ожидаемо). Дальше: Lesson.contractions + миграция, загрузчик, компонент (переключатель speech, line-spoken/line-full), JS ee-speech-mode, правила spoken в audit_weeks, contractions.html в уроке. Остановлено по просьбе автора (лимиты).
+
+Task 7: Ruling: из-за запрета записи .git в F: работа идёт в независимой копии репозитория в папке Codex, на situation-weeks; main остаётся на 13333ef — цена: основная папка ещё не содержит новую ветку.
+Task 7: Ruling: генератор и build_lines уже поддерживают spoken; генератор не менялся по прямому указанию автора — цена: нет.
+Task 7: Ruling: uv sync не смог опросить интерпретатор в песочнице; окружение скопировано из установленного Python 3.13, numpy 2.5.4 взят из готового локального кэша; TEMP/TMP направлены в рабочую папку — цена: uv sync пока не подтверждён.
+Task 7: Ruling: проверка браузера перенесена к общей проверке контента: отдельный сервер пока недоступен браузеру (тайм-аут соединения) — цена: визуальная проверка пока не выполнена.
+Task 7: complete (tests: Python 3.13 manage.py test tests → 110/110, OK; test_spoken → RED 6 failures before implementation; миграция применена).

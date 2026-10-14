@@ -37,8 +37,14 @@
   <label><input type="radio" name="listen" value="marked" checked> С разметкой</label>
 </div>
 {% endif %}
+{% if lines|has_spoken %}
+<div class="player-modes speech-modes" role="radiogroup" aria-label="Вариант речи" data-speech-modes>
+  <label><input type="radio" name="speech" value="written" checked> Как написано</label>
+  <label><input type="radio" name="speech" value="spoken"> Как говорят</label>
+</div>
+{% endif %}
 <div class="story-text story-script annotated" lang="en" data-story-text data-script-lines>
-  {% for l in lines %}<p class="script-line script-{{ l.kind }}" data-line="{{ l.i }}" data-speaker="{{ l.speaker }}"><span class="speaker speaker-{{ l.speaker }}" lang="ru">{{ l.name }}{% if l.kind == "narration" %} · рассказ{% endif %}{% if l.emotion_ru %}<span class="emotion"> · {{ l.emotion_ru }}</span>{% endif %}</span><span class="line-text">{{ l.text|annotate }}</span>{% if l.ru %}<span class="line-ru" lang="ru">{{ l.ru }}</span>{% endif %}</p>{% endfor %}
+  {% for l in lines %}<p class="script-line script-{{ l.kind }}" data-line="{{ l.i }}" data-speaker="{{ l.speaker }}"><span class="speaker speaker-{{ l.speaker }}" lang="ru">{{ l.name }}{% if l.kind == "narration" %} · рассказ{% endif %}{% if l.emotion_ru %}<span class="emotion"> · {{ l.emotion_ru }}</span>{% endif %}</span><span class="line-text">{% if l.spoken %}<span class="line-written">{{ l.text|annotate }}</span><span class="line-spoken">{{ l.spoken|annotate }}</span><span class="line-full"><span lang="ru">полностью:</span> {{ l.text|plain }}</span>{% else %}{{ l.text|annotate }}{% endif %}</span>{% if l.ru %}<span class="line-ru" lang="ru">{{ l.ru }}</span>{% endif %}</p>{% endfor %}
 </div>
 {% elif paragraphs %}
 <div class="story-text annotated" lang="en" data-story-text>

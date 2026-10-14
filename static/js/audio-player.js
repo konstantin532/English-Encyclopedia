@@ -159,3 +159,21 @@
     script.classList.toggle("listen-text", r.value === "text");
   }));
 })();
+
+// Выбор варианта речи сохраняется и работает до появления озвучки.
+(() => {
+  const script = document.querySelector("[data-script-lines]");
+  const choices = [...document.querySelectorAll("input[name=speech]")];
+  if (!script || !choices.length) return;
+  const apply = (mode) => {
+    script.classList.toggle("speech-spoken", mode === "spoken");
+    choices.forEach((choice) => { choice.checked = choice.value === mode; });
+  };
+  let mode = "written";
+  try { if (localStorage.getItem("ee-speech-mode") === "spoken") mode = "spoken"; } catch (e) { /* нет хранилища */ }
+  apply(mode);
+  choices.forEach((choice) => choice.addEventListener("change", () => {
+    apply(choice.value);
+    try { localStorage.setItem("ee-speech-mode", choice.value); } catch (e) { /* нет хранилища */ }
+  }));
+})();

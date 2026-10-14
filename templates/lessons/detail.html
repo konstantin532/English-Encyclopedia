@@ -25,6 +25,7 @@
           {% include "components/sound_legend.html" %}
         </section>
         {% endif %}
+        {% if layer.number == 5 and lesson.contractions %}{% include "components/contractions.html" %}{% endif %}
         {% endfor %}
       </div>
 
@@ -55,6 +56,7 @@
           {% for layer in layers %}
           <li><a href="#layer-{{ layer.number }}">{{ layer.number }}. {{ layer.title }}</a></li>
           {% if layer.number == 5 and lesson.sound_notes %}<li><a href="#sound-notes">Как это звучит</a></li>{% endif %}
+          {% if layer.number == 5 and lesson.contractions %}<li><a href="#contractions">Как сокращают</a></li>{% endif %}
           {% endfor %}
           {% if exercises %}<li><a href="#practice">Практика</a></li>{% endif %}
         </ol>

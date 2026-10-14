@@ -7,6 +7,7 @@ import re
 from apps.curriculum.models import Level, TongueTwister, Week, WeekScene
 from apps.curriculum.registry import DIALOGUE_LINES, DIALOGUE_WORDS, SPHERES, TWISTER_SERIES
 from apps.lexicon.models import UnitType
+from apps.lessons.models import Lesson
 from apps.stories.models import Story
 from apps.stories.script import voices_manifest
 from apps.taxonomy.markup import strip_markup
@@ -49,12 +50,42 @@ def lesson_examples(lesson) -> set[str]:
     return out
 
 
-def audit_script(r, where: str, script: list[dict], voices: dict, music_required: bool = False) -> None:
+BLENDS = {"gonna", "wanna", "gotta", "gimme", "lemme", "kinda", "sorta", "whatcha", "dunno", "y'all"}
+SHORTENABLE = re.compile(r"\b(?:I am|it is|is not|are not|do not|you are|that is|can not|cannot)\b", re.I)
+
+
+def audit_script(r, where: str, script: list[dict], voices: dict, music_required: bool = False,
+                 level=None, week_number: int = 99, warn_spoken: bool = False) -> None:
     """Общие правила реплик: роль, эмоция, настроение музыки."""
+    from apps.publishing.audit import audit_contractions, text_tokens, vocab_until
+
+    vocab = vocab_until(level, week_number) if level else set()
     roles, emotions, moods = voices.get("roles", {}), voices.get("emotions", {}), voices.get("music_moods", {})
     if music_required and script and "music" not in script[0]:
         r.errors.append(f"{where}: у первой реплики нет music.")
     for i, line in enumerate(script, 1):
+        text, spoken = line.get("text", ""), line.get("spoken", "")
+        at = f"{where}, реплика {i}"
+        audit_contractions(r, at, text)
+        if spoken:
+            audit_contractions(r, at, spoken)
+            from apps.taxonomy.markup import find_issues
+
+            for issue in find_issues(spoken):
+                r.errors.append(f"{at}: spoken: {issue.token} — {issue.problem}.")
+            if normalize_line(spoken) == normalize_line(text):
+                r.errors.append(f"{at}: spoken совпадает с text.")
+            if level:
+                stray = _unknown(spoken, vocab)
+                if stray:
+                    r.errors.append(f"{at}: незнакомые слова в spoken: {', '.join(stray)}.")
+                if level.code in {"A1", "A1+", "A2"}:
+                    for blend in sorted({t.lower().replace("’", "'") for t in text_tokens(spoken)} & BLENDS):
+                        r.errors.append(f"{at}: слияние {blend} рано для уровня {level.code}.")
+        elif warn_spoken:
+            forms = list(dict.fromkeys(m.group().lower() for m in SHORTENABLE.finditer(strip_markup(text))))
+            if forms:
+                r.warnings.append(f"{at}: можно сократить {', '.join(forms)} — добавьте spoken.")
         if line.get("speaker") not in roles:
             r.errors.append(f"{where}, реплика {i}: роли {line.get('speaker')} нет в voices.yaml.")
         emotion = line.get("emotion", "neutral")
@@ -86,7 +117,8 @@ def audit_scene(r, scene: WeekScene, voices: dict) -> None:
     lessons = list(week.lessons.prefetch_related("layers"))
     if not lessons:
         r.errors.append(f"{where}: нет ни одного урока.")
-    audit_script(r, where, script, voices)
+    audit_script(r, where, script, voices, level=level, week_number=week.number,
+                 warn_spoken=level.code == "A1" and week.number in {1, 2})
 
     text = " ".join(line.get("text", "") for line in script)
     vocab = vocab_until(level, week.number)
@@ -178,5 +210,18 @@ def audit_weeks(r) -> None:
     for tw in TongueTwister.objects.select_related("week__level"):
         audit_twister(r, tw)
     audit_spheres(r)
+    audit_lesson_contractions(r)
     for story in Story.objects.filter(is_published=True).exclude(script=[]):
-        audit_script(r, f"История {story.number}", story.script, voices, music_required=True)
+        audit_script(r, f"История {story.number}", story.script, voices, music_required=True,
+                     level=story.level, week_number=story.week.number if story.week else 99,
+                     warn_spoken=story.number == 1)
+
+
+def audit_lesson_contractions(r) -> None:
+    for lesson in Lesson.objects.all():
+        for i, pair in enumerate(lesson.contractions, 1):
+            where = f"{lesson.slug}: «Как сокращают», пара {i}"
+            if not any(a in pair.get("short", "") for a in ("'", "’")):
+                r.errors.append(f"{where}: в short нет апострофа.")
+            if any(a in pair.get("full", "") for a in ("'", "’")):
+                r.errors.append(f"{where}: в full не должно быть апострофа.")

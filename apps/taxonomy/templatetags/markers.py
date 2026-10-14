@@ -19,3 +19,8 @@ def annotate_block(text):
 @register.filter
 def plain(text):
     return strip_markup(text or "")
+
+
+@register.filter
+def has_spoken(lines):
+    return any(line.get("spoken") for line in lines or [])

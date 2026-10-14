@@ -113,3 +113,17 @@ h1,h2,h3{letter-spacing:-.025em}a{text-underline-offset:.22em}
 .listen-hidden .script-line{min-height:2.4em}
 .listen-text .mk{text-decoration:none!important}
 .listen-text .mk::before,.listen-text .mk::after{display:none!important}
+
+/* Два варианта реплики и пояснение полной формы. */
+.line-spoken, .line-full { display: none; }
+.speech-spoken .line-written { display: none; }
+.speech-spoken .line-spoken { display: inline; }
+.speech-spoken .line-full { display: block; font: .75em/1.6 var(--font-body); color: var(--ink-soft); overflow-wrap: anywhere; margin-top: .35em; }
+.listen-hidden .line-text, .listen-hidden .line-full { display: none; }
+.contractions-table { width: 100%; border-collapse: collapse; font-size: .9em; }
+.contractions-table th, .contractions-table td { text-align: left; vertical-align: top; padding: .7em .5em; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.contractions-table .ipa { white-space: normal; }
+@media (max-width: 600px) {
+  .contractions-table { font-size: .75em; table-layout: fixed; }
+  .contractions-table th, .contractions-table td { padding: .6em .25em; }
+}
