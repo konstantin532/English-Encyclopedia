@@ -33,3 +33,25 @@ roles:
 extras: [am_eric, af_sarah, am_liam, af_jessica, am_fenrir, af_river]
 # Фон сцены: громкость относительно голоса по уровням (дБ). На A1 фон едва слышен.
 ambience_gain_db: {A1: -30, A1+: -28, A2: -24, A2+: -22, B1: -20, B1+: -19, B2: -18, B2+: -17}
+# Эмоции реплик. Kokoro передаёт их скоростью, громкостью и паузой после реплики.
+emotions:
+  neutral: {name_ru: спокойно, speed: 1.0, gain_db: 0, pause: 1.0}
+  happy: {name_ru: радостно, speed: 1.05, gain_db: 1, pause: 1.0}
+  surprised: {name_ru: удивлённо, speed: 1.08, gain_db: 2, pause: 1.2}
+  sad: {name_ru: грустно, speed: 0.9, gain_db: -2, pause: 1.3}
+  tired: {name_ru: устало, speed: 0.88, gain_db: -3, pause: 1.3}
+  angry: {name_ru: сердито, speed: 1.05, gain_db: 3, pause: 0.9}
+  worried: {name_ru: тревожно, speed: 1.0, gain_db: -1, pause: 1.1}
+  whisper: {name_ru: шёпотом, speed: 0.92, gain_db: -8, pause: 1.2}
+  excited: {name_ru: восторженно, speed: 1.1, gain_db: 2, pause: 0.9}
+# Настроения музыки в историях. Музыку сочиняет программа озвучки.
+music_moods:
+  none: без музыки
+  calm: спокойно
+  morning: утро
+  mystery: загадка
+  sad: грусть
+  happy: радость
+  tense: напряжение
+# Громкость музыки относительно голоса по уровням (дБ). На темпе «очень медленно» ещё −4 дБ.
+music_gain_db: {A1: -26, A1+: -25, A2: -24, A2+: -23, B1: -22, B1+: -21, B2: -20, B2+: -19}
