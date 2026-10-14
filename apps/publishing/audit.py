@@ -158,6 +158,9 @@ def run_audit() -> AuditReport:
             r.errors.append(f"{layer.lesson.slug}, слой {layer.number}: {i.token} — {i.problem}")
 
     audit_stories_and_poems(r)
+    from apps.publishing.audit_weeks import audit_weeks
+
+    audit_weeks(r)
 
     vocab = known_vocabulary()
     for where, text in english_lines():

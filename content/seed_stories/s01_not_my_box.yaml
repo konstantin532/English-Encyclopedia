@@ -11,6 +11,7 @@ ambience: morning_home
 script:
   - speaker: anna
     kind: narration
+    music: morning
     text: "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]. [T8]It[/] [D1]is[/] [T1]a[/] [J4]busy[/] [S7]morning[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S3]coffee[/]."
   - speaker: anna
     kind: narration
