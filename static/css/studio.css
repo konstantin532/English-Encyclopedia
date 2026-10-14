@@ -118,10 +118,10 @@ h1,h2,h3{letter-spacing:-.025em}a{text-underline-offset:.22em}
 .line-spoken, .line-full { display: none; }
 .speech-spoken .line-written { display: none; }
 .speech-spoken .line-spoken { display: inline; }
-.speech-spoken .line-full { display: block; font: .75em/1.6 var(--font-body); color: var(--ink-soft); overflow-wrap: anywhere; margin-top: .35em; }
+.speech-spoken .line-full { display: block; font: .75em/1.6 var(--font-ui); color: var(--ink-soft); overflow-wrap: anywhere; margin-top: .35em; }
 .listen-hidden .line-text, .listen-hidden .line-full { display: none; }
 .contractions-table { width: 100%; border-collapse: collapse; font-size: .9em; }
-.contractions-table th, .contractions-table td { text-align: left; vertical-align: top; padding: .7em .5em; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.contractions-table th, .contractions-table td { text-align: left; vertical-align: top; padding: .7em .5em; border-bottom: 1px solid var(--rule); overflow-wrap: anywhere; }
 .contractions-table .ipa { white-space: normal; }
 @media (max-width: 600px) {
   .contractions-table { font-size: .75em; table-layout: fixed; }
@@ -129,10 +129,31 @@ h1,h2,h3{letter-spacing:-.025em}a{text-underline-offset:.22em}
 }
 
 .week-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.week-card { display: flex; flex-direction: column; gap: 6px; padding: 18px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; background: var(--paper); }
+.week-card { display: flex; flex-direction: column; gap: 6px; padding: 18px; border: 1px solid var(--rule); border-radius: 12px; text-decoration: none; background: var(--paper); }
 .week-card span, .week-card small { color: var(--ink-soft); }
-.week-card:hover { border-color: var(--accent); }
+.week-card:hover { border-color: var(--studio-green); }
 .week-goal .btn { margin: 4px 4px 4px 0; }
 [data-twister-player] audio { width: 100%; }
 [data-twister-player] .player-modes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 @media (max-width: 600px) { .week-list { grid-template-columns: 1fr; } }
+
+@media (max-width: 600px) {
+  .contractions-table { font-size: .9em; table-layout: auto; }
+  .contractions-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .contractions-table tbody { display: block; }
+  .contractions-table tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  .contractions-table td { border: 0; padding: 0; }
+  .contractions-table td:nth-child(n+3) { grid-column: 1 / -1; }
+  .contractions-table td::before { content: attr(data-label); display: block; font: .8em/1.5 var(--font-ui); color: var(--ink-soft); margin-bottom: 4px; }
+}
+
+@media (max-width: 600px) {
+  .contractions-table td:nth-child(1)::before { content: "Полностью"; }
+  .contractions-table td:nth-child(2)::before { content: "Как говорят"; }
+  .contractions-table td:nth-child(3)::before { content: "Транскрипция"; }
+  .contractions-table td:nth-child(4)::before { content: "Заметка"; }
+}
+
+.player-modes { flex-wrap: wrap; }
+.player-modes label { white-space: nowrap; }
+.speech-modes { font: 13px/1.5 var(--font-ui); margin: 12px 0; }

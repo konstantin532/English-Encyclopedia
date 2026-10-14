@@ -76,7 +76,7 @@ class WeekLoaderTests(TestCase):
             for path in (root / "seed_weeks").glob("*.yaml"):
                 path.unlink()
             (root / "seed_weeks" / "a1_w01.yaml").write_text(text, encoding="utf-8")
-            with override_settings(CONTENT_DIR=root):
+            with override_settings(CONTENT_DIR=root, BASE_DIR=tmp):
                 yield root
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
@@ -186,6 +186,24 @@ class WeekPageTests(TestCase):
         self.client.post(reverse("learning:week_goal", args=[self.week.pk]), {"status": "not_yet"})
         self.assertEqual(WeekGoal.objects.get(user=first, week=self.week).status, "done")
         self.assertEqual(self.client.post(reverse("learning:week_goal", args=[999999]), {"status": "done"}).status_code, 404)
+
+    def test_twister_has_russian_transcription_and_manual_override(self):
+        response = self.client.get(reverse("curriculum:week", args=["a1", 1]))
+        twister_html = response.content.decode().split('id="twister"', 1)[1].split('id="mission"', 1)[0]
+        self.assertIn('class="ru-tr"', twister_html)
+        twister = TongueTwister.objects.get(week=self.week)
+        twister.ru = "мой ручной вариант"
+        twister.save()
+        self.assertContains(self.client.get(reverse("curriculum:week", args=["a1", 1])), "мой ручной вариант")
+
+    def test_level_accepts_lesson_without_week(self):
+        from apps.lessons.models import Lesson
+        lesson = Lesson.objects.get(slug="a1-verb-be")
+        lesson.week = None
+        lesson.save()
+        response = self.client.get(reverse("curriculum:level", args=["a1"]))
+        self.assertContains(response, lesson.title)
+        self.assertContains(response, reverse("lessons:detail", args=[lesson.slug]))
 
 
 class SeedWeekContentTests(TestCase):

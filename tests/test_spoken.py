@@ -93,3 +93,11 @@ class SpokenTests(TestCase):
         lesson.save()
         self.assertTrue(self.errors("a1-verb-be: «Как сокращают», пара 1: в short нет апострофа"))
         self.assertTrue(self.errors("a1-verb-be: «Как сокращают», пара 1: в full не должно быть апострофа"))
+
+    def test_short_affirmative_answer_does_not_request_contraction(self):
+        self.scene.script[3] = {"speaker": "anna", "text": "[O4]Yes[/], [T8]I[/] [D1]am[/]."}
+        self.scene.save()
+        self.assertFalse([w for w in run_audit().warnings if "Неделя A1-1, реплика 4: можно сократить" in w])
+        self.scene.script[3]["text"] += " [T8]I[/] [D1]am[/] [S1]Anna[/]."
+        self.scene.save()
+        self.assertTrue([w for w in run_audit().warnings if "Неделя A1-1, реплика 4: можно сократить i am" in w])

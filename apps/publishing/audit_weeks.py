@@ -83,7 +83,15 @@ def audit_script(r, where: str, script: list[dict], voices: dict, music_required
                     for blend in sorted({t.lower().replace("’", "'") for t in text_tokens(spoken)} & BLENDS):
                         r.errors.append(f"{at}: слияние {blend} рано для уровня {level.code}.")
         elif warn_spoken:
-            forms = list(dict.fromkeys(m.group().lower() for m in SHORTENABLE.finditer(strip_markup(text))))
+            plain = strip_markup(text)
+            forms = []
+            for match in SHORTENABLE.finditer(plain):
+                form = match.group().lower()
+                # Утвердительный be в конце короткого ответа не сокращается: Yes, I am.
+                if form in {"i am", "it is", "you are", "that is"} and not re.match(r"\s+[A-Za-z]", plain[match.end():]):
+                    continue
+                if form not in forms:
+                    forms.append(form)
             if forms:
                 r.warnings.append(f"{at}: можно сократить {', '.join(forms)} — добавьте spoken.")
         if line.get("speaker") not in roles:

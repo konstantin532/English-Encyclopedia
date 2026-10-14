@@ -47,7 +47,7 @@
         <h2 id="twister-t">Скороговорка недели</h2>
         {% if twister %}
         <p class="annotated" lang="en">{{ twister.text|annotate }}</p>
-        <p><span class="ipa">{{ twister.ipa }}</span> {{ twister|ru_tr }}</p>
+        <p><span class="ipa">{{ twister.ipa }}</span> {{ twister.ipa|ru_ipa:twister.ru }}</p>
         {% if twister.full_form %}<p lang="en">{{ twister.full_form }}</p>{% endif %}
         {% include "components/sound_legend.html" %}
         {% if twister.audio %}

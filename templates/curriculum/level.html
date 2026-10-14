@@ -24,7 +24,7 @@
   <section class="section" aria-labelledby="lessons-title" style="padding-top: var(--space-6)">
     <div class="section-head"><h2 id="lessons-title">Уроки</h2></div>
     {% if lessons %}
-      <div class="studio-lessons">{% for l in lessons %}<div class="studio-lesson-card"><span class="visually-hidden">Урок</span><span class="studio-lesson-no">{{ l.order|stringformat:'02d' }}</span><div><h3><a href="{% url 'lessons:detail' l.slug %}">{{ l.title }}</a></h3><p><a href="{% url 'curriculum:week' l.level.slug l.week.number %}">Неделя {{ l.week.number }}</a> · {{ l.minutes }} минут · 7 слоёв</p></div><span class="studio-card-arrow" aria-hidden="true">↗</span></div>{% endfor %}</div>
+      <div class="studio-lessons">{% for l in lessons %}<div class="studio-lesson-card"><span class="visually-hidden">Урок</span><span class="studio-lesson-no">{{ l.order|stringformat:'02d' }}</span><div><h3><a href="{% url 'lessons:detail' l.slug %}">{{ l.title }}</a></h3><p>{% if l.week %}<a href="{% url 'curriculum:week' l.level.slug l.week.number %}">Неделя {{ l.week.number }}</a> · {% endif %}{{ l.minutes }} минут · 7 слоёв</p></div><span class="studio-card-arrow" aria-hidden="true">↗</span></div>{% endfor %}</div>
     {% else %}
       <p>Уроки этого уровня ещё не созданы. Курс строится по порядку: сначала A1.</p>
     {% endif %}
