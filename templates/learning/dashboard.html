@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Мой прогресс · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <h1>{% if user.display_name %}{{ user.display_name }}, ваш прогресс{% else %}Ваш прогресс{% endif %}</h1>
+  </header>
+  <div class="stats">
+    <div class="stat"><b>{{ progress|length }}</b><span>единиц начато</span></div>
+    <div class="stat"><b>{{ active_units|length }}</b><span>в активном словаре</span></div>
+    <div class="stat"><b>{{ due|length }}</b><span>пора повторить</span></div>
+  </div>
+  {% if due %}<p><a class="btn btn-primary" href="{% url 'learning:review' %}">Повторить {{ due|length }}</a></p>{% endif %}
+  {% if next_lesson %}
+    <p><a class="btn btn-primary" href="{% url 'lessons:detail' next_lesson.slug %}">{% if progress %}Продолжить: {{ next_lesson.title }}{% else %}Начать первый урок{% endif %}</a></p>
+  {% endif %}
+
+  {% if progress %}
+  <section class="section" aria-labelledby="units-t" style="padding-top: var(--space-6)">
+    <div class="section-head"><h2 id="units-t">Слова в работе</h2><p>Слово попадает в активный словарь, когда вы правильно используете его в трёх разных конструкциях.</p></div>
+    <div class="table-scroll">
+      <table class="words-table">
+        <thead><tr><th scope="col">ID</th><th scope="col">Слово</th><th scope="col">Статус</th><th scope="col">Конструкций</th><th scope="col">Повторить</th></tr></thead>
+        <tbody>{% for p in progress %}
+          <tr>
+            <td class="uid">{{ p.unit.uid }}</td>
+            <td class="lemma annotated" lang="en"><a href="{% url 'lexicon:detail' p.unit.uid %}"><span class="mk" data-cat="{{ p.unit.semantic_class.category.code }}" data-cls="{{ p.unit.semantic_class.number }}">{{ p.unit.lemma }}</span></a></td>
+            <td><span class="status">{{ p.get_status_display }}</span></td>
+            <td>{{ p.contexts_used|length }} из 3</td>
+            <td>{{ p.next_review_at|date:"j E" }}</td>
+          </tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {% else %}
+  <p>Здесь появятся слова, которые вы начали учить. Пройдите первое задание урока, и прогресс начнёт сохраняться.</p>
+  {% endif %}
+
+  {% if mistakes %}
+  <section class="section" aria-labelledby="err-t" style="padding-top: var(--space-6)">
+    <div class="section-head"><h2 id="err-t">Последние ошибки</h2><p>Эти конструкции вернутся на повторение раньше.</p></div>
+    <ul class="toc">{% for m in mistakes %}<li><a href="{% url 'lessons:detail' m.exercise.lesson.slug %}#practice">{{ m.exercise.prompt_ru }}</a> <span class="uid">ваш ответ: {{ m.answer }}</span></li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+number: 1
+characters: [Anna, Tom]
+grammar_ru: "be (am, is), have, like в Present Simple; вопросы Is it…?, отрицание is not"
+prediction_ru: "Посмотрите на название и описания картинок. Как вы думаете, чья это коробка и что в ней?"
+visual_cues:
+  - "Утро. На пороге нового дома стоит Том с огромной картонной коробкой в руках."
+  - "Из приоткрытой коробки выглядывает рыжий кот. Рядом на столе — чашка кофе."
+new_units: [LX-00040, LX-00041]
+ambience: morning_home
+# Текст истории = реплики по порядку. body собирается из script автоматически.
+script:
+  - speaker: anna
+    kind: narration
+    text: "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]. [T8]It[/] [D1]is[/] [T1]a[/] [J4]busy[/] [S7]morning[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S3]coffee[/]."
+  - speaker: anna
+    kind: narration
+    text: "[S1]Tom[/] [D1]has[/] [T1]a[/] [J1]big[/] [S2]box[/]."
+  - speaker: tom
+    kind: speech
+    text: "“Good [S7]morning[/], [S1]Anna[/]! [D1]Is[/] [T2]this[/] [T3]your[/] [S2]box[/]?”"
+  - speaker: anna
+    kind: speech
+    text: "“[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/].”"
+  - speaker: anna
+    kind: narration
+    text: "[D1]Is[/] [T8]it[/] [T1]a[/] [S2]book[/]? [O4]No[/]. [D1]Is[/] [T8]it[/] [T1]a[/] [S2]phone[/]? [O4]No[/]."
+  - speaker: anna
+    kind: narration
+    text: "[T8]It[/] [D1]is[/] [T1]a[/] [S6]cat[/]!"
+  - speaker: anna
+    kind: speech
+    text: "“[D1]Is[/] [T8]it[/] [T3]your[/] [S6]cat[/], [S1]Tom[/]?”"
+  - speaker: tom
+    kind: speech
+    text: "“[O4]No[/]!”"
+  - speaker: anna
+    kind: narration
+    text: "[T8]It[/] [D3]likes[/] [T3]my[/] [S3]coffee[/]. [T8]I[/] [D3]like[/] [T8]it[/]."
+  - speaker: anna
+    kind: speech
+    text: "“[S1]Tom[/], [T8]it[/] [D1]is[/] [T3]my[/] [S6]cat[/]! [T8]It[/] [D1]has[/] [T1]a[/] [S9]name[/]: [S1]Box[/].”"
+questions:
+  - q: "Где происходит история?"
+    a: "This is my new house. — В новом доме Анны."
+  - q: "Это коробка Анны?"
+    a: "No, it is not my box."
+  - q: "Что в коробке?"
+    a: "It is a cat!"
+  - q: "Почему в конце Анна говорит «it is my cat»? Что она решила?"
+    a: "Коту нравится её кофе, и он понравился ей самой. Анна решает оставить кота себе и даёт ему имя Box."
+phrase_hunt:
+  - phrase: "Good morning, Anna!"
+    function: "Приветствие утром"
+  - phrase: "Is this your box?"
+    function: "Вопрос: чья это вещь?"
+  - phrase: "No, it is not my box."
+    function: "Отрицание с be"
+  - phrase: "Is it a book?"
+    function: "Угадывание: вопрос с be впереди"
+  - phrase: "It has a name: Box."
+    function: "Как назвать предмет или питомца"
+retell_words: [house, coffee, box, cat, name]
+retell_steps:
+  - "Восстановите историю по пяти словам: house, coffee, box, cat, name. По одной фразе на слово."
+  - "Перескажите без подсказок, 5–6 фраз, от лица Анны: My name is Anna…"
+creative_ru: "На следующий день Том приходит снова. Придумайте 2–3 его фразы и ответ Анны из знакомых слов. Например: Is it your cat, Anna?"

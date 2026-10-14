@@ -1,0 +1,359 @@
+# Пакет A1, неделя 1: глагол be, местоимения, указатели и слова из примеров первой недели.
+# CEFR не сверялся в этой сессии — cefr: unverified.
+level: A1
+week: 1
+units:
+  - uid: LX-00016
+    lemma: be
+    meaning: "to exist, to have a quality, or to be in a place"
+    class: D1
+    forms: [am, is, are, "'m", "'s", "'re"]
+    grammar_features: [irregular, linking_verb]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): be v., auxiliary v. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/bi/"
+    stress_note: "Формы в речи обычно безударные и сокращаются: I'm /aɪm/, it's /ɪts/, you're /jɚ/"
+    translation_ru: быть, находиться, являться
+    frequency_source: "NGSL — требует проверки"
+    collocations: [be at home, be busy, be my friend]
+    chunks: ["I'm home.", "It's nice!"]
+    example_en: "[T8]I[/] [D1]am[/] [P1]at[/] [S2]home[/]."
+    example_ru: "Я дома."
+    pattern: "I am ___."
+    substitutions: [at home, busy, Anna, Tom]
+    situation: Говорите, где вы и какой вы
+    usage_note: "I am, you are, it is. В русском «есть» обычно пропускают, в английском be обязателен."
+    typical_error: "«I busy», «Anna my friend» — пропущен be. Нужно: I am busy, Anna is my friend."
+  - uid: LX-00017
+    lemma: I
+    meaning: "the person who is speaking"
+    class: T8
+    grammar_features: [pronoun, subject, always_capital]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): I pron. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/aɪ/"
+    stress_note: "Дифтонг /aɪ/ — «ай»"
+    translation_ru: я
+    frequency_source: "NGSL — требует проверки"
+    collocations: [I am, I have, I like]
+    chunks: ["I'm home!"]
+    example_en: "[T8]I[/] [D1]am[/] [S1]Anna[/]."
+    example_ru: "Я Анна."
+    pattern: "I am ___."
+    substitutions: [Anna, Tom, at home, busy]
+    situation: Представляетесь
+    usage_note: "Местоимение (pronoun). Всегда пишется с большой буквы, даже в середине фразы."
+    typical_error: "Пишут i маленькой буквой. В английском только I."
+  - uid: LX-00018
+    lemma: you
+    meaning: "the person or people you are speaking to"
+    class: T8
+    grammar_features: [pronoun, subject, object, singular_and_plural]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): you pron. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ju/"
+    stress_note: "Как «ю»; в быстрой речи ослабляется до /jə/"
+    translation_ru: ты, вы
+    frequency_source: "NGSL — требует проверки"
+    collocations: [you are, do you, you can]
+    chunks: ["Do you like it?", "You are my friend."]
+    example_en: "[T8]You[/] [D1]are[/] [T3]my[/] [S1]friend[/]."
+    example_ru: "Ты мой друг."
+    pattern: "You are ___."
+    substitutions: [my friend, busy, at home, nice]
+    situation: Обращаетесь к собеседнику
+    usage_note: "Одно слово и для «ты», и для «вы». Вежливость передают тоном и словами вроде please."
+    typical_error: "«You is» — с you всегда are: you are."
+  - uid: LX-00019
+    lemma: it
+    meaning: "a thing, an animal or a situation already mentioned"
+    class: T8
+    grammar_features: [pronoun, subject, object]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): it pron. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ɪt/"
+    stress_note: "Короткое /ɪ/. it's = /ɪts/"
+    translation_ru: он, она, оно (о предмете); это
+    frequency_source: "NGSL — требует проверки"
+    collocations: [it is, I like it, it's nice]
+    chunks: ["It's nice!", "I like it."]
+    example_en: "[T8]It[/] [D1]is[/] [T1]a[/] [S2]book[/]."
+    example_ru: "Это книга."
+    pattern: "It is ___."
+    substitutions: [a book, a phone, nice, big]
+    situation: Говорите о предмете
+    usage_note: "Книга, дом, телефон по-английски не «он» и не «она», а it."
+    typical_error: "«The book… she is good» — о предмете говорят it: It is good."
+  - uid: LX-00020
+    lemma: this
+    meaning: "used for a person or thing that is near you"
+    class: T2
+    grammar_features: [determiner, pronoun_use]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): this det./pron. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ðɪs/"
+    stress_note: "Звонкое межзубное /ð/ и короткое /ɪ/"
+    translation_ru: этот, эта, это (рядом)
+    frequency_source: "NGSL — требует проверки"
+    collocations: [this is, this room, this week]
+    chunks: ["This is my friend."]
+    example_en: "[T2]This[/] [S2]room[/] [D1]is[/] [J1]big[/]."
+    example_ru: "Эта комната большая."
+    pattern: "This ___ is big."
+    substitutions: [room, house, book]
+    situation: Показываете на то, что рядом
+    usage_note: "Перед существительным this — детерминатив (this room). Без существительного — местоимение (This is Tom)."
+    typical_error: "Произносят «зис». Нужно межзубное /ð/."
+  - uid: LX-00021
+    lemma: my
+    meaning: "belonging to the person who is speaking"
+    class: T3
+    grammar_features: [possessive_determiner]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): my det. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/maɪ/"
+    stress_note: "Дифтонг /aɪ/"
+    translation_ru: мой, моя, моё, мои
+    frequency_source: "NGSL — требует проверки"
+    collocations: [my family, my friend, my phone]
+    chunks: ["This is my friend."]
+    example_en: "[T3]My[/] [S2]phone[/] [D1]is[/] [J2]new[/]."
+    example_ru: "Мой телефон новый."
+    pattern: "My ___ is new."
+    substitutions: [phone, house, book]
+    situation: Говорите о своём
+    usage_note: "Притяжательный детерминатив: стоит перед существительным и заменяет a и the."
+    typical_error: "«a my book», «the my book» — my уже работает как указатель, a и the не нужны."
+  - uid: LX-00022
+    lemma: a
+    meaning: "one, used before a singular countable noun that is not specific"
+    class: T1
+    forms: [an]
+    grammar_features: [indefinite_article]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): a, an indefinite article — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ə/"
+    stress_note: "Почти всегда слабое /ə/, сливается со следующим словом: a book /əˈbʊk/"
+    translation_ru: "один, какой-то (часто не переводится)"
+    frequency_source: "NGSL — требует проверки"
+    collocations: [a book, a big house, a nice day]
+    chunks: ["Have a nice day!"]
+    example_en: "[T8]It[/] [D1]is[/] [T1]a[/] [S2]phone[/]."
+    example_ru: "Это телефон."
+    pattern: "It is a ___."
+    substitutions: [phone, book, house, room]
+    situation: Называете предмет впервые
+    usage_note: "Перед гласным звуком — an: an apple. Выбор зависит от звука, а не от буквы."
+    typical_error: "Произносят a как «эй» в каждой фразе. В обычной речи это короткое /ə/."
+  - uid: LX-00023
+    lemma: at
+    meaning: "used to say where someone or something is"
+    class: P1
+    grammar_features: [preposition_place]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): at prep. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/æt/"
+    stress_note: "В речи обычно слабое /ət/: at home /ət ˈhoʊm/"
+    translation_ru: в, на (в точке, месте)
+    frequency_source: "NGSL — требует проверки"
+    collocations: [at home, at work, at school]
+    chunks: ["My father is at home."]
+    example_en: "[S1]Tom[/] [D1]is[/] [P1]at[/] [S2]home[/]."
+    example_ru: "Том дома."
+    pattern: "___ is at home."
+    substitutions: [Tom, Anna, My father, My mother]
+    situation: Говорите, где человек
+    usage_note: "at — место как точка на карте: at home, at work. Подробнее о in и on — в уроке о предлогах."
+    typical_error: "«I am in home» — устойчиво говорят at home."
+  - uid: LX-00024
+    lemma: big
+    meaning: "large in size"
+    class: J1
+    grammar_features: [gradable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): big adj. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/bɪɡ/"
+    stress_note: "Короткое /ɪ/; звонкое /ɡ/ на конце не оглушайте"
+    translation_ru: большой
+    frequency_source: "NGSL — требует проверки"
+    collocations: [a big house, a big family, a big room]
+    chunks: ["It's big!"]
+    example_en: "[T3]My[/] [S1]family[/] [D1]is[/] [J1]big[/]."
+    example_ru: "Моя семья большая."
+    pattern: "It is a big ___."
+    substitutions: [house, room, family]
+    situation: Описываете размер
+    typical_error: "Оглушают конец: «бик». Звук /ɡ/ звонкий."
+  - uid: LX-00025
+    lemma: good
+    meaning: "of high quality; pleasant"
+    class: J3
+    grammar_features: [gradable, irregular_comparison]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): good adj. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ɡʊd/"
+    stress_note: "Короткое /ʊ/, хотя пишется oo"
+    translation_ru: хороший
+    frequency_source: "NGSL — требует проверки"
+    collocations: [good morning, a good friend, a good book]
+    chunks: ["Good morning!"]
+    example_en: "[T1]The[/] [S2]book[/] [D1]is[/] [J3]good[/]."
+    example_ru: "Книга хорошая."
+    pattern: "It is a good ___."
+    substitutions: [book, day, week]
+    situation: Хвалите
+    typical_error: "Читают «гуд» с долгим у. Гласная короткая /ʊ/."
+  - uid: LX-00026
+    lemma: nice
+    meaning: "pleasant, attractive or kind"
+    class: J3
+    grammar_features: [gradable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): nice adj. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/naɪs/"
+    stress_note: "Дифтонг /aɪ/, глухое /s/ на конце"
+    translation_ru: приятный, милый, хороший
+    frequency_source: "NGSL — требует проверки"
+    collocations: [a nice day, nice room, very nice]
+    chunks: ["Have a nice day!", "That's nice!"]
+    example_en: "[T8]It[/][D1]'s[/] [J3]nice[/]!"
+    example_ru: "Как мило!"
+    pattern: "Have a nice ___!"
+    substitutions: [day, week, morning]
+    situation: Реагируете на хорошее
+    usage_note: "Одно из самых частых слов американской вежливости: Nice! — «Здорово!»"
+    typical_error: "Пишут nice как «найс» и считают, что это сленг. Это нейтральное слово."
+  - uid: LX-00027
+    lemma: new
+    meaning: "recently made, bought or started"
+    class: J2
+    grammar_features: [gradable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): new adj. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/nu/"
+    stress_note: "В американском — /nu/, как «ну»; британское /njuː/ — «нью»"
+    translation_ru: новый
+    frequency_source: "NGSL — требует проверки"
+    collocations: [a new phone, new house, New York]
+    chunks: ["It's new!"]
+    example_en: "[T8]I[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]phone[/]."
+    example_ru: "У меня новый телефон."
+    pattern: "I have a new ___."
+    substitutions: [phone, book, house]
+    situation: Рассказываете о покупке
+    typical_error: "Говорят «нью» — это британский вариант. Американцы чаще говорят /nu/."
+  - uid: LX-00028
+    lemma: busy
+    meaning: "having a lot to do"
+    class: J4
+    grammar_features: [gradable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): busy adj. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ˈbɪzi/"
+    stress_note: "BI-zy: буква u читается как /ɪ/, s — как /z/"
+    translation_ru: занятой, загруженный
+    frequency_source: "NGSL — требует проверки"
+    collocations: [a busy week, busy day, I'm busy]
+    chunks: ["I'm busy."]
+    example_en: "[T8]I[/][D1]'m[/] [J4]busy[/]."
+    example_ru: "Я занят."
+    pattern: "I'm busy this ___."
+    substitutions: [week, morning]
+    situation: Отказываетесь от встречи
+    typical_error: "Читают «бузи» по буквам. Правильно /ˈbɪzi/ — «бизи»."
+  - uid: LX-00029
+    lemma: please
+    meaning: "used to make a request polite"
+    class: O8
+    grammar_features: [politeness_marker]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): please exclam. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/pliz/"
+    stress_note: "Долгое /i/, на конце звонкое /z/"
+    translation_ru: пожалуйста (при просьбе)
+    frequency_source: "NGSL — требует проверки"
+    collocations: [water please, yes please, please]
+    chunks: ["Yes, please.", "Water, please."]
+    example_en: "[S3]Coffee[/], [O8]please[/]."
+    example_ru: "Кофе, пожалуйста."
+    pattern: "___, please."
+    substitutions: [Coffee, Water]
+    situation: Заказываете
+    usage_note: "please — только для просьбы. В ответ на «спасибо» говорят You're welcome, а не please."
+    typical_error: "Отвечают please на thank you. Это ошибка: please означает «прошу»."
+  - uid: LX-00030
+    lemma: not
+    meaning: "used to make a sentence negative"
+    class: X1
+    grammar_features: [negative_particle]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): not adv. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/nɑt/"
+    stress_note: "Американское /ɑ/ — открытое «а». Сокращается до n't: isn't /ˈɪzənt/"
+    translation_ru: не
+    frequency_source: "NGSL — требует проверки"
+    collocations: [not busy, is not, not at home]
+    chunks: ["It's not my phone."]
+    example_en: "[T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]phone[/]."
+    example_ru: "Это не мой телефон."
+    pattern: "It is not my ___."
+    substitutions: [phone, book, room]
+    situation: Возвращаете чужую вещь
+    usage_note: "not ставится после am, is, are: I am not, it is not."
+    typical_error: "«It not my phone» — пропущен be. Нужно: It is not / It isn't."
+  - uid: LX-00031
+    lemma: "yes"
+    meaning: "used to give a positive answer"
+    class: O4
+    grammar_features: [answer_word]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): yes exclam. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/jes/"
+    stress_note: "Как «йес»; в разговоре часто yeah /jeə/"
+    translation_ru: да
+    frequency_source: "NGSL — требует проверки"
+    collocations: [yes please, yes I do, yes it is]
+    chunks: ["Yes, please.", "Yes, it is."]
+    example_en: "[O4]Yes[/], [T8]it[/] [D1]is[/]."
+    example_ru: "Да."
+    pattern: "Yes, ___."
+    substitutions: [it is, I am, I do, please]
+    situation: Отвечаете на вопрос
+    usage_note: "Голое Yes звучит сухо. Американцы добавляют короткий хвост: Yes, it is. Yes, I do."
+    typical_error: "Отвечают одним Yes на любой вопрос. Короткий ответ с глаголом звучит естественнее."
+  - uid: LX-00032
+    lemma: "no"
+    meaning: "used to give a negative answer"
+    class: O4
+    grammar_features: [answer_word]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): no exclam., det. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/noʊ/"
+    stress_note: "Дифтонг /oʊ/ — «ноу», а не «но»"
+    translation_ru: нет
+    frequency_source: "NGSL — требует проверки"
+    collocations: [no thanks, no it isn't, no I don't]
+    chunks: ["No, it isn't."]
+    example_en: "[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/]."
+    example_ru: "Нет."
+    pattern: "No, ___."
+    substitutions: [it isn't, I'm not, I don't]
+    situation: Отвечаете отрицательно
+    typical_error: "Произносят «но» — по-английски это звучит как know без дифтонга. Нужно /noʊ/."

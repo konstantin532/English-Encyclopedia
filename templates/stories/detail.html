@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load markers static %}
+{% block title %}{{ story.title }} · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'stories:map' %}">Истории</a> / {{ story.level.code }}, неделя {{ story.week.number }} / история {{ story.number }}</p>
+    <h1 lang="en">{{ story.title }}</h1>
+    <p>{{ story.hook_ru }}</p>
+  </header>
+  <div class="lesson-grid">
+    <article class="prose">
+      <section class="layer" id="step-1" aria-labelledby="st1">
+        <h2 id="st1"><span class="layer-num">1</span>Угадайте сюжет</h2>
+        <p>{{ story.prediction_ru }}</p>
+        <ol>{% for cue in story.visual_cues %}<li>{{ cue }}</li>{% endfor %}</ol>
+        <p class="drill-hint">Иллюстраций пока нет: вместо них описания картинок.</p>
+      </section>
+
+      <section class="layer" id="step-2" aria-labelledby="st2">
+        <h2 id="st2"><span class="layer-num">2</span>Прочитайте</h2>
+        {% if new_units %}<p class="drill-hint">Новые слова: {% for u in new_units %}<a href="{% url 'lexicon:detail' u.uid %}" lang="en">{{ u.lemma }}</a> — {{ u.translation_ru }}{% if not forloop.last %}, {% endif %}{% endfor %}.</p>{% endif %}
+        {% if audio %}
+        <div class="story-player" data-story-player
+             {% if audio.very_slow %}data-very-slow="{% static audio.very_slow.file %}"{% endif %} data-slow="{% static audio.slow.file %}" data-natural="{% static audio.natural.file %}"
+             {% if audio.ambience %}data-ambience="{% static audio.ambience %}" data-ambience-db="{{ audio.ambience_gain_db }}"{% endif %}>
+          {% if audio.very_slow %}{{ audio.very_slow.timings|json_script:"timings-very_slow" }}{% endif %}{{ audio.slow.timings|json_script:"timings-slow" }}{{ audio.natural.timings|json_script:"timings-natural" }}
+          <div class="player-row">
+            <button class="btn btn-primary btn-small" type="button" data-play aria-pressed="false"><span data-play-label>Слушать</span></button>
+            <div class="player-modes" role="radiogroup" aria-label="Темп">
+              {% if audio.very_slow %}<label><input type="radio" name="tempo" value="very_slow" checked> Очень медленно</label>{% endif %}
+              <label><input type="radio" name="tempo" value="slow"{% if not audio.very_slow %} checked{% endif %}> Медленно</label>
+              <label><input type="radio" name="tempo" value="natural"> Как в жизни</label>
+            </div>
+            <span class="player-time" data-time aria-live="off">0:00</span>
+          </div>
+          <div class="player-row player-mix">
+            <label>Скорость <input type="range" min="50" max="125" step="5" value="100" data-rate> <output data-rate-out>1.0×</output></label>
+            <label><input type="checkbox" data-pause-lines> Пауза после каждой реплики</label>
+            <label>Голос <input type="range" min="0" max="100" value="100" data-voice-vol></label>
+            {% if audio.ambience %}<label>Фон сцены <input type="range" min="0" max="100" value="0" data-amb-vol></label>{% endif %}
+            {% if speakers|length > 1 %}<label>Сыграть роль
+              <select data-role-mute><option value="">— слушать всех —</option>{% for s in speakers %}<option value="{{ s.id }}">{{ s.name }}</option>{% endfor %}</select></label>{% endif %}
+          </div>
+          <p class="drill-hint">Голоса синтезированы нейросетью{% if not audio.verified %}, произношение ещё не проверено человеком{% endif %}. Нажмите на реплику, чтобы послушать её.</p>
+        </div>
+        {% endif %}
+        {% if lines %}
+        <div class="story-text story-script annotated" lang="en" data-story-text>
+          {% for l in lines %}<p class="script-line script-{{ l.kind }}" data-line="{{ l.i }}" data-speaker="{{ l.speaker }}"><span class="speaker speaker-{{ l.speaker }}" lang="ru">{{ l.name }}{% if l.kind == "narration" %} · рассказ{% endif %}</span><span class="line-text">{{ l.text|annotate }}</span></p>{% endfor %}
+        </div>
+        {% else %}
+        <div class="story-text annotated" lang="en" data-story-text>
+          {% for p in paragraphs %}<p>{{ p|annotate }}</p>{% endfor %}
+        </div>
+        {% endif %}
+        {% if not audio %}<p class="drill-hint">Аудио к этой истории ещё не создано. Читайте вслух и сверяйте произношение по карточкам слов.</p>{% endif %}
+      </section>
+
+      <section class="layer" id="step-3" aria-labelledby="st3">
+        <h2 id="st3"><span class="layer-num">3</span>Ответьте на вопросы</h2>
+        <p>Сначала ответьте сами, по-английски, если получится. Потом сравните.</p>
+        <div class="drills">
+          {% for item in story.questions %}
+          <div class="drill" data-open-question>
+            <p class="drill-prompt">{{ forloop.counter }}. {{ item.q }}</p>
+            <label class="visually-hidden" for="oq{{ forloop.counter }}">Ваш ответ</label>
+            <input class="fill-input" id="oq{{ forloop.counter }}" autocomplete="off" lang="en" placeholder="ваш ответ">
+            <div class="drill-actions"><button class="btn btn-quiet btn-small" type="button" data-compare>Сравнить с ответом</button></div>
+            <div class="drill-feedback" data-state="reveal" hidden data-model-answer>{{ item.a }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="layer" id="step-4" aria-labelledby="st4">
+        <h2 id="st4"><span class="layer-num">4</span>Охота за фразами</h2>
+        <p>Найдите каждую фразу в тексте и подумайте, зачем она. Нажмите, чтобы подсветить и проверить.</p>
+        <ul class="hunt">
+          {% for h in story.phrase_hunt %}
+          <li><button class="choice" type="button" lang="en" data-hunt="{{ h.phrase }}" aria-expanded="false">{{ h.phrase }}</button> <span class="hunt-fn" hidden>{{ h.function }}</span></li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section class="layer" id="step-5" aria-labelledby="st5">
+        <h2 id="st5"><span class="layer-num">5</span>Перескажите</h2>
+        <p class="subs" lang="en">{% for w in story.retell_words %}<span>{{ w }}</span>{% endfor %}</p>
+        <ol>{% for s in story.retell_steps %}<li>{{ s }}</li>{% endfor %}</ol>
+      </section>
+
+      <section class="layer" id="step-6" aria-labelledby="st6">
+        <h2 id="st6"><span class="layer-num">6</span>Продолжите историю</h2>
+        <p>{{ story.creative_ru }}</p>
+      </section>
+    </article>
+
+    <aside class="aside">
+      <div class="aside-box">
+        <h2>Паспорт истории</h2>
+        <dl class="passport">
+          <dt>Уровень</dt><dd>{{ story.level.code }}, неделя {{ story.week.number }}</dd>
+          <dt>Герои</dt><dd lang="en">{{ story.characters|join:", " }}</dd>
+          <dt>Слов</dt><dd>{{ word_count }}</dd>
+          <dt>Грамматика</dt><dd>{{ story.grammar_ru }}</dd>
+          <dt>Тренируем</dt><dd>{% for c in focus %}{{ c.name_ru }}{% if not forloop.last %}, {% endif %}{% endfor %}</dd>
+        </dl>
+      </div>
+      <div class="aside-box">
+        <h2>Шаги</h2>
+        <ol class="toc">
+          <li><a href="#step-1">Угадайте сюжет</a></li><li><a href="#step-2">Прочитайте</a></li><li><a href="#step-3">Вопросы</a></li>
+          <li><a href="#step-4">Охота за фразами</a></li><li><a href="#step-5">Пересказ</a></li><li><a href="#step-6">Продолжение</a></li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'js/story-player.js' %}" defer></script><script src="{% static 'js/audio-player.js' %}" defer></script>{% endblock %}

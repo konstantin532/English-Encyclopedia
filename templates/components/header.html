@@ -1,0 +1,22 @@
+{% with path=request.path %}
+<header class="site-header">
+  <div class="wrap">
+    <p class="studio-breadcrumb"><a href="{% url 'core:home' %}">Энциклопедия</a><span>/</span><strong>{% if path == '/' %}Главная{% elif path|slice:':9' == '/lessons/' %}Урок{% elif path|slice:':8' == '/levels/' %}Курс{% elif path|slice:':7' == '/words/' %}Слова{% elif path|slice:':9' == '/markers/' %}Маркеры{% elif path|slice:':9' == '/stories/' %}Истории и стихи{% elif path == '/accounts/signup/' %}Регистрация{% elif path == '/accounts/login/' %}Вход{% elif path == '/learning/review/' %}Повторение{% else %}Мой прогресс{% endif %}</strong></p>
+    <div class="studio-top-actions">
+      <a class="studio-search-link" href="{% url 'lexicon:list' %}" aria-label="Открыть словарь"><span aria-hidden="true">⌕</span><span>Найти слово</span></a>
+      {% if user.is_authenticated %}
+        <a class="studio-account" href="{% url 'learning:dashboard' %}"><span class="studio-avatar" aria-hidden="true">{% if user.display_name %}{{ user.display_name|first|upper }}{% else %}Я{% endif %}</span><span>Мой кабинет</span></a>
+        <form method="post" action="{% url 'accounts:logout' %}">{% csrf_token %}<button class="btn btn-quiet btn-small" type="submit">Выйти</button></form>
+      {% else %}
+        <a class="studio-login-link" href="{% url 'accounts:login' %}">Войти</a>
+        <a class="btn btn-primary btn-small" href="{% url 'accounts:signup' %}">Регистрация</a>
+      {% endif %}
+      <button class="btn btn-quiet btn-small toggle" type="button" data-markers-toggle aria-label="Переключить цвет маркеров"
+              aria-pressed="{% if MARKERS_MONO %}false{% else %}true{% endif %}"
+              {% if user.is_authenticated %}data-save-url="{% url 'learning:toggle_markers' %}"{% endif %}>
+        <span class="toggle-on">Маркеры в цвете</span><span class="toggle-off">Маркеры без цвета</span><span class="toggle-short" aria-hidden="true">Цвет</span><span class="studio-switch" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+{% endwith %}

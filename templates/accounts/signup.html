@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Регистрация · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap"><div class="studio-auth">
+  <aside class="studio-auth-story" aria-label="Начало обучения"><span class="studio-eyebrow">НЕ ЗУБРИ. ПОЙМИ.</span><h2>Большой язык. <br>Маленькие шаги. <br><em>Ваш путь.</em></h2><p>Создайте аккаунт — и у каждого выученного слова появится своё место в вашем прогрессе.</p><ul class="studio-auth-benefits"><li>Уроки с понятными объяснениями</li><li>Сохранение ответов и прогресса</li><li>Повторение слов в нужный день</li></ul><span class="studio-auth-symbol" aria-hidden="true">Aa</span></aside>
+  <div class="form-page studio-auth-form"><span class="studio-eyebrow">ПЕРВЫЙ ШАГ</span><h1>Регистрация</h1><p class="studio-form-lede">Аккаунт нужен, чтобы сохранять прогресс и получать слова на повторение в нужный день.</p>
+  <form method="post" novalidate>{% csrf_token %}
+    {{ form.non_field_errors }}
+    {% for field in form %}{% include "components/field.html" %}{% endfor %}
+    <button class="btn btn-primary studio-form-submit" type="submit">Создать аккаунт <span aria-hidden="true">→</span></button>
+  </form>
+  <p class="studio-auth-alternate">Уже есть аккаунт? <a href="{% url 'accounts:login' %}">Войти</a></p>
+  </div>
+</div></div>
+{% endblock %}

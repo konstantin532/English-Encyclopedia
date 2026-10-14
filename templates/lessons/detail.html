@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load markers static %}
+{% block title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'curriculum:level' lesson.level.slug %}">{{ lesson.level.code }}</a>{% if lesson.week %} / неделя {{ lesson.week.number }}{% endif %} / урок {{ lesson.order }}</p>
+    <h1>{{ lesson.title }}</h1>
+    <p>{{ lesson.summary }}</p>
+  </header>
+  <div class="lesson-grid">
+    <article>
+      <div class="prose" data-lesson-reader>
+        {% for layer in layers %}
+        <section class="layer" id="layer-{{ layer.number }}" aria-labelledby="layer-{{ layer.number }}-t">
+          <h2 id="layer-{{ layer.number }}-t"><span class="layer-num">{{ layer.number }}</span>{{ layer.title }}</h2>
+          <div class="annotated">{{ layer.body|annotate_block }}</div>
+        </section>
+        {% if layer.number == 5 and lesson.sound_notes %}
+        <section class="layer" id="sound-notes" aria-labelledby="sound-notes-t">
+          <h2 id="sound-notes-t">Как это звучит</h2>
+          {% for item in lesson.sound_notes %}
+          <p><span lang="en">{{ item.text }}</span> <span class="ipa">{{ item.ipa }}</span><br>{{ item.note_ru }}</p>
+          {% endfor %}
+        </section>
+        {% endif %}
+        {% endfor %}
+      </div>
+
+      {% if exercises %}
+      <section class="section" id="practice" data-lesson-practice aria-labelledby="practice-t" style="padding-top: var(--space-6)">
+        <div class="section-head"><h2 id="practice-t">Практика</h2>
+          <p>{% if user.is_authenticated %}Ответы сохраняются в ваш прогресс и возвращаются на повторение по расписанию.{% else %}Чтобы ответы сохранялись и возвращались на повторение, <a href="{% url 'accounts:signup' %}">зарегистрируйтесь</a>.{% endif %}</p>
+        </div>
+        <div class="drills">
+          {% for ex in exercises %}
+          {% include "components/drill.html" with ex=ex number=forloop.counter total=exercises|length %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+      {% if next_lesson %}
+      <nav class="section" aria-label="Следующий урок" style="padding-top: var(--space-6)">
+        <p style="color: var(--ink-soft); margin-bottom: var(--space-3)">Следующий урок</p>
+        <a class="btn btn-primary" href="{% url 'lessons:detail' next_lesson.slug %}">{{ next_lesson.title }}</a>
+      </nav>
+      {% endif %}
+    </article>
+
+    <aside class="aside">
+      <div class="aside-box">
+        <h2>Шаги урока</h2>
+        <ol class="toc">
+          {% for layer in layers %}
+          <li><a href="#layer-{{ layer.number }}">{{ layer.number }}. {{ layer.title }}</a></li>
+          {% if layer.number == 5 and lesson.sound_notes %}<li><a href="#sound-notes">Как это звучит</a></li>{% endif %}
+          {% endfor %}
+          {% if exercises %}<li><a href="#practice">Практика</a></li>{% endif %}
+        </ol>
+        <div class="studio-reader-tools" aria-label="Размер текста урока"><span>Размер текста</span><button type="button" data-reader-smaller aria-label="Уменьшить текст">A−</button><button type="button" data-reader-larger aria-label="Увеличить текст">A+</button><output data-reader-size aria-live="polite">18</output></div>
+      </div>
+      <div class="aside-box">
+        <h2>Слова урока</h2>
+        <div class="word-chips annotated" lang="en">
+          {% for u in units %}<a href="{% url 'lexicon:detail' u.uid %}"><span class="mk" data-cat="{{ u.semantic_class.category.code }}" data-cls="{{ u.semantic_class.number }}" data-label="{{ u.translation_ru }}">{{ u.lemma }}</span></a>{% endfor %}
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}

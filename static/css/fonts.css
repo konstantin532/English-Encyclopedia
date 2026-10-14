@@ -1,0 +1,5 @@
+/* Шрифты лежат в проекте (лицензия SIL OFL, тексты лицензий рядом), сайт не зависит от CDN. */
+@font-face { font-family: "Literata"; src: url("../fonts/Literata-Variable.ttf") format("truetype"); font-weight: 200 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Literata"; src: url("../fonts/Literata-Italic-Variable.ttf") format("truetype"); font-weight: 200 900; font-style: italic; font-display: swap; }
+@font-face { font-family: "Golos Text"; src: url("../fonts/GolosText-Variable.ttf") format("truetype"); font-weight: 400 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Gentium Plus"; src: url("../fonts/GentiumPlus-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }

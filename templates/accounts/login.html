@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Вход · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap"><div class="studio-auth">
+  <aside class="studio-auth-story" aria-label="Добро пожаловать"><span class="studio-eyebrow">ВАШ АНГЛИЙСКИЙ ЖДЁТ</span><h2>Каждый шаг <br>делает язык <br><em>ближе.</em></h2><p>Продолжайте уроки, возвращайтесь к знакомым словам и замечайте свой прогресс.</p><div class="studio-auth-phrase" lang="en"><span class="mk" data-cat="T" data-cls="8">I</span><span class="mk" data-cat="D" data-cls="1">'m</span> <span class="mk" data-cat="S" data-cls="2">home</span>.<small lang="ru">Я дома. Здесь начинается понимание.</small></div></aside>
+  <div class="form-page studio-auth-form"><span class="studio-eyebrow">С ВОЗВРАЩЕНИЕМ</span><h1>Вход</h1><p class="studio-form-lede">Войдите, чтобы продолжить с того места, где остановились.</p>
+  <form method="post" novalidate>{% csrf_token %}
+    {% if form.non_field_errors %}<ul class="errorlist">{% for e in form.non_field_errors %}<li>Почта или пароль не подходят. Проверьте раскладку и попробуйте ещё раз.</li>{% endfor %}</ul>{% endif %}
+    {% for field in form %}{% include "components/field.html" %}{% endfor %}
+    <input type="hidden" name="next" value="{{ next }}">
+    <button class="btn btn-primary studio-form-submit" type="submit">Войти <span aria-hidden="true">→</span></button>
+  </form>
+  <p class="studio-auth-alternate">Ещё нет аккаунта? <a href="{% url 'accounts:signup' %}">Зарегистрироваться</a></p>
+  </div>
+</div></div>
+{% endblock %}

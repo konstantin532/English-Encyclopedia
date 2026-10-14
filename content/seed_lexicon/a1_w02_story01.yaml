@@ -1,0 +1,45 @@
+# Новые слова истории №1 «Not My Box» (лимит A-блока — до 5 на историю).
+level: A1
+week: 2
+units:
+  - uid: LX-00040
+    lemma: box
+    meaning: "a container with flat sides, often made of cardboard"
+    class: S2
+    grammar_features: [countable, plural_es]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): box n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/bɑks/"
+    stress_note: "Американское открытое /ɑ/ — ближе к «бакс». Множественное число boxes /ˈbɑksɪz/"
+    translation_ru: коробка, ящик
+    frequency_source: "NGSL — требует проверки"
+    collocations: [a big box, a new box, my box]
+    chunks: ["Is this your box?"]
+    example_en: "[T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/]."
+    example_ru: "Это не моя коробка."
+    pattern: "Is this your ___?"
+    substitutions: [box, book, phone]
+    situation: Курьер принёс не ту посылку
+    typical_error: "Произносят «бокс» с русским «о». В американском — открытое /ɑ/."
+  - uid: LX-00041
+    lemma: cat
+    meaning: "a small animal with soft fur, often kept as a pet"
+    class: S6
+    grammar_features: [countable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): cat n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/kæt/"
+    stress_note: "Открытое /æ/ — между «э» и «а»; t на конце короткое"
+    translation_ru: кошка, кот
+    frequency_source: "NGSL — требует проверки"
+    collocations: [a big cat, my cat, a nice cat]
+    chunks: ["It is my cat."]
+    example_en: "[T8]I[/] [D1]have[/] [T1]a[/] [J1]big[/] [S6]cat[/]."
+    example_ru: "У меня большой кот."
+    pattern: "I have a ___ cat."
+    substitutions: [big, nice, new]
+    situation: Рассказываете о питомце
+    usage_note: "cat не различает пол: и «кот», и «кошка». О своём питомце американцы часто говорят he или she, о чужом — it."
+    typical_error: "Произносят «кэт» с узким э или «кет». Нужно открытое /æ/."

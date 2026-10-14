@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Истории и стихи · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <h1>Истории и стихи</h1>
+    <p>Шестьдесят историй складываются в одну: Анна, Том и Мия разгадывают тайну старого дома и писем женщины по имени Rose. Шестьдесят стихотворений тренируют произношение и ритм на уже знакомых словах.</p>
+  </header>
+  {% for row in levels %}
+  <section class="section" aria-labelledby="lv-{{ row.level.slug }}" style="padding-top: var(--space-6)">
+    <div class="section-head"><h2 id="lv-{{ row.level.slug }}">{{ row.level.code }}</h2></div>
+    <div class="map-grid">
+      <ol class="map-list" role="list">
+        {% for s in row.stories %}
+        <li class="map-item{% if not s.is_published %} is-planned{% endif %}">
+          <span class="map-num">{{ s.number }}</span>
+          <div>
+            {% if s.is_published %}<a href="{% url 'stories:detail' s.number %}" lang="en">{{ s.title }}</a>{% else %}<span lang="en">{{ s.title }}</span>{% endif %}
+            <span class="map-meta">{{ s.hook_ru }} Неделя {{ s.week.number }}.{% if not s.is_published %} Готовится.{% endif %}</span>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+      <ol class="map-list map-poems" role="list">
+        {% for p in row.poems %}
+        <li class="map-item{% if not p.is_published %} is-planned{% endif %}">
+          <span class="map-num">{{ p.number }}</span>
+          <div>
+            {% if p.is_published %}<a href="{% url 'stories:poem' p.number %}" lang="en">{{ p.title }}</a>{% else %}<span lang="en">{{ p.title }}</span>{% endif %}
+            <span class="map-meta">Стихотворение, {{ p.rhyme_scheme }}. Неделя {{ p.week.number }}.</span>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

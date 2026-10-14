@@ -1,0 +1,315 @@
+# Пакет A1 → NOUNS, неделя 1. Тема: семья, дом, еда, время.
+# CEFR не сверялся с Oxford 3000 / EVP в этой сессии — поэтому cefr: unverified.
+level: A1
+week: 1
+units:
+  - uid: LX-00001
+    lemma: family
+    meaning: a group of people related to each other, such as parents and children
+    class: S1
+    grammar_features: [countable, singular_agreement_us]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): family n., adj. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ˈfæməli/"
+    stress_note: "Ударение на первый слог: FAM-i-ly; средний звук часто почти исчезает: /ˈfæmli/"
+    translation_ru: семья
+    frequency_source: "NGSL — требует проверки"
+    collocations: [my family, a big family, family photo]
+    chunks: ["This is my family.", "My family is big."]
+    example_en: "[T3]My[/] [S1]family[/] [D1]is[/] big."
+    example_ru: "Моя семья большая."
+    pattern: "My family is ___."
+    substitutions: [big, nice, busy, at home]
+    situation: Показываете фото на телефоне
+    typical_error: "«My family are big» — в американском английском family обычно согласуется как единственное число: My family is big."
+  - uid: LX-00002
+    lemma: mother
+    meaning: a female parent
+    class: S1
+    grammar_features: [countable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): mother n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ˈmʌðɚ/"
+    stress_note: "MOTH-er; th звонкое /ð/, кончик языка между зубами"
+    translation_ru: мать, мама
+    frequency_source: "NGSL — требует проверки"
+    collocations: [my mother, a mother of two, mother and father]
+    chunks: ["This is my mother."]
+    example_en: "[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/]."
+    example_ru: "Это моя мама."
+    pattern: "This is my ___."
+    substitutions: [mother, father, friend, family]
+    situation: Знакомите гостя с родными
+    usage_note: "В разговоре американцы чаще говорят mom: mother звучит официальнее."
+    typical_error: "Произносят th как /з/ или /в/. Нужен межзубный звук /ð/."
+  - uid: LX-00003
+    lemma: father
+    meaning: a male parent
+    class: S1
+    grammar_features: [countable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): father n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ˈfɑːðɚ/"
+    stress_note: "FA-ther; первый гласный — открытое /ɑː/, как в «па»"
+    translation_ru: отец, папа
+    frequency_source: "NGSL — требует проверки"
+    collocations: [my father, mother and father, a good father]
+    chunks: ["My father is at home."]
+    example_en: "[T3]My[/] [S1]father[/] [D1]is[/] [P1]at[/] [S2]home[/]."
+    example_ru: "Мой папа дома."
+    pattern: "My father is ___."
+    substitutions: [at home, nice, busy, my friend]
+    situation: Отвечаете, где родители
+    usage_note: "В разговоре чаще dad."
+    typical_error: "«My father is home work» — пропуск предлога. Говорят: at home, at work."
+  - uid: LX-00004
+    lemma: friend
+    meaning: a person you know well and like
+    class: S1
+    grammar_features: [countable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): friend n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/frend/"
+    stress_note: "Одна гласная /e/: буква i не читается"
+    translation_ru: друг, подруга
+    frequency_source: "NGSL — требует проверки"
+    collocations: [my friend, a good friend, best friend]
+    chunks: ["This is my friend Tom."]
+    example_en: "[S1]Anna[/] [D1]is[/] [T3]my[/] [S1]friend[/]."
+    example_ru: "Анна — моя подруга."
+    pattern: "___ is my friend."
+    substitutions: [Anna, Tom, Mia]
+    situation: Представляете друга
+    usage_note: "Friend не различает пол: и «друг», и «подруга»."
+    typical_error: "Читают «фриенд». Правильно одна гласная: /frend/."
+  - uid: LX-00005
+    lemma: home
+    meaning: the place where you live
+    class: S2
+    grammar_features: [countable, adverb_use]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): home n., adv. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/hoʊm/"
+    stress_note: "Дифтонг /oʊ/ — «оу», а не чистое «о»"
+    translation_ru: дом (место, где живёшь), домой
+    frequency_source: "NGSL — требует проверки"
+    collocations: [at home, my home, go home]
+    chunks: ["I'm home!", "I am at home."]
+    example_en: "[T8]I[/] [D1]am[/] [P1]at[/] [S2]home[/]."
+    example_ru: "Я дома."
+    pattern: "___ is at home."
+    substitutions: [Tom, Anna, My family, My friend]
+    situation: Звоните и говорите, где вы
+    usage_note: "Home — ваше место, где тепло. House — само здание."
+    typical_error: "«I go to home» — с home в значении «домой» предлог to не нужен: go home."
+  - uid: LX-00006
+    lemma: house
+    meaning: a building where people live, usually one family
+    class: S2
+    grammar_features: [countable, plural_voiced_s]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): house n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/haʊs/"
+    stress_note: "Дифтонг /aʊ/ — «ау». Во множественном числе houses /ˈhaʊzɪz/ звук s превращается в z"
+    translation_ru: дом (здание)
+    frequency_source: "NGSL — требует проверки"
+    collocations: [a big house, my house, a white house]
+    chunks: ["This is my house."]
+    example_en: "[T8]It[/] [D1]is[/] [T1]a[/] big [S2]house[/]."
+    example_ru: "Это большой дом."
+    pattern: "It is a ___ house."
+    substitutions: [big, nice, new, good]
+    situation: Описываете, где живёте
+    usage_note: "Квартира — apartment. House — отдельный дом."
+    typical_error: "Называют квартиру house. В США квартира — apartment."
+  - uid: LX-00007
+    lemma: room
+    meaning: a part of a building with walls, a floor and a ceiling
+    class: S2
+    grammar_features: [countable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): room n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ruːm/"
+    stress_note: "Долгое /uː/"
+    translation_ru: комната
+    frequency_source: "NGSL — требует проверки"
+    collocations: [my room, a big room, a room with a view]
+    chunks: ["This is my room."]
+    example_en: "[T2]This[/] [D1]is[/] [T3]my[/] [S2]room[/]."
+    example_ru: "Это моя комната."
+    pattern: "This is my ___."
+    substitutions: [room, house, book, phone]
+    situation: Показываете квартиру
+    typical_error: "Room — это не «рум» с коротким у: гласная долгая /uː/."
+  - uid: LX-00008
+    lemma: book
+    meaning: a set of printed pages fastened together inside a cover
+    class: S2
+    grammar_features: [countable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): book n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/bʊk/"
+    stress_note: "Короткое /ʊ/, хотя пишется oo"
+    translation_ru: книга
+    frequency_source: "NGSL — требует проверки"
+    collocations: [a good book, my book, read a book]
+    chunks: ["This is my book."]
+    example_en: "[T2]This[/] [D1]is[/] [T3]my[/] [S2]book[/]."
+    example_ru: "Это моя книга."
+    pattern: "This is my ___."
+    substitutions: [book, phone, room, house]
+    situation: Находите свою вещь на столе
+    typical_error: "«This is book» — пропущен определитель. Нужно a, my или the: This is a book."
+  - uid: LX-00009
+    lemma: phone
+    meaning: a device for talking to people far away; a mobile phone
+    class: S2
+    grammar_features: [countable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): phone n., v. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/foʊn/"
+    stress_note: "ph читается как /f/; дифтонг /oʊ/"
+    translation_ru: телефон
+    frequency_source: "NGSL — требует проверки"
+    collocations: [my phone, a new phone, phone number]
+    chunks: ["My phone is new."]
+    example_en: "[T8]I[/] [D1]have[/] [T1]a[/] new [S2]phone[/]."
+    example_ru: "У меня новый телефон."
+    pattern: "I have a new ___."
+    substitutions: [phone, book, house, friend]
+    situation: Хвастаетесь покупкой
+    usage_note: "Мобильный телефон в США — cell phone или просто phone."
+    typical_error: "«I have new phone» — пропуск a перед исчисляемым существительным в единственном числе."
+  - uid: LX-00010
+    lemma: water
+    meaning: the clear liquid that falls as rain and that people drink
+    class: S3
+    grammar_features: [uncountable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): water n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ˈwɑːt̬ɚ/"
+    stress_note: "WA-ter; t между гласными в американском звучит мягко, почти как быстрое /d/ (flap)"
+    translation_ru: вода
+    frequency_source: "NGSL — требует проверки"
+    collocations: [cold water, a glass of water, drink water]
+    chunks: ["Water, please."]
+    example_en: "[S3]Water[/], please."
+    example_ru: "Воды, пожалуйста."
+    pattern: "___, please."
+    substitutions: [Water, Coffee, A coffee]
+    situation: Просите в кафе
+    usage_note: "Water неисчисляемое: не «a water», а some water или a glass of water."
+    typical_error: "«two waters» в значении «два литра воды». Говорят: two glasses of water."
+  - uid: LX-00011
+    lemma: coffee
+    meaning: a hot drink made from roasted coffee beans
+    class: S3
+    grammar_features: [uncountable, countable_in_cafe]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): coffee n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ˈkɔːfi/"
+    stress_note: "CO-ffee; во многих районах США /ˈkɑːfi/"
+    translation_ru: кофе
+    frequency_source: "NGSL — требует проверки"
+    collocations: [hot coffee, a cup of coffee, coffee with milk]
+    chunks: ["Coffee, please."]
+    example_en: "[T8]I[/] [D3]like[/] [S3]coffee[/]."
+    example_ru: "Я люблю кофе."
+    pattern: "I like ___."
+    substitutions: [coffee, water, my room, my family]
+    situation: Говорите о вкусах
+    usage_note: "Как напиток вообще — без a: I like coffee. В кафе a coffee = чашка кофе."
+    typical_error: "Ставят ударение на второй слог (коФЕ). В английском — на первый: CO-ffee."
+  - uid: LX-00012
+    lemma: day
+    meaning: a period of 24 hours
+    class: S7
+    grammar_features: [countable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): day n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/deɪ/"
+    stress_note: "Дифтонг /eɪ/ — «эй»"
+    translation_ru: день
+    frequency_source: "NGSL — требует проверки"
+    collocations: [a good day, every day, have a nice day]
+    chunks: ["Have a nice day!"]
+    example_en: "[D1]Have[/] [T1]a[/] nice [S7]day[/]!"
+    example_ru: "Хорошего дня!"
+    pattern: "Have a nice ___!"
+    substitutions: [day, week, morning]
+    situation: Прощаетесь с кассиром
+    usage_note: "Have a nice day! — стандартное американское прощание в магазине."
+    typical_error: "Произносят «дэ». Нужен дифтонг /eɪ/."
+  - uid: LX-00013
+    lemma: week
+    meaning: a period of seven days
+    class: S7
+    grammar_features: [countable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): week n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/wiːk/"
+    stress_note: "Губы округлены на /w/, потом долгое /iː/"
+    translation_ru: неделя
+    frequency_source: "NGSL — требует проверки"
+    collocations: [this week, next week, a busy week]
+    chunks: ["I have a busy week."]
+    example_en: "[T8]I[/] [D1]have[/] [T1]a[/] busy [S7]week[/]."
+    example_ru: "У меня загруженная неделя."
+    pattern: "I have a busy ___."
+    substitutions: [week, day, morning]
+    situation: Объясняете, почему нет времени
+    typical_error: "Начальное w заменяют на /в/. Губы трубочкой, зубы не касаются губы."
+  - uid: LX-00014
+    lemma: morning
+    meaning: the early part of the day, from when the sun rises until noon
+    class: S7
+    grammar_features: [countable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): morning n. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ˈmɔːrnɪŋ/"
+    stress_note: "MOR-ning; американское r звучит; -ing заканчивается носовым /ŋ/ без «г»"
+    translation_ru: утро
+    frequency_source: "NGSL — требует проверки"
+    collocations: [good morning, in the morning, every morning]
+    chunks: ["Good morning!"]
+    example_en: "Good [S7]morning[/], [S1]Tom[/]!"
+    example_ru: "Доброе утро, Том!"
+    pattern: "Good morning, ___!"
+    substitutions: [Tom, Anna, Mia, my friend]
+    situation: Здороваетесь утром
+    typical_error: "Произносят «морнинг» с г на конце. Окончание -ing — носовое /ŋ/, без «г»."
+  - uid: LX-00015
+    lemma: name
+    meaning: the word that someone or something is called
+    class: S9
+    grammar_features: [countable]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): name n., v. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/neɪm/"
+    stress_note: "Дифтонг /eɪ/; e на конце не читается"
+    translation_ru: имя, название
+    frequency_source: "NGSL — требует проверки"
+    collocations: [my name, your name, first name]
+    chunks: ["My name is Anna.", "My name is Tom."]
+    example_en: "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]."
+    example_ru: "Меня зовут Анна."
+    pattern: "My name is ___."
+    substitutions: [Anna, Tom, Mia]
+    situation: Знакомитесь
+    usage_note: "Русское «меня зовут» по-английски строится через существительное: My name is…"
+    typical_error: "«Me name is» или «I am name Anna». Нужно: My name is Anna."

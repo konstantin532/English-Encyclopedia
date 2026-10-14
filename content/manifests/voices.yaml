@@ -1,0 +1,35 @@
+# Голоса ролей для синтеза (движок Kokoro, американские голоса).
+# Один герой = один голос на весь курс. Голоса синтезированы и не копируют реальных людей.
+engine: kokoro
+model_version: "1.0"
+roles:
+  anna:
+    name_ru: Анна
+    name_en: Anna
+    voice: af_heart
+    speed: 1.0
+  tom:
+    name_ru: Том
+    name_en: Tom
+    voice: am_michael
+    speed: 1.05
+  mia:
+    name_ru: Мия
+    name_en: Mia
+    voice: af_bella
+    speed: 1.05
+  rose:
+    name_ru: Роуз
+    name_en: Rose
+    voice: af_nicole
+    speed: 0.92
+    effect: old_radio
+  neighbor:
+    name_ru: Сосед сверху
+    name_en: The man upstairs
+    voice: am_onyx
+    speed: 0.9
+# Пул для эпизодических героев: водитель, продавщица, судья и т. д.
+extras: [am_eric, af_sarah, am_liam, af_jessica, am_fenrir, af_river]
+# Фон сцены: громкость относительно голоса по уровням (дБ). На A1 фон едва слышен.
+ambience_gain_db: {A1: -30, A1+: -28, A2: -24, A2+: -22, B1: -20, B1+: -19, B2: -18, B2+: -17}

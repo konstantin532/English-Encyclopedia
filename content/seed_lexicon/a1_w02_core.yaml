@@ -1,0 +1,154 @@
+# Пакет A1, неделя 2: have, like, can, do в вопросах; the, that, your.
+level: A1
+week: 2
+units:
+  - uid: LX-00033
+    lemma: have
+    meaning: "to own or possess something"
+    class: D1
+    forms: [has, "'ve"]
+    grammar_features: [irregular, possession]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): have v. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/hæv/"
+    stress_note: "Открытое /æ/ — между «э» и «а». В he/she/it — has /hæz/"
+    translation_ru: иметь; «у меня есть»
+    frequency_source: "NGSL — требует проверки"
+    collocations: [have a phone, have a busy week, have a nice day]
+    chunks: ["Have a nice day!", "Can I have water, please?"]
+    example_en: "[T8]I[/] [D1]have[/] [T1]a[/] [S1]friend[/]."
+    example_ru: "У меня есть друг."
+    pattern: "I have a ___."
+    substitutions: [friend, phone, big family, new book]
+    situation: Рассказываете, что у вас есть
+    usage_note: "Русское «у меня есть» по-английски строится от владельца: I have."
+    typical_error: "«At me is a phone» — дословный перевод. Нужно: I have a phone."
+  - uid: LX-00034
+    lemma: like
+    meaning: "to enjoy something or think it is nice"
+    class: D3
+    forms: [likes]
+    grammar_features: [state_verb]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): like (find sb/sth pleasant) v. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/laɪk/"
+    stress_note: "Дифтонг /aɪ/, глухое /k/"
+    translation_ru: нравиться; любить (о вкусах)
+    frequency_source: "NGSL — требует проверки"
+    collocations: [like coffee, like it, I like my room]
+    chunks: ["I like it!"]
+    example_en: "[T8]I[/] [D3]like[/] [T2]this[/] [S2]room[/]."
+    example_ru: "Мне нравится эта комната."
+    pattern: "I like ___."
+    substitutions: [coffee, this room, my house, it]
+    situation: Говорите о вкусах
+    usage_note: "«Мне нравится X» → I like X: тот, кому нравится, становится первым словом."
+    typical_error: "«Me like» или «To me likes». Нужно: I like."
+  - uid: LX-00035
+    lemma: can
+    meaning: "to be able to or be allowed to do something"
+    class: D7
+    grammar_features: [modal, no_to]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): can1 modal v. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/kæn/"
+    stress_note: "В утверждении слабое /kən/: I can /aɪ kən/. Отрицание can't /kænt/ всегда ударное"
+    translation_ru: мочь, уметь; можно
+    frequency_source: "NGSL — требует проверки"
+    collocations: [can I have, you can have, I can't]
+    chunks: ["Can I have water, please?"]
+    example_en: "[D7]Can[/] [T8]I[/] [D1]have[/] [S3]coffee[/], [O8]please[/]?"
+    example_ru: "Можно мне кофе, пожалуйста?"
+    pattern: "Can I have ___, please?"
+    substitutions: [coffee, water, my phone, your phone]
+    situation: Вежливо просите что-то
+    usage_note: "После can глагол идёт без to: can have, а не can to have."
+    typical_error: "«I can to have» — после can частица to не нужна."
+  - uid: LX-00036
+    lemma: do
+    meaning: "used to make questions and negatives in the present simple"
+    class: D1
+    forms: [does]
+    grammar_features: [auxiliary, irregular]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): do1 v., auxiliary v. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/du/"
+    stress_note: "В вопросе обычно слабое /də/: Do you /dəjə/. Отрицание don't /doʊnt/"
+    translation_ru: "вспомогательный глагол для вопросов и отрицаний (не переводится)"
+    frequency_source: "NGSL — требует проверки"
+    collocations: [do you like, do you have, I don't]
+    chunks: ["Yes, I do.", "No, I don't."]
+    example_en: "[D1]Do[/] [T8]you[/] [D3]like[/] [S3]coffee[/]?"
+    example_ru: "Ты любишь кофе?"
+    pattern: "Do you like ___?"
+    substitutions: [coffee, water, your room, it]
+    situation: Спрашиваете о вкусах
+    usage_note: "В вопросах с обычными глаголами do встаёт в начало. С be и can do не нужен."
+    typical_error: "«You like coffee?» с вопросительной интонацией — понятно, но правильный вопрос: Do you like coffee?"
+  - uid: LX-00037
+    lemma: the
+    meaning: "used before a noun when it is clear which one you mean"
+    class: T1
+    grammar_features: [definite_article]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): the definite article — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ðə/"
+    stress_note: "Перед согласным звуком /ðə/, перед гласным /ði/"
+    translation_ru: "тот самый (часто не переводится)"
+    frequency_source: "NGSL — требует проверки"
+    collocations: [the book, the room, the house]
+    chunks: ["The book is good."]
+    example_en: "[T1]The[/] [S2]room[/] [D1]is[/] [J1]big[/]."
+    example_ru: "Комната большая."
+    pattern: "The ___ is big."
+    substitutions: [room, house, family]
+    situation: Говорите о том, что уже понятно обоим
+    usage_note: "the — «тот, о котором мы оба знаем». Самое частое слово английского языка."
+    typical_error: "Произносят «зе». Нужно межзубное /ð/ и короткое /ə/."
+  - uid: LX-00038
+    lemma: that
+    meaning: "used for a person or thing that is not near you"
+    class: T2
+    grammar_features: [determiner, pronoun_use]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): that det., pron., conj. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/ðæt/"
+    stress_note: "Открытое /æ/; that's = /ðæts/"
+    translation_ru: тот, та, то (далеко); это
+    frequency_source: "NGSL — требует проверки"
+    collocations: [that house, that's nice, that is]
+    chunks: ["That's nice!"]
+    example_en: "[T2]That[/] [S2]house[/] [D1]is[/] [J2]new[/]."
+    example_ru: "Тот дом новый."
+    pattern: "That ___ is new."
+    substitutions: [house, phone, book]
+    situation: Показываете на то, что далеко
+    usage_note: "That's nice! — «Как здорово!» Так реагируют на новость собеседника."
+    typical_error: "Путают this и that. This — рядом со мной, that — дальше."
+  - uid: LX-00039
+    lemma: your
+    meaning: "belonging to the person you are speaking to"
+    class: T3
+    grammar_features: [possessive_determiner]
+    cefr: A1
+    verification_status: partial
+    verification_note: "Oxford 3000 (American English): your det. — A1. Уровень дан для слова, значение отдельно не сверялось"
+    ipa_us: "/jʊr/"
+    stress_note: "Также /jɔr/; в быстрой речи /jɚ/ — звучит как you're"
+    translation_ru: твой, ваш
+    frequency_source: "NGSL — требует проверки"
+    collocations: [your name, your phone, your family]
+    chunks: ["Is this your phone?"]
+    example_en: "[D1]Is[/] [T2]this[/] [T3]your[/] [S2]phone[/]?"
+    example_ru: "Это твой телефон?"
+    pattern: "Is this your ___?"
+    substitutions: [phone, book, room]
+    situation: Находите чужую вещь
+    usage_note: "your (твой) и you're (ты есть) звучат почти одинаково, но пишутся по-разному."
+    typical_error: "Пишут you're вместо your. Your phone — твой телефон."

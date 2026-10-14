@@ -1,0 +1,27 @@
+{% load markers %}
+          <form class="drill" data-drill data-kind="{{ ex.kind }}" data-url="{% if ex.check_url %}{{ ex.check_url }}{% else %}{% url 'api:check_exercise' ex.pk %}{% endif %}" novalidate>
+            <p class="drill-stage">Задание {{ number }} из {{ total }}. {{ ex.get_stage_display }}</p>
+            <p class="drill-prompt" id="q{{ ex.pk }}">{{ ex.prompt_ru }}</p>
+            {% if ex.prompt_en %}<p class="drill-en annotated" lang="en">{{ ex.prompt_en|annotate }}</p>{% endif %}
+            {% if ex.kind == "choice" %}
+              <div class="choice-row" role="group" aria-labelledby="q{{ ex.pk }}">
+                {% for o in ex.options %}<button type="button" class="choice" lang="en" aria-pressed="false" data-choice="{{ o }}">{{ o }}</button>{% endfor %}
+              </div>
+            {% elif ex.kind == "fill" %}
+              <label class="visually-hidden" for="a{{ ex.pk }}">Ваш ответ</label>
+              <input class="fill-input" id="a{{ ex.pk }}" name="answer" lang="en" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="слово по-английски">
+            {% elif ex.kind == "build" %}
+              <div class="build-line" data-build-line aria-live="polite" lang="en"></div>
+              <div class="choice-row" data-build-bank role="group" aria-labelledby="q{{ ex.pk }}">
+                {% for o in ex.options %}<button type="button" class="choice" lang="en" data-word="{{ o }}">{{ o }}</button>{% endfor %}
+              </div>
+            {% endif %}
+            <div class="drill-actions">
+              <button class="btn btn-primary btn-small" type="submit">Проверить</button>
+              {% if ex.kind == "build" %}<button class="btn btn-quiet btn-small" type="button" data-build-reset>Начать заново</button>{% endif %}
+              {% if ex.hint_ru %}<button class="btn btn-quiet btn-small" type="button" data-hint-btn aria-expanded="false" aria-controls="h{{ ex.pk }}">Подсказка</button>{% endif %}
+              <button class="btn btn-quiet btn-small" type="button" data-reveal hidden>Показать ответ</button>
+            </div>
+            {% if ex.hint_ru %}<p class="drill-hint" id="h{{ ex.pk }}" hidden>{{ ex.hint_ru }}</p>{% endif %}
+            <div class="drill-feedback" data-feedback role="status" aria-live="polite" hidden></div>
+          </form>

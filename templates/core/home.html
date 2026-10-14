@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="wrap">
+  <header class="studio-home-heading"><div><h1>Английский становится понятным.</h1><p>Маленькие открытия. Большие перемены.</p></div><span>НАЧАЛО ВАШЕГО ПУТИ · A1</span></header>
+  <section class="studio-home-hero" aria-labelledby="studio-hero-title">
+    <div class="studio-hero-copy"><span class="studio-eyebrow">НЕ ЗУБРИ. ПОЙМИ.</span><h2 id="studio-hero-title">У каждого слова<br>есть <em>своё место.</em></h2><p>Разберите язык на понятные части. Увидьте, как слова соединяются в мысли, а правила — в живую речь.</p><div class="hero-actions">{% if first_lesson %}<a class="btn btn-primary" href="{% url 'lessons:detail' first_lesson.slug %}">Начать первый урок <span aria-hidden="true">→</span></a><span>{{ first_lesson.level.code }} · {{ first_lesson.minutes }} минут</span>{% else %}<a class="btn btn-primary" href="{% url 'curriculum:level' 'a1' %}">Посмотреть курс →</a>{% endif %}</div></div>
+    <div class="studio-hero-art"><div class="studio-phrase-paper"><span>ЯЗЫК В ОДНОЙ ФРАЗЕ</span><p class="studio-phrase" lang="en"><span class="mk" data-cat="T" data-cls="8" data-label="Личное местоимение">I</span><span class="mk" data-cat="D" data-cls="1" data-label="Глагол be">'m</span> <span class="mk" data-cat="S" data-cls="2" data-label="Дом и предметы">home</span>.</p><p>Я дома. Два слова — целая мысль.</p><div class="studio-phrase-roles"><span>кто</span><span>есть</span><span>где</span></div></div></div>
+  </section>
+  <div class="studio-home-lower"><div><div class="studio-section-title"><h2>С чего начинается английский</h2><a href="{% url 'curriculum:level' 'a1' %}">Весь курс ↗</a></div><div class="studio-lessons">{% for lesson in lessons %}<a class="studio-lesson-card" href="{% url 'lessons:detail' lesson.slug %}"><span class="studio-lesson-no">{{ lesson.order|stringformat:'02d' }}</span><div><h3>{{ lesson.title }}</h3><p>{{ lesson.level.code }}{% if lesson.week %} · Неделя {{ lesson.week.number }}{% endif %} · {{ lesson.minutes }} минут · 7 слоёв</p></div><span class="studio-card-arrow" aria-hidden="true">↗</span></a>{% empty %}<p>Уроки готовятся. Пока можно познакомиться с устройством курса.</p>{% endfor %}</div></div><aside class="studio-home-notes">{% if spotlight_unit %}<div class="studio-note"><span class="studio-eyebrow">СЛОВО ДЛЯ ОТКРЫТИЯ</span><h3 lang="en"><span class="mk" data-cat="{{ spotlight_unit.semantic_class.category.code }}" data-cls="{{ spotlight_unit.semantic_class.number }}">{{ spotlight_unit.lemma }}</span></h3><span class="ipa">{{ spotlight_unit.ipa_us }}</span><p>{{ spotlight_unit.translation_ru }}</p><a href="{% url 'lexicon:detail' spotlight_unit.uid %}">Посмотреть ближе ↗</a></div>{% endif %}<div class="studio-note studio-note-warm"><span class="studio-eyebrow">МАЛЕНЬКОЕ ОТКРЫТИЕ</span><blockquote>В русском «есть» часто прячется.<br>В английском — нет.</blockquote><p>Вот почему мы говорим<br><span lang="en">I am at home.</span></p></div></aside></div>
+  <div class="studio-library-stats" aria-label="Готовый контент"><div><strong>{{ units_ready }}</strong><span>единиц в словаре</span></div><div><strong>{{ lessons_ready }}</strong><span>готовых уроков</span></div><div><strong>{{ stories_ready }}</strong><span>историй</span></div><div><strong>{{ poems_ready }}</strong><span>стихотворений</span></div></div>
+</div>
+<section class="section studio-specimen-section">
+  <div class="wrap">
+    <h2>Видеть каждое слово</h2>
+    <p class="hero-lede">Энциклопедия и курс американского английского для тех, кто начинает с нуля. Каждое слово в текстах подчёркнуто по-своему, и вы видите, как собрано предложение.</p>
+
+    <figure class="specimen" aria-labelledby="specimen-ru">
+      <p class="specimen-text annotated" lang="en" data-specimen aria-label="{{ hero_plain }}">
+        {% for t in hero %}<span class="specimen-word" aria-hidden="true"><span><span class="mk" data-cat="{{ t.cat }}" data-cls="{{ t.cls }}" data-label="{{ t.label }}">{{ t.word }}</span>{{ t.punct }}</span><span class="specimen-cap"><span class="swatch" style="--sw: var(--class-{{ t.cls }})"></span>{{ t.caption }}</span></span>{% endfor %}
+      </p>
+      <figcaption class="specimen-footer">
+        <div>
+          <p class="specimen-plain" id="specimen-ru">{{ hero_ru }}</p>
+          <p>В одной фразе все 11 линий. Наведите на слово, чтобы увидеть его класс.</p>
+        </div>
+        <a class="btn btn-quiet btn-small" href="{% url 'taxonomy:legend' %}">Все маркеры и цвета</a>
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<section class="section" aria-labelledby="legend-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="legend-title">Одиннадцать линий</h2>
+      <p>Линия снизу — слово со своим смыслом: предмет, действие, признак. Линия сверху — служебное слово, которое скрепляет фразу. Пунктирное зачёркивание — слово, которое управляет разговором. Тип линии не меняется никогда, от A1 до B2+.</p>
+    </div>
+    <div class="legend">
+      {% for c in categories %}
+        {% if forloop.counter == 1 %}<p class="legend-group">Знаменательные: линия снизу</p>{% elif c.code == "T" %}<p class="legend-group">Служебные: линия сверху</p>{% elif c.code == "F" %}<p class="legend-group">Разговор: зачёркивание</p>{% endif %}
+        {% with first=c.classes.all.0 %}
+        <div class="legend-row">
+          <span class="legend-sample annotated" lang="en"><span class="mk" data-cat="{{ c.code }}" data-cls="{{ first.number }}" data-label="{{ c.name_ru }}: {{ first.name_ru }}">{% cycle 'sister' 'is' 'big' 'often' 'two' 'the' 'under' 'not' 'and' 'hello' 'well' %}</span></span>
+          <span><span class="legend-name">{{ c.name_ru }}</span><span class="legend-meta">{{ c.marker_label }}, {{ c.classes.count }} классов</span></span>
+        </div>
+        {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="track-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="track-title">Путь от первого слова до B2+</h2>
+      <p>{{ totals.units }} учебных единиц, {{ totals.stories }} историй и {{ totals.poems }} стихотворений за восемь уровней. Высота столбца — сколько новых слов и выражений на уровне.</p>
+    </div>
+    <ol class="track" role="list">
+      {% for lv in levels %}
+      <li>
+        <a class="track-level" data-block="{{ lv.block }}" href="{% url 'curriculum:level' lv.slug %}">
+          <span class="track-bar" style="--units: {{ lv.target_units }}"></span>
+          <span class="track-code">{{ lv.code }}</span>
+          <span class="track-meta">{{ lv.target_units }} единиц<br>{{ lv.weeks }} недель<br>{{ lv.story_count }} ист., {{ lv.poem_count }} стих.</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+    <p class="track-note">Светлые столбцы — блок A (2200 единиц), тёмные — блок B (4000). Сейчас в словаре готово {{ units_ready }} из {{ totals.units }}.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="layers-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="layers-title">Каждая тема — семь шагов</h2>
+      <p>От самого простого объяснения к живой речи. Следующий шаг всегда опирается на предыдущий.</p>
+    </div>
+    <ol class="layers-list">
+      <li><div><strong>Что это?</strong><span>Простыми словами, без терминов</span></div></li>
+      <li><div><strong>Почему так называется?</strong><span>Настоящее происхождение слова</span></div></li>
+      <li><div><strong>Как работает?</strong><span>Короткие фразы с маркерами</span></div></li>
+      <li><div><strong>Почему именно так?</strong><span>Логика и сравнение с русским</span></div></li>
+      <li><div><strong>Как говорят американцы</strong><span>Готовые фразы из жизни</span></div></li>
+      <li><div><strong>Исключения и нюансы</strong><span>Только когда основа понятна</span></div></li>
+      <li><div><strong>Попробуйте сами</strong><span>Узнать, подставить, сказать</span></div></li>
+    </ol>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{% load static %}{% static 'js/specimen.js' %}" defer></script>{% endblock %}
