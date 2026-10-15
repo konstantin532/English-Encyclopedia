@@ -11,13 +11,21 @@ from apps.lexicon.models import LexicalUnit
 from apps.poems.models import Poem
 
 
+def _parse_json_object(request):
+    """Отвергает некорректный JSON и значения, отличные от объекта."""
+    try:
+        payload = json.loads(request.body or b"{}")
+    except (json.JSONDecodeError, UnicodeDecodeError):
+        return None
+    return payload if isinstance(payload, dict) else None
+
+
 @require_POST
 def check_exercise(request, pk):
     exercise = get_object_or_404(Exercise.objects.select_related("lesson"), pk=pk, lesson__is_published=True)
-    try:
-        payload = json.loads(request.body or b"{}")
-    except json.JSONDecodeError:
-        return HttpResponseBadRequest("Неверный JSON")
+    payload = _parse_json_object(request)
+    if payload is None:
+        return HttpResponseBadRequest("Неверный JSON: ожидается объект")
     if payload.get("reveal"):
         return JsonResponse({"correct": False, "revealed": True, "answer": exercise.answer,
                              "explanation": exercise.explanation_ru})
@@ -34,10 +42,9 @@ def check_exercise(request, pk):
 @require_POST
 def recall_unit(request, uid):
     unit = get_object_or_404(LexicalUnit, uid=uid)
-    try:
-        payload = json.loads(request.body or b"{}")
-    except json.JSONDecodeError:
-        return HttpResponseBadRequest("Неверный JSON")
+    payload = _parse_json_object(request)
+    if payload is None:
+        return HttpResponseBadRequest("Неверный JSON: ожидается объект")
     explanation = f"{unit.lemma} {unit.ipa_us} — {unit.translation_ru}. Пример: {strip_markup(unit.example_en)}"
     if payload.get("reveal"):
         return JsonResponse({"correct": False, "revealed": True, "answer": unit.lemma, "explanation": explanation})
@@ -56,10 +63,9 @@ def check_poem_gap(request, number, index):
     poem = get_object_or_404(Poem, number=number, is_published=True)
     if index >= len(poem.gaps):
         return JsonResponse({"error": "Нет такого пропуска"}, status=404)
-    try:
-        payload = json.loads(request.body or b"{}")
-    except json.JSONDecodeError:
-        return HttpResponseBadRequest("Неверный JSON")
+    payload = _parse_json_object(request)
+    if payload is None:
+        return HttpResponseBadRequest("Неверный JSON: ожидается объект")
     word = poem.gaps[index]["word"]
     if payload.get("reveal"):
         return JsonResponse({"correct": False, "answer": word})
