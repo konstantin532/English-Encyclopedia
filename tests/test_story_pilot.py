@@ -421,3 +421,26 @@ class ReviewFixTests(TestCase):
         self.assertNotIn("[S1]neighbor[/]", w01)  # Мия не знакомится с Томом заново и не соседка
         w02 = " ".join(l["text"] for l in package()["weekly"][1]["script"])
         self.assertNotIn("[T3]'s[/]", w02)  # притяжательное 's учат только на неделе 4
+
+
+class CanonTests(TestCase):
+    """Согласование канона: Мия знакома с Анной с недели 2; кафе на углу — её работа."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_story_two_does_not_reintroduce_mia(self):
+        hook = Story.objects.get(number=2).hook_ru
+        self.assertNotIn("знакомится", hook)
+        self.assertIn("Ми", hook)
+
+    def test_week_three_order_fits_two_people(self):
+        scene = WeekScene.objects.get(week__number=3)
+        order = scene.script[1]["text"]
+        self.assertIn("[N1]One[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/]", order)
+
+    def test_friends_use_ty_in_week_two(self):
+        ru = " ".join(l.get("ru", "") for l in WeekScene.objects.get(week__number=2).script)
+        self.assertNotIn("ваш телефон", ru)
+        self.assertNotIn("ваша коробка", ru)

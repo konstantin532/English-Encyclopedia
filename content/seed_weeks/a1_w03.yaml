@@ -5,7 +5,7 @@ mission_ru: "Закажите вслух по-английски два напи
 chunks: [LX-00082, LX-00083, LX-00084, LX-00085, LX-00086, LX-00087]
 story_beat:
   intro_ru: "Утро в небольшом кафе. Анна и Том заказывают завтрак. Кофемашина шумит, и бариста не всё слышит с первого раза."
-  outcome_ru: "Заказ принят: два кофе, чай и большое печенье. На столе лежит маленькая семейная фотография — она не Анны и не Тома. Анна берёт фото с собой."
+  outcome_ru: "Заказ принят: кофе, чай и большое печенье. На столе лежит маленькая семейная фотография — она не Анны и не Тома. Анна берёт фото с собой."
   next_hook_ru: "Чья это семья?"
 script:
   - speaker: barista
@@ -13,15 +13,15 @@ script:
     text: "[J3]Good[/] [S7]morning[/]! [S3]Coffee[/] [C1]or[/] [S3]tea[/]?"
     ru: "Доброе утро! Кофе или чай?"
   - speaker: tom
-    text: "[N1]Two[/] [S3]coffees[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]."
-    ru: "Два кофе и один чай, пожалуйста."
+    text: "[N1]One[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]."
+    ru: "Один кофе и один чай, пожалуйста."
   - speaker: barista
     emotion: worried
     text: "[O2]Sorry[/]? [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]?"
     ru: "Простите? Повторите, пожалуйста."
   - speaker: tom
-    text: "[N1]Two[/] [S3]coffees[/] [C1]and[/] [N1]one[/] [S3]tea[/]. [C1]And[/] [D7]can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cookie[/], [O8]please[/]?"
-    ru: "Два кофе и один чай. И можно мне печенье, пожалуйста?"
+    text: "[N1]One[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/]. [C1]And[/] [D7]can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cookie[/], [O8]please[/]?"
+    ru: "Один кофе и один чай. И можно мне печенье, пожалуйста?"
   - speaker: barista
     emotion: happy
     text: "[O4]Yes[/], [T8]you[/] [D7]can[/]. [A3]Here[/] [T8]you[/] [D1]are[/]."
