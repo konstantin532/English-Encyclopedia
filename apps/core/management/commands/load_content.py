@@ -238,7 +238,16 @@ class Command(BaseCommand):
 
     def _audio_manifest(self, *parts: str) -> dict:
         path = Path(settings.BASE_DIR) / "static" / "audio" / Path(*parts) / "manifest.json"
-        data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+        if not path.exists():
+            return {}
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            data = None
+        if not isinstance(data, dict):
+            # Озвучка необязательна: повреждённый манифест не должен останавливать загрузку курса.
+            self.stdout.write(f"Пропущен повреждённый manifest.json: {path.parent.name}. Запустите generate_audio.bat.")
+            return {}
         if data.get("engine") == "test" or data.get("model") == "test-tone":
             self.stdout.write(f"Пропущен тестовый звук без речи: {path.parent.name}. Запустите generate_audio.bat.")
             return {}
