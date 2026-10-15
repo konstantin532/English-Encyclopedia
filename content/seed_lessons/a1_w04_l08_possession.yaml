@@ -1,0 +1,118 @@
+slug: a1-family-possession
+level: A1
+week: 4
+order: 8
+focus: T
+minutes: 40
+title: "Чьё это: his, her и 's (Mia's photo)"
+summary: "Как сказать «его», «её» и «Мии»: his, her и окончание 's. Почему выбор зависит от владельца, а не от вещи."
+units: [LX-00095, LX-00096, LX-00097, LX-00098, LX-00100, LX-00104, LX-00105, LX-00106]
+sound_notes:
+  - text: "Mia's photo"
+    ipa: "/ˈmiəz ˈfoʊt̬oʊ/"
+    note_ru: "'s после гласной звучит как /z/"
+  - text: "His name is Tom."
+    ipa: "/hɪz ˈneɪm ɪz ˈtɑm/"
+    note_ru: "his и is звучат почти одинаково, разница — лёгкое h"
+  - text: "She is happy."
+    ipa: "/ʃi ɪz ˈhæpi/, быстро /ʃiz ˈhæpi/"
+    note_ru: "she is сливается в she's; в happy широкое /æ/"
+contractions:
+  - full: "she is"
+    short: "she's"
+    ipa: "/ʃiz/"
+    note_ru: "Не путайте she's (она есть) и her (её)."
+  - full: "he is"
+    short: "he's"
+    ipa: "/hiz/"
+    note_ru: "he's звучит как «хиз»."
+layers:
+  - number: 1
+    body: |
+      Чтобы вернуть вещь хозяину, нужно сказать, чья она.
+
+      > [S1]Mia[/][T3]'s[/] [S1]brother[/] [D1]is[/] [N1]ten[/]! — Брату Мии десять!
+      > [T3]Her[/] [S1]family[/] [D1]is[/] [J3]nice[/]. — У неё хорошая семья.
+      > [T3]His[/] [S9]name[/] [D1]is[/] [S1]Tom[/]. — Его зовут Том.
+
+      Линия над словом — детерминатив: он показывает, чьё это.
+  - number: 2
+    body: |
+      Окончание **'s** — остаток древнего родительного падежа. Тысячу лет назад в английском были падежи, как в русском, и «дом отца» звучал примерно `fæderes hūs`. Падежи исчезли, а хвост -s остался, только теперь его пишут через апостроф.
+
+      **his** и **he** — одного корня, как и **her** и **she**? Не совсем: she пришло позже, а her — старое слово.
+  - number: 3
+    body: |
+      Схема простая: владелец — 's — вещь.
+
+      > [S1]Mia[/][T3]'s[/] [S2]photo[/] — фото Мии.
+      > [S1]Tom[/][T3]'s[/] [S2]box[/] — коробка Тома.
+
+      - [T3]his[/] — если владелец мужчина или мальчик.
+      - [T3]her[/] — если владелец женщина или девочка.
+      - Сама вещь не важна: her brother — «её брат», хотя брат мужчина.
+  - number: 4
+    body: |
+      В русском «его» и «её» тоже зависят от владельца. А вот «свой» английскому неизвестен: всегда his, her, my, your.
+
+      > [T3]Her[/] [S1]family[/] [D1]is[/] [J3]nice[/]. — У неё хорошая семья.
+      > [T8]She[/] [D1]is[/] [J4]happy[/]. — Она рада.
+
+      Не путайте her (её) и she (она): she делает или есть, her — чьё-то.
+  - number: 5
+    body: |
+      В живой речи he is и she is почти всегда сокращают:
+
+      > [T8]He[/][D1]'s[/] [N1]ten[/]. — Ему десять.
+      > [T8]I[/][D1]'m[/] [J4]happy[/]! — Я рада!
+      > [A3]Here[/] [D1]is[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.
+
+      - Here is в быстрой речи — here's.
+      - 's бывает двух видов: he's = he is, Mia's photo = фото Мии. Различают по смыслу.
+  - number: 6
+    body: |
+      Если владелец оканчивается на s, апостроф иногда ставят без второй s: в разговоре разницы не слышно, и пока это можно не учить.
+
+      Mia's может значить и «Мии», и «Мия есть»: Mia's happy — «Мия рада». Смотрите, что идёт дальше: вещь или описание.
+  - number: 7
+    body: |
+      Четыре задания: выбрать his или her, вставить 's, собрать фразу и сказать о новом человеке.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Мия показывает фото брата. Как сказать «её брат»?"
+    options: ["her brother", "his brother", "she brother"]
+    answer: "her brother"
+    hint_ru: "Владелец — Мия, женщина."
+    explanation_ru: "Выбор зависит от владельца: Мия — her. То, что брат мужчина, не важно."
+    units: [LX-00098]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Скажите «Это фото Тома»."
+    prompt_en: "This is ___ photo."
+    answer: "Tom's"
+    accepted: ["Tom’s"]
+    hint_ru: "Владелец — 's — вещь."
+    explanation_ru: "Tom's photo: к владельцу добавляют 's."
+    units: [LX-00097]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите: «Его зовут Том»."
+    options: [Tom, name, is, His]
+    answer: "His name is Tom"
+    hint_ru: "Дословно: «его имя есть Том»."
+    explanation_ru: "His name is Tom. — his, потому что владелец имени — мужчина."
+    units: [LX-00097, LX-00104]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: вы показываете сестру друга. Её зовут Анна. Скажите «Её зовут Анна»."
+    prompt_en: "___"
+    answer: "Her name is Anna."
+    accepted: ["Her name is Anna", "Her name's Anna."]
+    hint_ru: "Владелец имени — женщина."
+    explanation_ru: "Her name is Anna. — her, потому что имя принадлежит ей."
+    units: [LX-00098]

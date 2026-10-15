@@ -223,3 +223,39 @@ class WeekThreeTests(WeekContentMixin, TestCase):
         self.assertEqual(scene_errors(scene), [])
         scene.script[0]["text"] += " [S6]zebrafish[/]"
         self.assertTrue([e for e in scene_errors(scene) if "zebrafish" in e])
+
+
+from apps.poems.models import Poem
+from apps.stories.models import Story
+
+
+class WeekFourTests(WeekContentMixin, TestCase):
+    week_number, twister_number = 4, 4
+    slugs = ("a1-family-photo", "a1-family-possession")
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_reload_has_no_duplicates(self):
+        self.check_reload()
+
+    def test_lesson_order(self):
+        self.assertEqual([Lesson.objects.get(slug=s).order for s in self.slugs], [7, 8])
+
+    def test_mystery_resolved_in_english(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=4)
+        text = " ".join(line["text"] for line in scene.script)
+        self.assertIn("[T3]my[/] [S2]photo[/]", text)  # Мия сама говорит по-английски, что это её фото
+        self.assertTrue(any(line["speaker"] == "mia" for line in scene.script))
+        self.assertNotIn("Rose", text)
+
+    def test_course_slots_preserved(self):
+        self.assertEqual({s.number: s.week.number for s in Story.objects.filter(number__in=[1, 2, 5])},
+                         {1: 2, 2: 6, 5: 14})
+        self.assertEqual((Story.objects.count(), Poem.objects.count()), (60, 60))
+
+    def test_new_units_have_new_ids_and_unverified_cefr(self):
+        new = LexicalUnit.objects.filter(uid__gte="LX-00055")
+        self.assertGreater(new.count(), 40)
+        self.assertEqual(new.count(), len(set(new.values_list("uid", flat=True))))
+        self.assertEqual(set(new.values_list("cefr", flat=True)), {"unverified"})

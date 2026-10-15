@@ -1,0 +1,262 @@
+# Пилот, неделя 4 «Семья на фото»: родственники, he/she, his/her, кто это. CEFR не сверялся.
+level: A1
+week: 4
+units:
+- uid: LX-00088
+  lemma: brother
+  meaning: a son of the same parents
+  class: S1
+  forms:
+  - brothers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbrʌðɚ/
+  translation_ru: брат
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/].'
+  example_ru: Это мой брат.
+  situation: Рассказываете о семье по фотографии
+  usage_note: th звонкий и американское r в конце.
+- uid: LX-00089
+  lemma: sister
+  meaning: a daughter of the same parents
+  class: S1
+  forms:
+  - sisters
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsɪstɚ/
+  translation_ru: сестра
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S1]sister[/].'
+  example_ru: Это моя сестра.
+  situation: Рассказываете о семье по фотографии
+- uid: LX-00090
+  lemma: grandmother
+  meaning: the mother of your mother or father
+  class: S1
+  forms:
+  - grandmothers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɡrænˌmʌðɚ/
+  translation_ru: бабушка
+  example_en: '[T3]My[/] [S1]grandmother[/] [D1]is[/] [J3]nice[/].'
+  example_ru: Моя бабушка добрая.
+  situation: Рассказываете о семье по фотографии
+  usage_note: 'd в grand обычно не слышно: «грэнмазэр».'
+- uid: LX-00091
+  lemma: grandfather
+  meaning: the father of your mother or father
+  class: S1
+  forms:
+  - grandfathers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɡrænˌfɑðɚ/
+  translation_ru: дедушка
+  example_en: '[T3]My[/] [S1]grandfather[/] [D1]is[/] [J4]busy[/].'
+  example_ru: Мой дедушка занят.
+  situation: Рассказываете о семье по фотографии
+- uid: LX-00092
+  lemma: son
+  meaning: a male child
+  class: S1
+  forms:
+  - sons
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sʌn/
+  translation_ru: сын
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S1]son[/].'
+  example_ru: Это мой сын.
+  situation: Рассказываете о семье по фотографии
+  usage_note: Звучит так же, как sun — «солнце».
+- uid: LX-00093
+  lemma: daughter
+  meaning: a female child
+  class: S1
+  forms:
+  - daughters
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈdɔt̬ɚ/
+  translation_ru: дочь
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S1]daughter[/].'
+  example_ru: Это моя дочь.
+  situation: Рассказываете о семье по фотографии
+  usage_note: gh не читается; t между гласными — быстрое d.
+- uid: LX-00094
+  lemma: baby
+  meaning: a very young child
+  class: S1
+  forms:
+  - babies
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbeɪbi/
+  translation_ru: малыш, младенец
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S1]baby[/] [S1]brother[/].'
+  example_ru: Это мой младший братик.
+  situation: Рассказываете о семье по фотографии
+- uid: LX-00095
+  lemma: he
+  meaning: used for a man or boy
+  class: T8
+  forms:
+  - '''s'
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hi/
+  translation_ru: он
+  example_en: '[T8]He[/] [D1]is[/] [T3]my[/] [S1]brother[/].'
+  example_ru: Он мой брат.
+  situation: Рассказываете о семье по фотографии
+- uid: LX-00096
+  lemma: she
+  meaning: used for a woman or girl
+  class: T8
+  forms:
+  - '''s'
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ʃi/
+  translation_ru: она
+  example_en: '[T8]She[/] [D1]is[/] [T3]my[/] [S1]sister[/].'
+  example_ru: Она моя сестра.
+  situation: Рассказываете о семье по фотографии
+- uid: LX-00097
+  lemma: his
+  meaning: belonging to him
+  class: T3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hɪz/
+  translation_ru: его
+  example_en: '[T3]His[/] [S9]name[/] [D1]is[/] [S1]Tom[/].'
+  example_ru: Его зовут Том.
+  situation: Рассказываете о семье по фотографии
+  usage_note: Выбор his/her зависит от владельца, а не от вещи.
+- uid: LX-00098
+  lemma: her
+  meaning: belonging to her
+  class: T3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hɚ/
+  translation_ru: её
+  example_en: '[T3]Her[/] [S9]name[/] [D1]is[/] [S1]Mia[/].'
+  example_ru: Её зовут Мия.
+  situation: Рассказываете о семье по фотографии
+  usage_note: Выбор his/her зависит от владельца, а не от вещи.
+- uid: LX-00099
+  lemma: who
+  meaning: what person
+  class: T9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hu/
+  translation_ru: кто
+  example_en: '[T9]Who[/] [D1]is[/] [T2]this[/]?'
+  example_ru: Кто это?
+  situation: Рассказываете о семье по фотографии
+- uid: LX-00100
+  lemma: happy
+  meaning: feeling good
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhæpi/
+  translation_ru: счастливый, радостный
+  example_en: '[T8]I[/] [D1]am[/] [J4]happy[/].'
+  example_ru: Я рада.
+  situation: Рассказываете о семье по фотографии
+- uid: LX-00101
+  lemma: Who is this?
+  meaning: Asking about a person
+  class: T9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhu ɪz ˈðɪs/
+  translation_ru: Кто это?
+  example_en: Who is this?
+  example_ru: Кто это?
+  situation: Семья на фото
+  usage_note: Учите и произносите фразу целиком. Слова внутри неё вводятся с этой недели.
+- uid: LX-00102
+  lemma: This is my brother.
+  meaning: Introducing a family member
+  class: S1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ðɪs ɪz maɪ ˈbrʌðɚ/
+  translation_ru: Это мой брат.
+  example_en: This is my brother.
+  example_ru: Это мой брат.
+  situation: Семья на фото
+  usage_note: Учите и произносите фразу целиком. Слова внутри неё вводятся с этой недели.
+- uid: LX-00103
+  lemma: Is this your family?
+  meaning: Asking about a family photo
+  class: S1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪz ðɪs jɚ ˈfæməli/
+  translation_ru: Это ваша семья?
+  example_en: Is this your family?
+  example_ru: Это ваша семья?
+  situation: Семья на фото
+  usage_note: Учите и произносите фразу целиком. Слова внутри неё вводятся с этой недели.
+- uid: LX-00104
+  lemma: His name is Tom.
+  meaning: Saying a man's name
+  class: T3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /hɪz ˈneɪm ɪz ˈtɑm/
+  translation_ru: Его зовут Том.
+  example_en: His name is Tom.
+  example_ru: Его зовут Том.
+  situation: Семья на фото
+  usage_note: Учите и произносите фразу целиком. Слова внутри неё вводятся с этой недели.
+- uid: LX-00105
+  lemma: Here is your photo.
+  meaning: Giving back a photo
+  class: A3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhɪr ɪz jɚ ˈfoʊt̬oʊ/
+  translation_ru: Вот ваша фотография.
+  example_en: Here is your photo.
+  example_ru: Вот ваша фотография.
+  situation: Семья на фото
+  usage_note: Учите и произносите фразу целиком. Слова внутри неё вводятся с этой недели.
+- uid: LX-00106
+  lemma: I am happy!
+  meaning: Saying you feel glad
+  class: J4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ əm ˈhæpi/
+  translation_ru: Я так рада!
+  example_en: I am happy!
+  example_ru: Я так рада!
+  situation: Семья на фото
+  usage_note: Учите и произносите фразу целиком. Слова внутри неё вводятся с этой недели.
