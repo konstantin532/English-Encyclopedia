@@ -11,6 +11,7 @@
 import argparse
 import importlib.util
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -22,6 +23,7 @@ gen = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(gen)
 
 PACKAGE = HERE.parent / "docs" / "pilots" / "a1-four-weeks" / "assessment.yaml"
+ENTRY_ID = re.compile(r"[a-z0-9][a-z0-9-]{0,31}")
 
 
 def allowed_root() -> Path:
@@ -65,7 +67,10 @@ def main(argv: list[str] | None = None) -> None:
     voices = yaml.safe_load((HERE.parent / "content" / "manifests" / "voices.yaml").read_text(encoding="utf-8"))
     engine = gen.KokoroEngine(args.models) if args.engine == "kokoro" else gen.TestEngine()
     for entry_id, script in entries(data):
-        refuse_symlinks(out / entry_id, allowed_root())
+        # Имя разговора — только простое имя папки (w01, pre…), без «..», «/» и пустоты.
+        if not isinstance(entry_id, str) or not ENTRY_ID.fullmatch(entry_id):
+            sys.exit(f"Неверное имя разговора {entry_id!r}: допустимы латинские буквы, цифры и дефис")
+        checked_output(str(out / entry_id))
         rendered = gen.render(engine, f"проба {entry_id}", script, voices["roles"], voices, out / entry_id, data["level"])
         print(f"Проба {entry_id}: " + ", ".join(f"{k} {v['seconds']} с" for k, v in rendered.items()))
 

@@ -72,3 +72,21 @@ class PilotAudioPathSafetyTests(PilotAudioTests.__mro__[0]):
     def test_prefix_trick_rejected(self):
         with self.assertRaises(SystemExit):
             pilot.main(["--engine", "test", "--output", str(self.tmp / "static" / "audio" / "pilot-a1-evil")])
+
+
+class PilotEntryIdTests(PilotAudioTests.__mro__[0]):
+    """Замечание P1 бота Codex в PR #4: имя разговора не должно выводить запись за pilot-a1."""
+
+    def test_entry_id_cannot_escape_pilot_folder(self):
+        weeks = self.tmp / "static" / "audio" / "weeks" / "a1-w01"
+        weeks.mkdir(parents=True)
+        for bad_id in ("../weeks/a1-w01", "/tmp/evil", "w01/../../weeks", ""):
+            package = self.tmp / "package.yaml"
+            package.write_text(
+                "level: A1\nweekly:\n  - id: \"%s\"\n    max_week: 1\n    script:\n"
+                "      - speaker: anna\n        text: \"[T8]I[/] [D1]am[/] [S1]Anna[/].\"\nforms: []\n" % bad_id,
+                encoding="utf-8")
+            with self.subTest(entry_id=bad_id), mock.patch.object(pilot, "PACKAGE", package):
+                with self.assertRaises(SystemExit):
+                    pilot.main(["--engine", "test", "--output", str(self.out)])
+            self.assertEqual(list(weeks.iterdir()), [])

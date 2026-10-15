@@ -444,3 +444,20 @@ class CanonTests(TestCase):
         ru = " ".join(l.get("ru", "") for l in WeekScene.objects.get(week__number=2).script)
         self.assertNotIn("ваш телефон", ru)
         self.assertNotIn("ваша коробка", ru)
+
+
+class BrokenManifestTests(TestCase):
+    """Замечание P2 бота Codex в PR #4: повреждённый manifest.json не должен ронять загрузку курса."""
+
+    def test_non_object_or_broken_manifest_is_skipped(self):
+        for body in ("[]", '"corrupt"', "{not json", ""):
+            tmp = Path(tempfile.mkdtemp())
+            try:
+                folder = tmp / "static" / "audio" / "weeks" / "a1-w01"
+                folder.mkdir(parents=True)
+                (folder / "manifest.json").write_text(body, encoding="utf-8")
+                with self.subTest(body=body), override_settings(BASE_DIR=tmp):
+                    call_command("load_content", verbosity=0)
+                    self.assertEqual(WeekScene.objects.get(week__level__code="A1", week__number=1).audio, {})
+            finally:
+                shutil.rmtree(tmp, ignore_errors=True)
