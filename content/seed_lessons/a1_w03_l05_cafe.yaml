@@ -22,14 +22,14 @@ layers:
     body: |
       В кафе нужны три умения: попросить, выбрать и переспросить.
 
-      > [D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cake[/], [O8]please[/]? — Можно мне пирожное, пожалуйста?
+      > [D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cookie[/], [O8]please[/]? — Можно мне печенье, пожалуйста?
       > [S3]Coffee[/] [C1]or[/] [S3]tea[/]? — Кофе или чай?
       > [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]? — Можете повторить, пожалуйста?
 
       Последняя фраза — ваш главный помощник. Не поняли — переспросите. Так делают все, даже американцы.
   - number: 2
     body: |
-      **or** и **and** — очень старые слова. В древнеанглийском «и» звучало почти так же: `and`. Слово **or** — сокращение от старого `other`, «другой»: «кофе — или другое, чай».
+      **or** и **and** — очень старые слова. В древнеанглийском «и» звучало почти так же: `and`. Слово **or** — укороченный среднеанглийский союз `other`, который уже тогда значил «или».
 
       **sorry** родственно слову sore, «больной, ноющий». Сначала sorry значило «мне больно, мне жаль». Сегодня это и извинение, и вежливая просьба повторить.
   - number: 3
@@ -78,7 +78,7 @@ exercises:
     kind: choice
     stage: recognition
     prompt_ru: "Вы не расслышали бариста. Что сказать?"
-    options: ["Sorry? Can you say it again, please?", "No, it is not my cake.", "Thank you!"]
+    options: ["Sorry? Can you say it again, please?", "No, it is not my cookie.", "Thank you!"]
     answer: "Sorry? Can you say it again, please?"
     hint_ru: "Нужна просьба повторить."
     explanation_ru: "Sorry? Can you say it again, please? — вежливая просьба повторить. Так вы сами управляете разговором."
@@ -95,11 +95,11 @@ exercises:
   - order: 3
     kind: build
     stage: production
-    prompt_ru: "Соберите просьбу: «Можно мне пирожное, пожалуйста?»"
-    options: [have, please, Can, a, cake, I]
-    answer: "Can I have a cake please"
+    prompt_ru: "Соберите просьбу: «Можно мне печенье, пожалуйста?»"
+    options: [have, please, Can, a, cookie, I]
+    answer: "Can I have a cookie please"
     hint_ru: "Начните с Can I."
-    explanation_ru: "Can I have …, please? — вежливая просьба. Перед cake нужен a."
+    explanation_ru: "Can I have …, please? — вежливая просьба. Перед cookie нужен a."
     units: [LX-00056]
   - order: 4
     kind: fill
@@ -107,7 +107,7 @@ exercises:
     prompt_ru: "Новая ситуация: вам предлагают кофе или чай, а вы хотите чай. Ответьте коротко и вежливо."
     prompt_en: "Coffee or tea? — ___"
     answer: "Tea, please."
-    accepted: ["Tea please", "A tea, please.", "A tea please", "One tea, please.", "Can I have a tea, please?", "Can I have tea, please?"]
+    accepted: ["A tea, please.", "One tea, please.", "Can I have a tea, please?", "Can I have tea, please?", "Tea, thanks.", "Tea, thank you.", "A tea, thanks."]
     hint_ru: "Назовите напиток и добавьте please."
     explanation_ru: "Достаточно назвать напиток и сказать please: Tea, please. Полная просьба Can I have a tea, please? тоже верна."
     units: [LX-00055, LX-00082]

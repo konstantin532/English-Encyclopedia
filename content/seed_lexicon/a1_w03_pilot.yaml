@@ -21,22 +21,23 @@ units:
   situation: Заказываете напиток
   usage_note: В заказе a tea — «чашка чая».
 - uid: LX-00056
-  lemma: cake
-  meaning: a sweet baked food
+  lemma: cookie
+  meaning: a small sweet baked food
   class: S3
   forms:
-  - cakes
+  - cookies
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
-  ipa_us: /keɪk/
-  translation_ru: торт, пирожное
+  ipa_us: /ˈkʊki/
+  translation_ru: печенье
   collocations:
-  - a big cake
-  - a nice cake
-  example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cake[/], [O8]please[/]?'
-  example_ru: Можно мне пирожное?
+  - a big cookie
+  - coffee and a cookie
+  example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cookie[/], [O8]please[/]?'
+  example_ru: Можно мне печенье?
   situation: Заказываете сладкое
+  usage_note: В американском кафе к кофе обычно берут cookie — большое печенье.
 - uid: LX-00057
   lemma: photo
   meaning: a picture made with a camera
@@ -428,7 +429,7 @@ units:
   unit_type: phrase
   cefr: unverified
   verification_status: pending
-  ipa_us: /ju ɚ ˈwɛlkəm/
+  ipa_us: /ju ɑr ˈwɛlkəm/, быстро /jɚ ˈwɛlkəm/
   translation_ru: Пожалуйста. (в ответ на спасибо)
   example_en: You are welcome.
   example_ru: Пожалуйста. (в ответ на спасибо)

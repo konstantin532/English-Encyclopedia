@@ -108,8 +108,6 @@ units:
   lemma: he
   meaning: used for a man or boy
   class: T8
-  forms:
-  - '''s'
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -122,8 +120,6 @@ units:
   lemma: she
   meaning: used for a woman or girl
   class: T8
-  forms:
-  - '''s'
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

@@ -5,12 +5,13 @@ mission_ru: "Возьмите семейное фото и назовите по
 chunks: [LX-00101, LX-00102, LX-00103, LX-00104, LX-00105, LX-00106]
 story_beat:
   intro_ru: "На следующий день Анна и Том приходят к Мие с фотографией из кафе. Вдруг она знает эту семью?"
-  outcome_ru: "Это семья Мии: мама, папа и младший брат. Мия обронила фото в кафе на углу. Анна возвращает его, и Мия очень рада."
-  next_hook_ru: "Дома Анна думает: в её новом доме тоже, наверное, жила большая семья. Кто были эти люди?"
+  outcome_ru: "Это семья Мии: мама, папа и брат, которому десять. Анна возвращает фото, и Мия очень рада."
+  next_hook_ru: "Впереди новая неделя — и новые места в городке."
 script:
   - speaker: anna
     emotion: happy
-    text: "[S1]Mia[/], [T2]this[/] [D1]is[/] [T1]a[/] [S2]photo[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S1]family[/]?"
+    text: "[S1]Mia[/], [A3]here[/] [D1]is[/] [T1]a[/] [S2]photo[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S1]family[/]?"
+    spoken: "[S1]Mia[/], [A3]here[/][D1]'s[/] [T1]a[/] [S2]photo[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S1]family[/]?"
     ru: "Мия, вот фотография. Это твоя семья?"
   - speaker: mia
     emotion: excited
@@ -35,8 +36,8 @@ script:
     ru: "Да. А это мой папа."
   - speaker: tom
     emotion: happy
-    text: "[T3]Her[/] [S1]family[/] [D1]is[/] [J3]nice[/]. [S1]Mia[/][T3]'s[/] [S1]brother[/] [D1]is[/] [N1]ten[/]!"
-    ru: "Какая у неё славная семья. Брату Мии десять!"
+    text: "[T3]Your[/] [S1]family[/] [D1]is[/] [J3]nice[/], [S1]Mia[/]!"
+    ru: "У тебя славная семья, Мия!"
   - speaker: anna
     emotion: happy
     text: "[A3]Here[/] [D1]is[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]."

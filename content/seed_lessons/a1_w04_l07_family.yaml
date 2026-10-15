@@ -101,7 +101,7 @@ exercises:
     prompt_ru: "Новое фото: на нём ваша сестра, ей двенадцать. Скажите это двумя короткими фразами."
     prompt_en: "___"
     answer: "This is my sister. She is twelve."
-    accepted: ["This is my sister. She's twelve.", "This is my sister, she is twelve.", "This is my sister. She is twelve", "This is my sister, she's twelve."]
+    accepted: ["This is my sister. She's twelve.", "This is my sister. She is 12.", "This is my sister. She's 12."]
     hint_ru: "Сначала this is…, потом she is…"
     explanation_ru: "This is my sister. She is twelve. — сначала показываем, потом говорим she и возраст через be."
     units: [LX-00089, LX-00096, LX-00073]

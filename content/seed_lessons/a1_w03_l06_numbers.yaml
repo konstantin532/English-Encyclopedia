@@ -4,7 +4,7 @@ week: 3
 order: 6
 focus: N
 minutes: 40
-title: "Числа от 1 до 20: сколько чашек и пирожных"
+title: "Числа от 1 до 20: сколько чашек и печений"
 summary: "Числа для заказа: one, two, three… twenty. Где ударение в thirteen и почему two coffees, а не two coffee."
 units: [LX-00061, LX-00062, LX-00063, LX-00064, LX-00065, LX-00066, LX-00067, LX-00068, LX-00069, LX-00070, LX-00071, LX-00072, LX-00073, LX-00074, LX-00075, LX-00076, LX-00077, LX-00078, LX-00079, LX-00080, LX-00081, LX-00083]
 sound_notes:
@@ -20,12 +20,12 @@ sound_notes:
 layers:
   - number: 1
     body: |
-      Числа нужны в первый же час в кафе: сколько чашек, сколько пирожных.
+      Числа нужны в первый же час в кафе: сколько чашек, сколько печений.
 
       > [N1]Two[/] [S3]coffees[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]. — Два кофе и один чай, пожалуйста.
       > [N1]Three[/] [S3]teas[/], [O8]please[/]. — Три чая, пожалуйста.
 
-      Пунктирная линия над словом — числительное.
+      Штриховая линия под словом — числительное.
   - number: 2
     body: |
       Английское **number** и русское «нумерация» — от латинского `numerus`, «число».
@@ -37,10 +37,10 @@ layers:
 
       > [N1]One[/] [S3]coffee[/], [O8]please[/]. — Один кофе.
       > [N1]Two[/] [S3]coffees[/], [O8]please[/]. — Два кофе.
-      > [N1]Five[/] [S3]cakes[/], [O8]please[/]. — Пять пирожных.
+      > [N1]Five[/] [S3]cookies[/], [O8]please[/]. — Пять печений.
 
       - one — без -s, от двух и дальше — с -s.
-      - В русском «два кофе», «пять пирожных» меняют окончания по-разному, в английском -s одно на все числа.
+      - В русском «два кофе», «пять печений» меняют окончания по-разному, в английском -s одно на все числа.
   - number: 4
     body: |
       Почему -s, даже когда число уже сказано? Английский отмечает «много» у самого слова. Число и -s говорят одно и то же дважды, и это нормально.
@@ -54,7 +54,7 @@ layers:
       > [N1]Fifteen[/] — ударение в конце.
       > [N1]Twenty[/] — ударение в начале.
 
-      - В -teen ударение на конце: thir-TEEN, fif-TEEN.
+      - В -teen ударение на конце: thir-TEEN, fif-TEEN. Перед существительным оно часто уходит вперёд: THIR-teen coffees.
       - [O2]Thanks[/] — короткое «спасибо», его часто слышно в кафе.
   - number: 6
     body: |
@@ -98,7 +98,7 @@ exercises:
     prompt_ru: "Новая ситуация: вас четверо, и всем нужен чай. Закажите."
     prompt_en: "___"
     answer: "Four teas, please."
-    accepted: ["Four teas please", "Can I have four teas, please?", "Can I have four teas please?", "Four teas, please"]
+    accepted: ["Can I have four teas, please?", "4 teas, please.", "Four teas, thanks.", "4 teas, thanks."]
     hint_ru: "Число, предмет с -s и please."
     explanation_ru: "Four teas, please. Можно и полной просьбой: Can I have four teas, please?"
     units: [LX-00065, LX-00055]

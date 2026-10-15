@@ -357,3 +357,67 @@ class AssessmentPackageTests(TestCase):
         e = package()["weekly"][0]
         e["script"][0]["text"] += " [S1]brother[/]"  # brother вводится только на неделе 4
         self.assertTrue([p for p in entry_problems(e) if p.startswith("brother")])
+
+
+from apps.drills.models import Exercise  # noqa: E402
+
+
+class ReviewFixTests(TestCase):
+    """Исправления по итоговому независимому ревью пилота."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_commas_do_not_decide_answer(self):
+        ex = Exercise(answer="Tea, please.", accepted=[])
+        self.assertTrue(ex.is_correct("tea please"))
+        self.assertTrue(ex.is_correct("Tea,please!"))
+        self.assertFalse(ex.is_correct("Coffee, please."))
+
+    def test_transfer_accepts_digits_and_thanks(self):
+        cafe = Lesson.objects.get(slug="a1-cafe-order").exercises.get(stage="transfer")
+        for answer in ("Tea, thanks.", "One tea please", "Can I have a tea please?"):
+            self.assertTrue(cafe.is_correct(answer), answer)
+        numbers = Lesson.objects.get(slug="a1-numbers-1-20").exercises.get(stage="transfer")
+        self.assertTrue(numbers.is_correct("4 teas, please"))
+        family = Lesson.objects.get(slug="a1-family-photo").exercises.get(stage="transfer")
+        self.assertTrue(family.is_correct("This is my sister. She is 12."))
+
+    def test_pronouns_have_no_be_forms(self):
+        for lemma in ("he", "she"):
+            self.assertEqual(LexicalUnit.objects.get(lemma=lemma).forms, [])
+
+    def test_cafe_sells_cookies_not_whole_cakes(self):
+        scene = WeekScene.objects.get(week__number=3)
+        text = " ".join(l["text"] for l in scene.script)
+        self.assertIn("cookie", text)
+        self.assertNotIn("cake", text)
+        self.assertFalse(LexicalUnit.objects.filter(lemma="cake").exists())
+
+    def test_russian_frame_adds_no_facts(self):
+        w3 = WeekScene.objects.get(week__number=3).story_beat
+        w4 = WeekScene.objects.get(week__number=4).story_beat
+        self.assertNotIn("на углу", w3["intro_ru"] + w3["outcome_ru"] + w4["outcome_ru"])
+        self.assertNotIn("обронила", w4["outcome_ru"])
+        self.assertNotIn("хозяина", w3["outcome_ru"])
+
+    def test_numbers_lesson_describes_marker_correctly(self):
+        body = Lesson.objects.get(slug="a1-numbers-1-20").layers.get(number=1).body
+        self.assertNotIn("линия над словом", body)
+        self.assertIn("Штриховая линия под словом", body)
+
+    def test_forms_share_goals(self):
+        """pre/post/delayed: заказ с числом → сбой «Sorry?» → кто на фото — одна схема."""
+        for e in package()["forms"]:
+            text = " ".join(l["text"] for l in e["script"])
+            with self.subTest(id=e["id"]):
+                self.assertIn("[N1]", text)
+                self.assertIn("[O2]Sorry[/]?", text)
+                self.assertTrue("[S2]photo[/]" in text or "[S1]family[/]" in text or "[T9]Who[/]" in text)
+
+    def test_assessment_canon(self):
+        w01 = " ".join(l["text"] for l in package()["weekly"][0]["script"])
+        self.assertNotIn("[S1]neighbor[/]", w01)  # Мия не знакомится с Томом заново и не соседка
+        w02 = " ".join(l["text"] for l in package()["weekly"][1]["script"])
+        self.assertNotIn("[T3]'s[/]", w02)  # притяжательное 's учат только на неделе 4

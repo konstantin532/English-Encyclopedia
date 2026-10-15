@@ -49,3 +49,26 @@ class PilotAudioTests(SimpleTestCase):
     def test_output_is_required(self):
         with self.assertRaises(SystemExit):
             pilot.main(["--engine", "test"])
+
+
+class PilotAudioPathSafetyTests(PilotAudioTests.__mro__[0]):
+    def test_symlinked_root_rejected(self):
+        weeks = self.tmp / "static" / "audio" / "weeks"
+        weeks.mkdir()
+        shutil.rmtree(self.out)
+        self.out.symlink_to(weeks, target_is_directory=True)
+        with self.assertRaises(SystemExit):
+            pilot.main(["--engine", "test", "--output", str(self.out)])
+        self.assertEqual(list(weeks.iterdir()), [])
+
+    def test_symlinked_subfolder_rejected(self):
+        weeks = self.tmp / "static" / "audio" / "weeks"
+        weeks.mkdir()
+        (self.out / "w01").symlink_to(weeks, target_is_directory=True)
+        with self.assertRaises(SystemExit):
+            pilot.main(["--engine", "test", "--output", str(self.out)])
+        self.assertEqual(list(weeks.iterdir()), [])
+
+    def test_prefix_trick_rejected(self):
+        with self.assertRaises(SystemExit):
+            pilot.main(["--engine", "test", "--output", str(self.tmp / "static" / "audio" / "pilot-a1-evil")])

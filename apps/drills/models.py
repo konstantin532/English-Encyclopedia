@@ -38,7 +38,8 @@ class Exercise(models.Model):
 
     @staticmethod
     def normalize(text: str) -> str:
-        return " ".join(text.lower().replace("’", "'").strip(" .!?").split())
+        # Запятые не решают верность ответа: «Tea, please» = «Tea please».
+        return " ".join(text.lower().replace("’", "'").replace(",", " ").strip(" .!?").split())
 
     def is_correct(self, given: str) -> bool:
         given_n = self.normalize(given)
