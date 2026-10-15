@@ -94,10 +94,10 @@ exercises:
     kind: choice
     stage: recognition
     prompt_ru: "Как правильно сказать «Мне нравится кофе»?"
-    options: ["I like coffee.", "Me like coffee.", "Coffee likes me."]
+    options: ["I like coffee.", "I likes coffee.", "I coffee like."]
     answer: "I like coffee."
     hint_ru: "Кто первым словом — тот, кому нравится."
-    explanation_ru: "По-английски «мне нравится» строится от человека: I like coffee. Me like — ошибка, Coffee likes me — «кофе любит меня»."
+    explanation_ru: "По-английски «мне нравится» строится от человека: I like coffee. После I нужен like без -s. Обычный порядок слов: кто — глагол — что."
     units: [LX-00034]
   - order: 2
     kind: fill
@@ -126,3 +126,13 @@ exercises:
     hint_ru: "Вопрос начинается с помощника."
     explanation_ru: "Do в начале сообщает о вопросе, дальше обычный порядок: you have a book."
     units: [LX-00036, LX-00033]
+  - order: 5
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: спросите друга, есть ли у него кот."
+    prompt_en: "___"
+    answer: "Do you have a cat?"
+    accepted: ["Do you have a cat"]
+    hint_ru: "Вопрос с have начинается с do."
+    explanation_ru: "Do you have a cat? — do в начале, дальше обычный порядок."
+    units: [LX-00036, LX-00033, LX-00041]

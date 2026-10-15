@@ -1,0 +1,107 @@
+slug: a1-family-photo
+level: A1
+week: 4
+order: 7
+focus: S
+minutes: 40
+title: "Семья на фото: brother, sister и вопрос Who is this?"
+summary: "Слова о семье и как спросить о человеке на фотографии: Who is this? Is this your mother?"
+units: [LX-00088, LX-00089, LX-00090, LX-00091, LX-00092, LX-00093, LX-00094, LX-00099, LX-00101, LX-00102, LX-00103]
+sound_notes:
+  - text: "Who is this?"
+    ipa: "/ˈhu ɪz ˈðɪs/"
+    note_ru: "who звучит «ху», w не читается"
+  - text: "brother"
+    ipa: "/ˈbrʌðɚ/"
+    note_ru: "звонкий th в середине и американское r в конце"
+  - text: "daughter"
+    ipa: "/ˈdɔt̬ɚ/"
+    note_ru: "gh молчит, t между гласными — быстрое d: «дОдэр»"
+layers:
+  - number: 1
+    body: |
+      На семейном фото всегда хочется спросить: кто это?
+
+      > [T9]Who[/] [D1]is[/] [T2]this[/]? — Кто это?
+      > [T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/]. — Это мой брат.
+      > [D1]Is[/] [T2]this[/] [T3]your[/] [S1]mother[/]? — Это твоя мама?
+
+      Слова о семье подчёркнуты сплошной красной линией: это существительные класса «Люди и семья».
+  - number: 2
+    body: |
+      **brother**, **mother**, **father** — очень древние слова. Сравните с русскими: брат, мать. Это не совпадение: у английского и русского общий далёкий предок, и названия родных сохранились в обоих языках.
+
+      **daughter** родственно русскому «дочь». Буквы gh когда-то читались, но звук давно исчез, а написание осталось.
+  - number: 3
+    body: |
+      Вопрос о человеке строят с **who** и глаголом be:
+
+      > [T9]Who[/] [D1]is[/] [T2]this[/]? — Кто это?
+      > [D1]Is[/] [T2]this[/] [T3]your[/] [S1]family[/]? — Это твоя семья?
+
+      - [T9]Who[/] — первым словом, дальше is и this.
+      - В вопросе да/нет be выходит вперёд: Is this…?
+      - Отвечают коротко: Yes, it is. No, it is not.
+  - number: 4
+    body: |
+      Почему о человеке на фото говорят this, а не he или she? Пока мы не знаем, кто это, мы показываем на снимок: «это». Когда человек назван, переходим на he или she:
+
+      > [T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/]. [T8]He[/] [D1]is[/] [N1]ten[/]. — Это мой брат. Ему десять.
+
+      Возраст по-английски говорят через be: «он есть десять».
+  - number: 5
+    body: |
+      В разговоре о фото американцы говорят коротко:
+
+      > [T9]Who[/] [D1]is[/] [T2]this[/]? — Кто это?
+      > [T2]This[/] [D1]is[/] [T3]my[/] [S1]sister[/]. — Это моя сестра.
+      > [T8]She[/] [D1]is[/] [N1]eleven[/]. — Ей одиннадцать.
+
+      - Who is в быстрой речи звучит как who's: «хуз».
+      - Вместо mother и father дома часто говорят mom и dad.
+  - number: 6
+    body: |
+      **baby brother** — «младший братик», **baby sister** — «младшая сестрёнка». Слово baby здесь значит «самый младший».
+
+      grandmother и grandfather в разговоре обычно сокращают до grandma и grandpa.
+  - number: 7
+    body: |
+      Четыре задания: узнать вопрос, вставить родственника, собрать ответ и описать новое фото.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как спросить «Кто это?» о человеке на фото?"
+    options: ["Who is this?", "Who this?", "This is who?"]
+    answer: "Who is this?"
+    hint_ru: "Нужен глагол be."
+    explanation_ru: "Who is this? — who первым, затем is и this. Без is фраза неполная."
+    units: [LX-00099, LX-00101]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Покажите на фото брата."
+    prompt_en: "This is my ___."
+    answer: "brother"
+    hint_ru: "Брат по-английски."
+    explanation_ru: "This is my brother. — Это мой брат."
+    units: [LX-00088]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите вопрос: «Это твоя мама?»"
+    options: [your, Is, mother, this]
+    answer: "Is this your mother"
+    hint_ru: "В вопросе is стоит первым."
+    explanation_ru: "Is this your mother? — be выходит вперёд, дальше this your mother."
+    units: [LX-00103]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новое фото: на нём ваша сестра, ей двенадцать. Скажите это двумя короткими фразами."
+    prompt_en: "___"
+    answer: "This is my sister. She is twelve."
+    accepted: ["This is my sister. She's twelve.", "This is my sister. She is 12.", "This is my sister. She's 12."]
+    hint_ru: "Сначала this is…, потом she is…"
+    explanation_ru: "This is my sister. She is twelve. — сначала показываем, потом говорим she и возраст через be."
+    units: [LX-00089, LX-00096, LX-00073]

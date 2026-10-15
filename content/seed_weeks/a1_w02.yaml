@@ -4,6 +4,10 @@ can_do_ru: "Я смогу показать свой дом, назвать ве�
 mission_ru: "Покажите три вещи дома и скажите по-английски, чьи они. Попросите стакан воды."
 ambience: morning_home
 chunks: [LX-00049, LX-00050, LX-00051, LX-00052, LX-00053, LX-00054]
+story_beat:
+  intro_ru: "Анна показывает Тому и Мие свой новый дом."
+  outcome_ru: "Гостям нравится дом. Только большая коробка — ничья: она не Анны и не Тома."
+  next_hook_ru: "Что внутри коробки? Ответ — в истории «Not My Box»."
 script:
   - speaker: anna
     emotion: happy
@@ -12,7 +16,7 @@ script:
   - speaker: tom
     emotion: excited
     text: "[T1]The[/] [S2]room[/] [D1]is[/] [J3]nice[/], [S1]Anna[/]. [D1]Is[/] [T2]that[/] [T3]your[/] [S2]phone[/]?"
-    ru: "Хорошая комната, Анна. Это ваш телефон?"
+    ru: "Хорошая комната, Анна. Это твой телефон?"
   - speaker: anna
     emotion: happy
     text: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T2]That[/] [D1]is[/] [T3]my[/] [S2]phone[/]. [T8]I[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]book[/]."
@@ -21,7 +25,7 @@ script:
   - speaker: mia
     emotion: surprised
     text: "[T8]I[/] [D3]like[/] [T1]the[/] [S2]book[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S2]box[/], [S1]Anna[/]?"
-    ru: "Мне нравится книга. Это ваша коробка, Анна?"
+    ru: "Мне нравится книга. Это твоя коробка, Анна?"
   - speaker: anna
     emotion: worried
     text: "[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/]. [S1]Tom[/] [D1]has[/] [T1]a[/] [J1]big[/] [S2]box[/]."

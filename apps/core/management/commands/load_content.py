@@ -1,10 +1,12 @@
 """Загружает учебный контент из content/ в базу. Идемпотентно: обновляет по ID."""
 import json
+import re
 from pathlib import Path
 
 import yaml
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import transaction
 
 from apps.curriculum.models import Level, TongueTwister, Week, WeekScene
@@ -23,12 +25,47 @@ UNIT_FIELDS = [
     "typical_error", "usage_note",
 ]
 
+# Русская рамка истории недели (план пилота, «Файлы и контракты»).
+STORY_BEAT_KEYS = {"intro_ru", "outcome_ru", "next_hook_ru"}
+
+
+def read_seed(path: Path) -> dict:
+    try:
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except yaml.YAMLError as exc:
+        raise CommandError(f"{path.name}: неверный YAML: {exc}") from exc
+    if not isinstance(data, dict):
+        raise CommandError(f"{path.name}: ожидается словарь YAML")
+    return data
+
+
+def require_fields(where: str, data: dict, fields: dict) -> None:
+    for key, kind in fields.items():
+        if type(data.get(key)) is not kind:
+            raise CommandError(f"{where}: отсутствует или неверно задано поле {key}")
+
+
+def records(where: str, key: str, value, required: dict) -> list[dict]:
+    if not isinstance(value, list):
+        raise CommandError(f"{where}: {key} должен быть списком")
+    for i, record in enumerate(value, 1):
+        if not isinstance(record, dict):
+            raise CommandError(f"{where}: {key}, элемент {i} должен быть словарём")
+        require_fields(f"{where}: {key}, элемент {i}", record, required)
+    return value
+
+
+def string_list(where: str, key: str, value) -> None:
+    if not isinstance(value, list) or not all(isinstance(item, str) for item in value):
+        raise CommandError(f"{where}: {key} должен быть списком строк")
+
 
 class Command(BaseCommand):
     help = "Загрузить лексику, уроки и упражнения из каталога content/"
 
     def handle(self, *args, **opts):
         root = Path(settings.CONTENT_DIR)
+        self.seen_units = {}
         with transaction.atomic():
             n_units = sum(self.load_units(p) for p in sorted((root / "seed_lexicon").glob("*.yaml")))
             self.load_weeks_plan(root / "manifests" / "weeks_plan.yaml")
@@ -43,19 +80,40 @@ class Command(BaseCommand):
 
     def _check_markup(self, where: str, *texts: str):
         for text in texts:
-            issues = find_issues(text or "")
+            if not isinstance(text, str):
+                raise CommandError(f"{where}: текст должен быть строкой")
+            issues = find_issues(text)
             if issues:
                 raise CommandError(f"{where}: " + "; ".join(f"{i.token} — {i.problem}" for i in issues))
 
+    def _set_units(self, relation, ids, where: str) -> None:
+        if not isinstance(ids, list) or not all(isinstance(uid, str) for uid in ids):
+            raise CommandError(f"{where}: ожидается список ID учебных единиц")
+        units = list(LexicalUnit.objects.filter(uid__in=ids))
+        missing = set(ids) - {unit.uid for unit in units}
+        if missing:
+            raise CommandError(f"{where}: незарегистрированные единицы {sorted(missing)}")
+        relation.set(units)
+
     def load_units(self, path: Path) -> int:
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        data = read_seed(path)
+        require_fields(path.name, data, {"level": str, "units": list})
+        records(path.name, "units", data["units"], {"uid": str, "class": str, "lemma": str})
         level = Level.objects.get(code=data["level"])
-        week = Week.objects.filter(level=level, number=data.get("week")).first()
+        week = self._week(level, data.get("week"), path.name)
         count = 0
         for item in data["units"]:
+            if item["uid"] in self.seen_units:
+                raise CommandError(f"{path.name}: повторный ID {item['uid']} (уже в {self.seen_units[item['uid']]})")
+            self.seen_units[item["uid"]] = path.name
+            if not re.fullmatch(r"[A-Z][1-9]\d?", item["class"]):
+                raise CommandError(f"{path.name}: неверный класс {item['class']}")
             code, num = item["class"][0], int(item["class"][1:])
-            pos = PartOfSpeech.objects.get(code=code)
-            cls = SemanticClass.objects.get(category=pos, number=num)
+            try:
+                pos = PartOfSpeech.objects.get(code=code)
+                cls = SemanticClass.objects.get(category=pos, number=num)
+            except ObjectDoesNotExist as exc:
+                raise CommandError(f"{path.name}: класса {item['class']} нет в реестре") from exc
             self._check_markup(f"{path.name}:{item['uid']}", item.get("example_en", ""))
             defaults = {f: item[f] for f in UNIT_FIELDS if f in item}
             LexicalUnit.objects.update_or_create(
@@ -66,21 +124,32 @@ class Command(BaseCommand):
         return count
 
     def load_lesson(self, path: Path) -> int:
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        data = read_seed(path)
+        require_fields(path.name, data, {"level": str, "slug": str, "title": str, "summary": str, "layers": list})
+        records(path.name, "layers", data["layers"], {"number": int, "body": str})
+        for exercise in records(path.name, "exercises", data.get("exercises", []), {"order": int, "answer": str}):
+            for key in ("options", "accepted"):
+                string_list(path.name, key, exercise.get(key, []))
+            for key in ("prompt_ru", "prompt_en", "hint_ru", "explanation_ru"):
+                if key in exercise and not isinstance(exercise[key], str):
+                    raise CommandError(f"{path.name}: {key} должен быть строкой")
+        for key, required in (("sound_notes", {"text": str}), ("contractions", {"full": str, "short": str})):
+            for item in records(path.name, key, data.get(key, []), required):
+                for field in ("text", "full", "short", "ipa", "ru", "note_ru"):
+                    if field in item and not isinstance(item[field], str):
+                        raise CommandError(f"{path.name}: {key}.{field} должен быть строкой")
+                self._check_markup(f"{path.name}: {key}", *(item[k] for k in required))
         level = Level.objects.get(code=data["level"])
         lesson, _ = Lesson.objects.update_or_create(
             slug=data["slug"],
             defaults=dict(
-                level=level, week=Week.objects.filter(level=level, number=data.get("week")).first(),
+                level=level, week=self._week(level, data.get("week"), path.name),
                 order=data.get("order", 1), title=data["title"], summary=data["summary"],
                 focus=PartOfSpeech.objects.filter(code=data.get("focus")).first(), minutes=data.get("minutes", 40),
                 sound_notes=data.get("sound_notes", []), contractions=data.get("contractions", []),
             ),
         )
-        lesson.units.set(LexicalUnit.objects.filter(uid__in=data.get("units", [])))
-        missing = set(data.get("units", [])) - set(lesson.units.values_list("uid", flat=True))
-        if missing:
-            raise CommandError(f"{path.name}: незарегистрированные единицы {sorted(missing)}")
+        self._set_units(lesson.units, data.get("units", []), path.name)
         lesson.layers.exclude(number__in=[l["number"] for l in data["layers"]]).delete()
         for layer in data["layers"]:
             self._check_markup(f"{path.name}: слой {layer['number']}", layer["body"])
@@ -93,29 +162,38 @@ class Command(BaseCommand):
                 defaults={k: ex.get(k, Exercise._meta.get_field(k).get_default()) for k in
                           ["kind", "stage", "prompt_ru", "prompt_en", "options", "answer", "accepted", "hint_ru", "explanation_ru"]},
             )
-            obj.units.set(LexicalUnit.objects.filter(uid__in=ex.get("units", [])))
+            self._set_units(obj.units, ex.get("units", []), f"{path.name}: упражнение {ex['order']}")
         return 1
 
-    def _week(self, level, number):
-        return Week.objects.filter(level=level, number=number).first()
+    def _week(self, level, number, where="контент"):
+        if number is None:
+            return None
+        if type(number) is not int:
+            raise CommandError(f"{where}: номер недели должен быть целым числом")
+        week = Week.objects.filter(level=level, number=number).first()
+        if week is None:
+            raise CommandError(f"{where}: недели {level.code}-{number} нет в программе")
+        return week
 
     def load_course_map(self, path: Path) -> None:
         if not path.exists():
             return
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        data = read_seed(path)
         for item in data.get("stories", []):
             level = Level.objects.get(code=item["level"])
             Story.objects.update_or_create(number=item["number"], defaults=dict(
-                level=level, week=self._week(level, item["week"]), title=item["title"],
+                level=level, week=self._week(level, item["week"], path.name), title=item["title"],
                 hook_ru=item["hook_ru"], focus=item["focus"]))
         for item in data.get("poems", []):
             level = Level.objects.get(code=item["level"])
             Poem.objects.update_or_create(number=item["number"], defaults=dict(
-                level=level, week=self._week(level, item["week"]), title=item["title"],
+                level=level, week=self._week(level, item["week"], path.name), title=item["title"],
                 rhyme_scheme=item["rhyme_scheme"], theme_ru=item["theme_ru"], phonetic_goals=item["phonetic_goals"]))
 
     def load_story(self, path: Path) -> int:
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        data = read_seed(path)
+        require_fields(path.name, data, {"number": int})
+        records(path.name, "script", data.get("script", []), {"speaker": str, "text": str})
         story = Story.objects.get(number=data["number"])
         if "body" in data:
             self._check_markup(path.name, data["body"])
@@ -129,11 +207,10 @@ class Command(BaseCommand):
                     raise CommandError(f"{path.name}: роли {line['speaker']} нет в content/manifests/voices.yaml")
                 self._check_markup(f"{path.name}: реплика", line["text"], line.get("spoken", ""))
             story.body = "\n\n".join(line["text"] for line in story.script)
-        manifest = Path(settings.BASE_DIR) / "static" / "audio" / "stories" / f"s{story.number:02d}" / "manifest.json"
-        story.audio = json.loads(manifest.read_text(encoding="utf-8")) if manifest.exists() else {}
+        story.audio = self._audio_manifest("stories", f"s{story.number:02d}")
         story.is_published = True
         story.save()
-        story.new_units.set(LexicalUnit.objects.filter(uid__in=data.get("new_units", [])))
+        self._set_units(story.new_units, data.get("new_units", []), path.name)
         return 1
 
     def _voice_roles(self) -> dict:
@@ -141,23 +218,36 @@ class Command(BaseCommand):
         return yaml.safe_load(path.read_text(encoding="utf-8"))["roles"] if path.exists() else {}
 
     def load_poem(self, path: Path) -> int:
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        data = read_seed(path)
+        require_fields(path.name, data, {"number": int, "body": str})
+        lines = data["body"].strip().splitlines()
+        for gap in records(path.name, "gaps", data.get("gaps", []), {"line": int, "word": str}):
+            if not 1 <= gap["line"] <= len(lines) or not gap["word"].strip():
+                raise CommandError(f"{path.name}: пропуск должен содержать слово и номер существующей строки")
+        for note in records(path.name, "pronunciation", data.get("pronunciation", []), {}):
+            for key in ("stress", "ipa", "ru"):
+                if key in note and not isinstance(note[key], str):
+                    raise CommandError(f"{path.name}: pronunciation.{key} должен быть строкой")
         poem = Poem.objects.get(number=data["number"])
         self._check_markup(path.name, data["body"])
         poem.body, poem.pronunciation, poem.gaps = data["body"], data.get("pronunciation", []), data.get("gaps", [])
         poem.is_published = True
         poem.save()
-        poem.target_units.set(LexicalUnit.objects.filter(uid__in=data.get("target_units", [])))
+        self._set_units(poem.target_units, data.get("target_units", []), path.name)
         return 1
 
     def _audio_manifest(self, *parts: str) -> dict:
         path = Path(settings.BASE_DIR) / "static" / "audio" / Path(*parts) / "manifest.json"
-        return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+        data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+        if data.get("engine") == "test" or data.get("model") == "test-tone":
+            self.stdout.write(f"Пропущен тестовый звук без речи: {path.parent.name}. Запустите generate_audio.bat.")
+            return {}
+        return data
 
     def load_weeks_plan(self, path: Path) -> int:
         if not path.exists():
             return 0
-        weeks = yaml.safe_load(path.read_text(encoding="utf-8")).get("weeks", [])
+        weeks = read_seed(path).get("weeks", [])
         for item in weeks:
             week = Week.objects.get(level__code=item["level"], number=item["week"])
             week.situation_ru, week.sphere = item["situation_ru"], item["sphere"]
@@ -166,25 +256,31 @@ class Command(BaseCommand):
         return len(weeks)
 
     def load_week(self, path: Path) -> int:
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        data = read_seed(path)
+        require_fields(path.name, data, {"level": str, "week": int, "can_do_ru": str, "mission_ru": str})
+        records(path.name, "script", data.get("script", []), {"speaker": str, "text": str})
         week = Week.objects.select_related("level").get(level__code=data["level"], number=data["week"])
         roles = self._voice_roles()
         for line in data.get("script", []):
             if line["speaker"] not in roles:
                 raise CommandError(f"{path.name}: роли {line['speaker']} нет в content/manifests/voices.yaml")
             self._check_markup(f"{path.name}: реплика", line["text"], line.get("spoken", ""))
+        beat = data.get("story_beat", {})
+        if not isinstance(beat, dict) or set(beat) - STORY_BEAT_KEYS or not all(isinstance(v, str) for v in beat.values()):
+            raise CommandError(f"{path.name}: story_beat — словарь строк с ключами {', '.join(sorted(STORY_BEAT_KEYS))}")
         folder = f"{week.level.slug}-w{week.number:02d}"
-        scene, _ = WeekScene.objects.update_or_create(week=week, defaults=dict(
+        scene, _ = WeekScene.objects.update_or_create(week=week, defaults=dict(story_beat=beat,
             can_do_ru=data["can_do_ru"], mission_ru=data["mission_ru"], script=data.get("script", []),
             ambience=data.get("ambience", ""), audio=self._audio_manifest("weeks", folder)))
-        scene.chunks.set(LexicalUnit.objects.filter(uid__in=data.get("chunks", [])))
-        missing = set(data.get("chunks", [])) - set(scene.chunks.values_list("uid", flat=True))
-        if missing:
-            raise CommandError(f"{path.name}: незарегистрированные готовые фразы {sorted(missing)}")
+        self._set_units(scene.chunks, data.get("chunks", []), path.name)
         tw = data.get("twister")
-        if tw:
+        if tw is not None:
+            if not isinstance(tw, dict):
+                raise CommandError(f"{path.name}: twister должен быть словарём")
+            require_fields(path.name, tw, {"number": int, "series": str, "text": str, "source": str})
+            if tw["number"] != week.global_number:
+                raise CommandError(f"{path.name}: номер скороговорки должен быть {week.global_number}")
             self._check_markup(f"{path.name}: скороговорка", tw["text"])
-            TongueTwister.objects.filter(number=tw["number"]).exclude(week=week).delete()
             TongueTwister.objects.update_or_create(week=week, defaults=dict(
                 number=tw["number"], series=tw["series"], text=tw["text"], ipa=tw.get("ipa", ""), ru=tw.get("ru", ""),
                 focus_sounds=tw.get("focus_sounds", []), full_form=tw.get("full_form", ""), source=tw["source"],

@@ -1,0 +1,105 @@
+slug: a1-numbers-1-20
+level: A1
+week: 3
+order: 6
+focus: N
+minutes: 40
+title: "Числа от 1 до 20: сколько чашек и печений"
+summary: "Числа для заказа: one, two, three… twenty. Где ударение в thirteen и почему two coffees, а не two coffee."
+units: [LX-00061, LX-00062, LX-00063, LX-00064, LX-00065, LX-00066, LX-00067, LX-00068, LX-00069, LX-00070, LX-00071, LX-00072, LX-00073, LX-00074, LX-00075, LX-00076, LX-00077, LX-00078, LX-00079, LX-00080, LX-00081, LX-00083]
+sound_notes:
+  - text: "three"
+    ipa: "/θri/"
+    note_ru: "th глухой: кончик языка между зубами, не «с» и не «ф»"
+  - text: "thirteen"
+    ipa: "/ˌθɝˈtin/"
+    note_ru: "ударение в конце: thir-TEEN"
+  - text: "twenty"
+    ipa: "/ˈtwɛnti/"
+    note_ru: "в быстрой речи t после n часто пропадает: «твэни»"
+layers:
+  - number: 1
+    body: |
+      Числа нужны в первый же час в кафе: сколько чашек, сколько печений.
+
+      > [N1]One[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]. — Один кофе и один чай, пожалуйста.
+      > [N1]Two[/] [S3]coffees[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]. — Два кофе и один чай, пожалуйста.
+      > [N1]Three[/] [S3]teas[/], [O8]please[/]. — Три чая, пожалуйста.
+
+      Штриховая линия под словом — числительное.
+  - number: 2
+    body: |
+      Английское **number** и русское «нумерация» — от латинского `numerus`, «число».
+
+      Числа от 13 до 19 содержат хвост **-teen**, это старое «десять»: thirteen — «три и десять». Русское «тринадцать» устроено так же: «три на десять».
+  - number: 3
+    body: |
+      Число ставят перед предметом. Если предметов больше одного, к слову добавляют -s:
+
+      > [N1]One[/] [S3]coffee[/], [O8]please[/]. — Один кофе.
+      > [N1]Two[/] [S3]coffees[/], [O8]please[/]. — Два кофе.
+      > [N1]Five[/] [S3]cookies[/], [O8]please[/]. — Пять печений.
+
+      - one — без -s, от двух и дальше — с -s.
+      - В русском «два кофе», «пять печений» меняют окончания по-разному, в английском -s одно на все числа.
+  - number: 4
+    body: |
+      Почему -s, даже когда число уже сказано? Английский отмечает «много» у самого слова. Число и -s говорят одно и то же дважды, и это нормально.
+
+      Числа 11 и 12 особые: eleven и twelve. Это древние слова «один остался» и «два осталось» после счёта до десяти на пальцах.
+  - number: 5
+    body: |
+      Американцы говорят числа быстро, поэтому важно ударение:
+
+      > [N1]Thirteen[/] — ударение в конце.
+      > [N1]Fifteen[/] — ударение в конце.
+      > [N1]Twenty[/] — ударение в начале.
+
+      - В -teen ударение на конце: thir-TEEN, fif-TEEN. Перед существительным оно часто уходит вперёд: THIR-teen coffees.
+      - [O2]Thanks[/] — короткое «спасибо», его часто слышно в кафе.
+  - number: 6
+    body: |
+      Трудные звуки: three начинается с th — кончик языка между зубами. Если сказать «три» по-русски, американец может услышать tree.
+
+      Eight звучит как «эйт», с t в конце. Число twenty в быстрой речи часто теряет t: «твэни».
+  - number: 7
+    body: |
+      Четыре задания: узнать число, вставить -s, собрать заказ и сделать новый заказ.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Какое число — 13?"
+    options: ["thirteen", "three", "twelve"]
+    answer: "thirteen"
+    hint_ru: "13 — это три и десять, хвост -teen."
+    explanation_ru: "thirteen — 13; three — 3; twelve — 12."
+    units: [LX-00074]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Вы заказываете два чая. Допишите слово."
+    prompt_en: "Two ___, please."
+    answer: "teas"
+    hint_ru: "Предметов больше одного — добавьте -s."
+    explanation_ru: "После two слово получает -s: two teas."
+    units: [LX-00063, LX-00055]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите заказ: «Два кофе и один чай, пожалуйста»."
+    options: [one, coffees, please, Two, and, tea]
+    answer: "Two coffees and one tea please"
+    hint_ru: "Число — предмет, потом and."
+    explanation_ru: "Two coffees and one tea, please. У coffees есть -s, у tea после one — нет."
+    units: [LX-00063, LX-00062, LX-00059]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: вас четверо, и всем нужен чай. Закажите."
+    prompt_en: "___"
+    answer: "Four teas, please."
+    accepted: ["Can I have four teas, please?", "4 teas, please.", "Four teas, thanks.", "4 teas, thanks."]
+    hint_ru: "Число, предмет с -s и please."
+    explanation_ru: "Four teas, please. Можно и полной просьбой: Can I have four teas, please?"
+    units: [LX-00065, LX-00055]

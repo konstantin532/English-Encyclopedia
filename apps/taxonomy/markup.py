@@ -13,6 +13,8 @@ from django.utils.safestring import mark_safe
 from .registry import CATEGORY_BY_CODE, PALETTE
 
 TOKEN = re.compile(r"\[([SDJANTPXCOF])(\d{1,2})(?:-(#[0-9a-fA-F]{6}))?\](.+?)\[/\]", re.S)
+MARKER = re.compile(r"\[[A-Z]\d+[^\]\n]*(?:\]|(?=\n|$))|\[/\]")
+OPEN_MARKER = re.compile(r"\[([SDJANTPXCOF])(\d{1,2})(?:-(#[0-9a-fA-F]{6}))?\]")
 
 
 @dataclass
@@ -23,17 +25,33 @@ class MarkupIssue:
 
 def find_issues(text: str) -> list[MarkupIssue]:
     issues = []
-    for m in TOKEN.finditer(text):
-        code, num, hexcolor, _ = m.group(1), int(m.group(2)), m.group(3), m.group(4)
+    opened = []
+    for tag in MARKER.finditer(text):
+        token = tag.group()
+        if token == "[/]":
+            if not opened:
+                issues.append(MarkupIssue(token, "закрывающий тег без открывающего"))
+            else:
+                start = opened.pop()
+                if not text[start.end():tag.start()].strip():
+                    issues.append(MarkupIssue(start.group(), "маркер не содержит текста"))
+            continue
+        if opened:
+            issues.append(MarkupIssue(token, "маркеры не могут быть вложенными"))
+        opened.append(tag)
+        m = OPEN_MARKER.fullmatch(token)
+        if not m:
+            issues.append(MarkupIssue(token, "неверный маркер или неизвестная категория"))
+            continue
+        code, num, hexcolor = m.group(1), int(m.group(2)), m.group(3)
         cat = CATEGORY_BY_CODE[code]
         numbers = {n for n, _, _ in cat.classes}
         if num not in numbers:
-            issues.append(MarkupIssue(m.group(0), f"класса {code}{num} нет в реестре"))
+            issues.append(MarkupIssue(token, f"класса {code}{num} нет в реестре"))
         elif hexcolor and hexcolor.lower() != PALETTE[num][1]:
-            issues.append(MarkupIssue(m.group(0), f"цвет {hexcolor} не совпадает с реестром {PALETTE[num][1]}"))
-    leftovers = TOKEN.sub("", text)
-    if "[/]" in leftovers:
-        issues.append(MarkupIssue("[/]", "закрывающий тег без открывающего"))
+            issues.append(MarkupIssue(token, f"цвет {hexcolor} не совпадает с реестром {PALETTE[num][1]}"))
+    for tag in opened:
+        issues.append(MarkupIssue(tag.group(), "маркер не закрыт"))
     return issues
 
 

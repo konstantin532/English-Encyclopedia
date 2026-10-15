@@ -149,3 +149,13 @@ exercises:
     hint_ru: "Порядок: кто — be — not — остальное."
     explanation_ru: "Not ставится сразу после be: It is not a phone. В разговоре: It isn't a phone."
     units: [LX-00016, LX-00019, LX-00030]
+  - order: 5
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: гость спрашивает «Is it your room?», а это не ваша комната. Ответьте полностью."
+    prompt_en: "Is it your room? — ___"
+    answer: "No, it is not my room."
+    accepted: ["No, it isn't my room.", "No, it's not my room.", "No, it is not my room", "No, it isn't my room"]
+    hint_ru: "No, затем it is not и чья комната."
+    explanation_ru: "No, it is not my room. В живой речи: No, it isn't my room."
+    units: [LX-00030, LX-00007]

@@ -57,6 +57,8 @@ class WeekScene(models.Model):
     chunks = models.ManyToManyField("lexicon.LexicalUnit", blank=True, related_name="week_scenes")
     ambience = models.CharField(max_length=40, blank=True)
     audio = models.JSONField(default=dict, blank=True)
+    story_beat = models.JSONField(default=dict, blank=True,
+                                  help_text="Необязательная русская рамка: intro_ru, outcome_ru, next_hook_ru")
 
     class Meta:
         verbose_name = "сцена недели"

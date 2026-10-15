@@ -64,7 +64,8 @@ def build_review(user) -> list:
     items, used = [], set()
     solved = set(ExerciseAttempt.objects.filter(user=user, is_correct=True).values_list("exercise_id", flat=True))
     for progress in due_progress(user)[:REVIEW_BATCH]:
-        exercise = next((e for e in progress.unit.exercises.all() if e.pk not in used and e.pk not in solved), None)
+        exercise = next((e for e in progress.unit.exercises.filter(lesson__is_published=True)
+                         if e.pk not in used and e.pk not in solved), None)
         if exercise:
             used.add(exercise.pk)
             items.append(exercise)

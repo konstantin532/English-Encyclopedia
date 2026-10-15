@@ -127,3 +127,19 @@ class GeneratorTests(SimpleTestCase):
         self.assertEqual(set(tw) & {"very_slow", "slow", "natural"}, {"very_slow", "slow", "natural"})
         self.assertIsNone(tw["ambience"])
         self.assertEqual(tw["voices"], {"twister": VOICES["extras"][0]})
+
+
+class BrokenModelTests(SimpleTestCase):
+    """Оборванная загрузка модели: понятное сообщение по-русски, а не Protobuf parsing failed."""
+
+    def test_truncated_model_reported_before_loading(self):
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp, ignore_errors=True)
+        (tmp / "kokoro-v1.0.onnx").write_bytes(b"\0" * 1024)
+        (tmp / "voices-v1.0.bin").write_bytes(b"\0" * 1024)
+        with self.assertRaises(SystemExit) as cm:
+            gen.KokoroEngine(tmp)
+        message = str(cm.exception.code)
+        self.assertIn("неполный", message)
+        self.assertIn("kokoro-v1.0.onnx", message)
+        self.assertIn("generate_audio.bat", message)
