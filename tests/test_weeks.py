@@ -143,7 +143,8 @@ class WeekPageTests(TestCase):
         for item in ids:
             self.assertIn(item, html)
         self.assertEqual([html.index(item) for item in ids], sorted(html.index(item) for item in ids))
-        self.assertContains(response, "generate_audio.bat")
+        self.assertContains(response, "Озвучка этой недели ещё не записана")
+        self.assertNotContains(response, "generate_audio.bat")
 
     def test_level_lists_weeks(self):
         response = self.client.get(reverse("curriculum:level", args=["a1"]))

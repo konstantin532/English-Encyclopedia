@@ -27,7 +27,7 @@
         {% if scene.story_beat.intro_ru %}<p class="story-beat" id="story-intro">{{ scene.story_beat.intro_ru }}</p>{% endif %}
         <p>Послушайте без текста, затем с текстом и с разметкой.</p>
         {% include "components/script_player.html" with listen_modes=True role_section=True %}
-        {% if not audio %}<p class="drill-hint">Озвучка появится после generate_audio.bat. Пока прочитайте диалог вслух.</p>{% endif %}
+        {% if not audio %}<p class="drill-hint">Озвучка этой недели ещё не записана. Пока прочитайте диалог вслух по ролям.</p>{% endif %}
       </section>
       <section class="layer" id="lessons" aria-labelledby="lessons-t">
         <h2 id="lessons-t">Уроки недели</h2>
@@ -58,7 +58,7 @@
             <button class="btn btn-quiet btn-small" type="button" data-twister-src="{% static twister.audio.slow.file %}" aria-pressed="false">Медленно</button>
             <button class="btn btn-quiet btn-small" type="button" data-twister-src="{% static twister.audio.natural.file %}" aria-pressed="false">Как в жизни</button>
           </div>
-        </div>{% else %}<p class="drill-hint">Озвучка появится после generate_audio.bat.</p>{% endif %}
+        </div>{% else %}<p class="drill-hint">Озвучка скороговорки ещё не записана. Произнесите её медленно, потом быстрее.</p>{% endif %}
         {% else %}<p>Скороговорка готовится.</p>{% endif %}
       </section>
       <section class="layer" id="mission" aria-labelledby="mission-t"><h2 id="mission-t">Задание в жизнь</h2><p>{{ scene.mission_ru }}</p>{% include "components/story_beat.html" with beat=scene.story_beat %}</section>
