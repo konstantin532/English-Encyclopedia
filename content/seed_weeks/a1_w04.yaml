@@ -20,6 +20,7 @@ script:
   - speaker: tom
     emotion: surprised
     text: "[T9]Who[/] [D1]is[/] [T2]this[/]?"
+    spoken: "[T9]Who[/][D1]'s[/] [T2]this[/]?"
     ru: "А это кто?"
   - speaker: mia
     emotion: happy
