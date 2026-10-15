@@ -35,6 +35,9 @@ CONTENT = ROOT / "content"
 OUT = ROOT / "static" / "audio"
 MODELS = ROOT / "models" / "kokoro"
 SR = 24000
+# Целые файлы модели Kokoro v1.0: onnx ≈ 310 МБ, voices ≈ 27 МБ. Меньше — загрузка оборвалась.
+MODEL_MIN_BYTES = 300_000_000
+VOICES_MIN_BYTES = 27_000_000
 TOKEN = re.compile(r"\[[SDJANTPXCOF]\d{1,2}(?:-#[0-9a-fA-F]{6})?\](.+?)\[/\]", re.S)
 # Темпы: (коэффициент скорости голоса, множитель пауз между репликами)
 TEMPOS = {"very_slow": (0.7, 2.0), "slow": (0.85, 1.3), "natural": (1.0, 1.0)}
@@ -51,14 +54,23 @@ class KokoroEngine:
     name = "kokoro"
 
     def __init__(self, models_dir: Path):
+        model, voices = models_dir / "kokoro-v1.0.onnx", models_dir / "voices-v1.0.bin"
+        if not model.exists() or not voices.exists():
+            sys.exit(f"Нет файлов модели в {models_dir}. Запустите generate_audio.bat — он их скачает.")
+        for path, need in ((model, MODEL_MIN_BYTES), (voices, VOICES_MIN_BYTES)):
+            size = path.stat().st_size
+            if size < need:
+                sys.exit(f"Файл {path.name} неполный: {size / 1e6:.0f} МБ из примерно {need / 1e6:.0f}+ МБ — загрузка оборвалась. "
+                         f"Удалите {path} и запустите generate_audio.bat снова, он скачает файл заново.")
         try:
             from kokoro_onnx import Kokoro
         except ImportError:
             sys.exit("Нет пакета kokoro-onnx. Запустите generate_audio.bat — он всё установит.")
-        model, voices = models_dir / "kokoro-v1.0.onnx", models_dir / "voices-v1.0.bin"
-        if not model.exists() or not voices.exists():
-            sys.exit(f"Нет файлов модели в {models_dir}. Запустите generate_audio.bat — он их скачает.")
-        self.tts = Kokoro(str(model), str(voices))
+        try:
+            self.tts = Kokoro(str(model), str(voices))
+        except Exception as exc:  # повреждённый файл модели
+            sys.exit(f"Не удалось открыть модель ({exc.__class__.__name__}). Файл {model.name} повреждён: "
+                     f"удалите {model} и запустите generate_audio.bat снова.")
         self.available = set(self.tts.get_voices())
 
     def check_voice(self, voice: str) -> None:
