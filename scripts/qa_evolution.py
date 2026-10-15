@@ -22,6 +22,8 @@ def fuzz_budget(run_number: int, *, deep: bool = False) -> tuple[int, int]:
 
 
 def run_fuzz(seed: int, run_number: int, deep: bool = False) -> None:
+    # Direct execution (python scripts/qa_evolution.py) must resolve Django project imports.
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.test")
     import django
 
