@@ -1,0 +1,8 @@
+{% comment %}Развязка недели: раскрывается по желанию, чтобы не подсказывать до самостоятельной пробы.{% endcomment %}
+{% if beat.outcome_ru or beat.next_hook_ru %}
+<details class="story-beat-outcome" id="story-outcome">
+  <summary>Чем всё закончилось</summary>
+  {% if beat.outcome_ru %}<p>{{ beat.outcome_ru }}</p>{% endif %}
+  {% if beat.next_hook_ru %}<p class="story-beat-hook">{{ beat.next_hook_ru }}</p>{% endif %}
+</details>
+{% endif %}

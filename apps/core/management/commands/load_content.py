@@ -23,6 +23,9 @@ UNIT_FIELDS = [
     "typical_error", "usage_note",
 ]
 
+# Русская рамка истории недели (план пилота, «Файлы и контракты»).
+STORY_BEAT_KEYS = {"intro_ru", "outcome_ru", "next_hook_ru"}
+
 
 class Command(BaseCommand):
     help = "Загрузить лексику, уроки и упражнения из каталога content/"
@@ -173,8 +176,11 @@ class Command(BaseCommand):
             if line["speaker"] not in roles:
                 raise CommandError(f"{path.name}: роли {line['speaker']} нет в content/manifests/voices.yaml")
             self._check_markup(f"{path.name}: реплика", line["text"], line.get("spoken", ""))
+        beat = data.get("story_beat") or {}
+        if not isinstance(beat, dict) or set(beat) - STORY_BEAT_KEYS or not all(isinstance(v, str) for v in beat.values()):
+            raise CommandError(f"{path.name}: story_beat — словарь строк с ключами {', '.join(sorted(STORY_BEAT_KEYS))}")
         folder = f"{week.level.slug}-w{week.number:02d}"
-        scene, _ = WeekScene.objects.update_or_create(week=week, defaults=dict(
+        scene, _ = WeekScene.objects.update_or_create(week=week, defaults=dict(story_beat=beat,
             can_do_ru=data["can_do_ru"], mission_ru=data["mission_ru"], script=data.get("script", []),
             ambience=data.get("ambience", ""), audio=self._audio_manifest("weeks", folder)))
         scene.chunks.set(LexicalUnit.objects.filter(uid__in=data.get("chunks", [])))

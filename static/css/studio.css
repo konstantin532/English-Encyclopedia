@@ -157,3 +157,8 @@ h1,h2,h3{letter-spacing:-.025em}a{text-underline-offset:.22em}
 .player-modes { flex-wrap: wrap; }
 .player-modes label { white-space: nowrap; }
 .speech-modes { font: 13px/1.5 var(--font-ui); margin: 12px 0; }
+/* Рамка истории недели */
+.story-beat{font-style:italic;color:var(--ink-soft);border-left:3px solid var(--studio-green);padding-left:12px}
+.story-beat-outcome{margin-top:16px;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;background:var(--surface);font:14px/1.6 var(--font-ui)}
+.story-beat-outcome summary{cursor:pointer;font-weight:550}
+.story-beat-hook{color:var(--ink-soft);font-style:italic}

@@ -24,6 +24,7 @@
       </section>
       <section class="layer" id="dialogue" aria-labelledby="dialogue-t">
         <h2 id="dialogue-t">Диалог недели</h2>
+        {% if scene.story_beat.intro_ru %}<p class="story-beat" id="story-intro">{{ scene.story_beat.intro_ru }}</p>{% endif %}
         <p>Послушайте без текста, затем с текстом и с разметкой.</p>
         {% include "components/script_player.html" with listen_modes=True role_section=True %}
         {% if not audio %}<p class="drill-hint">Озвучка появится после generate_audio.bat. Пока прочитайте диалог вслух.</p>{% endif %}
@@ -60,7 +61,7 @@
         </div>{% else %}<p class="drill-hint">Озвучка появится после generate_audio.bat.</p>{% endif %}
         {% else %}<p>Скороговорка готовится.</p>{% endif %}
       </section>
-      <section class="layer" id="mission" aria-labelledby="mission-t"><h2 id="mission-t">Задание в жизнь</h2><p>{{ scene.mission_ru }}</p></section>
+      <section class="layer" id="mission" aria-labelledby="mission-t"><h2 id="mission-t">Задание в жизнь</h2><p>{{ scene.mission_ru }}</p>{% include "components/story_beat.html" with beat=scene.story_beat %}</section>
       <section class="layer" id="review" aria-labelledby="review-t"><h2 id="review-t">Повторение</h2><p><a href="{% url 'learning:review' %}">Повторить изученные слова</a></p></section>
     </article>
     <aside class="aside"><div class="aside-box"><h2>Шаги недели</h2><ol class="toc">
