@@ -1,4 +1,4 @@
 {
-  "minimum_coverage_percent": 0,
-  "minimum_test_cases": 120
+  "minimum_coverage_percent": 90.0,
+  "minimum_test_cases": 131
 }
