@@ -126,3 +126,13 @@ exercises:
     hint_ru: "Вопрос начинается с помощника."
     explanation_ru: "Do в начале сообщает о вопросе, дальше обычный порядок: you have a book."
     units: [LX-00036, LX-00033]
+  - order: 5
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: спросите друга, есть ли у него кот."
+    prompt_en: "___"
+    answer: "Do you have a cat?"
+    accepted: ["Do you have a cat"]
+    hint_ru: "Вопрос с have начинается с do."
+    explanation_ru: "Do you have a cat? — do в начале, дальше обычный порядок."
+    units: [LX-00036, LX-00033, LX-00041]

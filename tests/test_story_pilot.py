@@ -259,3 +259,34 @@ class WeekFourTests(WeekContentMixin, TestCase):
         self.assertGreater(new.count(), 40)
         self.assertEqual(new.count(), len(set(new.values_list("uid", flat=True))))
         self.assertEqual(set(new.values_list("cefr", flat=True)), {"unverified"})
+
+
+class PilotContinuityTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_four_weeks_have_framing(self):
+        for n in range(1, 5):
+            beat = WeekScene.objects.get(week__level__code="A1", week__number=n).story_beat
+            with self.subTest(week=n):
+                self.assertTrue(beat.get("intro_ru"))
+                self.assertTrue(beat.get("outcome_ru"))
+
+    def test_existing_canon_preserved(self):
+        goals = {s.week.number: s.can_do_ru for s in WeekScene.objects.filter(week__number__in=[1, 2])}
+        self.assertEqual(goals[1], "Я смогу представиться, сказать, откуда я, и спросить имя собеседника.")
+        self.assertEqual(goals[2], "Я смогу показать свой дом, назвать вещи и вежливо попросить воды.")
+        story = Story.objects.get(number=1)
+        self.assertIn("[S6]cat[/]", story.script[-1]["text"])
+        self.assertIn("Box", story.script[-1]["text"])
+
+    def test_transfer_present(self):
+        for lesson in Lesson.objects.filter(level__code="A1", week__number__lte=4):
+            with self.subTest(slug=lesson.slug):
+                self.assertTrue(lesson.exercises.filter(stage="transfer").exists())
+
+    def test_wrong_answer_never_blocks_next_week(self):
+        for n in range(1, 5):
+            html = self.client.get(reverse("curriculum:week", args=["a1", n])).content.decode()
+            self.assertIn(f'href="/levels/a1/weeks/{n + 1}/"', html)

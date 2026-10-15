@@ -32,3 +32,17 @@
 - Непроверенное: настоящая речь Kokoro не генерировалась.
 - Доводка недель 3–4 до правок плана: новое напоминание нашло в неделе 4 «Who is this?» без spoken — добавлен «Who's this?». Остальные пункты правок уже выполнены в черновике: голос af_sarah закреплён за barista и убран из extras, по три sound_notes, без новых имён, числа 1–20 отдельными единицами N1 (LX-00062…LX-00081), в ответах на 's — Tom's.
 - Команды: load_content → 106 единиц, 8 уроков, 4 недели с диалогом; audit_course → «Ошибок нет», напоминаний о spoken нет; manage.py test tests → 147 OK.
+
+## Этап 4: связать четыре недели
+- Рамки недель 1–2 без новых событий задним числом; по одному заданию transfer в уроки 1–4 (новые комбинации: «This is my book. It is new.», «No, it is not my room.», «This room is big. That room is new.», «Do you have a cat?»). Числа упражнений в tests/test_content_and_learning.py: уроки be/determiners/have 4 → 5, nouns 3 → 4.
+- guide.md: путь «услышать → разобрать → сыграть роль → независимая проба → повторение», ориентир 15–25 минут, свободный график, без аудио — не аудирование.
+- Редакторская проверка: русская рамка не вводит решающих улик.
+
+| Вопрос истории | Английская подсказка | Английский ответ |
+|---|---|---|
+| Чья коробка? (нед. 2) | Is this your box, Anna? | No, it is not my box. … It is not my box! |
+| Чьё фото в кафе? (нед. 3) | Anna, is this your photo? | No, it is not my photo. … It is a family photo. |
+| Чья это семья? (нед. 4) | Is this your family? | Yes! This is my family! It is my photo! |
+| Кто на фото? (нед. 4) | Who is this? / Is this your mother? | This is my brother. He is ten. / Yes, it is. And this is my father. |
+| Чем кончилось? (нед. 4) | Here is your photo, Mia. | Thank you! I am happy! |
+- Команды: PilotContinuityTests сначала 6 FAIL (в черновике), потом OK; load_content, audit_course → «Ошибок нет», незарегистрированных слов и напоминаний о spoken нет; manage.py test tests → 151 OK.

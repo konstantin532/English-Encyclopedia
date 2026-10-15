@@ -127,3 +127,13 @@ exercises:
     hint_ru: "Указатель стоит перед существительным."
     explanation_ru: "This room — группа «указатель + существительное», затем be и признак: This room is big."
     units: [LX-00020, LX-00024]
+  - order: 5
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: вы показываете две комнаты — рядом большую, подальше новую. Скажите об обеих."
+    prompt_en: "___"
+    answer: "This room is big. That room is new."
+    accepted: ["This room is big and that room is new.", "This room is big, that room is new.", "This room is big. That room is new"]
+    hint_ru: "Рядом — this, подальше — that."
+    explanation_ru: "This room is big. That room is new. this — то, что рядом, that — то, что подальше."
+    units: [LX-00020, LX-00038, LX-00007]

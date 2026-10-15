@@ -40,10 +40,10 @@ class ContentTests(TestCase):
         for slug in ["a1-verb-be", "a1-determiners-a-the-this-my", "a1-have-like-can-do"]:
             lesson = Lesson.objects.get(slug=slug)
             self.assertEqual(lesson.layers.count(), 7, slug)
-            self.assertEqual(lesson.exercises.count(), 4, slug)
+            self.assertEqual(lesson.exercises.count(), 5, slug)
         lesson = Lesson.objects.get(slug="a1-nouns-first-words")
         self.assertEqual(lesson.layers.count(), 7)
-        self.assertEqual(lesson.exercises.count(), 3)
+        self.assertEqual(lesson.exercises.count(), 4)
         self.assertEqual(lesson.units.count(), 15)
 
     def test_loader_is_idempotent(self):

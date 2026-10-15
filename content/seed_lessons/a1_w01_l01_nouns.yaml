@@ -121,3 +121,13 @@ exercises:
     hint_ru: "По-английски не «меня зовут», а «моё имя есть…»."
     explanation_ru: "Русское «меня зовут» по-английски строится через существительное name: My name is Anna. Глагол is обязателен."
     units: [LX-00015]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: вы показываете гостю книгу и говорите, что она новая. Скажите двумя короткими фразами."
+    prompt_en: "___"
+    answer: "This is my book. It is new."
+    accepted: ["This is my book. It's new.", "This is my book, it is new.", "This is my book. It is new", "This is my new book."]
+    hint_ru: "Сначала This is my…, потом It is…"
+    explanation_ru: "This is my book. It is new. Можно и одной фразой: This is my new book."
+    units: [LX-00008, LX-00027]
