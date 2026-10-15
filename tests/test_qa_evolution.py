@@ -2,6 +2,7 @@
 from django.test import SimpleTestCase
 
 from apps.drills.models import Exercise
+import scripts.qa_evolution as qa
 from scripts.qa_evolution import fuzz_budget, make_quality_report
 
 
@@ -33,3 +34,15 @@ class ProgressiveQualityTests(SimpleTestCase):
     def test_exercise_accepts_alternative_answers(self):
         exercise = Exercise(answer="thanks", accepted=["thank you"])
         self.assertTrue(exercise.is_correct("Thank you."))
+
+
+class FuzzRegressionTests(SimpleTestCase):
+    """Контрпример из GitHub Actions (PR situation-weeks → main): слово из одного пробела."""
+
+    def test_counterexample_seed_from_pull_request(self):
+        qa.run_fuzz(38811173329, 6)
+
+    def test_blank_marker_is_reported_not_accepted(self):
+        from apps.taxonomy.markup import find_issues
+
+        self.assertTrue(find_issues("[S1] [/]"))

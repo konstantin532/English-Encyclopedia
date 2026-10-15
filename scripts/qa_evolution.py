@@ -42,11 +42,15 @@ def run_fuzz(seed: int, run_number: int, deep: bool = False) -> None:
             stage = "linguistic markup round-trip and HTML escaping"
             case = "".join(rng.choices(ALPHABET, k=rng.randint(1, max_len)))
             annotated = f"[S1]{case}[/]"
-            assert find_issues(annotated) == []
-            assert strip_markup(annotated) == case
-            rendered = render_inline(annotated)
-            assert html.escape(case, quote=True) in rendered
-            assert "<script>" not in rendered
+            if not case.strip():
+                # Пометка без текста (одни пробелы) — ошибка разметки, её надо отклонить, а не принять.
+                assert find_issues(annotated) != []
+            else:
+                assert find_issues(annotated) == []
+                assert strip_markup(annotated) == case
+                rendered = render_inline(annotated)
+                assert html.escape(case, quote=True) in rendered
+                assert "<script>" not in rendered
 
             stage = "answer normalization is idempotent"
             normalized = Exercise.normalize(case)
