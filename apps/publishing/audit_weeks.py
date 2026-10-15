@@ -51,7 +51,12 @@ def lesson_examples(lesson) -> set[str]:
 
 
 BLENDS = {"gonna", "wanna", "gotta", "gimme", "lemme", "kinda", "sorta", "whatcha", "dunno", "y'all"}
-SHORTENABLE = re.compile(r"\b(?:I am|it is|is not|are not|do not|you are|that is|can not|cannot)\b", re.I)
+SHORTENABLE = re.compile(r"\b(?:I am|it is|is not|are not|do not|does not|you are|that is|he is|she is|here is|what is|who is|can not|cannot)\b", re.I)
+# Утвердительный be в конце короткого ответа не сокращают: Yes, I am. Here you are.
+FINAL_BE = {"i am", "it is", "you are", "that is", "he is", "she is", "here is", "what is", "who is"}
+
+# Напоминание добавить вариант «как говорят» (spoken): все недели этих уровней и все истории.
+SPOKEN_REMINDER_LEVELS = {"A1", "A1+", "A2"}
 
 
 def audit_script(r, where: str, script: list[dict], voices: dict, music_required: bool = False,
@@ -88,7 +93,7 @@ def audit_script(r, where: str, script: list[dict], voices: dict, music_required
             for match in SHORTENABLE.finditer(plain):
                 form = match.group().lower()
                 # Утвердительный be в конце короткого ответа не сокращается: Yes, I am.
-                if form in {"i am", "it is", "you are", "that is"} and not re.match(r"\s+[A-Za-z]", plain[match.end():]):
+                if form in FINAL_BE and not re.match(r"\s+[A-Za-z]", plain[match.end():]):
                     continue
                 if form not in forms:
                     forms.append(form)
@@ -126,7 +131,7 @@ def audit_scene(r, scene: WeekScene, voices: dict) -> None:
     if not lessons:
         r.errors.append(f"{where}: нет ни одного урока.")
     audit_script(r, where, script, voices, level=level, week_number=week.number,
-                 warn_spoken=level.code == "A1" and week.number in {1, 2})
+                 warn_spoken=level.code in SPOKEN_REMINDER_LEVELS)
 
     text = " ".join(line.get("text", "") for line in script)
     vocab = vocab_until(level, week.number)
@@ -222,7 +227,7 @@ def audit_weeks(r) -> None:
     for story in Story.objects.filter(is_published=True).exclude(script=[]):
         audit_script(r, f"История {story.number}", story.script, voices, music_required=True,
                      level=story.level, week_number=story.week.number if story.week else 99,
-                     warn_spoken=story.number == 1)
+                     warn_spoken=True)
 
 
 def audit_lesson_contractions(r) -> None:

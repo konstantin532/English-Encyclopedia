@@ -102,3 +102,48 @@ class StoryBeatTests(TestCase):
             with self.subTest(text=text), content_copy(set_week1_beat(text)):
                 with self.assertRaisesMessage(CommandError, "story_beat"):
                     call_command("load_content", verbosity=0)
+
+
+from apps.stories.models import Story  # noqa: E402
+
+
+class SpokenReminderTests(TestCase):
+    """Живая речь: напоминание о spoken во всех неделях A1–A2 и во всех историях (правка плана 15.10.2026)."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def warnings(self):
+        from apps.publishing.audit import run_audit
+
+        return run_audit().warnings
+
+    def scene_with(self, text, week=5):
+        w = Week.objects.get(level__code="A1", number=week)
+        return WeekScene.objects.update_or_create(week=w, defaults=dict(
+            can_do_ru="…", mission_ru="…", script=[{"speaker": "tom", "text": text}]))[0]
+
+    def test_reminder_for_every_a1_week(self):
+        self.scene_with("[T8]It[/] [D1]is[/] [T1]a[/] [S1]family[/] [S2]photo[/].")
+        self.assertTrue([w for w in self.warnings() if "Неделя A1-5, реплика 1: можно сократить it is" in w])
+
+    def test_reminder_for_every_story(self):
+        story = Story.objects.get(number=2)
+        story.script = [{"speaker": "anna", "text": "[T8]I[/] [D1]am[/] [S1]Anna[/].", "music": "calm"}]
+        story.body, story.is_published = story.script[0]["text"], True
+        story.save()
+        self.assertTrue([w for w in self.warnings() if "История 2, реплика 1: можно сократить i am" in w])
+
+    def test_new_forms_detected(self):
+        self.scene_with("[T8]He[/] [D1]is[/] [N1]ten[/]. [T8]She[/] [D1]is[/] [J4]busy[/]. [A3]Here[/] [D1]is[/] [T3]your[/] "
+                        "[S2]book[/]. [T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]? [T9]Who[/] [D1]is[/] [T2]this[/]? "
+                        "[S1]Tom[/] [D1]does[/] [X1]not[/] [D3]like[/] [S3]coffee[/].")
+        found = [w for w in self.warnings() if "Неделя A1-5, реплика 1: можно сократить" in w]
+        self.assertTrue(found)
+        for form in ("he is", "she is", "here is", "what is", "who is", "does not"):
+            self.assertIn(form, found[0])
+
+    def test_final_be_not_flagged(self):
+        self.scene_with("[O4]Yes[/], [T8]he[/] [D1]is[/]. [A3]Here[/] [T8]you[/] [D1]are[/].")
+        self.assertFalse([w for w in self.warnings() if "Неделя A1-5, реплика 1: можно сократить" in w])

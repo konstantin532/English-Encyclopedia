@@ -13,3 +13,5 @@
 - Решение: STORY_BEAT_KEYS = intro_ru / outcome_ru / next_hook_ru в load_content; неверный тип, лишний ключ или нестроковое значение → CommandError с «story_beat». Вступление — абзац над диалогом (id story-intro), развязка и зацепка — details «Чем всё закончилось» после задания в жизнь. Пустой словарь ничего не выводит.
 - Команды: `manage.py test tests.test_story_pilot` → 7 тестов сначала FAIL/ERROR, потом OK; `manage.py test tests` → 132 OK; `makemigrations --check` → No changes.
 - Непроверенное: вид блока в браузере — на этапе 6.
+- Этап 1, часть 2 (живая речь, правка плана): SPOKEN_REMINDER_LEVELS = A1, A1+, A2 — напоминание о spoken для всех сцен этих уровней и для всех опубликованных историй; SHORTENABLE дополнен he is, she is, here is, what is, who is, does not; исключение «be в конце короткого ответа» (FINAL_BE) распространено на эти формы.
+- Команды: SpokenReminderTests сначала 2 FAIL + 1 ERROR, потом OK; manage.py test tests → 136 OK; audit_course на неделях 1–2 и истории 1 — новых предупреждений нет.
