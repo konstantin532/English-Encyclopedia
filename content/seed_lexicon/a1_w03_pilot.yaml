@@ -1,0 +1,436 @@
+# Пилот, неделя 3 «В кафе»: напитки, числа 1–20, вежливость и просьба повторить. CEFR не сверялся.
+level: A1
+week: 3
+units:
+- uid: LX-00055
+  lemma: tea
+  meaning: a hot drink made from leaves
+  class: S3
+  forms:
+  - teas
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ti/
+  translation_ru: чай
+  collocations:
+  - a tea, please
+  - coffee or tea
+  example_en: '[T8]I[/] [D3]like[/] [S3]tea[/].'
+  example_ru: Я люблю чай.
+  situation: Заказываете напиток
+  usage_note: В заказе a tea — «чашка чая».
+- uid: LX-00056
+  lemma: cake
+  meaning: a sweet baked food
+  class: S3
+  forms:
+  - cakes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /keɪk/
+  translation_ru: торт, пирожное
+  collocations:
+  - a big cake
+  - a nice cake
+  example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cake[/], [O8]please[/]?'
+  example_ru: Можно мне пирожное?
+  situation: Заказываете сладкое
+- uid: LX-00057
+  lemma: photo
+  meaning: a picture made with a camera
+  class: S2
+  forms:
+  - photos
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfoʊt̬oʊ/
+  translation_ru: фотография
+  collocations:
+  - a family photo
+  - my photo
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]photo[/].'
+  example_ru: Это моя фотография.
+  situation: Показываете или находите фото
+  usage_note: 'Американское t между гласными звучит как быстрое d: «фоуДоу».'
+- uid: LX-00058
+  lemma: or
+  meaning: used between two choices
+  class: C1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɔr/
+  translation_ru: или
+  collocations:
+  - coffee or tea
+  - yes or no
+  example_en: '[S3]Coffee[/] [C1]or[/] [S3]tea[/]?'
+  example_ru: Кофе или чай?
+  situation: Предлагаете выбор
+- uid: LX-00059
+  lemma: and
+  meaning: used to join words
+  class: C1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ænd/
+  translation_ru: и
+  collocations:
+  - coffee and tea
+  - mother and father
+  example_en: '[S3]Coffee[/] [C1]and[/] [S3]tea[/], [O8]please[/].'
+  example_ru: Кофе и чай, пожалуйста.
+  situation: Перечисляете
+  usage_note: 'Без ударения звучит коротко: /ən/ — «кофи эн ти».'
+- uid: LX-00060
+  lemma: sorry
+  meaning: said to apologize or to ask someone to repeat
+  class: O2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsɑri/
+  translation_ru: извините; простите?
+  collocations:
+  - sorry?
+  example_en: '[O2]Sorry[/]?'
+  example_ru: Простите? (не расслышал)
+  situation: Не расслышали собеседника
+  usage_note: С вопросительной интонацией Sorry? значит «повторите, пожалуйста».
+- uid: LX-00061
+  lemma: thanks
+  meaning: an informal way to say thank you
+  class: O2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /θæŋks/
+  translation_ru: спасибо
+  collocations:
+  - thanks
+  example_en: '[O2]Thanks[/], [S1]Tom[/]!'
+  example_ru: Спасибо, Том!
+  situation: Благодарите коротко
+  usage_note: Thanks проще и короче, чем Thank you. th — кончик языка между зубами.
+- uid: LX-00062
+  lemma: one
+  meaning: the number 1
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wʌn/
+  translation_ru: один
+  example_en: '[N1]One[/] [S3]coffee[/], [O8]please[/].'
+  example_ru: Один кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00063
+  lemma: two
+  meaning: the number 2
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tu/
+  translation_ru: два
+  example_en: '[N1]Two[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Два кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00064
+  lemma: three
+  meaning: the number 3
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /θri/
+  translation_ru: три
+  example_en: '[N1]Three[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Три кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00065
+  lemma: four
+  meaning: the number 4
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fɔr/
+  translation_ru: четыре
+  example_en: '[N1]Four[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Четыре кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00066
+  lemma: five
+  meaning: the number 5
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /faɪv/
+  translation_ru: пять
+  example_en: '[N1]Five[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Пять кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00067
+  lemma: six
+  meaning: the number 6
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sɪks/
+  translation_ru: шесть
+  example_en: '[N1]Six[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Шесть кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00068
+  lemma: seven
+  meaning: the number 7
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsɛvən/
+  translation_ru: семь
+  example_en: '[N1]Seven[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Семь кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00069
+  lemma: eight
+  meaning: the number 8
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /eɪt/
+  translation_ru: восемь
+  example_en: '[N1]Eight[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Восемь кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00070
+  lemma: nine
+  meaning: the number 9
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /naɪn/
+  translation_ru: девять
+  example_en: '[N1]Nine[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Девять кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00071
+  lemma: ten
+  meaning: the number 10
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tɛn/
+  translation_ru: десять
+  example_en: '[N1]Ten[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Десять кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00072
+  lemma: eleven
+  meaning: the number 11
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪˈlɛvən/
+  translation_ru: одиннадцать
+  example_en: '[N1]Eleven[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Одиннадцать кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00073
+  lemma: twelve
+  meaning: the number 12
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /twɛlv/
+  translation_ru: двенадцать
+  example_en: '[N1]Twelve[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Двенадцать кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00074
+  lemma: thirteen
+  meaning: the number 13
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌθɝˈtin/
+  translation_ru: тринадцать
+  example_en: '[N1]Thirteen[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Тринадцать кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00075
+  lemma: fourteen
+  meaning: the number 14
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌfɔrˈtin/
+  translation_ru: четырнадцать
+  example_en: '[N1]Fourteen[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Четырнадцать кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00076
+  lemma: fifteen
+  meaning: the number 15
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌfɪfˈtin/
+  translation_ru: пятнадцать
+  example_en: '[N1]Fifteen[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Пятнадцать кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00077
+  lemma: sixteen
+  meaning: the number 16
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌsɪksˈtin/
+  translation_ru: шестнадцать
+  example_en: '[N1]Sixteen[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Шестнадцать кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00078
+  lemma: seventeen
+  meaning: the number 17
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌsɛvənˈtin/
+  translation_ru: семнадцать
+  example_en: '[N1]Seventeen[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Семнадцать кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00079
+  lemma: eighteen
+  meaning: the number 18
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌeɪˈtin/
+  translation_ru: восемнадцать
+  example_en: '[N1]Eighteen[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Восемнадцать кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00080
+  lemma: nineteen
+  meaning: the number 19
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌnaɪnˈtin/
+  translation_ru: девятнадцать
+  example_en: '[N1]Nineteen[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Девятнадцать кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00081
+  lemma: twenty
+  meaning: the number 20
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈtwɛnti/
+  translation_ru: двадцать
+  example_en: '[N1]Twenty[/] [S3]coffees[/], [O8]please[/].'
+  example_ru: Двадцать кофе, пожалуйста.
+  situation: Называете количество в заказе
+- uid: LX-00082
+  lemma: Coffee or tea?
+  meaning: Offering a choice of drinks
+  class: C1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈkɔfi ɚ ˈti/
+  translation_ru: Кофе или чай?
+  example_en: Coffee or tea?
+  example_ru: Кофе или чай?
+  situation: В кафе
+  usage_note: Учите и произносите фразу целиком. Слова внутри неё вводятся с этой недели.
+- uid: LX-00083
+  lemma: Two coffees, please.
+  meaning: Ordering a number of drinks
+  class: N1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈtu ˈkɔfiz ˈpliz/
+  translation_ru: Два кофе, пожалуйста.
+  example_en: Two coffees, please.
+  example_ru: Два кофе, пожалуйста.
+  situation: В кафе
+  usage_note: Учите и произносите фразу целиком. Слова внутри неё вводятся с этой недели.
+- uid: LX-00084
+  lemma: Sorry? Can you say it again, please?
+  meaning: Asking someone to repeat
+  class: O2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈsɑri kən ju ˈseɪ ɪt əˈɡɛn ˈpliz/
+  translation_ru: Простите? Можете повторить, пожалуйста?
+  example_en: Sorry? Can you say it again, please?
+  example_ru: Простите? Можете повторить, пожалуйста?
+  situation: В кафе
+  usage_note: 'Главная фраза для самостоятельного общения: если не поняли, попросите повторить. Это не ошибка, а умение.'
+- uid: LX-00085
+  lemma: Here you are.
+  meaning: Giving something to someone
+  class: A3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhɪr ju ˈɑr/
+  translation_ru: Вот, пожалуйста. (подавая что-то)
+  example_en: Here you are.
+  example_ru: Вот, пожалуйста. (подавая что-то)
+  situation: В кафе
+  usage_note: Учите и произносите фразу целиком. Слова внутри неё вводятся с этой недели.
+- uid: LX-00086
+  lemma: Thank you!
+  meaning: Saying thank you
+  class: O2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈθæŋk ju/
+  translation_ru: Спасибо!
+  example_en: Thank you!
+  example_ru: Спасибо!
+  situation: В кафе
+  usage_note: Учите и произносите фразу целиком. Слова внутри неё вводятся с этой недели.
+- uid: LX-00087
+  lemma: You are welcome.
+  meaning: Answering thank you
+  class: O2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ju ɚ ˈwɛlkəm/
+  translation_ru: Пожалуйста. (в ответ на спасибо)
+  example_en: You are welcome.
+  example_ru: Пожалуйста. (в ответ на спасибо)
+  situation: В кафе
+  usage_note: Учите и произносите фразу целиком. Слова внутри неё вводятся с этой недели.

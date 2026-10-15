@@ -1,0 +1,57 @@
+level: A1
+week: 3
+can_do_ru: "Я смогу заказать в кафе напиток и еду, назвать количество от 1 до 20 и попросить повторить, если не расслышал."
+mission_ru: "Закажите вслух по-английски два напитка и одно пирожное. Потом попросите повторить: Sorry? Can you say it again, please?"
+chunks: [LX-00082, LX-00083, LX-00084, LX-00085, LX-00086, LX-00087]
+story_beat:
+  intro_ru: "Утро в кафе на углу. Анна и Том заказывают завтрак. Кофемашина шумит, и бариста не всё слышит с первого раза."
+  outcome_ru: "Заказ принят: два кофе, чай и большое пирожное. На столе лежит маленькая семейная фотография — она не Анны и не Тома. Анна бережно убирает её, чтобы найти хозяина."
+  next_hook_ru: "Чья это семья?"
+script:
+  - speaker: barista
+    emotion: happy
+    text: "[J3]Good[/] [S7]morning[/]! [S3]Coffee[/] [C1]or[/] [S3]tea[/]?"
+    ru: "Доброе утро! Кофе или чай?"
+  - speaker: tom
+    text: "[N1]Two[/] [S3]coffees[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]."
+    ru: "Два кофе и один чай, пожалуйста."
+  - speaker: barista
+    emotion: worried
+    text: "[O2]Sorry[/]? [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]?"
+    ru: "Простите? Повторите, пожалуйста."
+  - speaker: tom
+    text: "[N1]Two[/] [S3]coffees[/] [C1]and[/] [N1]one[/] [S3]tea[/]. [C1]And[/] [D7]can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cake[/], [O8]please[/]?"
+    ru: "Два кофе и один чай. И можно мне пирожное, пожалуйста?"
+  - speaker: barista
+    emotion: happy
+    text: "[O4]Yes[/], [T8]you[/] [D7]can[/]. [A3]Here[/] [T8]you[/] [D1]are[/]."
+    ru: "Да, конечно. Вот, пожалуйста."
+  - speaker: anna
+    emotion: excited
+    text: "[O2]Thank you[/]! [T1]The[/] [S3]cake[/] [D1]is[/] [J1]big[/]!"
+    ru: "Спасибо! Пирожное большое!"
+  - speaker: tom
+    emotion: surprised
+    text: "[S1]Anna[/], [D1]is[/] [T2]this[/] [T3]your[/] [S2]photo[/]?"
+    ru: "Анна, это твоя фотография?"
+  - speaker: anna
+    emotion: worried
+    text: "[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]photo[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]photo[/]?"
+    spoken: "[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]photo[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]photo[/]?"
+    ru: "Нет, это не моя фотография. Может, твоя?"
+  - speaker: tom
+    text: "[O4]No[/]. [T8]It[/] [D1]is[/] [T1]a[/] [S1]family[/] [S2]photo[/]."
+    spoken: "[O4]No[/]. [T8]It[/][D1]'s[/] [T1]a[/] [S1]family[/] [S2]photo[/]."
+    ru: "Нет. Это семейная фотография."
+  - speaker: anna
+    emotion: worried
+    text: "[T8]It[/] [D1]is[/] [T1]a[/] [J3]nice[/] [S1]family[/]. [T8]I[/] [D1]have[/] [T1]the[/] [S2]photo[/] [A3]here[/]."
+    spoken: "[T8]It[/][D1]'s[/] [T1]a[/] [J3]nice[/] [S1]family[/]. [T8]I[/] [D1]have[/] [T1]the[/] [S2]photo[/] [A3]here[/]."
+    ru: "Хорошая семья. Фото пока будет у меня."
+twister:
+  number: 3
+  series: sounds
+  text: "[N1]Three[/] [S3]teas[/], [O2]thank you[/], [N1]three[/] [S3]teas[/]."
+  ipa: "/θri tiz ˈθæŋk ju θri tiz/"
+  focus_sounds: [th]
+  source: original

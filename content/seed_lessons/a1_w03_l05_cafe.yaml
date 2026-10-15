@@ -1,0 +1,113 @@
+slug: a1-cafe-order
+level: A1
+week: 3
+order: 5
+focus: D
+minutes: 40
+title: "В кафе: Can I have…?, «или», «и» и просьба повторить"
+summary: "Как заказать напиток и еду, выбрать из двух, поблагодарить и — самое важное — попросить повторить, если не расслышали."
+units: [LX-00055, LX-00056, LX-00057, LX-00058, LX-00059, LX-00060, LX-00082, LX-00084, LX-00085, LX-00086, LX-00087]
+sound_notes:
+  - text: "Coffee or tea?"
+    ipa: "/ˈkɔfi ɚ ˈti/"
+    note_ru: "or без ударения звучит коротко, почти «эр»"
+  - text: "Sorry? Can you say it again, please?"
+    ipa: "/ˈsɑri kən ju ˈseɪ ɪt əˈɡɛn ˈpliz/"
+    note_ru: "Sorry с вопросительной интонацией вверх — значит «повторите»"
+  - text: "Here you are."
+    ipa: "/ˈhɪr ju ˈɑr/"
+    note_ru: "Говорят, когда подают вещь; сокращения здесь нет"
+layers:
+  - number: 1
+    body: |
+      В кафе нужны три умения: попросить, выбрать и переспросить.
+
+      > [D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cake[/], [O8]please[/]? — Можно мне пирожное, пожалуйста?
+      > [S3]Coffee[/] [C1]or[/] [S3]tea[/]? — Кофе или чай?
+      > [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]? — Можете повторить, пожалуйста?
+
+      Последняя фраза — ваш главный помощник. Не поняли — переспросите. Так делают все, даже американцы.
+  - number: 2
+    body: |
+      **or** и **and** — очень старые слова. В древнеанглийском «и» звучало почти так же: `and`. Слово **or** — сокращение от старого `other`, «другой»: «кофе — или другое, чай».
+
+      **sorry** родственно слову sore, «больной, ноющий». Сначала sorry значило «мне больно, мне жаль». Сегодня это и извинение, и вежливая просьба повторить.
+  - number: 3
+    body: |
+      Просьба строится по уже знакомой схеме can:
+
+      > [D7]Can[/] [T8]I[/] [D1]have[/] [S3]water[/], [O8]please[/]? — Можно мне воды?
+      > [D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]tea[/], [O8]please[/]? — Можно мне чай?
+
+      - [C1]or[/] ставят между двумя вариантами: coffee or tea — выбирают одно.
+      - [C1]and[/] соединяет: coffee and tea — берут оба.
+      - [O8]please[/] обычно ставят в конце, после запятой.
+  - number: 4
+    body: |
+      Почему просьба начинается с Can I, а не с «Дайте»? По-английски прямое «Give me…» звучит грубо. Вопрос с can оставляет собеседнику выбор, поэтому звучит вежливо.
+
+      Переспросить тоже лучше вопросом, а не словом «Что?»:
+
+      > [O2]Sorry[/]? — Простите?
+      > [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]? — Повторите, пожалуйста.
+  - number: 5
+    body: |
+      Так звучит заказ в американском кафе:
+
+      > [S3]Coffee[/] [C1]or[/] [S3]tea[/]? — Кофе или чай?
+      > [A3]Here[/] [T8]you[/] [D1]are[/]. — Вот, пожалуйста.
+      > [O2]Thank you[/]! — Спасибо!
+      > [T8]You[/] [D1]are[/] [J3]welcome[/]. — Пожалуйста.
+
+      - Подавая вещь, говорят Here you are. В этой фразе you are не сокращают.
+      - На Thank you отвечают You are welcome. В быстрой речи — You're welcome.
+  - number: 6
+    body: |
+      Русское «пожалуйста» по-английски бывает тремя разными фразами:
+
+      - просьба — please: A tea, please;
+      - подаёте вещь — Here you are;
+      - ответ на «спасибо» — You are welcome.
+
+      В заказе a coffee, a tea значат «чашка кофе», «чашка чая». Поэтому можно сказать two coffees.
+  - number: 7
+    body: |
+      Четыре задания: узнать вежливую просьбу, выбрать «или», собрать заказ и ответить в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Вы не расслышали бариста. Что сказать?"
+    options: ["Sorry? Can you say it again, please?", "No, it is not my cake.", "Thank you!"]
+    answer: "Sorry? Can you say it again, please?"
+    hint_ru: "Нужна просьба повторить."
+    explanation_ru: "Sorry? Can you say it again, please? — вежливая просьба повторить. Так вы сами управляете разговором."
+    units: [LX-00084]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Бариста предлагает выбор из двух напитков. Вставьте слово «или»."
+    prompt_en: "Coffee ___ tea?"
+    answer: "or"
+    hint_ru: "Выбирают одно из двух."
+    explanation_ru: "or ставят между вариантами, из которых выбирают один."
+    units: [LX-00058]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите просьбу: «Можно мне пирожное, пожалуйста?»"
+    options: [have, please, Can, a, cake, I]
+    answer: "Can I have a cake please"
+    hint_ru: "Начните с Can I."
+    explanation_ru: "Can I have …, please? — вежливая просьба. Перед cake нужен a."
+    units: [LX-00056]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: вам предлагают кофе или чай, а вы хотите чай. Ответьте коротко и вежливо."
+    prompt_en: "Coffee or tea? — ___"
+    answer: "Tea, please."
+    accepted: ["Tea please", "A tea, please.", "A tea please", "One tea, please.", "Can I have a tea, please?", "Can I have tea, please?"]
+    hint_ru: "Назовите напиток и добавьте please."
+    explanation_ru: "Достаточно назвать напиток и сказать please: Tea, please. Полная просьба Can I have a tea, please? тоже верна."
+    units: [LX-00055, LX-00082]

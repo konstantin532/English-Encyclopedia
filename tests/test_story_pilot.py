@@ -147,3 +147,79 @@ class SpokenReminderTests(TestCase):
     def test_final_be_not_flagged(self):
         self.scene_with("[O4]Yes[/], [T8]he[/] [D1]is[/]. [A3]Here[/] [T8]you[/] [D1]are[/].")
         self.assertFalse([w for w in self.warnings() if "Неделя A1-5, реплика 1: можно сократить" in w])
+
+
+from apps.lessons.models import Lesson
+from apps.lexicon.models import LexicalUnit
+from apps.curriculum.models import TongueTwister
+from apps.publishing.audit import AuditReport
+from apps.publishing.audit_weeks import audit_scene
+from apps.stories.script import voices_manifest
+
+STAGES = {"recognition", "substitution", "production", "transfer"}
+
+
+def scene_errors(scene) -> list[str]:
+    r = AuditReport()
+    audit_scene(r, scene, voices_manifest())
+    return r.errors
+
+
+class WeekContentMixin:
+    week_number = 0
+    slugs: tuple[str, ...] = ()
+    twister_number = 0
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def check_complete(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=self.week_number)
+        for order, slug in enumerate(self.slugs):
+            lesson = Lesson.objects.get(slug=slug, is_published=True)
+            self.assertEqual(lesson.week.number, self.week_number)
+            self.assertEqual(set(lesson.layers.values_list("number", flat=True)), {1, 2, 3, 4, 5, 6, 7}, slug)
+            self.assertEqual(set(lesson.exercises.values_list("stage", flat=True)), STAGES, slug)
+        chunks = list(scene.chunks.all())
+        self.assertTrue(5 <= len(chunks) <= 8)
+        self.assertTrue(all(u.unit_type == "phrase" for u in chunks))
+        self.assertEqual(TongueTwister.objects.get(week=scene.week).number, self.twister_number)
+        self.assertEqual(scene_errors(scene), [])
+        self.assertTrue(scene.story_beat.get("intro_ru") and scene.story_beat.get("outcome_ru"))
+
+    def check_reload(self):
+        counts = lambda: (LexicalUnit.objects.count(), Lesson.objects.count(), WeekScene.objects.count(),
+                          TongueTwister.objects.count())
+        before = counts()
+        call_command("load_content", verbosity=0)
+        self.assertEqual(counts(), before)
+
+
+class WeekThreeTests(WeekContentMixin, TestCase):
+    week_number, twister_number = 3, 3
+    slugs = ("a1-cafe-order", "a1-numbers-1-20")
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_reload_has_no_duplicates(self):
+        self.check_reload()
+
+    def test_lesson_order(self):
+        self.assertEqual([Lesson.objects.get(slug=s).order for s in self.slugs], [5, 6])
+
+    def test_repeat_request_taught_this_week(self):
+        unit = LexicalUnit.objects.get(lemma="Sorry? Can you say it again, please?")
+        self.assertEqual((unit.week.number, unit.unit_type), (3, "phrase"))
+
+    def test_future_word_rejected(self):
+        week4 = Week.objects.get(level__code="A1", number=4)
+        first = LexicalUnit.objects.filter(week__number=1).first()
+        LexicalUnit.objects.create(uid="LX-99990", lemma="zebrafish", meaning="test", part_of_speech=first.part_of_speech,
+                                   semantic_class=first.semantic_class, internal_level=first.internal_level, week=week4,
+                                   translation_ru="тест", example_en="[S6]zebrafish[/]")
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=3)
+        self.assertEqual(scene_errors(scene), [])
+        scene.script[0]["text"] += " [S6]zebrafish[/]"
+        self.assertTrue([e for e in scene_errors(scene) if "zebrafish" in e])
