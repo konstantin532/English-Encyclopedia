@@ -207,8 +207,7 @@ class Command(BaseCommand):
                     raise CommandError(f"{path.name}: роли {line['speaker']} нет в content/manifests/voices.yaml")
                 self._check_markup(f"{path.name}: реплика", line["text"], line.get("spoken", ""))
             story.body = "\n\n".join(line["text"] for line in story.script)
-        manifest = Path(settings.BASE_DIR) / "static" / "audio" / "stories" / f"s{story.number:02d}" / "manifest.json"
-        story.audio = json.loads(manifest.read_text(encoding="utf-8")) if manifest.exists() else {}
+        story.audio = self._audio_manifest("stories", f"s{story.number:02d}")
         story.is_published = True
         story.save()
         self._set_units(story.new_units, data.get("new_units", []), path.name)
@@ -239,7 +238,11 @@ class Command(BaseCommand):
 
     def _audio_manifest(self, *parts: str) -> dict:
         path = Path(settings.BASE_DIR) / "static" / "audio" / Path(*parts) / "manifest.json"
-        return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+        data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+        if data.get("engine") == "test" or data.get("model") == "test-tone":
+            self.stdout.write(f"Пропущен тестовый звук без речи: {path.parent.name}. Запустите generate_audio.bat.")
+            return {}
+        return data
 
     def load_weeks_plan(self, path: Path) -> int:
         if not path.exists():
