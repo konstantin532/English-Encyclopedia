@@ -81,7 +81,7 @@ class LinguisticMarkupRegressionTests(SimpleTestCase):
         for text in ("Start [S1]book end", "[S1]cat[/] plain [D1]run", "[S1-#d32f2f]book"):
             with self.subTest(text=text):
                 issues = find_issues(text)
-                self.assertTrue(any("без закрывающего" in i.problem for i in issues), issues)
+                self.assertTrue(any("не закрыт" in i.problem for i in issues), issues)
 
     def test_nested_markers_are_reported_instead_of_silently_swallowed(self):
         issues = find_issues("[S1]hello [D1]walk[/]")
