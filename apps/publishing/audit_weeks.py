@@ -10,7 +10,7 @@ from apps.lexicon.models import UnitType
 from apps.lessons.models import Lesson
 from apps.stories.models import Story
 from apps.stories.script import voices_manifest
-from apps.taxonomy.markup import strip_markup
+from apps.taxonomy.markup import find_issues, strip_markup
 from apps.taxonomy.registry import CATEGORIES
 
 MARKER_TOKEN = re.compile(r"\[([A-Z])(\d+)(?:-#[0-9a-fA-F]{6})?\]")
@@ -71,11 +71,11 @@ def audit_script(r, where: str, script: list[dict], voices: dict, music_required
     for i, line in enumerate(script, 1):
         text, spoken = line.get("text", ""), line.get("spoken", "")
         at = f"{where}, реплика {i}"
+        for issue in find_issues(text):
+            r.errors.append(f"{at}: {issue.token} — {issue.problem}.")
         audit_contractions(r, at, text)
         if spoken:
             audit_contractions(r, at, spoken)
-            from apps.taxonomy.markup import find_issues
-
             for issue in find_issues(spoken):
                 r.errors.append(f"{at}: spoken: {issue.token} — {issue.problem}.")
             if normalize_line(spoken) == normalize_line(text):
@@ -178,9 +178,12 @@ def audit_scene(r, scene: WeekScene, voices: dict) -> None:
 
 
 def audit_twister(r, tw: TongueTwister) -> None:
-    from apps.publishing.audit import text_tokens, vocab_until
+    from apps.publishing.audit import audit_contractions, text_tokens, vocab_until
 
     where = f"Скороговорка {tw.number}"
+    audit_contractions(r, where, tw.text)
+    for issue in find_issues(tw.text):
+        r.errors.append(f"{where}: {issue.token} — {issue.problem}.")
     level = tw.week.level
     if tw.number != tw.week.global_number:
         r.errors.append(f"{where}: номер должен быть {tw.week.global_number} (неделя {level.code}-{tw.week.number}).")

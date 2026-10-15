@@ -94,10 +94,10 @@ exercises:
     kind: choice
     stage: recognition
     prompt_ru: "Как правильно сказать «Мне нравится кофе»?"
-    options: ["I like coffee.", "Me like coffee.", "Coffee likes me."]
+    options: ["I like coffee.", "I likes coffee.", "I coffee like."]
     answer: "I like coffee."
     hint_ru: "Кто первым словом — тот, кому нравится."
-    explanation_ru: "По-английски «мне нравится» строится от человека: I like coffee. Me like — ошибка, Coffee likes me — «кофе любит меня»."
+    explanation_ru: "По-английски «мне нравится» строится от человека: I like coffee. После I нужен like без -s. Обычный порядок слов: кто — глагол — что."
     units: [LX-00034]
   - order: 2
     kind: fill

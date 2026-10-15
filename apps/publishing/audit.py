@@ -18,7 +18,7 @@ from apps.taxonomy.registry import validate_registry
 
 WORD = re.compile(r"[A-Za-z][A-Za-z'’]*")
 # Отдельный [X1]n't[/] допустим; основа и отрицание требуют разных маркеров.
-UNSPLIT_NEGATIVE = re.compile(r"\[[A-Z]\d+(?:-#[0-9a-fA-F]{6})?\][^\[]+n['’]t\[/\]", re.IGNORECASE)
+UNSPLIT_NEGATIVE = re.compile(r"\[([A-Z]\d+)(?:-#[0-9a-fA-F]{6})?\]([^\[]*n['’]t[^\[]*)\[/\]", re.IGNORECASE)
 # Окончания форм: books, houses, Anna's — формы слова не плодят новые единицы (раздел 4).
 FORM_SUFFIXES = ("'s", "s", "es")
 # Сокращения: I'm, it's, you're, don't, isn't.
@@ -96,14 +96,19 @@ def english_lines() -> list[tuple[str, str]]:
                 out.append((f"{layer.lesson.slug}/слой {layer.number}", text))
     for ex in Exercise.objects.select_related("lesson"):
         where = f"{ex.lesson.slug}/задание {ex.order}"
-        out += [(where, ex.prompt_en.replace("___", "")), (where, ex.answer), *[(where, a) for a in ex.accepted]]
+        out += [(where, ex.prompt_en.replace("___", "")), (where, ex.answer),
+                *[(where, a) for a in ex.accepted], *[(where, a) for a in ex.options]]
     for lesson in Lesson.objects.all():
         out += [(f"{lesson.slug}/как это звучит", item["text"]) for item in lesson.sound_notes]
+        for pair in lesson.contractions:
+            out += [(f"{lesson.slug}/как сокращают", pair.get(key, "")) for key in ("full", "short")]
     return out
 
 
 def audit_contractions(r: AuditReport, where: str, text: str) -> None:
     for match in UNSPLIT_NEGATIVE.finditer(text):
+        if match.group(1).upper() == "X1" and match.group(2).strip().replace("’", "'") == "n't":
+            continue
         r.errors.append(f"{where}: {match.group()} — слитная форма: основа и n't должны иметь отдельные маркеры.")
 
 
@@ -151,9 +156,6 @@ def run_audit() -> AuditReport:
 
     audit_russian_transcription(r, units)
 
-    for u in units:
-        for i in find_issues(u.example_en):
-            r.errors.append(f"{u.uid}: {i.token} — {i.problem}")
     for layer in LessonLayer.objects.select_related("lesson"):
         audit_contractions(r, f"{layer.lesson.slug}, слой {layer.number}", layer.body)
         for i in find_issues(layer.body):
@@ -168,6 +170,8 @@ def run_audit() -> AuditReport:
     for where, text in english_lines():
         if "/слой " not in where:
             audit_contractions(r, where, text)
+            for issue in find_issues(text):
+                r.errors.append(f"{where}: {issue.token} — {issue.problem}")
         for tok in WORD.findall(strip_markup(text)):
             if not is_known(tok, vocab):
                 r.unknown_words.setdefault(tok.lower(), set()).add(where)
@@ -217,6 +221,8 @@ def audit_stories_and_poems(r: AuditReport) -> None:
             continue
         where = f"История {story.number}"
         audit_contractions(r, where, story.body)
+        for issue in find_issues(story.body):
+            r.errors.append(f"{where}: {issue.token} — {issue.problem}")
         plan = LEVEL_BY_CODE[story.level.code]
         new = list(story.new_units.all())
         limit = NEW_WORDS_PER_STORY[plan.block]
@@ -248,6 +254,8 @@ def audit_stories_and_poems(r: AuditReport) -> None:
             continue
         where = f"Стихотворение {poem.number}"
         audit_contractions(r, where, poem.body)
+        for issue in find_issues(poem.body):
+            r.errors.append(f"{where}: {issue.token} — {issue.problem}")
         known = vocab_until(poem.level, poem.week.number if poem.week else 99)
         stray = sorted({t.lower() for t in text_tokens(poem.body) if not is_known(t, known)})
         if stray:

@@ -29,7 +29,7 @@ script:
   - speaker: anna
     emotion: excited
     text: "[O2]Thank you[/]! [T1]The[/] [S3]cookie[/] [D1]is[/] [J1]big[/]!"
-    ru: "Спасибо! Пирожное большое!"
+    ru: "Спасибо! Печенье большое!"
   - speaker: tom
     emotion: surprised
     text: "[S1]Anna[/], [D1]is[/] [T2]this[/] [T3]your[/] [S2]photo[/]?"

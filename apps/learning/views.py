@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseBadRequest, JsonResponse
+from django.http import HttpResponseBadRequest, HttpResponseRedirect, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
+from django.utils.http import url_has_allowed_host_and_scheme
 from django.views.decorators.http import require_POST
 
 from apps.lessons.models import Lesson
@@ -38,7 +39,10 @@ def toggle_markers(request):
     request.user.save(update_fields=["markers_in_color"])
     if request.headers.get("X-Requested-With") == "fetch":
         return JsonResponse({"color": request.user.markers_in_color})
-    return redirect(request.POST.get("next") or "learning:dashboard")
+    destination = request.POST.get("next", "")
+    if url_has_allowed_host_and_scheme(destination, allowed_hosts={request.get_host()}, require_https=request.is_secure()):
+        return HttpResponseRedirect(destination)
+    return redirect("learning:dashboard")
 
 
 @login_required
