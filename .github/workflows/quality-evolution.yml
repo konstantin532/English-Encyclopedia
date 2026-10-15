@@ -1,0 +1,64 @@
+name: Quality Evolution
+
+on:
+  pull_request:
+  push:
+    branches: [main, situation-weeks]
+  schedule:
+    # Monday 03:17 UTC; schedules run only from the default branch.
+    - cron: '17 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-evolution-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  coverage-and-fuzz:
+    name: Coverage ratchet and evolving fuzz
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install locked dependencies
+        run: uv sync --frozen
+      - name: Full test suite with branch coverage
+        run: uv run --with pytest-cov pytest -q --cov=apps --cov-branch --cov-report=json:coverage.json --cov-report=term-missing:skip-covered --junitxml=quality-junit.xml
+      - name: Test new randomized combinations (repeatable by seed)
+        run: uv run python scripts/qa_evolution.py fuzz --run-number "${{ github.run_number }}" --seed "${{ github.run_id }}" ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && '--deep' || '' }}
+      - name: Compare coverage and test count to baseline
+        run: uv run python scripts/qa_evolution.py report --coverage-json coverage.json --junit-xml quality-junit.xml --baseline tests/quality_baseline.json --output quality-report.md
+      - name: Attach QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-evidence-${{ github.run_id }}
+          path: |
+            coverage.json
+            quality-junit.xml
+            quality-report.md
+          if-no-files-found: warn
+          retention-days: 14
+
+  mutation-sentinels:
+    name: Mutation sensitivity probes
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Check whether the tests detect deliberately broken behavior
+        run: uv run python scripts/qa_mutation_probe.py --report mutation-report.md
+      - name: Attach mutation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mutation-evidence-${{ github.run_id }}
+          path: mutation-report.md
+          if-no-files-found: warn
+          retention-days: 14
