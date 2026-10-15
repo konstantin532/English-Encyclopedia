@@ -1,0 +1,202 @@
+# Контрольный пакет пилота A1 (четыре недели). Материал ведущего: в базу не загружается.
+# Ученик не видит транскрипт и ключи до конца попытки. Слушает дважды, без текста и перевода.
+# weekly — после каждой недели; forms — параллельные формы до курса (pre), после (post) и через 7 дней (delayed).
+# Во всех разговорах только слова, известные к max_week. Ответы ведущий принимает по смыслу, на русском.
+level: A1
+weekly:
+  - id: w01
+    max_week: 1
+    script:
+      - speaker: mia
+        emotion: happy
+        text: "[J3]Good[/] [S7]morning[/]! [T3]My[/] [S9]name[/] [D1]is[/] [S1]Mia[/]."
+      - speaker: tom
+        text: "[J3]Good[/] [S7]morning[/], [S1]Mia[/]! [T8]I[/] [D1]am[/] [S1]Tom[/]. [T8]I[/] [D1]am[/] [T3]your[/] [S1]neighbor[/]."
+        spoken: "[J3]Good[/] [S7]morning[/], [S1]Mia[/]! [T8]I[/][D1]'m[/] [S1]Tom[/]. [T8]I[/][D1]'m[/] [T3]your[/] [S1]neighbor[/]."
+      - speaker: mia
+        text: "[J3]Nice[/] [X2]to[/] [D5]meet[/] [T8]you[/], [S1]Tom[/]. [D1]Are[/] [T8]you[/] [J4]busy[/]?"
+      - speaker: tom
+        emotion: tired
+        text: "[O4]Yes[/], [T8]I[/] [D1]am[/]. [T8]I[/] [D1]am[/] [J4]busy[/] [P1]at[/] [S2]home[/]."
+        spoken: "[O4]Yes[/], [T8]I[/] [D1]am[/]. [T8]I[/][D1]'m[/] [J4]busy[/] [P1]at[/] [S2]home[/]."
+      - speaker: mia
+        text: "[D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/], [S1]Tom[/]!"
+    questions:
+      - prompt_ru: "Как зовут девушку?"
+        accepted_ru: ["Мия", "Mia"]
+      - prompt_ru: "Кем Том приходится Мие?"
+        accepted_ru: ["соседом", "сосед"]
+      - prompt_ru: "Занят ли Том?"
+        accepted_ru: ["да", "да, он занят дома"]
+    oral:
+      prompt_ru: "Ведущий — ваш новый сосед. Поздоровайтесь, назовите своё имя и спросите его имя."
+      cues_ru: ["приветствие", "My name is …", "What is your name?"]
+  - id: w02
+    max_week: 2
+    script:
+      - speaker: tom
+        emotion: happy
+        text: "[S1]Mia[/], [T2]this[/] [D1]is[/] [T3]my[/] [S2]house[/]. [T2]This[/] [D1]is[/] [T1]a[/] [J1]big[/] [S2]room[/]."
+      - speaker: mia
+        emotion: surprised
+        text: "[T8]I[/] [D3]like[/] [T8]it[/]! [D1]Is[/] [T2]that[/] [T3]your[/] [S6]cat[/]?"
+      - speaker: tom
+        text: "[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S6]cat[/]. [T8]It[/] [D1]is[/] [S1]Anna[/][T3]'s[/] [S6]cat[/]."
+        spoken: "[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/] [T3]my[/] [S6]cat[/]. [T8]It[/][D1]'s[/] [S1]Anna[/][T3]'s[/] [S6]cat[/]."
+      - speaker: mia
+        text: "[D7]Can[/] [T8]I[/] [D1]have[/] [S3]water[/], [O8]please[/]?"
+      - speaker: tom
+        text: "[O4]Yes[/], [T8]you[/] [D7]can[/]. [D1]Do[/] [T8]you[/] [D3]like[/] [S3]coffee[/]?"
+      - speaker: mia
+        text: "[O4]No[/], [T8]I[/] [D1]do[/] [X1]not[/]. [T8]I[/] [D3]like[/] [S3]water[/]."
+        spoken: "[O4]No[/], [T8]I[/] [D1]do[/][X1]n't[/]. [T8]I[/] [D3]like[/] [S3]water[/]."
+    questions:
+      - prompt_ru: "Чей кот в доме Тома?"
+        accepted_ru: ["Анны", "кот Анны"]
+      - prompt_ru: "Что попросила Мия?"
+        accepted_ru: ["воды", "воду", "стакан воды"]
+      - prompt_ru: "Любит ли Мия кофе?"
+        accepted_ru: ["нет", "нет, она любит воду"]
+    oral:
+      prompt_ru: "Ведущий в гостях у вас. Покажите комнату, скажите, какая она, и предложите воду или кофе."
+      cues_ru: ["This is my room.", "It is …", "Do you like …? / Can I …?"]
+  - id: w03
+    max_week: 3
+    script:
+      - speaker: barista
+        emotion: happy
+        text: "[J3]Good[/] [S7]morning[/]! [S3]Coffee[/] [C1]or[/] [S3]tea[/]?"
+      - speaker: mia
+        text: "[N1]Three[/] [S3]teas[/] [C1]and[/] [N1]one[/] [S3]cake[/], [O8]please[/]."
+      - speaker: barista
+        emotion: worried
+        text: "[O2]Sorry[/]? [N1]Two[/] [S3]teas[/]?"
+      - speaker: mia
+        text: "[O4]No[/]. [N1]Three[/] [S3]teas[/] [C1]and[/] [N1]one[/] [S3]cake[/]."
+      - speaker: barista
+        text: "[N1]Three[/] [S3]teas[/] [C1]and[/] [N1]one[/] [S3]cake[/]. [A3]Here[/] [T8]you[/] [D1]are[/]."
+      - speaker: mia
+        emotion: happy
+        text: "[O2]Thanks[/]!"
+    questions:
+      - prompt_ru: "Сколько чашек чая заказала Мия?"
+        accepted_ru: ["три", "3"]
+      - prompt_ru: "Что ещё она заказала?"
+        accepted_ru: ["пирожное", "торт", "одно пирожное"]
+      - prompt_ru: "Что сначала ошибочно услышал бариста?"
+        accepted_ru: ["два чая", "2 чая"]
+    oral:
+      prompt_ru: "Ведущий — бариста. Закажите два кофе и пирожное. Один раз ведущий скажет неразборчиво: попросите повторить."
+      cues_ru: ["Two coffees and …, please.", "Sorry? Can you say it again, please?", "Thank you!"]
+  - id: w04
+    max_week: 4
+    script:
+      - speaker: anna
+        text: "[S1]Tom[/], [D1]is[/] [T2]this[/] [T3]your[/] [S1]family[/]?"
+      - speaker: tom
+        emotion: happy
+        text: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T2]This[/] [D1]is[/] [T3]my[/] [S1]sister[/]. [T8]She[/] [D1]is[/] [N1]twelve[/]."
+        spoken: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T2]This[/] [D1]is[/] [T3]my[/] [S1]sister[/]. [T8]She[/][D1]'s[/] [N1]twelve[/]."
+      - speaker: anna
+        emotion: surprised
+        text: "[T9]Who[/] [D1]is[/] [T2]this[/]?"
+        spoken: "[T9]Who[/][D1]'s[/] [T2]this[/]?"
+      - speaker: tom
+        text: "[T2]This[/] [D1]is[/] [T3]my[/] [S1]grandmother[/]. [T3]Her[/] [S6]cat[/] [D1]is[/] [J1]big[/]!"
+      - speaker: anna
+        emotion: happy
+        text: "[T3]Your[/] [S1]family[/] [D1]is[/] [J3]nice[/], [S1]Tom[/]."
+    questions:
+      - prompt_ru: "Сколько лет сестре Тома?"
+        accepted_ru: ["двенадцать", "12"]
+      - prompt_ru: "Кто ещё есть на фото?"
+        accepted_ru: ["бабушка", "бабушка Тома"]
+      - prompt_ru: "Что сказано о коте?"
+        accepted_ru: ["он большой", "у бабушки большой кот"]
+    oral:
+      prompt_ru: "Ведущий показывает «семейное фото» (картинку). Спросите, кто это, и ответьте на вопрос о вашей семье."
+      cues_ru: ["Who is this?", "Is this your …?", "This is my …"]
+forms:
+  - id: pre
+    max_week: 4
+    script:
+      - speaker: barista
+        emotion: happy
+        text: "[J3]Good[/] [S7]morning[/]! [S3]Coffee[/] [C1]or[/] [S3]tea[/]?"
+      - speaker: anna
+        text: "[N1]One[/] [S3]coffee[/] [C1]and[/] [N1]two[/] [S3]teas[/], [O8]please[/]."
+      - speaker: barista
+        text: "[A3]Here[/] [T8]you[/] [D1]are[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S2]photo[/]?"
+      - speaker: anna
+        text: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/] [C1]and[/] [T3]my[/] [S1]father[/]."
+      - speaker: barista
+        emotion: happy
+        text: "[T3]Your[/] [S1]family[/] [D1]is[/] [J3]nice[/]!"
+      - speaker: anna
+        text: "[O2]Thank you[/]!"
+    questions:
+      - prompt_ru: "Что заказала Анна?"
+        accepted_ru: ["один кофе и два чая", "кофе и два чая"]
+      - prompt_ru: "Чья фотография?"
+        accepted_ru: ["Анны", "её"]
+      - prompt_ru: "Кто на фотографии?"
+        accepted_ru: ["мама и папа", "родители Анны"]
+    oral:
+      prompt_ru: "Ведущий — бариста. Закажите напиток и еду с количеством; на неразборчивую фразу попросите повторить; ответьте, кто на вашем фото."
+      cues_ru: ["… and …, please.", "Sorry? Can you say it again, please?", "This is my …"]
+  - id: post
+    max_week: 4
+    script:
+      - speaker: tom
+        text: "[J3]Good[/] [S7]morning[/]! [N1]Two[/] [S3]coffees[/] [C1]and[/] [N1]one[/] [S3]cake[/], [O8]please[/]."
+      - speaker: barista
+        emotion: worried
+        text: "[O2]Sorry[/]? [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]?"
+      - speaker: tom
+        text: "[N1]Two[/] [S3]coffees[/] [C1]and[/] [N1]one[/] [S3]cake[/]."
+      - speaker: barista
+        text: "[A3]Here[/] [T8]you[/] [D1]are[/]. [T9]Who[/] [D1]is[/] [T2]this[/]?"
+        spoken: "[A3]Here[/] [T8]you[/] [D1]are[/]. [T9]Who[/][D1]'s[/] [T2]this[/]?"
+      - speaker: tom
+        text: "[T2]This[/] [D1]is[/] [S1]Mia[/][T3]'s[/] [S1]brother[/]. [T8]He[/] [D1]is[/] [N1]ten[/]."
+        spoken: "[T2]This[/] [D1]is[/] [S1]Mia[/][T3]'s[/] [S1]brother[/]. [T8]He[/][D1]'s[/] [N1]ten[/]."
+      - speaker: barista
+        emotion: happy
+        text: "[T8]He[/] [D1]is[/] [J4]happy[/]!"
+        spoken: "[T8]He[/][D1]'s[/] [J4]happy[/]!"
+    questions:
+      - prompt_ru: "Что заказал Том?"
+        accepted_ru: ["два кофе и пирожное", "два кофе и одно пирожное"]
+      - prompt_ru: "Что сделал бариста, когда не понял?"
+        accepted_ru: ["попросил повторить", "переспросил"]
+      - prompt_ru: "Чей брат на фото и сколько ему лет?"
+        accepted_ru: ["брат Мии, десять", "брат Мии, 10 лет"]
+    oral:
+      prompt_ru: "Ведущий — бариста. Закажите напиток и еду с количеством; на неразборчивую фразу попросите повторить; ответьте, кто на вашем фото."
+      cues_ru: ["… and …, please.", "Sorry? Can you say it again, please?", "This is my …"]
+  - id: delayed
+    max_week: 4
+    script:
+      - speaker: mia
+        text: "[S1]Anna[/], [D1]is[/] [T2]this[/] [T3]your[/] [S2]book[/]?"
+      - speaker: anna
+        text: "[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/]. [T8]It[/] [D1]is[/] [S1]Tom[/][T3]'s[/] [S2]book[/]."
+        spoken: "[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/]. [T8]It[/][D1]'s[/] [S1]Tom[/][T3]'s[/] [S2]book[/]."
+      - speaker: mia
+        text: "[D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]tea[/], [O8]please[/]?"
+      - speaker: anna
+        text: "[O4]Yes[/]. [A3]Here[/] [T8]you[/] [D1]are[/]. [T9]Who[/] [D1]is[/] [T2]this[/]?"
+        spoken: "[O4]Yes[/]. [A3]Here[/] [T8]you[/] [D1]are[/]. [T9]Who[/][D1]'s[/] [T2]this[/]?"
+      - speaker: mia
+        emotion: happy
+        text: "[T2]This[/] [D1]is[/] [T3]my[/] [S1]grandfather[/]. [T3]His[/] [S2]house[/] [D1]is[/] [J1]big[/]."
+    questions:
+      - prompt_ru: "Чья книга?"
+        accepted_ru: ["Тома", "книга Тома"]
+      - prompt_ru: "Что попросила Мия?"
+        accepted_ru: ["чай", "чашку чая"]
+      - prompt_ru: "Кто на фото у Мии?"
+        accepted_ru: ["дедушка", "её дедушка"]
+    oral:
+      prompt_ru: "Ведущий — бариста. Закажите напиток и еду с количеством; на неразборчивую фразу попросите повторить; ответьте, кто на вашем фото."
+      cues_ru: ["… and …, please.", "Sorry? Can you say it again, please?", "This is my …"]

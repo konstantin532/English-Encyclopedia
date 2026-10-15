@@ -46,3 +46,9 @@
 | Кто на фото? (нед. 4) | Who is this? / Is this your mother? | This is my brother. He is ten. / Yes, it is. And this is my father. |
 | Чем кончилось? (нед. 4) | Here is your photo, Mia. | Thank you! I am happy! |
 - Команды: PilotContinuityTests сначала 6 FAIL (в черновике), потом OK; load_content, audit_course → «Ошибок нет», незарегистрированных слов и напоминаний о spoken нет; manage.py test tests → 151 OK.
+
+## Этап 5: независимые аудирование и устный ответ
+- assessment.yaml: weekly w01…w04 (max_week 1…4) и формы pre/post/delayed (max_week 4); по 3 вопроса prompt_ru/accepted_ru и oral {prompt_ru, cues_ru}; новые ситуации (Мия знакомится с Томом, Мия в гостях у Тома, заказ Мии с ошибкой бариста, семья Тома и др.), с учебными сценами совпадает не больше одной реплики. Новых имён и событий канона нет: кот Анны, брат Мии (10 лет) согласованы с неделями.
+- scripts/generate_pilot_audio.py: --engine {kokoro,test}, --output обязателен и принимается только внутри static/audio/pilot-a1 (проверка после resolve до записи); вызывает существующий render, основной генератор не менялся.
+- guide.md: протокол (два прослушивания, 0/1 за смысл; устно 0/1/2 по трём признакам, просьба повторить не штрафуется, помощь отмечается), 5–8 участников как удобный размер, delayed через 7 дней, данные обезличенно вне Git, вопросы о впечатлениях, статус «испытание не проведено».
+- Команды: AssessmentPackageTests и PilotAudioTests сначала ERROR (нет пакета и скрипта), потом OK; test_future_word_fails подтверждает границу недели.

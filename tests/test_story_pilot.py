@@ -290,3 +290,70 @@ class PilotContinuityTests(TestCase):
         for n in range(1, 5):
             html = self.client.get(reverse("curriculum:week", args=["a1", n])).content.decode()
             self.assertIn(f'href="/levels/a1/weeks/{n + 1}/"', html)
+
+
+import yaml as _yaml
+
+from apps.curriculum.models import Level
+from apps.publishing.audit import is_known, text_tokens, vocab_until
+from apps.publishing.audit_weeks import audit_script, normalize_line
+from apps.taxonomy.markup import find_issues
+
+PACKAGE = Path(settings.BASE_DIR) / "docs" / "pilots" / "a1-four-weeks" / "assessment.yaml"
+
+
+def package() -> dict:
+    return _yaml.safe_load(PACKAGE.read_text(encoding="utf-8"))
+
+
+def entry_problems(entry: dict) -> list[str]:
+    """Незнакомые к max_week слова, ошибки разметки и реплик."""
+    level = Level.objects.get(code="A1")
+    vocab = vocab_until(level, entry["max_week"])
+    problems = []
+    for line in entry["script"]:
+        for text in (line["text"], line.get("spoken", "")):
+            problems += [f"{t}: незнакомое" for t in text_tokens(text) if not is_known(t, vocab)]
+            problems += [f"{i.token}: {i.problem}" for i in find_issues(text)]
+    r = AuditReport()
+    audit_script(r, entry["id"], entry["script"], voices_manifest(), level=level, week_number=entry["max_week"])
+    return problems + r.errors
+
+
+class AssessmentPackageTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_structure(self):
+        data = package()
+        self.assertEqual(data["level"], "A1")
+        self.assertEqual([(e["id"], e["max_week"]) for e in data["weekly"]], [("w01", 1), ("w02", 2), ("w03", 3), ("w04", 4)])
+        self.assertEqual([(e["id"], e["max_week"]) for e in data["forms"]], [("pre", 4), ("post", 4), ("delayed", 4)])
+        for e in data["weekly"] + data["forms"]:
+            with self.subTest(id=e["id"]):
+                self.assertEqual(len(e["questions"]), 3)
+                self.assertTrue(all(set(q) == {"prompt_ru", "accepted_ru"} and q["accepted_ru"] for q in e["questions"]))
+                self.assertTrue(e["oral"]["prompt_ru"] and e["oral"]["cues_ru"])
+                self.assertTrue(4 <= len(e["script"]) <= 8)
+
+    def test_parallel_forms_are_unseen(self):
+        data = package()
+        norm = lambda script: tuple(normalize_line(l["text"]) for l in script)
+        forms = [norm(e["script"]) for e in data["forms"]]
+        self.assertEqual(len(set(forms)), 3)
+        scenes = {normalize_line(l["text"]) for s in WeekScene.objects.all() for l in s.script}
+        for e in data["weekly"] + data["forms"]:
+            with self.subTest(id=e["id"]):
+                overlap = set(norm(e["script"])) & scenes
+                self.assertLessEqual(len(overlap), 1, overlap)  # не пересказ учебной сцены
+
+    def test_weekly_vocab_boundary(self):
+        for e in package()["weekly"] + package()["forms"]:
+            with self.subTest(id=e["id"]):
+                self.assertEqual(entry_problems(e), [])
+
+    def test_future_word_fails(self):
+        e = package()["weekly"][0]
+        e["script"][0]["text"] += " [S1]brother[/]"  # brother вводится только на неделе 4
+        self.assertTrue([p for p in entry_problems(e) if p.startswith("brother")])
