@@ -13,6 +13,8 @@ from django.utils.safestring import mark_safe
 from .registry import CATEGORY_BY_CODE, PALETTE
 
 TOKEN = re.compile(r"\[([SDJANTPXCOF])(\d{1,2})(?:-(#[0-9a-fA-F]{6}))?\](.+?)\[/\]", re.S)
+# Проверяем маркеры по отдельности: TOKEN может скрыть вложенный/незакрытый тег.
+MARKER_TAG = re.compile(r"\[([SDJANTPXCOF])(\d{1,2})(?:-(#[0-9a-fA-F]{6}))?\]|\[/\]")
 
 
 @dataclass
@@ -23,19 +25,35 @@ class MarkupIssue:
 
 def find_issues(text: str) -> list[MarkupIssue]:
     issues = []
-    for m in TOKEN.finditer(text):
-        code, num, hexcolor, _ = m.group(1), int(m.group(2)), m.group(3), m.group(4)
+    opened = None
+    for marker in MARKER_TAG.finditer(text):
+        code = marker.group(1)
+        if code is None:  # [/]
+            if opened is None:
+                issues.append(MarkupIssue("[/]", "закрывающий тег без открывающего"))
+            opened = None
+            continue
+
+        if opened is not None:
+            issues.append(MarkupIssue(
+                opened.group(0), "открывающий тег без закрывающего (вложенный маркер)"
+            ))
+        opened = marker
+
+        num = int(marker.group(2))
+        hexcolor = marker.group(3)
         cat = CATEGORY_BY_CODE[code]
         numbers = {n for n, _, _ in cat.classes}
         if num not in numbers:
-            issues.append(MarkupIssue(m.group(0), f"класса {code}{num} нет в реестре"))
+            issues.append(MarkupIssue(marker.group(0), f"класса {code}{num} нет в реестре"))
         elif hexcolor and hexcolor.lower() != PALETTE[num][1]:
-            issues.append(MarkupIssue(m.group(0), f"цвет {hexcolor} не совпадает с реестром {PALETTE[num][1]}"))
-    leftovers = TOKEN.sub("", text)
-    if "[/]" in leftovers:
-        issues.append(MarkupIssue("[/]", "закрывающий тег без открывающего"))
-    return issues
+            issues.append(MarkupIssue(
+                marker.group(0), f"цвет {hexcolor} не совпадает с реестром {PALETTE[num][1]}"
+            ))
 
+    if opened is not None:
+        issues.append(MarkupIssue(opened.group(0), "открывающий тег без закрывающего"))
+    return issues
 
 def _label(code: str, num: int) -> str:
     cat = CATEGORY_BY_CODE[code]
