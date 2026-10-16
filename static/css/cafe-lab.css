@@ -22,7 +22,7 @@
 .cafe-panel { border:1px solid var(--rule); background:var(--surface); border-radius:18px; padding:clamp(1.2rem,3vw,2.1rem); margin:1.25rem 0; scroll-margin-top:1rem; }
 .cafe-section-head>span { display:block; color:var(--studio-green); letter-spacing:.12em; font-weight:750; font-size:.72rem; margin-bottom:.5rem; }
 .cafe-section-head h2 { font-family:var(--font-read); font-size:clamp(1.4rem,2.5vw,2rem); line-height:1.25; margin:.35rem 0 .4rem; color:var(--ink); }
-.cafe-section-head p { color:var(--ink-soft); max-width:66ch; margin:0 0:1rem; }
+.cafe-section-head p { color:var(--ink-soft); max-width:66ch; margin:0 0 1rem; }
 .cafe-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.7rem; margin-top:1rem; }
 .cafe-btn { display:inline-flex; align-items:center; justify-content:center; border-radius:10px; padding:.73rem 1.15rem; border:1px solid var(--rule-strong); background:var(--surface); color:var(--ink); cursor:pointer; min-height:45px; text-decoration:none; font-size:.9rem; line-height:1.25; transition: transform .15s, box-shadow .15s; }
 .cafe-btn:hover:not(:disabled) { transform:translateY(-1px); box-shadow:0 5px 15px #00000012; }
