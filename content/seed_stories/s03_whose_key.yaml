@@ -1,0 +1,79 @@
+number: 3
+characters: [Tom, Anna]
+grammar_ru: "there is; вопросы Is it…?; притяжательное 's (Anna's door); for — «для, от»; whose — «чей»"
+prediction_ru: "Посмотрите на название и описания картинок. Чей это ключ? К какой двери он подходит?"
+visual_cues:
+  - "Утро. У двери Тома на коврике лежит маленький старый ключ, тёмный, с круглой головкой."
+  - "У калитки — старый синий почтовый ящик с крошечной замочной скважиной."
+new_units: [LX-00179, LX-00180, LX-00181]
+# Текст истории = реплики по порядку. body собирается из script автоматически.
+script:
+  - speaker: tom
+    kind: narration
+    emotion: neutral
+    music: mystery
+    text: "[T8]It[/] [D1]is[/] [N3]seven o'clock[/]. [T9]There[/] [D1]is[/] [T1]an[/] [J2]old[/] [S2]key[/] [P1]next to[/] [T3]my[/] [S2]door[/]."
+    spoken: "[T8]It[/][D1]'s[/] [N3]seven o'clock[/]. [T9]There[/][D1]'s[/] [T1]an[/] [J2]old[/] [S2]key[/] [P1]next to[/] [T3]my[/] [S2]door[/]."
+  - speaker: tom
+    kind: narration
+    emotion: worried
+    text: "[D1]Is[/] [T8]it[/] [T3]my[/] [S2]key[/]? [O4]No[/]. [D1]Is[/] [T8]it[/] [S1]Anna[/][T3]'s[/] [S2]key[/]? [O4]No[/]."
+  - speaker: tom
+    kind: speech
+    emotion: surprised
+    text: "“[S1]Anna[/], [D1]is[/] [T2]this[/] [T3]your[/] [S2]key[/]?”"
+  - speaker: anna
+    kind: speech
+    emotion: surprised
+    text: "“[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]key[/]. [T8]It[/] [D1]is[/] [J2]old[/]!”"
+    spoken: "“[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]key[/]. [T8]It[/][D1]'s[/] [J2]old[/]!”"
+  - speaker: tom
+    kind: narration
+    emotion: worried
+    text: "[T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/]. [T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [S1]Anna[/][T3]'s[/] [S2]door[/]."
+    spoken: "[T8]It[/] [D1]is[/][X1]n't[/] [P5]for[/] [T3]my[/] [S2]door[/]. [T8]It[/] [D1]is[/][X1]n't[/] [P5]for[/] [S1]Anna[/][T3]'s[/] [S2]door[/]."
+  - speaker: tom
+    kind: narration
+    emotion: worried
+    text: "[T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?"
+  - speaker: anna
+    kind: speech
+    emotion: excited
+    music: happy
+    text: "“[S1]Tom[/]! [T9]There[/] [D1]is[/] [T1]an[/] [J2]old[/] [S2]mailbox[/] [A3]here[/]!”"
+    spoken: "“[S1]Tom[/]! [T9]There[/][D1]'s[/] [T1]an[/] [J2]old[/] [S2]mailbox[/] [A3]here[/]!”"
+  - speaker: tom
+    kind: narration
+    emotion: excited
+    text: "[T1]The[/] [S2]key[/] [D1]is[/] [P5]for[/] [T1]the[/] [S2]mailbox[/]!"
+  - speaker: anna
+    kind: speech
+    emotion: happy
+    music: calm
+    text: "“[T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/]!”"
+    spoken: "“[T8]It[/][D1]'s[/] [T3]our[/] [S2]mailbox[/]!”"
+questions:
+  - q: "Где Том находит ключ?"
+    a: "There is an old key next to my door. — У своей двери."
+  - q: "Это ключ Анны?"
+    a: "No, it is not my key. — Нет, Анна его не узнаёт."
+  - q: "К чему подходит ключ?"
+    a: "The key is for the mailbox! — К старому почтовому ящику."
+  - q: "Почему в конце Анна говорит «our mailbox»?"
+    a: "Ящик стоит у их дома, и ключ теперь у них. Старый почтовый ящик стал общим — их."
+phrase_hunt:
+  - phrase: "There is an old key next to my door."
+    function: "Где что-то лежит"
+  - phrase: "Is this your key?"
+    function: "Вопрос: чья это вещь?"
+  - phrase: "It is not for my door."
+    function: "Для чего вещь — for"
+  - phrase: "Whose key is it?"
+    function: "Вопрос «чей?»"
+  - phrase: "It is our mailbox!"
+    function: "Наше, общее"
+retell_words: [key, door, Anna, mailbox, our]
+retell_steps:
+  - "Восстановите историю по пяти словам: key, door, Anna, mailbox, our. По одной фразе на слово."
+  - "Перескажите без подсказок, 5–6 фраз, от лица Тома: It is seven o'clock. There is…"
+creative_ru: "Вечером Том открывает почтовый ящик. Что внутри? Придумайте 2–3 фразы из знакомых слов. Например: There is a … in the mailbox!"

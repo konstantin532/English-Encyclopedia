@@ -1,0 +1,294 @@
+# Неделя 8 «Как пройти?»: Where is…?, предлоги места (in, on, near, next to), повелительное наклонение (Turn left). CEFR не сверялся.
+level: A1
+week: 8
+units:
+- uid: LX-00157
+  lemma: where
+  meaning: in or to what place; used in questions
+  class: A6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɛr/
+  translation_ru: где, куда
+  example_en: '[A6]Where[/] [D1]is[/] [T1]the[/] [S4]bank[/]?'
+  example_ru: Где банк?
+  situation: Спрашиваете дорогу
+  usage_note: 'Губы трубочкой для w: «уэр». Не путайте с were.'
+- uid: LX-00158
+  lemma: me
+  meaning: the person who is speaking, as an object
+  class: T8
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mi/
+  translation_ru: меня, мне
+  example_en: '[O2]Excuse me[/]!'
+  example_ru: Извините!
+  situation: Обращаетесь к незнакомому человеку
+  usage_note: 'I — «я» в начале фразы, me — «меня, мне» после глагола.'
+- uid: LX-00159
+  lemma: excuse
+  meaning: to forgive someone for a small mistake
+  class: D5
+  forms:
+  - excuses
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪkˈskjuz/
+  translation_ru: извинять
+  example_en: '[O2]Excuse me[/], [A6]where[/] [D1]is[/] [T1]the[/] [S4]bank[/]?'
+  example_ru: Извините, где банк?
+  situation: Обращаетесь к незнакомому человеку
+- uid: LX-00160
+  lemma: key
+  meaning: a small metal thing that opens a lock
+  class: S2
+  forms:
+  - keys
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ki/
+  translation_ru: ключ
+  example_en: '[T8]I[/] [D1]have[/] [T1]an[/] [J2]old[/] [S2]key[/].'
+  example_ru: У меня старый ключ.
+  situation: Ищете мастерскую по ключам
+- uid: LX-00161
+  lemma: shop
+  meaning: a small store or a place where something is made or repaired
+  class: S4
+  forms:
+  - shops
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ʃɑp/
+  translation_ru: магазин, мастерская
+  example_en: '[A6]Where[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/]?'
+  example_ru: Где мастерская по ключам?
+  situation: Ищете мастерскую в городе
+  usage_note: 'В Америке обычный магазин — store, а shop — маленькая лавка или мастерская: key shop, coffee shop.'
+- uid: LX-00162
+  lemma: bank
+  meaning: a place where people keep money
+  class: S4
+  forms:
+  - banks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bæŋk/
+  translation_ru: банк
+  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P1]next to[/] [T1]the[/] [S4]cafe[/].'
+  example_ru: Банк рядом с кафе.
+  situation: Объясняете дорогу
+- uid: LX-00163
+  lemma: old
+  meaning: having lived or existed for a long time
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /oʊld/
+  translation_ru: старый
+  example_en: '[T8]It[/] [D1]is[/] [T1]an[/] [J2]old[/] [S2]key[/].'
+  example_ru: Это старый ключ.
+  situation: Описываете вещь
+  usage_note: 'Перед old — an: an old key, an old house.'
+- uid: LX-00164
+  lemma: for
+  meaning: intended to be used with or given to
+  class: P5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fɔr/
+  ipa_ru: фор
+  translation_ru: для
+  example_en: '[T8]It[/] [D1]is[/] [T1]a[/] [S2]key[/] [P5]for[/] [T1]the[/] [S2]door[/].'
+  example_ru: Это ключ от двери.
+  situation: Говорите, для чего вещь
+  usage_note: 'Без ударения звучит коротко: «фэр». Русское «ключ от двери» — a key for the door.'
+- uid: LX-00165
+  lemma: door
+  meaning: the part you open to go into a house or room
+  class: S2
+  forms:
+  - doors
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dɔr/
+  translation_ru: дверь
+  example_en: '[T1]The[/] [S2]key[/] [D1]is[/] [P1]next to[/] [T1]the[/] [S2]door[/].'
+  example_ru: Ключ рядом с дверью.
+  situation: Описываете, где вещь
+- uid: LX-00166
+  lemma: go straight
+  meaning: continue in the same direction
+  class: D4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɡoʊ ˈstreɪt/
+  translation_ru: идите прямо
+  example_en: Go straight.
+  example_ru: Идите прямо.
+  situation: Как пройти
+  usage_note: 'Американцы говорят go straight; британцы чаще go straight on.'
+- uid: LX-00167
+  lemma: turn
+  meaning: to change direction
+  class: D4
+  forms:
+  - turns
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tɝn/
+  translation_ru: поворачивать
+  example_en: '[D4]Turn[/] [A3]left[/].'
+  example_ru: Поверните налево.
+  situation: Объясняете дорогу
+- uid: LX-00168
+  lemma: left
+  meaning: on or to the side where your heart is
+  class: A3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /lɛft/
+  translation_ru: налево; слева
+  example_en: '[D4]Turn[/] [A3]left[/].'
+  example_ru: Поверните налево.
+  situation: Объясняете дорогу
+  usage_note: 'on the left — слева, turn left — налево.'
+- uid: LX-00169
+  lemma: right
+  meaning: on or to the opposite side from left
+  class: A3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /raɪt/
+  translation_ru: направо; справа
+  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/].'
+  example_ru: Банк справа.
+  situation: Объясняете дорогу
+  usage_note: 'right ещё значит «правильный»: That is right! — Верно!'
+- uid: LX-00170
+  lemma: straight
+  meaning: in a line, without turning
+  class: A3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /streɪt/
+  translation_ru: прямо
+  example_en: '[D4]Go[/] [A3]straight[/].'
+  example_ru: Идите прямо.
+  situation: Объясняете дорогу
+- uid: LX-00171
+  lemma: near
+  meaning: not far from
+  class: P1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /nɪr/
+  translation_ru: рядом с, недалеко от
+  example_en: '[T8]It[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]bank[/].'
+  example_ru: Это недалеко от банка.
+  situation: Объясняете дорогу
+- uid: LX-00172
+  lemma: 'on'
+  meaning: touching the top or side of something; at one side
+  class: P1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɑn/
+  translation_ru: на
+  example_en: '[T1]The[/] [S2]key[/] [D1]is[/] [P1]on[/] [T1]the[/] [S2]box[/].'
+  example_ru: Ключ на коробке.
+  situation: Описываете, где вещь
+  usage_note: 'on the right, on the left — справа, слева.'
+- uid: LX-00173
+  lemma: in
+  meaning: inside something
+  class: P1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪn/
+  translation_ru: в, внутри
+  example_en: '[T1]The[/] [S2]key[/] [D1]is[/] [P1]in[/] [T1]the[/] [S2]box[/].'
+  example_ru: Ключ в коробке.
+  situation: Описываете, где вещь
+- uid: LX-00174
+  lemma: next to
+  meaning: very close to, at the side of
+  class: P1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈnɛks tu/
+  translation_ru: рядом с
+  example_en: The bank is next to the cafe.
+  example_ru: Банк рядом с кафе.
+  situation: Как пройти
+  usage_note: 't в next почти не слышно: «нэкс ту».'
+- uid: LX-00175
+  lemma: Excuse me!
+  meaning: Getting a stranger's attention politely
+  class: O2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪkˈskjuz mi/
+  translation_ru: Извините!
+  example_en: Excuse me!
+  example_ru: Извините!
+  situation: Как пройти
+  usage_note: 'Так начинают разговор с незнакомым человеком. Sorry — когда уже извиняются за ошибку.'
+- uid: LX-00176
+  lemma: Where is the bank?
+  meaning: Asking for a place
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwɛr ɪz ðə ˈbæŋk/
+  translation_ru: Где банк?
+  example_en: Where is the bank?
+  example_ru: Где банк?
+  situation: Как пройти
+  usage_note: 'В разговоре — Where''s the bank?'
+- uid: LX-00177
+  lemma: Go straight and turn left.
+  meaning: Giving directions
+  class: D4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɡoʊ ˈstreɪt ən tɝn ˈlɛft/
+  translation_ru: Идите прямо и поверните налево.
+  example_en: Go straight and turn left.
+  example_ru: Идите прямо и поверните налево.
+  situation: Как пройти
+- uid: LX-00178
+  lemma: It is on the right.
+  meaning: Saying which side a place is on
+  class: P1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪt ɪz ɑn ðə ˈraɪt/
+  translation_ru: Это справа.
+  example_en: It is on the right.
+  example_ru: Это справа.
+  situation: Как пройти
+  usage_note: 'В разговоре — It''s on the right.'

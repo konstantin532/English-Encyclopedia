@@ -535,3 +535,37 @@ class WeekSevenTests(WeekContentMixin, TestCase):
     def test_hook_leads_to_story_three(self):
         scene = WeekScene.objects.get(week__level__code="A1", week__number=7)
         self.assertIn("под дверью", scene.story_beat["next_hook_ru"])
+
+
+class WeekEightTests(WeekContentMixin, TestCase):
+    """Неделя 8 «Как пройти?»: Where is…?, предлоги места, указания."""
+    week_number = 8
+    slugs = ("a1-where-is-prepositions", "a1-directions-turn-left")
+    twister_number = 8
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_on_is_a_word_not_a_boolean(self):
+        from apps.lexicon.models import LexicalUnit
+
+        self.assertEqual(LexicalUnit.objects.get(uid="LX-00172").lemma, "on")
+
+
+class StoryThreeTests(TestCase):
+    """История 3 «Whose Key?»: ключ подходит к старому почтовому ящику."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_story_three_published_at_week_eight(self):
+        story = Story.objects.get(number=3)
+        self.assertTrue(story.is_published)
+        self.assertEqual(story.week.number, 8)
+        self.assertEqual(story.script[0]["music"], "mystery")
+        self.assertEqual(story.new_units.count(), 3)
+
+    def test_story_three_page_renders(self):
+        response = self.client.get(reverse("stories:detail", args=[3]))
+        self.assertContains(response, "mailbox")

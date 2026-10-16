@@ -1,0 +1,112 @@
+slug: a1-directions-turn-left
+level: A1
+week: 8
+order: 16
+focus: D
+minutes: 40
+title: "Как пройти: go straight, turn left — просьбы и указания"
+summary: "Как объяснить дорогу и понять объяснение: Go straight. Turn left. Почему в указаниях нет «вы» и как вежливо остановить прохожего: Excuse me!"
+units: [LX-00158, LX-00159, LX-00161, LX-00166, LX-00167, LX-00168, LX-00169, LX-00170, LX-00175, LX-00177, LX-00164]
+sound_notes:
+  - text: "Go straight and turn left."
+    ipa: "/ˈɡoʊ ˈstreɪt ən tɝn ˈlɛft/"
+    note_ru: "and без ударения — «эн»; ударение на straight и left"
+  - text: "Excuse me!"
+    ipa: "/ɪkˈskjuz mi/"
+    note_ru: "ударение на cuse: «икскьЮз ми», s звонкое"
+  - text: "Turn right."
+    ipa: "/ˈtɝn ˈraɪt/"
+    note_ru: "turn — американское r в середине: «тёрн»"
+contractions:
+  - full: "do not"
+    short: "don't"
+    ipa: "/doʊnt/"
+    note_ru: "Запрет — Don't turn left: «Не поворачивайте налево»."
+layers:
+  - number: 1
+    body: |
+      Объясняя дорогу, мы даём указания: «идите», «поверните». По-английски для этого берут глагол прямо из словаря и ставят его первым.
+
+      > [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/]. — Идите прямо и поверните налево. Банк будет справа.
+
+      Ни «вы», ни окончаний — только глагол и направление.
+  - number: 2
+    body: |
+      **left** раньше значило «слабый»: левая рука у большинства людей слабее. **right** — «прямой, правильный». Отсюда второе значение: That is right — «Верно».
+
+      **excuse** — латинское «освобождать от вины». Excuse me — буквально «освободите меня от вины», то есть «простите, что беспокою».
+  - number: 3
+    body: |
+      Схема указания:
+
+      > [D4]Turn[/] [A3]left[/]. — Поверните налево.
+      > [D4]Go[/] [A3]straight[/]. — Идите прямо.
+
+      - Глагол из словаря в начале: Go, Turn.
+      - Направление после него: left, right, straight.
+      - Несколько шагов соединяют and: Go straight and turn left.
+      - Запрет — Don't: Don't turn left.
+  - number: 4
+    body: |
+      Почему без «вы»? В английском указание и так обращено к собеседнику. Глагол в начале — уже знак: «сделайте это». Так звучат рецепты, инструкции и объяснения дороги.
+
+      Указание — не грубость, если звучит спокойно. А просьбу смягчает please: Turn left, please.
+
+      > [O2]Excuse me[/]! [T8]I[/] [D1]have[/] [T1]an[/] [J2]old[/] [S2]key[/]. — Извините! У меня старый ключ.
+  - number: 5
+    body: |
+      Так объясняют дорогу на американской улице:
+
+      > [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/]. — Идите прямо и поверните налево. Банк будет справа.
+      > [O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [A3]right[/]. — Спасибо! Прямо, налево и справа.
+
+      - Хороший приём: повторить дорогу вслух. Так вы проверяете, что поняли, а собеседник поправит, если что.
+      - Американцы часто считают кварталы: go two blocks — «пройдите два квартала».
+  - number: 6
+    body: |
+      Три пары, которые путают:
+
+      - turn left — поверните налево; on the left — слева.
+      - go straight — идите прямо; straight ahead — прямо впереди.
+      - Excuse me — чтобы остановить человека; Sorry — когда уже извиняетесь за ошибку или переспрашиваете.
+  - number: 7
+    body: |
+      Четыре задания: понять указание, вставить глагол, собрать объяснение дороги и объяснить путь в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Прохожий говорит: Turn right. Что нужно сделать?"
+    options: ["Повернуть направо", "Повернуть налево", "Идти прямо"]
+    answer: "Повернуть направо"
+    hint_ru: "right — правая сторона."
+    explanation_ru: "Turn right — «Поверните направо»."
+    units: [LX-00167, LX-00169]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Скажите «Идите прямо». Вставьте глагол."
+    prompt_en: "___ straight."
+    answer: "Go"
+    hint_ru: "Глагол движения из словаря."
+    explanation_ru: "Go straight — указание начинается с глагола."
+    units: [LX-00166]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите: «Идите прямо и поверните налево»."
+    options: [left, Go, and, straight, turn]
+    answer: "Go straight and turn left"
+    hint_ru: "Два шага соединяет and."
+    explanation_ru: "Go straight and turn left. Каждый шаг — глагол и направление."
+    units: [LX-00177]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: у вас спрашивают дорогу к банку. Нужно повернуть направо. Скажите это."
+    prompt_en: "Where is the bank? — ___"
+    answer: "Turn right."
+    accepted: ["Turn right", "Turn right, please.", "Go straight and turn right.", "Go straight and turn right", "Turn right. It is on the right.", "Turn right. It's on the right."]
+    hint_ru: "Глагол turn и направление."
+    explanation_ru: "Turn right. Можно добавить, где банк: It is on the right."
+    units: [LX-00167, LX-00169]
