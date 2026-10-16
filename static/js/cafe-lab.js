@@ -94,7 +94,7 @@
 
   const audioStatus = by("[data-audio-status]");
   const playBtn = by("[data-speak-dialogue]");
-  const stopBtn = by("[data-stop-dialogue]");
+  const stopDialogueBtn = by("[data-stop-dialogue]");
   const builtBtn = by("[data-speak-built]");
   const tempoSelect = by("[data-audio-tempo]");
   const audio = by("[data-dialogue-audio]");
@@ -231,7 +231,7 @@
     }
     playSelected(-1);
   });
-  stopBtn.addEventListener("click", function () { stopAll(); text(audioStatus, "Воспроизведение остановлено."); });
+  stopDialogueBtn.addEventListener("click", function () { stopAll(); text(audioStatus, "Воспроизведение остановлено."); });
   tempoSelect.addEventListener("change", function () {
     stopAll();
     text(audioStatus, "Темп изменён. Нажмите «Слушать диалог».");
