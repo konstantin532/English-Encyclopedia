@@ -1,0 +1,82 @@
+number: 2
+characters: [Anna, Mia]
+grammar_ru: "Present Simple с I и you; время at seven, seven o'clock; there is; притяжательное 's (Mia's milk)"
+prediction_ru: "Посмотрите на название и описания картинок. Кто этот кот в кафе? И куда он потом исчезнет?"
+visual_cues:
+  - "Раннее утро. Небольшое кафе на углу улицы, в окне горит свет. Часы над дверью показывают ровно семь."
+  - "У стойки большой рыжий кот пьёт молоко из блюдца. Мия за стойкой улыбается."
+new_units: [LX-00141]
+# Текст истории = реплики по порядку. body собирается из script автоматически.
+script:
+  - speaker: anna
+    kind: narration
+    emotion: neutral
+    music: morning
+    text: "[T8]It[/] [D1]is[/] [N3]seven o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [S4]corner[/] [S4]cafe[/]."
+    spoken: "[T8]It[/][D1]'s[/] [N3]seven o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [S4]corner[/] [S4]cafe[/]."
+  - speaker: anna
+    kind: narration
+    emotion: neutral
+    text: "[S1]Mia[/] [D1]is[/] [A3]here[/]. [T9]There[/] [D1]is[/] [T1]a[/] [J1]big[/] [S6]cat[/]. [T8]It[/] [D3]likes[/] [S1]Mia[/][T3]'s[/] [S3]milk[/]."
+    spoken: "[S1]Mia[/][D1]'s[/] [A3]here[/]. [T9]There[/][D1]'s[/] [T1]a[/] [J1]big[/] [S6]cat[/]. [T8]It[/] [D3]likes[/] [S1]Mia[/][T3]'s[/] [S3]milk[/]."
+  - speaker: anna
+    kind: speech
+    emotion: excited
+    music: happy
+    text: "“[S1]Box[/]! [T8]It[/] [D1]is[/] [T8]you[/]!”"
+    spoken: "“[S1]Box[/]! [T8]It[/][D1]'s[/] [T8]you[/]!”"
+  - speaker: mia
+    kind: speech
+    emotion: happy
+    text: "“[D1]Is[/] [T8]it[/] [T3]your[/] [S6]cat[/], [S1]Anna[/]? [T8]It[/] [D1]is[/] [A3]here[/] [P3]at[/] [N3]seven[/] [T5]every[/] [S7]day[/].”"
+    spoken: "“[D1]Is[/] [T8]it[/] [T3]your[/] [S6]cat[/], [S1]Anna[/]? [T8]It[/][D1]'s[/] [A3]here[/] [P3]at[/] [N3]seven[/] [T5]every[/] [S7]day[/].”"
+  - speaker: anna
+    kind: speech
+    emotion: happy
+    text: "“[O4]Yes[/], [T8]it[/] [D1]is[/] [T3]my[/] [S6]cat[/]. [O2]Thank you[/], [S1]Mia[/]!”"
+    spoken: "“[O4]Yes[/], [T8]it[/][D1]'s[/] [T3]my[/] [S6]cat[/]. [O2]Thank you[/], [S1]Mia[/]!”"
+  - speaker: anna
+    kind: narration
+    emotion: worried
+    music: mystery
+    text: "[T8]I[/] [D2]drink[/] [T3]my[/] [S3]coffee[/]. [S1]Box[/] [D1]is[/] [X1]not[/] [A3]here[/]!"
+    spoken: "[T8]I[/] [D2]drink[/] [T3]my[/] [S3]coffee[/]. [S1]Box[/] [D1]is[/][X1]n't[/] [A3]here[/]!"
+  - speaker: mia
+    kind: speech
+    emotion: surprised
+    text: "“[S1]Box[/]? [S1]Box[/]! [T4]No[/] [S6]cat[/]!”"
+  - speaker: anna
+    kind: narration
+    emotion: worried
+    text: "[T8]I[/] [D4]go[/] [A3]home[/] [P3]at[/] [N3]eight[/]. [S1]Box[/] [D1]is[/] [P1]at[/] [S2]home[/]!"
+    spoken: "[T8]I[/] [D4]go[/] [A3]home[/] [P3]at[/] [N3]eight[/]. [S1]Box[/][D1]'s[/] [P1]at[/] [S2]home[/]!"
+  - speaker: anna
+    kind: narration
+    emotion: happy
+    music: calm
+    text: "[S1]Box[/] [D3]likes[/] [T1]the[/] [S4]cafe[/], [C1]and[/] [S1]Box[/] [D3]likes[/] [S2]home[/]."
+questions:
+  - q: "Во сколько Анна идёт в кафе?"
+    a: "It is seven o'clock. — Ровно в семь."
+  - q: "Кто пьёт молоко Мии?"
+    a: "There is a big cat. It likes Mia's milk. — Большой кот, это Box."
+  - q: "Когда кот приходит в кафе?"
+    a: "It is here at seven every day. — Каждый день в семь."
+  - q: "Куда пропал Box и почему Анна в конце спокойна?"
+    a: "Box is at home! — Он сам вернулся домой. Ему нравится и кафе, и дом: утром он ходит к Мие за молоком."
+phrase_hunt:
+  - phrase: "It is seven o'clock."
+    function: "Ровное время"
+  - phrase: "I go to the corner cafe."
+    function: "Куда я иду"
+  - phrase: "It is here at seven every day."
+    function: "Привычка: каждый день в одно время"
+  - phrase: "Is it your cat, Anna?"
+    function: "Вопрос: чей питомец?"
+  - phrase: "I go home at eight."
+    function: "Домой — без to"
+retell_words: [seven, cafe, cat, milk, home]
+retell_steps:
+  - "Восстановите историю по пяти словам: seven, cafe, cat, milk, home. По одной фразе на слово."
+  - "Перескажите без подсказок, 5–6 фраз, от лица Анны: It is seven o'clock. I go…"
+creative_ru: "Завтра утром Анна снова идёт в кафе. Придумайте 2–3 фразы Мии и ответ Анны из знакомых слов. Например: Good morning, Anna! Is Box here?"

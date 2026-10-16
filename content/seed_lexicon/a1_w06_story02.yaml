@@ -1,0 +1,19 @@
+# Новые слова истории №2 «The Café on the Corner» (лимит A-блока — до 5 на историю).
+level: A1
+week: 6
+units:
+- uid: LX-00141
+  lemma: corner
+  meaning: the place where two streets meet
+  class: S4
+  forms:
+  - corners
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkɔrnɚ/
+  translation_ru: угол (улицы)
+  example_en: '[T1]The[/] [S4]corner[/] [S4]cafe[/] [D1]is[/] [J3]nice[/].'
+  example_ru: Кафе на углу — славное.
+  situation: Объясняете, где находится место
+  usage_note: 'the corner cafe — «кафе на углу»: первое слово говорит, где оно. Два американских r: «кóрнэр».'

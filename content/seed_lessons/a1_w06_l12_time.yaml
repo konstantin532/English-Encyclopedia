@@ -1,0 +1,116 @@
+slug: a1-time-at-seven
+level: A1
+week: 6
+order: 12
+focus: N
+minutes: 40
+title: "Время: at seven, seven o'clock и What time…?"
+summary: "Как назвать время и сказать, во сколько что-то происходит: It is seven o'clock, I get up at six. Почему перед временем ставят at."
+units: [LX-00132, LX-00133, LX-00135, LX-00136, LX-00140, LX-00124, LX-00126]
+sound_notes:
+  - text: "It's seven o'clock."
+    ipa: "/ɪts ˈsɛvən əˈklɑk/"
+    note_ru: "o'clock — «экЛАК»: первый звук короткий, ударение на clock"
+  - text: "What time do you get up?"
+    ipa: "/ˌwʌt ˈtaɪm də jə ɡɛt ˈʌp/"
+    note_ru: "t в what почти не слышно перед time: «уа тайм»"
+  - text: "at seven"
+    ipa: "/ət ˈsɛvən/"
+    note_ru: "at без ударения звучит как короткое «эт»"
+contractions:
+  - full: "it is"
+    short: "it's"
+    ipa: "/ɪts/"
+    note_ru: "Время называют с it's: It's seven o'clock."
+layers:
+  - number: 1
+    body: |
+      Чтобы рассказать о своём дне, нужно время. По-английски оно звучит двумя способами: «сейчас ровно семь» и «в семь».
+
+      > [T8]It[/] [D1]is[/] [N3]seven o'clock[/]. — Сейчас ровно семь.
+      > [T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/]. — Я встаю в пять.
+
+      Числа вы знаете с недели 3. Осталось научиться ставить их рядом с at и o'clock.
+  - number: 2
+    body: |
+      **o'clock** — сокращение старого выражения `of the clock`, «по часам». Когда часы на башнях были новинкой, люди уточняли: время по часам, а не по солнцу.
+
+      **time** — древнее `tīma`, «отрезок, пора». Отсюда же английское tide — прилив, который приходит в своё время.
+  - number: 3
+    body: |
+      Две формы:
+
+      > [T8]It[/] [D1]is[/] [N3]seven o'clock[/]. — Сейчас семь.
+      > [T8]You[/] [D1]are[/] [A3]here[/] [P3]at[/] [N3]seven[/]! — Вы здесь в семь!
+
+      - Который час — It is + число + o'clock.
+      - Во сколько — at + число: at seven, at ten.
+      - o'clock говорят только про ровный час. Можно и без него: at seven.
+      - Вопрос «во сколько?» — What time…?: What time do you get up?
+  - number: 4
+    body: |
+      Почему at? В английском at указывает на точку: точку на карте (at home) и точку на часах (at seven). Время ровно в семь — это точка, поэтому at.
+
+      По-русски мы говорим «в семь», и хочется сказать in seven. Но in значит «внутри» — внутри месяца, года. Для точного часа — только at.
+
+      > [T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/]. — Я пью кофе в семь.
+  - number: 5
+    body: |
+      Так говорят о времени американцы:
+
+      > [J3]Good[/] [S7]morning[/]! [T8]You[/] [D1]are[/] [A3]here[/] [P3]at[/] [N3]seven[/]! — Доброе утро! Вы здесь в семь!
+      > [T9]What[/] [S7]time[/] [D1]do[/] [T8]you[/] [D9]get[/] [X3]up[/], [S1]Mia[/]? — Во сколько ты встаёшь, Мия?
+
+      - В разговоре: It's seven o'clock — или совсем коротко: Seven.
+      - What time is it? — «Который час?»
+      - Утро в Америке часто начинается рано: многие кафе открываются в шесть или семь.
+  - number: 6
+    body: |
+      Русское «в» перед временем — ловушка. Сравните:
+
+      - в семь — at seven (не in seven);
+      - в кафе — at the cafe;
+      - дома — at home.
+
+      И ещё: «семь часов» — не seven hours. Hours — это длительность: «семь часов подряд». Для времени на часах — seven o'clock.
+  - number: 7
+    body: |
+      Четыре задания: узнать, как назвать время, вставить at, собрать вопрос и ответить в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Часы показывают ровно семь. Как это сказать?"
+    options: ["It is seven o'clock.", "It is at seven.", "It is time seven."]
+    answer: "It is seven o'clock."
+    hint_ru: "Для ровного часа — o'clock."
+    explanation_ru: "It is seven o'clock. at ставят, когда говорят «во сколько», а не «который час»."
+    units: [LX-00132, LX-00140]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Скажите, что встаёте в шесть. Вставьте нужное слово."
+    prompt_en: "I get up ___ six."
+    answer: "at"
+    hint_ru: "Точный час — точка на часах."
+    explanation_ru: "at six — at ставят перед точным временем."
+    units: [LX-00136]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите вопрос: «Во сколько ты встаёшь?»"
+    options: [get, What, up, do, time, you]
+    answer: "What time do you get up"
+    hint_ru: "Начните с What time, потом do you."
+    explanation_ru: "What time do you get up? — what time, помощник do, потом you и get up."
+    units: [LX-00133, LX-00135]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: друг спрашивает, во сколько вы завтракаете. Вы завтракаете в восемь. Ответьте."
+    prompt_en: "What time do you have breakfast? — ___"
+    answer: "I have breakfast at eight."
+    accepted: ["At eight.", "At eight", "I have breakfast at eight", "At eight o'clock.", "I have breakfast at eight o'clock.", "Eight o'clock.", "At 8."]
+    hint_ru: "at + число."
+    explanation_ru: "I have breakfast at eight. Коротко — At eight."
+    units: [LX-00130, LX-00136]

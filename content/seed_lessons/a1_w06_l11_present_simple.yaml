@@ -1,0 +1,116 @@
+slug: a1-present-simple-i-you
+level: A1
+week: 6
+order: 11
+focus: D
+minutes: 40
+title: "Мой день: I get up, you work — настоящее простое время"
+summary: "Как рассказать о том, что вы делаете каждый день: I work, I drink coffee. Как спросить Do you…? и ответить Yes, I do. Что такое фразовый глагол get up."
+units: [LX-00124, LX-00125, LX-00126, LX-00127, LX-00128, LX-00129, LX-00130, LX-00134, LX-00137, LX-00138, LX-00139]
+sound_notes:
+  - text: "I work here every day."
+    ipa: "/aɪ ˈwɝk hɪr ˈɛvri ˈdeɪ/"
+    note_ru: "в work губы трубочкой, потом американское r — без звука «о»"
+  - text: "Do you have breakfast?"
+    ipa: "/də jə hæv ˈbrɛkfəst/"
+    note_ru: "do you без ударения сливаются в «дэ ю»; ударение на breakfast"
+  - text: "I get up at six."
+    ipa: "/aɪ ɡɛt̬ ˈʌp ət ˈsɪks/"
+    note_ru: "t между гласными звучит мягко, почти как «д»: «гэдап»"
+contractions:
+  - full: "do not"
+    short: "don't"
+    ipa: "/doʊnt/"
+    note_ru: "I don't work at five — «Я не работаю в пять». В разговоре почти всегда don't."
+layers:
+  - number: 1
+    body: |
+      Чтобы рассказать о своём дне, нужно время, которое описывает привычки: что вы делаете обычно, каждый день. По-английски это **Present Simple** — настоящее простое.
+
+      > [T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/]. [T8]I[/] [D2]work[/] [A3]here[/] [T5]every[/] [S7]day[/]. — Я встаю в пять. Я работаю здесь каждый день.
+
+      С I и you глагол берут как в словаре, ничего не добавляя: I work, you work.
+  - number: 2
+    body: |
+      **Present Simple** — «простое настоящее»: простое, потому что глаголу не нужны помощники. I work — одно слово действия.
+
+      **breakfast** — «прервать пост»: break — прерывать, fast — пост, ночь без еды. Утром мы «прерываем» ночной голод. Так же по-русски «завтрак» — еда «на завтра», то есть на утро.
+  - number: 3
+    body: |
+      Схема для I и you:
+
+      > [T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/]. — Я пью кофе в семь.
+      > [D1]Do[/] [T8]you[/] [D2]have[/] [S3]breakfast[/]? — Ты завтракаешь?
+      > [O4]Yes[/], [T8]I[/] [D1]do[/]. — Да.
+
+      - Утверждение: I или you + глагол из словаря: I work.
+      - Вопрос: do в начале: Do you work?
+      - Короткий ответ: Yes, I do. / No, I do not — в разговоре No, I don't.
+      - Отрицание: I do not work — I don't work.
+  - number: 4
+    body: |
+      Почему в вопросе нужен do? В русском вопрос делают голосом: «Ты работаешь?». В английском порядок слов важнее интонации. Глагол be сам выходит вперёд (Is it…?), а обычные глаголы так не умеют. За них вперёд выходит помощник **do**.
+
+      **get up** — фразовый глагол: get и маленькая частица up вместе значат «вставать». По отдельности их смысл угадать трудно, поэтому такие пары учат целиком.
+
+      > [T9]What[/] [S7]time[/] [D1]do[/] [T8]you[/] [D9]get[/] [X3]up[/]? — Во сколько ты встаёшь?
+  - number: 5
+    body: |
+      Так звучит разговор о дне в Америке:
+
+      > [T9]What[/] [S7]time[/] [D1]do[/] [T8]you[/] [D9]get[/] [X3]up[/], [S1]Mia[/]? — Во сколько ты встаёшь, Мия?
+      > [O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]I[/] [D2]have[/] [S3]breakfast[/] [P3]at[/] [N3]ten[/]. — Да. Я завтракаю в десять.
+
+      - do you в быстрой речи звучит как «дэ ю», а иногда почти «джу».
+      - Завтракают глаголом have: have breakfast, без артикля.
+      - На вопрос Do you…? отвечают коротко: Yes, I do или No, I don't — повторять весь глагол не нужно.
+  - number: 6
+    body: |
+      Три частые ошибки:
+
+      - «I am work» — лишний am. Правильно: I work. Be не ставят рядом с обычным глаголом.
+      - «You work?» без do — так спрашивают только голосом в разговоре. В учебной речи: Do you work?
+      - «go to home» — домой идут без to: I go home.
+
+      С he и she у глагола появляется окончание -s: she works. Это тема следующей недели.
+  - number: 7
+    body: |
+      Четыре задания: узнать вопрос о привычке, вставить do, собрать фразу о своём утре и ответить в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как правильно сказать «Я работаю здесь каждый день»?"
+    options: ["I work here every day.", "I am work here every day.", "I works here every day."]
+    answer: "I work here every day."
+    hint_ru: "С I глагол как в словаре, без am и без -s."
+    explanation_ru: "I work — глагол без изменений. am рядом с work лишний, а -s появится только с he и she."
+    units: [LX-00128, LX-00137]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Спросите Мию, завтракает ли она. Вставьте слово-помощник."
+    prompt_en: "___ you have breakfast?"
+    answer: "Do"
+    hint_ru: "Вопрос с обычным глаголом начинается с помощника."
+    explanation_ru: "Do you have breakfast? — do выходит вперёд, а have остаётся как в словаре."
+    units: [LX-00138]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите фразу: «Я пью кофе в семь»."
+    options: [seven, drink, I, at, coffee]
+    answer: "I drink coffee at seven"
+    hint_ru: "Кто — что делает — что — когда."
+    explanation_ru: "I drink coffee at seven. Время ставят в конец, перед ним at."
+    units: [LX-00129, LX-00139]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: коллега спрашивает, работаете ли вы каждый день. Вы работаете. Ответьте коротко."
+    prompt_en: "Do you work every day? — ___"
+    answer: "Yes, I do."
+    accepted: ["Yes I do", "Yes, I do", "Yes, I work every day.", "Yes, I work every day", "Yes. I do."]
+    hint_ru: "Короткий ответ повторяет помощника do."
+    explanation_ru: "Yes, I do. Повторять work не нужно — короткий ответ строится на do."
+    units: [LX-00128, LX-00134]

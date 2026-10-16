@@ -1,0 +1,235 @@
+# Неделя 6 «Мой обычный день»: Present Simple с I и you, время на часах (at seven). CEFR не сверялся.
+level: A1
+week: 6
+units:
+- uid: LX-00124
+  lemma: get
+  meaning: to receive or obtain; part of many phrasal verbs
+  class: D2
+  forms:
+  - gets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡɛt/
+  translation_ru: получать; (в сочетаниях) становиться, вставать
+  example_en: '[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]seven[/].'
+  example_ru: Я встаю в семь.
+  situation: Рассказываете о своём утре
+  usage_note: 'Одно из самых частых слов: get up — вставать, get coffee — взять кофе.'
+- uid: LX-00125
+  lemma: up
+  meaning: towards a higher place; part of phrasal verbs
+  class: X3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ʌp/
+  translation_ru: вверх (частица фразового глагола)
+  example_en: '[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]six[/].'
+  example_ru: Я встаю в шесть.
+  situation: Рассказываете о своём утре
+- uid: LX-00126
+  lemma: get up
+  meaning: to get out of bed after sleeping
+  class: D9
+  unit_type: phrasal_verb
+  forms:
+  - gets up
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡɛt ˈʌp/
+  translation_ru: вставать (с кровати)
+  example_en: '[T9]What[/] [S7]time[/] [D1]do[/] [T8]you[/] [D9]get[/] [X3]up[/]?'
+  example_ru: Во сколько ты встаёшь?
+  situation: Рассказываете о своём утре
+  usage_note: 'Фразовый глагол: get и частица up вместе значат «вставать». Ударение на up.'
+- uid: LX-00127
+  lemma: go
+  meaning: to move to another place
+  class: D4
+  forms:
+  - goes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡoʊ/
+  translation_ru: идти, ехать
+  example_en: '[T8]I[/] [D4]go[/] [A3]home[/] [P3]at[/] [N3]eight[/].'
+  example_ru: Я иду домой в восемь.
+  situation: Рассказываете, куда идёте
+  usage_note: 'go home — без to: домой идут без предлога.'
+- uid: LX-00128
+  lemma: work
+  meaning: to do a job
+  class: D2
+  forms:
+  - works
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɝk/
+  translation_ru: работать
+  example_en: '[T8]I[/] [D2]work[/] [A3]here[/] [T5]every[/] [S7]day[/].'
+  example_ru: Я работаю здесь каждый день.
+  situation: Рассказываете о работе
+  usage_note: 'Губы трубочкой для w, потом американское r: «уёрк», без «о».'
+- uid: LX-00129
+  lemma: drink
+  meaning: to take liquid into your mouth and swallow it
+  class: D2
+  forms:
+  - drinks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /drɪŋk/
+  translation_ru: пить
+  example_en: '[T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/].'
+  example_ru: Я пью кофе в семь.
+  situation: Рассказываете о своём утре
+- uid: LX-00130
+  lemma: breakfast
+  meaning: the first meal of the day
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbrɛkfəst/
+  translation_ru: завтрак
+  example_en: '[T8]I[/] [D2]have[/] [S3]breakfast[/] [P3]at[/] [N3]eight[/].'
+  example_ru: Я завтракаю в восемь.
+  situation: Рассказываете о своём утре
+  usage_note: 'Завтракают глаголом have: have breakfast. Артикль не нужен.'
+- uid: LX-00131
+  lemma: cafe
+  meaning: a small restaurant for drinks and light meals
+  class: S4
+  forms:
+  - cafes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kæˈfeɪ/
+  translation_ru: кафе
+  example_en: '[T8]I[/] [D2]drink[/] [S3]coffee[/] [P1]at[/] [T1]the[/] [S4]cafe[/].'
+  example_ru: Я пью кофе в кафе.
+  situation: Рассказываете, где завтракаете
+  usage_note: 'Пишут cafe или café. Ударение на втором слоге: кэфЭй.'
+- uid: LX-00132
+  lemma: o'clock
+  meaning: used after numbers to say the exact hour
+  class: N3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /əˈklɑk/
+  translation_ru: (столько-то) часов ровно
+  example_en: "[T8]It[/] [D1]is[/] [N3]seven o'clock[/]."
+  example_ru: Сейчас ровно семь.
+  situation: Называете время
+  usage_note: 'Только для ровного часа: seven o''clock. Сокращение от of the clock.'
+- uid: LX-00133
+  lemma: time
+  meaning: what the clock shows; minutes and hours
+  class: S7
+  forms:
+  - times
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /taɪm/
+  translation_ru: время
+  example_en: '[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?'
+  example_ru: Который час?
+  situation: Спрашиваете время
+- uid: LX-00134
+  lemma: every
+  meaning: each one of a group, without exception
+  class: T5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɛvri/
+  translation_ru: каждый
+  example_en: '[T8]I[/] [D2]work[/] [T5]every[/] [S7]day[/].'
+  example_ru: Я работаю каждый день.
+  situation: Говорите о привычках
+  usage_note: 'После every — одна вещь: every day, every morning.'
+- uid: LX-00135
+  lemma: What time do you get up?
+  meaning: Asking about someone's morning
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌwʌt ˈtaɪm də jə ɡɛt ˈʌp/
+  translation_ru: Во сколько ты встаёшь?
+  example_en: What time do you get up?
+  example_ru: Во сколько ты встаёшь?
+  situation: Мой обычный день
+  usage_note: 'do you в быстрой речи — «дэ ю», почти «джу».'
+- uid: LX-00136
+  lemma: I get up at five.
+  meaning: Saying when you get up
+  class: N3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ɡɛt ˈʌp ət ˈfaɪv/
+  translation_ru: Я встаю в пять.
+  example_en: I get up at five.
+  example_ru: Я встаю в пять.
+  situation: Мой обычный день
+  usage_note: 'Время — с at: at five, at seven.'
+- uid: LX-00137
+  lemma: I work here every day.
+  meaning: Talking about a habit
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈwɝk hɪr ˈɛvri ˈdeɪ/
+  translation_ru: Я работаю здесь каждый день.
+  example_en: I work here every day.
+  example_ru: Я работаю здесь каждый день.
+  situation: Мой обычный день
+- uid: LX-00138
+  lemma: Do you have breakfast?
+  meaning: Asking about a daily habit
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /də jə hæv ˈbrɛkfəst/
+  translation_ru: Ты завтракаешь?
+  example_en: Do you have breakfast?
+  example_ru: Ты завтракаешь?
+  situation: Мой обычный день
+  usage_note: 'Ответ — Yes, I do или No, I don''t.'
+- uid: LX-00139
+  lemma: I drink coffee at seven.
+  meaning: Saying when you do something
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈdrɪŋk ˈkɔfi ət ˈsɛvən/
+  translation_ru: Я пью кофе в семь.
+  example_en: I drink coffee at seven.
+  example_ru: Я пью кофе в семь.
+  situation: Мой обычный день
+- uid: LX-00140
+  lemma: It is seven o'clock.
+  meaning: Saying the exact hour
+  class: N3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪt ɪz ˈsɛvən əˈklɑk/
+  translation_ru: Сейчас ровно семь.
+  example_en: It is seven o'clock.
+  example_ru: Сейчас ровно семь.
+  situation: Мой обычный день
+  usage_note: 'В разговоре — It''s seven o''clock или просто Seven.'

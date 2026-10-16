@@ -1,0 +1,58 @@
+level: A1
+week: 6
+can_do_ru: "Я смогу рассказать о своём обычном утре: во сколько встаю, завтракаю и работаю — и спросить собеседника: What time do you get up?"
+mission_ru: "Расскажите вслух по-английски о своём утре тремя фразами: I get up at… I have breakfast at… I work… Спросите кого-нибудь: What time do you get up?"
+chunks: [LX-00135, LX-00136, LX-00137, LX-00138, LX-00139, LX-00140]
+story_beat:
+  intro_ru: "Box так и не вернулся домой. Утром Анна и Том заходят к Мие на работу — в кафе на углу."
+  outcome_ru: "Мия встаёт в пять и работает в кафе каждый день. А ещё каждое утро в семь сюда приходит большой кот и пьёт её молоко."
+  next_hook_ru: "Это Box? Анна решает прийти в кафе завтра ровно в семь."
+script:
+  - speaker: mia
+    emotion: happy
+    text: "[J3]Good[/] [S7]morning[/]! [T8]You[/] [D1]are[/] [A3]here[/] [P3]at[/] [N3]seven[/]!"
+    spoken: "[J3]Good[/] [S7]morning[/]! [T8]You[/][D1]'re[/] [A3]here[/] [P3]at[/] [N3]seven[/]!"
+    ru: "Доброе утро! Вы здесь в семь!"
+  - speaker: tom
+    emotion: tired
+    text: "[O4]Yes[/]. [T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]six[/]. [T9]What[/] [S7]time[/] [D1]do[/] [T8]you[/] [D9]get[/] [X3]up[/], [S1]Mia[/]?"
+    ru: "Ага. Я встаю в шесть. А ты во сколько встаёшь, Мия?"
+  - speaker: mia
+    text: "[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/]. [T8]I[/] [D2]work[/] [A3]here[/] [T5]every[/] [S7]day[/]."
+    ru: "Я встаю в пять. Я работаю здесь каждый день."
+  - speaker: anna
+    emotion: surprised
+    text: "[P3]At[/] [N3]five[/]! [D1]Do[/] [T8]you[/] [D2]have[/] [S3]breakfast[/]?"
+    ru: "В пять! А ты завтракаешь?"
+  - speaker: mia
+    emotion: happy
+    text: "[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]I[/] [D2]have[/] [S3]breakfast[/] [P3]at[/] [N3]ten[/]: [S3]coffee[/] [C1]and[/] [T1]a[/] [S3]cookie[/]!"
+    ru: "Да. Я завтракаю в десять: кофе и печенье!"
+  - speaker: tom
+    text: "[T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/]. [S3]Coffee[/], [O8]please[/]!"
+    ru: "А я пью кофе в семь. Кофе, пожалуйста!"
+  - speaker: anna
+    emotion: worried
+    text: "[S1]Mia[/], [T3]my[/] [S6]cat[/] [D1]is[/] [X1]not[/] [P1]at[/] [S2]home[/]."
+    spoken: "[S1]Mia[/], [T3]my[/] [S6]cat[/] [D1]is[/][X1]n't[/] [P1]at[/] [S2]home[/]."
+    ru: "Мия, моего кота нет дома."
+  - speaker: mia
+    emotion: surprised
+    text: "[T1]A[/] [J1]big[/] [S6]cat[/]? [T9]There[/] [D1]is[/] [T1]a[/] [J1]big[/] [S6]cat[/] [A3]here[/] [P3]at[/] [N3]seven[/] [T5]every[/] [S7]day[/]!"
+    spoken: "[T1]A[/] [J1]big[/] [S6]cat[/]? [T9]There[/][D1]'s[/] [T1]a[/] [J1]big[/] [S6]cat[/] [A3]here[/] [P3]at[/] [N3]seven[/] [T5]every[/] [S7]day[/]!"
+    ru: "Большой кот? Здесь каждый день в семь бывает большой кот!"
+  - speaker: tom
+    emotion: excited
+    text: "[D1]Is[/] [T8]it[/] [S1]Box[/]?"
+    ru: "Это Box?"
+  - speaker: mia
+    emotion: happy
+    text: "[T8]It[/] [D3]likes[/] [T3]my[/] [S3]milk[/]!"
+    ru: "Он любит моё молоко!"
+twister:
+  number: 6
+  series: sounds
+  text: "[T8]I[/] [D2]work[/], [T8]you[/] [D2]work[/], [T5]every[/] [S7]day[/]."
+  ipa: "/aɪ ˈwɝk ju ˈwɝk ˈɛvri ˈdeɪ/"
+  focus_sounds: [w, r]
+  source: original

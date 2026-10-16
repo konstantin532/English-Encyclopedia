@@ -482,3 +482,37 @@ class WeekFiveTests(WeekContentMixin, TestCase):
     def test_hook_leads_to_story_two(self):
         scene = WeekScene.objects.get(week__level__code="A1", week__number=5)
         self.assertIn("Box", scene.story_beat["next_hook_ru"])
+
+
+class WeekSixTests(WeekContentMixin, TestCase):
+    """Неделя 6 «Мой обычный день»: Present Simple с I / you, время at seven."""
+    week_number = 6
+    slugs = ("a1-present-simple-i-you", "a1-time-at-seven")
+    twister_number = 6
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_hook_leads_to_story_two(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=6)
+        self.assertIn("в семь", scene.story_beat["next_hook_ru"])
+
+
+class StoryTwoTests(TestCase):
+    """История 2 «The Café on the Corner»: Box находится в кафе и сам возвращается домой."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_story_two_published_at_week_six(self):
+        story = Story.objects.get(number=2)
+        self.assertTrue(story.is_published)
+        self.assertEqual(story.week.number, 6)
+        self.assertEqual(story.script[0]["music"], "morning")
+        self.assertEqual(list(story.new_units.values_list("uid", flat=True)), ["LX-00141"])
+
+    def test_story_two_page_renders(self):
+        response = self.client.get(reverse("stories:detail", args=[2]))
+        self.assertContains(response, "corner")
+        self.assertContains(response, "Мия")
