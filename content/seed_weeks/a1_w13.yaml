@@ -1,0 +1,58 @@
+level: A1
+week: 13
+can_do_ru: "Я смогу сказать, что умею и чего не умею (I can speak English, I can't sing), спросить Can you…? и объяснить причину: Why? — Because…"
+mission_ru: "Скажите вслух по-английски три фразы о своих умениях: I can… I can't… Спросите кого-нибудь Can you…? и ответьте на Why? фразой с because."
+chunks: [LX-00247, LX-00248, LX-00249, LX-00250, LX-00251]
+story_beat:
+  intro_ru: "Вечер в кафе Мии. Том и Мия узнают, что Анна говорит по-русски."
+  outcome_ru: "Анна будет учить Тома и Мию русскому — по субботам в десять. Том хочет понимать русскую музыку, а Мии нравятся русские буквы."
+  next_hook_ru: "В субботу утром Анна двигает старый шкаф, чтобы освободить место для урока. За шкафом что-то есть."
+script:
+  - speaker: mia
+    emotion: happy
+    text: "[S1]Anna[/], [D7]can[/] [T8]you[/] [D5]speak[/] [S10]Russian[/]?"
+    ru: "Анна, ты говоришь по-русски?"
+  - speaker: anna
+    text: "[O4]Yes[/], [T8]I[/] [D7]can[/]. [T8]I[/] [D1]am[/] [P2]from[/] [S4]Russia[/]. [T8]I[/] [D7]can[/] [D5]speak[/] [S10]Russian[/] [C1]and[/] [S10]English[/]."
+    spoken: "[O4]Yes[/], [T8]I[/] [D7]can[/]. [T8]I[/][D1]'m[/] [P2]from[/] [S4]Russia[/]. [T8]I[/] [D7]can[/] [D5]speak[/] [S10]Russian[/] [C1]and[/] [S10]English[/]."
+    ru: "Да. Я из России. Я говорю по-русски и по-английски."
+  - speaker: tom
+    emotion: surprised
+    text: "[T8]I[/] [D7]can[/][X1]not[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]?"
+    spoken: "[T8]I[/] [D7]ca[/][X1]n't[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]?"
+    ru: "А я не говорю по-русски. Научишь меня?"
+  - speaker: anna
+    emotion: happy
+    text: "[O4]Yes[/], [T8]I[/] [D7]can[/]! [C5]But[/] [A6]why[/], [S1]Tom[/]?"
+    ru: "Конечно! Но зачем тебе, Том?"
+  - speaker: tom
+    emotion: happy
+    text: "[C3]Because[/] [T8]I[/] [D3]like[/] [S10]Russian[/] [S10]music[/]."
+    ru: "Потому что мне нравится русская музыка."
+  - speaker: mia
+    emotion: excited
+    text: "[C1]And[/] [D7]can[/] [T8]you[/] [D5]teach[/] [T8]me[/], [S1]Anna[/]?"
+    ru: "А меня научишь, Анна?"
+  - speaker: anna
+    emotion: surprised
+    text: "[A6]Why[/], [S1]Mia[/]?"
+    ru: "А тебе зачем, Мия?"
+  - speaker: mia
+    emotion: happy
+    text: "[C3]Because[/] [T1]the[/] [S10]Russian[/] [S9]letters[/] [D1]are[/] [J3]nice[/]!"
+    ru: "Потому что русские буквы красивые!"
+  - speaker: anna
+    emotion: happy
+    text: "[T1]The[/] [S9]class[/] [D1]is[/] [P3]on[/] [S7]Saturday[/] [P3]at[/] [N3]ten[/]!"
+    ru: "Урок в субботу в десять!"
+  - speaker: tom
+    emotion: excited
+    text: "[S7]Saturday[/] [P3]at[/] [N3]ten[/]! [T8]I[/] [D7]can[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]ten[/]!"
+    ru: "В субботу в десять! В десять я могу встать!"
+twister:
+  number: 13
+  series: sounds
+  text: "[A6]Why[/]? [C3]Because[/] [T8]I[/] [D7]can[/]!"
+  ipa: "/ˈwaɪ bɪˈkɔz aɪ ˈkæn/"
+  focus_sounds: [w, ae]
+  source: original

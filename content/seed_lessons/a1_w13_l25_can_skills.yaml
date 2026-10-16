@@ -1,0 +1,116 @@
+slug: a1-can-skills
+level: A1
+week: 13
+order: 25
+focus: D
+minutes: 40
+title: "Умею и не умею: can, can't и языки"
+summary: "Как рассказать о своих умениях: I can speak English, I can't sing. Вопрос Can you…? и короткие ответы. Почему «говорю по-русски» по-английски — «могу говорить»."
+units: [LX-00239, LX-00240, LX-00243, LX-00244, LX-00246, LX-00247, LX-00248, LX-00249, LX-00251]
+sound_notes:
+  - text: "Can you speak Russian?"
+    ipa: "/kən jə ˈspik ˈrʌʃən/"
+    note_ru: "can в вопросе безударное — «кэн», почти «кн»"
+  - text: "Yes, I can."
+    ipa: "/ˈjɛs aɪ ˈkæn/"
+    note_ru: "в конце фразы can полное и ударное: «кЭн»"
+  - text: "I can speak Russian and English."
+    ipa: "/aɪ kən ˈspik ˈrʌʃən ən ˈɪŋɡlɪʃ/"
+    note_ru: "English — «Ингльш», с носовым ŋ перед g"
+contractions:
+  - full: "cannot"
+    short: "can't"
+    ipa: "/kænt/"
+    note_ru: "I can't sing — «Я не умею петь»."
+  - full: "I am"
+    short: "I'm"
+    ipa: "/aɪm/"
+    note_ru: "I'm from Russia — так говорят о себе."
+layers:
+  - number: 1
+    body: |
+      Глагол **can** означает не только «могу», но и «умею». Им рассказывают о навыках: языках, спорте, музыке.
+
+      > [O4]Yes[/], [T8]I[/] [D7]can[/]. [T8]I[/] [D1]am[/] [P2]from[/] [S4]Russia[/]. [T8]I[/] [D7]can[/] [D5]speak[/] [S10]Russian[/] [C1]and[/] [S10]English[/]. — Да. Я из России. Я говорю по-русски и по-английски.
+
+      Это ваша фраза: о себе на английском можно сказать именно так.
+  - number: 2
+    body: |
+      **can** — родственник слов know и cunning. В древнеанглийском `cunnan` значило «знать, уметь». Поэтому can до сих пор значит «умею»: знать, как это делается.
+
+      **English** — «язык англов», одного из германских племён, пришедших в Британию около 1500 лет назад. От них же — название England.
+  - number: 3
+    body: |
+      Схема:
+
+      > [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]? — Научишь меня?
+      > [O4]Yes[/], [T8]I[/] [D7]can[/]! — Конечно!
+
+      - Умею: I can + глагол: I can speak English.
+      - Не умею: I can't / cannot + глагол: I can't sing.
+      - Вопрос: Can you…? Ответ: Yes, I can. / No, I can't.
+      - С he и she — тоже can, без -s: she can sing.
+  - number: 4
+    body: |
+      Почему «Я говорю по-русски» — это I can speak Russian? Потому что речь об умении, а не о том, что вы делаете сейчас. Можно сказать и I speak Russian — тоже верно и естественно. Вопрос Can you speak…? звучит мягче и вежливее, чем Do you speak…?
+
+      > [T8]I[/] [D7]can[/][X1]not[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]? — А я не говорю по-русски. Научишь меня?
+
+      После can глагол всегда «голый»: без to, без -s.
+  - number: 5
+    body: |
+      Так говорят об умениях американцы:
+
+      > [S1]Anna[/], [D7]can[/] [T8]you[/] [D5]speak[/] [S10]Russian[/]? — Анна, ты говоришь по-русски?
+
+      - Языки пишут с большой буквы и без the: speak English, speak Russian.
+      - Short answer — главное: Yes, I can. No, I can't. Повторять глагол не нужно.
+      - Чуть-чуть: I can speak a little Russian — «я немного говорю по-русски».
+  - number: 6
+    body: |
+      Ловушки:
+
+      - «I can to speak» — лишнее to. Правильно: I can speak.
+      - «She cans sing» — у can не бывает -s.
+      - teach и learn: Anna teaches (учит других), Tom learns (учится сам). По-русски оба — «учить».
+  - number: 7
+    body: |
+      Четыре задания: узнать вопрос об умении, ответить коротко, собрать фразу и рассказать о себе в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как спросить: «Ты говоришь по-русски?»"
+    options: ["Can you speak Russian?", "Can you to speak Russian?", "Are you speak Russian?"]
+    answer: "Can you speak Russian?"
+    hint_ru: "После can глагол без to."
+    explanation_ru: "Can you speak Russian? — умение спрашивают через can. Можно и Do you speak Russian?"
+    units: [LX-00247]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Вас спросили: Can you speak English? Вы умеете. Ответьте коротко."
+    prompt_en: "Yes, I ___."
+    answer: "can"
+    hint_ru: "Короткий ответ повторяет can."
+    explanation_ru: "Yes, I can. — короткий ответ на Can you…?"
+    units: [LX-00248]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите: «Научишь меня?»"
+    options: [me, Can, teach, you]
+    answer: "Can you teach me"
+    hint_ru: "Can you, потом teach me."
+    explanation_ru: "Can you teach me? — me, потому что «меня»."
+    units: [LX-00240, LX-00249]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: в поездке вас спрашивают, говорите ли вы по-английски. Вы говорите. Ответьте и добавьте свой родной язык."
+    prompt_en: "Can you speak English? — ___"
+    answer: "Yes, I can. I can speak Russian and English."
+    accepted: ["Yes, I can.", "Yes, I can", "Yes, I can. I speak Russian and English.", "Yes, I can speak English.", "Yes. I can speak Russian and English.", "Yes, I can. I can speak Russian and English"]
+    hint_ru: "Yes, I can + вторая фраза о языках."
+    explanation_ru: "Yes, I can. I can speak Russian and English. Короткого Yes, I can тоже достаточно."
+    units: [LX-00239, LX-00243, LX-00244]

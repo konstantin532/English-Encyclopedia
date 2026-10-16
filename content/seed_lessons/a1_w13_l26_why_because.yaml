@@ -1,0 +1,112 @@
+slug: a1-why-because
+level: A1
+week: 13
+order: 26
+focus: C
+minutes: 40
+title: "Почему? Потому что: Why? и because"
+summary: "Как спросить о причине и ответить: Why? — Because I like Russian music. Чем why отличается от what for и как звучит разговорное ’cause."
+units: [LX-00241, LX-00242, LX-00245, LX-00250]
+sound_notes:
+  - text: "Why, Mia?"
+    ipa: "/ˈwaɪ ˈmiə/"
+    note_ru: "why — как буква Y: «уай»; голос опускается в конце"
+  - text: "Because I like Russian music."
+    ipa: "/bɪˈkɔz aɪ ˈlaɪk ˈrʌʃən ˈmjuzɪk/"
+    note_ru: "ударение на второй слог: «бикОз»"
+  - text: "The class is on Saturday at ten."
+    ipa: "/ðə ˈklæs ɪz ɑn ˈsæt̬ɚˌdeɪ ət ˈtɛn/"
+    note_ru: "class — широкое «э»: «клэс»"
+contractions:
+  - full: "is not"
+    short: "isn't"
+    ipa: "/ˈɪzənt/"
+    note_ru: "Why isn't Tom here? — «Почему Тома нет?». В вопросе с why сокращение почти обязательно."
+layers:
+  - number: 1
+    body: |
+      В разговоре мы всё время объясняем: «почему?» — «потому что…». По-английски это пара **Why?** — **Because…**
+
+      > [O4]Yes[/], [T8]I[/] [D7]can[/]! [C5]But[/] [A6]why[/], [S1]Tom[/]? — Конечно! Но зачем тебе, Том?
+      > [C3]Because[/] [T8]I[/] [D3]like[/] [S10]Russian[/] [S10]music[/]. — Потому что мне нравится русская музыка.
+
+      Why — вопрос, because — ответ с причиной.
+  - number: 2
+    body: |
+      **because** — сложение двух слов: by + cause, «по причине». Так же в русском «потому что» = «по тому, что».
+
+      **why** — старая форма от who и what: «по чему, из-за чего». Вопросительные слова в английском почти все начинаются с wh: what, where, who, why — у них общий древний корень.
+  - number: 3
+    body: |
+      Схема:
+
+      > [A6]Why[/], [S1]Mia[/]? — А тебе зачем, Мия?
+      > [C3]Because[/] [T1]the[/] [S10]Russian[/] [S9]letters[/] [D1]are[/] [J3]nice[/]! — Потому что русские буквы красивые!
+
+      - Короткий вопрос: Why?
+      - Полный вопрос с do: Why do you like Russian music?
+      - С be — без do: Why is Tom happy?
+      - Ответ: Because + полная мысль: Because I like music.
+  - number: 4
+    body: |
+      Почему после because — целая фраза? because соединяет причину с тем, что вы сказали раньше. Причина — отдельная мысль: в ней есть кто (I) и что делает (like). Поэтому нельзя ответить «Because music» — нужно Because I like music.
+
+      В разговоре because часто стоит в начале ответа, как здесь. В письме — посередине: I learn Russian because I like the music.
+  - number: 5
+    body: |
+      Так объясняют причины американцы:
+
+      > [C3]Because[/] [T8]I[/] [D3]like[/] [S10]Russian[/] [S10]music[/]. — Потому что мне нравится русская музыка.
+      > [T1]The[/] [S9]class[/] [D1]is[/] [P3]on[/] [S7]Saturday[/] [P3]at[/] [N3]ten[/]! — Урок в субботу в десять!
+
+      - Why not? — «Почему бы и нет?» — так соглашаются.
+      - Why? Because! — так шутят, когда не хотят объяснять.
+      - В быстрой речи because звучит «коз» или ’cause.
+  - number: 6
+    body: |
+      Ловушки:
+
+      - «Why you like it?» — пропущен do. Правильно: Why do you like it?
+      - «Because of I like» — of лишнее. because of ставят только перед словом: because of the music.
+      - Русское «зачем» и «почему» по-английски часто оба — why.
+  - number: 7
+    body: |
+      Четыре задания: понять вопрос о причине, вставить because, собрать ответ и объяснить свою причину в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Анна спрашивает: Why, Tom? Что ей ответить?"
+    options: ["Because I like Russian music.", "Yes, I can.", "On Saturday at ten."]
+    answer: "Because I like Russian music."
+    hint_ru: "На why отвечают с because."
+    explanation_ru: "Why? — Because I like Russian music. Причина начинается с because."
+    units: [LX-00241, LX-00250]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Мия объясняет, почему хочет учить русский. Вставьте слово."
+    prompt_en: "___ the Russian letters are nice!"
+    answer: "Because"
+    hint_ru: "«Потому что»."
+    explanation_ru: "Because the Russian letters are nice! — because вводит причину."
+    units: [LX-00242]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите вопрос: «Почему ты любишь музыку?»"
+    options: [music, Why, like, you, do]
+    answer: "Why do you like music"
+    hint_ru: "Why + do you + глагол."
+    explanation_ru: "Why do you like music? — с обычным глаголом нужен do."
+    units: [LX-00241]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: на курсах вас спрашивают, почему вам нравится английский. Объясните одной фразой с because."
+    prompt_en: "Why do you like English? — ___"
+    answer: "Because I like English music."
+    accepted: ["Because I like English", "Because I like English music.", "Because I like music.", "Because my friend speaks English.", "Because I work in English.", "Because I can speak English."]
+    hint_ru: "Because + полная мысль."
+    explanation_ru: "Because I like English music. Подойдёт любая причина — главное, после because целая фраза."
+    units: [LX-00242]

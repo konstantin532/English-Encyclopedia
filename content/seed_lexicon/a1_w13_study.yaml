@@ -1,0 +1,177 @@
+# Неделя 13 «Курсы английского»: can / can't — умения, Why? Because…, языки. CEFR не сверялся.
+level: A1
+week: 13
+units:
+- uid: LX-00239
+  lemma: speak
+  meaning: to say words; to know and use a language
+  class: D5
+  forms:
+  - speaks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /spik/
+  translation_ru: говорить (на языке)
+  example_en: '[D7]Can[/] [T8]you[/] [D5]speak[/] [S10]Russian[/]?'
+  example_ru: Ты говоришь по-русски?
+  situation: Говорите о языках
+  usage_note: 'О языке — speak: speak English. Просто «говорить, сказать» — say или talk.'
+- uid: LX-00240
+  lemma: teach
+  meaning: to help someone learn something
+  class: D5
+  forms:
+  - teaches
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /titʃ/
+  translation_ru: учить, преподавать
+  example_en: '[D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]?'
+  example_ru: Можешь меня научить?
+  situation: Просите научить
+  usage_note: 'teach — учить кого-то (учитель), learn — учиться самому (ученик). teacher = teach + -er.'
+- uid: LX-00241
+  lemma: why
+  meaning: for what reason; used in questions
+  class: A6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /waɪ/
+  translation_ru: почему, зачем
+  example_en: '[C5]But[/] [A6]why[/], [S1]Tom[/]?'
+  example_ru: Но зачем, Том?
+  situation: Спрашиваете причину
+  usage_note: 'Звучит как буква Y: «уай».'
+- uid: LX-00242
+  lemma: because
+  meaning: for the reason that
+  class: C3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɪˈkɔz/
+  translation_ru: потому что
+  example_en: '[C3]Because[/] [T8]I[/] [D3]like[/] [S10]Russian[/] [S10]music[/].'
+  example_ru: Потому что мне нравится русская музыка.
+  situation: Объясняете причину
+  usage_note: 'В разговоре часто сокращают до ’cause — «коз».'
+- uid: LX-00243
+  lemma: English
+  meaning: the language of the USA, the UK and many other countries
+  class: S10
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɪŋɡlɪʃ/
+  translation_ru: английский язык; английский
+  example_en: '[T8]I[/] [D7]can[/] [D5]speak[/] [S10]English[/].'
+  example_ru: Я говорю по-английски.
+  situation: Говорите о языках
+  usage_note: 'Языки пишут с большой буквы и без the: speak English.'
+- uid: LX-00244
+  lemma: Russian
+  meaning: the language of Russia; from Russia
+  class: S10
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈrʌʃən/
+  translation_ru: русский язык; русский
+  example_en: '[T8]I[/] [D7]can[/] [D5]speak[/] [S10]Russian[/].'
+  example_ru: Я говорю по-русски.
+  situation: Говорите о языках
+  usage_note: 'Ударение на первый слог, звук как в «ра»: «рАшн».'
+- uid: LX-00245
+  lemma: class
+  meaning: a lesson; a group of students who learn together
+  class: S9
+  forms:
+  - classes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /klæs/
+  translation_ru: урок, занятие; класс
+  example_en: '[T1]The[/] [S9]class[/] [D1]is[/] [P3]on[/] [S7]Saturday[/].'
+  example_ru: Занятие в субботу.
+  situation: Договариваетесь об уроке
+- uid: LX-00246
+  lemma: sing
+  meaning: to make music with your voice
+  class: D2
+  forms:
+  - sings
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sɪŋ/
+  translation_ru: петь
+  example_en: '[T8]I[/] [D7]ca[/][X1]n''t[/] [D2]sing[/].'
+  example_ru: Я не умею петь.
+  situation: Говорите об умениях
+- uid: LX-00247
+  lemma: Can you speak Russian?
+  meaning: Asking about a language someone knows
+  class: D7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kən jə ˈspik ˈrʌʃən/
+  translation_ru: Ты говоришь по-русски?
+  example_en: Can you speak Russian?
+  example_ru: Ты говоришь по-русски?
+  situation: Курсы английского
+  usage_note: 'По-русски «говоришь», а по-английски «можешь говорить»: умение — через can.'
+- uid: LX-00248
+  lemma: Yes, I can.
+  meaning: A short yes answer to Can you…?
+  class: D7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈjɛs aɪ ˈkæn/
+  translation_ru: Да, умею. / Да, могу.
+  example_en: Yes, I can.
+  example_ru: Да, умею.
+  situation: Курсы английского
+  usage_note: 'В конце can звучит полностью и с ударением: «кЭн».'
+- uid: LX-00249
+  lemma: Can you teach me?
+  meaning: Asking someone to help you learn
+  class: D7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kən jə ˈtitʃ mi/
+  translation_ru: Можешь меня научить?
+  example_en: Can you teach me?
+  example_ru: Можешь меня научить?
+  situation: Курсы английского
+- uid: LX-00250
+  lemma: Because I like Russian music.
+  meaning: Giving a reason
+  class: C3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /bɪˈkɔz aɪ ˈlaɪk ˈrʌʃən ˈmjuzɪk/
+  translation_ru: Потому что мне нравится русская музыка.
+  example_en: Because I like Russian music.
+  example_ru: Потому что мне нравится русская музыка.
+  situation: Курсы английского
+- uid: LX-00251
+  lemma: I cannot speak Russian.
+  meaning: Saying you do not know a language
+  class: X1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈkænɑt ˈspik ˈrʌʃən/
+  translation_ru: Я не говорю по-русски.
+  example_en: I cannot speak Russian.
+  example_ru: Я не говорю по-русски.
+  situation: Курсы английского
+  usage_note: 'В разговоре — I can''t speak Russian.'
