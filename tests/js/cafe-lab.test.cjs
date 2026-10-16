@@ -63,3 +63,22 @@ test('line highlighting only selects the actual spoken interval', () => {
   assert.equal(lesson.activeDialogueLine(timings, NaN), -1);
   assert.equal(lesson.activeDialogueLine(null, 1), -1);
 });
+
+test('dictation checks exact words but ignores punctuation, spacing and case', () => {
+  assert.equal(lesson.isCorrectDictation(2, 'Two coffees?'), true);
+  assert.equal(lesson.isCorrectDictation(2, '  TWO,   coffees!  '), true);
+  assert.equal(lesson.isCorrectDictation(2, 'two teas'), false);
+  assert.equal(lesson.isCorrectDictation(2, 'two coffee'), false);
+  assert.equal(lesson.isCorrectDictation(3, 'No, sorry. One tea and one coffee, please.'), true);
+  assert.equal(lesson.isCorrectDictation(3, 'no sorry one tea and one coffee please'), true);
+  assert.equal(lesson.isCorrectDictation(3, 'No sorry two coffees please'), false);
+  assert.equal(lesson.isCorrectDictation(3, ''), false);
+});
+
+test('dictation only permits the two purposely selected lines', () => {
+  assert.equal(lesson.isCorrectDictation(0, lesson.DIALOGUE[0]), false);
+  assert.equal(lesson.isCorrectDictation(5, 'Thank you!'), false);
+  assert.equal(lesson.isCorrectDictation(-1, 'Two coffees?'), false);
+  assert.equal(lesson.isCorrectDictation(999, 'Two coffees?'), false);
+  assert.equal(lesson.normalizeDictation(' I’d LIKE one tea, PLEASE! '), "i'd like one tea please");
+});
