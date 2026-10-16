@@ -224,3 +224,10 @@ Final: Ruling: обычный git push не проходит (DNS из node; в 
 - Пакет a1_w08_city_plus (LX-00337–LX-00347, 11 единиц): under, between, in front of, across from (последние два — unit_type phrase, иначе части не считаются известными), him, them, us, hotel, supermarket, map, Can you help us?. Неделя 8 — 36 единиц.
 - Диалог: Анна «Sorry, can you help us?», мастерская «between the bank and the hotel». Уроки: новые предлоги места; таблица I → me, he → him, we → us, they → them.
 - Проверено: audit_course без ошибок, 297 тестов OK, неделя 8 и оба урока на 1280 и 390 px.
+
+## 2026-10-16 — неделя 9
+
+- Пакет a1_w09_phone_plus (LX-00348–LX-00368, 21 единица): what, when, which, call, text, send, message, email, answer, ask, close, now, later, today, tomorrow, okay, bye, wrong, first name (phrase), Can I speak to Tom, please?, Call me later. Неделя 9 — 32 единицы.
+- Диалог: мастерская «opens at nine and closes at five. See you tomorrow!», Анна «Okay! … Bye!». Уроки: все вопросительные слова перед do / does, open / close; телефон и сообщения, имя и фамилия в анкете, e-mail по буквам (at, dot).
+- Исправлены описания заданий (слой 7) в уроках недель 6 и 7: первые четыре пункта теперь совпадают с исходными заданиями.
+- Проверено: audit_course без ошибок, 298 тестов OK, неделя 9 и оба урока на 1280 и 390 px.

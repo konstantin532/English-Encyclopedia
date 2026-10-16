@@ -618,6 +618,12 @@ class WeekNineTests(WeekContentMixin, TestCase):
     """Неделя 9 «Телефон и сообщения»: do / does, диктовка по буквам и цифрам."""
     week_number = 9
     slugs = ("a1-questions-do-does", "a1-spelling-phone-numbers")
+
+    def test_phone_closing_in_dialogue(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=9)
+        text = " ".join(line["text"] for line in scene.script)
+        for piece in ("[D2]closes[/]", "[A2]tomorrow[/]", "[O1]Bye[/]"):
+            self.assertIn(piece, text)
     twister_number = 9
 
     def test_complete(self):
@@ -842,7 +848,7 @@ class A1PoemsTests(TestCase):
 class WeeklyVocabularyNormTests(TestCase):
     """Добор A1 до 500 единиц: недели, которые уже доведены до нормы 30–39."""
 
-    FILLED_WEEKS = (3, 4, 5, 6, 7, 8)
+    FILLED_WEEKS = (3, 4, 5, 6, 7, 8, 9)
 
     @classmethod
     def setUpTestData(cls):
