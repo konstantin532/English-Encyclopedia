@@ -43,10 +43,11 @@ class CafeLabTests(TestCase):
 
     def test_dialogue_lines_render_from_shared_source(self):
         from apps.core.cafe_lab import CAFE_DIALOGUE
+        from django.utils.html import escape
         response = self.client.get(reverse("core:cafe_lab"))
         for index, line in enumerate(CAFE_DIALOGUE):
             self.assertContains(response, f'data-dialogue-line="{index}"')
-            self.assertContains(response, line["text"])
+            self.assertContains(response, escape(line["text"]))
         self.assertContains(response, 'id="cafe-audio-manifest"')
 
     def test_missing_audio_shows_null_and_browser_fallback(self):
