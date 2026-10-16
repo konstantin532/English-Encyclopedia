@@ -2,15 +2,11 @@
 {% load markers static ru %}
 {% block title %}Неделя {{ week.number }} · {{ week.situation_ru }} · {{ SITE_NAME }}{% endblock %}
 {% block content %}
-<div class="wrap">
-  <header class="page-head">
-    <p class="crumbs"><a href="{% url 'curriculum:level' week.level.slug %}">{{ week.level.code }}</a> / неделя {{ week.number }}</p>
-    <h1>{{ week.situation_ru|default:week.theme_ru }}</h1>
-    <p>{{ week.get_sphere_display }}{% if week.grammar_ru %} · {{ week.grammar_ru }}{% endif %}</p>
-  </header>
+<div class="wrap cinematic-week">
   {% if scene %}
   <div class="lesson-grid">
     <article class="prose">
+      {% include "components/week_hero.html" %}
       <section class="layer" id="goal" aria-labelledby="goal-t">
         <h2 id="goal-t">Я смогу…</h2><p>{{ scene.can_do_ru }}</p>
         {% if user.is_authenticated %}
@@ -64,11 +60,13 @@
       <section class="layer" id="mission" aria-labelledby="mission-t"><h2 id="mission-t">Задание в жизнь</h2><p>{{ scene.mission_ru }}</p>{% include "components/story_beat.html" with beat=scene.story_beat %}</section>
       <section class="layer" id="review" aria-labelledby="review-t"><h2 id="review-t">Повторение</h2><p><a href="{% url 'learning:review' %}">Повторить изученные слова</a></p></section>
     </article>
-    <aside class="aside"><div class="aside-box"><h2>Шаги недели</h2><ol class="toc">
+    <aside class="aside week-route"><div class="aside-box"><p class="studio-eyebrow">ШАГ ЗА ШАГОМ</p><h2>Ваш маршрут</h2><ol class="toc">
       <li><a href="#goal">Я смогу…</a></li><li><a href="#dialogue">Диалог</a></li><li><a href="#lessons">Уроки</a></li><li><a href="#chunks">Готовые фразы</a></li><li><a href="#role">Сыграть роль</a></li><li><a href="#twister">Скороговорка</a></li><li><a href="#mission">Задание в жизнь</a></li><li><a href="#review">Повторение</a></li>
-    </ol></div></aside>
+    </ol><div class="route-goal"><span>Я смогу…</span><p>{{ scene.can_do_ru }}</p></div></div></aside>
   </div>
-  {% else %}<section class="layer"><h2>Неделя готовится</h2><p>Ситуация уже есть в плане. Диалог, уроки и скороговорка появятся позже.</p></section>{% endif %}
+  {% else %}
+  {% include "components/week_hero.html" %}
+  <section class="layer"><h2>Неделя готовится</h2><p>Ситуация уже есть в плане. Диалог, уроки и скороговорка появятся позже.</p></section>{% endif %}
   {% if next_week %}<p><a class="btn btn-quiet" href="{% url 'curriculum:week' week.level.slug next_week.number %}">Следующая неделя: {{ next_week.situation_ru|default:next_week.theme_ru }}</a></p>{% endif %}
 </div>
 {% endblock %}

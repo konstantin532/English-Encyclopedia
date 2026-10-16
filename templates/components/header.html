@@ -1,9 +1,9 @@
 {% with path=request.path %}
 <header class="site-header">
   <div class="wrap">
-    <p class="studio-breadcrumb"><a href="{% url 'core:home' %}">Энциклопедия</a><span>/</span><strong>{% if path == '/' %}Главная{% elif path|slice:':9' == '/lessons/' %}Урок{% elif path|slice:':8' == '/levels/' %}Курс{% elif path|slice:':7' == '/words/' %}Слова{% elif path|slice:':9' == '/markers/' %}Маркеры{% elif path|slice:':9' == '/stories/' %}Истории и стихи{% elif path == '/accounts/signup/' %}Регистрация{% elif path == '/accounts/login/' %}Вход{% elif path == '/learning/review/' %}Повторение{% else %}Мой прогресс{% endif %}</strong></p>
+    <p class="studio-breadcrumb"><a href="{% url 'core:home' %}">Энциклопедия</a><span>/</span><strong>{% if week %}{{ week.level.code }} / Неделя {{ week.number }}{% elif path == '/' %}Главная{% elif path|slice:':9' == '/lessons/' %}Урок{% elif path|slice:':8' == '/levels/' %}Курс{% elif path|slice:':7' == '/words/' %}Слова{% elif path|slice:':9' == '/markers/' %}Маркеры{% elif path|slice:':9' == '/stories/' %}Истории и стихи{% elif path == '/accounts/signup/' %}Регистрация{% elif path == '/accounts/login/' %}Вход{% elif path == '/learning/review/' %}Повторение{% else %}Мой прогресс{% endif %}</strong></p>
     <div class="studio-top-actions">
-      <a class="studio-search-link" href="{% url 'lexicon:list' %}" aria-label="Открыть словарь"><span aria-hidden="true">⌕</span><span>Найти слово</span></a>
+      <form class="studio-search-form" method="get" action="{% url 'lexicon:list' %}" role="search"><label class="visually-hidden" for="studio-search">Найти слово</label><input id="studio-search" type="search" name="q" placeholder="Найти слово или перевод…" autocomplete="off"><button type="submit" aria-label="Найти слово">⌕</button></form>
       {% if user.is_authenticated %}
         <a class="studio-account" href="{% url 'learning:dashboard' %}"><span class="studio-avatar" aria-hidden="true">{% if user.display_name %}{{ user.display_name|first|upper }}{% else %}Я{% endif %}</span><span>Мой кабинет</span></a>
         <form method="post" action="{% url 'accounts:logout' %}">{% csrf_token %}<button class="btn btn-quiet btn-small" type="submit">Выйти</button></form>

@@ -173,14 +173,11 @@ h1,h2,h3{letter-spacing:-.025em}a{text-underline-offset:.22em}
 @media(max-width:700px){
   .story-script .script-line{grid-template-columns:1fr}
   .story-script .script-line .line-ru{grid-column:auto}
-  .studio-nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -20px;padding:0 20px}
-  .studio-nav::-webkit-scrollbar{display:none}
-  .studio-nav>a{flex:0 0 auto;white-space:nowrap}
   .site-header .studio-breadcrumb{display:none}
-  .lesson-grid .aside .toc{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
-  .lesson-grid .aside .toc::-webkit-scrollbar{display:none}
-  .lesson-grid .aside .toc li{flex:0 0 auto}
-  .lesson-grid .aside .toc a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);white-space:nowrap}
+  .lesson-grid .aside:not(.week-route) .toc{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+  .lesson-grid .aside:not(.week-route) .toc::-webkit-scrollbar{display:none}
+  .lesson-grid .aside:not(.week-route) .toc li{flex:0 0 auto}
+  .lesson-grid .aside:not(.week-route) .toc a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);white-space:nowrap}
   .lesson-grid .aside{grid-template-columns:minmax(0,1fr)}
   .lesson-grid .aside>*{min-width:0}
   .lesson-grid .aside h2{margin-bottom:12px}
