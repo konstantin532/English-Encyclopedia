@@ -662,3 +662,67 @@ class StoryFourTests(TestCase):
     def test_week_eleven_leads_to_post_office_not_to_letter(self):
         week11 = WeekScene.objects.get(week__level__code="A1", week__number=11)
         self.assertIn("почту", week11.story_beat["next_hook_ru"])
+
+
+class WeekThirteenTests(WeekContentMixin, TestCase):
+    """Неделя 13 «Курсы английского»: can / can't — умения, Why? Because…"""
+    week_number = 13
+    slugs = ("a1-can-skills", "a1-why-because")
+    twister_number = 13
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_anna_speaks_russian_by_canon(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=13)
+        anna = " ".join(line["text"] for line in scene.script if line["speaker"] == "anna")
+        self.assertIn("[S4]Russia[/]", anna)
+
+    def test_hook_leads_to_story_five(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=13)
+        self.assertIn("шкаф", scene.story_beat["next_hook_ru"])
+
+
+class WeekFourteenTests(WeekContentMixin, TestCase):
+    """Неделя 14 «Поездка на автобусе»: билет, расписание и итог A1."""
+    week_number = 14
+    slugs = ("a1-bus-ticket", "a1-review-everything")
+    twister_number = 14
+
+    def test_complete(self):
+        self.check_complete()
+
+
+class StoryFiveTests(TestCase):
+    """История 5 «The Big Family Photo»: фото за шкафом, Rose и Park Street."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_story_five_published_at_week_fourteen(self):
+        story = Story.objects.get(number=5)
+        self.assertTrue(story.is_published)
+        self.assertEqual(story.week.number, 14)
+        self.assertIn("[S1]Rose[/]", story.body)
+        self.assertIn("[S4]Park[/] [S4]Street[/]", story.body)
+
+
+class LevelA1CompleteTests(TestCase):
+    """Все 14 недель A1 наполнены: сцена, два урока, скороговорка; все 5 историй A1 опубликованы."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_every_a1_week_has_scene_lessons_and_twister(self):
+        from apps.curriculum.models import TongueTwister
+
+        for number in range(1, 15):
+            scene = WeekScene.objects.get(week__level__code="A1", week__number=number)
+            self.assertGreaterEqual(scene.week.lessons.count(), 2, number)
+            self.assertTrue(TongueTwister.objects.filter(week=scene.week).exists(), number)
+
+    def test_all_a1_stories_published(self):
+        published = Story.objects.filter(level__code="A1", is_published=True).count()
+        self.assertEqual(published, 5)

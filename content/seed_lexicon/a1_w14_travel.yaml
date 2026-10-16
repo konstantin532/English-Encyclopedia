@@ -1,0 +1,98 @@
+# Неделя 14 «Поездка на автобусе»: билет, остановка, расписание; повторение A1. CEFR не сверялся.
+level: A1
+week: 14
+units:
+- uid: LX-00252
+  lemma: bus
+  meaning: a big vehicle that carries many people along a route
+  class: S4
+  forms:
+  - buses
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bʌs/
+  translation_ru: автобус
+  example_en: '[D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]?'
+  example_ru: Этот автобус идёт до Парк-стрит?
+  situation: Едете на автобусе
+  usage_note: 'Короткое «а»: «бас». На автобусе — by bus или on the bus.'
+- uid: LX-00253
+  lemma: ticket
+  meaning: a small paper that shows you paid for a trip
+  class: S2
+  forms:
+  - tickets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈtɪkɪt/
+  translation_ru: билет
+  example_en: '[A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]?'
+  example_ru: Сколько стоит билет?
+  situation: Покупаете билет
+- uid: LX-00254
+  lemma: stop
+  meaning: a place where a bus stops for people
+  class: S4
+  forms:
+  - stops
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /stɑp/
+  translation_ru: остановка
+  example_en: '[S4]Park[/] [S4]Street[/] [D1]is[/] [T1]the[/] [J8]last[/] [S4]stop[/].'
+  example_ru: Парк-стрит — конечная остановка.
+  situation: Едете на автобусе
+  usage_note: 'bus stop — автобусная остановка. stop — ещё и «останавливаться»: The bus stops here.'
+- uid: LX-00255
+  lemma: Does this bus go to Park Street?
+  meaning: Asking where a bus goes
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /dəz ðɪs ˈbʌs ɡoʊ tə ˈpɑrk ˌstrit/
+  translation_ru: Этот автобус идёт до Парк-стрит?
+  example_en: Does this bus go to Park Street?
+  example_ru: Этот автобус идёт до Парк-стрит?
+  situation: Поездка на автобусе
+  usage_note: 'Главный вопрос в чужом городе: вставьте любую остановку вместо Park Street.'
+- uid: LX-00256
+  lemma: How much is a ticket?
+  meaning: Asking the price of a trip
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌhaʊ ˈmʌtʃ ɪz ə ˈtɪkɪt/
+  translation_ru: Сколько стоит билет?
+  example_en: How much is a ticket?
+  example_ru: Сколько стоит билет?
+  situation: Поездка на автобусе
+- uid: LX-00257
+  lemma: Two tickets, please.
+  meaning: Buying tickets
+  class: S2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈtu ˈtɪkɪts ˈpliz/
+  translation_ru: Два билета, пожалуйста.
+  example_en: Two tickets, please.
+  example_ru: Два билета, пожалуйста.
+  situation: Поездка на автобусе
+- uid: LX-00258
+  lemma: What time is the next bus?
+  meaning: Asking about the schedule
+  class: N3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌwʌt ˈtaɪm ɪz ðə ˈnɛks ˈbʌs/
+  translation_ru: Во сколько следующий автобус?
+  example_en: What time is the next bus?
+  example_ru: Во сколько следующий автобус?
+  situation: Поездка на автобусе
+  usage_note: 'next — следующий: next bus, next stop. t в next перед согласным почти не слышно.'

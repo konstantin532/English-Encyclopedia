@@ -131,8 +131,9 @@ class WeekPageTests(TestCase):
         TongueTwister.objects.create(number=1, week=cls.week, series="sounds", text="[T2]This[/] [D1]is[/] [T2]this[/].", ipa="/ðɪs ɪz ðɪs/", source="original")
 
     def test_week_without_scene_is_200(self):
-        response = self.client.get(reverse("curriculum:week", args=["a1", 13]))
-        self.assertContains(response, "Курсы английского")
+        # Все 14 недель A1 наполнены; неделя без сцены — первая неделя A1+.
+        response = self.client.get(reverse("curriculum:week", args=["a1-plus", 1]))
+        self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Неделя готовится")
 
     def test_week_with_scene_shows_blocks(self):
@@ -151,7 +152,8 @@ class WeekPageTests(TestCase):
         for number in range(1, 15):
             self.assertContains(response, reverse("curriculum:week", args=["a1", number]))
         self.assertContains(response, "Знакомство и люди")
-        self.assertContains(response, "готовится")
+        # Все недели A1 наполнены — ни одной «готовится» на уровне A1.
+        self.assertNotContains(response, "готовится")
 
     def test_guest_goal_redirects_to_login(self):
         response = self.client.post(reverse("learning:week_goal", args=[self.week.pk]), {"status": "done"})

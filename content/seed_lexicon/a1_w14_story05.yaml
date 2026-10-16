@@ -1,0 +1,60 @@
+# Новые слова истории №5 «The Big Family Photo» (лимит A-блока — до 5 на историю).
+level: A1
+week: 14
+units:
+- uid: LX-00259
+  lemma: move
+  meaning: to change the place of something
+  class: D4
+  forms:
+  - moves
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /muv/
+  translation_ru: двигать, передвигать
+  example_en: '[T8]I[/] [D4]move[/] [T1]the[/] [J2]old[/] [S2]cupboard[/].'
+  example_ru: Я двигаю старый шкаф.
+  situation: Переставляете мебель
+- uid: LX-00260
+  lemma: cupboard
+  meaning: a piece of furniture with doors and shelves
+  class: S2
+  forms:
+  - cupboards
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkʌbɚd/
+  translation_ru: шкаф (для посуды, вещей)
+  example_en: '[T9]There[/] [D1]is[/] [T1]a[/] [S2]photo[/] [P1]behind[/] [T1]the[/] [S2]cupboard[/].'
+  example_ru: За шкафом фото.
+  situation: Находите вещь за мебелью
+  usage_note: 'p не читается: «кАбэрд». Шкаф для одежды — closet.'
+- uid: LX-00261
+  lemma: behind
+  meaning: at the back of something
+  class: P1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɪˈhaɪnd/
+  translation_ru: за, позади
+  example_en: '[T9]There[/] [D1]is[/] [T1]a[/] [S2]photo[/] [P1]behind[/] [T1]the[/] [S2]cupboard[/].'
+  example_ru: За шкафом фото.
+  situation: Говорите, где вещь
+- uid: LX-00262
+  lemma: child
+  meaning: a young boy or girl
+  class: S1
+  forms:
+  - children
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tʃaɪld/
+  translation_ru: ребёнок
+  example_en: '[T9]There[/] [D1]are[/] [N1]six[/] [S1]children[/].'
+  example_ru: Там шесть детей.
+  situation: Описываете семью на фото
+  usage_note: 'Неправильное множественное число: one child — two children («чилдрэн»).'
