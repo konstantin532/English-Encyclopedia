@@ -1,0 +1,169 @@
+# Неделя 12 «На почте»: don't / doesn't, письмо и адрес. CEFR не сверялся.
+level: A1
+week: 12
+units:
+- uid: LX-00225
+  lemma: letter
+  meaning: a written message in an envelope; also a sign like A or B
+  class: S9
+  forms:
+  - letters
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈlɛt̬ɚ/
+  translation_ru: письмо; буква
+  example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [S9]letter[/] [P5]for[/] [T3]my[/] [S1]mother[/].'
+  example_ru: У меня письмо для мамы.
+  situation: Отправляете письмо
+  usage_note: 'Два значения: письмо и буква. t между гласными мягкая: «лэдэр».'
+- uid: LX-00226
+  lemma: stamp
+  meaning: a small paper you put on a letter to pay for sending it
+  class: S2
+  forms:
+  - stamps
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /stæmp/
+  translation_ru: марка
+  example_en: '[T8]I[/] [D1]do[/] [X1]not[/] [D1]have[/] [T1]a[/] [S2]stamp[/].'
+  example_ru: У меня нет марки.
+  situation: Отправляете письмо
+- uid: LX-00227
+  lemma: address
+  meaning: the number, street and town where someone lives
+  class: S9
+  forms:
+  - addresses
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈædrɛs/
+  translation_ru: адрес
+  example_en: '[T9]What[/] [D1]is[/] [T1]the[/] [S9]address[/]?'
+  example_ru: Какой адрес?
+  situation: Отправляете письмо
+  usage_note: 'Американцы ставят ударение на первый слог: Ædress. Пишется с двумя d и двумя s.'
+- uid: LX-00228
+  lemma: street
+  meaning: a road in a town with houses along it
+  class: S4
+  forms:
+  - streets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /strit/
+  translation_ru: улица
+  example_en: '[T1]The[/] [S2]house[/] [D1]is[/] [P1]on[/] [S4]Park[/] [S4]Street[/].'
+  example_ru: Дом на Парк-стрит.
+  situation: Называете адрес
+  usage_note: 'В адресе — с большой буквы и после названия: Park Street. «На улице» — on the street.'
+- uid: LX-00229
+  lemma: know
+  meaning: to have information in your mind
+  class: D6
+  forms:
+  - knows
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /noʊ/
+  translation_ru: знать
+  example_en: '[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/].'
+  example_ru: Я не знаю.
+  situation: Не знаете ответа
+  usage_note: 'k в начале не читается: know звучит как no — «ноу».'
+- uid: LX-00230
+  lemma: live
+  meaning: to have your home in a place
+  class: D2
+  forms:
+  - lives
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /lɪv/
+  translation_ru: жить
+  example_en: '[T3]My[/] [S1]mother[/] [D2]lives[/] [P1]in[/] [S4]Russia[/].'
+  example_ru: Моя мама живёт в России.
+  situation: Рассказываете, где живут родные
+- uid: LX-00231
+  lemma: post office
+  meaning: a place where you send letters and buy stamps
+  class: S4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈpoʊst ˌɔfɪs/
+  translation_ru: почта, почтовое отделение
+  example_en: Where is the post office?
+  example_ru: Где почта?
+  situation: На почте
+  usage_note: 'Американскую почту называют ещё USPS. Сама почта, которую приносят, — mail.'
+- uid: LX-00232
+  lemma: What is the address?
+  meaning: Asking where a letter goes
+  class: S9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌt ɪz ði ˈædrɛs/
+  translation_ru: Какой адрес?
+  example_en: What is the address?
+  example_ru: Какой адрес?
+  situation: На почте
+  usage_note: 'Перед гласным звуком the звучит «зи»: the address — «зи эдрес».'
+- uid: LX-00233
+  lemma: I do not have a stamp.
+  meaning: Saying you do not have something
+  class: X1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈdoʊnt hæv ə ˈstæmp/
+  translation_ru: У меня нет марки.
+  example_en: I do not have a stamp.
+  example_ru: У меня нет марки.
+  situation: На почте
+  usage_note: 'В разговоре — I don''t have a stamp.'
+- uid: LX-00234
+  lemma: Do you have letters for our house?
+  meaning: Asking about mail for your home
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /də jə ˈhæv ˈlɛt̬ɚz fɚ ˈaʊɚ ˈhaʊs/
+  translation_ru: Для нашего дома есть письма?
+  example_en: Do you have letters for our house?
+  example_ru: Для нашего дома есть письма?
+  situation: На почте
+- uid: LX-00235
+  lemma: It does not get letters.
+  meaning: Saying something does not happen
+  class: X1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪt ˈdʌzənt ɡɛt ˈlɛt̬ɚz/
+  translation_ru: Туда не приходят письма.
+  example_en: It does not get letters.
+  example_ru: Туда не приходят письма.
+  situation: На почте
+  usage_note: 'В разговоре — It doesn''t get letters. get letters — «получать письма».'
+- uid: LX-00236
+  lemma: I do not know.
+  meaning: Saying you have no answer
+  class: X1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈdoʊnt ˈnoʊ/
+  translation_ru: Я не знаю.
+  example_en: I do not know.
+  example_ru: Я не знаю.
+  situation: На почте
+  usage_note: 'В разговоре — I don''t know, в быстрой речи почти «айдоноу».'

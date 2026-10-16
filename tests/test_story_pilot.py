@@ -623,3 +623,42 @@ class WeekElevenTests(WeekContentMixin, TestCase):
         spoken = " ".join(line.get("spoken", "") for line in scene.script)
         self.assertIn("[D7]ca[/][X1]n't[/]", spoken)
         self.assertNotIn("[D7]can't[/]", spoken)
+
+
+class WeekTwelveTests(WeekContentMixin, TestCase):
+    """Неделя 12 «На почте»: don't / doesn't, письмо и адрес."""
+    week_number = 12
+    slugs = ("a1-dont-doesnt", "a1-letters-address")
+    twister_number = 12
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_postal_worker_says_old_mailbox_gets_no_letters(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=12)
+        text = " ".join(line["text"] for line in scene.script if line["speaker"] == "postal")
+        self.assertIn("[D1]does[/] [X1]not[/] [D2]get[/] [S9]letters[/]", text)
+
+
+class StoryFourTests(TestCase):
+    """История 4 «A Letter With No Name»: письмо, которое не принесла почта."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_story_four_published_at_week_twelve(self):
+        story = Story.objects.get(number=4)
+        self.assertTrue(story.is_published)
+        self.assertEqual(story.week.number, 12)
+        self.assertIn("[S1]Rose[/]", story.body)
+        self.assertEqual(story.new_units.count(), 2)
+
+    def test_rose_is_a_character_not_vocabulary(self):
+        from apps.publishing.audit import character_names
+
+        self.assertIn("rose", character_names())
+
+    def test_week_eleven_leads_to_post_office_not_to_letter(self):
+        week11 = WeekScene.objects.get(week__level__code="A1", week__number=11)
+        self.assertIn("почту", week11.story_beat["next_hook_ru"])

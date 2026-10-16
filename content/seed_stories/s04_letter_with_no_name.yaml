@@ -1,0 +1,82 @@
+number: 4
+characters: [Anna, Tom]
+grammar_ru: "there is / there is no; don't / doesn't; вопрос Who is…?; I don't know"
+prediction_ru: "Посмотрите на название и описания картинок. Кто положил письмо в ящик, куда почта никогда не приходит? И что в нём?"
+visual_cues:
+  - "Вечер. Анна стоит у старого почтового ящика у калитки. В щели белеет конверт."
+  - "На кухонном столе — раскрытое письмо. На листке всего одно слово, написанное старинным почерком."
+new_units: [LX-00237, LX-00238]
+# Текст истории = реплики по порядку. body собирается из script автоматически.
+script:
+  - speaker: anna
+    kind: narration
+    emotion: neutral
+    music: mystery
+    text: "[T8]It[/] [D1]is[/] [N3]eight o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]."
+    spoken: "[T8]It[/][D1]'s[/] [N3]eight o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]."
+  - speaker: anna
+    kind: narration
+    emotion: surprised
+    text: "[T9]There[/] [D1]is[/] [T1]a[/] [S9]letter[/] [P1]in[/] [T1]the[/] [S2]mailbox[/]! [T8]It[/] [D1]is[/] [J2]white[/]."
+    spoken: "[T9]There[/][D1]'s[/] [T1]a[/] [S9]letter[/] [P1]in[/] [T1]the[/] [S2]mailbox[/]! [T8]It[/][D1]'s[/] [J2]white[/]."
+  - speaker: anna
+    kind: narration
+    emotion: worried
+    text: "[T9]There[/] [D1]is[/] [T4]no[/] [S9]name[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [T9]There[/] [D1]is[/] [T4]no[/] [S9]address[/]."
+    spoken: "[T9]There[/][D1]'s[/] [T4]no[/] [S9]name[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [T9]There[/][D1]'s[/] [T4]no[/] [S9]address[/]."
+  - speaker: anna
+    kind: speech
+    emotion: excited
+    text: "“[S1]Tom[/]! [T9]There[/] [D1]is[/] [T1]a[/] [S9]letter[/] [P1]in[/] [T3]our[/] [S2]mailbox[/]!”"
+    spoken: "“[S1]Tom[/]! [T9]There[/][D1]'s[/] [T1]a[/] [S9]letter[/] [P1]in[/] [T3]our[/] [S2]mailbox[/]!”"
+  - speaker: tom
+    kind: speech
+    emotion: surprised
+    text: "“[T1]A[/] [S9]letter[/]? [C5]But[/] [T1]the[/] [S2]mailbox[/] [D1]does[/] [X1]not[/] [D2]get[/] [S9]letters[/]!”"
+    spoken: "“[T1]A[/] [S9]letter[/]? [C5]But[/] [T1]the[/] [S2]mailbox[/] [D1]does[/][X1]n't[/] [D2]get[/] [S9]letters[/]!”"
+  - speaker: anna
+    kind: narration
+    emotion: whisper
+    text: "[P1]In[/] [T1]the[/] [S9]letter[/], [T9]there[/] [D1]is[/] [N1]one[/] [S9]word[/]: [S1]Rose[/]."
+    spoken: "[P1]In[/] [T1]the[/] [S9]letter[/], [T9]there[/][D1]'s[/] [N1]one[/] [S9]word[/]: [S1]Rose[/]."
+  - speaker: tom
+    kind: speech
+    emotion: whisper
+    text: "“[S1]Rose[/]? [T9]Who[/] [D1]is[/] [S1]Rose[/]?”"
+    spoken: "“[S1]Rose[/]? [T9]Who[/][D1]'s[/] [S1]Rose[/]?”"
+  - speaker: anna
+    kind: speech
+    emotion: worried
+    text: "“[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/].”"
+    spoken: "“[T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/].”"
+  - speaker: anna
+    kind: narration
+    emotion: neutral
+    music: calm
+    text: "[S1]Rose[/] [D1]is[/] [X1]not[/] [T3]my[/] [S9]name[/]. [S1]Rose[/] [D1]is[/] [X1]not[/] [S1]Mia[/][T3]'s[/] [S9]name[/]. [T9]Who[/] [D1]is[/] [T8]she[/]?"
+    spoken: "[S1]Rose[/] [D1]is[/][X1]n't[/] [T3]my[/] [S9]name[/]. [S1]Rose[/] [D1]is[/][X1]n't[/] [S1]Mia[/][T3]'s[/] [S9]name[/]. [T9]Who[/][D1]'s[/] [T8]she[/]?"
+questions:
+  - q: "Что Анна находит в почтовом ящике?"
+    a: "There is a letter in the mailbox! It is white. — Белое письмо."
+  - q: "Что написано на конверте?"
+    a: "There is no name on the letter. There is no address. — Ничего: ни имени, ни адреса."
+  - q: "Почему Том удивлён?"
+    a: "But the mailbox does not get letters! — Почтальон говорил, что в этот ящик письма не приходят. Значит, письмо принесла не почта."
+  - q: "Что внутри письма?"
+    a: "There is one word: Rose. — Одно слово: имя Rose. Кто она, пока неизвестно."
+phrase_hunt:
+  - phrase: "There is a letter in the mailbox!"
+    function: "Что-то есть где-то"
+  - phrase: "There is no name on the letter."
+    function: "Чего-то нет: there is no"
+  - phrase: "But the mailbox does not get letters!"
+    function: "Удивление с doesn't"
+  - phrase: "Who is Rose?"
+    function: "Вопрос о человеке"
+  - phrase: "I do not know."
+    function: "Нет ответа"
+retell_words: [mailbox, letter, name, word, Rose]
+retell_steps:
+  - "Восстановите историю по пяти словам: mailbox, letter, name, word, Rose. По одной фразе на слово."
+  - "Перескажите без подсказок, 5–6 фраз, от лица Анны: It is eight o'clock. I go to…"
+creative_ru: "Кто такая Rose? Придумайте 2–3 догадки Анны и Тома из знакомых слов. Например: Is Rose a neighbor? Is she old?"

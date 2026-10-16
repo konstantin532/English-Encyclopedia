@@ -1,0 +1,120 @@
+slug: a1-dont-doesnt
+level: A1
+week: 12
+order: 23
+focus: X
+minutes: 40
+title: "Не делаю: don't и doesn't"
+summary: "Как сказать «не» с обычными глаголами: I don't have a stamp, it doesn't get letters. Когда don't, а когда doesn't, и почему I don't know — одна из самых нужных фраз."
+units: [LX-00229, LX-00230, LX-00233, LX-00235, LX-00236]
+sound_notes:
+  - text: "I don't have a stamp."
+    ipa: "/aɪ ˈdoʊnt hæv ə ˈstæmp/"
+    note_ru: "don't — «доунт», t на конце почти не слышно"
+  - text: "It doesn't get letters."
+    ipa: "/ɪt ˈdʌzənt ɡɛt ˈlɛt̬ɚz/"
+    note_ru: "doesn't — «дазнт», ударение на первом слоге"
+  - text: "I don't know."
+    ipa: "/aɪ ˈdoʊnt ˈnoʊ/"
+    note_ru: "в быстрой речи почти «айдоноу»; k в know не читается"
+contractions:
+  - full: "do not"
+    short: "don't"
+    ipa: "/doʊnt/"
+    note_ru: "I don't, you don't, they don't."
+  - full: "does not"
+    short: "doesn't"
+    ipa: "/ˈdʌzənt/"
+    note_ru: "He doesn't, she doesn't, it doesn't."
+layers:
+  - number: 1
+    body: |
+      Вы уже говорили «не» с be: it is not, I am not. С обычными глаголами — have, get, know — нужен помощник **do / does** и **not**.
+
+      > [T1]The[/] [S9]address[/] [D1]is[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [C5]But[/] [T8]I[/] [D1]do[/] [X1]not[/] [D1]have[/] [T1]a[/] [S2]stamp[/]. — Адрес на письме. Но у меня нет марки.
+      > [T1]The[/] [J2]old[/] [S2]mailbox[/]? [T8]It[/] [D1]does[/] [X1]not[/] [D2]get[/] [S9]letters[/]. — Старый ящик? Туда письма не приходят.
+
+      В разговоре — **don't** и **doesn't**.
+  - number: 2
+    body: |
+      Раньше отрицание ставили прямо после глагола: «I know not», «I have not a stamp». Такие фразы ещё встречаются у Шекспира. Позже вместо этого стали говорить через do: I do not know. Глагол остался на своём месте, а «не» встало рядом с помощником.
+
+      **know** когда-то читали со звуком k — «кноу». Звук исчез, а буква осталась, как память о прошлом.
+  - number: 3
+    body: |
+      Схема:
+
+      > [A1]Never[/]. [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]! — Никогда. Сам не знаю почему!
+
+      - I, you, we, they — **don't**: I don't know.
+      - he, she, it, одна вещь — **doesn't**: it doesn't get letters.
+      - После don't / doesn't глагол без -s: she doesn't live, а не «doesn't lives».
+      - Отрицание с be — без do: it is not, I am not.
+  - number: 4
+    body: |
+      Почему -s исчезает и тут? Как в вопросе: окончание уходит в помощник. doesn't = does + not, а в does уже есть -s.
+
+      - My mother lives in Russia. → My mother doesn't live in Russia.
+      - The mailbox gets letters. → The mailbox doesn't get letters.
+
+      > [T8]It[/] [D1]does[/] [X1]not[/] [D2]get[/] [S9]letters[/]? [A1]Never[/]? — Не приходят? Никогда?
+  - number: 5
+    body: |
+      Так говорят американцы:
+
+      > [A1]Never[/]. [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]! — Никогда. Сам не знаю почему!
+
+      - I don't know — самая частая фраза для «не знаю». Можно смягчить: Sorry, I don't know.
+      - I don't have… — «у меня нет…»: I don't have a stamp, I don't have time.
+      - Полные do not и does not звучат строго или подчёркнуто. В разговоре — сокращения.
+  - number: 6
+    body: |
+      Ловушки:
+
+      - «I not have» — пропущен помощник. Правильно: I don't have.
+      - «He don't know» — с he нужен doesn't: He doesn't know. (He don't слышно в песнях и фильмах, но это просторечие.)
+      - «She doesn't lives» — лишнее -s.
+
+      Русское «у меня нет» почти всегда превращается в I don't have.
+  - number: 7
+    body: |
+      Четыре задания: выбрать don't или doesn't, вставить отрицание, собрать фразу и ответить в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как правильно: «Туда письма не приходят»?"
+    options: ["It doesn't get letters.", "It don't get letters.", "It doesn't gets letters."]
+    answer: "It doesn't get letters."
+    hint_ru: "it — doesn't, глагол без -s."
+    explanation_ru: "It doesn't get letters — с it помощник doesn't, get без -s."
+    units: [LX-00235]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "У Анны нет марки. Вставьте отрицание (сокращённо)."
+    prompt_en: "I ___ have a stamp."
+    answer: "don't"
+    accepted: ["do not"]
+    hint_ru: "С I — don't."
+    explanation_ru: "I don't have a stamp — «у меня нет марки»."
+    units: [LX-00233]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите: «Мой друг не живёт в России»."
+    options: [live, friend, doesn't, My, in, Russia]
+    answer: "My friend doesn't live in Russia"
+    hint_ru: "friend — он: doesn't, live без -s."
+    explanation_ru: "My friend doesn't live in Russia. -s ушло в doesn't."
+    units: [LX-00230]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: прохожий спрашивает, где банк. Вы не знаете. Вежливо ответьте."
+    prompt_en: "Where is the bank? — ___"
+    answer: "Sorry, I don't know."
+    accepted: ["Sorry, I don't know", "I don't know.", "I don't know", "Sorry, I do not know.", "Sorry. I don't know."]
+    hint_ru: "Sorry + I don't know."
+    explanation_ru: "Sorry, I don't know — вежливо и по-американски."
+    units: [LX-00229, LX-00236]
