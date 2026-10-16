@@ -1,0 +1,232 @@
+# Неделя 4, добор до нормы: возраст, десятки до 100, we / they / their, mom / dad. CEFR не сверялся.
+level: A1
+week: 4
+units:
+- uid: LX-00263
+  lemma: we
+  meaning: the speaker and other people together
+  class: T8
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wi/
+  translation_ru: мы
+  example_en: '[T8]We[/] [D1]are[/] [T1]a[/] [J1]big[/] [S1]family[/].'
+  example_ru: У нас большая семья.
+  situation: Рассказываете о своей семье
+  usage_note: 'w — губы трубочкой, не «ви»: «уи».'
+- uid: LX-00264
+  lemma: they
+  meaning: those people or things
+  class: T8
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ðeɪ/
+  translation_ru: они
+  example_en: '[T8]They[/] [D1]are[/] [T3]my[/] [S1]mom[/] [C1]and[/] [S1]dad[/].'
+  example_ru: Это мои мама и папа.
+  situation: Говорите о двух и более людях
+  usage_note: 'Звонкий th, как в this: «зэй» с языком между зубами.'
+- uid: LX-00265
+  lemma: their
+  meaning: belonging to them
+  class: T3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ðɛr/
+  translation_ru: их
+  example_en: '[T3]Their[/] [S2]house[/] [D1]is[/] [J1]big[/].'
+  example_ru: Их дом большой.
+  situation: Говорите, чья вещь, если владельцев несколько
+  usage_note: 'Звучит так же, как there («там»). Различают по смыслу и написанию.'
+- uid: LX-00266
+  lemma: mom
+  meaning: mother, in everyday American speech
+  class: S1
+  forms:
+  - moms
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mɑm/
+  translation_ru: мама
+  example_en: '[T3]My[/] [S1]mom[/] [D1]is[/] [N5]forty[/].'
+  example_ru: Маме сорок.
+  situation: Говорите о родителях по-домашнему
+  usage_note: 'Американское слово. В Британии пишут mum. Звучит «мам», с открытым «а».'
+- uid: LX-00267
+  lemma: dad
+  meaning: father, in everyday speech
+  class: S1
+  forms:
+  - dads
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dæd/
+  translation_ru: папа
+  example_en: '[T3]My[/] [S1]dad[/] [D1]is[/] [N5]fifty[/].'
+  example_ru: Папе пятьдесят.
+  situation: Говорите о родителях по-домашнему
+  usage_note: 'Широкое /æ/, как в cat: «дэд», не «дад».'
+- uid: LX-00268
+  lemma: year
+  meaning: a period of twelve months
+  class: S7
+  forms:
+  - years
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /jɪr/
+  translation_ru: год
+  example_en: '[T8]I[/] [D1]am[/] [N5]thirty[/] [S7]years[/] [J2]old[/].'
+  example_ru: Мне тридцать лет.
+  situation: Называете возраст полностью
+  usage_note: 'years old можно не говорить: I am thirty — тоже правильно.'
+- uid: LX-00269
+  lemma: young
+  meaning: not old; having lived a short time
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /jʌŋ/
+  translation_ru: молодой
+  example_en: '[T3]My[/] [S1]mom[/] [D1]is[/] [J2]young[/]. [T8]She[/] [D1]is[/] [N5]thirty[/].'
+  example_ru: Мама молодая. Ей тридцать.
+  situation: Описываете возраст человека
+  usage_note: 'В конце носовой ŋ, как в -ing. Не говорите «янг» с «г».'
+- uid: LX-00270
+  lemma: thirty
+  meaning: the number 30
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈθɝt̬i/
+  translation_ru: тридцать
+  example_en: '[T8]I[/] [D1]am[/] [N5]thirty[/].'
+  example_ru: Мне тридцать.
+  situation: Называете возраст или цену
+  usage_note: 'Ударение в начале: THIRty. В thirteen ударение в конце: thirTEEN.'
+- uid: LX-00271
+  lemma: forty
+  meaning: the number 40
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfɔrt̬i/
+  translation_ru: сорок
+  example_en: '[T3]My[/] [S1]mom[/] [D1]is[/] [N5]forty[/].'
+  example_ru: Маме сорок.
+  situation: Называете возраст или цену
+  usage_note: 'Пишется без u: forty, хотя four — с u. Ударение в начале: FORty.'
+- uid: LX-00272
+  lemma: fifty
+  meaning: the number 50
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfɪfti/
+  translation_ru: пятьдесят
+  example_en: '[T3]My[/] [S1]dad[/] [D1]is[/] [N5]fifty[/].'
+  example_ru: Папе пятьдесят.
+  situation: Называете возраст или цену
+  usage_note: 'Не путайте с fifteen: FIFty — ударение в начале, fifTEEN — в конце.'
+- uid: LX-00273
+  lemma: sixty
+  meaning: the number 60
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsɪksti/
+  translation_ru: шестьдесят
+  example_en: '[T3]My[/] [S1]grandfather[/] [D1]is[/] [N5]sixty[/].'
+  example_ru: Дедушке шестьдесят.
+  situation: Называете возраст или цену
+- uid: LX-00274
+  lemma: seventy
+  meaning: the number 70
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsɛvənti/
+  translation_ru: семьдесят
+  example_en: '[T3]My[/] [S1]grandmother[/] [D1]is[/] [N5]seventy[/].'
+  example_ru: Бабушке семьдесят.
+  situation: Называете возраст или цену
+  usage_note: 'В быстрой речи t после n почти пропадает: «сэвэни».'
+- uid: LX-00275
+  lemma: eighty
+  meaning: the number 80
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈeɪt̬i/
+  translation_ru: восемьдесят
+  example_en: '[N1]Eighty[/] [S6]cats[/]? [O4]No[/]!'
+  example_ru: Восемьдесят котов? Нет!
+  situation: Называете возраст или цену
+  usage_note: 'gh не читается, t между гласными — быстрое «д»: «эйди».'
+- uid: LX-00276
+  lemma: ninety
+  meaning: the number 90
+  class: N1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈnaɪnt̬i/
+  translation_ru: девяносто
+  example_en: '[T3]His[/] [S1]grandmother[/] [D1]is[/] [N5]ninety[/]!'
+  example_ru: Его бабушке девяносто!
+  situation: Называете возраст или цену
+  usage_note: 'Пишется с e: nine → ninety.'
+- uid: LX-00277
+  lemma: hundred
+  meaning: the number 100
+  class: N1
+  forms:
+  - hundreds
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhʌndrəd/
+  translation_ru: сто
+  example_en: '[T1]a[/] [N1]hundred[/] [S7]years[/]'
+  example_ru: сто лет
+  situation: Называете большое число
+  usage_note: 'Говорят a hundred или one hundred, без -s после числа: two hundred.'
+- uid: LX-00278
+  lemma: How old are you?
+  meaning: Asking someone's age
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhaʊ ˈoʊld ɚ ju/
+  translation_ru: Сколько вам лет?
+  example_en: How old are you?
+  example_ru: Сколько тебе лет?
+  situation: Знакомство, разговор о семье
+  usage_note: Учите фразу целиком. О другом человеке — How old is he? How old are they?
+- uid: LX-00279
+  lemma: We are a big family.
+  meaning: Saying your family has many people
+  class: T8
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /wi ɚ ə ˈbɪɡ ˈfæməli/
+  translation_ru: У нас большая семья.
+  example_en: We are a big family.
+  example_ru: У нас большая семья.
+  situation: Рассказываете о семье по фотографии
+  usage_note: 'Дословно «мы большая семья». В речи — we''re: «уир».'

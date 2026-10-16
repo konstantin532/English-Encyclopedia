@@ -1,8 +1,8 @@
 level: A1
 week: 5
-can_do_ru: "Я смогу спросить в магазине, есть ли нужный товар, попросить немного и узнать цену: How much is it?"
-mission_ru: "Дома или в магазине назовите по-английски три продукта: There is milk. There are apples… Потом спросите кого-нибудь: How much is it? — и ответьте ценой в долларах."
-chunks: [LX-00118, LX-00119, LX-00120, LX-00121, LX-00122, LX-00123]
+can_do_ru: "Я смогу спросить в магазине, есть ли нужный товар, выбрать по цвету, узнать цену (How much is it?) и сказать, дёшево это или дорого."
+mission_ru: "Дома или в магазине назовите по-английски три продукта с цветом: There are red apples. There is white milk… Спросите кого-нибудь: How much is it? — ответьте ценой и скажите: It is cheap! или That is expensive!"
+chunks: [LX-00118, LX-00119, LX-00120, LX-00121, LX-00122, LX-00123, LX-00301, LX-00302]
 story_beat:
   intro_ru: "Утро. Анна и Том идут в маленький магазин у дома. Нужно молоко, яблоки и корм для кота Box."
   outcome_ru: "Корма для кошек нет, зато Box любит молоко. Анна и Том покупают молоко и шесть яблок."
@@ -20,13 +20,13 @@ script:
     ru: "Да, есть. Молоко вот здесь."
   - speaker: tom
     emotion: excited
-    text: "[C1]And[/] [T9]there[/] [D1]are[/] [S3]apples[/]! [D7]Can[/] [T8]I[/] [D1]have[/] [T4]some[/] [S3]apples[/], [O8]please[/]?"
-    ru: "А ещё есть яблоки! Можно мне яблок, пожалуйста?"
+    text: "[C1]And[/] [T9]there[/] [D1]are[/] [S3]apples[/]! [D7]Can[/] [T8]I[/] [D1]have[/] [T4]some[/] [J2]red[/] [S3]apples[/], [O8]please[/]?"
+    ru: "А ещё есть яблоки! Можно мне красных яблок, пожалуйста?"
   - speaker: clerk
     emotion: happy
-    text: "[O4]Yes[/], [T8]you[/] [D7]can[/]. [N1]Six[/] [S3]apples[/]. [T2]That[/] [D1]is[/] [N6]three dollars[/]."
-    spoken: "[O4]Yes[/], [T8]you[/] [D7]can[/]. [N1]Six[/] [S3]apples[/]. [T2]That[/][D1]'s[/] [N6]three dollars[/]."
-    ru: "Да, конечно. Шесть яблок. С вас три доллара."
+    text: "[N1]Six[/] [J2]red[/] [S3]apples[/]. [T2]That[/] [D1]is[/] [N6]three dollars[/]. [T8]They[/] [D1]are[/] [J3]cheap[/]!"
+    spoken: "[N1]Six[/] [J2]red[/] [S3]apples[/]. [T2]That[/][D1]'s[/] [N6]three dollars[/]. [T8]They[/][D1]'re[/] [J3]cheap[/]!"
+    ru: "Шесть красных яблок. С вас три доллара. Они дешёвые!"
   - speaker: anna
     text: "[D1]Is[/] [T9]there[/] [S6]cat[/] [S3]food[/], [O8]please[/]?"
     ru: "А корм для кошек есть?"
@@ -37,8 +37,8 @@ script:
     ru: "Извините, корма для кошек нет."
   - speaker: tom
     emotion: surprised
-    text: "[T4]No[/] [S6]cat[/] [S3]food[/]? [S1]Box[/] [D3]likes[/] [S3]milk[/]!"
-    ru: "Корма нет? Ничего, Box любит молоко!"
+    text: "[T4]No[/] [S6]cat[/] [S3]food[/]? [S1]Box[/] [D3]likes[/] [S3]milk[/]! [S6]Cat[/] [S3]food[/] [D1]is[/] [J3]expensive[/]!"
+    ru: "Корма нет? Ничего, Box любит молоко! А корм всё равно дорогой!"
   - speaker: anna
     text: "[A6]How[/] [T4]much[/] [D1]is[/] [T1]the[/] [S3]milk[/]?"
     ru: "Сколько стоит молоко?"

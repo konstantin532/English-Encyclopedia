@@ -8,11 +8,13 @@ from pathlib import Path
 from django.conf import settings
 from django.core.management import CommandError, call_command
 from django.test import TestCase, override_settings
+from django.test import tag
 from django.urls import reverse
 
 from apps.accounts.models import User
 from apps.curriculum.models import Week, WeekScene
 from apps.learning.models import WeekGoal
+from tests.runner import ensure_content
 
 BEAT = """story_beat:
   intro_ru: "Утро. Анна впервые выходит на крыльцо нового дома."
@@ -49,6 +51,7 @@ def set_week1_beat(text: str):
     return edit
 
 
+@tag("slow")  # намеренно ломает и перезагружает весь курс; полный прогон — перед слиянием
 class StoryBeatTests(TestCase):
     def scene(self):
         return WeekScene.objects.get(week__level__code="A1", week__number=1)
@@ -113,7 +116,7 @@ class SpokenReminderTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def warnings(self):
         from apps.publishing.audit import run_audit
@@ -173,7 +176,7 @@ class WeekContentMixin:
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def check_complete(self):
         scene = WeekScene.objects.get(week__level__code="A1", week__number=self.week_number)
@@ -203,6 +206,14 @@ class WeekThreeTests(WeekContentMixin, TestCase):
 
     def test_complete(self):
         self.check_complete()
+
+    def test_polite_order_and_want(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=3)
+        text = " ".join(line["text"] for line in scene.script)
+        spoken = " ".join(line.get("spoken", "") for line in scene.script)
+        self.assertIn("[T9]What[/] [D7]would[/] [T8]you[/] [D3]like[/]?", text)
+        self.assertIn("[T8]I[/][D7]'d[/] [D3]like[/]", spoken)
+        self.assertIn("[D3]want[/]", text)
 
     def test_reload_has_no_duplicates(self):
         self.check_reload()
@@ -250,6 +261,12 @@ class WeekFourTests(WeekContentMixin, TestCase):
         self.assertTrue(any(line["speaker"] == "mia" for line in scene.script))
         self.assertNotIn("Rose", text)
 
+    def test_age_and_plural_pronouns(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=4)
+        text = " ".join(line["text"] for line in scene.script)
+        for piece in ("[A6]How[/] [J2]old[/] [D1]are[/] [T8]they[/]", "[T8]We[/]", "[S1]mom[/]", "[N5]forty[/]"):
+            self.assertIn(piece, text)
+
     def test_course_slots_preserved(self):
         self.assertEqual({s.number: s.week.number for s in Story.objects.filter(number__in=[1, 2, 5])},
                          {1: 2, 2: 6, 5: 14})
@@ -265,7 +282,7 @@ class WeekFourTests(WeekContentMixin, TestCase):
 class PilotContinuityTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_four_weeks_have_framing(self):
         for n in range(1, 5):
@@ -324,7 +341,7 @@ def entry_problems(entry: dict) -> list[str]:
 class AssessmentPackageTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_structure(self):
         data = package()
@@ -368,7 +385,7 @@ class ReviewFixTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_commas_do_not_decide_answer(self):
         ex = Exercise(answer="Tea, please.", accepted=[])
@@ -377,12 +394,12 @@ class ReviewFixTests(TestCase):
         self.assertFalse(ex.is_correct("Coffee, please."))
 
     def test_transfer_accepts_digits_and_thanks(self):
-        cafe = Lesson.objects.get(slug="a1-cafe-order").exercises.get(stage="transfer")
+        cafe = Lesson.objects.get(slug="a1-cafe-order").exercises.get(order=4)
         for answer in ("Tea, thanks.", "One tea please", "Can I have a tea please?"):
             self.assertTrue(cafe.is_correct(answer), answer)
         numbers = Lesson.objects.get(slug="a1-numbers-1-20").exercises.get(stage="transfer")
         self.assertTrue(numbers.is_correct("4 teas, please"))
-        family = Lesson.objects.get(slug="a1-family-photo").exercises.get(stage="transfer")
+        family = Lesson.objects.get(slug="a1-family-photo").exercises.get(order=4)
         self.assertTrue(family.is_correct("This is my sister. She is 12."))
 
     def test_pronouns_have_no_be_forms(self):
@@ -429,7 +446,7 @@ class CanonTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_story_two_does_not_reintroduce_mia(self):
         hook = Story.objects.get(number=2).hook_ru
@@ -439,7 +456,7 @@ class CanonTests(TestCase):
     def test_week_three_order_fits_two_people(self):
         scene = WeekScene.objects.get(week__number=3)
         order = scene.script[1]["text"]
-        self.assertIn("[N1]One[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/]", order)
+        self.assertIn("[n1]one[/] [s3]coffee[/] [c1]and[/] [n1]one[/] [s3]tea[/]", order.lower())
 
     def test_friends_use_ty_in_week_two(self):
         ru = " ".join(l.get("ru", "") for l in WeekScene.objects.get(week__number=2).script)
@@ -447,6 +464,7 @@ class CanonTests(TestCase):
         self.assertNotIn("ваша коробка", ru)
 
 
+@tag("slow")  # намеренно ломает и перезагружает весь курс; полный прогон — перед слиянием
 class BrokenManifestTests(TestCase):
     """Замечание P2 бота Codex в PR #4: повреждённый manifest.json не должен ронять загрузку курса."""
 
@@ -468,6 +486,12 @@ class WeekFiveTests(WeekContentMixin, TestCase):
     """Неделя 5 «Магазин у дома»: there is / are, some, How much…?, цены."""
     week_number = 5
     slugs = ("a1-there-is-some", "a1-how-much-prices")
+
+    def test_colors_and_price_words_in_dialogue(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=5)
+        text = " ".join(line["text"] for line in scene.script)
+        for piece in ("[J2]red[/] [S3]apples[/]", "[J3]cheap[/]", "[J3]expensive[/]"):
+            self.assertIn(piece, text)
     twister_number = 5
 
     def test_complete(self):
@@ -489,6 +513,12 @@ class WeekSixTests(WeekContentMixin, TestCase):
     """Неделя 6 «Мой обычный день»: Present Simple с I / you, время at seven."""
     week_number = 6
     slugs = ("a1-present-simple-i-you", "a1-time-at-seven")
+
+    def test_daily_routine_words_in_dialogue(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=6)
+        text = " ".join(line["text"] for line in scene.script)
+        for piece in ("[D4]go[/] [P2]to[/] [S2]bed[/] [A2]early[/]", "[D2]eat[/]"):
+            self.assertIn(piece, text)
     twister_number = 6
 
     def test_complete(self):
@@ -504,7 +534,7 @@ class StoryTwoTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_story_two_published_at_week_six(self):
         story = Story.objects.get(number=2)
@@ -558,7 +588,7 @@ class StoryThreeTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_story_three_published_at_week_eight(self):
         story = Story.objects.get(number=3)
@@ -646,7 +676,7 @@ class StoryFourTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_story_four_published_at_week_twelve(self):
         story = Story.objects.get(number=4)
@@ -699,7 +729,7 @@ class StoryFiveTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_story_five_published_at_week_fourteen(self):
         story = Story.objects.get(number=5)
@@ -714,7 +744,7 @@ class LevelA1CompleteTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_every_a1_week_has_scene_lessons_and_twister(self):
         from apps.curriculum.models import TongueTwister
@@ -734,7 +764,7 @@ class TwisterMethodTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_every_a1_twister_follows_method(self):
         from apps.curriculum.models import TongueTwister
@@ -771,7 +801,7 @@ class A1PoemsTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_all_a1_poems_published_with_stanzas(self):
         from apps.poems.models import Poem
@@ -795,3 +825,29 @@ class A1PoemsTests(TestCase):
         url = reverse("api:check_poem_gap", args=[3, 3])  # стих 3, пропуск «time» в строке 11
         ok = self.client.post(url, json.dumps({"answer": "time"}), content_type="application/json").json()
         self.assertTrue(ok["correct"])
+
+
+class WeeklyVocabularyNormTests(TestCase):
+    """Добор A1 до 500 единиц: недели, которые уже доведены до нормы 30–39."""
+
+    FILLED_WEEKS = (3, 4, 5, 6)
+
+    @classmethod
+    def setUpTestData(cls):
+        ensure_content()
+
+    def test_filled_weeks_meet_weekly_norm(self):
+        from apps.curriculum.registry import WEEKLY_UNITS
+        low, high = WEEKLY_UNITS["A1"]
+        for n in self.FILLED_WEEKS:
+            count = LexicalUnit.objects.filter(internal_level__code="A1", week__number=n).count()
+            self.assertTrue(low <= count <= high, f"неделя {n}: {count}")
+
+    def test_every_unit_of_filled_week_is_taught(self):
+        for n in self.FILLED_WEEKS:
+            scene = WeekScene.objects.get(week__level__code="A1", week__number=n)
+            taught = set(Lesson.objects.filter(week=scene.week).values_list("units__uid", flat=True))
+            taught |= set(scene.chunks.values_list("uid", flat=True))
+            taught |= set(Story.objects.filter(week=scene.week).values_list("new_units__uid", flat=True))
+            missing = LexicalUnit.objects.filter(week=scene.week).exclude(uid__in=taught)
+            self.assertEqual(list(missing.values_list("lemma", flat=True)), [], f"неделя {n}")

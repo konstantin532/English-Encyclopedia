@@ -4,9 +4,9 @@ week: 5
 order: 9
 focus: T
 minutes: 40
-title: "В магазине: there is, there are и some"
-summary: "Как сказать «есть, имеется»: there is milk, there are apples. Как спросить, есть ли товар, и попросить немного — some."
-units: [LX-00107, LX-00108, LX-00109, LX-00110, LX-00111, LX-00112, LX-00113, LX-00117, LX-00118, LX-00119, LX-00120, LX-00121]
+title: "В магазине: there is, there are, some и цвета"
+summary: "Как сказать «есть, имеется» (there is milk, there are apples), попросить немного (some) и выбрать по цвету: red apples, cold milk."
+units: [LX-00107, LX-00108, LX-00109, LX-00110, LX-00111, LX-00112, LX-00113, LX-00117, LX-00118, LX-00119, LX-00120, LX-00121, LX-00286, LX-00287, LX-00288, LX-00289, LX-00290, LX-00291, LX-00292, LX-00296, LX-00297, LX-00298, LX-00299, LX-00300, LX-00301]
 sound_notes:
   - text: "Is there milk?"
     ipa: "/ɪz ðɛr ˈmɪlk/"
@@ -80,9 +80,20 @@ layers:
       - The milk is there. — Молоко там. (there — «там»)
 
       Ещё одна ловушка: milk, water, food не считают штуками. Нельзя a milk или two foods в значении «два корма». С ними — there is и some: some milk, some water.
+
+      Товар можно назвать с цветом и температурой. Прилагательное стоит перед словом и **никогда не меняется**:
+
+      > [D7]Can[/] [T8]I[/] [D1]have[/] [T4]some[/] [J2]red[/] [S3]apples[/], [O8]please[/]? — Можно мне красных яблок?
+      > [J2]Red[/] [C1]or[/] [J2]green[/]? — Красные или зелёные?
+
+      - [J2]red[/] [J2]green[/] [J2]yellow[/] [J2]orange[/] [J2]blue[/] [J2]black[/] [J2]white[/] [J2]brown[/]
+      - [J2]hot[/] [S3]tea[/] — горячий чай, [J2]cold[/] [S3]milk[/] — холодное молоко
+      - Ещё продукты: [S3]bread[/] (хлеб), [S3]cheese[/] (сыр), [S3]banana[/] (банан)
+
+      По-русски «красное яблоко — красные яблоки», окончание меняется. По-английски a red apple — red apples: red остаётся red.
   - number: 7
     body: |
-      Четыре задания: узнать вопрос «есть ли», выбрать is или are, собрать просьбу с some и ответить в новой ситуации.
+      Шесть заданий: узнать вопрос «есть ли», выбрать is или are, собрать просьбу с some, ответить в новой ситуации, поставить цвет на место и попросить продукт с цветом.
 exercises:
   - order: 1
     kind: choice
@@ -121,3 +132,22 @@ exercises:
     hint_ru: "Короткий ответ повторяет there и be."
     explanation_ru: "Yes, there is. — короткий ответ без сокращения: в конце фразы there's не говорят."
     units: [LX-00120]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как сказать «зелёные яблоки»?"
+    options: ["green apples", "apples green", "greens apples"]
+    answer: "green apples"
+    hint_ru: "Цвет — перед словом, и он не меняется."
+    explanation_ru: "green apples — прилагательное стоит перед существительным и не получает -s."
+    units: [LX-00287]
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: в магазине есть жёлтые бананы. Попросите немного, вежливо."
+    prompt_en: "___"
+    answer: "Can I have some yellow bananas, please?"
+    accepted: ["Can I have some yellow bananas please?", "Some yellow bananas, please.", "Yellow bananas, please.", "I would like some yellow bananas, please.", "I'd like some yellow bananas, please."]
+    hint_ru: "Can I have some…, please? Цвет — перед словом."
+    explanation_ru: "Can I have some yellow bananas, please? — some для «немного», yellow перед bananas."
+    units: [LX-00288, LX-00299]

@@ -4,6 +4,7 @@ from django.test import TestCase
 from apps.curriculum.models import TongueTwister, Week, WeekScene
 from apps.publishing.audit import run_audit
 from apps.stories.models import Story
+from tests.runner import ensure_content
 
 VALID = [
     {"speaker": "tom", "emotion": "happy", "text": "[J3]Good[/] [S7]morning[/]! [T8]I[/] [D1]am[/] [S1]Tom[/]."},
@@ -20,7 +21,7 @@ VALID = [
 class WeekAuditTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def setUp(self):
         self.week = Week.objects.get(level__code="A1", number=1)

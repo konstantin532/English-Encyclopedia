@@ -3,6 +3,7 @@ from django.test import TestCase
 from django.urls import reverse
 
 from apps.stories.models import Story
+from tests.runner import ensure_content
 
 
 def manifest(with_music: bool) -> dict:
@@ -20,7 +21,7 @@ def manifest(with_music: bool) -> dict:
 class StoryPlayerTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def page(self):
         return self.client.get(reverse("stories:detail", args=[1])).content.decode()

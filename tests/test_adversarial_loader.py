@@ -10,12 +10,14 @@ import yaml
 from django.conf import settings
 from django.core.management import CommandError, call_command
 from django.test import TestCase, override_settings
+from django.test import tag
 
 from apps.curriculum.models import TongueTwister, WeekScene
 from apps.lessons.models import Lesson
 from apps.lexicon.models import LexicalUnit
 
 
+@tag("slow")  # намеренно ломает и перезагружает весь курс; полный прогон — перед слиянием
 class InvalidSeedTests(TestCase):
     @classmethod
     def setUpTestData(cls):

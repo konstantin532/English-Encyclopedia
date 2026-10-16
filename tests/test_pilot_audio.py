@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest import mock
 
 from django.test import SimpleTestCase
+from django.test import tag
 
 ROOT = Path(__file__).resolve().parent.parent
 _spec = importlib.util.spec_from_file_location("pilot_audio", ROOT / "scripts" / "generate_pilot_audio.py")
@@ -13,6 +14,7 @@ pilot = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(pilot)
 
 
+@tag("slow")  # намеренно ломает и перезагружает весь курс; полный прогон — перед слиянием
 class PilotAudioTests(SimpleTestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())

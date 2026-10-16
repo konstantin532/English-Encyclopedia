@@ -4,9 +4,9 @@ week: 3
 order: 5
 focus: D
 minutes: 40
-title: "В кафе: Can I have…?, «или», «и» и просьба повторить"
-summary: "Как заказать напиток и еду, выбрать из двух, поблагодарить и — самое важное — попросить повторить, если не расслышали."
-units: [LX-00055, LX-00056, LX-00057, LX-00058, LX-00059, LX-00060, LX-00082, LX-00084, LX-00085, LX-00086, LX-00087]
+title: "В кафе: I'd like…, Can I have…?, want и просьба повторить"
+summary: "Как вежливо заказать (I'd like, Can I have), чем want отличается от would like, как выбрать из двух и попросить повторить."
+units: [LX-00055, LX-00056, LX-00057, LX-00058, LX-00059, LX-00060, LX-00082, LX-00084, LX-00085, LX-00086, LX-00087, LX-00280, LX-00281, LX-00282, LX-00283, LX-00284, LX-00285]
 sound_notes:
   - text: "Coffee or tea?"
     ipa: "/ˈkɔfi ɚ ˈti/"
@@ -17,6 +17,11 @@ sound_notes:
   - text: "Here you are."
     ipa: "/ˈhɪr ju ˈɑr/"
     note_ru: "Говорят, когда подают вещь; сокращения здесь нет"
+contractions:
+  - full: "I would"
+    short: "I'd"
+    ipa: "/aɪd/"
+    note_ru: "В заказе почти всегда I'd like — «айд лайк»."
 layers:
   - number: 1
     body: |
@@ -50,6 +55,15 @@ layers:
 
       > [O2]Sorry[/]? — Простите?
       > [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]? — Повторите, пожалуйста.
+
+      Есть два способа сказать «хочу», и в кафе важно не перепутать:
+
+      > [T8]I[/] [D3]want[/] [N1]one[/]! — Я тоже хочу! (Анна — Тому, среди своих)
+      > [T8]I[/] [D7]would[/] [D3]like[/] [N1]one[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]. — Мне кофе и чай, пожалуйста. (Том — бариста)
+
+      - [D3]want[/] — прямо, как «хочу!». Так говорят друзьям и детям.
+      - [D7]would[/] [D3]like[/] — мягко, как «я бы хотел». Так говорят бариста, официанту, незнакомым.
+      - Бариста спрашивает так же вежливо: [T9]What[/] [D7]would[/] [T8]you[/] [D3]like[/]? — Что будете?
   - number: 5
     body: |
       Так звучит заказ в американском кафе:
@@ -70,9 +84,13 @@ layers:
       - ответ на «спасибо» — You are welcome.
 
       В заказе a coffee, a tea значат «чашка кофе», «чашка чая». Поэтому можно сказать two coffees.
+
+      В меню американского кафе ещё есть [S3]juice[/] (сок) и [S3]sandwich[/] (сэндвич):
+
+      > [T8]I[/] [D7]would[/] [D3]like[/] [T1]a[/] [S3]sandwich[/] [C1]and[/] [T1]an[/] [S3]apple[/] [S3]juice[/], [O8]please[/]. — Мне сэндвич и яблочный сок.
   - number: 7
     body: |
-      Четыре задания: узнать вежливую просьбу, выбрать «или», собрать заказ и ответить в новой ситуации.
+      Шесть заданий: узнать вежливую просьбу, выбрать «или», собрать заказ, ответить в новой ситуации, выбрать между want и would like и заказать по-своему.
 exercises:
   - order: 1
     kind: choice
@@ -111,3 +129,22 @@ exercises:
     hint_ru: "Назовите напиток и добавьте please."
     explanation_ru: "Достаточно назвать напиток и сказать please: Tea, please. Полная просьба Can I have a tea, please? тоже верна."
     units: [LX-00055, LX-00082]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Вы заказываете у бариста. Какая фраза звучит вежливо?"
+    options: ["I would like a tea, please.", "I want tea.", "Tea!"]
+    answer: "I would like a tea, please."
+    hint_ru: "Нужна мягкая форма «я бы хотел»."
+    explanation_ru: "I would like (I'd like) — вежливо. I want звучит как «хочу!», а просто Tea! без please — резко."
+    units: [LX-00281, LX-00285]
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: бариста спрашивает What would you like? Вы хотите сэндвич и сок. Ответьте вежливо."
+    prompt_en: "What would you like? — ___"
+    answer: "I would like a sandwich and a juice, please."
+    accepted: ["I'd like a sandwich and a juice, please.", "I would like a sandwich and juice, please.", "I'd like a sandwich and juice, please.", "A sandwich and a juice, please.", "A sandwich and juice, please.", "Can I have a sandwich and a juice, please?", "Can I have a sandwich and juice, please?"]
+    hint_ru: "Начните с I'd like…"
+    explanation_ru: "I'd like a sandwich and a juice, please. — вежливый заказ. Короткое A sandwich and a juice, please тоже верно."
+    units: [LX-00282, LX-00283, LX-00284, LX-00285]

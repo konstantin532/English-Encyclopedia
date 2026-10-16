@@ -1,0 +1,229 @@
+# Неделя 5, добор до нормы: цвета, цена, температура, продукты. CEFR не сверялся.
+level: A1
+week: 5
+units:
+- uid: LX-00286
+  lemma: red
+  meaning: the color of blood or a ripe apple
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rɛd/
+  translation_ru: красный
+  example_en: '[J2]Red[/] [S3]apples[/], [O8]please[/].'
+  example_ru: Красные яблоки, пожалуйста.
+  situation: Выбираете товар по цвету
+  usage_note: Американское r без раската, кончик языка не касается нёба.
+- uid: LX-00287
+  lemma: green
+  meaning: the color of grass
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡrin/
+  translation_ru: зелёный
+  example_en: '[T1]The[/] [J2]green[/] [S3]apples[/] [D1]are[/] [J3]cheap[/].'
+  example_ru: Зелёные яблоки дешёвые.
+  situation: Выбираете товар по цвету
+  usage_note: 'Долгое «и»: «гри-ин».'
+- uid: LX-00288
+  lemma: yellow
+  meaning: the color of a banana
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈjɛloʊ/
+  translation_ru: жёлтый
+  example_en: '[T1]A[/] [J2]yellow[/] [S3]banana[/].'
+  example_ru: Жёлтый банан.
+  situation: Выбираете товар по цвету
+  usage_note: 'В конце не «о», а «оу»: «йэлоу».'
+- uid: LX-00289
+  lemma: black
+  meaning: the darkest color
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /blæk/
+  translation_ru: чёрный
+  example_en: '[J2]Black[/] [S3]coffee[/], [O8]please[/].'
+  example_ru: Чёрный кофе, пожалуйста.
+  situation: Выбираете товар по цвету
+  usage_note: 'Широкое /æ/: «блэк». black coffee — кофе без молока.'
+- uid: LX-00290
+  lemma: blue
+  meaning: the color of the sky on a clear day
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /blu/
+  translation_ru: синий, голубой
+  example_en: '[T3]My[/] [S2]phone[/] [D1]is[/] [J2]blue[/].'
+  example_ru: Мой телефон синий.
+  situation: Выбираете товар по цвету
+  usage_note: Одно слово на «синий» и «голубой».
+- uid: LX-00291
+  lemma: brown
+  meaning: the color of chocolate or coffee
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /braʊn/
+  translation_ru: коричневый
+  example_en: '[T1]A[/] [J2]brown[/] [S2]box[/].'
+  example_ru: Коричневая коробка.
+  situation: Выбираете товар по цвету
+  usage_note: Звучит «браун», с американским r.
+- uid: LX-00292
+  lemma: orange
+  meaning: the color between red and yellow; also a round fruit of that color
+  class: J2
+  forms:
+  - oranges
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɔrɪndʒ/
+  translation_ru: оранжевый; апельсин
+  example_en: '[T1]An[/] [J2]orange[/] [S3]juice[/], [O8]please[/].'
+  example_ru: Апельсиновый сок, пожалуйста.
+  situation: Выбираете товар по цвету
+  usage_note: 'Одно слово — и цвет, и фрукт. Ударение в начале: «Оринж».'
+- uid: LX-00293
+  lemma: cheap
+  meaning: costing little money
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tʃip/
+  translation_ru: дешёвый
+  example_en: '[T8]They[/] [D1]are[/] [J3]cheap[/]!'
+  example_ru: Они дешёвые!
+  situation: Говорите о цене
+  usage_note: 'Долгое «и»: «чи-ип». Не путайте с chip.'
+- uid: LX-00294
+  lemma: expensive
+  meaning: costing a lot of money
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪkˈspɛnsɪv/
+  translation_ru: дорогой
+  example_en: '[S6]Cat[/] [S3]food[/] [D1]is[/] [J3]expensive[/]!'
+  example_ru: Корм для кошек дорогой!
+  situation: Говорите о цене
+  usage_note: 'Ударение на второй слог: ikSPENsiv.'
+- uid: LX-00295
+  lemma: small
+  meaning: little in size
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /smɔl/
+  translation_ru: маленький
+  example_en: '[T1]A[/] [J1]small[/] [S3]coffee[/], [O8]please[/].'
+  example_ru: Маленький кофе, пожалуйста.
+  situation: Выбираете размер
+  usage_note: 'Тёмное l в конце: «смол».'
+- uid: LX-00296
+  lemma: hot
+  meaning: having a high temperature
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hɑt/
+  translation_ru: горячий, жаркий
+  example_en: '[T1]The[/] [S3]tea[/] [D1]is[/] [J2]hot[/]!'
+  example_ru: Чай горячий!
+  situation: Говорите о еде и напитках
+  usage_note: 'Открытое «а»: «хат», h — лёгкий выдох.'
+- uid: LX-00297
+  lemma: cold
+  meaning: having a low temperature
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /koʊld/
+  translation_ru: холодный
+  example_en: '[J2]Cold[/] [S3]milk[/], [O8]please[/].'
+  example_ru: Холодного молока, пожалуйста.
+  situation: Говорите о еде и напитках
+  usage_note: «коулд», не «колд».
+- uid: LX-00298
+  lemma: bread
+  meaning: a basic food made from flour and baked
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /brɛd/
+  translation_ru: хлеб
+  example_en: '[D1]Is[/] [T9]there[/] [S3]bread[/]?'
+  example_ru: Хлеб есть?
+  situation: Покупаете продукты
+  usage_note: 'ea здесь читается как короткое «э»: «брэд».'
+- uid: LX-00299
+  lemma: banana
+  meaning: a long curved yellow fruit
+  class: S3
+  forms:
+  - bananas
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bəˈnænə/
+  translation_ru: банан
+  example_en: '[N1]Two[/] [S3]bananas[/], [O8]please[/].'
+  example_ru: Два банана, пожалуйста.
+  situation: Покупаете продукты
+  usage_note: 'Ударение в середине, широкое /æ/: «бэнЭна».'
+- uid: LX-00300
+  lemma: cheese
+  meaning: a food made from milk
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tʃiz/
+  translation_ru: сыр
+  example_en: '[D1]Is[/] [T9]there[/] [S3]cheese[/]?'
+  example_ru: Сыр есть?
+  situation: Покупаете продукты
+  usage_note: Фотографы говорят Say cheese! — на «и» получается улыбка.
+- uid: LX-00301
+  lemma: Red or green?
+  meaning: Asking someone to choose a color
+  class: J2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈrɛd ɚ ˈɡrin/
+  translation_ru: Красные или зелёные?
+  example_en: Red or green?
+  example_ru: Красные или зелёные?
+  situation: Продавец предлагает выбор
+  usage_note: Как Coffee or tea? — or звучит коротко, интонация вверх на первом, вниз на втором.
+- uid: LX-00302
+  lemma: That is expensive!
+  meaning: Saying something costs too much
+  class: J3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ðæt ɪz ɪkˈspɛnsɪv/
+  translation_ru: Это дорого!
+  example_en: That is expensive!
+  example_ru: Это дорого!
+  situation: Реагируете на цену
+  usage_note: В речи — That's expensive!

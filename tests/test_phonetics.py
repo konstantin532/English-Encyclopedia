@@ -2,6 +2,7 @@ from django.template import Context, Template
 from django.test import SimpleTestCase
 
 from apps.lexicon.phonetics import HINTS, render_html, to_plain, transcribe, unknown_symbols
+from tests.runner import ensure_content
 
 
 class RussianTranscriptionTests(SimpleTestCase):
@@ -69,7 +70,7 @@ from apps.poems.models import Poem
 class RussianTranscriptionOnPagesTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_every_unit_and_note_has_known_symbols(self):
         from apps.publishing.audit import run_audit

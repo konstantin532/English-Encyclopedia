@@ -1,5 +1,6 @@
 from django.db import IntegrityError
 from django.test import TestCase
+from django.test import tag
 
 from apps.accounts.models import User
 from apps.curriculum.models import TongueTwister, Week, WeekScene
@@ -8,6 +9,8 @@ from apps.learning.models import WeekGoal
 
 class WeekModelTests(TestCase):
     def test_scene_twister_goal(self):
+        WeekScene.objects.all().delete()  # курс уже загружен раннером; тесту нужна пустая неделя
+        TongueTwister.objects.all().delete()
         week = Week.objects.get(level__code="A1", number=1)
         scene = WeekScene.objects.create(week=week, can_do_ru="Я смогу…", mission_ru="…", script=[])
         TongueTwister.objects.create(number=1, week=week, series="sounds", text="[T2]This[/]", source="original")
@@ -32,6 +35,7 @@ from django.core.management import CommandError, call_command
 from django.test import override_settings
 
 from apps.stories.script import build_lines
+from tests.runner import ensure_content
 
 SAMPLE_WEEK = """level: A1
 week: 1
@@ -65,6 +69,7 @@ twister:
 """
 
 
+@tag("slow")  # намеренно ломает и перезагружает весь курс; полный прогон — перед слиянием
 class WeekLoaderTests(TestCase):
     @contextmanager
     def content_with_week(self, text):
@@ -88,6 +93,8 @@ class WeekLoaderTests(TestCase):
         self.assertEqual(w.situation_ru, "Как пройти?")
 
     def test_week_file_loads_idempotently(self):
+        WeekScene.objects.all().delete()  # курс уже загружен раннером; тест проверяет одну неделю
+        TongueTwister.objects.all().delete()
         with self.content_with_week(SAMPLE_WEEK):
             call_command("load_content", verbosity=0)
             call_command("load_content", verbosity=0)
@@ -123,7 +130,7 @@ from tests.test_audit_weeks import VALID
 class WeekPageTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
         cls.week = Week.objects.get(level__code="A1", number=1)
         WeekScene.objects.filter(week=cls.week).delete()
         TongueTwister.objects.filter(week=cls.week).delete()
@@ -212,7 +219,7 @@ class WeekPageTests(TestCase):
 class SeedWeekContentTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_first_two_weeks_are_complete_and_audited(self):
         from apps.publishing.audit import run_audit, text_tokens

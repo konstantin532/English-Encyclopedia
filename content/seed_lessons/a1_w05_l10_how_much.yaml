@@ -6,7 +6,7 @@ focus: N
 minutes: 40
 title: "Сколько стоит: How much is it? и цены в долларах"
 summary: "Как спросить цену, понять ответ и назвать сумму в долларах. Почему $2 читают two dollars и где в цене слово «стоит»."
-units: [LX-00114, LX-00115, LX-00116, LX-00122, LX-00123, LX-00109, LX-00108]
+units: [LX-00114, LX-00115, LX-00116, LX-00122, LX-00123, LX-00109, LX-00108, LX-00293, LX-00294, LX-00295, LX-00302]
 sound_notes:
   - text: "How much is it?"
     ipa: "/ˌhaʊ ˈmʌtʃ ɪz ɪt/"
@@ -67,6 +67,15 @@ layers:
       - В разговоре — It's и That's: It's two dollars. That's three dollars.
       - Цену часто называют совсем коротко: Two dollars.
       - На ценнике пишут $2: значок доллара стоит перед числом.
+
+      Услышали цену — оцените её:
+
+      > [T8]They[/] [D1]are[/] [J3]cheap[/]! — Они дешёвые! (продавец о яблоках)
+      > [S6]Cat[/] [S3]food[/] [D1]is[/] [J3]expensive[/]! — Корм для кошек дорогой! (Том)
+      > [T2]That[/] [D1]is[/] [J3]expensive[/]! — Это дорого!
+
+      - [J3]cheap[/] — дешёвый, [J3]expensive[/] — дорогой. Ударение: ikSPENsiv.
+      - В кафе размер называют перед напитком: [T1]a[/] [J1]small[/] [S3]coffee[/], [T1]a[/] [J1]big[/] [S3]coffee[/].
   - number: 6
     body: |
       Пишут одно, читают другое:
@@ -78,7 +87,7 @@ layers:
       В русском «два доллара», «пять долларов» — окончания меняются. В английском всё проще: больше одного — dollars.
   - number: 7
     body: |
-      Четыре задания: узнать вопрос о цене, прочитать ценник, собрать вопрос и ответить продавцу в новой ситуации.
+      Шесть заданий: узнать вопрос о цене, прочитать ценник, собрать вопрос, ответить продавцу, оценить цену и заказать маленький напиток.
 exercises:
   - order: 1
     kind: choice
@@ -117,3 +126,21 @@ exercises:
     hint_ru: "It is или It's, потом число и dollars."
     explanation_ru: "It is five dollars. В разговоре — It's five dollars или просто Five dollars."
     units: [LX-00116, LX-00123]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Сыр стоит двадцать долларов. Что вы скажете?"
+    options: ["That is expensive!", "That is cheap!", "That is small!"]
+    answer: "That is expensive!"
+    hint_ru: "Двадцать долларов за сыр — много."
+    explanation_ru: "That is expensive! — «Это дорого!» cheap значит «дёшево»."
+    units: [LX-00294, LX-00302]
+  - order: 6
+    kind: build
+    stage: production
+    prompt_ru: "Соберите заказ: «Маленький кофе, пожалуйста»."
+    options: [coffee, small, A, please]
+    answer: "A small coffee please"
+    hint_ru: "Размер — перед напитком."
+    explanation_ru: "A small coffee, please. — small стоит перед coffee, как и цвет."
+    units: [LX-00295]

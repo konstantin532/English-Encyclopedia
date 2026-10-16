@@ -4,9 +4,9 @@ week: 6
 order: 11
 focus: D
 minutes: 40
-title: "Мой день: I get up, you work — настоящее простое время"
+title: "Мой день: I get up, I eat, I go to bed — настоящее простое время"
 summary: "Как рассказать о том, что вы делаете каждый день: I work, I drink coffee. Как спросить Do you…? и ответить Yes, I do. Что такое фразовый глагол get up."
-units: [LX-00124, LX-00125, LX-00126, LX-00127, LX-00128, LX-00129, LX-00130, LX-00134, LX-00137, LX-00138, LX-00139]
+units: [LX-00124, LX-00125, LX-00126, LX-00127, LX-00128, LX-00129, LX-00130, LX-00134, LX-00137, LX-00138, LX-00139, LX-00303, LX-00304, LX-00305, LX-00306, LX-00307, LX-00308, LX-00313, LX-00314, LX-00315, LX-00318]
 sound_notes:
   - text: "I work here every day."
     ipa: "/aɪ ˈwɝk hɪr ˈɛvri ˈdeɪ/"
@@ -64,6 +64,17 @@ layers:
       - do you в быстрой речи звучит как «дэ ю», а иногда почти «джу».
       - Завтракают глаголом have: have breakfast, без артикля.
       - На вопрос Do you…? отвечают коротко: Yes, I do или No, I don't — повторять весь глагол не нужно.
+
+      Глаголы обычного дня — по той же схеме: I + глагол.
+
+      > [T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/]. [T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/]. — В семь я пью кофе, а ем в двенадцать.
+      > [T8]I[/] [D4]go[/] [P2]to[/] [S2]bed[/] [A2]early[/]! — Я рано ложусь спать!
+
+      - [D2]take[/] [T1]a[/] [S2]shower[/] — принять душ, [D2]cook[/] [S3]dinner[/] — готовить ужин
+      - [D6]watch[/] [S2]TV[/] — смотреть телевизор, [D6]listen[/] [P2]to[/] [S10]music[/] — слушать музыку
+      - [D4]come[/] [A3]home[/] — приходить домой, [D4]go[/] [P2]to[/] [S2]bed[/] — ложиться спать
+
+      Такие пары учите целиком: по-английски душ «берут» (take), а не «принимают».
   - number: 6
     body: |
       Три частые ошибки:
@@ -75,7 +86,7 @@ layers:
       С he и she у глагола появляется окончание -s: she works. Это тема следующей недели.
   - number: 7
     body: |
-      Четыре задания: узнать вопрос о привычке, вставить do, собрать фразу о своём утре и ответить в новой ситуации.
+      Шесть заданий: узнать вопрос с do, вставить глагол, собрать фразу, рассказать о себе, выбрать глагол для душа и описать свой вечер.
 exercises:
   - order: 1
     kind: choice
@@ -114,3 +125,22 @@ exercises:
     hint_ru: "Короткий ответ повторяет помощника do."
     explanation_ru: "Yes, I do. Повторять work не нужно — короткий ответ строится на do."
     units: [LX-00128, LX-00134]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как по-американски сказать «Я принимаю душ»?"
+    options: ["I take a shower.", "I have shower.", "I am shower."]
+    answer: "I take a shower."
+    hint_ru: "Душ «берут»."
+    explanation_ru: "I take a shower — устойчивое сочетание. Глагол take, перед shower — a."
+    units: [LX-00308, LX-00314]
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: "Расскажите о своём вечере двумя фразами: «Я смотрю телевизор. Я рано ложусь спать»."
+    prompt_en: "___"
+    answer: "I watch TV. I go to bed early."
+    accepted: ["I watch TV. I go to bed early", "I watch tv. I go to bed early.", "I watch TV, and I go to bed early."]
+    hint_ru: "watch TV — без артикля; go to bed early."
+    explanation_ru: "I watch TV. I go to bed early. — после I глагол без -s, а TV и bed без артикля."
+    units: [LX-00305, LX-00313, LX-00318]
