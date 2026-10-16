@@ -1,0 +1,270 @@
+# Неделя 7, добор до нормы: профессии, места работы, начало и конец дня. CEFR не сверялся.
+level: A1
+week: 7
+units:
+- uid: LX-00319
+  lemma: nurse
+  meaning: a person who cares for sick people in a hospital
+  class: S9
+  forms:
+  - nurses
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /nɝs/
+  translation_ru: медсестра, медбрат
+  example_en: '[T3]My[/] [S1]sister[/] [D1]is[/] [T1]a[/] [S9]nurse[/].'
+  example_ru: Моя сестра — медсестра.
+  situation: Рассказываете, кем работаете
+  usage_note: Одно слово для мужчин и женщин. «нёрс», американское r.
+- uid: LX-00320
+  lemma: waiter
+  meaning: a person who brings food in a restaurant
+  class: S9
+  forms:
+  - waiters
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈweɪt̬ɚ/
+  translation_ru: официант
+  example_en: '[T1]The[/] [S9]waiter[/] [D2]works[/] [P1]at[/] [T1]a[/] [S4]restaurant[/].'
+  example_ru: Официант работает в ресторане.
+  situation: Рассказываете, кем работаете
+  usage_note: 't между гласными — быстрое «д»: «уэйдэр». Сегодня часто говорят server для всех.'
+- uid: LX-00321
+  lemma: student
+  meaning: a person who studies at a school or university
+  class: S9
+  forms:
+  - students
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈstudənt/
+  translation_ru: студент, ученик
+  example_en: '[T8]I[/] [D1]am[/] [T1]a[/] [S9]student[/].'
+  example_ru: Я студент.
+  situation: Рассказываете, кем работаете
+  usage_note: «стУдэнт», без «ю».
+- uid: LX-00322
+  lemma: engineer
+  meaning: a person who designs machines, roads or computers
+  class: S9
+  forms:
+  - engineers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌɛndʒəˈnɪr/
+  translation_ru: инженер
+  example_en: '[T3]My[/] [S1]father[/] [D1]is[/] [T1]an[/] [S9]engineer[/].'
+  example_ru: Мой папа — инженер.
+  situation: Рассказываете, кем работаете
+  usage_note: 'Ударение в конце: enjiNEER. Перед ним an.'
+- uid: LX-00323
+  lemma: writer
+  meaning: a person who writes books or articles
+  class: S9
+  forms:
+  - writers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈraɪt̬ɚ/
+  translation_ru: писатель
+  example_en: '[T8]She[/] [D1]is[/] [T1]a[/] [S9]writer[/].'
+  example_ru: Она писательница.
+  situation: Рассказываете, кем работаете
+  usage_note: 'w не читается: «райдэр».'
+- uid: LX-00324
+  lemma: singer
+  meaning: a person who sings
+  class: S9
+  forms:
+  - singers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsɪŋɚ/
+  translation_ru: певец, певица
+  example_en: '[T8]He[/] [D1]is[/] [T1]a[/] [S9]singer[/].'
+  example_ru: Он певец.
+  situation: Рассказываете, кем работаете
+  usage_note: 'Носовой ŋ без «г»: «сИнэр». -er = «тот, кто делает»: sing → singer.'
+- uid: LX-00325
+  lemma: manager
+  meaning: a person who controls a shop, office or team
+  class: S9
+  forms:
+  - managers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmænɪdʒɚ/
+  translation_ru: менеджер, управляющий
+  example_en: '[T1]The[/] [S9]manager[/] [D2]works[/] [P1]in[/] [T1]an[/] [S4]office[/].'
+  example_ru: Управляющий работает в офисе.
+  situation: Рассказываете, кем работаете
+  usage_note: 'Ударение в начале: MAnager, широкое /æ/.'
+- uid: LX-00326
+  lemma: farmer
+  meaning: a person who has a farm
+  class: S9
+  forms:
+  - farmers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfɑrmɚ/
+  translation_ru: фермер
+  example_en: '[T3]My[/] [S1]grandfather[/] [D1]is[/] [T1]a[/] [S9]farmer[/].'
+  example_ru: Мой дедушка — фермер.
+  situation: Рассказываете, кем работаете
+  usage_note: 'Два американских r: «фАрмэр».'
+- uid: LX-00327
+  lemma: job
+  meaning: work that you do for money
+  class: S9
+  forms:
+  - jobs
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dʒɑb/
+  translation_ru: работа (должность)
+  example_en: '[T8]I[/] [D3]like[/] [T3]my[/] [S9]job[/].'
+  example_ru: Мне нравится моя работа.
+  situation: Рассказываете, кем работаете
+  usage_note: job — конкретное место работы, work — работа вообще. «джаб».
+- uid: LX-00328
+  lemma: boss
+  meaning: the person who tells you what to do at work
+  class: S9
+  forms:
+  - bosses
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɔs/
+  translation_ru: начальник
+  example_en: '[T3]My[/] [S9]boss[/] [D1]is[/] [J3]nice[/].'
+  example_ru: Мой начальник хороший.
+  situation: Рассказываете, кем работаете
+  usage_note: Разговорное слово, вежливо и нейтрально.
+- uid: LX-00329
+  lemma: hospital
+  meaning: a place where sick people get care
+  class: S4
+  forms:
+  - hospitals
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhɑspɪt̬əl/
+  translation_ru: больница
+  example_en: '[T3]My[/] [S1]mom[/] [D2]works[/] [P1]at[/] [T1]a[/] [S4]hospital[/].'
+  example_ru: Мама работает в больнице.
+  situation: Говорите, где работаете
+  usage_note: 'Ударение в начале: HOSpital. В США — in the hospital.'
+- uid: LX-00330
+  lemma: office
+  meaning: a room or building where people work at desks
+  class: S4
+  forms:
+  - offices
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɔfɪs/
+  translation_ru: офис
+  example_en: '[T8]I[/] [D2]work[/] [P1]in[/] [T1]an[/] [S4]office[/].'
+  example_ru: Я работаю в офисе.
+  situation: Говорите, где работаете
+  usage_note: «Офис», ударение в начале. in an office — внутри здания.
+- uid: LX-00331
+  lemma: restaurant
+  meaning: a place where you buy and eat meals
+  class: S4
+  forms:
+  - restaurants
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈrɛstərɑnt/
+  translation_ru: ресторан
+  example_en: '[D1]Is[/] [T9]there[/] [T1]a[/] [S4]restaurant[/] [A3]here[/]?'
+  example_ru: Здесь есть ресторан?
+  situation: Говорите, где работаете
+  usage_note: 'Средний слог почти не слышно: «рЭстрант».'
+- uid: LX-00332
+  lemma: start
+  meaning: to begin doing something
+  class: D8
+  forms:
+  - starts
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /stɑrt/
+  translation_ru: начинать
+  example_en: '[T8]I[/] [D8]start[/] [P3]at[/] [N3]eight[/].'
+  example_ru: Я начинаю в восемь.
+  situation: Говорите о рабочем времени
+  usage_note: 'С he/she — starts: She starts at nine.'
+- uid: LX-00333
+  lemma: finish
+  meaning: to end doing something
+  class: D8
+  forms:
+  - finishes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfɪnɪʃ/
+  translation_ru: заканчивать
+  example_en: '[T8]I[/] [D8]finish[/] [P3]at[/] [N3]five[/].'
+  example_ru: Я заканчиваю в пять.
+  situation: Говорите о рабочем времени
+  usage_note: 'С he/she — finishes: окончание -es после sh.'
+- uid: LX-00334
+  lemma: write
+  meaning: to make letters and words with a pen or keyboard
+  class: D5
+  forms:
+  - writes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /raɪt/
+  translation_ru: писать
+  example_en: '[T8]She[/] [D5]writes[/] [S9]letters[/].'
+  example_ru: Она пишет письма.
+  situation: Говорите, что делаете на работе
+  usage_note: 'w не читается: «райт». writer — тот, кто пишет.'
+- uid: LX-00335
+  lemma: Where do you work?
+  meaning: Asking about someone's place of work
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwɛr də ju ˈwɝk/
+  translation_ru: Где ты работаешь?
+  example_en: Where do you work?
+  example_ru: Где вы работаете?
+  situation: Рассказываете, кем работаете
+  usage_note: 'О другом человеке: Where does he work? do you в речи — «дэ ю».'
+- uid: LX-00336
+  lemma: I work in an office.
+  meaning: Saying where you work
+  class: P1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈwɝk ɪn ən ˈɔfɪs/
+  translation_ru: Я работаю в офисе.
+  example_en: I work in an office.
+  example_ru: Я работаю в офисе.
+  situation: Говорите, где работаете
+  usage_note: 'in — внутри здания: in an office, in a hospital. at — место как точка: at a school, at home.'

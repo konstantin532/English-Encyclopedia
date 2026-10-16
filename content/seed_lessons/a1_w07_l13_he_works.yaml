@@ -6,7 +6,7 @@ focus: D
 minutes: 40
 title: "Он работает: he works, she works — окончание -s"
 summary: "Почему с he, she и одним человеком у глагола появляется -s: Tom works, Mia works. Как спросить Does he…? и ответить No, he doesn't. Как звучит -s."
-units: [LX-00148, LX-00149, LX-00150, LX-00147, LX-00153, LX-00154, LX-00155, LX-00156]
+units: [LX-00148, LX-00149, LX-00150, LX-00147, LX-00153, LX-00154, LX-00155, LX-00156, LX-00332, LX-00333, LX-00334]
 sound_notes:
   - text: "Tom works at home."
     ipa: "/ˈtɑm ˈwɝks ət ˈhoʊm/"
@@ -76,9 +76,18 @@ layers:
       - после ch, sh, s — «из» и на письме -es: teaches, watches.
 
       Самая частая ошибка русскоязычных — забыть -s: «He work». Американец поймёт, но сразу услышит ошибку.
+
+      Новые глаголы рабочего дня — по тому же правилу:
+
+      > [T8]I[/] [D8]start[/] [P3]at[/] [N3]eight[/]. — Я начинаю в восемь. (Анна)
+      > [T8]I[/] [D8]finish[/] [P3]at[/] [N3]two[/]. — Я заканчиваю в два. (Мия)
+
+      - [T8]she[/] [D8]starts[/] — глухое «с» после t
+      - [T8]she[/] [D8]finishes[/] — после sh пишут -es и читают «из»
+      - [T8]he[/] [D5]writes[/] — пишет: w в начале не читается, «райтс»
   - number: 7
     body: |
-      Четыре задания: узнать правильную форму, вставить does, собрать фразу о друге и ответить о соседе в новой ситуации.
+      Шесть заданий: выбрать форму с -s, вставить does, собрать вопрос, рассказать о друге, выбрать finishes и сказать, когда начинает работу знакомый.
 exercises:
   - order: 1
     kind: choice
@@ -117,3 +126,22 @@ exercises:
     hint_ru: "Короткий ответ на Does she…? строится на does."
     explanation_ru: "No, she does not — в разговоре No, she doesn't. Повторять work не нужно."
     units: [LX-00155]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Мия заканчивает в два. Как сказать это о ней?"
+    options: ["She finishes at two.", "She finishs at two.", "She finish at two."]
+    answer: "She finishes at two."
+    hint_ru: "После sh — -es."
+    explanation_ru: "She finishes — после sh, ch, s пишут -es: finishes, watches."
+    units: [LX-00333]
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: "Ваш друг — медбрат. Он начинает в семь. Скажите вторую фразу."
+    prompt_en: "My friend is a nurse. He ___"
+    answer: "starts at seven."
+    accepted: ["starts at seven", "starts at 7.", "starts at 7", "starts work at seven.", "starts work at seven"]
+    hint_ru: "he + глагол с -s + at + время."
+    explanation_ru: "He starts at seven. — с he глагол получает -s."
+    units: [LX-00332, LX-00319]

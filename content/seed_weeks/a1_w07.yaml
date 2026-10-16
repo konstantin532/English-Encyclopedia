@@ -1,8 +1,8 @@
 level: A1
 week: 7
 can_do_ru: "Я смогу сказать, кем и где работаю, рассказать о работе друга (Tom works at home) и спросить: What do you do?"
-mission_ru: "Назовите вслух по-английски работу трёх знакомых: My friend is a doctor. She works at… Спросите кого-нибудь: What do you do?"
-chunks: [LX-00151, LX-00152, LX-00153, LX-00154, LX-00155, LX-00156]
+mission_ru: "Назовите вслух по-английски работу трёх знакомых: My friend is a nurse. She works at a hospital. She starts at… Спросите кого-нибудь: What do you do? Where do you work?"
+chunks: [LX-00151, LX-00152, LX-00153, LX-00154, LX-00155, LX-00156, LX-00335]
 story_beat:
   intro_ru: "Вечер в кафе на углу. Мия наконец спрашивает Анну, чем она занимается. А потом разговор заходит о соседе сверху."
   outcome_ru: "Анна — учительница, Том работает дома за компьютером, Мия — бариста. А сосед сверху работает ночью, каждую ночь в десять."
@@ -10,12 +10,12 @@ story_beat:
 script:
   - speaker: mia
     emotion: happy
-    text: "[S1]Anna[/], [T9]what[/] [D1]do[/] [T8]you[/] [D2]do[/]?"
-    ru: "Анна, а кем ты работаешь?"
+    text: "[S1]Anna[/], [T9]what[/] [D1]do[/] [T8]you[/] [D2]do[/]? [A6]Where[/] [D1]do[/] [T8]you[/] [D2]work[/]?"
+    ru: "Анна, а кем ты работаешь? Где?"
   - speaker: anna
-    text: "[T8]I[/] [D1]am[/] [T1]a[/] [S9]teacher[/]. [T8]I[/] [D2]work[/] [P1]at[/] [T1]a[/] [S4]school[/]."
-    spoken: "[T8]I[/][D1]'m[/] [T1]a[/] [S9]teacher[/]. [T8]I[/] [D2]work[/] [P1]at[/] [T1]a[/] [S4]school[/]."
-    ru: "Я учительница. Я работаю в школе."
+    text: "[T8]I[/] [D1]am[/] [T1]a[/] [S9]teacher[/]. [T8]I[/] [D2]work[/] [P1]at[/] [T1]a[/] [S4]school[/]. [T8]I[/] [D8]start[/] [P3]at[/] [N3]eight[/]."
+    spoken: "[T8]I[/][D1]'m[/] [T1]a[/] [S9]teacher[/]. [T8]I[/] [D2]work[/] [P1]at[/] [T1]a[/] [S4]school[/]. [T8]I[/] [D8]start[/] [P3]at[/] [N3]eight[/]."
+    ru: "Я учительница. Работаю в школе, начинаю в восемь."
   - speaker: mia
     text: "[C1]And[/] [S1]Tom[/]? [D1]Does[/] [T8]he[/] [D2]work[/] [P1]at[/] [T1]a[/] [S4]school[/]?"
     ru: "А Том? Он тоже работает в школе?"
@@ -29,9 +29,9 @@ script:
     ru: "Да, я работаю дома. А Мия работает здесь, в кафе!"
   - speaker: mia
     emotion: excited
-    text: "[T8]I[/] [D1]am[/] [T1]a[/] [S9]barista[/]!"
-    spoken: "[T8]I[/][D1]'m[/] [T1]a[/] [S9]barista[/]!"
-    ru: "Я бариста!"
+    text: "[T8]I[/] [D1]am[/] [T1]a[/] [S9]barista[/]! [T8]I[/] [D8]finish[/] [P3]at[/] [N3]two[/]."
+    spoken: "[T8]I[/][D1]'m[/] [T1]a[/] [S9]barista[/]! [T8]I[/] [D8]finish[/] [P3]at[/] [N3]two[/]."
+    ru: "Я бариста! Заканчиваю в два."
   - speaker: anna
     emotion: worried
     text: "[C1]And[/] [T1]the[/] [S1]man[/] [A3]upstairs[/]? [T9]What[/] [D1]does[/] [T8]he[/] [D2]do[/]?"
