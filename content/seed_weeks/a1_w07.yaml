@@ -1,0 +1,57 @@
+level: A1
+week: 7
+can_do_ru: "Я смогу сказать, кем и где работаю, рассказать о работе друга (Tom works at home) и спросить: What do you do?"
+mission_ru: "Назовите вслух по-английски работу трёх знакомых: My friend is a doctor. She works at… Спросите кого-нибудь: What do you do?"
+chunks: [LX-00151, LX-00152, LX-00153, LX-00154, LX-00155, LX-00156]
+story_beat:
+  intro_ru: "Вечер в кафе на углу. Мия наконец спрашивает Анну, чем она занимается. А потом разговор заходит о соседе сверху."
+  outcome_ru: "Анна — учительница, Том работает дома за компьютером, Мия — бариста. А сосед сверху работает ночью, каждую ночь в десять."
+  next_hook_ru: "Утром Том находит под дверью что-то маленькое и старое."
+script:
+  - speaker: mia
+    emotion: happy
+    text: "[S1]Anna[/], [T9]what[/] [D1]do[/] [T8]you[/] [D2]do[/]?"
+    ru: "Анна, а кем ты работаешь?"
+  - speaker: anna
+    text: "[T8]I[/] [D1]am[/] [T1]a[/] [S9]teacher[/]. [T8]I[/] [D2]work[/] [P1]at[/] [T1]a[/] [S4]school[/]."
+    spoken: "[T8]I[/][D1]'m[/] [T1]a[/] [S9]teacher[/]. [T8]I[/] [D2]work[/] [P1]at[/] [T1]a[/] [S4]school[/]."
+    ru: "Я учительница. Я работаю в школе."
+  - speaker: mia
+    text: "[C1]And[/] [S1]Tom[/]? [D1]Does[/] [T8]he[/] [D2]work[/] [P1]at[/] [T1]a[/] [S4]school[/]?"
+    ru: "А Том? Он тоже работает в школе?"
+  - speaker: anna
+    text: "[O4]No[/], [T8]he[/] [D1]does[/] [X1]not[/]. [S1]Tom[/] [D2]works[/] [P1]at[/] [S2]home[/]. [T8]He[/] [D1]has[/] [T1]a[/] [S2]computer[/]."
+    spoken: "[O4]No[/], [T8]he[/] [D1]does[/][X1]n't[/]. [S1]Tom[/] [D2]works[/] [P1]at[/] [S2]home[/]. [T8]He[/] [D1]has[/] [T1]a[/] [S2]computer[/]."
+    ru: "Нет. Том работает дома. У него компьютер."
+  - speaker: tom
+    emotion: happy
+    text: "[O4]Yes[/], [T8]I[/] [D2]work[/] [P1]at[/] [S2]home[/]. [C1]And[/] [S1]Mia[/] [D2]works[/] [A3]here[/], [P1]at[/] [T1]the[/] [S4]cafe[/]!"
+    ru: "Да, я работаю дома. А Мия работает здесь, в кафе!"
+  - speaker: mia
+    emotion: excited
+    text: "[T8]I[/] [D1]am[/] [T1]a[/] [S9]barista[/]!"
+    spoken: "[T8]I[/][D1]'m[/] [T1]a[/] [S9]barista[/]!"
+    ru: "Я бариста!"
+  - speaker: anna
+    emotion: worried
+    text: "[C1]And[/] [T1]the[/] [S1]man[/] [A3]upstairs[/]? [T9]What[/] [D1]does[/] [T8]he[/] [D2]do[/]?"
+    ru: "А сосед сверху? Кем он работает?"
+  - speaker: mia
+    emotion: whisper
+    text: "[T8]He[/] [D2]works[/] [P3]at[/] [S7]night[/]!"
+    ru: "Он работает по ночам!"
+  - speaker: tom
+    emotion: surprised
+    text: "[P3]At[/] [S7]night[/]? [T5]Every[/] [S7]night[/]?"
+    ru: "Ночью? Каждую ночь?"
+  - speaker: mia
+    emotion: whisper
+    text: "[O4]Yes[/]. [T5]Every[/] [S7]night[/] [P3]at[/] [N3]ten[/]."
+    ru: "Да. Каждую ночь в десять."
+twister:
+  number: 7
+  series: sounds
+  text: "[S1]Tom[/] [D2]works[/], [S1]Mia[/] [D2]works[/]. [T9]Who[/] [D2]works[/] [P3]at[/] [S7]night[/]?"
+  ipa: "/ˈtɑm ˈwɝks ˈmiə ˈwɝks ˈhu ˈwɝks ət ˈnaɪt/"
+  focus_sounds: [w, h]
+  source: original

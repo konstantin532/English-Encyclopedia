@@ -1,0 +1,112 @@
+slug: a1-jobs-what-do-you-do
+level: A1
+week: 7
+order: 14
+focus: S
+minutes: 40
+title: "Профессии: I am a teacher и What do you do?"
+summary: "Как назвать свою работу и спросить о чужой. Почему перед профессией нужен a: I am a teacher. Что значит странный вопрос What do you do?"
+units: [LX-00142, LX-00143, LX-00144, LX-00145, LX-00146, LX-00151, LX-00152]
+sound_notes:
+  - text: "What do you do?"
+    ipa: "/ˌwʌt də jə ˈdu/"
+    note_ru: "ударение только на последнем do: «уа дэ ю ДУ»"
+  - text: "I'm a teacher."
+    ipa: "/aɪm ə ˈtitʃɚ/"
+    note_ru: "a почти не слышно, но оно есть; teacher — «тИчэр» с американским r"
+  - text: "I work at a school."
+    ipa: "/aɪ ˈwɝk ət ə ˈskul/"
+    note_ru: "at a сливаются: «этэ скул»"
+contractions:
+  - full: "I am"
+    short: "I'm"
+    ipa: "/aɪm/"
+    note_ru: "О профессии говорят с I'm: I'm a teacher, I'm a barista."
+layers:
+  - number: 1
+    body: |
+      Познакомились — и почти сразу спрашивают о работе. По-английски это два шага: вопрос и ответ.
+
+      > [S1]Anna[/], [T9]what[/] [D1]do[/] [T8]you[/] [D2]do[/]? — Анна, кем ты работаешь?
+      > [T8]I[/] [D1]am[/] [T1]a[/] [S9]teacher[/]. [T8]I[/] [D2]work[/] [P1]at[/] [T1]a[/] [S4]school[/]. — Я учительница. Я работаю в школе.
+
+      Первая фраза — профессия, вторая — где вы работаете.
+  - number: 2
+    body: |
+      Много профессий в английском кончаются на **-er**: teacher — тот, кто учит (teach), driver — тот, кто водит (drive), worker — тот, кто работает. Это как русское «-тель»: учитель, водитель.
+
+      **doctor** — латинское «учитель, учёный». **barista** — итальянское «тот, кто за стойкой» (bar). Слова пришли в английский из разных языков вместе с самими профессиями.
+  - number: 3
+    body: |
+      Схема ответа:
+
+      > [T8]I[/] [D1]am[/] [T1]a[/] [S9]barista[/]! — Я бариста!
+
+      - Профессия: I am a + профессия: I am a doctor.
+      - Перед гласным звуком — an: an engineer.
+      - Место: I work at a school, at a cafe, at home.
+      - О другом человеке: She is a teacher. He works at a school.
+  - number: 4
+    body: |
+      Почему нужен a? По-русски «Я учитель» — без слов между. В английском профессия — один из многих учителей, поэтому перед ней ставят **a**, «один из». Без a фраза звучит неправильно.
+
+      Вопрос **What do you do?** удивляет: буквально «Что ты делаешь?». Но американцы так спрашивают о работе — «чем ты занимаешься в жизни». Первое do — помощник вопроса, второе — сам глагол «делать».
+  - number: 5
+    body: |
+      Так знакомятся по работе в Америке:
+
+      > [S1]Anna[/], [T9]what[/] [D1]do[/] [T8]you[/] [D2]do[/]? — Анна, кем ты работаешь?
+      > [T8]I[/] [D1]am[/] [T1]a[/] [S9]barista[/]! — Я бариста!
+
+      - Отвечают с I'm: I'm a teacher.
+      - What is your job? тоже правильно, но звучит как анкета. What do you do? — естественнее.
+      - Если сейчас не работаете, можно сказать: I work at home.
+  - number: 6
+    body: |
+      Две ловушки:
+
+      - What do you do? — о работе. А What are you doing? — «Что ты сейчас делаешь?». Эту форму вы узнаете позже.
+      - Профессия без a — частая ошибка: «I am teacher». Правильно: I am a teacher.
+
+      Во множественном числе a исчезает и появляется -s: They are teachers.
+  - number: 7
+    body: |
+      Четыре задания: понять вопрос о работе, вставить a, собрать ответ и рассказать о своей работе в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Американец спрашивает: What do you do? Что он хочет узнать?"
+    options: ["Кем вы работаете", "Что вы делаете прямо сейчас", "Как у вас дела"]
+    answer: "Кем вы работаете"
+    hint_ru: "Это вопрос о жизни, а не о минуте."
+    explanation_ru: "What do you do? — вопрос о работе: «Чем вы занимаетесь?»."
+    units: [LX-00151]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Мия рассказывает о себе. Вставьте пропущенное слово."
+    prompt_en: "I am ___ barista."
+    answer: "a"
+    hint_ru: "Перед профессией нужно маленькое слово."
+    explanation_ru: "I am a barista — перед профессией ставят a."
+    units: [LX-00146]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите фразу: «Я работаю в школе»."
+    options: [school, work, a, I, at]
+    answer: "I work at a school"
+    hint_ru: "I work, потом at a и место."
+    explanation_ru: "I work at a school. Место работы — с at."
+    units: [LX-00143]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: на встрече вас спрашивают о работе. Вы врач. Ответьте."
+    prompt_en: "What do you do? — ___"
+    answer: "I am a doctor."
+    accepted: ["I'm a doctor.", "I am a doctor", "I'm a doctor", "A doctor."]
+    hint_ru: "I am a + профессия."
+    explanation_ru: "I am a doctor — в разговоре I'm a doctor."
+    units: [LX-00144, LX-00152]

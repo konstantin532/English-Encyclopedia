@@ -516,3 +516,22 @@ class StoryTwoTests(TestCase):
         response = self.client.get(reverse("stories:detail", args=[2]))
         self.assertContains(response, "corner")
         self.assertContains(response, "Мия")
+
+
+class WeekSevenTests(WeekContentMixin, TestCase):
+    """Неделя 7 «Кто где работает»: he / she works, профессии, сосед сверху."""
+    week_number = 7
+    slugs = ("a1-he-she-works", "a1-jobs-what-do-you-do")
+    twister_number = 7
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_third_person_s_in_dialogue(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=7)
+        text = " ".join(line["text"] for line in scene.script)
+        self.assertGreaterEqual(text.count("[D2]works[/]"), 3)
+
+    def test_hook_leads_to_story_three(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=7)
+        self.assertIn("под дверью", scene.story_beat["next_hook_ru"])
