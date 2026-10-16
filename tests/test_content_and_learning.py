@@ -14,6 +14,7 @@ from apps.learning.models import Status, UnitProgress
 from apps.lessons.models import Lesson
 from apps.lexicon.models import LexicalUnit
 from apps.taxonomy.models import PartOfSpeech, SemanticClass
+from tests.runner import ensure_content
 
 
 class SeedTests(TestCase):
@@ -32,10 +33,10 @@ class SeedTests(TestCase):
 class ContentTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_packages_loaded(self):
-        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 279)
+        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 285)
         self.assertEqual(Lesson.objects.filter(level__code="A1").count(), 28)
         for slug in ["a1-verb-be", "a1-determiners-a-the-this-my", "a1-have-like-can-do"]:
             lesson = Lesson.objects.get(slug=slug)
@@ -48,7 +49,7 @@ class ContentTests(TestCase):
 
     def test_loader_is_idempotent(self):
         call_command("load_content", verbosity=0)
-        self.assertEqual(LexicalUnit.objects.count(), 279)
+        self.assertEqual(LexicalUnit.objects.count(), 285)
 
     def test_cefr_only_with_source(self):
         for u in LexicalUnit.objects.exclude(cefr="unverified"):
@@ -141,7 +142,7 @@ class ContentTests(TestCase):
 class ExerciseApiTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
         cls.ex = Exercise.objects.get(lesson__slug="a1-nouns-first-words", order=3)
 
     def post(self, data):
@@ -170,7 +171,7 @@ class ExerciseApiTests(TestCase):
 
 class ProgressRuleTests(TestCase):
     def setUp(self):
-        call_command("load_content", verbosity=0)
+        ensure_content()
         self.user = User.objects.create_user("t@example.com", "s3cret-pass-123")
         self.p = UnitProgress.objects.create(user=self.user, unit=LexicalUnit.objects.first())
 
@@ -265,7 +266,7 @@ class CsrfFlowTests(TestCase):
 
 class ReviewTests(TestCase):
     def setUp(self):
-        call_command("load_content", verbosity=0)
+        ensure_content()
         self.user = User.objects.create_user("r@example.com", "very-long-pass-77")
         self.client.force_login(self.user)
 
@@ -309,7 +310,7 @@ class ReviewTests(TestCase):
 class StoriesPoemsTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_course_map_complete(self):
         from apps.poems.models import Poem
@@ -344,7 +345,7 @@ class StoriesPoemsTests(TestCase):
 class ReviewFixesTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_search_cyrillic_any_case_and_forms(self):
         for q in ["дом", "Дом", "ДОМ"]:
@@ -375,7 +376,7 @@ class ReviewFixesTests(TestCase):
 class StoryVoicesTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_body_is_built_from_script_by_roles(self):
         from apps.stories.models import Story

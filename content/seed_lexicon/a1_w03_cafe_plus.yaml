@@ -1,0 +1,89 @@
+# Неделя 3, добор до нормы: want, would like, меню кафе. CEFR не сверялся.
+level: A1
+week: 3
+units:
+- uid: LX-00280
+  lemma: want
+  meaning: to wish to have or do something
+  class: D3
+  forms:
+  - wants
+  - wanted
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɑnt/
+  translation_ru: хотеть
+  example_en: '[T8]I[/] [D3]want[/] [T1]a[/] [S3]cookie[/]!'
+  example_ru: Я хочу печенье!
+  situation: Говорите, чего хотите, — среди своих
+  usage_note: 'I want звучит прямо, как «хочу!». Официанту вежливее сказать I would like.'
+- uid: LX-00281
+  lemma: would
+  meaning: a modal verb used in polite requests and offers
+  class: D7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wʊd/
+  translation_ru: бы (в вежливых просьбах)
+  example_en: '[T8]I[/] [D7]would[/] [D3]like[/] [S3]water[/], [O8]please[/].'
+  example_ru: Мне, пожалуйста, воды.
+  situation: Вежливо заказываете в кафе
+  usage_note: 'l не читается: «вуд». В речи I would сокращают до I''d — «айд».'
+- uid: LX-00282
+  lemma: juice
+  meaning: a drink made from fruit
+  class: S3
+  forms:
+  - juices
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dʒus/
+  translation_ru: сок
+  example_en: '[T1]An[/] [S3]apple[/] [S3]juice[/], [O8]please[/].'
+  example_ru: Яблочный сок, пожалуйста.
+  situation: Заказываете напиток
+  usage_note: 'Первый звук — «дж», не «ж»: «джус».'
+- uid: LX-00283
+  lemma: sandwich
+  meaning: two pieces of bread with food between them
+  class: S3
+  forms:
+  - sandwiches
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsænwɪtʃ/
+  translation_ru: сэндвич, бутерброд
+  example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]sandwich[/], [O8]please[/]?'
+  example_ru: Можно мне сэндвич?
+  situation: Заказываете еду в кафе
+  usage_note: 'd не слышно: «сэнвич». Широкое /æ/ в начале.'
+- uid: LX-00284
+  lemma: What would you like?
+  meaning: A polite question about what someone wants to order
+  class: T9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌt wʊd ju ˈlaɪk/
+  translation_ru: Что будете заказывать?
+  example_en: What would you like?
+  example_ru: Что вам принести?
+  situation: Бариста или официант принимает заказ
+  usage_note: 'Учите фразу целиком. В речи would you сливается: «вуджу».'
+- uid: LX-00285
+  lemma: I would like a coffee, please.
+  meaning: A polite way to order
+  class: D7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪd ˈlaɪk ə ˈkɔfi ˈpliz/
+  translation_ru: Мне кофе, пожалуйста.
+  example_en: I would like a coffee, please.
+  example_ru: Мне кофе, пожалуйста.
+  situation: Заказ в кафе
+  usage_note: 'В речи почти всегда I''d like — «айд лайк». Вместо coffee ставьте что угодно: a tea, a sandwich.'

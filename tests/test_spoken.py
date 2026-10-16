@@ -11,6 +11,7 @@ from apps.lessons.models import Lesson
 from apps.publishing.audit import run_audit
 from apps.stories.models import Story
 from tests.test_audit_weeks import VALID
+from tests.runner import ensure_content
 
 ROOT = Path(__file__).resolve().parent.parent
 _spec = importlib.util.spec_from_file_location("gen_spoken", ROOT / "scripts" / "generate_story_audio.py")
@@ -24,7 +25,7 @@ SPOKEN = "“[O4]No[/], [T8]it[/][D1]'s[/] [X1]not[/] [T3]my[/] [S2]box[/].”"
 class SpokenTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def setUp(self):
         self.week = Week.objects.get(level__code="A1", number=1)

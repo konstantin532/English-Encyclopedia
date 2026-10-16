@@ -121,3 +121,6 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CONTENT_DIR = BASE_DIR / "content"
+
+# Тесты: курс загружается в тестовую базу один раз (tests/runner.py).
+TEST_RUNNER = "tests.runner.ContentLoadedRunner"

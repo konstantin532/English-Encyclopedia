@@ -9,6 +9,7 @@ from apps.drills.models import Exercise
 from apps.lexicon.models import LexicalUnit
 from apps.poems.models import Poem
 from apps.taxonomy.markup import find_issues
+from tests.runner import ensure_content
 
 
 class MarkerRedirectRegressionTests(TestCase):
@@ -44,7 +45,7 @@ class MarkerRedirectRegressionTests(TestCase):
 class JsonPayloadRegressionTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
         cls.exercise_id = Exercise.objects.filter(lesson__is_published=True).values_list("pk", flat=True).first()
         cls.unit_uid = LexicalUnit.objects.values_list("uid", flat=True).first()
         cls.poem_number = Poem.objects.filter(is_published=True).values_list("number", flat=True).first()

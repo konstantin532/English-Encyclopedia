@@ -1,8 +1,8 @@
 level: A1
 week: 3
-can_do_ru: "Я смогу заказать в кафе напиток и еду, назвать количество от 1 до 20 и попросить повторить, если не расслышал."
-mission_ru: "Закажите вслух по-английски два напитка и одно печенье. Потом попросите повторить: Sorry? Can you say it again, please?"
-chunks: [LX-00082, LX-00083, LX-00084, LX-00085, LX-00086, LX-00087]
+can_do_ru: "Я смогу вежливо заказать в кафе напиток и еду (I'd like…), назвать количество от 1 до 20 и попросить повторить, если не расслышал."
+mission_ru: "Закажите вслух по-английски два напитка и одно печенье, начиная с I'd like… Потом попросите повторить: Sorry? Can you say it again, please?"
+chunks: [LX-00082, LX-00083, LX-00084, LX-00085, LX-00086, LX-00087, LX-00284, LX-00285]
 story_beat:
   intro_ru: "Утро в небольшом кафе. Анна и Том заказывают завтрак. Кофемашина шумит, и бариста не всё слышит с первого раза."
   outcome_ru: "Заказ принят: кофе, чай и большое печенье. На столе лежит маленькая семейная фотография — она не Анны и не Тома. Анна берёт фото с собой."
@@ -10,11 +10,12 @@ story_beat:
 script:
   - speaker: barista
     emotion: happy
-    text: "[J3]Good[/] [S7]morning[/]! [S3]Coffee[/] [C1]or[/] [S3]tea[/]?"
-    ru: "Доброе утро! Кофе или чай?"
+    text: "[J3]Good[/] [S7]morning[/]! [T9]What[/] [D7]would[/] [T8]you[/] [D3]like[/]? [S3]Coffee[/] [C1]or[/] [S3]tea[/]?"
+    ru: "Доброе утро! Что будете? Кофе или чай?"
   - speaker: tom
-    text: "[N1]One[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]."
-    ru: "Один кофе и один чай, пожалуйста."
+    text: "[T8]I[/] [D7]would[/] [D3]like[/] [N1]one[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]."
+    spoken: "[T8]I[/][D7]'d[/] [D3]like[/] [N1]one[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]."
+    ru: "Мне один кофе и один чай, пожалуйста."
   - speaker: barista
     emotion: worried
     text: "[O2]Sorry[/]? [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]?"
@@ -28,8 +29,8 @@ script:
     ru: "Да, конечно. Вот, пожалуйста."
   - speaker: anna
     emotion: excited
-    text: "[O2]Thank you[/]! [T1]The[/] [S3]cookie[/] [D1]is[/] [J1]big[/]!"
-    ru: "Спасибо! Печенье большое!"
+    text: "[O2]Thank you[/]! [T1]The[/] [S3]cookie[/] [D1]is[/] [J1]big[/]! [T8]I[/] [D3]want[/] [N1]one[/]!"
+    ru: "Спасибо! Какое большое печенье! Я тоже такое хочу!"
   - speaker: tom
     emotion: surprised
     text: "[S1]Anna[/], [D1]is[/] [T2]this[/] [T3]your[/] [S2]photo[/]?"

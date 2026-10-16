@@ -68,7 +68,8 @@
 |---|---|
 | `uv run python manage.py load_content` | Загружает слова, уроки и упражнения из `content/` (повторный запуск обновляет записи) |
 | `uv run python manage.py audit_course` | Аудит: квоты 6200/60/60, реестр маркеров, разметка, незарегистрированные слова |
-| `uv run pytest` | Тесты (или `uv run python manage.py test tests`) |
+| `uv run python manage.py test tests --exclude-tag slow --parallel auto` | Быстрые тесты во время работы (около минуты) |
+| `uv run python manage.py test tests --parallel auto` | Все тесты — перед слиянием (или `uv run pytest`) |
 
 ## Где что лежит
 

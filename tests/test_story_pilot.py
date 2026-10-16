@@ -8,11 +8,13 @@ from pathlib import Path
 from django.conf import settings
 from django.core.management import CommandError, call_command
 from django.test import TestCase, override_settings
+from django.test import tag
 from django.urls import reverse
 
 from apps.accounts.models import User
 from apps.curriculum.models import Week, WeekScene
 from apps.learning.models import WeekGoal
+from tests.runner import ensure_content
 
 BEAT = """story_beat:
   intro_ru: "Утро. Анна впервые выходит на крыльцо нового дома."
@@ -49,6 +51,7 @@ def set_week1_beat(text: str):
     return edit
 
 
+@tag("slow")  # намеренно ломает и перезагружает весь курс; полный прогон — перед слиянием
 class StoryBeatTests(TestCase):
     def scene(self):
         return WeekScene.objects.get(week__level__code="A1", week__number=1)
@@ -113,7 +116,7 @@ class SpokenReminderTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def warnings(self):
         from apps.publishing.audit import run_audit
@@ -173,7 +176,7 @@ class WeekContentMixin:
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def check_complete(self):
         scene = WeekScene.objects.get(week__level__code="A1", week__number=self.week_number)
@@ -203,6 +206,14 @@ class WeekThreeTests(WeekContentMixin, TestCase):
 
     def test_complete(self):
         self.check_complete()
+
+    def test_polite_order_and_want(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=3)
+        text = " ".join(line["text"] for line in scene.script)
+        spoken = " ".join(line.get("spoken", "") for line in scene.script)
+        self.assertIn("[T9]What[/] [D7]would[/] [T8]you[/] [D3]like[/]?", text)
+        self.assertIn("[T8]I[/][D7]'d[/] [D3]like[/]", spoken)
+        self.assertIn("[D3]want[/]", text)
 
     def test_reload_has_no_duplicates(self):
         self.check_reload()
@@ -271,7 +282,7 @@ class WeekFourTests(WeekContentMixin, TestCase):
 class PilotContinuityTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_four_weeks_have_framing(self):
         for n in range(1, 5):
@@ -330,7 +341,7 @@ def entry_problems(entry: dict) -> list[str]:
 class AssessmentPackageTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_structure(self):
         data = package()
@@ -374,7 +385,7 @@ class ReviewFixTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_commas_do_not_decide_answer(self):
         ex = Exercise(answer="Tea, please.", accepted=[])
@@ -383,12 +394,12 @@ class ReviewFixTests(TestCase):
         self.assertFalse(ex.is_correct("Coffee, please."))
 
     def test_transfer_accepts_digits_and_thanks(self):
-        cafe = Lesson.objects.get(slug="a1-cafe-order").exercises.get(stage="transfer")
+        cafe = Lesson.objects.get(slug="a1-cafe-order").exercises.get(order=4)
         for answer in ("Tea, thanks.", "One tea please", "Can I have a tea please?"):
             self.assertTrue(cafe.is_correct(answer), answer)
         numbers = Lesson.objects.get(slug="a1-numbers-1-20").exercises.get(stage="transfer")
         self.assertTrue(numbers.is_correct("4 teas, please"))
-        family = Lesson.objects.get(slug="a1-family-photo").exercises.get(stage="transfer")
+        family = Lesson.objects.get(slug="a1-family-photo").exercises.get(order=4)
         self.assertTrue(family.is_correct("This is my sister. She is 12."))
 
     def test_pronouns_have_no_be_forms(self):
@@ -435,7 +446,7 @@ class CanonTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_story_two_does_not_reintroduce_mia(self):
         hook = Story.objects.get(number=2).hook_ru
@@ -445,7 +456,7 @@ class CanonTests(TestCase):
     def test_week_three_order_fits_two_people(self):
         scene = WeekScene.objects.get(week__number=3)
         order = scene.script[1]["text"]
-        self.assertIn("[N1]One[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/]", order)
+        self.assertIn("[n1]one[/] [s3]coffee[/] [c1]and[/] [n1]one[/] [s3]tea[/]", order.lower())
 
     def test_friends_use_ty_in_week_two(self):
         ru = " ".join(l.get("ru", "") for l in WeekScene.objects.get(week__number=2).script)
@@ -453,6 +464,7 @@ class CanonTests(TestCase):
         self.assertNotIn("ваша коробка", ru)
 
 
+@tag("slow")  # намеренно ломает и перезагружает весь курс; полный прогон — перед слиянием
 class BrokenManifestTests(TestCase):
     """Замечание P2 бота Codex в PR #4: повреждённый manifest.json не должен ронять загрузку курса."""
 
@@ -510,7 +522,7 @@ class StoryTwoTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_story_two_published_at_week_six(self):
         story = Story.objects.get(number=2)
@@ -564,7 +576,7 @@ class StoryThreeTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_story_three_published_at_week_eight(self):
         story = Story.objects.get(number=3)
@@ -652,7 +664,7 @@ class StoryFourTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_story_four_published_at_week_twelve(self):
         story = Story.objects.get(number=4)
@@ -705,7 +717,7 @@ class StoryFiveTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_story_five_published_at_week_fourteen(self):
         story = Story.objects.get(number=5)
@@ -720,7 +732,7 @@ class LevelA1CompleteTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_every_a1_week_has_scene_lessons_and_twister(self):
         from apps.curriculum.models import TongueTwister
@@ -740,7 +752,7 @@ class TwisterMethodTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_every_a1_twister_follows_method(self):
         from apps.curriculum.models import TongueTwister
@@ -777,7 +789,7 @@ class A1PoemsTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_all_a1_poems_published_with_stanzas(self):
         from apps.poems.models import Poem
@@ -806,11 +818,11 @@ class A1PoemsTests(TestCase):
 class WeeklyVocabularyNormTests(TestCase):
     """Добор A1 до 500 единиц: недели, которые уже доведены до нормы 30–39."""
 
-    FILLED_WEEKS = (4,)
+    FILLED_WEEKS = (3, 4)
 
     @classmethod
     def setUpTestData(cls):
-        call_command("load_content", verbosity=0)
+        ensure_content()
 
     def test_filled_weeks_meet_weekly_norm(self):
         from apps.curriculum.registry import WEEKLY_UNITS

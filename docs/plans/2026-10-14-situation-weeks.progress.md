@@ -189,3 +189,10 @@ Final: Ruling: обычный git push не проходит (DNS из node; в 
 - Диалог недели 4: возраст родителей Мии, we / they; 10 реплик. Уроки a1-family-photo и a1-family-possession расширены.
 - Тест WeeklyVocabularyNormTests: доведённые недели в норме, каждая единица недели есть в уроке или в готовых фразах.
 - Проверено: load_content, audit_course без ошибок, 292 теста OK, неделя 4 и оба урока на 1280 и 390 px.
+
+## 2026-10-16 — неделя 3 и ускорение тестов
+
+- Неделя 3: пакет a1_w03_cafe_plus (LX-00280–LX-00285) — want, would, juice, sandwich, What would you like?, I would like a coffee, please. Неделя 3 — 39 единиц. В диалоге бариста спрашивает What would you like?, Том заказывает с I'd like, Анна говорит I want one!. Урок a1-cafe-order: блок want / would like, меню, упражнения 5–6.
+- Тесты: курс загружается в тестовую базу один раз (tests/runner.py, ContentLoadedRunner; для pytest — tests/conftest.py). Классы зовут ensure_content(). Тяжёлые тесты загрузчика помечены @tag("slow").
+- Время: было 6 мин 25 с; быстрый прогон (--exclude-tag slow --parallel 2) — 1 мин 10 с; полный (--parallel 2) — 2 мин 29 с. На компьютере автора с большим числом ядер — быстрее (--parallel auto).
+- Проверено: audit_course без ошибок, 293 теста OK, неделя 3 и урок a1-cafe-order на 1280 и 390 px.
