@@ -1,0 +1,258 @@
+# Неделя 10 «Выходные и хобби»: always / never / sometimes / usually, like + действие (like reading). CEFR не сверялся.
+level: A1
+week: 10
+units:
+- uid: LX-00193
+  lemma: weekend
+  meaning: Saturday and Sunday
+  class: S7
+  forms:
+  - weekends
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈwikˌɛnd/
+  translation_ru: выходные
+  example_en: '[T9]What[/] [D1]do[/] [T8]you[/] [D2]do[/] [P3]on[/] [T1]the[/] [S7]weekend[/]?'
+  example_ru: Что ты делаешь в выходные?
+  situation: Рассказываете о выходных
+  usage_note: 'В Америке — on the weekend, в Британии — at the weekend.'
+- uid: LX-00194
+  lemma: Saturday
+  meaning: the day after Friday
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsæt̬ɚˌdeɪ/
+  translation_ru: суббота
+  example_en: '[T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturday[/].'
+  example_ru: По субботам я всегда читаю.
+  situation: Называете день недели
+  usage_note: 'Дни недели пишут с большой буквы. «В субботу» — on Saturday.'
+- uid: LX-00195
+  lemma: Sunday
+  meaning: the day after Saturday
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsʌnˌdeɪ/
+  translation_ru: воскресенье
+  example_en: '[P3]On[/] [S7]Sunday[/] [T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/].'
+  example_ru: В воскресенье я гуляю в парке.
+  situation: Называете день недели
+- uid: LX-00196
+  lemma: always
+  meaning: every time; at all times
+  class: A1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɔlweɪz/
+  translation_ru: всегда
+  example_en: '[T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturday[/].'
+  example_ru: По субботам я всегда читаю.
+  situation: Говорите, как часто что-то делаете
+  usage_note: 'Стоит перед обычным глаголом (I always read), но после be (I am always busy).'
+- uid: LX-00197
+  lemma: never
+  meaning: not at any time
+  class: A1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈnɛvɚ/
+  translation_ru: никогда
+  example_en: '[T8]I[/] [A1]never[/] [D4]walk[/]!'
+  example_ru: Я никогда не гуляю!
+  situation: Говорите, как часто что-то делаете
+  usage_note: 'never уже значит «не»: I never walk, а не «I don''t never walk».'
+- uid: LX-00198
+  lemma: sometimes
+  meaning: on some occasions but not always
+  class: A1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsʌmtaɪmz/
+  translation_ru: иногда
+  example_en: '[T8]I[/] [A1]sometimes[/] [D2]play[/] [T1]the[/] [S2]guitar[/].'
+  example_ru: Иногда я играю на гитаре.
+  situation: Говорите, как часто что-то делаете
+  usage_note: 'Может стоять и в начале фразы: Sometimes I read.'
+- uid: LX-00199
+  lemma: usually
+  meaning: in most cases; most of the time
+  class: A1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈjuʒuəli/
+  translation_ru: обычно
+  example_en: '[T8]I[/] [A1]usually[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]seven[/].'
+  example_ru: Обычно я встаю в семь.
+  situation: Говорите о привычках
+  usage_note: 'В середине звук «ж»: «южуэли».'
+- uid: LX-00200
+  lemma: read
+  meaning: to look at words and understand them
+  class: D2
+  forms:
+  - reads
+  - reading
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rid/
+  translation_ru: читать
+  example_en: '[T8]I[/] [D3]like[/] [D2]reading[/].'
+  example_ru: Я люблю читать.
+  situation: Рассказываете о хобби
+- uid: LX-00201
+  lemma: walk
+  meaning: to move on foot for pleasure
+  class: D4
+  forms:
+  - walks
+  - walking
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɔk/
+  translation_ru: гулять, ходить пешком
+  example_en: '[T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/].'
+  example_ru: Я гуляю в парке.
+  situation: Рассказываете о хобби
+  usage_note: 'l в walk не читается: «уок».'
+- uid: LX-00202
+  lemma: play
+  meaning: to make music with an instrument; to take part in a game
+  class: D2
+  forms:
+  - plays
+  - playing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /pleɪ/
+  translation_ru: играть
+  example_en: '[T8]I[/] [D2]play[/] [T1]the[/] [S2]guitar[/].'
+  example_ru: Я играю на гитаре.
+  situation: Рассказываете о хобби
+  usage_note: 'На инструменте — с the: play the guitar. В игру — без the: play chess.'
+- uid: LX-00203
+  lemma: music
+  meaning: sounds made by voices or instruments
+  class: S10
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmjuzɪk/
+  translation_ru: музыка
+  example_en: '[T8]I[/] [D3]like[/] [S10]music[/].'
+  example_ru: Я люблю музыку.
+  situation: Рассказываете о хобби
+  usage_note: 'Ударение на первый слог: «мьЮзик».'
+- uid: LX-00204
+  lemma: guitar
+  meaning: a musical instrument with strings
+  class: S2
+  forms:
+  - guitars
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡɪˈtɑr/
+  translation_ru: гитара
+  example_en: '[T8]I[/] [D2]play[/] [T1]the[/] [S2]guitar[/].'
+  example_ru: Я играю на гитаре.
+  situation: Рассказываете о хобби
+  usage_note: 'Ударение на второй слог: «гитАр».'
+- uid: LX-00205
+  lemma: park
+  meaning: a public garden in a town
+  class: S4
+  forms:
+  - parks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /pɑrk/
+  translation_ru: парк
+  example_en: '[T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/].'
+  example_ru: Я гуляю в парке.
+  situation: Рассказываете о выходных
+- uid: LX-00206
+  lemma: What do you do on the weekend?
+  meaning: Asking about someone's free time
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌwʌt də jə ˈdu ɑn ðə ˈwikˌɛnd/
+  translation_ru: Что ты делаешь в выходные?
+  example_en: What do you do on the weekend?
+  example_ru: Что ты делаешь в выходные?
+  situation: Выходные и хобби
+- uid: LX-00207
+  lemma: I always read on Saturday.
+  meaning: Talking about a regular habit
+  class: A1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈɔlweɪz ˈrid ɑn ˈsæt̬ɚˌdeɪ/
+  translation_ru: По субботам я всегда читаю.
+  example_en: I always read on Saturday.
+  example_ru: По субботам я всегда читаю.
+  situation: Выходные и хобби
+- uid: LX-00208
+  lemma: I like reading.
+  meaning: Saying what you enjoy doing
+  class: D3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈlaɪk ˈridɪŋ/
+  translation_ru: Я люблю читать.
+  example_en: I like reading.
+  example_ru: Я люблю читать.
+  situation: Выходные и хобби
+  usage_note: 'Можно и I like to read — оба варианта американские.'
+- uid: LX-00209
+  lemma: Do you like walking?
+  meaning: Asking what someone enjoys
+  class: D3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /də jə ˈlaɪk ˈwɔkɪŋ/
+  translation_ru: Ты любишь гулять?
+  example_en: Do you like walking?
+  example_ru: Ты любишь гулять?
+  situation: Выходные и хобби
+- uid: LX-00210
+  lemma: I never walk!
+  meaning: Saying you do not do something at all
+  class: A1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈnɛvɚ ˈwɔk/
+  translation_ru: Я никогда не гуляю!
+  example_en: I never walk!
+  example_ru: Я никогда не гуляю!
+  situation: Выходные и хобби
+- uid: LX-00211
+  lemma: I play the guitar.
+  meaning: Saying which instrument you play
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈpleɪ ðə ɡɪˈtɑr/
+  translation_ru: Я играю на гитаре.
+  example_en: I play the guitar.
+  example_ru: Я играю на гитаре.
+  situation: Выходные и хобби

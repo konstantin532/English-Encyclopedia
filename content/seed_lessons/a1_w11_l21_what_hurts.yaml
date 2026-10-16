@@ -1,0 +1,116 @@
+slug: a1-what-hurts
+level: A1
+week: 11
+order: 21
+focus: S
+minutes: 40
+title: "Что болит: I have a headache и my back hurts"
+summary: "Как объяснить врачу, что болит: I have a headache, my back hurts, my stomach hurts. Почему по-английски «болит» звучит двумя способами и что ответить на How are you?"
+units: [LX-00212, LX-00213, LX-00214, LX-00215, LX-00216, LX-00220, LX-00221, LX-00222, LX-00223]
+sound_notes:
+  - text: "I have a headache."
+    ipa: "/aɪ ˈhæv ə ˈhɛdeɪk/"
+    note_ru: "ache — «эйк»: «хЭдэйк», ударение на head"
+  - text: "My back hurts."
+    ipa: "/maɪ ˈbæk ˈhɝts/"
+    note_ru: "hurts — американское r внутри: «хёртс», h выдыхается"
+  - text: "How are you?"
+    ipa: "/ˌhaʊ ɚ ˈju/"
+    note_ru: "are почти пропадает: «хау эр Ю»"
+contractions:
+  - full: "does not"
+    short: "doesn't"
+    ipa: "/ˈdʌzənt/"
+    note_ru: "It doesn't hurt — «Не болит»."
+layers:
+  - number: 1
+    body: |
+      У врача главное — объяснить, что болит. По-английски для этого два способа.
+
+      > [X1]Not[/] [J3]good[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — Неважно. У меня болит голова.
+      > [O4]No[/], [T8]it[/] [D1]does[/] [X1]not[/]. [C5]But[/] [T3]my[/] [S5]back[/] [D3]hurts[/], [C1]and[/] [T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/]. — Нет. Но болит спина, и я не могу спать.
+
+      Первый — «у меня есть боль»: I have a headache. Второй — «часть тела болит»: my back hurts.
+  - number: 2
+    body: |
+      **headache** — head + ache, «голова» + «боль». Так же устроены toothache (зубная боль) и stomachache (боль в животе). Слово ache в древнеанглийском звучало `ece`, а ch читается как «к» по старой традиции.
+
+      **hurt** пришло из старофранцузского и сначала значило «ударить». Потом — «причинить боль», а теперь и «болеть».
+  - number: 3
+    body: |
+      Две схемы:
+
+      > [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — У меня болит голова.
+      > [T3]My[/] [S5]back[/] [D3]hurts[/]. — У меня болит спина.
+
+      - I have a + боль: a headache, a stomachache.
+      - My + часть тела + hurts: my head hurts, my back hurts.
+      - hurts с -s: болит одна часть тела.
+      - Вопрос: Does your head hurt? — с does, hurt без -s.
+  - number: 4
+    body: |
+      Почему «моя спина болит», а не «у меня болит спина»? В английском у каждой фразы есть главный герой. Здесь это спина: она сама «болит». Русское «у меня» превращается в my.
+
+      > [D1]Does[/] [T3]your[/] [S5]head[/] [D3]hurt[/] [T5]every[/] [S7]day[/]? — Голова болит каждый день?
+
+      Именно поэтому нельзя сказать «I have hurt back»: по-английски болит не человек, а часть тела.
+  - number: 5
+    body: |
+      Так проходит приём у американского врача:
+
+      > [J3]Good[/] [S7]morning[/], [S1]Tom[/]. [A6]How[/] [D1]are[/] [T8]you[/]? — Доброе утро, Том. Как вы себя чувствуете?
+      > [X1]Not[/] [J3]good[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — Неважно. У меня болит голова.
+
+      - В жизни How are you? — просто приветствие, и отвечают Fine, thanks! А у врача отвечают честно.
+      - Врача называют doctor: Thank you, doctor!
+      - В экстренном случае в США звонят 911 — «найн-уан-уан».
+  - number: 6
+    body: |
+      Ловушки:
+
+      - «My head is hurt» — так говорят о травме. О боли: My head hurts.
+      - «I have headache» — нужно a: I have a headache.
+      - Боль в горле — a sore throat, а не «throat hurts» (хотя так тоже поймут).
+
+      Если не знаете слово, покажите рукой и скажите: It hurts here — «Болит здесь».
+  - number: 7
+    body: |
+      Четыре задания: понять жалобу, выбрать hurts или headache, собрать фразу и объяснить врачу в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как правильно сказать «У меня болит спина»?"
+    options: ["My back hurts.", "I have back hurt.", "My back hurt is."]
+    answer: "My back hurts."
+    hint_ru: "Часть тела + hurts."
+    explanation_ru: "My back hurts — спина «болит сама», с окончанием -s."
+    units: [LX-00214, LX-00223]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Скажите врачу, что болит голова. Вставьте слово."
+    prompt_en: "I have a ___."
+    answer: "headache"
+    hint_ru: "head + ache."
+    explanation_ru: "I have a headache — «у меня головная боль»."
+    units: [LX-00212, LX-00221]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите вопрос врача: «У вас болит голова?»"
+    options: [hurt, Does, head, your]
+    answer: "Does your head hurt"
+    hint_ru: "Does, потом your head, потом hurt."
+    explanation_ru: "Does your head hurt? — с does глагол без -s."
+    units: [LX-00222]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: в поездке у вас заболел живот. Скажите аптекарю."
+    prompt_en: "Can I help you? — ___"
+    answer: "My stomach hurts."
+    accepted: ["My stomach hurts", "Yes, my stomach hurts.", "Yes, please. My stomach hurts.", "Yes. My stomach hurts."]
+    hint_ru: "My stomach + hurts."
+    explanation_ru: "My stomach hurts — часть тела + hurts. Сказать «I have a stomachache» тоже можно."
+    units: [LX-00215, LX-00216]

@@ -1,0 +1,111 @@
+slug: a1-letters-address
+level: A1
+week: 12
+order: 24
+focus: S
+minutes: 40
+title: "На почте: письмо, марка и американский адрес"
+summary: "Как отправить письмо и понять почтовые фразы. Как устроен американский адрес: сначала номер дома, потом улица. Чем letter «письмо» отличается от letter «буква»."
+units: [LX-00225, LX-00226, LX-00227, LX-00228, LX-00231, LX-00232, LX-00234]
+sound_notes:
+  - text: "What's the address?"
+    ipa: "/ˈwʌts ði ˈædrɛs/"
+    note_ru: "the перед гласной — «зи»; address с ударением на первом слоге"
+  - text: "I have a letter for my mother."
+    ipa: "/aɪ hæv ə ˈlɛt̬ɚ fɚ maɪ ˈmʌðɚ/"
+    note_ru: "letter — «лэдэр», for без ударения — «фэр»"
+  - text: "five Park Street"
+    ipa: "/ˈfaɪv ˈpɑrk ˌstrit/"
+    note_ru: "в названии улицы ударение на первом слове: PARK Street"
+contractions:
+  - full: "what is"
+    short: "what's"
+    ipa: "/wʌts/"
+    note_ru: "What's the address? — так спрашивают на почте."
+layers:
+  - number: 1
+    body: |
+      На почте нужны три вещи: письмо, адрес и марка.
+
+      > [O4]Yes[/], [O8]please[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S9]letter[/] [P5]for[/] [T3]my[/] [S1]mother[/] [P1]in[/] [S4]Russia[/]. — Да, пожалуйста. У меня письмо для мамы в России.
+      > [T9]What[/] [D1]is[/] [T1]the[/] [S9]address[/]? — Какой адрес?
+
+      Дальше — как устроен адрес в Америке и почему он «перевёрнут» по сравнению с русским.
+  - number: 2
+    body: |
+      **letter** — от латинского `littera`, «буква». Письмо — это много букв, поэтому одно слово значит и то, и другое. Отсюда и literature.
+
+      **stamp** — «топнуть, отпечатать». Сначала так называли печать, потом — бумажную марку, которую клеят на конверт.
+  - number: 3
+    body: |
+      Американский адрес пишут от малого к большому:
+
+      - номер дома и улица: 5 Park Street;
+      - город, штат, индекс (ZIP code): Springfield, IL 62701;
+      - страна — если письмо за границу.
+
+      В русском адресе часто наоборот: от страны к квартире. А номер дома в Америке всегда стоит **перед** улицей: 5 Park Street, а не «Park Street, 5».
+  - number: 4
+    body: |
+      Почему номер первым? Американские улицы длинные, и дома нумеруют по порядку от начала. Почтальону сначала важен номер, потом улица. Так же устроено и произношение: «five Park Street».
+
+      > [D1]Do[/] [T8]you[/] [D1]have[/] [S9]letters[/] [P5]for[/] [T3]our[/] [S2]house[/]? [T3]Our[/] [S2]mailbox[/] [D1]is[/] [J2]old[/]. — А для нашего дома есть письма? У нас старый почтовый ящик.
+
+      Почтовый ящик у дома — mailbox. Синие ящики на улице — тоже mailbox: туда бросают письма.
+  - number: 5
+    body: |
+      Так звучит почта в Америке:
+
+      > [A3]Here[/] [D1]is[/] [T1]a[/] [S2]stamp[/]. [T8]It[/] [D1]is[/] [N6]two dollars[/]. — Вот марка. Два доллара.
+
+      - Американская почта — USPS. Почтальон — mail carrier, но говорят и mailman.
+      - mail — это сама почта: письма, которые приходят. Is there mail for me? — Мне есть почта?
+      - Улицу в адресе часто сокращают: St. = Street.
+  - number: 6
+    body: |
+      Ловушки:
+
+      - letter — и «письмо», и «буква»: spell the letters — назвать буквы, send a letter — отправить письмо.
+      - post office — почтовое отделение, а mail — письма. «Почта пришла» — The mail is here.
+      - «на улице Парк» — on Park Street, а адрес — 5 Park Street без on.
+  - number: 7
+    body: |
+      Четыре задания: понять вопрос на почте, вставить слово, собрать адрес по-американски и ответить почтальону в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Почтальон спрашивает: What is the address? Что он хочет узнать?"
+    options: ["Куда отправить письмо", "Сколько стоит марка", "Как вас зовут"]
+    answer: "Куда отправить письмо"
+    hint_ru: "address — адрес."
+    explanation_ru: "What is the address? — «Какой адрес?», куда идёт письмо."
+    units: [LX-00227, LX-00232]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Для письма нужна марка. Вставьте слово."
+    prompt_en: "I do not have a ___."
+    answer: "stamp"
+    hint_ru: "Её клеят на конверт."
+    explanation_ru: "I do not have a stamp — «у меня нет марки»."
+    units: [LX-00226]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите адрес по-американски: «дом 5 на улице Парк»."
+    options: [Street, five, Park]
+    answer: "five Park Street"
+    hint_ru: "Сначала номер дома."
+    explanation_ru: "five Park Street — номер, потом название, потом Street."
+    units: [LX-00228]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: вы отправляете посылку другу в Россию. Почтальон спрашивает, кому. Ответьте: «Для друга в России»."
+    prompt_en: "Who is it for? — ___"
+    answer: "It is for my friend in Russia."
+    accepted: ["It's for my friend in Russia.", "For my friend in Russia.", "It is for my friend in Russia", "For my friend in Russia", "It's for my friend in Russia"]
+    hint_ru: "for my friend + in Russia."
+    explanation_ru: "It is for my friend in Russia — for значит «для»."
+    units: [LX-00225]

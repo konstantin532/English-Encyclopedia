@@ -1,0 +1,32 @@
+# Новые слова истории №4 «A Letter With No Name» (лимит A-блока — до 5 на историю).
+level: A1
+week: 12
+units:
+- uid: LX-00237
+  lemma: white
+  meaning: having the colour of snow or milk
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /waɪt/
+  translation_ru: белый
+  example_en: '[T1]The[/] [S9]letter[/] [D1]is[/] [J2]white[/].'
+  example_ru: Письмо белое.
+  situation: Описываете вещь
+  usage_note: 'h не читается: «уайт».'
+- uid: LX-00238
+  lemma: word
+  meaning: a group of letters with a meaning
+  class: S9
+  forms:
+  - words
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɝd/
+  translation_ru: слово
+  example_en: '[T9]There[/] [D1]is[/] [N1]one[/] [S9]word[/]: [S1]Rose[/].'
+  example_ru: "Там одно слово: Rose."
+  situation: Читаете записку
+  usage_note: 'Как work, но с d: «уёрд».'

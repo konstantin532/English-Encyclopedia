@@ -1,0 +1,55 @@
+level: A1
+week: 8
+can_do_ru: "Я смогу вежливо остановить прохожего, спросить дорогу (Where is…?) и понять ответ: go straight, turn left, on the right, next to."
+mission_ru: "Объясните по-английски дорогу от вашего дома до ближайшего магазина тремя фразами: Go straight… Turn left… It is next to… Потом спросите кого-нибудь: Excuse me, where is…?"
+chunks: [LX-00175, LX-00176, LX-00177, LX-00178, LX-00174]
+story_beat:
+  intro_ru: "Том хочет сделать копию старого ключа для Анны. Но где в городке мастерская по ключам?"
+  outcome_ru: "Мастерская — рядом с банком, а банк — справа, рядом с кафе Мии. Мастер берёт старый ключ и обещает сделать копию."
+  next_hook_ru: "Ключ очень старый. Кто жил в этом доме раньше?"
+script:
+  - speaker: tom
+    text: "[O2]Excuse me[/]! [T8]I[/] [D1]have[/] [T1]an[/] [J2]old[/] [S2]key[/]. [A6]Where[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/], [O8]please[/]?"
+    ru: "Извините! У меня старый ключ. Где мастерская по ключам?"
+  - speaker: passerby
+    emotion: happy
+    text: "[T1]The[/] [S2]key[/] [S4]shop[/]? [T8]It[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]bank[/]."
+    spoken: "[T1]The[/] [S2]key[/] [S4]shop[/]? [T8]It[/][D1]'s[/] [P1]near[/] [T1]the[/] [S4]bank[/]."
+    ru: "Мастерская? Она рядом с банком."
+  - speaker: anna
+    emotion: worried
+    text: "[O2]Sorry[/], [A6]where[/] [D1]is[/] [T1]the[/] [S4]bank[/]?"
+    spoken: "[O2]Sorry[/], [A6]where[/][D1]'s[/] [T1]the[/] [S4]bank[/]?"
+    ru: "Простите, а где банк?"
+  - speaker: passerby
+    text: "[D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/]."
+    ru: "Идите прямо и поверните налево. Банк будет справа."
+  - speaker: tom
+    emotion: surprised
+    text: "[P1]On[/] [T1]the[/] [A3]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]?"
+    ru: "Справа? Рядом с кафе Мии?"
+  - speaker: passerby
+    emotion: happy
+    text: "[O4]Yes[/]! [C1]And[/] [T1]the[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]next to[/] [T1]the[/] [S4]bank[/]."
+    ru: "Да! А мастерская — рядом с банком."
+  - speaker: anna
+    emotion: happy
+    text: "[O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [A3]right[/]."
+    ru: "Спасибо! Прямо, налево и справа."
+  - speaker: passerby
+    emotion: happy
+    text: "[T8]You[/] [D1]are[/] [J3]welcome[/]! [D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/]!"
+    spoken: "[T8]You[/][D1]'re[/] [J3]welcome[/]! [D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/]!"
+    ru: "Пожалуйста! Хорошего дня!"
+  - speaker: tom
+    emotion: excited
+    text: "[S1]Anna[/]! [A3]Here[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/]!"
+    spoken: "[S1]Anna[/]! [A3]Here[/][D1]'s[/] [T1]the[/] [S2]key[/] [S4]shop[/]!"
+    ru: "Анна! Вот мастерская!"
+twister:
+  number: 8
+  series: sounds
+  text: "[D4]Turn[/] [A3]left[/], [D4]turn[/] [A3]right[/], [D4]go[/] [A3]straight[/]."
+  ipa: "/ˈtɝn ˈlɛft ˈtɝn ˈraɪt ˈɡoʊ ˈstreɪt/"
+  focus_sounds: [r]
+  source: original

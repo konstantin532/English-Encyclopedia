@@ -1,0 +1,119 @@
+slug: a1-where-is-prepositions
+level: A1
+week: 8
+order: 15
+focus: P
+minutes: 40
+title: "Где это: Where is…? и предлоги in, on, near, next to"
+summary: "Как спросить, где находится место или вещь, и ответить: in the box, on the right, near the bank, next to the cafe. Почему «на» — не всегда on."
+units: [LX-00157, LX-00162, LX-00165, LX-00171, LX-00172, LX-00173, LX-00174, LX-00176, LX-00178, LX-00160, LX-00163]
+sound_notes:
+  - text: "Where is the bank?"
+    ipa: "/ˈwɛr ɪz ðə ˈbæŋk/"
+    note_ru: "where и is сливаются: «уэриз»; в разговоре — where's"
+  - text: "It's next to the cafe."
+    ipa: "/ɪts ˈnɛks tə ðə kæˈfeɪ/"
+    note_ru: "t в next пропадает: «нэкс тэ»"
+  - text: "It's on the right."
+    ipa: "/ɪts ɑn ðə ˈraɪt/"
+    note_ru: "on — открытое «а»: «ан», не «он»"
+contractions:
+  - full: "where is"
+    short: "where's"
+    ipa: "/wɛrz/"
+    note_ru: "В разговоре почти всегда where's: Where's the bank?"
+  - full: "it is"
+    short: "it's"
+    ipa: "/ɪts/"
+    note_ru: "Ответ о месте — с it's: It's near the bank."
+layers:
+  - number: 1
+    body: |
+      В новом городе главный вопрос — «Где?». По-английски — **Where**.
+
+      > [O2]Sorry[/], [A6]where[/] [D1]is[/] [T1]the[/] [S4]bank[/]? — Простите, а где банк?
+      > [T1]The[/] [S2]key[/] [S4]shop[/]? [T8]It[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]bank[/]. — Мастерская? Она рядом с банком.
+
+      В ответе всегда есть маленькое слово места — предлог: near, next to, on, in.
+  - number: 2
+    body: |
+      **where** и **here** — родственники: оба из древнего `hwǣr` и `hēr`. Where — «в каком месте», here — «в этом месте», there — «в том месте». Три слова, один корень места.
+
+      **near** когда-то значило «ближе» — сравнительная форма от слова «близко». Позже стало просто «рядом».
+  - number: 3
+    body: |
+      Схема вопроса и ответа:
+
+      > [A6]Where[/] [D1]is[/] [T1]the[/] [S4]bank[/]? — Где банк?
+      > [T8]It[/] [D1]is[/] [P1]next to[/] [T1]the[/] [S4]cafe[/]. — Он рядом с кафе.
+
+      - **in** — внутри: in the box, in the house.
+      - **on** — на поверхности или сбоку: on the box, on the right.
+      - **near** — недалеко: near the bank.
+      - **next to** — совсем рядом, вплотную: next to the cafe.
+  - number: 4
+    body: |
+      Почему предлогов так много? В русском место часто показывает окончание: «в коробк**е**», «у банк**а**». В английском окончаний нет, и всю работу делает предлог. Поэтому он стоит перед словом всегда.
+
+      next to и near похожи, но next to ближе: next to — «бок о бок», near — «в двух шагах».
+
+      > [P1]On[/] [T1]the[/] [A3]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]? — Справа? Рядом с кафе Мии?
+  - number: 5
+    body: |
+      Так спрашивают и отвечают американцы:
+
+      > [O2]Excuse me[/]! [T8]I[/] [D1]have[/] [T1]an[/] [J2]old[/] [S2]key[/]. [A6]Where[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/], [O8]please[/]? — Извините! У меня старый ключ. Где мастерская по ключам?
+
+      - Начинают с Excuse me — так вежливо останавливают незнакомца.
+      - В разговоре: Where's the bank? It's on the right.
+      - Часто отвечают коротко: Near the bank. Next to the cafe.
+  - number: 6
+    body: |
+      Русское «на» — ловушка:
+
+      - на столе — on the table (поверхность);
+      - на работе — at work;
+      - на улице — in the street или outside.
+
+      И «у»: у двери — next to the door или near the door. Выбирайте предлог по смыслу места, а не по русскому слову.
+  - number: 7
+    body: |
+      Четыре задания: узнать вопрос «где?», выбрать предлог, собрать ответ и объяснить место в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Вы ищете банк. Что спросить у прохожего?"
+    options: ["Excuse me, where is the bank?", "Excuse me, what is the bank?", "Excuse me, who is the bank?"]
+    answer: "Excuse me, where is the bank?"
+    hint_ru: "«Где» — where."
+    explanation_ru: "Excuse me, where is the bank? — вежливо и понятно."
+    units: [LX-00175, LX-00176]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Ключ лежит внутри коробки. Вставьте предлог."
+    prompt_en: "The key is ___ the box."
+    answer: "in"
+    hint_ru: "Внутри — in."
+    explanation_ru: "in the box — внутри коробки. on the box было бы «на коробке»."
+    units: [LX-00173]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите ответ: «Банк рядом с кафе»."
+    options: [cafe, The, is, to, bank, next, the]
+    answer: "The bank is next to the cafe"
+    hint_ru: "next to — два слова вместе."
+    explanation_ru: "The bank is next to the cafe. next to — «рядом с», всегда вместе."
+    units: [LX-00174]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: турист спрашивает, где кафе. Оно справа. Ответьте."
+    prompt_en: "Where is the cafe? — ___"
+    answer: "It is on the right."
+    accepted: ["It's on the right.", "On the right.", "It is on the right", "It's on the right", "On the right", "The cafe is on the right."]
+    hint_ru: "Справа — on the right."
+    explanation_ru: "It is on the right — в разговоре It's on the right или просто On the right."
+    units: [LX-00178]

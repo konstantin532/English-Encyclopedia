@@ -535,3 +535,130 @@ class WeekSevenTests(WeekContentMixin, TestCase):
     def test_hook_leads_to_story_three(self):
         scene = WeekScene.objects.get(week__level__code="A1", week__number=7)
         self.assertIn("под дверью", scene.story_beat["next_hook_ru"])
+
+
+class WeekEightTests(WeekContentMixin, TestCase):
+    """Неделя 8 «Как пройти?»: Where is…?, предлоги места, указания."""
+    week_number = 8
+    slugs = ("a1-where-is-prepositions", "a1-directions-turn-left")
+    twister_number = 8
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_on_is_a_word_not_a_boolean(self):
+        from apps.lexicon.models import LexicalUnit
+
+        self.assertEqual(LexicalUnit.objects.get(uid="LX-00172").lemma, "on")
+
+
+class StoryThreeTests(TestCase):
+    """История 3 «Whose Key?»: ключ подходит к старому почтовому ящику."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_story_three_published_at_week_eight(self):
+        story = Story.objects.get(number=3)
+        self.assertTrue(story.is_published)
+        self.assertEqual(story.week.number, 8)
+        self.assertEqual(story.script[0]["music"], "mystery")
+        self.assertEqual(story.new_units.count(), 3)
+
+    def test_story_three_page_renders(self):
+        response = self.client.get(reverse("stories:detail", args=[3]))
+        self.assertContains(response, "mailbox")
+
+
+class WeekNineTests(WeekContentMixin, TestCase):
+    """Неделя 9 «Телефон и сообщения»: do / does, диктовка по буквам и цифрам."""
+    week_number = 9
+    slugs = ("a1-questions-do-does", "a1-spelling-phone-numbers")
+    twister_number = 9
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_spelled_surname_is_known(self):
+        from apps.publishing.audit import character_names
+
+        self.assertIn("belova", character_names())
+
+    def test_continuity_copy_is_made_in_week_nine(self):
+        week8 = WeekScene.objects.get(week__level__code="A1", week__number=8)
+        week9 = WeekScene.objects.get(week__level__code="A1", week__number=9)
+        self.assertIn("обещает сделать копию", week8.story_beat["outcome_ru"])
+        self.assertIn("почти готова", week9.story_beat["intro_ru"])
+
+
+class WeekTenTests(WeekContentMixin, TestCase):
+    """Неделя 10 «Выходные и хобби»: always / never, like + -ing."""
+    week_number = 10
+    slugs = ("a1-always-never", "a1-like-doing")
+    twister_number = 10
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_mia_still_works_every_day(self):
+        """Канон недели 6: Мия работает каждый день — значит, и в воскресенье."""
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=10)
+        mia = " ".join(line["text"] for line in scene.script if line["speaker"] == "mia")
+        self.assertNotIn("[A1]never[/] [D2]work[/]", mia)
+        self.assertIn("[D2]work[/] [P3]on[/] [S7]Sunday[/]", mia)
+
+
+class WeekElevenTests(WeekContentMixin, TestCase):
+    """Неделя 11 «У врача»: headache, hurts, can't / cannot."""
+    week_number = 11
+    slugs = ("a1-what-hurts", "a1-cant-cannot")
+    twister_number = 11
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_cant_is_split_into_base_and_negation(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=11)
+        spoken = " ".join(line.get("spoken", "") for line in scene.script)
+        self.assertIn("[D7]ca[/][X1]n't[/]", spoken)
+        self.assertNotIn("[D7]can't[/]", spoken)
+
+
+class WeekTwelveTests(WeekContentMixin, TestCase):
+    """Неделя 12 «На почте»: don't / doesn't, письмо и адрес."""
+    week_number = 12
+    slugs = ("a1-dont-doesnt", "a1-letters-address")
+    twister_number = 12
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_postal_worker_says_old_mailbox_gets_no_letters(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=12)
+        text = " ".join(line["text"] for line in scene.script if line["speaker"] == "postal")
+        self.assertIn("[D1]does[/] [X1]not[/] [D2]get[/] [S9]letters[/]", text)
+
+
+class StoryFourTests(TestCase):
+    """История 4 «A Letter With No Name»: письмо, которое не принесла почта."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_story_four_published_at_week_twelve(self):
+        story = Story.objects.get(number=4)
+        self.assertTrue(story.is_published)
+        self.assertEqual(story.week.number, 12)
+        self.assertIn("[S1]Rose[/]", story.body)
+        self.assertEqual(story.new_units.count(), 2)
+
+    def test_rose_is_a_character_not_vocabulary(self):
+        from apps.publishing.audit import character_names
+
+        self.assertIn("rose", character_names())
+
+    def test_week_eleven_leads_to_post_office_not_to_letter(self):
+        week11 = WeekScene.objects.get(week__level__code="A1", week__number=11)
+        self.assertIn("почту", week11.story_beat["next_hook_ru"])

@@ -1,0 +1,45 @@
+# Новые слова истории №3 «Whose Key?» (лимит A-блока — до 5 на историю).
+level: A1
+week: 8
+units:
+- uid: LX-00179
+  lemma: whose
+  meaning: belonging to which person; used in questions
+  class: T9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /huz/
+  translation_ru: чей, чья, чьё
+  example_en: '[T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?'
+  example_ru: Чей это ключ?
+  situation: Нашли чужую вещь
+  usage_note: 'Звучит как who''s («кто есть»), но пишется иначе: whose — «чей».'
+- uid: LX-00180
+  lemma: mailbox
+  meaning: a box for letters at a house
+  class: S2
+  forms:
+  - mailboxes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmeɪlbɑks/
+  translation_ru: почтовый ящик
+  example_en: '[T1]The[/] [S2]mailbox[/] [D1]is[/] [J2]old[/].'
+  example_ru: Почтовый ящик старый.
+  situation: Говорите о почте у дома
+  usage_note: 'Американское слово; британцы говорят letterbox. mail — почта, box — ящик.'
+- uid: LX-00181
+  lemma: our
+  meaning: belonging to us
+  class: T3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈaʊɚ/
+  translation_ru: наш, наша, наше
+  example_en: '[T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/].'
+  example_ru: Это наш почтовый ящик.
+  situation: Говорите, что вещь общая
+  usage_note: 'В быстрой речи часто звучит как «ар».'

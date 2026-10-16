@@ -1,0 +1,56 @@
+level: A1
+week: 11
+can_do_ru: "Я смогу объяснить врачу, что у меня болит (I have a headache, my back hurts), сказать, чего не могу (I can't sleep), и понять простой совет."
+mission_ru: "Представьте, что вы у врача. Скажите вслух по-английски три фразы: I have a… My … hurts. I can't… Потом спросите кого-нибудь: How are you?"
+chunks: [LX-00220, LX-00221, LX-00222, LX-00223, LX-00224]
+story_beat:
+  intro_ru: "В понедельник утром у Тома болит голова. Анна отправляет его к врачу."
+  outcome_ru: "Голова болит не каждый день, зато болит спина, и Том плохо спит. Врач советует гулять каждый день, пить воду и не сидеть ночью за компьютером."
+  next_hook_ru: "Анна хочет отправить письмо маме в Россию. Пора на почту."
+script:
+  - speaker: doctor
+    text: "[J3]Good[/] [S7]morning[/], [S1]Tom[/]. [A6]How[/] [D1]are[/] [T8]you[/]?"
+    ru: "Доброе утро, Том. Как вы себя чувствуете?"
+  - speaker: tom
+    emotion: tired
+    text: "[X1]Not[/] [J3]good[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]."
+    ru: "Неважно. У меня болит голова."
+  - speaker: doctor
+    text: "[D1]Does[/] [T3]your[/] [S5]head[/] [D3]hurt[/] [T5]every[/] [S7]day[/]?"
+    ru: "Голова болит каждый день?"
+  - speaker: tom
+    emotion: tired
+    text: "[O4]No[/], [T8]it[/] [D1]does[/] [X1]not[/]. [C5]But[/] [T3]my[/] [S5]back[/] [D3]hurts[/], [C1]and[/] [T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/]."
+    spoken: "[O4]No[/], [T8]it[/] [D1]does[/][X1]n't[/]. [C5]But[/] [T3]my[/] [S5]back[/] [D3]hurts[/], [C1]and[/] [T8]I[/] [D7]ca[/][X1]n't[/] [D2]sleep[/]."
+    ru: "Нет. Но болит спина, и я не могу спать."
+  - speaker: doctor
+    emotion: worried
+    text: "[T8]You[/] [D7]can[/][X1]not[/] [D2]sleep[/]? [D1]Do[/] [T8]you[/] [D2]work[/] [P1]at[/] [T1]a[/] [S2]computer[/] [T5]every[/] [S7]day[/]?"
+    spoken: "[T8]You[/] [D7]ca[/][X1]n't[/] [D2]sleep[/]? [D1]Do[/] [T8]you[/] [D2]work[/] [P1]at[/] [T1]a[/] [S2]computer[/] [T5]every[/] [S7]day[/]?"
+    ru: "Не можете спать? Вы каждый день работаете за компьютером?"
+  - speaker: tom
+    text: "[O4]Yes[/], [T8]I[/] [D1]do[/]. [C1]And[/] [T8]I[/] [A1]never[/] [D4]walk[/]."
+    ru: "Да. И я никогда не гуляю."
+  - speaker: doctor
+    emotion: happy
+    text: "[D4]Walk[/] [P1]in[/] [T1]the[/] [S4]park[/] [T5]every[/] [S7]day[/] [C1]and[/] [D2]drink[/] [S3]water[/]."
+    ru: "Гуляйте в парке каждый день и пейте воду."
+  - speaker: tom
+    emotion: surprised
+    text: "[T5]Every[/] [S7]day[/]? [C5]But[/] [T8]I[/] [D3]like[/] [T3]my[/] [S2]computer[/]!"
+    ru: "Каждый день? Но я люблю свой компьютер!"
+  - speaker: doctor
+    emotion: happy
+    text: "[C1]And[/] [T4]no[/] [S2]computer[/] [P3]at[/] [S7]night[/]!"
+    ru: "И никакого компьютера ночью!"
+  - speaker: tom
+    emotion: happy
+    text: "[O4]Yes[/]! [O2]Thank you[/], [S9]doctor[/]!"
+    ru: "Хорошо! Спасибо, доктор!"
+twister:
+  number: 11
+  series: sounds
+  text: "[T3]My[/] [S5]back[/], [T3]my[/] [S5]head[/], [T3]my[/] [S5]headache[/]!"
+  ipa: "/maɪ ˈbæk maɪ ˈhɛd maɪ ˈhɛdeɪk/"
+  focus_sounds: [ae, h]
+  source: original

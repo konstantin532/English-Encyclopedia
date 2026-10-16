@@ -1,0 +1,150 @@
+# Неделя 9 «Телефон и сообщения»: вопросы с do / does, алфавит и диктовка по буквам, номер телефона. CEFR не сверялся.
+level: A1
+week: 9
+units:
+- uid: LX-00182
+  lemma: hello
+  meaning: a word you say when you meet someone or answer the phone
+  class: O1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /həˈloʊ/
+  translation_ru: здравствуйте; алло
+  example_en: '[O1]Hello[/]! [T2]This[/] [D1]is[/] [S1]Anna[/].'
+  example_ru: Алло! Это Анна.
+  situation: Отвечаете на звонок
+  usage_note: 'По телефону называют себя так: This is Anna — не I am Anna.'
+- uid: LX-00183
+  lemma: spell
+  meaning: to say the letters of a word in the right order
+  class: D5
+  forms:
+  - spells
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /spɛl/
+  translation_ru: произносить по буквам
+  example_en: '[D7]Can[/] [T8]you[/] [D5]spell[/] [T8]it[/], [O8]please[/]?'
+  example_ru: Можете сказать по буквам?
+  situation: Диктуете имя или адрес
+- uid: LX-00184
+  lemma: last
+  meaning: coming at the end
+  class: J8
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /læst/
+  translation_ru: последний
+  example_en: '[T3]My[/] [J8]last[/] [S9]name[/] [D1]is[/] [S1]Belova[/].'
+  example_ru: Моя фамилия — Белова.
+  situation: Называете фамилию
+  usage_note: 'last name — фамилия (буквально «последнее имя»), first name — имя.'
+- uid: LX-00185
+  lemma: number
+  meaning: a word or sign like 1, 2 or 3; a set of numbers for a phone
+  class: S9
+  forms:
+  - numbers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈnʌmbɚ/
+  translation_ru: номер; число
+  example_en: '[T9]What[/] [D1]is[/] [T3]your[/] [S2]phone[/] [S9]number[/]?'
+  example_ru: Какой у вас номер телефона?
+  situation: Оставляете номер телефона
+- uid: LX-00186
+  lemma: open
+  meaning: to start the working day for customers
+  class: D2
+  forms:
+  - opens
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈoʊpən/
+  translation_ru: открываться; открывать
+  example_en: '[T1]The[/] [S4]shop[/] [D2]opens[/] [P3]at[/] [N3]nine[/].'
+  example_ru: Мастерская открывается в девять.
+  situation: Узнаёте часы работы
+  usage_note: 'Магазин «открывается» — по-английски без «-ся»: The shop opens.'
+- uid: LX-00187
+  lemma: A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
+  meaning: the 26 letters of the English alphabet
+  class: N7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /eɪ bi si di i ɛf dʒi eɪtʃ aɪ dʒeɪ keɪ ɛl ɛm ɛn oʊ pi kju ɑr ɛs ti ju vi ˈdʌbəlju ɛks waɪ zi/
+  translation_ru: английский алфавит
+  example_en: A, B, C, D, E, F, G…
+  example_ru: Эй, би, си, ди, и, эф, джи…
+  situation: Диктуете по буквам
+  usage_note: 'Американцы называют Z «зи», а не «зэд». Главные ловушки: E — «и», I — «ай», A — «эй», R — «ар», Y — «уай».'
+- uid: LX-00188
+  lemma: This is Anna.
+  meaning: Saying who you are on the phone
+  class: T2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈðɪs ɪz ˈænə/
+  translation_ru: Это Анна. (по телефону)
+  example_en: This is Anna.
+  example_ru: Это Анна.
+  situation: Телефон и сообщения
+  usage_note: 'По телефону не говорят I am Anna — только This is Anna.'
+- uid: LX-00189
+  lemma: Can you spell your last name, please?
+  meaning: Asking someone to say their family name letter by letter
+  class: D5
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kən jə ˈspɛl jɚ ˈlæst ˌneɪm ˈpliz/
+  translation_ru: Продиктуйте, пожалуйста, фамилию по буквам.
+  example_en: Can you spell your last name, please?
+  example_ru: Продиктуйте, пожалуйста, фамилию по буквам.
+  situation: Телефон и сообщения
+- uid: LX-00190
+  lemma: What is your phone number?
+  meaning: Asking for a phone number
+  class: N7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌt ɪz jɚ ˈfoʊn ˌnʌmbɚ/
+  translation_ru: Какой у вас номер телефона?
+  example_en: What is your phone number?
+  example_ru: Какой у вас номер телефона?
+  situation: Телефон и сообщения
+  usage_note: 'В разговоре — What''s your phone number? Цифры диктуют по одной: five, five, five…'
+- uid: LX-00191
+  lemma: What time does the shop open?
+  meaning: Asking when a place opens
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌwʌt ˈtaɪm dəz ðə ˈʃɑp ˈoʊpən/
+  translation_ru: Во сколько открывается мастерская?
+  example_en: What time does the shop open?
+  example_ru: Во сколько открывается мастерская?
+  situation: Телефон и сообщения
+  usage_note: 'С does глагол без -s: does the shop open, а не opens.'
+- uid: LX-00192
+  lemma: See you!
+  meaning: An informal goodbye
+  class: O1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈsi ju/
+  translation_ru: Увидимся! Пока!
+  example_en: See you!
+  example_ru: Увидимся!
+  situation: Телефон и сообщения
+  usage_note: 'Можно добавить время: See you at nine! — До встречи в девять!'

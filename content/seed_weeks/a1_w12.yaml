@@ -1,0 +1,59 @@
+level: A1
+week: 12
+can_do_ru: "Я смогу отправить письмо на почте, сказать, чего у меня нет (I don't have a stamp), спросить о почте для дома и ответить I don't know."
+mission_ru: "Скажите вслух по-английски три фразы с don't и doesn't о себе и знакомых: I don't… My friend doesn't… Потом спросите кого-нибудь: What is your address?"
+chunks: [LX-00232, LX-00233, LX-00234, LX-00235, LX-00236]
+story_beat:
+  intro_ru: "Анна несёт на почту письмо маме в Россию. Том идёт с ней и заодно хочет спросить про старый почтовый ящик."
+  outcome_ru: "Письмо уходит в Россию — марка стоит два доллара. А почтальон удивлён: в старый ящик у их калитки письма никогда не приходят."
+  next_hook_ru: "Вечером в старом почтовом ящике что-то белое."
+script:
+  - speaker: postal
+    emotion: happy
+    text: "[J3]Good[/] [S7]morning[/]! [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?"
+    ru: "Доброе утро! Чем могу помочь?"
+  - speaker: anna
+    text: "[O4]Yes[/], [O8]please[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S9]letter[/] [P5]for[/] [T3]my[/] [S1]mother[/] [P1]in[/] [S4]Russia[/]."
+    ru: "Да, пожалуйста. У меня письмо для мамы в России."
+  - speaker: postal
+    text: "[T9]What[/] [D1]is[/] [T1]the[/] [S9]address[/]?"
+    spoken: "[T9]What[/][D1]'s[/] [T1]the[/] [S9]address[/]?"
+    ru: "Какой адрес?"
+  - speaker: anna
+    text: "[T1]The[/] [S9]address[/] [D1]is[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [C5]But[/] [T8]I[/] [D1]do[/] [X1]not[/] [D1]have[/] [T1]a[/] [S2]stamp[/]."
+    spoken: "[T1]The[/] [S9]address[/] [D1]is[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [C5]But[/] [T8]I[/] [D1]do[/][X1]n't[/] [D1]have[/] [T1]a[/] [S2]stamp[/]."
+    ru: "Адрес на письме. Но у меня нет марки."
+  - speaker: postal
+    emotion: happy
+    text: "[A3]Here[/] [D1]is[/] [T1]a[/] [S2]stamp[/]. [T8]It[/] [D1]is[/] [N6]two dollars[/]."
+    spoken: "[A3]Here[/][D1]'s[/] [T1]a[/] [S2]stamp[/]. [T8]It[/][D1]'s[/] [N6]two dollars[/]."
+    ru: "Вот марка. Два доллара."
+  - speaker: tom
+    text: "[D1]Do[/] [T8]you[/] [D1]have[/] [S9]letters[/] [P5]for[/] [T3]our[/] [S2]house[/]? [T3]Our[/] [S2]mailbox[/] [D1]is[/] [J2]old[/]."
+    ru: "А для нашего дома есть письма? У нас старый почтовый ящик."
+  - speaker: postal
+    emotion: surprised
+    text: "[T1]The[/] [J2]old[/] [S2]mailbox[/]? [T8]It[/] [D1]does[/] [X1]not[/] [D2]get[/] [S9]letters[/]."
+    spoken: "[T1]The[/] [J2]old[/] [S2]mailbox[/]? [T8]It[/] [D1]does[/][X1]n't[/] [D2]get[/] [S9]letters[/]."
+    ru: "Старый ящик? Туда письма не приходят."
+  - speaker: tom
+    emotion: surprised
+    text: "[T8]It[/] [D1]does[/] [X1]not[/] [D2]get[/] [S9]letters[/]? [A1]Never[/]?"
+    spoken: "[T8]It[/] [D1]does[/][X1]n't[/] [D2]get[/] [S9]letters[/]? [A1]Never[/]?"
+    ru: "Не приходят? Никогда?"
+  - speaker: postal
+    emotion: worried
+    text: "[A1]Never[/]. [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]!"
+    spoken: "[A1]Never[/]. [T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]!"
+    ru: "Никогда. Сам не знаю почему!"
+  - speaker: anna
+    emotion: happy
+    text: "[O2]Thank you[/]! [D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/]!"
+    ru: "Спасибо! Хорошего дня!"
+twister:
+  number: 12
+  series: sounds
+  text: "[S1]Rose[/], [S1]Rose[/], [T9]who[/] [D1]is[/] [S1]Rose[/]?"
+  ipa: "/ˈroʊz ˈroʊz ˈhu ɪz ˈroʊz/"
+  focus_sounds: [r, h]
+  source: original
