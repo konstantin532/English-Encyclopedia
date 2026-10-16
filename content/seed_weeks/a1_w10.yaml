@@ -48,7 +48,17 @@ script:
 twister:
   number: 10
   series: sounds
-  text: "[D2]Reading[/], [D4]walking[/], [D2]playing[/] [P1]in[/] [T1]the[/] [S4]park[/]."
-  ipa: "/ˈridɪŋ ˈwɔkɪŋ ˈpleɪɪŋ ɪn ðə ˈpɑrk/"
-  focus_sounds: [ng]
+  text: '[D2]Reading[/], [D4]walking[/], [D2]playing[/] — [A1]never[/] [P1]in[/] [T1]the[/] [S7]morning[/]!'
+  ipa: /ˈridɪŋ ˈwɔkɪŋ ˈpleɪɪŋ ˈnɛvɚ ɪn ðə ˈmɔrnɪŋ/
+  focus_sounds:
+  - ng
   source: original
+  goal_ru: Носовой ŋ в -ing против обычного n (never, in). Не добавляйте в конце «г».
+  tip_ru: 'ŋ: спинка языка прижата к нёбу сзади, звук идёт в нос, кончик языка внизу. n: кончик языка у верхних зубов. Проверка: на ŋ кончик языка свободен.'
+  warmup:
+  - '[D2]reading[/] — [A1]never[/]'
+  - '[D2]reading[/], [D4]walking[/]'
+  - '[D2]reading[/], [D4]walking[/], [D2]playing[/]'
+  - '[T8]I[/] [D3]like[/] [D2]reading[/].'
+  target_line: I like reading.
+  own_ru: 'Скажите, что вы любите делать: I like … -ing.'

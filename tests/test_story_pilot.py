@@ -726,3 +726,40 @@ class LevelA1CompleteTests(TestCase):
     def test_all_a1_stories_published(self):
         published = Story.objects.filter(level__code="A1", is_published=True).count()
         self.assertEqual(published, 5)
+
+
+class TwisterMethodTests(TestCase):
+    """Скороговорка по методике: цель, подсказка, лесенка ≥3 шагов, реплика из диалога, своя фраза."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_every_a1_twister_follows_method(self):
+        from apps.curriculum.models import TongueTwister
+        from apps.publishing.audit_weeks import audit_twister_method
+
+        for tw in TongueTwister.objects.filter(week__level__code="A1").select_related("week__level"):
+            r = AuditReport()
+            audit_twister_method(r, f"Скороговорка {tw.number}", tw)
+            self.assertEqual(r.errors, [], tw.number)
+            self.assertGreaterEqual(len(tw.warmup), 3)
+
+    def test_missing_method_is_an_error(self):
+        from apps.curriculum.models import TongueTwister
+        from apps.publishing.audit_weeks import audit_twister_method
+
+        tw = TongueTwister.objects.get(number=8)
+        tw.goal_ru, tw.warmup, tw.target_line = "", ["[A3]right[/]"], "This line is not in the dialogue."
+        r = AuditReport()
+        audit_twister_method(r, "Скороговорка 8", tw)
+        text = " ".join(r.errors)
+        self.assertIn("нет цели", text)
+        self.assertIn("в разминке 1 шагов", text)
+        self.assertIn("нет в диалоге", text)
+
+    def test_week_page_shows_trainer_steps(self):
+        response = self.client.get(reverse("curriculum:week", args=["a1", 8]))
+        for step in ("Попробуйте звук отдельно", "Соберите по кусочкам", "Вернитесь к разговору", "Точность"):
+            self.assertContains(response, step)
+        self.assertContains(response, "Go straight and turn left.")

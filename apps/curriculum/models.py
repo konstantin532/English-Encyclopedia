@@ -90,6 +90,12 @@ class TongueTwister(models.Model):
     source = models.CharField(max_length=8, choices=Source.choices)
     source_note = models.CharField(max_length=200, blank=True)
     audio = models.JSONField(default=dict, blank=True)
+    # Методика тренировки: цель, подсказка артикуляции, лесенка разминки и возврат к диалогу.
+    goal_ru = models.CharField(max_length=300, blank=True, help_text="Что тренируем, простыми словами")
+    tip_ru = models.TextField(blank=True, help_text="Положение языка и губ для трудного звука")
+    warmup = models.JSONField(default=list, blank=True, help_text="Лесенка: слово → пара → строка, с разметкой")
+    target_line = models.CharField(max_length=300, blank=True, help_text="Реплика диалога недели после тренировки")
+    own_ru = models.CharField(max_length=300, blank=True, help_text="Задание: своя фраза с тем же звуком")
 
     class Meta:
         ordering = ["number"]

@@ -49,7 +49,18 @@ script:
 twister:
   number: 1
   series: sounds
-  text: "[T2]This[/] [S2]house[/], [T2]this[/] [S2]room[/], [T2]this[/] [S2]book[/]."
-  ipa: "/ðɪs haʊs ðɪs rum ðɪs bʊk/"
-  focus_sounds: [dh]
+  text: '[T2]This[/] [J3]nice[/] [S2]house[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/].'
+  ipa: /ðɪs ˈnaɪs ˈhaʊs ɪz maɪ ˈnu ˈhaʊs/
+  focus_sounds:
+  - dh
   source: original
+  goal_ru: 'Переключение th /ð/ — s — z: this, house, is. Русскому языку хочется сказать «зис».'
+  tip_ru: 'th в this: кончик языка слегка между зубами, воздух идёт непрерывно, голос звучит. s в house — язык уходит за зубы, голоса нет. z в is — как s, но с голосом.'
+  warmup:
+  - '[T2]this[/]'
+  - '[T2]this[/] [S2]house[/]'
+  - '[T2]This[/] [S2]house[/] [D1]is[/] [J3]nice[/].'
+  - '[D1]Is[/] [T2]this[/] [S2]house[/] [J3]nice[/]?'
+  - '[T2]This[/] [S2]house[/] [D1]is[/] [J2]new[/].'
+  target_line: This is my new house.
+  own_ru: 'Скажите о своём доме или комнате: This room is… / This house is…'

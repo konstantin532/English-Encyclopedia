@@ -53,7 +53,18 @@ script:
 twister:
   number: 12
   series: sounds
-  text: "[S1]Rose[/], [S1]Rose[/], [T9]who[/] [D1]is[/] [S1]Rose[/]?"
-  ipa: "/ˈroʊz ˈroʊz ˈhu ɪz ˈroʊz/"
-  focus_sounds: [r, h]
+  text: '[T1]A[/] [S9]letter[/], [T1]a[/] [S2]stamp[/], [T1]a[/] [S9]letter[/], [T1]a[/] [S2]stamp[/]!'
+  ipa: /ə ˈlɛt̬ɚ ə ˈstæmp ə ˈlɛt̬ɚ ə ˈstæmp/
+  focus_sounds:
+  - flap
+  - ae
   source: original
+  goal_ru: Американское мягкое t между гласными (letter — «лэдэр») против чёткого st в stamp.
+  tip_ru: В letter кончик языка коротко «шлёпает» по бугоркам за зубами — получается почти «д». В stamp t после s остаётся твёрдым и без придыхания.
+  warmup:
+  - '[S9]letter[/] — [S2]stamp[/]'
+  - '[T1]a[/] [S9]letter[/], [T1]a[/] [S2]stamp[/]'
+  - '[T8]I[/] [D1]have[/] [T1]a[/] [S9]letter[/].'
+  - '[T8]I[/] [D1]do[/][X1]n''t[/] [D1]have[/] [T1]a[/] [S2]stamp[/].'
+  target_line: I do not have a stamp.
+  own_ru: 'Скажите, чего у вас сейчас нет: I don''t have a…'

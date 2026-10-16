@@ -194,6 +194,7 @@ def audit_twister(r, tw: TongueTwister) -> None:
         r.errors.append(f"{where}: у народной скороговорки нет source_note.")
     if tw.series == TongueTwister.Series.CONNECTED and not tw.full_form.strip():
         r.errors.append(f"{where}: у слияний нет full_form.")
+    audit_twister_method(r, where, tw)
     if tw.series == TongueTwister.Series.SOUNDS:
         stray = _unknown(tw.text, vocab_until(level, tw.week.number))
         if stray:
@@ -201,6 +202,35 @@ def audit_twister(r, tw: TongueTwister) -> None:
         n = len(text_tokens(tw.text))
         if not 3 <= n <= 8:
             r.errors.append(f"{where}: слов {n}, для серии sounds нужно 3–8.")
+
+
+def audit_twister_method(r, where: str, tw: TongueTwister) -> None:
+    """Методика: цель-звук, подсказка артикуляции, лесенка разминки и возврат к реплике диалога недели."""
+    from apps.publishing.audit import audit_contractions, vocab_until
+
+    if not tw.goal_ru.strip():
+        r.errors.append(f"{where}: нет цели — какой звук тренируем (goal_ru).")
+    if not tw.tip_ru.strip():
+        r.errors.append(f"{where}: нет подсказки про язык и губы (tip_ru).")
+    if len(tw.warmup) < 3:
+        r.errors.append(f"{where}: в разминке {len(tw.warmup)} шагов, нужно не меньше 3 (слово → пара → строка).")
+    vocab = vocab_until(tw.week.level, tw.week.number)
+    for i, line in enumerate(tw.warmup, 1):
+        for issue in find_issues(line):
+            r.errors.append(f"{where}, разминка {i}: {issue.token} — {issue.problem}.")
+        audit_contractions(r, f"{where}, разминка {i}", line)
+        stray = _unknown(line, vocab)
+        if stray:
+            r.errors.append(f"{where}, разминка {i}: незнакомые слова {', '.join(stray)}.")
+    if not tw.target_line.strip():
+        r.errors.append(f"{where}: нет реплики из диалога, к которой ведёт тренировка (target_line).")
+    else:
+        scene = getattr(tw.week, "scene", None)
+        dialogue = " ".join(normalize_line(line.get("text", "")) for line in (scene.script if scene else []))
+        if normalize_line(tw.target_line).rstrip(".!?") not in dialogue:
+            r.errors.append(f"{where}: реплики «{tw.target_line}» нет в диалоге недели.")
+    if not tw.own_ru.strip():
+        r.errors.append(f"{where}: нет задания на свою фразу (own_ru).")
 
 
 def audit_spheres(r) -> None:

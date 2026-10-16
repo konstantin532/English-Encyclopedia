@@ -46,7 +46,18 @@ script:
 twister:
   number: 9
   series: sounds
-  text: "[O1]Hello[/], [O1]hello[/], [T9]who[/] [D1]is[/] [T2]this[/]?"
-  ipa: "/həˈloʊ həˈloʊ ˈhu ɪz ˈðɪs/"
-  focus_sounds: [h, dh]
+  text: '[O1]Hello[/], [S1]Belova[/]! [N7]B-E-L-O-V-A[/]!'
+  ipa: /həˈloʊ bɛˈloʊvə ˈbi ˈi ˈɛl ˈoʊ ˈvi ˈeɪ/
+  focus_sounds:
+  - h
   source: original
+  goal_ru: 'Тёмное английское l (hello, el) и названия букв: E — «и», A — «эй», V — «ви». Тренировка диктовки фамилии.'
+  tip_ru: 'l в конце слога (el, hello) тёмное: кончик языка у верхних зубов, а спинка языка приподнята — звук глубже русского «л». E — «и», A — «эй»: не путайте с русскими «е» и «а».'
+  warmup:
+  - '[N7]B-E[/]'
+  - '[N7]B-E-L[/]'
+  - '[N7]B-E-L-O[/]'
+  - '[N7]B-E-L-O-V-A[/]'
+  - '[D7]Can[/] [T8]you[/] [D5]spell[/] [T8]it[/], [O8]please[/]?'
+  target_line: Can you spell your last name, please?
+  own_ru: Продиктуйте по буквам свою фамилию — медленно, группами по две-три буквы.
