@@ -578,6 +578,12 @@ class WeekEightTests(WeekContentMixin, TestCase):
     """Неделя 8 «Как пройти?»: Where is…?, предлоги места, указания."""
     week_number = 8
     slugs = ("a1-where-is-prepositions", "a1-directions-turn-left")
+
+    def test_help_us_and_between_in_dialogue(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=8)
+        text = " ".join(line["text"] for line in scene.script)
+        for piece in ("[D2]help[/] [T8]us[/]", "[P1]between[/]"):
+            self.assertIn(piece, text)
     twister_number = 8
 
     def test_complete(self):
@@ -836,7 +842,7 @@ class A1PoemsTests(TestCase):
 class WeeklyVocabularyNormTests(TestCase):
     """Добор A1 до 500 единиц: недели, которые уже доведены до нормы 30–39."""
 
-    FILLED_WEEKS = (3, 4, 5, 6, 7)
+    FILLED_WEEKS = (3, 4, 5, 6, 7, 8)
 
     @classmethod
     def setUpTestData(cls):

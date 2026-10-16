@@ -218,3 +218,9 @@ Final: Ruling: обычный git push не проходит (DNS из node; в 
 - Диалог: Мия спрашивает Where do you work?, Анна начинает в восемь, Мия заканчивает в два. Уроки: -s / -es у start, finish, write; профессии с a / an, in и at для места работы.
 - Защита main проверена через API: обязательная проверка test действует для всех.
 - Проверено: audit_course без ошибок, 296 тестов OK, неделя 7 и оба урока на 1280 и 390 px.
+
+## 2026-10-16 — неделя 8
+
+- Пакет a1_w08_city_plus (LX-00337–LX-00347, 11 единиц): under, between, in front of, across from (последние два — unit_type phrase, иначе части не считаются известными), him, them, us, hotel, supermarket, map, Can you help us?. Неделя 8 — 36 единиц.
+- Диалог: Анна «Sorry, can you help us?», мастерская «between the bank and the hotel». Уроки: новые предлоги места; таблица I → me, he → him, we → us, they → them.
+- Проверено: audit_course без ошибок, 297 тестов OK, неделя 8 и оба урока на 1280 и 390 px.
