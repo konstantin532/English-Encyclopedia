@@ -1,0 +1,118 @@
+slug: a1-always-never
+level: A1
+week: 10
+order: 19
+focus: A
+minutes: 40
+title: "Как часто: always, usually, sometimes, never"
+summary: "Как сказать, насколько часто вы что-то делаете: always, usually, sometimes, never. Куда ставить эти слова и почему never не любит второе «не»."
+units: [LX-00193, LX-00194, LX-00195, LX-00196, LX-00197, LX-00198, LX-00199, LX-00206, LX-00207, LX-00210]
+sound_notes:
+  - text: "I always read on Saturday."
+    ipa: "/aɪ ˈɔlweɪz ˈrid ɑn ˈsæt̬ɚˌdeɪ/"
+    note_ru: "always — «олуэйз», l мягкая и короткая; t в Saturday почти «д»"
+  - text: "I never walk!"
+    ipa: "/aɪ ˈnɛvɚ ˈwɔk/"
+    note_ru: "never с сильным ударением на первом слоге, l в walk не читается"
+  - text: "What do you do on the weekend?"
+    ipa: "/ˌwʌt də jə ˈdu ɑn ðə ˈwikˌɛnd/"
+    note_ru: "weekend — два ударения: «уИк-Энд»"
+contractions:
+  - full: "do not"
+    short: "don't"
+    ipa: "/doʊnt/"
+    note_ru: "I don't walk = I never walk? Нет: don't — «не гуляю (сейчас, обычно)», never — «никогда»."
+layers:
+  - number: 1
+    body: |
+      Рассказывая о выходных, мы говорим не только что делаем, но и как часто. Для этого есть слова частоты.
+
+      > [T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturday[/]. [T8]I[/] [D3]like[/] [D2]reading[/]. — По субботам я всегда читаю. Люблю читать.
+      > [O4]No[/], [T8]I[/] [A1]never[/] [D4]walk[/]! — Нет, я никогда не гуляю!
+
+      Шкала от «всегда» до «никогда»: **always → usually → sometimes → never**.
+  - number: 2
+    body: |
+      **always** — слияние двух слов: all way, «весь путь». Сначала — «всю дорогу», потом — «всё время».
+
+      **never** — тоже два слова: ne + ever, «не когда-либо». Отрицание уже спрятано внутри, поэтому второе «не» ему не нужно.
+
+      **weekend** — week + end, «конец недели». Слово американцы произносят с двумя ударениями.
+  - number: 3
+    body: |
+      Место слова частоты:
+
+      > [T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturday[/]. — По субботам я всегда читаю.
+      > [T8]I[/] [A1]never[/] [D4]walk[/]! — Я никогда не гуляю!
+
+      - Перед обычным глаголом: I always read, she never walks.
+      - После be: I am always busy, he is never at home.
+      - sometimes может стоять и в начале: Sometimes I read.
+      - Дни недели — с on: on Saturday, on Sunday, on the weekend.
+  - number: 4
+    body: |
+      Почему never без don't? В русском двойное отрицание — норма: «я **никогда не** гуляю». В английском одно отрицание отменяет другое. «I don't never walk» звучит как ошибка (или как просторечие из фильмов). Достаточно never.
+
+      > [T8]You[/] [A1]never[/] [D4]walk[/]? [A1]Never[/]? — Ты никогда не гуляешь? Совсем никогда?
+
+      Слово частоты отвечает на вопрос How often…? — «Как часто…?».
+  - number: 5
+    body: |
+      Так говорят о выходных американцы:
+
+      > [T9]What[/] [D1]do[/] [T8]you[/] [D2]do[/] [P3]on[/] [T1]the[/] [S7]weekend[/], [S1]Anna[/]? — Анна, а что ты делаешь в выходные?
+      > [T8]I[/] [D2]work[/] [P3]on[/] [S7]Sunday[/]. [T8]I[/] [A1]always[/] [D2]work[/] [P3]at[/] [N3]five[/]! — А я работаю в воскресенье. Всегда с пяти!
+
+      - В Америке — on the weekend, в Британии — at the weekend.
+      - Для коротких ответов хватит одного слова: Always! Never! Sometimes.
+      - В американском календаре неделя начинается с воскресенья.
+  - number: 6
+    body: |
+      Ловушки:
+
+      - «I read always» — не на месте. Правильно: I always read.
+      - «I don't never walk» — двойное отрицание. Правильно: I never walk.
+      - on Saturday — «в субботу» (одну или каждую); on Saturdays — подчёркнуто «по субботам».
+
+      Дни недели по-английски всегда пишут с большой буквы: Saturday, Sunday.
+  - number: 7
+    body: |
+      Четыре задания: понять слово частоты, поставить его на место, собрать фразу о выходных и рассказать о себе в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как правильно сказать «Я никогда не гуляю»?"
+    options: ["I never walk.", "I don't never walk.", "I walk never."]
+    answer: "I never walk."
+    hint_ru: "never уже содержит «не»."
+    explanation_ru: "I never walk — never стоит перед глаголом, и второе отрицание не нужно."
+    units: [LX-00197, LX-00210]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Анна читает каждую субботу без исключений. Вставьте слово."
+    prompt_en: "I ___ read on Saturday."
+    answer: "always"
+    hint_ru: "Каждый раз — всегда."
+    explanation_ru: "I always read on Saturday — always перед глаголом read."
+    units: [LX-00196, LX-00207]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите: «Иногда я играю на гитаре»."
+    options: [guitar, sometimes, the, I, play]
+    answer: "I sometimes play the guitar"
+    hint_ru: "Слово частоты перед глаголом play."
+    explanation_ru: "I sometimes play the guitar. Можно и Sometimes I play the guitar."
+    units: [LX-00198]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: коллега спрашивает, работаете ли вы по воскресеньям. Вы не работаете никогда. Ответьте."
+    prompt_en: "Do you work on Sunday? — ___"
+    answer: "No, I never work on Sunday."
+    accepted: ["No, I never work on Sunday", "I never work on Sunday.", "Never.", "No, never.", "No, I never work on Sundays.", "I never work on Sunday"]
+    hint_ru: "never перед work."
+    explanation_ru: "No, I never work on Sunday. Коротко — No, never."
+    units: [LX-00195, LX-00197]

@@ -590,3 +590,20 @@ class WeekNineTests(WeekContentMixin, TestCase):
         week9 = WeekScene.objects.get(week__level__code="A1", week__number=9)
         self.assertIn("обещает сделать копию", week8.story_beat["outcome_ru"])
         self.assertIn("почти готова", week9.story_beat["intro_ru"])
+
+
+class WeekTenTests(WeekContentMixin, TestCase):
+    """Неделя 10 «Выходные и хобби»: always / never, like + -ing."""
+    week_number = 10
+    slugs = ("a1-always-never", "a1-like-doing")
+    twister_number = 10
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_mia_still_works_every_day(self):
+        """Канон недели 6: Мия работает каждый день — значит, и в воскресенье."""
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=10)
+        mia = " ".join(line["text"] for line in scene.script if line["speaker"] == "mia")
+        self.assertNotIn("[A1]never[/] [D2]work[/]", mia)
+        self.assertIn("[D2]work[/] [P3]on[/] [S7]Sunday[/]", mia)
