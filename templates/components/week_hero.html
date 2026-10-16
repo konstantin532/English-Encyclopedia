@@ -1,0 +1,11 @@
+{% load static %}
+{% comment %}Обложка недели: заголовок, цель, номер недели; фото кафе только для недели 3.{% endcomment %}
+<header class="week-hero{% if week.global_number == 3 %} week-hero-cafe{% endif %}">
+  <div class="week-hero-copy">
+    <p class="studio-eyebrow">НЕДЕЛЯ {{ week.number|stringformat:'02d' }} · ЖИВОЙ АНГЛИЙСКИЙ</p>
+    <h1>{{ week.situation_ru|default:week.theme_ru }}</h1>
+    <p class="week-hero-description">{% if scene %}{{ scene.can_do_ru }}{% else %}{{ week.grammar_ru }}{% endif %}</p>
+    <p class="week-chapter"><span>{{ week.number|stringformat:'02d' }}</span> / {{ week.level.weeks }} <a href="{% url 'curriculum:level' week.level.slug %}" aria-label="Все недели уровня {{ week.level.code }}">Весь уровень ↗</a></p>
+  </div>
+  {% if week.global_number == 3 %}<img class="week-hero-image" src="{% static 'img/studio/cafe-morning.webp' %}" alt="Бариста встречает гостей в солнечном кафе" width="1536" height="1024" fetchpriority="high">{% else %}<span class="week-hero-letter" aria-hidden="true">{{ week.level.code }}</span>{% endif %}
+</header>

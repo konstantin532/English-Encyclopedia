@@ -68,6 +68,16 @@
   loadMusic();
 
   const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+  const durationEl = box.querySelector("[data-duration]");
+  const updateProgress = () => {
+    const duration = Number.isFinite(voice.duration) && voice.duration > 0 ? voice.duration : 0;
+    const percentage = duration ? Math.max(0, Math.min(100, voice.currentTime / duration * 100)) : 0;
+    box.style.setProperty("--audio-progress", percentage + "%");
+    if (durationEl) durationEl.textContent = duration ? fmt(duration) : "—";
+  };
+  voice.addEventListener("loadedmetadata", updateProgress);
+  voice.addEventListener("durationchange", updateProgress);
+  voice.addEventListener("timeupdate", updateProgress);
   const ambLevel = () => (ambVol ? Number(ambVol.value) / 100 : 0) * levelGain;
   const voiceLevel = () => Number(voiceVol.value) / 100;
 
