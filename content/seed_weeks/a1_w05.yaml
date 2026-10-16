@@ -1,0 +1,56 @@
+level: A1
+week: 5
+can_do_ru: "Я смогу спросить в магазине, есть ли нужный товар, попросить немного и узнать цену: How much is it?"
+mission_ru: "Дома или в магазине назовите по-английски три продукта: There is milk. There are apples… Потом спросите кого-нибудь: How much is it? — и ответьте ценой в долларах."
+chunks: [LX-00118, LX-00119, LX-00120, LX-00121, LX-00122, LX-00123]
+story_beat:
+  intro_ru: "Утро. Анна и Том идут в маленький магазин у дома. Нужно молоко, яблоки и корм для кота Box."
+  outcome_ru: "Корма для кошек нет, зато Box любит молоко. Анна и Том покупают молоко и шесть яблок."
+  next_hook_ru: "Дома Анна наливает молоко в миску. Но где же Box?"
+script:
+  - speaker: clerk
+    emotion: happy
+    text: "[J3]Good[/] [S7]morning[/]! [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?"
+    ru: "Доброе утро! Чем могу помочь?"
+  - speaker: anna
+    text: "[O4]Yes[/], [O8]please[/]. [D1]Is[/] [T9]there[/] [S3]milk[/]?"
+    ru: "Да, пожалуйста. Молоко есть?"
+  - speaker: clerk
+    text: "[O4]Yes[/], [T9]there[/] [D1]is[/]. [T1]The[/] [S3]milk[/] [D1]is[/] [A3]here[/]."
+    ru: "Да, есть. Молоко вот здесь."
+  - speaker: tom
+    emotion: excited
+    text: "[C1]And[/] [T9]there[/] [D1]are[/] [S3]apples[/]! [D7]Can[/] [T8]I[/] [D1]have[/] [T4]some[/] [S3]apples[/], [O8]please[/]?"
+    ru: "А ещё есть яблоки! Можно мне яблок, пожалуйста?"
+  - speaker: clerk
+    emotion: happy
+    text: "[O4]Yes[/], [T8]you[/] [D7]can[/]. [N1]Six[/] [S3]apples[/]. [T2]That[/] [D1]is[/] [N6]three dollars[/]."
+    spoken: "[O4]Yes[/], [T8]you[/] [D7]can[/]. [N1]Six[/] [S3]apples[/]. [T2]That[/][D1]'s[/] [N6]three dollars[/]."
+    ru: "Да, конечно. Шесть яблок. С вас три доллара."
+  - speaker: anna
+    text: "[D1]Is[/] [T9]there[/] [S6]cat[/] [S3]food[/], [O8]please[/]?"
+    ru: "А корм для кошек есть?"
+  - speaker: clerk
+    emotion: sad
+    text: "[O2]Sorry[/], [T9]there[/] [D1]is[/] [T4]no[/] [S6]cat[/] [S3]food[/]."
+    spoken: "[O2]Sorry[/], [T9]there[/][D1]'s[/] [T4]no[/] [S6]cat[/] [S3]food[/]."
+    ru: "Извините, корма для кошек нет."
+  - speaker: tom
+    emotion: surprised
+    text: "[T4]No[/] [S6]cat[/] [S3]food[/]? [S1]Box[/] [D3]likes[/] [S3]milk[/]!"
+    ru: "Корма нет? Ничего, Box любит молоко!"
+  - speaker: anna
+    text: "[A6]How[/] [T4]much[/] [D1]is[/] [T1]the[/] [S3]milk[/]?"
+    ru: "Сколько стоит молоко?"
+  - speaker: clerk
+    emotion: happy
+    text: "[T8]It[/] [D1]is[/] [N6]two dollars[/]. [D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/]!"
+    spoken: "[T8]It[/][D1]'s[/] [N6]two dollars[/]. [D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/]!"
+    ru: "Два доллара. Хорошего дня!"
+twister:
+  number: 5
+  series: sounds
+  text: "[T9]There[/] [D1]are[/] [N1]three[/] [S3]apples[/] [C1]and[/] [N1]three[/] [S3]eggs[/]."
+  ipa: "/ðɛr ɚ θri ˈæpəlz ən θri ˈɛɡz/"
+  focus_sounds: [dh, th]
+  source: original

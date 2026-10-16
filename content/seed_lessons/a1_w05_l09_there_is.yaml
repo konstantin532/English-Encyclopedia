@@ -1,0 +1,123 @@
+slug: a1-there-is-some
+level: A1
+week: 5
+order: 9
+focus: T
+minutes: 40
+title: "В магазине: there is, there are и some"
+summary: "Как сказать «есть, имеется»: there is milk, there are apples. Как спросить, есть ли товар, и попросить немного — some."
+units: [LX-00107, LX-00108, LX-00109, LX-00110, LX-00111, LX-00112, LX-00113, LX-00117, LX-00118, LX-00119, LX-00120, LX-00121]
+sound_notes:
+  - text: "Is there milk?"
+    ipa: "/ɪz ðɛr ˈmɪlk/"
+    note_ru: "there без ударения, ударение на milk; th звонкий, кончик языка между зубами"
+  - text: "There are apples."
+    ipa: "/ðɛr ɚ ˈæpəlz/"
+    note_ru: "are почти пропадает: «зэр эр эпэлз», слова сливаются"
+  - text: "Can I have some apples, please?"
+    ipa: "/kən aɪ hæv səm ˈæpəlz ˈpliz/"
+    note_ru: "some без ударения звучит как короткое «сэм»"
+contractions:
+  - full: "there is"
+    short: "there's"
+    ipa: "/ðɛrz/"
+    note_ru: "В разговоре почти всегда there's: There's no cat food."
+  - full: "is not"
+    short: "isn't"
+    ipa: "/ˈɪzənt/"
+    note_ru: "There isn't — «нет, не имеется»; рядом с there's no звучит одинаково часто."
+layers:
+  - number: 1
+    body: |
+      По-русски мы говорим «Молоко есть?», «Есть яблоки». По-английски для этого есть готовый оборот **there is / there are**.
+
+      > [D1]Is[/] [T9]there[/] [S3]milk[/]? — Молоко есть?
+      > [O4]Yes[/], [T9]there[/] [D1]is[/]. — Да, есть.
+      > [T9]There[/] [D1]are[/] [S3]apples[/]. — Есть яблоки.
+
+      Этот оборот нужен везде: в магазине, в новом доме, в городе. Он сообщает, что что-то где-то есть.
+  - number: 2
+    body: |
+      **there** в древнеанглийском звучало `þǣr` и значило «там». Позже слово стало ещё и «пустым» началом фразы: оно ничего не показывает, а только открывает рассказ о том, что есть.
+
+      **some** — древнее `sum`, «некий, какой-то». Поэтому some apples — «какие-то яблоки, сколько-то яблок», без точного числа.
+  - number: 3
+    body: |
+      Порядок простой: there, потом be, потом то, что есть.
+
+      > [T9]There[/] [D1]is[/] [T1]a[/] [S4]store[/] [A3]here[/]. — Здесь есть магазин.
+      > [T9]There[/] [D1]are[/] [N1]six[/] [S3]eggs[/]. — Есть шесть яиц.
+
+      - Одна вещь или то, что не считают штуками (milk, water), — **there is**.
+      - Несколько вещей — **there are**.
+      - В вопросе be встаёт вперёд: Is there…? Are there…?
+      - Нет вещи — there is no: There is no cat food.
+  - number: 4
+    body: |
+      Почему нельзя просто «Milk is?», как по-русски? В английском у каждого предложения должно быть начало — тот, о ком речь. Когда речь о том, что что-то просто есть, место начала занимает there.
+
+      **some** просит «немного, несколько», не называя числа:
+
+      > [D7]Can[/] [T8]I[/] [D1]have[/] [T4]some[/] [S3]apples[/], [O8]please[/]? — Можно мне яблок, пожалуйста?
+
+      Так вежливее и проще, чем считать: продавец сам предложит, сколько.
+  - number: 5
+    body: |
+      Так звучит разговор в американском магазине у дома:
+
+      > [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]? — Чем могу помочь?
+      > [O4]Yes[/], [O8]please[/]. [D1]Is[/] [T9]there[/] [S3]milk[/]? — Да, пожалуйста. Молоко есть?
+      > [O2]Sorry[/], [T9]there[/] [D1]is[/] [T4]no[/] [S6]cat[/] [S3]food[/]. — Извините, корма для кошек нет.
+
+      - Продавцы часто встречают покупателя фразой Can I help you?
+      - В быстрой речи there is звучит как there's: Sorry, there's no cat food.
+      - В коротком ответе сокращения нет: Yes, there is.
+  - number: 6
+    body: |
+      **there** «там» и there в обороте «есть» звучат одинаково, но работают по-разному:
+
+      - There is milk. — Есть молоко. (there не переводят)
+      - The milk is there. — Молоко там. (there — «там»)
+
+      Ещё одна ловушка: milk, water, food не считают штуками. Нельзя a milk или two foods в значении «два корма». С ними — there is и some: some milk, some water.
+  - number: 7
+    body: |
+      Четыре задания: узнать вопрос «есть ли», выбрать is или are, собрать просьбу с some и ответить в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Вы хотите узнать, продаётся ли в магазине молоко. Что спросить?"
+    options: ["Is there milk?", "The milk is here.", "How much is it?"]
+    answer: "Is there milk?"
+    hint_ru: "Нужен вопрос «есть ли». Он начинается с Is there."
+    explanation_ru: "Is there milk? — «Молоко есть?». В вопросе is стоит перед there."
+    units: [LX-00119]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Яблок несколько. Вставьте нужную форму be."
+    prompt_en: "There ___ apples."
+    answer: "are"
+    hint_ru: "Яблок больше одного."
+    explanation_ru: "Несколько вещей — there are: There are apples."
+    units: [LX-00109, LX-00112]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите просьбу: «Можно мне яблок, пожалуйста?»"
+    options: [some, Can, apples, please, have, I]
+    answer: "Can I have some apples please"
+    hint_ru: "Начните с Can I have, потом some."
+    explanation_ru: "Can I have some apples, please? — some значит «немного, несколько», без точного числа."
+    units: [LX-00113, LX-00121]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: Том спрашивает, есть ли дома вода. Вода есть. Ответьте коротко."
+    prompt_en: "Is there water? — ___"
+    answer: "Yes, there is."
+    accepted: ["Yes there is", "Yes, there is", "Yes, there is water.", "Yes, there is water", "There is water.", "Yes. There is water."]
+    hint_ru: "Короткий ответ повторяет there и be."
+    explanation_ru: "Yes, there is. — короткий ответ без сокращения: в конце фразы there's не говорят."
+    units: [LX-00120]

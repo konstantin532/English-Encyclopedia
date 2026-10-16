@@ -1,0 +1,119 @@
+slug: a1-how-much-prices
+level: A1
+week: 5
+order: 10
+focus: N
+minutes: 40
+title: "Сколько стоит: How much is it? и цены в долларах"
+summary: "Как спросить цену, понять ответ и назвать сумму в долларах. Почему $2 читают two dollars и где в цене слово «стоит»."
+units: [LX-00114, LX-00115, LX-00116, LX-00122, LX-00123, LX-00109, LX-00108]
+sound_notes:
+  - text: "How much is it?"
+    ipa: "/ˌhaʊ ˈmʌtʃ ɪz ɪt/"
+    note_ru: "ударение на much; is it сливаются: «изит»"
+  - text: "It's two dollars."
+    ipa: "/ɪts ˈtu ˈdɑlɚz/"
+    note_ru: "dollars — «далэрз»: первый звук открытый, как «а», американское r в конце"
+  - text: "That's three dollars."
+    ipa: "/ðæts ˈθri ˈdɑlɚz/"
+    note_ru: "в three язык между зубами и глухой звук, в that's — звонкий"
+contractions:
+  - full: "it is"
+    short: "it's"
+    ipa: "/ɪts/"
+    note_ru: "Цену почти всегда называют с it's: It's two dollars."
+  - full: "that is"
+    short: "that's"
+    ipa: "/ðæts/"
+    note_ru: "That's three dollars — «С вас три доллара», когда считают покупку."
+layers:
+  - number: 1
+    body: |
+      Чтобы купить что-то, нужно понять цену. Для этого хватит одного вопроса и одного ответа.
+
+      > [A6]How[/] [T4]much[/] [D1]is[/] [T1]the[/] [S3]milk[/]? — Сколько стоит молоко?
+      > [T8]It[/] [D1]is[/] [N6]two dollars[/]. — Два доллара.
+
+      Названия цифр вы уже знаете с недели 3. Осталось добавить слово dollars.
+  - number: 2
+    body: |
+      **dollar** пришло из немецкого `Taler` — так называли большую серебряную монету из долины Йоахимсталь в Чехии. Голландцы произносили «далер», от них слово попало в Америку.
+
+      **how much** — буквально «как много». Отсюда и значение «сколько», когда считать штуками нельзя.
+  - number: 3
+    body: |
+      Вопрос о цене строится всегда одинаково:
+
+      > [A6]How[/] [T4]much[/] [D1]is[/] [T8]it[/]? — Сколько это стоит?
+      > [A6]How[/] [T4]much[/] [D1]are[/] [T1]the[/] [S3]apples[/]? — Сколько стоят яблоки?
+
+      - Одна вещь — How much is…?
+      - Несколько вещей — How much are…?
+      - Ответ: It is… для одной вещи, They are… для нескольких. Можно короче: Two dollars.
+  - number: 4
+    body: |
+      Где же слово «стоит»? Его нет. По-английски говорят «Сколько это?» и «Это два доллара». Глагол be сам связывает вещь и цену.
+
+      Число стоит перед dollars, и dollars всегда во множественном числе, если долларов больше одного:
+
+      > [T2]That[/] [D1]is[/] [N6]three dollars[/]. — С вас три доллара.
+  - number: 5
+    body: |
+      Так называют цену в американском магазине:
+
+      > [T8]It[/] [D1]is[/] [N6]two dollars[/]. — Два доллара.
+      > [T2]That[/] [D1]is[/] [N6]three dollars[/]. — С вас три доллара.
+
+      - В разговоре — It's и That's: It's two dollars. That's three dollars.
+      - Цену часто называют совсем коротко: Two dollars.
+      - На ценнике пишут $2: значок доллара стоит перед числом.
+  - number: 6
+    body: |
+      Пишут одно, читают другое:
+
+      - $2 — читают two dollars, а не «доллар два».
+      - $1 — one dollar, без -s: доллар один.
+      - $10 — ten dollars.
+
+      В русском «два доллара», «пять долларов» — окончания меняются. В английском всё проще: больше одного — dollars.
+  - number: 7
+    body: |
+      Четыре задания: узнать вопрос о цене, прочитать ценник, собрать вопрос и ответить продавцу в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Вы хотите узнать цену. Что спросить?"
+    options: ["How much is it?", "Is there milk?", "Can I help you?"]
+    answer: "How much is it?"
+    hint_ru: "how much — «сколько»."
+    explanation_ru: "How much is it? — «Сколько это стоит?». Слово «стоит» по-английски не нужно."
+    units: [LX-00122]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "На ценнике $3. Допишите, как это читают."
+    prompt_en: "It is three ___."
+    answer: "dollars"
+    hint_ru: "Долларов больше одного."
+    explanation_ru: "$3 читают three dollars: число, потом dollars с -s."
+    units: [LX-00116]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите вопрос: «Сколько стоит молоко?»"
+    options: [the, much, How, milk, is]
+    answer: "How much is the milk"
+    hint_ru: "Начните с How much."
+    explanation_ru: "How much is the milk? — how much, потом is, потом вещь."
+    units: [LX-00114, LX-00115]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: вы продаёте яблоки на школьной ярмарке. Покупатель спрашивает цену, а на ценнике $5. Ответьте."
+    prompt_en: "How much is it? — ___"
+    answer: "It is five dollars."
+    accepted: ["It's five dollars.", "Five dollars.", "It is five dollars", "It's five dollars", "Five dollars", "That's five dollars.", "That is five dollars."]
+    hint_ru: "It is или It's, потом число и dollars."
+    explanation_ru: "It is five dollars. В разговоре — It's five dollars или просто Five dollars."
+    units: [LX-00116, LX-00123]

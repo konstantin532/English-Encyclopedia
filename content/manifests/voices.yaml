@@ -34,8 +34,13 @@ roles:
     name_en: Barista
     voice: af_sarah
     speed: 1.0
+  clerk:
+    name_ru: Продавщица
+    name_en: Store clerk
+    voice: af_jessica
+    speed: 1.0
 # Пул для эпизодических героев: водитель, продавщица, судья и т. д.
-extras: [am_eric, am_liam, af_jessica, am_fenrir, af_river]  # af_sarah закреплён за ролью barista
+extras: [am_eric, am_liam, am_fenrir, af_river]  # af_sarah — barista, af_jessica — clerk
 # Фон сцены: громкость относительно голоса по уровням (дБ). На A1 фон едва слышен.
 ambience_gain_db: {A1: -30, A1+: -28, A2: -24, A2+: -22, B1: -20, B1+: -19, B2: -18, B2+: -17}
 # Эмоции реплик. Kokoro передаёт их скоростью, громкостью и паузой после реплики.

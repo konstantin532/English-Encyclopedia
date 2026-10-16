@@ -461,3 +461,24 @@ class BrokenManifestTests(TestCase):
                     self.assertEqual(WeekScene.objects.get(week__level__code="A1", week__number=1).audio, {})
             finally:
                 shutil.rmtree(tmp, ignore_errors=True)
+
+
+class WeekFiveTests(WeekContentMixin, TestCase):
+    """Неделя 5 «Магазин у дома»: there is / are, some, How much…?, цены."""
+    week_number = 5
+    slugs = ("a1-there-is-some", "a1-how-much-prices")
+    twister_number = 5
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_page_shows_clerk_prices_and_twister(self):
+        response = self.client.get(reverse("curriculum:week", args=["a1", 5]))
+        self.assertContains(response, "Продавщица")
+        self.assertContains(response, "How")
+        self.assertContains(response, "dollars")
+        self.assertContains(response, "eggs")
+
+    def test_hook_leads_to_story_two(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=5)
+        self.assertIn("Box", scene.story_beat["next_hook_ru"])

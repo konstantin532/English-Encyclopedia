@@ -1,0 +1,232 @@
+# Неделя 5 «Магазин у дома»: there is / there are, some, How much…?, цены в долларах. CEFR не сверялся.
+level: A1
+week: 5
+units:
+- uid: LX-00107
+  lemma: store
+  meaning: a place where you buy things
+  class: S4
+  forms:
+  - stores
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /stɔr/
+  translation_ru: магазин
+  example_en: '[T9]There[/] [D1]is[/] [T1]a[/] [S4]store[/] [A3]here[/].'
+  example_ru: Здесь есть магазин.
+  situation: Ищете магазин рядом с домом
+  usage_note: 'В Америке обычно store, а shop — маленькая лавка или мастерская.'
+- uid: LX-00108
+  lemma: milk
+  meaning: a white drink from cows
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mɪlk/
+  translation_ru: молоко
+  example_en: '[D1]Is[/] [T9]there[/] [S3]milk[/]?'
+  example_ru: Молоко есть?
+  situation: Покупаете продукты
+  usage_note: 'milk не считают штуками: нельзя a milk или two milks в значении «два молока».'
+- uid: LX-00109
+  lemma: apple
+  meaning: a round red or green fruit
+  class: S3
+  forms:
+  - apples
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈæpəl/
+  translation_ru: яблоко
+  example_en: '[T9]There[/] [D1]are[/] [S3]apples[/].'
+  example_ru: Есть яблоки.
+  situation: Покупаете продукты
+  usage_note: 'Перед apple — an: an apple. Ударный звук широкий, рот открыт сильнее, чем в «э».'
+- uid: LX-00110
+  lemma: egg
+  meaning: a round thing from a hen that you can eat
+  class: S3
+  forms:
+  - eggs
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɛɡ/
+  translation_ru: яйцо
+  example_en: '[T9]There[/] [D1]are[/] [N1]six[/] [S3]eggs[/].'
+  example_ru: Есть шесть яиц.
+  situation: Покупаете продукты
+  usage_note: Перед egg — an — an egg.
+- uid: LX-00111
+  lemma: food
+  meaning: things that people and animals eat
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fud/
+  translation_ru: еда; корм
+  example_en: '[D1]Is[/] [T9]there[/] [S6]cat[/] [S3]food[/]?'
+  example_ru: Есть корм для кошек?
+  situation: Покупаете корм для питомца
+  usage_note: 'cat food — «кошачья еда», корм. Первое слово говорит, для кого или из чего.'
+- uid: LX-00112
+  lemma: there
+  meaning: used with be to say that something exists
+  class: T9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ðɛr/
+  translation_ru: (есть, имеется — в оборотах there is, there are)
+  example_en: '[T9]There[/] [D1]is[/] [S3]milk[/].'
+  example_ru: Есть молоко.
+  situation: Говорите, что где-то что-то есть
+  usage_note: 'В there is слово there не переводят как «там»: оно только открывает фразу «есть, имеется».'
+- uid: LX-00113
+  lemma: some
+  meaning: a number of, an amount of
+  class: T4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sʌm/
+  ipa_ru: сам
+  translation_ru: немного, несколько
+  example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T4]some[/] [S3]apples[/], [O8]please[/]?'
+  example_ru: Можно мне яблок?
+  situation: Просите немного чего-то
+  usage_note: 'Без ударения звучит коротко: сэм /səm/.'
+- uid: LX-00114
+  lemma: how
+  meaning: in what way; used in questions
+  class: A6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /haʊ/
+  translation_ru: как; сколько (в how much)
+  example_en: '[A6]How[/] [T4]much[/] [D1]is[/] [T8]it[/]?'
+  example_ru: Сколько это стоит?
+  situation: Спрашиваете цену
+- uid: LX-00115
+  lemma: much
+  meaning: a large amount; used in questions about amount
+  class: T4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mʌtʃ/
+  translation_ru: много; сколько (в how much)
+  example_en: '[A6]How[/] [T4]much[/] [D1]is[/] [T8]it[/]?'
+  example_ru: Сколько это стоит?
+  situation: Спрашиваете цену
+- uid: LX-00116
+  lemma: dollar
+  meaning: the money of the United States
+  class: N6
+  forms:
+  - dollars
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈdɑlɚ/
+  translation_ru: доллар
+  example_en: '[T8]It[/] [D1]is[/] [N6]two dollars[/].'
+  example_ru: Это стоит два доллара.
+  situation: Называете цену
+  usage_note: 'Пишут $2, а читают two dollars. Значок ставят перед числом, а слово — после.'
+- uid: LX-00117
+  lemma: help
+  meaning: to make it easier for someone to do something
+  class: D2
+  forms:
+  - helps
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hɛlp/
+  translation_ru: помогать
+  example_en: '[D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?'
+  example_ru: Чем могу помочь?
+  situation: Продавец обращается к покупателю
+- uid: LX-00118
+  lemma: Can I help you?
+  meaning: A shop worker offers help
+  class: D7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kən aɪ ˈhɛlp ju/
+  translation_ru: Чем могу помочь?
+  example_en: Can I help you?
+  example_ru: Чем могу помочь?
+  situation: Магазин у дома
+  usage_note: Так встречают покупателя. Ответ — Yes, please или No, thank you.
+- uid: LX-00119
+  lemma: Is there milk?
+  meaning: Asking if a shop has something
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪz ðɛr ˈmɪlk/
+  translation_ru: Молоко есть?
+  example_en: Is there milk?
+  example_ru: Молоко есть?
+  situation: Магазин у дома
+  usage_note: В вопросе is встаёт перед there.
+- uid: LX-00120
+  lemma: Yes, there is.
+  meaning: A short yes answer to Is there…?
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈjɛs ðɛr ˈɪz/
+  translation_ru: Да, есть.
+  example_en: Yes, there is.
+  example_ru: Да, есть.
+  situation: Магазин у дома
+  usage_note: В конце короткого ответа there is не сокращают.
+- uid: LX-00121
+  lemma: Can I have some apples, please?
+  meaning: Asking for some of something
+  class: T4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kən aɪ hæv səm ˈæpəlz ˈpliz/
+  translation_ru: Можно мне яблок, пожалуйста?
+  example_en: Can I have some apples, please?
+  example_ru: Можно мне яблок, пожалуйста?
+  situation: Магазин у дома
+- uid: LX-00122
+  lemma: How much is it?
+  meaning: Asking the price
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌhaʊ ˈmʌtʃ ɪz ɪt/
+  translation_ru: Сколько это стоит?
+  example_en: How much is it?
+  example_ru: Сколько это стоит?
+  situation: Магазин у дома
+  usage_note: 'Слово «стоит» не нужно: how much is it — «сколько это».'
+- uid: LX-00123
+  lemma: It is two dollars.
+  meaning: Saying a price
+  class: N6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪt ɪz ˈtu ˈdɑlɚz/
+  translation_ru: Это стоит два доллара.
+  example_en: It is two dollars.
+  example_ru: Это стоит два доллара.
+  situation: Магазин у дома
+  usage_note: 'В разговоре — It''s two dollars.'
