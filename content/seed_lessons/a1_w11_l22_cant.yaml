@@ -1,0 +1,116 @@
+slug: a1-cant-cannot
+level: A1
+week: 11
+order: 22
+focus: X
+minutes: 40
+title: "Не могу: can't и cannot"
+summary: "Как сказать, что не можете что-то сделать: I can't sleep. Почему cannot пишут слитно, как различить на слух can и can't и чем but отличается от and."
+units: [LX-00217, LX-00218, LX-00219, LX-00224]
+sound_notes:
+  - text: "I can't sleep."
+    ipa: "/aɪ ˈkænt ˈslip/"
+    note_ru: "can't с ударением и широким «э»: «кэнт»; t почти не слышно"
+  - text: "I can sleep."
+    ipa: "/aɪ kən ˈslip/"
+    note_ru: "can без ударения — «кэн», почти «кн»: так can отличают от can't"
+  - text: "You can't sleep?"
+    ipa: "/ju ˈkænt ˈslip/"
+    note_ru: "вопрос голосом: в конце интонация вверх"
+contractions:
+  - full: "cannot"
+    short: "can't"
+    ipa: "/kænt/"
+    note_ru: "В разговоре почти всегда can't. Американцы — «кэнт», британцы — «кант»."
+layers:
+  - number: 1
+    body: |
+      На неделе 2 вы научились can — «могу». Теперь — обратное: **can't**, «не могу».
+
+      > [T8]You[/] [D7]can[/][X1]not[/] [D2]sleep[/]? [D1]Do[/] [T8]you[/] [D2]work[/] [P1]at[/] [T1]a[/] [S2]computer[/] [T5]every[/] [S7]day[/]? — Не можете спать? Вы каждый день работаете за компьютером?
+
+      Полная форма **cannot** пишется слитно, в разговоре — **can't**.
+  - number: 2
+    body: |
+      **cannot** пишут одним словом по традиции, которая сложилась около 300 лет назад. Остальные отрицания пишут раздельно: do not, is not. Cannot — исключение.
+
+      **but** в древнеанглийском значило «снаружи, кроме». Отсюда современное «но»: всё так, **кроме** одного.
+  - number: 3
+    body: |
+      Схема:
+
+      > [T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/]. — Я не могу спать.
+
+      - Отрицание: I cannot / I can't + глагол: I can't sleep.
+      - Глагол после can't без to и без -s: he can't sleep.
+      - Вопрос: Can you sleep? — Yes, I can. / No, I can't.
+      - but соединяет противоположное: My head is OK, but my back hurts.
+  - number: 4
+    body: |
+      Как на слух отличить can от can't? Ведь t в конце американцы почти не произносят. Подсказка — ударение:
+
+      - I **can** sleep — can безударное, короткое: «ай кн слип».
+      - I **can't** sleep — can't ударное и длинное: «ай кэнт слип».
+
+      Если слово звучит громко и протяжно — скорее всего, это can't.
+
+      > [O4]No[/], [T8]it[/] [D1]does[/] [X1]not[/]. [C5]But[/] [T3]my[/] [S5]back[/] [D3]hurts[/], [C1]and[/] [T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/]. — Нет. Но болит спина, и я не могу спать.
+  - number: 5
+    body: |
+      Так звучит отказ и совет у врача:
+
+      > [T5]Every[/] [S7]day[/]? [C5]But[/] [T8]I[/] [D3]like[/] [T3]my[/] [S2]computer[/]! — Каждый день? Но я люблю свой компьютер!
+      > [C1]And[/] [T4]no[/] [S2]computer[/] [P3]at[/] [S7]night[/]! — И никакого компьютера ночью!
+
+      - В разговоре всегда can't; cannot — в письме и для сильного «не могу».
+      - Вежливый отказ: Sorry, I can't.
+      - Совет врача часто звучит как указание: Walk every day. Drink water.
+  - number: 6
+    body: |
+      Ловушки:
+
+      - «I can not sleep» раздельно — допустимо только для особого ударения. Обычно — cannot или can't.
+      - «I can't to sleep» — лишнее to.
+      - and и but: and добавляет похожее (I walk and I read), but — противоположное (I walk, but Tom never walks).
+  - number: 7
+    body: |
+      Четыре задания: различить can и can't, вставить отрицание, собрать фразу с but и отказаться в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как правильно: «Я не могу спать»?"
+    options: ["I can't sleep.", "I can't to sleep.", "I don't can sleep."]
+    answer: "I can't sleep."
+    hint_ru: "После can't глагол без to."
+    explanation_ru: "I can't sleep — can't сам делает отрицание, do и to не нужны."
+    units: [LX-00218, LX-00224]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Напишите полную форму «не могу» одним словом."
+    prompt_en: "I ___ sleep."
+    answer: "cannot"
+    accepted: ["can't"]
+    hint_ru: "Пишется слитно."
+    explanation_ru: "cannot — пишется одним словом. В разговоре — can't."
+    units: [LX-00218]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите: «Но у меня болит спина»."
+    options: [back, But, hurts, my]
+    answer: "But my back hurts"
+    hint_ru: "But в начале."
+    explanation_ru: "But my back hurts. but вводит противоположное."
+    units: [LX-00219]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: друг зовёт вас в парк в воскресенье, но вы работаете. Вежливо откажитесь."
+    prompt_en: "Walk in the park on Sunday? — ___"
+    answer: "Sorry, I can't."
+    accepted: ["Sorry, I can't", "Sorry, I cannot.", "Sorry, I can't. I work on Sunday.", "Sorry, I can't. I work on Sunday", "No, sorry. I can't.", "Sorry, I work on Sunday."]
+    hint_ru: "Sorry + I can't."
+    explanation_ru: "Sorry, I can't. Можно объяснить: I work on Sunday."
+    units: [LX-00218]

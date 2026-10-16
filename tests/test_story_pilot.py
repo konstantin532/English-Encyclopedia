@@ -607,3 +607,19 @@ class WeekTenTests(WeekContentMixin, TestCase):
         mia = " ".join(line["text"] for line in scene.script if line["speaker"] == "mia")
         self.assertNotIn("[A1]never[/] [D2]work[/]", mia)
         self.assertIn("[D2]work[/] [P3]on[/] [S7]Sunday[/]", mia)
+
+
+class WeekElevenTests(WeekContentMixin, TestCase):
+    """Неделя 11 «У врача»: headache, hurts, can't / cannot."""
+    week_number = 11
+    slugs = ("a1-what-hurts", "a1-cant-cannot")
+    twister_number = 11
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_cant_is_split_into_base_and_negation(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=11)
+        spoken = " ".join(line.get("spoken", "") for line in scene.script)
+        self.assertIn("[D7]ca[/][X1]n't[/]", spoken)
+        self.assertNotIn("[D7]can't[/]", spoken)

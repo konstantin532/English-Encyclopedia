@@ -1,0 +1,180 @@
+# Неделя 11 «У врача»: I have a headache, …hurts, can't / cannot. CEFR не сверялся.
+level: A1
+week: 11
+units:
+- uid: LX-00212
+  lemma: headache
+  meaning: a pain in your head
+  class: S5
+  forms:
+  - headaches
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhɛdeɪk/
+  translation_ru: головная боль
+  example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/].'
+  example_ru: У меня болит голова.
+  situation: Жалуетесь врачу
+  usage_note: 'ache читается «эйк»: хЭдэйк. Говорят с a: I have a headache.'
+- uid: LX-00213
+  lemma: head
+  meaning: the top part of the body with the eyes and mouth
+  class: S5
+  forms:
+  - heads
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hɛd/
+  translation_ru: голова
+  example_en: '[T3]My[/] [S5]head[/] [D3]hurts[/].'
+  example_ru: У меня болит голова.
+  situation: Жалуетесь врачу
+- uid: LX-00214
+  lemma: back
+  meaning: the part of the body from the neck to the bottom, behind you
+  class: S5
+  forms:
+  - backs
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bæk/
+  translation_ru: спина
+  example_en: '[T3]My[/] [S5]back[/] [D3]hurts[/].'
+  example_ru: У меня болит спина.
+  situation: Жалуетесь врачу
+  usage_note: 'Широкий звук æ: «бэк». back ещё значит «назад».'
+- uid: LX-00215
+  lemma: stomach
+  meaning: the part of the body where food goes
+  class: S5
+  forms:
+  - stomachs
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈstʌmək/
+  translation_ru: живот, желудок
+  example_en: '[T3]My[/] [S5]stomach[/] [D3]hurts[/].'
+  example_ru: У меня болит живот.
+  situation: Жалуетесь врачу
+  usage_note: 'ch читается «к»: «стАмэк».'
+- uid: LX-00216
+  lemma: hurt
+  meaning: to feel pain
+  class: D3
+  forms:
+  - hurts
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hɝt/
+  translation_ru: болеть
+  example_en: '[T3]My[/] [S5]back[/] [D3]hurts[/].'
+  example_ru: У меня болит спина.
+  situation: Жалуетесь врачу
+  usage_note: 'Болит часть тела, поэтому hurts с -s: my back hurts.'
+- uid: LX-00217
+  lemma: sleep
+  meaning: to rest with your eyes closed at night
+  class: D2
+  forms:
+  - sleeps
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /slip/
+  translation_ru: спать
+  example_en: '[T8]I[/] [D7]ca[/][X1]n''t[/] [D2]sleep[/].'
+  example_ru: Я не могу спать.
+  situation: Жалуетесь врачу
+- uid: LX-00218
+  lemma: cannot
+  meaning: the negative form of can
+  class: D7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkænɑt/
+  translation_ru: не могу, не может
+  example_en: '[T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/].'
+  example_ru: Я не могу спать.
+  situation: Говорите, что не получается
+  usage_note: 'Пишут слитно: cannot. В разговоре — can''t, в Америке «кэнт».'
+- uid: LX-00219
+  lemma: but
+  meaning: used to add something different
+  class: C5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bʌt/
+  ipa_ru: бат
+  translation_ru: но
+  example_en: '[C5]But[/] [T3]my[/] [S5]back[/] [D3]hurts[/].'
+  example_ru: Но болит спина.
+  situation: Противопоставляете
+- uid: LX-00220
+  lemma: How are you?
+  meaning: Asking how someone feels
+  class: O1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌhaʊ ɚ ˈju/
+  translation_ru: Как дела? Как вы себя чувствуете?
+  example_en: How are you?
+  example_ru: Как дела?
+  situation: У врача
+  usage_note: 'В обычной жизни это приветствие — отвечают Fine, thanks! У врача на него отвечают честно.'
+- uid: LX-00221
+  lemma: I have a headache.
+  meaning: Saying your head hurts
+  class: S5
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈhæv ə ˈhɛdeɪk/
+  translation_ru: У меня болит голова.
+  example_en: I have a headache.
+  example_ru: У меня болит голова.
+  situation: У врача
+- uid: LX-00222
+  lemma: Does your head hurt?
+  meaning: Asking about pain
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /dəz jɚ ˈhɛd ˈhɝt/
+  translation_ru: У вас болит голова?
+  example_en: Does your head hurt?
+  example_ru: У вас болит голова?
+  situation: У врача
+- uid: LX-00223
+  lemma: My back hurts.
+  meaning: Saying where you feel pain
+  class: D3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /maɪ ˈbæk ˈhɝts/
+  translation_ru: У меня болит спина.
+  example_en: My back hurts.
+  example_ru: У меня болит спина.
+  situation: У врача
+- uid: LX-00224
+  lemma: I cannot sleep.
+  meaning: Saying you are not able to sleep
+  class: X1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈkænɑt ˈslip/
+  translation_ru: Я не могу спать.
+  example_en: I cannot sleep.
+  example_ru: Я не могу спать.
+  situation: У врача
+  usage_note: 'В разговоре — I can''t sleep.'
