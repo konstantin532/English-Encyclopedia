@@ -1,0 +1,35 @@
+English Encyclopedia
+Copyright (c) 2026 konstantin532. Все права защищены. All rights reserved.
+
+РУССКИЙ
+
+Код, тексты курса, уроки, диалоги, истории, стихи, скороговорки, упражнения,
+словарные статьи, структура курса, дизайн и звуковые файлы проекта
+English Encyclopedia принадлежат автору (konstantin532).
+
+Без письменного разрешения автора запрещено копировать, изменять, публиковать,
+распространять, продавать, размещать на сайтах и в приложениях, использовать
+для обучения нейросетей или выдавать за свои любые части проекта.
+
+Возможность открыть репозиторий на GitHub не даёт права на использование.
+Чтобы получить разрешение, свяжитесь с автором через GitHub:
+https://github.com/konstantin532
+
+ENGLISH
+
+All code, course texts, lessons, dialogues, stories, poems, tongue twisters,
+exercises, dictionary entries, course structure, design and audio files of
+English Encyclopedia are the property of the author (konstantin532).
+
+No part of this project may be copied, modified, published, distributed, sold,
+hosted, used to train machine-learning models, or presented as one's own
+without the author's prior written permission. Being able to view this
+repository does not grant any licence to use it.
+
+СТОРОННИЕ КОМПОНЕНТЫ / THIRD-PARTY COMPONENTS
+
+Сторонние компоненты остаются под своими лицензиями, и этот файл их не меняет:
+- шрифты Golos Text, Literata, Gentium Plus — SIL Open Font License
+  (static/fonts/OFL-*.txt);
+- GSAP (static/vendor/gsap) — лицензия GreenSock;
+- Python-библиотеки и модели озвучки — лицензии их авторов.

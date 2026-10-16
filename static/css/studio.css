@@ -186,3 +186,4 @@ h1,h2,h3{letter-spacing:-.025em}a{text-underline-offset:.22em}
   .lesson-grid .aside h2{margin-bottom:12px}
   .prose select{margin-left:0;width:100%}
 }
+.site-footer .site-copyright{flex-basis:100%}
