@@ -1,6 +1,9 @@
 from django.urls import path
 
-from . import views
+from . import cafe_lab, views
 
 app_name = "core"
-urlpatterns = [path("", views.home, name="home")]
+urlpatterns = [
+    path("", views.home, name="home"),
+    path("lab/cafe/", cafe_lab.cafe_lab, name="cafe_lab"),
+]
