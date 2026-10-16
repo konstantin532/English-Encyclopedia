@@ -1,0 +1,119 @@
+slug: a1-he-she-works
+level: A1
+week: 7
+order: 13
+focus: D
+minutes: 40
+title: "Он работает: he works, she works — окончание -s"
+summary: "Почему с he, she и одним человеком у глагола появляется -s: Tom works, Mia works. Как спросить Does he…? и ответить No, he doesn't. Как звучит -s."
+units: [LX-00148, LX-00149, LX-00150, LX-00147, LX-00153, LX-00154, LX-00155, LX-00156]
+sound_notes:
+  - text: "Tom works at home."
+    ipa: "/ˈtɑm ˈwɝks ət ˈhoʊm/"
+    note_ru: "-s после k глухое: «уёркс»; не проглатывайте его"
+  - text: "Does he work at a school?"
+    ipa: "/dəz i ˈwɝk ət ə ˈskul/"
+    note_ru: "does без ударения — «дэз», h в he почти пропадает: «дэзи»"
+  - text: "He goes home at eight."
+    ipa: "/hi ˈɡoʊz ˈhoʊm ət ˈeɪt/"
+    note_ru: "после гласной -s звонкое: goes — «гоуз»"
+contractions:
+  - full: "does not"
+    short: "doesn't"
+    ipa: "/ˈdʌzənt/"
+    note_ru: "No, he doesn't. В разговоре почти всегда doesn't."
+layers:
+  - number: 1
+    body: |
+      На неделе 6 вы говорили о себе: I work, you work. Теперь — о других людях: о друге, соседе, коллеге.
+
+      > [S1]Tom[/] [D2]works[/] [P1]at[/] [S2]home[/]. — Том работает дома.
+      > [T8]He[/] [D2]works[/] [P3]at[/] [S7]night[/]! — Он работает по ночам!
+
+      Главное правило недели: когда речь об одном человеке — he, she, Tom, Mia, — глагол получает окончание **-s**.
+  - number: 2
+    body: |
+      Окончание **-s** — последний след старых английских окончаний. Когда-то у глагола их было много, как в русском: «я работаю, ты работаешь, он работает». Почти все исчезли. Выжило только одно — у «он, она»: he works.
+
+      В старом английском на его месте стояло `-eth`: he worketh. Его ещё можно встретить в старинных книгах и песнях.
+  - number: 3
+    body: |
+      Схема с he, she и одним человеком:
+
+      > [S1]Mia[/] [D2]works[/] [A3]here[/], [P1]at[/] [T1]the[/] [S4]cafe[/]! — Мия работает здесь, в кафе!
+      > [D1]Does[/] [T8]he[/] [D2]work[/] [P1]at[/] [T1]a[/] [S4]school[/]? — Он работает в школе?
+      > [O4]No[/], [T8]he[/] [D1]does[/] [X1]not[/]. — Нет.
+
+      - Утверждение: he / she + глагол с -s: she works.
+      - Вопрос: does + he / she + глагол без -s: Does she work?
+      - Отрицание: he does not work — he doesn't work.
+      - -s бывает только в одном месте: в does или в глаголе, но не в обоих.
+  - number: 4
+    body: |
+      Почему в вопросе -s «уходит» из глагола? Помощник does — это do плюс то же самое -s. Окончание переезжает в помощника, а основной глагол остаётся словарным:
+
+      - He works. → Does he work?
+      - She likes milk. → Does she like milk?
+
+      Два глагола меняются по-своему: have → **has**, do → **does**, go → **goes**.
+
+      > [T8]He[/] [D1]has[/] [T1]a[/] [S2]computer[/]. — У него компьютер.
+  - number: 5
+    body: |
+      Так говорят о чужой работе в Америке:
+
+      > [O4]No[/], [T8]he[/] [D1]does[/] [X1]not[/]. [S1]Tom[/] [D2]works[/] [P1]at[/] [S2]home[/]. [T8]He[/] [D1]has[/] [T1]a[/] [S2]computer[/]. — Нет. Том работает дома. У него компьютер.
+
+      - В разговоре — No, he doesn't.
+      - Многие американцы работают из дома: works from home. На A1 достаточно works at home.
+      - О соседе сверху говорят the man upstairs — без имени, просто «мужчина сверху».
+  - number: 6
+    body: |
+      Как звучит -s — зависит от последнего звука глагола:
+
+      - после глухих k, p, t — глухое «с»: works, likes, gets;
+      - после звонких и гласных — «з»: goes, has, does;
+      - после ch, sh, s — «из» и на письме -es: teaches, watches.
+
+      Самая частая ошибка русскоязычных — забыть -s: «He work». Американец поймёт, но сразу услышит ошибку.
+  - number: 7
+    body: |
+      Четыре задания: узнать правильную форму, вставить does, собрать фразу о друге и ответить о соседе в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как правильно: «Мия работает в кафе»?"
+    options: ["Mia works at the cafe.", "Mia work at the cafe.", "Mia is work at the cafe."]
+    answer: "Mia works at the cafe."
+    hint_ru: "Один человек — глагол с -s."
+    explanation_ru: "Mia works — с одним человеком глагол получает -s. is рядом с work лишний."
+    units: [LX-00153]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Спросите, работает ли Том в школе. Вставьте помощника."
+    prompt_en: "___ he work at a school?"
+    answer: "Does"
+    hint_ru: "С he помощник — do плюс -s."
+    explanation_ru: "Does he work…? — -s ушло в does, а work остался без -s."
+    units: [LX-00154]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите фразу: «Он работает ночью»."
+    options: [night, works, He, at]
+    answer: "He works at night"
+    hint_ru: "He + глагол с -s + at night."
+    explanation_ru: "He works at night. «Ночью» — at night, как at seven."
+    units: [LX-00150, LX-00156]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: вас спрашивают, работает ли ваша соседка в кафе. Не работает. Ответьте коротко."
+    prompt_en: "Does she work at a cafe? — ___"
+    answer: "No, she does not."
+    accepted: ["No, she doesn't.", "No she doesn't", "No, she does not", "No she does not", "No, she doesn't"]
+    hint_ru: "Короткий ответ на Does she…? строится на does."
+    explanation_ru: "No, she does not — в разговоре No, she doesn't. Повторять work не нужно."
+    units: [LX-00155]

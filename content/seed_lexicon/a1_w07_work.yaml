@@ -1,0 +1,212 @@
+# Неделя 7 «Кто где работает»: Present Simple с he / she (окончание -s), профессии. CEFR не сверялся.
+level: A1
+week: 7
+units:
+- uid: LX-00142
+  lemma: teacher
+  meaning: a person whose job is to teach
+  class: S9
+  forms:
+  - teachers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈtitʃɚ/
+  translation_ru: учитель, учительница
+  example_en: '[T8]I[/] [D1]am[/] [T1]a[/] [S9]teacher[/].'
+  example_ru: Я учитель.
+  situation: Рассказываете о своей работе
+  usage_note: 'Перед профессией — a: I am a teacher. Без a — ошибка.'
+- uid: LX-00143
+  lemma: school
+  meaning: a place where children learn
+  class: S4
+  forms:
+  - schools
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /skul/
+  translation_ru: школа
+  example_en: '[T8]I[/] [D2]work[/] [P1]at[/] [T1]a[/] [S4]school[/].'
+  example_ru: Я работаю в школе.
+  situation: Рассказываете, где работаете
+  usage_note: 'sch читается «ск»: скул.'
+- uid: LX-00144
+  lemma: doctor
+  meaning: a person whose job is to treat sick people
+  class: S9
+  forms:
+  - doctors
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈdɑktɚ/
+  translation_ru: врач
+  example_en: '[T8]She[/] [D1]is[/] [T1]a[/] [S9]doctor[/].'
+  example_ru: Она врач.
+  situation: Рассказываете, кто кем работает
+- uid: LX-00145
+  lemma: driver
+  meaning: a person whose job is to drive a bus, taxi or truck
+  class: S9
+  forms:
+  - drivers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈdraɪvɚ/
+  translation_ru: водитель
+  example_en: '[T8]He[/] [D1]is[/] [T1]a[/] [S9]driver[/].'
+  example_ru: Он водитель.
+  situation: Рассказываете, кто кем работает
+- uid: LX-00146
+  lemma: barista
+  meaning: a person who makes coffee in a cafe
+  class: S9
+  forms:
+  - baristas
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bəˈristə/
+  translation_ru: бариста
+  example_en: '[S1]Mia[/] [D1]is[/] [T1]a[/] [S9]barista[/].'
+  example_ru: Мия — бариста.
+  situation: Рассказываете, кто кем работает
+  usage_note: 'Ударение на второй слог: бэрИста.'
+- uid: LX-00147
+  lemma: computer
+  meaning: an electronic machine for work, writing and the internet
+  class: S2
+  forms:
+  - computers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kəmˈpjut̬ɚ/
+  translation_ru: компьютер
+  example_en: '[T8]He[/] [D1]has[/] [T1]a[/] [S2]computer[/].'
+  example_ru: У него есть компьютер.
+  situation: Рассказываете о работе дома
+  usage_note: 't между гласными мягкая, почти «д»: кэмпьЮдэр.'
+- uid: LX-00148
+  lemma: man
+  meaning: an adult male person
+  class: S1
+  forms:
+  - men
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mæn/
+  translation_ru: мужчина, человек
+  example_en: '[T1]The[/] [S1]man[/] [A3]upstairs[/] [D2]works[/] [P3]at[/] [S7]night[/].'
+  example_ru: Сосед сверху работает по ночам.
+  situation: Говорите о соседях
+  usage_note: 'Множественное число неправильное: one man — two men.'
+- uid: LX-00149
+  lemma: upstairs
+  meaning: on a higher floor of a building
+  class: A3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌʌpˈstɛrz/
+  translation_ru: наверху, этажом выше
+  example_en: '[T1]The[/] [S1]man[/] [A3]upstairs[/] [D1]is[/] [J4]busy[/].'
+  example_ru: Сосед сверху занят.
+  situation: Говорите о соседях
+  usage_note: 'the man upstairs — «мужчина сверху», то есть сосед этажом выше.'
+- uid: LX-00150
+  lemma: night
+  meaning: the time when it is dark and people sleep
+  class: S7
+  forms:
+  - nights
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /naɪt/
+  translation_ru: ночь
+  example_en: '[T8]He[/] [D2]works[/] [P3]at[/] [S7]night[/].'
+  example_ru: Он работает ночью.
+  situation: Говорите о времени работы
+  usage_note: 'at night — ночью; at, как в at seven.'
+- uid: LX-00151
+  lemma: What do you do?
+  meaning: Asking about someone's job
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌwʌt də jə ˈdu/
+  translation_ru: Кем ты работаешь?
+  example_en: What do you do?
+  example_ru: Кем ты работаешь?
+  situation: Кто где работает
+  usage_note: 'Буквально «Что ты делаешь?», но спрашивают о работе. Первое do — помощник, второе — «делать».'
+- uid: LX-00152
+  lemma: I am a teacher.
+  meaning: Saying your job
+  class: S9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ əm ə ˈtitʃɚ/
+  translation_ru: Я учитель.
+  example_en: I am a teacher.
+  example_ru: Я учитель.
+  situation: Кто где работает
+  usage_note: 'В разговоре — I''m a teacher. Артикль a обязателен.'
+- uid: LX-00153
+  lemma: Tom works at home.
+  meaning: Saying where someone works
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈtɑm ˈwɝks ət ˈhoʊm/
+  translation_ru: Том работает дома.
+  example_en: Tom works at home.
+  example_ru: Том работает дома.
+  situation: Кто где работает
+  usage_note: 'С одним человеком — works, с окончанием -s.'
+- uid: LX-00154
+  lemma: Does he work at a school?
+  meaning: Asking about someone else's job
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /dəz i ˈwɝk ət ə ˈskul/
+  translation_ru: Он работает в школе?
+  example_en: Does he work at a school?
+  example_ru: Он работает в школе?
+  situation: Кто где работает
+  usage_note: '-s переходит в does, а work остаётся без -s.'
+- uid: LX-00155
+  lemma: No, he does not.
+  meaning: A short no answer about he or she
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈnoʊ hi ˈdʌz nɑt/
+  translation_ru: Нет.
+  example_en: No, he does not.
+  example_ru: Нет.
+  situation: Кто где работает
+  usage_note: 'В разговоре — No, he doesn''t.'
+- uid: LX-00156
+  lemma: He works at night.
+  meaning: Saying when someone works
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /hi ˈwɝks ət ˈnaɪt/
+  translation_ru: Он работает ночью.
+  example_en: He works at night.
+  example_ru: Он работает ночью.
+  situation: Кто где работает
