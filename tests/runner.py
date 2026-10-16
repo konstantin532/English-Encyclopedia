@@ -12,6 +12,15 @@ class ContentLoadedRunner(DiscoverRunner):
     """Курс загружается сразу после создания тестовой базы — до копий для --parallel,
     поэтому каждая параллельная копия уже содержит курс."""
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.parallel > 1:
+            try:
+                import tblib  # noqa: F401
+            except ImportError:
+                print("Внимание: tblib не установлен (uv sync). Если тест упадёт, --parallel покажет "
+                      "«cannot pickle 'traceback'» вместо ошибки — тогда запустите этот файл тестов без --parallel.")
+
     def setup_databases(self, **kwargs):
         from django.db import connections
 

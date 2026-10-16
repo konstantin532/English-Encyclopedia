@@ -4,9 +4,9 @@ week: 6
 order: 12
 focus: N
 minutes: 40
-title: "Время: at seven, seven o'clock и What time…?"
-summary: "Как назвать время и сказать, во сколько что-то происходит: It is seven o'clock, I get up at six. Почему перед временем ставят at."
-units: [LX-00132, LX-00133, LX-00135, LX-00136, LX-00140, LX-00124, LX-00126]
+title: "Время: at seven, in the evening, lunch и dinner"
+summary: "Как назвать время и части дня: It is seven o'clock, at six, in the evening, at night. Когда в Америке завтракают, обедают и ужинают."
+units: [LX-00131, LX-00132, LX-00133, LX-00135, LX-00136, LX-00140, LX-00124, LX-00126, LX-00309, LX-00310, LX-00311, LX-00312, LX-00316, LX-00317]
 sound_notes:
   - text: "It's seven o'clock."
     ipa: "/ɪts ˈsɛvən əˈklɑk/"
@@ -73,9 +73,20 @@ layers:
       - дома — at home.
 
       И ещё: «семь часов» — не seven hours. Hours — это длительность: «семь часов подряд». Для времени на часах — seven o'clock.
+
+      Части дня говорят с **in the**, а ночь — с **at**:
+
+      - [P1]in[/] [T1]the[/] [S7]morning[/] — утром, [P1]in[/] [T1]the[/] [S7]afternoon[/] — днём (после 12)
+      - [P1]in[/] [T1]the[/] [S7]evening[/] — вечером, [P3]at[/] [S7]night[/] — ночью
+
+      Еда тоже идёт по часам — и тоже с have, без артикля:
+
+      > [T8]I[/] [D2]have[/] [S3]breakfast[/] [P3]at[/] [N3]seven[/], [S3]lunch[/] [P3]at[/] [N3]twelve[/] [C1]and[/] [S3]dinner[/] [P3]at[/] [N3]six[/]. — Завтрак в семь, обед в двенадцать, ужин в шесть.
+
+      [A2]early[/] — рано, [A2]late[/] — поздно. В США ужинают рано: в шесть-семь вечера.
   - number: 7
     body: |
-      Четыре задания: узнать, как назвать время, вставить at, собрать вопрос и ответить в новой ситуации.
+      Шесть заданий: узнать, как назвать время, вставить at, собрать вопрос, ответить в новой ситуации, выбрать in the или at и назвать время еды.
 exercises:
   - order: 1
     kind: choice
@@ -114,3 +125,21 @@ exercises:
     hint_ru: "at + число."
     explanation_ru: "I have breakfast at eight. Коротко — At eight."
     units: [LX-00130, LX-00136]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как сказать «вечером»?"
+    options: ["in the evening", "at the evening", "in evening"]
+    answer: "in the evening"
+    hint_ru: "Части дня — с in the."
+    explanation_ru: "in the morning, in the afternoon, in the evening — но at night."
+    units: [LX-00312]
+  - order: 6
+    kind: fill
+    stage: substitution
+    prompt_ru: "Скажите, что вы обедаете в двенадцать."
+    prompt_en: "I have ___ at twelve."
+    answer: "lunch"
+    hint_ru: "Обед в середине дня."
+    explanation_ru: "I have lunch at twelve. — lunch без артикля, как breakfast и dinner."
+    units: [LX-00309]

@@ -1,0 +1,236 @@
+# Неделя 6, добор до нормы: распорядок дня, еда по времени суток. CEFR не сверялся.
+level: A1
+week: 6
+units:
+- uid: LX-00303
+  lemma: eat
+  meaning: to put food in your mouth and swallow it
+  class: D2
+  forms:
+  - eats
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /it/
+  translation_ru: есть, кушать
+  example_en: '[T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/].'
+  example_ru: Я обедаю в двенадцать.
+  situation: Рассказываете о своём дне
+  usage_note: 'Долгое «и»: «и-ит». Прошедшее время — ate, это тема A1+.'
+- uid: LX-00304
+  lemma: cook
+  meaning: to make food hot and ready to eat
+  class: D2
+  forms:
+  - cooks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kʊk/
+  translation_ru: готовить (еду)
+  example_en: '[T8]I[/] [D2]cook[/] [S3]dinner[/] [P3]at[/] [N3]seven[/].'
+  example_ru: Я готовлю ужин в семь.
+  situation: Рассказываете о своём дне
+  usage_note: 'Короткое «у»: «кук». cook — ещё и «повар».'
+- uid: LX-00305
+  lemma: watch
+  meaning: to look at something for some time
+  class: D6
+  forms:
+  - watches
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɑtʃ/
+  translation_ru: смотреть (ТВ, фильм)
+  example_en: '[T8]I[/] [D6]watch[/] [S2]TV[/] [P1]in[/] [T1]the[/] [S7]evening[/].'
+  example_ru: Вечером я смотрю телевизор.
+  situation: Рассказываете о своём дне
+  usage_note: 'watch — смотреть то, что движется: TV, фильм. Без артикля: watch TV.'
+- uid: LX-00306
+  lemma: listen
+  meaning: to pay attention to a sound
+  class: D6
+  forms:
+  - listens
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈlɪsən/
+  translation_ru: слушать
+  example_en: '[T8]I[/] [D6]listen[/] [P2]to[/] [S10]music[/] [P1]in[/] [T1]the[/] [S7]evening[/].'
+  example_ru: Вечером я слушаю музыку.
+  situation: Рассказываете о своём дне
+  usage_note: 't не читается: «лисн». После listen нужен to: listen to.'
+- uid: LX-00307
+  lemma: come
+  meaning: to move towards the speaker or a place
+  class: D4
+  forms:
+  - comes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kʌm/
+  translation_ru: приходить
+  example_en: '[T8]I[/] [D4]come[/] [A3]home[/] [P3]at[/] [N3]six[/].'
+  example_ru: Я прихожу домой в шесть.
+  situation: Рассказываете о своём дне
+  usage_note: Пишется с o, звучит «кам». come home — без to.
+- uid: LX-00308
+  lemma: take
+  meaning: to do an action such as a shower or a bus
+  class: D2
+  forms:
+  - takes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /teɪk/
+  translation_ru: брать; принимать (душ)
+  example_en: '[T8]I[/] [D2]take[/] [T1]a[/] [S2]shower[/] [P3]at[/] [N3]six[/].'
+  example_ru: Я принимаю душ в шесть.
+  situation: Рассказываете о своём дне
+  usage_note: Американцы говорят take a shower — «принять душ».
+- uid: LX-00309
+  lemma: lunch
+  meaning: a meal in the middle of the day
+  class: S3
+  forms:
+  - lunches
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /lʌntʃ/
+  translation_ru: обед
+  example_en: '[T8]I[/] [D2]have[/] [S3]lunch[/] [P3]at[/] [N3]twelve[/].'
+  example_ru: Я обедаю в двенадцать.
+  situation: Рассказываете о своём дне
+  usage_note: 'Как и breakfast — без артикля: have lunch.'
+- uid: LX-00310
+  lemma: dinner
+  meaning: the main meal of the evening
+  class: S3
+  forms:
+  - dinners
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈdɪnɚ/
+  translation_ru: ужин
+  example_en: '[T8]I[/] [D2]have[/] [S3]dinner[/] [P3]at[/] [N3]seven[/].'
+  example_ru: Я ужинаю в семь.
+  situation: Рассказываете о своём дне
+  usage_note: В США dinner — вечерняя еда, около шести-семи.
+- uid: LX-00311
+  lemma: afternoon
+  meaning: the time from midday to evening
+  class: S7
+  forms:
+  - afternoons
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌæftɚˈnun/
+  translation_ru: день, время после полудня
+  example_en: '[T8]I[/] [D2]work[/] [P1]in[/] [T1]the[/] [S7]afternoon[/].'
+  example_ru: Днём я работаю.
+  situation: Рассказываете о своём дне
+  usage_note: 'in the afternoon — с 12 до 5–6 вечера. Ударение в конце: afterNOON.'
+- uid: LX-00312
+  lemma: evening
+  meaning: the time from about six until night
+  class: S7
+  forms:
+  - evenings
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈivnɪŋ/
+  translation_ru: вечер
+  example_en: '[P1]in[/] [T1]the[/] [S7]evening[/]'
+  example_ru: вечером
+  situation: Рассказываете о своём дне
+  usage_note: 'Два слога: «ИВнинг». Good evening — вечернее приветствие.'
+- uid: LX-00313
+  lemma: TV
+  meaning: television
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌtiˈvi/
+  translation_ru: телевизор, ТВ
+  example_en: '[T8]I[/] [D6]watch[/] [S2]TV[/].'
+  example_ru: Я смотрю телевизор.
+  situation: Рассказываете о своём дне
+  usage_note: 'Читается по буквам: «ти-ви». watch TV — без артикля.'
+- uid: LX-00314
+  lemma: shower
+  meaning: washing your body under running water
+  class: S2
+  forms:
+  - showers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈʃaʊɚ/
+  translation_ru: душ
+  example_en: '[T8]I[/] [D2]take[/] [T1]a[/] [S2]shower[/].'
+  example_ru: Я принимаю душ.
+  situation: Рассказываете о своём дне
+  usage_note: «шауэр», американское r в конце.
+- uid: LX-00315
+  lemma: bed
+  meaning: a piece of furniture for sleeping
+  class: S2
+  forms:
+  - beds
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɛd/
+  translation_ru: кровать
+  example_en: '[T8]I[/] [D4]go[/] [P2]to[/] [S2]bed[/] [P3]at[/] [N3]eleven[/].'
+  example_ru: Я ложусь спать в одиннадцать.
+  situation: Рассказываете о своём дне
+  usage_note: go to bed — «ложиться спать», без артикля.
+- uid: LX-00316
+  lemma: late
+  meaning: after the usual or expected time
+  class: A2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /leɪt/
+  translation_ru: поздно
+  example_en: '[T8]I[/] [D9]get[/] [X3]up[/] [A2]late[/] [P3]on[/] [S7]Sunday[/].'
+  example_ru: В воскресенье я встаю поздно.
+  situation: Рассказываете о своём дне
+  usage_note: «лэйт». Противоположность — early.
+- uid: LX-00317
+  lemma: early
+  meaning: before the usual or expected time
+  class: A2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɝli/
+  translation_ru: рано
+  example_en: '[T8]I[/] [D4]go[/] [P2]to[/] [S2]bed[/] [A2]early[/].'
+  example_ru: Я рано ложусь спать.
+  situation: Рассказываете о своём дне
+  usage_note: 'Американское r в середине: «Ёрли».'
+- uid: LX-00318
+  lemma: I go to bed early.
+  meaning: Saying you go to sleep before the usual time
+  class: D4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈɡoʊ tə ˈbɛd ˈɝli/
+  translation_ru: Я рано ложусь спать.
+  example_en: I go to bed early.
+  example_ru: Я рано ложусь спать.
+  situation: Рассказываете о своём дне
+  usage_note: 'Учите фразу целиком. to звучит коротко: «тэ». Вместо early можно late или время: at eleven.'

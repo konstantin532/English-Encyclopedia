@@ -513,6 +513,12 @@ class WeekSixTests(WeekContentMixin, TestCase):
     """Неделя 6 «Мой обычный день»: Present Simple с I / you, время at seven."""
     week_number = 6
     slugs = ("a1-present-simple-i-you", "a1-time-at-seven")
+
+    def test_daily_routine_words_in_dialogue(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=6)
+        text = " ".join(line["text"] for line in scene.script)
+        for piece in ("[D4]go[/] [P2]to[/] [S2]bed[/] [A2]early[/]", "[D2]eat[/]"):
+            self.assertIn(piece, text)
     twister_number = 6
 
     def test_complete(self):
@@ -824,7 +830,7 @@ class A1PoemsTests(TestCase):
 class WeeklyVocabularyNormTests(TestCase):
     """Добор A1 до 500 единиц: недели, которые уже доведены до нормы 30–39."""
 
-    FILLED_WEEKS = (3, 4, 5)
+    FILLED_WEEKS = (3, 4, 5, 6)
 
     @classmethod
     def setUpTestData(cls):
@@ -842,5 +848,6 @@ class WeeklyVocabularyNormTests(TestCase):
             scene = WeekScene.objects.get(week__level__code="A1", week__number=n)
             taught = set(Lesson.objects.filter(week=scene.week).values_list("units__uid", flat=True))
             taught |= set(scene.chunks.values_list("uid", flat=True))
+            taught |= set(Story.objects.filter(week=scene.week).values_list("new_units__uid", flat=True))
             missing = LexicalUnit.objects.filter(week=scene.week).exclude(uid__in=taught)
             self.assertEqual(list(missing.values_list("lemma", flat=True)), [], f"неделя {n}")
