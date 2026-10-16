@@ -1,0 +1,123 @@
+slug: a1-questions-do-does
+level: A1
+week: 9
+order: 17
+focus: D
+minutes: 40
+title: "Вопросы с do и does: Do you…? What time does…?"
+summary: "Как задавать вопросы в настоящем простом времени: Do you have my key? What time does the shop open? Когда do, а когда does, и куда девается -s."
+units: [LX-00182, LX-00186, LX-00188, LX-00191, LX-00192]
+sound_notes:
+  - text: "Do you have my key?"
+    ipa: "/də jə ˈhæv maɪ ˈki/"
+    note_ru: "do you сливаются в «дэ ю», ударение на have и key"
+  - text: "What time does the shop open?"
+    ipa: "/ˌwʌt ˈtaɪm dəz ðə ˈʃɑp ˈoʊpən/"
+    note_ru: "does без ударения — «дэз»; голос опускается в конце, как в любом вопросе с what"
+  - text: "It opens at nine."
+    ipa: "/ɪt ˈoʊpənz ət ˈnaɪn/"
+    note_ru: "-s после n звонкое: «оупэнз»"
+contractions:
+  - full: "does not"
+    short: "doesn't"
+    ipa: "/ˈdʌzənt/"
+    note_ru: "It doesn't open at eight — «Она не открывается в восемь»."
+  - full: "what is"
+    short: "what's"
+    ipa: "/wʌts/"
+    note_ru: "What's your phone number? — так спрашивают почти всегда."
+layers:
+  - number: 1
+    body: |
+      На неделях 6 и 7 вы видели вопросы с do и does по отдельности. Теперь соберём их вместе и добавим вопросительные слова.
+
+      > [O1]Hello[/]! [T2]This[/] [D1]is[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]my[/] [S2]key[/], [O8]please[/]? — Алло! Это Анна. Мой ключ у вас?
+      > [T9]What[/] [S7]time[/] [D1]does[/] [T1]the[/] [S4]shop[/] [D2]open[/]? — А во сколько открывается мастерская?
+
+      Помощник do или does ставят перед тем, о ком спрашивают.
+  - number: 2
+    body: |
+      **do** — одно из древнейших английских слов, родственное немецкому `tun`. Сначала оно значило «класть, ставить», потом «делать». В вопросах do начали использовать около 500 лет назад, во времена Шекспира. Раньше спрашивали, просто переставляя глагол: «Have you my key?».
+
+      **hello** — молодое слово. Широко его стали говорить вместе с изобретением телефона: Эдисон советовал начинать разговор именно с него.
+  - number: 3
+    body: |
+      Схема вопроса:
+
+      > [D1]Do[/] [T8]you[/] [D1]have[/] [T3]my[/] [S2]key[/]? — У вас мой ключ?
+      > [T9]What[/] [S7]time[/] [D1]does[/] [T1]the[/] [S4]shop[/] [D2]open[/]? — Во сколько открывается мастерская?
+
+      - I, you, they — **do**: Do you…?
+      - he, she, it, одна вещь или человек — **does**: Does the shop…?
+      - После do / does глагол без -s: does the shop open.
+      - Вопросительное слово — в самом начале: What time does…? Where do you…?
+  - number: 4
+    body: |
+      Почему -s исчезает у глагола? Оно переходит в does. Сравните:
+
+      - The shop opens at nine. — The shop **does** open → Does the shop open?
+      - Tom works at home. → Does Tom work at home?
+
+      Окончание бывает в предложении только один раз. Если оно ушло в does, у open его уже нет.
+
+      > [T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/]. [O1]See you[/]! — В девять. До встречи!
+  - number: 5
+    body: |
+      Так звучит деловой звонок в Америке:
+
+      > [O1]Hello[/]! [S2]Key[/] [S4]shop[/]. — Алло! Мастерская ключей.
+      > [O1]Hello[/]! [T2]This[/] [D1]is[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]my[/] [S2]key[/], [O8]please[/]? — Алло! Это Анна. Мой ключ у вас?
+
+      - В магазине или мастерской сразу называют место: Key shop. Hello, cafe on the corner.
+      - Себя называют This is Anna. Фраза I am Anna по телефону звучит странно.
+      - Прощаются коротко: See you! See you at nine!
+  - number: 6
+    body: |
+      Три частые ошибки:
+
+      - «Does the shop opens?» — лишнее -s. Правильно: Does the shop open?
+      - «What time the shop opens?» — пропущен помощник. Правильно: What time does the shop open?
+      - «Do he work?» — с he нужен does: Does he work?
+
+      Вопросы с be (Is it…? Where is…?) живут без do: Where is the bank? — не «Where does the bank is».
+  - number: 7
+    body: |
+      Четыре задания: выбрать do или does, вставить помощника, собрать вопрос о времени и задать вопрос в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как правильно спросить, во сколько открывается мастерская?"
+    options: ["What time does the shop open?", "What time does the shop opens?", "What time the shop opens?"]
+    answer: "What time does the shop open?"
+    hint_ru: "-s бывает только один раз."
+    explanation_ru: "What time does the shop open? — -s ушло в does, open без -s."
+    units: [LX-00191]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Вы звоните в мастерскую. Спросите, у них ли ваш ключ."
+    prompt_en: "___ you have my key?"
+    answer: "Do"
+    hint_ru: "С you — do."
+    explanation_ru: "Do you have my key? — с you помощник do."
+    units: [LX-00188]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите вопрос: «Во сколько открывается кафе?»"
+    options: [the, open, What, cafe, time, does]
+    answer: "What time does the cafe open"
+    hint_ru: "What time, потом does, потом кафе и open."
+    explanation_ru: "What time does the cafe open? — кафе одно, поэтому does."
+    units: [LX-00186, LX-00191]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: вы хотите узнать, работает ли Мия каждый день. Спросите Тома."
+    prompt_en: "___"
+    answer: "Does Mia work every day?"
+    accepted: ["Does Mia work every day", "Tom, does Mia work every day?", "Does she work every day?", "Does she work every day"]
+    hint_ru: "Mia — один человек: does."
+    explanation_ru: "Does Mia work every day? — с Mia помощник does, work без -s."
+    units: [LX-00186]

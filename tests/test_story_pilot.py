@@ -569,3 +569,24 @@ class StoryThreeTests(TestCase):
     def test_story_three_page_renders(self):
         response = self.client.get(reverse("stories:detail", args=[3]))
         self.assertContains(response, "mailbox")
+
+
+class WeekNineTests(WeekContentMixin, TestCase):
+    """Неделя 9 «Телефон и сообщения»: do / does, диктовка по буквам и цифрам."""
+    week_number = 9
+    slugs = ("a1-questions-do-does", "a1-spelling-phone-numbers")
+    twister_number = 9
+
+    def test_complete(self):
+        self.check_complete()
+
+    def test_spelled_surname_is_known(self):
+        from apps.publishing.audit import character_names
+
+        self.assertIn("belova", character_names())
+
+    def test_continuity_copy_is_made_in_week_nine(self):
+        week8 = WeekScene.objects.get(week__level__code="A1", week__number=8)
+        week9 = WeekScene.objects.get(week__level__code="A1", week__number=9)
+        self.assertIn("обещает сделать копию", week8.story_beat["outcome_ru"])
+        self.assertIn("почти готова", week9.story_beat["intro_ru"])

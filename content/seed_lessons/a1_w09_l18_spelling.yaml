@@ -1,0 +1,119 @@
+slug: a1-spelling-phone-numbers
+level: A1
+week: 9
+order: 18
+focus: N
+minutes: 40
+title: "По буквам и по цифрам: алфавит, Can you spell…? и номер телефона"
+summary: "Английский алфавит и его ловушки для русскоязычных. Как продиктовать фамилию по буквам и номер телефона по цифрам и понять, когда диктуют вам."
+units: [LX-00183, LX-00184, LX-00185, LX-00187, LX-00189, LX-00190]
+sound_notes:
+  - text: "B-E-L-O-V-A"
+    ipa: "/bi i ɛl oʊ vi eɪ/"
+    note_ru: "E — «и», A — «эй»: самые коварные буквы"
+  - text: "five five five, two one four six"
+    ipa: "/faɪv faɪv faɪv tu wʌn fɔr sɪks/"
+    note_ru: "номер делят на группы: 3 цифры, пауза, 4 цифры"
+  - text: "Can you spell your last name, please?"
+    ipa: "/kən jə ˈspɛl jɚ ˈlæst ˌneɪm ˈpliz/"
+    note_ru: "your без ударения звучит как «йэр»"
+contractions:
+  - full: "what is"
+    short: "what's"
+    ipa: "/wʌts/"
+    note_ru: "What's your phone number? — обычный вопрос."
+  - full: "it is"
+    short: "it's"
+    ipa: "/ɪts/"
+    note_ru: "It's five five five… — ответ с номером."
+layers:
+  - number: 1
+    body: |
+      Русскую фамилию американец почти никогда не запишет на слух. Поэтому её диктуют по буквам. Номер телефона — по цифрам.
+
+      > [O4]Yes[/]. [N7]B-E-L-O-V-A[/]. [S1]Anna[/] [S1]Belova[/]. — Да. Б-Е-Л-О-В-А. Анна Белова.
+      > [T8]It[/] [D1]is[/] [N7]five five five, two one four six[/]. — Пять-пять-пять, два-один-четыре-шесть.
+
+      Для этого нужен английский алфавит — 26 букв.
+  - number: 2
+    body: |
+      **alphabet** — две первые буквы греческого алфавита: альфа и бета. Русское «азбука» устроено так же: «аз» и «буки».
+
+      **spell** раньше значило «рассказывать, говорить». Отсюда и второе значение — «заклинание»: слова, сказанные особым образом. Произнести слово по буквам — тоже сказать его «особым образом».
+  - number: 3
+    body: |
+      Алфавит по порядку: **A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z**.
+
+      - Номер телефона в США — 10 цифр: код города и 7 цифр, например 555-2146.
+      - Цифры называют по одной: five five five, а не «пятьсот пятьдесят пять».
+      - Две одинаковые подряд часто называют double: five double five.
+      - 0 в номере обычно произносят «oh», как букву O.
+  - number: 4
+    body: |
+      Почему буквы называются не так, как читаются? Английское письмо застыло около 500 лет назад, а произношение гласных за это время сильно сдвинулось. Буква A звучала когда-то «а», а теперь её название — «эй». Поэтому названия букв нужно запомнить отдельно.
+
+      Самые коварные для русскоязычных:
+
+      - E — «и», I — «ай», A — «эй»;
+      - G — «джи», J — «джей»;
+      - R — «ар», Y — «уай», W — «дабл-ю».
+  - number: 5
+    body: |
+      Так диктуют в Америке:
+
+      > [D7]Can[/] [T8]you[/] [D5]spell[/] [T3]your[/] [J8]last[/] [S9]name[/], [O8]please[/]? — Продиктуйте, пожалуйста, фамилию по буквам.
+      > [N7]Five five five, two one four six[/]. [O2]Thank you[/]! — Пять-пять-пять, два-один-четыре-шесть. Спасибо!
+
+      - Хороший собеседник повторяет номер вслух, чтобы проверить себя.
+      - Чтобы не спутать похожие буквы, говорят: B as in boy — «B, как в слове boy».
+      - Z в Америке — «зи», а в Британии — «зэд».
+  - number: 6
+    body: |
+      Русские фамилии по-английски пишут латиницей, и звуки иногда передают несколькими буквами:
+
+      - Ж — ZH: Zhukova;
+      - Ш — SH: Shilova; Щ — SHCH;
+      - Ч — CH: Chernova; Х — KH: Kharitonova.
+
+      Поэтому продиктовать Shcherbakova — целое приключение. Произносите буквы медленно и группами по 3–4.
+  - number: 7
+    body: |
+      Четыре задания: узнать вопрос о фамилии, понять букву на слух, собрать вопрос о номере и продиктовать в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Вас просят: Can you spell your last name, please? Что нужно сделать?"
+    options: ["Назвать фамилию по буквам", "Назвать номер телефона", "Повторить имя медленно"]
+    answer: "Назвать фамилию по буквам"
+    hint_ru: "spell — по буквам, last name — фамилия."
+    explanation_ru: "Can you spell your last name? — продиктовать фамилию по буквам."
+    units: [LX-00189]
+  - order: 2
+    kind: choice
+    stage: substitution
+    prompt_ru: "Вы слышите букву «и». Какая это буква?"
+    options: ["E", "I", "Y"]
+    answer: "E"
+    hint_ru: "I звучит «ай», Y — «уай»."
+    explanation_ru: "E называется «и». Это главная ловушка для русскоязычных."
+    units: [LX-00187]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите вопрос: «Какой у вас номер телефона?»"
+    options: [number, What, phone, your, is]
+    answer: "What is your phone number"
+    hint_ru: "What is your, потом phone number."
+    explanation_ru: "What is your phone number? — в разговоре What's your phone number?"
+    units: [LX-00185, LX-00190]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: администратор отеля просит назвать по буквам имя Tom. Продиктуйте через дефис."
+    prompt_en: "Can you spell it, please? — ___"
+    answer: "T-O-M"
+    accepted: ["T-O-M.", "T O M", "T, O, M", "T-O-M, Tom.", "T O M."]
+    hint_ru: "Три буквы: T, O, M."
+    explanation_ru: "T-O-M — «ти, оу, эм». По буквам диктуют медленно, с короткими паузами."
+    units: [LX-00183, LX-00187]

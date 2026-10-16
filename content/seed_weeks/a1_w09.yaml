@@ -1,0 +1,52 @@
+level: A1
+week: 9
+can_do_ru: "Я смогу представиться по телефону, продиктовать фамилию по буквам и номер телефона по цифрам и спросить: What time does the shop open?"
+mission_ru: "Продиктуйте вслух по-английски свою фамилию по буквам и номер телефона по одной цифре. Потом спросите кого-нибудь: What time does … open?"
+chunks: [LX-00188, LX-00189, LX-00190, LX-00191, LX-00192]
+story_beat:
+  intro_ru: "Копия ключа почти готова. Анна звонит в мастерскую, чтобы оставить имя и номер для заказа."
+  outcome_ru: "Мастер записывает фамилию Анны по буквам — Belova — и её номер. Мастерская открывается в девять."
+  next_hook_ru: "Утром в девять Анна забирает ключи. Мастер вертит старый ключ в руках: «Этому ключу лет сто»."
+script:
+  - speaker: locksmith
+    emotion: happy
+    text: "[O1]Hello[/]! [S2]Key[/] [S4]shop[/]."
+    ru: "Алло! Мастерская ключей."
+  - speaker: anna
+    text: "[O1]Hello[/]! [T2]This[/] [D1]is[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]my[/] [S2]key[/], [O8]please[/]?"
+    ru: "Алло! Это Анна. Мой ключ у вас?"
+  - speaker: locksmith
+    text: "[O4]Yes[/], [T8]I[/] [D1]do[/]. [D7]Can[/] [T8]you[/] [D5]spell[/] [T3]your[/] [J8]last[/] [S9]name[/], [O8]please[/]?"
+    ru: "Да. Продиктуйте, пожалуйста, фамилию по буквам."
+  - speaker: anna
+    text: "[O4]Yes[/]. [N7]B-E-L-O-V-A[/]. [S1]Anna[/] [S1]Belova[/]."
+    ru: "Да. Б-Е-Л-О-В-А. Анна Белова."
+  - speaker: locksmith
+    text: "[O2]Thank you[/]! [C1]And[/] [T9]what[/] [D1]is[/] [T3]your[/] [S2]phone[/] [S9]number[/]?"
+    spoken: "[O2]Thank you[/]! [C1]And[/] [T9]what[/][D1]'s[/] [T3]your[/] [S2]phone[/] [S9]number[/]?"
+    ru: "Спасибо! А какой у вас номер телефона?"
+  - speaker: anna
+    text: "[T8]It[/] [D1]is[/] [N7]five five five, two one four six[/]."
+    spoken: "[T8]It[/][D1]'s[/] [N7]five five five, two one four six[/]."
+    ru: "Пять-пять-пять, два-один-четыре-шесть."
+  - speaker: locksmith
+    text: "[N7]Five five five, two one four six[/]. [O2]Thank you[/]!"
+    ru: "Пять-пять-пять, два-один-четыре-шесть. Спасибо!"
+  - speaker: anna
+    text: "[T9]What[/] [S7]time[/] [D1]does[/] [T1]the[/] [S4]shop[/] [D2]open[/]?"
+    ru: "А во сколько открывается мастерская?"
+  - speaker: locksmith
+    emotion: happy
+    text: "[T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/]. [O1]See you[/]!"
+    ru: "В девять. До встречи!"
+  - speaker: anna
+    emotion: happy
+    text: "[O1]See you[/] [P3]at[/] [N3]nine[/]! [O2]Thank you[/]!"
+    ru: "До встречи в девять! Спасибо!"
+twister:
+  number: 9
+  series: sounds
+  text: "[O1]Hello[/], [O1]hello[/], [T9]who[/] [D1]is[/] [T2]this[/]?"
+  ipa: "/həˈloʊ həˈloʊ ˈhu ɪz ˈðɪs/"
+  focus_sounds: [h, dh]
+  source: original
