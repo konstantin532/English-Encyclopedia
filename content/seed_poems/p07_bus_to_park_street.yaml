@@ -1,0 +1,76 @@
+number: 7
+target_units:
+- LX-00253
+- LX-00252
+- LX-00064
+- LX-00184
+- LX-00254
+- LX-00161
+- LX-00186
+- LX-00241
+- LX-00229
+- LX-00157
+body: |
+  [N1]Two[/] [S2]tickets[/], [O8]please[/] —
+  [N1]one[/] [P5]for[/] [T8]me[/],
+  [N1]one[/] [P5]for[/] [T8]you[/],
+  [C1]and[/] [T1]the[/] [S4]bus[/] [P1]at[/] [N1]three[/]!
+
+  [D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/]
+  [P2]to[/] [S4]Park[/] [S4]Street[/]?
+  [T9]Who[/] [D1]is[/] [P1]on[/] [S4]Park[/] [S4]Street[/]?
+  [T9]Who[/] [D7]can[/] [T8]I[/] [D2]meet[/]?
+
+  [A3]Here[/] [D1]is[/] [T1]the[/] [J8]last[/] [S4]stop[/],
+  [T1]the[/] [J2]old[/] [S2]photo[/] [S4]shop[/].
+  [D1]Is[/] [T8]it[/] [J2]open[/]? [O4]No[/].
+  [D2]Stop[/], [D2]stop[/], [D2]stop[/].
+
+  [A6]Why[/]? [A6]Why[/]? [A6]Why[/]?
+  [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/].
+  [S1]Rose[/], [S1]Rose[/], [S1]Rose[/] —
+  [A6]where[/] [D1]do[/] [T8]you[/] [D4]go[/]?
+pronunciation:
+- stress: TWO TICKETS | PLEASE
+  ipa: /ˈtu ˈtɪkɪts | ˈpliz/
+- stress: ONE for ME
+  ipa: /ˈwʌn fɚ ˈmi/
+- stress: ONE for YOU
+  ipa: /ˈwʌn fɚ ˈju/
+- stress: and the BUS at THREE!
+  ipa: /ən ðə ˈbʌs ət ˈθri/
+- stress: does this BUS GO
+  ipa: /dəz ðɪs ˈbʌs ˈɡoʊ/
+- stress: to PARK STREET?
+  ipa: /tə ˈpɑrk ˈstrit/
+- stress: who is on PARK STREET?
+  ipa: /hu ɪz ɑn ˈpɑrk ˈstrit/
+- stress: who can I MEET?
+  ipa: /hu kən aɪ ˈmit/
+- stress: HERE is the LAST STOP
+  ipa: /ˈhɪr ɪz ðə ˈlæst ˈstɑp/
+- stress: the OLD PHOTO SHOP.
+  ipa: /ðə ˈoʊld ˈfoʊt̬oʊ ˈʃɑp/
+- stress: is it OPEN? NO.
+  ipa: /ɪz ɪt ˈoʊpən ˈnoʊ/
+- stress: STOP | STOP | STOP.
+  ipa: /ˈstɑp | ˈstɑp | ˈstɑp/
+- stress: WHY? WHY? WHY?
+  ipa: /ˈwaɪ ˈwaɪ ˈwaɪ/
+- stress: I do NOT KNOW.
+  ipa: /aɪ də ˈnɑt ˈnoʊ/
+- stress: ROSE | ROSE | ROSE
+  ipa: /ˈroʊz | ˈroʊz | ˈroʊz/
+- stress: WHERE do you GO?
+  ipa: /ˈwɛr də ju ˈɡoʊ/
+gaps:
+- line: 1
+  word: tickets
+- line: 4
+  word: three
+- line: 9
+  word: stop
+- line: 11
+  word: open
+- line: 14
+  word: know

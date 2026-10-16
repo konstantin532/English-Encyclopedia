@@ -94,7 +94,7 @@ class InvalidSeedTests(TestCase):
         for file, transform in [
             ("seed_lessons/a1_w01_l01_nouns.yaml", broken_exercise),
             ("seed_stories/s01_not_my_box.yaml", lambda d: {**d, "new_units": ["LX-99999"]}),
-            ("seed_poems/p01_my_phone_is_new.yaml", lambda d: {**d, "target_units": ["LX-99999"]}),
+            ("seed_poems/p01_my_new_home.yaml", lambda d: {**d, "target_units": ["LX-99999"]}),
         ]:
             with self.subTest(file=file):
                 self.assert_rejected(file, transform)
@@ -122,7 +122,7 @@ class InvalidSeedTests(TestCase):
                            ("gaps", [{"line": 1, "word": ""}]), ("pronunciation", [42]),
                            ("pronunciation", [{"ipa": None}])]:
             with self.subTest(key=key, value=value):
-                self.assert_rejected("seed_poems/p01_my_phone_is_new.yaml", lambda d: {**d, key: value})
+                self.assert_rejected("seed_poems/p01_my_new_home.yaml", lambda d: {**d, key: value})
 
     def test_false_twister_values_cannot_delete_existing_twisters(self):
         for value in [[], False, 0, "", {}]:

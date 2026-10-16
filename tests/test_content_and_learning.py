@@ -331,7 +331,7 @@ class StoriesPoemsTests(TestCase):
         self.assertContains(self.client.get("/stories/"), "Not My Box")
         r = self.client.get("/stories/1/")
         self.assertContains(r, 'data-cat="S" data-cls="6"')
-        self.assertContains(self.client.get("/stories/poems/1/"), "/maɪ ˈfoʊn‿ɪz ˈnu/")
+        self.assertContains(self.client.get("/stories/poems/1/"), "/aɪ hæv maɪ ˈfoʊn/")
         self.assertEqual(self.client.get("/stories/6/").status_code, 404)  # ещё не написана
 
     def test_poem_gap_check_hides_answer_until_attempt(self):

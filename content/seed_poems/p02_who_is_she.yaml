@@ -1,0 +1,75 @@
+number: 2
+target_units:
+- LX-00057
+- LX-00089
+- LX-00088
+- LX-00002
+- LX-00003
+- LX-00090
+- LX-00091
+- LX-00055
+- LX-00056
+body: |
+  [A3]Here[/] [D1]is[/] [T1]a[/] [S2]photo[/].
+  [T9]Who[/] [D1]is[/] [T8]she[/]?
+  [T8]She[/] [D1]is[/] [T3]my[/] [S1]sister[/].
+  [T8]She[/] [D1]is[/] [N1]three[/]!
+
+  [C1]And[/] [T9]who[/] [D1]is[/] [T8]he[/]?
+  [D1]Is[/] [T8]he[/] [N1]ten[/]?
+  [T8]He[/] [D1]is[/] [T3]my[/] [S1]brother[/].
+  [O2]Sorry[/]? [A2]Again[/]?
+
+  [T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/],
+  [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/],
+  [T3]my[/] [S1]grandmother[/],
+  [T3]my[/] [S1]grandfather[/]!
+
+  [T3]Your[/] [S1]family[/] [D1]is[/] [J3]nice[/]!
+  [S3]Coffee[/] [C1]or[/] [S3]tea[/]?
+  [S3]Tea[/], [O8]please[/]! [C1]And[/] [S3]cookies[/] —
+  [N1]one[/], [N1]two[/], [N1]three[/]!
+pronunciation:
+- stress: HERE is a PHOTO.
+  ipa: /ˈhɪr ɪz ə ˈfoʊt̬oʊ/
+- stress: who is SHE?
+  ipa: /hu ɪz ˈʃi/
+- stress: she is my SISTER.
+  ipa: /ʃi ɪz maɪ ˈsɪstɚ/
+- stress: she is THREE!
+  ipa: /ʃi ɪz ˈθri/
+- stress: and who is HE?
+  ipa: /ən hu ɪz ˈhi/
+- stress: is he TEN?
+  ipa: /ɪz hi ˈtɛn/
+- stress: he is my BROTHER.
+  ipa: /hi ɪz maɪ ˈbrʌðɚ/
+- stress: SORRY? AGAIN?
+  ipa: /ˈsɑri əˈɡɛn/
+- stress: this is my MOTHER
+  ipa: /ðɪs ɪz maɪ ˈmʌðɚ/
+- stress: this is my FATHER
+  ipa: /ðɪs ɪz maɪ ˈfɑːðɚ/
+- stress: my GRANDMOTHER
+  ipa: /maɪ ˈɡrænˌmʌðɚ/
+- stress: my GRANDFATHER!
+  ipa: /maɪ ˈɡrænˌfɑðɚ/
+- stress: your FAMILY is NICE!
+  ipa: /jɚ ˈfæməli ɪz ˈnaɪs/
+- stress: COFFEE or TEA?
+  ipa: /ˈkɔːfi ɚ ˈti/
+- stress: TEA | PLEASE! and COOKIES
+  ipa: /ˈti | ˈpliz ən ˈkʊkiz/
+- stress: ONE | TWO | THREE!
+  ipa: /ˈwʌn | ˈtu | ˈθri/
+gaps:
+- line: 3
+  word: sister
+- line: 6
+  word: ten
+- line: 8
+  word: Again
+- line: 11
+  word: grandmother
+- line: 16
+  word: three

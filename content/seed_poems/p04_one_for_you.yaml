@@ -1,0 +1,76 @@
+number: 4
+target_units:
+- LX-00160
+- LX-00163
+- LX-00164
+- LX-00158
+- LX-00167
+- LX-00168
+- LX-00169
+- LX-00170
+- LX-00171
+- LX-00180
+body: |
+  [A3]Here[/] [D1]is[/] [T1]a[/] [S2]key[/],
+  [T1]an[/] [J2]old[/], [J2]old[/] [S2]key[/].
+  [D1]Is[/] [T8]it[/] [P5]for[/] [T8]you[/]?
+  [D1]Is[/] [T8]it[/] [P5]for[/] [T8]me[/]?
+
+  [D4]Turn[/] [A3]left[/], [D4]turn[/] [A3]right[/],
+  [P1]at[/] [S7]night[/], [P1]at[/] [S7]night[/].
+  [D4]Go[/] [A3]straight[/], [D4]go[/] [A3]straight[/],
+  [P1]at[/] [N1]eight[/], [P1]at[/] [N1]eight[/].
+
+  [A6]Where[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/]?
+  [T8]It[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]bank[/].
+  [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/].
+  [O2]Thank[/] [T8]you[/]! [O2]Thanks[/]!
+
+  [T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/],
+  [T3]our[/] [S2]mailbox[/] [S2]key[/].
+  [N1]One[/] [P5]for[/] [T8]you[/]
+  [C1]and[/] [N1]one[/] [P5]for[/] [T8]me[/]!
+pronunciation:
+- stress: HERE is a KEY
+  ipa: /ˈhɪr ɪz ə ˈki/
+- stress: an OLD | OLD KEY.
+  ipa: /ən ˈoʊld | ˈoʊld ˈki/
+- stress: is it for YOU?
+  ipa: /ɪz ɪt fɚ ˈju/
+- stress: is it for ME?
+  ipa: /ɪz ɪt fɚ ˈmi/
+- stress: TURN LEFT | TURN RIGHT
+  ipa: /ˈtɝn ˈlɛft | ˈtɝn ˈraɪt/
+- stress: at NIGHT | at NIGHT.
+  ipa: /ət ˈnaɪt | ət ˈnaɪt/
+- stress: GO STRAIGHT | GO STRAIGHT
+  ipa: /ˈɡoʊ ˈstreɪt | ˈɡoʊ ˈstreɪt/
+- stress: at EIGHT | at EIGHT.
+  ipa: /ət ˈeɪt | ət ˈeɪt/
+- stress: WHERE is the KEY SHOP?
+  ipa: /ˈwɛr ɪz ðə ˈki ˈʃɑp/
+- stress: it is near the BANK.
+  ipa: /ɪt ɪz nɪr ðə ˈbæŋk/
+- stress: GO STRAIGHT and TURN LEFT.
+  ipa: /ˈɡoʊ ˈstreɪt ən ˈtɝn ˈlɛft/
+- stress: THANK you! THANKS!
+  ipa: /ˈθæŋk ju ˈθæŋks/
+- stress: it is our MAILBOX
+  ipa: /ɪt ɪz aʊɚ ˈmeɪlbɑks/
+- stress: our MAILBOX KEY.
+  ipa: /aʊɚ ˈmeɪlbɑks ˈki/
+- stress: ONE for YOU
+  ipa: /ˈwʌn fɚ ˈju/
+- stress: and ONE for ME!
+  ipa: /ən ˈwʌn fɚ ˈmi/
+gaps:
+- line: 2
+  word: old
+- line: 4
+  word: me
+- line: 6
+  word: night
+- line: 10
+  word: near
+- line: 16
+  word: me

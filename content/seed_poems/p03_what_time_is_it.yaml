@@ -1,0 +1,75 @@
+number: 3
+target_units:
+- LX-00124
+- LX-00130
+- LX-00129
+- LX-00072
+- LX-00128
+- LX-00134
+- LX-00131
+- LX-00133
+- LX-00127
+body: |
+  [T8]I[/] [D2]get[/] [X3]up[/] [P1]at[/] [N1]seven[/],
+  [T8]I[/] [D1]have[/] [S3]breakfast[/] [P1]at[/] [N1]ten[/],
+  [T8]I[/] [D2]drink[/] [S3]coffee[/] [P1]at[/] [N1]eleven[/] —
+  [C1]and[/] [S3]coffee[/] [A2]again[/]!
+
+  [D1]Do[/] [T8]you[/] [D2]work[/] [T5]every[/] [S7]day[/]?
+  [O4]Yes[/], [T8]I[/] [D1]do[/]!
+  [T8]I[/] [D2]work[/] [P1]at[/] [T1]the[/] [S4]cafe[/].
+  [C1]And[/] [T8]you[/]? [C1]And[/] [T8]you[/]?
+
+  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?
+  [D1]Is[/] [T8]it[/] [N1]ten[/]?
+  [S3]Coffee[/] [S7]time[/]!
+  [S3]Coffee[/] [A2]again[/]!
+
+  [T8]I[/] [D4]go[/] [S2]home[/] [P1]at[/] [N1]seven[/],
+  [T8]I[/] [D1]have[/] [T3]my[/] [S2]phone[/],
+  [T3]my[/] [S2]book[/], [T3]my[/] [S3]coffee[/] —
+  [T8]I[/] [D1]am[/] [S2]home[/]!
+pronunciation:
+- stress: I GET UP at SEVEN
+  ipa: /aɪ ˈɡɛt ˈʌp ət ˈsɛvən/
+- stress: I have BREAKFAST at TEN
+  ipa: /aɪ hæv ˈbrɛkfəst ət ˈtɛn/
+- stress: I DRINK COFFEE at ELEVEN
+  ipa: /aɪ ˈdrɪŋk ˈkɔːfi ət ɪˈlɛvən/
+- stress: and COFFEE AGAIN!
+  ipa: /ən ˈkɔːfi əˈɡɛn/
+- stress: do you WORK every DAY?
+  ipa: /də ju ˈwɝk ɛvri ˈdeɪ/
+- stress: YES | I DO!
+  ipa: /ˈjes | aɪ ˈdu/
+- stress: I WORK at the CAFE.
+  ipa: /aɪ ˈwɝk ət ðə kæˈfeɪ/
+- stress: and YOU? and YOU?
+  ipa: /ən ˈju ən ˈju/
+- stress: what TIME is it?
+  ipa: /wʌt ˈtaɪm ɪz ɪt/
+- stress: is it TEN?
+  ipa: /ɪz ɪt ˈtɛn/
+- stress: COFFEE TIME!
+  ipa: /ˈkɔːfi ˈtaɪm/
+- stress: COFFEE AGAIN!
+  ipa: /ˈkɔːfi əˈɡɛn/
+- stress: I GO HOME at SEVEN
+  ipa: /aɪ ˈɡoʊ ˈhoʊm ət ˈsɛvən/
+- stress: I have my PHONE
+  ipa: /aɪ hæv maɪ ˈfoʊn/
+- stress: my BOOK | my COFFEE
+  ipa: /maɪ ˈbʊk | maɪ ˈkɔːfi/
+- stress: I am HOME!
+  ipa: /aɪ əm ˈhoʊm/
+gaps:
+- line: 1
+  word: seven
+- line: 2
+  word: breakfast
+- line: 5
+  word: every
+- line: 11
+  word: time
+- line: 16
+  word: home

@@ -1,4 +1,5 @@
 """Пилот «курс через историю»: рамка истории, недели 3–4, связность, контрольный пакет."""
+import json
 import shutil
 import tempfile
 from contextlib import contextmanager
@@ -763,3 +764,34 @@ class TwisterMethodTests(TestCase):
         for step in ("Попробуйте звук отдельно", "Соберите по кусочкам", "Вернитесь к разговору", "Точность"):
             self.assertContains(response, step)
         self.assertContains(response, "Go straight and turn left.")
+
+
+class A1PoemsTests(TestCase):
+    """Семь стихов A1: маленькие истории с рифмой, строфами и разбором каждой строки."""
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_all_a1_poems_published_with_stanzas(self):
+        from apps.poems.models import Poem
+
+        poems = Poem.objects.filter(level__code="A1", is_published=True)
+        self.assertEqual(poems.count(), 7)
+        for poem in poems:
+            lines = [ln for ln in poem.body.strip().splitlines() if ln.strip()]
+            self.assertGreaterEqual(len(lines), 12, poem.number)
+            self.assertIn("\n\n", poem.body, poem.number)
+            self.assertEqual(len(poem.pronunciation), len(lines), poem.number)
+
+    def test_poem_page_keeps_stanzas_and_gap_lines(self):
+        response = self.client.get(reverse("stories:poem", args=[4]))
+        self.assertContains(response, "stanza-start")
+        self.assertContains(response, "One for You and One for Me")
+        html = response.content.decode()
+        self.assertEqual(html.count('class="fill-input gap-input"'), 5)
+
+    def test_gap_numbers_count_only_text_lines(self):
+        url = reverse("api:check_poem_gap", args=[3, 3])  # стих 3, пропуск «time» в строке 11
+        ok = self.client.post(url, json.dumps({"answer": "time"}), content_type="application/json").json()
+        self.assertTrue(ok["correct"])

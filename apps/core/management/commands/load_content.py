@@ -220,7 +220,7 @@ class Command(BaseCommand):
     def load_poem(self, path: Path) -> int:
         data = read_seed(path)
         require_fields(path.name, data, {"number": int, "body": str})
-        lines = data["body"].strip().splitlines()
+        lines = [ln for ln in data["body"].strip().splitlines() if ln.strip()]  # пустые строки — границы строф
         for gap in records(path.name, "gaps", data.get("gaps", []), {"line": int, "word": str}):
             if not 1 <= gap["line"] <= len(lines) or not gap["word"].strip():
                 raise CommandError(f"{path.name}: пропуск должен содержать слово и номер существующей строки")
