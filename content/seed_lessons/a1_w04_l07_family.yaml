@@ -4,9 +4,9 @@ week: 4
 order: 7
 focus: S
 minutes: 40
-title: "Семья на фото: brother, sister и вопрос Who is this?"
-summary: "Слова о семье и как спросить о человеке на фотографии: Who is this? Is this your mother?"
-units: [LX-00088, LX-00089, LX-00090, LX-00091, LX-00092, LX-00093, LX-00094, LX-00099, LX-00101, LX-00102, LX-00103]
+title: "Семья на фото: кто это и сколько лет — Who is this? How old are you?"
+summary: "Слова о семье, mom и dad, числа до ста и возраст: Who is this? How old are you? My mom is forty."
+units: [LX-00088, LX-00089, LX-00090, LX-00091, LX-00092, LX-00093, LX-00094, LX-00099, LX-00101, LX-00102, LX-00103, LX-00266, LX-00267, LX-00268, LX-00269, LX-00270, LX-00271, LX-00272, LX-00273, LX-00274, LX-00275, LX-00276, LX-00277, LX-00278]
 sound_notes:
   - text: "Who is this?"
     ipa: "/ˈhu ɪz ˈðɪs/"
@@ -14,9 +14,9 @@ sound_notes:
   - text: "brother"
     ipa: "/ˈbrʌðɚ/"
     note_ru: "звонкий th в середине и американское r в конце"
-  - text: "daughter"
-    ipa: "/ˈdɔt̬ɚ/"
-    note_ru: "gh молчит, t между гласными — быстрое d: «дОдэр»"
+  - text: "thirteen — thirty"
+    ipa: "/ˌθɝˈtin/ — /ˈθɝt̬i/"
+    note_ru: "главное отличие — ударение: thirTEEN в конце, THIRty в начале; в thirty t звучит как быстрое d"
 layers:
   - number: 1
     body: |
@@ -49,6 +49,17 @@ layers:
       > [T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/]. [T8]He[/] [D1]is[/] [N1]ten[/]. — Это мой брат. Ему десять.
 
       Возраст по-английски говорят через be: «он есть десять».
+
+      > [A6]How[/] [J2]old[/] [D1]are[/] [T8]you[/]? — Сколько тебе лет?
+      > [T3]My[/] [S1]mom[/] [D1]is[/] [N5]forty[/], [C1]and[/] [T3]my[/] [S1]dad[/] [D1]is[/] [N5]fifty[/]. — Маме сорок, а папе пятьдесят.
+      > [T8]I[/] [D1]am[/] [N5]thirty[/] [S7]years[/] [J2]old[/]. — Мне тридцать лет.
+
+      Десятки строятся одинаково: число + **-ty**.
+
+      - [N1]thirty[/] 30, [N1]forty[/] 40, [N1]fifty[/] 50, [N1]sixty[/] 60
+      - [N1]seventy[/] 70, [N1]eighty[/] 80, [N1]ninety[/] 90, [N1]hundred[/] 100
+      - Между десятками и единицами — дефис: [N1]twenty[/]-[N1]five[/] 25, [N1]forty[/]-[N1]two[/] 42.
+      - years old можно не говорить: I am thirty — уже полный ответ.
   - number: 5
     body: |
       В разговоре о фото американцы говорят коротко:
@@ -64,9 +75,13 @@ layers:
       **baby brother** — «младший братик», **baby sister** — «младшая сестрёнка». Слово baby здесь значит «самый младший».
 
       grandmother и grandfather в разговоре обычно сокращают до grandma и grandpa.
+
+      [S1]mom[/] и [S1]dad[/] — так американцы говорят о родителях каждый день, даже взрослые. Британцы пишут mum.
+
+      Спрашивать возраст у взрослых незнакомцев в США не принято. О детях и родных на фото — пожалуйста: How old is he?
   - number: 7
     body: |
-      Четыре задания: узнать вопрос, вставить родственника, собрать ответ и описать новое фото.
+      Шесть заданий: узнать вопрос, вставить родственника, собрать ответ, описать новое фото, отличить thirteen от thirty и назвать возраст.
 exercises:
   - order: 1
     kind: choice
@@ -105,3 +120,21 @@ exercises:
     hint_ru: "Сначала this is…, потом she is…"
     explanation_ru: "This is my sister. She is twelve. — сначала показываем, потом говорим she и возраст через be."
     units: [LX-00089, LX-00096, LX-00073]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Дедушке Тома шестьдесят. Как это сказать?"
+    options: ["He is sixty.", "He is sixteen.", "He has sixty."]
+    answer: "He is sixty."
+    hint_ru: "Десятки кончаются на -ty, возраст — через be."
+    explanation_ru: "He is sixty. — sixty (60) с ударением в начале. sixteen — это 16, а have для возраста не используют."
+    units: [LX-00273]
+  - order: 6
+    kind: build
+    stage: production
+    prompt_ru: "Соберите вопрос «Сколько тебе лет?»"
+    options: [you, old, How, are]
+    answer: "How old are you"
+    hint_ru: "Дословно: «как старый ты есть?»"
+    explanation_ru: "How old are you? — how old первыми, дальше are you. О другом: How old is he?"
+    units: [LX-00278]

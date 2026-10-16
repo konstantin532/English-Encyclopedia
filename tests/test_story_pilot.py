@@ -250,6 +250,12 @@ class WeekFourTests(WeekContentMixin, TestCase):
         self.assertTrue(any(line["speaker"] == "mia" for line in scene.script))
         self.assertNotIn("Rose", text)
 
+    def test_age_and_plural_pronouns(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=4)
+        text = " ".join(line["text"] for line in scene.script)
+        for piece in ("[A6]How[/] [J2]old[/] [D1]are[/] [T8]they[/]", "[T8]We[/]", "[S1]mom[/]", "[N5]forty[/]"):
+            self.assertIn(piece, text)
+
     def test_course_slots_preserved(self):
         self.assertEqual({s.number: s.week.number for s in Story.objects.filter(number__in=[1, 2, 5])},
                          {1: 2, 2: 6, 5: 14})
@@ -795,3 +801,28 @@ class A1PoemsTests(TestCase):
         url = reverse("api:check_poem_gap", args=[3, 3])  # стих 3, пропуск «time» в строке 11
         ok = self.client.post(url, json.dumps({"answer": "time"}), content_type="application/json").json()
         self.assertTrue(ok["correct"])
+
+
+class WeeklyVocabularyNormTests(TestCase):
+    """Добор A1 до 500 единиц: недели, которые уже доведены до нормы 30–39."""
+
+    FILLED_WEEKS = (4,)
+
+    @classmethod
+    def setUpTestData(cls):
+        call_command("load_content", verbosity=0)
+
+    def test_filled_weeks_meet_weekly_norm(self):
+        from apps.curriculum.registry import WEEKLY_UNITS
+        low, high = WEEKLY_UNITS["A1"]
+        for n in self.FILLED_WEEKS:
+            count = LexicalUnit.objects.filter(internal_level__code="A1", week__number=n).count()
+            self.assertTrue(low <= count <= high, f"неделя {n}: {count}")
+
+    def test_every_unit_of_filled_week_is_taught(self):
+        for n in self.FILLED_WEEKS:
+            scene = WeekScene.objects.get(week__level__code="A1", week__number=n)
+            taught = set(Lesson.objects.filter(week=scene.week).values_list("units__uid", flat=True))
+            taught |= set(scene.chunks.values_list("uid", flat=True))
+            missing = LexicalUnit.objects.filter(week=scene.week).exclude(uid__in=taught)
+            self.assertEqual(list(missing.values_list("lemma", flat=True)), [], f"неделя {n}")

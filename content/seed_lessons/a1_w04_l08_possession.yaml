@@ -4,9 +4,9 @@ week: 4
 order: 8
 focus: T
 minutes: 40
-title: "Чьё это: his, her и 's (Mia's photo)"
-summary: "Как сказать «его», «её» и «Мии»: his, her и окончание 's. Почему выбор зависит от владельца, а не от вещи."
-units: [LX-00095, LX-00096, LX-00097, LX-00098, LX-00100, LX-00104, LX-00105, LX-00106]
+title: "Кто и чьё: he, she, we, they; his, her, their и 's"
+summary: "Как сказать «мы», «они», «его», «её», «их» и «Мии»: we, they, his, her, their и окончание 's."
+units: [LX-00095, LX-00096, LX-00097, LX-00098, LX-00100, LX-00104, LX-00105, LX-00106, LX-00263, LX-00264, LX-00265, LX-00279]
 sound_notes:
   - text: "Mia's photo"
     ipa: "/ˈmiəz ˈfoʊt̬oʊ/"
@@ -26,6 +26,14 @@ contractions:
     short: "he's"
     ipa: "/hiz/"
     note_ru: "he's звучит как «хиз»."
+  - full: "we are"
+    short: "we're"
+    ipa: "/wɪr/"
+    note_ru: "we're звучит коротко: «уир»."
+  - full: "they are"
+    short: "they're"
+    ipa: "/ðɛr/"
+    note_ru: "they're, their и there звучат одинаково — различают по смыслу."
 layers:
   - number: 1
     body: |
@@ -52,6 +60,18 @@ layers:
       - [T3]his[/] — если владелец мужчина или мальчик.
       - [T3]her[/] — если владелец женщина или девочка.
       - Сама вещь не важна: her brother — «её брат», хотя брат мужчина.
+
+      Теперь вся таблица — кто и чьё:
+
+      - [T8]I[/] — [T3]my[/], [T8]you[/] — [T3]your[/]
+      - [T8]he[/] — [T3]his[/], [T8]she[/] — [T3]her[/]
+      - [T8]we[/] — мы, [T8]they[/] — [T3]their[/]
+
+      > [T8]We[/] [D1]are[/] [T1]a[/] [J1]big[/] [S1]family[/]! — У нас большая семья!
+      > [A6]How[/] [J2]old[/] [D1]are[/] [T8]they[/]? — Сколько им лет?
+      > [T3]Their[/] [S2]house[/] [D1]is[/] [J1]big[/]. — Их дом большой.
+
+      С we и they глагол be всегда **are**: we are, they are.
   - number: 4
     body: |
       В русском «его» и «её» тоже зависят от владельца. А вот «свой» английскому неизвестен: всегда his, her, my, your.
@@ -75,7 +95,7 @@ layers:
       Mia's может значить и «Мии», и «Мия есть»: Mia's happy — «Мия рада». Смотрите, что идёт дальше: вещь или описание.
   - number: 7
     body: |
-      Четыре задания: выбрать his или her, вставить 's, собрать фразу и сказать о новом человеке.
+      Шесть заданий: выбрать his или her, вставить 's, собрать фразу, сказать о новом человеке, выбрать are для they и сказать о своей семье.
 exercises:
   - order: 1
     kind: choice
@@ -115,3 +135,22 @@ exercises:
     hint_ru: "Владелец имени — женщина."
     explanation_ru: "Her name is Anna. — her, потому что имя принадлежит ей."
     units: [LX-00098]
+  - order: 5
+    kind: fill
+    stage: substitution
+    prompt_ru: "Мама и папа Мии на фото. Спросите, сколько им лет."
+    prompt_en: "How old ___ they?"
+    answer: "are"
+    hint_ru: "С they глагол be в форме…"
+    explanation_ru: "How old are they? — с we и they всегда are."
+    units: [LX-00264]
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: "Расскажите о своей семье: «У нас большая семья. Их дом большой» — о бабушке и дедушке."
+    prompt_en: "___"
+    answer: "We are a big family. Their house is big."
+    accepted: ["We're a big family. Their house is big.", "We are a big family. Their house is big"]
+    hint_ru: "мы — we, их — their."
+    explanation_ru: "We are a big family. Their house is big. — we для «мы», their для «их»."
+    units: [LX-00263, LX-00265, LX-00279]
