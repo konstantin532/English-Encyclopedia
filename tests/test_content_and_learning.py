@@ -35,8 +35,8 @@ class ContentTests(TestCase):
         call_command("load_content", verbosity=0)
 
     def test_packages_loaded(self):
-        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 251)
-        self.assertEqual(Lesson.objects.filter(level__code="A1").count(), 26)
+        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 262)
+        self.assertEqual(Lesson.objects.filter(level__code="A1").count(), 28)
         for slug in ["a1-verb-be", "a1-determiners-a-the-this-my", "a1-have-like-can-do"]:
             lesson = Lesson.objects.get(slug=slug)
             self.assertEqual(lesson.layers.count(), 7, slug)
@@ -48,7 +48,7 @@ class ContentTests(TestCase):
 
     def test_loader_is_idempotent(self):
         call_command("load_content", verbosity=0)
-        self.assertEqual(LexicalUnit.objects.count(), 251)
+        self.assertEqual(LexicalUnit.objects.count(), 262)
 
     def test_cefr_only_with_source(self):
         for u in LexicalUnit.objects.exclude(cefr="unverified"):
@@ -332,7 +332,7 @@ class StoriesPoemsTests(TestCase):
         r = self.client.get("/stories/1/")
         self.assertContains(r, 'data-cat="S" data-cls="6"')
         self.assertContains(self.client.get("/stories/poems/1/"), "/maɪ ˈfoʊn‿ɪz ˈnu/")
-        self.assertEqual(self.client.get("/stories/5/").status_code, 404)  # ещё не написана
+        self.assertEqual(self.client.get("/stories/6/").status_code, 404)  # ещё не написана
 
     def test_poem_gap_check_hides_answer_until_attempt(self):
         url = reverse("api:check_poem_gap", args=[1, 0])

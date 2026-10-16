@@ -1,0 +1,132 @@
+slug: a1-review-everything
+level: A1
+week: 14
+order: 28
+focus: D
+minutes: 45
+title: "Итог A1: что вы уже умеете по-английски"
+summary: "Повторение всего уровня A1 на одной странице: be, have, can, настоящее простое время, вопросы с do и does, отрицания, предлоги, время и цены. С примерами из жизни Анны, Тома и Мии."
+units: [LX-00255, LX-00256, LX-00258, LX-00176, LX-00236]
+sound_notes:
+  - text: "I'm from Russia. I can speak English."
+    ipa: "/aɪm frəm ˈrʌʃə aɪ kən ˈspik ˈɪŋɡlɪʃ/"
+    note_ru: "две главные фразы о себе: I'm слитно, can без ударения"
+  - text: "Does this bus go to Park Street?"
+    ipa: "/dəz ðɪs ˈbʌs ɡoʊ tə ˈpɑrk ˌstrit/"
+    note_ru: "вопрос с does: ударение на bus и Park"
+  - text: "I don't know."
+    ipa: "/aɪ ˈdoʊnt ˈnoʊ/"
+    note_ru: "фраза-спасатель: «айдоноу»"
+contractions:
+  - full: "I am"
+    short: "I'm"
+    ipa: "/aɪm/"
+    note_ru: "Неделя 1: I'm Anna."
+  - full: "it is"
+    short: "it's"
+    ipa: "/ɪts/"
+    note_ru: "Недели 3–5: It's two dollars."
+  - full: "does not"
+    short: "doesn't"
+    ipa: "/ˈdʌzənt/"
+    note_ru: "Неделя 12: It doesn't get letters."
+layers:
+  - number: 1
+    body: |
+      14 недель назад вы знали несколько английских слов. Теперь вы можете познакомиться, заказать кофе, купить продукты, спросить дорогу, сходить к врачу, отправить письмо и проехать на автобусе.
+
+      > [O2]Excuse me[/]! [D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]? — Извините! Этот автобус идёт до Парк-стрит?
+
+      Эта страница собирает всю грамматику A1 в одну карту.
+  - number: 2
+    body: |
+      Весь уровень держится на трёх «опорных» глаголах:
+
+      - **be** — быть, являться: I am Anna. It is my cat. There is a key.
+      - **have** — иметь: I have a headache. She has a computer.
+      - **do** — помощник для вопросов и отрицаний: Do you work? I don't know.
+
+      Плюс **can** — могу и умею: I can speak English. I can't sleep.
+
+      Почти каждая фраза A1 — один из этих глаголов и несколько слов вокруг.
+  - number: 3
+    body: |
+      Настоящее простое время — для привычек и фактов:
+
+      > [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [O2]Sorry[/]! — Не знаю. Извините!
+
+      - I / you / we / they work. — he / she / it work**s**.
+      - Вопрос: Do you…? / Does he…?
+      - Отрицание: I don't… / She doesn't…
+      - Слова частоты перед глаголом: I always read, I never walk.
+  - number: 4
+    body: |
+      Почему английский так держится за порядок слов? В нём почти нет окончаний. Кто делает, что делает и с чем — понятно только по месту слова: **кто — глагол — остальное**. Если вы помните этот каркас, вы уже говорите правильно в большинстве фраз.
+
+      Вопрос меняет порядок: помощник (is, do, does, can) выходит вперёд.
+
+      > [T9]What[/] [S7]time[/] [D1]is[/] [T1]the[/] [J8]next[/] [S4]bus[/] [A3]back[/]? — А во сколько обратный автобус?
+  - number: 5
+    body: |
+      Фразы-спасатели, которые работают в любой поездке:
+
+      > [A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]? — Сколько стоит билет?
+
+      - Sorry? Can you say it again, please? — не расслышали.
+      - Excuse me, where is…? — ищете место.
+      - How much is it? — цена.
+      - I don't know. — не знаете.
+      - Can you spell it, please? — не поняли имя.
+  - number: 6
+    body: |
+      Пять ошибок, которые чаще всего остаются после A1:
+
+      - «I am work» → I work.
+      - «He work» → He works.
+      - «I am teacher» → I am a teacher.
+      - «Does she lives» → Does she live.
+      - «I don't never» → I never.
+
+      Если поймали себя на одной из них — это нормально. Исправьте и скажите ещё раз.
+  - number: 7
+    body: |
+      Четыре задания из разных недель: от знакомства до поездки. Если что-то забылось, вернитесь к уроку своей недели.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Какая фраза верная?"
+    options: ["She works at a school.", "She work at a school.", "She is work at a school."]
+    answer: "She works at a school."
+    hint_ru: "she — глагол с -s, без is."
+    explanation_ru: "She works — неделя 7: с he и she глагол получает -s."
+    units: [LX-00255]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Вы не знаете ответа. Вставьте помощника (сокращённо)."
+    prompt_en: "I ___ know."
+    answer: "don't"
+    accepted: ["do not"]
+    hint_ru: "Неделя 12."
+    explanation_ru: "I don't know — помощник do + not."
+    units: [LX-00236]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите вопрос: «Где банк?»"
+    options: [bank, Where, the, is]
+    answer: "Where is the bank"
+    hint_ru: "Неделя 8: Where is…?"
+    explanation_ru: "Where is the bank? — с be помощник do не нужен."
+    units: [LX-00176]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Итоговая ситуация: незнакомец в автобусе спрашивает, откуда вы. Ответьте и добавьте, что говорите по-английски."
+    prompt_en: "Where are you from? — ___"
+    answer: "I am from Russia. I can speak English."
+    accepted: ["I'm from Russia. I can speak English.", "I am from Russia.", "I'm from Russia.", "I'm from Russia. I speak English.", "I am from Russia. I speak English.", "I'm from Russia. I can speak English"]
+    hint_ru: "I am from… + I can speak…"
+    explanation_ru: "I'm from Russia. I can speak English. Две фразы — и вы уже рассказали о себе."
+    units: [LX-00255]

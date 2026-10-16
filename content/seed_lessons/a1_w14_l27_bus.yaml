@@ -1,0 +1,117 @@
+slug: a1-bus-ticket
+level: A1
+week: 14
+order: 27
+focus: S
+minutes: 40
+title: "В автобусе: билет, остановка и Does this bus go…?"
+summary: "Как самостоятельно проехать на автобусе в американском городе: спросить, куда он идёт, купить билет и узнать время следующего. Всё — из слов, которые вы уже знаете."
+units: [LX-00252, LX-00253, LX-00254, LX-00255, LX-00256, LX-00257, LX-00258]
+sound_notes:
+  - text: "Does this bus go to Park Street?"
+    ipa: "/dəz ðɪs ˈbʌs ɡoʊ tə ˈpɑrk ˌstrit/"
+    note_ru: "does this — «дэз зис», to без ударения — «тэ»"
+  - text: "How much is a ticket?"
+    ipa: "/ˌhaʊ ˈmʌtʃ ɪz ə ˈtɪkɪt/"
+    note_ru: "is a сливаются: «изэ»; ticket — «тИкит»"
+  - text: "What time is the next bus?"
+    ipa: "/ˌwʌt ˈtaɪm ɪz ðə ˈnɛks ˈbʌs/"
+    note_ru: "t в next перед b пропадает: «нэкс бас»"
+contractions:
+  - full: "it is"
+    short: "it's"
+    ipa: "/ɪts/"
+    note_ru: "It's two dollars — цену называют с it's."
+  - full: "do not"
+    short: "don't"
+    ipa: "/doʊnt/"
+    note_ru: "I don't know — если водитель не знает ответа."
+layers:
+  - number: 1
+    body: |
+      Поездка на автобусе — экзамен на самостоятельность. Нужны три вопроса: куда идёт автобус, сколько стоит билет и когда следующий.
+
+      > [O2]Excuse me[/]! [D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]? — Извините! Этот автобус идёт до Парк-стрит?
+      > [A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]? — Сколько стоит билет?
+
+      Почти все слова здесь вы уже знаете с прошлых недель.
+  - number: 2
+    body: |
+      **bus** — короткая форма латинского `omnibus`, «для всех». Так в XIX веке называли повозку, куда мог сесть любой. От длинного слова осталось только окончание.
+
+      **ticket** пришло из старофранцузского `estiquet` — «записка, ярлык». От того же слова — русское «этикетка».
+  - number: 3
+    body: |
+      Схема поездки:
+
+      > [O4]Yes[/], [T8]it[/] [D1]does[/]. [S4]Park[/] [S4]Street[/] [D1]is[/] [T1]the[/] [J8]last[/] [S4]stop[/]. — Да. Парк-стрит — конечная.
+      > [N1]Two[/] [S2]tickets[/], [O8]please[/]. [A3]Here[/] [T8]you[/] [D1]are[/]. — Два билета, пожалуйста. Вот, держите.
+
+      - Куда: Does this bus go to…? — Yes, it does. / No, it doesn't.
+      - Цена: How much is a ticket? — It's two dollars.
+      - Покупка: One ticket, please. / Two tickets, please.
+      - Время: What time is the next bus? — At six.
+  - number: 4
+    body: |
+      Почему Does this bus go…, а не Is this bus go…? Автобус «ходит» — это обычный глагол go, привычка. А для привычек с he, she, it нужен does (неделя 9). Поэтому: Does this bus go…? — Yes, it does.
+
+      > [T9]What[/] [S7]time[/] [D1]is[/] [T1]the[/] [J8]next[/] [S4]bus[/] [A3]back[/]? — А во сколько обратный автобус?
+
+      back здесь — «обратно»: the bus back — автобус обратно.
+  - number: 5
+    body: |
+      Так ездят в американских городах:
+
+      > [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [O2]Sorry[/]! — Не знаю. Извините!
+
+      - В городском автобусе платят водителю или картой при входе. Сдачу водитель часто не даёт — готовьте точную сумму.
+      - last stop — конечная остановка, next stop — следующая.
+      - Расписание — schedule, американцы говорят «скЕджул».
+  - number: 6
+    body: |
+      Ловушки:
+
+      - «on bus» — нужен артикль: on the bus или by bus.
+      - «Two ticket» — нужно -s: two tickets.
+      - stop — и «остановка», и «останавливаться»: The bus stops here — автобус здесь останавливается.
+  - number: 7
+    body: |
+      Четыре задания: понять ответ водителя, купить билеты, собрать вопрос о расписании и спросить дорогу в новой ситуации.
+exercises:
+  - order: 1
+    kind: choice
+    stage: recognition
+    prompt_ru: "Водитель отвечает: Yes, it does. О чём вы его спросили?"
+    options: ["Does this bus go to Park Street?", "How much is a ticket?", "What time is the next bus?"]
+    answer: "Does this bus go to Park Street?"
+    hint_ru: "Ответ с does — на вопрос с does."
+    explanation_ru: "Does this bus go…? — Yes, it does. Короткий ответ повторяет помощник does."
+    units: [LX-00255]
+  - order: 2
+    kind: fill
+    stage: substitution
+    prompt_ru: "Вы покупаете два билета. Допишите."
+    prompt_en: "Two ___, please."
+    answer: "tickets"
+    hint_ru: "Билетов два — нужно -s."
+    explanation_ru: "Two tickets, please — после two существительное с -s."
+    units: [LX-00253, LX-00257]
+  - order: 3
+    kind: build
+    stage: production
+    prompt_ru: "Соберите вопрос: «Во сколько следующий автобус?»"
+    options: [bus, What, the, time, next, is]
+    answer: "What time is the next bus"
+    hint_ru: "What time is, потом the next bus."
+    explanation_ru: "What time is the next bus? — next значит «следующий»."
+    units: [LX-00258]
+  - order: 4
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: в поездке вам нужно в парк. Спросите водителя, идёт ли автобус до парка."
+    prompt_en: "___"
+    answer: "Does this bus go to the park?"
+    accepted: ["Does this bus go to the park", "Excuse me, does this bus go to the park?", "Excuse me! Does this bus go to the park?", "Does the bus go to the park?"]
+    hint_ru: "Does this bus go to + место."
+    explanation_ru: "Does this bus go to the park? Можно начать с Excuse me."
+    units: [LX-00252, LX-00255]

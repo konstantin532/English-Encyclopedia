@@ -1,0 +1,54 @@
+level: A1
+week: 14
+can_do_ru: "Я смогу сам проехать на автобусе: спросить, идёт ли он до нужной остановки, купить билет, узнать цену и время обратного автобуса. И собрать вместе всё, что умею на A1."
+mission_ru: "Представьте поездку по своему городу. Скажите вслух по-английски: Does this bus go to…? How much is a ticket? What time is the next bus? Потом расскажите о себе пятью фразами из разных недель."
+chunks: [LX-00255, LX-00256, LX-00257, LX-00258, LX-00176]
+story_beat:
+  intro_ru: "После урока русского Анна и Том садятся в автобус до Park Street — это слова с обратной стороны старого фото."
+  outcome_ru: "Билет стоит два доллара, обратный автобус — в шесть. На Park Street правда есть маленькое фотоателье. Но сегодня суббота, и дверь закрыта."
+  next_hook_ru: "На двери ателье табличка: Open Monday. Продолжение — на уровне A1+."
+script:
+  - speaker: anna
+    text: "[O2]Excuse me[/]! [D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]?"
+    ru: "Извините! Этот автобус идёт до Парк-стрит?"
+  - speaker: busdriver
+    emotion: happy
+    text: "[O4]Yes[/], [T8]it[/] [D1]does[/]. [S4]Park[/] [S4]Street[/] [D1]is[/] [T1]the[/] [J8]last[/] [S4]stop[/]."
+    ru: "Да. Парк-стрит — конечная."
+  - speaker: tom
+    text: "[A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]?"
+    ru: "Сколько стоит билет?"
+  - speaker: busdriver
+    text: "[T8]It[/] [D1]is[/] [N6]two dollars[/]."
+    spoken: "[T8]It[/][D1]'s[/] [N6]two dollars[/]."
+    ru: "Два доллара."
+  - speaker: anna
+    text: "[N1]Two[/] [S2]tickets[/], [O8]please[/]. [A3]Here[/] [T8]you[/] [D1]are[/]."
+    ru: "Два билета, пожалуйста. Вот, держите."
+  - speaker: busdriver
+    emotion: happy
+    text: "[O2]Thank you[/]! [A3]Here[/] [D1]are[/] [T3]your[/] [S2]tickets[/]."
+    ru: "Спасибо! Вот ваши билеты."
+  - speaker: tom
+    text: "[T9]What[/] [S7]time[/] [D1]is[/] [T1]the[/] [J8]next[/] [S4]bus[/] [A3]back[/]?"
+    spoken: "[T9]What[/] [S7]time[/][D1]'s[/] [T1]the[/] [J8]next[/] [S4]bus[/] [A3]back[/]?"
+    ru: "А во сколько обратный автобус?"
+  - speaker: busdriver
+    text: "[T1]The[/] [J8]next[/] [S4]bus[/] [D1]is[/] [P3]at[/] [N3]six[/]."
+    ru: "Следующий — в шесть."
+  - speaker: anna
+    emotion: worried
+    text: "[P3]At[/] [N3]six[/]? [D1]Is[/] [T1]the[/] [S2]photo[/] [S4]shop[/] [J2]open[/] [P3]on[/] [S7]Saturday[/]?"
+    ru: "В шесть? А фотоателье в субботу открыто?"
+  - speaker: busdriver
+    emotion: worried
+    text: "[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [O2]Sorry[/]!"
+    spoken: "[T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]. [O2]Sorry[/]!"
+    ru: "Не знаю. Извините!"
+twister:
+  number: 14
+  series: sounds
+  text: "[N1]Two[/] [S2]tickets[/], [O8]please[/]! [O2]Thank you[/]!"
+  ipa: "/ˈtu ˈtɪkɪts ˈpliz ˈθæŋk ju/"
+  focus_sounds: [th, ng]
+  source: original
