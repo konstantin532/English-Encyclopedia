@@ -10,7 +10,7 @@ jobs:
       - run: uv run python manage.py check
       - run: uv run python manage.py makemigrations --check --dry-run
       - run: uv run pytest -q
-      - run: node --test tests/js/audio-player.test.cjs
+      - run: node --test tests/js/audio-player.test.cjs tests/js/cafe-lab.test.cjs
       - run: |
           uv run python manage.py migrate -v0
           uv run python manage.py load_content
