@@ -155,7 +155,8 @@
         text(audioStatus, "Озвучивание завершено.");
         return;
       }
-      if (startLine >= 0) markLine(startLine + index);
+      if (startLine === -2) markLine(-1);
+      else if (startLine >= 0) markLine(startLine + index);
       else markLine(index);
       const u = new window.SpeechSynthesisUtterance(lines[index]);
       u.lang = VOICES_LANG;
@@ -169,7 +170,9 @@
       };
       window.speechSynthesis.speak(u);
     }
-    text(audioStatus, "Системный синтез en-US: один голос для Мии и Тома, не оригинальная запись.");
+    text(audioStatus, startLine === -2
+      ? "Озвучивание вашей фразы синтезированным голосом en-US."
+      : "Системный синтез en-US: один голос для Мии и Тома, не оригинальная запись.");
     togglePlay(true);
     next();
   }
@@ -200,6 +203,7 @@
   }
 
   const hasRecorded = !!selectAudioTrack(audioManifest, "natural");
+  if (!canSpeak) builtBtn.disabled = true;
   if (!hasRecorded && !canSpeak) {
     playBtn.disabled = true;
     root.querySelectorAll("[data-replay-line]").forEach(function (b) { b.disabled = true; });
@@ -256,7 +260,7 @@
     browserSpeak(index >= 0 ? [DIALOGUE[index]] : DIALOGUE, index);
   });
   builtBtn.addEventListener("click", function () {
-    browserSpeak([output.textContent], -1);
+    browserSpeak([output.textContent], -2);
   });
 
   const quiz = by("[data-listen-check]");
