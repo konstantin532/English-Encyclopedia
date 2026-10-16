@@ -17,7 +17,7 @@
     <div class="cafe-scene" aria-hidden="true"><span class="cafe-steam">〰</span><span class="cafe-cup">☕</span><span class="cafe-scenelabel">MIA'S CAFÉ</span></div>
   </header>
 
-  <p class="cafe-notice"><strong>Эксперимент:</strong> ответы не сохраняются в учебный прогресс. Голос устройства — синтез речи, а не проверенная студийная запись американца. Запись с микрофона остаётся в этой вкладке и не отправляется на сервер.</p>
+  <p class="cafe-notice"><strong>Эксперимент:</strong> ответы не сохраняются в учебный прогресс. Если готовы дорожки Kokoro, звучат отдельные синтезированные голоса Мии и Тома (их естественность ещё не подтверждена редактором). Иначе используется системный голос en-US. Запись с микрофона остаётся в этой вкладке и не отправляется на сервер.</p>
 
   <nav class="cafe-steps" aria-label="Этапы урока">
     <a href="#cafe-listen">01 <span>Слушаем</span></a>
@@ -31,17 +31,17 @@
   <section id="cafe-listen" class="cafe-panel" aria-labelledby="cafe-listen-title">
     <div class="cafe-section-head"><span>ШАГ 01 / СИТУАЦИЯ</span><h2 id="cafe-listen-title">Сначала попробуйте услышать смысл</h2><p>Том просит чай и кофе, но кофемашина шумит. Что услышала Мия?</p></div>
     <div class="cafe-actions">
-      <button type="button" class="cafe-btn cafe-btn-primary" data-speak-dialogue>▶ Озвучить диалог</button>
+      <button type="button" class="cafe-btn cafe-btn-primary" data-speak-dialogue aria-pressed="false">▶ Слушать диалог</button>
+      <button type="button" class="cafe-btn cafe-btn-secondary" data-stop-dialogue>■ Остановить</button>
+      <label class="cafe-tempo">Скорость <select data-audio-tempo aria-label="Скорость диалога"><option value="very_slow">Очень медленно</option><option value="slow">Медленно</option><option value="natural" selected>Естественно</option></select></label>
       <button type="button" class="cafe-btn cafe-btn-secondary" data-show-transcript aria-controls="cafe-transcript" aria-expanded="false">Показать реплики</button>
-      <span class="cafe-status" data-audio-status role="status" aria-live="polite">Если на устройстве есть голос en-US, можно послушать диалог.</span>
+      <span class="cafe-status" data-audio-status role="status" aria-live="polite">Доступность готовых дорожек определяется автоматически.</span>
     </div>
+    <audio data-dialogue-audio preload="none" hidden aria-label="Аудиодиалог Мии и Тома"></audio>
     <div id="cafe-transcript" class="cafe-script" hidden>
-      <p><span class="cafe-speaker">Мия</span><span lang="en">Good morning, Tom! What would you like?</span></p>
-      <p><span class="cafe-speaker">Том</span><span lang="en">I'd like one tea and one coffee, please.</span></p>
-      <p><span class="cafe-speaker">Мия</span><span lang="en">Two coffees?</span></p>
-      <p><span class="cafe-speaker">Том</span><span lang="en">No, sorry. One tea and one coffee, please.</span></p>
-      <p><span class="cafe-speaker">Мия</span><span lang="en">One tea and one coffee. Here you are.</span></p>
-      <p><span class="cafe-speaker">Том</span><span lang="en">Thank you!</span></p>
+      {% for line in cafe_dialogue %}
+      <p data-dialogue-line="{{ forloop.counter0 }}" data-speaker="{{ line.speaker }}"><span class="cafe-speaker">{{ line.speaker_ru }}</span><span lang="en">{{ line.text }}</span><button type="button" class="cafe-line-replay" data-replay-line="{{ forloop.counter0 }}" aria-label="Прослушать реплику {{ forloop.counter }} ({{ line.speaker_ru }})">▶</button></p>
+      {% endfor %}
       <details><summary>Показать смысл на русском</summary><p>Том заказал один чай и один кофе. Мия услышала «два кофе?». Том вежливо исправил её: «Нет, простите. Один чай и один кофе, пожалуйста».</p></details>
     </div>
   </section>
@@ -85,7 +85,7 @@
     <div class="cafe-section-head"><span>ШАГ 04 / ПРОВЕРКА ПОНИМАНИЯ</span><h2 id="cafe-check-title">Что Мия поняла неправильно?</h2></div>
     <form data-listen-check>
       <fieldset class="cafe-choices">
-        <legend>Том попросил один чай и один кофе. Мия переспросила: <span lang="en">Two coffees?</span> Что она услышала?</legend>
+        <legend>Том попросил один чай и один кофе. После прослушивания ответьте: какой неправильный заказ повторила Мия? Если аудио недоступно, откройте реплики в шаге 1.</legend>
         <label><input type="radio" name="answer" value="a" required> Два чая</label>
         <label><input type="radio" name="answer" value="b"> Два кофе</label>
         <label><input type="radio" name="answer" value="c"> Один чай и один кофе</label>
@@ -135,5 +135,6 @@
 {% endblock %}
 {% block scripts %}
 <link rel="stylesheet" href="{% static 'css/cafe-lab.css' %}">
+{{ cafe_audio|json_script:"cafe-audio-manifest" }}
 <script src="{% static 'js/cafe-lab.js' %}" defer></script>
 {% endblock %}

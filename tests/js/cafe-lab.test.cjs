@@ -43,3 +43,23 @@ test('sample dialogue is original and contains both misunderstood and corrected 
   assert.ok(lesson.DIALOGUE.some(line => line.includes('One tea and one coffee')));
   assert.equal(lesson.DIALOGUE.length, 6);
 });
+
+test('test-tone manifests cannot be used as speech', () => {
+  const track = { url: '/static/audio/cafe-lab/voice_natural.mp3',
+                  timings: Array.from({length: 6}, (_, i) => ({line:i,start:i,end:i+0.8})) };
+  assert.equal(lesson.selectAudioTrack({engine:'test',tracks:{natural:track}}, 'natural'), null);
+  assert.equal(lesson.selectAudioTrack({engine:'kokoro',tracks:{natural:track}}, 'natural'), track);
+  assert.equal(lesson.selectAudioTrack(null, 'natural'), null);
+  assert.equal(lesson.selectAudioTrack({engine:'kokoro',tracks:{}}, 'natural'), null);
+  assert.equal(lesson.selectAudioTrack({engine:'kokoro',tracks:{natural:{...track,timings:[]}}}, 'natural'), null);
+});
+
+test('line highlighting only selects the actual spoken interval', () => {
+  const timings = [{line:0,start:0.4,end:1.5},{line:1,start:2,end:3}];
+  assert.equal(lesson.activeDialogueLine(timings, 0), -1);
+  assert.equal(lesson.activeDialogueLine(timings, 0.4), 0);
+  assert.equal(lesson.activeDialogueLine(timings, 1.5), -1);
+  assert.equal(lesson.activeDialogueLine(timings, 2.5), 1);
+  assert.equal(lesson.activeDialogueLine(timings, NaN), -1);
+  assert.equal(lesson.activeDialogueLine(null, 1), -1);
+});

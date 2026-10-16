@@ -35,8 +35,20 @@
   }
   function isCorrectListenAnswer(value) { return value === "b"; }
 
+  function selectAudioTrack(manifest, tempo) {
+    if (!manifest || manifest.engine !== "kokoro" || !manifest.tracks) return null;
+    const track = manifest.tracks[tempo];
+    return track && typeof track.url === "string" && Array.isArray(track.timings) &&
+      track.timings.length === DIALOGUE.length ? track : null;
+  }
+  function activeDialogueLine(timings, seconds) {
+    if (!Array.isArray(timings) || !Number.isFinite(seconds)) return -1;
+    return timings.findIndex(function (timing) { return seconds >= timing.start && seconds < timing.end; });
+  }
+
+
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { buildSentence, buildTranslation, chooseAmericanVoice, isCorrectListenAnswer, DIALOGUE };
+    module.exports = { buildSentence, buildTranslation, chooseAmericanVoice, isCorrectListenAnswer, selectAudioTrack, activeDialogueLine, DIALOGUE };
   }
   if (typeof document === "undefined") return;
   const root = document.querySelector("[data-cafe-lab]");
@@ -81,34 +93,175 @@
   refresh();
 
   const audioStatus = by("[data-audio-status]");
+  const playBtn = by("[data-speak-dialogue]");
+  const stopDialogueBtn = by("[data-stop-dialogue]");
+  const builtBtn = by("[data-speak-built]");
+  const tempoSelect = by("[data-audio-tempo]");
+  const audio = by("[data-dialogue-audio]");
+  const lineEls = [...root.querySelectorAll("[data-dialogue-line]")];
   const canSpeak = typeof window !== "undefined" && "speechSynthesis" in window &&
     "SpeechSynthesisUtterance" in window;
-  const dialogueBtn = by("[data-speak-dialogue]");
-  const builtBtn = by("[data-speak-built]");
-  if (!canSpeak) {
-    dialogueBtn.disabled = true;
-    builtBtn.disabled = true;
-    text(audioStatus, "Озвучка недоступна в этом браузере. Вы можете открыть английские реплики.");
+
+  let audioManifest = null;
+  try { audioManifest = JSON.parse(document.getElementById("cafe-audio-manifest")?.textContent || "null"); }
+  catch (error) { audioManifest = null; }
+  let currentTrack = null;
+  let singleLineEnd = null;
+  let speechActive = false;
+  let speechPaused = false;
+  let operation = 0;
+
+  function markLine(index) {
+    lineEls.forEach(function (line, i) {
+      if (i === index) line.setAttribute("data-current-line", "true");
+      else line.removeAttribute("data-current-line");
+    });
   }
-  function speak(lines) {
-    if (!canSpeak) return;
-    const voice = chooseAmericanVoice(window.speechSynthesis.getVoices());
+  function togglePlay(playing) {
+    playBtn.setAttribute("aria-pressed", String(playing));
+    playBtn.textContent = playing ? "Ⅱ Пауза" : "▶ Слушать диалог";
+  }
+  function stopAll() {
+    operation += 1;
+    if (canSpeak) window.speechSynthesis.cancel();
+    audio.pause();
+    currentTrack = null;
+    singleLineEnd = null;
+    speechActive = false;
+    speechPaused = false;
+    markLine(-1);
+    togglePlay(false);
+  }
+
+  function browserVoice() {
+    if (!canSpeak) return null;
+    return chooseAmericanVoice(window.speechSynthesis.getVoices());
+  }
+  function browserSpeak(lines, startLine) {
+    stopAll();
+    const voice = browserVoice();
     if (!voice) {
-      text(audioStatus, "Системный голос en-US не найден. Это не ошибка урока: откройте текст реплик.");
+      text(audioStatus, "На устройстве нет доступного голоса en-US. Прочитайте текст диалога.");
       return;
     }
-    window.speechSynthesis.cancel();
-    const utterance = new window.SpeechSynthesisUtterance(lines);
-    utterance.lang = VOICES_LANG;
-    utterance.voice = voice;
-    utterance.rate = 0.88;
-    utterance.onstart = function () { text(audioStatus, "Звучит синтез речи en-US (один голос для всего диалога)."); };
-    utterance.onend = function () { text(audioStatus, "Воспроизведение закончено."); };
-    utterance.onerror = function () { text(audioStatus, "Не удалось озвучить. Откройте текст реплик."); };
-    window.speechSynthesis.speak(utterance);
+    const token = operation;
+    const rate = { very_slow: 0.65, slow: 0.8, natural: 1.0 }[tempoSelect.value] || 1.0;
+    let index = 0;
+    speechActive = true;
+    function next() {
+      if (token !== operation) return;
+      if (index >= lines.length) {
+        speechActive = false; markLine(-1); togglePlay(false);
+        text(audioStatus, "Озвучивание завершено.");
+        return;
+      }
+      if (startLine === -2) markLine(-1);
+      else if (startLine >= 0) markLine(startLine + index);
+      else markLine(index);
+      const u = new window.SpeechSynthesisUtterance(lines[index]);
+      u.lang = VOICES_LANG;
+      u.voice = voice;
+      u.rate = rate;
+      u.onend = function () { index += 1; next(); };
+      u.onerror = function () {
+        if (token !== operation) return;
+        speechActive = false; markLine(-1); togglePlay(false);
+        text(audioStatus, "Системный синтез речи остановился. Реплики доступны текстом.");
+      };
+      window.speechSynthesis.speak(u);
+    }
+    text(audioStatus, startLine === -2
+      ? "Озвучивание вашей фразы синтезированным голосом en-US."
+      : "Системный синтез en-US: один голос для Мии и Тома, не оригинальная запись.");
+    togglePlay(true);
+    next();
   }
-  dialogueBtn.addEventListener("click", function () { speak(DIALOGUE.join(" … ")); });
-  builtBtn.addEventListener("click", function () { speak(output.textContent); });
+  function playGenerated(track, onlyLine) {
+    stopAll();
+    const token = operation;
+    currentTrack = track;
+    singleLineEnd = onlyLine >= 0 ? track.timings[onlyLine].end : null;
+    if (audio.getAttribute("src") !== track.url) {
+      audio.src = track.url;
+      audio.load();
+    }
+    try { audio.currentTime = onlyLine >= 0 ? track.timings[onlyLine].start : 0; }
+    catch (error) { /* seek available once metadata loads */ }
+    text(audioStatus, "Kokoro: синтезированные голоса Мии и Тома. Проверка произношения редактором ещё впереди.");
+    togglePlay(true);
+    const promise = audio.play();
+    if (promise && typeof promise.catch === "function") promise.catch(function () {
+      if (token !== operation) return;
+      text(audioStatus, "Запись недоступна. Пробуем системный голос en-US.");
+      browserSpeak(onlyLine >= 0 ? [DIALOGUE[onlyLine]] : DIALOGUE, onlyLine);
+    });
+  }
+  function playSelected(onlyLine) {
+    const track = selectAudioTrack(audioManifest, tempoSelect.value);
+    if (track) playGenerated(track, onlyLine);
+    else browserSpeak(onlyLine >= 0 ? [DIALOGUE[onlyLine]] : DIALOGUE, onlyLine);
+  }
+
+  const hasRecorded = !!selectAudioTrack(audioManifest, "natural");
+  if (!canSpeak) builtBtn.disabled = true;
+  if (!hasRecorded && !canSpeak) {
+    playBtn.disabled = true;
+    root.querySelectorAll("[data-replay-line]").forEach(function (b) { b.disabled = true; });
+    text(audioStatus, "Аудио пока недоступно. Английские реплики можно прочитать после раскрытия текста.");
+  } else {
+    text(audioStatus, hasRecorded
+      ? "Доступны три темпа Kokoro: отдельные голоса Мии и Тома."
+      : "Готовой записи пока нет. Доступен системный синтез en-US, если голос установлен.");
+  }
+
+  playBtn.addEventListener("click", function () {
+    if (speechActive) {
+      if (!speechPaused) { window.speechSynthesis.pause(); speechPaused = true; togglePlay(false); }
+      else { window.speechSynthesis.resume(); speechPaused = false; togglePlay(true); }
+      return;
+    }
+    if (currentTrack && !audio.paused) {
+      audio.pause(); togglePlay(false); return;
+    }
+    if (currentTrack && audio.paused && audio.currentTime > 0 && !singleLineEnd) {
+      togglePlay(true);
+      const p = audio.play();
+      if (p && typeof p.catch === "function") p.catch(function () { playSelected(-1); });
+      return;
+    }
+    playSelected(-1);
+  });
+  stopDialogueBtn.addEventListener("click", function () { stopAll(); text(audioStatus, "Воспроизведение остановлено."); });
+  tempoSelect.addEventListener("change", function () {
+    stopAll();
+    text(audioStatus, "Темп изменён. Нажмите «Слушать диалог».");
+  });
+  root.querySelectorAll("[data-replay-line]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const index = Number(button.dataset.replayLine);
+      if (!Number.isInteger(index) || index < 0 || index >= DIALOGUE.length) return;
+      playSelected(index);
+    });
+  });
+  audio.addEventListener("timeupdate", function () {
+    if (!currentTrack) return;
+    markLine(activeDialogueLine(currentTrack.timings, audio.currentTime));
+    if (singleLineEnd !== null && audio.currentTime >= singleLineEnd) {
+      stopAll();
+      text(audioStatus, "Реплика прослушана.");
+    }
+  });
+  audio.addEventListener("ended", function () {
+    stopAll(); text(audioStatus, "Воспроизведение завершено.");
+  });
+  audio.addEventListener("error", function () {
+    if (!currentTrack) return;
+    const index = singleLineEnd === null ? -1 : activeDialogueLine(currentTrack.timings, audio.currentTime);
+    browserSpeak(index >= 0 ? [DIALOGUE[index]] : DIALOGUE, index);
+  });
+  builtBtn.addEventListener("click", function () {
+    browserSpeak([output.textContent], -2);
+  });
 
   const quiz = by("[data-listen-check]");
   quiz.addEventListener("submit", function (event) {
@@ -206,7 +359,7 @@
       if (recorder && recorder.state === "recording") recorder.stop();
       stopTracks();
       cleanupPlayback();
-      if (canSpeak) window.speechSynthesis.cancel();
+      stopAll();
     });
   }
 })();
