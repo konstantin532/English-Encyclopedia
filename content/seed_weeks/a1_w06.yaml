@@ -52,7 +52,17 @@ script:
 twister:
   number: 6
   series: sounds
-  text: "[T8]I[/] [D2]work[/], [T8]you[/] [D2]work[/], [T5]every[/] [S7]day[/]."
-  ipa: "/aɪ ˈwɝk ju ˈwɝk ˈɛvri ˈdeɪ/"
-  focus_sounds: [w, r]
+  text: '[T8]I[/] [D2]work[/] [P3]at[/] [N3]five[/], [T8]you[/] [D2]work[/] [P3]at[/] [N3]seven[/].'
+  ipa: /aɪ ˈwɝk ət ˈfaɪv ju ˈwɝk ət ˈsɛvən/
+  focus_sounds:
+  - w
   source: original
+  goal_ru: w (work) против v (five, seven). Русскоязычные часто говорят «вёрк» — а нужны губы трубочкой.
+  tip_ru: 'w: губы вытянуты трубочкой и не касаются зубов, потом быстро раскрываются — «уёрк». v: верхние зубы легко касаются нижней губы — «файв», «сэвэн».'
+  warmup:
+  - '[D2]work[/] — [N3]five[/]'
+  - '[D2]work[/] [P3]at[/] [N3]five[/]'
+  - '[D2]work[/] [P3]at[/] [N3]seven[/]'
+  - '[T8]I[/] [D2]work[/] [A3]here[/] [T5]every[/] [S7]day[/].'
+  target_line: I work here every day.
+  own_ru: 'Скажите, во сколько вы начинаете работать или учиться: I work at…'

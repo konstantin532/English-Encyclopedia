@@ -50,7 +50,18 @@ script:
 twister:
   number: 11
   series: sounds
-  text: "[T3]My[/] [S5]back[/], [T3]my[/] [S5]head[/], [T3]my[/] [S5]headache[/]!"
-  ipa: "/maɪ ˈbæk maɪ ˈhɛd maɪ ˈhɛdeɪk/"
-  focus_sounds: [ae, h]
+  text: '[T3]My[/] [S5]head[/], [T3]my[/] [S5]back[/], [T3]my[/] [S5]head[/], [T3]my[/] [S5]back[/]!'
+  ipa: /maɪ ˈhɛd maɪ ˈbæk maɪ ˈhɛd maɪ ˈbæk/
+  focus_sounds:
+  - ae
+  - h
   source: original
+  goal_ru: /ɛ/ в head против /æ/ в back и лёгкое h. Для американца bed и bad — разные слова.
+  tip_ru: 'head: рот приоткрыт, как в «эти». back: челюсть опускается ниже, звук между «э» и «а». h — тихий выдох, не «х».'
+  warmup:
+  - '[S5]head[/] — [S5]back[/]'
+  - '[T3]my[/] [S5]head[/], [T3]my[/] [S5]back[/]'
+  - '[T3]My[/] [S5]head[/] [D3]hurts[/].'
+  - '[T3]My[/] [S5]back[/] [D3]hurts[/].'
+  target_line: My back hurts.
+  own_ru: 'Скажите, что у вас болит или устаёт: My … hurts.'

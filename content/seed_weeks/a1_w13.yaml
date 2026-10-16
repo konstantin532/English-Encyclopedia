@@ -52,7 +52,17 @@ script:
 twister:
   number: 13
   series: sounds
-  text: "[A6]Why[/]? [C3]Because[/] [T8]I[/] [D7]can[/]!"
-  ipa: "/ˈwaɪ bɪˈkɔz aɪ ˈkæn/"
-  focus_sounds: [w, ae]
+  text: '[T8]I[/] [D7]can[/], [T8]you[/] [D7]ca[/][X1]n''t[/]. [T8]You[/] [D7]can[/], [T8]I[/] [D7]ca[/][X1]n''t[/].'
+  ipa: /aɪ ˈkæn ju ˈkænt ju ˈkæn aɪ ˈkænt/
+  focus_sounds:
+  - ae
   source: original
+  goal_ru: 'can против can''t: американцы почти не произносят t, поэтому различают их по длине и ударению.'
+  tip_ru: 'can''t — длинное ударное /æ/ и короткая остановка вместо t: «кэн(т)». can в середине фразы — короткое «кн», в конце фразы (I can) — полное «кэн».'
+  warmup:
+  - '[D7]can[/] — [D7]ca[/][X1]n''t[/]'
+  - '[T8]I[/] [D7]can[/]'
+  - '[T8]I[/] [D7]can[/], [T8]you[/] [D7]ca[/][X1]n''t[/]'
+  - '[O4]Yes[/], [T8]I[/] [D7]can[/].'
+  target_line: Yes, I can.
+  own_ru: 'Скажите, что вы умеете и чего не умеете: I can… I can''t…'

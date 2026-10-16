@@ -50,7 +50,18 @@ script:
 twister:
   number: 5
   series: sounds
-  text: "[T9]There[/] [D1]are[/] [N1]three[/] [S3]apples[/] [C1]and[/] [N1]three[/] [S3]eggs[/]."
-  ipa: "/ðɛr ɚ θri ˈæpəlz ən θri ˈɛɡz/"
-  focus_sounds: [dh, th]
+  text: '[T9]There[/] [D1]are[/] [S3]apples[/] [C1]and[/] [S3]eggs[/], [S3]apples[/] [C1]and[/] [S3]eggs[/].'
+  ipa: /ðɛr ɚ ˈæpəlz ən ˈɛɡz ˈæpəlz ən ˈɛɡz/
+  focus_sounds:
+  - dh
+  - ae
   source: original
+  goal_ru: /æ/ в apples против /ɛ/ в eggs — два разных «э». Для американца это разные слова.
+  tip_ru: '/æ/: рот широко открыт, челюсть опущена — «эпл» почти с «а». /ɛ/ в eggs: рот приоткрыт меньше, как в русском «эти».'
+  warmup:
+  - '[S3]apples[/] — [S3]eggs[/]'
+  - '[S3]apples[/] [C1]and[/] [S3]eggs[/]'
+  - '[T9]There[/] [D1]are[/] [S3]apples[/].'
+  - '[D1]Is[/] [T9]there[/] [S3]milk[/]?'
+  target_line: Is there milk?
+  own_ru: 'Спросите, есть ли что-то в магазине: Is there…? Are there…?'

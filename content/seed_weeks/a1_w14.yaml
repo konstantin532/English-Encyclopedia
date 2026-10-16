@@ -48,7 +48,17 @@ script:
 twister:
   number: 14
   series: sounds
-  text: "[N1]Two[/] [S2]tickets[/], [O8]please[/]! [O2]Thank you[/]!"
-  ipa: "/ˈtu ˈtɪkɪts ˈpliz ˈθæŋk ju/"
-  focus_sounds: [th, ng]
+  text: '[S4]Bus[/] [S4]stop[/], [S4]bus[/] [S4]stop[/], [T1]the[/] [J8]last[/] [S4]bus[/] [S4]stop[/]!'
+  ipa: /ˈbʌs ˌstɑp ˈbʌs ˌstɑp ðə ˈlæst ˈbʌs ˌstɑp/
+  focus_sounds:
+  - ae
   source: original
+  goal_ru: Короткое /ʌ/ в bus против открытого /ɑ/ в stop. В русском оба похожи на «а», в английском это разные звуки.
+  tip_ru: 'bus: рот приоткрыт немного, короткое расслабленное «а». stop: рот открыт шире, язык лежит низко, звук длиннее — «стап». Между s и t не вставляйте гласную.'
+  warmup:
+  - '[S4]bus[/] — [S4]stop[/]'
+  - '[S4]bus[/] [S4]stop[/]'
+  - '[T1]the[/] [J8]last[/] [S4]bus[/] [S4]stop[/]'
+  - '[D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]?'
+  target_line: Does this bus go to Park Street?
+  own_ru: 'Спросите, идёт ли автобус до вашей остановки: Does this bus go to…?'

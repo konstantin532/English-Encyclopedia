@@ -47,20 +47,29 @@ def story_detail(request, number):
 @ensure_csrf_cookie
 def poem_detail(request, number):
     poem = get_object_or_404(Poem.objects.select_related("level", "week"), number=number, is_published=True)
-    lines = poem.body.strip().splitlines()
+    # Пустая строка в body разделяет строфы; номера строк в gaps и pronunciation считают только строки текста.
+    lines, stanza_starts = [], set()
+    for raw in poem.body.strip().splitlines():
+        if not raw.strip():
+            stanza_starts.add(len(lines))
+            continue
+        lines.append(raw)
     gapped = []
     for i, line in enumerate(lines, start=1):
         text = strip_markup(line)
         gap_index = next((k for k, g in enumerate(poem.gaps) if g["line"] == i), None)
-        if gap_index is None:
-            gapped.append({"before": text, "gap": None})
-            continue
-        m = re.search(rf"\b{re.escape(poem.gaps[gap_index]['word'])}\b", text, re.I)
-        gapped.append({"before": text[: m.start()], "after": text[m.end():], "gap": gap_index} if m
-                      else {"before": text, "gap": None})
+        row = {"before": text, "gap": None, "stanza": (i - 1) in stanza_starts}
+        if gap_index is not None:
+            m = re.search(rf"\b{re.escape(poem.gaps[gap_index]['word'])}\b", text, re.I)
+            if m:
+                row.update(before=text[: m.start()], after=text[m.end():], gap=gap_index)
+        gapped.append(row)
+    pron = poem.pronunciation or []
+    rows = [{"line": line, "pr": pron[k] if k < len(pron) else None, "stanza": k in stanza_starts}
+            for k, line in enumerate(lines)]
     return render(request, "poems/detail.html", {
         "poem": poem,
-        "rows": list(zip(lines, poem.pronunciation)) if poem.pronunciation else [(l, None) for l in lines],
+        "rows": rows,
         "gapped": gapped,
         "targets": poem.target_units.select_related("semantic_class__category"),
     })

@@ -12,14 +12,14 @@
     <article class="prose">
       <section class="layer" aria-labelledby="pt1">
         <h2 id="pt1"><span class="layer-num">1</span>Послушайте ритм</h2>
-        <p>Аудио пока нет. Прочитайте стихотворение вслух медленно и отстучите ритм: на каждое ударение — хлопок.</p>
-        <div class="poem annotated" lang="en">{% for line, pr in rows %}<p>{{ line|annotate }}</p>{% endfor %}</div>
+        <p>Аудио пока нет. Прочитайте стихотворение вслух медленно и отстучите ритм: на каждое ударение — хлопок. Сначала поймите, что происходит: это маленькая история.</p>
+        <div class="poem annotated" lang="en">{% for row in rows %}<p{% if row.stanza %} class="stanza-start"{% endif %}>{{ row.line|annotate }}</p>{% endfor %}</div>
       </section>
       <section class="layer" aria-labelledby="pt2">
         <h2 id="pt2"><span class="layer-num">2</span>Ударения, паузы, связки</h2>
         <p>Заглавные буквы — ударный слог, <span class="ipa">|</span> — пауза, <span class="ipa">‿</span> — слова сливаются.</p>
         <ol class="pron">
-          {% for line, pr in rows %}{% if pr %}<li><span class="pron-stress" lang="en">{{ pr.stress|annotate }}</span><span class="ipa">{{ pr.ipa }}</span>{{ pr|ru_tr }}</li>{% endif %}{% endfor %}
+          {% for row in rows %}{% if row.pr %}<li><span class="pron-stress" lang="en">{{ row.pr.stress|annotate }}</span><span class="ipa">{{ row.pr.ipa }}</span>{{ row.pr|ru_tr }}</li>{% endif %}{% endfor %}
         </ol>
         <p><strong>Фонетические задачи:</strong></p>
         <ul>{% for g in poem.phonetic_goals %}<li>{{ g }}</li>{% endfor %}</ul>
@@ -32,7 +32,7 @@
         <h2 id="pt4"><span class="layer-num">4</span>Восстановите пропуски</h2>
         <div class="poem-gaps" lang="en" data-poem="{{ poem.number }}">
           {% for row in gapped %}
-          <p>{{ row.before }}{% if row.gap is not None %}<label class="visually-hidden" for="g{{ row.gap }}">Пропущенное слово</label><input class="fill-input gap-input" id="g{{ row.gap }}" data-gap="{{ row.gap }}" data-url="{% url 'api:check_poem_gap' poem.number row.gap %}" autocomplete="off" autocapitalize="off" spellcheck="false" size="9"><span class="gap-mark" aria-live="polite"></span>{{ row.after }}{% endif %}</p>
+          <p{% if row.stanza %} class="stanza-start"{% endif %}>{{ row.before }}{% if row.gap is not None %}<label class="visually-hidden" for="g{{ row.gap }}">Пропущенное слово</label><input class="fill-input gap-input" id="g{{ row.gap }}" data-gap="{{ row.gap }}" data-url="{% url 'api:check_poem_gap' poem.number row.gap %}" autocomplete="off" autocapitalize="off" spellcheck="false" size="9"><span class="gap-mark" aria-live="polite"></span>{{ row.after }}{% endif %}</p>
           {% endfor %}
         </div>
         <div class="drill-actions"><button class="btn btn-primary btn-small" type="button" data-gaps-check>Проверить</button><button class="btn btn-quiet btn-small" type="button" data-gaps-reveal hidden>Показать ответы</button></div>

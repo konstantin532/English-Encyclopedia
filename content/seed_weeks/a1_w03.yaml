@@ -51,7 +51,17 @@ script:
 twister:
   number: 3
   series: sounds
-  text: "[N1]Three[/] [S3]teas[/], [O2]thank you[/], [N1]three[/] [S3]teas[/]."
-  ipa: "/θri tiz ˈθæŋk ju θri tiz/"
-  focus_sounds: [th]
+  text: '[N1]Three[/] [S3]teas[/], [N1]two[/] [S3]teas[/], [N1]thirteen[/] [S3]teas[/]!'
+  ipa: /ˈθri ˈtiz ˈtu ˈtiz θɝˈtin ˈtiz/
+  focus_sounds:
+  - th
   source: original
+  goal_ru: 'Глухое th /θ/ против t: three — tea, thirteen — two. Не заменяйте th на «с» или «ф».'
+  tip_ru: 'th в three: кончик языка между зубами, выдох без голоса — как будто остужаете суп. t в tea: кончик языка прижат к бугоркам за верхними зубами, короткий щелчок.'
+  warmup:
+  - '[N1]three[/] — [N1]two[/]'
+  - '[N1]three[/] [S3]teas[/]'
+  - '[N1]three[/] [S3]teas[/], [N1]two[/] [S3]teas[/]'
+  - '[O2]Thank you[/]!'
+  target_line: Thank you!
+  own_ru: 'Закажите что-нибудь числом с th: Three coffees, please. / Thirteen cookies, please.'

@@ -49,7 +49,17 @@ script:
 twister:
   number: 8
   series: sounds
-  text: "[D4]Turn[/] [A3]left[/], [D4]turn[/] [A3]right[/], [D4]go[/] [A3]straight[/]."
-  ipa: "/ˈtɝn ˈlɛft ˈtɝn ˈraɪt ˈɡoʊ ˈstreɪt/"
-  focus_sounds: [r]
+  text: '[D4]Turn[/] [A3]right[/], [D4]turn[/] [A3]left[/], [A3]right[/], [A3]left[/], [A3]left[/], [A3]right[/]!'
+  ipa: /ˈtɝn ˈraɪt ˈtɝn ˈlɛft ˈraɪt ˈlɛft ˈlɛft ˈraɪt/
+  focus_sounds:
+  - r
   source: original
+  goal_ru: Американское r (right) против l (left). Языку приходится всё время менять положение.
+  tip_ru: 'r: кончик языка поднят и чуть загнут назад, но ничего не касается — без русского раската. l: кончик языка прижат к бугоркам за верхними зубами.'
+  warmup:
+  - '[A3]right[/] — [A3]left[/]'
+  - '[D4]turn[/] [A3]right[/]'
+  - '[D4]turn[/] [A3]right[/], [D4]turn[/] [A3]left[/]'
+  - '[D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/].'
+  target_line: Go straight and turn left.
+  own_ru: 'Объясните путь от входной двери до кухни: Go straight and turn…'

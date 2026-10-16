@@ -1,0 +1,75 @@
+number: 1
+target_units:
+- LX-00005
+- LX-00009
+- LX-00011
+- LX-00006
+- LX-00007
+- LX-00027
+- LX-00034
+- LX-00040
+- LX-00041
+body: |
+  [J3]Good[/] [S7]morning[/], [S7]day[/]!
+  [J3]Good[/] [S7]morning[/], [S2]home[/]!
+  [T8]I[/] [D1]have[/] [T3]my[/] [S3]coffee[/],
+  [T8]I[/] [D1]have[/] [T3]my[/] [S2]phone[/].
+
+  [T3]My[/] [S2]house[/] [D1]is[/] [J1]big[/],
+  [T3]my[/] [S2]room[/] [D1]is[/] [J2]new[/].
+  [D1]Do[/] [T8]you[/] [D3]like[/] [T8]it[/]?
+  [O4]Yes[/], [T8]I[/] [D1]do[/]!
+
+  [S1]Tom[/] [D1]has[/] [T1]a[/] [S2]box[/],
+  [T1]a[/] [J1]big[/], [J1]big[/] [S2]box[/].
+  [D1]Is[/] [T8]it[/] [T3]my[/] [S2]box[/]?
+  [O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/]!
+
+  [T8]It[/] [D1]is[/] [T1]a[/] [S6]cat[/]!
+  [D1]Is[/] [T8]it[/] [T3]my[/] [S6]cat[/]?
+  [O4]Yes[/], [T8]it[/] [D1]is[/]!
+  [T8]I[/] [D3]like[/] [T2]that[/]!
+pronunciation:
+- stress: GOOD MORNING | DAY!
+  ipa: /ˈɡʊd ˈmɔːrnɪŋ | ˈdeɪ/
+- stress: GOOD MORNING | HOME!
+  ipa: /ˈɡʊd ˈmɔːrnɪŋ | ˈhoʊm/
+- stress: I have my COFFEE
+  ipa: /aɪ hæv maɪ ˈkɔːfi/
+- stress: I have my PHONE.
+  ipa: /aɪ hæv maɪ ˈfoʊn/
+- stress: my HOUSE is BIG
+  ipa: /maɪ ˈhaʊs ɪz ˈbɪɡ/
+- stress: my ROOM is NEW.
+  ipa: /maɪ ˈruːm ɪz ˈnu/
+- stress: do you LIKE it?
+  ipa: /də ju ˈlaɪk ɪt/
+- stress: YES | I DO!
+  ipa: /ˈjes | aɪ ˈdu/
+- stress: TOM has a BOX
+  ipa: /ˈtɑm hæz ə ˈbɑks/
+- stress: a BIG | BIG BOX.
+  ipa: /ə ˈbɪɡ | ˈbɪɡ ˈbɑks/
+- stress: is it my BOX?
+  ipa: /ɪz ɪt maɪ ˈbɑks/
+- stress: NO | it is NOT!
+  ipa: /ˈnoʊ | ɪt ɪz ˈnɑt/
+- stress: it is a CAT!
+  ipa: /ɪt ɪz ə ˈkæt/
+- stress: is it my CAT?
+  ipa: /ɪz ɪt maɪ ˈkæt/
+- stress: YES | it IS!
+  ipa: /ˈjes | ɪt ˈɪz/
+- stress: I LIKE THAT!
+  ipa: /aɪ ˈlaɪk ˈðæt/
+gaps:
+- line: 4
+  word: phone
+- line: 6
+  word: new
+- line: 9
+  word: box
+- line: 14
+  word: cat
+- line: 16
+  word: that

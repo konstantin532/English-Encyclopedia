@@ -1,0 +1,75 @@
+number: 6
+target_units:
+- LX-00225
+- LX-00237
+- LX-00227
+- LX-00238
+- LX-00229
+- LX-00180
+- LX-00218
+- LX-00217
+- LX-00150
+body: |
+  [T9]There[/] [D1]is[/] [T1]a[/] [S9]letter[/],
+  [T8]it[/] [D1]is[/] [J2]white[/].
+  [T9]There[/] [D1]is[/] [T4]no[/] [S9]address[/].
+  [D1]Is[/] [T8]it[/] [A3]right[/]?
+
+  [T9]There[/] [D1]is[/] [N1]one[/] [S9]word[/],
+  [N1]one[/] [S9]word[/]: [S1]Rose[/].
+  [T9]Who[/] [D1]is[/] [S1]Rose[/]?
+  [T9]Who[/] [D6]knows[/]? [T9]Who[/] [D6]knows[/]?
+
+  [T1]The[/] [S4]post[/] [S4]office[/]
+  [D1]does[/] [X1]not[/] [D6]know[/].
+  [T1]The[/] [J2]old[/] [S2]mailbox[/]?
+  [O4]No[/], [O4]no[/], [O4]no[/]!
+
+  [T8]I[/] [D7]cannot[/] [D2]sleep[/],
+  [T8]it[/] [D1]is[/] [S7]night[/].
+  [T8]I[/] [D1]have[/] [T1]the[/] [S9]letter[/],
+  [J2]white[/], [J2]white[/], [J2]white[/].
+pronunciation:
+- stress: there is a LETTER
+  ipa: /ðɛr ɪz ə ˈlɛt̬ɚ/
+- stress: it is WHITE.
+  ipa: /ɪt ɪz ˈwaɪt/
+- stress: there is no ADDRESS.
+  ipa: /ðɛr ɪz noʊ ˈædrɛs/
+- stress: is it RIGHT?
+  ipa: /ɪz ɪt ˈraɪt/
+- stress: there is ONE WORD
+  ipa: /ðɛr ɪz ˈwʌn ˈwɝd/
+- stress: 'ONE WORD: ROSE.'
+  ipa: /ˈwʌn ˈwɝd ˈroʊz/
+- stress: who is ROSE?
+  ipa: /hu ɪz ˈroʊz/
+- stress: who KNOWS? who KNOWS?
+  ipa: /hu ˈnoʊz hu ˈnoʊz/
+- stress: the POST OFFICE
+  ipa: /ðə ˈpoʊst ˈɔfɪs/
+- stress: does NOT KNOW.
+  ipa: /dəz ˈnɑt ˈnoʊ/
+- stress: the OLD MAILBOX?
+  ipa: /ðə ˈoʊld ˈmeɪlbɑks/
+- stress: NO | NO | NO!
+  ipa: /ˈnoʊ | ˈnoʊ | ˈnoʊ/
+- stress: I CANNOT SLEEP
+  ipa: /aɪ ˈkænɑt ˈslip/
+- stress: it is NIGHT.
+  ipa: /ɪt ɪz ˈnaɪt/
+- stress: I have the LETTER
+  ipa: /aɪ hæv ðə ˈlɛt̬ɚ/
+- stress: WHITE | WHITE | WHITE.
+  ipa: /ˈwaɪt | ˈwaɪt | ˈwaɪt/
+gaps:
+- line: 2
+  word: white
+- line: 3
+  word: address
+- line: 8
+  word: knows
+- line: 13
+  word: sleep
+- line: 16
+  word: white

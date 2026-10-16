@@ -220,7 +220,7 @@ class Command(BaseCommand):
     def load_poem(self, path: Path) -> int:
         data = read_seed(path)
         require_fields(path.name, data, {"number": int, "body": str})
-        lines = data["body"].strip().splitlines()
+        lines = [ln for ln in data["body"].strip().splitlines() if ln.strip()]  # пустые строки — границы строф
         for gap in records(path.name, "gaps", data.get("gaps", []), {"line": int, "word": str}):
             if not 1 <= gap["line"] <= len(lines) or not gap["word"].strip():
                 raise CommandError(f"{path.name}: пропуск должен содержать слово и номер существующей строки")
@@ -290,7 +290,14 @@ class Command(BaseCommand):
             if tw["number"] != week.global_number:
                 raise CommandError(f"{path.name}: номер скороговорки должен быть {week.global_number}")
             self._check_markup(f"{path.name}: скороговорка", tw["text"])
+            warmup = tw.get("warmup", [])
+            if not isinstance(warmup, list) or not all(isinstance(x, str) for x in warmup):
+                raise CommandError(f"{path.name}: warmup скороговорки — список строк")
+            for i, line in enumerate(warmup, 1):
+                self._check_markup(f"{path.name}: разминка, шаг {i}", line)
             TongueTwister.objects.update_or_create(week=week, defaults=dict(
+                goal_ru=tw.get("goal_ru", ""), tip_ru=tw.get("tip_ru", ""), warmup=warmup,
+                target_line=tw.get("target_line", ""), own_ru=tw.get("own_ru", ""),
                 number=tw["number"], series=tw["series"], text=tw["text"], ipa=tw.get("ipa", ""), ru=tw.get("ru", ""),
                 focus_sounds=tw.get("focus_sounds", []), full_form=tw.get("full_form", ""), source=tw["source"],
                 source_note=tw.get("source_note", ""), audio=self._audio_manifest("twisters", f"t{tw['number']:03d}")))

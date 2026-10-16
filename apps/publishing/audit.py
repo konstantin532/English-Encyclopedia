@@ -265,7 +265,9 @@ def audit_stories_and_poems(r: AuditReport) -> None:
             r.errors.append(f"{where}: целевых единиц {n}, нужно 6–10.")
         if not 2 <= len(poem.phonetic_goals) <= 3:
             r.warnings.append(f"{where}: фонетических задач {len(poem.phonetic_goals)}, нужно 2–3.")
-        lines = poem.body.strip().splitlines()
+        lines = [ln for ln in poem.body.strip().splitlines() if ln.strip()]
+        if poem.pronunciation and len(poem.pronunciation) != len(lines):
+            r.errors.append(f"{where}: строк {len(lines)}, а разборов произношения {len(poem.pronunciation)}.")
         for gap in poem.gaps:
             line = strip_markup(lines[gap["line"] - 1]) if gap["line"] <= len(lines) else ""
             if gap["word"].lower() not in line.lower():

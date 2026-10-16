@@ -43,18 +43,7 @@
       <section class="layer" id="twister" aria-labelledby="twister-t">
         <h2 id="twister-t">Скороговорка недели</h2>
         {% if twister %}
-        <p class="annotated" lang="en">{{ twister.text|annotate }}</p>
-        <p><span class="ipa">{{ twister.ipa }}</span> {{ twister.ipa|ru_ipa:twister.ru }}</p>
-        {% if twister.full_form %}<p lang="en">{{ twister.full_form }}</p>{% endif %}
-        {% include "components/sound_legend.html" %}
-        {% if twister.audio %}
-        <div data-twister-player><audio controls preload="metadata" aria-label="Скороговорка" src="{% static twister.audio.very_slow.file %}"></audio>
-          <div class="player-modes" aria-label="Темп скороговорки">
-            <button class="btn btn-quiet btn-small" type="button" data-twister-src="{% static twister.audio.very_slow.file %}" aria-pressed="true">Очень медленно</button>
-            <button class="btn btn-quiet btn-small" type="button" data-twister-src="{% static twister.audio.slow.file %}" aria-pressed="false">Медленно</button>
-            <button class="btn btn-quiet btn-small" type="button" data-twister-src="{% static twister.audio.natural.file %}" aria-pressed="false">Как в жизни</button>
-          </div>
-        </div>{% else %}<p class="drill-hint">Озвучка скороговорки ещё не записана. Произнесите её медленно, потом быстрее.</p>{% endif %}
+        {% include "components/twister_trainer.html" %}
         {% else %}<p>Скороговорка готовится.</p>{% endif %}
       </section>
       <section class="layer" id="mission" aria-labelledby="mission-t"><h2 id="mission-t">Задание в жизнь</h2><p>{{ scene.mission_ru }}</p>{% include "components/story_beat.html" with beat=scene.story_beat %}</section>

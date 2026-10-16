@@ -48,7 +48,17 @@ script:
 twister:
   number: 2
   series: sounds
-  text: "[D1]Have[/] [T1]a[/] [S2]home[/], [D1]have[/] [T1]a[/] [S2]house[/]."
-  ipa: "/hæv ə hoʊm hæv ə haʊs/"
-  focus_sounds: [h]
+  text: '[T2]That[/] [S6]cat[/] [D7]can[/] [D1]have[/] [T1]a[/] [S2]box[/].'
+  ipa: /ðæt ˈkæt kən hæv ə ˈbɑks/
+  focus_sounds:
+  - ae
   source: original
+  goal_ru: Широкое /æ/ (that, cat, have) против открытого /ɑ/ (box, Tom). Русские «э» и «о» здесь не подходят.
+  tip_ru: '/æ/: рот открыт широко, как для «а», а язык тянется к «э» — звук между ними. /ɑ/ в box: рот открыт, язык лежит низко, губы не округлены — почти «а»: «бакс».'
+  warmup:
+  - '[S6]cat[/] — [S2]box[/]'
+  - '[T2]that[/] [S6]cat[/]'
+  - '[T2]that[/] [S6]cat[/], [T2]that[/] [S2]box[/]'
+  - '[S1]Tom[/] [D1]has[/] [T1]a[/] [S2]box[/].'
+  target_line: Tom has a big box.
+  own_ru: 'Скажите, что есть у вас или у друга: I have a… / Tom has a…'

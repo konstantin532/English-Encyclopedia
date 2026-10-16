@@ -366,67 +366,73 @@ poems:
 - number: 1
   level: A1
   week: 2
-  title: My Phone Is New
-  rhyme_scheme: AABBCC
-  theme_ru: Утро, дом, телефон
+  title: My New Home
+  rhyme_scheme: ABCB
+  theme_ru: Утро в новом доме, коробка Тома и кот
   phonetic_goals:
-  - 'дифтонг /oʊ/: phone, home'
-  - 'слабые формы: do you /də jə/, am at /əm ət/'
-  - 'связывание: phone‿is, like‿it, have‿a'
+  - 'дифтонг /oʊ/: home, phone, no'
+  - '/æ/ в cat, that, have'
+  - 'ударный короткий ответ в конце строки: Yes, I DO! Yes, it IS!'
 - number: 2
   level: A1
   week: 4
-  title: This and That
-  rhyme_scheme: AABB
-  theme_ru: Рядом и далеко
+  title: Who Is She?
+  rhyme_scheme: ABCB
+  theme_ru: Семейное фото Мии и чай с печеньем
   phonetic_goals:
-  - /ð/ в this, that, the
-  - '/ɪ/ и /æ/: this — that'
+  - 'звонкое th /ð/: this, mother, father, brother'
+  - 'долгое /i/: she, he, three, tea'
+  - 'вопросительная интонация: Who is she? Sorry? Again?'
 - number: 3
   level: A1
   week: 6
-  title: Big, Good, Nice
-  rhyme_scheme: AABB
-  theme_ru: Описание дома
+  title: What Time Is It?
+  rhyme_scheme: ABAB
+  theme_ru: "День по часам: встать, позавтракать, работать, домой"
   phonetic_goals:
-  - /ɪ/ big, /ʊ/ good, /aɪ/ nice
-  - звонкие согласные на конце
+  - 'ударение в числах: SEVen, eLEVen'
+  - '/ɛn/ в рифме ten — again'
+  - '/oʊ/: go, home, phone'
 - number: 4
   level: A1
   week: 8
-  title: Coffee, Please
-  rhyme_scheme: ABAB
-  theme_ru: Заказ в кафе
+  title: One for You and One for Me
+  rhyme_scheme: ABCB
+  theme_ru: Старый ключ, дорога к мастерской и почтовый ящик
   phonetic_goals:
-  - ударение CO-ffee
-  - интонация просьбы
+  - '/i/: key, me'
+  - '/aɪ/ и /eɪ/: right, night — straight, eight'
+  - 'переключение r и l: turn right, turn left'
 - number: 5
   level: A1
   week: 10
-  title: Yes or No
-  rhyme_scheme: AABB
-  theme_ru: Короткие ответы
+  title: Read, Walk and Play
+  rhyme_scheme: ABCB
+  theme_ru: Выходные Анны, гитара Тома и кот Box
   phonetic_goals:
-  - /oʊ/ в no
-  - падающая интонация ответа
+  - 'носовой ŋ: reading, walking'
+  - 'дни недели с ударением на первом слоге: SATurday, SUNday'
+  - '/oʊ/: no, hello'
 - number: 6
   level: A1
   week: 12
-  title: One, Two, Three
-  rhyme_scheme: AABB
-  theme_ru: Числа и возраст
+  title: Who Knows?
+  rhyme_scheme: ABCB
+  theme_ru: Белое письмо без адреса и слово Rose
   phonetic_goals:
-  - /θ/ в three
-  - ударение в числах
+  - '/aɪ/: white, right, night'
+  - '/oʊ/: Rose, knows, no'
+  - 'ударное not: does NOT know'
 - number: 7
   level: A1
   week: 14
-  title: Good Night, House
-  rhyme_scheme: AABB
-  theme_ru: Вечер в новом доме
+  title: The Bus to Park Street
+  rhyme_scheme: ABCB
+  theme_ru: Поездка на Park Street и закрытое фотоателье
   phonetic_goals:
-  - /aɪ/ night
-  - ритм 2 ударения в строке
+  - '/ʌ/ в bus против /ɑ/ в stop, shop'
+  - 'долгое /i/: please, me, three, street, meet'
+  - 'падающая интонация вопроса Why?'
 - number: 8
   level: A1+
   week: 2
