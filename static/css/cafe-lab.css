@@ -82,3 +82,13 @@
   .cafe-sentence { padding:1rem .55rem; }
 }
 @media (prefers-reduced-motion: reduce) { .cafe-btn { transition:none; } .cafe-btn:hover:not(:disabled) { transform:none; } }
+
+/* Диалог: прослушивание по ролям, три темпа, активная реплика. */
+.cafe-tempo { display:inline-flex; align-items:center; gap:.5rem; font-size:.82rem; color:var(--ink); font-weight:600; }
+.cafe-tempo select { color:var(--ink); background:var(--surface); border:1px solid var(--rule-strong); border-radius:9px; padding:.6rem .5rem; min-height:44px; max-width:190px; }
+.cafe-script>p[data-current-line=true] { outline:3px solid var(--focus); outline-offset:2px; }
+.cafe-script>p[data-dialogue-line] { align-items:center; }
+.cafe-script [lang=en] { flex:1; min-width:0; }
+.cafe-line-replay { margin-inline-start:auto; border:1px solid var(--rule-strong); background:var(--surface); color:var(--studio-green); border-radius:8px; width:44px; height:44px; flex:none; cursor:pointer; }
+.cafe-line-replay:disabled { opacity:.5; cursor:not-allowed; }
+@media(max-width:420px) { .cafe-script>p[data-dialogue-line] { align-items:flex-start; } .cafe-line-replay { align-self:flex-end; } }
