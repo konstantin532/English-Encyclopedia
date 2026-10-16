@@ -486,6 +486,12 @@ class WeekFiveTests(WeekContentMixin, TestCase):
     """Неделя 5 «Магазин у дома»: there is / are, some, How much…?, цены."""
     week_number = 5
     slugs = ("a1-there-is-some", "a1-how-much-prices")
+
+    def test_colors_and_price_words_in_dialogue(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=5)
+        text = " ".join(line["text"] for line in scene.script)
+        for piece in ("[J2]red[/] [S3]apples[/]", "[J3]cheap[/]", "[J3]expensive[/]"):
+            self.assertIn(piece, text)
     twister_number = 5
 
     def test_complete(self):
@@ -818,7 +824,7 @@ class A1PoemsTests(TestCase):
 class WeeklyVocabularyNormTests(TestCase):
     """Добор A1 до 500 единиц: недели, которые уже доведены до нормы 30–39."""
 
-    FILLED_WEEKS = (3, 4)
+    FILLED_WEEKS = (3, 4, 5)
 
     @classmethod
     def setUpTestData(cls):

@@ -5,7 +5,7 @@ weeks:
 - {level: A1, week: 2, situation_ru: "Мой новый дом", sphere: home, grammar_ru: "a / the, this / that, my / your; have, like, can", grammar_markers: [T1, T2, T3]}
 - {level: A1, week: 3, situation_ru: "В кафе: заказать", sphere: food, grammar_ru: "Can I have…?; числа 1–20; please, thanks; I'd like и want", grammar_markers: [D1, N1, O2]}
 - {level: A1, week: 4, situation_ru: "Семья на фото", sphere: meet, grammar_ru: "his / her / their; 's (Tom's); we / they; возраст и числа до 100; вопросы с be", grammar_markers: [T3, D1]}
-- {level: A1, week: 5, situation_ru: "Магазин у дома", sphere: shop, grammar_ru: "there is / there are; How much…?; some", grammar_markers: [D1, N6]}
+- {level: A1, week: 5, situation_ru: "Магазин у дома", sphere: shop, grammar_ru: "there is / there are; How much…?; some; цвета; cheap / expensive", grammar_markers: [D1, N6]}
 - {level: A1, week: 6, situation_ru: "Мой обычный день", sphere: home, grammar_ru: "Present Simple: I / you; время (at seven)", grammar_markers: [D2, N3]}
 - {level: A1, week: 7, situation_ru: "Кто где работает", sphere: work, grammar_ru: "Present Simple: he / she + -s; профессии", grammar_markers: [D2]}
 - {level: A1, week: 8, situation_ru: "Как пройти?", sphere: city, grammar_ru: "предлоги места; Where is…?; Turn left", grammar_markers: [P1, A6]}

@@ -196,3 +196,10 @@ Final: Ruling: обычный git push не проходит (DNS из node; в 
 - Тесты: курс загружается в тестовую базу один раз (tests/runner.py, ContentLoadedRunner; для pytest — tests/conftest.py). Классы зовут ensure_content(). Тяжёлые тесты загрузчика помечены @tag("slow").
 - Время: было 6 мин 25 с; быстрый прогон (--exclude-tag slow --parallel 2) — 1 мин 10 с; полный (--parallel 2) — 2 мин 29 с. На компьютере автора с большим числом ядер — быстрее (--parallel auto).
 - Проверено: audit_course без ошибок, 293 теста OK, неделя 3 и урок a1-cafe-order на 1280 и 390 px.
+
+## 2026-10-16 — неделя 5
+
+- Пакет a1_w05_shop_plus (LX-00286–LX-00302, 17 единиц): red, green, yellow, black, blue, brown, orange, cheap, expensive, small, hot, cold, bread, banana, cheese, Red or green?, That is expensive!. Неделя 5 — 34 единицы.
+- Одежда в неделю 5 не вошла: сюжет — продуктовый магазин у дома. Одежду перенести в неделю с погодой (14) или выходными (10).
+- Диалог: Том просит красные яблоки, продавец — They are cheap!, Том о корме — Cat food is expensive!. Уроки: цвета и неизменяемые прилагательные (a1-there-is-some), оценка цены и размер напитка (a1-how-much-prices).
+- Проверено: audit_course без ошибок, 294 теста OK, неделя 5 и оба урока на 1280 и 390 px.
