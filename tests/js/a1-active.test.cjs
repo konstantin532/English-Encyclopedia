@@ -45,3 +45,11 @@ test('learners are warned that exact model match is not full linguistic assessme
   assert.doesNotMatch(code, /fetch\s*\(/);
   assert.doesNotMatch(code, /localStorage\./);
 });
+
+test('missing apostrophes and surrounding quotes count as the same target words', () => {
+  assert.equal(a1.compareModelAnswer('Im a teacher!', "I'm a teacher.", []), true);
+  assert.equal(a1.compareModelAnswer('“Im a teacher.”', "I'm a teacher.", []), true);
+  assert.equal(a1.compareModelAnswer('Its next to the bank!', "It's next to the bank.", []), true);
+  assert.equal(a1.compareModelAnswer('Tom has a key', "Tom's a key", []), false);
+  assert.equal(a1.normalizeAnswer("‘I’m’ here"), "im here");
+});
