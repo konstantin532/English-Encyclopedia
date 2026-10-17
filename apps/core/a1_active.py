@@ -45,6 +45,13 @@ def active_a1_topic(request, number: int):
     if number < 1 or number > MAX_TOPIC:
         raise Http404("No such A1 topic")
     item = active_topics()[number]
+    # Keep supplemental content in sync with the canonical lesson's publication
+    # status. A predictable /lab/a1/N/ URL must not bypass unpublished lessons.
+    from apps.lessons.models import Lesson
+    if not Lesson.objects.filter(
+        slug=item["slug"], level__code="A1", order=number, is_published=True
+    ).exists():
+        raise Http404("Source lesson is not published")
     return render(request, "core/a1_active_topic.html", {
         "topic": item,
         "topic_previous": number - 1 if number > 1 else None,
