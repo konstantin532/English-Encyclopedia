@@ -40,3 +40,12 @@
 .active-a1 details summary { cursor:pointer; font-weight:600; padding:.6rem 0; }
 @media(max-width:530px) { .active-a1-line { grid-template-columns:1fr 44px; } .active-a1-line>strong { grid-column:1; grid-row:1; } .active-a1-line [lang=en] { grid-column:1; grid-row:2; } .active-a1-ru { grid-column:1; grid-row:3; } .active-a1-line-btn { grid-column:2; grid-row:1 / span 3; } .active-a1-panel { padding:1.1rem; } }
 @media(prefers-reduced-motion:reduce) { .active-a1 *, .active-a1 *::before, .active-a1 *::after { animation:none!important; scroll-behavior:auto!important; transition:none!important; } }
+
+/* Optional word ordering appears after the student's independent answer. */
+.active-a1-builder { margin-top:1.1rem; border-top:1px solid var(--rule); padding-top:1.1rem; }
+.active-a1-builder h3 { margin:.2rem 0 .5rem; font-family:var(--font-read); font-size:1.15rem; }
+.active-a1-builder>p { line-height:1.5; color:var(--ink-soft); }
+.active-a1-builder-pool { display:flex; gap:.5rem; flex-wrap:wrap; padding:.85rem; border:1px dashed var(--rule-strong); border-radius:10px; }
+.active-a1 .active-a1-builder-word { border-color:var(--studio-green); font-size:1.05rem; }
+.active-a1-builder-result { padding:.95rem; min-height:3rem; background:var(--surface); border:1px solid var(--rule); border-radius:9px; font-weight:600; font-family:var(--font-read); font-size:1.13rem; word-break:break-word; }
+.active-a1-builder-label { font-size:.86rem; font-weight:700; }
