@@ -187,6 +187,7 @@
     setText("[data-a1-hint]", topic.hint);
     by("[data-a1-model]").hidden = false;
     by("[data-a1-builder]").hidden = false;
+    by("[data-a1-repair]").hidden = false;
   });
   by("[data-a1-play-model]").addEventListener("click", function () {
     if (!by("[data-a1-model]").hidden) speakLines([topic.answer]);
@@ -242,6 +243,38 @@
     builderFeedback.hidden = false;
   });
   renderBuilder();
+
+  // Error repair: only reveal the explanation after a correct prepared answer
+  // or an explicit request after at least two unsuccessful attempts.
+  let repairAttempts = 0;
+  const repair = by("[data-a1-repair-form]");
+  const repairFeedback = by("[data-a1-repair-feedback]");
+  const repairReveal = by("[data-a1-repair-reveal]");
+  const repairExplanation = by("[data-a1-repair-explanation]");
+  repair.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const value = by("[data-a1-repair-answer]").value.trim();
+    if (!value) return;
+    repairAttempts += 1;
+    const correct = compareModelAnswer(value, topic.repair.correct, []);
+    repairFeedback.dataset.state = correct ? "ok" : "retry";
+    repairFeedback.textContent = correct
+      ? "Верно! Вы нашли ожидаемое исправление. Прочитайте, почему оно работает."
+      : repairAttempts === 1
+        ? "Пока не совпадает с образцом. Подсказка: " + topic.repair.hint
+        : "Пока не совпадает. Попробуйте снова или откройте объяснение.";
+    repairFeedback.hidden = false;
+    if (correct) {
+      repairExplanation.hidden = false;
+      repairReveal.hidden = true;
+    } else if (repairAttempts >= 2) {
+      repairReveal.hidden = false;
+    }
+  });
+  repairReveal.addEventListener("click", function () {
+    repairExplanation.hidden = false;
+    repairReveal.hidden = true;
+  });
 
   const transfer = by("[data-a1-transfer]");
   transfer.addEventListener("submit", function (event) {
