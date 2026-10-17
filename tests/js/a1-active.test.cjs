@@ -81,3 +81,16 @@ test('all eighteen model answers support at least two builder elements', () => {
     assert.equal(a1.builderCorrect(tokens, tokens.map((_, i) => i).reverse()), false, 'topic ' + item.n);
   }
 });
+
+test('each lesson has its own correctable grammar error and explanation', () => {
+  const repairs = JSON.parse(fs.readFileSync(path.join(root, 'error_repairs_01_18.json'), 'utf8'));
+  assert.equal(repairs.length, 18);
+  assert.deepEqual(repairs.map(r => r.n), Array.from({length:18}, (_,i) => i+1));
+  for (const r of repairs) {
+    assert.ok(r.reason.length >= 30, 'lesson ' + r.n);
+    assert.ok(r.hint.length >= 10, 'lesson ' + r.n);
+    assert.notEqual(a1.normalizeAnswer(r.wrong), a1.normalizeAnswer(r.correct), 'lesson ' + r.n);
+    assert.equal(a1.compareModelAnswer(r.correct, r.correct, []), true, 'lesson ' + r.n);
+    assert.equal(a1.compareModelAnswer(r.wrong, r.correct, []), false, 'lesson ' + r.n);
+  }
+});
