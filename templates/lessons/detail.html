@@ -46,6 +46,18 @@
         <h2>Практика в новой ситуации</h2>
         <p>Слушание, объяснения, конструктор, исправление ошибок — и ещё шесть оригинальных ситуаций с возможностью импровизировать. Дополнение к уроку без сохранения ответов.</p>
         <a class="btn btn-primary" href="{% url 'core:active_a1_topic' lesson.order %}">Открыть практику урока №{{ lesson.order }} →</a>
+        {% if extra_missions %}
+        <h3>Шесть дополнительных историй этого урока</h3>
+        <ol class="a1-mission-previews">
+          {% for mission in extra_missions %}
+          <li>
+            <strong>{{ mission.title }}</strong>
+            <p>{{ mission.scene }}</p>
+            <a href="{% url 'core:active_a1_topic' lesson.order %}?mission={{ forloop.counter }}#a1-missions" aria-label="Попробовать ситуацию {{ forloop.counter }}: {{ mission.title }}">Попробовать ситуацию {{ forloop.counter }} →</a>
+          </li>
+          {% endfor %}
+        </ol>
+        {% endif %}
         <a class="btn btn-quiet" href="{% url 'core:active_a1_topic' lesson.order %}#a1-missions">Ещё 6 ситуаций и импровизация →</a>
       </section>
       {% endif %}
