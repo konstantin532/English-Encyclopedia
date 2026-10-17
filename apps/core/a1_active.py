@@ -41,6 +41,31 @@ def _load_topics(base_dir: str):
             "wrong": repair["wrong"], "correct": repair["correct"],
             "hint": repair["hint"], "reason": repair["reason"],
         }
+
+    # Six original contextual missions per lesson. They supplement, rather than
+    # overwrite, the canonical seven-layer learning material and original lab.
+    scenarios = []
+    for filename in (
+        "scenarios_01_06.json", "scenarios_07_12.json", "scenarios_13_18.json"
+    ):
+        scenarios.extend(json.loads((root / filename).read_text(encoding="utf-8")))
+    if len(scenarios) != MAX_TOPIC or {row["n"] for row in scenarios} != expected:
+        raise ValueError("Scenario catalog must cover lessons 1–18 exactly once")
+    for block in scenarios:
+        missions = block["missions"]
+        twists = block["twists"]
+        if (
+            len(missions) != 6 or [m["id"] for m in missions] != [1, 2, 3, 4, 5, 6]
+            or len(twists) != 2
+            or not all(all(isinstance(m[k], str) and m[k].strip()
+                           for k in ("title", "scene", "prompt", "example", "coach"))
+                       for m in missions)
+            or not all(all(isinstance(t[k], str) and t[k].strip()
+                           for k in ("scene", "example")) for t in twists)
+        ):
+            raise ValueError(f"Invalid scenarios for A1 lesson {block['n']}")
+        topics[block["n"]]["missions"] = missions
+        topics[block["n"]]["twists"] = twists
     return topics
 
 
