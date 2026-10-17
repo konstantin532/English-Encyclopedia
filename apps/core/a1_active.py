@@ -30,8 +30,17 @@ def _load_topics(base_dir: str):
             if number in topics:
                 raise ValueError(f"Duplicate active A1 topic: {number}")
             topics[number] = item
-    if set(topics) != set(range(1, MAX_TOPIC + 1)):
+    expected = set(range(1, MAX_TOPIC + 1))
+    if set(topics) != expected:
         raise ValueError("Active A1 topic catalog is incomplete")
+    repairs = json.loads((root / "error_repairs_01_18.json").read_text(encoding="utf-8"))
+    if len(repairs) != MAX_TOPIC or {r["n"] for r in repairs} != expected:
+        raise ValueError("A1 error-repair exercises must cover exactly lessons 1-18")
+    for repair in repairs:
+        topics[repair["n"]]["repair"] = {
+            "wrong": repair["wrong"], "correct": repair["correct"],
+            "hint": repair["hint"], "reason": repair["reason"],
+        }
     return topics
 
 
