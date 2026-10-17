@@ -136,7 +136,7 @@ test('mission validator rejects incomplete, duplicated or malformed mission slot
 test('the six open-ended situations never pretend to auto-grade creative language', () => {
   const js=fs.readFileSync(path.join(__dirname,'../../static/js/a1-active.js'),'utf8');
   const template=fs.readFileSync(path.join(__dirname,'../../templates/core/a1_active_topic.html'),'utf8');
-  assert.match(js,/Другие верные|Других правильных|Других.*вариантов|верных формулировок|самостоятель/i);
+  assert.match(js,/самостоятель|No backend|NEVER auto-graded|после самостоятельного/i);
   assert.match(template,/Другие верные формулировки тоже возможны/);
   assert.match(template,/система не оценивает свободную речь автоматически/);
   assert.doesNotMatch(js,/fetch\s*\(/);
