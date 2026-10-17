@@ -69,6 +69,8 @@ class ActiveA1CatalogTests(TestCase):
                 self.assertContains(response, "data-a1-builder")
                 self.assertContains(response, "data-a1-builder-check")
                 self.assertContains(response, "data-a1-builder-undo")
+                self.assertContains(response, "data-a1-repair-form")
+                self.assertContains(response, "data-a1-repair-reveal")
                 self.assertContains(response, "data-a1-transfer")
                 self.assertContains(response, 'id="a1-active-topic-data"')
 
@@ -119,3 +121,18 @@ class ActiveA1CatalogTests(TestCase):
         self.assertContains(response, 'class="active-a1-builder" data-a1-builder hidden')
         self.assertContains(response, 'data-a1-model hidden')
         self.assertContains(response, 'data-a1-transfer-feedback hidden')
+        self.assertContains(response, 'class="active-a1-repair" data-a1-repair hidden')
+        self.assertContains(response, 'data-a1-repair-explanation role="status" aria-live="polite" hidden')
+
+    def test_all_eighteen_error_repairs_are_original_and_present(self):
+        from apps.core.a1_active import active_topics
+        for i, topic in active_topics().items():
+            with self.subTest(i=i):
+                repair = topic["repair"]
+                for field in ("wrong", "correct", "hint", "reason"):
+                    self.assertIsInstance(repair[field], str)
+                    self.assertGreater(len(repair[field]), 8 if field != "hint" else 4)
+                self.assertNotEqual(repair["wrong"], repair["correct"])
+                response = self.client.get(reverse("core:active_a1_topic", args=[i]))
+                self.assertContains(response, repair["wrong"])
+                self.assertContains(response, repair["correct"])
