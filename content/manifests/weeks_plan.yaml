@@ -14,4 +14,4 @@ weeks:
 - {level: A1, week: 11, situation_ru: "У врача", sphere: health, grammar_ru: "I have a headache; can't; …hurts; части тела, hurt / hurts; be / feel + самочувствие", grammar_markers: [S5, X1]}
 - {level: A1, week: 12, situation_ru: "На почте", sphere: service, grammar_ru: "don't / doesn't; город, штат и ZIP code; анкета и почта", grammar_markers: [X1]}
 - {level: A1, week: 13, situation_ru: "Курсы английского", sphere: study, grammar_ru: "can / can't — умения; Why? Because…; учебные предметы, просьба повторить, easy / difficult", grammar_markers: [D1, C3]}
-- {level: A1, week: 14, situation_ru: "Поездка на автобусе", sphere: travel, grammar_ru: "повторение всего A1: билет, расписание", grammar_markers: []}
+- {level: A1, week: 14, situation_ru: "Поездка на автобусе", sphere: travel, grammar_ru: "повторение A1: билет, прибытие и отправление; транспорт, погода и вещи для поездки", grammar_markers: []}

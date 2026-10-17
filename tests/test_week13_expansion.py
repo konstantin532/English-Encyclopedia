@@ -33,11 +33,11 @@ class WeekThirteenExpansionTests(TestCase):
         self.assertIn('[S10]Russian[/] [S9]letters[/]', text)
         self.assertIn('шкаф', scene.story_beat['next_hook_ru'])
 
-    def test_new_practice_is_reachable_and_stops_before_twenty_seven(self):
-        self.assertEqual(set(active_topics()), set(range(1, 27)))
+    def test_new_practice_is_reachable_and_remains_reachable_in_full_a1_catalog(self):
+        self.assertEqual(set(active_topics()), set(range(1, 29)))
         for number, slug in ((25, 'a1-can-skills'), (26, 'a1-why-because')):
             practice = self.client.get(f'/lab/a1/{number}/?mission=6')
             self.assertEqual(practice.status_code, 200)
             self.assertContains(practice, 'data-start-mission="6"')
             self.assertContains(self.client.get(f'/lessons/{slug}/'), f'/lab/a1/{number}/?mission=6')
-        self.assertEqual(self.client.get('/lab/a1/27/').status_code, 404)
+        self.assertEqual(self.client.get('/lab/a1/29/').status_code, 404)

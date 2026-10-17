@@ -1,0 +1,16 @@
+[
+  {
+    "n": 27,
+    "wrong": "What time does the train arrives?",
+    "correct": "What time does the train arrive?",
+    "hint": "После does главный глагол уже без окончания -s.",
+    "reason": "В вопросе What time does the train arrive? форму третьего лица выражает does. Второе -s у arrive не добавляется."
+  },
+  {
+    "n": 28,
+    "wrong": "It sunny today.",
+    "correct": "It is sunny today.",
+    "hint": "Между it и описанием погоды нужен глагол be.",
+    "reason": "Полное предложение о погоде строится через it is: It is sunny today. По-русски «Сегодня солнечно» может обходиться без глагола, по-английски здесь нужен is."
+  }
+]

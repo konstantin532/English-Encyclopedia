@@ -885,7 +885,7 @@ class A1PoemsTests(TestCase):
 class WeeklyVocabularyNormTests(TestCase):
     """Добор A1 до 500 единиц: недели, которые уже доведены до нормы 30–39."""
 
-    FILLED_WEEKS = (3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
+    FILLED_WEEKS = (3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
 
     @classmethod
     def setUpTestData(cls):

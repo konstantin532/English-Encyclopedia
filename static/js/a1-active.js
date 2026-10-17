@@ -1,4 +1,4 @@
-/* A1 scene studio 01–26. All responses and speech remain local to the browser. */
+/* A1 scene studio 01–28. All responses and speech remain local to the browser. */
 (function () {
   "use strict";
 
@@ -68,7 +68,7 @@
     }) || null;
   }
   function validTopic(topic) {
-    return !!(topic && Number.isInteger(topic.n) && topic.n >= 1 && topic.n <= 26
+    return !!(topic && Number.isInteger(topic.n) && topic.n >= 1 && topic.n <= 28
       && Array.isArray(topic.dialogue) && topic.dialogue.length >= 2
       && Array.isArray(topic.options) && topic.options.length === 3
       && Number.isInteger(topic.correct) && topic.correct >= 0 && topic.correct < topic.options.length);

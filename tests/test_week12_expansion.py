@@ -32,11 +32,11 @@ class WeekTwelveExpansionTests(TestCase):
         self.assertIn('белое',scene.story_beat['next_hook_ru'])
 
     def test_new_practice_is_reachable_and_remains_reachable_in_expanded_catalog(self):
-        self.assertEqual(set(active_topics()),set(range(1,27)))
+        self.assertEqual(set(active_topics()),set(range(1,29)))
         for number,slug in ((23,'a1-dont-doesnt'),(24,'a1-letters-address')):
             practice=self.client.get(f'/lab/a1/{number}/?mission=6')
             self.assertEqual(practice.status_code,200)
             self.assertContains(practice,'data-start-mission="6"')
             lesson=self.client.get(f'/lessons/{slug}/')
             self.assertContains(lesson,f'/lab/a1/{number}/?mission=6')
-        self.assertEqual(self.client.get('/lab/a1/27/').status_code,404)
+        self.assertEqual(self.client.get('/lab/a1/29/').status_code,404)
