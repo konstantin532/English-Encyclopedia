@@ -44,8 +44,9 @@
       {% if lesson.level.code == "A1" and lesson.order <= 18 %}
       <section class="section a1-active-invite" aria-label="Дополнительная авторская практика A1">
         <h2>Практика в новой ситуации</h2>
-        <p>Короткий диалог, проверка понимания, объяснение, самостоятельная фраза и новая ситуация. Дополнение к уроку без сохранения ответов.</p>
+        <p>Слушание, объяснения, конструктор, исправление ошибок — и ещё шесть оригинальных ситуаций с возможностью импровизировать. Дополнение к уроку без сохранения ответов.</p>
         <a class="btn btn-primary" href="{% url 'core:active_a1_topic' lesson.order %}">Открыть практику урока №{{ lesson.order }} →</a>
+        <a class="btn btn-quiet" href="{% url 'core:active_a1_topic' lesson.order %}#a1-missions">Ещё 6 ситуаций и импровизация →</a>
       </section>
       {% endif %}
       {% if lesson.slug == "a1-cafe-order" %}
