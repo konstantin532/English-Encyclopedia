@@ -5,7 +5,7 @@
   function normalizeAnswer(value) {
     return String(value == null ? "" : value)
       .toLocaleLowerCase("en-US")
-      .replace(/[‘’]/g, "'")
+      .replace(/['‘’"“”„«»]/g, "")
       .replace(/[.,!?;:]/g, " ")
       .replace(/\s+/g, " ")
       .trim();
@@ -47,9 +47,19 @@
   const speakAvailable = typeof window !== "undefined" &&
     "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
   let playToken = 0;
+  let pendingVoice = null;
+  function cancelPendingVoice() {
+    if (!pendingVoice) return;
+    window.speechSynthesis.removeEventListener("voiceschanged", pendingVoice.handler);
+    window.clearTimeout(pendingVoice.timer);
+    pendingVoice = null;
+  }
   function stopAudio() {
     playToken += 1;
-    if (speakAvailable) window.speechSynthesis.cancel();
+    if (speakAvailable) {
+      cancelPendingVoice();
+      window.speechSynthesis.cancel();
+    }
   }
   function speakLines(lines) {
     stopAudio();
@@ -57,29 +67,46 @@
       status.textContent = "На устройстве нет синтеза речи. Можно открыть английский текст.";
       return;
     }
-    const voice = getAmericanVoice(window.speechSynthesis.getVoices());
-    if (!voice) {
-      status.textContent = "Не найден голос en-US. Можно читать английские реплики. Это не ошибка ответа.";
-      return;
-    }
     const token = playToken;
-    let i = 0;
     const rate = Number(by("[data-a1-speed]").value) || 0.9;
-    status.textContent = "Системный голос en-US. Для этой серии пока нет проверенной записи отдельных актёров.";
-    function next() {
+    function startSpeaking(voice) {
       if (token !== playToken) return;
-      if (i >= lines.length) { status.textContent = "Прослушивание закончено."; return; }
-      const u = new window.SpeechSynthesisUtterance(lines[i]);
-      u.lang = "en-US";
-      u.voice = voice;
-      u.rate = rate;
-      u.onend = function () { i += 1; next(); };
-      u.onerror = function () {
-        if (token === playToken) status.textContent = "Голос остановился. Откройте текст реплик.";
-      };
-      window.speechSynthesis.speak(u);
+      let i = 0;
+      status.textContent = "Системный голос en-US. Для этой серии пока нет проверенной записи отдельных актёров.";
+      function next() {
+        if (token !== playToken) return;
+        if (i >= lines.length) { status.textContent = "Прослушивание закончено."; return; }
+        const u = new window.SpeechSynthesisUtterance(lines[i]);
+        u.lang = "en-US";
+        u.voice = voice;
+        u.rate = rate;
+        u.onend = function () { i += 1; next(); };
+        u.onerror = function () {
+          if (token === playToken) status.textContent = "Голос остановился. Откройте текст реплик.";
+        };
+        window.speechSynthesis.speak(u);
+      }
+      next();
     }
-    next();
+    const voice = getAmericanVoice(window.speechSynthesis.getVoices());
+    if (voice) { startSpeaking(voice); return; }
+    // Chrome / Android may initially return no voices while their list loads.
+    status.textContent = "Загружаем доступные голоса en-US…";
+    const handler = function () {
+      if (token !== playToken) return;
+      const ready = getAmericanVoice(window.speechSynthesis.getVoices());
+      if (!ready) return;
+      cancelPendingVoice();
+      startSpeaking(ready);
+    };
+    window.speechSynthesis.addEventListener("voiceschanged", handler);
+    const timer = window.setTimeout(function () {
+      if (token !== playToken) return;
+      cancelPendingVoice();
+      status.textContent = "Голос en-US не найден. Можно читать текст реплик или повторить попытку позже.";
+    }, 2500);
+    pendingVoice = { handler, timer };
+    handler(); // Handle a voice that appeared during listener registration.
   }
   const speakBtns = [
     by("[data-a1-play]"), by("[data-a1-play-model]"),
