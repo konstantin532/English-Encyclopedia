@@ -55,3 +55,26 @@
 .active-a1-repair h3 { margin:0 0 .6rem; font-family:var(--font-read); font-size:1.16rem; }
 .active-a1-repair>p { line-height:1.5; color:var(--ink-soft); }
 .active-a1-repair-wrong { font-size:1.15rem; font-family:var(--font-read); padding:.8rem 1rem; background:var(--surface); border-left:3px solid var(--rule-strong); }
+
+/* Six story missions per lesson: optional after the five core practice steps. */
+.active-a1-missions { border-color:var(--studio-green); }
+.active-a1-missions>p:not(.active-a1-kicker) { line-height:1.65; max-width:70ch; }
+.active-a1-mission-head { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin:1.15rem 0; }
+.active-a1-mission-nav { display:flex; flex-wrap:wrap; gap:.45rem; }
+.active-a1-mission-tab { font:inherit; border:1px solid var(--rule-strong); border-radius:50%; min-width:44px; height:44px; background:var(--surface); color:var(--ink); cursor:pointer; }
+.active-a1-mission-tab[aria-current=step] { background:var(--studio-green); color:#fff; border-color:var(--studio-green); }
+.active-a1-mission-tab[data-done=true]:not([aria-current=step]) { border:2px solid var(--studio-green); }
+.active-a1-mission-card { padding:clamp(1rem,3vw,1.5rem); border:1px solid var(--rule-strong); border-radius:15px; background:var(--paper); }
+.active-a1-mission-card h3 { font-family:var(--font-read); font-size:clamp(1.25rem,2.5vw,1.65rem); margin:.4rem 0 1rem; color:var(--ink); }
+.active-a1-mission-scene { padding:1rem; border-left:3px solid var(--cinema-gold); background:var(--surface); border-radius:0 10px 10px 0; line-height:1.6; }
+.active-a1-mission-task { font-weight:650; line-height:1.55; color:var(--ink); }
+.active-a1-mission-twist-controls { display:flex; flex-wrap:wrap; align-items:center; gap:.75rem; padding:.6rem 0 1rem; }
+.active-a1-mission-twist-controls p { margin:0; max-width:40ch; }
+.active-a1-mission-result { background:var(--surface); }
+.active-a1-mission-result [lang=en] { font-family:var(--font-read); font-size:1.14rem; font-weight:650; }
+.active-a1-mission-bottom { margin:1rem 0 .8rem; justify-content:space-between; }
+@media(max-width:480px) {
+  .active-a1-mission-head { align-items:flex-start; }
+  .active-a1-mission-nav { width:100%; justify-content:space-between; }
+  .active-a1-mission-bottom>.active-a1-btn { flex:1; }
+}
