@@ -49,3 +49,9 @@
 .active-a1 .active-a1-builder-word { border-color:var(--studio-green); font-size:1.05rem; }
 .active-a1-builder-result { padding:.95rem; min-height:3rem; background:var(--surface); border:1px solid var(--rule); border-radius:9px; font-weight:600; font-family:var(--font-read); font-size:1.13rem; word-break:break-word; }
 .active-a1-builder-label { font-size:.86rem; font-weight:700; }
+
+/* Error-repair exercise is revealed only after independent production. */
+.active-a1-repair { margin-top:1.4rem; padding:1.1rem; border:1px solid var(--rule); border-radius:12px; }
+.active-a1-repair h3 { margin:0 0 .6rem; font-family:var(--font-read); font-size:1.16rem; }
+.active-a1-repair>p { line-height:1.5; color:var(--ink-soft); }
+.active-a1-repair-wrong { font-size:1.15rem; font-family:var(--font-read); padding:.8rem 1rem; background:var(--surface); border-left:3px solid var(--rule-strong); }
