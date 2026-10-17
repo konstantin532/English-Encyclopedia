@@ -1,0 +1,306 @@
+# Неделя 12: почта, адрес и анкета. Источник CEFR не подтверждён.
+level: A1
+week: 12
+units:
+- uid: LX-00412
+  lemma: city
+  meaning: a large town
+  class: S4
+  forms:
+  - cities
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈsɪt̬i/
+  translation_ru: город
+  example_en: '[T1]The[/] [S4]post office[/] [D1]is[/] [P1]in[/] [T1]the[/] [S4]city[/].'
+  example_ru: Почта находится в городе.
+  situation: Город в анкете
+  usage_note: City — город; street — улица.
+- uid: LX-00413
+  lemma: country
+  meaning: a nation with its own government
+  class: S4
+  forms:
+  - countries
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈkʌntri/
+  translation_ru: страна
+  example_en: '[S4]Russia[/] [D1]is[/] [T1]a[/] [S4]country[/].'
+  example_ru: Россия — страна.
+  situation: Указываете страну получателя
+  usage_note: В международном адресе country — страна, а не город.
+- uid: LX-00414
+  lemma: state
+  meaning: one of the political areas of the United States
+  class: S4
+  forms:
+  - states
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /steɪt/
+  translation_ru: штат
+  example_en: '[T1]The[/] [S4]state[/] [D1]is[/] [P1]on[/] [T1]the[/] [S9]form[/].'
+  example_ru: Штат указан в анкете.
+  situation: Заполняете адрес в США
+  usage_note: Здесь state — штат США; country — страна. Это разные поля.
+- uid: LX-00415
+  lemma: ZIP code
+  meaning: the postal code used in a United States address
+  class: S9
+  forms:
+  - ZIP codes
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈzɪp ˌkoʊd/
+  translation_ru: почтовый индекс в США
+  example_en: '[T1]The[/] [S9]ZIP code[/] [D1]is[/] [P1]on[/] [T1]the[/] [S2]envelope[/].'
+  example_ru: Индекс указан на конверте.
+  situation: Называете индекс для отправления
+  usage_note: ZIP code — американское название почтового индекса; основной код состоит из пяти цифр.
+- uid: LX-00416
+  lemma: envelope
+  meaning: a paper cover for a letter
+  class: S2
+  forms:
+  - envelopes
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɛnvəloʊp/
+  translation_ru: конверт
+  example_en: '[T8]I[/] [D1]have[/] [T1]an[/] [S2]envelope[/].'
+  example_ru: У меня есть конверт.
+  situation: Покупаете конверт для письма
+  usage_note: 'An envelope: перед начальным гласным нужен an. В США встречается также вариант с /ɑn/ в начале.'
+- uid: LX-00417
+  lemma: form
+  meaning: a document with spaces for information
+  class: S9
+  forms:
+  - forms
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /fɔrm/
+  translation_ru: анкета, бланк
+  example_en: '[T8]I[/] [D7]can[/] [D9]fill out[/] [T1]the[/] [S9]form[/].'
+  example_ru: Я могу заполнить анкету.
+  situation: Заполняете бланк на почте
+  usage_note: Form здесь — бланк с полями, а не геометрическая форма.
+- uid: LX-00418
+  lemma: apartment
+  meaning: a set of rooms that is a home in a building
+  class: S2
+  forms:
+  - apartments
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /əˈpɑrtmənt/
+  translation_ru: квартира
+  example_en: '[T3]My[/] [S2]apartment[/] [D1]is[/] [P1]on[/] [S4]Park[/] [S4]Street[/].'
+  example_ru: Моя квартира находится на улице Парк.
+  situation: Уточняете номер квартиры
+  usage_note: Apartment — обычное американское слово; в адресе часто сокращается до APT.
+- uid: LX-00419
+  lemma: town
+  meaning: a place where people live, usually smaller than a city
+  class: S4
+  forms:
+  - towns
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /taʊn/
+  translation_ru: город, небольшой город
+  example_en: '[T1]The[/] [S4]post office[/] [D1]is[/] [P1]in[/] [T2]this[/] [S4]town[/].'
+  example_ru: Почта находится в этом городке.
+  situation: Объясняете, в каком городе живёте
+  usage_note: Town обычно меньше city; точная граница зависит от места.
+- uid: LX-00420
+  lemma: road
+  meaning: a route for vehicles between places
+  class: S4
+  forms:
+  - roads
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /roʊd/
+  translation_ru: дорога
+  example_en: '[T1]The[/] [S4]road[/] [D1]is[/] [A3]here[/].'
+  example_ru: Дорога здесь.
+  situation: Уточняете название дороги в адресе
+  usage_note: Road может входить в название адреса; сокращение в США — RD.
+- uid: LX-00421
+  lemma: mail
+  meaning: letters and packages sent by a postal service
+  class: S9
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /meɪl/
+  translation_ru: почта, почтовые отправления
+  example_en: '[T1]The[/] [S9]mail[/] [D1]is[/] [A3]here[/].'
+  example_ru: Почта здесь.
+  situation: Спрашиваете о пришедшей почте
+  usage_note: 'Mail — неисчисляемое: the mail is, без a и без обычного множественного mails в этом значении.'
+- uid: LX-00422
+  lemma: package
+  meaning: an object wrapped for sending or carrying
+  class: S2
+  forms:
+  - packages
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈpækɪdʒ/
+  translation_ru: посылка, пакет
+  example_en: '[T2]This[/] [S2]package[/] [D1]is[/] [J2]heavy[/].'
+  example_ru: Эта посылка тяжёлая.
+  situation: Отправляете посылку
+  usage_note: Package — обычное американское слово для посылки; здесь не письмо.
+- uid: LX-00423
+  lemma: postcard
+  meaning: a card with a picture and space for a message and address
+  class: S9
+  forms:
+  - postcards
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈpoʊstˌkɑrd/
+  translation_ru: почтовая открытка
+  example_en: '[T8]I[/] [D3]want[/] [T1]a[/] [S9]postcard[/].'
+  example_ru: Я хочу открытку.
+  situation: Выбираете открытку для отправки
+  usage_note: Открытку обычно отправляют без конверта; адрес и сообщение пишут на ней.
+- uid: LX-00424
+  lemma: wait
+  meaning: to stay until something happens
+  class: D2
+  forms:
+  - waits
+  - waiting
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /weɪt/
+  translation_ru: ждать
+  example_en: '[T8]I[/] [D7]can[/] [D2]wait[/].'
+  example_ru: Я могу подождать.
+  situation: Ждёте своей очереди
+  usage_note: После can — wait без to; вежливое Wait, please. значит «Подождите, пожалуйста».
+- uid: LX-00425
+  lemma: line
+  meaning: a row of people waiting for service
+  class: S9
+  forms:
+  - lines
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /laɪn/
+  translation_ru: очередь
+  example_en: '[T1]The[/] [S9]line[/] [D1]is[/] [A3]here[/].'
+  example_ru: Очередь здесь.
+  situation: Находите очередь к почтовому окошку
+  usage_note: В американском английском line часто значит «очередь», а не только «линия».
+- uid: LX-00426
+  lemma: large
+  meaning: bigger than usual in size
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /lɑrdʒ/
+  translation_ru: большой
+  example_en: '[T8]It[/] [D1]is[/] [T1]a[/] [J1]large[/] [S2]envelope[/].'
+  example_ru: Это большой конверт.
+  situation: Просите большой конверт
+  usage_note: Large envelope — большой конверт. Прилагательное ставится перед существительным.
+- uid: LX-00427
+  lemma: heavy
+  meaning: weighing a lot
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhɛvi/
+  translation_ru: тяжёлый
+  example_en: '[T2]This[/] [S2]package[/] [D1]is[/] [J2]heavy[/].'
+  example_ru: Эта посылка тяжёлая.
+  situation: Описываете вес посылки
+  usage_note: Heavy относится к весу; large — к размеру. Большая посылка не обязательно тяжёлая.
+- uid: LX-00428
+  lemma: light
+  meaning: not weighing much
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /laɪt/
+  translation_ru: лёгкий по весу
+  example_en: '[T2]This[/] [S2]package[/] [D1]is[/] [J2]light[/].'
+  example_ru: Эта посылка лёгкая.
+  situation: Описываете лёгкое отправление
+  usage_note: 'Здесь light — противоположность heavy: о весе, а не об освещении.'
+- uid: LX-00429
+  lemma: correct
+  meaning: having no mistakes
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kəˈrɛkt/
+  translation_ru: правильный, верный
+  example_en: '[T1]The[/] [S9]address[/] [D1]is[/] [J3]correct[/].'
+  example_ru: Адрес правильный.
+  situation: Проверяете данные адреса
+  usage_note: 'Correct здесь — прилагательное: the address is correct.'
+- uid: LX-00430
+  lemma: fill out
+  meaning: to write the required information on a form
+  class: D9
+  forms:
+  - fills out
+  - filling out
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /fɪl ˈaʊt/
+  translation_ru: заполнять анкету или бланк
+  example_en: '[D9]Fill out[/] [T1]the[/] [S9]form[/], [O8]please[/].'
+  example_ru: Заполните анкету, пожалуйста.
+  situation: Получаете бланк на почте
+  usage_note: Fill out the form — распространённая американская фраза. Это один фразовый глагол.
+- uid: LX-00431
+  lemma: sign
+  meaning: to write your name to identify or approve a document
+  class: D2
+  forms:
+  - signs
+  - signing
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /saɪn/
+  translation_ru: подписывать
+  example_en: '[D2]Sign[/] [T1]the[/] [S9]form[/], [O8]please[/].'
+  example_ru: Подпишите бланк, пожалуйста.
+  situation: Ставите подпись на бланке
+  usage_note: Здесь sign — действие «подписать», а не существительное «знак». Буква g не произносится.
+- uid: LX-00432
+  lemma: last name
+  meaning: the family name of a person
+  class: S9
+  forms:
+  - last names
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈlæst ˌneɪm/
+  translation_ru: фамилия
+  example_en: '[T3]My[/] [S9]last name[/] [D1]is[/] [S1]Belova[/].'
+  example_ru: Моя фамилия — Белова.
+  situation: Различаете имя и фамилию в анкете
+  usage_note: First name — имя, last name — фамилия. В английском бланке это отдельные поля.
+- uid: LX-00433
+  lemma: paper
+  meaning: the thin material used for writing
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈpeɪpɚ/
+  translation_ru: бумага
+  example_en: '[T8]I[/] [D1]have[/] [S2]paper[/].'
+  example_ru: У меня есть бумага.
+  situation: Просите бумагу для записи адреса
+  usage_note: 'Здесь paper — материал, неисчисляемое существительное: I have paper, без a.'

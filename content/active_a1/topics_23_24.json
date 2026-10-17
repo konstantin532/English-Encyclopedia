@@ -1,0 +1,108 @@
+[
+  {
+    "n": 23,
+    "week": 12,
+    "slug": "a1-dont-doesnt",
+    "title": "Чего нет и чего я не знаю",
+    "scene": "Учебная ситуация: Анна и Том отправляют другое письмо внутри США",
+    "context": "После don’t и doesn’t действие остаётся без -s. Различайте нет вещи и не знаю информацию.",
+    "dialogue": [
+      [
+        "Postal worker",
+        "Do you have an envelope?",
+        "У вас есть конверт?"
+      ],
+      [
+        "Anna",
+        "No, I don't have an envelope.",
+        "Нет, у меня нет конверта."
+      ],
+      [
+        "Postal worker",
+        "Do you have a stamp?",
+        "У вас есть марка?"
+      ],
+      [
+        "Anna",
+        "Yes, I do.",
+        "Да."
+      ],
+      [
+        "Tom",
+        "I don't know the ZIP code.",
+        "Я не знаю индекс."
+      ]
+    ],
+    "question": "Чего нет у Анны в этом разговоре?",
+    "options": [
+      "Конверта",
+      "Письма от Тома",
+      "Адреса её дома"
+    ],
+    "correct": 0,
+    "feedback": "Анна говорит I don’t have an envelope. Конверт — envelope, а марка — stamp.",
+    "prompt": "Скажите сотруднику: «Том не знает индекс».",
+    "answer": "Tom doesn't know the ZIP code.",
+    "alternatives": [
+      "Tom does not know the ZIP code."
+    ],
+    "hint": "Tom — он: doesn’t + know без -s.",
+    "transfer": "У вас нет открытки. Скажите это с don’t have.",
+    "transfer_example": "I don't have a postcard.",
+    "why": "I/you/we/they don’t, но he/she/it doesn’t. После doesn’t — have, live или know без -s. Для состояния с be помощник do не нужен: it isn’t heavy. ZIP code — почтовый индекс США.",
+    "sound": "Don’t /doʊnt/ и doesn’t /ˈdʌzənt/ звучат по-разному. В envelope /ˈɛnvəloʊp/ ударение на первом слоге; перед ним an."
+  },
+  {
+    "n": 24,
+    "week": 12,
+    "slug": "a1-letters-address",
+    "title": "Заполняем адрес и анкету",
+    "scene": "Учебная ситуация: Анна проверяет адрес в США и данные в почтовом бланке",
+    "context": "Назовите фамилию, различайте город, штат и индекс; выполните просьбу заполнить или подписать бланк.",
+    "dialogue": [
+      [
+        "Postal worker",
+        "What is your last name?",
+        "Какая у вас фамилия?"
+      ],
+      [
+        "Anna",
+        "My last name is Belova.",
+        "Моя фамилия — Белова."
+      ],
+      [
+        "Postal worker",
+        "Is the ZIP code on the form?",
+        "Индекс указан в бланке?"
+      ],
+      [
+        "Anna",
+        "Yes, it is.",
+        "Да."
+      ],
+      [
+        "Postal worker",
+        "Sign the form, please.",
+        "Подпишите бланк, пожалуйста."
+      ]
+    ],
+    "question": "Что сотрудник просит сделать в конце?",
+    "options": [
+      "Подписать бланк",
+      "Купить марку",
+      "Назвать дни недели"
+    ],
+    "correct": 0,
+    "feedback": "Sign the form, please — просьба подписать бланк. Fill out — заполнить данные, sign — поставить подпись.",
+    "prompt": "Вежливо попросите знакомого заполнить анкету.",
+    "answer": "Fill out the form, please.",
+    "alternatives": [
+      "Please fill out the form."
+    ],
+    "hint": "Fill out + the form + please.",
+    "transfer": "Теперь вы хотите узнать индекс. Задайте вопрос: «Какой индекс?»",
+    "transfer_example": "What is the ZIP code?",
+    "why": "First name — имя, last name — фамилия. Для обычного адреса улицы в США номер дома стоит перед улицей, затем указывают квартиру, если она нужна. Город, штат и ZIP code пишут вместе на следующей строке. Country — страна. Mail и paper в этих значениях неисчисляемые: the mail is, I have paper.",
+    "sound": "В sign /saɪn/ буква g не произносится. В американском form /fɔrm/ слышен r. ZIP code произносится как /ˈzɪp ˌkoʊd/."
+  }
+]
