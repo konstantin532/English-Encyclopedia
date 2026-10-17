@@ -327,7 +327,9 @@
     const drafts = new Map();
     const completed = new Set();
     const submitted = new Set();
-    let current = 0;
+    const selectedMission = Number(by("[data-a1-missions]").dataset.startMission || 1);
+    let current = Number.isInteger(selectedMission) && selectedMission >= 1 && selectedMission <= 6
+      ? selectedMission - 1 : 0;
     let twist = 0;
 
     function key() { return String(current) + ":" + String(twist); }
