@@ -6,9 +6,9 @@ const vm = require('node:vm');
 
 const source = fs.readFileSync(path.join(__dirname, '../../static/js/a1-active.js'), 'utf8');
 const readEntries = files => files.flatMap(file => JSON.parse(fs.readFileSync(path.join(__dirname, '../../content/active_a1', file), 'utf8')));
-const topics = readEntries(['topics_01_08.json', 'topics_09_13.json', 'topics_14_18.json', 'topics_19_20.json', 'topics_21_22.json', 'topics_23_24.json']);
-const repairs = readEntries(['error_repairs_01_18.json', 'error_repairs_19_20.json', 'error_repairs_21_22.json', 'error_repairs_23_24.json']);
-const scenarios = readEntries(['scenarios_01_06.json', 'scenarios_07_12.json', 'scenarios_13_18.json', 'scenarios_19_20.json', 'scenarios_21_22.json', 'scenarios_23_24.json']);
+const topics = readEntries(['topics_01_08.json', 'topics_09_13.json', 'topics_14_18.json', 'topics_19_20.json', 'topics_21_22.json', 'topics_23_24.json', 'topics_25_26.json']);
+const repairs = readEntries(['error_repairs_01_18.json', 'error_repairs_19_20.json', 'error_repairs_21_22.json', 'error_repairs_23_24.json', 'error_repairs_25_26.json']);
+const scenarios = readEntries(['scenarios_01_06.json', 'scenarios_07_12.json', 'scenarios_13_18.json', 'scenarios_19_20.json', 'scenarios_21_22.json', 'scenarios_23_24.json', 'scenarios_25_26.json']);
 
 class Element {
   constructor() {
@@ -173,7 +173,7 @@ test('blank input cannot reveal sample and new page does not remember answers', 
   assert.match(another.find('[data-a1-mission-progress]').textContent, /Попробовано: 0 из 6/);
 });
 
-for (const number of [19, 20, 21, 22, 23, 24]) {
+for (const number of [19, 20, 21, 22, 23, 24, 25, 26]) {
   test('extended topic ' + number + ' starts its missions and hides every new twist model', () => {
     const app = buildBrowser(number);
     const scenario = scenarios.find(s => s.n === number);

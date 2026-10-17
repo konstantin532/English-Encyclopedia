@@ -1,4 +1,4 @@
-"""Optional original A1 interactive scenes: lessons 1–24 only.
+"""Optional original A1 interactive scenes: lessons 1–26 only.
 
 Only reads vetted local curriculum JSON. Does not modify user progress, lesson
 records, or the canonical lesson content.
@@ -12,7 +12,7 @@ from django.http import Http404
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
 
-MAX_TOPIC = 24
+MAX_TOPIC = 26
 TOPIC_FILES = (
     "topics_01_08.json",
     "topics_09_13.json",
@@ -20,6 +20,7 @@ TOPIC_FILES = (
     "topics_19_20.json",
     "topics_21_22.json",
     "topics_23_24.json",
+    "topics_25_26.json",
 )
 
 
@@ -37,10 +38,10 @@ def _load_topics(base_dir: str):
     if set(topics) != expected:
         raise ValueError("Active A1 topic catalog is incomplete")
     repairs = []
-    for filename in ("error_repairs_01_18.json", "error_repairs_19_20.json", "error_repairs_21_22.json", "error_repairs_23_24.json"):
+    for filename in ("error_repairs_01_18.json", "error_repairs_19_20.json", "error_repairs_21_22.json", "error_repairs_23_24.json", "error_repairs_25_26.json"):
         repairs.extend(json.loads((root / filename).read_text(encoding="utf-8")))
     if len(repairs) != MAX_TOPIC or {r["n"] for r in repairs} != expected:
-        raise ValueError("A1 error-repair exercises must cover exactly lessons 1-24")
+        raise ValueError("A1 error-repair exercises must cover exactly lessons 1-26")
     for repair in repairs:
         topics[repair["n"]]["repair"] = {
             "wrong": repair["wrong"], "correct": repair["correct"],
@@ -53,11 +54,11 @@ def _load_topics(base_dir: str):
     scenarios = []
     for filename in (
         "scenarios_01_06.json", "scenarios_07_12.json", "scenarios_13_18.json",
-        "scenarios_19_20.json", "scenarios_21_22.json", "scenarios_23_24.json"
+        "scenarios_19_20.json", "scenarios_21_22.json", "scenarios_23_24.json", "scenarios_25_26.json"
     ):
         scenarios.extend(json.loads((root / filename).read_text(encoding="utf-8")))
     if len(scenarios) != MAX_TOPIC or {row["n"] for row in scenarios} != expected:
-        raise ValueError("Scenario catalog must cover lessons 1–24 exactly once")
+        raise ValueError("Scenario catalog must cover lessons 1–26 exactly once")
     for block in scenarios:
         missions = block["missions"]
         twists = block["twists"]
@@ -77,7 +78,7 @@ def _load_topics(base_dir: str):
 
 
 def active_topics():
-    """Return the bounded 24-item supplement without changing canonical lessons."""
+    """Return the bounded 26-item supplement without changing canonical lessons."""
     return _load_topics(str(settings.BASE_DIR))
 
 

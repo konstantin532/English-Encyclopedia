@@ -6,7 +6,7 @@ focus: C
 minutes: 40
 title: "Почему? Потому что: Why? и because"
 summary: "Как спросить о причине и ответить: Why? — Because I like Russian music. Чем why отличается от what for и как звучит разговорное ’cause."
-units: [LX-00241, LX-00242, LX-00245, LX-00250]
+units: [LX-00241, LX-00242, LX-00245, LX-00250, LX-00434, LX-00435, LX-00436, LX-00437, LX-00438, LX-00439, LX-00440, LX-00441, LX-00442, LX-00443, LX-00444, LX-00445, LX-00446, LX-00447, LX-00448, LX-00449, LX-00450, LX-00451, LX-00452, LX-00453, LX-00454, LX-00455, LX-00456]
 sound_notes:
   - text: "Why, Mia?"
     ipa: "/ˈwaɪ ˈmiə/"
@@ -14,14 +14,14 @@ sound_notes:
   - text: "Because I like Russian music."
     ipa: "/bɪˈkɔz aɪ ˈlaɪk ˈrʌʃən ˈmjuzɪk/"
     note_ru: "ударение на второй слог: «бикОз»"
-  - text: "The class is on Saturday at ten."
-    ipa: "/ðə ˈklæs ɪz ɑn ˈsæt̬ɚˌdeɪ ət ˈtɛn/"
-    note_ru: "class — широкое «э»: «клэс»"
+  - text: "The lesson is on Saturday at ten."
+    ipa: "/ðə ˈlɛsən ɪz ɑn ˈsæt̬ɚˌdeɪ ət ˈtɛn/"
+    note_ru: "lesson — ударение на первом слоге: «лэсэн»"
 contractions:
   - full: "is not"
     short: "isn't"
     ipa: "/ˈɪzənt/"
-    note_ru: "Why isn't Tom here? — «Почему Тома нет?». В вопросе с why сокращение почти обязательно."
+    note_ru: "Why isn't Tom here? — «Почему Тома нет?». Полная форма is not тоже возможна; сокращение обычно в разговоре."
 layers:
   - number: 1
     body: |
@@ -49,29 +49,40 @@ layers:
       - Ответ: Because + полная мысль: Because I like music.
   - number: 4
     body: |
-      Почему после because — целая фраза? because соединяет причину с тем, что вы сказали раньше. Причина — отдельная мысль: в ней есть кто (I) и что делает (like). Поэтому нельзя ответить «Because music» — нужно Because I like music.
+      Почему после because — целая фраза? because соединяет причину с тем, что вы сказали раньше. Причина — отдельная мысль: в ней есть кто (I) и что делает (like). На этой ступени стройте ответ полной фразой: Because I like music. Разговорное сокращение «Because music» здесь не тренируем.
 
-      В разговоре because часто стоит в начале ответа, как здесь. В письме — посередине: I learn Russian because I like the music.
+      В коротком разговорном ответе because может стоять в начале. В полном предложении оно соединяет действие и причину: I learn Russian because I like the music.
   - number: 5
     body: |
       Так объясняют причины американцы:
 
       > [C3]Because[/] [T8]I[/] [D3]like[/] [S10]Russian[/] [S10]music[/]. — Потому что мне нравится русская музыка.
-      > [T1]The[/] [S9]class[/] [D1]is[/] [P3]on[/] [S7]Saturday[/] [P3]at[/] [N3]ten[/]! — Урок в субботу в десять!
+      > [T1]The[/] [S9]lesson[/] [D1]is[/] [P3]on[/] [S7]Saturday[/] [P3]at[/] [N3]ten[/]! [D2]Take[/] [T1]a[/] [S2]notebook[/], [O8]please[/]. — Урок в субботу в десять! Возьмите тетрадь, пожалуйста.
 
       - Why not? — «Почему бы и нет?» — так соглашаются.
       - Why? Because! — так шутят, когда не хотят объяснять.
-      - В быстрой речи because звучит «коз» или ’cause.
+      - В быстрой речи вы можете услышать сокращённое ’cause. На этой ступени используйте полное because; сокращённые слияния вводятся позже.
+
+      Учимся объяснять трудность:
+
+      > [C3]Because[/] [T1]the[/] [S9]exercise[/] [D1]is[/] [J3]difficult[/]. — Потому что упражнение трудное.
+      > [C3]Because[/] [T8]I[/] [D1]do[/][X1]n't[/] [D6]understand[/] [T1]the[/] [S9]word[/]. — Потому что я не понимаю слово.
+
+      **Question** — вопрос; **answer** — ответ. **Sentence** — предложение, **page** — страница, **exercise** — отдельное учебное упражнение, **test** — проверочная работа. **Easy** и **difficult** говорят о сложности, а знакомые light и heavy — о весе.
+
+      Указания на уроке: **Open your book at page ten.** — «Откройте книгу на странице десять». **Repeat the sentence, please.** — «Повторите предложение, пожалуйста». Тетрадь — notebook, бумага — paper; домашняя работа — homework: **I do my homework**.
+
+      **I study English because my friend speaks English.** — «Я изучаю английский, потому что мой друг говорит по-английски». В вопросе **Why do you study English?** нужен do, но с be — **Why is the exercise difficult?** без do. Причину после because называйте целой мыслью: кто что делает или какой предмет каков.
   - number: 6
     body: |
       Ловушки:
 
       - «Why you like it?» — пропущен do. Правильно: Why do you like it?
-      - «Because of I like» — of лишнее. because of ставят только перед словом: because of the music.
+      - «Because of I like» — of лишнее. because of ставят перед существительным или именной группой: because of the music.
       - Русское «зачем» и «почему» по-английски часто оба — why.
   - number: 7
     body: |
-      Четыре задания: понять вопрос о причине, вставить because, собрать ответ и объяснить свою причину в новой ситуации.
+      Шесть заданий: понять вопрос о причине, вставить because, собрать вопрос, объяснить свою причину, выбрать фразу о трудности и объяснить непонимание слова.
 exercises:
   - order: 1
     kind: choice
@@ -110,3 +121,32 @@ exercises:
     hint_ru: "Because + полная мысль."
     explanation_ru: "Because I like English music. Подойдёт любая причина — главное, после because целая фраза."
     units: [LX-00242]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: Вас спрашивают, почему вы просите помощи с упражнением. Выберите ответ с полной причиной.
+    options:
+    - Because the exercise is difficult.
+    - Because the exercise difficult.
+    - Why the exercise is difficult.
+    answer: Because the exercise is difficult.
+    hint_ru: Нужны because, предмет и is перед difficult.
+    explanation_ru: 'Because the exercise is difficult — причина с полным предложением: the exercise + is + difficult.'
+    units:
+    - LX-00452
+    - LX-00456
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: 'Учитель спрашивает, почему вы просите повторить слово. Ответьте: «Потому что я не понимаю это слово».'
+    prompt_en: Why? — ___
+    answer: Because I don't understand the word.
+    accepted:
+    - Because I don't understand the word
+    - Because I do not understand the word.
+    - Because I do not understand the word
+    hint_ru: Because + I don’t understand + the word.
+    explanation_ru: После because следует полная причина. Отрицание обычного understand — don’t understand.
+    units:
+    - LX-00437
+    - LX-00242

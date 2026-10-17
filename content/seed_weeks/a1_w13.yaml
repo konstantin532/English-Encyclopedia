@@ -1,6 +1,6 @@
 level: A1
 week: 13
-can_do_ru: "Я смогу сказать, что умею и чего не умею (I can speak English, I can't sing), спросить Can you…? и объяснить причину: Why? — Because…"
+can_do_ru: "Я смогу сказать, что умею и чего не умею (I can speak English, I can't sing), спросить об умении с Can you…, попросить повторить вопрос и объяснить причину: Why? — Because…"
 mission_ru: "Скажите вслух по-английски три фразы о своих умениях: I can… I can't… Спросите кого-нибудь Can you…? и ответьте на Why? фразой с because."
 chunks: [LX-00247, LX-00248, LX-00249, LX-00250, LX-00251]
 story_beat:
@@ -18,9 +18,9 @@ script:
     ru: "Да. Я из России. Я говорю по-русски и по-английски."
   - speaker: tom
     emotion: surprised
-    text: "[T8]I[/] [D7]can[/][X1]not[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]?"
-    spoken: "[T8]I[/] [D7]ca[/][X1]n't[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]?"
-    ru: "А я не говорю по-русски. Научишь меня?"
+    text: "[T8]I[/] [D7]can[/][X1]not[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]? [T8]I[/] [D3]want[/] [X2]to[/] [D6]learn[/]."
+    spoken: "[T8]I[/] [D7]ca[/][X1]n't[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]? [T8]I[/] [D3]want[/] [X2]to[/] [D6]learn[/]."
+    ru: "А я не говорю по-русски. Научишь меня? Я хочу учиться."
   - speaker: anna
     emotion: happy
     text: "[O4]Yes[/], [T8]I[/] [D7]can[/]! [C5]But[/] [A6]why[/], [S1]Tom[/]?"
@@ -43,8 +43,8 @@ script:
     ru: "Потому что русские буквы красивые!"
   - speaker: anna
     emotion: happy
-    text: "[T1]The[/] [S9]class[/] [D1]is[/] [P3]on[/] [S7]Saturday[/] [P3]at[/] [N3]ten[/]!"
-    ru: "Урок в субботу в десять!"
+    text: "[T1]The[/] [S9]lesson[/] [D1]is[/] [P3]on[/] [S7]Saturday[/] [P3]at[/] [N3]ten[/]! [D2]Take[/] [T1]a[/] [S2]notebook[/], [O8]please[/]."
+    ru: "Урок в субботу в десять! Возьмите тетрадь, пожалуйста."
   - speaker: tom
     emotion: excited
     text: "[S7]Saturday[/] [P3]at[/] [N3]ten[/]! [T8]I[/] [D7]can[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]ten[/]!"
