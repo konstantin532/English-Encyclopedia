@@ -1,0 +1,107 @@
+[
+  {
+    "n": 27,
+    "week": 14,
+    "slug": "a1-bus-ticket",
+    "title": "Билет, станция и время отправления",
+    "scene": "Отдельная учебная поездка: Анна уточняет дорогу в аэропорт",
+    "context": "Узнайте направление, время отправления и прибытия. Не переносите время и маршрут этой сценки в основной сюжет.",
+    "dialogue": [
+      [
+        "Anna",
+        "Does this bus go to the airport?",
+        "Этот автобус идёт в аэропорт?"
+      ],
+      [
+        "Bus driver",
+        "Yes, it does.",
+        "Да."
+      ],
+      [
+        "Anna",
+        "What time does it leave?",
+        "Во сколько он отправляется?"
+      ],
+      [
+        "Bus driver",
+        "At five.",
+        "В пять."
+      ],
+      [
+        "Anna",
+        "Two tickets, please.",
+        "Два билета, пожалуйста."
+      ],
+      [
+        "Bus driver",
+        "Take a seat, please.",
+        "Садитесь, пожалуйста."
+      ]
+    ],
+    "question": "Во сколько автобус отправляется в этой учебной сценке?",
+    "options": [
+      "В пять",
+      "В шесть",
+      "В десять"
+    ],
+    "correct": 0,
+    "feedback": "В отдельной сценке водитель говорит At five. В основном диалоге автобус обратно в шесть — это другая поездка.",
+    "prompt": "Спросите, во сколько прибывает поезд.",
+    "answer": "What time does the train arrive?",
+    "alternatives": [],
+    "hint": "What time + does the train + arrive?",
+    "transfer": "Вы покупаете один билет. Спросите его цену.",
+    "transfer_example": "How much is a ticket?",
+    "why": "Leave — отправляться, arrive — прибывать. Для вопроса с обычным глаголом: What time does the bus leave? После does остаётся leave без -s. С be: What time is the next bus? Train station — железнодорожная станция, bus stop — автобусная остановка. Take a seat — приглашение сесть. Реальные маршруты, цены и способы оплаты уточняйте у перевозчика.",
+    "sound": "Train /treɪn/ и plane /pleɪn/ рифмуются, но начинаются по-разному. В leave /liv/ и seat /sit/ произносится /i/. У arrive /əˈraɪv/ ударение на втором слоге."
+  },
+  {
+    "n": 28,
+    "week": 14,
+    "slug": "a1-review-everything",
+    "title": "Собираем A1 в одной поездке",
+    "scene": "Учебная ситуация: друзья готовят другую поездку по городу",
+    "context": "Соедините знакомство, погоду, вещи, умение и причину. Это дополнительное повторение, а не итоговая оценка владения A1.",
+    "dialogue": [
+      [
+        "Tom",
+        "It is windy today.",
+        "Сегодня ветрено."
+      ],
+      [
+        "Anna",
+        "I have a warm coat and an umbrella.",
+        "У меня есть тёплое пальто и зонт."
+      ],
+      [
+        "Tom",
+        "Can you drive to the station?",
+        "Ты можешь доехать до станции за рулём?"
+      ],
+      [
+        "Anna",
+        "No, I can't. I can take a taxi.",
+        "Нет. Я могу взять такси."
+      ]
+    ],
+    "question": "Как Анна может добраться до станции в этой сценке?",
+    "options": [
+      "На такси",
+      "Она сама поведёт машину",
+      "На самолёте"
+    ],
+    "correct": 0,
+    "feedback": "Анна не может сама поехать за рулём и предлагает взять такси: I can take a taxi.",
+    "prompt": "Объясните: «У меня есть зонт, потому что я не люблю дождь».",
+    "answer": "I have an umbrella because I don't like the rain.",
+    "alternatives": [
+      "I have an umbrella because I do not like the rain.",
+      "I have an umbrella because I don't like rain."
+    ],
+    "hint": "I have an umbrella + because + I don’t like the rain.",
+    "transfer": "В вымышленной роли вы из России, говорите по-английски и хотите купить билет. Сообщите три факта тремя фразами.",
+    "transfer_example": "I am from Russia. I can speak English. I want to buy a ticket.",
+    "why": "Be описывает погоду: It is sunny, warm, windy или cloudy. Have сообщает о вещах: I have a bag. Can — умение или возможность: I can drive. Для обычных действий нужны do/does в вопросах и don’t/doesn’t в отрицании. Because соединяет факт и причину. Rain и snow здесь существительные; новые времена для описания погоды пока не нужны. Свитер — sweater, пальто — coat, головной убор — hat.",
+    "sound": "Umbrella /ʌmˈbrɛlə/ начинается с гласного звука: an umbrella. В weather /ˈwɛðɚ/ звук /ð/ произносится с кончиком языка у зубов. Buy /baɪ/ и bye звучат одинаково, но значат разное."
+  }
+]

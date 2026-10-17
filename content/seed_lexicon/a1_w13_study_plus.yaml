@@ -1,0 +1,354 @@
+# Неделя 13: добор слов для учёбы и умений. CEFR не сверялся.
+level: A1
+week: 13
+units:
+- uid: LX-00434
+  lemma: learn
+  class: D6
+  ipa_us: /lɝn/
+  translation_ru: учить, осваивать
+  meaning: to get new knowledge or a new skill
+  example_en: '[T8]I[/] [D6]learn[/] [S10]English[/].'
+  example_ru: Я учу английский.
+  usage_note: learn — осваивать знания или умение; teach — учить другого.
+  forms:
+  - learns
+  - learning
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00435
+  lemma: study
+  class: D6
+  ipa_us: /ˈstʌdi/
+  translation_ru: учиться, изучать
+  meaning: to spend time learning a subject
+  example_en: '[T8]We[/] [D6]study[/] [S10]Russian[/] [P1]at[/] [S4]school[/].'
+  example_ru: Мы изучаем русский в школе.
+  usage_note: study описывает работу над предметом; learn — приобретение знаний.
+  forms:
+  - studies
+  - studying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00436
+  lemma: repeat
+  class: D5
+  ipa_us: /rɪˈpit/
+  translation_ru: повторять
+  meaning: to say or do the same thing again
+  example_en: '[D7]Can[/] [T8]you[/] [D5]repeat[/] [T1]the[/] [S9]question[/], [O8]please[/]?'
+  example_ru: Можете повторить вопрос?
+  usage_note: Can you repeat…? — попросить повторить слово или вопрос.
+  forms:
+  - repeats
+  - repeating
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00437
+  lemma: understand
+  class: D6
+  ipa_us: /ˌʌndɚˈstænd/
+  translation_ru: понимать
+  meaning: to know what words or an idea mean
+  example_en: '[T8]I[/] [D1]do[/] [X1]not[/] [D6]understand[/] [T1]the[/] [S9]word[/].'
+  example_ru: Я не понимаю это слово.
+  usage_note: I don’t understand — полезная просьба остановиться и объяснить.
+  forms:
+  - understands
+  - understanding
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00438
+  lemma: draw
+  class: D2
+  ipa_us: /drɔ/
+  translation_ru: рисовать
+  meaning: to make a picture using lines
+  example_en: '[T8]I[/] [D7]can[/] [D2]draw[/] [T1]a[/] [S6]cat[/].'
+  example_ru: Я умею рисовать кота.
+  usage_note: После can используйте draw без to и без -s.
+  forms:
+  - draws
+  - drawing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00439
+  lemma: swim
+  class: D4
+  ipa_us: /swɪm/
+  translation_ru: плавать
+  meaning: to move through water using the body
+  example_en: '[T8]I[/] [D7]can[/] [D4]swim[/].'
+  example_ru: Я умею плавать.
+  usage_note: I can swim — умение; I like swimming — нравится занятие.
+  forms:
+  - swims
+  - swimming
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00440
+  lemma: drive
+  class: D4
+  ipa_us: /draɪv/
+  translation_ru: водить автомобиль
+  meaning: to control a car while it moves
+  example_en: '[D7]Can[/] [T8]you[/] [D4]drive[/]?'
+  example_ru: Ты умеешь водить?
+  usage_note: Говоря об умении водить автомобиль, можно сказать просто drive.
+  forms:
+  - drives
+  - driving
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00441
+  lemma: dance
+  class: D2
+  ipa_us: /dæns/
+  translation_ru: танцевать
+  meaning: to move the body to music
+  example_en: '[T8]She[/] [D7]can[/] [D2]dance[/].'
+  example_ru: Она умеет танцевать.
+  usage_note: She can dance — после can нет окончания -s.
+  forms:
+  - dances
+  - dancing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00442
+  lemma: classroom
+  class: S4
+  ipa_us: /ˈklæsˌrum/
+  translation_ru: классная комната
+  meaning: a room where students have lessons
+  example_en: '[T1]The[/] [S9]teacher[/] [D1]is[/] [P1]in[/] [T1]the[/] [S4]classroom[/].'
+  example_ru: Учитель в классной комнате.
+  usage_note: Class — занятие или группа; classroom — помещение.
+  forms:
+  - classrooms
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00443
+  lemma: course
+  class: S9
+  ipa_us: /kɔrs/
+  translation_ru: курс обучения
+  meaning: a set of lessons about one subject
+  example_en: '[T1]The[/] [S10]English[/] [S9]course[/] [D8]starts[/] [P3]on[/] [S7]Monday[/].'
+  example_ru: Курс английского начинается в понедельник.
+  usage_note: Course — курс из нескольких занятий; не путайте с отдельным lesson.
+  forms:
+  - courses
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00444
+  lemma: lesson
+  class: S9
+  ipa_us: /ˈlɛsən/
+  translation_ru: урок
+  meaning: a period of time for learning
+  example_en: '[T1]The[/] [S9]lesson[/] [D1]is[/] [P3]on[/] [S7]Saturday[/] [P3]at[/] [N3]ten[/].'
+  example_ru: Урок в субботу в десять.
+  usage_note: Lesson — отдельный урок; course — последовательность уроков.
+  forms:
+  - lessons
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00445
+  lemma: homework
+  class: S9
+  ipa_us: /ˈhoʊmˌwɝk/
+  translation_ru: домашнее задание
+  meaning: school work that students do outside class
+  example_en: '[T8]I[/] [D1]do[/] [T3]my[/] [S9]homework[/] [P1]at[/] [S4]home[/].'
+  example_ru: Я делаю домашнее задание дома.
+  usage_note: 'Homework неисчисляемое: my homework, без a и без -s. Не have a homework.'
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00446
+  lemma: notebook
+  class: S2
+  ipa_us: /ˈnoʊtˌbʊk/
+  translation_ru: тетрадь, блокнот
+  meaning: a book with pages for writing notes
+  example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [S2]notebook[/].'
+  example_ru: У меня есть тетрадь.
+  usage_note: В учебной ситуации notebook — бумажная тетрадь; компьютер здесь называем computer.
+  forms:
+  - notebooks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00447
+  lemma: pencil
+  class: S2
+  ipa_us: /ˈpɛnsəl/
+  translation_ru: карандаш
+  meaning: an object used to write with graphite
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]pencil[/].'
+  example_ru: Это мой карандаш.
+  usage_note: Pencil — карандаш, pen — ручка.
+  forms:
+  - pencils
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00448
+  lemma: pen
+  class: S2
+  ipa_us: /pɛn/
+  translation_ru: ручка
+  meaning: an object used to write with ink
+  example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [S2]pen[/].'
+  example_ru: У меня есть ручка.
+  usage_note: A pen — одна ручка; my pen — моя ручка, без артикля a.
+  forms:
+  - pens
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00449
+  lemma: page
+  class: S9
+  ipa_us: /peɪdʒ/
+  translation_ru: страница
+  meaning: one side of a sheet in a book
+  example_en: '[D2]Open[/] [T3]your[/] [S2]book[/] [P1]at[/] [S9]page[/] [N7]ten[/].'
+  example_ru: Откройте книгу на десятой странице.
+  usage_note: Page ten — страница номер десять; здесь ten обозначает номер.
+  forms:
+  - pages
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00450
+  lemma: sentence
+  class: S9
+  ipa_us: /ˈsɛntəns/
+  translation_ru: предложение
+  meaning: a group of words expressing a complete thought
+  example_en: '[T8]I[/] [D7]can[/] [D5]write[/] [T1]a[/] [S9]sentence[/].'
+  example_ru: Я могу написать предложение.
+  usage_note: Sentence — предложение в тексте; word — отдельное слово.
+  forms:
+  - sentences
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00451
+  lemma: question
+  class: S9
+  ipa_us: /ˈkwɛstʃən/
+  translation_ru: вопрос
+  meaning: words used to ask for information
+  example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [S9]question[/].'
+  example_ru: У меня есть вопрос.
+  usage_note: Ask a question — задать вопрос; answer a question — ответить.
+  forms:
+  - questions
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00452
+  lemma: exercise
+  class: S9
+  ipa_us: /ˈɛksɚˌsaɪz/
+  translation_ru: учебное упражнение
+  meaning: a learning task that gives practice
+  example_en: '[T2]This[/] [S9]exercise[/] [D1]is[/] [J3]easy[/].'
+  example_ru: Это упражнение лёгкое.
+  usage_note: 'Здесь exercise — учебное задание, которое можно посчитать: an exercise, exercises.'
+  forms:
+  - exercises
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00453
+  lemma: test
+  class: S9
+  ipa_us: /tɛst/
+  translation_ru: тест, проверочная работа
+  meaning: a task used to check knowledge
+  example_en: '[T1]The[/] [S9]test[/] [D1]is[/] [P3]on[/] [S7]Monday[/].'
+  example_ru: Тест в понедельник.
+  usage_note: A test — отдельная проверка; homework — домашняя работа в целом.
+  forms:
+  - tests
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00454
+  lemma: language
+  class: S10
+  ipa_us: /ˈlæŋɡwɪdʒ/
+  translation_ru: язык общения
+  meaning: words and rules people use to communicate
+  example_en: '[S10]Russian[/] [D1]is[/] [T1]a[/] [S10]language[/].'
+  example_ru: Русский — это язык.
+  usage_note: Language — язык общения; English и Russian пишутся с большой буквы.
+  forms:
+  - languages
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00455
+  lemma: easy
+  class: J3
+  ipa_us: /ˈizi/
+  translation_ru: лёгкий, нетрудный
+  meaning: not needing much effort to do
+  example_en: '[T1]The[/] [S9]question[/] [D1]is[/] [J3]easy[/].'
+  example_ru: Вопрос лёгкий.
+  usage_note: Easy — о сложности задания; light — о небольшом весе.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'
+- uid: LX-00456
+  lemma: difficult
+  class: J3
+  ipa_us: /ˈdɪfɪkəlt/
+  translation_ru: трудный, сложный
+  meaning: needing effort to do or understand
+  example_en: '[T2]This[/] [S9]word[/] [D1]is[/] [J3]difficult[/].'
+  example_ru: Это слово трудное.
+  usage_note: Difficult — сложно выполнить или понять; heavy — тяжёлый по весу.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: 'На курсах: учебные предметы, действия и умения'

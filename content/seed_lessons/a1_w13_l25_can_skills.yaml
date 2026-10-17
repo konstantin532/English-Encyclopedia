@@ -6,7 +6,7 @@ focus: D
 minutes: 40
 title: "Умею и не умею: can, can't и языки"
 summary: "Как рассказать о своих умениях: I can speak English, I can't sing. Вопрос Can you…? и короткие ответы. Почему «говорю по-русски» по-английски — «могу говорить»."
-units: [LX-00239, LX-00240, LX-00243, LX-00244, LX-00246, LX-00247, LX-00248, LX-00249, LX-00251]
+units: [LX-00239, LX-00240, LX-00243, LX-00244, LX-00246, LX-00247, LX-00248, LX-00249, LX-00251, LX-00434, LX-00435, LX-00436, LX-00437, LX-00438, LX-00439, LX-00440, LX-00441, LX-00442, LX-00443, LX-00444, LX-00445, LX-00446, LX-00447, LX-00448, LX-00450, LX-00454]
 sound_notes:
   - text: "Can you speak Russian?"
     ipa: "/kən jə ˈspik ˈrʌʃən/"
@@ -52,9 +52,9 @@ layers:
       - С he и she — тоже can, без -s: she can sing.
   - number: 4
     body: |
-      Почему «Я говорю по-русски» — это I can speak Russian? Потому что речь об умении, а не о том, что вы делаете сейчас. Можно сказать и I speak Russian — тоже верно и естественно. Вопрос Can you speak…? звучит мягче и вежливее, чем Do you speak…?
+      Почему «Я говорю по-русски» — это I can speak Russian? Потому что речь об умении, а не о том, что вы делаете сейчас. Можно сказать и I speak Russian — тоже верно и естественно. Оба вопроса могут быть нейтральными: Can you speak…? уточняет умение, Do you speak…? — знание языка. Вежливость зависит от ситуации и тона.
 
-      > [T8]I[/] [D7]can[/][X1]not[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]? — А я не говорю по-русски. Научишь меня?
+      > [T8]I[/] [D7]can[/][X1]not[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]? [T8]I[/] [D3]want[/] [X2]to[/] [D6]learn[/]. — А я не говорю по-русски. Научишь меня? Я хочу учиться.
 
       После can глагол всегда «голый»: без to, без -s.
   - number: 5
@@ -66,6 +66,18 @@ layers:
       - Языки пишут с большой буквы и без the: speak English, speak Russian.
       - Short answer — главное: Yes, I can. No, I can't. Повторять глагол не нужно.
       - Чуть-чуть: I can speak a little Russian — «я немного говорю по-русски».
+
+      Учебные действия и умения:
+
+      > [T8]I[/] [D7]can[/] [D2]draw[/] [T1]a[/] [S6]cat[/]. — Я умею рисовать кота.
+      > [D7]Can[/] [T8]you[/] [D4]swim[/]? — Ты умеешь плавать?
+      > [T8]She[/] [D7]can[/] [D2]dance[/]. — Она умеет танцевать.
+
+      **Draw** — рисовать, **swim** — плавать, **drive** — водить автомобиль, **dance** — танцевать. После can эти действия остаются без to и без -s.
+
+      **Learn** — осваивать знания или умение самому, **teach** — учить другого, **study** — заниматься предметом. **Understand** — понимать, **repeat** — повторять. Если не поняли вопрос: **I don't understand. Can you repeat it, please?**
+
+      На урок понадобятся **notebook** — тетрадь, **pen** — ручка, **pencil** — карандаш. **Classroom** — помещение, **lesson** — отдельный урок, **course** — курс из нескольких уроков. **Language** — язык. **Homework** — домашняя работа в целом: **I do my homework**, без a и без -s. Написать предложение — **write a sentence**.
   - number: 6
     body: |
       Ловушки:
@@ -75,7 +87,7 @@ layers:
       - teach и learn: Anna teaches (учит других), Tom learns (учится сам). По-русски оба — «учить».
   - number: 7
     body: |
-      Четыре задания: узнать вопрос об умении, ответить коротко, собрать фразу и рассказать о себе в новой ситуации.
+      Шесть заданий: узнать вопрос об умении, ответить коротко, собрать фразу, рассказать о себе в новой ситуации, выбрать форму после can и попросить повторить вопрос.
 exercises:
   - order: 1
     kind: choice
@@ -114,3 +126,30 @@ exercises:
     hint_ru: "Yes, I can + вторая фраза о языках."
     explanation_ru: "Yes, I can. I can speak Russian and English. Короткого Yes, I can тоже достаточно."
     units: [LX-00239, LX-00243, LX-00244]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: Она умеет рисовать. Выберите фразу без лишнего окончания или to.
+    options:
+    - She can draw.
+    - She can draws.
+    - She can to draw.
+    answer: She can draw.
+    hint_ru: После can — исходная форма draw.
+    explanation_ru: Can не меняется с she, и после него остаётся draw без -s и без to.
+    units:
+    - LX-00438
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: 'Вы не поняли вопрос на занятии. Вежливо попросите повторить его: «Можете повторить вопрос, пожалуйста?»'
+    prompt_en: ___
+    answer: Can you repeat the question, please?
+    accepted:
+    - Can you repeat the question, please
+    - Can you please repeat the question?
+    hint_ru: Can you + repeat the question + please?
+    explanation_ru: Can you repeat the question, please? — просьба повторить вопрос. Другой порядок please тоже возможен.
+    units:
+    - LX-00436
+    - LX-00451

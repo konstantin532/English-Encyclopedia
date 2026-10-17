@@ -1,4 +1,4 @@
-"""Regression and content-integrity checks for the A1 01–22 add-on.
+"""Regression and content-integrity checks for the A1 01–28 add-on.
 
 The situation-weeks curriculum and database schema must stay unchanged.
 """
@@ -19,10 +19,10 @@ class ActiveA1CatalogTests(TestCase):
     def setUpTestData(cls):
         ensure_content()
 
-    def test_has_exactly_twenty_two_distinct_topics_and_valid_order(self):
+    def test_has_exactly_twenty_eight_distinct_topics_and_valid_order(self):
         topics = active_topics()
-        self.assertEqual(MAX_TOPIC, 22)
-        self.assertEqual(sorted(topics), list(range(1, 23)))
+        self.assertEqual(MAX_TOPIC, 28)
+        self.assertEqual(sorted(topics), list(range(1, 29)))
         slugs = [item["slug"] for item in topics.values()]
         self.assertEqual(len(slugs), len(set(slugs)))
         for index, topic in topics.items():
@@ -52,19 +52,19 @@ class ActiveA1CatalogTests(TestCase):
                 self.assertNotIn("<script", json.dumps(topic).lower())
 
     def test_catalog_source_files_are_bounded_and_present(self):
-        self.assertEqual(TOPIC_FILES, ("topics_01_08.json", "topics_09_13.json", "topics_14_18.json", "topics_19_20.json", "topics_21_22.json"))
+        self.assertEqual(TOPIC_FILES, ("topics_01_08.json", "topics_09_13.json", "topics_14_18.json", "topics_19_20.json", "topics_21_22.json", "topics_23_24.json", "topics_25_26.json", "topics_27_28.json"))
         root = Path(settings.BASE_DIR) / "content" / "active_a1"
-        self.assertEqual(sum(len(json.loads((root / f).read_text(encoding="utf-8"))) for f in TOPIC_FILES), 22)
+        self.assertEqual(sum(len(json.loads((root / f).read_text(encoding="utf-8"))) for f in TOPIC_FILES), 28)
         self.assertTrue((root / "topics_19_20.json").exists())
         self.assertTrue((root / "topics_21_22.json").exists())
 
     def test_every_topic_is_accessible_by_get(self):
-        for n in range(1, 23):
+        for n in range(1, 29):
             with self.subTest(n=n):
                 response = self.client.get(reverse("core:active_a1_topic", args=[n]))
                 self.assertEqual(response.status_code, 200)
                 self.assertTemplateUsed(response, "core/a1_active_topic.html")
-                self.assertContains(response, f"Тема {n} из 22")
+                self.assertContains(response, f"Тема {n} из 28")
                 self.assertContains(response, "data-a1-quiz")
                 self.assertContains(response, "data-a1-production")
                 self.assertContains(response, "data-a1-builder")
@@ -76,7 +76,7 @@ class ActiveA1CatalogTests(TestCase):
                 self.assertContains(response, 'id="a1-active-topic-data"')
 
     def test_out_of_range_topic_is_404(self):
-        for n in (0, 23, 24, 99999):
+        for n in (0, 29, 30, 99999):
             self.assertEqual(self.client.get(reverse("core:active_a1_topic", args=[n])).status_code, 404)
 
     def test_no_server_side_submission_or_private_audio(self):
@@ -87,14 +87,15 @@ class ActiveA1CatalogTests(TestCase):
         self.assertNotContains(response, "MediaRecorder")
 
     def test_links_on_existing_lessons_are_bounded(self):
-        for n in (1, 5, 9, 14, 18, 19, 20, 21, 22):
+        for n in (1, 5, 9, 14, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28):
             lesson = Lesson.objects.get(level__code="A1", order=n)
             response = self.client.get(reverse("lessons:detail", args=[lesson.slug]))
             self.assertContains(response, reverse("core:active_a1_topic", args=[n]))
-        for n in (23, 24, 28):
-            lesson = Lesson.objects.get(level__code="A1", order=n)
-            response = self.client.get(reverse("lessons:detail", args=[lesson.slug]))
-            self.assertNotContains(response, 'class="section a1-active-invite"')
+        from apps.curriculum.models import Level
+        lesson = Lesson.objects.create(level=Level.objects.get(code="A1+"), order=1,
+                                       slug="outside-a1-practice", title="Other level", is_published=True)
+        response = self.client.get(reverse("lessons:detail", args=[lesson.slug]))
+        self.assertNotContains(response, 'class="section a1-active-invite"')
 
     def test_new_material_does_not_replace_original_cafe_lab(self):
         response = self.client.get(reverse("lessons:detail", args=["a1-cafe-order"]))
@@ -125,7 +126,7 @@ class ActiveA1CatalogTests(TestCase):
         self.assertContains(response, 'class="active-a1-repair" data-a1-repair hidden')
         self.assertContains(response, 'data-a1-repair-explanation role="status" aria-live="polite" hidden')
 
-    def test_all_twenty_two_error_repairs_are_original_and_present(self):
+    def test_all_twenty_eight_error_repairs_are_original_and_present(self):
         from apps.core.a1_active import active_topics
         from django.utils.html import escape
         for i, topic in active_topics().items():
@@ -141,8 +142,8 @@ class ActiveA1CatalogTests(TestCase):
 
     def test_six_new_scenarios_per_lesson_and_two_improv_twists(self):
         topics = active_topics()
-        self.assertEqual(sum(len(topic["missions"]) for topic in topics.values()), 132)
-        self.assertEqual(sum(len(topic["twists"]) for topic in topics.values()), 44)
+        self.assertEqual(sum(len(topic["missions"]) for topic in topics.values()), 168)
+        self.assertEqual(sum(len(topic["twists"]) for topic in topics.values()), 56)
         titles = []
         scenes = []
         for number, topic in topics.items():
@@ -164,11 +165,11 @@ class ActiveA1CatalogTests(TestCase):
                 for twist in topic["twists"]:
                     self.assertTrue(twist["scene"] and twist["example"])
                     self.assertLessEqual(len(twist["example"]), 200)
-        self.assertEqual(len(set(titles)), 132)
-        self.assertEqual(len(set(scenes)), 132)
+        self.assertEqual(len(set(titles)), 168)
+        self.assertEqual(len(set(scenes)), 168)
 
     def test_missions_render_on_every_topic_page_without_exposing_models(self):
-        for number in range(1, 23):
+        for number in range(1, 29):
             with self.subTest(number=number):
                 response = self.client.get(reverse("core:active_a1_topic", args=[number]))
                 self.assertContains(response, 'id="a1-missions"')
@@ -189,7 +190,7 @@ class ActiveA1CatalogTests(TestCase):
         self.assertContains(response, reverse("core:active_a1_topic", args=[18]) + "#a1-missions")
 
     def test_six_story_cards_are_visible_below_the_canonical_lesson(self):
-        for number in (1, 5, 13, 18, 19, 20, 21, 22):
+        for number in (1, 5, 13, 18, 19, 20, 21, 22, 23, 24):
             with self.subTest(lesson=number):
                 lesson = Lesson.objects.get(level__code="A1", order=number)
                 response = self.client.get(reverse("lessons:detail", args=[lesson.slug]))
@@ -198,7 +199,10 @@ class ActiveA1CatalogTests(TestCase):
                 self.assertContains(
                     response, reverse("core:active_a1_topic", args=[number]) + "?mission=6#"
                 )
-        lesson = Lesson.objects.get(level__code="A1", order=23)
+        from apps.curriculum.models import Level
+        lesson = Lesson.objects.get(level__code="A1", order=1)
+        lesson.level = Level.objects.get(code="A1+")
+        lesson.save(update_fields=["level"])
         response = self.client.get(reverse("lessons:detail", args=[lesson.slug]))
         self.assertNotContains(response, 'class="a1-mission-previews"')
 
@@ -220,6 +224,6 @@ class ActiveA1CatalogTests(TestCase):
         self.assertEqual(topics[20]["week"], 10)
         self.assertIn("I like to read.", topics[20]["alternatives"])
         self.assertIn("I like to read.", topics[20]["repair"]["alternatives"])
-        last = self.client.get(reverse("core:active_a1_topic", args=[22]))
+        last = self.client.get(reverse("core:active_a1_topic", args=[28]))
         self.assertIsNone(last.context["topic_next"])
-        self.assertEqual(last.context["topic_previous"], 21)
+        self.assertEqual(last.context["topic_previous"], 27)

@@ -1,6 +1,6 @@
 level: A1
 week: 12
-can_do_ru: "Я смогу отправить письмо на почте, сказать, чего у меня нет (I don't have a stamp), спросить о почте для дома и ответить I don't know."
+can_do_ru: "Я смогу отправить письмо на почте, сказать, чего у меня нет (I don't have a stamp), назвать город и индекс, заполнить анкету и спросить о почте для дома."
 mission_ru: "Скажите вслух по-английски три фразы с don't и doesn't о себе и знакомых: I don't… My friend doesn't… Потом спросите кого-нибудь: What is your address?"
 chunks: [LX-00232, LX-00233, LX-00234, LX-00235, LX-00236]
 story_beat:
@@ -16,13 +16,13 @@ script:
     text: "[O4]Yes[/], [O8]please[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S9]letter[/] [P5]for[/] [T3]my[/] [S1]mother[/] [P1]in[/] [S4]Russia[/]."
     ru: "Да, пожалуйста. У меня письмо для мамы в России."
   - speaker: postal
-    text: "[T9]What[/] [D1]is[/] [T1]the[/] [S9]address[/]?"
-    spoken: "[T9]What[/][D1]'s[/] [T1]the[/] [S9]address[/]?"
-    ru: "Какой адрес?"
+    text: "[T9]What[/] [D1]is[/] [T1]the[/] [S9]address[/]? [T1]The[/] [S4]city[/] [C1]and[/] [S4]country[/], [O8]please[/]."
+    spoken: "[T9]What[/][D1]'s[/] [T1]the[/] [S9]address[/]? [T1]The[/] [S4]city[/] [C1]and[/] [S4]country[/], [O8]please[/]."
+    ru: "Какой адрес? Город и страна, пожалуйста."
   - speaker: anna
-    text: "[T1]The[/] [S9]address[/] [D1]is[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [C5]But[/] [T8]I[/] [D1]do[/] [X1]not[/] [D1]have[/] [T1]a[/] [S2]stamp[/]."
-    spoken: "[T1]The[/] [S9]address[/] [D1]is[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [C5]But[/] [T8]I[/] [D1]do[/][X1]n't[/] [D1]have[/] [T1]a[/] [S2]stamp[/]."
-    ru: "Адрес на письме. Но у меня нет марки."
+    text: "[T1]The[/] [S9]address[/] [D1]is[/] [P1]on[/] [T1]the[/] [S2]envelope[/]. [C5]But[/] [T8]I[/] [D1]do[/] [X1]not[/] [D1]have[/] [T1]a[/] [S2]stamp[/]."
+    spoken: "[T1]The[/] [S9]address[/] [D1]is[/] [P1]on[/] [T1]the[/] [S2]envelope[/]. [C5]But[/] [T8]I[/] [D1]do[/][X1]n't[/] [D1]have[/] [T1]a[/] [S2]stamp[/]."
+    ru: "Адрес на конверте. Но у меня нет марки."
   - speaker: postal
     emotion: happy
     text: "[A3]Here[/] [D1]is[/] [T1]a[/] [S2]stamp[/]. [T8]It[/] [D1]is[/] [N6]two dollars[/]."
