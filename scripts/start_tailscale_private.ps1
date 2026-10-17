@@ -34,6 +34,7 @@ $env:DJANGO_SETTINGS_MODULE = "config.settings.production"
 $env:DJANGO_ALLOWED_HOSTS = "localhost,127.0.0.1,$dnsName"
 $env:DJANGO_CSRF_TRUSTED_ORIGINS = "https://$dnsName"
 $env:DJANGO_DEBUG = "false"
+$env:DJANGO_SECURE_SSL_REDIRECT = "true"
 
 # Keep a stable high-entropy Django session key across restarts.
 $envPath = Join-Path $project ".env"
