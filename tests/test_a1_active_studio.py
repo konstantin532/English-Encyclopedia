@@ -94,3 +94,19 @@ class ActiveA1CatalogTests(TestCase):
         response = self.client.get(reverse("lessons:detail", args=["a1-cafe-order"]))
         self.assertContains(response, reverse("core:cafe_lab"))
         self.assertContains(response, reverse("core:active_a1_topic", args=[5]))
+
+    def test_unpublished_lesson_hides_its_supplemental_page(self):
+        lesson = Lesson.objects.get(level__code="A1", order=18)
+        lesson.is_published = False
+        lesson.save(update_fields=["is_published"])
+        response = self.client.get(reverse("core:active_a1_topic", args=[18]))
+        self.assertEqual(response.status_code, 404)
+        self.assertEqual(
+            self.client.get(reverse("core:active_a1_topic", args=[17])).status_code, 200
+        )
+
+    def test_deleted_source_slug_does_not_show_stale_practice(self):
+        lesson = Lesson.objects.get(level__code="A1", order=18)
+        lesson.slug = "renamed-a1-spelling"
+        lesson.save(update_fields=["slug"])
+        self.assertEqual(self.client.get(reverse("core:active_a1_topic", args=[18])).status_code, 404)
