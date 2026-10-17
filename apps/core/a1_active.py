@@ -86,7 +86,15 @@ def active_a1_topic(request, number: int):
         slug=item["slug"], level__code="A1", order=number, is_published=True
     ).exists():
         raise Http404("Source lesson is not published")
+    raw_start = request.GET.get("mission", "1")
+    try:
+        start_mission = int(raw_start)
+    except (ValueError, TypeError):
+        start_mission = 1
+    if start_mission < 1 or start_mission > 6:
+        start_mission = 1
     return render(request, "core/a1_active_topic.html", {
+        "start_mission": start_mission,
         "topic": item,
         "topic_previous": number - 1 if number > 1 else None,
         "topic_next": number + 1 if number < MAX_TOPIC else None,
