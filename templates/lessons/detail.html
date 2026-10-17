@@ -99,4 +99,4 @@
   </div>
 </div>
 {% endblock %}
-{% block scripts %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}
+{% block scripts %}{% if extra_missions %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}">{% endif %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}
