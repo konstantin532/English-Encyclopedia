@@ -137,3 +137,50 @@ class ActiveA1CatalogTests(TestCase):
                 response = self.client.get(reverse("core:active_a1_topic", args=[i]))
                 self.assertContains(response, escape(repair["wrong"]))
                 self.assertContains(response, escape(repair["correct"]))
+
+    def test_six_new_scenarios_per_lesson_and_two_improv_twists(self):
+        topics = active_topics()
+        self.assertEqual(sum(len(topic["missions"]) for topic in topics.values()), 108)
+        self.assertEqual(sum(len(topic["twists"]) for topic in topics.values()), 36)
+        titles = []
+        scenes = []
+        for number, topic in topics.items():
+            with self.subTest(number=number):
+                missions = topic["missions"]
+                self.assertEqual([m["id"] for m in missions], [1, 2, 3, 4, 5, 6])
+                self.assertEqual(len(topic["twists"]), 2)
+                self.assertEqual(len({m["title"] for m in missions}), 6)
+                self.assertEqual(len({m["scene"] for m in missions}), 6)
+                for mission in missions:
+                    for field in ("title", "scene", "prompt", "example", "coach"):
+                        self.assertIsInstance(mission[field], str)
+                        self.assertGreater(len(mission[field].strip()), 4)
+                    self.assertLessEqual(len(mission["example"]), 200)
+                    titles.append(mission["title"])
+                    scenes.append(mission["scene"])
+                for twist in topic["twists"]:
+                    self.assertTrue(twist["scene"] and twist["example"])
+                    self.assertLessEqual(len(twist["example"]), 200)
+        self.assertEqual(len(set(titles)), 108)
+        self.assertEqual(len(set(scenes)), 108)
+
+    def test_missions_render_on_every_topic_page_without_exposing_models(self):
+        for number in range(1, 19):
+            with self.subTest(number=number):
+                response = self.client.get(reverse("core:active_a1_topic", args=[number]))
+                self.assertContains(response, 'id="a1-missions"')
+                self.assertContains(response, 'data-a1-mission-form')
+                self.assertContains(response, 'data-a1-mission-progress')
+                self.assertContains(response, 'data-a1-mission-twist')
+                self.assertContains(response, 'data-a1-mission-result')
+                self.assertContains(response, 'data-a1-mission-speak')
+                self.assertContains(response, 'data-a1-mission-result class="active-a1-feedback')
+                self.assertContains(response, 'data-a1-mission-result class="active-a1-feedback active-a1-mission-result" aria-live="polite" role="status" hidden')
+                self.assertContains(response, 'data-a1-mission-twist-controls class="active-a1-mission-twist-controls" hidden')
+                self.assertContains(response, 'data-a1-mission-index="5"')
+                self.assertNotContains(response, 'data-a1-mission-index="6"')
+
+    def test_existing_lesson_and_mission_are_both_linked(self):
+        response = self.client.get(reverse("lessons:detail", args=["a1-spelling-phone-numbers"]))
+        self.assertContains(response, reverse("core:active_a1_topic", args=[18]))
+        self.assertContains(response, reverse("core:active_a1_topic", args=[18]) + "#a1-missions")
