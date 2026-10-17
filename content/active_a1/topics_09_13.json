@@ -105,8 +105,8 @@
     "dialogue": [
       [
         "Anna",
-        "Do you work today?",
-        "Ты сегодня работаешь?"
+        "Do you work every day?",
+        "Ты каждый день работаешь?"
       ],
       [
         "Tom",
@@ -126,9 +126,9 @@
     ],
     "question": "Какой вопрос здесь строится с do?",
     "options": [
-      "Do you work today?",
-      "You are work today?",
-      "Is you work today?"
+      "Do you work every day?",
+      "You are work every day?",
+      "Is you work every day?"
     ],
     "correct": 0,
     "feedback": "Do you work…? — вопрос о действии с you. Be в нём не требуется.",
@@ -158,8 +158,8 @@
       ],
       [
         "Mia",
-        "At seven.",
-        "В семь."
+        "At five.",
+        "В пять."
       ],
       [
         "Tom",
@@ -176,7 +176,7 @@
     "options": [
       "in",
       "at",
-      "on"
+      "to"
     ],
     "correct": 1,
     "feedback": "At seven — «в семь». In the morning описывает часть дня, а не конкретный час.",

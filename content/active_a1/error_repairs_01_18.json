@@ -10,8 +10,8 @@
     "n": 2,
     "wrong": "Tom are home.",
     "correct": "Tom is home.",
-    "hint": "Tom — один человек, как he.",
-    "reason": "В настоящем времени с Tom/he используется is. Are используется с you/we/they."
+    "hint": "Tom — один человек; выберите форму is.",
+    "reason": "С именем одного человека используется is: Tom is home. С you используется are, а с I — am."
   },
   {
     "n": 3,
@@ -43,10 +43,10 @@
   },
   {
     "n": 7,
-    "wrong": "She forty.",
-    "correct": "She is forty.",
+    "wrong": "She fifty.",
+    "correct": "She is fifty.",
     "hint": "Возраст выражается через be.",
-    "reason": "С возрастом в английском обязательно используется be: She is forty. По-русски мы говорим «Ей сорок» без подобного глагола."
+    "reason": "С возрастом в английском обязательно используется be: She is fifty. По-русски мы говорим «Ей пятьдесят» без подобного глагола."
   },
   {
     "n": 8,
@@ -64,15 +64,15 @@
   },
   {
     "n": 10,
-    "wrong": "How many is the milk?",
+    "wrong": "How much are the milk?",
     "correct": "How much is the milk?",
-    "hint": "Здесь спрашивают цену, а не число упаковок.",
-    "reason": "How much is…? — способ спросить цену. How many спрашивает количество исчисляемых предметов, а не стоимость."
+    "hint": "Молоко — неисчисляемое существительное; нужна форма единственного числа.",
+    "reason": "В вопросе о цене молока используют is: How much is the milk? Форму are используют с множественным числом, например с apples."
   },
   {
     "n": 11,
-    "wrong": "Do you works today?",
-    "correct": "Do you work today?",
+    "wrong": "Do you works every day?",
+    "correct": "Do you work every day?",
     "hint": "Вспомогательный do уже строит вопрос.",
     "reason": "После do используется work без -s. He works — утверждение с третьим лицом, но Do you work? — вопрос с you."
   },
