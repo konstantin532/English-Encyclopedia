@@ -1,4 +1,4 @@
-/* A1 scene studio 01–18. All responses and speech remain local to the browser. */
+/* A1 scene studio 01–20. All responses and speech remain local to the browser. */
 (function () {
   "use strict";
 
@@ -68,7 +68,7 @@
     }) || null;
   }
   function validTopic(topic) {
-    return !!(topic && Number.isInteger(topic.n) && topic.n >= 1 && topic.n <= 18
+    return !!(topic && Number.isInteger(topic.n) && topic.n >= 1 && topic.n <= 20
       && Array.isArray(topic.dialogue) && topic.dialogue.length >= 2
       && Array.isArray(topic.options) && topic.options.length === 3
       && Number.isInteger(topic.correct) && topic.correct >= 0 && topic.correct < topic.options.length);
@@ -285,7 +285,7 @@
     const value = by("[data-a1-repair-answer]").value.trim();
     if (!value) return;
     repairAttempts += 1;
-    const correct = compareModelAnswer(value, topic.repair.correct, []);
+    const correct = compareModelAnswer(value, topic.repair.correct, topic.repair.alternatives);
     repairFeedback.dataset.state = correct ? "ok" : "retry";
     repairFeedback.textContent = correct
       ? "Верно! Вы нашли ожидаемое исправление. Прочитайте, почему оно работает."

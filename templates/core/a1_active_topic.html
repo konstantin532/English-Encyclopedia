@@ -10,7 +10,7 @@
     <span>Дополнительная практика</span>
   </nav>
   <header class="active-a1-hero">
-    <p class="active-a1-tag">A1 · Неделя {{ topic.week }} · Тема {{ topic.n }} из 18 · Бета-практика</p>
+    <p class="active-a1-tag">A1 · Неделя {{ topic.week }} · Тема {{ topic.n }} из {{ topic_limit }} · Бета-практика</p>
     <h1>{{ topic.title }}</h1>
     <p>{{ topic.scene }}. {{ topic.context }}</p>
     <p class="active-a1-note">Не заучивайте готовый ответ. Сначала слушайте, затем пробуйте сами. Эта дополнительная практика не сохраняет прогресс. Озвучка зависит от наличия синтезированного голоса en-US в браузере.</p>
@@ -177,7 +177,7 @@
   <nav class="active-a1-next" aria-label="Переходы между дополнительными занятиями">
     {% if topic_previous %}<a class="active-a1-btn" href="{% url 'core:active_a1_topic' topic_previous %}">← Предыдущее занятие</a>{% endif %}
     <a class="active-a1-btn" href="{% url 'lessons:detail' topic.slug %}">В основной урок</a>
-    {% if topic_next %}<a class="active-a1-btn active-a1-btn-primary" href="{% url 'core:active_a1_topic' topic_next %}">Следующее занятие →</a>{% else %}<span>Этап №18 завершён · следующая тема пока вне этого эксперимента</span>{% endif %}
+    {% if topic_next %}<a class="active-a1-btn active-a1-btn-primary" href="{% url 'core:active_a1_topic' topic_next %}">Следующее занятие →</a>{% else %}<span>Этап №{{ topic.n }} завершён · следующая тема пока вне этого эксперимента</span>{% endif %}
   </nav>
 </div>
 {% endblock %}

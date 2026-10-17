@@ -1,0 +1,19 @@
+[
+  {
+    "n": 19,
+    "wrong": "I don't never work on Sunday.",
+    "correct": "I never work on Sunday.",
+    "hint": "В never уже есть отрицание. Уберите лишнее отрицание.",
+    "reason": "Never означает «никогда не»: в нейтральном английском для этой фразы не требуется дополнительное отрицание. Слово частоты ставится перед work."
+  },
+  {
+    "n": 20,
+    "wrong": "I like read.",
+    "correct": "I like reading.",
+    "hint": "После like действие можно назвать формой с -ing.",
+    "reason": "После like нельзя оставить голую форму read. Используйте reading или to read: I like reading. и I like to read. — правильные варианты.",
+    "alternatives": [
+      "I like to read."
+    ]
+  }
+]

@@ -23,6 +23,7 @@ class ActiveA1ContentQualityTests(TestCase):
             samples += [(key, topic[key]) for key in ("answer", "transfer_example")]
             samples += [("alternative", text) for text in topic["alternatives"]]
             samples += [("repair", topic["repair"][key]) for key in ("wrong", "correct")]
+            samples += [("repair alternative", text) for text in topic["repair"].get("alternatives", [])]
             samples += [("mission", item["example"]) for item in topic["missions"]]
             samples += [("twist", item["example"]) for item in topic["twists"]]
             # English response options are checked; Russian explanations are not vocabulary tasks.

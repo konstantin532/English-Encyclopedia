@@ -1,7 +1,7 @@
-"""Optional original A1 interactive scenes: lessons 1–18 only.
+"""Optional original A1 interactive scenes: lessons 1–20 only.
 
 Only reads vetted local curriculum JSON. Does not modify user progress, lesson
-records, or the situation-weeks branch.
+records, or the canonical lesson content.
 """
 import json
 from functools import lru_cache
@@ -12,11 +12,12 @@ from django.http import Http404
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
 
-MAX_TOPIC = 18
+MAX_TOPIC = 20
 TOPIC_FILES = (
     "topics_01_08.json",
     "topics_09_13.json",
     "topics_14_18.json",
+    "topics_19_20.json",
 )
 
 
@@ -33,24 +34,28 @@ def _load_topics(base_dir: str):
     expected = set(range(1, MAX_TOPIC + 1))
     if set(topics) != expected:
         raise ValueError("Active A1 topic catalog is incomplete")
-    repairs = json.loads((root / "error_repairs_01_18.json").read_text(encoding="utf-8"))
+    repairs = []
+    for filename in ("error_repairs_01_18.json", "error_repairs_19_20.json"):
+        repairs.extend(json.loads((root / filename).read_text(encoding="utf-8")))
     if len(repairs) != MAX_TOPIC or {r["n"] for r in repairs} != expected:
-        raise ValueError("A1 error-repair exercises must cover exactly lessons 1-18")
+        raise ValueError("A1 error-repair exercises must cover exactly lessons 1-20")
     for repair in repairs:
         topics[repair["n"]]["repair"] = {
             "wrong": repair["wrong"], "correct": repair["correct"],
             "hint": repair["hint"], "reason": repair["reason"],
+            "alternatives": repair.get("alternatives", []),
         }
 
     # Six original contextual missions per lesson. They supplement, rather than
     # overwrite, the canonical seven-layer learning material and original lab.
     scenarios = []
     for filename in (
-        "scenarios_01_06.json", "scenarios_07_12.json", "scenarios_13_18.json"
+        "scenarios_01_06.json", "scenarios_07_12.json", "scenarios_13_18.json",
+        "scenarios_19_20.json"
     ):
         scenarios.extend(json.loads((root / filename).read_text(encoding="utf-8")))
     if len(scenarios) != MAX_TOPIC or {row["n"] for row in scenarios} != expected:
-        raise ValueError("Scenario catalog must cover lessons 1–18 exactly once")
+        raise ValueError("Scenario catalog must cover lessons 1–20 exactly once")
     for block in scenarios:
         missions = block["missions"]
         twists = block["twists"]
@@ -70,7 +75,7 @@ def _load_topics(base_dir: str):
 
 
 def active_topics():
-    """Return the bounded 18-item supplement; no data from situation-weeks."""
+    """Return the bounded 20-item supplement without changing canonical lessons."""
     return _load_topics(str(settings.BASE_DIR))
 
 
@@ -96,6 +101,7 @@ def active_a1_topic(request, number: int):
     return render(request, "core/a1_active_topic.html", {
         "start_mission": start_mission,
         "topic": item,
+        "topic_limit": MAX_TOPIC,
         "topic_previous": number - 1 if number > 1 else None,
         "topic_next": number + 1 if number < MAX_TOPIC else None,
     })

@@ -5,9 +5,10 @@ const path = require('node:path');
 const vm = require('node:vm');
 
 const source = fs.readFileSync(path.join(__dirname, '../../static/js/a1-active.js'), 'utf8');
-const topics = JSON.parse(fs.readFileSync(path.join(__dirname, '../../content/active_a1/topics_01_08.json'), 'utf8'));
-const repairs = JSON.parse(fs.readFileSync(path.join(__dirname, '../../content/active_a1/error_repairs_01_18.json'), 'utf8'));
-const scenarios = JSON.parse(fs.readFileSync(path.join(__dirname, '../../content/active_a1/scenarios_01_06.json'), 'utf8'));
+const readEntries = files => files.flatMap(file => JSON.parse(fs.readFileSync(path.join(__dirname, '../../content/active_a1', file), 'utf8')));
+const topics = readEntries(['topics_01_08.json', 'topics_09_13.json', 'topics_14_18.json', 'topics_19_20.json']);
+const repairs = readEntries(['error_repairs_01_18.json', 'error_repairs_19_20.json']);
+const scenarios = readEntries(['scenarios_01_06.json', 'scenarios_07_12.json', 'scenarios_13_18.json', 'scenarios_19_20.json']);
 
 class Element {
   constructor() {
@@ -33,8 +34,9 @@ class Element {
   querySelector() {return null;}
 }
 
-function buildBrowser() {
-  const topic = {...topics[0], repair: repairs[0], missions: scenarios[0].missions, twists: scenarios[0].twists};
+function buildBrowser(number = 1) {
+  const scenario = scenarios.find(s => s.n === number);
+  const topic = {...topics.find(t => t.n === number), repair: repairs.find(r => r.n === number), missions: scenario.missions, twists: scenario.twists};
   const elements = new Map();
   const find = (selector) => {
     if (!elements.has(selector)) elements.set(selector, new Element());
@@ -169,4 +171,35 @@ test('blank input cannot reveal sample and new page does not remember answers', 
   const another = buildBrowser();
   assert.equal(another.find('[data-a1-mission-result]').hidden, true);
   assert.match(another.find('[data-a1-mission-progress]').textContent, /Попробовано: 0 из 6/);
+});
+
+for (const number of [19, 20]) {
+  test('week ten topic ' + number + ' starts its missions and hides every new twist model', () => {
+    const app = buildBrowser(number);
+    const scenario = scenarios.find(s => s.n === number);
+    const result = app.find('[data-a1-mission-result]');
+    assert.equal(result.hidden, true);
+    assert.equal(app.find('[data-a1-mission-title]').textContent, scenario.missions[0].title);
+    app.find('[data-a1-mission-answer]').value = scenario.missions[0].example;
+    app.find('[data-a1-mission-form]').dispatch('submit');
+    assert.equal(result.hidden, false);
+    app.missionTabs[5].dispatch('click');
+    for (const twist of scenario.twists) {
+      app.find('[data-a1-mission-twist]').dispatch('click');
+      assert.equal(result.hidden, true);
+      assert.equal(app.find('[data-a1-mission-scene]').textContent, twist.scene);
+      app.find('[data-a1-mission-answer]').value = twist.example;
+      app.find('[data-a1-mission-form]').dispatch('submit');
+      assert.equal(result.hidden, false);
+      assert.equal(app.find('[data-a1-mission-example]').textContent, twist.example);
+    }
+  });
+}
+
+test('like to read is accepted as a natural alternative in error repair', () => {
+  const app = buildBrowser(20);
+  app.find('[data-a1-repair-answer]').value = 'I like to read.';
+  app.find('[data-a1-repair-form]').dispatch('submit');
+  assert.equal(app.find('[data-a1-repair-feedback]').dataset.state, 'ok');
+  assert.equal(app.find('[data-a1-repair-explanation]').hidden, false);
 });
