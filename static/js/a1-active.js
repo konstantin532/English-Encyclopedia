@@ -33,6 +33,35 @@
       });
   }
 
+  function validMissions(topic) {
+    return !!(topic && Array.isArray(topic.missions) && topic.missions.length === 6
+      && topic.missions.every(function (mission, index) {
+        return mission.id === index + 1
+          && ["title", "scene", "prompt", "example", "coach"].every(function (field) {
+            return typeof mission[field] === "string" && !!mission[field].trim();
+          });
+      })
+      && Array.isArray(topic.twists) && topic.twists.length === 2
+      && topic.twists.every(function (twist) {
+        return ["scene", "example"].every(function (key) {
+          return typeof twist[key] === "string" && !!twist[key].trim();
+        });
+      }));
+  }
+  function scenarioVariant(topic, index, twistNumber) {
+    if (!validMissions(topic) || !Number.isInteger(index) || index < 0 || index >= 6) return null;
+    const base = topic.missions[index];
+    if (index !== 5 || !twistNumber) return base;
+    if (!Number.isInteger(twistNumber) || twistNumber < 1 || twistNumber > 2) return null;
+    return {
+      ...base,
+      scene: topic.twists[twistNumber - 1].scene,
+      prompt: "Используйте конструкцию этого урока и дайте свой ответ на неожиданное условие.",
+      example: topic.twists[twistNumber - 1].example,
+      coach: "Это другой поворот истории. Подходящих ответов может быть несколько — сравните свою фразу с примером.",
+    };
+  }
+
   function getAmericanVoice(voices) {
     return (voices || []).find(function (voice) {
       return String(voice.lang || "").toLowerCase().replace("_", "-") === "en-us";
@@ -46,7 +75,7 @@
   }
 
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { normalizeAnswer, compareModelAnswer, getAmericanVoice, validTopic, builderTokens, builderPhrase, builderCorrect };
+    module.exports = { normalizeAnswer, compareModelAnswer, getAmericanVoice, validTopic, validMissions, scenarioVariant, builderTokens, builderPhrase, builderCorrect };
   }
   if (typeof document === "undefined") return;
   const root = document.querySelector("[data-active-a1]");
@@ -282,5 +311,97 @@
     if (!by("[data-a1-transfer-answer]").value.trim()) return;
     by("[data-a1-transfer-feedback]").hidden = false;
   });
+  // Six additional original story missions per lesson. Open-ended text is
+  // NEVER auto-graded: show a model only after an independent written attempt.
+  // No backend requests or persistence.
+  if (validMissions(topic)) {
+    const missionForm = by("[data-a1-mission-form]");
+    const answer = by("[data-a1-mission-answer]");
+    const result = by("[data-a1-mission-result]");
+    const hint = by("[data-a1-mission-hint-text]");
+    const prev = by("[data-a1-mission-prev]");
+    const next = by("[data-a1-mission-next]");
+    const twistButton = by("[data-a1-mission-twist]");
+    const twistControls = by("[data-a1-mission-twist-controls]");
+    const tabs = [...root.querySelectorAll("[data-a1-mission-index]")];
+    const drafts = new Map();
+    const completed = new Set();
+    const submitted = new Set();
+    let current = 0;
+    let twist = 0;
+
+    function key() { return String(current) + ":" + String(twist); }
+    function activeMission() { return scenarioVariant(topic, current, twist); }
+    function saveDraft() { drafts.set(key(), answer.value); }
+    function updateMissionProgress() {
+      by("[data-a1-mission-progress]").textContent =
+        "Ситуация " + (current + 1) + " из 6 · Попробовано: " + completed.size + " из 6";
+      tabs.forEach(function (tab, index) {
+        if (index === current) tab.setAttribute("aria-current", "step");
+        else tab.removeAttribute("aria-current");
+        tab.dataset.done = String(completed.has(index));
+      });
+    }
+    function renderMission() {
+      const mission = activeMission();
+      by("[data-a1-mission-type]").textContent = "ИСТОРИЯ " + (current + 1) + " / 6";
+      by("[data-a1-mission-title]").textContent = mission.title;
+      by("[data-a1-mission-scene]").textContent = mission.scene;
+      by("[data-a1-mission-prompt]").textContent = mission.prompt;
+      answer.value = drafts.get(key()) || "";
+      hint.textContent = mission.coach;
+      hint.hidden = true;
+      result.hidden = !submitted.has(key());
+      by("[data-a1-mission-example]").textContent = mission.example;
+      by("[data-a1-mission-coach]").textContent = mission.coach;
+      twistControls.hidden = current !== 5;
+      twistButton.textContent = twist
+        ? "🎲 Другое условие (" + twist + " из 2)" : "🎲 Неожиданный поворот";
+      by("[data-a1-mission-twist-note]").textContent = twist
+        ? "Условие изменилось. Не копируйте ответ из предыдущей истории." :
+          "Дополнительная импровизация: два заранее подготовленных неожиданных поворота.";
+      prev.disabled = current === 0;
+      next.disabled = current === 5;
+      updateMissionProgress();
+    }
+    function switchMission(index) {
+      if (!Number.isInteger(index) || index < 0 || index > 5) return;
+      saveDraft();
+      current = index;
+      twist = 0;
+      renderMission();
+    }
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        switchMission(Number(tab.dataset.a1MissionIndex));
+      });
+    });
+    prev.addEventListener("click", function () { switchMission(current - 1); });
+    next.addEventListener("click", function () { switchMission(current + 1); });
+    twistButton.addEventListener("click", function () {
+      saveDraft();
+      twist = (twist + 1) % 3;  // base → surprise 1 → surprise 2 → base
+      renderMission();
+      answer.focus();
+    });
+    by("[data-a1-mission-hint]").addEventListener("click", function () {
+      hint.hidden = !hint.hidden;
+    });
+    missionForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!answer.value.trim()) return;
+      saveDraft();
+      submitted.add(key());
+      completed.add(current);
+      result.hidden = false;
+      updateMissionProgress();
+    });
+    by("[data-a1-mission-speak]").addEventListener("click", function () {
+      if (!submitted.has(key())) return;
+      speakLines([activeMission().example]);
+    });
+    renderMission();
+  }
+
   window.addEventListener("pagehide", stopAudio);
 })();
