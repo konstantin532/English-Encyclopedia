@@ -5,13 +5,13 @@ const path = require('node:path');
 const a1 = require('../../static/js/a1-active.js');
 
 const root = path.join(__dirname, '../../content/active_a1');
-const entries = ['topics_01_08.json', 'topics_09_13.json', 'topics_14_18.json', 'topics_19_20.json']
+const entries = ['topics_01_08.json', 'topics_09_13.json', 'topics_14_18.json', 'topics_19_20.json', 'topics_21_22.json']
   .flatMap(name => JSON.parse(fs.readFileSync(path.join(root, name), 'utf8')));
 
-test('20 connected original topics, and no topic past situation-weeks', () => {
-  assert.deepEqual(entries.map(x => x.n), Array.from({length:20}, (_, i) => i + 1));
+test('22 connected original topics, and no topic past situation-weeks', () => {
+  assert.deepEqual(entries.map(x => x.n), Array.from({length:22}, (_, i) => i + 1));
   for (const item of entries) assert.equal(a1.validTopic(item), true);
-  assert.equal(a1.validTopic({...entries[0], n:21}), false);
+  assert.equal(a1.validTopic({...entries[0], n:23}), false);
   assert.equal(a1.validTopic({...entries[0], correct:4}), false);
 });
 
@@ -73,7 +73,7 @@ test('letter-spelling builder preserves T-O-M rather than one unmovable block', 
   assert.equal(a1.builderCorrect(letters, [2, 1, 0]), false);
 });
 
-test('all twenty model answers support at least two builder elements', () => {
+test('all twenty-two model answers support at least two builder elements', () => {
   for (const item of entries) {
     const tokens = a1.builderTokens(item.answer);
     assert.ok(tokens.length >= 2, 'topic ' + item.n);
@@ -83,10 +83,10 @@ test('all twenty model answers support at least two builder elements', () => {
 });
 
 test('each lesson has its own correctable grammar error and explanation', () => {
-  const repairs = ['error_repairs_01_18.json', 'error_repairs_19_20.json']
+  const repairs = ['error_repairs_01_18.json', 'error_repairs_19_20.json', 'error_repairs_21_22.json']
     .flatMap(file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8')));
-  assert.equal(repairs.length, 20);
-  assert.deepEqual(repairs.map(r => r.n), Array.from({length:20}, (_,i) => i+1));
+  assert.equal(repairs.length, 22);
+  assert.deepEqual(repairs.map(r => r.n), Array.from({length:22}, (_,i) => i+1));
   for (const r of repairs) {
     assert.ok(r.reason.length >= 30, 'lesson ' + r.n);
     assert.ok(r.hint.length >= 10, 'lesson ' + r.n);
@@ -96,10 +96,10 @@ test('each lesson has its own correctable grammar error and explanation', () => 
   }
 });
 
-test('each of twenty lessons adds exactly six bespoke scenarios and two twists', () => {
-  const scenarios = ['scenarios_01_06.json','scenarios_07_12.json','scenarios_13_18.json','scenarios_19_20.json']
+test('each of twenty-two lessons adds exactly six bespoke scenarios and two twists', () => {
+  const scenarios = ['scenarios_01_06.json','scenarios_07_12.json','scenarios_13_18.json','scenarios_19_20.json', 'scenarios_21_22.json']
     .flatMap(file => JSON.parse(fs.readFileSync(path.join(root,file),'utf8')));
-  assert.deepEqual(scenarios.map(s => s.n), Array.from({length:20},(_,i)=>i+1));
+  assert.deepEqual(scenarios.map(s => s.n), Array.from({length:22},(_,i)=>i+1));
   const titles = [], scenes = [];
   for(const s of scenarios){
     assert.equal(a1.validMissions(s), true, 'lesson '+s.n);
@@ -119,10 +119,10 @@ test('each of twenty lessons adds exactly six bespoke scenarios and two twists',
     assert.equal(a1.scenarioVariant(s,5,3),null);
     assert.equal(a1.scenarioVariant(s,4,1).example,s.missions[4].example);
   }
-  assert.equal(titles.length,120);
-  assert.equal(new Set(titles).size,120);
-  assert.equal(new Set(scenes).size,120);
-  assert.equal(scenarios.reduce((n,s)=>n+s.twists.length,0),40);
+  assert.equal(titles.length,132);
+  assert.equal(new Set(titles).size,132);
+  assert.equal(new Set(scenes).size,132);
+  assert.equal(scenarios.reduce((n,s)=>n+s.twists.length,0),44);
 });
 
 test('mission validator rejects incomplete, duplicated or malformed mission slots', () => {

@@ -1,0 +1,97 @@
+[
+  {
+    "n": 21,
+    "week": 11,
+    "slug": "a1-what-hurts",
+    "title": "Что болит: разговор у врача",
+    "scene": "Том объясняет врачу, что у него болит",
+    "context": "Назовите часть тела и согласуйте hurt: My hand hurts, но My feet hurt.",
+    "dialogue": [
+      [
+        "Doctor",
+        "How are you, Tom?",
+        "Как ты, Том?"
+      ],
+      [
+        "Tom",
+        "I feel sick. I have a headache.",
+        "Мне нехорошо. У меня болит голова."
+      ],
+      [
+        "Doctor",
+        "Does your back hurt?",
+        "У тебя болит спина?"
+      ],
+      [
+        "Tom",
+        "Yes, my back hurts.",
+        "Да, у меня болит спина."
+      ]
+    ],
+    "question": "Что болит у Тома в этом разговоре?",
+    "options": [
+      "Голова и спина",
+      "Только ноги",
+      "Только зуб"
+    ],
+    "correct": 0,
+    "feedback": "Том говорит I have a headache и подтверждает, что у него болит спина.",
+    "prompt": "Скажите врачу: «У меня болят ступни».",
+    "answer": "My feet hurt.",
+    "alternatives": [],
+    "hint": "Feet — множественное число; после него hurt без -s.",
+    "transfer": "Теперь болит одна рука от плеча до кисти. Сообщите об этом врачу.",
+    "transfer_example": "My arm hurts.",
+    "why": "My arm hurts: одна рука, поэтому hurts. My feet hurt: несколько ступней, поэтому hurt. Tooth меняется на teeth, foot — на feet. Перед my артикль не нужен. I have a headache — другая готовая конструкция: здесь нужен a.",
+    "sound": "Tooth /tuθ/ и teeth /tiθ/ различаются гласным. В mouth /maʊθ/ и tooth звук /θ/ произносится с кончиком языка у зубов."
+  },
+  {
+    "n": 22,
+    "week": 11,
+    "slug": "a1-cant-cannot",
+    "title": "Как я себя чувствую и чего не могу",
+    "scene": "Том рассказывает о самочувствии на приёме",
+    "context": "Для состояния используйте be или feel; после can’t ставьте начальную форму действия.",
+    "dialogue": [
+      [
+        "Doctor",
+        "How are you?",
+        "Как ты себя чувствуешь?"
+      ],
+      [
+        "Tom",
+        "I am tired. I feel sick.",
+        "Я устал. Мне нехорошо."
+      ],
+      [
+        "Doctor",
+        "Can you sleep?",
+        "Ты можешь спать?"
+      ],
+      [
+        "Tom",
+        "No, I can't sleep.",
+        "Нет, я не могу спать."
+      ]
+    ],
+    "question": "Что Том не может делать?",
+    "options": [
+      "Читать",
+      "Спать",
+      "Сидеть"
+    ],
+    "correct": 1,
+    "feedback": "Том отвечает I can’t sleep. После can’t стоит sleep без to.",
+    "prompt": "Скажите: «Я устал и не могу спать».",
+    "answer": "I am tired and I can't sleep.",
+    "alternatives": [
+      "I'm tired and I can't sleep.",
+      "I am tired and I cannot sleep."
+    ],
+    "hint": "I am tired + and + I can’t sleep.",
+    "transfer": "Вы хотите пить. Скажите об этом, используя слово thirsty.",
+    "transfer_example": "I am thirsty.",
+    "why": "I am tired и I feel tired описывают состояние. I can’t sleep говорит, что действие не получается. После can/can’t не добавляйте to и окончание -s. Sick — нездоровый, hungry — голодный, thirsty — испытывающий жажду; well здесь означает «здоров, хорошо себя чувствую».",
+    "sound": "В tired /taɪrd/ один слог в обычной американской речи. Can’t /kænt/ может звучать с неотпущенным /t/; слушайте всю фразу, потому что ударение само по себе не отличает can от can’t."
+  }
+]

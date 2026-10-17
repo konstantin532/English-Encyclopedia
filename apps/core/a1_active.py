@@ -1,4 +1,4 @@
-"""Optional original A1 interactive scenes: lessons 1–20 only.
+"""Optional original A1 interactive scenes: lessons 1–22 only.
 
 Only reads vetted local curriculum JSON. Does not modify user progress, lesson
 records, or the canonical lesson content.
@@ -12,12 +12,13 @@ from django.http import Http404
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
 
-MAX_TOPIC = 20
+MAX_TOPIC = 22
 TOPIC_FILES = (
     "topics_01_08.json",
     "topics_09_13.json",
     "topics_14_18.json",
     "topics_19_20.json",
+    "topics_21_22.json",
 )
 
 
@@ -35,10 +36,10 @@ def _load_topics(base_dir: str):
     if set(topics) != expected:
         raise ValueError("Active A1 topic catalog is incomplete")
     repairs = []
-    for filename in ("error_repairs_01_18.json", "error_repairs_19_20.json"):
+    for filename in ("error_repairs_01_18.json", "error_repairs_19_20.json", "error_repairs_21_22.json"):
         repairs.extend(json.loads((root / filename).read_text(encoding="utf-8")))
     if len(repairs) != MAX_TOPIC or {r["n"] for r in repairs} != expected:
-        raise ValueError("A1 error-repair exercises must cover exactly lessons 1-20")
+        raise ValueError("A1 error-repair exercises must cover exactly lessons 1-22")
     for repair in repairs:
         topics[repair["n"]]["repair"] = {
             "wrong": repair["wrong"], "correct": repair["correct"],
@@ -51,11 +52,11 @@ def _load_topics(base_dir: str):
     scenarios = []
     for filename in (
         "scenarios_01_06.json", "scenarios_07_12.json", "scenarios_13_18.json",
-        "scenarios_19_20.json"
+        "scenarios_19_20.json", "scenarios_21_22.json"
     ):
         scenarios.extend(json.loads((root / filename).read_text(encoding="utf-8")))
     if len(scenarios) != MAX_TOPIC or {row["n"] for row in scenarios} != expected:
-        raise ValueError("Scenario catalog must cover lessons 1–20 exactly once")
+        raise ValueError("Scenario catalog must cover lessons 1–22 exactly once")
     for block in scenarios:
         missions = block["missions"]
         twists = block["twists"]
@@ -75,7 +76,7 @@ def _load_topics(base_dir: str):
 
 
 def active_topics():
-    """Return the bounded 20-item supplement without changing canonical lessons."""
+    """Return the bounded 22-item supplement without changing canonical lessons."""
     return _load_topics(str(settings.BASE_DIR))
 
 

@@ -1,0 +1,19 @@
+[
+  {
+    "n": 21,
+    "wrong": "My feet hurts.",
+    "correct": "My feet hurt.",
+    "hint": "Feet — несколько ступней. Проверьте окончание глагола.",
+    "reason": "Foot — одна ступня, feet — несколько. С множественным числом нужен hurt без -s: My feet hurt. С одной ступнёй: My foot hurts."
+  },
+  {
+    "n": 22,
+    "wrong": "I can't to sleep.",
+    "correct": "I can't sleep.",
+    "alternatives": [
+      "I cannot sleep."
+    ],
+    "hint": "После can’t нужен глагол без to.",
+    "reason": "Can’t уже задаёт форму следующего глагола: используйте sleep без to. Полная форма cannot тоже допустима: I cannot sleep."
+  }
+]
