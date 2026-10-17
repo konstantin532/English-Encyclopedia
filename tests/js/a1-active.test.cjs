@@ -20,7 +20,7 @@ test('prepared model answer accepts spelling variants and limited alternatives',
   assert.equal(a1.compareModelAnswer("  I am a teacher. ", "I'm a teacher.", ['I am a teacher.']), true);
   assert.equal(a1.compareModelAnswer("He's a teacher", "I'm a teacher", []), false);
   assert.equal(a1.compareModelAnswer(' ', 'This is a book.', []), false);
-  assert.equal(a1.normalizeAnswer('I’M,   at HOME!'), "i'm at home");
+  assert.equal(a1.normalizeAnswer('I’M,   at HOME!'), 'im at home');
 });
 
 test('each model answer is accepted and wrong unrelated words are rejected', () => {
@@ -52,4 +52,32 @@ test('missing apostrophes and surrounding quotes count as the same target words'
   assert.equal(a1.compareModelAnswer('Its next to the bank!', "It's next to the bank.", []), true);
   assert.equal(a1.compareModelAnswer('Tom has a key', "Tom's a key", []), false);
   assert.equal(a1.normalizeAnswer("‘I’m’ here"), "im here");
+});
+
+test('word-order builder keeps duplicated words as distinct selectable buttons', () => {
+  const words = a1.builderTokens('One tea and one coffee, please.');
+  assert.deepEqual(words, ['One', 'tea', 'and', 'one', 'coffee,', 'please.']);
+  assert.equal(a1.builderCorrect(words, [0, 1, 2, 3, 4, 5]), true);
+  assert.equal(a1.builderCorrect(words, [0, 3, 2, 1, 4, 5]), false);
+  assert.equal(a1.builderCorrect(words, [0, 1, 2, 3, 4]), false);
+  assert.equal(a1.builderCorrect(words, [0, 1, 2, 3, 4, 4]), false);
+  assert.equal(a1.builderPhrase(words, [0, 1, 2]), 'One tea and');
+});
+
+test('letter-spelling builder preserves T-O-M rather than one unmovable block', () => {
+  const letters = a1.builderTokens('T-O-M');
+  assert.deepEqual(letters, ['T', 'O', 'M']);
+  assert.equal(a1.builderPhrase(letters, [0, 1, 2]), 'T-O-M');
+  assert.equal(a1.builderPhrase(letters, [1, 0, 2]), 'O-T-M');
+  assert.equal(a1.builderCorrect(letters, [0, 1, 2]), true);
+  assert.equal(a1.builderCorrect(letters, [2, 1, 0]), false);
+});
+
+test('all eighteen model answers support at least two builder elements', () => {
+  for (const item of entries) {
+    const tokens = a1.builderTokens(item.answer);
+    assert.ok(tokens.length >= 2, 'topic ' + item.n);
+    assert.equal(a1.builderCorrect(tokens, tokens.map((_, i) => i)), true, 'topic ' + item.n);
+    assert.equal(a1.builderCorrect(tokens, tokens.map((_, i) => i).reverse()), false, 'topic ' + item.n);
+  }
 });
