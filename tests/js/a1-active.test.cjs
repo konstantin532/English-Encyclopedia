@@ -94,3 +94,51 @@ test('each lesson has its own correctable grammar error and explanation', () => 
     assert.equal(a1.compareModelAnswer(r.wrong, r.correct, []), false, 'lesson ' + r.n);
   }
 });
+
+test('each of eighteen lessons adds exactly six bespoke scenarios and two twists', () => {
+  const scenarios = ['scenarios_01_06.json','scenarios_07_12.json','scenarios_13_18.json']
+    .flatMap(file => JSON.parse(fs.readFileSync(path.join(root,file),'utf8')));
+  assert.deepEqual(scenarios.map(s => s.n), Array.from({length:18},(_,i)=>i+1));
+  const titles = [], scenes = [];
+  for(const s of scenarios){
+    assert.equal(a1.validMissions(s), true, 'lesson '+s.n);
+    for(const [idx,mission] of s.missions.entries()){
+      assert.equal(mission.id, idx+1);
+      assert.ok(mission.scene.length >= 20);
+      assert.ok(mission.prompt.length >= 15);
+      assert.ok(mission.example.trim().length >= 1);
+      assert.ok(mission.coach.length >= 15);
+      assert.ok(mission.example.length <= 200);
+      titles.push(mission.title);
+      scenes.push(mission.scene);
+      assert.equal(a1.scenarioVariant(s,idx,0).example,mission.example);
+    }
+    assert.equal(a1.scenarioVariant(s,5,1).example,s.twists[0].example);
+    assert.equal(a1.scenarioVariant(s,5,2).example,s.twists[1].example);
+    assert.equal(a1.scenarioVariant(s,5,3),null);
+    assert.equal(a1.scenarioVariant(s,4,1).example,s.missions[4].example);
+  }
+  assert.equal(titles.length,108);
+  assert.equal(new Set(titles).size,108);
+  assert.equal(new Set(scenes).size,108);
+  assert.equal(scenarios.reduce((n,s)=>n+s.twists.length,0),36);
+});
+
+test('mission validator rejects incomplete, duplicated or malformed mission slots', () => {
+  const scenario=JSON.parse(fs.readFileSync(path.join(root,'scenarios_01_06.json'),'utf8'))[0];
+  assert.equal(a1.validMissions({...scenario, missions: scenario.missions.slice(0,5)}),false);
+  assert.equal(a1.validMissions({...scenario, missions: scenario.missions.map(m=>({...m,id:1}))}),false);
+  assert.equal(a1.validMissions({...scenario, twists: []}),false);
+  assert.equal(a1.scenarioVariant(scenario,-1,0),null);
+  assert.equal(a1.scenarioVariant(scenario,6,0),null);
+});
+
+test('the six open-ended situations never pretend to auto-grade creative language', () => {
+  const js=fs.readFileSync(path.join(__dirname,'../../static/js/a1-active.js'),'utf8');
+  const template=fs.readFileSync(path.join(__dirname,'../../templates/core/a1_active_topic.html'),'utf8');
+  assert.match(js,/Другие верные|Других правильных|Других.*вариантов|верных формулировок|самостоятель/i);
+  assert.match(template,/Другие верные формулировки тоже возможны/);
+  assert.match(template,/система не оценивает свободную речь автоматически/);
+  assert.doesNotMatch(js,/fetch\s*\(/);
+  assert.doesNotMatch(js,/localStorage\./);
+});
