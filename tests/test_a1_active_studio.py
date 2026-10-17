@@ -126,6 +126,7 @@ class ActiveA1CatalogTests(TestCase):
 
     def test_all_eighteen_error_repairs_are_original_and_present(self):
         from apps.core.a1_active import active_topics
+        from django.utils.html import escape
         for i, topic in active_topics().items():
             with self.subTest(i=i):
                 repair = topic["repair"]
@@ -134,5 +135,5 @@ class ActiveA1CatalogTests(TestCase):
                     self.assertGreater(len(repair[field]), 8 if field != "hint" else 4)
                 self.assertNotEqual(repair["wrong"], repair["correct"])
                 response = self.client.get(reverse("core:active_a1_topic", args=[i]))
-                self.assertContains(response, repair["wrong"])
-                self.assertContains(response, repair["correct"])
+                self.assertContains(response, escape(repair["wrong"]))
+                self.assertContains(response, escape(repair["correct"]))
