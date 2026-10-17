@@ -15,6 +15,24 @@
     return [expected, ...(Array.isArray(alternatives) ? alternatives : [])]
       .some(function (candidate) { return normalizeAnswer(value) === normalizeAnswer(candidate); });
   }
+  function builderTokens(answer) {
+    const source = String(answer || "").trim();
+    if (/^[A-Z](?:-[A-Z])+$/.test(source)) return source.split("-");
+    return source ? source.split(/\s+/) : [];
+  }
+  function builderPhrase(tokens, selected) {
+    const letterMode = tokens.length > 1 && tokens.every(function (t) { return /^[A-Z]$/.test(t); });
+    return selected.map(function (i) { return tokens[i]; }).join(letterMode ? "-" : " ");
+  }
+  function builderCorrect(tokens, selected) {
+    return tokens.length > 1 && selected.length === tokens.length
+      && new Set(selected).size === selected.length
+      && selected.every(function (id, i) {
+        return Number.isInteger(id) && id >= 0 && id < tokens.length
+          && tokens[id] === tokens[i];
+      });
+  }
+
   function getAmericanVoice(voices) {
     return (voices || []).find(function (voice) {
       return String(voice.lang || "").toLowerCase().replace("_", "-") === "en-us";
@@ -28,7 +46,7 @@
   }
 
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { normalizeAnswer, compareModelAnswer, getAmericanVoice, validTopic };
+    module.exports = { normalizeAnswer, compareModelAnswer, getAmericanVoice, validTopic, builderTokens, builderPhrase, builderCorrect };
   }
   if (typeof document === "undefined") return;
   const root = document.querySelector("[data-active-a1]");
@@ -168,10 +186,62 @@
     setText("[data-a1-model-text]", topic.answer);
     setText("[data-a1-hint]", topic.hint);
     by("[data-a1-model]").hidden = false;
+    by("[data-a1-builder]").hidden = false;
   });
   by("[data-a1-play-model]").addEventListener("click", function () {
     if (!by("[data-a1-model]").hidden) speakLines([topic.answer]);
   });
+
+  // A second, optional retrieval step appears only after the independent
+  // production attempt. Duplicate words are tracked by index, not by spelling.
+  const words = builderTokens(topic.answer);
+  const puzzle = [...words].map(function (_, index) { return words.length - index - 1; });
+  const selectedWords = [];
+  const pool = by("[data-a1-builder-pool]");
+  const undo = by("[data-a1-builder-undo]");
+  const builderFeedback = by("[data-a1-builder-feedback]");
+  function renderBuilder() {
+    pool.replaceChildren();
+    puzzle.forEach(function (idx) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "active-a1-btn active-a1-builder-word";
+      button.textContent = words[idx];
+      button.disabled = selectedWords.includes(idx);
+      button.setAttribute("aria-label", "Добавить " + words[idx]);
+      button.addEventListener("click", function () {
+        selectedWords.push(idx);
+        builderFeedback.hidden = true;
+        renderBuilder();
+      });
+      pool.appendChild(button);
+    });
+    setText("[data-a1-builder-selected]", selectedWords.length
+      ? builderPhrase(words, selectedWords) : "—");
+    undo.disabled = selectedWords.length === 0;
+  }
+  undo.addEventListener("click", function () {
+    if (selectedWords.length) selectedWords.pop();
+    builderFeedback.hidden = true;
+    renderBuilder();
+  });
+  by("[data-a1-builder-reset]").addEventListener("click", function () {
+    selectedWords.length = 0;
+    builderFeedback.hidden = true;
+    renderBuilder();
+  });
+  by("[data-a1-builder-check]").addEventListener("click", function () {
+    const complete = selectedWords.length === words.length;
+    const correct = builderCorrect(words, selectedWords);
+    builderFeedback.dataset.state = correct ? "ok" : "retry";
+    builderFeedback.textContent = !complete
+      ? "Выберите все элементы. Порядок пока не проверялся."
+      : correct
+        ? "Верно! Все слова стоят в нужном порядке. Теперь примените модель в новой ситуации."
+        : "Порядок пока не совпадает с образцом. Попробуйте начать заново или отменить последнее слово.";
+    builderFeedback.hidden = false;
+  });
+  renderBuilder();
 
   const transfer = by("[data-a1-transfer]");
   transfer.addEventListener("submit", function (event) {
