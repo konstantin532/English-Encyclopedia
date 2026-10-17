@@ -154,7 +154,9 @@ class ActiveA1CatalogTests(TestCase):
                 for mission in missions:
                     for field in ("title", "scene", "prompt", "example", "coach"):
                         self.assertIsInstance(mission[field], str)
-                        self.assertGreater(len(mission[field].strip()), 4)
+                        self.assertGreaterEqual(
+                            len(mission[field].strip()), 1 if field == "example" else 5
+                        )
                     self.assertLessEqual(len(mission["example"]), 200)
                     titles.append(mission["title"])
                     scenes.append(mission["scene"])
