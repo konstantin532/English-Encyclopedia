@@ -22,6 +22,7 @@
     <a href="#a1-why">03 Понимаем</a>
     <a href="#a1-answer">04 Отвечаем</a>
     <a href="#a1-transfer">05 Применяем</a>
+    <a href="#a1-missions">06 Шесть новых ситуаций</a>
   </nav>
 
   <section class="active-a1-panel" id="a1-listen" aria-labelledby="a1-listen-title">
@@ -127,6 +128,50 @@
         <p>Самопроверка: ① Собеседник поймёт смысл? ② Вы правильно выбрали ключевые слова? ③ Просьба или ответ подходят к ситуации? Другие верные фразы возможны — автоматической оценки здесь нет.</p>
       </div>
     </form>
+  </section>
+
+  <section class="active-a1-panel active-a1-missions" id="a1-missions" aria-labelledby="a1-missions-title" data-a1-missions>
+    <p class="active-a1-kicker">ШАГ 06 / ШЕСТЬ ДОПОЛНИТЕЛЬНЫХ СИТУАЦИЙ</p>
+    <h2 id="a1-missions-title">Маленькие приключения — большая практика</h2>
+    <p>В этом уроке ещё шесть разных ситуаций. Представьте себя участником истории, напишите или произнесите собственную реплику, и только потом посмотрите один возможный вариант. У импровизации есть два неожиданных поворота.</p>
+    <div class="active-a1-mission-head">
+      <p class="active-a1-subtle" data-a1-mission-progress role="status" aria-live="polite">Ситуация 1 из 6</p>
+      <div data-a1-mission-nav class="active-a1-mission-nav" role="group" aria-label="Выбор ситуации">
+        {% for mission in topic.missions %}
+        <button class="active-a1-mission-tab" data-a1-mission-index="{{ forloop.counter0 }}" type="button" aria-label="Ситуация {{ forloop.counter }}: {{ mission.title }}" {% if forloop.first %}aria-current="step"{% endif %}>{{ forloop.counter }}</button>
+        {% endfor %}
+      </div>
+    </div>
+    <article class="active-a1-mission-card" aria-labelledby="a1-mission-title">
+      <p class="active-a1-kicker" data-a1-mission-type>ИСТОРИЯ 1 / 6</p>
+      <h3 id="a1-mission-title" data-a1-mission-title>{{ topic.missions.0.title }}</h3>
+      <p class="active-a1-mission-scene" data-a1-mission-scene>{{ topic.missions.0.scene }}</p>
+      <p class="active-a1-mission-task" data-a1-mission-prompt>{{ topic.missions.0.prompt }}</p>
+      <div data-a1-mission-twist-controls class="active-a1-mission-twist-controls" hidden>
+        <button type="button" data-a1-mission-twist class="active-a1-btn">🎲 Неожиданный поворот</button>
+        <p class="active-a1-subtle" data-a1-mission-twist-note>Придумайте свой ответ на новое условие, не заучивая предыдущий.</p>
+      </div>
+      <form data-a1-mission-form>
+        <label for="active-a1-mission-answer">Ваша реплика на английском</label>
+        <textarea id="active-a1-mission-answer" data-a1-mission-answer rows="3" minlength="1" maxlength="350" required spellcheck="false" autocapitalize="off" placeholder="Ваш вариант на английском…"></textarea>
+        <div class="active-a1-actions">
+          <button type="submit" class="active-a1-btn active-a1-btn-primary">Сравнить с примером</button>
+          <button type="button" class="active-a1-btn" data-a1-mission-hint>Подсказка по конструкции</button>
+        </div>
+        <p data-a1-mission-hint-text class="active-a1-feedback" hidden></p>
+        <div data-a1-mission-result class="active-a1-feedback active-a1-mission-result" aria-live="polite" role="status" hidden>
+          <p><strong>Один возможный вариант:</strong> <span lang="en" data-a1-mission-example></span></p>
+          <p data-a1-mission-coach></p>
+          <p>Самопроверка: смысл подходит ситуации? Слова из урока использованы правильно? Реплика звучит вежливо там, где это нужно? Другие верные формулировки тоже возможны; система не оценивает свободную речь автоматически.</p>
+          <button type="button" class="active-a1-btn" data-a1-mission-speak>▶ Послушать образец</button>
+        </div>
+      </form>
+    </article>
+    <div class="active-a1-actions active-a1-mission-bottom">
+      <button type="button" class="active-a1-btn" data-a1-mission-prev disabled>← Предыдущая ситуация</button>
+      <button type="button" class="active-a1-btn active-a1-btn-primary" data-a1-mission-next>Следующая ситуация →</button>
+    </div>
+    <p class="active-a1-subtle">Ответы остаются только на этой открытой странице и исчезнут после обновления. Эти шесть ситуаций — дополнение, а не замена основного урока.</p>
   </section>
 
   <nav class="active-a1-next" aria-label="Переходы между дополнительными занятиями">
