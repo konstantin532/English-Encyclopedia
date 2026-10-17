@@ -184,3 +184,27 @@ class ActiveA1CatalogTests(TestCase):
         response = self.client.get(reverse("lessons:detail", args=["a1-spelling-phone-numbers"]))
         self.assertContains(response, reverse("core:active_a1_topic", args=[18]))
         self.assertContains(response, reverse("core:active_a1_topic", args=[18]) + "#a1-missions")
+
+    def test_six_story_cards_are_visible_below_the_canonical_lesson(self):
+        for number in (1, 5, 13, 18):
+            with self.subTest(lesson=number):
+                lesson = Lesson.objects.get(level__code="A1", order=number)
+                response = self.client.get(reverse("lessons:detail", args=[lesson.slug]))
+                self.assertContains(response, 'class="a1-mission-previews"')
+                self.assertEqual(response.content.decode("utf-8").count('aria-label="Попробовать ситуацию'), 6)
+                self.assertContains(
+                    response, reverse("core:active_a1_topic", args=[number]) + "?mission=6#"
+                )
+        lesson = Lesson.objects.get(level__code="A1", order=19)
+        response = self.client.get(reverse("lessons:detail", args=[lesson.slug]))
+        self.assertNotContains(response, 'class="a1-mission-previews"')
+
+    def test_source_lesson_deep_links_select_only_valid_mission_numbers(self):
+        url = reverse("core:active_a1_topic", args=[18])
+        for value, expected in (("3", 3), ("6", 6), ("0", 1),
+                                ("7", 1), ("abc", 1), ("-5", 1)):
+            with self.subTest(value=value):
+                response = self.client.get(url, {"mission": value})
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(response.context["start_mission"], expected)
+                self.assertContains(response, f'data-start-mission="{expected}"')
