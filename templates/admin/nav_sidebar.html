@@ -1,0 +1,8 @@
+{% load admin_studio %}
+<button class="sticky toggle-nav-sidebar" id="toggle-nav-sidebar" aria-label="Переключить навигацию"></button>
+<nav class="sticky studio-nav" id="nav-sidebar" aria-label="Разделы студии">
+<a class="studio-overview" href="{% url 'admin:index' %}"{% if request.path == '/admin/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Обзор студии</a>
+<input type="search" id="nav-filter" placeholder="Найти раздел…" aria-label="Фильтр элементов навигации">
+{% include 'admin/app_list.html' with app_list=available_apps|studio_apps show_changelinks=False %}
+<div class="studio-nav-note">Место, где знания<br>становятся понятными.</div>
+</nav>

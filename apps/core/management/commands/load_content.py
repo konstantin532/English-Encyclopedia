@@ -63,9 +63,22 @@ def string_list(where: str, key: str, value) -> None:
 class Command(BaseCommand):
     help = "Загрузить лексику, уроки и упражнения из каталога content/"
 
+    def add_arguments(self, parser):
+        parser.add_argument("--preserve-admin-edits", action="store_true", help="Не перезаписывать истории и уроки, сохранённые через админку")
+
+    def _preserve_admin(self, obj):
+        return obj is not None and (obj._meta.app_label, obj._meta.model_name, str(obj.pk)) in getattr(self, "admin_edited", set())
+
     def handle(self, *args, **opts):
         root = Path(settings.CONTENT_DIR)
         self.seen_units = {}
+        self.admin_edited = set()
+        if opts.get("preserve_admin_edits"):
+            from django.contrib.admin.models import LogEntry, ADDITION, CHANGE
+            self.admin_edited = set(LogEntry.objects.filter(
+                content_type__app_label__in=("stories", "lessons", "poems"),
+                action_flag__in=(ADDITION, CHANGE),
+            ).values_list("content_type__app_label", "content_type__model", "object_id"))
         with transaction.atomic():
             n_units = sum(self.load_units(p) for p in sorted((root / "seed_lexicon").glob("*.yaml")))
             self.load_weeks_plan(root / "manifests" / "weeks_plan.yaml")
@@ -140,6 +153,8 @@ class Command(BaseCommand):
                         raise CommandError(f"{path.name}: {key}.{field} должен быть строкой")
                 self._check_markup(f"{path.name}: {key}", *(item[k] for k in required))
         level = Level.objects.get(code=data["level"])
+        if self._preserve_admin(Lesson.objects.filter(slug=data["slug"]).first()):
+            return 1
         lesson, _ = Lesson.objects.update_or_create(
             slug=data["slug"],
             defaults=dict(
@@ -180,11 +195,15 @@ class Command(BaseCommand):
             return
         data = read_seed(path)
         for item in data.get("stories", []):
+            if self._preserve_admin(Story.objects.filter(number=item["number"]).first()):
+                continue
             level = Level.objects.get(code=item["level"])
             Story.objects.update_or_create(number=item["number"], defaults=dict(
                 level=level, week=self._week(level, item["week"], path.name), title=item["title"],
                 hook_ru=item["hook_ru"], focus=item["focus"]))
         for item in data.get("poems", []):
+            if self._preserve_admin(Poem.objects.filter(number=item["number"]).first()):
+                continue
             level = Level.objects.get(code=item["level"])
             Poem.objects.update_or_create(number=item["number"], defaults=dict(
                 level=level, week=self._week(level, item["week"], path.name), title=item["title"],
@@ -195,6 +214,8 @@ class Command(BaseCommand):
         require_fields(path.name, data, {"number": int})
         records(path.name, "script", data.get("script", []), {"speaker": str, "text": str})
         story = Story.objects.get(number=data["number"])
+        if self._preserve_admin(story):
+            return 1
         if "body" in data:
             self._check_markup(path.name, data["body"])
         for f in ["characters", "grammar_ru", "prediction_ru", "visual_cues", "body", "questions",
@@ -229,6 +250,8 @@ class Command(BaseCommand):
                 if key in note and not isinstance(note[key], str):
                     raise CommandError(f"{path.name}: pronunciation.{key} должен быть строкой")
         poem = Poem.objects.get(number=data["number"])
+        if self._preserve_admin(poem):
+            return 1
         self._check_markup(path.name, data["body"])
         poem.body, poem.pronunciation, poem.gaps = data["body"], data.get("pronunciation", []), data.get("gaps", [])
         poem.is_published = True
