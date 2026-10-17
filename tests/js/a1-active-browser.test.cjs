@@ -27,6 +27,7 @@ class Element {
   }
   setAttribute(k,v) {this.attrs[k] = v;}
   removeAttribute(k) {delete this.attrs[k];}
+  focus() { this.attrs.focused = true; }
   appendChild(child) {this.children.push(child);}
   replaceChildren() {this.children = [];}
   querySelector() {return null;}
