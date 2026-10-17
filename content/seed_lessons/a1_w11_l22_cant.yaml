@@ -6,7 +6,7 @@ focus: X
 minutes: 40
 title: "Не могу: can't и cannot"
 summary: "Как сказать, что не можете что-то сделать: I can't sleep. Почему cannot пишут слитно, как различить на слух can и can't и чем but отличается от and."
-units: [LX-00217, LX-00218, LX-00219, LX-00224]
+units: [LX-00217, LX-00218, LX-00219, LX-00224, LX-00402, LX-00403, LX-00404, LX-00405, LX-00406, LX-00407, LX-00409, LX-00410, LX-00411]
 sound_notes:
   - text: "I can't sleep."
     ipa: "/aɪ ˈkænt ˈslip/"
@@ -45,6 +45,24 @@ layers:
       - Глагол после can't без to и без -s: he can't sleep.
       - Вопрос: Can you sleep? — Yes, I can. / No, I can't.
       - but соединяет противоположное: My head is OK, but my back hurts.
+
+      **Самочувствие и действие — разные вещи.** Sick — нездоровый, tired — уставший, hungry — голодный, thirsty — испытывающий жажду, well — здоровый. О состоянии говорят с be или feel — «чувствовать себя»:
+
+      > [T8]I[/] [D3]feel[/] [J4]sick[/] [C1]and[/] [J4]tired[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — Мне нехорошо, и я устал. У меня болит голова.
+      > [T8]I[/] [D1]am[/] [J4]hungry[/]. — Я голоден.
+      > [T8]I[/] [D3]feel[/] [J4]thirsty[/]. — Я хочу пить.
+      > [T8]I[/] [D1]am[/] [J4]well[/]. — Я здоров.
+
+      Не смешивайте схемы: I am tired или I feel tired, без «I am feel». Well здесь описывает здоровье человека.
+
+      Rest — отдыхать, sit — сидеть, sleep — спать. После can / can't используйте действие, а не прилагательное:
+
+      > [T8]I[/] [D7]can[/] [D2]sit[/], [C5]but[/] [T8]I[/] [D7]ca[/][X1]n't[/] [D2]sleep[/]. — Я могу сидеть, но не могу спать.
+      > [D2]Rest[/] [P1]at[/] [S4]home[/] [T5]every[/] [S7]day[/] [C1]and[/] [D2]drink[/] [S3]water[/]. — Отдыхайте дома каждый день и пейте воду.
+
+      Medicine — лекарство, обычно без a в общем значении. Здесь мы учим слово, а не выбираем лечение:
+
+      > [T8]I[/] [D1]have[/] [S5]medicine[/]. — У меня есть лекарство.
   - number: 4
     body: |
       Как на слух отличить can от can't? Ведь t в конце американцы почти не произносят. Подсказка — ударение:
@@ -52,7 +70,7 @@ layers:
       - I **can** sleep — can безударное, короткое: «ай кн слип».
       - I **can't** sleep — can't ударное и длинное: «ай кэнт слип».
 
-      Если слово звучит громко и протяжно — скорее всего, это can't.
+      Ударение помогает, но не даёт гарантии: can тоже бывает ударным, когда подчёркивают возможность. Слушайте всю фразу и смысл.
 
       > [O4]No[/], [T8]it[/] [D1]does[/] [X1]not[/]. [C5]But[/] [T3]my[/] [S5]back[/] [D3]hurts[/], [C1]and[/] [T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/]. — Нет. Но болит спина, и я не могу спать.
   - number: 5
@@ -62,7 +80,7 @@ layers:
       > [T5]Every[/] [S7]day[/]? [C5]But[/] [T8]I[/] [D3]like[/] [T3]my[/] [S2]computer[/]! — Каждый день? Но я люблю свой компьютер!
       > [C1]And[/] [T4]no[/] [S2]computer[/] [P3]at[/] [S7]night[/]! — И никакого компьютера ночью!
 
-      - В разговоре всегда can't; cannot — в письме и для сильного «не могу».
+      - В разговоре обычно can't; cannot часто встречается в письме или при подчёркивании отрицания.
       - Вежливый отказ: Sorry, I can't.
       - Совет врача часто звучит как указание: Walk every day. Drink water.
   - number: 6
@@ -74,7 +92,7 @@ layers:
       - and и but: and добавляет похожее (I walk and I read), but — противоположное (I walk, but Tom never walks).
   - number: 7
     body: |
-      Четыре задания: различить can и can't, вставить отрицание, собрать фразу с but и отказаться в новой ситуации.
+      Шесть заданий: различить can и can't, вставить отрицание, собрать фразу с but и отказаться в новой ситуации; назвать самочувствие и объяснить, что не можете делать.
 exercises:
   - order: 1
     kind: choice
@@ -114,3 +132,21 @@ exercises:
     hint_ru: "Sorry + I can't."
     explanation_ru: "Sorry, I can't. Можно объяснить: I work on Sunday."
     units: [LX-00218]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как сказать: «Я хочу пить»?"
+    options: ["I am thirsty.", "I am hungry.", "I am tired."]
+    answer: "I am thirsty."
+    hint_ru: "Thirsty — хочется пить, hungry — хочется есть."
+    explanation_ru: "I am thirsty. О состоянии говорят с am / is / are или feel."
+    units: [LX-00403, LX-00404, LX-00405]
+  - order: 6
+    kind: build
+    stage: transfer
+    prompt_ru: "Новая ситуация: друг не понимает, почему вы отдыхаете. Соберите: «Я устал и не могу спать»."
+    options: ["sleep", "tired", "I", "can't", "and", "am", "I"]
+    answer: "I am tired and I can't sleep"
+    hint_ru: "Сначала I am + состояние, затем and и I can't + действие."
+    explanation_ru: "I am tired and I can't sleep. Перед tired — am, после can't — sleep без to."
+    units: [LX-00403, LX-00218]

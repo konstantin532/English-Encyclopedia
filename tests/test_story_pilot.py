@@ -650,6 +650,24 @@ class WeekTenTests(WeekContentMixin, TestCase):
     def test_complete(self):
         self.check_complete()
 
+    def test_calendar_and_clothes_in_dialogue(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=10)
+        text = " ".join(line["text"] for line in scene.script)
+        for marked in ("[S7]October[/]", "[S7]Friday[/]", "[S2]jacket[/]"):
+            self.assertIn(marked, text)
+
+    def test_calendar_and_clothes_are_practised(self):
+        for slug in self.slugs:
+            lesson = Lesson.objects.get(slug=slug)
+            self.assertEqual(list(lesson.exercises.order_by("order").values_list("order", flat=True)), [1, 2, 3, 4, 5, 6])
+        calendar = Lesson.objects.get(slug=self.slugs[0])
+        for name in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+                     "January", "February", "March", "April", "May", "June", "July",
+                     "August", "September", "October", "November", "December"):
+            self.assertTrue(calendar.units.filter(lemma=name).exists(), name)
+        clothes = Lesson.objects.get(slug=self.slugs[1])
+        self.assertEqual(set(clothes.units.filter(lemma__in=("shirt", "jacket", "shoes")).values_list("lemma", flat=True)), {"shirt", "jacket", "shoes"})
+
     def test_mia_still_works_every_day(self):
         """Канон недели 6: Мия работает каждый день — значит, и в воскресенье."""
         scene = WeekScene.objects.get(week__level__code="A1", week__number=10)
@@ -666,6 +684,25 @@ class WeekElevenTests(WeekContentMixin, TestCase):
 
     def test_complete(self):
         self.check_complete()
+
+    def test_new_health_words_in_dialogue(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=11)
+        text = " ".join(line["text"] for line in scene.script)
+        for marked in ("[D3]feel[/]", "[J4]sick[/]", "[J4]tired[/]", "[D2]rest[/]"):
+            self.assertIn(marked.casefold(), text.casefold())
+
+    def test_body_and_feeling_words_are_taught_with_six_exercises(self):
+        pain = Lesson.objects.get(slug=self.slugs[0])
+        for lemma in ("body", "face", "eye", "ear", "nose", "mouth", "tooth", "neck",
+                      "arm", "hand", "finger", "leg", "foot", "pain"):
+            self.assertTrue(pain.units.filter(lemma=lemma).exists(), lemma)
+        ability = Lesson.objects.get(slug=self.slugs[1])
+        for lemma in ("sick", "tired", "hungry", "thirsty", "well", "medicine", "rest", "sit", "feel"):
+            self.assertTrue(ability.units.filter(lemma=lemma).exists(), lemma)
+        for lesson in (pain, ability):
+            self.assertEqual(list(lesson.exercises.order_by("order").values_list("order", flat=True)), [1, 2, 3, 4, 5, 6])
+        self.assertIn("teeth", LexicalUnit.objects.get(lemma="tooth").forms)
+        self.assertIn("feet", LexicalUnit.objects.get(lemma="foot").forms)
 
     def test_cant_is_split_into_base_and_negation(self):
         scene = WeekScene.objects.get(week__level__code="A1", week__number=11)
@@ -848,7 +885,7 @@ class A1PoemsTests(TestCase):
 class WeeklyVocabularyNormTests(TestCase):
     """Добор A1 до 500 единиц: недели, которые уже доведены до нормы 30–39."""
 
-    FILLED_WEEKS = (3, 4, 5, 6, 7, 8, 9)
+    FILLED_WEEKS = (3, 4, 5, 6, 7, 8, 9, 10, 11)
 
     @classmethod
     def setUpTestData(cls):

@@ -10,8 +10,8 @@ weeks:
 - {level: A1, week: 7, situation_ru: "Кто где работает", sphere: work, grammar_ru: "Present Simple: he / she + -s; профессии", grammar_markers: [D2]}
 - {level: A1, week: 8, situation_ru: "Как пройти?", sphere: city, grammar_ru: "предлоги места; Where is…?; Turn left", grammar_markers: [P1, A6]}
 - {level: A1, week: 9, situation_ru: "Телефон и сообщения", sphere: connect, grammar_ru: "вопросы с do / does; диктовка по буквам", grammar_markers: [D1, N7]}
-- {level: A1, week: 10, situation_ru: "Выходные и хобби", sphere: free, grammar_ru: "always / never; like + действие", grammar_markers: [A1, D3]}
-- {level: A1, week: 11, situation_ru: "У врача", sphere: health, grammar_ru: "I have a headache; can't; …hurts", grammar_markers: [S5, X1]}
+- {level: A1, week: 10, situation_ru: "Выходные и хобби", sphere: free, grammar_ru: "always / never; like + действие; on + день недели, in + месяц; одежда для прогулки", grammar_markers: [A1, D3]}
+- {level: A1, week: 11, situation_ru: "У врача", sphere: health, grammar_ru: "I have a headache; can't; …hurts; части тела, hurt / hurts; be / feel + самочувствие", grammar_markers: [S5, X1]}
 - {level: A1, week: 12, situation_ru: "На почте", sphere: service, grammar_ru: "don't / doesn't; адрес", grammar_markers: [X1]}
 - {level: A1, week: 13, situation_ru: "Курсы английского", sphere: study, grammar_ru: "can / can't — умения; Why? Because…", grammar_markers: [D1, C3]}
 - {level: A1, week: 14, situation_ru: "Поездка на автобусе", sphere: travel, grammar_ru: "повторение всего A1: билет, расписание", grammar_markers: []}

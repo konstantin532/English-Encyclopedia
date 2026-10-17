@@ -1,0 +1,103 @@
+[
+  {
+    "n": 19,
+    "week": 10,
+    "slug": "a1-always-never",
+    "title": "Как часто: планы на выходные",
+    "scene": "Анна и Том обсуждают выходные с Мией",
+    "context": "Назовите действие и добавьте, как часто оно происходит. Дни недели идут с on, месяцы — с in.",
+    "dialogue": [
+      [
+        "Mia",
+        "Do you work on Sunday, Anna?",
+        "Ты работаешь в воскресенье, Анна?"
+      ],
+      [
+        "Anna",
+        "No, I never work on Sunday.",
+        "Нет, я никогда не работаю по воскресеньям."
+      ],
+      [
+        "Tom",
+        "I sometimes play the guitar on Sunday.",
+        "Иногда я играю на гитаре по воскресеньям."
+      ],
+      [
+        "Anna",
+        "I always read on Saturday.",
+        "Я всегда читаю по субботам."
+      ]
+    ],
+    "question": "Как часто Анна работает по воскресеньям?",
+    "options": [
+      "Всегда",
+      "Никогда",
+      "Иногда"
+    ],
+    "correct": 1,
+    "feedback": "Never уже означает «никогда не». Анна не добавляет второе отрицание.",
+    "prompt": "Скажите о своей привычке: «Я всегда читаю по субботам».",
+    "answer": "I always read on Saturday.",
+    "alternatives": [
+      "On Saturday, I always read."
+    ],
+    "hint": "I + always + read + on Saturday.",
+    "transfer": "Друг зовёт играть на гитаре в понедельник, но вы никогда этого не делаете. Скажите об этой привычке.",
+    "transfer_example": "I never play the guitar on Monday.",
+    "why": "Always, usually, sometimes и never показывают частоту: всегда, обычно, иногда, никогда. Перед обычным глаголом ставьте слово частоты: I always read. С be оно идёт после глагола: I am always at home. В слове never отрицание уже есть.",
+    "sound": "В always /ˈɔlweɪz/ слышен конечный /z/. В never /ˈnɛvɚ/ первый слог ударный. В среду Wednesday произносится /ˈwɛnzˌdeɪ/."
+  },
+  {
+    "n": 20,
+    "week": 10,
+    "slug": "a1-like-doing",
+    "title": "Что я люблю делать в выходные",
+    "scene": "Анна рассказывает о прогулках, а Том — о музыке",
+    "context": "После like можно назвать действие с -ing или вещь. Выберите форму под свой смысл.",
+    "dialogue": [
+      [
+        "Mia",
+        "Do you like walking, Anna?",
+        "Ты любишь гулять, Анна?"
+      ],
+      [
+        "Anna",
+        "Yes, I do. I like walking in the park.",
+        "Да. Я люблю гулять в парке."
+      ],
+      [
+        "Tom",
+        "I like playing the guitar.",
+        "Я люблю играть на гитаре."
+      ],
+      [
+        "Anna",
+        "Do you like reading, Tom?",
+        "Ты любишь читать, Том?"
+      ],
+      [
+        "Tom",
+        "Yes, I do.",
+        "Да."
+      ]
+    ],
+    "question": "Что любит делать Том в этом разговоре?",
+    "options": [
+      "Играть на гитаре и читать",
+      "Гулять с Анной",
+      "Работать по воскресеньям"
+    ],
+    "correct": 0,
+    "feedback": "Том любит играть на гитаре и отвечает утвердительно на вопрос о чтении. Как и в основном диалоге недели, прогулки он не выбирает.",
+    "prompt": "Скажите: «Я люблю читать».",
+    "answer": "I like reading.",
+    "alternatives": [
+      "I like to read."
+    ],
+    "hint": "После like — reading или to read.",
+    "transfer": "Вы хотите узнать, любит ли друг играть на гитаре. Задайте вопрос.",
+    "transfer_example": "Do you like playing the guitar?",
+    "why": "I like reading означает, что чтение приносит удовольствие. После like можно использовать действие с -ing или to + глагол: I like to read. Если нравится вещь, окончание не требуется: I like my jacket. На музыкальном инструменте играют с the: play the guitar.",
+    "sound": "В reading /ˈridɪŋ/ и walking /ˈwɔkɪŋ/ окончание -ing произносится с носовым /ŋ/, без дополнительного /ɡ/. В shoes /ʃuz/ на конце слышен /z/."
+  }
+]

@@ -6,7 +6,7 @@ focus: S
 minutes: 40
 title: "Что болит: I have a headache и my back hurts"
 summary: "Как объяснить врачу, что болит: I have a headache, my back hurts, my stomach hurts. Почему по-английски «болит» звучит двумя способами и что ответить на How are you?"
-units: [LX-00212, LX-00213, LX-00214, LX-00215, LX-00216, LX-00220, LX-00221, LX-00222, LX-00223]
+units: [LX-00212, LX-00213, LX-00214, LX-00215, LX-00216, LX-00220, LX-00221, LX-00222, LX-00223, LX-00389, LX-00390, LX-00391, LX-00392, LX-00393, LX-00394, LX-00395, LX-00396, LX-00397, LX-00398, LX-00399, LX-00400, LX-00401, LX-00408]
 sound_notes:
   - text: "I have a headache."
     ipa: "/aɪ ˈhæv ə ˈhɛdeɪk/"
@@ -27,7 +27,7 @@ layers:
     body: |
       У врача главное — объяснить, что болит. По-английски для этого два способа.
 
-      > [X1]Not[/] [J3]good[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — Неважно. У меня болит голова.
+      > [T8]I[/] [D3]feel[/] [J4]sick[/] [C1]and[/] [J4]tired[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — Мне нехорошо, и я устал. У меня болит голова.
       > [O4]No[/], [T8]it[/] [D1]does[/] [X1]not[/]. [C5]But[/] [T3]my[/] [S5]back[/] [D3]hurts[/], [C1]and[/] [T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/]. — Нет. Но болит спина, и я не могу спать.
 
       Первый — «у меня есть боль»: I have a headache. Второй — «часть тела болит»: my back hurts.
@@ -47,6 +47,22 @@ layers:
       - My + часть тела + hurts: my head hurts, my back hurts.
       - hurts с -s: болит одна часть тела.
       - Вопрос: Does your head hurt? — с does, hurt без -s.
+
+      **Назвать часть тела.** Body — тело; face — лицо. На лице: eye — глаз, ear — ухо, nose — нос, mouth — рот, tooth — зуб. Neck — шея; arm — рука от плеча, hand — кисть, finger — палец руки; leg — нога, foot — ступня.
+
+      > [T3]My[/] [S5]hand[/] [D3]hurts[/]. — У меня болит кисть руки.
+      > [T3]My[/] [S5]neck[/] [D3]hurts[/]. — У меня болит шея.
+
+      Обычно множественное число получает -s: eyes, ears, arms, hands, fingers, legs. У двух слов форма особая: **tooth → teeth**, **foot → feet**.
+
+      > [T3]My[/] [S5]feet[/] [D3]hurt[/]. — У меня болят ступни.
+      > [T3]My[/] [S5]teeth[/] [D3]hurt[/]. — У меня болят зубы.
+
+      Одна часть — hurts, несколько — hurt. Сравните my foot hurts и my feet hurt. Pain — боль вообще; в этой конструкции без a:
+
+      > [T8]I[/] [D1]have[/] [S5]pain[/] [P1]in[/] [T3]my[/] [S5]leg[/]. — У меня боль в ноге.
+
+      У headache другая привычная модель: a headache. Не переносите a автоматически на pain.
   - number: 4
     body: |
       Почему «моя спина болит», а не «у меня болит спина»? В английском у каждой фразы есть главный герой. Здесь это спина: она сама «болит». Русское «у меня» превращается в my.
@@ -59,7 +75,7 @@ layers:
       Так проходит приём у американского врача:
 
       > [J3]Good[/] [S7]morning[/], [S1]Tom[/]. [A6]How[/] [D1]are[/] [T8]you[/]? — Доброе утро, Том. Как вы себя чувствуете?
-      > [X1]Not[/] [J3]good[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — Неважно. У меня болит голова.
+      > [T8]I[/] [D3]feel[/] [J4]sick[/] [C1]and[/] [J4]tired[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — Мне нехорошо, и я устал. У меня болит голова.
 
       - В жизни How are you? — просто приветствие, и отвечают Fine, thanks! А у врача отвечают честно.
       - Врача называют doctor: Thank you, doctor!
@@ -70,12 +86,12 @@ layers:
 
       - «My head is hurt» — так говорят о травме. О боли: My head hurts.
       - «I have headache» — нужно a: I have a headache.
-      - Боль в горле — a sore throat, а не «throat hurts» (хотя так тоже поймут).
+      - После my не ставят a: My neck hurts, а не «My a neck hurts».
 
       Если не знаете слово, покажите рукой и скажите: It hurts here — «Болит здесь».
   - number: 7
     body: |
-      Четыре задания: понять жалобу, выбрать hurts или headache, собрать фразу и объяснить врачу в новой ситуации.
+      Шесть заданий: понять жалобу, выбрать hurts или headache, собрать фразу и объяснить врачу в новой ситуации; различить foot / feet и назвать боль в другой части тела.
 exercises:
   - order: 1
     kind: choice
@@ -114,3 +130,22 @@ exercises:
     hint_ru: "My stomach + hurts."
     explanation_ru: "My stomach hurts — часть тела + hurts. Сказать «I have a stomachache» тоже можно."
     units: [LX-00215, LX-00216]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как сказать: «У меня болят ступни»?"
+    options: ["My feet hurt.", "My feet hurts.", "My foot hurt."]
+    answer: "My feet hurt."
+    hint_ru: "Feet — несколько ступней, поэтому hurt без -s."
+    explanation_ru: "Одна ступня: My foot hurts. Несколько: My feet hurt. Foot → feet — особая форма."
+    units: [LX-00401]
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: на приёме у другого врача вы показываете на одну ногу. Скажите: «У меня болит нога»."
+    prompt_en: "How are you? — ___"
+    answer: "My leg hurts."
+    accepted: ["My leg hurts", "I have pain in my leg.", "I have pain in my leg"]
+    hint_ru: "Нога — leg; одна часть тела — hurts."
+    explanation_ru: "My leg hurts. Можно и I have pain in my leg. Leg — вся нога, foot — ступня."
+    units: [LX-00400, LX-00408]

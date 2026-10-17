@@ -1,0 +1,17 @@
+# Перенесено из недели 8: in уже используется в уроках недели 6. ID и класс сохранены.
+level: A1
+week: 6
+units:
+- uid: LX-00173
+  lemma: in
+  meaning: inside something; during a part of the day
+  class: P1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪn/
+  translation_ru: в, внутри
+  example_en: '[T8]I[/] [D2]work[/] [P3]in[/] [T1]the[/] [S7]morning[/].'
+  example_ru: Я работаю утром.
+  situation: Рассказываете о распорядке дня
+  usage_note: "С частью дня: in the morning, in the afternoon, in the evening. Значение места «внутри» закрепляется на неделе 8."

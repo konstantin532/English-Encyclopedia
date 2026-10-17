@@ -1,0 +1,296 @@
+# Неделя 11: части тела, самочувствие и действия. CEFR не сверялся.
+level: A1
+week: 11
+units:
+- uid: LX-00389
+  lemma: body
+  meaning: "the whole physical structure of a person"
+  class: S5
+  forms: ["bodies"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈbɑdi/
+  translation_ru: тело
+  example_en: "[T2]This[/] [D1]is[/] [T3]my[/] [S5]body[/]."
+  example_ru: "Это моё тело."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "Во множественном числе y меняется на ies: bodies."
+- uid: LX-00390
+  lemma: face
+  meaning: "the front part of the head"
+  class: S5
+  forms: ["faces"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /feɪs/
+  translation_ru: лицо
+  example_en: "[T3]My[/] [S5]face[/] [D3]hurts[/]."
+  example_ru: "У меня болит лицо."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "Перед частью тела обычно называют владельца: my face."
+- uid: LX-00391
+  lemma: eye
+  meaning: "one of the two parts of the body used for seeing"
+  class: S5
+  forms: ["eyes"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ/
+  translation_ru: глаз
+  example_en: "[T3]My[/] [S5]eyes[/] [D3]hurt[/]."
+  example_ru: "У меня болят глаза."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "Один глаз — an eye, два — eyes. My eyes hurt — без -s у hurt."
+- uid: LX-00392
+  lemma: ear
+  meaning: "one of the two parts of the body used for hearing"
+  class: S5
+  forms: ["ears"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪr/
+  translation_ru: ухо
+  example_en: "[T3]My[/] [S5]ear[/] [D3]hurts[/]."
+  example_ru: "У меня болит ухо."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "Одна часть тела: my ear hurts. Две: my ears hurt."
+- uid: LX-00393
+  lemma: nose
+  meaning: "the part of the face used for smelling and breathing"
+  class: S5
+  forms: ["noses"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /noʊz/
+  translation_ru: нос
+  example_en: "[T3]My[/] [S5]nose[/] [D3]hurts[/]."
+  example_ru: "У меня болит нос."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "В nose конечная s звучит как /z/."
+- uid: LX-00394
+  lemma: mouth
+  meaning: "the opening in the face used for eating and speaking"
+  class: S5
+  forms: ["mouths"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /maʊθ/
+  translation_ru: рот
+  example_en: "[T3]My[/] [S5]mouth[/] [D3]hurts[/]."
+  example_ru: "У меня болит рот."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "В конце слова /θ/: кончик языка между зубами, без голоса."
+- uid: LX-00395
+  lemma: tooth
+  meaning: "one of the hard white parts inside the mouth"
+  class: S5
+  forms: ["teeth"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /tuθ/
+  translation_ru: зуб
+  example_en: "[T3]My[/] [S5]tooth[/] [D3]hurts[/]."
+  example_ru: "У меня болит зуб."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "Неправильное множественное число: tooth → teeth, без -s."
+- uid: LX-00396
+  lemma: neck
+  meaning: "the part of the body between the head and the shoulders"
+  class: S5
+  forms: ["necks"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /nɛk/
+  translation_ru: шея
+  example_en: "[T3]My[/] [S5]neck[/] [D3]hurts[/]."
+  example_ru: "У меня болит шея."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "My neck hurts — обычная жалоба на боль в шее."
+- uid: LX-00397
+  lemma: arm
+  meaning: "one of the two upper limbs of the body"
+  class: S5
+  forms: ["arms"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɑrm/
+  translation_ru: рука от плеча до кисти
+  example_en: "[T3]My[/] [S5]arm[/] [D3]hurts[/]."
+  example_ru: "У меня болит рука."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "Arm — рука от плеча, hand — кисть. В русском часто одно слово «рука»."
+- uid: LX-00398
+  lemma: hand
+  meaning: "the part at the end of the arm, including the fingers"
+  class: S5
+  forms: ["hands"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /hænd/
+  translation_ru: кисть руки
+  example_en: "[T3]My[/] [S5]hand[/] [D3]hurts[/]."
+  example_ru: "У меня болит кисть руки."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "Hand — кисть, включая пальцы; arm — рука от плеча."
+- uid: LX-00399
+  lemma: finger
+  meaning: "one of the long narrow parts of the hand"
+  class: S5
+  forms: ["fingers"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈfɪŋɡɚ/
+  translation_ru: палец руки
+  example_en: "[T3]My[/] [S5]finger[/] [D3]hurts[/]."
+  example_ru: "У меня болит палец руки."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "Finger — палец руки. Не используйте это слово как общее название пальцев ног."
+- uid: LX-00400
+  lemma: leg
+  meaning: "one of the two lower limbs used for standing and walking"
+  class: S5
+  forms: ["legs"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /lɛɡ/
+  translation_ru: нога
+  example_en: "[T3]My[/] [S5]leg[/] [D3]hurts[/]."
+  example_ru: "У меня болит нога."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "Leg — нога целиком; foot — ступня."
+- uid: LX-00401
+  lemma: foot
+  meaning: "the part at the end of the leg used for standing"
+  class: S5
+  forms: ["feet"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /fʊt/
+  translation_ru: ступня
+  example_en: "[T3]My[/] [S5]feet[/] [D3]hurt[/]."
+  example_ru: "У меня болят ступни."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "Неправильное множественное число: foot → feet. My feet hurt — без -s у hurt."
+- uid: LX-00402
+  lemma: sick
+  meaning: "not healthy; ill"
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /sɪk/
+  translation_ru: больной, нездоровый
+  example_en: "[T8]I[/] [D3]feel[/] [J4]sick[/]."
+  example_ru: "Я плохо себя чувствую."
+  situation: Говорите о самочувствии и возможностях
+  usage_note: "В американском английском sick часто значит «нездоровый, больной». I feel sick — «Мне нехорошо»."
+- uid: LX-00403
+  lemma: tired
+  meaning: "needing rest or sleep"
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /taɪrd/
+  translation_ru: уставший
+  example_en: "[T8]I[/] [D3]feel[/] [J4]tired[/]."
+  example_ru: "Я чувствую усталость."
+  situation: Говорите о самочувствии и возможностях
+  usage_note: "Состояние выражают с be или feel: I am tired, I feel tired."
+- uid: LX-00404
+  lemma: hungry
+  meaning: "wanting to eat"
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhʌŋɡri/
+  translation_ru: голодный
+  example_en: "[T8]I[/] [D1]am[/] [J4]hungry[/]."
+  example_ru: "Я голоден."
+  situation: Говорите о самочувствии и возможностях
+  usage_note: "I am hungry — «Я голоден». После be прилагательное, без a."
+- uid: LX-00405
+  lemma: thirsty
+  meaning: "wanting to drink"
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈθɝsti/
+  translation_ru: испытывающий жажду
+  example_en: "[T8]I[/] [D1]am[/] [J4]thirsty[/]."
+  example_ru: "Я хочу пить."
+  situation: Говорите о самочувствии и возможностях
+  usage_note: "I am thirsty — «Я хочу пить». В середине слова американское /ɝ/."
+- uid: LX-00406
+  lemma: well
+  meaning: "healthy; in good health"
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /wɛl/
+  translation_ru: здоровый, хорошо себя чувствующий
+  example_en: "[T8]I[/] [D1]am[/] [J4]well[/]."
+  example_ru: "Я здоров."
+  situation: Говорите о самочувствии и возможностях
+  usage_note: "Здесь well — прилагательное о здоровье: I am well. Значение «хорошо делать» разбирается отдельно."
+- uid: LX-00407
+  lemma: medicine
+  meaning: "a substance used to treat an illness"
+  class: S5
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈmɛdəsən/
+  translation_ru: лекарство
+  example_en: "[T8]I[/] [D1]have[/] [S5]medicine[/]."
+  example_ru: "У меня есть лекарство."
+  situation: Говорите о самочувствии и возможностях
+  usage_note: "В общем значении обычно без a: medicine. Это название, а не указание, какое лекарство принимать."
+- uid: LX-00408
+  lemma: pain
+  meaning: "an unpleasant physical feeling when part of the body hurts"
+  class: S5
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /peɪn/
+  translation_ru: боль
+  example_en: "[T8]I[/] [D1]have[/] [S5]pain[/] [P1]in[/] [T3]my[/] [S5]leg[/]."
+  example_ru: "У меня боль в ноге."
+  situation: Объясняете, какая часть тела болит
+  usage_note: "О боли в целом говорят без a: I have pain in my leg. Слово headache употребляют иначе: a headache."
+- uid: LX-00409
+  lemma: rest
+  meaning: "to stop activity and relax"
+  class: D2
+  forms: ["rests","resting"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /rɛst/
+  translation_ru: отдыхать
+  example_en: "[T8]I[/] [D2]rest[/] [P1]at[/] [S4]home[/]."
+  example_ru: "Я отдыхаю дома."
+  situation: Говорите о самочувствии и возможностях
+  usage_note: "Rest — отдыхать; sleep — спать. Это разные действия."
+- uid: LX-00410
+  lemma: sit
+  meaning: "to have the body supported by a seat"
+  class: D2
+  forms: ["sits","sitting"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /sɪt/
+  translation_ru: сидеть
+  example_en: "[T8]I[/] [D7]can[/] [D2]sit[/]."
+  example_ru: "Я могу сидеть."
+  situation: Говорите о самочувствии и возможностях
+  usage_note: "После can / cannot — исходная форма sit. Форма с -ing: sitting, с двумя t."
+- uid: LX-00411
+  lemma: feel
+  meaning: "to be in a particular physical or emotional state"
+  class: D3
+  forms: ["feels","feeling"]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /fil/
+  translation_ru: чувствовать себя
+  example_en: "[T8]I[/] [D3]feel[/] [J4]tired[/]."
+  example_ru: "Я чувствую усталость."
+  situation: Говорите о самочувствии и возможностях
+  usage_note: "Feel + состояние: feel sick, feel tired. Не добавляйте am перед feel."

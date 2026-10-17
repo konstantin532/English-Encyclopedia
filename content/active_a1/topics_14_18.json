@@ -1,0 +1,241 @@
+[
+  {
+    "n": 14,
+    "week": 7,
+    "slug": "a1-jobs-what-do-you-do",
+    "title": "Кем ты работаешь?",
+    "scene": "Том знакомится с новой соседкой",
+    "context": "Различайте вопрос о профессии и вопрос о том, чем человек занят прямо сейчас.",
+    "dialogue": [
+      [
+        "Tom",
+        "What do you do?",
+        "Кем ты работаешь?"
+      ],
+      [
+        "Anna",
+        "I'm a teacher.",
+        "Я учительница."
+      ],
+      [
+        "Tom",
+        "Do you work at a school?",
+        "Ты работаешь в школе?"
+      ],
+      [
+        "Anna",
+        "Yes, I do.",
+        "Да."
+      ]
+    ],
+    "question": "В этой ситуации What do you do? означает:",
+    "options": [
+      "Кем ты работаешь?",
+      "Что ты делаешь прямо сейчас?",
+      "Который час?"
+    ],
+    "correct": 0,
+    "feedback": "При знакомстве этот вопрос часто спрашивает о профессии. Контекст определяет значение.",
+    "prompt": "Скажите: «Я учитель».",
+    "answer": "I'm a teacher.",
+    "alternatives": [
+      "I am a teacher."
+    ],
+    "hint": "I am / I'm + a + teacher.",
+    "transfer": "Спросите нового знакомого, где он работает.",
+    "transfer_example": "Where do you work?",
+    "why": "Перед профессией в единственном числе обычно нужен артикль a/an: a teacher, an engineer. Вопрос What do you do? опирается на смысл занятия, а не обязательно действия в момент речи.",
+    "sound": "В I'm a teacher /aɪm ə ˈtiːtʃɚ/ слабое a звучит /ə/, ударение на teach."
+  },
+  {
+    "n": 15,
+    "week": 8,
+    "slug": "a1-where-is-prepositions",
+    "title": "Где находится мастерская?",
+    "scene": "Том ищет мастерскую ключей",
+    "context": "Одно маленькое слово меняет расположение предмета или места.",
+    "dialogue": [
+      [
+        "Tom",
+        "Where is the key shop?",
+        "Где мастерская ключей?"
+      ],
+      [
+        "Anna",
+        "It's next to the bank.",
+        "Она рядом с банком."
+      ],
+      [
+        "Tom",
+        "Is it near the cafe?",
+        "Это недалеко от кафе?"
+      ],
+      [
+        "Anna",
+        "Yes, it is.",
+        "Да."
+      ]
+    ],
+    "question": "Что означает next to в ответе Анны?",
+    "options": [
+      "Напротив",
+      "Рядом с",
+      "Внутри"
+    ],
+    "correct": 1,
+    "feedback": "Next to — непосредственно рядом. Near — поблизости, не обязательно вплотную.",
+    "prompt": "Скажите: «Она рядом с банком».",
+    "answer": "It's next to the bank.",
+    "alternatives": [
+      "It is next to the bank."
+    ],
+    "hint": "It is / It's + next to + the bank.",
+    "transfer": "Спросите, где находится кафе.",
+    "transfer_example": "Where is the cafe?",
+    "why": "Предлоги задают пространственное отношение, но прямого совпадения с русскими «в/на/у» нет. Next to обозначает соседство, near — близость, in — нахождение внутри.",
+    "sound": "В next to два слова произносят связно /ˈnɛkst tə/. Вопрос Where is…? имеет связанную речь."
+  },
+  {
+    "n": 16,
+    "week": 8,
+    "slug": "a1-directions-turn-left",
+    "title": "Поворот налево",
+    "scene": "Прохожий объясняет Тому дорогу",
+    "context": "Императивы в коротких указаниях помогают понимать маршрут без лишних слов.",
+    "dialogue": [
+      [
+        "Tom",
+        "Excuse me. Where is the bank?",
+        "Извините, где банк?"
+      ],
+      [
+        "Passerby",
+        "Go straight. Turn left.",
+        "Идите прямо. Поверните налево."
+      ],
+      [
+        "Tom",
+        "Turn left?",
+        "Налево?"
+      ],
+      [
+        "Passerby",
+        "Yes. The bank is there.",
+        "Да. Банк там."
+      ]
+    ],
+    "question": "Что нужно сделать после Go straight?",
+    "options": [
+      "Turn right",
+      "Turn left",
+      "Go home"
+    ],
+    "correct": 1,
+    "feedback": "Сначала идите прямо (Go straight), затем поверните налево (Turn left).",
+    "prompt": "Скажите короткое указание: «Поверните налево».",
+    "answer": "Turn left.",
+    "alternatives": [],
+    "hint": "Turn + left.",
+    "transfer": "Теперь направьте прохожего прямо.",
+    "transfer_example": "Go straight.",
+    "why": "В указаниях английский употребляет повелительную форму без you: Go straight; Turn left. Вежливость создают контекст, tone и Excuse me.",
+    "sound": "В left /lɛft/ важно слышать конечный кластер /ft/. В straight /streɪt/ согласные идут подряд."
+  },
+  {
+    "n": 17,
+    "week": 9,
+    "slug": "a1-questions-do-does",
+    "title": "Звонок в мастерскую",
+    "scene": "Анна звонит мастеру по ключам",
+    "context": "Для вопросов в Present Simple выбирайте do или does в зависимости от подлежащего.",
+    "dialogue": [
+      [
+        "Anna",
+        "Do you have my key?",
+        "У вас мой ключ?"
+      ],
+      [
+        "Locksmith",
+        "Yes, I do.",
+        "Да."
+      ],
+      [
+        "Anna",
+        "What time does the shop open?",
+        "Во сколько открывается мастерская?"
+      ],
+      [
+        "Locksmith",
+        "It opens at nine.",
+        "Она открывается в девять."
+      ]
+    ],
+    "question": "Почему в вопросе про мастерскую стоит does?",
+    "options": [
+      "Мастерская — it (третье лицо единственного числа)",
+      "Значит «вчера»",
+      "После what time всегда does"
+    ],
+    "correct": 0,
+    "feedback": "The shop = it, поэтому does. С you — do. Основной глагол после does остаётся open, без -s.",
+    "prompt": "Спросите: «Во сколько открывается магазин?»",
+    "answer": "What time does the shop open?",
+    "alternatives": [
+      "What time does the store open?"
+    ],
+    "hint": "What time + does + the shop + open?",
+    "transfer": "Спросите мастера: «У вас есть мой ключ?»",
+    "transfer_example": "Do you have my key?",
+    "why": "Do/does — вспомогательные формы для вопросов Present Simple. Does содержит показатель третьего лица, поэтому второй -s у смыслового глагола не нужен.",
+    "sound": "Does /dʌz/ и do /duː/ различаются и ударением, и гласным. В does the /dʌz ðə/ слышна связь слов."
+  },
+  {
+    "n": 18,
+    "week": 9,
+    "slug": "a1-spelling-phone-numbers",
+    "title": "По буквам и по цифрам",
+    "scene": "Мастер записывает имя Анны по телефону",
+    "context": "Разделяйте произношение слова и названия отдельных букв; в телефонных номерах цифры называют по одной.",
+    "dialogue": [
+      [
+        "Locksmith",
+        "Can you spell your last name, please?",
+        "Продиктуйте, пожалуйста, фамилию по буквам."
+      ],
+      [
+        "Anna",
+        "B-E-L-O-V-A.",
+        "Би-и-эл-оу-ви-эй."
+      ],
+      [
+        "Locksmith",
+        "And your phone number?",
+        "А номер телефона?"
+      ],
+      [
+        "Anna",
+        "Five five five, two one four six.",
+        "Пять-пять-пять, два-один-четыре-шесть."
+      ]
+    ],
+    "question": "Что просит мастер словами Can you spell your last name?",
+    "options": [
+      "Назвать возраст",
+      "Продиктовать фамилию по буквам",
+      "Сказать домашний адрес"
+    ],
+    "correct": 1,
+    "feedback": "Spell — назвать отдельные буквы: B-E-L-O-V-A. Это не просьба произнести фамилию целиком.",
+    "prompt": "Продиктуйте имя Tom по буквам через дефис.",
+    "answer": "T-O-M",
+    "alternatives": [
+      "T O M",
+      "T, O, M"
+    ],
+    "hint": "Это три названия букв: T, O, M.",
+    "transfer": "Теперь попросите собеседника продиктовать его фамилию.",
+    "transfer_example": "Can you spell your last name, please?",
+    "why": "Название alphabet происходит от alpha и beta. Чтобы незнакомое имя правильно записали, в английском часто используют фразу Can you spell…? Номер телефона обычно произносят по одной цифре и небольшими группами.",
+    "sound": "Буквы E /iː/, I /aɪ/, A /eɪ/ не звучат как русские е, и, а. Американское Z — /ziː/."
+  }
+]

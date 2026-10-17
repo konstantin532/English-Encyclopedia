@@ -1,0 +1,242 @@
+[
+  {
+    "n": 9,
+    "week": 5,
+    "slug": "a1-there-is-some",
+    "title": "В магазине: что есть на полке",
+    "scene": "Том и Анна покупают продукты",
+    "context": "Посмотрите на одну вещь и на несколько. Как меняется is на are?",
+    "dialogue": [
+      [
+        "Tom",
+        "Is there milk?",
+        "Есть молоко?"
+      ],
+      [
+        "Clerk",
+        "Yes, there is.",
+        "Да, есть."
+      ],
+      [
+        "Anna",
+        "Are there apples?",
+        "Есть яблоки?"
+      ],
+      [
+        "Clerk",
+        "Yes, there are some apples.",
+        "Да, есть несколько яблок."
+      ]
+    ],
+    "question": "Почему с apples продавец сказал are?",
+    "options": [
+      "Apples — множественное число",
+      "Потому что apples зелёные",
+      "Потому что речь о прошлом"
+    ],
+    "correct": 0,
+    "feedback": "There are + множественное число. С milk, неисчисляемым названием вещества, естественно there is.",
+    "prompt": "Скажите продавцу: «Есть яблоки» (как сообщение, не вопрос).",
+    "answer": "There are apples.",
+    "alternatives": [
+      "There are some apples."
+    ],
+    "hint": "There + are + apples.",
+    "transfer": "Теперь скажите: «Есть молоко».",
+    "transfer_example": "There is milk.",
+    "why": "There is / there are сообщает о наличии чего-то в ситуации: «имеется». Here there — часть конструкции, а не обязательно «там»; some обычно обозначает некоторое количество.",
+    "sound": "Различайте there /ðɛr/ и they're /ðɛr/: они звучат одинаково, но пишутся по-разному и работают по-разному."
+  },
+  {
+    "n": 10,
+    "week": 5,
+    "slug": "a1-how-much-prices",
+    "title": "Спрашиваем цену",
+    "scene": "У кассы продуктового магазина",
+    "context": "Попросите назвать цену и уточните её, если не расслышали.",
+    "dialogue": [
+      [
+        "Tom",
+        "How much is the milk?",
+        "Сколько стоит молоко?"
+      ],
+      [
+        "Clerk",
+        "It's two dollars.",
+        "Два доллара."
+      ],
+      [
+        "Tom",
+        "Two dollars?",
+        "Два доллара?"
+      ],
+      [
+        "Clerk",
+        "Yes, two dollars.",
+        "Да, два доллара."
+      ]
+    ],
+    "question": "Какую цену услышал Том?",
+    "options": [
+      "One dollar",
+      "Two dollars",
+      "Three dollars"
+    ],
+    "correct": 1,
+    "feedback": "Two dollars — два доллара; после two существительное во множественном числе.",
+    "prompt": "Спросите: «Сколько стоит молоко?»",
+    "answer": "How much is the milk?",
+    "alternatives": [
+      "How much is milk?"
+    ],
+    "hint": "How much + is + the milk?",
+    "transfer": "В магазине показываете два яблока. Спросите, сколько они стоят.",
+    "transfer_example": "How much are the apples?",
+    "why": "How much запрашивает цену или количество неисчисляемого. В вопросе о конкретном товаре используется is для одного товара и are для множества.",
+    "sound": "В dollars ударение на первом слоге /ˈdɑlərz/ (американское /r/ в конце)."
+  },
+  {
+    "n": 11,
+    "week": 6,
+    "slug": "a1-present-simple-i-you",
+    "title": "Мой обычный день",
+    "scene": "Анна встречает Тома утром",
+    "context": "Говорите о повторяющемся распорядке, а не о действии прямо сейчас.",
+    "dialogue": [
+      [
+        "Anna",
+        "Do you work every day?",
+        "Ты каждый день работаешь?"
+      ],
+      [
+        "Tom",
+        "Yes, I do.",
+        "Да."
+      ],
+      [
+        "Anna",
+        "Do you drink coffee?",
+        "Ты пьёшь кофе?"
+      ],
+      [
+        "Tom",
+        "Yes, every morning.",
+        "Да, каждое утро."
+      ]
+    ],
+    "question": "Какой вопрос здесь строится с do?",
+    "options": [
+      "Do you work every day?",
+      "You are work every day?",
+      "Is you work every day?"
+    ],
+    "correct": 0,
+    "feedback": "Do you work…? — вопрос о действии с you. Be в нём не требуется.",
+    "prompt": "Скажите: «Я работаю утром».",
+    "answer": "I work in the morning.",
+    "alternatives": [
+      "I work every morning."
+    ],
+    "hint": "I + work + in the morning.",
+    "transfer": "Спросите друга, пьёт ли он чай по утрам.",
+    "transfer_example": "Do you drink tea in the morning?",
+    "why": "Present Simple используют для привычек и фактов. Название simple не означает «примитивное»: это форма без специального показателя длительности или завершённости.",
+    "sound": "В Do you…? при быстрой речи /du jə/ может сближаться; чётко выделяйте смысловой глагол work."
+  },
+  {
+    "n": 12,
+    "week": 6,
+    "slug": "a1-time-at-seven",
+    "title": "Время и части дня",
+    "scene": "Том уточняет распорядок Мии",
+    "context": "Сравните at seven, in the morning и at night.",
+    "dialogue": [
+      [
+        "Tom",
+        "What time do you get up?",
+        "Во сколько ты встаёшь?"
+      ],
+      [
+        "Mia",
+        "At five.",
+        "В пять."
+      ],
+      [
+        "Tom",
+        "Do you work in the morning?",
+        "Ты работаешь утром?"
+      ],
+      [
+        "Mia",
+        "Yes, I do.",
+        "Да."
+      ]
+    ],
+    "question": "Какой предлог нужен перед конкретным часом?",
+    "options": [
+      "in",
+      "at",
+      "to"
+    ],
+    "correct": 1,
+    "feedback": "At seven — «в семь». In the morning описывает часть дня, а не конкретный час.",
+    "prompt": "Скажите: «Я встаю в семь».",
+    "answer": "I get up at seven.",
+    "alternatives": [
+      "I get up at seven o'clock."
+    ],
+    "hint": "I get up + at + seven.",
+    "transfer": "Скажите: «Я работаю вечером».",
+    "transfer_example": "I work in the evening.",
+    "why": "Time expressions различают момент (at seven) и часть суток (in the morning, in the evening). At night — устойчивое выражение; не пытайтесь заменить at на in в каждом случае.",
+    "sound": "В seven /ˈsɛvən/ ударение на первом слоге. В o'clock /əˈklɑk/ — на втором."
+  },
+  {
+    "n": 13,
+    "week": 7,
+    "slug": "a1-he-she-works",
+    "title": "Он работает, она работает",
+    "scene": "Анна рассказывает о работе друзей",
+    "context": "Сравните I work с He works: форма глагола меняется при третьем лице.",
+    "dialogue": [
+      [
+        "Mia",
+        "Where does Tom work?",
+        "Где работает Том?"
+      ],
+      [
+        "Anna",
+        "He works at home.",
+        "Он работает дома."
+      ],
+      [
+        "Mia",
+        "And where does Anna work?",
+        "А где работает Анна?"
+      ],
+      [
+        "Tom",
+        "She works at a school.",
+        "Она работает в школе."
+      ]
+    ],
+    "question": "Почему в «He works» есть окончание -s?",
+    "options": [
+      "Потому что Tom — he (третье лицо единственного числа)",
+      "Потому что речь о множестве людей",
+      "Потому что это прошедшее время"
+    ],
+    "correct": 0,
+    "feedback": "В утвердительном Present Simple к глаголу с he/she/it обычно добавляют -s. В вопросе does забирает показатель лица.",
+    "prompt": "Скажите: «Он работает дома».",
+    "answer": "He works at home.",
+    "alternatives": [
+      "He works from home."
+    ],
+    "hint": "He + works + at home.",
+    "transfer": "Спросите: «Где она работает?»",
+    "transfer_example": "Where does she work?",
+    "why": "-s — показатель согласования глагола с he/she/it в Present Simple, не множественное число. После does используется базовая форма: Does she work? (не works).",
+    "sound": "Слышны три варианта конечного -s: /s/ после глухих, /z/ после звонких, /ɪz/ после шипящих. В works — /s/."
+  }
+]

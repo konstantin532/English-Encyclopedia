@@ -216,18 +216,6 @@ units:
   example_ru: Ключ на коробке.
   situation: Описываете, где вещь
   usage_note: 'on the right, on the left — справа, слева.'
-- uid: LX-00173
-  lemma: in
-  meaning: inside something
-  class: P1
-  cefr: unverified
-  verification_status: pending
-  frequency_source: NGSL — требует проверки
-  ipa_us: /ɪn/
-  translation_ru: в, внутри
-  example_en: '[T1]The[/] [S2]key[/] [D1]is[/] [P1]in[/] [T1]the[/] [S2]box[/].'
-  example_ru: Ключ в коробке.
-  situation: Описываете, где вещь
 - uid: LX-00174
   lemma: next to
   meaning: very close to, at the side of
