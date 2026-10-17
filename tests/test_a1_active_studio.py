@@ -66,6 +66,9 @@ class ActiveA1CatalogTests(TestCase):
                 self.assertContains(response, f"Тема {n} из 18")
                 self.assertContains(response, "data-a1-quiz")
                 self.assertContains(response, "data-a1-production")
+                self.assertContains(response, "data-a1-builder")
+                self.assertContains(response, "data-a1-builder-check")
+                self.assertContains(response, "data-a1-builder-undo")
                 self.assertContains(response, "data-a1-transfer")
                 self.assertContains(response, 'id="a1-active-topic-data"')
 
@@ -110,3 +113,9 @@ class ActiveA1CatalogTests(TestCase):
         lesson.slug = "renamed-a1-spelling"
         lesson.save(update_fields=["slug"])
         self.assertEqual(self.client.get(reverse("core:active_a1_topic", args=[18])).status_code, 404)
+
+    def test_builder_is_hidden_before_first_independent_response(self):
+        response = self.client.get(reverse("core:active_a1_topic", args=[18]))
+        self.assertContains(response, 'class="active-a1-builder" data-a1-builder hidden')
+        self.assertContains(response, 'data-a1-model hidden')
+        self.assertContains(response, 'data-a1-transfer-feedback hidden')
