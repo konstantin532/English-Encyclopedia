@@ -92,3 +92,14 @@
 .cafe-line-replay { margin-inline-start:auto; border:1px solid var(--rule-strong); background:var(--surface); color:var(--studio-green); border-radius:8px; width:44px; height:44px; flex:none; cursor:pointer; }
 .cafe-line-replay:disabled { opacity:.5; cursor:not-allowed; }
 @media(max-width:420px) { .cafe-script>p[data-dialogue-line] { align-items:flex-start; } .cafe-line-replay { align-self:flex-end; } }
+
+/* Диктант по услышанной реплике: соответствует доступным контролам урока. */
+.cafe-dictation { margin-top:1.6rem; padding:1.3rem; background:var(--paper); border:1px solid var(--rule); border-radius:14px; }
+.cafe-dictation h3 { margin:0 0 .5rem; font-size:1.15rem; color:var(--ink); }
+.cafe-dictation>p { color:var(--ink-soft); margin:0 0 1rem; line-height:1.55; }
+.cafe-dictation select, .cafe-dictation input[type=text] { width:100%; min-height:46px; padding:.75rem .85rem; border-radius:10px; background:var(--surface); color:var(--ink); border:1px solid var(--rule-strong); }
+.cafe-dictation input[type=text] { font-size:1.06rem; }
+.cafe-dictation form { display:flex; align-items:flex-start; flex-direction:column; }
+.cafe-dictation form input { align-self:stretch; }
+.cafe-dictation [data-dictation-model] { font-family:var(--font-read); font-size:1.1rem; }
+@media(max-width:480px) { .cafe-dictation { padding:1rem; } }
