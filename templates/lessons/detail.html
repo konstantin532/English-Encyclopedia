@@ -41,6 +41,33 @@
         </div>
       </section>
       {% endif %}
+      {% if lesson.level.code == "A1" and lesson.order <= 18 %}
+      <section class="section a1-active-invite" aria-label="Дополнительная авторская практика A1">
+        <h2>Практика в новой ситуации</h2>
+        <p>Слушание, объяснения, конструктор, исправление ошибок — и ещё шесть оригинальных ситуаций с возможностью импровизировать. Дополнение к уроку без сохранения ответов.</p>
+        <a class="btn btn-primary" href="{% url 'core:active_a1_topic' lesson.order %}">Открыть практику урока №{{ lesson.order }} →</a>
+        {% if extra_missions %}
+        <h3>Шесть дополнительных историй этого урока</h3>
+        <ol class="a1-mission-previews">
+          {% for mission in extra_missions %}
+          <li>
+            <strong>{{ mission.title }}</strong>
+            <p>{{ mission.scene }}</p>
+            <a href="{% url 'core:active_a1_topic' lesson.order %}?mission={{ forloop.counter }}#a1-missions" aria-label="Попробовать ситуацию {{ forloop.counter }}: {{ mission.title }}">Попробовать ситуацию {{ forloop.counter }} →</a>
+          </li>
+          {% endfor %}
+        </ol>
+        {% endif %}
+        <a class="btn btn-quiet" href="{% url 'core:active_a1_topic' lesson.order %}#a1-missions">Ещё 6 ситуаций и импровизация →</a>
+      </section>
+      {% endif %}
+      {% if lesson.slug == "a1-cafe-order" %}
+      <section class="section cafe-lab-invite" aria-label="Дополнительная экспериментальная практика">
+        <h2>Попробуйте разговор в кафе по-новому</h2>
+        <p>Дополнительная самостоятельная лаборатория: исправьте неверно услышанный заказ, измените предложение и произнесите ответ. Прогресс не сохраняется.</p>
+        <a class="btn btn-primary" href="{% url 'core:cafe_lab' %}">Открыть интерактивную лабораторию →</a>
+      </section>
+      {% endif %}
       {% if next_lesson %}
       <nav class="section" aria-label="Следующий урок" style="padding-top: var(--space-6)">
         <p style="color: var(--ink-soft); margin-bottom: var(--space-3)">Следующий урок</p>
@@ -72,4 +99,4 @@
   </div>
 </div>
 {% endblock %}
-{% block scripts %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}
+{% block scripts %}{% if extra_missions %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}">{% endif %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}

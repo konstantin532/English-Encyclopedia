@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}В кафе: услышать и исправить заказ · A1 эксперимент{% endblock %}
+{% block description %}Интерактивная учебная лаборатория A1: диалог, смысл слов, конструктор английской просьбы, проверка и собственная речь.{% endblock %}
+{% block content %}
+<div class="wrap cafe-lab" data-cafe-lab>
+  <nav class="cafe-crumbs" aria-label="Навигация">
+    <a href="{% url 'curriculum:week' 'a1' 3 %}">A1 · Неделя 3</a><span aria-hidden="true">/</span>Экспериментальный урок
+  </nav>
+  <header class="cafe-hero">
+    <div>
+      <p class="cafe-eyebrow">ENGLISH ENCYCLOPEDIA / ЯЗЫК В ДЕЙСТВИИ</p>
+      <h1>Мия не расслышала заказ</h1>
+      <p class="cafe-intro">Не просто запомните фразу, а научитесь замечать недопонимание и мягко исправлять его на английском.</p>
+      <div class="cafe-tags"><span>A1 · Неделя 3</span><span>6 шагов</span><span>Самостоятельно</span></div>
+    </div>
+    <div class="cafe-scene" aria-hidden="true"><span class="cafe-steam">〰</span><span class="cafe-cup">☕</span><span class="cafe-scenelabel">MIA'S CAFÉ</span></div>
+  </header>
+
+  <p class="cafe-notice"><strong>Эксперимент:</strong> ответы не сохраняются в учебный прогресс. Если готовы дорожки Kokoro, звучат отдельные синтезированные голоса Мии и Тома (их естественность ещё не подтверждена редактором). Иначе используется системный голос en-US. Запись с микрофона остаётся в этой вкладке и не отправляется на сервер.</p>
+
+  <nav class="cafe-steps" aria-label="Этапы урока">
+    <a href="#cafe-listen">01 <span>Слушаем</span></a>
+    <a href="#cafe-meaning">02 <span>Понимаем</span></a>
+    <a href="#cafe-change">03 <span>Меняем</span></a>
+    <a href="#cafe-check">04 <span>Проверяем</span></a>
+    <a href="#cafe-speak">05 <span>Говорим</span></a>
+    <a href="#cafe-transfer">06 <span>Применяем</span></a>
+  </nav>
+
+  <section id="cafe-listen" class="cafe-panel" aria-labelledby="cafe-listen-title">
+    <div class="cafe-section-head"><span>ШАГ 01 / СИТУАЦИЯ</span><h2 id="cafe-listen-title">Сначала попробуйте услышать смысл</h2><p>Том просит чай и кофе, но кофемашина шумит. Что услышала Мия?</p></div>
+    <div class="cafe-actions">
+      <button type="button" class="cafe-btn cafe-btn-primary" data-speak-dialogue aria-pressed="false">▶ Слушать диалог</button>
+      <button type="button" class="cafe-btn cafe-btn-secondary" data-stop-dialogue>■ Остановить</button>
+      <label class="cafe-tempo">Скорость <select data-audio-tempo aria-label="Скорость диалога"><option value="very_slow">Очень медленно</option><option value="slow">Медленно</option><option value="natural" selected>Естественно</option></select></label>
+      <button type="button" class="cafe-btn cafe-btn-secondary" data-show-transcript aria-controls="cafe-transcript" aria-expanded="false">Показать реплики</button>
+      <span class="cafe-status" data-audio-status role="status" aria-live="polite">Доступность готовых дорожек определяется автоматически.</span>
+    </div>
+    <audio data-dialogue-audio preload="none" hidden aria-label="Аудиодиалог Мии и Тома"></audio>
+    <div id="cafe-transcript" class="cafe-script" hidden>
+      {% for line in cafe_dialogue %}
+      <p data-dialogue-line="{{ forloop.counter0 }}" data-speaker="{{ line.speaker }}"><span class="cafe-speaker">{{ line.speaker_ru }}</span><span lang="en">{{ line.text }}</span><button type="button" class="cafe-line-replay" data-replay-line="{{ forloop.counter0 }}" aria-label="Прослушать реплику {{ forloop.counter }} ({{ line.speaker_ru }})">▶</button></p>
+      {% endfor %}
+      <details><summary>Показать смысл на русском</summary><p>Том заказал один чай и один кофе. Мия услышала «два кофе?». Том вежливо исправил её: «Нет, простите. Один чай и один кофе, пожалуйста».</p></details>
+    </div>
+  </section>
+
+  <section id="cafe-meaning" class="cafe-panel" aria-labelledby="cafe-meaning-title">
+    <div class="cafe-section-head"><span>ШАГ 02 / ЯЗЫК ПОД ЛУПОЙ</span><h2 id="cafe-meaning-title">Почему мы так говорим?</h2><p>Нажмите на слово и исследуйте его роль. Цвета и линии соответствуют существующей системе разметки курса.</p></div>
+    <div class="cafe-sentence annotated" lang="en">
+      <button type="button" class="cafe-word" data-explain="i"><span class="mk" data-cat="T" data-cls="8" data-label="Личное местоимение">I</span></button><button type="button" class="cafe-word" data-explain="would"><span class="mk" data-cat="D" data-cls="7" data-label="Модальный глагол">'d</span></button>
+      <button type="button" class="cafe-word" data-explain="like"><span class="mk" data-cat="D" data-cls="3" data-label="Глагол желания">like</span></button>
+      <button type="button" class="cafe-word" data-explain="one"><span class="mk" data-cat="N" data-cls="1" data-label="Числительное">one</span></button>
+      <button type="button" class="cafe-word" data-explain="tea"><span class="mk" data-cat="S" data-cls="3" data-label="Напиток">tea</span></button>
+      <span>and</span>
+      <span>one</span>
+      <button type="button" class="cafe-word" data-explain="coffee"><span class="mk" data-cat="S" data-cls="3" data-label="Напиток">coffee</span></button>, <button type="button" class="cafe-word" data-explain="please"><span class="mk" data-cat="O" data-cls="8" data-label="Вежливое слово">please</span></button>.
+    </div>
+    <div class="cafe-explainer" data-word-explanation role="status" aria-live="polite">Выберите слово выше. Например, нажмите на <strong lang="en">'d</strong>, чтобы узнать, что скрывается в сокращении.</div>
+    <div class="cafe-details">
+      <details><summary>Почему <span lang="en">I'd like</span> — вежливая просьба?</summary><p><span lang="en">I'd</span> здесь значит <span lang="en">I would</span>. Конструкция <span lang="en">I'd like…</span> смягчает сообщение о желании и часто используется при заказе. <span lang="en">I want…</span> тоже нормальная английская фраза: её уместность зависит от контекста и интонации.</p></details>
+      <details><summary>Почему «один кофе» можно сказать <span lang="en">one coffee</span>?</summary><p><span lang="en">Coffee</span> обычно обозначает напиток как вещество, но в кафе может обозначать порцию: <span lang="en">a coffee / two coffees</span>. Это обычное изменение смысла слова в ситуации заказа.</p></details>
+      <details><summary>Почему в русском просьба короче?</summary><p>В русском допустимо «Мне чай, пожалуйста». В английском часто используют готовые конструкции <span lang="en">I'd like…</span> или <span lang="en">Can I have…?</span>. Это варианты для конкретной ситуации, а не закон, будто английский всегда требует длинной фразы.</p></details>
+      <details><summary>А можно сказать <span lang="en">Give me…</span>?</summary><p>Можно, но без смягчения и подходящей интонации такая просьба у стойки иногда звучит слишком прямолинейно. Нельзя считать выражение всегда грубым: контекст имеет значение.</p></details>
+    </div>
+  </section>
+
+  <section id="cafe-change" class="cafe-panel" aria-labelledby="cafe-change-title">
+    <div class="cafe-section-head"><span>ШАГ 03 / КОНСТРУКТОР</span><h2 id="cafe-change-title">Постройте собственный заказ</h2><p>Меняйте количество, напиток и форму просьбы. Следите за тем, как меняется английская фраза.</p></div>
+    <div class="cafe-controls">
+      <label>Сколько?<select data-quantity><option value="1">Один</option><option value="2">Два</option><option value="3">Три</option></select></label>
+      <label>Что?<select data-drink><option value="tea">Чай</option><option value="coffee">Кофе</option></select></label>
+      <label>Как попросить?<select data-style><option value="like">I'd like…</option><option value="can">Can I have…?</option></select></label>
+    </div>
+    <div class="cafe-built">
+      <span>ВАША ФРАЗА</span>
+      <p lang="en" data-built-sentence>I'd like one tea, please.</p>
+      <p data-built-translation>Мне один чай, пожалуйста.</p>
+      <button type="button" class="cafe-btn cafe-btn-secondary" data-speak-built>▶ Прослушать фразу</button>
+    </div>
+  </section>
+
+  <section id="cafe-check" class="cafe-panel" aria-labelledby="cafe-check-title">
+    <div class="cafe-section-head"><span>ШАГ 04 / ПРОВЕРКА ПОНИМАНИЯ</span><h2 id="cafe-check-title">Что Мия поняла неправильно?</h2></div>
+    <form data-listen-check>
+      <fieldset class="cafe-choices">
+        <legend>Том попросил один чай и один кофе. После прослушивания ответьте: какой неправильный заказ повторила Мия? Если аудио недоступно, откройте реплики в шаге 1.</legend>
+        <label><input type="radio" name="answer" value="a" required> Два чая</label>
+        <label><input type="radio" name="answer" value="b"> Два кофе</label>
+        <label><input type="radio" name="answer" value="c"> Один чай и один кофе</label>
+      </fieldset>
+      <button class="cafe-btn cafe-btn-primary" type="submit">Проверить</button>
+      <p data-check-feedback role="status" aria-live="polite" class="cafe-feedback" hidden></p>
+    </form>
+  </section>
+
+  <section id="cafe-speak" class="cafe-panel" aria-labelledby="cafe-speak-title">
+    <div class="cafe-section-head"><span>ШАГ 05 / СВОЯ РЕЧЬ</span><h2 id="cafe-speak-title">Исправьте заказ своими словами</h2><p>Мия снова говорит: <strong lang="en">Two coffees?</strong> Вы хотели один чай и один кофе. Как ответите?</p></div>
+    <form data-free-answer>
+      <label class="cafe-field-label" for="cafe-free-text">Ваш ответ по-английски</label>
+      <textarea id="cafe-free-text" rows="3" maxlength="250" required placeholder="Напишите свой вариант, без подсказки…"></textarea>
+      <div class="cafe-actions"><button type="submit" class="cafe-btn cafe-btn-primary">Сравнить с примером</button></div>
+      <div data-free-feedback hidden class="cafe-feedback" role="status" aria-live="polite">
+        <p><strong>Пример подходящего ответа:</strong> <span lang="en">No, sorry. One tea and one coffee, please.</span></p>
+        <p>Сверьте смысл: вы исправили количество и назвали два разных напитка? Ваш вариант может быть другим и тоже правильным. Автоматической проверки свободного ответа пока нет.</p>
+      </div>
+    </form>
+    <div class="cafe-record" data-recorder>
+      <h3>Попробуйте произнести ответ</h3>
+      <p>Можно записать свой голос только в этой вкладке и прослушать его. Микрофон включается исключительно по вашему нажатию; запись не отправляется на сайт и не оценивается автоматически.</p>
+      <div class="cafe-actions">
+        <button type="button" class="cafe-btn cafe-btn-secondary" data-record-start>● Начать запись</button>
+        <button type="button" class="cafe-btn cafe-btn-secondary" data-record-stop disabled>■ Завершить</button>
+        <span class="cafe-status" data-record-status role="status" aria-live="polite">Запись необязательна.</span>
+      </div>
+      <audio controls data-record-playback hidden aria-label="Прослушать свою запись"></audio>
+    </div>
+  </section>
+
+  <section id="cafe-transfer" class="cafe-panel" aria-labelledby="cafe-transfer-title">
+    <div class="cafe-section-head"><span>ШАГ 06 / ПЕРЕНОС</span><h2 id="cafe-transfer-title">Та же задача — другая ошибка</h2><p>Мия принесла две печеньки, а вы просили одну. Исправьте её на английском, не подсматривая в предыдущий ответ.</p></div>
+    <form data-transfer-answer>
+      <label class="cafe-field-label" for="cafe-transfer-text">Ваша самостоятельная реплика</label>
+      <textarea id="cafe-transfer-text" rows="3" maxlength="250" required placeholder="Напишите, как уточните количество…"></textarea>
+      <button class="cafe-btn cafe-btn-primary" type="submit">Показать пример и критерии</button>
+      <div data-transfer-feedback hidden class="cafe-feedback" role="status" aria-live="polite">
+        <p><strong>Один возможный ответ:</strong> <span lang="en">No, sorry. One cookie, please.</span></p>
+        <p>Проверьте себя: (1) вы ясно назвали одно печенье, (2) собеседник поймёт исправление, (3) форма просьбы уместна. Единственного правильного текста здесь нет.</p>
+      </div>
+    </form>
+    <div class="cafe-finish"><p><strong>Вы дошли до конца практики.</strong> Это экспериментальный урок без выставления оценки и сохранения прогресса.</p><a class="cafe-btn cafe-btn-secondary" href="{% url 'lessons:detail' 'a1-cafe-order' %}">Вернуться к действующему уроку A1 →</a></div>
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'css/cafe-lab.css' %}">
+{{ cafe_audio|json_script:"cafe-audio-manifest" }}
+<script src="{% static 'js/cafe-lab.js' %}" defer></script>
+{% endblock %}

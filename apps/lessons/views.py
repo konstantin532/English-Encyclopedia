@@ -1,15 +1,23 @@
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import ensure_csrf_cookie
 
+from apps.core.a1_active import MAX_TOPIC, active_topics
+
 from .models import Lesson
 
 
 @ensure_csrf_cookie
 def lesson_detail(request, slug):
     lesson = get_object_or_404(Lesson.objects.select_related("level", "focus"), slug=slug, is_published=True)
+    extra_missions = None
+    if lesson.level.code == "A1" and 1 <= lesson.order <= MAX_TOPIC:
+        supplement = active_topics()[lesson.order]
+        if supplement["slug"] == lesson.slug:
+            extra_missions = supplement["missions"]
     units = lesson.units.select_related("semantic_class__category").order_by("uid")
     return render(request, "lessons/detail.html", {
         "lesson": lesson,
+        "extra_missions": extra_missions,
         "layers": lesson.layers.all(),
         "units": units,
         "exercises": lesson.exercises.all(),
