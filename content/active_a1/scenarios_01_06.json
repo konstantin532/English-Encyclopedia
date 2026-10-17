@@ -116,8 +116,8 @@
     ],
     "twists": [
       {
-        "scene": "Вы и Том оба дома: говорите от имени пары.",
-        "example": "We are home."
+        "scene": "Спросите Тома по телефону, дома ли он.",
+        "example": "Are you home?"
       },
       {
         "scene": "Говорите о Мие: она не дома.",
@@ -183,8 +183,8 @@
         "example": "This is a key. The key is here."
       },
       {
-        "scene": "Вещь принадлежит Тому — выразите принадлежность.",
-        "example": "This is Tom's book."
+        "scene": "Вещь ваша, а не чужая: покажите книгу.",
+        "example": "This is my book."
       }
     ]
   },
