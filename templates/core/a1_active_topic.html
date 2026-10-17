@@ -97,6 +97,22 @@
         <p class="active-a1-feedback" data-a1-builder-feedback role="status" aria-live="polite" hidden></p>
       </div>
     </form>
+    <div class="active-a1-repair" data-a1-repair hidden>
+      <h3>Найдите и исправьте ошибку</h3>
+      <p>В следующей фразе есть ошибка. Напишите правильную версию прежде, чем смотреть объяснение.</p>
+      <p class="active-a1-repair-wrong" lang="en">{{ topic.repair.wrong }}</p>
+      <form data-a1-repair-form>
+        <label for="active-a1-repair-answer">Как сказать правильно?</label>
+        <input type="text" id="active-a1-repair-answer" data-a1-repair-answer maxlength="250" required autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Исправленная английская фраза…">
+        <button type="submit" class="active-a1-btn active-a1-btn-primary">Проверить исправление</button>
+        <p class="active-a1-feedback" data-a1-repair-feedback role="status" aria-live="polite" hidden></p>
+        <button type="button" class="active-a1-btn" data-a1-repair-reveal hidden>Показать правильную фразу и объяснение</button>
+        <div class="active-a1-feedback" data-a1-repair-explanation role="status" aria-live="polite" hidden>
+          <p><strong>Корректный вариант:</strong> <span lang="en">{{ topic.repair.correct }}</span></p>
+          <p>{{ topic.repair.reason }}</p>
+        </div>
+      </form>
+    </div>
   </section>
 
   <section class="active-a1-panel" id="a1-transfer" aria-labelledby="a1-transfer-title">
