@@ -93,6 +93,27 @@
       <button class="cafe-btn cafe-btn-primary" type="submit">Проверить</button>
       <p data-check-feedback role="status" aria-live="polite" class="cafe-feedback" hidden></p>
     </form>
+    <div class="cafe-dictation" data-dictation>
+      <h3>Мини-диктант: услышать и записать</h3>
+      <p>Выберите реплику и запишите её на английском, не раскрывая текст диалога. Начните с короткой фразы Мии, затем попробуйте исправление Тома. Это проверка написанного текста, а не произношения.</p>
+      <label class="cafe-field-label" for="cafe-dictation-task">Сложность</label>
+      <select id="cafe-dictation-task" data-dictation-task>
+        <option value="2">Сначала: короткое уточнение Мии</option>
+        <option value="3">Затем: исправление заказа Томом</option>
+      </select>
+      <div class="cafe-actions">
+        <button type="button" class="cafe-btn cafe-btn-secondary" data-dictation-listen>▶ Прослушать реплику</button>
+        <span class="cafe-status" data-dictation-status role="status" aria-live="polite">Прослушайте столько раз, сколько нужно.</span>
+      </div>
+      <form data-dictation-form>
+        <label class="cafe-field-label" for="cafe-dictation-answer">Что вы услышали? Напишите по-английски</label>
+        <input id="cafe-dictation-answer" data-dictation-answer type="text" maxlength="180" autocomplete="off" autocapitalize="off" spellcheck="false" required placeholder="Напишите английскую реплику…">
+        <button class="cafe-btn cafe-btn-primary" type="submit">Проверить написанное</button>
+        <p class="cafe-feedback" data-dictation-feedback role="status" aria-live="polite" hidden></p>
+        <button class="cafe-btn cafe-btn-secondary" type="button" data-dictation-reveal hidden>Показать текст реплики</button>
+        <p class="cafe-feedback" data-dictation-model role="status" aria-live="polite" hidden></p>
+      </form>
+    </div>
   </section>
 
   <section id="cafe-speak" class="cafe-panel" aria-labelledby="cafe-speak-title">
@@ -103,6 +124,8 @@
       <div class="cafe-actions"><button type="submit" class="cafe-btn cafe-btn-primary">Сравнить с примером</button></div>
       <div data-free-feedback hidden class="cafe-feedback" role="status" aria-live="polite">
         <p><strong>Пример подходящего ответа:</strong> <span lang="en">No, sorry. One tea and one coffee, please.</span></p>
+        <p><button type="button" class="cafe-btn cafe-btn-secondary" data-speak-sample>▶ Послушать, как отвечает Том</button></p>
+        <p>Прослушайте пример, произнесите свою версию, запишите себя и сравните понятность ключевых слов <span lang="en">one tea</span> и <span lang="en">one coffee</span>. Система не ставит оценку произношению.</p>
         <p>Сверьте смысл: вы исправили количество и назвали два разных напитка? Ваш вариант может быть другим и тоже правильным. Автоматической проверки свободного ответа пока нет.</p>
       </div>
     </form>

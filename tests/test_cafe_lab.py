@@ -128,3 +128,23 @@ class CafeLabTests(TestCase):
                 "voices": {"mia": "af_bella", "tom": "am_michael"}, **tracks
             }), encoding="utf-8")
             self.assertIsNone(safe_audio_manifest(static))
+
+    def test_new_dictation_has_no_visible_answer_until_attempt(self):
+        response = self.client.get(reverse("core:cafe_lab"))
+        for item in (
+            'data-dictation-form', 'data-dictation-listen',
+            'data-dictation-feedback', 'data-dictation-model',
+            'data-dictation-reveal', 'data-speak-sample',
+        ):
+            self.assertContains(response, item)
+        self.assertContains(response, 'data-dictation-model role="status" aria-live="polite" hidden')
+        self.assertContains(response, 'data-free-feedback hidden')
+
+    def test_old_exercises_and_recording_remain_available(self):
+        response = self.client.get(reverse("core:cafe_lab"))
+        for item in (
+            'data-listen-check', 'data-free-answer', 'data-recorder',
+            'data-record-start', 'data-record-stop', 'data-transfer-answer',
+        ):
+            self.assertContains(response, item)
+        self.assertEqual(response.status_code, 200)

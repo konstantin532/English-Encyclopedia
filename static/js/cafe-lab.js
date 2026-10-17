@@ -35,6 +35,20 @@
   }
   function isCorrectListenAnswer(value) { return value === "b"; }
 
+  function normalizeDictation(value) {
+    return String(value || "")
+      .toLowerCase()
+      .replace(/[‘’]/g, "'")
+      .replace(/[.,!?;:]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+  function isCorrectDictation(lineIndex, value) {
+    if (![2, 3].includes(Number(lineIndex))) return false;
+    return normalizeDictation(value) === normalizeDictation(DIALOGUE[Number(lineIndex)]);
+  }
+
+
   function selectAudioTrack(manifest, tempo) {
     if (!manifest || manifest.engine !== "kokoro" || !manifest.tracks) return null;
     const track = manifest.tracks[tempo];
@@ -48,7 +62,7 @@
 
 
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { buildSentence, buildTranslation, chooseAmericanVoice, isCorrectListenAnswer, selectAudioTrack, activeDialogueLine, DIALOGUE };
+    module.exports = { buildSentence, buildTranslation, chooseAmericanVoice, isCorrectListenAnswer, normalizeDictation, isCorrectDictation, selectAudioTrack, activeDialogueLine, DIALOGUE };
   }
   if (typeof document === "undefined") return;
   const root = document.querySelector("[data-cafe-lab]");
@@ -275,6 +289,60 @@
       ? "Верно! Two coffees? — «Два кофе?». Но Том просил один чай и один кофе."
       : "Мия перепутала заказ: вместо чая и кофе она услышала два кофе. Попробуйте ещё раз.");
     reveal(feedback);
+  });
+
+  // Диктант — точное сравнение коротких учебных реплик, не анализ свободной речи.
+  const dictation = by("[data-dictation-form]");
+  const dictationTask = by("[data-dictation-task]");
+  const dictationText = by("[data-dictation-answer]");
+  const dictationFeedback = by("[data-dictation-feedback]");
+  const dictationReveal = by("[data-dictation-reveal]");
+  const dictationModel = by("[data-dictation-model]");
+  let attempts = 0;
+
+  dictationTask.addEventListener("change", function () {
+    attempts = 0;
+    dictationText.value = "";
+    dictationFeedback.hidden = true;
+    dictationReveal.hidden = true;
+    dictationModel.hidden = true;
+    dictationText.focus();
+  });
+  by("[data-dictation-listen]").addEventListener("click", function () {
+    const index = Number(dictationTask.value);
+    playSelected(index);
+    text(by("[data-dictation-status]"), "Если звук не воспроизводится, проверьте сообщение об озвучке в начале урока.");
+  });
+  dictation.addEventListener("submit", function (event) {
+    event.preventDefault();
+    if (!dictationText.value.trim()) return;
+    attempts += 1;
+    const index = Number(dictationTask.value);
+    const correct = isCorrectDictation(index, dictationText.value);
+    dictationFeedback.dataset.state = correct ? "ok" : "retry";
+    text(dictationFeedback, correct
+      ? "Верно! Вы правильно записали слова. Пунктуация и регистр не учитываются."
+      : attempts === 1
+        ? "Пока не совпадает. Переслушайте: сколько напитков и какие слова использованы?"
+        : "Пока не совпадает. Можно переслушать реплику или открыть образец для сравнения.");
+    reveal(dictationFeedback);
+    if (correct) {
+      text(dictationModel, DIALOGUE[index]);
+      reveal(dictationModel);
+      dictationReveal.hidden = true;
+    } else if (attempts >= 2) {
+      reveal(dictationReveal);
+    }
+  });
+  dictationReveal.addEventListener("click", function () {
+    text(dictationModel, DIALOGUE[Number(dictationTask.value)]);
+    reveal(dictationModel);
+    dictationReveal.hidden = true;
+  });
+  by("[data-speak-sample]").addEventListener("click", function () {
+    // Образец доступен только после раскрытия разбора своего первого ответа.
+    if (by("[data-free-feedback]").hidden) return;
+    playSelected(3);
   });
 
   const free = by("[data-free-answer]");
