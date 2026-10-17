@@ -6,7 +6,7 @@ focus: D
 minutes: 40
 title: "Что я люблю делать: I like reading и I like to read"
 summary: "Как сказать, что вам нравится делать: I like reading, I like walking. Что такое -ing, как оно пишется и звучит, и чем like reading отличается от like to read."
-units: [LX-00200, LX-00201, LX-00202, LX-00203, LX-00204, LX-00205, LX-00208, LX-00209, LX-00211]
+units: [LX-00200, LX-00201, LX-00202, LX-00203, LX-00204, LX-00205, LX-00208, LX-00209, LX-00211, LX-00386, LX-00387, LX-00388]
 sound_notes:
   - text: "I like reading."
     ipa: "/aɪ ˈlaɪk ˈridɪŋ/"
@@ -39,7 +39,7 @@ layers:
     body: |
       Схема:
 
-      > [P3]On[/] [S7]Sunday[/] [T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/]. [T8]I[/] [D3]like[/] [D4]walking[/]. — В воскресенье я гуляю в парке. Люблю гулять.
+      > [P3]On[/] [S7]Sunday[/] [T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/] [P1]in[/] [T3]my[/] [S2]jacket[/]. [T8]I[/] [D3]like[/] [D4]walking[/]. — В воскресенье я гуляю в парке в куртке. Люблю гулять.
 
       - like + действие с -ing: I like reading, I like walking.
       - Вопрос: Do you like walking?
@@ -64,6 +64,14 @@ layers:
       - На инструментах играют с the: play the guitar.
       - В игры — без the: play chess, play football.
       - Если очень нравится — I love reading. Love сильнее like.
+
+      **Одежда для выходных.** У Анны для прогулки есть куртка: **jacket**. Ещё два слова: **shirt** — рубашка, **shoes** — обувь, туфли.
+
+      > [T8]I[/] [D3]like[/] [D4]walking[/] [P1]in[/] [T3]my[/] [S2]jacket[/]. — Я люблю гулять в своей куртке.
+      > [T8]I[/] [D3]like[/] [T3]my[/] [J2]blue[/] [S2]shirt[/]. — Мне нравится моя синяя рубашка.
+      > [T8]I[/] [D3]like[/] [T3]my[/] [J2]black[/] [S2]shoes[/]. — Мне нравятся мои чёрные туфли.
+
+      После like можно назвать вещь (my jacket) или действие (walking). Одна рубашка — a shirt, одна куртка — a jacket. Shoes обычно во множественном числе; одна туфля — a shoe. Здесь in my jacket значит «в куртке», а не место внутри куртки.
   - number: 6
     body: |
       Как пишется -ing:
@@ -75,7 +83,7 @@ layers:
       И не путайте: I like walking — «люблю гулять» (вообще), I am walking — «я сейчас гуляю». Вторую форму вы узнаете позже.
   - number: 7
     body: |
-      Четыре задания: узнать правильную форму, вставить -ing, собрать вопрос о хобби и рассказать о своём хобби в новой ситуации.
+      Шесть заданий: узнать правильную форму, вставить -ing, собрать вопрос о хобби и рассказать о своём хобби в новой ситуации; узнать одежду для прогулки и сказать, какая одежда вам нравится.
 exercises:
   - order: 1
     kind: choice
@@ -115,3 +123,21 @@ exercises:
     hint_ru: "I like + вещь или I play the guitar."
     explanation_ru: "I like music. I play the guitar. Можно соединить: I like playing the guitar."
     units: [LX-00203, LX-00211]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Анна говорит: I like walking in my jacket. В чём она гуляет?"
+    options: [jacket, shirt, shoes]
+    answer: "jacket"
+    hint_ru: "Найдите слово «куртка»."
+    explanation_ru: "jacket — куртка; shirt — рубашка; shoes — обувь, туфли."
+    units: [LX-00386, LX-00387, LX-00388]
+  - order: 6
+    kind: build
+    stage: transfer
+    prompt_ru: "Новая ситуация: друг спрашивает о вашей одежде. Скажите: «Мне нравятся мои синие туфли»."
+    options: [shoes, blue, my, like, I]
+    answer: "I like my blue shoes"
+    hint_ru: "После like — my, затем цвет и название вещи."
+    explanation_ru: "I like my blue shoes. Like сочетается и с названием вещи; -ing здесь не нужно."
+    units: [LX-00388]

@@ -6,7 +6,7 @@ focus: A
 minutes: 40
 title: "Как часто: always, usually, sometimes, never"
 summary: "Как сказать, насколько часто вы что-то делаете: always, usually, sometimes, never. Куда ставить эти слова и почему never не любит второе «не»."
-units: [LX-00193, LX-00194, LX-00195, LX-00196, LX-00197, LX-00198, LX-00199, LX-00206, LX-00207, LX-00210]
+units: [LX-00193, LX-00194, LX-00195, LX-00196, LX-00197, LX-00198, LX-00199, LX-00206, LX-00207, LX-00210, LX-00369, LX-00370, LX-00371, LX-00372, LX-00373, LX-00374, LX-00375, LX-00376, LX-00377, LX-00378, LX-00379, LX-00380, LX-00381, LX-00382, LX-00383, LX-00384, LX-00385]
 sound_notes:
   - text: "I always read on Saturday."
     ipa: "/aɪ ˈɔlweɪz ˈrid ɑn ˈsæt̬ɚˌdeɪ/"
@@ -49,6 +49,25 @@ layers:
       - После be: I am always busy, he is never at home.
       - sometimes может стоять и в начале: Sometimes I read.
       - Дни недели — с on: on Saturday, on Sunday, on the weekend.
+
+      **Когда встречаемся? Дни и месяцы.**
+
+      Дни недели: **Monday** — понедельник, **Tuesday** — вторник, **Wednesday** — среда, **Thursday** — четверг, **Friday** — пятница; Saturday и Sunday уже знакомы.
+
+      > [O1]See you[/] [P3]on[/] [S7]Friday[/], [S1]Mia[/]! — Увидимся в пятницу, Мия!
+      > [C1]And[/] [P3]on[/] [S7]Sunday[/] [P3]in[/] [S7]October[/]? — А в воскресенье в октябре?
+
+      Месяцы по порядку:
+
+      - **January, February, March** — январь, февраль, март;
+      - **April, May, June** — апрель, май, июнь;
+      - **July, August, September** — июль, август, сентябрь;
+      - **October, November, December** — октябрь, ноябрь, декабрь.
+
+      С днём — **on**, с месяцем — **in**: on Friday, in October. Дни и месяцы всегда с большой буквы. В Wednesday середина слова не звучит: /ˈwɛnzˌdeɪ/.
+
+      > [T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Monday[/]. — По понедельникам я обычно работаю.
+      > [T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]May[/]. — Я люблю гулять в мае.
   - number: 4
     body: |
       Почему never без don't? В русском двойное отрицание — норма: «я **никогда не** гуляю». В английском одно отрицание отменяет другое. «I don't never walk» звучит как ошибка (или как просторечие из фильмов). Достаточно never.
@@ -77,7 +96,7 @@ layers:
       Дни недели по-английски всегда пишут с большой буквы: Saturday, Sunday.
   - number: 7
     body: |
-      Четыре задания: понять слово частоты, поставить его на место, собрать фразу о выходных и рассказать о себе в новой ситуации.
+      Шесть заданий: понять слово частоты, поставить его на место, собрать фразу о выходных и рассказать о себе в новой ситуации; выбрать предлог перед месяцем и договориться о дне встречи.
 exercises:
   - order: 1
     kind: choice
@@ -116,3 +135,22 @@ exercises:
     hint_ru: "never перед work."
     explanation_ru: "No, I never work on Sunday. Коротко — No, never."
     units: [LX-00195, LX-00197]
+  - order: 5
+    kind: choice
+    stage: substitution
+    prompt_ru: "Выберите фразу: «Я люблю гулять в октябре»."
+    options: ["I like walking in October.", "I like walking on October.", "I like walking at October."]
+    answer: "I like walking in October."
+    hint_ru: "Перед месяцем ставят in."
+    explanation_ru: "in October — в октябре. Перед днём было бы on Friday."
+    units: [LX-00383]
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: "Новая ситуация: вы договорились встретиться с другом в пятницу. Попрощайтесь до пятницы."
+    prompt_en: "See you ___!"
+    answer: "on Friday"
+    accepted: ["on Friday.", "on Friday!"]
+    hint_ru: "Перед днём недели ставят on; пятница — Friday."
+    explanation_ru: "See you on Friday! — Увидимся в пятницу!"
+    units: [LX-00373]

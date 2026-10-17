@@ -1,0 +1,247 @@
+# Неделя 10: дни недели, месяцы и одежда для прогулки. CEFR не сверялся.
+level: A1
+week: 10
+units:
+- uid: LX-00369
+  lemma: Monday
+  meaning: "a day of the week: Monday"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈmʌnˌdeɪ/
+  translation_ru: понедельник
+  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Monday[/]."
+  example_ru: "По понедельникам я обычно работаю."
+  situation: Планируете выходные и называете время
+  usage_note: "Дни недели пишут с большой буквы; перед днём ставят on."
+- uid: LX-00370
+  lemma: Tuesday
+  meaning: "a day of the week: Tuesday"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈtuzˌdeɪ/
+  translation_ru: вторник
+  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Tuesday[/]."
+  example_ru: "По вторникам я обычно работаю."
+  situation: Планируете выходные и называете время
+  usage_note: "Дни недели пишут с большой буквы; перед днём ставят on."
+- uid: LX-00371
+  lemma: Wednesday
+  meaning: "a day of the week: Wednesday"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwɛnzˌdeɪ/
+  translation_ru: среда
+  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Wednesday[/]."
+  example_ru: "По средам я обычно работаю."
+  situation: Планируете выходные и называете время
+  usage_note: "Дни недели пишут с большой буквы; перед днём ставят on."
+- uid: LX-00372
+  lemma: Thursday
+  meaning: "a day of the week: Thursday"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈθɝzˌdeɪ/
+  translation_ru: четверг
+  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Thursday[/]."
+  example_ru: "По четвергам я обычно работаю."
+  situation: Планируете выходные и называете время
+  usage_note: "Дни недели пишут с большой буквы; перед днём ставят on."
+- uid: LX-00373
+  lemma: Friday
+  meaning: "a day of the week: Friday"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈfraɪˌdeɪ/
+  translation_ru: пятница
+  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Friday[/]."
+  example_ru: "По пятницам я обычно работаю."
+  situation: Планируете выходные и называете время
+  usage_note: "Дни недели пишут с большой буквы; перед днём ставят on."
+- uid: LX-00374
+  lemma: January
+  meaning: "a month of the year: January"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈdʒænjuˌɛri/
+  translation_ru: январь
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]January[/]."
+  example_ru: "Я люблю гулять в январе."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00375
+  lemma: February
+  meaning: "a month of the year: February"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈfɛbjuˌɛri/
+  translation_ru: февраль
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]February[/]."
+  example_ru: "Я люблю гулять в феврале."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00376
+  lemma: March
+  meaning: "a month of the year: March"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /mɑrtʃ/
+  translation_ru: март
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]March[/]."
+  example_ru: "Я люблю гулять в марте."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00377
+  lemma: April
+  meaning: "a month of the year: April"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈeɪprəl/
+  translation_ru: апрель
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]April[/]."
+  example_ru: "Я люблю гулять в апреле."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00378
+  lemma: May
+  meaning: "a month of the year: May"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /meɪ/
+  translation_ru: май
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]May[/]."
+  example_ru: "Я люблю гулять в мае."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00379
+  lemma: June
+  meaning: "a month of the year: June"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /dʒun/
+  translation_ru: июнь
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]June[/]."
+  example_ru: "Я люблю гулять в июне."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00380
+  lemma: July
+  meaning: "a month of the year: July"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /dʒuˈlaɪ/
+  translation_ru: июль
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]July[/]."
+  example_ru: "Я люблю гулять в июле."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00381
+  lemma: August
+  meaning: "a month of the year: August"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɔɡəst/
+  translation_ru: август
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]August[/]."
+  example_ru: "Я люблю гулять в августе."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00382
+  lemma: September
+  meaning: "a month of the year: September"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /sɛpˈtɛmbɚ/
+  translation_ru: сентябрь
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]September[/]."
+  example_ru: "Я люблю гулять в сентябре."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00383
+  lemma: October
+  meaning: "a month of the year: October"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɑkˈtoʊbɚ/
+  translation_ru: октябрь
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]October[/]."
+  example_ru: "Я люблю гулять в октябре."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00384
+  lemma: November
+  meaning: "a month of the year: November"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /noʊˈvɛmbɚ/
+  translation_ru: ноябрь
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]November[/]."
+  example_ru: "Я люблю гулять в ноябре."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00385
+  lemma: December
+  meaning: "a month of the year: December"
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /dɪˈsɛmbɚ/
+  translation_ru: декабрь
+  example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]December[/]."
+  example_ru: "Я люблю гулять в декабре."
+  situation: Планируете выходные и называете время
+  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
+- uid: LX-00386
+  lemma: shirt
+  meaning: "a piece of clothing for the upper body"
+  class: S2
+  forms: [shirts]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ʃɝt/
+  translation_ru: рубашка
+  example_en: "[T8]I[/] [D3]like[/] [T3]my[/] [J2]blue[/] [S2]shirt[/]."
+  example_ru: "Мне нравится моя синяя рубашка."
+  situation: Говорите об одежде для прогулки
+  usage_note: "Исчисляемое слово: a shirt, my shirt."
+- uid: LX-00387
+  lemma: jacket
+  meaning: "a short coat for the upper body"
+  class: S2
+  forms: [jackets]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈdʒækɪt/
+  translation_ru: куртка
+  example_en: "[T8]I[/] [D3]like[/] [T3]my[/] [J2]blue[/] [S2]jacket[/]."
+  example_ru: "Мне нравится моя синяя куртка."
+  situation: Говорите об одежде для прогулки
+  usage_note: "Исчисляемое слово: a jacket, my jacket."
+- uid: LX-00388
+  lemma: shoes
+  meaning: "coverings for the feet, usually worn as a pair"
+  class: S2
+  forms: [shoe]
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ʃuz/
+  translation_ru: обувь, туфли
+  example_en: "[T8]I[/] [D3]like[/] [T3]my[/] [J2]blue[/] [S2]shoes[/]."
+  example_ru: "Мне нравятся мои синие туфли."
+  situation: Говорите об одежде для прогулки
+  usage_note: "Обычно множественное число: my shoes. Одна туфля — a shoe."

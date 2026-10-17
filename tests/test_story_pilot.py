@@ -650,6 +650,24 @@ class WeekTenTests(WeekContentMixin, TestCase):
     def test_complete(self):
         self.check_complete()
 
+    def test_calendar_and_clothes_in_dialogue(self):
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=10)
+        text = " ".join(line["text"] for line in scene.script)
+        for marked in ("[S7]October[/]", "[S7]Friday[/]", "[S2]jacket[/]"):
+            self.assertIn(marked, text)
+
+    def test_calendar_and_clothes_are_practised(self):
+        for slug in self.slugs:
+            lesson = Lesson.objects.get(slug=slug)
+            self.assertEqual(list(lesson.exercises.order_by("order").values_list("order", flat=True)), [1, 2, 3, 4, 5, 6])
+        calendar = Lesson.objects.get(slug=self.slugs[0])
+        for name in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+                     "January", "February", "March", "April", "May", "June", "July",
+                     "August", "September", "October", "November", "December"):
+            self.assertTrue(calendar.units.filter(lemma=name).exists(), name)
+        clothes = Lesson.objects.get(slug=self.slugs[1])
+        self.assertEqual(set(clothes.units.filter(lemma__in=("shirt", "jacket", "shoes")).values_list("lemma", flat=True)), {"shirt", "jacket", "shoes"})
+
     def test_mia_still_works_every_day(self):
         """Канон недели 6: Мия работает каждый день — значит, и в воскресенье."""
         scene = WeekScene.objects.get(week__level__code="A1", week__number=10)
@@ -848,7 +866,7 @@ class A1PoemsTests(TestCase):
 class WeeklyVocabularyNormTests(TestCase):
     """Добор A1 до 500 единиц: недели, которые уже доведены до нормы 30–39."""
 
-    FILLED_WEEKS = (3, 4, 5, 6, 7, 8, 9)
+    FILLED_WEEKS = (3, 4, 5, 6, 7, 8, 9, 10)
 
     @classmethod
     def setUpTestData(cls):
