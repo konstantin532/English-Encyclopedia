@@ -4,9 +4,9 @@ week: 8
 order: 15
 focus: P
 minutes: 40
-title: "Где это: Where is…? и предлоги in, on, near, next to"
+title: "Где это: Where is…? и предлоги in, on, near, next to, between"
 summary: "Как спросить, где находится место или вещь, и ответить: in the box, on the right, near the bank, next to the cafe. Почему «на» — не всегда on."
-units: [LX-00157, LX-00162, LX-00165, LX-00171, LX-00172, LX-00173, LX-00174, LX-00176, LX-00178, LX-00160, LX-00163]
+units: [LX-00157, LX-00162, LX-00165, LX-00171, LX-00172, LX-00173, LX-00174, LX-00176, LX-00178, LX-00160, LX-00163, LX-00337, LX-00338, LX-00339, LX-00340, LX-00344, LX-00345, LX-00346]
 sound_notes:
   - text: "Where is the bank?"
     ipa: "/ˈwɛr ɪz ðə ˈbæŋk/"
@@ -31,7 +31,7 @@ layers:
     body: |
       В новом городе главный вопрос — «Где?». По-английски — **Where**.
 
-      > [O2]Sorry[/], [A6]where[/] [D1]is[/] [T1]the[/] [S4]bank[/]? — Простите, а где банк?
+      > [O2]Sorry[/], [D7]can[/] [T8]you[/] [D2]help[/] [T8]us[/]? [A6]Where[/] [D1]is[/] [T1]the[/] [S4]bank[/]? — Простите, не поможете нам? Где банк?
       > [T1]The[/] [S2]key[/] [S4]shop[/]? [T8]It[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]bank[/]. — Мастерская? Она рядом с банком.
 
       В ответе всегда есть маленькое слово места — предлог: near, next to, on, in.
@@ -51,6 +51,17 @@ layers:
       - **on** — на поверхности или сбоку: on the box, on the right.
       - **near** — недалеко: near the bank.
       - **next to** — совсем рядом, вплотную: next to the cafe.
+
+      Ещё четыре предлога места:
+
+      > [T1]The[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]. — Мастерская между банком и гостиницей.
+
+      - [P1]under[/] — под: under the door
+      - [P1]between[/] — между: between the bank **and** the hotel
+      - [P9]in front of[/] — перед: in front of the cafe
+      - [P9]across from[/] — напротив, через дорогу: across from the park
+
+      В городе ещё пригодятся [S4]hotel[/] (гостиница), [S4]supermarket[/] (супермаркет) и [S4]map[/] (карта).
   - number: 4
     body: |
       Почему предлогов так много? В русском место часто показывает окончание: «в коробк**е**», «у банк**а**». В английском окончаний нет, и всю работу делает предлог. Поэтому он стоит перед словом всегда.
@@ -78,7 +89,7 @@ layers:
       И «у»: у двери — next to the door или near the door. Выбирайте предлог по смыслу места, а не по русскому слову.
   - number: 7
     body: |
-      Четыре задания: узнать вопрос «где?», выбрать предлог, собрать ответ и объяснить место в новой ситуации.
+      Шесть заданий: узнать вопрос «где», выбрать предлог, собрать ответ, объяснить, где место, выбрать between и сказать, что напротив.
 exercises:
   - order: 1
     kind: choice
@@ -117,3 +128,21 @@ exercises:
     hint_ru: "Справа — on the right."
     explanation_ru: "It is on the right — в разговоре It's on the right или просто On the right."
     units: [LX-00178]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Кафе стоит посередине: слева банк, справа гостиница. Как сказать?"
+    options: ["The cafe is between the bank and the hotel.", "The cafe is under the bank and the hotel.", "The cafe is in front of the bank and the hotel."]
+    answer: "The cafe is between the bank and the hotel."
+    hint_ru: "Посередине между двумя — between … and …"
+    explanation_ru: "between the bank and the hotel — между двумя местами, всегда с and."
+    units: [LX-00338, LX-00344]
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: "Супермаркет — через дорогу от парка. Скажите это по-американски."
+    prompt_en: "The supermarket is ___ the park."
+    answer: "across from"
+    hint_ru: "Американское «напротив» — два слова."
+    explanation_ru: "The supermarket is across from the park. — across from значит «через дорогу, напротив»."
+    units: [LX-00340, LX-00345]

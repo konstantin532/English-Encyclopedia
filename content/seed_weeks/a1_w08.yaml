@@ -1,8 +1,8 @@
 level: A1
 week: 8
-can_do_ru: "Я смогу вежливо остановить прохожего, спросить дорогу (Where is…?) и понять ответ: go straight, turn left, on the right, next to."
+can_do_ru: "Я смогу вежливо остановить прохожего, спросить дорогу (Where is…?) и понять ответ: go straight, turn left, on the right, next to, between."
 mission_ru: "Объясните по-английски дорогу от вашего дома до ближайшего магазина тремя фразами: Go straight… Turn left… It is next to… Потом спросите кого-нибудь: Excuse me, where is…?"
-chunks: [LX-00175, LX-00176, LX-00177, LX-00178, LX-00174]
+chunks: [LX-00175, LX-00176, LX-00177, LX-00178, LX-00174, LX-00347]
 story_beat:
   intro_ru: "Том хочет сделать копию старого ключа для Анны. Но где в городке мастерская по ключам?"
   outcome_ru: "Мастерская — рядом с банком, а банк — справа, рядом с кафе Мии. Мастер берёт старый ключ и обещает сделать копию."
@@ -18,9 +18,9 @@ script:
     ru: "Мастерская? Она рядом с банком."
   - speaker: anna
     emotion: worried
-    text: "[O2]Sorry[/], [A6]where[/] [D1]is[/] [T1]the[/] [S4]bank[/]?"
-    spoken: "[O2]Sorry[/], [A6]where[/][D1]'s[/] [T1]the[/] [S4]bank[/]?"
-    ru: "Простите, а где банк?"
+    text: "[O2]Sorry[/], [D7]can[/] [T8]you[/] [D2]help[/] [T8]us[/]? [A6]Where[/] [D1]is[/] [T1]the[/] [S4]bank[/]?"
+    spoken: "[O2]Sorry[/], [D7]can[/] [T8]you[/] [D2]help[/] [T8]us[/]? [A6]Where[/][D1]'s[/] [T1]the[/] [S4]bank[/]?"
+    ru: "Простите, не поможете нам? Где банк?"
   - speaker: passerby
     text: "[D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/]."
     ru: "Идите прямо и поверните налево. Банк будет справа."
@@ -30,8 +30,8 @@ script:
     ru: "Справа? Рядом с кафе Мии?"
   - speaker: passerby
     emotion: happy
-    text: "[O4]Yes[/]! [C1]And[/] [T1]the[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]next to[/] [T1]the[/] [S4]bank[/]."
-    ru: "Да! А мастерская — рядом с банком."
+    text: "[O4]Yes[/]! [C1]And[/] [T1]the[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]."
+    ru: "Да! А мастерская — между банком и гостиницей."
   - speaker: anna
     emotion: happy
     text: "[O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [A3]right[/]."

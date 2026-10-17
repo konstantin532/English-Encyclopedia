@@ -2,7 +2,7 @@ level: A1
 week: 9
 can_do_ru: "Я смогу представиться по телефону, продиктовать фамилию по буквам и номер телефона по цифрам и спросить: What time does the shop open?"
 mission_ru: "Продиктуйте вслух по-английски свою фамилию по буквам и номер телефона по одной цифре. Потом спросите кого-нибудь: What time does … open?"
-chunks: [LX-00188, LX-00189, LX-00190, LX-00191, LX-00192]
+chunks: [LX-00188, LX-00189, LX-00190, LX-00191, LX-00192, LX-00367, LX-00368]
 story_beat:
   intro_ru: "Копия ключа почти готова. Анна звонит в мастерскую, чтобы оставить имя и номер для заказа."
   outcome_ru: "Мастер записывает фамилию Анны по буквам — Belova — и её номер. Мастерская открывается в девять."
@@ -37,12 +37,12 @@ script:
     ru: "А во сколько открывается мастерская?"
   - speaker: locksmith
     emotion: happy
-    text: "[T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/]. [O1]See you[/]!"
-    ru: "В девять. До встречи!"
+    text: "[T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/] [C1]and[/] [D2]closes[/] [P3]at[/] [N3]five[/]. [O1]See you[/] [A2]tomorrow[/]!"
+    ru: "Открываемся в девять, закрываемся в пять. До завтра!"
   - speaker: anna
     emotion: happy
-    text: "[O1]See you[/] [P3]at[/] [N3]nine[/]! [O2]Thank you[/]!"
-    ru: "До встречи в девять! Спасибо!"
+    text: "[O4]Okay[/]! [O1]See you[/] [P3]at[/] [N3]nine[/]! [O1]Bye[/]!"
+    ru: "Хорошо! До встречи в девять! Пока!"
 twister:
   number: 9
   series: sounds

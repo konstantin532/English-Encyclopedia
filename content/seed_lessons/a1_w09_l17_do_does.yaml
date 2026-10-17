@@ -4,9 +4,9 @@ week: 9
 order: 17
 focus: D
 minutes: 40
-title: "Вопросы с do и does: Do you…? What time does…?"
+title: "Вопросы с do и does: What, when, which — Do you…? What time does…?"
 summary: "Как задавать вопросы в настоящем простом времени: Do you have my key? What time does the shop open? Когда do, а когда does, и куда девается -s."
-units: [LX-00182, LX-00186, LX-00188, LX-00191, LX-00192]
+units: [LX-00182, LX-00186, LX-00188, LX-00191, LX-00192, LX-00348, LX-00349, LX-00350, LX-00357, LX-00358]
 sound_notes:
   - text: "Do you have my key?"
     ipa: "/də jə ˈhæv maɪ ˈki/"
@@ -51,6 +51,18 @@ layers:
       - he, she, it, одна вещь или человек — **does**: Does the shop…?
       - После do / does глагол без -s: does the shop open.
       - Вопросительное слово — в самом начале: What time does…? Where do you…?
+
+      Вопросительное слово ставят **перед** do / does. Вот все, что вы уже знаете:
+
+      - [T9]what[/] — что, какой: What time does the shop open?
+      - [A6]when[/] — когда: When does the shop close?
+      - [A6]where[/] — где, [T9]who[/] — кто, [A6]why[/] — почему, [A6]how[/] — как
+      - [T9]which[/] — какой из: Which key is your key?
+      - [T9]whose[/] — чей: Whose key is it?
+
+      > [T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/] [C1]and[/] [D2]closes[/] [P3]at[/] [N3]five[/]. — Открываемся в девять, закрываемся в пять.
+
+      [D2]open[/] и [D2]close[/] с he, she, it получают -s: it opens, it closes. Спросить разрешения задать вопрос: [D7]Can[/] [T8]I[/] [D5]ask[/] [T8]you[/]?
   - number: 4
     body: |
       Почему -s исчезает у глагола? Оно переходит в does. Сравните:
@@ -60,7 +72,7 @@ layers:
 
       Окончание бывает в предложении только один раз. Если оно ушло в does, у open его уже нет.
 
-      > [T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/]. [O1]See you[/]! — В девять. До встречи!
+      > [T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/] [C1]and[/] [D2]closes[/] [P3]at[/] [N3]five[/]. — Открываемся в девять, закрываемся в пять.
   - number: 5
     body: |
       Так звучит деловой звонок в Америке:
@@ -82,7 +94,7 @@ layers:
       Вопросы с be (Is it…? Where is…?) живут без do: Where is the bank? — не «Where does the bank is».
   - number: 7
     body: |
-      Четыре задания: выбрать do или does, вставить помощника, собрать вопрос о времени и задать вопрос в новой ситуации.
+      Шесть заданий: выбрать do или does, вставить помощника, собрать вопрос о времени, задать вопрос в новой ситуации, выбрать вопросительное слово и собрать вопрос о закрытии.
 exercises:
   - order: 1
     kind: choice
@@ -121,3 +133,21 @@ exercises:
     hint_ru: "Mia — один человек: does."
     explanation_ru: "Does Mia work every day? — с Mia помощник does, work без -s."
     units: [LX-00186]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Вы хотите узнать, КОГДА закрывается банк. С чего начать вопрос?"
+    options: ["When does the bank close?", "Where does the bank close?", "Who does the bank close?"]
+    answer: "When does the bank close?"
+    hint_ru: "«Когда» по-английски…"
+    explanation_ru: "When does the bank close? — when спрашивает о времени. Where — где, who — кто."
+    units: [LX-00349, LX-00358]
+  - order: 6
+    kind: build
+    stage: production
+    prompt_ru: "Соберите вопрос: «Во сколько закрывается магазин?»"
+    options: [shop, What, the, close, does, time]
+    answer: "What time does the shop close"
+    hint_ru: "What time + does + the shop + глагол без -s."
+    explanation_ru: "What time does the shop close? — does забирает -s, поэтому close без -s."
+    units: [LX-00348, LX-00358]

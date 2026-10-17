@@ -1,0 +1,295 @@
+# Неделя 9, добор до нормы: вопросительные слова, звонки и сообщения, сегодня / завтра. CEFR не сверялся.
+level: A1
+week: 9
+units:
+- uid: LX-00348
+  lemma: what
+  meaning: which thing; used to ask about things
+  class: T9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wʌt/
+  translation_ru: что, какой
+  example_en: '[T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]?'
+  example_ru: Как тебя зовут?
+  situation: Задаёте вопрос
+  usage_note: 'В американской речи t в конце часто глотают: «уа(т)».'
+- uid: LX-00349
+  lemma: when
+  meaning: at what time
+  class: A6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɛn/
+  translation_ru: когда
+  example_en: '[A6]When[/] [D1]does[/] [T1]the[/] [S4]shop[/] [D2]open[/]?'
+  example_ru: Когда открывается магазин?
+  situation: Задаёте вопрос
+  usage_note: when — «когда» вообще; what time — точное время.
+- uid: LX-00350
+  lemma: which
+  meaning: what one of a small group
+  class: T9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɪtʃ/
+  translation_ru: какой (из), который
+  example_en: '[T9]Which[/] [S2]phone[/] [D1]is[/] [T3]your[/] [S2]phone[/]?'
+  example_ru: Какой телефон твой?
+  situation: Задаёте вопрос
+  usage_note: 'which — выбор из нескольких известных: Which one?'
+- uid: LX-00351
+  lemma: call
+  meaning: to telephone someone
+  class: D5
+  forms:
+  - calls
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kɔl/
+  translation_ru: звонить
+  example_en: '[T8]I[/] [D5]call[/] [T3]my[/] [S1]mom[/] [T5]every[/] [S7]day[/].'
+  example_ru: Я звоню маме каждый день.
+  situation: Говорите по телефону и в сообщениях
+  usage_note: 'call — и глагол «звонить», и сущ. «звонок»: a phone call.'
+- uid: LX-00352
+  lemma: text
+  meaning: to send a short message on a phone
+  class: D5
+  forms:
+  - texts
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tɛkst/
+  translation_ru: писать сообщение (SMS)
+  example_en: '[D5]Text[/] [T8]me[/]!'
+  example_ru: Напиши мне!
+  situation: Говорите по телефону и в сообщениях
+  usage_note: 'Американцы говорят text: Text me! — «Напиши мне». Это и «сообщение»: a text.'
+- uid: LX-00353
+  lemma: send
+  meaning: to make something go to another person
+  class: D2
+  forms:
+  - sends
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sɛnd/
+  translation_ru: отправлять
+  example_en: '[T8]I[/] [D2]send[/] [T1]a[/] [S9]message[/].'
+  example_ru: Я отправляю сообщение.
+  situation: Говорите по телефону и в сообщениях
+  usage_note: send a text, send an email, send a letter.
+- uid: LX-00354
+  lemma: message
+  meaning: a short piece of written or spoken information
+  class: S9
+  forms:
+  - messages
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmɛsɪdʒ/
+  translation_ru: сообщение
+  example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [S9]message[/] [P5]for[/] [S1]Tom[/].'
+  example_ru: У меня сообщение для Тома.
+  situation: Говорите по телефону и в сообщениях
+  usage_note: «мЭсидж», ударение в начале.
+- uid: LX-00355
+  lemma: email
+  meaning: a message sent by computer
+  class: S9
+  forms:
+  - emails
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈimeɪl/
+  translation_ru: электронное письмо, e-mail
+  example_en: '[T9]What[/] [D1]is[/] [T3]your[/] [S9]email[/]?'
+  example_ru: Какой у тебя e-mail?
+  situation: Говорите по телефону и в сообщениях
+  usage_note: 'Адрес диктуют так: anna at mail dot com — @ это at, точка — dot.'
+- uid: LX-00356
+  lemma: answer
+  meaning: to say something back; to pick up the phone
+  class: D5
+  forms:
+  - answers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈænsɚ/
+  translation_ru: отвечать
+  example_en: '[O2]Sorry[/], [T8]I[/] [D7]can[/][X1]not[/] [D5]answer[/] [A2]now[/].'
+  example_ru: Извините, сейчас не могу ответить.
+  situation: Говорите по телефону и в сообщениях
+  usage_note: 'w не читается: «Энсэр».'
+- uid: LX-00357
+  lemma: ask
+  meaning: to say a question to someone
+  class: D5
+  forms:
+  - asks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /æsk/
+  translation_ru: спрашивать
+  example_en: '[D7]Can[/] [T8]I[/] [D5]ask[/] [T8]you[/]?'
+  example_ru: Можно вас спросить?
+  situation: Задаёте вопрос
+  usage_note: 'Американское широкое /æ/: «эск».'
+- uid: LX-00358
+  lemma: close
+  meaning: to shut; to stop being open
+  class: D2
+  forms:
+  - closes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kloʊz/
+  translation_ru: закрываться, закрывать
+  example_en: '[T1]The[/] [S4]shop[/] [D2]closes[/] [P3]at[/] [N3]five[/].'
+  example_ru: Магазин закрывается в пять.
+  situation: Узнаёте часы работы
+  usage_note: 'Глагол — с «з»: «клоуз». Противоположность — open.'
+- uid: LX-00359
+  lemma: now
+  meaning: at this moment
+  class: A2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /naʊ/
+  translation_ru: сейчас
+  example_en: '[T8]I[/] [D1]am[/] [J4]busy[/] [A2]now[/].'
+  example_ru: Я сейчас занят.
+  situation: Говорите по телефону и в сообщениях
+  usage_note: «нау». Можно в начале или в конце фразы.
+- uid: LX-00360
+  lemma: later
+  meaning: at a time after now
+  class: A2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈleɪt̬ɚ/
+  translation_ru: позже
+  example_en: '[D5]Call[/] [T8]me[/] [A2]later[/]!'
+  example_ru: Позвони мне позже!
+  situation: Говорите по телефону и в сообщениях
+  usage_note: 't между гласными — быстрое «д»: «лэйдэр». See you later! — «Пока!»'
+- uid: LX-00361
+  lemma: today
+  meaning: on this day
+  class: A2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /təˈdeɪ/
+  translation_ru: сегодня
+  example_en: '[T1]The[/] [S4]shop[/] [D1]is[/] [J2]open[/] [A2]today[/].'
+  example_ru: Сегодня магазин открыт.
+  situation: Говорите о времени
+  usage_note: 'Ударение в конце: toDAY.'
+- uid: LX-00362
+  lemma: tomorrow
+  meaning: on the day after today
+  class: A2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /təˈmɑroʊ/
+  translation_ru: завтра
+  example_en: '[O1]See you[/] [A2]tomorrow[/]!'
+  example_ru: До завтра!
+  situation: Говорите о времени
+  usage_note: 'Ударение в середине: toMORrow.'
+- uid: LX-00363
+  lemma: okay
+  meaning: used to agree or say that something is fine
+  class: O4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /oʊˈkeɪ/
+  translation_ru: хорошо, ладно
+  example_en: '[O4]Okay[/]! [O1]See you[/]!'
+  example_ru: Хорошо! До встречи!
+  situation: Соглашаетесь в разговоре
+  usage_note: Пишут okay или OK. Звучит «оу-кЭй».
+- uid: LX-00364
+  lemma: bye
+  meaning: goodbye
+  class: O1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /baɪ/
+  translation_ru: пока
+  example_en: '[O2]Thank you[/]! [O1]Bye[/]!'
+  example_ru: Спасибо! Пока!
+  situation: Заканчиваете разговор
+  usage_note: Разговорное «пока». Полное — goodbye.
+- uid: LX-00365
+  lemma: wrong
+  meaning: not correct
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rɔŋ/
+  translation_ru: неправильный, не тот
+  example_en: '[O2]Sorry[/], [T8]it[/] [D1]is[/] [T1]the[/] [J3]wrong[/] [S9]number[/].'
+  example_ru: Извините, вы ошиблись номером.
+  situation: Говорите по телефону и в сообщениях
+  usage_note: 'w не читается: «рон», носовой ŋ в конце. wrong number — «не туда попали».'
+- uid: LX-00366
+  lemma: first name
+  meaning: the name given to you at birth, before your family name
+  class: S9
+  unit_type: phrase
+  forms:
+  - first names
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈfɝst ˌneɪm/
+  translation_ru: имя
+  example_en: '[T3]My[/] [S9]first name[/] [D1]is[/] [S1]Anna[/].'
+  example_ru: Моё имя — Анна.
+  situation: Называете имя и фамилию
+  usage_note: first name — имя, last name — фамилия. В анкетах в США всегда так.
+- uid: LX-00367
+  lemma: Can I speak to Tom, please?
+  meaning: Asking for a person on the phone
+  class: D7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kən aɪ ˈspik tə ˈtɑm ˈpliz/
+  translation_ru: Можно Тома к телефону?
+  example_en: Can I speak to Tom, please?
+  example_ru: Позовите, пожалуйста, Тома.
+  situation: Говорите по телефону и в сообщениях
+  usage_note: 'Вместо Tom — любое имя. Ответ: Speaking! — «Это я».'
+- uid: LX-00368
+  lemma: Call me later.
+  meaning: Asking someone to phone again
+  class: D5
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈkɔl mi ˈleɪt̬ɚ/
+  translation_ru: Позвони мне позже.
+  example_en: Call me later.
+  example_ru: Перезвоните мне позже.
+  situation: Говорите по телефону и в сообщениях
+  usage_note: Короче и мягче — Text me! (напиши мне).

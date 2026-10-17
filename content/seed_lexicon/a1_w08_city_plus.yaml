@@ -1,0 +1,155 @@
+# Неделя 8, добор до нормы: предлоги места, him / them / us, места в городе. CEFR не сверялся.
+level: A1
+week: 8
+units:
+- uid: LX-00337
+  lemma: under
+  meaning: below something
+  class: P1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈʌndɚ/
+  translation_ru: под
+  example_en: '[T1]The[/] [S2]key[/] [D1]is[/] [P1]under[/] [T1]the[/] [S2]door[/].'
+  example_ru: Ключ под дверью.
+  situation: Объясняете, где что находится
+  usage_note: «Андэр», американское r в конце.
+- uid: LX-00338
+  lemma: between
+  meaning: in the space in the middle of two things
+  class: P1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɪˈtwin/
+  translation_ru: между
+  example_en: '[T1]The[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/].'
+  example_ru: Мастерская между банком и гостиницей.
+  situation: Объясняете, где что находится
+  usage_note: 'between A and B — всегда с and. Ударение в конце: beTWEEN.'
+- uid: LX-00339
+  lemma: in front of
+  meaning: facing the front part of something
+  class: P9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪn ˈfrʌnt əv/
+  translation_ru: перед
+  example_en: '[T1]The[/] [S6]cat[/] [D1]is[/] [P9]in front of[/] [T1]the[/] [S2]door[/].'
+  example_ru: Кот перед дверью.
+  situation: Объясняете, где что находится
+  usage_note: 'Три слова как один предлог. of звучит коротко: «эв».'
+  unit_type: phrase
+- uid: LX-00340
+  lemma: across from
+  meaning: on the other side of a street from something
+  class: P9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /əˈkrɔs frəm/
+  translation_ru: напротив
+  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P9]across from[/] [T1]the[/] [S4]park[/].'
+  example_ru: Банк напротив парка.
+  situation: Объясняете, где что находится
+  usage_note: Американский вариант «напротив». В учебниках встречается и opposite.
+  unit_type: phrase
+- uid: LX-00341
+  lemma: him
+  meaning: the man or boy already talked about, as an object
+  class: T8
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hɪm/
+  translation_ru: его, ему
+  example_en: '[D7]Can[/] [T8]you[/] [D2]help[/] [T8]him[/]?'
+  example_ru: Можете ему помочь?
+  situation: Говорите о мужчине после глагола или предлога
+  usage_note: 'he → him: «он» → «его, ему». В быстрой речи h часто пропадает: «хэлп им».'
+- uid: LX-00342
+  lemma: them
+  meaning: the people or things already talked about, as an object
+  class: T8
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ðɛm/
+  translation_ru: их, им
+  example_en: '[T8]I[/] [D3]like[/] [T8]them[/].'
+  example_ru: Они мне нравятся.
+  situation: Говорите о нескольких людях или вещах
+  usage_note: they → them. Звонкий th, как в this.
+- uid: LX-00343
+  lemma: us
+  meaning: the speaker and others, as an object
+  class: T8
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ʌs/
+  translation_ru: нас, нам
+  example_en: '[D7]Can[/] [T8]you[/] [D2]help[/] [T8]us[/]?'
+  example_ru: Можете нам помочь?
+  situation: Просите о помощи для себя и друзей
+  usage_note: we → us. Короткое «ас».
+- uid: LX-00344
+  lemma: hotel
+  meaning: a building where people pay to stay for the night
+  class: S4
+  forms:
+  - hotels
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hoʊˈtɛl/
+  translation_ru: гостиница, отель
+  example_en: '[T1]The[/] [S4]hotel[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]left[/].'
+  example_ru: Гостиница слева.
+  situation: Объясняете, где что находится
+  usage_note: 'Ударение в конце: hoTEL.'
+- uid: LX-00345
+  lemma: supermarket
+  meaning: a large shop that sells food and other things
+  class: S4
+  forms:
+  - supermarkets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsupɚˌmɑrkɪt/
+  translation_ru: супермаркет
+  example_en: '[D1]Is[/] [T9]there[/] [T1]a[/] [S4]supermarket[/] [P1]near[/] [A3]here[/]?'
+  example_ru: Здесь рядом есть супермаркет?
+  situation: Объясняете, где что находится
+  usage_note: 'Ударение в начале: SUpermarket.'
+- uid: LX-00346
+  lemma: map
+  meaning: a drawing of an area that shows streets and places
+  class: S4
+  forms:
+  - maps
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mæp/
+  translation_ru: карта (города)
+  example_en: '[D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S4]map[/]?'
+  example_ru: У вас есть карта?
+  situation: Объясняете, где что находится
+  usage_note: 'Широкое /æ/: «мэп». Карту города смотрят на телефоне: on my phone.'
+- uid: LX-00347
+  lemma: Can you help us?
+  meaning: Asking a stranger for help
+  class: D7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kən ju ˈhɛlp əs/
+  translation_ru: Можете нам помочь?
+  example_en: Can you help us?
+  example_ru: Не поможете нам?
+  situation: Объясняете, где что находится
+  usage_note: Одному себе — Can you help me? Начните с Excuse me, и просьба прозвучит вежливо.

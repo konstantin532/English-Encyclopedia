@@ -6,7 +6,7 @@ focus: D
 minutes: 40
 title: "Как пройти: go straight, turn left — просьбы и указания"
 summary: "Как объяснить дорогу и понять объяснение: Go straight. Turn left. Почему в указаниях нет «вы» и как вежливо остановить прохожего: Excuse me!"
-units: [LX-00158, LX-00159, LX-00161, LX-00166, LX-00167, LX-00168, LX-00169, LX-00170, LX-00175, LX-00177, LX-00164]
+units: [LX-00158, LX-00159, LX-00161, LX-00166, LX-00167, LX-00168, LX-00169, LX-00170, LX-00175, LX-00177, LX-00164, LX-00341, LX-00342, LX-00343, LX-00347]
 sound_notes:
   - text: "Go straight and turn left."
     ipa: "/ˈɡoʊ ˈstreɪt ən tɝn ˈlɛft/"
@@ -69,9 +69,19 @@ layers:
       - turn left — поверните налево; on the left — слева.
       - go straight — идите прямо; straight ahead — прямо впереди.
       - Excuse me — чтобы остановить человека; Sorry — когда уже извиняетесь за ошибку или переспрашиваете.
+
+      После глагола «я, он, мы, они» меняют форму — как в русском «я → меня»:
+
+      - [T8]I[/] → [T8]me[/]: Excuse me!
+      - [T8]he[/] → [T8]him[/], [T8]she[/] → [T3]her[/]
+      - [T8]we[/] → [T8]us[/], [T8]they[/] → [T8]them[/]
+
+      > [O2]Sorry[/], [D7]can[/] [T8]you[/] [D2]help[/] [T8]us[/]? — Простите, не поможете нам? (Анна — прохожему)
+
+      Неправильно: «Can you help we?». После help, like, see — всегда me, him, her, us, them.
   - number: 7
     body: |
-      Четыре задания: понять указание, вставить глагол, собрать объяснение дороги и объяснить путь в новой ситуации.
+      Шесть заданий: понять указание, вставить глагол, собрать объяснение дороги, объяснить путь, выбрать us и попросить помочь другу.
 exercises:
   - order: 1
     kind: choice
@@ -110,3 +120,21 @@ exercises:
     hint_ru: "Глагол turn и направление."
     explanation_ru: "Turn right. Можно добавить, где банк: It is on the right."
     units: [LX-00167, LX-00169]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Вы с другом заблудились. Как попросить прохожего о помощи?"
+    options: ["Can you help us?", "Can you help we?", "Can you help our?"]
+    answer: "Can you help us?"
+    hint_ru: "После глагола «мы» меняется."
+    explanation_ru: "Can you help us? — после help нужна форма us, а не we."
+    units: [LX-00343, LX-00347]
+  - order: 6
+    kind: fill
+    stage: substitution
+    prompt_ru: "Ваш друг потерялся. Попросите: «Можете ему помочь?»"
+    prompt_en: "Can you help ___?"
+    answer: "him"
+    hint_ru: "he после глагола превращается в…"
+    explanation_ru: "Can you help him? — he после глагола становится him."
+    units: [LX-00341]

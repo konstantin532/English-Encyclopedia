@@ -4,9 +4,9 @@ week: 9
 order: 18
 focus: N
 minutes: 40
-title: "По буквам и по цифрам: алфавит, Can you spell…? и номер телефона"
+title: "По буквам, по цифрам и по телефону: Can you spell…?, call, text"
 summary: "Английский алфавит и его ловушки для русскоязычных. Как продиктовать фамилию по буквам и номер телефона по цифрам и понять, когда диктуют вам."
-units: [LX-00183, LX-00184, LX-00185, LX-00187, LX-00189, LX-00190]
+units: [LX-00183, LX-00184, LX-00185, LX-00187, LX-00189, LX-00190, LX-00351, LX-00352, LX-00353, LX-00354, LX-00355, LX-00356, LX-00359, LX-00360, LX-00361, LX-00362, LX-00363, LX-00364, LX-00365, LX-00366, LX-00367, LX-00368]
 sound_notes:
   - text: "B-E-L-O-V-A"
     ipa: "/bi i ɛl oʊ vi eɪ/"
@@ -76,9 +76,22 @@ layers:
       - Ч — CH: Chernova; Х — KH: Kharitonova.
 
       Поэтому продиктовать Shcherbakova — целое приключение. Произносите буквы медленно и группами по 3–4.
+
+      Слова для телефона и сообщений:
+
+      - [D5]call[/] — звонить, [D5]answer[/] — отвечать, [D5]text[/] — писать сообщение
+      - [D2]send[/] [T1]a[/] [S9]message[/] — отправить сообщение, [S9]email[/] — электронное письмо
+      - [A2]now[/] — сейчас, [A2]later[/] — позже, [A2]today[/] — сегодня, [A2]tomorrow[/] — завтра
+
+      > [D7]Can[/] [T8]I[/] [D5]speak[/] [P2]to[/] [S1]Tom[/], [O8]please[/]? — Можно Тома к телефону?
+      > [D5]Call[/] [T8]me[/] [A2]later[/]. — Перезвоните мне позже.
+      > [O2]Sorry[/], [T8]it[/] [D1]is[/] [T1]the[/] [J3]wrong[/] [S9]number[/]. — Извините, вы ошиблись номером.
+      > [O4]Okay[/]! [O1]See you[/] [P3]at[/] [N3]nine[/]! [O1]Bye[/]! — Хорошо! До встречи в девять! Пока!
+
+      В анкетах: [S9]first name[/] — имя, [J8]last[/] [S9]name[/] — фамилия. Адрес почты диктуют так: anna **at** mail **dot** com.
   - number: 7
     body: |
-      Четыре задания: узнать вопрос о фамилии, понять букву на слух, собрать вопрос о номере и продиктовать в новой ситуации.
+      Шесть заданий: узнать вопрос о фамилии, понять букву на слух, собрать вопрос о номере, продиктовать в новой ситуации, попросить человека к телефону и попросить перезвонить.
 exercises:
   - order: 1
     kind: choice
@@ -117,3 +130,22 @@ exercises:
     hint_ru: "Три буквы: T, O, M."
     explanation_ru: "T-O-M — «ти, оу, эм». По буквам диктуют медленно, с короткими паузами."
     units: [LX-00183, LX-00187]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Вы звоните в мастерскую и хотите поговорить с Томом. Что сказать?"
+    options: ["Can I speak to Tom, please?", "Can I spell Tom, please?", "Can I call Tom's phone number?"]
+    answer: "Can I speak to Tom, please?"
+    hint_ru: "speak to — «поговорить с»."
+    explanation_ru: "Can I speak to Tom, please? — так просят позвать человека к телефону."
+    units: [LX-00367]
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: "Вы заняты и просите перезвонить. Скажите «Позвони мне позже»."
+    prompt_en: "___"
+    answer: "Call me later."
+    accepted: ["Call me later", "Call me later, please.", "Please call me later.", "Text me later."]
+    hint_ru: "call + me + later."
+    explanation_ru: "Call me later. — call me (позвони мне), later — позже. Можно и Text me later."
+    units: [LX-00351, LX-00360, LX-00368]

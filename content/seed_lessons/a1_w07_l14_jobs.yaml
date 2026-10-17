@@ -4,9 +4,9 @@ week: 7
 order: 14
 focus: S
 minutes: 40
-title: "Профессии: I am a teacher и What do you do?"
+title: "Профессии и места: I am a nurse, I work in an office"
 summary: "Как назвать свою работу и спросить о чужой. Почему перед профессией нужен a: I am a teacher. Что значит странный вопрос What do you do?"
-units: [LX-00142, LX-00143, LX-00144, LX-00145, LX-00146, LX-00151, LX-00152]
+units: [LX-00142, LX-00143, LX-00144, LX-00145, LX-00146, LX-00151, LX-00152, LX-00319, LX-00320, LX-00321, LX-00322, LX-00323, LX-00324, LX-00325, LX-00326, LX-00327, LX-00328, LX-00329, LX-00330, LX-00331, LX-00335, LX-00336]
 sound_notes:
   - text: "What do you do?"
     ipa: "/ˌwʌt də jə ˈdu/"
@@ -46,6 +46,20 @@ layers:
       - Перед гласным звуком — an: an engineer.
       - Место: I work at a school, at a cafe, at home.
       - О другом человеке: She is a teacher. He works at a school.
+
+      Ещё профессии — запоминайте сразу с a или an:
+
+      - [T1]a[/] [S9]nurse[/] — медсестра, [T1]a[/] [S9]waiter[/] — официант, [T1]a[/] [S9]student[/] — студент
+      - [T1]an[/] [S9]engineer[/] — инженер, [T1]a[/] [S9]manager[/] — менеджер, [T1]a[/] [S9]farmer[/] — фермер
+      - [T1]a[/] [S9]writer[/] — писатель, [T1]a[/] [S9]singer[/] — певец: глагол + -er = «тот, кто делает»
+
+      Место работы: at — точка на карте, in — внутри здания.
+
+      > [A6]Where[/] [D1]do[/] [T8]you[/] [D2]work[/]? — Где ты работаешь?
+      > [T8]I[/] [D2]work[/] [P1]in[/] [T1]an[/] [S4]office[/]. — Я работаю в офисе.
+      > [T8]She[/] [D2]works[/] [P1]at[/] [T1]a[/] [S4]hospital[/]. — Она работает в больнице.
+
+      [S9]job[/] — работа-должность (I like my job), [S9]boss[/] — начальник.
   - number: 4
     body: |
       Почему нужен a? По-русски «Я учитель» — без слов между. В английском профессия — один из многих учителей, поэтому перед ней ставят **a**, «один из». Без a фраза звучит неправильно.
@@ -71,7 +85,7 @@ layers:
       Во множественном числе a исчезает и появляется -s: They are teachers.
   - number: 7
     body: |
-      Четыре задания: понять вопрос о работе, вставить a, собрать ответ и рассказать о своей работе в новой ситуации.
+      Шесть заданий: понять вопрос о работе, вставить a, собрать ответ, рассказать о своей работе, выбрать an перед engineer и сказать, где работает мама.
 exercises:
   - order: 1
     kind: choice
@@ -110,3 +124,22 @@ exercises:
     hint_ru: "I am a + профессия."
     explanation_ru: "I am a doctor — в разговоре I'm a doctor."
     units: [LX-00144, LX-00152]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: "Как сказать «Он инженер»?"
+    options: ["He is an engineer.", "He is a engineer.", "He is engineer."]
+    answer: "He is an engineer."
+    hint_ru: "engineer начинается с гласного звука."
+    explanation_ru: "He is an engineer. — перед гласным звуком an, и артикль нужен всегда."
+    units: [LX-00322]
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: "Ваша мама — медсестра, работает в больнице. Скажите это двумя фразами."
+    prompt_en: "___"
+    answer: "My mom is a nurse. She works at a hospital."
+    accepted: ["My mom is a nurse. She works in a hospital.", "My mother is a nurse. She works at a hospital.", "My mother is a nurse. She works in a hospital.", "My mom's a nurse. She works at a hospital."]
+    hint_ru: "a nurse; she works…"
+    explanation_ru: "My mom is a nurse. She works at a hospital. — a перед профессией, -s после she. in a hospital тоже верно."
+    units: [LX-00319, LX-00329]
