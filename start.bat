@@ -50,7 +50,7 @@ rem --- 4. База данных и учебный контент ---
 echo [4/5] Обновляю базу и загружаю уроки...
 uv run python manage.py migrate -v0
 if not %errorlevel%==0 goto fail
-uv run python manage.py load_content
+uv run python manage.py load_content --preserve-admin-edits
 if not %errorlevel%==0 goto fail
 
 rem --- 5. Сервер ---

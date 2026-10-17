@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+{% load static admin_studio %}
+{% block title %}{{ title }} · English Encyclopedia Studio{% endblock %}
+{% block responsive %}{{ block.super }}<link rel="stylesheet" href="{% static 'css/admin-studio.css' %}">{% endblock %}
+{% block branding %}<a class="studio-brand" href="{% url 'admin:index' %}"><span class="studio-monogram" aria-hidden="true">Ee<span>.</span></span><span>English Encyclopedia<small>Редакторская студия</small></span></a>{% endblock %}
+{% block welcome-msg %}<span class="studio-account">{{ user.get_short_name|default:user.get_username }}</span>{% endblock %}
+{% block footer %}<span>English Encyclopedia</span><span>Учи правильно.</span>{% endblock %}
+
+{% block nav-global %}{% if has_permission %}<details class="studio-mobile-menu"><summary>Разделы студии</summary><nav aria-label="Мобильная навигация"><a href="{% url 'admin:index' %}">Обзор студии</a>{% for app in available_apps|studio_apps %}{% for model in app.models %}{% if model.admin_url %}<a href="{{ model.admin_url }}">{{ model.name }}</a>{% endif %}{% endfor %}{% endfor %}</nav></details>{% endif %}{% endblock %}

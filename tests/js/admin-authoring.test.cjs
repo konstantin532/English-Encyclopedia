@@ -1,0 +1,14 @@
+const test=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const Text=require('../../static/js/admin-authoring-model.js');
+test('unchanged annotated text round trips byte for byte',()=>{for(const raw of ['[T8]It[/][D1]\'s[/] [T1]a[/] [S6]cat[/]!', '[S1-#d32f2f]Anna[/] says hello.','Plain text.'])assert.equal(Text.encode(Text.decode(raw)),raw);});
+test('editing one word preserves other word annotations',()=>{const s=Text.decode('[T8]I[/] [D3]like[/] [S3]coffee[/].');Text.edit(s,'I like tea.');assert.equal(Text.encode(s),'[T8]I[/] [D3]like[/] tea.');Text.mark(s,7,10,'S3');assert.equal(Text.encode(s),'[T8]I[/] [D3]like[/] [S3]tea[/].');});
+test('insertion shifts later annotations without losing contraction boundaries',()=>{const s=Text.decode('[T8]It[/][D1]\'s[/] [S6]Box[/].');Text.edit(s,'Hello! It\'s Box.');assert.equal(Text.encode(s),"Hello! [T8]It[/][D1]'s[/] [S6]Box[/].");});
+test('removing a mark leaves readable words and adjacent marks intact',()=>{const s=Text.decode('[T8]I[/] [D3]like[/] [S3]coffee[/].');Text.mark(s,7,13,null);assert.equal(Text.encode(s),'[T8]I[/] [D3]like[/] coffee.');assert.equal(Text.mark(s,0,0,'S1'),false);});
+test('pasted multiline text stays plain and serializable',()=>{const s=Text.decode('[S1]Anna[/].');Text.edit(s,'Новый абзац\n\n<script>hello</script>');assert.equal(Text.encode(s),'Новый абзац\n\n<script>hello</script>');});
+test('class reassignment cannot nest annotations',()=>{const s=Text.decode('[T8]I[/] [D3]like[/].');Text.mark(s,0,6,'S9');assert.equal(Text.encode(s),'[S9]I like[/].');});
+test('browser controller syntax is valid',()=>{assert.doesNotThrow(()=>new Function(fs.readFileSync('static/js/admin-authoring.js','utf8')));});
+
+test('bulk text becomes plain narration paragraphs without overwriting metadata',()=>{assert.deepEqual(Text.paragraphsToLines('First paragraph.\r\n\r\nSecond line.\r\nContinued.','tom'),[{speaker:'tom',kind:'narration',text:'First paragraph.'},{speaker:'tom',kind:'narration',text:'Second line.\nContinued.'}]);assert.deepEqual(Text.paragraphsToLines('  \n\n','anna'),[]);});
+
+test('poem insertion moves hints and gaps with unchanged lines',()=>{assert.deepEqual(Text.reconcilePoem(['Hello','World'],['New','Hello','World'],[{ipa:'one'},{ru:'two'}],[{line:2,word:'World',extra:true}]),{pronunciation:[{},{ipa:'one'},{ru:'two'}],gaps:[{line:3,word:'World',extra:true}],removed:0});});
+test('changed poem lines lose stale hints but other lines retain metadata',()=>{assert.deepEqual(Text.reconcilePoem(['Hello','World'],['Changed','World'],[{ipa:'one'},{custom:'two'}],[{line:1,word:'Hello'}]),{pronunciation:[{},{custom:'two'}],gaps:[],removed:1});});
+test('stanzas and markup do not change exercise numbering',()=>{assert.deepEqual(Text.poemLines('[S1]Hello[/]\n\nWorld\n'),['Hello','World']);assert.deepEqual(Text.reconcilePoem(['Hello'],['Hello'],[{ipa:'hi'}],[{line:1,word:'Hello'}]).gaps,[{line:1,word:'Hello'}]);});

@@ -1,0 +1,10 @@
+{% extends "admin/change_list.html" %}{% load admin_list %}
+{% block bodyclass %}{{ block.super }} studio-users{% endblock %}
+{% block content_title %}<div class="studio-page-heading"><div><p class="studio-eyebrow">Люди / English Encyclopedia</p><h1>Пользователи</h1><p>Каждый аккаунт — чей-то следующий шаг в английском.</p></div><ul class="object-tools studio-page-actions">{% change_list_object_tools %}</ul></div>{% endblock %}
+{% block content %}<div class="studio-user-summary" aria-label="Сводка по текущей выборке"><div><span>В текущей выборке</span><strong>{{ studio_user_stats.total }}</strong><small>Пользователей</small></div><div><span>Есть доступ</span><strong>{{ studio_user_stats.active }}</strong><small>Активных аккаунтов</small></div><div><span>Работают над платформой</span><strong>{{ studio_user_stats.team }}</strong><small>Участников команды</small></div></div>{{ block.super }}{% endblock %}
+{% block search %}<nav class="studio-role-tabs" aria-label="Фильтр по роли">{% for item in studio_role_tabs %}<a href="{{ item.url }}"{% if item.selected %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}</nav>{{ block.super }}<details class="studio-filter-panel"{% if cl.has_active_filters %} open{% endif %}><summary>Уточнить выборку <span>Роль, статус, уровень и группы</span></summary><div class="studio-filter-grid">{% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}</div>{% if cl.has_active_filters %}<a class="studio-clear-filters" href="{{ cl.clear_all_filters_qs }}">Сбросить фильтры</a>{% endif %}</details>{% endblock %}
+{% block pagination %}{{ block.super }}<p class="studio-table-note">Роль показывает права пользователя, статус — доступность его аккаунта.</p>{% endblock %}
+
+{% block object-tools %}{% endblock %}
+
+{% block filters %}{% endblock %}

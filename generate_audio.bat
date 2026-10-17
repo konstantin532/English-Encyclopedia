@@ -20,7 +20,7 @@ uv run python scripts\generate_story_audio.py --all
 if not %errorlevel%==0 goto fail
 
 echo [4/4] Обновляю сайт...
-uv run python manage.py load_content
+uv run python manage.py load_content --preserve-admin-edits
 if not %errorlevel%==0 goto fail
 echo.
 echo Готово. Запустите start.bat и откройте Истории — История 1.
