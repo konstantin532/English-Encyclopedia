@@ -83,6 +83,19 @@
         <p data-a1-hint></p>
         <button type="button" class="active-a1-btn" data-a1-play-model>▶ Послушать образец</button>
       </div>
+      <div class="active-a1-builder" data-a1-builder hidden>
+        <h3>Соберите фразу из слов</h3>
+        <p>Уже ответили самостоятельно? Теперь закрепите английский порядок слов: нажимайте на элементы по очереди. Можно отменить последний выбор.</p>
+        <div data-a1-builder-pool class="active-a1-builder-pool" role="group" aria-label="Слова для составления фразы"></div>
+        <p class="active-a1-builder-label">Ваша собранная фраза:</p>
+        <p data-a1-builder-selected lang="en" aria-live="polite" class="active-a1-builder-result">—</p>
+        <div class="active-a1-actions">
+          <button type="button" class="active-a1-btn" data-a1-builder-undo disabled>↶ Отменить слово</button>
+          <button type="button" class="active-a1-btn" data-a1-builder-reset>Начать заново</button>
+          <button type="button" class="active-a1-btn active-a1-btn-primary" data-a1-builder-check>Проверить порядок</button>
+        </div>
+        <p class="active-a1-feedback" data-a1-builder-feedback role="status" aria-live="polite" hidden></p>
+      </div>
     </form>
   </section>
 
