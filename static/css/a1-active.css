@@ -78,3 +78,11 @@
   .active-a1-mission-nav { width:100%; justify-content:space-between; }
   .active-a1-mission-bottom>.active-a1-btn { flex:1; }
 }
+
+/* Six story cards are visible beneath each canonical A1 lesson. */
+.a1-mission-previews { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:.75rem; list-style:none; counter-reset:scenes; padding:0; margin:1rem 0; }
+.a1-mission-previews li { counter-increment:scenes; border:1px solid var(--rule); border-radius:12px; padding:1rem; background:var(--surface); line-height:1.5; }
+.a1-mission-previews li::before { content:counter(scenes,decimal-leading-zero); display:block; color:var(--studio-green); font-weight:700; font-size:.8rem; padding-bottom:.3rem; }
+.a1-mission-previews li strong { display:block; color:var(--ink); font-family:var(--font-read); font-size:1.05rem; }
+.a1-mission-previews li p { color:var(--ink-soft); font-size:.9rem; margin:.45rem 0 .8rem; }
+.a1-mission-previews li a { color:var(--studio-green); display:inline-block; min-height:44px; padding:.55rem 0; font-weight:650; }
