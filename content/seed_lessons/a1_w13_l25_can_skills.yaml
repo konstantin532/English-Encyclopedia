@@ -125,7 +125,7 @@ exercises:
     prompt_en: "Can you speak English? — ___"
     answer: "Yes, I can. I can speak Russian and English."
     accepted: ["Yes, I can.", "Yes, I can", "Yes, I can. I speak Russian and English.", "Yes, I can speak English.", "Yes. I can speak Russian and English.", "Yes, I can. I can speak Russian and English"]
-    hint_ru: "Yes, I can + вторая фраза о языках."
+    hint_ru: "На Can you…? достаточно Yes, I can. Фразу о двух языках добавьте только по желанию."
     explanation_ru: "На Can you speak English? достаточно Yes, I can. Если вы хотите назвать оба языка, можно добавить I can speak Russian and English. Это образец по условию задания, а не предположение об умениях ученика."
     units: [LX-00239, LX-00243, LX-00244]
   - order: 5
