@@ -25,6 +25,11 @@ def read_yaml(path):
     return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
 
 
+def a1_media_files(folder, prefix, count):
+    accepted = {f"{prefix}{number:02d}_" for number in range(1, count + 1)}
+    return sorted(p for p in folder.glob(f"{prefix}*.yaml") if p.name[:4] in accepted)
+
+
 def audit(root=ROOT):
     """Check the real YAML/JSON inventory; never infer genuine learning from it."""
     folder = root / "content"
@@ -33,8 +38,9 @@ def audit(root=ROOT):
     lexical = [read_yaml(p) for p in sorted((folder / "seed_lexicon").glob("*.yaml"))]
     units = [unit for pack in lexical if pack.get("level") == "A1"
              for unit in pack.get("units", [])]
-    story_files = sorted((folder / "seed_stories").glob("s*.yaml"))
-    poem_files = sorted((folder / "seed_poems").glob("p*.yaml"))
+    # Do not mistake future A1+ stories and poems for A1 inventory drift.
+    story_files = a1_media_files(folder / "seed_stories", "s", 5)
+    poem_files = a1_media_files(folder / "seed_poems", "p", 7)
     stories = [read_yaml(p) for p in story_files]
     poems = [read_yaml(p) for p in poem_files]
     scenes = [row for p in sorted((folder / "active_a1").glob("scenarios_*.json"))
