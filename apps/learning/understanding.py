@@ -77,8 +77,12 @@ def scaffold_bank():
         steps = item.get("steps", [])
         task = item.get("transfer_variant", {})
         if len(steps) != 3 or any(
-            not all(isinstance(step.get(k), str) and len(step[k].strip()) >= 8
-                    for k in ("example_en", "example_ru", "why_ru"))
+            not (isinstance(step.get("example_en"), str)
+                 and len(step["example_en"].strip()) >= 3
+                 and isinstance(step.get("example_ru"), str)
+                 and len(step["example_ru"].strip()) >= 3
+                 and isinstance(step.get("why_ru"), str)
+                 and len(step["why_ru"].strip()) >= 25)
             for step in steps
         ):
             raise ValueError("Incomplete beginner explanation: " + item["slug"])
