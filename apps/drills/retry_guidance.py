@@ -17,6 +17,8 @@ PILOT_SLUGS = frozenset({
     "a1-have-like-can-do",
     "a1-cafe-order",
     "a1-numbers-1-20",
+    "a1-family-photo",
+    "a1-family-possession",
 })
 
 
