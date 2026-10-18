@@ -295,7 +295,7 @@ code { font-family: var(--font-read); font-style: italic; }
 .speech-notice { font-size: var(--step--1); color: var(--ink-soft); }
 .speech-mode-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); margin-block: var(--space-3); }
 .speech-mode-grid .btn { white-space: normal; min-height: 44px; padding: 8px; line-height: 1.25; }
-.speech-mode-grid [aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.speech-mode-grid .btn[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
 .speech-instruction { font-weight: 550; margin-top: var(--space-4); }
 .speech-card { padding: var(--space-4); border-left: 3px solid var(--ink); background: var(--paper); border-radius: var(--radius-s); }
 .speech-card p { margin: 0; }

@@ -83,7 +83,7 @@ class A1PedagogicalContinuityTests(SimpleTestCase):
                 self.assertEqual(lesson["order"], number)
                 self.assertEqual(lesson["week"], (number + 1) // 2)
                 self.assertEqual([x["number"] for x in lesson["layers"]], list(range(1, 8)))
-                expected = 5 if number in (3, 4) else 4 if number == 6 else 6
+                expected = 4 if number == 6 else 6
                 self.assertEqual([x["order"] for x in lesson["exercises"]],
                                  list(range(1, expected + 1)))
                 for exercise in lesson["exercises"]:

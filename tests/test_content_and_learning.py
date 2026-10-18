@@ -36,12 +36,12 @@ class ContentTests(TestCase):
         ensure_content()
 
     def test_packages_loaded(self):
-        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 480)
+        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 500)
         self.assertEqual(Lesson.objects.filter(level__code="A1").count(), 28)
         for slug in ["a1-verb-be", "a1-determiners-a-the-this-my", "a1-have-like-can-do"]:
             lesson = Lesson.objects.get(slug=slug)
             self.assertEqual(lesson.layers.count(), 7, slug)
-            self.assertEqual(lesson.exercises.count(), 5, slug)
+            self.assertEqual(lesson.exercises.count(), 5 if slug == "a1-verb-be" else 6, slug)
         lesson = Lesson.objects.get(slug="a1-nouns-first-words")
         self.assertEqual(lesson.layers.count(), 7)
         self.assertEqual(lesson.exercises.count(), 4)
@@ -49,7 +49,7 @@ class ContentTests(TestCase):
 
     def test_loader_is_idempotent(self):
         call_command("load_content", verbosity=0)
-        self.assertEqual(LexicalUnit.objects.count(), 480)
+        self.assertEqual(LexicalUnit.objects.count(), 500)
 
     def test_cefr_only_with_source(self):
         for u in LexicalUnit.objects.exclude(cefr="unverified"):
