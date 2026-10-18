@@ -145,7 +145,7 @@ exercises:
     prompt_ru: "Новая ситуация: вы показываете гостю книгу и говорите, что она новая. Можно ответить одной или двумя короткими фразами."
     prompt_en: "___"
     answer: "This is my book. It is new."
-    accepted: ["This is my book. It's new.", "This is my book, it is new.", "This is my book. It is new", "This is my new book."]
+    accepted: ["This is my book. It's new.", "This is my book. It is new", "This is my new book."]
     hint_ru: "Сначала This is my…, потом It is…"
     explanation_ru: "This is my book. It is new. Сначала назвали книгу, потом сказали о её свойстве. Можно объединить: This is my new book — указатель my стоит перед new book."
     units: [LX-00008, LX-00027]
