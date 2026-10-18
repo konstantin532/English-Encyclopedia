@@ -1,0 +1,316 @@
+{
+  "a1-have-like-can-do": {
+    "1": [
+      [
+        "«Мне нравится чай». Какой порядок верный?",
+        "",
+        [
+          "I tea like.",
+          "I like tea.",
+          "I likes tea."
+        ],
+        1
+      ],
+      [
+        "«Мне нравится моя книга». Что сказать?",
+        "",
+        [
+          "I like my book.",
+          "I likes my book.",
+          "My book like I."
+        ],
+        0
+      ],
+      [
+        "«Мне нравится кофе». Выберите предложение.",
+        "",
+        [
+          "I coffee like.",
+          "I likes coffee.",
+          "I like coffee."
+        ],
+        2
+      ],
+      [
+        "Вы говорите, что вам нравится дом.",
+        "",
+        [
+          "I like this house.",
+          "I likes this house.",
+          "I house this like."
+        ],
+        0
+      ],
+      [
+        "Вы говорите, что вам нравится комната.",
+        "",
+        [
+          "I room like.",
+          "I like my room.",
+          "I likes my room."
+        ],
+        1
+      ]
+    ],
+    "2": [
+      [
+        "Вопрос: «Do you like coffee?» — ответ «Да».",
+        "Yes, I ___.",
+        [
+          "am",
+          "do",
+          "is"
+        ],
+        1
+      ],
+      [
+        "Вопрос: «Do you have a book?» — ответ «Да».",
+        "Yes, I ___.",
+        [
+          "have",
+          "is",
+          "do"
+        ],
+        2
+      ],
+      [
+        "Вопрос: «Do you like tea?» — ответ «Нет».",
+        "No, I ___.",
+        [
+          "don't",
+          "not",
+          "am"
+        ],
+        0
+      ],
+      [
+        "Вопрос: «Do you have a phone?» — ответ «Да».",
+        "Yes, I ___.",
+        [
+          "do",
+          "is",
+          "can"
+        ],
+        0
+      ],
+      [
+        "Вопрос: «Do you like this house?» — ответ «Нет».",
+        "No, I ___.",
+        [
+          "am not",
+          "don't",
+          "is not"
+        ],
+        1
+      ]
+    ],
+    "3": [
+      [
+        "Попросите книгу вежливо.",
+        "",
+        [
+          "I can a book, please?",
+          "Do I book, please?",
+          "Can I have a book, please?"
+        ],
+        2
+      ],
+      [
+        "Попросите чай у гостеприимного соседа.",
+        "",
+        [
+          "Can I have tea, please?",
+          "Can I tea, please?",
+          "I can tea, please?"
+        ],
+        0
+      ],
+      [
+        "Попросите воду вежливо.",
+        "",
+        [
+          "Can have I water, please?",
+          "Can I have water, please?",
+          "Do I water, please?"
+        ],
+        1
+      ],
+      [
+        "Попросите телефон, чтобы позвонить.",
+        "",
+        [
+          "Can I a phone, please?",
+          "I can phone, please?",
+          "Can I have a phone, please?"
+        ],
+        2
+      ],
+      [
+        "Попросите чашку кофе.",
+        "",
+        [
+          "I can a coffee, please?",
+          "Can I have a coffee, please?",
+          "Do I a coffee, please?"
+        ],
+        1
+      ]
+    ],
+    "4": [
+      [
+        "Спросите: «У тебя есть телефон?»",
+        "",
+        [
+          "Do you have a phone?",
+          "You do have a phone?",
+          "Do have you a phone?"
+        ],
+        0
+      ],
+      [
+        "Спросите: «У тебя есть книга?»",
+        "",
+        [
+          "Have you do a book?",
+          "You have do a book?",
+          "Do you have a book?"
+        ],
+        2
+      ],
+      [
+        "Спросите: «У тебя есть кот?»",
+        "",
+        [
+          "Do you a cat have?",
+          "Do you have a cat?",
+          "You do have a cat?"
+        ],
+        1
+      ],
+      [
+        "Спросите: «У тебя есть вода?»",
+        "",
+        [
+          "Do you have water?",
+          "You do water have?",
+          "Do water you have?"
+        ],
+        0
+      ],
+      [
+        "Спросите: «У тебя есть кофе?»",
+        "",
+        [
+          "Do have you coffee?",
+          "Do coffee you have?",
+          "Do you have coffee?"
+        ],
+        2
+      ]
+    ],
+    "5": [
+      [
+        "Вы хотите узнать, есть ли у Тома книга. Спросите его напрямую.",
+        "",
+        [
+          "You do have a book?",
+          "Do you have a book?",
+          "Do you book have?"
+        ],
+        1
+      ],
+      [
+        "Спросите друга, есть ли у него телефон.",
+        "",
+        [
+          "Do you have a phone?",
+          "Have do you a phone?",
+          "You have do a phone?"
+        ],
+        0
+      ],
+      [
+        "Спросите гостя, есть ли у него вода.",
+        "",
+        [
+          "Do you water have?",
+          "Do have you water?",
+          "Do you have water?"
+        ],
+        2
+      ],
+      [
+        "Спросите нового соседа, есть ли у него дом.",
+        "",
+        [
+          "Do you have a house?",
+          "Do you house have?",
+          "Have you do a house?"
+        ],
+        0
+      ],
+      [
+        "Спросите знакомого, есть ли у него друг.",
+        "",
+        [
+          "You do have a friend?",
+          "Do you have a friend?",
+          "Do you a friend have?"
+        ],
+        1
+      ]
+    ],
+    "6": [
+      [
+        "Попросите один стул, если какой именно — неважно.",
+        "",
+        [
+          "Can I chair have, please?",
+          "Can I have a chair, please?",
+          "Can have I a chair, please?"
+        ],
+        1
+      ],
+      [
+        "Попросите одну книгу вежливо.",
+        "",
+        [
+          "Can I have a book, please?",
+          "Do I have book, please?",
+          "Can I a book, please?"
+        ],
+        0
+      ],
+      [
+        "Попросите один телефон вежливо.",
+        "",
+        [
+          "I can have phone please?",
+          "Can I phone a please?",
+          "Can I have a phone, please?"
+        ],
+        2
+      ],
+      [
+        "Попросите стакан воды, используя известные слова.",
+        "",
+        [
+          "Can I have water, please?",
+          "Can I water, please?",
+          "Have I can water, please?"
+        ],
+        0
+      ],
+      [
+        "Попросите один стол, который вам нужен, но не определён заранее.",
+        "",
+        [
+          "Can I a table have, please?",
+          "Can I have a table, please?",
+          "Can I table, please?"
+        ],
+        1
+      ]
+    ]
+  }
+}
