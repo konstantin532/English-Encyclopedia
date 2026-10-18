@@ -29,7 +29,7 @@ contractions:
 layers:
   - number: 1
     body: |
-      Вы уже говорили «не» с be: it is not, I am not. С обычными глаголами — have, get, know — нужен помощник **do / does** и **not**.
+      Раньше вы отрицали **be** (*it is not*) и **can** (*I can't sleep*). Теперь отрицание **обычных смысловых глаголов в Present Simple**: *have, get, know*. Здесь нужен помощник **do / does + not**. Нельзя механически добавлять *don't* к любой английской конструкции: с **be** и **can** правила другие.
 
       > [T1]The[/] [S9]address[/] [D1]is[/] [P1]on[/] [T1]the[/] [S2]envelope[/]. [C5]But[/] [T8]I[/] [D1]do[/] [X1]not[/] [D1]have[/] [T1]a[/] [S2]stamp[/]. — Адрес на конверте. Но у меня нет марки.
       > [T1]The[/] [J2]old[/] [S2]mailbox[/]? [T8]It[/] [D1]does[/] [X1]not[/] [D2]get[/] [S9]letters[/]. — Старый ящик? Туда письма не приходят.
@@ -48,11 +48,11 @@ layers:
 
       - I, you, we, they — **don't**: I don't know.
       - he, she, it, одна вещь — **doesn't**: it doesn't get letters.
-      - После don't / doesn't глагол без -s: she doesn't live, а не «doesn't lives».
+      - После **don't / doesn't** смысловой глагол остаётся в **начальной форме**: *she doesn't live*. Не *doesn't lives*: форму третьего лица уже показывает *does*.
       - Отрицание с be — без do: it is not, I am not.
   - number: 4
     body: |
-      Почему -s исчезает и тут? Как в вопросе: окончание уходит в помощник. doesn't = does + not, а в does уже есть -s.
+      **Почему doesn't live, а не doesn't lives?** Форму третьего лица выражает помощник **does**; **not** делает её отрицательной, а смысловой глагол остаётся в **начальной форме**. *Doesn't* — сокращение от *does not*, а не новый смысловой глагол. «-s переехало» — лишь удобный образ, не буквальное действие.
 
       - My mother lives in Russia. → My mother doesn't live in Russia.
       - The mailbox gets letters. → The mailbox doesn't get letters.
@@ -66,7 +66,7 @@ layers:
 
       - I don't know — самая частая фраза для «не знаю». Можно смягчить: Sorry, I don't know.
       - I don't have… — «у меня нет…»: I don't have a stamp, I don't have time.
-      - Полные do not и does not звучат строго или подчёркнуто. В разговоре — сокращения.
+      - Полные **do not / does not** тоже правильны и естественны, особенно при смысловом выделении. Сокращения **don't / doesn't** очень часты в разговорном американском английском.
 
       Почтовая ситуация: нет вещи или информации.
 
@@ -81,10 +81,10 @@ layers:
       Ловушки:
 
       - «I not have» — пропущен помощник. Правильно: I don't have.
-      - «He don't know» — с he нужен doesn't: He doesn't know. (He don't слышно в песнях и фильмах, но это просторечие.)
+      - В **стандартном американском английском** с *he* используем **doesn't**: *He doesn't know*. *He don't* можно услышать в отдельных разговорных диалектах, но для нашего учебного стандарта эта форма не подходит.
       - «She doesn't lives» — лишнее -s.
 
-      Русское «у меня нет» почти всегда превращается в I don't have.
+      **I don't have** — частый способ сказать «у меня нет» в американском английском, когда говорим об отсутствии вещи у человека. Но **«здесь нет…»** — другая задача, для неё мы уже изучали **there isn't / there is no**. Сравните смысл владельца и наличие в месте.
   - number: 7
     body: |
       Шесть заданий: выбрать don't или doesn't, вставить отрицание, собрать фразу, ответить в новой ситуации, выбрать отрицание для Тома и вежливо сообщить, что вы не знаете индекс.
@@ -114,7 +114,7 @@ exercises:
     prompt_ru: "Соберите: «Мой друг не живёт в России»."
     options: [live, friend, doesn't, My, in, Russia]
     answer: "My friend doesn't live in Russia"
-    hint_ru: "friend — он: doesn't, live без -s."
+    hint_ru: "Один друг — значит форма третьего лица doesn't; после неё live без -s."
     explanation_ru: "My friend doesn't live in Russia. -s ушло в doesn't."
     units: [LX-00230]
   - order: 4
