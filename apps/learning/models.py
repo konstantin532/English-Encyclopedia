@@ -189,6 +189,25 @@ class IndependentAttempt(models.Model):
     task_variant = models.PositiveSmallIntegerField(default=0)
     # Learner reflection, never a machine-scored CEFR or speech grade.
     self_rubric = models.JSONField(default=dict, blank=True)
+
+    class TeacherVerdict(models.TextChoices):
+        UNREVIEWED = "unreviewed", "Не проверено преподавателем"
+        MEETS_TASK = "meets_task", "Смысл и форма подходят"
+        NEEDS_WORK = "needs_work", "Нужна доработка"
+        UNCLEAR = "unclear", "Неоднозначно, обсудить"
+
+    # Independent evidence stays unverified until a staff reviewer assesses it.
+    teacher_verdict = models.CharField(
+        max_length=16, choices=TeacherVerdict.choices,
+        default=TeacherVerdict.UNREVIEWED,
+    )
+    teacher_rubric = models.JSONField(default=dict, blank=True)
+    teacher_note = models.TextField(blank=True)
+    reviewed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True,
+        related_name="reviewed_independent_attempts",
+    )
+    reviewed_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
