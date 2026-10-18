@@ -75,7 +75,7 @@ def independent_check(request, slug):
     attempts = (IndependentAttempt.objects.filter(user=request.user, lesson=lesson)
                 .order_by("-created_at")[:12])
     return render(request, "learning/independent_check.html", {
-        "lesson": lesson, "tasks": [
+        "lesson": lesson, "guide": guide, "tasks": [
             {"key": key, "item": guide["tasks"][key],
              "title": {"meaning": "1. Понимаю смысл", "writing": "2. Пишу сам",
                        "transfer": "3. Переношу в новую ситуацию",
