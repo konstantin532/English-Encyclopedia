@@ -22,18 +22,19 @@ COUNT = 5
 def question_bank():
     root = settings.CONTENT_DIR / "manifests"
     bank = {}
-    for number in range(1, 7):
+    for number in range(1, 9):
         packet = json.loads((root / f"a1_delayed_review_{number:02d}.json").read_text(encoding="utf-8"))
         for slug, problems in packet.items():
             if slug in bank:
                 raise ValueError(f"Повтор раздела: {slug}")
             bank[slug] = problems
     if set(bank) != PILOT_SLUGS:
-        raise ValueError("Ожидаются ровно шесть уроков A1")
+        raise ValueError("Ожидаются ровно восемь уроков A1")
     for slug, exercises in bank.items():
         expected = {"a1-nouns-first-words": 4, "a1-verb-be": 5,
                     "a1-determiners-a-the-this-my": 6, "a1-have-like-can-do": 6,
-                    "a1-cafe-order": 6, "a1-numbers-1-20": 4}[slug]
+                    "a1-cafe-order": 6, "a1-numbers-1-20": 4,
+                    "a1-family-photo": 6, "a1-family-possession": 6}[slug]
         if set(exercises) != {str(i) for i in range(1, expected + 1)}:
             raise ValueError(f"Не все упражнения покрыты: {slug}")
         for number, variants in exercises.items():
