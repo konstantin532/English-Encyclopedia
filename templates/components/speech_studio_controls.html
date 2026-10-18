@@ -1,0 +1,42 @@
+{% comment %}Единый речевой тренажёр: данные берутся из уже проверенных строк произведения. Без внешнего ИИ и обязательного микрофона.{% endcomment %}
+<div class="speech-controls" data-speech-controls>
+  <p class="speech-notice">Тренируйте один маленький фрагмент за раз. Скорость не оценивается: сначала чёткость и смысл. Результат отмечаете вы сами.</p>
+  <div class="speech-mode-grid" role="group" aria-label="Режим тренировки речи">
+    <button type="button" class="btn btn-quiet btn-small" data-speech-mode="see" aria-pressed="true">1. Понять</button>
+    <button type="button" class="btn btn-quiet btn-small" data-speech-mode="echo" aria-pressed="false">2. Произнести</button>
+    <button type="button" class="btn btn-quiet btn-small" data-speech-mode="recall" aria-pressed="false">3. По памяти</button>
+    <button type="button" class="btn btn-quiet btn-small" data-speech-mode="transfer" aria-pressed="false">4. Перенести</button>
+  </div>
+  <p class="speech-instruction" data-speech-instruction>Прочитайте фрагмент, поймите его смысл и найдите ударное слово.</p>
+  <div class="speech-card">
+    <p class="speech-task" data-speech-task hidden></p>
+    <p class="speech-count" data-speech-position aria-live="polite">Фрагмент 1</p>
+    <p class="speech-current annotated" lang="en" data-speech-current>Выберите режим тренировки.</p>
+    <p class="speech-stress" data-speech-stress></p>
+  </div>
+  <div class="speech-actions">
+    <button class="btn btn-quiet btn-small" type="button" data-speech-prev>← Назад</button>
+    <button class="btn btn-quiet btn-small" type="button" data-speech-next>Следующий фрагмент →</button>
+    <button class="btn btn-quiet btn-small" type="button" data-speech-reveal hidden>Открыть текст</button>
+    <button class="btn btn-primary btn-small" type="button" data-speech-done>Мне удалось произнести</button>
+  </div>
+  <p class="speech-check" data-speech-status role="status" aria-live="polite">Отметок пока нет. Они не являются автоматической оценкой речи.</p>
+  <div class="speech-beat">
+    <h4>Ритм фразы</h4>
+    <p>Нажимайте в момент ударения, пока произносите строку. Это измерит только темп нажатий, а не качество английского.</p>
+    <button type="button" class="btn btn-quiet btn-small" data-speech-tap>Отстучать ударение</button>
+    <button type="button" class="btn btn-quiet btn-small" data-speech-reset-beat>Сбросить ритм</button>
+    <output data-speech-tempo aria-live="polite">Ритм ещё не задан.</output>
+  </div>
+  <div class="speech-record">
+    <h4>Послушать себя <small>(по желанию)</small></h4>
+    <p>В браузерах с поддержкой микрофона можно записать голос и сравнить с подсказкой. Аудио остаётся только в памяти этой страницы: на сервер не отправляется и при закрытии страницы исчезает. Автоматическая оценка произношения не выполняется.</p>
+    <div class="speech-actions">
+      <button type="button" class="btn btn-quiet btn-small" data-speech-record>Записать себя</button>
+      <button type="button" class="btn btn-quiet btn-small" data-speech-stop hidden>Остановить</button>
+      <button type="button" class="btn btn-quiet btn-small" data-speech-delete hidden>Удалить запись</button>
+    </div>
+    <audio controls data-speech-playback hidden aria-label="Запись вашей речи"></audio>
+    <p data-speech-record-status role="status" aria-live="polite"></p>
+  </div>
+</div>

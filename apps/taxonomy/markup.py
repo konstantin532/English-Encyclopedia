@@ -92,6 +92,15 @@ def render_block(text: str) -> str:
 
             items = "".join(example(line) for line in lines)
             parts.append(f'<div class="example annotated">{items}</div>')
+        elif lines[0].startswith("**Разбор:** "):
+            # Вопрос должен быть виден раньше правильного ответа.
+            # Нативный details доступен с клавиатуры и без JavaScript.
+            parts.append(
+                '<details class="lesson-diagnostic-answer">'
+                '<summary>Показать разбор после своей попытки</summary>'
+                f'<p>{render_inline(" ".join(lines))}</p>'
+                '</details>'
+            )
         elif all(line.startswith("- ") for line in lines):
             items = "".join(f"<li>{render_inline(line[2:])}</li>" for line in lines)
             parts.append(f"<ul>{items}</ul>")

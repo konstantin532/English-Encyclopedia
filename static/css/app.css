@@ -116,6 +116,26 @@ code { font-family: var(--font-read); font-style: italic; }
 .prose li { margin-bottom: var(--space-2); }
 .layer { padding: var(--space-6) 0; border-top: 1px solid var(--rule); scroll-margin-top: var(--space-5); }
 .layer:first-child { border-top: 0; padding-top: 0; }
+.lesson-diagnostic-answer {
+  margin-block: var(--space-3) var(--space-5);
+  padding-block: var(--space-2);
+  border-block: 1px solid var(--rule);
+}
+.lesson-diagnostic-answer summary {
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--ink);
+  line-height: 1.5;
+  padding-block: var(--space-2);
+}
+.lesson-diagnostic-answer summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.lesson-diagnostic-answer > p {
+  margin: var(--space-3) 0;
+}
+
 .layer h2 { font-size: var(--step-2); margin-bottom: var(--space-4); display: flex; gap: var(--space-3); align-items: baseline; }
 .layer-num { font-size: var(--step-1); color: var(--ink-faint); font-weight: 400; min-width: 1.4em; }
 .example { border-left: 3px solid var(--ink); padding: var(--space-2) 0 var(--space-2) var(--space-5); margin: 0 0 var(--space-5); font-size: 1.35rem; }
@@ -259,3 +279,37 @@ code { font-family: var(--font-read); font-style: italic; }
 .gap-mark[data-state="ok"] { color: var(--ok); }
 .gap-mark[data-state="no"] { color: var(--warn); }
 @media (max-width: 48rem) { .map-grid { grid-template-columns: 1fr; } }
+
+/* Речевая мастерская: скороговорки и стихи; доступно на телефоне. */
+.speech-studio {
+  margin-block: var(--space-5);
+  padding: clamp(14px, 3vw, 24px);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-m);
+  min-width: 0;
+}
+.speech-studio [hidden] { display: none !important; }
+.speech-studio h3, .speech-studio h4 { margin: 0 0 var(--space-2); font-size: var(--step-1); }
+.speech-studio p { overflow-wrap: anywhere; }
+.speech-notice { font-size: var(--step--1); color: var(--ink-soft); }
+.speech-mode-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); margin-block: var(--space-3); }
+.speech-mode-grid .btn { white-space: normal; min-height: 44px; padding: 8px; line-height: 1.25; }
+.speech-mode-grid [aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.speech-instruction { font-weight: 550; margin-top: var(--space-4); }
+.speech-card { padding: var(--space-4); border-left: 3px solid var(--ink); background: var(--paper); border-radius: var(--radius-s); }
+.speech-card p { margin: 0; }
+.speech-count { font-size: var(--step--1); color: var(--ink-faint); }
+.speech-current { font-size: clamp(1.15rem, 2.8vw, 1.6rem); min-height: 4rem; overflow-wrap: anywhere; }
+.speech-stress { color: var(--ink-soft); font-size: var(--step--1); line-height: 1.7; }
+.speech-actions { display: flex; gap: var(--space-2); flex-wrap: wrap; align-items: center; margin-block: var(--space-4); }
+.speech-actions button { white-space: normal; }
+.speech-check { color: var(--ink-soft); font-size: var(--step--1); }
+.speech-beat, .speech-record { border-top: 1px solid var(--rule); padding-top: var(--space-4); margin-top: var(--space-5); }
+.speech-beat p, .speech-record p { font-size: var(--step--1); line-height: 1.7; color: var(--ink-soft); }
+.speech-beat output { display: block; margin-top: var(--space-2); color: var(--ink); font-size: var(--step--1); }
+.speech-record audio { max-width: 100%; width: 100%; }
+@media (max-width: 450px) {
+  .speech-mode-grid { grid-template-columns: 1fr 1fr; }
+  .speech-actions .btn { flex: 1 1 42%; }
+}
