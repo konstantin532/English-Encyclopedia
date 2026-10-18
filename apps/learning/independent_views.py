@@ -42,6 +42,13 @@ def independent_check(request, slug):
         variant = 0
     guide = {**guide, "tasks": {**guide["tasks"], "transfer": choices[variant]}}
 
+    def model_for(attempt):
+        # An earlier variant must never be reviewed against today's new task.
+        if attempt.skill == "transfer":
+            stored = min(attempt.task_variant, len(choices) - 1)
+            return choices[stored]["model"]
+        return guide["tasks"][attempt.skill]["model"]
+
     result = None
     batch_results = None
     if request.method == "POST":
@@ -64,7 +71,7 @@ def independent_check(request, slug):
             attempt.self_rating = independence
             attempt.save(update_fields=["self_rubric", "self_rating"])
             result = {
-                "skill": attempt.skill, "model": guide["tasks"][attempt.skill]["model"],
+                "skill": attempt.skill, "model": model_for(attempt),
                 "label": "Самооценка сохранена отдельно от проверенных результатов.",
                 "attempt": attempt,
             }
@@ -83,7 +90,7 @@ def independent_check(request, slug):
             )
             attempt.self_rating = rating
             attempt.save(update_fields=["self_rating"])
-            result = {"skill": attempt.skill, "model": guide["tasks"][attempt.skill]["model"],
+            result = {"skill": attempt.skill, "model": model_for(attempt),
                       "label": RATINGS[rating], "attempt": attempt}
         elif request.POST.get("action") == "batch":
             # Reject a stale form rather than silently assess the wrong prompt.
