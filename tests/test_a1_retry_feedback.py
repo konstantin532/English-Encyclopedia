@@ -1,4 +1,4 @@
-"""Original A1 lessons 1–4 keep their questions; hints diagnose without leaking keys."""
+"""All A1 mistakes get a hint; the first eight have specific editorial diagnostics."""
 import json
 
 from django.conf import settings
@@ -18,7 +18,8 @@ class A1FeedbackTests(TestCase):
 
     def test_all_original_questions_have_an_authored_focus(self):
         data = json.loads((settings.CONTENT_DIR / "manifests" / "a1_retry_guidance.json").read_text("utf-8"))
-        self.assertEqual(set(data), PILOT_SLUGS)
+        self.assertEqual(len(PILOT_SLUGS), 28)
+        self.assertTrue(set(data) < PILOT_SLUGS)
         self.assertEqual(sum(len(items) for items in data.values()), 43)
         for slug, items in data.items():
             for ex in Exercise.objects.filter(lesson__slug=slug):
@@ -26,6 +27,11 @@ class A1FeedbackTests(TestCase):
                     focus = items[str(ex.order)]["focus"]
                     self.assertGreater(len(focus), 20)
                     self.assertEqual(retry_guidance(ex, "unexpected"), focus)
+        # The final twenty lessons reuse their existing teacher-written hint
+        # instead of inventing an explanation of a free response.
+        for ex in Exercise.objects.filter(lesson__slug__in=PILOT_SLUGS).select_related("lesson__level"):
+            with self.subTest(lesson=ex.lesson.slug, order=ex.order):
+                self.assertTrue(retry_guidance(ex, "unexpected").strip())
 
     def test_wrong_choice_gives_specific_feedback_but_no_answer(self):
         ex = Exercise.objects.get(lesson__slug="a1-verb-be", order=2)
