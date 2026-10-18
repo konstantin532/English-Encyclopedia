@@ -1,5 +1,4 @@
 """Разбор ошибки показывается после самостоятельной попытки, не до неё."""
-from html import unescape
 from pathlib import Path
 
 import yaml
@@ -30,6 +29,17 @@ class DiagnosticRevealTests(SimpleTestCase):
                 self.assertLess(html.index("Диагностика понимания:"), html.index("<details"))
                 self.assertLess(html.index("<summary>"), html.index("<strong>Разбор:</strong>"))
                 self.assertNotIn("<details class=\"lesson-diagnostic-answer\" open", html)
+
+    def test_american_can_cant_pronunciation_not_taught_as_an_absolute(self):
+        path = LESSONS / "a1_w11_l22_cant.yaml"
+        lesson = yaml.safe_load(path.read_text(encoding="utf-8"))
+        notes = lesson["sound_notes"]
+        self.assertEqual(len(notes), 3)
+        self.assertIn("взрыва", notes[0]["note_ru"])
+        self.assertIn("/kən/", notes[1]["note_ru"])
+        self.assertIn("не обязательное", notes[2]["note_ru"])
+        self.assertIn("AmE", lesson["contractions"][0]["note_ru"])
+        self.assertNotIn("t почти не слышно", notes[0]["note_ru"])
 
     def test_regular_explanations_and_examples_unchanged(self):
         regular = str(render_block("Это обычный абзац.\n\n> [T8]I[/] [D1]am[/] — Я есть"))
