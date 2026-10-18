@@ -55,6 +55,8 @@ class A1MicrostepTests(SimpleTestCase):
         self.assertIn("местоименное употребление", structure)
         self.assertIn("перед book", structure)
         self.assertIn("my не меняется", structure)
+        self.assertIn("Так вы уже видели образец для четвёртого задания", structure)
+        self.assertIn("[T8]It[/] [D1]is[/] [J2]new[/]", structure)
         self.assertIn("a my book", article)
         self.assertIn("исчисляемому существительному в единственном числе", article)
         self.assertIn("не то же самое, что русские падежные окончания", article)
@@ -63,6 +65,9 @@ class A1MicrostepTests(SimpleTestCase):
 
     def test_noun_transfer_prompt_matches_accepted_answers(self):
         lesson = load_first_week(1)
+        first = next(e for e in lesson["exercises"] if e["order"] == 1)
+        self.assertEqual(first["prompt_en"], "This is my new phone.")
+        self.assertNotIn("have", first["options"])
         exercise = next(e for e in lesson["exercises"] if e["order"] == 4)
         self.assertIn("одной или двумя", exercise["prompt_ru"])
         self.assertIn("This is my new book.", exercise["accepted"])
