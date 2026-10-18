@@ -15,6 +15,8 @@ PILOT_SLUGS = frozenset({
     "a1-verb-be",
     "a1-determiners-a-the-this-my",
     "a1-have-like-can-do",
+    "a1-cafe-order",
+    "a1-numbers-1-20",
 })
 
 
