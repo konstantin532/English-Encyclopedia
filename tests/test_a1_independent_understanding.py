@@ -22,7 +22,7 @@ class A1ClarityQualityGatesTests(SimpleTestCase):
             with self.subTest(gate=name):
                 self.assertTrue(good)
         self.assertEqual(len(understanding_bank()), 28)
-        self.assertEqual(sum(len(v["tasks"]) for v in understanding_bank().values()), 84)
+        self.assertEqual(sum(len(v["tasks"]) for v in understanding_bank().values()), 112)
 
     def test_missing_reason_fails_quality_gate(self):
         document = json.loads((settings.CONTENT_DIR / "manifests" /
@@ -70,7 +70,7 @@ class A1IndependentAssessmentTests(TestCase):
                 for i in range(1, 8):
                     self.assertContains(response, f'id="layer-{i}"')
 
-    def test_initial_independent_page_does_not_leak_any_of_three_models(self):
+    def test_initial_independent_page_does_not_leak_any_of_four_models(self):
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
         bank = understanding_bank()[self.lesson.slug]
@@ -81,7 +81,7 @@ class A1IndependentAssessmentTests(TestCase):
         self.assertNotContains(response, 'data-answer=')
         # Models are stored server-side; no correct text is rendered as key.
         self.assertNotContains(response, "Один возможный образец")
-        for key in ("meaning", "writing", "transfer"):
+        for key in ("meaning", "writing", "transfer", "explain"):
             self.assertContains(response, 'value="' + key + '"')
 
     def test_own_model_phrase_is_recorded_as_agreement_not_cefr(self):
@@ -112,6 +112,21 @@ class A1IndependentAssessmentTests(TestCase):
         self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.SELF_REPORTED)
         self.assertContains(response, "Как у вас получилось?")
         self.assertNotContains(response, "Вы ответили правильно")
+
+    def test_explain_rule_is_an_open_self_assessed_task(self):
+        task = understanding_bank()[self.lesson.slug]["tasks"]["explain"]
+        response = self.client.post(self.url, {"skill": "explain", "answer": task["model"]})
+        self.assertEqual(response.status_code, 200)
+        item = IndependentAttempt.objects.get(user=self.user)
+        self.assertEqual(item.outcome, IndependentAttempt.Outcome.SELF_REPORTED)
+        self.assertEqual(item.skill, "explain")
+        self.assertContains(response, "Как у вас получилось?")
+        result = self.client.post(self.url, {
+            "action": "rate", "attempt_id": item.pk, "rating": "independent",
+        })
+        self.assertEqual(result.status_code, 200)
+        item.refresh_from_db()
+        self.assertEqual(item.self_rating, "independent")
 
     def test_student_can_self_rate_only_their_own_transfer(self):
         self.client.post(self.url, {"skill": "transfer", "answer": "This is a phone."})
@@ -151,6 +166,6 @@ class A1IndependentAssessmentTests(TestCase):
         response = self.client.get(self.url)
         self.assertContains(response, 'name="viewport" content="width=device-width, initial-scale=1"')
         self.assertContains(response, "css/independent-check.css")
-        self.assertContains(response, "<textarea", count=3)
+        self.assertContains(response, "<textarea", count=4)
         self.assertContains(response, "maxlength=\"400\"", count=3)
-        self.assertContains(response, "Проверить и открыть пример", count=3)
+        self.assertContains(response, "Проверить и открыть пример", count=4)
