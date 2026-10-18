@@ -31,8 +31,8 @@
           "model": "This is my phone. It is new."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «This is my book.» работает такая схема: This is my + название.. Назовите причину, а не просто повторите фразу.",
-          "model": "Назвать вещь — значит помочь собеседнику понять, о чём речь."
+          "prompt": "Ученик хочет показать телефон и говорит: «This is my new». Какого слова ему не хватает? Объясните разницу между названием предмета и его признаком.",
+          "model": "Нужно назвать предмет: This is my new phone. Слово phone — существительное (вещь), new — прилагательное (признак)."
         }
       }
     },
@@ -65,8 +65,8 @@
           "model": "I am Anna. I am busy."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «I am at home.» работает такая схема: I am / you are / she is.. Назовите причину, а не просто повторите фразу.",
-          "model": "Русскому «Я дома» по-английски соответствует фраза с am."
+          "prompt": "Новичок написал: «I is at home». Исправьте одну ошибку и объясните свой выбор.",
+          "model": "I am at home. С местоимением I употребляют am, а не is."
         }
       }
     },
@@ -99,8 +99,8 @@
           "model": "This is a book. It is my book."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «This is my book.» работает такая схема: a book / this book / my book.. Назовите причину, а не просто повторите фразу.",
-          "model": "«Какая-то книга», «эта книга» и «моя книга» — разные смыслы."
+          "prompt": "Новичок показывает свою книгу: «This is a my book». Почему так не говорят? Исправьте фразу.",
+          "model": "This is my book. My уже определяет, чья это книга, поэтому артикль a перед my не ставят."
         }
       }
     },
@@ -133,8 +133,8 @@
           "model": "Can I have tea, please? Thank you."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «Can I have water, please?» работает такая схема: Do you like...? / Can I have...?. Назовите причину, а не просто повторите фразу.",
-          "model": "С can можно вежливо попросить действие, а с do спросить о привычке."
+          "prompt": "В кафе человек говорит: «Can I water, please?». Чего не хватает в просьбе и почему?",
+          "model": "Can I have water, please? После can нужно назвать действие — здесь have."
         }
       }
     },
@@ -167,8 +167,8 @@
           "model": "Sorry? Can you say it again, please?"
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «Tea, please.» работает такая схема: I'd like a tea, please.. Назовите причину, а не просто повторите фразу.",
-          "model": "I'd like и Can I have... помогают сделать заказ вежливым."
+          "prompt": "У посетителя есть выбор: резко сказать «Tea!» или «Tea, please». Какая просьба обычно мягче и почему?",
+          "model": "Tea, please звучит вежливее благодаря please и подходящей интонации. Также можно сказать I'd like tea, please."
         }
       }
     },
@@ -201,8 +201,8 @@
           "model": "Three coffees and one cookie, please."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «Two cookies, please.» работает такая схема: two coffees / three teas.. Назовите причину, а не просто повторите фразу.",
-          "model": "После two или three исчисляемые предметы часто получают -s."
+          "prompt": "Посетитель просит три печенья: «Three cookie, please». Найдите ошибку и объясните исправление.",
+          "model": "Three cookies, please. После числа three исчисляемое cookie стоит во множественном числе cookies."
         }
       }
     },
@@ -235,8 +235,8 @@
           "model": "This is my mom. She is forty."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «This is my sister.» работает такая схема: Who is this? / This is my sister.. Назовите причину, а не просто повторите фразу.",
-          "model": "В английском вопросе Who is this? нужен is."
+          "prompt": "На фотографии незнакомый человек. Новичок спрашивает: «Who this?». Как исправить и почему?",
+          "model": "Who is this? В английском вопросе нужна форма глагола be — is."
         }
       }
     },
@@ -269,8 +269,8 @@
           "model": "This is their house."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «This is Tom's book.» работает такая схема: his book / her bag / Tom's book.. Назовите причину, а не просто повторите фразу.",
-          "model": "Tom's phone — телефон Тома; her phone — её телефон."
+          "prompt": "Это телефон Тома. Ученик подписал фото «Toms phone». Исправьте надпись и объясните апостроф.",
+          "model": "Tom's phone. Притяжательное 's показывает, кому принадлежит телефон."
         }
       }
     },
@@ -303,8 +303,8 @@
           "model": "Is there water? Can I have some water, please?"
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «There are two books.» работает такая схема: There is water. / There are books.. Назовите причину, а не просто повторите фразу.",
-          "model": "С одним предметом — is; с несколькими — are."
+          "prompt": "На столе две книги. Ученик говорит: «There is two books». Исправьте форму и объясните.",
+          "model": "There are two books. С несколькими предметами в конструкции there ... используется are."
         }
       }
     },
@@ -337,8 +337,8 @@
           "model": "How much is the book? It is expensive."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «It is five dollars.» работает такая схема: How much is it? / It is five dollars.. Назовите причину, а не просто повторите фразу.",
-          "model": "Цена предмета и количество предметов — разные вопросы."
+          "prompt": "В магазине нужно спросить цену. Ученик спрашивает: «How old is this book?». Почему это не вопрос о цене?",
+          "model": "How much is this book? How old спрашивает о возрасте, how much — о стоимости."
         }
       }
     },
@@ -371,8 +371,8 @@
           "model": "I get up. I have breakfast."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «I work every day.» работает такая схема: I work. / Do you work?. Назовите причину, а не просто повторите фразу.",
-          "model": "I work описывает обычное действие; do помогает спросить о нём."
+          "prompt": "Ученик рассказывает о привычке: «I am drink tea every day». Что здесь лишнее и почему?",
+          "model": "I drink tea every day. Для обычного действия в Present Simple с I не ставим am перед drink."
         }
       }
     },
@@ -405,8 +405,8 @@
           "model": "What time do you get up? I get up at seven."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «I get up at seven.» работает такая схема: at seven / in the evening.. Назовите причину, а не просто повторите фразу.",
-          "model": "At seven — конкретный час; in the morning — часть дня."
+          "prompt": "Вы встаёте в семь часов. Ученик пишет: «I get up in seven». Найдите ошибку и объясните.",
+          "model": "I get up at seven. Перед конкретным временем на часах используем at."
         }
       }
     },
@@ -439,8 +439,8 @@
           "model": "Does Mia work at a cafe? No, she doesn't."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «She works at a school.» работает такая схема: She works. / Does she work?. Назовите причину, а не просто повторите фразу.",
-          "model": "В вопросе does забирает окончание: Does she work?"
+          "prompt": "Вопрос о работе Анны: «Does Anna works here?». Исправьте глагол и объясните почему.",
+          "model": "Does Anna work here? После does основной глагол остаётся в начальной форме work, без -s."
         }
       }
     },
@@ -473,8 +473,8 @@
           "model": "I am a teacher. I work at a school."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «I am a teacher.» работает такая схема: I am a teacher. / He is an engineer.. Назовите причину, а не просто повторите фразу.",
-          "model": "Перед одной профессией часто нужен a или an."
+          "prompt": "Новичок представляет себя: «I am teacher». Как звучит обычная полная фраза? Почему?",
+          "model": "I am a teacher. Перед названием одной исчисляемой профессии здесь нужен артикль a."
         }
       }
     },
@@ -507,8 +507,8 @@
           "model": "The shop is across from the park."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «Where is the bank?» работает такая схема: Where is the bank? / It is near the cafe.. Назовите причину, а не просто повторите фразу.",
-          "model": "In — внутри, next to — рядом, between — между двумя."
+          "prompt": "Вы ищете банк и спрашиваете: «Where the bank is?». Почему прямой вопрос построен неверно?",
+          "model": "Where is the bank? В прямом вопросе с be глагол is ставится перед подлежащим the bank."
         }
       }
     },
@@ -541,8 +541,8 @@
           "model": "Go straight and turn right."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «Go straight and turn left.» работает такая схема: Go straight. / Turn right.. Назовите причину, а не просто повторите фразу.",
-          "model": "В короткой команде глагол идёт первым."
+          "prompt": "Вы объясняете маршрут и говорите: «Straight go and turn right». Как перестроить первую команду и почему?",
+          "model": "Go straight and turn right. В повелительной фразе глагол go стоит перед straight."
         }
       }
     },
@@ -575,8 +575,8 @@
           "model": "What time does the shop open?"
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «Does she work here?» работает такая схема: Do you work? / Does Tom work?. Назовите причину, а не просто повторите фразу.",
-          "model": "You → do, he/she/it → does; после does глагол без -s."
+          "prompt": "Новичок хочет узнать, работает ли Том: «Do Tom work here?». Исправьте вопрос и объясните форму.",
+          "model": "Does Tom work here? Tom — один человек, поэтому в вопросе используется does; глагол work без -s."
         }
       }
     },
@@ -610,8 +610,8 @@
           "model": "M-I-A"
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «Can you spell your name?» работает такая схема: Can you spell your name? / T-O-M.. Назовите причину, а не просто повторите фразу.",
-          "model": "Чтобы записать имя правильно, диктуйте отдельные буквы."
+          "prompt": "Вас просят назвать имя Tom по буквам, а вы просто говорите «Tom». Почему этого может быть недостаточно? Как ответить?",
+          "model": "Нужно назвать буквы по порядку: T-O-M. Spell означает продиктовать написание по буквам, а не повторить слово."
         }
       }
     },
@@ -644,8 +644,8 @@
           "model": "I never work on Sunday."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «I never drink coffee.» работает такая схема: I always read. / I never drink coffee.. Назовите причину, а не просто повторите фразу.",
-          "model": "В простом утверждении они обычно стоят перед смысловым глаголом."
+          "prompt": "Новичок пишет: «I don't never work on Sunday». Как выразить «Я никогда не работаю по воскресеньям» нейтрально?",
+          "model": "I never work on Sunday. В стандартном A1-варианте never уже содержит отрицание, don't не нужно."
         }
       }
     },
@@ -678,8 +678,8 @@
           "model": "Do you like music? I like reading."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «I like reading.» работает такая схема: I like reading. / I like books.. Назовите причину, а не просто повторите фразу.",
-          "model": "Для занятия reading можно использовать форму -ing после like. Это один из способов: I like to read тоже правильно."
+          "prompt": "Сравните «I like books» и «I like reading». Объясните разницу: что нравится в каждом случае?",
+          "model": "I like books — нравятся книги как предметы; I like reading — нравится само занятие читать. Оба предложения правильные."
         }
       }
     },
@@ -712,8 +712,8 @@
           "model": "My leg hurts. I am tired."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «My back hurts.» работает такая схема: My back hurts. / My feet hurt.. Назовите причину, а не просто повторите фразу.",
-          "model": "Одна часть тела — hurts, несколько — hurt."
+          "prompt": "Болят обе ступни. Ученик говорит: «My feet hurts». Исправьте фразу и объясните.",
+          "model": "My feet hurt. Feet — множественное число, поэтому в Present Simple используется hurt без -s."
         }
       }
     },
@@ -746,8 +746,8 @@
           "model": "Sorry, I can't. I am busy."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «I can't sleep.» работает такая схема: I can't work. / Can you help?. Назовите причину, а не просто повторите фразу.",
-          "model": "После can/can't глагол идёт без to."
+          "prompt": "Ученик отказывается работать сегодня: «I can't to work today». Исправьте и объясните.",
+          "model": "I can't work today. После модального can't следующий глагол work идёт без to."
         }
       }
     },
@@ -780,8 +780,8 @@
           "model": "I don't have an envelope. I don't know the address."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «I don't know.» работает такая схема: I don't know. / Tom doesn't live here.. Назовите причину, а не просто повторите фразу.",
-          "model": "I/you → don't; he/she → doesn't."
+          "prompt": "О Томе пишут: «Tom doesn't knows». Почему эта форма неверна?",
+          "model": "Tom doesn't know. После doesn't основной глагол употребляется без -s."
         }
       }
     },
@@ -814,8 +814,8 @@
           "model": "Five Park Street."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «My last name is Belova.» работает такая схема: five Park Street / My last name is Belova.. Назовите причину, а не просто повторите фразу.",
-          "model": "В американском адресе номер дома часто называют до улицы."
+          "prompt": "Адрес: дом 5 на Park Street. Ученик написал «Park Street five». Как записать обычный американский адрес и почему?",
+          "model": "5 Park Street. В стандартном адресе США номер дома пишут перед названием улицы."
         }
       }
     },
@@ -848,8 +848,8 @@
           "model": "Can you speak Russian?"
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «I can speak English.» работает такая схема: I can speak English. / She can draw.. Назовите причину, а не просто повторите фразу.",
-          "model": "После can не нужен to, и глагол не получает -s."
+          "prompt": "Анна умеет рисовать. Новичок написал: «She can draws». Исправьте фразу и объясните.",
+          "model": "She can draw. После can основной глагол не получает окончание -s даже с she."
         }
       }
     },
@@ -882,8 +882,8 @@
           "model": "I can't walk because I work today."
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «Because I am tired.» работает такая схема: Why do you like it? Because it is new.. Назовите причину, а не просто повторите фразу.",
-          "model": "Why — вопрос, because — часть ответа."
+          "prompt": "Вы не можете гулять, потому что работаете. Новичок пишет: «I can't walk why I work». Что нужно изменить и почему?",
+          "model": "I can't walk because I work. Because вводит причину, а why обычно используется в вопросе о причине."
         }
       }
     },
@@ -916,8 +916,8 @@
           "model": "Does this bus go to the park? How much is a ticket?"
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «Two tickets, please.» работает такая схема: Does this bus go to the park?. Назовите причину, а не просто повторите фразу.",
-          "model": "Автобус — it, поэтому для вопроса о действии нужен does."
+          "prompt": "Вы спрашиваете о маршруте автобуса: «Does this bus goes to the park?». Исправьте и объясните.",
+          "model": "Does this bus go to the park? После does глагол go стоит без -es."
         }
       }
     },
@@ -950,8 +950,8 @@
           "model": "I am Anna. I am from Russia. Where is the bus stop?"
         },
         "explain": {
-          "prompt": "Объясните своими словами, почему в английском примере «I am from Russia.» работает такая схема: I don't know. / Where is the bank? / I can help.. Назовите причину, а не просто повторите фразу.",
-          "model": "Самостоятельность — выбрать правило в новой ситуации, без банка слов."
+          "prompt": "Вы устали и не можете гулять. Ученик написал: «I is tired. I don't can walk». Исправьте обе фразы и назовите два разных правила.",
+          "model": "I am tired. I can't walk. С I используем am; невозможность выражаем can't + глагол без to."
         }
       }
     }
