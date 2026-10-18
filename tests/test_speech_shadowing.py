@@ -25,6 +25,7 @@ class SpeechAudioScaffoldTests(TestCase):
         twister = TongueTwister.objects.get(number=1)
         twister.audio = {
             "engine": "kokoro", "verified": False,
+            "very_slow": {"file": "audio/twisters/t001/voice_very_slow.mp3"},
             "slow": {"file": "audio/twisters/t001/voice_slow.mp3"},
             "natural": {"file": "audio/twisters/t001/voice_natural.mp3"},
         }
@@ -40,6 +41,7 @@ class SpeechAudioScaffoldTests(TestCase):
         twister = TongueTwister.objects.get(number=1)
         twister.audio = {
             "engine": "kokoro", "verified": True,
+            "very_slow": {"file": "audio/twisters/t001/voice_very_slow.mp3"},
             "slow": {"file": "audio/twisters/t001/voice_slow.mp3"},
             "natural": {"file": "audio/twisters/t001/voice_natural.mp3"},
         }
@@ -47,4 +49,4 @@ class SpeechAudioScaffoldTests(TestCase):
         page = self.client.get(reverse("curriculum:week", args=["a1", 1]))
         self.assertContains(page, 'data-reference-verified="true"')
         self.assertNotContains(page, "Запись синтезирована и ещё не проверена преподавателем")
-        self.assertContains(page, "Это не проверка произношения")
+        self.assertContains(page, "Автоматическая оценка произношения не выполняется.")
