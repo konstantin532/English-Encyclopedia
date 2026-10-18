@@ -1,7 +1,6 @@
 """Речевое интервальное повторение: самооценка, только метаданные, без голоса."""
 import json
 import re
-from datetime import timedelta
 
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
@@ -19,7 +18,7 @@ from apps.poems.models import Poem
 from .models import SpeechPracticeProgress
 
 
-KEY_PATTERN = re.compile(r"^(?:lesson:[a-z0-9-]{1,80}|twister:[1-9][0-9]{0,2}|poem:[1-9][0-9]{0,2})$")
+KEY_PATTERN = re.compile(r"^(?:lesson:[a-z0-9_-]{1,80}|twister:[1-9][0-9]{0,2}|poem:[1-9][0-9]{0,2})$")
 
 
 def content_details(key):
@@ -106,7 +105,6 @@ def speech_review(request):
         details = content_details(item.content_key)
         if not details or item.fragment >= details["count"]:
             continue
-        sep = "&" if "?" in details["url"] else "?"
         url, hashmark, anchor = details["url"].partition("#")
         pending.append({
             "title": details["title"], "fragment": item.fragment + 1, "rating": item.get_result_display(),
