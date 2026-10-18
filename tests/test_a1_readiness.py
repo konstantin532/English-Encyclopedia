@@ -7,7 +7,7 @@ from pathlib import Path
 
 from django.test import SimpleTestCase
 
-from scripts.a1_readiness import EXPECTED, audit, markdown
+from scripts.a1_readiness import EXPECTED, a1_media_files, audit, markdown
 
 
 class A1FoundationReportTests(SimpleTestCase):
@@ -39,3 +39,14 @@ class A1FoundationReportTests(SimpleTestCase):
         self.assertFalse(report["checks"]["lessons"])
         self.assertEqual(report["counts"]["cefr_verified_units"], 0)
         self.assertIn("FAIL", markdown(report))
+
+    def test_future_a1_plus_media_does_not_invalidate_a1(self):
+        with TemporaryDirectory() as temp:
+            root = Path(temp)
+            for filename in ("s01_demo.yaml", "s05_demo.yaml", "s06_a1plus.yaml",
+                             "p07_demo.yaml", "p08_a1plus.yaml"):
+                (root / filename).write_text("number: 1\n", encoding="utf-8")
+            self.assertEqual([p.name for p in a1_media_files(root, "s", 5)],
+                             ["s01_demo.yaml", "s05_demo.yaml"])
+            self.assertEqual([p.name for p in a1_media_files(root, "p", 7)],
+                             ["p07_demo.yaml"])
