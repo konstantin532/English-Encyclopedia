@@ -3,6 +3,7 @@
     "1": [
       [
         "Как называется число 13?",
+        "",
         [
           "three",
           "thirteen",
@@ -12,6 +13,7 @@
       ],
       [
         "Бариста говорит thirteen. Сколько это?",
+        "",
         [
           "13",
           "3",
@@ -21,6 +23,7 @@
       ],
       [
         "Как по-английски будет 14?",
+        "",
         [
           "four",
           "forty",
@@ -30,6 +33,7 @@
       ],
       [
         "Как по-английски будет 15?",
+        "",
         [
           "fifteen",
           "five",
@@ -39,6 +43,7 @@
       ],
       [
         "Выберите число 12.",
+        "",
         [
           "twenty",
           "twelve",
@@ -50,6 +55,7 @@
     "2": [
       [
         "Нужны две порции кофе. Заполните «Two ___, please».",
+        "",
         [
           "coffee",
           "coffees",
@@ -59,6 +65,7 @@
       ],
       [
         "Закажите три чая. «Three ___, please».",
+        "",
         [
           "teas",
           "tea",
@@ -68,6 +75,7 @@
       ],
       [
         "Закажите четыре печенья. «Four ___, please».",
+        "",
         [
           "a cookies",
           "cookie",
@@ -77,6 +85,7 @@
       ],
       [
         "Нужны два сэндвича. «Two ___, please».",
+        "",
         [
           "sandwiches",
           "sandwich",
@@ -86,6 +95,7 @@
       ],
       [
         "В заказе три порции сока. «Three ___, please».",
+        "",
         [
           "a juices",
           "juices",
@@ -97,6 +107,7 @@
     "3": [
       [
         "Вам нужны два кофе и один чай. Выберите верный заказ.",
+        "",
         [
           "Two coffee and one teas, please.",
           "Two coffees and one tea, please.",
@@ -106,6 +117,7 @@
       ],
       [
         "Закажите один кофе и два чая.",
+        "",
         [
           "One coffee and two teas, please.",
           "One coffees and two tea, please.",
@@ -115,6 +127,7 @@
       ],
       [
         "Вы просите три чая и один сок.",
+        "",
         [
           "Three tea and one juices, please.",
           "Three teas one juices, please.",
@@ -124,6 +137,7 @@
       ],
       [
         "Попросите два печенья и один сэндвич.",
+        "",
         [
           "Two cookies and one sandwich, please.",
           "Two cookie and one sandwiches, please.",
@@ -133,6 +147,7 @@
       ],
       [
         "Вы хотите один чай и два сэндвича.",
+        "",
         [
           "One teas and two sandwich, please.",
           "One tea and two sandwiches, please.",
@@ -144,6 +159,7 @@
     "4": [
       [
         "Вы заказываете четыре порции чая. Как сказать?",
+        "",
         [
           "Four tea, please.",
           "Four teas, please.",
@@ -153,6 +169,7 @@
       ],
       [
         "Вы заказываете три порции кофе.",
+        "",
         [
           "Three coffees, please.",
           "Three coffee, please.",
@@ -162,6 +179,7 @@
       ],
       [
         "Вы просите пять печений.",
+        "",
         [
           "Five cookies, please.",
           "Five cookie, please.",
@@ -171,6 +189,7 @@
       ],
       [
         "Нужно два чая на двоих.",
+        "",
         [
           "Two tea, please.",
           "A two teas, please.",
@@ -180,6 +199,7 @@
       ],
       [
         "Закажите три сэндвича.",
+        "",
         [
           "Three sandwich, please.",
           "Three sandwiches, please.",
