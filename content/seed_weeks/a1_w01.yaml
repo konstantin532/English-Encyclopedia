@@ -49,8 +49,8 @@ script:
 twister:
   number: 1
   series: sounds
-  text: '[T2]This[/] [S2]house[/] [D1]is[/] [J3]nice[/]. [T2]This[/] [J3]nice[/] [S2]house[/] [D1]is[/] [J2]new[/]. [D1]Is[/] [T2]this[/] [S2]house[/] [J3]nice[/]?'
-  ipa: /ðɪs ˈhaʊs ɪz ˈnaɪs | ðɪs ˈnaɪs ˈhaʊs ɪz ˈnu | ɪz ðɪs ˈhaʊs ˈnaɪs/
+  text: '[T2]This[/] [S2]house[/] [D1]is[/] [J3]nice[/]. [D1]Is[/] [T2]this[/] [S2]house[/] [J3]nice[/]?'
+  ipa: /ðɪs ˈhaʊs ɪz ˈnaɪs | ɪz ðɪs ˈhaʊs ˈnaɪs/
   focus_sounds:
   - dh
   source: original
