@@ -160,3 +160,46 @@ class A1MistakeReviewTests(TestCase):
         guest_data = self.answer_original(self.choice, "am")
         self.assertNotIn("retry_scheduled_at", guest_data)
         self.assertEqual(MistakeReview.objects.count(), 0)
+
+    def test_open_transfer_can_opt_in_without_a_negative_score(self):
+        ex = self.transfer
+        response = self.answer_original(ex, "This is my new phone.")
+        self.assertEqual(response["assessment"], "needs_review")
+        self.assertTrue(response["self_review_available"])
+        self.assertFalse(ExerciseAttempt.objects.filter(user=self.user, exercise=ex).exists())
+        before = timezone.now()
+        requested = self.client.post(reverse("learning:request_optional_review", args=[ex.pk]))
+        self.assertEqual(requested.status_code, 200)
+        self.assertTrue(requested.json()["scheduled"])
+        item = MistakeReview.objects.get(user=self.user, exercise=ex)
+        self.assertGreaterEqual(item.due_at, before + timedelta(days=2))
+        self.assertEqual(UnitProgress.objects.filter(user=self.user).count(), 0)
+        self.assertNotContains(self.client.get(reverse("learning:mistake_review")), "Новый вопрос 1 из 5")
+        again = self.client.post(reverse("learning:request_optional_review", args=[ex.pk]))
+        self.assertEqual(again.status_code, 200)
+        item.refresh_from_db()
+        self.assertEqual(MistakeReview.objects.filter(user=self.user, exercise=ex).count(), 1)
+
+    def test_all_six_open_transfer_question_packs_are_reachable_by_opt_in(self):
+        transfers = Exercise.objects.filter(
+            lesson__slug__in=PILOT_SLUGS,
+            kind=Exercise.Kind.FILL, stage=Exercise.Stage.TRANSFER,
+        ).select_related("lesson")
+        self.assertEqual(transfers.count(), 6)
+        for ex in transfers:
+            with self.subTest(slug=ex.lesson.slug, number=ex.order):
+                response = self.client.post(reverse("learning:request_optional_review", args=[ex.pk]))
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(len(variants_for(ex)), 5)
+        self.assertEqual(MistakeReview.objects.filter(user=self.user).count(), 6)
+
+    def test_voluntary_endpoint_does_not_schedule_unrelated_objective_or_guest(self):
+        url = reverse("learning:request_optional_review", args=[self.choice.pk])
+        self.assertEqual(self.client.post(url).status_code, 400)
+        self.assertFalse(MistakeReview.objects.exists())
+        self.client.logout()
+        self.assertEqual(
+            self.client.post(reverse("learning:request_optional_review", args=[self.transfer.pk])).status_code,
+            302,
+        )
+        self.assertFalse(MistakeReview.objects.exists())
