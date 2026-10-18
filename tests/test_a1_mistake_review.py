@@ -236,7 +236,7 @@ class A1MistakeReviewTests(TestCase):
                 item.save(update_fields=["completed_at"])
 
 
-    def test_all_twenty_later_lessons_have_topic_level_review_without_reusing_original(self):
+    def test_all_twenty_later_lessons_have_individual_micro_rule_review(self):
         catalog = question_bank()
         for order in range(9, 29):
             from apps.lessons.models import Lesson
@@ -252,6 +252,28 @@ class A1MistakeReviewTests(TestCase):
             for ex in lesson.exercises.all():
                 self.assertEqual(len(variants_for(ex)), 5)
                 self.assertTrue(all(q[0] != ex.prompt_ru for q in variants_for(ex)))
+
+    def test_specific_rule_explanation_comes_from_the_new_question(self):
+        ex = Exercise.objects.get(lesson__slug="a1-there-is-some", order=1)
+        other = Exercise.objects.get(lesson__slug="a1-there-is-some", order=2)
+        self.assertNotEqual(variants_for(ex), variants_for(other))
+        data = self.answer_original(ex, "Are there milk?")
+        self.assertFalse(data["correct"])
+        self.assertEqual(data["retry_count"], 5)
+        item = MistakeReview.objects.get(user=self.user, exercise=ex)
+        item.due_at = timezone.now() - timedelta(seconds=1)
+        item.save(update_fields=["due_at"])
+        page = self.client.get(reverse("learning:mistake_review"))
+        self.assertContains(page, "Is there")
+        # The answer index is deliberately NOT visible until an attempt.
+        self.assertNotContains(page, "data-answer=")
+        checked = self.client.post(reverse("learning:mistake_review"), {
+            "review_id": item.pk, "index": 0, "choice": 1,
+        })
+        self.assertEqual(checked.status_code, 200)
+        self.assertContains(checked, "С неисчисляемым напитком")
+        item.refresh_from_db()
+        self.assertEqual(item.current_index, 1)
 
     def test_lesson_twenty_eight_confirmed_error_does_not_schedule_immediately(self):
         ex = Exercise.objects.get(lesson__slug="a1-review-everything", order=1)
