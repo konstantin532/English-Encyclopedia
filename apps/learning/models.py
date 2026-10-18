@@ -165,3 +165,28 @@ class MistakeReview(models.Model):
             models.Index(fields=["user", "completed_at", "due_at"], name="mistake_review_due_idx"),
         ]
         ordering = ["due_at", "pk"]
+
+
+
+class IndependentAttempt(models.Model):
+    """Evidence for an A1 no-options check, NOT a CEFR certificate.
+
+    Model-key agreement is distinguished from human validation; free transfer
+    can only be self-assessed until a teacher checks it.
+    """
+    class Outcome(models.TextChoices):
+        MODEL_MATCH = "model_match", "Совпало с образцом"
+        NEEDS_REVIEW = "needs_review", "Нужна проверка"
+        SELF_REPORTED = "self_reported", "Самооценка ученика"
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="independent_attempts")
+    lesson = models.ForeignKey("lessons.Lesson", on_delete=models.CASCADE, related_name="independent_attempts")
+    skill = models.CharField(max_length=12)
+    submitted = models.CharField(max_length=400)
+    outcome = models.CharField(max_length=16, choices=Outcome.choices)
+    self_rating = models.CharField(max_length=16, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        indexes = [models.Index(fields=["user", "lesson", "-created_at"], name="independent_user_lesson_idx")]
+        ordering = ["-created_at"]
