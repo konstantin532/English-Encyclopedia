@@ -69,5 +69,5 @@ class SpeechStudioIntegrationTests(TestCase):
         week9 = yaml.safe_load((root / "a1_w09.yaml").read_text(encoding="utf-8"))
         week13 = yaml.safe_load((root / "a1_w13.yaml").read_text(encoding="utf-8"))
         self.assertIn("в hello", week9["twister"]["tip_ru"])
-        self.assertIn("в can", week13["twister"]["tip_ru"])
+        self.assertIn("Безударное can", week13["twister"]["tip_ru"])
         self.assertNotIn("почти не произносят", week13["twister"]["goal_ru"])
