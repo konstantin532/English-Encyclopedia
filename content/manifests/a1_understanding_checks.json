@@ -144,9 +144,11 @@
         },
         "writing": {
           "prompt": "Напишите вежливую просьбу о воде.",
-          "model": "Can I have water, please?",
+          "model": "Can I have some water, please?",
           "accepted": [
-            "Can I have water, please?"
+            "Can I have some water, please?",
+            "Can I have water, please?",
+            "May I have some water, please?"
           ]
         },
         "transfer": {
@@ -155,7 +157,7 @@
         },
         "explain": {
           "prompt": "В кафе человек говорит: «Can I water, please?». Чего не хватает в просьбе и почему?",
-          "model": "Can I have water, please? После can нужно назвать действие — здесь have."
+          "model": "Can I have some water, please? После can нужен глагол have; some делает просьбу о воде более естественной."
         }
       },
       "contrast": {
@@ -196,7 +198,7 @@
         },
         "explain": {
           "prompt": "У посетителя есть выбор: резко сказать «Tea!» или «Tea, please». Какая просьба обычно мягче и почему?",
-          "model": "Tea, please звучит вежливее благодаря please и подходящей интонации. Также можно сказать I'd like tea, please."
+          "model": "Tea, please звучит вежливее благодаря please и спокойной интонации. Можно также сказать Can I have tea, please?"
         }
       },
       "contrast": {
@@ -314,7 +316,7 @@
           ]
         },
         "transfer": {
-          "prompt": "Анна и Том имеют общий дом. Скажите об их доме.",
+          "prompt": "В вымышленной ситуации Анна и Том живут в одном доме. Скажите, что это их дом.",
           "model": "This is their house."
         },
         "explain": {
@@ -519,8 +521,8 @@
           ]
         },
         "transfer": {
-          "prompt": "Спросите, работает ли Мия в кафе; ответьте «нет».",
-          "model": "Does Mia work at a cafe? No, she doesn't."
+          "prompt": "Спросите, работает ли Мия в кафе; затем ответьте «да», как в истории курса.",
+          "model": "Does Mia work at a cafe? Yes, she does."
         },
         "explain": {
           "prompt": "Вопрос о работе Анны: «Does Anna works here?». Исправьте глагол и объясните почему.",
@@ -601,7 +603,7 @@
           ]
         },
         "transfer": {
-          "prompt": "Объясните туристу, где магазин относительно парка.",
+          "prompt": "Магазин находится через дорогу от парка. Объясните туристу, где этот магазин.",
           "model": "The shop is across from the park."
         },
         "explain": {
@@ -767,11 +769,11 @@
         },
         "transfer": {
           "prompt": "Скажите, чего не делаете по воскресеньям.",
-          "model": "I never work on Sunday."
+          "model": "I never work on Sundays."
         },
         "explain": {
-          "prompt": "Новичок пишет: «I don't never work on Sunday». Как выразить «Я никогда не работаю по воскресеньям» нейтрально?",
-          "model": "I never work on Sunday. В стандартном A1-варианте never уже содержит отрицание, don't не нужно."
+          "prompt": "Новичок пишет: «I don't never work on Sundays». Как выразить «Я никогда не работаю по воскресеньям» нейтрально?",
+          "model": "I never work on Sundays. В стандартном английском never уже выражает отрицание, don't здесь не нужно."
         }
       },
       "contrast": {
@@ -807,8 +809,8 @@
           ]
         },
         "transfer": {
-          "prompt": "Спросите о хобби друга и скажите, что любите читать.",
-          "model": "Do you like music? I like reading."
+          "prompt": "Спросите друга, нравится ли ему рисовать, и скажите, что вам нравится читать.",
+          "model": "Do you like drawing? I like reading."
         },
         "explain": {
           "prompt": "Сравните «I like books» и «I like reading». Объясните разницу: что нравится в каждом случае?",
@@ -972,7 +974,7 @@
         },
         "transfer": {
           "prompt": "На почте назовите адрес: дом 5 на Park Street.",
-          "model": "Five Park Street."
+          "model": "5 Park Street."
         },
         "explain": {
           "prompt": "Адрес: дом 5 на Park Street. Ученик написал «Park Street five». Как записать обычный американский адрес и почему?",
@@ -1046,7 +1048,7 @@
           ]
         },
         "writing": {
-          "prompt": "Напишите «Потому что я устал».",
+          "prompt": "Друг спрашивает «Why are you at home?». Напишите короткий ответ «Потому что я устал».",
           "model": "Because I am tired.",
           "accepted": [
             "Because I am tired."
