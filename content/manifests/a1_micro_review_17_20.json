@@ -1,0 +1,970 @@
+{
+  "a1-questions-do-does": {
+    "1": {
+      "prompt": "Вам нужно узнать, во сколько {ru}.",
+      "keys": [
+        "ru",
+        "item",
+        "act"
+      ],
+      "cases": [
+        [
+          "открывается магазин",
+          "shop",
+          "open"
+        ],
+        [
+          "закрывается банк",
+          "bank",
+          "close"
+        ],
+        [
+          "открывается кафе",
+          "cafe",
+          "open"
+        ],
+        [
+          "закрывается школа",
+          "school",
+          "close"
+        ],
+        [
+          "открывается супермаркет",
+          "supermarket",
+          "open"
+        ]
+      ],
+      "options": [
+        "What time does the {item} {act}?",
+        "What time does the {item} {act}s?",
+        "What time the {item} {act}s?"
+      ],
+      "reason": "После does основной глагол стоит без -s: does the shop open?",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Обратитесь к {person} с вопросом: «У тебя есть {ru}?»",
+      "keys": [
+        "person",
+        "ru",
+        "thing"
+      ],
+      "cases": [
+        [
+          "Тому",
+          "моя книга",
+          "my book"
+        ],
+        [
+          "Анне",
+          "мой ключ",
+          "my key"
+        ],
+        [
+          "Мие",
+          "телефон",
+          "a phone"
+        ],
+        [
+          "другу",
+          "вода",
+          "water"
+        ],
+        [
+          "соседу",
+          "кофе",
+          "coffee"
+        ]
+      ],
+      "options": [
+        "Do you have {thing}?",
+        "Does you have {thing}?",
+        "Do you has {thing}?"
+      ],
+      "reason": "С you задаём вопрос Do you have ...? Не используйте does и has.",
+      "en": ""
+    },
+    "3": {
+      "prompt": "Спросите, во сколько {ru}.",
+      "keys": [
+        "ru",
+        "place",
+        "action"
+      ],
+      "cases": [
+        [
+          "открывается кафе",
+          "cafe",
+          "open"
+        ],
+        [
+          "закрывается банк",
+          "bank",
+          "close"
+        ],
+        [
+          "закрывается магазин",
+          "shop",
+          "close"
+        ],
+        [
+          "открывается школа",
+          "school",
+          "open"
+        ],
+        [
+          "закрывается офис",
+          "office",
+          "close"
+        ]
+      ],
+      "options": [
+        "What time does the {place} {action}?",
+        "What time does the {place} {action}s?",
+        "What time the {place} {action}?"
+      ],
+      "reason": "Для единственного предмета: What time does the ... + глагол без -s.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Вам нужно спросить, {ru}.",
+      "keys": [
+        "ru",
+        "name",
+        "action"
+      ],
+      "cases": [
+        [
+          "работает ли Мия каждый день",
+          "Mia",
+          "work every day"
+        ],
+        [
+          "пьёт ли Том чай утром",
+          "Tom",
+          "drink tea in the morning"
+        ],
+        [
+          "читает ли Анна вечером",
+          "Anna",
+          "read in the evening"
+        ],
+        [
+          "живёт ли Том здесь",
+          "Tom",
+          "live here"
+        ],
+        [
+          "любит ли Мия кофе",
+          "Mia",
+          "like coffee"
+        ]
+      ],
+      "options": [
+        "Does {name} {action}?",
+        "Does {name} {action}s?",
+        "Do {name} {action}?"
+      ],
+      "reason": "Перед именем одного человека используйте Does; основной глагол после does без -s.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Вы уточняете, {ru}.",
+      "keys": [
+        "ru",
+        "place",
+        "act"
+      ],
+      "cases": [
+        [
+          "когда закрывается банк",
+          "bank",
+          "close"
+        ],
+        [
+          "когда открывается кафе",
+          "cafe",
+          "open"
+        ],
+        [
+          "когда закрывается магазин",
+          "shop",
+          "close"
+        ],
+        [
+          "когда открывается офис",
+          "office",
+          "open"
+        ],
+        [
+          "когда закрывается школа",
+          "school",
+          "close"
+        ]
+      ],
+      "options": [
+        "When does the {place} {act}?",
+        "Where does the {place} {act}?",
+        "Who does the {place} {act}?"
+      ],
+      "reason": "When спрашивает о времени; where — о месте; who — о человеке.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Вам нужно узнать, во сколько {ru}.",
+      "keys": [
+        "ru",
+        "place",
+        "act"
+      ],
+      "cases": [
+        [
+          "закрывается магазин",
+          "shop",
+          "close"
+        ],
+        [
+          "открывается кафе",
+          "cafe",
+          "open"
+        ],
+        [
+          "закрывается банк",
+          "bank",
+          "close"
+        ],
+        [
+          "открывается школа",
+          "school",
+          "open"
+        ],
+        [
+          "закрывается офис",
+          "office",
+          "close"
+        ]
+      ],
+      "options": [
+        "What time does the {place} {act}?",
+        "What time does the {place} {act}s?",
+        "What does time the {place} {act}?"
+      ],
+      "reason": "Структура вопроса What time + does + подлежащее + основная форма глагола.",
+      "en": ""
+    }
+  },
+  "a1-spelling-phone-numbers": {
+    "1": {
+      "prompt": "Администратор {where} говорит вам «Can you spell your {item}, please?». Что нужно сделать?",
+      "keys": [
+        "where",
+        "item",
+        "correct",
+        "wrong1",
+        "wrong2"
+      ],
+      "cases": [
+        [
+          "отеля",
+          "last name",
+          "Назвать фамилию по буквам",
+          "Назвать номер телефона",
+          "Назвать адрес"
+        ],
+        [
+          "школы",
+          "first name",
+          "Назвать имя по буквам",
+          "Назвать время",
+          "Назвать возраст"
+        ],
+        [
+          "курсов",
+          "last name",
+          "Назвать фамилию по буквам",
+          "Назвать город",
+          "Назвать телефон"
+        ],
+        [
+          "отеля",
+          "first name",
+          "Назвать имя по буквам",
+          "Назвать работу",
+          "Назвать адрес"
+        ],
+        [
+          "школы",
+          "last name",
+          "Назвать фамилию по буквам",
+          "Назвать возраст",
+          "Назвать дату"
+        ]
+      ],
+      "options": [
+        "{correct}",
+        "{wrong1}",
+        "{wrong2}"
+      ],
+      "reason": "Spell — произнести/назвать слово по буквам.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Какую английскую букву называют {sound}? Выберите символ.",
+      "keys": [
+        "sound",
+        "correct",
+        "other1",
+        "other2"
+      ],
+      "cases": [
+        [
+          "/iː/",
+          "E",
+          "I",
+          "A"
+        ],
+        [
+          "/eɪ/",
+          "A",
+          "E",
+          "I"
+        ],
+        [
+          "/biː/",
+          "B",
+          "D",
+          "P"
+        ],
+        [
+          "/siː/",
+          "C",
+          "S",
+          "Z"
+        ],
+        [
+          "/diː/",
+          "D",
+          "B",
+          "T"
+        ]
+      ],
+      "options": [
+        "{correct}",
+        "{other1}",
+        "{other2}"
+      ],
+      "reason": "Английское название буквы не равно её звучанию в русской азбуке. Прислушайтесь к названному звуку.",
+      "en": ""
+    },
+    "3": {
+      "prompt": "Вы заполняете анкету {place} и спрашиваете у друга номер телефона.",
+      "keys": [
+        "place"
+      ],
+      "cases": [
+        [
+          "для курсов"
+        ],
+        [
+          "для школы"
+        ],
+        [
+          "в отеле"
+        ],
+        [
+          "в офисе"
+        ],
+        [
+          "для встречи"
+        ]
+      ],
+      "options": [
+        "What is your phone number?",
+        "What is your phone name?",
+        "Who is your phone number?"
+      ],
+      "reason": "Для телефонного номера спрашиваем What is your phone number?",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Администратор просит назвать по буквам имя {name}. Выберите верную запись.",
+      "keys": [
+        "name",
+        "spelling",
+        "wrong1",
+        "wrong2"
+      ],
+      "cases": [
+        [
+          "Tom",
+          "T-O-M",
+          "T-M-O",
+          "T-O-N"
+        ],
+        [
+          "Sue",
+          "S-U-E",
+          "S-E-U",
+          "S-U"
+        ],
+        [
+          "Anna",
+          "A-N-N-A",
+          "A-N-A",
+          "A-M-N-A"
+        ],
+        [
+          "Mia",
+          "M-I-A",
+          "M-A-I",
+          "M-I"
+        ],
+        [
+          "Dan",
+          "D-A-N",
+          "D-N-A",
+          "D-E-N"
+        ]
+      ],
+      "options": [
+        "{spelling}",
+        "{wrong1}",
+        "{wrong2}"
+      ],
+      "reason": "При диктовке spell последовательность букв должна совпадать с написанием имени.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Вы звоните в {place} и хотите поговорить с {name}.",
+      "keys": [
+        "place",
+        "name"
+      ],
+      "cases": [
+        [
+          "кафе",
+          "Tom"
+        ],
+        [
+          "школу",
+          "Anna"
+        ],
+        [
+          "офис",
+          "Mia"
+        ],
+        [
+          "отель",
+          "Sue"
+        ],
+        [
+          "магазин",
+          "Dan"
+        ]
+      ],
+      "options": [
+        "Can I speak to {name}, please?",
+        "Can I spell {name}, please?",
+        "Can I phone number {name}, please?"
+      ],
+      "reason": "Speak to — «поговорить с». Spell означает «произнести по буквам».",
+      "en": ""
+    },
+    "6": {
+      "prompt": "В {place} вы заняты и просите человека позвонить вам позже.",
+      "keys": [
+        "place"
+      ],
+      "cases": [
+        [
+          "магазине"
+        ],
+        [
+          "офисе"
+        ],
+        [
+          "автобусе"
+        ],
+        [
+          "кафе"
+        ],
+        [
+          "школе"
+        ]
+      ],
+      "options": [
+        "Call me later.",
+        "Call I later.",
+        "Call my later."
+      ],
+      "reason": "После call о себе используйте объектное me; later — позже.",
+      "en": ""
+    }
+  },
+  "a1-always-never": {
+    "1": {
+      "prompt": "Вы хотите сказать, что никогда {ru}.",
+      "keys": [
+        "ru",
+        "action"
+      ],
+      "cases": [
+        [
+          "не пьёте кофе",
+          "drink coffee"
+        ],
+        [
+          "не работаете ночью",
+          "work at night"
+        ],
+        [
+          "не гуляете в воскресенье",
+          "walk on Sunday"
+        ],
+        [
+          "не смотрите телевизор",
+          "watch TV"
+        ],
+        [
+          "не пьёте сок",
+          "drink juice"
+        ]
+      ],
+      "options": [
+        "I never {action}.",
+        "I don't never {action}.",
+        "I {action} never."
+      ],
+      "reason": "Never уже содержит отрицательный смысл. В обычной фразе избегайте don't never.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "По условию вы {ru} всегда. Выберите порядок слов.",
+      "keys": [
+        "ru",
+        "action"
+      ],
+      "cases": [
+        [
+          "читаете по субботам",
+          "read on Saturday"
+        ],
+        [
+          "завтракаете дома",
+          "have breakfast at home"
+        ],
+        [
+          "работаете по понедельникам",
+          "work on Monday"
+        ],
+        [
+          "гуляете вечером",
+          "walk in the evening"
+        ],
+        [
+          "пьёте чай утром",
+          "drink tea in the morning"
+        ]
+      ],
+      "options": [
+        "I always {action}.",
+        "I {action} always.",
+        "I am always {action}."
+      ],
+      "reason": "Always обычно стоит перед смысловым глаголом: I always read.",
+      "en": ""
+    },
+    "3": {
+      "prompt": "Вы {ru} иногда. Выберите предложение.",
+      "keys": [
+        "ru",
+        "act"
+      ],
+      "cases": [
+        [
+          "играете на гитаре",
+          "play the guitar"
+        ],
+        [
+          "читаете книги",
+          "read books"
+        ],
+        [
+          "смотрите телевизор",
+          "watch TV"
+        ],
+        [
+          "гуляете в парке",
+          "walk in the park"
+        ],
+        [
+          "пьёте кофе",
+          "drink coffee"
+        ]
+      ],
+      "options": [
+        "I sometimes {act}.",
+        "I {act} sometimes.",
+        "I am sometimes {act}."
+      ],
+      "reason": "В учебном нейтральном порядке sometimes стоит перед смысловым глаголом.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Вас спрашивают «Do you {act}?», но вы {ru} никогда.",
+      "keys": [
+        "act",
+        "ru"
+      ],
+      "cases": [
+        [
+          "work on Sunday",
+          "по воскресеньям не работаете"
+        ],
+        [
+          "drink coffee",
+          "не пьёте кофе"
+        ],
+        [
+          "watch TV",
+          "не смотрите телевизор"
+        ],
+        [
+          "work at night",
+          "не работаете ночью"
+        ],
+        [
+          "drink juice",
+          "не пьёте сок"
+        ]
+      ],
+      "options": [
+        "No, I never {act}.",
+        "No, I don't never {act}.",
+        "No, I am never {act}."
+      ],
+      "reason": "В ответе never уже выражает отрицание: No, I never ...",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Вы описываете привычку {ru}. Какой предлог нужен перед месяцем?",
+      "keys": [
+        "ru",
+        "month"
+      ],
+      "cases": [
+        [
+          "гулять в октябре",
+          "October"
+        ],
+        [
+          "читать в ноябре",
+          "November"
+        ],
+        [
+          "работать в декабре",
+          "December"
+        ],
+        [
+          "играть на гитаре в июне",
+          "June"
+        ],
+        [
+          "путешествовать в июле",
+          "July"
+        ]
+      ],
+      "options": [
+        "in {month}",
+        "on {month}",
+        "at {month}"
+      ],
+      "reason": "С названием месяца обычно употребляется in.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Вы встретитесь с другом в {ru}. Как попрощаться?",
+      "keys": [
+        "ru",
+        "day"
+      ],
+      "cases": [
+        [
+          "пятницу",
+          "Friday"
+        ],
+        [
+          "субботу",
+          "Saturday"
+        ],
+        [
+          "понедельник",
+          "Monday"
+        ],
+        [
+          "воскресенье",
+          "Sunday"
+        ],
+        [
+          "вторник",
+          "Tuesday"
+        ]
+      ],
+      "options": [
+        "See you on {day}!",
+        "See you in {day}!",
+        "See you at {day}!"
+      ],
+      "reason": "Для дней недели: on Friday, on Saturday.",
+      "en": ""
+    }
+  },
+  "a1-like-doing": {
+    "1": {
+      "prompt": "Вам нравится {ru}. Выберите правильную форму после like.",
+      "keys": [
+        "ru",
+        "verb"
+      ],
+      "cases": [
+        [
+          "читать",
+          "reading"
+        ],
+        [
+          "гулять",
+          "walking"
+        ],
+        [
+          "играть на гитаре",
+          "playing the guitar"
+        ],
+        [
+          "петь",
+          "singing"
+        ],
+        [
+          "слушать музыку",
+          "listening to music"
+        ]
+      ],
+      "options": [
+        "I like {verb}.",
+        "I like {verb} to.",
+        "I am like {verb}."
+      ],
+      "reason": "После like в таком предложении возможна форма -ing: I like reading.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Вставьте форму -ing после like: {ru}.",
+      "keys": [
+        "ru",
+        "verb",
+        "wrong1",
+        "wrong2"
+      ],
+      "cases": [
+        [
+          "гулять",
+          "walking",
+          "walk",
+          "walks"
+        ],
+        [
+          "читать",
+          "reading",
+          "read",
+          "reads"
+        ],
+        [
+          "играть",
+          "playing",
+          "play",
+          "plays"
+        ],
+        [
+          "петь",
+          "singing",
+          "sing",
+          "sings"
+        ],
+        [
+          "плавать",
+          "swimming",
+          "swim",
+          "swims"
+        ]
+      ],
+      "options": [
+        "{verb}",
+        "{wrong1}",
+        "{wrong2}"
+      ],
+      "reason": "После like используйте -ing форму действия для выражения хобби.",
+      "en": "I like ___."
+    },
+    "3": {
+      "prompt": "Вы хотите узнать у друга, нравится ли ему {ru}.",
+      "keys": [
+        "ru",
+        "verb"
+      ],
+      "cases": [
+        [
+          "гулять",
+          "walking"
+        ],
+        [
+          "читать",
+          "reading"
+        ],
+        [
+          "играть на гитаре",
+          "playing the guitar"
+        ],
+        [
+          "петь",
+          "singing"
+        ],
+        [
+          "смотреть телевизор",
+          "watching TV"
+        ]
+      ],
+      "options": [
+        "Do you like {verb}?",
+        "Does you like {verb}?",
+        "Do you like {verb}ing?"
+      ],
+      "reason": "К you задайте вопрос через Do you like + -ing форму.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Друг спрашивает о ваших предпочтениях. Вам нравится {ru}.",
+      "keys": [
+        "ru",
+        "item"
+      ],
+      "cases": [
+        [
+          "музыка",
+          "music"
+        ],
+        [
+          "чай",
+          "tea"
+        ],
+        [
+          "кофе",
+          "coffee"
+        ],
+        [
+          "эта книга",
+          "this book"
+        ],
+        [
+          "эта комната",
+          "this room"
+        ]
+      ],
+      "options": [
+        "I like {item}.",
+        "I likes {item}.",
+        "I am like {item}."
+      ],
+      "reason": "Для I обычный глагол like без окончания -s.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Анна говорит: «I like my {adj} {item}». Какой предмет она назвала?",
+      "keys": [
+        "adj",
+        "item",
+        "other1",
+        "other2"
+      ],
+      "cases": [
+        [
+          "new",
+          "jacket",
+          "shirt",
+          "shoes"
+        ],
+        [
+          "blue",
+          "shoes",
+          "jacket",
+          "shirt"
+        ],
+        [
+          "green",
+          "shirt",
+          "hat",
+          "jacket"
+        ],
+        [
+          "red",
+          "jacket",
+          "shoes",
+          "coat"
+        ],
+        [
+          "new",
+          "hat",
+          "coat",
+          "shirt"
+        ]
+      ],
+      "options": [
+        "{item}",
+        "{other1}",
+        "{other2}"
+      ],
+      "reason": "Определите существительное после my и прилагательного цвета/признака: оно называет предмет.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Вам нравится {ru}. Выберите правильный порядок слов.",
+      "keys": [
+        "ru",
+        "color",
+        "item"
+      ],
+      "cases": [
+        [
+          "мои синие туфли",
+          "blue",
+          "shoes"
+        ],
+        [
+          "моя красная рубашка",
+          "red",
+          "shirt"
+        ],
+        [
+          "моя зелёная куртка",
+          "green",
+          "jacket"
+        ],
+        [
+          "моя белая рубашка",
+          "white",
+          "shirt"
+        ],
+        [
+          "мои чёрные туфли",
+          "black",
+          "shoes"
+        ]
+      ],
+      "options": [
+        "I like my {color} {item}.",
+        "I like {color} my {item}.",
+        "I likes my {item} {color}."
+      ],
+      "reason": "В английском притяжательное my, затем прилагательное, затем существительное.",
+      "en": ""
+    }
+  }
+}
