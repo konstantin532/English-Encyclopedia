@@ -294,7 +294,7 @@ class PilotContinuityTests(TestCase):
     def test_existing_canon_preserved(self):
         goals = {s.week.number: s.can_do_ru for s in WeekScene.objects.filter(week__number__in=[1, 2])}
         self.assertEqual(goals[1], "Я смогу представиться, сказать, откуда я, и спросить имя собеседника.")
-        self.assertEqual(goals[2], "Я смогу показать свой дом, назвать вещи и вежливо попросить воды.")
+        self.assertEqual(goals[2], "Я смогу показать свой дом, назвать комнаты и предметы, сказать, чьи они, и вежливо попросить воды или нужную вещь.")
         story = Story.objects.get(number=1)
         self.assertIn("[S6]cat[/]", story.script[-1]["text"])
         self.assertIn("Box", story.script[-1]["text"])
@@ -885,7 +885,7 @@ class A1PoemsTests(TestCase):
 class WeeklyVocabularyNormTests(TestCase):
     """Добор A1 до 500 единиц: недели, которые уже доведены до нормы 30–39."""
 
-    FILLED_WEEKS = (3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+    FILLED_WEEKS = (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
 
     @classmethod
     def setUpTestData(cls):

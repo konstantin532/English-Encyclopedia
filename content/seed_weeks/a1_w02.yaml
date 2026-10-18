@@ -1,50 +1,64 @@
 level: A1
 week: 2
-can_do_ru: "Я смогу показать свой дом, назвать вещи и вежливо попросить воды."
-mission_ru: "Покажите три вещи дома и скажите по-английски, чьи они. Попросите стакан воды."
+can_do_ru: Я смогу показать свой дом, назвать комнаты и предметы, сказать, чьи они, и вежливо попросить воды или нужную вещь.
+mission_ru: 'Покажите комнату и два предмета дома. Скажите, чьи они: This is my… Спросите у гостя: Do you like my…?
+  Попросите полотенце: Can I have a towel, please?'
 ambience: morning_home
-chunks: [LX-00049, LX-00050, LX-00051, LX-00052, LX-00053, LX-00054]
+chunks:
+- LX-00049
+- LX-00050
+- LX-00051
+- LX-00052
+- LX-00053
+- LX-00054
 story_beat:
-  intro_ru: "Анна показывает Тому и Мие свой новый дом."
-  outcome_ru: "Гостям нравится дом. Только большая коробка — ничья: она не Анны и не Тома."
-  next_hook_ru: "Что внутри коробки? Ответ — в истории «Not My Box»."
+  intro_ru: Анна показывает Тому и Мие свой новый дом.
+  outcome_ru: 'Гостям нравится дом. Только большая коробка — ничья: она не Анны и не Тома.'
+  next_hook_ru: Что внутри коробки? Ответ — в истории «Not My Box».
 script:
-  - speaker: anna
-    emotion: happy
-    text: "[T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]. [T2]This[/] [D1]is[/] [T1]a[/] [J1]big[/] [S2]room[/]."
-    ru: "Это мой новый дом. Это большая комната."
-  - speaker: tom
-    emotion: excited
-    text: "[T1]The[/] [S2]room[/] [D1]is[/] [J3]nice[/], [S1]Anna[/]. [D1]Is[/] [T2]that[/] [T3]your[/] [S2]phone[/]?"
-    ru: "Хорошая комната, Анна. Это твой телефон?"
-  - speaker: anna
-    emotion: happy
-    text: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T2]That[/] [D1]is[/] [T3]my[/] [S2]phone[/]. [T8]I[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]book[/]."
-    spoken: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T2]That[/][D1]'s[/] [T3]my[/] [S2]phone[/]. [T8]I[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]book[/]."
-    ru: "Да. Это мой телефон. У меня новая книга."
-  - speaker: mia
-    emotion: surprised
-    text: "[T8]I[/] [D3]like[/] [T1]the[/] [S2]book[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S2]box[/], [S1]Anna[/]?"
-    ru: "Мне нравится книга. Это твоя коробка, Анна?"
-  - speaker: anna
-    emotion: worried
-    text: "[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/]. [S1]Tom[/] [D1]has[/] [T1]a[/] [J1]big[/] [S2]box[/]."
-    spoken: "[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]box[/]. [S1]Tom[/] [D1]has[/] [T1]a[/] [J1]big[/] [S2]box[/]."
-    ru: "Нет, это не моя коробка. У Тома большая коробка."
-  - speaker: tom
-    emotion: surprised
-    text: "[T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/]! [D7]Can[/] [T8]I[/] [D1]have[/] [S3]water[/], [O8]please[/]?"
-    spoken: "[T8]It[/][D1]'s[/] [X1]not[/] [T3]my[/] [S2]box[/]! [D7]Can[/] [T8]I[/] [D1]have[/] [S3]water[/], [O8]please[/]?"
-    ru: "Это не моя коробка! Можно мне воды, пожалуйста?"
-  - speaker: anna
-    emotion: happy
-    text: "[O4]Yes[/], [T8]you[/] [D7]can[/]. [T8]I[/] [D1]have[/] [S3]water[/]. [D1]Do[/] [T8]you[/] [D3]like[/] [T1]the[/] [S2]house[/]?"
-    ru: "Да, конечно. У меня есть вода. Вам нравится дом?"
-  - speaker: mia
-    emotion: happy
-    text: "[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]It[/] [D1]is[/] [T1]a[/] [J3]nice[/] [S2]house[/]!"
-    spoken: "[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]It[/][D1]'s[/] [T1]a[/] [J3]nice[/] [S2]house[/]!"
-    ru: "Да. Хороший дом!"
+- speaker: anna
+  emotion: happy
+  text: '[T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]. [T2]This[/] [D1]is[/] [T3]my[/] [S2]kitchen[/].'
+  ru: Это мой новый дом. Это моя кухня.
+- speaker: tom
+  emotion: excited
+  text: '[T1]The[/] [S2]kitchen[/] [D1]is[/] [J3]nice[/], [S1]Anna[/]. [D1]Is[/] [T2]that[/] [T3]your[/] [S2]phone[/]?'
+  ru: Хорошая кухня, Анна. Это твой телефон?
+- speaker: anna
+  emotion: happy
+  text: '[O4]Yes[/], [T8]it[/] [D1]is[/]. [T2]That[/] [D1]is[/] [T3]my[/] [S2]phone[/]. [T8]I[/] [D1]have[/] [T1]a[/]
+    [J2]new[/] [S2]book[/]. [T2]This[/] [D1]is[/] [T3]my[/] [S2]table[/].'
+  spoken: '[O4]Yes[/], [T8]it[/] [D1]is[/]. [T2]That[/][D1]''s[/] [T3]my[/] [S2]phone[/]. [T8]I[/] [D1]have[/] [T1]a[/]
+    [J2]new[/] [S2]book[/]. [T2]This[/] [D1]is[/] [T3]my[/] [S2]table[/].'
+  ru: Да. Это мой телефон. У меня новая книга. Это мой стол.
+- speaker: mia
+  emotion: surprised
+  text: '[T8]I[/] [D3]like[/] [T1]the[/] [S2]book[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S2]box[/], [S1]Anna[/]?'
+  ru: Мне нравится книга. Это твоя коробка, Анна?
+- speaker: anna
+  emotion: worried
+  text: '[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/]. [S1]Tom[/] [D1]has[/] [T1]a[/] [J1]big[/]
+    [S2]box[/].'
+  spoken: '[O4]No[/], [T8]it[/] [D1]is[/][X1]n''t[/] [T3]my[/] [S2]box[/]. [S1]Tom[/] [D1]has[/] [T1]a[/] [J1]big[/]
+    [S2]box[/].'
+  ru: Нет, это не моя коробка. У Тома большая коробка.
+- speaker: tom
+  emotion: surprised
+  text: '[T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/]! [D7]Can[/] [T8]I[/] [D1]have[/] [S3]water[/], [O8]please[/]?'
+  spoken: '[T8]It[/][D1]''s[/] [X1]not[/] [T3]my[/] [S2]box[/]! [D7]Can[/] [T8]I[/] [D1]have[/] [S3]water[/], [O8]please[/]?'
+  ru: Это не моя коробка! Можно мне воды, пожалуйста?
+- speaker: anna
+  emotion: happy
+  text: '[O4]Yes[/], [T8]you[/] [D7]can[/]. [T8]I[/] [D1]have[/] [S3]water[/]. [D1]Do[/] [T8]you[/] [D3]like[/]
+    [T1]the[/] [S2]house[/]?'
+  ru: Да, конечно. У меня есть вода. Вам нравится дом?
+- speaker: mia
+  emotion: happy
+  text: '[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]It[/] [D1]is[/] [T1]a[/] [J3]nice[/] [S2]house[/]! [T8]I[/] [D3]like[/]
+    [T3]your[/] [S2]chair[/].'
+  spoken: '[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]It[/][D1]''s[/] [T1]a[/] [J3]nice[/] [S2]house[/]! [T8]I[/] [D3]like[/]
+    [T3]your[/] [S2]chair[/].'
+  ru: Да. Хороший дом! Мне нравится твой стул.
 twister:
   number: 2
   series: sounds
@@ -54,7 +68,8 @@ twister:
   - ae
   source: original
   goal_ru: Широкое /æ/ (that, cat, have) против открытого /ɑ/ (box, Tom). Русские «э» и «о» здесь не подходят.
-  tip_ru: '/æ/: рот открыт широко, как для «а», а язык тянется к «э» — звук между ними. /ɑ/ в box: рот открыт, язык лежит низко, губы не округлены — почти «а»: «бакс».'
+  tip_ru: '/æ/: рот открыт широко, как для «а», а язык тянется к «э» — звук между ними. /ɑ/ в box: рот открыт, язык
+    лежит низко, губы не округлены — почти «а»: «бакс».'
   warmup:
   - '[S6]cat[/] — [S2]box[/]'
   - '[T2]that[/] [S6]cat[/]'
