@@ -44,7 +44,7 @@
       {% if twister.own_ru %}<p>{{ twister.own_ru }}</p>{% endif %}
     </li>{% endif %}
   </ol>
-  <div class="speech-studio" data-speech-studio data-speech-kind="twister">
+  <div class="speech-studio" data-speech-studio data-speech-kind="twister" data-speech-key="twister:{{ twister.number }}" data-speech-persist="{% if user.is_authenticated %}true{% else %}false{% endif %}" data-speech-endpoint="{% url 'learning:speech_practice' %}">
     <h3>Интерактивная тренировка звука и речи</h3>
     <p>Лесенка → точность → по памяти → обычная реплика. Один целевой звук за раз; скорость необязательна.</p>
     <div data-speech-bank hidden>
@@ -56,5 +56,27 @@
       {% if twister.target_line %}<div data-speech-entry><span data-speech-source lang="en">{{ twister.target_line }}</span><span data-speech-accent>Вернитесь к естественной реплике из диалога</span></div>{% endif %}
     </div>
     {% include "components/speech_studio_controls.html" %}
+    <section class="speech-reference" aria-label="Слушаем и повторяем с паузой" data-speech-reference>
+      <h4>Послушай → пауза → твоя очередь</h4>
+      {% if twister.audio.natural.file %}
+      <p>Сначала послушайте скороговорку. После окончания записи произнесите её самостоятельно, затем сравните со звучанием снова.</p>
+      {% if not twister.audio.verified %}
+      <p class="speech-reference-caution">Запись синтезирована и ещё не проверена преподавателем. Используйте её только как предварительный образец, сверяйтесь с IPA и подсказкой; не считайте все особенности нормативными.</p>
+      {% endif %}
+      <div data-speech-reference-player
+           data-reference-natural="{% static twister.audio.natural.file %}"
+           {% if twister.audio.slow.file %}data-reference-slow="{% static twister.audio.slow.file %}"{% endif %}
+           data-reference-verified="{% if twister.audio.verified %}true{% else %}false{% endif %}">
+        <div class="speech-actions">
+          <button type="button" class="btn btn-quiet btn-small" data-reference-play="slow">Послушать медленно</button>
+          <button type="button" class="btn btn-primary btn-small" data-reference-play="natural">Послушать как в жизни</button>
+          <button type="button" class="btn btn-quiet btn-small" data-reference-stop>Остановить звук</button>
+        </div>
+        <p data-reference-status role="status" aria-live="polite">Выберите темп. После воспроизведения — ваша очередь говорить.</p>
+      </div>
+      {% else %}
+      <p class="speech-reference-caution">Озвучка для этой скороговорки ещё не подготовлена. Не заменяем её случайным голосом браузера: пока пользуйтесь артикуляционной лесенкой и IPA.</p>
+      {% endif %}
+    </section>
   </div>
 </div>

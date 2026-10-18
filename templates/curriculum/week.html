@@ -59,4 +59,4 @@
   {% if next_week %}<p><a class="btn btn-quiet" href="{% url 'curriculum:week' week.level.slug next_week.number %}">Следующая неделя: {{ next_week.situation_ru|default:next_week.theme_ru }}</a></p>{% endif %}
 </div>
 {% endblock %}
-{% block scripts %}<script src="{% static 'js/audio-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script>{% endblock %}
+{% block scripts %}<script src="{% static 'js/audio-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script><script src="{% static 'js/speech-shadowing.js' %}" defer></script>{% endblock %}

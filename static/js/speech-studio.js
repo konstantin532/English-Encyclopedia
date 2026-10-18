@@ -50,8 +50,13 @@
     const status = one("[data-speech-status]");
     const checked = new Set();
     let index = 0, mode = "see", visible = true, taps = [];
+    // Повторение открывает нужный фрагмент по безопасному числовому параметру URL.
+    const requested = (global.location && String(global.location.search || "").match(/[?&]speech=(\d{1,3})(?:&|$)/));
+    if (requested) { index = clampIndex(Number(requested[1]), entries.length); mode = "recall"; visible = false; }
     function paint() {
       index = clampIndex(index, entries.length);
+      root.dataset.speechIndex = String(index);
+      root.dataset.speechMode = mode;
       const promptSource = entries[index].querySelector("[data-speech-task-source]");
       if (task) { task.textContent = promptSource ? promptSource.textContent.trim() : ""; task.hidden = !task.textContent; }
       const source = entries[index].querySelector("[data-speech-source]");
@@ -73,6 +78,8 @@
       done.textContent = checked.has(index) ? "Отменить отметку" : "Мне удалось произнести";
       status.textContent = "Отмечено " + checked.size + " из " + entries.length + ". Это самооценка, а не автоматическая проверка.";
       root.querySelectorAll("[data-speech-mode]").forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.speechMode === mode)));
+      if (typeof root.dispatchEvent === "function" && typeof global.CustomEvent === "function")
+        root.dispatchEvent(new global.CustomEvent("speech:changed"));
     }
     root.querySelectorAll("[data-speech-mode]").forEach(btn => btn.addEventListener("click", () => {
       if (!MODES.includes(btn.dataset.speechMode)) return;
@@ -145,6 +152,11 @@
         release(); forget();
       });
     }
+    if (typeof root.addEventListener === "function") root.addEventListener("speech:jump", event => {
+      if (!event.detail || !Number.isInteger(event.detail.index)) return;
+      index = clampIndex(event.detail.index, entries.length);
+      mode = "recall"; visible = false; paint();
+    });
     paint();
   }
   if (typeof module !== "undefined" && module.exports) module.exports = { MODES, INSTRUCTIONS, clampIndex, tempoFromTaps };

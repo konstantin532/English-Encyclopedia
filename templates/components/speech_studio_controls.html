@@ -21,6 +21,21 @@
     <button class="btn btn-primary btn-small" type="button" data-speech-done>Мне удалось произнести</button>
   </div>
   <p class="speech-check" data-speech-status role="status" aria-live="polite">Отметок пока нет. Они не являются автоматической оценкой речи.</p>
+  <div class="speech-review-panel" data-speech-review>
+    <h4>Умное повторение фраз</h4>
+    <p>Сначала перейдите в «По памяти» или «Перенести». После устной попытки оцените только <strong>насколько самостоятельно получилось</strong>. Это не проверка произношения.</p>
+    <div class="speech-actions" data-speech-grades hidden>
+      <button type="button" class="btn btn-quiet btn-small" data-speech-grade="again">Пока трудно — ещё раз</button>
+      <button type="button" class="btn btn-quiet btn-small" data-speech-grade="hard">Получилось с подсказкой</button>
+      <button type="button" class="btn btn-primary btn-small" data-speech-grade="good">Получилось самостоятельно</button>
+    </div>
+    <div class="speech-actions">
+      <button type="button" class="btn btn-quiet btn-small" data-speech-next-review>Следующая фраза для тренировки →</button>
+      {% if user.is_authenticated %}<a class="btn btn-quiet btn-small" href="{% url 'learning:speech_review' %}">Мои речевые повторения</a>{% endif %}
+    </div>
+    <p class="speech-check" data-speech-review-status role="status" aria-live="polite">Самооценка — не автоматическая оценка произношения.</p>
+    {% if not user.is_authenticated %}<p>Чтобы сохранять речевые повторения между запусками, <a href="{% url 'accounts:login' %}">войдите в аккаунт</a>.</p>{% endif %}
+  </div>
   <div class="speech-beat">
     <h4>Ритм фразы</h4>
     <p>Нажимайте в момент ударения, пока произносите строку. Это измерит только темп нажатий, а не качество английского.</p>

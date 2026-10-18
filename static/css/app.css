@@ -313,3 +313,32 @@ code { font-family: var(--font-read); font-style: italic; }
   .speech-mode-grid { grid-template-columns: 1fr 1fr; }
   .speech-actions .btn { flex: 1 1 42%; }
 }
+
+/* Запланированная речевая практика — только самооценка, без голосовых рейтингов. */
+.speech-review-panel { margin-block: var(--space-5); border-top: 1px solid var(--rule); padding-top: var(--space-5); }
+.speech-review-panel h4 { font-size: var(--step-1); margin: 0 0 var(--space-2); }
+.speech-review-panel p { color: var(--ink-soft); font-size: var(--step--1); line-height: 1.6; }
+.speech-review-panel .speech-actions .btn { white-space: normal; }
+.speech-review-list { list-style: none; margin: 0 0 var(--space-5); padding: 0; display: grid; gap: var(--space-3); }
+.speech-review-list li { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: var(--space-2); padding: var(--space-4); border: 1px solid var(--rule); border-radius: var(--radius-s); }
+.speech-review-list a { min-width: 0; }
+@media (max-width: 460px) { .speech-review-panel .speech-actions .btn { flex: 1 1 100%; } }
+
+/* Audio-guided recitation: never imply unreviewed TTS is a verified model. */
+.speech-reference { border-top: 1px solid var(--rule); margin-top: var(--space-5); padding-top: var(--space-4); }
+.speech-reference h4 { margin: 0 0 var(--space-2); font-size: var(--step-1); }
+.speech-reference p { line-height: 1.65; color: var(--ink-soft); font-size: var(--step--1); }
+.speech-reference-caution { border-left: 3px solid var(--rule); padding-left: var(--space-3); }
+.speech-reference [data-reference-status] { min-height: 1.6em; }
+.speech-reference [data-reference-play][aria-pressed="true"] { outline: 2px solid currentColor; outline-offset: 2px; }
+
+/* Poetry: visual word-prominence choices made from editor-written stress guides. */
+.speech-stress-lab { margin-block: var(--space-5); padding: var(--space-4); border: 1px solid var(--rule); border-radius: var(--radius-m); }
+.speech-stress-lab h3 { margin: 0 0 var(--space-2); font-size: var(--step-1); }
+.speech-stress-choices { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-block: var(--space-3); min-height: 52px; align-items: center; }
+.speech-stress-word { font: inherit; min-height: 42px; padding: 7px 12px; cursor: pointer; border-radius: var(--radius-s); border: 1px solid var(--rule); background: var(--paper); color: var(--ink); }
+.speech-stress-word[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.speech-stress-word:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.speech-stress-lab [data-stress-answer] { font-size: var(--step-1); font-weight: 700; overflow-wrap: anywhere; }
+.speech-stress-lab [data-stress-answer][hidden] { display: none !important; }
+.speech-stress-lab [data-stress-feedback] { min-height: 1.6em; }

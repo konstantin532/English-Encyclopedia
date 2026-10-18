@@ -1,5 +1,6 @@
 from django.http import Http404
 from django.shortcuts import get_object_or_404, render
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 from apps.learning.models import WeekGoal
 from apps.stories.script import build_lines
@@ -23,6 +24,7 @@ def level_detail(request, slug):
     })
 
 
+@ensure_csrf_cookie
 def week_detail(request, slug, number):
     level = next((lv for lv in Level.objects.all() if lv.slug == slug), None)
     if level is None:
