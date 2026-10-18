@@ -78,6 +78,8 @@
       done.textContent = checked.has(index) ? "Отменить отметку" : "Мне удалось произнести";
       status.textContent = "Отмечено " + checked.size + " из " + entries.length + ". Это самооценка, а не автоматическая проверка.";
       root.querySelectorAll("[data-speech-mode]").forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.speechMode === mode)));
+      if (typeof root.dispatchEvent === "function" && typeof global.CustomEvent === "function")
+        root.dispatchEvent(new global.CustomEvent("speech:changed"));
     }
     root.querySelectorAll("[data-speech-mode]").forEach(btn => btn.addEventListener("click", () => {
       if (!MODES.includes(btn.dataset.speechMode)) return;
