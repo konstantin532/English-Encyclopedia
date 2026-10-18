@@ -1,9 +1,10 @@
-"""Three deliberately separate beginner checks: meaning, unaided writing, transfer.
+"""Four deliberately separate beginner checks, submitted blind as one session.
 
 No multiple choice, no answer keys before a submission, and no false claim
 that matching a model proves independent communicative proficiency.
 """
 from django.contrib.auth.decorators import login_required
+from django.db import transaction
 from django.http import HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_http_methods
@@ -30,6 +31,7 @@ def independent_check(request, slug):
         return HttpResponseBadRequest("Самостоятельная проверка для урока ещё не подготовлена.")
 
     result = None
+    batch_results = None
     if request.method == "POST":
         if request.POST.get("action") == "rate":
             try:
@@ -48,6 +50,43 @@ def independent_check(request, slug):
             attempt.save(update_fields=["self_rating"])
             result = {"skill": attempt.skill, "model": guide["tasks"][attempt.skill]["model"],
                       "label": RATINGS[rating], "attempt": attempt}
+        elif request.POST.get("action") == "batch":
+            # Crucially, do not reveal ANY answer until the learner has
+            # submitted ALL FOUR responses; this prevents the first revealed
+            # example from contaminating the remaining unaided answers.
+            answers = {key: request.POST.get("answer_" + key, "") for key in TASKS}
+            if any(not isinstance(value, str) or not value.strip()
+                   or len(value) > 400 for value in answers.values()):
+                return HttpResponseBadRequest(
+                    "Сначала ответьте на все четыре вопроса (до 400 символов каждый)."
+                )
+            batch_results = []
+            with transaction.atomic():
+                for skill in TASKS:
+                    answer = answers[skill].strip()
+                    open_response = skill in ("transfer", "explain")
+                    matches = not open_response and model_agreement(
+                        guide["tasks"][skill], answer)
+                    outcome = (
+                        IndependentAttempt.Outcome.SELF_REPORTED if open_response
+                        else IndependentAttempt.Outcome.MODEL_MATCH if matches
+                        else IndependentAttempt.Outcome.NEEDS_REVIEW
+                    )
+                    attempt = IndependentAttempt.objects.create(
+                        user=request.user, lesson=lesson,
+                        skill=skill, submitted=answer, outcome=outcome,
+                    )
+                    batch_results.append({
+                        "skill": skill, "attempt": attempt,
+                        "model": guide["tasks"][skill]["model"],
+                        "label": (
+                            "Свободный ответ: сравните смысл и оцените себя сами."
+                            if open_response
+                            else "Совпало с образцом; это ещё не доказательство владения."
+                            if matches else
+                            "Не совпало с образцом — это не обязательно ошибка."
+                        ),
+                    })
         else:
             skill = request.POST.get("skill")
             if skill not in TASKS:
@@ -81,5 +120,6 @@ def independent_check(request, slug):
                        "transfer": "3. Переношу в новую ситуацию",
                        "explain": "4. Объясняю почему"}[key]}
             for key in TASKS],
-        "result": result, "ratings": RATINGS, "attempts": attempts,
+        "result": result, "batch_results": batch_results,
+        "ratings": RATINGS, "attempts": attempts,
     })
