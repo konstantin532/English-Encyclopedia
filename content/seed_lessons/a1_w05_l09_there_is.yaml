@@ -149,7 +149,7 @@ exercises:
     prompt_ru: "Новая ситуация: в магазине есть жёлтые бананы. Попросите немного, вежливо."
     prompt_en: "___"
     answer: "Can I have some yellow bananas, please?"
-    accepted: ["Can I have some yellow bananas please?", "Some yellow bananas, please.", "Yellow bananas, please.", "I would like some yellow bananas, please.", "I'd like some yellow bananas, please."]
+    accepted: ["Can I have some yellow bananas please?", "Some yellow bananas, please.", "I would like some yellow bananas, please.", "I'd like some yellow bananas, please."]
     hint_ru: "Can I have some…, please? Цвет — перед словом."
-    explanation_ru: "Can I have some yellow bananas, please? — some для «немного», yellow перед bananas."
+    explanation_ru: "Can I have some yellow bananas, please? — some выражает неопределённое количество, yellow стоит перед bananas. Без some просьба может быть вежливой, но уже не тренирует количество из условия."
     units: [LX-00288, LX-00299]
