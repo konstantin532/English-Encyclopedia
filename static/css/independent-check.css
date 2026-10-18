@@ -31,3 +31,14 @@
 .independent-explanation { margin: 1.25rem 0; border: 1px solid var(--rule); padding: .75rem 1rem; border-radius: 12px; }
 .independent-explanation summary { cursor: pointer; min-height: 44px; display: list-item; font-weight: 700; padding: .5rem 0; }
 .independent-explanation:focus-within { outline: 2px solid var(--focus, currentColor); outline-offset: 2px; }
+
+/* Show why two superficially similar sentences differ, not just an isolated rule. */
+.a1-contrast { margin-top: 1.125rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
+.a1-contrast h3 { font-size: 1.06rem; margin: 0 0 .75rem; }
+.a1-contrast-pairs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.a1-contrast-pairs p { min-width: 0; padding: .875rem; margin: 0; border: 1px solid var(--rule); border-radius: 12px; overflow-wrap: anywhere; }
+.a1-contrast-pairs strong, .a1-contrast-pairs span { display: block; }
+.a1-contrast-pairs span { margin-top: .4rem; }
+.independent-batch-submit { min-height: 48px; margin-top: 1rem; }
+.independent-result-item { border-bottom: 1px solid var(--rule); padding-block: .75rem; overflow-wrap: anywhere; }
+@media (max-width: 480px) { .a1-contrast-pairs { grid-template-columns: minmax(0, 1fr); } .independent-batch-submit { width: 100%; } }
