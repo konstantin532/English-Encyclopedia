@@ -49,7 +49,7 @@
     "hint": "I + can’t + swim, без to.",
     "transfer": "Теперь узнайте у другого человека, умеет ли он водить автомобиль.",
     "transfer_example": "Can you drive?",
-    "why": "Can + действие сообщает об умении: I can draw. В вопросе can идёт перед человеком: Can you draw? Для отрицания используйте can’t или cannot. Вопрос с can не требует do. Не меняйте draw на draws после can, даже с he или she. Learn — осваивать самому, teach — учить другого; study — заниматься предметом.",
+    "why": "Can + глагол без to и -s сообщает о способности: I can draw. В вопросе Can you draw? can стоит перед подлежащим, do не добавляется. В отрицании I can't draw слово can't означает невозможность, а не нежелание. Learn — осваивать самому; teach — учить другого; study — заниматься предметом.",
     "sound": "В коротком Yes, I can слово can обычно ударное /kæn/. Перед глаголом оно часто без ударения /kən/. В американском can’t /kænt/ конечный t бывает неполным; смотрите на смысл и слушайте всю фразу."
   },
   {
@@ -95,7 +95,7 @@
     "hint": "Because + I want to + understand Russian music.",
     "transfer": "Учитель спрашивает, почему вы просите повторить слово. Объясните: вы его не понимаете.",
     "transfer_example": "Because I don't understand the word.",
-    "why": "Why do you study…? спрашивает причину действия. Why is the exercise difficult? строится с be без do. После because в этой конструкции нужна целая мысль: Because I don’t understand the word. Homework — домашняя работа в целом: I do my homework, без a и -s. Easy/difficult описывают сложность, light/heavy — вес.",
+    "why": "Why может спрашивать «почему?» (причина) или «зачем?» (цель) — решает ситуация. Для полного ответа с причиной используем because + подлежащее + сказуемое: Because I don't understand the word. После because of ставят именную группу: because of the music. В вопросе Why do you study…? нужен do с обычным глаголом; с be — без do: Why is it difficult?",
     "sound": "Why /waɪ/ произносится как название буквы Y. В because /bɪˈkɔz/ ударение на втором слоге. Для этой ступени используйте полное because; сокращённые разговорные формы будут позже."
   }
 ]
