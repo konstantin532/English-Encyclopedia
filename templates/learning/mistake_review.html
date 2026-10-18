@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Повторить непонятное · {{ SITE_NAME }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/mistake-review.css' %}">{% endblock %}
 {% block content %}
-<div class="wrap" style="padding-bottom: var(--space-8)">
+<div class="wrap mistake-review-page">
   <header class="page-head">
     <p class="crumbs"><a href="{% url 'learning:dashboard' %}">Мой прогресс</a> / повторение ошибок</p>
     <h1>Повторить то, что было трудно</h1>
@@ -9,7 +11,7 @@
   </header>
 
   {% if task %}
-    <section class="section" style="max-width: 46rem" aria-labelledby="mistake-review-t">
+    <section class="section mistake-review-card" aria-labelledby="mistake-review-t">
       <h2 id="mistake-review-t">{{ task.lesson_title }}</h2>
       <p class="drill-stage">Новый вопрос {{ task.number }} из 5</p>
       <p class="drill-prompt">{{ task.prompt_ru }}</p>
@@ -18,10 +20,10 @@
         {% csrf_token %}
         <input type="hidden" name="review_id" value="{{ task.id }}">
         <input type="hidden" name="index" value="{{ task.index }}">
-        <fieldset class="section" style="border:0;padding:0">
+        <fieldset class="mistake-review-options">
           <legend>Выберите ответ</legend>
           {% for number, option in task.options %}
-            <label style="display:flex;align-items:center;gap:12px;margin:12px 0;cursor:pointer;min-height:44px">
+            <label class="mistake-review-option">
               <input type="radio" name="choice" value="{{ number }}" required>
               <span lang="en">{{ option }}</span>
             </label>
@@ -29,10 +31,10 @@
         </fieldset>
         <button type="submit" class="btn btn-primary">Проверить ответ</button>
       </form>
-      <p class="uid" style="margin-top:var(--space-4)">Правильный ответ и разбор откроются после попытки.</p>
+      <p class="uid mistake-review-help">Правильный ответ и разбор откроются после попытки.</p>
     </section>
   {% elif answer_result %}
-    <section class="section" style="max-width: 46rem" aria-live="polite">
+    <section class="section mistake-review-card" aria-live="polite">
       <h2>Вопрос {{ answer_result.number }} из 5</h2>
       {% if answer_result.correct %}
         <p><strong>Верно!</strong> Вы самостоятельно выбрали подходящий вариант.</p>
@@ -56,12 +58,12 @@
       {% endif %}
     </section>
   {% else %}
-    <section class="section" style="max-width: 46rem">
+    <section class="section mistake-review-card">
       <h2>Новых вопросов пока нет</h2>
       {% if next_due %}
         <p>Следующая пятёрка откроется {{ next_due.due_at|date:"j E в H:i" }}. Продолжайте обычные уроки в своём темпе.</p>
       {% else %}
-        <p>Когда вы ошибётесь в проверяемом задании уроков 1–4, здесь появятся пять других вопросов через два дня. До этого возвращаться к ошибке специально не нужно.</p>
+        <p>Когда вы ошибётесь в проверяемом задании A1, здесь появятся пять других вопросов через два дня. До этого возвращаться к ошибке специально не нужно.</p>
       {% endif %}
       <a class="btn btn-primary" href="{% url 'learning:dashboard' %}">К моему прогрессу</a>
     </section>
