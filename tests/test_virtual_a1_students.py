@@ -57,7 +57,7 @@ class VirtualStudentTests(SimpleTestCase):
             "questions": [
                 {"source": "layer:1", "quote": "НИЧЕГО ТАКОГО В УРОКЕ НЕТ",
                  "question": "Что значит эта фраза?", "category": "other"},
-                {"source": "layer:3", "quote": "I am",
+                {"source": "layer:3", "quote": "I am a doctor.",
                  "question": "Почему здесь am?", "category": "terminology"},
             ],
             "attempts": [{"exercise": 1, "response": answer}],
