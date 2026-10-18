@@ -10,5 +10,6 @@ urlpatterns = [
     path("speech-practice/", speech_practice.speech_practice_api, name="speech_practice"),
     path("speech-review/", speech_practice.speech_review, name="speech_review"),
     path("mistake-review/", delayed_review_views.mistake_review, name="mistake_review"),
+    path("mistake-review/request/<int:exercise_id>/", delayed_review_views.request_optional_review, name="request_optional_review"),
     path("weeks/<int:week_id>/goal/", views.week_goal, name="week_goal"),
 ]
