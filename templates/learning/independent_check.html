@@ -20,6 +20,13 @@
     <p>{{ result.label }}</p>
     <p>Ваш ответ: <strong>{{ result.attempt.submitted }}</strong></p>
     <p>Один возможный образец: <strong>{{ result.model }}</strong></p>
+    <details class="independent-explanation">
+      <summary>Почему здесь так? Разобрать правило</summary>
+      <p><strong>Причина:</strong> {{ guide.why }}</p>
+      <p><strong>Как себя проверить:</strong> {{ guide.fix }}</p>
+      <p><strong>Типичная ловушка:</strong> {{ guide.mistake }}</p>
+      <p>Ваш вариант может отличаться от образца и оставаться правильным. При сомнении потребуется проверка человеком.</p>
+    </details>
     {% if result.attempt.outcome == "self_reported" and not result.attempt.self_rating %}
       <p>Сравните свой ответ с образцом по смыслу: передали ли вы нужную информацию? Отличающаяся формулировка тоже может быть правильной.</p>
       <form method="post" class="independent-rating">
