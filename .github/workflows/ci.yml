@@ -15,7 +15,7 @@ jobs:
       # Fail before the slower suite when a beginner explanation or open
       # independent task violates one of the 15 educational data contracts.
       - run: |
-          uv run python manage.py shell -c "from apps.learning.understanding import understanding_bank; b=understanding_bank(); assert len(b)==28; assert sum(len(x['tasks']) for x in b.values())==84; print('A1 clarity: 28 guides, 84 no-options tasks, 15 structural checks')"
+          uv run python manage.py shell -c "from apps.learning.understanding import understanding_bank; b=understanding_bank(); assert len(b)==28; assert sum(len(x['tasks']) for x in b.values())==112; print('A1 clarity: 28 guides, 112 no-options tasks, 15 structural checks')"
       - run: uv run pytest -q
       - run: node --test tests/js/audio-player.test.cjs tests/js/cafe-lab.test.cjs tests/js/a1-active.test.cjs tests/js/a1-active-browser.test.cjs tests/js/speech-studio.test.cjs tests/js/speech-studio-browser.test.cjs tests/js/speech-review.test.cjs tests/js/speech-review-browser.test.cjs tests/js/speech-shadowing.test.cjs tests/js/speech-stress.test.cjs tests/js/a1-learning-route.test.cjs
       - run: |
