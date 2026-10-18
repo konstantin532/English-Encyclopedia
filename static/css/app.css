@@ -313,3 +313,13 @@ code { font-family: var(--font-read); font-style: italic; }
   .speech-mode-grid { grid-template-columns: 1fr 1fr; }
   .speech-actions .btn { flex: 1 1 42%; }
 }
+
+/* Запланированная речевая практика — только самооценка, без голосовых рейтингов. */
+.speech-review-panel { margin-block: var(--space-5); border-top: 1px solid var(--rule); padding-top: var(--space-5); }
+.speech-review-panel h4 { font-size: var(--step-1); margin: 0 0 var(--space-2); }
+.speech-review-panel p { color: var(--ink-soft); font-size: var(--step--1); line-height: 1.6; }
+.speech-review-panel .speech-actions .btn { white-space: normal; }
+.speech-review-list { list-style: none; margin: 0 0 var(--space-5); padding: 0; display: grid; gap: var(--space-3); }
+.speech-review-list li { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: var(--space-2); padding: var(--space-4); border: 1px solid var(--rule); border-radius: var(--radius-s); }
+.speech-review-list a { min-width: 0; }
+@media (max-width: 460px) { .speech-review-panel .speech-actions .btn { flex: 1 1 100%; } }
