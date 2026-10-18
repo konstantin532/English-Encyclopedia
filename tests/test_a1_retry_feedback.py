@@ -19,7 +19,7 @@ class A1FeedbackTests(TestCase):
     def test_all_original_questions_have_an_authored_focus(self):
         data = json.loads((settings.CONTENT_DIR / "manifests" / "a1_retry_guidance.json").read_text("utf-8"))
         self.assertEqual(set(data), PILOT_SLUGS)
-        self.assertEqual(sum(len(items) for items in data.values()), 21)
+        self.assertEqual(sum(len(items) for items in data.values()), 31)
         for slug, items in data.items():
             for ex in Exercise.objects.filter(lesson__slug=slug):
                 with self.subTest(slug=slug, order=ex.order):
