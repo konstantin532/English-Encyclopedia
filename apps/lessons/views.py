@@ -18,6 +18,7 @@ def lesson_detail(request, slug):
     return render(request, "lessons/detail.html", {
         "lesson": lesson,
         "extra_missions": extra_missions,
+        "a1_pilot": lesson.level.code == "A1" and 1 <= lesson.order <= 4,
         "layers": lesson.layers.all(),
         "units": units,
         "exercises": lesson.exercises.all(),
