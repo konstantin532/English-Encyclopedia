@@ -6,7 +6,7 @@ from django.conf import settings
 from apps.drills.retry_guidance import PILOT_SLUGS
 
 FIELDS = ("plain", "why", "pattern", "mistake", "fix", "example", "translation")
-SKILLS = ("meaning", "writing", "transfer")
+SKILLS = ("meaning", "writing", "transfer", "explain")
 
 
 def quality_gates(document):
@@ -38,9 +38,10 @@ def quality_gates(document):
                 and x["tasks"][k]["model"] in x["tasks"][k]["accepted"]
                 and x["tasks"][k]["prompt"].strip()
                 for k in ("meaning", "writing"))
-            and "accepted" not in x["tasks"]["transfer"]
-            and x["tasks"]["transfer"]["prompt"].strip()
-            and x["tasks"]["transfer"]["model"].strip()
+            and all("accepted" not in x["tasks"][k]
+                    and x["tasks"][k]["prompt"].strip()
+                    and x["tasks"][k]["model"].strip()
+                    for k in ("transfer", "explain"))
             for x in lessons),
         "15_bounds_and_no_model_in_prompt": all(
             all(isinstance(t.get("prompt"), str) and isinstance(t.get("model"), str)
