@@ -27,3 +27,7 @@
   .a1-clarity-bridge dt { margin-bottom: -.5rem; }
 }
 @media (prefers-reduced-motion: reduce) { .independent-task *, .independent-result * { transition: none; } }
+
+.independent-explanation { margin: 1.25rem 0; border: 1px solid var(--rule); padding: .75rem 1rem; border-radius: 12px; }
+.independent-explanation summary { cursor: pointer; min-height: 44px; display: list-item; font-weight: 700; padding: .5rem 0; }
+.independent-explanation:focus-within { outline: 2px solid var(--focus, currentColor); outline-offset: 2px; }
