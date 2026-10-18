@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
 
 from apps.drills.models import Exercise
+from apps.drills.retry_guidance import is_open_pilot_response, retry_guidance
 from apps.taxonomy.markup import strip_markup
 from apps.learning.services import record_attempt, record_recall
 from apps.lexicon.models import LexicalUnit
@@ -22,10 +23,21 @@ def check_exercise(request, pk):
         return JsonResponse({"correct": False, "revealed": True, "answer": exercise.answer,
                              "explanation": exercise.explanation_ru})
     answer = payload["answer"]
-    correct = record_attempt(request.user, exercise, answer)
-    data = {"correct": correct, "saved": request.user.is_authenticated}
+    open_response = is_open_pilot_response(exercise)
+    # Creative transfer has multiple valid formulations. A model-key mismatch
+    # must not reduce a learner's stored vocabulary progress as if it were a
+    # proven grammatical error.
+    unverified = open_response and not exercise.is_correct(answer)
+    correct = False if unverified else record_attempt(request.user, exercise, answer)
+    data = {"correct": correct, "saved": request.user.is_authenticated and not unverified}
+    if open_response:
+        data["assessment"] = "needs_review" if unverified else "model_match"
     if correct:
         data.update(answer=exercise.answer, explanation=exercise.explanation_ru)
+    else:
+        guidance = retry_guidance(exercise, answer)
+        if guidance:
+            data["feedback_ru"] = guidance
     return JsonResponse(data)
 
 
