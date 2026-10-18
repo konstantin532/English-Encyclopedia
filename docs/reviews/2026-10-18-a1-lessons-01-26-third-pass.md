@@ -10,7 +10,7 @@
 Примеры диагностик:
 - 1: `This is my book` vs `This is a my book` — один основной определитель.
 - 3: `This room is big` vs `This is room big` — две разные конструкции.
-- 4: `Do you like coffee?` vs `Does you like coffee?` — do с you.
+- 4: `Do you like coffee?` vs `Do you coffee like?` — порядок «do + you + like + предмет», без забегания в does следующего этапа.
 - 6: `two coffees` vs `two coffee` в контексте порций — исчисляемое значение.
 - 10: `How much are the apples?` vs `How much is the apples?` — цена множества предметов.
 - 13: `Does Tom work?` vs `Does Tom works?` — после does глагол без -s.
