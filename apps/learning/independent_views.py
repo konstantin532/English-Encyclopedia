@@ -77,7 +77,12 @@ def independent_check(request, slug):
                         skill=skill, submitted=answer, outcome=outcome,
                     )
                     batch_results.append({
-                        "skill": skill, "attempt": attempt,
+                        "skill": skill, "title": {
+                            "meaning": "Понимание смысла",
+                            "writing": "Самостоятельное письмо",
+                            "transfer": "Применение в новой ситуации",
+                            "explain": "Объяснение правила",
+                        }[skill], "attempt": attempt,
                         "model": guide["tasks"][skill]["model"],
                         "label": (
                             "Свободный ответ: сравните смысл и оцените себя сами."
