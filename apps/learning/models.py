@@ -185,6 +185,10 @@ class IndependentAttempt(models.Model):
     submitted = models.CharField(max_length=400)
     outcome = models.CharField(max_length=16, choices=Outcome.choices)
     self_rating = models.CharField(max_length=16, blank=True)
+    # A documented alternative task, chosen server-side; 0 is the original.
+    task_variant = models.PositiveSmallIntegerField(default=0)
+    # Learner reflection, never a machine-scored CEFR or speech grade.
+    self_rubric = models.JSONField(default=dict, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
