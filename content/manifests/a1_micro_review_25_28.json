@@ -103,37 +103,43 @@
       "en": ""
     },
     "4": {
-      "prompt": "По условию вы владеете {ru}. Выберите правильную фразу.",
+      "prompt": "На {place} по условию вы говорите на двух языках: {ru}.",
       "keys": [
         "ru",
         "lang1",
-        "lang2"
+        "lang2",
+        "place"
       ],
       "cases": [
         [
-          "русским и английским",
+          "русском и английском",
           "Russian",
-          "English"
-        ],
-        [
-          "английским и русским",
           "English",
-          "Russian"
+          "курсах"
         ],
         [
-          "русским и французским",
+          "английском и русском",
+          "English",
           "Russian",
-          "French"
+          "занятии"
         ],
         [
-          "английским и испанским",
+          "русском и английском",
+          "Russian",
           "English",
-          "Spanish"
+          "встрече"
         ],
         [
-          "немецким и английским",
-          "German",
-          "English"
+          "английском и русском",
+          "English",
+          "Russian",
+          "работе"
+        ],
+        [
+          "русском и английском",
+          "Russian",
+          "English",
+          "собеседовании"
         ]
       ],
       "options": [
@@ -633,6 +639,48 @@
       ],
       "reason": "Arrives — прибывает. Это настоящее время, не сообщение о вчерашнем прибытии.",
       "en": ""
+    },
+    "6": {
+      "prompt": "В незнакомом {place} вы ищете {ru}. Как спросить?",
+      "keys": [
+        "place",
+        "ru",
+        "where"
+      ],
+      "cases": [
+        [
+          "городе",
+          "железнодорожную станцию",
+          "train station"
+        ],
+        [
+          "городе",
+          "автобусную станцию",
+          "bus station"
+        ],
+        [
+          "районе",
+          "отель",
+          "hotel"
+        ],
+        [
+          "городе",
+          "банк",
+          "bank"
+        ],
+        [
+          "районе",
+          "кафе",
+          "cafe"
+        ]
+      ],
+      "options": [
+        "Where is the {where}?",
+        "Where the {where} is?",
+        "Who is the {where}?"
+      ],
+      "reason": "Для места спросите Where is the ...?; не переставляйте is после существительного.",
+      "en": ""
     }
   },
   "a1-review-everything": {
@@ -841,51 +889,51 @@
       "en": ""
     },
     "6": {
-      "prompt": "Вы хотите {want} потому что {reason_ru}. Выберите связную фразу.",
+      "prompt": "Вы объясняете покупку: вы хотите {want}, потому что {reason_ru}.",
       "keys": [
         "want",
         "reason_ru",
         "item",
-        "reason"
+        "reason_clause"
       ],
       "cases": [
         [
           "купить зонт",
           "не любите дождь",
           "an umbrella",
-          "the rain"
+          "don't like the rain"
         ],
         [
           "купить пальто",
           "не любите холод",
           "a coat",
-          "the cold"
+          "don't like the cold"
         ],
         [
           "купить чай",
           "хотите пить",
           "tea",
-          "water"
+          "am thirsty"
         ],
         [
           "купить книгу",
           "любите читать",
           "a book",
-          "reading"
+          "like reading"
         ],
         [
           "купить кофе",
           "любите кофе",
           "coffee",
-          "coffee"
+          "like coffee"
         ]
       ],
       "options": [
-        "I want to buy {item} because I like {reason}.",
-        "I want buy {item} because I like {reason}.",
-        "I want to buy {item} why I like {reason}."
+        "I want to buy {item} because I {reason_clause}.",
+        "I want buy {item} because I {reason_clause}.",
+        "I want to buy {item} why I {reason_clause}."
       ],
-      "reason": "После want используется to buy, причина соединяется с because.",
+      "reason": "После want используйте to buy; причину вводит because. Смысл причины должен совпадать с ситуацией.",
       "en": ""
     }
   }
