@@ -1,0 +1,192 @@
+{
+  "a1-numbers-1-20": {
+    "1": [
+      [
+        "Как называется число 13?",
+        [
+          "three",
+          "thirteen",
+          "twelve"
+        ],
+        1
+      ],
+      [
+        "Бариста говорит thirteen. Сколько это?",
+        [
+          "13",
+          "3",
+          "12"
+        ],
+        0
+      ],
+      [
+        "Как по-английски будет 14?",
+        [
+          "four",
+          "forty",
+          "fourteen"
+        ],
+        2
+      ],
+      [
+        "Как по-английски будет 15?",
+        [
+          "fifteen",
+          "five",
+          "twelve"
+        ],
+        0
+      ],
+      [
+        "Выберите число 12.",
+        [
+          "twenty",
+          "twelve",
+          "two"
+        ],
+        1
+      ]
+    ],
+    "2": [
+      [
+        "Нужны две порции кофе. Заполните «Two ___, please».",
+        [
+          "coffee",
+          "coffees",
+          "a coffee"
+        ],
+        1
+      ],
+      [
+        "Закажите три чая. «Three ___, please».",
+        [
+          "teas",
+          "tea",
+          "a tea"
+        ],
+        0
+      ],
+      [
+        "Закажите четыре печенья. «Four ___, please».",
+        [
+          "a cookies",
+          "cookie",
+          "cookies"
+        ],
+        2
+      ],
+      [
+        "Нужны два сэндвича. «Two ___, please».",
+        [
+          "sandwiches",
+          "sandwich",
+          "a sandwich"
+        ],
+        0
+      ],
+      [
+        "В заказе три порции сока. «Three ___, please».",
+        [
+          "a juices",
+          "juices",
+          "juice"
+        ],
+        1
+      ]
+    ],
+    "3": [
+      [
+        "Вам нужны два кофе и один чай. Выберите верный заказ.",
+        [
+          "Two coffee and one teas, please.",
+          "Two coffees and one tea, please.",
+          "Two coffees one tea and please."
+        ],
+        1
+      ],
+      [
+        "Закажите один кофе и два чая.",
+        [
+          "One coffee and two teas, please.",
+          "One coffees and two tea, please.",
+          "Coffee one teas two, please."
+        ],
+        0
+      ],
+      [
+        "Вы просите три чая и один сок.",
+        [
+          "Three tea and one juices, please.",
+          "Three teas one juices, please.",
+          "Three teas and one juice, please."
+        ],
+        2
+      ],
+      [
+        "Попросите два печенья и один сэндвич.",
+        [
+          "Two cookies and one sandwich, please.",
+          "Two cookie and one sandwiches, please.",
+          "Two cookies one sandwich and please."
+        ],
+        0
+      ],
+      [
+        "Вы хотите один чай и два сэндвича.",
+        [
+          "One teas and two sandwich, please.",
+          "One tea and two sandwiches, please.",
+          "One tea two sandwiches and, please."
+        ],
+        1
+      ]
+    ],
+    "4": [
+      [
+        "Вы заказываете четыре порции чая. Как сказать?",
+        [
+          "Four tea, please.",
+          "Four teas, please.",
+          "Four a teas, please."
+        ],
+        1
+      ],
+      [
+        "Вы заказываете три порции кофе.",
+        [
+          "Three coffees, please.",
+          "Three coffee, please.",
+          "Three a coffees, please."
+        ],
+        0
+      ],
+      [
+        "Вы просите пять печений.",
+        [
+          "Five cookies, please.",
+          "Five cookie, please.",
+          "Five a cookie, please."
+        ],
+        0
+      ],
+      [
+        "Нужно два чая на двоих.",
+        [
+          "Two tea, please.",
+          "A two teas, please.",
+          "Two teas, please."
+        ],
+        2
+      ],
+      [
+        "Закажите три сэндвича.",
+        [
+          "Three sandwich, please.",
+          "Three sandwiches, please.",
+          "Three a sandwiches, please."
+        ],
+        1
+      ]
+    ]
+  }
+}
