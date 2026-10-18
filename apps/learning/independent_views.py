@@ -17,7 +17,7 @@ RATINGS = {
     "helped": "Понадобилась подсказка или образец",
     "not_yet": "Пока трудно, хочу вернуться к этому",
 }
-TASKS = ("meaning", "writing", "transfer")
+TASKS = ("meaning", "writing", "transfer", "explain")
 
 
 @login_required
@@ -41,11 +41,12 @@ def independent_check(request, slug):
                 return HttpResponseBadRequest("Выберите один из трёх вариантов.")
             attempt = get_object_or_404(
                 IndependentAttempt, pk=attempt_id, user=request.user,
-                lesson=lesson, skill="transfer", outcome=IndependentAttempt.Outcome.SELF_REPORTED,
+                lesson=lesson, skill__in=("transfer", "explain"),
+                outcome=IndependentAttempt.Outcome.SELF_REPORTED,
             )
             attempt.self_rating = rating
             attempt.save(update_fields=["self_rating"])
-            result = {"skill": "transfer", "model": guide["tasks"]["transfer"]["model"],
+            result = {"skill": attempt.skill, "model": guide["tasks"][attempt.skill]["model"],
                       "label": RATINGS[rating], "attempt": attempt}
         else:
             skill = request.POST.get("skill")
@@ -55,7 +56,7 @@ def independent_check(request, slug):
             if not isinstance(answer, str) or not answer.strip() or len(answer) > 400:
                 return HttpResponseBadRequest("Напишите ответ длиной до 400 символов.")
             # The open transfer response has no exhaustive answer key.
-            is_open = skill == "transfer"
+            is_open = skill in ("transfer", "explain")
             matches = not is_open and model_agreement(guide["tasks"][skill], answer)
             outcome = (IndependentAttempt.Outcome.SELF_REPORTED if is_open else
                        IndependentAttempt.Outcome.MODEL_MATCH if matches else
@@ -77,7 +78,8 @@ def independent_check(request, slug):
         "lesson": lesson, "tasks": [
             {"key": key, "item": guide["tasks"][key],
              "title": {"meaning": "1. Понимаю смысл", "writing": "2. Пишу сам",
-                       "transfer": "3. Переношу в новую ситуацию"}[key]}
+                       "transfer": "3. Переношу в новую ситуацию",
+                       "explain": "4. Объясняю почему"}[key]}
             for key in TASKS],
         "result": result, "ratings": RATINGS, "attempts": attempts,
     })
