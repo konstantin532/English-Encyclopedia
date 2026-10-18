@@ -40,6 +40,10 @@ def check_exercise(request, pk):
             data["retry_count"] = 5
     if open_response:
         data["assessment"] = "needs_review" if unverified else "model_match"
+        # An unchecked free reply can be valid. Invite an optional review
+        # without storing an incorrect ExerciseAttempt or penalizing progress.
+        if unverified:
+            data["self_review_available"] = request.user.is_authenticated
     if correct:
         data.update(answer=exercise.answer, explanation=exercise.explanation_ru)
     else:
