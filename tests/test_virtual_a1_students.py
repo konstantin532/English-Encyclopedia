@@ -78,7 +78,7 @@ class VirtualStudentTests(SimpleTestCase):
             bots.PERSONAS[4], 14, obj, bots.evidence_for(lesson, self.active[14]), lesson)
         self.assertFalse(issues)
         self.assertFalse(attempts[0]["matches_key"])
-        self.assertIn("не проверка", attempts[0]["note"].lower()) if "не проверка" in attempts[0]["note"].lower() else self.assertIn("проверки человеком", attempts[0]["note"].lower())
+        self.assertIn("проверки человеком", attempts[0]["note"].lower())
 
     def test_local_ollama_budget_and_response_can_be_mocked(self):
         mock_answer = {"questions": [], "attempts": [], "learning_summary": "Есть сомнения"}
