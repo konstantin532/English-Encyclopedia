@@ -104,6 +104,14 @@ class A1PedagogicalContinuityTests(SimpleTestCase):
                 with self.subTest(lesson=number, concept=term):
                     self.assertIn(term.casefold(), body.casefold())
 
+    def test_week_six_scene_keeps_question_answer_pairs(self):
+        lesson = read_lesson(11)
+        speech = lesson["layers"][4]["body"]
+        self.assertLess(speech.index("Во сколько ты встаёшь"), speech.index("Я встаю в пять"))
+        self.assertLess(speech.index("Я встаю в пять"), speech.index("А ты завтракаешь?"))
+        self.assertLess(speech.index("А ты завтракаешь?"), speech.index("Да. Я завтракаю"))
+        self.assertIn("Нельзя использовать *Yes, I do* как ответ на вопрос", speech)
+
     def test_transfer_checks_accept_only_requested_action(self):
         phone_lesson = read_lesson(18)
         callback = next(x for x in phone_lesson["exercises"] if x["order"] == 6)
