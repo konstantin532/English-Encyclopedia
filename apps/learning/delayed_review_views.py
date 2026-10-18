@@ -1,13 +1,14 @@
 """Login-only, server-checked five-question practice after a 48-hour pause."""
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
-from django.views.decorators.http import require_http_methods
+from django.views.decorators.http import require_http_methods, require_POST
 
-from apps.drills.retry_guidance import retry_guidance
-from .mistake_review import COUNT, DELAY, due_reviews, variants_for
+from apps.drills.models import Exercise
+from apps.drills.retry_guidance import is_open_pilot_response, retry_guidance
+from .mistake_review import COUNT, DELAY, due_reviews, variants_for, schedule_review
 from .models import MistakeReview
 
 
@@ -85,3 +86,19 @@ def mistake_review(request):
                 "options": list(enumerate(row[2])),
             }
     return render(request, "learning/mistake_review.html", context)
+
+
+
+@login_required
+@require_POST
+def request_optional_review(request, exercise_id):
+    """Explicit learner opt-in for an open transfer answer; NEVER grade it as wrong."""
+    exercise = get_object_or_404(
+        Exercise.objects.select_related("lesson__level"),
+        pk=exercise_id, lesson__is_published=True,
+    )
+    if not is_open_pilot_response(exercise) or not variants_for(exercise):
+        return HttpResponseBadRequest("Для этого задания нет добровольного повторения.")
+    due_at = schedule_review(request.user, exercise)
+    return JsonResponse({"scheduled": True, "due_at": due_at.isoformat(), "count": COUNT,
+                         "note": "Добровольная практика не считается исправлением подтверждённой ошибки."})
