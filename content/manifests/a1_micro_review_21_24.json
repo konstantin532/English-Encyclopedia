@@ -409,6 +409,48 @@
       ],
       "reason": "Thirsty — хочет пить, hungry — хочет есть, tired — устал.",
       "en": ""
+    },
+    "6": {
+      "prompt": "Вы объясняете другу два обстоятельства: {ru}.",
+      "keys": [
+        "ru",
+        "feeling",
+        "action"
+      ],
+      "cases": [
+        [
+          "вы устали и не можете спать",
+          "tired",
+          "sleep"
+        ],
+        [
+          "вы устали и не можете работать",
+          "tired",
+          "work"
+        ],
+        [
+          "вы заняты и не можете говорить",
+          "busy",
+          "speak"
+        ],
+        [
+          "вы устали и не можете читать",
+          "tired",
+          "read"
+        ],
+        [
+          "вы плохо себя чувствуете и не можете гулять",
+          "sick",
+          "walk"
+        ]
+      ],
+      "options": [
+        "I am {feeling} and I can't {action}.",
+        "I {feeling} and I can't {action}.",
+        "I am {feeling} and I can't to {action}."
+      ],
+      "reason": "После I нужен am перед прилагательным; после can't — глагол без to.",
+      "en": ""
     }
   },
   "a1-dont-doesnt": {
@@ -575,36 +617,36 @@
       "en": ""
     },
     "5": {
-      "prompt": "У {who} нет {ru}.",
+      "prompt": "У {ru} нет предмета. Что сказать о нём?",
       "keys": [
-        "who",
         "ru",
+        "who",
         "item"
       ],
       "cases": [
         [
           "Тома",
-          "конверта",
+          "Tom",
           "an envelope"
         ],
         [
           "Анны",
-          "марки",
+          "Anna",
           "a stamp"
         ],
         [
           "Мии",
-          "телефона",
+          "Mia",
           "a phone"
         ],
         [
-          "Тома",
-          "книги",
+          "Тома дома",
+          "Tom",
           "a book"
         ],
         [
-          "Анны",
-          "письма",
+          "Анны в школе",
+          "Anna",
           "a letter"
         ]
       ],
@@ -614,6 +656,48 @@
         "{who} doesn't has {item}."
       ],
       "reason": "Перед have у третьего лица в отрицании используется doesn't.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "В {place} вас спрашивают о {ru}, но вы не знаете. Ответьте вежливо.",
+      "keys": [
+        "place",
+        "ru",
+        "thing"
+      ],
+      "cases": [
+        [
+          "почтовом отделении",
+          "почтовом индексе",
+          "ZIP code"
+        ],
+        [
+          "отеле",
+          "адресе",
+          "address"
+        ],
+        [
+          "школе",
+          "телефоне",
+          "phone number"
+        ],
+        [
+          "магазине",
+          "номере дома",
+          "house number"
+        ],
+        [
+          "на курсах",
+          "имени",
+          "name"
+        ]
+      ],
+      "options": [
+        "Sorry, I don't know the {thing}.",
+        "Sorry, I doesn't know the {thing}.",
+        "Sorry, I not know the {thing}."
+      ],
+      "reason": "В отрицании Present Simple с I используйте don't know.",
       "en": ""
     }
   },
@@ -796,6 +880,48 @@
         "My {surname} is last name."
       ],
       "reason": "My last name is ... — стандартный способ назвать фамилию.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "На {place} вас спрашивают фамилию человека {who}: {surname}. Как ответить от его лица?",
+      "keys": [
+        "place",
+        "who",
+        "surname"
+      ],
+      "cases": [
+        [
+          "курсах",
+          "Анны",
+          "Belova"
+        ],
+        [
+          "школе",
+          "Тома",
+          "Ivanov"
+        ],
+        [
+          "почте",
+          "Мии",
+          "Petrova"
+        ],
+        [
+          "встрече",
+          "Анны",
+          "Smirnova"
+        ],
+        [
+          "работе",
+          "Тома",
+          "Sidorov"
+        ]
+      ],
+      "options": [
+        "My last name is {surname}.",
+        "My last name {surname}.",
+        "I last name is {surname}."
+      ],
+      "reason": "Для фамилии — My last name is + фамилия.",
       "en": ""
     }
   }
