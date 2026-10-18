@@ -121,9 +121,9 @@ exercises:
     prompt_ru: "Новая ситуация: на встрече вас спрашивают о хобби. Вы любите музыку и играете на гитаре. Скажите одну из фраз."
     prompt_en: "What do you like? — ___"
     answer: "I like music."
-    accepted: ["I like music", "I play the guitar.", "I play the guitar", "I like music. I play the guitar.", "I like playing the guitar.", "I like playing the guitar"]
-    hint_ru: "I like + вещь или I play the guitar."
-    explanation_ru: "I like music. I play the guitar. Можно соединить: I like playing the guitar."
+    accepted: ["I like music", "I like music. I play the guitar.", "I like playing the guitar.", "I like playing the guitar"]
+    hint_ru: "На What do you like? ответьте I like + вещь или I like + действие с -ing."
+    explanation_ru: "What do you like? спрашивает именно о том, что нравится. Поэтому I like music или I like playing the guitar — прямые ответы. I play the guitar описывает занятие, но само по себе не говорит, что оно вам нравится."
     units: [LX-00203, LX-00211]
   - order: 5
     kind: choice
