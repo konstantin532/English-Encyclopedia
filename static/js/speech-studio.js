@@ -14,6 +14,12 @@
       echo: "Произнесите медленно. Точность важнее скорости.",
       recall: "Воспроизведите строку без пропусков по памяти.",
       transfer: "Примените трудный звук в обычной реплике диалога."
+    },
+    lesson: {
+      see: "Прочитайте пример и поймите, почему он подходит к ситуации.",
+      echo: "Произнесите ответ вслух. Не ускоряйтесь в ущерб ясности.",
+      recall: "Ответьте на вопрос ситуации без видимого образца.",
+      transfer: "Ответьте самостоятельно другими известными словами — без готовой фразы."
     }
   };
   const clampIndex = (i, n) => n ? Math.max(0, Math.min(i, n - 1)) : 0;
@@ -31,7 +37,8 @@
     const one = selector => root.querySelector(selector);
     const entries = [...root.querySelectorAll("[data-speech-entry]")];
     if (!entries.length) { const controls = one("[data-speech-controls]"); if (controls) controls.hidden = true; return; }
-    const kind = root.dataset.speechKind === "twister" ? "twister" : "poem";
+    const kind = ["twister", "lesson"].includes(root.dataset.speechKind) ? root.dataset.speechKind : "poem";
+    const task = one("[data-speech-task]");
     const current = one("[data-speech-current]");
     const stress = one("[data-speech-stress]");
     const progress = one("[data-speech-position]");
@@ -45,6 +52,8 @@
     let index = 0, mode = "see", visible = true, taps = [];
     function paint() {
       index = clampIndex(index, entries.length);
+      const promptSource = entries[index].querySelector("[data-speech-task-source]");
+      if (task) { task.textContent = promptSource ? promptSource.textContent.trim() : ""; task.hidden = !task.textContent; }
       const source = entries[index].querySelector("[data-speech-source]");
       const accent = entries[index].querySelector("[data-speech-accent]");
       const hidden = (mode === "recall" || mode === "transfer") && !visible;
