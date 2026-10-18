@@ -34,7 +34,7 @@ class A1MistakeReviewTests(TestCase):
     def test_every_mistake_has_five_distinct_new_prompts(self):
         catalog = question_bank()
         self.assertEqual(set(catalog), PILOT_SLUGS)
-        self.assertEqual(sum(len(variants) for row in catalog.values() for variants in row.values()), 155)
+        self.assertEqual(sum(len(variants) for row in catalog.values() for variants in row.values()), 215)
         for slug, row in catalog.items():
             for number, variants in row.items():
                 with self.subTest(slug=slug, number=number):
@@ -180,18 +180,18 @@ class A1MistakeReviewTests(TestCase):
         item.refresh_from_db()
         self.assertEqual(MistakeReview.objects.filter(user=self.user, exercise=ex).count(), 1)
 
-    def test_all_nine_open_transfer_question_packs_are_reachable_by_opt_in(self):
+    def test_all_twelve_open_transfer_question_packs_are_reachable_by_opt_in(self):
         transfers = Exercise.objects.filter(
             lesson__slug__in=PILOT_SLUGS,
             kind=Exercise.Kind.FILL, stage=Exercise.Stage.TRANSFER,
         ).select_related("lesson")
-        self.assertEqual(transfers.count(), 9)
+        self.assertEqual(transfers.count(), 12)
         for ex in transfers:
             with self.subTest(slug=ex.lesson.slug, number=ex.order):
                 response = self.client.post(reverse("learning:request_optional_review", args=[ex.pk]))
                 self.assertEqual(response.status_code, 200)
                 self.assertEqual(len(variants_for(ex)), 5)
-        self.assertEqual(MistakeReview.objects.filter(user=self.user).count(), 9)
+        self.assertEqual(MistakeReview.objects.filter(user=self.user).count(), 12)
 
     def test_voluntary_endpoint_does_not_schedule_unrelated_objective_or_guest(self):
         url = reverse("learning:request_optional_review", args=[self.choice.pk])
