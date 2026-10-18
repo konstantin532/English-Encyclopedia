@@ -1,0 +1,316 @@
+{
+  "a1-family-possession": {
+    "1": [
+      [
+        "На снимке Анна. Как сказать «её дом»?",
+        "",
+        [
+          "her house",
+          "his house",
+          "she house"
+        ],
+        0
+      ],
+      [
+        "Мия держит книгу. Как сказать «её книга»?",
+        "",
+        [
+          "his book",
+          "her book",
+          "she book"
+        ],
+        1
+      ],
+      [
+        "Том показывает свой телефон. Что означает «его телефон»?",
+        "",
+        [
+          "her phone",
+          "he phone",
+          "his phone"
+        ],
+        2
+      ],
+      [
+        "Анна представляет своего брата. Как сказать «её брат»?",
+        "",
+        [
+          "her brother",
+          "his brother",
+          "she brother"
+        ],
+        0
+      ],
+      [
+        "Папа Мии держит чашку. Как сказать «его чашка»?",
+        "",
+        [
+          "her cup",
+          "his cup",
+          "he cup"
+        ],
+        1
+      ]
+    ],
+    "2": [
+      [
+        "Вы показываете велосипед Тома. Выберите владельца с 's.",
+        "This is ___ bike.",
+        [
+          "Toms",
+          "Tom's",
+          "Tom"
+        ],
+        1
+      ],
+      [
+        "Это телефон Анны. Дополните конструкцию принадлежности.",
+        "This is ___ phone.",
+        [
+          "Anna's",
+          "Annas",
+          "Anna"
+        ],
+        0
+      ],
+      [
+        "Вы указываете на книгу Мии.",
+        "This is ___ book.",
+        [
+          "Mias",
+          "Mia",
+          "Mia's"
+        ],
+        2
+      ],
+      [
+        "Как сказать «Это дом Тома»?",
+        "",
+        [
+          "This is Tom's house.",
+          "This is Toms house.",
+          "This Tom house is."
+        ],
+        0
+      ],
+      [
+        "Вы показываете фотографию Анны.",
+        "This is ___ photo.",
+        [
+          "Annas",
+          "Anna's",
+          "Anna"
+        ],
+        1
+      ]
+    ],
+    "3": [
+      [
+        "Как представить имя папы Мии?",
+        "",
+        [
+          "His name is Tom.",
+          "Her name is Tom.",
+          "He name is Tom."
+        ],
+        0
+      ],
+      [
+        "У брата Анны имя Том. Как рассказать об этом?",
+        "",
+        [
+          "He name is Tom.",
+          "His name is Tom.",
+          "His is name Tom."
+        ],
+        1
+      ],
+      [
+        "Скажите «Его зовут Том» о мужчине.",
+        "",
+        [
+          "Her name is Tom.",
+          "He name is Tom.",
+          "His name is Tom."
+        ],
+        2
+      ],
+      [
+        "Том знакомит другого мужчину и называет его имя.",
+        "",
+        [
+          "His name is Dan.",
+          "Her name is Dan.",
+          "He name Dan is."
+        ],
+        0
+      ],
+      [
+        "Анна рассказывает имя своего отца — Том.",
+        "",
+        [
+          "Her name is Tom.",
+          "His name is Tom.",
+          "His Tom name is."
+        ],
+        1
+      ]
+    ],
+    "4": [
+      [
+        "Девочку на фото зовут Мия. Как сказать?",
+        "",
+        [
+          "His name is Mia.",
+          "Her name is Mia.",
+          "She name is Mia."
+        ],
+        1
+      ],
+      [
+        "Это Анна. Как правильно сообщить её имя?",
+        "",
+        [
+          "Her name is Anna.",
+          "His name is Anna.",
+          "Her Anna is name."
+        ],
+        0
+      ],
+      [
+        "На фото женщина, её зовут Сью.",
+        "",
+        [
+          "She name is Sue.",
+          "His name is Sue.",
+          "Her name is Sue."
+        ],
+        2
+      ],
+      [
+        "Вы представляет подругу Мию по имени.",
+        "",
+        [
+          "Her name is Mia.",
+          "His name is Mia.",
+          "She name Mia is."
+        ],
+        0
+      ],
+      [
+        "Как сказать «Её зовут Анна»?",
+        "",
+        [
+          "His name is Anna.",
+          "Her name is Anna.",
+          "She is name Anna."
+        ],
+        1
+      ]
+    ],
+    "5": [
+      [
+        "Попросите уточнить возраст двоих друзей.",
+        "How old ___ they?",
+        [
+          "is",
+          "are",
+          "am"
+        ],
+        1
+      ],
+      [
+        "Вы спрашиваете возраст родителей.",
+        "How old ___ they?",
+        [
+          "are",
+          "is",
+          "am"
+        ],
+        0
+      ],
+      [
+        "Вы спрашиваете о возрасте двух людей на фото.",
+        "How old ___ they?",
+        [
+          "am",
+          "is",
+          "are"
+        ],
+        2
+      ],
+      [
+        "Вы интересуетесь возрастом брата и сестры вместе.",
+        "How old ___ they?",
+        [
+          "are",
+          "am",
+          "is"
+        ],
+        0
+      ],
+      [
+        "Вы спрашиваете, сколько лет Анне и Тому.",
+        "How old ___ they?",
+        [
+          "is",
+          "are",
+          "am"
+        ],
+        1
+      ]
+    ],
+    "6": [
+      [
+        "Вы показываете большую семью и дом бабушки с дедушкой. Выберите правильное описание.",
+        "",
+        [
+          "We are a big family. Their house is big.",
+          "We is a big family. Their house is big.",
+          "We are a big family. They house is big."
+        ],
+        0
+      ],
+      [
+        "Нас много, а дом наших друзей новый. Как сказать?",
+        "",
+        [
+          "We is a big family. Their house is new.",
+          "We are a big family. Their house is new.",
+          "We are a big family. They house is new."
+        ],
+        1
+      ],
+      [
+        "Вы говорите «Мы семья. Их дом большой».",
+        "",
+        [
+          "We is a family. They house is big.",
+          "We are family. Them house is big.",
+          "We are a family. Their house is big."
+        ],
+        2
+      ],
+      [
+        "Вы представляете своих родных, потом дом двух родственников.",
+        "",
+        [
+          "We are a big family. Their house is new.",
+          "We is a big family. Their house is new.",
+          "We are a big family. They house is new."
+        ],
+        0
+      ],
+      [
+        "Речь о вашей большой семье и доме двух друзей. Выберите верное.",
+        "",
+        [
+          "We are a big family. They house is big.",
+          "We are a big family. Their house is big.",
+          "We is a big family. Their house big."
+        ],
+        1
+      ]
+    ]
+  }
+}
