@@ -51,7 +51,7 @@ class A1MicrostepTests(SimpleTestCase):
         self.assertIn("существительными", intro)
         self.assertIn("не правило без исключений", intro)
         self.assertIn("Что такое «детерминатив»?", structure)
-        self.assertIn("указатель", structure)
+        self.assertIn("словом-указателем", structure)
         self.assertIn("местоименное употребление", structure)
         self.assertIn("перед book", structure)
         self.assertIn("my не меняется", structure)
