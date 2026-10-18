@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Самостоятельная проверка · {{ lesson.title }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% endblock %}
+{% block content %}
+<div class="wrap independent-check">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'lessons:detail' lesson.slug %}">Урок {{ lesson.order }}</a> / самостоятельная проверка</p>
+    <h1>Проверяю, что могу сам</h1>
+    <p>{{ lesson.title }}</p>
+    <p>Здесь нет готовых слов для выбора. Сначала попробуйте самостоятельно, без подсказок и перевода. Образец откроется только после отправки. Допустимы разные естественные ответы: если ваш вариант не совпадёт, мы не будем автоматически называть его ошибкой.</p>
+    <p><strong>Важно:</strong> совпадение с образцом — не подтверждение свободного владения языком. Произношение и аудирование здесь не оцениваются.</p>
+  </header>
+
+  {% if result %}
+  <section class="section independent-result" aria-labelledby="ind-result-t" aria-live="polite">
+    <h2 id="ind-result-t">Результат попытки</h2>
+    <p>{{ result.label }}</p>
+    <p>Ваш ответ: <strong>{{ result.attempt.submitted }}</strong></p>
+    <p>Один возможный образец: <strong>{{ result.model }}</strong></p>
+    {% if result.skill == "transfer" and not result.attempt.self_rating %}
+      <p>Сравните свой ответ с образцом по смыслу: передали ли вы нужную информацию? Отличающаяся формулировка тоже может быть правильной.</p>
+      <form method="post" class="independent-rating">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="rate">
+        <input type="hidden" name="attempt_id" value="{{ result.attempt.pk }}">
+        <fieldset><legend>Как у вас получилось?</legend>
+          {% for key, text in ratings.items %}
+          <label class="independent-option"><input type="radio" name="rating" value="{{ key }}" required><span>{{ text }}</span></label>
+          {% endfor %}
+        </fieldset>
+        <button class="btn btn-primary" type="submit">Сохранить мою оценку</button>
+      </form>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  <div class="independent-grid">
+  {% for task in tasks %}
+    <section class="section independent-task" aria-labelledby="skill-{{ task.key }}">
+      <h2 id="skill-{{ task.key }}">{{ task.title }}</h2>
+      {% if task.key == "meaning" %}
+        <p>Передайте смысл по-русски. Точный перевод — не единственный допустимый.</p>
+      {% elif task.key == "writing" %}
+        <p>Напишите английскую фразу по памяти, без набора готовых слов.</p>
+      {% else %}
+        <p>Решите новую ситуацию своими словами. Автомат не оценивает смысл вашего свободного ответа.</p>
+      {% endif %}
+      <p class="independent-prompt">{{ task.item.prompt }}</p>
+      <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="skill" value="{{ task.key }}">
+        <label for="ind-answer-{{ task.key }}">Ваш ответ</label>
+        <textarea id="ind-answer-{{ task.key }}" name="answer" rows="3" maxlength="400" required placeholder="Напишите свой вариант здесь" spellcheck="false"></textarea>
+        <button class="btn btn-primary" type="submit">Проверить и открыть пример</button>
+      </form>
+    </section>
+  {% endfor %}
+  </div>
+
+  {% if attempts %}
+  <section class="section">
+    <h2>Мои последние попытки</h2>
+    <p>Эти записи показывают практику, но не являются официальной оценкой вашего уровня.</p>
+    <ul>{% for item in attempts %}<li>{{ item.created_at|date:"j E H:i" }} — {{ item.get_outcome_display }}{% if item.self_rating %} (самооценка: {{ item.self_rating }}){% endif %}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+  <p><a class="btn btn-quiet" href="{% url 'lessons:detail' lesson.slug %}">Вернуться к объяснениям урока</a></p>
+</div>
+{% endblock %}
