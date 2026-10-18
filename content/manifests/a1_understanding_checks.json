@@ -417,7 +417,7 @@
           ]
         },
         "transfer": {
-          "prompt": "Назовите свою профессию и место работы.",
+          "prompt": "Представьтесь как учитель и расскажите, где работаете. Напишите две короткие фразы.",
           "model": "I am a teacher. I work at a school."
         }
       }
@@ -530,15 +530,16 @@
           ]
         },
         "writing": {
-          "prompt": "Напишите «Позвони мне позже».",
-          "model": "Call me later.",
+          "prompt": "Без подсказок напишите имя Tom по буквам, разделяя буквы дефисами.",
+          "model": "T-O-M",
           "accepted": [
-            "Call me later."
+            "T-O-M",
+            "T O M"
           ]
         },
         "transfer": {
-          "prompt": "Попросите у нового знакомого номер телефона.",
-          "model": "What is your phone number?"
+          "prompt": "Друг попросил продиктовать имя Mia по буквам. Напишите именно последовательность букв, а не просто имя.",
+          "model": "M-I-A"
         }
       }
     },
@@ -575,9 +576,9 @@
     {
       "slug": "a1-like-doing",
       "plain": "Like + -ing рассказывает о любимом занятии.",
-      "why": "Reading — само занятие читать, book — предмет книга.",
+      "why": "Для занятия reading можно использовать форму -ing после like. Это один из способов: I like to read тоже правильно.",
       "pattern": "I like reading. / I like books.",
-      "mistake": "Путать I like reading и I like book.",
+      "mistake": "Путать I like a book и I like reading без учёта смысла.",
       "fix": "Для хобби тренируйте -ing после like.",
       "example": "I like reading.",
       "translation": "Мне нравится читать.",
@@ -830,10 +831,10 @@
           ]
         },
         "writing": {
-          "prompt": "Напишите «Я не знаю, где банк».",
-          "model": "I don't know where the bank is.",
+          "prompt": "Напишите «Я не знаю адрес» без банка готовых слов.",
+          "model": "I don't know the address.",
           "accepted": [
-            "I don't know where the bank is."
+            "I don't know the address."
           ]
         },
         "transfer": {
