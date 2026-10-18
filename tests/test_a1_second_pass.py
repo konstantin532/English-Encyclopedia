@@ -70,6 +70,20 @@ class A1SecondPassTests(SimpleTestCase):
         self.assertEqual(address["answer"], "five Park Street")
         self.assertIn("5 Park Street", lessons[24]["layers"][6]["body"])
 
+    def test_future_topics_are_labeled_as_previews_not_prerequisites(self):
+        lessons = course_lessons()
+        previews = {
+            11: ("at five", "следующий урок"),
+            15: ("Can you help us?", "следующем уроке"),
+            19: ("I like reading", "следующем уроке"),
+            21: ("cannot / can't", "следующем уроке"),
+        }
+        for number, expressions in previews.items():
+            opening = lessons[number]["layers"][0]["body"]
+            for phrase in expressions:
+                with self.subTest(lesson=number, phrase=phrase):
+                    self.assertIn(phrase, opening)
+
     def test_free_response_options_match_the_actual_task(self):
         lessons = course_lessons()
 
