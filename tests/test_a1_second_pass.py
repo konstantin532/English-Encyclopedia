@@ -70,6 +70,38 @@ class A1SecondPassTests(SimpleTestCase):
         self.assertEqual(address["answer"], "five Park Street")
         self.assertIn("5 Park Street", lessons[24]["layers"][6]["body"])
 
+    def test_free_response_options_match_the_actual_task(self):
+        lessons = course_lessons()
+
+        # «Попросите немного» требует объяснить неопределённое количество.
+        bananas = next(e for e in lessons[9]["exercises"] if e["order"] == 6)
+        self.assertNotIn("Yellow bananas, please.", bananas.get("accepted", []))
+
+        # Отдельное «я играю» не обязательно означает «мне нравится».
+        hobbies = next(e for e in lessons[20]["exercises"] if e["order"] == 4)
+        self.assertNotIn("I play the guitar.", hobbies.get("accepted", []))
+        self.assertIn("I like playing the guitar.", hobbies.get("accepted", []))
+
+        # Не придумываем новые этапы маршрута, если известен только поворот.
+        route = next(e for e in lessons[16]["exercises"] if e["order"] == 4)
+        self.assertNotIn("Go straight and turn right.", route.get("accepted", []))
+        self.assertEqual(route["answer"], "Turn right.")
+
+        # Разговорный ответ может быть коротким, как сказано в условии.
+        ability = next(e for e in lessons[25]["exercises"] if e["order"] == 4)
+        self.assertIn("Yes, I can.", ability["accepted"])
+        self.assertIn("по желанию", ability["hint_ru"])
+
+        # Причина должна что-то объяснять, а не просто повторять вопрос.
+        why = next(e for e in lessons[26]["exercises"] if e["order"] == 4)
+        self.assertNotIn("Because I like English", why.get("accepted", []))
+        self.assertNotIn("Because I like music.", why.get("accepted", []))
+
+        # Американское сокращение TV пишется прописными буквами.
+        television = next(e for e in lessons[11]["exercises"] if e["order"] == 6)
+        self.assertFalse(any("watch tv" in candidate for candidate
+                             in television.get("accepted", [])))
+
     def test_reasons_distinguish_common_lookalikes(self):
         expected = {
             4: ("I have a phone", "Can I have a phone?"),
