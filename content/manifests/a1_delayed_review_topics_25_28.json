@@ -1,0 +1,210 @@
+{
+  "a1-can-skills": [
+    [
+      "Вы хотите узнать, умеет ли друг говорить по-русски.",
+      "",
+      [
+        "Can you speak Russian?",
+        "Can you to speak Russian?",
+        "Are you speak Russian?"
+      ],
+      0
+    ],
+    [
+      "Вас спрашивают «Can you speak English?» По условию вы умеете. Ответьте.",
+      "",
+      [
+        "Yes, I do.",
+        "Yes, I can.",
+        "Yes, I am can."
+      ],
+      1
+    ],
+    [
+      "Попросите друга научить вас.",
+      "",
+      [
+        "Do you teach can me?",
+        "Can you to teach me?",
+        "Can you teach me?"
+      ],
+      2
+    ],
+    [
+      "Вы умеете говорить по-русски и по-английски. Как рассказать?",
+      "",
+      [
+        "I can speak Russian and English.",
+        "I can speaking Russian and English.",
+        "I can to speak Russian and English."
+      ],
+      0
+    ],
+    [
+      "Анна умеет рисовать. Выберите правильное утверждение.",
+      "",
+      [
+        "She can draws.",
+        "She can draw.",
+        "She can to draw."
+      ],
+      1
+    ]
+  ],
+  "a1-why-because": [
+    [
+      "Том спрашивает, почему вы любите русский язык. Как начать объяснение причины?",
+      "",
+      [
+        "When I like Russian.",
+        "Where I like Russian.",
+        "Because I like Russian music."
+      ],
+      2
+    ],
+    [
+      "Укажите слово, которым вводят причину.",
+      "___ I am tired.",
+      [
+        "Because",
+        "Why",
+        "When"
+      ],
+      0
+    ],
+    [
+      "Спросите собеседника, почему ему нравится музыка.",
+      "",
+      [
+        "Why do you likes music?",
+        "Why do you like music?",
+        "Why you do like music?"
+      ],
+      1
+    ],
+    [
+      "Вы не можете гулять, потому что работаете.",
+      "",
+      [
+        "I can't walk because I works.",
+        "I can't walk why I work.",
+        "I can't walk because I work."
+      ],
+      2
+    ],
+    [
+      "Учитель просит объяснить, почему вы не понимаете слово.",
+      "",
+      [
+        "Because I don't know the word.",
+        "Because I doesn't know the word.",
+        "Why I don't know the word."
+      ],
+      0
+    ]
+  ],
+  "a1-bus-ticket": [
+    [
+      "Спросите водителя, идёт ли этот автобус до парка.",
+      "",
+      [
+        "Do this bus go to the park?",
+        "Does this bus go to the park?",
+        "Does this bus goes to the park?"
+      ],
+      1
+    ],
+    [
+      "Вы хотите купить два билета.",
+      "Two ___, please.",
+      [
+        "ticket",
+        "a tickets",
+        "tickets"
+      ],
+      2
+    ],
+    [
+      "Спросите, во сколько отправится следующий автобус.",
+      "",
+      [
+        "What time is the next bus?",
+        "What time the next bus is?",
+        "What is the next bus time?"
+      ],
+      0
+    ],
+    [
+      "Вы хотите узнать цену одного билета.",
+      "",
+      [
+        "How many is a ticket?",
+        "How much is a ticket?",
+        "How old is a ticket?"
+      ],
+      1
+    ],
+    [
+      "На табло: «The train arrives at six». Что это означает?",
+      "",
+      [
+        "Поезд отбывает в шесть.",
+        "Поезд стоит шесть часов.",
+        "Поезд прибывает в шесть."
+      ],
+      2
+    ]
+  ],
+  "a1-review-everything": [
+    [
+      "Ваша подруга Мия работает в школе. Выберите правильную фразу.",
+      "",
+      [
+        "Mia works at a school.",
+        "Mia work at a school.",
+        "Mia is work at a school."
+      ],
+      0
+    ],
+    [
+      "Вы не знаете ответ. Как вежливо сказать это?",
+      "",
+      [
+        "Sorry, I doesn't know.",
+        "Sorry, I don't know.",
+        "Sorry, I not know."
+      ],
+      1
+    ],
+    [
+      "Вы ищете банк. Как спросить дорогу?",
+      "",
+      [
+        "Who is the bank?",
+        "Where the bank is?",
+        "Excuse me, where is the bank?"
+      ],
+      2
+    ],
+    [
+      "Вы можете говорить на английском и рассказываете об этом.",
+      "",
+      [
+        "I can speak English.",
+        "I can to speak English.",
+        "I can speaking English."
+      ],
+      0
+    ],
+    [
+      "Сегодня солнечно. Выберите грамматически правильную фразу.",
+      "",
+      [
+        "It sunny today.",
+        "It is sunny today.",
+        "Today sunny it is."
+      ],
+      1
+    ]
+  ]
+}
