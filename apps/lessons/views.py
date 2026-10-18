@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import ensure_csrf_cookie
 
 from apps.core.a1_active import MAX_TOPIC, active_topics
+from apps.learning.understanding import get_guide
 
 from .models import Lesson
 
@@ -19,6 +20,7 @@ def lesson_detail(request, slug):
         "lesson": lesson,
         "extra_missions": extra_missions,
         "a1_pilot": lesson.level.code == "A1" and 1 <= lesson.order <= 4,
+        "a1_guide": get_guide(lesson.slug) if lesson.level.code == "A1" else None,
         "layers": lesson.layers.all(),
         "units": units,
         "exercises": lesson.exercises.all(),
