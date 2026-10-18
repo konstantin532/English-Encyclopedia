@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load markers static ru %}
 {% block title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% endblock %}
 {% block content %}
 <div class="wrap">
   <header class="page-head">
@@ -20,6 +21,21 @@
           <button type="button" data-a1-route-mode="full" aria-pressed="true">Полностью</button>
         </div>
         <p class="a1-learning-route-status" data-a1-route-status aria-live="polite">Полностью: доступны все семь шагов урока и дополнительная практика.</p>
+      </section>
+      {% endif %}
+      {% if a1_guide %}
+      <section class="a1-clarity-bridge" aria-labelledby="a1-clarity-title">
+        <h2 id="a1-clarity-title">Понять за минуту — без сложных терминов</h2>
+        <p>Короткая опора перед подробным уроком. Ниже сохраняются все семь слоёв объяснения, примеры и практика.</p>
+        <dl>
+          <dt>Что это?</dt><dd>{{ a1_guide.plain }}</dd>
+          <dt>Почему работает?</dt><dd>{{ a1_guide.why }}</dd>
+          <dt>Простая схема</dt><dd><strong lang="en">{{ a1_guide.pattern }}</strong></dd>
+          <dt>Типичная ошибка</dt><dd>{{ a1_guide.mistake }}</dd>
+          <dt>Как исправить</dt><dd>{{ a1_guide.fix }}</dd>
+        </dl>
+        <blockquote><span lang="en">{{ a1_guide.example }}</span> — {{ a1_guide.translation }}</blockquote>
+        <p>Когда почувствуете, что поняли, попробуйте <a href="{% url 'learning:independent_check' lesson.slug %}">самостоятельно ответить без готовых вариантов</a>.</p>
       </section>
       {% endif %}
       <div class="prose" data-lesson-reader>
@@ -51,6 +67,13 @@
           {% include "components/drill.html" with ex=ex number=forloop.counter total=exercises|length %}
           {% endfor %}
         </div>
+      </section>
+      {% endif %}
+      {% if a1_guide %}
+      <section class="section" aria-label="Независимая проверка понимания">
+        <h2>Проверка без готовых ответов</h2>
+        <p>Три отдельные задачи: понять фразу, написать её по памяти и применить правило в новой ситуации. Это не угадывание кнопкой и не автоматический экзамен по разговорной речи.</p>
+        <a class="btn btn-primary" href="{% url 'learning:independent_check' lesson.slug %}">Проверить себя самостоятельно →</a>
       </section>
       {% endif %}
       {% if extra_missions %}
