@@ -56,7 +56,7 @@ layers:
 
       > [T1]The[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]. — Мастерская между банком и гостиницей.
 
-      - [P1]under[/] — под: under the door
+      - [P1]under[/] — под: under the box
       - [P1]between[/] — между: between the bank **and** the hotel
       - [P9]in front of[/] — перед: in front of the cafe
       - [P9]across from[/] — напротив, через дорогу: across from the park
@@ -90,6 +90,8 @@ layers:
   - number: 7
     body: |
       Шесть заданий: узнать вопрос «где», выбрать предлог, собрать ответ, объяснить, где место, выбрать between и сказать, что напротив.
+
+      **Проверка маленького шага:** *The bank is near the cafe* — банк **неподалёку**, расстояние не названо. *The bank is next to the cafe* — банк **непосредственно рядом**. Оба выражения говорят «рядом», но для точного направления различие важно.
 exercises:
   - order: 1
     kind: choice
