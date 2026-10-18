@@ -1,4 +1,4 @@
-"""A1 verified mistakes receive five novel, delayed, private practice questions."""
+"""A1 verified errors schedule five private, delayed questions, using shared theme sets after lesson 8."""
 import json
 from datetime import timedelta
 
@@ -34,7 +34,9 @@ class A1MistakeReviewTests(TestCase):
     def test_every_mistake_has_five_distinct_new_prompts(self):
         catalog = question_bank()
         self.assertEqual(set(catalog), PILOT_SLUGS)
-        self.assertEqual(sum(len(variants) for row in catalog.values() for variants in row.values()), 215)
+        self.assertEqual(len(catalog), 28)
+        self.assertEqual(sum(len(variants) for row in catalog.values() for variants in row.values()), 815)
+        self.assertEqual(sum(len(v) for v in catalog.values()), 163)
         for slug, row in catalog.items():
             for number, variants in row.items():
                 with self.subTest(slug=slug, number=number):
@@ -180,18 +182,18 @@ class A1MistakeReviewTests(TestCase):
         item.refresh_from_db()
         self.assertEqual(MistakeReview.objects.filter(user=self.user, exercise=ex).count(), 1)
 
-    def test_all_twelve_open_transfer_question_packs_are_reachable_by_opt_in(self):
+    def test_every_open_transfer_question_pack_is_reachable_by_opt_in(self):
         transfers = Exercise.objects.filter(
             lesson__slug__in=PILOT_SLUGS,
             kind=Exercise.Kind.FILL, stage=Exercise.Stage.TRANSFER,
         ).select_related("lesson")
-        self.assertEqual(transfers.count(), 12)
+        self.assertGreater(transfers.count(), 12)
         for ex in transfers:
             with self.subTest(slug=ex.lesson.slug, number=ex.order):
                 response = self.client.post(reverse("learning:request_optional_review", args=[ex.pk]))
                 self.assertEqual(response.status_code, 200)
                 self.assertEqual(len(variants_for(ex)), 5)
-        self.assertEqual(MistakeReview.objects.filter(user=self.user).count(), 12)
+        self.assertEqual(MistakeReview.objects.filter(user=self.user).count(), transfers.count())
 
     def test_voluntary_endpoint_does_not_schedule_unrelated_objective_or_guest(self):
         url = reverse("learning:request_optional_review", args=[self.choice.pk])
@@ -230,3 +232,31 @@ class A1MistakeReviewTests(TestCase):
                 # Retire this review to check the second lesson independently.
                 item.completed_at = timezone.now()
                 item.save(update_fields=["completed_at"])
+
+
+    def test_all_twenty_later_lessons_have_topic_level_review_without_reusing_original(self):
+        catalog = question_bank()
+        for order in range(9, 29):
+            from apps.lessons.models import Lesson
+            lesson = Lesson.objects.get(level__code="A1", order=order)
+            questions = catalog[lesson.slug]
+            self.assertEqual(set(questions), {str(i) for i in range(1, 7)})
+            self.assertEqual(len(questions["1"]), 5)
+            # Twenty new lessons currently share one curated thematic five-pack
+            # per lesson; do not mislabel them as per-mistake expert diagnoses.
+            self.assertEqual(questions["1"], questions["6"])
+            for ex in lesson.exercises.all():
+                self.assertEqual(len(variants_for(ex)), 5)
+                self.assertTrue(all(q[0] != ex.prompt_ru for q in variants_for(ex)))
+
+    def test_lesson_twenty_eight_confirmed_error_does_not_schedule_immediately(self):
+        ex = Exercise.objects.get(lesson__slug="a1-review-everything", order=1)
+        data = self.answer_original(ex, "She work at a school.")
+        self.assertFalse(data["correct"])
+        self.assertEqual(data["retry_count"], 5)
+        entry = MistakeReview.objects.get(user=self.user, exercise=ex)
+        self.assertGreater(entry.due_at, timezone.now() + timedelta(days=1, hours=23))
+        self.assertNotContains(self.client.get(reverse("learning:mistake_review")), "Новый вопрос 1 из 5")
+        entry.due_at = timezone.now() - timedelta(seconds=1)
+        entry.save(update_fields=["due_at"])
+        self.assertContains(self.client.get(reverse("learning:mistake_review")), "Новый вопрос 1 из 5")
