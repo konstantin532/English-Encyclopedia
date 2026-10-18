@@ -167,5 +167,5 @@ class A1IndependentAssessmentTests(TestCase):
         self.assertContains(response, 'name="viewport" content="width=device-width, initial-scale=1"')
         self.assertContains(response, "css/independent-check.css")
         self.assertContains(response, "<textarea", count=4)
-        self.assertContains(response, "maxlength=\"400\"", count=3)
+        self.assertContains(response, "maxlength=\"400\"", count=4)
         self.assertContains(response, "Проверить и открыть пример", count=4)
