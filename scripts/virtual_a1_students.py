@@ -15,7 +15,6 @@ import sys
 import unicodedata
 import urllib.error
 import urllib.request
-from collections import Counter
 from pathlib import Path
 
 import yaml
@@ -172,12 +171,15 @@ def blind_packet(lesson, active, memory):
         ],
     }
     if active:
-        packet["active"] = {"why": active.get("why", ""), "feedback": active.get("feedback", ""),
+        # Не даём модели интерактивные feedback/why/coach: они могут выдать
+        # разбор и правильный ответ ещё до самостоятельной попытки.
+        packet["active"] = {
             "scene": active.get("dialogue", []),
             "missions": [
-                {"source": f"mission:{i}", "prompt": m.get("prompt", ""), "coach": m.get("coach", "")}
+                {"source": f"mission:{i}", "prompt": m.get("prompt", "")}
                 for i, m in enumerate(active.get("missions", []), 1)
-            ]}
+            ],
+        }
     return packet
 
 
