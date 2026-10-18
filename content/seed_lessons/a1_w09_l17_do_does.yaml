@@ -34,7 +34,7 @@ layers:
       > [O1]Hello[/]! [T2]This[/] [D1]is[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]my[/] [S2]key[/], [O8]please[/]? — Алло! Это Анна. Мой ключ у вас?
       > [T9]What[/] [S7]time[/] [D1]does[/] [T1]the[/] [S4]shop[/] [D2]open[/]? — А во сколько открывается мастерская?
 
-      Помощник do или does ставят перед тем, о ком спрашивают.
+      В **обычных вопросах с have / work / open** помощник **do** или **does** ставят **перед подлежащим**: *Do you have…?*, *Does the shop open…?*. Но не всякий вопрос в английском требует **do**: с **be** и **can** вопросы строятся иначе.
   - number: 2
     body: |
       **do** — одно из древнейших английских слов, родственное немецкому `tun`. Сначала оно значило «класть, ставить», потом «делать». В вопросах do начали использовать около 500 лет назад, во времена Шекспира. Раньше спрашивали, просто переставляя глагол: «Have you my key?».
@@ -47,30 +47,30 @@ layers:
       > [D1]Do[/] [T8]you[/] [D1]have[/] [T3]my[/] [S2]key[/]? — У вас мой ключ?
       > [T9]What[/] [S7]time[/] [D1]does[/] [T1]the[/] [S4]shop[/] [D2]open[/]? — Во сколько открывается мастерская?
 
-      - I, you, they — **do**: Do you…?
+      - **I, you, we, they** — **do**: *Do you…?*
       - he, she, it, одна вещь или человек — **does**: Does the shop…?
       - После do / does глагол без -s: does the shop open.
-      - Вопросительное слово — в самом начале: What time does…? Where do you…?
+      - Для вопросов, где спрашиваем **не о подлежащем**, вопросительное выражение ставим **перед помощником**: *What time does…?*, *Where do you…?*. Позже вы встретите вопросы вроде *Who works here?*, в которых **do/does не нужны**.
 
       Вопросительное слово ставят **перед** do / does. Вот все, что вы уже знаете:
 
       - [T9]what[/] — что, какой: What time does the shop open?
       - [A6]when[/] — когда: When does the shop close?
       - [A6]where[/] — где, [T9]who[/] — кто, [A6]why[/] — почему, [A6]how[/] — как
-      - [T9]which[/] — какой из: Which key is your key?
-      - [T9]whose[/] — чей: Whose key is it?
+      - [T9]which[/] — **который из известных вариантов**: *Which key is your key?* Здесь вопрос уже с **be**, поэтому отдельный *do* не нужен.
+      - [T9]whose[/] — **чей**: *Whose key is it?* Это тоже вопрос с *is*. Так вы видите, что разные типы вопросов могут иметь разный каркас.
 
       > [T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/] [C1]and[/] [D2]closes[/] [P3]at[/] [N3]five[/]. — Открываемся в девять, закрываемся в пять.
 
       [D2]open[/] и [D2]close[/] с he, she, it получают -s: it opens, it closes. Спросить разрешения задать вопрос: [D7]Can[/] [T8]I[/] [D5]ask[/] [T8]you[/]?
   - number: 4
     body: |
-      Почему -s исчезает у глагола? Оно переходит в does. Сравните:
+      **Почему open без -s после does?** Форму третьего лица уже показывает **does**, поэтому смысловой глагол ставят в начальной форме. Образ «-s переходит к помощнику» полезен как подсказка, но не следует понимать его буквально. Сравните:
 
       - The shop opens at nine. — The shop **does** open → Does the shop open?
       - Tom works at home. → Does Tom work at home?
 
-      Окончание бывает в предложении только один раз. Если оно ушло в does, у open его уже нет.
+      В **этом вопросе** не нужно добавлять второе окончание: *Does the shop open?*, не *Does the shop opens?*. Это правило именно для вопросов и отрицаний с **does**, а не для всех предложений с несколькими глаголами.
 
       > [T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/] [C1]and[/] [D2]closes[/] [P3]at[/] [N3]five[/]. — Открываемся в девять, закрываемся в пять.
   - number: 5
@@ -81,7 +81,7 @@ layers:
       > [O1]Hello[/]! [T2]This[/] [D1]is[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]my[/] [S2]key[/], [O8]please[/]? — Алло! Это Анна. Мой ключ у вас?
 
       - В магазине или мастерской сразу называют место: Key shop. Hello, cafe on the corner.
-      - Себя называют This is Anna. Фраза I am Anna по телефону звучит странно.
+      - При представлении по телефону естественнее **This is Anna** или сокращённо *It's Anna*. **I am Anna** грамматически возможно, но не типично как первое представление по телефону; это различие **употребления**, а не правильности формы.
       - Прощаются коротко: See you! See you at nine!
   - number: 6
     body: |
@@ -103,7 +103,7 @@ exercises:
     options: ["What time does the shop open?", "What time does the shop opens?", "What time the shop opens?"]
     answer: "What time does the shop open?"
     hint_ru: "-s бывает только один раз."
-    explanation_ru: "What time does the shop open? — -s ушло в does, open без -s."
+    explanation_ru: "Does уже показывает форму третьего лица с the shop, поэтому основной глагол open остаётся без -s: What time does the shop open?"
     units: [LX-00191]
   - order: 2
     kind: fill
