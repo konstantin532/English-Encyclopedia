@@ -32,13 +32,15 @@ class A1LearningRouteTests(TestCase):
                 self.assertContains(response, 'id="spoken-coach"')
                 self.assertContains(response, 'class="section a1-active-invite"')
 
-    def test_mode_switch_never_changes_other_a1_lessons_or_a1_plus(self):
-        for order in (5, 18, 28):
+    def test_reading_depths_extend_to_all_28_a1_lessons(self):
+        for order in range(5, 29):
             with self.subTest(order=order):
                 lesson = Lesson.objects.get(level__code="A1", order=order)
                 response = self.client.get(reverse("lessons:detail", args=[lesson.slug]))
                 self.assertEqual(response.status_code, 200)
-                self.assertNotContains(response, 'data-a1-learning-route')
-                self.assertNotContains(response, 'js/a1-learning-route.js')
+                self.assertContains(response, 'data-a1-learning-route')
+                self.assertContains(response, 'js/a1-learning-route.js')
                 self.assertContains(response, 'id="layer-7"')
                 self.assertContains(response, 'id="practice"')
+                self.assertContains(response, 'class="a1-step-list"')
+                self.assertContains(response, 'class="a1-step-en"', count=3)
