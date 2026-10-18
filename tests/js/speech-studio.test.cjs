@@ -61,5 +61,5 @@ test('all three training surfaces include the actual script and reusable control
   assert.match(controls, /data-speech-record/);
   assert.match(controls, /data-speech-tap/);
   assert.match(controls, /data-speech-reveal/);
-  assert.match(controls, /данные/); // no hard-coded identity or external service
+  assert.match(controls, /на сервер не отправляется/);
 });
