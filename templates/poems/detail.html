@@ -30,7 +30,7 @@
       </section>
       <section class="layer" id="speech-studio" aria-labelledby="speech-studio-title">
         <h2 id="speech-studio-title"><span class="layer-num">4</span>Речевая мастерская: от строки к свободной речи</h2>
-        <div class="speech-studio" data-speech-studio data-speech-kind="poem">
+        <div class="speech-studio" data-speech-studio data-speech-kind="poem" data-speech-key="poem:{{ poem.number }}" data-speech-persist="{% if user.is_authenticated %}true{% else %}false{% endif %}" data-speech-endpoint="{% url 'learning:speech_practice' %}">
           <p>Здесь работают старые приёмы декламации и современные способы тренировки памяти, ударения и ритма. Обычный текст стихотворения остаётся доступным выше.</p>
           <div data-speech-bank hidden>{% for row in rows %}
             <div data-speech-entry>
@@ -64,4 +64,4 @@
   </div>
 </div>
 {% endblock %}
-{% block scripts %}<script src="{% static 'js/story-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script>{% endblock %}
+{% block scripts %}<script src="{% static 'js/story-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script>{% endblock %}
