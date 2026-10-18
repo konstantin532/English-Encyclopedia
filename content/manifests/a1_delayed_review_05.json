@@ -1,0 +1,286 @@
+{
+  "a1-cafe-order": {
+    "1": [
+      [
+        "Бариста говорит слишком тихо. Как вежливо попросить повторить?",
+        [
+          "Can you say it again, please?",
+          "I have a coffee.",
+          "This is my book."
+        ],
+        0
+      ],
+      [
+        "Вы не расслышали цену в кафе. Как переспросить?",
+        [
+          "A tea, please.",
+          "Sorry?",
+          "I am from Russia."
+        ],
+        1
+      ],
+      [
+        "Вы не поняли вопрос бариста. Выберите просьбу повторить.",
+        [
+          "No, it is not my phone.",
+          "Thank you.",
+          "Sorry? Can you say it again, please?"
+        ],
+        2
+      ],
+      [
+        "Собеседник сказал что-то очень быстро. Что поможет продолжить разговор?",
+        [
+          "Can you say it again, please?",
+          "I am a teacher.",
+          "One juice, please."
+        ],
+        0
+      ],
+      [
+        "Бариста спросил о заказе, но вы не расслышали. Выберите подходящий ответ.",
+        [
+          "This is my new house.",
+          "Sorry? Can you say it again, please?",
+          "This is my neighbor."
+        ],
+        1
+      ]
+    ],
+    "2": [
+      [
+        "Вам предлагают выбрать кофе или чай. Какое слово соединяет варианты? «Coffee ___ tea?»",
+        [
+          "and",
+          "or",
+          "is"
+        ],
+        1
+      ],
+      [
+        "На столе вода или сок? Завершите вопрос. «Water ___ juice?»",
+        [
+          "or",
+          "have",
+          "can"
+        ],
+        0
+      ],
+      [
+        "Вы спрашиваете, нужен чай или сок. «Tea ___ juice?»",
+        [
+          "is",
+          "my",
+          "or"
+        ],
+        2
+      ],
+      [
+        "Два варианта напитка: кофе или вода. «Coffee ___ water?»",
+        [
+          "or",
+          "do",
+          "a"
+        ],
+        0
+      ],
+      [
+        "Бариста перечисляет альтернативы: чай или кофе. «Tea ___ coffee?»",
+        [
+          "and",
+          "or",
+          "am"
+        ],
+        1
+      ]
+    ],
+    "3": [
+      [
+        "Попросите печенье в кафе вежливо.",
+        [
+          "Can I have a cookie, please?",
+          "Can I a cookie, please?",
+          "I cookie have, please?"
+        ],
+        0
+      ],
+      [
+        "Вы хотите один сэндвич. Выберите правильную просьбу.",
+        [
+          "Can I sandwich a please?",
+          "Can I have a sandwich, please?",
+          "I can a sandwich, please?"
+        ],
+        1
+      ],
+      [
+        "Вы просите один чай. Какой порядок слов правильный?",
+        [
+          "Can have I a tea, please?",
+          "I a tea can have?",
+          "Can I have a tea, please?"
+        ],
+        2
+      ],
+      [
+        "Бариста рядом, вы хотите один кофе. Как попросить?",
+        [
+          "Can I have a coffee, please?",
+          "Can I a coffee have, please?",
+          "Can I coffee please?"
+        ],
+        0
+      ],
+      [
+        "Вы просите одну порцию сока. Выберите вежливый вариант.",
+        [
+          "I have juice can?",
+          "Can I have a juice, please?",
+          "Can I a juice, please?"
+        ],
+        1
+      ]
+    ],
+    "4": [
+      [
+        "Вам предлагают чай или кофе. Вы хотите кофе. Как ответить вежливо?",
+        [
+          "Coffee, please.",
+          "This is coffee.",
+          "No, coffee is new."
+        ],
+        0
+      ],
+      [
+        "Бариста спрашивает о напитке. Вы хотите сок. Выберите ответ.",
+        [
+          "Juice!",
+          "One juice, please.",
+          "I juice can."
+        ],
+        1
+      ],
+      [
+        "Вы выбираете чай вместо сока. Как сказать?",
+        [
+          "Tea is my phone.",
+          "I am tea.",
+          "Tea, please."
+        ],
+        2
+      ],
+      [
+        "Бариста предлагает кофе или воду, вам нужна вода.",
+        [
+          "Water, please.",
+          "Water is a house.",
+          "I can water."
+        ],
+        0
+      ],
+      [
+        "Вы хотите один сэндвич из двух вариантов еды. Ответьте вежливо.",
+        [
+          "I am a sandwich.",
+          "A sandwich, please.",
+          "Sandwich is Tom."
+        ],
+        1
+      ]
+    ],
+    "5": [
+      [
+        "Вы заказываете чай и хотите прозвучать мягко и вежливо.",
+        [
+          "I would like a tea, please.",
+          "Tea!",
+          "I want tea."
+        ],
+        0
+      ],
+      [
+        "Как вежливо попросить сок у бариста?",
+        [
+          "Juice!",
+          "I'd like a juice, please.",
+          "I have juice."
+        ],
+        1
+      ],
+      [
+        "Выберите мягкий вариант заказа сэндвича.",
+        [
+          "Sandwich!",
+          "I sandwich.",
+          "I'd like a sandwich, please."
+        ],
+        2
+      ],
+      [
+        "Вы заказываете кофе. Какая фраза подчёркивает вежливую просьбу?",
+        [
+          "I would like a coffee, please.",
+          "Coffee.",
+          "I want coffee."
+        ],
+        0
+      ],
+      [
+        "Как попросить чай при заказе без резкого приказа?",
+        [
+          "Tea now!",
+          "I'd like a tea, please.",
+          "Tea!"
+        ],
+        1
+      ]
+    ],
+    "6": [
+      [
+        "Вы хотите чай и сок. Выберите вежливый заказ.",
+        [
+          "I'd like a tea and a juice, please.",
+          "I am tea and juice.",
+          "Tea juice have I?"
+        ],
+        0
+      ],
+      [
+        "Бариста спрашивает, что вы хотите. Нужны сэндвич и кофе.",
+        [
+          "I sandwich coffee.",
+          "I'd like a sandwich and a coffee, please.",
+          "I is coffee."
+        ],
+        1
+      ],
+      [
+        "Вам нужны печенье и чай. Что ответить?",
+        [
+          "Have a cookie tea.",
+          "Is it tea cookie?",
+          "Can I have a cookie and a tea, please?"
+        ],
+        2
+      ],
+      [
+        "Хотите кофе и сок. Выберите понятный ответ на вопрос бариста.",
+        [
+          "A coffee and a juice, please.",
+          "Coffee is new juice.",
+          "Can I coffee a juice?"
+        ],
+        0
+      ],
+      [
+        "Вы заказываете один сэндвич и чай.",
+        [
+          "I am a sandwich.",
+          "I'd like a sandwich and a tea, please.",
+          "It is my sandwich tea."
+        ],
+        1
+      ]
+    ]
+  }
+}
