@@ -1,6 +1,4 @@
 """Login-only, server-checked five-question practice after a 48-hour pause."""
-from datetime import timedelta
-
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.http import HttpResponseBadRequest
