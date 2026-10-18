@@ -169,7 +169,7 @@
       "en": ""
     },
     "5": {
-      "prompt": "Как сказать о {who}, что {ru}?",
+      "prompt": "Как правильно сказать: {ru}?",
       "keys": [
         "who",
         "ru",
@@ -177,27 +177,27 @@
       ],
       "cases": [
         [
-          "she",
+          "She",
           "она заканчивает в два",
           "finishes at two"
         ],
         [
-          "he",
+          "He",
           "он заканчивает в семь",
           "finishes at seven"
         ],
         [
-          "she",
+          "She",
           "она заканчивает вечером",
           "finishes in the evening"
         ],
         [
-          "he",
+          "He",
           "он смотрит телевизор",
           "watches TV"
         ],
         [
-          "she",
+          "She",
           "она смотрит телевизор вечером",
           "watches TV in the evening"
         ]
