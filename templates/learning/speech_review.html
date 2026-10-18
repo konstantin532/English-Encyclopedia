@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Речевые повторения · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom:var(--space-8)">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'learning:dashboard' %}">Мой прогресс</a> / Речь</p>
+    <h1>Речевые повторения</h1>
+    <p>Трудные строки возвращаются чаще, а самостоятельно произнесённые — через день, три дня, неделю и две недели. Это расписание **вашей самооценки**, а не автоматическая оценка акцента.</p>
+  </header>
+  <section class="section" aria-labelledby="speech-due-heading">
+    <div class="section-head">
+      <h2 id="speech-due-heading">Пора потренировать</h2>
+      <p>Откройте упражнение, произнесите фрагмент по памяти и отметьте, насколько самостоятельно получилось.</p>
+    </div>
+    {% if pending %}
+    <ul class="speech-review-list">
+      {% for item in pending %}
+      <li>
+        <a href="{{ item.url }}"><strong>{{ item.title }}</strong> — фрагмент {{ item.fragment }} →</a>
+        <span class="status">{{ item.rating }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>Пока нет речевых фрагментов, назначенных к повторению. Можно потренироваться в любом уроке, стихотворении или скороговорке.</p>
+    {% endif %}
+    {% if upcoming %}
+    <p>Ближайшее следующее повторение: {{ upcoming.next_review_at|date:"j E, H:i" }}.</p>
+    {% endif %}
+    <p><a href="{% url 'curriculum:level' 'a1' %}" class="btn btn-quiet">Открыть уроки A1</a></p>
+  </section>
+  <p class="drill-hint">Аудиозаписи ученика нигде не хранятся. В базу записываются только выбранные вами оценки и даты следующей тренировки.</p>
+</div>
+{% endblock %}
