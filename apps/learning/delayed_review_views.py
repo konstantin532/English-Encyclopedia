@@ -7,7 +7,7 @@ from django.utils import timezone
 from django.views.decorators.http import require_http_methods, require_POST
 
 from apps.drills.models import Exercise
-from apps.drills.retry_guidance import is_open_pilot_response, retry_guidance
+from apps.drills.retry_guidance import is_open_pilot_response
 from .mistake_review import COUNT, DELAY, due_reviews, variants_for, schedule_review
 from .models import MistakeReview
 
@@ -57,7 +57,14 @@ def mistake_review(request):
                     "correct": correct,
                     "chosen": question[2][choice],
                     "model": question[2][right],
-                    "reason": retry_guidance(item.exercise, question[2][choice]),
+                    # A delayed question checks its *own* sentence, not
+                    # necessarily the exact error in the original exercise.
+                    # Never display the original hint as if it explained an
+                    # unrelated alternative question.
+                    "reason": question[4] if len(question) > 4 else (
+                        "Сравните варианты и обратите внимание на порядок слов, "
+                        "форму глагола и смысл ситуации." if not correct else ""
+                    ),
                     "number": index + 1,
                     "finished": finished,
                     "score": score,
