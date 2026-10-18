@@ -94,7 +94,20 @@
   <section class="section">
     <h2>Мои последние попытки</h2>
     <p>Эти записи показывают практику, но не являются официальной оценкой вашего уровня.</p>
-    <ul>{% for item in attempts %}<li>{{ item.created_at|date:"j E H:i" }} — {{ item.get_outcome_display }}{% if item.self_rating %} (самооценка: {{ item.self_rating }}){% endif %}</li>{% endfor %}</ul>
+    <ul class="independent-history">
+    {% for item in attempts %}
+      <li>
+        {{ item.created_at|date:"j E H:i" }} — {{ item.get_outcome_display }}
+        {% if item.self_rating %} (самооценка: {{ item.self_rating }}){% endif %}
+        {% if item.teacher_verdict != "unreviewed" %}
+          <p><strong>Проверено преподавателем:</strong> {{ item.get_teacher_verdict_display }}</p>
+          {% if item.teacher_note %}<p>{{ item.teacher_note }}</p>{% endif %}
+        {% else %}
+          <span class="uid"> · преподаватель ещё не проверил</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
   </section>
   {% endif %}
   <p><a class="btn btn-quiet" href="{% url 'lessons:detail' lesson.slug %}">Вернуться к объяснениям урока</a></p>
