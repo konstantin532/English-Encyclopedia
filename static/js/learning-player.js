@@ -95,6 +95,13 @@
           say("no", tries === 1 ? "Пока не так. Попробуйте ещё раз или откройте подсказку." : "Снова не так. Можно открыть ответ с объяснением.");
         }
         reveal.hidden = tries < 2;
+        if (data.retry_scheduled_at) {
+          const when = new Date(data.retry_scheduled_at);
+          const due = Number.isNaN(when.getTime()) ? "через два дня"
+            : when.toLocaleString("ru-RU", {day: "numeric", month: "long", hour: "2-digit", minute: "2-digit"});
+          feedback.insertAdjacentHTML("beforeend",
+            `<p>Пять новых вопросов на эту тему запланированы на ${esc(due)}. Сразу этот вопрос повторять не нужно. <a href="/learning/mistake-review/">Открыть раздел повторений</a>.</p>`);
+        }
       }
     });
 
