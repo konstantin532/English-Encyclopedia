@@ -85,3 +85,54 @@ class WeekGoal(models.Model):
 
     class Meta:
         constraints = [models.UniqueConstraint(fields=["user", "week"], name="uniq_goal_per_week")]
+
+# Устная практика — отдельная от знания лексики самооценка. Аудио не хранится.
+SPEECH_REVIEW_INTERVALS_DAYS = (0, 1, 3, 7, 14)
+
+
+class SpeechPracticeProgress(models.Model):
+    """Интервальное повторение фрагмента по *самооценке* ученика.
+
+    Ключи стабильны между повторными загрузками content/:
+    lesson:<slug>, twister:<number>, poem:<number>.
+    """
+
+    class Result(models.TextChoices):
+        AGAIN = "again", "Повторить сейчас"
+        HARD = "hard", "С подсказкой"
+        GOOD = "good", "Самостоятельно"
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="speech_practice")
+    content_key = models.CharField(max_length=110)
+    fragment = models.PositiveSmallIntegerField()
+    stage = models.PositiveSmallIntegerField(default=0)
+    result = models.CharField(max_length=5, choices=Result.choices, default=Result.AGAIN)
+    attempts = models.PositiveIntegerField(default=0)
+    next_review_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "content_key", "fragment"], name="uniq_speech_progress_per_fragment"
+            ),
+        ]
+        indexes = [models.Index(fields=["user", "next_review_at"], name="speech_due_by_user_idx")]
+        ordering = ["next_review_at", "content_key", "fragment"]
+
+    def register(self, rating: str, now=None) -> None:
+        if rating not in self.Result.values:
+            raise ValueError("Неизвестная оценка самостоятельного воспроизведения")
+        now = now or timezone.now()
+        self.attempts += 1
+        self.result = rating
+        if rating == self.Result.AGAIN:
+            self.stage = 0
+            delay = 0
+        elif rating == self.Result.HARD:
+            self.stage = max(self.stage - 1, 0)
+            delay = 1
+        else:
+            self.stage = min(self.stage + 1, len(SPEECH_REVIEW_INTERVALS_DAYS) - 1)
+            delay = SPEECH_REVIEW_INTERVALS_DAYS[self.stage]
+        self.next_review_at = now + timedelta(days=delay)
