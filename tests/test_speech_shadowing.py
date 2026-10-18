@@ -37,6 +37,17 @@ class SpeechAudioScaffoldTests(TestCase):
         self.assertContains(page, "/static/audio/twisters/t001/voice_natural.mp3")
         self.assertContains(page, "/static/audio/twisters/t001/voice_slow.mp3")
 
+    def test_poetry_provides_author_annotated_stress_prompts(self):
+        for number in range(1, 8):
+            with self.subTest(number=number):
+                page = self.client.get(reverse("stories:poem", args=[number]))
+                self.assertEqual(page.status_code, 200)
+                self.assertContains(page, "speech-stress.js")
+                self.assertContains(page, "data-stress-entry", count=16)
+                self.assertContains(page, "data-stress-plain=", count=16)
+                self.assertContains(page, "data-stress-model=", count=16)
+                self.assertContains(page, "текстовая тренировка внимания к ритму")
+
     def test_reviewed_reference_is_marked_verified_not_automatically_scored(self):
         twister = TongueTwister.objects.get(number=1)
         twister.audio = {
