@@ -1,0 +1,210 @@
+{
+  "a1-questions-do-does": [
+    [
+      "Вы спрашиваете, когда открывается магазин.",
+      "",
+      [
+        "What time does the shop opens?",
+        "What time does the shop open?",
+        "What time the shop open?"
+      ],
+      1
+    ],
+    [
+      "Спросите собеседника: «У тебя есть мой ключ?»",
+      "",
+      [
+        "Do you have my key?",
+        "Does you have my key?",
+        "Do you has my key?"
+      ],
+      0
+    ],
+    [
+      "Вы спрашиваете, когда закрывается кафе.",
+      "",
+      [
+        "When does the cafe closes?",
+        "When the cafe close?",
+        "When does the cafe close?"
+      ],
+      2
+    ],
+    [
+      "Вы хотите узнать, работает ли Мия каждый день.",
+      "",
+      [
+        "Does Mia work every day?",
+        "Does Mia works every day?",
+        "Do Mia work every day?"
+      ],
+      0
+    ],
+    [
+      "Вы хотите узнать, во сколько начинается работа Тома.",
+      "",
+      [
+        "What time do Tom start?",
+        "What time does Tom start?",
+        "What time does Tom starts?"
+      ],
+      1
+    ]
+  ],
+  "a1-spelling-phone-numbers": [
+    [
+      "Администратор просит «Can you spell your last name?» Что нужно сделать?",
+      "",
+      [
+        "Назвать номер телефона",
+        "Назвать фамилию по буквам",
+        "Назвать возраст"
+      ],
+      1
+    ],
+    [
+      "Вас просят продиктовать имя Sue по буквам. Как записать?",
+      "",
+      [
+        "S-U",
+        "S-U-I",
+        "S-U-E"
+      ],
+      2
+    ],
+    [
+      "Вы хотите узнать номер телефона собеседника.",
+      "",
+      [
+        "What is your phone number?",
+        "What is your phone name?",
+        "Who is your phone number?"
+      ],
+      0
+    ],
+    [
+      "Вы просите поговорить с Анной по телефону.",
+      "",
+      [
+        "Can I spell Anna, please?",
+        "Can I speak to Anna, please?",
+        "Can I call your number Anna?"
+      ],
+      1
+    ],
+    [
+      "Вы сейчас не можете говорить и просите перезвонить позже.",
+      "",
+      [
+        "You call later me.",
+        "Later me call.",
+        "Call me later."
+      ],
+      2
+    ]
+  ],
+  "a1-always-never": [
+    [
+      "Вы никогда не пьёте кофе. Выберите правильное предложение.",
+      "",
+      [
+        "I never drink coffee.",
+        "I don't never drink coffee.",
+        "I drink never coffee."
+      ],
+      0
+    ],
+    [
+      "Том читает каждый день без исключений.",
+      "",
+      [
+        "Tom read always.",
+        "Tom always reads.",
+        "Tom always read."
+      ],
+      1
+    ],
+    [
+      "Вы иногда гуляете после обеда.",
+      "",
+      [
+        "I walk sometimes in the park.",
+        "I am sometimes walk in the park.",
+        "I sometimes walk in the park."
+      ],
+      2
+    ],
+    [
+      "Вы никогда не работаете по воскресеньям.",
+      "",
+      [
+        "I never work on Sunday.",
+        "I work never on Sunday.",
+        "I don't never work on Sunday."
+      ],
+      0
+    ],
+    [
+      "Встреча назначена на пятницу. Как попрощаться до неё?",
+      "",
+      [
+        "See you at Friday!",
+        "See you on Friday!",
+        "See you in Friday!"
+      ],
+      1
+    ]
+  ],
+  "a1-like-doing": [
+    [
+      "Вы любите читать книги. Выберите правильную фразу.",
+      "",
+      [
+        "I like read books.",
+        "I like reading books.",
+        "I am like reading books."
+      ],
+      1
+    ],
+    [
+      "Анна любит гулять. Выберите подходящую форму.",
+      "I like ___.",
+      [
+        "walk",
+        "walked",
+        "walking"
+      ],
+      2
+    ],
+    [
+      "Вы хотите спросить, любит ли друг играть на гитаре.",
+      "",
+      [
+        "Do you like playing the guitar?",
+        "Do you like play the guitar?",
+        "Does you like playing the guitar?"
+      ],
+      0
+    ],
+    [
+      "Как естественно сказать, что вам нравится музыка?",
+      "",
+      [
+        "I liking music.",
+        "I like music.",
+        "I am like music."
+      ],
+      1
+    ],
+    [
+      "Вам нравятся ваши синие туфли. Что сказать?",
+      "",
+      [
+        "I like blue my shoes.",
+        "I my like blue shoes.",
+        "I like my blue shoes."
+      ],
+      2
+    ]
+  ]
+}
