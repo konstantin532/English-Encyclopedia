@@ -35,6 +35,14 @@
           <dt>Как исправить</dt><dd>{{ a1_guide.fix }}</dd>
         </dl>
         <blockquote><span lang="en">{{ a1_guide.example }}</span> — {{ a1_guide.translation }}</blockquote>
+        <div class="a1-contrast" aria-label="Сравните два похожих выражения">
+          <h3>Сравните — почему смысл меняется?</h3>
+          <div class="a1-contrast-pairs">
+            <p><strong lang="en">{{ a1_guide.contrast.a_en }}</strong><span>{{ a1_guide.contrast.a_ru }}</span></p>
+            <p><strong lang="en">{{ a1_guide.contrast.b_en }}</strong><span>{{ a1_guide.contrast.b_ru }}</span></p>
+          </div>
+          <p><strong>В чём разница:</strong> {{ a1_guide.contrast.why }}</p>
+        </div>
         <p>Когда почувствуете, что поняли, попробуйте <a href="{% url 'learning:independent_check' lesson.slug %}">самостоятельно ответить без готовых вариантов</a>.</p>
       </section>
       {% endif %}
