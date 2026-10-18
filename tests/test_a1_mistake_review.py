@@ -2,7 +2,7 @@
 import json
 from datetime import timedelta
 
-from django.test import TestCase
+from django.test import SimpleTestCase, TestCase
 from django.urls import reverse
 from django.utils import timezone
 
@@ -10,6 +10,7 @@ from apps.accounts.models import User
 from apps.drills.models import Exercise
 from apps.drills.retry_guidance import PILOT_SLUGS
 from apps.learning.mistake_review import COUNT, question_bank, variants_for
+from apps.learning.micro_review import micro_bank, compile_skill
 from apps.learning.models import ExerciseAttempt, MistakeReview, UnitProgress
 from tests.runner import ensure_content
 
@@ -37,6 +38,7 @@ class A1MistakeReviewTests(TestCase):
         self.assertEqual(len(catalog), 28)
         self.assertEqual(sum(len(variants) for row in catalog.values() for variants in row.values()), 815)
         self.assertEqual(sum(len(v) for v in catalog.values()), 163)
+        self.assertEqual(sum(len(cards) for row in catalog.values() for cards in row.values()), 815)
         for slug, row in catalog.items():
             for number, variants in row.items():
                 with self.subTest(slug=slug, number=number):
@@ -242,9 +244,11 @@ class A1MistakeReviewTests(TestCase):
             questions = catalog[lesson.slug]
             self.assertEqual(set(questions), {str(i) for i in range(1, 7)})
             self.assertEqual(len(questions["1"]), 5)
-            # Twenty new lessons currently share one curated thematic five-pack
-            # per lesson; do not mislabel them as per-mistake expert diagnoses.
-            self.assertEqual(questions["1"], questions["6"])
+            # Every source exercise now has its OWN five situation cards.
+            self.assertNotEqual(questions["1"], questions["6"])
+            self.assertEqual(
+                len({q[0] for cards in questions.values() for q in cards}), 30
+            )
             for ex in lesson.exercises.all():
                 self.assertEqual(len(variants_for(ex)), 5)
                 self.assertTrue(all(q[0] != ex.prompt_ru for q in variants_for(ex)))
@@ -260,3 +264,55 @@ class A1MistakeReviewTests(TestCase):
         entry.due_at = timezone.now() - timedelta(seconds=1)
         entry.save(update_fields=["due_at"])
         self.assertContains(self.client.get(reverse("learning:mistake_review")), "Новый вопрос 1 из 5")
+
+
+
+class A1MicroSkillAuthoringTests(SimpleTestCase):
+    def test_all_20_lessons_have_120_individual_micro_skill_targets(self):
+        bank = micro_bank()
+        self.assertEqual(len(bank), 20)
+        self.assertEqual(sum(len(group) for group in bank.values()), 120)
+        all_prompts = []
+        for slug, exercises in bank.items():
+            self.assertEqual(set(exercises), {str(i) for i in range(1, 7)})
+            for order, questions in exercises.items():
+                with self.subTest(lesson=slug, exercise=order):
+                    self.assertEqual(len(questions), 5)
+                    self.assertEqual(len({q[0] for q in questions}), 5)
+                    for prompt, context, choices, correct, why in questions:
+                        self.assertTrue(prompt)
+                        self.assertEqual(len(choices), 3)
+                        self.assertEqual(len(set(choices)), 3)
+                        self.assertIn(correct, range(3))
+                        self.assertTrue(choices[correct].strip())
+                        self.assertGreater(len(why), 15)
+                        all_prompts.append(prompt)
+        self.assertEqual(len(all_prompts), 600)
+        self.assertEqual(len(set(all_prompts)), 600)
+
+    def test_invalid_case_cannot_silently_show_two_correct_options(self):
+        example = {
+            "keys": ["who"], "cases": [["Anna"], ["Tom"], ["Mia"], ["Sue"], ["Dan"]],
+            "prompt": "Вы спрашиваете {who}.",
+            "options": ["Hello, {who}.", "Hello, {who}.", "Goodbye, {who}."],
+            "reason": "Выберите подходящую разговорную форму.",
+        }
+        with self.assertRaisesRegex(ValueError, "Ambiguous"):
+            compile_skill("fake-lesson", "1", example)
+
+    def test_incomplete_authoring_pack_cannot_launch(self):
+        missing_case = {
+            "keys": ["who"], "cases": [["Anna"]],
+            "prompt": "Вы спрашиваете {who}.",
+            "options": ["Hello, {who}.", "Goodbye, {who}.", "Hi, {who}."],
+            "reason": "Нужно выбрать подходящую фразу.",
+        }
+        with self.assertRaisesRegex(ValueError, "Incomplete"):
+            compile_skill("fake-lesson", "1", missing_case)
+
+    def test_explanation_targets_current_question(self):
+        import inspect
+        from apps.learning import delayed_review_views
+        source = inspect.getsource(delayed_review_views.mistake_review)
+        self.assertIn('question[4] if len(question) > 4', source)
+        self.assertNotIn('retry_guidance(item.exercise', source)
