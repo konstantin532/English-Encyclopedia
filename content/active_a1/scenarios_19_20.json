@@ -24,7 +24,7 @@
         "scene": "Анна спрашивает о вашем обычном занятии по пятницам: вы играете на гитаре.",
         "prompt": "Назовите действие и добавьте «обычно».",
         "example": "I usually play the guitar on Friday.",
-        "coach": "Usually стоит перед play, а перед guitar нужен the."
+        "coach": "Usually стоит перед play. В американском английском возможно и play the guitar, и play guitar; здесь тренируем первый вариант."
       },
       {
         "id": 4,
@@ -87,7 +87,7 @@
         "scene": "Вы рассказываете Мие, что вам нравится играть на гитаре; Box слушает рядом.",
         "prompt": "Назовите любимое действие с like.",
         "example": "I like playing the guitar.",
-        "coach": "Play превращается в playing; инструмент употребляется с the."
+        "coach": "Play превращается в playing. С инструментом по-американски встречаются и play the guitar, и play guitar — оба возможны."
       },
       {
         "id": 4,

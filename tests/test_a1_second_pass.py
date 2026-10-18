@@ -41,6 +41,59 @@ class A1SecondPassTests(SimpleTestCase):
                 self.assertIn("**", bridge)
                 self.assertGreaterEqual(len(bridge.split()), 45)
 
+    def test_diagnostic_misconceptions_precede_practice_in_all_26_lessons(self):
+        lessons = course_lessons()
+        self.assertEqual(set(lessons), set(range(1, 27)))
+        for number, lesson in lessons.items():
+            with self.subTest(lesson=number):
+                lesson_text = "\n".join(layer["body"] for layer in lesson["layers"])
+                theory = lesson["layers"][3]["body"]
+                self.assertEqual(lesson_text.count("**Диагностика понимания:**"), 1)
+                self.assertEqual(lesson_text.count("**Разбор:**"), 1)
+                self.assertIn("**Диагностика понимания:**", theory)
+                self.assertIn("**Разбор:**", theory)
+                self.assertLess(theory.index("**Диагностика понимания:**"),
+                                theory.index("**Разбор:**"))
+                self.assertIn(" или ", theory.split("**Диагностика понимания:**")[1])
+                self.assertIn("**Проверка маленького шага:**",
+                              lesson["layers"][6]["body"])
+
+    def test_diagnostics_target_real_structural_misconceptions(self):
+        lessons = course_lessons()
+        cases = {
+            1: ("This is my book", "This is a my book"),
+            2: ("I am busy", "I busy"),
+            3: ("This room is big", "This is room big"),
+            4: ("Do you like coffee?", "Do you coffee like?"),
+            5: ("Can I have a tea", "Can I a tea"),
+            6: ("two coffees", "two coffee"),
+            7: ("She is twelve", "She has twelve"),
+            8: ("Her name is Anna", "She name is Anna"),
+            9: ("There are apples", "There is apples"),
+            10: ("How much are the apples?", "How much is the apples?"),
+            11: ("Do you work?", "Do you are work?"),
+            12: ("I get up at seven", "I get up in seven"),
+            13: ("Does Tom work?", "Does Tom works?"),
+            14: ("I am a teacher", "I am teacher"),
+            15: ("next to the cafe", "in the cafe"),
+            16: ("Turn left", "On the left"),
+            17: ("does the shop open?", "does the shop opens?"),
+            18: ("T-O-M", "Tom"),
+            19: ("I never walk", "I don't never walk"),
+            20: ("I like reading", "I like read"),
+            21: ("My back hurts", "My back hurt"),
+            22: ("I can't sleep", "I don't can sleep"),
+            23: ("She doesn't live here", "She doesn't lives here"),
+            24: ("5 Park Street", "Park Street, 5"),
+            25: ("She can swim", "She cans swim"),
+            26: ("Because I like music", "Because of I like music"),
+        }
+        for number, examples in cases.items():
+            body = lessons[number]["layers"][3]["body"]
+            for phrase in examples:
+                with self.subTest(lesson=number, phrase=phrase):
+                    self.assertIn(phrase.casefold(), body.casefold())
+
     def test_marked_examples_remain_balanced(self):
         for order, lesson in course_lessons().items():
             with self.subTest(lesson=order):

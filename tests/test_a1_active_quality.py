@@ -43,6 +43,24 @@ class ActiveA1ContentQualityTests(TestCase):
                       for m in topic["missions"]]
             self.assertEqual(len(set(models)), 6, f"урок {number}: {models}")
 
+    def test_interactive_explanations_match_the_corrected_course(self):
+        """Интерактив не должен отменять правило, уже уточнённое в YAML-уроке."""
+        topics = active_topics()
+        self.assertIn("полной фразе", topics[1]["why"])
+        self.assertIn("слушатель способен определить", topics[3]["why"])
+        self.assertIn("не знает", topics[3]["repair"]["hint"])
+        self.assertIn("из ситуации", topics[3]["missions"][5]["coach"])
+        self.assertIn("I like tea", topics[5]["why"])
+        self.assertIn("не означает", topics[11]["why"])
+        self.assertIn("С can и be действуют свои правила",
+                      topics[13]["missions"][5]["coach"])
+        self.assertIn("Место работы", topics[14]["missions"][2]["coach"])
+        self.assertIn("тона", topics[16]["why"])
+        self.assertIn("play guitar", topics[19]["missions"][2]["coach"])
+        self.assertIn("play guitar", topics[20]["why"])
+        self.assertIn("стандартном американском", topics[19]["repair"]["reason"])
+        self.assertIn("because of", topics[26]["why"])
+
     def test_mia_gets_up_at_five(self):
         mia = [line[1] for line in active_topics()[12]["dialogue"] if line[0] == "Mia"]
         self.assertIn("At five.", mia)

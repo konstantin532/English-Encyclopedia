@@ -58,6 +58,10 @@ layers:
       - The mailbox gets letters. → The mailbox doesn't get letters.
 
       > [T8]It[/] [D1]does[/] [X1]not[/] [D2]get[/] [S9]letters[/]? [A1]Never[/]? — Не приходят? Никогда?
+
+      **Диагностика понимания:** Вы хотите сказать «Она не живёт здесь». Что верно: *She doesn't live here* или *She doesn't lives here*?
+
+      **Разбор:** *She doesn't live here*. **Doesn't** уже обозначает третье лицо и отрицание, поэтому основной глагол **live** не получает **-s**. В утверждении: *She lives here*.
   - number: 5
     body: |
       Так говорят американцы:
