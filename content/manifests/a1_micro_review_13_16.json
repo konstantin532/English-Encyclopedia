@@ -695,35 +695,47 @@
       "en": ""
     },
     "6": {
-      "prompt": "В {where} {first} находится через дорогу от {second}.",
+      "prompt": "В {where} {ru_first} находится через дорогу от {ru_second}.",
       "keys": [
         "where",
+        "ru_first",
+        "ru_second",
         "first",
         "second"
       ],
       "cases": [
         [
           "городе",
+          "магазин",
+          "парка",
           "shop",
           "park"
         ],
         [
           "городе",
+          "банк",
+          "кафе",
           "bank",
           "cafe"
         ],
         [
           "поездке",
+          "кафе",
+          "отеля",
           "cafe",
           "hotel"
         ],
         [
           "городе",
+          "школа",
+          "парка",
           "school",
           "park"
         ],
         [
           "поездке",
+          "отель",
+          "банка",
           "hotel",
           "bank"
         ]
