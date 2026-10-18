@@ -10,7 +10,7 @@ from apps.curriculum.models import Week
 
 from django.views.decorators.csrf import ensure_csrf_cookie
 
-from .models import ExerciseAttempt, Status, UnitProgress, WeekGoal, SpeechPracticeProgress
+from .models import ExerciseAttempt, Status, UnitProgress, WeekGoal, SpeechPracticeProgress, MistakeReview
 from .services import build_review
 
 
@@ -30,6 +30,10 @@ def dashboard(request):
         "mistakes": ExerciseAttempt.objects.filter(user=request.user, is_correct=False).select_related("exercise__lesson")[:10],
         "next_lesson": next_lesson,
         "speech_due_count": SpeechPracticeProgress.objects.filter(user=request.user, next_review_at__lte=now).count(),
+        "mistake_review_due_count": MistakeReview.objects.filter(user=request.user, completed_at__isnull=True,
+                                                    exercise__lesson__is_published=True, due_at__lte=now).count(),
+        "mistake_review_waiting": MistakeReview.objects.filter(user=request.user,
+                                  completed_at__isnull=True, due_at__gt=now).order_by("due_at").first(),
     })
 
 
