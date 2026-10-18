@@ -11,7 +11,12 @@
     <div class="stat"><b>{{ due|length }}</b><span>пора повторить</span></div>
   </div>
   {% if due %}<p><a class="btn btn-primary" href="{% url 'learning:review' %}">Повторить {{ due|length }}</a></p>{% endif %}
-  {% if next_lesson %}
+  <section class="section" aria-label="Речевая практика">
+    <div class="section-head"><h2>Речевая практика</h2>
+      <p>Тренировка произношения и речи по памяти: результат отмечаете вы сами, а сложные фразы возвращаются для повторения.</p></div>
+    <p><a class="btn btn-primary" href="{% url 'learning:speech_review' %}">Речевые повторения{% if speech_due_count %} ({{ speech_due_count }}){% endif %} →</a></p>
+  </section>
+  {% if next_lesson %>
     <p><a class="btn btn-primary" href="{% url 'lessons:detail' next_lesson.slug %}">{% if progress %}Продолжить: {{ next_lesson.title }}{% else %}Начать первый урок{% endif %}</a></p>
   {% endif %}
 
