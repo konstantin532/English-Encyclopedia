@@ -153,4 +153,4 @@ class A1IndependentAssessmentTests(TestCase):
         self.assertContains(response, "css/independent-check.css")
         self.assertContains(response, "<textarea", count=3)
         self.assertContains(response, "maxlength=\"400\"", count=3)
-        self.assertContains(response, "type=\"submit\"", count=3)
+        self.assertContains(response, "Проверить и открыть пример", count=3)
