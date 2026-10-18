@@ -83,6 +83,8 @@ layers:
   - number: 7
     body: |
       Шесть заданий: понять вопрос о причине, вставить because, собрать вопрос, объяснить свою причину, выбрать фразу о трудности и объяснить непонимание слова.
+
+      **Проверка маленького шага:** *Because I like music* — после **because** идёт целая мысль: **кто** (*I*) и **что делает** (*like*). *Because of the music* — после **because of** только группа с существительным. Похожий русский перевод «из-за музыки / потому что…» не делает английские конструкции взаимозаменяемыми.
 exercises:
   - order: 1
     kind: choice
@@ -117,9 +119,9 @@ exercises:
     prompt_ru: "Новая ситуация: на курсах вас спрашивают, почему вам нравится английский. Объясните одной фразой с because."
     prompt_en: "Why do you like English? — ___"
     answer: "Because I like English music."
-    accepted: ["Because I like English", "Because I like English music.", "Because I like music.", "Because my friend speaks English.", "Because I work in English.", "Because I can speak English."]
+    accepted: ["Because I like English music.", "Because my friend speaks English.", "Because I work in English.", "Because I can speak English."]
     hint_ru: "Because + полная мысль."
-    explanation_ru: "Because I like English music — один возможный ответ, а не единственная причина. Здесь тренируем because + подлежащее + сказуемое: Because I like music; варианты должны сохранять смысл причины."
+    explanation_ru: "Because I like English music — возможная причина интереса к языку. Здесь тренируем because + подлежащее + сказуемое, но причина должна по смыслу отвечать на вопрос. Фраза Because I like English повторяет исходный вопрос, не объясняя почему; Because I like music не обязательно связана с английским."
     units: [LX-00242]
   - order: 5
     kind: choice

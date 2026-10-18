@@ -5,7 +5,7 @@ order: 12
 focus: N
 minutes: 40
 title: "Время: at seven, in the evening, lunch и dinner"
-summary: "Как назвать время и части дня: It is seven o'clock, at six, in the evening, at night. Когда в Америке завтракают, обедают и ужинают."
+summary: "Как назвать время на часах, время действия и части дня: It is seven o'clock, at six, in the evening, at night; поговорим о breakfast, lunch и dinner без выдуманного общего расписания США."
 units: [LX-00131, LX-00132, LX-00133, LX-00135, LX-00136, LX-00140, LX-00124, LX-00126, LX-00309, LX-00310, LX-00311, LX-00312, LX-00316, LX-00317, LX-00173]
 sound_notes:
   - text: "It's seven o'clock."
@@ -87,6 +87,8 @@ layers:
   - number: 7
     body: |
       Шесть заданий: узнать, как назвать время, вставить at, собрать вопрос, ответить в новой ситуации, выбрать in the или at и назвать время еды.
+
+      **Проверка маленького шага:** *It is seven o'clock* — **время сейчас**. *I have breakfast at seven* — **расписание действия**. *I work seven hours* — **продолжительность**, а не время на часах. Одинаковое число «семь» отвечает здесь на три разных вопроса.
 exercises:
   - order: 1
     kind: choice

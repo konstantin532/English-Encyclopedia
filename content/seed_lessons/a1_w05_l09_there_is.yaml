@@ -94,6 +94,8 @@ layers:
   - number: 7
     body: |
       Шесть заданий: узнать вопрос «есть ли», выбрать is или are, собрать просьбу с some, ответить в новой ситуации, поставить цвет на место и попросить продукт с цветом.
+
+      **Проверка маленького шага:** *I have a book* отвечает на вопрос «**Что у меня есть?**». *There is a book* сообщает «**Тут есть книга**», но **не называет владельца**. Перед выбором конструкции определите, что важнее в ситуации: **обладатель** или **наличие предмета**.
 exercises:
   - order: 1
     kind: choice
@@ -147,7 +149,7 @@ exercises:
     prompt_ru: "Новая ситуация: в магазине есть жёлтые бананы. Попросите немного, вежливо."
     prompt_en: "___"
     answer: "Can I have some yellow bananas, please?"
-    accepted: ["Can I have some yellow bananas please?", "Some yellow bananas, please.", "Yellow bananas, please.", "I would like some yellow bananas, please.", "I'd like some yellow bananas, please."]
+    accepted: ["Can I have some yellow bananas please?", "Some yellow bananas, please.", "I would like some yellow bananas, please.", "I'd like some yellow bananas, please."]
     hint_ru: "Can I have some…, please? Цвет — перед словом."
-    explanation_ru: "Can I have some yellow bananas, please? — some для «немного», yellow перед bananas."
+    explanation_ru: "Can I have some yellow bananas, please? — some выражает неопределённое количество, yellow стоит перед bananas. Без some просьба может быть вежливой, но уже не тренирует количество из условия."
     units: [LX-00288, LX-00299]

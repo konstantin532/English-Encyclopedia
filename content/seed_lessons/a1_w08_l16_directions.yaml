@@ -82,6 +82,8 @@ layers:
   - number: 7
     body: |
       Шесть заданий: понять указание, вставить глагол, собрать объяснение дороги, объяснить путь, выбрать us и попросить помочь другу.
+
+      **Проверка маленького шага:** *Turn right* — **действие** для слушателя: «Поверните направо». *The bank is on the right* — **расположение** банка: «Банк справа». Из сообщения о месте не всегда следует, что нужно повернуть: сначала отделите **маршрут** от **описания**.
 exercises:
   - order: 1
     kind: choice
@@ -116,9 +118,9 @@ exercises:
     prompt_ru: "Новая ситуация: у вас спрашивают дорогу к банку. Нужно повернуть направо. Скажите это."
     prompt_en: "Where is the bank? — ___"
     answer: "Turn right."
-    accepted: ["Turn right", "Turn right, please.", "Go straight and turn right.", "Go straight and turn right", "Turn right. It is on the right.", "Turn right. It's on the right."]
+    accepted: ["Turn right", "Turn right, please."]
     hint_ru: "Глагол turn и направление."
-    explanation_ru: "Turn right. Можно добавить, где банк: It is on the right."
+    explanation_ru: "Turn right. — поверните направо. В условии не сказано, что нужно сначала идти прямо или что банк окажется справа после поворота, поэтому дополнительные указания не следует придумывать."
     units: [LX-00167, LX-00169]
   - order: 5
     kind: choice

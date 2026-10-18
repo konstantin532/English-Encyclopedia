@@ -90,6 +90,8 @@ layers:
   - number: 7
     body: |
       Шесть заданий: узнать вопрос о цене, прочитать ценник, собрать вопрос, ответить продавцу, оценить цену и заказать маленький напиток.
+
+      **Проверка маленького шага:** *How much is the milk?* спрашивает **цену молока**, а *How much milk?* — его **количество**. Одни слова **how much** не определяют смысл: ищите, что следует за ними — **is/are + предмет** или само название вещества.
 exercises:
   - order: 1
     kind: choice
@@ -131,11 +133,11 @@ exercises:
   - order: 5
     kind: choice
     stage: recognition
-    prompt_ru: "Сыр стоит двадцать долларов. Что вы скажете?"
+    prompt_ru: "Сыр стоит двадцать долларов, и для вас это слишком дорого. Как выразить свою оценку?"
     options: ["That is expensive!", "That is cheap!", "That is small!"]
     answer: "That is expensive!"
     hint_ru: "Двадцать долларов за сыр — много."
-    explanation_ru: "That is expensive! — «Это дорого!» cheap значит «дёшево»."
+    explanation_ru: "That is expensive! — «Это дорого!» Так говорят, если цена кажется высокой лично вам; cheap — «дёшево». Одна и та же сумма не для всех одинаково дорогая."
     units: [LX-00294, LX-00302]
   - order: 6
     kind: build
