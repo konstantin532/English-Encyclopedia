@@ -82,7 +82,7 @@ class A1IndependentAssessmentTests(TestCase):
         # Models are stored server-side; no correct text is rendered as key.
         self.assertNotContains(response, "Один возможный образец")
         for key in ("meaning", "writing", "transfer", "explain"):
-            self.assertContains(response, 'value="' + key + '"')
+            self.assertContains(response, 'name="answer_' + key + '"')
 
     def test_reasoning_and_error_fix_are_hidden_before_independent_attempt(self):
         initial = self.client.get(self.url)
@@ -94,6 +94,39 @@ class A1IndependentAssessmentTests(TestCase):
         self.assertContains(checked, "Типичная ловушка:")
         self.assertContains(checked, "Как себя проверить:")
         self.assertContains(checked, "Почему здесь так? Разобрать правило")
+
+    def test_blind_full_attempt_shows_no_model_until_all_four_responses(self):
+        guide = understanding_bank()[self.lesson.slug]
+        form = {"action": "batch"}
+        for key in ("meaning", "writing", "transfer", "explain"):
+            form["answer_" + key] = guide["tasks"][key]["model"]
+        initial = self.client.get(self.url)
+        self.assertNotContains(initial, "Разбор всех четырёх ответов")
+        self.assertNotContains(initial, "Один возможный образец")
+        checked = self.client.post(self.url, form)
+        self.assertEqual(checked.status_code, 200)
+        self.assertContains(checked, "Разбор всех четырёх ответов")
+        self.assertContains(checked, "Один возможный образец", count=4)
+        self.assertEqual(IndependentAttempt.objects.filter(user=self.user).count(), 4)
+        self.assertEqual(
+            set(IndependentAttempt.objects.filter(user=self.user).values_list("skill", flat=True)),
+            {"meaning", "writing", "transfer", "explain"},
+        )
+        self.assertFalse(UnitProgress.objects.filter(user=self.user).exists())
+
+    def test_batch_rejects_partial_answers_without_saving_any(self):
+        guide = understanding_bank()[self.lesson.slug]
+        form = {"action": "batch", "answer_meaning": guide["tasks"]["meaning"]["model"],
+                "answer_writing": guide["tasks"]["writing"]["model"],
+                "answer_transfer": "My own response", "answer_explain": ""}
+        res = self.client.post(self.url, form)
+        self.assertEqual(res.status_code, 400)
+        self.assertFalse(IndependentAttempt.objects.filter(user=self.user).exists())
+        form["answer_explain"] = "My own independent explanation"
+        form["answer_transfer"] = "X" * 401
+        res = self.client.post(self.url, form)
+        self.assertEqual(res.status_code, 400)
+        self.assertFalse(IndependentAttempt.objects.filter(user=self.user).exists())
 
     def test_own_model_phrase_is_recorded_as_agreement_not_cefr(self):
         t = understanding_bank()[self.lesson.slug]["tasks"]["writing"]
@@ -179,4 +212,4 @@ class A1IndependentAssessmentTests(TestCase):
         self.assertContains(response, "css/independent-check.css")
         self.assertContains(response, "<textarea", count=4)
         self.assertContains(response, "maxlength=\"400\"", count=4)
-        self.assertContains(response, "Проверить и открыть пример", count=4)
+        self.assertContains(response, "Отправить четыре ответа и открыть разбор", count=1)
