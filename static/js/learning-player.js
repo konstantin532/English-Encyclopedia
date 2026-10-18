@@ -102,6 +102,27 @@
           feedback.insertAdjacentHTML("beforeend",
             `<p>Пять новых вопросов на эту тему запланированы на ${esc(due)}. Сразу этот вопрос повторять не нужно. <a href="/learning/mistake-review/">Открыть раздел повторений</a>.</p>`);
         }
+        if (data.assessment === "needs_review" && data.self_review_available && form.dataset.selfReviewUrl) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "btn btn-quiet btn-small";
+          button.textContent = "Назначить 5 похожих вопросов через 2 дня";
+          button.addEventListener("click", async () => {
+            button.disabled = true;
+            try {
+              const scheduled = await post(form.dataset.selfReviewUrl, {});
+              if (!scheduled.scheduled) throw new Error("not scheduled");
+              const date = new Date(scheduled.due_at);
+              const due = Number.isNaN(date.getTime()) ? "через два дня"
+                : date.toLocaleString("ru-RU", {day: "numeric", month: "long", hour: "2-digit", minute: "2-digit"});
+              button.replaceWith(document.createTextNode("Дополнительная практика назначена на " + due + ". Это ваш выбор, не штраф за ошибку."));
+            } catch (error) {
+              button.disabled = false;
+              button.textContent = "Не удалось назначить. Повторить запрос";
+            }
+          });
+          feedback.appendChild(button);
+        }
       }
     });
 
