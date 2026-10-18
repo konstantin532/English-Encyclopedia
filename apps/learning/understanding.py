@@ -29,8 +29,16 @@ def quality_gates(document):
         "09_concrete_pattern": all(12 <= len(x["pattern"]) <= 180 for x in lessons),
         "10_common_mistake_and_fix": all(x["mistake"] != x["fix"]
                                          and len(x["fix"]) >= 18 for x in lessons),
-        "11_examples_not_empty": all(x["example"] and x["translation"] for x in lessons),
-        "12_three_distinct_skills": all(set(x.get("tasks", {})) == set(SKILLS) for x in lessons),
+        "11_examples_not_empty": all(
+            x["example"] and x["translation"]
+            and isinstance(x.get("contrast"), dict)
+            and all(isinstance(x["contrast"].get(k), str)
+                    and x["contrast"][k].strip()
+                    for k in ("a_en", "a_ru", "b_en", "b_ru", "why"))
+            and x["contrast"]["a_en"] != x["contrast"]["b_en"]
+            and len(x["contrast"]["why"]) >= 45
+            for x in lessons),
+        "12_four_distinct_skills": all(set(x.get("tasks", {})) == set(SKILLS) for x in lessons),
         "13_prompts_no_word_bank": all(not any(k in t for k in ("options", "choices", "word_bank"))
                                        for t in all_tasks),
         "14_answer_keys_only_for_narrow_tasks": all(
@@ -47,7 +55,10 @@ def quality_gates(document):
             all(isinstance(t.get("prompt"), str) and isinstance(t.get("model"), str)
                 and 12 <= len(t["prompt"]) <= 600 and 1 <= len(t["model"]) <= 400
                 and t["prompt"].strip().casefold() != t["model"].strip().casefold()
-                for t in x["tasks"].values()) for x in lessons),
+                for t in x["tasks"].values())
+            and "работает такая схема" not in x["tasks"]["explain"]["prompt"].lower()
+            and x["pattern"].casefold() not in x["tasks"]["explain"]["prompt"].casefold()
+            for x in lessons),
     }
 
 
