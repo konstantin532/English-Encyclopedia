@@ -1,5 +1,5 @@
 {% load markers %}
-          <form class="drill" data-drill data-kind="{{ ex.kind }}" data-self-review-url="{% url 'learning:request_optional_review' ex.pk %}" data-url="{% if ex.check_url %}{{ ex.check_url }}{% else %}{% url 'api:check_exercise' ex.pk %}{% endif %}" novalidate>
+          <form class="drill" data-drill data-kind="{{ ex.kind }}" {% if not ex.check_url %}data-self-review-url="{% url 'learning:request_optional_review' ex.pk %}"{% endif %} data-url="{% if ex.check_url %}{{ ex.check_url }}{% else %}{% url 'api:check_exercise' ex.pk %}{% endif %}" novalidate>
             <p class="drill-stage">Задание {{ number }} из {{ total }}. {{ ex.get_stage_display }}</p>
             <p class="drill-prompt" id="q{{ ex.pk }}">{{ ex.prompt_ru }}</p>
             {% if ex.prompt_en %}<p class="drill-en annotated" lang="en">{{ ex.prompt_en|annotate }}</p>{% endif %}
