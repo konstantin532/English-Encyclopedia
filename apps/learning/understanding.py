@@ -62,6 +62,40 @@ def quality_gates(document):
     }
 
 
+def scaffold_bank():
+    """Server-side editorial mini-lessons and alternate real-life transfer tasks."""
+    path = settings.CONTENT_DIR / "manifests" / "a1_scaffold_transfer.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    rows = data.get("lessons", [])
+    if data.get("version") != 1 or data.get("level") != "A1":
+        raise ValueError("Invalid A1 scaffold manifest")
+    if len(rows) != 28 or set(x.get("slug") for x in rows) != PILOT_SLUGS:
+        raise ValueError("A1 scaffold must cover every lesson exactly once")
+    if len(set(x["slug"] for x in rows)) != 28:
+        raise ValueError("Duplicate A1 scaffold")
+    for item in rows:
+        steps = item.get("steps", [])
+        task = item.get("transfer_variant", {})
+        if len(steps) != 3 or any(
+            not (isinstance(step.get("example_en"), str)
+                 and len(step["example_en"].strip()) >= 3
+                 and isinstance(step.get("example_ru"), str)
+                 and len(step["example_ru"].strip()) >= 3
+                 and isinstance(step.get("why_ru"), str)
+                 and len(step["why_ru"].strip()) >= 25)
+            for step in steps
+        ):
+            raise ValueError("Incomplete beginner explanation: " + item["slug"])
+        if len({step["example_en"].strip().casefold() for step in steps}) != 3:
+            raise ValueError("Duplicate examples: " + item["slug"])
+        if (not isinstance(task.get("prompt"), str) or len(task["prompt"].strip()) < 24
+                or not isinstance(task.get("model"), str) or len(task["model"].strip()) < 12
+                or any(k in task for k in ("accepted", "options", "choices", "word_bank"))
+                or task["prompt"].strip().casefold() == task["model"].strip().casefold()):
+            raise ValueError("Invalid open transfer challenge: " + item["slug"])
+    return {x["slug"]: x for x in rows}
+
+
 @lru_cache(maxsize=1)
 def understanding_bank():
     path = settings.CONTENT_DIR / "manifests" / "a1_understanding_checks.json"
@@ -70,7 +104,18 @@ def understanding_bank():
     failures = [name for name, passed in gates.items() if not passed]
     if failures:
         raise ValueError("A1 clarity / independent assessment checks failed: " + ", ".join(failures))
-    return {row["slug"]: row for row in data["lessons"]}
+    extras = scaffold_bank()
+    compiled = {}
+    for row in data["lessons"]:
+        extra = extras[row["slug"]]
+        if extra["transfer_variant"]["prompt"] == row["tasks"]["transfer"]["prompt"]:
+            raise ValueError("Repeated transfer prompt: " + row["slug"])
+        compiled[row["slug"]] = {
+            **row,
+            "steps": extra["steps"],
+            "transfer_variants": [extra["transfer_variant"]],
+        }
+    return compiled
 
 
 def get_guide(slug):

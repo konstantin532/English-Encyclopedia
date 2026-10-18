@@ -1,0 +1,679 @@
+{
+  "version": 1,
+  "level": "A1",
+  "policy": "Every scaffold shows three contextual steps; cold-transfer model must stay server-side until all four answers are submitted. Editorial examples are illustrative, not exhaustive answer keys.",
+  "lessons": [
+    {
+      "slug": "a1-nouns-first-words",
+      "steps": [
+        {
+          "example_en": "a phone",
+          "example_ru": "телефон",
+          "why_ru": "Phone называет предмет. Артикль a помогает говорить об одном телефоне вообще."
+        },
+        {
+          "example_en": "my phone",
+          "example_ru": "мой телефон",
+          "why_ru": "My уточняет, кому принадлежит предмет; после my не ставьте a."
+        },
+        {
+          "example_en": "This is my phone.",
+          "example_ru": "Это мой телефон.",
+          "why_ru": "This указывает на вещь, is связывает указание и название. New — признак, а phone — предмет."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "На столе ваша новая книга. Представьте её гостю и добавьте отдельной фразой, что она новая.",
+        "model": "This is my book. It is new."
+      }
+    },
+    {
+      "slug": "a1-verb-be",
+      "steps": [
+        {
+          "example_en": "I am ready.",
+          "example_ru": "Я готов.",
+          "why_ru": "С I выбираем am: английская фраза требует связующего глагола."
+        },
+        {
+          "example_en": "She is ready.",
+          "example_ru": "Она готова.",
+          "why_ru": "С she используем is, а не am: форма be зависит от того, о ком говорим."
+        },
+        {
+          "example_en": "Are you ready?",
+          "example_ru": "Ты готов?",
+          "why_ru": "Для вопроса ставим are перед you; не добавляем do к be."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Вы в классе. Спросите одного друга, готов ли он, используя be.",
+        "model": "Are you ready?"
+      }
+    },
+    {
+      "slug": "a1-determiners-a-the-this-my",
+      "steps": [
+        {
+          "example_en": "I have a key.",
+          "example_ru": "У меня есть ключ.",
+          "why_ru": "A сообщает об одном ключе, который собеседник ещё не определил."
+        },
+        {
+          "example_en": "The key is here.",
+          "example_ru": "Этот ключ здесь.",
+          "why_ru": "The указывает на понятный из ситуации ключ, а не на любой."
+        },
+        {
+          "example_en": "This is my key.",
+          "example_ru": "Это мой ключ.",
+          "why_ru": "My обозначает владельца; сочетание a my key не употребляется."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Вы уже говорили другу о книге. Теперь сообщите, что эта книга у вас.",
+        "model": "The book is here."
+      }
+    },
+    {
+      "slug": "a1-have-like-can-do",
+      "steps": [
+        {
+          "example_en": "I have tea.",
+          "example_ru": "У меня есть чай.",
+          "why_ru": "Have говорит о наличии; это не то же самое, что любить чай."
+        },
+        {
+          "example_en": "Do you like tea?",
+          "example_ru": "Тебе нравится чай?",
+          "why_ru": "Для вопроса о предпочтении с like используется do."
+        },
+        {
+          "example_en": "Can I have tea, please?",
+          "example_ru": "Можно мне чаю, пожалуйста?",
+          "why_ru": "Can I have — вежливая просьба; после can нужен глагол have."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "В гостях вы хотите попросить стакан воды. Скажите одну вежливую фразу.",
+        "model": "Can I have a glass of water, please?"
+      }
+    },
+    {
+      "slug": "a1-cafe-order",
+      "steps": [
+        {
+          "example_en": "Coffee, please.",
+          "example_ru": "Кофе, пожалуйста.",
+          "why_ru": "Короткая просьба возможна, если вы у стойки и собеседник знает контекст."
+        },
+        {
+          "example_en": "Can I have a coffee, please?",
+          "example_ru": "Можно мне кофе, пожалуйста?",
+          "why_ru": "Полная просьба звучит вежливо и понятно в кафе; a coffee означает порцию."
+        },
+        {
+          "example_en": "That's all, thank you.",
+          "example_ru": "Это всё, спасибо.",
+          "why_ru": "Эта фраза завершает заказ, а не просит ещё что-то."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Бариста спрашивает, хотите ли вы ещё что-нибудь. Вежливо скажите, что это всё.",
+        "model": "That's all, thank you."
+      }
+    },
+    {
+      "slug": "a1-numbers-1-20",
+      "steps": [
+        {
+          "example_en": "three",
+          "example_ru": "три",
+          "why_ru": "Three — количество. Само число ещё не сообщает, что мы считаем."
+        },
+        {
+          "example_en": "three tickets",
+          "example_ru": "три билета",
+          "why_ru": "После three исчисляемое ticket имеет множественное число tickets."
+        },
+        {
+          "example_en": "I need three tickets.",
+          "example_ru": "Мне нужны три билета.",
+          "why_ru": "Need соединяет желание с количеством и предметом."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Кассиру нужны точные данные. Попросите четыре билета одной короткой фразой.",
+        "model": "Four tickets, please."
+      }
+    },
+    {
+      "slug": "a1-family-photo",
+      "steps": [
+        {
+          "example_en": "This is my sister.",
+          "example_ru": "Это моя сестра.",
+          "why_ru": "Sister называет члена семьи, my показывает отношение к говорящему."
+        },
+        {
+          "example_en": "She is a teacher.",
+          "example_ru": "Она учитель.",
+          "why_ru": "She заменяет повтор имени; с she берём is. Профессия требует a."
+        },
+        {
+          "example_en": "Is she your sister?",
+          "example_ru": "Она твоя сестра?",
+          "why_ru": "Is ставится перед she, когда спрашиваем о человеке."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Показывая фотографию, представьте брата и скажите, что он студент.",
+        "model": "This is my brother. He is a student."
+      }
+    },
+    {
+      "slug": "a1-family-possession",
+      "steps": [
+        {
+          "example_en": "This is Anna's bag.",
+          "example_ru": "Это сумка Анны.",
+          "why_ru": "Окончание 's у имени обычно обозначает владельца."
+        },
+        {
+          "example_en": "It is her bag.",
+          "example_ru": "Это её сумка.",
+          "why_ru": "Her перед bag показывает владельца; слово bag остаётся существительным."
+        },
+        {
+          "example_en": "Whose bag is this?",
+          "example_ru": "Чья это сумка?",
+          "why_ru": "Whose задаёт вопрос о владельце, а не о местонахождении."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Вы нашли на столе телефон Тома. Объясните другу, кому принадлежит телефон.",
+        "model": "This is Tom's phone."
+      }
+    },
+    {
+      "slug": "a1-there-is-some",
+      "steps": [
+        {
+          "example_en": "There is a book.",
+          "example_ru": "Есть книга.",
+          "why_ru": "There is вводит факт наличия, а не говорит «вон там»."
+        },
+        {
+          "example_en": "There is some water.",
+          "example_ru": "Есть немного воды.",
+          "why_ru": "Water обычно неисчисляемое; перед ним здесь используем some, не a."
+        },
+        {
+          "example_en": "Is there any water?",
+          "example_ru": "Есть вода?",
+          "why_ru": "Для вопроса is выходит вперёд; any — обычный выбор в нейтральном вопросе."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "В кухне есть молоко. Сообщите это гостю простым предложением.",
+        "model": "There is some milk in the kitchen."
+      }
+    },
+    {
+      "slug": "a1-how-much-prices",
+      "steps": [
+        {
+          "example_en": "A ticket, please.",
+          "example_ru": "Билет, пожалуйста.",
+          "why_ru": "Сначала называем, что хотим купить."
+        },
+        {
+          "example_en": "How much is a ticket?",
+          "example_ru": "Сколько стоит билет?",
+          "why_ru": "How much спрашивает цену. Для одного ticket подходит is."
+        },
+        {
+          "example_en": "It is five dollars.",
+          "example_ru": "Он стоит пять долларов.",
+          "why_ru": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве билетов."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Вы видите одну книгу в магазине. Спросите продавца, сколько она стоит.",
+        "model": "How much is this book?"
+      }
+    },
+    {
+      "slug": "a1-present-simple-i-you",
+      "steps": [
+        {
+          "example_en": "I work.",
+          "example_ru": "Я работаю.",
+          "why_ru": "Present Simple может сообщать о привычном действии или общем факте."
+        },
+        {
+          "example_en": "You work.",
+          "example_ru": "Ты работаешь.",
+          "why_ru": "После you обычный глагол не получает -s."
+        },
+        {
+          "example_en": "Do you work on Saturdays?",
+          "example_ru": "Ты работаешь по субботам?",
+          "why_ru": "Do открывает вопрос о привычке; work сохраняет начальную форму."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Узнайте, читает ли ваш друг книги по вечерам. Используйте Do you…?",
+        "model": "Do you read books in the evening?"
+      }
+    },
+    {
+      "slug": "a1-time-at-seven",
+      "steps": [
+        {
+          "example_en": "It's seven.",
+          "example_ru": "Сейчас семь.",
+          "why_ru": "It's сокращает It is, когда мы называем время."
+        },
+        {
+          "example_en": "at seven",
+          "example_ru": "в семь",
+          "why_ru": "At указывает точный момент; не говорите in seven для значения «в семь часов»."
+        },
+        {
+          "example_en": "I get up at seven.",
+          "example_ru": "Я встаю в семь.",
+          "why_ru": "В одной фразе привычка get up сочетается с конкретным временем at seven."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Скажите другу, что вы обычно завтракаете в восемь.",
+        "model": "I have breakfast at eight."
+      }
+    },
+    {
+      "slug": "a1-he-she-works",
+      "steps": [
+        {
+          "example_en": "I work here.",
+          "example_ru": "Я здесь работаю.",
+          "why_ru": "После I в Present Simple обычный глагол без -s."
+        },
+        {
+          "example_en": "He works here.",
+          "example_ru": "Он здесь работает.",
+          "why_ru": "После he в утвердительной фразе work получает -s."
+        },
+        {
+          "example_en": "Does he work here?",
+          "example_ru": "Он здесь работает?",
+          "why_ru": "Does уже показывает третье лицо; work после does снова без -s."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Вы видите Анну на работе. Спросите, работает ли она здесь.",
+        "model": "Does Anna work here?"
+      }
+    },
+    {
+      "slug": "a1-jobs-what-do-you-do",
+      "steps": [
+        {
+          "example_en": "I am a doctor.",
+          "example_ru": "Я врач.",
+          "why_ru": "Для одной исчисляемой профессии в такой фразе нужен a или an."
+        },
+        {
+          "example_en": "I work at a hospital.",
+          "example_ru": "Я работаю в больнице.",
+          "why_ru": "Work — самостоятельный глагол; перед ним здесь не требуется am."
+        },
+        {
+          "example_en": "What do you do?",
+          "example_ru": "Кем вы работаете?",
+          "why_ru": "В обычном знакомстве вопрос часто о профессии, а не о действии в эту секунду."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Вам нужно сказать, что вы повар и работаете в кафе. Две короткие фразы.",
+        "model": "I am a cook. I work at a café."
+      }
+    },
+    {
+      "slug": "a1-where-is-prepositions",
+      "steps": [
+        {
+          "example_en": "The key is on the table.",
+          "example_ru": "Ключ на столе.",
+          "why_ru": "On подходит, когда предмет находится на поверхности."
+        },
+        {
+          "example_en": "The key is under the table.",
+          "example_ru": "Ключ под столом.",
+          "why_ru": "Under означает ниже предмета, а не внутри него."
+        },
+        {
+          "example_en": "Where is the key?",
+          "example_ru": "Где ключ?",
+          "why_ru": "Вопрос о месте начинается с where is, затем называем предмет."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Телефон лежит внутри сумки. Объясните другу, где он.",
+        "model": "The phone is in the bag."
+      }
+    },
+    {
+      "slug": "a1-directions-turn-left",
+      "steps": [
+        {
+          "example_en": "Go straight.",
+          "example_ru": "Идите прямо.",
+          "why_ru": "Straight обозначает движение прямо, без поворота."
+        },
+        {
+          "example_en": "Turn right.",
+          "example_ru": "Поверните направо.",
+          "why_ru": "Right обозначает направление поворота, не скорость."
+        },
+        {
+          "example_en": "The bank is on your left.",
+          "example_ru": "Банк слева от вас.",
+          "why_ru": "On your left сообщает, где будет место по отношению к идущему человеку."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Прохожий спрашивает дорогу. Скажите ему идти прямо, затем повернуть налево.",
+        "model": "Go straight and turn left."
+      }
+    },
+    {
+      "slug": "a1-questions-do-does",
+      "steps": [
+        {
+          "example_en": "Do you live here?",
+          "example_ru": "Ты здесь живёшь?",
+          "why_ru": "Do нужен для вопроса с you и обычным глаголом live."
+        },
+        {
+          "example_en": "Does she live here?",
+          "example_ru": "Она здесь живёт?",
+          "why_ru": "Does сочетается с she; live после него без -s."
+        },
+        {
+          "example_en": "Yes, she does.",
+          "example_ru": "Да.",
+          "why_ru": "Короткий ответ повторяет вспомогательный does, а не основной live."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Узнайте, работает ли Том по воскресеньям.",
+        "model": "Does Tom work on Sundays?"
+      }
+    },
+    {
+      "slug": "a1-spelling-phone-numbers",
+      "steps": [
+        {
+          "example_en": "My name is Mia.",
+          "example_ru": "Меня зовут Миа.",
+          "why_ru": "Сначала говорим имя обычным словом."
+        },
+        {
+          "example_en": "M-I-A.",
+          "example_ru": "Эм — ай — эй.",
+          "why_ru": "Если просят spell, назовите именно отдельные буквы в правильном порядке."
+        },
+        {
+          "example_en": "Can you spell it, please?",
+          "example_ru": "Можете произнести это по буквам?",
+          "why_ru": "Это просьба уточнить написание; не путайте spell с say again."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Вы не поняли, как пишется имя собеседника. Вежливо попросите назвать его по буквам.",
+        "model": "Can you spell your name, please?"
+      }
+    },
+    {
+      "slug": "a1-always-never",
+      "steps": [
+        {
+          "example_en": "I read.",
+          "example_ru": "Я читаю.",
+          "why_ru": "Это сообщение о привычном действии без указания частоты."
+        },
+        {
+          "example_en": "I always read at night.",
+          "example_ru": "Я всегда читаю по ночам.",
+          "why_ru": "Always обычно ставят перед смысловым глаголом read."
+        },
+        {
+          "example_en": "She never works on Sunday.",
+          "example_ru": "Она никогда не работает в воскресенье.",
+          "why_ru": "Never стоит перед works; с she сохраняется -s у утвердительного глагола."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Расскажите, что вы никогда не пьёте кофе.",
+        "model": "I never drink coffee."
+      }
+    },
+    {
+      "slug": "a1-like-doing",
+      "steps": [
+        {
+          "example_en": "I like books.",
+          "example_ru": "Мне нравятся книги.",
+          "why_ru": "Books — вещи; здесь речь о предметах, а не обязательно о процессе чтения."
+        },
+        {
+          "example_en": "I like reading.",
+          "example_ru": "Мне нравится читать.",
+          "why_ru": "Reading обозначает занятие; после like оно естественно."
+        },
+        {
+          "example_en": "I like to read.",
+          "example_ru": "Мне нравится читать.",
+          "why_ru": "После like возможно и to read. Это не ошибка и не полный синоним в каждом контексте."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Скажите другу, что вам нравится готовить (занятие, а не еда).",
+        "model": "I like cooking."
+      }
+    },
+    {
+      "slug": "a1-what-hurts",
+      "steps": [
+        {
+          "example_en": "My head hurts.",
+          "example_ru": "У меня болит голова.",
+          "why_ru": "Head — предмет жалобы, hurts — форма глагола с третьим лицом."
+        },
+        {
+          "example_en": "I have a headache.",
+          "example_ru": "У меня головная боль.",
+          "why_ru": "Другое обычное выражение похожей жалобы: have a headache."
+        },
+        {
+          "example_en": "What hurts?",
+          "example_ru": "Что болит?",
+          "why_ru": "Вопрос уточняет место боли; он не требует do в таком употреблении what как подлежащего."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Вы у врача. Коротко скажите, что у вас болит спина.",
+        "model": "My back hurts."
+      }
+    },
+    {
+      "slug": "a1-cant-cannot",
+      "steps": [
+        {
+          "example_en": "I can swim.",
+          "example_ru": "Я умею плавать.",
+          "why_ru": "Can перед глаголом swim означает способность."
+        },
+        {
+          "example_en": "I can't swim.",
+          "example_ru": "Я не умею плавать.",
+          "why_ru": "Can't отрицает возможность или способность; после него не нужно to."
+        },
+        {
+          "example_en": "Can you swim?",
+          "example_ru": "Ты умеешь плавать?",
+          "why_ru": "Для вопроса переместите can перед you."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Скажите, что вы не можете прийти сегодня.",
+        "model": "I can't come today."
+      }
+    },
+    {
+      "slug": "a1-dont-doesnt",
+      "steps": [
+        {
+          "example_en": "I don't know.",
+          "example_ru": "Я не знаю.",
+          "why_ru": "После I отрицание обычного глагола строится с don't."
+        },
+        {
+          "example_en": "She doesn't know.",
+          "example_ru": "Она не знает.",
+          "why_ru": "После she берём doesn't, но know без -s."
+        },
+        {
+          "example_en": "Does she know?",
+          "example_ru": "Она знает?",
+          "why_ru": "Вопрос с does похож на отрицание по форме: смысловой глагол остаётся без -s."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Скажите, что Том не любит чай.",
+        "model": "Tom doesn't like tea."
+      }
+    },
+    {
+      "slug": "a1-letters-address",
+      "steps": [
+        {
+          "example_en": "What is your address?",
+          "example_ru": "Какой у вас адрес?",
+          "why_ru": "Address — адрес. В личных заданиях используйте только вымышленные данные."
+        },
+        {
+          "example_en": "My address is 10 Park Street.",
+          "example_ru": "Мой адрес — Парк-стрит, дом 10.",
+          "why_ru": "В англоязычном адресе номер дома обычно указывают перед названием улицы."
+        },
+        {
+          "example_en": "Can you repeat the address, please?",
+          "example_ru": "Повторите адрес, пожалуйста.",
+          "why_ru": "Repeat помогает уточнить услышанное; не обязательно диктовать всё по буквам."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Вы не расслышали адрес. Попросите собеседника повторить его, не называя настоящих данных.",
+        "model": "Can you repeat the address, please?"
+      }
+    },
+    {
+      "slug": "a1-can-skills",
+      "steps": [
+        {
+          "example_en": "I speak English.",
+          "example_ru": "Я говорю по-английски.",
+          "why_ru": "Speak сообщает о действии или навыке."
+        },
+        {
+          "example_en": "I can speak English.",
+          "example_ru": "Я умею говорить по-английски.",
+          "why_ru": "Can подчёркивает способность; после can ставится speak без to."
+        },
+        {
+          "example_en": "She can speak English.",
+          "example_ru": "Она умеет говорить по-английски.",
+          "why_ru": "С she после can не прибавляем к speak окончание -s."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "В учебной роли ваша сестра умеет рисовать. Расскажите об этом.",
+        "model": "My sister can draw."
+      }
+    },
+    {
+      "slug": "a1-why-because",
+      "steps": [
+        {
+          "example_en": "I am at home.",
+          "example_ru": "Я дома.",
+          "why_ru": "Первая фраза сообщает факт, ещё не объясняя причину."
+        },
+        {
+          "example_en": "Why are you at home?",
+          "example_ru": "Почему ты дома?",
+          "why_ru": "Why спрашивает причину; вопрос с be требует are перед you."
+        },
+        {
+          "example_en": "I am at home because I am tired.",
+          "example_ru": "Я дома, потому что устал.",
+          "why_ru": "Because присоединяет причину отдельной понятной частью предложения."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Друг спрашивает, почему вы пьёте воду. Скажите, что вы хотите пить.",
+        "model": "I drink water because I am thirsty."
+      }
+    },
+    {
+      "slug": "a1-bus-ticket",
+      "steps": [
+        {
+          "example_en": "Does this bus go to the station?",
+          "example_ru": "Этот автобус идёт до станции?",
+          "why_ru": "После does глагол go без -s, даже когда bus означает it."
+        },
+        {
+          "example_en": "What time does it leave?",
+          "example_ru": "Во сколько он отправляется?",
+          "why_ru": "Leave означает отправляться; arrive — прибывать, это не одно и то же."
+        },
+        {
+          "example_en": "One ticket, please.",
+          "example_ru": "Один билет, пожалуйста.",
+          "why_ru": "У кассы этого достаточно, чтобы вежливо попросить билет."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "Вы ждёте поезд. Спросите сотрудника, во сколько поезд отправляется.",
+        "model": "What time does the train leave?"
+      }
+    },
+    {
+      "slug": "a1-review-everything",
+      "steps": [
+        {
+          "example_en": "I am from Russia.",
+          "example_ru": "Я из России.",
+          "why_ru": "Am описывает человека и его происхождение."
+        },
+        {
+          "example_en": "I can speak English.",
+          "example_ru": "Я могу говорить по-английски.",
+          "why_ru": "Can + speak сообщает о навыке; speak не получает to или -s."
+        },
+        {
+          "example_en": "I don't know the time.",
+          "example_ru": "Я не знаю, который час.",
+          "why_ru": "Don't помогает отрицать обычный глагол know с I; разные мысли требуют разных конструкций."
+        }
+      ],
+      "transfer_variant": {
+        "prompt": "В вымышленной поездке скажите, что не знаете дорогу, и вежливо спросите, где станция.",
+        "model": "I don't know the way. Excuse me, where is the station."
+      }
+    }
+  ]
+}

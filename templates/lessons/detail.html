@@ -43,6 +43,20 @@
           </div>
           <p><strong>В чём разница:</strong> {{ a1_guide.contrast.why }}</p>
         </div>
+        <details class="a1-step-ladder" id="beginner-steps">
+          <summary>Разобрать ещё проще: три коротких шага с примерами</summary>
+          <p>Сначала прочитайте английскую фразу и её смысл, затем посмотрите, почему выбран именно такой порядок слов.</p>
+          <ol class="a1-step-list">
+            {% for step in a1_guide.steps %}
+            <li>
+              <strong>Шаг {{ forloop.counter }}</strong>
+              <p class="a1-step-en" lang="en">{{ step.example_en }}</p>
+              <p>{{ step.example_ru }}</p>
+              <p><strong>Почему:</strong> {{ step.why_ru }}</p>
+            </li>
+            {% endfor %}
+          </ol>
+        </details>
         <p>Когда почувствуете, что поняли, попробуйте <a href="{% url 'learning:independent_check' lesson.slug %}">самостоятельно ответить без готовых вариантов</a>.</p>
       </section>
       {% endif %}
@@ -80,7 +94,7 @@
       {% if a1_guide %}
       <section class="section" aria-label="Независимая проверка понимания">
         <h2>Проверка без готовых ответов</h2>
-        <p>Три отдельные задачи: понять фразу, написать её по памяти и применить правило в новой ситуации. Это не угадывание кнопкой и не автоматический экзамен по разговорной речи.</p>
+        <p>Четыре независимые задачи: смысл, письмо, новый жизненный контекст и объяснение ошибки. Это не угадывание кнопкой и не автоматический экзамен по разговорной речи.</p>
         <a class="btn btn-primary" href="{% url 'learning:independent_check' lesson.slug %}">Проверить себя самостоятельно →</a>
       </section>
       {% endif %}

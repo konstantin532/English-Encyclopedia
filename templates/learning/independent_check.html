@@ -27,19 +27,8 @@
       <p><strong>Типичная ловушка:</strong> {{ guide.mistake }}</p>
       <p>Ваш вариант может отличаться от образца и оставаться правильным. При сомнении потребуется проверка человеком.</p>
     </details>
-    {% if result.attempt.outcome == "self_reported" and not result.attempt.self_rating %}
-      <p>Сравните свой ответ с образцом по смыслу: передали ли вы нужную информацию? Отличающаяся формулировка тоже может быть правильной.</p>
-      <form method="post" class="independent-rating">
-        {% csrf_token %}
-        <input type="hidden" name="action" value="rate">
-        <input type="hidden" name="attempt_id" value="{{ result.attempt.pk }}">
-        <fieldset><legend>Как у вас получилось?</legend>
-          {% for key, text in ratings.items %}
-          <label class="independent-option"><input type="radio" name="rating" value="{{ key }}" required><span>{{ text }}</span></label>
-          {% endfor %}
-        </fieldset>
-        <button class="btn btn-primary" type="submit">Сохранить мою оценку</button>
-      </form>
+    {% if result.attempt.outcome == "self_reported" and not result.attempt.self_rubric %}
+      {% include "components/a1_rubric_form.html" with attempt=result.attempt %}
     {% endif %}
   </section>
   {% endif %}
@@ -54,18 +43,8 @@
       <p>{{ entry.label }}</p>
       <p>Вы написали: <strong>{{ entry.attempt.submitted }}</strong></p>
       <p>Один возможный образец: <strong>{{ entry.model }}</strong></p>
-      {% if entry.attempt.outcome == "self_reported" %}
-      <form method="post" class="independent-rating">
-        {% csrf_token %}
-        <input type="hidden" name="action" value="rate">
-        <input type="hidden" name="attempt_id" value="{{ entry.attempt.pk }}">
-        <fieldset><legend>Насколько самостоятельно вы выполнили эту часть?</legend>
-        {% for value, label in ratings.items %}
-          <label class="independent-option"><input type="radio" name="rating" value="{{ value }}" required><span>{{ label }}</span></label>
-        {% endfor %}
-        </fieldset>
-        <button class="btn btn-quiet" type="submit">Сохранить мою самооценку</button>
-      </form>
+      {% if entry.attempt.outcome == "self_reported" and not entry.attempt.self_rubric %}
+        {% include "components/a1_rubric_form.html" with attempt=entry.attempt %}
       {% endif %}
     </div>
     {% endfor %}
@@ -77,15 +56,16 @@
   </section>
   {% endif %}
 
-  <section class="section">
-    <h2>Сначала все четыре ответа — потом разбор</h2>
-    <p>Отвечайте на задания по порядку без готовых вариантов. До отправки всех четырёх ответов образцы не показываются. Один полный проход лучше отражает ваши самостоятельные знания, чем четыре отдельные попытки с подсказками.</p>
+  <section class="section" aria-labelledby="blind-four-title">
+    <h2 id="blind-four-title">Сначала все четыре ответа — потом разбор</h2>
+    <p>Отвечайте на задания по порядку без готовых вариантов. До отправки всех четырёх ответов образцы не показываются. После прохождения всех четырёх заданий вы получите другую задачу на перенос навыка при следующем посещении. Это помогает не запоминать один образец. Оценка открытого ответа остаётся вашей или преподавателя.</p>
     <form method="post" class="independent-batch">
       {% csrf_token %}
+      <input type="hidden" name="transfer_variant" value="{{ transfer_variant }}">
       <input type="hidden" name="action" value="batch">
       <div class="independent-grid">
       {% for task in tasks %}
-    <section class="section independent-task" aria-labelledby="skill-{{ task.key }}">
+    <section class="section independent-task" aria-labelledby="skill-{{ task.key }}" id="task-{{ task.key }}">
       <h2 id="skill-{{ task.key }}">{{ task.title }}</h2>
       {% if task.key == "meaning" %}
         <p>Передайте смысл по-русски. Точный перевод — не единственный допустимый.</p>
@@ -97,8 +77,8 @@
         <p>Объясните своими словами, почему работает правило. Не подглядывайте в конспект: система не выдаёт компьютерную оценку естественного объяснения.</p>
       {% endif %}
       <p class="independent-prompt">{{ task.item.prompt }}</p>
-      <label for="ind-answer-{{ task.key }}">Ваш ответ</label>
-      <textarea id="ind-answer-{{ task.key }}" name="answer_{{ task.key }}" rows="3" maxlength="400" required placeholder="Напишите свой вариант здесь" spellcheck="false"></textarea>
+      <label for="ind-answer-{{ task.key }}">Ваш ответ на задание «{{ task.title }}»</label>
+      <textarea id="ind-answer-{{ task.key }}" name="answer_{{ task.key }}" rows="3" maxlength="400" required aria-describedby="skill-{{ task.key }}" placeholder="Напишите свой вариант здесь" lang="{% if task.key == 'meaning' or task.key == 'explain' %}ru{% else %}en{% endif %}" spellcheck="false" autocorrect="off"></textarea>
     </section>
     {% endfor %}
     </div>
@@ -106,11 +86,28 @@
     </form>
   </section>
 
+  {% if batch_results %}
+  <p class="independent-new-variant"><a class="btn btn-quiet" href="{% url 'learning:independent_check' lesson.slug %}#task-transfer">Попробовать следующий новый контекст →</a></p>
+  {% endif %}
+
   {% if attempts %}
   <section class="section">
     <h2>Мои последние попытки</h2>
     <p>Эти записи показывают практику, но не являются официальной оценкой вашего уровня.</p>
-    <ul>{% for item in attempts %}<li>{{ item.created_at|date:"j E H:i" }} — {{ item.get_outcome_display }}{% if item.self_rating %} (самооценка: {{ item.self_rating }}){% endif %}</li>{% endfor %}</ul>
+    <ul class="independent-history">
+    {% for item in attempts %}
+      <li>
+        {{ item.created_at|date:"j E H:i" }} — {{ item.get_outcome_display }}
+        {% if item.self_rating %} (самооценка: {{ item.self_rating }}){% endif %}
+        {% if item.teacher_verdict != "unreviewed" %}
+          <p><strong>Проверено преподавателем:</strong> {{ item.get_teacher_verdict_display }}</p>
+          {% if item.teacher_note %}<p>{{ item.teacher_note }}</p>{% endif %}
+        {% else %}
+          <span class="uid"> · преподаватель ещё не проверил</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
   </section>
   {% endif %}
   <p><a class="btn btn-quiet" href="{% url 'lessons:detail' lesson.slug %}">Вернуться к объяснениям урока</a></p>
