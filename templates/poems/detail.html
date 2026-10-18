@@ -42,7 +42,7 @@
         </div>
       </section>
       <section class="layer" aria-labelledby="pt4">
-        <h2 id="pt4"><span class="layer-num">4</span>Восстановите пропуски</h2>
+        <h2 id="pt4"><span class="layer-num">5</span>Восстановите пропуски</h2>
         <div class="poem-gaps" lang="en" data-poem="{{ poem.number }}">
           {% for row in gapped %}
           <p{% if row.stanza %} class="stanza-start"{% endif %}>{{ row.before }}{% if row.gap is not None %}<label class="visually-hidden" for="g{{ row.gap }}">Пропущенное слово</label><input class="fill-input gap-input" id="g{{ row.gap }}" data-gap="{{ row.gap }}" data-url="{% url 'api:check_poem_gap' poem.number row.gap %}" autocomplete="off" autocapitalize="off" spellcheck="false" size="9"><span class="gap-mark" aria-live="polite"></span>{{ row.after }}{% endif %}</p>
@@ -51,8 +51,8 @@
         <div class="drill-actions"><button class="btn btn-primary btn-small" type="button" data-gaps-check>Проверить</button><button class="btn btn-quiet btn-small" type="button" data-gaps-reveal hidden>Показать ответы</button></div>
       </section>
       <section class="layer" aria-labelledby="pt5">
-        <h2 id="pt5"><span class="layer-num">5</span>Прочитайте с выражением</h2>
-        <p>Прочитайте стихотворение целиком наизусть. Запишите себя на телефон и сравните ударения с разметкой выше.</p>
+        <h2 id="pt5"><span class="layer-num">6</span>Прочитайте с выражением</h2>
+        <p>Прочитайте стихотворение целиком по памяти. Затем выразительно расскажите его как историю. При желании запишите голос в речевой мастерской выше: запись остаётся только на вашем устройстве, пока открыта страница.</p>
       </section>
     </article>
     <aside class="aside">
