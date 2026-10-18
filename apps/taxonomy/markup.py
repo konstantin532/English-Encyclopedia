@@ -92,7 +92,7 @@ def render_block(text: str) -> str:
 
             items = "".join(example(line) for line in lines)
             parts.append(f'<div class="example annotated">{items}</div>')
-        elif block.startswith("**Разбор:** "):
+        elif lines[0].startswith("**Разбор:** "):
             # Вопрос должен быть виден раньше правильного ответа.
             # Нативный details доступен с клавиатуры и без JavaScript.
             parts.append(
