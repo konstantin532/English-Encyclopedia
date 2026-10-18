@@ -146,7 +146,7 @@ exercises:
     prompt_ru: "Расскажите о своём вечере двумя фразами: «Я смотрю телевизор. Я рано ложусь спать»."
     prompt_en: "___"
     answer: "I watch TV. I go to bed early."
-    accepted: ["I watch TV. I go to bed early", "I watch tv. I go to bed early.", "I watch TV, and I go to bed early."]
+    accepted: ["I watch TV. I go to bed early", "I watch TV, and I go to bed early."]
     hint_ru: "watch TV — без артикля; go to bed early."
     explanation_ru: "I watch TV. I go to bed early. — после I глагол без -s, а TV и bed без артикля."
     units: [LX-00305, LX-00313, LX-00318]
