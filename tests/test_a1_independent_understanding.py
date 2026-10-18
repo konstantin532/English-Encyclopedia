@@ -84,6 +84,17 @@ class A1IndependentAssessmentTests(TestCase):
         for key in ("meaning", "writing", "transfer", "explain"):
             self.assertContains(response, 'value="' + key + '"')
 
+    def test_reasoning_and_error_fix_are_hidden_before_independent_attempt(self):
+        initial = self.client.get(self.url)
+        self.assertNotContains(initial, "Типичная ловушка:")
+        self.assertNotContains(initial, "Как себя проверить:")
+        sample = understanding_bank()[self.lesson.slug]["tasks"]["writing"]["model"]
+        checked = self.client.post(self.url, {"skill": "writing", "answer": sample})
+        self.assertEqual(checked.status_code, 200)
+        self.assertContains(checked, "Типичная ловушка:")
+        self.assertContains(checked, "Как себя проверить:")
+        self.assertContains(checked, "Почему здесь так? Разобрать правило")
+
     def test_own_model_phrase_is_recorded_as_agreement_not_cefr(self):
         t = understanding_bank()[self.lesson.slug]["tasks"]["writing"]
         response = self.client.post(self.url, {"skill": "writing", "answer": t["model"]})
