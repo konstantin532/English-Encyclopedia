@@ -13,6 +13,7 @@ from django.utils import timezone
 
 from apps.drills.retry_guidance import PILOT_SLUGS
 from .models import MistakeReview
+from .micro_review import micro_bank
 
 DELAY = timedelta(days=2)
 COUNT = 5
@@ -45,6 +46,18 @@ def question_bank():
                 raise ValueError(f"Ожидаются пять вопросов по теме: {slug}")
             bank[slug] = {str(order): cards for order in range(1, 7)}
 
+    # Replace shared lesson topics with carefully targeted five-case packs
+    # only where the editorial micro-skill data has been completed.
+    for slug, cases in micro_bank().items():
+        if slug not in bank or slug in (
+            "a1-nouns-first-words", "a1-verb-be",
+            "a1-determiners-a-the-this-my", "a1-have-like-can-do",
+            "a1-cafe-order", "a1-numbers-1-20",
+            "a1-family-photo", "a1-family-possession",
+        ):
+            raise ValueError(f"Invalid micro-skill override: {slug}")
+        bank[slug] = cases
+
     if set(bank) != PILOT_SLUGS or len(bank) != 28:
         raise ValueError("Ожидаются ровно двадцать восемь уроков A1")
     counts = {"a1-nouns-first-words": 4, "a1-verb-be": 5,
@@ -57,10 +70,11 @@ def question_bank():
             if len(variants) != COUNT or len({row[0] for row in variants}) != COUNT:
                 raise ValueError(f"Нужно 5 разных вопросов: {slug} #{number}")
             for row in variants:
-                if (len(row) != 4 or not all(isinstance(x, str) for x in row[:2])
+                if (len(row) not in (4, 5) or not all(isinstance(x, str) for x in row[:2])
                         or not row[0].strip() or not isinstance(row[2], list)
                         or len(row[2]) != 3 or not all(isinstance(x, str) and x.strip() for x in row[2])
-                        or len(set(row[2])) != 3 or type(row[3]) is not int or row[3] not in range(3)):
+                        or len(set(row[2])) != 3 or type(row[3]) is not int or row[3] not in range(3)
+                        or (len(row) == 5 and not isinstance(row[4], str))):
                     raise ValueError(f"Неверная карточка: {slug} #{number}")
     return bank
 
