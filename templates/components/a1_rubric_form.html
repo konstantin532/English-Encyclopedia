@@ -1,0 +1,34 @@
+{# One shared, accessible learner reflection form. This is NOT automated grading. #}
+<div class="independent-rubric">
+  <p>Сравните свой ответ с ситуацией и образцом. Это ваша самооценка, не решение компьютерного экзаменатора. Другая естественная фраза тоже может быть верной.</p>
+  <form method="post" class="independent-rating" aria-label="Самооценка открытого ответа">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="rubric">
+    <input type="hidden" name="attempt_id" value="{{ attempt.pk }}">
+    <fieldset>
+      <legend>1. Передана ли нужная мысль?</legend>
+      <label class="independent-option"><input type="radio" name="rubric_meaning" value="yes" required><span>Да, смысл задачи передан</span></label>
+      <label class="independent-option"><input type="radio" name="rubric_meaning" value="partly"><span>Частично, не хватает важной детали</span></label>
+      <label class="independent-option"><input type="radio" name="rubric_meaning" value="not_yet"><span>Пока не получается передать смысл</span></label>
+    </fieldset>
+    <fieldset>
+      <legend>2. Правильно ли построена фраза?</legend>
+      <label class="independent-option"><input type="radio" name="rubric_form" value="yes" required><span>Порядок слов и форма глагола подходят</span></label>
+      <label class="independent-option"><input type="radio" name="rubric_form" value="partly"><span>Сомневаюсь в одном из правил</span></label>
+      <label class="independent-option"><input type="radio" name="rubric_form" value="not_yet"><span>Нужен разбор конструкции</span></label>
+    </fieldset>
+    <fieldset>
+      <legend>3. Подходит ли фраза к ситуации?</legend>
+      <label class="independent-option"><input type="radio" name="rubric_context" value="yes" required><span>Так можно сказать собеседнику</span></label>
+      <label class="independent-option"><input type="radio" name="rubric_context" value="partly"><span>Смысл понятен, но формулировка не совсем уместна</span></label>
+      <label class="independent-option"><input type="radio" name="rubric_context" value="not_yet"><span>Нужно выбрать другую фразу</span></label>
+    </fieldset>
+    <fieldset>
+      <legend>4. Как у вас получилось? Насколько самостоятельно вы выполнили эту часть?</legend>
+      <label class="independent-option"><input type="radio" name="rubric_independence" value="independent" required><span>Самостоятельно, без подсказки</span></label>
+      <label class="independent-option"><input type="radio" name="rubric_independence" value="helped"><span>С подсказкой или вспоминая образец</span></label>
+      <label class="independent-option"><input type="radio" name="rubric_independence" value="not_yet"><span>Пока трудно, хочу вернуться позже</span></label>
+    </fieldset>
+    <button class="btn btn-primary" type="submit">Сохранить четыре наблюдения</button>
+  </form>
+</div>
