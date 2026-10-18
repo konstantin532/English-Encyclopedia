@@ -42,6 +42,20 @@
       </section>
       {% endif %}
       {% if extra_missions %}
+      <section class="section" id="spoken-coach" aria-labelledby="spoken-coach-title">
+        <h2 id="spoken-coach-title">Речевая мастерская — шесть ситуаций без подсказки</h2>
+        <p>Узнайте смысл, произнесите, восстановите без текста и ответьте по-своему. Текст образца можно скрыть. Это тренировка, а не оценка акцента.</p>
+        <div class="speech-studio" data-speech-studio data-speech-kind="lesson">
+          <div data-speech-bank hidden>
+          {% for mission in extra_missions %}<div data-speech-entry>
+            <span data-speech-task-source>{{ mission.scene }}. {{ mission.prompt }}</span>
+            <span data-speech-source lang="en">{{ mission.example }}</span>
+            <span data-speech-accent></span>
+          </div>{% endfor %}
+          </div>
+          {% include "components/speech_studio_controls.html" %}
+        </div>
+      </section>
       <section class="section a1-active-invite" aria-label="Дополнительная авторская практика A1">
         <h2>Практика в новой ситуации</h2>
         <p>Слушание, объяснения, конструктор, исправление ошибок — и ещё шесть оригинальных ситуаций с возможностью импровизировать. Дополнение к уроку без сохранения ответов.</p>
@@ -99,4 +113,4 @@
   </div>
 </div>
 {% endblock %}
-{% block scripts %}{% if extra_missions %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}">{% endif %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}
+{% block scripts %}{% if extra_missions %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}"><script src="{% static 'js/speech-studio.js' %}" defer></script>{% endif %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}
