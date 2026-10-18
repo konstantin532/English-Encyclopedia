@@ -47,3 +47,27 @@ class SpeechStudioIntegrationTests(TestCase):
                 line_count = len([line for line in poem.body.splitlines() if line.strip()])
                 self.assertContains(response, 'data-speech-entry', count=line_count)
                 self.assertContains(response, 'data-speech-accent', count=line_count)
+
+    def test_tongue_twister_1_keeps_short_phonetic_target(self):
+        from pathlib import Path
+        import yaml
+        from apps.taxonomy.markup import strip_markup
+
+        root = Path(__file__).resolve().parents[1]
+        week1 = yaml.safe_load((root / "content/seed_weeks/a1_w01.yaml").read_text(encoding="utf-8"))
+        twister = week1["twister"]
+        self.assertLessEqual(len(strip_markup(twister["text"]).split()), 8)
+        self.assertIn("this", strip_markup(twister["text"]).lower())
+        self.assertIn("house", strip_markup(twister["text"]).lower())
+        self.assertGreaterEqual(len(twister["warmup"]), 4)
+
+    def test_amE_twister_guidance_does_not_treat_t_and_l_as_absolutes(self):
+        from pathlib import Path
+        import yaml
+
+        root = Path(__file__).resolve().parents[1] / "content" / "seed_weeks"
+        week9 = yaml.safe_load((root / "a1_w09.yaml").read_text(encoding="utf-8"))
+        week13 = yaml.safe_load((root / "a1_w13.yaml").read_text(encoding="utf-8"))
+        self.assertIn("в hello", week9["twister"]["tip_ru"])
+        self.assertIn("в can", week13["twister"]["tip_ru"])
+        self.assertNotIn("почти не произносят", week13["twister"]["goal_ru"])
