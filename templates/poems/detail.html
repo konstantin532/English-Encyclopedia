@@ -21,6 +21,26 @@
         <ol class="pron">
           {% for row in rows %}{% if row.pr %}<li><span class="pron-stress" lang="en">{{ row.pr.stress|annotate }}</span><span class="ipa">{{ row.pr.ipa }}</span>{{ row.pr|ru_tr }}</li>{% endif %}{% endfor %}
         </ol>
+        <section class="speech-stress-lab" data-stress-lab aria-labelledby="stress-lab-heading">
+          <h3 id="stress-lab-heading">Найди главные слова в строке</h3>
+          <p>Сначала прочитайте строку и выделите слова, на которые падает смысловое ударение. Затем сравните свой выбор с <strong>разметкой преподавателя</strong>. Это текстовая тренировка внимания к ритму, а не тест на слух.</p>
+          <div data-stress-bank hidden>
+            {% for row in rows %}{% if row.pr %}
+            <span data-stress-entry data-stress-plain="{{ row.line|plain }}" data-stress-model="{{ row.pr.stress }}"></span>
+            {% endif %}{% endfor %}
+          </div>
+          <div data-stress-controls>
+            <p data-stress-position aria-live="polite">Строка 1</p>
+            <div class="speech-stress-choices" data-stress-choices role="group" aria-label="Выберите ударные слова"></div>
+            <div class="speech-actions">
+              <button type="button" class="btn btn-primary btn-small" data-stress-check>Сверить ударения</button>
+              <button type="button" class="btn btn-quiet btn-small" data-stress-reveal>Показать разметку</button>
+              <button type="button" class="btn btn-quiet btn-small" data-stress-next>Следующая строка →</button>
+            </div>
+            <p data-stress-feedback role="status" aria-live="polite">Выберите ударные слова самостоятельно.</p>
+            <p data-stress-answer class="pron-stress" lang="en" hidden></p>
+          </div>
+        </section>
         <p><strong>Фонетические задачи:</strong></p>
         <ul>{% for g in poem.phonetic_goals %}<li>{{ g }}</li>{% endfor %}</ul>
       </section>
@@ -64,4 +84,4 @@
   </div>
 </div>
 {% endblock %}
-{% block scripts %}<script src="{% static 'js/story-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script>{% endblock %}
+{% block scripts %}<script src="{% static 'js/story-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script><script src="{% static 'js/speech-stress.js' %}" defer></script>{% endblock %}
