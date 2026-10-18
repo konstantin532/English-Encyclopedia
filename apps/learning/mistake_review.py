@@ -28,18 +28,34 @@ def question_bank():
             if slug in bank:
                 raise ValueError(f"Повтор раздела: {slug}")
             bank[slug] = problems
-    if set(bank) != PILOT_SLUGS:
-        raise ValueError("Ожидаются ровно восемь уроков A1")
+    # The first eight lessons have five individually authored prompts per
+    # specific error. For the remaining twenty lessons, five distinct *theme*
+    # questions are shared by the six source exercises of that lesson.
+    # That is useful practice, but is not a precise diagnosis of each error.
+    for start in (9, 13, 17, 21, 25):
+        end = start + 3
+        path = root / f"a1_delayed_review_topics_{start:02d}_{end:02d}.json"
+        packet = json.loads(path.read_text(encoding="utf-8"))
+        if len(packet) != 4:
+            raise ValueError(f"Ожидаются четыре темы в {path.name}")
+        for slug, cards in packet.items():
+            if slug in bank:
+                raise ValueError(f"Повтор раздела: {slug}")
+            if len(cards) != COUNT:
+                raise ValueError(f"Ожидаются пять вопросов по теме: {slug}")
+            bank[slug] = {str(order): cards for order in range(1, 7)}
+
+    if set(bank) != PILOT_SLUGS or len(bank) != 28:
+        raise ValueError("Ожидаются ровно двадцать восемь уроков A1")
+    counts = {"a1-nouns-first-words": 4, "a1-verb-be": 5,
+              "a1-numbers-1-20": 4}
     for slug, exercises in bank.items():
-        expected = {"a1-nouns-first-words": 4, "a1-verb-be": 5,
-                    "a1-determiners-a-the-this-my": 6, "a1-have-like-can-do": 6,
-                    "a1-cafe-order": 6, "a1-numbers-1-20": 4,
-                    "a1-family-photo": 6, "a1-family-possession": 6}[slug]
+        expected = counts.get(slug, 6)
         if set(exercises) != {str(i) for i in range(1, expected + 1)}:
             raise ValueError(f"Не все упражнения покрыты: {slug}")
         for number, variants in exercises.items():
-            if len(variants) != COUNT:
-                raise ValueError(f"Нужно 5 новых заданий: {slug} #{number}")
+            if len(variants) != COUNT or len({row[0] for row in variants}) != COUNT:
+                raise ValueError(f"Нужно 5 разных вопросов: {slug} #{number}")
             for row in variants:
                 if (len(row) != 4 or not all(isinstance(x, str) for x in row[:2])
                         or not row[0].strip() or not isinstance(row[2], list)
