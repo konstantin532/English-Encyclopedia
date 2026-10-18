@@ -76,12 +76,25 @@
       try { data = await post(form.dataset.url, { answer: value }); }
       catch (err) { say("no", "Не удалось проверить ответ: нет связи с сервером. Обновите страницу и попробуйте ещё раз."); return; }
       if (data.correct) {
-        say("ok", `<strong>Верно.</strong> ${esc(data.explanation)}`);
+        tries = 0;
+        const label = data.assessment === "model_match"
+          ? "Совпало с подготовленным примером."
+          : "Верно.";
+        say("ok", `<strong>${label}</strong> ${esc(data.explanation)}`);
         reveal.hidden = true;
       } else {
         tries += 1;
-        say("no", tries === 1 ? "Пока не так. Попробуйте ещё раз или откройте подсказку." : "Снова не так. Можно открыть ответ с объяснением.");
-        if (tries >= 2) reveal.hidden = false;
+        const focus = typeof data.feedback_ru === "string" ? esc(data.feedback_ru) : "";
+        if (data.assessment === "needs_review") {
+          say("review", "Ответ отличается от подготовленного примера — это ещё не означает ошибку. " +
+            focus + (tries >= 2 ? " Можно показать пример для сравнения." : " Попробуйте ещё один вариант."));
+        } else if (focus) {
+          say("no", `<strong>Проверьте:</strong> ${focus}` +
+            (tries >= 2 ? " Можно открыть ответ с объяснением." : " Попробуйте ещё раз."));
+        } else {
+          say("no", tries === 1 ? "Пока не так. Попробуйте ещё раз или откройте подсказку." : "Снова не так. Можно открыть ответ с объяснением.");
+        }
+        reveal.hidden = tries < 2;
       }
     });
 
