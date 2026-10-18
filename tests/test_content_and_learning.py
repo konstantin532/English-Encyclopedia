@@ -289,6 +289,9 @@ class ReviewTests(TestCase):
         UnitProgress.objects.filter(unit__uid="LX-00015").update(next_review_at=timezone.now() - timedelta(minutes=1))
         r = self.client.get("/learning/review/")
         self.assertContains(r, "Как по-английски «имя, название»?")
+        # Lexical recall is not an Exercise: its virtual pk is rLX-..., not an integer.
+        self.assertContains(r, 'data-url="/api/units/LX-00015/recall/"')
+        self.assertNotContains(r, "data-self-review-url=")
 
     def test_recall_checks_lemma_and_forms_and_reschedules(self):
         p = self.make_due("LX-00016")  # be

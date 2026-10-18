@@ -1,0 +1,958 @@
+{
+  "a1-there-is-some": {
+    "1": {
+      "prompt": "Вы в {place}. Как спросить, есть ли {ru}? ",
+      "keys": [
+        "place",
+        "ru",
+        "en"
+      ],
+      "cases": [
+        [
+          "магазине",
+          "молоко",
+          "milk"
+        ],
+        [
+          "кафе",
+          "вода",
+          "water"
+        ],
+        [
+          "магазине",
+          "чай",
+          "tea"
+        ],
+        [
+          "кафе",
+          "кофе",
+          "coffee"
+        ],
+        [
+          "магазине",
+          "сок",
+          "juice"
+        ]
+      ],
+      "options": [
+        "Is there {en}?",
+        "Are there {en}?",
+        "There is {en}?"
+      ],
+      "reason": "С неисчисляемым напитком задавайте вопрос Is there ...?; форма are предназначена для множественного числа.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "В {place} есть несколько {ru}. Выберите форму be.",
+      "keys": [
+        "place",
+        "ru",
+        "en"
+      ],
+      "cases": [
+        [
+          "магазине",
+          "яблок",
+          "apples"
+        ],
+        [
+          "магазине",
+          "бананов",
+          "bananas"
+        ],
+        [
+          "кафе",
+          "сэндвичей",
+          "sandwiches"
+        ],
+        [
+          "доме",
+          "книг",
+          "books"
+        ],
+        [
+          "магазине",
+          "печений",
+          "cookies"
+        ]
+      ],
+      "options": [
+        "are",
+        "is",
+        "am"
+      ],
+      "reason": "После множественного существительного в конструкции There ... используется are.",
+      "en": "There ___ {en}."
+    },
+    "3": {
+      "prompt": "Вы в {place}. Попросите несколько {ru}, пожалуйста.",
+      "keys": [
+        "place",
+        "ru",
+        "en"
+      ],
+      "cases": [
+        [
+          "магазине",
+          "яблок",
+          "apples"
+        ],
+        [
+          "магазине",
+          "бананов",
+          "bananas"
+        ],
+        [
+          "кафе",
+          "печений",
+          "cookies"
+        ],
+        [
+          "кафе",
+          "сэндвичей",
+          "sandwiches"
+        ],
+        [
+          "магазине",
+          "книг",
+          "books"
+        ]
+      ],
+      "options": [
+        "Can I have some {en}, please?",
+        "Can I has some {en}, please?",
+        "Can I have a {en}, please?"
+      ],
+      "reason": "После Can I используется have без -s. Для нескольких предметов подходит some + множественное число.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "В {place} спросили: Is there {en}? По условию {ru} есть. Выберите короткий ответ.",
+      "keys": [
+        "place",
+        "en",
+        "ru"
+      ],
+      "cases": [
+        [
+          "кафе",
+          "water",
+          "вода"
+        ],
+        [
+          "магазине",
+          "milk",
+          "молоко"
+        ],
+        [
+          "доме",
+          "coffee",
+          "кофе"
+        ],
+        [
+          "кафе",
+          "tea",
+          "чай"
+        ],
+        [
+          "магазине",
+          "juice",
+          "сок"
+        ]
+      ],
+      "options": [
+        "Yes, there is.",
+        "Yes, there are.",
+        "Yes, is there."
+      ],
+      "reason": "На Is there ...? о неисчисляемом продукте можно ответить Yes, there is.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Вы описываете {ru}. Выберите английский порядок слов.",
+      "keys": [
+        "ru",
+        "en",
+        "color"
+      ],
+      "cases": [
+        [
+          "зелёные яблоки",
+          "apples",
+          "green"
+        ],
+        [
+          "жёлтые бананы",
+          "bananas",
+          "yellow"
+        ],
+        [
+          "красные яблоки",
+          "apples",
+          "red"
+        ],
+        [
+          "синие книги",
+          "books",
+          "blue"
+        ],
+        [
+          "белые дома",
+          "houses",
+          "white"
+        ]
+      ],
+      "options": [
+        "{color} {en}",
+        "{en} {color}",
+        "{color}s {en}"
+      ],
+      "reason": "Прилагательное цвета ставится перед существительным и не получает окончания -s.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "В {place} вы вежливо просите несколько {ru}.",
+      "keys": [
+        "place",
+        "ru",
+        "color",
+        "en"
+      ],
+      "cases": [
+        [
+          "магазине",
+          "зелёных яблок",
+          "green",
+          "apples"
+        ],
+        [
+          "магазине",
+          "жёлтых бананов",
+          "yellow",
+          "bananas"
+        ],
+        [
+          "кафе",
+          "маленьких печений",
+          "small",
+          "cookies"
+        ],
+        [
+          "магазине",
+          "красных яблок",
+          "red",
+          "apples"
+        ],
+        [
+          "магазине",
+          "больших книг",
+          "big",
+          "books"
+        ]
+      ],
+      "options": [
+        "Can I have some {color} {en}, please?",
+        "Can I have a {color} {en}, please?",
+        "I can some {color} {en}, please?"
+      ],
+      "reason": "Неконкретное множество предметов: some + цвет + существительное во множественном числе.",
+      "en": ""
+    }
+  },
+  "a1-how-much-prices": {
+    "1": {
+      "prompt": "В {place} вы хотите узнать цену {ru}. Что спросить?",
+      "keys": [
+        "place",
+        "ru"
+      ],
+      "cases": [
+        [
+          "магазине",
+          "книги"
+        ],
+        [
+          "кафе",
+          "сэндвича"
+        ],
+        [
+          "магазине",
+          "телефона"
+        ],
+        [
+          "кафе",
+          "чая"
+        ],
+        [
+          "магазине",
+          "печенья"
+        ]
+      ],
+      "options": [
+        "How much is it?",
+        "How old is it?",
+        "How many is it?"
+      ],
+      "reason": "Вопрос о стоимости одной вещи начинается How much is it?",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Ценник показывает {number} доллара(ов). Какое слово нужно после числа?",
+      "keys": [
+        "number"
+      ],
+      "cases": [
+        [
+          "two"
+        ],
+        [
+          "three"
+        ],
+        [
+          "four"
+        ],
+        [
+          "five"
+        ],
+        [
+          "ten"
+        ]
+      ],
+      "options": [
+        "dollars",
+        "dollar",
+        "dollar's"
+      ],
+      "reason": "После чисел больше одного обычно говорят dollars во множественном числе.",
+      "en": "It is {number} ___."
+    },
+    "3": {
+      "prompt": "В {place} спросите, сколько стоит {ru}.",
+      "keys": [
+        "place",
+        "ru",
+        "en"
+      ],
+      "cases": [
+        [
+          "кафе",
+          "молоко",
+          "milk"
+        ],
+        [
+          "кафе",
+          "сэндвич",
+          "sandwich"
+        ],
+        [
+          "магазине",
+          "книга",
+          "book"
+        ],
+        [
+          "магазине",
+          "телефон",
+          "phone"
+        ],
+        [
+          "кафе",
+          "кофе",
+          "coffee"
+        ]
+      ],
+      "options": [
+        "How much is the {en}?",
+        "How much the {en} is?",
+        "How many is the {en}?"
+      ],
+      "reason": "В вопросе о цене: How much + is + предмет.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Продавец называет цену {ru}: {number} долларов. Выберите ответ.",
+      "keys": [
+        "ru",
+        "number"
+      ],
+      "cases": [
+        [
+          "печенья",
+          "two"
+        ],
+        [
+          "книги",
+          "three"
+        ],
+        [
+          "сэндвича",
+          "four"
+        ],
+        [
+          "кофе",
+          "five"
+        ],
+        [
+          "сока",
+          "ten"
+        ]
+      ],
+      "options": [
+        "It is {number} dollars.",
+        "It is {number} dollar.",
+        "It {number} dollars is."
+      ],
+      "reason": "В предложении о цене ставим is после it и dollars после количества.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Предмет {ru} стоит {n} долларов, и для вас это слишком дорого. Как оценить?",
+      "keys": [
+        "ru",
+        "n"
+      ],
+      "cases": [
+        [
+          "книга",
+          "fifty"
+        ],
+        [
+          "кофе",
+          "twenty"
+        ],
+        [
+          "печенье",
+          "ten"
+        ],
+        [
+          "сэндвич",
+          "thirty"
+        ],
+        [
+          "телефон",
+          "five hundred"
+        ]
+      ],
+      "options": [
+        "That is expensive!",
+        "That is cheap!",
+        "That is small!"
+      ],
+      "reason": "Expensive выражает высокую цену; cheap — низкую.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Вы в {place}, просите один маленький {ru}. Выберите вежливый заказ.",
+      "keys": [
+        "place",
+        "ru",
+        "en"
+      ],
+      "cases": [
+        [
+          "кафе",
+          "кофе",
+          "coffee"
+        ],
+        [
+          "кафе",
+          "чай",
+          "tea"
+        ],
+        [
+          "кафе",
+          "сок",
+          "juice"
+        ],
+        [
+          "кафе",
+          "сэндвич",
+          "sandwich"
+        ],
+        [
+          "кафе",
+          "печенье",
+          "cookie"
+        ]
+      ],
+      "options": [
+        "A small {en}, please.",
+        "Small a {en}, please.",
+        "A {en} small, please."
+      ],
+      "reason": "В английском перед исчисляемым названием одного заказа: a + small + предмет.",
+      "en": ""
+    }
+  },
+  "a1-present-simple-i-you": {
+    "1": {
+      "prompt": "Вы сообщаете о своей обычной привычке: {ru}.",
+      "keys": [
+        "ru",
+        "action"
+      ],
+      "cases": [
+        [
+          "вы работаете здесь каждый день",
+          "work here every day"
+        ],
+        [
+          "вы пьёте кофе утром",
+          "drink coffee in the morning"
+        ],
+        [
+          "вы смотрите телевизор вечером",
+          "watch TV in the evening"
+        ],
+        [
+          "вы завтракаете дома",
+          "have breakfast at home"
+        ],
+        [
+          "вы рано ложитесь спать",
+          "go to bed early"
+        ]
+      ],
+      "options": [
+        "I {action}.",
+        "I {action}s.",
+        "I am {action}."
+      ],
+      "reason": "В Present Simple с I основной глагол стоит без окончания -s и без am.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Спросите знакомого: {ru}. Выберите вспомогательный глагол.",
+      "keys": [
+        "ru",
+        "act"
+      ],
+      "cases": [
+        [
+          "завтракает ли он (обращение на ты)",
+          "have breakfast"
+        ],
+        [
+          "работает ли он здесь",
+          "work here"
+        ],
+        [
+          "любит ли он кофе",
+          "like coffee"
+        ],
+        [
+          "смотрит ли он телевизор",
+          "watch TV"
+        ],
+        [
+          "читает ли он книги",
+          "read books"
+        ]
+      ],
+      "options": [
+        "Do",
+        "Does",
+        "Are"
+      ],
+      "reason": "В вопросе к you с обычным действием используется Do, не Does.",
+      "en": "___ you {act}?"
+    },
+    "3": {
+      "prompt": "Расскажите о своём распорядке: {ru}.",
+      "keys": [
+        "ru",
+        "act",
+        "time"
+      ],
+      "cases": [
+        [
+          "вы пьёте кофе в семь",
+          "drink coffee",
+          "seven"
+        ],
+        [
+          "вы завтракаете в восемь",
+          "have breakfast",
+          "eight"
+        ],
+        [
+          "вы читаете в девять",
+          "read books",
+          "nine"
+        ],
+        [
+          "вы смотрите телевизор в шесть",
+          "watch TV",
+          "six"
+        ],
+        [
+          "вы ужинаете в семь",
+          "have dinner",
+          "seven"
+        ]
+      ],
+      "options": [
+        "I {act} at {time}.",
+        "I at {time} {act}.",
+        "I am {act} at {time}."
+      ],
+      "reason": "Для I в обычном утверждении: I + глагол действия + обстоятельство времени.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Друг спрашивает: Do you {act}? По условию вы отвечаете «Да».",
+      "keys": [
+        "act"
+      ],
+      "cases": [
+        [
+          "work every day"
+        ],
+        [
+          "have breakfast"
+        ],
+        [
+          "watch TV"
+        ],
+        [
+          "drink coffee"
+        ],
+        [
+          "like tea"
+        ]
+      ],
+      "options": [
+        "Yes, I do.",
+        "Yes, I does.",
+        "Yes, I am."
+      ],
+      "reason": "В коротком ответе на Do you ...? повторяем do: Yes, I do.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Вы описываете регулярное действие: {ru}.",
+      "keys": [
+        "ru",
+        "action"
+      ],
+      "cases": [
+        [
+          "я принимаю душ",
+          "take a shower"
+        ],
+        [
+          "я завтракаю",
+          "have breakfast"
+        ],
+        [
+          "я ложусь спать",
+          "go to bed"
+        ],
+        [
+          "я смотрю телевизор",
+          "watch TV"
+        ],
+        [
+          "я пью воду",
+          "drink water"
+        ]
+      ],
+      "options": [
+        "I {action}.",
+        "I am {action}.",
+        "I does {action}."
+      ],
+      "reason": "С I в Present Simple не используем am перед обычным глаголом и does.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Вы рассказываете о двух обычных действиях: {ru}.",
+      "keys": [
+        "ru",
+        "first",
+        "second"
+      ],
+      "cases": [
+        [
+          "я смотрю ТВ и рано ложусь спать",
+          "watch TV",
+          "go to bed early"
+        ],
+        [
+          "я завтракаю и пью кофе",
+          "have breakfast",
+          "drink coffee"
+        ],
+        [
+          "я работаю и читаю книги",
+          "work",
+          "read books"
+        ],
+        [
+          "я гуляю и ложусь спать",
+          "walk",
+          "go to bed"
+        ],
+        [
+          "я пью чай и смотрю телевизор",
+          "drink tea",
+          "watch TV"
+        ]
+      ],
+      "options": [
+        "I {first}. I {second}.",
+        "I am {first}. I {second}.",
+        "I {first}. I does {second}."
+      ],
+      "reason": "В обоих обычных утверждениях I + глагол, без am и без does.",
+      "en": ""
+    }
+  },
+  "a1-time-at-seven": {
+    "1": {
+      "prompt": "Часы показывают ровно {ru}. Что сказать?",
+      "keys": [
+        "ru",
+        "time"
+      ],
+      "cases": [
+        [
+          "шесть",
+          "six"
+        ],
+        [
+          "семь",
+          "seven"
+        ],
+        [
+          "восемь",
+          "eight"
+        ],
+        [
+          "девять",
+          "nine"
+        ],
+        [
+          "десять",
+          "ten"
+        ]
+      ],
+      "options": [
+        "It is {time} o'clock.",
+        "It is at {time}.",
+        "It is time {time}."
+      ],
+      "reason": "Для целого часа говорим It is ... o'clock.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Вы говорите: {ru}. Какой предлог вставить?",
+      "keys": [
+        "ru",
+        "action",
+        "time"
+      ],
+      "cases": [
+        [
+          "встаю в шесть",
+          "get up",
+          "six"
+        ],
+        [
+          "завтракаю в восемь",
+          "have breakfast",
+          "eight"
+        ],
+        [
+          "обедаю в двенадцать",
+          "have lunch",
+          "twelve"
+        ],
+        [
+          "работаю в семь",
+          "work",
+          "seven"
+        ],
+        [
+          "ужинаю в шесть",
+          "have dinner",
+          "six"
+        ]
+      ],
+      "options": [
+        "at",
+        "in",
+        "on"
+      ],
+      "reason": "Перед точным временем на часах употребляется at.",
+      "en": "I {action} ___ {time}."
+    },
+    "3": {
+      "prompt": "Спросите друга, во сколько он {ru}.",
+      "keys": [
+        "ru",
+        "action"
+      ],
+      "cases": [
+        [
+          "встаёт",
+          "get up"
+        ],
+        [
+          "завтракает",
+          "have breakfast"
+        ],
+        [
+          "работает",
+          "work"
+        ],
+        [
+          "ужинает",
+          "have dinner"
+        ],
+        [
+          "ложится спать",
+          "go to bed"
+        ]
+      ],
+      "options": [
+        "What time do you {action}?",
+        "What time does you {action}?",
+        "What time you do {action}?"
+      ],
+      "reason": "В вопросе к you: What time + do you + действие.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Ответьте, во сколько вы {ru}: в {time}.",
+      "keys": [
+        "ru",
+        "time",
+        "action"
+      ],
+      "cases": [
+        [
+          "завтракаете",
+          "eight",
+          "have breakfast"
+        ],
+        [
+          "обедаете",
+          "twelve",
+          "have lunch"
+        ],
+        [
+          "ужинаете",
+          "seven",
+          "have dinner"
+        ],
+        [
+          "встаёте",
+          "six",
+          "get up"
+        ],
+        [
+          "ложитесь спать",
+          "ten",
+          "go to bed"
+        ]
+      ],
+      "options": [
+        "I {action} at {time}.",
+        "I {action} in {time}.",
+        "I {action} on {time}."
+      ],
+      "reason": "У точного времени нужен предлог at.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Как сказать {ru}?",
+      "keys": [
+        "ru",
+        "time"
+      ],
+      "cases": [
+        [
+          "вечером",
+          "evening"
+        ],
+        [
+          "утром",
+          "morning"
+        ],
+        [
+          "днём",
+          "afternoon"
+        ],
+        [
+          "ранним утром",
+          "morning"
+        ],
+        [
+          "в середине дня",
+          "afternoon"
+        ]
+      ],
+      "options": [
+        "in the {time}",
+        "at the {time}",
+        "in {time}"
+      ],
+      "reason": "Для частей дня: in the morning / afternoon / evening. Варианты с at the обычно неверны здесь.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Вы хотите сказать «{ru}». Какое существительное вставить?",
+      "keys": [
+        "ru",
+        "meal",
+        "wrong1",
+        "wrong2",
+        "time"
+      ],
+      "cases": [
+        [
+          "я завтракаю в восемь",
+          "breakfast",
+          "lunch",
+          "dinner",
+          "eight"
+        ],
+        [
+          "я обедаю в двенадцать",
+          "lunch",
+          "breakfast",
+          "dinner",
+          "twelve"
+        ],
+        [
+          "я ужинаю в семь",
+          "dinner",
+          "breakfast",
+          "lunch",
+          "seven"
+        ],
+        [
+          "я завтракаю в девять",
+          "breakfast",
+          "dinner",
+          "lunch",
+          "nine"
+        ],
+        [
+          "я обедаю в час",
+          "lunch",
+          "dinner",
+          "breakfast",
+          "one"
+        ]
+      ],
+      "options": [
+        "{meal}",
+        "{wrong1}",
+        "{wrong2}"
+      ],
+      "reason": "Breakfast — завтрак, lunch — обед, dinner — ужин.",
+      "en": "I have ___ at {time}."
+    }
+  }
+}

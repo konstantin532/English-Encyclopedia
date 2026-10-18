@@ -1,0 +1,934 @@
+{
+  "a1-what-hurts": {
+    "1": {
+      "prompt": "Вы рассказываете врачу, что {ru}.",
+      "keys": [
+        "ru",
+        "part"
+      ],
+      "cases": [
+        [
+          "болит спина",
+          "back"
+        ],
+        [
+          "болит нога",
+          "leg"
+        ],
+        [
+          "болит голова",
+          "head"
+        ],
+        [
+          "болит рука",
+          "arm"
+        ],
+        [
+          "болит живот",
+          "stomach"
+        ]
+      ],
+      "options": [
+        "My {part} hurts.",
+        "My {part} hurt is.",
+        "My {part} hurting."
+      ],
+      "reason": "Если болит одна часть тела, в Present Simple: My ... hurts.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Вы сообщаете, что {ru}. Какое слово вставить?",
+      "keys": [
+        "ru",
+        "condition"
+      ],
+      "cases": [
+        [
+          "болит голова",
+          "headache"
+        ],
+        [
+          "есть простуда",
+          "cold"
+        ],
+        [
+          "болит зуб",
+          "toothache"
+        ],
+        [
+          "есть температура",
+          "fever"
+        ],
+        [
+          "болит живот",
+          "stomachache"
+        ]
+      ],
+      "options": [
+        "{condition}",
+        "a {condition}",
+        "{condition}s"
+      ],
+      "reason": "С конструкцией I have a ... уже есть артикль a, поэтому вставляется только само слово.",
+      "en": "I have a ___."
+    },
+    "3": {
+      "prompt": "Врач спрашивает, болит ли у вас {ru}.",
+      "keys": [
+        "ru",
+        "part"
+      ],
+      "cases": [
+        [
+          "голова",
+          "head"
+        ],
+        [
+          "спина",
+          "back"
+        ],
+        [
+          "нога",
+          "leg"
+        ],
+        [
+          "рука",
+          "arm"
+        ],
+        [
+          "живот",
+          "stomach"
+        ]
+      ],
+      "options": [
+        "Does your {part} hurt?",
+        "Does your {part} hurts?",
+        "Do your {part} hurt?"
+      ],
+      "reason": "Вопрос с единственным предметом: Does your ... hurt? Основной глагол без -s.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "В поездке вы объясняете аптекарю, что {ru}.",
+      "keys": [
+        "ru",
+        "part"
+      ],
+      "cases": [
+        [
+          "болит живот",
+          "stomach"
+        ],
+        [
+          "болит спина",
+          "back"
+        ],
+        [
+          "болит голова",
+          "head"
+        ],
+        [
+          "болит нога",
+          "leg"
+        ],
+        [
+          "болит рука",
+          "arm"
+        ]
+      ],
+      "options": [
+        "My {part} hurts.",
+        "My {part} hurt.",
+        "My {part} is hurts."
+      ],
+      "reason": "Одна часть тела — единственное число, значит hurts, не hurt.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Врач спрашивает о {ru}. Объясните, что болят обе {thing_ru}.",
+      "keys": [
+        "ru",
+        "thing_ru",
+        "part"
+      ],
+      "cases": [
+        [
+          "двух ступнях",
+          "ступни",
+          "feet"
+        ],
+        [
+          "двух руках",
+          "руки",
+          "hands"
+        ],
+        [
+          "двух ногах",
+          "ноги",
+          "legs"
+        ],
+        [
+          "двух глазах",
+          "глаза",
+          "eyes"
+        ],
+        [
+          "двух ушах",
+          "уши",
+          "ears"
+        ]
+      ],
+      "options": [
+        "My {part} hurt.",
+        "My {part} hurts.",
+        "My {part} is hurt."
+      ],
+      "reason": "С двумя частями тела (множественное число) используем hurt без -s.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Вы сообщаете, что {ru}.",
+      "keys": [
+        "ru",
+        "part"
+      ],
+      "cases": [
+        [
+          "болит одна нога",
+          "leg"
+        ],
+        [
+          "болит одна рука",
+          "arm"
+        ],
+        [
+          "болит живот",
+          "stomach"
+        ],
+        [
+          "болит спина",
+          "back"
+        ],
+        [
+          "болит голова",
+          "head"
+        ]
+      ],
+      "options": [
+        "My {part} hurts.",
+        "My {part} hurt.",
+        "My {part} is hurts."
+      ],
+      "reason": "С одной частью тела: my ... hurts.",
+      "en": ""
+    }
+  },
+  "a1-cant-cannot": {
+    "1": {
+      "prompt": "Скажите, что не можете {ru}.",
+      "keys": [
+        "ru",
+        "action"
+      ],
+      "cases": [
+        [
+          "спать",
+          "sleep"
+        ],
+        [
+          "сегодня работать",
+          "work today"
+        ],
+        [
+          "гулять",
+          "walk"
+        ],
+        [
+          "сейчас говорить",
+          "speak now"
+        ],
+        [
+          "читать книгу",
+          "read a book"
+        ]
+      ],
+      "options": [
+        "I can't {action}.",
+        "I can't to {action}.",
+        "I don't can {action}."
+      ],
+      "reason": "После модального can't идёт начальная форма глагола без to.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Вы не можете {ru}. Вставьте полную отрицательную форму can.",
+      "keys": [
+        "ru",
+        "act"
+      ],
+      "cases": [
+        [
+          "спать",
+          "sleep"
+        ],
+        [
+          "работать",
+          "work"
+        ],
+        [
+          "говорить",
+          "speak"
+        ],
+        [
+          "читать",
+          "read"
+        ],
+        [
+          "гулять",
+          "walk"
+        ]
+      ],
+      "options": [
+        "cannot",
+        "don't can",
+        "not can"
+      ],
+      "reason": "Полная форма отрицания can — cannot; сокращение — can't.",
+      "en": "I ___ {act}."
+    },
+    "3": {
+      "prompt": "Вас просят объяснить: «Но у меня болит {ru}».",
+      "keys": [
+        "ru",
+        "part"
+      ],
+      "cases": [
+        [
+          "спина",
+          "back"
+        ],
+        [
+          "нога",
+          "leg"
+        ],
+        [
+          "рука",
+          "arm"
+        ],
+        [
+          "голова",
+          "head"
+        ],
+        [
+          "живот",
+          "stomach"
+        ]
+      ],
+      "options": [
+        "But my {part} hurts.",
+        "But my {part} hurt.",
+        "But my hurts {part}."
+      ],
+      "reason": "But противопоставляет, а при единственном числе части тела говорим hurts.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Друг предлагает {offer}, но вы не можете. Как вежливо отказаться?",
+      "keys": [
+        "offer"
+      ],
+      "cases": [
+        [
+          "погулять в парке"
+        ],
+        [
+          "встретиться сегодня"
+        ],
+        [
+          "пойти в кафе"
+        ],
+        [
+          "посмотреть фильм"
+        ],
+        [
+          "поиграть на гитаре"
+        ]
+      ],
+      "options": [
+        "Sorry, I can't.",
+        "Sorry, I don't can.",
+        "Sorry, I am can't."
+      ],
+      "reason": "Sorry, I can't — короткий вежливый отказ без лишних глаголов.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Вы чувствуете себя {ru}. Выберите фразу.",
+      "keys": [
+        "ru",
+        "feeling",
+        "wrong1",
+        "wrong2"
+      ],
+      "cases": [
+        [
+          "жаждущим",
+          "thirsty",
+          "hungry",
+          "tired"
+        ],
+        [
+          "голодным",
+          "hungry",
+          "thirsty",
+          "tired"
+        ],
+        [
+          "уставшим",
+          "tired",
+          "hungry",
+          "thirsty"
+        ],
+        [
+          "снова хотите пить",
+          "thirsty",
+          "tired",
+          "hungry"
+        ],
+        [
+          "очень голодным",
+          "hungry",
+          "tired",
+          "thirsty"
+        ]
+      ],
+      "options": [
+        "I am {feeling}.",
+        "I am {wrong1}.",
+        "I am {wrong2}."
+      ],
+      "reason": "Thirsty — хочет пить, hungry — хочет есть, tired — устал.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Вы объясняете другу два обстоятельства: {ru}.",
+      "keys": [
+        "ru",
+        "feeling",
+        "action"
+      ],
+      "cases": [
+        [
+          "вы устали и не можете спать",
+          "tired",
+          "sleep"
+        ],
+        [
+          "вы устали и не можете работать",
+          "tired",
+          "work"
+        ],
+        [
+          "вы заняты и не можете говорить",
+          "busy",
+          "speak"
+        ],
+        [
+          "вы устали и не можете читать",
+          "tired",
+          "read"
+        ],
+        [
+          "вы плохо себя чувствуете и не можете гулять",
+          "sick",
+          "walk"
+        ]
+      ],
+      "options": [
+        "I am {feeling} and I can't {action}.",
+        "I {feeling} and I can't {action}.",
+        "I am {feeling} and I can't to {action}."
+      ],
+      "reason": "После I нужен am перед прилагательным; после can't — глагол без to.",
+      "en": ""
+    }
+  },
+  "a1-dont-doesnt": {
+    "1": {
+      "prompt": "Расскажите о {who}: {ru}.",
+      "keys": [
+        "who",
+        "ru",
+        "subj",
+        "act"
+      ],
+      "cases": [
+        [
+          "Томе",
+          "он не получает письма",
+          "He",
+          "get letters"
+        ],
+        [
+          "Анне",
+          "она не пьёт кофе",
+          "She",
+          "drink coffee"
+        ],
+        [
+          "Мие",
+          "она не работает ночью",
+          "She",
+          "work at night"
+        ],
+        [
+          "Томе",
+          "он не живёт здесь",
+          "He",
+          "live here"
+        ],
+        [
+          "Анне",
+          "она не смотрит телевизор",
+          "She",
+          "watch TV"
+        ]
+      ],
+      "options": [
+        "{subj} doesn't {act}.",
+        "{subj} don't {act}.",
+        "{subj} doesn't {act}s."
+      ],
+      "reason": "He/she требует doesn't + основной глагол без -s.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Вы говорите, что у вас нет {ru}.",
+      "keys": [
+        "ru",
+        "item"
+      ],
+      "cases": [
+        [
+          "марки",
+          "a stamp"
+        ],
+        [
+          "письма",
+          "a letter"
+        ],
+        [
+          "телефона",
+          "a phone"
+        ],
+        [
+          "книги",
+          "a book"
+        ],
+        [
+          "конверта",
+          "an envelope"
+        ]
+      ],
+      "options": [
+        "don't",
+        "doesn't",
+        "not"
+      ],
+      "reason": "В отрицании Present Simple после I используем don't.",
+      "en": "I ___ have {item}."
+    },
+    "3": {
+      "prompt": "Друг {who} не {ru}. Как сказать?",
+      "keys": [
+        "who",
+        "ru",
+        "act"
+      ],
+      "cases": [
+        [
+          "Том",
+          "живёт в России",
+          "live in Russia"
+        ],
+        [
+          "Анна",
+          "работает ночью",
+          "work at night"
+        ],
+        [
+          "Мия",
+          "любит чай",
+          "like tea"
+        ],
+        [
+          "Том",
+          "смотрит телевизор",
+          "watch TV"
+        ],
+        [
+          "Анна",
+          "знает этот адрес",
+          "know this address"
+        ]
+      ],
+      "options": [
+        "My friend doesn't {act}.",
+        "My friend don't {act}.",
+        "My friend doesn't {act}s."
+      ],
+      "reason": "В отрицании с my friend: doesn't + начальная форма глагола.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "В {place} прохожий спрашивает, где {where}, но вы не знаете. Выберите вежливый ответ.",
+      "keys": [
+        "place",
+        "where"
+      ],
+      "cases": [
+        [
+          "городе",
+          "банк"
+        ],
+        [
+          "парке",
+          "кафе"
+        ],
+        [
+          "поездке",
+          "школа"
+        ],
+        [
+          "городе",
+          "магазин"
+        ],
+        [
+          "поездке",
+          "отель"
+        ]
+      ],
+      "options": [
+        "Sorry, I don't know.",
+        "Sorry, I doesn't know.",
+        "Sorry, I not know."
+      ],
+      "reason": "С I отрицание обычного глагола know — don't know.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "У {ru} нет {item_ru}. Выберите правильную фразу.",
+      "keys": [
+        "ru",
+        "who",
+        "item_ru",
+        "item"
+      ],
+      "cases": [
+        [
+          "Тома",
+          "Tom",
+          "конверта",
+          "an envelope"
+        ],
+        [
+          "Анны",
+          "Anna",
+          "марки",
+          "a stamp"
+        ],
+        [
+          "Мии",
+          "Mia",
+          "телефона",
+          "a phone"
+        ],
+        [
+          "Тома",
+          "Tom",
+          "книги",
+          "a book"
+        ],
+        [
+          "Анны",
+          "Anna",
+          "письма",
+          "a letter"
+        ]
+      ],
+      "options": [
+        "{who} doesn't have {item}.",
+        "{who} don't have {item}.",
+        "{who} doesn't has {item}."
+      ],
+      "reason": "Перед have у третьего лица в отрицании используется doesn't.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "В {place} вас спрашивают о {ru}, но вы не знаете. Ответьте вежливо.",
+      "keys": [
+        "place",
+        "ru",
+        "thing"
+      ],
+      "cases": [
+        [
+          "почтовом отделении",
+          "почтовом индексе",
+          "ZIP code"
+        ],
+        [
+          "отеле",
+          "адресе",
+          "address"
+        ],
+        [
+          "школе",
+          "телефоне",
+          "phone number"
+        ],
+        [
+          "магазине",
+          "номере дома",
+          "house number"
+        ],
+        [
+          "на курсах",
+          "имени",
+          "name"
+        ]
+      ],
+      "options": [
+        "Sorry, I don't know the {thing}.",
+        "Sorry, I doesn't know the {thing}.",
+        "Sorry, I not know the {thing}."
+      ],
+      "reason": "В отрицании Present Simple с I используйте don't know.",
+      "en": ""
+    }
+  },
+  "a1-letters-address": {
+    "1": {
+      "prompt": "В {place} вам задают вопрос: «What is the address?» Что хотят узнать?",
+      "keys": [
+        "place"
+      ],
+      "cases": [
+        [
+          "почтовом отделении"
+        ],
+        [
+          "магазине при доставке"
+        ],
+        [
+          "отеле"
+        ],
+        [
+          "анкете на курсах"
+        ],
+        [
+          "при отправлении письма"
+        ]
+      ],
+      "options": [
+        "Адрес",
+        "Возраст",
+        "Номер телефона"
+      ],
+      "reason": "Address означает адрес: улицу, дом, город и другие адресные сведения.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Вы готовите письмо {to} и спрашиваете, нужна ли почтовая {ru}.",
+      "keys": [
+        "to",
+        "ru"
+      ],
+      "cases": [
+        [
+          "другу",
+          "марка"
+        ],
+        [
+          "Анне",
+          "марка"
+        ],
+        [
+          "маме",
+          "марка"
+        ],
+        [
+          "Тому",
+          "марка"
+        ],
+        [
+          "брату",
+          "марка"
+        ]
+      ],
+      "options": [
+        "stamp",
+        "phone",
+        "coffee"
+      ],
+      "reason": "Stamp — почтовая марка.",
+      "en": "I need a ___."
+    },
+    "3": {
+      "prompt": "Продиктуйте адрес {street_ru} вслух на американском английском.",
+      "keys": [
+        "street_ru",
+        "n",
+        "street"
+      ],
+      "cases": [
+        [
+          "дом 5, улица Парк",
+          "five",
+          "Park Street"
+        ],
+        [
+          "дом 10, улица Парк",
+          "ten",
+          "Park Street"
+        ],
+        [
+          "дом 3, улица Мейн",
+          "three",
+          "Main Street"
+        ],
+        [
+          "дом 7, улица Парк",
+          "seven",
+          "Park Street"
+        ],
+        [
+          "дом 2, улица Мейн",
+          "two",
+          "Main Street"
+        ]
+      ],
+      "options": [
+        "{n} {street}",
+        "{street} {n}",
+        "{n} Street {street}"
+      ],
+      "reason": "В американском адресе номер дома ставится перед названием улицы.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "На почте вы объясняете, кому посылка: для {ru} в России.",
+      "keys": [
+        "ru",
+        "person"
+      ],
+      "cases": [
+        [
+          "друга",
+          "my friend"
+        ],
+        [
+          "мамы",
+          "my mom"
+        ],
+        [
+          "папы",
+          "my dad"
+        ],
+        [
+          "сестры",
+          "my sister"
+        ],
+        [
+          "брата",
+          "my brother"
+        ]
+      ],
+      "options": [
+        "It is for {person} in Russia.",
+        "It for {person} is in Russia.",
+        "It is to {person} for Russia."
+      ],
+      "reason": "Для адресата в ответе Who is it for? подходит It is for ...",
+      "en": ""
+    },
+    "5": {
+      "prompt": "В {place} просят назвать вашу фамилию: {surname}.",
+      "keys": [
+        "place",
+        "surname"
+      ],
+      "cases": [
+        [
+          "отеле",
+          "Belova"
+        ],
+        [
+          "офисе",
+          "Ivanov"
+        ],
+        [
+          "школе",
+          "Petrova"
+        ],
+        [
+          "магазине",
+          "Sidorov"
+        ],
+        [
+          "на курсах",
+          "Smirnova"
+        ]
+      ],
+      "options": [
+        "My last name is {surname}.",
+        "My last name {surname}.",
+        "My {surname} is last name."
+      ],
+      "reason": "My last name is ... — стандартный способ назвать фамилию.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "В {place} вы отвечаете за {who} с фамилией {surname}. Как назвать фамилию от первого лица?",
+      "keys": [
+        "place",
+        "who",
+        "surname"
+      ],
+      "cases": [
+        [
+          "учебном центре",
+          "Анну",
+          "Belova"
+        ],
+        [
+          "школе",
+          "Тома",
+          "Ivanov"
+        ],
+        [
+          "почтовом отделении",
+          "Мию",
+          "Petrova"
+        ],
+        [
+          "офисе",
+          "Анну",
+          "Smirnova"
+        ],
+        [
+          "другом городе",
+          "Тома",
+          "Sidorov"
+        ]
+      ],
+      "options": [
+        "My last name is {surname}.",
+        "My last name {surname}.",
+        "I last name is {surname}."
+      ],
+      "reason": "Для фамилии — My last name is + фамилия.",
+      "en": ""
+    }
+  }
+}

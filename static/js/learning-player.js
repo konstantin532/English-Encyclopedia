@@ -76,12 +76,53 @@
       try { data = await post(form.dataset.url, { answer: value }); }
       catch (err) { say("no", "Не удалось проверить ответ: нет связи с сервером. Обновите страницу и попробуйте ещё раз."); return; }
       if (data.correct) {
-        say("ok", `<strong>Верно.</strong> ${esc(data.explanation)}`);
+        tries = 0;
+        const label = data.assessment === "model_match"
+          ? "Совпало с подготовленным примером."
+          : "Верно.";
+        say("ok", `<strong>${label}</strong> ${esc(data.explanation)}`);
         reveal.hidden = true;
       } else {
         tries += 1;
-        say("no", tries === 1 ? "Пока не так. Попробуйте ещё раз или откройте подсказку." : "Снова не так. Можно открыть ответ с объяснением.");
-        if (tries >= 2) reveal.hidden = false;
+        const focus = typeof data.feedback_ru === "string" ? esc(data.feedback_ru) : "";
+        if (data.assessment === "needs_review") {
+          say("review", "Ответ отличается от подготовленного примера — это ещё не означает ошибку. " +
+            focus + (tries >= 2 ? " Можно показать пример для сравнения." : " Попробуйте ещё один вариант."));
+        } else if (focus) {
+          say("no", `<strong>Проверьте:</strong> ${focus}` +
+            (tries >= 2 ? " Можно открыть ответ с объяснением." : " Попробуйте ещё раз."));
+        } else {
+          say("no", tries === 1 ? "Пока не так. Попробуйте ещё раз или откройте подсказку." : "Снова не так. Можно открыть ответ с объяснением.");
+        }
+        reveal.hidden = tries < 2;
+        if (data.retry_scheduled_at) {
+          const when = new Date(data.retry_scheduled_at);
+          const due = Number.isNaN(when.getTime()) ? "через два дня"
+            : when.toLocaleString("ru-RU", {day: "numeric", month: "long", hour: "2-digit", minute: "2-digit"});
+          feedback.insertAdjacentHTML("beforeend",
+            `<p>Пять новых вопросов на эту тему запланированы на ${esc(due)}. Сразу этот вопрос повторять не нужно. <a href="/learning/mistake-review/">Открыть раздел повторений</a>.</p>`);
+        }
+        if (data.assessment === "needs_review" && data.self_review_available && form.dataset.selfReviewUrl) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "btn btn-quiet btn-small";
+          button.textContent = "Назначить 5 похожих вопросов через 2 дня";
+          button.addEventListener("click", async () => {
+            button.disabled = true;
+            try {
+              const scheduled = await post(form.dataset.selfReviewUrl, {});
+              if (!scheduled.scheduled) throw new Error("not scheduled");
+              const date = new Date(scheduled.due_at);
+              const due = Number.isNaN(date.getTime()) ? "через два дня"
+                : date.toLocaleString("ru-RU", {day: "numeric", month: "long", hour: "2-digit", minute: "2-digit"});
+              button.replaceWith(document.createTextNode("Дополнительная практика назначена на " + due + ". Это ваш выбор, не штраф за ошибку."));
+            } catch (error) {
+              button.disabled = false;
+              button.textContent = "Не удалось назначить. Повторить запрос";
+            }
+          });
+          feedback.appendChild(button);
+        }
       }
     });
 

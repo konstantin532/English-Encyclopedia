@@ -1,0 +1,946 @@
+{
+  "a1-can-skills": {
+    "1": {
+      "prompt": "В {place} вы хотите узнать, умеет ли собеседник {ru}.",
+      "keys": [
+        "place",
+        "ru",
+        "lang"
+      ],
+      "cases": [
+        [
+          "поездке",
+          "говорить по-русски",
+          "Russian"
+        ],
+        [
+          "школе",
+          "говорить по-английски",
+          "English"
+        ],
+        [
+          "магазине",
+          "говорить по-русски",
+          "Russian"
+        ],
+        [
+          "встрече",
+          "говорить по-английски",
+          "English"
+        ],
+        [
+          "кафе",
+          "говорить по-русски",
+          "Russian"
+        ]
+      ],
+      "options": [
+        "Can you speak {lang}?",
+        "Can you to speak {lang}?",
+        "Are you speak {lang}?"
+      ],
+      "reason": "После can употребляется speak без to.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Вас спрашивают «Can you {action}?». По условию вы умеете, ответьте «Да».",
+      "keys": [
+        "action"
+      ],
+      "cases": [
+        [
+          "speak English"
+        ],
+        [
+          "draw"
+        ],
+        [
+          "sing"
+        ],
+        [
+          "read English"
+        ],
+        [
+          "swim"
+        ]
+      ],
+      "options": [
+        "Yes, I can.",
+        "Yes, I do can.",
+        "Yes, I am."
+      ],
+      "reason": "В коротком ответе на Can you ...? используется Yes, I can.",
+      "en": ""
+    },
+    "3": {
+      "prompt": "На занятии вы хотите попросить {ru}.",
+      "keys": [
+        "ru",
+        "act"
+      ],
+      "cases": [
+        [
+          "научить вас русскому",
+          "teach me Russian"
+        ],
+        [
+          "научить вас английскому",
+          "teach me English"
+        ],
+        [
+          "научить вас читать",
+          "teach me to read"
+        ],
+        [
+          "научить вас рисовать",
+          "teach me to draw"
+        ],
+        [
+          "научить вас петь",
+          "teach me to sing"
+        ]
+      ],
+      "options": [
+        "Can you {act}?",
+        "Can you to {act}?",
+        "Can do you {act}?"
+      ],
+      "reason": "После can употребляется глагол без лишнего to перед teach: Can you teach me?",
+      "en": ""
+    },
+    "4": {
+      "prompt": "На {place} по условию вы говорите на двух языках: {ru}.",
+      "keys": [
+        "ru",
+        "lang1",
+        "lang2",
+        "place"
+      ],
+      "cases": [
+        [
+          "русском и английском",
+          "Russian",
+          "English",
+          "курсах"
+        ],
+        [
+          "английском и русском",
+          "English",
+          "Russian",
+          "занятии"
+        ],
+        [
+          "русском и английском",
+          "Russian",
+          "English",
+          "встрече"
+        ],
+        [
+          "английском и русском",
+          "English",
+          "Russian",
+          "работе"
+        ],
+        [
+          "русском и английском",
+          "Russian",
+          "English",
+          "собеседовании"
+        ]
+      ],
+      "options": [
+        "I can speak {lang1} and {lang2}.",
+        "I can speaking {lang1} and {lang2}.",
+        "I can to speak {lang1} and {lang2}."
+      ],
+      "reason": "После can нужен speak, не speaking и не to speak.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Вы рассказываете, что {ru}.",
+      "keys": [
+        "ru",
+        "subject",
+        "act"
+      ],
+      "cases": [
+        [
+          "она умеет рисовать",
+          "She",
+          "draw"
+        ],
+        [
+          "он умеет плавать",
+          "He",
+          "swim"
+        ],
+        [
+          "она умеет петь",
+          "She",
+          "sing"
+        ],
+        [
+          "он умеет читать",
+          "He",
+          "read"
+        ],
+        [
+          "она умеет говорить по-русски",
+          "She",
+          "speak Russian"
+        ]
+      ],
+      "options": [
+        "{subject} can {act}.",
+        "{subject} can {act}s.",
+        "{subject} can to {act}."
+      ],
+      "reason": "После can глагол не получает -s даже с he/she.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "На занятии вы не расслышали {ru}. Вежливо попросите повторить.",
+      "keys": [
+        "ru",
+        "thing"
+      ],
+      "cases": [
+        [
+          "вопрос",
+          "the question"
+        ],
+        [
+          "слово",
+          "the word"
+        ],
+        [
+          "имя",
+          "the name"
+        ],
+        [
+          "фразу",
+          "the sentence"
+        ],
+        [
+          "номер",
+          "the number"
+        ]
+      ],
+      "options": [
+        "Can you repeat {thing}, please?",
+        "Can you to repeat {thing}, please?",
+        "Can you repeating {thing}, please?"
+      ],
+      "reason": "В вежливой просьбе Can you repeat ...?, после can нужна начальная форма repeat.",
+      "en": ""
+    }
+  },
+  "a1-why-because": {
+    "1": {
+      "prompt": "Том спрашивает, почему вы любите {ru}. Вы хотите привести причину.",
+      "keys": [
+        "ru",
+        "reason"
+      ],
+      "cases": [
+        [
+          "русский язык",
+          "Russian music"
+        ],
+        [
+          "английский язык",
+          "English music"
+        ],
+        [
+          "школу",
+          "my teacher"
+        ],
+        [
+          "кафе",
+          "coffee"
+        ],
+        [
+          "парк",
+          "walking"
+        ]
+      ],
+      "options": [
+        "Because I like {reason}.",
+        "Yes, I can.",
+        "On Saturday at ten."
+      ],
+      "reason": "Because вводит причину; ответы о времени или способности не объясняют почему.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Закончите объяснение: «___ {reason}».",
+      "keys": [
+        "reason"
+      ],
+      "cases": [
+        [
+          "I am tired"
+        ],
+        [
+          "I like English"
+        ],
+        [
+          "I need help"
+        ],
+        [
+          "I work today"
+        ],
+        [
+          "I am hungry"
+        ]
+      ],
+      "options": [
+        "Because",
+        "Why",
+        "When"
+      ],
+      "reason": "В начале ответа на Why? используйте Because.",
+      "en": ""
+    },
+    "3": {
+      "prompt": "Вы хотите спросить, почему друг любит {ru}.",
+      "keys": [
+        "ru",
+        "item"
+      ],
+      "cases": [
+        [
+          "музыку",
+          "music"
+        ],
+        [
+          "кофе",
+          "coffee"
+        ],
+        [
+          "чай",
+          "tea"
+        ],
+        [
+          "английский",
+          "English"
+        ],
+        [
+          "книги",
+          "books"
+        ]
+      ],
+      "options": [
+        "Why do you like {item}?",
+        "Why does you like {item}?",
+        "Why you like {item}?"
+      ],
+      "reason": "В вопросе почему к you: Why do you like ...?",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Вы не можете {ru}, потому что {why_ru}. Выберите связную фразу.",
+      "keys": [
+        "ru",
+        "why_ru",
+        "act",
+        "reason"
+      ],
+      "cases": [
+        [
+          "гулять",
+          "работаете",
+          "walk",
+          "work today"
+        ],
+        [
+          "говорить сейчас",
+          "заняты",
+          "speak now",
+          "am busy"
+        ],
+        [
+          "играть на гитаре",
+          "устали",
+          "play the guitar",
+          "am tired"
+        ],
+        [
+          "пойти в кафе",
+          "работаете",
+          "go to the cafe",
+          "work"
+        ],
+        [
+          "читать",
+          "устали",
+          "read",
+          "am tired"
+        ]
+      ],
+      "options": [
+        "I can't {act} because I {reason}.",
+        "I can't {act} why I {reason}.",
+        "I can't to {act} because I {reason}."
+      ],
+      "reason": "Because связывает основную фразу с причиной. После can't не ставим to.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Вам трудно {ru}. Ответьте на Why? полной причиной.",
+      "keys": [
+        "ru",
+        "action"
+      ],
+      "cases": [
+        [
+          "понять слово",
+          "don't understand the word"
+        ],
+        [
+          "сделать упражнение",
+          "don't understand the exercise"
+        ],
+        [
+          "говорить по-английски",
+          "don't speak English well"
+        ],
+        [
+          "найти банк",
+          "don't know where the bank is"
+        ],
+        [
+          "назвать адрес",
+          "don't know the address"
+        ]
+      ],
+      "options": [
+        "Because I {action}.",
+        "Why I {action}.",
+        "Because I doesn't {action}."
+      ],
+      "reason": "На Why? отвечайте Because + причина. С I используем don't, не doesn't.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Учитель спрашивает Why? Вы хотите сказать «Потому что {ru}».",
+      "keys": [
+        "ru",
+        "text"
+      ],
+      "cases": [
+        [
+          "я не понимаю это слово",
+          "don't understand the word"
+        ],
+        [
+          "я не знаю адрес",
+          "don't know the address"
+        ],
+        [
+          "я не знаю ответ",
+          "don't know the answer"
+        ],
+        [
+          "я не понимаю вопрос",
+          "don't understand the question"
+        ],
+        [
+          "я не знаю это имя",
+          "don't know the name"
+        ]
+      ],
+      "options": [
+        "Because I {text}.",
+        "Because I doesn't {text}.",
+        "Why I {text}."
+      ],
+      "reason": "Потому что — because. С I отрицание — don't.",
+      "en": ""
+    }
+  },
+  "a1-bus-ticket": {
+    "1": {
+      "prompt": "Вы спрашиваете водителя, идёт ли этот автобус {ru}.",
+      "keys": [
+        "ru",
+        "place"
+      ],
+      "cases": [
+        [
+          "до парка",
+          "the park"
+        ],
+        [
+          "до станции",
+          "the station"
+        ],
+        [
+          "до школы",
+          "the school"
+        ],
+        [
+          "до банка",
+          "the bank"
+        ],
+        [
+          "до отеля",
+          "the hotel"
+        ]
+      ],
+      "options": [
+        "Does this bus go to {place}?",
+        "Do this bus go to {place}?",
+        "Does this bus goes to {place}?"
+      ],
+      "reason": "This bus — третье лицо единственного числа: Does this bus go ...?",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Купите {ru} билета(ов).",
+      "keys": [
+        "ru",
+        "n"
+      ],
+      "cases": [
+        [
+          "два",
+          "Two"
+        ],
+        [
+          "три",
+          "Three"
+        ],
+        [
+          "четыре",
+          "Four"
+        ],
+        [
+          "пять",
+          "Five"
+        ],
+        [
+          "шесть",
+          "Six"
+        ]
+      ],
+      "options": [
+        "tickets",
+        "ticket",
+        "a tickets"
+      ],
+      "reason": "После числа больше одного: tickets.",
+      "en": "{n} ___, please."
+    },
+    "3": {
+      "prompt": "Вы ищете {ru} и хотите спросить, во сколько он будет. Выберите вопрос.",
+      "keys": [
+        "ru",
+        "transport"
+      ],
+      "cases": [
+        [
+          "следующий автобус",
+          "bus"
+        ],
+        [
+          "следующий поезд",
+          "train"
+        ],
+        [
+          "следующий автобус до парка",
+          "bus"
+        ],
+        [
+          "следующий поезд до города",
+          "train"
+        ],
+        [
+          "следующий автобус до станции",
+          "bus"
+        ]
+      ],
+      "options": [
+        "What time is the next {transport}?",
+        "What time the next {transport} is?",
+        "What is the next {transport} time?"
+      ],
+      "reason": "В вопросе с be слово is идёт перед the next bus/train.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Вам нужен {place}. Спросите, идёт ли автобус туда.",
+      "keys": [
+        "place",
+        "dest"
+      ],
+      "cases": [
+        [
+          "парк",
+          "the park"
+        ],
+        [
+          "банк",
+          "the bank"
+        ],
+        [
+          "отель",
+          "the hotel"
+        ],
+        [
+          "школа",
+          "the school"
+        ],
+        [
+          "станция",
+          "the station"
+        ]
+      ],
+      "options": [
+        "Does this bus go to {dest}?",
+        "Does this bus goes to {dest}?",
+        "Do this bus go to {dest}?"
+      ],
+      "reason": "Does + bus + go ...; после does не добавляем -s к go.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "На табло написано «The {train} arrives at {time}». Что это значит?",
+      "keys": [
+        "train",
+        "time",
+        "time_ru"
+      ],
+      "cases": [
+        [
+          "train",
+          "six",
+          "шесть"
+        ],
+        [
+          "bus",
+          "seven",
+          "семь"
+        ],
+        [
+          "train",
+          "eight",
+          "восемь"
+        ],
+        [
+          "bus",
+          "nine",
+          "девять"
+        ],
+        [
+          "train",
+          "ten",
+          "десять"
+        ]
+      ],
+      "options": [
+        "Транспорт прибывает в {time_ru}.",
+        "Транспорт отбывает в {time_ru}.",
+        "Транспорт прибыл вчера в {time_ru}."
+      ],
+      "reason": "Arrives — прибывает. Это настоящее время, не сообщение о вчерашнем прибытии.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "В незнакомом {place} вы ищете {ru}. Как спросить?",
+      "keys": [
+        "place",
+        "ru",
+        "where"
+      ],
+      "cases": [
+        [
+          "городе",
+          "железнодорожную станцию",
+          "train station"
+        ],
+        [
+          "городе",
+          "автобусную станцию",
+          "bus station"
+        ],
+        [
+          "районе",
+          "отель",
+          "hotel"
+        ],
+        [
+          "городе",
+          "банк",
+          "bank"
+        ],
+        [
+          "районе",
+          "кафе",
+          "cafe"
+        ]
+      ],
+      "options": [
+        "Where is the {where}?",
+        "Where the {where} is?",
+        "Who is the {where}?"
+      ],
+      "reason": "Для места спросите Where is the ...?; не переставляйте is после существительного.",
+      "en": ""
+    }
+  },
+  "a1-review-everything": {
+    "1": {
+      "prompt": "В итоговом рассказе вы сообщаете, что {ru}.",
+      "keys": [
+        "ru",
+        "name",
+        "act"
+      ],
+      "cases": [
+        [
+          "Мия работает в школе",
+          "Mia",
+          "works at a school"
+        ],
+        [
+          "Том живёт в России",
+          "Tom",
+          "lives in Russia"
+        ],
+        [
+          "Анна любит музыку",
+          "Anna",
+          "likes music"
+        ],
+        [
+          "Том читает книги",
+          "Tom",
+          "reads books"
+        ],
+        [
+          "Мия работает в кафе",
+          "Mia",
+          "works at a cafe"
+        ]
+      ],
+      "options": [
+        "{name} {act}.",
+        "{name} is {act}.",
+        "{name} {act} is."
+      ],
+      "reason": "С именем одного человека в Present Simple используйте глагол с -s, без лишнего is.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "В {place} вы не знаете ответа. Как сказать вежливо?",
+      "keys": [
+        "place"
+      ],
+      "cases": [
+        [
+          "магазине"
+        ],
+        [
+          "школе"
+        ],
+        [
+          "автобусе"
+        ],
+        [
+          "кафе"
+        ],
+        [
+          "отеле"
+        ]
+      ],
+      "options": [
+        "Sorry, I don't know.",
+        "Sorry, I doesn't know.",
+        "Sorry, I not know."
+      ],
+      "reason": "I + don't know; doesn't используется с he/she/it.",
+      "en": ""
+    },
+    "3": {
+      "prompt": "В {place} вы ищете {ru}. Как правильно спросить?",
+      "keys": [
+        "place",
+        "ru",
+        "item"
+      ],
+      "cases": [
+        [
+          "городе",
+          "банк",
+          "bank"
+        ],
+        [
+          "парке",
+          "кафе",
+          "cafe"
+        ],
+        [
+          "незнакомом месте",
+          "магазин",
+          "shop"
+        ],
+        [
+          "поездке",
+          "отель",
+          "hotel"
+        ],
+        [
+          "городе",
+          "школу",
+          "school"
+        ]
+      ],
+      "options": [
+        "Where is the {item}?",
+        "Where the {item} is?",
+        "Who is the {item}?"
+      ],
+      "reason": "Where is ...? спрашивает о месте. В вопросе форма is перед the ...",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Вас спрашивают о стране и языке. Вы из {country}, умеете говорить по-{language_ru}.",
+      "keys": [
+        "country",
+        "language_ru",
+        "country_en",
+        "lang"
+      ],
+      "cases": [
+        [
+          "России",
+          "английски",
+          "Russia",
+          "English"
+        ],
+        [
+          "России",
+          "русски",
+          "Russia",
+          "Russian"
+        ],
+        [
+          "Канады",
+          "английски",
+          "Canada",
+          "English"
+        ],
+        [
+          "США",
+          "английски",
+          "the USA",
+          "English"
+        ],
+        [
+          "Франции",
+          "французски",
+          "France",
+          "French"
+        ]
+      ],
+      "options": [
+        "I am from {country_en}. I can speak {lang}.",
+        "I from {country_en}. I can speak {lang}.",
+        "I am from {country_en}. I can to speak {lang}."
+      ],
+      "reason": "Страна — I am from ...; после can — speak без to.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Вы описываете погоду в {place}: {ru}.",
+      "keys": [
+        "place",
+        "ru",
+        "weather"
+      ],
+      "cases": [
+        [
+          "городе",
+          "солнечно",
+          "sunny"
+        ],
+        [
+          "парке",
+          "дождливо",
+          "rainy"
+        ],
+        [
+          "городе",
+          "холодно",
+          "cold"
+        ],
+        [
+          "поездке",
+          "ветрено",
+          "windy"
+        ],
+        [
+          "городе",
+          "тепло",
+          "warm"
+        ]
+      ],
+      "options": [
+        "It is {weather} today.",
+        "It {weather} today.",
+        "It is today {weather} is."
+      ],
+      "reason": "Для погоды в настоящем времени: It is + признак.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Вы объясняете покупку: вы хотите {want}, потому что {reason_ru}.",
+      "keys": [
+        "want",
+        "reason_ru",
+        "item",
+        "reason_clause"
+      ],
+      "cases": [
+        [
+          "купить зонт",
+          "не любите дождь",
+          "an umbrella",
+          "don't like the rain"
+        ],
+        [
+          "купить пальто",
+          "не любите холод",
+          "a coat",
+          "don't like the cold"
+        ],
+        [
+          "купить чай",
+          "хотите пить",
+          "tea",
+          "am thirsty"
+        ],
+        [
+          "купить книгу",
+          "любите читать",
+          "a book",
+          "like reading"
+        ],
+        [
+          "купить кофе",
+          "любите кофе",
+          "coffee",
+          "like coffee"
+        ]
+      ],
+      "options": [
+        "I want to buy {item} because I {reason_clause}.",
+        "I want buy {item} because I {reason_clause}.",
+        "I want to buy {item} why I {reason_clause}."
+      ],
+      "reason": "После want используйте to buy; причину вводит because. Смысл причины должен совпадать с ситуацией.",
+      "en": ""
+    }
+  }
+}

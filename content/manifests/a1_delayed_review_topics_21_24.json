@@ -1,0 +1,210 @@
+{
+  "a1-what-hurts": [
+    [
+      "Вы говорите врачу, что у вас болит спина.",
+      "",
+      [
+        "My back hurts.",
+        "My back hurt is.",
+        "My back hurting."
+      ],
+      0
+    ],
+    [
+      "У вас болит голова. Выберите обычную фразу.",
+      "",
+      [
+        "I have headache a.",
+        "I have a headache.",
+        "I have a head hurts."
+      ],
+      1
+    ],
+    [
+      "Врач хочет узнать, болит ли ваша голова.",
+      "",
+      [
+        "Do your head hurts?",
+        "Does your head hurts?",
+        "Does your head hurt?"
+      ],
+      2
+    ],
+    [
+      "Вы сообщаете врачу, что болят обе ступни.",
+      "",
+      [
+        "My feet hurt.",
+        "My feet hurts.",
+        "My foot hurt."
+      ],
+      0
+    ],
+    [
+      "У вас болит одна нога. Как сказать?",
+      "",
+      [
+        "My leg hurt.",
+        "My leg hurts.",
+        "My leg is hurt is."
+      ],
+      1
+    ]
+  ],
+  "a1-cant-cannot": [
+    [
+      "Вы не можете сегодня работать. Выберите фразу.",
+      "",
+      [
+        "I can't to work today.",
+        "I don't can work today.",
+        "I can't work today."
+      ],
+      2
+    ],
+    [
+      "Вам трудно спать. Дополните отрицание can полной формой.",
+      "I ___ sleep.",
+      [
+        "cannot",
+        "don't can",
+        "not can"
+      ],
+      0
+    ],
+    [
+      "Вы устали, и у вас болит спина.",
+      "",
+      [
+        "But my back hurt.",
+        "But my back hurts.",
+        "But my hurts back."
+      ],
+      1
+    ],
+    [
+      "Друг предлагает прогулку, но вы не можете. Вежливо ответьте.",
+      "",
+      [
+        "Sorry, I doesn't.",
+        "Sorry, I am can.",
+        "Sorry, I can't."
+      ],
+      2
+    ],
+    [
+      "Вы говорите, что хотите пить.",
+      "",
+      [
+        "I am thirsty.",
+        "I am hungry.",
+        "I am tired."
+      ],
+      0
+    ]
+  ],
+  "a1-dont-doesnt": [
+    [
+      "Том не живёт в этом доме.",
+      "",
+      [
+        "Tom don't live here.",
+        "Tom doesn't live here.",
+        "Tom doesn't lives here."
+      ],
+      1
+    ],
+    [
+      "У вас нет конверта.",
+      "",
+      [
+        "I doesn't have an envelope.",
+        "I not have an envelope.",
+        "I don't have an envelope."
+      ],
+      2
+    ],
+    [
+      "Анна не работает в банке.",
+      "",
+      [
+        "Anna doesn't work at the bank.",
+        "Anna don't work at the bank.",
+        "Anna doesn't works at the bank."
+      ],
+      0
+    ],
+    [
+      "Вы не знаете, где остановка, и отвечаете вежливо.",
+      "",
+      [
+        "Sorry, I doesn't know.",
+        "Sorry, I don't know.",
+        "Sorry, I not know."
+      ],
+      1
+    ],
+    [
+      "У Тома нет почтовой марки.",
+      "",
+      [
+        "Tom don't have a stamp.",
+        "Tom doesn't has a stamp.",
+        "Tom doesn't have a stamp."
+      ],
+      2
+    ]
+  ],
+  "a1-letters-address": [
+    [
+      "На почте вас спрашивают «What is the address?» Что хотят узнать?",
+      "",
+      [
+        "Адрес получателя",
+        "Его возраст",
+        "Стоимость кофе"
+      ],
+      0
+    ],
+    [
+      "Для отправки письма нужна марка.",
+      "I need a ___.",
+      [
+        "letter",
+        "stamp",
+        "friend"
+      ],
+      1
+    ],
+    [
+      "На конверте улица Park Street и дом 5. Как назвать адрес вслух?",
+      "",
+      [
+        "Park five Street",
+        "Street Park five",
+        "five Park Street"
+      ],
+      2
+    ],
+    [
+      "Вы посылаете письмо другу в России. Как сказать, для кого оно?",
+      "",
+      [
+        "It is for my friend in Russia.",
+        "It is at friend from Russia.",
+        "It for my friend is Russia."
+      ],
+      0
+    ],
+    [
+      "В анкете просят вашу фамилию. Вы — Анна Белова. Что ответить?",
+      "",
+      [
+        "My last name Belova.",
+        "My last name is Belova.",
+        "My Belova is last name."
+      ],
+      1
+    ]
+  ]
+}

@@ -9,8 +9,15 @@ jobs:
       - run: uv sync
       - run: uv run python manage.py check
       - run: uv run python manage.py makemigrations --check --dry-run
+      # Validate every authored delayed-review card before running the slower suite.
+      - run: |
+          uv run python manage.py shell -c "from apps.learning.mistake_review import question_bank; b=question_bank(); assert len(b)==28; assert sum(len(v) for v in b.values())==163; assert sum(len(q) for v in b.values() for q in v.values())==815; print('A1 review bank: 28 lessons, 163 exercises, 815 questions')"
+      # Fail before the slower suite when a beginner explanation or open
+      # independent task violates one of the 15 educational data contracts.
+      - run: |
+          uv run python manage.py shell -c "from apps.learning.understanding import understanding_bank; b=understanding_bank(); assert len(b)==28; assert sum(len(x['tasks']) for x in b.values())==112; print('A1 clarity: 28 guides, 112 no-options tasks, 15 structural checks')"
       - run: uv run pytest -q
-      - run: node --test tests/js/audio-player.test.cjs tests/js/cafe-lab.test.cjs tests/js/a1-active.test.cjs tests/js/a1-active-browser.test.cjs tests/js/speech-studio.test.cjs tests/js/speech-studio-browser.test.cjs tests/js/speech-review.test.cjs tests/js/speech-review-browser.test.cjs tests/js/speech-shadowing.test.cjs tests/js/speech-stress.test.cjs
+      - run: node --test tests/js/audio-player.test.cjs tests/js/cafe-lab.test.cjs tests/js/a1-active.test.cjs tests/js/a1-active-browser.test.cjs tests/js/speech-studio.test.cjs tests/js/speech-studio-browser.test.cjs tests/js/speech-review.test.cjs tests/js/speech-review-browser.test.cjs tests/js/speech-shadowing.test.cjs tests/js/speech-stress.test.cjs tests/js/a1-learning-route.test.cjs
       - run: |
           uv run python manage.py migrate -v0
           uv run python manage.py load_content

@@ -136,3 +136,57 @@ class SpeechPracticeProgress(models.Model):
             self.stage = min(self.stage + 1, len(SPEECH_REVIEW_INTERVALS_DAYS) - 1)
             delay = SPEECH_REVIEW_INTERVALS_DAYS[self.stage]
         self.next_review_at = now + timedelta(days=delay)
+
+
+class MistakeReview(models.Model):
+    """Five authored practice questions appear two days after a verified A1 error.
+
+    Free responses that merely differ from the model are NOT scheduled.
+    Progress here is separate from CEFR and vocabulary mastery.
+    """
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="mistake_reviews",
+    )
+    exercise = models.ForeignKey(
+        Exercise, on_delete=models.CASCADE, related_name="delayed_reviews",
+    )
+    due_at = models.DateTimeField()
+    current_index = models.PositiveSmallIntegerField(default=0)
+    correct_count = models.PositiveSmallIntegerField(default=0)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=["user", "exercise"], name="unique_mistake_review"),
+        ]
+        indexes = [
+            models.Index(fields=["user", "completed_at", "due_at"], name="mistake_review_due_idx"),
+        ]
+        ordering = ["due_at", "pk"]
+
+
+
+class IndependentAttempt(models.Model):
+    """Evidence for an A1 no-options check, NOT a CEFR certificate.
+
+    Model-key agreement is distinguished from human validation; free transfer
+    can only be self-assessed until a teacher checks it.
+    """
+    class Outcome(models.TextChoices):
+        MODEL_MATCH = "model_match", "Совпало с образцом"
+        NEEDS_REVIEW = "needs_review", "Нужна проверка"
+        SELF_REPORTED = "self_reported", "Самооценка ученика"
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="independent_attempts")
+    lesson = models.ForeignKey("lessons.Lesson", on_delete=models.CASCADE, related_name="independent_attempts")
+    skill = models.CharField(max_length=12)
+    submitted = models.CharField(max_length=400)
+    outcome = models.CharField(max_length=16, choices=Outcome.choices)
+    self_rating = models.CharField(max_length=16, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        indexes = [models.Index(fields=["user", "lesson", "-created_at"], name="independent_user_lesson_idx")]
+        ordering = ["-created_at"]

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Повторить непонятное · {{ SITE_NAME }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/mistake-review.css' %}">{% endblock %}
+{% block content %}
+<div class="wrap mistake-review-page">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'learning:dashboard' %}">Мой прогресс</a> / повторение ошибок</p>
+    <h1>Повторить то, что было трудно</h1>
+    <p>Через два дня после ошибки появляются пять новых вопросов на тот же навык. Старый вопрос не повторяем сразу. Ответы в этой тренировке не меняют оценку вашего уровня английского.</p>
+  </header>
+
+  {% if task %}
+    <section class="section mistake-review-card" aria-labelledby="mistake-review-t">
+      <h2 id="mistake-review-t">{{ task.lesson_title }}</h2>
+      <p class="drill-stage">Новый вопрос {{ task.number }} из 5</p>
+      <p class="drill-prompt">{{ task.prompt_ru }}</p>
+      {% if task.prompt_en %}<p class="drill-en" lang="en">{{ task.prompt_en }}</p>{% endif %}
+      <form method="post" action="{% url 'learning:mistake_review' %}">
+        {% csrf_token %}
+        <input type="hidden" name="review_id" value="{{ task.id }}">
+        <input type="hidden" name="index" value="{{ task.index }}">
+        <fieldset class="mistake-review-options">
+          <legend>Выберите ответ</legend>
+          {% for number, option in task.options %}
+            <label class="mistake-review-option">
+              <input type="radio" name="choice" value="{{ number }}" required>
+              <span lang="en">{{ option }}</span>
+            </label>
+          {% endfor %}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Проверить ответ</button>
+      </form>
+      <p class="uid mistake-review-help">Правильный ответ и разбор откроются после попытки.</p>
+    </section>
+  {% elif answer_result %}
+    <section class="section mistake-review-card" aria-live="polite">
+      <h2>Вопрос {{ answer_result.number }} из 5</h2>
+      {% if answer_result.correct %}
+        <p><strong>Верно!</strong> Вы самостоятельно выбрали подходящий вариант.</p>
+      {% else %}
+        <p>Пока не совпало с правильным вариантом. Посмотрите, почему.</p>
+      {% endif %}
+      <p>Ваш выбор: <strong lang="en">{{ answer_result.chosen }}</strong></p>
+      <p>Верный вариант: <strong lang="en">{{ answer_result.model }}</strong></p>
+      {% if answer_result.reason %}<p><strong>Разбор:</strong> {{ answer_result.reason }}</p>{% endif %}
+      {% if answer_result.finished %}
+        <h3>Пять новых вопросов пройдены</h3>
+        <p>Правильных ответов: {{ answer_result.score }} из 5.</p>
+        {% if answer_result.rescheduled %}
+          <p>Некоторые различия ещё требуют практики. Следующий спокойный повтор будет доступен {{ answer_result.next_due|date:"j E в H:i" }} — без немедленного повторения.</p>
+        {% else %}
+          <p>Отлично, этот дополнительный цикл завершён.</p>
+        {% endif %}
+        <a class="btn btn-primary" href="{% url 'learning:dashboard' %}">Вернуться к прогрессу</a>
+      {% else %}
+        <a class="btn btn-primary" href="{% url 'learning:mistake_review' %}">Следующий новый вопрос →</a>
+      {% endif %}
+    </section>
+  {% else %}
+    <section class="section mistake-review-card">
+      <h2>Новых вопросов пока нет</h2>
+      {% if next_due %}
+        <p>Следующая пятёрка откроется {{ next_due.due_at|date:"j E в H:i" }}. Продолжайте обычные уроки в своём темпе.</p>
+      {% else %}
+        <p>Когда вы ошибётесь в проверяемом задании A1, здесь появятся пять других вопросов через два дня. До этого возвращаться к ошибке специально не нужно.</p>
+      {% endif %}
+      <a class="btn btn-primary" href="{% url 'learning:dashboard' %}">К моему прогрессу</a>
+    </section>
+  {% endif %}
+</div>
+{% endblock %}

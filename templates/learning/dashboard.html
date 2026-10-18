@@ -16,6 +16,26 @@
       <p>Тренировка произношения и речи по памяти: результат отмечаете вы сами, а сложные фразы возвращаются для повторения.</p></div>
     <p><a class="btn btn-primary" href="{% url 'learning:speech_review' %}">Речевые повторения{% if speech_due_count %} ({{ speech_due_count }}){% endif %} →</a></p>
   </section>
+  <section class="section" aria-label="Повторение ошибок через два дня">
+    <div class="section-head">
+      <h2>Сложные места — через два дня</h2>
+      <p>Если вы ошиблись в проверяемом задании любого урока A1, спустя два дня получите пять новых вопросов на тот же навык. Исходный вопрос не повторяется сразу.</p>
+    </div>
+    <p><a class="btn btn-primary" href="{% url 'learning:mistake_review' %}">Повторить ошибки{% if mistake_review_due_count %} ({{ mistake_review_due_count }}){% endif %} →</a></p>
+    {% if mistake_review_waiting %}<p>Следующее повторение откроется {{ mistake_review_waiting.due_at|date:"j E в H:i" }}.</p>{% endif %}
+  </section>
+  <section class="section" aria-labelledby="independent-practice-title">
+    <div class="section-head">
+      <h2 id="independent-practice-title">Могу ли я сам?</h2>
+      <p>Проверки без готовых вариантов для каждого урока A1: понимание, самостоятельное письмо и перенос в новую ситуацию. Ответы записываются отдельно от словарного прогресса и не подтверждают уровень автоматически.</p>
+    </div>
+    <p>Ваши попытки: {{ independent_attempt_count }}; уроков с попытками: {{ independent_lessons_tried }} из 28.</p>
+    {% if next_lesson and next_lesson.level.code == "A1" %}
+      <p><a class="btn btn-primary" href="{% url 'learning:independent_check' next_lesson.slug %}">Самостоятельная проверка следующего урока →</a></p>
+    {% else %}
+      <p><a class="btn btn-primary" href="{% url 'curriculum:level' 'a1' %}">Выбрать урок A1 →</a></p>
+    {% endif %}
+  </section>
   {% if next_lesson %}
     <p><a class="btn btn-primary" href="{% url 'lessons:detail' next_lesson.slug %}">{% if progress %}Продолжить: {{ next_lesson.title }}{% else %}Начать первый урок{% endif %}</a></p>
   {% endif %}

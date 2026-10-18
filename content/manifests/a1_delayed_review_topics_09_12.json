@@ -1,0 +1,210 @@
+{
+  "a1-there-is-some": [
+    [
+      "Вы ищете молоко в небольшом магазине. Выберите подходящий вопрос.",
+      "",
+      [
+        "Is there milk?",
+        "Are there milk?",
+        "There is milk?"
+      ],
+      0
+    ],
+    [
+      "На прилавке несколько яблок. Как сообщить об этом?",
+      "",
+      [
+        "There is apples.",
+        "There are apples.",
+        "There apples are."
+      ],
+      1
+    ],
+    [
+      "Вы просите у продавца несколько яблок, а не одно.",
+      "",
+      [
+        "Can I have apples some, please?",
+        "Can I have a apples, please?",
+        "Can I have some apples, please?"
+      ],
+      2
+    ],
+    [
+      "Вы показываете гостю две книги в комнате.",
+      "",
+      [
+        "There are two books in the room.",
+        "There is two books in the room.",
+        "There two are books in room."
+      ],
+      0
+    ],
+    [
+      "Вы называете цвет нескольких яблок.",
+      "",
+      [
+        "apples green",
+        "green apples",
+        "greens apple"
+      ],
+      1
+    ]
+  ],
+  "a1-how-much-prices": [
+    [
+      "В магазине вы хотите узнать цену одной вещи.",
+      "",
+      [
+        "How old is it?",
+        "How much is it?",
+        "How many is it?"
+      ],
+      1
+    ],
+    [
+      "На ценнике пять долларов. Как ответить на вопрос о цене?",
+      "",
+      [
+        "It is five dollar.",
+        "It five dollars.",
+        "It is five dollars."
+      ],
+      2
+    ],
+    [
+      "Вы хотите узнать цену молока.",
+      "",
+      [
+        "How much is the milk?",
+        "How much the milk is?",
+        "How many is the milk?"
+      ],
+      0
+    ],
+    [
+      "Сумма слишком высокая для вас. Выберите оценку.",
+      "",
+      [
+        "That is cheap!",
+        "That is expensive!",
+        "That is small!"
+      ],
+      1
+    ],
+    [
+      "Вы просите один маленький кофе.",
+      "",
+      [
+        "Small a coffee please.",
+        "A coffee small, please.",
+        "A small coffee, please."
+      ],
+      2
+    ]
+  ],
+  "a1-present-simple-i-you": [
+    [
+      "Расскажите, что вы работаете каждый день.",
+      "",
+      [
+        "I work every day.",
+        "I works every day.",
+        "I am work every day."
+      ],
+      0
+    ],
+    [
+      "Вы спрашиваете друга, завтракает ли он.",
+      "",
+      [
+        "Are you have breakfast?",
+        "Do you have breakfast?",
+        "Does you have breakfast?"
+      ],
+      1
+    ],
+    [
+      "Вы пьёте чай утром — обычное действие.",
+      "",
+      [
+        "I am drink tea.",
+        "I drinks tea.",
+        "I drink tea."
+      ],
+      2
+    ],
+    [
+      "Друг спрашивает, работаете ли вы сегодня, и вы отвечаете «Да».",
+      "",
+      [
+        "Yes, I do.",
+        "Yes, I am do.",
+        "Yes, I does."
+      ],
+      0
+    ],
+    [
+      "Вы рассказываете о вечернем распорядке.",
+      "",
+      [
+        "I go at bed.",
+        "I go to bed.",
+        "I goes to bed."
+      ],
+      1
+    ]
+  ],
+  "a1-time-at-seven": [
+    [
+      "Часы показывают ровно восемь. Как сказать?",
+      "",
+      [
+        "It is at eight.",
+        "It is eight o'clock.",
+        "It eight is."
+      ],
+      1
+    ],
+    [
+      "Вы встаёте в шесть часов. Выберите предлог.",
+      "I get up ___ six.",
+      [
+        "on",
+        "in",
+        "at"
+      ],
+      2
+    ],
+    [
+      "Вы хотите спросить друга, во сколько он завтракает.",
+      "",
+      [
+        "What time do you have breakfast?",
+        "What time you have breakfast?",
+        "What time does you have breakfast?"
+      ],
+      0
+    ],
+    [
+      "Вы едите ужин вечером.",
+      "",
+      [
+        "I have dinner at the evening.",
+        "I have dinner in the evening.",
+        "I have dinner on evening."
+      ],
+      1
+    ],
+    [
+      "Вы обедаете в двенадцать.",
+      "",
+      [
+        "I have breakfast at twelve, for lunch.",
+        "I lunch at twelve have.",
+        "I have lunch at twelve."
+      ],
+      2
+    ]
+  ]
+}

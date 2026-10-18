@@ -1,0 +1,44 @@
+/* Accessible, Android-friendly independent A1 writing checks. */
+.independent-check { padding-bottom: var(--space-8); min-width: 0; }
+.independent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem),1fr)); gap: 1rem; }
+.independent-task, .independent-result { min-width: 0; overflow-wrap: anywhere; }
+.independent-task h2, .independent-result h2 { margin-bottom: 1rem; }
+.independent-task label { display: block; margin: .75rem 0 .5rem; font-weight: 600; }
+.independent-task textarea { display: block; width: 100%; min-width: 0; box-sizing: border-box;
+ font: inherit; font-size: 1rem; line-height: 1.6; padding: 1rem; border-radius: 12px;
+ border: 1px solid var(--rule); color: var(--ink); background: var(--surface); resize: vertical; }
+.independent-task textarea:focus-visible { outline: 3px solid var(--focus, currentColor); outline-offset: 2px; }
+.independent-task button, .independent-rating button { min-height: 48px; margin-top: 1rem; }
+.independent-prompt { font-weight: 600; font-size: 1.05rem; overflow-wrap: anywhere; }
+.independent-option { display: flex; align-items: flex-start; gap: 12px; padding: 12px 8px; min-height: 48px; cursor: pointer; }
+.independent-option input { min-width: 20px; min-height: 20px; accent-color: var(--ink); }
+.independent-rating fieldset { border: 0; padding: 0; }
+.independent-result { max-width: 56rem; }
+.a1-clarity-bridge { padding: 1.25rem; margin: 1rem 0; border: 1px solid var(--rule); border-radius: 14px; overflow-wrap: anywhere; }
+.a1-clarity-bridge dl { display: grid; grid-template-columns: minmax(7rem, 1fr) minmax(0, 3fr); gap: .75rem 1rem; }
+.a1-clarity-bridge dt { font-weight: 700; }
+.a1-clarity-bridge dd { margin: 0; }
+.a1-clarity-bridge blockquote { margin: .75rem 0; }
+@media (max-width: 480px) {
+  .independent-grid { display: block; }
+  .independent-task { margin-bottom: 1rem; }
+  .independent-task .btn, .independent-rating .btn { display: block; width: 100%; }
+  .a1-clarity-bridge dl { grid-template-columns: minmax(0, 1fr); }
+  .a1-clarity-bridge dt { margin-bottom: -.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { .independent-task *, .independent-result * { transition: none; } }
+
+.independent-explanation { margin: 1.25rem 0; border: 1px solid var(--rule); padding: .75rem 1rem; border-radius: 12px; }
+.independent-explanation summary { cursor: pointer; min-height: 44px; display: list-item; font-weight: 700; padding: .5rem 0; }
+.independent-explanation:focus-within { outline: 2px solid var(--focus, currentColor); outline-offset: 2px; }
+
+/* Show why two superficially similar sentences differ, not just an isolated rule. */
+.a1-contrast { margin-top: 1.125rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
+.a1-contrast h3 { font-size: 1.06rem; margin: 0 0 .75rem; }
+.a1-contrast-pairs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.a1-contrast-pairs p { min-width: 0; padding: .875rem; margin: 0; border: 1px solid var(--rule); border-radius: 12px; overflow-wrap: anywhere; }
+.a1-contrast-pairs strong, .a1-contrast-pairs span { display: block; }
+.a1-contrast-pairs span { margin-top: .4rem; }
+.independent-batch-submit { min-height: 48px; margin-top: 1rem; }
+.independent-result-item { border-bottom: 1px solid var(--rule); padding-block: .75rem; overflow-wrap: anywhere; }
+@media (max-width: 480px) { .a1-contrast-pairs { grid-template-columns: minmax(0, 1fr); } .independent-batch-submit { width: 100%; } }

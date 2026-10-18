@@ -1,0 +1,264 @@
+{
+  "a1-verb-be": {
+    "1": [
+      [
+        "В предложении «Tom is home» какая форма be?",
+        "Tom is home.",
+        [
+          "Tom",
+          "is",
+          "home"
+        ],
+        1
+      ],
+      [
+        "В предложении «I am Anna» какая форма be?",
+        "I am Anna.",
+        [
+          "am",
+          "Anna",
+          "I"
+        ],
+        0
+      ],
+      [
+        "В предложении «You are my friend» какая форма be?",
+        "You are my friend.",
+        [
+          "my",
+          "friend",
+          "are"
+        ],
+        2
+      ],
+      [
+        "В предложении «It is new» какая форма be?",
+        "It is new.",
+        [
+          "new",
+          "It",
+          "is"
+        ],
+        2
+      ],
+      [
+        "В предложении «This is my house» какая форма be?",
+        "This is my house.",
+        [
+          "This",
+          "is",
+          "house"
+        ],
+        1
+      ]
+    ],
+    "2": [
+      [
+        "Выберите форму be с I.",
+        "I ___ Tom.",
+        [
+          "are",
+          "am",
+          "is"
+        ],
+        1
+      ],
+      [
+        "Выберите форму be с you.",
+        "You ___ my friend.",
+        [
+          "is",
+          "are",
+          "am"
+        ],
+        1
+      ],
+      [
+        "Выберите форму be с it.",
+        "It ___ new.",
+        [
+          "am",
+          "are",
+          "is"
+        ],
+        2
+      ],
+      [
+        "Выберите форму be с Anna.",
+        "Anna ___ home.",
+        [
+          "is",
+          "are",
+          "am"
+        ],
+        0
+      ],
+      [
+        "Выберите форму be с Tom.",
+        "Tom ___ my neighbor.",
+        [
+          "are",
+          "is",
+          "am"
+        ],
+        1
+      ]
+    ],
+    "3": [
+      [
+        "Заполните предложение «Я — Том».",
+        "I ___ Tom.",
+        [
+          "is",
+          "am",
+          "are"
+        ],
+        1
+      ],
+      [
+        "Как сказать «Я дома»?",
+        "I ___ home.",
+        [
+          "are",
+          "is",
+          "am"
+        ],
+        2
+      ],
+      [
+        "Вы представляете себя как Анну.",
+        "I ___ Anna.",
+        [
+          "am",
+          "is",
+          "are"
+        ],
+        0
+      ],
+      [
+        "Вы сообщаете, что вы заняты.",
+        "I ___ busy.",
+        [
+          "is",
+          "are",
+          "am"
+        ],
+        2
+      ],
+      [
+        "Вы рассказываете, что вы из России.",
+        "I ___ from Russia.",
+        [
+          "am",
+          "are",
+          "is"
+        ],
+        0
+      ]
+    ],
+    "4": [
+      [
+        "Как отрицать фразу «It is a book»?",
+        "",
+        [
+          "It is not a book.",
+          "It not is a book.",
+          "It is a not book."
+        ],
+        0
+      ],
+      [
+        "Скажите, что комната не новая.",
+        "",
+        [
+          "My room not is new.",
+          "My room is not new.",
+          "My room is new not."
+        ],
+        1
+      ],
+      [
+        "Скажите, что Том не Анна.",
+        "",
+        [
+          "Tom is Anna not.",
+          "Tom not is Anna.",
+          "Tom is not Anna."
+        ],
+        2
+      ],
+      [
+        "Скажите, что это не мой телефон.",
+        "",
+        [
+          "It is not my phone.",
+          "It not is my phone.",
+          "It is my not phone."
+        ],
+        0
+      ],
+      [
+        "Скажите, что дом не большой.",
+        "",
+        [
+          "The house not is big.",
+          "The house is not big.",
+          "The house is big not."
+        ],
+        1
+      ]
+    ],
+    "5": [
+      [
+        "На вопрос «Is this your book?» ответьте «Нет, это не моя книга».",
+        "",
+        [
+          "No, is not my book.",
+          "No, it is not my book.",
+          "No, it not my book."
+        ],
+        1
+      ],
+      [
+        "Гость ошибся: это не ваш телефон. Что ответить?",
+        "",
+        [
+          "No, it is not my phone.",
+          "No, not it is my phone.",
+          "No, it my phone is not."
+        ],
+        0
+      ],
+      [
+        "Вас спрашивают о комнате, которая не ваша.",
+        "",
+        [
+          "No, it not is my room.",
+          "No, it is my not room.",
+          "No, it is not my room."
+        ],
+        2
+      ],
+      [
+        "Вас спрашивают «Is it your house?» — это не ваш дом.",
+        "",
+        [
+          "No, it is not my house.",
+          "No, it not my house.",
+          "No, is it not my house."
+        ],
+        0
+      ],
+      [
+        "Вас спрашивают о вашей книге, но книга чужая.",
+        "",
+        [
+          "No, my book it not is.",
+          "No, it is not my book.",
+          "No, is not it my book."
+        ],
+        1
+      ]
+    ]
+  }
+}

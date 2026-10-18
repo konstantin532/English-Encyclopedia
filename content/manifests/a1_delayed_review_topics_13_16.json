@@ -1,0 +1,210 @@
+{
+  "a1-he-she-works": [
+    [
+      "Мия работает в школе каждый день. Выберите правильное предложение.",
+      "",
+      [
+        "Mia work at a school.",
+        "Mia works at a school.",
+        "Mia is work at a school."
+      ],
+      1
+    ],
+    [
+      "Спросите о Томе: работает ли он в кафе?",
+      "",
+      [
+        "Do Tom work at a cafe?",
+        "Does Tom works at a cafe?",
+        "Does Tom work at a cafe?"
+      ],
+      2
+    ],
+    [
+      "Анна начинает работать в семь. Как сказать о ней?",
+      "",
+      [
+        "She starts at seven.",
+        "She start at seven.",
+        "She is start at seven."
+      ],
+      0
+    ],
+    [
+      "Том заканчивает работу в два.",
+      "",
+      [
+        "He finish at two.",
+        "He finishes at two.",
+        "He finishs at two."
+      ],
+      1
+    ],
+    [
+      "Вас спросили: «Does she work here?» Она не работает здесь. Как ответить?",
+      "",
+      [
+        "No, she don't.",
+        "No, she does.",
+        "No, she doesn't."
+      ],
+      2
+    ]
+  ],
+  "a1-jobs-what-do-you-do": [
+    [
+      "Новый знакомый говорит «What do you do?» Чего он обычно хочет узнать?",
+      "",
+      [
+        "Вашу профессию",
+        "Ваш возраст",
+        "Номер телефона"
+      ],
+      0
+    ],
+    [
+      "Вы представляете себя как бариста.",
+      "",
+      [
+        "I am barista.",
+        "I am a barista.",
+        "I am an barista."
+      ],
+      1
+    ],
+    [
+      "Ваш друг инженер. Как сказать о нём?",
+      "",
+      [
+        "He is engineer.",
+        "He is a engineer.",
+        "He is an engineer."
+      ],
+      2
+    ],
+    [
+      "Вы работаете в школе. Как рассказать?",
+      "",
+      [
+        "I work at a school.",
+        "I work school at.",
+        "I am work a school."
+      ],
+      0
+    ],
+    [
+      "Ваша мама медсестра. Выберите правильную фразу.",
+      "",
+      [
+        "My mom are a nurse.",
+        "My mom is a nurse.",
+        "My mom is nurse a."
+      ],
+      1
+    ]
+  ],
+  "a1-where-is-prepositions": [
+    [
+      "Вы ищете банк на незнакомой улице.",
+      "",
+      [
+        "Who is the bank?",
+        "What is the bank?",
+        "Excuse me, where is the bank?"
+      ],
+      2
+    ],
+    [
+      "Ключ лежит внутри коробки.",
+      "The key is ___ the box.",
+      [
+        "in",
+        "on",
+        "near"
+      ],
+      0
+    ],
+    [
+      "Банк находится прямо рядом с кафе.",
+      "",
+      [
+        "The bank is under the cafe.",
+        "The bank is next to the cafe.",
+        "The bank is between the cafe."
+      ],
+      1
+    ],
+    [
+      "Кафе стоит между банком и отелем.",
+      "",
+      [
+        "The cafe is on the bank and the hotel.",
+        "The cafe is in the bank and the hotel.",
+        "The cafe is between the bank and the hotel."
+      ],
+      2
+    ],
+    [
+      "Вы объясняете, что магазин напротив парка, через дорогу.",
+      "",
+      [
+        "The shop is across from the park.",
+        "The shop is in the park.",
+        "The shop is under the park."
+      ],
+      0
+    ]
+  ],
+  "a1-directions-turn-left": [
+    [
+      "Прохожий говорит «Turn left». Что нужно сделать?",
+      "",
+      [
+        "Повернуть направо",
+        "Повернуть налево",
+        "Идти прямо"
+      ],
+      1
+    ],
+    [
+      "Вы хотите сказать человеку «Идите прямо».",
+      "",
+      [
+        "Turn straight.",
+        "Walk left.",
+        "Go straight."
+      ],
+      2
+    ],
+    [
+      "От остановки нужно идти прямо, потом направо.",
+      "",
+      [
+        "Go straight and turn right.",
+        "Go right and turn straight.",
+        "Straight go and right turn."
+      ],
+      0
+    ],
+    [
+      "Вы вежливо просите человека помочь вам и другу.",
+      "",
+      [
+        "Can you help we?",
+        "Can you help us?",
+        "Can help you us?"
+      ],
+      1
+    ],
+    [
+      "Попросите помочь вашему другу Тому, указав на него.",
+      "Can you help ___?",
+      [
+        "he",
+        "his",
+        "him"
+      ],
+      2
+    ]
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "a1-family-photo": {
+    "1": [
+      [
+        "Анна показывает незнакомца на фото. Как спросить, кто это?",
+        "",
+        [
+          "Who is this?",
+          "How old is this?",
+          "Is who this?"
+        ],
+        0
+      ],
+      [
+        "Вы увидели человека на семейном снимке и хотите узнать его имя.",
+        "",
+        [
+          "Who this?",
+          "Who is this?",
+          "This is who?"
+        ],
+        1
+      ],
+      [
+        "Том указал на человека на фото. Как спросить «Кто это?»",
+        "",
+        [
+          "Who are this?",
+          "How is this?",
+          "Who is this?"
+        ],
+        2
+      ],
+      [
+        "В семейном альбоме незнакомый человек. Выберите правильный вопрос.",
+        "",
+        [
+          "Who is this?",
+          "What old is this?",
+          "Who this is?"
+        ],
+        0
+      ],
+      [
+        "Вы спрашиваете о человеке рядом с Анной на снимке.",
+        "",
+        [
+          "Is this who?",
+          "Who is this?",
+          "Who this?"
+        ],
+        1
+      ]
+    ],
+    "2": [
+      [
+        "Это ваш брат. Завершите «This is my ___».",
+        "This is my ___.",
+        [
+          "brother",
+          "sister",
+          "mother"
+        ],
+        0
+      ],
+      [
+        "Вы представляете сестру: «Это моя сестра».",
+        "This is my ___.",
+        [
+          "father",
+          "sister",
+          "brother"
+        ],
+        1
+      ],
+      [
+        "На фото папа. Дополните фразу «This is my ___».",
+        "This is my ___.",
+        [
+          "sister",
+          "mom",
+          "dad"
+        ],
+        2
+      ],
+      [
+        "Вы показываете фотографию мамы.",
+        "This is my ___.",
+        [
+          "mom",
+          "dad",
+          "brother"
+        ],
+        0
+      ],
+      [
+        "Том хочет показать Анне своего брата.",
+        "This is my ___.",
+        [
+          "mother",
+          "brother",
+          "sister"
+        ],
+        1
+      ]
+    ],
+    "3": [
+      [
+        "Вы хотите узнать, мама ли это собеседника.",
+        "",
+        [
+          "Is this your mother?",
+          "This is your mother?",
+          "Is your this mother?"
+        ],
+        0
+      ],
+      [
+        "Уточните, брат ли это Анны.",
+        "",
+        [
+          "Is your this brother?",
+          "Is this your brother?",
+          "This your brother is?"
+        ],
+        1
+      ],
+      [
+        "Вы спрашиваете друга, его ли это отец.",
+        "",
+        [
+          "This father is your?",
+          "Is father your this?",
+          "Is this your father?"
+        ],
+        2
+      ],
+      [
+        "Вы хотите узнать, сестра ли это собеседника.",
+        "",
+        [
+          "Is this your sister?",
+          "This is your sister?",
+          "Is this sister your?"
+        ],
+        0
+      ],
+      [
+        "Вы спрашиваете, его ли это мама на фото.",
+        "",
+        [
+          "Is mother this your?",
+          "Is this your mom?",
+          "This your mom is?"
+        ],
+        1
+      ]
+    ],
+    "4": [
+      [
+        "На фото ваша мама, ей сорок лет. Расскажите.",
+        "",
+        [
+          "This is my mom. She is forty.",
+          "This is my mom. He is forty.",
+          "This my mom. She forty."
+        ],
+        0
+      ],
+      [
+        "Вы показываете сестру, ей тринадцать.",
+        "",
+        [
+          "This is my sister. He is thirteen.",
+          "This is my sister. She is thirteen.",
+          "This my sister. She thirteen."
+        ],
+        1
+      ],
+      [
+        "На фото ваш брат, ему десять. Выберите правильное описание.",
+        "",
+        [
+          "This is my brother. She is ten.",
+          "This is my brother. He ten.",
+          "This is my brother. He is ten."
+        ],
+        2
+      ],
+      [
+        "В альбоме ваша сестра, ей двадцать.",
+        "",
+        [
+          "This is my sister. She is twenty.",
+          "This is my sister. He is twenty.",
+          "This my sister. She are twenty."
+        ],
+        0
+      ],
+      [
+        "Вы показываете отца, ему пятьдесят.",
+        "",
+        [
+          "This is my dad. She is fifty.",
+          "This is my dad. He is fifty.",
+          "This is dad my. He fifty."
+        ],
+        1
+      ]
+    ],
+    "5": [
+      [
+        "Папе Тома шестьдесят. Выберите верную фразу.",
+        "",
+        [
+          "He is sixteen.",
+          "He is sixty.",
+          "He has sixty."
+        ],
+        1
+      ],
+      [
+        "Бабушке Анны шестнадцать? Нет, шестьдесят. Как сказать возраст 60?",
+        "",
+        [
+          "She is sixty.",
+          "She is sixteen.",
+          "She has sixty."
+        ],
+        0
+      ],
+      [
+        "Тому тридцать. Выберите возраст.",
+        "",
+        [
+          "He is thirteen.",
+          "He has thirty.",
+          "He is thirty."
+        ],
+        2
+      ],
+      [
+        "Маме Анны сорок. Как правильно сказать?",
+        "",
+        [
+          "She is forty.",
+          "She is fourteen.",
+          "She have forty."
+        ],
+        0
+      ],
+      [
+        "Папе Мии пятьдесят. Как сказать?",
+        "",
+        [
+          "He is fifteen.",
+          "He is fifty.",
+          "He has fifty."
+        ],
+        1
+      ]
+    ],
+    "6": [
+      [
+        "Как спросить собеседника о возрасте?",
+        "",
+        [
+          "How old are you?",
+          "How are old you?",
+          "How many old you?"
+        ],
+        0
+      ],
+      [
+        "Вы знакомитесь с новым соседом и хотите спросить, сколько ему лет.",
+        "",
+        [
+          "How old is you?",
+          "How old are you?",
+          "How are you old?"
+        ],
+        1
+      ],
+      [
+        "Спросите друга «Сколько тебе лет?»",
+        "",
+        [
+          "How you old are?",
+          "How old you are?",
+          "How old are you?"
+        ],
+        2
+      ],
+      [
+        "Учитель предлагает спросить собеседника о возрасте.",
+        "",
+        [
+          "How old are you?",
+          "How old is you?",
+          "How are old you?"
+        ],
+        0
+      ],
+      [
+        "Вы беседуете со знакомым и хотите узнать его возраст.",
+        "",
+        [
+          "How are you old?",
+          "How old are you?",
+          "How much old are you?"
+        ],
+        1
+      ]
+    ]
+  }
+}

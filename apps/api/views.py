@@ -3,8 +3,10 @@ from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
 
 from apps.drills.models import Exercise
+from apps.drills.retry_guidance import is_open_pilot_response, is_pilot_exercise, retry_guidance
 from apps.taxonomy.markup import strip_markup
 from apps.learning.services import record_attempt, record_recall
+from apps.learning.mistake_review import schedule_review
 from apps.lexicon.models import LexicalUnit
 from apps.poems.models import Poem
 
@@ -22,10 +24,32 @@ def check_exercise(request, pk):
         return JsonResponse({"correct": False, "revealed": True, "answer": exercise.answer,
                              "explanation": exercise.explanation_ru})
     answer = payload["answer"]
-    correct = record_attempt(request.user, exercise, answer)
-    data = {"correct": correct, "saved": request.user.is_authenticated}
+    open_response = is_open_pilot_response(exercise)
+    # Creative transfer has multiple valid formulations. A model-key mismatch
+    # must not reduce a learner's stored vocabulary progress as if it were a
+    # proven grammatical error.
+    unverified = open_response and not exercise.is_correct(answer)
+    correct = False if unverified else record_attempt(
+        request.user, exercise, answer, delay_wrong_days=2 if is_pilot_exercise(exercise) else 0,
+    )
+    data = {"correct": correct, "saved": request.user.is_authenticated and not unverified}
+    if not correct and not unverified and is_pilot_exercise(exercise) and request.user.is_authenticated:
+        due_at = schedule_review(request.user, exercise)
+        if due_at:
+            data["retry_scheduled_at"] = due_at.isoformat()
+            data["retry_count"] = 5
+    if open_response:
+        data["assessment"] = "needs_review" if unverified else "model_match"
+        # An unchecked free reply can be valid. Invite an optional review
+        # without storing an incorrect ExerciseAttempt or penalizing progress.
+        if unverified:
+            data["self_review_available"] = request.user.is_authenticated
     if correct:
         data.update(answer=exercise.answer, explanation=exercise.explanation_ru)
+    else:
+        guidance = retry_guidance(exercise, answer)
+        if guidance:
+            data["feedback_ru"] = guidance
     return JsonResponse(data)
 
 

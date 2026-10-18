@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from datetime import timedelta
 
 from django.db import transaction
 from django.urls import reverse
@@ -6,11 +7,11 @@ from django.utils import timezone
 
 from apps.drills.models import Exercise
 
-from .models import ExerciseAttempt, UnitProgress
+from .models import ExerciseAttempt, UnitProgress, MistakeReview
 
 
 @transaction.atomic
-def record_attempt(user, exercise: Exercise, answer: str) -> bool:
+def record_attempt(user, exercise: Exercise, answer: str, *, delay_wrong_days: int = 0) -> bool:
     correct = exercise.is_correct(answer)
     if user.is_authenticated:
         ExerciseAttempt.objects.create(user=user, exercise=exercise, answer=answer[:200], is_correct=correct)
@@ -18,6 +19,9 @@ def record_attempt(user, exercise: Exercise, answer: str) -> bool:
         for unit in exercise.units.all():
             progress, _ = UnitProgress.objects.select_for_update().get_or_create(user=user, unit=unit)
             progress.register(correct, context)
+            if not correct and delay_wrong_days:
+                # Do not surface the just-missed lesson question again immediately.
+                progress.next_review_at = timezone.now() + timedelta(days=delay_wrong_days)
             progress.save()
     return correct
 
@@ -63,9 +67,15 @@ def build_review(user) -> list:
     """Задания на повторение: упражнение урока, если ещё не решено правильно, иначе карточка вспоминания."""
     items, used = [], set()
     solved = set(ExerciseAttempt.objects.filter(user=user, is_correct=True).values_list("exercise_id", flat=True))
+    # A recent A1 error gets five different questions after two days.
+    # The same failed question is withheld from ordinary review until those
+    # alternative questions are complete.
+    reserved = set(MistakeReview.objects.filter(
+        user=user, completed_at__isnull=True,
+    ).values_list("exercise_id", flat=True))
     for progress in due_progress(user)[:REVIEW_BATCH]:
         exercise = next((e for e in progress.unit.exercises.filter(lesson__is_published=True)
-                         if e.pk not in used and e.pk not in solved), None)
+                         if e.pk not in used and e.pk not in solved and e.pk not in reserved), None)
         if exercise:
             used.add(exercise.pk)
             items.append(exercise)
