@@ -10,6 +10,18 @@
   </header>
   <div class="lesson-grid">
     <article>
+      {% if a1_pilot %}
+      <section class="a1-learning-route" data-a1-learning-route aria-labelledby="a1-route-heading" hidden>
+        <h2 id="a1-route-heading">Выберите глубину объяснения</h2>
+        <p>Полный урок остаётся без изменений. Эти кнопки только помогают читать его в удобном порядке; все семь шагов можно вернуть в любой момент.</p>
+        <div class="a1-learning-route-actions" role="group" aria-label="Глубина объяснения">
+          <button type="button" data-a1-route-mode="essentials" aria-pressed="false">Суть</button>
+          <button type="button" data-a1-route-mode="reasons" aria-pressed="false">Почему</button>
+          <button type="button" data-a1-route-mode="full" aria-pressed="true">Полностью</button>
+        </div>
+        <p class="a1-learning-route-status" data-a1-route-status aria-live="polite">Полностью: доступны все семь шагов урока и дополнительная практика.</p>
+      </section>
+      {% endif %}
       <div class="prose" data-lesson-reader>
         {% for layer in layers %}
         <section class="layer" id="layer-{{ layer.number }}" aria-labelledby="layer-{{ layer.number }}-t">
@@ -113,4 +125,4 @@
   </div>
 </div>
 {% endblock %}
-{% block scripts %}{% if extra_missions %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}"><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script>{% endif %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}
+{% block scripts %}{% if a1_pilot %}<link rel="stylesheet" href="{% static 'css/a1-learning-route.css' %}"><script src="{% static 'js/a1-learning-route.js' %}" defer></script>{% endif %}{% if extra_missions %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}"><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script>{% endif %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}
