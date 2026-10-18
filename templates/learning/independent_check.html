@@ -44,8 +44,47 @@
   </section>
   {% endif %}
 
-  <div class="independent-grid">
-  {% for task in tasks %}
+  {% if batch_results %}
+  <section class="section independent-result" aria-labelledby="batch-results-title" aria-live="polite">
+    <h2 id="batch-results-title">Разбор всех четырёх ответов</h2>
+    <p>Это ваша практика, а не официальный экзамен. Совпадение с образцом не означает подтверждённое знание языка.</p>
+    {% for entry in batch_results %}
+    <div class="independent-result-item">
+      <h3>{{ forloop.counter }}. {{ entry.get_skill_display|default:entry.skill }}</h3>
+      <p>{{ entry.label }}</p>
+      <p>Вы написали: <strong>{{ entry.attempt.submitted }}</strong></p>
+      <p>Один возможный образец: <strong>{{ entry.model }}</strong></p>
+      {% if entry.attempt.outcome == "self_reported" %}
+      <form method="post" class="independent-rating">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="rate">
+        <input type="hidden" name="attempt_id" value="{{ entry.attempt.pk }}">
+        <fieldset><legend>Насколько самостоятельно вы выполнили эту часть?</legend>
+        {% for value, label in ratings.items %}
+          <label class="independent-option"><input type="radio" name="rating" value="{{ value }}" required><span>{{ label }}</span></label>
+        {% endfor %}
+        </fieldset>
+        <button class="btn btn-quiet" type="submit">Сохранить мою самооценку</button>
+      </form>
+      {% endif %}
+    </div>
+    {% endfor %}
+    <details class="independent-explanation"><summary>Разобрать правило после четырёх ответов</summary>
+      <p><strong>Почему:</strong> {{ guide.why }}</p>
+      <p><strong>Как проверить себя:</strong> {{ guide.fix }}</p>
+      <p><strong>Типичная ошибка:</strong> {{ guide.mistake }}</p>
+    </details>
+  </section>
+  {% endif %}
+
+  <section class="section">
+    <h2>Сначала все четыре ответа — потом разбор</h2>
+    <p>Отвечайте на задания по порядку без готовых вариантов. До отправки всех четырёх ответов образцы не показываются. Один полный проход лучше отражает ваши самостоятельные знания, чем четыре отдельные попытки с подсказками.</p>
+    <form method="post" class="independent-batch">
+      {% csrf_token %}
+      <input type="hidden" name="action" value="batch">
+      <div class="independent-grid">
+      {% for task in tasks %}
     <section class="section independent-task" aria-labelledby="skill-{{ task.key }}">
       <h2 id="skill-{{ task.key }}">{{ task.title }}</h2>
       {% if task.key == "meaning" %}
@@ -58,16 +97,14 @@
         <p>Объясните своими словами, почему работает правило. Не подглядывайте в конспект: система не выдаёт компьютерную оценку естественного объяснения.</p>
       {% endif %}
       <p class="independent-prompt">{{ task.item.prompt }}</p>
-      <form method="post">
-        {% csrf_token %}
-        <input type="hidden" name="skill" value="{{ task.key }}">
-        <label for="ind-answer-{{ task.key }}">Ваш ответ</label>
-        <textarea id="ind-answer-{{ task.key }}" name="answer" rows="3" maxlength="400" required placeholder="Напишите свой вариант здесь" spellcheck="false"></textarea>
-        <button class="btn btn-primary" type="submit">Проверить и открыть пример</button>
-      </form>
+      <label for="ind-answer-{{ task.key }}">Ваш ответ</label>
+      <textarea id="ind-answer-{{ task.key }}" name="answer_{{ task.key }}" rows="3" maxlength="400" required placeholder="Напишите свой вариант здесь" spellcheck="false"></textarea>
     </section>
-  {% endfor %}
-  </div>
+    {% endfor %}
+    </div>
+    <button class="btn btn-primary independent-batch-submit" type="submit">Отправить четыре ответа и открыть разбор</button>
+    </form>
+  </section>
 
   {% if attempts %}
   <section class="section">
