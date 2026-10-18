@@ -1,0 +1,51 @@
+/* Optional, reversible reading depths for the four-lesson A1 pilot.
+   Original lesson sections remain unmodified and shown by default. */
+.a1-learning-route {
+  padding: clamp(14px, 2vw, 24px);
+  margin-bottom: var(--space-5);
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  border-radius: var(--radius-m);
+}
+.a1-learning-route h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+}
+.a1-learning-route p {
+  margin: 0 0 12px;
+  color: var(--ink-soft);
+}
+.a1-learning-route-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.a1-learning-route-actions button {
+  font: inherit;
+  min-height: 44px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--rule-strong);
+  color: var(--ink);
+  background: var(--paper);
+  cursor: pointer;
+}
+.a1-learning-route-actions button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--surface);
+  border-color: var(--ink);
+}
+.a1-learning-route-actions button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.a1-learning-route .a1-learning-route-status {
+  margin-bottom: 0;
+  font-size: .9em;
+  color: var(--ink-soft);
+}
+@media (max-width: 430px) {
+  .a1-learning-route-actions { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .a1-learning-route-actions button { padding: 9px 5px; }
+}
