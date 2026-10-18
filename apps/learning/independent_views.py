@@ -19,6 +19,8 @@ RATINGS = {
     "not_yet": "Пока трудно, хочу вернуться к этому",
 }
 TASKS = ("meaning", "writing", "transfer", "explain")
+RUBRIC_AXES = ("meaning", "form", "context")
+RUBRIC_OPTIONS = ("yes", "partly", "not_yet")
 
 
 @login_required
@@ -30,10 +32,43 @@ def independent_check(request, slug):
     if guide is None:
         return HttpResponseBadRequest("Самостоятельная проверка для урока ещё не подготовлена.")
 
+    # Keep a fresh transfer scenario stable during the whole four-answer
+    # attempt. Rotate only AFTER a successful batch; models stay on the server.
+    choices = (guide["tasks"]["transfer"], *guide.get("transfer_variants", []))
+    session_key = f"a1_independent_variant_{lesson.pk}"
+    try:
+        variant = int(request.session.get(session_key, 0)) % len(choices)
+    except (ValueError, TypeError):
+        variant = 0
+    guide = {**guide, "tasks": {**guide["tasks"], "transfer": choices[variant]}}
+
     result = None
     batch_results = None
     if request.method == "POST":
-        if request.POST.get("action") == "rate":
+        if request.POST.get("action") == "rubric":
+            values = {axis: request.POST.get("rubric_" + axis) for axis in RUBRIC_AXES}
+            independence = request.POST.get("rubric_independence")
+            if (any(value not in RUBRIC_OPTIONS for value in values.values())
+                    or independence not in RATINGS):
+                return HttpResponseBadRequest("Оцените каждую сторону ответа.")
+            try:
+                attempt_id = int(request.POST.get("attempt_id", ""))
+            except (TypeError, ValueError):
+                return HttpResponseBadRequest("Некорректный номер попытки.")
+            attempt = get_object_or_404(
+                IndependentAttempt, pk=attempt_id, user=request.user,
+                lesson=lesson, skill__in=("transfer", "explain"),
+                outcome=IndependentAttempt.Outcome.SELF_REPORTED,
+            )
+            attempt.self_rubric = {**values, "independence": independence}
+            attempt.self_rating = independence
+            attempt.save(update_fields=["self_rubric", "self_rating"])
+            result = {
+                "skill": attempt.skill, "model": guide["tasks"][attempt.skill]["model"],
+                "label": "Самооценка сохранена отдельно от проверенных результатов.",
+                "attempt": attempt,
+            }
+        elif request.POST.get("action") == "rate":
             try:
                 attempt_id = int(request.POST.get("attempt_id", ""))
             except (TypeError, ValueError):
@@ -51,6 +86,10 @@ def independent_check(request, slug):
             result = {"skill": attempt.skill, "model": guide["tasks"][attempt.skill]["model"],
                       "label": RATINGS[rating], "attempt": attempt}
         elif request.POST.get("action") == "batch":
+            # Reject a stale form rather than silently assess the wrong prompt.
+            supplied_variant = request.POST.get("transfer_variant")
+            if supplied_variant is not None and supplied_variant != str(variant):
+                return HttpResponseBadRequest("Ситуация обновилась. Перезагрузите страницу.")
             # Crucially, do not reveal ANY answer until the learner has
             # submitted ALL FOUR responses; this prevents the first revealed
             # example from contaminating the remaining unaided answers.
@@ -75,6 +114,7 @@ def independent_check(request, slug):
                     attempt = IndependentAttempt.objects.create(
                         user=request.user, lesson=lesson,
                         skill=skill, submitted=answer, outcome=outcome,
+                        task_variant=variant if skill == "transfer" else 0,
                     )
                     batch_results.append({
                         "skill": skill, "title": {
@@ -92,6 +132,9 @@ def independent_check(request, slug):
                             "Не совпало с образцом — это не обязательно ошибка."
                         ),
                     })
+            # Next visit gets a new situation; current results retain the
+            # exact original prompts and exemplar associated with this batch.
+            request.session[session_key] = (variant + 1) % len(choices)
         else:
             skill = request.POST.get("skill")
             if skill not in TASKS:
@@ -108,6 +151,7 @@ def independent_check(request, slug):
             attempt = IndependentAttempt.objects.create(
                 user=request.user, lesson=lesson, skill=skill,
                 submitted=answer.strip(), outcome=outcome,
+                task_variant=variant if skill == "transfer" else 0,
             )
             label = ("Творческий ответ сохранён для самооценки; система не объявляет его верным или неверным."
                      if is_open else
@@ -127,4 +171,6 @@ def independent_check(request, slug):
             for key in TASKS],
         "result": result, "batch_results": batch_results,
         "ratings": RATINGS, "attempts": attempts,
+        "rubric_axes": RUBRIC_AXES, "rubric_options": RUBRIC_OPTIONS,
+        "transfer_variant": variant, "transfer_variant_total": len(choices),
     })
