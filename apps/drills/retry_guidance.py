@@ -1,4 +1,4 @@
-"""Editor-authored retry pointers for the four A1 foundation lessons.
+"""A1 error guidance: authored micro-skill feedback first, existing hints elsewhere.
 
 These prompts identify what to review, not what the user's free response
 actually means. Never infer semantic incorrectness from a model mismatch.
@@ -19,6 +19,26 @@ PILOT_SLUGS = frozenset({
     "a1-numbers-1-20",
     "a1-family-photo",
     "a1-family-possession",
+    "a1-there-is-some",
+    "a1-how-much-prices",
+    "a1-present-simple-i-you",
+    "a1-time-at-seven",
+    "a1-he-she-works",
+    "a1-jobs-what-do-you-do",
+    "a1-where-is-prepositions",
+    "a1-directions-turn-left",
+    "a1-questions-do-does",
+    "a1-spelling-phone-numbers",
+    "a1-always-never",
+    "a1-like-doing",
+    "a1-what-hurts",
+    "a1-cant-cannot",
+    "a1-dont-doesnt",
+    "a1-letters-address",
+    "a1-can-skills",
+    "a1-why-because",
+    "a1-bus-ticket",
+    "a1-review-everything",
 })
 
 
@@ -50,4 +70,4 @@ def retry_guidance(exercise, submitted):
     for candidate, explanation in options.items():
         if Exercise.normalize(candidate) == normalized:
             return explanation
-    return entry.get("focus", "")
+    return entry.get("focus", "") or exercise.hint_ru or ""
