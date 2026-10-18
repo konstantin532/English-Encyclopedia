@@ -16,6 +16,14 @@
       <p>Тренировка произношения и речи по памяти: результат отмечаете вы сами, а сложные фразы возвращаются для повторения.</p></div>
     <p><a class="btn btn-primary" href="{% url 'learning:speech_review' %}">Речевые повторения{% if speech_due_count %} ({{ speech_due_count }}){% endif %} →</a></p>
   </section>
+  <section class="section" aria-label="Повторение ошибок через два дня">
+    <div class="section-head">
+      <h2>Сложные места — через два дня</h2>
+      <p>Если вы ошиблись в проверяемом задании первых четырёх уроков, спустя два дня получите пять новых вопросов на тот же навык. Прежний вопрос сразу не повторяется.</p>
+    </div>
+    <p><a class="btn btn-primary" href="{% url 'learning:mistake_review' %}">Повторить ошибки{% if mistake_review_due_count %} ({{ mistake_review_due_count }}){% endif %} →</a></p>
+    {% if mistake_review_waiting %}<p>Следующее повторение откроется {{ mistake_review_waiting.due_at|date:"j E в H:i" }}.</p>{% endif %}
+  </section>
   {% if next_lesson %}
     <p><a class="btn btn-primary" href="{% url 'lessons:detail' next_lesson.slug %}">{% if progress %}Продолжить: {{ next_lesson.title }}{% else %}Начать первый урок{% endif %}</a></p>
   {% endif %}
