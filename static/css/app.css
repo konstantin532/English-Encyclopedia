@@ -116,6 +116,26 @@ code { font-family: var(--font-read); font-style: italic; }
 .prose li { margin-bottom: var(--space-2); }
 .layer { padding: var(--space-6) 0; border-top: 1px solid var(--rule); scroll-margin-top: var(--space-5); }
 .layer:first-child { border-top: 0; padding-top: 0; }
+.lesson-diagnostic-answer {
+  margin-block: var(--space-3) var(--space-5);
+  padding-block: var(--space-2);
+  border-block: 1px solid var(--rule);
+}
+.lesson-diagnostic-answer summary {
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--ink);
+  line-height: 1.5;
+  padding-block: var(--space-2);
+}
+.lesson-diagnostic-answer summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.lesson-diagnostic-answer > p {
+  margin: var(--space-3) 0;
+}
+
 .layer h2 { font-size: var(--step-2); margin-bottom: var(--space-4); display: flex; gap: var(--space-3); align-items: baseline; }
 .layer-num { font-size: var(--step-1); color: var(--ink-faint); font-weight: 400; min-width: 1.4em; }
 .example { border-left: 3px solid var(--ink); padding: var(--space-2) 0 var(--space-2) var(--space-5); margin: 0 0 var(--space-5); font-size: 1.35rem; }
