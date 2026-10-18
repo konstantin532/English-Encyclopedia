@@ -50,7 +50,7 @@
     <p>Это ваша практика, а не официальный экзамен. Совпадение с образцом не означает подтверждённое знание языка.</p>
     {% for entry in batch_results %}
     <div class="independent-result-item">
-      <h3>{{ forloop.counter }}. {{ entry.get_skill_display|default:entry.skill }}</h3>
+      <h3>{{ forloop.counter }}. {{ entry.title }}</h3>
       <p>{{ entry.label }}</p>
       <p>Вы написали: <strong>{{ entry.attempt.submitted }}</strong></p>
       <p>Один возможный образец: <strong>{{ entry.model }}</strong></p>
