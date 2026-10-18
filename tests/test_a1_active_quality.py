@@ -46,7 +46,7 @@ class ActiveA1ContentQualityTests(TestCase):
     def test_interactive_explanations_match_the_corrected_course(self):
         """Интерактив не должен отменять правило, уже уточнённое в YAML-уроке."""
         topics = active_topics()
-        self.assertIn("полным", topics[1]["why"])
+        self.assertIn("полной фразе", topics[1]["why"])
         self.assertIn("слушатель способен определить", topics[3]["why"])
         self.assertIn("не знает", topics[3]["repair"]["hint"])
         self.assertIn("из ситуации", topics[3]["missions"][5]["coach"])
@@ -54,7 +54,7 @@ class ActiveA1ContentQualityTests(TestCase):
         self.assertIn("не означает", topics[11]["why"])
         self.assertIn("С can и be действуют свои правила",
                       topics[13]["missions"][5]["coach"])
-        self.assertIn("место", topics[14]["missions"][2]["coach"])
+        self.assertIn("Место работы", topics[14]["missions"][2]["coach"])
         self.assertIn("тона", topics[16]["why"])
         self.assertIn("play guitar", topics[19]["missions"][2]["coach"])
         self.assertIn("play guitar", topics[20]["why"])
