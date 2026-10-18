@@ -64,7 +64,7 @@ class A1SecondPassTests(SimpleTestCase):
             1: ("This is my book", "This is a my book"),
             2: ("I am busy", "I busy"),
             3: ("This room is big", "This is room big"),
-            4: ("Do you like coffee?", "Does you like coffee?"),
+            4: ("Do you like coffee?", "Do you coffee like?"),
             5: ("Can I have a tea", "Can I a tea"),
             6: ("two coffees", "two coffee"),
             7: ("She is twelve", "She has twelve"),
