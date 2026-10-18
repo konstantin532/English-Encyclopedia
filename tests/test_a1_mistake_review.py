@@ -203,3 +203,30 @@ class A1MistakeReviewTests(TestCase):
             302,
         )
         self.assertFalse(MistakeReview.objects.exists())
+
+
+    def test_new_family_lessons_schedule_and_open_five_fresh_questions(self):
+        for slug, number, wrong in (
+            ("a1-family-photo", 1, "Who this?"),
+            ("a1-family-possession", 1, "his brother"),
+        ):
+            with self.subTest(lesson=slug):
+                exercise = Exercise.objects.get(lesson__slug=slug, order=number)
+                data = self.answer_original(exercise, wrong)
+                self.assertFalse(data["correct"])
+                self.assertEqual(data["retry_count"], 5)
+                self.assertNotIn("answer", data)
+                self.assertTrue(data["feedback_ru"])
+                item = MistakeReview.objects.get(user=self.user, exercise=exercise)
+                self.assertGreater(item.due_at, timezone.now() + timedelta(days=1))
+                self.assertEqual(len(variants_for(exercise)), 5)
+                self.assertEqual(item.current_index, 0)
+                item.due_at = timezone.now() - timedelta(seconds=1)
+                item.save(update_fields=["due_at"])
+                # The due page contains the new question, not the original.
+                response = self.client.get(reverse("learning:mistake_review"))
+                self.assertEqual(response.status_code, 200)
+                self.assertContains(response, "Новый вопрос 1 из 5")
+                # Retire this review to check the second lesson independently.
+                item.completed_at = timezone.now()
+                item.save(update_fields=["completed_at"])
