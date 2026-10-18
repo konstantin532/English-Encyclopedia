@@ -177,7 +177,7 @@
   <nav class="active-a1-next" aria-label="Переходы между дополнительными занятиями">
     {% if topic_previous %}<a class="active-a1-btn" href="{% url 'core:active_a1_topic' topic_previous %}">← Предыдущее занятие</a>{% endif %}
     <a class="active-a1-btn" href="{% url 'lessons:detail' topic.slug %}">В основной урок</a>
-    {% if topic_next %}<a class="active-a1-btn active-a1-btn-primary" href="{% url 'core:active_a1_topic' topic_next %}">Следующее занятие →</a>{% else %}<span>Этап №{{ topic.n }} завершён · следующая тема пока вне этого эксперимента</span>{% endif %}
+    {% if topic_next %}<a class="active-a1-btn active-a1-btn-primary" href="{% url 'core:active_a1_topic' topic_next %}">Следующее занятие →</a>{% else %}<span>Все 28 тем дополнительной практики A1 доступны.</span>{% endif %}
   </nav>
 </div>
 {% endblock %}

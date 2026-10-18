@@ -1,0 +1,19 @@
+[
+  {
+    "n": 23,
+    "wrong": "Tom doesn't knows the ZIP code.",
+    "correct": "Tom doesn't know the ZIP code.",
+    "alternatives": [
+      "Tom does not know the ZIP code."
+    ],
+    "hint": "Помощник does уже выражает третье лицо. Проверьте форму know.",
+    "reason": "После doesn’t нужен know без -s: Tom doesn’t know the ZIP code. В полной форме тоже know: does not know."
+  },
+  {
+    "n": 24,
+    "wrong": "My first name is Belova.",
+    "correct": "My last name is Belova.",
+    "hint": "Белова — фамилия Анны. Проверьте название поля анкеты.",
+    "reason": "Для фамилии в анкете используют last name. First name означает имя: Anna. Исходная фраза грамматически возможна, но в этой ситуации называет не то поле."
+  }
+]

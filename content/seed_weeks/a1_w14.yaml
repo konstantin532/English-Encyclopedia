@@ -1,6 +1,6 @@
 level: A1
 week: 14
-can_do_ru: "Я смогу сам проехать на автобусе: спросить, идёт ли он до нужной остановки, купить билет, узнать цену и время обратного автобуса. И собрать вместе всё, что умею на A1."
+can_do_ru: "Я смогу сам проехать на автобусе: спросить, идёт ли он до нужной остановки, купить билет, узнать цену и время обратного автобуса, описать погоду и выбрать вещи для поездки. И собрать вместе всё, что умею на A1."
 mission_ru: "Представьте поездку по своему городу. Скажите вслух по-английски: Does this bus go to…? How much is a ticket? What time is the next bus? Потом расскажите о себе пятью фразами из разных недель."
 chunks: [LX-00255, LX-00256, LX-00257, LX-00258, LX-00176]
 story_beat:
@@ -13,8 +13,8 @@ script:
     ru: "Извините! Этот автобус идёт до Парк-стрит?"
   - speaker: busdriver
     emotion: happy
-    text: "[O4]Yes[/], [T8]it[/] [D1]does[/]. [S4]Park[/] [S4]Street[/] [D1]is[/] [T1]the[/] [J8]last[/] [S4]stop[/]."
-    ru: "Да. Парк-стрит — конечная."
+    text: "[O4]Yes[/], [T8]it[/] [D1]does[/]. [S4]Park[/] [S4]Street[/] [D1]is[/] [T1]the[/] [J8]last[/] [S4]stop[/]. [T1]The[/] [S4]train[/] [S4]station[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]park[/]."
+    ru: "Да. Парк-стрит — конечная. Железнодорожная станция рядом с парком."
   - speaker: tom
     text: "[A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]?"
     ru: "Сколько стоит билет?"
@@ -27,8 +27,8 @@ script:
     ru: "Два билета, пожалуйста. Вот, держите."
   - speaker: busdriver
     emotion: happy
-    text: "[O2]Thank you[/]! [A3]Here[/] [D1]are[/] [T3]your[/] [S2]tickets[/]."
-    ru: "Спасибо! Вот ваши билеты."
+    text: "[O2]Thank you[/]! [A3]Here[/] [D1]are[/] [T3]your[/] [S2]tickets[/]. [D2]Take[/] [T1]a[/] [S2]seat[/], [O8]please[/]."
+    ru: "Спасибо! Вот ваши билеты. Садитесь, пожалуйста."
   - speaker: tom
     text: "[T9]What[/] [S7]time[/] [D1]is[/] [T1]the[/] [J8]next[/] [S4]bus[/] [A3]back[/]?"
     spoken: "[T9]What[/] [S7]time[/][D1]'s[/] [T1]the[/] [J8]next[/] [S4]bus[/] [A3]back[/]?"

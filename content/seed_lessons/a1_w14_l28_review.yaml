@@ -6,7 +6,7 @@ focus: D
 minutes: 45
 title: "Итог A1: что вы уже умеете по-английски"
 summary: "Повторение всего уровня A1 на одной странице: be, have, can, настоящее простое время, вопросы с do и does, отрицания, предлоги, время и цены. С примерами из жизни Анны, Тома и Мии."
-units: [LX-00255, LX-00256, LX-00258, LX-00176, LX-00236]
+units: [LX-00255, LX-00256, LX-00258, LX-00176, LX-00236, LX-00457, LX-00458, LX-00459, LX-00460, LX-00461, LX-00462, LX-00463, LX-00464, LX-00465, LX-00466, LX-00467, LX-00468, LX-00469, LX-00470, LX-00471, LX-00472, LX-00473, LX-00474, LX-00475, LX-00476, LX-00477, LX-00478, LX-00479, LX-00480]
 sound_notes:
   - text: "I'm from Russia. I can speak English."
     ipa: "/aɪm frəm ˈrʌʃə aɪ kən ˈspik ˈɪŋɡlɪʃ/"
@@ -77,6 +77,24 @@ layers:
       - How much is it? — цена.
       - I don't know. — не знаете.
       - Can you spell it, please? — не поняли имя.
+
+      Погода и вещи в поездке:
+
+      > [T8]It[/] [D1]is[/] [J2]sunny[/] [C1]and[/] [J2]warm[/] [A2]today[/]. — Сегодня солнечно и тепло.
+      > [T8]I[/] [D1]have[/] [T1]an[/] [S2]umbrella[/]. — У меня есть зонт.
+
+      **Weather** — погода, **sunny** — солнечно, **windy** — ветрено, **cloudy** — облачно, **warm** — тепло. Эти описания строятся через **It is…**: It is cloudy. **Rain** — дождь, **snow** — снег; здесь оба слова — существительные, без a. Не превращайте sunny в новое действие: для этой ступени достаточно it is sunny.
+
+      **Coat** — пальто, **hat** — головной убор, **sweater** — свитер, **umbrella** — зонт, **bag** — сумка. Перед umbrella нужен an: **an umbrella**. Прилагательное перед предметом: **a warm coat**, **a blue sweater**.
+
+      Соберите несколько знакомых конструкций:
+
+      - **I have a warm coat and a hat.** — вещи и описание;
+      - **I can take a taxi.** — возможность;
+      - **What time does the train leave?** — вопрос о расписании;
+      - **I want to buy an umbrella because I don't like the rain.** — желание и причина.
+
+      **Train / car / taxi / plane** — транспорт, **station / airport** — места. **Leave** — отправляться, **arrive** — прибывать, **travel** — ездить, **trip** — отдельная поездка, **seat** — место для сидения. Повторение помогает соединить навыки, но эта страница не заменяет отдельный итоговый тест A1.
   - number: 6
     body: |
       Пять ошибок, которые чаще всего остаются после A1:
@@ -90,7 +108,7 @@ layers:
       Если поймали себя на одной из них — это нормально. Исправьте и скажите ещё раз.
   - number: 7
     body: |
-      Четыре задания из разных недель: от знакомства до поездки. Если что-то забылось, вернитесь к уроку своей недели.
+      Шесть заданий из разных недель: от знакомства до поездки, затем описание погоды и желание купить вещь с объяснением причины. Если что-то забылось, вернитесь к уроку своей недели.
 exercises:
   - order: 1
     kind: choice
@@ -130,3 +148,36 @@ exercises:
     hint_ru: "I am from… + I can speak…"
     explanation_ru: "I'm from Russia. I can speak English. Две фразы — и вы уже рассказали о себе."
     units: [LX-00255]
+  - order: 5
+    kind: choice
+    stage: recognition
+    prompt_ru: Вы хотите сказать «Сегодня солнечно». Какая фраза полная и правильная?
+    options:
+    - It is sunny today.
+    - It sunny today.
+    - Is sunny today.
+    answer: It is sunny today.
+    hint_ru: Для описания погоды нужны it и is.
+    explanation_ru: It is sunny today — полное предложение. В английском здесь нужен глагол is и подлежащее it.
+    units:
+    - LX-00458
+    - LX-00457
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: В новой поездке вы хотите купить зонт, потому что не любите дождь. Сообщите желание и причину одним
+      предложением.
+    prompt_en: ___
+    answer: I want to buy an umbrella because I don't like the rain.
+    accepted:
+    - I want to buy an umbrella because I don't like the rain
+    - I want to buy an umbrella because I do not like the rain.
+    - I want to buy an umbrella because I don't like rain.
+    hint_ru: I want to buy an umbrella + because + I don’t like the rain.
+    explanation_ru: Want to buy — желание купить. После because укажите полную причину; umbrella начинается с гласного
+      звука, поэтому an.
+    units:
+    - LX-00474
+    - LX-00477
+    - LX-00459
+    - LX-00242

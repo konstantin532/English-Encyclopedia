@@ -1,0 +1,16 @@
+[
+  {
+    "n": 25,
+    "wrong": "She can draws.",
+    "correct": "She can draw.",
+    "hint": "Can уже стоит перед действием; нужна исходная форма draw.",
+    "reason": "После can глагол без -s и без to даже с she: She can draw. Окончание у главного глагола здесь не добавляется."
+  },
+  {
+    "n": 26,
+    "wrong": "Why you study English?",
+    "correct": "Why do you study English?",
+    "hint": "С обычным глаголом study нужен вопросительный помощник do.",
+    "reason": "После why вопрос с обычным study строится через do: Why do you study English? С be, как в Why is it easy?, do не нужен."
+  }
+]

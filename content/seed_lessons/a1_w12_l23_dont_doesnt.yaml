@@ -6,7 +6,7 @@ focus: X
 minutes: 40
 title: "Не делаю: don't и doesn't"
 summary: "Как сказать «не» с обычными глаголами: I don't have a stamp, it doesn't get letters. Когда don't, а когда doesn't, и почему I don't know — одна из самых нужных фраз."
-units: [LX-00229, LX-00230, LX-00233, LX-00235, LX-00236]
+units: [LX-00229, LX-00230, LX-00233, LX-00235, LX-00236, LX-00415, LX-00416, LX-00421, LX-00422, LX-00423, LX-00424, LX-00425, LX-00426, LX-00427, LX-00428, LX-00429]
 sound_notes:
   - text: "I don't have a stamp."
     ipa: "/aɪ ˈdoʊnt hæv ə ˈstæmp/"
@@ -31,7 +31,7 @@ layers:
     body: |
       Вы уже говорили «не» с be: it is not, I am not. С обычными глаголами — have, get, know — нужен помощник **do / does** и **not**.
 
-      > [T1]The[/] [S9]address[/] [D1]is[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [C5]But[/] [T8]I[/] [D1]do[/] [X1]not[/] [D1]have[/] [T1]a[/] [S2]stamp[/]. — Адрес на письме. Но у меня нет марки.
+      > [T1]The[/] [S9]address[/] [D1]is[/] [P1]on[/] [T1]the[/] [S2]envelope[/]. [C5]But[/] [T8]I[/] [D1]do[/] [X1]not[/] [D1]have[/] [T1]a[/] [S2]stamp[/]. — Адрес на конверте. Но у меня нет марки.
       > [T1]The[/] [J2]old[/] [S2]mailbox[/]? [T8]It[/] [D1]does[/] [X1]not[/] [D2]get[/] [S9]letters[/]. — Старый ящик? Туда письма не приходят.
 
       В разговоре — **don't** и **doesn't**.
@@ -67,6 +67,15 @@ layers:
       - I don't know — самая частая фраза для «не знаю». Можно смягчить: Sorry, I don't know.
       - I don't have… — «у меня нет…»: I don't have a stamp, I don't have time.
       - Полные do not и does not звучат строго или подчёркнуто. В разговоре — сокращения.
+
+      Почтовая ситуация: нет вещи или информации.
+
+      > [T8]I[/] [D1]do[/][X1]n't[/] [D1]have[/] [T1]an[/] [S2]envelope[/]. — У меня нет конверта.
+      > [T1]The[/] [S9]mail[/] [D1]does[/][X1]n't[/] [D4]come[/] [T5]every[/] [S7]day[/]. — Почта не приходит каждый день.
+
+      **Mail** — почта целиком, поэтому mail **doesn't**, как it. **Package** — посылка; **postcard** — открытка, а **envelope** — конверт. Не меняйте -s у have: Tom doesn't **have** a package.
+
+      В очереди (**line**) можно услышать **Wait, please.** — «Подождите, пожалуйста». Посылку описывают словами **large** (размер), **heavy** или **light** (вес). Адрес проверяют фразой **The address is correct.** — «Адрес правильный».
   - number: 6
     body: |
       Ловушки:
@@ -78,7 +87,7 @@ layers:
       Русское «у меня нет» почти всегда превращается в I don't have.
   - number: 7
     body: |
-      Четыре задания: выбрать don't или doesn't, вставить отрицание, собрать фразу и ответить в новой ситуации.
+      Шесть заданий: выбрать don't или doesn't, вставить отрицание, собрать фразу, ответить в новой ситуации, выбрать отрицание для Тома и вежливо сообщить, что вы не знаете индекс.
 exercises:
   - order: 1
     kind: choice
@@ -118,3 +127,32 @@ exercises:
     hint_ru: "Sorry + I don't know."
     explanation_ru: "Sorry, I don't know — вежливо и по-американски."
     units: [LX-00229, LX-00236]
+  - order: 5
+    kind: choice
+    stage: substitution
+    prompt_ru: У Тома нет конверта. Выберите верную фразу.
+    options:
+    - Tom doesn't have an envelope.
+    - Tom don't have an envelope.
+    - Tom doesn't has an envelope.
+    answer: Tom doesn't have an envelope.
+    hint_ru: Tom — он; после does не добавляйте -s к have.
+    explanation_ru: 'Tom doesn''t have an envelope: does уже выражает третье лицо, поэтому have, не has.'
+    units:
+    - LX-00416
+    - LX-00233
+  - order: 6
+    kind: fill
+    stage: transfer
+    prompt_ru: 'В новой анкете спрашивают индекс. Вы его не знаете. Вежливо скажите: «Извините, я не знаю индекс».'
+    prompt_en: What is the ZIP code? — ___
+    answer: Sorry, I don't know the ZIP code.
+    accepted:
+    - Sorry, I don't know the ZIP code
+    - Sorry, I do not know the ZIP code.
+    - Sorry, I do not know the ZIP code
+    hint_ru: Sorry + I don't know + the ZIP code.
+    explanation_ru: Отрицайте действие know через do not; ZIP code — индекс в США.
+    units:
+    - LX-00415
+    - LX-00236

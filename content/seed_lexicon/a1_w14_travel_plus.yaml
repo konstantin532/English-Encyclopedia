@@ -1,0 +1,361 @@
+# Неделя 14: транспорт, погода и вещи для поездки. CEFR не сверялся.
+level: A1
+week: 14
+units:
+- uid: LX-00457
+  lemma: weather
+  class: S6
+  ipa_us: /ˈwɛðɚ/
+  translation_ru: погода
+  meaning: conditions such as sun, rain and wind
+  example_en: '[T1]The[/] [S6]weather[/] [D1]is[/] [J3]good[/].'
+  example_ru: Погода хорошая.
+  usage_note: Weather — погода в целом, без a и без -s.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00458
+  lemma: sunny
+  class: J2
+  ipa_us: /ˈsʌni/
+  translation_ru: солнечный
+  meaning: having much light from the sun
+  example_en: '[T8]It[/] [D1]is[/] [J2]sunny[/] [A2]today[/].'
+  example_ru: Сегодня солнечно.
+  usage_note: 'О погоде: It is sunny. Нужны it и is.'
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00459
+  lemma: rain
+  class: S6
+  ipa_us: /reɪn/
+  translation_ru: дождь
+  meaning: water that falls from clouds
+  example_en: '[T8]I[/] [D1]do[/] [X1]not[/] [D3]like[/] [T1]the[/] [S6]rain[/].'
+  example_ru: Я не люблю дождь.
+  usage_note: Здесь rain — существительное «дождь», не глагол. Обычно неисчисляемое.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00460
+  lemma: snow
+  class: S6
+  ipa_us: /snoʊ/
+  translation_ru: снег
+  meaning: soft white ice that falls from clouds
+  example_en: '[T8]I[/] [D3]like[/] [S6]snow[/].'
+  example_ru: Я люблю снег.
+  usage_note: Здесь snow — существительное «снег», без a.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00461
+  lemma: windy
+  class: J2
+  ipa_us: /ˈwɪndi/
+  translation_ru: ветреный
+  meaning: having a lot of moving air
+  example_en: '[T8]It[/] [D1]is[/] [J2]windy[/].'
+  example_ru: Ветрено.
+  usage_note: О погоде говорят It is windy, а не просто windy в полном предложении.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00462
+  lemma: cloudy
+  class: J2
+  ipa_us: /ˈklaʊdi/
+  translation_ru: облачный
+  meaning: having many clouds in the sky
+  example_en: '[T8]It[/] [D1]is[/] [J2]cloudy[/] [A2]today[/].'
+  example_ru: Сегодня облачно.
+  usage_note: Cloudy описывает облачную погоду; rainy здесь отдельно не вводится.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00463
+  lemma: warm
+  class: J2
+  ipa_us: /wɔrm/
+  translation_ru: тёплый
+  meaning: having a pleasant, moderately high temperature
+  example_en: '[T8]It[/] [D1]is[/] [J2]warm[/] [C5]but[/] [J2]windy[/].'
+  example_ru: Тепло, но ветрено.
+  usage_note: Warm — тепло, hot — жарко. В американском произношении слышен r.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00464
+  lemma: train
+  class: S4
+  ipa_us: /treɪn/
+  translation_ru: поезд
+  meaning: connected vehicles that run on rails
+  example_en: '[T1]The[/] [S4]train[/] [D1]is[/] [P1]at[/] [T1]the[/] [S4]station[/].'
+  example_ru: Поезд на станции.
+  usage_note: Train — поезд; train station — железнодорожная станция.
+  forms:
+  - trains
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00465
+  lemma: car
+  class: S4
+  ipa_us: /kɑr/
+  translation_ru: автомобиль
+  meaning: a road vehicle for a few people
+  example_en: '[T3]My[/] [S4]car[/] [D1]is[/] [J2]old[/].'
+  example_ru: Моя машина старая.
+  usage_note: Car — легковой автомобиль; уметь водить — can drive.
+  forms:
+  - cars
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00466
+  lemma: taxi
+  class: S4
+  ipa_us: /ˈtæksi/
+  translation_ru: такси
+  meaning: a car with a driver paid to take passengers
+  example_en: '[T1]The[/] [S4]taxi[/] [D1]is[/] [A3]here[/].'
+  example_ru: Такси здесь.
+  usage_note: Take a taxi — поехать на такси.
+  forms:
+  - taxis
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00467
+  lemma: station
+  class: S4
+  ipa_us: /ˈsteɪʃən/
+  translation_ru: станция, вокзал
+  meaning: a place where trains stop for passengers
+  example_en: '[T1]The[/] [S4]station[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]park[/].'
+  example_ru: Станция рядом с парком.
+  usage_note: В этой неделе station — железнодорожная станция; bus stop — остановка автобуса.
+  forms:
+  - stations
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00468
+  lemma: airport
+  class: S4
+  ipa_us: /ˈɛrˌpɔrt/
+  translation_ru: аэропорт
+  meaning: a place where planes arrive and leave
+  example_en: '[D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [T1]the[/] [S4]airport[/]?'
+  example_ru: Этот автобус идёт в аэропорт?
+  usage_note: Airport — аэропорт; перед известным аэропортом — the airport.
+  forms:
+  - airports
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00469
+  lemma: plane
+  class: S4
+  ipa_us: /pleɪn/
+  translation_ru: самолёт
+  meaning: a vehicle that flies through the air
+  example_en: '[T1]The[/] [S4]plane[/] [D1]is[/] [P1]at[/] [T1]the[/] [S4]airport[/].'
+  example_ru: Самолёт в аэропорту.
+  usage_note: Plane — обычное короткое слово для самолёта.
+  forms:
+  - planes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00470
+  lemma: trip
+  class: S4
+  ipa_us: /trɪp/
+  translation_ru: поездка
+  meaning: a journey to a place and back
+  example_en: '[T3]Our[/] [S4]trip[/] [D8]starts[/] [P3]on[/] [S7]Monday[/].'
+  example_ru: Наша поездка начинается в понедельник.
+  usage_note: 'Trip — отдельная поездка, которую можно посчитать: a trip, two trips.'
+  forms:
+  - trips
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00471
+  lemma: travel
+  class: D4
+  ipa_us: /ˈtrævəl/
+  translation_ru: путешествовать, ездить
+  meaning: to go from one place to another
+  example_en: '[T8]We[/] [D4]travel[/] [P3]on[/] [S7]Monday[/].'
+  example_ru: Мы едем в понедельник.
+  usage_note: 'Здесь travel — глагол. Обычные формы: travels, traveling (американское написание).'
+  forms:
+  - travels
+  - traveling
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00472
+  lemma: arrive
+  class: D4
+  ipa_us: /əˈraɪv/
+  translation_ru: прибывать
+  meaning: to reach the place you are going to
+  example_en: '[T1]The[/] [S4]train[/] [D4]arrives[/] [P3]at[/] [N3]six[/].'
+  example_ru: Поезд прибывает в шесть.
+  usage_note: Arrive at the station — прибыть на станцию; здесь at, не to.
+  forms:
+  - arrives
+  - arriving
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00473
+  lemma: leave
+  class: D4
+  ipa_us: /liv/
+  translation_ru: уезжать, отправляться
+  meaning: to go away from a place
+  example_en: '[T1]The[/] [S4]bus[/] [D4]leaves[/] [P3]at[/] [N3]five[/].'
+  example_ru: Автобус отправляется в пять.
+  usage_note: Leave — отправляться, arrive — прибывать; расписание выражается настоящим простым.
+  forms:
+  - leaves
+  - leaving
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00474
+  lemma: buy
+  class: D2
+  ipa_us: /baɪ/
+  translation_ru: покупать
+  meaning: to get something by paying money
+  example_en: '[T8]I[/] [D3]want[/] [X2]to[/] [D2]buy[/] [T1]a[/] [S2]ticket[/].'
+  example_ru: Я хочу купить билет.
+  usage_note: Buy a ticket — купить билет; после want to глагол в исходной форме.
+  forms:
+  - buys
+  - buying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00475
+  lemma: coat
+  class: S2
+  ipa_us: /koʊt/
+  translation_ru: пальто
+  meaning: an outer piece of clothing for cold weather
+  example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [J2]warm[/] [S2]coat[/].'
+  example_ru: У меня есть тёплое пальто.
+  usage_note: Coat — пальто; jacket — обычно более короткая куртка.
+  forms:
+  - coats
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00476
+  lemma: hat
+  class: S2
+  ipa_us: /hæt/
+  translation_ru: шляпа, головной убор
+  meaning: a piece of clothing worn on the head
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]hat[/].'
+  example_ru: Это мой головной убор.
+  usage_note: Hat — общее слово для головного убора, в том числе шляпы.
+  forms:
+  - hats
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00477
+  lemma: umbrella
+  class: S2
+  ipa_us: /ʌmˈbrɛlə/
+  translation_ru: зонт
+  meaning: an object held over you to keep rain off
+  example_en: '[T8]I[/] [D1]have[/] [T1]an[/] [S2]umbrella[/].'
+  example_ru: У меня есть зонт.
+  usage_note: Перед umbrella — an, потому что слово начинается с гласного звука.
+  forms:
+  - umbrellas
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00478
+  lemma: bag
+  class: S2
+  ipa_us: /bæɡ/
+  translation_ru: сумка
+  meaning: a container used to carry things
+  example_en: '[T3]My[/] [S2]bag[/] [D1]is[/] [J2]heavy[/].'
+  example_ru: Моя сумка тяжёлая.
+  usage_note: Bag — сумка; heavy и light описывают вес.
+  forms:
+  - bags
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00479
+  lemma: sweater
+  class: S2
+  ipa_us: /ˈswɛt̬ɚ/
+  translation_ru: свитер
+  meaning: a warm knitted piece of clothing for the upper body
+  example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [J2]blue[/] [S2]sweater[/].'
+  example_ru: У меня есть синий свитер.
+  usage_note: Sweater — обычное американское слово для свитера.
+  forms:
+  - sweaters
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
+- uid: LX-00480
+  lemma: seat
+  class: S2
+  ipa_us: /sit/
+  translation_ru: место для сидения
+  meaning: a place where a person can sit
+  example_en: '[D2]Take[/] [T1]a[/] [S2]seat[/], [O8]please[/].'
+  example_ru: Садитесь, пожалуйста.
+  usage_note: Take a seat — приглашение сесть; sit — глагол, seat здесь существительное.
+  forms:
+  - seats
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор; частотность не сверена.
+  situation: Транспорт, погода и вещи для поездки
