@@ -1,0 +1,970 @@
+{
+  "a1-he-she-works": {
+    "1": {
+      "prompt": "Вы рассказываете о {ru}. Выберите форму Present Simple.",
+      "keys": [
+        "ru",
+        "name",
+        "action"
+      ],
+      "cases": [
+        [
+          "Мии: работает в кафе",
+          "Mia",
+          "works at the cafe"
+        ],
+        [
+          "Томе: работает дома",
+          "Tom",
+          "works at home"
+        ],
+        [
+          "Анне: читает каждый день",
+          "Anna",
+          "reads every day"
+        ],
+        [
+          "Томе: живёт здесь",
+          "Tom",
+          "lives here"
+        ],
+        [
+          "Мии: любит чай",
+          "Mia",
+          "likes tea"
+        ]
+      ],
+      "options": [
+        "{name} {action}.",
+        "{name} is {action}.",
+        "{name} {action} is."
+      ],
+      "reason": "В Present Simple с именем одного человека у смыслового глагола появляется -s или -es; дополнительное is не требуется.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Спросите, работает ли {ru}. Выберите начало вопроса.",
+      "keys": [
+        "ru",
+        "who",
+        "where"
+      ],
+      "cases": [
+        [
+          "Том в школе",
+          "he",
+          "at a school"
+        ],
+        [
+          "Мия в кафе",
+          "she",
+          "at a cafe"
+        ],
+        [
+          "он дома",
+          "he",
+          "at home"
+        ],
+        [
+          "Анна здесь",
+          "she",
+          "here"
+        ],
+        [
+          "он ночью",
+          "he",
+          "at night"
+        ]
+      ],
+      "options": [
+        "Does",
+        "Do",
+        "Is"
+      ],
+      "reason": "В вопросах с he/she и обычным действием нужен Does; далее глагол без -s.",
+      "en": "___ {who} work {where}?"
+    },
+    "3": {
+      "prompt": "Вам нужно сообщить: {ru}.",
+      "keys": [
+        "ru",
+        "subj",
+        "action",
+        "time"
+      ],
+      "cases": [
+        [
+          "Том работает ночью",
+          "He",
+          "works",
+          "at night"
+        ],
+        [
+          "Анна работает утром",
+          "She",
+          "works",
+          "in the morning"
+        ],
+        [
+          "Том начинает в семь",
+          "He",
+          "starts",
+          "at seven"
+        ],
+        [
+          "Анна заканчивает в два",
+          "She",
+          "finishes",
+          "at two"
+        ],
+        [
+          "Мия работает в кафе",
+          "She",
+          "works",
+          "at the cafe"
+        ]
+      ],
+      "options": [
+        "{subj} {action} {time}.",
+        "{subj} {action} is {time}.",
+        "{subj} {action} at {time} is."
+      ],
+      "reason": "В повествовании He/She + глагол с -s, затем обстоятельство; не ставьте is перед смысловым глаголом.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Вопрос: Does {who} work {where}? По условию ответ отрицательный.",
+      "keys": [
+        "who",
+        "where"
+      ],
+      "cases": [
+        [
+          "she",
+          "at the cafe"
+        ],
+        [
+          "he",
+          "at the bank"
+        ],
+        [
+          "she",
+          "here"
+        ],
+        [
+          "he",
+          "at night"
+        ],
+        [
+          "she",
+          "every day"
+        ]
+      ],
+      "options": [
+        "No, {who} doesn't.",
+        "No, {who} don't.",
+        "No, {who} isn't."
+      ],
+      "reason": "Отрицательный короткий ответ на Does he/she ...? — No, he/she doesn't.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Как сказать о {who}, что {ru}?",
+      "keys": [
+        "who",
+        "ru",
+        "verb"
+      ],
+      "cases": [
+        [
+          "she",
+          "она заканчивает в два",
+          "finishes at two"
+        ],
+        [
+          "he",
+          "он заканчивает в семь",
+          "finishes at seven"
+        ],
+        [
+          "she",
+          "она заканчивает вечером",
+          "finishes in the evening"
+        ],
+        [
+          "he",
+          "он смотрит телевизор",
+          "watches TV"
+        ],
+        [
+          "she",
+          "она смотрит телевизор вечером",
+          "watches TV in the evening"
+        ]
+      ],
+      "options": [
+        "{who} {verb}.",
+        "{who} finish at two.",
+        "{who} {verb} is."
+      ],
+      "reason": "После he/she в этих глаголах добавляется -es: finishes, watches. Слова ставятся после подлежащего.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Вы описываете график {who}: {ru}.",
+      "keys": [
+        "who",
+        "ru",
+        "time"
+      ],
+      "cases": [
+        [
+          "он начинает работу в семь",
+          "он начинает в семь",
+          "seven"
+        ],
+        [
+          "она начинает работу в восемь",
+          "она начинает в восемь",
+          "eight"
+        ],
+        [
+          "он начинает работу в шесть",
+          "он начинает в шесть",
+          "six"
+        ],
+        [
+          "она начинает работу в девять",
+          "она начинает в девять",
+          "nine"
+        ],
+        [
+          "он начинает работу в десять",
+          "он начинает в десять",
+          "ten"
+        ]
+      ],
+      "options": [
+        "He starts at {time}.",
+        "He start at {time}.",
+        "He is starts at {time}."
+      ],
+      "reason": "Для he в Present Simple: He starts, не He start.",
+      "en": ""
+    }
+  },
+  "a1-jobs-what-do-you-do": {
+    "1": {
+      "prompt": "В {place} новый знакомый спрашивает «What do you do?» Что он обычно имеет в виду?",
+      "keys": [
+        "place"
+      ],
+      "cases": [
+        [
+          "кафе"
+        ],
+        [
+          "школе"
+        ],
+        [
+          "магазине"
+        ],
+        [
+          "офисе"
+        ],
+        [
+          "парке"
+        ]
+      ],
+      "options": [
+        "Вашу профессию",
+        "Ваш номер телефона",
+        "Сколько вам лет"
+      ],
+      "reason": "В знакомстве What do you do? обычно спрашивает о работе или занятии, не о текущем движении.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Вы рассказываете о профессии: я {ru}.",
+      "keys": [
+        "ru",
+        "job"
+      ],
+      "cases": [
+        [
+          "бариста",
+          "barista"
+        ],
+        [
+          "медсестра",
+          "nurse"
+        ],
+        [
+          "врач",
+          "doctor"
+        ],
+        [
+          "учитель",
+          "teacher"
+        ],
+        [
+          "водитель",
+          "driver"
+        ]
+      ],
+      "options": [
+        "I am a {job}.",
+        "I am {job}.",
+        "I am an {job}."
+      ],
+      "reason": "Перед одной профессией на согласный звук нужен артикль a: a barista, a nurse.",
+      "en": ""
+    },
+    "3": {
+      "prompt": "Расскажите, где вы работаете: {ru}.",
+      "keys": [
+        "ru",
+        "place"
+      ],
+      "cases": [
+        [
+          "в школе",
+          "a school"
+        ],
+        [
+          "в кафе",
+          "a cafe"
+        ],
+        [
+          "в банке",
+          "a bank"
+        ],
+        [
+          "в магазине",
+          "a shop"
+        ],
+        [
+          "в больнице",
+          "a hospital"
+        ]
+      ],
+      "options": [
+        "I work at {place}.",
+        "I works at {place}.",
+        "I am work at {place}."
+      ],
+      "reason": "После I для обычного действия используется work без -s и без am.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Новый знакомый спрашивает о работе. Вы — {ru}.",
+      "keys": [
+        "ru",
+        "job"
+      ],
+      "cases": [
+        [
+          "врач",
+          "doctor"
+        ],
+        [
+          "учитель",
+          "teacher"
+        ],
+        [
+          "медсестра",
+          "nurse"
+        ],
+        [
+          "водитель",
+          "driver"
+        ],
+        [
+          "бариста",
+          "barista"
+        ]
+      ],
+      "options": [
+        "I am a {job}.",
+        "I am {job}.",
+        "I is a {job}."
+      ],
+      "reason": "В названии одной профессии после I am часто нужен неопределённый артикль a.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Как сказать «{ru}» о мужчине?",
+      "keys": [
+        "ru",
+        "job"
+      ],
+      "cases": [
+        [
+          "Он инженер",
+          "engineer"
+        ],
+        [
+          "Он актёр",
+          "actor"
+        ],
+        [
+          "Он художник",
+          "artist"
+        ],
+        [
+          "Он офисный работник",
+          "office worker"
+        ],
+        [
+          "Он инженер из России",
+          "engineer"
+        ]
+      ],
+      "options": [
+        "He is an {job}.",
+        "He is a {job}.",
+        "He is {job}."
+      ],
+      "reason": "Перед гласным звуком в названии профессии используйте an, а не a.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Ваша мама — {ru}, она работает {where_ru}. Выберите верную фразу.",
+      "keys": [
+        "ru",
+        "job",
+        "where_ru",
+        "place"
+      ],
+      "cases": [
+        [
+          "медсестра",
+          "nurse",
+          "в больнице",
+          "at a hospital"
+        ],
+        [
+          "учитель",
+          "teacher",
+          "в школе",
+          "at a school"
+        ],
+        [
+          "врач",
+          "doctor",
+          "в больнице",
+          "at a hospital"
+        ],
+        [
+          "бариста",
+          "barista",
+          "в кафе",
+          "at a cafe"
+        ],
+        [
+          "офисный работник",
+          "office worker",
+          "в офисе",
+          "in an office"
+        ]
+      ],
+      "options": [
+        "My mom is a {job}. She works {place}.",
+        "My mom is {job}. She work {place}.",
+        "My mom are a {job}. She work {place}."
+      ],
+      "reason": "После my mom используйте is и works: она один человек.",
+      "en": ""
+    }
+  },
+  "a1-where-is-prepositions": {
+    "1": {
+      "prompt": "Вы находитесь {where} и хотите узнать, где {ru}.",
+      "keys": [
+        "where",
+        "ru",
+        "place"
+      ],
+      "cases": [
+        [
+          "в незнакомом городе",
+          "банк",
+          "bank"
+        ],
+        [
+          "на улице",
+          "кафе",
+          "cafe"
+        ],
+        [
+          "в центре города",
+          "школа",
+          "school"
+        ],
+        [
+          "рядом с парком",
+          "магазин",
+          "shop"
+        ],
+        [
+          "в поездке",
+          "отель",
+          "hotel"
+        ]
+      ],
+      "options": [
+        "Excuse me, where is the {place}?",
+        "Excuse me, what is the {place}?",
+        "Excuse me, who is the {place}?"
+      ],
+      "reason": "Где? — Where is ...?; вежливое Excuse me помогает обратиться к прохожему.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Вещь {ru}. Выберите предлог.",
+      "keys": [
+        "ru",
+        "item",
+        "box"
+      ],
+      "cases": [
+        [
+          "книга внутри коробки",
+          "book",
+          "box"
+        ],
+        [
+          "телефон внутри сумки",
+          "phone",
+          "bag"
+        ],
+        [
+          "ключ внутри коробки",
+          "key",
+          "box"
+        ],
+        [
+          "сок внутри коробки",
+          "juice",
+          "box"
+        ],
+        [
+          "книга внутри сумки",
+          "book",
+          "bag"
+        ]
+      ],
+      "options": [
+        "in",
+        "on",
+        "next to"
+      ],
+      "reason": "In означает «внутри»; on — «на поверхности»; next to — «рядом».",
+      "en": "The {item} is ___ the {box}."
+    },
+    "3": {
+      "prompt": "Что сказать, если {ru}?",
+      "keys": [
+        "ru",
+        "first",
+        "second"
+      ],
+      "cases": [
+        [
+          "банк рядом с кафе",
+          "bank",
+          "cafe"
+        ],
+        [
+          "магазин рядом с банком",
+          "shop",
+          "bank"
+        ],
+        [
+          "кафе рядом со школой",
+          "cafe",
+          "school"
+        ],
+        [
+          "отель рядом с парком",
+          "hotel",
+          "park"
+        ],
+        [
+          "школа рядом с магазином",
+          "school",
+          "shop"
+        ]
+      ],
+      "options": [
+        "The {first} is next to the {second}.",
+        "The {first} is in the {second}.",
+        "The {first} is between the {second}."
+      ],
+      "reason": "Next to означает непосредственную близость; between требует две опорные точки.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Прохожий спрашивает, где {ru}. По условию оно находится {side_ru}.",
+      "keys": [
+        "ru",
+        "side_ru",
+        "side"
+      ],
+      "cases": [
+        [
+          "кафе",
+          "справа",
+          "right"
+        ],
+        [
+          "банк",
+          "слева",
+          "left"
+        ],
+        [
+          "магазин",
+          "справа",
+          "right"
+        ],
+        [
+          "школа",
+          "слева",
+          "left"
+        ],
+        [
+          "отель",
+          "справа",
+          "right"
+        ]
+      ],
+      "options": [
+        "It is on the {side}.",
+        "It is at the {side}.",
+        "It is in the {side}."
+      ],
+      "reason": "Для положения сбоку в этой конструкции говорим on the right/left.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "Как описать расположение {ru}?",
+      "keys": [
+        "ru",
+        "center",
+        "left",
+        "right"
+      ],
+      "cases": [
+        [
+          "кафе между банком и отелем",
+          "cafe",
+          "bank",
+          "hotel"
+        ],
+        [
+          "магазина между кафе и банком",
+          "shop",
+          "cafe",
+          "bank"
+        ],
+        [
+          "школы между парком и магазином",
+          "school",
+          "park",
+          "shop"
+        ],
+        [
+          "банка между кафе и отелем",
+          "bank",
+          "cafe",
+          "hotel"
+        ],
+        [
+          "отеля между банком и школой",
+          "hotel",
+          "bank",
+          "school"
+        ]
+      ],
+      "options": [
+        "The {center} is between the {left} and the {right}.",
+        "The {center} is in the {left} and the {right}.",
+        "The {center} is next to the {left} and the {right}."
+      ],
+      "reason": "Between ... and ... указывает на положение между двумя местами.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "В {where} {first} находится через дорогу от {second}.",
+      "keys": [
+        "where",
+        "first",
+        "second"
+      ],
+      "cases": [
+        [
+          "городе",
+          "shop",
+          "park"
+        ],
+        [
+          "городе",
+          "bank",
+          "cafe"
+        ],
+        [
+          "поездке",
+          "cafe",
+          "hotel"
+        ],
+        [
+          "городе",
+          "school",
+          "park"
+        ],
+        [
+          "поездке",
+          "hotel",
+          "bank"
+        ]
+      ],
+      "options": [
+        "The {first} is across from the {second}.",
+        "The {first} is inside the {second}.",
+        "The {first} is behind the {second}."
+      ],
+      "reason": "Across from — напротив, через улицу; это не внутри и не позади.",
+      "en": ""
+    }
+  },
+  "a1-directions-turn-left": {
+    "1": {
+      "prompt": "В {place} прохожий говорит: «Turn {direction}». Что нужно сделать?",
+      "keys": [
+        "place",
+        "direction",
+        "correct",
+        "wrong1",
+        "wrong2"
+      ],
+      "cases": [
+        [
+          "городе",
+          "right",
+          "Повернуть направо",
+          "Повернуть налево",
+          "Идти прямо"
+        ],
+        [
+          "парке",
+          "left",
+          "Повернуть налево",
+          "Повернуть направо",
+          "Идти назад"
+        ],
+        [
+          "городе",
+          "right",
+          "Повернуть направо",
+          "Остановиться",
+          "Идти прямо"
+        ],
+        [
+          "парке",
+          "left",
+          "Повернуть налево",
+          "Идти прямо",
+          "Повернуть направо"
+        ],
+        [
+          "городе",
+          "right",
+          "Повернуть направо",
+          "Идти назад",
+          "Повернуть налево"
+        ]
+      ],
+      "options": [
+        "{correct}",
+        "{wrong1}",
+        "{wrong2}"
+      ],
+      "reason": "Right — направо; left — налево.",
+      "en": ""
+    },
+    "2": {
+      "prompt": "Вы объясняете путь {destination}: «Идите прямо».",
+      "keys": [
+        "destination"
+      ],
+      "cases": [
+        [
+          "к банку"
+        ],
+        [
+          "к кафе"
+        ],
+        [
+          "к парку"
+        ],
+        [
+          "к магазину"
+        ],
+        [
+          "к отелю"
+        ]
+      ],
+      "options": [
+        "Go straight.",
+        "Turn straight.",
+        "Go to straight."
+      ],
+      "reason": "Go straight — идите прямо; перед straight не нужен to.",
+      "en": ""
+    },
+    "3": {
+      "prompt": "Вы направляете {who}: сначала идите прямо, затем {direction_ru}.",
+      "keys": [
+        "who",
+        "direction_ru",
+        "direction"
+      ],
+      "cases": [
+        [
+          "туриста к кафе",
+          "налево",
+          "left"
+        ],
+        [
+          "друга к банку",
+          "направо",
+          "right"
+        ],
+        [
+          "соседа к парку",
+          "налево",
+          "left"
+        ],
+        [
+          "прохожего к магазину",
+          "направо",
+          "right"
+        ],
+        [
+          "друга к отелю",
+          "налево",
+          "left"
+        ]
+      ],
+      "options": [
+        "Go straight and turn {direction}.",
+        "Go straight and turning {direction}.",
+        "Go and straight turn {direction}."
+      ],
+      "reason": "В двух командах используйте начальные формы: Go straight and turn left/right.",
+      "en": ""
+    },
+    "4": {
+      "prompt": "Банк находится {direction_ru} после поворота. Скажите туристу, как повернуть.",
+      "keys": [
+        "direction_ru",
+        "direction"
+      ],
+      "cases": [
+        [
+          "справа",
+          "right"
+        ],
+        [
+          "слева",
+          "left"
+        ],
+        [
+          "справа",
+          "right"
+        ],
+        [
+          "слева",
+          "left"
+        ],
+        [
+          "справа",
+          "right"
+        ]
+      ],
+      "options": [
+        "Turn {direction}.",
+        "You turn to {direction}.",
+        "Turn at {direction}."
+      ],
+      "reason": "При указании поворота достаточно повелительного Turn right/left.",
+      "en": ""
+    },
+    "5": {
+      "prompt": "В {place} вы вместе с {friend} заблудились и просите помощи вам обоим.",
+      "keys": [
+        "place",
+        "friend"
+      ],
+      "cases": [
+        [
+          "парке",
+          "Томом"
+        ],
+        [
+          "городе",
+          "Анной"
+        ],
+        [
+          "магазине",
+          "Мией"
+        ],
+        [
+          "поездке",
+          "другом"
+        ],
+        [
+          "городе",
+          "братом"
+        ]
+      ],
+      "options": [
+        "Can you help us?",
+        "Can you help we?",
+        "Can you help our?"
+      ],
+      "reason": "После help нужно объектное местоимение us, не we или our.",
+      "en": ""
+    },
+    "6": {
+      "prompt": "Вы просите прохожего помочь {whom}.",
+      "keys": [
+        "whom"
+      ],
+      "cases": [
+        [
+          "вашему брату"
+        ],
+        [
+          "Тому"
+        ],
+        [
+          "мужчине рядом"
+        ],
+        [
+          "папе"
+        ],
+        [
+          "вашему другу"
+        ]
+      ],
+      "options": [
+        "Can you help him?",
+        "Can you help he?",
+        "Can you help his?"
+      ],
+      "reason": "После help про мужчину используйте him.",
+      "en": ""
+    }
+  }
+}
