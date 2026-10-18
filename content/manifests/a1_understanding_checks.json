@@ -1,0 +1,846 @@
+{
+  "version": 1,
+  "level": "A1",
+  "lessons": [
+    {
+      "slug": "a1-nouns-first-words",
+      "plain": "Существительное — слово, которое называет человека, предмет или место.",
+      "why": "Назвать вещь — значит помочь собеседнику понять, о чём речь.",
+      "pattern": "This is my + название.",
+      "mistake": "Путать new с названием предмета.",
+      "fix": "Спросите себя: слово называет что-то или описывает его?",
+      "example": "This is my book.",
+      "translation": "Это моя книга.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «This is my phone.».",
+          "model": "Это мой телефон.",
+          "accepted": [
+            "Это мой телефон."
+          ]
+        },
+        "writing": {
+          "prompt": "Без подсказок напишите «Это моя книга».",
+          "model": "This is my book.",
+          "accepted": [
+            "This is my book."
+          ]
+        },
+        "transfer": {
+          "prompt": "Покажите гостю новый телефон двумя фразами.",
+          "model": "This is my phone. It is new."
+        }
+      }
+    },
+    {
+      "slug": "a1-verb-be",
+      "plain": "Am, is и are связывают человека с описанием.",
+      "why": "Русскому «Я дома» по-английски соответствует фраза с am.",
+      "pattern": "I am / you are / she is.",
+      "mistake": "Говорить I is или you is.",
+      "fix": "Найдите подлежащее: I → am, you → are, she → is.",
+      "example": "I am at home.",
+      "translation": "Я дома.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «You are my friend.».",
+          "model": "Ты мой друг.",
+          "accepted": [
+            "Ты мой друг."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Я дома».",
+          "model": "I am at home.",
+          "accepted": [
+            "I am at home."
+          ]
+        },
+        "transfer": {
+          "prompt": "Представьтесь и скажите, что вы заняты.",
+          "model": "I am Anna. I am busy."
+        }
+      }
+    },
+    {
+      "slug": "a1-determiners-a-the-this-my",
+      "plain": "A, the, this и my помогают уточнить, о каком предмете говорим.",
+      "why": "«Какая-то книга», «эта книга» и «моя книга» — разные смыслы.",
+      "pattern": "a book / this book / my book.",
+      "mistake": "Писать a my book.",
+      "fix": "Перед my не добавляйте a.",
+      "example": "This is my book.",
+      "translation": "Это моя книга.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «This book is new.».",
+          "model": "Эта книга новая.",
+          "accepted": [
+            "Эта книга новая."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Это моя комната».",
+          "model": "This is my room.",
+          "accepted": [
+            "This is my room."
+          ]
+        },
+        "transfer": {
+          "prompt": "Вы впервые показываете гостю книгу, затем сообщаете, что она ваша.",
+          "model": "This is a book. It is my book."
+        }
+      }
+    },
+    {
+      "slug": "a1-have-like-can-do",
+      "plain": "Have — иметь; like — нравиться; can — мочь.",
+      "why": "С can можно вежливо попросить действие, а с do спросить о привычке.",
+      "pattern": "Do you like...? / Can I have...?",
+      "mistake": "Говорить Can I tea? без have.",
+      "fix": "Для просьбы поставьте have после Can I.",
+      "example": "Can I have water, please?",
+      "translation": "Можно мне воды, пожалуйста?",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «Do you like coffee?».",
+          "model": "Тебе нравится кофе?",
+          "accepted": [
+            "Тебе нравится кофе?"
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите вежливую просьбу о воде.",
+          "model": "Can I have water, please?",
+          "accepted": [
+            "Can I have water, please?"
+          ]
+        },
+        "transfer": {
+          "prompt": "В кафе попросите чай, затем поблагодарите.",
+          "model": "Can I have tea, please? Thank you."
+        }
+      }
+    },
+    {
+      "slug": "a1-cafe-order",
+      "plain": "В кафе важно попросить, выбрать и переспросить.",
+      "why": "I'd like и Can I have... помогают сделать заказ вежливым.",
+      "pattern": "I'd like a tea, please.",
+      "mistake": "Путать просьбу и сообщение I am tea.",
+      "fix": "Назовите желаемое и добавьте please.",
+      "example": "Tea, please.",
+      "translation": "Чай, пожалуйста.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «I'd like coffee, please.».",
+          "model": "Я бы хотел кофе, пожалуйста.",
+          "accepted": [
+            "Я бы хотел кофе, пожалуйста."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите вежливую просьбу о чае.",
+          "model": "Can I have tea, please?",
+          "accepted": [
+            "Can I have tea, please?"
+          ]
+        },
+        "transfer": {
+          "prompt": "Бариста говорит слишком быстро. Попросите его повторить.",
+          "model": "Sorry? Can you say it again, please?"
+        }
+      }
+    },
+    {
+      "slug": "a1-numbers-1-20",
+      "plain": "Числа нужны для возраста, цены, времени и количества.",
+      "why": "После two или three исчисляемые предметы часто получают -s.",
+      "pattern": "two coffees / three teas.",
+      "mistake": "Говорить three cookie.",
+      "fix": "С числом три назовите cookies, а не cookie.",
+      "example": "Two cookies, please.",
+      "translation": "Два печенья, пожалуйста.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «Three teas, please.».",
+          "model": "Три чая, пожалуйста.",
+          "accepted": [
+            "Три чая, пожалуйста."
+          ]
+        },
+        "writing": {
+          "prompt": "Закажите два чая.",
+          "model": "Two teas, please.",
+          "accepted": [
+            "Two teas, please."
+          ]
+        },
+        "transfer": {
+          "prompt": "Закажите три кофе и одно печенье.",
+          "model": "Three coffees and one cookie, please."
+        }
+      }
+    },
+    {
+      "slug": "a1-family-photo",
+      "plain": "This is my... знакомит с родственниками; Who is this? спрашивает о человеке.",
+      "why": "В английском вопросе Who is this? нужен is.",
+      "pattern": "Who is this? / This is my sister.",
+      "mistake": "Говорить Who this?",
+      "fix": "Вопрос начинается Who is, затем this.",
+      "example": "This is my sister.",
+      "translation": "Это моя сестра.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «Who is this?».",
+          "model": "Кто это?",
+          "accepted": [
+            "Кто это?"
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Это мой брат».",
+          "model": "This is my brother.",
+          "accepted": [
+            "This is my brother."
+          ]
+        },
+        "transfer": {
+          "prompt": "Расскажите по фотографии о матери и её возрасте.",
+          "model": "This is my mom. She is forty."
+        }
+      }
+    },
+    {
+      "slug": "a1-family-possession",
+      "plain": "His, her, their и 's показывают владельца.",
+      "why": "Tom's phone — телефон Тома; her phone — её телефон.",
+      "pattern": "his book / her bag / Tom's book.",
+      "mistake": "Говорить she book.",
+      "fix": "Перед предметом используйте her, а не she.",
+      "example": "This is Tom's book.",
+      "translation": "Это книга Тома.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «Her phone is new.».",
+          "model": "Её телефон новый.",
+          "accepted": [
+            "Её телефон новый."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Это книга Тома».",
+          "model": "This is Tom's book.",
+          "accepted": [
+            "This is Tom's book."
+          ]
+        },
+        "transfer": {
+          "prompt": "Анна и Том имеют общий дом. Скажите об их доме.",
+          "model": "This is their house."
+        }
+      }
+    },
+    {
+      "slug": "a1-there-is-some",
+      "plain": "There is/are означает, что где-то что-то есть.",
+      "why": "С одним предметом — is; с несколькими — are.",
+      "pattern": "There is water. / There are books.",
+      "mistake": "Говорить there is two books.",
+      "fix": "При two books ставьте are.",
+      "example": "There are two books.",
+      "translation": "Там две книги.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «There is water.».",
+          "model": "Там есть вода.",
+          "accepted": [
+            "Там есть вода."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «В комнате две книги».",
+          "model": "There are two books in the room.",
+          "accepted": [
+            "There are two books in the room."
+          ]
+        },
+        "transfer": {
+          "prompt": "Спросите в магазине, есть ли вода, затем попросите её.",
+          "model": "Is there water? Can I have some water, please?"
+        }
+      }
+    },
+    {
+      "slug": "a1-how-much-prices",
+      "plain": "How much помогает узнать цену.",
+      "why": "Цена предмета и количество предметов — разные вопросы.",
+      "pattern": "How much is it? / It is five dollars.",
+      "mistake": "Говорить How old о цене.",
+      "fix": "Для цены спрашивайте how much, не how old.",
+      "example": "It is five dollars.",
+      "translation": "Это стоит пять долларов.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «How much is it?».",
+          "model": "Сколько это стоит?",
+          "accepted": [
+            "Сколько это стоит?"
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Это стоит три доллара».",
+          "model": "It is three dollars.",
+          "accepted": [
+            "It is three dollars."
+          ]
+        },
+        "transfer": {
+          "prompt": "Узнайте цену книги, затем оцените её как дорогую.",
+          "model": "How much is the book? It is expensive."
+        }
+      }
+    },
+    {
+      "slug": "a1-present-simple-i-you",
+      "plain": "Present Simple помогает рассказать о привычках.",
+      "why": "I work описывает обычное действие; do помогает спросить о нём.",
+      "pattern": "I work. / Do you work?",
+      "mistake": "Писать I am work.",
+      "fix": "С I перед обычным действием не нужен am.",
+      "example": "I work every day.",
+      "translation": "Я работаю каждый день.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «Do you work?».",
+          "model": "Ты работаешь?",
+          "accepted": [
+            "Ты работаешь?"
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Я завтракаю дома».",
+          "model": "I have breakfast at home.",
+          "accepted": [
+            "I have breakfast at home."
+          ]
+        },
+        "transfer": {
+          "prompt": "Расскажите о двух привычных действиях утром.",
+          "model": "I get up. I have breakfast."
+        }
+      }
+    },
+    {
+      "slug": "a1-time-at-seven",
+      "plain": "At ставится перед точным временем на часах.",
+      "why": "At seven — конкретный час; in the morning — часть дня.",
+      "pattern": "at seven / in the evening.",
+      "mistake": "Говорить in seven.",
+      "fix": "Перед часом используйте at.",
+      "example": "I get up at seven.",
+      "translation": "Я встаю в семь.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «I have dinner at six.».",
+          "model": "Я ужинаю в шесть.",
+          "accepted": [
+            "Я ужинаю в шесть."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Я обедаю в двенадцать».",
+          "model": "I have lunch at twelve.",
+          "accepted": [
+            "I have lunch at twelve."
+          ]
+        },
+        "transfer": {
+          "prompt": "Спросите друга, во сколько он встаёт, затем назовите своё время.",
+          "model": "What time do you get up? I get up at seven."
+        }
+      }
+    },
+    {
+      "slug": "a1-he-she-works",
+      "plain": "С he/she и одним человеком глагол привычки часто получает -s.",
+      "why": "В вопросе does забирает окончание: Does she work?",
+      "pattern": "She works. / Does she work?",
+      "mistake": "Писать Does she works?",
+      "fix": "После does оставляйте work без -s.",
+      "example": "She works at a school.",
+      "translation": "Она работает в школе.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «He starts at seven.».",
+          "model": "Он начинает в семь.",
+          "accepted": [
+            "Он начинает в семь."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Том работает здесь».",
+          "model": "Tom works here.",
+          "accepted": [
+            "Tom works here."
+          ]
+        },
+        "transfer": {
+          "prompt": "Спросите, работает ли Мия в кафе; ответьте «нет».",
+          "model": "Does Mia work at a cafe? No, she doesn't."
+        }
+      }
+    },
+    {
+      "slug": "a1-jobs-what-do-you-do",
+      "plain": "What do you do? обычно спрашивает о профессии.",
+      "why": "Перед одной профессией часто нужен a или an.",
+      "pattern": "I am a teacher. / He is an engineer.",
+      "mistake": "Говорить I am doctor.",
+      "fix": "Перед doctor поставьте a.",
+      "example": "I am a teacher.",
+      "translation": "Я учитель.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «He is a doctor.».",
+          "model": "Он врач.",
+          "accepted": [
+            "Он врач."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Я работаю в школе».",
+          "model": "I work at a school.",
+          "accepted": [
+            "I work at a school."
+          ]
+        },
+        "transfer": {
+          "prompt": "Назовите свою профессию и место работы.",
+          "model": "I am a teacher. I work at a school."
+        }
+      }
+    },
+    {
+      "slug": "a1-where-is-prepositions",
+      "plain": "Where is...? спрашивает о месте.",
+      "why": "In — внутри, next to — рядом, between — между двумя.",
+      "pattern": "Where is the bank? / It is near the cafe.",
+      "mistake": "Писать Where the bank is?",
+      "fix": "В прямом вопросе поставьте is перед названием.",
+      "example": "Where is the bank?",
+      "translation": "Где банк?",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «The key is in the box.».",
+          "model": "Ключ в коробке.",
+          "accepted": [
+            "Ключ в коробке."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Банк рядом с кафе».",
+          "model": "The bank is next to the cafe.",
+          "accepted": [
+            "The bank is next to the cafe."
+          ]
+        },
+        "transfer": {
+          "prompt": "Объясните туристу, где магазин относительно парка.",
+          "model": "The shop is across from the park."
+        }
+      }
+    },
+    {
+      "slug": "a1-directions-turn-left",
+      "plain": "Go straight и turn left/right помогают указать дорогу.",
+      "why": "В короткой команде глагол идёт первым.",
+      "pattern": "Go straight. / Turn right.",
+      "mistake": "Путать right и left.",
+      "fix": "Right — направо, left — налево.",
+      "example": "Go straight and turn left.",
+      "translation": "Идите прямо и поверните налево.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «Turn right.».",
+          "model": "Поверните направо.",
+          "accepted": [
+            "Поверните направо."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Идите прямо».",
+          "model": "Go straight.",
+          "accepted": [
+            "Go straight."
+          ]
+        },
+        "transfer": {
+          "prompt": "Укажите путь: сначала прямо, потом направо.",
+          "model": "Go straight and turn right."
+        }
+      }
+    },
+    {
+      "slug": "a1-questions-do-does",
+      "plain": "Do/does помогают спрашивать о действиях.",
+      "why": "You → do, he/she/it → does; после does глагол без -s.",
+      "pattern": "Do you work? / Does Tom work?",
+      "mistake": "Писать Does Tom works?",
+      "fix": "После does уберите -s у work.",
+      "example": "Does she work here?",
+      "translation": "Она здесь работает?",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «Do you have a book?».",
+          "model": "У тебя есть книга?",
+          "accepted": [
+            "У тебя есть книга?"
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите вопрос «Том здесь работает?»",
+          "model": "Does Tom work here?",
+          "accepted": [
+            "Does Tom work here?"
+          ]
+        },
+        "transfer": {
+          "prompt": "Спросите, когда открывается магазин.",
+          "model": "What time does the shop open?"
+        }
+      }
+    },
+    {
+      "slug": "a1-spelling-phone-numbers",
+      "plain": "Spell значит назвать слово по буквам.",
+      "why": "Чтобы записать имя правильно, диктуйте отдельные буквы.",
+      "pattern": "Can you spell your name? / T-O-M.",
+      "mistake": "Просто повторять Tom вместо T-O-M.",
+      "fix": "Spell требует последовательности букв.",
+      "example": "Can you spell your name?",
+      "translation": "Можете продиктовать имя по буквам?",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «Call me later.».",
+          "model": "Позвони мне позже.",
+          "accepted": [
+            "Позвони мне позже."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Позвони мне позже».",
+          "model": "Call me later.",
+          "accepted": [
+            "Call me later."
+          ]
+        },
+        "transfer": {
+          "prompt": "Попросите у нового знакомого номер телефона.",
+          "model": "What is your phone number?"
+        }
+      }
+    },
+    {
+      "slug": "a1-always-never",
+      "plain": "Always, sometimes, never показывают частоту.",
+      "why": "В простом утверждении они обычно стоят перед смысловым глаголом.",
+      "pattern": "I always read. / I never drink coffee.",
+      "mistake": "Дважды отрицать I don't never.",
+      "fix": "Never уже означает «никогда».",
+      "example": "I never drink coffee.",
+      "translation": "Я никогда не пью кофе.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «I always read.».",
+          "model": "Я всегда читаю.",
+          "accepted": [
+            "Я всегда читаю."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Я иногда гуляю».",
+          "model": "I sometimes walk.",
+          "accepted": [
+            "I sometimes walk."
+          ]
+        },
+        "transfer": {
+          "prompt": "Скажите, чего не делаете по воскресеньям.",
+          "model": "I never work on Sunday."
+        }
+      }
+    },
+    {
+      "slug": "a1-like-doing",
+      "plain": "Like + -ing рассказывает о любимом занятии.",
+      "why": "Reading — само занятие читать, book — предмет книга.",
+      "pattern": "I like reading. / I like books.",
+      "mistake": "Путать I like reading и I like book.",
+      "fix": "Для хобби тренируйте -ing после like.",
+      "example": "I like reading.",
+      "translation": "Мне нравится читать.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «I like walking.».",
+          "model": "Мне нравится гулять.",
+          "accepted": [
+            "Мне нравится гулять."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Мне нравится играть на гитаре».",
+          "model": "I like playing the guitar.",
+          "accepted": [
+            "I like playing the guitar."
+          ]
+        },
+        "transfer": {
+          "prompt": "Спросите о хобби друга и скажите, что любите читать.",
+          "model": "Do you like music? I like reading."
+        }
+      }
+    },
+    {
+      "slug": "a1-what-hurts",
+      "plain": "My ... hurts сообщает, какая часть тела болит.",
+      "why": "Одна часть тела — hurts, несколько — hurt.",
+      "pattern": "My back hurts. / My feet hurt.",
+      "mistake": "Говорить my feet hurts.",
+      "fix": "С двумя ступнями используйте hurt.",
+      "example": "My back hurts.",
+      "translation": "У меня болит спина.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «My feet hurt.».",
+          "model": "У меня болят ступни.",
+          "accepted": [
+            "У меня болят ступни."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «У меня болит голова».",
+          "model": "My head hurts.",
+          "accepted": [
+            "My head hurts."
+          ]
+        },
+        "transfer": {
+          "prompt": "Объясните врачу, что болит нога и вы устали.",
+          "model": "My leg hurts. I am tired."
+        }
+      }
+    },
+    {
+      "slug": "a1-cant-cannot",
+      "plain": "Can't и cannot означают «не могу».",
+      "why": "После can/can't глагол идёт без to.",
+      "pattern": "I can't work. / Can you help?",
+      "mistake": "Писать I can't to work.",
+      "fix": "После can't ставьте work без to.",
+      "example": "I can't sleep.",
+      "translation": "Я не могу спать.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «Sorry, I can't.».",
+          "model": "Извините, я не могу.",
+          "accepted": [
+            "Извините, я не могу."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Я не могу сегодня работать».",
+          "model": "I can't work today.",
+          "accepted": [
+            "I can't work today."
+          ]
+        },
+        "transfer": {
+          "prompt": "Откажитесь от прогулки вежливо и назовите причину.",
+          "model": "Sorry, I can't. I am busy."
+        }
+      }
+    },
+    {
+      "slug": "a1-dont-doesnt",
+      "plain": "Don't/doesn't делают обычные действия отрицательными.",
+      "why": "I/you → don't; he/she → doesn't.",
+      "pattern": "I don't know. / Tom doesn't live here.",
+      "mistake": "Писать He doesn't knows.",
+      "fix": "После doesn't глагол без -s.",
+      "example": "I don't know.",
+      "translation": "Я не знаю.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «He doesn't work here.».",
+          "model": "Он здесь не работает.",
+          "accepted": [
+            "Он здесь не работает."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Анна здесь не живёт».",
+          "model": "Anna doesn't live here.",
+          "accepted": [
+            "Anna doesn't live here."
+          ]
+        },
+        "transfer": {
+          "prompt": "Объясните, что у вас нет конверта и вы не знаете адрес.",
+          "model": "I don't have an envelope. I don't know the address."
+        }
+      }
+    },
+    {
+      "slug": "a1-letters-address",
+      "plain": "Адрес нужен, чтобы отправить письмо.",
+      "why": "В американском адресе номер дома часто называют до улицы.",
+      "pattern": "five Park Street / My last name is Belova.",
+      "mistake": "Путать имя и фамилию.",
+      "fix": "Last name означает фамилию.",
+      "example": "My last name is Belova.",
+      "translation": "Моя фамилия Белова.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «I need a stamp.».",
+          "model": "Мне нужна марка.",
+          "accepted": [
+            "Мне нужна марка."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Мне нужна марка».",
+          "model": "I need a stamp.",
+          "accepted": [
+            "I need a stamp."
+          ]
+        },
+        "transfer": {
+          "prompt": "На почте назовите адрес: дом 5 на Park Street.",
+          "model": "Five Park Street."
+        }
+      }
+    },
+    {
+      "slug": "a1-can-skills",
+      "plain": "Can + глагол рассказывает, что вы умеете.",
+      "why": "После can не нужен to, и глагол не получает -s.",
+      "pattern": "I can speak English. / She can draw.",
+      "mistake": "Говорить She can draws.",
+      "fix": "После can ставьте draw без -s.",
+      "example": "I can speak English.",
+      "translation": "Я умею говорить по-английски.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «She can draw.».",
+          "model": "Она умеет рисовать.",
+          "accepted": [
+            "Она умеет рисовать."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Я умею читать».",
+          "model": "I can read.",
+          "accepted": [
+            "I can read."
+          ]
+        },
+        "transfer": {
+          "prompt": "Спросите друга, умеет ли он говорить по-русски.",
+          "model": "Can you speak Russian?"
+        }
+      }
+    },
+    {
+      "slug": "a1-why-because",
+      "plain": "Why спрашивает почему; because объясняет причину.",
+      "why": "Why — вопрос, because — часть ответа.",
+      "pattern": "Why do you like it? Because it is new.",
+      "mistake": "Путать why и because.",
+      "fix": "В объяснении начинайте с because.",
+      "example": "Because I am tired.",
+      "translation": "Потому что я устал.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «Why do you like it?».",
+          "model": "Почему тебе это нравится?",
+          "accepted": [
+            "Почему тебе это нравится?"
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Потому что я устал».",
+          "model": "Because I am tired.",
+          "accepted": [
+            "Because I am tired."
+          ]
+        },
+        "transfer": {
+          "prompt": "Объясните другу, почему не можете гулять сегодня.",
+          "model": "I can't walk because I work today."
+        }
+      }
+    },
+    {
+      "slug": "a1-bus-ticket",
+      "plain": "В автобусе нужны вопросы о маршруте, билете и времени.",
+      "why": "Автобус — it, поэтому для вопроса о действии нужен does.",
+      "pattern": "Does this bus go to the park?",
+      "mistake": "Писать Does this bus goes?",
+      "fix": "После does используйте go без -s.",
+      "example": "Two tickets, please.",
+      "translation": "Два билета, пожалуйста.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «Does this bus go to the park?».",
+          "model": "Этот автобус идёт до парка?",
+          "accepted": [
+            "Этот автобус идёт до парка?"
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Один билет, пожалуйста».",
+          "model": "One ticket, please.",
+          "accepted": [
+            "One ticket, please."
+          ]
+        },
+        "transfer": {
+          "prompt": "Спросите водителя о маршруте и цене билета.",
+          "model": "Does this bus go to the park? How much is a ticket?"
+        }
+      }
+    },
+    {
+      "slug": "a1-review-everything",
+      "plain": "Итоговый урок объединяет вопросы, просьбы, время и отрицания.",
+      "why": "Самостоятельность — выбрать правило в новой ситуации, без банка слов.",
+      "pattern": "I don't know. / Where is the bank? / I can help.",
+      "mistake": "Пытаться применить одно правило ко всем предложениям.",
+      "fix": "Сначала определите цель: спросить, объяснить или попросить.",
+      "example": "I am from Russia.",
+      "translation": "Я из России.",
+      "tasks": {
+        "meaning": {
+          "prompt": "Передайте по-русски смысл: «I can speak English.».",
+          "model": "Я умею говорить по-английски.",
+          "accepted": [
+            "Я умею говорить по-английски."
+          ]
+        },
+        "writing": {
+          "prompt": "Напишите «Я не знаю, где банк».",
+          "model": "I don't know where the bank is.",
+          "accepted": [
+            "I don't know where the bank is."
+          ]
+        },
+        "transfer": {
+          "prompt": "Представьтесь, назовите страну и спросите дорогу к автобусной остановке.",
+          "model": "I am Anna. I am from Russia. Where is the bus stop?"
+        }
+      }
+    }
+  ]
+}
