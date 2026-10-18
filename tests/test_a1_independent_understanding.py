@@ -31,6 +31,20 @@ class A1ClarityQualityGatesTests(SimpleTestCase):
         self.assertFalse(quality_gates(document)["06_all_guide_sections"])
         self.assertFalse(quality_gates(document)["08_explicit_reason_length"])
 
+    def test_missing_or_duplicate_meaning_contrast_fails_gate(self):
+        document = json.loads((settings.CONTENT_DIR / "manifests" /
+                               "a1_understanding_checks.json").read_text(encoding="utf-8"))
+        document["lessons"][0]["contrast"]["b_en"] = document["lessons"][0]["contrast"]["a_en"]
+        self.assertFalse(quality_gates(document)["11_examples_not_empty"])
+
+    def test_explain_why_prompt_must_not_supply_the_rule(self):
+        document = json.loads((settings.CONTENT_DIR / "manifests" /
+                               "a1_understanding_checks.json").read_text(encoding="utf-8"))
+        document["lessons"][0]["tasks"]["explain"]["prompt"] = (
+            "Объясните, почему работает такая схема: " + document["lessons"][0]["pattern"]
+        )
+        self.assertFalse(quality_gates(document)["15_bounds_and_no_model_in_prompt"])
+
     def test_duplicate_slug_fails_audit(self):
         document = json.loads((settings.CONTENT_DIR / "manifests" /
                                "a1_understanding_checks.json").read_text(encoding="utf-8"))
@@ -67,6 +81,8 @@ class A1IndependentAssessmentTests(TestCase):
                 self.assertContains(response, "Типичная ошибка")
                 self.assertContains(response, "Как исправить")
                 self.assertContains(response, "Проверить себя самостоятельно")
+                self.assertContains(response, "Сравните — почему смысл меняется?")
+                self.assertContains(response, "В чём разница:")
                 for i in range(1, 8):
                     self.assertContains(response, f'id="layer-{i}"')
 
