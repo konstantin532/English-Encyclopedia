@@ -1,4 +1,4 @@
-/* Optional reading routes for A1 lessons 1–4.
+/* Optional reading routes for all 28 A1 lessons.
  * All seven original layers remain available and visible by default.
  * No audio, grading, learner progress, or lesson content is changed.
  */
