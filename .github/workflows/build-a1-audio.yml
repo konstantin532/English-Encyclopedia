@@ -21,7 +21,7 @@ jobs:
         run: uv run python -m scripts.audio_review_sheet --output audio-human-review.csv
       - name: Package generated audio and calculate immutable SHA-256
         run: |
-          python -m zipfile -c a1-generated-audio.zip static/audio
+          python -m scripts.package_audio_archive --output a1-generated-audio.zip
           sha256sum a1-generated-audio.zip | tee a1-generated-audio.sha256
       - uses: actions/upload-artifact@v4
         with:
