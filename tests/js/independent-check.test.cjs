@@ -44,3 +44,17 @@ test("no-JavaScript page stays usable, incomplete markup fails open", ()=>{
   assert.equal(f.button.disabled,false);
   assert.equal(f.form.listeners.submit,undefined);
 });
+
+test("server-side validation error receives keyboard/TalkBack focus", ()=>{
+  const f=fixture();
+  let focused=0;
+  const old=f.doc.querySelector;
+  f.doc.querySelector=function(selector){
+    if (selector === ".independent-form-error[role='alert']")
+      return {focus(){focused += 1;}};
+    return old(selector);
+  };
+  init(f.doc,f.win);
+  assert.equal(focused,1);
+  assert.equal(f.button.disabled,false);
+});
