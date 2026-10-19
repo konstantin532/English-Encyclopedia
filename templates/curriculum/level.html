@@ -19,7 +19,7 @@
   </div>
   <section class="section" aria-labelledby="weeks-title">
     <div class="section-head"><h2 id="weeks-title">Недели курса</h2></div>
-    <div class="week-list">{% for week in weeks %}<a class="week-card" href="{% url 'curriculum:week' level.slug week.number %}"><strong>{{ week.number }} · {{ week.situation_ru|default:week.theme_ru }}</strong><span>{{ week.get_sphere_display }}</span>{% if not week.scene %}<small>готовится</small>{% endif %}</a>{% endfor %}</div>
+    <div class="week-list">{% for week in weeks %}<a class="week-card{% if week.atlas_cover_url %} week-card-atlas{% endif %}" href="{% url 'curriculum:week' level.slug week.number %}">{% if week.atlas_cover_url %}<img class="week-card-art" src="{{ week.atlas_cover_url }}" alt="" width="1440" height="810" loading="lazy" decoding="async">{% endif %}<strong>{{ week.number }} · {{ week.situation_ru|default:week.theme_ru }}</strong><span>{{ week.get_sphere_display }}</span>{% if not week.scene %}<small>готовится</small>{% endif %}</a>{% endfor %}</div>
   </section>
   <section class="section" aria-labelledby="lessons-title" style="padding-top: var(--space-6)">
     <div class="section-head"><h2 id="lessons-title">Уроки</h2></div>

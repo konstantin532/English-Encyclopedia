@@ -326,3 +326,144 @@
     }
   }
 }
+@layer ee-polish {
+  /* A1 illustrated chapter collection — art is absolutely positioned so card geometry stays intact. */
+  .week-card-atlas {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--surface);
+    border-color: color-mix(in srgb, var(--cinema-gold) 27%, var(--rule));
+  }
+  .week-card-atlas .week-card-art {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: 64% center;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .week-card-atlas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--surface) 97%, transparent) 0%, color-mix(in srgb, var(--surface) 92%, transparent) 47%, color-mix(in srgb, var(--surface) 42%, transparent) 82%, transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .week-card-atlas > strong,
+  .week-card-atlas > span,
+  .week-card-atlas > small {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 1px 0 color-mix(in srgb, var(--surface) 74%, transparent);
+  }
+  .week-hero-atlas .week-hero-image {
+    object-position: 60% center;
+  }
+  .week-hero-atlas::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--surface) 94%, transparent) 0%, color-mix(in srgb, var(--surface) 82%, transparent) 34%, color-mix(in srgb, var(--surface) 19%, transparent) 70%, transparent);
+    pointer-events: none;
+  }
+  .week-hero-atlas .week-hero-copy {
+    position: relative;
+    z-index: 2;
+  }
+  /* No JS: the phrase and its original role captions are still readable. */
+  .studio-phrase-roles .atlas-grammar-control {
+    appearance: none;
+    border: 1px solid color-mix(in srgb, var(--cinema-gold) 28%, var(--rule));
+    border-radius: 5px;
+    padding-block: 5px;
+    padding-inline: 10px;
+    background: color-mix(in srgb, var(--surface) 86%, var(--cinema-cream));
+    color: var(--ink-soft);
+    font: 10px var(--font-ui);
+    line-height: inherit;
+    cursor: pointer;
+    transition: background-color 180ms ease, box-shadow 180ms ease;
+  }
+  .studio-phrase-roles .atlas-grammar-control[aria-pressed=true] {
+    background: var(--studio-mint);
+    color: var(--ink);
+    box-shadow: inset 0 -2px 0 var(--cinema-gold);
+  }
+  .studio-phrase-roles .atlas-grammar-control:focus-visible {
+    outline: 3px solid var(--ee-focus);
+    outline-offset: 3px;
+  }
+  .studio-phrase-paper[data-atlas-focus=subject] .studio-phrase .mk[data-cat=T],
+  .studio-phrase-paper[data-atlas-focus=be] .studio-phrase .mk[data-cat=D],
+  .studio-phrase-paper[data-atlas-focus=place] .studio-phrase .mk[data-cat=S] {
+    background: color-mix(in srgb, var(--studio-mint) 85%, transparent);
+    border-radius: 4px;
+  }
+  .studio-phrase-paper [data-atlas-explanation] {
+    color: var(--ink-soft);
+  }
+  @media (max-width: 700px) {
+    .week-card-atlas::before {
+      background: linear-gradient(90deg, var(--surface) 0%, color-mix(in srgb, var(--surface) 93%, transparent) 49%, color-mix(in srgb, var(--surface) 47%, transparent));
+    }
+    .week-hero-atlas::after {
+      background: linear-gradient(90deg, color-mix(in srgb, var(--surface) 96%, transparent), color-mix(in srgb, var(--surface) 77%, transparent) 60%, color-mix(in srgb, var(--surface) 30%, transparent));
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .studio-phrase-roles .atlas-grammar-control {
+      transition: none;
+    }
+  }
+  @media (forced-colors: active) {
+    .week-card-atlas .week-card-art,
+    .week-hero-atlas .week-hero-image {
+      opacity: 0.2;
+    }
+    .week-card-atlas::before,
+    .week-hero-atlas::after {
+      display: none;
+    }
+    .studio-phrase-roles .atlas-grammar-control[aria-pressed=true] {
+      outline: 2px solid Highlight;
+      outline-offset: -2px;
+    }
+  }
+}
+@layer ee-polish {
+  /* Drawn character portraits replace decorative initials, not actual speaker names. */
+  .story-script .speaker-anna::before,
+  .story-script .speaker-tom::before,
+  .story-script .speaker-barista::before {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    text-shadow: none;
+    outline: 1px solid color-mix(in srgb, var(--cinema-gold) 33%, var(--rule));
+    outline-offset: -1px;
+  }
+  .story-script .speaker-anna::before {
+    background-image: url("../img/studio/atlas-portrait-anna.svg");
+  }
+  .story-script .speaker-tom::before {
+    background-image: url("../img/studio/atlas-portrait-tom.svg");
+  }
+  .story-script .speaker-barista::before {
+    background-image: url("../img/studio/atlas-portrait-barista.svg");
+  }
+  @media (forced-colors: active) {
+    .story-script .speaker-anna::before,
+    .story-script .speaker-tom::before,
+    .story-script .speaker-barista::before {
+      background-image: none;
+      color: CanvasText;
+      outline-color: CanvasText;
+    }
+  }
+}
