@@ -50,3 +50,20 @@ Experimental protocol and literature caveats: [2026-10-19-learning-engine-study.
 2. True versioned skill observations and item-bank links (after expert-authored taxonomy); avoid five premature data tables.
 3. A pre-registered randomized or matched comparison with separate controls at baseline, 7 and 30 days.
 4. A distinct multi-talker phonetic **perception** pilot for one contrast only when licensed, reviewable audio is available.
+
+
+## Phonetic perception pilot — editorial and technical contract, not activated
+
+**Choose one contrast:** General American /ɪ/ vs /i/ (for example `ship` / `sheep`). This is a receptive discrimination pilot; do not label it a diagnosis of the learner's production or speaking skills. The existing café audio has particular named synthetic voices, but has **not** been shown to satisfy a multi-talker, held-out-stimulus HVPT protocol. No pseudo-voice or `test-tone` should be introduced as audio evidence.
+
+**Editorial/audio gates before building UI:**
+
+1. Prepare a modest bank of natural, A1-comprehensible real words contrasting /ɪ/ and /i/, balanced by consonantal frame and checked for acoustic and semantic confounds. Keep word-pair IDs and dialect/accent metadata.
+2. Acquire permission to store and distribute recordings; recruit/review at least three distinguishable General American voices and check accurate intended phoneme, natural stress, usable signal quality and no accidentally spoken answer label.
+3. Split words and talkers by role: training and unseen held-out test material; seal test answer keys server-side. Archive source/license, SHA-256 digest and teacher review per asset.
+4. Make each listening trial playable without microphone, keyboard-only and with a textual alternative clearly marked **not a listening assessment**. Keep visual context neutral; avoid English orthographic answer cues before the first response.
+5. Log `speaker_id`, `stimulus_id`, training/test role, first response, correct/incorrect closed category, replay count, hint use and time. Keep *perception* separate from optional free oral practice and staff pronunciation ratings.
+
+**Pre-release acceptance tests:** refuse missing, zero-byte, test-tone, swapped or altered assets; refuse repeated test stimuli in train; do not expose held-out audio keys or answers in HTML/JSON; shuffle choices without switching key; verify same user/session boundaries, CSRF and idempotency; keyboard navigation, screen reader announcements, slow loading/offline failure, narrow viewport, and audio-disabled fallback. An evaluation on **previously unheard voices and words** is necessary to measure generalization. Collect baseline and delayed +7/+30 measures before any effectiveness claim.
+
+Reference: Uchihara et al. (2025) identifies perceptual improvement and some generalization/retention with substantial moderator variation. Its group-average effect does **not** establish that this application accelerates pronunciation or oral communication.
