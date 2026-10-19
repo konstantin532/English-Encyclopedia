@@ -39,7 +39,6 @@
     box-shadow: 0 5px 10px color-mix(in srgb, var(--cinema-deep) 6%, transparent), 0 36px 86px var(--editorial-shadow), inset 0 1px 0 var(--surface);
   }
   .studio-hero-copy h2 {
-    text-wrap: balance;
     text-shadow: 0 2px 14px color-mix(in srgb, var(--cinema-deep) 8%, transparent);
   }
   .studio-hero-copy h2 em {
@@ -67,7 +66,6 @@
   /* Editorial chapter markers and bookplates. No dimensions changed. */
   .page-head h1,
   .studio-home-heading h1 {
-    text-wrap: balance;
     text-shadow: 0 1px 0 color-mix(in srgb, var(--surface) 70%, transparent);
   }
   .page-head .crumbs {
@@ -112,7 +110,6 @@
   .studio-home-notes .studio-note blockquote {
     font-family: var(--font-read);
     color: var(--ink);
-    text-wrap: pretty;
   }
   .studio-library-stats strong,
   .stat b {
@@ -131,7 +128,6 @@
     box-shadow: 0 5px 12px color-mix(in srgb, var(--cinema-deep) 7%, transparent), 0 28px 72px var(--editorial-shadow), inset 0 1px 0 var(--surface);
   }
   .week-hero-copy h1 {
-    text-wrap: balance;
     text-shadow: 0 2px 17px color-mix(in srgb, white 48%, transparent);
   }
   .week-hero .studio-eyebrow {
