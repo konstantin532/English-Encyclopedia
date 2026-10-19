@@ -18,7 +18,8 @@
 
   <nav class="active-a1-steps" aria-label="Шаги практики">
     <a href="#a1-listen">01 Слушаем</a>
-    <a href="#a1-understand">02 Проверяем</a>
+    <a href="#a1-retrieve">02 Вспоминаем и записываем</a>
+    <a href="#a1-understand">03 Проверяем</a>
     <a href="#a1-why">03 Понимаем</a>
     <a href="#a1-answer">04 Отвечаем</a>
     <a href="#a1-transfer">05 Применяем</a>
@@ -46,6 +47,37 @@
       <div class="active-a1-line"><strong>{{ line.0 }}</strong><span lang="en">{{ line.1 }}</span><span class="active-a1-ru">{{ line.2 }}</span><button class="active-a1-line-btn" type="button" data-a1-play-line="{{ forloop.counter0 }}" aria-label="Прослушать реплику {{ forloop.counter }}">▶</button></div>
       {% endfor %}
     </div>
+  </section>
+
+  <section class="active-a1-panel" id="a1-retrieve" aria-labelledby="a1-retrieve-title">
+    <p class="active-a1-kicker">НОВЫЕ ФОРМАТЫ: СЛУШАЕМ И ВОССТАНАВЛИВАЕМ</p>
+    <h2 id="a1-retrieve-title">Два дополнительных задания без готовых вариантов</h2>
+    <p>Сначала попробуйте сами. Это самостоятельная практика, но не формальный тест аудирования или свободного владения языком. Проверка сравнивает с одним образцом.</p>
+    <div class="active-a1-retrieval-grid">
+      <form data-a1-dictation>
+        <h3>1. Запишите услышанную реплику</h3>
+        <p>Послушайте короткую реплику, не открывая текст диалога выше, затем напишите услышанное.</p>
+        <button type="button" class="active-a1-btn" data-a1-dictation-play>▶ Прослушать фразу</button>
+        <p data-a1-dictation-availability class="active-a1-subtle" role="status">Нужен системный голос en-US.</p>
+        <label for="active-a1-dictation-input">Что вы услышали?</label>
+        <input id="active-a1-dictation-input" data-a1-dictation-input lang="en" maxlength="240" required autocomplete="off" autocapitalize="off" spellcheck="false">
+        <button type="submit" class="active-a1-btn active-a1-btn-primary">Сверить запись</button>
+        <p data-a1-dictation-feedback role="status" aria-live="polite" class="active-a1-feedback" hidden></p>
+        <p data-a1-dictation-model lang="en" hidden></p>
+      </form>
+      <form data-a1-backtranslation>
+        <h3>2. Восстановите английскую фразу по смыслу</h3>
+        <p lang="ru" data-a1-backtranslation-prompt></p>
+        <label for="active-a1-backtranslation-input">Как бы вы сказали это по-английски?</label>
+        <input id="active-a1-backtranslation-input" data-a1-backtranslation-input lang="en" maxlength="240" required autocomplete="off" autocapitalize="off" spellcheck="false">
+        <button type="submit" class="active-a1-btn active-a1-btn-primary">Посмотреть один образец</button>
+        <p data-a1-backtranslation-feedback role="status" aria-live="polite" class="active-a1-feedback" hidden></p>
+        <p data-a1-backtranslation-model lang="en" hidden></p>
+      </form>
+    </div>
+    <noscript><div role="note"><p>JavaScript отключён: интерактивная проверка недоступна, но диалог и перевод можно прочитать:</p>
+      <ol>{% for line in topic.dialogue %}<li><strong>{{ line.0 }}</strong>: <span lang="en">{{ line.1 }}</span> — {{ line.2 }}</li>{% endfor %}</ol>
+      <p>Основной урок доступен без интерактивных скриптов.</p></div></noscript>
   </section>
 
   <section class="active-a1-panel" id="a1-understand" aria-labelledby="a1-understand-title">

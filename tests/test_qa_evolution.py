@@ -31,6 +31,9 @@ class ProgressiveQualityTests(SimpleTestCase):
     def test_normalize_trailing_punctuation(self):
         self.assertEqual(Exercise.normalize(" Hello!? "), "hello")
 
+    def test_normalize_comma_as_separator(self):
+        self.assertEqual(Exercise.normalize("Tea, please"), "tea please")
+
     def test_exercise_accepts_alternative_answers(self):
         exercise = Exercise(answer="thanks", accepted=["thank you"])
         self.assertTrue(exercise.is_correct("Thank you."))

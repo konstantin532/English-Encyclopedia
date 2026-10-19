@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.db import connections, DatabaseError
+from django.http import JsonResponse
+from django.views.decorators.cache import never_cache
 
 from apps.curriculum.models import Level
 from apps.curriculum.registry import LEVEL_BY_CODE, TOTAL_POEMS, TOTAL_STORIES, TOTAL_UNITS
@@ -31,6 +34,18 @@ def hero_tokens():
         tokens.append({"word": word, "cat": code, "cls": num, "punct": punct,
                        "caption": SHORT_NAMES[code], "label": f"{CATEGORY_BY_CODE[code].name_ru}: {cls_name}"})
     return tokens
+
+
+@never_cache
+def healthz(request):
+    """Readiness: a working database, not proof of course/audio quality."""
+    try:
+        with connections["default"].cursor() as cursor:
+            cursor.execute("SELECT 1")
+            cursor.fetchone()
+    except DatabaseError:
+        return JsonResponse({"status": "unavailable"}, status=503)
+    return JsonResponse({"status": "ok"})
 
 
 def home(request):

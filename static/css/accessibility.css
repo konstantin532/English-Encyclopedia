@@ -27,3 +27,17 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Preserve native semantics in Windows High Contrast; don't communicate by hue alone. */
+@media (forced-colors: active) {
+  :focus-visible { outline: 3px solid Highlight !important; }
+  .mk { forced-color-adjust: auto; text-decoration-color: CanvasText !important; }
+  .choice[aria-pressed="true"], [aria-current="page"], [aria-current="step"] {
+    outline: 2px solid Highlight; outline-offset: 2px;
+  }
+  .drill-feedback, [role="status"], [role="alert"] { border-color: CanvasText; }
+}
+@media (max-width: 430px) {
+  .poem-gaps input, .drill .fill-input { max-width: 100%; min-width: 0; box-sizing: border-box; }
+  .drill-actions button { min-height: 44px; }
+}

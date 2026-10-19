@@ -144,3 +144,23 @@ test('the six open-ended situations never pretend to auto-grade creative languag
   assert.doesNotMatch(js,/fetch\s*\(/);
   assert.doesNotMatch(js,/localStorage\./);
 });
+
+test('every A1 lesson can provide a listening and reverse-translation retrieval item', () => {
+  for (const item of entries) {
+    const line = a1.retrievalLine(item);
+    assert.ok(line, 'lesson '+item.n);
+    assert.ok(line[1].trim() && line[2].trim(), 'both English and Russian '+item.n);
+    assert.equal(a1.compareModelAnswer(line[1], line[1], []), true);
+  }
+  assert.equal(a1.retrievalLine({n: 1, dialogue: []}), null);
+});
+
+test('retrieval interface conceals answer until user submits a nonempty response', () => {
+  const html = fs.readFileSync(path.join(__dirname, '../../templates/core/a1_active_topic.html'), 'utf8');
+  const js = fs.readFileSync(path.join(__dirname, '../../static/js/a1-active.js'), 'utf8');
+  assert.match(html, /id="a1-retrieve"/);
+  assert.match(html, /data-a1-dictation-model lang="en" hidden/);
+  assert.match(html, /data-a1-backtranslation-model lang="en" hidden/);
+  assert.match(js, /if \(!firstAnswer.value.trim\(\)\) return/);
+  assert.match(js, /if \(!secondAnswer.value.trim\(\)\) return/);
+});

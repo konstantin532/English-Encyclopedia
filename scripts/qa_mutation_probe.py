@@ -12,6 +12,7 @@ from pathlib import Path
 MUTATIONS = (
     ("Curly apostrophes", '.replace("’", "\'")', '.replace("’", "’")', "test_normalize_curly_apostrophe"),
     ("Trailing punctuation", '.strip(" .!?")', '.strip(" ")', "test_normalize_trailing_punctuation"),
+    ("Comma separation", '.replace(",", " ")', '.replace(",", ",")', "test_normalize_comma_as_separator"),
     ("Accepted alternatives", "[self.answer, *self.accepted]", "[self.answer]", "test_exercise_accepts_alternative_answers"),
 )
 

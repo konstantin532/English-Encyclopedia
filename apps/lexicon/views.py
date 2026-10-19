@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, render
 
 from apps.curriculum.models import Level
@@ -17,8 +18,12 @@ def unit_list(request):
         units = units.filter(internal_level__code=level)
     if cat:
         units = units.filter(part_of_speech__code=cat)
+    page_obj = Paginator(units, 48).get_page(request.GET.get("page"))
+    params = request.GET.copy()
+    params.pop("page", None)
     return render(request, "lexicon/list.html", {
-        "units": units, "levels": Level.objects.all(), "categories": PartOfSpeech.objects.all(),
+        "units": page_obj, "page_obj": page_obj,
+        "total_units": page_obj.paginator.count, "querystring": params.urlencode(), "levels": Level.objects.all(), "categories": PartOfSpeech.objects.all(),
         "active_level": level, "active_cat": cat, "search_query": query,
     })
 

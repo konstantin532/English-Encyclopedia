@@ -31,7 +31,7 @@
           {% for item in story.questions %}
           <div class="drill" data-open-question>
             <p class="drill-prompt">{{ forloop.counter }}. {{ item.q }}</p>
-            <label class="visually-hidden" for="oq{{ forloop.counter }}">Ваш ответ</label>
+            <label class="visually-hidden" for="oq{{ forloop.counter }}">Ваш ответ на вопрос {{ forloop.counter }}</label>
             <input class="fill-input" id="oq{{ forloop.counter }}" autocomplete="off" lang="en" placeholder="ваш ответ">
             <div class="drill-actions"><button class="btn btn-quiet btn-small" type="button" data-compare>Сравнить с ответом</button></div>
             <div class="drill-feedback" data-state="reveal" hidden data-model-answer>{{ item.a }}</div>
@@ -45,7 +45,7 @@
         <p>Найдите каждую фразу в тексте и подумайте, зачем она. Нажмите, чтобы подсветить и проверить.</p>
         <ul class="hunt">
           {% for h in story.phrase_hunt %}
-          <li><button class="choice" type="button" lang="en" data-hunt="{{ h.phrase }}" aria-expanded="false">{{ h.phrase }}</button> <span class="hunt-fn" hidden>{{ h.function }}</span></li>
+          <li><button class="choice" type="button" lang="en" data-hunt="{{ h.phrase }}" aria-expanded="false" aria-controls="hunt-function-{{ forloop.counter }}">{{ h.phrase }}</button> <span class="hunt-fn" id="hunt-function-{{ forloop.counter }}" hidden>{{ h.function }}</span></li>
           {% endfor %}
         </ul>
       </section>

@@ -7,6 +7,7 @@
   document.querySelectorAll("[data-open-question]").forEach((box) => {
     const input = box.querySelector("input");
     const model = box.querySelector("[data-model-answer]");
+    input.addEventListener("input", () => { model.hidden = true; });
     box.querySelector("[data-compare]").addEventListener("click", () => {
       if (!input.value.trim()) { input.focus(); input.placeholder = "сначала напишите свой вариант"; return; }
       model.hidden = false;
@@ -25,6 +26,10 @@
       const at = plain.indexOf(phrase.replace(/[.!?]$/, ""));
       if (at >= 0) { highlight(p, at, at + phrase.replace(/[.!?]$/, "").length); p.scrollIntoView({ block: "center", behavior: calm ? "smooth" : "auto" }); break; }
     }
+    document.querySelectorAll("[data-hunt]").forEach((other) => {
+      other.setAttribute("aria-expanded", "false");
+      if (other.nextElementSibling) other.nextElementSibling.hidden = true;
+    });
     const fn = btn.nextElementSibling;
     fn.hidden = false;
     btn.setAttribute("aria-expanded", "true");
@@ -51,26 +56,71 @@
   const gapsBox = document.querySelector("[data-poem]");
   if (gapsBox) {
     const revealBtn = document.querySelector("[data-gaps-reveal]");
-    const post = (url, body) => fetch(url, { method: "POST", headers: { "Content-Type": "application/json", "X-CSRFToken": csrf() }, body: JSON.stringify(body) }).then((r) => r.json());
-    document.querySelector("[data-gaps-check]").addEventListener("click", async () => {
-      let allRight = true;
-      for (const input of gapsBox.querySelectorAll("[data-gap]")) {
-        const mark = input.nextElementSibling;
-        if (!input.value.trim()) { mark.textContent = " ?"; allRight = false; continue; }
-        const data = await post(input.dataset.url, { answer: input.value });
-        mark.textContent = data.correct ? " ✓" : " ✗";
-        mark.dataset.state = data.correct ? "ok" : "no";
-        input.setAttribute("aria-invalid", String(!data.correct));
-        if (!data.correct) allRight = false;
+    const checkBtn = document.querySelector("[data-gaps-check]");
+    const status = document.querySelector("[data-gaps-status]");
+    const inputs = [...gapsBox.querySelectorAll("[data-gap]")];
+    let busy = false;
+    const post = async (url, body) => {
+      const response = await fetch(url, { method: "POST", headers: {
+        "Content-Type": "application/json", "X-CSRFToken": decodeURIComponent(csrf()),
+      }, body: JSON.stringify(body) });
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      const result = await response.json();
+      if (typeof result !== "object" || result === null) throw new Error("Bad response");
+      return result;
+    };
+    async function runChecks(reveal) {
+      if (busy) return;
+      busy = true;
+      checkBtn.disabled = true;
+      revealBtn.disabled = true;
+      status.textContent = reveal ? "Загружаем образцы…" : "Проверяем ответы…";
+      let incorrect = 0;
+      let firstInvalid = null;
+      try {
+        for (const input of inputs) {
+          const mark = input.nextElementSibling;
+          if (!reveal && !input.value.trim()) {
+            mark.textContent = " — заполните пропуск";
+            mark.dataset.state = "no";
+            input.setAttribute("aria-invalid", "true");
+            incorrect++;
+            firstInvalid ||= input;
+            continue;
+          }
+          if (reveal && input.getAttribute("aria-invalid") === "false") continue;
+          const data = await post(input.dataset.url, reveal ? { reveal: true } : { answer: input.value });
+          if (reveal) {
+            if (typeof data.answer !== "string") throw new Error("Missing answer");
+            input.value = data.answer;
+            mark.textContent = " — образец показан";
+            mark.dataset.state = "reveal";
+            input.removeAttribute("aria-invalid");
+          } else {
+            if (typeof data.correct !== "boolean") throw new Error("Missing result");
+            mark.textContent = data.correct ? " — верно" : " — попробуйте ещё раз";
+            mark.dataset.state = data.correct ? "ok" : "no";
+            input.setAttribute("aria-invalid", String(!data.correct));
+            if (!data.correct) {
+              incorrect++;
+              firstInvalid ||= input;
+            }
+          }
+        }
+        status.textContent = reveal ? "Образцы показаны. Попробуйте объяснить, почему нужны эти слова."
+          : incorrect ? "Осталось проверить или исправить пропусков: " + incorrect + "."
+            : "Все заполненные пропуски совпали с образцами.";
+        revealBtn.hidden = reveal || incorrect === 0;
+        if (!reveal && firstInvalid) firstInvalid.focus();
+      } catch (_) {
+        status.textContent = "Сервер недоступен или ответ неполон. Ваш введённый текст сохранён на странице; проверьте соединение и повторите.";
+      } finally {
+        busy = false;
+        checkBtn.disabled = false;
+        revealBtn.disabled = false;
       }
-      revealBtn.hidden = allRight;
-    });
-    revealBtn.addEventListener("click", async () => {
-      for (const input of gapsBox.querySelectorAll("[data-gap]")) {
-        const data = await post(input.dataset.url, { reveal: true });
-        if (input.getAttribute("aria-invalid") !== "false") { input.value = data.answer; input.nextElementSibling.textContent = " ←"; }
-      }
-      revealBtn.hidden = true;
-    });
+    }
+    checkBtn.addEventListener("click", () => runChecks(false));
+    revealBtn.addEventListener("click", () => runChecks(true));
   }
 })();

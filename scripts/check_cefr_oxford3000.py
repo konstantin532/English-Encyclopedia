@@ -10,6 +10,7 @@
 Скрипт сверяет пару «слово + часть речи». Oxford даёт уровень для слова в целом,
 поэтому подтверждение записывается как partial: значение отдельно не проверяется.
 """
+import json
 import re
 import sys
 from pathlib import Path
@@ -40,6 +41,17 @@ def parse_list(path: Path) -> dict[str, list[tuple[str, str]]]:
         index.setdefault(word, []).append((level, line))
     return index
 
+def matches_category(entry: str, category: str) -> bool:
+    """Only distinct POS abbreviations, not 'n.' buried in 'pron.' etc."""
+    terms = CATEGORY_POS.get(category, [])
+    return any(re.search(r"(?<![A-Za-z])" + re.escape(term) + r"(?![A-Za-z])", entry, re.I)
+               for term in terms)
+
+
+def unambiguous_hit(hits, category: str):
+    possible = [hit for hit in hits if matches_category(hit[1], category)]
+    return possible[0] if len({hit[0] for hit in possible}) == 1 and possible else None
+
 
 def main() -> int:
     if len(sys.argv) < 2:
@@ -57,8 +69,7 @@ def main() -> int:
             lemma = re.search(r"lemma: \"?([^\"\n]+)\"?", body).group(1).strip().lower()
             code = re.search(r"class: ([A-Z])", body).group(1)
             hits = index.get(lemma, [])
-            wanted = CATEGORY_POS[code]
-            match = next((h for h in hits if any(p in h[1] for p in wanted)), None)
+            match = unambiguous_hit(hits, code)
             if not match:
                 problems += 1
                 print(f"{uid} {lemma}: нет в Oxford 3000 для этой части речи ({hits or 'слова нет'})")
@@ -68,7 +79,7 @@ def main() -> int:
             if write:
                 note = f"Oxford 3000 (American English): {entry} — {level}. Уровень дан для слова, значение отдельно не сверялось"
                 new_body = re.sub(r"cefr: \S+", f"cefr: {level}", body, count=1)
-                new_body = re.sub(r"verification_note: .*", f'verification_note: "{note}"', new_body, count=1)
+                new_body = re.sub(r"verification_note: .*", lambda _: "verification_note: " + json.dumps(note, ensure_ascii=False), new_body, count=1)
                 if "verification_status:" in new_body:
                     new_body = re.sub(r"verification_status: \S+", "verification_status: partial", new_body, count=1)
                 else:
