@@ -336,7 +336,9 @@ class RotatingIndependentReviewTests(TestCase):
         self.assertContains(response, 'name="rubric_context"', count=6)
         self.assertContains(response, 'name="rubric_independence"', count=6)
         self.assertContains(response, "Как у вас получилось?")
-        self.assertContains(response, 'aria-describedby="prompt-transfer"')
+        self.assertNotContains(response, 'aria-describedby="prompt-transfer"')
+        self.assertNotContains(response, 'name="answer_transfer"')
+        self.assertContains(initial, 'aria-describedby="prompt-transfer"')
         self.assertContains(response, 'lang="en"')
 
     def test_cross_user_cannot_read_or_rate_another_student(self):
