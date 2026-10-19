@@ -54,3 +54,15 @@ test("all fourteen original SVG covers exist and catalogue/chapter reference the
   assert.match(hero, /cafe-morning\.webp/);
   assert.match(catalog, /week-card-art/);
 });
+
+test("speaker portraits reuse existing dialogue badges and keep labels accessible", () => {
+  const css = read("static/scss/editorial-world.scss");
+  const dialogue = read("templates/components/script_player.html");
+  for (const name of ["anna", "tom", "barista"]) {
+    const file = "static/img/studio/atlas-portrait-" + name + ".svg";
+    assert.match(read(file), /<svg[^>]*viewBox=/);
+    assert.ok(css.includes('atlas-portrait-' + name + '.svg'));
+  }
+  assert.match(dialogue, /speaker-\{\{ l\.speaker \}\}/);
+  assert.match(css, /@media \(forced-colors: active\)/);
+});
