@@ -104,12 +104,11 @@ class A1IndependentAssessmentTests(TestCase):
         initial = self.client.get(self.url)
         self.assertNotContains(initial, "Типичная ловушка:")
         self.assertNotContains(initial, "Как себя проверить:")
-        sample = understanding_bank()[self.lesson.slug]["tasks"]["writing"]["model"]
         checked = self.send_blind_batch()
         self.assertEqual(checked.status_code, 200)
-        self.assertContains(checked, "Типичная ловушка:")
-        self.assertContains(checked, "Как себя проверить:")
-        self.assertContains(checked, "Почему здесь так? Разобрать правило")
+        self.assertContains(checked, "Типичная ошибка:")
+        self.assertContains(checked, "Как проверить себя:")
+        self.assertContains(checked, "Разобрать правило после четырёх ответов")
 
     def test_blind_full_attempt_shows_no_model_until_all_four_responses(self):
         guide = understanding_bank()[self.lesson.slug]
