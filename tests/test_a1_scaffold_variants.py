@@ -427,8 +427,8 @@ class RotatingIndependentReviewTests(TestCase):
         self.assertContains(first, "autocomplete=\"off\"")
         result = self.batch(variant=0)
         self.assertEqual(result.status_code, 200)
-        self.assertContains(result, "aria-label=\"Самооценка ответа transfer")
-        self.assertContains(result, "aria-label=\"Самооценка ответа explain")
+        self.assertContains(result, "Самооценка: применение в ситуации")
+        self.assertContains(result, "Самооценка: объяснение правила")
         self.assertContains(result, "Исходный вопрос:")
 
     def test_cross_user_cannot_read_or_rate_another_student(self):
