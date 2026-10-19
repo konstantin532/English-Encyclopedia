@@ -55,6 +55,9 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
       await word.press('Escape');assert.equal(await word.getAttribute('aria-expanded'),'false');
       assert.equal(await word.evaluate(el=>el===document.activeElement),true);
      }
+     if (name==='collection' && width<700) {
+      await page.locator('.week-list').screenshot({path:path.join(output,`collection-cards-${width}-${state}.png`)});
+     }
      await context.close();
     }
     let maxDelta=0;
@@ -85,6 +88,8 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
   await full.addInitScript(()=>localStorage.setItem('ee-motion-mode','full'));
   const animated=await full.newPage();await ready(animated,'http://127.0.0.1:8124/');
   await animated.locator('.atlas-grammar-control').first().click();await animated.locator('.atlas-discovery').waitFor({state:'visible'});
+  await animated.waitForFunction(()=>getComputedStyle(document.querySelector('.atlas-discovery')).opacity==='1');
+  await animated.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));
   await animated.screenshot({path:path.join(output,'home-1440-full-motion.png')});await full.close();
   report.checks.push('Full-motion discovery opens');
   assert.equal(report.errors.length,0,'Uncaught JavaScript errors');report.passed=true;
