@@ -42,6 +42,9 @@ class IndependentAttemptReviewForm(forms.ModelForm):
         verdict = data.get("teacher_verdict")
         axes = [data.get("rubric_" + axis) for axis in ("meaning", "form", "context")]
         if verdict and verdict != IndependentAttempt.TeacherVerdict.UNREVIEWED:
+            if not IndependentAttemptAdmin._task(self.instance):
+                raise forms.ValidationError(
+                    "Невозможно восстановить исходное задание: заключение запрещено.")
             if any(value not in ("yes", "partly", "not_yet") for value in axes):
                 raise forms.ValidationError("Заполните смысл, грамматику и уместность.")
             if len((data.get("teacher_note") or "").strip()) < 20:
