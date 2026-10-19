@@ -25,8 +25,8 @@ script:
     ru: "Один кофе и один чай. И можно мне печенье, пожалуйста?"
   - speaker: barista
     emotion: happy
-    text: "[O4]Yes[/], [T8]you[/] [D7]can[/]. [A3]Here[/] [T8]you[/] [D1]are[/]."
-    ru: "Да, конечно. Вот, пожалуйста."
+    text: "[O4]Yes[/]! [A3]Here[/] [T8]you[/] [D1]are[/]."
+    ru: "Конечно! Вот, пожалуйста."
   - speaker: anna
     emotion: excited
     text: "[O2]Thank you[/]! [T1]The[/] [S3]cookie[/] [D1]is[/] [J1]big[/]! [T8]I[/] [D3]want[/] [N1]one[/]!"
