@@ -417,7 +417,7 @@ class RotatingIndependentReviewTests(TestCase):
         self.assertContains(response, "Как у вас получилось?")
         self.assertNotContains(response, 'aria-describedby="prompt-transfer"')
         self.assertNotContains(response, 'name="answer_transfer"')
-        self.assertContains(initial, 'aria-describedby="prompt-transfer"')
+        self.assertContains(initial, 'aria-describedby="prompt-transfer count-transfer"')
         self.assertContains(response, 'lang="en"')
 
     def test_mobile_counters_and_distinct_rubrics_are_visible(self):
