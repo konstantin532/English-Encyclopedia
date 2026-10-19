@@ -39,8 +39,8 @@ script:
     kind: narration
     emotion: worried
     music: mystery
-    text: "[T3]My[/] [S3]coffee[/] [D1]is[/] [A3]here[/]. [S1]Box[/] [D1]is[/] [X1]not[/] [A3]here[/]!"
-    spoken: "[T3]My[/] [S3]coffee[/] [D1]is[/] [A3]here[/]. [S1]Box[/] [D1]is[/][X1]n't[/] [A3]here[/]!"
+    text: "[T8]I[/] [D1]have[/] [T3]my[/] [S3]coffee[/]. [S1]Box[/] [D1]is[/] [X1]not[/] [A3]here[/]!"
+    spoken: "[T8]I[/] [D1]have[/] [T3]my[/] [S3]coffee[/]. [S1]Box[/] [D1]is[/][X1]n't[/] [A3]here[/]!"
   - speaker: mia
     kind: speech
     emotion: surprised
@@ -63,7 +63,7 @@ questions:
   - q: "Когда кот приходит в кафе?"
     a: "It is here at seven every day. — Каждый день в семь."
   - q: "Куда пропал Box и почему Анна в конце спокойна?"
-    a: "Box is at home! — Он сам вернулся домой. Ему нравится и кафе, и дом: утром он ходит к Мие за молоком."
+    a: "Box is here! — Анна уже дома, и Box тоже здесь. Ему нравится и кафе, и дом: утром он ходит к Мие за молоком."
 phrase_hunt:
   - phrase: "It is seven o'clock."
     function: "Ровное время"
