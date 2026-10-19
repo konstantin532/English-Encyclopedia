@@ -54,6 +54,32 @@ def independent_check(request, slug):
             return choices[stored]["model"]
         return guide["tasks"][attempt.skill]["model"]
 
+    def render_batch_error(message):
+        """Return a useful 400 without discarding a mobile learner's typed work.
+
+        Models are never in the form HTML; text is HTML-escaped by Django.
+        For a stale token the text is shown for copying, not silently posted
+        against a different prompt.
+        """
+        draft = {key: str(request.POST.get("answer_" + key, ""))[:400]
+                 for key in TASKS}
+        titles = {
+            "meaning": "1. Понимаю смысл", "writing": "2. Пишу сам",
+            "transfer": "3. Переношу в новую ситуацию",
+            "explain": "4. Объясняю почему",
+        }
+        return render(request, "learning/independent_check.html", {
+            "lesson": lesson, "guide": guide,
+            "tasks": [{"key": key, "title": titles[key],
+                       "item": guide["tasks"][key], "saved_answer": draft[key]}
+                      for key in TASKS],
+            "result": None, "batch_results": None, "attempts": [],
+            "ratings": RATINGS, "batch_error": message,
+            "transfer_variant": variant,
+            "transfer_variant_total": len(choices),
+            "batch_token": request.session[token_key],
+        }, status=400)
+
     result = None
     batch_results = None
     if request.method == "POST":
@@ -106,19 +132,19 @@ def independent_check(request, slug):
                     not secrets.compare_digest(
                         supplied_token, request.session[token_key]
                     )):
-                return HttpResponseBadRequest("Эта попытка уже отправлена. Обновите страницу.")
+                return render_batch_error("Эта форма уже отправлена или устарела. Скопируйте ответ перед обновлением страницы.")
             # Reject a stale form rather than silently assess the wrong prompt.
             supplied_variant = request.POST.get("transfer_variant")
             if supplied_variant is not None and supplied_variant != str(variant):
-                return HttpResponseBadRequest("Ситуация обновилась. Перезагрузите страницу.")
+                return render_batch_error("Ситуация изменилась. Сохраните написанное и откройте новое задание.")
             # Crucially, do not reveal ANY answer until the learner has
             # submitted ALL FOUR responses; this prevents the first revealed
             # example from contaminating the remaining unaided answers.
             answers = {key: request.POST.get("answer_" + key, "") for key in TASKS}
             if any(not isinstance(value, str) or not value.strip()
                    or len(value) > 400 for value in answers.values()):
-                return HttpResponseBadRequest(
-                    "Сначала ответьте на все четыре вопроса (до 400 символов каждый)."
+                return render_batch_error(
+                    "Заполните все четыре поля. Каждый ответ — не более 400 символов."
                 )
             batch_results = []
             try:
@@ -158,8 +184,8 @@ def independent_check(request, slug):
             except IntegrityError:
                 # Another concurrent request used the same browser token.
                 # Atomic rollback keeps the four-answer set all-or-nothing.
-                return HttpResponseBadRequest(
-                    "Эта попытка уже была сохранена. Обновите страницу."
+                return render_batch_error(
+                    "Эта попытка уже была сохранена. Повторно записывать ответы нельзя."
                 )
             # Next visit gets a new situation; current results retain the
             # exact original prompts and exemplar associated with this batch.
