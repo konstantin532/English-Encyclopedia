@@ -32,10 +32,7 @@ PROJECT_APPS = [
     "apps.stories",
     "apps.poems",
     "apps.drills",
-    "apps.assessments",
     "apps.learning",
-    "apps.media_library",
-    "apps.ai_tutor",
     "apps.publishing",
     "apps.api",
 ]

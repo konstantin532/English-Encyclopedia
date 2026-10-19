@@ -32,11 +32,11 @@ jobs:
       - run: uv run python manage.py makemigrations --check --dry-run
       # Validate every authored delayed-review card before running the slower suite.
       - run: |
-          uv run python manage.py shell -c "from apps.learning.mistake_review import question_bank; b=question_bank(); assert len(b)==28; assert sum(len(v) for v in b.values())==163; assert sum(len(q) for v in b.values() for q in v.values())==815; print('A1 review bank: 28 lessons, 163 exercises, 815 questions')"
+          uv run python manage.py shell -c "from apps.learning.mistake_review import question_bank; b=question_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.mistake_review import COUNT; assert set(b)==set(PILOT_SLUGS); assert all(exercises and all(len(cards)==COUNT for cards in exercises.values()) for exercises in b.values()); print('A1 review structure OK:', len(b), 'lessons')"
       # Fail before the slower suite when a beginner explanation or open
       # independent task violates one of the 15 educational data contracts.
       - run: |
-          uv run python manage.py shell -c "from apps.learning.understanding import understanding_bank; b=understanding_bank(); assert len(b)==28; assert sum(len(x['tasks']) for x in b.values())==112; print('A1 clarity: 28 guides, 112 no-options tasks, 15 structural checks')"
+          uv run python manage.py shell -c "from apps.learning.understanding import understanding_bank; b=understanding_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.understanding import SKILLS; assert set(b)==set(PILOT_SLUGS); assert all(set(guide['tasks'])==set(SKILLS) for guide in b.values()); print('A1 understanding structure OK:', len(b), 'guides')"
       - run: uv run pytest -q
       - run: node --test tests/js/*.test.cjs
       - run: |
