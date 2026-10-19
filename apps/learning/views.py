@@ -20,8 +20,9 @@ def dashboard(request):
     now = timezone.now()
     due = [p for p in progress if p.next_review_at and p.next_review_at <= now]
     started = {p.unit_id for p in progress}
-    next_lesson = next((l for l in Lesson.objects.filter(is_published=True)
-                        if not set(l.units.values_list("id", flat=True)) <= started), None)
+    lessons = Lesson.objects.filter(is_published=True).prefetch_related("units")
+    next_lesson = next((lesson for lesson in lessons
+                        if any(unit.pk not in started for unit in lesson.units.all())), None)
     return render(request, "learning/dashboard.html", {
         "progress": progress,
         "new_units": [p for p in progress if p.status != Status.ACTIVE],

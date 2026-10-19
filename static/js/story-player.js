@@ -7,6 +7,7 @@
   document.querySelectorAll("[data-open-question]").forEach((box) => {
     const input = box.querySelector("input");
     const model = box.querySelector("[data-model-answer]");
+    input.addEventListener("input", () => { model.hidden = true; });
     box.querySelector("[data-compare]").addEventListener("click", () => {
       if (!input.value.trim()) { input.focus(); input.placeholder = "сначала напишите свой вариант"; return; }
       model.hidden = false;
@@ -25,6 +26,10 @@
       const at = plain.indexOf(phrase.replace(/[.!?]$/, ""));
       if (at >= 0) { highlight(p, at, at + phrase.replace(/[.!?]$/, "").length); p.scrollIntoView({ block: "center", behavior: calm ? "smooth" : "auto" }); break; }
     }
+    document.querySelectorAll("[data-hunt]").forEach((other) => {
+      other.setAttribute("aria-expanded", "false");
+      if (other.nextElementSibling) other.nextElementSibling.hidden = true;
+    });
     const fn = btn.nextElementSibling;
     fn.hidden = false;
     btn.setAttribute("aria-expanded", "true");
