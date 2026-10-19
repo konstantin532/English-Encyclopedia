@@ -102,6 +102,14 @@ def independent_check(request, slug):
                 lesson=lesson, skill__in=("transfer", "explain"),
                 outcome=IndependentAttempt.Outcome.SELF_REPORTED,
             )
+            if (independence == "independent" and
+                    attempt.assistance in (
+                        IndependentAttempt.Assistance.NOTES,
+                        IndependentAttempt.Assistance.TRANSLATOR,
+                    )):
+                return HttpResponseBadRequest(
+                    "Вы указали помощь при выполнении. Для честной самооценки выберите «С подсказкой»."
+                )
             attempt.self_rubric = {**values, "independence": independence}
             attempt.self_rating = independence
             attempt.save(update_fields=["self_rubric", "self_rating"])
@@ -123,6 +131,11 @@ def independent_check(request, slug):
                 lesson=lesson, skill__in=("transfer", "explain"),
                 outcome=IndependentAttempt.Outcome.SELF_REPORTED,
             )
+            if (rating == "independent" and attempt.assistance in (
+                IndependentAttempt.Assistance.NOTES,
+                IndependentAttempt.Assistance.TRANSLATOR,
+            )):
+                return HttpResponseBadRequest("Нельзя отметить работу с переводчиком как полностью самостоятельную.")
             attempt.self_rating = rating
             attempt.save(update_fields=["self_rating"])
             result = {"skill": attempt.skill, "model": model_for(attempt),
@@ -214,32 +227,16 @@ def independent_check(request, slug):
                 **guide["tasks"], "transfer": choices[variant],
             }}
         else:
-            skill = request.POST.get("skill")
-            if skill not in TASKS:
-                return HttpResponseBadRequest("Неизвестный вид задания.")
-            answer = request.POST.get("answer", "")
-            if not isinstance(answer, str) or not answer.strip() or len(answer) > 400:
-                return HttpResponseBadRequest("Напишите ответ длиной до 400 символов.")
-            # The open transfer response has no exhaustive answer key.
-            is_open = skill in ("transfer", "explain")
-            matches = not is_open and model_agreement(guide["tasks"][skill], answer)
-            outcome = (IndependentAttempt.Outcome.SELF_REPORTED if is_open else
-                       IndependentAttempt.Outcome.MODEL_MATCH if matches else
-                       IndependentAttempt.Outcome.NEEDS_REVIEW)
-            attempt = IndependentAttempt.objects.create(
-                user=request.user, lesson=lesson, skill=skill,
-                submitted=answer.strip(), outcome=outcome,
-                task_variant=variant if skill == "transfer" else 0,
-                prompt_snapshot=guide["tasks"][skill]["prompt"],
-                model_snapshot=guide["tasks"][skill]["model"],
+            # Legacy single-skill POST could reveal an answer before the other
+            # three were attempted. Never let that bypass the blind batch.
+            return HttpResponseBadRequest(
+                "Для самостоятельной проверки нужно отправить все четыре ответа сразу."
             )
-            label = ("Творческий ответ сохранён для самооценки; система не объявляет его верным или неверным."
-                     if is_open else
-                     "Ответ совпал с подготовленным образцом, но это ещё не сертификат владения языком."
-                     if matches else
-                     "Ответ отличается от образца. Он может быть допустимым — проверьте вручную.")
-            result = {"skill": skill, "model": guide["tasks"][skill]["model"],
-                      "label": label, "attempt": attempt}
+    # On a repeat visit, do not market a previously seen situation as new.
+    variant_seen = IndependentAttempt.objects.filter(
+        user=request.user, lesson=lesson, skill="transfer",
+        task_variant=variant,
+    ).exists()
     attempts = (IndependentAttempt.objects.filter(user=request.user, lesson=lesson)
                 .order_by("-created_at")[:12])
     return render(request, "learning/independent_check.html", {
@@ -253,5 +250,6 @@ def independent_check(request, slug):
         "ratings": RATINGS, "attempts": attempts,
         "rubric_axes": RUBRIC_AXES, "rubric_options": RUBRIC_OPTIONS,
         "transfer_variant": variant, "transfer_variant_total": len(choices),
+        "transfer_variant_seen": variant_seen,
         "batch_token": request.session[token_key],
     })
