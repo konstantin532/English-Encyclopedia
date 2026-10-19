@@ -12,8 +12,8 @@ script:
     kind: narration
     emotion: neutral
     music: morning
-    text: "[T8]It[/] [D1]is[/] [S7]Saturday[/]. [T8]I[/] [D4]move[/] [T1]the[/] [J2]old[/] [S2]cupboard[/]."
-    spoken: "[T8]It[/][D1]'s[/] [S7]Saturday[/]. [T8]I[/] [D4]move[/] [T1]the[/] [J2]old[/] [S2]cupboard[/]."
+    text: "[T8]It[/] [D1]is[/] [S7]Saturday[/]. [T8]I[/] [D1]am[/] [P1]next to[/] [T1]the[/] [J2]old[/] [S2]cupboard[/]."
+    spoken: "[T8]It[/][D1]'s[/] [S7]Saturday[/]. [T8]I[/] [D1]am[/] [P1]next to[/] [T1]the[/] [J2]old[/] [S2]cupboard[/]."
   - speaker: anna
     kind: narration
     emotion: surprised
@@ -78,5 +78,5 @@ phrase_hunt:
 retell_words: [cupboard, photo, family, Rose, Park Street]
 retell_steps:
   - "Восстановите историю по пяти опорам: cupboard, photo, family, Rose, Park Street. По одной фразе на каждую."
-  - "Перескажите без подсказок, 5–6 фраз, от лица Анны: It is Saturday. I move…"
+  - "Перескажите без подсказок, 5–6 фраз, от лица Анны: It is Saturday. I am next to…"
 creative_ru: "Придумайте 2–3 фразы: кто эти люди на фото? Например: The father is a driver. The children like the park."
