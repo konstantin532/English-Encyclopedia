@@ -99,27 +99,40 @@ def speech_practice_api(request):
     })
 
 
+def valid_due_speech_items(user, now=None, limit=None):
+    """Yield published, existing review fragments, caching content by key.
+
+    Reuse this selection for the dashboard badge and the visible queue.
+    """
+    now = now or timezone.now()
+    due = (SpeechPracticeProgress.objects.filter(user=user, next_review_at__lte=now)
+           .order_by("next_review_at", "pk"))
+    details_cache = {}
+    yielded = 0
+    for item in due.iterator(chunk_size=200):
+        if item.content_key not in details_cache:
+            details_cache[item.content_key] = content_details(item.content_key)
+        details = details_cache[item.content_key]
+        if not details or item.fragment >= details["count"]:
+            continue
+        yield item, details
+        yielded += 1
+        if limit is not None and yielded >= limit:
+            break
+
+
 @login_required
 def speech_review(request):
     now = timezone.now()
-    due = (SpeechPracticeProgress.objects.filter(user=request.user, next_review_at__lte=now)
-           .order_by("next_review_at", "pk"))
     pending = []
-    # Old/removed course keys can remain in a learner's history. Limit to
-    # 100 VALID review items, not the first 100 unvalidated database rows:
-    # otherwise stale records can hide real speech practice indefinitely.
-    for item in due.iterator(chunk_size=200):
-        details = content_details(item.content_key)
-        if not details or item.fragment >= details["count"]:
-            continue
+    for item, details in valid_due_speech_items(request.user, now=now, limit=100):
         url, hashmark, anchor = details["url"].partition("#")
         pending.append({
-            "title": details["title"], "fragment": item.fragment + 1, "rating": item.get_result_display(),
+            "title": details["title"], "fragment": item.fragment + 1,
+            "rating": item.get_result_display(),
             "url": url + "?speech=" + str(item.fragment) + ("#" + anchor if hashmark else ""),
             "content_key": item.content_key,
         })
-        if len(pending) >= 100:
-            break
     upcoming = SpeechPracticeProgress.objects.filter(user=request.user, next_review_at__gt=now).order_by("next_review_at").first()
     return render(request, "learning/speech_review.html", {
         "pending": pending,
