@@ -98,6 +98,14 @@ class A1LinguisticIntegrityTests(SimpleTestCase):
                          "Open your book to page ten.")
         self.assertEqual(tagged_to_plain(self.by_id["LX-00337"]["example_en"]),
                          "The key is under the table.")
+        address_lesson = yaml.safe_load(
+            (CONTENT / "seed_lessons/a1_w12_l24_address.yaml").read_text(encoding="utf-8")
+        )
+        self.assertIn("на Парк-стрит", str(address_lesson))
+        address_scenarios = json.loads(
+            (CONTENT / "active_a1/scenarios_23_24.json").read_text(encoding="utf-8")
+        )
+        self.assertIn("Квартира на Парк-стрит", str(address_scenarios))
 
     def test_recurring_days_are_explicit_and_forms_registered(self):
         sat = self.by_id["LX-00194"]
