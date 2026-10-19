@@ -74,6 +74,13 @@ def safe_audio_manifest(static_root: Path):
                 cleaned.append({"line": index, "start": start, "end": end})
                 end_before = end
             tracks[tempo] = {"url": static(relative), "timings": cleaned}
+        # The café lab is a separate optional audio surface. It must not
+        # promote an arbitrary verified=true without the same review evidence
+        # and byte-for-byte track digests required by the main story player.
+        if raw.get("verified") is True:
+            from scripts.audio_readiness import review_evidence_problem
+            if review_evidence_problem(raw, static_root):
+                return None
         return {"engine": "kokoro", "verified": bool(raw.get("verified") is True), "tracks": tracks}
     except (OSError, ValueError, TypeError, AttributeError, KeyError):
         return None

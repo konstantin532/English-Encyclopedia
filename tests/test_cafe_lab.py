@@ -85,6 +85,11 @@ class CafeLabTests(TestCase):
             valid = safe_audio_manifest(static)
             self.assertIsNotNone(valid)
             self.assertEqual(valid["tracks"]["slow"]["url"], "/static/audio/cafe-lab/voice_slow.mp3")
+            # A claimed human-verified track must have actual review evidence.
+            manifest["verified"] = True
+            destination.write_text(json.dumps(manifest), encoding="utf-8")
+            self.assertIsNone(safe_audio_manifest(static))
+            manifest["verified"] = False
             manifest["slow"]["file"] = "audio/cafe-lab/../other.mp3"
             destination.write_text(json.dumps(manifest), encoding="utf-8")
             self.assertIsNone(safe_audio_manifest(static))
