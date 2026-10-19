@@ -1,0 +1,46 @@
+"""Audio file inventory is not an acoustic or CEFR validation."""
+import importlib.util
+import json
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from django.test import SimpleTestCase
+
+MODULE = Path(__file__).resolve().parents[1] / "scripts/audio_readiness.py"
+spec = importlib.util.spec_from_file_location("audio_readiness", MODULE)
+checker = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(checker)
+
+
+class AudioReadinessTests(SimpleTestCase):
+    def test_empty_directory_reports_all_missing(self):
+        with TemporaryDirectory() as tmp:
+            result = checker.check_audio(Path(tmp))
+            self.assertEqual(result["expected"], 33)
+            self.assertEqual(len(result["missing"]), 33)
+            self.assertEqual(result["files_present"], 0)
+
+    def test_fake_tone_not_counted_as_ready(self):
+        with TemporaryDirectory() as tmp:
+            folder = Path(tmp) / "static/audio/stories/s01"
+            folder.mkdir(parents=True)
+            (folder / "manifest.json").write_text(
+                json.dumps({"engine": "test", "model": "test-tone"}), encoding="utf-8")
+            result = checker.check_audio(Path(tmp))
+            self.assertEqual(result["files_present"], 0)
+            self.assertEqual(len(result["invalid"]), 1)
+
+    def test_kokoro_files_without_human_review_are_marked(self):
+        with TemporaryDirectory() as tmp:
+            folder = Path(tmp) / "static/audio/stories/s01"
+            folder.mkdir(parents=True)
+            tempos = {}
+            for tempo in checker.TEMPOS:
+                name = f"voice_{tempo}.wav"
+                (folder / name).write_bytes(b"mock recording")
+                tempos[tempo] = {"file": f"audio/stories/s01/{name}"}
+            (folder / "manifest.json").write_text(
+                json.dumps({"engine": "kokoro", "model": "kokoro-v1.0",
+                            "verified": False, **tempos}), encoding="utf-8")
+            result = checker.check_audio(Path(tmp))
+            self.assertEqual(result["files_present"], 1)
+            self.assertEqual(len(result["unreviewed"]), 1)

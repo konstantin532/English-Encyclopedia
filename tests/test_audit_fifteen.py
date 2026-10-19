@@ -22,6 +22,17 @@ class DictionaryPaginationTests(TestCase):
         self.assertContains(response, 'rel="next"')
         self.assertContains(response, 'aria-label="Страницы словаря"')
 
+    def test_large_json_payload_is_rejected_before_parsing(self):
+        from django.test import RequestFactory
+        from apps.api.validation import read_answer_payload
+        request = RequestFactory().post(
+            "/api/units/test/recall/",
+            data='{"answer":"ok","filler":"' + "x" * 17000 + '"}',
+            content_type="application/json",
+        )
+        with self.assertRaisesMessage(ValueError, "Слишком большой запрос"):
+            read_answer_payload(request)
+
     def test_dictionary_page_out_of_range_and_filter_state(self):
         response = self.client.get(reverse("lexicon:list"), {"page": "999999", "level": "A1", "q": "a"})
         self.assertEqual(response.status_code, 200)
