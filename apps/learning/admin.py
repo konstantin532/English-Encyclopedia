@@ -65,13 +65,13 @@ class IndependentAttemptAdmin(admin.ModelAdmin):
     list_filter = ("skill", "outcome", "teacher_verdict")
     search_fields = ("user__email", "lesson__title", "submitted")
     readonly_fields = (
-        "user", "lesson", "skill", "task_variant", "submitted", "outcome",
+        "user", "lesson", "skill", "task_variant", "assistance", "submitted", "outcome",
         "self_rating", "self_rubric", "teacher_rubric",
         "reviewed_by", "reviewed_at", "created_at",
         "original_prompt", "reference_example",
     )
     fields = (
-        "user", "lesson", "skill", "task_variant", "original_prompt",
+        "user", "lesson", "skill", "task_variant", "original_prompt", "assistance",
         "submitted", "reference_example", "outcome",
         "self_rating", "self_rubric", "created_at", "teacher_verdict",
         "rubric_meaning", "rubric_form", "rubric_context",
