@@ -118,7 +118,9 @@ class ThreeStepEditorialTests(SimpleTestCase):
         css = (Path(settings.BASE_DIR) / "static/css/independent-check.css").read_text("utf-8")
         for rule in ("max-width: 430px", "min-height: 52px",
                      "focus-visible", "forced-colors: active",
-                     "prefers-reduced-motion: reduce",
+                     "prefers-reduced-motion: reduce", "prefers-contrast: more",
+                     "safe-area-inset-left", "safe-area-inset-right",
+                     "independent-form-error:focus",
                      "overflow-wrap: anywhere", "font-size: max(1rem, 16px)"):
             with self.subTest(rule=rule):
                 self.assertIn(rule, css)
