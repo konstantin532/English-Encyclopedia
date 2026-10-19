@@ -185,6 +185,14 @@ class RotatingIndependentReviewTests(TestCase):
         self.assertEqual(IndependentAttempt.objects.filter(
             user=self.student, skill="transfer").count(), 1)
 
+    def test_missing_token_cannot_bypass_database_idempotency(self):
+        guide = self.client.get(self.url).context["guide"]
+        res = self.client.post(self.url, {"action": "batch", "transfer_variant": "0",
+            **{"answer_" + k: guide["tasks"][k]["model"]
+               for k in ("meaning", "writing", "transfer", "explain")}})
+        self.assertEqual(res.status_code, 400)
+        self.assertFalse(IndependentAttempt.objects.filter(user=self.student).exists())
+
     def test_fake_token_is_rejected_without_saving_student_data(self):
         res = self.client.post(self.url, {"action": "batch",
                                            "batch_token": "not-issued-to-this-session"})
@@ -192,8 +200,10 @@ class RotatingIndependentReviewTests(TestCase):
         self.assertFalse(IndependentAttempt.objects.filter(user=self.student).exists())
 
     def test_partial_batch_does_not_rotate_or_store_any_answers(self):
+        page = self.client.get(self.url)
         result = self.client.post(self.url, {
-            "action": "batch", "transfer_variant": "0", "answer_meaning": "Да",
+            "action": "batch", "batch_token": page.context["batch_token"],
+            "transfer_variant": "0", "answer_meaning": "Да",
             "answer_writing": "Hello", "answer_transfer": "",
             "answer_explain": "Понимаю правило"})
         self.assertEqual(result.status_code, 400)
