@@ -104,7 +104,7 @@
   outline: 3px solid var(--focus, currentColor); outline-offset: 3px;
 }
 @media (max-width: 430px) {
-  .independent-check { padding-inline: max(8px, env(safe-area-inset-left)); }
+  .independent-check { padding-inline-start: max(12px, env(safe-area-inset-left)); padding-inline-end: max(12px, env(safe-area-inset-right)); }
   .independent-grid { display: block; }
   .independent-batch-submit, .independent-rubric .btn,
   .independent-new-variant .btn { display: block; width: 100%; }
@@ -134,4 +134,31 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .independent-submit-status, [data-batch-submit] { animation: none !important; }
+}
+
+/* Fourth-pass Android and assistive-technology hardening. */
+.independent-check .independent-form-error {
+  padding: 1rem;
+  border: 2px solid currentColor;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  scroll-margin-top: 1.5rem;
+}
+.independent-check .independent-form-error:focus { outline: 3px solid var(--focus, currentColor); outline-offset: 3px; }
+.independent-check .independent-conditions { margin: 1rem 0 1.5rem; padding: 1rem; border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
+.independent-check .independent-conditions legend { font-weight: 700; padding-inline: .25rem; }
+.independent-check .independent-conditions label { min-height: 52px; padding: .75rem .5rem; }
+.independent-check textarea { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+.independent-check button, .independent-check input, .independent-check textarea { touch-action: manipulation; }
+@media (max-width: 600px) and (orientation: landscape) {
+  .independent-check .independent-conditions,
+  .independent-check .independent-rubric { max-width: 100%; }
+  .independent-check .independent-option { min-height: 52px; }
+}
+@media (prefers-contrast: more) {
+  .independent-check .independent-option,
+  .independent-check textarea,
+  .independent-check .independent-conditions { border: 2px solid currentColor; }
 }
