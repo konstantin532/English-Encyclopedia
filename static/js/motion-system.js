@@ -62,7 +62,7 @@
       });
     });
     if (mode === "minimal") {
-      if (introTimeline) { introTimeline.kill(); introTimeline = null; }
+      if (introTimeline) { introTimeline.progress(1).kill(); introTimeline = null; }
       active.forEach(function (el) {
         if (global.gsap) global.gsap.killTweensOf(el);
         el.style.removeProperty("transform");
