@@ -544,10 +544,16 @@ reviews and merges the PR; no automatic merge.
 - Сумма gzipCSS34066→38301байт (+4235), это расчёт файлов, не сетевой замер. Реальные LCP/INP/CLS/FPS, Android/TalkBack, OS reduced motion и zoom200% не измерены. Исследование, лицензии и план роста — docs/ui/; снимки и JSON — внешние артефакты outputs/design. Новых трекеров/публикаций/production deployment нет.
 
 ## 2026-10-20 — Living Language Atlas, verification checkpoint
-- Based on main 7d27a5a; #45/#46/#47 merged, no open PRs at inspection. Separate branch `design/living-atlas-browser-verified` (branch name is a target, not a claim that browser checks passed).
+- Based on main 7d27a5a; #45/#46/#47 merged, no open PRs at inspection. Separate branch `design/living-atlas-narrative-discovery`.
 - Added an original cartographic SVG frontispiece to the existing homepage art slot; kept typography metrics and layout rules. Muted brass added only to editorial materials.
 - Compared all fourteen actual weekly openings/outcomes and speakers with cover subjects. Corrected cafe settings in weeks 6/7/10/13 using the existing series and unchanged faces. Existing week 3 WebP inspected and preserved.
 - Discovery now opens from words or caption buttons, supports Enter/Space/Escape, dismisses on outside press/focus/resize/scroll, and leaves translation/card content unchanged. Tests cover shared state and motion modes.
 - Added an art bible with source-derived episode table, character/environment/lighting rules and explicit unresolved limitations.
 - Sass compiled and checked; UI suite 121 passed; targeted Django suite 8 passed. Full Django first run: 600 tests, one audio-recovery failure; the failed test passes alone. Final full rerun recorded in the checkpoint report.
 - Real browser verification blocked: local Chromium SIGTRAP; cloud localhost is a different service. No before/after screenshots or geometry/performance claims. Do not treat this checkpoint as final acceptance or merge-ready work.
+
+### Verification completion
+- Final local full Django rerun: **601 tests passed**. Final UI suite: **122 passed**; Sass build/check: **17 stylesheets**. `manage.py check`, `collectstatic`, `audit_course` passed (the existing CEFR warnings remain).
+- Hosted Chromium overcame the local launch limitation. Run 39329659244 passed all 12 before/after pairs at the four requested sizes, with **0 px** maximum selected-component geometry difference. All 14 chapter covers load at 390 px, no tested page overflows horizontally, no uncaught JS errors. No-JS homepage reading, word keyboard activation/Escape and full-motion discovery passed.
+- Fixed the mobile focus-scroll popup dismissal found by the first real run; corrected viewport/document coordinate handling in the geometry test. Source text, markers and user progress storage remain unchanged.
+- Actual before/after screenshots, source-derived art bible and limitations are in `docs/qa/living-atlas-browser-review.md`. No performance gain, Android verification, full audio verification or completed full-scale redesign is claimed.

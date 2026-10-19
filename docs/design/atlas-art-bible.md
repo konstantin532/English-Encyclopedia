@@ -52,13 +52,16 @@ Weeks 6, 7, 10 and 13 now share the actual cafe setting instead of presenting th
 - SVG is retained for vectors: small, resolution independent, no raster conversion required. The existing cafe asset remains WebP.
 - Catalogue images are redundant with adjacent chapter titles and retain empty alt; chapter hero images have scene descriptions.
 - The hero and catalogue use the existing object-fit/object-position rules. Their actual mobile crops require browser review; source coordinates alone are not proof of successful cropping.
-- Phrase roles can be opened by word or caption; Enter/Space activate word controls and Escape closes the panel. Outside press, focus departure, scroll and resize dismiss it. Translation stays static.
+- Phrase roles can be opened by word or caption; Enter/Space activate word controls and Escape closes the panel. Outside press, focus departure and resize dismiss it; scroll repositions the panel so mobile focus scrolling does not close it. Translation stays static.
 - The explanation panel is fixed outside the card's layout. No educational marker colors or classifications change. GSAP only fades the panel in full motion; it is not required for the explanation.
 - Without JavaScript, the phrase, translation and original role captions remain visible. No running animation is required to read the site.
 
-## Acceptance still blocked
-No valid website screenshots were captured. The cloud browser's localhost resolves to its own service and returns a bearer-token error; it does not reach the development server. A local Chromium download returned a corrupt archive; the alternative registry-distributed binary terminated with SIGTRAP. A screenshot of the error is not a site screenshot and is not delivered as evidence.
+## Browser acceptance evidence
+Real Chromium comparisons now pass in GitHub Actions run [39329659244](https://github.com/konstantin532/English-Encyclopedia/actions/runs/39329659244), against main `7d27a5a`. All three demonstration screens were compared at 1440×900, 1280×800, 390×844 and 360×800. Maximum measured difference in the selected components' x/y/width/height was 0 px in every pair. The hero also retains its document-space bounds while discovery is open. All 14 chapter images load at 390 px; tested pages have no horizontal overflow or uncaught JS errors. No-JS homepage reading and full-motion discovery passed.
 
-Required next: compare home, A1 collection and a chapter against main at 1440×900, 1280×800, 390×844 and 360×800 with identical content/theme/motion. Measure card bounds before/after and while discovery is open; inspect clipping, word focus, popup placement, contrast, audio playback states, no-JS and missing-image behavior. Android checks and performance measurements remain undone.
+The first real run found a mobile focus-scroll dismissal bug, which was fixed. The second found a test-coordinate error (viewport y changes when a page scrolls), corrected to document coordinates. No app geometry rule was changed to make the test pass.
 
-Full-scale redesign of all lesson, dictionary, trainer, progress and speech screens has not been completed in this checkpoint. They continue to use the inherited editorial system. The three-screen review must pass before a broader artistic rollout is claimed.
+See [the QA report](../qa/living-atlas-browser-review.md) for screenshots, scope and limitations. The local browser limitation was overcome with hosted Chromium; it is no longer a blocker to the three-screen review.
+
+## Remaining artistic scope
+Full-scale redesign of every lesson, dictionary, trainer, progress and speech screen is not claimed by this checkpoint. Those screens continue to use the inherited editorial system. A richer multi-construction linguistic diagram system and reconciliation of photographic/vector character identities remain future work. Android/TalkBack, real audio playback (audio files are not in the checkout), exhaustive contrast analysis and performance measurements remain undone.

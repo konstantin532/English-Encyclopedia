@@ -56,3 +56,6 @@ The semantic marker spans and their colours are **not changed**. The example ren
 
 ### Scope / truth in delivery
 This PR implements the three-screen artistic prototype **and all fourteen local vector covers**. It does **not** claim final painted cinematic character illustrations, perfect portrait identity, a complete art bible for every recurring environment, browser screenshots, or exhaustive redesign of all course screens. Those are separate review and expansion tasks after the new direction is assessed on actual screenshots.
+
+### Subsequent verified checkpoint
+See [narrative and art bible](atlas-art-bible.md) and [real browser QA evidence](../qa/living-atlas-browser-review.md) for the follow-up that corrects four cafe settings, adds the cartographic frontispiece and verifies unchanged geometry.
