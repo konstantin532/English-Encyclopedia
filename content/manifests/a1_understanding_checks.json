@@ -64,7 +64,8 @@
           "prompt": "Напишите «Я дома».",
           "model": "I am at home.",
           "accepted": [
-            "I am at home."
+            "I am at home.",
+            "I'm at home."
           ]
         },
         "transfer": {
@@ -807,7 +808,8 @@
           "prompt": "Напишите «Мне нравится играть на гитаре».",
           "model": "I like playing the guitar.",
           "accepted": [
-            "I like playing the guitar."
+            "I like playing the guitar.",
+            "I like to play the guitar."
           ]
         },
         "transfer": {
@@ -889,7 +891,8 @@
           "prompt": "Напишите «Я не могу сегодня работать».",
           "model": "I can't work today.",
           "accepted": [
-            "I can't work today."
+            "I can't work today.",
+            "I cannot work today."
           ]
         },
         "transfer": {
@@ -930,7 +933,8 @@
           "prompt": "Напишите «Анна здесь не живёт».",
           "model": "Anna doesn't live here.",
           "accepted": [
-            "Anna doesn't live here."
+            "Anna doesn't live here.",
+            "Anna does not live here."
           ]
         },
         "transfer": {
@@ -1135,7 +1139,8 @@
           "prompt": "Напишите «Я не знаю адрес» без банка готовых слов.",
           "model": "I don't know the address.",
           "accepted": [
-            "I don't know the address."
+            "I don't know the address.",
+            "I do not know the address."
           ]
         },
         "transfer": {
