@@ -78,5 +78,5 @@ test("motion layer doesn't hide content or require GSAP", () => {
   f.window.EnglishMotion.setMode("minimal");
   assert.equal(f.document.documentElement.dataset.motion,"minimal");
   assert.doesNotThrow(() => f.window.EnglishMotion.resolve({hidden:false,style:{}},"ok"));
-  assert.equal(f.listeners.pagehide instanceof Function,true);
+  assert.equal(typeof f.listeners.pagehide,"function");
 });
