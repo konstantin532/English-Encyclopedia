@@ -538,8 +538,8 @@
           "model": "Can you spell your name, please?"
         },
         {
-          "prompt": "Вы не расслышали имя сотрудника. Вежливо попросите его произнести своё имя по буквам.",
-          "model": "Can you spell your name, please?"
+          "prompt": "Сотрудник произнёс своё имя, но вы не поняли, как оно пишется. Вежливо попросите назвать его по буквам.",
+          "model": "Can you spell that, please?"
         }
       ]
     },
