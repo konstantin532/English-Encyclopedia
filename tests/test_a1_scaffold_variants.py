@@ -68,6 +68,26 @@ class ThreeStepEditorialTests(SimpleTestCase):
                     with self.assertRaises(ValueError):
                         scaffold_bank()
 
+    def test_eight_fine_grained_editorial_corrections(self):
+        bank = understanding_bank()
+        noun = bank["a1-nouns-first-words"]["steps"]
+        self.assertIn("исчисляемым", noun[0]["why_ru"])
+        definite = bank["a1-determiners-a-the-this-my"]["steps"]
+        self.assertEqual(definite[1]["example_ru"], "Ключ здесь.")
+        water = bank["a1-there-is-some"]["steps"]
+        self.assertIn("не обязательно", water[1]["why_ru"])
+        numbers = bank["a1-numbers-1-20"]["steps"]
+        self.assertEqual(numbers[1]["example_en"], "three books")
+        self.assertEqual(numbers[2]["example_en"], "I need three books.")
+        spelling = bank["a1-spelling-phone-numbers"]["steps"]
+        self.assertEqual(spelling[1]["example_en"], "M-I-A")
+        habits = bank["a1-always-never"]["steps"]
+        self.assertIn("Sundays", habits[2]["example_en"])
+        directions = bank["a1-directions-turn-left"]["steps"]
+        self.assertIn("стоять", directions[2]["why_ru"])
+        origin = bank["a1-review-everything"]["steps"]
+        self.assertIn("глагола be", origin[0]["why_ru"])
+
     def test_micro_review_explanations_keep_relevant_true_rules(self):
         guides = understanding_bank()
         # Independent examples must not teach false bans on valid constructions.
@@ -399,6 +419,17 @@ class RotatingIndependentReviewTests(TestCase):
         self.assertNotContains(response, 'name="answer_transfer"')
         self.assertContains(initial, 'aria-describedby="prompt-transfer"')
         self.assertContains(response, 'lang="en"')
+
+    def test_mobile_counters_and_distinct_rubrics_are_visible(self):
+        first = self.client.get(self.url)
+        self.assertContains(first, "id=\"count-transfer\"")
+        self.assertContains(first, 'name="answer_transfer"')
+        self.assertContains(first, "autocomplete=\"off\"")
+        result = self.batch(variant=0)
+        self.assertEqual(result.status_code, 200)
+        self.assertContains(result, "aria-label=\"Самооценка ответа transfer")
+        self.assertContains(result, "aria-label=\"Самооценка ответа explain")
+        self.assertContains(result, "Исходный вопрос:")
 
     def test_cross_user_cannot_read_or_rate_another_student(self):
         self.assertEqual(self.batch(variant=0).status_code, 200)
