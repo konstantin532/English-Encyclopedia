@@ -76,6 +76,7 @@ class ThreeStepEditorialTests(SimpleTestCase):
         self.assertEqual(definite[1]["example_ru"], "Ключ здесь.")
         water = bank["a1-there-is-some"]["steps"]
         self.assertIn("не обязательно", water[1]["why_ru"])
+        self.assertEqual(water[1]["example_ru"], "Есть вода.")
         numbers = bank["a1-numbers-1-20"]["steps"]
         self.assertEqual(numbers[1]["example_en"], "three books")
         self.assertEqual(numbers[2]["example_en"], "I need three books.")
