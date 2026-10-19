@@ -5,7 +5,7 @@
   const MODES = ["full", "balanced", "minimal"];
   const SELECTORS = {
     cards: ".week-card, .studio-lesson-card, .studio-word-card, .studio-note, .map-item, .a1-mission-previews li",
-    feedback: ".active-a1-feedback, .active-a1-model, [data-stress-feedback], [data-speech-feedback]",
+    feedback: ".active-a1-feedback, .active-a1-model, [data-stress-feedback], [data-speech-feedback], [data-a1-builder-result], [data-a1-mission-result], .drill-hint",
     scenes: ".studio-home-heading h1, .studio-home-heading p, .studio-hero-copy .studio-eyebrow, .studio-hero-copy h2, .studio-hero-copy > p, .studio-hero-copy .hero-actions, .studio-hero-art"
   };
 
@@ -102,7 +102,13 @@
   }
 
   function intro() {
-    if (mode !== "full" || !global.gsap || !doc.querySelector(".studio-home-hero")) return;
+    if (mode !== "full" || !global.gsap) return;
+    if (!doc.querySelector(".studio-home-hero")) {
+      const heading = doc.querySelector(".week-hero-copy h1, .page-head h1, .entry-word, .active-a1-hero h1, .studio-auth-story h2");
+      if (heading) tween(heading, { opacity: 0.7, y: 6 },
+        { opacity: 1, y: 0, duration: seconds("--motion-duration-expressive", 0.48) }, "signature");
+      return;
+    }
     const title = doc.querySelector(".studio-home-heading h1");
     const subtitle = doc.querySelector(".studio-home-heading p");
     const texts = Array.from(doc.querySelectorAll(".studio-hero-copy > .studio-eyebrow, .studio-hero-copy > h2, .studio-hero-copy > p, .studio-hero-copy > .hero-actions"));
@@ -161,11 +167,11 @@
     if (!global.MutationObserver) return;
     doc.querySelectorAll(SELECTORS.feedback).forEach(function (el) {
       const observer = new global.MutationObserver(function (entries) {
-        if (entries.some(function (e) { return e.attributeName === "hidden" || e.attributeName === "data-state"; })) {
+        if (entries.some(function (e) { return e.type === "childList" || e.attributeName === "hidden" || e.attributeName === "data-state"; })) {
           resolve(el, el.dataset.state || "info");
         }
       });
-      observer.observe(el, { attributes: true, attributeFilter: ["hidden", "data-state"] });
+      observer.observe(el, { attributes: true, attributeFilter: ["hidden", "data-state"], childList: true });
       observers.push(observer);
     });
   }
@@ -210,7 +216,8 @@
     readingRoute();
     revealCards();
     intro();
-    global.addEventListener("pagehide", stop, { once: true });
+    global.addEventListener("pagehide", stop);
+    global.addEventListener("pageshow", function (event) { if (event.persisted) { readingRoute(); } });
   }
   global.EnglishMotion = { effectiveMode: effectiveMode, shouldAnimate: shouldAnimate, resolve: resolve,
     get mode() { return mode; }, setMode: function (value) { refresh(value, true); } };
