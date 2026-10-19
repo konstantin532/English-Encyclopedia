@@ -72,6 +72,16 @@ class A1LinguisticIntegrityTests(SimpleTestCase):
         result = audit_cefr(ROOT)
         self.assertEqual(result["counts"]["total"], 500)
         self.assertEqual(result["errors"], [])
+        for uid, sense in (("LX-00113", "some determiner (UNKNOWN AMOUNT)"),
+                           ("LX-00303", "eat verb (FOOD)")):
+            with self.subTest(verified_uid=uid):
+                record = self.by_id[uid]
+                self.assertEqual(record["cefr"], "A1")
+                self.assertEqual(record["verification_status"], "verified")
+                self.assertIn("Cambridge English Dictionary", record["verification_note"])
+                self.assertIn(sense, record["verification_note"])
+                self.assertIn("https://dictionary.cambridge.org/us/dictionary/english/",
+                              record["verification_note"])
 
     def test_some_is_not_taught_as_necessarily_a_small_amount(self):
         some = self.by_id["LX-00113"]
@@ -135,6 +145,12 @@ class A1LinguisticIntegrityTests(SimpleTestCase):
         )
         self.assertIn("on Saturdays", scenarios[0]["missions"][0]["example"])
         self.assertIn("on Mondays", scenarios[0]["missions"][3]["example"])
+        self.assertIn("по воскресеньям в октябре", week["script"][2]["ru"])
+        self.assertIn("по воскресеньям в октябре", week["script"][3]["ru"])
+        lesson = yaml.safe_load((CONTENT / "seed_lessons/a1_w10_l19_always_never.yaml").read_text("utf-8"))
+        self.assertIn("ˌdeɪz", lesson["sound_notes"][0]["ipa"])
+        first_lesson = yaml.safe_load((CONTENT / "seed_weeks/a1_w13.yaml").read_text("utf-8"))
+        self.assertIn("первый урок", first_lesson["story_beat"]["outcome_ru"])
 
     def test_poem_generator_and_poem_agree_on_temporal_on_and_plural_ipa(self):
         poem = yaml.safe_load(
@@ -146,6 +162,9 @@ class A1LinguisticIntegrityTests(SimpleTestCase):
         pronunciations = " ".join(part["ipa"] for part in poem["pronunciation"])
         self.assertIn("ˈsæt̬ɚˌdeɪz", pronunciations)
         self.assertIn("ˈsʌnˌdeɪz", pronunciations)
+        stresses = " ".join(part["stress"] for part in poem["pronunciation"])
+        self.assertIn("on SATURDAYS", stresses)
+        self.assertIn("on SUNDAYS", stresses)
         generator = (ROOT / "scripts/build_poems.py").read_text(encoding="utf-8")
         self.assertIn("on|P3 Saturdays.", generator)
         self.assertIn("on|P3 Sundays.", generator)

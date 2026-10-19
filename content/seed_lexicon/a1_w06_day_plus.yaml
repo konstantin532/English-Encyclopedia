@@ -8,8 +8,9 @@ units:
   class: D2
   forms:
   - eats
-  cefr: unverified
-  verification_status: pending
+  cefr: A1
+  verification_status: verified
+  verification_note: "Cambridge English Dictionary, eat verb (FOOD), explicitly A1: https://dictionary.cambridge.org/us/dictionary/english/eat ; teaching sense to eat food, without inferring lunch or dinner. Verified against published sense-level entry on 2026-10-19."
   frequency_source: NGSL — требует проверки
   ipa_us: /it/
   translation_ru: есть, кушать

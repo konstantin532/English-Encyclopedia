@@ -90,8 +90,9 @@ units:
   lemma: some
   meaning: a number of, an amount of
   class: T4
-  cefr: unverified
-  verification_status: pending
+  cefr: A1
+  verification_status: verified
+  verification_note: "Cambridge English Dictionary, some determiner (UNKNOWN AMOUNT), explicitly A1: https://dictionary.cambridge.org/us/dictionary/english/some ; example sense = unspecified quantity, not B2 LARGE AMOUNT. Verified against published sense-level entry on 2026-10-19."
   frequency_source: NGSL — требует проверки
   ipa_us: /sʌm/
   ipa_ru: сам

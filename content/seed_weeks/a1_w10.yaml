@@ -17,11 +17,11 @@ script:
     ru: "По субботам я всегда читаю. Люблю читать."
   - speaker: mia
     text: "[C1]And[/] [P3]on[/] [S7]Sundays[/] [P3]in[/] [S7]October[/]?"
-    ru: "А в воскресенье в октябре?"
+    ru: "А по воскресеньям в октябре?"
   - speaker: anna
     emotion: happy
     text: "[P3]On[/] [S7]Sundays[/] [P3]in[/] [S7]October[/], [T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/] [P1]in[/] [T3]my[/] [S2]jacket[/]. [T8]I[/] [D3]like[/] [D4]walking[/]."
-    ru: "В воскресенье я гуляю в парке в куртке. Люблю гулять."
+    ru: "По воскресеньям в октябре я гуляю в парке в куртке. Люблю гулять."
   - speaker: mia
     text: "[S1]Tom[/], [D1]do[/] [T8]you[/] [D3]like[/] [D4]walking[/]?"
     ru: "Том, а ты любишь гулять?"
@@ -40,7 +40,7 @@ script:
   - speaker: mia
     emotion: tired
     text: "[T8]I[/] [D2]work[/] [P3]on[/] [S7]Sundays[/]. [T8]I[/] [A1]always[/] [D2]work[/] [P3]at[/] [N3]five[/]!"
-    ru: "А я работаю в воскресенье. Всегда с пяти!"
+    ru: "А я работаю по воскресеньям. Всегда в пять!"
   - speaker: anna
     emotion: happy
     text: "[O1]See you[/] [P3]on[/] [S7]Friday[/], [S1]Mia[/]!"
