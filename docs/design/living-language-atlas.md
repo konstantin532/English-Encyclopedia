@@ -29,6 +29,9 @@ The governing educational premise is **«Не зубри английский. �
 
 The illustrations are intentionally descriptive rather than a direct depiction of every episode. Specific actions, mystery details and character canon should be validated against scripts before any additional narrative illustrations are commissioned.
 
+### Speaker portraits
+Local vector likenesses `atlas-portrait-anna.svg`, `atlas-portrait-tom.svg`, and `atlas-portrait-barista.svg` reuse the existing 30×34 CSS speaker badge. The role identifier for Mia in the café is `barista`, so the illustration maps to `.speaker-barista::before`; the screen-reader-visible speaker names remain text. The original initials appear in Windows forced-colors mode. These are provisional stylized interpretations and should be aligned with any prior established character images before acceptance.
+
 ### Interactive visual linguistics
 On the homepage, the existing `I'm home.` example now progressively enhances to three focusable buttons:
 - **I:** subject, the person being talked about.
