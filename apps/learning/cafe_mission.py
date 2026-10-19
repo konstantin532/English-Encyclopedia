@@ -154,6 +154,9 @@ def cafe_mission(request):
     if (not isinstance(state, dict) or state.get("version") != VERSION
             or state.get("owner_id") != request.user.pk):
         state = start_state(request.user.pk)
+        # Persist the first GET as well: otherwise the next turn loses the
+        # server-owned inventory and the client has no current nonce.
+        request.session[SESSION_KEY] = state
 
     if request.method == "POST":
         action = request.POST.get("action")
