@@ -4,11 +4,13 @@ from datetime import datetime, timedelta, timezone as tz
 
 from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
+from django.db import connection
+from django.test.utils import CaptureQueriesContext
 from django.urls import reverse
 from django.utils import timezone
 
 from apps.learning.models import SpeechPracticeProgress
-from apps.learning.speech_practice import content_details
+from apps.learning.speech_practice import content_details, valid_due_speech_items
 from apps.lessons.models import Lesson
 from tests.runner import ensure_content
 
@@ -139,6 +141,10 @@ class OralReviewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "?speech=0#spoken-coach")
         self.assertContains(response, self.lesson.title)
+        with CaptureQueriesContext(connection) as queries:
+            items = list(valid_due_speech_items(self.user))
+        self.assertEqual(len(items), 1)
+        self.assertLessEqual(len(queries), 8)  # not one query per stale key
         dashboard = self.client.get(reverse("learning:dashboard"))
         self.assertContains(dashboard, "Речевые повторения (1)")
         self.assertNotContains(dashboard, "Речевые повторения (121)")
