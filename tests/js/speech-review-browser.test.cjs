@@ -92,7 +92,7 @@ test("late initial GET must not overwrite a rating already saved by POST", async
     next_review_at: "2100-10-19T12:00:00Z", due: false
   };
   const app = fixture(true, (_uri, options) => {
-    if (!options) return new Promise(resolve => { releaseGet = resolve; });
+    if (!options || options.method !== "POST") return new Promise(resolve => { releaseGet = resolve; });
     return Promise.resolve({ok: true, json: async () => response});
   });
   await app.grades[2].dispatch("click");
