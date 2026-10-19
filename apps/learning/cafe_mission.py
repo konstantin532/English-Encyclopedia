@@ -83,10 +83,11 @@ def corrects_one(value, drink):
                 and not re.search(r"\b(?:two|three|yes)\b", text))
 
 
-def start_state():
+def start_state(user_id):
     index = secrets.randbelow(len(SCENARIOS))
     return {
         "version": VERSION, "scenario": index, "phase": "order",
+        "owner_id": user_id,
         "nonce": secrets.token_urlsafe(24), "turns": 0, "hints": 0,
         "observed": [], "accepted": [], "saved_id": None,
         "feedback": "", "messages": [
@@ -150,13 +151,14 @@ def advance(state, answer):
 def cafe_mission(request):
     lesson = get_object_or_404(Lesson, slug="a1-cafe-order", is_published=True, level__code="A1")
     state = request.session.get(SESSION_KEY)
-    if not isinstance(state, dict) or state.get("version") != VERSION:
-        state = start_state()
+    if (not isinstance(state, dict) or state.get("version") != VERSION
+            or state.get("owner_id") != request.user.pk):
+        state = start_state(request.user.pk)
 
     if request.method == "POST":
         action = request.POST.get("action")
         if action == "restart":
-            state = start_state()
+            state = start_state(request.user.pk)
         else:
             token = request.POST.get("token", "")
             if not token or not secrets.compare_digest(token, state["nonce"]):
@@ -229,4 +231,5 @@ def cafe_mission(request):
         "can_hint": state["phase"] != "done" and state["hints"] < MAX_HINTS,
         "finished": state["phase"] == "done",
         "skills": SKILLS,
+        "wanted": SCENARIOS[state["scenario"]]["wanted"],
     })
