@@ -78,6 +78,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "apps.core.context_processors.site",
+                "apps.core.public_metadata.metadata",
             ],
         },
     },
@@ -124,3 +125,6 @@ CONTENT_DIR = BASE_DIR / "content"
 
 # Тесты: курс загружается в тестовую базу один раз (tests/runner.py).
 TEST_RUNNER = "tests.runner.ContentLoadedRunner"
+
+# Explicit public origin for canonical/social URLs; blank in local development.
+PUBLIC_SITE_URL = os.getenv("PUBLIC_SITE_URL", "")

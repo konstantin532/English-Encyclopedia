@@ -1,0 +1,84 @@
+/* English Encyclopedia — дизайн-токены.
+   Палитра классов (--class-1…10) — копия реестра apps/taxonomy/registry.py.
+   В тёмной теме меняется только светлота того же оттенка ради контраста. */
+:root {
+  --paper: #f3f5f8;
+  --surface: #ffffff;
+  --ink: #142033;
+  --ink-soft: #4a5568;
+  --ink-faint: #6b7686;
+  --rule: #d6dde6;
+  --rule-strong: #b3bfcc;
+  --focus: #1565c0;
+  --ok: #2e7d32;
+  --ok-surface: #e8f3e9;
+  --warn: #b3261e;
+  --warn-surface: #fbeceb;
+
+  --class-1: #d32f2f;
+  --class-2: #ef6c00;
+  --class-3: #b98a00;
+  --class-4: #2e7d32;
+  --class-5: #00695c;
+  --class-6: #1565c0;
+  --class-7: #6a1b9a;
+  --class-8: #ad1457;
+  --class-9: #5d4037;
+  --class-10: #37474f;
+
+  --font-read: "Literata", "Georgia", "Times New Roman", serif;
+  --font-ui: "Golos Text", "Segoe UI", system-ui, sans-serif;
+  --font-ipa: "Gentium Plus", "Charis SIL", "Doulos SIL", "Noto Serif", serif;
+
+  /* Модульная шкала 1.25 от 17px */
+  --step--1: 0.85rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.33rem;
+  --step-2: 1.66rem;
+  --step-3: 2.07rem;
+  --step-4: 2.59rem;
+  --step-5: clamp(2.2rem, 1.4rem + 3.6vw, 3.24rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+
+  --measure: 66ch;
+  --page: 72rem;
+  --radius-s: 4px;
+  --radius-m: 10px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1622;
+    --surface: #172133;
+    --ink: #e6ebf2;
+    --ink-soft: #b4bfcd;
+    --ink-faint: #8c98a8;
+    --rule: #2a3649;
+    --rule-strong: #3d4b61;
+    --focus: #7fb3f5;
+    --ok: #81c784;
+    --ok-surface: #16301c;
+    --warn: #f28b82;
+    --warn-surface: #3a1a19;
+    --class-1: #ef6b6b;
+    --class-2: #ff9a4d;
+    --class-3: #e2b93b;
+    --class-4: #6fbf73;
+    --class-5: #3cb5a3;
+    --class-6: #6aa9f0;
+    --class-7: #bb7fd6;
+    --class-8: #ef6fa0;
+    --class-9: #b39486;
+    --class-10: #9db0bb;
+  }
+}

@@ -1,4 +1,5 @@
 """Structural contracts. Browser and device measurements require a separate QA pass."""
+import re
 from pathlib import Path
 
 from django.test import SimpleTestCase
@@ -18,11 +19,12 @@ class MotionSystemContracts(SimpleTestCase):
     def test_manual_and_system_minimal_are_independent_failsafes(self):
         css = (ROOT / "static/css/motion-system.css").read_text(encoding="utf-8")
         js = (ROOT / "static/js/motion-system.js").read_text(encoding="utf-8")
-        self.assertIn('html[data-motion="minimal"] *', css)
+        minimal_selector = r'html\[data-motion=(?:"minimal"|minimal)\] \*'
+        self.assertRegex(css, minimal_selector)
         self.assertIn("@media (prefers-reduced-motion: reduce)", css)
         self.assertIn('"ee-motion-mode"', js)
         self.assertIn('media.matches', js)
-        self.assertNotIn('display: none', css.split('html[data-motion="minimal"] *', 1)[1])
+        self.assertNotIn('display: none', re.split(minimal_selector, css, maxsplit=1)[1])
         self.assertIn('if (!global || !global.document) return;', js)
 
     def test_controls_do_not_change_navigation_or_educational_content(self):

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load markers static ru %}
 {% block title %}Неделя {{ week.number }} · {{ week.situation_ru }} · {{ SITE_NAME }}{% endblock %}
+{% block social_title %}Неделя {{ week.number }} · {{ week.situation_ru }} · {{ SITE_NAME }}{% endblock %}
 {% block content %}
 <div class="wrap cinematic-week">
   {% if scene %}

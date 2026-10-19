@@ -1,0 +1,105 @@
+/* A1 café experimental lesson. Isolated styles; use existing design tokens. */
+.cafe-lab { max-width: 1080px; }
+.cafe-lab [hidden] { display: none !important; }
+.cafe-lab button, .cafe-lab select, .cafe-lab textarea { font: inherit; }
+.cafe-crumbs { color: var(--ink-soft); font-size: .82rem; margin: 1.8rem 0; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
+.cafe-crumbs a { color: var(--studio-green); }
+.cafe-hero { background: var(--studio-green); color: #fff; border-radius: 20px; padding: clamp(1.4rem,4vw,3.1rem); display:grid; grid-template-columns: minmax(0,1.4fr) minmax(150px,.6fr); gap: 1rem; align-items:center; overflow:hidden; }
+.cafe-hero h1 { color: inherit; margin: .5rem 0 .9rem; font-family: var(--font-read); font-size: clamp(1.85rem,3.7vw,3.2rem); line-height:1.12; max-width: 17ch; }
+.cafe-eyebrow { letter-spacing:.15em; color:#d8f4df; font-size:.71rem; font-weight:700; }
+.cafe-intro { max-width:48ch; line-height:1.65; color:#e1f0e5; margin:0 0 1rem; }
+.cafe-tags { display:flex; gap:.45rem; flex-wrap:wrap; }
+.cafe-tags span { padding:.3rem .62rem; border:1px solid #ffffff60; background:#ffffff1a; border-radius:99px; font-size:.72rem; }
+.cafe-scene { background:#ffffff12; border:1px solid #ffffff22; border-radius:18px; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:220px; gap:.05rem; }
+.cafe-steam { font-size: 3.4rem; opacity:.7; line-height:.8; }
+.cafe-cup { font-size:5.4rem; line-height:1.35; }
+.cafe-scenelabel { font-size:.75rem; letter-spacing:.22em; color:#c9e5d1; }
+.cafe-notice { padding: 1rem 1.2rem; border-left: 3px solid var(--studio-green); background: var(--studio-mint); color:var(--ink); border-radius:8px; font-size:.88rem; margin: 1rem 0; }
+.cafe-steps { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:.45rem; margin:1.5rem 0; }
+.cafe-steps a { display:flex; flex-direction:column; gap:.18rem; border:1px solid var(--rule); border-radius:12px; background:var(--surface); padding:.65rem .55rem; text-decoration:none; color:var(--ink-soft); font-size:.76rem; font-weight:600; }
+.cafe-steps a span { color:var(--ink); font-weight:500; }
+.cafe-steps a:focus-visible, .cafe-lab button:focus-visible, .cafe-lab select:focus-visible, .cafe-lab textarea:focus-visible, .cafe-lab a:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+.cafe-panel { border:1px solid var(--rule); background:var(--surface); border-radius:18px; padding:clamp(1.2rem,3vw,2.1rem); margin:1.25rem 0; scroll-margin-top:1rem; }
+.cafe-section-head>span { display:block; color:var(--studio-green); letter-spacing:.12em; font-weight:750; font-size:.72rem; margin-bottom:.5rem; }
+.cafe-section-head h2 { font-family:var(--font-read); font-size:clamp(1.4rem,2.5vw,2rem); line-height:1.25; margin:.35rem 0 .4rem; color:var(--ink); }
+.cafe-section-head p { color:var(--ink-soft); max-width:66ch; margin:0 0 1rem; }
+.cafe-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.7rem; margin-top:1rem; }
+.cafe-btn { display:inline-flex; align-items:center; justify-content:center; border-radius:10px; padding:.73rem 1.15rem; border:1px solid var(--rule-strong); background:var(--surface); color:var(--ink); cursor:pointer; min-height:45px; text-decoration:none; font-size:.9rem; line-height:1.25; transition: transform .15s, box-shadow .15s; }
+.cafe-btn:hover:not(:disabled) { transform:translateY(-1px); box-shadow:0 5px 15px #00000012; }
+.cafe-btn:disabled { opacity:.5; cursor:not-allowed; }
+.cafe-btn-primary { background:var(--studio-green); border-color:var(--studio-green); color:#fff; font-weight:600; }
+.cafe-btn-secondary { color:var(--studio-green); background:var(--surface); font-weight:600; }
+.cafe-status { color:var(--ink-soft); font-size:.78rem; max-width:44ch; line-height:1.5; }
+.cafe-script { margin-top:1.2rem; display:grid; gap:.65rem; }
+.cafe-script>p { display:flex; gap:1rem; border-radius:12px; padding:.85rem 1rem; background:var(--paper); margin:0; align-items:flex-start; line-height:1.6; }
+.cafe-script>p:nth-child(even) { background:var(--studio-mint); }
+.cafe-speaker { display:inline-block; min-width:55px; color:var(--studio-green); font-size:.8rem; font-weight:750; }
+.cafe-script [lang=en] { color:var(--ink); }
+.cafe-script details { padding:.9rem 1rem; border:1px solid var(--rule); border-radius:10px; }
+.cafe-script summary, .cafe-details summary { cursor:pointer; font-weight:600; }
+.cafe-sentence { padding:1.6rem 1rem; margin:1.15rem 0; border:1px solid var(--rule); border-radius:13px; background:var(--paper); font-family:var(--font-read); font-size:clamp(1.13rem,2.5vw,1.75rem); line-height:2.25; word-break:normal; }
+.cafe-word { display:inline; padding:.07em .13em; margin:0; color:inherit; border:0; border-radius:.2em; background:transparent; cursor:pointer; font-size:inherit; }
+.cafe-word:hover, .cafe-word:focus-visible { background:var(--studio-mint); }
+.cafe-explainer { background:var(--studio-mint); color:var(--ink); border-radius:11px; border-left:3px solid var(--studio-green); padding:1rem 1.1rem; line-height:1.6; min-height:68px; }
+.cafe-details { display:grid; gap:.55rem; margin-top:1.2rem; }
+.cafe-details details { border:1px solid var(--rule); border-radius:10px; padding:.85rem 1rem; }
+.cafe-details details p { padding-top:.6rem; margin:0; max-width:75ch; color:var(--ink-soft); }
+.cafe-controls { display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:.8rem; margin:1.25rem 0; }
+.cafe-controls label { font-size:.87rem; font-weight:600; display:grid; gap:.5rem; color:var(--ink); }
+.cafe-controls select { width:100%; border:1px solid var(--rule-strong); background:var(--surface); color:var(--ink); padding:.8rem; border-radius:10px; min-height:45px; }
+.cafe-built { background:var(--studio-mint); padding:1.3rem; border-radius:13px; }
+.cafe-built>span { font-size:.71rem; font-weight:750; letter-spacing:.14em; color:var(--studio-green); }
+.cafe-built>p[lang=en] { font-family:var(--font-read); color:var(--ink); font-size:clamp(1.2rem,3vw,1.85rem); line-height:1.3; margin:.55rem 0; }
+.cafe-built>p:not([lang=en]) { margin:.1rem 0 1rem; color:var(--ink-soft); }
+.cafe-choices { display:grid; gap:.65rem; padding:0; border:0; margin:1rem 0; }
+.cafe-choices legend { font-weight:600; margin-bottom:.9rem; }
+.cafe-choices label { padding:.8rem 1rem; background:var(--paper); border:1px solid var(--rule); border-radius:10px; display:flex; align-items:center; gap:.7rem; cursor:pointer; }
+.cafe-choices input { inline-size:1.2rem; block-size:1.2rem; accent-color:var(--studio-green); }
+.cafe-feedback { margin:1rem 0 0; padding:1rem 1.1rem; border-radius:11px; border-left:3px solid var(--studio-green); background:var(--studio-mint); color:var(--ink); }
+.cafe-feedback[data-state=retry] { background:var(--studio-warm); border-color:#bd8133; }
+.cafe-feedback p { margin:0 0 .6rem; } .cafe-feedback p:last-child { margin-bottom:0; }
+.cafe-field-label { display:block; color:var(--ink); font-weight:650; font-size:.9rem; margin:1rem 0 .55rem; }
+.cafe-lab textarea { border:1px solid var(--rule-strong); border-radius:10px; background:var(--surface); color:var(--ink); padding:.85rem; width:100%; resize:vertical; min-height:105px; }
+.cafe-lab form button[type=submit] { margin-top:.7rem; }
+.cafe-record { margin-top:1.5rem; border-top:1px solid var(--rule); padding-top:1.4rem; }
+.cafe-record h3 { font-size:1.13rem; margin:.15rem 0; }
+.cafe-record p { max-width:71ch; color:var(--ink-soft); }
+.cafe-record audio { display:block; margin-top:1rem; max-width:100%; }
+.cafe-finish { margin-top:1.5rem; border-top:1px solid var(--rule); padding-top:1rem; display:flex; flex-direction:column; align-items:flex-start; gap:.9rem; }
+.cafe-finish p { margin:0; }
+@media (max-width: 760px) {
+  .cafe-hero { grid-template-columns:1fr; }
+  .cafe-scene { min-height:90px; flex-direction:row; gap:1rem; }
+  .cafe-cup { font-size:3rem; }
+  .cafe-steam { display:none; }
+  .cafe-steps { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .cafe-controls { grid-template-columns:1fr; }
+}
+@media (max-width: 420px) {
+  .cafe-steps { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .cafe-script>p { flex-direction:column; gap:.2rem; }
+  .cafe-panel { border-radius:14px; }
+  .cafe-sentence { padding:1rem .55rem; }
+}
+@media (prefers-reduced-motion: reduce) { .cafe-btn { transition:none; } .cafe-btn:hover:not(:disabled) { transform:none; } }
+
+/* Диалог: прослушивание по ролям, три темпа, активная реплика. */
+.cafe-tempo { display:inline-flex; align-items:center; gap:.5rem; font-size:.82rem; color:var(--ink); font-weight:600; }
+.cafe-tempo select { color:var(--ink); background:var(--surface); border:1px solid var(--rule-strong); border-radius:9px; padding:.6rem .5rem; min-height:44px; max-width:190px; }
+.cafe-script>p[data-current-line=true] { outline:3px solid var(--focus); outline-offset:2px; }
+.cafe-script>p[data-dialogue-line] { align-items:center; }
+.cafe-script [lang=en] { flex:1; min-width:0; }
+.cafe-line-replay { margin-inline-start:auto; border:1px solid var(--rule-strong); background:var(--surface); color:var(--studio-green); border-radius:8px; width:44px; height:44px; flex:none; cursor:pointer; }
+.cafe-line-replay:disabled { opacity:.5; cursor:not-allowed; }
+@media(max-width:420px) { .cafe-script>p[data-dialogue-line] { align-items:flex-start; } .cafe-line-replay { align-self:flex-end; } }
+
+/* Диктант по услышанной реплике: соответствует доступным контролам урока. */
+.cafe-dictation { margin-top:1.6rem; padding:1.3rem; background:var(--paper); border:1px solid var(--rule); border-radius:14px; }
+.cafe-dictation h3 { margin:0 0 .5rem; font-size:1.15rem; color:var(--ink); }
+.cafe-dictation>p { color:var(--ink-soft); margin:0 0 1rem; line-height:1.55; }
+.cafe-dictation select, .cafe-dictation input[type=text] { width:100%; min-height:46px; padding:.75rem .85rem; border-radius:10px; background:var(--surface); color:var(--ink); border:1px solid var(--rule-strong); }
+.cafe-dictation input[type=text] { font-size:1.06rem; }
+.cafe-dictation form { display:flex; align-items:flex-start; flex-direction:column; }
+.cafe-dictation form input { align-self:stretch; }
+.cafe-dictation [data-dictation-model] { font-family:var(--font-read); font-size:1.1rem; }
+@media(max-width:480px) { .cafe-dictation { padding:1rem; } }

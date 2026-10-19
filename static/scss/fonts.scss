@@ -1,0 +1,5 @@
+@use "sass:meta";
+
+@layer ee-fonts {
+  @include meta.load-css("legacy/fonts");
+}

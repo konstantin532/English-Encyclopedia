@@ -12,3 +12,5 @@ skills-to-install.zip
 static/audio/
 # Локальные отчёты виртуальных учеников (не публиковать сырые данные)
 artifacts/virtual-students/
+
+node_modules/

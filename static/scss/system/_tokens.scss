@@ -1,0 +1,29 @@
+@use "sass:map";
+$space: (xs: .375rem, sm: .75rem, md: 1rem, lg: 1.5rem, xl: 2rem);
+$type: (caption: .8125rem, small: .875rem, ui: .9375rem, body: 1.0625rem, lead: 1.1875rem);
+$timing: (press: 100ms, response: 180ms, reveal: 280ms, scene: 480ms);
+$surfaces: (lesson: ".studio-lesson-card", word: ".studio-word-card", week: ".week-card");
+@function token($group,$name) {
+ $value: map.get($group,$name);
+ @if $value == null { @error "Unknown design token: #{$name}"; }
+ @return $value;
+}
+@mixin emit {
+ :root {
+  @each $name,$value in $type { --ee-type-#{$name}: #{$value}; }
+  @each $name,$value in $space { --ee-space-#{$name}: #{$value}; }
+  @each $name,$value in $timing { --ee-time-#{$name}: #{$value}; }
+  --ee-reading-leading: 1.8;
+  --ee-reading-measure: 68ch;
+  --ee-ease: cubic-bezier(.22,1,.36,1);
+  --ee-accent: var(--studio-green);
+  --ee-focus: #88630c;
+ }
+}
+@mixin fine-pointer { @media (hover: hover) and (pointer: fine) { @content; } }
+@mixin mobile { @media (max-width: 700px) { @content; } }
+@mixin readable($role:body) {
+ font-size: token($type,$role);
+ line-height: var(--ee-reading-leading);
+ letter-spacing: normal;
+}

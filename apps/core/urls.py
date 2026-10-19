@@ -1,9 +1,11 @@
 from django.urls import path
 
-from . import a1_active, cafe_lab, views
+from . import a1_active, cafe_lab, views, public_metadata
 
 app_name = "core"
 urlpatterns = [
+    path("robots.txt", public_metadata.robots, name="robots"),
+    path("sitemap.xml", public_metadata.sitemap, name="sitemap"),
     path("", views.home, name="home"),
     path("healthz/", views.healthz, name="healthz"),
     path("lab/cafe/", cafe_lab.cafe_lab, name="cafe_lab"),

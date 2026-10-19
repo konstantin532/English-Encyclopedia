@@ -15,8 +15,18 @@
   function shouldAnimate(mode, kind) {
     return mode === "full" || (mode === "balanced" && kind !== "signature");
   }
+  function claimIntro(storage, path) {
+    try {
+      if (typeof storage === "function") storage = storage();
+      if (!storage) return false;
+      const key = "ee-scene-seen:" + path;
+      if (storage.getItem(key)) return false;
+      storage.setItem(key, "1");
+      return true;
+    } catch (_) { return false; }
+  }
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { effectiveMode, shouldAnimate, MODES, SELECTORS };
+    module.exports = { effectiveMode, shouldAnimate, claimIntro, MODES, SELECTORS };
   }
   if (!global || !global.document) return;
   const doc = global.document;
@@ -116,12 +126,14 @@
 
   function intro() {
     if (mode !== "full" || !global.gsap) return;
+    if (!claimIntro(function () { return global.sessionStorage; }, global.location?.pathname || "/")) return;
     if (!doc.querySelector(".studio-home-hero")) {
       const heading = doc.querySelector(".week-hero-copy h1, .page-head h1, .entry-word, .active-a1-hero h1, .studio-auth-story h2");
       if (heading) tween(heading, { opacity: 0.7, y: 6 },
         { opacity: 1, y: 0, duration: seconds("--motion-duration-expressive", 0.48) }, "signature");
       return;
     }
+    root.dataset.sceneEntry = "running";
     const title = doc.querySelector(".studio-home-heading h1");
     const subtitle = doc.querySelector(".studio-home-heading p");
     const texts = Array.from(doc.querySelectorAll(".studio-hero-copy > .studio-eyebrow, .studio-hero-copy > h2, .studio-hero-copy > p, .studio-hero-copy > .hero-actions"));
@@ -132,7 +144,7 @@
     if (subtitle) timeline.fromTo(subtitle, { opacity: 0.4 }, { opacity: 1, duration: 0.25, clearProps: "opacity" }, "-=0.2");
     if (texts.length) timeline.fromTo(texts, { opacity: 0.3, y: 6 }, { opacity: 1, y: 0, duration: 0.3, stagger: 0.085, clearProps: "opacity,transform" }, "-=0.12");
     if (art) timeline.fromTo(art, { opacity: 0.75 }, { opacity: 1, duration: 0.46, clearProps: "opacity" }, "-=0.4");
-    timeline.eventCallback("onComplete", function () { introTimeline = null; });
+    timeline.eventCallback("onComplete", function () { delete root.dataset.sceneEntry; introTimeline = null; });
   }
 
   function revealCards() {
@@ -210,6 +222,7 @@
     });
   }
   function stop() {
+    delete root.dataset.sceneEntry;
     observers.forEach(function (observer) { observer.disconnect(); });
     observers.length = 0;
     if (introTimeline) { introTimeline.progress(1).kill(); introTimeline = null; }

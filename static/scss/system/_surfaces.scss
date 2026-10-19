@@ -1,0 +1,35 @@
+@use "tokens" as t;
+@mixin emit {
+ .btn { min-height: 46px; font-size: var(--ee-type-small); line-height: 1.35; padding-block: .6rem; }
+ .btn-primary { box-shadow: 0 2px 0 #103b2c18; }
+ .btn:disabled,.btn[aria-disabled="true"] { cursor: default; opacity: .65; }
+ @each $name,$selector in t.$surfaces {
+  #{$selector} { border-color: var(--rule); }
+  @include t.fine-pointer {
+   #{$selector}:hover { box-shadow: 0 8px 22px #263b2910; border-color: var(--rule-strong); }
+  }
+  #{$selector}:focus-within { border-color: var(--ee-accent); }
+ }
+ :where(a,button,summary,input,textarea,select):focus-visible { outline: 3px solid var(--ee-focus); outline-offset: 3px; }
+ .studio-search-form:focus-within input { border-color: var(--ee-accent); }
+ .studio-lesson-card a,.toc a { text-decoration-thickness: 1px; text-underline-offset: .2em; }
+ .studio-section-title { gap: 1rem; align-items: baseline; }
+ .studio-section-title a { font-size: var(--ee-type-small); }
+ .aside { grid-template-columns: minmax(0,1fr); min-width: 0; }
+ .aside-box { min-width: 0; overflow-wrap: anywhere; }
+ .week-route .toc a { font-size: var(--ee-type-small); line-height: 1.55; }
+ .listen-modes label,.speech-modes label { font-size: var(--ee-type-small); min-height: 44px; }
+ @media (max-width: 1200px) {
+  .site-header .wrap { flex-wrap: wrap; padding-block: .75rem; }
+  .studio-top-actions { flex-wrap: wrap; min-width: 0; max-width: 100%; margin-inline-start: auto; gap: .625rem; }
+ }
+ @include t.mobile {
+  .site-header .wrap { align-items: center; }
+  .studio-top-actions .btn-small { min-height: 44px; font-size: var(--ee-type-caption); }
+  .studio-section-title { flex-wrap: wrap; }
+  .studio-lesson-card { padding: 1rem; min-width: 0; }
+  .studio-lesson-card>div { min-width: 0; }
+  .studio-lesson-card h3 { overflow-wrap: anywhere; }
+  .week-route .toc { gap: .5rem 1rem; }
+ }
+}

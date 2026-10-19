@@ -1,0 +1,5 @@
+@use "sass:meta";
+
+@layer ee-markers {
+  @include meta.load-css("legacy/linguistic-markers");
+}

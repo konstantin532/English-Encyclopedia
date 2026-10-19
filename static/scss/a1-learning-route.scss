@@ -1,0 +1,5 @@
+@use "sass:meta";
+
+@layer ee-pages {
+  @include meta.load-css("legacy/a1-learning-route");
+}
