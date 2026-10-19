@@ -12,8 +12,8 @@ script:
     kind: narration
     emotion: neutral
     music: mystery
-    text: "[T8]It[/] [D1]is[/] [N3]eight o'clock[/]. [T8]I[/] [D1]am[/] [P1]at[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]."
-    spoken: "[T8]It[/][D1]'s[/] [N3]eight o'clock[/]. [T8]I[/] [D1]am[/] [P1]at[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]."
+    text: "[T8]It[/] [D1]is[/] [N3]eight o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]."
+    spoken: "[T8]It[/][D1]'s[/] [N3]eight o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]."
   - speaker: anna
     kind: narration
     emotion: surprised
@@ -78,5 +78,5 @@ phrase_hunt:
 retell_words: [mailbox, letter, name, word, Rose]
 retell_steps:
   - "Восстановите историю по пяти словам: mailbox, letter, name, word, Rose. По одной фразе на слово."
-  - "Перескажите без подсказок, 5–6 фраз, от лица Анны: It is eight o'clock. I am at…"
+  - "Перескажите без подсказок, 5–6 фраз, от лица Анны: It is eight o'clock. I go to…"
 creative_ru: "Кто такая Rose? Придумайте 2–3 догадки Анны и Тома из знакомых слов. Например: Is Rose a neighbor? Is she old?"
