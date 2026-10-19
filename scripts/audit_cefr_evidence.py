@@ -65,6 +65,8 @@ def inspect(root=ROOT):
                     marker in note.casefold() for marker in UNCERTAIN
                 ):
                     problems.append(f"{uid}: verified claim lacks a sense-specific, unqualified source note")
+                else:
+                    counts["documented_sense_claims"] += 1
             elif status == "partial":
                 if not isinstance(note, str) or not note.strip():
                     warnings.append(f"{uid}: partial status without evidence note")
@@ -75,7 +77,7 @@ def inspect(root=ROOT):
             if not str(row.get("ipa_us", "")).strip():
                 warnings.append(f"{uid}: no American IPA")
     return {"counts": dict(counts), "errors": problems, "warnings": warnings,
-            "sense_level_verified": counts["status_verified"],
+            "documented_sense_claims": counts["documented_sense_claims"],
             "interpretation": "Oxford lemma+POS matches are PARTIAL, not sense-level CEFR certification"}
 
 
@@ -89,7 +91,8 @@ def main(argv=None):
         print(json.dumps(report, ensure_ascii=False, indent=2))
     else:
         print("A1 lexicon evidence:", report["counts"])
-        print("Sense-level verified:", report["sense_level_verified"])
+        print("Sense-specific documented verification claims (not independently certified):",
+              report["documented_sense_claims"])
         for message in report["errors"]:
             print("ERROR:", message)
         for message in report["warnings"][:20]:

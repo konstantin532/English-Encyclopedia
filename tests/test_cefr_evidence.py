@@ -37,7 +37,7 @@ class CEFRIntegrityTests(SimpleTestCase):
             report = inspect(Path(tmp))
             self.assertEqual(report["counts"]["total"], 2)
             self.assertEqual(len(report["errors"]), 1)
-            self.assertEqual(report["sense_level_verified"], 1)
+            self.assertEqual(report["documented_sense_claims"], 0)
 
     def test_oxford_pos_matches_do_not_match_substrings(self):
         self.assertFalse(oxford.matches_category("some pron. A1", "S"))
