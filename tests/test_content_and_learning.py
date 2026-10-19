@@ -182,13 +182,25 @@ class ProgressRuleTests(TestCase):
         self.user = User.objects.create_user("t@example.com", "s3cret-pass-123")
         self.p = UnitProgress.objects.create(user=self.user, unit=LexicalUnit.objects.first())
 
-    def test_active_requires_three_different_constructions(self):
+    def test_replaying_one_exercise_cannot_manufacture_independent_mastery(self):
         for _ in range(6):
             self.p.register(True, "same-context")
-        self.assertEqual(self.p.status, Status.INDEPENDENT_USE)
+        self.assertEqual(self.p.correct_count, 6)
+        self.assertEqual(self.p.contexts_used, ["same-context"])
+        self.assertEqual(self.p.status, Status.RECOGNITION)
         self.p.register(True, "ctx-2")
+        self.assertEqual(self.p.status, Status.GUIDED_USE)
         self.p.register(True, "ctx-3")
+        self.assertEqual(self.p.status, Status.INDEPENDENT_USE)
+        self.p.register(True, "ctx-4")
         self.assertEqual(self.p.status, Status.ACTIVE)
+
+    def test_repeating_lemma_recall_never_claims_independent_use(self):
+        for _ in range(10):
+            self.p.register(True)
+        self.assertEqual(self.p.status, Status.RECOGNITION)
+        self.assertEqual(self.p.contexts_used, [])
+        self.assertEqual(self.p.correct_count, 10)
 
     def test_mistake_shortens_interval(self):
         self.p.register(True, "a")

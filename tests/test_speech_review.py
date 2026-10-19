@@ -5,6 +5,7 @@ from datetime import datetime, timedelta, timezone as tz
 from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
 from django.urls import reverse
+from django.utils import timezone
 
 from apps.learning.models import SpeechPracticeProgress
 from apps.learning.speech_practice import content_details
@@ -91,6 +92,37 @@ class OralReviewTests(TestCase):
         self.assertEqual(self.client.post(
             reverse("learning:speech_practice"), data="{bad", content_type="application/json"
         ).status_code, 400)
+
+    def test_malformed_or_oversized_audio_review_requests_do_not_create_progress(self):
+        url = reverse("learning:speech_practice")
+        packets = (
+            b'{"key":"lesson:a","padding":"' + b'x' * 16_384 + b'"}',
+            b'[' * 1100 + b'0' + b']' * 1100,
+            bytes([0xff]),
+        )
+        for payload in packets:
+            with self.subTest(length=len(payload)):
+                result = self.client.post(url, data=payload, content_type="application/json")
+                self.assertEqual(result.status_code, 400)
+        self.assertFalse(SpeechPracticeProgress.objects.filter(user=self.user).exists())
+
+    def test_stale_history_cannot_starve_a_valid_due_review(self):
+        old = timezone.now() - timedelta(days=5)
+        SpeechPracticeProgress.objects.bulk_create([
+            SpeechPracticeProgress(
+                user=self.user, content_key=f"lesson:removed-{i}",
+                fragment=0, next_review_at=old,
+            )
+            for i in range(120)
+        ])
+        SpeechPracticeProgress.objects.create(
+            user=self.user, content_key=self.key, fragment=0,
+            next_review_at=old + timedelta(days=1),
+        )
+        response = self.client.get(reverse("learning:speech_review"))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "?speech=0#spoken-coach")
+        self.assertContains(response, self.lesson.title)
 
     def test_anonymous_and_csrf_requirements(self):
         self.client.logout()
