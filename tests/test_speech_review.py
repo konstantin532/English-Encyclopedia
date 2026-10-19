@@ -123,6 +123,9 @@ class OralReviewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "?speech=0#spoken-coach")
         self.assertContains(response, self.lesson.title)
+        dashboard = self.client.get(reverse("learning:dashboard"))
+        self.assertContains(dashboard, "Речевые повторения (1)")
+        self.assertNotContains(dashboard, "Речевые повторения (121)")
 
     def test_anonymous_and_csrf_requirements(self):
         self.client.logout()
