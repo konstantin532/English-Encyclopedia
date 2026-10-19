@@ -1,0 +1,23 @@
+/* Generated from static/scss/art-light.scss; run pnpm build:css. Do not edit. */
+/* Pointer-directed editorial light; geometry and learning markers remain unchanged. */
+@layer ee-polish {
+  @media (hover: hover) and (pointer: fine) {
+    html[data-art-interactive=on] .studio-home-hero[data-art-hot=true]::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: radial-gradient(ellipse 38% 55% at var(--art-light-x, 50%) var(--art-light-y, 50%), color-mix(in srgb, var(--cinema-cream) 63%, transparent), transparent 95%);
+    }
+    html[data-art-interactive=on] .studio-lesson-card[data-art-hot=true],
+    html[data-art-interactive=on] .studio-word-card[data-art-hot=true],
+    html[data-art-interactive=on] .week-card[data-art-hot=true] {
+      background: radial-gradient(220px circle at var(--art-light-x, 50%) var(--art-light-y, 50%), color-mix(in srgb, var(--studio-mint) 70%, transparent), transparent 94%), linear-gradient(150deg, var(--surface), color-mix(in srgb, var(--studio-mint) 27%, var(--surface)));
+      border-color: color-mix(in srgb, var(--studio-green) 42%, var(--rule));
+      box-shadow: 0 1px 0 var(--surface), 0 18px 40px color-mix(in srgb, var(--cinema-deep) 13%, transparent), inset 0 1px 0 color-mix(in srgb, white 70%, transparent);
+    }
+  }
+}
+
