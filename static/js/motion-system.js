@@ -26,7 +26,8 @@
   const active = new Set();
   let mode;
   let started = false;
-  let choice = null;
+  let controls = [];
+  let introTimeline = null;
 
   function readSaved() {
     try { return global.localStorage.getItem(KEY); } catch (_) { return null; }
@@ -44,25 +45,24 @@
       if (save) writeSaved(mode);
     }
     root.dataset.motion = mode;
-    if (choice) {
+    controls.forEach(function (choice) {
       choice.value = mode;
       choice.disabled = false;
       choice.setAttribute("aria-describedby", "motion-mode-hint");
-    }
+    });
     const hint = doc.getElementById("motion-mode-hint");
     if (hint) hint.textContent = media.matches
       ? "Системное ограничение движения: доступен режим «Минимум»."
       : { full: "Выразительная режиссура при сохранении спокойного чтения.",
           balanced: "Короткие отклики и полезные переходы.",
           minimal: "Без декоративного движения." }[mode];
-    if (media.matches && choice) {
+    controls.forEach(function (choice) {
       Array.from(choice.options).forEach(function (option) {
-        option.disabled = option.value !== "minimal";
+        option.disabled = media.matches && option.value !== "minimal";
       });
-    } else if (choice) {
-      Array.from(choice.options).forEach(function (option) { option.disabled = false; });
-    }
+    });
     if (mode === "minimal") {
+      if (introTimeline) { introTimeline.kill(); introTimeline = null; }
       active.forEach(function (el) {
         if (global.gsap) global.gsap.killTweensOf(el);
         el.style.removeProperty("transform");
@@ -108,15 +108,16 @@
     const texts = Array.from(doc.querySelectorAll(".studio-hero-copy > .studio-eyebrow, .studio-hero-copy > h2, .studio-hero-copy > p, .studio-hero-copy > .hero-actions"));
     const art = doc.querySelector(".studio-hero-art");
     const timeline = global.gsap.timeline({ defaults: { ease: "power2.out" } });
+    introTimeline = timeline;
     if (title) timeline.fromTo(title, { autoAlpha: 0.78, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.38, clearProps: "all" });
     if (subtitle) timeline.fromTo(subtitle, { opacity: 0.4 }, { opacity: 1, duration: 0.25, clearProps: "opacity" }, "-=0.2");
     if (texts.length) timeline.fromTo(texts, { opacity: 0.3, y: 6 }, { opacity: 1, y: 0, duration: 0.3, stagger: 0.085, clearProps: "opacity,transform" }, "-=0.12");
     if (art) timeline.fromTo(art, { opacity: 0.75 }, { opacity: 1, duration: 0.46, clearProps: "opacity" }, "-=0.4");
-    timeline.eventCallback("onComplete", function () { active.clear(); });
+    timeline.eventCallback("onComplete", function () { introTimeline = null; });
   }
 
   function revealCards() {
-    const list = Array.from(doc.querySelectorAll(SELECTORS.cards));
+    const list = Array.from(doc.querySelectorAll(SELECTORS.cards + ", .active-a1-panel, .speech-studio"));
     if (!list.length || !("IntersectionObserver" in global) || mode === "minimal") return;
     const observer = new global.IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -191,16 +192,17 @@
   }
   function stop() {
     observers.forEach(function (observer) { observer.disconnect(); });
+    if (introTimeline) { introTimeline.kill(); introTimeline = null; }
     if (global.gsap) active.forEach(function (el) { global.gsap.killTweensOf(el); });
     active.clear();
   }
   function init() {
     if (started) return;
     started = true;
-    choice = doc.querySelector("[data-motion-control]");
+    controls = Array.from(doc.querySelectorAll("[data-motion-control]"));
     refresh(readSaved(), false);
-    if (choice) choice.addEventListener("change", function () {
-      refresh(choice.value, true);
+    controls.forEach(function (choice) {
+      choice.addEventListener("change", function () { refresh(choice.value, true); });
     });
     if (media.addEventListener) media.addEventListener("change", function () { refresh(readSaved(), false); });
     events();
