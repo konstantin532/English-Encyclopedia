@@ -180,6 +180,10 @@ def cafe_mission(request):
                 state["messages"].append({"who": "You", "text": answer})
                 advance(state, answer)
             elif action == "save" and state["phase"] == "done":
+                # Reject saving an already recorded dialogue, even with the
+                # fresh nonce issued after its first successful POST.
+                if state.get("saved_id") is not None:
+                    return HttpResponseBadRequest("Эта попытка уже сохранена.")
                 assistance = request.POST.get("assistance")
                 if assistance not in (
                     IndependentAttempt.Assistance.NO_HELP,
