@@ -75,6 +75,7 @@ def independent_check(request, slug):
                       for key in TASKS],
             "result": None, "batch_results": None, "attempts": [],
             "ratings": RATINGS, "batch_error": message,
+            "assistance_selected": request.POST.get("assistance", ""),
             "transfer_variant": variant,
             "transfer_variant_total": len(choices),
             "batch_token": request.session[token_key],
@@ -146,6 +147,15 @@ def independent_check(request, slug):
                 return render_batch_error(
                     "Заполните все четыре поля. Каждый ответ — не более 400 символов."
                 )
+            assistance = request.POST.get("assistance")
+            if assistance not in (
+                IndependentAttempt.Assistance.NO_HELP,
+                IndependentAttempt.Assistance.NOTES,
+                IndependentAttempt.Assistance.TRANSLATOR,
+            ):
+                return render_batch_error(
+                    "Выберите, использовали ли вы конспект или переводчик. Это самоотчёт, не экзаменационная оценка."
+                )
             batch_results = []
             try:
                 with transaction.atomic():
@@ -164,6 +174,7 @@ def independent_check(request, slug):
                             skill=skill, submitted=answer, outcome=outcome,
                             task_variant=variant if skill == "transfer" else 0,
                             batch_token=supplied_token,
+                            assistance=assistance,
                         )
                         batch_results.append({
                             "skill": skill, "title": {
