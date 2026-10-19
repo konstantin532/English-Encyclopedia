@@ -58,7 +58,28 @@ PILOTS = {
             {
                 "prompt": "Гость впервые у вас дома. Покажите одну вещь и вежливо предложите "
                           "воду. Напишите 1–3 простые английские фразы.",
-                "model": "This is my room. Do you like it?",
+                "model": "This is my room. Would you like some water?",
+            },
+        ),
+    },
+    "a1-cafe-order": {
+        "week": 3, "skill": "repair_cafe_order",
+        "title": "Неделя 3 · изменившийся заказ",
+        "missions": (
+            {
+                "prompt": "Вы впервые подошли к стойке кафе. Попросите по-английски "
+                          "один чай, затем спросите, есть ли кофе. Напишите 1–3 фразы.",
+                "model": "I'd like one tea, please. Do you have coffee?",
+            },
+            {
+                "prompt": "Через неделю вы в другом кафе. В продаже нет чая; попросите "
+                          "один кофе вместо него и вежливо уточните, сколько он стоит.",
+                "model": "Can I have one coffee, please? How much is it?",
+            },
+            {
+                "prompt": "В новой ситуации продавец услышал «два кофе», а вы хотели "
+                          "один. Исправьте количество и завершите заказ вежливо.",
+                "model": "No, sorry. One coffee, please. Thank you.",
             },
         ),
     },
@@ -80,13 +101,14 @@ def next_stage(rows, now):
     first = by_variant.get(100)
     if first is None:
         return STAGES[0], None
-    day_30_due = first.created_at + timedelta(days=30)
+    # A +7d measurement cannot be performed at day 20 or day 29 and
+    # silently reported as "7-day retention". Close its window after day 13.
+    day_7_cutoff = first.created_at + timedelta(days=14)
     for stage in STAGES[1:]:
         if stage[1] in by_variant:
             continue
-        if stage[1] == 101 and now >= day_30_due:
-            # A missed day-7 probe cannot be "made up" at day 30 and
-            # misrepresented as retention after seven days. Preserve missingness.
+        if stage[1] == 101 and now >= day_7_cutoff:
+            # Missingness stays missing. The +30d stage remains independent.
             continue
         return stage, first.created_at + timedelta(days=stage[2])
     return None, None
@@ -96,7 +118,7 @@ def next_stage(rows, now):
 @require_http_methods(["GET", "POST"])
 def transfer_pilot(request, slug):
     if slug not in PILOTS:
-        return HttpResponseBadRequest("Эксперимент открыт только для двух первых недель A1.")
+        return HttpResponseBadRequest("Эксперимент доступен только для выбранных уроков A1.")
     pilot = PILOTS[slug]
     lesson = get_object_or_404(
         Lesson, slug=slug, level__code="A1", is_published=True,
@@ -141,6 +163,17 @@ def transfer_pilot(request, slug):
                     batch_token=expected,
                     prompt_snapshot=mission["prompt"],
                     model_snapshot=mission["model"],
+                    self_rubric={
+                        "pilot_stage": stage[0],
+                        "planned_at": due_at.isoformat() if due_at else None,
+                        "actual_submit_at": now.isoformat(),
+                        "timing": (
+                            "initial" if due_at is None else
+                            "late" if now > due_at + timedelta(days=1) else
+                            "within_one_day"
+                        ),
+                        "intermediate_practice": "not_measured",
+                    },
                 )
         except IntegrityError:
             return HttpResponseBadRequest("Этот этап уже выполнен; повторная отправка не записана.")

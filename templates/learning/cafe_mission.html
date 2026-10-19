@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Живой заказ в кафе · A1 Learning Engine{% endblock %}
+{% block content %}
+<main class="wrap" style="max-width:760px; padding-bottom:2rem">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'core:cafe_lab' %}">Лаборатория «В кафе»</a> / диалог</p>
+    <h1>Миссия: заказ в кафе</h1>
+    <p><strong>Я могу:</strong> заказать напиток, спросить об альтернативах,
+      изменить заказ и исправить недоразумение с количеством.</p>
+    <p>Попросите <strong lang="en">one {{ wanted }}</strong> (одну порцию
+      {% if wanted == "tea" %}чая{% else %}кофе{% endif %}).
+      Мия знает, что есть в наличии, а вы — нет. Общайтесь с ней по-английски.
+      Когда заказ изменится, уточняйте и отвечайте самостоятельно.</p>
+    <p>Это <strong>ограниченный экспериментальный диалог</strong>, а не свободный
+      искусственный интеллект: программа понимает только некоторые простые фразы.
+      Неузнанные ответы не оцениваются как неверный английский.</p>
+    <p>Используйте вымышленные сведения. Не вводите личную информацию.
+      Аудио и микрофон для этой миссии не требуются.</p>
+  </header>
+
+  <section class="section" aria-labelledby="dialogue-title">
+    <h2 id="dialogue-title">Разговор с Мией</h2>
+    <ol aria-label="Реплики разговора" style="padding-left:1.5rem">
+      {% for line in state.messages %}
+        <li style="margin:.6rem 0">
+          <strong>{% if line.who == "You" %}Вы{% else %}Мия{% endif %}:</strong>
+          <span lang="en">{{ line.text }}</span>
+        </li>
+      {% endfor %}
+    </ol>
+
+    {% if state.feedback %}
+      <p role="status" aria-live="polite">{{ state.feedback }}</p>
+    {% endif %}
+
+    {% if finished %}
+      <h3>Заказ выполнен в рамках учебного сценария</h3>
+      <p>Система распознала нужные коммуникативные действия, но не проверила
+        полноценное знание языка или произношение. Для оценки свободных реплик
+        нужна проверка преподавателя.</p>
+      {% if state.saved_id %}
+        <p role="status">Попытка сохранена и ожидает оценки преподавателя.
+          Она не меняет ваш уровень CEFR и не повышает владение словами.</p>
+        <p><a href="{% url 'learning:transfer_pilot' lesson.slug %}">Проверить перенос навыка в новой ситуации через 7 и 30 дней →</a></p>
+      {% else %}
+        <form method="post">
+          {% csrf_token %}
+          <input type="hidden" name="token" value="{{ state.nonce }}">
+          <input type="hidden" name="action" value="save">
+          <fieldset>
+            <legend>Вы пользовались дополнительной помощью? (самоотчёт)</legend>
+            <label style="display:block; margin:.5rem 0"><input type="radio" name="assistance" value="no_help" required> Без внешней помощи</label>
+            <label style="display:block; margin:.5rem 0"><input type="radio" name="assistance" value="notes"> Конспект или подсказки</label>
+            <label style="display:block; margin:.5rem 0"><input type="radio" name="assistance" value="translator"> Переводчик или готовый ответ</label>
+          </fieldset>
+          <p>Открытые подсказки этой миссии учитываются даже при выборе «Без внешней помощи».</p>
+          <button type="submit" class="btn btn-primary">Сохранить попытку для проверки</button>
+        </form>
+      {% endif %}
+    {% else %}
+      <form method="post" aria-labelledby="dialogue-title">
+        {% csrf_token %}
+        <input type="hidden" name="token" value="{{ state.nonce }}">
+        <input type="hidden" name="action" value="send">
+        <label for="cafe-mission-answer"><strong>Ваш ответ Мие на английском</strong></label>
+        <input id="cafe-mission-answer" type="text" name="answer"
+               minlength="2" maxlength="80" required autocomplete="off"
+               style="display:block; width:100%; max-width:100%; margin:.5rem 0 1rem">
+        <button type="submit" class="btn btn-primary">Отправить реплику</button>
+      </form>
+      {% if can_hint %}
+        <form method="post" style="margin-top:.8rem">
+          {% csrf_token %}
+          <input type="hidden" name="token" value="{{ state.nonce }}">
+          <input type="hidden" name="action" value="hint">
+          <button type="submit" class="btn">Показать необязательную подсказку</button>
+        </form>
+      {% endif %}
+    {% endif %}
+  </section>
+
+  <form method="post" style="margin-top:1.5rem">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="restart">
+    <button type="submit" class="btn">Начать новый разговор (текущий будет сброшен)</button>
+  </form>
+  <p style="margin-top:1rem"><a href="{% url 'core:cafe_lab' %}">Вернуться к озвучке и упражнениям кафе</a></p>
+</main>
+{% endblock %}

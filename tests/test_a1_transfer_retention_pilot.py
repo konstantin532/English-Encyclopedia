@@ -48,12 +48,12 @@ class A1TransferRetentionPilotTests(TestCase):
         self.assertEqual(result.status_code, 302)
         return IndependentAttempt.objects.get(user=self.user, task_variant=100)
 
-    def test_only_two_familiar_weeks_are_supported(self):
-        for slug in ("a1-verb-be", "a1-have-like-can-do"):
+    def test_only_selected_lessons_are_supported(self):
+        for slug in ("a1-verb-be", "a1-have-like-can-do", "a1-cafe-order"):
             self.assertEqual(self.client.get(
                 reverse("learning:transfer_pilot", args=[slug])).status_code, 200)
         self.assertEqual(self.client.get(reverse(
-            "learning:transfer_pilot", args=["a1-cafe-order"])).status_code, 400)
+            "learning:transfer_pilot", args=["a1-nouns-first-words"])).status_code, 400)
 
     def test_login_is_required_and_other_user_cannot_view_my_answers(self):
         outsider = Client()
@@ -124,6 +124,30 @@ class A1TransferRetentionPilotTests(TestCase):
             user=self.user, lesson=self.lesson, task_variant=101).exists())
         self.assertEqual(set(IndependentAttempt.objects.filter(
             user=self.user).values_list("task_variant", flat=True)), {100, 102})
+
+    def test_late_day_seven_cannot_be_misreported_as_day_seven(self):
+        first = self._first()
+        IndependentAttempt.objects.filter(pk=first.pk).update(
+            created_at=timezone.now() - timedelta(days=20))
+        page = self.client.get(self.url)
+        self.assertEqual(page.context["stage"][1], 102)
+        self.assertFalse(page.context["ready"])
+        self.assertFalse(IndependentAttempt.objects.filter(
+            user=self.user, task_variant=101).exists())
+
+    def test_late_transfer_retains_scheduled_and_actual_provenance(self):
+        first = self._first()
+        self.assertEqual(first.self_rubric["timing"], "initial")
+        IndependentAttempt.objects.filter(pk=first.pk).update(
+            created_at=timezone.now() - timedelta(days=11))
+        page = self.client.get(self.url)
+        self.assertEqual(page.context["stage"][1], 101)
+        self.assertEqual(self._post(answer="Hi, I'm Sam.").status_code, 302)
+        second = IndependentAttempt.objects.get(user=self.user, task_variant=101)
+        self.assertEqual(second.self_rubric["timing"], "late")
+        self.assertIsNotNone(second.self_rubric["planned_at"])
+        self.assertIsNotNone(second.self_rubric["actual_submit_at"])
+        self.assertEqual(second.self_rubric["intermediate_practice"], "not_measured")
 
     def test_stale_token_and_double_submit_do_not_create_extra_evidence(self):
         page = self.client.get(self.url)
