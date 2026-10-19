@@ -123,7 +123,8 @@ class RotatingIndependentReviewTests(TestCase):
         page = self.client.get(self.url)
         guide = page.context["guide"]
         current = page.context["transfer_variant"]
-        answers = {"action": "batch", "batch_token": page.context["batch_token"],
+        answers = {"action": "batch", "assistance": "no_help",
+                   "batch_token": page.context["batch_token"],
                    **{"answer_" + key: guide["tasks"][key]["model"]
                       for key in ("meaning", "writing", "transfer", "explain")}}
         if variant is not None:
@@ -174,7 +175,7 @@ class RotatingIndependentReviewTests(TestCase):
         page = self.client.get(self.url)
         guide = page.context["guide"]
         token = page.context["batch_token"]
-        form = {"action": "batch", "batch_token": token,
+        form = {"action": "batch", "assistance": "no_help", "batch_token": token,
                 "transfer_variant": str(page.context["transfer_variant"]),
                 **{"answer_" + skill: guide["tasks"][skill]["model"]
                    for skill in ("meaning", "writing", "transfer", "explain")}}
@@ -217,7 +218,7 @@ class RotatingIndependentReviewTests(TestCase):
         page = self.client.get(self.url)
         original = "My own detailed answer on a narrow Android screen"
         invalid = self.client.post(self.url, {
-            "action": "batch", "batch_token": page.context["batch_token"],
+            "action": "batch", "assistance": "no_help", "batch_token": page.context["batch_token"],
             "transfer_variant": str(page.context["transfer_variant"]),
             "answer_meaning": original, "answer_writing": "I am here.",
             "answer_transfer": "I have a book.", "answer_explain": "",
@@ -233,7 +234,7 @@ class RotatingIndependentReviewTests(TestCase):
         page = self.client.get(self.url)
         attack = "<script>alert(1)</script>"
         bad = self.client.post(self.url, {
-            "action": "batch", "batch_token": page.context["batch_token"],
+            "action": "batch", "assistance": "no_help", "batch_token": page.context["batch_token"],
             "transfer_variant": str(page.context["transfer_variant"]),
             "answer_meaning": attack, "answer_writing": "I am here.",
             "answer_transfer": "I read.", "answer_explain": "",
@@ -241,6 +242,23 @@ class RotatingIndependentReviewTests(TestCase):
         self.assertEqual(bad.status_code, 400)
         self.assertNotContains(bad, attack, status_code=400)
         self.assertContains(bad, "&lt;script&gt;", status_code=400)
+
+    def test_disclosure_is_required_recorded_and_is_not_verified(self):
+        page = self.client.get(self.url)
+        t = page.context["guide"]["tasks"]
+        base = {"action": "batch", "batch_token": page.context["batch_token"],
+                "transfer_variant": str(page.context["transfer_variant"]),
+                **{"answer_" + k: t[k]["model"] for k in
+                   ("meaning", "writing", "transfer", "explain")}}
+        self.assertEqual(self.client.post(self.url, base).status_code, 400)
+        self.assertFalse(IndependentAttempt.objects.filter(user=self.student).exists())
+        base["assistance"] = "translator"
+        ok = self.client.post(self.url, base)
+        self.assertEqual(ok.status_code, 200)
+        self.assertEqual(set(IndependentAttempt.objects.filter(
+            user=self.student).values_list("assistance", flat=True)), {"translator"})
+        self.assertContains(ok, "С онлайн-переводчиком")
+        self.assertFalse(UnitProgress.objects.filter(user=self.student).exists())
 
     def test_fake_token_is_rejected_without_saving_student_data(self):
         res = self.client.post(self.url, {"action": "batch",
@@ -251,7 +269,7 @@ class RotatingIndependentReviewTests(TestCase):
     def test_partial_batch_does_not_rotate_or_store_any_answers(self):
         page = self.client.get(self.url)
         result = self.client.post(self.url, {
-            "action": "batch", "batch_token": page.context["batch_token"],
+            "action": "batch", "assistance": "no_help", "batch_token": page.context["batch_token"],
             "transfer_variant": "0", "answer_meaning": "Да",
             "answer_writing": "Hello", "answer_transfer": "",
             "answer_explain": "Понимаю правило"})
