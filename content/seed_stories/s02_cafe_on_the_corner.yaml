@@ -56,8 +56,8 @@ script:
     music: calm
     text: "[S1]Box[/] [D3]likes[/] [T1]the[/] [S4]cafe[/], [C1]and[/] [S1]Box[/] [D3]likes[/] [S2]home[/]."
 questions:
-  - q: "Во сколько Анна идёт в кафе?"
-    a: "It is seven o'clock. — Ровно в семь."
+  - q: "Где Анна находится в семь часов?"
+    a: "I am at the corner cafe. — В кафе на углу."
   - q: "Кто пьёт молоко Мии?"
     a: "There is a big cat. It likes Mia's milk. — Большой кот, это Box."
   - q: "Когда кот приходит в кафе?"
