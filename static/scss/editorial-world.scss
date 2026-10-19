@@ -71,7 +71,7 @@
   }
   .studio-home-heading > span {
     color: var(--studio-green);
-    border-bottom: 1px solid var(--editorial-metal);
+    box-shadow: inset 0 -1px 0 var(--editorial-metal);
   }
 
   /* Editorial chapter markers and bookplates. No dimensions changed. */
@@ -169,6 +169,10 @@
   }
   .story-player [data-play] {
     box-shadow: 0 0 0 5px color-mix(in srgb, white 7%, transparent), 0 6px 20px color-mix(in srgb, black 19%, transparent);
+  }
+  .story-player[data-editorial-playing=true] {
+    border-color: color-mix(in srgb, var(--cinema-gold) 65%, var(--studio-green));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 18%, transparent), 0 25px 62px color-mix(in srgb, var(--cinema-deep) 23%, transparent), 0 0 0 2px color-mix(in srgb, var(--cinema-gold) 13%, transparent);
   }
   .story-script .script-line {
     background-image: linear-gradient(90deg, color-mix(in srgb, var(--studio-mint) 30%, transparent), transparent 82%);
