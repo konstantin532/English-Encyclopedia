@@ -109,6 +109,22 @@ class A1TransferRetentionPilotTests(TestCase):
         self.assertEqual(set(IndependentAttempt.objects.filter(
             user=self.user).values_list("task_variant", flat=True)), {100, 101, 102})
 
+    def test_missing_day_seven_does_not_block_day_thirty_or_fabricate_attendance(self):
+        first = self._first()
+        IndependentAttempt.objects.filter(pk=first.pk).update(
+            created_at=timezone.now() - timedelta(days=31))
+        result = self.client.get(self.url)
+        self.assertEqual(result.status_code, 200)
+        self.assertEqual(result.context["stage"][1], 102)
+        self.assertEqual(result.context["ready"], True)
+        saved = self._post(answer="Hello, I'm Kim. What's your name?")
+        self.assertEqual(saved.status_code, 302)
+        self.assertTrue(self.client.get(self.url).context["completed"])
+        self.assertFalse(IndependentAttempt.objects.filter(
+            user=self.user, lesson=self.lesson, task_variant=101).exists())
+        self.assertEqual(set(IndependentAttempt.objects.filter(
+            user=self.user).values_list("task_variant", flat=True)), {100, 102})
+
     def test_stale_token_and_double_submit_do_not_create_extra_evidence(self):
         page = self.client.get(self.url)
         payload = {
