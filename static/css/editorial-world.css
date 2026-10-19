@@ -430,7 +430,8 @@
     background-position: center;
     color: transparent;
     text-shadow: none;
-    border: 1px solid color-mix(in srgb, var(--cinema-gold) 33%, var(--rule));
+    outline: 1px solid color-mix(in srgb, var(--cinema-gold) 33%, var(--rule));
+    outline-offset: -1px;
   }
   .story-script .speaker-anna::before {
     background-image: url("../img/studio/atlas-portrait-anna.svg");
@@ -447,7 +448,7 @@
     .story-script .speaker-barista::before {
       background-image: none;
       color: CanvasText;
-      border-color: CanvasText;
+      outline-color: CanvasText;
     }
   }
 }
