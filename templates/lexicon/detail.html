@@ -38,8 +38,9 @@
           <dt>ID</dt><dd class="uid">{{ unit.uid }}</dd>
           <dt>Класс</dt><dd><span class="swatch" style="--sw: var(--class-{{ unit.semantic_class.number }})"></span> {{ unit.semantic_class.class_id }}</dd>
           <dt>Уровень курса</dt><dd>{{ unit.internal_level.code }}</dd>
-          <dt>CEFR</dt><dd>{{ unit.get_cefr_display }}</dd>
+          <dt>CEFR</dt><dd>{{ unit.get_cefr_display }}{% if unit.verification_status != 'verified' %} <strong>(оценка, не подтверждена для значения)</strong>{% endif %}</dd>
           <dt>Проверка</dt><dd>{{ unit.get_verification_status_display }}</dd>
+          <dt>Учебная последовательность</dt><dd>{{ unit.internal_level.code }} — внутренняя ступень курса, не сертификат CEFR</dd>
         </dl>
         {% if unit.verification_note %}<p class="drill-hint">{{ unit.verification_note }}</p>{% endif %}
       </div>
