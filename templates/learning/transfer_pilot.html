@@ -23,6 +23,8 @@
       <li>
         <strong>{% if item.task_variant == 100 %}Первая попытка{% elif item.task_variant == 101 %}Через 7 дней{% else %}Через 30 дней{% endif %}</strong>
         — {{ item.created_at|date:"j E Y" }}
+        <p><strong>Вопрос:</strong> {{ item.prompt_snapshot }}</p>
+        <p><strong>Ваш ответ:</strong> <span lang="en">{{ item.submitted }}</span></p>
         <p>Условия: {{ item.get_assistance_display }}.</p>
         <p>Проверка преподавателя: {{ item.get_teacher_verdict_display }}.</p>
         {% if item.teacher_note and item.reviewed_at %}<p>Комментарий преподавателя: {{ item.teacher_note }}</p>{% endif %}
