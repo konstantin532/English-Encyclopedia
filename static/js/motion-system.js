@@ -61,8 +61,11 @@
         option.disabled = media.matches && option.value !== "minimal";
       });
     });
+    if (mode !== "full" && introTimeline) {
+      introTimeline.progress(1).kill();
+      introTimeline = null;
+    }
     if (mode === "minimal") {
-      if (introTimeline) { introTimeline.progress(1).kill(); introTimeline = null; }
       active.forEach(function (el) {
         if (global.gsap) global.gsap.killTweensOf(el);
         el.style.removeProperty("transform");
@@ -207,8 +210,12 @@
   }
   function stop() {
     observers.forEach(function (observer) { observer.disconnect(); });
-    if (introTimeline) { introTimeline.kill(); introTimeline = null; }
-    if (global.gsap) active.forEach(function (el) { global.gsap.killTweensOf(el); });
+    observers.length = 0;
+    if (introTimeline) { introTimeline.progress(1).kill(); introTimeline = null; }
+    if (global.gsap) active.forEach(function (el) {
+      global.gsap.killTweensOf(el);
+      global.gsap.set(el, { clearProps: "opacity,transform" });
+    });
     active.clear();
   }
   function init() {
@@ -226,7 +233,12 @@
     revealCards();
     intro();
     global.addEventListener("pagehide", stop);
-    global.addEventListener("pageshow", function (event) { if (event.persisted) { readingRoute(); } });
+    global.addEventListener("pageshow", function (event) {
+      if (!event.persisted) return;
+      feedbackWatch();
+      readingRoute();
+      revealCards();
+    });
   }
   global.EnglishMotion = { effectiveMode: effectiveMode, shouldAnimate: shouldAnimate, resolve: resolve, enter: enter,
     get mode() { return mode; }, setMode: function (value) { refresh(value, true); } };
