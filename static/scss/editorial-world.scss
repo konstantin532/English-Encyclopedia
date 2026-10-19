@@ -338,8 +338,8 @@
   .week-card-atlas .week-card-art {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     object-fit: cover;
     object-position: 64% center;
     pointer-events: none;
@@ -380,11 +380,11 @@
     appearance: none;
     border: 1px solid color-mix(in srgb, var(--cinema-gold) 28%, var(--rule));
     border-radius: 5px;
-    padding: 5px 10px;
+    padding-block: 5px;
+    padding-inline: 10px;
     background: color-mix(in srgb, var(--surface) 86%, var(--cinema-cream));
     color: var(--ink-soft);
-    font: inherit;
-    font-size: 10px;
+    font: 10px var(--font-ui);
     line-height: inherit;
     cursor: pointer;
     transition: background-color 180ms ease, box-shadow 180ms ease;
