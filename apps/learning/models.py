@@ -183,10 +183,28 @@ class IndependentAttempt(models.Model):
     lesson = models.ForeignKey("lessons.Lesson", on_delete=models.CASCADE, related_name="independent_attempts")
     skill = models.CharField(max_length=12)
     submitted = models.CharField(max_length=400)
+    # Exact exercise shown when this response was created. Newer content edits
+    # must never silently change what a human reviewer thinks was asked.
+    prompt_snapshot = models.TextField(blank=True, default="")
+    model_snapshot = models.TextField(blank=True, default="")
     outcome = models.CharField(max_length=16, choices=Outcome.choices)
     self_rating = models.CharField(max_length=16, blank=True)
+
+    class Assistance(models.TextChoices):
+        NOT_STATED = "not_stated", "Не указано (старая попытка)"
+        NO_HELP = "no_help", "Без конспекта и переводчика"
+        NOTES = "notes", "С конспектом или объяснением"
+        TRANSLATOR = "translator", "С онлайн-переводчиком или готовым ответом"
+
+    # Learner-declared conditions, not proof of actual independent competence.
+    assistance = models.CharField(
+        max_length=16, choices=Assistance.choices, default=Assistance.NOT_STATED
+    )
     # A documented alternative task, chosen server-side; 0 is the original.
     task_variant = models.PositiveSmallIntegerField(default=0)
+    # Empty only for historic/legacy attempts. Modern four-answer POSTs carry
+    # a one-time form token, allowing DB-level protection against race retries.
+    batch_token = models.CharField(max_length=64, blank=True, default="")
     # Learner reflection, never a machine-scored CEFR or speech grade.
     self_rubric = models.JSONField(default=dict, blank=True)
 
@@ -212,4 +230,11 @@ class IndependentAttempt(models.Model):
 
     class Meta:
         indexes = [models.Index(fields=["user", "lesson", "-created_at"], name="independent_user_lesson_idx")]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "lesson", "skill", "batch_token"],
+                condition=~models.Q(batch_token=""),
+                name="unique_independent_batch_skill_token",
+            ),
+        ]
         ordering = ["-created_at"]

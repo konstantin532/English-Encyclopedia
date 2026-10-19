@@ -66,6 +66,61 @@ class TeacherVerifiedIndependentResponseTests(TestCase):
         self.assertContains(page, "Проверено преподавателем:")
         self.assertContains(page, "Фраза понятная, грамматика правильная")
 
+    def test_teacher_sees_the_original_variant_and_not_an_unrelated_answer(self):
+        from apps.learning.understanding import understanding_bank
+        self.attempt.task_variant = 2
+        self.attempt.save(update_fields=["task_variant"])
+        variant = understanding_bank()[self.lesson.slug]["transfer_variants"][1]
+        self.client.force_login(self.staff)
+        page = self.client.get(self.url)
+        self.assertEqual(page.status_code, 200)
+        self.assertContains(page, "Исходная ситуация ученика")
+        self.assertContains(page, variant["prompt"])
+        self.assertContains(page, variant["model"])
+        self.assertContains(page, "I like cooking.")
+
+    def test_historic_snapshot_survives_later_content_and_variant_changes(self):
+        from apps.learning.understanding import understanding_bank
+        bank = understanding_bank()[self.lesson.slug]
+        original = bank["transfer_variants"][1]
+        self.attempt.task_variant = 999
+        self.attempt.prompt_snapshot = original["prompt"]
+        self.attempt.model_snapshot = original["model"]
+        self.attempt.save(update_fields=[
+            "task_variant", "prompt_snapshot", "model_snapshot"])
+        self.client.force_login(self.staff)
+        page = self.client.get(self.url)
+        self.assertContains(page, original["prompt"])
+        self.assertContains(page, original["model"])
+        self.assertNotContains(page, "Не удалось найти задание")
+        rated = self.client.post(self.url, {
+            "teacher_verdict": "meets_task",
+            "rubric_meaning": "yes", "rubric_form": "yes",
+            "rubric_context": "yes",
+            "teacher_note": "Исходный вопрос сохранён, мнение проверено вручную.",
+            "_save": "Сохранить",
+        })
+        self.assertEqual(rated.status_code, 302)
+        self.attempt.refresh_from_db()
+        self.assertEqual(self.attempt.teacher_verdict, "meets_task")
+
+    def test_teacher_must_not_grade_a_task_whose_origin_has_disappeared(self):
+        self.attempt.task_variant = 999
+        self.attempt.save(update_fields=["task_variant"])
+        self.client.force_login(self.staff)
+        response = self.client.post(self.url, {
+            "teacher_verdict": "meets_task",
+            "rubric_meaning": "yes", "rubric_form": "yes",
+            "rubric_context": "yes",
+            "teacher_note": "This is a sufficient note, but provenance is missing.",
+            "_save": "Сохранить",
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Невозможно восстановить исходное задание")
+        self.attempt.refresh_from_db()
+        self.assertEqual(self.attempt.teacher_verdict, "unreviewed")
+        self.assertIsNone(self.attempt.reviewed_at)
+
     def test_invalid_or_inconsistent_staff_verdict_is_rejected(self):
         self.client.force_login(self.staff)
         partial = self.client.post(self.url, {

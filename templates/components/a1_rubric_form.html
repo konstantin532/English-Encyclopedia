@@ -1,7 +1,7 @@
 {# One shared, accessible learner reflection form. This is NOT automated grading. #}
 <div class="independent-rubric">
-  <p>Сравните свой ответ с ситуацией и образцом. Это ваша самооценка, не решение компьютерного экзаменатора. Другая естественная фраза тоже может быть верной.</p>
-  <form method="post" class="independent-rating" aria-label="Самооценка открытого ответа">
+  <p>Самооценка: {% if attempt.skill == 'transfer' %}применение в новой ситуации{% elif attempt.skill == 'explain' %}объяснение правила{% else %}открытый ответ{% endif %}. Сравните свой ответ с ситуацией и образцом. Это ваша самооценка, не решение компьютерного экзаменатора. Другая естественная фраза тоже может быть верной.</p>
+  <form method="post" class="independent-rating" aria-label="Самооценка: {% if attempt.skill == 'transfer' %}применение в ситуации{% elif attempt.skill == 'explain' %}объяснение правила{% else %}открытый ответ{% endif %}, попытка {{ attempt.pk }}">
     {% csrf_token %}
     <input type="hidden" name="action" value="rubric">
     <input type="hidden" name="attempt_id" value="{{ attempt.pk }}">

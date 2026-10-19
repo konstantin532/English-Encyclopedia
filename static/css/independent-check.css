@@ -104,7 +104,7 @@
   outline: 3px solid var(--focus, currentColor); outline-offset: 3px;
 }
 @media (max-width: 430px) {
-  .independent-check { padding-inline: max(8px, env(safe-area-inset-left)); }
+  .independent-check { padding-inline-start: max(12px, env(safe-area-inset-left)); padding-inline-end: max(12px, env(safe-area-inset-right)); }
   .independent-grid { display: block; }
   .independent-batch-submit, .independent-rubric .btn,
   .independent-new-variant .btn { display: block; width: 100%; }
@@ -117,5 +117,97 @@
 @media (forced-colors: active) {
   .independent-rubric .independent-option:has(input:checked) {
     outline: 2px solid Highlight;
+  }
+}
+
+/* Viewport zoom, long answers, and touch keyboard reflow. */
+.independent-check .independent-network-hint { color: var(--ink-soft); font-size: .93rem; line-height: 1.6; }
+.independent-check .independent-submit-status:not(:empty) { margin-top: 1rem; font-weight: 700; }
+.independent-check [data-batch-submit][disabled] { opacity: .76; cursor: progress; }
+.independent-task, .independent-result-item { scroll-margin-top: 1.5rem; }
+.independent-check textarea { overflow-wrap: break-word; max-width: 100%; }
+.independent-check .independent-history { padding-inline-start: 1.5rem; overflow-wrap: anywhere; }
+.independent-check .independent-history li { margin-bottom: 1rem; }
+@media (max-width: 390px) {
+  .independent-grid, .independent-task, .independent-result { width: 100%; }
+  .independent-check .section { padding-inline: clamp(.625rem, 3vw, 1rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .independent-submit-status, [data-batch-submit] { animation: none !important; }
+}
+
+/* Fourth-pass Android and assistive-technology hardening. */
+.independent-check .independent-form-error {
+  padding: 1rem;
+  border: 2px solid currentColor;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  scroll-margin-top: 1.5rem;
+}
+.independent-check .independent-form-error:focus { outline: 3px solid var(--focus, currentColor); outline-offset: 3px; }
+.independent-check .independent-conditions { margin: 1rem 0 1.5rem; padding: 1rem; border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
+.independent-check .independent-conditions legend { font-weight: 700; padding-inline: .25rem; }
+.independent-check .independent-conditions label { min-height: 52px; padding: .75rem .5rem; }
+.independent-check textarea { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+.independent-check button, .independent-check input, .independent-check textarea { touch-action: manipulation; }
+@media (max-width: 600px) and (orientation: landscape) {
+  .independent-check .independent-conditions,
+  .independent-check .independent-rubric { max-width: 100%; }
+  .independent-check .independent-option { min-height: 52px; }
+}
+@media (prefers-contrast: more) {
+  .independent-check .independent-option,
+  .independent-check textarea,
+  .independent-check .independent-conditions { border: 2px solid currentColor; }
+}
+
+/* Mobile audit: avoid horizontal overflow at 320px / large text sizes. */
+.independent-check,
+.independent-check .independent-batch,
+.independent-check .independent-grid,
+.independent-check .independent-result-item,
+.independent-check .independent-conditions,
+.independent-check .independent-rubric,
+.independent-check .independent-rating {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+.independent-check .independent-repeat-notice,
+.independent-check .independent-fresh-notice {
+  border-inline-start: 3px solid currentColor;
+  padding: .65rem .8rem;
+  margin-block: .75rem 1rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.independent-check .independent-count {
+  display: block;
+  margin-top: .35rem;
+  font-variant-numeric: tabular-nums;
+  font-size: .9rem;
+  color: var(--ink);
+}
+.independent-check .independent-rubric [type="radio"],
+.independent-check .independent-conditions [type="radio"] {
+  flex-shrink: 0;
+}
+.independent-check [data-batch-status]:not(:empty) {
+  display: block;
+  padding: .75rem;
+  border-inline-start: 3px solid currentColor;
+}
+@media (max-width: 360px) {
+  .independent-check .independent-rating,
+  .independent-check .independent-rubric,
+  .independent-check .independent-conditions { width: 100%; }
+  .independent-check .independent-option { overflow-wrap: anywhere; }
+}
+@media (forced-colors: active) {
+  .independent-check .independent-repeat-notice,
+  .independent-check [data-batch-status]:not(:empty) {
+    border-color: CanvasText;
   }
 }

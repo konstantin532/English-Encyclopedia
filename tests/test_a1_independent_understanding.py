@@ -104,21 +104,22 @@ class A1IndependentAssessmentTests(TestCase):
         initial = self.client.get(self.url)
         self.assertNotContains(initial, "Типичная ловушка:")
         self.assertNotContains(initial, "Как себя проверить:")
-        sample = understanding_bank()[self.lesson.slug]["tasks"]["writing"]["model"]
-        checked = self.client.post(self.url, {"skill": "writing", "answer": sample})
+        checked = self.send_blind_batch()
         self.assertEqual(checked.status_code, 200)
-        self.assertContains(checked, "Типичная ловушка:")
-        self.assertContains(checked, "Как себя проверить:")
-        self.assertContains(checked, "Почему здесь так? Разобрать правило")
+        self.assertContains(checked, "Типичная ошибка:")
+        self.assertContains(checked, "Как проверить себя:")
+        self.assertContains(checked, "Разобрать правило после четырёх ответов")
 
     def test_blind_full_attempt_shows_no_model_until_all_four_responses(self):
         guide = understanding_bank()[self.lesson.slug]
-        form = {"action": "batch"}
+        form = {"action": "batch", "assistance": "no_help"}
         for key in ("meaning", "writing", "transfer", "explain"):
             form["answer_" + key] = guide["tasks"][key]["model"]
         initial = self.client.get(self.url)
         self.assertNotContains(initial, "Разбор всех четырёх ответов")
         self.assertNotContains(initial, "Один возможный образец")
+        form["batch_token"] = initial.context["batch_token"]
+        form["transfer_variant"] = str(initial.context["transfer_variant"])
         checked = self.client.post(self.url, form)
         self.assertEqual(checked.status_code, 200)
         self.assertContains(checked, "Разбор всех четырёх ответов")
@@ -132,7 +133,11 @@ class A1IndependentAssessmentTests(TestCase):
 
     def test_batch_rejects_partial_answers_without_saving_any(self):
         guide = understanding_bank()[self.lesson.slug]
-        form = {"action": "batch", "answer_meaning": guide["tasks"]["meaning"]["model"],
+        page = self.client.get(self.url)
+        form = {"action": "batch", "assistance": "no_help",
+                "batch_token": page.context["batch_token"],
+                "transfer_variant": str(page.context["transfer_variant"]),
+                "answer_meaning": guide["tasks"]["meaning"]["model"],
                 "answer_writing": guide["tasks"]["writing"]["model"],
                 "answer_transfer": "My own response", "answer_explain": ""}
         res = self.client.post(self.url, form)
@@ -144,78 +149,90 @@ class A1IndependentAssessmentTests(TestCase):
         self.assertEqual(res.status_code, 400)
         self.assertFalse(IndependentAttempt.objects.filter(user=self.user).exists())
 
-    def test_own_model_phrase_is_recorded_as_agreement_not_cefr(self):
-        t = understanding_bank()[self.lesson.slug]["tasks"]["writing"]
-        response = self.client.post(self.url, {"skill": "writing", "answer": t["model"]})
+    def send_blind_batch(self, changes=None, assistance="no_help"):
+        page = self.client.get(self.url)
+        guide = page.context["guide"]
+        form = {
+            "action": "batch",
+            "batch_token": page.context["batch_token"],
+            "transfer_variant": str(page.context["transfer_variant"]),
+            "assistance": assistance,
+            **{"answer_" + key: guide["tasks"][key]["model"] for key in
+               ("meaning", "writing", "transfer", "explain")},
+        }
+        form.update(changes or {})
+        return self.client.post(self.url, form)
+
+    def test_direct_single_skill_cannot_expose_an_answer_before_other_three(self):
+        for skill in ("meaning", "writing", "transfer", "explain"):
+            with self.subTest(skill=skill):
+                res = self.client.post(self.url, {
+                    "skill": skill, "answer": "Some answer"})
+                self.assertEqual(res.status_code, 400)
+                self.assertNotContains(res, "Один возможный образец",
+                                       status_code=400)
+        self.assertFalse(IndependentAttempt.objects.filter(user=self.user).exists())
+
+    def test_narrow_model_match_is_only_key_agreement_not_cefr(self):
+        response = self.send_blind_batch()
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "совпал с подготовленным образцом")
-        attempt = IndependentAttempt.objects.get(user=self.user)
+        attempt = IndependentAttempt.objects.get(user=self.user, skill="writing")
         self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH)
-        self.assertEqual(attempt.skill, "writing")
+        self.assertTrue(attempt.prompt_snapshot)
+        self.assertTrue(attempt.model_snapshot)
         self.assertFalse(UnitProgress.objects.filter(user=self.user).exists())
         self.assertFalse(ExerciseAttempt.objects.filter(user=self.user).exists())
 
-    def test_open_but_different_response_is_not_falsely_graded_wrong(self):
-        answer = "This is another possible way to say the same thing."
-        response = self.client.post(self.url, {"skill": "writing", "answer": answer})
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Он может быть допустимым")
-        attempt = IndependentAttempt.objects.get(user=self.user)
+    def test_different_writing_remains_unverified_not_falsely_marked_wrong(self):
+        res = self.send_blind_batch({"answer_writing":
+                                     "This is another natural possible answer."})
+        self.assertEqual(res.status_code, 200)
+        attempt = IndependentAttempt.objects.get(user=self.user, skill="writing")
         self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.NEEDS_REVIEW)
-        self.assertFalse(UnitProgress.objects.filter(user=self.user).exists())
+        self.assertContains(res, "Не совпало с образцом")
 
-    def test_transfer_is_ungraded_even_if_identical_to_model(self):
-        task = understanding_bank()[self.lesson.slug]["tasks"]["transfer"]
-        response = self.client.post(self.url, {"skill": "transfer", "answer": task["model"]})
-        self.assertEqual(response.status_code, 200)
-        attempt = IndependentAttempt.objects.get(user=self.user)
-        self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.SELF_REPORTED)
-        self.assertContains(response, "Как у вас получилось?")
-        self.assertNotContains(response, "Вы ответили правильно")
-
-    def test_explain_rule_is_an_open_self_assessed_task(self):
-        task = understanding_bank()[self.lesson.slug]["tasks"]["explain"]
-        response = self.client.post(self.url, {"skill": "explain", "answer": task["model"]})
-        self.assertEqual(response.status_code, 200)
-        item = IndependentAttempt.objects.get(user=self.user)
-        self.assertEqual(item.outcome, IndependentAttempt.Outcome.SELF_REPORTED)
-        self.assertEqual(item.skill, "explain")
-        self.assertContains(response, "Как у вас получилось?")
-        result = self.client.post(self.url, {
-            "action": "rate", "attempt_id": item.pk, "rating": "independent",
-        })
+    def test_free_transfer_and_explanation_remain_ungraded(self):
+        result = self.send_blind_batch()
         self.assertEqual(result.status_code, 200)
-        item.refresh_from_db()
-        self.assertEqual(item.self_rating, "independent")
+        for skill in ("transfer", "explain"):
+            item = IndependentAttempt.objects.get(user=self.user, skill=skill)
+            self.assertEqual(item.outcome, IndependentAttempt.Outcome.SELF_REPORTED)
+        self.assertContains(result, "Как у вас получилось?")
+        self.assertNotContains(result, "Вы ответили правильно")
 
-    def test_student_can_self_rate_only_their_own_transfer(self):
-        self.client.post(self.url, {"skill": "transfer", "answer": "This is a phone."})
-        attempt = IndependentAttempt.objects.get(user=self.user)
-        response = self.client.post(self.url, {"action": "rate", "attempt_id": attempt.pk, "rating": "helped"})
-        self.assertEqual(response.status_code, 200)
+    def test_honest_legacy_rating_only_own_previous_attempt(self):
+        self.assertEqual(self.send_blind_batch().status_code, 200)
+        attempt = IndependentAttempt.objects.get(user=self.user, skill="transfer")
+        rated = self.client.post(self.url, {
+            "action": "rate", "attempt_id": attempt.pk, "rating": "helped"})
+        self.assertEqual(rated.status_code, 200)
         attempt.refresh_from_db()
         self.assertEqual(attempt.self_rating, "helped")
-        other = User.objects.create_user(email="another-independent@example.test", password="ExamplePassword123!")
+        other = User.objects.create_user(
+            email="another-independent@example.test", password="ExamplePassword123!")
         self.client.force_login(other)
-        forbidden = self.client.post(self.url, {"action": "rate", "attempt_id": attempt.pk, "rating": "independent"})
+        forbidden = self.client.post(self.url, {
+            "action": "rate", "attempt_id": attempt.pk, "rating": "independent"})
         self.assertEqual(forbidden.status_code, 404)
-        attempt.refresh_from_db()
-        self.assertEqual(attempt.self_rating, "helped")
-        self.assertNotContains(self.client.get(self.url), "This is a phone.")
 
-    def test_empty_and_oversized_answers_rejected_without_storage(self):
+    def test_blank_and_oversized_batch_not_persisted(self):
         for value in ("", " ", "a" * 401):
             with self.subTest(length=len(value)):
-                response = self.client.post(self.url, {"skill": "writing", "answer": value})
-                self.assertEqual(response.status_code, 400)
+                res = self.send_blind_batch({"answer_writing": value})
+                self.assertEqual(res.status_code, 400)
         self.assertFalse(IndependentAttempt.objects.filter(user=self.user).exists())
 
     def test_invalid_skill_and_rating_are_rejected(self):
-        self.assertEqual(self.client.post(self.url, {"skill": "speaking", "answer": "Hello"}).status_code, 400)
-        self.assertEqual(self.client.post(self.url, {"skill": "meaning", "answer": "Да"}).status_code, 200)
-        item = IndependentAttempt.objects.get(user=self.user)
-        self.assertEqual(self.client.post(self.url, {"action": "rate", "attempt_id": item.pk, "rating": "independent"}).status_code, 404)
-        self.assertEqual(self.client.post(self.url, {"action": "rate", "attempt_id": item.pk, "rating": "fake"}).status_code, 400)
+        self.assertEqual(self.client.post(self.url, {
+            "skill": "speaking", "answer": "Hello"}).status_code, 400)
+        self.assertEqual(self.send_blind_batch().status_code, 200)
+        item = IndependentAttempt.objects.get(user=self.user, skill="meaning")
+        self.assertEqual(self.client.post(self.url, {
+            "action": "rate", "attempt_id": item.pk, "rating": "independent",
+        }).status_code, 404)
+        self.assertEqual(self.client.post(self.url, {
+            "action": "rate", "attempt_id": item.pk, "rating": "fake",
+        }).status_code, 400)
 
     def test_login_required_and_other_levels_excluded(self):
         self.client.logout()

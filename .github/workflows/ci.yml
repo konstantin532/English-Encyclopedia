@@ -1,12 +1,21 @@
 name: CI
 on: [push, pull_request]
+permissions:
+  contents: read
+# Pushing many rapid commits should not leave dozens of obsolete pipelines
+# competing with the newest one. Preserve the definitive main check.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
-      - run: uv sync
+      - run: uv sync --frozen
+      - run: uv run python -m compileall -q apps config tests
       - run: uv run python manage.py check
       - run: uv run python manage.py makemigrations --check --dry-run
       # Validate every authored delayed-review card before running the slower suite.
@@ -17,7 +26,7 @@ jobs:
       - run: |
           uv run python manage.py shell -c "from apps.learning.understanding import understanding_bank; b=understanding_bank(); assert len(b)==28; assert sum(len(x['tasks']) for x in b.values())==112; print('A1 clarity: 28 guides, 112 no-options tasks, 15 structural checks')"
       - run: uv run pytest -q
-      - run: node --test tests/js/audio-player.test.cjs tests/js/cafe-lab.test.cjs tests/js/a1-active.test.cjs tests/js/a1-active-browser.test.cjs tests/js/speech-studio.test.cjs tests/js/speech-studio-browser.test.cjs tests/js/speech-review.test.cjs tests/js/speech-review-browser.test.cjs tests/js/speech-shadowing.test.cjs tests/js/speech-stress.test.cjs tests/js/a1-learning-route.test.cjs
+      - run: node --test tests/js/*.test.cjs
       - run: |
           uv run python manage.py migrate -v0
           uv run python manage.py load_content

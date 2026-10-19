@@ -57,14 +57,16 @@
           "prompt": "Передайте по-русски смысл: «You are my friend.».",
           "model": "Ты мой друг.",
           "accepted": [
-            "Ты мой друг."
+            "Ты мой друг.",
+            "Вы мой друг."
           ]
         },
         "writing": {
           "prompt": "Напишите «Я дома».",
           "model": "I am at home.",
           "accepted": [
-            "I am at home."
+            "I am at home.",
+            "I'm at home."
           ]
         },
         "transfer": {
@@ -198,7 +200,7 @@
         },
         "explain": {
           "prompt": "У посетителя есть выбор: резко сказать «Tea!» или «Tea, please». Какая просьба обычно мягче и почему?",
-          "model": "Tea, please звучит вежливее благодаря please и спокойной интонации. Можно также сказать Can I have tea, please?"
+          "model": "Tea, please звучит вежливее благодаря слову please и спокойной интонации. Также можно сказать Can I have some tea, please?"
         }
       },
       "contrast": {
@@ -344,9 +346,11 @@
       "tasks": {
         "meaning": {
           "prompt": "Передайте по-русски смысл: «There is water.».",
-          "model": "Там есть вода.",
+          "model": "Есть вода.",
           "accepted": [
-            "Там есть вода."
+            "Есть вода.",
+            "Там есть вода.",
+            "Вода есть."
           ]
         },
         "writing": {
@@ -357,8 +361,8 @@
           ]
         },
         "transfer": {
-          "prompt": "Спросите в магазине, есть ли вода, затем попросите её.",
-          "model": "Is there water? Can I have some water, please?"
+          "prompt": "Во время поездки спросите у друга, есть ли вода, и затем вежливо попросите немного.",
+          "model": "Is there any water? Can I have some water, please?"
         },
         "explain": {
           "prompt": "На столе две книги. Ученик говорит: «There is two books». Исправьте форму и объясните.",
@@ -428,7 +432,8 @@
           "prompt": "Передайте по-русски смысл: «Do you work?».",
           "model": "Ты работаешь?",
           "accepted": [
-            "Ты работаешь?"
+            "Ты работаешь?",
+            "Вы работаете?"
           ]
         },
         "writing": {
@@ -633,7 +638,8 @@
           "prompt": "Передайте по-русски смысл: «Turn right.».",
           "model": "Поверните направо.",
           "accepted": [
-            "Поверните направо."
+            "Поверните направо.",
+            "Поверни направо."
           ]
         },
         "writing": {
@@ -715,7 +721,8 @@
           "prompt": "Передайте по-русски смысл: «Call me later.».",
           "model": "Позвони мне позже.",
           "accepted": [
-            "Позвони мне позже."
+            "Позвони мне позже.",
+            "Позвоните мне позже."
           ]
         },
         "writing": {
@@ -805,7 +812,8 @@
           "prompt": "Напишите «Мне нравится играть на гитаре».",
           "model": "I like playing the guitar.",
           "accepted": [
-            "I like playing the guitar."
+            "I like playing the guitar.",
+            "I like to play the guitar."
           ]
         },
         "transfer": {
@@ -887,7 +895,8 @@
           "prompt": "Напишите «Я не могу сегодня работать».",
           "model": "I can't work today.",
           "accepted": [
-            "I can't work today."
+            "I can't work today.",
+            "I cannot work today."
           ]
         },
         "transfer": {
@@ -928,7 +937,8 @@
           "prompt": "Напишите «Анна здесь не живёт».",
           "model": "Anna doesn't live here.",
           "accepted": [
-            "Anna doesn't live here."
+            "Anna doesn't live here.",
+            "Anna does not live here."
           ]
         },
         "transfer": {
@@ -974,11 +984,11 @@
         },
         "transfer": {
           "prompt": "На почте назовите адрес: дом 5 на Park Street.",
-          "model": "5 Park Street."
+          "model": "5 Park Street"
         },
         "explain": {
           "prompt": "Адрес: дом 5 на Park Street. Ученик написал «Park Street five». Как записать обычный американский адрес и почему?",
-          "model": "5 Park Street. В стандартном адресе США номер дома пишут перед названием улицы."
+          "model": "5 Park Street. В обычном американском адресе номер дома обычно пишут перед названием улицы."
         }
       },
       "contrast": {
@@ -1133,7 +1143,8 @@
           "prompt": "Напишите «Я не знаю адрес» без банка готовых слов.",
           "model": "I don't know the address.",
           "accepted": [
-            "I don't know the address."
+            "I don't know the address.",
+            "I do not know the address."
           ]
         },
         "transfer": {

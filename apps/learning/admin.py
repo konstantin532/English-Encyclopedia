@@ -2,7 +2,9 @@
 from django import forms
 from django.contrib import admin
 from django.utils import timezone
+from django.utils.html import format_html
 
+from .understanding import get_guide
 from .models import IndependentAttempt
 
 
@@ -40,6 +42,9 @@ class IndependentAttemptReviewForm(forms.ModelForm):
         verdict = data.get("teacher_verdict")
         axes = [data.get("rubric_" + axis) for axis in ("meaning", "form", "context")]
         if verdict and verdict != IndependentAttempt.TeacherVerdict.UNREVIEWED:
+            if not IndependentAttemptAdmin._task(self.instance):
+                raise forms.ValidationError(
+                    "Невозможно восстановить исходное задание: заключение запрещено.")
             if any(value not in ("yes", "partly", "not_yet") for value in axes):
                 raise forms.ValidationError("Заполните смысл, грамматику и уместность.")
             if len((data.get("teacher_note") or "").strip()) < 20:
@@ -60,16 +65,50 @@ class IndependentAttemptAdmin(admin.ModelAdmin):
     list_filter = ("skill", "outcome", "teacher_verdict")
     search_fields = ("user__email", "lesson__title", "submitted")
     readonly_fields = (
-        "user", "lesson", "skill", "task_variant", "submitted", "outcome",
+        "user", "lesson", "skill", "task_variant", "assistance", "submitted", "outcome",
+        "prompt_snapshot", "model_snapshot",
         "self_rating", "self_rubric", "teacher_rubric",
         "reviewed_by", "reviewed_at", "created_at",
+        "original_prompt", "reference_example",
     )
     fields = (
-        "user", "lesson", "skill", "task_variant", "submitted", "outcome",
+        "user", "lesson", "skill", "task_variant", "original_prompt", "assistance",
+        "submitted", "reference_example", "outcome",
         "self_rating", "self_rubric", "created_at", "teacher_verdict",
         "rubric_meaning", "rubric_form", "rubric_context",
         "teacher_note", "teacher_rubric", "reviewed_by", "reviewed_at",
     )
+
+    @admin.display(description="Исходная ситуация ученика")
+    def original_prompt(self, obj):
+        task = self._task(obj)
+        if not task:
+            return "Не удалось найти задание для этой версии. Не оценивайте вслепую."
+        return format_html('<p lang="ru" style="white-space:pre-wrap">{}</p>', task["prompt"])
+
+    @admin.display(description="Один возможный образец (не единственный)")
+    def reference_example(self, obj):
+        task = self._task(obj)
+        if not task:
+            return "Образец отсутствует: нужна ручная проверка содержания."
+        return format_html('<p style="white-space:pre-wrap">{}</p>', task["model"])
+
+    @staticmethod
+    def _task(obj):
+        if not obj or not obj.pk:
+            return None
+        if obj.prompt_snapshot and obj.model_snapshot:
+            return {"prompt": obj.prompt_snapshot, "model": obj.model_snapshot}
+        # Legacy attempts created before prompt snapshots need a guarded lookup.
+        guide = get_guide(obj.lesson.slug)
+        if not guide:
+            return None
+        if obj.skill == "transfer":
+            choices = (guide["tasks"]["transfer"], *guide.get("transfer_variants", []))
+            if not 0 <= obj.task_variant < len(choices):
+                return None
+            return choices[obj.task_variant]
+        return guide["tasks"].get(obj.skill)
 
     def has_add_permission(self, request):
         return False

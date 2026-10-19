@@ -67,6 +67,12 @@ def scaffold_bank():
     path = settings.CONTENT_DIR / "manifests" / "a1_scaffold_transfer.json"
     data = json.loads(path.read_text(encoding="utf-8"))
     rows = data.get("lessons", [])
+    base_document = json.loads(
+        (settings.CONTENT_DIR / "manifests" / "a1_understanding_checks.json").read_text(encoding="utf-8")
+    )
+    understanding_tasks = {
+        entry["slug"]: entry["tasks"]["transfer"] for entry in base_document["lessons"]
+    }
     if data.get("version") != 1 or data.get("level") != "A1":
         raise ValueError("Invalid A1 scaffold manifest")
     if len(rows) != 28 or set(x.get("slug") for x in rows) != PILOT_SLUGS:
@@ -75,7 +81,7 @@ def scaffold_bank():
         raise ValueError("Duplicate A1 scaffold")
     for item in rows:
         steps = item.get("steps", [])
-        task = item.get("transfer_variant", {})
+        tasks = item.get("transfer_variants", [])
         if len(steps) != 3 or any(
             not (isinstance(step.get("example_en"), str)
                  and len(step["example_en"].strip()) >= 3
@@ -88,11 +94,27 @@ def scaffold_bank():
             raise ValueError("Incomplete beginner explanation: " + item["slug"])
         if len({step["example_en"].strip().casefold() for step in steps}) != 3:
             raise ValueError("Duplicate examples: " + item["slug"])
-        if (not isinstance(task.get("prompt"), str) or len(task["prompt"].strip()) < 24
-                or not isinstance(task.get("model"), str) or len(task["model"].strip()) < 12
-                or any(k in task for k in ("accepted", "options", "choices", "word_bank"))
-                or task["prompt"].strip().casefold() == task["model"].strip().casefold()):
-            raise ValueError("Invalid open transfer challenge: " + item["slug"])
+        if not isinstance(tasks, list) or len(tasks) != 2:
+            raise ValueError("Each lesson needs two extra transfer tasks: " + item["slug"])
+        baseline = understanding_tasks.get(item["slug"], {})
+        seen_prompts = {baseline.get("prompt", "").strip().casefold()}
+        seen_models = {baseline.get("model", "").strip().casefold()}
+        for task in tasks:
+            if not isinstance(task, dict) or set(task) != {"prompt", "model"}:
+                raise ValueError("Transfer challenge contains answer keys or unsupported fields")
+            prompt, model = task["prompt"], task["model"]
+            if (not isinstance(prompt, str) or not 24 <= len(prompt.strip()) <= 600
+                    or not isinstance(model, str) or not 12 <= len(model.strip()) <= 400
+                    or prompt.strip().casefold() == model.strip().casefold()):
+                raise ValueError("Invalid free transfer text: " + item["slug"])
+            if prompt.strip().casefold() in seen_prompts:
+                raise ValueError("Repeated transfer prompt: " + item["slug"])
+            seen_prompts.add(prompt.strip().casefold())
+            # Different prompts can sometimes share an A1 answer, but they must
+            # test different communicative acts; avoid rote repeating the model.
+            if model.strip().casefold() in seen_models:
+                raise ValueError("Repeated transfer sample: " + item["slug"])
+            seen_models.add(model.strip().casefold())
     return {x["slug"]: x for x in rows}
 
 
@@ -108,12 +130,10 @@ def understanding_bank():
     compiled = {}
     for row in data["lessons"]:
         extra = extras[row["slug"]]
-        if extra["transfer_variant"]["prompt"] == row["tasks"]["transfer"]["prompt"]:
-            raise ValueError("Repeated transfer prompt: " + row["slug"])
         compiled[row["slug"]] = {
             **row,
             "steps": extra["steps"],
-            "transfer_variants": [extra["transfer_variant"]],
+            "transfer_variants": extra["transfer_variants"],
         }
     return compiled
 
