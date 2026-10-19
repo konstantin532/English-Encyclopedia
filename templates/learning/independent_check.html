@@ -18,8 +18,8 @@
   <section class="section independent-result" aria-labelledby="ind-result-t" aria-live="polite">
     <h2 id="ind-result-t">Результат попытки</h2>
     <p>{{ result.label }}</p>
-    <p>Ваш ответ: <strong>{{ result.attempt.submitted }}</strong></p>
-    <p>Один возможный образец: <strong>{{ result.model }}</strong></p>
+    <p>Ваш ответ: <strong lang="{% if result.skill == 'meaning' or result.skill == 'explain' %}ru{% else %}en{% endif %}">{{ result.attempt.submitted }}</strong></p>
+    <p>Один возможный образец: <strong lang="{% if result.skill == 'meaning' or result.skill == 'explain' %}ru{% else %}en{% endif %}">{{ result.model }}</strong></p>
     <details class="independent-explanation">
       <summary>Почему здесь так? Разобрать правило</summary>
       <p><strong>Причина:</strong> {{ guide.why }}</p>
@@ -75,7 +75,7 @@
       </div>
     {% endif %}
     <p>Отвечайте на задания по порядку без готовых вариантов. До отправки всех четырёх ответов образцы не показываются. После отправки откроется следующий вариант; когда три варианта закончатся, задания повторятся. Это помогает не запоминать один образец. Оценка открытого ответа остаётся вашей или преподавателя.</p>
-    <form method="post" class="independent-batch" data-blind-batch>
+    <form method="post" class="independent-batch" data-blind-batch autocomplete="off">
       {% csrf_token %}
       <input type="hidden" name="transfer_variant" value="{{ transfer_variant }}">
       <input type="hidden" name="batch_token" value="{{ batch_token }}">
@@ -102,13 +102,14 @@
       {% endif %}
       <p class="independent-prompt" id="prompt-{{ task.key }}">{{ task.item.prompt }}</p>
       <label for="ind-answer-{{ task.key }}">Ваш ответ на задание «{{ task.title }}»</label>
-      <textarea id="ind-answer-{{ task.key }}" name="answer_{{ task.key }}" rows="3" maxlength="400" required aria-describedby="prompt-{{ task.key }}" placeholder="Напишите свой вариант здесь" lang="{% if task.key == 'meaning' or task.key == 'explain' %}ru{% else %}en{% endif %}" spellcheck="{% if task.key == 'meaning' or task.key == 'explain' %}true{% else %}false{% endif %}" autocorrect="off" autocapitalize="sentences">{{ task.saved_answer|default:"" }}</textarea>
+      <textarea id="ind-answer-{{ task.key }}" name="answer_{{ task.key }}" rows="3" maxlength="400" required aria-describedby="prompt-{{ task.key }} count-{{ task.key }}" placeholder="Напишите свой вариант здесь" lang="{% if task.key == 'meaning' or task.key == 'explain' %}ru{% else %}en{% endif %}" spellcheck="{% if task.key == 'meaning' or task.key == 'explain' %}true{% else %}false{% endif %}" autocorrect="off" autocapitalize="sentences">{{ task.saved_answer|default:"" }}</textarea>
+      <small class="independent-count" id="count-{{ task.key }}" aria-live="off">0 / 400 символов</small>
     </section>
     {% endfor %}
     </div>
     <button class="btn btn-primary independent-batch-submit" type="submit" data-batch-submit>Отправить четыре ответа и открыть разбор</button>
     <p class="independent-submit-status" data-batch-status role="status" aria-live="polite" aria-atomic="true"></p>
-    <p class="independent-network-hint">Не закрывайте эту вкладку до появления результатов. При ошибке сети ваши ответы останутся в полях, пока страница открыта.</p>
+    <p class="independent-network-hint">Не закрывайте эту вкладку до появления результатов. При отсутствии связи не обновляйте страницу: ответы в открытой форме можно отправить после восстановления соединения.</p>
     </form>
   </section>
 
