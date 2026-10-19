@@ -56,6 +56,7 @@
   </section>
   {% endif %}
 
+  {% if not result and not batch_results %}
   <section class="section" aria-labelledby="blind-four-title">
     <h2 id="blind-four-title">Сначала все четыре ответа — потом разбор</h2>
     <p>Отвечайте на задания по порядку без готовых вариантов. До отправки всех четырёх ответов образцы не показываются. После прохождения всех четырёх заданий вы получите другую задачу на перенос навыка при следующем посещении. Это помогает не запоминать один образец. Оценка открытого ответа остаётся вашей или преподавателя.</p>
@@ -89,8 +90,10 @@
     </form>
   </section>
 
+  {% endif %}
+
   {% if batch_results %}
-  <p class="independent-new-variant"><a class="btn btn-quiet" href="{% url 'learning:independent_check' lesson.slug %}#task-transfer">Попробовать следующий новый контекст →</a></p>
+  <p class="independent-new-variant"><a class="btn btn-quiet" href="{% url 'learning:independent_check' lesson.slug %}#task-transfer">Начать следующую независимую попытку →</a></p>
   {% endif %}
 
   {% if attempts %}
