@@ -28,6 +28,17 @@ content/CEFR audit in PR #34 is already merged and unchanged here.
    \`is-your-turn\` and \`aria-current\` markers when playback advances.
    A browser-simulation Node test exercises events and DOM state.
 
+3. **Broken playback timeline accepted as real audio:** the readiness gate used
+   to check only the declared engine and the file's RIFF/MP3 signature. It
+   would approve a manifest missing `timings` or containing inverted, negative,
+   out-of-order, non-finite or out-of-duration offsets. The actual transcript
+   player indexes `timings` on time updates, so this manifested as a broken
+   highlight or a JavaScript exception after publication. Validation now
+   requires a nonempty ordered timeline with contiguous line indices for all
+   three tempos, a finite positive declared duration, and the same line count
+   across speeds. Nine malformed-manifest regressions demonstrate rejection
+   using otherwise structurally valid WAV files.
+
 ## Verification / acceptance
 
 - \`uv run pytest -q tests/test_audio_archive.py tests/test_audio_distribution.py\`
