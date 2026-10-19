@@ -86,9 +86,10 @@
       mode = btn.dataset.speechMode;
       visible = mode === "see" || mode === "echo";
       paint();
+      global.EnglishMotion?.enter(current, "component");
     }));
-    prev.addEventListener("click", () => { index--; visible = mode === "see" || mode === "echo"; paint(); });
-    next.addEventListener("click", () => { index++; visible = mode === "see" || mode === "echo"; paint(); });
+    prev.addEventListener("click", () => { index--; visible = mode === "see" || mode === "echo"; paint(); global.EnglishMotion?.enter(current, "component"); });
+    next.addEventListener("click", () => { index++; visible = mode === "see" || mode === "echo"; paint(); global.EnglishMotion?.enter(current, "component"); });
     reveal.addEventListener("click", () => { visible = true; paint(); });
     done.addEventListener("click", () => { if (checked.has(index)) checked.delete(index); else checked.add(index); paint(); });
     const tempo = one("[data-speech-tempo]");

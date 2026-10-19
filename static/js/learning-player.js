@@ -28,9 +28,7 @@
       feedback.hidden = false;
       feedback.dataset.state = state;
       feedback.innerHTML = html;
-      if (window.gsap && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        gsap.fromTo(feedback, { autoAlpha: 0, y: -4 }, { autoAlpha: 1, y: 0, duration: 0.25 });
-      }
+      window.EnglishMotion?.resolve(feedback, state);
     };
     const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -68,13 +66,26 @@
       return [...line.querySelectorAll("button")].map((b) => b.textContent).join(" ");
     };
 
+    let checking = false;
+    const submitButton = form.querySelector('button[type="submit"]');
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      if (checking) return; // A second tap must not create a second grade or retry.
       const value = answer().trim();
       if (!value) { say("no", kind === "choice" ? "Выберите один вариант." : kind === "fill" ? "Впишите слово." : "Соберите фразу из слов."); return; }
+      checking = true;
+      const originalLabel = submitButton?.textContent;
+      if (submitButton) { submitButton.disabled = true; submitButton.textContent = "Проверяем…"; }
+      feedback.hidden = false;
+      feedback.dataset.state = "pending";
+      feedback.textContent = "Проверяем ответ…";
       let data;
       try { data = await post(form.dataset.url, { answer: value }); }
       catch (err) { say("no", "Не удалось проверить ответ: нет связи с сервером. Обновите страницу и попробуйте ещё раз."); return; }
+      finally {
+        checking = false;
+        if (submitButton) { submitButton.disabled = false; submitButton.textContent = originalLabel; }
+      }
       if (data.correct) {
         tries = 0;
         const label = data.assessment === "model_match"
@@ -127,9 +138,13 @@
     });
 
     reveal.addEventListener("click", async () => {
+      if (checking) return;
+      checking = true;
+      reveal.disabled = true;
       let data;
       try { data = await post(form.dataset.url, { reveal: true }); }
       catch (err) { say("no", "Не удалось загрузить ответ. Обновите страницу."); return; }
+      finally { checking = false; reveal.disabled = false; }
       say("reveal", `Ответ: <strong lang="en">${esc(data.answer)}</strong>. ${esc(data.explanation)}`);
       reveal.hidden = true;
     });

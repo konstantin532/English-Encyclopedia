@@ -11,6 +11,8 @@
         <a class="studio-login-link" href="{% url 'accounts:login' %}">Войти</a>
         <a class="btn btn-primary btn-small" href="{% url 'accounts:signup' %}">Регистрация</a>
       {% endif %}
+      <label class="motion-control"><span>Движение</span><select data-motion-control aria-label="Интенсивность анимации" disabled><option value="full">Кино</option><option value="balanced" selected>Баланс</option><option value="minimal">Минимум</option></select></label>
+      <span class="visually-hidden" id="motion-mode-hint" role="status" aria-live="polite">Режим движения обновится после загрузки страницы.</span>
       <button class="btn btn-quiet btn-small toggle" type="button" data-markers-toggle aria-label="Переключить цвет маркеров"
               aria-pressed="{% if MARKERS_MONO %}false{% else %}true{% endif %}"
               {% if user.is_authenticated %}data-save-url="{% url 'learning:toggle_markers' %}"{% endif %}>

@@ -432,6 +432,7 @@
       current = index;
       twist = 0;
       renderMission();
+      window.EnglishMotion?.enter(by(".active-a1-mission-card"), "scene");
     }
     tabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
@@ -444,6 +445,7 @@
       saveDraft();
       twist = (twist + 1) % 3;  // base → surprise 1 → surprise 2 → base
       renderMission();
+      window.EnglishMotion?.enter(by(".active-a1-mission-card"), "scene");
       answer.focus();
     });
     by("[data-a1-mission-hint]").addEventListener("click", function () {

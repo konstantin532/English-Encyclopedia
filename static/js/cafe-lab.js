@@ -79,6 +79,7 @@
     const open = !transcript.hidden;
     toggle.setAttribute("aria-expanded", String(open));
     toggle.textContent = open ? "Скрыть реплики" : "Показать реплики";
+    if (open) window.EnglishMotion?.enter(transcript, "scene");
   });
 
   const explanations = {
@@ -92,7 +93,10 @@
   };
   const wordPanel = by("[data-word-explanation]");
   root.querySelectorAll("[data-explain]").forEach(function (btn) {
-    btn.addEventListener("click", function () { text(wordPanel, explanations[btn.dataset.explain]); });
+    btn.addEventListener("click", function () {
+      text(wordPanel, explanations[btn.dataset.explain]);
+      window.EnglishMotion?.enter(wordPanel, "component");
+    });
   });
 
   const qty = by("[data-quantity]");
@@ -103,7 +107,12 @@
     text(output, buildSentence(qty.value, drink.value, style.value));
     text(by("[data-built-translation]"), buildTranslation(qty.value, drink.value));
   }
-  [qty, drink, style].forEach(function (el) { el.addEventListener("change", refresh); });
+  [qty, drink, style].forEach(function (el) {
+    el.addEventListener("change", function () {
+      refresh();
+      window.EnglishMotion?.enter(output, "component");
+    });
+  });
   refresh();
 
   const audioStatus = by("[data-audio-status]");
