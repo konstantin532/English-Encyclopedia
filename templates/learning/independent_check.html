@@ -41,6 +41,7 @@
     <div class="independent-result-item">
       <h3>{{ forloop.counter }}. {{ entry.title }}</h3>
       <p>{{ entry.label }}</p>
+      <p><strong>Условия выполнения (по словам ученика):</strong> {{ entry.attempt.get_assistance_display }}</p>
       <p>Вы написали: <strong>{{ entry.attempt.submitted }}</strong></p>
       <p>Один возможный образец: <strong>{{ entry.model }}</strong></p>
       {% if entry.attempt.outcome == "self_reported" and not entry.attempt.self_rubric %}
@@ -72,6 +73,13 @@
       <input type="hidden" name="transfer_variant" value="{{ transfer_variant }}">
       <input type="hidden" name="batch_token" value="{{ batch_token }}">
       <input type="hidden" name="action" value="batch">
+      <fieldset class="independent-conditions" aria-describedby="assistance-note">
+        <legend>Как вы выполняете эту попытку?</legend>
+        <p id="assistance-note">Выберите фактические условия до отправки. Это ваш самоотчёт, он не считается проверенным результатом.</p>
+        <label class="independent-option"><input type="radio" name="assistance" value="no_help" required {% if assistance_selected == "no_help" %}checked{% endif %}><span>Без конспекта и переводчика</span></label>
+        <label class="independent-option"><input type="radio" name="assistance" value="notes" {% if assistance_selected == "notes" %}checked{% endif %}><span>Пользовался объяснениями или конспектом</span></label>
+        <label class="independent-option"><input type="radio" name="assistance" value="translator" {% if assistance_selected == "translator" %}checked{% endif %}><span>Пользовался переводчиком или готовыми ответами</span></label>
+      </fieldset>
       <div class="independent-grid">
       {% for task in tasks %}
     <section class="section independent-task" aria-labelledby="skill-{{ task.key }}" id="task-{{ task.key }}">
@@ -112,6 +120,7 @@
       <li>
         {{ item.created_at|date:"j E H:i" }} — {{ item.get_outcome_display }}
         {% if item.self_rating %} (самооценка: {{ item.self_rating }}){% endif %}
+        {% if item.assistance != "not_stated" %}<p>Условия: {{ item.get_assistance_display }} — самоотчёт</p>{% endif %}
         {% if item.teacher_verdict != "unreviewed" %}
           <p><strong>Проверено преподавателем:</strong> {{ item.get_teacher_verdict_display }}</p>
           {% if item.teacher_note %}<p>{{ item.teacher_note }}</p>{% endif %}
