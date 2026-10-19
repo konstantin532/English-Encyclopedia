@@ -47,8 +47,11 @@ class UnitProgress(models.Model):
             new_context = bool(context) and context not in self.contexts_used
             if new_context:
                 self.contexts_used = [*self.contexts_used, context]
-            # Scheduling counts successful reviews; mastery evidence does not.
-            self.stage = min(self.stage + 1, len(REVIEW_INTERVALS_DAYS) - 1)
+            # Replaying early cannot manufacture spaced repetition: the
+            # interval advances only when a review is actually due (or new).
+            if self.next_review_at is None or self.next_review_at <= now:
+                self.stage = min(self.stage + 1, len(REVIEW_INTERVALS_DAYS) - 1)
+                self.next_review_at = now + timedelta(days=REVIEW_INTERVALS_DAYS[self.stage])
             if self.status == Status.NEW:
                 self.status = Status.RECOGNITION
             elif new_context:
@@ -63,7 +66,7 @@ class UnitProgress(models.Model):
             self.stage = max(self.stage - 1, 0)
             if self.status == Status.ACTIVE:
                 self.status = Status.INDEPENDENT_USE
-        self.next_review_at = now + timedelta(days=REVIEW_INTERVALS_DAYS[self.stage])
+            self.next_review_at = now + timedelta(days=REVIEW_INTERVALS_DAYS[self.stage])
 
 
 class ExerciseAttempt(models.Model):

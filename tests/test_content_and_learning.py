@@ -202,6 +202,19 @@ class ProgressRuleTests(TestCase):
         self.assertEqual(self.p.contexts_used, [])
         self.assertEqual(self.p.correct_count, 10)
 
+    def test_replay_before_due_does_not_skip_days_of_spaced_review(self):
+        self.p.register(True, "one-context")
+        first_due = self.p.next_review_at
+        self.assertEqual(self.p.stage, 1)
+        for _ in range(8):
+            self.p.register(True, "one-context")
+        self.assertEqual(self.p.stage, 1)
+        self.assertEqual(self.p.next_review_at, first_due)
+        # Repetition after the due time legitimately advances the interval.
+        self.p.next_review_at = timezone.now() - timedelta(seconds=1)
+        self.p.register(True, "one-context")
+        self.assertEqual(self.p.stage, 2)
+
     def test_mistake_shortens_interval(self):
         self.p.register(True, "a")
         self.p.register(True, "b")
