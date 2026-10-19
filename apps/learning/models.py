@@ -183,6 +183,10 @@ class IndependentAttempt(models.Model):
     lesson = models.ForeignKey("lessons.Lesson", on_delete=models.CASCADE, related_name="independent_attempts")
     skill = models.CharField(max_length=12)
     submitted = models.CharField(max_length=400)
+    # Exact exercise shown when this response was created. Newer content edits
+    # must never silently change what a human reviewer thinks was asked.
+    prompt_snapshot = models.TextField(blank=True, default="")
+    model_snapshot = models.TextField(blank=True, default="")
     outcome = models.CharField(max_length=16, choices=Outcome.choices)
     self_rating = models.CharField(max_length=16, blank=True)
 
