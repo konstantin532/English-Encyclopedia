@@ -240,7 +240,7 @@ units:
   ipa_us: /peɪdʒ/
   translation_ru: страница
   meaning: one side of a sheet in a book
-  example_en: '[D2]Open[/] [T3]your[/] [S2]book[/] [P1]at[/] [S9]page[/] [N7]ten[/].'
+  example_en: '[D2]Open[/] [T3]your[/] [S2]book[/] [P2]to[/] [S9]page[/] [N7]ten[/].'
   example_ru: Откройте книгу на десятой странице.
   usage_note: Page ten — страница номер десять; здесь ten обозначает номер.
   forms:

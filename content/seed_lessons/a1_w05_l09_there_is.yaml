@@ -5,7 +5,7 @@ order: 9
 focus: T
 minutes: 40
 title: "В магазине: there is, there are, some и цвета"
-summary: "Как сказать «есть, имеется» (there is milk, there are apples), попросить немного (some) и выбрать по цвету: red apples, cold milk."
+summary: "Как сказать «есть, имеется» (there is milk, there are apples), попросить яблоки без точного количества (some) и выбрать по цвету: red apples, cold milk."
 units: [LX-00107, LX-00108, LX-00109, LX-00110, LX-00111, LX-00112, LX-00113, LX-00117, LX-00118, LX-00119, LX-00120, LX-00121, LX-00286, LX-00287, LX-00288, LX-00289, LX-00290, LX-00291, LX-00292, LX-00296, LX-00297, LX-00298, LX-00299, LX-00300, LX-00301]
 sound_notes:
   - text: "Is there milk?"
@@ -126,7 +126,7 @@ exercises:
     options: [some, Can, apples, please, have, I]
     answer: "Can I have some apples please"
     hint_ru: "Начните с Can I have, потом some."
-    explanation_ru: "Can I have some apples, please? — some значит «немного, несколько», без точного числа."
+    explanation_ru: "Can I have some apples, please? — some обозначает некоторое количество без точного числа (не обязательно мало)."
     units: [LX-00113, LX-00121]
   - order: 4
     kind: fill
@@ -150,7 +150,7 @@ exercises:
   - order: 6
     kind: fill
     stage: transfer
-    prompt_ru: "Новая ситуация: в магазине есть жёлтые бананы. Попросите немного, вежливо."
+    prompt_ru: "Новая ситуация: в магазине есть жёлтые бананы. Вежливо попросите бананы, не называя точного количества."
     prompt_en: "___"
     answer: "Can I have some yellow bananas, please?"
     accepted: ["Can I have some yellow bananas please?", "Some yellow bananas, please.", "I would like some yellow bananas, please.", "I'd like some yellow bananas, please."]

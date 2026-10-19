@@ -102,7 +102,7 @@ units:
   ipa_us: /mæn/
   translation_ru: мужчина, человек
   example_en: '[T1]The[/] [S1]man[/] [A3]upstairs[/] [D2]works[/] [P3]at[/] [S7]night[/].'
-  example_ru: Сосед сверху работает по ночам.
+  example_ru: Мужчина этажом выше работает по ночам.
   situation: Говорите о соседях
   usage_note: 'Множественное число неправильное: one man — two men.'
 - uid: LX-00149
