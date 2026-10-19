@@ -5,6 +5,7 @@ artifacts before deploying a site claiming generated audio.
 """
 import argparse
 import json
+import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,6 +40,7 @@ def validate_manifest(data: dict, static: Path) -> str | None:
     if not isinstance(data, dict) or data.get("engine") != "kokoro" or not str(data.get("model", "")).startswith("kokoro-v"):
         return "проверочный тон или неизвестный движок"
     static = static.resolve()
+    timeline_lengths = set()
     for tempo in TEMPOS:
         entry = data.get(tempo)
         path = entry.get("file") if isinstance(entry, dict) else None
@@ -51,6 +53,29 @@ def validate_manifest(data: dict, static: Path) -> str | None:
             return f"нет файла дорожки {tempo} или путь вне static"
         if not plausible_audio_header(candidate):
             return f"дорожка {tempo} не похожа на WAV/MP3"
+        # The player's highlight() calls .findIndex() on each timeline:
+        # valid sound with missing timestamps makes interactive text unusable.
+        times = entry.get("timings")
+        if not isinstance(times, list) or not times:
+            return f"нет таймингов реплик {tempo}"
+        seconds = entry.get("seconds")
+        if (type(seconds) not in (int, float) or not math.isfinite(seconds)
+                or seconds <= 0):
+            return f"неверная длительность дорожки {tempo}"
+        previous_end = 0.0
+        for index, segment in enumerate(times):
+            if (not isinstance(segment, dict) or type(segment.get("line")) is not int
+                    or segment["line"] != index):
+                return f"неверный номер реплики {tempo}/{index}"
+            start, end = segment.get("start"), segment.get("end")
+            if (type(start) not in (int, float) or type(end) not in (int, float)
+                    or not math.isfinite(start) or not math.isfinite(end)
+                    or start < previous_end or end <= start or end > seconds + 0.15):
+                return f"неверные тайминги реплики {tempo}/{index}"
+            previous_end = end
+        timeline_lengths.add(len(times))
+    if len(timeline_lengths) != 1:
+        return "разное количество реплик между скоростями"
     return None
 
 

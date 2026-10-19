@@ -94,11 +94,13 @@
     }
     const idx = tracks[mode].timings.findIndex((x) => t >= x.start && t <= x.end + 0.25);
     if (idx === current) return;
-    lines[current]?.classList.remove("is-speaking");
+    lines[current]?.classList.remove("is-speaking", "is-your-turn");
+    lines[current]?.removeAttribute("aria-current");
     current = idx;
     const line = lines[idx];
     if (!line) { voice.volume = voiceLevel(); return; }
     line.classList.add("is-speaking");
+    line.setAttribute("aria-current", "true");
     if (pauseLines?.checked) stopAt = tracks[mode].timings[idx].end + 0.15;
     const muted = roleMute && roleMute.value && line.dataset.speaker === roleMute.value;
     voice.volume = muted ? 0 : voiceLevel();
@@ -130,7 +132,7 @@
   voice.addEventListener("pause", () => { setPlaying(false); music?.pause(); });
   voice.addEventListener("seeked", () => syncMusic(true));
   voice.addEventListener("ratechange", () => syncMusic(false));
-  voice.addEventListener("ended", () => { setPlaying(false); amb?.pause(); music?.pause(); lines[current]?.classList.remove("is-speaking", "is-your-turn"); current = -1; });
+  voice.addEventListener("ended", () => { setPlaying(false); amb?.pause(); music?.pause(); lines[current]?.classList.remove("is-speaking", "is-your-turn"); lines[current]?.removeAttribute("aria-current"); current = -1; });
   voice.addEventListener("timeupdate", () => { timeEl.textContent = fmt(voice.currentTime); highlight(voice.currentTime); syncMusic(false); });
   musicVol?.addEventListener("input", () => {
     try { localStorage.setItem("ee-music-volume", musicVol.value); } catch (e) { /* нет хранилища */ }
@@ -149,6 +151,8 @@
   // Клик по реплике — слушать с её начала.
   lines.forEach((line) => {
     line.tabIndex = 0;
+    line.setAttribute("role", "button");
+    line.setAttribute("aria-keyshortcuts", "Enter Space");
     const go = () => {
       const t = tracks[mode].timings[Number(line.dataset.line)];
       if (!t) return;
@@ -156,7 +160,12 @@
       if (voice.paused) playBtn.click();
     };
     line.addEventListener("click", (e) => { if (!e.target.closest("a")) go(); });
-    line.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
+    line.addEventListener("keydown", (e) => {
+      if ((e.key === "Enter" || e.key === " ") && e.target === line) {
+        e.preventDefault(); // Space must activate the line, not scroll the page.
+        go();
+      }
+    });
   });
 })();
 

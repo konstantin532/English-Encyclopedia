@@ -42,7 +42,10 @@ class AudioReadinessTests(SimpleTestCase):
                     audio.setsampwidth(2)
                     audio.setframerate(24000)
                     audio.writeframes(bytes(960))
-                tempos[tempo] = {"file": f"audio/stories/s01/{name}"}
+                tempos[tempo] = {
+                    "file": f"audio/stories/s01/{name}", "seconds": 0.02,
+                    "timings": [{"line": 0, "start": 0.001, "end": 0.018}],
+                }
             (folder / "manifest.json").write_text(
                 json.dumps({"engine": "kokoro", "model": "kokoro-v1.0",
                             "verified": False, **tempos}), encoding="utf-8")
@@ -58,7 +61,10 @@ class AudioReadinessTests(SimpleTestCase):
             for tempo in checker.TEMPOS:
                 name = f"voice_{tempo}.wav"
                 (folder / name).write_bytes(b"not actually an audio track")
-                tempos[tempo] = {"file": f"audio/stories/s01/{name}"}
+                tempos[tempo] = {
+                    "file": f"audio/stories/s01/{name}", "seconds": 0.02,
+                    "timings": [{"line": 0, "start": 0.001, "end": 0.018}],
+                }
             (folder / "manifest.json").write_text(
                 json.dumps({"engine": "kokoro", "model": "kokoro-v1.0", **tempos}),
                 encoding="utf-8")
@@ -89,3 +95,40 @@ class AudioReadinessTests(SimpleTestCase):
                 "slow":{"file":"audio/stories/s01/missing.wav"}}), encoding="utf-8")
             with mock.patch("apps.core.management.commands.load_content.settings.BASE_DIR", root):
                 self.assertEqual(Command()._audio_manifest("stories", "s01"), {})
+
+
+    def test_malformed_timings_cannot_publish_a_real_audio_header(self):
+        from tests.test_audio_recovery import write_audio_bundle
+        import copy
+
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            original = write_audio_bundle(root, "stories/s01")
+            manifest_path = root / "static/audio/stories/s01/manifest.json"
+            invalid = [
+                ("missing", lambda d: d["slow"].pop("timings")),
+                ("empty", lambda d: d["slow"].update(timings=[])),
+                ("backward", lambda d: d["slow"].update(
+                    timings=[{"line": 0, "start": 0.02, "end": 0.01}])),
+                ("negative", lambda d: d["slow"].update(
+                    timings=[{"line": 0, "start": -1, "end": 0.01}])),
+                ("outside", lambda d: d["slow"].update(
+                    timings=[{"line": 0, "start": 0.01, "end": 300}])),
+                ("no-seconds", lambda d: d["slow"].pop("seconds")),
+                ("not-finite", lambda d: d["slow"].update(seconds=float("nan"))),
+                ("wrong-line", lambda d: d["slow"].update(
+                    timings=[{"line": 1, "start": 0.001, "end": 0.018}])),
+                ("different-count", lambda d: d["slow"].update(
+                    timings=[{"line": 0, "start": 0.001, "end": 0.006},
+                             {"line": 1, "start": 0.007, "end": 0.018}])),
+            ]
+            for label, mutate in invalid:
+                with self.subTest(defect=label):
+                    data = copy.deepcopy(original)
+                    mutate(data)
+                    manifest_path.write_text(json.dumps(data), encoding="utf-8")
+                    report = checker.check_audio(root)
+                    self.assertEqual(report["files_present"], 0, label)
+                    self.assertEqual(len(report["invalid"]), 1, label)
+            manifest_path.write_text(json.dumps(original), encoding="utf-8")
+            self.assertEqual(checker.check_audio(root)["files_present"], 1)

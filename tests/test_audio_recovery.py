@@ -29,7 +29,10 @@ def write_audio_bundle(root, folder):
             audio.setsampwidth(2)
             audio.setframerate(24000)
             audio.writeframes(bytes(960))
-        manifest[tempo] = {"file": f"audio/{folder}/{name}"}
+        manifest[tempo] = {
+            "file": f"audio/{folder}/{name}", "seconds": 0.02,
+            "timings": [{"line": 0, "start": 0.001, "end": 0.018}],
+        }
     (directory / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
     return manifest
 
