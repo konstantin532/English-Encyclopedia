@@ -54,38 +54,60 @@ def test_cafe_polite_response_and_goal_remain_intact():
     assert any("photo" in plain(line["text"]) for line in data["script"])
 
 
-def test_episode_narration_avoids_habitual_or_untaught_tenses():
-    for filename in (
-        "s02_cafe_on_the_corner.yaml",
-        "s04_letter_with_no_name.yaml",
-        "s05_big_family_photo.yaml",
-    ):
+def test_episode_narration_preserves_actions_and_level():
+    """Narrative Present Simple can depict one-time events; actions must remain."""
+    expected_actions = {
+        "s02_cafe_on_the_corner.yaml": (
+            "I go to the corner cafe.",
+            "I drink my coffee.",
+            "I go home at eight.",
+        ),
+        "s04_letter_with_no_name.yaml": ("I go to the old mailbox.",),
+        "s05_big_family_photo.yaml": ("I move the old cupboard.",),
+    }
+    for filename, actions in expected_actions.items():
         story = load(STORIES / filename)
-        narration = " ".join(plain(row["text"]) for row in story["script"]
-                             if row.get("kind") == "narration")
-        assert not re.search(r"\bI (?:go|move|drink)\b", narration), filename
-        assert not re.search(r"\b(?:am|is|are) \w+ing\b", narration), filename
-        retells = " ".join(story["retell_steps"])
-        assert "I go" not in retells and "I move" not in retells, filename
+        narration = " ".join(
+            plain(row["text"]) for row in story["script"]
+            if row.get("kind") == "narration"
+        )
+        spoken = " ".join(
+            plain(row.get("spoken", row["text"])) for row in story["script"]
+            if row.get("kind") == "narration"
+        )
+        positions = [narration.find(action) for action in actions]
+        assert all(pos >= 0 for pos in positions), (filename, actions)
+        assert positions == sorted(positions), filename
+        assert all(action in spoken for action in actions), filename
+        # Do not introduce Present Continuous before it is taught.
+        assert not re.search(r"\\b(?:am|is|are) [a-z]+ing\\b", narration), filename
 
 
 def test_episode_story_clues_and_phrase_hunt_stay_aligned():
     cafe = load(STORIES / "s02_cafe_on_the_corner.yaml")
     english = " ".join(plain(line["text"]) for line in cafe["script"])
-    for fragment in ("I am at the corner cafe.", "I am at home.", "Box is here!",
-                     "here at seven every day"):
+    for fragment in (
+        "I go to the corner cafe.", "I drink my coffee.",
+        "I go home at eight.", "Box is at home!",
+        "here at seven every day",
+    ):
         assert fragment in english, fragment
     for item in cafe["phrase_hunt"]:
         assert item["phrase"] in english, item["phrase"]
-    assert "Где Анна находится" in cafe["questions"][0]["q"]
-    assert "I am at the corner cafe" in cafe["questions"][0]["a"]
+    assert "Во сколько Анна идёт" in cafe["questions"][0]["q"]
+    assert "It is seven o'clock." in cafe["questions"][0]["a"]
+    assert "I go" in cafe["retell_steps"][1]
 
     letter = load(STORIES / "s04_letter_with_no_name.yaml")
     letter_text = " ".join(plain(row["text"]) for row in letter["script"])
-    assert "I am at the old mailbox." in letter_text
+    assert "I go to the old mailbox." in letter_text
+    assert "I go to" in letter["retell_steps"][1]
     assert "Rose" in letter_text
 
     family = load(STORIES / "s05_big_family_photo.yaml")
-    photo_text = " ".join(plain(row["text"]) for row in family["script"])
+    photo_lines = [plain(row["text"]) for row in family["script"]]
+    assert "I move the old cupboard." in photo_lines[0]
+    assert "There is a photo behind the cupboard!" in photo_lines[1]
+    assert "I move" in family["retell_steps"][1]
     for clue in ("cupboard", "photo", "Rose", "Park Street"):
-        assert clue in photo_text
+        assert clue in " ".join(photo_lines)
