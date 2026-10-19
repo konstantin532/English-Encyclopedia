@@ -3,6 +3,7 @@ from pathlib import Path
 
 import yaml
 from django.conf import settings
+from django.db.models import Prefetch
 
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -19,11 +20,15 @@ from .script import build_lines
 
 def course_map(request):
     levels = []
-    for lv in Level.objects.all():
+    level_rows = Level.objects.prefetch_related(
+        Prefetch("stories", queryset=Story.objects.select_related("week").filter(is_published=True)),
+        Prefetch("poems", queryset=Poem.objects.select_related("week").filter(is_published=True)),
+    )
+    for lv in level_rows:
         levels.append({
             "level": lv,
-            "stories": Story.objects.filter(level=lv).select_related("week"),
-            "poems": Poem.objects.filter(level=lv).select_related("week"),
+            "stories": lv.stories.all(),
+            "poems": lv.poems.all(),
         })
     return render(request, "stories/map.html", {"levels": levels})
 

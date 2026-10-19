@@ -3,6 +3,9 @@ import json
 
 
 def read_answer_payload(request) -> dict:
+    # Tiny answers must not require parsing huge arbitrary JSON envelopes.
+    if len(request.body) > 16_384:
+        raise ValueError("Слишком большой запрос")
     try:
         payload = json.loads(request.body or b"{}")
     except (ValueError, UnicodeError, RecursionError) as exc:

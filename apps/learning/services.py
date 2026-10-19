@@ -2,6 +2,7 @@ from dataclasses import dataclass, field
 from datetime import timedelta
 
 from django.db import transaction
+from django.db.models import Prefetch
 from django.urls import reverse
 from django.utils import timezone
 
@@ -59,8 +60,11 @@ class RecallItem:
 
 
 def due_progress(user):
+    available = Exercise.objects.filter(lesson__is_published=True).select_related("lesson")
     return (UnitProgress.objects.filter(user=user, next_review_at__lte=timezone.now())
-            .select_related("unit").order_by("next_review_at"))
+            .select_related("unit")
+            .prefetch_related(Prefetch("unit__exercises", queryset=available))
+            .order_by("next_review_at"))
 
 
 def build_review(user) -> list:
@@ -74,7 +78,7 @@ def build_review(user) -> list:
         user=user, completed_at__isnull=True,
     ).values_list("exercise_id", flat=True))
     for progress in due_progress(user)[:REVIEW_BATCH]:
-        exercise = next((e for e in progress.unit.exercises.filter(lesson__is_published=True)
+        exercise = next((e for e in progress.unit.exercises.all()
                          if e.pk not in used and e.pk not in solved and e.pk not in reserved), None)
         if exercise:
             used.add(exercise.pk)
