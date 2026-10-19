@@ -1,8 +1,16 @@
 name: CI
 on: [push, pull_request]
+permissions:
+  contents: read
+# Pushing many rapid commits should not leave dozens of obsolete pipelines
+# competing with the newest one. Preserve the definitive main check.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
