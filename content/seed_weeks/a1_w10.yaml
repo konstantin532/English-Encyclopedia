@@ -39,8 +39,8 @@ script:
     ru: "Никогда! Я играю на гитаре, и Box это нравится."
   - speaker: mia
     emotion: tired
-    text: "[T8]I[/] [D2]work[/] [P3]on[/] [S7]Sundays[/]. [T8]I[/] [A1]always[/] [D2]work[/] [P3]at[/] [N3]five[/]!"
-    ru: "А я работаю по воскресеньям. Всегда в пять!"
+    text: "[T8]I[/] [D2]work[/] [P3]on[/] [S7]Sundays[/]. [T8]I[/] [A1]always[/] [D8]start[/] [P3]at[/] [N3]five[/]!"
+    ru: "А я работаю по воскресеньям. Всегда начинаю в пять утра!"
   - speaker: anna
     emotion: happy
     text: "[O1]See you[/] [P3]on[/] [S7]Friday[/], [S1]Mia[/]!"

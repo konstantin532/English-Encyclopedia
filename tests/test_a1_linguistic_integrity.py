@@ -147,6 +147,8 @@ class A1LinguisticIntegrityTests(SimpleTestCase):
         self.assertIn("on Mondays", scenarios[0]["missions"][3]["example"])
         self.assertIn("по воскресеньям в октябре", week["script"][2]["ru"])
         self.assertIn("по воскресеньям в октябре", week["script"][3]["ru"])
+        self.assertIn("I always start at five!", tagged_to_plain(week["script"][8]["text"]))
+        self.assertIn("начинаю в пять утра", week["script"][8]["ru"])
         lesson = yaml.safe_load((CONTENT / "seed_lessons/a1_w10_l19_always_never.yaml").read_text("utf-8"))
         self.assertIn("ˌdeɪz", lesson["sound_notes"][0]["ipa"])
         first_lesson = yaml.safe_load((CONTENT / "seed_weeks/a1_w13.yaml").read_text("utf-8"))
