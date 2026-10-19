@@ -1,6 +1,8 @@
 """Beginner editorial scaffolds, independently varied transfer, and honest reflection."""
 import json
 from pathlib import Path
+from tempfile import TemporaryDirectory
+from django.test import override_settings
 
 from django.conf import settings
 from django.test import SimpleTestCase, TestCase
@@ -37,6 +39,33 @@ class ThreeStepEditorialTests(SimpleTestCase):
                 }), 3)
                 self.assertGreaterEqual(
                     len({step["example_en"] for step in guide["steps"]}), 3)
+
+    def test_editors_cannot_add_leaked_keys_or_duplicate_transfer_tasks(self):
+        original = settings.CONTENT_DIR / "manifests"
+        basic = (original / "a1_understanding_checks.json").read_text("utf-8")
+        data = json.loads((original / "a1_scaffold_transfer.json").read_text("utf-8"))
+        for mutation in ("answer_in_prompt", "duplicate", "wrong_count"):
+            with self.subTest(mutation=mutation), TemporaryDirectory() as tmp:
+                folder = Path(tmp) / "manifests"
+                folder.mkdir()
+                (folder / "a1_understanding_checks.json").write_text(
+                    basic, encoding="utf-8")
+                broken = json.loads(json.dumps(data))
+                if mutation == "answer_in_prompt":
+                    broken["lessons"][0]["transfer_variants"][0]["accepted"] = [
+                        "Do not leak accepted answers."
+                    ]
+                elif mutation == "duplicate":
+                    broken["lessons"][0]["transfer_variants"][1]["prompt"] = (
+                        broken["lessons"][0]["transfer_variants"][0]["prompt"]
+                    )
+                else:
+                    broken["lessons"][0]["transfer_variants"].pop()
+                (folder / "a1_scaffold_transfer.json").write_text(
+                    json.dumps(broken), encoding="utf-8")
+                with override_settings(CONTENT_DIR=Path(tmp)):
+                    with self.assertRaises(ValueError):
+                        scaffold_bank()
 
     def test_micro_review_explanations_keep_relevant_true_rules(self):
         guides = understanding_bank()
@@ -190,7 +219,7 @@ class RotatingIndependentReviewTests(TestCase):
         self.assertContains(response, 'name="rubric_context"', count=6)
         self.assertContains(response, 'name="rubric_independence"', count=6)
         self.assertContains(response, "Как у вас получилось?")
-        self.assertContains(response, 'aria-describedby="skill-transfer"')
+        self.assertContains(response, 'aria-describedby="prompt-transfer"')
         self.assertContains(response, 'lang="en"')
 
     def test_cross_user_cannot_read_or_rate_another_student(self):
