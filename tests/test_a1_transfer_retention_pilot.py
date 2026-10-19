@@ -48,12 +48,12 @@ class A1TransferRetentionPilotTests(TestCase):
         self.assertEqual(result.status_code, 302)
         return IndependentAttempt.objects.get(user=self.user, task_variant=100)
 
-    def test_only_two_familiar_weeks_are_supported(self):
-        for slug in ("a1-verb-be", "a1-have-like-can-do"):
+    def test_only_selected_lessons_are_supported(self):
+        for slug in ("a1-verb-be", "a1-have-like-can-do", "a1-cafe-order"):
             self.assertEqual(self.client.get(
                 reverse("learning:transfer_pilot", args=[slug])).status_code, 200)
         self.assertEqual(self.client.get(reverse(
-            "learning:transfer_pilot", args=["a1-cafe-order"])).status_code, 400)
+            "learning:transfer_pilot", args=["a1-nouns-first-words"])).status_code, 400)
 
     def test_login_is_required_and_other_user_cannot_view_my_answers(self):
         outsider = Client()
