@@ -49,7 +49,10 @@ def test_cafe_polite_response_and_goal_remain_intact():
     barista = [plain(line["text"]) for line in data["script"] if line["speaker"] == "barista"]
     assert "Yes! Here you are." in barista
     assert "Yes, you can. Here you are." not in barista
-    assert any("Can I have" in plain(line["text"]) for line in data["script"])
+    assert any(
+        "can i have a cookie" in plain(line["text"]).casefold()
+        for line in data["script"] if line["speaker"] == "tom"
+    )
     assert any("cookie" in plain(line["text"]) for line in data["script"])
     assert any("photo" in plain(line["text"]) for line in data["script"])
 
