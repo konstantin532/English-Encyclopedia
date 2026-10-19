@@ -215,6 +215,14 @@ class ProgressRuleTests(TestCase):
         self.p.register(True, "one-context")
         self.assertEqual(self.p.stage, 2)
 
+    def test_dashboard_shows_the_same_context_threshold_as_progress_logic(self):
+        self.p.register(True, "ctx-1")
+        self.p.save()
+        self.client.force_login(self.user)
+        response = self.client.get(reverse("learning:dashboard"))
+        self.assertContains(response, "четыре разные успешные конструкции")
+        self.assertContains(response, "1 из 4")
+
     def test_mistake_shortens_interval(self):
         self.p.register(True, "a")
         self.p.register(True, "b")

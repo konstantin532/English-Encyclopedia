@@ -42,7 +42,7 @@
 
   {% if progress %}
   <section class="section" aria-labelledby="units-t" style="padding-top: var(--space-6)">
-    <div class="section-head"><h2 id="units-t">Слова в работе</h2><p>Слово попадает в активный словарь, когда вы правильно используете его в трёх разных конструкциях.</p></div>
+    <div class="section-head"><h2 id="units-t">Слова в работе</h2><p>Слово постепенно проходит ступени освоения: для статуса «Активный словарь» нужны четыре разные успешные конструкции. Повтор одного ответа не считается новой конструкцией. Это учебная статистика, не сертификат владения.</p></div>
     <div class="table-scroll">
       <table class="words-table">
         <thead><tr><th scope="col">ID</th><th scope="col">Слово</th><th scope="col">Статус</th><th scope="col">Конструкций</th><th scope="col">Повторить</th></tr></thead>
@@ -51,7 +51,7 @@
             <td class="uid">{{ p.unit.uid }}</td>
             <td class="lemma annotated" lang="en"><a href="{% url 'lexicon:detail' p.unit.uid %}"><span class="mk" data-cat="{{ p.unit.semantic_class.category.code }}" data-cls="{{ p.unit.semantic_class.number }}">{{ p.unit.lemma }}</span></a></td>
             <td><span class="status">{{ p.get_status_display }}</span></td>
-            <td>{{ p.contexts_used|length }} из 3</td>
+            <td>{{ p.contexts_used|length }} из 4</td>
             <td>{{ p.next_review_at|date:"j E" }}</td>
           </tr>{% endfor %}
         </tbody>
