@@ -95,6 +95,25 @@ class ThreeStepEditorialTests(SimpleTestCase):
             x["example_en"] for x in guides["a1-like-doing"]["steps"]))
         self.assertTrue(guides["a1-review-everything"]["transfer_variants"][0]["model"].endswith("?"))
 
+    def test_fifth_pass_questions_match_speaker_and_situation(self):
+        guides = understanding_bank()
+        # In third-person questions, the learner addresses Tom/the colleague,
+        # not the woman whom the question is about.
+        mia = guides["a1-questions-do-does"]["transfer_variants"][1]
+        self.assertIn("Спросите у Тома", mia["prompt"])
+        self.assertTrue(mia["model"].startswith("Does Mia "))
+        colleague = guides["a1-he-she-works"]["transfer_variants"][0]
+        self.assertIn("коллегу", colleague["prompt"])
+        self.assertTrue(colleague["model"].startswith("Does Anna "))
+        # Being here is not the same as the speaker owning the book.
+        book = guides["a1-determiners-a-the-this-my"]["transfer_variants"][0]
+        self.assertIn("находится здесь", book["prompt"])
+        self.assertEqual(book["model"], "The book is here.")
+        water = guides["a1-there-is-some"]["tasks"]["transfer"]
+        self.assertIn("есть ли вода", water["prompt"])
+        self.assertIn("any water", water["model"])
+        self.assertIn("some water", water["model"])
+
     def test_phone_readability_and_accessibility_contracts(self):
         css = (Path(settings.BASE_DIR) / "static/css/independent-check.css").read_text("utf-8")
         for rule in ("max-width: 430px", "min-height: 52px",
