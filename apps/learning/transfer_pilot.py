@@ -58,7 +58,28 @@ PILOTS = {
             {
                 "prompt": "Гость впервые у вас дома. Покажите одну вещь и вежливо предложите "
                           "воду. Напишите 1–3 простые английские фразы.",
-                "model": "This is my room. Do you like it?",
+                "model": "This is my room. Would you like some water?",
+            },
+        ),
+    },
+    "a1-cafe-order": {
+        "week": 3, "skill": "repair_cafe_order",
+        "title": "Неделя 3 · изменившийся заказ",
+        "missions": (
+            {
+                "prompt": "Вы впервые подошли к стойке кафе. Попросите по-английски "
+                          "один чай, затем спросите, есть ли кофе. Напишите 1–3 фразы.",
+                "model": "I'd like one tea, please. Do you have coffee?",
+            },
+            {
+                "prompt": "Через неделю вы в другом кафе. В продаже нет чая; попросите "
+                          "один кофе вместо него и вежливо уточните, сколько он стоит.",
+                "model": "Can I have one coffee, please? How much is it?",
+            },
+            {
+                "prompt": "В новой ситуации продавец услышал «два кофе», а вы хотели "
+                          "один. Исправьте количество и завершите заказ вежливо.",
+                "model": "No, sorry. One coffee, please. Thank you.",
             },
         ),
     },
@@ -96,7 +117,7 @@ def next_stage(rows, now):
 @require_http_methods(["GET", "POST"])
 def transfer_pilot(request, slug):
     if slug not in PILOTS:
-        return HttpResponseBadRequest("Эксперимент открыт только для двух первых недель A1.")
+        return HttpResponseBadRequest("Эксперимент доступен только для выбранных уроков A1.")
     pilot = PILOTS[slug]
     lesson = get_object_or_404(
         Lesson, slug=slug, level__code="A1", is_published=True,
