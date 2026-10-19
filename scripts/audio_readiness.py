@@ -21,6 +21,19 @@ def expected_manifests(root: Path):
         yield audio / "twisters" / f"t{i:03d}" / "manifest.json"
 
 
+def plausible_audio_header(path: Path) -> bool:
+    """A signature check, not a decoder or human pronunciation review."""
+    with path.open("rb") as track:
+        header = track.read(12)
+    if path.suffix.lower() == ".wav":
+        return len(header) >= 12 and header[:4] == b"RIFF" and header[8:12] == b"WAVE"
+    if path.suffix.lower() == ".mp3":
+        return header.startswith(b"ID3") or (
+            len(header) >= 2 and header[0] == 0xFF and (header[1] & 0xE0) == 0xE0
+        )
+    return False
+
+
 def check_audio(root: Path = ROOT) -> dict:
     static = (root / "static").resolve()
     missing, invalid, unreviewed, present = [], [], [], []
@@ -43,6 +56,8 @@ def check_audio(root: Path = ROOT) -> dict:
                 if (rel.is_absolute() or not candidate.is_relative_to(static)
                         or not candidate.is_file() or not candidate.stat().st_size):
                     raise ValueError(f"нет файла дорожки {tempo} или путь вне static")
+                if not plausible_audio_header(candidate):
+                    raise ValueError(f"дорожка {tempo} не похожа на WAV/MP3")
             present.append(label)
             if data.get("verified") is not True:
                 unreviewed.append(label)

@@ -1,6 +1,7 @@
 """Audio file inventory is not an acoustic or CEFR validation."""
 import importlib.util
 import json
+import wave
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from django.test import SimpleTestCase
@@ -36,7 +37,11 @@ class AudioReadinessTests(SimpleTestCase):
             tempos = {}
             for tempo in checker.TEMPOS:
                 name = f"voice_{tempo}.wav"
-                (folder / name).write_bytes(b"mock recording")
+                with wave.open(str(folder / name), "wb") as audio:
+                    audio.setnchannels(1)
+                    audio.setsampwidth(2)
+                    audio.setframerate(24000)
+                    audio.writeframes(bytes(960))
                 tempos[tempo] = {"file": f"audio/stories/s01/{name}"}
             (folder / "manifest.json").write_text(
                 json.dumps({"engine": "kokoro", "model": "kokoro-v1.0",
@@ -44,3 +49,19 @@ class AudioReadinessTests(SimpleTestCase):
             result = checker.check_audio(Path(tmp))
             self.assertEqual(result["files_present"], 1)
             self.assertEqual(len(result["unreviewed"]), 1)
+
+    def test_invalid_wav_is_detected_even_when_file_exists(self):
+        with TemporaryDirectory() as tmp:
+            folder = Path(tmp) / "static/audio/stories/s01"
+            folder.mkdir(parents=True)
+            tempos = {}
+            for tempo in checker.TEMPOS:
+                name = f"voice_{tempo}.wav"
+                (folder / name).write_bytes(b"not actually an audio track")
+                tempos[tempo] = {"file": f"audio/stories/s01/{name}"}
+            (folder / "manifest.json").write_text(
+                json.dumps({"engine": "kokoro", "model": "kokoro-v1.0", **tempos}),
+                encoding="utf-8")
+            result = checker.check_audio(Path(tmp))
+            self.assertEqual(result["files_present"], 0)
+            self.assertTrue(any("WAV/MP3" in issue for issue in result["invalid"]))
