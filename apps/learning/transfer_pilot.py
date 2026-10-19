@@ -58,7 +58,7 @@ PILOTS = {
             {
                 "prompt": "Гость впервые у вас дома. Покажите одну вещь и вежливо предложите "
                           "воду. Напишите 1–3 простые английские фразы.",
-                "model": "This is my room. Can I have water for you?",
+                "model": "This is my room. Do you like it?",
             },
         ),
     },
