@@ -123,7 +123,7 @@ Suggested long-term event: \`SkillObservation(user, skill, task_version, attempt
 
 ## 7. Scope of the actual prototype
 
-Feature: \`/learning/transfer-pilot/a1-verb-be/\` (week 1) and \`/learning/transfer-pilot/a1-have-like-can-do/\` (week 2). **One sampled core lesson per week**, not coverage of every construct in two full weeks. Opt-in dashboard link, ordinary course unchanged. Separate first, +7d, +30d open writing situations; no exposed answer keys before response; assistance declaration; teacher example snapshotted server-side; no auto-marking. Reuses \`IndependentAttempt\` and human rubrics. Reserved \`task_variant\` 100–102; one safe partial unique constraint, no data rewriting. PRG avoids refresh re-POST; database rejects duplicate stage and stale token.
+Feature: \`/learning/transfer-pilot/a1-verb-be/\` (week 1) and \`/learning/transfer-pilot/a1-have-like-can-do/\` (week 2). **One sampled core lesson per week**, not coverage of every construct in two full weeks. Opt-in dashboard link, ordinary course unchanged. Separate first, +7d, +30d open writing situations, scheduled from the initial attempt; if +7d is missed by the +30d threshold, the app skips it rather than falsely recording a "day-7" result at day 30. Missingness must be reported, not imputed as success or failure. No exposed answer keys before response; assistance declaration; teacher example snapshotted server-side; no auto-marking. Reuses \`IndependentAttempt\` and human rubrics. Reserved \`task_variant\` 100–102; one safe partial unique constraint, no data rewriting. PRG avoids refresh re-POST; database rejects duplicate stage and stale token.
 
 Explicit exclusions in v1: no dialog agent, no audio rerendering, no new CEFR score, no AI free-answer grading, no randomized A/B assignment, no automated teacher workload service, no push reminder or fabricated 7/30-day user result.
 
@@ -166,5 +166,9 @@ Explicit exclusions in v1: no dialog agent, no audio rerendering, no new CEFR sc
 15. Nation (2007), *The Four Strands*. DOI: https://doi.org/10.2167/illt039.0
 16. Nation (2026), *Revisiting the Four Strands*. DOI: https://doi.org/10.58304/ijts.260715
 17. Song et al. (2023), knowledge tracing review. DOI: https://doi.org/10.1016/j.knosys.2022.110036
+18. Sangers et al. (2025), extensive reading meta-analysis; small-to-medium benefits across language domains, intervention components variable. DOI: https://doi.org/10.1007/s10648-025-10068-6
+19. Brunmair & Richter (2019), interleaving meta-analysis; material similarity moderates gains, results not directly transferable to this A1 course. DOI: https://doi.org/10.1037/bul0000209
+20. Bisra et al. (2018), self-explanation meta-analysis; broader learning settings, not proof of English speaking transfer. DOI: https://doi.org/10.1007/s10648-018-9434-x
+21. Doughty (1986), information-gap studies show increased negotiation/modification during interaction; do not infer durable language proficiency from interaction counts. DOI: https://doi.org/10.2307/3586546
 
 **Bottom line:** existing project already has many effective ingredients. Biggest measurable gap is longitudinal, instructor-verifiable, novel-context language performance with equal study time. This pilot builds only that evidence path. It does **not** demonstrate better learning yet.
