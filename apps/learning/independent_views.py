@@ -163,6 +163,12 @@ def independent_check(request, slug):
                 return render_batch_error(
                     "Заполните все четыре поля. Каждый ответ — не более 400 символов."
                 )
+            # "..." or a single letter is not evidence of explaining a rule.
+            # Keep the threshold small: A1 learners are allowed short answers.
+            if len(answers["explain"].strip()) < 10:
+                return render_batch_error(
+                    "Объясните правило хотя бы одной короткой фразой (от 10 символов)."
+                )
             assistance = request.POST.get("assistance")
             if assistance not in (
                 IndependentAttempt.Assistance.NO_HELP,
