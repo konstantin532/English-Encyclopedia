@@ -1,6 +1,6 @@
 level: A1
 week: 10
-can_do_ru: "Я смогу рассказать, что люблю делать в выходные и как часто: I always read on Saturday, I never walk — и спросить: What do you do on the weekend?"
+can_do_ru: "Я смогу рассказать, что люблю делать в выходные и как часто: I always read on Saturdays, I never walk — и спросить: What do you do on the weekend?"
 mission_ru: "Расскажите вслух по-английски о своих выходных тремя фразами со словами always, sometimes, never. Спросите кого-нибудь: What do you do on the weekend? Do you like…?"
 chunks: [LX-00206, LX-00207, LX-00208, LX-00209, LX-00210, LX-00211]
 story_beat:
@@ -13,21 +13,21 @@ script:
     text: "[T9]What[/] [D1]do[/] [T8]you[/] [D2]do[/] [P3]on[/] [T1]the[/] [S7]weekend[/], [S1]Anna[/]?"
     ru: "Анна, а что ты делаешь в выходные?"
   - speaker: anna
-    text: "[T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturday[/]. [T8]I[/] [D3]like[/] [D2]reading[/]."
+    text: "[T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturdays[/]. [T8]I[/] [D3]like[/] [D2]reading[/]."
     ru: "По субботам я всегда читаю. Люблю читать."
   - speaker: mia
-    text: "[C1]And[/] [P3]on[/] [S7]Sunday[/] [P3]in[/] [S7]October[/]?"
+    text: "[C1]And[/] [P3]on[/] [S7]Sundays[/] [P3]in[/] [S7]October[/]?"
     ru: "А в воскресенье в октябре?"
   - speaker: anna
     emotion: happy
-    text: "[P3]On[/] [S7]Sunday[/] [T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/] [P1]in[/] [T3]my[/] [S2]jacket[/]. [T8]I[/] [D3]like[/] [D4]walking[/]."
+    text: "[P3]On[/] [S7]Sundays[/] [P3]in[/] [S7]October[/], [T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/] [P1]in[/] [T3]my[/] [S2]jacket[/]. [T8]I[/] [D3]like[/] [D4]walking[/]."
     ru: "В воскресенье я гуляю в парке в куртке. Люблю гулять."
   - speaker: mia
     text: "[S1]Tom[/], [D1]do[/] [T8]you[/] [D3]like[/] [D4]walking[/]?"
     ru: "Том, а ты любишь гулять?"
   - speaker: tom
     emotion: happy
-    text: "[O4]No[/], [T8]I[/] [A1]never[/] [D4]walk[/]! [T8]I[/] [D3]like[/] [S10]music[/]. [T8]I[/] [D2]play[/] [T1]the[/] [S2]guitar[/] [P3]on[/] [S7]Sunday[/]."
+    text: "[O4]No[/], [T8]I[/] [A1]never[/] [D4]walk[/]! [T8]I[/] [D3]like[/] [S10]music[/]. [T8]I[/] [D2]play[/] [T1]the[/] [S2]guitar[/] [P3]on[/] [S7]Sundays[/]."
     ru: "Нет, я никогда не гуляю! Я люблю музыку. По воскресеньям играю на гитаре."
   - speaker: anna
     emotion: surprised
@@ -39,7 +39,7 @@ script:
     ru: "Никогда! Я играю на гитаре, и Box это нравится."
   - speaker: mia
     emotion: tired
-    text: "[T8]I[/] [D2]work[/] [P3]on[/] [S7]Sunday[/]. [T8]I[/] [A1]always[/] [D2]work[/] [P3]at[/] [N3]five[/]!"
+    text: "[T8]I[/] [D2]work[/] [P3]on[/] [S7]Sundays[/]. [T8]I[/] [A1]always[/] [D2]work[/] [P3]at[/] [N3]five[/]!"
     ru: "А я работаю в воскресенье. Всегда с пяти!"
   - speaker: anna
     emotion: happy

@@ -6,62 +6,67 @@ units:
   lemma: Monday
   meaning: "a day of the week: Monday"
   class: S7
+  forms: [Mondays]
   cefr: unverified
   verification_status: pending
   ipa_us: /ˈmʌnˌdeɪ/
   translation_ru: понедельник
-  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Monday[/]."
+  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Mondays[/]."
   example_ru: "По понедельникам я обычно работаю."
   situation: Планируете выходные и называете время
-  usage_note: "Дни недели пишут с большой буквы; перед днём ставят on."
+  usage_note: "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями)."
 - uid: LX-00370
   lemma: Tuesday
   meaning: "a day of the week: Tuesday"
   class: S7
+  forms: [Tuesdays]
   cefr: unverified
   verification_status: pending
   ipa_us: /ˈtuzˌdeɪ/
   translation_ru: вторник
-  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Tuesday[/]."
+  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Tuesdays[/]."
   example_ru: "По вторникам я обычно работаю."
   situation: Планируете выходные и называете время
-  usage_note: "Дни недели пишут с большой буквы; перед днём ставят on."
+  usage_note: "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями)."
 - uid: LX-00371
   lemma: Wednesday
   meaning: "a day of the week: Wednesday"
   class: S7
+  forms: [Wednesdays]
   cefr: unverified
   verification_status: pending
   ipa_us: /ˈwɛnzˌdeɪ/
   translation_ru: среда
-  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Wednesday[/]."
+  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Wednesdays[/]."
   example_ru: "По средам я обычно работаю."
   situation: Планируете выходные и называете время
-  usage_note: "Дни недели пишут с большой буквы; перед днём ставят on."
+  usage_note: "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями)."
 - uid: LX-00372
   lemma: Thursday
   meaning: "a day of the week: Thursday"
   class: S7
+  forms: [Thursdays]
   cefr: unverified
   verification_status: pending
   ipa_us: /ˈθɝzˌdeɪ/
   translation_ru: четверг
-  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Thursday[/]."
+  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Thursdays[/]."
   example_ru: "По четвергам я обычно работаю."
   situation: Планируете выходные и называете время
-  usage_note: "Дни недели пишут с большой буквы; перед днём ставят on."
+  usage_note: "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями)."
 - uid: LX-00373
   lemma: Friday
   meaning: "a day of the week: Friday"
   class: S7
+  forms: [Fridays]
   cefr: unverified
   verification_status: pending
   ipa_us: /ˈfraɪˌdeɪ/
   translation_ru: пятница
-  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Friday[/]."
+  example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Fridays[/]."
   example_ru: "По пятницам я обычно работаю."
   situation: Планируете выходные и называете время
-  usage_note: "Дни недели пишут с большой буквы; перед днём ставят on."
+  usage_note: "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями)."
 - uid: LX-00374
   lemma: January
   meaning: "a month of the year: January"

@@ -12,12 +12,12 @@ target_units:
 - LX-00193
 body: |
   [T8]I[/] [A1]always[/] [D2]read[/]
-  [P1]on[/] [S7]Saturday[/].
+  [P3]on[/] [S7]Saturdays[/].
   [T8]I[/] [D3]like[/] [D2]reading[/] —
   [T8]it[/] [D1]is[/] [T3]my[/] [S7]day[/]!
 
   [T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/]
-  [P1]on[/] [S7]Sunday[/].
+  [P3]on[/] [S7]Sundays[/].
   [T8]I[/] [D3]like[/] [D4]walking[/] —
   [T3]my[/] [D4]walking[/] [S7]day[/]!
 
@@ -34,7 +34,7 @@ pronunciation:
 - stress: I ALWAYS READ
   ipa: /aɪ ˈɔlweɪz ˈrid/
 - stress: on SATURDAY.
-  ipa: /ɑn ˈsæt̬ɚˌdeɪ/
+  ipa: /ɑn ˈsæt̬ɚˌdeɪz/
 - stress: I LIKE READING
   ipa: /aɪ ˈlaɪk ˈridɪŋ/
 - stress: it is my DAY!
@@ -42,7 +42,7 @@ pronunciation:
 - stress: I WALK in the PARK
   ipa: /aɪ ˈwɔk ɪn ðə ˈpɑrk/
 - stress: on SUNDAY.
-  ipa: /ɑn ˈsʌnˌdeɪ/
+  ipa: /ɑn ˈsʌnˌdeɪz/
 - stress: I LIKE WALKING
   ipa: /aɪ ˈlaɪk ˈwɔkɪŋ/
 - stress: my WALKING DAY!

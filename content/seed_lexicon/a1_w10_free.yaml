@@ -21,19 +21,21 @@ units:
   lemma: Saturday
   meaning: the day after Friday
   class: S7
+  forms: [Saturdays]
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈsæt̬ɚˌdeɪ/
   translation_ru: суббота
-  example_en: '[T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturday[/].'
+  example_en: '[T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturdays[/].'
   example_ru: По субботам я всегда читаю.
   situation: Называете день недели
-  usage_note: 'Дни недели пишут с большой буквы. «В субботу» — on Saturday.'
+  usage_note: 'Дни недели пишут с большой буквы. «В субботу» — on Saturday; о привычке: on Saturdays.'
 - uid: LX-00195
   lemma: Sunday
   meaning: the day after Saturday
   class: S7
+  forms: [Sundays]
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -51,7 +53,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈɔlweɪz/
   translation_ru: всегда
-  example_en: '[T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturday[/].'
+  example_en: '[T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturdays[/].'
   example_ru: По субботам я всегда читаю.
   situation: Говорите, как часто что-то делаете
   usage_note: 'Стоит перед обычным глаголом (I always read), но после be (I am always busy).'
@@ -196,15 +198,15 @@ units:
   example_ru: Что ты делаешь в выходные?
   situation: Выходные и хобби
 - uid: LX-00207
-  lemma: I always read on Saturday.
+  lemma: I always read on Saturdays.
   meaning: Talking about a regular habit
   class: A1
   unit_type: phrase
   cefr: unverified
   verification_status: pending
-  ipa_us: /aɪ ˈɔlweɪz ˈrid ɑn ˈsæt̬ɚˌdeɪ/
+  ipa_us: /aɪ ˈɔlweɪz ˈrid ɑn ˈsæt̬ɚˌdeɪz/
   translation_ru: По субботам я всегда читаю.
-  example_en: I always read on Saturday.
+  example_en: I always read on Saturdays.
   example_ru: По субботам я всегда читаю.
   situation: Выходные и хобби
 - uid: LX-00208

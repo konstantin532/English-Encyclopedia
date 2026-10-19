@@ -182,12 +182,12 @@ and one|N1 for me!
 """, [(2, "old"), (4, "me"), (6, "night"), (10, "near"), (16, "me")]),
 5: ("p05_read_walk_play", uid("always", "read", "saturday", "walk", "park", "sunday", "never", "guitar", "play", "weekend"), """
 I always read
-on Saturday.
+on|P3 Saturdays.
 I like reading —
 it is my day!
 
 I walk in the park
-on Sunday.
+on|P3 Sundays.
 I like walking —
 my walking day!
 
