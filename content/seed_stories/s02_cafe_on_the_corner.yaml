@@ -12,8 +12,8 @@ script:
     kind: narration
     emotion: neutral
     music: morning
-    text: "[T8]It[/] [D1]is[/] [N3]seven o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [S4]corner[/] [S4]cafe[/]."
-    spoken: "[T8]It[/][D1]'s[/] [N3]seven o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [S4]corner[/] [S4]cafe[/]."
+    text: "[T8]It[/] [D1]is[/] [N3]seven o'clock[/]. [T8]I[/] [D1]am[/] [P1]at[/] [T1]the[/] [S4]corner[/] [S4]cafe[/]."
+    spoken: "[T8]It[/][D1]'s[/] [N3]seven o'clock[/]. [T8]I[/] [D1]am[/] [P1]at[/] [T1]the[/] [S4]corner[/] [S4]cafe[/]."
   - speaker: anna
     kind: narration
     emotion: neutral
@@ -39,8 +39,8 @@ script:
     kind: narration
     emotion: worried
     music: mystery
-    text: "[T8]I[/] [D2]drink[/] [T3]my[/] [S3]coffee[/]. [S1]Box[/] [D1]is[/] [X1]not[/] [A3]here[/]!"
-    spoken: "[T8]I[/] [D2]drink[/] [T3]my[/] [S3]coffee[/]. [S1]Box[/] [D1]is[/][X1]n't[/] [A3]here[/]!"
+    text: "[T3]My[/] [S3]coffee[/] [D1]is[/] [A3]here[/]. [S1]Box[/] [D1]is[/] [X1]not[/] [A3]here[/]!"
+    spoken: "[T3]My[/] [S3]coffee[/] [D1]is[/] [A3]here[/]. [S1]Box[/] [D1]is[/][X1]n't[/] [A3]here[/]!"
   - speaker: mia
     kind: speech
     emotion: surprised
@@ -48,8 +48,8 @@ script:
   - speaker: anna
     kind: narration
     emotion: worried
-    text: "[T8]I[/] [D4]go[/] [A3]home[/] [P3]at[/] [N3]eight[/]. [S1]Box[/] [D1]is[/] [P1]at[/] [S2]home[/]!"
-    spoken: "[T8]I[/] [D4]go[/] [A3]home[/] [P3]at[/] [N3]eight[/]. [S1]Box[/][D1]'s[/] [P1]at[/] [S2]home[/]!"
+    text: "[T8]It[/] [D1]is[/] [N3]eight[/]. [T8]I[/] [D1]am[/] [P1]at[/] [S2]home[/]. [S1]Box[/] [D1]is[/] [A3]here[/]!"
+    spoken: "[T8]It[/][D1]'s[/] [N3]eight[/]. [T8]I[/][D1]'m[/] [P1]at[/] [S2]home[/]. [S1]Box[/][D1]'s[/] [A3]here[/]!"
   - speaker: anna
     kind: narration
     emotion: happy
@@ -67,16 +67,16 @@ questions:
 phrase_hunt:
   - phrase: "It is seven o'clock."
     function: "Ровное время"
-  - phrase: "I go to the corner cafe."
-    function: "Куда я иду"
+  - phrase: "I am at the corner cafe."
+    function: "Где я нахожусь в этом эпизоде"
   - phrase: "It is here at seven every day."
     function: "Привычка: каждый день в одно время"
   - phrase: "Is it your cat, Anna?"
     function: "Вопрос: чей питомец?"
-  - phrase: "I go home at eight."
-    function: "Домой — без to"
+  - phrase: "I am at home."
+    function: "Местонахождение: at home"
 retell_words: [seven, cafe, cat, milk, home]
 retell_steps:
   - "Восстановите историю по пяти словам: seven, cafe, cat, milk, home. По одной фразе на слово."
-  - "Перескажите без подсказок, 5–6 фраз, от лица Анны: It is seven o'clock. I go…"
+  - "Перескажите без подсказок, 5–6 фраз, от лица Анны: It is seven o'clock. I am at…"
 creative_ru: "Завтра утром Анна снова идёт в кафе. Придумайте 2–3 фразы Мии и ответ Анны из знакомых слов. Например: Good morning, Anna! Is Box here?"
