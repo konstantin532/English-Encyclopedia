@@ -185,6 +185,17 @@ class IndependentAttempt(models.Model):
     submitted = models.CharField(max_length=400)
     outcome = models.CharField(max_length=16, choices=Outcome.choices)
     self_rating = models.CharField(max_length=16, blank=True)
+
+    class Assistance(models.TextChoices):
+        NOT_STATED = "not_stated", "Не указано (старая попытка)"
+        NO_HELP = "no_help", "Без конспекта и переводчика"
+        NOTES = "notes", "С конспектом или объяснением"
+        TRANSLATOR = "translator", "С онлайн-переводчиком или готовым ответом"
+
+    # Learner-declared conditions, not proof of actual independent competence.
+    assistance = models.CharField(
+        max_length=16, choices=Assistance.choices, default=Assistance.NOT_STATED
+    )
     # A documented alternative task, chosen server-side; 0 is the original.
     task_variant = models.PositiveSmallIntegerField(default=0)
     # Empty only for historic/legacy attempts. Modern four-answer POSTs carry
