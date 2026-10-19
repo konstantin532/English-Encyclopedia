@@ -59,6 +59,13 @@
   {% if not result and not batch_results %}
   <section class="section" aria-labelledby="blind-four-title">
     <h2 id="blind-four-title">Сначала все четыре ответа — потом разбор</h2>
+    {% if batch_error %}
+      <div class="independent-form-error" role="alert" aria-live="assertive" tabindex="-1">
+        <strong>Ответы пока не сохранены.</strong>
+        <p>{{ batch_error }}</p>
+        <p>Написанный текст восстановлен ниже. Если ситуация изменилась, скопируйте текст перед повторной попыткой.</p>
+      </div>
+    {% endif %}
     <p>Отвечайте на задания по порядку без готовых вариантов. До отправки всех четырёх ответов образцы не показываются. После прохождения всех четырёх заданий вы получите другую задачу на перенос навыка при следующем посещении. Это помогает не запоминать один образец. Оценка открытого ответа остаётся вашей или преподавателя.</p>
     <form method="post" class="independent-batch" data-blind-batch>
       {% csrf_token %}
@@ -80,7 +87,7 @@
       {% endif %}
       <p class="independent-prompt" id="prompt-{{ task.key }}">{{ task.item.prompt }}</p>
       <label for="ind-answer-{{ task.key }}">Ваш ответ на задание «{{ task.title }}»</label>
-      <textarea id="ind-answer-{{ task.key }}" name="answer_{{ task.key }}" rows="3" maxlength="400" required aria-describedby="prompt-{{ task.key }}" placeholder="Напишите свой вариант здесь" lang="{% if task.key == 'meaning' or task.key == 'explain' %}ru{% else %}en{% endif %}" spellcheck="{% if task.key == 'meaning' or task.key == 'explain' %}true{% else %}false{% endif %}" autocorrect="off" autocapitalize="sentences"></textarea>
+      <textarea id="ind-answer-{{ task.key }}" name="answer_{{ task.key }}" rows="3" maxlength="400" required aria-describedby="prompt-{{ task.key }}" placeholder="Напишите свой вариант здесь" lang="{% if task.key == 'meaning' or task.key == 'explain' %}ru{% else %}en{% endif %}" spellcheck="{% if task.key == 'meaning' or task.key == 'explain' %}true{% else %}false{% endif %}" autocorrect="off" autocapitalize="sentences">{{ task.saved_answer|default:"" }}</textarea>
     </section>
     {% endfor %}
     </div>
