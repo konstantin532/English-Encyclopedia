@@ -78,6 +78,23 @@ class ThreeStepEditorialTests(SimpleTestCase):
         self.assertIn("There is some water", " ".join(
             x["example_en"] for x in guides["a1-there-is-some"]["steps"]))
 
+    def test_editorial_incidents_stay_fixed_in_context_and_grammar(self):
+        guides = understanding_bank()
+        third_person = guides["a1-he-she-works"]
+        for item in (third_person["tasks"]["transfer"], *third_person["transfer_variants"]):
+            self.assertIn("Does ", item["model"])
+            self.assertNotIn("Do you ", item["model"])
+        numbers = guides["a1-numbers-1-20"]
+        self.assertIn("cookies", numbers["transfer_variants"][1]["model"])
+        self.assertNotIn("tickets", numbers["transfer_variants"][0]["model"])
+        address = guides["a1-letters-address"]["tasks"]["transfer"]["model"]
+        self.assertEqual(address, "5 Park Street")
+        # No grammar checker can replace an editor, but these caught defects
+        # should never be silently reintroduced.
+        self.assertIn("like to read", " ".join(
+            x["example_en"] for x in guides["a1-like-doing"]["steps"]))
+        self.assertTrue(guides["a1-review-everything"]["transfer_variants"][0]["model"].endswith("?"))
+
     def test_phone_readability_and_accessibility_contracts(self):
         css = (Path(settings.BASE_DIR) / "static/css/independent-check.css").read_text("utf-8")
         for rule in ("max-width: 430px", "min-height: 52px",
@@ -238,6 +255,10 @@ class RotatingIndependentReviewTests(TestCase):
         initial = self.client.get(self.url)
         self.assertNotContains(initial, 'name="rubric_meaning"')
         self.assertNotContains(initial, "Один возможный образец")
+        self.assertContains(initial, 'name="batch_token"')
+        self.assertContains(initial, 'data-batch-submit')
+        self.assertContains(initial, 'role="status"')
+        self.assertContains(initial, 'js/independent-check.js')
         response = self.batch(variant=0)
         self.assertContains(response, 'name="rubric_meaning"', count=6)
         self.assertContains(response, 'name="rubric_form"', count=6)
