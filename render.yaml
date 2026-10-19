@@ -1,0 +1,22 @@
+# Render Blueprint. Requires an existing durable PostgreSQL database (e.g. Supabase).
+# DATABASE_URL is entered privately in Render, NEVER committed here.
+services:
+  - type: web
+    name: english-encyclopedia-a1
+    runtime: python
+    plan: free
+    buildCommand: bash deploy/render-build.sh
+    startCommand: bash deploy/render-start.sh
+    healthCheckPath: /healthz/
+    autoDeploy: false
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: config.settings.production
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: DJANGO_DEBUG
+        value: "false"
+      - key: WEB_CONCURRENCY
+        value: "2"
