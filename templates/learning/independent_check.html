@@ -31,6 +31,7 @@
       {% include "components/a1_rubric_form.html" with attempt=result.attempt %}
     {% endif %}
   </section>
+  <p class="independent-new-variant"><a class="btn btn-quiet" href="{% url 'learning:independent_check' lesson.slug %}#blind-four-title">Начать новую независимую попытку →</a></p>
   {% endif %}
 
   {% if batch_results %}
