@@ -99,27 +99,74 @@ def speech_practice_api(request):
     })
 
 
+def published_speech_catalog():
+    """Current learner-facing speech targets in three bulk database queries.
+
+    No persistent cache: a newly unpublished lesson must stop appearing
+    immediately, while old progress records remain available in the DB.
+    """
+    result = {}
+    topics = active_topics()
+    for lesson in Lesson.objects.filter(
+        is_published=True, level__code="A1",
+    ).values("slug", "order", "title"):
+        topic = topics.get(lesson["order"])
+        if topic and topic["slug"] == lesson["slug"]:
+            result["lesson:" + lesson["slug"]] = {
+                "count": len(topic["missions"]), "title": lesson["title"],
+                "url": reverse("lessons:detail", args=[lesson["slug"]]) + "#spoken-coach",
+            }
+    for twister in TongueTwister.objects.select_related("week__level").all():
+        result["twister:" + str(twister.number)] = {
+            "count": len(twister.warmup) + 1 + bool(twister.target_line),
+            "title": "Скороговорка недели " + str(twister.week.number),
+            "url": reverse(
+                "curriculum:week", args=[twister.week.level.slug, twister.week.number],
+            ) + "#twister",
+        }
+    for poem in Poem.objects.filter(is_published=True).values("number", "body", "title"):
+        result["poem:" + str(poem["number"])] = {
+            "count": sum(bool(line.strip()) for line in poem["body"].splitlines()),
+            "title": poem["title"],
+            "url": reverse("stories:poem", args=[poem["number"]]) + "#speech-studio",
+        }
+    return result
+
+
+def valid_due_speech_items(user, now=None, limit=None):
+    """Yield published, existing review fragments, caching content by key.
+
+    Reuse this selection for the dashboard badge and the visible queue.
+    """
+    now = now or timezone.now()
+    due = (SpeechPracticeProgress.objects.filter(user=user, next_review_at__lte=now)
+           .order_by("next_review_at", "pk"))
+    catalog = None
+    yielded = 0
+    for item in due.iterator(chunk_size=200):
+        if catalog is None:
+            catalog = published_speech_catalog()
+        details = catalog.get(item.content_key)
+        if not details or item.fragment >= details["count"]:
+            continue
+        yield item, details
+        yielded += 1
+        if limit is not None and yielded >= limit:
+            break
+
+
 @login_required
 def speech_review(request):
     now = timezone.now()
-    due = (SpeechPracticeProgress.objects.filter(user=request.user, next_review_at__lte=now)
-           .order_by("next_review_at", "pk"))
     pending = []
-    # Old/removed course keys can remain in a learner's history. Limit to
-    # 100 VALID review items, not the first 100 unvalidated database rows:
-    # otherwise stale records can hide real speech practice indefinitely.
-    for item in due.iterator(chunk_size=200):
-        details = content_details(item.content_key)
-        if not details or item.fragment >= details["count"]:
-            continue
+    for item, details in valid_due_speech_items(request.user, now=now, limit=100):
         url, hashmark, anchor = details["url"].partition("#")
         pending.append({
-            "title": details["title"], "fragment": item.fragment + 1, "rating": item.get_result_display(),
+            "title": details["title"], "fragment": item.fragment + 1,
+            "rating": item.get_result_display(),
             "url": url + "?speech=" + str(item.fragment) + ("#" + anchor if hashmark else ""),
             "content_key": item.content_key,
         })
-        if len(pending) >= 100:
-            break
     upcoming = SpeechPracticeProgress.objects.filter(user=request.user, next_review_at__gt=now).order_by("next_review_at").first()
     return render(request, "learning/speech_review.html", {
         "pending": pending,

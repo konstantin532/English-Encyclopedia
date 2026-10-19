@@ -54,13 +54,12 @@ class UnitProgress(models.Model):
                 self.next_review_at = now + timedelta(days=REVIEW_INTERVALS_DAYS[self.stage])
             if self.status == Status.NEW:
                 self.status = Status.RECOGNITION
-            elif new_context:
-                ladder_pos = STATUS_LADDER.index(self.status) if self.status in STATUS_LADDER else 1
-                next_status = STATUS_LADDER[min(ladder_pos + 1, len(STATUS_LADDER) - 1)]
-                # Active vocabulary still needs several DISTINCT constructions.
-                if next_status == Status.ACTIVE and len(self.contexts_used) < 3:
-                    next_status = Status.INDEPENDENT_USE
-                self.status = next_status
+            elif new_context and self.status == Status.RECOGNITION:
+                # A model-matched drill is guided practice, even with several
+                # distinct sentence contexts. It cannot demonstrate unaided
+                # transfer or independent production. Those require separate
+                # human-reviewed evidence; do not award higher statuses here.
+                self.status = Status.GUIDED_USE
         else:
             self.wrong_count += 1
             self.stage = max(self.stage - 1, 0)
@@ -134,18 +133,21 @@ class SpeechPracticeProgress(models.Model):
         if rating not in self.Result.values:
             raise ValueError("Неизвестная оценка самостоятельного воспроизведения")
         now = now or timezone.now()
+        # A first evaluation is always eligible. After that, repeating
+        # "good" before its scheduled date is practice, NOT spaced recall.
+        due = self.attempts == 0 or self.next_review_at <= now
         self.attempts += 1
         self.result = rating
         if rating == self.Result.AGAIN:
             self.stage = 0
-            delay = 0
+            self.next_review_at = now
         elif rating == self.Result.HARD:
             self.stage = max(self.stage - 1, 0)
-            delay = 1
-        else:
+            self.next_review_at = now + timedelta(days=1)
+        elif due:
             self.stage = min(self.stage + 1, len(SPEECH_REVIEW_INTERVALS_DAYS) - 1)
-            delay = SPEECH_REVIEW_INTERVALS_DAYS[self.stage]
-        self.next_review_at = now + timedelta(days=delay)
+            self.next_review_at = now + timedelta(days=SPEECH_REVIEW_INTERVALS_DAYS[self.stage])
+        # Early GOOD ratings must not extend the deadline or increase stage.
 
 
 class MistakeReview(models.Model):

@@ -4,11 +4,13 @@ from datetime import datetime, timedelta, timezone as tz
 
 from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
+from django.db import connection
+from django.test.utils import CaptureQueriesContext
 from django.urls import reverse
 from django.utils import timezone
 
 from apps.learning.models import SpeechPracticeProgress
-from apps.learning.speech_practice import content_details
+from apps.learning.speech_practice import content_details, valid_due_speech_items
 from apps.lessons.models import Lesson
 from tests.runner import ensure_content
 
@@ -48,6 +50,11 @@ class OralReviewTests(TestCase):
         self.assertEqual(p.stage, 1)
         self.assertEqual(p.next_review_at, now + timedelta(days=1))
         p.register("good", now=now)
+        self.assertEqual(p.stage, 1)
+        self.assertEqual(p.next_review_at, now + timedelta(days=1))
+        # A genuinely due repeat may advance the spaced interval.
+        p.next_review_at = now - timedelta(seconds=1)
+        p.register("good", now=now)
         self.assertEqual(p.stage, 2)
         self.assertEqual(p.next_review_at, now + timedelta(days=3))
         p.register("hard", now=now)
@@ -56,7 +63,7 @@ class OralReviewTests(TestCase):
         p.register("again", now=now)
         self.assertEqual(p.stage, 0)
         self.assertEqual(p.next_review_at, now)
-        self.assertEqual(p.attempts, 4)
+        self.assertEqual(p.attempts, 5)
         with self.assertRaises(ValueError):
             p.register("perfect", now=now)
 
@@ -78,6 +85,17 @@ class OralReviewTests(TestCase):
         self.assertContains(due, self.lesson.title)
         dashboard = self.client.get(reverse("learning:dashboard"))
         self.assertContains(dashboard, "Речевые повторения (1)")
+
+    def test_repeated_early_good_or_duplicate_post_does_not_advance_speech_stage(self):
+        self.assertEqual(self.send(rating="good").status_code, 200)
+        progress = SpeechPracticeProgress.objects.get(user=self.user, content_key=self.key)
+        first_due = progress.next_review_at
+        for _ in range(6):
+            self.assertEqual(self.send(rating="good").status_code, 200)
+        progress.refresh_from_db()
+        self.assertEqual(progress.stage, 1)
+        self.assertEqual(progress.next_review_at, first_due)
+        self.assertEqual(progress.attempts, 7)
 
     def test_validation_does_not_create_phantom_progress(self):
         for key, index, rating in [
@@ -123,6 +141,13 @@ class OralReviewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "?speech=0#spoken-coach")
         self.assertContains(response, self.lesson.title)
+        with CaptureQueriesContext(connection) as queries:
+            items = list(valid_due_speech_items(self.user))
+        self.assertEqual(len(items), 1)
+        self.assertLessEqual(len(queries), 8)  # not one query per stale key
+        dashboard = self.client.get(reverse("learning:dashboard"))
+        self.assertContains(dashboard, "Речевые повторения (1)")
+        self.assertNotContains(dashboard, "Речевые повторения (121)")
 
     def test_anonymous_and_csrf_requirements(self):
         self.client.logout()

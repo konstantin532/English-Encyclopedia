@@ -191,9 +191,10 @@ class ProgressRuleTests(TestCase):
         self.p.register(True, "ctx-2")
         self.assertEqual(self.p.status, Status.GUIDED_USE)
         self.p.register(True, "ctx-3")
-        self.assertEqual(self.p.status, Status.INDEPENDENT_USE)
+        self.assertEqual(self.p.status, Status.GUIDED_USE)
         self.p.register(True, "ctx-4")
-        self.assertEqual(self.p.status, Status.ACTIVE)
+        self.assertEqual(self.p.status, Status.GUIDED_USE)
+        self.assertEqual(len(self.p.contexts_used), 4)
 
     def test_repeating_lemma_recall_never_claims_independent_use(self):
         for _ in range(10):
@@ -220,8 +221,8 @@ class ProgressRuleTests(TestCase):
         self.p.save()
         self.client.force_login(self.user)
         response = self.client.get(reverse("learning:dashboard"))
-        self.assertContains(response, "четыре разные успешные конструкции")
-        self.assertContains(response, "1 из 4")
+        self.assertContains(response, "не доказывают самостоятельного владения")
+        self.assertContains(response, "1")
 
     def test_mistake_shortens_interval(self):
         self.p.register(True, "a")
