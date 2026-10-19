@@ -18,5 +18,9 @@ services:
         sync: false
       - key: DJANGO_DEBUG
         value: "false"
+      - key: A1_AUDIO_ARCHIVE_URL
+        sync: false
+      - key: A1_AUDIO_ARCHIVE_SHA256
+        sync: false
       - key: WEB_CONCURRENCY
         value: "2"

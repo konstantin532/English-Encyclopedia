@@ -19,11 +19,17 @@ jobs:
         run: uv run python scripts/audio_readiness.py --strict
       - name: Make listening review sheet (no automatic approval)
         run: uv run python -m scripts.audio_review_sheet --output audio-human-review.csv
+      - name: Package generated audio and calculate immutable SHA-256
+        run: |
+          python -m zipfile -c a1-generated-audio.zip static/audio
+          sha256sum a1-generated-audio.zip | tee a1-generated-audio.sha256
       - uses: actions/upload-artifact@v4
         with:
           name: a1-kokoro-33-bundles-unreviewed
           path: |
             static/audio/
             audio-human-review.csv
+            a1-generated-audio.zip
+            a1-generated-audio.sha256
           retention-days: 14
           if-no-files-found: error
