@@ -99,6 +99,40 @@ def speech_practice_api(request):
     })
 
 
+def published_speech_catalog():
+    """Current learner-facing speech targets in three bulk database queries.
+
+    No persistent cache: a newly unpublished lesson must stop appearing
+    immediately, while old progress records remain available in the DB.
+    """
+    result = {}
+    topics = active_topics()
+    for lesson in Lesson.objects.filter(
+        is_published=True, level__code="A1",
+    ).values("slug", "order", "title"):
+        topic = topics.get(lesson["order"])
+        if topic and topic["slug"] == lesson["slug"]:
+            result["lesson:" + lesson["slug"]] = {
+                "count": len(topic["missions"]), "title": lesson["title"],
+                "url": reverse("lessons:detail", args=[lesson["slug"]]) + "#spoken-coach",
+            }
+    for twister in TongueTwister.objects.select_related("week__level").all():
+        result["twister:" + str(twister.number)] = {
+            "count": len(twister.warmup) + 1 + bool(twister.target_line),
+            "title": "Скороговорка недели " + str(twister.week.number),
+            "url": reverse(
+                "curriculum:week", args=[twister.week.level.slug, twister.week.number],
+            ) + "#twister",
+        }
+    for poem in Poem.objects.filter(is_published=True).values("number", "body", "title"):
+        result["poem:" + str(poem["number"])] = {
+            "count": sum(bool(line.strip()) for line in poem["body"].splitlines()),
+            "title": poem["title"],
+            "url": reverse("stories:poem", args=[poem["number"]]) + "#speech-studio",
+        }
+    return result
+
+
 def valid_due_speech_items(user, now=None, limit=None):
     """Yield published, existing review fragments, caching content by key.
 
@@ -107,12 +141,12 @@ def valid_due_speech_items(user, now=None, limit=None):
     now = now or timezone.now()
     due = (SpeechPracticeProgress.objects.filter(user=user, next_review_at__lte=now)
            .order_by("next_review_at", "pk"))
-    details_cache = {}
+    catalog = None
     yielded = 0
     for item in due.iterator(chunk_size=200):
-        if item.content_key not in details_cache:
-            details_cache[item.content_key] = content_details(item.content_key)
-        details = details_cache[item.content_key]
+        if catalog is None:
+            catalog = published_speech_catalog()
+        details = catalog.get(item.content_key)
         if not details or item.fragment >= details["count"]:
             continue
         yield item, details
