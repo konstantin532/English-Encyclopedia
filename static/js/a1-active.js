@@ -15,6 +15,13 @@
     return [expected, ...(Array.isArray(alternatives) ? alternatives : [])]
       .some(function (candidate) { return normalizeAnswer(value) === normalizeAnswer(candidate); });
   }
+  function retrievalLine(topic) {
+    if (!topic || !Array.isArray(topic.dialogue) || !topic.dialogue.length) return null;
+    const index = (topic.n - 1) % topic.dialogue.length;
+    const line = topic.dialogue[index];
+    return Array.isArray(line) && line.length >= 3
+      && typeof line[1] === "string" && typeof line[2] === "string" ? line : null;
+  }
   function builderTokens(answer) {
     const source = String(answer || "").trim();
     if (/^[A-Z](?:-[A-Z])+$/.test(source)) return source.split("-");
@@ -75,7 +82,7 @@
   }
 
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { normalizeAnswer, compareModelAnswer, getAmericanVoice, validTopic, validMissions, scenarioVariant, builderTokens, builderPhrase, builderCorrect };
+    module.exports = { normalizeAnswer, compareModelAnswer, getAmericanVoice, validTopic, validMissions, scenarioVariant, retrievalLine, builderTokens, builderPhrase, builderCorrect };
   }
   if (typeof document === "undefined") return;
   const root = document.querySelector("[data-active-a1]");
@@ -179,6 +186,59 @@
         speakLines([topic.dialogue[i][1]]);
     });
   });
+  // Two new retrieval modes use a dialogue already authored for this lesson:
+  // listening/transcription and meaning-to-English production. No answer is
+  // persisted or marked as a formal pronunciation/listening certificate.
+  const retrieval = retrievalLine(topic);
+  if (retrieval) {
+    const dictation = by("[data-a1-dictation]");
+    const backtranslation = by("[data-a1-backtranslation]");
+    const play = by("[data-a1-dictation-play]");
+    const audioNote = by("[data-a1-dictation-availability]");
+    const firstAnswer = by("[data-a1-dictation-input]");
+    const secondAnswer = by("[data-a1-backtranslation-input]");
+    const firstFeedback = by("[data-a1-dictation-feedback]");
+    const secondFeedback = by("[data-a1-backtranslation-feedback]");
+    const firstModel = by("[data-a1-dictation-model]");
+    const secondModel = by("[data-a1-backtranslation-model]");
+    by("[data-a1-backtranslation-prompt]").textContent = retrieval[2];
+    if (!speakAvailable) {
+      play.disabled = true;
+      audioNote.textContent = "Системной озвучки нет: прослушивание недоступно. Второе задание можно выполнить по тексту.";
+    }
+    play.addEventListener("click", function () { speakLines([retrieval[1]]); });
+    firstAnswer.addEventListener("input", function () {
+      firstFeedback.hidden = true;
+      firstModel.hidden = true;
+    });
+    secondAnswer.addEventListener("input", function () {
+      secondFeedback.hidden = true;
+      secondModel.hidden = true;
+    });
+    dictation.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!firstAnswer.value.trim()) return;
+      const match = compareModelAnswer(firstAnswer.value, retrieval[1], []);
+      firstFeedback.textContent = match
+        ? "Запись совпала с текстом реплики. Это не оценка распознавания речи или произношения."
+        : "Запись отличается от образца. Переслушайте фразу и сравните слова; отличия пунктуации могут быть допустимы.";
+      firstFeedback.dataset.state = match ? "ok" : "retry";
+      firstFeedback.hidden = false;
+      firstModel.textContent = "Один образец: " + retrieval[1];
+      firstModel.hidden = false;
+    });
+    backtranslation.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!secondAnswer.value.trim()) return;
+      secondFeedback.textContent = compareModelAnswer(secondAnswer.value, retrieval[1], [])
+        ? "Ваш ответ совпал с образцом."
+        : "Вариант отличается от образца, но может быть естественным и правильным. Сравните смысл и грамматику.";
+      secondFeedback.hidden = false;
+      secondModel.textContent = "Один возможный вариант: " + retrieval[1];
+      secondModel.hidden = false;
+    });
+  }
+
   const transcript = by("#active-a1-transcript");
   const toggle = by("[data-a1-reveal-transcript]");
   toggle.addEventListener("click", function () {

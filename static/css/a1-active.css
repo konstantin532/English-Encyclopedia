@@ -86,3 +86,10 @@
 .a1-mission-previews li strong { display:block; color:var(--ink); font-family:var(--font-read); font-size:1.05rem; }
 .a1-mission-previews li p { color:var(--ink-soft); font-size:.9rem; margin:.45rem 0 .8rem; }
 .a1-mission-previews li a { color:var(--studio-green); display:inline-block; min-height:44px; padding:.55rem 0; font-weight:650; }
+
+/* Retrieval tasks share the responsive A1 studio grid without forcing overflow. */
+.active-a1-retrieval-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.active-a1-retrieval-grid > form { min-width: 0; border: 1px solid var(--rule); border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; align-items: flex-start; gap: .7rem; }
+.active-a1-retrieval-grid input { display: block; width: 100%; max-width: 100%; box-sizing: border-box; padding: .75rem; border: 1px solid var(--rule-strong); border-radius: 8px; color: var(--ink); background: var(--surface); }
+.active-a1-retrieval-grid input:focus-visible, .active-a1-retrieval-grid button:focus-visible { outline: 3px solid var(--studio-green); outline-offset: 2px; }
+@media (max-width: 650px) { .active-a1-retrieval-grid { grid-template-columns: 1fr; } }
