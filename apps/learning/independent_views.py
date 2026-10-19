@@ -81,6 +81,10 @@ def independent_check(request, slug):
             "assistance_selected": request.POST.get("assistance", ""),
             "transfer_variant": variant,
             "transfer_variant_total": len(choices),
+            "transfer_variant_seen": IndependentAttempt.objects.filter(
+                user=request.user, lesson=lesson, skill="transfer",
+                task_variant=variant,
+            ).exists(),
             "batch_token": request.session[token_key],
         }, status=400)
 
