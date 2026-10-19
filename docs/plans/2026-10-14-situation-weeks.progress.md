@@ -510,3 +510,24 @@ Final: Ruling: обычный git push не проходит (DNS из node; в 
 - В настоящем браузере проверены неделя 1, урок 1, стих 1 и регистрация при 320/390/640 px: нет горизонтального переполнения и ошибок JS. Переход «К содержанию» переводит последующую клавиатурную навигацию внутрь main. С настоящим MP3 плеер недели переключается на natural, показывает паузу и продвижение 0:05/0:22 без ошибок. Ширина 640 проверяет узкую компоновку; это не подтверждение настоящего browser zoom 200% или Android/TalkBack.
 - Созданы отдельные бесплатные ресурсы Render: Blueprint `english-encyclopedia-pr30-acceptance`, web `english-encyclopedia-a1`, PostgreSQL `english-encyclopedia-pr30-test` (истекает 18.11.2026). Ветка Blueprint — текущая ветка PR. Первая сборка без DATABASE_URL корректно отказалась работать; переменная добавлена приватно. При сохранении подключения секрет оказался в выводе браузерного инструмента; буфер очищен, внешние подключения к тестовой БД запрещены, остаётся внутренняя сеть Render. Не помещать секреты в отчёты; перед повторным использованием этой временной БД заменить учётные данные владельцем.
 - Артефакты приёмки сохраняются вне Git: ZIP с корректными путями, SHA256, CSV для прослушивания, технический JSON и образцы MP3. Реальный архив распакован штатным установщиком: 148 файлов, 33 комплекта, missing=0, invalid=0. Полный штатный Django-прогон после исправлений: 533 теста, OK (184.373 с). Реальное прослушивание человеком, Android/TalkBack, настоящий масштаб 200%, конечная сборка Render и backup/restore пока не подтверждены. Повторные CI проверяются на новом коммите; без этого готовность к слиянию не заявлять.
+
+
+## 2026-10-19 — Living Language Cinema (independent UI feature)
+
+**Reference:** docs/motion-system.md. The branch
+feature/living-language-cinema-20261019 starts from current main, not the
+181-commits-behind situation-weeks handoff branch; main is unchanged.
+
+- Audited base shell, week/lesson/lexicon/story/practice selectors and
+  pre-existing GSAP, hover states, reduced-motion and real audio timelines.
+- Added central motion controller, CSS tokens and consistent editorial,
+  navigational, dialogue and feedback patterns while retaining layout/content.
+- Added explicit Full/Balanced/Minimal mode and OS reduced-motion enforcement.
+- Linked existing learning-player server feedback to the controller; added
+  pending state and duplicate-request guard without altering scoring.
+- Added Node and Django source-contract tests plus explicit browser acceptance
+  checklist. Do not report an unrun test as passed or an unmeasured FPS as 60.
+
+**Remaining:** GitHub CI completion, actual viewport/browser/audio/TalkBack
+checks, measured Core Web Vitals, independent visual refinement. The author
+reviews and merges the PR; no automatic merge.
