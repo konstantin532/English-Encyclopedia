@@ -435,3 +435,34 @@
     }
   }
 }
+@layer ee-polish {
+  /* Drawn character portraits replace decorative initials, not actual speaker names. */
+  .story-script .speaker-anna::before,
+  .story-script .speaker-tom::before,
+  .story-script .speaker-barista::before {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    text-shadow: none;
+    border: 1px solid color-mix(in srgb, var(--cinema-gold) 33%, var(--rule));
+  }
+  .story-script .speaker-anna::before {
+    background-image: url("../img/studio/atlas-portrait-anna.svg");
+  }
+  .story-script .speaker-tom::before {
+    background-image: url("../img/studio/atlas-portrait-tom.svg");
+  }
+  .story-script .speaker-barista::before {
+    background-image: url("../img/studio/atlas-portrait-barista.svg");
+  }
+  @media (forced-colors: active) {
+    .story-script .speaker-anna::before,
+    .story-script .speaker-tom::before,
+    .story-script .speaker-barista::before {
+      background-image: none;
+      color: CanvasText;
+      border-color: CanvasText;
+    }
+  }
+}
