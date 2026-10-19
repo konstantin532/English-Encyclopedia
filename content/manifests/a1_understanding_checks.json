@@ -359,8 +359,8 @@
           ]
         },
         "transfer": {
-          "prompt": "Спросите в магазине, есть ли вода, затем попросите её.",
-          "model": "Is there water? Can I have some water, please?"
+          "prompt": "Во время поездки спросите у друга, есть ли вода, и затем вежливо попросите немного.",
+          "model": "Is there any water? Can I have some water, please?"
         },
         "explain": {
           "prompt": "На столе две книги. Ученик говорит: «There is two books». Исправьте форму и объясните.",
