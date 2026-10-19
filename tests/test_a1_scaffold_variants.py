@@ -281,6 +281,65 @@ class RotatingIndependentReviewTests(TestCase):
         self.assertContains(ok, "С онлайн-переводчиком")
         self.assertFalse(UnitProgress.objects.filter(user=self.student).exists())
 
+    def test_revisited_context_is_not_claimed_as_fresh(self):
+        start = self.client.get(self.url)
+        self.assertFalse(start.context["transfer_variant_seen"])
+        self.assertEqual(self.batch(variant=0).status_code, 200)
+        self.assertEqual(self.batch(variant=1).status_code, 200)
+        self.assertEqual(self.batch(variant=2).status_code, 200)
+        page = self.client.get(self.url)
+        self.assertTrue(page.context["transfer_variant_seen"])
+        self.assertContains(page, "Это повторная ситуация")
+        self.assertNotContains(page, "Эта ситуация ещё не встречалась")
+
+    def test_cannot_claim_independence_after_declaring_translation_help(self):
+        page = self.client.get(self.url)
+        t = page.context["guide"]["tasks"]
+        form = {"action": "batch", "assistance": "translator",
+                "batch_token": page.context["batch_token"],
+                "transfer_variant": str(page.context["transfer_variant"]),
+                **{"answer_" + k: t[k]["model"]
+                   for k in ("meaning", "writing", "transfer", "explain")}}
+        self.assertEqual(self.client.post(self.url, form).status_code, 200)
+        item = IndependentAttempt.objects.get(user=self.student, skill="transfer")
+        forbidden = self.client.post(self.url, {
+            "action": "rubric", "attempt_id": item.pk,
+            "rubric_meaning": "yes", "rubric_form": "yes",
+            "rubric_context": "yes", "rubric_independence": "independent"})
+        self.assertEqual(forbidden.status_code, 400)
+        item.refresh_from_db()
+        self.assertFalse(item.self_rubric)
+        acceptable = self.client.post(self.url, {
+            "action": "rubric", "attempt_id": item.pk,
+            "rubric_meaning": "yes", "rubric_form": "yes",
+            "rubric_context": "yes", "rubric_independence": "helped"})
+        self.assertEqual(acceptable.status_code, 200)
+
+    def test_one_letter_explanation_does_not_count_as_independent_reasoning(self):
+        page = self.client.get(self.url)
+        t = page.context["guide"]["tasks"]
+        form = {"action": "batch", "assistance": "no_help",
+                "batch_token": page.context["batch_token"],
+                "transfer_variant": str(page.context["transfer_variant"]),
+                **{"answer_" + k: t[k]["model"]
+                   for k in ("meaning", "writing", "transfer", "explain")}}
+        form["answer_explain"] = "a"
+        res = self.client.post(self.url, form)
+        self.assertEqual(res.status_code, 400)
+        self.assertContains(res, "от 10 символов", status_code=400)
+        self.assertFalse(IndependentAttempt.objects.filter(user=self.student).exists())
+
+    def test_natural_contract_and_full_negative_are_not_marked_wrong(self):
+        from apps.learning.understanding import model_agreement
+        bank = understanding_bank()
+        self.assertTrue(model_agreement(
+            bank["a1-verb-be"]["tasks"]["writing"], "I'm at home."))
+        self.assertTrue(model_agreement(
+            bank["a1-cant-cannot"]["tasks"]["writing"], "I cannot work today."))
+        self.assertTrue(model_agreement(
+            bank["a1-like-doing"]["tasks"]["writing"],
+            "I like to play the guitar."))
+
     def test_fake_token_is_rejected_without_saving_student_data(self):
         res = self.client.post(self.url, {"action": "batch",
                                            "batch_token": "not-issued-to-this-session"})
