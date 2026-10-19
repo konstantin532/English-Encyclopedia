@@ -59,9 +59,10 @@
   <section class="section" aria-labelledby="blind-four-title">
     <h2 id="blind-four-title">Сначала все четыре ответа — потом разбор</h2>
     <p>Отвечайте на задания по порядку без готовых вариантов. До отправки всех четырёх ответов образцы не показываются. После прохождения всех четырёх заданий вы получите другую задачу на перенос навыка при следующем посещении. Это помогает не запоминать один образец. Оценка открытого ответа остаётся вашей или преподавателя.</p>
-    <form method="post" class="independent-batch">
+    <form method="post" class="independent-batch" data-blind-batch>
       {% csrf_token %}
       <input type="hidden" name="transfer_variant" value="{{ transfer_variant }}">
+      <input type="hidden" name="batch_token" value="{{ batch_token }}">
       <input type="hidden" name="action" value="batch">
       <div class="independent-grid">
       {% for task in tasks %}
@@ -76,13 +77,15 @@
       {% else %}
         <p>Объясните своими словами, почему работает правило. Не подглядывайте в конспект: система не выдаёт компьютерную оценку естественного объяснения.</p>
       {% endif %}
-      <p class="independent-prompt">{{ task.item.prompt }}</p>
+      <p class="independent-prompt" id="prompt-{{ task.key }}">{{ task.item.prompt }}</p>
       <label for="ind-answer-{{ task.key }}">Ваш ответ на задание «{{ task.title }}»</label>
-      <textarea id="ind-answer-{{ task.key }}" name="answer_{{ task.key }}" rows="3" maxlength="400" required aria-describedby="skill-{{ task.key }}" placeholder="Напишите свой вариант здесь" lang="{% if task.key == 'meaning' or task.key == 'explain' %}ru{% else %}en{% endif %}" spellcheck="false" autocorrect="off"></textarea>
+      <textarea id="ind-answer-{{ task.key }}" name="answer_{{ task.key }}" rows="3" maxlength="400" required aria-describedby="prompt-{{ task.key }}" placeholder="Напишите свой вариант здесь" lang="{% if task.key == 'meaning' or task.key == 'explain' %}ru{% else %}en{% endif %}" spellcheck="false" autocorrect="off"></textarea>
     </section>
     {% endfor %}
     </div>
-    <button class="btn btn-primary independent-batch-submit" type="submit">Отправить четыре ответа и открыть разбор</button>
+    <button class="btn btn-primary independent-batch-submit" type="submit" data-batch-submit>Отправить четыре ответа и открыть разбор</button>
+    <p class="independent-submit-status" data-batch-status role="status" aria-live="polite" aria-atomic="true"></p>
+    <p class="independent-network-hint">Не закрывайте эту вкладку до появления результатов. При ошибке сети ваши ответы останутся в полях, пока страница открыта.</p>
     </form>
   </section>
 
@@ -112,4 +115,8 @@
   {% endif %}
   <p><a class="btn btn-quiet" href="{% url 'lessons:detail' lesson.slug %}">Вернуться к объяснениям урока</a></p>
 </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/independent-check.js' %}" defer></script>
 {% endblock %}
