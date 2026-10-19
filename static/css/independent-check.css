@@ -119,3 +119,19 @@
     outline: 2px solid Highlight;
   }
 }
+
+/* Viewport zoom, long answers, and touch keyboard reflow. */
+.independent-check .independent-network-hint { color: var(--ink-soft); font-size: .93rem; line-height: 1.6; }
+.independent-check .independent-submit-status:not(:empty) { margin-top: 1rem; font-weight: 700; }
+.independent-check [data-batch-submit][disabled] { opacity: .76; cursor: progress; }
+.independent-task, .independent-result-item { scroll-margin-top: 1.5rem; }
+.independent-check textarea { overflow-wrap: break-word; max-width: 100%; }
+.independent-check .independent-history { padding-inline-start: 1.5rem; overflow-wrap: anywhere; }
+.independent-check .independent-history li { margin-bottom: 1rem; }
+@media (max-width: 390px) {
+  .independent-grid, .independent-task, .independent-result { width: 100%; }
+  .independent-check .section { padding-inline: clamp(.625rem, 3vw, 1rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .independent-submit-status, [data-batch-submit] { animation: none !important; }
+}
