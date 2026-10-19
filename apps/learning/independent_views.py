@@ -6,7 +6,7 @@ that matching a model proves independent communicative proficiency.
 import secrets
 
 from django.contrib.auth.decorators import login_required
-from django.db import transaction
+from django.db import IntegrityError, transaction
 from django.http import HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_http_methods
@@ -120,38 +120,46 @@ def independent_check(request, slug):
                     "Сначала ответьте на все четыре вопроса (до 400 символов каждый)."
                 )
             batch_results = []
-            with transaction.atomic():
-                for skill in TASKS:
-                    answer = answers[skill].strip()
-                    open_response = skill in ("transfer", "explain")
-                    matches = not open_response and model_agreement(
-                        guide["tasks"][skill], answer)
-                    outcome = (
-                        IndependentAttempt.Outcome.SELF_REPORTED if open_response
-                        else IndependentAttempt.Outcome.MODEL_MATCH if matches
-                        else IndependentAttempt.Outcome.NEEDS_REVIEW
-                    )
-                    attempt = IndependentAttempt.objects.create(
-                        user=request.user, lesson=lesson,
-                        skill=skill, submitted=answer, outcome=outcome,
-                        task_variant=variant if skill == "transfer" else 0,
-                    )
-                    batch_results.append({
-                        "skill": skill, "title": {
-                            "meaning": "Понимание смысла",
-                            "writing": "Самостоятельное письмо",
-                            "transfer": "Применение в новой ситуации",
-                            "explain": "Объяснение правила",
-                        }[skill], "attempt": attempt,
-                        "model": guide["tasks"][skill]["model"],
-                        "label": (
-                            "Свободный ответ: сравните смысл и оцените себя сами."
-                            if open_response
-                            else "Совпало с образцом; это ещё не доказательство владения."
-                            if matches else
-                            "Не совпало с образцом — это не обязательно ошибка."
-                        ),
-                    })
+            try:
+                with transaction.atomic():
+                    for skill in TASKS:
+                        answer = answers[skill].strip()
+                        open_response = skill in ("transfer", "explain")
+                        matches = not open_response and model_agreement(
+                            guide["tasks"][skill], answer)
+                        outcome = (
+                            IndependentAttempt.Outcome.SELF_REPORTED if open_response
+                            else IndependentAttempt.Outcome.MODEL_MATCH if matches
+                            else IndependentAttempt.Outcome.NEEDS_REVIEW
+                        )
+                        attempt = IndependentAttempt.objects.create(
+                            user=request.user, lesson=lesson,
+                            skill=skill, submitted=answer, outcome=outcome,
+                            task_variant=variant if skill == "transfer" else 0,
+                            batch_token=supplied_token or "",
+                        )
+                        batch_results.append({
+                            "skill": skill, "title": {
+                                "meaning": "Понимание смысла",
+                                "writing": "Самостоятельное письмо",
+                                "transfer": "Применение в новой ситуации",
+                                "explain": "Объяснение правила",
+                            }[skill], "attempt": attempt,
+                            "model": guide["tasks"][skill]["model"],
+                            "label": (
+                                "Свободный ответ: сравните смысл и оцените себя сами."
+                                if open_response
+                                else "Совпало с образцом; это ещё не доказательство владения."
+                                if matches else
+                                "Не совпало с образцом — это не обязательно ошибка."
+                            ),
+                        })
+            except IntegrityError:
+                # Another concurrent request used the same browser token.
+                # Atomic rollback keeps the four-answer set all-or-nothing.
+                return HttpResponseBadRequest(
+                    "Эта попытка уже была сохранена. Обновите страницу."
+                )
             # Next visit gets a new situation; current results retain the
             # exact original prompts and exemplar associated with this batch.
             variant = (variant + 1) % len(choices)
