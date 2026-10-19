@@ -5,6 +5,10 @@
 (function (root) {
   "use strict";
   function init(doc, win) {
+    const error = doc.querySelector(".independent-form-error[role='alert']");
+    // A server-rendered 400 should land screen readers on the explanation,
+    // not leave TalkBack at the top with the previous failed answers hidden.
+    if (error && typeof error.focus === "function") error.focus();
     const form = doc.querySelector("[data-blind-batch]");
     if (!form) return;
     const button = form.querySelector("[data-batch-submit]");
