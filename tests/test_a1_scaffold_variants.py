@@ -5,6 +5,7 @@ from tempfile import TemporaryDirectory
 from django.test import override_settings
 
 from django.conf import settings
+from django.db import IntegrityError, transaction
 from django.test import SimpleTestCase, TestCase
 from django.urls import reverse
 
@@ -169,6 +170,20 @@ class RotatingIndependentReviewTests(TestCase):
         replay = self.client.post(self.url, form)
         self.assertEqual(replay.status_code, 400)
         self.assertEqual(IndependentAttempt.objects.filter(user=self.student).count(), 4)
+
+    def test_database_itself_prevents_concurrent_duplicate_batch_rows(self):
+        self.assertEqual(self.batch(variant=0).status_code, 200)
+        saved = IndependentAttempt.objects.get(
+            user=self.student, skill="transfer")
+        self.assertTrue(saved.batch_token)
+        with self.assertRaises(IntegrityError):
+            with transaction.atomic():
+                IndependentAttempt.objects.create(
+                    user=self.student, lesson=self.lesson, skill="transfer",
+                    submitted="A repeated message", outcome=saved.outcome,
+                    batch_token=saved.batch_token, task_variant=0)
+        self.assertEqual(IndependentAttempt.objects.filter(
+            user=self.student, skill="transfer").count(), 1)
 
     def test_fake_token_is_rejected_without_saving_student_data(self):
         res = self.client.post(self.url, {"action": "batch",
