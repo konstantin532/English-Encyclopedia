@@ -133,18 +133,21 @@ class SpeechPracticeProgress(models.Model):
         if rating not in self.Result.values:
             raise ValueError("Неизвестная оценка самостоятельного воспроизведения")
         now = now or timezone.now()
+        # A first evaluation is always eligible. After that, repeating
+        # "good" before its scheduled date is practice, NOT spaced recall.
+        due = self.attempts == 0 or self.next_review_at <= now
         self.attempts += 1
         self.result = rating
         if rating == self.Result.AGAIN:
             self.stage = 0
-            delay = 0
+            self.next_review_at = now
         elif rating == self.Result.HARD:
             self.stage = max(self.stage - 1, 0)
-            delay = 1
-        else:
+            self.next_review_at = now + timedelta(days=1)
+        elif due:
             self.stage = min(self.stage + 1, len(SPEECH_REVIEW_INTERVALS_DAYS) - 1)
-            delay = SPEECH_REVIEW_INTERVALS_DAYS[self.stage]
-        self.next_review_at = now + timedelta(days=delay)
+            self.next_review_at = now + timedelta(days=SPEECH_REVIEW_INTERVALS_DAYS[self.stage])
+        # Early GOOD ratings must not extend the deadline or increase stage.
 
 
 class MistakeReview(models.Model):
