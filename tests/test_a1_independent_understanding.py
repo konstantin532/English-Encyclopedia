@@ -113,7 +113,7 @@ class A1IndependentAssessmentTests(TestCase):
 
     def test_blind_full_attempt_shows_no_model_until_all_four_responses(self):
         guide = understanding_bank()[self.lesson.slug]
-        form = {"action": "batch"}
+        form = {"action": "batch", "assistance": "no_help"}
         for key in ("meaning", "writing", "transfer", "explain"):
             form["answer_" + key] = guide["tasks"][key]["model"]
         initial = self.client.get(self.url)
@@ -135,7 +135,8 @@ class A1IndependentAssessmentTests(TestCase):
     def test_batch_rejects_partial_answers_without_saving_any(self):
         guide = understanding_bank()[self.lesson.slug]
         page = self.client.get(self.url)
-        form = {"action": "batch", "batch_token": page.context["batch_token"],
+        form = {"action": "batch", "assistance": "no_help",
+                "batch_token": page.context["batch_token"],
                 "transfer_variant": str(page.context["transfer_variant"]),
                 "answer_meaning": guide["tasks"]["meaning"]["model"],
                 "answer_writing": guide["tasks"]["writing"]["model"],
