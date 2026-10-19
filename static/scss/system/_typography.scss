@@ -1,0 +1,48 @@
+@use "tokens" as t;
+@mixin emit {
+ body { font-size: var(--ee-type-body); line-height: 1.7; }
+ h1,h2,h3 { font-optical-sizing: auto; letter-spacing: -.025em; }
+ .page-head h1 { font-weight: 500; line-height: 1.24; letter-spacing: -.035em; max-width: 28ch; }
+ .studio-home-heading h1 { font-weight: 480; line-height: 1.25; letter-spacing: -.03em; }
+ .studio-hero-copy h2 { font-weight: 460; line-height: 1.22; letter-spacing: -.035em; }
+ .week-hero h1 { font-weight: 480; line-height: 1.16; letter-spacing: -.04em; }
+ .studio-home-heading p,.studio-hero-copy>p,.page-head>p:not(.crumbs) { @include t.readable; }
+ :where(.prose,.layer,.a1-clarity-bridge,.independent-task,.independent-result,.review-card) { @include t.readable; }
+ .prose p,.prose li,.layer p,.layer li,.a1-clarity-bridge dd { font-size: var(--ee-type-body); line-height: var(--ee-reading-leading); }
+ .prose>p,.layer>p,.layer>ul,.layer>ol { max-width: var(--ee-reading-measure); }
+ // The existing A-/A+ reader changes its own inline font size.
+ [data-lesson-reader] .layer,[data-lesson-reader] .layer p,[data-lesson-reader] .layer li { font-size: inherit; }
+ .layer h2,.prose h2 { font-size: clamp(1.375rem,1.1rem + .6vw,1.75rem); line-height: 1.35; margin-bottom: var(--ee-space-md); }
+ .studio-lesson-card h3 { font-size: 1rem; line-height: 1.5; font-weight: 600; letter-spacing: -.01em; }
+ .studio-lesson-card p,.studio-word-card p,.studio-note p,.studio-level-card p { font-size: var(--ee-type-small); line-height: 1.7; }
+ .studio-eyebrow,.week-hero .studio-eyebrow { font-size: var(--ee-type-caption); letter-spacing: .1em; line-height: 1.6; }
+ .studio-nav-label,.studio-sidebar-caption,.studio-library-stats span { font-size: var(--ee-type-caption); }
+ .studio-nav>a { font-size: var(--ee-type-ui); }
+ .studio-breadcrumb { font-family: var(--font-ui); font-size: var(--ee-type-small); }
+ .crumbs,.studio-lesson-card .studio-lesson-no,.week-chapter a { font-size: var(--ee-type-small); }
+ .story-script .script-line { font-size: clamp(1.25rem,1.15rem + .3vw,1.5rem); line-height: 1.85; }
+ .story-script .line-ru,.story-script .speaker,.story-script .emotion { font-size: var(--ee-type-small); line-height: 1.7; }
+ .ipa { font-family: var(--font-ipa); font-size: 1.12em; line-height: 1.75; overflow-wrap: anywhere; }
+ .ru-transcription { line-height: 1.75; }
+ .studio-phrase { line-height: 1.7; }
+ :where(input,textarea,select) { font-family: var(--font-ui); }
+ .studio-auth-form input,.studio-word-search input,.form-page input { font-size: 1rem; }
+ .studio-auth-form p,.studio-auth-story p,.studio-auth-benefits { font-size: var(--ee-type-ui); line-height: 1.75; }
+ .motion-control { font-size: var(--ee-type-caption); }
+ .motion-control select { font-size: inherit; }
+ .player-clock { font-variant-numeric: tabular-nums; font-size: var(--ee-type-caption); }
+ .story-player .player-modes,.story-player>.drill-hint { font-size: var(--ee-type-small); }
+ @include t.mobile {
+  body { font-size: 1rem; }
+  .studio-home-heading h1 { font-size: clamp(1.75rem,6.5vw,2.2rem); }
+  .studio-hero-copy h2 { font-size: clamp(2rem,8vw,2.6rem); }
+  .page-head h1 { font-size: clamp(1.75rem,6.5vw,2.25rem); }
+  .week-hero h1 { font-size: clamp(2rem,7vw,2.6rem); }
+  .studio-nav>a { font-size: var(--ee-type-small); min-height: 44px; }
+  .studio-hero-copy { padding: 1.5rem; }
+  .studio-search-form input { font-size: 1rem; }
+  .studio-top-actions { flex-wrap: wrap; justify-content: flex-end; }
+  .studio-breadcrumb { white-space: normal; min-width: 0; flex-wrap: wrap; }
+  .studio-home-heading>span { white-space: normal; }
+ }
+}

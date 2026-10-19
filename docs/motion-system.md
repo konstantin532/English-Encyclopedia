@@ -166,3 +166,7 @@ Research:
 
 Automated source contracts are NOT evidence of browser rendering, FPS or WCAG
 conformance. The unchecked rows are openly unverified until tested.
+
+## Typography/Sass follow-up (2026-10-19)
+
+Author motion CSS in static/scss/legacy/_motion-system.scss and new polish in static/scss/system/_motion.scss; static/css outputs are generated. See docs/ui/2026-10-19-design-system.md for layers, WOFF2 and actual browser evidence. Full intro is now session-scoped; unavailable sessionStorage skips decoration. Earlier unchecked device/trace gates remain unverified unless the follow-up explicitly records them.

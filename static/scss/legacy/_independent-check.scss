@@ -1,0 +1,213 @@
+/* Accessible, Android-friendly independent A1 writing checks. */
+.independent-check { padding-bottom: var(--space-8); min-width: 0; }
+.independent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem),1fr)); gap: 1rem; }
+.independent-task, .independent-result { min-width: 0; overflow-wrap: anywhere; }
+.independent-task h2, .independent-result h2 { margin-bottom: 1rem; }
+.independent-task label { display: block; margin: .75rem 0 .5rem; font-weight: 600; }
+.independent-task textarea { display: block; width: 100%; min-width: 0; box-sizing: border-box;
+ font: inherit; font-size: 1rem; line-height: 1.6; padding: 1rem; border-radius: 12px;
+ border: 1px solid var(--rule); color: var(--ink); background: var(--surface); resize: vertical; }
+.independent-task textarea:focus-visible { outline: 3px solid var(--focus, currentColor); outline-offset: 2px; }
+.independent-task button, .independent-rating button { min-height: 48px; margin-top: 1rem; }
+.independent-prompt { font-weight: 600; font-size: 1.05rem; overflow-wrap: anywhere; }
+.independent-option { display: flex; align-items: flex-start; gap: 12px; padding: 12px 8px; min-height: 48px; cursor: pointer; }
+.independent-option input { min-width: 20px; min-height: 20px; accent-color: var(--ink); }
+.independent-rating fieldset { border: 0; padding: 0; }
+.independent-result { max-width: 56rem; }
+.a1-clarity-bridge { padding: 1.25rem; margin: 1rem 0; border: 1px solid var(--rule); border-radius: 14px; overflow-wrap: anywhere; }
+.a1-clarity-bridge dl { display: grid; grid-template-columns: minmax(7rem, 1fr) minmax(0, 3fr); gap: .75rem 1rem; }
+.a1-clarity-bridge dt { font-weight: 700; }
+.a1-clarity-bridge dd { margin: 0; }
+.a1-clarity-bridge blockquote { margin: .75rem 0; }
+@media (max-width: 480px) {
+  .independent-grid { display: block; }
+  .independent-task { margin-bottom: 1rem; }
+  .independent-task .btn, .independent-rating .btn { display: block; width: 100%; }
+  .a1-clarity-bridge dl { grid-template-columns: minmax(0, 1fr); }
+  .a1-clarity-bridge dt { margin-bottom: -.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { .independent-task *, .independent-result * { transition: none; } }
+
+.independent-explanation { margin: 1.25rem 0; border: 1px solid var(--rule); padding: .75rem 1rem; border-radius: 12px; }
+.independent-explanation summary { cursor: pointer; min-height: 44px; display: list-item; font-weight: 700; padding: .5rem 0; }
+.independent-explanation:focus-within { outline: 2px solid var(--focus, currentColor); outline-offset: 2px; }
+
+/* Show why two superficially similar sentences differ, not just an isolated rule. */
+.a1-contrast { margin-top: 1.125rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
+.a1-contrast h3 { font-size: 1.06rem; margin: 0 0 .75rem; }
+.a1-contrast-pairs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.a1-contrast-pairs p { min-width: 0; padding: .875rem; margin: 0; border: 1px solid var(--rule); border-radius: 12px; overflow-wrap: anywhere; }
+.a1-contrast-pairs strong, .a1-contrast-pairs span { display: block; }
+.a1-contrast-pairs span { margin-top: .4rem; }
+.independent-batch-submit { min-height: 48px; margin-top: 1rem; }
+.independent-result-item { border-bottom: 1px solid var(--rule); padding-block: .75rem; overflow-wrap: anywhere; }
+@media (max-width: 480px) { .a1-contrast-pairs { grid-template-columns: minmax(0, 1fr); } .independent-batch-submit { width: 100%; } }
+
+
+/* Clear three-step concept progression, optional so novices are not flooded. */
+.a1-step-ladder { margin-block: 1rem; padding: .75rem 1rem; border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
+.a1-step-ladder summary { cursor: pointer; font-weight: 700; padding: .625rem 0; min-height: 44px; overflow-wrap: anywhere; }
+.a1-step-ladder:focus-within { outline: 3px solid var(--focus, currentColor); outline-offset: 2px; }
+.a1-step-list { list-style: none; counter-reset: lesson-step; margin: .75rem 0; padding: 0; display: grid; gap: .875rem; }
+.a1-step-list li { min-width: 0; border-inline-start: 4px solid var(--rule-strong); padding: .75rem 1rem; border-radius: 4px; background: var(--surface); overflow-wrap: anywhere; }
+.a1-step-list p { margin: .375rem 0; line-height: 1.65; }
+.a1-step-list .a1-step-en { font-size: clamp(1.075rem, 1.2vw, 1.3rem); font-weight: 650; }
+
+/* 320–430px mobile and large-system-font safe: no clipping or narrow columns. */
+.independent-check, .independent-check section, .independent-check fieldset,
+.independent-batch, .independent-result-item, .independent-rubric, .a1-clarity-bridge {
+  min-width: 0;
+  max-width: 100%;
+}
+.independent-check h1, .independent-check h2, .independent-check h3,
+.independent-check p, .independent-check legend, .independent-check label {
+  overflow-wrap: anywhere;
+}
+.independent-task textarea {
+  min-height: 8rem;
+  font-size: max(1rem, 16px);
+  line-height: 1.6;
+  background: var(--surface);
+  color: var(--ink);
+}
+.independent-rubric { border-top: 1px solid var(--rule); margin-top: 1.25rem; padding-top: .75rem; }
+.independent-rubric .independent-rating { width: 100%; }
+.independent-rubric .independent-rating fieldset {
+  margin: .875rem 0 1.25rem;
+  padding: 0 0 .75rem;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+}
+.independent-rubric legend { font-weight: 700; padding: .4rem 0; line-height: 1.5; }
+.independent-rubric .independent-option {
+  width: 100%; box-sizing: border-box; margin-block: .35rem; min-height: 52px;
+  padding: .75rem .875rem; border-radius: 10px; border: 1px solid var(--rule);
+  background: var(--surface); line-height: 1.55; cursor: pointer;
+}
+.independent-rubric .independent-option:focus-within {
+  outline: 3px solid var(--focus, currentColor); outline-offset: 2px;
+}
+.independent-rubric .independent-option:has(input:checked) {
+  border-color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+.independent-rubric .independent-option span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.independent-rubric .independent-option input { margin: .2rem .25rem 0 0; flex: 0 0 20px; }
+.independent-rubric .btn, .independent-batch-submit, .independent-new-variant .btn {
+  min-height: 52px;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+.independent-check :is(a, button, input, textarea, summary):focus-visible {
+  outline: 3px solid var(--focus, currentColor); outline-offset: 3px;
+}
+@media (max-width: 430px) {
+  .independent-check { padding-inline-start: max(12px, env(safe-area-inset-left)); padding-inline-end: max(12px, env(safe-area-inset-right)); }
+  .independent-grid { display: block; }
+  .independent-batch-submit, .independent-rubric .btn,
+  .independent-new-variant .btn { display: block; width: 100%; }
+  .a1-step-ladder { padding: .625rem .75rem; }
+  .a1-step-list li { padding: .65rem .75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .a1-step-ladder *, .independent-rubric * { animation: none !important; transition: none !important; }
+}
+@media (forced-colors: active) {
+  .independent-rubric .independent-option:has(input:checked) {
+    outline: 2px solid Highlight;
+  }
+}
+
+/* Viewport zoom, long answers, and touch keyboard reflow. */
+.independent-check .independent-network-hint { color: var(--ink-soft); font-size: .93rem; line-height: 1.6; }
+.independent-check .independent-submit-status:not(:empty) { margin-top: 1rem; font-weight: 700; }
+.independent-check [data-batch-submit][disabled] { opacity: .76; cursor: progress; }
+.independent-task, .independent-result-item { scroll-margin-top: 1.5rem; }
+.independent-check textarea { overflow-wrap: break-word; max-width: 100%; }
+.independent-check .independent-history { padding-inline-start: 1.5rem; overflow-wrap: anywhere; }
+.independent-check .independent-history li { margin-bottom: 1rem; }
+@media (max-width: 390px) {
+  .independent-grid, .independent-task, .independent-result { width: 100%; }
+  .independent-check .section { padding-inline: clamp(.625rem, 3vw, 1rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .independent-submit-status, [data-batch-submit] { animation: none !important; }
+}
+
+/* Fourth-pass Android and assistive-technology hardening. */
+.independent-check .independent-form-error {
+  padding: 1rem;
+  border: 2px solid currentColor;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  scroll-margin-top: 1.5rem;
+}
+.independent-check .independent-form-error:focus { outline: 3px solid var(--focus, currentColor); outline-offset: 3px; }
+.independent-check .independent-conditions { margin: 1rem 0 1.5rem; padding: 1rem; border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
+.independent-check .independent-conditions legend { font-weight: 700; padding-inline: .25rem; }
+.independent-check .independent-conditions label { min-height: 52px; padding: .75rem .5rem; }
+.independent-check textarea { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+.independent-check button, .independent-check input, .independent-check textarea { touch-action: manipulation; }
+@media (max-width: 600px) and (orientation: landscape) {
+  .independent-check .independent-conditions,
+  .independent-check .independent-rubric { max-width: 100%; }
+  .independent-check .independent-option { min-height: 52px; }
+}
+@media (prefers-contrast: more) {
+  .independent-check .independent-option,
+  .independent-check textarea,
+  .independent-check .independent-conditions { border: 2px solid currentColor; }
+}
+
+/* Mobile audit: avoid horizontal overflow at 320px / large text sizes. */
+.independent-check,
+.independent-check .independent-batch,
+.independent-check .independent-grid,
+.independent-check .independent-result-item,
+.independent-check .independent-conditions,
+.independent-check .independent-rubric,
+.independent-check .independent-rating {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+.independent-check .independent-repeat-notice,
+.independent-check .independent-fresh-notice {
+  border-inline-start: 3px solid currentColor;
+  padding: .65rem .8rem;
+  margin-block: .75rem 1rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.independent-check .independent-count {
+  display: block;
+  margin-top: .35rem;
+  font-variant-numeric: tabular-nums;
+  font-size: .9rem;
+  color: var(--ink);
+}
+.independent-check .independent-rubric [type="radio"],
+.independent-check .independent-conditions [type="radio"] {
+  flex-shrink: 0;
+}
+.independent-check [data-batch-status]:not(:empty) {
+  display: block;
+  padding: .75rem;
+  border-inline-start: 3px solid currentColor;
+}
+@media (max-width: 360px) {
+  .independent-check .independent-rating,
+  .independent-check .independent-rubric,
+  .independent-check .independent-conditions { width: 100%; }
+  .independent-check .independent-option { overflow-wrap: anywhere; }
+}
+@media (forced-colors: active) {
+  .independent-check .independent-repeat-notice,
+  .independent-check [data-batch-status]:not(:empty) {
+    border-color: CanvasText;
+  }
+}

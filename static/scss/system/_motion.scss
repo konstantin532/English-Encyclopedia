@@ -1,0 +1,32 @@
+@use "tokens" as t;
+@mixin emit {
+ .btn,.studio-nav>a,.studio-lesson-card,.studio-word-card,.week-card {
+  transition-duration: var(--ee-time-response);
+  transition-timing-function: var(--ee-ease);
+ }
+ .btn:active { transform: translateY(1px); }
+ .studio-home-hero { position: relative; }
+ html[data-motion="full"] .studio-hero-copy h2 em {
+  text-decoration-color: var(--cinema-gold);
+  text-decoration-thickness: .035em;
+  text-underline-offset: .15em;
+ }
+ html[data-motion="full"] .studio-phrase-paper:focus-within { box-shadow: 0 18px 50px #0c201a30; }
+ html[data-scene-entry="running"][data-motion="full"] .studio-phrase-paper {
+  animation: ee-paper-settle 700ms var(--ee-ease) both;
+ }
+ @keyframes ee-paper-settle {
+  from { transform: translateY(8px) rotate(-5deg); }
+  to { transform: translateY(0) rotate(-3deg); }
+ }
+ @include t.fine-pointer {
+  .btn-primary:hover > [aria-hidden="true"] { transform: translateX(3px); }
+ }
+ .btn-primary > [aria-hidden="true"] { transition: transform var(--ee-time-response) var(--ee-ease); }
+ html[data-motion="minimal"] .btn-primary:hover > [aria-hidden="true"] { transform: none; }
+ @media (prefers-reduced-motion: reduce) { .btn-primary:hover > [aria-hidden="true"] { transform: none; } }
+ .studio-library-stats strong { font-variant-numeric: tabular-nums; }
+ .drill-feedback,.active-a1-feedback { line-height: 1.7; }
+ @media (prefers-reduced-motion: reduce) { .btn:active { transform: none; } }
+ html[data-motion="minimal"] .btn:active { transform: none; }
+}

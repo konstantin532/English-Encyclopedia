@@ -1,0 +1,4 @@
+# Generated CSS must be byte-stable on Windows and Linux.
+static/css/*.css text eol=lf
+static/scss/**/*.scss text eol=lf
+pnpm-lock.yaml text eol=lf

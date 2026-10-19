@@ -1,0 +1,77 @@
+/* Focused, touch-friendly design for five-question A1 reviews.
+   Works on narrow Android screens, in large text, and with a keyboard. */
+.mistake-review-page {
+  padding-bottom: var(--space-8);
+  min-width: 0;
+}
+.mistake-review-card {
+  width: 100%;
+  max-width: 46rem;
+  min-width: 0;
+}
+.mistake-review-card .drill-prompt,
+.mistake-review-card .drill-en,
+.mistake-review-card p {
+  overflow-wrap: anywhere;
+}
+.mistake-review-options {
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 1rem 0;
+}
+.mistake-review-options legend {
+  font-weight: 600;
+  padding: 0 0 .5rem 0;
+}
+.mistake-review-option {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  width: 100%;
+  min-height: 52px;
+  margin: .625rem 0;
+  padding: .875rem;
+  border-radius: 12px;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.mistake-review-option:has(input:checked) {
+  border-color: var(--ink);
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+}
+.mistake-review-option:focus-within {
+  outline: 3px solid var(--focus, currentColor);
+  outline-offset: 3px;
+}
+.mistake-review-option input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--ink);
+}
+.mistake-review-option span {
+  flex: 1;
+  min-width: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.mistake-review-card .btn {
+  min-height: 48px;
+}
+.mistake-review-help {
+  margin-top: var(--space-4);
+}
+@media (max-width: 480px) {
+  .mistake-review-page { padding-inline: 12px; }
+  .mistake-review-option { padding: .875rem .625rem; }
+  .mistake-review-card h2 { overflow-wrap: anywhere; }
+  .mistake-review-card .btn { width: 100%; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mistake-review-option { transition: none; }
+}

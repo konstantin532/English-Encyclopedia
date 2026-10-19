@@ -1,0 +1,369 @@
+/* Generated from static/scss/foundation.scss; run pnpm build:css. Do not edit. */
+@layer ee-accessibility, ee-fonts, ee-tokens, ee-base, ee-studio, ee-cinema, ee-pages, ee-motion, ee-polish, ee-markers;
+@layer ee-polish {
+  :root {
+    --ee-type-caption: 0.8125rem;
+    --ee-type-small: 0.875rem;
+    --ee-type-ui: 0.9375rem;
+    --ee-type-body: 1.0625rem;
+    --ee-type-lead: 1.1875rem;
+    --ee-space-xs: 0.375rem;
+    --ee-space-sm: 0.75rem;
+    --ee-space-md: 1rem;
+    --ee-space-lg: 1.5rem;
+    --ee-space-xl: 2rem;
+    --ee-time-press: 100ms;
+    --ee-time-response: 180ms;
+    --ee-time-reveal: 280ms;
+    --ee-time-scene: 480ms;
+    --ee-reading-leading: 1.8;
+    --ee-reading-measure: 68ch;
+    --ee-ease: cubic-bezier(.22,1,.36,1);
+    --ee-accent: var(--studio-green);
+    --ee-focus: #88630c;
+  }
+  body {
+    font-size: var(--ee-type-body);
+    line-height: 1.7;
+  }
+  h1, h2, h3 {
+    font-optical-sizing: auto;
+    letter-spacing: -0.025em;
+  }
+  .page-head h1 {
+    font-weight: 500;
+    line-height: 1.24;
+    letter-spacing: -0.035em;
+    max-width: 28ch;
+  }
+  .studio-home-heading h1 {
+    font-weight: 480;
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+  }
+  .studio-hero-copy h2 {
+    font-weight: 460;
+    line-height: 1.22;
+    letter-spacing: -0.035em;
+  }
+  .week-hero h1 {
+    font-weight: 480;
+    line-height: 1.16;
+    letter-spacing: -0.04em;
+  }
+  .studio-home-heading p, .studio-hero-copy > p, .page-head > p:not(.crumbs) {
+    font-size: 1.0625rem;
+    line-height: var(--ee-reading-leading);
+    letter-spacing: normal;
+  }
+  :where(.prose, .layer, .a1-clarity-bridge, .independent-task, .independent-result, .review-card) {
+    font-size: 1.0625rem;
+    line-height: var(--ee-reading-leading);
+    letter-spacing: normal;
+  }
+  .prose p, .prose li, .layer p, .layer li, .a1-clarity-bridge dd {
+    font-size: var(--ee-type-body);
+    line-height: var(--ee-reading-leading);
+  }
+  .prose > p, .layer > p, .layer > ul, .layer > ol {
+    max-width: var(--ee-reading-measure);
+  }
+  [data-lesson-reader] .layer, [data-lesson-reader] .layer p, [data-lesson-reader] .layer li {
+    font-size: inherit;
+  }
+  .layer h2, .prose h2 {
+    font-size: clamp(1.375rem, 1.1rem + 0.6vw, 1.75rem);
+    line-height: 1.35;
+    margin-bottom: var(--ee-space-md);
+  }
+  .studio-lesson-card h3 {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .studio-lesson-card p, .studio-word-card p, .studio-note p, .studio-level-card p {
+    font-size: var(--ee-type-small);
+    line-height: 1.7;
+  }
+  .studio-eyebrow, .week-hero .studio-eyebrow {
+    font-size: var(--ee-type-caption);
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+  }
+  .studio-nav-label, .studio-sidebar-caption, .studio-library-stats span {
+    font-size: var(--ee-type-caption);
+  }
+  .studio-nav > a {
+    font-size: var(--ee-type-ui);
+  }
+  .studio-breadcrumb {
+    font-family: var(--font-ui);
+    font-size: var(--ee-type-small);
+  }
+  .crumbs, .studio-lesson-card .studio-lesson-no, .week-chapter a {
+    font-size: var(--ee-type-small);
+  }
+  .story-script .script-line {
+    font-size: clamp(1.25rem, 1.15rem + 0.3vw, 1.5rem);
+    line-height: 1.85;
+  }
+  .story-script .line-ru, .story-script .speaker, .story-script .emotion {
+    font-size: var(--ee-type-small);
+    line-height: 1.7;
+  }
+  .ipa {
+    font-family: var(--font-ipa);
+    font-size: 1.12em;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+  }
+  .ru-transcription {
+    line-height: 1.75;
+  }
+  .studio-phrase {
+    line-height: 1.7;
+  }
+  :where(input, textarea, select) {
+    font-family: var(--font-ui);
+  }
+  .studio-auth-form input, .studio-word-search input, .form-page input {
+    font-size: 1rem;
+  }
+  .studio-auth-form p, .studio-auth-story p, .studio-auth-benefits {
+    font-size: var(--ee-type-ui);
+    line-height: 1.75;
+  }
+  .motion-control {
+    font-size: var(--ee-type-caption);
+  }
+  .motion-control select {
+    font-size: inherit;
+  }
+  .player-clock {
+    font-variant-numeric: tabular-nums;
+    font-size: var(--ee-type-caption);
+  }
+  .story-player .player-modes, .story-player > .drill-hint {
+    font-size: var(--ee-type-small);
+  }
+  @media (max-width: 700px) {
+    body {
+      font-size: 1rem;
+    }
+    .studio-home-heading h1 {
+      font-size: clamp(1.75rem, 6.5vw, 2.2rem);
+    }
+    .studio-hero-copy h2 {
+      font-size: clamp(2rem, 8vw, 2.6rem);
+    }
+    .page-head h1 {
+      font-size: clamp(1.75rem, 6.5vw, 2.25rem);
+    }
+    .week-hero h1 {
+      font-size: clamp(2rem, 7vw, 2.6rem);
+    }
+    .studio-nav > a {
+      font-size: var(--ee-type-small);
+      min-height: 44px;
+    }
+    .studio-hero-copy {
+      padding: 1.5rem;
+    }
+    .studio-search-form input {
+      font-size: 1rem;
+    }
+    .studio-top-actions {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .studio-breadcrumb {
+      white-space: normal;
+      min-width: 0;
+      flex-wrap: wrap;
+    }
+    .studio-home-heading > span {
+      white-space: normal;
+    }
+  }
+  .btn {
+    min-height: 46px;
+    font-size: var(--ee-type-small);
+    line-height: 1.35;
+    padding-block: 0.6rem;
+  }
+  .btn-primary {
+    box-shadow: 0 2px 0 rgba(16, 59, 44, 0.0941176471);
+  }
+  .btn:disabled, .btn[aria-disabled=true] {
+    cursor: default;
+    opacity: 0.65;
+  }
+  .studio-lesson-card {
+    border-color: var(--rule);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .studio-lesson-card:hover {
+      box-shadow: 0 8px 22px rgba(38, 59, 41, 0.062745098);
+      border-color: var(--rule-strong);
+    }
+  }
+  .studio-lesson-card:focus-within {
+    border-color: var(--ee-accent);
+  }
+  .studio-word-card {
+    border-color: var(--rule);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .studio-word-card:hover {
+      box-shadow: 0 8px 22px rgba(38, 59, 41, 0.062745098);
+      border-color: var(--rule-strong);
+    }
+  }
+  .studio-word-card:focus-within {
+    border-color: var(--ee-accent);
+  }
+  .week-card {
+    border-color: var(--rule);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .week-card:hover {
+      box-shadow: 0 8px 22px rgba(38, 59, 41, 0.062745098);
+      border-color: var(--rule-strong);
+    }
+  }
+  .week-card:focus-within {
+    border-color: var(--ee-accent);
+  }
+  :where(a, button, summary, input, textarea, select):focus-visible {
+    outline: 3px solid var(--ee-focus);
+    outline-offset: 3px;
+  }
+  .studio-search-form:focus-within input {
+    border-color: var(--ee-accent);
+  }
+  .studio-lesson-card a, .toc a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  .studio-section-title {
+    gap: 1rem;
+    align-items: baseline;
+  }
+  .studio-section-title a {
+    font-size: var(--ee-type-small);
+  }
+  .aside {
+    grid-template-columns: minmax(0, 1fr);
+    min-width: 0;
+  }
+  .aside-box {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .week-route .toc a {
+    font-size: var(--ee-type-small);
+    line-height: 1.55;
+  }
+  .listen-modes label, .speech-modes label {
+    font-size: var(--ee-type-small);
+    min-height: 44px;
+  }
+  @media (max-width: 1200px) {
+    .site-header .wrap {
+      flex-wrap: wrap;
+      padding-block: 0.75rem;
+    }
+    .studio-top-actions {
+      flex-wrap: wrap;
+      min-width: 0;
+      max-width: 100%;
+      margin-inline-start: auto;
+      gap: 0.625rem;
+    }
+  }
+  @media (max-width: 700px) {
+    .site-header .wrap {
+      align-items: center;
+    }
+    .studio-top-actions .btn-small {
+      min-height: 44px;
+      font-size: var(--ee-type-caption);
+    }
+    .studio-section-title {
+      flex-wrap: wrap;
+    }
+    .studio-lesson-card {
+      padding: 1rem;
+      min-width: 0;
+    }
+    .studio-lesson-card > div {
+      min-width: 0;
+    }
+    .studio-lesson-card h3 {
+      overflow-wrap: anywhere;
+    }
+    .week-route .toc {
+      gap: 0.5rem 1rem;
+    }
+  }
+  .btn, .studio-nav > a, .studio-lesson-card, .studio-word-card, .week-card {
+    transition-duration: var(--ee-time-response);
+    transition-timing-function: var(--ee-ease);
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .studio-home-hero {
+    position: relative;
+  }
+  html[data-motion=full] .studio-hero-copy h2 em {
+    text-decoration-color: var(--cinema-gold);
+    text-decoration-thickness: 0.035em;
+    text-underline-offset: 0.15em;
+  }
+  html[data-motion=full] .studio-phrase-paper:focus-within {
+    box-shadow: 0 18px 50px rgba(12, 32, 26, 0.1882352941);
+  }
+  html[data-scene-entry=running][data-motion=full] .studio-phrase-paper {
+    animation: ee-paper-settle 700ms var(--ee-ease) both;
+  }
+  @keyframes ee-paper-settle {
+    from {
+      transform: translateY(8px) rotate(-5deg);
+    }
+    to {
+      transform: translateY(0) rotate(-3deg);
+    }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover > [aria-hidden=true] {
+      transform: translateX(3px);
+    }
+  }
+  .btn-primary > [aria-hidden=true] {
+    transition: transform var(--ee-time-response) var(--ee-ease);
+  }
+  html[data-motion=minimal] .btn-primary:hover > [aria-hidden=true] {
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-primary:hover > [aria-hidden=true] {
+      transform: none;
+    }
+  }
+  .studio-library-stats strong {
+    font-variant-numeric: tabular-nums;
+  }
+  .drill-feedback, .active-a1-feedback {
+    line-height: 1.7;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn:active {
+      transform: none;
+    }
+  }
+  html[data-motion=minimal] .btn:active {
+    transform: none;
+  }
+}

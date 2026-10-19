@@ -531,3 +531,14 @@ feature/living-language-cinema-20261019 starts from current main, not the
 **Remaining:** GitHub CI completion, actual viewport/browser/audio/TalkBack
 checks, measured Core Web Vitals, independent visual refinement. The author
 reviews and merges the PR; no automatic merge.
+
+
+## 2026-10-19 — SCSS, типографика и выразительные состояния
+
+- Отдельная ветка feat/typography-motion-system от68fd883 (актуальный main послеPR41), отдельный clone; старые незавершённые исправления не затронуты. Сохранены расположение блоков, содержание, маркеры и серверная оценка.
+-13 публичных CSS перенесены в Sass-модули, добавлены tokens/maps/functions/mixins, слои каскада, новый foundation и проверка расхождения готового CSS; точные pnpm11.25.0/Sass1.105.2, LF для CSS. Render использует готовую статику без нового Node runtime.
+- Увеличены мелкие пояснения, отлажены строки и заголовки; A-/A+ проверен и работает.4 локальных OFL-шрифта сжаты без subsetting в WOFF2:2865108→1167508байт, таблицы символов сохранены; лицензии рядом.
+- Существующая EnglishMotion расширена: вступление Full один раз на путь во вкладке, постановка бумажной карточки; blocked sessionStorage getter выявлен ревьюером и исправлен через RED→GREEN VM-тест. Minimal и монохромные маркеры проверены в браузере.
+- Публичные canonical/OpenGraph/robots/sitemap используют только заданный PUBLIC_SITE_URL; приватные страницы исключены. Главная вошедшего пользователя ведёт к существующему продолжению обучения.
+- Полный Django598 OK338.811с; после финальных изменений профильные12 OK0.772с; Node105 OK; check/makemigrations без ошибок, audit_course без ошибок (сохраняет прежние предупреждения457CEFR).28 сочетаний7страниц×320/390/768/1440 без горизонтального переполнения после исправлений шапки и боковой карточки. Упражнение1 дало «Верно», клавиатурный skip-link переводит внутрьmain с видимым фокусом, реальный MP3 недели1 завершился0:22/0:22 без ошибокJS. YAML недели1 совпадает с источником ранее сгенерированного аудио; файлы только локальные/ignored, verified:false.
+- Сумма gzipCSS34066→38301байт (+4235), это расчёт файлов, не сетевой замер. Реальные LCP/INP/CLS/FPS, Android/TalkBack, OS reduced motion и zoom200% не измерены. Исследование, лицензии и план роста — docs/ui/; снимки и JSON — внешние артефакты outputs/design. Новых трекеров/публикаций/production deployment нет.

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load markers static ru %}
 {% block title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
+{% block social_title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
 {% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% endblock %}
 {% block content %}
 <div class="wrap">

@@ -1,0 +1,13 @@
+@use "system/tokens";
+@use "system/typography";
+@use "system/surfaces";
+@use "system/motion";
+// First declaration owns precedence even when page styles load later.
+// Accessibility is first so its important safeguards win the reversed important order.
+@layer ee-accessibility, ee-fonts, ee-tokens, ee-base, ee-studio, ee-cinema, ee-pages, ee-motion, ee-polish, ee-markers;
+@layer ee-polish {
+ @include tokens.emit;
+ @include typography.emit;
+ @include surfaces.emit;
+ @include motion.emit;
+}

@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
   <meta name="description" content="{% block description %}Интерактивная энциклопедия американского английского: от первого слова до B2+, с объяснением, как устроен язык.{% endblock %}">
-  <link rel="preload" href="{% static 'fonts/Literata-Variable.ttf' %}" as="font" type="font/ttf" crossorigin>
+  {% if PRIVATE_PAGE %}<meta name="robots" content="noindex, follow">{% else %}
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="{{ SITE_NAME }}">
+  <meta property="og:title" content="{% block social_title %}{{ SITE_NAME }}{% endblock %}">
+  <meta property="og:description" content="Американский английский с объяснениями на русском: слова, уроки, истории и практика.">
+  {% if PUBLIC_CANONICAL %}<link rel="canonical" href="{{ PUBLIC_CANONICAL }}">
+  <meta property="og:url" content="{{ PUBLIC_CANONICAL }}">{% endif %}{% endif %}
+  <link rel="stylesheet" href="{% static 'css/foundation.css' %}">
+  <link rel="preload" href="{% static 'fonts/GolosText-Variable.woff2' %}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
   <link rel="stylesheet" href="{% static 'css/design-tokens.css' %}">
   <link rel="stylesheet" href="{% static 'css/linguistic-markers.css' %}">
