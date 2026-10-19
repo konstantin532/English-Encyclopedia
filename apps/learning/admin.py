@@ -66,6 +66,7 @@ class IndependentAttemptAdmin(admin.ModelAdmin):
     search_fields = ("user__email", "lesson__title", "submitted")
     readonly_fields = (
         "user", "lesson", "skill", "task_variant", "assistance", "submitted", "outcome",
+        "prompt_snapshot", "model_snapshot",
         "self_rating", "self_rubric", "teacher_rubric",
         "reviewed_by", "reviewed_at", "created_at",
         "original_prompt", "reference_example",
@@ -96,6 +97,9 @@ class IndependentAttemptAdmin(admin.ModelAdmin):
     def _task(obj):
         if not obj or not obj.pk:
             return None
+        if obj.prompt_snapshot and obj.model_snapshot:
+            return {"prompt": obj.prompt_snapshot, "model": obj.model_snapshot}
+        # Legacy attempts created before prompt snapshots need a guarded lookup.
         guide = get_guide(obj.lesson.slug)
         if not guide:
             return None
