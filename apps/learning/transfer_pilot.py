@@ -80,9 +80,15 @@ def next_stage(rows, now):
     first = by_variant.get(100)
     if first is None:
         return STAGES[0], None
+    day_30_due = first.created_at + timedelta(days=30)
     for stage in STAGES[1:]:
-        if stage[1] not in by_variant:
-            return stage, first.created_at + timedelta(days=stage[2])
+        if stage[1] in by_variant:
+            continue
+        if stage[1] == 101 and now >= day_30_due:
+            # A missed day-7 probe cannot be "made up" at day 30 and
+            # misrepresented as retention after seven days. Preserve missingness.
+            continue
+        return stage, first.created_at + timedelta(days=stage[2])
     return None, None
 
 
