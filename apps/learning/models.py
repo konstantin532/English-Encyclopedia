@@ -187,6 +187,9 @@ class IndependentAttempt(models.Model):
     self_rating = models.CharField(max_length=16, blank=True)
     # A documented alternative task, chosen server-side; 0 is the original.
     task_variant = models.PositiveSmallIntegerField(default=0)
+    # Empty only for historic/legacy attempts. Modern four-answer POSTs carry
+    # a one-time form token, allowing DB-level protection against race retries.
+    batch_token = models.CharField(max_length=64, blank=True, default="")
     # Learner reflection, never a machine-scored CEFR or speech grade.
     self_rubric = models.JSONField(default=dict, blank=True)
 
@@ -212,4 +215,11 @@ class IndependentAttempt(models.Model):
 
     class Meta:
         indexes = [models.Index(fields=["user", "lesson", "-created_at"], name="independent_user_lesson_idx")]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "lesson", "skill", "batch_token"],
+                condition=~models.Q(batch_token=""),
+                name="unique_independent_batch_skill_token",
+            ),
+        ]
         ordering = ["-created_at"]
