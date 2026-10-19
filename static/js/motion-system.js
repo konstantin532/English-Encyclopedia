@@ -76,6 +76,7 @@
   }
 
   function seconds(token, fallback) {
+    if (typeof global.getComputedStyle !== "function") return fallback;
     const value = global.getComputedStyle(root).getPropertyValue(token).trim();
     const n = parseFloat(value);
     if (!Number.isFinite(n)) return fallback;
@@ -98,14 +99,14 @@
   // Intentional semantic feedback: neither grading nor saved progress is inferred.
   function resolve(el, state) {
     if (!el || el.hidden) return;
-    if (mode === "minimal") return;
+    if (mode === "minimal" || !global.gsap) return;
     const correct = state === "ok" || state === "done";
     tween(el, { opacity: 0.65, y: correct && mode === "full" ? 5 : 2 },
       { opacity: 1, y: 0, duration: seconds("--motion-duration-fast", 0.2) }, "component");
   }
 
   function enter(el, kind) {
-    if (!el || el.hidden) return;
+    if (!el || el.hidden || !global.gsap || mode === "minimal") return;
     const scene = kind === "scene";
     const dx = scene && mode === "full" ? 6 : 0;
     tween(el, { opacity: 0.75, y: dx },
