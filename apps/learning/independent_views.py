@@ -98,13 +98,14 @@ def independent_check(request, slug):
             result = {"skill": attempt.skill, "model": model_for(attempt),
                       "label": RATINGS[rating], "attempt": attempt}
         elif request.POST.get("action") == "batch":
-            # Browser-generated form tokens are single use: a slow network or
-            # double-tap cannot silently create a second four-answer set.
-            # Missing tokens remain accepted for older clients/tests.
+            # Browser-generated form tokens are mandatory and single use:
+            # omitting a token must never bypass DB-level idempotency.
+            # The old individual-skill route remains separate for legacy clients.
             supplied_token = request.POST.get("batch_token")
-            if supplied_token is not None and not secrets.compare_digest(
-                supplied_token, request.session[token_key]
-            ):
+            if (not supplied_token or len(supplied_token) > 64 or
+                    not secrets.compare_digest(
+                        supplied_token, request.session[token_key]
+                    )):
                 return HttpResponseBadRequest("Эта попытка уже отправлена. Обновите страницу.")
             # Reject a stale form rather than silently assess the wrong prompt.
             supplied_variant = request.POST.get("transfer_variant")
@@ -136,7 +137,7 @@ def independent_check(request, slug):
                             user=request.user, lesson=lesson,
                             skill=skill, submitted=answer, outcome=outcome,
                             task_variant=variant if skill == "transfer" else 0,
-                            batch_token=supplied_token or "",
+                            batch_token=supplied_token,
                         )
                         batch_results.append({
                             "skill": skill, "title": {
