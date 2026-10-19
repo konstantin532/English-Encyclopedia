@@ -54,13 +54,12 @@ class UnitProgress(models.Model):
                 self.next_review_at = now + timedelta(days=REVIEW_INTERVALS_DAYS[self.stage])
             if self.status == Status.NEW:
                 self.status = Status.RECOGNITION
-            elif new_context:
-                ladder_pos = STATUS_LADDER.index(self.status) if self.status in STATUS_LADDER else 1
-                next_status = STATUS_LADDER[min(ladder_pos + 1, len(STATUS_LADDER) - 1)]
-                # Active vocabulary still needs several DISTINCT constructions.
-                if next_status == Status.ACTIVE and len(self.contexts_used) < 3:
-                    next_status = Status.INDEPENDENT_USE
-                self.status = next_status
+            elif new_context and self.status == Status.RECOGNITION:
+                # A model-matched drill is guided practice, even with several
+                # distinct sentence contexts. It cannot demonstrate unaided
+                # transfer or independent production. Those require separate
+                # human-reviewed evidence; do not award higher statuses here.
+                self.status = Status.GUIDED_USE
         else:
             self.wrong_count += 1
             self.stage = max(self.stage - 1, 0)
