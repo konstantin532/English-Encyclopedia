@@ -101,13 +101,14 @@ def next_stage(rows, now):
     first = by_variant.get(100)
     if first is None:
         return STAGES[0], None
-    day_30_due = first.created_at + timedelta(days=30)
+    # A +7d measurement cannot be performed at day 20 or day 29 and
+    # silently reported as "7-day retention". Close its window after day 13.
+    day_7_cutoff = first.created_at + timedelta(days=14)
     for stage in STAGES[1:]:
         if stage[1] in by_variant:
             continue
-        if stage[1] == 101 and now >= day_30_due:
-            # A missed day-7 probe cannot be "made up" at day 30 and
-            # misrepresented as retention after seven days. Preserve missingness.
+        if stage[1] == 101 and now >= day_7_cutoff:
+            # Missingness stays missing. The +30d stage remains independent.
             continue
         return stage, first.created_at + timedelta(days=stage[2])
     return None, None
@@ -162,6 +163,17 @@ def transfer_pilot(request, slug):
                     batch_token=expected,
                     prompt_snapshot=mission["prompt"],
                     model_snapshot=mission["model"],
+                    self_rubric={
+                        "pilot_stage": stage[0],
+                        "planned_at": due_at.isoformat() if due_at else None,
+                        "actual_submit_at": now.isoformat(),
+                        "timing": (
+                            "initial" if due_at is None else
+                            "late" if now > due_at + timedelta(days=1) else
+                            "within_one_day"
+                        ),
+                        "intermediate_practice": "not_measured",
+                    },
                 )
         except IntegrityError:
             return HttpResponseBadRequest("Этот этап уже выполнен; повторная отправка не записана.")
