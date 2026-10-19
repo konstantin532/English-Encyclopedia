@@ -272,11 +272,18 @@ class WeekFourTests(WeekContentMixin, TestCase):
                          {1: 2, 2: 6, 5: 14})
         self.assertEqual((Story.objects.count(), Poem.objects.count()), (60, 60))
 
-    def test_new_units_have_new_ids_and_unverified_cefr(self):
+    def test_new_units_have_new_ids_and_evidence_based_cefr(self):
         new = LexicalUnit.objects.filter(uid__gte="LX-00055")
         self.assertGreater(new.count(), 40)
         self.assertEqual(new.count(), len(set(new.values_list("uid", flat=True))))
-        self.assertEqual(set(new.values_list("cefr", flat=True)), {"unverified"})
+        # Do not require future source-backed entries to remain unverified forever.
+        sourced = new.exclude(cefr="unverified")
+        self.assertEqual(set(sourced.values_list("uid", flat=True)), {"LX-00113", "LX-00303"})
+        for entry in sourced:
+            self.assertEqual(entry.verification_status, "verified")
+            self.assertIn("Cambridge English Dictionary", entry.verification_note)
+        self.assertEqual(new.filter(cefr="unverified", verification_status="pending").count(),
+                         new.count() - sourced.count())
 
 
 class PilotContinuityTests(TestCase):
@@ -673,7 +680,8 @@ class WeekTenTests(WeekContentMixin, TestCase):
         scene = WeekScene.objects.get(week__level__code="A1", week__number=10)
         mia = " ".join(line["text"] for line in scene.script if line["speaker"] == "mia")
         self.assertNotIn("[A1]never[/] [D2]work[/]", mia)
-        self.assertIn("[D2]work[/] [P3]on[/] [S7]Sunday[/]", mia)
+        self.assertIn("[D2]work[/] [P3]on[/] [S7]Sundays[/]", mia)
+        self.assertIn("[A1]always[/] [D8]start[/] [P3]at[/] [N3]five[/]", mia)
 
 
 class WeekElevenTests(WeekContentMixin, TestCase):
