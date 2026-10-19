@@ -5,8 +5,10 @@ reject unsupported 'verified' claims, and report pending human review.
 """
 import argparse
 import json
+import re
 from collections import Counter
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 
 import yaml
 
@@ -15,6 +17,46 @@ LEVELS = {"A1", "A2", "B1", "B2", "C1", "unverified"}
 STATUSES = {"pending", "partial", "verified"}
 UNCERTAIN = ("требует проверки", "не сверял", "значение отдельно не сверялось",
              "pending", "unverified")
+
+# A source URL is a provenance requirement, not proof of accuracy: actual
+# word sense, register, and level still need a human to read the source.
+SENSE_SOURCE_PATHS = {
+    "dictionary.cambridge.org": "/us/dictionary/english/",
+    "www.oxfordlearnersdictionaries.com": "/definition/english/",
+}
+
+
+def traceable_sense_evidence(row):
+    """Reject self-declared verification without an inspectable lexical sense."""
+    url = row.get("verification_source_url")
+    sense = row.get("verification_sense")
+    note = row.get("verification_note")
+    lemma = row.get("lemma")
+    cefr = row.get("cefr")
+    if not all(isinstance(s, str) and s.strip() for s in (url, sense, note, lemma, cefr)):
+        return False
+    try:
+        parsed = urlparse(url)
+    except ValueError:
+        return False
+    try:
+        prefix = SENSE_SOURCE_PATHS.get(parsed.hostname)
+        invalid_authority = bool(parsed.username or parsed.password or parsed.port is not None)
+    except ValueError:
+        return False
+    if (parsed.scheme != "https" or not prefix or invalid_authority
+            or not parsed.path.startswith(prefix)):
+        return False
+    # Prevent a perfectly credible dictionary URL for a DIFFERENT word from
+    # being used as apparent proof of this particular entry.
+    slug = unquote(parsed.path.rstrip("/").split("/")[-1]).casefold()
+    expected_slug = re.sub(r"[^a-z0-9]+", "-", lemma.casefold()).strip("-")
+    if slug != expected_slug:
+        return False
+    # The level and precisely named sense must agree with the narrative note.
+    if sense.casefold() not in note.casefold() or cefr not in note.upper():
+        return False
+    return True
 
 
 def inspect(root=ROOT):
@@ -61,10 +103,13 @@ def inspect(root=ROOT):
             counts["status_" + status] += 1
             counts["cefr_" + cefr] += 1
             if status == "verified":
-                if cefr == "unverified" or not isinstance(note, str) or not note.strip() or any(
-                    marker in note.casefold() for marker in UNCERTAIN
-                ):
-                    problems.append(f"{uid}: verified claim lacks a sense-specific, unqualified source note")
+                if (cefr == "unverified" or not isinstance(note, str) or not note.strip()
+                        or any(marker in note.casefold() for marker in UNCERTAIN)
+                        or not traceable_sense_evidence(row)):
+                    problems.append(
+                        f"{uid}: verified claim lacks a traceable sense-level source, "
+                        "matching lemma, level, and explicit sense identifier"
+                    )
                 else:
                     counts["documented_sense_claims"] += 1
             elif status == "partial":
