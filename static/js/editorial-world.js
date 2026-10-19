@@ -116,20 +116,26 @@
     if (rootObserver) rootObserver.disconnect();
     sceneObserver = playerObserver = rootObserver = null;
   }
-  function init() {
+  function connect() {
     updateMode();
-    decorate();
     connectScenes();
     connectPlayers();
     if (global.MutationObserver) {
       rootObserver = new global.MutationObserver(updateMode);
       rootObserver.observe(root, { attributes: true, attributeFilter: ["data-motion"] });
     }
+  }
+  function init() {
+    decorate();
+    connect();
     [reduced, contrast].forEach(function (media) {
       if (media.addEventListener) media.addEventListener("change", updateMode);
     });
-    global.addEventListener("visibilitychange", updateMode);
-    global.addEventListener("pagehide", dispose, { once: true });
+    doc.addEventListener("visibilitychange", updateMode);
+    global.addEventListener("pagehide", dispose);
+    global.addEventListener("pageshow", function (event) {
+      if (event.persisted) connect();
+    });
   }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", init, { once: true });
   else init();
