@@ -114,8 +114,11 @@ html:not([data-motion="minimal"]) .form-page input {
   border-radius: 8px; background: var(--surface); color: var(--ink); font: inherit; }
 .motion-control select:disabled { opacity: .7; }
 .motion-control-note { display: none; }
+.motion-control-mobile { display: none; }
 @media(max-width: 700px) {
-  .motion-control > span { display: none; }
+  .site-header .motion-control { display: none; }
+  .site-footer .motion-control-mobile { display: inline-flex; }
+  .motion-control > span { display: inline; }
   .motion-control select { max-width: 94px; min-height: 36px; font-size: 10px; }
 }
 @media(max-width: 390px) { .motion-control select { max-width: 74px; } }
