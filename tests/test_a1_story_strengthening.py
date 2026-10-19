@@ -80,7 +80,7 @@ def test_episode_narration_preserves_actions_and_level():
         assert positions == sorted(positions), filename
         assert all(action in spoken for action in actions), filename
         # Do not introduce Present Continuous before it is taught.
-        assert not re.search(r"\\b(?:am|is|are) [a-z]+ing\\b", narration), filename
+        assert not re.search(r"\b(?:am|is|are) [a-z]+ing\b", narration), filename
 
 
 def test_episode_story_clues_and_phrase_hunt_stay_aligned():
