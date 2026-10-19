@@ -37,8 +37,8 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /wɪtʃ/
   translation_ru: какой (из), который
-  example_en: '[T9]Which[/] [S2]phone[/] [D1]is[/] [T3]your[/] [S2]phone[/]?'
-  example_ru: Какой телефон твой?
+  example_en: '[T9]Which[/] [S2]phone[/] [D1]is[/] [J2]new[/]?'
+  example_ru: Какой телефон новый?
   situation: Задаёте вопрос
   usage_note: 'which — выбор из нескольких известных: Which one?'
 - uid: LX-00351

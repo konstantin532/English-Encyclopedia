@@ -7,7 +7,7 @@
         "title": "Суббота с книгой",
         "scene": "Мия спрашивает о вашей неизменной субботней привычке.",
         "prompt": "Скажите, что по субботам вы всегда читаете.",
-        "example": "I always read on Saturday.",
+        "example": "I always read on Saturdays.",
         "coach": "Always ставьте перед read; перед днём недели нужен on."
       },
       {
@@ -15,7 +15,7 @@
         "title": "Воскресенье без работы",
         "scene": "Друг предлагает рабочую встречу в воскресенье, а вы в этот день никогда не работаете.",
         "prompt": "Объясните свою привычку одним предложением.",
-        "example": "I never work on Sunday.",
+        "example": "I never work on Sundays.",
         "coach": "Never уже содержит отрицание; второе не требуется."
       },
       {
@@ -23,7 +23,7 @@
         "title": "Пятничная музыка",
         "scene": "Анна спрашивает о вашем обычном занятии по пятницам: вы играете на гитаре.",
         "prompt": "Назовите действие и добавьте «обычно».",
-        "example": "I usually play the guitar on Friday.",
+        "example": "I usually play the guitar on Fridays.",
         "coach": "Usually стоит перед play. В американском английском возможно и play the guitar, и play guitar; здесь тренируем первый вариант."
       },
       {
@@ -31,7 +31,7 @@
         "title": "Не каждая прогулка",
         "scene": "В понедельник вы иногда гуляете в парке, но это не обязательный план.",
         "prompt": "Расскажите об этом со словом sometimes.",
-        "example": "I sometimes walk in the park on Monday.",
+        "example": "I sometimes walk in the park on Mondays.",
         "coach": "Sometimes оставляет место для других планов: это «иногда», а не «всегда»."
       },
       {
@@ -47,7 +47,7 @@
         "title": "Импровизация: два дня отдыха",
         "scene": "Представьте собственные выходные: в субботу одно занятие без исключений, а в воскресенье другое иногда.",
         "prompt": "Составьте две связанные фразы о своих привычках, используя always и sometimes.",
-        "example": "I always read on Saturday. I sometimes play the guitar on Sunday.",
+        "example": "I always read on Saturdays. I sometimes play the guitar on Sundays.",
         "coach": "Выберите знакомые действия; слова частоты ставьте перед обычным глаголом."
       }
     ],
@@ -58,7 +58,7 @@
       },
       {
         "scene": "Субботний план изменился: в этот день вы никогда не работаете. Сообщите это другу.",
-        "example": "I never work on Saturday."
+        "example": "I never work on Saturdays."
       }
     ]
   },

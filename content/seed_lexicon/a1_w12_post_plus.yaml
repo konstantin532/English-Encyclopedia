@@ -98,7 +98,7 @@ units:
   ipa_us: /əˈpɑrtmənt/
   translation_ru: квартира
   example_en: '[T3]My[/] [S2]apartment[/] [D1]is[/] [P1]on[/] [S4]Park[/] [S4]Street[/].'
-  example_ru: Моя квартира находится на улице Парк.
+  example_ru: Моя квартира находится на Парк-стрит.
   situation: Уточняете номер квартиры
   usage_note: Apartment — обычное американское слово; в адресе часто сокращается до APT.
 - uid: LX-00419

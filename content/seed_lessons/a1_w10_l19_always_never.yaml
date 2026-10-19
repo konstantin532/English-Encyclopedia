@@ -8,8 +8,8 @@ title: "Как часто: always, usually, sometimes, never"
 summary: "Как сказать, насколько часто вы что-то делаете: always, usually, sometimes, never. Куда ставить эти слова и почему never не любит второе «не»."
 units: [LX-00193, LX-00194, LX-00195, LX-00196, LX-00197, LX-00198, LX-00199, LX-00206, LX-00207, LX-00210, LX-00369, LX-00370, LX-00371, LX-00372, LX-00373, LX-00374, LX-00375, LX-00376, LX-00377, LX-00378, LX-00379, LX-00380, LX-00381, LX-00382, LX-00383, LX-00384, LX-00385]
 sound_notes:
-  - text: "I always read on Saturday."
-    ipa: "/aɪ ˈɔlweɪz ˈrid ɑn ˈsæt̬ɚˌdeɪ/"
+  - text: "I always read on Saturdays."
+    ipa: "/aɪ ˈɔlweɪz ˈrid ɑn ˈsæt̬ɚˌdeɪz/"
     note_ru: "always — «олуэйз», l мягкая и короткая; t в Saturday почти «д»"
   - text: "I never walk!"
     ipa: "/aɪ ˈnɛvɚ ˈwɔk/"
@@ -27,7 +27,7 @@ layers:
     body: |
       Рассказывая о выходных, мы говорим не только что делаем, но и как часто. Для этого есть слова частоты.
 
-      > [T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturday[/]. [T8]I[/] [D3]like[/] [D2]reading[/]. — По субботам я всегда читаю. Люблю читать.
+      > [T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturdays[/]. [T8]I[/] [D3]like[/] [D2]reading[/]. — По субботам я всегда читаю. Люблю читать.
       > [O4]No[/], [T8]I[/] [A1]never[/] [D4]walk[/]! — Нет, я никогда не гуляю!
 
       Условная шкала: **always** («всегда») → **usually** («обычно») → **sometimes** («иногда») → **never** («никогда»). Это **не точные проценты**: *usually* не означает одно и то же число раз для всех людей.
@@ -44,7 +44,7 @@ layers:
     body: |
       Место слова частоты:
 
-      > [T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturday[/]. — По субботам я всегда читаю.
+      > [T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturdays[/]. — По субботам я всегда читаю.
       > [T8]I[/] [A1]never[/] [D4]walk[/]! — Я никогда не гуляю!
 
       - Перед обычным глаголом: I always read, she never walks.
@@ -57,7 +57,7 @@ layers:
       Дни недели: **Monday** — понедельник, **Tuesday** — вторник, **Wednesday** — среда, **Thursday** — четверг, **Friday** — пятница; Saturday и Sunday уже знакомы.
 
       > [O1]See you[/] [P3]on[/] [S7]Friday[/], [S1]Mia[/]! — Увидимся в пятницу, Мия!
-      > [C1]And[/] [P3]on[/] [S7]Sunday[/] [P3]in[/] [S7]October[/]? — А в воскресенье в октябре?
+      > [C1]And[/] [P3]on[/] [S7]Sundays[/] [P3]in[/] [S7]October[/]? — А по воскресеньям в октябре?
 
       Месяцы по порядку:
 
@@ -68,7 +68,7 @@ layers:
 
       С днём — **on**, с месяцем — **in**: on Friday, in October. Дни и месяцы всегда с большой буквы. В Wednesday середина слова не звучит: /ˈwɛnzˌdeɪ/.
 
-      > [T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Monday[/]. — По понедельникам я обычно работаю.
+      > [T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Mondays[/]. — По понедельникам я обычно работаю.
       > [T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]May[/]. — Я люблю гулять в мае.
   - number: 4
     body: |
@@ -97,7 +97,7 @@ layers:
 
       - В **обычном нейтральном утверждении** наречие частоты обычно стоит перед смысловым глаголом: **I always read**. Иные позиции бывают для особой выразительности, но на A1 тренируем базовый порядок.
       - «I don't never walk» — двойное отрицание. Правильно: I never walk.
-      - on Saturday — «в субботу» (одну или каждую); on Saturdays — подчёркнуто «по субботам».
+      - on Saturday — «в субботу» (один конкретный день или обобщённый контекст); on Saturdays — явно повторяющаяся привычка «по субботам». Оба варианта могут описывать регулярность, но для заданий на привычку здесь выбираем множественное число.
 
       Дни недели по-английски всегда пишут с большой буквы: Saturday, Sunday.
   - number: 7
@@ -122,7 +122,7 @@ exercises:
     prompt_en: "I ___ read on Saturday."
     answer: "always"
     hint_ru: "Каждый раз — всегда."
-    explanation_ru: "I always read on Saturday — always перед глаголом read."
+    explanation_ru: "I always read on Saturdays — always перед глаголом read."
     units: [LX-00196, LX-00207]
   - order: 3
     kind: build
@@ -137,11 +137,11 @@ exercises:
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: коллега спрашивает, работаете ли вы по воскресеньям. Вы не работаете никогда. Ответьте."
-    prompt_en: "Do you work on Sunday? — ___"
-    answer: "No, I never work on Sunday."
+    prompt_en: "Do you work on Sundays? — ___"
+    answer: "No, I never work on Sundays."
     accepted: ["No, I never work on Sunday", "I never work on Sunday.", "Never.", "No, never.", "No, I never work on Sundays.", "I never work on Sunday"]
     hint_ru: "never перед work."
-    explanation_ru: "No, I never work on Sunday. Коротко — No, never."
+    explanation_ru: "No, I never work on Sundays. Коротко — No, never."
     units: [LX-00195, LX-00197]
   - order: 5
     kind: choice

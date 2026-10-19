@@ -9,22 +9,22 @@
     "dialogue": [
       [
         "Mia",
-        "Do you work on Sunday, Anna?",
-        "Ты работаешь в воскресенье, Анна?"
+        "Do you work on Sundays, Anna?",
+        "Ты работаешь по воскресеньям, Анна?"
       ],
       [
         "Anna",
-        "No, I never work on Sunday.",
+        "No, I never work on Sundays.",
         "Нет, я никогда не работаю по воскресеньям."
       ],
       [
         "Tom",
-        "I sometimes play the guitar on Sunday.",
+        "I sometimes play the guitar on Sundays.",
         "Иногда я играю на гитаре по воскресеньям."
       ],
       [
         "Anna",
-        "I always read on Saturday.",
+        "I always read on Saturdays.",
         "Я всегда читаю по субботам."
       ]
     ],
@@ -37,13 +37,13 @@
     "correct": 1,
     "feedback": "Never уже означает «никогда не». Анна не добавляет второе отрицание.",
     "prompt": "Скажите о своей привычке: «Я всегда читаю по субботам».",
-    "answer": "I always read on Saturday.",
+    "answer": "I always read on Saturdays.",
     "alternatives": [
-      "On Saturday, I always read."
+      "On Saturdays, I always read."
     ],
-    "hint": "I + always + read + on Saturday.",
+    "hint": "I + always + read + on Saturdays.",
     "transfer": "Друг зовёт играть на гитаре в понедельник, но вы никогда этого не делаете. Скажите об этой привычке.",
-    "transfer_example": "I never play the guitar on Monday.",
+    "transfer_example": "I never play the guitar on Mondays.",
     "why": "Always, usually, sometimes и never сообщают, как часто случается действие. В нейтральном утверждении с обычным глаголом слово частоты обычно стоит перед ним: I always read. С be — после него: I am always at home. В нормативном американском утверждении never уже несёт отрицание, поэтому отдельное don't здесь не нужно.",
     "sound": "В always /ˈɔlweɪz/ слышен конечный /z/. В never /ˈnɛvɚ/ первый слог ударный. В среду Wednesday произносится /ˈwɛnzˌdeɪ/."
   },

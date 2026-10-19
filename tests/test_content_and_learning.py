@@ -52,9 +52,16 @@ class ContentTests(TestCase):
         self.assertEqual(LexicalUnit.objects.count(), 500)
 
     def test_cefr_only_with_source(self):
+        # Lemma/POS evidence remains partial; verified senses require a direct source.
         for u in LexicalUnit.objects.exclude(cefr="unverified"):
             self.assertNotEqual(u.verification_status, "pending", u.uid)
-            self.assertIn("Oxford 3000", u.verification_note, u.uid)
+            if u.verification_status == "partial":
+                self.assertIn("Oxford 3000", u.verification_note, u.uid)
+            else:
+                self.assertEqual(u.verification_status, "verified", u.uid)
+                self.assertIn("Cambridge English Dictionary", u.verification_note, u.uid)
+                self.assertIn("https://dictionary.cambridge.org/us/dictionary/english/",
+                              u.verification_note, u.uid)
 
     def test_uids_unique_and_well_formed(self):
         uids = list(LexicalUnit.objects.values_list("uid", flat=True))

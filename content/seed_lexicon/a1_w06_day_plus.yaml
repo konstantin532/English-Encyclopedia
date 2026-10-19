@@ -8,13 +8,14 @@ units:
   class: D2
   forms:
   - eats
-  cefr: unverified
-  verification_status: pending
+  cefr: A1
+  verification_status: verified
+  verification_note: "Cambridge English Dictionary, eat verb (FOOD), explicitly A1: https://dictionary.cambridge.org/us/dictionary/english/eat ; teaching sense to eat food, without inferring lunch or dinner. Verified against published sense-level entry on 2026-10-19."
   frequency_source: NGSL — требует проверки
   ipa_us: /it/
   translation_ru: есть, кушать
   example_en: '[T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/].'
-  example_ru: Я обедаю в двенадцать.
+  example_ru: Я ем в двенадцать.
   situation: Рассказываете о своём дне
   usage_note: 'Долгое «и»: «и-ит». Прошедшее время — ate, это тема A1+.'
 - uid: LX-00304

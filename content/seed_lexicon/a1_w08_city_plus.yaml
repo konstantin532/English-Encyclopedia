@@ -11,8 +11,8 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈʌndɚ/
   translation_ru: под
-  example_en: '[T1]The[/] [S2]key[/] [D1]is[/] [P1]under[/] [T1]the[/] [S2]door[/].'
-  example_ru: Ключ под дверью.
+  example_en: '[T1]The[/] [S2]key[/] [D1]is[/] [P1]under[/] [T1]the[/] [S2]table[/].'
+  example_ru: Ключ под столом.
   situation: Объясняете, где что находится
   usage_note: «Андэр», американское r в конце.
 - uid: LX-00338

@@ -90,16 +90,17 @@ units:
   lemma: some
   meaning: a number of, an amount of
   class: T4
-  cefr: unverified
-  verification_status: pending
+  cefr: A1
+  verification_status: verified
+  verification_note: "Cambridge English Dictionary, some determiner (UNKNOWN AMOUNT), explicitly A1: https://dictionary.cambridge.org/us/dictionary/english/some ; example sense = unspecified quantity, not B2 LARGE AMOUNT. Verified against published sense-level entry on 2026-10-19."
   frequency_source: NGSL — требует проверки
   ipa_us: /sʌm/
   ipa_ru: сам
-  translation_ru: немного, несколько
+  translation_ru: "некоторое количество; несколько (точное число не названо)"
   example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T4]some[/] [S3]apples[/], [O8]please[/]?'
   example_ru: Можно мне яблок?
-  situation: Просите немного чего-то
-  usage_note: 'Без ударения звучит коротко: сэм /səm/.'
+  situation: Просите продукт, не уточняя точное количество
+  usage_note: 'Без ударения — /səm/. Some не сообщает точное количество и само по себе не означает обязательно маленькую порцию.'
 - uid: LX-00114
   lemma: how
   meaning: in what way; used in questions
