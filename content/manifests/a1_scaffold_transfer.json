@@ -538,8 +538,8 @@
           "model": "Can you spell your name, please?"
         },
         {
-          "prompt": "Вы не расслышали имя Ben. Попросите собеседника произнести имя по буквам.",
-          "model": "Can you spell Ben, please?"
+          "prompt": "Вы не расслышали имя сотрудника. Вежливо попросите его произнести своё имя по буквам.",
+          "model": "Can you spell your name, please?"
         }
       ]
     },
@@ -719,7 +719,7 @@
         },
         {
           "prompt": "На почте сотрудник быстро произнёс имя. Попросите повторить его по буквам.",
-          "model": "Can you spell the name again, please?"
+          "model": "Can you spell that again, please?"
         }
       ]
     },
