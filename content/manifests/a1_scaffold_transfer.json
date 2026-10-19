@@ -174,8 +174,8 @@
       ],
       "transfer_variants": [
         {
-          "prompt": "Кассиру нужны точные данные. Попросите четыре билета одной короткой фразой.",
-          "model": "Four tickets, please."
+          "prompt": "В кафе попросите четыре чая одной короткой вежливой фразой.",
+          "model": "Four teas, please."
         },
         {
           "prompt": "В кафе вам нужны четыре печенья. Вежливо попросите их.",
@@ -388,8 +388,8 @@
           "model": "Does Anna work here?"
         },
         {
-          "prompt": "Вы говорите с Томом. Спросите, читает ли он книги каждый день.",
-          "model": "Do you read books every day?"
+          "prompt": "Спросите, читает ли Том книги каждый день. Используйте does.",
+          "model": "Does Tom read books every day?"
         }
       ]
     },
