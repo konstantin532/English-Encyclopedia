@@ -43,7 +43,7 @@ test("all fourteen original SVG covers exist and catalogue/chapter reference the
     const svg = read(name);
     assert.match(svg, /<svg[^>]+viewBox="0 0 1440 810"/);
     assert.match(svg, new RegExp(titles[i - 1], "i"));
-    assert.doesNotMatch(svg, /<script|<foreignObject|<(?:image|use)[^>]+href="https?:\\/\\//);
+    assert.doesNotMatch(svg, /<script|<foreignObject|<image\\b|<use\\b/i);
   }
   const view = read("apps/curriculum/views.py");
   const hero = read("templates/components/week_hero.html");
