@@ -1,4 +1,5 @@
 from pathlib import Path
+from xml.etree import ElementTree as ET
 from django.test import SimpleTestCase
 from apps.curriculum.views import a1_atlas_cover
 
@@ -10,7 +11,7 @@ class A1AtlasIllustrationsTests(SimpleTestCase):
             filename = f"a1-week-{week:02d}.svg"
             asset = ROOT / "static" / "img" / "studio" / filename
             self.assertTrue(asset.is_file(), filename)
-            self.assertIn("svg", asset.read_text(encoding="utf-8"))
+            self.assertEqual(ET.parse(asset).getroot().tag, "{http://www.w3.org/2000/svg}svg")
             self.assertIn(filename, a1_atlas_cover("A1", week))
 
     def test_other_levels_or_missing_chapters_keep_existing_fallback(self):
