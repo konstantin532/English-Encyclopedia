@@ -23,13 +23,18 @@ class ThreeStepEditorialTests(SimpleTestCase):
         for slug, guide in guides.items():
             with self.subTest(slug=slug):
                 self.assertEqual(len(guide["steps"]), 3)
-                self.assertEqual(len(guide["transfer_variants"]), 1)
-                fresh = guide["transfer_variants"][0]
-                self.assertNotEqual(
-                    fresh["prompt"], guide["tasks"]["transfer"]["prompt"])
-                self.assertNotIn("accepted", fresh)
-                self.assertNotIn("options", fresh)
-                self.assertNotEqual(fresh["prompt"], fresh["model"])
+                self.assertEqual(len(guide["transfer_variants"]), 2)
+                for fresh in guide["transfer_variants"]:
+                    self.assertNotEqual(
+                        fresh["prompt"], guide["tasks"]["transfer"]["prompt"])
+                    self.assertNotIn("accepted", fresh)
+                    self.assertNotIn("options", fresh)
+                    self.assertNotEqual(fresh["prompt"], fresh["model"])
+                self.assertEqual(len({
+                    t["prompt"] for t in (
+                        guide["tasks"]["transfer"], *guide["transfer_variants"]
+                    )
+                }), 3)
                 self.assertGreaterEqual(
                     len({step["example_en"] for step in guide["steps"]}), 3)
 
@@ -71,7 +76,7 @@ class RotatingIndependentReviewTests(TestCase):
         page = self.client.get(self.url)
         guide = page.context["guide"]
         current = page.context["transfer_variant"]
-        answers = {"action": "batch",
+        answers = {"action": "batch", "batch_token": page.context["batch_token"],
                    **{"answer_" + key: guide["tasks"][key]["model"]
                       for key in ("meaning", "writing", "transfer", "explain")}}
         if variant is not None:
@@ -92,7 +97,7 @@ class RotatingIndependentReviewTests(TestCase):
         before = self.client.get(self.url)
         self.assertEqual(before.context["transfer_variant"], 0)
         baseline = before.context["guide"]["tasks"]["transfer"]["prompt"]
-        self.assertEqual(before.context["transfer_variant_total"], 2)
+        self.assertEqual(before.context["transfer_variant_total"], 3)
         result = self.batch(variant=0)
         self.assertEqual(result.status_code, 200)
         self.assertContains(result, "Разбор всех четырёх ответов")
@@ -106,11 +111,41 @@ class RotatingIndependentReviewTests(TestCase):
         self.assertEqual(
             self.client.post(self.url, {"action": "batch", "transfer_variant": "0"}).status_code,
             400)
-        self.assertEqual(self.batch(variant=1).status_code, 200)
+        second = self.batch(variant=1)
+        self.assertEqual(second.status_code, 200)
+        self.assertEqual(second.context["transfer_variant"], 2)
+        self.assertEqual(second.context["guide"]["tasks"]["transfer"]["prompt"],
+                         understanding_bank()[self.lesson.slug]["transfer_variants"][1]["prompt"])
         self.assertEqual(IndependentAttempt.objects.filter(
             user=self.student, skill="transfer", task_variant=1).count(), 1)
+        self.assertEqual(self.client.get(self.url).context["transfer_variant"], 2)
+        self.assertEqual(self.batch(variant=2).status_code, 200)
         self.assertEqual(self.client.get(self.url).context["transfer_variant"], 0)
         self.assertFalse(UnitProgress.objects.filter(user=self.student).exists())
+
+    def test_mobile_double_tap_replay_cannot_duplicate_a_full_batch(self):
+        page = self.client.get(self.url)
+        guide = page.context["guide"]
+        token = page.context["batch_token"]
+        form = {"action": "batch", "batch_token": token,
+                "transfer_variant": str(page.context["transfer_variant"]),
+                **{"answer_" + skill: guide["tasks"][skill]["model"]
+                   for skill in ("meaning", "writing", "transfer", "explain")}}
+        first = self.client.post(self.url, form)
+        self.assertEqual(first.status_code, 200)
+        self.assertEqual(first.context["transfer_variant"], 1)
+        self.assertEqual(first.context["guide"]["tasks"]["transfer"]["prompt"],
+                         understanding_bank()[self.lesson.slug]["transfer_variants"][0]["prompt"])
+        self.assertNotEqual(first.context["batch_token"], token)
+        replay = self.client.post(self.url, form)
+        self.assertEqual(replay.status_code, 400)
+        self.assertEqual(IndependentAttempt.objects.filter(user=self.student).count(), 4)
+
+    def test_fake_token_is_rejected_without_saving_student_data(self):
+        res = self.client.post(self.url, {"action": "batch",
+                                           "batch_token": "not-issued-to-this-session"})
+        self.assertEqual(res.status_code, 400)
+        self.assertFalse(IndependentAttempt.objects.filter(user=self.student).exists())
 
     def test_partial_batch_does_not_rotate_or_store_any_answers(self):
         result = self.client.post(self.url, {
