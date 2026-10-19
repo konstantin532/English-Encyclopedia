@@ -16,6 +16,7 @@ from apps.lexicon.models import LexicalUnit
 from apps.poems.models import Poem
 from apps.stories.models import Story
 from apps.taxonomy.markup import find_issues
+from scripts.audio_readiness import validate_manifest
 from apps.taxonomy.models import PartOfSpeech, SemanticClass
 
 UNIT_FIELDS = [
@@ -271,8 +272,9 @@ class Command(BaseCommand):
             # Озвучка необязательна: повреждённый манифест не должен останавливать загрузку курса.
             self.stdout.write(f"Пропущен повреждённый manifest.json: {path.parent.name}. Запустите generate_audio.bat.")
             return {}
-        if data.get("engine") == "test" or data.get("model") == "test-tone":
-            self.stdout.write(f"Пропущен тестовый звук без речи: {path.parent.name}. Запустите generate_audio.bat.")
+        problem = validate_manifest(data, Path(settings.BASE_DIR) / "static")
+        if problem:
+            self.stdout.write(f"Пропущен аудиокомплект {path.parent.name}: {problem}.")
             return {}
         return data
 

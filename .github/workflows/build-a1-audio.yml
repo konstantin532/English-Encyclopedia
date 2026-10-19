@@ -1,0 +1,29 @@
+name: Build real A1 speech for manual review
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  kokoro-a1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen --group audio
+      - name: Download and verify pinned Kokoro model
+        run: uv run python scripts/prepare_audio_models.py
+      - name: Synthesize American-English dialogue (not test tones)
+        run: uv run python scripts/generate_story_audio.py --all --engine kokoro
+      - name: Fail on missing/invalid audio tracks
+        run: uv run python scripts/audio_readiness.py --strict
+      - name: Make listening review sheet (no automatic approval)
+        run: uv run python -m scripts.audio_review_sheet --output audio-human-review.csv
+      - uses: actions/upload-artifact@v4
+        with:
+          name: a1-kokoro-33-bundles-unreviewed
+          path: |
+            static/audio/
+            audio-human-review.csv
+          retention-days: 14
+          if-no-files-found: error

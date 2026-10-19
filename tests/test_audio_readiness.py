@@ -65,3 +65,27 @@ class AudioReadinessTests(SimpleTestCase):
             result = checker.check_audio(Path(tmp))
             self.assertEqual(result["files_present"], 0)
             self.assertTrue(any("WAV/MP3" in issue for issue in result["invalid"]))
+
+    def test_manifest_validator_refuses_missing_and_unsafe_tracks(self):
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.assertIn("движок", checker.validate_manifest({"engine":"test"}, root))
+            self.assertIn("дорожка", checker.validate_manifest({"engine":"kokoro","model":"kokoro-v1.0"}, root))
+            self.assertIn("вне static", checker.validate_manifest({
+                "engine":"kokoro", "model":"kokoro-v1.0",
+                "very_slow":{"file":"../not-audio.wav"},
+                "slow":{"file":"audio/ok.mp3"},
+                "natural":{"file":"audio/ok.mp3"},
+            }, root))
+
+    def test_loader_refuses_invalid_audio_manifest(self):
+        from unittest import mock
+        from apps.core.management.commands.load_content import Command
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            folder = root / "static/audio/stories/s01"
+            folder.mkdir(parents=True)
+            (folder / "manifest.json").write_text(json.dumps({"engine":"kokoro", "model":"kokoro-v1.0",
+                "slow":{"file":"audio/stories/s01/missing.wav"}}), encoding="utf-8")
+            with mock.patch("apps.core.management.commands.load_content.settings.BASE_DIR", root):
+                self.assertEqual(Command()._audio_manifest("stories", "s01"), {})

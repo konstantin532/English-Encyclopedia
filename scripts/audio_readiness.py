@@ -34,6 +34,26 @@ def plausible_audio_header(path: Path) -> bool:
     return False
 
 
+def validate_manifest(data: dict, static: Path) -> str | None:
+    """Returns a reason to refuse this bundle. Checks existence, not spoken quality."""
+    if not isinstance(data, dict) or data.get("engine") != "kokoro" or not str(data.get("model", "")).startswith("kokoro-v"):
+        return "проверочный тон или неизвестный движок"
+    static = static.resolve()
+    for tempo in TEMPOS:
+        entry = data.get(tempo)
+        path = entry.get("file") if isinstance(entry, dict) else None
+        if not isinstance(path, str) or not path.strip():
+            return f"отсутствует дорожка {tempo}"
+        rel = Path(path)
+        candidate = (static / rel).resolve()
+        if (rel.is_absolute() or not candidate.is_relative_to(static)
+                or not candidate.is_file() or not candidate.stat().st_size):
+            return f"нет файла дорожки {tempo} или путь вне static"
+        if not plausible_audio_header(candidate):
+            return f"дорожка {tempo} не похожа на WAV/MP3"
+    return None
+
+
 def check_audio(root: Path = ROOT) -> dict:
     static = (root / "static").resolve()
     missing, invalid, unreviewed, present = [], [], [], []
@@ -44,20 +64,9 @@ def check_audio(root: Path = ROOT) -> dict:
             continue
         try:
             data = json.loads(manifest.read_text(encoding="utf-8"))
-            if not isinstance(data, dict) or data.get("engine") != "kokoro" or data.get("model") == "test-tone":
-                raise ValueError("проверочный тон или неизвестный движок")
-            for tempo in TEMPOS:
-                entry = data.get(tempo)
-                path = entry.get("file") if isinstance(entry, dict) else None
-                if not isinstance(path, str) or not path.strip():
-                    raise ValueError(f"отсутствует дорожка {tempo}")
-                rel = Path(path)
-                candidate = (static / rel).resolve()
-                if (rel.is_absolute() or not candidate.is_relative_to(static)
-                        or not candidate.is_file() or not candidate.stat().st_size):
-                    raise ValueError(f"нет файла дорожки {tempo} или путь вне static")
-                if not plausible_audio_header(candidate):
-                    raise ValueError(f"дорожка {tempo} не похожа на WAV/MP3")
+            issue = validate_manifest(data, static)
+            if issue:
+                raise ValueError(issue)
             present.append(label)
             if data.get("verified") is not True:
                 unreviewed.append(label)

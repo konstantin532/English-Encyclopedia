@@ -19,7 +19,12 @@ echo [3/4] Озвучиваю истории по ролям...
 uv run python scripts\generate_story_audio.py --all
 if not %errorlevel%==0 goto fail
 
-echo [4/4] Обновляю сайт...
+echo [4/4] Проверяю все 33 комплекта настоящей речи...
+uv run python scripts\audio_readiness.py --strict
+if not %errorlevel%==0 goto fail
+uv run python -m scripts.audio_review_sheet --output audio-human-review.csv
+if not %errorlevel%==0 goto fail
+echo Обновляю сайт...
 uv run python manage.py load_content --preserve-admin-edits
 if not %errorlevel%==0 goto fail
 echo.
