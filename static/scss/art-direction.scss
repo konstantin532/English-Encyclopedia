@@ -1,0 +1,190 @@
+// English Encyclopedia / Art Direction — premium editorial finish.
+// Loaded into the existing ee-polish cascade layer; do not edit the generated CSS.
+@mixin art-surface {
+  background: linear-gradient(150deg, var(--surface) 0%, color-mix(in srgb, var(--studio-mint) 27%, var(--surface)) 100%);
+  border-color: color-mix(in srgb, var(--rule) 82%, var(--studio-green));
+  box-shadow: 0 1px 0 var(--surface), 0 14px 34px color-mix(in srgb, var(--cinema-deep) 7%, transparent), inset 0 1px 0 color-mix(in srgb, white 68%, transparent);
+}
+
+@layer ee-polish {
+  :root {
+    --art-line: color-mix(in srgb, var(--studio-green) 24%, var(--rule));
+    --art-glow: color-mix(in srgb, var(--studio-mint) 62%, transparent);
+    --art-ink: color-mix(in srgb, var(--studio-green) 75%, var(--ink));
+  }
+  body {
+    background: radial-gradient(ellipse 65% 34% at 84% 4%, var(--art-glow), transparent 88%), linear-gradient(180deg, color-mix(in srgb, var(--paper) 89%, var(--surface)), var(--paper) 34%);
+  }
+  .studio-sidebar {
+    background: linear-gradient(164deg, var(--surface) 0%, color-mix(in srgb, var(--paper) 52%, var(--surface)) 100%);
+    box-shadow: 1px 0 0 color-mix(in srgb, var(--surface) 80%, transparent), 12px 0 40px color-mix(in srgb, var(--cinema-deep) 3%, transparent);
+  }
+  .studio-logo {
+    background: linear-gradient(152deg, color-mix(in srgb, var(--studio-green) 78%, white), var(--cinema-deep) 78%);
+    box-shadow: 0 10px 22px color-mix(in srgb, var(--cinema-deep) 20%, transparent), inset 0 1px 0 color-mix(in srgb, white 25%, transparent), inset 0 -2px 0 color-mix(in srgb, black 10%, transparent);
+  }
+  .studio-nav > a[aria-current=page] {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--studio-mint) 87%, var(--surface)), color-mix(in srgb, var(--surface) 72%, var(--studio-mint)));
+    box-shadow: inset 3px 0 0 var(--studio-green), inset 0 1px 0 color-mix(in srgb, white 68%, transparent);
+  }
+  .studio-nav-label {
+    color: var(--art-ink);
+  }
+  .site-header {
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    box-shadow: 0 1px 0 color-mix(in srgb, white 70%, transparent), 0 10px 30px color-mix(in srgb, var(--cinema-deep) 3%, transparent);
+  }
+  .studio-home-heading h1,
+  .page-head h1,
+  .week-hero h1 {
+    text-shadow: 0 2px 18px color-mix(in srgb, var(--studio-green) 7%, transparent);
+  }
+  .studio-eyebrow,
+  .studio-home-heading > span {
+    color: var(--art-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .studio-home-hero {
+    isolation: isolate;
+    outline: 1px solid var(--art-line);
+    outline-offset: -1px;
+    box-shadow: 0 2px 3px color-mix(in srgb, var(--cinema-deep) 4%, transparent), 0 22px 70px color-mix(in srgb, var(--cinema-deep) 12%, transparent), inset 0 1px 0 color-mix(in srgb, white 75%, transparent);
+    background: linear-gradient(128deg, var(--cinema-cream), var(--studio-mint));
+  }
+  .studio-home-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 72% 120% at 6% 0%, color-mix(in srgb, white 54%, transparent), transparent 75%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .studio-hero-copy {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(110deg, color-mix(in srgb, var(--cinema-cream) 32%, transparent), transparent 88%);
+  }
+  .studio-hero-copy h2 em {
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, var(--cinema-gold) 55%, transparent);
+    text-decoration-thickness: 0.045em;
+    text-underline-offset: 0.15em;
+  }
+  .studio-hero-art::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--studio-green) 26%, transparent), transparent 48%, color-mix(in srgb, var(--cinema-gold) 15%, transparent));
+    pointer-events: none;
+  }
+  .studio-phrase-paper {
+    border-color: color-mix(in srgb, var(--studio-green) 18%, white);
+    background: color-mix(in srgb, var(--surface) 91%, var(--cinema-cream));
+    box-shadow: 0 28px 65px color-mix(in srgb, var(--cinema-deep) 25%, transparent), 0 2px 5px color-mix(in srgb, var(--cinema-deep) 12%, transparent), inset 0 1px 0 white;
+  }
+  .studio-section-title h2,
+  .section-head h2 {
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, var(--cinema-gold) 52%, transparent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.4em;
+  }
+  .studio-lesson-card,
+  .studio-word-card,
+  .week-card,
+  .studio-note,
+  .studio-level-card,
+  .aside-box {
+    @include art-surface;
+  }
+  .studio-lesson-no {
+    outline: 1px solid color-mix(in srgb, var(--studio-green) 12%, transparent);
+    outline-offset: -1px;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 88%, transparent), 0 3px 10px color-mix(in srgb, var(--cinema-deep) 6%, transparent);
+  }
+  .studio-card-arrow,
+  .studio-section-title a {
+    color: var(--art-ink);
+  }
+  .studio-note-warm {
+    background: linear-gradient(155deg, var(--studio-warm), color-mix(in srgb, var(--surface) 62%, var(--studio-warm)));
+  }
+  .studio-library-stats {
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--studio-mint) 60%, transparent) 50%, transparent);
+    border-color: var(--art-line);
+  }
+  .studio-library-stats strong,
+  .stat b {
+    color: var(--studio-green);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .btn-primary {
+    background: linear-gradient(156deg, color-mix(in srgb, var(--studio-green) 86%, white), var(--studio-green) 58%, var(--cinema-deep));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 28%, transparent), 0 5px 14px color-mix(in srgb, var(--cinema-deep) 19%, transparent);
+  }
+  .btn-quiet {
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 78%, transparent), 0 3px 11px color-mix(in srgb, var(--cinema-deep) 6%, transparent);
+  }
+  .week-hero {
+    outline: 1px solid var(--art-line);
+    outline-offset: -1px;
+    box-shadow: 0 18px 50px color-mix(in srgb, var(--cinema-deep) 11%, transparent), inset 0 1px 0 color-mix(in srgb, white 65%, transparent);
+  }
+  .week-hero:not(.week-hero-cafe)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 15%, color-mix(in srgb, white 58%, transparent), transparent 72%), linear-gradient(115deg, color-mix(in srgb, var(--cinema-cream) 35%, transparent), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .week-hero-cafe::after {
+    background: linear-gradient(90deg, var(--paper) 0%, color-mix(in srgb, var(--paper) 93%, transparent) 31%, color-mix(in srgb, var(--paper) 57%, transparent) 58%, transparent 86%);
+  }
+  .week-chapter > span {
+    color: var(--studio-green);
+  }
+  .filters a[aria-current=true],
+  .filters a[aria-current=page] {
+    box-shadow: inset 0 -2px 0 var(--studio-green);
+  }
+  .studio-word-card h2 {
+    letter-spacing: -0.025em;
+    text-shadow: 0 1px 10px color-mix(in srgb, var(--studio-green) 6%, transparent);
+  }
+  .studio-word-search,
+  .stat {
+    border-color: var(--art-line);
+    box-shadow: 0 8px 22px color-mix(in srgb, var(--cinema-deep) 5%, transparent), inset 0 1px 0 color-mix(in srgb, white 70%, transparent);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .studio-lesson-card:hover,
+    .studio-word-card:hover,
+    .week-card:hover {
+      border-color: color-mix(in srgb, var(--studio-green) 42%, var(--rule));
+      box-shadow: 0 15px 36px color-mix(in srgb, var(--cinema-deep) 14%, transparent), inset 0 1px 0 color-mix(in srgb, white 80%, transparent);
+    }
+  }
+  @media (forced-colors: active) {
+    .studio-sidebar,
+    .site-header,
+    .studio-home-hero,
+    .studio-lesson-card,
+    .studio-word-card,
+    .week-card,
+    .studio-note,
+    .studio-level-card,
+    .aside-box,
+    .week-hero,
+    .studio-phrase-paper,
+    .btn-primary {
+      background: Canvas;
+      box-shadow: none;
+      border-color: CanvasText;
+    }
+    .btn-primary {
+      color: ButtonText;
+      background: ButtonFace;
+    }
+  }
+}

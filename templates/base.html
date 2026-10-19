@@ -24,6 +24,9 @@
   <link rel="stylesheet" href="{% static 'css/cinematic-studio.css' %}">
   <link rel="stylesheet" href="{% static 'css/motion-system.css' %}">
   {% block page_styles %}{% endblock %}
+  {# Final visual treatment; ee-polish stays below the learning marker layer. #}
+  <link rel="stylesheet" href="{% static 'css/art-direction.css' %}">
+  <link rel="stylesheet" href="{% static 'css/art-light.css' %}">
   <script>try{var eeMode=localStorage.getItem("ee-motion-mode");document.documentElement.dataset.motion=matchMedia("(prefers-reduced-motion: reduce)").matches?"minimal":(["full","balanced","minimal"].includes(eeMode)?eeMode:"balanced")}catch(e){document.documentElement.dataset.motion="balanced"}</script>
   {% if not user.is_authenticated %}<script>try{if(localStorage.getItem("ee-markers")==="mono")document.documentElement.dataset.markers="mono"}catch(e){}</script>{% endif %}
 </head>
@@ -39,6 +42,7 @@
   </div>
   <script src="{% static 'vendor/gsap/gsap.min.js' %}" defer></script>
   <script src="{% static 'js/motion-system.js' %}" defer></script>
+  <script src="{% static 'js/art-light.js' %}" defer></script>
   <script src="{% static 'js/annotations.js' %}" defer></script>
   {% block scripts %}{% endblock %}
 </body>
