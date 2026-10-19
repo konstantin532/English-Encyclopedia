@@ -6,7 +6,7 @@ const vm = require("node:vm");
 
 const source = fs.readFileSync(path.join(__dirname, "../../static/js/speech-review.js"), "utf8");
 
-function fixture(signedIn = false) {
+function fixture(signedIn = false, fetchOverride = null) {
   const nodes = new Map();
   class Element {
     constructor(rating = "") {this.dataset = {speechGrade: rating}; this.disabled = false; this.hidden = false; this.textContent = ""; this.listeners = {};}
@@ -40,6 +40,7 @@ function fixture(signedIn = false) {
     CustomEvent: class {constructor(type, options) {this.type = type;this.detail = options.detail;}},
     async fetch(uri, options) {
       calls.push({uri, options});
+      if (fetchOverride) return fetchOverride(uri, options);
       return {
         ok: true,
         async json() {
@@ -82,4 +83,25 @@ test("signed-in review loads only the user's own data and posts CSRF-protected r
   assert.equal(app.calls[1].options.headers["X-CSRFToken"], "csrf-token");
   assert.equal(app.calls[1].options.credentials, "same-origin");
   assert.equal(app.calls[1].options.body.includes("audio"), false);
+});
+
+test("late initial GET must not overwrite a rating already saved by POST", async () => {
+  let releaseGet;
+  const response = {
+    index: 0, rating: "good", stage: 1, attempts: 1,
+    next_review_at: "2100-10-19T12:00:00Z", due: false
+  };
+  const app = fixture(true, (_uri, options) => {
+    if (!options || options.method !== "POST") return new Promise(resolve => { releaseGet = resolve; });
+    return Promise.resolve({ok: true, json: async () => response});
+  });
+  await app.grades[2].dispatch("click");
+  assert.match(app.one("[data-speech-review-status]").textContent, /Следующее повторение:/);
+  releaseGet({ok: true, json: async () => ({items: [{
+    index: 0, rating: "again", stage: 0, attempts: 0,
+    next_review_at: "2000-10-19T12:00:00Z", due: true
+  }]})});
+  await new Promise(resolve => setImmediate(resolve));
+  assert.match(app.one("[data-speech-review-status]").textContent, /Следующее повторение:/);
+  assert.doesNotMatch(app.one("[data-speech-review-status]").textContent, /назначен к повторению сейчас/);
 });

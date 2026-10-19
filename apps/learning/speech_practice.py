@@ -19,6 +19,7 @@ from .models import SpeechPracticeProgress
 
 
 KEY_PATTERN = re.compile(r"^(?:lesson:[a-z0-9_-]{1,80}|twister:[1-9][0-9]{0,2}|poem:[1-9][0-9]{0,2})$")
+MAX_SPEECH_PAYLOAD_BYTES = 16_384
 
 
 def content_details(key):
@@ -55,9 +56,12 @@ def content_details(key):
 @require_http_methods(["GET", "POST"])
 def speech_practice_api(request):
     if request.method == "POST":
+        # Bound parsing cost just like other JSON learning endpoints.
+        if len(request.body) > MAX_SPEECH_PAYLOAD_BYTES:
+            return HttpResponseBadRequest("Слишком большой запрос")
         try:
             payload = json.loads(request.body)
-        except (ValueError, UnicodeDecodeError):
+        except (ValueError, UnicodeDecodeError, RecursionError):
             return HttpResponseBadRequest("Неверный формат данных")
         if not isinstance(payload, dict):
             return HttpResponseBadRequest("Ожидается объект")
@@ -98,10 +102,13 @@ def speech_practice_api(request):
 @login_required
 def speech_review(request):
     now = timezone.now()
-    due = SpeechPracticeProgress.objects.filter(user=request.user, next_review_at__lte=now)
+    due = (SpeechPracticeProgress.objects.filter(user=request.user, next_review_at__lte=now)
+           .order_by("next_review_at", "pk"))
     pending = []
-    # Находим назначения, но не смешиваем личную самооценку с объективным знанием языка.
-    for item in due[:100]:
+    # Old/removed course keys can remain in a learner's history. Limit to
+    # 100 VALID review items, not the first 100 unvalidated database rows:
+    # otherwise stale records can hide real speech practice indefinitely.
+    for item in due.iterator(chunk_size=200):
         details = content_details(item.content_key)
         if not details or item.fragment >= details["count"]:
             continue
@@ -111,6 +118,8 @@ def speech_review(request):
             "url": url + "?speech=" + str(item.fragment) + ("#" + anchor if hashmark else ""),
             "content_key": item.content_key,
         })
+        if len(pending) >= 100:
+            break
     upcoming = SpeechPracticeProgress.objects.filter(user=request.user, next_review_at__gt=now).order_by("next_review_at").first()
     return render(request, "learning/speech_review.html", {
         "pending": pending,
