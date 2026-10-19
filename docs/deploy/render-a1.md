@@ -39,9 +39,32 @@ Gunicorn и собирают WhiteNoise-статику. `deploy/render-start.sh`
 `Build real A1 speech for manual review`, получите пакет 33 комплектов,
 проверьте транскрипт, американское произношение и ударения человеком.
 Чтобы включить файлы на Render, после создания **настоящего** комплекта
-скачайте артефакт GitHub Actions с `a1-generated-audio.zip`, прослушайте
-все три темпа и записи, зафиксируйте замечания в `audio-human-review.csv`.
-Затем разместите zip по стабильной HTTPS-ссылке, доступной Render при сборке
+скачайте артефакт GitHub Actions с `static/audio/` и `audio-human-review.csv`.
+Исходный `a1-generated-audio.zip` в этом артефакте **ещё не проверен
+человеком**. Прослушайте все 99 дорожек (33 комплекта × три скорости), впишите
+в таблицу настоящие результаты: фамилию/имя рецензента (`reviewer`), дату
+`YYYY-MM-DD` (`review_date`), `pass` во всех четырёх полях фонетики,
+ударения, интонации и имён/чисел, и `manual_approved=yes` только после
+реального прослушивания. Если запись звучит неестественно, **не ставьте
+`pass`**: исправьте генерацию и прослушайте новый файл.
+
+Из корня проекта с восстановленными `static/audio` и заполненной CSV:
+```bash
+uv run python -m scripts.approve_audio_review --sheet audio-human-review.csv --dry-run
+uv run python -m scripts.approve_audio_review --sheet audio-human-review.csv
+uv run python scripts/audio_readiness.py --strict --require-reviewed
+uv run python -m scripts.package_audio_archive --require-reviewed --output a1-reviewed-audio.zip
+sha256sum a1-reviewed-audio.zip
+```
+Команда проверит **99 совпадений SHA-256** с таблицей, отсутствие пропусков,
+полноту и одобрение всех критериев, а затем пометит манифесты как
+`verified: true` вместе с именем проверившего и привязкой к точным
+аудиофайлам. Изменение хотя бы одной дорожки после проверки снимает её
+статус в аудите: нужен повторный ручной разбор. Это запись о проверке,
+**не автоматическая оценка речи и не криптографическая подпись рецензента**.
+
+Затем разместите `a1-reviewed-audio.zip` по стабильной HTTPS-ссылке,
+доступной Render при сборке
 (например, в предназначенном для этого объектном хранилище).
 Введите в Render приватные переменные
 `A1_AUDIO_ARCHIVE_URL` и `A1_AUDIO_ARCHIVE_SHA256` (контрольная сумма
