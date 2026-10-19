@@ -33,7 +33,7 @@ test('word and caption discovery share state without replacing the translation',
  f.document.listeners.keydown({key:'Escape'});assert.equal(f.panel.hidden,true);assert.equal(f.words[1].focused,true);
 });
 test('touch toggle, outside press, focus departure and resize dismiss discovery',()=>{
- for(const dismiss of [f=>f.buttons[0].listeners.click(),f=>f.document.listeners.pointerdown({target:{}}),f=>f.document.listeners.focusin({target:{}}),f=>f.window.listeners.resize(),f=>f.window.listeners.scroll()]){
+ for(const dismiss of [f=>f.buttons[0].listeners.click(),f=>f.document.listeners.pointerdown({target:{}}),f=>f.document.listeners.focusin({target:{}}),f=>f.window.listeners.resize()]){
   const f=fixture();f.buttons[0].listeners.click();dismiss(f);assert.equal(f.panel.hidden,true);assert.equal(f.card.dataset.atlasFocus,undefined);
  }
 });
@@ -42,4 +42,9 @@ test('pedagogical interaction works without GSAP and respects reduced motion',()
   const f=fixture(options);f.words[2].listeners.keydown({key:' ',preventDefault(){}});assert.match(f.panel.textContent,/без предлога/);assert.equal(f.calls.length,0);
  }
  const f=fixture({motion:'full'});f.buttons[2].listeners.click();assert.equal(f.calls.length,1);
+});
+
+test('focus-induced mobile scroll keeps the explanation open and aligned',()=>{
+ const f=fixture();f.words[0].listeners.keydown({key:'Enter',preventDefault(){}});
+ f.window.listeners.scroll();assert.equal(f.panel.hidden,false);assert.equal(f.words[0].attributes['aria-expanded'],'true');
 });

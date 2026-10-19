@@ -38,6 +38,14 @@
       if (global.gsap) { global.gsap.killTweensOf(panel); global.gsap.set(panel, { clearProps: "opacity" }); }
       source = null;
     }
+    function positionPanel() {
+      if (!source) return;
+      const anchor = card.getBoundingClientRect();
+      const box = panel.getBoundingClientRect();
+      panel.style.left = Math.max(16, Math.min(anchor.left, global.innerWidth - box.width - 16)) + "px";
+      // Prefer the empty space below the paper; clamp to the viewport on small screens.
+      panel.style.top = Math.max(16, Math.min(anchor.bottom + 12, global.innerHeight - box.height - 16)) + "px";
+    }
     function reveal(role, control) {
       if (card.dataset.atlasFocus === role) { close(); return; }
       close();
@@ -46,11 +54,7 @@
       controls.forEach(function (item) { item.setAttribute("aria-expanded", String(item.dataset.atlasRole === role)); });
       panel.textContent = describeRole(role);
       panel.hidden = false;
-      const anchor = card.getBoundingClientRect();
-      const box = panel.getBoundingClientRect();
-      panel.style.left = Math.max(16, Math.min(anchor.left, global.innerWidth - box.width - 16)) + "px";
-      // Prefer the empty space below the paper; clamp to the viewport on small screens.
-      panel.style.top = Math.max(16, Math.min(anchor.bottom + 12, global.innerHeight - box.height - 16)) + "px";
+      positionPanel();
       if (canAnimate(doc.documentElement.dataset.motion, reduced.matches) && global.gsap) {
         global.gsap.fromTo(panel, { opacity: 0.65 }, { opacity: 1, duration: 0.18, overwrite: "auto" });
       }
@@ -92,7 +96,7 @@
       if (!card.contains(event.target) && !panel.contains(event.target)) close();
     });
     global.addEventListener("resize", close, { passive: true });
-    global.addEventListener("scroll", close, { passive: true, capture: true });
+    global.addEventListener("scroll", positionPanel, { passive: true, capture: true });
     if (reduced.addEventListener) reduced.addEventListener("change", close);
     // Existing motion settings own the lifecycle; switching modes cancels local motion.
     if (global.MutationObserver) new global.MutationObserver(close).observe(doc.documentElement, { attributes: true, attributeFilter: ["data-motion"] });
