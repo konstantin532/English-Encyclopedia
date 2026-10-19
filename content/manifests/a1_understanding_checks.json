@@ -974,7 +974,7 @@
         },
         "transfer": {
           "prompt": "На почте назовите адрес: дом 5 на Park Street.",
-          "model": "5 Park Street."
+          "model": "5 Park Street"
         },
         "explain": {
           "prompt": "Адрес: дом 5 на Park Street. Ученик написал «Park Street five». Как записать обычный американский адрес и почему?",
