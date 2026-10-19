@@ -48,6 +48,16 @@ class CafeInformationGapTests(TestCase):
         self.assertEqual(self.send("No, one coffee, please.").status_code, 302)
         self.assertEqual(self.state()["phase"], "done")
 
+    def test_initial_get_persists_new_session_and_nonce(self):
+        # A GET initializes a usable dialogue for the next POST, not merely
+        # a transient context object that vanishes before the first turn.
+        state = self.state()
+        self.assertEqual(state["phase"], "order")
+        self.assertTrue(state["nonce"])
+        self.assertEqual(state["owner_id"], self.user.pk)
+        self.assertEqual(self.client.get(self.url).status_code, 200)
+        self.assertEqual(self.state()["nonce"], state["nonce"])
+
     def test_guest_requires_login_and_old_cafe_lab_works(self):
         outsider = Client()
         self.assertEqual(outsider.get(self.url).status_code, 302)
