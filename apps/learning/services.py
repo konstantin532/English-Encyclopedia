@@ -88,11 +88,12 @@ def build_review(user) -> list:
     return items
 
 
+@transaction.atomic
 def record_recall(user, unit, answer: str) -> bool:
     accepted = [unit.lemma, *(unit.forms or [])]
     correct = Exercise.normalize(answer) in {Exercise.normalize(a) for a in accepted}
     if user.is_authenticated:
-        progress, _ = UnitProgress.objects.get_or_create(user=user, unit=unit)
+        progress, _ = UnitProgress.objects.select_for_update().get_or_create(user=user, unit=unit)
         progress.register(correct)  # вспоминание не считается новой конструкцией
         progress.save()
     return correct
