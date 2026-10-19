@@ -145,6 +145,11 @@ html[data-motion="minimal"] *, html[data-motion="minimal"] *::before, html[data-
   animation-iteration-count: 1 !important; transition-duration: .01ms !important;
   scroll-behavior: auto !important;
 }
+html[data-motion="minimal"] .studio-nav > a:hover,
+html[data-motion="minimal"] .btn:hover,
+html[data-motion="minimal"] .week-card:hover,
+html[data-motion="minimal"] .studio-lesson-card:hover,
+html[data-motion="minimal"] .studio-word-card:hover { transform: none !important; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important;
     animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
