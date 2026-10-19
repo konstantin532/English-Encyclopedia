@@ -103,7 +103,6 @@
     background: linear-gradient(153deg, var(--surface), color-mix(in srgb, var(--studio-mint) 20%, var(--surface)) 100%);
     border-color: color-mix(in srgb, var(--rule) 77%, var(--cinema-gold));
     box-shadow: 0 2px 3px color-mix(in srgb, var(--cinema-deep) 5%, transparent), 0 22px 48px color-mix(in srgb, var(--cinema-deep) 9%, transparent), inset 0 1px 0 color-mix(in srgb, white 86%, transparent);
-  
   }
   .studio-lesson-card:focus-within,
   .studio-word-card:focus-visible,
