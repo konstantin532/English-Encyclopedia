@@ -213,6 +213,35 @@ class RotatingIndependentReviewTests(TestCase):
         self.assertEqual(res.status_code, 400)
         self.assertFalse(IndependentAttempt.objects.filter(user=self.student).exists())
 
+    def test_mobile_error_keeps_entered_text_and_hides_answer_keys(self):
+        page = self.client.get(self.url)
+        original = "My own detailed answer on a narrow Android screen"
+        invalid = self.client.post(self.url, {
+            "action": "batch", "batch_token": page.context["batch_token"],
+            "transfer_variant": str(page.context["transfer_variant"]),
+            "answer_meaning": original, "answer_writing": "I am here.",
+            "answer_transfer": "I have a book.", "answer_explain": "",
+        })
+        self.assertEqual(invalid.status_code, 400)
+        self.assertContains(invalid, original, status_code=400)
+        self.assertContains(invalid, 'role="alert"', status_code=400)
+        self.assertContains(invalid, "Ответы пока не сохранены", status_code=400)
+        self.assertNotContains(invalid, "Один возможный образец", status_code=400)
+        self.assertFalse(IndependentAttempt.objects.filter(user=self.student).exists())
+
+    def test_invalid_mobile_form_escapes_user_supplied_html(self):
+        page = self.client.get(self.url)
+        attack = "<script>alert(1)</script>"
+        bad = self.client.post(self.url, {
+            "action": "batch", "batch_token": page.context["batch_token"],
+            "transfer_variant": str(page.context["transfer_variant"]),
+            "answer_meaning": attack, "answer_writing": "I am here.",
+            "answer_transfer": "I read.", "answer_explain": "",
+        })
+        self.assertEqual(bad.status_code, 400)
+        self.assertNotContains(bad, attack, status_code=400)
+        self.assertContains(bad, "&lt;script&gt;", status_code=400)
+
     def test_fake_token_is_rejected_without_saving_student_data(self):
         res = self.client.post(self.url, {"action": "batch",
                                            "batch_token": "not-issued-to-this-session"})
