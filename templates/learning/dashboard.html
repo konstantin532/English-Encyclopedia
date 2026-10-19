@@ -7,7 +7,7 @@
   </header>
   <div class="stats">
     <div class="stat"><b>{{ progress|length }}</b><span>единиц начато</span></div>
-    <div class="stat"><b>{{ active_units|length }}</b><span>в активном словаре</span></div>
+    <div class="stat"><b>{{ active_units|length }}</b><span>исторических отметок «активный»</span></div>
     <div class="stat"><b>{{ due|length }}</b><span>пора повторить</span></div>
   </div>
   {% if due %}<p><a class="btn btn-primary" href="{% url 'learning:review' %}">Повторить {{ due|length }}</a></p>{% endif %}
@@ -42,7 +42,7 @@
 
   {% if progress %}
   <section class="section" aria-labelledby="units-t" style="padding-top: var(--space-6)">
-    <div class="section-head"><h2 id="units-t">Слова в работе</h2><p>Слово постепенно проходит ступени освоения: для статуса «Активный словарь» нужны четыре разные успешные конструкции. Повтор одного ответа не считается новой конструкцией. Это учебная статистика, не сертификат владения.</p></div>
+    <div class="section-head"><h2 id="units-t">Слова в работе</h2><p>Автоматически проверенные упражнения подтверждают узнавание и тренировку с образцом, но не доказывают самостоятельного владения. Ранее полученные высокие статусы сохранены как исторические отметки; они не являются подтверждением навыка. Для независимой проверки используйте задания без подсказок и оценку преподавателя.</p></div>
     <div class="table-scroll">
       <table class="words-table">
         <thead><tr><th scope="col">ID</th><th scope="col">Слово</th><th scope="col">Статус</th><th scope="col">Конструкций</th><th scope="col">Повторить</th></tr></thead>
@@ -51,7 +51,7 @@
             <td class="uid">{{ p.unit.uid }}</td>
             <td class="lemma annotated" lang="en"><a href="{% url 'lexicon:detail' p.unit.uid %}"><span class="mk" data-cat="{{ p.unit.semantic_class.category.code }}" data-cls="{{ p.unit.semantic_class.number }}">{{ p.unit.lemma }}</span></a></td>
             <td><span class="status">{{ p.get_status_display }}</span></td>
-            <td>{{ p.contexts_used|length }} из 4</td>
+            <td>{{ p.contexts_used|length }}</td>
             <td>{{ p.next_review_at|date:"j E" }}</td>
           </tr>{% endfor %}
         </tbody>
