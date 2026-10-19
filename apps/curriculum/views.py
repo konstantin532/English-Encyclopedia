@@ -10,6 +10,25 @@ from .models import Level, TongueTwister, Week, WeekScene
 from .registry import LEVEL_BY_CODE
 
 
+# Describes the artwork, not unverified character biography or unseen story events.
+A1_ATLAS_ALT = (
+    "Анна и Том у входа в новый дом",
+    "Домашний интерьер и кот Box",
+    "Мия за стойкой небольшого кафе",
+    "Семейная фотография в рамке",
+    "Витрина небольшого магазина у дома",
+    "Кафе Мии утром: стойка и настенные часы",
+    "Вечернее кафе Мии — место разговора о работе",
+    "Городская улица и указатель направлений",
+    "Телефон как образ разговора с мастерской",
+    "Субботнее утро в кафе Мии",
+    "Спокойный интерьер врачебного кабинета",
+    "Почтовая стойка и письмо",
+    "Вечер в кафе Мии: открытая тетрадь как образ будущего урока",
+    "Автобус на фоне городских улиц",
+)
+
+
 def a1_atlas_cover(level_code, week_number):
     """The A1 illustration series is complete for weeks 1–14 only."""
     if level_code != "A1" or not 1 <= week_number <= 14:
@@ -47,6 +66,7 @@ def week_detail(request, slug, number):
     return render(request, "curriculum/week.html", {
         "week": week, "scene": scene, "lines": lines, "speakers": speakers,
         "atlas_cover_url": a1_atlas_cover(level.code, week.number),
+        "atlas_cover_alt": A1_ATLAS_ALT[week.number - 1] if level.code == "A1" and 1 <= week.number <= 14 else "",
         "audio": scene.audio if scene else None,
         "lessons": week.lessons.filter(is_published=True),
         "twister": TongueTwister.objects.filter(week=week).first(), "goal": goal,
