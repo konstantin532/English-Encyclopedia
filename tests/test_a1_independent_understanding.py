@@ -119,6 +119,8 @@ class A1IndependentAssessmentTests(TestCase):
         initial = self.client.get(self.url)
         self.assertNotContains(initial, "Разбор всех четырёх ответов")
         self.assertNotContains(initial, "Один возможный образец")
+        form["batch_token"] = initial.context["batch_token"]
+        form["transfer_variant"] = str(initial.context["transfer_variant"])
         checked = self.client.post(self.url, form)
         self.assertEqual(checked.status_code, 200)
         self.assertContains(checked, "Разбор всех четырёх ответов")
@@ -132,7 +134,10 @@ class A1IndependentAssessmentTests(TestCase):
 
     def test_batch_rejects_partial_answers_without_saving_any(self):
         guide = understanding_bank()[self.lesson.slug]
-        form = {"action": "batch", "answer_meaning": guide["tasks"]["meaning"]["model"],
+        page = self.client.get(self.url)
+        form = {"action": "batch", "batch_token": page.context["batch_token"],
+                "transfer_variant": str(page.context["transfer_variant"]),
+                "answer_meaning": guide["tasks"]["meaning"]["model"],
                 "answer_writing": guide["tasks"]["writing"]["model"],
                 "answer_transfer": "My own response", "answer_explain": ""}
         res = self.client.post(self.url, form)
