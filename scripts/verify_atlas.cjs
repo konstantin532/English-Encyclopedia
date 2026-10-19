@@ -26,6 +26,7 @@ async function ready(page,url){
  await page.evaluate(()=>document.fonts.ready);
 }
 async function bounds(page){return page.evaluate(selectors=>Object.fromEntries(selectors.map(selector=>[selector,Array.from(document.querySelectorAll(selector)).map(el=>{const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height};})])),selectors);}
+async function documentBox(locator){return locator.evaluate(el=>{const r=el.getBoundingClientRect();return {x:r.x+scrollX,y:r.y+scrollY,width:r.width,height:r.height};});}
 async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));}
 (async()=>{
  await fs.mkdir(output,{recursive:true});
@@ -45,10 +46,10 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
      await page.screenshot({path:path.join(output,`${name}-${width}-${state}.png`),fullPage:false});
      measurements[state]=await bounds(page);
      if(state==='after'&&name==='home'){
-      const original=await page.locator('.studio-home-hero').boundingBox();
+      const original=await documentBox(page.locator('.studio-home-hero'));
       const word=page.locator('.studio-phrase [role=button]').first();await word.focus();await word.press('Enter');
       await page.locator('.atlas-discovery').waitFor({state:'visible'});
-      assert.deepEqual(await page.locator('.studio-home-hero').boundingBox(),original,'discovery changes hero geometry');
+      assert.deepEqual(await documentBox(page.locator('.studio-home-hero')),original,'discovery changes hero geometry');
       assert.equal(await word.getAttribute('aria-expanded'),'true');
       await page.screenshot({path:path.join(output,`discovery-${width}.png`)});
       await word.press('Escape');assert.equal(await word.getAttribute('aria-expanded'),'false');
