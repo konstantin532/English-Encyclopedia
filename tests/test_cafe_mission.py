@@ -79,7 +79,7 @@ class CafeInformationGapTests(TestCase):
     def test_real_branching_and_clarification_is_necessary(self):
         self.send("I'd like one tea, please.")
         first_npc = self.client.get(self.url)
-        self.assertContains(first_npc, "we don't have tea")
+        self.assertContains(first_npc, "we don&#x27;t have tea")
         self.assertNotContains(first_npc, "We have coffee and water")
         self.send("I'd like one coffee, please.")
         self.assertEqual(self.state()["phase"], "ask")
@@ -135,6 +135,10 @@ class CafeInformationGapTests(TestCase):
         self.assertTrue(attempt.self_rubric["not_language_grade"])
         self.assertEqual(UnitProgress.objects.filter(user=self.user).count(), 0)
         self.assertContains(self.client.get(self.url), "ожидает оценки преподавателя")
+        self.assertEqual(self.post("save", assistance="no_help").status_code, 400)
+        self.assertEqual(IndependentAttempt.objects.filter(user=self.user).count(), 1)
+        # A fresh GET and token must not allow another copy of the same result.
+        self.client.get(self.url)
         self.assertEqual(self.post("save", assistance="no_help").status_code, 400)
         self.assertEqual(IndependentAttempt.objects.filter(user=self.user).count(), 1)
 
