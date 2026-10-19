@@ -101,6 +101,15 @@
       { opacity: 1, y: 0, duration: seconds("--motion-duration-fast", 0.2) }, "component");
   }
 
+  function enter(el, kind) {
+    if (!el || el.hidden) return;
+    const scene = kind === "scene";
+    const dx = scene && mode === "full" ? 6 : 0;
+    tween(el, { opacity: 0.75, y: dx },
+      { opacity: 1, y: 0, duration: seconds("--motion-duration-standard", 0.28) },
+      scene ? "scene" : "component");
+  }
+
   function intro() {
     if (mode !== "full" || !global.gsap) return;
     if (!doc.querySelector(".studio-home-hero")) {
@@ -219,7 +228,7 @@
     global.addEventListener("pagehide", stop);
     global.addEventListener("pageshow", function (event) { if (event.persisted) { readingRoute(); } });
   }
-  global.EnglishMotion = { effectiveMode: effectiveMode, shouldAnimate: shouldAnimate, resolve: resolve,
+  global.EnglishMotion = { effectiveMode: effectiveMode, shouldAnimate: shouldAnimate, resolve: resolve, enter: enter,
     get mode() { return mode; }, setMode: function (value) { refresh(value, true); } };
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", init, { once: true });
   else init();
