@@ -1,5 +1,6 @@
 from django.http import Http404
 from django.shortcuts import get_object_or_404, render
+from django.templatetags.static import static
 from django.views.decorators.csrf import ensure_csrf_cookie
 
 from apps.learning.models import WeekGoal
@@ -9,18 +10,28 @@ from .models import Level, TongueTwister, Week, WeekScene
 from .registry import LEVEL_BY_CODE
 
 
+def a1_atlas_cover(level_code, week_number):
+    """The A1 illustration series is complete for weeks 1–14 only."""
+    if level_code != "A1" or not 1 <= week_number <= 14:
+        return None
+    return static(f"img/studio/a1-week-{week_number:02d}.svg")
+
+
 def level_detail(request, slug):
     all_levels = list(Level.objects.all())
     level = next((lv for lv in all_levels if lv.slug == slug), None)
     if level is None:
         raise Http404
+    weeks = list(level.week_set.select_related("scene"))
+    for week in weeks:
+        week.atlas_cover_url = a1_atlas_cover(level.code, week.number)
     return render(request, "curriculum/level.html", {
         "level": level,
         "all_levels": all_levels,
         "plan": LEVEL_BY_CODE[level.code],
         "lessons": level.lessons.filter(is_published=True),
         "units_ready": level.units.count(),
-        "weeks": level.week_set.select_related("scene"),
+        "weeks": weeks,
     })
 
 
@@ -35,6 +46,7 @@ def week_detail(request, slug, number):
     goal = WeekGoal.objects.filter(user=request.user, week=week).first() if request.user.is_authenticated else None
     return render(request, "curriculum/week.html", {
         "week": week, "scene": scene, "lines": lines, "speakers": speakers,
+        "atlas_cover_url": a1_atlas_cover(level.code, week.number),
         "audio": scene.audio if scene else None,
         "lessons": week.lessons.filter(is_published=True),
         "twister": TongueTwister.objects.filter(week=week).first(), "goal": goal,
