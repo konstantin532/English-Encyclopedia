@@ -180,6 +180,9 @@ class RotatingIndependentReviewTests(TestCase):
                    for skill in ("meaning", "writing", "transfer", "explain")}}
         first = self.client.post(self.url, form)
         self.assertEqual(first.status_code, 200)
+        self.assertNotContains(first, 'data-blind-batch')
+        self.assertNotContains(first, 'name="answer_transfer"')
+        self.assertContains(first, 'Начать следующую независимую попытку')
         self.assertEqual(first.context["transfer_variant"], 1)
         self.assertEqual(first.context["guide"]["tasks"]["transfer"]["prompt"],
                          understanding_bank()[self.lesson.slug]["transfer_variants"][0]["prompt"])
