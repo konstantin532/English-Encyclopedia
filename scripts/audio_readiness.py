@@ -4,12 +4,16 @@ Default mode is a truthful diagnostic. --strict refuses missing or test-tone
 artifacts before deploying a site claiming generated audio.
 """
 import argparse
+import hashlib
 import json
 import math
+import re
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TEMPOS = ("very_slow", "slow", "natural")
+REVIEW_CRITERIA = ("american_vowels", "word_stress", "pauses_and_intonation", "names_and_numbers")
 
 
 def expected_manifests(root: Path):
@@ -33,6 +37,45 @@ def plausible_audio_header(path: Path) -> bool:
             len(header) >= 2 and header[0] == 0xFF and (header[1] & 0xE0) == 0xE0
         )
     return False
+
+
+
+def review_evidence_problem(data: dict, static: Path) -> str | None:
+    """Check a human attestation is complete and bound to THESE audio bytes.
+
+    This is integrity/provenance validation, never acoustic certification.
+    A reviewer must still actually listen and complete the rubric.
+    """
+    review = data.get("human_review")
+    if not isinstance(review, dict) or review.get("method") != "manual-listening":
+        return "verified=true без подтверждения ручного прослушивания"
+    reviewer, reviewed = review.get("reviewer"), review.get("review_date")
+    if (not isinstance(reviewer, str) or not reviewer.strip()
+            or len(reviewer.strip()) > 120 or not isinstance(reviewed, str)):
+        return "не указаны автор и дата проверки голоса"
+    try:
+        if date.fromisoformat(reviewed).isoformat() != reviewed:
+            return "дата прослушивания должна быть YYYY-MM-DD"
+    except ValueError:
+        return "неверная дата прослушивания"
+    tracks = review.get("tracks")
+    if not isinstance(tracks, dict) or set(tracks) != set(TEMPOS):
+        return "ручная проверка должна охватывать все три скорости"
+    for tempo in TEMPOS:
+        record = tracks[tempo]
+        if not isinstance(record, dict):
+            return f"неверная запись прослушивания {tempo}"
+        if any(record.get(field) != "pass" for field in REVIEW_CRITERIA):
+            return f"неполная оценка произношения {tempo}"
+        expected = record.get("sha256")
+        if not isinstance(expected, str) or not re.fullmatch(r"[0-9a-f]{64}", expected):
+            return f"нет SHA256 проверенной дорожки {tempo}"
+        track = (static / data[tempo]["file"]).resolve()
+        with track.open("rb") as file:
+            digest = hashlib.file_digest(file, "sha256").hexdigest()
+        if digest != expected:
+            return f"дорожка {tempo} изменена после ручной проверки"
+    return None
 
 
 def validate_manifest(data: dict, static: Path) -> str | None:
@@ -76,6 +119,8 @@ def validate_manifest(data: dict, static: Path) -> str | None:
         timeline_lengths.add(len(times))
     if len(timeline_lengths) != 1:
         return "разное количество реплик между скоростями"
+    if data.get("verified") is True:
+        return review_evidence_problem(data, static)
     return None
 
 
@@ -104,10 +149,14 @@ def check_audio(root: Path = ROOT) -> dict:
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--strict", action="store_true")
+    parser.add_argument("--require-reviewed", action="store_true",
+                        help="Reject structurally valid Kokoro tracks without complete manual review")
     args = parser.parse_args()
     result = check_audio()
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    return int(args.strict and bool(result["missing"] or result["invalid"]))
+    return int((args.strict and bool(result["missing"] or result["invalid"]))
+               or (args.require_reviewed and bool(result["missing"] or result["invalid"]
+                                                  or result["unreviewed"])))
 
 
 if __name__ == "__main__":
