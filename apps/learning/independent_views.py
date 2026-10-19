@@ -3,6 +3,8 @@
 No multiple choice, no answer keys before a submission, and no false claim
 that matching a model proves independent communicative proficiency.
 """
+import secrets
+
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.http import HttpResponseBadRequest
@@ -36,6 +38,9 @@ def independent_check(request, slug):
     # attempt. Rotate only AFTER a successful batch; models stay on the server.
     choices = (guide["tasks"]["transfer"], *guide.get("transfer_variants", []))
     session_key = f"a1_independent_variant_{lesson.pk}"
+    token_key = f"a1_independent_token_{lesson.pk}"
+    if token_key not in request.session:
+        request.session[token_key] = secrets.token_urlsafe(24)
     try:
         variant = int(request.session.get(session_key, 0)) % len(choices)
     except (ValueError, TypeError):
@@ -93,6 +98,14 @@ def independent_check(request, slug):
             result = {"skill": attempt.skill, "model": model_for(attempt),
                       "label": RATINGS[rating], "attempt": attempt}
         elif request.POST.get("action") == "batch":
+            # Browser-generated form tokens are single use: a slow network or
+            # double-tap cannot silently create a second four-answer set.
+            # Missing tokens remain accepted for older clients/tests.
+            supplied_token = request.POST.get("batch_token")
+            if supplied_token is not None and not secrets.compare_digest(
+                supplied_token, request.session[token_key]
+            ):
+                return HttpResponseBadRequest("Эта попытка уже отправлена. Обновите страницу.")
             # Reject a stale form rather than silently assess the wrong prompt.
             supplied_variant = request.POST.get("transfer_variant")
             if supplied_variant is not None and supplied_variant != str(variant):
@@ -141,7 +154,14 @@ def independent_check(request, slug):
                     })
             # Next visit gets a new situation; current results retain the
             # exact original prompts and exemplar associated with this batch.
-            request.session[session_key] = (variant + 1) % len(choices)
+            variant = (variant + 1) % len(choices)
+            request.session[session_key] = variant
+            request.session[token_key] = secrets.token_urlsafe(24)
+            # The next form must show the NEW prompt and its matching token;
+            # displayed results above still use the submitted variant.
+            guide = {**guide, "tasks": {
+                **guide["tasks"], "transfer": choices[variant],
+            }}
         else:
             skill = request.POST.get("skill")
             if skill not in TASKS:
@@ -180,4 +200,5 @@ def independent_check(request, slug):
         "ratings": RATINGS, "attempts": attempts,
         "rubric_axes": RUBRIC_AXES, "rubric_options": RUBRIC_OPTIONS,
         "transfer_variant": variant, "transfer_variant_total": len(choices),
+        "batch_token": request.session[token_key],
     })
