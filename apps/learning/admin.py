@@ -73,7 +73,7 @@ class IndependentAttemptAdmin(admin.ModelAdmin):
     )
     fields = (
         "user", "lesson", "skill", "task_variant", "original_prompt", "assistance",
-        "submitted", "self_rubric", "reference_example", "outcome",
+        "submitted", "reference_example", "outcome",
         "self_rating", "self_rubric", "created_at", "teacher_verdict",
         "rubric_meaning", "rubric_form", "rubric_context",
         "teacher_note", "teacher_rubric", "reviewed_by", "reviewed_at",
