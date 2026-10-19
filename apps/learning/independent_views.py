@@ -48,7 +48,10 @@ def independent_check(request, slug):
     guide = {**guide, "tasks": {**guide["tasks"], "transfer": choices[variant]}}
 
     def model_for(attempt):
-        # An earlier variant must never be reviewed against today's new task.
+        # Snapshot protects human review from later editorial changes.
+        if attempt.model_snapshot:
+            return attempt.model_snapshot
+        # Legacy rows retain the original variant fallback.
         if attempt.skill == "transfer":
             stored = min(attempt.task_variant, len(choices) - 1)
             return choices[stored]["model"]
@@ -175,6 +178,8 @@ def independent_check(request, slug):
                             task_variant=variant if skill == "transfer" else 0,
                             batch_token=supplied_token,
                             assistance=assistance,
+                            prompt_snapshot=guide["tasks"][skill]["prompt"],
+                            model_snapshot=guide["tasks"][skill]["model"],
                         )
                         batch_results.append({
                             "skill": skill, "title": {
@@ -225,6 +230,8 @@ def independent_check(request, slug):
                 user=request.user, lesson=lesson, skill=skill,
                 submitted=answer.strip(), outcome=outcome,
                 task_variant=variant if skill == "transfer" else 0,
+                prompt_snapshot=guide["tasks"][skill]["prompt"],
+                model_snapshot=guide["tasks"][skill]["model"],
             )
             label = ("Творческий ответ сохранён для самооценки; система не объявляет его верным или неверным."
                      if is_open else
