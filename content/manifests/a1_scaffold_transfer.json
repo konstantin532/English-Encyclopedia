@@ -22,10 +22,16 @@
           "why_ru": "This указывает на вещь, is связывает указание и название. New — признак, а phone — предмет."
         }
       ],
-      "transfer_variant": {
-        "prompt": "На столе ваша новая книга. Представьте её гостю и добавьте отдельной фразой, что она новая.",
-        "model": "This is my book. It is new."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "На столе ваша новая книга. Представьте её гостю и добавьте отдельной фразой, что она новая.",
+          "model": "This is my book. It is new."
+        },
+        {
+          "prompt": "В комнате ваш новый рюкзак. Покажите его другу и скажите, что он новый.",
+          "model": "This is my backpack. It is new."
+        }
+      ]
     },
     {
       "slug": "a1-verb-be",
@@ -46,10 +52,16 @@
           "why_ru": "Для вопроса ставим are перед you; не добавляем do к be."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Вы в классе. Спросите одного друга, готов ли он, используя be.",
-        "model": "Are you ready?"
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Вы в классе. Спросите одного друга, готов ли он, используя be.",
+          "model": "Are you ready?"
+        },
+        {
+          "prompt": "Друг ищет Анну. Спросите его, дома ли Анна.",
+          "model": "Is Anna at home?"
+        }
+      ]
     },
     {
       "slug": "a1-determiners-a-the-this-my",
@@ -70,10 +82,16 @@
           "why_ru": "My обозначает владельца; сочетание a my key не употребляется."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Вы уже говорили другу о книге. Теперь сообщите, что эта книга у вас.",
-        "model": "The book is here."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Вы уже говорили другу о книге. Теперь сообщите, что эта книга у вас.",
+          "model": "The book is here."
+        },
+        {
+          "prompt": "Вы показываете другу ручку. Сначала назовите предмет, затем скажите, что ручка ваша.",
+          "model": "This is a pen. It is my pen."
+        }
+      ]
     },
     {
       "slug": "a1-have-like-can-do",
@@ -94,10 +112,16 @@
           "why_ru": "Can I have — вежливая просьба; после can нужен глагол have."
         }
       ],
-      "transfer_variant": {
-        "prompt": "В гостях вы хотите попросить стакан воды. Скажите одну вежливую фразу.",
-        "model": "Can I have a glass of water, please?"
-      }
+      "transfer_variants": [
+        {
+          "prompt": "В гостях вы хотите попросить стакан воды. Скажите одну вежливую фразу.",
+          "model": "Can I have a glass of water, please?"
+        },
+        {
+          "prompt": "Вы в гостях. Вежливо попросите немного молока для чая.",
+          "model": "Can I have some milk, please?"
+        }
+      ]
     },
     {
       "slug": "a1-cafe-order",
@@ -118,10 +142,16 @@
           "why_ru": "Эта фраза завершает заказ, а не просит ещё что-то."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Бариста спрашивает, хотите ли вы ещё что-нибудь. Вежливо скажите, что это всё.",
-        "model": "That's all, thank you."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Бариста спрашивает, хотите ли вы ещё что-нибудь. Вежливо скажите, что это всё.",
+          "model": "That's all, thank you."
+        },
+        {
+          "prompt": "В кафе попросите два кофе и вежливо поблагодарите бариста.",
+          "model": "Two coffees, please. Thank you."
+        }
+      ]
     },
     {
       "slug": "a1-numbers-1-20",
@@ -142,10 +172,16 @@
           "why_ru": "Need соединяет желание с количеством и предметом."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Кассиру нужны точные данные. Попросите четыре билета одной короткой фразой.",
-        "model": "Four tickets, please."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Кассиру нужны точные данные. Попросите четыре билета одной короткой фразой.",
+          "model": "Four tickets, please."
+        },
+        {
+          "prompt": "В магазине вам нужны пять открыток. Вежливо попросите их.",
+          "model": "Five postcards, please."
+        }
+      ]
     },
     {
       "slug": "a1-family-photo",
@@ -166,10 +202,16 @@
           "why_ru": "Is ставится перед she, когда спрашиваем о человеке."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Показывая фотографию, представьте брата и скажите, что он студент.",
-        "model": "This is my brother. He is a student."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Показывая фотографию, представьте брата и скажите, что он студент.",
+          "model": "This is my brother. He is a student."
+        },
+        {
+          "prompt": "На фотографии ваша мама. Представьте её и скажите, что она врач.",
+          "model": "This is my mom. She is a doctor."
+        }
+      ]
     },
     {
       "slug": "a1-family-possession",
@@ -190,10 +232,16 @@
           "why_ru": "Whose задаёт вопрос о владельце, а не о местонахождении."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Вы нашли на столе телефон Тома. Объясните другу, кому принадлежит телефон.",
-        "model": "This is Tom's phone."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Вы нашли на столе телефон Тома. Объясните другу, кому принадлежит телефон.",
+          "model": "This is Tom's phone."
+        },
+        {
+          "prompt": "Вы нашли ключ своей сестры. Скажите другу, кому он принадлежит.",
+          "model": "This is my sister's key."
+        }
+      ]
     },
     {
       "slug": "a1-there-is-some",
@@ -214,10 +262,16 @@
           "why_ru": "Для вопроса is выходит вперёд; any — обычный выбор в нейтральном вопросе."
         }
       ],
-      "transfer_variant": {
-        "prompt": "В кухне есть молоко. Сообщите это гостю простым предложением.",
-        "model": "There is some milk in the kitchen."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "В кухне есть молоко. Сообщите это гостю простым предложением.",
+          "model": "There is some milk in the kitchen."
+        },
+        {
+          "prompt": "Гость спрашивает, сколько стульев в комнате. Скажите, что их два.",
+          "model": "There are two chairs in the room."
+        }
+      ]
     },
     {
       "slug": "a1-how-much-prices",
@@ -238,10 +292,16 @@
           "why_ru": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве билетов."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Вы видите одну книгу в магазине. Спросите продавца, сколько она стоит.",
-        "model": "How much is this book?"
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Вы видите одну книгу в магазине. Спросите продавца, сколько она стоит.",
+          "model": "How much is this book?"
+        },
+        {
+          "prompt": "Вы видите куртку в магазине. Спросите, сколько она стоит.",
+          "model": "How much is the jacket?"
+        }
+      ]
     },
     {
       "slug": "a1-present-simple-i-you",
@@ -262,10 +322,16 @@
           "why_ru": "Do открывает вопрос о привычке; work сохраняет начальную форму."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Узнайте, читает ли ваш друг книги по вечерам. Используйте Do you…?",
-        "model": "Do you read books in the evening?"
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Узнайте, читает ли ваш друг книги по вечерам. Используйте Do you…?",
+          "model": "Do you read books in the evening?"
+        },
+        {
+          "prompt": "Вы рассказываете о привычке. Скажите, что читаете книги каждый день.",
+          "model": "I read books every day."
+        }
+      ]
     },
     {
       "slug": "a1-time-at-seven",
@@ -286,10 +352,16 @@
           "why_ru": "В одной фразе привычка get up сочетается с конкретным временем at seven."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Скажите другу, что вы обычно завтракаете в восемь.",
-        "model": "I have breakfast at eight."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Скажите другу, что вы обычно завтракаете в восемь.",
+          "model": "I have breakfast at eight."
+        },
+        {
+          "prompt": "Вы приходите домой в шесть часов. Расскажите об этой привычке.",
+          "model": "I come home at six."
+        }
+      ]
     },
     {
       "slug": "a1-he-she-works",
@@ -310,10 +382,16 @@
           "why_ru": "Does уже показывает третье лицо; work после does снова без -s."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Вы видите Анну на работе. Спросите, работает ли она здесь.",
-        "model": "Does Anna work here?"
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Вы видите Анну на работе. Спросите, работает ли она здесь.",
+          "model": "Does Anna work here?"
+        },
+        {
+          "prompt": "Вы говорите с Томом. Спросите, читает ли он книги каждый день.",
+          "model": "Do you read books every day?"
+        }
+      ]
     },
     {
       "slug": "a1-jobs-what-do-you-do",
@@ -334,10 +412,16 @@
           "why_ru": "В обычном знакомстве вопрос часто о профессии, а не о действии в эту секунду."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Вам нужно сказать, что вы повар и работаете в кафе. Две короткие фразы.",
-        "model": "I am a cook. I work at a café."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Вам нужно сказать, что вы повар и работаете в кафе. Две короткие фразы.",
+          "model": "I am a cook. I work at a café."
+        },
+        {
+          "prompt": "Том работает учителем в школе. Расскажите о его профессии и месте работы.",
+          "model": "Tom is a teacher. He works at a school."
+        }
+      ]
     },
     {
       "slug": "a1-where-is-prepositions",
@@ -358,10 +442,16 @@
           "why_ru": "Вопрос о месте начинается с where is, затем называем предмет."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Телефон лежит внутри сумки. Объясните другу, где он.",
-        "model": "The phone is in the bag."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Телефон лежит внутри сумки. Объясните другу, где он.",
+          "model": "The phone is in the bag."
+        },
+        {
+          "prompt": "Книга находится под стулом. Объясните, где она лежит.",
+          "model": "The book is under the chair."
+        }
+      ]
     },
     {
       "slug": "a1-directions-turn-left",
@@ -382,10 +472,16 @@
           "why_ru": "On your left сообщает, где будет место по отношению к идущему человеку."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Прохожий спрашивает дорогу. Скажите ему идти прямо, затем повернуть налево.",
-        "model": "Go straight and turn left."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Прохожий спрашивает дорогу. Скажите ему идти прямо, затем повернуть налево.",
+          "model": "Go straight and turn left."
+        },
+        {
+          "prompt": "Помогите туристу: скажите повернуть направо, затем идти прямо.",
+          "model": "Turn right and go straight."
+        }
+      ]
     },
     {
       "slug": "a1-questions-do-does",
@@ -406,10 +502,16 @@
           "why_ru": "Короткий ответ повторяет вспомогательный does, а не основной live."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Узнайте, работает ли Том по воскресеньям.",
-        "model": "Does Tom work on Sundays?"
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Узнайте, работает ли Том по воскресеньям.",
+          "model": "Does Tom work on Sundays?"
+        },
+        {
+          "prompt": "Спросите Мию, нравится ли ей чай. Используйте вопрос с does.",
+          "model": "Does Mia like tea?"
+        }
+      ]
     },
     {
       "slug": "a1-spelling-phone-numbers",
@@ -430,10 +532,16 @@
           "why_ru": "Это просьба уточнить написание; не путайте spell с say again."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Вы не поняли, как пишется имя собеседника. Вежливо попросите назвать его по буквам.",
-        "model": "Can you spell your name, please?"
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Вы не поняли, как пишется имя собеседника. Вежливо попросите назвать его по буквам.",
+          "model": "Can you spell your name, please?"
+        },
+        {
+          "prompt": "Вы не расслышали имя Ben. Попросите собеседника произнести имя по буквам.",
+          "model": "Can you spell Ben, please?"
+        }
+      ]
     },
     {
       "slug": "a1-always-never",
@@ -454,10 +562,16 @@
           "why_ru": "Never стоит перед works; с she сохраняется -s у утвердительного глагола."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Расскажите, что вы никогда не пьёте кофе.",
-        "model": "I never drink coffee."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Расскажите, что вы никогда не пьёте кофе.",
+          "model": "I never drink coffee."
+        },
+        {
+          "prompt": "Вы всегда пьёте воду по утрам. Расскажите об этой привычке.",
+          "model": "I always drink water in the morning."
+        }
+      ]
     },
     {
       "slug": "a1-like-doing",
@@ -478,10 +592,16 @@
           "why_ru": "После like возможно и to read. Это не ошибка и не полный синоним в каждом контексте."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Скажите другу, что вам нравится готовить (занятие, а не еда).",
-        "model": "I like cooking."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Скажите другу, что вам нравится готовить (занятие, а не еда).",
+          "model": "I like cooking."
+        },
+        {
+          "prompt": "Ваше любимое занятие — плавание. Скажите об этом через like.",
+          "model": "I like swimming."
+        }
+      ]
     },
     {
       "slug": "a1-what-hurts",
@@ -502,10 +622,16 @@
           "why_ru": "Вопрос уточняет место боли; он не требует do в таком употреблении what как подлежащего."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Вы у врача. Коротко скажите, что у вас болит спина.",
-        "model": "My back hurts."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Вы у врача. Коротко скажите, что у вас болит спина.",
+          "model": "My back hurts."
+        },
+        {
+          "prompt": "Вы у врача. Скажите, что у вас болит рука.",
+          "model": "My arm hurts."
+        }
+      ]
     },
     {
       "slug": "a1-cant-cannot",
@@ -526,10 +652,16 @@
           "why_ru": "Для вопроса переместите can перед you."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Скажите, что вы не можете прийти сегодня.",
-        "model": "I can't come today."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Скажите, что вы не можете прийти сегодня.",
+          "model": "I can't come today."
+        },
+        {
+          "prompt": "Вы не можете прийти завтра. Вежливо сообщите это другу.",
+          "model": "Sorry, I can't come tomorrow."
+        }
+      ]
     },
     {
       "slug": "a1-dont-doesnt",
@@ -550,10 +682,16 @@
           "why_ru": "Вопрос с does похож на отрицание по форме: смысловой глагол остаётся без -s."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Скажите, что Том не любит чай.",
-        "model": "Tom doesn't like tea."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Скажите, что Том не любит чай.",
+          "model": "Tom doesn't like tea."
+        },
+        {
+          "prompt": "Том не живёт в этом городе. Расскажите об этом.",
+          "model": "Tom doesn't live in this city."
+        }
+      ]
     },
     {
       "slug": "a1-letters-address",
@@ -574,10 +712,16 @@
           "why_ru": "Repeat помогает уточнить услышанное; не обязательно диктовать всё по буквам."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Вы не расслышали адрес. Попросите собеседника повторить его, не называя настоящих данных.",
-        "model": "Can you repeat the address, please?"
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Вы не расслышали адрес. Попросите собеседника повторить его, не называя настоящих данных.",
+          "model": "Can you repeat the address, please?"
+        },
+        {
+          "prompt": "На почте сотрудник быстро произнёс имя. Попросите повторить его по буквам.",
+          "model": "Can you spell the name again, please?"
+        }
+      ]
     },
     {
       "slug": "a1-can-skills",
@@ -598,10 +742,16 @@
           "why_ru": "С she после can не прибавляем к speak окончание -s."
         }
       ],
-      "transfer_variant": {
-        "prompt": "В учебной роли ваша сестра умеет рисовать. Расскажите об этом.",
-        "model": "My sister can draw."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "В учебной роли ваша сестра умеет рисовать. Расскажите об этом.",
+          "model": "My sister can draw."
+        },
+        {
+          "prompt": "Вы умеете готовить. Скажите это и спросите, умеет ли готовить ваш друг.",
+          "model": "I can cook. Can you cook?"
+        }
+      ]
     },
     {
       "slug": "a1-why-because",
@@ -622,10 +772,16 @@
           "why_ru": "Because присоединяет причину отдельной понятной частью предложения."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Друг спрашивает, почему вы пьёте воду. Скажите, что вы хотите пить.",
-        "model": "I drink water because I am thirsty."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Друг спрашивает, почему вы пьёте воду. Скажите, что вы хотите пить.",
+          "model": "I drink water because I am thirsty."
+        },
+        {
+          "prompt": "Друг спрашивает, почему вы дома. Объясните, что вы заболели.",
+          "model": "I am at home because I am sick."
+        }
+      ]
     },
     {
       "slug": "a1-bus-ticket",
@@ -646,10 +802,16 @@
           "why_ru": "У кассы этого достаточно, чтобы вежливо попросить билет."
         }
       ],
-      "transfer_variant": {
-        "prompt": "Вы ждёте поезд. Спросите сотрудника, во сколько поезд отправляется.",
-        "model": "What time does the train leave?"
-      }
+      "transfer_variants": [
+        {
+          "prompt": "Вы ждёте поезд. Спросите сотрудника, во сколько поезд отправляется.",
+          "model": "What time does the train leave?"
+        },
+        {
+          "prompt": "У водителя спросите, идёт ли этот автобус в центр города.",
+          "model": "Does this bus go downtown?"
+        }
+      ]
     },
     {
       "slug": "a1-review-everything",
@@ -670,10 +832,16 @@
           "why_ru": "Don't помогает отрицать обычный глагол know с I; разные мысли требуют разных конструкций."
         }
       ],
-      "transfer_variant": {
-        "prompt": "В вымышленной поездке скажите, что не знаете дорогу, и вежливо спросите, где станция.",
-        "model": "I don't know the way. Excuse me, where is the station."
-      }
+      "transfer_variants": [
+        {
+          "prompt": "В вымышленной поездке скажите, что не знаете дорогу, и вежливо спросите, где станция.",
+          "model": "I don't know the way. Excuse me, where is the station."
+        },
+        {
+          "prompt": "В вымышленной поездке представьтесь, скажите, что не можете найти автобусную остановку, и спросите, где она.",
+          "model": "Hello, I'm Mia. I can't find the bus stop. Where is it?"
+        }
+      ]
     }
   ]
 }
