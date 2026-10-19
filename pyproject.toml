@@ -29,6 +29,7 @@ audio = [
 DJANGO_SETTINGS_MODULE = "config.settings.test"
 python_files = ["test_*.py", "tests.py"]
 testpaths = ["tests", "apps"]
+markers = ["slow: long-running course integration or smoke check"]
 
 [tool.uv]
 package = false
