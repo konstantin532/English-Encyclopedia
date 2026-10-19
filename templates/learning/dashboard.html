@@ -36,6 +36,15 @@
       <p><a class="btn btn-primary" href="{% url 'curriculum:level' 'a1' %}">Выбрать урок A1 →</a></p>
     {% endif %}
   </section>
+  <section class="section" aria-labelledby="optional-transfer-title">
+    <div class="section-head">
+      <h2 id="optional-transfer-title">Пилот новых ситуаций · недели 1–2</h2>
+      <p>Добровольные самостоятельные ответы с новыми ситуациями через 7 и 30 дней.
+         Обычный режим остаётся доступен. Оценка открытого ответа — только после проверки преподавателем.</p>
+    </div>
+    <p><a href="{% url 'learning:transfer_pilot' 'a1-verb-be' %}">Неделя 1: знакомство →</a></p>
+    <p><a href="{% url 'learning:transfer_pilot' 'a1-have-like-can-do' %}">Неделя 2: мой дом →</a></p>
+  </section>
   {% if next_lesson %}
     <p><a class="btn btn-primary" href="{% url 'lessons:detail' next_lesson.slug %}">{% if progress %}Продолжить: {{ next_lesson.title }}{% else %}Начать первый урок{% endif %}</a></p>
   {% endif %}

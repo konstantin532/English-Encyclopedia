@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Пилот переноса · {{ pilot.title }}{% endblock %}
+{% block content %}
+<main class="wrap" style="max-width: 760px; padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'learning:dashboard' %}">Мой прогресс</a> / эксперимент</p>
+    <h1>{{ pilot.title }}</h1>
+    <p><strong>Добровольный эксперимент:</strong> учимся применять уже знакомые конструкции
+      в трёх разных ситуациях — сейчас, через 7 дней и через 30 дней.
+      Обычные уроки, озвучка и ваш прогресс не меняются.</p>
+    <p>Это не экзамен CEFR. Ответы остаются непроверенными, пока преподаватель
+      не оценит их смысл, грамматику и уместность. Различия с образцом не означают ошибку.</p>
+    <p>Используйте вымышленные имена и сведения. Не вводите настоящий адрес,
+      телефон или другую личную информацию.</p>
+    <p><a href="{% url 'lessons:detail' lesson.slug %}">Вернуться в обычный урок →</a></p>
+  </header>
+
+  {% if attempts %}
+  <section class="section" aria-labelledby="pilot-evidence">
+    <h2 id="pilot-evidence">Сохранённые попытки</h2>
+    <ol>
+      {% for item in attempts %}
+      <li>
+        <strong>{% if item.task_variant == 100 %}Первая попытка{% elif item.task_variant == 101 %}Через 7 дней{% else %}Через 30 дней{% endif %}</strong>
+        — {{ item.created_at|date:"j E Y" }}
+        <p><strong>Вопрос:</strong> {{ item.prompt_snapshot }}</p>
+        <p><strong>Ваш ответ:</strong> <span lang="en">{{ item.submitted }}</span></p>
+        <p>Условия: {{ item.get_assistance_display }}.</p>
+        <p>Проверка преподавателя: {{ item.get_teacher_verdict_display }}.</p>
+        {% if item.teacher_note and item.reviewed_at %}<p>Комментарий преподавателя: {{ item.teacher_note }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  {% if completed %}
+    <section class="section" aria-live="polite"><h2>Доступные этапы завершены</h2>
+      <p>Если семидневная проверка пропущена, она не заменяется запоздалой попыткой на 30-й день. Это ещё не доказательство улучшения. Для сравнения потребуется отдельная
+         проверка ранее не показанных заданий и сопоставимая группа.</p></section>
+  {% elif not ready %}
+    <section class="section" aria-live="polite"><h2>Следующий этап пока закрыт</h2>
+      <p>Следующее самостоятельное задание станет доступно {{ due_at|date:"j E Y в H:i" }}.
+        До этого продолжайте обычные уроки. Ранние повторы не засчитываются как отсроченная проверка.</p></section>
+  {% else %}
+    <section class="section" aria-labelledby="pilot-mission">
+      <h2 id="pilot-mission">{% if stage.1 == 100 %}Первая попытка{% elif stage.1 == 101 %}Новая ситуация через 7 дней{% else %}Новая ситуация через 30 дней{% endif %}</h2>
+      <p>Прочитайте ситуацию. Попробуйте ответить самостоятельно. Подсказок и ключей
+        до отправки нет. Несколько естественных ответов могут быть допустимы.</p>
+      <p id="mission-question"><strong>{{ mission.prompt }}</strong></p>
+      <form method="post" autocomplete="off">
+        {% csrf_token %}
+        <input type="hidden" name="token" value="{{ token }}">
+        <input type="hidden" name="stage" value="{{ stage.1 }}">
+        <div style="margin-block: 1rem">
+          <label for="pilot-answer"><strong>Ваш ответ по-английски</strong></label>
+          <textarea id="pilot-answer" name="answer" rows="4" maxlength="400"
+                    required aria-describedby="mission-question" style="width:100%"></textarea>
+        </div>
+        <fieldset>
+          <legend>Как вы выполняли эту попытку? (самоотчёт)</legend>
+          <label style="display:block; margin:.5rem 0"><input type="radio" name="assistance" value="no_help" required> Самостоятельно</label>
+          <label style="display:block; margin:.5rem 0"><input type="radio" name="assistance" value="notes"> С конспектом или объяснением</label>
+          <label style="display:block; margin:.5rem 0"><input type="radio" name="assistance" value="translator"> С переводчиком или готовым ответом</label>
+        </fieldset>
+        <p><button type="submit" class="btn btn-primary">Сохранить самостоятельный ответ</button></p>
+      </form>
+    </section>
+  {% endif %}
+</main>
+{% endblock %}

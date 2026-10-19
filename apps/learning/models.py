@@ -248,5 +248,10 @@ class IndependentAttempt(models.Model):
                 condition=~models.Q(batch_token=""),
                 name="unique_independent_batch_skill_token",
             ),
+            models.UniqueConstraint(
+                fields=["user", "lesson", "skill", "task_variant"],
+                condition=models.Q(skill="transfer", task_variant__in=[100, 101, 102]),
+                name="unique_pilot_stage_per_learner",
+            ),
         ]
         ordering = ["-created_at"]

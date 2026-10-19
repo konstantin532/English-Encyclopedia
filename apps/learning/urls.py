@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views, speech_practice, delayed_review_views, independent_views
+from . import views, speech_practice, delayed_review_views, independent_views, transfer_pilot
 
 app_name = "learning"
 urlpatterns = [
@@ -11,6 +11,7 @@ urlpatterns = [
     path("speech-review/", speech_practice.speech_review, name="speech_review"),
     path("mistake-review/", delayed_review_views.mistake_review, name="mistake_review"),
     path("independent/<slug:slug>/", independent_views.independent_check, name="independent_check"),
+    path("transfer-pilot/<slug:slug>/", transfer_pilot.transfer_pilot, name="transfer_pilot"),
     path("mistake-review/request/<int:exercise_id>/", delayed_review_views.request_optional_review, name="request_optional_review"),
     path("weeks/<int:week_id>/goal/", views.week_goal, name="week_goal"),
 ]
