@@ -75,7 +75,9 @@
         <p data-a1-backtranslation-model lang="en" hidden></p>
       </form>
     </div>
-    <noscript><p>Для интерактивной проверки требуется JavaScript. Оригинальный диалог доступен через кнопку «Показать текст диалога» при включённом JavaScript; основной урок можно читать без него.</p></noscript>
+    <noscript><div role="note"><p>JavaScript отключён: интерактивная проверка недоступна, но диалог и перевод можно прочитать:</p>
+      <ol>{% for line in topic.dialogue %}<li><strong>{{ line.0 }}</strong>: <span lang="en">{{ line.1 }}</span> — {{ line.2 }}</li>{% endfor %}</ol>
+      <p>Основной урок доступен без интерактивных скриптов.</p></div></noscript>
   </section>
 
   <section class="active-a1-panel" id="a1-understand" aria-labelledby="a1-understand-title">
