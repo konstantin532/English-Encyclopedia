@@ -30,6 +30,9 @@
     const key = root.dataset.speechKey;
     const signedIn = root.dataset.speechPersist === "true";
     const records = Array(count).fill(null);
+    // A GET started on page load can finish AFTER a successful rating POST.
+    // Never let that older snapshot overwrite a newly saved response.
+    const locallySaved = new Set();
     let busy = false, loadFailed = false;
     function current() { return Math.max(0, Math.min(count - 1, Number(root.dataset.speechIndex || 0))); }
     function show() {
@@ -66,6 +69,7 @@
           if (!res.ok) throw new Error("Unable to save oral review");
           const data = await res.json();
           records[index] = data;
+          locallySaved.add(index);
           loadFailed = false;
         } else {
           records[index] = nextState(records[index], rating, Date.now());
@@ -92,10 +96,11 @@
         .then(data => {
           if (!Array.isArray(data.items)) throw new Error("Invalid review data");
           data.items.forEach(p => {
-            if (Number.isInteger(p.index) && p.index >= 0 && p.index < count) records[p.index] = p;
+            if (Number.isInteger(p.index) && p.index >= 0 && p.index < count && !locallySaved.has(p.index))
+              records[p.index] = p;
           });
           show();
-        }).catch(() => { loadFailed = true; show(); });
+        }).catch(() => { if (!locallySaved.size) loadFailed = true; show(); });
     }
     show();
   }
