@@ -19,7 +19,7 @@
         {
           "example_en": "This is my phone.",
           "example_ru": "Это мой телефон.",
-          "why_ru": "This указывает на вещь, is связывает указание и название. New — признак, а phone — предмет."
+          "why_ru": "This указывает на предмет, is связывает его с названием, а my уточняет владельца."
         }
       ],
       "transfer_variants": [
@@ -178,8 +178,8 @@
           "model": "Four tickets, please."
         },
         {
-          "prompt": "В магазине вам нужны пять открыток. Вежливо попросите их.",
-          "model": "Five postcards, please."
+          "prompt": "В кафе вам нужны четыре печенья. Вежливо попросите их.",
+          "model": "Four cookies, please."
         }
       ]
     },
@@ -827,15 +827,15 @@
           "why_ru": "Can + speak сообщает о навыке; speak не получает to или -s."
         },
         {
-          "example_en": "I don't know the time.",
-          "example_ru": "Я не знаю, который час.",
-          "why_ru": "Don't помогает отрицать обычный глагол know с I; разные мысли требуют разных конструкций."
+          "example_en": "I don't know the address.",
+          "example_ru": "Я не знаю адрес.",
+          "why_ru": "Don't помогает отрицать обычный глагол know с I; после don't глагол не получает окончание -s."
         }
       ],
       "transfer_variants": [
         {
           "prompt": "В вымышленной поездке скажите, что не знаете дорогу, и вежливо спросите, где станция.",
-          "model": "I don't know the way. Excuse me, where is the station."
+          "model": "I don't know the way. Excuse me, where is the station?"
         },
         {
           "prompt": "В вымышленной поездке представьтесь, скажите, что не можете найти автобусную остановку, и спросите, где она.",
