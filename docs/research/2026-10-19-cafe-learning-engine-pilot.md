@@ -18,7 +18,7 @@ No automatic English grade or “mastery” based on a parser match. No sound-pr
 
 A constrained multi-turn information-gap task is **not** equivalent to genuine human-to-human negotiation or arbitrary free English. Requests outside the supported A1 forms receive a neutral retry and must not be used as negative skill evidence. A narrow parser can miss correct English: teacher review remains essential.
 
-The independent review pilot records *self-reported* assistance; it does not prove an unaided setting. For longitudinal data, the existing 7-day stage can be completed later than exactly day 7 (before day 30); timestamps must be inspected and treated as measurement deviation. These observational pilot tasks are not randomized, calibrated instruments, or proof of learning gains.
+The independent review pilot records *self-reported* assistance; it does not prove an unaided setting. For longitudinal data, the 7-day stage is closed on day 14; attempts performed later than day 7 and before that cutoff are explicitly time-stamped and flagged if more than one day late. A missed stage is not manufactured as a successful retention measurement. The day-30 stage may be overdue; its actual and planned times must be inspected and treated as measurement deviation. These observational pilot tasks are not randomized, calibrated instruments, or proof of learning gains.
 
 ## How to verify
 
