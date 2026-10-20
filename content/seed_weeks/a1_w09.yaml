@@ -46,19 +46,19 @@ script:
 twister:
   number: 9
   series: sounds
-  text: '[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]!'
-  ru: Открываемся в девять, закрываемся в пять!
-  ipa: /ˈoʊpən ət ˈnaɪn ˈkloʊz ət ˈfaɪv/
+  text: '[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]. [S2]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [S2]phone[/] [P3]at[/] [N3]five[/]!'
+  ru: Открываемся в девять, закрываемся в пять. Звонить в девять? Нет, звонить в пять!
+  ipa: /ˈoʊpən ət ˈnaɪn | ˈkloʊz ət ˈfaɪv | ˈfoʊn ət ˈnaɪn | ˈnoʊ | ˈfoʊn ət ˈfaɪv/
   focus_sounds:
   - ou
   - ai
   source: original
-  goal_ru: 'Американские двойные гласные: /oʊ/ в open и close, /aɪ/ в nine и five. Русское «о» ровное, американское скользит в «у»: «оупэн», а не «опен».'
-  tip_ru: 'o в open и close начинается как «о» и сразу уходит в «у» — «оу». В nine и five — «ай». Close здесь глагол: на конце звонкое z — «клоуз». at без ударения, почти «эт».'
+  goal_ru: 'Американские двойные гласные: /oʊ/ в open, close, phone, no и /aɪ/ в nine, five. Русское «о» ровное, американское скользит в «у»: «оупэн», а не «опен».'
+  tip_ru: 'o в open, close, phone начинается как «о» и сразу уходит в «у» — «оу». В nine и five — «ай». Close здесь глагол: на конце звонкое z — «клоуз». at без ударения, почти «эт».'
   warmup:
-  - '[D2]open[/] — [D2]close[/]'
-  - '[N3]nine[/] — [N3]five[/]'
-  - '[D2]Open[/] [P3]at[/] [N3]nine[/]!'
+  - '[D2]open[/], [D2]close[/]'
+  - '[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]!'
+  - '[S2]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [S2]phone[/] [P3]at[/] [N3]five[/]!'
   - '[T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/] [C1]and[/] [D2]closes[/] [P3]at[/] [N3]five[/].'
   target_line: It opens at nine and closes at five.
   own_ru: 'Скажите, во сколько открывается и закрывается ваше любимое кафе или магазин: It opens at … and closes at …'

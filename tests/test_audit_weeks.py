@@ -113,7 +113,7 @@ class WeekAuditTests(TestCase):
         TongueTwister.objects.create(number=1, week=self.week, series="sounds", source="original",
                                      text="[T2]This[/] [S6]elephant[/].")
         self.assertTrue(self.errors("Скороговорка 1: незнакомые слова: elephant"))
-        self.assertTrue(self.errors("Скороговорка 1: слов 2, для серии sounds нужно 3–8"))
+        self.assertTrue(self.errors("Скороговорка 1: слов 2, для серии sounds нужно 6–16"))
 
     def test_missing_twister_is_warning(self):
         self.assertTrue(self.warnings("Неделя A1-1: нет скороговорки недели"))

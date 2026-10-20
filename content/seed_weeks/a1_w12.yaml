@@ -53,18 +53,19 @@ script:
 twister:
   number: 12
   series: sounds
-  text: '[T1]A[/] [S9]letter[/], [T1]a[/] [S2]stamp[/], [T1]a[/] [S9]letter[/], [T1]a[/] [S2]stamp[/]!'
-  ipa: /ə ˈlɛt̬ɚ ə ˈstæmp ə ˈlɛt̬ɚ ə ˈstæmp/
+  text: '[D9]Get[/] [T1]a[/] [S9]letter[/] [P3]at[/] [T1]a[/] [S4]city[/] [S4]post office[/], [D9]get[/] [T1]a[/] [S9]letter[/], [D9]get[/] [T1]a[/] [S9]letter[/], [D9]get[/] [T8]it[/]!'
+  ru: Получи письмо на городской почте — получи письмо, получи письмо, получи его!
+  ipa: /ˈɡɛt ə ˈlɛt̬ɚ ət ə ˈsɪt̬i ˈpoʊst ˈɔfɪs | ˈɡɛt ə ˈlɛt̬ɚ | ˈɡɛt ə ˈlɛt̬ɚ | ˈɡɛt ɪt/
   focus_sounds:
   - flap
   - ae
   source: original
-  goal_ru: Американское мягкое t между гласными (letter — «лэдэр») против чёткого st в stamp.
-  tip_ru: В letter кончик языка коротко «шлёпает» по бугоркам за зубами — получается почти «д». В stamp t после s остаётся твёрдым и без придыхания.
+  goal_ru: 'Американское «мягкое t» (flap) между гласными: get a, letter, at a, city, get it звучат как «гедэ», «лэдэр», «эдэ», «сиди». Так говорят во всех фильмах.'
+  tip_ru: 't между гласными — одно быстрое касание языком, как короткое «д». Не произносите твёрдое «т»: «лэтэр» звучит по-британски, американцы скажут «лэдэр».'
   warmup:
-  - '[S9]letter[/] — [S2]stamp[/]'
-  - '[T1]a[/] [S9]letter[/], [T1]a[/] [S2]stamp[/]'
-  - '[T8]I[/] [D1]have[/] [T1]a[/] [S9]letter[/].'
-  - '[T8]I[/] [D1]do[/][X1]n''t[/] [D1]have[/] [T1]a[/] [S2]stamp[/].'
+  - '[D9]get[/] [T1]a[/], [S9]letter[/]'
+  - '[D9]get[/] [T1]a[/] [S9]letter[/]'
+  - '[D9]Get[/] [T1]a[/] [S9]letter[/] [P3]at[/] [T1]a[/] [S4]city[/] [S4]post office[/].'
+  - '[T8]I[/] [D1]do[/] [X1]not[/] [D1]have[/] [T1]a[/] [S2]stamp[/].'
   target_line: I do not have a stamp.
   own_ru: 'Скажите, чего у вас сейчас нет: I don''t have a…'

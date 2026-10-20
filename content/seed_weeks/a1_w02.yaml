@@ -62,18 +62,18 @@ script:
 twister:
   number: 2
   series: sounds
-  text: '[T2]That[/] [S6]cat[/] [D7]can[/] [D1]have[/] [T1]a[/] [S2]box[/].'
-  ipa: /ðæt ˈkæt kən hæv ə ˈbɑks/
+  text: '[T2]That[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]desk[/], [T2]that[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]lamp[/], [T2]that[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]shelf[/]!'
+  ru: Этот кот занял мой стол, этот кот занял мою лампу, этот кот занял мою полку!
+  ipa: /ˈðæt ˈkæt həz maɪ ˈdɛsk | ˈðæt ˈkæt həz maɪ ˈlæmp | ˈðæt ˈkæt həz maɪ ˈʃɛlf/
   focus_sounds:
   - ae
   source: original
-  goal_ru: Широкое /æ/ (that, cat, have) против открытого /ɑ/ (box, Tom). Русские «э» и «о» здесь не подходят.
-  tip_ru: '/æ/: рот открыт широко, как для «а», а язык тянется к «э» — звук между ними. /ɑ/ в box: рот открыт, язык
-    лежит низко, губы не округлены — почти «а»: «бакс».'
+  goal_ru: Широкое /æ/ (that, cat, has, lamp) против узкого /ɛ/ (desk, shelf). Для американца bad и bed — разные слова.
+  tip_ru: 'В cat рот открыт широко, челюсть опущена — звук между «э» и «а». В desk рот почти закрыт, обычное «э». Чередуйте: cat — desk, lamp — shelf.'
   warmup:
-  - '[S6]cat[/] — [S2]box[/]'
-  - '[T2]that[/] [S6]cat[/]'
-  - '[T2]that[/] [S6]cat[/], [T2]that[/] [S2]box[/]'
-  - '[S1]Tom[/] [D1]has[/] [T1]a[/] [S2]box[/].'
+  - '[S6]cat[/], [S2]desk[/]'
+  - '[T2]that[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]lamp[/]'
+  - '[T2]That[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]desk[/], [T2]that[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]lamp[/].'
+  - '[S1]Tom[/] [D1]has[/] [T1]a[/] [J1]big[/] [S2]box[/].'
   target_line: Tom has a big box.
   own_ru: 'Скажите, что есть у вас или у друга: I have a… / Tom has a…'

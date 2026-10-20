@@ -1,76 +1,89 @@
 number: 4
 target_units:
+- LX-00157
+- LX-00158
+- LX-00159
 - LX-00160
+- LX-00161
+- LX-00162
 - LX-00163
 - LX-00164
-- LX-00158
+- LX-00165
 - LX-00167
-- LX-00168
-- LX-00169
-- LX-00170
-- LX-00171
-- LX-00180
 body: |
   [A3]Here[/] [D1]is[/] [T1]a[/] [S2]key[/],
   [T1]an[/] [J2]old[/], [J2]old[/] [S2]key[/].
   [D1]Is[/] [T8]it[/] [P5]for[/] [T8]you[/]?
   [D1]Is[/] [T8]it[/] [P5]for[/] [T8]me[/]?
 
-  [D4]Turn[/] [A3]left[/], [D4]turn[/] [A3]right[/],
-  [P1]at[/] [S7]night[/], [P1]at[/] [S7]night[/].
-  [D4]Go[/] [A3]straight[/], [D4]go[/] [A3]straight[/],
-  [P1]at[/] [N1]eight[/], [P1]at[/] [N1]eight[/].
-
   [A6]Where[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/]?
-  [T8]It[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]bank[/].
-  [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/].
-  [O2]Thank[/] [T8]you[/]! [O2]Thanks[/]!
+  [D4]Turn[/] [A3]right[/], [D4]turn[/] [A3]left[/],
+  [D4]go[/] [A3]straight[/], [D4]go[/] [A3]straight[/],
+  [T8]it[/] [D1]is[/] [P1]next to[/] [T1]the[/] [S4]bank[/]!
 
-  [T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/],
-  [T3]our[/] [S2]mailbox[/] [S2]key[/].
-  [N1]One[/] [P5]for[/] [T8]you[/]
-  [C1]and[/] [N1]one[/] [P5]for[/] [T8]me[/]!
+  [O2]Excuse me[/]! [O2]Excuse me[/]!
+  [P1]Near[/] [T1]the[/] [S4]bank[/]? [P1]Next to[/] [T1]the[/] [S4]bank[/]?
+  [P1]Between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]?
+  [O4]Yes[/], [P3]on[/] [T1]the[/] [A3]right[/]!
+
+  [T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/],
+  [T8]it[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]your[/] [S2]door[/].
+  [T9]Whose[/] [S2]key[/]? [T9]Whose[/] [S2]key[/]?
+  [T8]It[/] [D1]is[/] [P5]for[/] [T3]our[/] [S2]mailbox[/]!
+
+  [N1]One[/] [S2]key[/] [P5]for[/] [T8]you[/],
+  [N1]one[/] [S2]key[/] [P5]for[/] [T8]me[/],
+  [T3]our[/] [J2]old[/] [S2]mailbox[/],
+  [T3]our[/] [J2]old[/] [S2]key[/]!
 pronunciation:
 - stress: HERE is a KEY
   ipa: /ˈhɪr ɪz ə ˈki/
 - stress: an OLD | OLD KEY.
   ipa: /ən ˈoʊld | ˈoʊld ˈki/
-- stress: is it for YOU?
-  ipa: /ɪz ɪt fɚ ˈju/
-- stress: is it for ME?
-  ipa: /ɪz ɪt fɚ ˈmi/
-- stress: TURN LEFT | TURN RIGHT
-  ipa: /ˈtɝn ˈlɛft | ˈtɝn ˈraɪt/
-- stress: at NIGHT | at NIGHT.
-  ipa: /ət ˈnaɪt | ət ˈnaɪt/
-- stress: GO STRAIGHT | GO STRAIGHT
-  ipa: /ˈɡoʊ ˈstreɪt | ˈɡoʊ ˈstreɪt/
-- stress: at EIGHT | at EIGHT.
-  ipa: /ət ˈeɪt | ət ˈeɪt/
+- stress: is it FOR YOU?
+  ipa: /ɪz ɪt ˈfɔr ˈju/
+- stress: is it FOR me?
+  ipa: /ɪz ɪt ˈfɔr mi/
 - stress: WHERE is the KEY SHOP?
   ipa: /ˈwɛr ɪz ðə ˈki ˈʃɑp/
-- stress: it is near the BANK.
-  ipa: /ɪt ɪz nɪr ðə ˈbæŋk/
-- stress: GO STRAIGHT and TURN LEFT.
-  ipa: /ˈɡoʊ ˈstreɪt ən ˈtɝn ˈlɛft/
-- stress: THANK you! THANKS!
-  ipa: /ˈθæŋk ju ˈθæŋks/
-- stress: it is our MAILBOX
-  ipa: /ɪt ɪz aʊɚ ˈmeɪlbɑks/
-- stress: our MAILBOX KEY.
-  ipa: /aʊɚ ˈmeɪlbɑks ˈki/
-- stress: ONE for YOU
-  ipa: /ˈwʌn fɚ ˈju/
-- stress: and ONE for ME!
-  ipa: /ən ˈwʌn fɚ ˈmi/
+- stress: TURN RIGHT | TURN LEFT
+  ipa: /ˈtɝn ˈraɪt | ˈtɝn ˈlɛft/
+- stress: GO STRAIGHT | GO STRAIGHT
+  ipa: /ˈɡoʊ ˈstreɪt | ˈɡoʊ ˈstreɪt/
+- stress: it is NEXT to the BANK!
+  ipa: /ɪt ɪz ˈnɛkst tə ðə ˈbæŋk/
+- stress: EXCUSE me | EXCUSE me!
+  ipa: /ɪkˈskjuz mi | ɪkˈskjuz mi/
+- stress: near the BANK | NEXT to the BANK?
+  ipa: /nɪr ðə ˈbæŋk | ˈnɛkst tə ðə ˈbæŋk/
+- stress: between the BANK and the HOTEL?
+  ipa: /bɪtwin ðə ˈbæŋk ən ðə hoʊˈtɛl/
+- stress: YES | on the RIGHT!
+  ipa: /ˈjes | ɑn ðə ˈraɪt/
+- stress: it is NOT FOR my DOOR
+  ipa: /ɪt ɪz ˈnɑt ˈfɔr maɪ ˈdɔr/
+- stress: it is NOT FOR your DOOR.
+  ipa: /ɪt ɪz ˈnɑt ˈfɔr jɚ ˈdɔr/
+- stress: WHOSE KEY | WHOSE KEY?
+  ipa: /ˈhuz ˈki | ˈhuz ˈki/
+- stress: it is FOR our MAILBOX!
+  ipa: /ɪt ɪz ˈfɔr aʊɚ ˈmeɪlbɑks/
+- stress: ONE KEY FOR YOU
+  ipa: /ˈwʌn ˈki ˈfɔr ˈju/
+- stress: ONE KEY FOR me
+  ipa: /ˈwʌn ˈki ˈfɔr mi/
+- stress: our OLD MAILBOX
+  ipa: /aʊɚ ˈoʊld ˈmeɪlbɑks/
+- stress: our OLD KEY!
+  ipa: /aʊɚ ˈoʊld ˈki/
 gaps:
-- line: 2
-  word: old
 - line: 4
   word: me
 - line: 6
-  word: night
-- line: 10
-  word: near
-- line: 16
-  word: me
+  word: left
+- line: 12
+  word: right
+- line: 15
+  word: Whose
+- line: 20
+  word: key

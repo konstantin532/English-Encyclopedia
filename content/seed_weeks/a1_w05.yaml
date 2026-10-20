@@ -50,18 +50,19 @@ script:
 twister:
   number: 5
   series: sounds
-  text: '[T9]There[/] [D1]are[/] [S3]apples[/] [C1]and[/] [S3]eggs[/], [S3]apples[/] [C1]and[/] [S3]eggs[/].'
-  ipa: /ðɛr ɚ ˈæpəlz ən ˈɛɡz ˈæpəlz ən ˈɛɡz/
+  text: '[D1]Is[/] [T2]this[/] [S3]cheese[/] [J3]cheap[/]? [D1]Is[/] [T2]this[/] [S3]milk[/] [J3]cheap[/]? [T2]This[/] [S3]cheese[/] [D1]is[/] [J3]cheap[/], [T2]this[/] [S3]milk[/] [D1]is[/] [J3]expensive[/]!'
+  ru: Этот сыр дешёвый? Это молоко дешёвое? Этот сыр дешёвый, а это молоко дорогое!
+  ipa: /ɪz ˈðɪs ˈtʃiz ˈtʃip | ɪz ˈðɪs ˈmɪlk ˈtʃip | ˈðɪs ˈtʃiz ɪz ˈtʃip | ˈðɪs ˈmɪlk ɪz ɪkˈspɛnsɪv/
   focus_sounds:
   - dh
   - ae
   source: original
-  goal_ru: /æ/ в apples против /ɛ/ в eggs — два разных «э». Для американца это разные слова.
-  tip_ru: '/æ/: рот широко открыт, челюсть опущена — «эпл» почти с «а». /ɛ/ в eggs: рот приоткрыт меньше, как в русском «эти».'
+  goal_ru: 'Короткое /ɪ/ (is, this, milk) против долгого /i/ (cheese, cheap). Ошибка №1 у русскоязычных: ship и sheep звучат одинаково.'
+  tip_ru: В cheese и cheap — улыбка и долгое «и-и». В is, this, milk — губы расслаблены, звук короткий, ближе к «ы». Утрируйте разницу.
   warmup:
-  - '[S3]apples[/] — [S3]eggs[/]'
-  - '[S3]apples[/] [C1]and[/] [S3]eggs[/]'
-  - '[T9]There[/] [D1]are[/] [S3]apples[/].'
+  - '[S3]cheese[/], [S3]milk[/]'
+  - '[D1]Is[/] [T2]this[/] [S3]cheese[/] [J3]cheap[/]?'
+  - '[D1]Is[/] [T2]this[/] [S3]cheese[/] [J3]cheap[/]? [D1]Is[/] [T2]this[/] [S3]milk[/] [J3]cheap[/]?'
   - '[D1]Is[/] [T9]there[/] [S3]milk[/]?'
   target_line: Is there milk?
   own_ru: 'Спросите, есть ли что-то в магазине: Is there…? Are there…?'

@@ -51,18 +51,19 @@ script:
 twister:
   number: 7
   series: sounds
-  text: '[S1]Tom[/] [D2]works[/], [S1]Mia[/] [D2]works[/]. [T9]Who[/] [D2]works[/] [P3]at[/] [S7]night[/]?'
-  ipa: /ˈtɑm ˈwɝks ˈmiə ˈwɝks ˈhu ˈwɝks ət ˈnaɪt/
+  text: '[S9]Nurse[/], [S9]teacher[/], [S9]singer[/], [S9]farmer[/], [S9]driver[/], [S9]writer[/]. [A6]Where[/] [D1]do[/] [T8]you[/] [D2]work[/]?'
+  ru: Медсестра, учитель, певец, фермер, водитель, писатель. А вы где работаете?
+  ipa: /ˈnɝs | ˈtitʃɚ | ˈsɪŋɚ | ˈfɑrmɚ | ˈdraɪvɚ | ˈraɪt̬ɚ | ˈwɛr də jə ˈwɝk/
   focus_sounds:
+  - r
   - w
-  - h
   source: original
-  goal_ru: 'Окончание -s после k (works — «уёркс») и w в начале. Не теряйте -s: без него выходит ошибка He work.'
-  tip_ru: 'В works губы сначала трубочкой (w), в конце — короткое «кс»: язык сзади смыкается и сразу шипит s. who — лёгкий выдох h и долгое «у».'
+  goal_ru: 'Американское r в конце слова шесть раз подряд: teacher, farmer, driver. Плюс w в where и work.'
+  tip_ru: 'В конце -er язык не касается нёба и не дрожит, кончик слегка загнут назад: «тичэр», а не «тичер» с русским р. Не проглатывайте r: в американском оно слышно всегда.'
   warmup:
-  - '[D2]work[/] — [D2]works[/]'
-  - '[S1]Tom[/] [D2]works[/]'
-  - '[S1]Tom[/] [D2]works[/], [S1]Mia[/] [D2]works[/]'
+  - '[S9]teacher[/], [S9]farmer[/]'
+  - '[S9]nurse[/], [S9]teacher[/], [S9]singer[/]'
+  - '[S9]Nurse[/], [S9]teacher[/], [S9]singer[/], [S9]farmer[/], [S9]driver[/], [S9]writer[/].'
   - '[T8]He[/] [D2]works[/] [P3]at[/] [S7]night[/]!'
   target_line: He works at night!
   own_ru: 'Расскажите о работе знакомого: My friend works at…'

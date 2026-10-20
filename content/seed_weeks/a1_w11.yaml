@@ -50,18 +50,19 @@ script:
 twister:
   number: 11
   series: sounds
-  text: '[T3]My[/] [S5]head[/], [T3]my[/] [S5]back[/], [T3]my[/] [S5]head[/], [T3]my[/] [S5]back[/]!'
-  ipa: /maɪ ˈhɛd maɪ ˈbæk maɪ ˈhɛd maɪ ˈbæk/
+  text: '[T3]My[/] [S5]head[/], [T3]my[/] [S5]hand[/], [T3]my[/] [S5]back[/], [T3]my[/] [S5]neck[/]. [T3]My[/] [S5]head[/] [D3]hurts[/], [T3]my[/] [S5]hand[/] [D3]hurts[/]. [D2]Help[/]!'
+  ru: Моя голова, моя рука, моя спина, моя шея. Голова болит, рука болит. Помогите!
+  ipa: /maɪ ˈhɛd | maɪ ˈhænd | maɪ ˈbæk | maɪ ˈnɛk | maɪ ˈhɛd ˈhɝts | maɪ ˈhænd ˈhɝts | ˈhɛlp/
   focus_sounds:
   - ae
   - h
   source: original
-  goal_ru: /ɛ/ в head против /æ/ в back и лёгкое h. Для американца bed и bad — разные слова.
-  tip_ru: 'head: рот приоткрыт, как в «эти». back: челюсть опускается ниже, звук между «э» и «а». h — тихий выдох, не «х».'
+  goal_ru: /ɛ/ (head, neck, help) против /æ/ (hand, back) и лёгкое /h/ в каждом втором слове.
+  tip_ru: 'head: рот приоткрыт, как в «эти». hand и back: челюсть опускается ниже, звук между «э» и «а». h — тихий выдох, не «х».'
   warmup:
-  - '[S5]head[/] — [S5]back[/]'
-  - '[T3]my[/] [S5]head[/], [T3]my[/] [S5]back[/]'
-  - '[T3]My[/] [S5]head[/] [D3]hurts[/].'
+  - '[S5]head[/], [S5]hand[/]'
+  - '[T3]my[/] [S5]head[/], [T3]my[/] [S5]hand[/], [T3]my[/] [S5]back[/]'
+  - '[T3]My[/] [S5]head[/], [T3]my[/] [S5]hand[/], [T3]my[/] [S5]back[/], [T3]my[/] [S5]neck[/].'
   - '[T3]My[/] [S5]back[/] [D3]hurts[/].'
   target_line: My back hurts.
   own_ru: 'Скажите, что у вас болит или устаёт: My … hurts.'

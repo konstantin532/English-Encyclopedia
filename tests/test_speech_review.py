@@ -38,7 +38,7 @@ class OralReviewTests(TestCase):
     def test_real_course_content_only_and_fragment_counts(self):
         self.assertEqual(content_details(self.key)["count"], 6)
         self.assertGreaterEqual(content_details("twister:1")["count"], 2)
-        self.assertEqual(content_details("poem:1")["count"], 16)
+        self.assertEqual(content_details("poem:1")["count"], 20)
         for key in ("lesson:fake-lesson", "twister:999", "poem:999", "lesson:../../secret",
                     "lesson:a!b", "poem:0", "poem:01", "a" * 200):
             self.assertIsNone(content_details(key), key)

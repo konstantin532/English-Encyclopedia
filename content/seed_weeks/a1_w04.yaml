@@ -56,19 +56,19 @@ script:
 twister:
   number: 4
   series: sounds
-  text: '[T3]His[/] [S1]mother[/], [T3]her[/] [S1]father[/], [T3]his[/] [S1]brother[/].'
-  ipa: /hɪz ˈmʌðɚ hɚ ˈfɑðɚ hɪz ˈbrʌðɚ/
+  text: '[T3]His[/] [J4]happy[/] [S1]mother[/], [T3]her[/] [J4]happy[/] [S1]father[/], [T3]his[/] [J4]happy[/] [S1]brother[/]. [A6]How[/] [J2]old[/]? [T1]A[/] [N1]hundred[/]!'
+  ru: Его счастливая мама, её счастливый папа, его счастливый брат. Сколько лет? Сто!
+  ipa: /hɪz ˈhæpi ˈmʌðɚ | hɚ ˈhæpi ˈfɑðɚ | hɪz ˈhæpi ˈbrʌðɚ | ˈhaʊ ˈoʊld | ə ˈhʌndrəd/
   focus_sounds:
-  - dh
   - h
-  - r
+  - dh
   source: original
-  goal_ru: Звонкое th внутри слова (mother, father, brother) и лёгкое h в his, her — без русского «х».
-  tip_ru: 'th в mother: кончик языка коротко касается верхних зубов, голос не прерывается — не «д» и не «з». h — просто выдох, как на стекло, а не хрип.'
+  goal_ru: Лёгкое /h/ девять раз (his, her, happy, how, hundred) и звонкое th в mother, father, brother.
+  tip_ru: h — тихий выдох, как будто греете стекло дыханием. Не «х» с хрипом. В mother — язык между зубами, с голосом.
   warmup:
-  - '[S1]mother[/] — [S1]father[/]'
-  - '[T3]his[/] [S1]mother[/]'
-  - '[T3]her[/] [S1]father[/], [T3]his[/] [S1]brother[/]'
+  - '[T3]his[/], [T3]her[/], [J4]happy[/]'
+  - '[T3]his[/] [J4]happy[/] [S1]mother[/], [T3]her[/] [J4]happy[/] [S1]father[/]'
+  - '[T3]His[/] [J4]happy[/] [S1]mother[/], [T3]her[/] [J4]happy[/] [S1]father[/], [T3]his[/] [J4]happy[/] [S1]brother[/].'
   - '[T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/].'
   target_line: This is my brother.
   own_ru: 'Покажите семейное фото и назовите двоих: This is my mother. This is my father.'

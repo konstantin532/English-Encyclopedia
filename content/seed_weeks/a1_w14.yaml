@@ -48,17 +48,18 @@ script:
 twister:
   number: 14
   series: sounds
-  text: '[S4]Bus[/] [S4]stop[/], [S4]bus[/] [S4]stop[/], [T1]the[/] [J8]last[/] [S4]bus[/] [S4]stop[/]!'
-  ipa: /ˈbʌs ˌstɑp ˈbʌs ˌstɑp ðə ˈlæst ˈbʌs ˌstɑp/
+  text: '[T1]A[/] [J2]black[/] [S2]bag[/] [P3]on[/] [T1]the[/] [S4]bus[/], [T1]a[/] [J2]black[/] [S2]hat[/] [P3]on[/] [T1]the[/] [S4]bus[/]. [S4]Stop[/] [T1]the[/] [S4]bus[/]!'
+  ru: Чёрная сумка в автобусе, чёрная шляпа в автобусе. Остановите автобус!
+  ipa: /ə ˈblæk ˈbæɡ ɑn ðə ˈbʌs | ə ˈblæk ˈhæt ɑn ðə ˈbʌs | ˈstɑp ðə ˈbʌs/
   focus_sounds:
   - ae
   source: original
-  goal_ru: Короткое /ʌ/ в bus против открытого /ɑ/ в stop. В русском оба похожи на «а», в английском это разные звуки.
-  tip_ru: 'bus: рот приоткрыт немного, короткое расслабленное «а». stop: рот открыт шире, язык лежит низко, звук длиннее — «стап». Между s и t не вставляйте гласную.'
+  goal_ru: 'Три разные «а», которые русскому уху кажутся одной: /æ/ (black, bag, hat), /ʌ/ (bus), /ɑ/ (on, stop).'
+  tip_ru: 'black: рот широко, между «э» и «а». bus: короткое расслабленное «а», рот почти закрыт. stop: рот открыт шире всего, язык низко, звук длиннее.'
   warmup:
-  - '[S4]bus[/] — [S4]stop[/]'
-  - '[S4]bus[/] [S4]stop[/]'
-  - '[T1]the[/] [J8]last[/] [S4]bus[/] [S4]stop[/]'
+  - '[J2]black[/], [S4]bus[/], [S4]stop[/]'
+  - '[T1]a[/] [J2]black[/] [S2]bag[/] [P3]on[/] [T1]the[/] [S4]bus[/]'
+  - '[T1]A[/] [J2]black[/] [S2]bag[/] [P3]on[/] [T1]the[/] [S4]bus[/], [T1]a[/] [J2]black[/] [S2]hat[/] [P3]on[/] [T1]the[/] [S4]bus[/].'
   - '[D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]?'
   target_line: Does this bus go to Park Street?
   own_ru: 'Спросите, идёт ли автобус до вашей остановки: Does this bus go to…?'
