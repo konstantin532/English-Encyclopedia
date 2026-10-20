@@ -102,6 +102,7 @@ layers:
       **Проверка маленького шага:** *The bank is near the cafe* — банк **неподалёку**, расстояние не названо. *The bank is next to the cafe* — банк **непосредственно рядом**. Оба выражения говорят «рядом», но для точного направления различие важно.
 exercises:
   - order: 1
+    uid: EX-00080
     kind: choice
     stage: recognition
     prompt_ru: "Вы ищете банк. Что спросить у прохожего?"
@@ -111,6 +112,7 @@ exercises:
     explanation_ru: "Excuse me, where is the bank? — вежливо и понятно."
     units: [LX-00175, LX-00176]
   - order: 2
+    uid: EX-00081
     kind: fill
     stage: substitution
     prompt_ru: "Ключ лежит внутри коробки. Вставьте предлог."
@@ -120,6 +122,7 @@ exercises:
     explanation_ru: "in the box — внутри коробки. on the box было бы «на коробке»."
     units: [LX-00173]
   - order: 3
+    uid: EX-00082
     kind: build
     stage: production
     prompt_ru: "Соберите ответ: «Банк рядом с кафе»."
@@ -129,6 +132,7 @@ exercises:
     explanation_ru: "The bank is next to the cafe. next to — «рядом с», всегда вместе."
     units: [LX-00174]
   - order: 4
+    uid: EX-00083
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: турист спрашивает, где кафе. Оно справа. Ответьте."
@@ -139,6 +143,7 @@ exercises:
     explanation_ru: "It is on the right — в разговоре It's on the right или просто On the right."
     units: [LX-00178]
   - order: 5
+    uid: EX-00084
     kind: choice
     stage: recognition
     prompt_ru: "Кафе стоит посередине: слева банк, справа гостиница. Как сказать?"
@@ -148,6 +153,7 @@ exercises:
     explanation_ru: "between the bank and the hotel — между двумя названными местами. В этой конструкции их соединяет and; слово between само обозначает расположение между."
     units: [LX-00338, LX-00344]
   - order: 6
+    uid: EX-00085
     kind: fill
     stage: transfer
     prompt_ru: "Супермаркет — через дорогу от парка. Скажите это по-американски."

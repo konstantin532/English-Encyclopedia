@@ -113,6 +113,7 @@ layers:
       Шесть заданий из разных недель: от знакомства до поездки, затем описание погоды и желание купить вещь с объяснением причины. Если что-то забылось, вернитесь к уроку своей недели.
 exercises:
   - order: 1
+    uid: EX-00158
     kind: choice
     stage: recognition
     prompt_ru: "Какая фраза верная?"
@@ -122,6 +123,7 @@ exercises:
     explanation_ru: "She works — неделя 7: с he и she глагол получает -s."
     units: [LX-00255]
   - order: 2
+    uid: EX-00159
     kind: fill
     stage: substitution
     prompt_ru: "Вы не знаете ответа. Вставьте помощника (сокращённо)."
@@ -132,6 +134,7 @@ exercises:
     explanation_ru: "I don't know — помощник do + not."
     units: [LX-00236]
   - order: 3
+    uid: EX-00160
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос: «Где банк?»"
@@ -141,6 +144,7 @@ exercises:
     explanation_ru: "Where is the bank? — с be помощник do не нужен."
     units: [LX-00176]
   - order: 4
+    uid: EX-00161
     kind: fill
     stage: transfer
     prompt_ru: "Итоговая ситуация: незнакомец в автобусе спрашивает, откуда вы. Ответьте и добавьте, что говорите по-английски."
@@ -151,6 +155,7 @@ exercises:
     explanation_ru: "I'm from Russia. I can speak English. Две фразы — и вы уже рассказали о себе."
     units: [LX-00255]
   - order: 5
+    uid: EX-00162
     kind: choice
     stage: recognition
     prompt_ru: Вы хотите сказать «Сегодня солнечно». Какая фраза полная и правильная?
@@ -165,6 +170,7 @@ exercises:
     - LX-00458
     - LX-00457
   - order: 6
+    uid: EX-00163
     kind: fill
     stage: transfer
     prompt_ru: В новой поездке вы хотите купить зонт, потому что не любите дождь. Сообщите желание и причину одним

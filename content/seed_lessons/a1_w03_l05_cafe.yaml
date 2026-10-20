@@ -106,6 +106,7 @@ layers:
       **Проверка маленького шага:** *I like coffee* — «Мне **нравится** кофе вообще». *I'd like a coffee, please* — «Я **хотел(а) бы заказать** одну порцию сейчас». Разница между **like** и **would like** — не просто степень вежливости: в этих фразах мы выражаем **предпочтение** или **просьбу**.
 exercises:
   - order: 1
+    uid: EX-00022
     kind: choice
     stage: recognition
     prompt_ru: "Вы не расслышали бариста. Что сказать?"
@@ -115,6 +116,7 @@ exercises:
     explanation_ru: "Sorry? Can you say it again, please? — вежливая просьба повторить. Так вы сами управляете разговором."
     units: [LX-00084]
   - order: 2
+    uid: EX-00023
     kind: fill
     stage: substitution
     prompt_ru: "Бариста предлагает выбор из двух напитков. Вставьте слово «или»."
@@ -124,6 +126,7 @@ exercises:
     explanation_ru: "or ставят между вариантами, из которых выбирают один."
     units: [LX-00058]
   - order: 3
+    uid: EX-00024
     kind: build
     stage: production
     prompt_ru: "Соберите просьбу: «Можно мне печенье, пожалуйста?»"
@@ -133,6 +136,7 @@ exercises:
     explanation_ru: "Can I have …, please? — вежливая просьба. Перед cookie нужен a."
     units: [LX-00056]
   - order: 4
+    uid: EX-00025
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: вам предлагают кофе или чай, а вы хотите чай. Ответьте коротко и вежливо."
@@ -143,6 +147,7 @@ exercises:
     explanation_ru: "Достаточно назвать напиток и сказать please: Tea, please. Полная просьба Can I have a tea, please? тоже верна."
     units: [LX-00055, LX-00082]
   - order: 5
+    uid: EX-00026
     kind: choice
     stage: recognition
     prompt_ru: "Вы заказываете у бариста. Какая фраза звучит вежливо?"
@@ -152,6 +157,7 @@ exercises:
     explanation_ru: "I would like / I'd like — мягкий и надёжный способ заказать. I want tea грамматически верно, но без контекста и please может звучать прямолинейнее; Tea! без смягчения тоже зависит от интонации."
     units: [LX-00281, LX-00285]
   - order: 6
+    uid: EX-00027
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: бариста спрашивает What would you like? Вы хотите сэндвич и сок. Ответьте вежливо."

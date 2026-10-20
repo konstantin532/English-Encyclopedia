@@ -130,6 +130,7 @@ layers:
       Шестое задание переносит знакомую схему на новые предметы дома.
 exercises:
   - order: 1
+    uid: EX-00016
     kind: choice
     stage: recognition
     prompt_ru: "Как правильно сказать «Мне нравится кофе»?"
@@ -139,6 +140,7 @@ exercises:
     explanation_ru: "По-английски «мне нравится» строится от человека: I like coffee. После I нужен like без -s. Обычный порядок слов: кто — глагол — что."
     units: [LX-00034]
   - order: 2
+    uid: EX-00017
     kind: fill
     stage: substitution
     prompt_ru: "Вас спросили: «У тебя есть телефон?» Ответьте «Да» коротким хвостом."
@@ -148,6 +150,7 @@ exercises:
     explanation_ru: "В коротком ответе повторяют помощника из вопроса: Do you…? — Yes, I do."
     units: [LX-00036, LX-00031]
   - order: 3
+    uid: EX-00018
     kind: choice
     stage: substitution
     prompt_ru: "Вы в кафе и хотите вежливо попросить воды."
@@ -157,6 +160,7 @@ exercises:
     explanation_ru: "Can I have …, please? — стандартная вежливая просьба. После can нужен глагол: have."
     units: [LX-00035, LX-00033, LX-00029]
   - order: 4
+    uid: EX-00019
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос: «У тебя есть книга?»"
@@ -166,6 +170,7 @@ exercises:
     explanation_ru: "Do — помощник для вопроса с have. После do сохраняем порядок you + have + a book; поэтому Do you have a book?, а не Have you a book? в обычном учебном варианте американского английского."
     units: [LX-00036, LX-00033]
   - order: 5
+    uid: EX-00020
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: спросите друга, есть ли у него кот."
@@ -176,6 +181,7 @@ exercises:
     explanation_ru: "Do you have a cat? — do в начале, дальше обычный порядок."
     units: [LX-00036, LX-00033, LX-00041]
   - order: 6
+    uid: EX-00021
     kind: fill
     stage: transfer
     prompt_en: ___

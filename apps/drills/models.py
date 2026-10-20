@@ -6,6 +6,17 @@ from apps.lessons.models import Lesson
 from apps.lexicon.models import LexicalUnit
 
 
+class ActiveExerciseManager(models.Manager):
+    """Архивные упражнения скрыты от учеников, но их история ответов хранится."""
+
+    def get_queryset(self):
+        return super().get_queryset().filter(is_archived=False)
+
+
+# Номер упражнения в архиве (10000 + pk): освобождает обычный номер для нового задания.
+ARCHIVE_ORDER_BASE = 10000
+
+
 class Exercise(models.Model):
     class Kind(models.TextChoices):
         CHOICE = "choice", "Выбор ответа"
@@ -30,9 +41,16 @@ class Exercise(models.Model):
     hint_ru = models.CharField(max_length=240, blank=True)
     explanation_ru = models.TextField()
     units = models.ManyToManyField(LexicalUnit, blank=True, related_name="exercises")
+    uid = models.CharField(max_length=12, unique=True, null=True, blank=True,
+                           help_text="Постоянный ID (EX-00001): ответы учеников не «переезжают» при смене порядка")
+    is_archived = models.BooleanField(default=False, help_text="Убрано из курса, но у учеников есть история по нему")
+
+    objects = ActiveExerciseManager()
+    all_objects = models.Manager()
 
     class Meta:
         ordering = ["lesson", "order"]
+        base_manager_name = "all_objects"
         constraints = [models.UniqueConstraint(fields=["lesson", "order"], name="uniq_exercise_order")]
 
     def __str__(self) -> str:

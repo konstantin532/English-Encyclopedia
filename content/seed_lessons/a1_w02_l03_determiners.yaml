@@ -128,6 +128,7 @@ layers:
       Шестое задание переносит знакомую схему на новые предметы дома.
 exercises:
   - order: 1
+    uid: EX-00010
     kind: choice
     stage: recognition
     prompt_ru: "Вы представляете собеседнику одну пока неизвестную ему книгу: «У меня есть книга». Что вставить?"
@@ -138,6 +139,7 @@ exercises:
     explanation_ru: "Говорящий представляет одну пока неопределённую книгу, поэтому a. Когда собеседник уже понимает, какая это книга, можно сказать the book. Не всякое первое упоминание автоматически требует a."
     units: [LX-00022, LX-00037]
   - order: 2
+    uid: EX-00011
     kind: choice
     stage: substitution
     prompt_ru: "Вы показываете на дом на другой стороне улицы: «Тот дом новый»."
@@ -148,6 +150,7 @@ exercises:
     explanation_ru: "That — о том, что подальше. This — о том, что рядом."
     units: [LX-00038]
   - order: 3
+    uid: EX-00012
     kind: fill
     stage: substitution
     prompt_ru: "Вы нашли чужой телефон: «Это твой телефон?»"
@@ -157,6 +160,7 @@ exercises:
     explanation_ru: "Your — притяжательный детерминатив «твой, ваш». You're — это сокращение от you are."
     units: [LX-00039]
   - order: 4
+    uid: EX-00013
     kind: build
     stage: production
     prompt_ru: "Соберите фразу: «Эта комната большая»."
@@ -166,6 +170,7 @@ exercises:
     explanation_ru: "This room — группа «указатель + существительное», затем be и признак: This room is big."
     units: [LX-00020, LX-00024]
   - order: 5
+    uid: EX-00014
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: вы показываете две комнаты — рядом большую, подальше новую. Скажите об обеих."
@@ -176,6 +181,7 @@ exercises:
     explanation_ru: "This room is big. That room is new. this — то, что рядом, that — то, что подальше."
     units: [LX-00020, LX-00038, LX-00007]
   - order: 6
+    uid: EX-00015
     kind: fill
     stage: transfer
     prompt_en: ___

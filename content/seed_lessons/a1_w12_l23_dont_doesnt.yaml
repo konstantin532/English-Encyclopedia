@@ -98,6 +98,7 @@ layers:
       **Проверка маленького шага:** *She isn't at home* отрицает **состояние или место** с *be*. *She doesn't work at home* отрицает **действие** с обычным глаголом *work*. В первом предложении нужен **is not**, во втором — **does not + work**. Не выбирайте *don't/doesn't* только потому, что в русском есть «не».
 exercises:
   - order: 1
+    uid: EX-00128
     kind: choice
     stage: recognition
     prompt_ru: "Как правильно: «Туда письма не приходят»?"
@@ -107,6 +108,7 @@ exercises:
     explanation_ru: "It doesn't get letters — с it помощник doesn't, get без -s."
     units: [LX-00235]
   - order: 2
+    uid: EX-00129
     kind: fill
     stage: substitution
     prompt_ru: "У Анны нет марки. Вставьте отрицание (сокращённо)."
@@ -117,6 +119,7 @@ exercises:
     explanation_ru: "I don't have a stamp — «у меня нет марки»."
     units: [LX-00233]
   - order: 3
+    uid: EX-00130
     kind: build
     stage: production
     prompt_ru: "Соберите: «Мой друг не живёт в России»."
@@ -126,6 +129,7 @@ exercises:
     explanation_ru: "My friend doesn't live in Russia. -s ушло в doesn't."
     units: [LX-00230]
   - order: 4
+    uid: EX-00131
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: прохожий спрашивает, где банк. Вы не знаете. Вежливо ответьте."
@@ -136,6 +140,7 @@ exercises:
     explanation_ru: "Sorry, I don't know — вежливо и по-американски."
     units: [LX-00229, LX-00236]
   - order: 5
+    uid: EX-00132
     kind: choice
     stage: substitution
     prompt_ru: У Тома нет конверта. Выберите верную фразу.
@@ -150,6 +155,7 @@ exercises:
     - LX-00416
     - LX-00233
   - order: 6
+    uid: EX-00133
     kind: fill
     stage: transfer
     prompt_ru: 'В новой анкете спрашивают индекс. Вы его не знаете. Вежливо скажите: «Извините, я не знаю индекс».'

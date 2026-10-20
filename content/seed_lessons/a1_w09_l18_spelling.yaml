@@ -102,6 +102,7 @@ layers:
       **Проверка маленького шага:** *What is your name?* — назовите **имя целиком** (*Tom*). *Can you spell it?* — назовите **отдельные буквы по порядку** (*T-O-M*). Это разные действия, хотя речь об одном имени. Названия букв **не всегда совпадают** со звуками букв внутри слова.
 exercises:
   - order: 1
+    uid: EX-00098
     kind: choice
     stage: recognition
     prompt_ru: "Вас просят: Can you spell your last name, please? Что нужно сделать?"
@@ -111,6 +112,7 @@ exercises:
     explanation_ru: "Can you spell your last name? — продиктовать фамилию по буквам."
     units: [LX-00189]
   - order: 2
+    uid: EX-00099
     kind: choice
     stage: substitution
     prompt_ru: "Название какой английской буквы звучит примерно как русское «и» (/iː/)? Это вопрос о названии буквы, не аудиозадание."
@@ -120,6 +122,7 @@ exercises:
     explanation_ru: "E называется «и». Это главная ловушка для русскоязычных."
     units: [LX-00187]
   - order: 3
+    uid: EX-00100
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос: «Какой у вас номер телефона?»"
@@ -129,6 +132,7 @@ exercises:
     explanation_ru: "What is your phone number? — в разговоре What's your phone number?"
     units: [LX-00185, LX-00190]
   - order: 4
+    uid: EX-00101
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: администратор отеля просит назвать по буквам имя Tom. Продиктуйте через дефис."
@@ -139,6 +143,7 @@ exercises:
     explanation_ru: "T-O-M — «ти, оу, эм». По буквам диктуют медленно, с короткими паузами."
     units: [LX-00183, LX-00187]
   - order: 5
+    uid: EX-00102
     kind: choice
     stage: recognition
     prompt_ru: "Вы звоните в мастерскую и хотите поговорить с Томом. Что сказать?"
@@ -148,6 +153,7 @@ exercises:
     explanation_ru: "Can I speak to Tom, please? — так просят позвать человека к телефону."
     units: [LX-00367]
   - order: 6
+    uid: EX-00103
     kind: fill
     stage: transfer
     prompt_ru: "Вы заняты и просите перезвонить. Скажите «Позвони мне позже»."

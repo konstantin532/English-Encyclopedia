@@ -92,6 +92,7 @@ layers:
       **Проверка маленького шага:** *Who is this?* спрашивает, **кто на фото**. *How old is she?* спрашивает **возраст** уже названного человека. Поэтому на первый вопрос можно ответить *This is my sister*, а на второй — *She is twelve*: выбираем ответ по **смыслу вопроса**, а не только по знакомому глаголу **is**.
 exercises:
   - order: 1
+    uid: EX-00032
     kind: choice
     stage: recognition
     prompt_ru: "Как спросить «Кто это?» о человеке на фото?"
@@ -101,6 +102,7 @@ exercises:
     explanation_ru: "Who is this? — who первым, затем is и this. Без is фраза неполная."
     units: [LX-00099, LX-00101]
   - order: 2
+    uid: EX-00033
     kind: fill
     stage: substitution
     prompt_ru: "Покажите на фото брата."
@@ -110,6 +112,7 @@ exercises:
     explanation_ru: "This is my brother. — Это мой брат."
     units: [LX-00088]
   - order: 3
+    uid: EX-00034
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос: «Это твоя мама?»"
@@ -119,6 +122,7 @@ exercises:
     explanation_ru: "Is this your mother? — be выходит вперёд, дальше this your mother."
     units: [LX-00103]
   - order: 4
+    uid: EX-00035
     kind: fill
     stage: transfer
     prompt_ru: "Новое фото: на нём ваша сестра, ей двенадцать. Скажите это двумя короткими фразами."
@@ -129,6 +133,7 @@ exercises:
     explanation_ru: "This is my sister. She is twelve. — сначала показываем, потом говорим she и возраст через be."
     units: [LX-00089, LX-00096, LX-00073]
   - order: 5
+    uid: EX-00036
     kind: choice
     stage: recognition
     prompt_ru: "Дедушке Тома шестьдесят. Как это сказать?"
@@ -138,6 +143,7 @@ exercises:
     explanation_ru: "He is sixty — «Ему 60». Sixteen значит 16: смотрите на окончание -teen и -ty. Для возраста здесь нужен is, не has."
     units: [LX-00273]
   - order: 6
+    uid: EX-00037
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос «Сколько тебе лет?»"

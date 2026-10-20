@@ -96,6 +96,7 @@ layers:
       **Проверка маленького шага:** *I am a nurse* сообщает, **какая у человека профессия**. *I work at a hospital* рассказывает, **где он работает**. Ответы могут сочетаться, но нельзя заменить профессией адрес или адресом профессию. На *What do you do?* сначала назовите **занятие**.
 exercises:
   - order: 1
+    uid: EX-00074
     kind: choice
     stage: recognition
     prompt_ru: "Американец спрашивает: What do you do? Что он хочет узнать?"
@@ -105,6 +106,7 @@ exercises:
     explanation_ru: "What do you do? — вопрос о работе: «Чем вы занимаетесь?»."
     units: [LX-00151]
   - order: 2
+    uid: EX-00075
     kind: fill
     stage: substitution
     prompt_ru: "Мия рассказывает о себе. Вставьте пропущенное слово."
@@ -114,6 +116,7 @@ exercises:
     explanation_ru: "I am a barista — перед профессией ставят a."
     units: [LX-00146]
   - order: 3
+    uid: EX-00076
     kind: build
     stage: production
     prompt_ru: "Соберите фразу: «Я работаю в школе»."
@@ -123,6 +126,7 @@ exercises:
     explanation_ru: "I work at a school. Место работы — с at."
     units: [LX-00143]
   - order: 4
+    uid: EX-00077
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: на встрече вас спрашивают о работе. Вы врач. Ответьте."
@@ -133,6 +137,7 @@ exercises:
     explanation_ru: "I am a doctor — в разговоре I'm a doctor."
     units: [LX-00144, LX-00152]
   - order: 5
+    uid: EX-00078
     kind: choice
     stage: recognition
     prompt_ru: "Как сказать «Он инженер»?"
@@ -142,6 +147,7 @@ exercises:
     explanation_ru: "В полном предложении о профессии в единственном числе нужен определитель: He is an engineer. Перед гласным звуком в engineer выбираем an, а не a."
     units: [LX-00322]
   - order: 6
+    uid: EX-00079
     kind: fill
     stage: transfer
     prompt_ru: "Ваша мама — медсестра, работает в больнице. Скажите это двумя фразами."

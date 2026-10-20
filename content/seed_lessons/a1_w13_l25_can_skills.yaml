@@ -98,6 +98,7 @@ layers:
       **Проверка маленького шага:** *I speak English* описывает факт **владения языком**. *I can speak English* подчёркивает **умение**. Для другого навыка вместо *speak* используйте действие: *I can swim*. После **can** оно остаётся без **to** и без **-s**, даже если речь о *she*.
 exercises:
   - order: 1
+    uid: EX-00140
     kind: choice
     stage: recognition
     prompt_ru: "Как спросить: «Ты говоришь по-русски?»"
@@ -107,6 +108,7 @@ exercises:
     explanation_ru: "Can you speak Russian? — умение спрашивают через can. Можно и Do you speak Russian?"
     units: [LX-00247]
   - order: 2
+    uid: EX-00141
     kind: fill
     stage: substitution
     prompt_ru: "Вас спросили: Can you speak English? Вы умеете. Ответьте коротко."
@@ -116,6 +118,7 @@ exercises:
     explanation_ru: "Yes, I can. — короткий ответ на Can you…?"
     units: [LX-00248]
   - order: 3
+    uid: EX-00142
     kind: build
     stage: production
     prompt_ru: "Соберите: «Научишь меня?»"
@@ -125,6 +128,7 @@ exercises:
     explanation_ru: "Can you teach me? — me, потому что «меня»."
     units: [LX-00240, LX-00249]
   - order: 4
+    uid: EX-00143
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: в поездке вас спрашивают, говорите ли вы по-английски. По условию вы говорите и по-русски, и по-английски. Ответьте коротко; если хотите, добавьте вторую фразу об обоих языках."
@@ -135,6 +139,7 @@ exercises:
     explanation_ru: "На Can you speak English? достаточно Yes, I can. Если вы хотите назвать оба языка, можно добавить I can speak Russian and English. Это образец по условию задания, а не предположение об умениях ученика."
     units: [LX-00239, LX-00243, LX-00244]
   - order: 5
+    uid: EX-00144
     kind: choice
     stage: recognition
     prompt_ru: Она умеет рисовать. Выберите фразу без лишнего окончания или to.
@@ -148,6 +153,7 @@ exercises:
     units:
     - LX-00438
   - order: 6
+    uid: EX-00145
     kind: fill
     stage: transfer
     prompt_ru: 'Вы не поняли вопрос на занятии. Вежливо попросите повторить его: «Можете повторить вопрос, пожалуйста?»'

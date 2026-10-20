@@ -101,6 +101,7 @@ layers:
       **Проверка маленького шага:** *Do you get up at six?* — вопрос «**Да или нет?**», ответ *Yes, I do*. *What time do you get up?* — вопрос «**Во сколько?**», ответ *At six*. Помощник **do** присутствует в обоих, но **тип ответа** задаёт начало вопроса.
 exercises:
   - order: 1
+    uid: EX-00056
     kind: choice
     stage: recognition
     prompt_ru: "Как правильно сказать «Я работаю здесь каждый день»?"
@@ -110,6 +111,7 @@ exercises:
     explanation_ru: "I work — глагол без изменений. am рядом с work лишний, а -s появится только с he и she."
     units: [LX-00128, LX-00137]
   - order: 2
+    uid: EX-00057
     kind: fill
     stage: substitution
     prompt_ru: "Спросите Мию, завтракает ли она. Вставьте слово-помощник."
@@ -119,6 +121,7 @@ exercises:
     explanation_ru: "Do you have breakfast? — do выходит вперёд, а have остаётся как в словаре."
     units: [LX-00138]
   - order: 3
+    uid: EX-00058
     kind: build
     stage: production
     prompt_ru: "Соберите фразу: «Я пью кофе в семь»."
@@ -128,6 +131,7 @@ exercises:
     explanation_ru: "I drink coffee at seven. Время ставят в конец, перед ним at."
     units: [LX-00129, LX-00139]
   - order: 4
+    uid: EX-00059
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: коллега спрашивает, работаете ли вы каждый день. Вы работаете. Ответьте коротко."
@@ -138,6 +142,7 @@ exercises:
     explanation_ru: "Yes, I do. Повторять work не нужно — короткий ответ строится на do."
     units: [LX-00128, LX-00134]
   - order: 5
+    uid: EX-00060
     kind: choice
     stage: recognition
     prompt_ru: "Как по-американски сказать «Я принимаю душ»?"
@@ -147,6 +152,7 @@ exercises:
     explanation_ru: "I take a shower — устойчивое сочетание. Глагол take, перед shower — a."
     units: [LX-00308, LX-00314]
   - order: 6
+    uid: EX-00061
     kind: fill
     stage: transfer
     prompt_ru: "Расскажите о своём вечере двумя фразами: «Я смотрю телевизор. Я рано ложусь спать»."

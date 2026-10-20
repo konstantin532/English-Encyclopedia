@@ -78,6 +78,7 @@ layers:
       **Проверка маленького шага:** *two cookies* — два отдельных печенья; *two coffees* — две **порции** напитка. Если убрать идею порции и говорить о кофе вообще, получим *I like coffee* без множественного **-s**. Сначала определите, **что именно считаете**.
 exercises:
   - order: 1
+    uid: EX-00028
     kind: choice
     stage: recognition
     prompt_ru: "Какое число — 13?"
@@ -87,6 +88,7 @@ exercises:
     explanation_ru: "thirteen — 13; three — 3; twelve — 12."
     units: [LX-00074]
   - order: 2
+    uid: EX-00029
     kind: fill
     stage: substitution
     prompt_ru: "Вы заказываете два чая. Допишите слово."
@@ -96,6 +98,7 @@ exercises:
     explanation_ru: "В кафе считают две порции чая: one tea — two teas. Поэтому слово tea в значении порции здесь становится множественным с -s; о чае как напитке вообще можно сказать I like tea."
     units: [LX-00063, LX-00055]
   - order: 3
+    uid: EX-00030
     kind: build
     stage: production
     prompt_ru: "Соберите заказ: «Два кофе и один чай, пожалуйста»."
@@ -105,6 +108,7 @@ exercises:
     explanation_ru: "Two coffees and one tea, please. У coffees есть -s, у tea после one — нет."
     units: [LX-00063, LX-00062, LX-00059]
   - order: 4
+    uid: EX-00031
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: вас четверо, и всем нужен чай. Закажите."

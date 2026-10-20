@@ -93,6 +93,7 @@ layers:
       Шесть заданий: понять ответ водителя, купить билеты, собрать вопрос о расписании, спросить направление, различить прибытие и отправление, найти станцию в новом городе.
 exercises:
   - order: 1
+    uid: EX-00152
     kind: choice
     stage: recognition
     prompt_ru: "Водитель отвечает: Yes, it does. О чём вы его спросили?"
@@ -102,6 +103,7 @@ exercises:
     explanation_ru: "Does this bus go…? — Yes, it does. Короткий ответ повторяет помощник does."
     units: [LX-00255]
   - order: 2
+    uid: EX-00153
     kind: fill
     stage: substitution
     prompt_ru: "Вы покупаете два билета. Допишите."
@@ -111,6 +113,7 @@ exercises:
     explanation_ru: "Two tickets, please — после two существительное с -s."
     units: [LX-00253, LX-00257]
   - order: 3
+    uid: EX-00154
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос: «Во сколько следующий автобус?»"
@@ -120,6 +123,7 @@ exercises:
     explanation_ru: "What time is the next bus? — next значит «следующий»."
     units: [LX-00258]
   - order: 4
+    uid: EX-00155
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: в поездке вам нужно в парк. Спросите водителя, идёт ли автобус до парка."
@@ -130,6 +134,7 @@ exercises:
     explanation_ru: "Does this bus go to the park? Можно начать с Excuse me."
     units: [LX-00252, LX-00255]
   - order: 5
+    uid: EX-00156
     kind: choice
     stage: recognition
     prompt_ru: 'В расписании написано: The train arrives at six. Что это значит?'
@@ -145,6 +150,7 @@ exercises:
     - LX-00472
     - LX-00473
   - order: 6
+    uid: EX-00157
     kind: fill
     stage: transfer
     prompt_ru: 'В другом городе вы ищете железнодорожную станцию. Спросите: «Где железнодорожная станция?»'
