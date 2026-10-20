@@ -188,8 +188,9 @@
     script.classList.toggle("speech-spoken", mode === "spoken");
     choices.forEach((choice) => { choice.checked = choice.value === mode; });
   };
-  let mode = "written";
-  try { if (localStorage.getItem("ee-speech-mode") === "spoken") mode = "spoken"; } catch (e) { /* нет хранилища */ }
+  // Живая речь по умолчанию: «It's my box», как говорят люди. Полная форма — по выбору.
+  let mode = "spoken";
+  try { if (localStorage.getItem("ee-speech-mode") === "written") mode = "written"; } catch (e) { /* нет хранилища */ }
   apply(mode);
   choices.forEach((choice) => choice.addEventListener("change", () => {
     apply(choice.value);
