@@ -30,7 +30,7 @@ async function documentBox(locator){return locator.evaluate(el=>{const r=el.getB
 async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));}
 (async()=>{
  await fs.mkdir(output,{recursive:true});
- const report={baseline:'7d27a5aee85b3431d380b03b215d758bc86bb4f4',screens:[],checks:[],errors:[]};
+ const report={baseline:process.env.ATLAS_BASELINE||'before-worktree',screens:[],checks:[],errors:[]};
  const servers=[];let browser;
  try{
   servers.push(await serve(process.env.ATLAS_BEFORE_DIR,8123));servers.push(await serve(root,8124));
@@ -93,7 +93,7 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
   await animated.screenshot({path:path.join(output,'home-1440-full-motion.png')});await full.close();
   report.checks.push('Full-motion discovery opens');
   assert.equal(report.errors.length,0,'Uncaught JavaScript errors');report.passed=true;
- }catch(error){report.passed=false;report.failure=error.stack;process.exitCode=1;console.error(error);}
+ }catch(error){report.passed=false;report.failure=error.stack;process.exitCode=1;console.error(error);console.log('::error::Atlas: '+String(error&&error.message||error).replace(/\n/g,' '));}
  finally{
   await fs.writeFile(path.join(output,'report.json'),JSON.stringify(report,null,2));
   if(browser)await browser.close();servers.forEach(server=>server.kill());

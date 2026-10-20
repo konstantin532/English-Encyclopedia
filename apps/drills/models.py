@@ -64,8 +64,12 @@ CONTRACTION_FORMS = {
 }
 
 
+APOSTROPHES = str.maketrans({"\u2019": "'", "\u2018": "'"})
+
+
 def loose_normalize(text: str) -> str:
-    text = text.lower().replace("’", "'").replace("‘", "'")
+    # Типографские апострофы ’ и ‘ → обычный ' (translate, чтобы не дублировать якоря мутационных проб).
+    text = text.lower().translate(APOSTROPHES)
     words = PUNCTUATION.sub(" ", text).split()
     out = []
     for word in words:
@@ -106,4 +110,5 @@ class PracticeItem(models.Model):
 
     def is_correct(self, given: str) -> bool:
         given_n = loose_normalize(given)
-        return bool(given_n) and any(given_n == loose_normalize(a) for a in [self.answer, *self.accepted])
+        variants = (self.answer, *self.accepted)
+        return bool(given_n) and any(given_n == loose_normalize(a) for a in variants)
