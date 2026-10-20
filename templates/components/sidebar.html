@@ -8,6 +8,7 @@
     <a href="{% url 'lexicon:list' %}"{% if path|slice:':7' == '/words/' %} aria-current="page"{% endif %}><span aria-hidden="true">▤</span>Слова</a>
     <a href="{% url 'taxonomy:legend' %}"{% if path|slice:':9' == '/markers/' %} aria-current="page"{% endif %}><span aria-hidden="true">✳</span>Маркеры</a>
     <a href="{% url 'stories:map' %}"{% if path|slice:':9' == '/stories/' %} aria-current="page"{% endif %}><span aria-hidden="true">▧</span>Истории и стихи</a>
+    <a href="{% url 'core:classics' %}"{% if path == '/classics/' %} aria-current="page"{% endif %}><span aria-hidden="true">❦</span>Классика</a>
     {% if user.is_authenticated %}
       <a href="{% url 'learning:review' %}"{% if path == '/learning/review/' %} aria-current="page"{% endif %}><span aria-hidden="true">↻</span>Повторение{% if REVIEW_DUE %} <span class="badge">{{ REVIEW_DUE }}</span>{% endif %}</a>
       <a href="{% url 'learning:dashboard' %}"{% if path == '/learning/' %} aria-current="page"{% endif %}><span aria-hidden="true">▥</span>Мой прогресс</a>
