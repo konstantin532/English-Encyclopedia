@@ -66,6 +66,8 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument("--preserve-admin-edits", action="store_true", help="Не перезаписывать истории и уроки, сохранённые через админку")
+        parser.add_argument("--allow-progress-loss", action="store_true",
+                            help="Разрешить удалить упражнения, у которых есть ответы учеников (история ответов пропадёт)")
 
     def _preserve_admin(self, obj):
         return obj is not None and (obj._meta.app_label, obj._meta.model_name, str(obj.pk)) in getattr(self, "admin_edited", set())
@@ -73,6 +75,7 @@ class Command(BaseCommand):
     def handle(self, *args, **opts):
         root = Path(settings.CONTENT_DIR)
         self.seen_units = {}
+        self.allow_progress_loss = bool(opts.get("allow_progress_loss"))
         self.admin_edited = set()
         if opts.get("preserve_admin_edits"):
             from django.contrib.admin.models import LogEntry, ADDITION, CHANGE
@@ -91,6 +94,20 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS(
             f"Единиц: {n_units}, уроков: {n_lessons}, историй с текстом: {n_stories}, стихов с текстом: {n_poems}, "
             f"недель с диалогом: {n_weeks}"))
+
+    def _guard_learner_data(self, where: str, exercises) -> None:
+        """Удаление упражнения каскадом стирает ответы и повторения учеников. Без явного флага — стоп."""
+        if self.allow_progress_loss:
+            return
+        from apps.learning.models import ExerciseAttempt, MistakeReview
+
+        used = sorted({*ExerciseAttempt.objects.filter(exercise__in=exercises).values_list("exercise__order", flat=True),
+                       *MistakeReview.objects.filter(exercise__in=exercises).values_list("exercise__order", flat=True)})
+        if used:
+            raise CommandError(
+                f"{where}: упражнения {', '.join(map(str, used))} убраны из файла, но у них есть ответы учеников. "
+                "Удаление сотрёт их историю. Верните упражнения или запустите load_content --allow-progress-loss, "
+                "если потеря истории осознанная. Номер (order) упражнения нельзя переиспользовать для другого задания.")
 
     def _check_markup(self, where: str, *texts: str):
         for text in texts:
@@ -180,7 +197,9 @@ class Command(BaseCommand):
         for layer in data["layers"]:
             self._check_markup(f"{path.name}: слой {layer['number']}", layer["body"])
             LessonLayer.objects.update_or_create(lesson=lesson, number=layer["number"], defaults={"body": layer["body"]})
-        lesson.exercises.exclude(order__in=[e["order"] for e in data.get("exercises", [])]).delete()
+        stale = lesson.exercises.exclude(order__in=[e["order"] for e in data.get("exercises", [])])
+        self._guard_learner_data(path.name, stale)
+        stale.delete()
         for ex in data.get("exercises", []):
             self._check_markup(f"{path.name}: упражнение {ex['order']}", ex.get("prompt_en", ""))
             obj, _ = Exercise.objects.update_or_create(

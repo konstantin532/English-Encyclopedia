@@ -1,6 +1,15 @@
+import os
+
+import dj_database_url
+
 from .base import *  # noqa: F401,F403
 
-DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}}
+# Быстрый прогон — SQLite в памяти. CI дополнительно гоняет тесты на настоящем PostgreSQL
+# (TEST_DATABASE_URL): блокировки select_for_update и ограничения ведут себя только там как в продакшене.
+if os.getenv("TEST_DATABASE_URL"):
+    DATABASES = {"default": dj_database_url.parse(os.environ["TEST_DATABASE_URL"])}
+else:
+    DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}}
 PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5PasswordHasher"]
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
