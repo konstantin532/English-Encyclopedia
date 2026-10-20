@@ -68,6 +68,8 @@ class SpeechStudioIntegrationTests(TestCase):
         root = Path(__file__).resolve().parents[1] / "content" / "seed_weeks"
         week9 = yaml.safe_load((root / "a1_w09.yaml").read_text(encoding="utf-8"))
         week13 = yaml.safe_load((root / "a1_w13.yaml").read_text(encoding="utf-8"))
-        self.assertIn("в hello", week9["twister"]["tip_ru"])
+        # Week 9 trains the American glides /oʊ/ and /aɪ/ (Open at nine, close at five).
+        self.assertIn("«оу»", week9["twister"]["tip_ru"])
+        self.assertIn("/oʊ/", week9["twister"]["goal_ru"])
         self.assertIn("Безударное can", week13["twister"]["tip_ru"])
         self.assertNotIn("почти не произносят", week13["twister"]["goal_ru"])

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Классика · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap classics" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <h1>Классика</h1>
+    <p>Скороговорки и стихи, которые знает каждый американец: их слышат в школе, в фильмах и мультфильмах. Слова здесь сложнее программы A1 — у каждой строки есть перевод, у трудных слов — сноска. Это бонус к курсу: читайте и слушайте для удовольствия.</p>
+    <p class="classics-voice-note" data-voice-note>Кнопка «Послушать» читает текст голосом вашего браузера. Качество голоса зависит от устройства; лучше всего звучит в Chrome и Safari.</p>
+  </header>
+
+  <section class="section" aria-labelledby="tw-t" style="padding-top: var(--space-6)">
+    <div class="section-head"><h2 id="tw-t">Легендарные скороговорки</h2>
+      <p>Начните медленно, потом ускоряйтесь. Каждая бьёт по звуку, которого нет в русском.</p>
+    </div>
+    <ol class="classics-list" role="list">
+      {% for t in twisters %}
+      <li class="classics-card" id="{{ t.slug }}">
+        <p class="classics-text" lang="en">{{ t.text }}</p>
+        <p class="classics-ru">{{ t.ru }}</p>
+        <p class="classics-ipa" lang="en">{{ t.ipa }}</p>
+        <div class="classics-actions" data-speak-text="{{ t.text }}">
+          <button type="button" class="btn btn-quiet btn-small" data-speak-rate="0.6">Послушать медленно</button>
+          <button type="button" class="btn btn-quiet btn-small" data-speak-rate="1">В темпе</button>
+        </div>
+        <p><strong>Звук:</strong> {{ t.sounds }}. {{ t.why_ru }}</p>
+        <p><strong>Как произносить:</strong> {{ t.tip_ru }}</p>
+        <p class="classics-glossary">{% for w, ru in t.glossary.items %}<span><span lang="en">{{ w }}</span> — {{ ru }}</span>{% endfor %}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="section" aria-labelledby="po-t" style="padding-top: var(--space-6)">
+    <div class="section-head"><h2 id="po-t">Классические стихи</h2>
+      <p>Настоящая американская поэзия и детские песенки, на которых выросли поколения.</p>
+    </div>
+    {% for p in poems %}
+    <article class="classics-card classics-poem" id="{{ p.slug }}" aria-labelledby="p-{{ p.slug }}">
+      <h3 id="p-{{ p.slug }}"><span lang="en">{{ p.title }}</span> <small>{{ p.author }}{% if p.year %}, {{ p.year }}{% endif %}</small></h3>
+      <p>{{ p.about_ru }}</p>
+      <div class="classics-actions" data-speak-text="{% for line in p.lines %}{{ line.0 }} {% endfor %}">
+        <button type="button" class="btn btn-quiet btn-small" data-speak-rate="0.7">Послушать медленно</button>
+        <button type="button" class="btn btn-quiet btn-small" data-speak-rate="0.95">В темпе</button>
+      </div>
+      <table class="classics-lines">
+        <tbody>{% for line in p.lines %}<tr><td lang="en">{{ line.0 }}</td><td>{{ line.1 }}</td></tr>{% endfor %}</tbody>
+      </table>
+      <p><strong>Что здесь из курса:</strong> {{ p.learn_ru }}</p>
+      <p class="classics-glossary">{% for w, ru in p.glossary.items %}<span><span lang="en">{{ w }}</span> — {{ ru }}</span>{% endfor %}</p>
+    </article>
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}<link rel="stylesheet" href="{% static 'css/classics.css' %}"><script src="{% static 'js/classics-speech.js' %}" defer></script>{% endblock %}
