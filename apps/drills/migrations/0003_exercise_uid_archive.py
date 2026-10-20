@@ -1,3 +1,4 @@
+import django.db.models.manager
 from django.db import migrations, models
 
 
@@ -11,6 +12,13 @@ class Migration(migrations.Migration):
         migrations.AlterModelOptions(
             name="exercise",
             options={"base_manager_name": "all_objects", "ordering": ["lesson", "order"]},
+        ),
+        migrations.AlterModelManagers(
+            name="exercise",
+            managers=[
+                ("objects", django.db.models.manager.Manager()),
+                ("all_objects", django.db.models.manager.Manager()),
+            ],
         ),
         migrations.AddField(
             model_name="exercise",
