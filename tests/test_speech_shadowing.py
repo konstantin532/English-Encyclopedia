@@ -1,4 +1,5 @@
 """Audio-guided training exposes only available files and does not claim that TTS was reviewed."""
+from apps.poems.models import Poem
 from django.test import TestCase
 from django.urls import reverse
 
@@ -43,9 +44,12 @@ class SpeechAudioScaffoldTests(TestCase):
                 page = self.client.get(reverse("stories:poem", args=[number]))
                 self.assertEqual(page.status_code, 200)
                 self.assertContains(page, "speech-stress.js")
-                self.assertContains(page, "data-stress-entry", count=16)
-                self.assertContains(page, "data-stress-plain=", count=16)
-                self.assertContains(page, "data-stress-model=", count=16)
+                # One annotated stress prompt per poem line, whatever the poem length.
+                lines = len([l for l in Poem.objects.get(number=number).body.splitlines() if l.strip()])
+                self.assertGreaterEqual(lines, 12)
+                self.assertContains(page, "data-stress-entry", count=lines)
+                self.assertContains(page, "data-stress-plain=", count=lines)
+                self.assertContains(page, "data-stress-model=", count=lines)
                 self.assertContains(page, "текстовая тренировка внимания к ритму")
 
     def test_reviewed_reference_is_marked_verified_not_automatically_scored(self):
