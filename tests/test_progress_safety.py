@@ -46,3 +46,27 @@ class ProgressSafetyTests(TestCase):
     def test_explicit_flag_allows_removal(self):
         self.load_without_exercise_5("--allow-progress-loss")
         self.assertFalse(Exercise.objects.filter(pk=self.exercise.pk).exists())
+
+
+class FieldLengthTests(TestCase):
+    """SQLite не проверяет длину строк, PostgreSQL (продакшен) — проверяет. Ловим заранее."""
+
+    @classmethod
+    def setUpTestData(cls):
+        ensure_content()
+
+    def test_loaded_content_fits_varchar_columns(self):
+        from django.apps import apps
+        from django.db import models
+
+        too_long = []
+        for model in apps.get_models():
+            if model._meta.app_label not in {"lexicon", "lessons", "drills", "stories", "poems", "curriculum", "taxonomy"}:
+                continue
+            fields = [f for f in model._meta.concrete_fields if isinstance(f, models.CharField) and f.max_length]
+            for row in model.objects.values("pk", *[f.name for f in fields]):
+                for f in fields:
+                    value = row[f.name] or ""
+                    if len(value) > f.max_length:
+                        too_long.append(f"{model.__name__}.{f.name} #{row['pk']}: {len(value)} > {f.max_length}")
+        self.assertEqual(too_long, [])
