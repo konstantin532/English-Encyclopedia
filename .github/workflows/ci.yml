@@ -40,7 +40,7 @@ jobs:
       # Failed test names and messages also appear as annotations on the run page.
       - run: |
           set -o pipefail
-          uv run pytest -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR) " pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }
+          uv run pytest -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR|SUBFAIL|SUBERROR|[A-Z]+FAIL) |^E  +" pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }
       - run: node --test tests/js/*.test.cjs
       - run: |
           uv run python manage.py migrate -v0
@@ -69,4 +69,4 @@ jobs:
       - run: uv run python manage.py collectstatic --noinput --verbosity 0
       - run: |
           set -o pipefail
-          uv run pytest -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR) " pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }
+          uv run pytest -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR|SUBFAIL|SUBERROR|[A-Z]+FAIL) |^E  +" pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }
