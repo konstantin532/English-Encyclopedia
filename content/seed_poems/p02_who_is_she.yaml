@@ -1,75 +1,88 @@
 number: 2
 target_units:
-- LX-00057
-- LX-00089
+- LX-00263
+- LX-00272
 - LX-00088
-- LX-00002
-- LX-00003
-- LX-00090
-- LX-00091
-- LX-00055
-- LX-00056
+- LX-00089
+- LX-00094
+- LX-00095
+- LX-00096
+- LX-00099
+- LX-00100
 body: |
-  [A3]Here[/] [D1]is[/] [T1]a[/] [S2]photo[/].
-  [T9]Who[/] [D1]is[/] [T8]she[/]?
-  [T8]She[/] [D1]is[/] [T3]my[/] [S1]sister[/].
-  [T8]She[/] [D1]is[/] [N1]three[/]!
+  [T9]Who[/] [D1]is[/] [T2]this[/]? [T9]Who[/] [D1]is[/] [T2]this[/]?
+  [T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/]!
+  [T9]Who[/] [D1]is[/] [T2]that[/]? [T9]Who[/] [D1]is[/] [T2]that[/]?
+  [T2]That[/] [D1]is[/] [T3]my[/] [S1]brother[/]!
 
-  [C1]And[/] [T9]who[/] [D1]is[/] [T8]he[/]?
-  [D1]Is[/] [T8]he[/] [N1]ten[/]?
-  [T8]He[/] [D1]is[/] [T3]my[/] [S1]brother[/].
-  [O2]Sorry[/]? [A2]Again[/]?
+  [A6]How[/] [J2]old[/] [D1]is[/] [T8]he[/]? [A6]How[/] [J2]old[/] [D1]is[/] [T8]he[/]?
+  [T8]He[/] [D1]is[/] [N1]ten[/], [N1]ten[/], [N1]ten[/]!
+  [A6]How[/] [J2]old[/] [D1]is[/] [T8]she[/]? [A6]How[/] [J2]old[/] [D1]is[/] [T8]she[/]?
+  [O2]Sorry[/]? [A2]Again[/]? [A2]Again[/]?
 
-  [T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/],
-  [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/],
-  [T3]my[/] [S1]grandmother[/],
-  [T3]my[/] [S1]grandfather[/]!
+  [D1]Is[/] [T2]this[/] [T3]your[/] [S1]father[/]?
+  [O4]Yes[/], [T8]he[/] [D1]is[/]!
+  [T8]He[/] [D1]is[/] [N5]fifty[/],
+  [C1]and[/] [T8]he[/] [D1]is[/] [J4]happy[/]!
 
-  [T3]Your[/] [S1]family[/] [D1]is[/] [J3]nice[/]!
-  [S3]Coffee[/] [C1]or[/] [S3]tea[/]?
-  [S3]Tea[/], [O8]please[/]! [C1]And[/] [S3]cookies[/] —
-  [N1]one[/], [N1]two[/], [N1]three[/]!
+  [C1]And[/] [T9]who[/] [D1]is[/] [T2]this[/]?
+  [T2]This[/] [D1]is[/] [T1]the[/] [S1]baby[/]!
+  [D1]Is[/] [T1]the[/] [S1]baby[/] [T3]your[/] [S1]sister[/]?
+  [O4]No[/], [T8]I[/] [D1]am[/] [T1]the[/] [S1]baby[/]!
+
+  [S1]Mother[/], [S1]father[/],
+  [S1]sister[/], [S1]brother[/],
+  [T8]we[/] [D1]are[/] [T1]a[/] [S1]family[/],
+  [T1]a[/] [J1]big[/], [J4]happy[/] [S1]family[/]!
 pronunciation:
-- stress: HERE is a PHOTO.
-  ipa: /ˈhɪr ɪz ə ˈfoʊt̬oʊ/
-- stress: who is SHE?
-  ipa: /hu ɪz ˈʃi/
-- stress: she is my SISTER.
-  ipa: /ʃi ɪz maɪ ˈsɪstɚ/
-- stress: she is THREE!
-  ipa: /ʃi ɪz ˈθri/
-- stress: and who is HE?
-  ipa: /ən hu ɪz ˈhi/
-- stress: is he TEN?
-  ipa: /ɪz hi ˈtɛn/
-- stress: he is my BROTHER.
-  ipa: /hi ɪz maɪ ˈbrʌðɚ/
-- stress: SORRY? AGAIN?
-  ipa: /ˈsɑri əˈɡɛn/
-- stress: this is my MOTHER
-  ipa: /ðɪs ɪz maɪ ˈmʌðɚ/
-- stress: this is my FATHER
-  ipa: /ðɪs ɪz maɪ ˈfɑːðɚ/
-- stress: my GRANDMOTHER
-  ipa: /maɪ ˈɡrænˌmʌðɚ/
-- stress: my GRANDFATHER!
-  ipa: /maɪ ˈɡrænˌfɑðɚ/
-- stress: your FAMILY is NICE!
-  ipa: /jɚ ˈfæməli ɪz ˈnaɪs/
-- stress: COFFEE or TEA?
-  ipa: /ˈkɔːfi ɚ ˈti/
-- stress: TEA | PLEASE! and COOKIES
-  ipa: /ˈti | ˈpliz ən ˈkʊkiz/
-- stress: ONE | TWO | THREE!
-  ipa: /ˈwʌn | ˈtu | ˈθri/
+- stress: WHO is THIS | WHO is THIS?
+  ipa: /ˈhu ɪz ˈðɪs | ˈhu ɪz ˈðɪs/
+- stress: THIS is my MOTHER!
+  ipa: /ˈðɪs ɪz maɪ ˈmʌðɚ/
+- stress: WHO is THAT | WHO is THAT?
+  ipa: /ˈhu ɪz ˈðæt | ˈhu ɪz ˈðæt/
+- stress: THAT is my BROTHER!
+  ipa: /ˈðæt ɪz maɪ ˈbrʌðɚ/
+- stress: HOW OLD is he | HOW OLD is he?
+  ipa: /ˈhaʊ ˈoʊld ɪz hi | ˈhaʊ ˈoʊld ɪz hi/
+- stress: he is TEN | TEN | TEN!
+  ipa: /hi ɪz ˈtɛn | ˈtɛn | ˈtɛn/
+- stress: HOW OLD is she | HOW OLD is she?
+  ipa: /ˈhaʊ ˈoʊld ɪz ʃi | ˈhaʊ ˈoʊld ɪz ʃi/
+- stress: SORRY | AGAIN | AGAIN?
+  ipa: /ˈsɑri | əˈɡɛn | əˈɡɛn/
+- stress: is THIS your FATHER?
+  ipa: /ɪz ˈðɪs jɚ ˈfɑðɚ/
+- stress: YES | he IS!
+  ipa: /ˈjes | hi ˈɪz/
+- stress: he is FIFTY
+  ipa: /hi ɪz ˈfɪfti/
+- stress: and he is HAPPY!
+  ipa: /ən hi ɪz ˈhæpi/
+- stress: and WHO is THIS?
+  ipa: /ən ˈhu ɪz ˈðɪs/
+- stress: THIS is the BABY!
+  ipa: /ˈðɪs ɪz ðə ˈbeɪbi/
+- stress: is the BABY your SISTER?
+  ipa: /ɪz ðə ˈbeɪbi jɚ ˈsɪstɚ/
+- stress: NO | I am the BABY!
+  ipa: /ˈnoʊ | aɪ əm ðə ˈbeɪbi/
+- stress: MOTHER | FATHER
+  ipa: /ˈmʌðɚ | ˈfɑðɚ/
+- stress: SISTER | BROTHER
+  ipa: /ˈsɪstɚ | ˈbrʌðɚ/
+- stress: we are a FAMILY
+  ipa: /wi ɚ ə ˈfæməli/
+- stress: a BIG | HAPPY FAMILY!
+  ipa: /ə ˈbɪɡ | ˈhæpi ˈfæməli/
 gaps:
-- line: 3
-  word: sister
+- line: 2
+  word: mother
 - line: 6
   word: ten
-- line: 8
-  word: Again
 - line: 11
-  word: grandmother
-- line: 16
-  word: three
+  word: fifty
+- line: 14
+  word: baby
+- line: 20
+  word: family

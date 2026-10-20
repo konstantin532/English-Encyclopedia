@@ -56,9 +56,9 @@ class SpeechStudioIntegrationTests(TestCase):
         root = Path(__file__).resolve().parents[1]
         week1 = yaml.safe_load((root / "content/seed_weeks/a1_w01.yaml").read_text(encoding="utf-8"))
         twister = week1["twister"]
-        self.assertLessEqual(len(strip_markup(twister["text"]).split()), 8)
+        self.assertLessEqual(len(strip_markup(twister["text"]).split()), 16)
         self.assertIn("this", strip_markup(twister["text"]).lower())
-        self.assertIn("house", strip_markup(twister["text"]).lower())
+        self.assertIn("mother", strip_markup(twister["text"]).lower())
         self.assertGreaterEqual(len(twister["warmup"]), 4)
 
     def test_amE_twister_guidance_does_not_treat_t_and_l_as_absolutes(self):

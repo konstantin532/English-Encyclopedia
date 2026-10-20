@@ -1,75 +1,89 @@
 number: 3
 target_units:
 - LX-00124
-- LX-00130
-- LX-00129
-- LX-00072
-- LX-00128
-- LX-00134
-- LX-00131
-- LX-00133
+- LX-00125
 - LX-00127
+- LX-00128
+- LX-00129
+- LX-00132
+- LX-00133
+- LX-00134
+- LX-00303
+- LX-00307
 body: |
-  [T8]I[/] [D2]get[/] [X3]up[/] [P1]at[/] [N1]seven[/],
-  [T8]I[/] [D1]have[/] [S3]breakfast[/] [P1]at[/] [N1]ten[/],
-  [T8]I[/] [D2]drink[/] [S3]coffee[/] [P1]at[/] [N1]eleven[/] —
-  [C1]and[/] [S3]coffee[/] [A2]again[/]!
+  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?
+  [T8]It[/] [D1]is[/] [N3]five[/], [T8]it[/] [D1]is[/] [N3]five[/]!
+  [T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/],
+  [T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/]!
 
-  [D1]Do[/] [T8]you[/] [D2]work[/] [T5]every[/] [S7]day[/]?
-  [O4]Yes[/], [T8]I[/] [D1]do[/]!
-  [T8]I[/] [D2]work[/] [P1]at[/] [T1]the[/] [S4]cafe[/].
-  [C1]And[/] [T8]you[/]? [C1]And[/] [T8]you[/]?
+  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?
+  [T8]It[/] [D1]is[/] [N3]seven o'clock[/]!
+  [T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/],
+  [C1]and[/] [T8]I[/] [D4]go[/] [P2]to[/] [D2]work[/].
 
-  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?
-  [D1]Is[/] [T8]it[/] [N1]ten[/]?
-  [S3]Coffee[/] [S7]time[/]!
+  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Twelve[/]!
+  [T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/].
+  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N1]Ten[/]?
   [S3]Coffee[/] [A2]again[/]!
 
-  [T8]I[/] [D4]go[/] [S2]home[/] [P1]at[/] [N1]seven[/],
-  [T8]I[/] [D1]have[/] [T3]my[/] [S2]phone[/],
-  [T3]my[/] [S2]book[/], [T3]my[/] [S3]coffee[/] —
-  [T8]I[/] [D1]am[/] [S2]home[/]!
+  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Seven[/]!
+  [T1]A[/] [J1]big[/] [S6]cat[/] [D4]comes[/] [P1]in[/].
+  [T5]Every[/] [S7]day[/] [P3]at[/] [N3]seven[/]
+  [T1]the[/] [S6]cat[/] [D2]drinks[/] [T3]my[/] [S3]milk[/]!
+
+  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [A2]Late[/]!
+  [T8]I[/] [D4]go[/] [P2]to[/] [S2]bed[/].
+  [J3]Good[/] [S7]evening[/], [S6]cat[/]!
+  [J3]Good[/] [S7]evening[/], [S2]bed[/]!
 pronunciation:
-- stress: I GET UP at SEVEN
-  ipa: /aɪ ˈɡɛt ˈʌp ət ˈsɛvən/
-- stress: I have BREAKFAST at TEN
-  ipa: /aɪ hæv ˈbrɛkfəst ət ˈtɛn/
-- stress: I DRINK COFFEE at ELEVEN
-  ipa: /aɪ ˈdrɪŋk ˈkɔːfi ət ɪˈlɛvən/
-- stress: and COFFEE AGAIN!
-  ipa: /ən ˈkɔːfi əˈɡɛn/
-- stress: do you WORK every DAY?
-  ipa: /də ju ˈwɝk ɛvri ˈdeɪ/
-- stress: YES | I DO!
-  ipa: /ˈjes | aɪ ˈdu/
-- stress: I WORK at the CAFE.
-  ipa: /aɪ ˈwɝk ət ðə kæˈfeɪ/
-- stress: and YOU? and YOU?
-  ipa: /ən ˈju ən ˈju/
-- stress: what TIME is it?
-  ipa: /wʌt ˈtaɪm ɪz ɪt/
-- stress: is it TEN?
-  ipa: /ɪz ɪt ˈtɛn/
-- stress: COFFEE TIME!
-  ipa: /ˈkɔːfi ˈtaɪm/
+- stress: WHAT TIME is it | WHAT TIME is it?
+  ipa: /ˈwʌt ˈtaɪm ɪz ɪt | ˈwʌt ˈtaɪm ɪz ɪt/
+- stress: it is FIVE | it is FIVE!
+  ipa: /ɪt ɪz ˈfaɪv | ɪt ɪz ˈfaɪv/
+- stress: I GET UP at FIVE
+  ipa: /aɪ ˈɡɛt ˈʌp ət ˈfaɪv/
+- stress: I GET UP at FIVE!
+  ipa: /aɪ ˈɡɛt ˈʌp ət ˈfaɪv/
+- stress: WHAT TIME is it | WHAT TIME is it?
+  ipa: /ˈwʌt ˈtaɪm ɪz ɪt | ˈwʌt ˈtaɪm ɪz ɪt/
+- stress: it is SEVEN O'CLOCK!
+  ipa: /ɪt ɪz ˈsɛvən əˈklɑk/
+- stress: I DRINK COFFEE at SEVEN
+  ipa: /aɪ ˈdrɪŋk ˈkɔːfi ət ˈsɛvən/
+- stress: and I GO to WORK.
+  ipa: /ən aɪ ˈɡoʊ tə ˈwɝk/
+- stress: WHAT TIME is it | TWELVE!
+  ipa: /ˈwʌt ˈtaɪm ɪz ɪt | ˈtwɛlv/
+- stress: I EAT at TWELVE.
+  ipa: /aɪ ˈit ət ˈtwɛlv/
+- stress: WHAT TIME is it | TEN?
+  ipa: /ˈwʌt ˈtaɪm ɪz ɪt | ˈtɛn/
 - stress: COFFEE AGAIN!
   ipa: /ˈkɔːfi əˈɡɛn/
-- stress: I GO HOME at SEVEN
-  ipa: /aɪ ˈɡoʊ ˈhoʊm ət ˈsɛvən/
-- stress: I have my PHONE
-  ipa: /aɪ hæv maɪ ˈfoʊn/
-- stress: my BOOK | my COFFEE
-  ipa: /maɪ ˈbʊk | maɪ ˈkɔːfi/
-- stress: I am HOME!
-  ipa: /aɪ əm ˈhoʊm/
+- stress: WHAT TIME is it | SEVEN!
+  ipa: /ˈwʌt ˈtaɪm ɪz ɪt | ˈsɛvən/
+- stress: a BIG CAT COMES in.
+  ipa: /ə ˈbɪɡ ˈkæt ˈkʌmz ɪn/
+- stress: EVERY DAY at SEVEN
+  ipa: /ˈɛvri ˈdeɪ ət ˈsɛvən/
+- stress: the CAT DRINKS my MILK!
+  ipa: /ðə ˈkæt ˈdrɪŋks maɪ ˈmɪlk/
+- stress: WHAT TIME is it | LATE!
+  ipa: /ˈwʌt ˈtaɪm ɪz ɪt | ˈleɪt/
+- stress: I GO to BED.
+  ipa: /aɪ ˈɡoʊ tə ˈbɛd/
+- stress: GOOD EVENING | CAT!
+  ipa: /ˈɡʊd ˈivnɪŋ | ˈkæt/
+- stress: GOOD EVENING | BED!
+  ipa: /ˈɡʊd ˈivnɪŋ | ˈbɛd/
 gaps:
-- line: 1
+- line: 3
+  word: five
+- line: 7
   word: seven
-- line: 2
-  word: breakfast
-- line: 5
-  word: every
+- line: 10
+  word: twelve
 - line: 11
   word: time
-- line: 16
-  word: home
+- line: 20
+  word: bed

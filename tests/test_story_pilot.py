@@ -509,7 +509,7 @@ class WeekFiveTests(WeekContentMixin, TestCase):
         self.assertContains(response, "Продавщица")
         self.assertContains(response, "How")
         self.assertContains(response, "dollars")
-        self.assertContains(response, "eggs")
+        self.assertContains(response, "cheese")  # скороговорка недели: cheese / cheap против milk / is
 
     def test_hook_leads_to_story_two(self):
         scene = WeekScene.objects.get(week__level__code="A1", week__number=5)

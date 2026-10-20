@@ -38,7 +38,7 @@ class OralReviewTests(TestCase):
     def test_real_course_content_only_and_fragment_counts(self):
         self.assertEqual(content_details(self.key)["count"], 6)
         self.assertGreaterEqual(content_details("twister:1")["count"], 2)
-        self.assertEqual(content_details("poem:1")["count"], 16)
+        self.assertEqual(content_details("poem:1")["count"], 20)
         for key in ("lesson:fake-lesson", "twister:999", "poem:999", "lesson:../../secret",
                     "lesson:a!b", "poem:0", "poem:01", "a" * 200):
             self.assertIsNone(content_details(key), key)
@@ -102,7 +102,7 @@ class OralReviewTests(TestCase):
             ("lesson:not-real", 0, "good"), (self.key, -1, "good"),
             (self.key, 6, "good"), (self.key, True, "good"),
             (self.key, "0", "good"), (self.key, 0, "perfect"),
-            ("twister:1", 999, "again"), ("poem:1", 16, "hard"),
+            ("twister:1", 999, "again"), ("poem:1", 20, "hard"),
         ]:
             with self.subTest(key=key, index=index, rating=rating):
                 self.assertEqual(self.send(key, index, rating).status_code, 400)

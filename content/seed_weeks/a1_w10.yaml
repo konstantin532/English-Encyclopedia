@@ -48,17 +48,18 @@ script:
 twister:
   number: 10
   series: sounds
-  text: '[D2]Reading[/], [D4]walking[/], [D2]playing[/] — [A1]never[/] [P1]in[/] [T1]the[/] [S7]morning[/]!'
-  ipa: /ˈridɪŋ ˈwɔkɪŋ ˈpleɪɪŋ ˈnɛvɚ ɪn ðə ˈmɔrnɪŋ/
+  text: '[D2]Reading[/] [P1]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P1]in[/] [T1]the[/] [S7]morning[/], [D2]playing[/] [P3]on[/] [S7]Sunday[/], [A1]never[/], [A1]never[/], [A1]never[/]!'
+  ru: Читаю вечером, гуляю утром, играю в воскресенье — никогда, никогда, никогда!
+  ipa: /ˈridɪŋ ɪn ðə ˈivnɪŋ | ˈwɔkɪŋ ɪn ðə ˈmɔrnɪŋ | ˈpleɪɪŋ ɑn ˈsʌnˌdeɪ | ˈnɛvɚ | ˈnɛvɚ | ˈnɛvɚ/
   focus_sounds:
   - ng
   source: original
-  goal_ru: Носовой ŋ в -ing против обычного n (never, in). Не добавляйте в конце «г».
-  tip_ru: 'ŋ: спинка языка прижата к нёбу сзади, звук идёт в нос, кончик языка внизу. n: кончик языка у верхних зубов. Проверка: на ŋ кончик языка свободен.'
+  goal_ru: Носовой ŋ (reading, evening, walking, morning, playing) против обычного n (in, never, Sunday).
+  tip_ru: 'ŋ — задняя часть языка прижата к нёбу, звук идёт в нос, в конце нет «г». n — кончик языка за верхними зубами. Не говорите «ридинг»: «ридин» с носовым концом.'
   warmup:
-  - '[D2]reading[/] — [A1]never[/]'
-  - '[D2]reading[/], [D4]walking[/]'
-  - '[D2]reading[/], [D4]walking[/], [D2]playing[/]'
+  - '[D2]reading[/], [P1]in[/]'
+  - '[D2]reading[/] [P1]in[/] [T1]the[/] [S7]evening[/]'
+  - '[D2]Reading[/] [P1]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P1]in[/] [T1]the[/] [S7]morning[/].'
   - '[T8]I[/] [D3]like[/] [D2]reading[/].'
   target_line: I like reading.
   own_ru: 'Скажите, что вы любите делать: I like … -ing.'

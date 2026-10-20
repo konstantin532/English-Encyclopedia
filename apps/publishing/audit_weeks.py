@@ -200,8 +200,9 @@ def audit_twister(r, tw: TongueTwister) -> None:
         if stray:
             r.errors.append(f"{where}: незнакомые слова: {', '.join(stray)}.")
         n = len(text_tokens(tw.text))
-        if not 3 <= n <= 8:
-            r.errors.append(f"{where}: слов {n}, для серии sounds нужно 3–8.")
+        # Нарастающая скороговорка: часть 1 → часть 2 → финал; не короче 6 и не длиннее 16 слов.
+        if not 6 <= n <= 16:
+            r.errors.append(f"{where}: слов {n}, для серии sounds нужно 6–16.")
 
 
 def audit_twister_method(r, where: str, tw: TongueTwister) -> None:

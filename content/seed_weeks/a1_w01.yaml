@@ -49,18 +49,18 @@ script:
 twister:
   number: 1
   series: sounds
-  text: '[T2]This[/] [S2]house[/] [D1]is[/] [J3]nice[/]. [D1]Is[/] [T2]this[/] [S2]house[/] [J3]nice[/]?'
-  ipa: /ðɪs ˈhaʊs ɪz ˈnaɪs | ɪz ðɪs ˈhaʊs ˈnaɪs/
+  text: '[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]family[/], [T2]this[/], [T2]this[/], [T2]this[/]!'
+  ru: Это моя мама, это мой папа, это моя семья — это, это, это!
+  ipa: /ˈðɪs ɪz maɪ ˈmʌðɚ | ˈðɪs ɪz maɪ ˈfɑðɚ | ˈðɪs ɪz maɪ ˈfæməli | ˈðɪs | ˈðɪs | ˈðɪs/
   focus_sounds:
   - dh
   source: original
-  goal_ru: 'Переключение th /ð/ — s — z: this, house, is. Русскому языку хочется сказать «зис».'
-  tip_ru: 'th в this: кончик языка слегка между зубами, воздух идёт непрерывно, голос звучит. s в house — язык уходит за зубы, голоса нет. z в is — как s, но с голосом.'
+  goal_ru: 'Звонкое th /ð/ восемь раз подряд: this, mother, father. Русскому языку хочется сказать «зис» и «мазэр».'
+  tip_ru: Кончик языка слегка между зубами, воздух идёт непрерывно, голос звучит. Не прикусывайте язык и не превращайте звук в «з» или «д». Начните медленно, потом ускоряйтесь на this, this, this.
   warmup:
-  - '[T2]this[/]'
-  - '[T2]this[/] [S2]house[/]'
-  - '[T2]This[/] [S2]house[/] [D1]is[/] [J3]nice[/].'
-  - '[D1]Is[/] [T2]this[/] [S2]house[/] [J3]nice[/]?'
-  - '[T2]This[/] [S2]house[/] [D1]is[/] [J2]new[/].'
+  - '[T2]this[/], [T2]this[/], [T2]this[/]'
+  - '[T2]this[/] [D1]is[/] [T3]my[/] [S1]mother[/]'
+  - '[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/].'
+  - '[T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/].'
   target_line: This is my new house.
   own_ru: 'Скажите о своём доме или комнате: This room is… / This house is…'

@@ -1,76 +1,89 @@
 number: 5
 target_units:
-- LX-00196
-- LX-00200
 - LX-00194
-- LX-00201
-- LX-00205
 - LX-00195
+- LX-00196
 - LX-00197
-- LX-00204
+- LX-00198
+- LX-00200
+- LX-00201
 - LX-00202
-- LX-00193
+- LX-00203
+- LX-00204
 body: |
-  [T8]I[/] [A1]always[/] [D2]read[/]
-  [P3]on[/] [S7]Saturdays[/].
-  [T8]I[/] [D3]like[/] [D2]reading[/] —
-  [T8]it[/] [D1]is[/] [T3]my[/] [S7]day[/]!
+  [P3]On[/] [S7]Saturdays[/] [T8]I[/] [A1]always[/] [D2]read[/],
+  [T8]I[/] [A1]always[/] [D2]read[/], [T8]I[/] [A1]always[/] [D2]read[/]!
+  [P3]On[/] [S7]Sundays[/] [T8]I[/] [A1]always[/] [D4]walk[/],
+  [T8]I[/] [A1]always[/] [D4]walk[/], [T8]I[/] [A1]always[/] [D4]walk[/]!
 
-  [T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/]
-  [P3]on[/] [S7]Sundays[/].
-  [T8]I[/] [D3]like[/] [D4]walking[/] —
-  [T3]my[/] [D4]walking[/] [S7]day[/]!
+  [C1]And[/] [T8]you[/], [S1]Tom[/]? [D1]Do[/] [T8]you[/] [D3]like[/] [D4]walking[/]?
+  [O4]No[/], [T8]I[/] [A1]never[/] [D4]walk[/]!
+  [T8]I[/] [D3]like[/] [D2]playing[/], [T8]I[/] [D3]like[/] [S10]music[/],
+  [T8]I[/] [D2]play[/] [T1]the[/] [S2]guitar[/], [C1]and[/] [S1]Box[/] [D3]likes[/] [T8]it[/]!
 
-  [C1]And[/] [T8]you[/], [S1]Tom[/]? [D1]Do[/] [T8]you[/] [D4]walk[/]?
-  [A1]Never[/]! [A1]Never[/]! [O4]No[/]!
-  [T8]I[/] [D2]play[/] [T1]the[/] [S2]guitar[/],
+  [D1]Do[/] [T8]you[/] [D3]like[/] [D2]reading[/]? [T8]I[/] [D3]like[/] [D2]reading[/]!
+  [D1]Do[/] [T8]you[/] [D3]like[/] [D4]walking[/]? [A1]Sometimes[/]!
+  [D1]Do[/] [T8]you[/] [D3]like[/] [D2]playing[/]? [A1]Always[/], [A1]always[/]!
+  [D1]Do[/] [T8]you[/] [D3]like[/] [T1]the[/] [S7]morning[/]? [A1]Never[/], [A1]never[/]!
+
+  [S7]Saturday[/]: [T1]a[/] [S2]book[/], [T1]a[/] [S2]book[/]!
+  [S7]Sunday[/]: [T1]a[/] [S2]jacket[/] [C1]and[/] [T1]the[/] [S4]park[/]!
+  [C1]And[/] [S1]Tom[/]? [T1]The[/] [S2]guitar[/], [T1]the[/] [S2]guitar[/],
   [C1]and[/] [S1]Box[/] [D5]says[/] [O1]hello[/]!
 
-  [S7]Saturday[/], [S7]Sunday[/] —
-  [D2]read[/], [D4]walk[/] [C1]and[/] [D2]play[/]!
-  [T5]Every[/] [S7]weekend[/]
-  [D1]is[/] [T1]a[/] [J4]happy[/] [S7]day[/]!
+  [D2]Reading[/] [P3]on[/] [S7]Saturdays[/],
+  [D4]walking[/] [P3]on[/] [S7]Sundays[/],
+  [S1]Tom[/] [C1]and[/] [T1]the[/] [S2]guitar[/],
+  [D2]playing[/], [D2]playing[/], [D2]playing[/]!
 pronunciation:
-- stress: I ALWAYS READ
-  ipa: /aɪ ˈɔlweɪz ˈrid/
-- stress: on SATURDAYS.
-  ipa: /ɑn ˈsæt̬ɚˌdeɪz/
-- stress: I LIKE READING
-  ipa: /aɪ ˈlaɪk ˈridɪŋ/
-- stress: it is my DAY!
-  ipa: /ɪt ɪz maɪ ˈdeɪ/
-- stress: I WALK in the PARK
-  ipa: /aɪ ˈwɔk ɪn ðə ˈpɑrk/
-- stress: on SUNDAYS.
-  ipa: /ɑn ˈsʌnˌdeɪz/
-- stress: I LIKE WALKING
-  ipa: /aɪ ˈlaɪk ˈwɔkɪŋ/
-- stress: my WALKING DAY!
-  ipa: /maɪ ˈwɔkɪŋ ˈdeɪ/
-- stress: and you | TOM? do you WALK?
-  ipa: /ən ju | ˈtɑm də ju ˈwɔk/
-- stress: NEVER! NEVER! NO!
-  ipa: /ˈnɛvɚ ˈnɛvɚ ˈnoʊ/
-- stress: I PLAY the GUITAR
-  ipa: /aɪ ˈpleɪ ðə ɡɪˈtɑr/
+- stress: on SATURDAYS I ALWAYS READ
+  ipa: /ɑn ˈsæt̬ɚˌdeɪz aɪ ˈɔlweɪz ˈrid/
+- stress: I ALWAYS READ | I ALWAYS READ!
+  ipa: /aɪ ˈɔlweɪz ˈrid | aɪ ˈɔlweɪz ˈrid/
+- stress: on SUNDAYS I ALWAYS WALK
+  ipa: /ɑn ˈsʌnˌdeɪz aɪ ˈɔlweɪz ˈwɔk/
+- stress: I ALWAYS WALK | I ALWAYS WALK!
+  ipa: /aɪ ˈɔlweɪz ˈwɔk | aɪ ˈɔlweɪz ˈwɔk/
+- stress: and YOU | TOM | do you LIKE WALKING?
+  ipa: /ən ˈju | ˈtɑm | də jə ˈlaɪk ˈwɔkɪŋ/
+- stress: NO | I NEVER WALK!
+  ipa: /ˈnoʊ | aɪ ˈnɛvɚ ˈwɔk/
+- stress: I LIKE PLAYING | I LIKE MUSIC
+  ipa: /aɪ ˈlaɪk ˈpleɪɪŋ | aɪ ˈlaɪk ˈmjuzɪk/
+- stress: I PLAY the GUITAR | and BOX LIKES it!
+  ipa: /aɪ ˈpleɪ ðə ɡɪˈtɑr | ən ˈbɑks ˈlaɪks ɪt/
+- stress: do you LIKE READING | I LIKE READING!
+  ipa: /də jə ˈlaɪk ˈridɪŋ | aɪ ˈlaɪk ˈridɪŋ/
+- stress: do you LIKE WALKING | SOMETIMES!
+  ipa: /də jə ˈlaɪk ˈwɔkɪŋ | ˈsʌmtaɪmz/
+- stress: do you LIKE PLAYING | ALWAYS | ALWAYS!
+  ipa: /də jə ˈlaɪk ˈpleɪɪŋ | ˈɔlweɪz | ˈɔlweɪz/
+- stress: do you LIKE the MORNING | NEVER | NEVER!
+  ipa: /də jə ˈlaɪk ðə ˈmɔrnɪŋ | ˈnɛvɚ | ˈnɛvɚ/
+- stress: SATURDAY | a BOOK | a BOOK!
+  ipa: /ˈsæt̬ɚˌdeɪ | ə ˈbʊk | ə ˈbʊk/
+- stress: SUNDAY | a JACKET and the PARK!
+  ipa: /ˈsʌnˌdeɪ | ə ˈdʒækɪt ən ðə ˈpɑrk/
+- stress: and TOM | the GUITAR | the GUITAR
+  ipa: /ən ˈtɑm | ðə ɡɪˈtɑr | ðə ɡɪˈtɑr/
 - stress: and BOX SAYS HELLO!
   ipa: /ən ˈbɑks ˈsɛz həˈloʊ/
-- stress: SATURDAY | SUNDAY
-  ipa: /ˈsæt̬ɚˌdeɪ | ˈsʌnˌdeɪ/
-- stress: READ | WALK and PLAY!
-  ipa: /ˈrid | ˈwɔk ən ˈpleɪ/
-- stress: every WEEKEND
-  ipa: /ɛvri ˈwikˌɛnd/
-- stress: is a HAPPY DAY!
-  ipa: /ɪz ə ˈhæpi ˈdeɪ/
+- stress: READING on SATURDAYS
+  ipa: /ˈridɪŋ ɑn ˈsæt̬ɚˌdeɪz/
+- stress: WALKING on SUNDAYS
+  ipa: /ˈwɔkɪŋ ɑn ˈsʌnˌdeɪz/
+- stress: TOM and the GUITAR
+  ipa: /ˈtɑm ən ðə ɡɪˈtɑr/
+- stress: PLAYING | PLAYING | PLAYING!
+  ipa: /ˈpleɪɪŋ | ˈpleɪɪŋ | ˈpleɪɪŋ/
 gaps:
-- line: 1
-  word: always
-- line: 5
-  word: park
+- line: 2
+  word: read
+- line: 6
+  word: never
 - line: 10
-  word: Never
-- line: 11
-  word: guitar
+  word: Sometimes
 - line: 14
-  word: play
+  word: jacket
+- line: 20
+  word: playing

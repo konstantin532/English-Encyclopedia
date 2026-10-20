@@ -49,17 +49,18 @@ script:
 twister:
   number: 8
   series: sounds
-  text: '[D4]Turn[/] [A3]right[/], [D4]turn[/] [A3]left[/], [A3]right[/], [A3]left[/], [A3]left[/], [A3]right[/]!'
-  ipa: /ˈtɝn ˈraɪt ˈtɝn ˈlɛft ˈraɪt ˈlɛft ˈlɛft ˈraɪt/
+  text: '[D4]Turn[/] [A3]right[/], [D4]turn[/] [A3]left[/], [A3]right[/], [A3]left[/], [A3]left[/], [A3]right[/]. [T1]The[/] [A3]right[/] [S2]door[/] [D1]is[/] [P3]on[/] [T1]the[/] [A3]left[/]!'
+  ru: Поверните направо, налево, направо, налево, налево, направо. Нужная дверь — слева!
+  ipa: /ˈtɝn ˈraɪt | ˈtɝn ˈlɛft | ˈraɪt | ˈlɛft | ˈlɛft | ˈraɪt | ðə ˈraɪt ˈdɔr ɪz ɑn ðə ˈlɛft/
   focus_sounds:
   - r
   source: original
-  goal_ru: Американское r (right) против l (left). Языку приходится всё время менять положение.
-  tip_ru: 'r: кончик языка поднят и чуть загнут назад, но ничего не касается — без русского раската. l: кончик языка прижат к бугоркам за верхними зубами.'
+  goal_ru: 'Переключение r и l в быстром темпе. right — «правильный» и «направо»: в последней фразе это игра слов.'
+  tip_ru: r — язык не касается нёба, губы чуть вперёд. l — кончик языка прижат к бугоркам за верхними зубами. Меняйте положение языка чётко, без смазывания.
   warmup:
-  - '[A3]right[/] — [A3]left[/]'
-  - '[D4]turn[/] [A3]right[/]'
+  - '[A3]right[/], [A3]left[/]'
   - '[D4]turn[/] [A3]right[/], [D4]turn[/] [A3]left[/]'
+  - '[D4]Turn[/] [A3]right[/], [D4]turn[/] [A3]left[/], [A3]right[/], [A3]left[/], [A3]left[/], [A3]right[/].'
   - '[D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/].'
   target_line: Go straight and turn left.
   own_ru: 'Объясните путь от входной двери до кухни: Go straight and turn…'

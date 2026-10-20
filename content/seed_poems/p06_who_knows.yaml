@@ -1,75 +1,85 @@
 number: 6
 target_units:
 - LX-00225
-- LX-00237
+- LX-00226
 - LX-00227
-- LX-00238
 - LX-00229
-- LX-00180
-- LX-00218
-- LX-00217
-- LX-00150
+- LX-00237
+- LX-00238
 body: |
-  [T9]There[/] [D1]is[/] [T1]a[/] [S9]letter[/],
-  [T8]it[/] [D1]is[/] [J2]white[/].
-  [T9]There[/] [D1]is[/] [T4]no[/] [S9]address[/].
-  [D1]Is[/] [T8]it[/] [A3]right[/]?
+  [T1]A[/] [J2]white[/] [S9]letter[/], [T1]a[/] [J2]white[/] [S9]letter[/]
+  [P1]in[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]!
+  [O4]No[/] [S9]name[/], [O4]no[/] [S9]address[/],
+  [O4]no[/] [S2]stamp[/] [P3]on[/] [T1]the[/] [S9]letter[/].
 
-  [T9]There[/] [D1]is[/] [N1]one[/] [S9]word[/],
+  [T9]Who[/] [D1]is[/] [S1]Rose[/]? [T9]Who[/] [D1]is[/] [S1]Rose[/]?
+  [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/].
+  [D1]Does[/] [S1]Tom[/] [D6]know[/]? [D1]Does[/] [S1]Mia[/] [D6]know[/]?
+  [O4]No[/], [O4]no[/], [O4]no[/]!
+
+  [T1]The[/] [S4]post office[/] [D1]does[/] [X1]not[/] [D6]know[/],
+  [T1]the[/] [J2]old[/] [S2]mailbox[/] [D1]does[/] [X1]not[/] [D9]get[/] [S9]letters[/].
+  [A1]Never[/], [A1]never[/], [A1]never[/],
+  [O4]no[/] [S9]letters[/], [O4]no[/] [S9]letters[/]!
+
+  [N1]One[/] [J2]white[/] [S9]letter[/],
   [N1]one[/] [S9]word[/]: [S1]Rose[/].
   [T9]Who[/] [D1]is[/] [S1]Rose[/]?
   [T9]Who[/] [D6]knows[/]? [T9]Who[/] [D6]knows[/]?
 
-  [T1]The[/] [S4]post[/] [S4]office[/]
-  [D1]does[/] [X1]not[/] [D6]know[/].
-  [T1]The[/] [J2]old[/] [S2]mailbox[/]?
-  [O4]No[/], [O4]no[/], [O4]no[/]!
-
   [T8]I[/] [D7]cannot[/] [D2]sleep[/],
-  [T8]it[/] [D1]is[/] [S7]night[/].
+  [T8]it[/] [D1]is[/] [A2]late[/] [P3]at[/] [S7]night[/].
   [T8]I[/] [D1]have[/] [T1]the[/] [S9]letter[/],
   [J2]white[/], [J2]white[/], [J2]white[/].
 pronunciation:
-- stress: there is a LETTER
-  ipa: /ðɛr ɪz ə ˈlɛt̬ɚ/
-- stress: it is WHITE.
-  ipa: /ɪt ɪz ˈwaɪt/
-- stress: there is no ADDRESS.
-  ipa: /ðɛr ɪz noʊ ˈædrɛs/
-- stress: is it RIGHT?
-  ipa: /ɪz ɪt ˈraɪt/
-- stress: there is ONE WORD
-  ipa: /ðɛr ɪz ˈwʌn ˈwɝd/
-- stress: 'ONE WORD: ROSE.'
-  ipa: /ˈwʌn ˈwɝd ˈroʊz/
-- stress: who is ROSE?
-  ipa: /hu ɪz ˈroʊz/
-- stress: who KNOWS? who KNOWS?
-  ipa: /hu ˈnoʊz hu ˈnoʊz/
-- stress: the POST OFFICE
-  ipa: /ðə ˈpoʊst ˈɔfɪs/
-- stress: does NOT KNOW.
-  ipa: /dəz ˈnɑt ˈnoʊ/
-- stress: the OLD MAILBOX?
-  ipa: /ðə ˈoʊld ˈmeɪlbɑks/
+- stress: a WHITE LETTER | a WHITE LETTER
+  ipa: /ə ˈwaɪt ˈlɛt̬ɚ | ə ˈwaɪt ˈlɛt̬ɚ/
+- stress: in the OLD MAILBOX!
+  ipa: /ɪn ðə ˈoʊld ˈmeɪlbɑks/
+- stress: NO NAME | NO ADDRESS
+  ipa: /ˈnoʊ ˈneɪm | ˈnoʊ ˈædrɛs/
+- stress: NO STAMP on the LETTER.
+  ipa: /ˈnoʊ ˈstæmp ɑn ðə ˈlɛt̬ɚ/
+- stress: WHO is ROSE | WHO is ROSE?
+  ipa: /ˈhu ɪz ˈroʊz | ˈhu ɪz ˈroʊz/
+- stress: I do NOT KNOW.
+  ipa: /aɪ də ˈnɑt ˈnoʊ/
+- stress: does TOM KNOW | does MIA KNOW?
+  ipa: /dəz ˈtɑm ˈnoʊ | dəz ˈmiə ˈnoʊ/
 - stress: NO | NO | NO!
   ipa: /ˈnoʊ | ˈnoʊ | ˈnoʊ/
-- stress: I CANNOT SLEEP
-  ipa: /aɪ ˈkænɑt ˈslip/
-- stress: it is NIGHT.
-  ipa: /ɪt ɪz ˈnaɪt/
+- stress: the POST OFFICE does NOT KNOW
+  ipa: /ðə ˈpoʊst ˈɔfɪs dəz ˈnɑt ˈnoʊ/
+- stress: the OLD MAILBOX does NOT GET LETTERS.
+  ipa: /ðə ˈoʊld ˈmeɪlbɑks dəz ˈnɑt ˈɡɛt ˈlɛt̬ɚz/
+- stress: NEVER | NEVER | NEVER
+  ipa: /ˈnɛvɚ | ˈnɛvɚ | ˈnɛvɚ/
+- stress: NO LETTERS | NO LETTERS!
+  ipa: /ˈnoʊ ˈlɛt̬ɚz | ˈnoʊ ˈlɛt̬ɚz/
+- stress: ONE WHITE LETTER
+  ipa: /ˈwʌn ˈwaɪt ˈlɛt̬ɚ/
+- stress: ONE WORD | ROSE.
+  ipa: /ˈwʌn ˈwɝd | ˈroʊz/
+- stress: WHO is ROSE?
+  ipa: /ˈhu ɪz ˈroʊz/
+- stress: WHO KNOWS | WHO KNOWS?
+  ipa: /ˈhu ˈnoʊz | ˈhu ˈnoʊz/
+- stress: I cannot SLEEP
+  ipa: /aɪ kænɑt ˈslip/
+- stress: it is LATE at NIGHT.
+  ipa: /ɪt ɪz ˈleɪt ət ˈnaɪt/
 - stress: I have the LETTER
-  ipa: /aɪ hæv ðə ˈlɛt̬ɚ/
+  ipa: /aɪ həv ðə ˈlɛt̬ɚ/
 - stress: WHITE | WHITE | WHITE.
   ipa: /ˈwaɪt | ˈwaɪt | ˈwaɪt/
 gaps:
 - line: 2
-  word: white
-- line: 3
-  word: address
-- line: 8
-  word: knows
-- line: 13
-  word: sleep
+  word: mailbox
+- line: 6
+  word: know
+- line: 10
+  word: letters
 - line: 16
+  word: knows
+- line: 20
   word: white

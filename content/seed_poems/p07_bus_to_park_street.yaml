@@ -1,76 +1,85 @@
 number: 7
 target_units:
-- LX-00253
 - LX-00252
-- LX-00064
-- LX-00184
+- LX-00253
 - LX-00254
-- LX-00161
-- LX-00186
-- LX-00241
-- LX-00229
-- LX-00157
+- LX-00016
+- LX-00018
+- LX-00019
 body: |
-  [N1]Two[/] [S2]tickets[/], [O8]please[/] —
-  [N1]one[/] [P5]for[/] [T8]me[/],
-  [N1]one[/] [P5]for[/] [T8]you[/],
-  [C1]and[/] [T1]the[/] [S4]bus[/] [P1]at[/] [N1]three[/]!
+  [D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]?
+  [O4]Yes[/], [T8]it[/] [D1]does[/]! [O4]Yes[/], [T8]it[/] [D1]does[/]!
+  [N1]Two[/] [S2]tickets[/], [O8]please[/],
+  [N1]one[/] [P5]for[/] [T8]me[/], [N1]one[/] [P5]for[/] [T8]you[/]!
 
-  [D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/]
-  [P2]to[/] [S4]Park[/] [S4]Street[/]?
-  [T9]Who[/] [D1]is[/] [P1]on[/] [S4]Park[/] [S4]Street[/]?
-  [T9]Who[/] [D7]can[/] [T8]I[/] [D2]meet[/]?
+  [T1]The[/] [S4]bus[/], [T1]the[/] [S4]bus[/],
+  [T1]the[/] [J1]big[/], [J1]big[/] [S4]bus[/]!
+  [S4]Stop[/], [S4]stop[/], [S4]bus[/] [S4]stop[/],
+  [T1]the[/] [J8]last[/] [S4]bus[/] [S4]stop[/]!
 
-  [A3]Here[/] [D1]is[/] [T1]the[/] [J8]last[/] [S4]stop[/],
-  [T1]the[/] [J2]old[/] [S2]photo[/] [S4]shop[/].
-  [D1]Is[/] [T8]it[/] [J2]open[/]? [O4]No[/].
-  [D2]Stop[/], [D2]stop[/], [D2]stop[/].
+  [A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]?
+  [N6]Two dollars[/], [N1]two[/]!
+  [T9]What[/] [S7]time[/] [D1]is[/] [T1]the[/] [J8]next[/] [S4]bus[/]?
+  [P3]At[/] [N1]six[/], [P3]at[/] [N1]six[/]!
 
-  [A6]Why[/]? [A6]Why[/]? [A6]Why[/]?
-  [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/].
-  [S1]Rose[/], [S1]Rose[/], [S1]Rose[/] —
-  [A6]where[/] [D1]do[/] [T8]you[/] [D4]go[/]?
+  [S4]Park[/] [S4]Street[/], [S4]Park[/] [S4]Street[/],
+  [T1]an[/] [J2]old[/] [S2]photo[/] [S4]shop[/].
+  [D1]Is[/] [T8]it[/] [D2]open[/]? [O4]No[/].
+  [T8]It[/] [D1]is[/] [S7]Saturday[/]. [S4]Stop[/].
+
+  [S1]Rose[/], [S1]Rose[/], [S1]Rose[/],
+  [A6]where[/] [D1]do[/] [T8]you[/] [D2]live[/]?
+  [S4]Park[/] [S4]Street[/]? [S4]Park[/] [S4]Street[/]?
+  [T8]We[/] [D1]do[/] [X1]not[/] [D6]know[/]!
 pronunciation:
+- stress: does THIS BUS GO to PARK STREET?
+  ipa: /dəz ˈðɪs ˈbʌs ˈɡoʊ tə ˈpɑrk ˈstrit/
+- stress: YES | it DOES | YES | it DOES!
+  ipa: /ˈjes | ɪt ˈdʌz | ˈjes | ɪt ˈdʌz/
 - stress: TWO TICKETS | PLEASE
   ipa: /ˈtu ˈtɪkɪts | ˈpliz/
-- stress: ONE for ME
-  ipa: /ˈwʌn fɚ ˈmi/
-- stress: ONE for YOU
-  ipa: /ˈwʌn fɚ ˈju/
-- stress: and the BUS at THREE!
-  ipa: /ən ðə ˈbʌs ət ˈθri/
-- stress: does this BUS GO
-  ipa: /dəz ðɪs ˈbʌs ˈɡoʊ/
-- stress: to PARK STREET?
-  ipa: /tə ˈpɑrk ˈstrit/
-- stress: who is on PARK STREET?
-  ipa: /hu ɪz ɑn ˈpɑrk ˈstrit/
-- stress: who can I MEET?
-  ipa: /hu kən aɪ ˈmit/
-- stress: HERE is the LAST STOP
-  ipa: /ˈhɪr ɪz ðə ˈlæst ˈstɑp/
-- stress: the OLD PHOTO SHOP.
-  ipa: /ðə ˈoʊld ˈfoʊt̬oʊ ˈʃɑp/
-- stress: is it OPEN? NO.
-  ipa: /ɪz ɪt ˈoʊpən ˈnoʊ/
-- stress: STOP | STOP | STOP.
-  ipa: /ˈstɑp | ˈstɑp | ˈstɑp/
-- stress: WHY? WHY? WHY?
-  ipa: /ˈwaɪ ˈwaɪ ˈwaɪ/
-- stress: I do NOT KNOW.
-  ipa: /aɪ də ˈnɑt ˈnoʊ/
+- stress: ONE FOR me | ONE FOR YOU!
+  ipa: /ˈwʌn ˈfɔr mi | ˈwʌn ˈfɔr ˈju/
+- stress: the BUS | the BUS
+  ipa: /ðə ˈbʌs | ðə ˈbʌs/
+- stress: the BIG | BIG BUS!
+  ipa: /ðə ˈbɪɡ | ˈbɪɡ ˈbʌs/
+- stress: STOP | STOP | BUS STOP
+  ipa: /ˈstɑp | ˈstɑp | ˈbʌs ˈstɑp/
+- stress: the LAST BUS STOP!
+  ipa: /ðə ˈlæst ˈbʌs ˈstɑp/
+- stress: HOW MUCH is a TICKET?
+  ipa: /ˈhaʊ ˈmʌtʃ ɪz ə ˈtɪkɪt/
+- stress: TWO DOLLARS | TWO!
+  ipa: /ˈtu ˈdɑlɚz | ˈtu/
+- stress: WHAT TIME is the NEXT BUS?
+  ipa: /ˈwʌt ˈtaɪm ɪz ðə ˈnɛkst ˈbʌs/
+- stress: at SIX | at SIX!
+  ipa: /ət ˈsɪks | ət ˈsɪks/
+- stress: PARK STREET | PARK STREET
+  ipa: /ˈpɑrk ˈstrit | ˈpɑrk ˈstrit/
+- stress: an OLD PHOTO SHOP.
+  ipa: /ən ˈoʊld ˈfoʊt̬oʊ ˈʃɑp/
+- stress: is it OPEN | NO.
+  ipa: /ɪz ɪt ˈoʊpən | ˈnoʊ/
+- stress: it is SATURDAY | STOP.
+  ipa: /ɪt ɪz ˈsæt̬ɚˌdeɪ | ˈstɑp/
 - stress: ROSE | ROSE | ROSE
   ipa: /ˈroʊz | ˈroʊz | ˈroʊz/
-- stress: WHERE do you GO?
-  ipa: /ˈwɛr də ju ˈɡoʊ/
+- stress: WHERE do you LIVE?
+  ipa: /ˈwɛr də jə ˈlɪv/
+- stress: PARK STREET | PARK STREET?
+  ipa: /ˈpɑrk ˈstrit | ˈpɑrk ˈstrit/
+- stress: we do NOT KNOW!
+  ipa: /wi də ˈnɑt ˈnoʊ/
 gaps:
-- line: 1
+- line: 3
   word: tickets
-- line: 4
-  word: three
-- line: 9
+- line: 6
+  word: bus
+- line: 8
   word: stop
-- line: 11
-  word: open
 - line: 14
+  word: shop
+- line: 20
   word: know
