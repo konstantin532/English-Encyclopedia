@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Удаление аккаунта · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap"><div class="form-page">
+  {% if deleted %}
+  <h1>Аккаунт удалён</h1>
+  <p>Ваш аккаунт и вся история обучения — прогресс слов, ответы, повторения и цели — удалены без возможности восстановления.</p>
+  <p><a class="btn btn-primary" href="{% url 'core:home' %}">На главную</a></p>
+  {% else %}
+  <h1>Удалить аккаунт</h1>
+  <p>Будут удалены <strong>навсегда</strong>: аккаунт, прогресс слов, ответы на упражнения, отложенные повторения, цели недель и тренировки речи. Восстановить их будет нельзя.</p>
+  <p>Перед удалением можно <a href="{% url 'accounts:my_data' %}">скачать все свои данные</a> одним файлом.</p>
+  <form method="post" novalidate>{% csrf_token %}
+    {% if error %}<ul class="errorlist"><li>{{ error }}</li></ul>{% endif %}
+    <p><label for="del-password">Пароль</label><br><input id="del-password" type="password" name="password" autocomplete="current-password" required></p>
+    <p><label for="del-confirm">Впишите слово УДАЛИТЬ</label><br><input id="del-confirm" name="confirm" autocomplete="off" required></p>
+    <button class="btn btn-primary" type="submit">Удалить аккаунт навсегда</button>
+    <a class="btn btn-quiet" href="{% url 'learning:dashboard' %}">Отмена</a>
+  </form>
+  {% endif %}
+</div></div>
+{% endblock %}

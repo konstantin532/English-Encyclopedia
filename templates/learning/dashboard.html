@@ -77,5 +77,9 @@
     <ul class="toc">{% for m in mistakes %}<li><a href="{% url 'lessons:detail' m.exercise.lesson.slug %}#practice">{{ m.exercise.prompt_ru }}</a> <span class="uid">ваш ответ: {{ m.answer }}</span></li>{% endfor %}</ul>
   </section>
   {% endif %}
+  <section class="section" aria-labelledby="data-t" style="padding-top: var(--space-6)">
+    <div class="section-head"><h2 id="data-t">Ваши данные</h2><p>Всё, что сайт хранит о вашем обучении, принадлежит вам.</p></div>
+    <p><a class="btn btn-quiet btn-small" href="{% url 'accounts:my_data' %}">Скачать мои данные</a> <a class="btn btn-quiet btn-small" href="{% url 'accounts:delete_account' %}">Удалить аккаунт</a></p>
+  </section>
 </div>
 {% endblock %}
