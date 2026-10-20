@@ -1,82 +1,100 @@
 number: 5
-characters: [Anna, Tom]
-grammar_ru: "there is / there are; притяжательное 's; вопросы Is it…?, Who is…?; behind и другие предлоги места"
-prediction_ru: "Посмотрите на название и описания картинок. Чья это семья на старом фото? И что написано на обороте?"
+characters:
+- Anna
+- Tom
+grammar_ru: there is / there are; притяжательное 's; вопросы Is it…?, Who is…?; behind и другие предлоги места
+prediction_ru: Посмотрите на название и описания картинок. Чья это семья на старом фото? И что написано на обороте?
 visual_cues:
-  - "Субботнее утро. Анна отодвигает от стены тяжёлый старый шкаф. За ним в пыли лежит фотография."
-  - "Старое чёрно-белое фото: мама, папа и шестеро детей у крыльца. На обороте — аккуратная надпись чернилами."
-new_units: [LX-00259, LX-00260, LX-00261, LX-00262]
-# Текст истории = реплики по порядку. body собирается из script автоматически.
+- Субботнее утро. Анна и Том отодвигают от стены тяжёлый старый шкаф. За ним в пыли лежит фотография.
+- 'Старое чёрно-белое фото: мама, папа и шестеро детей у крыльца. На обороте — аккуратная надпись чернилами.'
+new_units:
+- LX-00259
+- LX-00260
+- LX-00261
+- LX-00262
 script:
-  - speaker: anna
-    kind: narration
-    emotion: neutral
-    music: morning
-    text: "[T8]It[/] [D1]is[/] [S7]Saturday[/]. [T8]I[/] [D4]move[/] [T1]the[/] [J2]old[/] [S2]cupboard[/]."
-    spoken: "[T8]It[/][D1]'s[/] [S7]Saturday[/]. [T8]I[/] [D4]move[/] [T1]the[/] [J2]old[/] [S2]cupboard[/]."
-  - speaker: anna
-    kind: narration
-    emotion: surprised
-    music: mystery
-    text: "[T9]There[/] [D1]is[/] [T1]a[/] [S2]photo[/] [P1]behind[/] [T1]the[/] [S2]cupboard[/]!"
-    spoken: "[T9]There[/][D1]'s[/] [T1]a[/] [S2]photo[/] [P1]behind[/] [T1]the[/] [S2]cupboard[/]!"
-  - speaker: anna
-    kind: narration
-    emotion: neutral
-    text: "[T8]It[/] [D1]is[/] [T1]an[/] [J2]old[/] [S2]photo[/]. [T9]There[/] [D1]is[/] [T1]a[/] [J1]big[/] [S1]family[/] [P1]in[/] [T1]the[/] [S2]photo[/]."
-    spoken: "[T8]It[/][D1]'s[/] [T1]an[/] [J2]old[/] [S2]photo[/]. [T9]There[/][D1]'s[/] [T1]a[/] [J1]big[/] [S1]family[/] [P1]in[/] [T1]the[/] [S2]photo[/]."
-  - speaker: anna
-    kind: narration
-    emotion: neutral
-    text: "[T9]There[/] [D1]is[/] [T1]a[/] [S1]mother[/], [T1]a[/] [S1]father[/], [C1]and[/] [N1]six[/] [S1]children[/]."
-    spoken: "[T9]There[/][D1]'s[/] [T1]a[/] [S1]mother[/], [T1]a[/] [S1]father[/], [C1]and[/] [N1]six[/] [S1]children[/]."
-  - speaker: tom
-    kind: speech
-    emotion: surprised
-    text: "“[D1]Is[/] [T8]it[/] [T3]your[/] [S1]family[/], [S1]Anna[/]?”"
-  - speaker: anna
-    kind: speech
-    emotion: worried
-    text: "“[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S1]family[/].”"
-    spoken: "“[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/] [T3]my[/] [S1]family[/].”"
-  - speaker: anna
-    kind: narration
-    emotion: whisper
-    text: "[P1]On[/] [T1]the[/] [A3]back[/], [T9]there[/] [D1]is[/] [T1]a[/] [S9]name[/]: [S1]Rose[/]. [C1]And[/] [T9]there[/] [D1]is[/] [T1]an[/] [S9]address[/]: [S4]Park[/] [S4]Street[/]."
-    spoken: "[P1]On[/] [T1]the[/] [A3]back[/], [T9]there[/][D1]'s[/] [T1]a[/] [S9]name[/]: [S1]Rose[/]. [C1]And[/] [T9]there[/][D1]'s[/] [T1]an[/] [S9]address[/]: [S4]Park[/] [S4]Street[/]."
-  - speaker: tom
-    kind: speech
-    emotion: excited
-    music: happy
-    text: "“[S4]Park[/] [S4]Street[/]? [T8]I[/] [D6]know[/] [S4]Park[/] [S4]Street[/]!”"
-  - speaker: anna
-    kind: narration
-    emotion: neutral
-    music: calm
-    text: "[T9]Who[/] [D1]is[/] [T1]the[/] [J1]big[/] [S1]family[/]? [C1]And[/] [T9]who[/] [D1]is[/] [S1]Rose[/]?"
-    spoken: "[T9]Who[/][D1]'s[/] [T1]the[/] [J1]big[/] [S1]family[/]? [C1]And[/] [T9]who[/][D1]'s[/] [S1]Rose[/]?"
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: morning
+  text: '[T8]It[/] [D1]is[/] [S7]Saturday[/]. [S1]Tom[/] [C1]and[/] [T8]I[/] [D4]move[/] [T1]the[/] [J2]old[/] [S2]cupboard[/].'
+  spoken: '[T8]It[/][D1]''s[/] [S7]Saturday[/]. [S1]Tom[/] [C1]and[/] [T8]I[/] [D4]move[/] [T1]the[/] [J2]old[/] [S2]cupboard[/].'
+- speaker: tom
+  kind: speech
+  emotion: tired
+  text: “[N1]One[/], [N1]two[/], [N1]three[/]… [T8]It[/] [D1]is[/] [J1]big[/], [S1]Anna[/]!”
+  spoken: “[N1]One[/], [N1]two[/], [N1]three[/]… [T8]It[/][D1]'s[/] [J1]big[/], [S1]Anna[/]!”
+- speaker: anna
+  kind: narration
+  emotion: surprised
+  music: mystery
+  text: '[T9]There[/] [D1]is[/] [T1]a[/] [S2]photo[/] [P1]behind[/] [T1]the[/] [S2]cupboard[/]!'
+  spoken: '[T9]There[/][D1]''s[/] [T1]a[/] [S2]photo[/] [P1]behind[/] [T1]the[/] [S2]cupboard[/]!'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[T8]It[/] [D1]is[/] [T1]an[/] [J2]old[/] [S2]photo[/]. [T9]There[/] [D1]is[/] [T1]a[/] [J1]big[/] [S1]family[/] [P1]in[/] [T1]the[/] [S2]photo[/].'
+  spoken: '[T8]It[/][D1]''s[/] [T1]an[/] [J2]old[/] [S2]photo[/]. [T9]There[/][D1]''s[/] [T1]a[/] [J1]big[/] [S1]family[/] [P1]in[/] [T1]the[/] [S2]photo[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[T9]There[/] [D1]is[/] [T1]a[/] [S1]mother[/], [T1]a[/] [S1]father[/], [C1]and[/] [N1]six[/] [S1]children[/].'
+  spoken: '[T9]There[/][D1]''s[/] [T1]a[/] [S1]mother[/], [T1]a[/] [S1]father[/], [C1]and[/] [N1]six[/] [S1]children[/].'
+- speaker: tom
+  kind: speech
+  emotion: surprised
+  text: “[D1]Is[/] [T8]it[/] [T3]your[/] [S1]family[/], [S1]Anna[/]?”
+- speaker: anna
+  kind: speech
+  emotion: worried
+  text: “[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S1]family[/]. [C5]But[/] [T8]it[/] [D1]is[/] [T3]my[/] [S2]house[/]!”
+  spoken: “[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/] [T3]my[/] [S1]family[/]. [C5]But[/] [T8]it[/][D1]'s[/] [T3]my[/] [S2]house[/]!”
+- speaker: anna
+  kind: narration
+  emotion: whisper
+  text: '[P3]On[/] [T1]the[/] [S5]back[/], [T9]there[/] [D1]is[/] [T1]a[/] [S9]name[/]: [S1]Rose[/]. [C1]And[/] [T9]there[/] [D1]is[/] [T1]an[/] [S9]address[/]: [S4]Park[/] [S4]Street[/].'
+  spoken: '[P3]On[/] [T1]the[/] [S5]back[/], [T9]there[/][D1]''s[/] [T1]a[/] [S9]name[/]: [S1]Rose[/]. [C1]And[/] [T9]there[/][D1]''s[/] [T1]an[/] [S9]address[/]: [S4]Park[/] [S4]Street[/].'
+- speaker: tom
+  kind: speech
+  emotion: excited
+  music: happy
+  text: “[S4]Park[/] [S4]Street[/]? [T9]There[/] [D1]is[/] [T1]a[/] [S4]bus[/] [P2]to[/] [S4]Park[/] [S4]Street[/]! [T8]I[/] [D6]know[/] [S4]Park[/] [S4]Street[/]!”
+  spoken: “[S4]Park[/] [S4]Street[/]? [T9]There[/][D1]'s[/] [T1]a[/] [S4]bus[/] [P2]to[/] [S4]Park[/] [S4]Street[/]! [T8]I[/] [D6]know[/] [S4]Park[/] [S4]Street[/]!”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: calm
+  text: '[T9]Who[/] [D1]is[/] [T1]the[/] [J1]big[/] [S1]family[/]? [C1]And[/] [T9]who[/] [D1]is[/] [S1]Rose[/]?'
+  spoken: '[T9]Who[/][D1]''s[/] [T1]the[/] [J1]big[/] [S1]family[/]? [C1]And[/] [T9]who[/][D1]''s[/] [S1]Rose[/]?'
 questions:
-  - q: "Что Анна находит за шкафом?"
-    a: "There is a photo behind the cupboard! — Старое фото."
-  - q: "Кто на фото?"
-    a: "There is a mother, a father, and six children. — Большая семья: родители и шестеро детей."
-  - q: "Это семья Анны?"
-    a: "No, it is not my family. — Нет, чужая семья."
-  - q: "Что написано на обороте и почему это важно?"
-    a: "There is a name: Rose. And there is an address: Park Street. — То же имя, что в письме без подписи. Теперь у загадки есть адрес."
+- q: Что Анна и Том делают в субботу?
+  a: Tom and I move the old cupboard. — Двигают тяжёлый старый шкаф.
+- q: Что за шкафом?
+  a: There is a photo behind the cupboard! — Старое фото.
+- q: Кто на фото?
+  a: There is a mother, a father, and six children. — Большая семья.
+- q: Почему Анна удивлена?
+  a: It is not my family. But it is my house! — Семья чужая, а дом на фото — её.
+- q: Что написано на обороте и почему это важно?
+  a: 'There is a name: Rose. And there is an address: Park Street. — То же имя, что в письме без подписи. Теперь у загадки есть адрес.'
 phrase_hunt:
-  - phrase: "There is a photo behind the cupboard!"
-    function: "Где нашли вещь — behind"
-  - phrase: "There is a big family in the photo."
-    function: "Что на фото — in the photo"
-  - phrase: "Is it your family, Anna?"
-    function: "Вопрос: чья семья?"
-  - phrase: "On the back, there is a name: Rose."
-    function: "Что написано на обороте"
-  - phrase: "Who is Rose?"
-    function: "Главный вопрос истории"
-retell_words: [cupboard, photo, family, Rose, Park Street]
+- phrase: There is a photo behind the cupboard!
+  function: Где нашли вещь — behind
+- phrase: There is a big family in the photo.
+  function: Что на фото — in the photo
+- phrase: Is it your family, Anna?
+  function: 'Вопрос: чья семья?'
+- phrase: But it is my house!
+  function: 'Удивление: но…'
+- phrase: And who is Rose?
+  function: Главный вопрос истории
+retell_words:
+- cupboard
+- photo
+- family
+- Rose
+- Park Street
 retell_steps:
-  - "Восстановите историю по пяти опорам: cupboard, photo, family, Rose, Park Street. По одной фразе на каждую."
-  - "Перескажите без подсказок, 5–6 фраз, от лица Анны: It is Saturday. I move…"
-creative_ru: "Придумайте 2–3 фразы: кто эти люди на фото? Например: The father is a driver. The children like the park."
+- 'Восстановите историю по пяти опорам: cupboard, photo, family, Rose, Park Street. По одной фразе на каждую.'
+- 'Перескажите без подсказок, 5–6 фраз, от лица Анны: It is Saturday. Tom and I move…'
+creative_ru: 'Придумайте 2–3 фразы: кто эти люди на фото? Например: The father is a driver. The children like the park.'
