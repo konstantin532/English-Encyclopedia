@@ -102,7 +102,7 @@ class OralReviewTests(TestCase):
             ("lesson:not-real", 0, "good"), (self.key, -1, "good"),
             (self.key, 6, "good"), (self.key, True, "good"),
             (self.key, "0", "good"), (self.key, 0, "perfect"),
-            ("twister:1", 999, "again"), ("poem:1", 16, "hard"),
+            ("twister:1", 999, "again"), ("poem:1", 20, "hard"),
         ]:
             with self.subTest(key=key, index=index, rating=rating):
                 self.assertEqual(self.send(key, index, rating).status_code, 400)

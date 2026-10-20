@@ -383,7 +383,7 @@ class StoriesPoemsTests(TestCase):
         url = reverse("api:check_poem_gap", args=[1, 0])
         wrong = self.client.post(url, json.dumps({"answer": "book"}), content_type="application/json").json()
         self.assertEqual(wrong, {"correct": False})
-        self.assertTrue(self.client.post(url, json.dumps({"answer": "Phone"}), content_type="application/json").json()["correct"])
+        self.assertTrue(self.client.post(url, json.dumps({"answer": "Cat"}), content_type="application/json").json()["correct"])
 
 
 class ReviewFixesTests(TestCase):
