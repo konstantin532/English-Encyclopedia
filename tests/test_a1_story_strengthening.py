@@ -66,7 +66,7 @@ def test_episode_narration_preserves_actions_and_level():
             "I go home at eight.",
         ),
         "s04_letter_with_no_name.yaml": ("I go to the old mailbox.",),
-        "s05_big_family_photo.yaml": ("I move the old cupboard.",),
+        "s05_big_family_photo.yaml": ("Tom and I move the old cupboard.",),
     }
     for filename, actions in expected_actions.items():
         story = load(STORIES / filename)
@@ -92,7 +92,7 @@ def test_episode_story_clues_and_phrase_hunt_stay_aligned():
     for fragment in (
         "I go to the corner cafe.", "I drink my coffee.",
         "I go home at eight.", "Box is at home!",
-        "here at seven every day",
+        "Every day at seven",
     ):
         assert fragment in english, fragment
     for item in cafe["phrase_hunt"]:
@@ -109,8 +109,8 @@ def test_episode_story_clues_and_phrase_hunt_stay_aligned():
 
     family = load(STORIES / "s05_big_family_photo.yaml")
     photo_lines = [plain(row["text"]) for row in family["script"]]
-    assert "I move the old cupboard." in photo_lines[0]
-    assert "There is a photo behind the cupboard!" in photo_lines[1]
+    assert "Tom and I move the old cupboard." in photo_lines[0]
+    assert "There is a photo behind the cupboard!" in photo_lines[2]
     assert "I move" in family["retell_steps"][1]
     for clue in ("cupboard", "photo", "Rose", "Park Street"):
         assert clue in " ".join(photo_lines)

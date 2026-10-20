@@ -37,7 +37,10 @@ jobs:
       # independent task violates one of the 15 educational data contracts.
       - run: |
           uv run python manage.py shell -c "from apps.learning.understanding import understanding_bank; b=understanding_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.understanding import SKILLS; assert set(b)==set(PILOT_SLUGS); assert all(set(guide['tasks'])==set(SKILLS) for guide in b.values()); print('A1 understanding structure OK:', len(b), 'guides')"
-      - run: uv run pytest -q
+      # Failed test names and messages also appear as annotations on the run page.
+      - run: |
+          set -o pipefail
+          uv run pytest -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR) " pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }
       - run: node --test tests/js/*.test.cjs
       - run: |
           uv run python manage.py migrate -v0
