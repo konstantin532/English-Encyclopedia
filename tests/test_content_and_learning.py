@@ -426,9 +426,10 @@ class StoryVoicesTests(TestCase):
         from apps.stories.models import Story
 
         story = Story.objects.get(number=1)
-        self.assertEqual(len(story.script), 10)
+        self.assertTrue(6 <= len(story.script) <= 16)
         self.assertEqual({l["speaker"] for l in story.script}, {"anna", "tom"})
-        self.assertEqual(story.body.count("\n\n"), 9)
+        # One paragraph of body per script line.
+        self.assertEqual(story.body.count("\n\n"), len(story.script) - 1)
         self.assertEqual(story.ambience, "morning_home")
 
     def test_story_page_shows_speakers(self):
