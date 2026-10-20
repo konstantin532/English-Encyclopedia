@@ -7,5 +7,5 @@
     <p class="week-hero-description">{% if scene %}{{ scene.can_do_ru }}{% else %}{{ week.grammar_ru }}{% endif %}</p>
     <p class="week-chapter"><span>{{ week.number|stringformat:'02d' }}</span> / {{ week.level.weeks }} <a href="{% url 'curriculum:level' week.level.slug %}" aria-label="Все недели уровня {{ week.level.code }}">Весь уровень ↗</a></p>
   </div>
-  {% if week.global_number == 3 %}<img class="week-hero-image" src="{% static 'img/studio/cafe-morning.webp' %}" alt="Бариста встречает гостей в солнечном кафе" width="1536" height="1024" fetchpriority="high">{% elif atlas_cover_url %}<img class="week-hero-image" src="{{ atlas_cover_url }}" alt="" width="1440" height="810" fetchpriority="high" decoding="async">{% else %}<span class="week-hero-letter" aria-hidden="true">{{ week.level.code }}</span>{% endif %}
+  {% if week.global_number == 3 %}<img class="week-hero-image" src="{% static 'img/studio/cafe-morning.webp' %}" alt="Бариста встречает гостей в солнечном кафе" width="1536" height="1024" fetchpriority="high">{% elif atlas_cover_url %}<img class="week-hero-image" src="{{ atlas_cover_url }}" alt="{{ atlas_cover_alt }}" width="1440" height="810" fetchpriority="high" decoding="async">{% else %}<span class="week-hero-letter" aria-hidden="true">{{ week.level.code }}</span>{% endif %}
 </header>

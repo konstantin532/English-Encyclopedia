@@ -1,0 +1,41 @@
+name: Atlas browser acceptance
+on:
+  push:
+    branches: ['design/living-atlas-*']
+    paths: ['static/**', 'templates/**', 'apps/**', 'scripts/verify_atlas.cjs', '.github/workflows/atlas-browser.yml']
+  pull_request:
+    paths: ['static/**', 'templates/**', 'scripts/verify_atlas.cjs', '.github/workflows/atlas-browser.yml']
+permissions:
+  contents: read
+concurrency:
+  group: atlas-browser-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - run: uv sync --frozen
+      - run: |
+          npm install --prefix "$RUNNER_TEMP/atlas-browser" --ignore-scripts playwright@1.62.1
+          "$RUNNER_TEMP/atlas-browser/node_modules/.bin/playwright" install --with-deps chromium
+          git worktree add --detach "$RUNNER_TEMP/atlas-before" 7d27a5aee85b3431d380b03b215d758bc86bb4f4
+      - run: |
+          uv run python manage.py migrate --noinput
+          uv run python manage.py load_content
+          ATLAS_PYTHON="$PWD/.venv/bin/python" ATLAS_BEFORE_DIR="$RUNNER_TEMP/atlas-before" NODE_PATH="$RUNNER_TEMP/atlas-browser/node_modules" node scripts/verify_atlas.cjs
+        env:
+          DATABASE_URL: sqlite:///${{ runner.temp }}/atlas.sqlite3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: atlas-browser-evidence
+          path: atlas-browser-evidence/
+          retention-days: 14

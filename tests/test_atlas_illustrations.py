@@ -1,7 +1,7 @@
 from pathlib import Path
 from xml.etree import ElementTree as ET
 from django.test import SimpleTestCase
-from apps.curriculum.views import a1_atlas_cover
+from apps.curriculum.views import A1_ATLAS_ALT, a1_atlas_cover
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -19,3 +19,14 @@ class A1AtlasIllustrationsTests(SimpleTestCase):
         self.assertIsNone(a1_atlas_cover("B1", 4))
         self.assertIsNone(a1_atlas_cover("A1", 0))
         self.assertIsNone(a1_atlas_cover("A1", 15))
+
+    def test_cover_descriptions_and_repeated_cafe_setting_follow_the_story(self):
+        import yaml
+        self.assertEqual(len(A1_ATLAS_ALT), 14)
+        for week in (6, 7, 10, 13):
+            with self.subTest(week=week):
+                narrative = yaml.safe_load((ROOT / "content/seed_weeks" / f"a1_w{week:02d}.yaml").read_text())
+                self.assertIn("кафе", narrative["story_beat"]["intro_ru"])
+                self.assertIn("кафе", A1_ATLAS_ALT[week - 1].lower())
+                art = ET.parse(ROOT / "static/img/studio" / f"a1-week-{week:02d}.svg").getroot()
+                self.assertIn("кафе", art.attrib["aria-label"].lower())

@@ -1,2 +1,2 @@
-ignoredBuiltDependencies:
-  - "@parcel/watcher"
+allowBuilds:
+  '@parcel/watcher': false

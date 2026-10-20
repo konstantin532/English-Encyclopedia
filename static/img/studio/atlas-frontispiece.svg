@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="960" viewBox="0 0 960 960" fill="none">
+<defs>
+ <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" stroke="#d4d9c8" stroke-width=".7"/></pattern>
+ <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M0 0V7" stroke="#b99a68" stroke-width="1" opacity=".3"/></pattern>
+ <radialGradient id="light"><stop stop-color="#fff8e9"/><stop offset="1" stop-color="#e7ece0"/></radialGradient>
+ <g id="tree"><path d="M0 34V-16M0 10L-18-6M0 0L18-20" stroke="#57735a" stroke-width="2"/><path d="M-1 7C-45 8-42-49-9-52C10-76 48-46 32-21C41 1 14 20-1 7Z" fill="#c3cfb7" stroke="#57735a" stroke-width="1.5"/><path d="M0 28V-30M0-5L-16-21M0-15L15-31" stroke="#57735a" stroke-width="1.5"/></g>
+</defs>
+<path fill="url(#light)" d="M0 0h960v960H0z"/><path fill="url(#grid)" d="M0 0h960v960H0z"/>
+<!-- An imagined index of the course, never a geographic claim. -->
+<g stroke="#a3b7a6" stroke-width="1.2" opacity=".6"><path d="M-80 160C180-40 440 0 530 180S920 410 1050 220M-80 186C180-14 414 26 504 206S894 436 1024 246M-80 212C180 12 388 52 478 232S868 462 998 272M-80 238C180 38 362 78 452 258S842 488 972 298M-70 700C150 550 330 640 492 800S900 1040 1030 850M-70 726C150 576 304 666 466 826S874 1066 1004 876M-70 752C150 602 278 692 440 852S848 1092 978 902"/></g>
+<g stroke="#b99a68"><circle cx="480" cy="480" r="360" stroke-opacity=".5"/><circle cx="480" cy="480" r="345" stroke-opacity=".35" stroke-dasharray="2 9"/><path d="M480 98v34m0 696v34M98 480h34m696 0h34" stroke-width="2"/></g>
+<path d="M132 693C213 714 238 581 303 583S365 684 463 675S562 746 647 685S737 576 821 586" stroke="#fffaf0" stroke-width="26"/>
+<path d="M132 693C213 714 238 581 303 583S365 684 463 675S562 746 647 685S737 576 821 586" stroke="#b99a68" stroke-width="1.8" stroke-dasharray="5 7"/>
+<path d="M230 270C330 216 341 127 470 150S616 250 739 239" stroke="#fffaf0" stroke-width="22"/><path d="M230 270C330 216 341 127 470 150S616 250 739 239" stroke="#b99a68" stroke-width="1.8" stroke-dasharray="5 7"/>
+<!-- House / the first address -->
+<g transform="translate(160 195)" stroke="#315645" stroke-linejoin="round"><path d="M0 56L66 0l66 56v112H0Z" fill="#f4eddb" stroke-width="2"/><path d="M-10 58L66-9l76 67" stroke-width="5"/><path d="M23 83h29v34H23zm62 0h26v34H85z" fill="#bdd0c5"/><path d="M59 168v-58h23v58" fill="#194b3b"/><path d="M99 20V-6h18v40" fill="#e1d0ae"/><circle cx="76" cy="143" r="2" fill="#b99a68"/></g>
+<!-- Cafe / a shared table -->
+<g transform="translate(650 173)" stroke="#315645" stroke-width="2"><path d="M0 32h151v116H0z" fill="#eee3ca"/><path d="M-8 32L8 0h135l16 32" fill="#194b3b"/><path d="M22 1L12 32m38-31-5 31M76 1v31m27-31 5 31m20-31 11 31" stroke="#d8c696"/><path d="M17 58h70v67H17z" fill="#b7cdc3"/><path d="M105 58h28v90h-28z" fill="#5b7c69"/><path d="M53 58v67M17 92h70"/><path d="M34 104h22v12H34zM56 106h5v7h-5" fill="#fff8e9"/></g>
+<!-- Language school / open pages -->
+<g transform="translate(580 746) rotate(-9)" stroke="#315645" stroke-width="2"><path d="M0 0Q55-23 112 0Q168-23 224 0v95q-57-19-112 0Q56 76 0 95Z" fill="#f8f1df"/><path d="M112 0v95M14 13q39-12 80 0m-80 14q39-12 80 0m-80 14q39-12 80 0m-80 14q39-12 80 0m34-42q39-12 80 0m-80 14q39-12 80 0m-80 14q39-12 80 0" stroke-opacity=".4"/><path d="M159-9v50l11-8 11 8V-9" fill="#b99a68" stroke="none"/></g>
+<g transform="translate(167 685)" stroke="#315645" stroke-width="2"><rect width="137" height="68" rx="12" fill="#b7c7ba"/><path d="M13 10h111v32H13z" fill="#f6f0dd"/><path d="M48 10v32m39-32v32"/><circle cx="28" cy="68" r="12" fill="#315645"/><circle cx="110" cy="68" r="12" fill="#315645"/><path d="M15 53h18m68 0h20" stroke="#b99a68" stroke-width="5"/></g>
+<g><use href="#tree" x="130" y="510"/><use href="#tree" x="791" y="410"/><use href="#tree" x="810" y="735"/><use href="#tree" x="370" y="158"/><use href="#tree" x="365" y="806"/></g>
+<g transform="translate(821 104)" stroke="#315645"><circle r="36"/><path d="M0-29L7 0 0 29-7 0Z" fill="#315645"/><path d="M-29 0L0-7 29 0 0 7Z" fill="#b99a68"/><circle r="4" fill="#f7f5ef"/></g>
+<g stroke="#b99a68" stroke-width="1.5"><path d="M25 86V25h61m788 0h61v61M25 874v61h61m788 0h61v-61"/></g>
+</svg>
