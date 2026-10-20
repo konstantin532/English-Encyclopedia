@@ -191,3 +191,49 @@ exercises:
     - LX-00497
     - LX-00035
     - LX-00033
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Можно мне воды, пожалуйста?
+  answer: Can I have water, please?
+  accepted:
+  - Can I have a water, please?
+  hint_ru: Просьба начинается с Can I have…
+  explanation_ru: 'Can I have water, please? — вежливая просьба. Порядок как в вопросе: can впереди.'
+  review_of: 4
+  units:
+  - LX-00033
+  - LX-00035
+  - LX-00029
+- order: 2
+  kind: translate
+  prompt_ru: Тебе нравится дом?
+  answer: Do you like the house?
+  accepted:
+  - Do you like the home?
+  hint_ru: Вопрос с like начинается с Do.
+  explanation_ru: Do you like the house? С обычными глаголами вопрос строится через do.
+  review_of: 4
+  units:
+  - LX-00034
+  - LX-00036
+- order: 3
+  kind: translate
+  prompt_ru: У меня есть кот.
+  answer: I have a cat.
+  hint_ru: «У меня есть» — I have.
+  explanation_ru: I have a cat. Русское «у меня есть» по-английски — I have, «я имею».
+  review_of: 4
+  units:
+  - LX-00033
+- order: 4
+  kind: translate
+  prompt_ru: Да, нравится. (ответ на «Do you like it?»)
+  answer: Yes, I do.
+  hint_ru: Короткий ответ повторяет do.
+  explanation_ru: 'Yes, I do. Короткий ответ берёт помощника из вопроса: Do you…? — Yes, I do.'
+  review_of: 4
+  units:
+  - LX-00036
+  - LX-00031

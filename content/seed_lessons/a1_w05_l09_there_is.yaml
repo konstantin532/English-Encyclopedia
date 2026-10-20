@@ -159,3 +159,54 @@ exercises:
     hint_ru: "Can I have some…, please? Цвет — перед словом."
     explanation_ru: "Can I have some yellow bananas, please? — some выражает неопределённое количество, yellow стоит перед bananas. Без some просьба может быть вежливой, но уже не тренирует количество из условия."
     units: [LX-00288, LX-00299]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Молоко есть?
+  answer: Is there milk?
+  hint_ru: Есть ли где-то — Is there…?
+  explanation_ru: Is there milk? Спрашиваем о наличии, поэтому there is, а не have.
+  review_of: 3
+  units:
+  - LX-00108
+  - LX-00112
+  - LX-00119
+  - LX-00120
+- order: 2
+  kind: translate
+  prompt_ru: Есть яблоки.
+  answer: There are apples.
+  hint_ru: Много — there are.
+  explanation_ru: There are apples. Один предмет — there is, несколько — there are.
+  review_of: 3
+  units:
+  - LX-00109
+  - LX-00112
+  - LX-00119
+  - LX-00120
+  - LX-00121
+- order: 3
+  kind: translate
+  prompt_ru: Корма для кошек нет.
+  answer: There is no cat food.
+  hint_ru: «Нет» — there is no.
+  explanation_ru: There is no cat food. There is no — «нет, отсутствует».
+  review_of: 3
+  units:
+  - LX-00111
+  - LX-00112
+  - LX-00119
+  - LX-00120
+- order: 4
+  kind: translate
+  prompt_ru: Яблоки красные.
+  answer: The apples are red.
+  hint_ru: Цвет после are.
+  explanation_ru: 'The apples are red. Цвет описывает яблоки, поэтому нужен be: are.'
+  review_of: 3
+  units:
+  - LX-00109
+  - LX-00121
+  - LX-00286
+  - LX-00301

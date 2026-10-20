@@ -146,3 +146,51 @@ exercises:
     hint_ru: "he после глагола превращается в…"
     explanation_ru: "Вопрос Can you help him? относится к другу: он получатель помощи. Поэтому здесь нужна форма дополнения him, а he подходит для подлежащего (He is here)."
     units: [LX-00341]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Идите прямо.
+  answer: Go straight.
+  hint_ru: Указание — глагол первым.
+  explanation_ru: Go straight. В указаниях глагол стоит первым, you не нужен.
+  review_of: 3
+  units:
+  - LX-00166
+  - LX-00170
+  - LX-00177
+- order: 2
+  kind: translate
+  prompt_ru: Поверните налево.
+  answer: Turn left.
+  hint_ru: turn + left.
+  explanation_ru: Turn left. Turn — «поверните».
+  review_of: 3
+  units:
+  - LX-00167
+  - LX-00168
+  - LX-00177
+- order: 3
+  kind: translate
+  prompt_ru: Идите прямо и поверните направо.
+  answer: Go straight and turn right.
+  hint_ru: Два указания через and.
+  explanation_ru: Go straight and turn right. Два указания подряд соединяет and.
+  review_of: 3
+  units:
+  - LX-00166
+  - LX-00167
+  - LX-00169
+  - LX-00170
+  - LX-00177
+- order: 4
+  kind: translate
+  prompt_ru: Извините, где банк?
+  answer: Excuse me, where is the bank?
+  hint_ru: Чтобы обратиться к прохожему — Excuse me.
+  explanation_ru: Excuse me, where is the bank? Excuse me — чтобы обратиться; sorry — чтобы извиниться.
+  review_of: 3
+  units:
+  - LX-00158
+  - LX-00159
+  - LX-00175

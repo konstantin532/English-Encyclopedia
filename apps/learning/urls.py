@@ -14,5 +14,6 @@ urlpatterns = [
     path("transfer-pilot/<slug:slug>/", transfer_pilot.transfer_pilot, name="transfer_pilot"),
     path("cafe-mission/", cafe_mission.cafe_mission, name="cafe_mission"),
     path("mistake-review/request/<int:exercise_id>/", delayed_review_views.request_optional_review, name="request_optional_review"),
+    path("practice-review/<int:item_id>/", delayed_review_views.request_practice_review, name="request_practice_review"),
     path("weeks/<int:week_id>/goal/", views.week_goal, name="week_goal"),
 ]

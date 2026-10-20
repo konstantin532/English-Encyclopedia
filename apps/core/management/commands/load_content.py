@@ -10,7 +10,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db import transaction
 
 from apps.curriculum.models import Level, TongueTwister, Week, WeekScene
-from apps.drills.models import Exercise
+from apps.drills.models import Exercise, PracticeItem
 from apps.lessons.models import Lesson, LessonLayer
 from apps.lexicon.models import LexicalUnit
 from apps.poems.models import Poem
@@ -147,6 +147,16 @@ class Command(BaseCommand):
             for key in ("prompt_ru", "prompt_en", "hint_ru", "explanation_ru"):
                 if key in exercise and not isinstance(exercise[key], str):
                     raise CommandError(f"{path.name}: {key} должен быть строкой")
+        orders = {e["order"] for e in data.get("exercises", [])}
+        for item in records(path.name, "practice", data.get("practice", []),
+                            {"order": int, "prompt_ru": str, "answer": str, "explanation_ru": str, "review_of": int}):
+            string_list(path.name, "accepted", item.get("accepted", []))
+            if item.get("kind", "translate") != "translate":
+                raise CommandError(f"{path.name}: перевод {item['order']}: неизвестный вид {item.get('kind')}")
+            if item["review_of"] not in orders:
+                raise CommandError(f"{path.name}: перевод {item['order']}: нет основного задания {item['review_of']}")
+            if "hint_ru" in item and not isinstance(item["hint_ru"], str):
+                raise CommandError(f"{path.name}: hint_ru должен быть строкой")
         for key, required in (("sound_notes", {"text": str}), ("contractions", {"full": str, "short": str})):
             for item in records(path.name, key, data.get(key, []), required):
                 for field in ("text", "full", "short", "ipa", "ru", "note_ru"):
@@ -179,6 +189,17 @@ class Command(BaseCommand):
                           ["kind", "stage", "prompt_ru", "prompt_en", "options", "answer", "accepted", "hint_ru", "explanation_ru"]},
             )
             self._set_units(obj.units, ex.get("units", []), f"{path.name}: упражнение {ex['order']}")
+        practice = data.get("practice", [])
+        lesson.practice_items.exclude(order__in=[p["order"] for p in practice]).delete()
+        for item in practice:
+            obj, _ = PracticeItem.objects.update_or_create(
+                lesson=lesson, order=item["order"],
+                defaults={"kind": item.get("kind", "translate"), "prompt_ru": item["prompt_ru"],
+                          "answer": item["answer"], "accepted": item.get("accepted", []),
+                          "hint_ru": item.get("hint_ru", ""), "explanation_ru": item["explanation_ru"],
+                          "review_of": item["review_of"]},
+            )
+            self._set_units(obj.units, item.get("units", []), f"{path.name}: перевод {item['order']}")
         return 1
 
     def _week(self, level, number, where="контент"):

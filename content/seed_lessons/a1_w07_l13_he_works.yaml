@@ -153,3 +153,54 @@ exercises:
     hint_ru: "he + глагол с -s + at + время."
     explanation_ru: "He starts at seven. — с he глагол получает -s."
     units: [LX-00332, LX-00319]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Том работает дома.
+  answer: Tom works at home.
+  hint_ru: Tom = he → works.
+  explanation_ru: Tom works at home. С he, she и одним именем глагол получает -s.
+  review_of: 3
+  units:
+  - LX-00153
+  - LX-00154
+  - LX-00156
+- order: 2
+  kind: translate
+  prompt_ru: Мия работает в кафе.
+  answer: Mia works at the cafe.
+  accepted:
+  - Mia works in the cafe.
+  hint_ru: works, а не work.
+  explanation_ru: 'Mia works at the cafe. Не забудьте -s: works.'
+  review_of: 3
+  units:
+  - LX-00153
+  - LX-00154
+  - LX-00156
+- order: 3
+  kind: translate
+  prompt_ru: Он работает по ночам.
+  answer: He works at night.
+  hint_ru: «Ночью» — at night.
+  explanation_ru: He works at night. At night — «ночью, по ночам».
+  review_of: 3
+  units:
+  - LX-00150
+  - LX-00153
+  - LX-00154
+  - LX-00155
+  - LX-00156
+- order: 4
+  kind: translate
+  prompt_ru: Она начинает в пять.
+  answer: She starts at five.
+  hint_ru: she → starts.
+  explanation_ru: 'She starts at five. She — значит -s: starts.'
+  review_of: 3
+  units:
+  - LX-00153
+  - LX-00154
+  - LX-00156
+  - LX-00332

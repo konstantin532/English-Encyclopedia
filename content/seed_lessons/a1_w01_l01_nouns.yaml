@@ -163,3 +163,46 @@ exercises:
     hint_ru: "Сначала This is my…, потом It is…"
     explanation_ru: "This is my book. It is new. Сначала назвали книгу, потом сказали о её свойстве. Можно объединить: This is my new book — указатель my стоит перед new book."
     units: [LX-00008, LX-00027]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Это мой дом.
+  answer: This is my house.
+  accepted:
+  - This is my home.
+  hint_ru: Начните с This is…
+  explanation_ru: 'This is my house: this — «это», my — «мой», house — существительное. В английском перед существительным стоит маленькое слово-указатель my.'
+  review_of: 3
+  units:
+  - LX-00006
+- order: 2
+  kind: translate
+  prompt_ru: Доброе утро! Как вас зовут?
+  answer: Good morning! What is your name?
+  hint_ru: Вопрос об имени начинается с What.
+  explanation_ru: Good morning! What is your name? По-английски спрашивают «Какое ваше имя?», а не «Как вас зовут?».
+  review_of: 3
+  units:
+  - LX-00014
+  - LX-00015
+- order: 3
+  kind: translate
+  prompt_ru: Меня зовут Анна.
+  answer: My name is Anna.
+  accepted:
+  - I am Anna.
+  hint_ru: «Моё имя — Анна».
+  explanation_ru: 'My name is Anna. Буквально «Моё имя есть Анна». Можно и короче: I''m Anna.'
+  review_of: 3
+  units:
+  - LX-00015
+- order: 4
+  kind: translate
+  prompt_ru: Хорошего дня!
+  answer: Have a nice day!
+  hint_ru: Готовая фраза недели.
+  explanation_ru: 'Have a nice day! — готовая фраза: её говорят на прощание в магазине, в кафе, соседу.'
+  review_of: 3
+  units:
+  - LX-00012

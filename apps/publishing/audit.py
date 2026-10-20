@@ -7,7 +7,7 @@ import yaml
 from django.conf import settings
 
 from apps.curriculum.registry import LEVEL_BY_CODE, LEVELS, NEW_WORDS_PER_STORY, STORY_COVERAGE, validate_plan
-from apps.drills.models import Exercise
+from apps.drills.models import Exercise, PracticeItem
 from apps.lessons.models import Lesson, LessonLayer
 from apps.lexicon.models import CEFR, LexicalUnit, UnitType
 from apps.lexicon.phonetics import unknown_symbols
@@ -98,6 +98,9 @@ def english_lines() -> list[tuple[str, str]]:
         where = f"{ex.lesson.slug}/задание {ex.order}"
         out += [(where, ex.prompt_en.replace("___", "")), (where, ex.answer),
                 *[(where, a) for a in ex.accepted], *[(where, a) for a in ex.options]]
+    for item in PracticeItem.objects.select_related("lesson"):
+        where = f"{item.lesson.slug}/перевод {item.order}"
+        out += [(where, item.answer), *[(where, a) for a in item.accepted]]
     for lesson in Lesson.objects.all():
         out += [(f"{lesson.slug}/как это звучит", item["text"]) for item in lesson.sound_notes]
         for pair in lesson.contractions:

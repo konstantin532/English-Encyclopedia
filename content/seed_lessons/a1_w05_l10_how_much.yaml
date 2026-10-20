@@ -154,3 +154,54 @@ exercises:
     hint_ru: "Размер — перед напитком."
     explanation_ru: "A small coffee, please. — small стоит перед coffee, как и цвет."
     units: [LX-00295]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Сколько стоит молоко?
+  answer: How much is the milk?
+  hint_ru: How much is…?
+  explanation_ru: How much is the milk? Цену спрашивают через How much…?
+  review_of: 3
+  units:
+  - LX-00114
+  - LX-00115
+  - LX-00122
+  - LX-00123
+  - LX-00108
+  - LX-00302
+- order: 2
+  kind: translate
+  prompt_ru: Это два доллара.
+  answer: It is two dollars.
+  accepted:
+  - That is two dollars.
+  hint_ru: two dollars — с -s.
+  explanation_ru: It's two dollars. После two — dollars с -s.
+  review_of: 3
+  units:
+  - LX-00116
+  - LX-00122
+  - LX-00123
+  - LX-00302
+- order: 3
+  kind: translate
+  prompt_ru: Сколько стоят яблоки?
+  answer: How much are the apples?
+  hint_ru: Яблок много — are.
+  explanation_ru: How much are the apples? Apples — много, поэтому are.
+  review_of: 3
+  units:
+  - LX-00114
+  - LX-00115
+  - LX-00122
+  - LX-00109
+- order: 4
+  kind: translate
+  prompt_ru: Они дешёвые!
+  answer: They are cheap!
+  hint_ru: «Они» — they.
+  explanation_ru: They are cheap! Cheap — дешёвый, expensive — дорогой.
+  review_of: 3
+  units:
+  - LX-00293

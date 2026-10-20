@@ -149,3 +149,53 @@ exercises:
     hint_ru: "После like — my, затем цвет и название вещи."
     explanation_ru: "I like my blue shoes. Like сочетается и с названием вещи; -ing здесь не нужно."
     units: [LX-00388]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Я люблю читать.
+  answer: I like reading.
+  accepted:
+  - I like to read.
+  hint_ru: like + -ing
+  explanation_ru: I like reading (или I like to read). После like занятие часто с -ing.
+  review_of: 3
+  units:
+  - LX-00200
+  - LX-00208
+  - LX-00209
+  - LX-00211
+- order: 2
+  kind: translate
+  prompt_ru: Том любит музыку.
+  answer: Tom likes music.
+  hint_ru: Tom → likes.
+  explanation_ru: Tom likes music. Здесь музыка — предмет, поэтому просто likes music.
+  review_of: 3
+  units:
+  - LX-00203
+- order: 3
+  kind: translate
+  prompt_ru: Ты любишь гулять?
+  answer: Do you like walking?
+  accepted:
+  - Do you like to walk?
+  hint_ru: Do you like + -ing?
+  explanation_ru: Do you like walking? Вопрос через do.
+  review_of: 3
+  units:
+  - LX-00201
+  - LX-00208
+  - LX-00209
+- order: 4
+  kind: translate
+  prompt_ru: Я играю на гитаре по воскресеньям.
+  answer: I play the guitar on Sundays.
+  hint_ru: play the guitar
+  explanation_ru: I play the guitar on Sundays. Перед инструментом — the.
+  review_of: 3
+  units:
+  - LX-00202
+  - LX-00204
+  - LX-00208
+  - LX-00211

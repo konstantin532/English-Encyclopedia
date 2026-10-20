@@ -158,3 +158,45 @@ exercises:
     units:
     - LX-00437
     - LX-00242
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Почему ты устал?
+  answer: Why are you tired?
+  hint_ru: Why + are you…?
+  explanation_ru: Why are you tired? После why — обычный порядок вопроса.
+  review_of: 3
+  units:
+  - LX-00241
+- order: 2
+  kind: translate
+  prompt_ru: Потому что я не могу спать.
+  answer: Because I cannot sleep.
+  hint_ru: Because + причина.
+  explanation_ru: Because I can't sleep. Because вводит причину.
+  review_of: 3
+  units:
+  - LX-00242
+  - LX-00250
+- order: 3
+  kind: translate
+  prompt_ru: Почему ты хочешь учить русский?
+  answer: Why do you want to learn Russian?
+  hint_ru: Why do you want…?
+  explanation_ru: Why do you want to learn Russian? Want to + глагол.
+  review_of: 3
+  units:
+  - LX-00241
+  - LX-00250
+  - LX-00434
+- order: 4
+  kind: translate
+  prompt_ru: Потому что мне нравится русская музыка.
+  answer: Because I like Russian music.
+  hint_ru: Because I like…
+  explanation_ru: Because I like Russian music. Russian — с большой буквы.
+  review_of: 3
+  units:
+  - LX-00242
+  - LX-00250

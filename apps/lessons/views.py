@@ -24,6 +24,7 @@ def lesson_detail(request, slug):
         "layers": lesson.layers.all(),
         "units": units,
         "exercises": lesson.exercises.all(),
+        "translations": lesson.practice_items.all(),
         "next_lesson": Lesson.objects.filter(is_published=True, level__order__gte=lesson.level.order)
         .exclude(pk=lesson.pk).filter(level=lesson.level, order__gt=lesson.order).first()
         or Lesson.objects.filter(is_published=True, level__order__gt=lesson.level.order).first(),

@@ -27,6 +27,18 @@ def record_attempt(user, exercise: Exercise, answer: str, *, delay_wrong_days: i
     return correct
 
 
+@transaction.atomic
+def record_practice(user, item) -> None:
+    """Верный перевод — свежее свидетельство самостоятельного употребления слов урока."""
+    if not user.is_authenticated:
+        return
+    context = f"{item.lesson.slug}#t{item.order}"
+    for unit in item.units.all():
+        progress, _ = UnitProgress.objects.select_for_update().get_or_create(user=user, unit=unit)
+        progress.register(True, context)
+        progress.save()
+
+
 REVIEW_BATCH = 10
 
 

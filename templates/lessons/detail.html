@@ -92,6 +92,18 @@
         </div>
       </section>
       {% endif %}
+      {% if translations %}
+      <section class="section" id="translate" data-lesson-translate aria-labelledby="translate-t" style="padding-top: var(--space-6)">
+        <div class="section-head"><h2 id="translate-t">Скажите сами: перевод</h2>
+          <p>Здесь нет готовых слов — фразу строите вы. Сокращения и полные формы засчитываются одинаково: <span lang="en">I'm</span> = <span lang="en">I am</span>. Если ваш вариант отличается от образца, это ещё не ошибка: сравните его с образцом.</p>
+        </div>
+        <div class="drills">
+          {% for item in translations %}
+          {% include "components/translate_drill.html" with item=item number=forloop.counter total=translations|length %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
       {% if a1_guide %}
       <section class="section" aria-label="Независимая проверка понимания">
         <h2>Проверка без готовых ответов</h2>
@@ -158,6 +170,7 @@
           {% if layer.number == 5 and lesson.contractions %}<li><a href="#contractions">Как сокращают</a></li>{% endif %}
           {% endfor %}
           {% if exercises %}<li><a href="#practice">Практика</a></li>{% endif %}
+          {% if translations %}<li><a href="#translate">Перевод</a></li>{% endif %}
         </ol>
         <div class="studio-reader-tools" aria-label="Размер текста урока"><span>Размер текста</span><button type="button" data-reader-smaller aria-label="Уменьшить текст">A−</button><button type="button" data-reader-larger aria-label="Увеличить текст">A+</button><output data-reader-size aria-live="polite">18</output></div>
       </div>

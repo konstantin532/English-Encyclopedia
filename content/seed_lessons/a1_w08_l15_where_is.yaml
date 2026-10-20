@@ -156,3 +156,59 @@ exercises:
     hint_ru: "Американское «напротив» — два слова."
     explanation_ru: "The supermarket is across from the park. — across from значит «через дорогу, напротив»."
     units: [LX-00340, LX-00345]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Где банк?
+  answer: Where is the bank?
+  hint_ru: Where — «где».
+  explanation_ru: 'Where is the bank? В разговоре: Where''s the bank?'
+  review_of: 3
+  units:
+  - LX-00157
+  - LX-00162
+  - LX-00176
+  - LX-00178
+- order: 2
+  kind: translate
+  prompt_ru: Мастерская рядом с банком.
+  answer: The key shop is near the bank.
+  accepted:
+  - The key shop is next to the bank.
+  - It is near the bank.
+  - It is next to the bank.
+  hint_ru: «Рядом» — near или next to.
+  explanation_ru: The key shop is near the bank. Near — поблизости, next to — прямо рядом.
+  review_of: 3
+  units:
+  - LX-00162
+  - LX-00171
+  - LX-00176
+  - LX-00178
+  - LX-00160
+- order: 3
+  kind: translate
+  prompt_ru: Банк справа.
+  answer: The bank is on the right.
+  hint_ru: «Справа» — on the right.
+  explanation_ru: The bank is on the right. On the right — справа, on the left — слева.
+  review_of: 3
+  units:
+  - LX-00162
+  - LX-00172
+  - LX-00176
+  - LX-00178
+- order: 4
+  kind: translate
+  prompt_ru: Банк между кафе и гостиницей.
+  answer: The bank is between the cafe and the hotel.
+  hint_ru: between … and …
+  explanation_ru: The bank is between the cafe and the hotel. Between — «между».
+  review_of: 3
+  units:
+  - LX-00162
+  - LX-00176
+  - LX-00178
+  - LX-00338
+  - LX-00344

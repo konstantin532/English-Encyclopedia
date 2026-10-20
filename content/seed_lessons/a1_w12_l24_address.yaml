@@ -162,3 +162,50 @@ exercises:
     explanation_ru: Last name — фамилия; first name — имя. Не перепутайте поля анкеты.
     units:
     - LX-00432
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: У меня письмо для мамы.
+  answer: I have a letter for my mother.
+  accepted:
+  - I have a letter for my mom.
+  hint_ru: «для» — for.
+  explanation_ru: I have a letter for my mother. For — «для».
+  review_of: 3
+  units:
+  - LX-00225
+  - LX-00234
+- order: 2
+  kind: translate
+  prompt_ru: Какой адрес?
+  answer: What is the address?
+  hint_ru: What is…?
+  explanation_ru: What's the address? Вопрос «какой?» о данных — what.
+  review_of: 3
+  units:
+  - LX-00227
+  - LX-00232
+- order: 3
+  kind: translate
+  prompt_ru: Марка стоит два доллара.
+  answer: The stamp is two dollars.
+  accepted:
+  - It is two dollars.
+  hint_ru: Цена — с is.
+  explanation_ru: The stamp is two dollars. Цену называют через is.
+  review_of: 3
+  units:
+  - LX-00226
+  - LX-00232
+- order: 4
+  kind: translate
+  prompt_ru: Адрес на конверте.
+  answer: The address is on the envelope.
+  hint_ru: «На» — on.
+  explanation_ru: The address is on the envelope. On — на поверхности.
+  review_of: 3
+  units:
+  - LX-00227
+  - LX-00232
+  - LX-00416

@@ -161,3 +161,65 @@ exercises:
     hint_ru: "Начните с I'd like…"
     explanation_ru: "I'd like = I would like («я бы хотел»). A sandwich — одна порция еды, a juice — одна порция сока. Можно сказать и короче: A sandwich and a juice, please."
     units: [LX-00282, LX-00283, LX-00284, LX-00285]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Можно мне печенье, пожалуйста?
+  answer: Can I have a cookie, please?
+  hint_ru: Can I have…, please?
+  explanation_ru: Can I have a cookie, please? Cookie — одна штука, поэтому a cookie.
+  review_of: 3
+  units:
+  - LX-00056
+  - LX-00084
+  - LX-00285
+- order: 2
+  kind: translate
+  prompt_ru: Мне кофе, пожалуйста.
+  answer: I would like a coffee, please.
+  accepted:
+  - I would like coffee, please.
+  - Can I have a coffee, please?
+  - A coffee, please.
+  - Coffee, please.
+  hint_ru: 'Вежливо: I''d like…'
+  explanation_ru: 'I''d like a coffee, please. I''d like — вежливое «я бы хотел». Коротко тоже можно: A coffee, please.'
+  review_of: 3
+  units:
+  - LX-00082
+  - LX-00084
+  - LX-00281
+  - LX-00284
+  - LX-00285
+- order: 3
+  kind: translate
+  prompt_ru: Простите? Повторите, пожалуйста.
+  answer: Sorry? Can you say it again, please?
+  accepted:
+  - Sorry? Can you say it again?
+  hint_ru: Sorry? — и просьба повторить.
+  explanation_ru: Sorry? Can you say it again, please? Переспросить — нормально, это не признак плохого английского.
+  review_of: 3
+  units:
+  - LX-00060
+  - LX-00084
+  - LX-00085
+  - LX-00086
+  - LX-00087
+  - LX-00284
+  - LX-00285
+- order: 4
+  kind: translate
+  prompt_ru: Кофе или чай?
+  answer: Coffee or tea?
+  accepted:
+  - Tea or coffee?
+  hint_ru: or — «или».
+  explanation_ru: Coffee or tea? Так спрашивает бариста. Or — «или».
+  review_of: 3
+  units:
+  - LX-00055
+  - LX-00058
+  - LX-00082
+  - LX-00285

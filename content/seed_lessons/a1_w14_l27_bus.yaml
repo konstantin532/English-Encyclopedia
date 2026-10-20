@@ -158,3 +158,51 @@ exercises:
     units:
     - LX-00464
     - LX-00467
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Этот автобус идёт до Парк-стрит?
+  answer: Does this bus go to Park Street?
+  hint_ru: bus = it → Does…go?
+  explanation_ru: Does this bus go to Park Street? Вопрос через does, go без -s.
+  review_of: 3
+  units:
+  - LX-00252
+  - LX-00255
+  - LX-00258
+- order: 2
+  kind: translate
+  prompt_ru: Сколько стоит билет?
+  answer: How much is a ticket?
+  accepted:
+  - How much is the ticket?
+  hint_ru: How much is…?
+  explanation_ru: 'How much is a ticket? Как в магазине: How much…?'
+  review_of: 3
+  units:
+  - LX-00253
+  - LX-00256
+  - LX-00258
+- order: 3
+  kind: translate
+  prompt_ru: Два билета, пожалуйста.
+  answer: Two tickets, please.
+  hint_ru: two tickets — с -s.
+  explanation_ru: Two tickets, please. Коротко и вежливо.
+  review_of: 3
+  units:
+  - LX-00253
+  - LX-00257
+- order: 4
+  kind: translate
+  prompt_ru: Во сколько следующий автобус?
+  answer: What time is the next bus?
+  hint_ru: What time is…?
+  explanation_ru: What time is the next bus? Next — «следующий».
+  review_of: 3
+  units:
+  - LX-00252
+  - LX-00255
+  - LX-00256
+  - LX-00258

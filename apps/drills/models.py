@@ -75,29 +75,26 @@ def loose_normalize(text: str) -> str:
 
 
 class PracticeItem(models.Model):
-    """Аудирование и перевод урока. Отдельно от шести основных заданий:
-    их порядок и банк отложенных повторений остаются прежними."""
+    """Перевод с русского на английский: ученик сам строит фразу.
+
+    Отдельно от шести основных заданий урока: их номера и банк отложенных
+    повторений остаются прежними. Ответ сверяется со списком вариантов;
+    несовпадение не считается доказанной ошибкой — перевод можно сказать иначе.
+    """
 
     class Kind(models.TextChoices):
-        LISTEN = "listen", "Послушать и понять"
-        DICTATION = "dictation", "Диктант"
         TRANSLATE = "translate", "Перевод на английский"
-
-    AUDIO_KINDS = (Kind.LISTEN, Kind.DICTATION)
 
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name="practice_items")
     order = models.PositiveSmallIntegerField()
-    kind = models.CharField(max_length=10, choices=Kind.choices)
+    kind = models.CharField(max_length=10, choices=Kind.choices, default=Kind.TRANSLATE)
     prompt_ru = models.CharField(max_length=240)
-    options = models.JSONField(default=list, blank=True)
     answer = models.CharField(max_length=200)
     accepted = models.JSONField(default=list, blank=True, help_text="Другие правильные варианты")
     hint_ru = models.CharField(max_length=240, blank=True)
     explanation_ru = models.TextField()
-    audio_line = models.JSONField(default=dict, blank=True,
-                                  help_text="Реплика диалога недели: week, line, tempo")
     review_of = models.PositiveSmallIntegerField(
-        help_text="Номер основного задания урока, чьё отложенное повторение назначается после ошибки")
+        help_text="Номер основного задания урока, чьё отложенное повторение можно назначить")
     units = models.ManyToManyField(LexicalUnit, blank=True, related_name="practice_items")
 
     class Meta:
@@ -105,14 +102,8 @@ class PracticeItem(models.Model):
         constraints = [models.UniqueConstraint(fields=["lesson", "order"], name="uniq_practice_order")]
 
     def __str__(self) -> str:
-        return f"{self.lesson.slug} практика #{self.order}"
-
-    @property
-    def needs_audio(self) -> bool:
-        return self.kind in self.AUDIO_KINDS
+        return f"{self.lesson.slug} перевод #{self.order}"
 
     def is_correct(self, given: str) -> bool:
-        if self.kind == self.Kind.LISTEN:
-            return Exercise.normalize(given) == Exercise.normalize(self.answer)
         given_n = loose_normalize(given)
         return bool(given_n) and any(given_n == loose_normalize(a) for a in [self.answer, *self.accepted])
