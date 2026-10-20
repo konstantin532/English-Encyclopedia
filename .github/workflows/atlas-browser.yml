@@ -26,7 +26,9 @@ jobs:
       - run: |
           npm install --prefix "$RUNNER_TEMP/atlas-browser" --ignore-scripts playwright@1.62.1
           "$RUNNER_TEMP/atlas-browser/node_modules/.bin/playwright" install --with-deps chromium
-          git worktree add --detach "$RUNNER_TEMP/atlas-before" 7d27a5aee85b3431d380b03b215d758bc86bb4f4
+          # Compare against the PR's base (current main): only this PR's own layout changes count.
+          # Pushes to design branches compare against the parent commit.
+          git worktree add --detach "$RUNNER_TEMP/atlas-before" "${{ github.event.pull_request.base.sha || github.event.before }}"
       - run: |
           uv run python manage.py migrate --noinput
           uv run python manage.py load_content
