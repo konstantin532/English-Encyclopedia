@@ -142,6 +142,7 @@ layers:
       **Проверка маленького шага:** *I am Tom* и *Tom is at home* относятся к одному времени, но форма **be** разная: с **I** — **am**, с именем одного человека — **is**. Чтобы выбрать форму, сперва найдите **о ком говорите**, а затем посмотрите в таблицу, а не переводите русское «есть».
 exercises:
   - order: 1
+    uid: EX-00005
     kind: choice
     stage: recognition
     prompt_ru: "Какое слово в этой фразе — глагол be?"
@@ -152,6 +153,7 @@ exercises:
     explanation_ru: "Is — форма be для Anna (одного человека). В русском «Анна — моя подруга» отдельного глагола обычно нет: вместо него на письме можно поставить тире."
     units: [LX-00016]
   - order: 2
+    uid: EX-00006
     kind: choice
     stage: substitution
     prompt_ru: "Выберите форму be: «Ты мой друг»."
@@ -162,6 +164,7 @@ exercises:
     explanation_ru: "В этой фразе подлежащее you, поэтому выбираем are. С I было бы am, с it — is."
     units: [LX-00016, LX-00018]
   - order: 3
+    uid: EX-00007
     kind: fill
     stage: substitution
     prompt_ru: "Впишите форму be: «Я дома»."
@@ -171,6 +174,7 @@ exercises:
     explanation_ru: "Подлежащее I требует форму am: I am at home. В разговоре возможна форма I'm at home. Сравните: Anna is at home."
     units: [LX-00016, LX-00017, LX-00023]
   - order: 4
+    uid: EX-00008
     kind: build
     stage: production
     prompt_ru: "Соберите фразу: «Это не телефон»."
@@ -181,6 +185,7 @@ exercises:
     explanation_ru: "В полном отрицательном предложении с be порядок такой: It → is → not → a phone. Сокращение сохраняет смысл: It isn't a phone."
     units: [LX-00016, LX-00019, LX-00030]
   - order: 5
+    uid: EX-00009
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: гость спрашивает «Is it your room?», а это не ваша комната. Ответьте полностью."

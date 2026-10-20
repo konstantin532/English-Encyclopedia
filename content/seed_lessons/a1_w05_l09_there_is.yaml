@@ -104,6 +104,7 @@ layers:
       **Проверка маленького шага:** *I have a book* отвечает на вопрос «**Что у меня есть?**». *There is a book* сообщает «**Тут есть книга**», но **не называет владельца**. Перед выбором конструкции определите, что важнее в ситуации: **обладатель** или **наличие предмета**.
 exercises:
   - order: 1
+    uid: EX-00044
     kind: choice
     stage: recognition
     prompt_ru: "Вы хотите узнать, продаётся ли в магазине молоко. Что спросить?"
@@ -113,6 +114,7 @@ exercises:
     explanation_ru: "Is there milk? — «Молоко есть?». В вопросе is стоит перед there."
     units: [LX-00119]
   - order: 2
+    uid: EX-00045
     kind: fill
     stage: substitution
     prompt_ru: "Яблок несколько. Вставьте нужную форму be."
@@ -122,6 +124,7 @@ exercises:
     explanation_ru: "Несколько вещей — there are: There are apples."
     units: [LX-00109, LX-00112]
   - order: 3
+    uid: EX-00046
     kind: build
     stage: production
     prompt_ru: "Соберите просьбу: «Можно мне яблок, пожалуйста?»"
@@ -131,6 +134,7 @@ exercises:
     explanation_ru: "Can I have some apples, please? — some обозначает некоторое количество без точного числа (не обязательно мало)."
     units: [LX-00113, LX-00121]
   - order: 4
+    uid: EX-00047
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: Том спрашивает, есть ли дома вода. Вода есть. Ответьте коротко."
@@ -141,6 +145,7 @@ exercises:
     explanation_ru: "Yes, there is. — короткий ответ без сокращения: в конце фразы there's не говорят."
     units: [LX-00120]
   - order: 5
+    uid: EX-00048
     kind: choice
     stage: recognition
     prompt_ru: "Как сказать «зелёные яблоки»?"
@@ -150,6 +155,7 @@ exercises:
     explanation_ru: "green apples — прилагательное стоит перед существительным и не получает -s."
     units: [LX-00287]
   - order: 6
+    uid: EX-00049
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: в магазине есть жёлтые бананы. Вежливо попросите бананы, не называя точного количества."

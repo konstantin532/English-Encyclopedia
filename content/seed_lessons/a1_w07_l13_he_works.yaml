@@ -98,6 +98,7 @@ layers:
       **Проверка маленького шага:** *Tom works* — обычное утверждение, поэтому **works**. *Does Tom work?* — вопрос: **does** уже показывает форму для Tom, и основной глагол **work** остаётся без **-s**. Сначала найдите, **есть ли does**, затем выбирайте форму основного глагола.
 exercises:
   - order: 1
+    uid: EX-00068
     kind: choice
     stage: recognition
     prompt_ru: "Как правильно: «Мия работает в кафе»?"
@@ -107,6 +108,7 @@ exercises:
     explanation_ru: "Mia works — с одним человеком глагол получает -s. is рядом с work лишний."
     units: [LX-00153]
   - order: 2
+    uid: EX-00069
     kind: fill
     stage: substitution
     prompt_ru: "Спросите, работает ли Том в школе. Вставьте помощника."
@@ -116,6 +118,7 @@ exercises:
     explanation_ru: "Does he work…? — -s ушло в does, а work остался без -s."
     units: [LX-00154]
   - order: 3
+    uid: EX-00070
     kind: build
     stage: production
     prompt_ru: "Соберите фразу: «Он работает ночью»."
@@ -125,6 +128,7 @@ exercises:
     explanation_ru: "He works at night. «Ночью» — at night, как at seven."
     units: [LX-00150, LX-00156]
   - order: 4
+    uid: EX-00071
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: вас спрашивают, работает ли ваша соседка в кафе. Не работает. Ответьте коротко."
@@ -135,6 +139,7 @@ exercises:
     explanation_ru: "No, she does not — в разговоре No, she doesn't. Повторять work не нужно."
     units: [LX-00155]
   - order: 5
+    uid: EX-00072
     kind: choice
     stage: recognition
     prompt_ru: "Мия заканчивает в два. Как сказать это о ней?"
@@ -144,6 +149,7 @@ exercises:
     explanation_ru: "She finishes — после sh, ch, s пишут -es: finishes, watches."
     units: [LX-00333]
   - order: 6
+    uid: EX-00073
     kind: fill
     stage: transfer
     prompt_ru: "Ваш друг — медбрат. Он начинает в семь. Скажите вторую фразу."

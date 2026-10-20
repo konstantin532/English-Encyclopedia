@@ -1,0 +1,58 @@
+name: Database backup
+# Daily encrypted dump of the production database. The repository can be public, so the dump
+# is encrypted (AES-256) before upload: an artifact alone reveals nothing.
+# Setup: Settings -> Secrets and variables -> Actions -> add
+#   BACKUP_DATABASE_URL  - Supabase DIRECT connection string (port 5432, not the pooler)
+#   BACKUP_PASSPHRASE    - long random password; keep it outside GitHub too, or backups are useless
+on:
+  schedule:
+    - cron: "17 2 * * *"   # 05:17 Moscow time
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: database-backup
+  cancel-in-progress: false
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      BACKUP_DATABASE_URL: ${{ secrets.BACKUP_DATABASE_URL }}
+      BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+    steps:
+      - name: Check secrets
+        id: check
+        run: |
+          if [ -z "$BACKUP_DATABASE_URL" ] || [ -z "$BACKUP_PASSPHRASE" ]; then
+            echo "::warning::Backups are not configured: add BACKUP_DATABASE_URL and BACKUP_PASSPHRASE secrets (docs/operations/backups.md)."
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Install PostgreSQL 17 client
+        if: steps.check.outputs.configured == 'true'
+        run: |
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -fsSL -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+          sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client-17
+      - name: Dump and encrypt
+        if: steps.check.outputs.configured == 'true'
+        run: |
+          set -euo pipefail
+          stamp=$(date -u +%Y-%m-%dT%H%MZ)
+          /usr/lib/postgresql/17/bin/pg_dump "$BACKUP_DATABASE_URL" --format=custom --no-owner --no-privileges \
+            --schema=public --file=db.dump
+          test -s db.dump
+          gpg --batch --yes --pinentry-mode loopback --passphrase "$BACKUP_PASSPHRASE" \
+            --symmetric --cipher-algo AES256 --output "ee-db-$stamp.dump.gpg" db.dump
+          shred -u db.dump
+          ls -lh ee-db-*.dump.gpg
+      - uses: actions/upload-artifact@v4
+        if: steps.check.outputs.configured == 'true'
+        with:
+          name: database-backup
+          path: ee-db-*.dump.gpg
+          retention-days: 30
+          if-no-files-found: error

@@ -114,6 +114,7 @@ layers:
       **Проверка маленького шага:** *She is happy* — **she** сама обозначает человека. *Her family is nice* — **her** указывает, **чья** семья, и стоит перед **family**. А в *Mia's photo* принадлежность показана через **'s** после имени. Три конструкции могут говорить об одном человеке, но слова выполняют разные роли.
 exercises:
   - order: 1
+    uid: EX-00038
     kind: choice
     stage: recognition
     prompt_ru: "Мия показывает фото брата. Как сказать «её брат»?"
@@ -123,6 +124,7 @@ exercises:
     explanation_ru: "Выбор зависит от владельца: Мия — her. То, что брат мужчина, не важно."
     units: [LX-00098]
   - order: 2
+    uid: EX-00039
     kind: fill
     stage: substitution
     prompt_ru: "Скажите «Это фото Тома»."
@@ -133,6 +135,7 @@ exercises:
     explanation_ru: "Tom's photo: к владельцу добавляют 's."
     units: [LX-00097]
   - order: 3
+    uid: EX-00040
     kind: build
     stage: production
     prompt_ru: "Соберите: «Его зовут Том»."
@@ -142,6 +145,7 @@ exercises:
     explanation_ru: "His name is Tom. — his, потому что владелец имени — мужчина."
     units: [LX-00097, LX-00104]
   - order: 4
+    uid: EX-00041
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: вы показываете сестру друга. Её зовут Анна. Скажите «Её зовут Анна»."
@@ -152,6 +156,7 @@ exercises:
     explanation_ru: "Her name is Anna. — her, потому что имя принадлежит ей."
     units: [LX-00098]
   - order: 5
+    uid: EX-00042
     kind: fill
     stage: substitution
     prompt_ru: "Мама и папа Мии на фото. Спросите, сколько им лет."
@@ -161,6 +166,7 @@ exercises:
     explanation_ru: "How old are they? — с we и they всегда are."
     units: [LX-00264]
   - order: 6
+    uid: EX-00043
     kind: fill
     stage: transfer
     prompt_ru: "Вы показываете фото своей семьи, затем фото дома бабушки и дедушки. Скажите: «У нас большая семья. Их дом большой»."

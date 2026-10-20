@@ -94,6 +94,7 @@ layers:
       **Проверка маленького шага:** *I like reading* говорит о **любимом занятии вообще**; *I am reading* сообщает, что человек **читает сейчас**. Обе формы содержат **-ing**, но работу фразы определяет и то, **что стоит перед reading** — *like* или *am*. Вторую конструкцию подробно изучим позже.
 exercises:
   - order: 1
+    uid: EX-00110
     kind: choice
     stage: recognition
     prompt_ru: "Как правильно сказать «Я люблю читать»?"
@@ -103,6 +104,7 @@ exercises:
     explanation_ru: "I like reading. Можно и I like to read, но не I like read."
     units: [LX-00200, LX-00208]
   - order: 2
+    uid: EX-00111
     kind: fill
     stage: substitution
     prompt_ru: "Анна любит гулять. Допишите глагол walk в нужной форме."
@@ -113,6 +115,7 @@ exercises:
     explanation_ru: "I like walking — walk + -ing. Вариант I like to walk тоже верный."
     units: [LX-00201]
   - order: 3
+    uid: EX-00112
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос: «Ты любишь гулять?»"
@@ -122,6 +125,7 @@ exercises:
     explanation_ru: "Do you like walking? Ответ — Yes, I do или No, I don't."
     units: [LX-00209]
   - order: 4
+    uid: EX-00113
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: на встрече вас спрашивают о хобби. Вы любите музыку и играете на гитаре. Скажите одну из фраз."
@@ -132,6 +136,7 @@ exercises:
     explanation_ru: "What do you like? спрашивает именно о том, что нравится. Поэтому I like music или I like playing the guitar — прямые ответы. I play the guitar описывает занятие, но само по себе не говорит, что оно вам нравится."
     units: [LX-00203, LX-00211]
   - order: 5
+    uid: EX-00114
     kind: choice
     stage: recognition
     prompt_ru: "Анна говорит: I like walking in my jacket. В чём она гуляет?"
@@ -141,6 +146,7 @@ exercises:
     explanation_ru: "jacket — куртка; shirt — рубашка; shoes — обувь, туфли."
     units: [LX-00386, LX-00387, LX-00388]
   - order: 6
+    uid: EX-00115
     kind: build
     stage: transfer
     prompt_ru: "Новая ситуация: друг спрашивает о вашей одежде. Скажите: «Мне нравятся мои синие туфли»."

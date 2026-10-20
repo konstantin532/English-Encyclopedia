@@ -93,6 +93,7 @@ layers:
       **Проверка маленького шага:** *Because I like music* — после **because** идёт целая мысль: **кто** (*I*) и **что делает** (*like*). *Because of the music* — после **because of** только группа с существительным. Похожий русский перевод «из-за музыки / потому что…» не делает английские конструкции взаимозаменяемыми.
 exercises:
   - order: 1
+    uid: EX-00146
     kind: choice
     stage: recognition
     prompt_ru: "Анна спрашивает: Why, Tom? Что ей ответить?"
@@ -102,6 +103,7 @@ exercises:
     explanation_ru: "Why? спрашивает о причине или цели. Because I like Russian music объясняет причину. В этом упражнении удобный ответ начинается с because, но в разговоре возможны и другие формы."
     units: [LX-00241, LX-00250]
   - order: 2
+    uid: EX-00147
     kind: fill
     stage: substitution
     prompt_ru: "Мия объясняет, почему хочет учить русский. Вставьте слово."
@@ -111,6 +113,7 @@ exercises:
     explanation_ru: "Because the Russian letters are nice! — because вводит причину."
     units: [LX-00242]
   - order: 3
+    uid: EX-00148
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос: «Почему ты любишь музыку?»"
@@ -120,6 +123,7 @@ exercises:
     explanation_ru: "Why do you like music? — с обычным глаголом нужен do."
     units: [LX-00241]
   - order: 4
+    uid: EX-00149
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: на курсах вас спрашивают, почему вам нравится английский. Объясните одной фразой с because."
@@ -130,6 +134,7 @@ exercises:
     explanation_ru: "Because I like English music — возможная причина интереса к языку. Здесь тренируем because + подлежащее + сказуемое, но причина должна по смыслу отвечать на вопрос. Фраза Because I like English повторяет исходный вопрос, не объясняя почему; Because I like music не обязательно связана с английским."
     units: [LX-00242]
   - order: 5
+    uid: EX-00150
     kind: choice
     stage: recognition
     prompt_ru: Вас спрашивают, почему вы просите помощи с упражнением. Выберите ответ с полной причиной.
@@ -144,6 +149,7 @@ exercises:
     - LX-00452
     - LX-00456
   - order: 6
+    uid: EX-00151
     kind: fill
     stage: transfer
     prompt_ru: 'Учитель спрашивает, почему вы просите повторить слово. Ответьте: «Потому что я не понимаю это слово».'

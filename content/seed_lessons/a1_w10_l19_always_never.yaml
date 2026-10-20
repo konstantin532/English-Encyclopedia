@@ -109,6 +109,7 @@ layers:
       **Проверка маленького шага:** *I always read* — **always** перед обычным смысловым глаголом **read**. *I am always busy* — то же **always** стоит после формы **be** (*am*). Сперва найдите **какой глагол** в предложении, затем выбирайте место слова частоты.
 exercises:
   - order: 1
+    uid: EX-00104
     kind: choice
     stage: recognition
     prompt_ru: "Как правильно сказать «Я никогда не гуляю»?"
@@ -118,6 +119,7 @@ exercises:
     explanation_ru: "В нормативном утверждении I never walk слово never уже означает «никогда не». Поэтому don't здесь не добавляют; never стоит перед основным глаголом walk."
     units: [LX-00197, LX-00210]
   - order: 2
+    uid: EX-00105
     kind: fill
     stage: substitution
     prompt_ru: "Анна читает каждую субботу без исключений. Вставьте слово."
@@ -127,6 +129,7 @@ exercises:
     explanation_ru: "I always read on Saturdays — always перед глаголом read."
     units: [LX-00196, LX-00207]
   - order: 3
+    uid: EX-00106
     kind: build
     stage: production
     prompt_ru: "Соберите: «Иногда я играю на гитаре»."
@@ -136,6 +139,7 @@ exercises:
     explanation_ru: "I sometimes play the guitar. Можно и Sometimes I play the guitar."
     units: [LX-00198]
   - order: 4
+    uid: EX-00107
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: коллега спрашивает, работаете ли вы по воскресеньям. Вы не работаете никогда. Ответьте."
@@ -146,6 +150,7 @@ exercises:
     explanation_ru: "No, I never work on Sundays. Коротко — No, never."
     units: [LX-00195, LX-00197]
   - order: 5
+    uid: EX-00108
     kind: choice
     stage: substitution
     prompt_ru: "Выберите фразу: «Я люблю гулять в октябре»."
@@ -155,6 +160,7 @@ exercises:
     explanation_ru: "in October — в октябре. Перед днём было бы on Friday."
     units: [LX-00383]
   - order: 6
+    uid: EX-00109
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: вы договорились встретиться с другом в пятницу. Попрощайтесь до пятницы."

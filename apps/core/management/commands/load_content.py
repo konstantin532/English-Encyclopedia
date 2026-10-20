@@ -7,10 +7,10 @@ import yaml
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.core.exceptions import ObjectDoesNotExist
-from django.db import transaction
+from django.db import models, transaction
 
 from apps.curriculum.models import Level, TongueTwister, Week, WeekScene
-from apps.drills.models import Exercise, PracticeItem
+from apps.drills.models import ARCHIVE_ORDER_BASE, Exercise, PracticeItem
 from apps.lessons.models import Lesson, LessonLayer
 from apps.lexicon.models import LexicalUnit
 from apps.poems.models import Poem
@@ -28,6 +28,9 @@ UNIT_FIELDS = [
 
 # Русская рамка истории недели (план пилота, «Файлы и контракты»).
 STORY_BEAT_KEYS = {"intro_ru", "outcome_ru", "next_hook_ru"}
+EXERCISE_UID = re.compile(r"EX-\d{5}")
+# Временный сдвиг номеров при перестановке упражнений (ниже архивных 10000+).
+REORDER_SHIFT = 2000
 
 
 def read_seed(path: Path) -> dict:
@@ -75,6 +78,7 @@ class Command(BaseCommand):
     def handle(self, *args, **opts):
         root = Path(settings.CONTENT_DIR)
         self.seen_units = {}
+        self.seen_exercises = {}
         self.allow_progress_loss = bool(opts.get("allow_progress_loss"))
         self.admin_edited = set()
         if opts.get("preserve_admin_edits"):
@@ -95,19 +99,56 @@ class Command(BaseCommand):
             f"Единиц: {n_units}, уроков: {n_lessons}, историй с текстом: {n_stories}, стихов с текстом: {n_poems}, "
             f"недель с диалогом: {n_weeks}"))
 
-    def _guard_learner_data(self, where: str, exercises) -> None:
-        """Удаление упражнения каскадом стирает ответы и повторения учеников. Без явного флага — стоп."""
-        if self.allow_progress_loss:
-            return
+    def _load_exercises(self, where: str, lesson, items: list) -> None:
+        """Упражнения сопоставляются по постоянному uid, а не по номеру.
+
+        Убранное из файла упражнение с историей учеников уходит в архив (история цела);
+        без истории — удаляется. Полное удаление с историей — только флагом --allow-progress-loss.
+        """
         from apps.learning.models import ExerciseAttempt, MistakeReview
 
-        used = sorted({*ExerciseAttempt.objects.filter(exercise__in=exercises).values_list("exercise__order", flat=True),
-                       *MistakeReview.objects.filter(exercise__in=exercises).values_list("exercise__order", flat=True)})
-        if used:
-            raise CommandError(
-                f"{where}: упражнения {', '.join(map(str, used))} убраны из файла, но у них есть ответы учеников. "
-                "Удаление сотрёт их историю. Верните упражнения или запустите load_content --allow-progress-loss, "
-                "если потеря истории осознанная. Номер (order) упражнения нельзя переиспользовать для другого задания.")
+        uids = {ex["uid"] for ex in items if ex.get("uid")}
+        orders = {ex["order"] for ex in items}
+        current = list(Exercise.all_objects.filter(lesson=lesson))
+        stale = [e for e in current if not e.is_archived and not (e.uid in uids if e.uid else e.order in orders)]
+        for exercise in stale:
+            has_history = (ExerciseAttempt.objects.filter(exercise=exercise).exists()
+                           or MistakeReview.objects.filter(exercise=exercise).exists())
+            if has_history and not self.allow_progress_loss:
+                exercise.is_archived = True
+                exercise.order = ARCHIVE_ORDER_BASE + exercise.pk
+                exercise.save(update_fields=["is_archived", "order"])
+                self.stdout.write(f"{where}: упражнение {exercise.uid or exercise.pk} убрано из курса и сохранено в архиве "
+                                  "вместе с ответами учеников.")
+            else:
+                ExerciseAttempt.objects.filter(exercise=exercise).delete()
+                MistakeReview.objects.filter(exercise=exercise).delete()
+                exercise.delete()
+        # Номера освобождаются заранее: упражнения можно переставлять местами без конфликта (lesson, order).
+        Exercise.all_objects.filter(lesson=lesson, is_archived=False).update(order=models.F("order") + REORDER_SHIFT)
+        fields = ["kind", "stage", "prompt_ru", "prompt_en", "options", "answer", "accepted", "hint_ru", "explanation_ru"]
+        for ex in items:
+            self._check_markup(f"{where}: упражнение {ex['order']}", ex.get("prompt_en", ""))
+            values = {k: ex.get(k, Exercise._meta.get_field(k).get_default()) for k in fields}
+            uid = ex.get("uid")
+            obj = None
+            if uid:
+                obj = Exercise.all_objects.filter(uid=uid).first()
+                if obj is not None and obj.lesson_id != lesson.pk:
+                    raise CommandError(f"{where}: uid {uid} принадлежит другому уроку")
+            if obj is None:
+                # Первое присвоение uid: старое упражнение того же номера получает постоянный ID.
+                obj = Exercise.all_objects.filter(lesson=lesson, uid__isnull=True, is_archived=False,
+                                                  order=ex["order"] + REORDER_SHIFT).first()
+            if obj is None:
+                obj = Exercise(lesson=lesson)
+            for key, value in values.items():
+                setattr(obj, key, value)
+            obj.order, obj.is_archived = ex["order"], False
+            if uid:
+                obj.uid = uid
+            obj.save()
+            self._set_units(obj.units, ex.get("units", []), f"{where}: упражнение {ex['order']}")
 
     def _check_markup(self, where: str, *texts: str):
         for text in texts:
@@ -159,6 +200,13 @@ class Command(BaseCommand):
         require_fields(path.name, data, {"level": str, "slug": str, "title": str, "summary": str, "layers": list})
         records(path.name, "layers", data["layers"], {"number": int, "body": str})
         for exercise in records(path.name, "exercises", data.get("exercises", []), {"order": int, "answer": str}):
+            uid = exercise.get("uid")
+            if uid is not None:
+                if not isinstance(uid, str) or not EXERCISE_UID.fullmatch(uid):
+                    raise CommandError(f"{path.name}: упражнение {exercise['order']}: uid должен быть вида EX-00001")
+                if uid in self.seen_exercises:
+                    raise CommandError(f"{path.name}: uid {uid} уже занят в {self.seen_exercises[uid]}")
+                self.seen_exercises[uid] = path.name
             for key in ("options", "accepted"):
                 string_list(path.name, key, exercise.get(key, []))
             for key in ("prompt_ru", "prompt_en", "hint_ru", "explanation_ru"):
@@ -197,17 +245,7 @@ class Command(BaseCommand):
         for layer in data["layers"]:
             self._check_markup(f"{path.name}: слой {layer['number']}", layer["body"])
             LessonLayer.objects.update_or_create(lesson=lesson, number=layer["number"], defaults={"body": layer["body"]})
-        stale = lesson.exercises.exclude(order__in=[e["order"] for e in data.get("exercises", [])])
-        self._guard_learner_data(path.name, stale)
-        stale.delete()
-        for ex in data.get("exercises", []):
-            self._check_markup(f"{path.name}: упражнение {ex['order']}", ex.get("prompt_en", ""))
-            obj, _ = Exercise.objects.update_or_create(
-                lesson=lesson, order=ex["order"],
-                defaults={k: ex.get(k, Exercise._meta.get_field(k).get_default()) for k in
-                          ["kind", "stage", "prompt_ru", "prompt_en", "options", "answer", "accepted", "hint_ru", "explanation_ru"]},
-            )
-            self._set_units(obj.units, ex.get("units", []), f"{path.name}: упражнение {ex['order']}")
+        self._load_exercises(path.name, lesson, data.get("exercises", []))
         practice = data.get("practice", [])
         lesson.practice_items.exclude(order__in=[p["order"] for p in practice]).delete()
         for item in practice:

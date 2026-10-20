@@ -25,7 +25,7 @@ STATUS_LADDER = [Status.NEW, Status.RECOGNITION, Status.GUIDED_USE, Status.INDEP
 
 class UnitProgress(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="unit_progress")
-    unit = models.ForeignKey(LexicalUnit, on_delete=models.CASCADE, related_name="progress")
+    unit = models.ForeignKey(LexicalUnit, on_delete=models.PROTECT, related_name="progress")
     status = models.CharField(max_length=16, choices=Status.choices, default=Status.NEW)
     stage = models.PositiveSmallIntegerField(default=0, help_text="Ступень интервала 0–4")
     next_review_at = models.DateTimeField(null=True, blank=True)
@@ -35,7 +35,11 @@ class UnitProgress(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        constraints = [models.UniqueConstraint(fields=["user", "unit"], name="uniq_progress_per_unit")]
+        constraints = [
+            models.UniqueConstraint(fields=["user", "unit"], name="uniq_progress_per_unit"),
+            models.CheckConstraint(condition=models.Q(stage__lte=len(REVIEW_INTERVALS_DAYS) - 1),
+                                   name="unit_progress_stage_in_range"),
+        ]
         indexes = [models.Index(fields=["user", "next_review_at"])]
 
     def register(self, correct: bool, context: str = "") -> None:
@@ -70,7 +74,7 @@ class UnitProgress(models.Model):
 
 class ExerciseAttempt(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="attempts")
-    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name="attempts")
+    exercise = models.ForeignKey(Exercise, on_delete=models.PROTECT, related_name="attempts")
     answer = models.CharField(max_length=200)
     is_correct = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -88,7 +92,7 @@ class WeekGoal(models.Model):
         NOT_YET = "not_yet", "Ещё нет"
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="week_goals")
-    week = models.ForeignKey("curriculum.Week", on_delete=models.CASCADE, related_name="goals")
+    week = models.ForeignKey("curriculum.Week", on_delete=models.PROTECT, related_name="goals")
     status = models.CharField(max_length=8, choices=GoalStatus.choices)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -125,6 +129,7 @@ class SpeechPracticeProgress(models.Model):
             models.UniqueConstraint(
                 fields=["user", "content_key", "fragment"], name="uniq_speech_progress_per_fragment"
             ),
+            models.CheckConstraint(condition=models.Q(stage__lte=4), name="speech_progress_stage_in_range"),
         ]
         indexes = [models.Index(fields=["user", "next_review_at"], name="speech_due_by_user_idx")]
         ordering = ["next_review_at", "content_key", "fragment"]
@@ -160,7 +165,7 @@ class MistakeReview(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="mistake_reviews",
     )
     exercise = models.ForeignKey(
-        Exercise, on_delete=models.CASCADE, related_name="delayed_reviews",
+        Exercise, on_delete=models.PROTECT, related_name="delayed_reviews",
     )
     due_at = models.DateTimeField()
     current_index = models.PositiveSmallIntegerField(default=0)
@@ -172,6 +177,9 @@ class MistakeReview(models.Model):
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=["user", "exercise"], name="unique_mistake_review"),
+            # Пять отложенных вопросов: счётчики не выходят за пределы пакета.
+            models.CheckConstraint(condition=models.Q(current_index__lte=5, correct_count__lte=5),
+                                   name="mistake_review_counts_in_range"),
         ]
         indexes = [
             models.Index(fields=["user", "completed_at", "due_at"], name="mistake_review_due_idx"),
@@ -192,7 +200,7 @@ class IndependentAttempt(models.Model):
         SELF_REPORTED = "self_reported", "Самооценка ученика"
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="independent_attempts")
-    lesson = models.ForeignKey("lessons.Lesson", on_delete=models.CASCADE, related_name="independent_attempts")
+    lesson = models.ForeignKey("lessons.Lesson", on_delete=models.PROTECT, related_name="independent_attempts")
     skill = models.CharField(max_length=12)
     submitted = models.CharField(max_length=400)
     # Exact exercise shown when this response was created. Newer content edits

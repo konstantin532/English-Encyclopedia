@@ -104,6 +104,7 @@ layers:
       **Проверка маленького шага:** *My foot hurts* — болит **одна ступня**, поэтому *hurts*. *My feet hurt* — болят **обе или несколько ступней**, поэтому *hurt*. Меняются **и форма существительного**, и согласование глагола: *foot → feet* — особый случай множественного числа.
 exercises:
   - order: 1
+    uid: EX-00116
     kind: choice
     stage: recognition
     prompt_ru: "Как правильно сказать «У меня болит спина»?"
@@ -113,6 +114,7 @@ exercises:
     explanation_ru: "В My back hurts подлежащее — одна часть тела, my back. Поэтому в обычном Present Simple глагол hurt получает -s: hurts."
     units: [LX-00214, LX-00223]
   - order: 2
+    uid: EX-00117
     kind: fill
     stage: substitution
     prompt_ru: "Скажите врачу, что болит голова. Вставьте слово."
@@ -122,6 +124,7 @@ exercises:
     explanation_ru: "I have a headache — «у меня головная боль»."
     units: [LX-00212, LX-00221]
   - order: 3
+    uid: EX-00118
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос врача: «У вас болит голова?»"
@@ -131,6 +134,7 @@ exercises:
     explanation_ru: "Does your head hurt? — с does глагол без -s."
     units: [LX-00222]
   - order: 4
+    uid: EX-00119
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: в поездке у вас заболел живот. Скажите аптекарю."
@@ -141,6 +145,7 @@ exercises:
     explanation_ru: "My stomach hurts — часть тела + hurts. Сказать «I have a stomachache» тоже можно."
     units: [LX-00215, LX-00216]
   - order: 5
+    uid: EX-00120
     kind: choice
     stage: recognition
     prompt_ru: "Как сказать: «У меня болят ступни»?"
@@ -150,6 +155,7 @@ exercises:
     explanation_ru: "Одна ступня: My foot hurts. Несколько: My feet hurt. Foot → feet — особая форма."
     units: [LX-00401]
   - order: 6
+    uid: EX-00121
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: на приёме у другого врача вы показываете на одну ногу. Скажите: «У меня болит нога»."

@@ -103,6 +103,7 @@ layers:
       **Проверка маленького шага:** *I can sleep* и *I can't sleep* различаются **смыслом отрицания**. В американской речи конечный /t/ в *can't* не всегда звучит отчётливо, поэтому не полагайтесь только на одну букву или ударение: слушайте **всю фразу** и уточняйте смысл, если не расслышали.
 exercises:
   - order: 1
+    uid: EX-00122
     kind: choice
     stage: recognition
     prompt_ru: "Как правильно: «Я не могу спать»?"
@@ -112,6 +113,7 @@ exercises:
     explanation_ru: "I can't sleep — can't сам делает отрицание, do и to не нужны."
     units: [LX-00218, LX-00224]
   - order: 2
+    uid: EX-00123
     kind: fill
     stage: substitution
     prompt_ru: "Дополните предложение обычной полной отрицательной формой can; сокращение тоже допускается."
@@ -122,6 +124,7 @@ exercises:
     explanation_ru: "В нейтральной полной отрицательной форме употребляем cannot одним словом. В разговоре и неформальном письме часто используют can't. В этом упражнении принимаются обе формы."
     units: [LX-00218]
   - order: 3
+    uid: EX-00124
     kind: build
     stage: production
     prompt_ru: "Соберите: «Но у меня болит спина»."
@@ -131,6 +134,7 @@ exercises:
     explanation_ru: "But my back hurts. but вводит противоположное."
     units: [LX-00219]
   - order: 4
+    uid: EX-00125
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: друг зовёт вас в парк в воскресенье, но вы работаете. Вежливо откажитесь."
@@ -141,6 +145,7 @@ exercises:
     explanation_ru: "Sorry, I can't. Можно объяснить: I work on Sunday."
     units: [LX-00218]
   - order: 5
+    uid: EX-00126
     kind: choice
     stage: recognition
     prompt_ru: "Как сказать: «Я хочу пить»?"
@@ -150,6 +155,7 @@ exercises:
     explanation_ru: "I am thirsty. О состоянии говорят с am / is / are или feel."
     units: [LX-00403, LX-00404, LX-00405]
   - order: 6
+    uid: EX-00127
     kind: build
     stage: transfer
     prompt_ru: "Новая ситуация: друг не понимает, почему вы отдыхаете. Соберите: «Я устал и не могу спать»."

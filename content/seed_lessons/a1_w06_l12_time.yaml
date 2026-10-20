@@ -97,6 +97,7 @@ layers:
       **Проверка маленького шага:** *It is seven o'clock* — **время сейчас**. *I have breakfast at seven* — **расписание действия**. *I work seven hours* — **продолжительность**, а не время на часах. Одинаковое число «семь» отвечает здесь на три разных вопроса.
 exercises:
   - order: 1
+    uid: EX-00062
     kind: choice
     stage: recognition
     prompt_ru: "Часы показывают ровно семь. Как это сказать?"
@@ -106,6 +107,7 @@ exercises:
     explanation_ru: "It is seven o'clock сообщает время сейчас; at seven связывает с этим часом действие, например I get up at seven."
     units: [LX-00132, LX-00140]
   - order: 2
+    uid: EX-00063
     kind: fill
     stage: substitution
     prompt_ru: "Скажите, что встаёте в шесть. Вставьте нужное слово."
@@ -115,6 +117,7 @@ exercises:
     explanation_ru: "at six — at ставят перед точным временем."
     units: [LX-00136]
   - order: 3
+    uid: EX-00064
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос: «Во сколько ты встаёшь?»"
@@ -124,6 +127,7 @@ exercises:
     explanation_ru: "What time do you get up? — what time, помощник do, потом you и get up."
     units: [LX-00133, LX-00135]
   - order: 4
+    uid: EX-00065
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: друг спрашивает, во сколько вы завтракаете. Вы завтракаете в восемь. Ответьте."
@@ -134,6 +138,7 @@ exercises:
     explanation_ru: "I have breakfast at eight. Коротко — At eight."
     units: [LX-00130, LX-00136]
   - order: 5
+    uid: EX-00066
     kind: choice
     stage: recognition
     prompt_ru: "Как сказать «вечером»?"
@@ -143,6 +148,7 @@ exercises:
     explanation_ru: "in the morning, in the afternoon, in the evening — но at night."
     units: [LX-00312]
   - order: 6
+    uid: EX-00067
     kind: fill
     stage: substitution
     prompt_ru: "Скажите, что вы обедаете в двенадцать."

@@ -105,6 +105,7 @@ layers:
       **Проверка маленького шага:** *Who works here?* — мы спрашиваем, **кто выполняет действие**, и **does** не нужен. *Where does Tom work?* — Том уже назван, мы спрашиваем, **где**, поэтому используем **does**. Нельзя строить каждый вопрос с **who/where** по одной схеме.
 exercises:
   - order: 1
+    uid: EX-00092
     kind: choice
     stage: recognition
     prompt_ru: "Как правильно спросить, во сколько открывается мастерская?"
@@ -114,6 +115,7 @@ exercises:
     explanation_ru: "Does уже показывает форму третьего лица с the shop, поэтому основной глагол open остаётся без -s: What time does the shop open?"
     units: [LX-00191]
   - order: 2
+    uid: EX-00093
     kind: fill
     stage: substitution
     prompt_ru: "Вы звоните в мастерскую. Спросите, у них ли ваш ключ."
@@ -123,6 +125,7 @@ exercises:
     explanation_ru: "Do you have my key? — с you помощник do."
     units: [LX-00188]
   - order: 3
+    uid: EX-00094
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос: «Во сколько открывается кафе?»"
@@ -132,6 +135,7 @@ exercises:
     explanation_ru: "What time does the cafe open? — кафе одно, поэтому does."
     units: [LX-00186, LX-00191]
   - order: 4
+    uid: EX-00095
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: вы хотите узнать, работает ли Мия каждый день. Спросите Тома."
@@ -142,6 +146,7 @@ exercises:
     explanation_ru: "Does Mia work every day? — с Mia помощник does, work без -s."
     units: [LX-00186]
   - order: 5
+    uid: EX-00096
     kind: choice
     stage: recognition
     prompt_ru: "Вы хотите узнать, КОГДА закрывается банк. С чего начать вопрос?"
@@ -151,6 +156,7 @@ exercises:
     explanation_ru: "When does the bank close? — when спрашивает о времени. Where — где, who — кто."
     units: [LX-00349, LX-00358]
   - order: 6
+    uid: EX-00097
     kind: build
     stage: production
     prompt_ru: "Соберите вопрос: «Во сколько закрывается магазин?»"
