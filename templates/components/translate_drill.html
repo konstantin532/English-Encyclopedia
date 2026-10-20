@@ -1,0 +1,13 @@
+          <form class="drill drill-translate" data-drill data-kind="translate" data-url="{% url 'api:check_practice' item.pk %}"{% if user.is_authenticated %} data-self-review-url="{% url 'learning:request_practice_review' item.pk %}"{% endif %} novalidate>
+            <p class="drill-stage">Перевод {{ number }} из {{ total }}. Скажите сами</p>
+            <p class="drill-prompt" id="t{{ item.pk }}">{{ item.prompt_ru }}</p>
+            <label class="visually-hidden" for="ta{{ item.pk }}">Ваш перевод на английский</label>
+            <input class="fill-input" id="ta{{ item.pk }}" name="answer" lang="en" autocomplete="off" autocapitalize="sentences" spellcheck="false" placeholder="фраза по-английски">
+            <div class="drill-actions">
+              <button class="btn btn-primary btn-small" type="submit">Проверить</button>
+              {% if item.hint_ru %}<button class="btn btn-quiet btn-small" type="button" data-hint-btn aria-expanded="false" aria-controls="th{{ item.pk }}">Подсказка</button>{% endif %}
+              <button class="btn btn-quiet btn-small" type="button" data-reveal hidden>Показать образец</button>
+            </div>
+            {% if item.hint_ru %}<p class="drill-hint" id="th{{ item.pk }}" hidden>{{ item.hint_ru }}</p>{% endif %}
+            <div class="drill-feedback" data-feedback role="status" aria-live="polite" hidden></div>
+          </form>

@@ -159,3 +159,45 @@ exercises:
     hint_ru: "What time + does + the shop + глагол без -s."
     explanation_ru: "What time does the shop close? — does забирает -s, поэтому close без -s."
     units: [LX-00348, LX-00358]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Мой ключ у вас?
+  answer: Do you have my key?
+  hint_ru: «У вас есть мой ключ?»
+  explanation_ru: Do you have my key? Вопрос с have строится через do.
+  review_of: 3
+  units:
+  - LX-00192
+- order: 2
+  kind: translate
+  prompt_ru: Во сколько открывается мастерская?
+  answer: What time does the shop open?
+  accepted:
+  - What time does the key shop open?
+  hint_ru: Shop = it → does.
+  explanation_ru: What time does the shop open? С it, he, she — does, а open уже без -s.
+  review_of: 3
+  units:
+  - LX-00186
+  - LX-00191
+  - LX-00348
+- order: 3
+  kind: translate
+  prompt_ru: Ты работаешь дома?
+  answer: Do you work at home?
+  hint_ru: you → do.
+  explanation_ru: Do you work at home? С you — do.
+  review_of: 3
+  units:
+  - LX-00192
+- order: 4
+  kind: translate
+  prompt_ru: Мия встаёт в пять?
+  answer: Does Mia get up at five?
+  hint_ru: Mia → does.
+  explanation_ru: 'Does Mia get up at five? Does берёт -s на себя: get без -s.'
+  review_of: 3
+  units:
+  - LX-00191

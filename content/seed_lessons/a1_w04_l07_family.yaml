@@ -146,3 +146,56 @@ exercises:
     hint_ru: "Дословно: «как старый ты есть?»"
     explanation_ru: "How old are you? — how old первыми, дальше are you. О другом: How old is he?"
     units: [LX-00278]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Кто это?
+  answer: Who is this?
+  accepted:
+  - Who is that?
+  hint_ru: Вопрос о человеке — Who.
+  explanation_ru: 'Who is this? Who — «кто». В разговоре: Who''s this?'
+  review_of: 3
+  units:
+  - LX-00099
+  - LX-00101
+  - LX-00102
+  - LX-00103
+- order: 2
+  kind: translate
+  prompt_ru: Это мой брат.
+  answer: This is my brother.
+  hint_ru: Так представляют человека на фото.
+  explanation_ru: This is my brother. Представляя человека, говорят This is…, а не He is…
+  review_of: 3
+  units:
+  - LX-00088
+  - LX-00101
+  - LX-00102
+  - LX-00103
+- order: 3
+  kind: translate
+  prompt_ru: Это твоя мама?
+  answer: Is this your mother?
+  accepted:
+  - Is this your mom?
+  hint_ru: Is впереди.
+  explanation_ru: 'Is this your mother? (или mom). Вопрос с be: is встаёт первым.'
+  review_of: 3
+  units:
+  - LX-00101
+  - LX-00102
+  - LX-00103
+- order: 4
+  kind: translate
+  prompt_ru: Сколько ему лет?
+  answer: How old is he?
+  hint_ru: «Насколько он старый?»
+  explanation_ru: 'How old is he? По-английски спрашивают «насколько стар», а отвечают просто числом: He is ten.'
+  review_of: 3
+  units:
+  - LX-00101
+  - LX-00102
+  - LX-00103
+  - LX-00278

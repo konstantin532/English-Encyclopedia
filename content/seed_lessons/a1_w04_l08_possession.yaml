@@ -170,3 +170,47 @@ exercises:
     hint_ru: "мы — we, их — their."
     explanation_ru: "We are a big family — we («мы») требует are. Their house is big — their («их») стоит перед house и относится к бабушке и дедушке, о которых мы уже говорим."
     units: [LX-00263, LX-00265, LX-00279]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Её зовут Мия.
+  answer: Her name is Mia.
+  hint_ru: «Её имя — Мия».
+  explanation_ru: Her name is Mia. Her — «её», his — «его».
+  review_of: 3
+  units:
+  - LX-00098
+  - LX-00104
+  - LX-00105
+- order: 2
+  kind: translate
+  prompt_ru: Брату Мии десять.
+  answer: Mia's brother is ten.
+  hint_ru: Чей брат? — Mia's.
+  explanation_ru: 'Mia''s brother is ten. ''s отвечает на вопрос «чей?»: Mia''s brother — брат Мии.'
+  review_of: 3
+  units:
+  - LX-00104
+  - LX-00105
+- order: 3
+  kind: translate
+  prompt_ru: Его зовут Том.
+  answer: His name is Tom.
+  hint_ru: his — «его».
+  explanation_ru: His name is Tom. Не путайте his (его) и he's (он есть).
+  review_of: 3
+  units:
+  - LX-00097
+  - LX-00104
+  - LX-00105
+- order: 4
+  kind: translate
+  prompt_ru: Вот твоё фото, Мия.
+  answer: Here is your photo, Mia.
+  hint_ru: «Вот…» — Here is…
+  explanation_ru: Here is your photo, Mia. Here is… — когда что-то протягиваете.
+  review_of: 3
+  units:
+  - LX-00104
+  - LX-00105

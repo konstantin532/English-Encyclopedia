@@ -109,3 +109,18 @@ def request_optional_review(request, exercise_id):
     due_at = schedule_review(request.user, exercise)
     return JsonResponse({"scheduled": True, "due_at": due_at.isoformat(), "count": COUNT,
                          "note": "Добровольная практика не считается исправлением подтверждённой ошибки."})
+
+
+@login_required
+@require_POST
+def request_practice_review(request, item_id):
+    """Ученик сам просит пять вопросов на тему перевода через 2 дня. Это не штраф за ошибку."""
+    from apps.drills.models import PracticeItem
+
+    item = get_object_or_404(PracticeItem.objects.select_related("lesson"), pk=item_id, lesson__is_published=True)
+    exercise = item.lesson.exercises.filter(order=item.review_of).first()
+    if exercise is None or not variants_for(exercise):
+        return HttpResponseBadRequest("Для этого перевода нет добровольного повторения.")
+    due_at = schedule_review(request.user, exercise)
+    return JsonResponse({"scheduled": True, "due_at": due_at.isoformat(), "count": COUNT,
+                         "note": "Добровольная практика не считается исправлением подтверждённой ошибки."})

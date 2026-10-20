@@ -2,10 +2,10 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
 
-from apps.drills.models import Exercise
+from apps.drills.models import Exercise, PracticeItem
 from apps.drills.retry_guidance import is_open_pilot_response, is_pilot_exercise, retry_guidance
 from apps.taxonomy.markup import strip_markup
-from apps.learning.services import record_attempt, record_recall
+from apps.learning.services import record_attempt, record_practice, record_recall
 from apps.learning.mistake_review import schedule_review
 from apps.lexicon.models import LexicalUnit
 from apps.poems.models import Poem
@@ -85,3 +85,27 @@ def check_poem_gap(request, number, index):
         return JsonResponse({"correct": False, "answer": word})
     correct = Exercise.normalize(payload["answer"]) == Exercise.normalize(word)
     return JsonResponse({"correct": correct, **({"answer": word} if correct else {})})
+
+
+@require_POST
+def check_practice(request, pk):
+    """Перевод с русского. Совпадение со списком — верно; несовпадение не объявляется ошибкой:
+    одну мысль можно сказать по-разному, поэтому ученик сравнивает свой вариант с образцом."""
+    item = get_object_or_404(PracticeItem.objects.select_related("lesson"), pk=pk, lesson__is_published=True)
+    try:
+        payload = read_answer_payload(request)
+    except ValueError as exc:
+        return JsonResponse({"error": str(exc)}, status=400)
+    if payload.get("reveal"):
+        return JsonResponse({"correct": False, "revealed": True, "answer": item.answer,
+                             "explanation": item.explanation_ru})
+    if item.is_correct(payload["answer"]):
+        record_practice(request.user, item)
+        return JsonResponse({"correct": True, "saved": request.user.is_authenticated,
+                             "assessment": "model_match", "answer": item.answer,
+                             "explanation": item.explanation_ru})
+    data = {"correct": False, "saved": False, "assessment": "needs_review",
+            "self_review_available": request.user.is_authenticated}
+    if item.hint_ru:
+        data["feedback_ru"] = item.hint_ru
+    return JsonResponse(data)

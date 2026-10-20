@@ -159,3 +159,48 @@ exercises:
     hint_ru: "Нога — leg; одна часть тела — hurts."
     explanation_ru: "My leg hurts. Можно и I have pain in my leg. Leg — вся нога, foot — ступня."
     units: [LX-00400, LX-00408]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: У меня болит голова.
+  answer: I have a headache.
+  accepted:
+  - My head hurts.
+  hint_ru: «У меня есть головная боль».
+  explanation_ru: 'I have a headache. Или: My head hurts. Оба варианта естественные.'
+  review_of: 3
+  units:
+  - LX-00212
+  - LX-00221
+- order: 2
+  kind: translate
+  prompt_ru: У меня болит спина.
+  answer: My back hurts.
+  hint_ru: «Моя спина болит».
+  explanation_ru: My back hurts. Back = it, поэтому hurts с -s.
+  review_of: 3
+  units:
+  - LX-00214
+  - LX-00216
+  - LX-00223
+- order: 3
+  kind: translate
+  prompt_ru: Мне нехорошо.
+  answer: I feel sick.
+  hint_ru: feel + состояние.
+  explanation_ru: I feel sick. Feel — «чувствовать себя».
+  review_of: 3
+  units:
+  - LX-00221
+- order: 4
+  kind: translate
+  prompt_ru: Я устал.
+  answer: I am tired.
+  accepted:
+  - I feel tired.
+  hint_ru: Состояние — с be.
+  explanation_ru: 'I''m tired. Без am нельзя: I tired — ошибка.'
+  review_of: 3
+  units:
+  - LX-00221

@@ -161,3 +161,57 @@ exercises:
     units:
     - LX-00436
     - LX-00451
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Я умею говорить по-русски.
+  answer: I can speak Russian.
+  hint_ru: «Умею» — тоже can.
+  explanation_ru: I can speak Russian. Can — и «могу», и «умею». Языки — с большой буквы.
+  review_of: 3
+  units:
+  - LX-00239
+  - LX-00244
+  - LX-00247
+  - LX-00248
+  - LX-00249
+  - LX-00251
+- order: 2
+  kind: translate
+  prompt_ru: Ты говоришь по-английски?
+  answer: Can you speak English?
+  accepted:
+  - Do you speak English?
+  hint_ru: Can you…?
+  explanation_ru: 'Can you speak English? Или: Do you speak English?'
+  review_of: 3
+  units:
+  - LX-00239
+  - LX-00243
+  - LX-00247
+  - LX-00248
+  - LX-00249
+  - LX-00251
+- order: 3
+  kind: translate
+  prompt_ru: Я не умею играть на гитаре.
+  answer: I cannot play the guitar.
+  hint_ru: can't play
+  explanation_ru: I can't play the guitar. Can't — «не умею».
+  review_of: 3
+  units:
+  - LX-00248
+  - LX-00251
+- order: 4
+  kind: translate
+  prompt_ru: Научишь меня?
+  answer: Can you teach me?
+  hint_ru: Can you + teach me?
+  explanation_ru: Can you teach me? Просьба через Can you…?
+  review_of: 3
+  units:
+  - LX-00240
+  - LX-00247
+  - LX-00248
+  - LX-00249

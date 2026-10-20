@@ -183,3 +183,51 @@ exercises:
     - LX-00477
     - LX-00459
     - LX-00242
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Меня зовут Анна. Я из России.
+  answer: My name is Anna. I am from Russia.
+  accepted:
+  - I am Anna. I am from Russia.
+  hint_ru: Как в первый день.
+  explanation_ru: My name's Anna. I'm from Russia. Вы начинали с этого — теперь говорите это сами.
+  review_of: 3
+  units:
+  - LX-00256
+  - LX-00258
+  - LX-00176
+  - LX-00236
+- order: 2
+  kind: translate
+  prompt_ru: Можно мне кофе, пожалуйста?
+  answer: Can I have a coffee, please?
+  accepted:
+  - Can I have coffee, please?
+  hint_ru: Can I have…?
+  explanation_ru: Can I have a coffee, please? Вежливая просьба из недели 3.
+  review_of: 3
+  units:
+  - LX-00256
+  - LX-00236
+- order: 3
+  kind: translate
+  prompt_ru: Где банк? — Он справа.
+  answer: Where is the bank? It is on the right.
+  hint_ru: Where is…? — It is on…
+  explanation_ru: Where's the bank? It's on the right. Вопрос и ответ из недели 8.
+  review_of: 3
+  units:
+  - LX-00256
+  - LX-00258
+  - LX-00176
+- order: 4
+  kind: translate
+  prompt_ru: Я не знаю, но я могу спросить.
+  answer: I do not know, but I can ask.
+  hint_ru: don't know + can
+  explanation_ru: I don't know, but I can ask. Don't и can в одной фразе — итог A1.
+  review_of: 3
+  units:
+  - LX-00236

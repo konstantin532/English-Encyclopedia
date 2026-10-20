@@ -62,7 +62,7 @@
 
     const answer = () => {
       if (kind === "choice") return picked;
-      if (kind === "fill") return form.querySelector("input").value;
+      if (kind === "fill" || kind === "translate") return form.querySelector("input").value;
       return [...line.querySelectorAll("button")].map((b) => b.textContent).join(" ");
     };
 
@@ -72,7 +72,7 @@
       e.preventDefault();
       if (checking) return; // A second tap must not create a second grade or retry.
       const value = answer().trim();
-      if (!value) { say("no", kind === "choice" ? "Выберите один вариант." : kind === "fill" ? "Впишите слово." : "Соберите фразу из слов."); return; }
+      if (!value) { say("no", kind === "choice" ? "Выберите один вариант." : kind === "fill" ? "Впишите слово." : kind === "translate" ? "Напишите фразу по-английски." : "Соберите фразу из слов."); return; }
       checking = true;
       const originalLabel = submitButton?.textContent;
       if (submitButton) { submitButton.disabled = true; submitButton.textContent = "Проверяем…"; }

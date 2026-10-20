@@ -151,3 +151,50 @@ exercises:
     hint_ru: "Обед в середине дня."
     explanation_ru: "I have lunch at twelve. — lunch без артикля, как breakfast и dinner."
     units: [LX-00309]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Сейчас ровно семь.
+  answer: It is seven o'clock.
+  accepted:
+  - It is seven.
+  hint_ru: Ровное время — o'clock.
+  explanation_ru: It's seven o'clock. O'clock — только для ровного часа.
+  review_of: 3
+  units:
+  - LX-00132
+  - LX-00140
+- order: 2
+  kind: translate
+  prompt_ru: Я ем в двенадцать.
+  answer: I eat at twelve.
+  hint_ru: «Во сколько» — at.
+  explanation_ru: I eat at twelve. Время действия — с at.
+  review_of: 3
+  units:
+  - LX-00136
+- order: 3
+  kind: translate
+  prompt_ru: Который час?
+  answer: What time is it?
+  hint_ru: «Какое время это?»
+  explanation_ru: What time is it? Вопрос о том, который час сейчас.
+  review_of: 3
+  units:
+  - LX-00133
+  - LX-00135
+  - LX-00140
+- order: 4
+  kind: translate
+  prompt_ru: Во сколько ты встаёшь?
+  answer: What time do you get up?
+  hint_ru: What time + do you…?
+  explanation_ru: What time do you get up? Вопрос о привычке строится через do.
+  review_of: 3
+  units:
+  - LX-00133
+  - LX-00135
+  - LX-00136
+  - LX-00124
+  - LX-00126

@@ -157,3 +157,51 @@ exercises:
     hint_ru: "call + me + later."
     explanation_ru: "Call me later — «Позвони мне позже». Text me later означает «Напиши мне позже»: это другое действие, поэтому не подходит к этому заданию."
     units: [LX-00351, LX-00360, LX-00368]
+# Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Продиктуйте, пожалуйста, фамилию по буквам.
+  answer: Can you spell your last name, please?
+  accepted:
+  - Can you spell your last name?
+  hint_ru: «Можете произнести по буквам…»
+  explanation_ru: Can you spell your last name, please? Spell — назвать слово по буквам.
+  review_of: 3
+  units:
+  - LX-00183
+  - LX-00184
+  - LX-00189
+  - LX-00190
+  - LX-00366
+  - LX-00367
+- order: 2
+  kind: translate
+  prompt_ru: Какой у вас номер телефона?
+  answer: What is your phone number?
+  hint_ru: «Какой» — What.
+  explanation_ru: 'What''s your phone number? Номер диктуют по цифрам: five five five…'
+  review_of: 3
+  units:
+  - LX-00185
+  - LX-00189
+  - LX-00190
+- order: 3
+  kind: translate
+  prompt_ru: До завтра!
+  answer: See you tomorrow!
+  hint_ru: «Увидимся завтра».
+  explanation_ru: See you tomorrow! Готовая фраза для прощания.
+  review_of: 3
+  units:
+  - LX-00189
+  - LX-00362
+- order: 4
+  kind: translate
+  prompt_ru: Мастерская закрывается в пять.
+  answer: The shop closes at five.
+  accepted:
+  - The key shop closes at five.
+  hint_ru: shop → closes.
+  explanation_ru: The shop closes at five. Shop = it, поэтому closes с -s.
+  review_of: 3
