@@ -568,5 +568,119 @@
    0,
    "Here it is!"
   ]
+ ],
+ "a1p-object-pronouns": [
+  [
+   "«Она мне звонила».",
+   "",
+   [
+    "She called me.",
+    "She called I.",
+    "Her called me."
+   ],
+   0,
+   "Кто — she, кому — me."
+  ],
+  [
+   "«Я скучаю по ним».",
+   "",
+   [
+    "I miss they.",
+    "I miss them.",
+    "I miss their."
+   ],
+   1,
+   "they → them."
+  ],
+  [
+   "«Расскажи нам».",
+   "",
+   [
+    "Tell we.",
+    "Say us.",
+    "Tell us."
+   ],
+   2,
+   "tell + us."
+  ],
+  [
+   "«Я покажу его тебе».",
+   "",
+   [
+    "I can show it to you.",
+    "I can show to you it.",
+    "I can show you to it."
+   ],
+   0,
+   "show it to you."
+  ],
+  [
+   "«Перезвони мне».",
+   "",
+   [
+    "Call back me.",
+    "Call me back.",
+    "Back call me."
+   ],
+   1,
+   "Call me back."
+  ]
+ ],
+ "a1p-phone-and-feelings": [
+  [
+   "Телефон сел.",
+   "",
+   [
+    "My battery is dead.",
+    "My battery is died.",
+    "My battery dead."
+   ],
+   0,
+   "is dead."
+  ],
+  [
+   "«Я волновался».",
+   "",
+   [
+    "I nervous.",
+    "I was nervous.",
+    "I was nervoused."
+   ],
+   1,
+   "was + nervous."
+  ],
+  [
+   "«Мы удивились».",
+   "",
+   [
+    "We were surprised.",
+    "We were surprising.",
+    "We surprised."
+   ],
+   0,
+   "Чувствуем мы — -ed."
+  ],
+  [
+   "Бояться собак.",
+   "",
+   [
+    "afraid from dogs",
+    "afraid of dogs",
+    "afraid dogs"
+   ],
+   1,
+   "afraid of."
+  ],
+  [
+   "Незнакомый человек — это…",
+   "",
+   [
+    "a strange",
+    "a stranger",
+    "a story"
+   ],
+   1,
+   "stranger."
+  ]
  ]
 }

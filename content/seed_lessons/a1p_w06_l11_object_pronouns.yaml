@@ -1,0 +1,241 @@
+slug: a1p-object-pronouns
+level: A1+
+week: 6
+order: 11
+focus: T
+minutes: 40
+title: 'Me, him, her, them: кому и кого'
+summary: 'Как не повторять имена: She called me. Tell us about her. I can show it to you. Объектные местоимения после глагола и после предлога.'
+units:
+- LX-00506
+- LX-00507
+- LX-00508
+- LX-00509
+- LX-00510
+- LX-00700
+- LX-00701
+- LX-00703
+- LX-00704
+- LX-00705
+- LX-00710
+- LX-00713
+- LX-00726
+- LX-00729
+- LX-00730
+- LX-00731
+- LX-00732
+sound_notes:
+- text: Tell us about her.
+  ipa: /ˈtɛl əs əˈbaʊt ɚ/
+  note_ru: 'us и her безударные: «тэл эс эбаут эр» — h в her пропадает'
+- text: I miss her.
+  ipa: /aɪ ˈmɪs ɚ/
+  note_ru: 'miss her сливается: «мисэр»'
+- text: She called me.
+  ipa: /ʃi ˈkɔld mi/
+  note_ru: 'called — один слог: «колд»'
+contractions:
+- full: I am
+  short: I'm
+  ipa: /aɪm/
+  note_ru: I'm Tom. You found my phone.
+layers:
+- number: 1
+  body: 'Анна и Том пришли к Рут за телефоном. Чтобы не повторять «Рут, Рут, Рут», англичане, как и мы, заменяют имена: «она мне звонила», «расскажите нам о ней».
+
+
+    > [O4]Yes[/], [T8]she[/] [D5]called[/] [T8]me[/]. [D4]Come[/] [P1]in[/]! [A3]Here[/] [T8]it[/] [D1]is[/]. — Да, она мне звонила. Заходите! Вот он.
+
+    > [S1]Ruth[/], [P3]on[/] [T1]the[/] [S2]phone[/] [T8]you[/] [D6]knew[/] [T3]our[/] [S2]house[/]. [C1]And[/] [T8]you[/] [D6]knew[/] [S1]Rose[/]. [D5]Tell[/] [T8]us[/] [A6]about[/] [T3]her[/], [O8]please[/]. — Рут, по телефону вы узнали наш дом. И вы знали Роуз. Расскажите нам о ней, пожалуйста.
+
+    '
+- number: 2
+  body: 'В русском у «я» много форм: меня, мне, мной. В английском осталась одна «косвенная» форма на всё: **me**. Когда-то и в английском были падежи, но почти все исчезли — остались только у местоимений: **I → me, he → him, she → her, we → us, they → them**. У **you** и **it** форма не меняется.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [T8]I[/] [D7]can[/] [D2]show[/] [T8]it[/] [P2]to[/] [T8]you[/] [P3]on[/] [S7]Sunday[/]. — Я могу показать его вам в воскресенье.
+
+
+    - Кто делает — **I, he, she, we, they** — перед глаголом.
+
+    - Кого / кому — **me, him, her, us, them** — после глагола: She called **me**.
+
+    - После предлога — тоже они: about **her**, to **you**, with **us**.
+
+    - **her** бывает двух видов: «её» (her phone) и «ей / её» после глагола (I miss **her**).
+
+    '
+- number: 4
+  body: '**Почему «She called me», а не «She called I»?** По-английски место слова решает всё: перед глаголом — тот, кто делает, после глагола — тот, с кем это делают. Поэтому **I** и **me** не меняются местами.
+
+
+    > [T8]I[/] [D1]was[/] [J4]nervous[/]. [T8]I[/] [D1]am[/] [J2]old[/], [C1]and[/] [S1]Rose[/] [D1]was[/] [T3]my[/] [S1]friend[/]. [T8]I[/] [D3]miss[/] [T3]her[/]. — Я разволновалась. Я старая, а Роуз была моей подругой. Я по ней скучаю.
+
+
+    **Диагностика понимания:** что верно: *Tell we about her* или *Tell us about her*?
+
+
+    **Разбор:** *Tell us…* — после глагола нужно **us**.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **Tell me about it.** — расскажи об этом.
+
+    - **It''s a long story.** — долго рассказывать.
+
+    - **Call me back.** — перезвони мне.
+
+    - **Guess what!** — представляешь!
+
+
+    Глаголы с «кому»: **tell** (told) — рассказать кому-то, **show** — показать кому-то, **return** — вернуть. Story 7: **lose — lost**, **find — found**, **then** — потом, **ago** — тому назад, **so** — поэтому.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «Say me» — с «кому» нужен **tell**: Tell me.
+
+    - «Me and Anna went» — в начале говорят **Anna and I went**.
+
+    - «I miss she» — после глагола **her**.
+
+    - «I can show to you it» — порядок: **show it to you**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать me / us, заменить имя, собрать фразу show it to you, рассказать о помощи друга, выбрать tell или say и сказать «перезвони мне».
+
+
+    **Проверка маленького шага:** перед глаголом — I, he, she; после глагола и предлога — me, him, her, us, them.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00224
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Рут говорит: «Да, она мне звонила». Выберите фразу.'
+  options:
+  - Yes, she called me.
+  - Yes, she called I.
+  - Yes, her called me.
+  answer: Yes, she called me.
+  hint_ru: Кто — she, кому — me.
+  explanation_ru: She called me. Перед глаголом she, после — me.
+  units:
+  - LX-00729
+- order: 2
+  uid: EX-00225
+  kind: fill
+  stage: substitution
+  prompt_ru: 'Замените Rose: I miss Rose. → «Я скучаю по ней».'
+  prompt_en: I miss ___.
+  answer: her
+  hint_ru: she → her.
+  explanation_ru: I miss her. После глагола she превращается в her.
+  units:
+  - LX-00730
+- order: 3
+  uid: EX-00226
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Я могу показать его вам».'
+  options:
+  - you
+  - I
+  - show
+  - it
+  - can
+  - to
+  answer: I can show it to you
+  hint_ru: show + it + to you.
+  explanation_ru: I can show it to you. Сначала что (it), потом кому (to you).
+  units:
+  - LX-00701
+- order: 4
+  uid: EX-00227
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вчера соседи помогли вам с сумками. Скажите: «Я поблагодарил их».'
+  prompt_en: I ___ them.
+  answer: thanked
+  accepted:
+  - thanked them
+  hint_ru: thank + -ed.
+  explanation_ru: I thanked them. They → them после глагола.
+  units:
+  - LX-00727
+- order: 5
+  uid: EX-00228
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Попросите Рут: «Расскажите нам о ней».'
+  options:
+  - Tell us about her.
+  - Say us about her.
+  - Tell we about she.
+  answer: Tell us about her.
+  hint_ru: С «кому» — tell; после глагола — us, после about — her.
+  explanation_ru: Tell us about her. Say не берёт «кому».
+  units:
+  - LX-00700
+- order: 6
+  uid: EX-00229
+  kind: fill
+  stage: transfer
+  prompt_ru: 'У вас нет времени говорить. Попросите друга: «Перезвони мне».'
+  prompt_en: Call ___ back.
+  answer: me
+  hint_ru: Кому — me.
+  explanation_ru: Call me back. Местоимение стоит между call и back.
+  units:
+  - LX-00729
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Она мне звонила.
+  answer: She called me.
+  hint_ru: she + called + me.
+  explanation_ru: She called me.
+  review_of: 1
+  units:
+  - LX-00729
+- order: 2
+  kind: translate
+  prompt_ru: Я по ней скучаю.
+  answer: I miss her.
+  hint_ru: miss + her.
+  explanation_ru: I miss her.
+  review_of: 2
+  units:
+  - LX-00730
+- order: 3
+  kind: translate
+  prompt_ru: Покажите нам, пожалуйста.
+  answer: Show us, please.
+  accepted:
+  - Please show us.
+  - Can you show us, please?
+  hint_ru: show + us.
+  explanation_ru: Show us, please.
+  review_of: 3
+  units:
+  - LX-00701
+- order: 4
+  kind: translate
+  prompt_ru: Расскажи мне об этом.
+  answer: Tell me about it.
+  hint_ru: tell + me + about it.
+  explanation_ru: Tell me about it.
+  review_of: 5
+  units:
+  - LX-00730
