@@ -1,0 +1,511 @@
+# Неделя 1 A1+ «Видеозвонок: что я делаю сейчас»: Present Continuous, связь и чувства. CEFR не сверялся.
+# -ing формы глаголов A1 (making, doing…) — формы, а не новые единицы.
+level: A1+
+week: 1
+units:
+- uid: LX-00529
+  lemma: make
+  meaning: to produce or cook something
+  class: D2
+  forms:
+  - makes
+  - made
+  - making
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /meɪk/
+  translation_ru: делать, готовить
+  example_en: '[S1]Mia[/] [D1]is[/] [D2]making[/] [S3]cookies[/].'
+  example_ru: Мия печёт печенье.
+  situation: Говорите, что кто-то готовит
+  usage_note: 'make — сделать, приготовить что-то: make coffee, make a cake. do — делать вообще: do homework.'
+- uid: LX-00530
+  lemma: wear
+  meaning: to have clothes on your body
+  class: D2
+  forms:
+  - wears
+  - wore
+  - wearing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɛr/
+  translation_ru: носить, быть одетым в
+  example_en: '[T8]I[/] [D1]am[/] [D2]wearing[/] [T3]my[/] [J2]blue[/] [S2]jacket[/].'
+  example_ru: На мне моя синяя куртка.
+  situation: Говорите, что на вас надето
+  usage_note: 'По-русски «на мне куртка», по-английски «я ношу куртку»: I am wearing a jacket.'
+  typical_error: «I am in a jacket» понятно, но обычно говорят I am wearing a jacket.
+- uid: LX-00531
+  lemma: smile
+  meaning: to make a happy face
+  class: D2
+  forms:
+  - smiles
+  - smiled
+  - smiling
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /smaɪl/
+  translation_ru: улыбаться
+  example_en: '[S1]Anna[/] [D1]is[/] [D2]smiling[/].'
+  example_ru: Анна улыбается.
+  situation: Описываете лицо человека
+- uid: LX-00532
+  lemma: laugh
+  meaning: to make sounds because something is funny
+  class: D2
+  forms:
+  - laughs
+  - laughed
+  - laughing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /læf/
+  translation_ru: смеяться
+  example_en: '[D1]Is[/] [T9]someone[/] [D2]laughing[/]?'
+  example_ru: Кто-то смеётся?
+  situation: Слышите смех
+  usage_note: 'gh в конце читается как f: «лэф».'
+- uid: LX-00533
+  lemma: hold
+  meaning: to have something in your hand
+  class: D2
+  forms:
+  - holds
+  - held
+  - holding
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hoʊld/
+  translation_ru: держать
+  example_en: '[T8]I[/] [D1]am[/] [D2]holding[/] [T3]my[/] [S2]phone[/].'
+  example_ru: Я держу телефон.
+  situation: Говорите, что у вас в руках
+- uid: LX-00534
+  lemma: wash
+  meaning: to clean something with water
+  class: D2
+  forms:
+  - washes
+  - washed
+  - washing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɑʃ/
+  translation_ru: мыть
+  example_en: '[S1]Tom[/] [D1]is[/] [D2]washing[/] [T1]the[/] [S2]cups[/].'
+  example_ru: Том моет чашки.
+  situation: Делаете дела по дому
+- uid: LX-00535
+  lemma: clean
+  meaning: to make a place or a thing not dirty
+  class: D2
+  forms:
+  - cleans
+  - cleaned
+  - cleaning
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /klin/
+  translation_ru: убирать, чистить
+  example_en: '[T8]We[/] [D1]are[/] [D2]cleaning[/] [T1]the[/] [S2]kitchen[/].'
+  example_ru: Мы убираем кухню.
+  situation: Делаете дела по дому
+- uid: LX-00536
+  lemma: hear
+  meaning: to get sounds with your ears
+  class: D6
+  forms:
+  - hears
+  - heard
+  - hearing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hɪr/
+  translation_ru: слышать
+  example_en: '[D7]Can[/] [T8]you[/] [D6]hear[/] [T8]me[/]?'
+  example_ru: Ты меня слышишь?
+  situation: Говорите по телефону или видеосвязи
+  usage_note: 'hear — слышать само по себе, listen — слушать специально: listen to music.'
+- uid: LX-00537
+  lemma: talk
+  meaning: to speak with someone
+  class: D5
+  forms:
+  - talks
+  - talked
+  - talking
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tɔk/
+  translation_ru: разговаривать
+  example_en: '[T8]I[/] [D1]am[/] [D5]talking[/] [P2]to[/] [T3]my[/] [S1]mom[/].'
+  example_ru: Я разговариваю с мамой.
+  situation: Говорите, с кем вы разговариваете
+  usage_note: 'talk to someone — разговаривать с кем-то; l не читается: «ток».'
+- uid: LX-00538
+  lemma: miss
+  meaning: to feel sad because someone is not with you
+  class: D3
+  forms:
+  - misses
+  - missed
+  - missing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mɪs/
+  translation_ru: скучать
+  example_en: '[T8]I[/] [D3]miss[/] [T8]you[/].'
+  example_ru: Я скучаю по тебе.
+  situation: Говорите близким, что скучаете
+  usage_note: 'По-русски «скучаю ПО тебе», по-английски без предлога: I miss you.'
+  typical_error: '«I miss for you» — лишний предлог. Нужно: I miss you.'
+- uid: LX-00539
+  lemma: love
+  meaning: to like someone or something very much
+  class: D3
+  forms:
+  - loves
+  - loved
+  - loving
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /lʌv/
+  translation_ru: любить
+  example_en: '[S1]Moms[/] [D3]love[/] [S9]letters[/].'
+  example_ru: Мамы любят письма.
+  situation: Говорите о тех, кого любите
+  usage_note: 'О вещах и делах тоже: I love coffee. Love you! — коротко «люблю тебя» в конце звонка.'
+- uid: LX-00540
+  lemma: video
+  meaning: moving pictures on a screen
+  class: S9
+  forms:
+  - videos
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈvɪdioʊ/
+  translation_ru: видео
+  example_en: '[T8]It[/] [D1]is[/] [T1]a[/] [S9]video[/] [S9]call[/].'
+  example_ru: Это видеозвонок.
+  situation: Звоните по видеосвязи
+- uid: LX-00541
+  lemma: screen
+  meaning: the flat part of a phone or computer that you look at
+  class: S2
+  forms:
+  - screens
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /skrin/
+  translation_ru: экран
+  example_en: '[T8]I[/] [D1]am[/] [P1]on[/] [T3]your[/] [S2]screen[/]!'
+  example_ru: Я у тебя на экране!
+  situation: Говорите о телефоне или компьютере
+- uid: LX-00542
+  lemma: camera
+  meaning: a thing that makes photos or videos
+  class: S2
+  forms:
+  - cameras
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkæmrə/
+  translation_ru: камера
+  example_en: '[T3]My[/] [S2]camera[/] [D1]is[/] [X1]not[/] [J3]good[/].'
+  example_ru: У меня плохая камера.
+  situation: Говорите по видеосвязи
+- uid: LX-00543
+  lemma: voice
+  meaning: the sound you make when you speak or sing
+  class: S9
+  forms:
+  - voices
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /vɔɪs/
+  translation_ru: голос
+  example_en: '[T8]I[/] [D7]can[/] [D6]hear[/] [T3]your[/] [S9]voice[/].'
+  example_ru: Я слышу твой голос.
+  situation: Говорите по телефону
+- uid: LX-00544
+  lemma: cup
+  meaning: a small thing you drink coffee or tea from
+  class: S2
+  forms:
+  - cups
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kʌp/
+  translation_ru: чашка
+  example_en: '[T1]a[/] [S2]cup[/] [P6]of[/] [S3]coffee[/]'
+  example_ru: чашка кофе
+  situation: Заказываете или пьёте кофе
+- uid: LX-00545
+  lemma: bake
+  meaning: to cook food like bread or cookies in an oven
+  class: D2
+  forms:
+  - bakes
+  - baked
+  - baking
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /beɪk/
+  translation_ru: печь (в духовке)
+  example_en: '[S1]Mia[/] [D1]is[/] [D2]baking[/] [S3]cookies[/].'
+  example_ru: Мия печёт печенье.
+  situation: Говорите о выпечке
+  usage_note: 'bake — печь хлеб, печенье; make — делать вообще: make coffee.'
+- uid: LX-00546
+  lemma: person
+  meaning: a man, a woman, or a child
+  class: S1
+  forms:
+  - people
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈpɝsən/
+  translation_ru: человек
+  example_en: '[T9]There[/] [D1]are[/] [N1]five[/] [S1]people[/] [P1]in[/] [T1]the[/] [S4]cafe[/].'
+  example_ru: В кафе пять человек.
+  situation: Говорите, сколько людей
+  usage_note: 'Неправильное множественное: one person — two people.'
+  typical_error: '«two persons» в разговоре не говорят. Нужно: two people.'
+- uid: LX-00547
+  lemma: someone
+  meaning: a person, but you do not know who
+  class: T9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsʌmwʌn/
+  translation_ru: кто-то
+  example_en: '[T9]Someone[/] [D1]is[/] [D2]laughing[/].'
+  example_ru: Кто-то смеётся.
+  situation: Говорите о незнакомом человеке
+- uid: LX-00548
+  lemma: something
+  meaning: a thing, but you do not know what
+  class: T9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsʌmθɪŋ/
+  translation_ru: что-то
+  example_en: '[T8]I[/] [D1]am[/] [D2]making[/] [T9]something[/].'
+  example_ru: Я кое-что делаю.
+  situation: Говорите о вещи без названия
+  usage_note: 'th глухой: язык между зубами — «самсинг».'
+- uid: LX-00549
+  lemma: everyone
+  meaning: all people
+  class: T9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɛvriwʌn/
+  translation_ru: все (люди)
+  example_en: '[T9]Everyone[/] [D1]is[/] [D2]drinking[/] [S3]coffee[/].'
+  example_ru: Все пьют кофе.
+  situation: Говорите обо всех сразу
+  usage_note: 'После everyone глагол как после he: everyone is, everyone likes.'
+- uid: LX-00550
+  lemma: very
+  meaning: a word that makes another word stronger
+  class: A5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈvɛri/
+  translation_ru: очень
+  example_en: '[T2]That[/] [D1]is[/] [A5]very[/] [J3]nice[/].'
+  example_ru: Это очень мило.
+  situation: Усиливаете признак
+  usage_note: v — верхние зубы касаются нижней губы.
+- uid: LX-00551
+  lemma: too
+  meaning: also; more than you want
+  class: A5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tu/
+  translation_ru: тоже; слишком
+  example_en: '[T8]I[/] [D3]miss[/] [T8]you[/] [A5]too[/].'
+  example_ru: Я тоже по тебе скучаю.
+  situation: Отвечаете «я тоже»
+  usage_note: 'В конце фразы too — «тоже»: I love you too. Перед прилагательным — «слишком»: too cold.'
+- uid: LX-00552
+  lemma: really
+  meaning: very; truly
+  class: A5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈrili/
+  translation_ru: правда, действительно
+  example_en: '[T8]I[/] [A5]really[/] [D3]miss[/] [T8]you[/].'
+  example_ru: Я правда по тебе скучаю.
+  situation: Подчёркиваете чувство
+- uid: LX-00553
+  lemma: together
+  meaning: with each other
+  class: A4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /təˈɡɛðɚ/
+  translation_ru: вместе
+  example_en: '[T8]We[/] [D1]are[/] [D2]sitting[/] [A4]together[/].'
+  example_ru: Мы сидим вместе.
+  situation: Говорите, что вы вместе
+- uid: LX-00554
+  lemma: soon
+  meaning: in a short time from now
+  class: A2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sun/
+  translation_ru: скоро
+  example_en: '[T8]I[/] [D7]can[/] [D4]come[/] [A2]soon[/].'
+  example_ru: Я скоро приеду.
+  situation: Обещаете что-то скоро
+- uid: LX-00555
+  lemma: funny
+  meaning: making you laugh
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfʌni/
+  translation_ru: смешной, забавный
+  example_en: '[S1]Tom[/] [D1]is[/] [J3]funny[/].'
+  example_ru: Том смешной.
+  situation: Говорите о человеке или истории
+- uid: LX-00556
+  lemma: dish
+  meaning: a plate or bowl; food cooked in a special way
+  class: S2
+  forms:
+  - dishes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dɪʃ/
+  translation_ru: тарелка; блюдо
+  example_en: '[S1]Tom[/] [D1]is[/] [D2]washing[/] [T1]the[/] [S2]dishes[/].'
+  example_ru: Том моет посуду.
+  situation: Делаете дела по дому
+  usage_note: wash the dishes — мыть посуду (вся посуда — dishes).
+- uid: LX-00557
+  lemma: What are you doing?
+  meaning: Asking about an action now
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌt ɚ jə ˈduɪŋ/
+  translation_ru: Что ты делаешь?
+  example_en: What are you doing?
+  example_ru: Что ты делаешь (сейчас)?
+  situation: Видеозвонок
+  usage_note: 'В живой речи: «Whatcha doing?» — так пишут только в чатах; говорите What are you doing?'
+- uid: LX-00558
+  lemma: right now
+  meaning: At this moment
+  class: A2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌraɪt ˈnaʊ/
+  translation_ru: прямо сейчас
+  example_en: right now
+  example_ru: прямо сейчас
+  situation: Видеозвонок
+  usage_note: 'Ставится в конце: I am drinking coffee right now.'
+- uid: LX-00559
+  lemma: at the moment
+  meaning: Now, at this time
+  class: A2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ət ðə ˈmoʊmənt/
+  translation_ru: в данный момент
+  example_en: at the moment
+  example_ru: в данный момент
+  situation: Видеозвонок
+  usage_note: Чуть официальнее, чем right now.
+- uid: LX-00560
+  lemma: Can you hear me?
+  meaning: Checking that the other person hears you
+  class: D7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kən jə ˈhɪr mi/
+  translation_ru: Ты меня слышишь?
+  example_en: Can you hear me?
+  example_ru: Ты меня слышишь?
+  situation: Видеозвонок
+  usage_note: Первая фраза почти любого видеозвонка.
+- uid: LX-00561
+  lemma: I miss you.
+  meaning: Saying you are sad because someone is far
+  class: D3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈmɪs ju/
+  translation_ru: Я скучаю по тебе.
+  example_en: I miss you.
+  example_ru: Я скучаю по тебе.
+  situation: Видеозвонок
+  usage_note: 'Без предлога: miss you, а не miss for you.'
+- uid: LX-00562
+  lemma: Love you!
+  meaning: A short warm goodbye to family
+  class: D3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈlʌv ju/
+  translation_ru: Люблю тебя!
+  example_en: Love you!
+  example_ru: Люблю тебя!
+  situation: Видеозвонок
+  usage_note: Так прощаются с близкими. I в начале часто не говорят.
+- uid: LX-00563
+  lemma: Talk to you soon!
+  meaning: A friendly goodbye on the phone
+  class: D5
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈtɔk tə jə ˈsun/
+  translation_ru: Скоро созвонимся!
+  example_en: Talk to you soon!
+  example_ru: Скоро созвонимся!
+  situation: Видеозвонок
+  usage_note: Обычное прощание в конце звонка или переписки.

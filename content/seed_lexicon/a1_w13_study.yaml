@@ -9,6 +9,7 @@ units:
   forms:
   - speaks
   - spoke
+  - speaking
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -25,6 +26,7 @@ units:
   forms:
   - teaches
   - taught
+  - teaching
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -107,6 +109,7 @@ units:
   forms:
   - sings
   - sang
+  - singing
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

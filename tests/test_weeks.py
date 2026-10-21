@@ -138,8 +138,8 @@ class WeekPageTests(TestCase):
         TongueTwister.objects.create(number=1, week=cls.week, series="sounds", text="[T2]This[/] [D1]is[/] [T2]this[/].", ipa="/ðɪs ɪz ðɪs/", source="original")
 
     def test_week_without_scene_is_200(self):
-        # Все 14 недель A1 наполнены; неделя без сцены — первая неделя A1+.
-        response = self.client.get(reverse("curriculum:week", args=["a1-plus", 1]))
+        # Недели A1 и первые недели A1+ наполнены; неделя без сцены — первая неделя A2.
+        response = self.client.get(reverse("curriculum:week", args=["a2", 1]))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Неделя готовится")
 

@@ -1,0 +1,116 @@
+{
+ "a1p-present-continuous": [
+  [
+   "Подруга звонит, а вы как раз пьёте чай. Что сказать?",
+   "",
+   [
+    "I drink tea.",
+    "I am drinking tea.",
+    "I drinking tea."
+   ],
+   1,
+   "Действие идёт сейчас — am + -ing."
+  ],
+  [
+   "Вставьте форму be: Tom ___ washing the dishes.",
+   "Tom ___ washing the dishes.",
+   [
+    "am",
+    "are",
+    "is"
+   ],
+   2,
+   "Tom — он, значит is."
+  ],
+  [
+   "Как спросить «Что вы делаете?» (двум друзьям)",
+   "",
+   [
+    "What are you doing?",
+    "What you are doing?",
+    "What do you doing?"
+   ],
+   0,
+   "В вопросе are стоит перед you."
+  ],
+  [
+   "Какая фраза о привычке, а не о «сейчас»?",
+   "",
+   [
+    "We are cleaning the kitchen.",
+    "She is smiling.",
+    "I drink coffee at seven."
+   ],
+   2,
+   "Каждый день в семь — Present Simple, без -ing."
+  ],
+  [
+   "Как правильно написать: sit + -ing?",
+   "",
+   [
+    "siting",
+    "sitting",
+    "sitng"
+   ],
+   1,
+   "Короткий слог: t удваивается — sitting."
+  ]
+ ],
+ "a1p-video-call-feelings": [
+  [
+   "Звонок начался. Как спросить, слышно ли вас?",
+   "",
+   [
+    "Can you hear me?",
+    "Can you listen me?",
+    "Do you hearing me?"
+   ],
+   0,
+   "Слышать — hear: Can you hear me?"
+  ],
+  [
+   "Как сказать «Я скучаю по брату»?",
+   "",
+   [
+    "I miss for my brother.",
+    "I am miss my brother.",
+    "I miss my brother."
+   ],
+   2,
+   "После miss предлог не нужен."
+  ],
+  [
+   "Друг пишет: I miss you! Вы тоже скучаете.",
+   "",
+   [
+    "I miss you too!",
+    "I too miss you!",
+    "Too I miss you!"
+   ],
+   0,
+   "«Тоже» — too в конце фразы."
+  ],
+  [
+   "Вы слышите смех за дверью. Что спросить?",
+   "",
+   [
+    "Are someone laughing?",
+    "Is someone laughing?",
+    "Is someone laugh?"
+   ],
+   1,
+   "someone — как he: is + -ing."
+  ],
+  [
+   "Как тепло попрощаться в конце звонка?",
+   "",
+   [
+    "Talk you soon!",
+    "Talk to you soon!",
+    "Soon talk to you!"
+   ],
+   1,
+   "Talk to you soon! — скоро созвонимся."
+  ]
+ ]
+}
