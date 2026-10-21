@@ -105,6 +105,20 @@ class CafeInformationGapTests(TestCase):
         self.assertIsNone(parse_order("I'd like one tea and one coffee"))
         self.assertEqual(parse_order("Could I have one tea, please?"), (1, "tea"))
 
+    def test_quoted_or_negated_options_question_does_not_advance(self):
+        self.send("I'd like one tea, please.")
+        self.assertEqual(self.state()["phase"], "ask")
+        for answer in (
+            "I don't want to know what do you have.",
+            "I'm just quoting what do you have.",
+        ):
+            with self.subTest(answer=answer):
+                self.assertEqual(self.send(answer).status_code, 302)
+                self.assertEqual(self.state()["phase"], "ask")
+                self.assertNotIn("cafe.ask_options", self.state()["observed"])
+        self.assertEqual(self.send("Excuse me, what do you have, please?").status_code, 302)
+        self.assertEqual(self.state()["phase"], "choose")
+
     def test_negated_repair_is_not_accepted_as_success(self):
         # The recognizer must not turn an explicit refusal into evidence
         # that the learner successfully corrected the order.
