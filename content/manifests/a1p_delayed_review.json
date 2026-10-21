@@ -1252,5 +1252,119 @@
    0,
    "a sore throat."
   ]
+ ],
+ "a1p-too-enough": [
+  [
+   "Слишком далеко.",
+   "",
+   [
+    "It's too far.",
+    "It's far too much.",
+    "It's very far enough."
+   ],
+   0,
+   "too + far."
+  ],
+  [
+   "Недостаточно тёплый.",
+   "",
+   [
+    "not enough warm",
+    "not warm enough",
+    "not too warm"
+   ],
+   1,
+   "warm enough."
+  ],
+  [
+   "Правильный порядок?",
+   "",
+   [
+    "a blue big umbrella",
+    "a big blue umbrella",
+    "a umbrella big blue"
+   ],
+   1,
+   "Размер, потом цвет."
+  ],
+  [
+   "Это проблема, идти нельзя: «слишком холодно».",
+   "",
+   [
+    "It's very cold.",
+    "It's too cold.",
+    "It's cold enough."
+   ],
+   1,
+   "too — проблема."
+  ],
+  [
+   "«Достаточно денег»",
+   "",
+   [
+    "money enough",
+    "enough money",
+    "too money"
+   ],
+   1,
+   "С существительным enough перед ним."
+  ]
+ ],
+ "a1p-weather-plans": [
+  [
+   "Спросите о погоде.",
+   "",
+   [
+    "What's the weather like?",
+    "How is the weather like?",
+    "What is weather?"
+   ],
+   0,
+   "What's … like?"
+  ],
+  [
+   "Предложите музей.",
+   "",
+   [
+    "How about the museum?",
+    "How about go to the museum?",
+    "How about to the museum go?"
+   ],
+   0,
+   "How about + слово."
+  ],
+  [
+   "«Похоже, будет дождь».",
+   "",
+   [
+    "It looks like rain.",
+    "It looks rain.",
+    "It like rains."
+   ],
+   0,
+   "looks like rain."
+  ],
+  [
+   "32 °F — это…",
+   "",
+   [
+    "0 °C",
+    "32 °C",
+    "−10 °C"
+   ],
+   0,
+   "32 °F = 0 °C."
+  ],
+  [
+   "«Пошли!»",
+   "",
+   [
+    "Let's go!",
+    "Lets going!",
+    "Let go us!"
+   ],
+   0,
+   "Let's go!"
+  ]
  ]
 }
