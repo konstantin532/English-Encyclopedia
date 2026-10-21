@@ -16,5 +16,12 @@ class PlannedWeekCardTests(TestCase):
 
     def test_a1_weeks_keep_their_topic(self):
         html = self.client.get("/levels/a1/").content.decode()
-        self.assertIn("<strong>1 · ", html)
+        self.assertIn('<strong><span class="visually-hidden">Неделя 1: </span>Знакомство с соседом</strong>', html)
         self.assertNotIn("<strong>Неделя 1</strong>", html)
+
+    def test_painted_covers_and_vector_fallback(self):
+        html = self.client.get("/levels/a1/").content.decode()
+        self.assertIn("img/atlas/a1-w01-800.webp", html)   # живописная обложка
+        self.assertIn("img/studio/a1-week-04.svg", html)   # векторная глава остаётся
+        plus = self.client.get("/levels/a1-plus/").content.decode()
+        self.assertIn('class="atlas-week-placeholder"', plus)

@@ -36,6 +36,34 @@ def a1_atlas_cover(level_code, week_number):
     return static(f"img/studio/a1-week-{week_number:02d}.svg")
 
 
+# Живописные обложки «Атласа живого языка»: герои одни и те же во всём курсе.
+# Для остальных недель A1 остаются векторные главы, для новых уровней — нейтральная обложка.
+A1_PAINTED = {
+    1: ("a1-w01", "Анна и Том знакомятся у двери дома"),
+    2: ("a1-w02", "Анна дома за книгой, рядом спит кот Box"),
+    3: ("a1-w03", "Анна и Том в кафе, Мия приносит кофе"),
+    10: ("a1-w10", "Анна и Том с кофе у входа в кафе"),
+    11: ("a1-w11", "Анна и Том на приёме у врача"),
+}
+LEVEL_TITLES = {
+    "A1": "Первые шаги", "A1+": "Первые истории", "A2": "Уверенный старт", "A2+": "Свободнее каждый день",
+    "B1": "Самостоятельность", "B1+": "Глубже в язык", "B2": "Свобода речи", "B2+": "Язык кино",
+}
+
+
+def week_art(level_code, week_number):
+    """Обложка недели: живописная, иначе векторная глава A1, иначе None."""
+    painted = A1_PAINTED.get(week_number) if level_code == "A1" else None
+    if painted:
+        key, alt = painted
+        return {"src": static(f"img/atlas/{key}-800.webp"), "large": static(f"img/atlas/{key}-1600.webp"),
+                "alt": alt, "painted": True}
+    svg = a1_atlas_cover(level_code, week_number)
+    if svg:
+        return {"src": svg, "large": svg, "alt": A1_ATLAS_ALT[week_number - 1], "painted": False}
+    return None
+
+
 def level_detail(request, slug):
     all_levels = list(Level.objects.all())
     level = next((lv for lv in all_levels if lv.slug == slug), None)
@@ -44,8 +72,12 @@ def level_detail(request, slug):
     weeks = list(level.week_set.select_related("scene"))
     for week in weeks:
         week.atlas_cover_url = a1_atlas_cover(level.code, week.number)
+        week.art = week_art(level.code, week.number)
     return render(request, "curriculum/level.html", {
         "level": level,
+        "level_title": LEVEL_TITLES.get(level.code, ""),
+        "level_art": static("img/atlas/level-a1-1600.webp"),
+        "weeks_ready": sum(1 for w in weeks if getattr(w, "scene", None)),
         "all_levels": all_levels,
         "plan": LEVEL_BY_CODE[level.code],
         "lessons": level.lessons.filter(is_published=True),
@@ -65,8 +97,8 @@ def week_detail(request, slug, number):
     goal = WeekGoal.objects.filter(user=request.user, week=week).first() if request.user.is_authenticated else None
     return render(request, "curriculum/week.html", {
         "week": week, "scene": scene, "lines": lines, "speakers": speakers,
-        "atlas_cover_url": a1_atlas_cover(level.code, week.number),
-        "atlas_cover_alt": A1_ATLAS_ALT[week.number - 1] if level.code == "A1" and 1 <= week.number <= 14 else "",
+        "atlas_cover_url": (week_art(level.code, week.number) or {}).get("large"),
+        "atlas_cover_alt": (week_art(level.code, week.number) or {}).get("alt", ""),
         "audio": scene.audio if scene else None,
         "lessons": week.lessons.filter(is_published=True),
         "twister": TongueTwister.objects.filter(week=week).first(), "goal": goal,
