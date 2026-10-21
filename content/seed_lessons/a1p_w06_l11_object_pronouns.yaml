@@ -165,13 +165,11 @@ exercises:
   uid: EX-00227
   kind: fill
   stage: transfer
-  prompt_ru: 'Новая ситуация: вчера соседи помогли вам с сумками. Скажите: «Я поблагодарил их».'
-  prompt_en: I ___ them.
-  answer: thanked
-  accepted:
-  - thanked them
-  hint_ru: thank + -ed.
-  explanation_ru: I thanked them. They → them после глагола.
+  prompt_ru: 'Новая ситуация: вчера вы звонили соседям. Скажите: «Я им позвонил».'
+  prompt_en: I called ___.
+  answer: them
+  hint_ru: they → them.
+  explanation_ru: I called them. They → them после глагола.
   units:
   - LX-00727
 - order: 5

@@ -132,8 +132,8 @@ exercises:
   prompt_ru: Ваш телефон разрядился. Как сказать?
   options:
   - My battery is dead.
-  - My battery is died.
-  - My phone is death.
+  - My battery are dead.
+  - My battery dead is.
   answer: My battery is dead.
   hint_ru: Сел — dead.
   explanation_ru: My battery is dead. — обычная фраза про севший телефон.
