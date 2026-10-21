@@ -126,7 +126,7 @@ exercises:
   prompt_ru: 'Том говорит: «Я ездил в торговый центр». Выберите фразу.'
   options:
   - I went to the mall.
-  - I goed to the mall.
+  - I go to the mall yesterday.
   - I was go to the mall.
   answer: I went to the mall.
   hint_ru: go в прошлом — went.
@@ -184,7 +184,7 @@ exercises:
   options:
   - I brought cookies.
   - I bought cookies.
-  - I bringed cookies.
+  - I bring cookies yesterday.
   answer: I brought cookies.
   hint_ru: Принёс — bring → brought, с r.
   explanation_ru: I brought — принёс; I bought — купил. Разница в звуке r.
