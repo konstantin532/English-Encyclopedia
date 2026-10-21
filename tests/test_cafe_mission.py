@@ -8,7 +8,7 @@ from django.test import Client, TestCase
 from django.urls import reverse
 
 from apps.accounts.models import User
-from apps.learning.cafe_mission import SESSION_KEY, SKILLS, parse_order
+from apps.learning.cafe_mission import SESSION_KEY, SKILLS, corrects_one, parse_order
 from apps.learning.models import IndependentAttempt, UnitProgress
 from tests.runner import ensure_content
 
@@ -130,6 +130,7 @@ class CafeInformationGapTests(TestCase):
             "No, I don't want one coffee.",
             "Sorry, I do not want one coffee.",
             "No, not one coffee.",
+            "One coffee? No!",
         ):
             with self.subTest(answer=answer):
                 self.assertEqual(self.send(answer).status_code, 302)
@@ -138,6 +139,12 @@ class CafeInformationGapTests(TestCase):
                 self.assertFalse(IndependentAttempt.objects.exists())
         self.assertEqual(self.send("No, one coffee, please.").status_code, 302)
         self.assertEqual(self.state()["phase"], "done")
+
+    def test_repair_requires_an_actual_positive_correction(self):
+        self.assertTrue(corrects_one("Sorry, I meant one coffee, thank you.", "coffee"))
+        self.assertTrue(corrects_one("No, only one water, please.", "water"))
+        self.assertFalse(corrects_one("I said one coffee? No, I mean water.", "coffee"))
+        self.assertFalse(corrects_one("One coffee? No!", "coffee"))
 
     def test_stale_submit_rejected_without_extra_turns(self):
         token = self.state()["nonce"]
