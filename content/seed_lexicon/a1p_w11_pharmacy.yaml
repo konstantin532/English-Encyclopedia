@@ -395,3 +395,18 @@ units:
   example_en: I feel better.
   example_ru: Мне лучше.
   situation: Говорите о самочувствии
+- uid: LX-01044
+  lemma: thermometer
+  meaning: a thing that shows how hot or cold something is
+  class: S5
+  forms:
+  - thermometers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /θɚˈmɑmɪtɚ/
+  translation_ru: градусник
+  example_en: '[D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S5]thermometer[/]?'
+  example_ru: У вас есть градусник?
+  situation: В аптеке
+  usage_note: 'Ударение на второй слог: «сэрмОмитэр».'
