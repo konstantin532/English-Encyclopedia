@@ -383,3 +383,32 @@ units:
   example_en: a long time ago
   example_ru: давно
   situation: Рассказываете о прошлом
+- uid: LX-01045
+  lemma: classmate
+  meaning: a person in the same class as you
+  class: S1
+  forms:
+  - classmates
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈklæsmeɪt/
+  translation_ru: одноклассник, однокурсник
+  example_en: '[S1]Kate[/] [D1]was[/] [T3]my[/] [S1]classmate[/] [P1]at[/] [S9]college[/].'
+  example_ru: Кейт была моей однокурсницей.
+  situation: Рассказываете об учёбе
+- uid: LX-01046
+  lemma: exam
+  meaning: a test at school or college
+  class: S9
+  forms:
+  - exams
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪɡˈzæm/
+  translation_ru: экзамен
+  example_en: '[T8]I[/] [D1]had[/] [T1]an[/] [S9]exam[/] [P3]on[/] [S7]Monday[/].'
+  example_ru: В понедельник у меня был экзамен.
+  situation: Рассказываете об учёбе
+  usage_note: Сдать экзамен — pass an exam, сдавать (готовиться) — take an exam.
