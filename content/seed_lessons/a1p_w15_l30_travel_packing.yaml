@@ -1,0 +1,248 @@
+slug: a1p-travel-packing
+level: A1+
+week: 15
+order: 30
+focus: S
+minutes: 35
+title: 'Чемодан и аэропорт: passport, boarding pass, flight'
+summary: 'Слова для поездки: passport, suitcase, luggage, flight, boarding pass; отдых у океана: cabin, sand, sunscreen, swimsuit, souvenir. Как пожелать доброго пути: Have a nice trip!'
+units:
+- LX-00987
+- LX-00988
+- LX-00989
+- LX-00990
+- LX-00991
+- LX-00992
+- LX-00993
+- LX-00994
+- LX-00995
+- LX-00996
+- LX-00997
+- LX-00998
+- LX-00999
+- LX-01000
+- LX-01001
+- LX-01004
+- LX-01005
+- LX-01006
+- LX-01007
+- LX-01009
+- LX-01010
+- LX-01012
+- LX-01013
+sound_notes:
+- text: Did you pack your suitcase?
+  ipa: /dɪdʒə ˈpæk jɚ ˈsutkeɪs/
+  note_ru: suitcase — «сУткейс», ui читается как «у»
+- text: Have a nice trip!
+  ipa: /ˈhæv ə ˈnaɪs ˈtrɪp/
+  note_ru: 'have a сливается: «хэвэ»'
+- text: I can't wait!
+  ipa: /aɪ ˈkænt ˈweɪt/
+  note_ru: 'can''t wait — t на стыке почти не слышно: «кэн уэйт»'
+contractions:
+- full: do not
+  short: don't
+  ipa: /doʊnt/
+  note_ru: Don't forget your passport! — не забудь паспорт!
+layers:
+- number: 1
+  body: 'Вечер перед поездкой: чемодан, паспорт, посадочный талон. Анна проверяет список, а Том пытается уложить всё в один чемодан.
+
+
+    > [S1]Tom[/], [T3]our[/] [S4]flight[/] [D1]is[/] [P3]at[/] [N3]seven[/] [A2]tomorrow[/]. [D1]Did[/] [T8]you[/] [D2]pack[/] [T3]your[/] [S2]suitcase[/]? — Том, наш рейс завтра в семь. Ты собрал чемодан?
+
+    > [S2]Passport[/], [S2]boarding[/] [S2]pass[/], [S2]phone[/]. [C1]And[/] [T3]my[/] [S2]guitar[/]? — Паспорт, посадочный, телефон. А гитара?
+
+    '
+- number: 2
+  body: '**Passport** — «пропуск через порт»: раньше это была бумага, чтобы войти в морской порт. **Souvenir** — французское «воспоминание»: сувенир — вещь, чтобы помнить поездку. **Luggage** — от *lug*, «тащить»: багаж — то, что приходится тащить.
+
+    '
+- number: 3
+  body: 'Схема сборов:
+
+
+    > [A2]Then[/] [D2]put[/] [T3]your[/] [S2]swimsuit[/] [C1]and[/] [T1]the[/] [S5]sunscreen[/] [P1]in[/] [T1]the[/] [S2]suitcase[/]. — Тогда положи в чемодан плавки и крем от солнца.
+
+
+    - Документы: **passport, boarding pass, ticket**.
+
+    - Вещи: **suitcase, bag, luggage** (неисчисляемое!).
+
+    - Пляж: **swimsuit, sunscreen, sunglasses**.
+
+    - В аэропорту: **The flight is delayed.** — рейс задерживается.
+
+    - Отдых: **a cabin by the ocean, sand, an island**.
+
+    '
+- number: 4
+  body: '**excited или exciting?** **I''m excited** — я радостно жду (это моё чувство). **The trip is exciting** — поездка захватывающая (она вызывает чувство). Как *surprised / surprising* на неделе 6.
+
+
+    > [D1]Have[/] [T1]a[/] [J3]nice[/] [S10]trip[/]! [T8]I[/] [D7]will[/] [D6]check[/] [T3]your[/] [S2]apartment[/]. — Хорошей поездки! Я присмотрю за квартирой.
+
+
+    **Диагностика понимания:** что сказать перед поездкой: *I''m so exciting!* или *I''m so excited!*?
+
+
+    **Разбор:** *I''m so excited!* — чувствуете вы, значит -ed.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **Have a nice trip! / Have a safe trip!** — хорошей поездки! / счастливо доехать!
+
+    - **I can''t wait!** — жду не дождусь!
+
+    - **go camping** — в поход с палаткой.
+
+    - **go abroad** — поехать за границу.
+
+
+    Слова: **pack** — собирать вещи, **delay** — задерживать, **passport, suitcase, luggage, flight, tent** — палатка, **cabin** — домик, **island** — остров, **ocean** — океан, **sand** — песок, **sunscreen, swimsuit, souvenir, adventure** — приключение, **abroad** — за границей, **exciting, excited**.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «luggages» — **luggage** неисчисляемое.
+
+    - «I''m exciting» — **I''m excited**.
+
+    - «go to abroad» — без to: **go abroad**.
+
+    - island: s не читается — «Айлэнд».
+
+    '
+- number: 7
+  body: 'Шесть заданий: назвать документ, сказать про задержку, собрать список, собраться на море, выбрать excited и пожелать доброго пути.
+
+
+    **Проверка маленького шага:** passport, boarding pass, suitcase — Have a nice trip!
+
+    '
+exercises:
+- order: 1
+  uid: EX-00338
+  kind: choice
+  stage: recognition
+  prompt_ru: Что показывают перед посадкой в самолёт?
+  options:
+  - a boarding pass
+  - a boarding ticket
+  - a souvenir
+  answer: a boarding pass
+  hint_ru: Посадочный — boarding pass.
+  explanation_ru: a boarding pass — посадочный талон.
+  units:
+  - LX-01010
+- order: 2
+  uid: EX-00339
+  kind: fill
+  stage: substitution
+  prompt_ru: Рейс задерживается. Закончите.
+  prompt_en: The flight is ___.
+  answer: delayed
+  hint_ru: delay + ed.
+  explanation_ru: The flight is delayed.
+  units:
+  - LX-00988
+  - LX-00992
+- order: 3
+  uid: EX-00340
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Не забудь паспорт!»'
+  options:
+  - passport
+  - Don't
+  - your
+  - forget
+  answer: Don't forget your passport
+  hint_ru: Don't forget + your passport.
+  explanation_ru: Don't forget your passport!
+  units:
+  - LX-00989
+- order: 4
+  uid: EX-00341
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вы едете на море. Скажите, что положите в чемодан купальник.'
+  prompt_en: I'll put my ___ in the suitcase.
+  answer: swimsuit
+  hint_ru: Купальник — swimsuit.
+  explanation_ru: I'll put my swimsuit in the suitcase.
+  units:
+  - LX-00999
+  - LX-00990
+- order: 5
+  uid: EX-00342
+  kind: choice
+  stage: recognition
+  prompt_ru: Завтра отпуск! Как сказать о своём чувстве?
+  options:
+  - I'm so excited!
+  - I'm so exciting!
+  - I am excited so!
+  answer: I'm so excited!
+  hint_ru: Своё чувство — -ed.
+  explanation_ru: I'm so excited! — радостно жду.
+  units:
+  - LX-01006
+- order: 6
+  uid: EX-00343
+  kind: fill
+  stage: transfer
+  prompt_ru: Друг улетает. Пожелайте хорошей поездки.
+  prompt_en: Have a nice ___!
+  answer: trip
+  hint_ru: Поездка — trip.
+  explanation_ru: Have a nice trip!
+  units:
+  - LX-01007
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Ты собрал чемодан?
+  answer: Did you pack your suitcase?
+  hint_ru: Did + pack.
+  explanation_ru: Did you pack your suitcase?
+  review_of: 3
+  units:
+  - LX-00987
+- order: 2
+  kind: translate
+  prompt_ru: Наш багаж в машине.
+  answer: Our luggage is in the car.
+  hint_ru: luggage is.
+  explanation_ru: Our luggage is in the car. Luggage — неисчисляемое.
+  review_of: 4
+  units:
+  - LX-00991
+- order: 3
+  kind: translate
+  prompt_ru: Жду не дождусь!
+  answer: I can't wait!
+  accepted:
+  - I cannot wait!
+  hint_ru: can't wait.
+  explanation_ru: I can't wait!
+  review_of: 5
+  units:
+  - LX-01012
+- order: 4
+  kind: translate
+  prompt_ru: Счастливо доехать!
+  answer: Have a safe trip!
+  accepted:
+  - Have a nice trip!
+  hint_ru: safe trip.
+  explanation_ru: Have a safe trip!
+  review_of: 6
+  units:
+  - LX-01013

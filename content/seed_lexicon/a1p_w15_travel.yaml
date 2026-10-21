@@ -1,0 +1,380 @@
+# Неделя 15 A1+ «Сборы в путешествие»: if + will. Слово will (LX-00525) перенесено сюда из пакета истории 11. CEFR не сверялся.
+level: A1+
+week: 15
+units:
+- uid: LX-00987
+  lemma: pack
+  meaning: to put things in a bag for a trip
+  class: D2
+  forms:
+  - packs
+  - packed
+  - packing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /pæk/
+  translation_ru: собирать (вещи), упаковывать
+  example_en: '[T8]I[/] [D2]packed[/] [T3]my[/] [S2]suitcase[/].'
+  example_ru: Я собрал чемодан.
+  situation: Собираетесь в поездку
+- uid: LX-00988
+  lemma: delay
+  meaning: to make something late
+  class: D2
+  forms:
+  - delays
+  - delayed
+  - delaying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dɪˈleɪ/
+  translation_ru: задерживать
+  example_en: '[T1]The[/] [S4]flight[/] [D1]is[/] [D2]delayed[/].'
+  example_ru: Рейс задерживается.
+  situation: В аэропорту
+- uid: LX-00989
+  lemma: passport
+  meaning: a small book with your photo for travel
+  class: S2
+  forms:
+  - passports
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈpæspɔrt/
+  translation_ru: паспорт
+  example_en: '[D1]Do[/][X1]n''t[/] [D6]forget[/] [T3]your[/] [S2]passport[/]!'
+  example_ru: Не забудь паспорт!
+  situation: Собираетесь в поездку
+- uid: LX-00990
+  lemma: suitcase
+  meaning: a big bag for clothes when you travel
+  class: S2
+  forms:
+  - suitcases
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsutkeɪs/
+  translation_ru: чемодан
+  example_en: '[T3]My[/] [S2]suitcase[/] [D1]is[/] [A5]too[/] [J2]heavy[/].'
+  example_ru: Мой чемодан слишком тяжёлый.
+  situation: Собираетесь в поездку
+- uid: LX-00991
+  lemma: luggage
+  meaning: all the bags you take on a trip
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈlʌɡɪdʒ/
+  translation_ru: багаж
+  example_en: '[T3]Our[/] [S2]luggage[/] [D1]is[/] [P1]in[/] [T1]the[/] [S4]car[/].'
+  example_ru: Наш багаж в машине.
+  situation: В дороге
+  usage_note: 'Неисчисляемое: my luggage is, не «luggages».'
+- uid: LX-00992
+  lemma: flight
+  meaning: a trip on a plane
+  class: S4
+  forms:
+  - flights
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /flaɪt/
+  translation_ru: рейс, полёт
+  example_en: '[T3]Our[/] [S4]flight[/] [D1]is[/] [P3]at[/] [N3]seven[/].'
+  example_ru: Наш рейс в семь.
+  situation: В аэропорту
+  usage_note: 'gh не читается: «флайт».'
+- uid: LX-00993
+  lemma: tent
+  meaning: a small house made of cloth for camping
+  class: S2
+  forms:
+  - tents
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tɛnt/
+  translation_ru: палатка
+  example_en: '[T8]We[/] [D7]can[/] [D2]sleep[/] [P1]in[/] [T1]a[/] [S2]tent[/].'
+  example_ru: Мы можем спать в палатке.
+  situation: В походе
+- uid: LX-00994
+  lemma: cabin
+  meaning: a small wooden house in the mountains or by a lake
+  class: S4
+  forms:
+  - cabins
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkæbɪn/
+  translation_ru: домик (в лесу, у озера)
+  example_en: '[T8]We[/] [D2]stayed[/] [P1]in[/] [T1]a[/] [S4]cabin[/] [P1]by[/] [T1]the[/] [S6]lake[/].'
+  example_ru: Мы жили в домике у озера.
+  situation: В отпуске
+- uid: LX-00995
+  lemma: island
+  meaning: land with water all around it
+  class: S6
+  forms:
+  - islands
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈaɪlənd/
+  translation_ru: остров
+  example_en: '[T1]The[/] [S6]island[/] [D1]is[/] [J1]tiny[/].'
+  example_ru: Остров крошечный.
+  situation: В отпуске
+  usage_note: 's не читается: «Айлэнд».'
+- uid: LX-00996
+  lemma: ocean
+  meaning: a very big sea
+  class: S6
+  forms:
+  - oceans
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈoʊʃən/
+  translation_ru: океан
+  example_en: '[T1]The[/] [S6]ocean[/] [D1]is[/] [J2]cold[/] [P1]in[/] [S7]October[/].'
+  example_ru: В октябре океан холодный.
+  situation: В отпуске
+- uid: LX-00997
+  lemma: sand
+  meaning: the small yellow pieces on a beach
+  class: S6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sænd/
+  translation_ru: песок
+  example_en: '[T1]The[/] [S6]sand[/] [D1]is[/] [J2]hot[/]!'
+  example_ru: Песок горячий!
+  situation: На пляже
+- uid: LX-00998
+  lemma: sunscreen
+  meaning: cream that keeps the sun off your skin
+  class: S5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsʌnskrin/
+  translation_ru: солнцезащитный крем
+  example_en: '[D2]Put[/] [P1]on[/] [T4]some[/] [S5]sunscreen[/].'
+  example_ru: Намажься кремом от солнца.
+  situation: На пляже
+- uid: LX-00999
+  lemma: swimsuit
+  meaning: clothes for swimming
+  class: S2
+  forms:
+  - swimsuits
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈswɪmsut/
+  translation_ru: купальник, плавки
+  example_en: '[T8]I[/] [D6]forgot[/] [T3]my[/] [S2]swimsuit[/]!'
+  example_ru: Я забыла купальник!
+  situation: Собираетесь на пляж
+- uid: LX-01000
+  lemma: souvenir
+  meaning: a small thing you buy on a trip to remember it
+  class: S2
+  forms:
+  - souvenirs
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌsuvəˈnɪr/
+  translation_ru: сувенир
+  example_en: '[T8]I[/] [D2]bought[/] [T1]a[/] [S2]souvenir[/] [P5]for[/] [S1]Mia[/].'
+  example_ru: Я купил сувенир для Мии.
+  situation: В отпуске
+- uid: LX-01001
+  lemma: adventure
+  meaning: an exciting trip or experience
+  class: S10
+  forms:
+  - adventures
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ədˈvɛntʃɚ/
+  translation_ru: приключение
+  example_en: '[T8]It[/] [D1]was[/] [T1]a[/] [J3]great[/] [S10]adventure[/]!'
+  example_ru: Это было отличное приключение!
+  situation: Рассказываете о поездке
+- uid: LX-01002
+  lemma: probably
+  meaning: almost sure
+  class: A8
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈprɑbəbli/
+  translation_ru: вероятно
+  example_en: '[T8]It[/] [D7]will[/] [A8]probably[/] [D2]rain[/].'
+  example_ru: Наверное, будет дождь.
+  situation: Говорите о будущем
+  usage_note: 'Стоит после will: will probably, но перед won''t: probably won''t.'
+- uid: LX-01003
+  lemma: definitely
+  meaning: 100 percent sure
+  class: A8
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈdɛfənətli/
+  translation_ru: точно, определённо
+  example_en: '[T8]We[/] [D7]will[/] [A8]definitely[/] [D4]go[/].'
+  example_ru: Мы точно поедем.
+  situation: Говорите о будущем
+- uid: LX-01004
+  lemma: abroad
+  meaning: in or to another country
+  class: A3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /əˈbrɔd/
+  translation_ru: за границей, за границу
+  example_en: '[T8]We[/] [D4]went[/] [A3]abroad[/] [J8]last[/] [S7]year[/].'
+  example_ru: В прошлом году мы ездили за границу.
+  situation: Говорите о путешествиях
+  usage_note: 'Без предлога: go abroad, live abroad.'
+- uid: LX-01005
+  lemma: exciting
+  meaning: making you feel happy and full of energy
+  class: J7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪkˈsaɪtɪŋ/
+  translation_ru: захватывающий
+  example_en: '[T1]The[/] [S10]trip[/] [D1]was[/] [A5]very[/] [J7]exciting[/].'
+  example_ru: Поездка была очень захватывающей.
+  situation: Рассказываете о поездке
+  usage_note: '-ing — о том, что вызывает чувство: an exciting trip.'
+- uid: LX-01006
+  lemma: excited
+  meaning: very happy about something that will happen
+  class: J7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪkˈsaɪtɪd/
+  translation_ru: взволнованный (радостно)
+  example_en: '[T8]I[/][D1]''m[/] [A5]so[/] [J7]excited[/]!'
+  example_ru: Я так жду этого!
+  situation: Ждёте поездку
+  usage_note: '-ed — о том, кто чувствует: I am excited. Не путайте с exciting.'
+- uid: LX-01007
+  lemma: Have a nice trip!
+  meaning: Wishing someone a good trip
+  class: O1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhæv ə ˈnaɪs ˈtrɪp/
+  translation_ru: Счастливого пути!
+  example_en: Have a nice trip!
+  example_ru: Хорошей поездки!
+  situation: Провожаете друга
+- uid: LX-01008
+  lemma: We'll see.
+  meaning: Saying you do not know yet
+  class: F8
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /wil ˈsi/
+  translation_ru: Посмотрим.
+  example_en: We'll see.
+  example_ru: Посмотрим.
+  situation: Говорите о будущем
+- uid: LX-01009
+  lemma: go camping
+  meaning: to sleep in a tent in nature
+  class: D4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɡoʊ ˈkæmpɪŋ/
+  translation_ru: пойти в поход с палаткой
+  example_en: go camping
+  example_ru: в поход
+  situation: Планируете отпуск
+- uid: LX-01010
+  lemma: boarding pass
+  meaning: the ticket you show before you get on a plane
+  class: S2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈbɔrdɪŋ ˌpæs/
+  translation_ru: посадочный талон
+  example_en: boarding pass
+  example_ru: посадочный
+  situation: В аэропорту
+- uid: LX-01011
+  lemma: What if…?
+  meaning: Asking about a possible problem
+  class: C4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌt ɪf/
+  translation_ru: А что, если…?
+  example_en: What if…?
+  example_ru: А если…?
+  situation: Обсуждаете план
+  usage_note: What if it rains? — А если пойдёт дождь?
+- uid: LX-01012
+  lemma: I can't wait!
+  meaning: Saying you are very excited about something soon
+  class: O3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈkænt ˈweɪt/
+  translation_ru: Жду не дождусь!
+  example_en: I can't wait!
+  example_ru: Скорей бы!
+  situation: Ждёте поездку
+- uid: LX-01013
+  lemma: Have a safe trip!
+  meaning: Wishing someone to travel with no problems
+  class: O1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhæv ə ˈseɪf ˈtrɪp/
+  translation_ru: Доброго пути! Осторожней в дороге!
+  example_en: Have a safe trip!
+  example_ru: Счастливо доехать!
+  situation: Провожаете друга
+- uid: LX-00525
+  lemma: will
+  meaning: a word for the future
+  class: D7
+  grammar_features:
+  - modal
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɪl/
+  translation_ru: будет, буду (будущее время)
+  example_en: '[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/] [D7]will[/] [D2]eat[/] [P1]in[/] [T1]the[/] [S2]kitchen[/].'
+  example_ru: Если пойдёт дождь, мы поедим на кухне.
+  situation: Говорите о планах при условии
+  usage_note: 'После will глагол без to: we will eat. В речи сокращается: we''ll, I''ll. После if will не ставят: If it rains (не «If it will rain»).'
+  typical_error: '«If it will rain, we will…» — will после if лишнее. Нужно: If it rains, we will…'

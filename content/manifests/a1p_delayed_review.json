@@ -1594,5 +1594,119 @@
    0,
    "I'm lost."
   ]
+ ],
+ "a1p-if-will": [
+  [
+   "«Если пойдёт дождь, мы останемся дома».",
+   "",
+   [
+    "If it rains, we will stay at home.",
+    "If it will rain, we stay at home.",
+    "If it rains, we stay will at home."
+   ],
+   0,
+   "if + настоящее; will во второй части."
+  ],
+  [
+   "«Мы пойдём»",
+   "",
+   [
+    "we will to go",
+    "we will go",
+    "we will going"
+   ],
+   1,
+   "will + глагол без to."
+  ],
+  [
+   "«А что, если…?»",
+   "",
+   [
+    "What if…?",
+    "What when…?",
+    "If what…?"
+   ],
+   0,
+   "What if…?"
+  ],
+  [
+   "«Наверное, будет дождь».",
+   "",
+   [
+    "It will probably rain.",
+    "It probably will rains.",
+    "It will rain probably will."
+   ],
+   0,
+   "will probably."
+  ],
+  [
+   "«Посмотрим».",
+   "",
+   [
+    "We'll see.",
+    "We see will.",
+    "Will we see."
+   ],
+   0,
+   "We'll see."
+  ]
+ ],
+ "a1p-travel-packing": [
+  [
+   "Посадочный талон.",
+   "",
+   [
+    "boarding pass",
+    "board ticket pass",
+    "passing board"
+   ],
+   0,
+   "boarding pass."
+  ],
+  [
+   "Багаж (всё сразу).",
+   "",
+   [
+    "luggages",
+    "luggage",
+    "a luggage"
+   ],
+   1,
+   "luggage — неисчисляемое."
+  ],
+  [
+   "«Я жду не дождусь!»",
+   "",
+   [
+    "I'm so exciting!",
+    "I'm so excited!",
+    "I excite!"
+   ],
+   1,
+   "Своё чувство — -ed."
+  ],
+  [
+   "Поехать за границу.",
+   "",
+   [
+    "go to abroad",
+    "go abroad",
+    "go in abroad"
+   ],
+   1,
+   "go abroad."
+  ],
+  [
+   "Пожелайте доброго пути.",
+   "",
+   [
+    "Have a nice trip!",
+    "Make a nice trip!",
+    "Do a nice trip!"
+   ],
+   0,
+   "Have a nice trip!"
+  ]
  ]
 }
