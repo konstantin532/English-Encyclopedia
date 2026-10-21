@@ -31,7 +31,9 @@ def app_role() -> str:
 
 
 def enable_rls_on_public_tables(sender=None, using="default", **kwargs):
-    if connection.vendor != "postgresql" or getattr(sender, "label", None) != "core":
+    # Django emits post_migrate only for apps with a models module.
+    # accounts is always present and owns the learner table; core has no models.
+    if connection.vendor != "postgresql" or getattr(sender, "label", None) != "accounts":
         return
     with connection.cursor() as cur:
         cur.execute(SQL_TABLES_WITHOUT_RLS)

@@ -42,6 +42,12 @@ class ProtectionTests(TestCase):
 
 @skipUnless(connection.vendor == "postgresql", "роли и политики RLS есть только в PostgreSQL")
 class AppRoleTests(TestCase):
+    def test_migrations_enable_rls_on_every_public_table(self):
+        with connection.cursor() as cur:
+            cur.execute("select tablename from pg_tables "
+                        "where schemaname = 'public' and not rowsecurity")
+            self.assertEqual(cur.fetchall(), [])
+
     def test_app_role_gets_policy_on_every_public_table(self):
         with connection.cursor() as cur:
             cur.execute("select 1 from pg_roles where rolname = 'ee_test_app'")
