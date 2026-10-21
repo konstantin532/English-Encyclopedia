@@ -910,5 +910,119 @@
    0,
    "Can I ask a question?"
   ]
+ ],
+ "a1p-have-to": [
+  [
+   "«Ему надо работать».",
+   "",
+   [
+    "He have to work.",
+    "He has to work.",
+    "He has work."
+   ],
+   1,
+   "he → has to."
+  ],
+  [
+   "«Не обязательно ждать».",
+   "",
+   [
+    "You mustn't wait.",
+    "You don't have to wait.",
+    "You haven't to wait."
+   ],
+   1,
+   "don't have to — не обязательно."
+  ],
+  [
+   "«Нам надо платить?»",
+   "",
+   [
+    "Do we have to pay?",
+    "Have we to pay?",
+    "Do we must pay?"
+   ],
+   0,
+   "Do we have to…?"
+  ],
+  [
+   "Что значит You mustn't pay?",
+   "",
+   [
+    "Платить нельзя.",
+    "Платить не нужно.",
+    "Надо заплатить."
+   ],
+   0,
+   "mustn't — запрет."
+  ],
+  [
+   "«Мне надо позвонить».",
+   "",
+   [
+    "I have to call.",
+    "I have call.",
+    "I must to call."
+   ],
+   0,
+   "have to + глагол."
+  ]
+ ],
+ "a1p-home-repairs": [
+  [
+   "Труба течёт.",
+   "",
+   [
+    "The pipe is leaking.",
+    "The pipe is leak.",
+    "The pipe leaking."
+   ],
+   0,
+   "is leaking."
+  ],
+  [
+   "«Выключи свет».",
+   "",
+   [
+    "Turn on the light.",
+    "Turn off the light.",
+    "Turn out of the light."
+   ],
+   1,
+   "off — выключить."
+  ],
+  [
+   "Обогреватель не работает.",
+   "",
+   [
+    "The heater doesn't work.",
+    "The heater not work.",
+    "The heater isn't work."
+   ],
+   0,
+   "doesn't work."
+  ],
+  [
+   "Мастер спрашивает: «Что случилось?»",
+   "",
+   [
+    "What's wrong?",
+    "What's long?",
+    "What wrong?"
+   ],
+   0,
+   "What's wrong?"
+  ],
+  [
+   "Лифт по-американски…",
+   "",
+   [
+    "lift",
+    "elevator",
+    "stairs"
+   ],
+   1,
+   "elevator."
+  ]
  ]
 }
