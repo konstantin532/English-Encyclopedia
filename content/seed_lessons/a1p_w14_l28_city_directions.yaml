@@ -1,0 +1,253 @@
+slug: a1p-city-directions
+level: A1+
+week: 14
+order: 28
+focus: S
+minutes: 35
+title: 'Город и дорога: How do I get to…? If we…'
+summary: 'Как спросить дорогу (How do I get to…? Is it far?), понять ответ (two blocks, on the left, on foot) и сказать о простом условии: If we go to Ruth, we can ask her.'
+units:
+- LX-00524
+- LX-00965
+- LX-00966
+- LX-00967
+- LX-00968
+- LX-00969
+- LX-00970
+- LX-00971
+- LX-00972
+- LX-00973
+- LX-00974
+- LX-00975
+- LX-00976
+- LX-00977
+- LX-00978
+- LX-00979
+- LX-00980
+- LX-00981
+- LX-00982
+- LX-00983
+- LX-00984
+- LX-00986
+sound_notes:
+- text: How do I get to Park Street?
+  ipa: /ˈhaʊ də aɪ ˈɡɛt tə ˈpɑrk ˈstrit/
+  note_ru: 'get to — одно t на стыке: «гэттэ»'
+- text: You can't miss it.
+  ipa: /ju ˈkænt ˈmɪs ɪt/
+  note_ru: 'can''t — широкое «э»: «кэнт»; miss it сливается — «мисыт»'
+- text: It's ten minutes on foot.
+  ipa: /ɪts ˈtɛn ˈmɪnɪts ɑn ˈfʊt/
+  note_ru: 'foot — короткое «у»: «фут»'
+contractions:
+- full: cannot
+  short: can't
+  ipa: /kænt/
+  note_ru: You can't miss it — мимо не пройдёте.
+layers:
+- number: 1
+  body: 'В американском городе дорогу объясняют кварталами (**blocks**) и ориентирами: мост, церковь, фонтан. Сначала спросите вежливо, потом повторите маршрут, чтобы проверить себя.
+
+
+    > [O2]Excuse[/] [T8]me[/]! [A6]How[/] [D1]do[/] [T8]I[/] [D9]get[/] [P2]to[/] [S4]Park[/] [S4]Street[/]? — Простите! Как пройти на Парк-стрит?
+
+    > [D4]Turn[/] [A3]left[/] [P3]at[/] [T1]the[/] [S4]fountain[/]. [T1]The[/] [S2]photo[/] [S4]shop[/] [D1]is[/] [P3]on[/] [T1]the[/] [A3]left[/]. [T8]You[/] [D7]cannot[/] [D3]miss[/] [T8]it[/]. — У фонтана поверните налево. Фотоателье будет слева. Мимо не пройдёте.
+
+    '
+- number: 2
+  body: '**Downtown** — американское слово: в первых городах деловой центр был в «нижней» части, у реки и порта. Отсюда *downtown* — «в центр», а *uptown* — в жилые кварталы. **Avenue** — от французского «подход, подъезд»: широкая улица, которая ведёт к чему-то важному.
+
+    '
+- number: 3
+  body: 'Схема разговора:
+
+
+    > [S1]Tom[/], [D6]look[/] [P3]at[/] [T1]the[/] [J2]old[/] [S4]map[/]. [C4]If[/] [T8]we[/] [D4]go[/] [P2]to[/] [S1]Ruth[/], [T8]we[/] [D7]can[/] [D5]ask[/] [T3]her[/] [A6]about[/] [S1]Sam[/]. — Том, посмотри на старую карту. Если мы сходим к Рут, мы спросим её про Сэма.
+
+
+    - Вопрос: **How do I get to…? / Is it far?**
+
+    - Шаги: **Walk two blocks. Turn left at the fountain.**
+
+    - Где: **on the left / on the right, opposite the bank, at the end of the street**.
+
+    - Время: **It''s ten minutes on foot.**
+
+    - Условие: **If + сейчас, … can / will…** — If we go to Ruth, we can ask her.
+
+    '
+- number: 4
+  body: '**if — первое знакомство.** *If we go to Ruth, we can ask her.* После **if** стоит обычное настоящее время (go), даже если речь о будущем. По-русски «если мы сходим», а по-английски — «если мы идём».
+
+
+    **Повторите маршрут** — так делают и американцы: *Past the church, across the square. And then?* Это вежливо и помогает не заблудиться.
+
+
+    **Диагностика понимания:** что верно: *If we will go…* или *If we go…*?
+
+
+    **Разбор:** *If we go…* — после if будущее не ставят.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **I''m lost.** — я заблудился.
+
+    - **You can''t miss it.** — мимо не пройдёте.
+
+    - **It''s on the left.** — это слева.
+
+
+    Город: **bridge** — мост, **square** — площадь, **block** — квартал, **avenue** — проспект, **crosswalk** — переход, **traffic** — движение, **entrance** — вход, **gate** — ворота, **fountain** — фонтан, **statue** — памятник, **church** — церковь, **downtown** — в центре, **tourist** — турист, **directions** — как пройти, **main** — главный. Из истории 10: **if** — если.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «How can I go to…?» — понятно, но обычно **How do I get to…?**
+
+    - «on the left side of hand» — просто **on the left**.
+
+    - «If we will go» — **If we go**.
+
+    - «by foot» — говорят **on foot**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: спросить дорогу, сказать «слева», собрать фразу с if, объяснить путь до остановки, выбрать on foot и сказать «я заблудился».
+
+
+    **Проверка маленького шага:** How do I get to…? — Turn left at… — on the left — on foot. If + настоящее время.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00326
+  kind: choice
+  stage: recognition
+  prompt_ru: Спросите, как пройти к библиотеке.
+  options:
+  - How do I get to the library?
+  - How I get to the library?
+  - Where get I the library?
+  answer: How do I get to the library?
+  hint_ru: How do I get to…?
+  explanation_ru: How do I get to the library? — обычный вопрос о дороге.
+  units:
+  - LX-00980
+  - LX-00520
+- order: 2
+  uid: EX-00327
+  kind: fill
+  stage: substitution
+  prompt_ru: Вход слева. Закончите.
+  prompt_en: The entrance is on the ___.
+  answer: left
+  hint_ru: Слева — on the left.
+  explanation_ru: on the left — слева.
+  units:
+  - LX-00971
+  - LX-00986
+- order: 3
+  uid: EX-00328
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Если мы пойдём к Рут, мы сможем спросить её».'
+  options:
+  - her
+  - If
+  - go
+  - we
+  - Ruth
+  - to
+  - can
+  - we
+  - ask
+  answer: If we go to Ruth we can ask her
+  hint_ru: If + we go…, we can…
+  explanation_ru: If we go to Ruth, we can ask her. После if — go, а не will go.
+  units:
+  - LX-00524
+- order: 4
+  uid: EX-00329
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: друг спрашивает, далеко ли до парка. Пять минут пешком.'
+  prompt_en: It's five minutes on ___.
+  answer: foot
+  hint_ru: Пешком — on foot.
+  explanation_ru: It's five minutes on foot.
+  units:
+  - LX-00981
+- order: 5
+  uid: EX-00330
+  kind: choice
+  stage: recognition
+  prompt_ru: Музей в конце улицы. Как сказать?
+  options:
+  - at the end of the street
+  - in the end street
+  - on the street end of
+  answer: at the end of the street
+  hint_ru: at the end of…
+  explanation_ru: at the end of the street — в конце улицы.
+  units:
+  - LX-00983
+- order: 6
+  uid: EX-00331
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Вы не знаете, где вы. Скажите прохожему: «Я заблудился».'
+  prompt_en: I'm ___.
+  answer: lost
+  hint_ru: Потерянный — lost.
+  explanation_ru: I'm lost. — я заблудился.
+  units:
+  - LX-00984
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Как пройти к площади?
+  answer: How do I get to the square?
+  hint_ru: How do I get to…?
+  explanation_ru: How do I get to the square?
+  review_of: 1
+  units:
+  - LX-00980
+  - LX-00966
+- order: 2
+  kind: translate
+  prompt_ru: Пройдите два квартала.
+  answer: Walk two blocks.
+  accepted:
+  - Go two blocks.
+  hint_ru: two blocks.
+  explanation_ru: Walk two blocks.
+  review_of: 2
+  units:
+  - LX-00967
+- order: 3
+  kind: translate
+  prompt_ru: Если будет холодно, мы можем взять такси.
+  answer: If it is cold, we can take a taxi.
+  accepted:
+  - If it's cold, we can take a taxi.
+  hint_ru: If + is, … can…
+  explanation_ru: If it is cold, we can take a taxi.
+  review_of: 3
+  units:
+  - LX-00524
+- order: 4
+  kind: translate
+  prompt_ru: Мимо не пройдёте.
+  answer: You can't miss it.
+  accepted:
+  - You cannot miss it.
+  hint_ru: can't miss it.
+  explanation_ru: You can't miss it.
+  review_of: 6
+  units:
+  - LX-00982

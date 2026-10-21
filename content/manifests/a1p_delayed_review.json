@@ -1480,5 +1480,119 @@
    0,
    "Good luck!"
   ]
+ ],
+ "a1p-movement-prepositions": [
+  [
+   "Сквозь парк.",
+   "",
+   [
+    "through the park",
+    "across the park trees",
+    "over the park"
+   ],
+   0,
+   "through — сквозь."
+  ],
+  [
+   "Мимо церкви.",
+   "",
+   [
+    "past the church",
+    "past of the church",
+    "pass the church on"
+   ],
+   0,
+   "past — без of."
+  ],
+  [
+   "Вдоль реки.",
+   "",
+   [
+    "along the river",
+    "long the river",
+    "by along river"
+   ],
+   0,
+   "along."
+  ],
+  [
+   "Через мост.",
+   "",
+   [
+    "over the bridge",
+    "through the bridge",
+    "into the bridge"
+   ],
+   0,
+   "over — сверху."
+  ],
+  [
+   "Вошли в сад (внутрь).",
+   "",
+   [
+    "went into the garden",
+    "went in to garden the",
+    "went on the garden"
+   ],
+   0,
+   "into — внутрь."
+  ]
+ ],
+ "a1p-city-directions": [
+  [
+   "Спросите дорогу к банку.",
+   "",
+   [
+    "How do I get to the bank?",
+    "How I get to the bank?",
+    "Where go bank?"
+   ],
+   0,
+   "How do I get to…?"
+  ],
+  [
+   "Пешком.",
+   "",
+   [
+    "on foot",
+    "by foot",
+    "with foot"
+   ],
+   0,
+   "on foot."
+  ],
+  [
+   "«Если мы пойдём…»",
+   "",
+   [
+    "If we will go…",
+    "If we go…",
+    "If go we…"
+   ],
+   1,
+   "После if — настоящее."
+  ],
+  [
+   "Слева.",
+   "",
+   [
+    "on the left",
+    "in the left",
+    "at left side"
+   ],
+   0,
+   "on the left."
+  ],
+  [
+   "«Я заблудился».",
+   "",
+   [
+    "I'm lost.",
+    "I lost.",
+    "I'm lose."
+   ],
+   0,
+   "I'm lost."
+  ]
  ]
 }
