@@ -1,0 +1,243 @@
+slug: a1p-at-the-pharmacy
+level: A1+
+week: 11
+order: 22
+focus: S
+minutes: 35
+title: 'В аптеке: I have a sore throat'
+summary: 'Как рассказать о простой болезни (a cough, a fever, a sore throat, the flu), сказать про аллергию и пожелать: Get well soon! Bless you!'
+units:
+- LX-00869
+- LX-00871
+- LX-00872
+- LX-00873
+- LX-00874
+- LX-00875
+- LX-00876
+- LX-00877
+- LX-00878
+- LX-00879
+- LX-00880
+- LX-00884
+- LX-00885
+- LX-00886
+- LX-00887
+- LX-00892
+- LX-00893
+- LX-00894
+- LX-01044
+sound_notes:
+- text: I have a sore throat and a cough.
+  ipa: /aɪ ˈhæv ə ˈsɔr ˈθroʊt ən ə ˈkɔf/
+  note_ru: 'throat — межзубный th и r подряд: «сроут»'
+- text: Do you have a fever?
+  ipa: /də jə ˈhæv ə ˈfivɚ/
+  note_ru: 'fever — долгое «ии»: «фИвэр»'
+- text: Get well soon!
+  ipa: /ˈɡɛt ˈwɛl ˈsun/
+  note_ru: t в get почти не слышно перед w
+contractions:
+- full: I am
+  short: I'm
+  ipa: /aɪm/
+  note_ru: I'm allergic to cats — у меня аллергия на кошек.
+layers:
+- number: 1
+  body: 'В американской аптеке лекарство от простуды продают без рецепта, но вас всё равно спросят, что болит, есть ли температура и аллергия.
+
+
+    > [O1]Hello[/]. [T8]I[/] [D1]have[/] [T1]a[/] [J4]sore[/] [S5]throat[/] [C1]and[/] [T1]a[/] [S5]cough[/]. [T8]I[/] [D2]slept[/] [A4]badly[/]. — Здравствуйте. У меня болит горло и кашель. Я плохо спала.
+
+    > [D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S5]fever[/]? — Температура есть?
+
+    '
+- number: 2
+  body: '**Pharmacy** — от греческого *pharmakon*, «лекарство» (и «яд»!). **Flu** — сокращение от итальянского *influenza*, «влияние»: раньше думали, что болезнь приходит под влиянием звёзд. **Sore** — древнее слово «боль, рана»; от него и *sorry*: сожаление — «боль в душе».
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [D1]Are[/] [T8]you[/] [J4]allergic[/] [P2]to[/] [T4]any[/] [S5]medicine[/]? — У вас есть аллергия на лекарства?
+
+
+    - Что у меня: **I have + a cough / a fever / a sore throat / the flu**.
+
+    - Что болит: **My throat hurts. My head hurts.**
+
+    - Аллергия: **I''m allergic to… / I have an allergy to…**
+
+    - Самочувствие: **I feel dizzy. I feel better.**
+
+    '
+- number: 4
+  body: '**Почему «I have a fever», а не «I have a temperature»?** Обе фразы понятны, но в США обычно говорят **fever**. *Temperature* — это просто число на градуснике: *Let me check your temperature*.
+
+
+    **Bless you!** — так говорят, когда кто-то чихнул. Отвечают: **Thank you!**
+
+
+    **Диагностика понимания:** как сказать «у меня аллергия на мёд»: *I''m allergic on honey* или *I''m allergic to honey*?
+
+
+    **Разбор:** *I''m allergic to honey.* — allergic **to**.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [A2]Then[/] [D2]put[/] [T1]the[/] [S5]pills[/] [J8]next[/] [P2]to[/] [T3]your[/] [S3]tea[/]! [D9]Get[/] [O7]well[/] [A2]soon[/]! — Тогда положите таблетки рядом с чаем! Выздоравливайте!
+
+
+    - **Get well soon!** — поправляйся!
+
+    - **I feel better.** — мне лучше.
+
+    - **Bless you!** — будь здоров (когда чихают).
+
+
+    Слова: **pharmacy** — аптека, **cough** — кашель, **fever** — жар, **flu** — грипп, **throat** — горло, **allergy** — аллергия, **prescription** — рецепт, **temperature** — температура, **cream** — крем, **bandage** — пластырь, **honey** — мёд, **sneeze** — чихать, **sore** — больной, **dizzy** — с головокружением.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «recipe» — это рецепт блюда; от врача — **prescription**.
+
+    - «allergic on» — **allergic to**.
+
+    - «I have flu» — обычно **the flu**.
+
+    - «I am sick on throat» — **I have a sore throat**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: назвать болезнь, сказать про аллергию, собрать фразу о горле, описать свою простуду, ответить на чих и пожелать выздоровления.
+
+
+    **Проверка маленького шага:** I have a cough / a fever / a sore throat. I''m allergic to… Get well soon!
+
+    '
+exercises:
+- order: 1
+  uid: EX-00290
+  kind: choice
+  stage: recognition
+  prompt_ru: У вас температура. Как сказать фармацевту?
+  options:
+  - I have a fever.
+  - I am fever.
+  - I have the fevers.
+  answer: I have a fever.
+  hint_ru: have + a fever.
+  explanation_ru: I have a fever. — у меня температура.
+  units:
+  - LX-00872
+- order: 2
+  uid: EX-00291
+  kind: fill
+  stage: substitution
+  prompt_ru: У вас аллергия на кошек. Закончите.
+  prompt_en: I'm allergic ___ cats.
+  answer: to
+  hint_ru: allergic + to.
+  explanation_ru: I'm allergic to cats.
+  units:
+  - LX-00886
+- order: 3
+  uid: EX-00292
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «У меня болит горло».'
+  options:
+  - sore
+  - I
+  - throat
+  - a
+  - have
+  answer: I have a sore throat
+  hint_ru: I have + a sore throat.
+  explanation_ru: I have a sore throat.
+  units:
+  - LX-00885
+  - LX-00874
+- order: 4
+  uid: EX-00293
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: на работе вы плохо себя чувствуете и кружится голова. Скажите коллеге.'
+  prompt_en: I feel ___.
+  answer: dizzy
+  hint_ru: Голова кружится — dizzy.
+  explanation_ru: I feel dizzy.
+  units:
+  - LX-00887
+- order: 5
+  uid: EX-00294
+  kind: choice
+  stage: recognition
+  prompt_ru: Коллега чихнул. Что сказать?
+  options:
+  - Bless you!
+  - Get well!
+  - Thank you!
+  answer: Bless you!
+  hint_ru: На чих — Bless you!
+  explanation_ru: Bless you! А чихнувший отвечает Thank you!
+  units:
+  - LX-00893
+- order: 6
+  uid: EX-00295
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Подруга заболела. Напишите ей: «Выздоравливай!»'
+  prompt_en: Get well ___!
+  answer: soon
+  hint_ru: Скоро — soon.
+  explanation_ru: Get well soon!
+  units:
+  - LX-00892
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: У меня кашель.
+  answer: I have a cough.
+  hint_ru: have + a cough.
+  explanation_ru: I have a cough.
+  review_of: 1
+  units:
+  - LX-00871
+- order: 2
+  kind: translate
+  prompt_ru: У меня аллергия на мёд.
+  answer: I'm allergic to honey.
+  accepted:
+  - I am allergic to honey.
+  - I have an allergy to honey.
+  hint_ru: allergic to.
+  explanation_ru: I'm allergic to honey.
+  review_of: 2
+  units:
+  - LX-00886
+  - LX-00880
+- order: 3
+  kind: translate
+  prompt_ru: Мне лучше.
+  answer: I feel better.
+  hint_ru: feel + better.
+  explanation_ru: I feel better.
+  review_of: 4
+  units:
+  - LX-00894
+- order: 4
+  kind: translate
+  prompt_ru: У вас есть рецепт?
+  answer: Do you have a prescription?
+  hint_ru: prescription — рецепт врача.
+  explanation_ru: Do you have a prescription?
+  review_of: 3
+  units:
+  - LX-00876

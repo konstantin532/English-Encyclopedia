@@ -1,0 +1,259 @@
+slug: a1p-picnic-seasons
+level: A1+
+week: 16
+order: 32
+focus: S
+minutes: 35
+title: 'Пикник и времена года: in the summer, What a great day!'
+summary: 'Слова для пикника и праздника (basket, grill, lemonade, watermelon, Cheers!) и времена года: in the summer, in the fall. Как восхититься: What a great day!'
+units:
+- LX-01014
+- LX-01015
+- LX-01016
+- LX-01017
+- LX-01018
+- LX-01019
+- LX-01020
+- LX-01021
+- LX-01022
+- LX-01023
+- LX-01024
+- LX-01025
+- LX-01026
+- LX-01027
+- LX-01028
+- LX-01029
+- LX-01030
+- LX-01031
+- LX-01032
+- LX-01033
+- LX-01034
+- LX-01035
+- LX-01036
+- LX-01037
+- LX-01038
+- LX-01040
+- LX-01042
+sound_notes:
+- text: I brought some lemonade and a huge watermelon.
+  ipa: /aɪ ˈbrɔt səm ˌlɛməˈneɪd ən ə ˈhjudʒ ˈwɔɾɚˌmɛlən/
+  note_ru: 'watermelon — t смягчается: «уОдэрмэлэн»'
+- text: What a great day!
+  ipa: /ˈwʌɾ ə ˈɡreɪt ˈdeɪ/
+  note_ru: 'what a сливается: «уадэ»'
+- text: in the summer
+  ipa: /ɪn ðə ˈsʌmɚ/
+  note_ru: summer — «сАмэр», одно m в звучании
+contractions:
+- full: let us
+  short: let's
+  ipa: /lɛts/
+  note_ru: Let's celebrate! — давайте отпразднуем!
+layers:
+- number: 1
+  body: 'Американский пикник — это корзина с бутербродами, лимонад, арбуз, иногда гриль. А ещё мяч или воздушный змей.
+
+
+    > [J3]Good[/] [S7]morning[/]! [T8]I[/] [D2]brought[/] [T4]some[/] [S3]lemonade[/] [C1]and[/] [T1]a[/] [J1]huge[/] [S3]watermelon[/]. — Доброе утро! Я принесла лимонад и огромный арбуз.
+
+    > [S1]Ruth[/], [D7]could[/] [T8]you[/] [D2]sit[/] [P1]in[/] [T1]the[/] [S6]shade[/]? [T8]It[/] [D1]is[/] [A5]very[/] [J2]hot[/] [A2]today[/]. — Рут, может, сядете в тень? Сегодня очень жарко.
+
+    '
+- number: 2
+  body: '**Picnic** пришло из французского *pique-nique*: «поклевать немножко». Каждый приносил что-то своё. **Fall** — американское «осень»: время, когда листья **падают** (fall). В Британии говорят **autumn**, а в США чаще **fall**.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [D6]Look[/]! [T1]An[/] [J2]old[/] [S1]man[/] [D1]is[/] [D4]walking[/] [A4]slowly[/] [P2]across[/] [T1]the[/] [S6]grass[/]. — Смотрите! Через лужайку медленно идёт старик.
+
+
+    - Времена года: **spring, summer, fall, winter** — с **in the**: in the summer.
+
+    - Пикник: **basket, blanket, grill, napkin, lemonade, watermelon, strawberries**.
+
+    - В парке: **grass, shade, ants, a ball, a kite**.
+
+    - Восхищение: **What a great day! What a lovely song!**
+
+    - Тост: **Cheers!**
+
+    '
+- number: 4
+  body: '**Почему «What a great day!», а не «How great day!»?** Перед существительным — **What a…**: *What a great day!* Перед одним прилагательным — **How…**: *How nice!*
+
+
+    **Почему «in the summer», а не «in summer»?** Можно и так, и так. В разговоре в США чаще с **the**: *in the summer, in the fall*.
+
+
+    **Диагностика понимания:** что верно: *What great day!* или *What a great day!*?
+
+
+    **Разбор:** *What a great day!* — с a.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **Let''s celebrate!** — давайте отпразднуем!
+
+    - **Cheers!** — будем здоровы!
+
+    - **See you soon!** — до скорого!
+
+
+    Слова: **celebrate** — праздновать, **fly — flew** — летать, **basket** — корзина, **grill** — гриль, **napkin** — салфетка, **ball** — мяч, **kite** — змей, **lemonade, watermelon, strawberry**, **grass** — трава, **shade** — тень, **ant** — муравей, **sunset** — закат, **season** — время года, **future** — будущее, **guest** — гость, **game** — игра, **song** — песня.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «What great day!» — **What a great day!**
+
+    - «autumn» — понятно, но в США **fall**.
+
+    - «on the summer» — **in the summer**.
+
+    - shade (тень от солнца) и shadow (тень предмета) — разные слова; на пикнике садятся **in the shade**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: назвать время года, выбрать What a…, собрать фразу о пикнике, рассказать о любимом сезоне, найти лишнее и сказать тост.
+
+
+    **Проверка маленького шага:** in the summer / in the fall; What a + прилагательное + слово!
+
+    '
+exercises:
+- order: 1
+  uid: EX-00350
+  kind: choice
+  stage: recognition
+  prompt_ru: Как по-американски «осень»?
+  options:
+  - fall
+  - winter
+  - spring
+  answer: fall
+  hint_ru: Время, когда листья падают (fall — падать).
+  explanation_ru: fall — осень в США (в Британии — autumn).
+  units:
+  - LX-01032
+- order: 2
+  uid: EX-00351
+  kind: fill
+  stage: substitution
+  prompt_ru: День был отличный. Воскликните.
+  prompt_en: What a ___ day!
+  answer: great
+  accepted:
+  - lovely
+  - nice
+  hint_ru: Отличный — great.
+  explanation_ru: What a great day!
+  units:
+  - LX-01040
+- order: 3
+  uid: EX-00352
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Бутерброды в корзине».'
+  options:
+  - basket
+  - The
+  - in
+  - sandwiches
+  - the
+  - are
+  answer: The sandwiches are in the basket
+  hint_ru: The sandwiches + are + in the basket.
+  explanation_ru: The sandwiches are in the basket.
+  units:
+  - LX-01016
+- order: 4
+  uid: EX-00353
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вас спрашивают о любимом времени года. Скажите, что любите лето.'
+  prompt_en: My favorite season is ___.
+  answer: summer
+  accepted:
+  - the summer
+  hint_ru: Лето — summer.
+  explanation_ru: My favorite season is summer.
+  units:
+  - LX-01028
+  - LX-01029
+- order: 5
+  uid: EX-00354
+  kind: choice
+  stage: recognition
+  prompt_ru: Жарко. Куда сесть на пикнике?
+  options:
+  - in the shade
+  - in the sunset
+  - in the grill
+  answer: in the shade
+  hint_ru: Тень — shade.
+  explanation_ru: Sit in the shade — сядьте в тень.
+  units:
+  - LX-01025
+- order: 6
+  uid: EX-00355
+  kind: fill
+  stage: transfer
+  prompt_ru: Друзья поднимают стаканы с лимонадом. Скажите тост.
+  prompt_en: ___!
+  answer: Cheers
+  accepted:
+  - cheers
+  hint_ru: Тост — Cheers!
+  explanation_ru: Cheers! — за нас!
+  units:
+  - LX-01037
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Летом мы ездим на пляж.
+  answer: In the summer, we go to the beach.
+  accepted:
+  - We go to the beach in the summer.
+  - In summer we go to the beach.
+  hint_ru: in the summer.
+  explanation_ru: In the summer, we go to the beach.
+  review_of: 4
+  units:
+  - LX-01042
+- order: 2
+  kind: translate
+  prompt_ru: Какой отличный день!
+  answer: What a great day!
+  hint_ru: What a + great + day.
+  explanation_ru: What a great day!
+  review_of: 2
+  units:
+  - LX-01040
+- order: 3
+  kind: translate
+  prompt_ru: Давайте отпразднуем!
+  answer: Let's celebrate!
+  accepted:
+  - Let us celebrate!
+  hint_ru: Let's + celebrate.
+  explanation_ru: Let's celebrate!
+  review_of: 6
+  units:
+  - LX-01038
+- order: 4
+  kind: translate
+  prompt_ru: Мы сидели на траве.
+  answer: We sat on the grass.
+  hint_ru: sit → sat.
+  explanation_ru: We sat on the grass.
+  review_of: 5
+  units:
+  - LX-01024

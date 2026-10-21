@@ -1,0 +1,253 @@
+slug: a1p-restaurant-order
+level: A1+
+week: 7
+order: 14
+focus: O
+minutes: 35
+title: 'В ресторане: заказ, счёт и чаевые'
+summary: 'Весь ужин по шагам: столик на двоих, Are you ready to order?, I would like…, Enjoy your meal!, Can we have the check, please? и чаевые — Keep the change.'
+units:
+- LX-00736
+- LX-00737
+- LX-00738
+- LX-00739
+- LX-00740
+- LX-00743
+- LX-00752
+- LX-00756
+- LX-00757
+- LX-00758
+- LX-00759
+- LX-00760
+- LX-00761
+- LX-00762
+- LX-00763
+- LX-00764
+- LX-00765
+- LX-00767
+- LX-00768
+- LX-00769
+- LX-00770
+- LX-00771
+sound_notes:
+- text: Are you ready to order?
+  ipa: /ɑr jə ˈrɛdi tə ˈɔrdɚ/
+  note_ru: ready to — «рЭди тэ», order — «Ордэр» с американским r
+- text: Can we have the check, please?
+  ipa: /kən wi ˈhæv ðə ˈtʃɛk ˈpliz/
+  note_ru: can безударное — «кэн», почти «кн»
+- text: Keep the change!
+  ipa: /ˈkip ðə ˈtʃeɪndʒ/
+  note_ru: change — «чейндж», в конце мягкое «дж»
+contractions:
+- full: I would
+  short: I'd
+  ipa: /aɪd/
+  note_ru: I'd like the pasta — разговорное сокращение I would like.
+layers:
+- number: 1
+  body: 'Американский ресторан: вас встречают, сажают за столик, приносят меню, а потом спрашивают, готовы ли вы заказать. В конце просят счёт и оставляют чаевые.
+
+
+    > [J3]Good[/] [S7]evening[/]! [D1]Are[/] [T8]you[/] [J4]ready[/] [P2]to[/] [D2]order[/]? — Добрый вечер! Готовы сделать заказ?
+
+    > [A2]Then[/] [T8]I[/] [D7]would[/] [D3]like[/] [T1]the[/] [S3]chicken[/] [P4]with[/] [S3]rice[/], [O8]please[/]. — Тогда мне курицу с рисом, пожалуйста.
+
+    '
+- number: 2
+  body: '**Menu** — французское слово: «подробный, мелкий» (от того же корня, что «минута»). Меню — это подробный список. **Dessert** тоже из французского: *desservir* — «убрать со стола». Десерт подают, когда тарелки уже убрали. **Tip** в английском значит и «кончик», и «совет», и «чаевые».
+
+    '
+- number: 3
+  body: 'Схема ужина:
+
+
+    > [N1]Two[/] [S3]pies[/], [O8]please[/]. [C1]And[/] [D7]can[/] [T8]we[/] [D1]have[/] [T1]the[/] [D6]check[/], [O8]please[/]? — Два пирога, пожалуйста. И можно счёт?
+
+
+    1. Вход: **A table for two, please.**
+
+    2. Заказ: **Are you ready to order? — I would like…**
+
+    3. Вопрос о блюде: **Is it spicy? What do you recommend?**
+
+    4. Еду принесли: **Enjoy your meal!**
+
+    5. После: **Anything else? Any dessert?**
+
+    6. Счёт: **Can we have the check, please?**
+
+    7. Чаевые: **Keep the change.**
+
+    '
+- number: 4
+  body: '**Почему «I would like», а не «I want»?** *I want* — «я хочу» — звучит слишком прямо, почти грубо. **I would like** (или **I''d like**) — «я бы хотел»: так вежливо говорят с официантом.
+
+
+    **Чаевые в США** — не подарок, а часть зарплаты официанта. Обычно оставляют 15–20 процентов от счёта.
+
+
+    **Диагностика понимания:** что вежливее сказать официанту: *I want the chicken* или *I would like the chicken*?
+
+
+    **Разбор:** *I would like the chicken.* — вежливая форма.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [A3]Here[/] [D1]are[/] [N1]sixty[/] [N6]dollars[/]. [D2]Keep[/] [T1]the[/] [D2]change[/]! — Вот шестьдесят долларов. Сдачи не надо!
+
+
+    - **Here you go. Enjoy your meal!** — пожалуйста, приятного аппетита.
+
+    - **Everything was delicious!** — всё было очень вкусно.
+
+    - **the check** — счёт (в Британии — the bill).
+
+
+    Слова: **order** — заказывать, **recommend** — советовать, **menu** — меню, **server** — официант(ка), **tip** — чаевые, **soup** — суп, **dessert** — десерт, **plate** — тарелка, **fork** — вилка, **knife** — нож, **spoon** — ложка, **delicious** — очень вкусный, **fresh** — свежий, **spicy** — острый, **ready** — готовый, **without** — без.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «I want the chicken» официанту — грубовато; лучше **I would like**.
+
+    - «Give me the bill» — в США **Can we have the check, please?**
+
+    - «very delicious» — delicious уже значит «очень вкусный».
+
+    - dessert (ss, десерт) и desert (пустыня) — разные слова.
+
+    '
+- number: 7
+  body: 'Шесть заданий: вежливо заказать, спросить совет, собрать просьбу о счёте, заказать в новом месте, похвалить еду и оставить чаевые.
+
+
+    **Проверка маленького шага:** I would like… — Can we have the check, please? — Keep the change.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00242
+  kind: choice
+  stage: recognition
+  prompt_ru: Вежливо закажите курицу.
+  options:
+  - I would like the chicken, please.
+  - I want chicken now.
+  - Give me chicken.
+  answer: I would like the chicken, please.
+  hint_ru: Вежливо — I would like.
+  explanation_ru: I would like… — вежливая форма для заказа.
+  units:
+  - LX-00736
+- order: 2
+  uid: EX-00243
+  kind: fill
+  stage: substitution
+  prompt_ru: 'Вы не знаете, что выбрать. Спросите официантку: «Что вы посоветуете?»'
+  prompt_en: What do you ___?
+  answer: recommend
+  hint_ru: Советовать — recommend.
+  explanation_ru: What do you recommend? — что вы посоветуете?
+  units:
+  - LX-00737
+- order: 3
+  uid: EX-00244
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Можно нам счёт, пожалуйста?»'
+  options:
+  - check
+  - Can
+  - have
+  - we
+  - the
+  - please
+  answer: Can we have the check please
+  hint_ru: Can we have + the check.
+  explanation_ru: Can we have the check, please? В США счёт — check.
+  units:
+  - LX-00767
+- order: 4
+  uid: EX-00245
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вы с другом входите в кафе. Попросите столик на двоих.'
+  prompt_en: A table for ___, please.
+  answer: two
+  hint_ru: Двое — two.
+  explanation_ru: A table for two, please.
+  units:
+  - LX-00770
+- order: 5
+  uid: EX-00246
+  kind: choice
+  stage: recognition
+  prompt_ru: Ужин был очень вкусный. Что сказать?
+  options:
+  - Everything was delicious!
+  - Everything was very delicious!
+  - Everything was dessert!
+  answer: Everything was delicious!
+  hint_ru: delicious уже значит «очень вкусный».
+  explanation_ru: Everything was delicious! Very перед delicious не ставят.
+  units:
+  - LX-00760
+- order: 6
+  uid: EX-00247
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Вы даёте официанту деньги и не ждёте сдачи. Скажите: «Сдачи не надо».'
+  prompt_en: Keep the ___.
+  answer: change
+  hint_ru: Сдача — change.
+  explanation_ru: Keep the change. — оставьте сдачу себе.
+  units:
+  - LX-00768
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Мне пасту, пожалуйста.
+  answer: I would like the pasta, please.
+  accepted:
+  - I'd like the pasta, please.
+  - The pasta, please.
+  hint_ru: I would like + the pasta.
+  explanation_ru: I would like the pasta, please.
+  review_of: 1
+  units:
+  - LX-00736
+- order: 2
+  kind: translate
+  prompt_ru: Это острое?
+  answer: Is it spicy?
+  hint_ru: Is it + spicy?
+  explanation_ru: Is it spicy?
+  review_of: 2
+  units:
+  - LX-00762
+- order: 3
+  kind: translate
+  prompt_ru: Можно счёт, пожалуйста?
+  answer: Can we have the check, please?
+  accepted:
+  - Can I have the check, please?
+  hint_ru: the check.
+  explanation_ru: Can we have the check, please?
+  review_of: 3
+  units:
+  - LX-00767
+- order: 4
+  kind: translate
+  prompt_ru: Приятного аппетита!
+  answer: Enjoy your meal!
+  hint_ru: Enjoy + your meal.
+  explanation_ru: Enjoy your meal!
+  review_of: 5
+  units:
+  - LX-00771

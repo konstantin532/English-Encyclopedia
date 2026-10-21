@@ -1,0 +1,413 @@
+# Неделя 16 A1+ «Пикник под угрозой дождя; итог A1+»: повторение уровня. CEFR не сверялся.
+level: A1+
+week: 16
+units:
+- uid: LX-01014
+  lemma: celebrate
+  meaning: to do something fun on a special day
+  class: D2
+  forms:
+  - celebrates
+  - celebrated
+  - celebrating
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsɛləˌbreɪt/
+  translation_ru: праздновать
+  example_en: '[T8]We[/] [D2]celebrated[/] [T3]her[/] [S7]birthday[/] [P1]in[/] [T1]the[/] [S4]park[/].'
+  example_ru: Мы отпраздновали её день рождения в парке.
+  situation: Праздник
+- uid: LX-01015
+  lemma: fly
+  meaning: to move in the air
+  class: D4
+  forms:
+  - flies
+  - flew
+  - flying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /flaɪ/
+  translation_ru: летать; запускать (змея)
+  example_en: '[S1]Anna[/] [C1]and[/] [S1]Tom[/] [D4]flew[/] [T1]a[/] [S2]kite[/].'
+  example_ru: Анна и Том запускали воздушного змея.
+  situation: На пикнике
+  usage_note: Прошедшее — flew.
+- uid: LX-01016
+  lemma: basket
+  meaning: a thing for carrying food or things, often made of wood
+  class: S2
+  forms:
+  - baskets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbæskɪt/
+  translation_ru: корзина
+  example_en: '[T1]The[/] [S3]sandwiches[/] [D1]are[/] [P1]in[/] [T1]the[/] [S2]basket[/].'
+  example_ru: Бутерброды в корзине.
+  situation: Собираете пикник
+- uid: LX-01017
+  lemma: grill
+  meaning: a thing for cooking food over a fire outside
+  class: S2
+  forms:
+  - grills
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡrɪl/
+  translation_ru: гриль, мангал
+  example_en: '[S1]Tom[/] [D2]cooked[/] [S3]chicken[/] [P1]on[/] [T1]the[/] [S2]grill[/].'
+  example_ru: Том жарил курицу на гриле.
+  situation: На пикнике
+- uid: LX-01018
+  lemma: napkin
+  meaning: a small piece of paper or cloth for your hands and mouth
+  class: S2
+  forms:
+  - napkins
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈnæpkɪn/
+  translation_ru: салфетка
+  example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S2]napkin[/]?'
+  example_ru: Можно салфетку?
+  situation: За столом
+- uid: LX-01019
+  lemma: ball
+  meaning: a round thing for games
+  class: S2
+  forms:
+  - balls
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɔl/
+  translation_ru: мяч
+  example_en: '[S1]Box[/] [D2]played[/] [P4]with[/] [T1]the[/] [S2]ball[/].'
+  example_ru: Бокс играл с мячом.
+  situation: На пикнике
+- uid: LX-01020
+  lemma: kite
+  meaning: a toy that flies in the wind on a long string
+  class: S2
+  forms:
+  - kites
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kaɪt/
+  translation_ru: воздушный змей
+  example_en: '[T1]The[/] [S2]kite[/] [D1]is[/] [P1]in[/] [T1]the[/] [S6]sky[/].'
+  example_ru: Змей в небе.
+  situation: На пикнике
+- uid: LX-01021
+  lemma: lemonade
+  meaning: a cold drink made from lemons, water, and sugar
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌlɛməˈneɪd/
+  translation_ru: лимонад
+  example_en: '[T1]A[/] [S2]glass[/] [P6]of[/] [S3]lemonade[/], [O8]please[/].'
+  example_ru: Стакан лимонада, пожалуйста.
+  situation: На пикнике
+  usage_note: В США lemonade — чаще домашний лимонад без газа.
+- uid: LX-01022
+  lemma: watermelon
+  meaning: a big green fruit, red inside
+  class: S3
+  forms:
+  - watermelons
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈwɔtɚˌmɛlən/
+  translation_ru: арбуз
+  example_en: '[S1]Mia[/] [D2]brought[/] [T1]a[/] [J1]huge[/] [S3]watermelon[/].'
+  example_ru: Мия принесла огромный арбуз.
+  situation: На пикнике
+- uid: LX-01023
+  lemma: strawberry
+  meaning: a small red sweet fruit
+  class: S3
+  forms:
+  - strawberries
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈstrɔˌbɛri/
+  translation_ru: клубника
+  example_en: '[T8]I[/] [D3]love[/] [S3]strawberries[/].'
+  example_ru: Обожаю клубнику.
+  situation: Говорите о еде
+- uid: LX-01024
+  lemma: grass
+  meaning: the green plant on the ground in a park
+  class: S6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡræs/
+  translation_ru: трава
+  example_en: '[T8]We[/] [D2]sat[/] [P1]on[/] [T1]the[/] [S6]grass[/].'
+  example_ru: Мы сидели на траве.
+  situation: На пикнике
+- uid: LX-01025
+  lemma: shade
+  meaning: a place where the sun does not shine
+  class: S6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ʃeɪd/
+  translation_ru: тень (от солнца)
+  example_en: '[D2]Sit[/] [P1]in[/] [T1]the[/] [S6]shade[/]. [T8]It[/][D1]''s[/] [J2]hot[/]!'
+  example_ru: Садись в тень. Жарко!
+  situation: На пикнике
+- uid: LX-01026
+  lemma: ant
+  meaning: a very small insect
+  class: S6
+  forms:
+  - ants
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ænt/
+  translation_ru: муравей
+  example_en: '[T9]There[/] [D1]are[/] [S6]ants[/] [P1]on[/] [T3]my[/] [S3]sandwich[/]!'
+  example_ru: На моём бутерброде муравьи!
+  situation: На пикнике
+- uid: LX-01027
+  lemma: sunset
+  meaning: the time when the sun goes down in the evening
+  class: S7
+  forms:
+  - sunsets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsʌnsɛt/
+  translation_ru: закат
+  example_en: '[T8]We[/] [D6]watched[/] [T1]the[/] [S7]sunset[/] [P1]by[/] [T1]the[/] [S6]lake[/].'
+  example_ru: Мы смотрели закат у озера.
+  situation: Вечер
+- uid: LX-01028
+  lemma: season
+  meaning: winter, spring, summer, or fall
+  class: S7
+  forms:
+  - seasons
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsizən/
+  translation_ru: время года, сезон
+  example_en: '[T3]My[/] [J3]favorite[/] [S7]season[/] [D1]is[/] [S7]summer[/].'
+  example_ru: Моё любимое время года — лето.
+  situation: Говорите о временах года
+- uid: LX-01029
+  lemma: summer
+  meaning: the hot season
+  class: S7
+  forms:
+  - summers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsʌmɚ/
+  translation_ru: лето
+  example_en: '[P3]In[/] [T1]the[/] [S7]summer[/], [T8]we[/] [D4]go[/] [P2]to[/] [T1]the[/] [S6]beach[/].'
+  example_ru: Летом мы ездим на пляж.
+  situation: Говорите о временах года
+- uid: LX-01030
+  lemma: winter
+  meaning: the cold season
+  class: S7
+  forms:
+  - winters
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈwɪntɚ/
+  translation_ru: зима
+  example_en: '[S7]Winter[/] [D1]is[/] [J2]cold[/] [P1]in[/] [T3]our[/] [S4]town[/].'
+  example_ru: Зима в нашем городе холодная.
+  situation: Говорите о временах года
+- uid: LX-01031
+  lemma: spring
+  meaning: the season after winter
+  class: S7
+  forms:
+  - springs
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sprɪŋ/
+  translation_ru: весна
+  example_en: '[T1]The[/] [S6]flowers[/] [D1]are[/] [J5]beautiful[/] [P3]in[/] [T1]the[/] [S7]spring[/].'
+  example_ru: Весной цветы красивые.
+  situation: Говорите о временах года
+- uid: LX-01032
+  lemma: fall
+  meaning: the season after summer
+  class: S7
+  forms:
+  - falls
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fɔl/
+  translation_ru: осень
+  example_en: '[P3]In[/] [T1]the[/] [S7]fall[/], [T1]the[/] [S6]trees[/] [D1]are[/] [J2]red[/] [C1]and[/] [J2]yellow[/].'
+  example_ru: Осенью деревья красные и жёлтые.
+  situation: Говорите о временах года
+  usage_note: В США осень — fall, в Британии — autumn. Глагол fall «падать» будет позже.
+- uid: LX-01033
+  lemma: future
+  meaning: the time after now
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfjutʃɚ/
+  translation_ru: будущее
+  example_en: '[P3]In[/] [T1]the[/] [S7]future[/], [T8]I[/] [D7]will[/] [D5]speak[/] [J3]English[/] [A4]well[/].'
+  example_ru: В будущем я буду хорошо говорить по-английски.
+  situation: Говорите о планах
+- uid: LX-01034
+  lemma: guest
+  meaning: a person you invite to your home or party
+  class: S1
+  forms:
+  - guests
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡɛst/
+  translation_ru: гость
+  example_en: '[T8]We[/] [D1]have[/] [N1]five[/] [S1]guests[/] [A2]today[/].'
+  example_ru: Сегодня у нас пять гостей.
+  situation: Праздник
+  usage_note: 'u не читается: «гэст».'
+- uid: LX-01035
+  lemma: game
+  meaning: something you play for fun
+  class: S10
+  forms:
+  - games
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡeɪm/
+  translation_ru: игра
+  example_en: '[T8]We[/] [D2]played[/] [T1]a[/] [S10]game[/] [P4]with[/] [T1]a[/] [S2]ball[/].'
+  example_ru: Мы играли в игру с мячом.
+  situation: На пикнике
+- uid: LX-01036
+  lemma: song
+  meaning: music with words
+  class: S10
+  forms:
+  - songs
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sɔŋ/
+  translation_ru: песня
+  example_en: '[S1]Tom[/] [D2]played[/] [T1]a[/] [S10]song[/] [P1]on[/] [T3]his[/] [S2]guitar[/].'
+  example_ru: Том сыграл песню на гитаре.
+  situation: На пикнике
+- uid: LX-01037
+  lemma: Cheers!
+  meaning: What you say when you lift your glasses together
+  class: O3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /tʃɪrz/
+  translation_ru: Будем здоровы! Ура!
+  example_en: Cheers!
+  example_ru: За нас!
+  situation: Праздник
+  usage_note: В Британии cheers ещё значит «спасибо», в США — обычно тост.
+- uid: LX-01038
+  lemma: Let's celebrate!
+  meaning: Saying it is time for a party
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈlɛts ˈsɛləbreɪt/
+  translation_ru: Давайте отпразднуем!
+  example_en: Let's celebrate!
+  example_ru: Отметим!
+  situation: Праздник
+- uid: LX-01039
+  lemma: Thanks for everything!
+  meaning: A big thank you for a lot of help
+  class: O2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈθæŋks fɚ ˈɛvriθɪŋ/
+  translation_ru: Спасибо за всё!
+  example_en: Thanks for everything!
+  example_ru: Спасибо за всё!
+  situation: Благодарите друзей
+- uid: LX-01040
+  lemma: What a great day!
+  meaning: Saying a day was very good
+  class: O3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌt ə ˈɡreɪt ˈdeɪ/
+  translation_ru: Какой отличный день!
+  example_en: What a great day!
+  example_ru: Чудесный день!
+  situation: Радуетесь
+  usage_note: 'What a + прилагательное + слово: What a nice cake! What a lovely song!'
+- uid: LX-01041
+  lemma: Time flies!
+  meaning: Saying time goes very fast
+  class: F8
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈtaɪm ˈflaɪz/
+  translation_ru: Время летит!
+  example_en: Time flies!
+  example_ru: Как быстро время летит!
+  situation: Вспоминаете прошлое
+- uid: LX-01042
+  lemma: in the summer
+  meaning: during the summer
+  class: P3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪn ðə ˈsʌmɚ/
+  translation_ru: летом
+  example_en: in the summer
+  example_ru: летом
+  situation: Говорите о временах года
+  usage_note: 'Времена года — с in: in the winter, in the fall.'
+- uid: LX-01043
+  lemma: See you soon!
+  meaning: Saying goodbye when you will meet again soon
+  class: O1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈsi ju ˈsun/
+  translation_ru: До скорого!
+  example_en: See you soon!
+  example_ru: До встречи!
+  situation: Прощаетесь

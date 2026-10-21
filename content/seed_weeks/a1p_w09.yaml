@@ -1,0 +1,84 @@
+# A1+, неделя 9 «Аренда квартиры и мелкий ремонт». Сфера home, have to / don't have to.
+level: A1+
+week: 9
+can_do_ru: 'Я смогу сказать, что нужно сделать, а что не обязательно: I have to call the landlord. You don''t have to pay. — и объяснить мастеру поломку: The pipe is leaking. It''s an emergency!'
+mission_ru: 'Напишите по-английски три дела по дому на эту неделю: два с have to (I have to…) и одно, которое делать не обязательно (I don''t have to…).'
+chunks:
+- LX-00829
+- LX-00830
+- LX-00831
+- LX-00832
+- LX-00833
+- LX-00834
+- LX-00835
+story_beat:
+  intro_ru: Субботнее утро. Под раковиной у Анны и Тома течёт вода. Анна звонит хозяину дома, и он присылает мастера.
+  outcome_ru: Мастер меняет старую трубу и лампочку в ванной. Платить Анне и Тому не нужно — ремонт оплачивает хозяин.
+  next_hook_ru: Пора наконец познакомиться с соседом сверху. История 9 — «Человек сверху», неделя 10.
+script:
+- speaker: tom
+  emotion: worried
+  text: '[S1]Anna[/]! [S3]Water[/] [D1]is[/] [D2]leaking[/] [P1]under[/] [T1]the[/] [S2]sink[/]! [T9]What[/] [D1]do[/] [T8]we[/] [D1]have[/] [X2]to[/] [D2]do[/]?'
+  ru: Анна! Под раковиной течёт вода! Что нам делать?
+- speaker: anna
+  text: '[D2]Turn[/] [X3]off[/] [T1]the[/] [S3]water[/]! [D2]Put[/] [T1]a[/] [S2]bucket[/] [P1]under[/] [T1]the[/] [S2]pipe[/]. [T8]I[/] [D1]have[/] [X2]to[/] [D5]call[/] [T1]the[/] [S1]landlord[/].'
+  ru: Перекрой воду! Поставь ведро под трубу. Мне надо позвонить хозяину.
+- speaker: locksmith
+  text: '[J3]Good[/] [S7]morning[/]. [T1]The[/] [S1]landlord[/] [D5]called[/] [T8]me[/]. [T9]What[/] [D1]is[/] [J3]wrong[/]?'
+  spoken: '[J3]Good[/] [S7]morning[/]. [T1]The[/] [S1]landlord[/] [D5]called[/] [T8]me[/]. [T9]What[/][D1]''s[/] [J3]wrong[/]?'
+  ru: Доброе утро. Мне позвонил хозяин. Что случилось?
+- speaker: anna
+  emotion: worried
+  text: '[T1]The[/] [S2]pipe[/] [P1]under[/] [T1]the[/] [S2]sink[/] [D1]is[/] [D2]leaking[/]. [T8]It[/] [D1]is[/] [T1]an[/] [S10]emergency[/]!'
+  spoken: '[T1]The[/] [S2]pipe[/] [P1]under[/] [T1]the[/] [S2]sink[/] [D1]is[/] [D2]leaking[/]. [T8]It[/][D1]''s[/] [T1]an[/] [S10]emergency[/]!'
+  ru: Под раковиной течёт труба. Это срочно!
+- speaker: locksmith
+  text: '[D2]Let[/] [T8]me[/] [D6]check[/]. [T2]This[/] [S2]pipe[/] [D1]is[/] [A5]very[/] [J2]old[/]. [T8]I[/] [D1]have[/] [X2]to[/] [D2]change[/] [T8]it[/].'
+  ru: Сейчас посмотрю. Эта труба очень старая. Её надо заменить.
+- speaker: tom
+  text: '[A6]How[/] [A6]long[/] [D1]does[/] [T8]it[/] [D2]take[/]?'
+  ru: Сколько времени это займёт?
+- speaker: locksmith
+  text: '[N1]One[/] [S7]hour[/]. [T8]You[/] [D1]do[/] [X1]not[/] [D1]have[/] [X2]to[/] [D2]wait[/] [A3]here[/].'
+  spoken: '[N1]One[/] [S7]hour[/]. [T8]You[/] [D1]do[/][X1]n''t[/] [D1]have[/] [X2]to[/] [D2]wait[/] [A3]here[/].'
+  ru: Час. Вам не обязательно ждать здесь.
+- speaker: anna
+  text: '[D1]Do[/] [T8]we[/] [D1]have[/] [X2]to[/] [D2]pay[/] [P5]for[/] [T8]it[/]?'
+  ru: Нам за это платить?
+- speaker: locksmith
+  emotion: happy
+  text: '[O4]No[/], [T8]you[/] [D1]do[/] [X1]not[/] [D1]have[/] [X2]to[/] [D2]pay[/]. [T1]The[/] [S1]landlord[/] [D1]has[/] [X2]to[/] [D2]pay[/].'
+  spoken: '[O4]No[/], [T8]you[/] [D1]do[/][X1]n''t[/] [D1]have[/] [X2]to[/] [D2]pay[/]. [T1]The[/] [S1]landlord[/] [D1]has[/] [X2]to[/] [D2]pay[/].'
+  ru: Нет, вам платить не нужно. Платит хозяин.
+- speaker: tom
+  emotion: happy
+  text: '[J3]Great[/]! [C1]And[/] [T1]the[/] [S2]light[/] [P1]in[/] [T1]the[/] [S2]bathroom[/] [D1]does[/] [X1]not[/] [D2]work[/].'
+  spoken: '[J3]Great[/]! [C1]And[/] [T1]the[/] [S2]light[/] [P1]in[/] [T1]the[/] [S2]bathroom[/] [D1]does[/][X1]n''t[/] [D2]work[/].'
+  ru: Отлично! А ещё в ванной не горит свет.
+- speaker: locksmith
+  text: '[T2]That[/] [D1]is[/] [J3]fine[/]. [T8]I[/] [D7]can[/] [D2]change[/] [T1]the[/] [S2]bulb[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]bulb[/]?'
+  spoken: '[T2]That[/][D1]''s[/] [J3]fine[/]. [T8]I[/] [D7]can[/] [D2]change[/] [T1]the[/] [S2]bulb[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]bulb[/]?'
+  ru: Ничего страшного. Я могу поменять лампочку. У вас есть новая?
+- speaker: anna
+  emotion: happy
+  text: '[O4]Yes[/], [O9]here[/] [T8]you[/] [O9]go[/]. [O2]Thank[/] [T8]you[/] [F4]so[/] [A5]much[/]!'
+  ru: Да, вот, держите. Огромное спасибо!
+twister:
+  number: 23
+  series: contractions
+  text: '[T8]I[/] [D1]have[/] [X2]to[/], [T8]you[/] [D1]have[/] [X2]to[/], [T8]she[/] [D1]has[/] [X2]to[/]. [C5]But[/] [T8]he[/] [D1]does[/][X1]n''t[/] [D1]have[/] [X2]to[/], [C1]and[/] [T8]we[/] [D1]do[/][X1]n''t[/] [D1]have[/] [X2]to[/]!'
+  ru: Я должен, ты должен, она должна. А ему не обязательно, и нам не обязательно!
+  ipa: /aɪ ˈhæftə | ju ˈhæftə | ʃi ˈhæstə | bət hi ˈdʌzənt ˈhæftə | ən wi ˈdoʊnt ˈhæftə/
+  focus_sounds:
+  - f
+  - s
+  source: original
+  goal_ru: have to и has to в быстрой речи; сокращения don't и doesn't.
+  tip_ru: 'have to звучит «хЭфтэ»: v перед t глохнет в f. has to — «хЭстэ». doesn''t — «дАзнт», don''t — «доунт».'
+  warmup:
+  - '[D1]have[/] [X2]to[/], [D1]has[/] [X2]to[/]'
+  - '[D1]do[/][X1]n''t[/] [D1]have[/] [X2]to[/]'
+  - '[T8]She[/] [D1]has[/] [X2]to[/] [D2]pay[/].'
+  - '[T8]We[/] [D1]do[/][X1]n''t[/] [D1]have[/] [X2]to[/] [D2]wait[/].'
+  target_line: The landlord has to pay.
+  own_ru: 'Скажите, что вам надо сделать завтра и что не обязательно: I have to… I don''t have to…'

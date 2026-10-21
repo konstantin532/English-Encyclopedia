@@ -1,0 +1,261 @@
+slug: a1p-there-was-how-was
+level: A1+
+week: 2
+order: 4
+focus: J
+minutes: 40
+title: 'Что там было: there was / there were и впечатления'
+summary: 'Как описать место в прошлом: There was a big map. There were twenty chairs. Вопрос How was…? и слова-впечатления: great, boring, interesting, terrible.'
+units:
+- LX-00502
+- LX-00503
+- LX-00504
+- LX-00505
+- LX-00572
+- LX-00573
+- LX-00574
+- LX-00575
+- LX-00576
+- LX-00577
+- LX-00578
+- LX-00579
+- LX-00580
+- LX-00581
+- LX-00582
+- LX-00583
+- LX-00585
+- LX-00586
+- LX-00587
+- LX-00588
+- LX-00590
+- LX-00591
+sound_notes:
+- text: There were twenty old chairs.
+  ipa: /ðɚ wɚ ˈtwɛni ˈoʊld ˈtʃɛrz/
+  note_ru: 'there were сливается: «зэр-уэр»; в twenty t после n часто пропадает: «твЭни»'
+- text: It was very interesting.
+  ipa: /ɪt wəz ˈvɛri ˈɪntrəstɪŋ/
+  note_ru: 'interesting — три слога, ударение на первый: «Интрэстин»'
+- text: How was your weekend?
+  ipa: /ˈhaʊ wəz jɚ ˈwikɛnd/
+  note_ru: your безударное — «йэр»
+contractions:
+- full: there was not
+  short: there wasn't
+  ipa: /ðɚ ˈwʌzənt/
+  note_ru: There wasn't any sun — солнца не было.
+- full: it was not
+  short: it wasn't
+  ipa: /ɪt ˈwʌzənt/
+  note_ru: It wasn't boring!
+layers:
+- number: 1
+  body: 'Том считает, что в музее было скучно, а Анна — что очень интересно. Каждый описывает, что там было, и даёт свою оценку. Для этого нужны две вещи: **there was / there were** и слова-впечатления.
+
+
+    > [T8]It[/] [D1]was[/] [J7]boring[/]. [T9]There[/] [D1]were[/] [N1]twenty[/] [J2]old[/] [S2]chairs[/] [C1]and[/] [N1]one[/] [J2]old[/] [S2]clock[/]. — Было скучно. Там были двадцать старых стульев и одни старые часы.
+
+    > [C5]But[/] [T9]there[/] [D1]was[/] [T1]a[/] [J1]big[/] [S4]map[/] [P6]of[/] [T3]our[/] [S4]town[/]! [T8]It[/] [D1]was[/] [A5]very[/] [J7]interesting[/]. — Зато там была большая карта нашего города! Было очень интересно.
+
+    '
+- number: 2
+  body: '**There is / there are** вы знаете с A1: «есть, имеется». Прошлое делается так же, как у be: **is → was**, **are → were**. *There was a map* — «там была карта».
+
+
+    **Interesting** — от латинского *interest*, «это важно, это касается». Интересное — то, что вас касается.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [T9]There[/] [D1]was[/] [T1]a[/] [J1]big[/] [S4]map[/]. — Там была большая карта.
+
+    > [T9]There[/] [D1]were[/] [N1]twenty[/] [J2]old[/] [S2]chairs[/]. — Там были двадцать старых стульев.
+
+
+    - Одна вещь → **there was**: there was a clock.
+
+    - Много вещей → **there were**: there were two clocks.
+
+    - Ничего не было: **there was no sun**, **there were no people**.
+
+    - Впечатление: **It was + слово**: It was great. It was boring.
+
+    '
+- number: 4
+  body: '**Почему «It was boring», а не «Was boring»?** В английском у предложения всегда есть подлежащее. В русском «было скучно» обходится без него, а в английском его ставят формально: **it**.
+
+
+    > [T8]We[/] [D1]were[/] [P3]at[/] [T1]the[/] [S6]beach[/]. [T1]The[/] [S6]sun[/] [D1]was[/] [J2]hot[/], [C5]but[/] [T1]the[/] [S6]wind[/] [D1]was[/] [J2]cold[/]. — Мы были на пляже. Солнце было жаркое, а ветер холодный.
+
+
+    **Boring** — о том, что скучное: фильм, урок. Сказать «мне скучно» — *I am bored*, это другое слово, оно будет позже.
+
+
+    **Диагностика понимания:** в кафе было много людей. Что верно: *There was many people* или *There were many people*?
+
+
+    **Разбор:** *There were…* — people это много людей, значит **were**.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [J3]Good[/] [S7]morning[/]! [A6]How[/] [D1]was[/] [T3]your[/] [S7]weekend[/]? — Доброе утро! Как прошли выходные?
+
+
+    - **How was…?** — «Как прошёл/прошла…?»: How was the movie? How was the party?
+
+    - Ответ одной фразой: **It was great! It was fun. It was terrible.**
+
+    - **very** усиливает: very interesting, very cold.
+
+
+    Слова-впечатления: **great** — отличный, **fun** — весело, **interesting** — интересный, **boring** — скучный, **terrible** — ужасный. Место: **empty** — пустой, **full** — полный, **quiet** — тихий, **loud** — громкий, **dark** — тёмный. Погода: **sun** — солнце, **wind** — ветер, **sky** — небо, **sea** — море.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «There was twenty chairs» — много вещей → **there were**.
+
+    - «Was very interesting» — нужно **it**: It was very interesting.
+
+    - «It was fun» — весело; «It was funny» — смешно. Разные слова.
+
+    - quiet («тихий», два слога) и quite — разные слова.
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать there was или there were, оценить место, собрать вопрос How was…?, описать новое место, отличить fun от funny и сказать, чего не было.
+
+
+    **Проверка маленького шага:** одна вещь — there was, много — there were. Впечатление — It was + слово.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00182
+  kind: choice
+  stage: recognition
+  prompt_ru: В музее были двадцать стульев. Как сказать?
+  options:
+  - There were twenty chairs.
+  - There was twenty chairs.
+  - It were twenty chairs.
+  answer: There were twenty chairs.
+  hint_ru: Много вещей — were.
+  explanation_ru: There were twenty chairs. Двадцать — много, значит were.
+  units:
+  - LX-00579
+- order: 2
+  uid: EX-00183
+  kind: fill
+  stage: substitution
+  prompt_ru: 'Фильм вам очень понравился. Скажите: «Было отлично!»'
+  prompt_en: It was ___!
+  answer: great
+  hint_ru: Очень хорошо — great.
+  explanation_ru: It was great! — главная фраза-впечатление.
+  units:
+  - LX-00574
+  - LX-00591
+- order: 3
+  uid: EX-00184
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите вопрос: «Как прошли выходные?»'
+  options:
+  - your
+  - was
+  - How
+  - weekend
+  answer: How was your weekend
+  hint_ru: How was + your weekend.
+  explanation_ru: How was your weekend? — обычный вопрос в понедельник.
+  units:
+  - LX-00590
+- order: 4
+  uid: EX-00185
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вы опишете концерт подруге. Там было громко и весело. Скажите одной фразой: «Было громко, но весело».'
+  prompt_en: ___
+  answer: It was loud, but it was fun.
+  accepted:
+  - It was loud but fun.
+  - It was loud, but fun.
+  - It was loud but it was fun.
+  - It was loud, but it was fun
+  hint_ru: It was loud, but it was fun.
+  explanation_ru: It was loud, but it was fun. Впечатления — через It was.
+  units:
+  - LX-00582
+  - LX-00577
+- order: 5
+  uid: EX-00186
+  kind: choice
+  stage: recognition
+  prompt_ru: Вечеринка была весёлой (хорошо провели время). Какое слово?
+  options:
+  - It was fun.
+  - It was funny.
+  - It was full.
+  answer: It was fun.
+  hint_ru: Весело провели время — fun.
+  explanation_ru: It was fun — было весело. Funny — смешной, full — полный.
+  units:
+  - LX-00577
+- order: 6
+  uid: EX-00187
+  kind: fill
+  stage: transfer
+  prompt_ru: На пляже не было солнца. Скажите об этом.
+  prompt_en: There was no ___.
+  answer: sun
+  hint_ru: Солнце — sun.
+  explanation_ru: There was no sun. «Не было» — there was no + слово.
+  units:
+  - LX-00586
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Там была большая карта.
+  answer: There was a big map.
+  hint_ru: Одна вещь — there was.
+  explanation_ru: There was a big map. Одна карта — was.
+  review_of: 1
+  units:
+  - LX-00579
+- order: 2
+  kind: translate
+  prompt_ru: Было очень интересно.
+  answer: It was very interesting.
+  hint_ru: It was + very + interesting.
+  explanation_ru: It was very interesting. Без it по-английски нельзя.
+  review_of: 2
+  units:
+  - LX-00576
+- order: 3
+  kind: translate
+  prompt_ru: Как прошла вечеринка?
+  answer: How was the party?
+  hint_ru: How was + the party?
+  explanation_ru: How was the party? Вопрос о впечатлении — How was…?
+  review_of: 3
+  units:
+  - LX-00568
+  - LX-00590
+- order: 4
+  kind: translate
+  prompt_ru: Улица была пустая и тёмная.
+  answer: The street was empty and dark.
+  hint_ru: The street + was + empty and dark.
+  explanation_ru: The street was empty and dark.
+  review_of: 4
+  units:
+  - LX-00579
+  - LX-00583

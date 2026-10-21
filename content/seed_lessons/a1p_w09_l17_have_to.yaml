@@ -1,0 +1,237 @@
+slug: a1p-have-to
+level: A1+
+week: 9
+order: 17
+focus: D
+minutes: 40
+title: 'Have to и don''t have to: надо и не обязательно'
+summary: Как сказать «надо» (I have to call the landlord), «ему надо» (he has to pay) и «не обязательно» (you don't have to wait). Чем don't have to отличается от mustn't.
+units:
+- LX-00802
+- LX-00804
+- LX-00805
+- LX-00806
+- LX-00807
+- LX-00808
+- LX-00826
+- LX-00832
+- LX-00833
+- LX-00834
+- LX-00835
+sound_notes:
+- text: I have to call the landlord.
+  ipa: /aɪ ˈhæftə ˈkɔl ðə ˈlændlɔrd/
+  note_ru: 'have to — «хЭфтэ»: v перед t звучит как f'
+- text: The landlord has to pay.
+  ipa: /ðə ˈlændlɔrd ˈhæstə ˈpeɪ/
+  note_ru: 'has to — «хЭстэ»: z перед t звучит как s'
+- text: You don't have to wait here.
+  ipa: /ju ˈdoʊnt ˈhæftə ˈweɪt ˈhɪr/
+  note_ru: 'ударение на don''t: именно оно меняет смысл'
+contractions:
+- full: do not have to
+  short: don't have to
+  ipa: /ˈdoʊnt ˈhæftə/
+  note_ru: You don't have to pay — платить не нужно.
+layers:
+- number: 1
+  body: 'Под раковиной течёт вода. Анне надо звонить хозяину, мастеру — менять трубу. А вот платить Анне и Тому не нужно. Для «надо» и «не надо» в быту американцы чаще всего говорят **have to**.
+
+
+    > [D4]Turn[/] [X3]off[/] [T1]the[/] [S3]water[/]! [D2]Put[/] [T1]a[/] [S2]bucket[/] [P1]under[/] [T1]the[/] [S2]pipe[/]. [T8]I[/] [D1]have[/] [P2]to[/] [D5]call[/] [T1]the[/] [S1]landlord[/]. — Перекрой воду! Поставь ведро под трубу. Мне надо позвонить хозяину.
+
+    '
+- number: 2
+  body: '**Have to** буквально — «иметь, чтобы сделать»: у тебя есть дело, которое нужно выполнить. Это обычный глагол have, поэтому у него есть все формы: **has to**, **had to**, **don''t have to**. У must таких форм нет — вот почему в жизни чаще звучит have to.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [O4]No[/], [T8]you[/] [D1]do[/] [X1]not[/] [D1]have[/] [P2]to[/] [D2]pay[/]. [T1]The[/] [S1]landlord[/] [D1]has[/] [P2]to[/] [D2]pay[/]. — Нет, вам платить не нужно. Платит хозяин.
+
+
+    - Надо: **I / you / we / they have to + глагол**.
+
+    - Ему, ей: **he / she has to + глагол** — The landlord has to pay.
+
+    - Не обязательно: **don''t / doesn''t have to** — You don''t have to wait.
+
+    - Вопрос: **Do we have to…? / Does he have to…?**
+
+    '
+- number: 4
+  body: '**mustn''t и don''t have to — не одно и то же!**
+
+
+    - *You mustn''t pay* — платить **нельзя** (запрещено).
+
+    - *You don''t have to pay* — платить **не нужно** (можно не платить).
+
+
+    > [D1]Do[/] [T8]we[/] [D1]have[/] [P2]to[/] [D2]pay[/] [P5]for[/] [T8]it[/]? — Нам за это платить?
+
+
+    **Диагностика понимания:** ремонт бесплатный. Что сказать: *You mustn''t pay* или *You don''t have to pay*?
+
+
+    **Разбор:** *You don''t have to pay.* Платить не нужно, но никто не запрещает.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **What''s wrong?** — что случилось?
+
+    - **How long does it take?** — сколько времени это займёт?
+
+    - **That''s fine.** — ничего страшного.
+
+    - **for free** — бесплатно; **every month** — каждый месяц.
+
+
+    Слова: **repair** — чинить, **landlord** — хозяин квартиры, **owner** — владелец, **plumber** — сантехник, **rent** — плата за квартиру, **month** — месяц, **free** — бесплатный.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «He have to» — с he / she: **has to**.
+
+    - «I must to» и «I have pay» — must без to, have — с to: **I must pay / I have to pay**.
+
+    - «You mustn''t wait» вместо «не обязательно ждать» — нужно **don''t have to**.
+
+    - «Do we must…?» — спросите **Do we have to…?**
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать have или has, сказать «не обязательно», собрать вопрос, рассказать о своих делах, отличить mustn''t от don''t have to и спросить, сколько времени займёт ремонт.
+
+
+    **Проверка маленького шага:** have / has to — надо; don''t / doesn''t have to — не обязательно; mustn''t — нельзя.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00260
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Мастер: «Платить должен хозяин». Выберите фразу.'
+  options:
+  - The landlord has to pay.
+  - The landlord have to pay.
+  - The landlord has pay.
+  answer: The landlord has to pay.
+  hint_ru: Он — has to.
+  explanation_ru: The landlord has to pay. С he / she — has to.
+  units:
+  - LX-00804
+- order: 2
+  uid: EX-00261
+  kind: fill
+  stage: substitution
+  prompt_ru: 'Ремонт бесплатный. Скажите: «Вам не нужно платить».'
+  prompt_en: You ___ have to pay.
+  answer: don't
+  accepted:
+  - do not
+  hint_ru: Не обязательно — don't have to.
+  explanation_ru: You don't have to pay. Платить не нужно.
+  units:
+  - LX-00826
+  - LX-00835
+- order: 3
+  uid: EX-00262
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите вопрос: «Нам надо ждать?»'
+  options:
+  - wait
+  - Do
+  - have
+  - we
+  - to
+  answer: Do we have to wait
+  hint_ru: Do + we + have to + wait.
+  explanation_ru: Do we have to wait? Вопрос с do.
+  units:
+  - LX-00833
+- order: 4
+  uid: EX-00263
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: друг зовёт вас в кино, но вам надо платить за квартиру. Скажите: «Мне надо заплатить за квартиру».'
+  prompt_en: I have to pay the ___.
+  answer: rent
+  hint_ru: Плата за квартиру — rent.
+  explanation_ru: I have to pay the rent.
+  units:
+  - LX-00807
+- order: 5
+  uid: EX-00264
+  kind: choice
+  stage: recognition
+  prompt_ru: Что значит You don't have to come?
+  options:
+  - Можно не приходить.
+  - Приходить нельзя.
+  - Надо прийти.
+  answer: Можно не приходить.
+  hint_ru: don't have to — не обязательно.
+  explanation_ru: Не обязательно приходить. «Нельзя» было бы mustn't.
+  units:
+  - LX-00808
+- order: 6
+  uid: EX-00265
+  kind: fill
+  stage: transfer
+  prompt_ru: Мастер говорит, что надо менять трубу. Спросите, сколько это займёт.
+  prompt_en: How ___ does it take?
+  answer: long
+  hint_ru: Сколько времени — how long.
+  explanation_ru: How long does it take? — сколько это займёт?
+  units:
+  - LX-00833
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Мне надо позвонить хозяину.
+  answer: I have to call the landlord.
+  hint_ru: have to + call.
+  explanation_ru: I have to call the landlord.
+  review_of: 1
+  units:
+  - LX-00804
+- order: 2
+  kind: translate
+  prompt_ru: Вам не нужно ждать.
+  answer: You don't have to wait.
+  accepted:
+  - You do not have to wait.
+  hint_ru: don't have to + wait.
+  explanation_ru: You don't have to wait.
+  review_of: 2
+  units:
+  - LX-00826
+- order: 3
+  kind: translate
+  prompt_ru: Ей надо работать в субботу.
+  answer: She has to work on Saturday.
+  hint_ru: she → has to.
+  explanation_ru: She has to work on Saturday.
+  review_of: 1
+  units:
+  - LX-00808
+- order: 4
+  kind: translate
+  prompt_ru: Мы платим каждый месяц.
+  answer: We pay every month.
+  hint_ru: every month — в конце.
+  explanation_ru: We pay every month.
+  review_of: 4
+  units:
+  - LX-00834

@@ -1,0 +1,245 @@
+slug: a1p-could-you
+level: A1+
+week: 10
+order: 19
+focus: D
+minutes: 40
+title: Could you…? — вежливая просьба
+summary: 'Как вежливо попросить: Could you play quietly, please? Could you lend me your hammer? Чем Could you мягче, чем Can you, и как ответить: Of course! I don''t mind.'
+units:
+- LX-00518
+- LX-00842
+- LX-00843
+- LX-00844
+- LX-00845
+- LX-00846
+- LX-00847
+- LX-00852
+- LX-00854
+- LX-00857
+- LX-00859
+- LX-00860
+- LX-00862
+- LX-00863
+- LX-00865
+sound_notes:
+- text: Could you play quietly, please?
+  ipa: /kʊdʒə ˈpleɪ ˈkwaɪətli ˈpliz/
+  note_ru: 'could you сливается: «куджу»; l в could не читается'
+- text: Of course!
+  ipa: /əv ˈkɔrs/
+  note_ru: 'of безударное: «эв корс»'
+- text: I don't mind.
+  ipa: /aɪ ˈdoʊnt ˈmaɪnd/
+  note_ru: 'don''t mind — t почти не слышно: «доун майнд»'
+contractions:
+- full: could not
+  short: couldn't
+  ipa: /ˈkʊdənt/
+  note_ru: I couldn't sleep — я не мог уснуть.
+layers:
+- number: 1
+  body: 'Лео работает ночью, а днём спит. Сверху ему слышна гитара Тома. Он мог бы сказать «Тише!», но говорит вежливо — с **Could you…?**
+
+
+    > [O1]Hello[/], [S1]Tom[/]. [D7]Could[/] [T8]you[/] [D2]play[/] [A4]quietly[/], [O8]please[/]? [T8]I[/] [D2]work[/] [P3]at[/] [S7]night[/], [C1]and[/] [T8]I[/] [D2]sleep[/] [P3]during[/] [T1]the[/] [S7]day[/]. — Здравствуй, Том. Не мог бы ты играть потише? Я работаю ночью, а днём сплю.
+
+    '
+- number: 2
+  body: '**Could** — прошедшая форма **can**. Но в просьбе она не про прошлое: прошедшая форма делает просьбу мягче, «на шаг дальше» от собеседника. Как в русском «не могли бы вы» вместо «можете». В английском вежливость часто живёт именно в таких формах: could, would.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [S1]Leo[/], [D7]could[/] [T8]you[/] [D1]do[/] [T8]me[/] [T1]a[/] [S10]favor[/]? [D7]Could[/] [T8]you[/] [D2]lend[/] [T8]me[/] [T3]your[/] [S2]hammer[/]? — Лео, можно попросить? Не одолжишь мне молоток?
+
+
+    - Просьба: **Could you + глагол + (please)?**
+
+    - Более просто, между друзьями: **Can you…?**
+
+    - Попросить разрешения: **Could I borrow…?**
+
+    - Ответ «да»: **Of course! / Sure. / I don''t mind.**
+
+    - borrow — взять на время, **lend** — дать на время.
+
+    '
+- number: 4
+  body: '**Почему Leo говорит Could you, а не Play quietly!?** Повелительная форма — *Play quietly!* — звучит как приказ. Соседу, начальнику, незнакомцу говорят **Could you…?**. Это не слабость, а норма вежливости в США.
+
+
+    > [C1]And[/] [J8]next[/] [S7]week[/] [T8]we[/] [D1]are[/] [P3]on[/] [S7]vacation[/]. [D7]Could[/] [T8]you[/] [D6]check[/] [T3]our[/] [S2]apartment[/]? — А на следующей неделе мы уезжаем в отпуск. Не могли бы вы присматривать за квартирой?
+
+
+    **Диагностика понимания:** что вежливее сказать незнакомцу: *Give me your pen* или *Could you give me your pen?*
+
+
+    **Разбор:** *Could you give me your pen?* — просьба, а не приказ.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **Could you do me a favor?** — можно попросить об одолжении?
+
+    - **That''s sweet of you.** — как мило с вашей стороны.
+
+    - **Any time.** — обращайтесь.
+
+
+    Слова: **borrow** — взять на время, **lend — lent** — дать на время, **share** — делиться, **explain** — объяснять, **promise** — обещать, **feed — fed** — кормить, **vacation** — отпуск, **favor** — одолжение. Из истории 9: **give** — давать.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «Could you to help me?» — без to: **Could you help me?**
+
+    - «Could you borrow me your hammer?» — давать — **lend**: Could you lend me…?
+
+    - «Of course» на «Do you mind…?» — отдельная тема; сейчас отвечаем на Could you…?
+
+    - favor — американское написание, favour — британское.
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать вежливую просьбу, отличить borrow и lend, собрать просьбу, попросить о новом, ответить «конечно» и поблагодарить за доброту.
+
+
+    **Проверка маленького шага:** Could you + глагол + please? — Of course!
+
+    '
+exercises:
+- order: 1
+  uid: EX-00272
+  kind: choice
+  stage: recognition
+  prompt_ru: Вежливо попросите соседа играть потише.
+  options:
+  - Could you play quietly, please?
+  - Play quietly!
+  - Could you to play quietly?
+  answer: Could you play quietly, please?
+  hint_ru: Could you + глагол без to.
+  explanation_ru: Could you play quietly, please? — вежливая просьба.
+  units:
+  - LX-00860
+- order: 2
+  uid: EX-00273
+  kind: fill
+  stage: substitution
+  prompt_ru: Попросите соседа дать вам ведро на время.
+  prompt_en: Could you ___ me a bucket?
+  answer: lend
+  hint_ru: Дать на время — lend.
+  explanation_ru: Could you lend me a bucket? Lend — дать, borrow — взять.
+  units:
+  - LX-00843
+- order: 3
+  uid: EX-00274
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Можно попросить вас об одолжении?»'
+  options:
+  - favor
+  - Could
+  - me
+  - do
+  - a
+  - you
+  answer: Could you do me a favor
+  hint_ru: Could you + do me a favor.
+  explanation_ru: Could you do me a favor? — вежливое начало просьбы.
+  units:
+  - LX-00854
+  - LX-00860
+- order: 4
+  uid: EX-00275
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вы уезжаете в отпуск. Попросите подругу покормить вашу кошку.'
+  prompt_en: Could you ___ my cat?
+  answer: feed
+  hint_ru: Кормить — feed.
+  explanation_ru: Could you feed my cat?
+  units:
+  - LX-00847
+  - LX-00852
+- order: 5
+  uid: EX-00276
+  kind: choice
+  stage: recognition
+  prompt_ru: Вас просят о помощи. Ответьте «Конечно!»
+  options:
+  - Of course!
+  - Of courses!
+  - In course!
+  answer: Of course!
+  hint_ru: Of + course.
+  explanation_ru: Of course! — конечно.
+  units:
+  - LX-00859
+- order: 6
+  uid: EX-00277
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Соседка принесла вам печенье. Скажите: «Как мило с вашей стороны!»'
+  prompt_en: That's ___ of you!
+  answer: sweet
+  accepted:
+  - kind
+  hint_ru: Милый — sweet.
+  explanation_ru: That's sweet of you! (или That's kind of you!)
+  units:
+  - LX-00857
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Не могли бы вы говорить медленно?
+  answer: Could you speak slowly, please?
+  accepted:
+  - Could you speak slowly?
+  - Could you speak more slowly, please?
+  hint_ru: Could you + speak slowly.
+  explanation_ru: Could you speak slowly, please?
+  review_of: 1
+  units:
+  - LX-00860
+- order: 2
+  kind: translate
+  prompt_ru: Можно одолжить ваш молоток?
+  answer: Could I borrow your hammer?
+  accepted:
+  - Can I borrow your hammer?
+  hint_ru: borrow — взять на время.
+  explanation_ru: Could I borrow your hammer?
+  review_of: 2
+  units:
+  - LX-00842
+- order: 3
+  kind: translate
+  prompt_ru: Я не против.
+  answer: I don't mind.
+  accepted:
+  - I do not mind.
+  hint_ru: don't mind.
+  explanation_ru: I don't mind.
+  review_of: 5
+  units:
+  - LX-00862
+- order: 4
+  kind: translate
+  prompt_ru: Обещаю!
+  answer: I promise!
+  accepted:
+  - I promise.
+  hint_ru: I + promise.
+  explanation_ru: I promise!
+  review_of: 4
+  units:
+  - LX-00846

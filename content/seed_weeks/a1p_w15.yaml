@@ -1,0 +1,88 @@
+# A1+, неделя 15 «Сборы в путешествие». Сфера travel, if + will.
+level: A1+
+week: 15
+can_do_ru: 'Я смогу говорить о планах при условии: If it rains, we''ll stay in the cabin. If it''s sunny, we''ll go to the beach. — и собраться в поездку: passport, boarding pass, suitcase.'
+mission_ru: 'Составьте по-английски план на выходные с двумя условиями: If it''s sunny, I''ll… If it rains, I''ll… — и добавьте, что вы обязательно возьмёте с собой.'
+chunks:
+- LX-01007
+- LX-01008
+- LX-01009
+- LX-01010
+- LX-01011
+- LX-01012
+- LX-01013
+story_beat:
+  intro_ru: Вечер пятницы. Завтра в семь утра у Анны и Тома рейс к океану — они снимают домик на неделю.
+  outcome_ru: Если пойдёт дождь — будут читать в домике, если солнце — пойдут на пляж. Чемодан Тома слишком тяжёлый, а гитара остаётся дома, к радости Лео. Лео присмотрит за квартирой.
+  next_hook_ru: Отпуск закончился. Анна, Том и друзья собираются на пикник — если не будет дождя. История 11.
+script:
+- speaker: anna
+  emotion: excited
+  text: '[S1]Tom[/], [T3]our[/] [S4]flight[/] [D1]is[/] [P3]at[/] [N3]seven[/] [A2]tomorrow[/]. [D1]Did[/] [T8]you[/] [D2]pack[/] [T3]your[/] [S2]suitcase[/]?'
+  ru: Том, наш рейс завтра в семь. Ты собрал чемодан?
+- speaker: tom
+  text: '[O4]No[/], [X1]not[/] [A2]now[/]. [T9]What[/] [C4]if[/] [T8]it[/] [D2]rains[/] [T9]there[/]?'
+  ru: Нет, потом. А что, если там будет дождь?
+- speaker: anna
+  text: '[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/] [D7]will[/] [D2]stay[/] [P1]in[/] [T1]the[/] [S4]cabin[/] [C1]and[/] [D2]read[/] [S2]books[/].'
+  spoken: '[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/][D7]''ll[/] [D2]stay[/] [P1]in[/] [T1]the[/] [S4]cabin[/] [C1]and[/] [D2]read[/] [S2]books[/].'
+  ru: Если пойдёт дождь, будем сидеть в домике и читать.
+- speaker: tom
+  emotion: happy
+  text: '[C1]And[/] [C4]if[/] [T8]it[/] [D1]is[/] [J2]sunny[/], [T8]we[/] [D7]will[/] [D4]go[/] [P2]to[/] [T1]the[/] [S6]beach[/] [T5]every[/] [S7]day[/]!'
+  spoken: '[C1]And[/] [C4]if[/] [T8]it[/][D1]''s[/] [J2]sunny[/], [T8]we[/][D7]''ll[/] [D4]go[/] [P2]to[/] [T1]the[/] [S6]beach[/] [T5]every[/] [S7]day[/]!'
+  ru: А если будет солнце, будем каждый день ходить на пляж!
+- speaker: anna
+  emotion: happy
+  text: '[A2]Then[/] [D2]put[/] [T3]your[/] [S2]swimsuit[/] [C1]and[/] [T1]the[/] [S5]sunscreen[/] [P1]in[/] [T1]the[/] [S2]suitcase[/].'
+  ru: Тогда положи в чемодан плавки и крем от солнца.
+- speaker: tom
+  emotion: worried
+  text: '[T3]My[/] [S2]suitcase[/] [D1]is[/] [A5]too[/] [J2]heavy[/]. [C4]If[/] [T8]I[/] [D2]put[/] [T4]more[/] [P1]in[/] [T8]it[/], [T8]it[/] [D7]will[/] [D2]break[/]!'
+  spoken: '[T3]My[/] [S2]suitcase[/] [D1]is[/] [A5]too[/] [J2]heavy[/]. [C4]If[/] [T8]I[/] [D2]put[/] [T4]more[/] [P1]in[/] [T8]it[/], [T8]it[/][D7]''ll[/] [D2]break[/]!'
+  ru: Чемодан слишком тяжёлый. Если положу ещё, он сломается!
+- speaker: anna
+  text: '[D2]Take[/] [T1]the[/] [J1]big[/] [J2]blue[/] [S2]bag[/]. [C1]And[/] [D1]do[/] [X1]not[/] [D6]forget[/] [T3]your[/] [S2]passport[/].'
+  spoken: '[D2]Take[/] [T1]the[/] [J1]big[/] [J2]blue[/] [S2]bag[/]. [C1]And[/] [D1]do[/][X1]n''t[/] [D6]forget[/] [T3]your[/] [S2]passport[/].'
+  ru: Возьми большую синюю сумку. И не забудь паспорт.
+- speaker: tom
+  text: '[S2]Passport[/], [S2]boarding[/] [S2]pass[/], [S2]phone[/]. [C1]And[/] [T3]my[/] [S2]guitar[/]?'
+  ru: Паспорт, посадочный, телефон. А гитара?
+- speaker: anna
+  emotion: happy
+  text: '[C4]If[/] [T1]the[/] [S2]guitar[/] [D2]stays[/] [A3]here[/], [S1]Leo[/] [D7]will[/] [D1]be[/] [A5]very[/] [J4]happy[/]!'
+  ru: Если гитара останется дома, Лео будет очень рад!
+- speaker: tom
+  emotion: happy
+  text: '[O4]Okay[/], [T1]the[/] [S2]guitar[/] [D2]stays[/] [A3]here[/]. [T8]I[/] [D7]cannot[/] [D2]wait[/]!'
+  spoken: '[O4]Okay[/], [T1]the[/] [S2]guitar[/] [D2]stays[/] [A3]here[/]. [T8]I[/] [D7]ca[/][X1]n''t[/] [D2]wait[/]!'
+  ru: Ладно, гитара остаётся. Жду не дождусь!
+- speaker: neighbor
+  emotion: happy
+  text: '[D1]Have[/] [T1]a[/] [J3]nice[/] [S10]trip[/]! [T8]I[/] [D7]will[/] [D6]check[/] [T3]your[/] [S2]apartment[/].'
+  spoken: '[D1]Have[/] [T1]a[/] [J3]nice[/] [S10]trip[/]! [T8]I[/][D7]''ll[/] [D6]check[/] [T3]your[/] [S2]apartment[/].'
+  ru: Хорошей поездки! Я присмотрю за квартирой.
+- speaker: anna
+  emotion: happy
+  text: '[O2]Thank[/] [T8]you[/], [S1]Leo[/]! [T8]We[/] [D7]will[/] [D2]bring[/] [T8]you[/] [T1]a[/] [S2]souvenir[/].'
+  spoken: '[O2]Thank[/] [T8]you[/], [S1]Leo[/]! [T8]We[/][D7]''ll[/] [D2]bring[/] [T8]you[/] [T1]a[/] [S2]souvenir[/].'
+  ru: Спасибо, Лео! Мы привезём вам сувенир.
+twister:
+  number: 29
+  series: contractions
+  text: '[C4]If[/] [T8]it[/][D1]''s[/] [J2]sunny[/], [T8]we[/][D7]''ll[/] [D2]swim[/]. [C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/][D7]''ll[/] [D2]read[/]. [C4]If[/] [T8]it[/] [D2]snows[/], [T8]we[/][D7]''ll[/] [D2]sleep[/]!'
+  ru: Если солнечно — поплаваем. Если дождь — почитаем. Если снег — поспим!
+  ipa: /ɪf ɪts ˈsʌni wil ˈswɪm | ɪf ɪt ˈreɪnz wil ˈrid | ɪf ɪt ˈsnoʊz wil ˈslip/
+  focus_sounds:
+  - l
+  - ɪ
+  source: original
+  goal_ru: if + настоящее время и will во второй части; сокращение we'll.
+  tip_ru: 'we''ll — «уил» с тёмным l в конце: кончик языка к зубам, спинка языка вниз. if — короткое «и»: «иф».'
+  warmup:
+  - '[T8]we[/][D7]''ll[/], [T8]I[/][D7]''ll[/], [T8]it[/][D7]''ll[/]'
+  - '[C4]If[/] [T8]it[/] [D2]rains[/]…'
+  - '[C4]If[/] [T8]it[/][D1]''s[/] [J2]sunny[/], [T8]we[/][D7]''ll[/] [D2]swim[/].'
+  - '[C4]If[/] [T8]it[/] [D2]snows[/], [T8]we[/][D7]''ll[/] [D2]sleep[/]!'
+  target_line: If it rains, we will stay in the cabin and read books.
+  own_ru: 'Скажите, что вы сделаете завтра, если будет хорошая погода: If it''s sunny tomorrow, I''ll…'

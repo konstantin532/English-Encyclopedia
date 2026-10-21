@@ -1,0 +1,469 @@
+# Неделя 9 A1+ «Аренда квартиры и мелкий ремонт»: have to / don't have to. CEFR не сверялся.
+level: A1+
+week: 9
+units:
+- uid: LX-00802
+  lemma: repair
+  meaning: to fix something that is broken
+  class: D2
+  forms:
+  - repairs
+  - repaired
+  - repairing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rɪˈpɛr/
+  translation_ru: ремонтировать, чинить
+  example_en: '[T8]He[/] [D2]repaired[/] [T1]the[/] [S2]sink[/].'
+  example_ru: Он починил раковину.
+  situation: Мелкий ремонт
+  usage_note: fix — проще и чаще; repair — чуть официальнее.
+- uid: LX-00803
+  lemma: leak
+  meaning: to let water out through a hole
+  class: D2
+  forms:
+  - leaks
+  - leaked
+  - leaking
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /lik/
+  translation_ru: течь, протекать
+  example_en: '[T1]The[/] [S2]pipe[/] [D1]is[/] [D2]leaking[/].'
+  example_ru: Труба течёт.
+  situation: Сообщаете о поломке
+- uid: LX-00804
+  lemma: landlord
+  meaning: a person who owns a home and gets rent
+  class: S1
+  forms:
+  - landlords
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈlændlɔrd/
+  translation_ru: хозяин квартиры, арендодатель
+  example_en: '[T1]The[/] [S1]landlord[/] [D1]has[/] [X2]to[/] [D2]pay[/].'
+  example_ru: Платить должен хозяин.
+  situation: Аренда квартиры
+  usage_note: Если это женщина — landlady.
+- uid: LX-00805
+  lemma: owner
+  meaning: a person who has something
+  class: S1
+  forms:
+  - owners
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈoʊnɚ/
+  translation_ru: владелец
+  example_en: '[T8]Who[/] [D1]is[/] [T1]the[/] [S1]owner[/] [P6]of[/] [T1]the[/] [S4]building[/]?'
+  example_ru: Кто владелец здания?
+  situation: Аренда квартиры
+- uid: LX-00806
+  lemma: plumber
+  meaning: a person who fixes pipes and sinks
+  class: S1
+  forms:
+  - plumbers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈplʌmɚ/
+  translation_ru: сантехник
+  example_en: '[T8]We[/] [D1]have[/] [X2]to[/] [D5]call[/] [T1]a[/] [S1]plumber[/].'
+  example_ru: Нам надо вызвать сантехника.
+  situation: Мелкий ремонт
+  usage_note: 'b не читается: «плАмэр».'
+- uid: LX-00807
+  lemma: rent
+  meaning: money you pay every month for a home
+  class: N6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rɛnt/
+  translation_ru: арендная плата
+  example_en: '[T1]The[/] [N6]rent[/] [D1]is[/] [N1]nine[/] [N1]hundred[/] [N6]dollars[/].'
+  example_ru: Аренда — девятьсот долларов.
+  situation: Аренда квартиры
+- uid: LX-00808
+  lemma: month
+  meaning: about thirty days
+  class: S7
+  forms:
+  - months
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mʌnθ/
+  translation_ru: месяц
+  example_en: '[T8]We[/] [D2]pay[/] [T1]the[/] [N6]rent[/] [T6]every[/] [S7]month[/].'
+  example_ru: Мы платим за квартиру каждый месяц.
+  situation: Аренда квартиры
+  usage_note: 'В конце — межзубный th: «манс».'
+- uid: LX-00809
+  lemma: sink
+  meaning: a place in a kitchen or bathroom where you wash
+  class: S2
+  forms:
+  - sinks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sɪŋk/
+  translation_ru: раковина
+  example_en: '[T1]The[/] [S2]sink[/] [P1]in[/] [T1]the[/] [S2]kitchen[/] [D1]is[/] [J2]broken[/].'
+  example_ru: Раковина на кухне сломана.
+  situation: Мелкий ремонт
+- uid: LX-00810
+  lemma: faucet
+  meaning: the thing you turn to get water
+  class: S2
+  forms:
+  - faucets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfɔsɪt/
+  translation_ru: кран
+  example_en: '[T1]The[/] [S2]faucet[/] [D2]leaks[/] [T6]all[/] [S7]night[/].'
+  example_ru: Кран течёт всю ночь.
+  situation: Мелкий ремонт
+  usage_note: В США — faucet, в Британии — tap.
+- uid: LX-00811
+  lemma: pipe
+  meaning: a long tube for water
+  class: S2
+  forms:
+  - pipes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /paɪp/
+  translation_ru: труба
+  example_en: '[T1]The[/] [S2]pipe[/] [A3]under[/] [T1]the[/] [S2]sink[/] [D1]is[/] [J2]old[/].'
+  example_ru: Труба под раковиной старая.
+  situation: Мелкий ремонт
+- uid: LX-00812
+  lemma: toilet
+  meaning: the thing in a bathroom you sit on
+  class: S2
+  forms:
+  - toilets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈtɔɪlət/
+  translation_ru: унитаз, туалет
+  example_en: '[T1]The[/] [S2]toilet[/] [D1]is[/] [J2]broken[/].'
+  example_ru: Унитаз сломан.
+  situation: Мелкий ремонт
+  usage_note: 'Спросить, где туалет, вежливее: Where is the bathroom?'
+- uid: LX-00813
+  lemma: heater
+  meaning: a machine that makes a room warm
+  class: S2
+  forms:
+  - heaters
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhitɚ/
+  translation_ru: обогреватель, батарея
+  example_en: '[T1]The[/] [S2]heater[/] [D1]does[/] [X1]not[/] [D2]work[/].'
+  example_ru: Батарея не греет.
+  situation: Мелкий ремонт
+- uid: LX-00814
+  lemma: switch
+  meaning: a small thing you press to turn a light on or off
+  class: S2
+  forms:
+  - switches
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /swɪtʃ/
+  translation_ru: выключатель
+  example_en: '[T1]The[/] [S2]switch[/] [D1]is[/] [P1]near[/] [T1]the[/] [S2]door[/].'
+  example_ru: Выключатель у двери.
+  situation: Дома
+- uid: LX-00815
+  lemma: bulb
+  meaning: the glass part of a lamp that gives light
+  class: S2
+  forms:
+  - bulbs
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bʌlb/
+  translation_ru: лампочка
+  example_en: '[T8]I[/] [D1]have[/] [X2]to[/] [D2]change[/] [T1]the[/] [S2]bulb[/].'
+  example_ru: Мне надо поменять лампочку.
+  situation: Мелкий ремонт
+- uid: LX-00816
+  lemma: tool
+  meaning: a thing you use to fix or make things
+  class: S2
+  forms:
+  - tools
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tul/
+  translation_ru: инструмент
+  example_en: '[T1]The[/] [S1]plumber[/] [D2]brought[/] [T3]his[/] [S2]tools[/].'
+  example_ru: Сантехник принёс инструменты.
+  situation: Мелкий ремонт
+- uid: LX-00817
+  lemma: hammer
+  meaning: a tool for hitting nails
+  class: S2
+  forms:
+  - hammers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhæmɚ/
+  translation_ru: молоток
+  example_en: '[D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S2]hammer[/]?'
+  example_ru: У тебя есть молоток?
+  situation: Мелкий ремонт
+- uid: LX-00818
+  lemma: bucket
+  meaning: an open container for water
+  class: S2
+  forms:
+  - buckets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbʌkɪt/
+  translation_ru: ведро
+  example_en: '[D2]Put[/] [T1]a[/] [S2]bucket[/] [A3]under[/] [T1]the[/] [S2]pipe[/]!'
+  example_ru: Поставь ведро под трубу!
+  situation: Течёт вода
+- uid: LX-00819
+  lemma: lock
+  meaning: a thing on a door that you open with a key
+  class: S2
+  forms:
+  - locks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /lɑk/
+  translation_ru: замок
+  example_en: '[T1]The[/] [S2]lock[/] [P1]on[/] [T1]the[/] [S2]door[/] [D1]is[/] [J2]old[/].'
+  example_ru: Замок на двери старый.
+  situation: Дома
+- uid: LX-00820
+  lemma: ceiling
+  meaning: the top part of a room
+  class: S2
+  forms:
+  - ceilings
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsilɪŋ/
+  translation_ru: потолок
+  example_en: '[S3]Water[/] [D1]is[/] [D2]leaking[/] [P2]from[/] [T1]the[/] [S2]ceiling[/]!'
+  example_ru: С потолка течёт вода!
+  situation: Течёт вода
+  usage_note: 'c читается как «с»: «сИлин».'
+- uid: LX-00821
+  lemma: building
+  meaning: a house, an office, or a store
+  class: S4
+  forms:
+  - buildings
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbɪldɪŋ/
+  translation_ru: здание
+  example_en: '[T3]Our[/] [S4]building[/] [D1]is[/] [A5]very[/] [J2]old[/].'
+  example_ru: Наш дом очень старый.
+  situation: Описываете дом
+  usage_note: 'u не читается: «бИлдин».'
+- uid: LX-00822
+  lemma: elevator
+  meaning: a small room that takes you up and down in a building
+  class: S4
+  forms:
+  - elevators
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɛləˌveɪtɚ/
+  translation_ru: лифт
+  example_en: '[T1]The[/] [S4]building[/] [D1]has[/] [X1]no[/] [S4]elevator[/].'
+  example_ru: В доме нет лифта.
+  situation: Описываете дом
+  usage_note: В Британии — lift.
+- uid: LX-00823
+  lemma: mess
+  meaning: a dirty or untidy place
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mɛs/
+  translation_ru: беспорядок
+  example_en: '[T1]The[/] [S2]kitchen[/] [D1]is[/] [T1]a[/] [S2]mess[/]!'
+  example_ru: На кухне бардак!
+  situation: Описываете квартиру
+- uid: LX-00824
+  lemma: emergency
+  meaning: a dangerous situation that needs help now
+  class: S10
+  forms:
+  - emergencies
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪˈmɝdʒənsi/
+  translation_ru: срочный случай, авария
+  example_en: '[T8]It[/][D1]''s[/] [T1]an[/] [S10]emergency[/]!'
+  example_ru: Это срочно!
+  situation: Вызываете помощь
+- uid: LX-00825
+  lemma: dirty
+  meaning: not clean
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈdɝti/
+  translation_ru: грязный
+  example_en: '[T1]The[/] [S2]floor[/] [D1]is[/] [J2]dirty[/].'
+  example_ru: Пол грязный.
+  situation: Описываете квартиру
+- uid: LX-00826
+  lemma: free
+  meaning: not costing money; not busy
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fri/
+  translation_ru: бесплатный; свободный
+  example_en: '[T1]The[/] [S10]repair[/] [D1]is[/] [J3]free[/].'
+  example_ru: Ремонт бесплатный.
+  situation: Говорите о цене
+- uid: LX-00827
+  lemma: fine
+  meaning: okay, good
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /faɪn/
+  translation_ru: хороший, нормальный
+  example_en: '[T2]That[/][D1]''s[/] [J3]fine[/].'
+  example_ru: Ничего страшного. Нормально.
+  situation: Соглашаетесь
+  usage_note: I'm fine — у меня всё хорошо.
+- uid: LX-00828
+  lemma: 'off'
+  meaning: not working; away
+  class: X3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɔf/
+  translation_ru: выключено; прочь
+  example_en: '[D2]Turn[/] [X3]off[/] [T1]the[/] [S3]water[/]!'
+  example_ru: Перекрой воду!
+  situation: Течёт вода
+  usage_note: turn on — включить, turn off — выключить.
+- uid: LX-00829
+  lemma: What's wrong?
+  meaning: Asking about a problem
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌts ˈrɔŋ/
+  translation_ru: Что случилось? Что не так?
+  example_en: What's wrong?
+  example_ru: Что случилось?
+  situation: Спрашиваете о проблеме
+- uid: LX-00830
+  lemma: Turn off the water!
+  meaning: Stopping water from a pipe or a faucet
+  class: D9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈtɝn ˈɔf ðə ˈwɔɾɚ/
+  translation_ru: Перекрой воду!
+  example_en: Turn off the water!
+  example_ru: Перекрой воду!
+  situation: Течёт вода
+- uid: LX-00831
+  lemma: It's an emergency!
+  meaning: Saying you need help now
+  class: O9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪts ən ɪˈmɝdʒənsi/
+  translation_ru: Это срочно!
+  example_en: It's an emergency!
+  example_ru: Срочно!
+  situation: Вызываете помощь
+- uid: LX-00832
+  lemma: That's fine.
+  meaning: Saying something is okay
+  class: O4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈðæts ˈfaɪn/
+  translation_ru: Всё нормально. Ничего страшного.
+  example_en: That's fine.
+  example_ru: Нормально.
+  situation: Соглашаетесь
+- uid: LX-00833
+  lemma: How long does it take?
+  meaning: Asking how much time something needs
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhaʊ ˈlɔŋ dəz ɪt ˈteɪk/
+  translation_ru: Сколько времени это займёт?
+  example_en: How long does it take?
+  example_ru: Долго это?
+  situation: Ждёте мастера
+- uid: LX-00834
+  lemma: every month
+  meaning: one time in a month
+  class: A1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɛvri ˈmʌnθ/
+  translation_ru: каждый месяц
+  example_en: every month
+  example_ru: каждый месяц
+  situation: Аренда квартиры
+- uid: LX-00835
+  lemma: for free
+  meaning: without paying
+  class: P4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /fɚ ˈfri/
+  translation_ru: бесплатно
+  example_en: for free
+  example_ru: бесплатно
+  situation: Говорите о цене

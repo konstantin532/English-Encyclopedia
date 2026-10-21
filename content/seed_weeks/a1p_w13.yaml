@@ -1,0 +1,85 @@
+# A1+, неделя 13 «Анкета на курсы: расскажи о себе». Сфера study, повторение Past Simple.
+level: A1+
+week: 13
+can_do_ru: 'Я смогу рассказать о себе в прошедшем времени: I was born in… I grew up in… I studied… I worked… — и ответить на вопросы анкеты: date of birth, What did you study? Do you have any experience?'
+mission_ru: 'Заполните по-английски маленькую анкету о себе: date of birth, где вы родились и выросли (I was born in…, I grew up in…), что изучали (I studied…) и где работали (I worked…).'
+chunks:
+- LX-00949
+- LX-00950
+- LX-00951
+- LX-00952
+- LX-00953
+- LX-00954
+- LX-00955
+story_beat:
+  intro_ru: Вечер в кафе. Джейк хочет поступить в кулинарную школу, и Анна — учительница — помогает ему с анкетой.
+  outcome_ru: Джейк родился и вырос в этом городе, плохо знал математику, зато любил рисование и историю, год работал в ресторане. Стать шеф-поваром — его мечта. Собеседование в пятницу.
+  next_hook_ru: Во вторник Анна идёт в библиотеку за книгой о старом городе — и находит в ней карту. История 10.
+script:
+- speaker: jake
+  emotion: worried
+  text: '[S1]Anna[/], [D7]could[/] [T8]you[/] [D2]help[/] [T8]me[/]? [T8]I[/] [D1]have[/] [X2]to[/] [D2]fill[/] [X3]in[/] [T1]an[/] [S9]application[/] [P5]for[/] [T1]a[/] [S9]cooking[/] [S4]school[/].'
+  ru: Анна, можешь помочь? Мне надо заполнить анкету в кулинарную школу.
+- speaker: anna
+  emotion: happy
+  text: '[O4]Of[/] [O4]course[/]! [T8]I[/] [D1]am[/] [T1]a[/] [S9]teacher[/]. [D5]Tell[/] [T8]me[/] [P6]about[/] [T9]yourself[/]. [A6]Where[/] [D1]did[/] [T8]you[/] [D2]grow[/] [X3]up[/]?'
+  spoken: '[O4]Of[/] [O4]course[/]! [T8]I[/][D1]''m[/] [T1]a[/] [S9]teacher[/]. [D5]Tell[/] [T8]me[/] [P6]about[/] [T9]yourself[/]. [A6]Where[/] [D1]did[/] [T8]you[/] [D2]grow[/] [X3]up[/]?'
+  ru: Конечно! Я же учительница. Расскажи о себе. Где ты вырос?
+- speaker: jake
+  text: '[T8]I[/] [D1]was[/] [J7]born[/] [P1]in[/] [T2]this[/] [S4]town[/], [C1]and[/] [T8]I[/] [D2]grew[/] [X3]up[/] [A3]here[/].'
+  ru: Я родился в этом городе и вырос здесь.
+- speaker: anna
+  text: '[J3]Good[/]. [T9]What[/] [D1]did[/] [T8]you[/] [D6]study[/] [P1]at[/] [S4]school[/]?'
+  ru: Хорошо. Что ты любил в школе?
+- speaker: jake
+  emotion: sad
+  text: '[T8]I[/] [D1]was[/] [J3]bad[/] [P8]at[/] [S9]math[/]. [C5]But[/] [T8]I[/] [D3]loved[/] [S10]art[/] [C1]and[/] [S9]history[/].'
+  ru: С математикой у меня было плохо. Зато я любил рисование и историю.
+- speaker: anna
+  text: '[D1]Do[/] [T8]you[/] [D1]have[/] [T4]any[/] [S9]experience[/]?'
+  ru: У тебя есть опыт?
+- speaker: jake
+  emotion: happy
+  text: '[O4]Yes[/]! [T8]I[/] [D2]worked[/] [P1]in[/] [T1]a[/] [J1]small[/] [S4]restaurant[/] [P3]for[/] [N1]one[/] [S7]year[/]. [T8]I[/] [D2]cooked[/] [T5]every[/] [S7]day[/].'
+  ru: Да! Год работал в маленьком ресторане. Готовил каждый день.
+- speaker: anna
+  text: '[J3]Great[/]. [C1]And[/] [A6]why[/] [D1]did[/] [T8]you[/] [D6]decide[/] [X2]to[/] [D5]apply[/]?'
+  ru: Отлично. А почему ты решил поступать?
+- speaker: jake
+  emotion: happy
+  text: '[T8]It[/] [D1]is[/] [T3]my[/] [S8]dream[/]. [T8]I[/] [D3]want[/] [X2]to[/] [D1]be[/] [T1]a[/] [S9]chef[/]. [T3]My[/] [S1]grandmother[/] [D5]taught[/] [T8]me[/].'
+  spoken: '[T8]It[/][D1]''s[/] [T3]my[/] [S8]dream[/]. [T8]I[/] [D3]want[/] [X2]to[/] [D1]be[/] [T1]a[/] [S9]chef[/]. [T3]My[/] [S1]grandmother[/] [D5]taught[/] [T8]me[/].'
+  ru: Это моя мечта. Хочу стать шеф-поваром. Меня научила бабушка.
+- speaker: anna
+  emotion: happy
+  text: '[J3]Perfect[/]. [A2]Now[/], [T3]your[/] [S9]signature[/] [A3]here[/]. [A6]When[/] [D1]is[/] [T1]the[/] [S9]interview[/]?'
+  ru: Прекрасно. Теперь подпись вот здесь. Когда собеседование?
+- speaker: jake
+  emotion: worried
+  text: '[P3]On[/] [S7]Friday[/]. [T8]I[/] [D1]am[/] [A5]very[/] [J4]nervous[/].'
+  spoken: '[P3]On[/] [S7]Friday[/]. [T8]I[/][D1]''m[/] [A5]very[/] [J4]nervous[/].'
+  ru: В пятницу. Я очень волнуюсь.
+- speaker: anna
+  emotion: happy
+  text: '[D1]Do[/] [X1]not[/] [D3]worry[/]. [T8]I[/] [D1]am[/] [J4]proud[/] [P6]of[/] [T8]you[/]. [J3]Good[/] [S10]luck[/]!'
+  spoken: '[D1]Do[/][X1]n''t[/] [D3]worry[/]. [T8]I[/][D1]''m[/] [J4]proud[/] [P6]of[/] [T8]you[/]. [J3]Good[/] [S10]luck[/]!'
+  ru: Не переживай. Я тобой горжусь. Удачи!
+twister:
+  number: 27
+  series: contractions
+  text: '[T8]I[/] [D2]worked[/], [T8]I[/] [D2]cooked[/], [T8]I[/] [D2]studied[/], [T8]I[/] [D2]grew[/] [X3]up[/]. [D1]Did[/] [T8]I[/] [D2]rest[/]? [O4]No[/], [T8]I[/] [D1]did[/][X1]n''t[/]!'
+  ru: Я работал, я готовил, я учился, я вырос. Отдыхал ли я? Нет, не отдыхал!
+  ipa: /aɪ ˈwɝkt aɪ ˈkʊkt aɪ ˈstʌdid aɪ ˈɡru ˈʌp | dɪd aɪ ˈrɛst | ˈnoʊ aɪ ˈdɪdənt/
+  focus_sounds:
+  - t
+  - d
+  source: original
+  goal_ru: 'Повторение прошедшего: правильные (-ed) и неправильные (grew) формы, вопрос Did…? и didn''t.'
+  tip_ru: worked, cooked — на конце глухое «т». studied — «стАдид». grew — «гру», без -ed. didn't — «дИднт».
+  warmup:
+  - '[D2]worked[/], [D2]cooked[/], [D2]studied[/]'
+  - '[D2]grow[/] — [D2]grew[/]'
+  - '[D1]Did[/] [T8]I[/] [D2]rest[/]?'
+  - '[O4]No[/], [T8]I[/] [D1]did[/][X1]n''t[/]!'
+  target_line: I was born in this town, and I grew up here.
+  own_ru: 'Скажите три фразы о своём прошлом: где родились, где выросли и где учились.'

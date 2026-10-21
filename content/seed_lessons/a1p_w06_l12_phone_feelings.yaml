@@ -1,0 +1,248 @@
+slug: a1p-phone-and-feelings
+level: A1+
+week: 6
+order: 12
+focus: J
+minutes: 35
+title: 'Телефон и чувства: The battery is dead. I was nervous.'
+summary: 'Слова о телефоне (battery, charger, password) и о чувствах в прошлом: nervous, afraid, glad, surprised. Как поблагодарить незнакомого человека: Thank you so much! You are very kind.'
+units:
+- LX-00702
+- LX-00706
+- LX-00707
+- LX-00708
+- LX-00709
+- LX-00711
+- LX-00712
+- LX-00714
+- LX-00715
+- LX-00716
+- LX-00717
+- LX-00718
+- LX-00719
+- LX-00720
+- LX-00721
+- LX-00722
+- LX-00723
+- LX-00724
+- LX-00725
+- LX-00727
+- LX-00728
+sound_notes:
+- text: The battery is dead.
+  ipa: /ðə ˈbæɾəri ɪz ˈdɛd/
+  note_ru: 'battery — «бЭдэри»: t между гласными смягчается'
+- text: I was nervous.
+  ipa: /aɪ wəz ˈnɝvəs/
+  note_ru: nervous — «нЁрвэс», американское r в первом слоге
+- text: Thank you so much!
+  ipa: /ˈθæŋk jə ˈsoʊ ˈmʌtʃ/
+  note_ru: 'ударение на so и much: так благодарность звучит теплее'
+contractions:
+- full: you are
+  short: you're
+  ipa: /jʊr/
+  note_ru: You're very kind — вы очень добры.
+layers:
+- number: 1
+  body: 'Рут вернула телефон и предупредила: батарея села. А когда разговор зашёл о Роуз, она призналась, что разволновалась. В этом уроке — слова о телефоне и о чувствах.
+
+
+    > [D1]Be[/] [J6]careful[/] [P4]with[/] [T8]it[/]. [T1]The[/] [S2]battery[/] [D1]is[/] [J2]dead[/]. — Осторожнее с ним. Батарея села.
+
+    > [O2]Thank[/] [T8]you[/] [F4]so[/] [T4]much[/]! [T8]You[/] [D1]are[/] [A5]very[/] [J6]kind[/]. — Огромное спасибо! Вы очень добры.
+
+    '
+- number: 2
+  body: '**Battery** — от французского *batterie*, «ряд пушек»: учёные XVIII века соединяли банки с электричеством в ряд, как пушки на батарее. **Nervous** — от латинского *nervus*, «нерв». **Stranger** — родственник слова strange: незнакомец — это «чужой, странный» человек.
+
+    '
+- number: 3
+  body: 'Схема чувств:
+
+
+    > [S1]Tom[/], [T8]she[/] [D1]was[/] [J4]afraid[/] [P6]of[/] [T9]something[/]. [T8]I[/] [D3]want[/] [P2]to[/] [D6]know[/] [T3]her[/] [S10]secret[/]. — Том, она чего-то боялась. Я хочу узнать её тайну.
+
+
+    - Сейчас: **I am glad / nervous / afraid.**
+
+    - В прошлом: **I was nervous. We were surprised.**
+
+    - Чего боятся — **afraid of**: afraid of something, afraid of dogs.
+
+    - Телефон: **The battery is dead** — сел. **I need a charger** — нужна зарядка. **I forgot my password** — забыл пароль.
+
+    '
+- number: 4
+  body: '**Почему «I am afraid», а не «I afraid»?** Чувства по-английски — это прилагательные, им нужен глагол **be**: I **am** glad, she **was** nervous. По-русски «мне страшно», а по-английски «я есть испуганный».
+
+
+    **surprised или surprising?** **-ed** — о том, кто чувствует: *I was surprised* (я удивился). **-ing** — о том, что вызывает чувство: *It was surprising*.
+
+
+    **Диагностика понимания:** что верно: *I was surprising* или *I was surprised*?
+
+
+    **Разбор:** *I was surprised.* Удивились вы — значит -ed.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **Come in!** — заходите!
+
+    - **You''re very kind.** — вы очень добры.
+
+    - **I''m glad!** — я рад(а)!
+
+    - **Be careful!** — осторожнее!
+
+    - **My battery is dead.** — у меня сел телефон.
+
+
+    Слова: **knock** — стучать, **print** — печатать, **album** — альбом, **stairs** — лестница, **downstairs** — внизу, **secret** — тайна, **memory** — воспоминание, **stranger** — незнакомец, **tonight** — сегодня вечером, **strange** — странный.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «I nervous» — нужен глагол: **I am nervous / I was nervous**.
+
+    - «afraid from» — правильно **afraid of**.
+
+    - «stranger» — не «странный», а «незнакомец». Странный — **strange**.
+
+    - «My phone is died» — говорят **my battery is dead**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: сказать, что телефон сел, выбрать afraid of, собрать благодарность, рассказать, как вы волновались, отличить stranger от strange и предупредить «осторожно».
+
+
+    **Проверка маленького шага:** чувство = am / is / are / was / were + слово.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00230
+  kind: choice
+  stage: recognition
+  prompt_ru: Ваш телефон разрядился. Как сказать?
+  options:
+  - My battery is dead.
+  - My battery are dead.
+  - My battery dead is.
+  answer: My battery is dead.
+  hint_ru: Сел — dead.
+  explanation_ru: My battery is dead. — обычная фраза про севший телефон.
+  units:
+  - LX-00707
+  - LX-00724
+  - LX-00728
+- order: 2
+  uid: EX-00231
+  kind: fill
+  stage: substitution
+  prompt_ru: Рут чего-то боялась. Закончите фразу.
+  prompt_en: She was afraid ___ something.
+  answer: of
+  hint_ru: afraid + of.
+  explanation_ru: afraid of something — бояться чего-то.
+  units:
+  - LX-00722
+- order: 3
+  uid: EX-00232
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Вы очень добры».'
+  options:
+  - kind
+  - You
+  - very
+  - are
+  answer: You are very kind
+  hint_ru: You + are + very kind.
+  explanation_ru: You are very kind. — тёплая благодарность.
+  units:
+  - LX-00718
+- order: 4
+  uid: EX-00233
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вчера у вас был первый урок английского. Скажите: «Я волновался».'
+  prompt_en: I ___ nervous.
+  answer: was
+  hint_ru: В прошлом — was.
+  explanation_ru: I was nervous. Чувство в прошлом — was + слово.
+  units:
+  - LX-00720
+- order: 5
+  uid: EX-00234
+  kind: choice
+  stage: recognition
+  prompt_ru: Вам позвонил незнакомый человек. Кто это?
+  options:
+  - a stranger
+  - a strange
+  - a secret
+  answer: a stranger
+  hint_ru: Человек — stranger.
+  explanation_ru: a stranger — незнакомец; strange — странный.
+  units:
+  - LX-00716
+  - LX-00719
+- order: 6
+  uid: EX-00235
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Друг несёт старую лампу. Предупредите: «Осторожно!»'
+  prompt_en: Be ___!
+  answer: careful
+  hint_ru: Осторожный — careful.
+  explanation_ru: Be careful! — осторожнее!
+  units:
+  - LX-00723
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: У меня сел телефон.
+  answer: My battery is dead.
+  accepted:
+  - My phone is dead.
+  hint_ru: battery + is dead.
+  explanation_ru: My battery is dead.
+  review_of: 1
+  units:
+  - LX-00728
+- order: 2
+  kind: translate
+  prompt_ru: Огромное спасибо!
+  answer: Thank you so much!
+  hint_ru: Thank you + so much.
+  explanation_ru: Thank you so much!
+  review_of: 3
+  units:
+  - LX-00727
+- order: 3
+  kind: translate
+  prompt_ru: Мы очень удивились.
+  answer: We were very surprised.
+  hint_ru: were + surprised.
+  explanation_ru: We were very surprised. Удивились мы — -ed.
+  review_of: 4
+  units:
+  - LX-00725
+- order: 4
+  kind: translate
+  prompt_ru: Я рад!
+  answer: I'm glad!
+  accepted:
+  - I am glad!
+  - I'm glad.
+  hint_ru: am + glad.
+  explanation_ru: I'm glad!
+  review_of: 4
+  units:
+  - LX-00721

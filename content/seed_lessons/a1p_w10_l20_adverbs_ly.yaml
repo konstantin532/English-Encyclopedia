@@ -1,0 +1,242 @@
+slug: a1p-adverbs-ly
+level: A1+
+week: 10
+order: 20
+focus: A
+minutes: 35
+title: Как? Quietly, loudly, badly — наречия на -ly
+summary: 'Как сказать, КАК что-то делают: play quietly, sleep badly, speak slowly. Наречие = прилагательное + -ly. Исключения: well (хорошо) и fast (быстро).'
+units:
+- LX-00515
+- LX-00516
+- LX-00517
+- LX-00519
+- LX-00836
+- LX-00837
+- LX-00838
+- LX-00839
+- LX-00840
+- LX-00841
+- LX-00848
+- LX-00849
+- LX-00850
+- LX-00851
+- LX-00853
+- LX-00855
+- LX-00856
+- LX-00858
+- LX-00861
+- LX-00864
+sound_notes:
+- text: I slept badly.
+  ipa: /aɪ ˈslɛpt ˈbædli/
+  note_ru: 'slept — «слэпт», badly — широкое «э»: «бЭдли»'
+- text: You can play loudly in the evening.
+  ipa: /ju kən ˈpleɪ ˈlaʊdli ɪn ði ˈivnɪŋ/
+  note_ru: 'evening — два слога: «Ивнин»'
+- text: Sleep well!
+  ipa: /ˈslip ˈwɛl/
+  note_ru: well — «уэл» с w, l в конце мягкая
+contractions:
+- full: I am
+  short: I'm
+  ipa: /aɪm/
+  note_ru: I'm at work then! — я тогда на работе!
+layers:
+- number: 1
+  body: 'Лео просит играть **тихо**, а сам **плохо** спал. Тому разрешают играть **громко** вечером. Все эти слова отвечают на вопрос «как?» — это наречия.
+
+
+    > [O2]Thank[/] [T8]you[/]. [T1]The[/] [S10]music[/] [D2]woke[/] [T8]me[/] [X3]up[/], [C1]and[/] [T8]I[/] [D2]slept[/] [A4]badly[/]. — Спасибо. Музыка меня разбудила, и я плохо спал.
+
+    '
+- number: 2
+  body: '**-ly** — потомок древнеанглийского *-lice*, «подобно, в виде»: *quietly* — буквально «тихо-подобно». Тот же корень, что в слове *like*. Поэтому по-английски наречие почти всегда легко узнать по концу -ly.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [T4]Any[/] [S7]time[/]. [T8]You[/] [D7]can[/] [D2]play[/] [A4]loudly[/] [P1]in[/] [T1]the[/] [S7]evening[/]. [T8]I[/] [D1]am[/] [P3]at[/] [D2]work[/] [A2]then[/]! — Обращайтесь. Вечером можешь играть громко. Я тогда на работе!
+
+
+    - Какой? — прилагательное: **a quiet street, a loud TV**.
+
+    - Как? — наречие: **play quietly, speak loudly**.
+
+    - Образование: **quiet → quietly, bad → badly, slow → slowly, careful → carefully**.
+
+    - y → i: **easy → easily**.
+
+    - Исключения: **good → well** (хорошо), **fast → fast** (быстро).
+
+    '
+- number: 4
+  body: '**Где стоит наречие?** Обычно после глагола или после того, что делают: *play **quietly***, *carry the box **carefully***. Не между глаголом и тем, что с ним делают: не *carry carefully the box*.
+
+
+    **Почему «Sleep well», а не «Sleep good»?** Good — какой? *a good sleep*. Как? — **well**: *Sleep well! She speaks English well.*
+
+
+    **Диагностика понимания:** что верно: *He speaks slow* или *He speaks slowly*?
+
+
+    **Разбор:** *He speaks slowly.* Как говорит? — наречие на -ly.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [J4]Sure[/]. [T8]I[/] [D7]can[/] [D1]do[/] [T8]it[/] [A4]easily[/]. — Конечно. Мне это легко.
+
+
+    - **Sorry about the noise.** — простите за шум.
+
+    - **Sleep well!** — выспитесь!
+
+    - В разговоре иногда слышно *Drive safe!* без -ly — это разговорная вольность, писать лучше **safely**.
+
+
+    Слова: **loudly, slowly, carefully, badly, easily**; **wake — woke** — будить, **noise** — шум, **noisy** — шумный, **drum** — барабан, **plant** — растение, **pet** — домашнее животное, **bell** — звонок, **sleepy** — сонный, **during** — во время. Из истории 9: **quietly, quickly, down, bad**.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «play quiet» — как? нужно **quietly**.
+
+    - «sleep good» — **sleep well**.
+
+    - «fastly» — такого слова нет: **fast**.
+
+    - «carry carefully the box» — **carry the box carefully**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать прилагательное или наречие, образовать -ly, поставить наречие на место, описать, как вы делаете что-то, выбрать well и пожелать спокойной ночи.
+
+
+    **Проверка маленького шага:** какой? — quiet; как? — quietly. Good → well, fast → fast.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00278
+  kind: choice
+  stage: recognition
+  prompt_ru: Лео просит играть тихо. Какое слово?
+  options:
+  - Could you play quietly?
+  - Could you play quiet?
+  - Could you quiet play?
+  answer: Could you play quietly?
+  hint_ru: Как играть? — наречие на -ly.
+  explanation_ru: play quietly — как? Наречие с -ly.
+  units:
+  - LX-00515
+- order: 2
+  uid: EX-00279
+  kind: fill
+  stage: substitution
+  prompt_ru: 'Из bad сделайте наречие: «Я плохо спал».'
+  prompt_en: I slept ___.
+  answer: badly
+  hint_ru: bad + ly.
+  explanation_ru: I slept badly. bad → badly.
+  units:
+  - LX-00839
+- order: 3
+  uid: EX-00280
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Неси коробку осторожно».'
+  options:
+  - carefully
+  - Carry
+  - box
+  - the
+  answer: Carry the box carefully
+  hint_ru: Наречие — в конце.
+  explanation_ru: Carry the box carefully. Наречие после того, что несут.
+  units:
+  - LX-00838
+- order: 4
+  uid: EX-00281
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: на уроке вас просят рассказать, как вы говорите по-английски. Скажите: «Я говорю медленно».'
+  prompt_en: I speak ___.
+  answer: slowly
+  hint_ru: slow + ly.
+  explanation_ru: I speak slowly. Как говорю? — slowly.
+  units:
+  - LX-00837
+- order: 5
+  uid: EX-00282
+  kind: choice
+  stage: recognition
+  prompt_ru: «Она хорошо говорит по-английски». Какое слово?
+  options:
+  - She speaks English well.
+  - She speaks English good.
+  - She speaks well English.
+  answer: She speaks English well.
+  hint_ru: good → well.
+  explanation_ru: She speaks English well. Как? — well.
+  units:
+  - LX-00864
+- order: 6
+  uid: EX-00283
+  kind: fill
+  stage: transfer
+  prompt_ru: Пожелайте соседу выспаться.
+  prompt_en: Sleep ___!
+  answer: well
+  hint_ru: Хорошо — well.
+  explanation_ru: Sleep well! — выспитесь!
+  units:
+  - LX-00864
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Он играет громко.
+  answer: He plays loudly.
+  hint_ru: loud + ly.
+  explanation_ru: He plays loudly.
+  review_of: 1
+  units:
+  - LX-00836
+- order: 2
+  kind: translate
+  prompt_ru: Я плохо спал.
+  answer: I slept badly.
+  hint_ru: badly.
+  explanation_ru: I slept badly.
+  review_of: 2
+  units:
+  - LX-00839
+- order: 3
+  kind: translate
+  prompt_ru: Она легко нашла ключ.
+  answer: She found the key easily.
+  accepted:
+  - She easily found the key.
+  hint_ru: easy → easily.
+  explanation_ru: She found the key easily.
+  review_of: 3
+  units:
+  - LX-00840
+- order: 4
+  kind: translate
+  prompt_ru: Простите за шум.
+  answer: Sorry about the noise.
+  accepted:
+  - I'm sorry about the noise.
+  hint_ru: about the noise.
+  explanation_ru: Sorry about the noise.
+  review_of: 6
+  units:
+  - LX-00861

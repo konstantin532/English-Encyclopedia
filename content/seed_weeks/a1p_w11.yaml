@@ -1,0 +1,80 @@
+# A1+, неделя 11 «Аптека и инструкция к лекарству». Сфера health, How often…?, once / twice a day.
+level: A1+
+week: 11
+can_do_ru: 'Я смогу купить лекарство в аптеке и понять инструкцию: How often do I take it? — Twice a day, after dinner. — и рассказать о простой болезни: I have a sore throat and a cough.'
+mission_ru: 'Напишите по-английски инструкцию к своему обычному лекарству или витамину: как часто (once / twice a day), когда (after breakfast, at bedtime) и с чем (with water).'
+chunks:
+- LX-00888
+- LX-00889
+- LX-00890
+- LX-00891
+- LX-00892
+- LX-00893
+- LX-00894
+story_beat:
+  intro_ru: После бессонной ночи у Анны болит горло и кашель. Она идёт в аптеку на углу.
+  outcome_ru: Температуры нет, аллергии тоже. Продавщица советует таблетки два раза в день пять дней и чай с мёдом. Анна часто забывает лекарства — значит, таблетки надо положить рядом с чаем.
+  next_hook_ru: Анне лучше, а на выходные обещают солнце. Куда пойти? Неделя 12.
+script:
+- speaker: clerk
+  text: '[O1]Hello[/]. [A6]How[/] [D7]can[/] [T8]I[/] [D2]help[/] [T8]you[/]?'
+  ru: Здравствуйте. Чем могу помочь?
+- speaker: anna
+  emotion: tired
+  text: '[O1]Hello[/]. [T8]I[/] [D1]have[/] [T1]a[/] [J4]sore[/] [S5]throat[/] [C1]and[/] [T1]a[/] [S5]cough[/]. [T8]I[/] [D2]slept[/] [A4]badly[/].'
+  ru: Здравствуйте. У меня болит горло и кашель. Я плохо спала.
+- speaker: clerk
+  emotion: worried
+  text: '[D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S5]fever[/]?'
+  ru: Температура есть?
+- speaker: anna
+  emotion: tired
+  text: '[O4]No[/], [T8]I[/] [D1]do[/] [X1]not[/]. [C5]But[/] [T8]I[/] [D1]am[/] [A5]very[/] [J4]tired[/].'
+  spoken: '[O4]No[/], [T8]I[/] [D1]do[/][X1]n''t[/]. [C5]But[/] [T8]I[/][D1]''m[/] [A5]very[/] [J4]tired[/].'
+  ru: Нет. Но я очень устала.
+- speaker: clerk
+  text: '[D1]Are[/] [T8]you[/] [J4]allergic[/] [P8]to[/] [T4]any[/] [S5]medicine[/]?'
+  ru: У вас есть аллергия на лекарства?
+- speaker: anna
+  text: '[O4]No[/]. [A6]How[/] [A1]often[/] [D1]do[/] [T8]I[/] [D2]take[/] [T2]this[/] [S5]medicine[/]?'
+  ru: Нет. Как часто принимать это лекарство?
+- speaker: clerk
+  text: '[A1]Twice[/] [T1]a[/] [S7]day[/], [P3]after[/] [S3]breakfast[/] [C1]and[/] [P3]after[/] [S3]dinner[/]. [T8]You[/] [D1]do[/] [X1]not[/] [D3]need[/] [T1]a[/] [S5]prescription[/].'
+  spoken: '[A1]Twice[/] [T1]a[/] [S7]day[/], [P3]after[/] [S3]breakfast[/] [C1]and[/] [P3]after[/] [S3]dinner[/]. [T8]You[/] [D1]do[/][X1]n''t[/] [D3]need[/] [T1]a[/] [S5]prescription[/].'
+  ru: Два раза в день, после завтрака и после ужина. Рецепт не нужен.
+- speaker: anna
+  text: '[A6]How[/] [A6]long[/] [D1]do[/] [T8]I[/] [D2]take[/] [T8]it[/]?'
+  ru: А сколько дней его пить?
+- speaker: clerk
+  text: '[P3]For[/] [N1]five[/] [S7]days[/]. [D2]Read[/] [T1]the[/] [S2]label[/] [A4]carefully[/]. [C1]And[/] [D2]drink[/] [S3]tea[/] [P4]with[/] [S3]honey[/] [N1]three[/] [S7]times[/] [T1]a[/] [S7]day[/].'
+  ru: Пять дней. Внимательно прочитайте инструкцию. И пейте чай с мёдом три раза в день.
+- speaker: anna
+  text: '[T8]I[/] [A1]always[/] [D2]drink[/] [S3]tea[/] [P4]with[/] [S3]honey[/]. [C5]But[/] [T8]I[/] [A1]often[/] [D6]forget[/] [T3]my[/] [S5]medicine[/]!'
+  ru: Чай с мёдом я пью всегда. А вот лекарство часто забываю!
+- speaker: clerk
+  emotion: happy
+  text: '[A2]Then[/] [D2]put[/] [T1]the[/] [S5]pills[/] [P1]next[/] [P1]to[/] [T3]your[/] [S3]tea[/]! [D8]Get[/] [A4]well[/] [A2]soon[/]!'
+  ru: Тогда положите таблетки рядом с чаем! Выздоравливайте!
+- speaker: anna
+  emotion: happy
+  text: '[O2]Thank[/] [T8]you[/] [F4]so[/] [A5]much[/]!'
+  ru: Огромное спасибо!
+twister:
+  number: 25
+  series: contractions
+  text: '[A6]How[/] [A1]often[/] [D1]does[/] [T8]she[/] [D2]cough[/]? [T8]She[/] [D1]does[/][X1]n''t[/] [D2]cough[/] [A1]often[/]. [A1]Once[/], [A1]twice[/], [N1]three[/] [S7]times[/] [T1]a[/] [S7]day[/]!'
+  ru: Как часто она кашляет? Она кашляет нечасто. Раз, два, три раза в день!
+  ipa: /ˈhaʊ ˈɔfən dəz ʃi ˈkɔf | ʃi ˈdʌzənt ˈkɔf ˈɔfən | ˈwʌns ˈtwaɪs ˈθri ˈtaɪmz ə ˈdeɪ/
+  focus_sounds:
+  - f
+  - ɔ
+  source: original
+  goal_ru: Вопрос How often…?, слова once / twice и сокращение doesn't; звук f в cough и often.
+  tip_ru: 'В often t не читается: «Офэн». В cough gh звучит как f: «коф». once начинается с «у»: «уанс».'
+  warmup:
+  - '[A1]once[/], [A1]twice[/], [N1]three[/] [S7]times[/]'
+  - '[A6]How[/] [A1]often[/]?'
+  - '[T8]She[/] [D1]does[/][X1]n''t[/] [D2]cough[/].'
+  - '[A1]Twice[/] [T1]a[/] [S7]day[/]!'
+  target_line: How often do I take this medicine?
+  own_ru: 'Скажите, как часто вы делаете три дела: I drink coffee… I go to the gym… I call my mom…'

@@ -1,0 +1,254 @@
+slug: a1p-weather-plans
+level: A1+
+week: 12
+order: 24
+focus: S
+minutes: 35
+title: 'Погода и план: What''s the weather like?'
+summary: 'Как спросить о погоде, понять прогноз в градусах Фаренгейта и поменять план: How about a walk instead? It looks like rain. Let''s go!'
+units:
+- LX-00896
+- LX-00897
+- LX-00898
+- LX-00899
+- LX-00900
+- LX-00901
+- LX-00902
+- LX-00903
+- LX-00904
+- LX-00905
+- LX-00906
+- LX-00907
+- LX-00908
+- LX-00909
+- LX-00910
+- LX-00911
+- LX-00921
+- LX-00923
+- LX-00924
+- LX-00925
+- LX-00926
+- LX-00927
+sound_notes:
+- text: What's the weather like?
+  ipa: /ˈwʌts ðə ˈwɛðɚ ˈlaɪk/
+  note_ru: 'weather — звонкий th: «уЭзэр»; like в конце ударное'
+- text: It looks like rain.
+  ipa: /ɪt ˈlʊks laɪk ˈreɪn/
+  note_ru: looks like — «лукс лайк», ударение на looks и rain
+- text: Let's go!
+  ipa: /ˈlɛts ˈɡoʊ/
+  note_ru: let's — «лэтс», коротко
+contractions:
+- full: let us
+  short: let's
+  ipa: /lɛts/
+  note_ru: Let's go! — пошли! Полная форма let us в разговоре почти не звучит.
+layers:
+- number: 1
+  body: 'Субботнее утро. Прежде чем куда-то идти, американцы смотрят прогноз — **the forecast**. А температуру считают в градусах Фаренгейта.
+
+
+    > [T9]What[/] [D1]is[/] [T1]the[/] [S6]weather[/] [D3]like[/]? — А какая погода?
+
+    > [T1]The[/] [S10]forecast[/] [D5]says[/] [S6]rain[/] [P1]in[/] [T1]the[/] [S7]afternoon[/]. [C1]And[/] [T8]it[/] [D1]is[/] [A5]only[/] [N9]forty[/] [N9]degrees[/]. — По прогнозу днём дождь. И всего сорок градусов.
+
+    '
+- number: 2
+  body: '**Forecast** — «бросок вперёд»: *fore* — «вперёд», *cast* — «бросать». Прогноз — это взгляд, брошенный в будущее. **Fahrenheit** — фамилия учёного XVIII века; в США до сих пор пользуются его шкалой. Запомните ориентиры: **32 °F** — ноль по Цельсию, **50 °F** — около +10, **70 °F** — около +21.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [A6]How[/] [A6]about[/] [T1]a[/] [J1]short[/] [D4]walk[/] [P4]by[/] [T1]the[/] [S6]river[/] [A7]instead[/]? [T8]It[/] [D1]is[/] [X1]not[/] [J1]far[/]. — Может, лучше короткая прогулка у реки? Это недалеко.
+
+
+    - Вопрос: **What''s the weather like?**
+
+    - Ответ: **It''s sunny / rainy / foggy / cool / freezing.**
+
+    - Прогноз: **The forecast says rain.**
+
+    - Новая идея: **How about + слово / -ing…?** How about the museum? How about hiking?
+
+    - Вместо: **…instead** — в конце фразы.
+
+    - Начать: **Let''s go!**
+
+    '
+- number: 4
+  body: '**Почему «What''s the weather like?», а не «How is the weather?»** Оба вопроса верны, но **What''s … like?** — самый частый: «какой он?». *What''s your city like? What''s Leo like?*
+
+
+    > [D6]Look[/] [P3]at[/] [T1]the[/] [S6]sky[/]. [T9]There[/] [D1]are[/] [J1]big[/] [J2]dark[/] [S6]clouds[/]. [T8]It[/] [D6]looks[/] [D3]like[/] [S6]rain[/]. — Посмотри на небо. Большие тёмные тучи. Похоже, будет дождь.
+
+
+    **Диагностика понимания:** что верно: *How about go to the lake?* или *How about the lake?*
+
+
+    **Разбор:** *How about the lake?* (или *How about going…?*) — после about не ставят голый глагол.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **Maybe next time.** — может, в другой раз.
+
+    - **It''s freezing!** — жуткий холод!
+
+    - **That''s cool!** — классно! (cool — и «прохладный», и «классный»).
+
+
+    Слова: **instead** — вместо этого, **hike** — ходить в поход, **ride — rode** — ездить, **cloud** — облако, **storm** — гроза, **mountain** — гора, **hill** — холм, **forecast** — прогноз, **degree** — градус, **boots** — ботинки, **sunglasses** — солнечные очки, **rainy, foggy, cool, freezing, bright**.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «How is the weather like?» — либо **How is the weather?**, либо **What''s the weather like?**
+
+    - «How about go…?» — **How about going…?**
+
+    - «instead» в начале — обычно **в конце**: Let''s go to the lake instead.
+
+    - 40 degrees в США — это холодно (около +4 °C)!
+
+    '
+- number: 7
+  body: 'Шесть заданий: спросить о погоде, понять градусы, предложить другой план, описать погоду у себя, выбрать How about и сказать «пошли».
+
+
+    **Проверка маленького шага:** What''s the weather like? — How about…? — …instead. — Let''s go!
+
+    '
+exercises:
+- order: 1
+  uid: EX-00302
+  kind: choice
+  stage: recognition
+  prompt_ru: Спросите, какая погода.
+  options:
+  - What's the weather like?
+  - How is the weather like?
+  - What weather is?
+  answer: What's the weather like?
+  hint_ru: What's … like?
+  explanation_ru: What's the weather like? — самый частый вопрос о погоде.
+  units:
+  - LX-00921
+- order: 2
+  uid: EX-00303
+  kind: fill
+  stage: substitution
+  prompt_ru: Поход отменяется. Предложите музей вместо этого.
+  prompt_en: Let's go to the museum ___.
+  answer: instead
+  hint_ru: Вместо этого — instead, в конце.
+  explanation_ru: Let's go to the museum instead.
+  units:
+  - LX-00896
+  - LX-00923
+- order: 3
+  uid: EX-00304
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Похоже, будет дождь».'
+  options:
+  - rain
+  - It
+  - like
+  - looks
+  answer: It looks like rain
+  hint_ru: It looks like + rain.
+  explanation_ru: It looks like rain.
+  units:
+  - LX-00926
+- order: 4
+  uid: EX-00305
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: подруга спрашивает, какая у вас погода. У вас туман. Ответьте.'
+  prompt_en: It's ___.
+  answer: foggy
+  hint_ru: Туманный — foggy.
+  explanation_ru: It's foggy.
+  units:
+  - LX-00908
+- order: 5
+  uid: EX-00306
+  kind: choice
+  stage: recognition
+  prompt_ru: Предложите покататься на велосипедах.
+  options:
+  - How about riding our bikes?
+  - How about ride our bikes?
+  - How about to ride bikes?
+  answer: How about riding our bikes?
+  hint_ru: После about — -ing.
+  explanation_ru: How about riding…? После about — форма на -ing.
+  units:
+  - LX-00924
+  - LX-00898
+- order: 6
+  uid: EX-00307
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Вы готовы выходить. Скажите: «Пошли!»'
+  prompt_en: ___ go!
+  answer: Let's
+  accepted:
+  - Let us
+  hint_ru: Let's — давай.
+  explanation_ru: Let's go!
+  units:
+  - LX-00923
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Какая погода?
+  answer: What's the weather like?
+  accepted:
+  - What is the weather like?
+  - How is the weather?
+  hint_ru: What's … like?
+  explanation_ru: What's the weather like?
+  review_of: 1
+  units:
+  - LX-00921
+- order: 2
+  kind: translate
+  prompt_ru: Может, в другой раз.
+  answer: Maybe next time.
+  hint_ru: Maybe + next time.
+  explanation_ru: Maybe next time.
+  review_of: 2
+  units:
+  - LX-00925
+- order: 3
+  kind: translate
+  prompt_ru: Как насчёт похода?
+  answer: How about hiking?
+  accepted:
+  - How about going hiking?
+  hint_ru: How about + -ing.
+  explanation_ru: How about hiking?
+  review_of: 5
+  units:
+  - LX-00924
+  - LX-00897
+- order: 4
+  kind: translate
+  prompt_ru: На улице жуткий холод!
+  answer: It's freezing outside!
+  accepted:
+  - It is freezing outside!
+  - It's freezing!
+  hint_ru: freezing.
+  explanation_ru: It's freezing outside!
+  review_of: 4
+  units:
+  - LX-00910

@@ -1,0 +1,415 @@
+# Неделя 2 A1+ «Где ты был вчера?»: was / were, there was / were, места и впечатления. CEFR не сверялся.
+# Вместе с пакетом истории 6 (yesterday, see, look, with, say) — 36 единиц недели.
+level: A1+
+week: 2
+units:
+- uid: LX-00564
+  lemma: museum
+  meaning: a building where you can see old or interesting things
+  class: S4
+  forms:
+  - museums
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mjuˈziəm/
+  translation_ru: музей
+  example_en: '[T8]We[/] [D1]were[/] [P1]at[/] [T1]the[/] [S4]museum[/].'
+  example_ru: Мы были в музее.
+  situation: Рассказываете, где были
+  usage_note: 'Ударение на второй слог: «мьюЗИэм».'
+- uid: LX-00565
+  lemma: beach
+  meaning: the land of sand next to the sea
+  class: S6
+  forms:
+  - beaches
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bitʃ/
+  translation_ru: пляж
+  example_en: '[T1]The[/] [S6]beach[/] [D1]was[/] [J2]empty[/].'
+  example_ru: Пляж был пустой.
+  situation: Рассказываете о выходных
+  usage_note: 'Долгое «и»: «бИИч». Короткое i даёт другое, грубое слово — тяните звук.'
+- uid: LX-00566
+  lemma: movie
+  meaning: a story you watch on a screen
+  class: S10
+  forms:
+  - movies
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmuvi/
+  translation_ru: фильм
+  example_en: '[T1]The[/] [S10]movie[/] [D1]was[/] [J7]boring[/].'
+  example_ru: Фильм был скучный.
+  situation: Говорите о кино
+  usage_note: Американское слово; британцы чаще говорят film.
+- uid: LX-00567
+  lemma: concert
+  meaning: a show where people play or sing music
+  class: S10
+  forms:
+  - concerts
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkɑnsɚt/
+  translation_ru: концерт
+  example_en: '[T8]We[/] [D1]were[/] [P1]at[/] [T1]a[/] [S10]concert[/].'
+  example_ru: Мы были на концерте.
+  situation: Рассказываете о вечере
+- uid: LX-00568
+  lemma: party
+  meaning: a meeting of friends to eat, talk, and have fun
+  class: S10
+  forms:
+  - parties
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈpɑrti/
+  translation_ru: вечеринка, праздник
+  example_en: '[T1]The[/] [S10]party[/] [D1]was[/] [J3]great[/]!'
+  example_ru: Вечеринка была отличная!
+  situation: Рассказываете о празднике
+  usage_note: 't между гласными — лёгкое «д»: «пАрди».'
+- uid: LX-00569
+  lemma: gym
+  meaning: a place where you do sports
+  class: S4
+  forms:
+  - gyms
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dʒɪm/
+  translation_ru: спортзал
+  example_en: '[T8]I[/] [D1]was[/] [P1]at[/] [T1]the[/] [S4]gym[/] [A2]yesterday[/].'
+  example_ru: Вчера я был в спортзале.
+  situation: Говорите о спорте
+- uid: LX-00570
+  lemma: hour
+  meaning: sixty minutes
+  class: S7
+  forms:
+  - hours
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈaʊɚ/
+  translation_ru: час
+  example_en: '[T8]I[/] [D1]was[/] [P1]in[/] [T1]the[/] [S4]museum[/] [P5]for[/] [N1]two[/] [S7]hours[/].'
+  example_ru: Я был в музее два часа.
+  situation: Говорите, сколько времени
+  usage_note: 'h не читается: «Ауэр». Поэтому an hour, а не a hour.'
+  typical_error: '«a hour» — неверно. Нужно: an hour.'
+- uid: LX-00571
+  lemma: minute
+  meaning: sixty seconds
+  class: S7
+  forms:
+  - minutes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmɪnɪt/
+  translation_ru: минута
+  example_en: '[T8]I[/] [D1]was[/] [P1]in[/] [T1]the[/] [S6]water[/] [P5]for[/] [N1]one[/] [S7]minute[/]!'
+  example_ru: Я был в воде одну минуту!
+  situation: Говорите, сколько времени
+- uid: LX-00572
+  lemma: before
+  meaning: earlier than
+  class: P3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɪˈfɔr/
+  translation_ru: до, перед
+  example_en: '[T8]I[/] [D1]was[/] [P3]at[/] [S2]home[/] [P3]before[/] [N3]nine[/].'
+  example_ru: Я был дома до девяти.
+  situation: Говорите о времени
+- uid: LX-00573
+  lemma: after
+  meaning: later than
+  class: P3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈæftɚ/
+  translation_ru: после
+  example_en: '[P3]After[/] [T1]the[/] [S10]movie[/], [T8]we[/] [D1]were[/] [P1]at[/] [T1]the[/] [S4]cafe[/].'
+  example_ru: После фильма мы были в кафе.
+  situation: Говорите о времени
+- uid: LX-00574
+  lemma: great
+  meaning: very good
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡreɪt/
+  translation_ru: отличный
+  example_en: '[T8]It[/] [D1]was[/] [J3]great[/]!'
+  example_ru: Было отлично!
+  situation: Делитесь впечатлением
+  usage_note: 'ea здесь читается «эй»: «грэйт».'
+- uid: LX-00575
+  lemma: boring
+  meaning: not interesting
+  class: J7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbɔrɪŋ/
+  translation_ru: скучный
+  example_en: '[T1]The[/] [S4]museum[/] [D1]was[/] [J7]boring[/].'
+  example_ru: В музее было скучно.
+  situation: Делитесь впечатлением
+  usage_note: boring — о том, что скучное. О себе «мне скучно» — I am bored (это другое слово).
+- uid: LX-00576
+  lemma: interesting
+  meaning: making you want to know more
+  class: J7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɪntrəstɪŋ/
+  translation_ru: интересный
+  example_en: '[T8]It[/] [D1]was[/] [A5]very[/] [J7]interesting[/].'
+  example_ru: Было очень интересно.
+  situation: Делитесь впечатлением
+  usage_note: 'Ударение на первый слог, e в середине не слышно: «Интрэстин».'
+- uid: LX-00577
+  lemma: fun
+  meaning: enjoyable; a good time
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fʌn/
+  translation_ru: весело; веселье
+  example_en: '[T1]The[/] [S10]party[/] [D1]was[/] [J3]fun[/].'
+  example_ru: На вечеринке было весело.
+  situation: Делитесь впечатлением
+  usage_note: It was fun — «было весело». Не путайте с funny — «смешной».
+- uid: LX-00578
+  lemma: terrible
+  meaning: very bad
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈtɛrəbəl/
+  translation_ru: ужасный
+  example_en: '[T1]The[/] [S6]weather[/] [D1]was[/] [J3]terrible[/].'
+  example_ru: Погода была ужасная.
+  situation: Делитесь впечатлением
+- uid: LX-00579
+  lemma: empty
+  meaning: with nothing or no one in it
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɛmpti/
+  translation_ru: пустой
+  example_en: '[T1]The[/] [S4]cafe[/] [D1]was[/] [J2]empty[/].'
+  example_ru: Кафе было пустое.
+  situation: Описываете место
+- uid: LX-00580
+  lemma: full
+  meaning: with no more space in it
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fʊl/
+  translation_ru: полный
+  example_en: '[T1]The[/] [S4]bus[/] [D1]was[/] [J2]full[/].'
+  example_ru: Автобус был полный.
+  situation: Описываете место
+- uid: LX-00581
+  lemma: quiet
+  meaning: with very little noise
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkwaɪət/
+  translation_ru: тихий
+  example_en: '[T1]The[/] [S4]street[/] [D1]was[/] [J2]quiet[/].'
+  example_ru: Улица была тихая.
+  situation: Описываете место
+  usage_note: 'Два слога: «кВАйэт». Не путайте с quite.'
+- uid: LX-00582
+  lemma: loud
+  meaning: making a lot of noise
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /laʊd/
+  translation_ru: громкий
+  example_en: '[T1]The[/] [S10]concert[/] [D1]was[/] [J2]loud[/].'
+  example_ru: Концерт был громкий.
+  situation: Описываете звук
+- uid: LX-00583
+  lemma: dark
+  meaning: with no light
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dɑrk/
+  translation_ru: тёмный
+  example_en: '[T8]It[/] [D1]was[/] [J2]dark[/] [C1]and[/] [J2]cold[/].'
+  example_ru: Было темно и холодно.
+  situation: Описываете вечер
+- uid: LX-00584
+  lemma: alone
+  meaning: with no other people
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /əˈloʊn/
+  translation_ru: один, в одиночестве
+  example_en: '[T8]I[/] [D1]was[/] [J4]alone[/] [P1]at[/] [S2]home[/].'
+  example_ru: Я был дома один.
+  situation: Говорите, с кем были
+- uid: LX-00585
+  lemma: sea
+  meaning: a lot of salt water
+  class: S6
+  forms:
+  - seas
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /si/
+  translation_ru: море
+  example_en: '[T1]The[/] [S6]sea[/] [D1]was[/] [J2]cold[/].'
+  example_ru: Море было холодное.
+  situation: Рассказываете о поездке
+- uid: LX-00586
+  lemma: sun
+  meaning: the big light in the sky in the day
+  class: S6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sʌn/
+  translation_ru: солнце
+  example_en: '[T9]There[/] [D1]was[/] [X1]no[/] [S6]sun[/].'
+  example_ru: Солнца не было.
+  situation: Говорите о погоде
+- uid: LX-00587
+  lemma: sky
+  meaning: the space above the earth
+  class: S6
+  forms:
+  - skies
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /skaɪ/
+  translation_ru: небо
+  example_en: '[T1]The[/] [S6]sky[/] [D1]was[/] [J2]dark[/].'
+  example_ru: Небо было тёмное.
+  situation: Говорите о погоде
+- uid: LX-00588
+  lemma: wind
+  meaning: air that moves fast
+  class: S6
+  forms:
+  - winds
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɪnd/
+  translation_ru: ветер
+  example_en: '[T1]The[/] [S6]wind[/] [D1]was[/] [J2]cold[/].'
+  example_ru: Ветер был холодный.
+  situation: Говорите о погоде
+  usage_note: windy — ветреный (уже знакомо), wind — сам ветер.
+- uid: LX-00589
+  lemma: Where were you?
+  meaning: Asking where someone was
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwɛr wɚ jə/
+  translation_ru: Где ты был?
+  example_en: Where were you?
+  example_ru: Где ты был?
+  situation: Где ты был вчера?
+  usage_note: were безударное — «уэр», сливается с you.
+- uid: LX-00590
+  lemma: How was your weekend?
+  meaning: Asking about someone's weekend
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhaʊ wəz jɚ ˈwikɛnd/
+  translation_ru: Как прошли выходные?
+  example_en: How was your weekend?
+  example_ru: Как прошли выходные?
+  situation: Где ты был вчера?
+  usage_note: Обычный вопрос в понедельник.
+- uid: LX-00591
+  lemma: It was great!
+  meaning: Saying something was very good
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪt wəz ˈɡreɪt/
+  translation_ru: Было отлично!
+  example_en: It was great!
+  example_ru: Было отлично!
+  situation: Где ты был вчера?
+- uid: LX-00592
+  lemma: last night
+  meaning: Yesterday in the evening or at night
+  class: A2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌlæst ˈnaɪt/
+  translation_ru: вчера вечером
+  example_en: last night
+  example_ru: вчера вечером
+  situation: Где ты был вчера?
+  usage_note: По-английски не yesterday night, а last night.
+- uid: LX-00593
+  lemma: Were you at home?
+  meaning: Asking if someone was at home
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /wɚ jə ət ˈhoʊm/
+  translation_ru: Ты был дома?
+  example_en: Were you at home?
+  example_ru: Ты был дома?
+  situation: Где ты был вчера?
+- uid: LX-00594
+  lemma: the day before yesterday
+  meaning: Two days ago
+  class: A2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ðə ˈdeɪ bɪˌfɔr ˈjɛstɚˌdeɪ/
+  translation_ru: позавчера
+  example_en: the day before yesterday
+  example_ru: позавчера
+  situation: Где ты был вчера?
+  usage_note: Буквально «день перед вчера».

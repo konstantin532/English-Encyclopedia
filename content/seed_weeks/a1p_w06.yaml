@@ -1,0 +1,87 @@
+# A1+, неделя 6 «Потерянный телефон: в гостях у Рут». Сфера connect, me / him / her / them. История 7 выходит на этой неделе.
+level: A1+
+week: 6
+can_do_ru: 'Я смогу говорить о людях без повторов имени: She called me. Tell us about her. I can show it to you. — поблагодарить Thank you so much! и сказать о телефоне: The battery is dead.'
+mission_ru: 'Расскажите по-английски о человеке, который вам недавно помог, в трёх фразах с me / him / her / them: кто это, что он(а) для вас сделал(а) и что вы ему (ей) сказали.'
+chunks:
+- LX-00726
+- LX-00727
+- LX-00728
+- LX-00729
+- LX-00730
+- LX-00731
+- LX-00732
+story_beat:
+  intro_ru: Суббота, четыре часа. Анна и Том приходят на Парк-стрит к Рут — она нашла телефон Тома.
+  outcome_ru: 'Рут отдаёт телефон и признаётся: Роуз была её подругой, поэтому она так разволновалась. В воскресенье она покажет им старый альбом.'
+  next_hook_ru: 'Альбом Рут покажет в воскресенье. А вечером в субботу Анна и Том идут ужинать в ресторан. Неделя 7.'
+script:
+- speaker: tom
+  emotion: worried
+  text: '[O1]Hello[/]! [T8]I[/] [D1]am[/] [S1]Tom[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]. [S1]Anna[/] [D5]called[/] [T8]you[/].'
+  spoken: '[O1]Hello[/]! [T8]I[/][D1]''m[/] [S1]Tom[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]. [S1]Anna[/] [D5]called[/] [T8]you[/].'
+  ru: Здравствуйте! Я Том. Вы нашли мой телефон. Анна вам звонила.
+- speaker: photographer
+  emotion: happy
+  text: '[O4]Yes[/], [T8]she[/] [D5]called[/] [T8]me[/]. [D4]Come[/] [X3]in[/]! [O9]Here[/] [T8]it[/] [D1]is[/].'
+  ru: Да, она мне звонила. Заходите! Вот он.
+- speaker: tom
+  emotion: happy
+  text: '[O2]Thank[/] [T8]you[/] [F4]so[/] [A5]much[/]! [T8]You[/] [D1]are[/] [A5]very[/] [J6]kind[/].'
+  spoken: '[O2]Thank[/] [T8]you[/] [F4]so[/] [A5]much[/]! [T8]You[/][D1]''re[/] [A5]very[/] [J6]kind[/].'
+  ru: Огромное спасибо! Вы очень добры.
+- speaker: photographer
+  text: '[D1]Be[/] [J6]careful[/] [P4]with[/] [T8]it[/]. [T1]The[/] [S2]battery[/] [D1]is[/] [J2]dead[/].'
+  ru: Осторожнее с ним. Батарея села.
+- speaker: anna
+  text: '[S1]Ruth[/], [P4]on[/] [T1]the[/] [S2]phone[/] [T8]you[/] [D6]knew[/] [T3]our[/] [S2]house[/]. [C1]And[/] [T8]you[/] [D6]knew[/] [S1]Rose[/]. [D5]Tell[/] [T8]us[/] [P6]about[/] [T8]her[/], [O8]please[/].'
+  ru: Рут, по телефону вы узнали наш дом. И вы знали Роуз. Расскажите нам о ней, пожалуйста.
+- speaker: photographer
+  emotion: sad
+  text: '[T8]It[/] [D1]is[/] [T1]a[/] [J1]long[/] [S10]story[/].'
+  spoken: '[T8]It[/][D1]''s[/] [T1]a[/] [J1]long[/] [S10]story[/].'
+  ru: Это долгая история.
+- speaker: anna
+  emotion: worried
+  text: '[A6]Why[/] [D1]did[/] [T8]you[/] [D8]finish[/] [T1]the[/] [S9]call[/]?'
+  ru: Почему вы прервали звонок?
+- speaker: photographer
+  emotion: sad
+  text: '[T8]I[/] [D1]was[/] [J4]nervous[/]. [T8]I[/] [D1]am[/] [J2]old[/], [C1]and[/] [S1]Rose[/] [D1]was[/] [T3]my[/] [S1]friend[/]. [T8]I[/] [D3]miss[/] [T8]her[/].'
+  spoken: '[T8]I[/] [D1]was[/] [J4]nervous[/]. [T8]I[/][D1]''m[/] [J2]old[/], [C1]and[/] [S1]Rose[/] [D1]was[/] [T3]my[/] [S1]friend[/]. [T8]I[/] [D3]miss[/] [T8]her[/].'
+  ru: Я разволновалась. Я старая, а Роуз была моей подругой. Я по ней скучаю.
+- speaker: tom
+  text: '[T8]We[/] [D1]are[/] [O2]sorry[/]. [T8]We[/] [D7]can[/] [D4]come[/] [A2]again[/]. [D7]Can[/] [T8]you[/] [D2]show[/] [T8]us[/] [T3]her[/] [S2]photos[/] [A2]then[/]?'
+  spoken: '[T8]We[/][D1]''re[/] [O2]sorry[/]. [T8]We[/] [D7]can[/] [D4]come[/] [A2]again[/]. [D7]Can[/] [T8]you[/] [D2]show[/] [T8]us[/] [T3]her[/] [S2]photos[/] [A2]then[/]?'
+  ru: Простите. Мы можем прийти ещё раз. Тогда вы покажете нам её фотографии?
+- speaker: photographer
+  emotion: happy
+  text: '[O4]Yes[/]. [T8]I[/] [D1]have[/] [T1]an[/] [J2]old[/] [S2]album[/] [A3]downstairs[/]. [T8]I[/] [D7]can[/] [D2]show[/] [T8]it[/] [P2]to[/] [T8]you[/] [P3]on[/] [S7]Sunday[/].'
+  ru: Да. Внизу у меня есть старый альбом. Я могу показать его вам в воскресенье.
+- speaker: anna
+  emotion: happy
+  text: '[O2]Thank[/] [T8]you[/], [S1]Ruth[/]! [D6]See[/] [T8]you[/] [P3]on[/] [S7]Sunday[/]!'
+  ru: Спасибо, Рут! До воскресенья!
+- speaker: anna
+  emotion: whisper
+  text: '[S1]Tom[/], [T8]she[/] [D1]was[/] [J4]afraid[/] [P6]of[/] [T9]something[/]. [T8]I[/] [D3]want[/] [X2]to[/] [D6]know[/] [T3]her[/] [S10]secret[/].'
+  ru: Том, она чего-то боялась. Я хочу узнать её тайну.
+twister:
+  number: 20
+  series: contractions
+  text: '[T8]I[/][D1]''m[/] [D5]calling[/] [T8]him[/], [T8]he[/][D1]''s[/] [D5]calling[/] [T8]her[/], [T8]she[/][D1]''s[/] [D5]calling[/] [T8]them[/], [C1]and[/] [T8]they[/][D1]''re[/] [D5]calling[/] [T8]me[/]!'
+  ru: Я звоню ему, он звонит ей, она звонит им, а они звонят мне!
+  ipa: /aɪm ˈkɔlɪŋ ɪm | hiz ˈkɔlɪŋ ɚ | ʃiz ˈkɔlɪŋ ðəm | ən ðɛr ˈkɔlɪŋ ˈmi/
+  focus_sounds:
+  - h
+  - ð
+  source: original
+  goal_ru: Объектные местоимения me / him / her / them и сокращения I'm, he's, she's, they're.
+  tip_ru: 'В быстрой речи h в him и her пропадает: calling him — «колин-им», calling her — «колин-эр». А them — с межзубным ð: язык между зубами, «зэм».'
+  warmup:
+  - '[T8]me[/], [T8]him[/], [T8]her[/]'
+  - '[T8]us[/], [T8]them[/], [T8]you[/]'
+  - '[T8]I[/][D1]''m[/] [D5]calling[/] [T8]him[/].'
+  - '[T8]They[/][D1]''re[/] [D5]calling[/] [T8]me[/]!'
+  target_line: Tell us about her, please.
+  own_ru: 'Скажите, кому вы звоните чаще всего и кто звонит вам: I call… She calls me…'
