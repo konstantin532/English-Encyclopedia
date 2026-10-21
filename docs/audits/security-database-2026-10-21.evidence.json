@@ -1,0 +1,127 @@
+{
+  "before": {
+    "database": "ee_audit_before",
+    "fixture": "isolated cluster; anon/authenticated have CRUD grants as in a Data API schema; no live Supabase tested",
+    "public_tables": 35,
+    "rls_tables": 0,
+    "anon": {
+      "visible_users": 2,
+      "visible_password_hashes": 2,
+      "updated_users": 1
+    },
+    "authenticated": {
+      "visible_users": 2,
+      "visible_password_hashes": 2,
+      "updated_users": 1
+    },
+    "ee_audit_app": {
+      "error": "InsufficientPrivilege"
+    }
+  },
+  "after": {
+    "database": "ee_audit_after",
+    "fixture": "isolated cluster; anon/authenticated have CRUD grants as in a Data API schema; no live Supabase tested",
+    "public_tables": 35,
+    "rls_tables": 35,
+    "anon": {
+      "visible_users": 0,
+      "visible_password_hashes": 0,
+      "updated_users": 0
+    },
+    "authenticated": {
+      "visible_users": 0,
+      "visible_password_hashes": 0,
+      "updated_users": 0
+    },
+    "ee_audit_app": {
+      "visible_users": 2,
+      "visible_password_hashes": 2,
+      "updated_users": null
+    }
+  },
+  "existingDatabase": {
+    "command": [
+      "C:\\Users\\SystemX\\Documents\\Codex\\2026-10-21\\referenced-chatgpt-conversation-this-is-an\\work\\repository-network\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\SystemX\\Documents\\Codex\\2026-10-21\\referenced-chatgpt-conversation-this-is-an\\work\\evidence\\probe_rls.py",
+      "ee_audit_before"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"database\": \"ee_audit_before\",\n  \"fixture\": \"isolated cluster; anon/authenticated have CRUD grants as in a Data API schema; no live Supabase tested\",\n  \"public_tables\": 35,\n  \"rls_tables\": 35,\n  \"anon\": {\n    \"visible_users\": 0,\n    \"visible_password_hashes\": 0,\n    \"updated_users\": 0\n  },\n  \"authenticated\": {\n    \"visible_users\": 0,\n    \"visible_password_hashes\": 0,\n    \"updated_users\": 0\n  },\n  \"ee_audit_app\": {\n    \"visible_users\": 2,\n    \"visible_password_hashes\": 2,\n    \"updated_users\": null\n  }\n}\nRLS_SECURITY_ASSERTION PASS\n",
+    "stderr": ""
+  },
+  "dispatchRed": {
+    "args": [
+      "manage.py",
+      "test",
+      "tests.test_rls_migration_dispatch",
+      "--settings=config.settings.test",
+      "--verbosity=2"
+    ],
+    "code": 1,
+    "stdout": "Found 1 test(s).\r\nSkipping setup of unused database(s): default.\r\nSystem check identified no issues (0 silenced).\r\n",
+    "stderr": "test_migrate_dispatch_reaches_rls_protection (tests.test_rls_migration_dispatch.RlsMigrationDispatchTests.test_migrate_dispatch_reaches_rls_protection) ... FAIL\r\n\r\n======================================================================\r\nFAIL: test_migrate_dispatch_reaches_rls_protection (tests.test_rls_migration_dispatch.RlsMigrationDispatchTests.test_migrate_dispatch_reaches_rls_protection)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\SystemX\\Documents\\Codex\\2026-10-21\\referenced-chatgpt-conversation-this-is-an\\work\\repository-network\\tests\\test_rls_migration_dispatch.py\", line 24, in test_migrate_dispatch_reaches_rls_protection\r\n    cursor.execute.assert_any_call(\r\n  File \"C:\\Users\\SystemX\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\unittest\\mock.py\", line 1020, in assert_any_call\r\n    raise AssertionError(\r\nAssertionError: execute('alter table public.\"accounts_user\" enable row level security') call not found\r\n\r\n----------------------------------------------------------------------\r\nRan 1 test in 0.004s\r\n\r\nFAILED (failures=1)\r\n",
+    "message": "Command failed: C:\\Users\\SystemX\\Documents\\Codex\\2026-10-21\\referenced-chatgpt-conversation-this-is-an/work/repository-network/.venv/Scripts/python.exe manage.py test tests.test_rls_migration_dispatch --settings=config.settings.test --verbosity=2\ntest_migrate_dispatch_reaches_rls_protection (tests.test_rls_migration_dispatch.RlsMigrationDispatchTests.test_migrate_dispatch_reaches_rls_protection) ... FAIL\r\n\r\n======================================================================\r\nFAIL: test_migrate_dispatch_reaches_rls_protection (tests.test_rls_migration_dispatch.RlsMigrationDispatchTests.test_migrate_dispatch_reaches_rls_protection)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\SystemX\\Documents\\Codex\\2026-10-21\\referenced-chatgpt-conversation-this-is-an\\work\\repository-network\\tests\\test_rls_migration_dispatch.py\", line 24, in test_migrate_dispatch_reaches_rls_protection\r\n    cursor.execute.assert_any_call(\r\n  File \"C:\\Users\\SystemX\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\unittest\\mock.py\", line 1020, in assert_any_call\r\n    raise AssertionError(\r\nAssertionError: execute('alter table public.\"accounts_user\" enable row level security') call not found\r\n\r\n----------------------------------------------------------------------\r\nRan 1 test in 0.004s\r\n\r\nFAILED (failures=1)\r\n"
+  },
+  "dispatchGreen": {
+    "args": [
+      "manage.py",
+      "test",
+      "tests.test_rls_migration_dispatch",
+      "--settings=config.settings.test",
+      "--verbosity=2"
+    ],
+    "stdout": "Found 1 test(s).\r\nSkipping setup of unused database(s): default.\r\nSystem check identified no issues (0 silenced).\r\n",
+    "stderr": "test_migrate_dispatch_reaches_rls_protection (tests.test_rls_migration_dispatch.RlsMigrationDispatchTests.test_migrate_dispatch_reaches_rls_protection) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 1 test in 0.002s\r\n\r\nOK\r\n"
+  },
+  "postgresTests": {
+    "command": [
+      "C:\\Users\\SystemX\\Documents\\Codex\\2026-10-21\\referenced-chatgpt-conversation-this-is-an\\work\\repository-network\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\SystemX\\Documents\\Codex\\2026-10-21\\referenced-chatgpt-conversation-this-is-an\\work\\evidence\\pg_manage.py",
+      "ee_audit_after",
+      "test",
+      "tests.test_rls_migration_dispatch",
+      "tests.test_db_hardening",
+      "tests.test_data_rights",
+      "tests.test_adversarial_web.AccountBoundaryTests",
+      "tests.test_adversarial_web.ReviewPublicationTests.test_progress_and_review_do_not_leak_between_learners",
+      "tests.test_a1_mistake_review.A1MistakeReviewTests.test_wrong_user_cannot_answer_or_view_others_session",
+      "tests.test_a1_mistake_review.A1MistakeReviewTests.test_logged_out_users_do_not_get_delayed_queue",
+      "tests.test_a1_independent_understanding.A1IndependentAssessmentTests.test_honest_legacy_rating_only_own_previous_attempt",
+      "tests.test_a1_transfer_retention_pilot.A1TransferRetentionPilotTests.test_login_is_required_and_other_user_cannot_view_my_answers",
+      "tests.test_cafe_mission.CafeInformationGapTests.test_second_user_does_not_inherit_dialogue_or_evidence",
+      "tests.test_a1_teacher_review.TeacherVerifiedIndependentResponseTests.test_student_cannot_open_teacher_review_screen",
+      "--settings=config.settings.test",
+      "--verbosity=1"
+    ],
+    "exit_code": 0,
+    "stdout": "Found 23 test(s).\nЕдиниц: 528, уроков: 28, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 14\nSystem check identified no issues (0 silenced).\n",
+    "stderr": "Creating test database for alias 'default'...\n\n.......................\n----------------------------------------------------------------------\nRan 23 tests in 11.291s\n\nOK\nDestroying test database for alias 'default'...\n\n"
+  },
+  "sqliteTests": {
+    "args": [
+      "-X",
+      "utf8",
+      "manage.py",
+      "test",
+      "tests.test_rls_migration_dispatch",
+      "tests.test_db_hardening",
+      "tests.test_data_rights",
+      "tests.test_adversarial_web.AccountBoundaryTests",
+      "tests.test_adversarial_web.ReviewPublicationTests.test_progress_and_review_do_not_leak_between_learners",
+      "tests.test_a1_mistake_review.A1MistakeReviewTests.test_wrong_user_cannot_answer_or_view_others_session",
+      "tests.test_a1_mistake_review.A1MistakeReviewTests.test_logged_out_users_do_not_get_delayed_queue",
+      "tests.test_a1_independent_understanding.A1IndependentAssessmentTests.test_honest_legacy_rating_only_own_previous_attempt",
+      "tests.test_a1_transfer_retention_pilot.A1TransferRetentionPilotTests.test_login_is_required_and_other_user_cannot_view_my_answers",
+      "tests.test_cafe_mission.CafeInformationGapTests.test_second_user_does_not_inherit_dialogue_or_evidence",
+      "tests.test_a1_teacher_review.TeacherVerifiedIndependentResponseTests.test_student_cannot_open_teacher_review_screen",
+      "--settings=config.settings.test",
+      "--verbosity=1"
+    ],
+    "stdout": "Found 23 test(s).\r\nЕдиниц: 528, уроков: 28, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 14\r\nSystem check identified no issues (0 silenced).\r\n",
+    "stderr": "Creating test database for alias 'default'...\r\r\nss.....................\r\n----------------------------------------------------------------------\r\nRan 23 tests in 6.270s\r\n\r\nOK (skipped=2)\r\nDestroying test database for alias 'default'...\r\r\n"
+  }
+}
