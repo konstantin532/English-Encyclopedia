@@ -1,5 +1,6 @@
 """Аудит курса (/аудит): количества, реестр, разметка, незарегистрированная лексика."""
 import re
+from itertools import pairwise
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -23,6 +24,11 @@ UNSPLIT_NEGATIVE = re.compile(r"\[([A-Z]\d+)(?:-#[0-9a-fA-F]{6})?\]([^\[]*n['’
 FORM_SUFFIXES = ("'s", "s", "es")
 # Сокращения: I'm, it's, you're, don't, isn't.
 CONTRACTIONS = ("n't", "'m", "'s", "'re", "'ve", "'ll", "'d")
+# Понимание текста без словаря — 95–98% знакомых слов (Hu & Nation, 2000).
+STORY_KNOWN_SHARE = 0.95
+# Повторение прошлого уровня: доля его единиц, встреченных в текстах нового уровня хотя бы RECYCLE_MIN_HITS раз.
+RECYCLE_TARGET = 0.70
+RECYCLE_MIN_HITS = 2
 
 
 @dataclass
@@ -165,6 +171,7 @@ def run_audit() -> AuditReport:
             r.errors.append(f"{layer.lesson.slug}, слой {layer.number}: {i.token} — {i.problem}")
 
     audit_stories_and_poems(r)
+    audit_recycling(r)
     from apps.publishing.audit_weeks import audit_weeks
 
     audit_weeks(r)
@@ -246,8 +253,8 @@ def audit_stories_and_poems(r: AuditReport) -> None:
             r.errors.append(f"{where}: слова не из программы и не объявлены новыми: {', '.join(stray)}.")
         share = 1 - len(unknown) / max(len(tokens), 1)
         r.facts.append(f"{where}: {len(tokens)} слов, знакомых {share:.0%}, новых единиц {len(new)}.")
-        if share < 0.9:
-            r.errors.append(f"{where}: знакомых слов {share:.0%}, нужно не меньше 90%.")
+        if share < STORY_KNOWN_SHARE:
+            r.errors.append(f"{where}: знакомых слов {share:.0%}, нужно не меньше {STORY_KNOWN_SHARE:.0%}.")
         for code in "SD":
             if f"[{code}" not in story.body:
                 r.errors.append(f"{where}: не размечены категории {code}.")
@@ -275,3 +282,79 @@ def audit_stories_and_poems(r: AuditReport) -> None:
             line = strip_markup(lines[gap["line"] - 1]) if gap["line"] <= len(lines) else ""
             if gap["word"].lower() not in line.lower():
                 r.errors.append(f"{where}: пропуск «{gap['word']}» не найден в строке {gap['line']}.")
+
+
+def token_keys(token: str) -> set[str]:
+    """Все основы, по которым токен считается знакомым (как в is_known): сам токен, без сокращения, без окончания."""
+    t = token.lower().replace("’", "'")
+    keys = {t}
+    for c in CONTRACTIONS:
+        if t.endswith(c) and len(t) > len(c):
+            base = t[: -len(c)]
+            keys |= {"can"} if c == "n't" and base == "ca" else {base, base + "n"} if c == "n't" else {base}
+    keys |= {t[: -len(suf)] for suf in FORM_SUFFIXES if t.endswith(suf) and len(t) > len(suf)}
+    return keys
+
+
+def level_texts(level) -> list[str]:
+    """Связные тексты уровня: опубликованные истории, стихи и диалоги недель."""
+    from apps.curriculum.models import WeekScene
+
+    texts = [s.body for s in Story.objects.filter(level=level) if s.is_published]
+    texts += [p.body for p in Poem.objects.filter(level=level) if p.is_published]
+    for scene in WeekScene.objects.filter(week__level=level):
+        texts += [line.get("text", "") for line in scene.script]
+    return [t for t in texts if t]
+
+
+def recycling_counts(prev_units, texts: list[str]) -> dict[str, int]:
+    """Сколько раз каждая единица прошлого уровня встречается в текстах: слово — по формам, фраза — целиком."""
+    counts = {u.uid: 0 for u in prev_units}
+    by_word: dict[str, set[str]] = {}
+    phrases = []
+    for u in prev_units:
+        if u.unit_type == UnitType.PHRASE or len(text_tokens(u.lemma)) != 1:  # T-shirt, ice cream
+            phrases.append((u.uid, " ".join(text_tokens(u.lemma)).lower()))
+        else:
+            for w in {u.lemma.lower(), *(f.lower() for f in u.forms or [])}:
+                by_word.setdefault(w, set()).add(u.uid)
+    for text in texts:
+        tokens = text_tokens(text)
+        for tok in tokens:
+            for uid in set().union(*(by_word.get(k, set()) for k in token_keys(tok))):
+                counts[uid] += 1
+        flat = f" {' '.join(tokens).lower()} "
+        for uid, phrase in phrases:
+            if phrase:
+                counts[uid] += flat.count(f" {phrase} ")
+    return counts
+
+
+def audit_recycling(r: AuditReport) -> None:
+    """Отчёт «Повторение A1 в A1+»: сколько единиц прошлого уровня снова звучат в текстах нового.
+
+    Это сведения и предупреждение, а не ошибка: уровень строится по неделям, и до конца уровня доля растёт.
+    """
+    from apps.curriculum.models import Level
+
+    levels = list(Level.objects.order_by("order"))
+    for prev, cur in pairwise(levels):
+        prev_units = list(LexicalUnit.objects.filter(internal_level=prev))
+        if not prev_units:
+            continue
+        texts = level_texts(cur)
+        title = f"Повторение {prev.code} в {cur.code}"
+        if not texts:
+            if cur.code == "A1+":
+                r.facts.append(f"{title}: текстов {cur.code} пока нет.")
+            continue
+        counts = recycling_counts(prev_units, texts)
+        lemma = {u.uid: u.lemma for u in prev_units}
+        enough = sum(1 for n in counts.values() if n >= RECYCLE_MIN_HITS)
+        share = enough / len(prev_units)
+        r.facts.append(f"{title}: {enough} из {len(prev_units)} единиц ({share:.0%}) встречаются "
+                       f"не меньше {RECYCLE_MIN_HITS} раз, цель {RECYCLE_TARGET:.0%}.")
+        if share < RECYCLE_TARGET:
+            missing = sorted(lemma[uid] for uid, n in counts.items() if n == 0)
+            shown = ", ".join(missing[:40]) + (f" и ещё {len(missing) - 40}" if len(missing) > 40 else "")
+            r.warnings.append(f"{title}: ниже цели. Ещё не встречались ({len(missing)}): {shown}.")
