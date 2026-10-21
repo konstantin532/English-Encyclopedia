@@ -28,7 +28,7 @@ weeks:
 - {level: A1+, week: 10, situation_ru: "Соседи: шум, просьба, доброта", sphere: meet, grammar_ru: "Could you…?; наречия образа действия: quietly, quickly", grammar_markers: [D7, A4]}
 - {level: A1+, week: 11, situation_ru: "Аптека и инструкция к лекарству", sphere: health, grammar_ru: "How often…?; once / twice a day", grammar_markers: [A6, A1]}
 - {level: A1+, week: 12, situation_ru: "Погода и планы на день", sphere: free, grammar_ru: "прилагательные и их порядок; too / enough", grammar_markers: [J2, A5]}
-- {level: A1+, week: 13, situation_ru: "Библиотека: читательский билет", sphere: study, grammar_ru: "повторение Past Simple в анкете и рассказе", grammar_markers: [D2]}
+- {level: A1+, week: 13, situation_ru: "Анкета на курсы: расскажи о себе", sphere: study, grammar_ru: "повторение Past Simple в анкете и рассказе", grammar_markers: [D2]}
 - {level: A1+, week: 14, situation_ru: "Прогулка по карте района", sphere: city, grammar_ru: "предлоги движения: across, past, to; первое if", grammar_markers: [P2]}
 - {level: A1+, week: 15, situation_ru: "Билеты на поезд к празднику", sphere: travel, grammar_ru: "реальное if: If…, I will…", grammar_markers: [C4, D7]}
 - {level: A1+, week: 16, situation_ru: "Пикник под угрозой дождя; итог A1+", sphere: free, grammar_ru: "повторение A1+: прошедшее время, must / have to, if", grammar_markers: []}

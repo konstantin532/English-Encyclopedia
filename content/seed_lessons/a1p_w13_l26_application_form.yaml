@@ -1,0 +1,248 @@
+slug: a1p-application-form
+level: A1+
+week: 13
+order: 26
+focus: S
+minutes: 35
+title: 'Анкета и собеседование: date of birth, experience'
+summary: 'Слова анкеты и учёбы: date of birth, signature, experience, skills, subject, hobby. Как рассказать о мечте и поддержать друга перед собеседованием: Good luck! I''m proud of you.'
+units:
+- LX-00929
+- LX-00931
+- LX-00932
+- LX-00933
+- LX-00934
+- LX-00935
+- LX-00936
+- LX-00937
+- LX-00938
+- LX-00939
+- LX-00940
+- LX-00941
+- LX-00942
+- LX-00943
+- LX-00944
+- LX-00945
+- LX-00946
+- LX-00948
+- LX-00949
+- LX-00950
+- LX-00954
+sound_notes:
+- text: Do you have any experience?
+  ipa: /də jə ˈhæv ˈɛni ɪkˈspɪriəns/
+  note_ru: 'experience — ударение на второй слог: «икспИриэнс»'
+- text: I want to be a chef.
+  ipa: /aɪ ˈwɑnə bi ə ˈʃɛf/
+  note_ru: want to в быстрой речи — «уонэ»
+- text: Good luck!
+  ipa: /ˈɡʊd ˈlʌk/
+  note_ru: good — короткое «у», luck — открытое «а»
+contractions:
+- full: I am
+  short: I'm
+  ipa: /aɪm/
+  note_ru: I'm proud of you! — я тобой горжусь!
+layers:
+- number: 1
+  body: 'В анкете на курсы спрашивают одно и то же: когда вы родились, чему учились, какой у вас опыт и зачем вы поступаете.
+
+
+    > [D1]Do[/] [T8]you[/] [D1]have[/] [T4]any[/] [S9]experience[/]? — У тебя есть опыт?
+
+    > [T8]It[/] [D1]is[/] [T3]my[/] [S8]dream[/]. [T8]I[/] [D3]want[/] [P2]to[/] [D1]be[/] [T1]a[/] [S9]chef[/]. [T3]My[/] [S1]grandmother[/] [D5]taught[/] [T8]me[/]. — Это моя мечта. Хочу стать шеф-поваром. Меня научила бабушка.
+
+    '
+- number: 2
+  body: '**Chef** — французское слово, «глава, начальник» (как «шеф»). На кухне это главный повар. **Interview** — «взгляд между»: *inter* — «между», *view* — «взгляд». Собеседование — это когда два человека смотрят друг на друга и решают, подходят ли они друг другу.
+
+    '
+- number: 3
+  body: 'Схема анкеты:
+
+
+    > [J3]Perfect[/]. [A2]Now[/], [T3]your[/] [S9]signature[/] [A3]here[/]. [A6]When[/] [D1]is[/] [T1]the[/] [S9]interview[/]? — Прекрасно. Теперь подпись вот здесь. Когда собеседование?
+
+
+    - **Date of birth** — дата рождения.
+
+    - **Education** (учёба): **school, college, university**; любимый **subject**.
+
+    - **Experience** — опыт работы.
+
+    - **Skills** — навыки, **hobbies** — увлечения.
+
+    - **Signature** — подпись.
+
+    '
+- number: 4
+  body: '**Почему «I want to be a chef», а не «I want be chef»?** После want нужен **to**, а перед профессией — **a**: *I want to be a teacher.* По-русски «хочу стать поваром» без артикля, а по-английски без *a* нельзя.
+
+
+    **experience** в значении «опыт» — без -s и без a: *I have experience.*
+
+
+    **Диагностика понимания:** что верно: *I have a lot of experiences in cooking* или *I have experience in cooking*?
+
+
+    **Разбор:** *I have experience…* — без -s.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [D1]Do[/] [X1]not[/] [D3]worry[/]. [T8]I[/] [D1]am[/] [J4]proud[/] [P6]of[/] [T8]you[/]. [J3]Good[/] [S10]luck[/]! — Не переживай. Я тобой горжусь. Удачи!
+
+
+    - **Good luck!** — удачи!
+
+    - **I''m proud of you.** — я тобой горжусь.
+
+    - **It''s my dream.** — это моя мечта.
+
+
+    Слова: **apply** — подавать заявление, **college, university**, **chef** — шеф-повар, **dream** — мечта, **experience** — опыт, **skill** — навык, **hobby** — хобби, **subject** — предмет, **math** — математика, **history** — история, **art** — рисование, искусство, **date** — дата, **birth** — рождение, **signature** — подпись, **application** — заявление, **interview** — собеседование, **proud** — гордый.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «I want be a chef» — **want to be**.
+
+    - «experiences» в значении «опыт работы» — **experience**.
+
+    - «history» — наука; рассказ — **story**.
+
+    - «maths» — британское; в США **math**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: заполнить поле анкеты, сказать о мечте, собрать фразу о навыках, рассказать о любимом предмете, выбрать story или history и пожелать удачи.
+
+
+    **Проверка маленького шага:** date of birth, experience, skills, signature — Good luck!
+
+    '
+exercises:
+- order: 1
+  uid: EX-00314
+  kind: choice
+  stage: recognition
+  prompt_ru: Поле анкеты «Дата рождения». Как оно называется?
+  options:
+  - date of birth
+  - day of born
+  - birth day date
+  answer: date of birth
+  hint_ru: date + of + birth.
+  explanation_ru: date of birth — дата рождения.
+  units:
+  - LX-00950
+- order: 2
+  uid: EX-00315
+  kind: fill
+  stage: substitution
+  prompt_ru: Джейк хочет стать шеф-поваром. Закончите.
+  prompt_en: I want to be a ___.
+  answer: chef
+  hint_ru: Шеф-повар — chef.
+  explanation_ru: I want to be a chef.
+  units:
+  - LX-00933
+- order: 3
+  uid: EX-00316
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «У тебя есть опыт?»'
+  options:
+  - experience
+  - Do
+  - any
+  - have
+  - you
+  answer: Do you have any experience
+  hint_ru: Do you have + any experience.
+  explanation_ru: Do you have any experience?
+  units:
+  - LX-00935
+- order: 4
+  uid: EX-00317
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: на собеседовании вас спрашивают о любимом школьном предмете. Это была история.'
+  prompt_en: My favorite subject was ___.
+  answer: history
+  hint_ru: История-предмет — history.
+  explanation_ru: My favorite subject was history.
+  units:
+  - LX-00938
+  - LX-00940
+- order: 5
+  uid: EX-00318
+  kind: choice
+  stage: recognition
+  prompt_ru: Вам нужно поставить подпись. Что это?
+  options:
+  - signature
+  - sign up
+  - sign name
+  answer: signature
+  hint_ru: Подпись — signature.
+  explanation_ru: Your signature here, please.
+  units:
+  - LX-00944
+- order: 6
+  uid: EX-00319
+  kind: fill
+  stage: transfer
+  prompt_ru: У друга завтра собеседование. Пожелайте удачи.
+  prompt_en: Good ___!
+  answer: luck
+  hint_ru: Удача — luck.
+  explanation_ru: Good luck!
+  units:
+  - LX-00954
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Расскажите о себе.
+  answer: Tell me about yourself.
+  hint_ru: Tell me about + yourself.
+  explanation_ru: Tell me about yourself.
+  review_of: 1
+  units:
+  - LX-00949
+- order: 2
+  kind: translate
+  prompt_ru: Это моя мечта.
+  answer: It's my dream.
+  accepted:
+  - It is my dream.
+  hint_ru: my dream.
+  explanation_ru: It's my dream.
+  review_of: 2
+  units:
+  - LX-00934
+- order: 3
+  kind: translate
+  prompt_ru: Моё хобби — музыка.
+  answer: My hobby is music.
+  hint_ru: My hobby + is + music.
+  explanation_ru: My hobby is music.
+  review_of: 4
+  units:
+  - LX-00937
+- order: 4
+  kind: translate
+  prompt_ru: Я тобой горжусь!
+  answer: I'm proud of you!
+  accepted:
+  - I am proud of you!
+  - I'm proud of you.
+  hint_ru: proud of.
+  explanation_ru: I'm proud of you!
+  review_of: 6
+  units:
+  - LX-00948

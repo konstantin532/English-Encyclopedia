@@ -1366,5 +1366,119 @@
    0,
    "Let's go!"
   ]
+ ],
+ "a1p-past-review": [
+  [
+   "«Я родился в мае».",
+   "",
+   [
+    "I born in May.",
+    "I was born in May.",
+    "I am born in May."
+   ],
+   1,
+   "was born."
+  ],
+  [
+   "«Где ты вырос?»",
+   "",
+   [
+    "Where did you grow up?",
+    "Where did you grew up?",
+    "Where you grew up?"
+   ],
+   0,
+   "did + grow."
+  ],
+  [
+   "«Я работал год».",
+   "",
+   [
+    "I was work for one year.",
+    "I worked for one year.",
+    "I work for one year ago."
+   ],
+   1,
+   "worked."
+  ],
+  [
+   "«Я не учился в колледже».",
+   "",
+   [
+    "I didn't go to college.",
+    "I didn't went to college.",
+    "I not go to college."
+   ],
+   0,
+   "didn't + go."
+  ],
+  [
+   "Давным-давно…",
+   "",
+   [
+    "A long time ago…",
+    "Long time before…",
+    "Ago long time…"
+   ],
+   0,
+   "a long time ago."
+  ]
+ ],
+ "a1p-application-form": [
+  [
+   "Поле «дата рождения».",
+   "",
+   [
+    "date of birth",
+    "birth of date",
+    "day born"
+   ],
+   0,
+   "date of birth."
+  ],
+  [
+   "«Хочу стать шеф-поваром».",
+   "",
+   [
+    "I want be a chef.",
+    "I want to be a chef.",
+    "I want to be chef."
+   ],
+   1,
+   "want to be a…"
+  ],
+  [
+   "Опыт работы.",
+   "",
+   [
+    "experience",
+    "experiences",
+    "an experience"
+   ],
+   0,
+   "experience — без -s."
+  ],
+  [
+   "История как предмет.",
+   "",
+   [
+    "story",
+    "history",
+    "stories"
+   ],
+   1,
+   "history."
+  ],
+  [
+   "Пожелайте удачи.",
+   "",
+   [
+    "Good luck!",
+    "Nice luck!",
+    "Good lucky!"
+   ],
+   0,
+   "Good luck!"
+  ]
  ]
 }

@@ -1,0 +1,385 @@
+# Неделя 13 A1+ «Анкета на курсы: расскажи о себе»: повторение Past Simple. CEFR не сверялся.
+level: A1+
+week: 13
+units:
+- uid: LX-00928
+  lemma: grow
+  meaning: to become bigger or older
+  class: D2
+  forms:
+  - grows
+  - grew
+  - growing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡroʊ/
+  translation_ru: расти
+  example_en: '[T8]I[/] [D2]grew[/] [X3]up[/] [P1]in[/] [T1]a[/] [J1]small[/] [S4]town[/].'
+  example_ru: Я вырос в маленьком городке.
+  situation: Рассказываете о себе
+  usage_note: grow up — вырасти (о человеке). Прошедшее — grew.
+- uid: LX-00929
+  lemma: apply
+  meaning: to ask for a place at a school or a job in writing
+  class: D5
+  forms:
+  - applies
+  - applied
+  - applying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /əˈplaɪ/
+  translation_ru: подавать заявление
+  example_en: '[S1]Jake[/] [D5]applied[/] [P2]to[/] [T1]a[/] [S9]cooking[/] [S9]school[/].'
+  example_ru: Джейк подал заявление в кулинарную школу.
+  situation: Поступаете на курсы
+  usage_note: 'y после согласной → ied: applied.'
+- uid: LX-00930
+  lemma: decide
+  meaning: to choose what to do
+  class: D6
+  forms:
+  - decides
+  - decided
+  - deciding
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dɪˈsaɪd/
+  translation_ru: решать
+  example_en: '[T8]I[/] [D6]decided[/] [X2]to[/] [D2]learn[/] [J3]English[/].'
+  example_ru: Я решил учить английский.
+  situation: Рассказываете о себе
+  usage_note: 'decide + to: decided to learn.'
+- uid: LX-00931
+  lemma: college
+  meaning: a school after high school
+  class: S9
+  forms:
+  - colleges
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkɑlɪdʒ/
+  translation_ru: колледж, вуз
+  example_en: '[S1]Kate[/] [D2]studied[/] [P1]at[/] [S9]college[/].'
+  example_ru: Кейт училась в колледже.
+  situation: Рассказываете об учёбе
+  usage_note: В США college — часто просто «высшее учебное заведение».
+- uid: LX-00932
+  lemma: university
+  meaning: a big school for study after high school
+  class: S9
+  forms:
+  - universities
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌjunəˈvɝsəti/
+  translation_ru: университет
+  example_en: '[S1]Anna[/] [D2]finished[/] [S9]university[/] [P1]in[/] [S1]Russia[/].'
+  example_ru: Анна окончила университет в России.
+  situation: Рассказываете об учёбе
+  usage_note: 'Перед university — a, а не an: «юнивёрсити» начинается с «й».'
+- uid: LX-00933
+  lemma: chef
+  meaning: a cook in a restaurant
+  class: S9
+  forms:
+  - chefs
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ʃɛf/
+  translation_ru: шеф-повар
+  example_en: '[S1]Jake[/] [D3]wants[/] [X2]to[/] [D1]be[/] [T1]a[/] [S9]chef[/].'
+  example_ru: Джейк хочет стать шеф-поваром.
+  situation: Говорите о мечте
+  usage_note: 'ch = «ш»: «шэф».'
+- uid: LX-00934
+  lemma: dream
+  meaning: something you want very much; pictures in your sleep
+  class: S8
+  forms:
+  - dreams
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /drim/
+  translation_ru: мечта, сон
+  example_en: '[T8]It[/][D1]''s[/] [T3]my[/] [S8]dream[/].'
+  example_ru: Это моя мечта.
+  situation: Говорите о мечте
+- uid: LX-00935
+  lemma: experience
+  meaning: what you know because you did it before
+  class: S9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪkˈspɪriəns/
+  translation_ru: опыт
+  example_en: '[D1]Do[/] [T8]you[/] [D1]have[/] [S9]experience[/]?'
+  example_ru: У вас есть опыт?
+  situation: Заполняете анкету
+- uid: LX-00936
+  lemma: skill
+  meaning: something you can do well
+  class: S9
+  forms:
+  - skills
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /skɪl/
+  translation_ru: навык, умение
+  example_en: '[T8]I[/] [D1]have[/] [J3]good[/] [S9]cooking[/] [S9]skills[/].'
+  example_ru: Я хорошо умею готовить.
+  situation: Рассказываете о себе
+- uid: LX-00937
+  lemma: hobby
+  meaning: something you like to do in your free time
+  class: S10
+  forms:
+  - hobbies
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhɑbi/
+  translation_ru: хобби, увлечение
+  example_en: '[T3]My[/] [S10]hobby[/] [D1]is[/] [S10]music[/].'
+  example_ru: Моё хобби — музыка.
+  situation: Рассказываете о себе
+- uid: LX-00938
+  lemma: subject
+  meaning: something you study at school, like math
+  class: S9
+  forms:
+  - subjects
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsʌbdʒɪkt/
+  translation_ru: предмет (в школе)
+  example_en: '[T3]My[/] [J3]favorite[/] [S9]subject[/] [D1]was[/] [S9]history[/].'
+  example_ru: Моим любимым предметом была история.
+  situation: Рассказываете об учёбе
+- uid: LX-00939
+  lemma: math
+  meaning: numbers as a school subject
+  class: S9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mæθ/
+  translation_ru: математика
+  example_en: '[T8]I[/] [D1]was[/] [J3]bad[/] [P8]at[/] [S9]math[/].'
+  example_ru: У меня плохо было с математикой.
+  situation: Рассказываете об учёбе
+  usage_note: В США — math, в Британии — maths.
+- uid: LX-00940
+  lemma: history
+  meaning: the study of the past
+  class: S9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhɪstəri/
+  translation_ru: история (предмет, прошлое)
+  example_en: '[T8]She[/] [D5]teaches[/] [S9]history[/].'
+  example_ru: Она преподаёт историю.
+  situation: Рассказываете об учёбе
+  usage_note: История-рассказ — story, история-наука — history.
+- uid: LX-00941
+  lemma: art
+  meaning: painting, drawing, and music
+  class: S10
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɑrt/
+  translation_ru: искусство, рисование
+  example_en: '[T8]I[/] [D3]loved[/] [S10]art[/] [P1]at[/] [S9]school[/].'
+  example_ru: В школе я любил рисование.
+  situation: Рассказываете об учёбе
+- uid: LX-00942
+  lemma: date
+  meaning: the day, the month, and the year
+  class: S7
+  forms:
+  - dates
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /deɪt/
+  translation_ru: дата
+  example_en: '[D5]Write[/] [T1]the[/] [S7]date[/] [A3]here[/].'
+  example_ru: Напишите здесь дату.
+  situation: Заполняете анкету
+- uid: LX-00943
+  lemma: birth
+  meaning: the time when a baby is born
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɝθ/
+  translation_ru: рождение
+  example_en: '[D5]Write[/] [T3]your[/] [S7]date[/] [P6]of[/] [S7]birth[/].'
+  example_ru: Напишите дату рождения.
+  situation: Заполняете анкету
+- uid: LX-00944
+  lemma: signature
+  meaning: your name written by your hand
+  class: S9
+  forms:
+  - signatures
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsɪɡnətʃɚ/
+  translation_ru: подпись
+  example_en: '[T3]Your[/] [S9]signature[/] [A3]here[/], [O8]please[/].'
+  example_ru: Вашу подпись здесь, пожалуйста.
+  situation: Заполняете анкету
+- uid: LX-00945
+  lemma: application
+  meaning: a paper you write to ask for a place or a job
+  class: S9
+  forms:
+  - applications
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌæplɪˈkeɪʃən/
+  translation_ru: заявление, анкета
+  example_en: '[S1]Jake[/] [D5]wrote[/] [T1]an[/] [S9]application[/].'
+  example_ru: Джейк написал заявление.
+  situation: Поступаете на курсы
+- uid: LX-00946
+  lemma: interview
+  meaning: a meeting where people ask you questions about you
+  class: S9
+  forms:
+  - interviews
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɪntɚvju/
+  translation_ru: собеседование, интервью
+  example_en: '[T3]His[/] [S9]interview[/] [D1]is[/] [P3]on[/] [S7]Friday[/].'
+  example_ru: Его собеседование в пятницу.
+  situation: Поступаете на курсы
+- uid: LX-00947
+  lemma: born
+  meaning: starting your life
+  class: J7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɔrn/
+  translation_ru: рождённый
+  example_en: '[T8]I[/] [D1]was[/] [J7]born[/] [P1]in[/] [S1]Russia[/].'
+  example_ru: Я родилась в России.
+  situation: Рассказываете о себе
+  usage_note: 'По-английски «я был рождён»: I was born — всегда с was / were.'
+  typical_error: '«I born in…» — неверно. Нужно: I was born in…'
+- uid: LX-00948
+  lemma: proud
+  meaning: happy about something you or another person did
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /praʊd/
+  translation_ru: гордый
+  example_en: '[T8]I[/][D1]''m[/] [J4]proud[/] [P6]of[/] [T8]you[/]!'
+  example_ru: Я тобой горжусь!
+  situation: Поддерживаете друга
+  usage_note: Гордиться кем-то — proud of.
+- uid: LX-00949
+  lemma: Tell me about yourself.
+  meaning: Asking a person to talk about their life
+  class: D5
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈtɛl mi əˈbaʊt jɚˈsɛlf/
+  translation_ru: Расскажите о себе.
+  example_en: Tell me about yourself.
+  example_ru: Расскажи о себе.
+  situation: Собеседование, анкета
+- uid: LX-00950
+  lemma: date of birth
+  meaning: the day you were born
+  class: S7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈdeɪt əv ˈbɝθ/
+  translation_ru: дата рождения
+  example_en: date of birth
+  example_ru: дата рождения
+  situation: Заполняете анкету
+- uid: LX-00951
+  lemma: I was born in…
+  meaning: Saying the place or year you were born
+  class: D1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ wəz ˈbɔrn ɪn/
+  translation_ru: Я родился в…
+  example_en: I was born in…
+  example_ru: Я родилась в…
+  situation: Рассказываете о себе
+- uid: LX-00952
+  lemma: I grew up in…
+  meaning: Saying where you lived as a child
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈɡru ˈʌp ɪn/
+  translation_ru: Я вырос в…
+  example_en: I grew up in…
+  example_ru: Я вырос в…
+  situation: Рассказываете о себе
+- uid: LX-00953
+  lemma: What did you study?
+  meaning: Asking about someone's school or college
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌt dɪd ju ˈstʌdi/
+  translation_ru: Где / что вы изучали?
+  example_en: What did you study?
+  example_ru: Что ты изучал?
+  situation: Собеседование, анкета
+- uid: LX-00954
+  lemma: Good luck!
+  meaning: Wishing someone a good result
+  class: O6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɡʊd ˈlʌk/
+  translation_ru: Удачи!
+  example_en: Good luck!
+  example_ru: Удачи!
+  situation: Поддерживаете друга
+- uid: LX-00955
+  lemma: a long time ago
+  meaning: many years before now
+  class: A2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ə ˈlɔŋ ˈtaɪm əˈɡoʊ/
+  translation_ru: давным-давно, много лет назад
+  example_en: a long time ago
+  example_ru: давно
+  situation: Рассказываете о прошлом
