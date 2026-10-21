@@ -9,6 +9,7 @@ units:
   forms:
   - loses
   - lost
+  - losing
   grammar_features:
   - irregular
   cefr: unverified
@@ -27,6 +28,7 @@ units:
   forms:
   - finds
   - found
+  - finding
   grammar_features:
   - irregular
   cefr: unverified

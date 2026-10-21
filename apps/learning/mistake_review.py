@@ -79,8 +79,36 @@ def question_bank():
     return bank
 
 
+def _check_cards(slug, cards):
+    if len(cards) != COUNT or len({row[0] for row in cards}) != COUNT:
+        raise ValueError(f"Нужно 5 разных вопросов: {slug}")
+    for row in cards:
+        if (len(row) not in (4, 5) or not all(isinstance(x, str) for x in row[:2]) or not row[0].strip()
+                or not isinstance(row[2], list) or len(row[2]) != 3 or len(set(row[2])) != 3
+                or not all(isinstance(x, str) and x.strip() for x in row[2])
+                or type(row[3]) is not int or row[3] not in range(3) or (len(row) == 5 and not isinstance(row[4], str))):
+            raise ValueError(f"Неверная карточка: {slug}")
+
+
+@lru_cache(maxsize=1)
+def level_bank():
+    """Отложенные вопросы уроков после A1 (A1+ и дальше): пять вопросов по теме урока на все его задания.
+
+    Банк A1 (question_bank) остаётся ровно на 28 уроков; новые уровни живут в своих файлах.
+    """
+    bank = {}
+    for path in sorted((settings.CONTENT_DIR / "manifests").glob("a1p_delayed_review*.json")):
+        for slug, cards in json.loads(path.read_text(encoding="utf-8")).items():
+            if slug in bank or slug in PILOT_SLUGS:
+                raise ValueError(f"Повтор раздела: {slug}")
+            _check_cards(slug, cards)
+            bank[slug] = {str(order): cards for order in range(1, 7)}
+    return bank
+
+
 def variants_for(exercise):
-    return question_bank().get(exercise.lesson.slug, {}).get(str(exercise.order), [])
+    slug, order = exercise.lesson.slug, str(exercise.order)
+    return question_bank().get(slug, {}).get(order) or level_bank().get(slug, {}).get(order, [])
 
 
 @transaction.atomic

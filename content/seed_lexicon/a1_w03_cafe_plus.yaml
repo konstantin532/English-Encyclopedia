@@ -9,6 +9,7 @@ units:
   forms:
   - wants
   - wanted
+  - wanting
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

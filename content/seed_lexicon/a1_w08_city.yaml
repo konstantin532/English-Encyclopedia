@@ -146,6 +146,7 @@ units:
   forms:
   - turns
   - turned
+  - turning
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
