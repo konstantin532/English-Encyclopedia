@@ -37,7 +37,7 @@ _VOWELS: dict[str, tuple[str, str | None]] = {
     "ɪ": ("и", None), "i": ("и", None), "ʊ": ("у", None), "u": ("у", None),
 }
 _CONSONANTS: dict[str, tuple[str, str | None]] = {
-    "t̬": ("д", "flap"), "dʒ": ("дж", None), "tʃ": ("ч", None),
+    "t̬": ("д", "flap"), "ɾ": ("д", "flap"), "dʒ": ("дж", None), "tʃ": ("ч", None),
     "b": ("б", None), "d": ("д", None), "f": ("ф", None), "g": ("г", None), "ɡ": ("г", None),
     "h": ("х", "h"), "k": ("к", None), "l": ("л", None), "m": ("м", None), "n": ("н", None),
     "p": ("п", None), "s": ("с", None), "t": ("т", None), "v": ("в", None), "z": ("з", None),
