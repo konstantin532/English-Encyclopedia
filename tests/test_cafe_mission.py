@@ -105,6 +105,26 @@ class CafeInformationGapTests(TestCase):
         self.assertIsNone(parse_order("I'd like one tea and one coffee"))
         self.assertEqual(parse_order("Could I have one tea, please?"), (1, "tea"))
 
+    def test_negated_repair_is_not_accepted_as_success(self):
+        # The recognizer must not turn an explicit refusal into evidence
+        # that the learner successfully corrected the order.
+        self.send("I'd like one tea, please.")
+        self.send("What do you have?")
+        self.send("Can I have one coffee, please?")
+        self.assertEqual(self.state()["phase"], "repair")
+        for answer in (
+            "No, I don't want one coffee.",
+            "Sorry, I do not want one coffee.",
+            "No, not one coffee.",
+        ):
+            with self.subTest(answer=answer):
+                self.assertEqual(self.send(answer).status_code, 302)
+                self.assertEqual(self.state()["phase"], "repair")
+                self.assertNotIn("cafe.repair", self.state()["observed"])
+                self.assertFalse(IndependentAttempt.objects.exists())
+        self.assertEqual(self.send("No, one coffee, please.").status_code, 302)
+        self.assertEqual(self.state()["phase"], "done")
+
     def test_stale_submit_rejected_without_extra_turns(self):
         token = self.state()["nonce"]
         payload = {"token": token, "action": "send", "answer": "I'd like one tea."}
