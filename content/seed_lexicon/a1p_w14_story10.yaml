@@ -1,0 +1,74 @@
+# Новые слова истории №10 «A Map in the Book» (лимит A-блока — до 5 на историю).
+# Предлоги движения (across, past) и первое if — тема недели 14 A1+.
+level: A1+
+week: 14
+units:
+- uid: LX-00520
+  lemma: library
+  meaning: a place with books that people can read or take home
+  class: S4
+  forms:
+  - libraries
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈlaɪˌbrɛri/
+  translation_ru: библиотека
+  example_en: '[T8]I[/] [D4]went[/] [P2]to[/] [T1]the[/] [S4]library[/].'
+  example_ru: Я пошла в библиотеку.
+  situation: Берёте книги в библиотеке
+  typical_error: 'library — не «либрари» в значении магазина: книжный магазин — bookstore.'
+- uid: LX-00521
+  lemma: tree
+  meaning: a big plant with a wood trunk and branches
+  class: S6
+  forms:
+  - trees
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tri/
+  translation_ru: дерево
+  example_en: '[S1]Box[/] [D2]sat[/] [P1]under[/] [T1]the[/] [J1]big[/] [S6]tree[/].'
+  example_ru: Бокс сел под большим деревом.
+  situation: Описываете сад и парк
+- uid: LX-00522
+  lemma: garden
+  meaning: a place near a house with grass, flowers, or trees
+  class: S6
+  forms:
+  - gardens
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɡɑrdn/
+  translation_ru: сад
+  example_en: '[T8]It[/] [D1]was[/] [P1]in[/] [T3]our[/] [S6]garden[/]!'
+  example_ru: Это было в нашем саду!
+  situation: Говорите о доме и дворе
+- uid: LX-00523
+  lemma: past
+  meaning: going near something and then further
+  class: P2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /pæst/
+  translation_ru: мимо
+  example_en: '[T8]It[/] [D4]went[/] [P2]past[/] [T1]the[/] [S4]bus[/] [S4]stop[/].'
+  example_ru: Она шла мимо автобусной остановки.
+  situation: Объясняете дорогу по карте
+  usage_note: 'go past the bank — пройти мимо банка; go across the street — перейти через улицу.'
+- uid: LX-00524
+  lemma: if
+  meaning: a word for a condition — something that can be true
+  class: C4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪf/
+  translation_ru: если
+  example_en: '[C4]If[/] [T8]you[/] [D1]are[/] [J2]cold[/], [T8]you[/] [D7]can[/] [D2]take[/] [T3]my[/] [S2]coat[/].'
+  example_ru: Если тебе холодно, можешь взять моё пальто.
+  situation: Предлагаете помощь при условии
+  usage_note: 'После if о будущем — настоящее время: If it rains… (не «If it will rain»).'

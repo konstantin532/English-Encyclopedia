@@ -145,6 +145,7 @@ units:
   class: D4
   forms:
   - turns
+  - turned
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

@@ -48,8 +48,10 @@ class ContentTests(TestCase):
         self.assertEqual(lesson.units.count(), 15)
 
     def test_loader_is_idempotent(self):
+        before = LexicalUnit.objects.count()
         call_command("load_content", verbosity=0)
-        self.assertEqual(LexicalUnit.objects.count(), 500)
+        self.assertEqual(LexicalUnit.objects.count(), before)
+        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 500)
 
     def test_cefr_only_with_source(self):
         # Lemma/POS evidence remains partial; verified senses require a direct source.

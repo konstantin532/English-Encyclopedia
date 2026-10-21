@@ -259,7 +259,7 @@ units:
   lemma: rest
   meaning: "to stop activity and relax"
   class: D2
-  forms: ["rests","resting"]
+  forms: ["rests","resting", rested]
   cefr: unverified
   verification_status: pending
   ipa_us: /rɛst/
@@ -272,7 +272,7 @@ units:
   lemma: sit
   meaning: "to have the body supported by a seat"
   class: D2
-  forms: ["sits","sitting"]
+  forms: ["sits","sitting", sat]
   cefr: unverified
   verification_status: pending
   ipa_us: /sɪt/
@@ -285,7 +285,7 @@ units:
   lemma: feel
   meaning: "to be in a particular physical or emotional state"
   class: D3
-  forms: ["feels","feeling"]
+  forms: ["feels","feeling", felt]
   cefr: unverified
   verification_status: pending
   ipa_us: /fil/

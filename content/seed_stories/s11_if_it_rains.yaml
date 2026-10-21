@@ -1,0 +1,142 @@
+# История №11 «If It Rains» — A1+, неделя 16. Сюжет: «Библия сюжета A1+».
+number: 11
+characters:
+- Anna
+- Tom
+- Mia
+- Leo
+- Sam
+- Rose
+grammar_ru: 'реальное условие: If it rains, we will…; will для будущего; I hope…; повторение прошедшего времени: had, found, lost, went, saw'
+prediction_ru: Посмотрите на название. Пикник под угрозой дождя. Что друзья найдут в парке?
+visual_cues:
+- Парк, облачно и ветрено. Друзья на пледе у старой скамейки, Том с гитарой.
+- 'Под скамейкой белый конверт без марки. Потом дождь: четверо друзей под двумя зонтами едят печенье.'
+new_units:
+- LX-00525
+- LX-00526
+- LX-00527
+- LX-00528
+script:
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: morning
+  text: '[T8]It[/] [D1]was[/] [S7]Saturday[/]. [T8]We[/] [D3]wanted[/] [T1]a[/] [S3]picnic[/] [P1]in[/] [T1]the[/] [S4]park[/]. [C5]But[/] [T1]the[/] [S6]weather[/] [D1]was[/] [J2]cloudy[/] [C1]and[/] [J2]windy[/].'
+- speaker: mia
+  kind: speech
+  emotion: worried
+  text: “[C4]If[/] [T8]it[/] [D2]rains[/], [T3]our[/] [S3]picnic[/] [D7]will[/] [D1]be[/] [J3]bad[/].”
+- speaker: tom
+  kind: speech
+  emotion: happy
+  text: “[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/] [D7]will[/] [D2]eat[/] [P1]in[/] [T1]the[/] [S2]kitchen[/]. [T8]It[/] [D1]is[/] [O4]okay[/]!”
+  spoken: “[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/][D7]'ll[/] [D2]eat[/] [P1]in[/] [T1]the[/] [S2]kitchen[/]. [T8]It[/][D1]'s[/] [O4]okay[/]!”
+- speaker: anna
+  kind: narration
+  emotion: happy
+  text: '[S1]Tom[/] [D1]had[/] [T1]the[/] [S3]bread[/], [T1]the[/] [S3]cheese[/], [T1]the[/] [S3]apples[/], [C1]and[/] [T1]the[/] [S3]cookies[/]. [T8]He[/] [D1]had[/] [T1]a[/] [S2]blanket[/] [C1]and[/] [N1]two[/] [S2]umbrellas[/]. [T8]He[/] [D1]did[/] [X1]not[/] [D2]lose[/] [N1]one[/] [S3]apple[/]!'
+  spoken: '[S1]Tom[/] [D1]had[/] [T1]the[/] [S3]bread[/], [T1]the[/] [S3]cheese[/], [T1]the[/] [S3]apples[/], [C1]and[/] [T1]the[/] [S3]cookies[/]. [T8]He[/] [D1]had[/] [T1]a[/] [S2]blanket[/] [C1]and[/] [N1]two[/] [S2]umbrellas[/]. [T8]He[/] [D1]did[/][X1]n''t[/] [D2]lose[/] [N1]one[/] [S3]apple[/]!'
+- speaker: tom
+  kind: speech
+  emotion: happy
+  text: “[T9]What[/]? [T8]I[/] [D7]can[/] [D1]do[/] [T8]it[/]!”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: calm
+  text: '[S1]Leo[/] [D4]came[/] [P4]with[/] [T8]us[/]. [T8]He[/] [D1]had[/] [S3]juice[/] [C1]and[/] [S3]sandwiches[/]. [T8]We[/] [D2]sat[/] [P3]on[/] [T1]the[/] [S2]blanket[/] [J8]next[/] [X2]to[/] [T1]an[/] [J2]old[/] [S4]bench[/]. [T8]We[/] [D2]ate[/], [T8]we[/] [D2]drank[/], [C1]and[/] [S1]Tom[/] [D2]played[/] [T1]the[/] [S2]guitar[/].'
+- speaker: anna
+  kind: narration
+  emotion: surprised
+  music: tense
+  text: '[A2]Then[/] [S1]Tom[/] [D6]looked[/] [P1]under[/] [T1]the[/] [S4]bench[/]. [T9]There[/] [D1]was[/] [T1]a[/] [J2]white[/] [S2]envelope[/].'
+- speaker: tom
+  kind: speech
+  emotion: surprised
+  text: “[S1]Anna[/]! [T1]An[/] [S2]envelope[/]! [T9]There[/] [D1]is[/] [O4]no[/] [S2]stamp[/] [C1]and[/] [O4]no[/] [S9]address[/].”
+  spoken: “[S1]Anna[/]! [T1]An[/] [S2]envelope[/]! [T9]There[/][D1]'s[/] [O4]no[/] [S2]stamp[/] [C1]and[/] [O4]no[/] [S9]address[/].”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: mystery
+  text: '[T9]There[/] [D1]was[/] [N1]one[/] [S9]word[/] [P3]on[/] [T8]it[/]: [S1]Rose[/]. [T8]I[/] [D2]opened[/] [T8]it[/]. [T9]There[/] [D1]were[/] [N1]three[/] [S9]lines[/].'
+- speaker: anna
+  kind: narration
+  emotion: whisper
+  text: “[S1]Rose[/], [C4]if[/] [T8]you[/] [D6]find[/] [T2]this[/], [D4]come[/] [X2]to[/] [T1]the[/] [S4]park[/] [P3]on[/] [S7]Sunday[/] [P3]at[/] [N3]ten[/]. [T8]I[/] [D1]had[/] [T1]a[/] [S2]key[/] [X2]to[/] [T3]our[/] [J2]old[/] [S2]house[/]. [T8]I[/] [D2]lost[/] [T8]it[/]. [S1]Sam[/].”
+- speaker: tom
+  kind: speech
+  emotion: surprised
+  text: “[T1]A[/] [S2]key[/]? [S1]Anna[/]… [T1]the[/] [J2]old[/] [S2]key[/] [P3]at[/] [T3]my[/] [S2]door[/]!”
+- speaker: anna
+  kind: speech
+  emotion: surprised
+  text: “[O4]Yes[/]! [P3]On[/] [T3]your[/] [N2]first[/] [S7]day[/] [A3]here[/], [T9]there[/] [D1]was[/] [T1]an[/] [J2]old[/] [S2]key[/] [P3]at[/] [T3]your[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]was[/] [T8]it[/]? [A2]Now[/] [T8]I[/] [D6]know[/]. [T8]It[/] [D1]was[/] [T3]his[/] [S2]key[/]!”
+- speaker: mia
+  kind: speech
+  emotion: neutral
+  text: “[F4]So[/] [S1]Sam[/] [D4]came[/] [X2]to[/] [T3]our[/] [S2]house[/], [C1]and[/] [T8]he[/] [D2]lost[/] [T3]his[/] [S2]key[/]. [C1]And[/] [T1]the[/] [S9]letters[/] [P1]in[/] [T3]our[/] [S2]mailbox[/] [D1]were[/] [P2]from[/] [T8]him[/].”
+- speaker: neighbor
+  kind: speech
+  emotion: sad
+  text: “[S1]Rose[/] [D1]had[/] [T1]a[/] [J2]young[/] [S1]brother[/]. [T3]His[/] [S9]name[/] [D1]was[/] [S1]Sam[/]. [N1]Sixty[/] [S7]years[/] [A2]ago[/], [T8]he[/] [D4]went[/] [X2]to[/] [T1]a[/] [J2]new[/] [S4]city[/]. [S1]Rose[/] [A1]never[/] [D6]saw[/] [T8]him[/] [A2]again[/].”
+- speaker: anna
+  kind: speech
+  emotion: sad
+  text: “[C1]And[/] [A2]now[/] [T8]he[/] [D1]is[/] [A3]here[/]. [T8]He[/] [D3]wants[/] [X2]to[/] [D6]see[/] [T3]her[/].”
+  spoken: “[C1]And[/] [A2]now[/] [T8]he[/][D1]'s[/] [A3]here[/]. [T8]He[/] [D3]wants[/] [X2]to[/] [D6]see[/] [T3]her[/].”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: calm
+  text: '[A2]Then[/] [T1]the[/] [S6]rain[/] [D4]came[/]. [T8]We[/] [D2]sat[/] [P1]under[/] [N1]two[/] [S2]umbrellas[/], [N3]four[/] [S1]friends[/], [C1]and[/] [D2]ate[/] [T1]the[/] [S3]cookies[/]. [T8]It[/] [D1]was[/] [J2]cold[/], [C5]but[/] [T8]I[/] [D1]was[/] [J4]happy[/].'
+- speaker: tom
+  kind: speech
+  emotion: happy
+  text: “[D6]See[/]? [C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/] [D2]eat[/] [S3]cookies[/]!”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: mystery
+  text: '[A2]Tomorrow[/] [D1]is[/] [S7]Sunday[/]. [C4]If[/] [S1]Sam[/] [D4]comes[/] [X2]to[/] [T1]the[/] [S4]park[/] [P3]at[/] [N3]ten[/], [T8]we[/] [D7]will[/] [D1]be[/] [A3]here[/]. [T8]I[/] [D3]hope[/] [S1]Rose[/] [D7]will[/] [D4]come[/].'
+  spoken: '[A2]Tomorrow[/] [D1]is[/] [S7]Sunday[/]. [C4]If[/] [S1]Sam[/] [D4]comes[/] [X2]to[/] [T1]the[/] [S4]park[/] [P3]at[/] [N3]ten[/], [T8]we[/][D7]''ll[/] [D1]be[/] [A3]here[/]. [T8]I[/] [D3]hope[/] [S1]Rose[/] [D7]will[/] [D4]come[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[C5]But[/] [D7]will[/] [S1]Sam[/] [D4]come[/]? [C1]And[/] [A6]where[/] [D1]is[/] [S1]Rose[/]?'
+  spoken: '[C5]But[/] [D7]will[/] [S1]Sam[/] [D4]come[/]? [C1]And[/] [A6]where[/][D1]''s[/] [S1]Rose[/]?'
+questions:
+- q: Что будет, если пойдёт дождь (по словам Тома)?
+  a: If it rains, we will eat in the kitchen. — Поедят на кухне.
+- q: Что удивительного сделал Том?
+  a: He did not lose one apple! — Впервые ничего не потерял.
+- q: Где был конверт?
+  a: Then Tom looked under the bench. There was a white envelope. — Под скамейкой.
+- q: Что написано в письме?
+  a: Rose, if you find this, come to the park on Sunday at ten. I had a key to our old house. I lost it. Sam. — Сэм зовёт Роуз в парк в воскресенье в десять.
+- q: Чей ключ был у двери Тома?
+  a: It was his key! — Ключ Сэма.
+- q: Кто такой Сэм?
+  a: Rose had a young brother. His name was Sam. — Младший брат Роуз; он уехал шестьдесят лет назад.
+phrase_hunt:
+- phrase: If it rains, we will eat in the kitchen.
+  function: Реальное условие — If…, will
+- phrase: Rose, if you find this, come to the park on Sunday at ten.
+  function: Условие и просьба в письме
+- phrase: He did not lose one apple!
+  function: Отрицание в прошлом — did not
+- phrase: Rose never saw him again.
+  function: Никогда больше — never… again
+- phrase: I hope Rose will come.
+  function: Надежда — I hope…
+retell_words:
+- picnic
+- bench
+- envelope
+- key
+- Sunday
+retell_steps:
+- 'Восстановите историю по пяти опорам: picnic, bench, envelope, key, Sunday.'
+- 'Перескажите, 5–6 фраз, и закончите своим вариантом: Will Sam come? If he comes, …'
+creative_ru: 'Ваши планы на выходные с условием: 3 фразы. If it rains, I will… If it is sunny, I will…'

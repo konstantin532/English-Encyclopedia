@@ -176,6 +176,7 @@ units:
   forms:
   - waits
   - waiting
+  - waited
   cefr: unverified
   verification_status: pending
   ipa_us: /weɪt/
@@ -269,6 +270,7 @@ units:
   forms:
   - signs
   - signing
+  - signed
   cefr: unverified
   verification_status: pending
   ipa_us: /saɪn/

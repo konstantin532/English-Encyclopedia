@@ -1,0 +1,147 @@
+# История №6 «Yesterday at Nine» — A1+, неделя 2. Сюжет: «Библия сюжета A1+».
+number: 6
+characters:
+- Anna
+- Tom
+grammar_ru: 'was / were: I was, he was, we were; there was; вопросы Where were you?; прошедшее время: had, went, came, looked, saw, said'
+prediction_ru: Посмотрите на название и картинки. Что Анна увидела вчера в девять вечера? И кто стоит в окне наверху?
+visual_cues:
+- Вечер, кухня Анны. Чай, кот Box на подоконнике. За окном ветер.
+- Окно квартиры наверху светится. В нём пожилой мужчина с белым конвертом смотрит вниз, на почтовый ящик.
+new_units:
+- LX-00501
+- LX-00502
+- LX-00503
+- LX-00504
+- LX-00505
+script:
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: mystery
+  text: '[A2]Yesterday[/] [D1]was[/] [S7]Monday[/]. [T8]It[/] [D1]was[/] [J2]cold[/] [C1]and[/] [J2]windy[/]. [P3]At[/] [N3]nine[/] [N3]o''clock[/] [P1]in[/] [T1]the[/] [S7]evening[/], [T8]I[/] [D1]was[/] [P1]in[/] [T1]the[/] [S2]kitchen[/] [P4]with[/] [S1]Box[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[T8]I[/] [D1]had[/] [S3]tea[/], [C1]and[/] [S1]Box[/] [D1]had[/] [S3]milk[/]. [S1]Tom[/] [D1]was[/] [X1]not[/] [P3]at[/] [S2]home[/]. [T8]He[/] [D1]was[/] [P3]at[/] [T1]the[/] [S4]cafe[/] [P4]with[/] [S1]Mia[/].'
+  spoken: '[T8]I[/] [D1]had[/] [S3]tea[/], [C1]and[/] [S1]Box[/] [D1]had[/] [S3]milk[/]. [S1]Tom[/] [D1]was[/][X1]n''t[/] [P3]at[/] [S2]home[/]. [T8]He[/] [D1]was[/] [P3]at[/] [T1]the[/] [S4]cafe[/] [P4]with[/] [S1]Mia[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[T9]There[/] [D1]is[/] [T1]an[/] [S2]apartment[/] [A3]upstairs[/]. [T1]The[/] [S1]man[/] [A3]upstairs[/] [D2]works[/] [P3]at[/] [S7]night[/]. [P3]At[/] [N3]nine[/] [N3]o''clock[/], [T8]he[/] [D1]is[/] [A1]never[/] [P3]at[/] [S2]home[/], [C1]and[/] [T3]his[/] [S2]window[/] [D1]is[/] [A1]always[/] [J2]black[/].'
+  spoken: '[T9]There[/][D1]''s[/] [T1]an[/] [S2]apartment[/] [A3]upstairs[/]. [T1]The[/] [S1]man[/] [A3]upstairs[/] [D2]works[/] [P3]at[/] [S7]night[/]. [P3]At[/] [N3]nine[/] [N3]o''clock[/], [T8]he[/][D1]''s[/] [A1]never[/] [P3]at[/] [S2]home[/], [C1]and[/] [T3]his[/] [S2]window[/] [D1]is[/] [A1]always[/] [J2]black[/].'
+- speaker: anna
+  kind: narration
+  emotion: surprised
+  music: tense
+  text: '[C5]But[/] [A2]yesterday[/] [P3]at[/] [N3]nine[/], [T9]there[/] [D1]was[/] [T1]a[/] [S2]lamp[/] [P1]in[/] [T3]his[/] [S2]window[/]!'
+- speaker: anna
+  kind: narration
+  emotion: worried
+  text: '[C1]And[/] [T9]there[/] [D1]was[/] [T1]a[/] [S1]man[/]. [T8]He[/] [D1]was[/] [J2]old[/]. [T8]He[/] [D1]had[/] [T1]a[/] [J2]white[/] [S2]envelope[/] [P1]in[/] [T3]his[/] [S5]hand[/].'
+- speaker: anna
+  kind: narration
+  emotion: whisper
+  text: '[T8]He[/] [D1]did[/] [X1]not[/] [D4]move[/]. [T8]He[/] [D6]looked[/] [P3]at[/] [T3]our[/] [S2]mailbox[/].'
+  spoken: '[T8]He[/] [D1]did[/][X1]n''t[/] [D4]move[/]. [T8]He[/] [D6]looked[/] [P3]at[/] [T3]our[/] [S2]mailbox[/].'
+- speaker: anna
+  kind: narration
+  emotion: worried
+  text: '[T8]I[/] [D1]did[/] [X1]not[/] [D4]move[/]. [S1]Box[/] [D1]did[/] [X1]not[/] [D4]move[/]. [T8]We[/] [D2]waited[/] [C1]and[/] [D2]waited[/].'
+  spoken: '[T8]I[/] [D1]did[/][X1]n''t[/] [D4]move[/]. [S1]Box[/] [D1]did[/][X1]n''t[/] [D4]move[/]. [T8]We[/] [D2]waited[/] [C1]and[/] [D2]waited[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[P3]At[/] [N3]ten[/] [N3]o''clock[/], [T9]there[/] [D1]was[/] [O4]no[/] [S2]lamp[/]. [T1]The[/] [S2]window[/] [D1]was[/] [J2]black[/] [A2]again[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: morning
+  text: '[P1]In[/] [T1]the[/] [S7]morning[/], [T8]I[/] [D4]went[/] [P2]to[/] [T1]the[/] [S2]mailbox[/]. [T9]There[/] [D1]was[/] [O4]no[/] [S9]letter[/] [C1]and[/] [O4]no[/] [S2]envelope[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[P3]At[/] [N3]eight[/], [S1]Tom[/] [D4]came[/] [P2]to[/] [T1]the[/] [S2]kitchen[/]. [T8]He[/] [D1]was[/] [J4]tired[/] [C1]and[/] [J4]hungry[/].'
+- speaker: tom
+  kind: speech
+  emotion: happy
+  text: “[J3]Good[/] [S7]morning[/], [S1]Anna[/]! [D1]Is[/] [T9]there[/] [S3]coffee[/]? [D1]Is[/] [T9]there[/] [S3]bread[/]?”
+- speaker: anna
+  kind: speech
+  emotion: worried
+  text: “[S1]Tom[/], [A6]where[/] [D1]were[/] [T8]you[/] [A2]yesterday[/] [P3]at[/] [N3]nine[/]?”
+- speaker: tom
+  kind: speech
+  emotion: neutral
+  text: “[T8]I[/] [D1]was[/] [P3]at[/] [T1]the[/] [S4]cafe[/]. [S1]Mia[/] [C1]and[/] [T8]I[/] [D1]had[/] [S3]sandwiches[/]. [A6]Why[/]?”
+- speaker: anna
+  kind: speech
+  emotion: worried
+  text: “[T8]I[/] [D6]saw[/] [T1]a[/] [S1]man[/] [P1]in[/] [T1]the[/] [S2]window[/] [A3]upstairs[/]. [T8]He[/] [D1]was[/] [J2]old[/], [C1]and[/] [T8]he[/] [D1]had[/] [T1]a[/] [J2]white[/] [S2]envelope[/].”
+- speaker: tom
+  kind: speech
+  emotion: surprised
+  text: “[A3]Upstairs[/]? [C5]But[/] [T1]the[/] [S1]man[/] [A3]upstairs[/] [D2]works[/] [P3]at[/] [S7]night[/]!”
+- speaker: anna
+  kind: speech
+  emotion: neutral
+  text: “[T8]I[/] [D6]know[/]. [C5]But[/] [T8]he[/] [D1]was[/] [P3]at[/] [S2]home[/]. [C1]And[/] [T8]he[/] [D6]looked[/] [P3]at[/] [T3]our[/] [S2]mailbox[/].”
+- speaker: tom
+  kind: speech
+  emotion: whisper
+  text: “[T3]Our[/] [S2]mailbox[/]? [S1]Anna[/]… [T1]The[/] [S9]letter[/] [P4]with[/] [O4]no[/] [S9]name[/] [D1]was[/] [P1]in[/] [T3]our[/] [S2]mailbox[/]!”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[S1]Tom[/] [D6]looked[/] [P3]at[/] [T8]me[/]. [T8]I[/] [D6]looked[/] [P3]at[/] [S1]Tom[/]. [S1]Box[/] [D6]looked[/] [P3]at[/] [T1]the[/] [S2]mailbox[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: calm
+  text: '[S1]Tom[/] [D5]said[/], “[T8]It[/] [D1]is[/] [O4]okay[/], [S1]Anna[/]. [A2]Today[/] [P3]at[/] [N3]nine[/], [T8]you[/] [C1]and[/] [T8]I[/] [D7]can[/] [D6]watch[/] [T1]the[/] [S2]window[/]. [C1]And[/] [T8]I[/] [D7]can[/] [D2]cook[/] [S3]dinner[/].”'
+  spoken: '[S1]Tom[/] [D5]said[/], “[T8]It[/][D1]''s[/] [O4]okay[/], [S1]Anna[/]. [A2]Today[/] [P3]at[/] [N3]nine[/], [T8]you[/] [C1]and[/] [T8]I[/] [D7]can[/] [D6]watch[/] [T1]the[/] [S2]window[/]. [C1]And[/] [T8]I[/] [D7]can[/] [D2]cook[/] [S3]dinner[/].”'
+- speaker: anna
+  kind: narration
+  emotion: happy
+  text: '[T8]I[/] [D1]was[/] [J4]happy[/]. [S1]Tom[/] [D7]cannot[/] [D2]cook[/], [C5]but[/] [T8]he[/] [D1]is[/] [T1]a[/] [J3]good[/] [S1]friend[/].'
+  spoken: '[T8]I[/] [D1]was[/] [J4]happy[/]. [S1]Tom[/] [D7]ca[/][X1]n''t[/] [D2]cook[/], [C5]but[/] [T8]he[/][D1]''s[/] [T1]a[/] [J3]good[/] [S1]friend[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: mystery
+  text: '[T9]Who[/] [D1]is[/] [T1]the[/] [J2]old[/] [S1]man[/]? [C1]And[/] [A6]why[/] [D1]did[/] [T8]he[/] [D6]look[/] [P3]at[/] [T3]our[/] [S2]mailbox[/]?'
+  spoken: '[T9]Who[/][D1]''s[/] [T1]the[/] [J2]old[/] [S1]man[/]? [C1]And[/] [A6]why[/] [D1]did[/] [T8]he[/] [D6]look[/] [P3]at[/] [T3]our[/] [S2]mailbox[/]?'
+questions:
+- q: Где была Анна вчера в девять вечера?
+  a: At nine o'clock in the evening, I was in the kitchen with Box. — На кухне с котом Box.
+- q: Почему свет в окне наверху странный?
+  a: The man upstairs works at night. — Сосед работает ночью, в девять его никогда нет дома.
+- q: Что было у мужчины в руке?
+  a: He had a white envelope in his hand. — Белый конверт.
+- q: Куда смотрел мужчина?
+  a: He looked at our mailbox. — На их почтовый ящик.
+- q: Где был Том вчера в девять?
+  a: I was at the cafe. — В кафе, с Мией.
+- q: Что Том предлагает сделать сегодня в девять?
+  a: Today at nine, you and I can watch the window. And I can cook dinner. — Вместе смотреть на окно, а он приготовит ужин (хотя готовить не умеет).
+phrase_hunt:
+- phrase: Yesterday was Monday.
+  function: Когда это было — was
+- phrase: there was a lamp in his window!
+  function: Что было — there was
+- phrase: Tom, where were you yesterday at nine?
+  function: Вопрос о прошлом с were
+- phrase: He looked at our mailbox.
+  function: Смотреть на что-то — look at
+- phrase: I saw a man in the window upstairs.
+  function: Что я увидела — saw
+retell_words:
+- yesterday
+- lamp
+- old man
+- envelope
+- mailbox
+retell_steps:
+- 'Восстановите историю по пяти опорам: yesterday, lamp, old man, envelope, mailbox. По одной фразе на каждую.'
+- 'Перескажите без подсказок, 5–6 фраз, от лица Анны: Yesterday was Monday. At nine o''clock, I was…'
+creative_ru: 'Где были вы вчера в девять вечера? 3 фразы: Yesterday at nine, I was… I had… I saw…'

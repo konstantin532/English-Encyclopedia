@@ -118,6 +118,7 @@ units:
   forms:
   - walks
   - walking
+  - walked
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -134,6 +135,7 @@ units:
   forms:
   - plays
   - playing
+  - played
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

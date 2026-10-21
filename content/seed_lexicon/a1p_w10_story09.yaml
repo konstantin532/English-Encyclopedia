@@ -1,0 +1,74 @@
+# Новые слова истории №9 «The Man Upstairs» (лимит A-блока — до 5 на историю).
+# Наречия образа действия: quietly, quickly — тема недели 10 A1+.
+level: A1+
+week: 10
+units:
+- uid: LX-00515
+  lemma: quietly
+  meaning: in a way that makes very little noise
+  class: A4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkwaɪətli/
+  translation_ru: тихо
+  example_en: '[D7]Could[/] [T8]you[/] [D5]speak[/] [A4]quietly[/], [O8]please[/]?'
+  example_ru: Не могли бы вы говорить тише?
+  situation: Просите соседа говорить тише
+  usage_note: 'Наречие на -ly отвечает на вопрос «как?»: speak quietly — говорить тихо.'
+- uid: LX-00516
+  lemma: quickly
+  meaning: fast
+  class: A4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkwɪkli/
+  translation_ru: быстро
+  example_en: '[T8]I[/] [D4]went[/] [A3]down[/] [A4]quickly[/].'
+  example_ru: Я быстро спустился.
+  situation: Рассказываете, как вы что-то сделали
+- uid: LX-00517
+  lemma: down
+  meaning: to a lower place
+  class: A3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /daʊn/
+  translation_ru: вниз
+  example_en: '[T8]I[/] [D4]went[/] [A3]down[/] [A4]quickly[/].'
+  example_ru: Я быстро спустился.
+  situation: Говорите, куда идёте по лестнице
+  usage_note: 'go down — спуститься, go up — подняться.'
+- uid: LX-00518
+  lemma: give
+  meaning: to put something in someone's hand or let them have it
+  class: D2
+  forms:
+  - gives
+  - gave
+  grammar_features:
+  - irregular
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡɪv/
+  translation_ru: давать, отдать
+  example_en: '[T8]I[/] [D3]wanted[/] [X2]to[/] [D2]give[/] [T8]it[/] [P2]to[/] [T8]you[/].'
+  example_ru: Я хотел отдать его вам.
+  situation: Отдаёте вещь хозяину
+  usage_note: 'Неправильный глагол: give — gave. Кому — через to: give it to you.'
+- uid: LX-00519
+  lemma: bad
+  meaning: not good
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bæd/
+  translation_ru: плохой
+  example_en: '[T1]The[/] [S1]man[/] [A3]upstairs[/] [D1]was[/] [X1]not[/] [T1]a[/] [J3]bad[/] [S1]man[/].'
+  example_ru: Сосед сверху не был плохим человеком.
+  situation: Говорите о людях и вещах
+  usage_note: 'Звук /æ/ — широкий, между «а» и «э». Не путайте bad /bæd/ и bed /bɛd/.'

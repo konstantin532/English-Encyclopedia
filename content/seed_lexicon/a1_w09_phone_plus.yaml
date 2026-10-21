@@ -47,6 +47,7 @@ units:
   class: D5
   forms:
   - calls
+  - called
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -62,6 +63,7 @@ units:
   class: D5
   forms:
   - texts
+  - texted
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -77,6 +79,7 @@ units:
   class: D2
   forms:
   - sends
+  - sent
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -122,6 +125,7 @@ units:
   class: D5
   forms:
   - answers
+  - answered
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -137,6 +141,7 @@ units:
   class: D5
   forms:
   - asks
+  - asked
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -152,6 +157,7 @@ units:
   class: D2
   forms:
   - closes
+  - closed
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

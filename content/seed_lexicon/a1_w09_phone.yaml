@@ -21,6 +21,7 @@ units:
   class: D5
   forms:
   - spells
+  - spelled
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -62,6 +63,7 @@ units:
   class: D2
   forms:
   - opens
+  - opened
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

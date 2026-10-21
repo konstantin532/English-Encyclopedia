@@ -1,0 +1,84 @@
+# Новые слова истории №6 «Yesterday at Nine» (лимит A-блока — до 5 на историю).
+# Формы прошедшего времени (was, went, had…) — формы слов A1, а не новые единицы.
+level: A1+
+week: 2
+units:
+- uid: LX-00501
+  lemma: yesterday
+  meaning: on the day before today
+  class: A2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈjɛstɚˌdeɪ/
+  translation_ru: вчера
+  example_en: '[A2]Yesterday[/] [T8]I[/] [D1]was[/] [P1]at[/] [S2]home[/].'
+  example_ru: Вчера я был дома.
+  situation: Рассказываете, что было вчера
+  usage_note: 'Ставится в начало или в конец фразы: Yesterday I was at home. / I was at home yesterday.'
+- uid: LX-00502
+  lemma: see
+  meaning: to notice something with your eyes
+  class: D6
+  forms:
+  - sees
+  - saw
+  grammar_features:
+  - irregular
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /si/
+  translation_ru: видеть
+  example_en: '[T8]I[/] [D6]saw[/] [T1]a[/] [S1]man[/] [P1]in[/] [T1]the[/] [S2]window[/].'
+  example_ru: Я увидела мужчину в окне.
+  situation: Рассказываете, что увидели
+  usage_note: 'Неправильный глагол: see — saw. Видеть само по себе (see) и смотреть специально (look at) — разные глаголы.'
+- uid: LX-00503
+  lemma: look
+  meaning: to turn your eyes to see something
+  class: D6
+  forms:
+  - looks
+  - looked
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /lʊk/
+  translation_ru: смотреть
+  example_en: '[T8]He[/] [D6]looked[/] [P1]at[/] [T3]our[/] [S2]mailbox[/].'
+  example_ru: Он смотрел на наш почтовый ящик.
+  situation: Говорите, куда кто-то смотрел
+  usage_note: 'Смотреть на что-то — look at: look at the window. Без at — ошибка.'
+  typical_error: '«He looked our mailbox» — пропущено at. Нужно: He looked at our mailbox.'
+- uid: LX-00504
+  lemma: with
+  meaning: together with someone or something
+  class: P4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɪθ/
+  translation_ru: с, вместе с
+  example_en: '[T8]I[/] [D1]was[/] [P1]in[/] [T1]the[/] [S2]kitchen[/] [P4]with[/] [S1]Box[/].'
+  example_ru: Я была на кухне с Боксом.
+  situation: Говорите, с кем вы были
+  usage_note: 'th в конце — звонкое или глухое, язык между зубами: «уиз».'
+- uid: LX-00505
+  lemma: say
+  meaning: to speak words
+  class: D5
+  forms:
+  - says
+  - said
+  grammar_features:
+  - irregular
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /seɪ/
+  translation_ru: сказать, говорить
+  example_en: '[S1]Tom[/] [D5]said[/]: “[O1]Hello[/]!”'
+  example_ru: 'Том сказал: «Привет!»'
+  situation: Передаёте чужие слова
+  usage_note: 'Неправильный глагол: say — said («сэд», не «сэйд»).'

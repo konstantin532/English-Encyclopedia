@@ -1,0 +1,64 @@
+# Новые слова истории №8 «Mia's Bad Day» (лимит A-блока — до 5 на историю).
+# have to — сочетание известных слов have + to, отдельной единицей не вводится.
+level: A1+
+week: 8
+units:
+- uid: LX-00511
+  lemma: must
+  meaning: a word that says something is very necessary or is a rule
+  class: D7
+  grammar_features:
+  - modal
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mʌst/
+  translation_ru: должен, нужно (обязательно)
+  example_en: '[T8]You[/] [D7]must[/] [X1]not[/] [D1]be[/] [J2]late[/]!'
+  example_ru: Ты не должна опаздывать!
+  situation: Говорите о правилах на работе
+  usage_note: 'После must глагол без to: you must come. must not (mustn''t) — «нельзя».'
+  typical_error: '«You must to come» — лишнее to. Нужно: You must come.'
+- uid: LX-00512
+  lemma: basement
+  meaning: a room under a building
+  class: S2
+  forms:
+  - basements
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbeɪsmənt/
+  translation_ru: подвал
+  example_en: '[T1]The[/] [S2]basement[/] [D1]was[/] [J2]cold[/].'
+  example_ru: В подвале было холодно.
+  situation: Говорите о комнатах под домом
+- uid: LX-00513
+  lemma: girl
+  meaning: a female child or a young woman
+  class: S1
+  forms:
+  - girls
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡɝl/
+  translation_ru: девочка, девушка
+  example_en: '[T9]Who[/] [D1]is[/] [T2]this[/] [S1]girl[/]?'
+  example_ru: Кто эта девушка?
+  situation: Описываете людей на фото
+  usage_note: 'Звук /ɝ/ — как в bird: язык поднят, губы не вытягиваются.'
+- uid: LX-00514
+  lemma: boy
+  meaning: a male child or a young man
+  class: S1
+  forms:
+  - boys
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɔɪ/
+  translation_ru: мальчик, парень
+  example_en: '[T9]There[/] [D1]was[/] [T1]a[/] [S1]boy[/] [P1]in[/] [T1]the[/] [S2]photo[/].'
+  example_ru: На фото был мальчик.
+  situation: Описываете людей на фото
