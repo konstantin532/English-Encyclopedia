@@ -378,3 +378,33 @@ units:
   situation: Говорите о планах при условии
   usage_note: 'После will глагол без to: we will eat. В речи сокращается: we''ll, I''ll. После if will не ставят: If it rains (не «If it will rain»).'
   typical_error: '«If it will rain, we will…» — will после if лишнее. Нужно: If it rains, we will…'
+- uid: LX-01047
+  lemma: guidebook
+  meaning: a book with information for tourists
+  class: S2
+  forms:
+  - guidebooks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɡaɪdbʊk/
+  translation_ru: путеводитель
+  example_en: '[T8]I[/] [D2]bought[/] [T1]a[/] [S2]guidebook[/] [P6]about[/] [T1]the[/] [S6]island[/].'
+  example_ru: Я купил путеводитель по острову.
+  situation: Собираетесь в поездку
+  usage_note: 'u не читается: «гАйдбук».'
+- uid: LX-01048
+  lemma: sunrise
+  meaning: the time when the sun comes up in the morning
+  class: S7
+  forms:
+  - sunrises
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsʌnraɪz/
+  translation_ru: рассвет, восход
+  example_en: '[T8]We[/] [D7]will[/] [D6]watch[/] [T1]the[/] [S7]sunrise[/] [P1]on[/] [T1]the[/] [S6]beach[/].'
+  example_ru: Мы будем смотреть рассвет на пляже.
+  situation: В отпуске
+  usage_note: Вечером — sunset, утром — sunrise.
