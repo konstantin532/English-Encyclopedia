@@ -1,0 +1,255 @@
+slug: a1p-was-were
+level: A1+
+week: 2
+order: 3
+focus: D
+minutes: 40
+title: 'Где ты был: was и were'
+summary: 'Первый шаг в прошлое: I was at the museum, we were at the beach. Вопрос Where were you? и короткие ответы Yes, I was. / No, we weren''t.'
+units:
+- LX-00501
+- LX-00564
+- LX-00565
+- LX-00566
+- LX-00567
+- LX-00568
+- LX-00569
+- LX-00570
+- LX-00571
+- LX-00584
+- LX-00589
+- LX-00592
+- LX-00593
+- LX-00594
+sound_notes:
+- text: Where were you?
+  ipa: /ˈwɛr wɚ jə/
+  note_ru: were безударное — короткое «уэр», сливается с you
+- text: It was great!
+  ipa: /ɪt wəz ˈɡreɪt/
+  note_ru: was в середине фразы безударное — «уэз»; ударение на great
+- text: Yes, we were.
+  ipa: /ˈjɛs wi ˈwɝ/
+  note_ru: 'в конце короткого ответа were полное и ударное: «уЁр»'
+contractions:
+- full: was not
+  short: wasn't
+  ipa: /ˈwʌzənt/
+  note_ru: I wasn't at home — меня не было дома.
+- full: were not
+  short: weren't
+  ipa: /wɝnt/
+  note_ru: We weren't at the cafe.
+layers:
+- number: 1
+  body: 'Понедельник, кафе Мии. «Как прошли выходные?» — и чтобы ответить, нужно впервые заговорить о прошлом. Хорошая новость: для «был, была, были» в английском всего два слова.
+
+
+    > [J3]Good[/] [S7]morning[/]! [A6]How[/] [D1]was[/] [T3]your[/] [S7]weekend[/]? — Доброе утро! Как прошли выходные?
+
+    > [T8]It[/] [D1]was[/] [J3]great[/]! [P3]On[/] [S7]Saturday[/], [S1]Tom[/] [C1]and[/] [T8]I[/] [D1]were[/] [P3]at[/] [T1]the[/] [S4]museum[/]. — Отлично! В субботу мы с Томом были в музее.
+
+    '
+- number: 2
+  body: '**was** и **were** — прошедшие формы глагола **be**, того самого am / is / are. В древнеанглийском у be было несколько разных корней, поэтому формы так не похожи друг на друга: be, am, is, was — это осколки разных старых глаголов, собранных в одну семью.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [T8]I[/] [D1]was[/] [P3]at[/] [S2]home[/]. — Я был дома.
+
+    > [T8]We[/] [D1]were[/] [P3]at[/] [T1]the[/] [S6]beach[/]. — Мы были на пляже.
+
+
+    - **I / he / she / it**, одно имя → **was**: I was, Anna was, it was.
+
+    - **you / we / they** → **were**: you were, we were, they were.
+
+    - Вопрос: was / were впереди: *Where were you? Was it cold?*
+
+    - Отрицание: was not (wasn''t), were not (weren''t).
+
+    '
+- number: 4
+  body: '**Почему you were, даже если «ты» один?** Так же, как **you are**: у you всегда форма множественного числа — и в настоящем, и в прошлом. *You were at home* — «ты был» и «вы были».
+
+
+    > [D1]Were[/] [T8]you[/] [P3]at[/] [S2]home[/] [J8]last[/] [S7]night[/]? — А вчера вечером вы были дома?
+
+
+    **Last night** — «вчера вечером». Не говорите *yesterday night*: так звучит непривычно. **Yesterday** — вчера (днём), **the day before yesterday** — позавчера.
+
+
+    **Диагностика понимания:** вы рассказываете, что Мия была в кафе одна. Что верно: *Mia were alone* или *Mia was alone*?
+
+
+    **Разбор:** *Mia was alone.* Одна Мия — как she, значит **was**.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [O4]Yes[/], [T8]we[/] [D1]were[/]. [T8]We[/] [D1]were[/] [A5]very[/] [J4]tired[/] [P3]after[/] [T1]the[/] [S6]beach[/]. — Да. Мы очень устали после пляжа.
+
+    > [C1]And[/] [A6]where[/] [D1]were[/] [T8]you[/] [P3]on[/] [S7]Sunday[/]? [T8]I[/] [D1]was[/] [J4]alone[/] [P1]in[/] [T1]the[/] [S4]cafe[/]. — А где вы были в воскресенье? Я была в кафе одна.
+
+
+    - Короткие ответы: *Yes, I was. / No, I wasn''t. Yes, we were. / No, we weren''t.*
+
+    - «Был в музее» — **at the museum**; «был на пляже» — **at the beach**; «был в воде» — **in the water**.
+
+    - Сколько времени: **for one minute, for two hours** — с for.
+
+
+    Места этой недели: **museum** — музей, **beach** — пляж, **gym** — спортзал, **concert** — концерт, **party** — вечеринка, **movie** — фильм.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «I were at home» — с I нужно **was**.
+
+    - «You was» — с you всегда **were**.
+
+    - «Yesterday night» — говорят **last night**.
+
+    - «a hour» — h не читается, поэтому **an hour**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать was или were, ответить коротко, собрать вопрос, рассказать о своих выходных, выбрать last night и сказать «я не был».
+
+
+    **Проверка маленького шага:** I / he / she / it — **was**. You / we / they — **were**. Вчера вечером — **last night**.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00176
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Анна рассказывает: «В субботу мы с Томом были в музее». Выберите форму.'
+  options:
+  - Tom and I were at the museum.
+  - Tom and I was at the museum.
+  - Tom and I are at the museum.
+  answer: Tom and I were at the museum.
+  hint_ru: Tom and I — это «мы», а с we — were.
+  explanation_ru: Tom and I were at the museum. Двое — were; are было бы о «сейчас».
+  units:
+  - LX-00564
+- order: 2
+  uid: EX-00177
+  kind: fill
+  stage: substitution
+  prompt_ru: 'Мия спрашивает: Was the water cold? Да, холодная. Ответьте коротко.'
+  prompt_en: Yes, it ___.
+  answer: was
+  hint_ru: it → was.
+  explanation_ru: Yes, it was. В коротком ответе was полный.
+  units:
+  - LX-00571
+- order: 3
+  uid: EX-00178
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите вопрос: «Где ты был?»'
+  options:
+  - you
+  - Where
+  - were
+  answer: Where were you
+  hint_ru: Where, потом were, потом you.
+  explanation_ru: Where were you? — were стоит перед you.
+  units:
+  - LX-00589
+- order: 4
+  uid: EX-00179
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: коллега спрашивает, где вы были вчера. Вы были в спортзале.'
+  prompt_en: ___
+  answer: I was at the gym.
+  accepted:
+  - I was at the gym yesterday.
+  - I was at the gym
+  - Yesterday I was at the gym.
+  hint_ru: I was + at the gym.
+  explanation_ru: I was at the gym (yesterday). С местом — at.
+  units:
+  - LX-00569
+  - LX-00501
+- order: 5
+  uid: EX-00180
+  kind: choice
+  stage: recognition
+  prompt_ru: Как сказать «вчера вечером»?
+  options:
+  - last night
+  - yesterday night
+  - the night yesterday
+  answer: last night
+  hint_ru: Американцы говорят last…
+  explanation_ru: last night — вчера вечером. Yesterday night звучит непривычно.
+  units:
+  - LX-00592
+- order: 6
+  uid: EX-00181
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Вас спрашивают: Were you at the party? Вас там не было. Ответьте коротко.'
+  prompt_en: No, I ___.
+  answer: wasn't
+  accepted:
+  - was not
+  hint_ru: I + was + not = wasn't.
+  explanation_ru: No, I wasn't. С I — was, отрицание — wasn't.
+  units:
+  - LX-00568
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Мы были на пляже.
+  answer: We were at the beach.
+  hint_ru: We + were + at the beach.
+  explanation_ru: We were at the beach. С we — were.
+  review_of: 1
+  units:
+  - LX-00565
+- order: 2
+  kind: translate
+  prompt_ru: Ты был дома вчера вечером?
+  answer: Were you at home last night?
+  hint_ru: Were впереди, в конце last night.
+  explanation_ru: Were you at home last night? В вопросе were выходит вперёд.
+  review_of: 3
+  units:
+  - LX-00593
+  - LX-00592
+- order: 3
+  kind: translate
+  prompt_ru: Я был в музее два часа.
+  answer: I was at the museum for two hours.
+  accepted:
+  - I was in the museum for two hours.
+  hint_ru: for two hours — в конце.
+  explanation_ru: I was at the museum for two hours. Сколько времени — с for.
+  review_of: 4
+  units:
+  - LX-00564
+  - LX-00570
+- order: 4
+  kind: translate
+  prompt_ru: Меня не было дома.
+  answer: I wasn't at home.
+  accepted:
+  - I was not at home.
+  hint_ru: I + wasn't + at home.
+  explanation_ru: I wasn't at home. Отрицание с was — wasn't.
+  review_of: 6
+  units:
+  - LX-00584

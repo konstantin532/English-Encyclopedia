@@ -112,5 +112,119 @@
    1,
    "Talk to you soon! — скоро созвонимся."
   ]
+ ],
+ "a1p-was-were": [
+  [
+   "Как сказать «Я был дома»?",
+   "",
+   [
+    "I were at home.",
+    "I was at home.",
+    "I am at home."
+   ],
+   1,
+   "С I — was."
+  ],
+  [
+   "Анна и Том были в кафе. Выберите форму.",
+   "",
+   [
+    "Anna and Tom was at the cafe.",
+    "Anna and Tom were at the cafe.",
+    "Anna and Tom is at the cafe."
+   ],
+   1,
+   "Двое — were."
+  ],
+  [
+   "Спросите друга, где он был.",
+   "",
+   [
+    "Where were you?",
+    "Where was you?",
+    "Where you were?"
+   ],
+   0,
+   "Where were you? — с you всегда were."
+  ],
+  [
+   "Как сказать «вчера вечером»?",
+   "",
+   [
+    "yesterday night",
+    "last night",
+    "night yesterday"
+   ],
+   1,
+   "Американцы говорят last night."
+  ],
+  [
+   "Вас спросили: Were you at the gym? Вас там не было.",
+   "",
+   [
+    "No, I weren't.",
+    "No, I wasn't.",
+    "No, I not was."
+   ],
+   1,
+   "С I — wasn't."
+  ]
+ ],
+ "a1p-there-was-how-was": [
+  [
+   "В комнате была одна лампа. Как сказать?",
+   "",
+   [
+    "There was a lamp.",
+    "There were a lamp.",
+    "It was a lamp there."
+   ],
+   0,
+   "Одна вещь — there was."
+  ],
+  [
+   "На концерте было много людей.",
+   "",
+   [
+    "There was many people.",
+    "There were many people.",
+    "There are many people was."
+   ],
+   1,
+   "Много — there were."
+  ],
+  [
+   "Спросите, как прошёл фильм.",
+   "",
+   [
+    "How was the movie?",
+    "How were the movie?",
+    "How the movie was?"
+   ],
+   0,
+   "How was + the movie?"
+  ],
+  [
+   "Вечеринка была весёлой. Как сказать?",
+   "",
+   [
+    "It was funny.",
+    "It was fun.",
+    "Was fun."
+   ],
+   1,
+   "Весело — fun; и без it нельзя."
+  ],
+  [
+   "Опишите тихую улицу в прошлом.",
+   "",
+   [
+    "The street was quiet.",
+    "The street were quiet.",
+    "The street quiet was."
+   ],
+   0,
+   "Одна улица — was."
+  ]
  ]
 }
