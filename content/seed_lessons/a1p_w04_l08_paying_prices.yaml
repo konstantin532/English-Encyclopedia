@@ -159,7 +159,7 @@ exercises:
   stage: production
   prompt_ru: 'Соберите: «Джинсы были со скидкой».'
   options:
-  - true
+  - 'on'
   - The
   - were
   - sale
