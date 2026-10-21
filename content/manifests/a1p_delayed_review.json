@@ -226,5 +226,119 @@
    0,
    "Одна улица — was."
   ]
+ ],
+ "a1p-past-simple-ed": [
+  [
+   "Скажите: «Я убрал квартиру».",
+   "",
+   [
+    "I cleaned my apartment.",
+    "I was clean my apartment.",
+    "I clean my apartment yesterday."
+   ],
+   0,
+   "Прошлое — глагол + -ed, без was."
+  ],
+  [
+   "Поставьте carry в прошедшее время: I ___ the bags.",
+   "",
+   [
+    "carryed",
+    "carried",
+    "carry"
+   ],
+   1,
+   "Согласная + y → ied: carried."
+  ],
+  [
+   "Как сказать «Я весь день отдыхал»?",
+   "",
+   [
+    "I relaxed all day.",
+    "I was relax all day.",
+    "I all day relaxed."
+   ],
+   0,
+   "Глагол + -ed, all day в конце."
+  ],
+  [
+   "В каком слове -ed звучит как «т»?",
+   "",
+   [
+    "worked",
+    "painted",
+    "played"
+   ],
+   0,
+   "После k — глухое «т»: «уёркт»."
+  ],
+  [
+   "Скажите: «В прошлые выходные я навестил друга».",
+   "",
+   [
+    "In last weekend I visited a friend.",
+    "Last weekend I visited a friend.",
+    "Last weekend I visit a friend."
+   ],
+   1,
+   "Last weekend — без предлога, глагол с -ed."
+  ]
+ ],
+ "a1p-weekend-small-talk": [
+  [
+   "Коллега: How was your weekend? Выходные были нормальные.",
+   "",
+   [
+    "Not bad.",
+    "No bad.",
+    "Not badly."
+   ],
+   0,
+   "Not bad — «неплохо»."
+  ],
+  [
+   "Верните вопрос собеседнику.",
+   "",
+   [
+    "What about you?",
+    "What you about?",
+    "And about you is?"
+   ],
+   0,
+   "What about you? — «А у тебя?»"
+  ],
+  [
+   "Коллега: I love pizza. Вы тоже.",
+   "",
+   [
+    "I too.",
+    "Me too.",
+    "Me also."
+   ],
+   1,
+   "В разговоре — Me too."
+  ],
+  [
+   "Скажите: «Мне понравился концерт».",
+   "",
+   [
+    "I enjoyed.",
+    "I enjoyed the concert.",
+    "Me enjoyed the concert."
+   ],
+   1,
+   "После enjoy — что понравилось."
+  ],
+  [
+   "Скажите: «Нам нужен отчёт».",
+   "",
+   [
+    "We need the report.",
+    "Us need the report.",
+    "We are need the report."
+   ],
+   0,
+   "We need + что нужно."
+  ]
  ]
 }

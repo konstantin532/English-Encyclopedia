@@ -1,0 +1,252 @@
+slug: a1p-past-simple-ed
+level: A1+
+week: 3
+order: 5
+focus: D
+minutes: 40
+title: 'Что я делал: прошедшее время на -ed'
+summary: 'Как рассказать о делах в прошлом: I visited my grandparents. I cleaned my apartment. Окончание -ed, три его звучания и правила написания: stayed, tried, planned.'
+units:
+- LX-00595
+- LX-00596
+- LX-00597
+- LX-00598
+- LX-00599
+- LX-00600
+- LX-00602
+- LX-00603
+- LX-00604
+- LX-00605
+- LX-00606
+- LX-00607
+- LX-00608
+- LX-00619
+- LX-00622
+- LX-00623
+- LX-00628
+sound_notes:
+- text: I worked. I walked.
+  ipa: /aɪ ˈwɝkt | aɪ ˈwɔkt/
+  note_ru: 'после k, p, s, ch окончание -ed — глухое «т», без гласной: «уёркт», «уокт»'
+- text: I stayed at home.
+  ipa: /aɪ ˈsteɪd ət ˈhoʊm/
+  note_ru: 'после гласных и звонких -ed — «д»: «стэйд», не «стэйэд»'
+- text: I visited my grandparents.
+  ipa: /aɪ ˈvɪzɪtɪd maɪ ˈɡrænˌpɛrənts/
+  note_ru: 'после t и d -ed — отдельный слог «ид»: «вИзитид»'
+contractions:
+- full: I am
+  short: I'm
+  ipa: /aɪm/
+  note_ru: I'm tired — I worked all day. В настоящем сокращаем, в прошедшем на -ed сокращать нечего.
+layers:
+- number: 1
+  body: 'Понедельник, офис. Коллега Кейт спрашивает Тома о выходных, и Том перечисляет дела: навестил, приготовил, убрал, починил. Все эти глаголы в прошлом получают одно и то же окончание **-ed**.
+
+
+    > [X1]Not[/] [J3]bad[/]. [P3]On[/] [S7]Saturday[/] [T8]I[/] [D4]visited[/] [T3]my[/] [S1]grandparents[/]. [T8]I[/] [D2]cooked[/] [S3]dinner[/] [P5]for[/] [T8]them[/]. — Неплохо. В субботу я навестил бабушку с дедушкой. Приготовил им ужин.
+
+    '
+- number: 2
+  body: '**-ed** — потомок древнего окончания *-ode / -ede*, которое значило «сделано». Большинство английских глаголов («правильные») образуют прошлое именно так: **work → worked, play → played**. Хорошая новость: форма одна для всех — I, you, he, we, they.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [T8]I[/] [D2]cleaned[/] [T3]my[/] [S2]apartment[/]. — Я убрал квартиру.
+
+    > [T8]I[/] [D2]stayed[/] [P3]at[/] [S2]home[/]. — Я сидел дома.
+
+
+    - Глагол + **-ed**: clean → cleaned, visit → visited, stay → stayed.
+
+    - Кончается на **-e** → только **-d**: love → loved, bake → baked.
+
+    - Согласная + **y** → **-ied**: try → tried, carry → carried. Но гласная + y — просто -ed: play → played, stay → stayed.
+
+    - Короткое слово «согласная-гласная-согласная» — согласная удваивается: plan → planned.
+
+    - Когда: **last weekend, last night, yesterday, on Saturday** — в начале или в конце.
+
+    '
+- number: 4
+  body: '**Почему «I cooked», а не «I was cook»?** По-русски прошлое — это отдельная форма глагола («готовил»), и в английском тоже: просто добавляем -ed. Слово **was** нужно только для «был, была»: I was at home. С обычным глаголом его не ставят.
+
+
+    > [T8]I[/] [D8]finished[/] [T8]it[/] [J8]last[/] [S7]night[/]. — Я закончил его вчера вечером.
+
+
+    **Диагностика понимания:** как сказать «Я весь день отдыхал»: *I was relax all day* или *I relaxed all day*?
+
+
+    **Разбор:** *I relaxed all day.* Глагол + -ed, без was.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [T8]I[/] [D2]stayed[/] [P3]at[/] [S2]home[/]. [T8]I[/] [D6]watched[/] [N1]three[/] [S10]movies[/] [C1]and[/] [D2]relaxed[/]. — Я сидела дома. Посмотрела три фильма и отдыхала.
+
+
+    - Несколько дел подряд — через **and** или **After that**: I cleaned my apartment and fixed my bike. After that I played the guitar.
+
+    - **all day** — весь день: I played the guitar all day.
+
+    - **last weekend** — в прошлые выходные, без предлога.
+
+
+    Глаголы недели: **visit** — навещать, **stay** — оставаться, **enjoy** — получать удовольствие, **relax** — отдыхать, **plan** — планировать, **try** — стараться, **use** — пользоваться, **remember** — вспоминать, **invite** — приглашать, **paint** — рисовать красками, **fix** — чинить, **carry** — нести, **hate** — терпеть не мочь.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «I was cleaned» — с обычным глаголом was не нужен: **I cleaned**.
+
+    - «I tryed», «I carryed» — после согласной y → i: **tried, carried**.
+
+    - «I plane» — удвоение: **planned**.
+
+    - «вИзитэд» с ударением на конец — нет, ударение остаётся: **VIsited**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: узнать прошедшее время, написать форму с -ied, собрать фразу о выходных, рассказать, что вы делали вчера, услышать «ид» и выбрать фразу без was.
+
+
+    **Проверка маленького шага:** глагол + -ed — и это уже прошлое для всех лиц. Was с ним не нужен.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00188
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Том рассказывает: «В воскресенье я убрал квартиру». Выберите фразу.'
+  options:
+  - On Sunday I cleaned my apartment.
+  - On Sunday I clean my apartment.
+  - On Sunday I was clean my apartment.
+  answer: On Sunday I cleaned my apartment.
+  hint_ru: Прошлое — глагол + -ed.
+  explanation_ru: I cleaned — прошедшее время. Clean без -ed — «убираю», was с глаголом не нужен.
+  units:
+  - LX-00622
+- order: 2
+  uid: EX-00189
+  kind: fill
+  stage: substitution
+  prompt_ru: Том очень старался закончить отчёт. Поставьте try в прошедшее время.
+  prompt_en: I really ___!
+  answer: tried
+  hint_ru: Согласная + y → ied.
+  explanation_ru: 'try → tried: перед y согласная r, поэтому y меняется на i.'
+  units:
+  - LX-00600
+- order: 3
+  uid: EX-00190
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Я починил свой старый велосипед».'
+  options:
+  - old
+  - I
+  - my
+  - fixed
+  - bike
+  answer: I fixed my old bike
+  hint_ru: I + fixed + my old bike.
+  explanation_ru: I fixed my old bike. Прилагательное old стоит перед bike.
+  units:
+  - LX-00606
+  - LX-00614
+- order: 4
+  uid: EX-00191
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: друг спрашивает, что вы делали вчера. Вы весь день отдыхали дома. Скажите одной фразой.'
+  prompt_en: ___
+  answer: I relaxed at home all day.
+  accepted:
+  - I relaxed at home all day
+  - I stayed at home and relaxed.
+  - I relaxed all day at home.
+  - Yesterday I relaxed at home all day.
+  hint_ru: I relaxed + at home + all day.
+  explanation_ru: I relaxed at home all day. Глагол с -ed, «весь день» — all day.
+  units:
+  - LX-00598
+  - LX-00623
+- order: 5
+  uid: EX-00192
+  kind: choice
+  stage: recognition
+  prompt_ru: В каком слове -ed звучит как отдельный слог «ид»?
+  options:
+  - visited
+  - stayed
+  - worked
+  answer: visited
+  hint_ru: Отдельный слог — после t и d.
+  explanation_ru: visited — «вИзитид». Stayed — «стэйд», worked — «уёркт».
+  units:
+  - LX-00595
+- order: 6
+  uid: EX-00193
+  kind: fill
+  stage: transfer
+  prompt_ru: Вы спланировали вечеринку. Поставьте plan в прошедшее время.
+  prompt_en: We ___ a party.
+  answer: planned
+  hint_ru: Короткое слово — согласная удваивается.
+  explanation_ru: 'plan → planned: n удваивается, иначе читалось бы «плэйнд».'
+  units:
+  - LX-00599
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Я навестил бабушку с дедушкой.
+  answer: I visited my grandparents.
+  hint_ru: visit + -ed, grandparents.
+  explanation_ru: I visited my grandparents. Grandparents — бабушка и дедушка одним словом.
+  review_of: 1
+  units:
+  - LX-00595
+  - LX-00619
+- order: 2
+  kind: translate
+  prompt_ru: Я нёс сумки.
+  answer: I carried the bags.
+  hint_ru: carry → carried.
+  explanation_ru: I carried the bags. Согласная + y → ied.
+  review_of: 2
+  units:
+  - LX-00607
+- order: 3
+  kind: translate
+  prompt_ru: В прошлые выходные я сидел дома.
+  answer: Last weekend I stayed at home.
+  accepted:
+  - I stayed at home last weekend.
+  hint_ru: Last weekend — без предлога.
+  explanation_ru: Last weekend I stayed at home. Перед last weekend не нужен предлог.
+  review_of: 4
+  units:
+  - LX-00622
+  - LX-00628
+- order: 4
+  kind: translate
+  prompt_ru: Мы спланировали ужин.
+  answer: We planned dinner.
+  accepted:
+  - We planned a dinner.
+  - We planned the dinner.
+  hint_ru: plan → planned.
+  explanation_ru: We planned dinner. Удвоение n.
+  review_of: 6
+  units:
+  - LX-00599

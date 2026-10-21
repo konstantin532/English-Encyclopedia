@@ -1,0 +1,505 @@
+# Неделя 3 A1+ «Как прошли выходные: разговор с коллегой»: Past Simple на -ed, работа и выходные. CEFR не сверялся.
+level: A1+
+week: 3
+units:
+- uid: LX-00595
+  lemma: visit
+  meaning: to go to see a person or a place
+  class: D4
+  forms:
+  - visits
+  - visited
+  - visiting
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈvɪzɪt/
+  translation_ru: навещать, посещать
+  example_en: '[T8]I[/] [D4]visited[/] [T3]my[/] [S1]grandparents[/].'
+  example_ru: Я навестил бабушку и дедушку.
+  situation: Рассказываете о выходных
+  usage_note: '-ed после t звучит как отдельный слог: visited — «вИзитид».'
+- uid: LX-00596
+  lemma: stay
+  meaning: to not go away from a place
+  class: D2
+  forms:
+  - stays
+  - stayed
+  - staying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /steɪ/
+  translation_ru: оставаться
+  example_en: '[T8]I[/] [D2]stayed[/] [P1]at[/] [S2]home[/].'
+  example_ru: Я остался дома.
+  situation: Говорите, где провели время
+- uid: LX-00597
+  lemma: enjoy
+  meaning: to like doing something
+  class: D3
+  forms:
+  - enjoys
+  - enjoyed
+  - enjoying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪnˈdʒɔɪ/
+  translation_ru: получать удовольствие
+  example_en: '[T8]I[/] [D3]enjoyed[/] [T1]the[/] [S10]concert[/].'
+  example_ru: Мне понравился концерт.
+  situation: Делитесь впечатлением
+  usage_note: 'После enjoy нужно, что именно понравилось: I enjoyed the movie. Просто «I enjoyed» — не говорят.'
+- uid: LX-00598
+  lemma: relax
+  meaning: to rest and feel calm
+  class: D2
+  forms:
+  - relaxes
+  - relaxed
+  - relaxing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rɪˈlæks/
+  translation_ru: отдыхать, расслабляться
+  example_en: '[T8]We[/] [D2]relaxed[/] [P1]at[/] [T1]the[/] [S6]beach[/].'
+  example_ru: Мы отдыхали на пляже.
+  situation: Рассказываете о выходных
+- uid: LX-00599
+  lemma: plan
+  meaning: to decide what you will do
+  class: D6
+  forms:
+  - plans
+  - planned
+  - planning
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /plæn/
+  translation_ru: планировать
+  example_en: '[T8]We[/] [D6]planned[/] [T1]a[/] [S10]party[/].'
+  example_ru: Мы спланировали вечеринку.
+  situation: Говорите о планах
+  usage_note: 'В прошлом n удваивается: planned.'
+- uid: LX-00600
+  lemma: try
+  meaning: to make an effort to do something
+  class: D2
+  forms:
+  - tries
+  - tried
+  - trying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /traɪ/
+  translation_ru: пытаться, пробовать
+  example_en: '[T8]I[/] [A5]really[/] [D2]tried[/]!'
+  example_ru: Я правда старался!
+  situation: Говорите, что старались
+  usage_note: 'y после согласной → ied: try — tried.'
+- uid: LX-00601
+  lemma: need
+  meaning: to have to have something
+  class: D3
+  forms:
+  - needs
+  - needed
+  - needing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /nid/
+  translation_ru: нуждаться, нужно
+  example_en: '[T8]We[/] [D3]need[/] [T1]the[/] [S9]report[/].'
+  example_ru: Нам нужен отчёт.
+  situation: Говорите, что нужно
+  usage_note: 'По-русски «мне нужно», по-английски «я нуждаюсь»: I need a pen.'
+  typical_error: '«Me need» — неверно. Нужно: I need.'
+- uid: LX-00602
+  lemma: use
+  meaning: to do something with a thing
+  class: D2
+  forms:
+  - uses
+  - used
+  - using
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /juz/
+  translation_ru: использовать, пользоваться
+  example_en: '[T8]I[/] [D2]used[/] [T3]my[/] [S2]computer[/] [A4]together[/] [P4]with[/] [S1]Kate[/].'
+  example_ru: Мы с Кейт работали за моим компьютером.
+  situation: Говорите о работе
+- uid: LX-00603
+  lemma: remember
+  meaning: to have something in your mind from before
+  class: D6
+  forms:
+  - remembers
+  - remembered
+  - remembering
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rɪˈmɛmbɚ/
+  translation_ru: помнить, вспоминать
+  example_en: '[T8]I[/] [D6]remembered[/] [T1]the[/] [S9]meeting[/]!'
+  example_ru: Я вспомнил про встречу!
+  situation: Говорите о том, что не забыли
+- uid: LX-00604
+  lemma: invite
+  meaning: to ask someone to come to a party or a place
+  class: D5
+  forms:
+  - invites
+  - invited
+  - inviting
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪnˈvaɪt/
+  translation_ru: приглашать
+  example_en: '[T8]They[/] [D5]invited[/] [T8]me[/] [P2]to[/] [S10]dinner[/].'
+  example_ru: Они пригласили меня на ужин.
+  situation: Рассказываете о гостях
+- uid: LX-00605
+  lemma: paint
+  meaning: to make a picture or color a wall
+  class: D2
+  forms:
+  - paints
+  - painted
+  - painting
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /peɪnt/
+  translation_ru: рисовать красками, красить
+  example_en: '[T8]I[/] [D2]painted[/] [T1]a[/] [S2]picture[/].'
+  example_ru: Я нарисовал картину.
+  situation: Говорите о хобби
+  usage_note: draw — карандашом, paint — красками.
+- uid: LX-00606
+  lemma: fix
+  meaning: to make a broken thing work again
+  class: D2
+  forms:
+  - fixes
+  - fixed
+  - fixing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fɪks/
+  translation_ru: чинить
+  example_en: '[T8]I[/] [D2]fixed[/] [T3]my[/] [J2]old[/] [S4]bike[/].'
+  example_ru: Я починил свой старый велосипед.
+  situation: Говорите о делах по дому
+- uid: LX-00607
+  lemma: carry
+  meaning: to hold something and take it with you
+  class: D2
+  forms:
+  - carries
+  - carried
+  - carrying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkæri/
+  translation_ru: нести
+  example_en: '[T8]I[/] [D2]carried[/] [T1]the[/] [S2]bags[/].'
+  example_ru: Я нёс сумки.
+  situation: Говорите о делах
+  usage_note: 'y после согласной → ied: carried.'
+- uid: LX-00608
+  lemma: hate
+  meaning: to not like something at all
+  class: D3
+  forms:
+  - hates
+  - hated
+  - hating
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /heɪt/
+  translation_ru: ненавидеть, терпеть не мочь
+  example_en: '[T8]I[/] [D3]hated[/] [T8]it[/]!'
+  example_ru: Мне это ужасно не понравилось!
+  situation: Делитесь сильным впечатлением
+- uid: LX-00609
+  lemma: colleague
+  meaning: a person you work with
+  class: S9
+  forms:
+  - colleagues
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkɑliɡ/
+  translation_ru: коллега
+  example_en: '[S1]Kate[/] [D1]is[/] [T3]my[/] [S9]colleague[/].'
+  example_ru: Кейт — моя коллега.
+  situation: Говорите о работе
+  usage_note: В разговоре часто говорят coworker.
+- uid: LX-00610
+  lemma: meeting
+  meaning: a time when people come together to talk about work
+  class: S9
+  forms:
+  - meetings
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmitɪŋ/
+  translation_ru: встреча, совещание
+  example_en: '[T1]The[/] [S9]meeting[/] [D8]starts[/] [P3]at[/] [N3]ten[/].'
+  example_ru: Совещание начинается в десять.
+  situation: Говорите о работе
+- uid: LX-00611
+  lemma: project
+  meaning: a piece of planned work
+  class: S9
+  forms:
+  - projects
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈprɑdʒɛkt/
+  translation_ru: проект
+  example_en: '[T8]We[/] [D2]finished[/] [T1]the[/] [S9]project[/].'
+  example_ru: Мы закончили проект.
+  situation: Говорите о работе
+- uid: LX-00612
+  lemma: report
+  meaning: a written text about work or facts
+  class: S9
+  forms:
+  - reports
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rɪˈpɔrt/
+  translation_ru: отчёт
+  example_en: '[T8]I[/] [D8]finished[/] [T1]the[/] [S9]report[/] [J8]last[/] [S7]night[/].'
+  example_ru: Я закончил отчёт вчера вечером.
+  situation: Говорите о работе
+- uid: LX-00613
+  lemma: flower
+  meaning: the colored part of a plant
+  class: S6
+  forms:
+  - flowers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈflaʊɚ/
+  translation_ru: цветок
+  example_en: '[T8]I[/] [D2]painted[/] [S6]flowers[/].'
+  example_ru: Я нарисовала цветы.
+  situation: Говорите о природе
+- uid: LX-00614
+  lemma: bike
+  meaning: a thing with two wheels that you ride
+  class: S4
+  forms:
+  - bikes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /baɪk/
+  translation_ru: велосипед
+  example_en: '[T3]My[/] [S4]bike[/] [D1]is[/] [J2]old[/].'
+  example_ru: Мой велосипед старый.
+  situation: Говорите о транспорте
+  usage_note: Полное слово — bicycle, в разговоре — bike.
+- uid: LX-00615
+  lemma: lake
+  meaning: a big area of water with land around it
+  class: S6
+  forms:
+  - lakes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /leɪk/
+  translation_ru: озеро
+  example_en: '[T8]We[/] [D1]were[/] [P1]at[/] [T1]the[/] [S6]lake[/].'
+  example_ru: Мы были на озере.
+  situation: Рассказываете о поездке
+- uid: LX-00616
+  lemma: river
+  meaning: a long line of water that moves
+  class: S6
+  forms:
+  - rivers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈrɪvɚ/
+  translation_ru: река
+  example_en: '[T8]We[/] [D4]walked[/] [P1]near[/] [T1]the[/] [S6]river[/].'
+  example_ru: Мы гуляли у реки.
+  situation: Рассказываете о прогулке
+- uid: LX-00617
+  lemma: picture
+  meaning: a painting, a drawing, or a photo
+  class: S2
+  forms:
+  - pictures
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈpɪktʃɚ/
+  translation_ru: картина, рисунок
+  example_en: '[T8]I[/] [D2]painted[/] [T1]a[/] [S2]picture[/] [P6]of[/] [T1]the[/] [S6]lake[/].'
+  example_ru: Я нарисовал картину с озером.
+  situation: Говорите о хобби
+- uid: LX-00618
+  lemma: boat
+  meaning: a small thing for travel on water
+  class: S4
+  forms:
+  - boats
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /boʊt/
+  translation_ru: лодка
+  example_en: '[T8]We[/] [D1]were[/] [P1]in[/] [T1]a[/] [S4]boat[/] [P1]on[/] [T1]the[/] [S6]lake[/].'
+  example_ru: Мы катались на лодке по озеру.
+  situation: Рассказываете о выходных
+- uid: LX-00619
+  lemma: grandparent
+  meaning: a grandmother or a grandfather
+  class: S1
+  forms:
+  - grandparents
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɡrænˌpɛrənt/
+  translation_ru: бабушка или дедушка
+  example_en: '[T8]I[/] [D4]visited[/] [T3]my[/] [S1]grandparents[/].'
+  example_ru: Я навестил бабушку с дедушкой.
+  situation: Говорите о семье
+  usage_note: grandparents — «бабушка и дедушка» одним словом.
+- uid: LX-00620
+  lemma: beautiful
+  meaning: very nice to look at
+  class: J5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbjutəfəl/
+  translation_ru: красивый
+  example_en: '[T1]The[/] [S6]lake[/] [D1]was[/] [J5]beautiful[/].'
+  example_ru: Озеро было красивое.
+  situation: Делитесь впечатлением
+  usage_note: 't между гласными — лёгкое «д»: «бьЮдифл».'
+- uid: LX-00621
+  lemma: lazy
+  meaning: not wanting to work or do things
+  class: J6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈleɪzi/
+  translation_ru: ленивый
+  example_en: '[T3]My[/] [S7]weekend[/] [D1]was[/] [A5]very[/] [J6]lazy[/].'
+  example_ru: Выходные у меня были очень ленивые.
+  situation: Рассказываете о выходных
+- uid: LX-00622
+  lemma: last weekend
+  meaning: On the weekend before this one
+  class: A2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌlæst ˈwikɛnd/
+  translation_ru: в прошлые выходные
+  example_en: last weekend
+  example_ru: в прошлые выходные
+  situation: Разговор с коллегой
+  usage_note: 'Без предлога: Last weekend I visited… — «в» не нужно.'
+- uid: LX-00623
+  lemma: all day
+  meaning: From morning to evening
+  class: A2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˌɔl ˈdeɪ/
+  translation_ru: весь день
+  example_en: all day
+  example_ru: весь день
+  situation: Разговор с коллегой
+- uid: LX-00624
+  lemma: Not bad.
+  meaning: A short answer meaning okay or good
+  class: O4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /nɑt ˈbæd/
+  translation_ru: Неплохо.
+  example_en: Not bad.
+  example_ru: Неплохо.
+  situation: Разговор с коллегой
+  usage_note: Обычный ответ на How was…? или How are you?
+- uid: LX-00625
+  lemma: What about you?
+  meaning: Asking the same question back
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌt əˌbaʊt ˈju/
+  translation_ru: А ты? А у тебя?
+  example_en: What about you?
+  example_ru: А у тебя?
+  situation: Разговор с коллегой
+  usage_note: Вежливо вернуть вопрос собеседнику.
+- uid: LX-00626
+  lemma: Me too.
+  meaning: Saying the same is true for you
+  class: X5
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈmi ˈtu/
+  translation_ru: Я тоже.
+  example_en: Me too.
+  example_ru: Я тоже.
+  situation: Разговор с коллегой
+- uid: LX-00627
+  lemma: Back to work!
+  meaning: It is time to work again
+  class: P2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈbæk tə ˈwɝk/
+  translation_ru: За работу!
+  example_en: Back to work!
+  example_ru: За работу!
+  situation: Разговор с коллегой
+- uid: LX-00628
+  lemma: I stayed at home.
+  meaning: Saying you did not go out
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈsteɪd ət ˈhoʊm/
+  translation_ru: Я был дома (никуда не ходил).
+  example_en: I stayed at home.
+  example_ru: Я сидел дома.
+  situation: Разговор с коллегой

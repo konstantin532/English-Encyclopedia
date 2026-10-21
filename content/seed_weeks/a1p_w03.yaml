@@ -1,0 +1,82 @@
+# A1+, неделя 3 «Как прошли выходные: разговор с коллегой». Сфера work, Past Simple на -ed.
+level: A1+
+week: 3
+can_do_ru: 'Я смогу рассказать, что делал в выходные: I visited my grandparents. I cleaned my apartment. — спросить How was your weekend? What about you? и ответить коротко: Not bad. Me too.'
+mission_ru: 'Расскажите коллеге или другу по-английски, что вы делали в прошлые выходные: три глагола на -ed (I cooked…, I watched…, I stayed at home.) и вопрос в ответ: What about you?'
+chunks:
+- LX-00622
+- LX-00623
+- LX-00624
+- LX-00625
+- LX-00626
+- LX-00627
+- LX-00628
+story_beat:
+  intro_ru: Утро понедельника в офисе. Коллега Тома Кейт спрашивает, как прошли выходные.
+  outcome_ru: Том навестил бабушку с дедушкой, убрал квартиру и починил велосипед. Кейт весь день смотрела фильмы. А отчёт к совещанию Том закончил ещё вечером.
+  next_hook_ru: В выходные Анна и Том ходили по магазинам — и купили совсем не то, что хотели. Неделя 4.
+script:
+- speaker: kate
+  emotion: happy
+  text: '[J3]Good[/] [S7]morning[/], [S1]Tom[/]! [A6]How[/] [D1]was[/] [T3]your[/] [S7]weekend[/]?'
+  ru: Доброе утро, Том! Как прошли выходные?
+- speaker: tom
+  emotion: happy
+  text: '[X1]Not[/] [J3]bad[/]. [P3]On[/] [S7]Saturday[/] [T8]I[/] [D4]visited[/] [T3]my[/] [S1]grandparents[/]. [T8]I[/] [D2]cooked[/] [S3]dinner[/] [P5]for[/] [T8]them[/].'
+  ru: Неплохо. В субботу я навестил бабушку с дедушкой. Приготовил им ужин.
+- speaker: kate
+  emotion: surprised
+  text: '[T8]You[/] [D2]cooked[/]? [A5]Really[/]?'
+  ru: Ты готовил? Правда?
+- speaker: tom
+  emotion: happy
+  text: '[O4]Yes[/]! [C1]And[/] [P3]on[/] [S7]Sunday[/] [T8]I[/] [D2]cleaned[/] [T3]my[/] [S2]apartment[/] [C1]and[/] [D2]fixed[/] [T3]my[/] [J2]old[/] [S4]bike[/]. [P3]After[/] [T2]that[/] [T8]I[/] [D2]played[/] [T1]the[/] [S2]guitar[/] [A2]all[/] [S7]day[/].'
+  ru: Да! А в воскресенье я убрал квартиру и починил свой старый велосипед. После этого весь день играл на гитаре.
+- speaker: kate
+  emotion: happy
+  text: '[T1]A[/] [A5]very[/] [J4]busy[/] [S7]weekend[/]!'
+  ru: Очень насыщенные выходные!
+- speaker: tom
+  text: '[T9]What[/] [A6]about[/] [T8]you[/]?'
+  ru: А у тебя?
+- speaker: kate
+  emotion: happy
+  text: '[T8]I[/] [D2]stayed[/] [P3]at[/] [S2]home[/]. [T8]I[/] [D6]watched[/] [N1]three[/] [S10]movies[/] [C1]and[/] [D2]relaxed[/].'
+  ru: Я сидела дома. Посмотрела три фильма и отдыхала.
+- speaker: tom
+  emotion: happy
+  text: '[D1]Were[/] [T8]they[/] [J3]good[/]?'
+  ru: Хорошие были?
+- speaker: kate
+  text: '[T8]I[/] [D3]enjoyed[/] [N1]two[/] [S10]movies[/]. [T8]I[/] [D3]hated[/] [N1]one[/]. [T8]It[/] [D1]was[/] [A5]very[/] [J7]boring[/]!'
+  ru: Два мне понравились. Один я терпеть не могла. Он был очень скучный!
+- speaker: tom
+  emotion: happy
+  text: '[T1]A[/] [J6]lazy[/] [S7]weekend[/]. [T8]I[/] [D3]love[/] [T8]it[/]!'
+  ru: Ленивые выходные. Обожаю!
+- speaker: kate
+  text: '[T8]Me[/] [A5]too[/]. [C5]But[/] [A2]now[/], [P2]back[/] [P2]to[/] [D2]work[/]! [T1]The[/] [S9]meeting[/] [D8]starts[/] [P3]at[/] [N3]ten[/]. [T8]We[/] [D3]need[/] [T1]the[/] [S9]report[/].'
+  ru: Я тоже. Но теперь — за работу! Совещание в десять. Нам нужен отчёт.
+- speaker: tom
+  emotion: happy
+  text: '[T8]I[/] [D8]finished[/] [T8]it[/] [J8]last[/] [S7]night[/]. [T8]I[/] [A5]really[/] [D2]tried[/]!'
+  ru: Я закончил его вчера вечером. Я правда старался!
+twister:
+  number: 17
+  series: contractions
+  text: '[T8]I[/][D1]''m[/] [J4]tired[/]. [T8]I[/] [D2]worked[/], [T8]I[/] [D4]walked[/], [T8]I[/] [D5]talked[/]. [T8]We[/][D1]''re[/] [J4]tired[/]. [T8]We[/] [D2]waited[/] [C1]and[/] [D2]waited[/] [C1]and[/] [D2]waited[/]!'
+  ru: Я устал. Я работал, я гулял, я разговаривал. Мы устали. Мы ждали, ждали и ждали!
+  ipa: /aɪm ˈtaɪɚd | aɪ ˈwɝkt aɪ ˈwɔkt aɪ ˈtɔkt | wɪr ˈtaɪɚd | wi ˈweɪtɪd ən ˈweɪtɪd ən ˈweɪtɪd/
+  focus_sounds:
+  - t
+  - d
+  source: original
+  goal_ru: 'Три звучания окончания -ed: «т» (worked), «д» (played) и «ид» (waited) — рядом с I''m и we''re.'
+  tip_ru: 'После глухих k, p, s, ch -ed звучит как «т»: worked — «уёркт», без гласной. После t и d — отдельный слог «ид»: waited — «уЭйтид». В остальных случаях — «д»: played, stayed.'
+  warmup:
+  - '[D2]worked[/], [D4]walked[/], [D5]talked[/]'
+  - '[D2]played[/], [D2]stayed[/], [D2]cleaned[/]'
+  - '[D2]waited[/], [D4]visited[/], [D2]painted[/]'
+  - '[T8]I[/][D1]''m[/] [J4]tired[/]. [T8]I[/] [D2]worked[/] [C1]and[/] [D4]walked[/].'
+  target_line: I finished it last night.
+  own_ru: 'Скажите три вещи, которые вы делали вчера, с разными -ed: I worked… I played… I waited…'

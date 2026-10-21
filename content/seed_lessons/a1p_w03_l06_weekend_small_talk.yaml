@@ -1,0 +1,251 @@
+slug: a1p-weekend-small-talk
+level: A1+
+week: 3
+order: 6
+focus: O
+minutes: 35
+title: 'Разговор в понедельник: Not bad. What about you?'
+summary: 'Короткий разговор с коллегой о выходных: ответить Not bad., вернуть вопрос What about you?, согласиться Me too. и перейти к делу: Back to work! The meeting starts at ten.'
+units:
+- LX-00597
+- LX-00601
+- LX-00608
+- LX-00609
+- LX-00610
+- LX-00611
+- LX-00612
+- LX-00613
+- LX-00615
+- LX-00616
+- LX-00617
+- LX-00618
+- LX-00620
+- LX-00621
+- LX-00624
+- LX-00625
+- LX-00626
+- LX-00627
+sound_notes:
+- text: What about you?
+  ipa: /ˈwʌɾ əˌbaʊt ˈju/
+  note_ru: 't в what перед гласной — лёгкое «д»: «уадэбаут ю»; ударение на you'
+- text: Not bad.
+  ipa: /nɑt ˈbæd/
+  note_ru: t в not почти не слышно; bad — широкое «э», как в cat
+- text: The meeting starts at ten.
+  ipa: /ðə ˈmiɾɪŋ ˈstɑrts ət ˈtɛn/
+  note_ru: 'meeting — «мИдин»: t между гласными смягчается'
+contractions:
+- full: it is
+  short: it's
+  ipa: /ɪts/
+  note_ru: It's a lazy weekend — в настоящем сокращаем; it was не сокращается.
+layers:
+- number: 1
+  body: 'В американском офисе понедельник начинается с короткого small talk: «Как выходные?» Отвечают коротко, задают вопрос в ответ — и через минуту переходят к работе.
+
+
+    > [T9]What[/] [A6]about[/] [T8]you[/]? — А у тебя?
+
+    > [T8]I[/] [D2]stayed[/] [P3]at[/] [S2]home[/]. [T8]I[/] [D6]watched[/] [N1]three[/] [S10]movies[/] [C1]and[/] [D2]relaxed[/]. — Я сидела дома. Посмотрела три фильма и отдыхала.
+
+    '
+- number: 2
+  body: '**Colleague** пришло из латыни: *collega* — «тот, кого выбрали вместе с тобой». **Meeting** — от глагола *meet*, «встречаться»: совещание — это просто «встреча» по работе.
+
+    '
+- number: 3
+  body: 'Схема разговора:
+
+
+    > [T8]I[/] [D3]enjoyed[/] [N1]two[/] [S10]movies[/]. [T8]I[/] [D3]hated[/] [N1]one[/]. [T8]It[/] [D1]was[/] [A5]very[/] [J7]boring[/]! — Два мне понравились. Один я терпеть не могла. Он был очень скучный!
+
+
+    - Вопрос: **How was your weekend?**
+
+    - Короткий ответ: **Great! / Not bad. / It was boring.**
+
+    - Вопрос в ответ: **What about you?**
+
+    - Согласие: **Me too.**
+
+    - К делу: **Back to work!**
+
+    '
+- number: 4
+  body: '**Почему «Me too», а не «I too»?** В коротком ответе без глагола англичане ставят **me**: *Me too.* Полностью — *I love it too*. А вот «I too» звучит книжно.
+
+
+    > [T8]Me[/] [A5]too[/]. [C5]But[/] [A2]now[/], [S5]back[/] [P2]to[/] [D2]work[/]! [T1]The[/] [S9]meeting[/] [D8]starts[/] [P3]at[/] [N3]ten[/]. [T8]We[/] [D3]need[/] [T1]the[/] [S9]report[/]. — Я тоже. Но теперь — за работу! Совещание в десять. Нам нужен отчёт.
+
+
+    **Need** — «нужно». По-русски «мне нужно», по-английски «я нуждаюсь»: **I need**, **we need**.
+
+
+    **Диагностика понимания:** коллега говорит: *I love lazy weekends.* Вы тоже. Что сказать: *Me too* или *I too*?
+
+
+    **Разбор:** *Me too.* — так говорят в разговоре.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **Not bad** — «неплохо», то есть нормально или даже хорошо.
+
+    - **I enjoyed it** — мне понравилось; после enjoy всегда стоит, что именно: I enjoyed the concert.
+
+    - **I hated it** — мне ужасно не понравилось. Сильное слово, но в разговоре о фильме — нормально.
+
+    - **A lazy weekend** — ленивые выходные, это скорее хорошо.
+
+
+    Работа: **colleague** — коллега, **meeting** — совещание, **project** — проект, **report** — отчёт. Выходные на природе: **lake** — озеро, **river** — река, **boat** — лодка, **flower** — цветок, **picture** — картина, **beautiful** — красивый.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «I enjoyed» без продолжения — нужно что: **I enjoyed the movie**.
+
+    - «Me need the report» — нужно **We need / I need**.
+
+    - «I too» — в разговоре **Me too**.
+
+    - «Not bad» — это не «плохо», а «неплохо, нормально».
+
+    '
+- number: 7
+  body: 'Шесть заданий: ответить на How was your weekend?, вернуть вопрос, согласиться, сказать, что нужно, рассказать о понравившемся и перейти к работе.
+
+
+    **Проверка маленького шага:** коротко ответили — спросили в ответ What about you? — согласились Me too.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00194
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Коллега спрашивает: How was your weekend? Выходные были нормальные. Как ответить?'
+  options:
+  - Not bad.
+  - Not good bad.
+  - No bad.
+  answer: Not bad.
+  hint_ru: Неплохо — not + bad.
+  explanation_ru: Not bad. — «неплохо», обычный короткий ответ.
+  units:
+  - LX-00624
+- order: 2
+  uid: EX-00195
+  kind: fill
+  stage: substitution
+  prompt_ru: 'Вы рассказали о себе. Верните вопрос коллеге: «А у тебя?»'
+  prompt_en: What ___ you?
+  answer: about
+  hint_ru: What about…?
+  explanation_ru: What about you? — вежливо вернуть вопрос.
+  units:
+  - LX-00625
+- order: 3
+  uid: EX-00196
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Совещание начинается в десять».'
+  options:
+  - ten
+  - The
+  - starts
+  - at
+  - meeting
+  answer: The meeting starts at ten
+  hint_ru: The meeting + starts + at ten.
+  explanation_ru: The meeting starts at ten. Время — с at.
+  units:
+  - LX-00610
+- order: 4
+  uid: EX-00197
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вы ездили на озеро. Скажите коллеге: «Мне очень понравилось озеро».'
+  prompt_en: ___
+  answer: I really enjoyed the lake.
+  accepted:
+  - I enjoyed the lake.
+  - I really enjoyed the lake
+  - I enjoyed the lake very much.
+  hint_ru: I enjoyed + the lake.
+  explanation_ru: I (really) enjoyed the lake. После enjoy — что именно понравилось.
+  units:
+  - LX-00597
+  - LX-00615
+- order: 5
+  uid: EX-00198
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Коллега: I love lazy weekends. Вы тоже. Что сказать?'
+  options:
+  - Me too.
+  - I too.
+  - Me also love.
+  answer: Me too.
+  hint_ru: Короткий ответ — me.
+  explanation_ru: Me too. — так соглашаются в разговоре.
+  units:
+  - LX-00626
+  - LX-00621
+- order: 6
+  uid: EX-00199
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Начальник ждёт отчёт. Скажите коллеге: «Нам нужен отчёт».'
+  prompt_en: We ___ the report.
+  answer: need
+  hint_ru: Нужно — need.
+  explanation_ru: We need the report. По-английски «мы нуждаемся».
+  units:
+  - LX-00601
+  - LX-00612
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Неплохо. А у тебя?
+  answer: Not bad. What about you?
+  hint_ru: Not bad + What about you?
+  explanation_ru: Not bad. What about you? — ответ и вопрос в ответ.
+  review_of: 1
+  units:
+  - LX-00624
+  - LX-00625
+- order: 2
+  kind: translate
+  prompt_ru: Я тоже. За работу!
+  answer: Me too. Back to work!
+  hint_ru: Me too + Back to work!
+  explanation_ru: Me too. Back to work!
+  review_of: 5
+  units:
+  - LX-00626
+  - LX-00627
+- order: 3
+  kind: translate
+  prompt_ru: Озеро было красивое.
+  answer: The lake was beautiful.
+  hint_ru: The lake + was + beautiful.
+  explanation_ru: The lake was beautiful.
+  review_of: 4
+  units:
+  - LX-00615
+  - LX-00620
+- order: 4
+  kind: translate
+  prompt_ru: Мне нужна ручка.
+  answer: I need a pen.
+  hint_ru: I need + a pen.
+  explanation_ru: I need a pen. Не «me need».
+  review_of: 6
+  units:
+  - LX-00601
