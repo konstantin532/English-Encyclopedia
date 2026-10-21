@@ -1,0 +1,256 @@
+slug: a1p-describe-things
+level: A1+
+week: 5
+order: 10
+focus: J
+minutes: 35
+title: 'Описать вещь: It''s pink, with a long handle. That''s mine!'
+summary: 'Как описать потерянную вещь: цвет, длина, ручка, что внутри. Отличаем my и mine, same и different и говорим в бюро находок: What color is it? Here it is!'
+units:
+- LX-00670
+- LX-00673
+- LX-00674
+- LX-00675
+- LX-00676
+- LX-00677
+- LX-00678
+- LX-00679
+- LX-00680
+- LX-00681
+- LX-00682
+- LX-00683
+- LX-00684
+- LX-00685
+- LX-00686
+- LX-00689
+- LX-00692
+- LX-00696
+- LX-00697
+- LX-00698
+sound_notes:
+- text: What color is it?
+  ipa: /ˈwʌt ˈkʌlɚ ɪz ɪt/
+  note_ru: color — «кАлэр», ударение на первый слог, r в конце звучит
+- text: That's mine!
+  ipa: /ˈðæts ˈmaɪn/
+  note_ru: mine — «майн», ударное и протяжное
+- text: It's pink, with a long black handle.
+  ipa: /ɪts ˈpɪŋk wɪð ə ˈlɔŋ ˈblæk ˈhændəl/
+  note_ru: handle — «хэндл», последний слог без гласной
+contractions:
+- full: that is
+  short: that's
+  ipa: /ðæts/
+  note_ru: That's mine! — Это моё!
+layers:
+- number: 1
+  body: 'Чтобы зонт нашёлся, Анне нужно его описать: какой цвет, какая ручка. А когда зонт находится, сказать главное: «Это мой!»
+
+
+    > [T9]What[/] [S2]color[/] [D1]is[/] [T8]it[/]? [D7]Can[/] [T8]you[/] [D5]describe[/] [T8]it[/]? — Какого он цвета? Можете его описать?
+
+    > [T8]It[/] [D1]is[/] [J2]pink[/], [P4]with[/] [T1]a[/] [J1]long[/] [J2]black[/] [S2]handle[/]. [T8]It[/] [D1]was[/] [T1]a[/] [S2]gift[/]. — Розовый, с длинной чёрной ручкой. Это подарок.
+
+    '
+- number: 2
+  body: '**Describe** — от латинского *describere*, «списать, срисовать»: описать вещь — словами «нарисовать» её. **Mine** — старая форма *my*: раньше перед гласной говорили *mine eyes*, «мои глаза». Сейчас mine стоит только отдельно, без существительного.
+
+    '
+- number: 3
+  body: 'Схема описания:
+
+
+    > [D2]Let[/] [T8]me[/] [D6]check[/]. [T2]This[/] [J2]pink[/] [S2]umbrella[/] [D1]has[/] [T1]a[/] [J1]short[/] [S2]handle[/]. — Сейчас проверю. У этого розового зонта ручка короткая.
+
+
+    - Цвет: **It''s pink / gray / purple.**
+
+    - Деталь: **with a long handle**, **with a small pocket**.
+
+    - Порядок: размер или длина, потом цвет, потом вещь: **a long black handle**.
+
+    - Что внутри: **My keys were inside.**
+
+    - Сравнить: **the same** — тот же, **different** — другой.
+
+    '
+- number: 4
+  body: '**my или mine?** **My** всегда стоит перед словом: *my umbrella*. **Mine** заменяет «моё + слово», после него ничего нет: *That''s mine!* Так же *yours, his, hers*.
+
+
+    > [O4]No[/], [T2]that[/] [D1]is[/] [X1]not[/] [T9]mine[/]. [T3]My[/] [S2]umbrella[/] [D1]is[/] [J3]different[/]. — Нет, это не мой. Мой другой.
+
+
+    **Диагностика понимания:** что верно: *That umbrella is my* или *That umbrella is mine*?
+
+
+    **Разбор:** *That umbrella is mine.* В конце, без слова — mine.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [T2]That[/] [D1]is[/] [T9]mine[/]! [O2]Thank[/] [T8]you[/]! [T8]I[/] [D1]am[/] [A5]very[/] [J4]lucky[/]. — Это мой! Спасибо! Мне очень повезло.
+
+
+    - **Here it is!** — вот он!
+
+    - **I''m lucky** — мне повезло (буквально «я везучий»).
+
+    - **another one** — ещё один, другой: We have another one.
+
+
+    Слова: **glasses** — очки, **backpack** — рюкзак, **handle** — ручка, **corner** — угол, **long / short** — длинный / короткий, **purple** — фиолетовый, **gray** — серый, **inside / outside** — внутри / снаружи, **sure** — уверенный.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «It is my» — без слова после нужно **mine**: It is mine.
+
+    - «a black long handle» — сначала длина, потом цвет: **a long black handle**.
+
+    - «the same color» — с **the** обязательно.
+
+    - «What color it is?» — в вопросе is впереди: **What color is it?**
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать my или mine, задать вопрос о цвете, собрать описание, описать свой рюкзак, сравнить два зонта и сказать «Вот он!».
+
+
+    **Проверка маленького шага:** цвет + деталь with…; my + слово, mine — без слова.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00218
+  kind: choice
+  stage: recognition
+  prompt_ru: Вы узнали свой зонт. Что сказать?
+  options:
+  - That's mine!
+  - That's my!
+  - That's me!
+  answer: That's mine!
+  hint_ru: Без слова после — mine.
+  explanation_ru: 'That''s mine! My ставят только перед словом: my umbrella.'
+  units:
+  - LX-00689
+  - LX-00698
+- order: 2
+  uid: EX-00219
+  kind: fill
+  stage: substitution
+  prompt_ru: Спросите, какого цвета рюкзак.
+  prompt_en: What ___ is it?
+  answer: color
+  accepted:
+  - colour
+  hint_ru: Цвет — color.
+  explanation_ru: What color is it? — без предлога, в отличие от русского «какого цвета».
+  units:
+  - LX-00697
+- order: 3
+  uid: EX-00220
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «У него длинная чёрная ручка».'
+  options:
+  - handle
+  - It
+  - black
+  - long
+  - a
+  - has
+  answer: It has a long black handle
+  hint_ru: Длина, потом цвет.
+  explanation_ru: It has a long black handle. Сначала long, потом black.
+  units:
+  - LX-00675
+  - LX-00677
+- order: 4
+  uid: EX-00221
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вы забыли рюкзак в кафе. Опишите его: «Он фиолетовый, с маленьким карманом».'
+  prompt_en: ___
+  answer: It's purple, with a small pocket.
+  accepted:
+  - It is purple, with a small pocket.
+  - It's purple with a small pocket.
+  - It is purple with a small pocket.
+  hint_ru: It's + цвет + with…
+  explanation_ru: It's purple, with a small pocket. Деталь — через with.
+  units:
+  - LX-00679
+  - LX-00674
+- order: 5
+  uid: EX-00222
+  kind: choice
+  stage: recognition
+  prompt_ru: Два зонта одного цвета. Как сказать?
+  options:
+  - They are the same color.
+  - They are same color.
+  - They are different color.
+  answer: They are the same color.
+  hint_ru: same — всегда с the.
+  explanation_ru: the same color — тот же цвет. Different — разный.
+  units:
+  - LX-00682
+- order: 6
+  uid: EX-00223
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Вы долго искали ключи и нашли. Скажите: «Вот они!» (о ключах — they).'
+  prompt_en: Here ___ are!
+  answer: they
+  hint_ru: Ключи — много, значит they.
+  explanation_ru: Here they are! Об одной вещи — Here it is!
+  units:
+  - LX-00696
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Это мой!
+  answer: That's mine!
+  accepted:
+  - That is mine!
+  - It's mine!
+  - It is mine!
+  hint_ru: mine — без слова после.
+  explanation_ru: That's mine!
+  review_of: 1
+  units:
+  - LX-00698
+- order: 2
+  kind: translate
+  prompt_ru: Какого он цвета?
+  answer: What color is it?
+  hint_ru: What color + is it?
+  explanation_ru: What color is it?
+  review_of: 2
+  units:
+  - LX-00697
+- order: 3
+  kind: translate
+  prompt_ru: Мои очки были внутри.
+  answer: My glasses were inside.
+  hint_ru: glasses — много, значит were.
+  explanation_ru: My glasses were inside. Glasses — всегда множественное.
+  review_of: 4
+  units:
+  - LX-00673
+  - LX-00685
+- order: 4
+  kind: translate
+  prompt_ru: Мой зонт другой.
+  answer: My umbrella is different.
+  hint_ru: different — другой.
+  explanation_ru: My umbrella is different.
+  review_of: 5
+  units:
+  - LX-00681

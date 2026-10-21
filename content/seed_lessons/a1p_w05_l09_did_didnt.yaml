@@ -1,0 +1,251 @@
+slug: a1p-did-didnt
+level: A1+
+week: 5
+order: 9
+focus: D
+minutes: 40
+title: Did you…? — вопросы и отрицания в прошлом
+summary: 'Как спросить о прошлом и сказать «не делал»: Did you take bus twelve? Which bus did you take? I didn''t sit. Короткие ответы Yes, I did. / No, I didn''t.'
+units:
+- LX-00666
+- LX-00667
+- LX-00668
+- LX-00669
+- LX-00671
+- LX-00672
+- LX-00687
+- LX-00688
+- LX-00690
+- LX-00691
+- LX-00693
+- LX-00694
+- LX-00695
+- LX-00699
+sound_notes:
+- text: Did you take it?
+  ipa: /ˈdɪdʒə ˈteɪk ɪt/
+  note_ru: 'did you в быстрой речи сливается: «диджу» или даже «джу»'
+- text: I didn't sit.
+  ipa: /aɪ ˈdɪdənt ˈsɪt/
+  note_ru: didn't — «дИднт»; t в конце почти не слышно перед согласной
+- text: Which bus did you take?
+  ipa: /ˈwɪtʃ ˈbʌs dɪd jə ˈteɪk/
+  note_ru: ударение на which, bus и take; did you безударные
+contractions:
+- full: did not
+  short: didn't
+  ipa: /ˈdɪdənt/
+  note_ru: I didn't sit — я не сидела. В разговоре почти всегда didn't.
+layers:
+- number: 1
+  body: 'В бюро находок сотрудник задаёт Анне вопросы о вчерашнем дне. Для вопросов и отрицаний в прошлом английскому нужен помощник — **did**.
+
+
+    > [T9]Which[/] [S4]bus[/] [D1]did[/] [T8]you[/] [D2]take[/]? — На каком автобусе вы ехали?
+
+    > [D1]Did[/] [T8]you[/] [D2]sit[/] [P1]in[/] [T1]the[/] [S4]front[/] [C1]or[/] [P1]in[/] [T1]the[/] [S5]back[/]? — Вы сидели впереди или сзади?
+
+    '
+- number: 2
+  body: '**did** — прошедшая форма **do**. В настоящем вы уже спрашивали *Do you like…?* и говорили *I don''t…*. В прошлом всё то же самое, только **do → did**. Do-помощник появился в английском около 500 лет назад, и с тех пор без него вопросы с обычными глаголами не строят.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [T8]I[/] [D1]did[/] [X1]not[/] [D2]sit[/]. [T9]There[/] [D1]were[/] [O4]no[/] [S2]seats[/]. — Я не сидела. Мест не было.
+
+
+    - Вопрос: **Did + you + глагол?** — Did you take the bus?
+
+    - С вопросительным словом: **Which / Where / What + did + you + глагол?**
+
+    - Отрицание: **I did not (didn''t) + глагол** — I didn''t sit.
+
+    - Главное: после did глагол без -ed и в основной форме: did you **take**, не *did you took*.
+
+    - Короткие ответы: **Yes, I did. / No, I didn''t.**
+
+    '
+- number: 4
+  body: '**Почему «Did you take», а не «Did you took»?** Прошлое уже показано в did. Два раза его не ставят — глагол возвращается в словарную форму. Так же и в отрицании: *I didn''t go*, не *I didn''t went*.
+
+
+    > [T1]A[/] [S9]driver[/] [D2]brought[/] [T8]it[/] [J8]last[/] [S7]night[/]. — Его принёс водитель вчера вечером.
+
+
+    В утвердительной фразе did не нужен: *A driver brought it.*
+
+
+    **Диагностика понимания:** что верно: *Did you saw my umbrella?* или *Did you see my umbrella?*
+
+
+    **Разбор:** *Did you see…?* После did — основная форма.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **Let me check.** — сейчас проверю.
+
+    - **Are you sure?** — вы уверены?
+
+    - **Don''t worry.** — не волнуйтесь.
+
+    - **Maybe it''s on the bus.** — может быть, он в автобусе.
+
+
+    Глаголы недели: **stand — stood** (стоять), **put — put** (класть), **keep — kept** (хранить), **happen** (случаться), **worry** (волноваться), **check** (проверять). Слова: **only** — только, **nothing** — ничего, **everything** — всё.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «Did you took?» — после did основная форма: **Did you take?**
+
+    - «I didn''t went» — **I didn''t go**.
+
+    - «Where you went?» — нужен did: **Where did you go?**
+
+    - «Yes, I took» в коротком ответе — говорят **Yes, I did.**
+
+    '
+- number: 7
+  body: 'Шесть заданий: узнать вопрос с did, ответить коротко, собрать вопрос Where did you…?, рассказать, чего вы не делали, найти ошибку и успокоить человека.
+
+
+    **Проверка маленького шага:** did — помощник прошлого. После него глагол в основной форме.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00212
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Спросите: «Вы ехали на двенадцатом автобусе?»'
+  options:
+  - Did you take bus twelve?
+  - Did you took bus twelve?
+  - You took bus twelve did?
+  answer: Did you take bus twelve?
+  hint_ru: Did + you + основная форма.
+  explanation_ru: Did you take…? После did — take, а не took.
+  units:
+  - LX-00699
+- order: 2
+  uid: EX-00213
+  kind: fill
+  stage: substitution
+  prompt_ru: 'Вас спрашивают: Did you sit in the front? Вы не сидели. Ответьте коротко.'
+  prompt_en: No, I ___.
+  answer: didn't
+  accepted:
+  - did not
+  hint_ru: did + not.
+  explanation_ru: No, I didn't. Короткий ответ — с did.
+  units:
+  - LX-00699
+- order: 3
+  uid: EX-00214
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите вопрос: «Куда ты положил ключи?»'
+  options:
+  - the
+  - did
+  - Where
+  - put
+  - you
+  - keys
+  answer: Where did you put the keys
+  hint_ru: Where + did + you + put…
+  explanation_ru: Where did you put the keys? put — и основа, и прошедшее, но после did это основная форма.
+  units:
+  - LX-00671
+- order: 4
+  uid: EX-00215
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: друг спрашивает, смотрели ли вы вчера фильм. Нет, не смотрели. Скажите полной фразой.'
+  prompt_en: ___
+  answer: I didn't watch the movie.
+  accepted:
+  - I did not watch the movie.
+  - No, I didn't watch the movie.
+  - I didn't watch it.
+  - No, I didn't watch it.
+  - I didn't watch the movie yesterday.
+  hint_ru: I didn't + watch…
+  explanation_ru: I didn't watch the movie. После didn't — watch без -ed.
+  units:
+  - LX-00699
+- order: 5
+  uid: EX-00216
+  kind: choice
+  stage: recognition
+  prompt_ru: Где ошибка? Выберите правильную фразу.
+  options:
+  - I didn't go to the gym.
+  - I didn't went to the gym.
+  - I not went to the gym.
+  answer: I didn't go to the gym.
+  hint_ru: После didn't — основная форма.
+  explanation_ru: I didn't go. Прошлое уже в did, went не нужен.
+  units:
+  - LX-00699
+- order: 6
+  uid: EX-00217
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Подруга расстроена: опоздала на автобус. Успокойте её: «Не волнуйся».'
+  prompt_en: Don't ___.
+  answer: worry
+  hint_ru: Волноваться — worry.
+  explanation_ru: Don't worry. — самая частая фраза поддержки.
+  units:
+  - LX-00668
+  - LX-00693
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Вы ехали на автобусе?
+  answer: Did you take the bus?
+  accepted:
+  - Did you take a bus?
+  hint_ru: Did + you + take.
+  explanation_ru: Did you take the bus?
+  review_of: 1
+  units:
+  - LX-00699
+- order: 2
+  kind: translate
+  prompt_ru: Да (ехал).
+  answer: Yes, I did.
+  hint_ru: Короткий ответ с did.
+  explanation_ru: Yes, I did.
+  review_of: 2
+  units:
+  - LX-00699
+- order: 3
+  kind: translate
+  prompt_ru: Где ты стоял?
+  answer: Where did you stand?
+  hint_ru: Where + did + you + stand.
+  explanation_ru: Where did you stand? После did — stand, не stood.
+  review_of: 3
+  units:
+  - LX-00666
+- order: 4
+  kind: translate
+  prompt_ru: Я не сидел.
+  answer: I didn't sit.
+  accepted:
+  - I did not sit.
+  hint_ru: didn't + sit.
+  explanation_ru: I didn't sit.
+  review_of: 5
+  units:
+  - LX-00699

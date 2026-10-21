@@ -1,0 +1,459 @@
+# Неделя 5 A1+ «Бюро находок»: did / didn't, описание вещи. CEFR не сверялся.
+level: A1+
+week: 5
+units:
+- uid: LX-00666
+  lemma: stand
+  meaning: to be on your feet
+  class: D2
+  forms:
+  - stands
+  - stood
+  - standing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /stænd/
+  translation_ru: стоять
+  example_en: '[T8]I[/] [D2]stood[/] [P1]near[/] [T1]the[/] [S2]door[/].'
+  example_ru: Я стояла у двери.
+  situation: Описываете, где были
+  usage_note: Прошедшее — stood.
+- uid: LX-00667
+  lemma: happen
+  meaning: to take place
+  class: D2
+  forms:
+  - happens
+  - happened
+  - happening
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhæpən/
+  translation_ru: случаться
+  example_en: '[T8]It[/] [D2]happens[/] [T6]every[/] [S7]day[/].'
+  example_ru: Такое случается каждый день.
+  situation: Успокаиваете человека
+- uid: LX-00668
+  lemma: worry
+  meaning: to think about problems and feel bad
+  class: D3
+  forms:
+  - worries
+  - worried
+  - worrying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈwɝi/
+  translation_ru: волноваться
+  example_en: '[D1]Do[/][X1]n''t[/] [D3]worry[/]!'
+  example_ru: Не волнуйтесь!
+  situation: Успокаиваете человека
+- uid: LX-00669
+  lemma: check
+  meaning: to look at something to find out
+  class: D6
+  forms:
+  - checks
+  - checked
+  - checking
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tʃɛk/
+  translation_ru: проверять
+  example_en: '[T8]I[/] [D6]checked[/] [T3]my[/] [S2]bag[/].'
+  example_ru: Я проверил сумку.
+  situation: Ищете вещь
+- uid: LX-00670
+  lemma: describe
+  meaning: to say what something is like
+  class: D5
+  forms:
+  - describes
+  - described
+  - describing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dɪˈskraɪb/
+  translation_ru: описывать
+  example_en: '[D7]Can[/] [T8]you[/] [D5]describe[/] [T8]it[/]?'
+  example_ru: Можете описать его?
+  situation: Описываете потерянную вещь
+- uid: LX-00671
+  lemma: put
+  meaning: to move something to a place
+  class: D2
+  forms:
+  - puts
+  - putting
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /pʊt/
+  translation_ru: класть, ставить
+  example_en: '[T8]I[/] [D2]put[/] [T3]my[/] [S2]keys[/] [P1]in[/] [T3]my[/] [S2]bag[/].'
+  example_ru: Я положил ключи в сумку.
+  situation: Вспоминаете, куда положили
+  usage_note: 'Прошедшее совпадает с основой: put — put.'
+- uid: LX-00672
+  lemma: keep
+  meaning: to have something and not give it away
+  class: D2
+  forms:
+  - keeps
+  - kept
+  - keeping
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kip/
+  translation_ru: хранить, держать у себя
+  example_en: '[T8]We[/] [D2]keep[/] [S2]umbrellas[/] [P3]for[/] [N1]thirty[/] [S7]days[/].'
+  example_ru: Мы храним зонты тридцать дней.
+  situation: Бюро находок
+  usage_note: Прошедшее — kept.
+- uid: LX-00673
+  lemma: glasses
+  meaning: two pieces of glass you wear to see better
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɡlæsɪz/
+  translation_ru: очки
+  example_en: '[T3]My[/] [S2]glasses[/] [D1]are[/] [P1]in[/] [T3]my[/] [S2]backpack[/].'
+  example_ru: Мои очки в рюкзаке.
+  situation: Ищете вещи
+  usage_note: 'Только во множественном: my glasses are.'
+- uid: LX-00674
+  lemma: backpack
+  meaning: a bag you carry on your back
+  class: S2
+  forms:
+  - backpacks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbækpæk/
+  translation_ru: рюкзак
+  example_en: '[T8]I[/] [D6]forgot[/] [T3]my[/] [S2]backpack[/] [P1]on[/] [T1]the[/] [S4]bus[/].'
+  example_ru: Я забыл рюкзак в автобусе.
+  situation: Бюро находок
+- uid: LX-00675
+  lemma: handle
+  meaning: the part you hold in your hand
+  class: S2
+  forms:
+  - handles
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhændəl/
+  translation_ru: ручка (зонта, двери)
+  example_en: '[T1]The[/] [S2]umbrella[/] [D1]has[/] [T1]a[/] [J1]long[/] [S2]handle[/].'
+  example_ru: У зонта длинная ручка.
+  situation: Описываете вещь
+  usage_note: pen — ручка для письма, handle — ручка, за которую держат.
+- uid: LX-00676
+  lemma: corner
+  meaning: the place where two walls or streets meet
+  class: S4
+  forms:
+  - corners
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkɔrnɚ/
+  translation_ru: угол
+  example_en: '[T8]It[/] [D1]was[/] [P1]in[/] [T1]the[/] [S4]corner[/].'
+  example_ru: Он был в углу.
+  situation: Описываете место
+- uid: LX-00677
+  lemma: long
+  meaning: big from one end to the other
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /lɔŋ/
+  translation_ru: длинный, долгий
+  example_en: '[T8]It[/] [D1]has[/] [T1]a[/] [J1]long[/] [J2]black[/] [S2]handle[/].'
+  example_ru: У него длинная чёрная ручка.
+  situation: Описываете вещь
+- uid: LX-00678
+  lemma: short
+  meaning: not long
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ʃɔrt/
+  translation_ru: короткий
+  example_en: '[T1]This[/] [S2]umbrella[/] [D1]has[/] [T1]a[/] [J1]short[/] [S2]handle[/].'
+  example_ru: У этого зонта короткая ручка.
+  situation: Описываете вещь
+- uid: LX-00679
+  lemma: purple
+  meaning: the color of red and blue together
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈpɝpəl/
+  translation_ru: фиолетовый
+  example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [J2]purple[/] [S2]backpack[/].'
+  example_ru: У меня фиолетовый рюкзак.
+  situation: Описываете вещь
+- uid: LX-00680
+  lemma: gray
+  meaning: the color of black and white together
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡreɪ/
+  translation_ru: серый
+  example_en: '[T3]My[/] [S2]phone[/] [D1]is[/] [J2]gray[/].'
+  example_ru: Мой телефон серый.
+  situation: Описываете вещь
+  usage_note: Американское написание gray, британское — grey.
+- uid: LX-00681
+  lemma: different
+  meaning: not the same
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈdɪfrənt/
+  translation_ru: другой, разный
+  example_en: '[T1]This[/] [S2]umbrella[/] [D1]is[/] [J3]different[/].'
+  example_ru: Этот зонт другой.
+  situation: Сравниваете вещи
+  usage_note: 'Часто два слога: «дИфрэнт».'
+- uid: LX-00682
+  lemma: same
+  meaning: not different
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /seɪm/
+  translation_ru: тот же, одинаковый
+  example_en: '[T8]It[/][D1]''s[/] [T1]the[/] [J3]same[/] [S2]color[/].'
+  example_ru: Это тот же цвет.
+  situation: Сравниваете вещи
+  usage_note: 'Всегда с the: the same.'
+- uid: LX-00683
+  lemma: lucky
+  meaning: having good things happen by chance
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈlʌki/
+  translation_ru: везучий
+  example_en: '[T8]You[/] [D1]are[/] [A5]very[/] [J4]lucky[/]!'
+  example_ru: Вам очень повезло!
+  situation: Радуетесь находке
+  usage_note: 'По-русски «мне повезло», по-английски «я везучий»: I am lucky.'
+- uid: LX-00684
+  lemma: sure
+  meaning: knowing that something is true
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ʃʊr/
+  translation_ru: уверенный
+  example_en: '[D1]Are[/] [T8]you[/] [J4]sure[/]?'
+  example_ru: Вы уверены?
+  situation: Уточняете
+- uid: LX-00685
+  lemma: inside
+  meaning: in a place or thing
+  class: A3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌɪnˈsaɪd/
+  translation_ru: внутри
+  example_en: '[T3]My[/] [S2]keys[/] [D1]were[/] [A3]inside[/].'
+  example_ru: Ключи были внутри.
+  situation: Описываете вещь
+- uid: LX-00686
+  lemma: outside
+  meaning: not in a building
+  class: A3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌaʊtˈsaɪd/
+  translation_ru: снаружи, на улице
+  example_en: '[T8]I[/] [D4]waited[/] [A3]outside[/].'
+  example_ru: Я ждал на улице.
+  situation: Описываете место
+- uid: LX-00687
+  lemma: maybe
+  meaning: it is possible
+  class: A8
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmeɪbi/
+  translation_ru: может быть
+  example_en: '[A8]Maybe[/] [T8]it[/][D1]''s[/] [P1]on[/] [T1]the[/] [S4]bus[/].'
+  example_ru: Может быть, он в автобусе.
+  situation: Предполагаете
+- uid: LX-00688
+  lemma: only
+  meaning: no more than
+  class: A5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈoʊnli/
+  translation_ru: только
+  example_en: '[T8]I[/] [D1]have[/] [A5]only[/] [N1]one[/] [S2]umbrella[/].'
+  example_ru: У меня только один зонт.
+  situation: Уточняете
+- uid: LX-00689
+  lemma: mine
+  meaning: the one that is mine
+  class: T9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /maɪn/
+  translation_ru: мой (без существительного)
+  example_en: '[T2]That[/] [D1]is[/] [T9]mine[/]!'
+  example_ru: Это мой!
+  situation: Узнаёте свою вещь
+  usage_note: 'my + слово: my umbrella; без слова — mine: It is mine.'
+- uid: LX-00690
+  lemma: nothing
+  meaning: not anything
+  class: T9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈnʌθɪŋ/
+  translation_ru: ничего
+  example_en: '[T9]Nothing[/] [D1]was[/] [P1]in[/] [T1]the[/] [S2]bag[/].'
+  example_ru: В сумке ничего не было.
+  situation: Описываете вещь
+  usage_note: 'С nothing второе отрицание не нужно: Nothing was there.'
+- uid: LX-00691
+  lemma: everything
+  meaning: all things
+  class: T9
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɛvriθɪŋ/
+  translation_ru: всё
+  example_en: '[T9]Everything[/] [D1]is[/] [P1]in[/] [T3]my[/] [S2]backpack[/].'
+  example_ru: Всё у меня в рюкзаке.
+  situation: Проверяете вещи
+  usage_note: Everything is — глагол в единственном числе.
+- uid: LX-00692
+  lemma: another
+  meaning: one more, or a different one
+  class: T5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /əˈnʌðɚ/
+  translation_ru: ещё один, другой
+  example_en: '[T8]We[/] [D1]have[/] [T5]another[/] [S2]umbrella[/].'
+  example_ru: У нас есть ещё один зонт.
+  situation: Предлагаете вариант
+- uid: LX-00693
+  lemma: Don't worry.
+  meaning: Saying everything is okay
+  class: O6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈdoʊnt ˈwɝi/
+  translation_ru: Не волнуйтесь.
+  example_en: Don't worry.
+  example_ru: Не переживай.
+  situation: Успокаиваете человека
+- uid: LX-00694
+  lemma: Are you sure?
+  meaning: Asking if someone knows for certain
+  class: F2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɑr ju ˈʃʊr/
+  translation_ru: Вы уверены?
+  example_en: Are you sure?
+  example_ru: Точно?
+  situation: Уточняете
+- uid: LX-00695
+  lemma: Let me check.
+  meaning: Saying you will look and find out
+  class: F1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈlɛt mi ˈtʃɛk/
+  translation_ru: Сейчас проверю.
+  example_en: Let me check.
+  example_ru: Дайте проверю.
+  situation: Ищете ответ
+- uid: LX-00696
+  lemma: Here it is!
+  meaning: Saying you found the thing
+  class: O9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhɪr ɪt ˈɪz/
+  translation_ru: Вот он!
+  example_en: Here it is!
+  example_ru: Вот он!
+  situation: Нашли вещь
+- uid: LX-00697
+  lemma: What color is it?
+  meaning: Asking about the color of something
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌt ˈkʌlɚ ɪz ɪt/
+  translation_ru: Какого он цвета?
+  example_en: What color is it?
+  example_ru: Какого цвета?
+  situation: Описываете вещь
+  usage_note: По-русски «какого цвета», по-английски — what color, без предлога.
+- uid: LX-00698
+  lemma: That's mine!
+  meaning: Saying a thing is yours
+  class: O9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈðæts ˈmaɪn/
+  translation_ru: Это моё!
+  example_en: That's mine!
+  example_ru: Это мой!
+  situation: Узнаёте свою вещь
+- uid: LX-00699
+  lemma: Yes, I did.
+  meaning: A short yes answer to a did-question
+  class: O4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈjɛs aɪ ˈdɪd/
+  translation_ru: Да (делал).
+  example_en: Yes, I did.
+  example_ru: Да.
+  situation: Отвечаете на вопрос о прошлом
+  usage_note: 'Короткий ответ на Did you…?: Yes, I did. / No, I didn''t.'

@@ -454,5 +454,119 @@
    0,
    "receipt — чек."
   ]
+ ],
+ "a1p-did-didnt": [
+  [
+   "Спросите: «Ты видел мой телефон?»",
+   "",
+   [
+    "Did you see my phone?",
+    "Did you saw my phone?",
+    "You did see my phone?"
+   ],
+   0,
+   "После did — основная форма."
+  ],
+  [
+   "Did you call Tom? — Нет.",
+   "",
+   [
+    "No, I didn't.",
+    "No, I didn't call.",
+    "No, I not."
+   ],
+   0,
+   "Короткий ответ — No, I didn't."
+  ],
+  [
+   "Скажите: «Я не ходил в спортзал».",
+   "",
+   [
+    "I didn't went to the gym.",
+    "I didn't go to the gym.",
+    "I not go to the gym."
+   ],
+   1,
+   "didn't + go."
+  ],
+  [
+   "Спросите: «Где ты купил это?»",
+   "",
+   [
+    "Where you bought it?",
+    "Where did you buy it?",
+    "Where did you bought it?"
+   ],
+   1,
+   "Where + did + you + buy."
+  ],
+  [
+   "Подругу надо успокоить.",
+   "",
+   [
+    "Don't worry.",
+    "Not worry.",
+    "No worry you."
+   ],
+   0,
+   "Don't worry."
+  ]
+ ],
+ "a1p-describe-things": [
+  [
+   "Вы узнали свою сумку.",
+   "",
+   [
+    "That's my!",
+    "That's mine!",
+    "That's me!"
+   ],
+   1,
+   "Без слова после — mine."
+  ],
+  [
+   "Спросите о цвете вещи.",
+   "",
+   [
+    "What color is it?",
+    "What color it is?",
+    "Which color it?"
+   ],
+   0,
+   "What color is it?"
+  ],
+  [
+   "Как правильно?",
+   "",
+   [
+    "a black long handle",
+    "a long black handle",
+    "a long handle black"
+   ],
+   1,
+   "Длина, потом цвет."
+  ],
+  [
+   "Два одинаковых шарфа.",
+   "",
+   [
+    "They are same.",
+    "They are the same.",
+    "They are a same."
+   ],
+   1,
+   "the same."
+  ],
+  [
+   "Вы нашли потерянную вещь.",
+   "",
+   [
+    "Here it is!",
+    "Here is it!",
+    "It here is!"
+   ],
+   0,
+   "Here it is!"
+  ]
  ]
 }
