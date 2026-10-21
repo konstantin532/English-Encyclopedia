@@ -25,8 +25,8 @@ jobs:
         id: check
         run: |
           if [ -z "$BACKUP_DATABASE_URL" ] || [ -z "$BACKUP_PASSPHRASE" ]; then
-            echo "::warning::Backups are not configured: add BACKUP_DATABASE_URL and BACKUP_PASSPHRASE secrets (docs/operations/backups.md)."
-            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::error::Database backup cannot run: configure BACKUP_DATABASE_URL and BACKUP_PASSPHRASE secrets (docs/operations/backups.md)."
+            exit 1
           else
             echo "configured=true" >> "$GITHUB_OUTPUT"
           fi
