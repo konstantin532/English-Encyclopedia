@@ -8,7 +8,7 @@ from django.test import Client, TestCase
 from django.urls import reverse
 
 from apps.accounts.models import User
-from apps.learning.cafe_mission import SESSION_KEY, SKILLS, parse_order
+from apps.learning.cafe_mission import SESSION_KEY, SKILLS, corrects_one, parse_order
 from apps.learning.models import IndependentAttempt, UnitProgress
 from tests.runner import ensure_content
 
@@ -104,6 +104,47 @@ class CafeInformationGapTests(TestCase):
         self.assertIsNone(parse_order("I don't want tea"))
         self.assertIsNone(parse_order("I'd like one tea and one coffee"))
         self.assertEqual(parse_order("Could I have one tea, please?"), (1, "tea"))
+
+    def test_quoted_or_negated_options_question_does_not_advance(self):
+        self.send("I'd like one tea, please.")
+        self.assertEqual(self.state()["phase"], "ask")
+        for answer in (
+            "I don't want to know what do you have.",
+            "I'm just quoting what do you have.",
+        ):
+            with self.subTest(answer=answer):
+                self.assertEqual(self.send(answer).status_code, 302)
+                self.assertEqual(self.state()["phase"], "ask")
+                self.assertNotIn("cafe.ask_options", self.state()["observed"])
+        self.assertEqual(self.send("Excuse me, what do you have, please?").status_code, 302)
+        self.assertEqual(self.state()["phase"], "choose")
+
+    def test_negated_repair_is_not_accepted_as_success(self):
+        # The recognizer must not turn an explicit refusal into evidence
+        # that the learner successfully corrected the order.
+        self.send("I'd like one tea, please.")
+        self.send("What do you have?")
+        self.send("Can I have one coffee, please?")
+        self.assertEqual(self.state()["phase"], "repair")
+        for answer in (
+            "No, I don't want one coffee.",
+            "Sorry, I do not want one coffee.",
+            "No, not one coffee.",
+            "One coffee? No!",
+        ):
+            with self.subTest(answer=answer):
+                self.assertEqual(self.send(answer).status_code, 302)
+                self.assertEqual(self.state()["phase"], "repair")
+                self.assertNotIn("cafe.repair", self.state()["observed"])
+                self.assertFalse(IndependentAttempt.objects.exists())
+        self.assertEqual(self.send("No, one coffee, please.").status_code, 302)
+        self.assertEqual(self.state()["phase"], "done")
+
+    def test_repair_requires_an_actual_positive_correction(self):
+        self.assertTrue(corrects_one("Sorry, I meant one coffee, thank you.", "coffee"))
+        self.assertTrue(corrects_one("No, only one water, please.", "water"))
+        self.assertFalse(corrects_one("I said one coffee? No, I mean water.", "coffee"))
+        self.assertFalse(corrects_one("One coffee? No!", "coffee"))
 
     def test_stale_submit_rejected_without_extra_turns(self):
         token = self.state()["nonce"]

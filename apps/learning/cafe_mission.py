@@ -68,19 +68,32 @@ def parse_order(value):
 
 
 def asks_for_options(value):
-    text = value.casefold()
-    return bool(re.search(
-        r"\b(?:what (?:do you have|is available|else|have you got)|"
-        r"what can i (?:have|order)|do you have (?:anything|something) else)\b",
+    # Matching a question *inside* a refusal or quoted sentence does not
+    # mean the learner has actually asked about the available drinks.
+    text = re.sub(r"[?!.,;:]+", " ", value.casefold())
+    text = " ".join(text.split())
+    return bool(re.fullmatch(
+        r"(?:excuse me |sorry |please )?"
+        r"(?:what (?:do you have|is available|else|have you got)|"
+        r"what can i (?:have|order)|do you have (?:anything|something) else)"
+        r"(?: please)?",
         text,
     ))
 
 
 def corrects_one(value, drink):
-    text = value.casefold().replace("’", "'")
-    return bool(re.search(r"\b(?:no|sorry)\b", text)
-                and re.search(r"\b(?:one|a)\s+" + re.escape(drink) + r"\b", text)
-                and not re.search(r"\b(?:two|three|yes)\b", text))
+    # A refusal such as "One coffee? No!" must not count as a repair.
+    # Recognise the entire correction, not scattered words in a statement.
+    text = re.sub(r"[?!.,;:]+", " ", value.casefold().replace("’", "'"))
+    text = " ".join(text.split())
+    return bool(re.fullmatch(
+        r"(?:no|sorry)(?: sorry)? "
+        r"(?:(?:i mean|i meant|i said|actually) )?"
+        r"(?:(?:just|only) )?"
+        r"(?:one|a) " + re.escape(drink)
+        + r"(?: please| thanks| thank you)?",
+        text,
+    ))
 
 
 def start_state(user_id):
