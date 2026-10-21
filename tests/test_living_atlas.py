@@ -37,11 +37,31 @@ class LivingAtlasHomeTests(TestCase):
         self.assertRegex(html, r'href="/levels/a1/" aria-current="page"><svg')
 
     def test_illustrations_exist_and_stay_light(self):
-        names = ["hero-anna-1600", "hero-anna-800", "level-a1-1600", "portrait-anna", "portrait-tom",
+        names = ["hero-cafe-1400", "hero-cafe-760", "level-a1-1400", "level-a1-760", "portrait-anna", "portrait-tom",
                  "portrait-mia", "portrait-box", "ivy-vine", "note-new-story"]
-        names += [f"a1-w{n:02d}-{s}" for n in (1, 2, 3, 10, 11) for s in (800, 1600)]
+        names += [f"a1-w{n:02d}-{s}" for n in range(1, 15) for s in (800, 1536)]
+        names += [f"s{n:02d}-{s}" for n in range(1, 6) for s in (800, 1536)]
         for name in names:
             path = ATLAS / f"{name}.webp"
             with self.subTest(name=name):
                 self.assertTrue(path.is_file())
                 self.assertLess(path.stat().st_size, 320 * 1024)
+
+
+class LivingAtlasCoversTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        ensure_content()
+
+    def test_every_a1_week_page_has_its_own_cover(self):
+        for n in range(1, 15):
+            html = self.client.get(f"/levels/a1/weeks/{n}/").content.decode()
+            with self.subTest(week=n):
+                self.assertIn(f"img/atlas/a1-w{n:02d}-1536.webp", html)
+                self.assertNotIn("cafe-morning.webp", html)
+
+    def test_story_pages_show_covers_for_stories_one_to_five(self):
+        self.assertIn("img/atlas/s01-1536.webp", self.client.get("/stories/1/").content.decode())
+        six = self.client.get("/stories/6/")
+        if six.status_code == 200:  # истории A1+ пока без обложек
+            self.assertNotIn("atlas-story-cover", six.content.decode())

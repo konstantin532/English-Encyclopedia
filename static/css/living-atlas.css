@@ -1003,3 +1003,17 @@
     }
   }
 }
+
+@layer ee-atlas {
+  .atlas-story-cover {
+    display: block;
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin-top: 20px;
+    border-radius: var(--atlas-radius);
+    box-shadow: var(--atlas-shadow);
+  }
+}

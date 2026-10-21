@@ -21,7 +21,7 @@ class PlannedWeekCardTests(TestCase):
 
     def test_painted_covers_and_vector_fallback(self):
         html = self.client.get("/levels/a1/").content.decode()
-        self.assertIn("img/atlas/a1-w01-800.webp", html)   # живописная обложка
-        self.assertIn("img/studio/a1-week-04.svg", html)   # векторная глава остаётся
+        for n in (1, 4, 14):
+            self.assertIn(f"img/atlas/a1-w{n:02d}-800.webp", html)  # обложки всех недель A1
         plus = self.client.get("/levels/a1-plus/").content.decode()
         self.assertIn('class="atlas-week-placeholder"', plus)
