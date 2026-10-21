@@ -1,0 +1,250 @@
+slug: a1p-paying-and-prices
+level: A1+
+week: 4
+order: 8
+focus: N
+minutes: 35
+title: 'Цена и оплата: How much was it? I paid by card.'
+summary: 'Как говорить о деньгах и покупках: спросить How much was it?, сказать I paid by card / in cash, что вещь была on sale, и что чек — receipt — нужен, чтобы обменять покупку.'
+units:
+- LX-00636
+- LX-00637
+- LX-00638
+- LX-00640
+- LX-00641
+- LX-00642
+- LX-00643
+- LX-00644
+- LX-00646
+- LX-00647
+- LX-00649
+- LX-00651
+- LX-00652
+- LX-00653
+- LX-00655
+- LX-00656
+- LX-00657
+- LX-00658
+- LX-00660
+- LX-00661
+- LX-00662
+- LX-00663
+- LX-00664
+sound_notes:
+- text: How much was it?
+  ipa: /ˈhaʊ ˈmʌtʃ wəz ɪt/
+  note_ru: 'was безударное и сливается с it: «уэзыт»'
+- text: Do you have the receipt?
+  ipa: /də jə ˈhæv ðə rɪˈsit/
+  note_ru: 'receipt — «рисИт»: p не читается'
+- text: Blue is her favorite color.
+  ipa: /ˈblu ɪz hɚ ˈfeɪvrɪt ˈkʌlɚ/
+  note_ru: 'favorite часто звучит в два слога: «фЭйврит»; her — безударное «хэр»'
+contractions:
+- full: it was not
+  short: it wasn't
+  ipa: /ɪt ˈwʌzənt/
+  note_ru: It wasn't cheap — было недёшево.
+layers:
+- number: 1
+  body: 'Подарок оказался не того цвета. Хорошо, что Том сохранил чек — покупку можно обменять. Для такого разговора нужны слова о деньгах.
+
+
+    > [D1]Do[/] [T8]you[/] [D1]have[/] [T1]the[/] [S2]receipt[/]? — Чек у тебя есть?
+
+    > [J3]Good[/]. [T8]We[/] [D7]can[/] [D2]change[/] [T8]it[/] [A2]tomorrow[/]. [J2]Blue[/] [D1]is[/] [T3]her[/] [J3]favorite[/] [S2]color[/]. — Хорошо. Завтра обменяем. Её любимый цвет — синий.
+
+    '
+- number: 2
+  body: '**Receipt** пришло из старофранцузского *recete* — «полученное». В слове осталась немая буква p: её вставили книжники по латинскому образцу, а произносить не стали. **Cash** — от французского *caisse*, «ящик для денег», отсюда и **cashier** — кассир.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [T8]I[/] [D2]paid[/] [N1]twenty[/] [N6]dollars[/] [P4]by[/] [S2]card[/]. — Я заплатил двадцать долларов картой.
+
+
+    - Цена в прошлом: **How much was it? — It was twenty dollars.**
+
+    - Цена сейчас: **How much is it?**
+
+    - Как платили: **by card** — картой, **in cash** — наличными.
+
+    - Скидка: **It was on sale.**
+
+    - Обменять: **change it**; для этого нужен **receipt**.
+
+    '
+- number: 4
+  body: '**Почему «by card», но «in cash»?** By — «с помощью чего»: by card, by bus. А наличные — это то, «в чём» вы платите: in cash, in dollars. Это нужно просто запомнить парой.
+
+
+    **Money** — одно целое, как «вода»: *money is*, не «moneys». Сколько денег — *how much money*.
+
+
+    **Диагностика понимания:** как спросить, сколько стоил подарок: *How much is it?* или *How much was it?*
+
+
+    **Разбор:** *How much was it?* — покупка уже в прошлом.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **Happy birthday!** — с днём рождения.
+
+    - **It''s perfect!** — идеально, о подарке.
+
+    - **It was a great price** — отличная цена.
+
+    - **It''s the wrong size / color** — не тот размер / цвет.
+
+
+    Одежда и вещи: **dress** — платье, **jeans** — джинсы, **ring** — кольцо, **wallet** — кошелёк, **pocket** — карман, **card** — карта или открытка. Цвет и оценка: **pink** — розовый, **pretty** — симпатичный, **perfect** — идеальный, **favorite** — любимый.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «I paid with cash» — понятно, но обычно говорят **in cash**.
+
+    - «How much it was?» — в вопросе was впереди: **How much was it?**
+
+    - «moneys» — у money нет -s.
+
+    - receipt: p не произносится.
+
+    '
+- number: 7
+  body: 'Шесть заданий: спросить цену, выбрать by card или in cash, собрать фразу про скидку, обменять покупку, похвалить подарок и сказать любимый цвет.
+
+
+    **Проверка маленького шага:** How much was it? — It was … dollars. I paid by card / in cash.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00206
+  kind: choice
+  stage: recognition
+  prompt_ru: Подруга купила платье. Спросите, сколько оно стоило.
+  options:
+  - How much was it?
+  - How much it was?
+  - How many was it?
+  answer: How much was it?
+  hint_ru: Деньги — much, was впереди.
+  explanation_ru: How much was it? О деньгах — much, в вопросе was перед it.
+  units:
+  - LX-00661
+- order: 2
+  uid: EX-00207
+  kind: fill
+  stage: substitution
+  prompt_ru: Вы заплатили наличными. Закончите фразу.
+  prompt_en: I paid in ___.
+  answer: cash
+  hint_ru: Наличные — cash.
+  explanation_ru: I paid in cash. Картой — by card.
+  units:
+  - LX-00651
+  - LX-00664
+- order: 3
+  uid: EX-00208
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Джинсы были со скидкой».'
+  options:
+  - true
+  - The
+  - were
+  - sale
+  - jeans
+  answer: The jeans were on sale
+  hint_ru: Jeans — много, значит were.
+  explanation_ru: The jeans were on sale. Jeans — всегда множественное.
+  units:
+  - LX-00638
+  - LX-00662
+- order: 4
+  uid: EX-00209
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вы в магазине, куртка не того размера. Скажите кассиру: «Можно её обменять? Вот чек».'
+  prompt_en: Can I change it? Here is the ___.
+  answer: receipt
+  hint_ru: Чек — receipt.
+  explanation_ru: Can I change it? Here is the receipt. Без чека обменять сложнее.
+  units:
+  - LX-00636
+  - LX-00644
+- order: 5
+  uid: EX-00210
+  kind: choice
+  stage: recognition
+  prompt_ru: Подарок вам очень понравился. Что сказать?
+  options:
+  - It's perfect!
+  - It's pocket!
+  - It's price!
+  answer: It's perfect!
+  hint_ru: Идеально — perfect.
+  explanation_ru: It's perfect! — идеально.
+  units:
+  - LX-00655
+- order: 6
+  uid: EX-00211
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Расскажите о себе: «Синий — мой любимый цвет».'
+  prompt_en: Blue is my ___ color.
+  answer: favorite
+  accepted:
+  - favourite
+  hint_ru: Любимый — favorite.
+  explanation_ru: Blue is my favorite color. Американское написание — favorite.
+  units:
+  - LX-00658
+  - LX-00647
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Сколько это стоило?
+  answer: How much was it?
+  hint_ru: How much + was it?
+  explanation_ru: How much was it?
+  review_of: 1
+  units:
+  - LX-00661
+- order: 2
+  kind: translate
+  prompt_ru: Я заплатил картой.
+  answer: I paid by card.
+  hint_ru: by card — без артикля.
+  explanation_ru: I paid by card.
+  review_of: 2
+  units:
+  - LX-00663
+- order: 3
+  kind: translate
+  prompt_ru: Чек у меня в кошельке.
+  answer: The receipt is in my wallet.
+  hint_ru: The receipt + is + in my wallet.
+  explanation_ru: The receipt is in my wallet.
+  review_of: 4
+  units:
+  - LX-00644
+  - LX-00641
+- order: 4
+  kind: translate
+  prompt_ru: С днём рождения!
+  answer: Happy birthday!
+  hint_ru: Happy + birthday.
+  explanation_ru: Happy birthday!
+  review_of: 5
+  units:
+  - LX-00660

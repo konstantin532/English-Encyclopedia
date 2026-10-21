@@ -1,0 +1,244 @@
+slug: a1p-irregular-past
+level: A1+
+week: 4
+order: 7
+focus: D
+minutes: 40
+title: 'Неправильные глаголы: went, bought, paid'
+summary: 'Самые частые глаголы образуют прошлое не по правилу: go → went, buy → bought, pay → paid. Учим первые пятнадцать форм парами и рассказываем о покупке.'
+units:
+- LX-00629
+- LX-00630
+- LX-00631
+- LX-00632
+- LX-00633
+- LX-00634
+- LX-00635
+- LX-00639
+- LX-00645
+- LX-00648
+- LX-00650
+- LX-00654
+- LX-00659
+- LX-00665
+sound_notes:
+- text: I bought a gift.
+  ipa: /aɪ ˈbɔt ə ˈɡɪft/
+  note_ru: 'gh в bought не читается: «бот»; t перед гласной смягчается — «бодэ гифт»'
+- text: I went to the mall.
+  ipa: /aɪ ˈwɛnt tə ðə ˈmɔl/
+  note_ru: 't в went почти глотается перед to: «уэн-тэ»'
+- text: I chose a scarf.
+  ipa: /aɪ ˈtʃoʊz ə ˈskɑrf/
+  note_ru: 'chose — «чоуз», а choose — «чуз»: в прошлом меняется гласная'
+contractions:
+- full: it is
+  short: it's
+  ipa: /ɪts/
+  note_ru: It's in my wallet — он у меня в кошельке.
+layers:
+- number: 1
+  body: 'Том весь день был в торговом центре. Чтобы рассказать об этом, ему нужны глаголы go, buy, choose, pay — и ни один из них не берёт -ed. У них свои формы прошлого.
+
+
+    > [T8]I[/] [D4]went[/] [P2]to[/] [T1]the[/] [S4]mall[/]. [T8]I[/] [D2]bought[/] [T1]a[/] [S2]gift[/] [P5]for[/] [S1]Mia[/]. — Я ездил в торговый центр. Купил подарок для Мии.
+
+    '
+- number: 2
+  body: 'Почему они «неправильные»? Это древнейшие глаголы языка. Когда тысячу лет назад -ed стало общим правилом, самые частые слова уже жили своей жизнью — их произносили так часто, что старые формы не забылись. **went** вообще взято от другого глагола, *wend* — «брести». Поэтому go и went совсем не похожи.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [T8]I[/] [D6]chose[/] [T1]a[/] [S2]scarf[/]. — Я выбрал шарф.
+
+    > [T8]I[/] [D2]paid[/] [N1]twenty[/] [N6]dollars[/] [P4]by[/] [S2]card[/]. — Я заплатил двадцать долларов картой.
+
+
+    - Форма одна для всех лиц: I went, she went, they went.
+
+    - Учите парами: **go — went, come — came, take — took, buy — bought, bring — brought**.
+
+    - **pay — paid, spend — spent, sell — sold, choose — chose, forget — forgot**.
+
+    - Уже знакомые: **have — had, eat — ate, see — saw, get — got, make — made**.
+
+    - Иногда форма не меняется: **cost — cost**: It cost twenty dollars.
+
+    '
+- number: 4
+  body: '**Почему «I went», а не «I goed»?** Дети-американцы тоже сначала говорят *goed* и *buyed* — мозг тянется к правилу. Но взрослые формы другие, и их нужно просто запомнить. Хорошо, что таких глаголов немного, а самые нужные — в этом уроке.
+
+
+    > [T8]I[/] [D2]spent[/] [T8]it[/] [T6]all[/]! — Я всё потратил!
+
+
+    **Диагностика понимания:** как сказать «Я забыл»: *I forgetted* или *I forgot*?
+
+
+    **Разбор:** *I forgot.* Forget — неправильный глагол.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [A3]Here[/] [T8]you[/] [D4]go[/]. [T8]I[/] [D6]chose[/] [T1]a[/] [S2]scarf[/]. [T8]It[/] [D1]was[/] [P3]on[/] [N6]sale[/]! — Вот, держи. Я выбрал шарф. Он был со скидкой!
+
+
+    - **Here you go** — «вот, держи», когда протягиваете вещь.
+
+    - **Oh no! I forgot.** — «Ой, нет! Я забыл».
+
+    - **I spent it all** — «потратил всё», о деньгах.
+
+
+    Слова недели: **pay** — платить, **spend** — тратить, **sell** — продавать, **choose** — выбирать, **forget** — забывать, **bring** — приносить, **cost** — стоить, **gift** — подарок, **scarf** — шарф, **mall** — торговый центр, **money** — деньги, **birthday** — день рождения.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «I goed», «I buyed» — нужно **went, bought**.
+
+    - «I payed» — пишется **paid**.
+
+    - bought (купил) и brought (принёс) — разные слова: слушайте r.
+
+    - «I was went» — was с глаголом не ставят: **I went**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: узнать went, вспомнить bought, собрать фразу с chose, рассказать о своей покупке, отличить bought от brought и сказать «я забыл».
+
+
+    **Проверка маленького шага:** неправильные глаголы учим парами — go/went, buy/bought, pay/paid. Форма одна для всех лиц.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00200
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Том говорит: «Я ездил в торговый центр». Выберите фразу.'
+  options:
+  - I went to the mall.
+  - I goed to the mall.
+  - I was go to the mall.
+  answer: I went to the mall.
+  hint_ru: go в прошлом — went.
+  explanation_ru: 'I went to the mall. Go — неправильный глагол: went.'
+  units:
+  - LX-00648
+- order: 2
+  uid: EX-00201
+  kind: fill
+  stage: substitution
+  prompt_ru: Вы купили подарок. Поставьте buy в прошедшее время.
+  prompt_en: I ___ a gift.
+  answer: bought
+  hint_ru: buy — b…ght.
+  explanation_ru: 'buy → bought. gh не читается: «бот».'
+  units:
+  - LX-00645
+- order: 3
+  uid: EX-00202
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Я выбрал зелёный шарф».'
+  options:
+  - scarf
+  - I
+  - a
+  - chose
+  - green
+  answer: I chose a green scarf
+  hint_ru: I + chose + a green scarf.
+  explanation_ru: I chose a green scarf. choose → chose.
+  units:
+  - LX-00632
+  - LX-00639
+- order: 4
+  uid: EX-00203
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вчера вы купили новые джинсы и заплатили тридцать долларов. Скажите вторую часть: «Я заплатил тридцать долларов».'
+  prompt_en: ___
+  answer: I paid thirty dollars.
+  accepted:
+  - I paid thirty dollars
+  - I paid 30 dollars.
+  - I paid $30.
+  hint_ru: pay → paid.
+  explanation_ru: I paid thirty dollars. Пишется paid, не payed.
+  units:
+  - LX-00629
+- order: 5
+  uid: EX-00204
+  kind: choice
+  stage: recognition
+  prompt_ru: Вы принесли печенье на вечеринку. Какое слово?
+  options:
+  - I brought cookies.
+  - I bought cookies.
+  - I bringed cookies.
+  answer: I brought cookies.
+  hint_ru: Принёс — bring → brought, с r.
+  explanation_ru: I brought — принёс; I bought — купил. Разница в звуке r.
+  units:
+  - LX-00634
+- order: 6
+  uid: EX-00205
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Вы не взяли кошелёк. Скажите: «О нет! Я забыл».'
+  prompt_en: Oh no! I ___.
+  answer: forgot
+  hint_ru: forget → forgot.
+  explanation_ru: Oh no! I forgot. Forget — неправильный глагол.
+  units:
+  - LX-00633
+  - LX-00659
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Я пошёл в торговый центр.
+  answer: I went to the mall.
+  hint_ru: go → went.
+  explanation_ru: I went to the mall.
+  review_of: 1
+  units:
+  - LX-00648
+- order: 2
+  kind: translate
+  prompt_ru: Я купил подарок для Мии.
+  answer: I bought a gift for Mia.
+  hint_ru: buy → bought, для — for.
+  explanation_ru: I bought a gift for Mia.
+  review_of: 2
+  units:
+  - LX-00645
+- order: 3
+  kind: translate
+  prompt_ru: Я потратил все деньги.
+  answer: I spent all my money.
+  accepted:
+  - I spent all the money.
+  hint_ru: spend → spent.
+  explanation_ru: I spent all my money. Money — без -s.
+  review_of: 4
+  units:
+  - LX-00630
+  - LX-00650
+- order: 4
+  kind: translate
+  prompt_ru: Я забыл.
+  answer: I forgot.
+  hint_ru: forget → forgot.
+  explanation_ru: I forgot.
+  review_of: 6
+  units:
+  - LX-00633

@@ -1,0 +1,530 @@
+# Неделя 4 A1+ «Подарок для Мии»: неправильные глаголы в прошедшем, покупки. CEFR не сверялся.
+level: A1+
+week: 4
+units:
+- uid: LX-00629
+  lemma: pay
+  meaning: to give money for something
+  class: D2
+  forms:
+  - pays
+  - paid
+  - paying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /peɪ/
+  translation_ru: платить
+  example_en: '[T8]I[/] [D2]paid[/] [N1]twenty[/] [N6]dollars[/].'
+  example_ru: Я заплатил двадцать долларов.
+  situation: Говорите о покупке
+  usage_note: Прошедшее — paid, не «payed».
+  typical_error: '«I payed» — неверно. Нужно: I paid.'
+- uid: LX-00630
+  lemma: spend
+  meaning: to use money to buy things
+  class: D2
+  forms:
+  - spends
+  - spent
+  - spending
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /spɛnd/
+  translation_ru: тратить
+  example_en: '[T8]I[/] [D2]spent[/] [T6]all[/] [T3]my[/] [N6]money[/]!'
+  example_ru: Я потратил все деньги!
+  situation: Говорите о деньгах
+  usage_note: 'Прошедшее — spent: d меняется на t.'
+- uid: LX-00631
+  lemma: sell
+  meaning: to give something for money
+  class: D2
+  forms:
+  - sells
+  - sold
+  - selling
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sɛl/
+  translation_ru: продавать
+  example_en: '[T8]They[/] [D2]sell[/] [S2]scarves[/] [P1]at[/] [T1]the[/] [S4]mall[/].'
+  example_ru: В торговом центре продают шарфы.
+  situation: Говорите о магазинах
+  usage_note: 'buy — покупать, sell — продавать. Прошедшее: sold.'
+- uid: LX-00632
+  lemma: choose
+  meaning: to decide which thing you want
+  class: D6
+  forms:
+  - chooses
+  - chose
+  - choosing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tʃuz/
+  translation_ru: выбирать
+  example_en: '[T8]I[/] [D6]chose[/] [T1]a[/] [J2]blue[/] [S2]dress[/].'
+  example_ru: Я выбрала синее платье.
+  situation: Выбираете покупку
+  usage_note: 'choose — «чуз», chose — «чоуз»: в прошлом звук меняется.'
+- uid: LX-00633
+  lemma: forget
+  meaning: to not remember
+  class: D6
+  forms:
+  - forgets
+  - forgot
+  - forgetting
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fɚˈɡɛt/
+  translation_ru: забывать
+  example_en: '[T8]I[/] [D6]forgot[/] [T3]my[/] [S2]wallet[/]!'
+  example_ru: Я забыл кошелёк!
+  situation: Говорите, что что-то забыли
+  usage_note: Прошедшее — forgot.
+- uid: LX-00634
+  lemma: bring
+  meaning: to come with something
+  class: D2
+  forms:
+  - brings
+  - brought
+  - bringing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /brɪŋ/
+  translation_ru: приносить
+  example_en: '[T8]I[/] [D2]brought[/] [T1]a[/] [S2]gift[/].'
+  example_ru: Я принёс подарок.
+  situation: Приходите в гости
+  usage_note: 'brought и bought похожи: принёс и купил. Различайте r: brought — «брот».'
+- uid: LX-00635
+  lemma: cost
+  meaning: to have a price
+  class: D3
+  forms:
+  - costs
+  - costing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kɔst/
+  translation_ru: стоить
+  example_en: '[T1]The[/] [S2]scarf[/] [D3]cost[/] [N1]twenty[/] [N6]dollars[/].'
+  example_ru: Шарф стоил двадцать долларов.
+  situation: Говорите о цене
+  usage_note: 'Прошедшее совпадает с основой: it cost.'
+- uid: LX-00636
+  lemma: change
+  meaning: to make something different or take another thing
+  class: D2
+  forms:
+  - changes
+  - changed
+  - changing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tʃeɪndʒ/
+  translation_ru: менять, обменять
+  example_en: '[T8]We[/] [D7]can[/] [D2]change[/] [T8]it[/] [S7]tomorrow[/].'
+  example_ru: Мы можем обменять его завтра.
+  situation: Возвращаете покупку
+- uid: LX-00637
+  lemma: dress
+  meaning: a piece of clothing for a woman or a girl
+  class: S2
+  forms:
+  - dresses
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /drɛs/
+  translation_ru: платье
+  example_en: '[S1]Mia[/] [D2]bought[/] [T1]a[/] [J2]red[/] [S2]dress[/].'
+  example_ru: Мия купила красное платье.
+  situation: Говорите об одежде
+- uid: LX-00638
+  lemma: jeans
+  meaning: pants made of strong blue cloth
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dʒinz/
+  translation_ru: джинсы
+  example_en: '[T8]I[/] [D2]bought[/] [J2]new[/] [S2]jeans[/].'
+  example_ru: Я купил новые джинсы.
+  situation: Говорите об одежде
+  usage_note: 'Только во множественном: jeans are, a pair of jeans.'
+- uid: LX-00639
+  lemma: scarf
+  meaning: a long piece of cloth for your neck
+  class: S2
+  forms:
+  - scarves
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /skɑrf/
+  translation_ru: шарф
+  example_en: '[T8]I[/] [D6]chose[/] [T1]a[/] [J2]green[/] [S2]scarf[/].'
+  example_ru: Я выбрал зелёный шарф.
+  situation: Покупаете подарок
+  usage_note: 'Много — scarves: f меняется на v.'
+- uid: LX-00640
+  lemma: ring
+  meaning: a small round thing you wear on a finger
+  class: S2
+  forms:
+  - rings
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rɪŋ/
+  translation_ru: кольцо
+  example_en: '[T1]The[/] [S2]ring[/] [D1]was[/] [J5]beautiful[/].'
+  example_ru: Кольцо было красивое.
+  situation: Говорите об украшениях
+- uid: LX-00641
+  lemma: wallet
+  meaning: a small thing for money and cards
+  class: S2
+  forms:
+  - wallets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈwɑlɪt/
+  translation_ru: кошелёк, бумажник
+  example_en: '[T1]The[/] [S2]receipt[/] [D1]is[/] [P1]in[/] [T3]my[/] [S2]wallet[/].'
+  example_ru: Чек у меня в кошельке.
+  situation: Говорите о деньгах
+- uid: LX-00642
+  lemma: pocket
+  meaning: a small bag in your clothes
+  class: S2
+  forms:
+  - pockets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈpɑkɪt/
+  translation_ru: карман
+  example_en: '[T3]My[/] [N6]money[/] [D1]was[/] [P1]in[/] [T3]my[/] [S2]pocket[/].'
+  example_ru: Деньги были у меня в кармане.
+  situation: Ищете деньги
+- uid: LX-00643
+  lemma: card
+  meaning: a small flat thing for paying, or a paper with a message
+  class: S2
+  forms:
+  - cards
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kɑrd/
+  translation_ru: карта, открытка
+  example_en: '[T8]I[/] [D2]paid[/] [P4]by[/] [S2]card[/].'
+  example_ru: Я заплатил картой.
+  situation: Платите в магазине
+  usage_note: 'Одно слово — и банковская карта, и открытка: a birthday card.'
+- uid: LX-00644
+  lemma: receipt
+  meaning: a paper that shows what you paid
+  class: S2
+  forms:
+  - receipts
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rɪˈsit/
+  translation_ru: чек
+  example_en: '[A6]Do[/] [T8]you[/] [D1]have[/] [T1]the[/] [S2]receipt[/]?'
+  example_ru: Чек у тебя есть?
+  situation: Возвращаете покупку
+  usage_note: 'p не читается: «рисИт».'
+- uid: LX-00645
+  lemma: gift
+  meaning: a thing you give to someone
+  class: S2
+  forms:
+  - gifts
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡɪft/
+  translation_ru: подарок
+  example_en: '[T8]I[/] [D2]bought[/] [T1]a[/] [S2]gift[/] [P5]for[/] [S1]Mia[/].'
+  example_ru: Я купил подарок для Мии.
+  situation: Покупаете подарок
+- uid: LX-00646
+  lemma: size
+  meaning: how big or small something is
+  class: S2
+  forms:
+  - sizes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /saɪz/
+  translation_ru: размер
+  example_en: '[T8]It[/] [D1]is[/] [T1]the[/] [J3]wrong[/] [S2]size[/].'
+  example_ru: Это не тот размер.
+  situation: Меряете одежду
+- uid: LX-00647
+  lemma: color
+  meaning: red, blue, and green are colors
+  class: S2
+  forms:
+  - colors
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkʌlɚ/
+  translation_ru: цвет
+  example_en: '[J2]Blue[/] [D1]is[/] [T3]her[/] [J3]favorite[/] [S2]color[/].'
+  example_ru: Синий — её любимый цвет.
+  situation: Выбираете подарок
+  usage_note: Американское написание color, британское — colour.
+- uid: LX-00648
+  lemma: mall
+  meaning: a big building with many stores
+  class: S4
+  forms:
+  - malls
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mɔl/
+  translation_ru: торговый центр
+  example_en: '[T8]I[/] [D4]went[/] [P2]to[/] [T1]the[/] [S4]mall[/].'
+  example_ru: Я сходил в торговый центр.
+  situation: Говорите о покупках
+- uid: LX-00649
+  lemma: cashier
+  meaning: a person who takes money in a store
+  class: S1
+  forms:
+  - cashiers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kæˈʃɪr/
+  translation_ru: кассир
+  example_en: '[T1]The[/] [S1]cashier[/] [D1]was[/] [J3]nice[/].'
+  example_ru: Кассир был приятный.
+  situation: Платите в магазине
+  usage_note: 'Ударение на конец: «кэшИр».'
+- uid: LX-00650
+  lemma: money
+  meaning: what you use to buy things
+  class: N6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmʌni/
+  translation_ru: деньги
+  example_en: '[T8]I[/] [D2]spent[/] [T6]all[/] [T3]my[/] [N6]money[/].'
+  example_ru: Я потратил все деньги.
+  situation: Говорите о деньгах
+  usage_note: 'По-английски money — одно целое: money is, без -s.'
+  typical_error: «Moneys» — неверно.
+- uid: LX-00651
+  lemma: cash
+  meaning: money in paper and coins
+  class: N6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kæʃ/
+  translation_ru: наличные
+  example_en: '[T8]I[/] [D2]paid[/] [P1]in[/] [N6]cash[/].'
+  example_ru: Я заплатил наличными.
+  situation: Платите в магазине
+- uid: LX-00652
+  lemma: price
+  meaning: how much money something costs
+  class: N6
+  forms:
+  - prices
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /praɪs/
+  translation_ru: цена
+  example_en: '[T1]The[/] [N6]price[/] [D1]was[/] [J3]great[/].'
+  example_ru: Цена была отличная.
+  situation: Говорите о покупке
+- uid: LX-00653
+  lemma: sale
+  meaning: a time when things in a store are cheap
+  class: N6
+  forms:
+  - sales
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /seɪl/
+  translation_ru: распродажа, продажа
+  example_en: '[T1]The[/] [S2]jeans[/] [D1]were[/] [P1]on[/] [N6]sale[/].'
+  example_ru: Джинсы были со скидкой.
+  situation: Говорите о скидке
+- uid: LX-00654
+  lemma: birthday
+  meaning: the day when you were born, every year
+  class: S7
+  forms:
+  - birthdays
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbɝθdeɪ/
+  translation_ru: день рождения
+  example_en: '[S1]Mia[/][T3]''s[/] [S7]birthday[/] [D1]is[/] [P3]on[/] [S7]Friday[/].'
+  example_ru: День рождения Мии в пятницу.
+  situation: Говорите о празднике
+- uid: LX-00655
+  lemma: perfect
+  meaning: very, very good
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈpɝfɪkt/
+  translation_ru: идеальный, отличный
+  example_en: '[T8]It[/] [D1]is[/] [J3]perfect[/]!'
+  example_ru: Идеально!
+  situation: Хвалите подарок
+- uid: LX-00656
+  lemma: pretty
+  meaning: nice to look at
+  class: J5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈprɪti/
+  translation_ru: красивый, симпатичный
+  example_en: '[T1]The[/] [S2]dress[/] [D1]is[/] [A5]very[/] [J5]pretty[/].'
+  example_ru: Платье очень симпатичное.
+  situation: Хвалите вещь
+  usage_note: 't между гласными — лёгкое «д»: «прИди».'
+- uid: LX-00657
+  lemma: pink
+  meaning: the color of light red
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /pɪŋk/
+  translation_ru: розовый
+  example_en: '[T8]I[/] [D2]bought[/] [T1]a[/] [J2]pink[/] [S2]umbrella[/].'
+  example_ru: Я купил розовый зонт.
+  situation: Говорите о цвете
+- uid: LX-00658
+  lemma: favorite
+  meaning: the one you like best
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfeɪvərɪt/
+  translation_ru: любимый
+  example_en: '[J2]Blue[/] [D1]is[/] [T3]my[/] [J3]favorite[/] [S2]color[/].'
+  example_ru: Синий — мой любимый цвет.
+  situation: Говорите о вкусах
+  usage_note: Американское написание favorite, британское — favourite.
+- uid: LX-00659
+  lemma: Oh no!
+  meaning: Saying something bad happened
+  class: O3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /oʊ ˈnoʊ/
+  translation_ru: О нет!
+  example_en: Oh no!
+  example_ru: Ой, нет!
+  situation: Покупка оказалась неудачной
+- uid: LX-00660
+  lemma: Happy birthday!
+  meaning: What you say on someone's birthday
+  class: O1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhæpi ˈbɝθdeɪ/
+  translation_ru: С днём рождения!
+  example_en: Happy birthday!
+  example_ru: С днём рождения!
+  situation: Поздравляете друга
+- uid: LX-00661
+  lemma: How much was it?
+  meaning: Asking the price of something you bought
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhaʊ ˈmʌtʃ ˈwʌz ɪt/
+  translation_ru: Сколько это стоило?
+  example_en: How much was it?
+  example_ru: Сколько стоило?
+  situation: Говорите о покупке
+  usage_note: 'О цене в прошлом — was: How much was it? Сейчас — How much is it?'
+- uid: LX-00662
+  lemma: on sale
+  meaning: Cheaper than usual
+  class: P1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɑn ˈseɪl/
+  translation_ru: со скидкой, на распродаже
+  example_en: on sale
+  example_ru: со скидкой
+  situation: Говорите о скидке
+- uid: LX-00663
+  lemma: by card
+  meaning: Paying with a bank card
+  class: P4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /baɪ ˈkɑrd/
+  translation_ru: картой
+  example_en: by card
+  example_ru: картой
+  situation: Платите в магазине
+  usage_note: 'Без артикля: pay by card.'
+- uid: LX-00664
+  lemma: in cash
+  meaning: Paying with paper money
+  class: P4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪn ˈkæʃ/
+  translation_ru: наличными
+  example_en: in cash
+  example_ru: наличными
+  situation: Платите в магазине
+- uid: LX-00665
+  lemma: Here you go.
+  meaning: Said when you give something to someone
+  class: O9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhɪr ju ˈɡoʊ/
+  translation_ru: Вот, держи(те).
+  example_en: Here you go.
+  example_ru: Вот, держи.
+  situation: Даёте вещь
+  usage_note: Говорят, протягивая вещь.

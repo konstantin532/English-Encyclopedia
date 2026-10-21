@@ -340,5 +340,119 @@
    0,
    "We need + что нужно."
   ]
+ ],
+ "a1p-irregular-past": [
+  [
+   "Скажите: «Я пошёл в магазин».",
+   "",
+   [
+    "I goed to the store.",
+    "I went to the store.",
+    "I was go to the store."
+   ],
+   1,
+   "go → went."
+  ],
+  [
+   "Поставьте buy в прошедшее: I ___ a scarf.",
+   "",
+   [
+    "buyed",
+    "bought",
+    "brought"
+   ],
+   1,
+   "buy → bought; brought — от bring."
+  ],
+  [
+   "Скажите: «Я заплатил десять долларов».",
+   "",
+   [
+    "I payed ten dollars.",
+    "I paid ten dollars.",
+    "I pay ten dollars yesterday."
+   ],
+   1,
+   "pay → paid."
+  ],
+  [
+   "Как сказать «Я забыл»?",
+   "",
+   [
+    "I forgot.",
+    "I forgetted.",
+    "I was forget."
+   ],
+   0,
+   "forget → forgot."
+  ],
+  [
+   "Скажите: «Я выбрал платье».",
+   "",
+   [
+    "I choosed a dress.",
+    "I chose a dress.",
+    "I choose a dress yesterday."
+   ],
+   1,
+   "choose → chose."
+  ]
+ ],
+ "a1p-paying-and-prices": [
+  [
+   "Спросите, сколько стоила покупка.",
+   "",
+   [
+    "How much was it?",
+    "How much it was?",
+    "How many was it?"
+   ],
+   0,
+   "Деньги — much; was впереди."
+  ],
+  [
+   "Вы заплатили картой.",
+   "",
+   [
+    "I paid in card.",
+    "I paid by card.",
+    "I paid by a card."
+   ],
+   1,
+   "by card — без артикля."
+  ],
+  [
+   "Вы заплатили наличными.",
+   "",
+   [
+    "I paid in cash.",
+    "I paid by cashes.",
+    "I paid on cash."
+   ],
+   0,
+   "in cash."
+  ],
+  [
+   "Вещь была со скидкой.",
+   "",
+   [
+    "It was on sale.",
+    "It was in sale.",
+    "It was sale."
+   ],
+   0,
+   "on sale."
+  ],
+  [
+   "Что нужно, чтобы обменять покупку?",
+   "",
+   [
+    "the receipt",
+    "the recipe",
+    "the pocket"
+   ],
+   0,
+   "receipt — чек."
+  ]
  ]
 }
