@@ -17,7 +17,7 @@ weeks:
 - {level: A1, week: 14, situation_ru: "Поездка на автобусе", sphere: travel, grammar_ru: "повторение A1: билет, прибытие и отправление; транспорт, погода и вещи для поездки", grammar_markers: []}
 # A1+: 16 недель. План — «План 16 недель A1+» (документ автора); все 12 сфер, истории 6–11 на неделях 2, 6, 8, 10, 14, 16.
 - {level: A1+, week: 1, situation_ru: "Видеозвонок: что я делаю сейчас", sphere: connect, grammar_ru: "Present Continuous: I'm doing, he's doing, are you…?; now, right now", grammar_markers: [D1, D2]}
-- {level: A1+, week: 2, situation_ru: "Где ты был вчера?", sphere: meet, grammar_ru: "was / were; there was / there were; yesterday, ago", grammar_markers: [D1, A2]}
+- {level: A1+, week: 2, situation_ru: "Где ты был вчера?", sphere: meet, grammar_ru: "was / were; there was / there were; yesterday, last night", grammar_markers: [D1, A2]}
 - {level: A1+, week: 3, situation_ru: "Как прошли выходные: разговор с коллегой", sphere: work, grammar_ru: "Past Simple: правильные глаголы на -ed; last weekend", grammar_markers: [D2]}
 - {level: A1+, week: 4, situation_ru: "Поездка в торговый центр", sphere: shop, grammar_ru: "Past Simple: неправильные глаголы (went, bought, saw)", grammar_markers: [D2, D4]}
 - {level: A1+, week: 5, situation_ru: "Бюро находок", sphere: service, grammar_ru: "did / didn't; вопросы в прошлом: Where did you…?", grammar_markers: [D1, X1]}
