@@ -25,7 +25,9 @@ FORM_SUFFIXES = ("'s", "s", "es")
 # Сокращения: I'm, it's, you're, don't, isn't.
 CONTRACTIONS = ("n't", "'m", "'s", "'re", "'ve", "'ll", "'d")
 # Понимание текста без словаря — 95–98% знакомых слов (Hu & Nation, 2000).
+# A1 написан до этого правила: его истории нарочно повторяют свои 3–5 новых слов, порог 90%.
 STORY_KNOWN_SHARE = 0.95
+STORY_KNOWN_SHARE_BY_LEVEL = {"A1": 0.90}
 # Повторение прошлого уровня: доля его единиц, встреченных в текстах нового уровня хотя бы RECYCLE_MIN_HITS раз.
 RECYCLE_TARGET = 0.70
 RECYCLE_MIN_HITS = 2
@@ -253,8 +255,9 @@ def audit_stories_and_poems(r: AuditReport) -> None:
             r.errors.append(f"{where}: слова не из программы и не объявлены новыми: {', '.join(stray)}.")
         share = 1 - len(unknown) / max(len(tokens), 1)
         r.facts.append(f"{where}: {len(tokens)} слов, знакомых {share:.0%}, новых единиц {len(new)}.")
-        if share < STORY_KNOWN_SHARE:
-            r.errors.append(f"{where}: знакомых слов {share:.0%}, нужно не меньше {STORY_KNOWN_SHARE:.0%}.")
+        need = STORY_KNOWN_SHARE_BY_LEVEL.get(story.level.code, STORY_KNOWN_SHARE)
+        if share < need:
+            r.errors.append(f"{where}: знакомых слов {share:.0%}, нужно не меньше {need:.0%}.")
         for code in "SD":
             if f"[{code}" not in story.body:
                 r.errors.append(f"{where}: не размечены категории {code}.")

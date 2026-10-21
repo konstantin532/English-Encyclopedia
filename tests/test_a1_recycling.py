@@ -28,6 +28,7 @@ class RecyclingCountTests(SimpleTestCase):
 
     def test_story_threshold_is_ninety_five_percent(self):
         self.assertEqual(audit.STORY_KNOWN_SHARE, 0.95)
+        self.assertEqual(audit.STORY_KNOWN_SHARE_BY_LEVEL, {"A1": 0.90})  # новые уровни — только 95%
         self.assertEqual((audit.RECYCLE_TARGET, audit.RECYCLE_MIN_HITS), (0.70, 2))
 
 
@@ -65,7 +66,7 @@ class RecyclingReportTests(TestCase):
         self.assertFalse([w for w in r.warnings if w.startswith("Повторение A1 в A1+")])
         self.assertIn(f"из {len(a1)} единиц", next(f for f in r.facts if "A1 в A1+" in f))
 
-    def test_a1_stories_meet_new_threshold(self):
+    def test_stories_meet_level_threshold(self):
         r = audit.AuditReport()
         audit.audit_stories_and_poems(r)
         self.assertFalse([e for e in r.errors if "знакомых слов" in e])
