@@ -557,3 +557,12 @@ reviews and merges the PR; no automatic merge.
 - Hosted Chromium overcame the local launch limitation. Run 39329659244 passed all 12 before/after pairs at the four requested sizes, with **0 px** maximum selected-component geometry difference. All 14 chapter covers load at 390 px, no tested page overflows horizontally, no uncaught JS errors. No-JS homepage reading, word keyboard activation/Escape and full-motion discovery passed.
 - Fixed the mobile focus-scroll popup dismissal found by the first real run; corrected viewport/document coordinate handling in the geometry test. Source text, markers and user progress storage remain unchanged.
 - Actual before/after screenshots, source-derived art bible and limitations are in `docs/qa/living-atlas-browser-review.md`. No performance gain, Android verification, full audio verification or completed full-scale redesign is claimed.
+
+## 2026-10-21 — Независимый P0-аудит актуального main
+
+- База проверки: `343dd79e89b38b2183b4563d4338016f1e60b914` после PR #65. Локальная `situation-weeks` создана от этого коммита; удалённая одноимённая ветка не перезаписывается.
+- Подтверждены до исправлений две P2-первопричины: Unicode-токен вызывает 500 в трёх учебных формах; архивное упражнение блокирует отложенную очередь, а кабинет рекламирует недоступные повторения.
+- Сравнение токенов переведено на Django `constant_time_compare`. Общая выборка `available_reviews` используется очередью, POST, счётчиком и расписанием. Архивная история сохраняется.
+- Новые тесты сначала воспроизвели ошибки, затем прошли. Профильные 75 passed / 414 subtests; полный Django 678 OK (2 PostgreSQL-only skip), 139.978 s; ещё 4 pytest-функции прошли отдельно. Node 122 passed; CSS 17 verified; check/makemigrations/collectstatic/compileall успешны. Чистая SQLite и 53 страницы с контентом проверены, 51 ссылка static существует.
+- Локальные PostgreSQL и браузер заблокированы средой; успешный PostgreSQL CI исходного коммита проверен отдельно, но не выдаётся за проверку новых изменений. Production/Supabase/Windows/Android/восстановление backup не проверены.
+- Подробные воспроизведения, карта системы, оставшиеся ограничения и команды: `docs/qa/2026-10-21-p0-system-audit.md`. Автор выполняет слияние; завершённость исправления всей системы не заявляется.

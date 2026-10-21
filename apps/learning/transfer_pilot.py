@@ -12,6 +12,7 @@ from django.db import IntegrityError, transaction
 from django.http import HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
+from django.utils.crypto import constant_time_compare
 from django.views.decorators.http import require_http_methods
 
 from apps.lessons.models import Lesson
@@ -136,7 +137,7 @@ def transfer_pilot(request, slug):
             return HttpResponseBadRequest("Новая проверка пока не открыта.")
         expected = request.session.get(token_key, "")
         supplied = request.POST.get("token", "")
-        if not expected or not supplied or not secrets.compare_digest(expected, supplied):
+        if not expected or not supplied or not constant_time_compare(expected, supplied):
             return HttpResponseBadRequest("Попытка уже отправлена либо форма устарела.")
         if request.POST.get("stage") != str(stage[1]):
             return HttpResponseBadRequest("Этап проверки изменился: обновите страницу.")

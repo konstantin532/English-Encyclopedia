@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError, transaction
 from django.http import HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils.crypto import constant_time_compare
 from django.views.decorators.http import require_http_methods
 
 from apps.lessons.models import Lesson
@@ -177,7 +178,7 @@ def cafe_mission(request):
             state = start_state(request.user.pk)
         else:
             token = request.POST.get("token", "")
-            if not token or not secrets.compare_digest(token, state["nonce"]):
+            if not token or not constant_time_compare(token, state["nonce"]):
                 return HttpResponseBadRequest("Форма устарела. Обновите страницу.")
             if action == "hint" and state["phase"] != "done":
                 if state["hints"] < MAX_HINTS:
