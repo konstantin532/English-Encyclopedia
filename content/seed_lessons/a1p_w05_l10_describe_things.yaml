@@ -11,7 +11,6 @@ units:
 - LX-00673
 - LX-00674
 - LX-00675
-- LX-00676
 - LX-00677
 - LX-00678
 - LX-00679
@@ -101,7 +100,7 @@ layers:
     - **another one** — ещё один, другой: We have another one.
 
 
-    Слова: **glasses** — очки, **backpack** — рюкзак, **handle** — ручка, **corner** — угол, **long / short** — длинный / короткий, **purple** — фиолетовый, **gray** — серый, **inside / outside** — внутри / снаружи, **sure** — уверенный.
+    Слова: **glasses** — очки, **backpack** — рюкзак, **handle** — ручка, **long / short** — длинный / короткий, **purple** — фиолетовый, **gray** — серый, **inside / outside** — внутри / снаружи, **sure** — уверенный.
 
     '
 - number: 6
