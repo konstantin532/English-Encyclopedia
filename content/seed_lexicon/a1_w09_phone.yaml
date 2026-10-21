@@ -22,6 +22,7 @@ units:
   forms:
   - spells
   - spelled
+  - spelling
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -64,6 +65,7 @@ units:
   forms:
   - opens
   - opened
+  - opening
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

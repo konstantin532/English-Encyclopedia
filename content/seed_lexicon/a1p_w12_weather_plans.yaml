@@ -1,0 +1,432 @@
+# Неделя 12 A1+ «Погода и планы на день»: прилагательные, too / enough. CEFR не сверялся.
+level: A1+
+week: 12
+units:
+- uid: LX-00895
+  lemma: enough
+  meaning: as much as you need
+  class: A5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪˈnʌf/
+  translation_ru: достаточно
+  example_en: '[T8]It[/] [D1]is[/] [X1]not[/] [J2]warm[/] [A5]enough[/].'
+  example_ru: Недостаточно тепло.
+  situation: Говорите о погоде
+  usage_note: 'enough стоит ПОСЛЕ прилагательного: warm enough. gh = «ф»: «инАф».'
+  typical_error: '«enough warm» — неверно. Нужно: warm enough.'
+- uid: LX-00896
+  lemma: instead
+  meaning: in the place of something
+  class: A7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪnˈstɛd/
+  translation_ru: вместо этого
+  example_en: '[D2]Let[/][T8]''s[/] [D4]go[/] [P2]to[/] [T1]the[/] [S4]museum[/] [A7]instead[/].'
+  example_ru: Давай лучше пойдём в музей.
+  situation: Меняете план
+- uid: LX-00897
+  lemma: hike
+  meaning: to take a long walk in nature
+  class: D4
+  forms:
+  - hikes
+  - hiked
+  - hiking
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /haɪk/
+  translation_ru: ходить в поход
+  example_en: '[T8]We[/] [D2]want[/] [X2]to[/] [D4]hike[/] [P1]in[/] [T1]the[/] [S6]mountains[/].'
+  example_ru: Мы хотим в поход в горы.
+  situation: Планируете выходные
+  usage_note: go hiking — пойти в поход.
+- uid: LX-00898
+  lemma: ride
+  meaning: to sit on a bike or a horse and move
+  class: D4
+  forms:
+  - rides
+  - rode
+  - riding
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /raɪd/
+  translation_ru: ездить (на велосипеде, лошади)
+  example_en: '[T8]We[/] [D4]rode[/] [T3]our[/] [S4]bikes[/] [P2]to[/] [T1]the[/] [S6]lake[/].'
+  example_ru: Мы поехали на велосипедах к озеру.
+  situation: Планируете выходные
+  usage_note: Прошедшее — rode.
+- uid: LX-00899
+  lemma: cloud
+  meaning: a white or gray thing in the sky
+  class: S6
+  forms:
+  - clouds
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /klaʊd/
+  translation_ru: облако, туча
+  example_en: '[T9]There[/] [D1]are[/] [J2]dark[/] [S6]clouds[/] [P1]in[/] [T1]the[/] [S6]sky[/].'
+  example_ru: На небе тёмные тучи.
+  situation: Говорите о погоде
+- uid: LX-00900
+  lemma: storm
+  meaning: very bad weather with strong wind and rain
+  class: S6
+  forms:
+  - storms
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /stɔrm/
+  translation_ru: гроза, буря
+  example_en: '[T1]A[/] [S6]storm[/] [D1]is[/] [D4]coming[/].'
+  example_ru: Приближается гроза.
+  situation: Говорите о погоде
+- uid: LX-00901
+  lemma: mountain
+  meaning: a very high hill
+  class: S6
+  forms:
+  - mountains
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmaʊntən/
+  translation_ru: гора
+  example_en: '[T1]The[/] [S6]mountains[/] [D1]are[/] [J5]beautiful[/].'
+  example_ru: Горы красивые.
+  situation: Планируете поход
+  usage_note: 't почти не слышно: «мАунн».'
+- uid: LX-00902
+  lemma: hill
+  meaning: a small mountain
+  class: S6
+  forms:
+  - hills
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hɪl/
+  translation_ru: холм
+  example_en: '[T9]There[/] [D1]is[/] [T1]a[/] [J2]green[/] [S6]hill[/] [P1]near[/] [T1]the[/] [S6]lake[/].'
+  example_ru: У озера зелёный холм.
+  situation: Описываете место
+- uid: LX-00903
+  lemma: forecast
+  meaning: what the weather will be like, from the TV or the internet
+  class: S10
+  forms:
+  - forecasts
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfɔrkæst/
+  translation_ru: прогноз
+  example_en: '[T1]The[/] [S10]forecast[/] [D5]says[/] [S6]rain[/].'
+  example_ru: По прогнозу дождь.
+  situation: Говорите о погоде
+- uid: LX-00904
+  lemma: degree
+  meaning: a number that shows how hot or cold it is
+  class: N9
+  forms:
+  - degrees
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dɪˈɡri/
+  translation_ru: градус
+  example_en: '[T8]It[/][D1]''s[/] [N1]fifty[/] [N9]degrees[/] [A3]outside[/].'
+  example_ru: На улице пятьдесят градусов (по Фаренгейту).
+  situation: Говорите о погоде
+  usage_note: 'В США температуру считают по Фаренгейту: 50 °F — это около 10 °C.'
+- uid: LX-00905
+  lemma: boots
+  meaning: strong shoes that cover your feet and ankles
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /buts/
+  translation_ru: ботинки, сапоги
+  example_en: '[D2]Wear[/] [T3]your[/] [S2]boots[/]. [T8]It[/][D1]''s[/] [J2]rainy[/].'
+  example_ru: Надень ботинки. На улице дождь.
+  situation: Собираетесь на прогулку
+- uid: LX-00906
+  lemma: sunglasses
+  meaning: dark glasses for sunny days
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsʌnˌɡlæsɪz/
+  translation_ru: солнечные очки
+  example_en: '[D1]Do[/][X1]n''t[/] [D6]forget[/] [T3]your[/] [S2]sunglasses[/]!'
+  example_ru: Не забудь солнечные очки!
+  situation: Собираетесь на прогулку
+- uid: LX-00907
+  lemma: rainy
+  meaning: with a lot of rain
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈreɪni/
+  translation_ru: дождливый
+  example_en: '[T8]It[/] [D1]was[/] [T1]a[/] [J2]rainy[/] [S7]day[/].'
+  example_ru: Был дождливый день.
+  situation: Говорите о погоде
+- uid: LX-00908
+  lemma: foggy
+  meaning: with a lot of fog, so you cannot see far
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfɑɡi/
+  translation_ru: туманный
+  example_en: '[T8]It[/][D1]''s[/] [J2]foggy[/] [P1]by[/] [T1]the[/] [S6]river[/].'
+  example_ru: У реки туман.
+  situation: Говорите о погоде
+- uid: LX-00909
+  lemma: cool
+  meaning: a little cold; very good (in talk)
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kul/
+  translation_ru: прохладный; классный
+  example_en: '[T8]It[/][D1]''s[/] [J2]cool[/] [P1]in[/] [T1]the[/] [S7]evening[/].'
+  example_ru: Вечером прохладно.
+  situation: Говорите о погоде
+  usage_note: 'В разговоре cool ещё значит «классно»: That''s cool!'
+- uid: LX-00910
+  lemma: freezing
+  meaning: very, very cold
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfrizɪŋ/
+  translation_ru: ледяной, очень холодный
+  example_en: '[T8]It[/][D1]''s[/] [J2]freezing[/] [A3]outside[/]!'
+  example_ru: На улице жуткий холод!
+  situation: Говорите о погоде
+- uid: LX-00911
+  lemma: bright
+  meaning: full of light
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /braɪt/
+  translation_ru: яркий
+  example_en: '[T1]The[/] [S6]sun[/] [D1]is[/] [A5]very[/] [J2]bright[/].'
+  example_ru: Солнце очень яркое.
+  situation: Говорите о погоде
+- uid: LX-00912
+  lemma: tall
+  meaning: big from the bottom to the top
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tɔl/
+  translation_ru: высокий (о человеке, дереве, здании)
+  example_en: '[S1]Leo[/] [D1]is[/] [J1]tall[/].'
+  example_ru: Лео высокий.
+  situation: Описываете внешность
+- uid: LX-00913
+  lemma: huge
+  meaning: very, very big
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hjudʒ/
+  translation_ru: огромный
+  example_en: '[T1]The[/] [S6]mountain[/] [D1]is[/] [J1]huge[/].'
+  example_ru: Гора огромная.
+  situation: Описываете место
+- uid: LX-00914
+  lemma: tiny
+  meaning: very, very small
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈtaɪni/
+  translation_ru: крошечный
+  example_en: '[T8]We[/] [D1]have[/] [T1]a[/] [J1]tiny[/] [S2]kitchen[/].'
+  example_ru: У нас крошечная кухня.
+  situation: Описываете квартиру
+- uid: LX-00915
+  lemma: far
+  meaning: not near
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fɑr/
+  translation_ru: далёкий; далеко
+  example_en: '[T1]The[/] [S6]mountains[/] [D1]are[/] [J1]far[/].'
+  example_ru: Горы далеко.
+  situation: Планируете поездку
+  usage_note: 'Чаще в вопросах и с not: Is it far? It is not far.'
+- uid: LX-00916
+  lemma: wide
+  meaning: big from one side to the other
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /waɪd/
+  translation_ru: широкий
+  example_en: '[T1]The[/] [S6]river[/] [D1]is[/] [J1]wide[/].'
+  example_ru: Река широкая.
+  situation: Описываете место
+- uid: LX-00917
+  lemma: narrow
+  meaning: not wide
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈnæroʊ/
+  translation_ru: узкий
+  example_en: '[T1]The[/] [S4]street[/] [D1]is[/] [J1]narrow[/].'
+  example_ru: Улица узкая.
+  situation: Описываете место
+- uid: LX-00918
+  lemma: deep
+  meaning: going far down
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dip/
+  translation_ru: глубокий
+  example_en: '[T1]The[/] [S6]lake[/] [D1]is[/] [A5]very[/] [J1]deep[/].'
+  example_ru: Озеро очень глубокое.
+  situation: Описываете место
+- uid: LX-00919
+  lemma: lovely
+  meaning: very nice
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈlʌvli/
+  translation_ru: чудесный, милый
+  example_en: '[T8]It[/][D1]''s[/] [T1]a[/] [J3]lovely[/] [S7]day[/]!'
+  example_ru: Чудесный день!
+  situation: Радуетесь погоде
+  usage_note: Это прилагательное, хоть и на -ly.
+- uid: LX-00920
+  lemma: awful
+  meaning: very bad
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɔfəl/
+  translation_ru: ужасный
+  example_en: '[T1]The[/] [S6]weather[/] [D1]is[/] [J3]awful[/].'
+  example_ru: Погода ужасная.
+  situation: Жалуетесь на погоду
+- uid: LX-00921
+  lemma: What's the weather like?
+  meaning: Asking about the weather
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌts ðə ˈwɛðɚ ˈlaɪk/
+  translation_ru: Какая погода?
+  example_en: What's the weather like?
+  example_ru: Какая там погода?
+  situation: Говорите о погоде
+  usage_note: 'Без like вопрос неполный: What''s the weather like today?'
+- uid: LX-00922
+  lemma: It's too cold.
+  meaning: Saying it is more cold than you want
+  class: A5
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪts ˈtu ˈkoʊld/
+  translation_ru: Слишком холодно.
+  example_en: It's too cold.
+  example_ru: Холодновато.
+  situation: Говорите о погоде
+- uid: LX-00923
+  lemma: Let's go!
+  meaning: Saying we can start now
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈlɛts ˈɡoʊ/
+  translation_ru: Пошли! Поехали!
+  example_en: Let's go!
+  example_ru: Пойдём!
+  situation: Начинаете прогулку
+  usage_note: 'Let''s = let us: «давай».'
+- uid: LX-00924
+  lemma: How about…?
+  meaning: Giving an idea
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhaʊ əˈbaʊt/
+  translation_ru: Как насчёт…?
+  example_en: How about…?
+  example_ru: Может, …?
+  situation: Предлагаете план
+  usage_note: 'После about — слово или -ing: How about the museum? How about hiking?'
+- uid: LX-00925
+  lemma: Maybe next time.
+  meaning: Saying no now, but yes later
+  class: O8
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈmeɪbi ˈnɛkst ˈtaɪm/
+  translation_ru: Может, в другой раз.
+  example_en: Maybe next time.
+  example_ru: В другой раз.
+  situation: Отказываетесь мягко
+- uid: LX-00926
+  lemma: It looks like rain.
+  meaning: Saying it will rain soon
+  class: F8
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪt ˈlʊks laɪk ˈreɪn/
+  translation_ru: Похоже, будет дождь.
+  example_en: It looks like rain.
+  example_ru: Сейчас пойдёт дождь.
+  situation: Смотрите на небо
+- uid: LX-00927
+  lemma: go hiking
+  meaning: to go for a long walk in nature
+  class: D4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɡoʊ ˈhaɪkɪŋ/
+  translation_ru: пойти в поход
+  example_en: go hiking
+  example_ru: сходить в поход
+  situation: Планируете выходные

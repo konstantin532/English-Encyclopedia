@@ -1,0 +1,252 @@
+slug: a1p-home-repairs
+level: A1+
+week: 9
+order: 18
+focus: S
+minutes: 35
+title: 'Что сломалось: The pipe is leaking!'
+summary: 'Как объяснить поломку дома: раковина, кран, труба, лампочка, выключатель. Фразы для срочного случая: What''s wrong? Turn off the water! It''s an emergency!'
+units:
+- LX-00803
+- LX-00809
+- LX-00810
+- LX-00811
+- LX-00812
+- LX-00813
+- LX-00814
+- LX-00815
+- LX-00816
+- LX-00817
+- LX-00818
+- LX-00819
+- LX-00820
+- LX-00821
+- LX-00822
+- LX-00823
+- LX-00824
+- LX-00825
+- LX-00827
+- LX-00828
+- LX-00829
+- LX-00830
+- LX-00831
+sound_notes:
+- text: The pipe is leaking.
+  ipa: /ðə ˈpaɪp ɪz ˈlikɪŋ/
+  note_ru: 'leaking — долгое «ии»: «лИкин»'
+- text: What's wrong?
+  ipa: /ˈwʌts ˈrɔŋ/
+  note_ru: 'w в wrong не читается: «рон», с носовым ng'
+- text: Turn off the water!
+  ipa: /ˈtɝn ˈɔf ðə ˈwɔɾɚ/
+  note_ru: 'water — «уОдэр»: t между гласными смягчается'
+contractions:
+- full: it is
+  short: it's
+  ipa: /ɪts/
+  note_ru: It's an emergency! — это срочно!
+layers:
+- number: 1
+  body: 'Когда дома что-то сломалось, нужно быстро и понятно сказать, что и где. Мастер спрашивает, вы отвечаете.
+
+
+    > [J3]Good[/] [S7]morning[/]. [T1]The[/] [S1]landlord[/] [D5]called[/] [T8]me[/]. [T9]What[/] [D1]is[/] [J3]wrong[/]? — Доброе утро. Мне позвонил хозяин. Что случилось?
+
+    > [T1]The[/] [S2]pipe[/] [P1]under[/] [T1]the[/] [S2]sink[/] [D1]is[/] [D2]leaking[/]. [T8]It[/] [D1]is[/] [T1]an[/] [S10]emergency[/]! — Под раковиной течёт труба. Это срочно!
+
+    '
+- number: 2
+  body: '**Plumber** — от латинского *plumbum*, «свинец»: в Древнем Риме трубы делали из свинца. **Faucet** пришло из французского и значило «затычка для бочки». В Британии кран называют **tap**, а в США — **faucet**.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [J3]Great[/]! [C1]And[/] [T1]the[/] [S2]light[/] [P1]in[/] [T1]the[/] [S2]bathroom[/] [D1]does[/] [X1]not[/] [D2]work[/]. — Отлично! А ещё в ванной не горит свет.
+
+
+    - Что течёт: **The pipe / faucet is leaking.**
+
+    - Что не работает: **The heater / light does not work.**
+
+    - Что сломано: **The toilet is broken.**
+
+    - Где: **under the sink, in the bathroom, near the door**.
+
+    - Срочно: **It''s an emergency! Turn off the water!**
+
+    '
+- number: 4
+  body: '**Почему «doesn''t work», а не «isn''t working»?** Обе формы верны. **It doesn''t work** — сломано вообще; **it isn''t working** — сейчас не работает. Для поломки дома чаще говорят *It doesn''t work*.
+
+
+    **on / off.** **Turn on** — включить, **turn off** — выключить: turn on the light, turn off the water.
+
+
+    **Диагностика понимания:** как сказать «Перекрой воду!»: *Turn on the water!* или *Turn off the water!*?
+
+
+    **Разбор:** *Turn off the water!* — off значит «выключить».
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **What''s wrong?** — что случилось?
+
+    - **The kitchen is a mess!** — на кухне бардак!
+
+    - **That''s fine.** — ничего страшного.
+
+
+    Слова: **sink** — раковина, **faucet** — кран, **pipe** — труба, **toilet** — унитаз, **heater** — обогреватель, **switch** — выключатель, **bulb** — лампочка, **tool** — инструмент, **hammer** — молоток, **bucket** — ведро, **lock** — замок, **ceiling** — потолок, **building** — здание, **elevator** — лифт, **dirty** — грязный.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «The water is flowing» — о протечке говорят **leaking**.
+
+    - «Turn out the light» тоже бывает, но проще **turn off**.
+
+    - «lift» — британское; в США **elevator**.
+
+    - wrong: w не читается — «рон».
+
+    '
+- number: 7
+  body: 'Шесть заданий: назвать поломку, сказать «выключи», собрать фразу о трубе, позвонить мастеру по новой поломке, выбрать слово и сказать «ничего страшного».
+
+
+    **Проверка маленького шага:** что + is leaking / doesn''t work / is broken; turn on / turn off.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00266
+  kind: choice
+  stage: recognition
+  prompt_ru: Под раковиной течёт. Как сказать?
+  options:
+  - The pipe is leaking.
+  - The pipe leaking is.
+  - The pipe is broken off.
+  answer: The pipe is leaking.
+  hint_ru: Течь — leak.
+  explanation_ru: The pipe is leaking. — труба течёт.
+  units:
+  - LX-00803
+  - LX-00811
+- order: 2
+  uid: EX-00267
+  kind: fill
+  stage: substitution
+  prompt_ru: 'Вода льётся. Крикните: «Перекрой воду!»'
+  prompt_en: Turn ___ the water!
+  answer: 'off'
+  hint_ru: Выключить — off.
+  explanation_ru: Turn off the water! On — включить, off — выключить.
+  units:
+  - LX-00828
+  - LX-00830
+- order: 3
+  uid: EX-00268
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «В ванной не работает свет».'
+  options:
+  - work
+  - The
+  - in
+  - light
+  - the
+  - bathroom
+  - doesn't
+  answer: The light in the bathroom doesn't work
+  hint_ru: The light in the bathroom + doesn't work.
+  explanation_ru: The light in the bathroom doesn't work.
+  units:
+  - LX-00815
+- order: 4
+  uid: EX-00269
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: зимой дома холодно, обогреватель не работает. Скажите хозяину.'
+  prompt_en: The ___ doesn't work.
+  answer: heater
+  hint_ru: Обогреватель — heater.
+  explanation_ru: The heater doesn't work.
+  units:
+  - LX-00813
+- order: 5
+  uid: EX-00270
+  kind: choice
+  stage: recognition
+  prompt_ru: Мастер пришёл. Что он спросит первым?
+  options:
+  - What's wrong?
+  - What's long?
+  - What wrong is?
+  answer: What's wrong?
+  hint_ru: Что случилось — What's wrong?
+  explanation_ru: What's wrong? — что случилось?
+  units:
+  - LX-00829
+- order: 6
+  uid: EX-00271
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Мастер извиняется за беспорядок. Ответьте: «Ничего страшного».'
+  prompt_en: That's ___.
+  answer: fine
+  hint_ru: Нормально — fine.
+  explanation_ru: That's fine. — ничего страшного.
+  units:
+  - LX-00827
+  - LX-00832
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Кран течёт.
+  answer: The faucet is leaking.
+  accepted:
+  - The faucet leaks.
+  hint_ru: faucet + is leaking.
+  explanation_ru: The faucet is leaking.
+  review_of: 1
+  units:
+  - LX-00810
+- order: 2
+  kind: translate
+  prompt_ru: Это срочно!
+  answer: It's an emergency!
+  accepted:
+  - It is an emergency!
+  hint_ru: an emergency.
+  explanation_ru: It's an emergency!
+  review_of: 2
+  units:
+  - LX-00831
+- order: 3
+  kind: translate
+  prompt_ru: Унитаз сломан.
+  answer: The toilet is broken.
+  hint_ru: is broken.
+  explanation_ru: The toilet is broken.
+  review_of: 4
+  units:
+  - LX-00812
+- order: 4
+  kind: translate
+  prompt_ru: В доме нет лифта.
+  answer: The building has no elevator.
+  accepted:
+  - There is no elevator in the building.
+  hint_ru: has no elevator.
+  explanation_ru: The building has no elevator.
+  review_of: 3
+  units:
+  - LX-00822

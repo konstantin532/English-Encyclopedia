@@ -1,0 +1,79 @@
+# A1+, неделя 14 «Прогулка по карте района». Сфера city, предлоги движения и первое if. История 10 выходит на этой неделе.
+level: A1+
+week: 14
+can_do_ru: 'Я смогу спросить и объяснить дорогу: How do I get to Park Street? — Walk along the river, go over the bridge, past the church and across the square. Turn left at the fountain.'
+mission_ru: 'Объясните по-английски дорогу от вашего дома до ближайшего магазина или остановки в трёх-четырёх шагах: along…, past…, across…, turn left / right at…'
+chunks:
+- LX-00980
+- LX-00981
+- LX-00982
+- LX-00983
+- LX-00984
+- LX-00985
+- LX-00986
+story_beat:
+  intro_ru: После находки в саду (история 10) Анна и Том идут к Рут — спросить про Сэма. Но решают срезать через парк.
+  outcome_ru: 'Они заблудились у моста и церкви. Прохожий объясняет: вдоль реки, через мост, мимо церкви, через площадь и налево у фонтана. Десять минут пешком.'
+  next_hook_ru: Рут знает, кто такой Сэм. А у Анны и Тома скоро отпуск — пора собирать чемоданы. Неделя 15.
+script:
+- speaker: anna
+  emotion: excited
+  text: '[S1]Tom[/], [D6]look[/] [P7]at[/] [T1]the[/] [J2]old[/] [S4]map[/]. [C4]If[/] [T8]we[/] [D4]go[/] [P2]to[/] [S1]Ruth[/], [T8]we[/] [D7]can[/] [D5]ask[/] [T8]her[/] [P6]about[/] [S1]Sam[/].'
+  ru: Том, посмотри на старую карту. Если мы сходим к Рут, мы спросим её про Сэма.
+- speaker: tom
+  text: '[O4]Okay[/]. [D2]Let[/] [T8]us[/] [D4]go[/] [P2]through[/] [T1]the[/] [S4]park[/]. [T8]It[/] [D1]is[/] [X1]not[/] [J1]far[/].'
+  spoken: '[O4]Okay[/]. [D2]Let[/][T8]''s[/] [D4]go[/] [P2]through[/] [T1]the[/] [S4]park[/]. [T8]It[/][D1]''s[/] [X1]not[/] [J1]far[/].'
+  ru: Хорошо. Пойдём через парк. Это недалеко.
+- speaker: tom
+  emotion: worried
+  text: '[T1]A[/] [S4]bridge[/]? [T1]A[/] [S4]church[/]? [S1]Anna[/], [A8]maybe[/] [T8]we[/] [D1]are[/] [J4]lost[/].'
+  spoken: '[T1]A[/] [S4]bridge[/]? [T1]A[/] [S4]church[/]? [S1]Anna[/], [A8]maybe[/] [T8]we[/][D1]''re[/] [J4]lost[/].'
+  ru: Мост? Церковь? Анна, похоже, мы заблудились.
+- speaker: anna
+  text: '[O2]Excuse[/] [T8]me[/]! [A6]How[/] [D1]do[/] [T8]I[/] [D9]get[/] [P2]to[/] [S4]Park[/] [S4]Street[/]?'
+  ru: Простите! Как пройти на Парк-стрит?
+- speaker: passerby
+  emotion: happy
+  text: '[S4]Park[/] [S4]Street[/]? [D4]Walk[/] [P2]along[/] [T1]the[/] [S6]river[/] [C1]and[/] [D4]go[/] [P2]over[/] [T1]the[/] [S4]bridge[/].'
+  ru: Парк-стрит? Идите вдоль реки и перейдите через мост.
+- speaker: passerby
+  text: '[A2]Then[/] [D4]go[/] [P2]past[/] [T1]the[/] [S4]church[/] [C1]and[/] [P2]across[/] [T1]the[/] [S4]square[/].'
+  ru: Потом мимо церкви и через площадь.
+- speaker: anna
+  text: '[P2]Past[/] [T1]the[/] [S4]church[/], [P2]across[/] [T1]the[/] [S4]square[/]. [C1]And[/] [A2]then[/]?'
+  ru: Мимо церкви, через площадь. А потом?
+- speaker: passerby
+  text: '[D4]Turn[/] [A3]left[/] [P1]at[/] [T1]the[/] [S4]fountain[/]. [T1]The[/] [S2]photo[/] [S4]shop[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]left[/]. [T8]You[/] [D7]cannot[/] [D3]miss[/] [T8]it[/].'
+  spoken: '[D4]Turn[/] [A3]left[/] [P1]at[/] [T1]the[/] [S4]fountain[/]. [T1]The[/] [S2]photo[/] [S4]shop[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]left[/]. [T8]You[/] [D7]ca[/][X1]n''t[/] [D3]miss[/] [T8]it[/].'
+  ru: У фонтана поверните налево. Фотоателье будет слева. Мимо не пройдёте.
+- speaker: tom
+  text: '[D1]Is[/] [T8]it[/] [J1]far[/]?'
+  ru: Это далеко?
+- speaker: passerby
+  emotion: happy
+  text: '[O4]No[/]. [T8]It[/] [D1]is[/] [N1]ten[/] [S7]minutes[/] [P4]on[/] [S5]foot[/].'
+  spoken: '[O4]No[/]. [T8]It[/][D1]''s[/] [N1]ten[/] [S7]minutes[/] [P4]on[/] [S5]foot[/].'
+  ru: Нет. Десять минут пешком.
+- speaker: anna
+  emotion: happy
+  text: '[O2]Thank[/] [T8]you[/]! [S1]Tom[/], [D4]follow[/] [T8]me[/]!'
+  ru: Спасибо! Том, за мной!
+twister:
+  number: 28
+  series: contractions
+  text: '[T8]I[/][D1]''m[/] [D4]walking[/] [P2]across[/], [T8]you[/][D1]''re[/] [D4]walking[/] [P2]past[/], [T8]we[/][D1]''re[/] [D4]walking[/] [P2]through[/], [C1]and[/] [T8]they[/][D1]''re[/] [D4]walking[/] [P2]into[/] [T1]the[/] [S4]park[/]!'
+  ru: Я иду через, ты идёшь мимо, мы идём сквозь, а они идут в парк!
+  ipa: /aɪm ˈwɔkɪŋ əˈkrɔs | jʊr ˈwɔkɪŋ ˈpæst | wɪr ˈwɔkɪŋ ˈθru | ən ðɛr ˈwɔkɪŋ ˈɪntə ðə ˈpɑrk/
+  focus_sounds:
+  - θ
+  - æ
+  source: original
+  goal_ru: Предлоги движения across / past / through / into и сокращения I'm, you're, we're, they're.
+  tip_ru: 'through — глухой th, язык между зубами, и сразу r: «сру». past — широкое «э»: «пэст». l в walking не читается: «уОкин».'
+  warmup:
+  - '[P2]across[/], [P2]past[/], [P2]through[/], [P2]into[/]'
+  - '[T8]I[/][D1]''m[/] [D4]walking[/] [P2]across[/].'
+  - '[T8]We[/][D1]''re[/] [D4]walking[/] [P2]through[/] [T1]the[/] [S4]park[/].'
+  - '[D4]Go[/] [P2]past[/] [T1]the[/] [S4]church[/]!'
+  target_line: Then go past the church and across the square.
+  own_ru: 'Опишите свой путь на работу или учёбу одной фразой с двумя предлогами: I walk along… and across…'

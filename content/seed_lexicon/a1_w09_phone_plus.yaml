@@ -48,6 +48,7 @@ units:
   forms:
   - calls
   - called
+  - calling
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -64,6 +65,7 @@ units:
   forms:
   - texts
   - texted
+  - texting
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -80,6 +82,7 @@ units:
   forms:
   - sends
   - sent
+  - sending
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -126,6 +129,7 @@ units:
   forms:
   - answers
   - answered
+  - answering
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -142,6 +146,7 @@ units:
   forms:
   - asks
   - asked
+  - asking
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -158,6 +163,7 @@ units:
   forms:
   - closes
   - closed
+  - closing
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

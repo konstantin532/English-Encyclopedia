@@ -1,24 +1,8 @@
 # Новые слова истории №11 «If It Rains» (лимит A-блока — до 5 на историю).
-# Реальное if о будущем: If it rains, we will… — тема недели 16 A1+.
+# Реальное if о будущем: If it rains, we will… Слово will (LX-00525) вводит неделя 15, в истории оно уже знакомо.
 level: A1+
 week: 16
 units:
-- uid: LX-00525
-  lemma: will
-  meaning: a word for the future
-  class: D7
-  grammar_features:
-  - modal
-  cefr: unverified
-  verification_status: pending
-  frequency_source: NGSL — требует проверки
-  ipa_us: /wɪl/
-  translation_ru: будет, буду (будущее время)
-  example_en: '[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/] [D7]will[/] [D2]eat[/] [P1]in[/] [T1]the[/] [S2]kitchen[/].'
-  example_ru: Если пойдёт дождь, мы поедим на кухне.
-  situation: Говорите о планах при условии
-  usage_note: 'После will глагол без to: we will eat. В речи сокращается: we''ll, I''ll. После if will не ставят: If it rains (не «If it will rain»).'
-  typical_error: '«If it will rain, we will…» — will после if лишнее. Нужно: If it rains, we will…'
 - uid: LX-00526
   lemma: picnic
   meaning: a meal that you eat outside, in a park or a garden
@@ -54,6 +38,7 @@ units:
   forms:
   - hopes
   - hoped
+  - hoping
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

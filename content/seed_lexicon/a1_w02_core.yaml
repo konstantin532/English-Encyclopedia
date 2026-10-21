@@ -6,7 +6,7 @@ units:
     lemma: have
     meaning: "to own or possess something"
     class: D1
-    forms: [has, "'ve", had]
+    forms: [has, "'ve", had, having]
     grammar_features: [irregular, possession]
     cefr: A1
     verification_status: partial
@@ -28,7 +28,7 @@ units:
     lemma: like
     meaning: "to enjoy something or think it is nice"
     class: D3
-    forms: [likes, liked]
+    forms: [likes, liked, liking]
     grammar_features: [state_verb]
     cefr: A1
     verification_status: partial
@@ -72,7 +72,7 @@ units:
     lemma: do
     meaning: "used to make questions and negatives in the present simple"
     class: D1
-    forms: [does, did]
+    forms: [does, did, doing]
     grammar_features: [auxiliary, irregular]
     cefr: A1
     verification_status: partial

@@ -9,6 +9,7 @@ units:
   forms:
   - moves
   - moved
+  - moving
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

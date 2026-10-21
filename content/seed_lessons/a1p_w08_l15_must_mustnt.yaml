@@ -1,0 +1,238 @@
+slug: a1p-must-mustnt
+level: A1+
+week: 8
+order: 15
+focus: D
+minutes: 40
+title: 'Must и must not: правила'
+summary: 'Как сказать «надо» и «нельзя» в правилах: You must wash your hands. You must not be late. После must — глагол без to; mustn''t — «нельзя», а не «не обязательно».'
+units:
+- LX-00511
+- LX-00512
+- LX-00513
+- LX-00514
+- LX-00772
+- LX-00775
+- LX-00780
+- LX-00785
+- LX-00786
+- LX-00787
+- LX-00789
+- LX-00790
+- LX-00791
+- LX-00798
+- LX-00799
+sound_notes:
+- text: You must be here at six.
+  ipa: /ju məst bi ˈhɪr ət ˈsɪks/
+  note_ru: 'в середине фразы must безударное: «мэст», t почти не слышно'
+- text: You mustn't be late.
+  ipa: /ju ˈmʌsənt bi ˈleɪt/
+  note_ru: 'mustn''t — «мАснт»: первая t не читается'
+- text: You must wash your hands.
+  ipa: /ju məst ˈwɑʃ jɚ ˈhændz/
+  note_ru: wash — «уош», с w; hands — «хэндз», d почти пропадает
+contractions:
+- full: must not
+  short: mustn't
+  ipa: /ˈmʌsənt/
+  note_ru: You mustn't be late — опаздывать нельзя.
+layers:
+- number: 1
+  body: 'У Джейка первый рабочий день в кафе, и Мия рассказывает правила. Правила по-английски звучат через **must** — «надо, обязан» — и **must not** — «нельзя».
+
+
+    > [T1]The[/] [S9]rules[/] [D1]are[/] [J3]easy[/]. [T8]You[/] [D7]must[/] [D1]be[/] [A3]here[/] [P3]at[/] [N3]six[/]. [T8]You[/] [D7]must[/] [X1]not[/] [D1]be[/] [A2]late[/]. — Правила простые. Ты должен быть здесь в шесть. Опаздывать нельзя.
+
+    '
+- number: 2
+  body: '**Must** — очень старый глагол, когда-то он значил «мочь, иметь право». Теперь это строгое «надо». У must нет форм: нет *musts*, *musted*, *musting*. Одна форма для всех: I must, she must, they must.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [A2]Yesterday[/] [T8]I[/] [D1]was[/] [A2]late[/], [C1]and[/] [T1]the[/] [S9]boss[/] [D1]was[/] [X1]not[/] [J4]happy[/]! [A2]Now[/], [T8]you[/] [D7]must[/] [D2]wash[/] [T3]your[/] [S5]hands[/]. — Вчера я опоздала, и начальник был недоволен! Так, нужно вымыть руки.
+
+
+    - Надо: **must + глагол** — You must wash your hands.
+
+    - Нельзя: **must not (mustn''t) + глагол** — You mustn''t smoke here.
+
+    - Глагол после must — без to: must **wash**, не *must to wash*.
+
+    - У must нет -s: she **must**, не *she musts*.
+
+    - Вовремя — **on time**: You must be on time.
+
+    '
+- number: 4
+  body: '**Почему must not — «нельзя», а не «не обязательно»?** В русском «не должен» может значить «не обязан». А **mustn''t** всегда запрещает: *You mustn''t use your phone* — «телефоном пользоваться нельзя». «Не обязательно» скажем иначе — это будет на следующей неделе: **don''t have to**.
+
+
+    > [O4]No[/], [T8]you[/] [D7]must[/] [X1]not[/] [D2]use[/] [T3]your[/] [S2]phone[/] [P3]at[/] [T1]the[/] [S2]counter[/]. [C1]And[/] [T8]you[/] [D7]must[/] [D1]be[/] [J6]polite[/] [P2]to[/] [S1]customers[/]. — Нет, у стойки телефон нельзя. И с клиентами надо быть вежливым.
+
+
+    **Диагностика понимания:** что верно: *You must to be polite* или *You must be polite*?
+
+
+    **Разбор:** *You must be polite.* После must — без to.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - В разговоре must звучит строго, как табличка с правилами. Мия может так сказать новичку в первый день.
+
+    - **Watch out!** — осторожно!
+
+    - **You must be on time.** — приходи вовремя.
+
+
+    Слова: **rule** — правило, **hair** — волосы, **gloves** — перчатки, **drop** — ронять, **throw** — бросать, **hurry** — спешить, **smoke** — курить, **polite** — вежливый, **rude** — грубый. Из истории 8: **must**, **basement** — подвал, **girl** — девочка, **boy** — мальчик.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «must to wash» — без to: **must wash**.
+
+    - «she musts» — у must нет -s.
+
+    - «You mustn''t come» — это «нельзя приходить», а не «можно не приходить».
+
+    - «Do I must…?» — вопрос с must: **Must I…?** (но чаще говорят Do I have to…?).
+
+    '
+- number: 7
+  body: 'Шесть заданий: узнать правило, сказать «нельзя», собрать правило с must, написать правило для своей работы, найти ошибку и предупредить «осторожно».
+
+
+    **Проверка маленького шага:** must + глагол = надо; mustn''t + глагол = нельзя. Без to и без -s.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00248
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Мия: «Ты должен быть здесь в шесть». Выберите фразу.'
+  options:
+  - You must be here at six.
+  - You must to be here at six.
+  - You musts be here at six.
+  answer: You must be here at six.
+  hint_ru: После must — без to.
+  explanation_ru: You must be here at six. Must + глагол без to.
+  units:
+  - LX-00511
+  - LX-00772
+- order: 2
+  uid: EX-00249
+  kind: fill
+  stage: substitution
+  prompt_ru: Курить здесь нельзя. Закончите правило.
+  prompt_en: You ___ smoke here.
+  answer: mustn't
+  accepted:
+  - must not
+  hint_ru: Нельзя — must not.
+  explanation_ru: You mustn't smoke here. Mustn't — запрет.
+  units:
+  - LX-00789
+- order: 3
+  uid: EX-00250
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Нужно мыть руки».'
+  options:
+  - hands
+  - You
+  - wash
+  - must
+  - your
+  answer: You must wash your hands
+  hint_ru: You + must + wash…
+  explanation_ru: 'You must wash your hands. По-английски нужно «ты»: you must.'
+  units:
+  - LX-00511
+- order: 4
+  uid: EX-00251
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вы объясняете правило в спортзале. Скажите: «Здесь нужно носить перчатки».'
+  prompt_en: You must ___ gloves here.
+  answer: wear
+  hint_ru: Носить одежду — wear.
+  explanation_ru: You must wear gloves here.
+  units:
+  - LX-00780
+- order: 5
+  uid: EX-00252
+  kind: choice
+  stage: recognition
+  prompt_ru: Где ошибка? Выберите правильную фразу.
+  options:
+  - She must be polite.
+  - She musts be polite.
+  - She must to be polite.
+  answer: She must be polite.
+  hint_ru: У must нет -s и нет to.
+  explanation_ru: She must be polite. Must одинаков для всех.
+  units:
+  - LX-00790
+- order: 6
+  uid: EX-00253
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Друг идёт по мокрому полу. Крикните: «Осторожно!»'
+  prompt_en: Watch ___!
+  answer: out
+  hint_ru: Watch + out.
+  explanation_ru: Watch out! — осторожно!
+  units:
+  - LX-00799
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Ты должен быть здесь в шесть.
+  answer: You must be here at six.
+  hint_ru: must + be.
+  explanation_ru: You must be here at six.
+  review_of: 1
+  units:
+  - LX-00511
+- order: 2
+  kind: translate
+  prompt_ru: Опаздывать нельзя.
+  answer: You mustn't be late.
+  accepted:
+  - You must not be late.
+  hint_ru: mustn't + be late.
+  explanation_ru: You mustn't be late.
+  review_of: 2
+  units:
+  - LX-00511
+- order: 3
+  kind: translate
+  prompt_ru: Нужно быть вежливым.
+  answer: You must be polite.
+  hint_ru: must + be + polite.
+  explanation_ru: You must be polite.
+  review_of: 5
+  units:
+  - LX-00790
+- order: 4
+  kind: translate
+  prompt_ru: Приходи вовремя.
+  answer: You must be on time.
+  accepted:
+  - Be on time.
+  hint_ru: on time — вовремя.
+  explanation_ru: You must be on time.
+  review_of: 3
+  units:
+  - LX-00798

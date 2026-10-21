@@ -34,6 +34,7 @@ units:
   class: D5
   forms:
   - excuses
+  - excused
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -146,6 +147,7 @@ units:
   forms:
   - turns
   - turned
+  - turning
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

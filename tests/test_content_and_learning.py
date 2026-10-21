@@ -1,3 +1,4 @@
+import re
 import json
 from datetime import timedelta
 
@@ -409,7 +410,11 @@ class ReviewFixesTests(TestCase):
         self.assertEqual(plural_ru(11, forms), "11 учебных единиц")
         self.assertEqual(plural_ru(22, forms), "22 учебные единицы")
         html = self.client.get("/words/", {"q": "home"}).content.decode()
-        self.assertRegex(html, r"\b([2-4]|2[2-4]) учебные единицы по запросу «home»")
+        # Число слов растёт с курсом; проверяем склонение для фактического числа.
+        found = re.search(r"(\d+) (учебная единица|учебные единицы|учебных единиц) по запросу «home»", html)
+        self.assertIsNotNone(found)
+        self.assertGreaterEqual(int(found.group(1)), 2)
+        self.assertEqual(plural_ru(int(found.group(1)), forms), f"{found.group(1)} {found.group(2)}")
 
     def test_substitutions_use_only_learned_words(self):
         from apps.publishing.audit import run_audit

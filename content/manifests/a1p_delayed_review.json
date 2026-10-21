@@ -1,0 +1,1826 @@
+{
+ "a1p-present-continuous": [
+  [
+   "Подруга звонит, а вы как раз пьёте чай. Что сказать?",
+   "",
+   [
+    "I drink tea.",
+    "I am drinking tea.",
+    "I drinking tea."
+   ],
+   1,
+   "Действие идёт сейчас — am + -ing."
+  ],
+  [
+   "Вставьте форму be: Tom ___ washing the dishes.",
+   "Tom ___ washing the dishes.",
+   [
+    "am",
+    "are",
+    "is"
+   ],
+   2,
+   "Tom — он, значит is."
+  ],
+  [
+   "Как спросить «Что вы делаете?» (двум друзьям)",
+   "",
+   [
+    "What are you doing?",
+    "What you are doing?",
+    "What do you doing?"
+   ],
+   0,
+   "В вопросе are стоит перед you."
+  ],
+  [
+   "Какая фраза о привычке, а не о «сейчас»?",
+   "",
+   [
+    "We are cleaning the kitchen.",
+    "She is smiling.",
+    "I drink coffee at seven."
+   ],
+   2,
+   "Каждый день в семь — Present Simple, без -ing."
+  ],
+  [
+   "Как правильно написать: sit + -ing?",
+   "",
+   [
+    "siting",
+    "sitting",
+    "sitng"
+   ],
+   1,
+   "Короткий слог: t удваивается — sitting."
+  ]
+ ],
+ "a1p-video-call-feelings": [
+  [
+   "Звонок начался. Как спросить, слышно ли вас?",
+   "",
+   [
+    "Can you hear me?",
+    "Can you listen me?",
+    "Do you hearing me?"
+   ],
+   0,
+   "Слышать — hear: Can you hear me?"
+  ],
+  [
+   "Как сказать «Я скучаю по брату»?",
+   "",
+   [
+    "I miss for my brother.",
+    "I am miss my brother.",
+    "I miss my brother."
+   ],
+   2,
+   "После miss предлог не нужен."
+  ],
+  [
+   "Друг пишет: I miss you! Вы тоже скучаете.",
+   "",
+   [
+    "I miss you too!",
+    "I too miss you!",
+    "Too I miss you!"
+   ],
+   0,
+   "«Тоже» — too в конце фразы."
+  ],
+  [
+   "Вы слышите смех за дверью. Что спросить?",
+   "",
+   [
+    "Are someone laughing?",
+    "Is someone laughing?",
+    "Is someone laugh?"
+   ],
+   1,
+   "someone — как he: is + -ing."
+  ],
+  [
+   "Как тепло попрощаться в конце звонка?",
+   "",
+   [
+    "Talk you soon!",
+    "Talk to you soon!",
+    "Soon talk to you!"
+   ],
+   1,
+   "Talk to you soon! — скоро созвонимся."
+  ]
+ ],
+ "a1p-was-were": [
+  [
+   "Как сказать «Я был дома»?",
+   "",
+   [
+    "I were at home.",
+    "I was at home.",
+    "I am at home."
+   ],
+   1,
+   "С I — was."
+  ],
+  [
+   "Анна и Том были в кафе. Выберите форму.",
+   "",
+   [
+    "Anna and Tom was at the cafe.",
+    "Anna and Tom were at the cafe.",
+    "Anna and Tom is at the cafe."
+   ],
+   1,
+   "Двое — were."
+  ],
+  [
+   "Спросите друга, где он был.",
+   "",
+   [
+    "Where were you?",
+    "Where was you?",
+    "Where you were?"
+   ],
+   0,
+   "Where were you? — с you всегда were."
+  ],
+  [
+   "Как сказать «вчера вечером»?",
+   "",
+   [
+    "yesterday night",
+    "last night",
+    "night yesterday"
+   ],
+   1,
+   "Американцы говорят last night."
+  ],
+  [
+   "Вас спросили: Were you at the gym? Вас там не было.",
+   "",
+   [
+    "No, I weren't.",
+    "No, I wasn't.",
+    "No, I not was."
+   ],
+   1,
+   "С I — wasn't."
+  ]
+ ],
+ "a1p-there-was-how-was": [
+  [
+   "В комнате была одна лампа. Как сказать?",
+   "",
+   [
+    "There was a lamp.",
+    "There were a lamp.",
+    "It was a lamp there."
+   ],
+   0,
+   "Одна вещь — there was."
+  ],
+  [
+   "На концерте было много людей.",
+   "",
+   [
+    "There was many people.",
+    "There were many people.",
+    "There are many people was."
+   ],
+   1,
+   "Много — there were."
+  ],
+  [
+   "Спросите, как прошёл фильм.",
+   "",
+   [
+    "How was the movie?",
+    "How were the movie?",
+    "How the movie was?"
+   ],
+   0,
+   "How was + the movie?"
+  ],
+  [
+   "Вечеринка была весёлой. Как сказать?",
+   "",
+   [
+    "It was funny.",
+    "It was fun.",
+    "Was fun."
+   ],
+   1,
+   "Весело — fun; и без it нельзя."
+  ],
+  [
+   "Опишите тихую улицу в прошлом.",
+   "",
+   [
+    "The street was quiet.",
+    "The street were quiet.",
+    "The street quiet was."
+   ],
+   0,
+   "Одна улица — was."
+  ]
+ ],
+ "a1p-past-simple-ed": [
+  [
+   "Скажите: «Я убрал квартиру».",
+   "",
+   [
+    "I cleaned my apartment.",
+    "I was clean my apartment.",
+    "I clean my apartment yesterday."
+   ],
+   0,
+   "Прошлое — глагол + -ed, без was."
+  ],
+  [
+   "Поставьте carry в прошедшее время: I ___ the bags.",
+   "",
+   [
+    "carryed",
+    "carried",
+    "carry"
+   ],
+   1,
+   "Согласная + y → ied: carried."
+  ],
+  [
+   "Как сказать «Я весь день отдыхал»?",
+   "",
+   [
+    "I relaxed all day.",
+    "I was relax all day.",
+    "I all day relaxed."
+   ],
+   0,
+   "Глагол + -ed, all day в конце."
+  ],
+  [
+   "В каком слове -ed звучит как «т»?",
+   "",
+   [
+    "worked",
+    "painted",
+    "played"
+   ],
+   0,
+   "После k — глухое «т»: «уёркт»."
+  ],
+  [
+   "Скажите: «В прошлые выходные я навестил друга».",
+   "",
+   [
+    "In last weekend I visited a friend.",
+    "Last weekend I visited a friend.",
+    "Last weekend I visit a friend."
+   ],
+   1,
+   "Last weekend — без предлога, глагол с -ed."
+  ]
+ ],
+ "a1p-weekend-small-talk": [
+  [
+   "Коллега: How was your weekend? Выходные были нормальные.",
+   "",
+   [
+    "Not bad.",
+    "No bad.",
+    "Not badly."
+   ],
+   0,
+   "Not bad — «неплохо»."
+  ],
+  [
+   "Верните вопрос собеседнику.",
+   "",
+   [
+    "What about you?",
+    "What you about?",
+    "And about you is?"
+   ],
+   0,
+   "What about you? — «А у тебя?»"
+  ],
+  [
+   "Коллега: I love pizza. Вы тоже.",
+   "",
+   [
+    "I too.",
+    "Me too.",
+    "Too me."
+   ],
+   1,
+   "В разговоре — Me too."
+  ],
+  [
+   "Скажите: «Мне понравился концерт».",
+   "",
+   [
+    "I enjoyed.",
+    "I enjoyed the concert.",
+    "Me enjoyed the concert."
+   ],
+   1,
+   "После enjoy — что понравилось."
+  ],
+  [
+   "Скажите: «Нам нужен отчёт».",
+   "",
+   [
+    "We need the report.",
+    "Us need the report.",
+    "We are need the report."
+   ],
+   0,
+   "We need + что нужно."
+  ]
+ ],
+ "a1p-irregular-past": [
+  [
+   "Скажите: «Я пошёл в магазин».",
+   "",
+   [
+    "I goed to the store.",
+    "I went to the store.",
+    "I was go to the store."
+   ],
+   1,
+   "go → went."
+  ],
+  [
+   "Поставьте buy в прошедшее: I ___ a scarf.",
+   "",
+   [
+    "buyed",
+    "bought",
+    "brought"
+   ],
+   1,
+   "buy → bought; brought — от bring."
+  ],
+  [
+   "Скажите: «Я заплатил десять долларов».",
+   "",
+   [
+    "I payed ten dollars.",
+    "I paid ten dollars.",
+    "I pay ten dollars yesterday."
+   ],
+   1,
+   "pay → paid."
+  ],
+  [
+   "Как сказать «Я забыл»?",
+   "",
+   [
+    "I forgot.",
+    "I forgetted.",
+    "I was forget."
+   ],
+   0,
+   "forget → forgot."
+  ],
+  [
+   "Скажите: «Я выбрал платье».",
+   "",
+   [
+    "I choosed a dress.",
+    "I chose a dress.",
+    "I choose a dress yesterday."
+   ],
+   1,
+   "choose → chose."
+  ]
+ ],
+ "a1p-paying-and-prices": [
+  [
+   "Спросите, сколько стоила покупка.",
+   "",
+   [
+    "How much was it?",
+    "How much it was?",
+    "How many was it?"
+   ],
+   0,
+   "Деньги — much; was впереди."
+  ],
+  [
+   "Вы заплатили картой.",
+   "",
+   [
+    "I paid in card.",
+    "I paid by card.",
+    "I paid by a card."
+   ],
+   1,
+   "by card — без артикля."
+  ],
+  [
+   "Вы заплатили наличными.",
+   "",
+   [
+    "I paid in cash.",
+    "I paid by cashes.",
+    "I paid on cash."
+   ],
+   0,
+   "in cash."
+  ],
+  [
+   "Вещь была со скидкой.",
+   "",
+   [
+    "It was on sale.",
+    "It was in sale.",
+    "It was sale."
+   ],
+   0,
+   "on sale."
+  ],
+  [
+   "Что нужно, чтобы обменять покупку?",
+   "",
+   [
+    "the receipt",
+    "the recipe",
+    "the pocket"
+   ],
+   0,
+   "receipt — чек."
+  ]
+ ],
+ "a1p-did-didnt": [
+  [
+   "Спросите: «Ты видел мой телефон?»",
+   "",
+   [
+    "Did you see my phone?",
+    "Did you saw my phone?",
+    "You did see my phone?"
+   ],
+   0,
+   "После did — основная форма."
+  ],
+  [
+   "Did you call Tom? — Нет.",
+   "",
+   [
+    "No, I didn't.",
+    "No, I didn't call.",
+    "No, I not."
+   ],
+   0,
+   "Короткий ответ — No, I didn't."
+  ],
+  [
+   "Скажите: «Я не ходил в спортзал».",
+   "",
+   [
+    "I didn't went to the gym.",
+    "I didn't go to the gym.",
+    "I not go to the gym."
+   ],
+   1,
+   "didn't + go."
+  ],
+  [
+   "Спросите: «Где ты купил это?»",
+   "",
+   [
+    "Where you bought it?",
+    "Where did you buy it?",
+    "Where did you bought it?"
+   ],
+   1,
+   "Where + did + you + buy."
+  ],
+  [
+   "Подругу надо успокоить.",
+   "",
+   [
+    "Don't worry.",
+    "Not worry.",
+    "No worry you."
+   ],
+   0,
+   "Don't worry."
+  ]
+ ],
+ "a1p-describe-things": [
+  [
+   "Вы узнали свою сумку.",
+   "",
+   [
+    "That's my!",
+    "That's mine!",
+    "That's me!"
+   ],
+   1,
+   "Без слова после — mine."
+  ],
+  [
+   "Спросите о цвете вещи.",
+   "",
+   [
+    "What color is it?",
+    "What color it is?",
+    "Which color it?"
+   ],
+   0,
+   "What color is it?"
+  ],
+  [
+   "Как правильно?",
+   "",
+   [
+    "a black long handle",
+    "a long black handle",
+    "a long handle black"
+   ],
+   1,
+   "Длина, потом цвет."
+  ],
+  [
+   "Два одинаковых шарфа.",
+   "",
+   [
+    "They are same.",
+    "They are the same.",
+    "They are a same."
+   ],
+   1,
+   "the same."
+  ],
+  [
+   "Вы нашли потерянную вещь.",
+   "",
+   [
+    "Here it is!",
+    "Here is it!",
+    "It here is!"
+   ],
+   0,
+   "Here it is!"
+  ]
+ ],
+ "a1p-object-pronouns": [
+  [
+   "«Она мне звонила».",
+   "",
+   [
+    "She called me.",
+    "She called I.",
+    "Her called me."
+   ],
+   0,
+   "Кто — she, кому — me."
+  ],
+  [
+   "«Я скучаю по ним».",
+   "",
+   [
+    "I miss they.",
+    "I miss them.",
+    "I miss their."
+   ],
+   1,
+   "they → them."
+  ],
+  [
+   "«Расскажи нам».",
+   "",
+   [
+    "Tell we.",
+    "Say us.",
+    "Tell us."
+   ],
+   2,
+   "tell + us."
+  ],
+  [
+   "«Я покажу его тебе».",
+   "",
+   [
+    "I can show it to you.",
+    "I can show to you it.",
+    "I can show you to it."
+   ],
+   0,
+   "show it to you."
+  ],
+  [
+   "«Перезвони мне».",
+   "",
+   [
+    "Call back me.",
+    "Call me back.",
+    "Back call me."
+   ],
+   1,
+   "Call me back."
+  ]
+ ],
+ "a1p-phone-and-feelings": [
+  [
+   "Телефон сел.",
+   "",
+   [
+    "My battery is dead.",
+    "My battery is died.",
+    "My battery dead."
+   ],
+   0,
+   "is dead."
+  ],
+  [
+   "«Я волновался».",
+   "",
+   [
+    "I nervous.",
+    "I was nervous.",
+    "I was nervoused."
+   ],
+   1,
+   "was + nervous."
+  ],
+  [
+   "«Мы удивились».",
+   "",
+   [
+    "We were surprised.",
+    "We were surprising.",
+    "We surprised."
+   ],
+   0,
+   "Чувствуем мы — -ed."
+  ],
+  [
+   "Бояться собак.",
+   "",
+   [
+    "afraid from dogs",
+    "afraid of dogs",
+    "afraid dogs"
+   ],
+   1,
+   "afraid of."
+  ],
+  [
+   "Незнакомый человек — это…",
+   "",
+   [
+    "a strange",
+    "a stranger",
+    "a story"
+   ],
+   1,
+   "stranger."
+  ]
+ ],
+ "a1p-some-any": [
+  [
+   "«У нас нет рыбы».",
+   "",
+   [
+    "We don't have some fish.",
+    "We don't have any fish.",
+    "We have any fish."
+   ],
+   1,
+   "С not — any."
+  ],
+  [
+   "Попросите хлеб.",
+   "",
+   [
+    "Can I have some bread?",
+    "Can I have any bread?",
+    "Can I have a bread?"
+   ],
+   0,
+   "Просьба — some."
+  ],
+  [
+   "Спросите, есть ли суп.",
+   "",
+   [
+    "Is there any soup?",
+    "Is there some soups?",
+    "There is any soup?"
+   ],
+   0,
+   "Вопрос — any."
+  ],
+  [
+   "Что нельзя сказать с a?",
+   "",
+   [
+    "rice",
+    "fork",
+    "plate"
+   ],
+   0,
+   "rice — неисчисляемое."
+  ],
+  [
+   "Попросите ещё воды.",
+   "",
+   [
+    "Can I have more water?",
+    "Can I have water more?",
+    "Can I have a more water?"
+   ],
+   0,
+   "more + water."
+  ]
+ ],
+ "a1p-restaurant-order": [
+  [
+   "Вежливо закажите пасту.",
+   "",
+   [
+    "I want pasta.",
+    "I would like the pasta, please.",
+    "Pasta me."
+   ],
+   1,
+   "I would like…"
+  ],
+  [
+   "Попросите счёт в США.",
+   "",
+   [
+    "Can we have the check, please?",
+    "Give us the bill.",
+    "The money, please."
+   ],
+   0,
+   "the check."
+  ],
+  [
+   "Еда очень вкусная.",
+   "",
+   [
+    "It's very delicious.",
+    "It's delicious.",
+    "It's deliciously."
+   ],
+   1,
+   "delicious уже значит «очень»."
+  ],
+  [
+   "Сдачи не надо.",
+   "",
+   [
+    "Keep the change.",
+    "Take the change.",
+    "Keep a change."
+   ],
+   0,
+   "Keep the change."
+  ],
+  [
+   "Официант приносит еду и говорит…",
+   "",
+   [
+    "Enjoy your meal!",
+    "Anything meal?",
+    "Ready your meal!"
+   ],
+   0,
+   "Enjoy your meal!"
+  ]
+ ],
+ "a1p-must-mustnt": [
+  [
+   "«Ты должен быть здесь в семь».",
+   "",
+   [
+    "You must be here at seven.",
+    "You must to be here at seven.",
+    "You musts be here at seven."
+   ],
+   0,
+   "must + глагол без to."
+  ],
+  [
+   "«Здесь нельзя курить».",
+   "",
+   [
+    "You don't must smoke here.",
+    "You mustn't smoke here.",
+    "You must no smoke here."
+   ],
+   1,
+   "mustn't + глагол."
+  ],
+  [
+   "Что значит You mustn't come?",
+   "",
+   [
+    "Приходить нельзя.",
+    "Можно не приходить.",
+    "Нужно прийти."
+   ],
+   0,
+   "mustn't — запрет."
+  ],
+  [
+   "«Она должна быть вежливой».",
+   "",
+   [
+    "She musts be polite.",
+    "She must be polite.",
+    "She must polite."
+   ],
+   1,
+   "У must нет -s."
+  ],
+  [
+   "Предупредите об опасности.",
+   "",
+   [
+    "Watch out!",
+    "Watch in!",
+    "Look out me!"
+   ],
+   0,
+   "Watch out!"
+  ]
+ ],
+ "a1p-first-day-work": [
+  [
+   "Поприветствуйте новичка.",
+   "",
+   [
+    "Welcome to the team!",
+    "Welcome in team!",
+    "Welcome team you!"
+   ],
+   0,
+   "Welcome to the team!"
+  ],
+  [
+   "Коротко: «Понял».",
+   "",
+   [
+    "I got.",
+    "Got it.",
+    "Get it."
+   ],
+   1,
+   "Got it."
+  ],
+  [
+   "Ответ на Thank you!",
+   "",
+   [
+    "No problem.",
+    "No problems me.",
+    "Not problem."
+   ],
+   0,
+   "No problem."
+  ],
+  [
+   "«Сделай перерыв».",
+   "",
+   [
+    "Take a break.",
+    "Make a break.",
+    "Do a break."
+   ],
+   0,
+   "Take a break."
+  ],
+  [
+   "«Можно вопрос?»",
+   "",
+   [
+    "Can I ask a question?",
+    "Can I question?",
+    "May question I?"
+   ],
+   0,
+   "Can I ask a question?"
+  ]
+ ],
+ "a1p-have-to": [
+  [
+   "«Ему надо работать».",
+   "",
+   [
+    "He have to work.",
+    "He has to work.",
+    "He has work."
+   ],
+   1,
+   "he → has to."
+  ],
+  [
+   "«Не обязательно ждать».",
+   "",
+   [
+    "You mustn't wait.",
+    "You don't have to wait.",
+    "You haven't to wait."
+   ],
+   1,
+   "don't have to — не обязательно."
+  ],
+  [
+   "«Нам надо платить?»",
+   "",
+   [
+    "Do we have to pay?",
+    "Have we to pay?",
+    "Do we must pay?"
+   ],
+   0,
+   "Do we have to…?"
+  ],
+  [
+   "Что значит You mustn't pay?",
+   "",
+   [
+    "Платить нельзя.",
+    "Платить не нужно.",
+    "Надо заплатить."
+   ],
+   0,
+   "mustn't — запрет."
+  ],
+  [
+   "«Мне надо позвонить».",
+   "",
+   [
+    "I have to call.",
+    "I have call.",
+    "I must to call."
+   ],
+   0,
+   "have to + глагол."
+  ]
+ ],
+ "a1p-home-repairs": [
+  [
+   "Труба течёт.",
+   "",
+   [
+    "The pipe is leaking.",
+    "The pipe is leak.",
+    "The pipe leaking."
+   ],
+   0,
+   "is leaking."
+  ],
+  [
+   "«Выключи свет».",
+   "",
+   [
+    "Turn on the light.",
+    "Turn off the light.",
+    "Turn out of the light."
+   ],
+   1,
+   "off — выключить."
+  ],
+  [
+   "Обогреватель не работает.",
+   "",
+   [
+    "The heater doesn't work.",
+    "The heater not work.",
+    "The heater isn't work."
+   ],
+   0,
+   "doesn't work."
+  ],
+  [
+   "Мастер спрашивает: «Что случилось?»",
+   "",
+   [
+    "What's wrong?",
+    "What's long?",
+    "What wrong?"
+   ],
+   0,
+   "What's wrong?"
+  ],
+  [
+   "Лифт по-американски…",
+   "",
+   [
+    "lift",
+    "elevator",
+    "stairs"
+   ],
+   1,
+   "elevator."
+  ]
+ ],
+ "a1p-could-you": [
+  [
+   "Вежливо попросите говорить медленно.",
+   "",
+   [
+    "Could you speak slowly, please?",
+    "Speak slowly!",
+    "Could you to speak slowly?"
+   ],
+   0,
+   "Could you + глагол."
+  ],
+  [
+   "Дать на время — это…",
+   "",
+   [
+    "borrow",
+    "lend",
+    "share"
+   ],
+   1,
+   "lend — дать, borrow — взять."
+  ],
+  [
+   "«Можно одолжить вашу ручку?»",
+   "",
+   [
+    "Could I borrow your pen?",
+    "Could I lend your pen?",
+    "Could you borrow me your pen?"
+   ],
+   0,
+   "Could I borrow…?"
+  ],
+  [
+   "Ответ «Конечно!»",
+   "",
+   [
+    "Of course!",
+    "Of courses!",
+    "In course!"
+   ],
+   0,
+   "Of course!"
+  ],
+  [
+   "«Как мило с вашей стороны!»",
+   "",
+   [
+    "That's sweet of you!",
+    "That's sweet for you!",
+    "That sweet you!"
+   ],
+   0,
+   "sweet of you."
+  ]
+ ],
+ "a1p-adverbs-ly": [
+  [
+   "«Он говорит медленно».",
+   "",
+   [
+    "He speaks slow.",
+    "He speaks slowly.",
+    "He slowly speaks slow."
+   ],
+   1,
+   "Как? — slowly."
+  ],
+  [
+   "«Я плохо спал».",
+   "",
+   [
+    "I slept bad.",
+    "I slept badly.",
+    "I badly slept bad."
+   ],
+   1,
+   "badly."
+  ],
+  [
+   "«Выспись!»",
+   "",
+   [
+    "Sleep good!",
+    "Sleep well!",
+    "Sleep goodly!"
+   ],
+   1,
+   "good → well."
+  ],
+  [
+   "Наречие от easy…",
+   "",
+   [
+    "easyly",
+    "easily",
+    "easy"
+   ],
+   1,
+   "y → i: easily."
+  ],
+  [
+   "Где наречие?",
+   "",
+   [
+    "Carry carefully the box.",
+    "Carry the box carefully.",
+    "Carefully carry box the."
+   ],
+   1,
+   "После того, что несут."
+  ]
+ ],
+ "a1p-how-often": [
+  [
+   "Два раза в день.",
+   "",
+   [
+    "twice a day",
+    "twice in day",
+    "two in a day"
+   ],
+   0,
+   "twice a day."
+  ],
+  [
+   "Спросите, как часто.",
+   "",
+   [
+    "How often?",
+    "How much often?",
+    "How many often?"
+   ],
+   0,
+   "How often?"
+  ],
+  [
+   "«Я часто забываю».",
+   "",
+   [
+    "I forget often.",
+    "I often forget.",
+    "Often I forget it often."
+   ],
+   1,
+   "often — перед глаголом."
+  ],
+  [
+   "Раз в неделю.",
+   "",
+   [
+    "Once a week.",
+    "One time in week.",
+    "Once in the week."
+   ],
+   0,
+   "once a week."
+  ],
+  [
+   "«Я всегда устаю».",
+   "",
+   [
+    "I always am tired.",
+    "I am always tired.",
+    "Always I tired."
+   ],
+   1,
+   "После be: am always."
+  ]
+ ],
+ "a1p-at-the-pharmacy": [
+  [
+   "У вас температура.",
+   "",
+   [
+    "I have a fever.",
+    "I am fever.",
+    "I fever."
+   ],
+   0,
+   "have a fever."
+  ],
+  [
+   "Аллергия на кошек.",
+   "",
+   [
+    "allergic on cats",
+    "allergic to cats",
+    "allergic of cats"
+   ],
+   1,
+   "allergic to."
+  ],
+  [
+   "Рецепт от врача — это…",
+   "",
+   [
+    "recipe",
+    "prescription",
+    "receipt"
+   ],
+   1,
+   "prescription."
+  ],
+  [
+   "Кто-то чихнул.",
+   "",
+   [
+    "Bless you!",
+    "Get well soon!",
+    "Sleep well!"
+   ],
+   0,
+   "Bless you!"
+  ],
+  [
+   "Больное горло.",
+   "",
+   [
+    "a sore throat",
+    "a sorry throat",
+    "a sick throat"
+   ],
+   0,
+   "a sore throat."
+  ]
+ ],
+ "a1p-too-enough": [
+  [
+   "Слишком далеко.",
+   "",
+   [
+    "It's too far.",
+    "It's far too much.",
+    "It's very far enough."
+   ],
+   0,
+   "too + far."
+  ],
+  [
+   "Недостаточно тёплый.",
+   "",
+   [
+    "not enough warm",
+    "not warm enough",
+    "not too warm"
+   ],
+   1,
+   "warm enough."
+  ],
+  [
+   "Правильный порядок?",
+   "",
+   [
+    "a blue big umbrella",
+    "a big blue umbrella",
+    "a umbrella big blue"
+   ],
+   1,
+   "Размер, потом цвет."
+  ],
+  [
+   "Это проблема, идти нельзя: «слишком холодно».",
+   "",
+   [
+    "It's very cold.",
+    "It's too cold.",
+    "It's cold enough."
+   ],
+   1,
+   "too — проблема."
+  ],
+  [
+   "«Достаточно денег»",
+   "",
+   [
+    "money enough",
+    "enough money",
+    "too money"
+   ],
+   1,
+   "С существительным enough перед ним."
+  ]
+ ],
+ "a1p-weather-plans": [
+  [
+   "Спросите о погоде.",
+   "",
+   [
+    "What's the weather like?",
+    "How is the weather like?",
+    "What is weather?"
+   ],
+   0,
+   "What's … like?"
+  ],
+  [
+   "Предложите музей.",
+   "",
+   [
+    "How about the museum?",
+    "How about go to the museum?",
+    "How about to the museum go?"
+   ],
+   0,
+   "How about + слово."
+  ],
+  [
+   "«Похоже, будет дождь».",
+   "",
+   [
+    "It looks like rain.",
+    "It looks rain.",
+    "It like rains."
+   ],
+   0,
+   "looks like rain."
+  ],
+  [
+   "32 °F — это…",
+   "",
+   [
+    "0 °C",
+    "32 °C",
+    "−10 °C"
+   ],
+   0,
+   "32 °F = 0 °C."
+  ],
+  [
+   "«Пошли!»",
+   "",
+   [
+    "Let's go!",
+    "Lets going!",
+    "Let go us!"
+   ],
+   0,
+   "Let's go!"
+  ]
+ ],
+ "a1p-past-review": [
+  [
+   "«Я родился в мае».",
+   "",
+   [
+    "I born in May.",
+    "I was born in May.",
+    "I am born in May."
+   ],
+   1,
+   "was born."
+  ],
+  [
+   "«Где ты вырос?»",
+   "",
+   [
+    "Where did you grow up?",
+    "Where did you grew up?",
+    "Where you grew up?"
+   ],
+   0,
+   "did + grow."
+  ],
+  [
+   "«Я работал год».",
+   "",
+   [
+    "I was work for one year.",
+    "I worked for one year.",
+    "I work for one year ago."
+   ],
+   1,
+   "worked."
+  ],
+  [
+   "«Я не учился в колледже».",
+   "",
+   [
+    "I didn't go to college.",
+    "I didn't went to college.",
+    "I not go to college."
+   ],
+   0,
+   "didn't + go."
+  ],
+  [
+   "Давным-давно…",
+   "",
+   [
+    "A long time ago…",
+    "Long time before…",
+    "Ago long time…"
+   ],
+   0,
+   "a long time ago."
+  ]
+ ],
+ "a1p-application-form": [
+  [
+   "Поле «дата рождения».",
+   "",
+   [
+    "date of birth",
+    "birth of date",
+    "day born"
+   ],
+   0,
+   "date of birth."
+  ],
+  [
+   "«Хочу стать шеф-поваром».",
+   "",
+   [
+    "I want be a chef.",
+    "I want to be a chef.",
+    "I want to be chef."
+   ],
+   1,
+   "want to be a…"
+  ],
+  [
+   "Опыт работы.",
+   "",
+   [
+    "experience",
+    "experiences",
+    "an experience"
+   ],
+   0,
+   "experience — без -s."
+  ],
+  [
+   "История как предмет.",
+   "",
+   [
+    "story",
+    "history",
+    "stories"
+   ],
+   1,
+   "history."
+  ],
+  [
+   "Пожелайте удачи.",
+   "",
+   [
+    "Good luck!",
+    "Nice luck!",
+    "Good lucky!"
+   ],
+   0,
+   "Good luck!"
+  ]
+ ],
+ "a1p-movement-prepositions": [
+  [
+   "Сквозь парк.",
+   "",
+   [
+    "through the park",
+    "across the park trees",
+    "over the park"
+   ],
+   0,
+   "through — сквозь."
+  ],
+  [
+   "Мимо церкви.",
+   "",
+   [
+    "past the church",
+    "past of the church",
+    "pass the church on"
+   ],
+   0,
+   "past — без of."
+  ],
+  [
+   "Вдоль реки.",
+   "",
+   [
+    "along the river",
+    "long the river",
+    "by along river"
+   ],
+   0,
+   "along."
+  ],
+  [
+   "Через мост.",
+   "",
+   [
+    "over the bridge",
+    "through the bridge",
+    "into the bridge"
+   ],
+   0,
+   "over — сверху."
+  ],
+  [
+   "Вошли в сад (внутрь).",
+   "",
+   [
+    "went into the garden",
+    "went in to garden the",
+    "went on the garden"
+   ],
+   0,
+   "into — внутрь."
+  ]
+ ],
+ "a1p-city-directions": [
+  [
+   "Спросите дорогу к банку.",
+   "",
+   [
+    "How do I get to the bank?",
+    "How I get to the bank?",
+    "Where go bank?"
+   ],
+   0,
+   "How do I get to…?"
+  ],
+  [
+   "Пешком.",
+   "",
+   [
+    "on foot",
+    "by foot",
+    "with foot"
+   ],
+   0,
+   "on foot."
+  ],
+  [
+   "«Если мы пойдём…»",
+   "",
+   [
+    "If we will go…",
+    "If we go…",
+    "If go we…"
+   ],
+   1,
+   "После if — настоящее."
+  ],
+  [
+   "Слева.",
+   "",
+   [
+    "on the left",
+    "in the left",
+    "at left side"
+   ],
+   0,
+   "on the left."
+  ],
+  [
+   "«Я заблудился».",
+   "",
+   [
+    "I'm lost.",
+    "I lost.",
+    "I'm lose."
+   ],
+   0,
+   "I'm lost."
+  ]
+ ],
+ "a1p-if-will": [
+  [
+   "«Если пойдёт дождь, мы останемся дома».",
+   "",
+   [
+    "If it rains, we will stay at home.",
+    "If it will rain, we stay at home.",
+    "If it rains, we stay will at home."
+   ],
+   0,
+   "if + настоящее; will во второй части."
+  ],
+  [
+   "«Мы пойдём»",
+   "",
+   [
+    "we will to go",
+    "we will go",
+    "we will going"
+   ],
+   1,
+   "will + глагол без to."
+  ],
+  [
+   "«А что, если…?»",
+   "",
+   [
+    "What if…?",
+    "What when…?",
+    "If what…?"
+   ],
+   0,
+   "What if…?"
+  ],
+  [
+   "«Наверное, будет дождь».",
+   "",
+   [
+    "It will probably rain.",
+    "It probably will rains.",
+    "It will rain probably will."
+   ],
+   0,
+   "will probably."
+  ],
+  [
+   "«Посмотрим».",
+   "",
+   [
+    "We'll see.",
+    "We see will.",
+    "Will we see."
+   ],
+   0,
+   "We'll see."
+  ]
+ ],
+ "a1p-travel-packing": [
+  [
+   "Посадочный талон.",
+   "",
+   [
+    "boarding pass",
+    "board ticket pass",
+    "passing board"
+   ],
+   0,
+   "boarding pass."
+  ],
+  [
+   "Багаж (всё сразу).",
+   "",
+   [
+    "luggages",
+    "luggage",
+    "a luggage"
+   ],
+   1,
+   "luggage — неисчисляемое."
+  ],
+  [
+   "«Я жду не дождусь!»",
+   "",
+   [
+    "I'm so exciting!",
+    "I'm so excited!",
+    "I excite!"
+   ],
+   1,
+   "Своё чувство — -ed."
+  ],
+  [
+   "Поехать за границу.",
+   "",
+   [
+    "go to abroad",
+    "go abroad",
+    "go in abroad"
+   ],
+   1,
+   "go abroad."
+  ],
+  [
+   "Пожелайте доброго пути.",
+   "",
+   [
+    "Have a nice trip!",
+    "Make a nice trip!",
+    "Do a nice trip!"
+   ],
+   0,
+   "Have a nice trip!"
+  ]
+ ],
+ "a1p-review-a1plus": [
+  [
+   "«Я не забыл».",
+   "",
+   [
+    "I didn't forget.",
+    "I didn't forgot.",
+    "I not forgot."
+   ],
+   0,
+   "didn't + forget."
+  ],
+  [
+   "«Ему надо работать».",
+   "",
+   [
+    "He have to work.",
+    "He has to work.",
+    "He must to work."
+   ],
+   1,
+   "has to."
+  ],
+  [
+   "«Если он придёт, мы увидим его».",
+   "",
+   [
+    "If he comes, we will see him.",
+    "If he will come, we see him.",
+    "If he come, we will see he."
+   ],
+   0,
+   "if + настоящее; will."
+  ],
+  [
+   "«У нас нет хлеба».",
+   "",
+   [
+    "We don't have some bread.",
+    "We don't have any bread.",
+    "We have any bread."
+   ],
+   1,
+   "not + any."
+  ],
+  [
+   "«Говори тише, пожалуйста».",
+   "",
+   [
+    "Could you speak quietly?",
+    "Could you speak quiet?",
+    "Could you quietly to speak?"
+   ],
+   0,
+   "Could you + глагол + -ly."
+  ]
+ ],
+ "a1p-picnic-seasons": [
+  [
+   "Осень в США.",
+   "",
+   [
+    "fall",
+    "autumn",
+    "winter"
+   ],
+   0,
+   "fall."
+  ],
+  [
+   "«Какой отличный день!»",
+   "",
+   [
+    "What a great day!",
+    "What great day!",
+    "How a great day!"
+   ],
+   0,
+   "What a…!"
+  ],
+  [
+   "Летом.",
+   "",
+   [
+    "in the summer",
+    "on the summer",
+    "at summer"
+   ],
+   0,
+   "in the summer."
+  ],
+  [
+   "Где сесть в жару?",
+   "",
+   [
+    "in the shade",
+    "in the sun",
+    "in the sunset"
+   ],
+   0,
+   "in the shade."
+  ],
+  [
+   "Тост.",
+   "",
+   [
+    "Cheers!",
+    "Bless you!",
+    "Get well soon!"
+   ],
+   0,
+   "Cheers!"
+  ]
+ ]
+}

@@ -1,0 +1,456 @@
+# Неделя 6 A1+ «Потерянный телефон: в гостях у Рут»: me / him / her / them. CEFR не сверялся.
+level: A1+
+week: 6
+units:
+- uid: LX-00700
+  lemma: tell
+  meaning: to give information to someone
+  class: D5
+  forms:
+  - tells
+  - told
+  - telling
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tɛl/
+  translation_ru: рассказывать, говорить (кому-то)
+  example_en: '[D5]Tell[/] [T8]me[/] [P6]about[/] [T8]her[/].'
+  example_ru: Расскажите мне о ней.
+  situation: Расспрашиваете
+  usage_note: 'tell + кому: tell me, tell him. say — без «кому»: say hello.'
+  typical_error: '«Say me» — неверно. Нужно: tell me.'
+- uid: LX-00701
+  lemma: show
+  meaning: to let someone see something
+  class: D2
+  forms:
+  - shows
+  - showed
+  - showing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ʃoʊ/
+  translation_ru: показывать
+  example_en: '[D7]Can[/] [T8]you[/] [D2]show[/] [T8]me[/]?'
+  example_ru: Можете мне показать?
+  situation: Просите показать
+- uid: LX-00702
+  lemma: knock
+  meaning: to hit a door to say you are there
+  class: D2
+  forms:
+  - knocks
+  - knocked
+  - knocking
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /nɑk/
+  translation_ru: стучать
+  example_en: '[T8]We[/] [D2]knocked[/] [P1]on[/] [T1]the[/] [S2]door[/].'
+  example_ru: Мы постучали в дверь.
+  situation: Приходите в гости
+  usage_note: 'k в начале не читается: «нак».'
+- uid: LX-00703
+  lemma: return
+  meaning: to give back or to come back
+  class: D4
+  forms:
+  - returns
+  - returned
+  - returning
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rɪˈtɝn/
+  translation_ru: возвращать, возвращаться
+  example_en: '[T8]She[/] [D4]returned[/] [T1]the[/] [S2]phone[/] [P2]to[/] [T8]him[/].'
+  example_ru: Она вернула ему телефон.
+  situation: Возвращаете вещь
+- uid: LX-00704
+  lemma: guess
+  meaning: to say an answer when you do not know
+  class: D6
+  forms:
+  - guesses
+  - guessed
+  - guessing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡɛs/
+  translation_ru: угадывать, догадываться
+  example_en: '[D6]Guess[/] [A6]what[/]!'
+  example_ru: Угадай что!
+  situation: Сообщаете новость
+  usage_note: 'u не читается: «гэс».'
+- uid: LX-00705
+  lemma: mean
+  meaning: to have a meaning; to want to say
+  class: D6
+  forms:
+  - means
+  - meant
+  - meaning
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /min/
+  translation_ru: значить, иметь в виду
+  example_en: '[A6]What[/] [D1]do[/] [T8]you[/] [D6]mean[/]?'
+  example_ru: Что вы имеете в виду?
+  situation: Уточняете
+  usage_note: 'Прошедшее — meant: «мэнт».'
+- uid: LX-00706
+  lemma: print
+  meaning: to put words or pictures on paper with a machine
+  class: D2
+  forms:
+  - prints
+  - printed
+  - printing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /prɪnt/
+  translation_ru: печатать
+  example_en: '[T8]She[/] [D2]printed[/] [S2]photos[/] [P4]for[/] [S1]people[/].'
+  example_ru: Она печатала людям фотографии.
+  situation: Говорите о работе
+- uid: LX-00707
+  lemma: battery
+  meaning: the part that gives power to a phone
+  class: S2
+  forms:
+  - batteries
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbætəri/
+  translation_ru: батарея, аккумулятор
+  example_en: '[T3]My[/] [S2]battery[/] [D1]is[/] [J2]dead[/].'
+  example_ru: У меня сел телефон.
+  situation: Говорите о телефоне
+- uid: LX-00708
+  lemma: charger
+  meaning: a thing you use to give power to a phone
+  class: S2
+  forms:
+  - chargers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈtʃɑrdʒɚ/
+  translation_ru: зарядка
+  example_en: '[D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S2]charger[/]?'
+  example_ru: У вас есть зарядка?
+  situation: Просите зарядку
+- uid: LX-00709
+  lemma: password
+  meaning: a secret word to open a phone or a computer
+  class: S9
+  forms:
+  - passwords
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈpæswɝd/
+  translation_ru: пароль
+  example_en: '[T8]I[/] [D6]forgot[/] [T3]my[/] [S9]password[/].'
+  example_ru: Я забыл пароль.
+  situation: Говорите о телефоне
+  usage_note: 'w не читается: «пЭсуёрд».'
+- uid: LX-00710
+  lemma: album
+  meaning: a book for photos
+  class: S2
+  forms:
+  - albums
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈælbəm/
+  translation_ru: альбом
+  example_en: '[T8]She[/] [D2]showed[/] [T8]us[/] [T1]an[/] [J2]old[/] [S2]album[/].'
+  example_ru: Она показала нам старый альбом.
+  situation: Смотрите фотографии
+- uid: LX-00711
+  lemma: stairs
+  meaning: steps that go up or down in a building
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /stɛrz/
+  translation_ru: лестница (ступеньки)
+  example_en: '[T1]The[/] [S2]stairs[/] [D1]were[/] [A5]very[/] [J2]old[/].'
+  example_ru: Лестница была очень старая.
+  situation: Описываете дом
+  usage_note: 'Обычно во множественном: the stairs.'
+- uid: LX-00712
+  lemma: downstairs
+  meaning: on or to a lower floor
+  class: A3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌdaʊnˈstɛrz/
+  translation_ru: внизу, вниз (на нижний этаж)
+  example_en: '[T1]The[/] [S4]shop[/] [D1]is[/] [A3]downstairs[/].'
+  example_ru: Магазин внизу.
+  situation: Описываете дом
+- uid: LX-00713
+  lemma: story
+  meaning: words about things that happened
+  class: S10
+  forms:
+  - stories
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈstɔri/
+  translation_ru: история, рассказ
+  example_en: '[T8]It[/][D1]''s[/] [T1]a[/] [J1]long[/] [S10]story[/].'
+  example_ru: Это долгая история.
+  situation: Не хотите рассказывать сейчас
+- uid: LX-00714
+  lemma: secret
+  meaning: something people do not know
+  class: S10
+  forms:
+  - secrets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsikrɪt/
+  translation_ru: секрет, тайна
+  example_en: '[T2]That[/] [D1]is[/] [T3]her[/] [S10]secret[/].'
+  example_ru: Это её тайна.
+  situation: Говорите о тайне
+- uid: LX-00715
+  lemma: memory
+  meaning: something you remember from before
+  class: S8
+  forms:
+  - memories
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmɛməri/
+  translation_ru: воспоминание, память
+  example_en: '[T8]I[/] [D1]have[/] [J3]good[/] [S8]memories[/] [P6]of[/] [T8]her[/].'
+  example_ru: У меня о ней хорошие воспоминания.
+  situation: Вспоминаете прошлое
+- uid: LX-00716
+  lemma: stranger
+  meaning: a person you do not know
+  class: S1
+  forms:
+  - strangers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈstreɪndʒɚ/
+  translation_ru: незнакомец
+  example_en: '[T8]I[/] [D2]called[/] [T1]a[/] [S1]stranger[/].'
+  example_ru: Я позвонила незнакомому человеку.
+  situation: Звоните на чужой номер
+  usage_note: stranger — не «странный», а «чужой человек».
+- uid: LX-00717
+  lemma: tonight
+  meaning: this evening or night
+  class: A2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /təˈnaɪt/
+  translation_ru: сегодня вечером
+  example_en: '[T8]I[/] [D7]can[/] [D2]call[/] [T8]you[/] [A2]tonight[/].'
+  example_ru: Я могу позвонить вам сегодня вечером.
+  situation: Договариваетесь
+- uid: LX-00718
+  lemma: kind
+  meaning: nice to other people
+  class: J6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kaɪnd/
+  translation_ru: добрый
+  example_en: '[T8]You[/] [D1]are[/] [A5]very[/] [J6]kind[/].'
+  example_ru: Вы очень добры.
+  situation: Благодарите
+- uid: LX-00719
+  lemma: strange
+  meaning: not usual
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /streɪndʒ/
+  translation_ru: странный
+  example_en: '[T2]That[/] [D1]was[/] [J3]strange[/].'
+  example_ru: Это было странно.
+  situation: Удивляетесь
+- uid: LX-00720
+  lemma: nervous
+  meaning: a little afraid
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈnɝvəs/
+  translation_ru: взволнованный, нервный
+  example_en: '[T8]She[/] [D1]was[/] [J4]nervous[/].'
+  example_ru: Она волновалась.
+  situation: Описываете чувства
+- uid: LX-00721
+  lemma: glad
+  meaning: happy about something
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡlæd/
+  translation_ru: рад
+  example_en: '[T8]I[/] [D1]am[/] [J4]glad[/]!'
+  example_ru: Я рада!
+  situation: Радуетесь
+  usage_note: 'Только после глагола: I am glad. «a glad man» не говорят.'
+- uid: LX-00722
+  lemma: afraid
+  meaning: feeling fear
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /əˈfreɪd/
+  translation_ru: испуганный
+  example_en: '[T8]I[/] [D1]was[/] [J4]afraid[/].'
+  example_ru: Мне было страшно.
+  situation: Описываете чувства
+  usage_note: 'Только после глагола: I am afraid.'
+- uid: LX-00723
+  lemma: careful
+  meaning: thinking about not making mistakes
+  class: J6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkɛrfəl/
+  translation_ru: осторожный
+  example_en: '[D1]Be[/] [J6]careful[/] [P4]with[/] [T8]it[/]!'
+  example_ru: Осторожнее с ним!
+  situation: Предупреждаете
+- uid: LX-00724
+  lemma: dead
+  meaning: not living; with no power
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dɛd/
+  translation_ru: мёртвый; севший (о батарее)
+  example_en: '[T3]My[/] [S2]phone[/] [D1]is[/] [J2]dead[/].'
+  example_ru: У меня сел телефон.
+  situation: Говорите о телефоне
+  usage_note: 'О телефоне: my phone is dead — «телефон сел».'
+- uid: LX-00725
+  lemma: surprised
+  meaning: feeling that something is not what you thought
+  class: J7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sɚˈpraɪzd/
+  translation_ru: удивлённый
+  example_en: '[T8]We[/] [D1]were[/] [A5]very[/] [J7]surprised[/].'
+  example_ru: Мы очень удивились.
+  situation: Описываете чувства
+  usage_note: '-ed — о том, кто чувствует: I am surprised. Не «I am surprising».'
+- uid: LX-00726
+  lemma: Come in!
+  meaning: Inviting someone into your home
+  class: O1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈkʌm ˈɪn/
+  translation_ru: Входите!
+  example_en: Come in!
+  example_ru: Заходите!
+  situation: Встречаете гостей
+- uid: LX-00727
+  lemma: Thank you so much!
+  meaning: A strong thank you
+  class: O2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈθæŋk ju ˈsoʊ ˈmʌtʃ/
+  translation_ru: Большое спасибо!
+  example_en: Thank you so much!
+  example_ru: Огромное спасибо!
+  situation: Благодарите
+- uid: LX-00728
+  lemma: My battery is dead.
+  meaning: Saying your phone has no power
+  class: O9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /maɪ ˈbætəri ɪz ˈdɛd/
+  translation_ru: У меня сел телефон.
+  example_en: My battery is dead.
+  example_ru: Телефон сел.
+  situation: Говорите о телефоне
+- uid: LX-00729
+  lemma: Call me back.
+  meaning: Asking someone to call you later
+  class: D9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈkɔl mi ˈbæk/
+  translation_ru: Перезвоните мне.
+  example_en: Call me back.
+  example_ru: Перезвони мне.
+  situation: Говорите по телефону
+- uid: LX-00730
+  lemma: Tell me about it.
+  meaning: Asking someone to tell you more
+  class: F1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈtɛl mi əˈbaʊt ɪt/
+  translation_ru: Расскажите об этом.
+  example_en: Tell me about it.
+  example_ru: Расскажи об этом.
+  situation: Расспрашиваете
+- uid: LX-00731
+  lemma: It's a long story.
+  meaning: Saying something is hard to tell quickly
+  class: F1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪts ə ˈlɔŋ ˈstɔri/
+  translation_ru: Это долгая история.
+  example_en: It's a long story.
+  example_ru: Долго рассказывать.
+  situation: Откладываете рассказ
+- uid: LX-00732
+  lemma: Guess what!
+  meaning: Saying you have news
+  class: F5
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɡɛs ˈwʌt/
+  translation_ru: Угадай что! Представляешь!
+  example_en: Guess what!
+  example_ru: Представляешь!
+  situation: Сообщаете новость

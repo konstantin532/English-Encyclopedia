@@ -67,6 +67,7 @@ units:
   class: D3
   forms:
   - hurts
+  - hurting
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -83,6 +84,7 @@ units:
   forms:
   - sleeps
   - slept
+  - sleeping
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
