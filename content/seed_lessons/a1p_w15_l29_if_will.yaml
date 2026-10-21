@@ -1,0 +1,233 @@
+slug: a1p-if-will
+level: A1+
+week: 15
+order: 29
+focus: C
+minutes: 40
+title: 'If it rains, we''ll…: условие и будущее'
+summary: 'Как сказать о плане при условии: If it rains, we will stay in the cabin. После if — настоящее время, во второй части — will (сокращённо ''ll). Вопрос What if…? и слова probably, definitely.'
+units:
+- LX-00525
+- LX-01002
+- LX-01003
+- LX-01008
+- LX-01011
+sound_notes:
+- text: If it rains, we'll stay in the cabin.
+  ipa: /ɪf ɪt ˈreɪnz wil ˈsteɪ ɪn ðə ˈkæbɪn/
+  note_ru: we'll — «уил», тёмное l; пауза после rains
+- text: What if it rains there?
+  ipa: /ˈwʌt ɪf ɪt ˈreɪnz ˈðɛr/
+  note_ru: 'what if сливается: «уадыф»'
+- text: It will probably rain.
+  ipa: /ɪt wəl ˈprɑbli ˈreɪn/
+  note_ru: probably в быстрой речи — «прОбли»
+contractions:
+- full: we will
+  short: we'll
+  ipa: /wil/
+  note_ru: If it's sunny, we'll go to the beach.
+- full: I will
+  short: I'll
+  ipa: /aɪl/
+  note_ru: I'll check your apartment — я присмотрю за квартирой.
+layers:
+- number: 1
+  body: 'Анна и Том собираются к океану. Погода неизвестна, поэтому у них два плана — на дождь и на солнце. Для этого нужны **if** и **will**.
+
+
+    > [C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/] [D7]will[/] [D2]stay[/] [P1]in[/] [T1]the[/] [S4]cabin[/] [C1]and[/] [D2]read[/] [S2]books[/]. — Если пойдёт дождь, будем сидеть в домике и читать.
+
+    > [C1]And[/] [C4]if[/] [T8]it[/] [D1]is[/] [J2]sunny[/], [T8]we[/] [D7]will[/] [D4]go[/] [P2]to[/] [T1]the[/] [S6]beach[/] [T5]every[/] [S7]day[/]! — А если будет солнце, будем каждый день ходить на пляж!
+
+    '
+- number: 2
+  body: '**Will** когда-то значило «хотеть» (как немецкое *wollen*): *I will go* — «я хочу пойти». Со временем желание превратилось в будущее. В разговоре will почти всегда сокращается: **I''ll, we''ll, it''ll**.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [T3]My[/] [S2]suitcase[/] [D1]is[/] [A5]too[/] [J2]heavy[/]. [C4]If[/] [T8]I[/] [D2]put[/] [T4]more[/] [P1]in[/] [T8]it[/], [T8]it[/] [D7]will[/] [S7]break[/]! — Чемодан слишком тяжёлый. Если положу ещё, он сломается!
+
+
+    - **If + настоящее время, … will + глагол.**
+
+    - If it **rains**, we **will stay**. (не «If it will rain»)
+
+    - Можно наоборот: **We''ll stay in the cabin if it rains.** (без запятой)
+
+    - Вопрос о проблеме: **What if…?** — а что, если…?
+
+    - Уверенность: **will definitely** — точно, **will probably** — наверное.
+
+    '
+- number: 4
+  body: '**Почему «If it rains», а не «If it will rain»?** В английском после **if** будущее показывают простым настоящим временем: часть с if — это условие, а будущее живёт во второй части. По-русски «если пойдёт дождь» — будущее, а по-английски — *if it rains*.
+
+
+    > [C4]If[/] [T1]the[/] [S2]guitar[/] [D2]stays[/] [A3]here[/], [S1]Leo[/] [D7]will[/] [D1]be[/] [A5]very[/] [J4]happy[/]! — Если гитара останется дома, Лео будет очень рад!
+
+
+    **Диагностика понимания:** что верно: *If it will be sunny, we go to the beach* или *If it is sunny, we will go to the beach*?
+
+
+    **Разбор:** *If it is sunny, we will go…* — после if настоящее, will — во второй части.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **We''ll see.** — посмотрим.
+
+    - **What if it rains?** — а если дождь?
+
+    - **I''ll probably…** — я, наверное…
+
+
+    Слова: **will**, **probably** — вероятно, **definitely** — точно.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «If it will rain» — **If it rains**.
+
+    - «we will to go» — после will без to: **we will go**.
+
+    - «I probably will» — обычно **I''ll probably**.
+
+    - запятая: If…, we''ll… — с запятой; We''ll… if… — без.
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать правильное if, поставить will, собрать условие, сказать свой план на дождь, найти ошибку и спросить What if…?
+
+
+    **Проверка маленького шага:** If + настоящее, will + глагол. В речи — we''ll, I''ll.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00332
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Анна: «Если пойдёт дождь, мы останемся в домике». Выберите.'
+  options:
+  - If it rains, we will stay in the cabin.
+  - If it will rain, we will stay in the cabin.
+  - If it rains, we stay will in the cabin.
+  answer: If it rains, we will stay in the cabin.
+  hint_ru: После if — настоящее время.
+  explanation_ru: If it rains, we will stay… — will только во второй части.
+  units:
+  - LX-00525
+- order: 2
+  uid: EX-00333
+  kind: fill
+  stage: substitution
+  prompt_ru: Если будет солнце, мы пойдём на пляж. Вставьте слово.
+  prompt_en: If it is sunny, we ___ go to the beach.
+  answer: will
+  hint_ru: Будущее — will.
+  explanation_ru: we will go — во второй части will.
+  units:
+  - LX-00525
+- order: 3
+  uid: EX-00334
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите вопрос: «А что, если там будет дождь?»'
+  options:
+  - rains
+  - What
+  - there
+  - it
+  - if
+  answer: What if it rains there
+  hint_ru: What if + it rains…
+  explanation_ru: What if it rains there? — после if настоящее время.
+  units:
+  - LX-01011
+- order: 4
+  uid: EX-00335
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: друг зовёт вас в субботу на футбол. Скажите: «Если будет дождь, я останусь дома».'
+  prompt_en: If it rains, I'll ___ at home.
+  answer: stay
+  hint_ru: Остаться — stay.
+  explanation_ru: If it rains, I'll stay at home.
+  units:
+  - LX-00525
+- order: 5
+  uid: EX-00336
+  kind: choice
+  stage: recognition
+  prompt_ru: Где ошибка? Выберите правильную фразу.
+  options:
+  - If I put more in it, it will break.
+  - If I will put more in it, it breaks.
+  - If I put more in it, it will to break.
+  answer: If I put more in it, it will break.
+  hint_ru: if + настоящее; will + глагол без to.
+  explanation_ru: If I put more in it, it will break.
+  units:
+  - LX-00525
+- order: 6
+  uid: EX-00337
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Вы не уверены, пойдёт ли дождь. Скажите: «Наверное, будет дождь».'
+  prompt_en: It will ___ rain.
+  answer: probably
+  hint_ru: Наверное — probably.
+  explanation_ru: It will probably rain. probably — после will.
+  units:
+  - LX-01002
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Если пойдёт дождь, мы будем читать.
+  answer: If it rains, we will read.
+  accepted:
+  - If it rains, we'll read.
+  hint_ru: If + rains, we will…
+  explanation_ru: If it rains, we will read.
+  review_of: 1
+  units:
+  - LX-00525
+- order: 2
+  kind: translate
+  prompt_ru: Посмотрим.
+  answer: We'll see.
+  accepted:
+  - We will see.
+  hint_ru: We'll + see.
+  explanation_ru: We'll see.
+  review_of: 2
+  units:
+  - LX-01008
+- order: 3
+  kind: translate
+  prompt_ru: Мы точно поедем.
+  answer: We will definitely go.
+  accepted:
+  - We'll definitely go.
+  hint_ru: will + definitely + go.
+  explanation_ru: We will definitely go.
+  review_of: 6
+  units:
+  - LX-01003
+- order: 4
+  kind: translate
+  prompt_ru: А что, если чемодан сломается?
+  answer: What if the suitcase breaks?
+  hint_ru: What if + breaks.
+  explanation_ru: What if the suitcase breaks? После if — настоящее время.
+  review_of: 3
+  units:
+  - LX-01011

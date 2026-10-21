@@ -13,7 +13,7 @@ from apps.publishing.audit_weeks import audit_weeks
 from tests.runner import ensure_content
 
 CONTENT = Path(settings.CONTENT_DIR)
-READY_WEEKS = (1,)
+READY_WEEKS = tuple(range(1, 17))
 
 
 class A1PlusPlanTests(TestCase):

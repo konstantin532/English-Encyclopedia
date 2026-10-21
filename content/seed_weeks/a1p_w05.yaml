@@ -1,0 +1,81 @@
+# A1+, неделя 5 «Бюро находок». Сфера service, did / didn't.
+level: A1+
+week: 5
+can_do_ru: 'Я смогу задать вопрос о прошлом и ответить на него: Did you take bus twelve? — Yes, I did. / No, I didn''t. Which bus did you take? — и описать потерянную вещь: It''s pink, with a long handle.'
+mission_ru: 'Представьте, что вы что-то потеряли. Опишите вещь по-английски в двух фразах (цвет, размер, ручка или карман) и ответьте на два вопроса: Did you…? — Yes, I did. / No, I didn''t.'
+chunks:
+- LX-00693
+- LX-00694
+- LX-00695
+- LX-00696
+- LX-00697
+- LX-00698
+- LX-00699
+story_beat:
+  intro_ru: Анна забыла в автобусе розовый зонт — подарок Тома. Утром она идёт в бюро находок на автостанции.
+  outcome_ru: 'Сотрудник задаёт вопросы: какой автобус, где сидела, какой зонт. Сначала находится чужой зонт с короткой ручкой, а потом — её: его вчера вечером принёс водитель.'
+  next_hook_ru: Зонт нашёлся. А через неделю Анна потеряет кое-что поважнее — телефон. История 7.
+script:
+- speaker: agent
+  text: '[J3]Good[/] [S7]morning[/]. [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?'
+  ru: Доброе утро. Чем могу помочь?
+- speaker: anna
+  emotion: sad
+  text: '[O4]Yes[/], [O8]please[/]. [T8]I[/] [D6]forgot[/] [T3]my[/] [S2]umbrella[/] [P1]on[/] [T1]the[/] [S4]bus[/] [A2]yesterday[/].'
+  ru: Да, пожалуйста. Вчера я забыла зонт в автобусе.
+- speaker: agent
+  text: '[T9]Which[/] [S4]bus[/] [D1]did[/] [T8]you[/] [D2]take[/]?'
+  ru: На каком автобусе вы ехали?
+- speaker: anna
+  text: '[S4]Bus[/] [S9]number[/] [N7]twelve[/]. [T8]I[/] [D2]took[/] [T8]it[/] [P1]in[/] [T1]the[/] [S7]morning[/].'
+  ru: Двенадцатый. Утром.
+- speaker: agent
+  text: '[D1]Did[/] [T8]you[/] [D2]sit[/] [P1]in[/] [T1]the[/] [S4]front[/] [C1]or[/] [P1]in[/] [T1]the[/] [S4]back[/]?'
+  ru: Вы сидели впереди или сзади?
+- speaker: anna
+  text: '[T8]I[/] [D1]did[/] [X1]not[/] [D2]sit[/]. [T9]There[/] [D1]were[/] [X1]no[/] [S2]seats[/]. [T8]I[/] [D2]stood[/] [P1]near[/] [T1]the[/] [S2]door[/].'
+  spoken: '[T8]I[/] [D1]did[/][X1]n''t[/] [D2]sit[/]. [T9]There[/] [D1]were[/] [X1]no[/] [S2]seats[/]. [T8]I[/] [D2]stood[/] [P1]near[/] [T1]the[/] [S2]door[/].'
+  ru: Я не сидела. Мест не было, я стояла у двери.
+- speaker: agent
+  text: '[T9]What[/] [S2]color[/] [D1]is[/] [T8]it[/]? [D7]Can[/] [T8]you[/] [D5]describe[/] [T8]it[/]?'
+  ru: Какого он цвета? Можете его описать?
+- speaker: anna
+  text: '[T8]It[/] [D1]is[/] [J2]pink[/], [P4]with[/] [T1]a[/] [J1]long[/] [J2]black[/] [S2]handle[/]. [T8]It[/] [D1]was[/] [T1]a[/] [S2]gift[/].'
+  spoken: '[T8]It[/][D1]''s[/] [J2]pink[/], [P4]with[/] [T1]a[/] [J1]long[/] [J2]black[/] [S2]handle[/]. [T8]It[/] [D1]was[/] [T1]a[/] [S2]gift[/].'
+  ru: Розовый, с длинной чёрной ручкой. Это подарок.
+- speaker: agent
+  text: '[D2]Let[/] [T8]me[/] [D6]check[/]. [T2]This[/] [J2]pink[/] [S2]umbrella[/] [D1]has[/] [T1]a[/] [J1]short[/] [S2]handle[/].'
+  ru: Сейчас проверю. У этого розового зонта ручка короткая.
+- speaker: anna
+  emotion: sad
+  text: '[O4]No[/], [T2]that[/] [D1]is[/] [X1]not[/] [T9]mine[/]. [T3]My[/] [S2]umbrella[/] [D1]is[/] [J3]different[/].'
+  spoken: '[O4]No[/], [T2]that[/][D1]''s[/] [X1]not[/] [T9]mine[/]. [T3]My[/] [S2]umbrella[/] [D1]is[/] [J3]different[/].'
+  ru: Нет, это не мой. Мой другой.
+- speaker: agent
+  emotion: happy
+  text: '[D2]Wait[/]! [O9]Here[/] [T8]it[/] [D1]is[/]! [T1]A[/] [S9]driver[/] [D2]brought[/] [T8]it[/] [J8]last[/] [S7]night[/].'
+  ru: Подождите! Вот он! Его принёс водитель вчера вечером.
+- speaker: anna
+  emotion: happy
+  text: '[T2]That[/] [D1]is[/] [T9]mine[/]! [O2]Thank[/] [T8]you[/]! [T8]I[/] [D1]am[/] [A5]very[/] [J4]lucky[/].'
+  spoken: '[T2]That[/][D1]''s[/] [T9]mine[/]! [O2]Thank[/] [T8]you[/]! [T8]I[/][D1]''m[/] [A5]very[/] [J4]lucky[/].'
+  ru: Это мой! Спасибо! Мне очень повезло.
+twister:
+  number: 19
+  series: contractions
+  text: '[D1]Did[/] [T8]you[/] [D2]do[/] [T8]it[/]? [T8]I[/] [D1]did[/][X1]n''t[/] [D2]do[/] [T8]it[/]! [D1]Did[/] [T8]she[/] [D2]do[/] [T8]it[/]? [T8]She[/] [D1]did[/][X1]n''t[/] [D2]do[/] [T8]it[/]! [D1]Did[/] [T8]they[/] [D2]do[/] [T8]it[/]? [T8]They[/] [D1]did[/], [C5]but[/] [T8]we[/] [D1]did[/][X1]n''t[/]!'
+  ru: Ты это сделал? Я этого не делал! Она это сделала? Она этого не делала! Они это сделали? Они — да, а мы — нет!
+  ipa: /dɪd ju ˈdu ɪt | aɪ ˈdɪdənt ˈdu ɪt | dɪd ʃi ˈdu ɪt | ʃi ˈdɪdənt ˈdu ɪt | dɪd ðeɪ ˈdu ɪt | ðeɪ ˈdɪd | bət wi ˈdɪdənt/
+  focus_sounds:
+  - d
+  - ɪ
+  source: original
+  goal_ru: Вопрос Did…? и сокращение didn't, короткий звук ɪ.
+  tip_ru: 'did — короткое «и», как в «дым», не «дид» с долгим «и». didn''t — два слога: «дИднт», вторая d почти не слышна. В вопросе did безударное: «дидью ду ит?»'
+  warmup:
+  - '[D1]did[/], [D1]did[/][X1]n''t[/]'
+  - '[D1]Did[/] [T8]you[/]? [T8]I[/] [D1]did[/][X1]n''t[/].'
+  - '[D1]Did[/] [T8]she[/]? [T8]She[/] [D1]did[/][X1]n''t[/]!'
+  - '[D1]Did[/] [T8]they[/] [D2]do[/] [T8]it[/]? [T8]They[/] [D1]did[/]!'
+  target_line: Which bus did you take?
+  own_ru: 'Спросите друга о вчерашнем дне: Did you…? и ответьте сами: Yes, I did. / No, I didn''t.'

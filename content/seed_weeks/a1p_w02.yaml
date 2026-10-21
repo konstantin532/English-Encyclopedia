@@ -1,0 +1,82 @@
+# A1+, неделя 2 «Где ты был вчера?». Сфера meet, was / were. История 6 выходит на этой неделе.
+level: A1+
+week: 2
+can_do_ru: 'Я смогу рассказать, где я был и каким это было: I was at the museum. It was great! — спросить Where were you? How was your weekend? и описать место через there was / there were.'
+mission_ru: 'Расскажите кому-нибудь по-английски о прошлых выходных в трёх фразах: где вы были (I was at…), каким это было (It was…) и что там было (There was… / There were…).'
+chunks:
+- LX-00589
+- LX-00590
+- LX-00591
+- LX-00592
+- LX-00593
+- LX-00594
+story_beat:
+  intro_ru: Утро понедельника в кафе Мии. Мия спрашивает Анну и Тома про выходные.
+  outcome_ru: Анна и Том были в музее и на пляже. В музее висела большая карта их городка — Анне было очень интересно.
+  next_hook_ru: А в понедельник в девять вечера Анна одна дома. В окне квартиры наверху горит свет — история 6.
+script:
+- speaker: mia
+  emotion: happy
+  text: '[J3]Good[/] [S7]morning[/]! [A6]How[/] [D1]was[/] [T3]your[/] [S7]weekend[/]?'
+  ru: Доброе утро! Как прошли выходные?
+- speaker: anna
+  emotion: happy
+  text: '[T8]It[/] [D1]was[/] [J3]great[/]! [P3]On[/] [S7]Saturday[/], [S1]Tom[/] [C1]and[/] [T8]I[/] [D1]were[/] [P3]at[/] [T1]the[/] [S4]museum[/].'
+  ru: Отлично! В субботу мы с Томом были в музее.
+- speaker: tom
+  emotion: tired
+  text: '[T8]It[/] [D1]was[/] [J7]boring[/]. [T9]There[/] [D1]were[/] [N1]twenty[/] [J2]old[/] [S2]chairs[/] [C1]and[/] [N1]one[/] [J2]old[/] [S2]clock[/].'
+  ru: Было скучно. Там были двадцать старых стульев и одни старые часы.
+- speaker: anna
+  emotion: happy
+  text: '[C5]But[/] [T9]there[/] [D1]was[/] [T1]a[/] [J1]big[/] [S4]map[/] [P6]of[/] [T3]our[/] [S4]town[/]! [T8]It[/] [D1]was[/] [A5]very[/] [J7]interesting[/].'
+  ru: Зато там была большая карта нашего города! Было очень интересно.
+- speaker: mia
+  text: '[C1]And[/] [A6]where[/] [D1]were[/] [T8]you[/] [P3]on[/] [S7]Sunday[/]? [T8]I[/] [D1]was[/] [J4]alone[/] [P1]in[/] [T1]the[/] [S4]cafe[/].'
+  ru: А где вы были в воскресенье? Я была в кафе одна.
+- speaker: tom
+  emotion: happy
+  text: '[T8]We[/] [D1]were[/] [P3]at[/] [T1]the[/] [S6]beach[/]. [T1]The[/] [S6]sun[/] [D1]was[/] [J2]hot[/], [C5]but[/] [T1]the[/] [S6]wind[/] [D1]was[/] [J2]cold[/].'
+  ru: Мы были на пляже. Солнце было жаркое, а ветер холодный.
+- speaker: mia
+  emotion: surprised
+  text: '[P3]At[/] [T1]the[/] [S6]beach[/]? [D1]Was[/] [T1]the[/] [S3]water[/] [J2]cold[/]?'
+  ru: На пляже? Вода была холодная?
+- speaker: tom
+  text: '[O4]Yes[/], [T8]it[/] [D1]was[/]. [T8]I[/] [D1]was[/] [P1]in[/] [T1]the[/] [S3]water[/] [P5]for[/] [N1]one[/] [S7]minute[/]!'
+  ru: Да. Я был в воде целую минуту!
+- speaker: mia
+  emotion: happy
+  text: '[D1]Were[/] [T8]you[/] [P3]at[/] [S2]home[/] [J8]last[/] [S7]night[/]?'
+  ru: А вчера вечером вы были дома?
+- speaker: anna
+  emotion: tired
+  text: '[O4]Yes[/], [T8]we[/] [D1]were[/]. [T8]We[/] [D1]were[/] [A5]very[/] [J4]tired[/] [P3]after[/] [T1]the[/] [S6]beach[/].'
+  ru: Да. Мы очень устали после пляжа.
+- speaker: mia
+  emotion: happy
+  text: '[O7]Well[/], [A2]today[/] [T1]the[/] [S4]cafe[/] [D1]is[/] [J2]full[/] [A2]again[/]! [S3]Coffee[/]?'
+  ru: Ну а сегодня в кафе опять полно народу! Кофе?
+- speaker: tom
+  emotion: happy
+  text: '[N1]Two[/] [S3]coffees[/], [O8]please[/]!'
+  ru: Два кофе, пожалуйста!
+twister:
+  number: 16
+  series: contractions
+  text: '[T8]I[/] [D1]was[/][X1]n''t[/] [P1]at[/] [S2]home[/], [T8]you[/] [D1]were[/][X1]n''t[/] [P1]at[/] [S2]home[/]. [D1]Were[/] [T8]we[/] [P1]at[/] [S2]home[/]? [O4]No[/], [T8]we[/] [D1]were[/][X1]n''t[/]!'
+  ru: Я не был дома, ты не был дома. Мы были дома? Нет, не были!
+  ipa: /aɪ ˈwʌzənt ət ˈhoʊm | ju ˈwɝnt ət ˈhoʊm | wɚ wi ət ˈhoʊm | ˈnoʊ wi ˈwɝnt/
+  focus_sounds:
+  - w
+  - r
+  source: original
+  goal_ru: Сокращения wasn't и weren't и звук w в начале was и were.
+  tip_ru: 'w — губы трубочкой и сразу раскрыть: «уоз», «уэр». wasn''t — два слога «уОзнт», weren''t — один: «уЁрнт», с американским r.'
+  warmup:
+  - '[D1]was[/], [D1]were[/]'
+  - '[D1]was[/][X1]n''t[/], [D1]were[/][X1]n''t[/]'
+  - '[T8]I[/] [D1]was[/][X1]n''t[/] [P1]at[/] [S2]home[/].'
+  - '[D1]Were[/] [T8]we[/] [P1]at[/] [S2]home[/]?'
+  target_line: Were you at home last night?
+  own_ru: 'Скажите, где вы были вчера вечером и где не были: I was at… I wasn''t at…'

@@ -1,0 +1,234 @@
+slug: a1p-too-enough
+level: A1+
+week: 12
+order: 23
+focus: J
+minutes: 40
+title: 'Too cold, warm enough: и порядок прилагательных'
+summary: 'Too + прилагательное — «слишком»; прилагательное + enough — «достаточно». Как поставить два прилагательных подряд: my long gray coat, an old blue jacket.'
+units:
+- LX-00895
+- LX-00912
+- LX-00913
+- LX-00914
+- LX-00915
+- LX-00916
+- LX-00917
+- LX-00918
+- LX-00919
+- LX-00920
+- LX-00922
+sound_notes:
+- text: That's too cold.
+  ipa: /ðæts ˈtu ˈkoʊld/
+  note_ru: 'too ударное и протяжное: «тУу»'
+- text: My jacket isn't warm enough.
+  ipa: /maɪ ˈdʒækɪt ˈɪzənt ˈwɔrm ɪˈnʌf/
+  note_ru: 'enough — ударение на второй слог: «инАф»'
+- text: my long gray coat
+  ipa: /maɪ ˈlɔŋ ˈɡreɪ ˈkoʊt/
+  note_ru: три ударных слова подряд — говорите ровно, без пауз
+contractions:
+- full: is not
+  short: isn't
+  ipa: /ˈɪzənt/
+  note_ru: It isn't warm enough — недостаточно тепло.
+layers:
+- number: 1
+  body: 'Том зовёт Анну в горы, но холодно, а куртка не греет. Чтобы сказать «слишком» и «недостаточно», нужны **too** и **enough** — и важно, где они стоят.
+
+
+    > [N9]Forty[/] [N9]degrees[/]? [T2]That[/] [D1]is[/] [A5]too[/] [J2]cold[/] [P5]for[/] [T1]the[/] [S6]mountains[/]. [T8]I[/] [D1]was[/] [J4]sick[/] [T2]this[/] [S7]week[/]. — Сорок по Фаренгейту? Для гор слишком холодно. Я на этой неделе болела.
+
+    > [C1]And[/] [T3]my[/] [J2]old[/] [J2]blue[/] [S2]jacket[/] [D1]is[/] [X1]not[/] [J2]warm[/] [A5]enough[/]. — И моя старая синяя куртка недостаточно тёплая.
+
+    '
+- number: 2
+  body: '**Too** — то же слово, что «тоже» в *Me too*: когда-то оно значило «вдобавок, сверх того». «Сверх нужного» — отсюда «слишком». **Enough** — древнее *genoh*, «достаточно, вдоволь»; gh в конце раньше читался как «х», а потом превратился в «ф».
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [J3]Great[/]! [T8]I[/] [D7]can[/] [D2]wear[/] [T3]my[/] [J1]long[/] [J2]gray[/] [S2]coat[/] [C1]and[/] [T3]my[/] [J2]new[/] [S2]boots[/]. — Отлично! Надену длинное серое пальто и новые ботинки.
+
+
+    - **too + прилагательное** — слишком: too cold, too far.
+
+    - **прилагательное + enough** — достаточно: warm enough, big enough.
+
+    - С not: **not warm enough** — недостаточно тёплый.
+
+    - Два прилагательных: сначала **мнение**, потом **размер**, **возраст**, **цвет**: a lovely big old blue house.
+
+    - На практике: **long gray coat**, **old blue jacket**, **big dark clouds**.
+
+    '
+- number: 4
+  body: '**Почему «warm enough», а не «enough warm»?** С прилагательными enough всегда ставят **после**. А с существительными — **перед**: *enough money, enough time*.
+
+
+    **too — не «очень».** *very cold* — очень холодно (но, может, и нормально). *too cold* — слишком, это проблема: идти нельзя.
+
+
+    **Диагностика понимания:** что верно: *a blue old jacket* или *an old blue jacket*?
+
+
+    **Разбор:** *an old blue jacket.* Возраст перед цветом.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **It''s too far.** — слишком далеко.
+
+    - **It''s not big enough.** — маловато.
+
+    - **That''s too bad.** — жаль.
+
+
+    Слова: **enough**; размер и форма: **tall** — высокий, **huge** — огромный, **tiny** — крошечный, **far** — далёкий, **wide** — широкий, **narrow** — узкий, **deep** — глубокий; оценка: **lovely** — чудесный, **awful** — ужасный.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «enough warm» — **warm enough**.
+
+    - «too much cold» — **too cold** (much — с существительными: too much rain).
+
+    - «a blue big umbrella» — **a big blue umbrella**: размер перед цветом.
+
+    - «very cold» вместо «слишком» — если это проблема, нужно **too**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать too или very, поставить enough, собрать прилагательные по порядку, описать свою вещь, найти ошибку и сказать «слишком далеко».
+
+
+    **Проверка маленького шага:** too cold — слишком; warm enough — достаточно; размер → возраст → цвет.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00296
+  kind: choice
+  stage: recognition
+  prompt_ru: В горах +4 °C, идти нельзя. Как сказать?
+  options:
+  - It's too cold.
+  - It's very cold enough.
+  - It's cold too much.
+  answer: It's too cold.
+  hint_ru: Слишком — too + прилагательное.
+  explanation_ru: It's too cold. — слишком холодно, это проблема.
+  units:
+  - LX-00922
+- order: 2
+  uid: EX-00297
+  kind: fill
+  stage: substitution
+  prompt_ru: Куртка недостаточно тёплая. Закончите.
+  prompt_en: My jacket isn't warm ___.
+  answer: enough
+  hint_ru: enough — после прилагательного.
+  explanation_ru: isn't warm enough — недостаточно тёплая.
+  units:
+  - LX-00895
+- order: 3
+  uid: EX-00298
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «моё длинное серое пальто».'
+  options:
+  - coat
+  - my
+  - gray
+  - long
+  answer: my long gray coat
+  hint_ru: Длина, потом цвет.
+  explanation_ru: my long gray coat — размер (длина) перед цветом.
+  units:
+  - LX-00912
+- order: 4
+  uid: EX-00299
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вы выбираете квартиру. Кухня слишком маленькая. Скажите.'
+  prompt_en: The kitchen is too ___.
+  answer: small
+  accepted:
+  - tiny
+  hint_ru: Маленькая — small.
+  explanation_ru: The kitchen is too small.
+  units:
+  - LX-00914
+- order: 5
+  uid: EX-00300
+  kind: choice
+  stage: recognition
+  prompt_ru: Выберите правильный порядок.
+  options:
+  - an old blue jacket
+  - a blue old jacket
+  - an jacket old blue
+  answer: an old blue jacket
+  hint_ru: Возраст перед цветом.
+  explanation_ru: an old blue jacket — old перед blue.
+  units:
+  - LX-00912
+- order: 6
+  uid: EX-00301
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Друг зовёт в горы, но они очень далеко. Скажите: «Это слишком далеко».'
+  prompt_en: It's too ___.
+  answer: far
+  hint_ru: Далеко — far.
+  explanation_ru: It's too far.
+  units:
+  - LX-00915
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Слишком холодно.
+  answer: It's too cold.
+  accepted:
+  - It is too cold.
+  hint_ru: too + cold.
+  explanation_ru: It's too cold.
+  review_of: 1
+  units:
+  - LX-00922
+- order: 2
+  kind: translate
+  prompt_ru: Куртка недостаточно тёплая.
+  answer: The jacket isn't warm enough.
+  accepted:
+  - The jacket is not warm enough.
+  hint_ru: warm enough.
+  explanation_ru: The jacket isn't warm enough.
+  review_of: 2
+  units:
+  - LX-00895
+- order: 3
+  kind: translate
+  prompt_ru: большой розовый зонт
+  answer: a big pink umbrella
+  hint_ru: Размер, потом цвет.
+  explanation_ru: a big pink umbrella.
+  review_of: 3
+  units:
+  - LX-00912
+- order: 4
+  kind: translate
+  prompt_ru: Река очень широкая.
+  answer: The river is very wide.
+  hint_ru: wide — широкий.
+  explanation_ru: The river is very wide.
+  review_of: 4
+  units:
+  - LX-00916

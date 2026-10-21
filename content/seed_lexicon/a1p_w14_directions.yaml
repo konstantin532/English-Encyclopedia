@@ -1,0 +1,417 @@
+# Неделя 14 A1+ «Как пройти? Маршрут по городу»: across / past / through / along. CEFR не сверялся.
+level: A1+
+week: 14
+units:
+- uid: LX-00956
+  lemma: along
+  meaning: from one end to the other end of something long
+  class: P2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /əˈlɔŋ/
+  translation_ru: вдоль, по
+  example_en: '[D4]Walk[/] [P2]along[/] [T1]the[/] [S6]river[/].'
+  example_ru: Идите вдоль реки.
+  situation: Объясняете дорогу
+- uid: LX-00957
+  lemma: through
+  meaning: in one side and out the other side
+  class: P2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /θru/
+  translation_ru: через, сквозь
+  example_en: '[D4]Go[/] [P2]through[/] [T1]the[/] [S4]park[/].'
+  example_ru: Пройдите через парк.
+  situation: Объясняете дорогу
+  usage_note: across — по поверхности (через улицу), through — сквозь (через парк, через дверь).
+- uid: LX-00958
+  lemma: into
+  meaning: to the inside of something
+  class: P2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɪntu/
+  translation_ru: в (внутрь)
+  example_en: '[T8]We[/] [D4]went[/] [P2]into[/] [T1]the[/] [S4]library[/].'
+  example_ru: Мы вошли в библиотеку.
+  situation: Описываете движение
+  usage_note: in — где? (in the library); into — куда? (into the library).
+- uid: LX-00959
+  lemma: toward
+  meaning: in the direction of
+  class: P2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tɔrd/
+  translation_ru: к, в сторону
+  example_en: '[D4]Walk[/] [P2]toward[/] [T1]the[/] [S4]church[/].'
+  example_ru: Идите в сторону церкви.
+  situation: Объясняете дорогу
+  usage_note: В США — toward, в Британии — towards.
+- uid: LX-00960
+  lemma: around
+  meaning: in a circle; on the other side of
+  class: P2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /əˈraʊnd/
+  translation_ru: вокруг; за (углом)
+  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P2]around[/] [T1]the[/] [S4]corner[/].'
+  example_ru: Банк за углом.
+  situation: Объясняете дорогу
+- uid: LX-00961
+  lemma: over
+  meaning: across the top of; above
+  class: P2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈoʊvɚ/
+  translation_ru: через, над
+  example_en: '[D4]Go[/] [P2]over[/] [T1]the[/] [S4]bridge[/].'
+  example_ru: Перейдите через мост.
+  situation: Объясняете дорогу
+- uid: LX-00962
+  lemma: opposite
+  meaning: on the other side, facing something
+  class: P1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɑpəzɪt/
+  translation_ru: напротив
+  example_en: '[T1]The[/] [S4]library[/] [D1]is[/] [P1]opposite[/] [T1]the[/] [S4]bank[/].'
+  example_ru: Библиотека напротив банка.
+  situation: Объясняете дорогу
+  usage_note: 'В США чаще говорят across from: across from the bank.'
+- uid: LX-00963
+  lemma: follow
+  meaning: to go behind someone or along something
+  class: D4
+  forms:
+  - follows
+  - followed
+  - following
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfɑloʊ/
+  translation_ru: идти за, следовать
+  example_en: '[D4]Follow[/] [T1]the[/] [S4]river[/] [P2]to[/] [T1]the[/] [S4]bridge[/].'
+  example_ru: Идите вдоль реки до моста.
+  situation: Объясняете дорогу
+- uid: LX-00964
+  lemma: cross
+  meaning: to go from one side to the other side
+  class: D4
+  forms:
+  - crosses
+  - crossed
+  - crossing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /krɔs/
+  translation_ru: переходить
+  example_en: '[D4]Cross[/] [T1]the[/] [S4]street[/] [P1]at[/] [T1]the[/] [S4]crosswalk[/].'
+  example_ru: Переходите улицу по переходу.
+  situation: Объясняете дорогу
+- uid: LX-00965
+  lemma: bridge
+  meaning: a road over a river
+  class: S4
+  forms:
+  - bridges
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /brɪdʒ/
+  translation_ru: мост
+  example_en: '[T1]The[/] [S4]bridge[/] [D1]is[/] [J2]old[/] [C1]and[/] [J1]narrow[/].'
+  example_ru: Мост старый и узкий.
+  situation: Описываете город
+- uid: LX-00966
+  lemma: square
+  meaning: an open place in a town with buildings around it
+  class: S4
+  forms:
+  - squares
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /skwɛr/
+  translation_ru: площадь
+  example_en: '[T9]There[/] [D1]is[/] [T1]a[/] [S4]fountain[/] [P1]in[/] [T1]the[/] [S4]square[/].'
+  example_ru: На площади фонтан.
+  situation: Описываете город
+- uid: LX-00967
+  lemma: block
+  meaning: the part of a street between two other streets
+  class: S4
+  forms:
+  - blocks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /blɑk/
+  translation_ru: квартал
+  example_en: '[D4]Walk[/] [N1]two[/] [S4]blocks[/] [C1]and[/] [D2]turn[/] [J8]left[/].'
+  example_ru: Пройдите два квартала и поверните налево.
+  situation: Объясняете дорогу
+  usage_note: 'Американцы считают путь кварталами: two blocks.'
+- uid: LX-00968
+  lemma: avenue
+  meaning: a wide street in a city
+  class: S4
+  forms:
+  - avenues
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈævənu/
+  translation_ru: проспект, авеню
+  example_en: '[T1]The[/] [S4]museum[/] [D1]is[/] [P3]on[/] [S1]Main[/] [S4]Avenue[/].'
+  example_ru: Музей на Главной авеню.
+  situation: Объясняете дорогу
+- uid: LX-00969
+  lemma: crosswalk
+  meaning: a place where you cross a street
+  class: S4
+  forms:
+  - crosswalks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkrɔswɔk/
+  translation_ru: пешеходный переход
+  example_en: '[D2]Wait[/] [P1]at[/] [T1]the[/] [S4]crosswalk[/].'
+  example_ru: Подождите у перехода.
+  situation: Объясняете дорогу
+- uid: LX-00970
+  lemma: traffic
+  meaning: cars and buses on a road
+  class: S10
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈtræfɪk/
+  translation_ru: движение (транспорта)
+  example_en: '[T1]The[/] [S10]traffic[/] [D1]is[/] [J3]awful[/] [A2]today[/].'
+  example_ru: Сегодня ужасные пробки.
+  situation: Говорите о городе
+  usage_note: 'Неисчисляемое: the traffic is, не «traffics».'
+- uid: LX-00971
+  lemma: entrance
+  meaning: the door or gate where you go in
+  class: S4
+  forms:
+  - entrances
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɛntrəns/
+  translation_ru: вход
+  example_en: '[T1]The[/] [S4]entrance[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]left[/].'
+  example_ru: Вход слева.
+  situation: Объясняете дорогу
+- uid: LX-00972
+  lemma: gate
+  meaning: a door in a fence or a wall
+  class: S4
+  forms:
+  - gates
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡeɪt/
+  translation_ru: ворота, калитка
+  example_en: '[D2]Open[/] [T1]the[/] [S4]gate[/] [C1]and[/] [D4]walk[/] [P2]into[/] [T1]the[/] [S6]garden[/].'
+  example_ru: Откройте калитку и пройдите в сад.
+  situation: Объясняете дорогу
+- uid: LX-00973
+  lemma: fountain
+  meaning: water that goes up into the air in a park or a square
+  class: S4
+  forms:
+  - fountains
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfaʊntən/
+  translation_ru: фонтан
+  example_en: '[D2]Meet[/] [T8]me[/] [P1]at[/] [T1]the[/] [S4]fountain[/].'
+  example_ru: Встретимся у фонтана.
+  situation: Договариваетесь о встрече
+- uid: LX-00974
+  lemma: statue
+  meaning: a big figure of a person made of stone or metal
+  class: S4
+  forms:
+  - statues
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈstætʃu/
+  translation_ru: статуя, памятник
+  example_en: '[T9]There[/] [D1]is[/] [T1]a[/] [S4]statue[/] [P1]in[/] [T1]the[/] [S4]square[/].'
+  example_ru: На площади памятник.
+  situation: Описываете город
+- uid: LX-00975
+  lemma: church
+  meaning: a building for Christian prayer
+  class: S4
+  forms:
+  - churches
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tʃɝtʃ/
+  translation_ru: церковь
+  example_en: '[T1]The[/] [S4]church[/] [D1]is[/] [A5]very[/] [J2]old[/].'
+  example_ru: Церковь очень старая.
+  situation: Описываете город
+- uid: LX-00976
+  lemma: downtown
+  meaning: in or to the center of a city
+  class: A3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌdaʊnˈtaʊn/
+  translation_ru: в центре города
+  example_en: '[T8]I[/] [D2]work[/] [A3]downtown[/].'
+  example_ru: Я работаю в центре.
+  situation: Говорите о городе
+  usage_note: 'Без предлога: go downtown, live downtown.'
+- uid: LX-00977
+  lemma: tourist
+  meaning: a person who visits a place on vacation
+  class: S1
+  forms:
+  - tourists
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈtʊrɪst/
+  translation_ru: турист
+  example_en: '[T1]A[/] [S1]tourist[/] [D5]asked[/] [T8]me[/] [P6]for[/] [S9]directions[/].'
+  example_ru: Турист спросил у меня дорогу.
+  situation: Помогаете туристу
+- uid: LX-00978
+  lemma: direction
+  meaning: the way to go
+  class: S9
+  forms:
+  - directions
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dəˈrɛkʃən/
+  translation_ru: направление; directions — как пройти
+  example_en: '[D7]Can[/] [T8]you[/] [D1]give[/] [T8]me[/] [S9]directions[/]?'
+  example_ru: Не подскажете, как пройти?
+  situation: Спрашиваете дорогу
+- uid: LX-00979
+  lemma: main
+  meaning: the biggest or most important
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /meɪn/
+  translation_ru: главный
+  example_en: '[T1]The[/] [J3]main[/] [S4]square[/] [D1]is[/] [A3]downtown[/].'
+  example_ru: Главная площадь в центре.
+  situation: Описываете город
+- uid: LX-00980
+  lemma: How do I get to…?
+  meaning: Asking the way to a place
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhaʊ də aɪ ˈɡɛt tə/
+  translation_ru: Как пройти к…?
+  example_en: How do I get to…?
+  example_ru: Как дойти до…?
+  situation: Спрашиваете дорогу
+- uid: LX-00981
+  lemma: on foot
+  meaning: walking
+  class: P4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɑn ˈfʊt/
+  translation_ru: пешком
+  example_en: on foot
+  example_ru: пешком
+  situation: Говорите о дороге
+  usage_note: It's ten minutes on foot — десять минут пешком.
+- uid: LX-00982
+  lemma: You can't miss it.
+  meaning: Saying a place is easy to find
+  class: F8
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ju ˈkænt ˈmɪs ɪt/
+  translation_ru: Не пропустите. Сразу увидите.
+  example_en: You can't miss it.
+  example_ru: Мимо не пройдёте.
+  situation: Объясняете дорогу
+- uid: LX-00983
+  lemma: at the end of the street
+  meaning: where the street finishes
+  class: P9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ət ði ˈɛnd əv ðə ˈstrit/
+  translation_ru: в конце улицы
+  example_en: at the end of the street
+  example_ru: в конце улицы
+  situation: Объясняете дорогу
+- uid: LX-00984
+  lemma: I'm lost.
+  meaning: Saying you do not know where you are
+  class: J4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪm ˈlɔst/
+  translation_ru: Я заблудился.
+  example_en: I'm lost.
+  example_ru: Я потерялся.
+  situation: Спрашиваете дорогу
+- uid: LX-00985
+  lemma: Follow me!
+  meaning: Asking someone to walk behind you
+  class: D4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈfɑloʊ ˈmi/
+  translation_ru: Идите за мной!
+  example_en: Follow me!
+  example_ru: За мной!
+  situation: Показываете дорогу
+- uid: LX-00986
+  lemma: on the left
+  meaning: on the left side
+  class: P1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɑn ðə ˈlɛft/
+  translation_ru: слева
+  example_en: on the left
+  example_ru: слева
+  situation: Объясняете дорогу
+  usage_note: Справа — on the right.

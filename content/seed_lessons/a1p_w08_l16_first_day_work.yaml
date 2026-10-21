@@ -1,0 +1,243 @@
+slug: a1p-first-day-work
+level: A1+
+week: 8
+order: 16
+focus: S
+minutes: 35
+title: 'Первый день на работе: Welcome to the team!'
+summary: 'Слова и фразы первого рабочего дня: смена, форма, клиенты, стойка; как попросить разрешения задать вопрос, подтвердить Got it и ответить No problem.'
+units:
+- LX-00773
+- LX-00774
+- LX-00776
+- LX-00777
+- LX-00778
+- LX-00779
+- LX-00781
+- LX-00782
+- LX-00783
+- LX-00784
+- LX-00788
+- LX-00792
+- LX-00793
+- LX-00794
+- LX-00795
+- LX-00796
+- LX-00797
+- LX-00800
+- LX-00801
+sound_notes:
+- text: Welcome to the team!
+  ipa: /ˈwɛlkəm tə ðə ˈtim/
+  note_ru: to безударное — «тэ»; team — долгое «ии»
+- text: Got it.
+  ipa: /ˈɡɑɾ ɪt/
+  note_ru: 't между словами смягчается: «гадыт»'
+- text: Can I ask a question?
+  ipa: /kən aɪ ˈæsk ə ˈkwɛstʃən/
+  note_ru: question — «квЭсчэн», с w после к
+contractions:
+- full: do not
+  short: don't
+  ipa: /doʊnt/
+  note_ru: Don't worry. It happens.
+layers:
+- number: 1
+  body: 'Первый день на новой работе: тебе дают форму, показывают стойку и знакомят с командой. Слов много, и важно вовремя переспросить.
+
+
+    > [J3]Good[/] [S7]morning[/], [S1]Jake[/]! [O2]Welcome[/] [P2]to[/] [T1]the[/] [S9]team[/]! [A3]Here[/] [D1]is[/] [T3]your[/] [S2]apron[/]. — Доброе утро, Джейк! Добро пожаловать в команду! Вот твой фартук.
+
+    > [O2]Thank[/] [T8]you[/]! [T8]It[/] [D1]is[/] [T3]my[/] [N2]first[/] [S7]day[/]. [D7]Can[/] [T8]I[/] [D5]ask[/] [T1]a[/] [S9]question[/]? [T9]What[/] [D1]are[/] [T1]the[/] [S9]rules[/]? — Спасибо! У меня первый день. Можно вопрос? Какие тут правила?
+
+    '
+- number: 2
+  body: '**Customer** родственно слову *custom* — «обычай, привычка»: клиент — это тот, кто привык к вам ходить. **Shift** — «сдвиг, смена»: рабочий день «сдвигается» от одного человека к другому. **Uniform** — «одна форма»: *uni-* значит «один», как в слове «униформа».
+
+    '
+- number: 3
+  body: 'Схема первого дня:
+
+
+    > [D2]Got[/] [T8]it[/]. [D7]Can[/] [T8]I[/] [D2]use[/] [T3]my[/] [S2]phone[/] [P3]at[/] [D2]work[/]? — Понял. А телефоном на работе можно пользоваться?
+
+
+    - Приветствие команды: **Welcome to the team!**
+
+    - Вопрос: **Can I ask a question?** — затем сам вопрос.
+
+    - Понял: **Got it.** / **Okay.**
+
+    - Согласие: **No problem.**
+
+    - Перерыв: **Take a break.**
+
+    '
+- number: 4
+  body: '**Почему «Got it», а не «I understand»?** *I understand* тоже верно, но звучит официально. **Got it** — короткое разговорное «понял, принято». Его говорят и начальнику, и коллеге.
+
+
+    > [D1]Do[/] [X1]not[/] [D3]worry[/]. [T8]It[/] [D2]happens[/]. [D2]Take[/] [T1]a[/] [S7]break[/]. — Не переживай. Бывает. Передохни.
+
+
+    **Take a break** — здесь break — «перерыв», а не «ломать». Одно слово — два значения, понятно по фразе.
+
+
+    **Диагностика понимания:** коллега объяснила задачу. Что коротко ответить: *Got it* или *I got*?
+
+
+    **Разбор:** *Got it.* — с it.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [O3]Oh[/] [O4]no[/]! [T8]I[/] [D2]dropped[/] [T1]a[/] [S2]cup[/]. [T8]I[/] [D2]broke[/] [T8]it[/]! — О нет! Я уронил чашку. Разбил!
+
+
+    - **It happens.** — бывает.
+
+    - **No problem.** — без проблем; и в ответ на спасибо.
+
+    - **Thanks!** — коротко «спасибо».
+
+
+    Слова: **customer** — клиент, **apron** — фартук, **uniform** — форма, **counter** — стойка, **machine** — аппарат, **tray** — поднос, **trash** — мусор, **shift** — смена, **team** — команда, **problem** — проблема, **break — broke** — разбить, **chat** — болтать, **wet** — мокрый, **fast** — быстрый.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «I got» без it — нужно **Got it**.
+
+    - machine — не «машина-автомобиль»: это **car**.
+
+    - «uniform» читается «Юниформ», с «ю».
+
+    - «a trash» — trash неисчисляемое: **the trash**, some trash.
+
+    '
+- number: 7
+  body: 'Шесть заданий: поприветствовать новичка, переспросить, собрать «не переживай, бывает», рассказать о первом дне, выбрать слово по картинке и ответить на спасибо.
+
+
+    **Проверка маленького шага:** Can I ask a question? — Got it. — No problem.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00254
+  kind: choice
+  stage: recognition
+  prompt_ru: Новый коллега пришёл в первый день. Поприветствуйте его.
+  options:
+  - Welcome to the team!
+  - Welcome in the team!
+  - Welcome the team!
+  answer: Welcome to the team!
+  hint_ru: Welcome to…
+  explanation_ru: Welcome to the team! — с предлогом to.
+  units:
+  - LX-00800
+- order: 2
+  uid: EX-00255
+  kind: fill
+  stage: substitution
+  prompt_ru: Вы хотите что-то уточнить у начальника. Начните вежливо.
+  prompt_en: Can I ask a ___?
+  answer: question
+  hint_ru: Вопрос — question.
+  explanation_ru: Can I ask a question? — можно вопрос?
+  units:
+  - LX-00801
+- order: 3
+  uid: EX-00256
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Не переживай. Бывает».'
+  options:
+  - happens
+  - Don't
+  - It
+  - worry
+  answer: Don't worry It happens
+  hint_ru: Don't worry. + It happens.
+  explanation_ru: Don't worry. It happens. — так успокаивают после ошибки.
+  units:
+  - LX-00784
+- order: 4
+  uid: EX-00257
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: друг спрашивает, когда начинается ваша смена. Ответьте: «Моя смена начинается в восемь».'
+  prompt_en: My ___ starts at eight.
+  answer: shift
+  hint_ru: Смена — shift.
+  explanation_ru: My shift starts at eight.
+  units:
+  - LX-00781
+- order: 5
+  uid: EX-00258
+  kind: choice
+  stage: recognition
+  prompt_ru: Коллега объяснила, где поднос. Как коротко сказать «понял»?
+  options:
+  - Got it.
+  - I got.
+  - Get it.
+  answer: Got it.
+  hint_ru: С it.
+  explanation_ru: Got it. — разговорное «понял».
+  units:
+  - LX-00796
+- order: 6
+  uid: EX-00259
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Клиент говорит: Thank you! Ответьте: «Без проблем».'
+  prompt_en: No ___.
+  answer: problem
+  hint_ru: Проблема — problem.
+  explanation_ru: No problem. — и «без проблем», и «не за что».
+  units:
+  - LX-00795
+  - LX-00783
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Добро пожаловать в команду!
+  answer: Welcome to the team!
+  hint_ru: Welcome to + the team.
+  explanation_ru: Welcome to the team!
+  review_of: 1
+  units:
+  - LX-00800
+- order: 2
+  kind: translate
+  prompt_ru: Можно вопрос?
+  answer: Can I ask a question?
+  hint_ru: Can I ask…
+  explanation_ru: Can I ask a question?
+  review_of: 2
+  units:
+  - LX-00801
+- order: 3
+  kind: translate
+  prompt_ru: Пол мокрый.
+  answer: The floor is wet.
+  hint_ru: wet — мокрый.
+  explanation_ru: The floor is wet.
+  review_of: 4
+  units:
+  - LX-00792
+- order: 4
+  kind: translate
+  prompt_ru: Передохни.
+  answer: Take a break.
+  hint_ru: Take + a break.
+  explanation_ru: Take a break.
+  review_of: 3
+  units:
+  - LX-00797

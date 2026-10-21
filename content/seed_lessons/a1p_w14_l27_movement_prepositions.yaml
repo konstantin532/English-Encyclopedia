@@ -1,0 +1,247 @@
+slug: a1p-movement-prepositions
+level: A1+
+week: 14
+order: 27
+focus: P
+minutes: 40
+title: 'Across, past, through, along: куда и как идти'
+summary: 'Предлоги движения: across the square, past the church, through the park, along the river, over the bridge, into the garden. Как объяснить дорогу шаг за шагом.'
+units:
+- LX-00520
+- LX-00521
+- LX-00522
+- LX-00523
+- LX-00956
+- LX-00957
+- LX-00958
+- LX-00959
+- LX-00960
+- LX-00961
+- LX-00962
+- LX-00963
+- LX-00964
+- LX-00985
+sound_notes:
+- text: Walk along the river and go over the bridge.
+  ipa: /ˈwɔk əˈlɔŋ ðə ˈrɪvɚ ən ˈɡoʊ ˈoʊvɚ ðə ˈbrɪdʒ/
+  note_ru: 'along — ударение на второй слог: «элОн»'
+- text: Go past the church and across the square.
+  ipa: /ˈɡoʊ ˈpæst ðə ˈtʃɝtʃ ən əˈkrɔs ðə ˈskwɛr/
+  note_ru: 'past the — t почти исчезает: «пэс зэ»'
+- text: Let's go through the park.
+  ipa: /ˈlɛts ˈɡoʊ ˈθru ðə ˈpɑrk/
+  note_ru: 'through — «сру»: глухой th и сразу r'
+contractions:
+- full: let us
+  short: let's
+  ipa: /lɛts/
+  note_ru: Let's go through the park — пойдём через парк.
+layers:
+- number: 1
+  body: 'Анна и Том решили срезать через парк и заблудились. Прохожий объясняет дорогу — и почти каждое слово в его ответе показывает, **как** идти.
+
+
+    > [S4]Park[/] [S4]Street[/]? [D4]Walk[/] [P2]along[/] [T1]the[/] [S6]river[/] [C1]and[/] [D4]go[/] [P2]over[/] [T1]the[/] [S4]bridge[/]. — Парк-стрит? Идите вдоль реки и перейдите через мост.
+
+    > [A2]Then[/] [D4]go[/] [P2]past[/] [T1]the[/] [S4]church[/] [C1]and[/] [P2]across[/] [T1]the[/] [S4]square[/]. — Потом мимо церкви и через площадь.
+
+    '
+- number: 2
+  body: 'В русском «через» одно на всё: через улицу, через парк, через мост. А английский различает: **across** — по поверхности с одной стороны на другую (*across the street*), **through** — сквозь, внутри чего-то (*through the park*, *through the door*), **over** — сверху, над (*over the bridge*). Это как три разных картинки.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [O4]Okay[/]. [D2]Let[/] [T8]us[/] [D4]go[/] [P2]through[/] [T1]the[/] [S4]park[/]. [T8]It[/] [D1]is[/] [X1]not[/] [J1]far[/]. — Хорошо. Пойдём через парк. Это недалеко.
+
+
+    - **across** — через (улицу, площадь): across the square.
+
+    - **through** — сквозь (парк, лес, дверь): through the park.
+
+    - **over** — через сверху (мост): over the bridge.
+
+    - **along** — вдоль: along the river.
+
+    - **past** — мимо: past the church.
+
+    - **into** — внутрь: into the garden.
+
+    - **toward** — в сторону: toward the church.
+
+    - **around** — вокруг, за: around the corner.
+
+    '
+- number: 4
+  body: '**Почему «go into the library», но «I am in the library»?** **into** — движение внутрь (куда?), **in** — место (где?). Так же *to* (куда) и *at* (где): *go to the bank — I''m at the bank*.
+
+
+    **Диагностика понимания:** вы идёте сквозь парк. Что сказать: *across the park* или *through the park*?
+
+
+    **Разбор:** *through the park* — сквозь, между деревьями. Across — если парк — просто открытая площадь.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **Follow me!** — за мной!
+
+    - **Follow the river to the bridge.** — идите вдоль реки до моста.
+
+    - **It''s around the corner.** — это за углом.
+
+
+    Слова: **along, through, into, toward, around, over, opposite** (напротив), **follow** — идти за, **cross** — переходить. Из истории 10: **library** — библиотека, **tree** — дерево, **garden** — сад, **past** — мимо.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «through the street» — по улице на другую сторону: **across the street**.
+
+    - «go in the garden» — движение: **go into the garden**.
+
+    - «go past of the church» — без of: **past the church**.
+
+    - «towards» — британское; в США **toward**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать across или through, сказать «мимо», собрать маршрут, объяснить дорогу до магазина, выбрать into и позвать за собой.
+
+
+    **Проверка маленького шага:** across — по поверхности, through — сквозь, over — сверху, along — вдоль, past — мимо.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00320
+  kind: choice
+  stage: recognition
+  prompt_ru: Вы идёте через парк, между деревьями. Выберите.
+  options:
+  - Go through the park.
+  - Go across the park trees.
+  - Go over the park.
+  answer: Go through the park.
+  hint_ru: Сквозь — through.
+  explanation_ru: through the park — сквозь, внутри парка.
+  units:
+  - LX-00957
+- order: 2
+  uid: EX-00321
+  kind: fill
+  stage: substitution
+  prompt_ru: Пройдите мимо церкви. Закончите.
+  prompt_en: Go ___ the church.
+  answer: past
+  hint_ru: Мимо — past.
+  explanation_ru: Go past the church — без of.
+  units:
+  - LX-00523
+- order: 3
+  uid: EX-00322
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Идите вдоль реки».'
+  options:
+  - river
+  - Walk
+  - the
+  - along
+  answer: Walk along the river
+  hint_ru: Walk + along + the river.
+  explanation_ru: Walk along the river.
+  units:
+  - LX-00956
+- order: 4
+  uid: EX-00323
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: турист спрашивает, как пройти к банку. Банк на другой стороне улицы. Скажите: «Перейдите улицу».'
+  prompt_en: Go ___ the street.
+  answer: across
+  accepted:
+  - Cross the street.
+  hint_ru: Через улицу — across.
+  explanation_ru: 'Go across the street. (Или: Cross the street.)'
+  units:
+  - LX-00964
+- order: 5
+  uid: EX-00324
+  kind: choice
+  stage: recognition
+  prompt_ru: Box пошёл в сад (внутрь). Выберите.
+  options:
+  - Box went into the garden.
+  - Box went in the garden to.
+  - Box went past into garden.
+  answer: Box went into the garden.
+  hint_ru: Внутрь — into.
+  explanation_ru: into the garden — движение внутрь.
+  units:
+  - LX-00958
+  - LX-00522
+- order: 6
+  uid: EX-00325
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Вы знаете дорогу. Скажите другу: «Иди за мной!»'
+  prompt_en: ___ me!
+  answer: Follow
+  accepted:
+  - follow
+  hint_ru: Идти за — follow.
+  explanation_ru: Follow me!
+  units:
+  - LX-00963
+  - LX-00985
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Пройдите через парк.
+  answer: Go through the park.
+  accepted:
+  - Walk through the park.
+  hint_ru: through — сквозь.
+  explanation_ru: Go through the park.
+  review_of: 1
+  units:
+  - LX-00957
+- order: 2
+  kind: translate
+  prompt_ru: Идите мимо банка.
+  answer: Go past the bank.
+  accepted:
+  - Walk past the bank.
+  hint_ru: past — мимо.
+  explanation_ru: Go past the bank.
+  review_of: 2
+  units:
+  - LX-00523
+- order: 3
+  kind: translate
+  prompt_ru: Перейдите через мост.
+  answer: Go over the bridge.
+  accepted:
+  - Cross the bridge.
+  - Walk over the bridge.
+  hint_ru: over — через сверху.
+  explanation_ru: Go over the bridge.
+  review_of: 3
+  units:
+  - LX-00961
+- order: 4
+  kind: translate
+  prompt_ru: Банк за углом.
+  answer: The bank is around the corner.
+  hint_ru: around the corner.
+  explanation_ru: The bank is around the corner.
+  review_of: 4
+  units:
+  - LX-00960

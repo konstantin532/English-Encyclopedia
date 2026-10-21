@@ -1,0 +1,235 @@
+slug: a1p-how-often
+level: A1+
+week: 11
+order: 21
+focus: A
+minutes: 40
+title: How often? Once, twice, three times a day
+summary: 'Как спросить и сказать, как часто: How often do I take it? — Twice a day. Once a week. Always, often, sometimes, never — и где они стоят во фразе.'
+units:
+- LX-00866
+- LX-00867
+- LX-00868
+- LX-00870
+- LX-00881
+- LX-00882
+- LX-00883
+- LX-00888
+- LX-00889
+- LX-00890
+- LX-00891
+sound_notes:
+- text: How often do I take it?
+  ipa: /ˈhaʊ ˈɔfən də aɪ ˈteɪk ɪt/
+  note_ru: often — «Офэн», t не читается
+- text: Twice a day.
+  ipa: /ˈtwaɪs ə ˈdeɪ/
+  note_ru: 'twice a сливается: «туайсэ дэй»'
+- text: three times a day
+  ipa: /ˈθri ˈtaɪmz ə ˈdeɪ/
+  note_ru: 'three — межзубный th: «сри», не «фри»'
+contractions:
+- full: does not
+  short: doesn't
+  ipa: /ˈdʌzənt/
+  note_ru: She doesn't cough often — она нечасто кашляет.
+layers:
+- number: 1
+  body: 'В аптеке главный вопрос — как часто принимать лекарство. По-английски это **How often…?**, а ответ — **once, twice, three times a day**.
+
+
+    > [O4]No[/]. [A6]How[/] [A1]often[/] [D1]do[/] [T8]I[/] [D2]take[/] [T2]this[/] [S5]medicine[/]? — Нет. Как часто принимать это лекарство?
+
+    > [A1]Twice[/] [T1]a[/] [S7]day[/], [P3]after[/] [S3]breakfast[/] [C1]and[/] [P3]after[/] [S3]dinner[/]. [T8]You[/] [D1]do[/] [X1]not[/] [D3]need[/] [T1]a[/] [S5]prescription[/]. — Два раза в день, после завтрака и после ужина. Рецепт не нужен.
+
+    '
+- number: 2
+  body: '**Once** и **twice** — старые формы от *one* и *two*: «однажды» и «дважды». Начиная с трёх, английский уже не придумывает особых слов: **three times, four times** — «три раза, четыре раза». **Often** родственно старому *oft* — «часто», оно до сих пор встречается в стихах.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [P5]For[/] [N3]five[/] [S7]days[/]. [D2]Read[/] [T1]the[/] [S2]label[/] [A4]carefully[/]. [C1]And[/] [D2]drink[/] [S3]tea[/] [P4]with[/] [S3]honey[/] [N1]three[/] [S7]times[/] [T1]a[/] [S7]day[/]. — Пять дней. Внимательно прочитайте инструкцию. И пейте чай с мёдом три раза в день.
+
+
+    - Вопрос: **How often + do / does + кто + глагол?**
+
+    - Ответ: **once / twice / three times + a day / a week / a month**.
+
+    - Слова частоты: **always** — всегда, **often** — часто, **sometimes** — иногда, **never** — никогда.
+
+    - Они стоят **перед глаголом**: I **often** forget. Но **после be**: I am **always** tired.
+
+    '
+- number: 4
+  body: '**Почему «twice a day», а не «twice in a day»?** В английском **a** здесь значит «каждый»: *twice a day* — два раза на каждый день. Так же *60 miles an hour*, *$900 a month*.
+
+
+    > [T8]I[/] [A1]always[/] [D2]drink[/] [S3]tea[/] [P4]with[/] [S3]honey[/]. [C5]But[/] [T8]I[/] [A1]often[/] [D6]forget[/] [T3]my[/] [S5]medicine[/]! — Чай с мёдом я пью всегда. А вот лекарство часто забываю!
+
+
+    **Диагностика понимания:** что верно: *I forget often my medicine* или *I often forget my medicine*?
+
+
+    **Разбор:** *I often forget…* — слово частоты перед глаголом.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    - **How often…?** — как часто?
+
+    - **at bedtime** — перед сном.
+
+    - **Swallow it with water.** — запейте водой.
+
+    - **Read the label.** — прочитайте этикетку.
+
+
+    Слова: **often, once, twice**, **pill** — таблетка, **label** — этикетка, **bedtime** — время сна, **swallow** — глотать.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «two times a day» — понятно, но обычно говорят **twice**.
+
+    - «twice in a day» — без in: **twice a day**.
+
+    - «I forget often» — **I often forget**.
+
+    - «How much often» — просто **How often**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать once или twice, задать вопрос How often, поставить often на место, рассказать о своём режиме, выбрать «три раза в день» и прочитать этикетку.
+
+
+    **Проверка маленького шага:** How often? — once / twice / three times a day. Often — перед глаголом.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00284
+  kind: choice
+  stage: recognition
+  prompt_ru: Принимать таблетку два раза в день. Как сказать?
+  options:
+  - twice a day
+  - twice in day
+  - two in a day
+  answer: twice a day
+  hint_ru: Два раза — twice; в день — a day.
+  explanation_ru: twice a day — два раза в день, без in.
+  units:
+  - LX-00868
+  - LX-00890
+- order: 2
+  uid: EX-00285
+  kind: fill
+  stage: substitution
+  prompt_ru: Спросите в аптеке, как часто принимать лекарство.
+  prompt_en: How ___ do I take it?
+  answer: often
+  hint_ru: Как часто — how often.
+  explanation_ru: How often do I take it?
+  units:
+  - LX-00866
+  - LX-00888
+- order: 3
+  uid: EX-00286
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите: «Я часто забываю лекарство».'
+  options:
+  - forget
+  - I
+  - medicine
+  - often
+  - my
+  answer: I often forget my medicine
+  hint_ru: often — перед глаголом.
+  explanation_ru: I often forget my medicine. Слово частоты перед глаголом.
+  units:
+  - LX-00866
+- order: 4
+  uid: EX-00287
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: друг спрашивает, как часто вы ходите в спортзал. Раз в неделю.'
+  prompt_en: ___ a week.
+  answer: Once
+  accepted:
+  - once
+  hint_ru: Один раз — once.
+  explanation_ru: Once a week. — раз в неделю.
+  units:
+  - LX-00867
+- order: 5
+  uid: EX-00288
+  kind: choice
+  stage: recognition
+  prompt_ru: «Три раза в день» — это…
+  options:
+  - three times a day
+  - three times in day
+  - three time a day
+  answer: three times a day
+  hint_ru: times — с -s.
+  explanation_ru: three times a day — с трёх говорят times.
+  units:
+  - LX-00891
+- order: 6
+  uid: EX-00289
+  kind: fill
+  stage: transfer
+  prompt_ru: 'На этикетке: принимать перед сном. Закончите.'
+  prompt_en: Take one pill at ___.
+  answer: bedtime
+  hint_ru: Время сна — bedtime.
+  explanation_ru: Take one pill at bedtime. — перед сном.
+  units:
+  - LX-00882
+  - LX-00881
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Как часто его принимать?
+  answer: How often do I take it?
+  hint_ru: How often + do I take it?
+  explanation_ru: How often do I take it?
+  review_of: 2
+  units:
+  - LX-00888
+- order: 2
+  kind: translate
+  prompt_ru: Раз в день.
+  answer: Once a day.
+  hint_ru: once + a day.
+  explanation_ru: Once a day.
+  review_of: 1
+  units:
+  - LX-00889
+- order: 3
+  kind: translate
+  prompt_ru: Я всегда пью чай утром.
+  answer: I always drink tea in the morning.
+  hint_ru: always — перед глаголом.
+  explanation_ru: I always drink tea in the morning.
+  review_of: 3
+  units:
+  - LX-00866
+- order: 4
+  kind: translate
+  prompt_ru: Проглотите таблетку с водой.
+  answer: Swallow the pill with water.
+  hint_ru: Swallow + the pill.
+  explanation_ru: Swallow the pill with water.
+  review_of: 6
+  units:
+  - LX-00883
+  - LX-00870

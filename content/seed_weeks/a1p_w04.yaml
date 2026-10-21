@@ -1,0 +1,84 @@
+# A1+, неделя 4 «Подарок для Мии». Сфера shop, неправильные глаголы в прошедшем.
+level: A1+
+week: 4
+can_do_ru: 'Я смогу рассказать о покупке в прошлом: I went to the mall. I bought a gift. I paid by card. — спросить How much was it? и сказать, что я забыл или потратил: I forgot. I spent it all!'
+mission_ru: 'Расскажите по-английски о своей последней покупке в четырёх фразах: куда вы ходили (I went to…), что купили (I bought…), как платили (I paid by card / in cash) и сколько это стоило (It was … dollars).'
+chunks:
+- LX-00659
+- LX-00660
+- LX-00661
+- LX-00662
+- LX-00663
+- LX-00664
+- LX-00665
+story_beat:
+  intro_ru: Вечер. Том весь день пропадал в торговом центре — у Мии в пятницу день рождения.
+  outcome_ru: Том купил Мии зелёный шарф со скидкой, но Мия терпеть не может зелёный. Чек остался в кошельке — завтра шарф можно обменять на синий. А ещё Том купил Анне розовый зонт и потратил все деньги.
+  next_hook_ru: 'Шарф обменяли на синий. А на следующий день Анна забыла новый розовый зонт в автобусе. Неделя 5.'
+script:
+- speaker: anna
+  emotion: surprised
+  text: '[S1]Tom[/], [A6]where[/] [D1]were[/] [T8]you[/] [T6]all[/] [S7]day[/]?'
+  ru: Том, где ты был весь день?
+- speaker: tom
+  emotion: happy
+  text: '[T8]I[/] [D4]went[/] [P2]to[/] [T1]the[/] [S4]mall[/]. [T8]I[/] [D2]bought[/] [T1]a[/] [S2]gift[/] [P5]for[/] [S1]Mia[/]. [T3]Her[/] [S7]birthday[/] [D1]is[/] [P3]on[/] [S7]Friday[/].'
+  ru: Я ездил в торговый центр. Купил подарок для Мии. У неё в пятницу день рождения.
+- speaker: anna
+  emotion: happy
+  text: '[J3]Great[/]! [D7]Can[/] [T8]I[/] [D6]see[/] [T8]it[/]?'
+  ru: Отлично! Можно посмотреть?
+- speaker: tom
+  emotion: happy
+  text: '[O9]Here[/] [T8]you[/] [O9]go[/]. [T8]I[/] [D6]chose[/] [T1]a[/] [S2]scarf[/]. [T8]It[/] [D1]was[/] [P1]on[/] [N6]sale[/]!'
+  ru: Вот, держи. Я выбрал шарф. Он был со скидкой!
+- speaker: anna
+  emotion: surprised
+  text: '[T1]A[/] [J2]green[/] [S2]scarf[/]? [C5]But[/] [S1]Mia[/] [D3]hates[/] [J2]green[/]!'
+  ru: Зелёный шарф? Но Мия терпеть не может зелёный!
+- speaker: tom
+  emotion: sad
+  text: '[O3]Oh[/] [O3]no[/]! [T8]I[/] [D6]forgot[/]. [T8]I[/] [D2]paid[/] [N1]twenty[/] [N6]dollars[/] [P4]by[/] [S2]card[/].'
+  ru: О нет! Я забыл. Я заплатил картой двадцать долларов.
+- speaker: anna
+  text: '[D1]Do[/] [T8]you[/] [D1]have[/] [T1]the[/] [S2]receipt[/]?'
+  ru: Чек у тебя есть?
+- speaker: tom
+  text: '[O4]Yes[/], [T8]it[/] [D1]is[/] [P1]in[/] [T3]my[/] [S2]wallet[/]. [T8]I[/] [D4]came[/] [S2]home[/] [P4]by[/] [S4]bus[/], [C1]and[/] [T8]I[/] [D2]took[/] [T1]the[/] [S2]receipt[/] [P4]with[/] [T8]me[/].'
+  spoken: '[O4]Yes[/], [T8]it[/][D1]''s[/] [P1]in[/] [T3]my[/] [S2]wallet[/]. [T8]I[/] [D4]came[/] [S2]home[/] [P4]by[/] [S4]bus[/], [C1]and[/] [T8]I[/] [D2]took[/] [T1]the[/] [S2]receipt[/] [P4]with[/] [T8]me[/].'
+  ru: Да, он в кошельке. Я приехал домой на автобусе и забрал чек с собой.
+- speaker: anna
+  emotion: happy
+  text: '[J3]Good[/]. [T8]We[/] [D7]can[/] [D2]change[/] [T8]it[/] [A2]tomorrow[/]. [J2]Blue[/] [D1]is[/] [T3]her[/] [J3]favorite[/] [S2]color[/].'
+  ru: Хорошо. Завтра обменяем. Её любимый цвет — синий.
+- speaker: tom
+  emotion: happy
+  text: '[J2]Blue[/]. [T8]I[/] [D3]need[/] [X2]to[/] [D6]remember[/] [T2]that[/]! [C1]And[/] [T8]I[/] [D2]bought[/] [T9]something[/] [P5]for[/] [T8]you[/] [A5]too[/].'
+  ru: Синий. Надо запомнить! И тебе я тоже кое-что купил.
+- speaker: anna
+  emotion: surprised
+  text: '[P5]For[/] [T8]me[/]? [A5]Really[/]?'
+  ru: Мне? Правда?
+- speaker: tom
+  emotion: happy
+  text: '[T1]A[/] [J2]pink[/] [S2]umbrella[/]! [C5]But[/] [A2]now[/] [T8]I[/] [D1]have[/] [X1]no[/] [N6]money[/]. [T8]I[/] [D2]spent[/] [T8]it[/] [T6]all[/]!'
+  ru: Розовый зонт! Но теперь у меня нет денег. Я всё потратил!
+twister:
+  number: 18
+  series: contractions
+  text: '[T8]I[/] [D2]bought[/] [T8]it[/], [T8]I[/] [D2]brought[/] [T8]it[/], [T8]I[/] [D2]paid[/] [P5]for[/] [T8]it[/]. [T8]It[/] [D1]was[/][X1]n''t[/] [J3]cheap[/], [C5]but[/] [T8]it[/][D1]''s[/] [J3]perfect[/]!'
+  ru: Я купил его, я принёс его, я заплатил за него. Он был недешёвый, но он идеальный!
+  ipa: /aɪ ˈbɔt ɪt | aɪ ˈbrɔt ɪt | aɪ ˈpeɪd fɚ ɪt | ɪt ˈwʌzənt ˈtʃip | bət ɪts ˈpɝfɪkt/
+  focus_sounds:
+  - ɔ
+  - r
+  source: original
+  goal_ru: Неправильные формы bought / brought / paid и сокращения wasn't, it's.
+  tip_ru: 'bought и brought отличаются только звуком r: «бот» — «брот». gh в них не читается. В bought it t перед гласной смягчается: «бодыт».'
+  warmup:
+  - '[D2]buy[/], [D2]bought[/]; [D2]bring[/], [D2]brought[/]'
+  - '[D2]pay[/], [D2]paid[/]; [D2]spend[/], [D2]spent[/]'
+  - '[T8]I[/] [D2]bought[/] [T8]it[/]. [T8]I[/] [D2]brought[/] [T8]it[/].'
+  - '[T8]It[/] [D1]was[/][X1]n''t[/] [J3]cheap[/], [C5]but[/] [T8]it[/][D1]''s[/] [J3]perfect[/]!'
+  target_line: I went to the mall.
+  own_ru: 'Скажите, что вы купили последним и сколько заплатили: I bought… I paid…'

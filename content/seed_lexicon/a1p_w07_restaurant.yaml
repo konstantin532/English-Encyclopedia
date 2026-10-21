@@ -1,0 +1,530 @@
+# Неделя 7 A1+ «Ужин в ресторане»: some / any, исчисляемые и неисчисляемые. CEFR не сверялся.
+level: A1+
+week: 7
+units:
+- uid: LX-00733
+  lemma: any
+  meaning: some, in questions and with not
+  class: T4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɛni/
+  translation_ru: какой-нибудь, сколько-нибудь; никакой (с not)
+  example_en: '[D1]Is[/] [T9]there[/] [T4]any[/] [S3]fish[/]?'
+  example_ru: Есть рыба?
+  situation: Спрашиваете в ресторане
+  usage_note: 'some — в утверждении, any — в вопросе и с not: We do not have any fish.'
+  typical_error: «We don't have some fish» — с not нужно any.
+- uid: LX-00734
+  lemma: more
+  meaning: a bigger amount
+  class: T4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mɔr/
+  translation_ru: ещё, больше
+  example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T4]more[/] [S3]bread[/]?'
+  example_ru: Можно ещё хлеба?
+  situation: Просите добавки
+- uid: LX-00735
+  lemma: little
+  meaning: small; a little means not much
+  class: J1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈlɪtəl/
+  translation_ru: маленький; a little — немного
+  example_en: '[T8]It[/][D1]''s[/] [T1]a[/] [J1]little[/] [J2]spicy[/].'
+  example_ru: Немного острое.
+  situation: Описываете блюдо
+  usage_note: 'a little — «немного»: a little spicy, a little salt.'
+- uid: LX-00736
+  lemma: order
+  meaning: to ask for food in a restaurant
+  class: D2
+  forms:
+  - orders
+  - ordered
+  - ordering
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɔrdɚ/
+  translation_ru: заказывать
+  example_en: '[T8]We[/] [D2]ordered[/] [S3]chicken[/] [C1]and[/] [S3]rice[/].'
+  example_ru: Мы заказали курицу с рисом.
+  situation: Заказываете еду
+- uid: LX-00737
+  lemma: recommend
+  meaning: to say that something is good
+  class: D5
+  forms:
+  - recommends
+  - recommended
+  - recommending
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˌrɛkəˈmɛnd/
+  translation_ru: советовать, рекомендовать
+  example_en: '[A6]What[/] [D1]do[/] [T8]you[/] [D5]recommend[/]?'
+  example_ru: Что вы посоветуете?
+  situation: Выбираете блюдо
+  usage_note: 'Одна c и две m: recommend.'
+- uid: LX-00738
+  lemma: menu
+  meaning: a list of food in a restaurant
+  class: S9
+  forms:
+  - menus
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈmɛnju/
+  translation_ru: меню
+  example_en: '[D7]Can[/] [T8]we[/] [D1]have[/] [T1]the[/] [S9]menu[/], [O8]please[/]?'
+  example_ru: Можно нам меню?
+  situation: В ресторане
+  usage_note: 'Ударение на первый слог: «мЭнью».'
+- uid: LX-00739
+  lemma: server
+  meaning: a person who brings food in a restaurant
+  class: S1
+  forms:
+  - servers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsɝvɚ/
+  translation_ru: официант, официантка
+  example_en: '[T1]The[/] [S1]server[/] [D1]was[/] [A5]very[/] [J6]kind[/].'
+  example_ru: Официантка была очень приветливая.
+  situation: В ресторане
+  usage_note: В США часто говорят server — и о мужчине, и о женщине.
+- uid: LX-00740
+  lemma: tip
+  meaning: extra money for a server
+  class: N6
+  forms:
+  - tips
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tɪp/
+  translation_ru: чаевые
+  example_en: '[T1]The[/] [N6]tip[/] [D1]was[/] [N1]ten[/] [N6]dollars[/].'
+  example_ru: Чаевые были десять долларов.
+  situation: Платите в ресторане
+  usage_note: В США чаевые обычно 15–20 процентов от счёта.
+- uid: LX-00741
+  lemma: chicken
+  meaning: a bird; its meat as food
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈtʃɪkən/
+  translation_ru: курица
+  example_en: '[T8]I[/] [D3]would[/] [D3]like[/] [T1]the[/] [S3]chicken[/].'
+  example_ru: Мне, пожалуйста, курицу.
+  situation: Заказываете еду
+- uid: LX-00742
+  lemma: fish
+  meaning: an animal that lives in water; its meat as food
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fɪʃ/
+  translation_ru: рыба
+  example_en: '[T8]We[/] [D1]do[/] [X1]not[/] [D1]have[/] [T4]any[/] [S3]fish[/].'
+  example_ru: У нас нет рыбы.
+  situation: В ресторане
+  usage_note: Много рыбы — тоже fish.
+- uid: LX-00743
+  lemma: soup
+  meaning: hot liquid food
+  class: S3
+  forms:
+  - soups
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sup/
+  translation_ru: суп
+  example_en: '[T1]The[/] [S3]soup[/] [D1]is[/] [J2]hot[/].'
+  example_ru: Суп горячий.
+  situation: В ресторане
+  usage_note: По-английски суп «едят» — eat soup.
+- uid: LX-00744
+  lemma: salad
+  meaning: cold vegetables, often green
+  class: S3
+  forms:
+  - salads
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsæləd/
+  translation_ru: салат
+  example_en: '[T4]Some[/] [S3]salad[/], [O8]please[/].'
+  example_ru: Немного салата, пожалуйста.
+  situation: Заказываете еду
+- uid: LX-00745
+  lemma: pasta
+  meaning: Italian food made from flour and water
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈpɑstə/
+  translation_ru: паста, макароны
+  example_en: '[T1]The[/] [S3]pasta[/] [D1]is[/] [J3]delicious[/].'
+  example_ru: Паста очень вкусная.
+  situation: Говорите о еде
+- uid: LX-00746
+  lemma: rice
+  meaning: small white grains you cook and eat
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /raɪs/
+  translation_ru: рис
+  example_en: '[S3]Chicken[/] [P4]with[/] [S3]rice[/], [O8]please[/].'
+  example_ru: Курицу с рисом, пожалуйста.
+  situation: Заказываете еду
+  usage_note: 'Неисчисляемое: some rice, не «a rice».'
+- uid: LX-00747
+  lemma: potato
+  meaning: a vegetable that grows in the ground
+  class: S3
+  forms:
+  - potatoes
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /pəˈteɪtoʊ/
+  translation_ru: картофель
+  example_en: '[T8]I[/] [D3]like[/] [S3]potatoes[/].'
+  example_ru: Я люблю картошку.
+  situation: Говорите о еде
+  usage_note: Много — potatoes, с -es.
+- uid: LX-00748
+  lemma: meat
+  meaning: an animal as food
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /mit/
+  translation_ru: мясо
+  example_en: '[T8]I[/] [D1]do[/] [X1]not[/] [D2]eat[/] [S3]meat[/].'
+  example_ru: Я не ем мясо.
+  situation: Говорите о еде
+  usage_note: meat (мясо) и meet (встречать) звучат одинаково.
+- uid: LX-00749
+  lemma: vegetable
+  meaning: a plant you eat, like a potato
+  class: S3
+  forms:
+  - vegetables
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈvɛdʒtəbəl/
+  translation_ru: овощ
+  example_en: '[T4]Some[/] [S3]vegetables[/], [O8]please[/].'
+  example_ru: Немного овощей, пожалуйста.
+  situation: Заказываете еду
+  usage_note: 'Обычно три слога: «вЭджтэбл».'
+- uid: LX-00750
+  lemma: fruit
+  meaning: sweet food from a tree or a plant
+  class: S3
+  forms:
+  - fruits
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /frut/
+  translation_ru: фрукты, фрукт
+  example_en: '[T8]I[/] [D2]ate[/] [T4]some[/] [S3]fruit[/].'
+  example_ru: Я съел немного фруктов.
+  situation: Говорите о еде
+  usage_note: 'Обычно неисчисляемое: some fruit.'
+- uid: LX-00751
+  lemma: pie
+  meaning: a sweet or meat food baked in a dish
+  class: S3
+  forms:
+  - pies
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /paɪ/
+  translation_ru: пирог
+  example_en: '[T8]I[/] [D3]would[/] [D3]like[/] [T4]some[/] [S3]apple[/] [S3]pie[/].'
+  example_ru: Мне яблочного пирога.
+  situation: Заказываете десерт
+- uid: LX-00752
+  lemma: dessert
+  meaning: sweet food after dinner
+  class: S3
+  forms:
+  - desserts
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dɪˈzɝt/
+  translation_ru: десерт
+  example_en: '[D1]Do[/] [T8]you[/] [D3]want[/] [S3]dessert[/]?'
+  example_ru: Хотите десерт?
+  situation: В ресторане
+  usage_note: dessert (десерт, ss) и desert (пустыня, s) — разные слова.
+- uid: LX-00753
+  lemma: salt
+  meaning: white food that makes things taste better
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sɔlt/
+  translation_ru: соль
+  example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T1]the[/] [S3]salt[/], [O8]please[/]?'
+  example_ru: Передайте соль, пожалуйста.
+  situation: За столом
+- uid: LX-00754
+  lemma: sugar
+  meaning: white sweet food
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈʃʊɡɚ/
+  translation_ru: сахар
+  example_en: '[S3]Coffee[/] [P4]with[/] [T4]some[/] [S3]sugar[/], [O8]please[/].'
+  example_ru: Кофе с сахаром, пожалуйста.
+  situation: В кафе
+  usage_note: 'Начало — «шу»: «шУгэр».'
+- uid: LX-00755
+  lemma: glass
+  meaning: a cup made of glass
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡlæs/
+  translation_ru: стакан, бокал
+  example_en: '[T1]A[/] [S2]glass[/] [P6]of[/] [S3]water[/], [O8]please[/].'
+  example_ru: Стакан воды, пожалуйста.
+  situation: Заказываете напиток
+  usage_note: 'Много стаканов — тоже glasses, как «очки»: значение видно из ситуации.'
+- uid: LX-00756
+  lemma: plate
+  meaning: a flat dish for food
+  class: S2
+  forms:
+  - plates
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /pleɪt/
+  translation_ru: тарелка
+  example_en: '[T3]My[/] [S2]plate[/] [D1]is[/] [J2]empty[/].'
+  example_ru: Моя тарелка пустая.
+  situation: За столом
+- uid: LX-00757
+  lemma: fork
+  meaning: a thing for eating with
+  class: S2
+  forms:
+  - forks
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fɔrk/
+  translation_ru: вилка
+  example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T5]another[/] [S2]fork[/]?'
+  example_ru: Можно другую вилку?
+  situation: В ресторане
+- uid: LX-00758
+  lemma: knife
+  meaning: a thing for cutting food
+  class: S2
+  forms:
+  - knives
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /naɪf/
+  translation_ru: нож
+  example_en: '[T8]I[/] [D1]need[/] [T1]a[/] [S2]knife[/].'
+  example_ru: Мне нужен нож.
+  situation: За столом
+  usage_note: 'k не читается: «найф». Много — knives.'
+- uid: LX-00759
+  lemma: spoon
+  meaning: a thing for eating soup
+  class: S2
+  forms:
+  - spoons
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /spun/
+  translation_ru: ложка
+  example_en: '[T1]The[/] [S2]spoon[/] [D1]is[/] [P1]on[/] [T1]the[/] [S2]table[/].'
+  example_ru: Ложка на столе.
+  situation: За столом
+- uid: LX-00760
+  lemma: delicious
+  meaning: very good to eat
+  class: J3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /dɪˈlɪʃəs/
+  translation_ru: очень вкусный
+  example_en: '[T9]Everything[/] [D1]was[/] [J3]delicious[/]!'
+  example_ru: Всё было очень вкусно!
+  situation: Хвалите еду
+  usage_note: 'Сильное слово: «very delicious» не говорят.'
+- uid: LX-00761
+  lemma: fresh
+  meaning: new, just made or picked
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /frɛʃ/
+  translation_ru: свежий
+  example_en: '[T1]The[/] [S3]bread[/] [D1]is[/] [J2]fresh[/].'
+  example_ru: Хлеб свежий.
+  situation: Говорите о еде
+- uid: LX-00762
+  lemma: spicy
+  meaning: with a hot taste
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈspaɪsi/
+  translation_ru: острый
+  example_en: '[D1]Is[/] [T8]it[/] [J2]spicy[/]?'
+  example_ru: Это острое?
+  situation: Выбираете блюдо
+  usage_note: Острая еда — spicy; hot — горячая (или тоже острая).
+- uid: LX-00763
+  lemma: ready
+  meaning: prepared to do something
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈrɛdi/
+  translation_ru: готовый
+  example_en: '[D1]Are[/] [T8]you[/] [J4]ready[/]?'
+  example_ru: Вы готовы?
+  situation: В ресторане
+- uid: LX-00764
+  lemma: without
+  meaning: not with
+  class: P6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɪˈðaʊt/
+  translation_ru: без
+  example_en: '[S3]Coffee[/] [P6]without[/] [S3]sugar[/], [O8]please[/].'
+  example_ru: Кофе без сахара, пожалуйста.
+  situation: Заказываете
+- uid: LX-00765
+  lemma: Are you ready to order?
+  meaning: A server asking what you want
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɑr ju ˈrɛdi tə ˈɔrdɚ/
+  translation_ru: Вы готовы сделать заказ?
+  example_en: Are you ready to order?
+  example_ru: Готовы заказать?
+  situation: В ресторане
+- uid: LX-00766
+  lemma: Is there any…?
+  meaning: Asking if a restaurant or a store has something
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪz ðɛr ˈɛni/
+  translation_ru: Есть ли…?
+  example_en: Is there any…?
+  example_ru: Есть…?
+  situation: Спрашиваете в ресторане
+  usage_note: 'О неисчисляемом и единственном: Is there any fish? О многих: Are there any…?'
+- uid: LX-00767
+  lemma: Can we have the check, please?
+  meaning: Asking to pay in a restaurant
+  class: O8
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kən wi ˈhæv ðə ˈtʃɛk ˈpliz/
+  translation_ru: Можно счёт, пожалуйста?
+  example_en: Can we have the check, please?
+  example_ru: Счёт, пожалуйста.
+  situation: Платите в ресторане
+  usage_note: В США счёт — the check; в Британии — the bill.
+- uid: LX-00768
+  lemma: Keep the change.
+  meaning: Telling a server they can have the extra money
+  class: O9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈkip ðə ˈtʃeɪndʒ/
+  translation_ru: Сдачи не надо.
+  example_en: Keep the change.
+  example_ru: Сдачи не нужно.
+  situation: Оставляете чаевые
+- uid: LX-00769
+  lemma: Anything else?
+  meaning: A server asking if you want more
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɛniθɪŋ ˈɛls/
+  translation_ru: Что-нибудь ещё?
+  example_en: Anything else?
+  example_ru: Что-то ещё?
+  situation: В ресторане
+- uid: LX-00770
+  lemma: a table for two
+  meaning: A table for two people
+  class: N1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ə ˈteɪbəl fɚ ˈtu/
+  translation_ru: столик на двоих
+  example_en: a table for two
+  example_ru: столик на двоих
+  situation: Входите в ресторан
+- uid: LX-00771
+  lemma: Enjoy your meal!
+  meaning: What a server says when bringing food
+  class: O1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɪnˈdʒɔɪ jɚ ˈmil/
+  translation_ru: Приятного аппетита!
+  example_en: Enjoy your meal!
+  example_ru: Приятного аппетита!
+  situation: В ресторане

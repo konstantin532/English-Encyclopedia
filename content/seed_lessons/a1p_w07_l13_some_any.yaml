@@ -1,0 +1,251 @@
+slug: a1p-some-any
+level: A1+
+week: 7
+order: 13
+focus: T
+minutes: 40
+title: 'Some и any: есть ли рыба?'
+summary: 'Some — в утверждении и просьбе, any — в вопросе и с not. Исчисляемое (a pie, two pies) и неисчисляемое (rice, water, bread): что можно сосчитать, а что нет.'
+units:
+- LX-00733
+- LX-00734
+- LX-00735
+- LX-00741
+- LX-00742
+- LX-00744
+- LX-00745
+- LX-00746
+- LX-00747
+- LX-00748
+- LX-00749
+- LX-00750
+- LX-00751
+- LX-00753
+- LX-00754
+- LX-00755
+- LX-00766
+sound_notes:
+- text: Is there any fish today?
+  ipa: /ɪz ðɛr ˈɛni ˈfɪʃ təˈdeɪ/
+  note_ru: 'is there сливается: «изэр»; any — «Эни»'
+- text: Do you want some salad?
+  ipa: /də jə ˈwɑnt səm ˈsæləd/
+  note_ru: 'some безударное: «сэм», почти «см»'
+- text: We don't have any fish.
+  ipa: /wi ˈdoʊnt ˈhæv ˈɛni ˈfɪʃ/
+  note_ru: don't — «доунт», t перед h почти не слышно
+contractions:
+- full: do not
+  short: don't
+  ipa: /doʊnt/
+  note_ru: We don't have any fish — у нас нет рыбы.
+layers:
+- number: 1
+  body: 'В ресторане Анна спрашивает, есть ли рыба, а официантка предлагает салат. Чтобы сказать «немного» и «какой-нибудь», нужны два маленьких слова: **some** и **any**.
+
+
+    > [O4]Yes[/], [O2]thank[/] [T8]you[/]. [D1]Is[/] [T9]there[/] [T4]any[/] [S3]fish[/] [A2]today[/]? — Да, спасибо. Сегодня есть рыба?
+
+    > [O2]Sorry[/], [T8]we[/] [D1]do[/] [X1]not[/] [D1]have[/] [T4]any[/] [S3]fish[/] [A2]tonight[/]. [C5]But[/] [T1]the[/] [S3]chicken[/] [D1]is[/] [A5]very[/] [J3]good[/]. — Простите, сегодня рыбы нет. Но курица очень хорошая.
+
+    '
+- number: 2
+  body: '**Some** и **any** — очень старые слова. *Any* родственно слову *one*: «хоть один, хоть сколько-нибудь». Поэтому any так любит вопросы («есть хоть сколько-нибудь?») и отрицание («нет ни одного»).
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [T1]A[/] [J1]little[/]. [D1]Do[/] [T8]you[/] [D3]want[/] [T4]some[/] [S3]salad[/] [P4]with[/] [T8]it[/]? — Немного. Хотите к ней салат?
+
+
+    - Утверждение: **some** — We have some fresh apple pie.
+
+    - Просьба и предложение: тоже **some** — Some bread, please. Do you want some salad?
+
+    - Обычный вопрос: **any** — Is there any fish?
+
+    - С not: **any** — We don''t have any fish.
+
+    - Считаем: **a pie, two pies, a potato, potatoes**.
+
+    - Не считаем: **rice, bread, water, meat, fruit, sugar, salt** — без a и без -s: some rice.
+
+    '
+- number: 4
+  body: '**Почему в предложении «Do you want some salad?» стоит some, хотя это вопрос?** Когда вы что-то предлагаете или просите, вы ждёте ответа «да». Тогда остаётся **some**. Any — для настоящего вопроса, когда ответ может быть и «нет».
+
+
+    **Почему нельзя «a rice»?** Рис не считают по зёрнышку. Так же и хлеб, вода, мясо. Если нужно сосчитать — берут ёмкость: **a glass of water**, **two glasses of water**.
+
+
+    **Диагностика понимания:** что верно: *We don''t have some fish* или *We don''t have any fish*?
+
+
+    **Разбор:** *We don''t have any fish.* С not — any.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [O4]Yes[/], [T8]we[/] [D1]have[/] [T4]some[/] [J2]fresh[/] [S3]apple[/] [S3]pie[/]. [T9]Anything[/] [A7]else[/]? — Да, есть свежий яблочный пирог. Что-нибудь ещё?
+
+
+    - **Is there any…?** — есть ли…?
+
+    - **a little** — немного: a little salt, a little spicy.
+
+    - **more** — ещё: Can I have more bread?
+
+
+    Еда: **chicken** — курица, **fish** — рыба, **meat** — мясо, **rice** — рис, **pasta** — паста, **potato** — картофель, **vegetable** — овощ, **fruit** — фрукты, **salad** — салат, **pie** — пирог, **salt** — соль, **sugar** — сахар.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «We don''t have some fish» — с not **any**.
+
+    - «a rice», «breads» — неисчисляемые: **some rice, some bread**.
+
+    - «Can I have any bread?» — в просьбе **some**: Can I have some bread?
+
+    - «two waters» — лучше **two glasses of water**.
+
+    '
+- number: 7
+  body: 'Шесть заданий: выбрать some или any, сказать, чего нет, собрать просьбу, заказать ужин другу, отличить исчисляемое и попросить ещё.
+
+
+    **Проверка маленького шага:** утверждение и просьба — some; вопрос и not — any.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00236
+  kind: choice
+  stage: recognition
+  prompt_ru: 'Официантка: «Рыбы сегодня нет». Выберите фразу.'
+  options:
+  - We don't have any fish.
+  - We don't have some fish.
+  - We have any fish.
+  answer: We don't have any fish.
+  hint_ru: С not — any.
+  explanation_ru: We don't have any fish. В отрицании — any.
+  units:
+  - LX-00733
+  - LX-00742
+- order: 2
+  uid: EX-00237
+  kind: fill
+  stage: substitution
+  prompt_ru: Вы просите хлеб. Закончите просьбу.
+  prompt_en: Can I have ___ bread, please?
+  answer: some
+  hint_ru: Просьба — some.
+  explanation_ru: Can I have some bread? В просьбе — some.
+  units:
+  - LX-00733
+- order: 3
+  uid: EX-00238
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите вопрос: «Есть ли сегодня рыба?»'
+  options:
+  - fish
+  - there
+  - Is
+  - today
+  - any
+  answer: Is there any fish today
+  hint_ru: Is there + any + fish.
+  explanation_ru: Is there any fish today? Обычный вопрос — any.
+  units:
+  - LX-00766
+- order: 4
+  uid: EX-00239
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: друг спрашивает, что у вас в холодильнике. Скажите: «Там есть немного курицы и риса».'
+  prompt_en: There is ___ chicken and rice.
+  answer: some
+  hint_ru: Утверждение — some.
+  explanation_ru: There is some chicken and rice. Утверждение — some.
+  units:
+  - LX-00741
+  - LX-00746
+- order: 5
+  uid: EX-00240
+  kind: choice
+  stage: recognition
+  prompt_ru: Какое слово нельзя сказать с a?
+  options:
+  - rice
+  - potato
+  - plate
+  answer: rice
+  hint_ru: Что не считают по одному?
+  explanation_ru: 'rice — неисчисляемое: some rice. A potato, a plate — можно.'
+  units:
+  - LX-00746
+  - LX-00747
+- order: 6
+  uid: EX-00241
+  kind: fill
+  stage: transfer
+  prompt_ru: Хлеб кончился. Попросите ещё.
+  prompt_en: Can I have ___ bread, please?
+  answer: more
+  accepted:
+  - some more
+  hint_ru: Ещё — more.
+  explanation_ru: Can I have more bread? — ещё хлеба.
+  units:
+  - LX-00734
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: У нас нет рыбы.
+  answer: We don't have any fish.
+  accepted:
+  - We do not have any fish.
+  - We have no fish.
+  hint_ru: don't have + any.
+  explanation_ru: We don't have any fish.
+  review_of: 1
+  units:
+  - LX-00733
+- order: 2
+  kind: translate
+  prompt_ru: Немного салата, пожалуйста.
+  answer: Some salad, please.
+  hint_ru: some + salad.
+  explanation_ru: Some salad, please.
+  review_of: 2
+  units:
+  - LX-00744
+- order: 3
+  kind: translate
+  prompt_ru: Есть яблочный пирог?
+  answer: Is there any apple pie?
+  accepted:
+  - Do you have any apple pie?
+  hint_ru: Is there any…?
+  explanation_ru: Is there any apple pie?
+  review_of: 3
+  units:
+  - LX-00751
+  - LX-00766
+- order: 4
+  kind: translate
+  prompt_ru: Два стакана воды, пожалуйста.
+  answer: Two glasses of water, please.
+  hint_ru: two glasses of water.
+  explanation_ru: Two glasses of water, please. Воду считают стаканами.
+  review_of: 5
+  units:
+  - LX-00755

@@ -1,0 +1,84 @@
+# A1+, неделя 12 «Погода и планы на день». Сфера free, прилагательные, too / enough.
+level: A1+
+week: 12
+can_do_ru: 'Я смогу обсудить погоду и поменять план: What''s the weather like? It''s too cold. My jacket isn''t warm enough. How about a walk instead? — и описать вещь двумя прилагательными в правильном порядке: my long gray coat.'
+mission_ru: 'Посмотрите прогноз на завтра и скажите по-английски три фразы: какая будет погода, что для вас слишком (too…) или недостаточно (not … enough) и какой план лучше (How about… instead?).'
+chunks:
+- LX-00921
+- LX-00922
+- LX-00923
+- LX-00924
+- LX-00925
+- LX-00926
+- LX-00927
+story_beat:
+  intro_ru: Суббота. Анна выздоровела, и Том зовёт её в поход в горы.
+  outcome_ru: Прогноз обещает дождь и всего сорок градусов по Фаренгейту — для гор слишком холодно и далеко. Вместо похода — прогулка у реки, в длинном сером пальто и под большим розовым зонтом.
+  next_hook_ru: В понедельник Анна идёт в библиотеку — записаться и найти книгу о старом городе. Неделя 13.
+script:
+- speaker: tom
+  emotion: excited
+  text: '[J3]Good[/] [S7]morning[/]! [T8]I[/] [D3]feel[/] [J3]great[/] [A2]today[/]. [D2]Let[/] [T8]us[/] [D4]go[/] [D4]hiking[/] [P1]in[/] [T1]the[/] [S6]mountains[/]!'
+  spoken: '[J3]Good[/] [S7]morning[/]! [T8]I[/] [D3]feel[/] [J3]great[/] [A2]today[/]. [D2]Let[/][T8]''s[/] [D4]go[/] [D4]hiking[/] [P1]in[/] [T1]the[/] [S6]mountains[/]!'
+  ru: Доброе утро! Я сегодня отлично себя чувствую. Пойдём в поход в горы!
+- speaker: anna
+  text: '[T9]What[/] [D1]is[/] [T1]the[/] [S6]weather[/] [P6]like[/]?'
+  spoken: '[T9]What[/][D1]''s[/] [T1]the[/] [S6]weather[/] [P6]like[/]?'
+  ru: А какая погода?
+- speaker: tom
+  text: '[T1]The[/] [S10]forecast[/] [D5]says[/] [S6]rain[/] [P3]in[/] [T1]the[/] [S7]afternoon[/]. [C1]And[/] [T8]it[/] [D1]is[/] [A5]only[/] [N9]forty[/] [N9]degrees[/].'
+  spoken: '[T1]The[/] [S10]forecast[/] [D5]says[/] [S6]rain[/] [P3]in[/] [T1]the[/] [S7]afternoon[/]. [C1]And[/] [T8]it[/][D1]''s[/] [A5]only[/] [N9]forty[/] [N9]degrees[/].'
+  ru: По прогнозу днём дождь. И всего сорок градусов.
+- speaker: anna
+  emotion: worried
+  text: '[N9]Forty[/] [N9]degrees[/]? [T2]That[/] [D1]is[/] [A5]too[/] [J2]cold[/] [P5]for[/] [T1]the[/] [S6]mountains[/]. [T8]I[/] [D1]was[/] [J4]sick[/] [T2]this[/] [S7]week[/].'
+  spoken: '[N9]Forty[/] [N9]degrees[/]? [T2]That[/][D1]''s[/] [A5]too[/] [J2]cold[/] [P5]for[/] [T1]the[/] [S6]mountains[/]. [T8]I[/] [D1]was[/] [J4]sick[/] [T2]this[/] [S7]week[/].'
+  ru: Сорок по Фаренгейту? Для гор слишком холодно. Я на этой неделе болела.
+- speaker: tom
+  emotion: sad
+  text: '[O4]Okay[/]. [T1]The[/] [S6]mountains[/] [D1]are[/] [A5]too[/] [J1]far[/], [A5]too[/].'
+  ru: Ладно. Да и горы слишком далеко.
+- speaker: anna
+  text: '[C1]And[/] [T3]my[/] [J2]old[/] [J2]blue[/] [S2]jacket[/] [D1]is[/] [X1]not[/] [J2]warm[/] [A5]enough[/].'
+  spoken: '[C1]And[/] [T3]my[/] [J2]old[/] [J2]blue[/] [S2]jacket[/] [D1]is[/][X1]n''t[/] [J2]warm[/] [A5]enough[/].'
+  ru: И моя старая синяя куртка недостаточно тёплая.
+- speaker: tom
+  emotion: happy
+  text: '[A6]How[/] [A6]about[/] [T1]a[/] [J1]short[/] [S10]walk[/] [P1]by[/] [T1]the[/] [S6]river[/] [A7]instead[/]? [T8]It[/] [D1]is[/] [X1]not[/] [J1]far[/].'
+  spoken: '[A6]How[/] [A6]about[/] [T1]a[/] [J1]short[/] [S10]walk[/] [P1]by[/] [T1]the[/] [S6]river[/] [A7]instead[/]? [T8]It[/][D1]''s[/] [X1]not[/] [J1]far[/].'
+  ru: Может, лучше короткая прогулка у реки? Это недалеко.
+- speaker: anna
+  emotion: happy
+  text: '[J3]Great[/]! [T8]I[/] [D7]can[/] [D2]wear[/] [T3]my[/] [J1]long[/] [J2]gray[/] [S2]coat[/] [C1]and[/] [T3]my[/] [J2]new[/] [S2]boots[/].'
+  ru: Отлично! Надену длинное серое пальто и новые ботинки.
+- speaker: tom
+  text: '[D6]Look[/] [P7]at[/] [T1]the[/] [S6]sky[/]. [T9]There[/] [D1]are[/] [J1]big[/] [J2]dark[/] [S6]clouds[/]. [T8]It[/] [D6]looks[/] [P6]like[/] [S6]rain[/].'
+  ru: Посмотри на небо. Большие тёмные тучи. Похоже, будет дождь.
+- speaker: anna
+  emotion: happy
+  text: '[O4]No[/] [S10]problem[/]. [T8]We[/] [D1]have[/] [T1]a[/] [J1]big[/] [J2]pink[/] [S2]umbrella[/]!'
+  ru: Не беда. У нас есть большой розовый зонт!
+- speaker: tom
+  emotion: happy
+  text: '[J3]Perfect[/]. [D2]Let[/] [T8]us[/] [D4]go[/]!'
+  spoken: '[J3]Perfect[/]. [D2]Let[/][T8]''s[/] [D4]go[/]!'
+  ru: Отлично. Пошли!
+twister:
+  number: 26
+  series: contractions
+  text: '[T8]It[/][D1]''s[/] [A5]too[/] [J2]hot[/], [T8]it[/][D1]''s[/] [A5]too[/] [J2]cold[/]. [T8]It[/] [D1]is[/][X1]n''t[/] [J2]warm[/] [A5]enough[/], [T8]it[/] [D1]is[/][X1]n''t[/] [J2]cool[/] [A5]enough[/]!'
+  ru: Слишком жарко, слишком холодно. Недостаточно тепло, недостаточно прохладно!
+  ipa: /ɪts ˈtu ˈhɑt | ɪts ˈtu ˈkoʊld | ɪt ˈɪzənt ˈwɔrm ɪˈnʌf | ɪt ˈɪzənt ˈkul ɪˈnʌf/
+  focus_sounds:
+  - u
+  - ʌ
+  source: original
+  goal_ru: too перед прилагательным и enough после него; сокращения it's и isn't.
+  tip_ru: 'too — долгое «уу», ударное: «тУу». enough — ударение на второй слог, gh = f: «инАф». isn''t — «Изнт».'
+  warmup:
+  - '[A5]too[/] [J2]hot[/], [A5]too[/] [J2]cold[/]'
+  - '[J2]warm[/] [A5]enough[/], [J2]cool[/] [A5]enough[/]'
+  - '[T8]It[/][D1]''s[/] [A5]too[/] [J2]cold[/].'
+  - '[T8]It[/] [D1]is[/][X1]n''t[/] [J2]warm[/] [A5]enough[/].'
+  target_line: That is too cold for the mountains.
+  own_ru: 'Опишите погоду за окном одной фразой с too или enough: It''s too… / It isn''t … enough.'

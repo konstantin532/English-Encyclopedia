@@ -1,0 +1,80 @@
+# A1+, неделя 16 «Пикник под угрозой дождя; итог A1+». Сфера free, повторение уровня. История 11 выходит на этой неделе.
+level: A1+
+week: 16
+can_do_ru: 'Я смогу рассказать и договориться на английском уровня A1+: что было (I brought, I didn''t forget), что нужно (We must be quiet), что будет при условии (If Sam comes, we''ll see him) и вежливо попросить (Could you sit in the shade?).'
+mission_ru: 'Итог A1+: расскажите по-английски о своём лучшем дне этого года в пяти фразах — где вы были (was / were), что делали (-ed и неправильные глаголы), чего не делали (didn''t), что вам надо было сделать (had to) и что вы сделаете, если всё повторится (If…, I''ll…).'
+chunks:
+- LX-01037
+- LX-01038
+- LX-01039
+- LX-01040
+- LX-01041
+- LX-01042
+- LX-01043
+story_beat:
+  intro_ru: Воскресенье, десять утра. После письма под скамейкой (история 11) друзья снова в парке. Рут тоже пришла.
+  outcome_ru: Мия принесла лимонад и арбуз, Том — бутерброды. Рут вспоминает Сэма тихим мальчиком. По лужайке медленно идёт старик с белым конвертом — Рут узнаёт его лицо.
+  next_hook_ru: Сэм пришёл спустя шестьдесят лет. Что он расскажет о Роуз? Продолжение — на уровне A2.
+script:
+- speaker: mia
+  emotion: happy
+  text: '[J3]Good[/] [S7]morning[/]! [T8]I[/] [D2]brought[/] [T4]some[/] [S3]lemonade[/] [C1]and[/] [T1]a[/] [J1]huge[/] [S3]watermelon[/].'
+  ru: Доброе утро! Я принесла лимонад и огромный арбуз.
+- speaker: tom
+  emotion: happy
+  text: '[J3]Great[/]! [T8]I[/] [D2]made[/] [T1]the[/] [S3]sandwiches[/]. [C1]And[/] [T8]I[/] [D1]did[/] [X1]not[/] [D6]forget[/] [T9]anything[/]!'
+  spoken: '[J3]Great[/]! [T8]I[/] [D2]made[/] [T1]the[/] [S3]sandwiches[/]. [C1]And[/] [T8]I[/] [D1]did[/][X1]n''t[/] [D6]forget[/] [T9]anything[/]!'
+  ru: Отлично! Я сделал бутерброды. И ничего не забыл!
+- speaker: anna
+  text: '[T8]It[/] [D1]is[/] [N3]ten[/] [N3]o''clock[/]. [C4]If[/] [S1]Sam[/] [D4]comes[/], [T8]we[/] [D7]will[/] [D6]see[/] [T8]him[/] [P1]by[/] [T1]the[/] [J2]old[/] [S4]bench[/].'
+  spoken: '[T8]It[/][D1]''s[/] [N3]ten[/] [N3]o''clock[/]. [C4]If[/] [S1]Sam[/] [D4]comes[/], [T8]we[/][D7]''ll[/] [D6]see[/] [T8]him[/] [P1]by[/] [T1]the[/] [J2]old[/] [S4]bench[/].'
+  ru: Десять часов. Если Сэм придёт, мы увидим его у старой скамейки.
+- speaker: photographer
+  emotion: worried
+  text: '[T8]I[/] [D4]came[/] [A5]too[/]. [T8]I[/] [D6]knew[/] [S1]Sam[/] [T1]a[/] [J1]long[/] [S7]time[/] [A2]ago[/]. [T8]He[/] [D1]was[/] [T1]a[/] [J4]quiet[/] [S1]boy[/].'
+  ru: Я тоже пришла. Я знала Сэма давным-давно. Он был тихим мальчиком.
+- speaker: tom
+  text: '[S1]Ruth[/], [D7]could[/] [T8]you[/] [D2]sit[/] [P1]in[/] [T1]the[/] [S6]shade[/]? [T8]It[/] [D1]is[/] [A5]very[/] [J2]hot[/] [A2]today[/].'
+  spoken: '[S1]Ruth[/], [D7]could[/] [T8]you[/] [D2]sit[/] [P1]in[/] [T1]the[/] [S6]shade[/]? [T8]It[/][D1]''s[/] [A5]very[/] [J2]hot[/] [A2]today[/].'
+  ru: Рут, может, сядете в тень? Сегодня очень жарко.
+- speaker: photographer
+  emotion: happy
+  text: '[O2]Thank[/] [T8]you[/], [S1]Tom[/]. [T8]You[/] [D1]are[/] [A5]very[/] [J6]kind[/].'
+  spoken: '[O2]Thank[/] [T8]you[/], [S1]Tom[/]. [T8]You[/][D1]''re[/] [A5]very[/] [J6]kind[/].'
+  ru: Спасибо, Том. Ты очень добр.
+- speaker: mia
+  emotion: surprised
+  text: '[D6]Look[/]! [T1]An[/] [J2]old[/] [S1]man[/] [D1]is[/] [D4]walking[/] [A4]slowly[/] [P2]across[/] [T1]the[/] [S6]grass[/].'
+  ru: Смотрите! Через лужайку медленно идёт старик.
+- speaker: tom
+  emotion: whisper
+  text: '[T8]He[/] [D1]has[/] [T1]a[/] [J2]white[/] [S2]envelope[/]. [T8]We[/] [D7]must[/] [D1]be[/] [J4]quiet[/].'
+  ru: У него белый конверт. Нужно не шуметь.
+- speaker: photographer
+  emotion: surprised
+  text: '[T8]I[/] [D6]know[/] [T2]that[/] [S5]face[/]. [S1]Sam[/]? [D1]Is[/] [T2]that[/] [T8]you[/]?'
+  ru: Я знаю это лицо. Сэм? Это ты?
+- speaker: anna
+  emotion: whisper
+  text: '[S1]Tom[/], [C4]if[/] [T8]it[/] [D1]is[/] [S1]Sam[/], [T8]he[/] [D7]will[/] [D5]tell[/] [T8]us[/] [P6]about[/] [S1]Rose[/]. [S7]Time[/] [D4]flies[/]. [N1]Sixty[/] [S7]years[/]!'
+  spoken: '[S1]Tom[/], [C4]if[/] [T8]it[/][D1]''s[/] [S1]Sam[/], [T8]he[/][D7]''ll[/] [D5]tell[/] [T8]us[/] [P6]about[/] [S1]Rose[/]. [S7]Time[/] [D4]flies[/]. [N1]Sixty[/] [S7]years[/]!'
+  ru: Том, если это Сэм, он расскажет нам о Роуз. Как летит время. Шестьдесят лет!
+twister:
+  number: 30
+  series: contractions
+  text: '[T8]I[/] [D1]did[/][X1]n''t[/], [T8]you[/] [D7]could[/][X1]n''t[/], [T8]we[/] [D7]must[/][X1]n''t[/] — [C5]but[/] [C4]if[/] [T8]it[/][D1]''s[/] [J2]sunny[/], [T8]we[/][D7]''ll[/] [D4]go[/]!'
+  ru: Я не сделал, ты не смог, нам нельзя — но если будет солнце, мы пойдём!
+  ipa: /aɪ ˈdɪdənt | ju ˈkʊdənt | wi ˈmʌsənt | bət ɪf ɪts ˈsʌni wil ˈɡoʊ/
+  focus_sounds:
+  - d
+  - n
+  source: original
+  goal_ru: 'Итог серии сокращений A1+: didn''t, couldn''t, mustn''t, it''s, we''ll.'
+  tip_ru: 'Во всех n''t гласной почти нет: «дИднт», «кУднт», «мАснт». В mustn''t первая t не читается. we''ll — с тёмным l.'
+  warmup:
+  - '[D1]did[/][X1]n''t[/], [D7]could[/][X1]n''t[/], [D7]must[/][X1]n''t[/]'
+  - '[T8]it[/][D1]''s[/], [T8]we[/][D7]''ll[/]'
+  - '[T8]I[/] [D1]did[/][X1]n''t[/] [D6]forget[/]!'
+  - '[C4]If[/] [T8]it[/][D1]''s[/] [J2]sunny[/], [T8]we[/][D7]''ll[/] [D4]go[/]!'
+  target_line: If Sam comes, we will see him by the old bench.
+  own_ru: Скажите одну фразу о прошлом, одну о правиле и одну о будущем с if — всё с сокращениями.

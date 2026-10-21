@@ -79,8 +79,28 @@ roles:
     name_en: Linda, Tom's mom
     voice: af_kore
     speed: 0.98
+  kate:
+    name_ru: Кейт, коллега Тома
+    name_en: Kate, Tom's colleague
+    voice: af_alloy
+    speed: 1.0
+  agent:
+    name_ru: Сотрудница бюро находок
+    name_en: Lost and found agent
+    voice: af_sky
+    speed: 0.98
+  server:
+    name_ru: Официантка
+    name_en: Server
+    voice: af_nova
+    speed: 1.0
+  jake:
+    name_ru: Джейк, новый помощник Мии
+    name_en: Jake, Mia's new helper
+    voice: am_santa
+    speed: 1.02
 # Пул для эпизодических героев: водитель, продавщица, судья и т. д.
-extras: [am_eric, af_nova, af_sky]  # am_eric читает скороговорки; af_sarah — barista, af_jessica — clerk, am_liam — passerby, am_fenrir — locksmith, af_river — doctor, am_adam — postal, am_echo — busdriver
+extras: [am_eric]  # am_eric читает скороговорки; af_sarah — barista, af_jessica — clerk, am_liam — passerby, am_fenrir — locksmith, af_river — doctor, am_adam — postal, am_echo — busdriver
 # Фон сцены: громкость относительно голоса по уровням (дБ). На A1 фон едва слышен.
 ambience_gain_db: {A1: -30, A1+: -28, A2: -24, A2+: -22, B1: -20, B1+: -19, B2: -18, B2+: -17}
 # Эмоции реплик. Kokoro передаёт их скоростью, громкостью и паузой после реплики.

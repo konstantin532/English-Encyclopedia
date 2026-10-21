@@ -1,0 +1,419 @@
+# Неделя 10 A1+ «Соседи: шум, просьба, доброта»: Could you…?, наречия на -ly. CEFR не сверялся.
+level: A1+
+week: 10
+units:
+- uid: LX-00836
+  lemma: loudly
+  meaning: in a loud way
+  class: A4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈlaʊdli/
+  translation_ru: громко
+  example_en: '[S1]Tom[/] [D2]plays[/] [T1]the[/] [S2]guitar[/] [A4]loudly[/].'
+  example_ru: Том громко играет на гитаре.
+  situation: Говорите о шуме
+  usage_note: loud — какой? (a loud TV); loudly — как? (play loudly).
+- uid: LX-00837
+  lemma: slowly
+  meaning: not fast
+  class: A4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈsloʊli/
+  translation_ru: медленно
+  example_en: '[D7]Could[/] [T8]you[/] [D5]speak[/] [A4]slowly[/], [O8]please[/]?'
+  example_ru: Не могли бы вы говорить медленно?
+  situation: Просите повторить
+- uid: LX-00838
+  lemma: carefully
+  meaning: with care
+  class: A4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkɛrfəli/
+  translation_ru: осторожно, внимательно
+  example_en: '[D2]Carry[/] [T1]the[/] [S2]box[/] [A4]carefully[/].'
+  example_ru: Неси коробку осторожно.
+  situation: Предупреждаете
+  usage_note: 'careful + ly: два l.'
+- uid: LX-00839
+  lemma: badly
+  meaning: not well
+  class: A4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbædli/
+  translation_ru: плохо
+  example_en: '[T8]I[/] [D2]slept[/] [A4]badly[/].'
+  example_ru: Я плохо спал.
+  situation: Говорите о сне
+  usage_note: bad — какой? badly — как? Но «хорошо» — well, не «goodly».
+- uid: LX-00840
+  lemma: easily
+  meaning: with no problems
+  class: A4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈizəli/
+  translation_ru: легко
+  example_en: '[T8]She[/] [D6]found[/] [T1]the[/] [S2]key[/] [A4]easily[/].'
+  example_ru: Она легко нашла ключ.
+  situation: Описываете действие
+  usage_note: 'easy → easily: y меняется на i.'
+- uid: LX-00841
+  lemma: wake
+  meaning: to stop sleeping or to make someone stop sleeping
+  class: D2
+  forms:
+  - wakes
+  - woke
+  - waking
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /weɪk/
+  translation_ru: будить, просыпаться
+  example_en: '[T1]The[/] [S10]noise[/] [D2]woke[/] [T8]me[/] [P1]up[/].'
+  example_ru: Шум меня разбудил.
+  situation: Говорите о сне
+  usage_note: Прошедшее — woke. Wake up — проснуться.
+- uid: LX-00842
+  lemma: borrow
+  meaning: to take something and give it back later
+  class: D2
+  forms:
+  - borrows
+  - borrowed
+  - borrowing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbɑroʊ/
+  translation_ru: одалживать (брать)
+  example_en: '[D7]Could[/] [T8]I[/] [D2]borrow[/] [T3]your[/] [S2]hammer[/]?'
+  example_ru: Можно одолжить ваш молоток?
+  situation: Просите у соседа
+  usage_note: borrow — взять на время; lend — дать на время.
+- uid: LX-00843
+  lemma: lend
+  meaning: to give something for a short time
+  class: D2
+  forms:
+  - lends
+  - lent
+  - lending
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /lɛnd/
+  translation_ru: одалживать (давать)
+  example_en: '[D7]Could[/] [T8]you[/] [D2]lend[/] [T8]me[/] [T1]a[/] [S2]bucket[/]?'
+  example_ru: Не одолжите мне ведро?
+  situation: Просите у соседа
+  usage_note: Прошедшее — lent.
+- uid: LX-00844
+  lemma: share
+  meaning: to give part of something to another person
+  class: D2
+  forms:
+  - shares
+  - shared
+  - sharing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ʃɛr/
+  translation_ru: делиться
+  example_en: '[T8]We[/] [D2]shared[/] [T1]the[/] [S3]cookies[/] [P4]with[/] [S1]Leo[/].'
+  example_ru: Мы поделились печеньем с Лео.
+  situation: Угощаете соседа
+- uid: LX-00845
+  lemma: explain
+  meaning: to say how or why something is
+  class: D5
+  forms:
+  - explains
+  - explained
+  - explaining
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɪkˈspleɪn/
+  translation_ru: объяснять
+  example_en: '[D7]Could[/] [T8]you[/] [D5]explain[/], [O8]please[/]?'
+  example_ru: Не могли бы вы объяснить?
+  situation: Просите объяснить
+- uid: LX-00846
+  lemma: promise
+  meaning: to say that you will really do something
+  class: D5
+  forms:
+  - promises
+  - promised
+  - promising
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈprɑmɪs/
+  translation_ru: обещать
+  example_en: '[T8]I[/] [D5]promise[/]!'
+  example_ru: Обещаю!
+  situation: Даёте слово
+- uid: LX-00847
+  lemma: feed
+  meaning: to give food to a person or an animal
+  class: D2
+  forms:
+  - feeds
+  - fed
+  - feeding
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fid/
+  translation_ru: кормить
+  example_en: '[D7]Could[/] [T8]you[/] [D2]feed[/] [T3]my[/] [S6]cat[/]?'
+  example_ru: Не покормите мою кошку?
+  situation: Просите соседа
+  usage_note: Прошедшее — fed.
+- uid: LX-00848
+  lemma: noise
+  meaning: a loud sound
+  class: S10
+  forms:
+  - noises
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /nɔɪz/
+  translation_ru: шум
+  example_en: '[O2]Sorry[/] [P6]about[/] [T1]the[/] [S10]noise[/].'
+  example_ru: Извините за шум.
+  situation: Извиняетесь
+- uid: LX-00849
+  lemma: drum
+  meaning: a music instrument you hit
+  class: S2
+  forms:
+  - drums
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /drʌm/
+  translation_ru: барабан
+  example_en: '[T3]His[/] [S2]drums[/] [D1]are[/] [A5]very[/] [J2]loud[/].'
+  example_ru: Его барабаны очень громкие.
+  situation: Говорите о музыке
+- uid: LX-00850
+  lemma: plant
+  meaning: a green living thing, like a flower or a tree
+  class: S6
+  forms:
+  - plants
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /plænt/
+  translation_ru: растение
+  example_en: '[T8]I[/] [D1]have[/] [T4]some[/] [S6]plants[/] [P1]at[/] [S2]home[/].'
+  example_ru: У меня дома есть растения.
+  situation: Говорите о доме
+- uid: LX-00851
+  lemma: pet
+  meaning: an animal that lives with you
+  class: S6
+  forms:
+  - pets
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /pɛt/
+  translation_ru: домашнее животное
+  example_en: '[D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S6]pet[/]?'
+  example_ru: У вас есть домашнее животное?
+  situation: Знакомитесь
+- uid: LX-00852
+  lemma: vacation
+  meaning: time when you do not work or study and often travel
+  class: S7
+  forms:
+  - vacations
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /veɪˈkeɪʃən/
+  translation_ru: отпуск, каникулы
+  example_en: '[T8]We[/] [D1]are[/] [P1]on[/] [S7]vacation[/] [A2]next[/] [S7]week[/].'
+  example_ru: На следующей неделе мы в отпуске.
+  situation: Просите соседа о помощи
+  usage_note: В США — vacation, в Британии — holiday.
+- uid: LX-00853
+  lemma: bell
+  meaning: a thing that rings
+  class: S2
+  forms:
+  - bells
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɛl/
+  translation_ru: звонок, колокольчик
+  example_en: '[T1]The[/] [S2]door[/] [S2]bell[/] [D1]is[/] [J2]broken[/].'
+  example_ru: Дверной звонок сломан.
+  situation: Дома
+  usage_note: Звонок в дверь — doorbell.
+- uid: LX-00854
+  lemma: favor
+  meaning: something kind you do for someone
+  class: S10
+  forms:
+  - favors
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfeɪvɚ/
+  translation_ru: услуга, одолжение
+  example_en: '[D7]Could[/] [T8]you[/] [D2]do[/] [T8]me[/] [T1]a[/] [S10]favor[/]?'
+  example_ru: Можно попросить вас об одолжении?
+  situation: Просите о помощи
+  usage_note: Американское написание favor, британское — favour.
+- uid: LX-00855
+  lemma: noisy
+  meaning: making a lot of noise
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈnɔɪzi/
+  translation_ru: шумный
+  example_en: '[T3]Our[/] [S4]street[/] [D1]is[/] [J2]noisy[/].'
+  example_ru: У нас шумная улица.
+  situation: Описываете место
+- uid: LX-00856
+  lemma: sleepy
+  meaning: wanting to sleep
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈslipi/
+  translation_ru: сонный
+  example_en: '[S1]Leo[/] [D1]is[/] [J4]sleepy[/] [P1]in[/] [T1]the[/] [S7]morning[/].'
+  example_ru: Утром Лео сонный.
+  situation: Описываете человека
+- uid: LX-00857
+  lemma: sweet
+  meaning: with a lot of sugar; very kind
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /swit/
+  translation_ru: сладкий; милый
+  example_en: '[T2]That[/][D1]''s[/] [J2]sweet[/] [P6]of[/] [T8]you[/]!'
+  example_ru: Как мило с вашей стороны!
+  situation: Благодарите
+  usage_note: О еде — «сладкий», о человеке — «милый».
+- uid: LX-00858
+  lemma: during
+  meaning: while something is happening
+  class: P3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈdʊrɪŋ/
+  translation_ru: во время, в течение
+  example_en: '[S1]Leo[/] [D2]sleeps[/] [P3]during[/] [T1]the[/] [S7]day[/].'
+  example_ru: Лео спит днём.
+  situation: Говорите о расписании
+- uid: LX-00859
+  lemma: Of course!
+  meaning: Saying yes in a friendly way
+  class: O4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /əv ˈkɔrs/
+  translation_ru: Конечно!
+  example_en: Of course!
+  example_ru: Конечно!
+  situation: Соглашаетесь
+- uid: LX-00860
+  lemma: Could you do me a favor?
+  meaning: Asking for help politely
+  class: O8
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kʊd ju ˈdu mi ə ˈfeɪvɚ/
+  translation_ru: Можно попросить об одолжении?
+  example_en: Could you do me a favor?
+  example_ru: Можно попросить?
+  situation: Просите соседа
+- uid: LX-00861
+  lemma: Sorry about the noise.
+  meaning: Saying sorry for being loud
+  class: O2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈsɑri əˈbaʊt ðə ˈnɔɪz/
+  translation_ru: Простите за шум.
+  example_en: Sorry about the noise.
+  example_ru: Простите за шум.
+  situation: Извиняетесь перед соседом
+- uid: LX-00862
+  lemma: I don't mind.
+  meaning: Saying something is okay for you
+  class: O4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈdoʊnt ˈmaɪnd/
+  translation_ru: Я не против.
+  example_en: I don't mind.
+  example_ru: Мне не трудно.
+  situation: Соглашаетесь
+- uid: LX-00863
+  lemma: Could you turn it down?
+  meaning: Asking someone to make music or TV quieter
+  class: D9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kʊd ju ˈtɝn ɪt ˈdaʊn/
+  translation_ru: Не могли бы вы сделать потише?
+  example_en: Could you turn it down?
+  example_ru: Потише, пожалуйста.
+  situation: Просите соседа
+  usage_note: turn down — сделать тише, turn up — громче.
+- uid: LX-00864
+  lemma: Sleep well!
+  meaning: Wishing someone a good sleep
+  class: O1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈslip ˈwɛl/
+  translation_ru: Спокойной ночи! Выспитесь!
+  example_en: Sleep well!
+  example_ru: Хорошо выспаться!
+  situation: Прощаетесь
+- uid: LX-00865
+  lemma: Any time.
+  meaning: Answering thank you and offering help again
+  class: O2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɛni ˈtaɪm/
+  translation_ru: Обращайтесь. Не за что.
+  example_en: Any time.
+  example_ru: Обращайтесь!
+  situation: Отвечаете на спасибо

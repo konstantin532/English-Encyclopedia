@@ -1,0 +1,87 @@
+# A1+, неделя 10 «Соседи: шум, просьба, доброта». Сфера meet, Could you…? и наречия на -ly. История 9 выходит на этой неделе.
+level: A1+
+week: 10
+can_do_ru: 'Я смогу вежливо попросить соседа: Could you play quietly, please? Could you lend me your hammer? — извиниться Sorry about the noise и ответить Of course! I don''t mind.'
+mission_ru: 'Попросите по-английски о трёх вещах вежливо, с Could you…?: одну — сделать что-то тише или медленнее (quietly, slowly), две — о помощи (lend me…, check…).'
+chunks:
+- LX-00859
+- LX-00860
+- LX-00861
+- LX-00862
+- LX-00863
+- LX-00864
+- LX-00865
+story_beat:
+  intro_ru: Суббота, день. Том громко играет на гитаре, а сверху спускается Лео — ночной медбрат из истории 9. Днём он спит.
+  outcome_ru: Том извиняется и делает тише. Анна приглашает Лео на чай с печеньем. Лео одалживает Тому молоток и обещает присмотреть за квартирой, пока они в отпуске.
+  next_hook_ru: После бессонной ночи у Анны болит голова. Неделя 11 — в аптеке.
+script:
+- speaker: neighbor
+  emotion: tired
+  text: '[O1]Hello[/], [S1]Tom[/]. [D7]Could[/] [T8]you[/] [D2]play[/] [A4]quietly[/], [O8]please[/]? [T8]I[/] [D2]work[/] [P3]at[/] [S7]night[/], [C1]and[/] [T8]I[/] [D2]sleep[/] [P3]during[/] [T1]the[/] [S7]day[/].'
+  ru: Здравствуй, Том. Не мог бы ты играть потише? Я работаю ночью, а днём сплю.
+- speaker: tom
+  emotion: sad
+  text: '[O3]Oh[/], [S1]Leo[/], [T8]I[/] [D1]am[/] [F4]so[/] [O2]sorry[/]! [T8]I[/] [D7]can[/] [D2]turn[/] [T8]it[/] [X3]down[/].'
+  spoken: '[O3]Oh[/], [S1]Leo[/], [T8]I[/][D1]''m[/] [F4]so[/] [O2]sorry[/]! [T8]I[/] [D7]can[/] [D2]turn[/] [T8]it[/] [X3]down[/].'
+  ru: Ой, Лео, прости, пожалуйста! Я сделаю тише.
+- speaker: neighbor
+  emotion: tired
+  text: '[O2]Thank[/] [T8]you[/]. [T1]The[/] [S10]music[/] [D2]woke[/] [T8]me[/] [X3]up[/], [C1]and[/] [T8]I[/] [D2]slept[/] [A4]badly[/].'
+  ru: Спасибо. Музыка меня разбудила, и я плохо спал.
+- speaker: anna
+  emotion: happy
+  text: '[S1]Leo[/], [D4]come[/] [X3]in[/]! [D7]Would[/] [T8]you[/] [D3]like[/] [T4]some[/] [S3]tea[/] [C1]and[/] [S3]cookies[/]?'
+  ru: Лео, заходите! Хотите чаю с печеньем?
+- speaker: neighbor
+  emotion: happy
+  text: '[O2]Thank[/] [T8]you[/], [S1]Anna[/]. [T2]That[/] [D1]is[/] [J2]sweet[/] [P6]of[/] [T8]you[/].'
+  spoken: '[O2]Thank[/] [T8]you[/], [S1]Anna[/]. [T2]That[/][D1]''s[/] [J2]sweet[/] [P6]of[/] [T8]you[/].'
+  ru: Спасибо, Анна. Как мило.
+- speaker: tom
+  text: '[S1]Leo[/], [D7]could[/] [T8]you[/] [D2]do[/] [T8]me[/] [T1]a[/] [S10]favor[/]? [D7]Could[/] [T8]you[/] [D2]lend[/] [T8]me[/] [T3]your[/] [S2]hammer[/]?'
+  ru: Лео, можно попросить? Не одолжишь мне молоток?
+- speaker: neighbor
+  emotion: happy
+  text: '[O4]Of[/] [O4]course[/]! [T8]I[/] [D7]can[/] [D2]bring[/] [T8]it[/] [A2]later[/].'
+  ru: Конечно! Я принесу его попозже.
+- speaker: anna
+  text: '[C1]And[/] [J8]next[/] [S7]week[/] [T8]we[/] [D1]are[/] [P3]on[/] [S7]vacation[/]. [D7]Could[/] [T8]you[/] [D6]check[/] [T3]our[/] [S2]apartment[/]?'
+  spoken: '[C1]And[/] [J8]next[/] [S7]week[/] [T8]we[/][D1]''re[/] [P3]on[/] [S7]vacation[/]. [D7]Could[/] [T8]you[/] [D6]check[/] [T3]our[/] [S2]apartment[/]?'
+  ru: А на следующей неделе мы уезжаем в отпуск. Не могли бы вы присматривать за квартирой?
+- speaker: neighbor
+  emotion: happy
+  text: '[J4]Sure[/]. [T8]I[/] [D7]can[/] [D2]do[/] [T8]it[/] [A4]easily[/].'
+  ru: Конечно. Мне это легко.
+- speaker: tom
+  emotion: happy
+  text: '[O2]Thank[/] [T8]you[/]! [T8]I[/] [D5]promise[/]. [X1]No[/] [J2]loud[/] [S10]music[/] [P3]in[/] [T1]the[/] [S7]day[/].'
+  ru: Спасибо! Обещаю. Днём никакой громкой музыки.
+- speaker: neighbor
+  emotion: happy
+  text: '[T4]Any[/] [S7]time[/]. [T8]You[/] [D7]can[/] [D2]play[/] [A4]loudly[/] [P3]in[/] [T1]the[/] [S7]evening[/]. [T8]I[/] [D1]am[/] [P1]at[/] [S9]work[/] [A2]then[/]!'
+  spoken: '[T4]Any[/] [S7]time[/]. [T8]You[/] [D7]can[/] [D2]play[/] [A4]loudly[/] [P3]in[/] [T1]the[/] [S7]evening[/]. [T8]I[/][D1]''m[/] [P1]at[/] [S9]work[/] [A2]then[/]!'
+  ru: Обращайтесь. Вечером можешь играть громко. Я тогда на работе!
+- speaker: anna
+  emotion: happy
+  text: '[O2]Thank[/] [T8]you[/], [S1]Leo[/]. [D2]Sleep[/] [A4]well[/]!'
+  ru: Спасибо, Лео. Выспитесь!
+twister:
+  number: 24
+  series: contractions
+  text: '[D7]Could[/] [T8]you[/] [D5]speak[/] [A4]slowly[/]? [T8]I[/] [D7]could[/][X1]n''t[/] [D3]hear[/] [T8]you[/]! [D7]Could[/] [T8]you[/] [D5]speak[/] [A4]loudly[/]? [O3]Oh[/], [A2]now[/] [T8]I[/] [D7]ca[/][X1]n''t[/] [D2]sleep[/]!'
+  ru: Не могли бы вы говорить медленно? Я вас не слышал! Не могли бы вы говорить громко? Ой, теперь я не могу спать!
+  ipa: /kʊd ju ˈspik ˈsloʊli | aɪ ˈkʊdənt ˈhɪr ju | kʊd ju ˈspik ˈlaʊdli | ˈoʊ ˈnaʊ aɪ ˈkænt ˈslip/
+  focus_sounds:
+  - ʊ
+  - l
+  source: original
+  goal_ru: Вежливое Could you…?, сокращения couldn't и can't, наречия на -ly.
+  tip_ru: could — «куд», l не читается, гласная короткая, как в good. couldn't — «кУднт». В slowly и loudly l в конце слога мягкая, а -ly — короткое «ли».
+  warmup:
+  - '[D7]could[/], [D7]could[/][X1]n''t[/]'
+  - '[A4]slowly[/], [A4]loudly[/], [A4]quietly[/]'
+  - '[D7]Could[/] [T8]you[/] [D5]speak[/] [A4]slowly[/]?'
+  - '[T8]I[/] [D7]ca[/][X1]n''t[/] [D2]sleep[/]!'
+  target_line: Could you play quietly, please?
+  own_ru: 'Попросите кого-нибудь рядом о чём-то вежливо: Could you… please?'

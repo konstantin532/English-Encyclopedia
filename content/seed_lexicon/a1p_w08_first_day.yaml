@@ -1,0 +1,422 @@
+# Неделя 8 A1+ «Первый рабочий день: правила»: must / must not. CEFR не сверялся.
+level: A1+
+week: 8
+units:
+- uid: LX-00772
+  lemma: rule
+  meaning: something you must or must not do
+  class: S9
+  forms:
+  - rules
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rul/
+  translation_ru: правило
+  example_en: '[T1]The[/] [S9]rules[/] [D1]are[/] [J3]easy[/].'
+  example_ru: Правила простые.
+  situation: Первый день на работе
+- uid: LX-00773
+  lemma: customer
+  meaning: a person who buys something in a store or a cafe
+  class: S1
+  forms:
+  - customers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkʌstəmɚ/
+  translation_ru: клиент, покупатель
+  example_en: '[T8]We[/] [D7]must[/] [D2]smile[/] [P2]at[/] [S1]customers[/].'
+  example_ru: Мы должны улыбаться клиентам.
+  situation: Работаете в кафе
+- uid: LX-00774
+  lemma: apron
+  meaning: a piece of cloth you wear over your clothes at work
+  class: S2
+  forms:
+  - aprons
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈeɪprən/
+  translation_ru: фартук
+  example_en: '[T8]You[/] [D7]must[/] [D2]wear[/] [T1]an[/] [S2]apron[/].'
+  example_ru: Вы должны носить фартук.
+  situation: Работаете в кафе
+  usage_note: 'Начало — «эй»: «Эйпрэн».'
+- uid: LX-00775
+  lemma: hair
+  meaning: what grows on your head
+  class: S5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hɛr/
+  translation_ru: волосы
+  example_en: '[T3]Her[/] [S5]hair[/] [D1]is[/] [J1]long[/].'
+  example_ru: У неё длинные волосы.
+  situation: Описываете внешность
+  usage_note: 'Волосы на голове — одно целое: her hair is long, без -s.'
+  typical_error: «Her hairs are long» — неверно.
+- uid: LX-00776
+  lemma: counter
+  meaning: a long table in a store or a cafe
+  class: S2
+  forms:
+  - counters
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈkaʊntɚ/
+  translation_ru: прилавок, стойка
+  example_en: '[T1]The[/] [S2]cups[/] [D1]are[/] [P1]on[/] [T1]the[/] [S2]counter[/].'
+  example_ru: Чашки на стойке.
+  situation: Работаете в кафе
+- uid: LX-00777
+  lemma: machine
+  meaning: a thing that does work, like a coffee machine
+  class: S2
+  forms:
+  - machines
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /məˈʃin/
+  translation_ru: машина, аппарат
+  example_en: '[T1]The[/] [S3]coffee[/] [S2]machine[/] [D1]is[/] [J2]hot[/].'
+  example_ru: Кофемашина горячая.
+  situation: Работаете в кафе
+  usage_note: 'ch читается как «ш»: «мэшИн». Машина-автомобиль — car.'
+- uid: LX-00778
+  lemma: trash
+  meaning: things you do not want and throw away
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /træʃ/
+  translation_ru: мусор
+  example_en: '[D2]Take[/] [T1]the[/] [S2]trash[/] [A3]outside[/].'
+  example_ru: Вынеси мусор.
+  situation: Убираете
+  usage_note: В Британии — rubbish.
+- uid: LX-00779
+  lemma: tray
+  meaning: a flat thing for carrying cups and plates
+  class: S2
+  forms:
+  - trays
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /treɪ/
+  translation_ru: поднос
+  example_en: '[D2]Carry[/] [T1]the[/] [S2]cups[/] [P1]on[/] [T1]a[/] [S2]tray[/].'
+  example_ru: Носи чашки на подносе.
+  situation: Работаете в кафе
+- uid: LX-00780
+  lemma: gloves
+  meaning: things you wear on your hands
+  class: S2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ɡlʌvz/
+  translation_ru: перчатки
+  example_en: '[T8]You[/] [D7]must[/] [D2]wear[/] [S2]gloves[/].'
+  example_ru: Нужно надевать перчатки.
+  situation: Работаете на кухне
+  usage_note: 'Обычно во множественном: gloves.'
+- uid: LX-00781
+  lemma: shift
+  meaning: the hours when you work
+  class: S9
+  forms:
+  - shifts
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ʃɪft/
+  translation_ru: смена
+  example_en: '[T3]My[/] [S9]shift[/] [D8]starts[/] [P3]at[/] [N3]six[/].'
+  example_ru: Моя смена начинается в шесть.
+  situation: Говорите о работе
+- uid: LX-00782
+  lemma: team
+  meaning: a group of people who work or play together
+  class: S9
+  forms:
+  - teams
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tim/
+  translation_ru: команда
+  example_en: '[T8]We[/] [D1]are[/] [T1]a[/] [J3]good[/] [S9]team[/].'
+  example_ru: Мы хорошая команда.
+  situation: Говорите о работе
+- uid: LX-00783
+  lemma: problem
+  meaning: something that is wrong or difficult
+  class: S10
+  forms:
+  - problems
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈprɑbləm/
+  translation_ru: проблема
+  example_en: '[T8]We[/] [D1]have[/] [T1]a[/] [S10]problem[/].'
+  example_ru: У нас проблема.
+  situation: Говорите о трудностях
+- uid: LX-00784
+  lemma: break
+  meaning: to make something go into pieces
+  class: D2
+  forms:
+  - breaks
+  - broke
+  - broken
+  - breaking
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /breɪk/
+  translation_ru: ломать, разбивать
+  example_en: '[T8]I[/] [D2]broke[/] [T1]a[/] [S2]cup[/].'
+  example_ru: Я разбила чашку.
+  situation: Говорите о неприятности
+  usage_note: Прошедшее — broke.
+- uid: LX-00785
+  lemma: drop
+  meaning: to let something fall
+  class: D2
+  forms:
+  - drops
+  - dropped
+  - dropping
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /drɑp/
+  translation_ru: ронять
+  example_en: '[D1]Do[/] [X1]not[/] [D2]drop[/] [T1]the[/] [S2]tray[/]!'
+  example_ru: Не урони поднос!
+  situation: Предупреждаете
+  usage_note: 'В прошлом p удваивается: dropped.'
+- uid: LX-00786
+  lemma: throw
+  meaning: to send something through the air with your hand
+  class: D2
+  forms:
+  - throws
+  - threw
+  - throwing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /θroʊ/
+  translation_ru: бросать
+  example_en: '[D2]Throw[/] [T1]the[/] [S2]paper[/] [P2]in[/] [T1]the[/] [S2]trash[/].'
+  example_ru: Брось бумагу в мусор.
+  situation: Убираете
+  usage_note: Прошедшее — threw.
+- uid: LX-00787
+  lemma: hurry
+  meaning: to do something or go somewhere fast
+  class: D4
+  forms:
+  - hurries
+  - hurried
+  - hurrying
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhɝi/
+  translation_ru: спешить
+  example_en: '[T8]We[/] [D7]must[/] [D4]hurry[/]!'
+  example_ru: Нам надо спешить!
+  situation: Опаздываете
+- uid: LX-00788
+  lemma: chat
+  meaning: to talk in a friendly way
+  class: D5
+  forms:
+  - chats
+  - chatted
+  - chatting
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /tʃæt/
+  translation_ru: болтать
+  example_en: '[T8]We[/] [D5]chatted[/] [P4]with[/] [S1]customers[/].'
+  example_ru: Мы болтали с клиентами.
+  situation: Говорите о работе
+- uid: LX-00789
+  lemma: smoke
+  meaning: to breathe in smoke from a cigarette
+  class: D2
+  forms:
+  - smokes
+  - smoked
+  - smoking
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /smoʊk/
+  translation_ru: курить
+  example_en: '[T8]You[/] [D7]must[/] [X1]not[/] [D2]smoke[/] [A3]here[/].'
+  example_ru: Здесь нельзя курить.
+  situation: Читаете правила
+- uid: LX-00790
+  lemma: polite
+  meaning: saying please and thank you, nice to people
+  class: J6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /pəˈlaɪt/
+  translation_ru: вежливый
+  example_en: '[D1]Be[/] [J6]polite[/] [P2]to[/] [S1]customers[/].'
+  example_ru: Будь вежлив с клиентами.
+  situation: Говорите о правилах
+- uid: LX-00791
+  lemma: rude
+  meaning: not polite
+  class: J6
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /rud/
+  translation_ru: грубый
+  example_en: '[T8]He[/] [D1]was[/] [J6]rude[/] [P2]to[/] [T8]me[/].'
+  example_ru: Он мне нагрубил.
+  situation: Говорите о поведении
+- uid: LX-00792
+  lemma: wet
+  meaning: with water on it
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɛt/
+  translation_ru: мокрый
+  example_en: '[T1]The[/] [S2]floor[/] [D1]is[/] [J2]wet[/]. [D1]Be[/] [J6]careful[/]!'
+  example_ru: Пол мокрый. Осторожно!
+  situation: Предупреждаете
+- uid: LX-00793
+  lemma: fast
+  meaning: moving or working quickly
+  class: J2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /fæst/
+  translation_ru: быстрый
+  example_en: '[S1]Mia[/] [D1]is[/] [A5]very[/] [J2]fast[/].'
+  example_ru: Мия очень быстрая.
+  situation: Описываете работу
+  usage_note: 'fast — и «быстрый», и «быстро»: She works fast.'
+- uid: LX-00794
+  lemma: uniform
+  meaning: the same clothes for all people at a job
+  class: S2
+  forms:
+  - uniforms
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈjunəfɔrm/
+  translation_ru: форма (одежда)
+  example_en: '[T1]The[/] [S2]uniform[/] [D1]is[/] [J2]green[/].'
+  example_ru: Форма зелёная.
+  situation: Первый день на работе
+- uid: LX-00795
+  lemma: No problem.
+  meaning: Saying yes easily or answering thank you
+  class: O4
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈnoʊ ˈprɑbləm/
+  translation_ru: Без проблем. Не за что.
+  example_en: No problem.
+  example_ru: Без проблем.
+  situation: Отвечаете на просьбу
+- uid: LX-00796
+  lemma: Got it.
+  meaning: Saying you understand
+  class: F7
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɡɑt ɪt/
+  translation_ru: Понял. Ясно.
+  example_en: Got it.
+  example_ru: Поняла.
+  situation: Подтверждаете
+  usage_note: 'Разговорное: t между словами смягчается — «гадыт».'
+- uid: LX-00797
+  lemma: Take a break.
+  meaning: Stop working for a short time
+  class: D2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈteɪk ə ˈbreɪk/
+  translation_ru: Сделай перерыв.
+  example_en: Take a break.
+  example_ru: Передохни.
+  situation: На работе
+  usage_note: Здесь break — «перерыв», а не «ломать».
+- uid: LX-00798
+  lemma: on time
+  meaning: not late
+  class: P3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ɑn ˈtaɪm/
+  translation_ru: вовремя
+  example_en: on time
+  example_ru: вовремя
+  situation: Говорите о работе
+  usage_note: Be on time! — Не опаздывай!
+- uid: LX-00799
+  lemma: Watch out!
+  meaning: Telling someone about danger
+  class: O5
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwɑtʃ ˈaʊt/
+  translation_ru: Осторожно!
+  example_en: Watch out!
+  example_ru: Берегись!
+  situation: Предупреждаете
+- uid: LX-00800
+  lemma: Welcome to the team!
+  meaning: Saying hello to a new worker
+  class: O1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwɛlkəm tə ðə ˈtim/
+  translation_ru: Добро пожаловать в команду!
+  example_en: Welcome to the team!
+  example_ru: Добро пожаловать!
+  situation: Первый день на работе
+- uid: LX-00801
+  lemma: Can I ask a question?
+  meaning: Asking politely before a question
+  class: F2
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /kən aɪ ˈæsk ə ˈkwɛstʃən/
+  translation_ru: Можно вопрос?
+  example_en: Can I ask a question?
+  example_ru: Можно спросить?
+  situation: Уточняете
