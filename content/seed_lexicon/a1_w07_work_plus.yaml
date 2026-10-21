@@ -204,6 +204,7 @@ units:
   forms:
   - starts
   - started
+  - starting
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -220,6 +221,7 @@ units:
   forms:
   - finishes
   - finished
+  - finishing
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -236,6 +238,7 @@ units:
   forms:
   - writes
   - wrote
+  - writing
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

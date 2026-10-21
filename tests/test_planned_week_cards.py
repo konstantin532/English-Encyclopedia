@@ -10,7 +10,7 @@ class PlannedWeekCardTests(TestCase):
         ensure_content()
 
     def test_week_without_topic_has_no_dangling_dot(self):
-        html = self.client.get("/levels/a1-plus/").content.decode()
+        html = self.client.get("/levels/a2/").content.decode()   # у A2 ещё нет плана недель
         self.assertIn("<strong>Неделя 1</strong>", html)
         self.assertNotIn("<strong>1 · </strong>", html)
 
@@ -24,4 +24,5 @@ class PlannedWeekCardTests(TestCase):
         for n in (1, 4, 14):
             self.assertIn(f"img/atlas/a1-w{n:02d}-800.webp", html)  # обложки всех недель A1
         plus = self.client.get("/levels/a1-plus/").content.decode()
-        self.assertIn('class="atlas-week-placeholder"', plus)
+        self.assertIn('class="atlas-week-placeholder"', plus)   # у недель A1+ пока нет обложек
+        self.assertIn("Видеозвонок: что я делаю сейчас", plus)
