@@ -90,7 +90,7 @@ script:
   kind: narration
   emotion: neutral
   music: calm
-  text: '[A2]Then[/] [T1]the[/] [S6]rain[/] [D4]came[/]. [T8]We[/] [D2]sat[/] [P1]under[/] [N1]two[/] [S2]umbrellas[/], [N3]four[/] [S1]friends[/], [C1]and[/] [D2]ate[/] [T1]the[/] [S3]cookies[/]. [T8]It[/] [D1]was[/] [J2]cold[/], [C5]but[/] [T8]I[/] [D1]was[/] [J4]happy[/].'
+  text: '[A2]Then[/] [T1]the[/] [S6]rain[/] [D4]came[/]. [N3]Four[/] [S1]friends[/] [D2]sat[/] [P1]under[/] [N1]two[/] [S2]umbrellas[/] [C1]and[/] [D2]ate[/] [T1]the[/] [S3]cookies[/]. [T8]It[/] [D1]was[/] [J2]cold[/], [C5]but[/] [T8]I[/] [D1]was[/] [J4]happy[/].'
 - speaker: tom
   kind: speech
   emotion: happy

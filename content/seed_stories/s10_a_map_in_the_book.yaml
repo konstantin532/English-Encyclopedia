@@ -84,20 +84,20 @@ script:
 - speaker: anna
   kind: narration
   emotion: surprised
-  text: '[T8]We[/] [D4]moved[/] [S1]Box[/]. [P1]Under[/] [S1]Box[/], [T9]there[/] [D1]was[/] [T1]a[/] [J1]small[/] [J2]old[/] [S1]box[/]!'
+  text: '[T8]We[/] [D4]moved[/] [S1]Box[/]. [P1]Under[/] [S1]Box[/], [T9]there[/] [D1]was[/] [T1]a[/] [J1]small[/] [J2]old[/] [S2]box[/]!'
 - speaker: tom
   kind: speech
   emotion: surprised
-  text: “[T1]A[/] [S1]box[/] [P1]under[/] [S1]Box[/]!”
+  text: “[T1]A[/] [S2]box[/] [P1]under[/] [S1]Box[/]!”
 - speaker: anna
   kind: narration
   emotion: neutral
   music: mystery
-  text: '[T8]We[/] [D2]opened[/] [T8]it[/]. [P1]In[/] [T1]the[/] [S1]box[/], [T9]there[/] [D1]were[/] [N1]two[/] [J2]red[/] [S2]pencils[/], [T1]a[/] [J1]small[/] [J2]blue[/] [S4]car[/], [N1]three[/] [S2]photos[/], [C1]and[/] [T1]a[/] [S9]letter[/].'
+  text: '[T8]We[/] [D2]opened[/] [T8]it[/]. [P1]In[/] [T1]the[/] [S2]box[/], [T9]there[/] [D1]were[/] [N1]two[/] [J2]red[/] [S2]pencils[/], [T1]a[/] [J1]small[/] [J2]blue[/] [S4]car[/], [N1]three[/] [S2]photos[/], [C1]and[/] [T1]a[/] [S9]letter[/].'
 - speaker: anna
   kind: narration
   emotion: neutral
-  text: '[P3]On[/] [T1]the[/] [S9]letter[/], [T9]there[/] [D1]were[/] [N1]two[/] [S9]lines[/]: “[T2]This[/] [D1]is[/] [T3]our[/] [S1]box[/]. [S1]Rose[/] [C1]and[/] [S1]Sam[/]. [N4]Nineteen[/] [N4]sixty[/]-[N4]five[/].”'
+  text: '[P3]On[/] [T1]the[/] [S9]letter[/], [T9]there[/] [D1]were[/] [N1]two[/] [S9]lines[/]: “[T2]This[/] [D1]is[/] [T3]our[/] [S2]box[/]. [S1]Rose[/] [C1]and[/] [S1]Sam[/]. [N4]Nineteen[/] [N4]sixty[/]-[N4]five[/].”'
 - speaker: mia
   kind: speech
   emotion: neutral
@@ -116,8 +116,8 @@ script:
   kind: narration
   emotion: neutral
   music: mystery
-  text: '[T8]We[/] [D6]looked[/] [P3]at[/] [T1]the[/] [S9]letter[/] [A2]again[/]. [N1]Two[/] [S9]names[/], [N1]one[/] [J2]old[/] [S1]box[/]. [T9]Who[/] [D1]is[/] [S1]Sam[/]?'
-  spoken: '[T8]We[/] [D6]looked[/] [P3]at[/] [T1]the[/] [S9]letter[/] [A2]again[/]. [N1]Two[/] [S9]names[/], [N1]one[/] [J2]old[/] [S1]box[/]. [T9]Who[/][D1]''s[/] [S1]Sam[/]?'
+  text: '[T8]We[/] [D6]looked[/] [P3]at[/] [T1]the[/] [S9]letter[/] [A2]again[/]. [N1]Two[/] [S9]names[/], [N1]one[/] [J2]old[/] [S2]box[/]. [T9]Who[/] [D1]is[/] [S1]Sam[/]?'
+  spoken: '[T8]We[/] [D6]looked[/] [P3]at[/] [T1]the[/] [S9]letter[/] [A2]again[/]. [N1]Two[/] [S9]names[/], [N1]one[/] [J2]old[/] [S2]box[/]. [T9]Who[/][D1]''s[/] [S1]Sam[/]?'
 questions:
 - q: Что Анна нашла в книге?
   a: And in the book, there was a map! Two children drew it. — Карту, которую нарисовали двое детей.

@@ -55,7 +55,7 @@ script:
 - speaker: boss
   kind: speech
   emotion: neutral
-  text: “[T9]There[/] [D1]are[/] [J2]old[/] [S2]boxes[/] [T9]there[/]. [T8]You[/] [D1]have[/] [X2]to[/] [D2]open[/] [T5]every[/] [S1]box[/] [C1]and[/] [D6]look[/] [P3]at[/] [T5]every[/] [S2]paper[/]. [T3]My[/] [S1]father[/] [D3]wants[/] [T8]them[/].”
+  text: “[T9]There[/] [D1]are[/] [J2]old[/] [S2]boxes[/] [T9]there[/]. [T8]You[/] [D1]have[/] [X2]to[/] [D2]open[/] [T5]every[/] [S2]box[/] [C1]and[/] [D6]look[/] [P3]at[/] [T5]every[/] [S2]paper[/]. [T3]My[/] [S1]father[/] [D3]wants[/] [T8]them[/].”
 - speaker: mia
   kind: narration
   emotion: worried
