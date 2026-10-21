@@ -227,7 +227,7 @@ class WeekThreeTests(WeekContentMixin, TestCase):
 
     def test_future_word_rejected(self):
         week4 = Week.objects.get(level__code="A1", number=4)
-        first = LexicalUnit.objects.filter(week__number=1).first()
+        first = LexicalUnit.objects.filter(internal_level__code="A1", week__number=1).first()
         LexicalUnit.objects.create(uid="LX-99990", lemma="zebrafish", meaning="test", part_of_speech=first.part_of_speech,
                                    semantic_class=first.semantic_class, internal_level=first.internal_level, week=week4,
                                    translation_ru="тест", example_en="[S6]zebrafish[/]")
@@ -299,7 +299,7 @@ class PilotContinuityTests(TestCase):
                 self.assertTrue(beat.get("outcome_ru"))
 
     def test_existing_canon_preserved(self):
-        goals = {s.week.number: s.can_do_ru for s in WeekScene.objects.filter(week__number__in=[1, 2])}
+        goals = {s.week.number: s.can_do_ru for s in WeekScene.objects.filter(week__level__code="A1", week__number__in=[1, 2])}
         self.assertEqual(goals[1], "Я смогу представиться, сказать, откуда я, и спросить имя собеседника.")
         self.assertEqual(goals[2], "Я смогу показать свой дом, назвать комнаты и предметы, сказать, чьи они, и вежливо попросить воды или нужную вещь.")
         story = Story.objects.get(number=1)
@@ -414,15 +414,15 @@ class ReviewFixTests(TestCase):
             self.assertEqual(LexicalUnit.objects.get(lemma=lemma).forms, [])
 
     def test_cafe_sells_cookies_not_whole_cakes(self):
-        scene = WeekScene.objects.get(week__number=3)
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=3)
         text = " ".join(l["text"] for l in scene.script)
         self.assertIn("cookie", text)
         self.assertNotIn("cake", text)
         self.assertFalse(LexicalUnit.objects.filter(lemma="cake").exists())
 
     def test_russian_frame_adds_no_facts(self):
-        w3 = WeekScene.objects.get(week__number=3).story_beat
-        w4 = WeekScene.objects.get(week__number=4).story_beat
+        w3 = WeekScene.objects.get(week__level__code="A1", week__number=3).story_beat
+        w4 = WeekScene.objects.get(week__level__code="A1", week__number=4).story_beat
         self.assertNotIn("на углу", w3["intro_ru"] + w3["outcome_ru"] + w4["outcome_ru"])
         self.assertNotIn("обронила", w4["outcome_ru"])
         self.assertNotIn("хозяина", w3["outcome_ru"])
@@ -461,12 +461,12 @@ class CanonTests(TestCase):
         self.assertIn("Ми", hook)
 
     def test_week_three_order_fits_two_people(self):
-        scene = WeekScene.objects.get(week__number=3)
+        scene = WeekScene.objects.get(week__level__code="A1", week__number=3)
         order = scene.script[1]["text"]
         self.assertIn("[n1]one[/] [s3]coffee[/] [c1]and[/] [n1]one[/] [s3]tea[/]", order.lower())
 
     def test_friends_use_ty_in_week_two(self):
-        ru = " ".join(l.get("ru", "") for l in WeekScene.objects.get(week__number=2).script)
+        ru = " ".join(l.get("ru", "") for l in WeekScene.objects.get(week__level__code="A1", week__number=2).script)
         self.assertNotIn("ваш телефон", ru)
         self.assertNotIn("ваша коробка", ru)
 

@@ -259,19 +259,22 @@ units:
   example_ru: чашка кофе
   situation: Заказываете или пьёте кофе
 - uid: LX-00545
-  lemma: cake
-  meaning: a sweet food for a party or with tea
-  class: S3
+  lemma: bake
+  meaning: to cook food like bread or cookies in an oven
+  class: D2
   forms:
-  - cakes
+  - bakes
+  - baked
+  - baking
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
-  ipa_us: /keɪk/
-  translation_ru: торт, пирожное
-  example_en: '[S1]Mia[/] [D1]is[/] [D2]making[/] [T1]a[/] [S3]cake[/].'
-  example_ru: Мия печёт торт.
-  situation: Говорите о сладком
+  ipa_us: /beɪk/
+  translation_ru: печь (в духовке)
+  example_en: '[S1]Mia[/] [D1]is[/] [D2]baking[/] [S3]cookies[/].'
+  example_ru: Мия печёт печенье.
+  situation: Говорите о выпечке
+  usage_note: 'bake — печь хлеб, печенье; make — делать вообще: make coffee.'
 - uid: LX-00546
   lemma: person
   meaning: a man, a woman, or a child

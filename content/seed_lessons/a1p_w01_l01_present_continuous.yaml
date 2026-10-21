@@ -67,14 +67,14 @@ layers:
 
     > [T8]I[/] [D1]am[/] [D2]drinking[/] [S3]coffee[/]. — Я пью кофе (сейчас).
 
-    > [S1]Mia[/] [D1]is[/] [D2]making[/] [T1]a[/] [S3]cake[/]. — Мия печёт торт.
+    > [S1]Mia[/] [D1]is[/] [D2]baking[/] [S3]cookies[/]. — Мия печёт печенье.
 
     > [T8]We[/] [D1]are[/] [D2]cleaning[/] [T1]the[/] [S2]kitchen[/]. — Мы убираем кухню.
 
 
     - **I** → am: I am drinking.
 
-    - **he / she / it**, одно имя → is: Mia is making, she is writing.
+    - **he / she / it**, одно имя → is: Mia is baking, she is writing.
 
     - **you / we / they** → are: you are wearing, we are cleaning.
 
@@ -110,12 +110,12 @@ layers:
 
     - В разговоре **am / is / are** почти всегда сокращают: I''m, she''s, you''re, we''re.
 
-    - Вопрос — **is / are** выходит вперёд: *Are you wearing your jacket?* *Is Mia making a cake?*
+    - Вопрос — **is / are** выходит вперёд: *Are you wearing your jacket?* *Is Mia baking cookies?*
 
     - Короткие ответы: *Yes, I am. / No, I''m not. Yes, she is. / No, she isn''t.*
 
 
-    Полезные действия этой недели: **make** — делать, готовить; **wash** — мыть; **clean** — убирать; **hold** — держать; **smile** — улыбаться; **laugh** — смеяться.
+    Полезные действия этой недели: **make** — делать, готовить; **bake** — печь; **wash** — мыть; **clean** — убирать; **hold** — держать; **smile** — улыбаться; **laugh** — смеяться.
 
     '
 - number: 6
@@ -157,11 +157,11 @@ exercises:
   uid: EX-00165
   kind: fill
   stage: substitution
-  prompt_ru: Мия печёт торт прямо сейчас. Вставьте нужную форму be.
-  prompt_en: Mia ___ making a cake.
+  prompt_ru: Мия печёт печенье прямо сейчас. Вставьте нужную форму be.
+  prompt_en: Mia ___ baking cookies.
   answer: is
   hint_ru: Mia — она, она → is.
-  explanation_ru: Mia is making a cake. С одним человеком (he, she, Mia) — is.
+  explanation_ru: Mia is baking cookies. С одним человеком (he, she, Mia) — is.
   units:
   - LX-00529
 - order: 3

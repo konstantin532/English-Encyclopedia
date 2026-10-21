@@ -30,9 +30,9 @@ script:
   ru: Что ты делаешь прямо сейчас?
 - speaker: tom
   emotion: happy
-  text: '[T8]I[/] [D1]am[/] [D2]drinking[/] [S3]coffee[/] [C1]and[/] [D5]talking[/] [P2]to[/] [T8]you[/]! [S1]Mia[/] [D1]is[/] [D2]making[/] [T1]a[/] [S3]cake[/].'
-  spoken: '[T8]I[/][D1]''m[/] [D2]drinking[/] [S3]coffee[/] [C1]and[/] [D5]talking[/] [P2]to[/] [T8]you[/]! [S1]Mia[/] [D1]is[/] [D2]making[/] [T1]a[/] [S3]cake[/].'
-  ru: Пью кофе и разговариваю с тобой! Мия печёт торт.
+  text: '[T8]I[/] [D1]am[/] [D2]drinking[/] [S3]coffee[/] [C1]and[/] [D5]talking[/] [P2]to[/] [T8]you[/]! [S1]Mia[/] [D1]is[/] [D2]baking[/] [S3]cookies[/].'
+  spoken: '[T8]I[/][D1]''m[/] [D2]drinking[/] [S3]coffee[/] [C1]and[/] [D5]talking[/] [P2]to[/] [T8]you[/]! [S1]Mia[/] [D1]is[/] [D2]baking[/] [S3]cookies[/].'
+  ru: Пью кофе и разговариваю с тобой! Мия печёт печенье.
 - speaker: mia
   emotion: happy
   text: '[O1]Hello[/]! [J3]Nice[/] [P2]to[/] [D2]meet[/] [T8]you[/]!'
