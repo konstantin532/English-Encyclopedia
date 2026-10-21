@@ -68,10 +68,15 @@ def parse_order(value):
 
 
 def asks_for_options(value):
-    text = value.casefold()
-    return bool(re.search(
-        r"\b(?:what (?:do you have|is available|else|have you got)|"
-        r"what can i (?:have|order)|do you have (?:anything|something) else)\b",
+    # Matching a question *inside* a refusal or quoted sentence does not
+    # mean the learner has actually asked about the available drinks.
+    text = re.sub(r"[?!.,;:]+", " ", value.casefold())
+    text = " ".join(text.split())
+    return bool(re.fullmatch(
+        r"(?:excuse me |sorry |please )?"
+        r"(?:what (?:do you have|is available|else|have you got)|"
+        r"what can i (?:have|order)|do you have (?:anything|something) else)"
+        r"(?: please)?",
         text,
     ))
 
