@@ -14,6 +14,7 @@ units:
   forms:
   - learns
   - learning
+  - learned
   cefr: unverified
   verification_status: pending
   frequency_source: Тематический добор; частотность не сверена.
@@ -30,6 +31,7 @@ units:
   forms:
   - studies
   - studying
+  - studied
   cefr: unverified
   verification_status: pending
   frequency_source: Тематический добор; частотность не сверена.
@@ -46,6 +48,7 @@ units:
   forms:
   - repeats
   - repeating
+  - repeated
   cefr: unverified
   verification_status: pending
   frequency_source: Тематический добор; частотность не сверена.
@@ -62,6 +65,7 @@ units:
   forms:
   - understands
   - understanding
+  - understood
   cefr: unverified
   verification_status: pending
   frequency_source: Тематический добор; частотность не сверена.
@@ -78,6 +82,7 @@ units:
   forms:
   - draws
   - drawing
+  - drew
   cefr: unverified
   verification_status: pending
   frequency_source: Тематический добор; частотность не сверена.
@@ -94,6 +99,7 @@ units:
   forms:
   - swims
   - swimming
+  - swam
   cefr: unverified
   verification_status: pending
   frequency_source: Тематический добор; частотность не сверена.
@@ -110,6 +116,7 @@ units:
   forms:
   - drives
   - driving
+  - drove
   cefr: unverified
   verification_status: pending
   frequency_source: Тематический добор; частотность не сверена.
@@ -126,6 +133,7 @@ units:
   forms:
   - dances
   - dancing
+  - danced
   cefr: unverified
   verification_status: pending
   frequency_source: Тематический добор; частотность не сверена.

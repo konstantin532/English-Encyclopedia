@@ -1,0 +1,64 @@
+# Новые слова истории №11 «If It Rains» (лимит A-блока — до 5 на историю).
+# Реальное if о будущем: If it rains, we will… — тема недели 16 A1+.
+level: A1+
+week: 16
+units:
+- uid: LX-00525
+  lemma: will
+  meaning: a word for the future
+  class: D7
+  grammar_features:
+  - modal
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wɪl/
+  translation_ru: будет, буду (будущее время)
+  example_en: '[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/] [D7]will[/] [D2]eat[/] [P1]in[/] [T1]the[/] [S2]kitchen[/].'
+  example_ru: Если пойдёт дождь, мы поедим на кухне.
+  situation: Говорите о планах при условии
+  usage_note: 'После will глагол без to: we will eat. В речи сокращается: we''ll, I''ll. После if will не ставят: If it rains (не «If it will rain»).'
+  typical_error: '«If it will rain, we will…» — will после if лишнее. Нужно: If it rains, we will…'
+- uid: LX-00526
+  lemma: picnic
+  meaning: a meal that you eat outside, in a park or a garden
+  class: S3
+  forms:
+  - picnics
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈpɪkˌnɪk/
+  translation_ru: пикник
+  example_en: '[T8]We[/] [D3]wanted[/] [T1]a[/] [S3]picnic[/] [P1]in[/] [T1]the[/] [S4]park[/].'
+  example_ru: Мы хотели устроить пикник в парке.
+  situation: Планируете выходные с друзьями
+- uid: LX-00527
+  lemma: bench
+  meaning: a long seat for two or more people, often in a park
+  class: S4
+  forms:
+  - benches
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /bɛntʃ/
+  translation_ru: скамейка
+  example_en: '[T9]There[/] [D1]was[/] [T1]a[/] [J2]white[/] [S2]envelope[/] [P1]under[/] [T1]the[/] [S4]bench[/].'
+  example_ru: Под скамейкой был белый конверт.
+  situation: Описываете парк
+- uid: LX-00528
+  lemma: hope
+  meaning: to want something to happen and think it can happen
+  class: D3
+  forms:
+  - hopes
+  - hoped
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /hoʊp/
+  translation_ru: надеяться
+  example_en: '[T8]I[/] [D3]hope[/] [S1]Rose[/] [D7]will[/] [D4]come[/].'
+  example_ru: Надеюсь, Роуз придёт.
+  situation: Говорите о том, чего ждёте

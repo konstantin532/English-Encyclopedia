@@ -1,0 +1,147 @@
+# История №8 «Mia's Bad Day» — A1+, неделя 8. Сюжет: «Библия сюжета A1+».
+number: 8
+characters:
+- Mia
+- Anna
+- Rose
+grammar_ru: 'must / must not (mustn''t) — правило; have to / had to — нужно, пришлось; прошедшее время: was, helped, found, had to'
+prediction_ru: Посмотрите на название. Почему у Мии плохой день? И что она найдёт в подвале кафе?
+visual_cues:
+- Утро. Мия на остановке помогает пожилому мужчине с тяжёлой сумкой — и опаздывает.
+- 'Холодный подвал, одна лампа, двадцать старых коробок. В руке Мии старое фото: девушка с книгой и маленький мальчик рядом.'
+new_units:
+- LX-00511
+- LX-00512
+- LX-00513
+- LX-00514
+script:
+- speaker: mia
+  kind: narration
+  emotion: tired
+  music: morning
+  text: '[T8]I[/] [D1]am[/] [S1]Mia[/], [T1]the[/] [S9]barista[/] [P3]at[/] [T1]the[/] [S4]cafe[/] [P3]on[/] [T1]the[/] [S4]corner[/]. [T8]I[/] [D8]start[/] [D2]work[/] [P3]at[/] [N3]six[/].'
+  spoken: '[T8]I[/][D1]''m[/] [S1]Mia[/], [T1]the[/] [S9]barista[/] [P3]at[/] [T1]the[/] [S4]cafe[/] [P3]on[/] [T1]the[/] [S4]corner[/]. [T8]I[/] [D8]start[/] [D2]work[/] [P3]at[/] [N3]six[/].'
+- speaker: mia
+  kind: narration
+  emotion: neutral
+  text: '[C5]But[/] [P3]on[/] [S7]Monday[/], [T8]I[/] [D1]was[/] [A2]late[/]. [P3]At[/] [T1]the[/] [S4]bus[/] [S4]stop[/], [T9]there[/] [D1]was[/] [T1]an[/] [J2]old[/] [S1]man[/] [P4]with[/] [T1]a[/] [J2]heavy[/] [S2]bag[/]. [T8]I[/] [D2]helped[/] [T8]him[/] [P4]with[/] [T1]the[/] [S2]bag[/].'
+- speaker: mia
+  kind: narration
+  emotion: neutral
+  text: '[A2]Then[/] [T8]I[/] [D6]saw[/] [T1]a[/] [J2]black[/] [S6]cat[/] [P1]under[/] [T1]a[/] [J2]red[/] [S4]car[/]. [T8]I[/] [A1]always[/] [D6]look[/] [P3]at[/] [S6]cats[/], [S2]hats[/], [C1]and[/] [S2]umbrellas[/]. [T8]I[/] [A1]never[/] [D6]look[/] [P3]at[/] [T3]my[/] [S2]clock[/].'
+- speaker: mia
+  kind: narration
+  emotion: worried
+  music: tense
+  text: '[P3]At[/] [N3]seven[/] [N3]o''clock[/], [T8]I[/] [D1]was[/] [P3]at[/] [T1]the[/] [S4]cafe[/]. [T3]My[/] [S9]boss[/] [D1]was[/] [P3]at[/] [T1]the[/] [S2]door[/].'
+- speaker: boss
+  kind: speech
+  emotion: angry
+  text: “[S1]Mia[/], [T8]you[/] [D1]are[/] [A2]late[/]! [T8]You[/] [D7]must[/] [X1]not[/] [D1]be[/] [A2]late[/]!”
+  spoken: “[S1]Mia[/], [T8]you[/][D1]'re[/] [A2]late[/]! [T8]You[/] [D7]must[/][X1]n't[/] [D1]be[/] [A2]late[/]!”
+- speaker: mia
+  kind: speech
+  emotion: sad
+  text: “[T8]I[/] [D1]am[/] [O2]sorry[/]. [T9]There[/] [D1]was[/] [T1]an[/] [J2]old[/] [S1]man[/] [P4]with[/] [T1]a[/] [S2]bag[/]…”
+  spoken: “[T8]I[/][D1]'m[/] [O2]sorry[/]. [T9]There[/] [D1]was[/] [T1]an[/] [J2]old[/] [S1]man[/] [P4]with[/] [T1]a[/] [S2]bag[/]…”
+- speaker: boss
+  kind: speech
+  emotion: neutral
+  text: “[O4]Okay[/]. [A2]Today[/] [T8]you[/] [D1]have[/] [X2]to[/] [D2]work[/] [P1]in[/] [T1]the[/] [S2]basement[/].”
+- speaker: mia
+  kind: speech
+  emotion: surprised
+  text: “[P1]In[/] [T1]the[/] [S2]basement[/]? [A6]Why[/]?”
+- speaker: boss
+  kind: speech
+  emotion: neutral
+  text: “[T9]There[/] [D1]are[/] [J2]old[/] [S2]boxes[/] [T9]there[/]. [T8]You[/] [D1]have[/] [X2]to[/] [D2]open[/] [T5]every[/] [S2]box[/] [C1]and[/] [D6]look[/] [P3]at[/] [T5]every[/] [S2]paper[/]. [T3]My[/] [S1]father[/] [D3]wants[/] [T8]them[/].”
+- speaker: mia
+  kind: narration
+  emotion: worried
+  music: mystery
+  text: '[T1]The[/] [S2]basement[/] [D1]was[/] [J2]cold[/]. [T9]There[/] [D1]was[/] [O4]no[/] [S2]window[/]. [T9]There[/] [D1]was[/] [N1]one[/] [J1]small[/] [S2]lamp[/] [C1]and[/] [N1]twenty[/] [J2]old[/] [S2]boxes[/].'
+- speaker: mia
+  kind: narration
+  emotion: tired
+  text: '[T8]I[/] [D2]opened[/] [T1]the[/] [S2]boxes[/]: [S2]papers[/], [S9]letters[/], [S2]photos[/].'
+- speaker: mia
+  kind: narration
+  emotion: surprised
+  text: '[A2]Then[/] [T8]I[/] [D6]found[/] [T1]a[/] [S2]photo[/]. [T8]It[/] [D1]was[/] [T3]our[/] [S4]cafe[/]! [T9]There[/] [D1]was[/] [T1]the[/] [S2]door[/], [T1]the[/] [S2]window[/], [C1]and[/] [T1]the[/] [S4]corner[/].'
+- speaker: mia
+  kind: narration
+  emotion: neutral
+  text: '[T9]There[/] [D1]was[/] [T1]a[/] [S1]girl[/] [P3]at[/] [T1]a[/] [S2]table[/]. [T8]She[/] [D1]was[/] [J2]young[/]. [T8]She[/] [D1]had[/] [T1]a[/] [S2]book[/]. [P3]On[/] [T1]the[/] [S5]back[/] [P6]of[/] [T1]the[/] [S2]photo[/], [T9]there[/] [D1]was[/] [T1]a[/] [S9]name[/]: [S1]Rose[/].'
+- speaker: mia
+  kind: narration
+  emotion: neutral
+  text: '[J8]Next[/] [X2]to[/] [S1]Rose[/], [T9]there[/] [D1]was[/] [T1]a[/] [S1]boy[/]. [T8]He[/] [D1]was[/] [J1]small[/] [C1]and[/] [J4]happy[/].'
+- speaker: mia
+  kind: speech
+  emotion: neutral
+  text: “[T9]Who[/] [D1]is[/] [T2]this[/] [S1]girl[/]?”
+  spoken: “[T9]Who[/][D1]'s[/] [T2]this[/] [S1]girl[/]?”
+- speaker: boss
+  kind: speech
+  emotion: surprised
+  text: “[T2]That[/] [D1]is[/] [S1]Rose[/]! [T3]My[/] [S1]father[/] [D6]knew[/] [T3]her[/]. [T3]Her[/] [S1]family[/] [D1]was[/] [J1]big[/]. [T8]She[/] [D1]had[/] [X2]to[/] [D2]help[/] [T8]them[/]. [T8]She[/] [D1]had[/] [X2]to[/] [D2]work[/] [A3]here[/] [T5]every[/] [S7]day[/].”
+  spoken: “[T2]That[/][D1]'s[/] [S1]Rose[/]! [T3]My[/] [S1]father[/] [D6]knew[/] [T3]her[/]. [T3]Her[/] [S1]family[/] [D1]was[/] [J1]big[/]. [T8]She[/] [D1]had[/] [X2]to[/] [D2]help[/] [T8]them[/]. [T8]She[/] [D1]had[/] [X2]to[/] [D2]work[/] [A3]here[/] [T5]every[/] [S7]day[/].”
+- speaker: mia
+  kind: speech
+  emotion: surprised
+  text: “[C1]And[/] [T1]the[/] [S1]boy[/]?”
+- speaker: boss
+  kind: speech
+  emotion: neutral
+  text: “[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [D5]Ask[/] [T3]my[/] [S1]father[/]. [T8]He[/] [D4]comes[/] [P3]on[/] [S7]Sunday[/].”
+  spoken: “[T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]. [D5]Ask[/] [T3]my[/] [S1]father[/]. [T8]He[/] [D4]comes[/] [P3]on[/] [S7]Sunday[/].”
+- speaker: boss
+  kind: speech
+  emotion: happy
+  text: “[C1]And[/] [S1]Mia[/]… [O2]thank[/] [T8]you[/] [P5]for[/] [T1]the[/] [J2]old[/] [S1]man[/] [P4]with[/] [T1]the[/] [S2]bag[/]. [T8]You[/] [D1]are[/] [T1]a[/] [J3]good[/] [S9]barista[/].”
+  spoken: “[C1]And[/] [S1]Mia[/]… [O2]thank[/] [T8]you[/] [P5]for[/] [T1]the[/] [J2]old[/] [S1]man[/] [P4]with[/] [T1]the[/] [S2]bag[/]. [T8]You[/][D1]'re[/] [T1]a[/] [J3]good[/] [S9]barista[/].”
+- speaker: mia
+  kind: narration
+  emotion: happy
+  music: happy
+  text: '[T8]I[/] [D2]took[/] [T3]my[/] [S2]phone[/] [C1]and[/] [D5]texted[/] [S1]Anna[/]: “[T8]I[/] [D6]found[/] [T1]a[/] [S2]photo[/] [P6]of[/] [S1]Rose[/]! [D4]Come[/] [X2]to[/] [T1]the[/] [S4]cafe[/]!”'
+- speaker: mia
+  kind: narration
+  emotion: neutral
+  music: mystery
+  text: '[A2]Then[/] [T8]I[/] [D6]looked[/] [P3]at[/] [T1]the[/] [S2]photo[/] [A2]again[/]. [T9]Who[/] [D1]was[/] [T1]the[/] [J1]small[/] [S1]boy[/] [J8]next[/] [X2]to[/] [S1]Rose[/]?'
+questions:
+- q: Почему Мия опоздала?
+  a: At the bus stop, there was an old man with a heavy bag. I helped him with the bag. — Помогала старику с тяжёлой сумкой.
+- q: Что сказал начальник?
+  a: You must not be late! — Опаздывать нельзя.
+- q: Что Мия должна сделать в подвале?
+  a: You have to open every box and look at every paper. — Открыть каждую коробку и посмотреть каждую бумагу.
+- q: Что Мия нашла?
+  a: 'There was a girl at a table. On the back of the photo, there was a name: Rose. — Фото девушки, на обороте имя Rose.'
+- q: Что Роуз должна была делать в молодости?
+  a: She had to help them. She had to work here every day. — Помогать большой семье и работать в кафе каждый день.
+- q: Как начальник поблагодарил Мию?
+  a: And Mia… thank you for the old man with the bag. You are a good barista. — За доброту к старику.
+phrase_hunt:
+- phrase: You must not be late!
+  function: Правило-запрет — must not
+- phrase: Today you have to work in the basement.
+  function: Обязанность — have to
+- phrase: She had to work here every day.
+  function: Обязанность в прошлом — had to
+- phrase: Who is this girl?
+  function: Спросить о человеке на фото
+- phrase: Next to Rose, there was a boy.
+  function: Кто рядом — next to
+retell_words:
+- late
+- old man
+- basement
+- photo
+- boy
+retell_steps:
+- 'Восстановите историю по пяти опорам: late, old man, basement, photo, boy.'
+- 'Перескажите от лица Мии, 5–6 фраз: On Monday, I was late. I helped…'
+creative_ru: 'Правила вашей работы или учёбы: 3 фразы с must и have to. Например: I must not be late. I have to start at nine.'

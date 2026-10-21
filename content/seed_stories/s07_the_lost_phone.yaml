@@ -1,0 +1,173 @@
+# История №7 «The Lost Phone» — A1+, неделя 6. Сюжет: «Библия сюжета A1+».
+number: 7
+characters:
+- Anna
+- Tom
+- Ruth
+grammar_ru: 'Past Simple: вопросы Did you…? Where did you go?; отрицание did not (didn''t); неправильные глаголы lost, found, took, sat, knew; ago'
+prediction_ru: Посмотрите на название. Где Том потерял телефон? И кто ответит, если позвонить на его номер?
+visual_cues:
+- Утро субботы. Том с белым лицом стоит у открытого холодильника — телефона там нет.
+- Анна звонит со своего телефона. На Park Street, над закрытым фотоателье, пожилая женщина держит телефон Тома.
+new_units:
+- LX-00506
+- LX-00507
+- LX-00508
+- LX-00509
+- LX-00510
+script:
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: morning
+  text: '[T8]It[/] [D1]was[/] [S7]Saturday[/] [S7]morning[/]. [S1]Tom[/] [D4]came[/] [P2]to[/] [T3]my[/] [S2]kitchen[/]. [T3]His[/] [S5]face[/] [D1]was[/] [J2]white[/].'
+- speaker: tom
+  kind: speech
+  emotion: worried
+  text: “[S1]Anna[/], [T8]I[/] [D2]lost[/] [T3]my[/] [S2]phone[/]!”
+- speaker: anna
+  kind: speech
+  emotion: neutral
+  text: “[D1]Did[/] [T8]you[/] [D6]look[/] [P1]in[/] [T1]the[/] [S2]fridge[/]?”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[J8]Last[/] [S7]week[/], [T3]his[/] [S2]keys[/] [D1]were[/] [P1]in[/] [T1]the[/] [S2]fridge[/]. [P1]In[/] [S7]May[/], [T3]his[/] [S2]hat[/] [D1]was[/] [P1]in[/] [T1]the[/] [S2]fridge[/].'
+- speaker: tom
+  kind: speech
+  emotion: worried
+  text: “[T8]I[/] [D6]looked[/]! [T8]It[/] [D1]is[/] [X1]not[/] [P1]in[/] [T1]the[/] [S2]fridge[/]. [T8]It[/] [D1]is[/] [X1]not[/] [P3]on[/] [T1]the[/] [S2]sofa[/], [C1]and[/] [T8]it[/] [D1]is[/] [X1]not[/] [P1]under[/] [T3]my[/] [S2]bed[/].”
+  spoken: “[T8]I[/] [D6]looked[/]! [T8]It[/][D1]'s[/] [X1]not[/] [P1]in[/] [T1]the[/] [S2]fridge[/]. [T8]It[/][D1]'s[/] [X1]not[/] [P3]on[/] [T1]the[/] [S2]sofa[/], [C1]and[/] [T8]it[/][D1]'s[/] [X1]not[/] [P1]under[/] [T3]my[/] [S2]bed[/].”
+- speaker: anna
+  kind: narration
+  emotion: sad
+  text: '[S1]Tom[/] [D2]sat[/] [P3]on[/] [T1]a[/] [S2]chair[/]. [O4]No[/] [S2]phone[/] [P1]in[/] [T1]the[/] [S2]fridge[/]? [T2]That[/] [D1]was[/] [J2]new[/].'
+- speaker: anna
+  kind: speech
+  emotion: neutral
+  text: “[F4]So[/], [A6]where[/] [D1]did[/] [T8]you[/] [D4]go[/] [A2]yesterday[/]?”
+- speaker: tom
+  kind: speech
+  emotion: neutral
+  text: “[T8]I[/] [D4]went[/] [P2]to[/] [S4]Park[/] [S4]Street[/]. [T8]I[/] [D2]took[/] [T1]the[/] [S4]bus[/].”
+- speaker: anna
+  kind: speech
+  emotion: neutral
+  text: “[D1]Did[/] [T8]you[/] [D4]go[/] [P2]to[/] [T1]the[/] [S2]photo[/] [S4]shop[/]?”
+- speaker: tom
+  kind: speech
+  emotion: sad
+  text: “[O4]Yes[/], [C5]but[/] [T8]it[/] [D1]was[/] [D2]closed[/] [A2]again[/]. [T8]I[/] [D2]sat[/] [P3]at[/] [T1]the[/] [S4]bus[/] [S4]stop[/] [C1]and[/] [D2]waited[/]. [A2]Then[/] [T8]I[/] [D4]went[/] [S2]home[/].”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: tense
+  text: '[T8]I[/] [D2]took[/] [T3]my[/] [S2]phone[/] [C1]and[/] [D5]called[/] [T3]his[/] [S9]number[/].'
+- speaker: photographer
+  kind: speech
+  emotion: neutral
+  text: “[O1]Hello[/]? [D1]Is[/] [T2]this[/] [S1]Tom[/]?”
+- speaker: anna
+  kind: speech
+  emotion: surprised
+  text: “[O4]No[/], [T8]I[/] [D1]am[/] [T3]his[/] [S1]friend[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]his[/] [S2]phone[/]?”
+  spoken: “[O4]No[/], [T8]I[/][D1]'m[/] [T3]his[/] [S1]friend[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]his[/] [S2]phone[/]?”
+- speaker: photographer
+  kind: speech
+  emotion: neutral
+  text: “[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]I[/] [D6]found[/] [T8]it[/] [P3]at[/] [T3]my[/] [S2]door[/] [P3]on[/] [S4]Park[/] [S4]Street[/]. [T3]My[/] [S9]name[/] [D1]is[/] [S1]Ruth[/]. [T1]The[/] [S2]photo[/] [S4]shop[/] [D1]is[/] [T3]my[/] [S4]shop[/].”
+- speaker: anna
+  kind: speech
+  emotion: surprised
+  text: “[T1]The[/] [S2]photo[/] [S4]shop[/]? [C5]But[/] [T8]it[/] [D1]is[/] [D2]closed[/]!”
+  spoken: “[T1]The[/] [S2]photo[/] [S4]shop[/]? [C5]But[/] [T8]it[/][D1]'s[/] [D2]closed[/]!”
+- speaker: photographer
+  kind: speech
+  emotion: tired
+  text: “[O4]Yes[/]. [T8]I[/] [D1]am[/] [J2]old[/], [C1]and[/] [T8]I[/] [D1]do[/] [X1]not[/] [D2]work[/] [A2]now[/]. [T8]I[/] [D2]live[/] [A3]upstairs[/].”
+  spoken: “[O4]Yes[/]. [T8]I[/][D1]'m[/] [J2]old[/], [C1]and[/] [T8]I[/] [D1]do[/][X1]n't[/] [D2]work[/] [A2]now[/]. [T8]I[/] [D2]live[/] [A3]upstairs[/].”
+- speaker: anna
+  kind: speech
+  emotion: happy
+  text: “[O2]Thank[/] [T8]you[/], [S1]Ruth[/]! [D7]Can[/] [S1]Tom[/] [D4]come[/] [P5]for[/] [T8]it[/] [A2]today[/]?”
+- speaker: photographer
+  kind: speech
+  emotion: neutral
+  text: “[O4]Yes[/], [P3]at[/] [N3]four[/] [N3]o'clock[/]. [S1]Anna[/], [T9]there[/] [D1]is[/] [T1]a[/] [S2]photo[/] [P6]of[/] [T1]a[/] [J2]white[/] [S2]house[/] [P3]on[/] [T3]his[/] [S2]phone[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]house[/]?”
+  spoken: “[O4]Yes[/], [P3]at[/] [N3]four[/] [N3]o'clock[/]. [S1]Anna[/], [T9]there[/][D1]'s[/] [T1]a[/] [S2]photo[/] [P6]of[/] [T1]a[/] [J2]white[/] [S2]house[/] [P3]on[/] [T3]his[/] [S2]phone[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]house[/]?”
+- speaker: anna
+  kind: speech
+  emotion: neutral
+  text: “[O4]Yes[/], [T8]it[/] [D1]is[/]. [S1]Tom[/] [C1]and[/] [T8]I[/] [D2]live[/] [T9]there[/].”
+- speaker: photographer
+  kind: speech
+  emotion: whisper
+  music: mystery
+  text: “[T8]I[/] [D6]know[/] [T2]that[/] [S2]house[/]. [N1]Sixty[/] [S7]years[/] [A2]ago[/], [S1]Rose[/] [D2]lived[/] [T9]there[/].”
+- speaker: anna
+  kind: speech
+  emotion: surprised
+  text: “[S1]Rose[/]? [D1]Did[/] [T8]you[/] [D6]know[/] [S1]Rose[/]? [T9]Who[/] [D1]was[/] [T8]she[/]?”
+- speaker: photographer
+  kind: speech
+  emotion: sad
+  text: “[T8]I[/]… [T8]I[/] [D7]cannot[/] [D5]say[/]. [X1]Not[/] [P3]on[/] [T1]the[/] [S2]phone[/].”
+  spoken: “[T8]I[/]… [T8]I[/] [D7]ca[/][X1]n't[/] [D5]say[/]. [X1]Not[/] [P3]on[/] [T1]the[/] [S2]phone[/].”
+- speaker: anna
+  kind: narration
+  emotion: worried
+  text: '[A2]Then[/] [T1]the[/] [D5]call[/] [D8]finished[/]. [T8]I[/] [D5]called[/] [A2]again[/]. [O4]No[/] [D5]answer[/].'
+- speaker: tom
+  kind: speech
+  emotion: happy
+  music: calm
+  text: “[F4]So[/] [T3]my[/] [S2]phone[/] [D1]is[/] [X1]not[/] [D2]lost[/]! [T8]It[/] [D1]is[/] [P3]on[/] [S4]Park[/] [S4]Street[/]!”
+  spoken: “[F4]So[/] [T3]my[/] [S2]phone[/] [D1]is[/][X1]n't[/] [D2]lost[/]! [T8]It[/][D1]'s[/] [P3]on[/] [S4]Park[/] [S4]Street[/]!”
+- speaker: anna
+  kind: speech
+  emotion: happy
+  text: “[O4]Yes[/], [S1]Tom[/]. [C1]And[/] [S1]Ruth[/] [D6]knew[/] [S1]Rose[/]!”
+- speaker: tom
+  kind: speech
+  emotion: happy
+  text: “[O2]Thank[/] [T8]you[/], [S1]Anna[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]. [T8]You[/] [D1]are[/] [T1]a[/] [J3]good[/] [S1]friend[/].”
+  spoken: “[O2]Thank[/] [T8]you[/], [S1]Anna[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]. [T8]You[/][D1]'re[/] [T1]a[/] [J3]good[/] [S1]friend[/].”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: mystery
+  text: '[P3]At[/] [N3]four[/] [N3]o''clock[/], [T8]we[/] [D7]can[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]. [C5]But[/] [A6]why[/] [D1]did[/] [T1]the[/] [D5]call[/] [D8]finish[/]? [C1]And[/] [T9]what[/] [D1]did[/] [S1]Ruth[/] [D6]know[/]?'
+questions:
+- q: Где Том сначала искал телефон и почему это смешно?
+  a: 'Did you look in the fridge? — В холодильнике: вещи Тома всегда оказываются там.'
+- q: Куда Том ездил вчера?
+  a: I went to Park Street. I took the bus. — На Park Street, на автобусе.
+- q: Кто нашёл телефон и где?
+  a: I found it at my door on Park Street. My name is Ruth. — Рут нашла его у своей двери.
+- q: Почему Рут больше не работает в фотоателье?
+  a: I am old, and I do not work now. I live upstairs. — Она старая и живёт над ателье.
+- q: Что Рут сказала про дом Анны?
+  a: Sixty years ago, Rose lived there. — Шестьдесят лет назад там жила Роуз.
+- q: Почему разговор оборвался?
+  a: I cannot say. Not on the phone. — Рут не хочет говорить по телефону. Ответ — в 16:00 на Park Street.
+phrase_hunt:
+- phrase: Anna, I lost my phone!
+  function: Сообщить о потере — lost
+- phrase: So, where did you go yesterday?
+  function: Вопрос о прошлом с did
+- phrase: I found it at my door on Park Street.
+  function: Где нашли — found
+- phrase: Sixty years ago, Rose lived there.
+  function: Сколько времени назад — ago
+- phrase: Did you know Rose?
+  function: Вопрос Did you…?
+retell_words:
+- fridge
+- Park Street
+- Ruth
+- photo shop
+- sixty years ago
+retell_steps:
+- 'Восстановите историю по пяти опорам: fridge, Park Street, Ruth, photo shop, sixty years ago.'
+- 'Перескажите от лица Тома, 5–6 фраз: I lost my phone. I looked in the fridge…'
+creative_ru: 'Вы потеряли вещь. Напишите 3 фразы: I lost my… I looked in… I found it…'

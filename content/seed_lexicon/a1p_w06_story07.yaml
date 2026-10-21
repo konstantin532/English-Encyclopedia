@@ -1,0 +1,80 @@
+# Новые слова истории №7 «The Lost Phone» (лимит A-блока — до 5 на историю).
+level: A1+
+week: 6
+units:
+- uid: LX-00506
+  lemma: lose
+  meaning: to not have something because you do not know where it is
+  class: D2
+  forms:
+  - loses
+  - lost
+  grammar_features:
+  - irregular
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /luz/
+  translation_ru: терять, потерять
+  example_en: '[S1]Anna[/], [T8]I[/] [D2]lost[/] [T3]my[/] [S2]phone[/]!'
+  example_ru: Анна, я потерял телефон!
+  situation: Говорите, что потеряли вещь
+  usage_note: 'Неправильный глагол: lose — lost. Не путайте с loose /lus/ — «свободный».'
+- uid: LX-00507
+  lemma: find
+  meaning: to see or get something that you looked for or that was lost
+  class: D6
+  forms:
+  - finds
+  - found
+  grammar_features:
+  - irregular
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /faɪnd/
+  translation_ru: находить, найти
+  example_en: '[T8]I[/] [D6]found[/] [T8]it[/] [P1]at[/] [T3]my[/] [S2]door[/].'
+  example_ru: Я нашла его у своей двери.
+  situation: Говорите, где нашли вещь
+  usage_note: 'Неправильный глагол: find — found («фаунд»).'
+- uid: LX-00508
+  lemma: then
+  meaning: after that
+  class: A2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ðɛn/
+  translation_ru: потом, затем
+  example_en: '[A2]Then[/] [T8]I[/] [D4]went[/] [S2]home[/].'
+  example_ru: Потом я пошёл домой.
+  situation: Рассказываете по порядку
+  usage_note: 'Не путайте then («потом») и than («чем»).'
+- uid: LX-00509
+  lemma: ago
+  meaning: before now
+  class: A2
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /əˈɡoʊ/
+  translation_ru: тому назад
+  example_en: '[N1]Sixty[/] [S7]years[/] [A2]ago[/], [S1]Rose[/] [D2]lived[/] [A3]there[/].'
+  example_ru: Шестьдесят лет назад там жила Роуз.
+  situation: Говорите, как давно что-то было
+  usage_note: 'Ставится после срока: two days ago, sixty years ago — не «ago two days».'
+  typical_error: '«Ago two years» — неверный порядок. Нужно: two years ago.'
+- uid: LX-00510
+  lemma: so
+  meaning: a word to start a question or a new idea
+  class: F4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /soʊ/
+  translation_ru: итак, так
+  example_en: '[F4]So[/], [A6]where[/] [D1]did[/] [T8]you[/] [D4]go[/] [A2]yesterday[/]?'
+  example_ru: Итак, куда ты ходил вчера?
+  situation: Начинаете важный вопрос в разговоре
+  usage_note: 'В начале фразы So собирает мысль: «Итак…», «Так…».'

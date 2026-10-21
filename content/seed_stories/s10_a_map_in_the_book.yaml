@@ -1,0 +1,154 @@
+# История №10 «A Map in the Book» — A1+, неделя 14. Сюжет: «Библия сюжета A1+».
+number: 10
+characters:
+- Anna
+- Tom
+- Mia
+- Rose
+- Sam
+grammar_ru: 'предлоги движения across, past, to; первое if: If the map is correct…, If you are cold, you can…; прошедшее время: found, drew, wrote, knew'
+prediction_ru: Посмотрите на название. Что за карта лежит в старой библиотечной книге? Куда она ведёт?
+visual_cues:
+- Библиотека. Анна открывает большую старую книгу — внутри детская карта района, красный и синий карандаш.
+- Ночь, сад, лампа. Кот Box сидит под большим деревом и не двигается. Под ним — маленькая старая коробка.
+new_units:
+- LX-00520
+- LX-00521
+- LX-00522
+- LX-00523
+- LX-00524
+script:
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: calm
+  text: '[P3]On[/] [S7]Tuesday[/], [T8]I[/] [D4]went[/] [X2]to[/] [T1]the[/] [S4]library[/]. [T8]I[/] [D3]wanted[/] [T1]a[/] [S2]book[/] [P4]with[/] [J2]old[/] [S2]photos[/] [P6]of[/] [T3]our[/] [S4]town[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[T8]I[/] [D6]found[/] [T1]a[/] [J1]big[/] [J2]old[/] [S2]book[/]. [P3]On[/] [T1]the[/] [N2]first[/] [S9]page[/], [T9]there[/] [D1]was[/] [T1]a[/] [S9]name[/]: [S1]Rose[/].'
+- speaker: anna
+  kind: narration
+  emotion: surprised
+  music: mystery
+  text: '[C1]And[/] [P1]in[/] [T1]the[/] [S2]book[/], [T9]there[/] [D1]was[/] [T1]a[/] [S4]map[/]! [T1]A[/] [J1]small[/] [S4]map[/] [P3]on[/] [J2]old[/] [S2]paper[/]. [N1]Two[/] [S1]children[/] [D2]drew[/] [T8]it[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[T9]There[/] [D1]were[/] [N1]two[/] [S9]names[/] [P3]on[/] [T1]the[/] [S4]map[/]: [S1]Rose[/] [C1]and[/] [S1]Sam[/]. [S1]Rose[/] [D5]wrote[/] [P4]with[/] [T1]a[/] [J2]red[/] [S2]pencil[/]. [S1]Sam[/] [D5]wrote[/] [P4]with[/] [T1]a[/] [J2]blue[/] [S2]pencil[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[P3]On[/] [T1]the[/] [S4]map[/], [T9]there[/] [D1]was[/] [T1]a[/] [S9]line[/]. [T8]It[/] [D4]went[/] [P2]across[/] [S4]Park[/] [S4]Street[/], [P2]past[/] [T1]the[/] [S4]bus[/] [S4]stop[/], [C1]and[/] [X2]to[/] [T1]a[/] [J1]big[/] [S6]tree[/] [P4]with[/] [T1]a[/] [J2]red[/] [S9]X[/].'
+- speaker: anna
+  kind: narration
+  emotion: surprised
+  text: '[T8]I[/] [D6]knew[/] [T2]that[/] [S6]tree[/]. [T8]It[/] [D1]was[/] [P1]in[/] [T3]our[/] [S6]garden[/]!'
+- speaker: anna
+  kind: narration
+  emotion: happy
+  music: happy
+  text: '[T8]I[/] [D4]went[/] [S2]home[/] [A4]quickly[/]. [S1]Tom[/] [C1]and[/] [S1]Mia[/] [D1]were[/] [P1]in[/] [T1]the[/] [S2]kitchen[/].'
+- speaker: anna
+  kind: speech
+  emotion: happy
+  text: “[D6]Look[/]! [T1]A[/] [S4]map[/]! [C4]If[/] [T1]the[/] [S4]map[/] [D1]is[/] [J3]correct[/], [T1]the[/] [S9]X[/] [D1]is[/] [P1]in[/] [T3]our[/] [S6]garden[/]!”
+- speaker: mia
+  kind: speech
+  emotion: surprised
+  text: “[A2]Then[/] [T8]we[/] [D1]have[/] [X2]to[/] [D6]look[/]. [A2]Now[/]!”
+- speaker: tom
+  kind: speech
+  emotion: tired
+  text: “[A2]Now[/]? [C5]But[/] [T8]it[/] [D1]is[/] [J2]cold[/], [C1]and[/] [T8]it[/] [D1]is[/] [N3]nine[/] [N3]o'clock[/]!”
+  spoken: “[A2]Now[/]? [C5]But[/] [T8]it[/][D1]'s[/] [J2]cold[/], [C1]and[/] [T8]it[/][D1]'s[/] [N3]nine[/] [N3]o'clock[/]!”
+- speaker: anna
+  kind: speech
+  emotion: neutral
+  text: “[C4]If[/] [T8]you[/] [D1]are[/] [J2]cold[/], [T8]you[/] [D7]can[/] [D2]take[/] [T3]my[/] [S2]coat[/].”
+  spoken: “[C4]If[/] [T8]you[/][D1]'re[/] [J2]cold[/], [T8]you[/] [D7]can[/] [D2]take[/] [T3]my[/] [S2]coat[/].”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: tense
+  text: '[T8]We[/] [D4]went[/] [X3]out[/] [P4]with[/] [T1]a[/] [S2]lamp[/]. [S1]Box[/] [D4]came[/] [P4]with[/] [T8]us[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[S1]Box[/] [D4]walked[/] [P2]across[/] [T1]the[/] [S6]garden[/], [P2]past[/] [T1]the[/] [S2]chairs[/], [C1]and[/] [D2]sat[/] [P1]under[/] [T1]the[/] [J1]big[/] [S6]tree[/]. [T8]He[/] [D1]did[/] [X1]not[/] [D4]move[/].'
+  spoken: '[S1]Box[/] [D4]walked[/] [P2]across[/] [T1]the[/] [S6]garden[/], [P2]past[/] [T1]the[/] [S2]chairs[/], [C1]and[/] [D2]sat[/] [P1]under[/] [T1]the[/] [J1]big[/] [S6]tree[/]. [T8]He[/] [D1]did[/][X1]n''t[/] [D4]move[/].'
+- speaker: mia
+  kind: speech
+  emotion: whisper
+  text: “[S1]Box[/] [A1]always[/] [D6]finds[/] [T8]it[/] [N2]first[/].”
+- speaker: anna
+  kind: narration
+  emotion: surprised
+  text: '[T8]We[/] [D4]moved[/] [S1]Box[/]. [P1]Under[/] [S1]Box[/], [T9]there[/] [D1]was[/] [T1]a[/] [J1]small[/] [J2]old[/] [S2]box[/]!'
+- speaker: tom
+  kind: speech
+  emotion: surprised
+  text: “[T1]A[/] [S2]box[/] [P1]under[/] [S1]Box[/]!”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: mystery
+  text: '[T8]We[/] [D2]opened[/] [T8]it[/]. [P1]In[/] [T1]the[/] [S2]box[/], [T9]there[/] [D1]were[/] [N1]two[/] [J2]red[/] [S2]pencils[/], [T1]a[/] [J1]small[/] [J2]blue[/] [S4]car[/], [N1]three[/] [S2]photos[/], [C1]and[/] [T1]a[/] [S9]letter[/].'
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[P3]On[/] [T1]the[/] [S9]letter[/], [T9]there[/] [D1]were[/] [N1]two[/] [S9]lines[/]: “[T2]This[/] [D1]is[/] [T3]our[/] [S2]box[/]. [S1]Rose[/] [C1]and[/] [S1]Sam[/]. [N4]Nineteen[/] [N4]sixty[/]-[N4]five[/].”'
+- speaker: mia
+  kind: speech
+  emotion: neutral
+  text: “[S1]Rose[/] [C1]and[/] [S1]Sam[/]… [P1]In[/] [T1]the[/] [S2]photo[/] [P1]behind[/] [T1]the[/] [S2]cupboard[/], [T9]there[/] [D1]were[/] [N3]six[/] [S1]children[/]. [D1]Is[/] [S1]Sam[/] [T3]her[/] [S1]brother[/]?”
+- speaker: anna
+  kind: speech
+  emotion: sad
+  text: “[C4]If[/] [T8]he[/] [D1]is[/] [T3]her[/] [S1]brother[/], [A6]where[/] [D1]is[/] [T8]he[/] [A2]now[/]? [C1]And[/] [A6]where[/] [D1]is[/] [S1]Rose[/]?”
+  spoken: “[C4]If[/] [T8]he[/][D1]'s[/] [T3]her[/] [S1]brother[/], [A6]where[/][D1]'s[/] [T8]he[/] [A2]now[/]? [C1]And[/] [A6]where[/][D1]'s[/] [S1]Rose[/]?”
+- speaker: tom
+  kind: speech
+  emotion: neutral
+  music: calm
+  text: “[T8]We[/] [D7]can[/] [D5]ask[/] [S1]Ruth[/]. [C4]If[/] [T8]she[/] [D6]knew[/] [S1]Rose[/], [T8]she[/] [D6]knew[/] [S1]Sam[/].”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: mystery
+  text: '[T8]We[/] [D6]looked[/] [P3]at[/] [T1]the[/] [S9]letter[/] [A2]again[/]. [N1]Two[/] [S9]names[/], [N1]one[/] [J2]old[/] [S2]box[/]. [T9]Who[/] [D1]is[/] [S1]Sam[/]?'
+  spoken: '[T8]We[/] [D6]looked[/] [P3]at[/] [T1]the[/] [S9]letter[/] [A2]again[/]. [N1]Two[/] [S9]names[/], [N1]one[/] [J2]old[/] [S2]box[/]. [T9]Who[/][D1]''s[/] [S1]Sam[/]?'
+questions:
+- q: Что Анна нашла в книге?
+  a: And in the book, there was a map! Two children drew it. — Карту, которую нарисовали двое детей.
+- q: Чьи имена на карте?
+  a: 'There were two names on the map: Rose and Sam. — Rose и Sam.'
+- q: Куда ведёт линия на карте?
+  a: It went across Park Street, past the bus stop, and to a big tree with a red X. — Через Park Street, мимо остановки, к большому дереву.
+- q: Кто первым нашёл место под деревом?
+  a: Box always finds it first. — Кот Box.
+- q: Что было в коробке?
+  a: In the box, there were two red pencils, a small blue car, three photos, and a letter. — Карандаши, машинка, фото и записка.
+- q: Что написано в записке?
+  a: This is our box. Rose and Sam. Nineteen sixty-five. — Это наша коробка. Роуз и Сэм. 1965.
+phrase_hunt:
+- phrase: It went across Park Street, past the bus stop, and to a big tree with a red X.
+  function: Путь по карте — across, past, to
+- phrase: If the map is correct, the X is in our garden!
+  function: Условие — If…
+- phrase: If you are cold, you can take my coat.
+  function: Предложить помощь при условии
+- phrase: Box always finds it first.
+  function: Шутка о коте — always
+- phrase: Under Box, there was a small old box!
+  function: Что нашли — there was
+retell_words:
+- library
+- map
+- tree
+- Box
+- letter
+retell_steps:
+- 'Восстановите историю по пяти опорам: library, map, tree, Box, letter.'
+- 'Объясните дорогу по карте, 4–5 фраз: Go across Park Street. Go past the bus stop…'
+creative_ru: 'Нарисуйте карту от вашего дома до любимого места и опишите путь: Go across…, go past…, the X is…'

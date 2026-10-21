@@ -217,6 +217,7 @@ units:
   forms:
   - travels
   - traveling
+  - traveled
   cefr: unverified
   verification_status: pending
   frequency_source: Тематический добор; частотность не сверена.
@@ -233,6 +234,7 @@ units:
   forms:
   - arrives
   - arriving
+  - arrived
   cefr: unverified
   verification_status: pending
   frequency_source: Тематический добор; частотность не сверена.
@@ -265,6 +267,7 @@ units:
   forms:
   - buys
   - buying
+  - bought
   cefr: unverified
   verification_status: pending
   frequency_source: Тематический добор; частотность не сверена.

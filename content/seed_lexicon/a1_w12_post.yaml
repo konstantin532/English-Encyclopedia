@@ -67,6 +67,7 @@ units:
   class: D6
   forms:
   - knows
+  - knew
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -82,6 +83,7 @@ units:
   class: D2
   forms:
   - lives
+  - lived
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

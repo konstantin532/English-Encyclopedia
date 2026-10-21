@@ -203,6 +203,7 @@ units:
   class: D8
   forms:
   - starts
+  - started
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -218,6 +219,7 @@ units:
   class: D8
   forms:
   - finishes
+  - finished
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -233,6 +235,7 @@ units:
   class: D5
   forms:
   - writes
+  - wrote
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

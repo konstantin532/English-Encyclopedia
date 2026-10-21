@@ -48,8 +48,10 @@ class ContentTests(TestCase):
         self.assertEqual(lesson.units.count(), 15)
 
     def test_loader_is_idempotent(self):
+        before = LexicalUnit.objects.count()
         call_command("load_content", verbosity=0)
-        self.assertEqual(LexicalUnit.objects.count(), 500)
+        self.assertEqual(LexicalUnit.objects.count(), before)
+        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 500)
 
     def test_cefr_only_with_source(self):
         # Lemma/POS evidence remains partial; verified senses require a direct source.
@@ -377,7 +379,8 @@ class StoriesPoemsTests(TestCase):
         r = self.client.get("/stories/1/")
         self.assertContains(r, 'data-cat="S" data-cls="6"')
         self.assertContains(self.client.get("/stories/poems/1/"), "/ˈðæt ˈkæt | ˈðæt ˈkæt/")
-        self.assertEqual(self.client.get("/stories/6/").status_code, 404)  # ещё не написана
+        self.assertContains(self.client.get("/stories/6/"), "Yesterday at Nine")
+        self.assertEqual(self.client.get("/stories/12/").status_code, 404)  # ещё не написана
 
     def test_poem_gap_check_hides_answer_until_attempt(self):
         url = reverse("api:check_poem_gap", args=[1, 0])

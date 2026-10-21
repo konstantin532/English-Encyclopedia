@@ -82,6 +82,7 @@ units:
   class: D2
   forms:
   - sleeps
+  - slept
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

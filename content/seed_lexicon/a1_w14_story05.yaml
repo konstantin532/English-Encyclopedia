@@ -8,6 +8,7 @@ units:
   class: D4
   forms:
   - moves
+  - moved
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

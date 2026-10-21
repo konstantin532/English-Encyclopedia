@@ -1,0 +1,158 @@
+# История №9 «The Man Upstairs» — A1+, неделя 10. Сюжет: «Библия сюжета A1+».
+number: 9
+characters:
+- Anna
+- Tom
+- Leo
+- Rose
+grammar_ru: 'неправильные глаголы в прошедшем времени: went, saw, took, spoke, taught, could; Could you…? — вежливая просьба; наречия quietly, quickly'
+prediction_ru: Посмотрите на название. Сосед сверху ходит только ночью и ни с кем не здоровается. Он плохой человек?
+visual_cues:
+- Анна и Том стоят у двери квартиры наверху. Том прячется за Анну.
+- Маленькая тёплая квартира, книги до потолка, старая кошка. Сосед в форме медбрата протягивает белый конверт.
+new_units:
+- LX-00515
+- LX-00516
+- LX-00517
+- LX-00518
+- LX-00519
+script:
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: tense
+  text: '[P3]On[/] [S7]Friday[/] [P3]at[/] [N3]nine[/] [N3]o''clock[/], [S1]Tom[/] [C1]and[/] [T8]I[/] [D4]went[/] [A3]upstairs[/]. [T8]We[/] [D1]were[/] [P3]at[/] [T1]the[/] [S2]door[/] [P6]of[/] [T1]the[/] [S2]apartment[/] [A3]upstairs[/].'
+- speaker: tom
+  kind: speech
+  emotion: whisper
+  text: “[S1]Anna[/], [T8]I[/] [D1]do[/] [X1]not[/] [D3]want[/] [X2]to[/] [D4]go[/] [P1]in[/].”
+  spoken: “[S1]Anna[/], [T8]I[/] [D1]do[/][X1]n't[/] [D3]want[/] [X2]to[/] [D4]go[/] [P1]in[/].”
+- speaker: anna
+  kind: speech
+  emotion: whisper
+  text: “[T8]We[/] [D1]have[/] [X2]to[/]. [T9]Who[/] [D1]is[/] [T8]he[/]? [C1]And[/] [A6]why[/] [D1]did[/] [T8]he[/] [D6]look[/] [P3]at[/] [T3]our[/] [S2]mailbox[/]?”
+  spoken: “[T8]We[/] [D1]have[/] [X2]to[/]. [T9]Who[/][D1]'s[/] [T8]he[/]? [C1]And[/] [A6]why[/] [D1]did[/] [T8]he[/] [D6]look[/] [P3]at[/] [T3]our[/] [S2]mailbox[/]?”
+- speaker: anna
+  kind: narration
+  emotion: surprised
+  text: '[A2]Then[/] [T1]the[/] [S2]door[/] [D2]opened[/]. [T8]It[/] [D1]was[/] [T1]the[/] [S1]man[/] [P2]from[/] [T1]the[/] [S2]window[/]!'
+- speaker: neighbor
+  kind: speech
+  emotion: neutral
+  text: “[O4]Yes[/]? [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[T8]He[/] [D5]spoke[/] [A4]quietly[/]. [T3]His[/] [S5]eyes[/] [D1]were[/] [J4]tired[/].'
+- speaker: anna
+  kind: speech
+  emotion: neutral
+  text: “[O1]Hello[/]. [T8]I[/] [D1]am[/] [S1]Anna[/], [C1]and[/] [T2]this[/] [D1]is[/] [S1]Tom[/]. [T8]We[/] [D1]are[/] [T3]your[/] [S1]neighbors[/].”
+  spoken: “[O1]Hello[/]. [T8]I[/][D1]'m[/] [S1]Anna[/], [C1]and[/] [T2]this[/] [D1]is[/] [S1]Tom[/]. [T8]We[/][D1]'re[/] [T3]your[/] [S1]neighbors[/].”
+- speaker: neighbor
+  kind: speech
+  emotion: happy
+  text: “[J3]Nice[/] [X2]to[/] [D2]meet[/] [T8]you[/]. [T8]I[/] [D1]am[/] [S1]Leo[/].”
+  spoken: “[J3]Nice[/] [X2]to[/] [D2]meet[/] [T8]you[/]. [T8]I[/][D1]'m[/] [S1]Leo[/].”
+- speaker: tom
+  kind: speech
+  emotion: worried
+  text: “[S1]Leo[/], [P3]on[/] [S7]Monday[/] [P3]at[/] [N3]nine[/], [T8]you[/] [D1]were[/] [P3]at[/] [T3]your[/] [S2]window[/]. [T8]You[/] [D1]had[/] [T1]a[/] [J2]white[/] [S2]envelope[/]. [A6]Why[/]?”
+- speaker: neighbor
+  kind: speech
+  emotion: neutral
+  music: calm
+  text: “[D4]Come[/] [P1]in[/], [O8]please[/]. [D7]Could[/] [T8]you[/] [D5]speak[/] [A4]quietly[/]? [T3]My[/] [S6]cat[/] [D1]is[/] [J2]old[/].”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  text: '[T3]His[/] [S2]apartment[/] [D1]was[/] [J1]small[/] [C1]and[/] [J2]warm[/]. [T9]There[/] [D1]were[/] [S2]books[/] [P3]on[/] [T5]every[/] [S2]wall[/].'
+- speaker: neighbor
+  kind: speech
+  emotion: neutral
+  text: “[T8]I[/] [D1]am[/] [T1]a[/] [S9]nurse[/]. [T8]I[/] [D2]work[/] [P3]at[/] [T1]the[/] [S4]hospital[/] [P3]at[/] [S7]night[/]. [C5]But[/] [P3]on[/] [S7]Monday[/], [T8]I[/] [D1]was[/] [J4]sick[/], [C1]and[/] [T8]I[/] [D1]was[/] [P3]at[/] [S2]home[/].”
+  spoken: “[T8]I[/][D1]'m[/] [T1]a[/] [S9]nurse[/]. [T8]I[/] [D2]work[/] [P3]at[/] [T1]the[/] [S4]hospital[/] [P3]at[/] [S7]night[/]. [C5]But[/] [P3]on[/] [S7]Monday[/], [T8]I[/] [D1]was[/] [J4]sick[/], [C1]and[/] [T8]I[/] [D1]was[/] [P3]at[/] [S2]home[/].”
+- speaker: neighbor
+  kind: speech
+  emotion: worried
+  text: “[P3]At[/] [N3]nine[/], [T8]I[/] [D6]saw[/] [T1]a[/] [S1]man[/] [P3]at[/] [T3]your[/] [S2]mailbox[/]. [T8]He[/] [D1]was[/] [J2]old[/], [C1]and[/] [T8]he[/] [D1]had[/] [T1]a[/] [J2]black[/] [S2]coat[/] [C1]and[/] [T1]a[/] [S2]hat[/].”
+- speaker: neighbor
+  kind: speech
+  emotion: neutral
+  text: “[T8]I[/] [D4]went[/] [A3]down[/] [A4]quickly[/]. [C5]But[/] [T1]the[/] [S1]man[/] [D1]was[/] [X1]not[/] [T9]there[/]. [T9]There[/] [D1]was[/] [T1]a[/] [J2]white[/] [S2]envelope[/] [P3]on[/] [T1]the[/] [S2]floor[/].”
+  spoken: “[T8]I[/] [D4]went[/] [A3]down[/] [A4]quickly[/]. [C5]But[/] [T1]the[/] [S1]man[/] [D1]was[/][X1]n't[/] [T9]there[/]. [T9]There[/] [D1]was[/] [T1]a[/] [J2]white[/] [S2]envelope[/] [P3]on[/] [T1]the[/] [S2]floor[/].”
+- speaker: neighbor
+  kind: speech
+  emotion: sad
+  text: “[T8]I[/] [D3]wanted[/] [X2]to[/] [D2]give[/] [T8]it[/] [X2]to[/] [T8]you[/]. [C5]But[/] [T8]I[/] [D1]was[/] [J4]sick[/], [C1]and[/] [T8]I[/] [D1]did[/] [X1]not[/] [D6]know[/] [T8]you[/]. [T8]I[/] [D1]am[/] [O2]sorry[/].”
+  spoken: “[T8]I[/] [D3]wanted[/] [X2]to[/] [D2]give[/] [T8]it[/] [X2]to[/] [T8]you[/]. [C5]But[/] [T8]I[/] [D1]was[/] [J4]sick[/], [C1]and[/] [T8]I[/] [D1]did[/][X1]n't[/] [D6]know[/] [T8]you[/]. [T8]I[/][D1]'m[/] [O2]sorry[/].”
+- speaker: anna
+  kind: narration
+  emotion: surprised
+  music: mystery
+  text: '[S1]Leo[/] [D2]took[/] [T1]a[/] [J2]white[/] [S2]envelope[/] [P2]from[/] [T3]his[/] [S2]desk[/]. [T9]There[/] [D1]was[/] [O4]no[/] [S9]address[/] [C1]and[/] [O4]no[/] [S2]stamp[/]. [T9]There[/] [D1]was[/] [N1]one[/] [S9]word[/] [P3]on[/] [T8]it[/]: [S1]Rose[/].'
+- speaker: neighbor
+  kind: speech
+  emotion: neutral
+  text: “[A3]Here[/] [T8]you[/] [D1]are[/].”
+- speaker: anna
+  kind: speech
+  emotion: surprised
+  text: “[D1]Did[/] [T8]you[/] [D6]know[/] [S1]Rose[/]?”
+- speaker: neighbor
+  kind: speech
+  emotion: sad
+  music: calm
+  text: “[O4]Yes[/]. [T8]She[/] [D1]was[/] [T3]my[/] [S9]teacher[/]. [A6]When[/] [T8]I[/] [D1]was[/] [T1]a[/] [S1]boy[/], [T8]I[/] [D7]could[/] [X1]not[/] [D2]read[/]. [S1]Rose[/] [D5]taught[/] [T8]me[/] [P3]at[/] [T3]her[/] [S2]kitchen[/] [S2]table[/]. [P1]In[/] [T3]your[/] [S2]house[/].”
+  spoken: “[O4]Yes[/]. [T8]She[/] [D1]was[/] [T3]my[/] [S9]teacher[/]. [A6]When[/] [T8]I[/] [D1]was[/] [T1]a[/] [S1]boy[/], [T8]I[/] [D7]could[/][X1]n't[/] [D2]read[/]. [S1]Rose[/] [D5]taught[/] [T8]me[/] [P3]at[/] [T3]her[/] [S2]kitchen[/] [S2]table[/]. [P1]In[/] [T3]your[/] [S2]house[/].”
+- speaker: anna
+  kind: narration
+  emotion: happy
+  text: '[T1]The[/] [S1]man[/] [A3]upstairs[/] [D1]was[/] [X1]not[/] [T1]a[/] [J3]bad[/] [S1]man[/]. [T8]He[/] [D1]was[/] [T1]a[/] [J3]good[/] [S1]neighbor[/].'
+  spoken: '[T1]The[/] [S1]man[/] [A3]upstairs[/] [D1]was[/][X1]n''t[/] [T1]a[/] [J3]bad[/] [S1]man[/]. [T8]He[/] [D1]was[/] [T1]a[/] [J3]good[/] [S1]neighbor[/].'
+- speaker: tom
+  kind: speech
+  emotion: happy
+  music: happy
+  text: “[S1]Leo[/], [D7]can[/] [T8]you[/] [D4]come[/] [P5]for[/] [S3]dinner[/] [P3]on[/] [S7]Sunday[/]? [T8]I[/] [D7]cannot[/] [D2]cook[/], [C5]but[/] [S1]Anna[/] [D7]can[/]!”
+  spoken: “[S1]Leo[/], [D7]can[/] [T8]you[/] [D4]come[/] [P5]for[/] [S3]dinner[/] [P3]on[/] [S7]Sunday[/]? [T8]I[/] [D7]ca[/][X1]n't[/] [D2]cook[/], [C5]but[/] [S1]Anna[/] [D7]can[/]!”
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: mystery
+  text: '[S1]Leo[/] [D1]did[/] [X1]not[/] [D5]write[/] [T1]the[/] [S9]letters[/]. [F4]So[/] [T9]who[/] [D1]is[/] [T1]the[/] [J2]old[/] [S1]man[/] [P1]in[/] [T1]the[/] [J2]black[/] [S2]coat[/]?'
+  spoken: '[S1]Leo[/] [D1]did[/][X1]n''t[/] [D5]write[/] [T1]the[/] [S9]letters[/]. [F4]So[/] [T9]who[/][D1]''s[/] [T1]the[/] [J2]old[/] [S1]man[/] [P1]in[/] [T1]the[/] [J2]black[/] [S2]coat[/]?'
+questions:
+- q: Кто открыл дверь?
+  a: It was the man from the window! — Мужчина из окна, сосед Лео.
+- q: Как говорит Лео и почему?
+  a: 'Could you speak quietly? My cat is old. — Тихо: у него старая кошка.'
+- q: Кем работает Лео?
+  a: I am a nurse. I work at the hospital at night. — Ночным медбратом в больнице.
+- q: Почему в понедельник он был дома?
+  a: But on Monday, I was sick, and I was at home. — Он болел.
+- q: Кого он увидел у почтового ящика?
+  a: He was old, and he had a black coat and a hat. — Старика в чёрном пальто и шляпе.
+- q: Откуда Лео знает Роуз?
+  a: She was my teacher. When I was a boy, I could not read. Rose taught me at her kitchen table. — Роуз научила его читать.
+phrase_hunt:
+- phrase: Could you speak quietly?
+  function: Вежливая просьба — Could you…?
+- phrase: I went down quickly.
+  function: Как я это сделал — quickly
+- phrase: I wanted to give it to you.
+  function: Отдать вещь — give it to you
+- phrase: When I was a boy, I could not read.
+  function: Что было в детстве — could not
+- phrase: Rose taught me at her kitchen table.
+  function: Кто научил — taught
+retell_words:
+- door
+- nurse
+- sick
+- black coat
+- teacher
+retell_steps:
+- 'Восстановите историю по пяти опорам: door, nurse, sick, black coat, teacher.'
+- 'Перескажите от лица Лео, 5–6 фраз: On Monday, I was sick. At nine, I saw…'
+creative_ru: 'Кто научил вас читать или писать? 3 фразы: When I was a child, … taught me…'

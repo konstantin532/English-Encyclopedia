@@ -148,6 +148,7 @@ units:
   class: D2
   forms:
   - helps
+  - helped
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
