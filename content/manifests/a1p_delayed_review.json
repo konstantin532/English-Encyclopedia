@@ -682,5 +682,119 @@
    1,
    "stranger."
   ]
+ ],
+ "a1p-some-any": [
+  [
+   "«У нас нет рыбы».",
+   "",
+   [
+    "We don't have some fish.",
+    "We don't have any fish.",
+    "We have any fish."
+   ],
+   1,
+   "С not — any."
+  ],
+  [
+   "Попросите хлеб.",
+   "",
+   [
+    "Can I have some bread?",
+    "Can I have any bread?",
+    "Can I have a bread?"
+   ],
+   0,
+   "Просьба — some."
+  ],
+  [
+   "Спросите, есть ли суп.",
+   "",
+   [
+    "Is there any soup?",
+    "Is there some soups?",
+    "There is any soup?"
+   ],
+   0,
+   "Вопрос — any."
+  ],
+  [
+   "Что нельзя сказать с a?",
+   "",
+   [
+    "rice",
+    "fork",
+    "plate"
+   ],
+   0,
+   "rice — неисчисляемое."
+  ],
+  [
+   "Попросите ещё воды.",
+   "",
+   [
+    "Can I have more water?",
+    "Can I have water more?",
+    "Can I have a more water?"
+   ],
+   0,
+   "more + water."
+  ]
+ ],
+ "a1p-restaurant-order": [
+  [
+   "Вежливо закажите пасту.",
+   "",
+   [
+    "I want pasta.",
+    "I would like the pasta, please.",
+    "Pasta me."
+   ],
+   1,
+   "I would like…"
+  ],
+  [
+   "Попросите счёт в США.",
+   "",
+   [
+    "Can we have the check, please?",
+    "Give us the bill.",
+    "The money, please."
+   ],
+   0,
+   "the check."
+  ],
+  [
+   "Еда очень вкусная.",
+   "",
+   [
+    "It's very delicious.",
+    "It's delicious.",
+    "It's deliciously."
+   ],
+   1,
+   "delicious уже значит «очень»."
+  ],
+  [
+   "Сдачи не надо.",
+   "",
+   [
+    "Keep the change.",
+    "Take the change.",
+    "Keep a change."
+   ],
+   0,
+   "Keep the change."
+  ],
+  [
+   "Официант приносит еду и говорит…",
+   "",
+   [
+    "Enjoy your meal!",
+    "Anything meal?",
+    "Ready your meal!"
+   ],
+   0,
+   "Enjoy your meal!"
+  ]
  ]
 }

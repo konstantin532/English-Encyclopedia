@@ -89,6 +89,11 @@ roles:
     name_en: Lost and found agent
     voice: am_onyx
     speed: 0.98
+  server:
+    name_ru: Официантка
+    name_en: Server
+    voice: af_nicole
+    speed: 1.0
 # Пул для эпизодических героев: водитель, продавщица, судья и т. д.
 extras: [am_eric, af_nova, af_sky]  # am_eric читает скороговорки; af_sarah — barista, af_jessica — clerk, am_liam — passerby, am_fenrir — locksmith, af_river — doctor, am_adam — postal, am_echo — busdriver
 # Фон сцены: громкость относительно голоса по уровням (дБ). На A1 фон едва слышен.
