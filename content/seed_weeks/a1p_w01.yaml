@@ -1,0 +1,91 @@
+# A1+, неделя 1 «Видеозвонок: что я делаю сейчас». Сфера connect, Present Continuous.
+level: A1+
+week: 1
+can_do_ru: 'Я смогу сказать, что я делаю прямо сейчас (I''m drinking coffee), спросить What are you doing? и поддержать короткий видеозвонок с близким человеком: Can you hear me? I miss you. Talk to you soon!'
+mission_ru: 'Позвоните или напишите близкому человеку и скажите по-английски три фразы о том, что вы делаете прямо сейчас: I''m… Закончите словами Talk to you soon!'
+chunks:
+- LX-00557
+- LX-00558
+- LX-00559
+- LX-00560
+- LX-00561
+- LX-00562
+- LX-00563
+story_beat:
+  intro_ru: Субботнее утро в кафе Мии. Тому по видео звонит мама.
+  outcome_ru: Мама Тома познакомилась с Мией и Анной. Анна пишет письмо маме в Россию и скучает по дому.
+  next_hook_ru: Вечером Анна сидит дома у окна. В квартире наверху, где в девять никогда никого нет, вдруг загорается свет.
+script:
+- speaker: linda
+  emotion: happy
+  text: '[O1]Hello[/], [S1]Tom[/]! [D7]Can[/] [T8]you[/] [D6]hear[/] [T8]me[/]?'
+  ru: Привет, Том! Ты меня слышишь?
+- speaker: tom
+  emotion: happy
+  text: '[O1]Hello[/], [S1]Mom[/]! [O4]Yes[/], [T8]I[/] [D7]can[/] [D6]hear[/] [T8]you[/]. [T8]I[/] [D1]am[/] [P1]in[/] [T1]the[/] [S4]cafe[/] [P3]on[/] [T1]the[/] [S4]corner[/].'
+  spoken: '[O1]Hello[/], [S1]Mom[/]! [O4]Yes[/], [T8]I[/] [D7]can[/] [D6]hear[/] [T8]you[/]. [T8]I[/][D1]''m[/] [P1]in[/] [T1]the[/] [S4]cafe[/] [P3]on[/] [T1]the[/] [S4]corner[/].'
+  ru: Привет, мама! Да, слышу. Я в кафе на углу.
+- speaker: linda
+  text: '[T9]What[/] [D1]are[/] [T8]you[/] [D2]doing[/] [A5]right[/] [A2]now[/]?'
+  ru: Что ты делаешь прямо сейчас?
+- speaker: tom
+  emotion: happy
+  text: '[T8]I[/] [D1]am[/] [D2]drinking[/] [S3]coffee[/] [C1]and[/] [D5]talking[/] [P2]to[/] [T8]you[/]! [S1]Mia[/] [D1]is[/] [D2]making[/] [T1]a[/] [S3]cake[/].'
+  spoken: '[T8]I[/][D1]''m[/] [D2]drinking[/] [S3]coffee[/] [C1]and[/] [D5]talking[/] [P2]to[/] [T8]you[/]! [S1]Mia[/] [D1]is[/] [D2]making[/] [T1]a[/] [S3]cake[/].'
+  ru: Пью кофе и разговариваю с тобой! Мия печёт торт.
+- speaker: mia
+  emotion: happy
+  text: '[O1]Hello[/]! [J3]Nice[/] [P2]to[/] [D2]meet[/] [T8]you[/]!'
+  ru: Здравствуйте! Приятно познакомиться!
+- speaker: linda
+  emotion: surprised
+  text: '[J3]Nice[/] [P2]to[/] [D2]meet[/] [T8]you[/] [A5]too[/]! [C1]And[/] [T9]who[/] [D1]is[/] [T2]that[/]? [D1]Is[/] [T9]someone[/] [D2]laughing[/]?'
+  spoken: '[J3]Nice[/] [P2]to[/] [D2]meet[/] [T8]you[/] [A5]too[/]! [C1]And[/] [T9]who[/][D1]''s[/] [T2]that[/]? [D1]Is[/] [T9]someone[/] [D2]laughing[/]?'
+  ru: Мне тоже приятно! А это кто? Кто-то смеётся?
+- speaker: tom
+  text: '[T2]That[/] [D1]is[/] [S1]Anna[/]. [T8]She[/] [D1]is[/] [D2]sitting[/] [P3]at[/] [T1]the[/] [S2]window[/]. [T8]She[/] [D1]is[/] [D5]writing[/] [T1]a[/] [S9]letter[/] [P2]to[/] [T3]her[/] [S1]mom[/] [P1]in[/] [S4]Russia[/].'
+  spoken: '[T2]That[/][D1]''s[/] [S1]Anna[/]. [T8]She[/][D1]''s[/] [D2]sitting[/] [P3]at[/] [T1]the[/] [S2]window[/]. [T8]She[/][D1]''s[/] [D5]writing[/] [T1]a[/] [S9]letter[/] [P2]to[/] [T3]her[/] [S1]mom[/] [P1]in[/] [S4]Russia[/].'
+  ru: Это Анна. Она сидит у окна. Она пишет письмо маме в Россию.
+- speaker: anna
+  emotion: happy
+  text: '[O1]Hello[/]! [O4]Yes[/], [T8]I[/] [D1]am[/] [D5]writing[/] [P2]to[/] [T3]my[/] [S1]mom[/]. [T8]I[/] [A5]really[/] [D3]miss[/] [T3]her[/].'
+  spoken: '[O1]Hello[/]! [O4]Yes[/], [T8]I[/][D1]''m[/] [D5]writing[/] [P2]to[/] [T3]my[/] [S1]mom[/]. [T8]I[/] [A5]really[/] [D3]miss[/] [T3]her[/].'
+  ru: Здравствуйте! Да, пишу маме. Я очень по ней скучаю.
+- speaker: linda
+  emotion: happy
+  text: '[T2]That[/] [D1]is[/] [A5]very[/] [J3]nice[/], [S1]Anna[/]. [S1]Moms[/] [D3]love[/] [S9]letters[/].'
+  spoken: '[T2]That[/][D1]''s[/] [A5]very[/] [J3]nice[/], [S1]Anna[/]. [S1]Moms[/] [D3]love[/] [S9]letters[/].'
+  ru: Это очень мило, Анна. Мамы любят письма.
+- speaker: linda
+  emotion: worried
+  text: '[S1]Tom[/], [D1]are[/] [T8]you[/] [D2]wearing[/] [T3]your[/] [J2]blue[/] [S2]jacket[/]? [T8]It[/] [D1]is[/] [J2]cold[/] [A2]today[/]!'
+  spoken: '[S1]Tom[/], [D1]are[/] [T8]you[/] [D2]wearing[/] [T3]your[/] [J2]blue[/] [S2]jacket[/]? [T8]It[/][D1]''s[/] [J2]cold[/] [A2]today[/]!'
+  ru: Том, ты в синей куртке? Сегодня холодно!
+- speaker: tom
+  emotion: tired
+  text: '[O4]Yes[/], [S1]Mom[/]. [T8]I[/] [D1]am[/] [D2]wearing[/] [T8]it[/] [A5]right[/] [A2]now[/].'
+  spoken: '[O4]Yes[/], [S1]Mom[/]. [T8]I[/][D1]''m[/] [D2]wearing[/] [T8]it[/] [A5]right[/] [A2]now[/].'
+  ru: Да, мама. Я в ней прямо сейчас.
+- speaker: linda
+  emotion: happy
+  text: '[O4]Okay[/]. [T8]I[/] [D3]miss[/] [T8]you[/], [S1]Tom[/]. [D3]Love[/] [T8]you[/]! [D5]Talk[/] [P2]to[/] [T8]you[/] [A2]soon[/]!'
+  ru: Ладно. Скучаю по тебе, Том. Люблю тебя! Скоро созвонимся!
+twister:
+  number: 15
+  series: contractions
+  text: '[T8]I[/][D1]''m[/] [D2]singing[/], [T8]you[/][D1]''re[/] [D2]dancing[/]. [T8]We[/][D1]''re[/] [D2]singing[/] [C1]and[/] [D2]dancing[/]! [D1]Are[/] [T8]you[/] [D2]singing[/]? [T8]I[/][D1]''m[/] [D2]dancing[/]!'
+  ru: Я пою, ты танцуешь. Мы поём и танцуем! Ты поёшь? А я танцую!
+  ipa: /aɪm ˈsɪŋɪŋ | jɚ ˈdænsɪŋ | wɪr ˈsɪŋɪŋ ən ˈdænsɪŋ | ɚ jə ˈsɪŋɪŋ | aɪm ˈdænsɪŋ/
+  focus_sounds:
+  - ng
+  - ae
+  source: original
+  goal_ru: Окончание -ing без «г» на конце и сокращения I'm, you're, we're в одном дыхании.
+  tip_ru: 'ng — звук через нос: задняя часть языка прижата к нёбу, «г» не произносим: «сИн-ин», а не «синг-инг». you''re — коротко «ер», we''re — «уир».'
+  warmup:
+  - '[D2]singing[/], [D2]dancing[/]'
+  - '[T8]I[/][D1]''m[/] [D2]singing[/], [T8]you[/][D1]''re[/] [D2]dancing[/].'
+  - '[T8]We[/][D1]''re[/] [D2]singing[/] [C1]and[/] [D2]dancing[/]!'
+  - '[T8]I[/][D1]''m[/] [D2]drinking[/] [S3]coffee[/].'
+  target_line: I am drinking coffee and talking to you!
+  own_ru: 'Скажите две фразы о себе прямо сейчас: I''m… и I''m… — каждую с -ing и сокращением.'

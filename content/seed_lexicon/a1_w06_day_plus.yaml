@@ -9,6 +9,7 @@ units:
   forms:
   - eats
   - ate
+  - eating
   cefr: A1
   verification_status: verified
   verification_source_url: https://dictionary.cambridge.org/us/dictionary/english/eat
@@ -28,6 +29,7 @@ units:
   forms:
   - cooks
   - cooked
+  - cooking
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -44,6 +46,7 @@ units:
   forms:
   - watches
   - watched
+  - watching
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -60,6 +63,7 @@ units:
   forms:
   - listens
   - listened
+  - listening
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -76,6 +80,7 @@ units:
   forms:
   - comes
   - came
+  - coming
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
@@ -92,6 +97,7 @@ units:
   forms:
   - takes
   - took
+  - taking
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

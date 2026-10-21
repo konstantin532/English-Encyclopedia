@@ -7,7 +7,7 @@ units:
     lemma: be
     meaning: "to exist, to have a quality, or to be in a place"
     class: D1
-    forms: [am, is, are, "'m", "'s", "'re", was, were]
+    forms: [am, is, are, "'m", "'s", "'re", was, were, being]
     grammar_features: [irregular, linking_verb]
     cefr: A1
     verification_status: partial

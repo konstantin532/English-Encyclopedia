@@ -48,6 +48,7 @@ units:
   forms:
   - gives
   - gave
+  - giving
   grammar_features:
   - irregular
   cefr: unverified

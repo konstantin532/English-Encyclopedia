@@ -1,0 +1,269 @@
+slug: a1p-present-continuous
+level: A1+
+week: 1
+order: 1
+focus: D
+minutes: 40
+title: 'Что я делаю сейчас: Present Continuous'
+summary: 'Как сказать, что происходит прямо сейчас: I am drinking coffee, she is writing a letter. Вопрос What are you doing? и чем «сейчас» отличается от «обычно».'
+units:
+- LX-00529
+- LX-00530
+- LX-00531
+- LX-00532
+- LX-00533
+- LX-00534
+- LX-00535
+- LX-00536
+- LX-00557
+- LX-00558
+- LX-00559
+sound_notes:
+- text: What are you doing right now?
+  ipa: /ˈwʌt ɚ jə ˈduɪŋ ˌraɪt ˈnaʊ/
+  note_ru: 'are в вопросе безударное — «эр», почти сливается с you: «уотэрйе-дуин»'
+- text: I am drinking coffee.
+  ipa: /aɪm ˈdrɪŋkɪŋ ˈkɔfi/
+  note_ru: 'в живой речи I am → I''m; -ing без «г» на конце: «дрИнкин»'
+- text: She is writing a letter.
+  ipa: /ʃiz ˈraɪtɪŋ ə ˈlɛtɚ/
+  note_ru: 'she is → she''s «шиз»; t между гласными в writing и letter — лёгкое «д»: «рАйдин», «лЕдэр»'
+contractions:
+- full: I am
+  short: I'm
+  ipa: /aɪm/
+  note_ru: I'm drinking coffee — так говорят почти всегда.
+- full: she is
+  short: she's
+  ipa: /ʃiz/
+  note_ru: She's writing a letter.
+- full: you are
+  short: you're
+  ipa: /jɚ/
+  note_ru: You're wearing a blue jacket.
+layers:
+- number: 1
+  body: 'Субботнее утро, кафе Мии. Тому звонит мама и первым делом спрашивает: «Что ты делаешь прямо сейчас?» Чтобы ответить, нужна одна новая конструкция — и вы сможете рассказывать о том, что происходит в эту самую минуту.
+
+
+    > [T9]What[/] [D1]are[/] [T8]you[/] [D2]doing[/] [A5]right[/] [A2]now[/]? — Что ты делаешь прямо сейчас?
+
+    > [T8]I[/] [D1]am[/] [D2]drinking[/] [S3]coffee[/] [C1]and[/] [D5]talking[/] [P2]to[/] [T8]you[/]! — Пью кофе и разговариваю с тобой!
+
+
+    **Present Continuous** — время «процесса»: действие идёт сейчас, на ваших глазах. По-русски для этого хватает «пью», в английском нужны два слова: **am / is / are** + глагол с **-ing**.
+
+    '
+- number: 2
+  body: '**Continuous** — «продолжающееся», от латинского *continuus*, «непрерывный». То же слово в «континент» — непрерывная земля.
+
+
+    Окончание **-ing** когда-то было отдельным словом: «в процессе». *He is making* буквально — «он есть в делании». Поэтому без **is** фраза рассыпается: процесс должен кому-то принадлежать.
+
+    '
+- number: 3
+  body: 'Схема:
+
+
+    > [T8]I[/] [D1]am[/] [D2]drinking[/] [S3]coffee[/]. — Я пью кофе (сейчас).
+
+    > [S1]Mia[/] [D1]is[/] [D2]making[/] [T1]a[/] [S3]cake[/]. — Мия печёт торт.
+
+    > [T8]We[/] [D1]are[/] [D2]cleaning[/] [T1]the[/] [S2]kitchen[/]. — Мы убираем кухню.
+
+
+    - **I** → am: I am drinking.
+
+    - **he / she / it**, одно имя → is: Mia is making, she is writing.
+
+    - **you / we / they** → are: you are wearing, we are cleaning.
+
+    - Глагол получает **-ing**: drink → drinking, make → making (e пропадает), sit → sitting (t удваивается).
+
+    '
+- number: 4
+  body: '**Почему нельзя просто «I drink coffee»?** Можно, но смысл другой. *I drink coffee* — «я (вообще) пью кофе», это привычка, Present Simple из A1. *I am drinking coffee* — «пью прямо сейчас». Сравните:
+
+
+    > [T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/]. — Я пью кофе в семь (каждый день).
+
+    > [T8]I[/] [D1]am[/] [D2]drinking[/] [S3]coffee[/] [A5]right[/] [A2]now[/]. — Я пью кофе прямо сейчас.
+
+
+    Слова-сигналы помогают: **now, right now, at the moment** — почти всегда Present Continuous. **always, every day, at seven** — Present Simple.
+
+
+    **Диагностика понимания:** мама звонит и спрашивает, что вы делаете. Вы как раз пишете письмо. Что сказать: *I write a letter* или *I am writing a letter*?
+
+
+    **Разбор:** *I am writing a letter* (или *I''m writing a letter*). Действие идёт сейчас — значит **am + -ing**. *I write letters* сказало бы о привычке.
+
+    '
+- number: 5
+  body: 'Так говорят американцы:
+
+
+    > [T2]That[/] [D1]is[/] [S1]Anna[/]. [T8]She[/] [D1]is[/] [D2]sitting[/] [P3]at[/] [T1]the[/] [S2]window[/]. — Это Анна. Она сидит у окна.
+
+    > [D1]Is[/] [T9]someone[/] [D2]laughing[/]? — Кто-то смеётся?
+
+
+    - В разговоре **am / is / are** почти всегда сокращают: I''m, she''s, you''re, we''re.
+
+    - Вопрос — **is / are** выходит вперёд: *Are you wearing your jacket?* *Is Mia making a cake?*
+
+    - Короткие ответы: *Yes, I am. / No, I''m not. Yes, she is. / No, she isn''t.*
+
+
+    Полезные действия этой недели: **make** — делать, готовить; **wash** — мыть; **clean** — убирать; **hold** — держать; **smile** — улыбаться; **laugh** — смеяться.
+
+    '
+- number: 6
+  body: 'Ловушки:
+
+
+    - «I drinking coffee» — потерян **am**. Правильно: I am drinking coffee.
+
+    - «She are making» — с she нужен **is**.
+
+    - «I am know», «I am like coffee» — с глаголами состояния (know, like, want) Present Continuous обычно не используют: *I know*, *I like coffee*.
+
+    - Написание: make → making (без e), sit → sitting, swim → swimming.
+
+    '
+- number: 7
+  body: 'Шесть заданий: узнать фразу о «сейчас», выбрать am / is / are, собрать вопрос, рассказать о себе в новой ситуации, отличить привычку от процесса и ответить коротко.
+
+
+    **Проверка маленького шага:** «сейчас» — это **am / is / are + -ing**. «Обычно, каждый день» — Present Simple без -ing. Если в фразе есть **right now**, ищите **-ing**.
+
+    '
+exercises:
+- order: 1
+  uid: EX-00164
+  kind: choice
+  stage: recognition
+  prompt_ru: Мама спрашивает, что Том делает прямо сейчас. Какая фраза о «сейчас»?
+  options:
+  - I am drinking coffee.
+  - I drink coffee.
+  - I drinking coffee.
+  answer: I am drinking coffee.
+  hint_ru: Сейчас — am + -ing.
+  explanation_ru: I am drinking coffee — действие идёт прямо сейчас. I drink coffee — привычка, а в «I drinking» потерян am.
+  units:
+  - LX-00529
+- order: 2
+  uid: EX-00165
+  kind: fill
+  stage: substitution
+  prompt_ru: Мия печёт торт прямо сейчас. Вставьте нужную форму be.
+  prompt_en: Mia ___ making a cake.
+  answer: is
+  hint_ru: Mia — она, она → is.
+  explanation_ru: Mia is making a cake. С одним человеком (he, she, Mia) — is.
+  units:
+  - LX-00529
+- order: 3
+  uid: EX-00166
+  kind: build
+  stage: production
+  prompt_ru: 'Соберите вопрос: «Что ты делаешь?»'
+  options:
+  - doing
+  - you
+  - What
+  - are
+  answer: What are you doing
+  hint_ru: What, потом are, потом you.
+  explanation_ru: What are you doing? — в вопросе are стоит перед you.
+  units:
+  - LX-00557
+- order: 4
+  uid: EX-00167
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Новая ситуация: вам звонит подруга, а вы как раз моете посуду. Скажите ей об этом.'
+  prompt_en: ___
+  answer: I am washing the dishes.
+  accepted:
+  - I'm washing the dishes.
+  - I am washing the dishes
+  - I'm washing the dishes
+  - I am washing the dishes right now.
+  - I'm washing the dishes right now.
+  hint_ru: I am + wash с -ing + the dishes.
+  explanation_ru: I am washing the dishes (I'm washing…). Посуда целиком — the dishes.
+  units:
+  - LX-00534
+  - LX-00556
+- order: 5
+  uid: EX-00168
+  kind: choice
+  stage: recognition
+  prompt_ru: Какая фраза о привычке (каждый день), а не о «сейчас»?
+  options:
+  - I get up at seven.
+  - I am getting up right now.
+  - She is sitting at the window.
+  answer: I get up at seven.
+  hint_ru: Привычка — без am и без -ing.
+  explanation_ru: I get up at seven — так бывает каждый день, это Present Simple. Две другие фразы — о том, что идёт сейчас.
+  units:
+  - LX-00558
+- order: 6
+  uid: EX-00169
+  kind: fill
+  stage: transfer
+  prompt_ru: 'Вас спрашивают: Are you wearing your jacket? Да, вы в куртке. Ответьте коротко.'
+  prompt_en: Yes, I ___.
+  answer: am
+  hint_ru: Короткий ответ повторяет am.
+  explanation_ru: Yes, I am. В коротком ответе am полный, без сокращения.
+  units:
+  - LX-00530
+practice:
+- order: 1
+  kind: translate
+  prompt_ru: Я пью кофе прямо сейчас.
+  answer: I am drinking coffee right now.
+  accepted:
+  - I'm drinking coffee right now.
+  - I am drinking coffee now.
+  - I'm drinking coffee now.
+  hint_ru: I am + drink + -ing.
+  explanation_ru: I am drinking coffee right now. «Сейчас» — am + -ing.
+  review_of: 1
+  units:
+  - LX-00558
+- order: 2
+  kind: translate
+  prompt_ru: Она пишет письмо.
+  answer: She is writing a letter.
+  accepted:
+  - She's writing a letter.
+  hint_ru: She is + write без e + -ing.
+  explanation_ru: 'She is writing a letter. write → writing: e пропадает.'
+  review_of: 2
+  units:
+  - LX-00529
+- order: 3
+  kind: translate
+  prompt_ru: Что ты делаешь?
+  answer: What are you doing?
+  hint_ru: What + are + you + doing?
+  explanation_ru: What are you doing? — главный вопрос недели.
+  review_of: 3
+  units:
+  - LX-00557
+- order: 4
+  kind: translate
+  prompt_ru: Мы убираем кухню.
+  answer: We are cleaning the kitchen.
+  accepted:
+  - We're cleaning the kitchen.
+  hint_ru: We are + clean + -ing.
+  explanation_ru: We are cleaning the kitchen. С we — are.
+  review_of: 4
+  units:
+  - LX-00535

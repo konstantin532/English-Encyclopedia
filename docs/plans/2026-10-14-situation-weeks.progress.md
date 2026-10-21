@@ -557,3 +557,10 @@ reviews and merges the PR; no automatic merge.
 - Hosted Chromium overcame the local launch limitation. Run 39329659244 passed all 12 before/after pairs at the four requested sizes, with **0 px** maximum selected-component geometry difference. All 14 chapter covers load at 390 px, no tested page overflows horizontally, no uncaught JS errors. No-JS homepage reading, word keyboard activation/Escape and full-motion discovery passed.
 - Fixed the mobile focus-scroll popup dismissal found by the first real run; corrected viewport/document coordinate handling in the geometry test. Source text, markers and user progress storage remain unchanged.
 - Actual before/after screenshots, source-derived art bible and limitations are in `docs/qa/living-atlas-browser-review.md`. No performance gain, Android verification, full audio verification or completed full-scale redesign is claimed.
+
+## 2026-10-21 — A1+: план 16 недель и неделя 1
+
+- В `weeks_plan.yaml` добавлен план A1+ на 16 недель (все 12 сфер; истории 6–11 на неделях 2, 6, 8, 10, 14, 16), нормы длины диалога A1+: 8–12 реплик, 70–130 слов.
+- -ing формы глаголов A1 добавлены в `forms` (Present Continuous — неделя 1 A1+): это формы, не новые единицы.
+- Неделя 1 «Видеозвонок: что я делаю сейчас»: 35 единиц (LX-00529–LX-00563, 7 готовых фраз), диалог 12 реплик / 126 слов, уроки `a1p-present-continuous` и `a1p-video-call-feelings` (EX-00164–EX-00175), скороговорка 15 серии contractions. Новая роль `linda` (мама Тома, голос af_kore).
+- Проверки: `tests/test_a1plus_weeks.py`; полный прогон — в CI PR.
