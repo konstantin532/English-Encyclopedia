@@ -69,7 +69,7 @@ script:
   kind: narration
   emotion: neutral
   music: morning
-  text: '[P1]In[/] [T1]the[/] [S7]morning[/], [T8]I[/] [D4]went[/] [P2]to[/] [T1]the[/] [S2]mailbox[/] [C1]and[/] [D2]opened[/] [T8]it[/]. [T9]There[/] [D1]was[/] [O4]no[/] [S9]letter[/] [C1]and[/] [O4]no[/] [S2]envelope[/].'
+  text: '[P1]In[/] [T1]the[/] [S7]morning[/], [T8]I[/] [D2]opened[/] [T1]the[/] [S2]mailbox[/]. [T9]There[/] [D1]was[/] [O4]no[/] [S9]letter[/] [C1]and[/] [O4]no[/] [S2]envelope[/].'
 - speaker: anna
   kind: narration
   emotion: neutral
