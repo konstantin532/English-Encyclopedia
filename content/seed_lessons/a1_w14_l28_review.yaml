@@ -150,7 +150,7 @@ exercises:
     prompt_ru: "Итоговая ситуация: незнакомец в автобусе спрашивает, откуда вы. Ответьте и добавьте, что говорите по-английски."
     prompt_en: "Where are you from? — ___"
     answer: "I am from Russia. I can speak English."
-    accepted: ["I'm from Russia. I can speak English.", "I am from Russia.", "I'm from Russia.", "I'm from Russia. I speak English.", "I am from Russia. I speak English.", "I'm from Russia. I can speak English"]
+    accepted: ["I'm from Russia. I can speak English.", "I'm from Russia. I speak English.", "I am from Russia. I speak English.", "I'm from Russia. I can speak English"]
     hint_ru: "I am from… + I can speak…"
     explanation_ru: "I'm from Russia. I can speak English. Две фразы — и вы уже рассказали о себе."
     units: [LX-00255]
