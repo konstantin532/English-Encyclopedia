@@ -796,5 +796,119 @@
    0,
    "Enjoy your meal!"
   ]
+ ],
+ "a1p-must-mustnt": [
+  [
+   "«Ты должен быть здесь в семь».",
+   "",
+   [
+    "You must be here at seven.",
+    "You must to be here at seven.",
+    "You musts be here at seven."
+   ],
+   0,
+   "must + глагол без to."
+  ],
+  [
+   "«Здесь нельзя курить».",
+   "",
+   [
+    "You don't must smoke here.",
+    "You mustn't smoke here.",
+    "You must no smoke here."
+   ],
+   1,
+   "mustn't + глагол."
+  ],
+  [
+   "Что значит You mustn't come?",
+   "",
+   [
+    "Приходить нельзя.",
+    "Можно не приходить.",
+    "Нужно прийти."
+   ],
+   0,
+   "mustn't — запрет."
+  ],
+  [
+   "«Она должна быть вежливой».",
+   "",
+   [
+    "She musts be polite.",
+    "She must be polite.",
+    "She must polite."
+   ],
+   1,
+   "У must нет -s."
+  ],
+  [
+   "Предупредите об опасности.",
+   "",
+   [
+    "Watch out!",
+    "Watch in!",
+    "Look out me!"
+   ],
+   0,
+   "Watch out!"
+  ]
+ ],
+ "a1p-first-day-work": [
+  [
+   "Поприветствуйте новичка.",
+   "",
+   [
+    "Welcome to the team!",
+    "Welcome in team!",
+    "Welcome team you!"
+   ],
+   0,
+   "Welcome to the team!"
+  ],
+  [
+   "Коротко: «Понял».",
+   "",
+   [
+    "I got.",
+    "Got it.",
+    "Get it."
+   ],
+   1,
+   "Got it."
+  ],
+  [
+   "Ответ на Thank you!",
+   "",
+   [
+    "No problem.",
+    "No problems me.",
+    "Not problem."
+   ],
+   0,
+   "No problem."
+  ],
+  [
+   "«Сделай перерыв».",
+   "",
+   [
+    "Take a break.",
+    "Make a break.",
+    "Do a break."
+   ],
+   0,
+   "Take a break."
+  ],
+  [
+   "«Можно вопрос?»",
+   "",
+   [
+    "Can I ask a question?",
+    "Can I question?",
+    "May question I?"
+   ],
+   0,
+   "Can I ask a question?"
+  ]
  ]
 }

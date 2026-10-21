@@ -1,0 +1,90 @@
+# A1+, неделя 8 «Первый рабочий день: правила». Сфера work, must / must not. История 8 выходит на этой неделе.
+level: A1+
+week: 8
+can_do_ru: 'Я смогу объяснить и понять правила на работе: You must be here at six. You mustn''t use your phone. — переспросить Can I ask a question? и ответить Got it. No problem.'
+mission_ru: 'Напишите по-английски три правила для своей работы, учёбы или дома: два с must и одно с must not. Прочитайте их вслух, как будто объясняете новичку.'
+chunks:
+- LX-00795
+- LX-00796
+- LX-00797
+- LX-00798
+- LX-00799
+- LX-00800
+- LX-00801
+story_beat:
+  intro_ru: Вторник, шесть утра. В кафе Мии первый рабочий день у нового помощника Джейка. А вчера сама Мия опоздала — история 8.
+  outcome_ru: 'Мия объясняет правила: приходить к шести, мыть руки, не сидеть в телефоне у стойки, быть вежливым. Джейк поскальзывается на мокром полу и разбивает чашку, но Мия не сердится.'
+  next_hook_ru: А у Анны и Тома в квартире сломался кран — пора звонить хозяину дома. Неделя 9.
+script:
+- speaker: mia
+  emotion: happy
+  text: '[J3]Good[/] [S7]morning[/], [S1]Jake[/]! [O1]Welcome[/] [P2]to[/] [T1]the[/] [S9]team[/]! [A3]Here[/] [D1]is[/] [T3]your[/] [S2]apron[/].'
+  spoken: '[J3]Good[/] [S7]morning[/], [S1]Jake[/]! [O1]Welcome[/] [P2]to[/] [T1]the[/] [S9]team[/]! [A3]Here[/][D1]''s[/] [T3]your[/] [S2]apron[/].'
+  ru: Доброе утро, Джейк! Добро пожаловать в команду! Вот твой фартук.
+- speaker: jake
+  emotion: worried
+  text: '[O2]Thank[/] [T8]you[/]! [T8]It[/] [D1]is[/] [T3]my[/] [N2]first[/] [S7]day[/]. [D7]Can[/] [T8]I[/] [D5]ask[/] [T1]a[/] [S9]question[/]? [T9]What[/] [D1]are[/] [T1]the[/] [S9]rules[/]?'
+  spoken: '[O2]Thank[/] [T8]you[/]! [T8]It[/][D1]''s[/] [T3]my[/] [N2]first[/] [S7]day[/]. [D7]Can[/] [T8]I[/] [D5]ask[/] [T1]a[/] [S9]question[/]? [T9]What[/] [D1]are[/] [T1]the[/] [S9]rules[/]?'
+  ru: Спасибо! У меня первый день. Можно вопрос? Какие тут правила?
+- speaker: mia
+  text: '[T1]The[/] [S9]rules[/] [D1]are[/] [J3]easy[/]. [T8]You[/] [D7]must[/] [D1]be[/] [A3]here[/] [P3]at[/] [N3]six[/]. [T8]You[/] [D7]must[/] [X1]not[/] [D1]be[/] [A2]late[/].'
+  spoken: '[T1]The[/] [S9]rules[/] [D1]are[/] [J3]easy[/]. [T8]You[/] [D7]must[/] [D1]be[/] [A3]here[/] [P3]at[/] [N3]six[/]. [T8]You[/] [D7]must[/][X1]n''t[/] [D1]be[/] [A2]late[/].'
+  ru: Правила простые. Ты должен быть здесь в шесть. Опаздывать нельзя.
+- speaker: jake
+  emotion: surprised
+  text: '[P3]At[/] [N3]six[/]? [O4]Okay[/].'
+  ru: В шесть? Хорошо.
+- speaker: mia
+  emotion: sad
+  text: '[A2]Yesterday[/] [T8]I[/] [D1]was[/] [A2]late[/], [C1]and[/] [T1]the[/] [S9]boss[/] [D1]was[/] [X1]not[/] [J4]happy[/]! [A2]Now[/], [T8]you[/] [D7]must[/] [D2]wash[/] [T3]your[/] [S5]hands[/].'
+  spoken: '[A2]Yesterday[/] [T8]I[/] [D1]was[/] [A2]late[/], [C1]and[/] [T1]the[/] [S9]boss[/] [D1]was[/][X1]n''t[/] [J4]happy[/]! [A2]Now[/], [T8]you[/] [D7]must[/] [D2]wash[/] [T3]your[/] [S5]hands[/].'
+  ru: Вчера я опоздала, и начальник был очень недоволен! Так, нужно вымыть руки.
+- speaker: jake
+  text: '[F7]Got[/] [T8]it[/]. [D7]Can[/] [T8]I[/] [D2]use[/] [T3]my[/] [S2]phone[/] [P3]at[/] [S9]work[/]?'
+  ru: Понял. А телефоном на работе можно пользоваться?
+- speaker: mia
+  text: '[O4]No[/], [T8]you[/] [D7]must[/] [X1]not[/] [D2]use[/] [T3]your[/] [S2]phone[/] [P1]at[/] [T1]the[/] [S2]counter[/]. [C1]And[/] [T8]you[/] [D7]must[/] [D1]be[/] [J6]polite[/] [P2]to[/] [S1]customers[/].'
+  spoken: '[O4]No[/], [T8]you[/] [D7]must[/][X1]n''t[/] [D2]use[/] [T3]your[/] [S2]phone[/] [P1]at[/] [T1]the[/] [S2]counter[/]. [C1]And[/] [T8]you[/] [D7]must[/] [D1]be[/] [J6]polite[/] [P2]to[/] [S1]customers[/].'
+  ru: Нет, у стойки телефон нельзя. И с клиентами надо быть вежливым.
+- speaker: jake
+  emotion: happy
+  text: '[O4]No[/] [S10]problem[/]. [T8]I[/] [D1]am[/] [A1]always[/] [J6]polite[/].'
+  spoken: '[O4]No[/] [S10]problem[/]. [T8]I[/][D1]''m[/] [A1]always[/] [J6]polite[/].'
+  ru: Без проблем. Я всегда вежливый.
+- speaker: mia
+  emotion: worried
+  text: '[D6]Watch[/] [X3]out[/]! [T1]The[/] [S2]floor[/] [D1]is[/] [J2]wet[/]!'
+  ru: Осторожно! Пол мокрый!
+- speaker: jake
+  emotion: sad
+  text: '[O3]Oh[/] [O3]no[/]! [T8]I[/] [D2]dropped[/] [T1]a[/] [S2]cup[/]. [T8]I[/] [D2]broke[/] [T8]it[/]!'
+  ru: О нет! Я уронил чашку. Разбил!
+- speaker: mia
+  emotion: happy
+  text: '[D1]Do[/] [X1]not[/] [D3]worry[/]. [T8]It[/] [D2]happens[/]. [D2]Take[/] [T1]a[/] [S7]break[/].'
+  spoken: '[D1]Do[/][X1]n''t[/] [D3]worry[/]. [T8]It[/] [D2]happens[/]. [D2]Take[/] [T1]a[/] [S7]break[/].'
+  ru: Не переживай. Бывает. Передохни.
+- speaker: jake
+  emotion: happy
+  text: '[O2]Thanks[/], [S1]Mia[/]. [T8]You[/] [D1]are[/] [T1]a[/] [J3]good[/] [S9]teacher[/].'
+  spoken: '[O2]Thanks[/], [S1]Mia[/]. [T8]You[/][D1]''re[/] [T1]a[/] [J3]good[/] [S9]teacher[/].'
+  ru: Спасибо, Мия. Ты хорошая учительница.
+twister:
+  number: 22
+  series: contractions
+  text: '[T8]You[/] [D7]must[/][X1]n''t[/] [D2]smoke[/], [T8]you[/] [D7]must[/][X1]n''t[/] [D5]chat[/], [T8]you[/] [D7]must[/][X1]n''t[/] [D2]drop[/] [T1]the[/] [S2]cups[/]!'
+  ru: Курить нельзя, болтать нельзя, ронять чашки нельзя!
+  ipa: /ju ˈmʌsənt ˈsmoʊk | ju ˈmʌsənt ˈtʃæt | ju ˈmʌsənt ˈdrɑp ðə ˈkʌps/
+  focus_sounds:
+  - ʌ
+  - s
+  source: original
+  goal_ru: Сокращение mustn't и звук ʌ в must, cups.
+  tip_ru: 'В mustn''t первая t не произносится: «мАснт». Гласная — короткое открытое «а», как в cup: must, cups.'
+  warmup:
+  - '[D7]must[/], [D7]must[/][X1]n''t[/]'
+  - '[T8]You[/] [D7]must[/][X1]n''t[/] [D2]smoke[/].'
+  - '[T8]You[/] [D7]must[/][X1]n''t[/] [D5]chat[/].'
+  - '[D1]Do[/][X1]n''t[/] [D2]drop[/] [T1]the[/] [S2]cups[/]!'
+  target_line: You must be here at six.
+  own_ru: 'Скажите одно правило, которое вы сами соблюдаете, и одно, которое нарушаете: I must… I mustn''t…'

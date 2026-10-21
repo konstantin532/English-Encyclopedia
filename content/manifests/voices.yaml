@@ -94,6 +94,11 @@ roles:
     name_en: Server
     voice: af_nova
     speed: 1.0
+  jake:
+    name_ru: Джейк, новый помощник Мии
+    name_en: Jake, Mia's new helper
+    voice: am_santa
+    speed: 1.02
 # Пул для эпизодических героев: водитель, продавщица, судья и т. д.
 extras: [am_eric]  # am_eric читает скороговорки; af_sarah — barista, af_jessica — clerk, am_liam — passerby, am_fenrir — locksmith, af_river — doctor, am_adam — postal, am_echo — busdriver
 # Фон сцены: громкость относительно голоса по уровням (дБ). На A1 фон едва слышен.
