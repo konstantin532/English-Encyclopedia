@@ -51,8 +51,8 @@ test("all fourteen original SVG covers exist and catalogue/chapter reference the
   assert.match(view, /a1_atlas_cover/);
   assert.match(view, /static\(f"img\/studio\/a1-week-/);
   assert.match(hero, /week-hero-atlas/);
-  assert.match(hero, /cafe-morning\.webp/);
-  assert.match(catalog, /week-card-art/);
+  assert.match(view, /img\/atlas\/\{key\}-1536\.webp/);
+  assert.match(catalog, /atlas_week_card\.html/);
 });
 
 test("speaker portraits reuse existing dialogue badges and keep labels accessible", () => {

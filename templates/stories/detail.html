@@ -8,6 +8,7 @@
     <p class="crumbs"><a href="{% url 'stories:map' %}">Истории</a> / {{ story.level.code }}, неделя {{ story.week.number }} / история {{ story.number }}</p>
     <h1 lang="en">{{ story.title }}</h1>
     <p>{{ story.hook_ru }}</p>
+    {% if cover %}<img class="atlas-story-cover" src="{{ cover.src }}" alt="{{ cover.alt }}" width="1536" height="864" fetchpriority="high" decoding="async">{% endif %}
   </header>
   <div class="lesson-grid">
     <article class="prose">
@@ -15,7 +16,7 @@
         <h2 id="st1"><span class="layer-num">1</span>Угадайте сюжет</h2>
         <p>{{ story.prediction_ru }}</p>
         <ol>{% for cue in story.visual_cues %}<li>{{ cue }}</li>{% endfor %}</ol>
-        <p class="drill-hint">Иллюстраций пока нет: вместо них описания картинок.</p>
+        {% if not cover %}<p class="drill-hint">Иллюстраций пока нет: вместо них описания картинок.</p>{% endif %}
       </section>
 
       <section class="layer" id="step-2" aria-labelledby="st2">

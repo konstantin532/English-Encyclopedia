@@ -6,6 +6,7 @@ from django.conf import settings
 from django.db.models import Prefetch
 
 from django.shortcuts import get_object_or_404, render
+from django.templatetags.static import static
 from django.views.decorators.csrf import ensure_csrf_cookie
 
 from apps.curriculum.models import Level
@@ -33,12 +34,28 @@ def course_map(request):
     return render(request, "stories/map.html", {"levels": levels})
 
 
+# Обложки историй «Атласа живого языка»: только для тех, где картинка уже есть.
+STORY_COVERS = {
+    1: "Анна и Том открывают коробку, а в ней сидит рыжий кот",
+    2: "Анна и Мия в кафе на углу, рыжий кот сидит на стуле",
+    3: "Том пробует старинный ключ у почтового ящика",
+    4: "Анна и Том читают письмо без имени, рядом кот",
+    5: "Анна и Том нашли за шкафом большую семейную фотографию",
+}
+
+
+def story_cover(number):
+    alt = STORY_COVERS.get(number)
+    return {"src": static(f"img/atlas/s{number:02d}-1536.webp"), "alt": alt} if alt else None
+
+
 def story_detail(request, number):
     story = get_object_or_404(Story.objects.select_related("level", "week"), number=number, is_published=True)
     paragraphs = [p for p in story.body.split("\n\n") if p.strip()]
     lines, speakers = build_lines(story.script)
     return render(request, "stories/detail.html", {
         "story": story,
+        "cover": story_cover(story.number),
         "paragraphs": paragraphs,
         "lines": lines,
         "speakers": speakers,
