@@ -134,6 +134,44 @@ def audit_russian_transcription(r: AuditReport, units) -> None:
                               f"{' '.join(sorted(bad))}. Добавьте их в таблицу или впишите ручной вариант.")
 
 
+# Осознанно новое значение уже известного слова (например, right «правильный» после right «направо»).
+NEW_SENSE = "new_sense"
+
+
+def audit_duplicate_words(r: AuditReport, units) -> None:
+    """Новое слово не должно повторять уже изученное: ни как отдельное слово, ни как его форму.
+
+    went — форма go, cats — форма cat: это не новые единицы, а формы в поле forms.
+    teacher и teach — разные слова, такое правило их не трогает.
+    Второе значение того же слова допустимо только явно: grammar_features: [new_sense].
+    """
+    def rank(u):
+        return (u.internal_level.order, u.week.number if u.week_id else 0, u.uid)
+
+    words = sorted((u for u in units if u.unit_type != UnitType.PHRASE and " " not in u.lemma.strip()), key=rank)
+    lemmas, forms = {}, {}
+    for u in words:
+        lemma = u.lemma.strip().lower()
+        new_sense = NEW_SENSE in (u.grammar_features or [])
+        if lemma in lemmas and not new_sense:
+            first = lemmas[lemma]
+            r.errors.append(f"{u.uid} {u.lemma}: слово уже есть в словаре ({first.uid}, {first.internal_level.code}). "
+                            f"Если это другое значение, добавьте grammar_features: [{NEW_SENSE}].")
+        elif lemma in forms and forms[lemma].uid != u.uid:
+            base = forms[lemma]
+            r.errors.append(f"{u.uid} {u.lemma}: это форма слова {base.lemma} ({base.uid}), а не новое слово. "
+                            f"Добавьте её в forms у {base.uid} и объясните в уроке.")
+        lemmas.setdefault(lemma, u)
+        for form in u.forms or []:
+            form = str(form).strip().lower()
+            if not form or "'" in form or form == lemma:
+                continue
+            owner = lemmas.get(form)
+            if owner is not None and owner.uid != u.uid and NEW_SENSE not in (owner.grammar_features or []):
+                r.errors.append(f"{u.uid} {u.lemma}: форма {form} совпадает с отдельным словом {owner.uid}.")
+            forms.setdefault(form, u)
+
+
 def run_audit() -> AuditReport:
     r = AuditReport()
     r.errors += validate_plan()
@@ -158,6 +196,7 @@ def run_audit() -> AuditReport:
             r.errors.append(f"{u.uid}: уровень {u.cefr} указан без подтверждения источником.")
 
     audit_russian_transcription(r, units)
+    audit_duplicate_words(r, units)
 
     for layer in LessonLayer.objects.select_related("lesson"):
         audit_contractions(r, f"{layer.lesson.slug}, слой {layer.number}", layer.body)
