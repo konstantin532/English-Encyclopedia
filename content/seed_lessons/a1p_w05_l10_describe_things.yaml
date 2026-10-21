@@ -147,8 +147,6 @@ exercises:
   prompt_ru: Спросите, какого цвета рюкзак.
   prompt_en: What ___ is it?
   answer: color
-  accepted:
-  - colour
   hint_ru: Цвет — color.
   explanation_ru: What color is it? — без предлога, в отличие от русского «какого цвета».
   units:
