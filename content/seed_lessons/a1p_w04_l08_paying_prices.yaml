@@ -135,7 +135,7 @@ exercises:
   options:
   - How much was it?
   - How much it was?
-  - How many was it?
+  - How much were it?
   answer: How much was it?
   hint_ru: Деньги — much, was впереди.
   explanation_ru: How much was it? О деньгах — much, в вопросе was перед it.
@@ -203,8 +203,6 @@ exercises:
   prompt_ru: 'Расскажите о себе: «Синий — мой любимый цвет».'
   prompt_en: Blue is my ___ color.
   answer: favorite
-  accepted:
-  - favourite
   hint_ru: Любимый — favorite.
   explanation_ru: Blue is my favorite color. Американское написание — favorite.
   units:
