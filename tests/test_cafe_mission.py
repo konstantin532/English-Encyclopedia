@@ -105,6 +105,37 @@ class CafeInformationGapTests(TestCase):
         self.assertIsNone(parse_order("I'd like one tea and one coffee"))
         self.assertEqual(parse_order("Could I have one tea, please?"), (1, "tea"))
 
+    def test_order_requires_complete_positive_request_and_number_agreement(self):
+        # A substring mentioning one tea is not proof the student ordered it.
+        for phrase in (
+            "I'd like one tea, but cancel that order.",
+            "I'd like one tea? No, forget it.",
+            "I'd like one teas, please.",
+            "I'd like tea, please.",
+            "Can I have one coffee and a dog, please?",
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertIsNone(parse_order(phrase))
+
+        for phrase, expected in (
+            ("I'd like a cup of tea, please.", (1, "tea")),
+            ("Could I have one coffee, please?", (1, "coffee")),
+            ("One water, please.", (1, "water")),
+            ("I'd like two teas, thanks.", (2, "tea")),
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertEqual(parse_order(phrase), expected)
+
+        # End-to-end: a cancelled order must not unlock the next café stage.
+        self.assertEqual(
+            self.send("I'd like one tea, but cancel that order.").status_code, 302
+        )
+        self.assertEqual(self.state()["phase"], "order")
+        self.assertEqual(self.state()["observed"], [])
+        self.assertFalse(IndependentAttempt.objects.exists())
+        self.assertEqual(self.send("I'd like a cup of tea, please.").status_code, 302)
+        self.assertEqual(self.state()["phase"], "ask")
+
     def test_quoted_or_negated_options_question_does_not_advance(self):
         self.send("I'd like one tea, please.")
         self.assertEqual(self.state()["phase"], "ask")
