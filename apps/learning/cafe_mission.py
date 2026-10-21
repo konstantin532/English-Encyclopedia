@@ -42,30 +42,30 @@ MAX_HINTS = 3
 
 
 def parse_order(value):
-    """Return a narrow, unambiguous request (quantity, drink), or None.
+    """Recognise a complete positive request for a specified number of drinks.
 
-    The intent must be an actual positive request, not merely a drink mention.
-    Unrecognised expressions are referred to retry/human review, never 'wrong'.
+    A drink mention in a longer statement (including a cancelled order) is
+    not reliable evidence of the order-one skill. Unknown natural phrasing is
+    left ungraded rather than labelled grammatically incorrect.
     """
     text = re.sub(r"[?!.,;:]+", " ", value.casefold().replace("’", "'"))
-    text = re.sub(r"\s+", " ", text).strip()
-    positive = re.match(
-        r"^(?:i(?: would|'d) like|(?:can|could|may) i have|"
-        r"please (?:can|could) i have|(?:one|two|three|a) )\b", text
+    text = " ".join(text.split())
+    match = re.fullmatch(
+        r"(?:i(?: would|'d) like |(?:can|could|may) i have |"
+        r"please (?:can|could) i have )?"
+        r"(?P<quantity>one|two|three|a|an) "
+        r"(?:(?:cup|glass) of )?"
+        r"(?P<drink>tea|coffee|water)(?P<plural>s?)"
+        r"(?: please| thanks| thank you)?",
+        text,
     )
-    if not positive or re.search(r"\b(?:don't|not|never)\b", text):
+    if match is None:
         return None
-    drinks = re.findall(r"\b(tea|coffee|water)s?\b", text)
-    if len(drinks) != 1:
+    quantity = {"one": 1, "a": 1, "an": 1, "two": 2, "three": 3}[match["quantity"]]
+    # "one teas" is not evidence of a correctly formed single-portion order.
+    if quantity == 1 and match["plural"]:
         return None
-    quantities = re.findall(r"\b(one|two|three|a|an)\b", text)
-    if len(quantities) > 1:
-        return None
-    qty = {"one": 1, "a": 1, "an": 1, "two": 2, "three": 3}.get(
-        quantities[0], 1
-    ) if quantities else 1
-    return qty, drinks[0]
-
+    return quantity, match["drink"]
 
 def asks_for_options(value):
     # Matching a question *inside* a refusal or quoted sentence does not
