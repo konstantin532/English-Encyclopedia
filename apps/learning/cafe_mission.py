@@ -80,7 +80,12 @@ def corrects_one(value, drink):
     text = value.casefold().replace("’", "'")
     return bool(re.search(r"\b(?:no|sorry)\b", text)
                 and re.search(r"\b(?:one|a)\s+" + re.escape(drink) + r"\b", text)
-                and not re.search(r"\b(?:two|three|yes)\b", text))
+                # A negated request is not evidence of correcting an order.
+                # Keep the recognizer conservative: ambiguous replies get a retry.
+                and not re.search(
+                    r"\b(?:two|three|yes|not|never|don't|doesn't|didn't|can't|cannot|won't|wouldn't)\b",
+                    text,
+                ))
 
 
 def start_state(user_id):
