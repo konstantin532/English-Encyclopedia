@@ -1,14 +1,49 @@
 {% extends "base.html" %}
-{% load ru %}
+{% load ru static %}
 {% block content %}
-<div class="wrap">
-  <header class="studio-home-heading"><div><h1>Английский становится понятным.</h1><p>Маленькие открытия. Большие перемены.</p></div><span>АНГЛИЙСКИЙ · ЖИВОЙ АТЛАС</span></header>
-  <section class="studio-home-hero" aria-labelledby="studio-hero-title">
-    <div class="studio-hero-copy"><span class="studio-eyebrow">THE LIVING LANGUAGE ATLAS</span><h2 id="studio-hero-title">У каждого слова<br>есть <em>своё место.</em></h2><p>Разберите язык на понятные части. Увидьте, как слова соединяются в мысли, а правила — в живую речь.</p><div class="hero-actions">{% if user.is_authenticated %}<a class="btn btn-primary" href="{% url 'learning:dashboard' %}">Продолжить обучение <span aria-hidden="true">→</span></a>{% elif first_lesson %}<a class="btn btn-primary" href="{% url 'lessons:detail' first_lesson.slug %}">Начать первый урок <span aria-hidden="true">→</span></a><span>{{ first_lesson.level.code }} · {{ first_lesson.minutes }} минут</span>{% else %}<a class="btn btn-primary" href="{% url 'curriculum:level' 'a1' %}">Посмотреть курс →</a>{% endif %}</div></div>
-    <div class="studio-hero-art"><div class="studio-phrase-paper" data-language-atlas><span>ЯЗЫК В ОДНОЙ ФРАЗЕ</span><p class="studio-phrase" lang="en"><span class="mk" data-cat="T" data-cls="8" data-label="Личное местоимение">I</span><span class="mk" data-cat="D" data-cls="1" data-label="Глагол be">'m</span> <span class="mk" data-cat="S" data-cls="2" data-label="Дом и предметы">home</span>.</p><p id="atlas-grammar-note" data-atlas-explanation aria-live="polite">Я дома. Два слова — целая мысль.</p><div class="studio-phrase-roles" aria-label="Откройте роли слов"><span data-atlas-role="subject">кто</span><span data-atlas-role="be">связь</span><span data-atlas-role="place">где</span></div></div></div>
+<div class="wrap atlas-home">
+  <section class="studio-home-hero atlas-hero" aria-labelledby="studio-hero-title">
+    <picture class="atlas-hero-art">
+      <source media="(max-width: 720px)" srcset="{% static 'img/atlas/hero-cafe-760.webp' %}">
+      <img src="{% static 'img/atlas/hero-cafe-1400.webp' %}" alt="Субботнее утро в кафе: Анна с книгой, Том с гитарой, Мия и рыжий кот Box" width="1400" height="913" fetchpriority="high" decoding="async">
+    </picture>
+    <div class="studio-hero-copy atlas-hero-copy">
+      <span class="studio-eyebrow">THE LIVING LANGUAGE ATLAS</span>
+      <h1 id="studio-hero-title">English <br>Encyclopedia</h1>
+      <p class="atlas-hero-sub">Атлас живого английского языка</p>
+      <p class="atlas-hero-lede">Истории с героями, живые диалоги и уроки, где видно, как устроена каждая фраза. Американский английский — с объяснениями на русском.</p>
+      <div class="hero-actions">{% if user.is_authenticated %}<a class="btn btn-primary" href="{% url 'learning:dashboard' %}">Продолжить обучение <span aria-hidden="true">→</span></a>{% elif first_lesson %}<a class="btn btn-primary" href="{% url 'lessons:detail' first_lesson.slug %}">Начать первый урок <span aria-hidden="true">→</span></a><span>{{ first_lesson.level.code }} · {{ first_lesson.minutes }} минут</span>{% else %}<a class="btn btn-primary" href="{% url 'curriculum:level' 'a1' %}">Посмотреть курс →</a>{% endif %}</div>
+      <ul class="atlas-hero-features">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v13H5zM9 9h6M9 13h6"/></svg>Живые истории</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H9l-5 4zM8 9h8"/></svg>Реальные диалоги</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17h7M13 17h7M4 21h16M4 13c3-6 13-6 16 0"/></svg>Каждое слово на своём месте</li>
+      </ul>
+    </div>
+    <div class="studio-hero-art atlas-phrase-holder"><div class="studio-phrase-paper atlas-phrase-card" data-language-atlas><span>ГЛАВНАЯ ФРАЗА</span><p class="studio-phrase" lang="en"><span class="mk" data-cat="T" data-cls="8" data-label="Личное местоимение">I</span><span class="mk" data-cat="D" data-cls="1" data-label="Глагол be">'m</span> <span class="mk" data-cat="S" data-cls="2" data-label="Дом и предметы">home</span>.</p><div class="studio-phrase-roles" aria-label="Откройте роли слов"><span data-atlas-role="subject">кто</span><span data-atlas-role="be">связь</span><span data-atlas-role="place">где</span></div><p id="atlas-grammar-note" data-atlas-explanation aria-live="polite">Я дома. Два слова — целая мысль.</p></div></div>
   </section>
-  <div class="studio-home-lower"><div><div class="studio-section-title"><h2>С чего начинается английский</h2><a href="{% url 'curriculum:level' 'a1' %}">Весь курс ↗</a></div><div class="studio-lessons">{% for lesson in lessons %}<div class="studio-lesson-card"><span class="visually-hidden">Урок</span><span class="studio-lesson-no">{{ lesson.order|stringformat:'02d' }}</span><div><h3><a href="{% url 'lessons:detail' lesson.slug %}">{{ lesson.title }}</a></h3><p>{{ lesson.level.code }}{% if lesson.week %} · <a href="{% url 'curriculum:week' lesson.level.slug lesson.week.number %}">Неделя {{ lesson.week.number }}</a>{% endif %} · {{ lesson.minutes }} минут · 7 слоёв</p></div><span class="studio-card-arrow" aria-hidden="true">↗</span></div>{% empty %}<p>Уроки готовятся. Пока можно познакомиться с устройством курса.</p>{% endfor %}</div></div><aside class="studio-home-notes">{% if spotlight_unit %}<div class="studio-note"><span class="studio-eyebrow">СЛОВО ДЛЯ ОТКРЫТИЯ</span><h3 lang="en"><span class="mk" data-cat="{{ spotlight_unit.semantic_class.category.code }}" data-cls="{{ spotlight_unit.semantic_class.number }}">{{ spotlight_unit.lemma }}</span></h3><span class="ipa">{{ spotlight_unit.ipa_us }}</span>{{ spotlight_unit|ru_tr }}<p>{{ spotlight_unit.translation_ru }}</p><a href="{% url 'lexicon:detail' spotlight_unit.uid %}">Посмотреть ближе ↗</a></div>{% endif %}<div class="studio-note studio-note-warm"><span class="studio-eyebrow">МАЛЕНЬКОЕ ОТКРЫТИЕ</span><blockquote>В русском «есть» часто прячется.<br>В английском — нет.</blockquote><p>Вот почему мы говорим<br><span lang="en">I am at home.</span></p></div></aside></div>
-  <div class="studio-library-stats" aria-label="Готовый контент"><div><strong>{{ units_ready }}</strong><span>единиц в словаре</span></div><div><strong>{{ lessons_ready }}</strong><span>готовых уроков</span></div><div><strong>{{ stories_ready }}</strong><span>историй</span></div><div><strong>{{ poems_ready }}</strong><span>стихотворений</span></div></div>
+
+  {% if a1_weeks %}
+  <section class="atlas-section" aria-labelledby="atlas-weeks-title">
+    <div class="atlas-section-head"><h2 id="atlas-weeks-title">Начните с A1</h2><p>Каждая неделя — одна жизненная ситуация, диалог, уроки и история.</p><a href="{% url 'curriculum:level' 'a1' %}">Все 14 недель <span aria-hidden="true">→</span></a></div>
+    <div class="atlas-week-grid">{% for week in a1_weeks %}{% include "components/atlas_week_card.html" with level_slug="a1" %}{% endfor %}</div>
+  </section>
+  {% endif %}
+
+  <section class="atlas-section atlas-cast" aria-labelledby="atlas-cast-title">
+    <div class="atlas-section-head"><h2 id="atlas-cast-title">Герои вашей истории</h2><p>С ними вы проходите весь курс: от первого «Hi!» до тайны старого дома.</p></div>
+    <ul class="atlas-cast-list">{% for c in characters %}<li><img src="{{ c.img }}" alt="" width="480" height="480" loading="lazy" decoding="async"><div><h3 lang="en">{{ c.name }}</h3><p>{{ c.about }}</p></div></li>{% endfor %}</ul>
+  </section>
+
+  <section class="atlas-band" aria-label="Что уже готово">
+    <img class="atlas-band-note" src="{% static 'img/atlas/note-new-story.webp' %}" alt="Записка: A new place. A new neighbor. A new story begins." width="420" height="525" loading="lazy" decoding="async">
+    <div class="atlas-band-copy"><h2>Больше, чем просто английский.</h2><p>Это истории. Люди. Настоящая жизнь. И каждое слово объяснено по-русски.</p></div>
+    <dl class="atlas-band-stats studio-library-stats">
+      <div><dt>единиц в словаре</dt><dd>{{ units_ready }}</dd></div>
+      <div><dt>готовых уроков</dt><dd>{{ lessons_ready }}</dd></div>
+      <div><dt>историй</dt><dd>{{ stories_ready }}</dd></div>
+      <div><dt>стихотворений</dt><dd>{{ poems_ready }}</dd></div>
+    </dl>
+  </section>
 </div>
 <section class="section studio-specimen-section">
   <div class="wrap">

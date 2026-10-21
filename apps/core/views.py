@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.templatetags.static import static
 from django.db import connections, DatabaseError
 from django.http import JsonResponse
 from django.views.decorators.cache import never_cache
@@ -48,7 +49,22 @@ def healthz(request):
     return JsonResponse({"status": "ok"})
 
 
+# Герои курса на главной: портреты из «Атласа живого языка», роли — из сюжета A1.
+HOME_CHARACTERS = (
+    ("anna", "Anna", "Учительница из России. Только что переехала в старый дом — и нашла в нём тайну."),
+    ("tom", "Tom", "Сосед и друг. Весёлый, всё теряет, а вещи потом находятся в холодильнике."),
+    ("mia", "Mia", "Бариста в кафе на углу. Замечает всё — кроме того, что опаздывает."),
+    ("box", "Box", "Кот Анны. Всегда первым находит улику — и садится прямо на неё."),
+)
+
+
 def home(request):
+    from apps.curriculum.views import week_art
+
+    a1_weeks = list(Level.objects.get(code="A1").week_set.select_related("scene")[:4]) \
+        if Level.objects.filter(code="A1").exists() else []
+    for week in a1_weeks:
+        week.art = week_art("A1", week.number)
     levels = list(Level.objects.all())
     for lv in levels:
         plan = LEVEL_BY_CODE.get(lv.code)
@@ -60,6 +76,9 @@ def home(request):
         "hero_plain": " ".join(w + p for w, _, _, p in HERO_WORDS),
         "categories": PartOfSpeech.objects.prefetch_related("classes"),
         "levels": levels,
+        "a1_weeks": a1_weeks,
+        "characters": [{"key": k, "name": n, "about": a, "img": static(f"img/atlas/portrait-{k}.webp")}
+                       for k, n, a in HOME_CHARACTERS],
         "first_lesson": Lesson.objects.filter(is_published=True).first(),
         "lessons": Lesson.objects.filter(is_published=True).select_related("week", "level")[:4],
         "lessons_ready": Lesson.objects.filter(is_published=True).count(),

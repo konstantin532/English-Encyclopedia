@@ -1,19 +1,25 @@
-{% with path=request.path %}
-<aside class="studio-sidebar" aria-label="Разделы энциклопедии">
-  <a class="studio-brand" href="{% url 'core:home' %}"><span class="studio-logo" aria-hidden="true">Ee<span>✳</span></span><span>English <br>Encyclopedia<small>Понимать. Чувствовать. Говорить.</small></span></a>
-  <p class="studio-nav-label">ВАШ АНГЛИЙСКИЙ</p>
-  <nav class="studio-nav" aria-label="Основная навигация">
-    <a href="{% url 'core:home' %}"{% if path == '/' %} aria-current="page"{% endif %}><span aria-hidden="true">⌂</span>Главная</a>
-    <a href="{% url 'curriculum:level' 'a1' %}"{% if path|slice:':8' == '/levels/' or path|slice:':9' == '/lessons/' %} aria-current="page"{% endif %}><span aria-hidden="true">⌁</span>Курс</a>
-    <a href="{% url 'lexicon:list' %}"{% if path|slice:':7' == '/words/' %} aria-current="page"{% endif %}><span aria-hidden="true">▤</span>Слова</a>
-    <a href="{% url 'taxonomy:legend' %}"{% if path|slice:':9' == '/markers/' %} aria-current="page"{% endif %}><span aria-hidden="true">✳</span>Маркеры</a>
-    <a href="{% url 'stories:map' %}"{% if path|slice:':9' == '/stories/' %} aria-current="page"{% endif %}><span aria-hidden="true">▧</span>Истории и стихи</a>
-    <a href="{% url 'core:classics' %}"{% if path == '/classics/' %} aria-current="page"{% endif %}><span aria-hidden="true">❦</span>Классика</a>
+{% load static %}{% with path=request.path %}
+<aside class="studio-sidebar atlas-sidebar" aria-label="Разделы энциклопедии">
+  <a class="studio-brand atlas-brand" href="{% url 'core:home' %}">
+    <svg class="atlas-brand-book" viewBox="0 0 48 40" aria-hidden="true"><path d="M24 9c-5-4-12-5-20-4v27c8-1 15 0 20 4 5-4 12-5 20-4V5c-8-1-15 0-20 4Z"/><path d="M24 9v27M9 12c4 0 8 1 11 3M9 18c4 0 8 1 11 3M28 15c3-2 7-3 11-3M28 21c3-2 7-3 11-3"/></svg>
+    <span>English <br>Encyclopedia<small>Атлас живого английского</small></span>
+  </a>
+  <nav class="studio-nav atlas-nav" aria-label="Основная навигация">
+    <a href="{% url 'core:home' %}"{% if path == '/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z"/></svg>Главная</a>
+    <a href="{% url 'curriculum:level' 'a1' %}"{% if path|slice:':8' == '/levels/' or path|slice:':9' == '/lessons/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h6a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h6z"/></svg>Курс</a>
+    <a href="{% url 'lexicon:list' %}"{% if path|slice:':7' == '/words/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>Словарь</a>
+    <a href="{% url 'taxonomy:legend' %}"{% if path|slice:':9' == '/markers/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17h7M4 21h16M13 17h7M4 13c3-6 13-6 16 0"/></svg>Маркеры</a>
+    <a href="{% url 'stories:map' %}"{% if path|slice:':9' == '/stories/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v13H5zM9 9h6M9 13h6M9 17h4"/></svg>Истории и стихи</a>
+    <a href="{% url 'core:classics' %}"{% if path == '/classics/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>Классика</a>
     {% if user.is_authenticated %}
-      <a href="{% url 'learning:review' %}"{% if path == '/learning/review/' %} aria-current="page"{% endif %}><span aria-hidden="true">↻</span>Повторение{% if REVIEW_DUE %} <span class="badge">{{ REVIEW_DUE }}</span>{% endif %}</a>
-      <a href="{% url 'learning:dashboard' %}"{% if path == '/learning/' %} aria-current="page"{% endif %}><span aria-hidden="true">▥</span>Мой прогресс</a>
+      <a href="{% url 'learning:review' %}"{% if path == '/learning/review/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></svg>Повторение{% if REVIEW_DUE %} <span class="badge">{{ REVIEW_DUE }}</span>{% endif %}</a>
+      <a href="{% url 'learning:dashboard' %}"{% if path == '/learning/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>Мой прогресс</a>
     {% endif %}
   </nav>
-  <div class="studio-sidebar-bottom"><div class="studio-level-card"><span class="studio-eyebrow">ОТ ПЕРВОГО СЛОВА</span><strong>A1 <span>→</span> B2+</strong><p>В своём темпе.<br>С пониманием каждого шага.</p><a href="{% url 'curriculum:level' 'a1' %}">Посмотреть курс ↗</a></div><p class="studio-sidebar-caption">Американский английский<br>для русскоязычных</p></div>
+  <div class="studio-sidebar-bottom atlas-sidebar-bottom">
+    <img class="atlas-sidebar-vine" src="{% static 'img/atlas/ivy-vine.webp' %}" alt="" width="360" height="640" loading="lazy" decoding="async">
+    <p class="atlas-sidebar-motto" lang="en">A world you can read, explore and understand.</p>
+    <p class="studio-sidebar-caption">Американский английский<br>для русскоязычных</p>
+  </div>
 </aside>
 {% endwith %}

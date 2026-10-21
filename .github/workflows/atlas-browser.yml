@@ -28,13 +28,21 @@ jobs:
           "$RUNNER_TEMP/atlas-browser/node_modules/.bin/playwright" install --with-deps chromium
           # Compare against the PR's base (current main): only this PR's own layout changes count.
           # Pushes to design branches compare against the parent commit.
-          git worktree add --detach "$RUNNER_TEMP/atlas-before" "${{ github.event.pull_request.base.sha || github.event.before }}"
+          # A new branch has no "before" commit (all zeros): compare against its fork point from main.
+          BASE="${{ github.event.pull_request.base.sha || github.event.before }}"
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
+            git fetch --no-tags origin main
+            BASE="$(git merge-base HEAD FETCH_HEAD)"
+          fi
+          git worktree add --detach "$RUNNER_TEMP/atlas-before" "$BASE"
       - run: |
           uv run python manage.py migrate --noinput
           uv run python manage.py load_content
           ATLAS_PYTHON="$PWD/.venv/bin/python" ATLAS_BEFORE_DIR="$RUNNER_TEMP/atlas-before" NODE_PATH="$RUNNER_TEMP/atlas-browser/node_modules" node scripts/verify_atlas.cjs
         env:
           DATABASE_URL: sqlite:///${{ runner.temp }}/atlas.sqlite3
+          # Ветки design/living-atlas-v* — намеренный редизайн: геометрию сравниваем, но не блокируем.
+          ATLAS_REDESIGN: ${{ (startsWith(github.head_ref, 'design/living-atlas-v') || startsWith(github.ref_name, 'design/living-atlas-v')) && '1' || '0' }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:

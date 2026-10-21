@@ -1,0 +1,1019 @@
+/* «Атлас живого английского языка» — главная, страница уровня и боковое меню.
+ * Отдельный слой ee-atlas идёт после всех слоёв курса. Учебные маркеры (.mk) этот файл не трогает.
+ * Иллюстрации: static/img/atlas (WebP). */
+@layer ee-atlas {
+  :root {
+    --atlas-forest: #173a2a;
+    --atlas-forest-2: #1f4a36;
+    --atlas-moss: #2e6248;
+    --atlas-leaf: #9fbf8c;
+    --atlas-cream: #f8f1e3;
+    --atlas-paper: #fffaf0;
+    --atlas-ink: #1c2a21;
+    --atlas-muted: #59625a;
+    --atlas-gold: #a77a33;
+    --atlas-rule: #e7dcc4;
+    --atlas-shadow: 0 18px 40px -24px rgba(35, 45, 30, 0.45);
+    --atlas-serif: "Literata", Georgia, serif;
+    --atlas-radius: 18px;
+  }
+
+  /* ---------- Боковое меню ---------- */
+  .studio-sidebar.atlas-sidebar {
+    background: linear-gradient(180deg, var(--atlas-forest-2) 0%, var(--atlas-forest) 100%);
+    border-right: 0;
+    color: var(--atlas-cream);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .atlas-sidebar .atlas-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--atlas-cream);
+    font-family: var(--atlas-serif);
+    font-size: 19px;
+    line-height: 1.12;
+    text-shadow: none;
+  }
+  .atlas-sidebar .atlas-brand small {
+    display: block;
+    margin-top: 6px;
+    font-family: "Golos Text", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: color-mix(in srgb, var(--atlas-cream) 70%, transparent);
+  }
+  .atlas-brand-book {
+    flex: none;
+    width: 42px;
+    height: 36px;
+    fill: color-mix(in srgb, #e9c77d 30%, transparent);
+    stroke: #e9c77d;
+    stroke-width: 1.6;
+    stroke-linejoin: round;
+  }
+  .atlas-sidebar .atlas-nav {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .atlas-sidebar .atlas-nav > a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    color: color-mix(in srgb, var(--atlas-cream) 88%, transparent);
+    font-size: 14px;
+    background-image: none;
+    box-shadow: none;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+  .atlas-sidebar .atlas-nav > a svg {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .atlas-sidebar .atlas-nav > a:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+  .atlas-sidebar .atlas-nav > a[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    font-weight: 600;
+  }
+  .atlas-sidebar .atlas-nav > a:focus-visible {
+    outline: 2px solid #e9c77d;
+    outline-offset: 2px;
+  }
+  .atlas-sidebar .badge {
+    background: #e9c77d;
+    color: var(--atlas-forest);
+  }
+  .atlas-sidebar .atlas-sidebar-bottom {
+    margin-top: auto;
+    position: relative;
+    padding-top: 150px;
+  }
+  .atlas-sidebar-vine {
+    position: absolute;
+    left: -30px;
+    bottom: 34px;
+    width: 104px;
+    height: auto;
+    opacity: 0.9;
+    pointer-events: none;
+  }
+  .atlas-sidebar-motto {
+    position: relative;
+    margin: 0 0 14px 76px;
+    text-shadow: 0 1px 6px rgba(10, 30, 20, 0.8);
+    font-family: var(--atlas-serif);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.35;
+    color: var(--atlas-cream);
+    transform: rotate(-6deg);
+  }
+  .atlas-sidebar .studio-sidebar-caption {
+    position: relative;
+    color: color-mix(in srgb, var(--atlas-cream) 64%, transparent);
+    font-size: 11px;
+  }
+
+  /* ---------- Общие блоки ---------- */
+  .atlas-section {
+    margin-top: 48px;
+  }
+  .atlas-section-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 20px;
+    margin-bottom: 20px;
+  }
+  .atlas-section-head h2 {
+    margin: 0;
+    font-family: var(--atlas-serif);
+    font-size: clamp(24px, 2.4vw, 32px);
+    font-weight: 600;
+    color: var(--atlas-ink);
+    letter-spacing: -0.01em;
+  }
+  .atlas-section-head p {
+    margin: 0;
+    color: var(--atlas-muted);
+    font-size: 15px;
+  }
+  .atlas-section-head a {
+    margin-left: auto;
+    color: var(--atlas-forest-2);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* ---------- Обложка главной: текст слева, картина справа ---------- */
+  .atlas-home {
+    padding-top: 22px;
+  }
+  .atlas-home > .atlas-hero + .atlas-section {
+    margin-top: 72px;
+  }
+  .studio-home-hero.atlas-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    align-items: center;
+    gap: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 16px;
+    border: 1px solid var(--atlas-rule);
+    border-radius: var(--atlas-radius);
+    overflow: visible;
+    background: linear-gradient(140deg, var(--atlas-paper), var(--atlas-cream));
+    box-shadow: var(--atlas-shadow);
+  }
+  .atlas-hero-art {
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    display: block;
+    aspect-ratio: 1400 / 913;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .atlas-hero-art img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  .atlas-hero::before {
+    content: none;
+  }
+  .atlas-hero-copy.studio-hero-copy {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    z-index: 2;
+    width: auto;
+    padding: 28px 36px 28px 28px;
+    background: none;
+  }
+  .atlas-hero-copy .studio-eyebrow {
+    color: var(--atlas-gold);
+    letter-spacing: 0.22em;
+    font-size: 12px;
+  }
+  .atlas-hero-copy h1 {
+    margin: 14px 0 0;
+    font-family: var(--atlas-serif);
+    font-weight: 600;
+    font-size: clamp(40px, 4.1vw, 64px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    color: var(--atlas-ink);
+  }
+  .atlas-hero-sub {
+    margin: 14px 0 0;
+    line-height: 1.3;
+    font-family: var(--atlas-serif);
+    font-size: clamp(19px, 1.8vw, 24px);
+    color: var(--atlas-moss);
+  }
+  .atlas-hero-lede {
+    margin: 16px 0 26px;
+    max-width: 30em;
+    font-size: 17px;
+    line-height: 1.55;
+    color: #3e463f;
+  }
+  .atlas-hero .hero-actions .btn-primary {
+    background: var(--atlas-forest-2);
+    border-color: var(--atlas-forest-2);
+    color: #fff;
+    border-radius: 999px;
+    padding: 15px 28px;
+    font-size: 16px;
+  }
+  .atlas-hero .hero-actions .btn-primary:hover {
+    background: var(--atlas-forest);
+  }
+  .atlas-hero .hero-actions > span {
+    color: var(--atlas-muted);
+  }
+  .atlas-hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    color: #3e463f;
+  }
+  .atlas-hero-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .atlas-hero-features svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: var(--atlas-gold);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Карточка «Главная фраза» поверх иллюстрации. */
+  .atlas-phrase-holder.studio-hero-art {
+    position: absolute;
+    z-index: 3;
+    top: auto;
+    bottom: -34px;
+    left: calc(39% - 40px);
+    right: auto;
+    width: min(320px, 28%);
+    min-height: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+  }
+  .atlas-phrase-card.studio-phrase-paper {
+    position: relative;
+    inset: auto;
+    transform: none;
+    width: 100%;
+    margin: 0;
+    padding: 22px 22px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    background: rgba(255, 251, 242, 0.94);
+    box-shadow: 0 24px 50px -28px rgba(30, 40, 25, 0.55);
+    backdrop-filter: blur(6px);
+  }
+  .atlas-phrase-card > span:first-child {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--atlas-gold);
+  }
+  .atlas-phrase-card .studio-phrase {
+    margin: 12px 0 14px;
+    font-family: var(--atlas-serif);
+    font-size: clamp(38px, 3.6vw, 52px);
+    line-height: 1.15;
+    color: var(--atlas-ink);
+  }
+  .atlas-phrase-card .studio-phrase-roles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .atlas-phrase-card .studio-phrase-roles > * {
+    display: grid;
+    place-items: center;
+    min-height: 44px;
+    padding: 8px 6px;
+    border-radius: 12px;
+    border: 1px solid var(--atlas-rule);
+    background: #fff;
+    font-size: 13px;
+    color: var(--atlas-muted);
+  }
+  .atlas-phrase-card [data-atlas-explanation] {
+    margin: 14px 0 0;
+    font-size: 14px;
+    color: var(--atlas-muted);
+  }
+
+  /* ---------- Карточки недель ---------- */
+  .atlas-week-grid,
+  .week-list.atlas-week-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .week-card.atlas-week-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 0;
+    border: 1px solid var(--atlas-rule);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--atlas-paper);
+    color: var(--atlas-ink);
+    box-shadow: 0 10px 26px -22px rgba(30, 40, 25, 0.6);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    text-decoration: none;
+  }
+  .week-card.atlas-week-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--atlas-shadow);
+  }
+  .week-card.atlas-week-card:focus-visible {
+    outline: 3px solid var(--atlas-gold);
+    outline-offset: 3px;
+  }
+  .atlas-week-art {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8eedd, #f4ead2);
+  }
+  .atlas-week-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .atlas-week-art.is-vector img {
+    object-fit: cover;
+    background: #f3eddc;
+  }
+  .atlas-week-placeholder {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    font-family: var(--atlas-serif);
+    font-size: 64px;
+    color: color-mix(in srgb, var(--atlas-moss) 30%, transparent);
+  }
+  .atlas-week-body {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+    padding: 14px 16px 18px;
+  }
+  .atlas-week-text strong {
+    padding-right: 30px;
+  }
+  .atlas-week-no {
+    font-family: var(--atlas-serif);
+    font-size: 30px;
+    line-height: 1;
+    color: var(--atlas-gold);
+  }
+  .atlas-week-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+  .atlas-week-sphere {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--atlas-moss);
+  }
+  .atlas-week-text strong {
+    font-family: var(--atlas-serif);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--atlas-ink);
+  }
+  .atlas-week-grammar {
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--atlas-muted);
+  }
+  .atlas-week-text small {
+    align-self: flex-start;
+    margin-top: 4px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: #efe6d2;
+    color: #6a5a3a;
+    font-size: 12px;
+  }
+  .atlas-week-play {
+    position: absolute;
+    right: 14px;
+    top: -22px;
+    box-shadow: 0 6px 16px -6px rgba(20, 40, 28, 0.6);
+    border: 2px solid var(--atlas-paper);
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--atlas-forest-2);
+    color: #fff;
+  }
+  .atlas-week-play svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    margin-left: 2px;
+  }
+  .atlas-week-card.is-planned .atlas-week-play {
+    background: #cfc6b1;
+  }
+
+  /* ---------- Герои ---------- */
+  .atlas-cast-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .atlas-cast-list li {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--atlas-paper);
+    border: 1px solid var(--atlas-rule);
+  }
+  .atlas-cast-list img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  .atlas-cast-list div {
+    padding: 14px 16px 18px;
+  }
+  .atlas-cast-list h3 {
+    margin: 0 0 6px;
+    font-family: var(--atlas-serif);
+    font-size: 22px;
+    color: var(--atlas-ink);
+  }
+  .atlas-cast-list p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--atlas-muted);
+  }
+
+  /* ---------- Полоса «Больше, чем английский» ---------- */
+  .atlas-band {
+    position: relative;
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 28px;
+    margin: 48px 0 8px;
+    padding: 26px 32px;
+    border-radius: var(--atlas-radius);
+    background: linear-gradient(120deg, #fbf3e2, #f3ead4);
+    border: 1px solid var(--atlas-rule);
+  }
+  .atlas-band-note {
+    width: 150px;
+    height: auto;
+    margin: -50px 0 -40px;
+    transform: rotate(-4deg);
+  }
+  .atlas-band-copy h2 {
+    margin: 0 0 8px;
+    font-family: var(--atlas-serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.2vw, 30px);
+    color: var(--atlas-ink);
+  }
+  .atlas-band-copy p {
+    margin: 0;
+    color: var(--atlas-muted);
+  }
+  .atlas-band-stats.studio-library-stats {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .atlas-band-stats > div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 20px;
+    border-left: 1px solid var(--atlas-rule);
+    text-align: center;
+  }
+  .atlas-band-stats dd {
+    margin: 0;
+    font-family: var(--atlas-serif);
+    font-size: 34px;
+    color: var(--atlas-gold);
+  }
+  .atlas-band-stats dt {
+    font-size: 12px;
+    color: var(--atlas-muted);
+  }
+
+  /* ---------- Страница уровня ---------- */
+  .atlas-level {
+    padding-top: 22px;
+  }
+  .page-head.atlas-level-hero {
+    position: relative;
+    min-height: 340px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--atlas-radius);
+    overflow: hidden;
+    background: var(--atlas-cream);
+    box-shadow: var(--atlas-shadow);
+  }
+  .atlas-level-art {
+    position: absolute;
+    inset: 0 0 0 34%;
+    width: 66%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% center;
+  }
+  .atlas-level-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, var(--atlas-cream) 0%, var(--atlas-cream) 36%, rgba(248, 241, 227, 0.8) 50%, rgba(248, 241, 227, 0) 70%);
+  }
+  .atlas-level-copy {
+    position: relative;
+    z-index: 2;
+    width: min(56%, 640px);
+    padding: 34px 0 36px 48px;
+  }
+  .atlas-level-copy .crumbs {
+    margin: 0 0 18px;
+    font-size: 13px;
+    color: var(--atlas-muted);
+  }
+  .atlas-level-copy .studio-eyebrow {
+    color: var(--atlas-gold);
+    letter-spacing: 0.22em;
+    font-size: 12px;
+  }
+  .atlas-level-copy h1 {
+    margin: 10px 0 8px;
+    font-family: var(--atlas-serif);
+    font-size: clamp(34px, 4vw, 58px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--atlas-ink);
+  }
+  .atlas-level-sub {
+    margin: 0 0 10px;
+    font-family: var(--atlas-serif);
+    font-size: 20px;
+    color: var(--atlas-moss);
+  }
+  .atlas-level-copy > p:last-child {
+    margin: 0;
+    max-width: 34em;
+    color: #3e463f;
+    line-height: 1.55;
+  }
+  .filters.atlas-level-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0 0;
+  }
+  .atlas-level-tabs a {
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--atlas-rule);
+    background: var(--atlas-paper);
+    color: var(--atlas-ink);
+    font-weight: 600;
+  }
+  .atlas-level-tabs a[aria-current="true"] {
+    background: var(--atlas-forest-2);
+    border-color: var(--atlas-forest-2);
+    color: #fff;
+  }
+  .stats.atlas-level-stats {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    margin: 24px 0 0;
+    border: 1px solid var(--atlas-rule);
+    border-radius: 16px;
+    background: var(--atlas-paper);
+    overflow: hidden;
+  }
+  .atlas-level-stats .stat {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2px;
+    padding: 16px 20px;
+    border: 0;
+    border-left: 1px solid var(--atlas-rule);
+    background: none;
+  }
+  .atlas-level-stats .stat:first-child {
+    border-left: 0;
+  }
+  .atlas-level-stats dd {
+    margin: 0;
+    font-family: var(--atlas-serif);
+    font-size: 30px;
+    color: var(--atlas-gold);
+  }
+  .atlas-level-stats dt {
+    font-size: 13px;
+    color: var(--atlas-muted);
+  }
+  .atlas-level .section.atlas-section {
+    padding: 0;
+  }
+
+  /* ---------- Планшет ---------- */
+  @media (max-width: 1200px) {
+    .atlas-cast-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .atlas-band {
+      grid-template-columns: 120px minmax(0, 1fr);
+    }
+    .atlas-band-note {
+      width: 120px;
+    }
+    .atlas-band-stats.studio-library-stats {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .atlas-band-stats > div:first-child {
+      border-left: 0;
+    }
+    .stats.atlas-level-stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .atlas-level-stats .stat:nth-child(4) {
+      border-left: 0;
+    }
+    .atlas-level-stats .stat:nth-child(n + 4) {
+      border-top: 1px solid var(--atlas-rule);
+    }
+  }
+  @media (max-width: 960px) {
+    .studio-sidebar.atlas-sidebar {
+      flex-direction: row;
+      overflow: visible;
+    }
+    .atlas-sidebar .atlas-nav {
+      margin-top: 0;
+      flex-direction: row;
+    }
+    .atlas-sidebar .atlas-nav > a {
+      padding: 9px 10px;
+      font-size: 13px;
+      min-height: 40px;
+    }
+    .atlas-sidebar .atlas-nav > a svg {
+      display: none;
+    }
+    .atlas-sidebar .atlas-sidebar-bottom {
+      display: none;
+    }
+  }
+
+  /* ---------- Телефон ---------- */
+  @media (max-width: 720px) {
+    .studio-sidebar.atlas-sidebar {
+      display: block;
+    }
+    .atlas-sidebar .atlas-brand {
+      font-size: 17px;
+    }
+    .atlas-brand-book {
+      width: 32px;
+      height: 28px;
+    }
+    .atlas-sidebar .atlas-nav {
+      margin-top: 10px;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+    .atlas-sidebar .atlas-nav > a {
+      padding: 7px 10px;
+      font-size: 13px;
+      min-height: 36px;
+    }
+    .studio-home-hero.atlas-hero {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .atlas-hero::before {
+      display: none;
+    }
+    .atlas-hero-art {
+      position: relative;
+      inset: auto;
+      order: 1;
+      aspect-ratio: 16 / 10;
+    }
+    .atlas-hero-art img {
+      object-position: 55% center;
+    }
+    .atlas-hero-copy.studio-hero-copy {
+      order: 2;
+      width: auto;
+      padding: 22px 20px 24px;
+    }
+    .atlas-hero-copy h1 {
+      font-size: 44px;
+    }
+    .atlas-hero-lede {
+      font-size: 16px;
+    }
+    .atlas-hero-features {
+      gap: 8px 16px;
+      font-size: 13px;
+    }
+    .atlas-phrase-holder.studio-hero-art {
+      position: relative;
+      order: 3;
+      inset: auto;
+      width: auto;
+      padding: 0 16px 20px;
+    }
+    .atlas-phrase-card .studio-phrase {
+      font-size: 40px;
+    }
+    .atlas-week-grid,
+    .week-list.atlas-week-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+    }
+    .atlas-section-head a {
+      margin-left: 0;
+    }
+    .atlas-cast-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .atlas-cast-list div {
+      padding: 10px 12px 14px;
+    }
+    .atlas-cast-list h3 {
+      font-size: 18px;
+    }
+    .atlas-cast-list p {
+      font-size: 13px;
+    }
+    .atlas-band {
+      grid-template-columns: minmax(0, 1fr);
+      padding: 22px 18px;
+      gap: 16px;
+    }
+    .atlas-band-note {
+      display: none;
+    }
+    .atlas-band-stats.studio-library-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 0;
+    }
+    .atlas-band-stats > div:nth-child(3) {
+      border-left: 0;
+    }
+    .page-head.atlas-level-hero {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .atlas-level-hero::before {
+      display: none;
+    }
+    .atlas-level-art {
+      position: relative;
+      inset: auto;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+    .atlas-level-copy {
+      width: auto;
+      padding: 18px 20px 22px;
+    }
+    .atlas-level-copy .crumbs {
+      margin-bottom: 10px;
+    }
+    .stats.atlas-level-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .atlas-level-stats .stat {
+      padding: 12px 14px;
+    }
+    .atlas-level-stats .stat:nth-child(odd) {
+      border-left: 0;
+    }
+    .atlas-level-stats .stat:nth-child(4) {
+      border-left: 1px solid var(--atlas-rule);
+    }
+    .atlas-level-stats .stat:nth-child(n + 3) {
+      border-top: 1px solid var(--atlas-rule);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .week-card.atlas-week-card,
+    .atlas-sidebar .atlas-nav > a {
+      transition: none;
+    }
+    .week-card.atlas-week-card:hover {
+      transform: none;
+    }
+  }
+}
+
+/* Остатки прежнего оформления, которые спорят с новым. */
+@layer ee-atlas {
+  .atlas-sidebar .atlas-nav > a::before,
+  .atlas-sidebar .atlas-nav > a::after,
+  .studio-home-hero.atlas-hero::after,
+  .page-head.atlas-level-hero::after {
+    display: none;
+  }
+}
+
+@layer ee-atlas {
+  .studio-specimen-section h2,
+  .section-head h2 {
+    font-family: var(--atlas-serif);
+    font-weight: 600;
+    color: var(--atlas-ink);
+  }
+}
+
+@layer ee-atlas {
+  .atlas-level-stats .stat {
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+    min-height: 0;
+  }
+  .atlas-level-sub,
+  .atlas-band-copy h2 {
+    line-height: 1.35;
+  }
+  /* Неделя без обложки: короткая полоса вместо пустой картинки. */
+  .atlas-week-art:has(.atlas-week-placeholder) {
+    aspect-ratio: 16 / 5;
+    background: linear-gradient(135deg, #e7ecdc, #f2e8cf) center / cover;
+  }
+  .atlas-week-placeholder {
+    font-size: 40px;
+  }
+}
+
+/* Обложка главной на планшете и телефоне: картина, текст, карточка фразы — друг под другом. */
+@layer ee-atlas {
+  @media (max-width: 1100px) {
+    .studio-home-hero.atlas-hero {
+      display: flex;
+      flex-direction: column;
+      padding: 12px;
+    }
+    .atlas-hero-art {
+      order: 1;
+      min-height: 0;
+      aspect-ratio: 16 / 10;
+    }
+    .atlas-hero-copy.studio-hero-copy {
+      order: 2;
+      padding: 24px 20px 20px;
+    }
+    .atlas-phrase-holder.studio-hero-art {
+      position: relative;
+      order: 3;
+      inset: auto;
+      width: auto;
+      max-width: 460px;
+      padding: 0 8px 8px;
+    }
+  }
+}
+
+/* Шапка уровня: текст слева, картина справа целиком (герои не уходят под затемнение). */
+@layer ee-atlas {
+  .page-head.atlas-level-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    min-height: 0;
+    padding: 14px;
+    border: 1px solid var(--atlas-rule);
+    background: linear-gradient(140deg, var(--atlas-paper), var(--atlas-cream));
+  }
+  .atlas-level-hero::before {
+    content: none;
+  }
+  .atlas-level-art {
+    position: static;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1400 / 866;
+    border-radius: 14px;
+    object-position: center;
+  }
+  .atlas-level-copy {
+    grid-column: 1;
+    grid-row: 1;
+    width: auto;
+    padding: 22px 32px 22px 26px;
+  }
+  @media (max-width: 1100px) {
+    .page-head.atlas-level-hero {
+      display: flex;
+      flex-direction: column;
+      padding: 12px;
+    }
+    .atlas-level-art {
+      aspect-ratio: 16 / 10;
+    }
+    .atlas-level-copy {
+      padding: 18px 12px 12px;
+    }
+  }
+}
+
+@layer ee-atlas {
+  .atlas-story-cover {
+    display: block;
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin-top: 20px;
+    border-radius: var(--atlas-radius);
+    box-shadow: var(--atlas-shadow);
+  }
+}

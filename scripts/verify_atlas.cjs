@@ -60,13 +60,15 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
      }
      await context.close();
     }
-    let maxDelta=0;
+    let maxDelta=0;const changed=[];
     for(const selector of selectors){
-     const a=measurements.before[selector],b=measurements.after[selector];assert.equal(a.length,b.length,selector+' count');
+     const a=measurements.before[selector],b=measurements.after[selector];
+     if(a.length!==b.length){changed.push(`${selector}: ${a.length}→${b.length}`);continue;}
      a.forEach((rectangle,index)=>Object.keys(rectangle).forEach(key=>{maxDelta=Math.max(maxDelta,Math.abs(rectangle[key]-b[index][key]));}));
     }
-    report.screens.push({name,width,height,maxGeometryDelta:maxDelta,measurements});
-    assert.ok(maxDelta<=1,`${name} ${width}: geometry changed ${maxDelta}px`);
+    report.screens.push({name,width,height,maxGeometryDelta:maxDelta,changed,measurements});
+    // Редизайн (ATLAS_REDESIGN=1) меняет раскладку намеренно: разница — в отчёте, скриншоты — в артефакте.
+    if(process.env.ATLAS_REDESIGN!=='1'){assert.equal(changed.length,0,`${name} ${width}: ${changed.join(', ')}`);assert.ok(maxDelta<=1,`${name} ${width}: geometry changed ${maxDelta}px`);}
    }
   }
   // All chapter covers load; each has a stable, explicitly sized image box.
