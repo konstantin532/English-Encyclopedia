@@ -158,20 +158,6 @@ units:
   example_ru: У зонта длинная ручка.
   situation: Описываете вещь
   usage_note: pen — ручка для письма, handle — ручка, за которую держат.
-- uid: LX-00676
-  lemma: corner
-  meaning: the place where two walls or streets meet
-  class: S4
-  forms:
-  - corners
-  cefr: unverified
-  verification_status: pending
-  frequency_source: NGSL — требует проверки
-  ipa_us: /ˈkɔrnɚ/
-  translation_ru: угол
-  example_en: '[T8]It[/] [D1]was[/] [P1]in[/] [T1]the[/] [S4]corner[/].'
-  example_ru: Он был в углу.
-  situation: Описываете место
 - uid: LX-00677
   lemma: long
   meaning: big from one end to the other
