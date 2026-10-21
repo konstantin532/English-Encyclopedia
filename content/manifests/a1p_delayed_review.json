@@ -1138,5 +1138,119 @@
    1,
    "После того, что несут."
   ]
+ ],
+ "a1p-how-often": [
+  [
+   "Два раза в день.",
+   "",
+   [
+    "twice a day",
+    "twice in day",
+    "two in a day"
+   ],
+   0,
+   "twice a day."
+  ],
+  [
+   "Спросите, как часто.",
+   "",
+   [
+    "How often?",
+    "How much often?",
+    "How many often?"
+   ],
+   0,
+   "How often?"
+  ],
+  [
+   "«Я часто забываю».",
+   "",
+   [
+    "I forget often.",
+    "I often forget.",
+    "Often I forget it often."
+   ],
+   1,
+   "often — перед глаголом."
+  ],
+  [
+   "Раз в неделю.",
+   "",
+   [
+    "Once a week.",
+    "One time in week.",
+    "Once in the week."
+   ],
+   0,
+   "once a week."
+  ],
+  [
+   "«Я всегда устаю».",
+   "",
+   [
+    "I always am tired.",
+    "I am always tired.",
+    "Always I tired."
+   ],
+   1,
+   "После be: am always."
+  ]
+ ],
+ "a1p-at-the-pharmacy": [
+  [
+   "У вас температура.",
+   "",
+   [
+    "I have a fever.",
+    "I am fever.",
+    "I fever."
+   ],
+   0,
+   "have a fever."
+  ],
+  [
+   "Аллергия на кошек.",
+   "",
+   [
+    "allergic on cats",
+    "allergic to cats",
+    "allergic of cats"
+   ],
+   1,
+   "allergic to."
+  ],
+  [
+   "Рецепт от врача — это…",
+   "",
+   [
+    "recipe",
+    "prescription",
+    "receipt"
+   ],
+   1,
+   "prescription."
+  ],
+  [
+   "Кто-то чихнул.",
+   "",
+   [
+    "Bless you!",
+    "Get well soon!",
+    "Sleep well!"
+   ],
+   0,
+   "Bless you!"
+  ],
+  [
+   "Больное горло.",
+   "",
+   [
+    "a sore throat",
+    "a sorry throat",
+    "a sick throat"
+   ],
+   0,
+   "a sore throat."
+  ]
  ]
 }

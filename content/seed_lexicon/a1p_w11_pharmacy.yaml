@@ -1,0 +1,397 @@
+# Неделя 11 A1+ «Аптека и инструкция к лекарству»: How often…?, once / twice a day. CEFR не сверялся.
+level: A1+
+week: 11
+units:
+- uid: LX-00866
+  lemma: often
+  meaning: many times
+  class: A1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈɔfən/
+  translation_ru: часто
+  example_en: '[A6]How[/] [A1]often[/] [D1]do[/] [T8]I[/] [D2]take[/] [T8]it[/]?'
+  example_ru: Как часто его принимать?
+  situation: В аптеке
+  usage_note: 't обычно не читается: «Офэн».'
+- uid: LX-00867
+  lemma: once
+  meaning: one time
+  class: A1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /wʌns/
+  translation_ru: один раз
+  example_en: '[D2]Take[/] [T8]it[/] [A1]once[/] [T1]a[/] [S7]day[/].'
+  example_ru: Принимайте раз в день.
+  situation: Читаете инструкцию
+  usage_note: 'Начинается с «у»: «уанс».'
+- uid: LX-00868
+  lemma: twice
+  meaning: two times
+  class: A1
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /twaɪs/
+  translation_ru: дважды
+  example_en: '[D2]Take[/] [N1]one[/] [S5]pill[/] [A1]twice[/] [T1]a[/] [S7]day[/].'
+  example_ru: По одной таблетке два раза в день.
+  situation: Читаете инструкцию
+  usage_note: Три раза и больше — three times, four times.
+- uid: LX-00869
+  lemma: pharmacy
+  meaning: a store that sells medicine
+  class: S4
+  forms:
+  - pharmacies
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfɑrməsi/
+  translation_ru: аптека
+  example_en: '[T1]The[/] [S4]pharmacy[/] [D1]is[/] [P1]next[/] [P1]to[/] [T1]the[/] [S4]bank[/].'
+  example_ru: Аптека рядом с банком.
+  situation: Ищете аптеку
+  usage_note: ph = «ф». В США говорят и drugstore.
+- uid: LX-00870
+  lemma: pill
+  meaning: a small round piece of medicine you swallow
+  class: S5
+  forms:
+  - pills
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /pɪl/
+  translation_ru: таблетка
+  example_en: '[D2]Take[/] [N1]two[/] [S5]pills[/] [P3]after[/] [S3]dinner[/].'
+  example_ru: Примите две таблетки после ужина.
+  situation: Читаете инструкцию
+- uid: LX-00871
+  lemma: cough
+  meaning: when air comes out of your throat with a loud sound
+  class: S5
+  forms:
+  - coughs
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /kɔf/
+  translation_ru: кашель
+  example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [S5]cough[/].'
+  example_ru: У меня кашель.
+  situation: Говорите о болезни
+  usage_note: 'gh здесь читается как «ф»: «коф».'
+- uid: LX-00872
+  lemma: fever
+  meaning: a body that is too hot when you are sick
+  class: S5
+  forms:
+  - fevers
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈfivɚ/
+  translation_ru: жар, температура
+  example_en: '[S1]Anna[/] [D1]has[/] [T1]a[/] [S5]fever[/].'
+  example_ru: У Анны температура.
+  situation: Говорите о болезни
+  usage_note: По-русски «у меня температура», по-английски — I have a fever.
+- uid: LX-00873
+  lemma: flu
+  meaning: an illness with a fever and a cough
+  class: S5
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /flu/
+  translation_ru: грипп
+  example_en: '[A8]Maybe[/] [T8]I[/] [D1]have[/] [T1]the[/] [S5]flu[/].'
+  example_ru: Может быть, у меня грипп.
+  situation: Говорите о болезни
+  usage_note: 'Обычно с the: the flu.'
+- uid: LX-00874
+  lemma: throat
+  meaning: the inside of your neck
+  class: S5
+  forms:
+  - throats
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /θroʊt/
+  translation_ru: горло
+  example_en: '[T3]My[/] [S5]throat[/] [D3]hurts[/].'
+  example_ru: У меня болит горло.
+  situation: Говорите о болезни
+- uid: LX-00875
+  lemma: allergy
+  meaning: when your body is sick from some food or plants
+  class: S5
+  forms:
+  - allergies
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈælɚdʒi/
+  translation_ru: аллергия
+  example_en: '[T8]I[/] [D1]have[/] [T1]an[/] [S5]allergy[/] [P2]to[/] [S3]honey[/].'
+  example_ru: У меня аллергия на мёд.
+  situation: Говорите о здоровье
+  usage_note: 'Аллергия НА — allergy to: an allergy to cats.'
+- uid: LX-00876
+  lemma: prescription
+  meaning: a paper from a doctor for medicine
+  class: S5
+  forms:
+  - prescriptions
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /prɪˈskrɪpʃən/
+  translation_ru: рецепт (от врача)
+  example_en: '[D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S5]prescription[/]?'
+  example_ru: У вас есть рецепт?
+  situation: В аптеке
+  usage_note: Рецепт блюда — recipe, рецепт врача — prescription.
+- uid: LX-00877
+  lemma: temperature
+  meaning: how hot or cold something is
+  class: S5
+  forms:
+  - temperatures
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈtɛmpɚətʃɚ/
+  translation_ru: температура
+  example_en: '[T8]I[/] [D1]have[/] [X2]to[/] [D6]check[/] [T3]her[/] [S5]temperature[/].'
+  example_ru: Мне надо измерить ей температуру.
+  situation: Говорите о болезни
+- uid: LX-00878
+  lemma: cream
+  meaning: a soft thing you put on your skin
+  class: S5
+  forms:
+  - creams
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /krim/
+  translation_ru: крем, мазь
+  example_en: '[D2]Put[/] [T1]the[/] [S5]cream[/] [P1]on[/] [T3]your[/] [S5]hand[/].'
+  example_ru: Нанесите крем на руку.
+  situation: Читаете инструкцию
+- uid: LX-00879
+  lemma: bandage
+  meaning: a piece of cloth to put on a cut
+  class: S5
+  forms:
+  - bandages
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbændɪdʒ/
+  translation_ru: бинт, пластырь
+  example_en: '[T8]I[/] [D1]need[/] [T1]a[/] [S5]bandage[/].'
+  example_ru: Мне нужен пластырь.
+  situation: В аптеке
+  usage_note: Маленький пластырь в США часто называют Band-Aid.
+- uid: LX-00880
+  lemma: honey
+  meaning: a sweet food from bees
+  class: S3
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈhʌni/
+  translation_ru: мёд
+  example_en: '[S3]Tea[/] [P4]with[/] [S3]honey[/] [D1]is[/] [J3]good[/] [P5]for[/] [T1]a[/] [S5]cough[/].'
+  example_ru: Чай с мёдом помогает от кашля.
+  situation: Лечитесь дома
+  usage_note: 'Так же зовут любимого человека: honey — «милый».'
+- uid: LX-00881
+  lemma: label
+  meaning: a small paper on a box with information
+  class: S2
+  forms:
+  - labels
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈleɪbəl/
+  translation_ru: этикетка, надпись
+  example_en: '[D2]Read[/] [T1]the[/] [S2]label[/] [A4]carefully[/].'
+  example_ru: Внимательно прочитайте этикетку.
+  situation: Читаете инструкцию
+- uid: LX-00882
+  lemma: bedtime
+  meaning: the time when you go to bed
+  class: S7
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈbɛdtaɪm/
+  translation_ru: время сна
+  example_en: '[D2]Take[/] [T1]the[/] [S5]pill[/] [P3]at[/] [S7]bedtime[/].'
+  example_ru: Примите таблетку перед сном.
+  situation: Читаете инструкцию
+- uid: LX-00883
+  lemma: swallow
+  meaning: to make food or a pill go down your throat
+  class: D2
+  forms:
+  - swallows
+  - swallowed
+  - swallowing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈswɑloʊ/
+  translation_ru: глотать
+  example_en: '[D2]Swallow[/] [T1]the[/] [S5]pill[/] [P4]with[/] [S3]water[/].'
+  example_ru: Проглотите таблетку с водой.
+  situation: Читаете инструкцию
+- uid: LX-00884
+  lemma: sneeze
+  meaning: to push air out of your nose with a loud sound
+  class: D2
+  forms:
+  - sneezes
+  - sneezed
+  - sneezing
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sniz/
+  translation_ru: чихать
+  example_en: '[T8]I[/] [D2]sneeze[/] [A1]often[/] [P1]in[/] [T1]the[/] [S7]morning[/].'
+  example_ru: По утрам я часто чихаю.
+  situation: Говорите о здоровье
+- uid: LX-00885
+  lemma: sore
+  meaning: painful
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /sɔr/
+  translation_ru: больной, воспалённый
+  example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [J4]sore[/] [S5]throat[/].'
+  example_ru: У меня болит горло.
+  situation: Говорите о болезни
+  usage_note: a sore throat — «больное горло».
+- uid: LX-00886
+  lemma: allergic
+  meaning: having an allergy
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /əˈlɝdʒɪk/
+  translation_ru: аллергический; с аллергией
+  example_en: '[T8]I[/][D1]''m[/] [J4]allergic[/] [P2]to[/] [S6]cats[/].'
+  example_ru: У меня аллергия на кошек.
+  situation: Говорите о здоровье
+  usage_note: 'allergic TO: allergic to cats.'
+- uid: LX-00887
+  lemma: dizzy
+  meaning: feeling that the room is moving
+  class: J4
+  cefr: unverified
+  verification_status: pending
+  frequency_source: NGSL — требует проверки
+  ipa_us: /ˈdɪzi/
+  translation_ru: с головокружением
+  example_en: '[T8]I[/] [D3]feel[/] [J4]dizzy[/].'
+  example_ru: У меня кружится голова.
+  situation: Говорите о самочувствии
+- uid: LX-00888
+  lemma: How often…?
+  meaning: Asking about the number of times
+  class: A6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈhaʊ ˈɔfən/
+  translation_ru: Как часто…?
+  example_en: How often…?
+  example_ru: Как часто?
+  situation: В аптеке
+  usage_note: Ответ — once / twice / three times a day.
+- uid: LX-00889
+  lemma: once a day
+  meaning: one time every day
+  class: A1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈwʌns ə ˈdeɪ/
+  translation_ru: раз в день
+  example_en: once a day
+  example_ru: раз в день
+  situation: Читаете инструкцию
+- uid: LX-00890
+  lemma: twice a day
+  meaning: two times every day
+  class: A1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈtwaɪs ə ˈdeɪ/
+  translation_ru: два раза в день
+  example_en: twice a day
+  example_ru: дважды в день
+  situation: Читаете инструкцию
+- uid: LX-00891
+  lemma: three times a day
+  meaning: three times every day
+  class: A1
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈθri ˈtaɪmz ə ˈdeɪ/
+  translation_ru: три раза в день
+  example_en: three times a day
+  example_ru: три раза в день
+  situation: Читаете инструкцию
+  usage_note: По-русски «в день», по-английски — a day, без in.
+- uid: LX-00892
+  lemma: Get well soon!
+  meaning: Wishing a sick person to be well
+  class: O6
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈɡɛt ˈwɛl ˈsun/
+  translation_ru: Выздоравливай!
+  example_en: Get well soon!
+  example_ru: Поправляйся!
+  situation: Поддерживаете больного
+- uid: LX-00893
+  lemma: Bless you!
+  meaning: What you say when someone sneezes
+  class: O9
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /ˈblɛs ju/
+  translation_ru: Будь здоров! (когда чихают)
+  example_en: Bless you!
+  example_ru: Будь здоров!
+  situation: Кто-то чихнул
+- uid: LX-00894
+  lemma: I feel better.
+  meaning: Saying you are less sick now
+  class: D3
+  unit_type: phrase
+  cefr: unverified
+  verification_status: pending
+  ipa_us: /aɪ ˈfil ˈbɛɾɚ/
+  translation_ru: Мне лучше.
+  example_en: I feel better.
+  example_ru: Мне лучше.
+  situation: Говорите о самочувствии
