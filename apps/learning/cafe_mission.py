@@ -82,15 +82,18 @@ def asks_for_options(value):
 
 
 def corrects_one(value, drink):
-    text = value.casefold().replace("’", "'")
-    return bool(re.search(r"\b(?:no|sorry)\b", text)
-                and re.search(r"\b(?:one|a)\s+" + re.escape(drink) + r"\b", text)
-                # A negated request is not evidence of correcting an order.
-                # Keep the recognizer conservative: ambiguous replies get a retry.
-                and not re.search(
-                    r"\b(?:two|three|yes|not|never|don't|doesn't|didn't|can't|cannot|won't|wouldn't)\b",
-                    text,
-                ))
+    # A refusal such as "One coffee? No!" must not count as a repair.
+    # Recognise the entire correction, not scattered words in a statement.
+    text = re.sub(r"[?!.,;:]+", " ", value.casefold().replace("’", "'"))
+    text = " ".join(text.split())
+    return bool(re.fullmatch(
+        r"(?:no|sorry)(?: sorry)? "
+        r"(?:(?:i mean|i meant|i said|actually) )?"
+        r"(?:(?:just|only) )?"
+        r"(?:one|a) " + re.escape(drink)
+        + r"(?: please| thanks| thank you)?",
+        text,
+    ))
 
 
 def start_state(user_id):
