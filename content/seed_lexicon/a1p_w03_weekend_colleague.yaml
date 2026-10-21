@@ -470,7 +470,7 @@ units:
 - uid: LX-00626
   lemma: Me too.
   meaning: Saying the same is true for you
-  class: X5
+  class: O4
   unit_type: phrase
   cefr: unverified
   verification_status: pending
