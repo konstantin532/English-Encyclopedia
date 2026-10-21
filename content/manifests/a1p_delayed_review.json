@@ -1708,5 +1708,119 @@
    0,
    "Have a nice trip!"
   ]
+ ],
+ "a1p-review-a1plus": [
+  [
+   "«Я не забыл».",
+   "",
+   [
+    "I didn't forget.",
+    "I didn't forgot.",
+    "I not forgot."
+   ],
+   0,
+   "didn't + forget."
+  ],
+  [
+   "«Ему надо работать».",
+   "",
+   [
+    "He have to work.",
+    "He has to work.",
+    "He must to work."
+   ],
+   1,
+   "has to."
+  ],
+  [
+   "«Если он придёт, мы увидим его».",
+   "",
+   [
+    "If he comes, we will see him.",
+    "If he will come, we see him.",
+    "If he come, we will see he."
+   ],
+   0,
+   "if + настоящее; will."
+  ],
+  [
+   "«У нас нет хлеба».",
+   "",
+   [
+    "We don't have some bread.",
+    "We don't have any bread.",
+    "We have any bread."
+   ],
+   1,
+   "not + any."
+  ],
+  [
+   "«Говори тише, пожалуйста».",
+   "",
+   [
+    "Could you speak quietly?",
+    "Could you speak quiet?",
+    "Could you quietly to speak?"
+   ],
+   0,
+   "Could you + глагол + -ly."
+  ]
+ ],
+ "a1p-picnic-seasons": [
+  [
+   "Осень в США.",
+   "",
+   [
+    "fall",
+    "autumn",
+    "winter"
+   ],
+   0,
+   "fall."
+  ],
+  [
+   "«Какой отличный день!»",
+   "",
+   [
+    "What a great day!",
+    "What great day!",
+    "How a great day!"
+   ],
+   0,
+   "What a…!"
+  ],
+  [
+   "Летом.",
+   "",
+   [
+    "in the summer",
+    "on the summer",
+    "at summer"
+   ],
+   0,
+   "in the summer."
+  ],
+  [
+   "Где сесть в жару?",
+   "",
+   [
+    "in the shade",
+    "in the sun",
+    "in the sunset"
+   ],
+   0,
+   "in the shade."
+  ],
+  [
+   "Тост.",
+   "",
+   [
+    "Cheers!",
+    "Bless you!",
+    "Get well soon!"
+   ],
+   0,
+   "Cheers!"
+  ]
  ]
 }
