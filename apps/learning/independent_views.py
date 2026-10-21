@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError, transaction
 from django.http import HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
+from django.utils.crypto import constant_time_compare
 from django.views.decorators.http import require_http_methods
 
 from apps.lessons.models import Lesson
@@ -150,7 +151,7 @@ def independent_check(request, slug):
             # The old individual-skill route remains separate for legacy clients.
             supplied_token = request.POST.get("batch_token")
             if (not supplied_token or len(supplied_token) > 64 or
-                    not secrets.compare_digest(
+                    not constant_time_compare(
                         supplied_token, request.session[token_key]
                     )):
                 return render_batch_error("Эта форма уже отправлена или устарела. Скопируйте ответ перед обновлением страницы.")

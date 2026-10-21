@@ -8,8 +8,7 @@ from django.views.decorators.http import require_http_methods, require_POST
 
 from apps.drills.models import Exercise
 from apps.drills.retry_guidance import is_open_pilot_response
-from .mistake_review import COUNT, DELAY, due_reviews, variants_for, schedule_review
-from .models import MistakeReview
+from .mistake_review import COUNT, DELAY, available_reviews, due_reviews, variants_for, schedule_review
 
 
 @login_required
@@ -24,9 +23,8 @@ def mistake_review(request):
             return HttpResponseBadRequest("Выберите ответ на текущее задание.")
         with transaction.atomic():
             item = get_object_or_404(
-                MistakeReview.objects.select_for_update().select_related("exercise__lesson"),
-                pk=item_id, user=request.user, completed_at__isnull=True,
-                exercise__lesson__is_published=True,
+                available_reviews(request.user).select_for_update().select_related("exercise__lesson"),
+                pk=item_id,
             )
             now = timezone.now()
             if item.due_at > now or item.current_index != index:
@@ -75,8 +73,7 @@ def mistake_review(request):
         return render(request, "learning/mistake_review.html", context)
 
     item = due_reviews(request.user).first()
-    next_due = (MistakeReview.objects.filter(user=request.user, completed_at__isnull=True,
-                                             due_at__gt=timezone.now())
+    next_due = (available_reviews(request.user).filter(due_at__gt=timezone.now())
                 .order_by("due_at").first())
     context = {"next_due": next_due}
     if item:

@@ -105,8 +105,19 @@ def schedule_review(user, exercise, now=None):
     return item.due_at
 
 
+def available_reviews(user):
+    """Withdraw archived/unpublished tasks without deleting learner history.
+
+    Related-model joins do not apply Exercise's active-only default manager.
+    Every queue, badge and submission must use the same explicit boundary.
+    """
+    return MistakeReview.objects.filter(
+        user=user, completed_at__isnull=True,
+        exercise__is_archived=False, exercise__lesson__is_published=True,
+    )
+
+
 def due_reviews(user, now=None):
     now = now or timezone.now()
-    return (MistakeReview.objects.filter(user=user, completed_at__isnull=True, due_at__lte=now,
-                                         exercise__lesson__is_published=True)
+    return (available_reviews(user).filter(due_at__lte=now)
             .select_related("exercise__lesson").order_by("due_at", "pk"))
