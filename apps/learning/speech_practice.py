@@ -155,6 +155,25 @@ def valid_due_speech_items(user, now=None, limit=None):
             break
 
 
+def valid_upcoming_speech_item(user, now=None):
+    """Next *available* future review, not a removed or unpublished target.
+
+    Use the same live catalog as the due queue. Iterate lazily so stale history
+    cannot hide later valid reviews or trigger a query per stale record.
+    """
+    now = now or timezone.now()
+    future = (SpeechPracticeProgress.objects.filter(user=user, next_review_at__gt=now)
+              .order_by("next_review_at", "pk"))
+    catalog = None
+    for item in future.iterator(chunk_size=200):
+        if catalog is None:
+            catalog = published_speech_catalog()
+        details = catalog.get(item.content_key)
+        if details and 0 <= item.fragment < details["count"]:
+            return item
+    return None
+
+
 @login_required
 def speech_review(request):
     now = timezone.now()
@@ -167,7 +186,7 @@ def speech_review(request):
             "url": url + "?speech=" + str(item.fragment) + ("#" + anchor if hashmark else ""),
             "content_key": item.content_key,
         })
-    upcoming = SpeechPracticeProgress.objects.filter(user=request.user, next_review_at__gt=now).order_by("next_review_at").first()
+    upcoming = valid_upcoming_speech_item(request.user, now=now)
     return render(request, "learning/speech_review.html", {
         "pending": pending,
         "upcoming": upcoming,
