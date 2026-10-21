@@ -199,3 +199,36 @@ uv run python scripts/audio_readiness.py --strict
 Следующий контроль перед слиянием: CI новых изменений на PostgreSQL, затем
 проверка страниц в браузере в доступной среде. Нет доказательств, позволяющих
 объявить весь проект полностью исправным или педагогически сертифицированным.
+
+## 6. Финальное подтверждение в размещённой среде
+
+Описанные выше **локальные** ограничения удалось обойти существующими GitHub
+Actions. Проверен код коммита `8ca38525f5b95ff18d5694e83d0bcd33bedf887f`
+в [PR #67](https://github.com/konstantin532/English-Encyclopedia/pull/67).
+После него изменены только этот отчёт и журнал проверок.
+
+В `.github/workflows/atlas-browser.yml` в фильтр pull request добавлен `apps/**`,
+как уже было сделано для push. Серверные изменения, влияющие на представления,
+теперь также запускают существующую браузерную приёмку.
+
+| Проверка исправленного кода | Подтверждённый итог |
+|---|---|
+| [CI 39613433040](https://github.com/konstantin532/English-Encyclopedia/actions/runs/39613433040) | Оба job (`test`, `postgres`) — success |
+| PostgreSQL 16, полный pytest | **682 passed, 4124 subtests passed**, без пропусков, 475.60 s |
+| SQLite, полный pytest в PR CI | **680 passed, 2 skipped, 4124 subtests passed**, 260.67 s |
+| [Quality Evolution](https://github.com/konstantin532/English-Encyclopedia/actions/runs/39613442449) | Coverage ratchet / evolving fuzz и mutation sensitivity — success |
+| [Размещённый Chromium](https://github.com/konstantin532/English-Encyclopedia/actions/runs/39613442517) | `report.json`: passed=true, 12 screen/viewport comparisons, maxGeometryDelta=0, errors=[] |
+| Браузерные дополнительные сценарии | 14 обложек на 390 px, чтение без JS, Full-motion discovery, клавиатура Enter/Escape и возврат фокуса — прошли |
+| `uvx pip-audit --path .venv/lib/python3.13/site-packages --format json` | 17 зависимостей, 0 известных уязвимостей, 0 пропущенных пакетов |
+
+Исходные скриншоты и измерения:
+[atlas-browser-evidence](https://github.com/konstantin532/English-Encyclopedia/actions/runs/39613442517/artifacts/12350539508).
+Артефакт скачан: проверен JSON, просмотрены мобильные снимки главной и недели 13.
+Срок хранения артефакта — 14 дней. Сравнение геометрии ограничено селекторами
+из `scripts/verify_atlas.cjs`; оно не доказывает отсутствие всех возможных UI-дефектов.
+
+Теперь PostgreSQL и браузер проверены **на тестовой размещённой среде**.
+Рабочая Supabase, восстановление настоящей резервной копии, Windows,
+реальный Android/TalkBack, нагрузка и качество произношения по-прежнему
+не проверены. Сканирование advisories не доказывает отсутствия неизвестных
+уязвимостей. PR не слит и проект не объявляется полностью исправным.
