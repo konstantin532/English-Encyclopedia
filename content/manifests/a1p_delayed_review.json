@@ -1024,5 +1024,119 @@
    1,
    "elevator."
   ]
+ ],
+ "a1p-could-you": [
+  [
+   "Вежливо попросите говорить медленно.",
+   "",
+   [
+    "Could you speak slowly, please?",
+    "Speak slowly!",
+    "Could you to speak slowly?"
+   ],
+   0,
+   "Could you + глагол."
+  ],
+  [
+   "Дать на время — это…",
+   "",
+   [
+    "borrow",
+    "lend",
+    "share"
+   ],
+   1,
+   "lend — дать, borrow — взять."
+  ],
+  [
+   "«Можно одолжить вашу ручку?»",
+   "",
+   [
+    "Could I borrow your pen?",
+    "Could I lend your pen?",
+    "Could you borrow me your pen?"
+   ],
+   0,
+   "Could I borrow…?"
+  ],
+  [
+   "Ответ «Конечно!»",
+   "",
+   [
+    "Of course!",
+    "Of courses!",
+    "In course!"
+   ],
+   0,
+   "Of course!"
+  ],
+  [
+   "«Как мило с вашей стороны!»",
+   "",
+   [
+    "That's sweet of you!",
+    "That's sweet for you!",
+    "That sweet you!"
+   ],
+   0,
+   "sweet of you."
+  ]
+ ],
+ "a1p-adverbs-ly": [
+  [
+   "«Он говорит медленно».",
+   "",
+   [
+    "He speaks slow.",
+    "He speaks slowly.",
+    "He slowly speaks slow."
+   ],
+   1,
+   "Как? — slowly."
+  ],
+  [
+   "«Я плохо спал».",
+   "",
+   [
+    "I slept bad.",
+    "I slept badly.",
+    "I badly slept bad."
+   ],
+   1,
+   "badly."
+  ],
+  [
+   "«Выспись!»",
+   "",
+   [
+    "Sleep good!",
+    "Sleep well!",
+    "Sleep goodly!"
+   ],
+   1,
+   "good → well."
+  ],
+  [
+   "Наречие от easy…",
+   "",
+   [
+    "easyly",
+    "easily",
+    "easy"
+   ],
+   1,
+   "y → i: easily."
+  ],
+  [
+   "Где наречие?",
+   "",
+   [
+    "Carry carefully the box.",
+    "Carry the box carefully.",
+    "Carefully carry box the."
+   ],
+   1,
+   "После того, что несут."
+  ]
  ]
 }
