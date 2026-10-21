@@ -148,6 +148,15 @@ def audit_duplicate_words(r: AuditReport, units) -> None:
     def rank(u):
         return (u.internal_level.order, u.week.number if u.week_id else 0, u.uid)
 
+    # Готовые фразы тоже не повторяются: «Good morning!» дважды — ошибка.
+    seen_phrases = {}
+    for u in sorted((u for u in units if u.unit_type == UnitType.PHRASE or " " in u.lemma.strip()), key=rank):
+        key = " ".join(re.sub(r"[^\w' ]", " ", u.lemma.lower().replace("’", "'")).split())
+        if key in seen_phrases and NEW_SENSE not in (u.grammar_features or []):
+            first = seen_phrases[key]
+            r.errors.append(f"{u.uid} {u.lemma}: фраза уже есть в словаре ({first.uid}, {first.internal_level.code}).")
+        seen_phrases.setdefault(key, u)
+
     words = sorted((u for u in units if u.unit_type != UnitType.PHRASE and " " not in u.lemma.strip()), key=rank)
     lemmas, forms = {}, {}
     for u in words:

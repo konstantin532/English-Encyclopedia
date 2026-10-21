@@ -45,3 +45,14 @@ class DuplicateWordTests(TestCase):
     def test_related_but_different_word_is_allowed(self):
         self.add("LX-99904", "teacherly")
         self.assertEqual(self.errors("LX-99904"), [])
+
+    def test_repeating_a_phrase_is_an_error(self):
+        phrase = LexicalUnit.objects.filter(unit_type="phrase").first()
+        self.add("LX-99905", phrase.lemma.upper())
+        self.assertTrue(self.errors("LX-99905"))
+
+    def test_agent_instructions_mention_the_rule(self):
+        from pathlib import Path
+
+        agents = (Path(__file__).resolve().parents[1] / "AGENTS.md").read_text(encoding="utf-8")
+        self.assertIn("audit_duplicate_words", agents)
