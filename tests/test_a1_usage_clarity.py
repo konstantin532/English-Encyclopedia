@@ -75,5 +75,5 @@ class LexiconExplanationPageTests(TestCase):
 
     def test_home_usage_note_is_visible_in_dictionary(self):
         response = self.client.get(reverse("lexicon:detail", args=["LX-00005"]))
-        self.assertContains(response, "I'm home и I'm at home")
+        self.assertContains(response, "I&#x27;m home и I&#x27;m at home")
         self.assertContains(response, "могут просто означать")
