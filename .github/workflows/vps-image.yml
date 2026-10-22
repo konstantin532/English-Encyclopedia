@@ -44,4 +44,9 @@ jobs:
           "
       - name: Logs on failure
         if: failure()
-        run: docker compose -f deploy/vps/compose.yml logs --tail 200
+        run: |
+          docker compose -f deploy/vps/compose.yml ps
+          # Последние строки журнала — ещё и аннотациями, чтобы их было видно без скачивания логов.
+          docker compose -f deploy/vps/compose.yml logs --no-color --tail 40 web | tail -n 40 | while IFS= read -r line; do
+            echo "::error title=web log::${line//%/%25}"
+          done

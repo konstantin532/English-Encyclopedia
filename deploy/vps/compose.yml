@@ -44,7 +44,8 @@ services:
     volumes:
       - media:/app/media
     healthcheck:
-      test: ["CMD", "./.venv/bin/python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/healthz/', timeout=5).status == 200 else 1)"]
+      # Запрос как от Caddy: с именем сайта и признаком https, иначе Django ответит 400 или переадресует.
+      test: ["CMD", "./.venv/bin/python", "-c", "import os,sys,urllib.request; r=urllib.request.Request('http://127.0.0.1:8000/healthz/', headers={'Host': os.environ['DJANGO_ALLOWED_HOSTS'].split(',')[0], 'X-Forwarded-Proto': 'https'}); sys.exit(0 if urllib.request.urlopen(r, timeout=5).status == 200 else 1)"]
       interval: 30s
       timeout: 10s
       retries: 5
