@@ -38,6 +38,10 @@
 
 План ситуаций и грамматики — content/manifests/weeks_plan.yaml. Диалоги и скороговорки — content/seed_weeks/*.yaml. Фразы входят в seed_lexicon как единицы типа phrase; их слова известны с недели введения фразы.
 
+## Свой сервер в России (основной вариант)
+
+Сайт, база PostgreSQL и https на одном VPS в Docker, автообновление после слияния в `main`, ночная зашифрованная копия базы — `docs/deploy/vps-moscow.md`.
+
 ## Render: запуск сайта с телефона
 
 Подготовлен Blueprint `render.yaml` и руководство `docs/deploy/render-a1.md`.

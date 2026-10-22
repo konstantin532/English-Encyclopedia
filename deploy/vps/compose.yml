@@ -1,0 +1,73 @@
+# Три части сайта на одном сервере: база, Django и Caddy (https и раздача файлов).
+# Запуск на сервере из папки проекта:  docker compose -f deploy/vps/compose.yml up -d --build
+name: english-encyclopedia
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: english
+      POSTGRES_USER: english
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Задайте POSTGRES_PASSWORD в .env}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U english -d english"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    # Порт базы наружу не открыт: к ней ходит только сайт внутри Docker.
+
+  web:
+    build:
+      context: ../..
+      dockerfile: deploy/vps/Dockerfile
+      args:
+        A1_AUDIO_ARCHIVE_URL: ${A1_AUDIO_ARCHIVE_URL:-}
+        A1_AUDIO_ARCHIVE_SHA256: ${A1_AUDIO_ARCHIVE_SHA256:-}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.production
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:?Задайте DJANGO_SECRET_KEY в .env}
+      DJANGO_ALLOWED_HOSTS: ${SITE_DOMAIN:?Задайте SITE_DOMAIN в .env}
+      DJANGO_CSRF_TRUSTED_ORIGINS: https://${SITE_DOMAIN}
+      PUBLIC_SITE_URL: https://${SITE_DOMAIN}
+      DATABASE_URL: postgresql://english:${POSTGRES_PASSWORD}@db:5432/english
+      # База в той же внутренней сети Docker: без TLS и без пулера соединений.
+      DATABASE_SSLMODE: disable
+      DATABASE_USES_TRANSACTION_POOLER: "false"
+      WEB_CONCURRENCY: ${WEB_CONCURRENCY:-2}
+    volumes:
+      - media:/app/media
+    healthcheck:
+      test: ["CMD", "./.venv/bin/python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/healthz/', timeout=5).status == 200 else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - web
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - media:/srv/media:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+volumes:
+  db-data:
+  media:
+  caddy-data:
+  caddy-config:

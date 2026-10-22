@@ -1,0 +1,47 @@
+name: VPS image smoke
+# Проверяет, что сборка для своего сервера (deploy/vps) собирается и сайт поднимается с PostgreSQL.
+on:
+  pull_request:
+    paths: ['deploy/vps/**', 'pyproject.toml', 'uv.lock', 'config/**', '.dockerignore', '.github/workflows/vps-image.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: vps-image-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Test environment
+        run: |
+          {
+            echo "SITE_DOMAIN=localhost"
+            echo "DJANGO_SECRET_KEY=$(openssl rand -hex 32)"
+            echo "POSTGRES_PASSWORD=$(openssl rand -hex 16)"
+          } > deploy/vps/.env
+      - name: Build and start db + web
+        run: docker compose -f deploy/vps/compose.yml up -d --build db web
+      - name: Wait for /healthz/
+        run: |
+          for _ in $(seq 1 60); do
+            status=$(docker compose -f deploy/vps/compose.yml ps --format '{{.Health}}' web || true)
+            [ "$status" = "healthy" ] && { echo "web is healthy"; exit 0; }
+            sleep 5
+          done
+          docker compose -f deploy/vps/compose.yml logs --tail 200 web
+          exit 1
+      - name: Home page answers through Django
+        run: |
+          docker compose -f deploy/vps/compose.yml exec -T web ./.venv/bin/python -c "
+          import urllib.request
+          req = urllib.request.Request('http://127.0.0.1:8000/', headers={'Host': 'localhost', 'X-Forwarded-Proto': 'https'})
+          html = urllib.request.urlopen(req, timeout=10).read().decode()
+          assert 'English Encyclopedia' in html, html[:500]
+          print('home page OK')
+          "
+      - name: Logs on failure
+        if: failure()
+        run: docker compose -f deploy/vps/compose.yml logs --tail 200
