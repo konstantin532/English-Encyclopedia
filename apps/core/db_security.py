@@ -20,14 +20,20 @@ where schemaname = 'public' and rowsecurity = false
 """
 SQL_PUBLIC_TABLES = "select tablename from pg_tables where schemaname = 'public'"
 POLICY = "ee_app_access"
-ROLE_NAME = re.compile(r"[a-z_][a-z0-9_]{0,62}")
+# Only a dedicated site role may receive blanket access to learner tables.
+# The Data API runs as anon/authenticated: granting them this policy would
+# expose private rows, even though RLS remains switched on.
+ROLE_NAME = re.compile(r"ee_[a-z0-9_]{1,60}")
+
+
+def validate_app_role(role: str) -> str:
+    if role and not ROLE_NAME.fullmatch(role):
+        raise ValueError("APP_DB_ROLE: требуется отдельная роль сайта с префиксом ee_ (например, ee_app)")
+    return role
 
 
 def app_role() -> str:
-    role = os.getenv("APP_DB_ROLE", "").strip()
-    if role and not ROLE_NAME.fullmatch(role):
-        raise ValueError("APP_DB_ROLE: только строчные латинские буквы, цифры и _")
-    return role
+    return validate_app_role(os.getenv("APP_DB_ROLE", "").strip())
 
 
 def enable_rls_on_public_tables(sender=None, using="default", **kwargs):
@@ -35,6 +41,8 @@ def enable_rls_on_public_tables(sender=None, using="default", **kwargs):
     # accounts is always present and owns the learner table; core has no models.
     if connection.vendor != "postgresql" or getattr(sender, "label", None) != "accounts":
         return
+    # Reject a misconfigured Data API role before enabling RLS or changing grants.
+    app_role()
     with connection.cursor() as cur:
         cur.execute(SQL_TABLES_WITHOUT_RLS)
         for (table,) in cur.fetchall():
@@ -44,7 +52,7 @@ def enable_rls_on_public_tables(sender=None, using="default", **kwargs):
 
 def grant_app_role(role: str | None = None) -> int:
     """Политика и права для роли сайта на каждой таблице public. Возвращает число таблиц."""
-    role = app_role() if role is None else role
+    role = app_role() if role is None else validate_app_role(role)
     if not role or connection.vendor != "postgresql":
         return 0
     with connection.cursor() as cur:
