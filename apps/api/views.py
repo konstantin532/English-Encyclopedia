@@ -1,3 +1,4 @@
+from django.db import transaction
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
@@ -29,15 +30,21 @@ def check_exercise(request, pk):
     # must not reduce a learner's stored vocabulary progress as if it were a
     # proven grammatical error.
     unverified = open_response and not exercise.is_correct(answer)
-    correct = False if unverified else record_attempt(
-        request.user, exercise, answer, delay_wrong_days=2 if is_pilot_exercise(exercise) else 0,
-    )
+    # The stored answer/progress and its delayed review are one logical operation.
+    # If scheduling fails, do not leave an attempted answer without its retry.
+    # Both services use nested atomic blocks, so this outer transaction owns
+    # the all-or-nothing commit.
+    with transaction.atomic():
+        correct = False if unverified else record_attempt(
+            request.user, exercise, answer, delay_wrong_days=2 if is_pilot_exercise(exercise) else 0,
+        )
+        due_at = None
+        if not correct and not unverified and is_pilot_exercise(exercise) and request.user.is_authenticated:
+            due_at = schedule_review(request.user, exercise)
     data = {"correct": correct, "saved": request.user.is_authenticated and not unverified}
-    if not correct and not unverified and is_pilot_exercise(exercise) and request.user.is_authenticated:
-        due_at = schedule_review(request.user, exercise)
-        if due_at:
-            data["retry_scheduled_at"] = due_at.isoformat()
-            data["retry_count"] = 5
+    if due_at:
+        data["retry_scheduled_at"] = due_at.isoformat()
+        data["retry_count"] = 5
     if open_response:
         data["assessment"] = "needs_review" if unverified else "model_match"
         # An unchecked free reply can be valid. Invite an optional review
