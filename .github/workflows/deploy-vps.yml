@@ -1,0 +1,40 @@
+name: Deploy to VPS
+# После зелёного CI на main обновляет сайт на своём сервере (docs/deploy/vps-moscow.md).
+# Пока секреты VPS_* не заданы, тихо пропускается.
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: deploy-vps
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      VPS_HOST: ${{ secrets.VPS_HOST }}
+      VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+      VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+    steps:
+      - name: Check secrets
+        id: check
+        run: |
+          if [ -z "$VPS_HOST" ] || [ -z "$VPS_SSH_KEY" ] || [ -z "$VPS_KNOWN_HOSTS" ]; then
+            echo "::notice::Сервер ещё не подключён (нет VPS_HOST / VPS_SSH_KEY / VPS_KNOWN_HOSTS) — выкладка пропущена."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Deploy over SSH
+        if: steps.check.outputs.configured == 'true'
+        run: |
+          set -euo pipefail
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$VPS_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh -o BatchMode=yes deploy@"$VPS_HOST" deploy
