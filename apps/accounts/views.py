@@ -1,3 +1,5 @@
+from urllib.parse import urlsplit
+
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
 from django.shortcuts import redirect, render
@@ -20,3 +22,11 @@ class EmailLoginView(LoginView):
     template_name = "accounts/login.html"
     authentication_form = LoginForm
     redirect_authenticated_user = True
+
+    def get_redirect_url(self):
+        redirect_to = super().get_redirect_url()
+        # LoginView raises ValueError for an authenticated redirect back to itself.
+        # Ignore the same login path (including query strings) for guests too.
+        if urlsplit(redirect_to).path == self.request.path:
+            return ""
+        return redirect_to

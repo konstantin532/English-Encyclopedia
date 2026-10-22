@@ -26,3 +26,28 @@ STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
     "staticfiles": {"BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"},
 }
+
+# django-csp 4.x: https://django-csp.readthedocs.io/en/latest/nonce.html
+from csp.constants import NONCE, NONE, SELF, UNSAFE_INLINE
+
+# Wrap WhiteNoise and Axes responses; keep Axes last and local/test unchanged.
+MIDDLEWARE = [MIDDLEWARE[0], "csp.middleware.CSPMiddleware", *MIDDLEWARE[1:]]
+CONTENT_SECURITY_POLICY = {
+    "DIRECTIVES": {
+        "default-src": [SELF],
+        "script-src": [SELF, NONCE],
+        "style-src": [SELF, UNSAFE_INLINE],
+        "img-src": [SELF, "data:"],
+        "font-src": [SELF],
+        "media-src": [SELF, "blob:"],
+        "connect-src": [SELF],
+        "object-src": [NONE],
+        "base-uri": [SELF],
+        "form-action": [SELF],
+        "frame-ancestors": [NONE],
+    },
+}
+CONTENT_SECURITY_POLICY_REPORT_ONLY = None
+if env_bool("DJANGO_CSP_REPORT_ONLY", False):
+    CONTENT_SECURITY_POLICY_REPORT_ONLY = CONTENT_SECURITY_POLICY
+    CONTENT_SECURITY_POLICY = None
