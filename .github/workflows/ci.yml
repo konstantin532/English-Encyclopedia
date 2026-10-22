@@ -1,5 +1,10 @@
 name: CI
-on: [push, pull_request]
+# Ветки проверяются через pull_request; push — только в main.
+# Раньше каждый коммит в ветке с PR запускал CI дважды (push + pull_request).
+on:
+  push:
+    branches: [main]
+  pull_request:
 permissions:
   contents: read
 # Pushing many rapid commits should not leave dozens of obsolete pipelines
