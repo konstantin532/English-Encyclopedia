@@ -51,6 +51,7 @@ units:
   lemma: go
   meaning: to move to another place
   class: D4
+  grammar_features: [irregular]
   forms:
   - goes
   - went
@@ -68,6 +69,7 @@ units:
   lemma: work
   meaning: to do a job
   class: D2
+  grammar_features: [regular]
   forms:
   - works
   - worked
