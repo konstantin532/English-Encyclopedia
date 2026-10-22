@@ -14,3 +14,6 @@ static/audio/
 artifacts/virtual-students/
 
 node_modules/
+
+# Generated Graphify knowledge graph output (keep local only)
+/graphify-out/
