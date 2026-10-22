@@ -23,7 +23,7 @@ units:
     pattern: "I am ___."
     substitutions: [at home, busy, Anna, Tom]
     situation: Говорите, где вы и какой вы
-    usage_note: "I am, you are, it is. В русском «есть» обычно пропускают, в английском be обязателен."
+    usage_note: "I am, you are, it is — формы be. В обычном полном утверждении о том, кто человек, какой предмет или где кто-то находится, be нужен: I am busy, Anna is at home. Но во фразе I like coffee уже есть глагол like, поэтому be не добавляют."
     typical_error: "«I busy», «Anna my friend» — пропущен be. Нужно: I am busy, Anna is my friend."
   - uid: LX-00017
     lemma: I
@@ -171,7 +171,7 @@ units:
     pattern: "___ is at home."
     substitutions: [Tom, Anna, My father, My mother]
     situation: Говорите, где человек
-    usage_note: "at — место как точка на карте: at home, at work. Подробнее о in и on — в уроке о предлогах."
+    usage_note: "At помогает обозначить местонахождение: at home, at work. В американском английском I\u0027m at home и I\u0027m home оба могут означать «я дома»; вариант без at часто используют, когда сообщают о возвращении. Различие не в том, внутри человек или снаружи."
     typical_error: "«I am in home» — устойчиво говорят at home."
   - uid: LX-00024
     lemma: big
