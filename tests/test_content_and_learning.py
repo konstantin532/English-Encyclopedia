@@ -281,7 +281,10 @@ class AccountTests(TestCase):
 
     def test_email_case_insensitive_login_and_no_duplicates(self):
         User.objects.create_user("Mia@Example.com", "very-long-pass-77")
-        self.assertTrue(self.client.login(username="mia@example.com", password="very-long-pass-77"))
+        response = self.client.post("/accounts/login/", {
+            "username": "mia@example.com", "password": "very-long-pass-77",
+        })
+        self.assertRedirects(response, "/learning/", fetch_redirect_response=False)
         r = self.client.post("/accounts/login/", {"username": "MIA@example.com", "password": "very-long-pass-77"})
         self.assertEqual(r.status_code, 302)
         self.client.logout()

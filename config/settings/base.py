@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # WhiteNoise отдаёт статику и в разработке: поддерживает перемотку аудио (HTTP Range).
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
+    "axes",
     *PROJECT_APPS,
 ]
 
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "axes.middleware.AxesMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -93,6 +95,20 @@ if DATABASES["default"]["ENGINE"] == "django.db.backends.postgresql":
     if env_bool("DATABASE_USES_TRANSACTION_POOLER", True):
         DATABASES["default"]["DISABLE_SERVER_SIDE_CURSORS"] = True
         DATABASES["default"]["OPTIONS"]["prepare_threshold"] = None
+
+AUTHENTICATION_BACKENDS = [
+    "axes.backends.AxesStandaloneBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
+
+# Проверяем блокировку до дорогостоящего хеширования пароля.
+AXES_FAILURE_LIMIT = 5
+AXES_COOLOFF_TIME = 0.5  # 30 минут
+AXES_LOCKOUT_PARAMETERS = [["username", "ip_address"]]
+AXES_RESET_ON_SUCCESS = True
+# LoginForm принимает email в стандартном поле AuthenticationForm "username".
+AXES_USERNAME_FORM_FIELD = "username"
+AXES_LOCKOUT_TEMPLATE = "accounts/lockout.html"
 
 AUTH_USER_MODEL = "accounts.User"
 LOGIN_URL = "accounts:login"
