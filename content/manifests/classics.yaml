@@ -98,7 +98,7 @@ poems:
       - ["But when the trees bow down their heads", "Но когда деревья склоняют головы,"]
       - ["The wind is passing by.", "Это ветер проносится мимо."]
     about_ru: "Кристина Россетти — английская поэтесса XIX века. Здесь ветер нельзя увидеть, но его присутствие узнаётся по деревьям. Сохранено написание thro' из прижизненного издания 1893 года."
-    learn_ru: "Neither ... nor — «ни ... ни». But when — «но когда». Обратите внимание на Present Simple: the wind is passing относится к моменту наблюдения."
+    learn_ru: "Neither ... nor — «ни ... ни». But when — «но когда». Is passing — Present Continuous: действие происходит в момент наблюдения; эту форму подробно изучают после A1."
     glossary: {neither: "ни один (из двух)", trembling: дрожащие, "thro'": "сокращённое through (сквозь)", "bow down": наклоняться}
 
   - slug: im-nobody
@@ -109,7 +109,7 @@ poems:
     source_edition: "Poems by Emily Dickinson, Second Series (Roberts Brothers, Boston, 1891), Life, poem I (first posthumous publication)"
     source_url: "https://en.wikisource.org/wiki/Page:Emily_Dickinson_Poems_-_second_series_(1891).djvu/33"
     lines:
-      - ["I'm nobody! Who are you?", "Я — никто! А ты кто?"]
+      - ["I'M nobody! Who are you?", "Я — никто! А ты кто?"]
       - ["Are you nobody, too?", "Ты тоже никто?"]
       - ["Then there's a pair of us—don't tell!", "Тогда нас двое — только не рассказывай!"]
       - ["They'd banish us, you know.", "Нас бы прогнали, знаешь."]
