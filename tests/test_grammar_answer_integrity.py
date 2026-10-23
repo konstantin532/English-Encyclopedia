@@ -45,6 +45,12 @@ class GrammarAnswerIntegrityTests(TestCase):
         self.check_answer("exercises", item, "Sometimes I play the guitar.", True)
         self.check_answer("exercises", item, "Sometimes I plays the guitar.", False)
 
+    def test_time_adverbial_can_go_first_when_the_lesson_teaches_it(self):
+        item = Exercise.objects.get(uid="EX-00058")
+        self.check_answer("exercises", item, "I drink coffee at seven.", True)
+        self.check_answer("exercises", item, "At seven, I drink coffee.", True)
+        self.check_answer("exercises", item, "I drinks coffee at seven.", False)
+
     def test_if_will_key_checks_the_taught_first_conditional(self):
         item = Exercise.objects.get(uid="EX-00332")
         self.check_answer("exercises", item, "If it rains, we will stay in the cabin.", True)
