@@ -18,7 +18,10 @@ class SignupForm(UserCreationForm):
 
 
 class LoginForm(AuthenticationForm):
-    username = forms.EmailField(label="Почта", widget=forms.EmailInput(attrs={"autocomplete": "email", "autofocus": True}))
+    username = forms.EmailField(max_length=254, label="Почта", widget=forms.EmailInput(attrs={"autocomplete": "email", "autofocus": True}))
 
     def clean_username(self):
-        return self.cleaned_data["username"].strip().lower()
+        username = self.cleaned_data["username"].strip().lower()
+        # Unicode lowercasing can expand a domain after the first length check.
+        self.fields["username"].run_validators(username)
+        return username

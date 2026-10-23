@@ -15,5 +15,11 @@ artifacts/virtual-students/
 
 node_modules/
 
+# Локальные файлы установки pip и результаты сканирования безопасности
+/Lib/
+/Scripts/
+/db.sqlite3.before-zap
+/zap-report.html
+/security-report.txt
 # Generated Graphify knowledge graph output (keep local only)
 /graphify-out/
