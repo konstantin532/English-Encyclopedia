@@ -5,7 +5,7 @@ order: 25
 focus: D
 minutes: 40
 title: "Умею и не умею: can, can't и языки"
-summary: "Как рассказать о своих умениях: I can speak English, I can't sing. Вопрос Can you…? и короткие ответы. Почему «говорю по-русски» по-английски — «могу говорить»."
+summary: "Как рассказать о своих умениях: I can speak English, I can't sing. Вопрос Can you…? и короткие ответы. Чем I speak Russian отличается от I can speak Russian и почему оба варианта возможны."
 units: [LX-00239, LX-00240, LX-00243, LX-00244, LX-00246, LX-00247, LX-00248, LX-00249, LX-00251, LX-00434, LX-00435, LX-00436, LX-00437, LX-00438, LX-00439, LX-00440, LX-00441, LX-00442, LX-00443, LX-00444, LX-00445, LX-00446, LX-00447, LX-00448, LX-00450, LX-00454]
 sound_notes:
   - text: "Can you speak Russian?"
@@ -70,7 +70,7 @@ layers:
       > [S1]Anna[/], [D7]can[/] [T8]you[/] [D5]speak[/] [S10]Russian[/]? — Анна, ты говоришь по-русски?
 
       - Языки пишут с большой буквы и без the: speak English, speak Russian.
-      - Краткий ответ на **Can you…?**: *Yes, I can* или *No, I can't*. Он достаточен, если вопрос только о способности; при рассказе о конкретном навыке можно добавить вторую фразу.
+      - Краткий ответ на **Can you…?**: *Yes, I can* или *No, I can't*. На **Do you speak…?** отвечаем *Yes, I do / No, I don't*. Сохраняйте каркас заданного вопроса: одинаковый русский перевод не делает **can** и **do** взаимозаменяемыми в кратком ответе.
       - Чуть-чуть: I can speak a little Russian — «я немного говорю по-русски».
 
       Учебные действия и умения:
@@ -203,6 +203,8 @@ practice:
   kind: translate
   prompt_ru: Я не умею играть на гитаре.
   answer: I cannot play the guitar.
+  accepted:
+  - I cannot play guitar.
   hint_ru: can't play
   explanation_ru: I can't play the guitar. Can't — «не умею».
   review_of: 3

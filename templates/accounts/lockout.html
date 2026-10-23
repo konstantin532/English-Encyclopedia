@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Вход временно заблокирован · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap">
+  <div class="form-page">
+    <h1>Слишком много попыток входа</h1>
+    <p>После {{ failure_limit }} неверных попыток вход для этой почты с вашего IP временно заблокирован.</p>
+    <p>Попробуйте снова через 30 минут после последней попытки или обратитесь к администратору.</p>
+    <p><a href="{% url 'accounts:login' %}">Вернуться ко входу</a></p>
+  </div>
+</div>
+{% endblock %}

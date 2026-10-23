@@ -57,7 +57,7 @@ layers:
       - He works. → Does he work?
       - She likes milk. → Does she like milk?
 
-      Два глагола меняются по-своему: have → **has**, do → **does**, go → **goes**.
+      Обратите внимание на три формы: have → **has**, do → **does**, go → **goes**. После **does** и они возвращаются к начальной форме: *Does he have a computer?*, а не *Does he has a computer?*.
 
       > [T8]He[/] [D1]has[/] [T1]a[/] [S2]computer[/]. — У него компьютер.
 
@@ -115,7 +115,7 @@ exercises:
     prompt_en: "___ he work at a school?"
     answer: "Does"
     hint_ru: "С he помощник — do плюс -s."
-    explanation_ru: "Does he work…? — -s ушло в does, а work остался без -s."
+    explanation_ru: "Does he work…? Помощник does уже показывает форму для he, поэтому основной глагол work стоит без -s; окончание не нужно дублировать."
     units: [LX-00154]
   - order: 3
     uid: EX-00070
@@ -165,6 +165,8 @@ practice:
   kind: translate
   prompt_ru: Том работает дома.
   answer: Tom works at home.
+  accepted:
+  - Tom works from home.
   hint_ru: Tom = he → works.
   explanation_ru: Tom works at home. С he, she и одним именем глагол получает -s.
   review_of: 3

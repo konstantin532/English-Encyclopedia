@@ -52,7 +52,7 @@ layers:
       - Перед обычным глаголом: I always read, she never walks.
       - После be: I am always busy, he is never at home.
       - sometimes может стоять и в начале: Sometimes I read.
-      - Дни недели — с on: on Saturday, on Sunday, on the weekend.
+      - С днями недели часто используют **on**: on Saturday, on Sunday. Отдельное американское сочетание **on the weekend** означает «в выходные».
 
       **Когда встречаемся? Дни и месяцы.**
 
@@ -68,7 +68,7 @@ layers:
       - **July, August, September** — июль, август, сентябрь;
       - **October, November, December** — октябрь, ноябрь, декабрь.
 
-      С днём — **on**, с месяцем — **in**: on Friday, in October. Дни и месяцы всегда с большой буквы. В Wednesday середина слова не звучит: /ˈwɛnzˌdeɪ/.
+      С днём обычно — **on**, с месяцем — **in**: on Friday, in October. В неформальном разговоре **on** перед днём можно опустить: *See you Friday!* Поэтому такой ответ тоже верен. Дни и месяцы всегда с большой буквы. В Wednesday середина слова не звучит: /ˈwɛnzˌdeɪ/.
 
       > [T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Mondays[/]. — По понедельникам я обычно работаю.
       > [T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]May[/]. — Я люблю гулять в мае.
@@ -123,7 +123,7 @@ exercises:
     kind: fill
     stage: substitution
     prompt_ru: "Анна читает каждую субботу без исключений. Вставьте слово."
-    prompt_en: "I ___ read on Saturday."
+    prompt_en: "I ___ read on Saturdays."
     answer: "always"
     hint_ru: "Каждый раз — всегда."
     explanation_ru: "I always read on Saturdays — always перед глаголом read."
@@ -145,7 +145,7 @@ exercises:
     prompt_ru: "Новая ситуация: коллега спрашивает, работаете ли вы по воскресеньям. Вы не работаете никогда. Ответьте."
     prompt_en: "Do you work on Sundays? — ___"
     answer: "No, I never work on Sundays."
-    accepted: ["No, I never work on Sunday", "I never work on Sunday.", "Never.", "No, never.", "No, I never work on Sundays.", "I never work on Sunday"]
+    accepted: ["No, I never work on Sunday", "I never work on Sunday.", "Never.", "No, never.", "No, I never work on Sundays.", "I never work on Sunday", "I never work on Sundays."]
     hint_ru: "never перед work."
     explanation_ru: "No, I never work on Sundays. Коротко — No, never."
     units: [LX-00195, LX-00197]
@@ -166,9 +166,9 @@ exercises:
     prompt_ru: "Новая ситуация: вы договорились встретиться с другом в пятницу. Попрощайтесь до пятницы."
     prompt_en: "See you ___!"
     answer: "on Friday"
-    accepted: ["on Friday.", "on Friday!"]
-    hint_ru: "Перед днём недели ставят on; пятница — Friday."
-    explanation_ru: "See you on Friday! — Увидимся в пятницу!"
+    accepted: ["on Friday.", "on Friday!", "Friday"]
+    hint_ru: "Пятница — Friday; можно on Friday или просто Friday."
+    explanation_ru: "See you on Friday! — Увидимся в пятницу! В неформальном разговоре также естественно See you Friday!, без on."
     units: [LX-00373]
 # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
 practice:

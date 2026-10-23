@@ -51,7 +51,7 @@ layers:
 
       - **I, you, we, they** — **do**: *Do you…?*
       - he, she, it, одна вещь или человек — **does**: Does the shop…?
-      - После do / does глагол без -s: does the shop open.
+      - После do / does — начальная форма смыслового глагола: does the shop open, does she have. Для have это **have**, не **has**.
       - Для вопросов, где спрашиваем **не о подлежащем**, вопросительное выражение ставим **перед помощником**: *What time does…?*, *Where do you…?*. Позже вы встретите вопросы вроде *Who works here?*, в которых **do/does не нужны**.
 
       Вопросительное слово ставят **перед** do / does. Вот все, что вы уже знаете:
@@ -69,7 +69,7 @@ layers:
     body: |
       **Почему open без -s после does?** Форму третьего лица уже показывает **does**, поэтому смысловой глагол ставят в начальной форме. Образ «-s переходит к помощнику» полезен как подсказка, но не следует понимать его буквально. Сравните:
 
-      - The shop opens at nine. — The shop **does** open → Does the shop open?
+      - The shop opens at nine. → Does the shop open?
       - Tom works at home. → Does Tom work at home?
 
       В **этом вопросе** не нужно добавлять второе окончание: *Does the shop open?*, не *Does the shop opens?*. Это правило именно для вопросов и отрицаний с **does**, а не для всех предложений с несколькими глаголами.
@@ -111,7 +111,7 @@ exercises:
     prompt_ru: "Как правильно спросить, во сколько открывается мастерская?"
     options: ["What time does the shop open?", "What time does the shop opens?", "What time the shop opens?"]
     answer: "What time does the shop open?"
-    hint_ru: "-s бывает только один раз."
+    hint_ru: "С the shop нужен does; после него — open."
     explanation_ru: "Does уже показывает форму третьего лица с the shop, поэтому основной глагол open остаётся без -s: What time does the shop open?"
     units: [LX-00191]
   - order: 2
@@ -163,7 +163,7 @@ exercises:
     options: [shop, What, the, close, does, time]
     answer: "What time does the shop close"
     hint_ru: "What time + does + the shop + глагол без -s."
-    explanation_ru: "What time does the shop close? — does забирает -s, поэтому close без -s."
+    explanation_ru: "What time does the shop close? — does показывает третье лицо, а смысловой глагол close остаётся в начальной форме."
     units: [LX-00348, LX-00358]
 # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
 practice:
@@ -203,7 +203,7 @@ practice:
   prompt_ru: Мия встаёт в пять?
   answer: Does Mia get up at five?
   hint_ru: Mia → does.
-  explanation_ru: 'Does Mia get up at five? Does берёт -s на себя: get без -s.'
+  explanation_ru: 'Does Mia get up at five? Does выражает третье лицо; после него — начальная форма get up.'
   review_of: 3
   units:
   - LX-00191

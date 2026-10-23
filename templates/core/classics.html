@@ -5,7 +5,7 @@
 <div class="wrap classics" style="padding-bottom: var(--space-8)">
   <header class="page-head">
     <h1>Классика</h1>
-    <p>Скороговорки и стихи, которые знает каждый американец: их слышат в школе, в фильмах и мультфильмах. Слова здесь сложнее программы A1 — у каждой строки есть перевод, у трудных слов — сноска. Это бонус к курсу: читайте и слушайте для удовольствия.</p>
+    <p>Классические скороговорки, исторические стихи и новые авторские произведения о городке Анны. Слова здесь сложнее программы A1 — у каждой строки есть перевод, у трудных слов — сноска. Это бонус к курсу: читайте и слушайте для удовольствия.</p>
     <p class="classics-voice-note" data-voice-note>Кнопка «Послушать» читает текст голосом вашего браузера. Качество голоса зависит от устройства; лучше всего звучит в Chrome и Safari.</p>
   </header>
 
@@ -32,12 +32,13 @@
   </section>
 
   <section class="section" aria-labelledby="po-t" style="padding-top: var(--space-6)">
-    <div class="section-head"><h2 id="po-t">Классические стихи</h2>
-      <p>Настоящая американская поэзия и детские песенки, на которых выросли поколения.</p>
+    <div class="section-head"><h2 id="po-t">Классические и авторские стихи</h2>
+      <p>Английская и американская классика, народные стишки и новые стихи с переводом.</p>
     </div>
     {% for p in poems %}
     <article class="classics-card classics-poem" id="{{ p.slug }}" aria-labelledby="p-{{ p.slug }}">
-      <h3 id="p-{{ p.slug }}"><span lang="en">{{ p.title }}</span> <small>{{ p.author }}{% if p.year %}, {{ p.year }}{% endif %}</small></h3>
+      <h3 id="p-{{ p.slug }}"><span lang="en">{{ p.title }}</span> <small>{% if p.author == 'folk' %}Народное{% elif p.author == 'original' %}Авторское{% else %}{{ p.author }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}</small></h3>
+      {% if p.source_edition %}<p class="classics-source"><strong>Издание:</strong> <a href="{{ p.source_url }}" rel="noopener noreferrer" target="_blank">{{ p.source_edition }}</a></p>{% endif %}
       <p>{{ p.about_ru }}</p>
       <div class="classics-actions" data-speak-text="{% for line in p.lines %}{{ line.0 }} {% endfor %}">
         <button type="button" class="btn btn-quiet btn-small" data-speak-rate="0.7">Послушать медленно</button>

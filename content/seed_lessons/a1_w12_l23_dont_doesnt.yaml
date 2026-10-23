@@ -79,7 +79,7 @@ layers:
       > [T8]I[/] [D1]do[/][X1]n't[/] [D1]have[/] [T1]an[/] [S2]envelope[/]. — У меня нет конверта.
       > [T1]The[/] [S9]mail[/] [D1]does[/][X1]n't[/] [D4]come[/] [T5]every[/] [S7]day[/]. — Почта не приходит каждый день.
 
-      **Mail** — почта целиком, поэтому mail **doesn't**, как it. **Package** — посылка; **postcard** — открытка, а **envelope** — конверт. Не меняйте -s у have: Tom doesn't **have** a package.
+      **Mail** в значении «почта, корреспонденция» — неисчисляемое существительное: с ним согласуем глагол как с **it**, поэтому **mail doesn't**. Даже если речь о нескольких письмах, не говорим *mail don't*; отдельные письма — **letters**, и с ними **letters don't**. **Package** — посылка; **postcard** — открытка, а **envelope** — конверт. Не меняйте -s у have: Tom doesn't **have** a package.
 
       В очереди (**line**) можно услышать **Wait, please.** — «Подождите, пожалуйста». Посылку описывают словами **large** (размер), **heavy** или **light** (вес). Адрес проверяют фразой **The address is correct.** — «Адрес правильный».
   - number: 6
@@ -126,7 +126,7 @@ exercises:
     options: [live, friend, doesn't, My, in, Russia]
     answer: "My friend doesn't live in Russia"
     hint_ru: "Один друг — значит форма третьего лица doesn't; после неё live без -s."
-    explanation_ru: "My friend doesn't live in Russia. -s ушло в doesn't."
+    explanation_ru: "My friend doesn't live in Russia. Does выражает третье лицо; live после него остаётся в начальной форме."
     units: [LX-00230]
   - order: 4
     uid: EX-00131

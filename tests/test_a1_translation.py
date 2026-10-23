@@ -58,6 +58,25 @@ class TranslationContentTests(TestCase):
             self.assertTrue(all(item.is_correct(a) for a in item.accepted), item)
             self.assertFalse(item.is_correct(""), item)
 
+    def test_cafe_servings_require_plural_in_translation_checker(self):
+        # These are orders for individual servings, not names on a menu.
+        # The old accepted list contradicted the lesson's plural explanation.
+        cases = (
+            (1, "Two coffees and one tea, please.", "Two coffee and one tea, please."),
+            (2, "Three teas, please.", "Three tea, please."),
+        )
+        for order, correct, singular in cases:
+            item = PracticeItem.objects.get(lesson__slug="a1-numbers-1-20", order=order)
+            with self.subTest(order=order):
+                for given, expected in ((correct, True), (singular, False)):
+                    response = self.client.post(
+                        f"/api/practice/{item.pk}/check/",
+                        json.dumps({"answer": given}),
+                        content_type="application/json",
+                    )
+                    self.assertEqual(response.status_code, 200)
+                    self.assertEqual(response.json()["correct"], expected)
+
     def test_review_target_has_delayed_questions(self):
         for item in PracticeItem.objects.select_related("lesson"):
             exercise = item.lesson.exercises.get(order=item.review_of)

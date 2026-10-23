@@ -1,9 +1,11 @@
 name: Database backup
 # Daily encrypted dump of the production database. The repository can be public, so the dump
 # is encrypted (AES-256) before upload: an artifact alone reveals nothing.
-# Setup: Settings -> Secrets and variables -> Actions -> add
-#   BACKUP_DATABASE_URL  - Supabase DIRECT connection string (port 5432, not the pooler)
-#   BACKUP_PASSPHRASE    - long random password; keep it outside GitHub too, or backups are useless
+# Sources (first configured wins):
+#   VPS_HOST + VPS_SSH_KEY + VPS_KNOWN_HOSTS - own server (deploy/vps), dump over the restricted SSH key
+#   BACKUP_DATABASE_URL - any PostgreSQL connection string
+#   BACKUP_PASSPHRASE   - long random password; keep it outside GitHub too, or backups are useless
+# Fails closed: with no source or no passphrase the run is red, so a missing backup is never silent.
 on:
   schedule:
     - cron: "17 2 * * *"   # 05:17 Moscow time
@@ -18,39 +20,63 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
+      VPS_HOST: ${{ secrets.VPS_HOST }}
+      VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+      VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
       BACKUP_DATABASE_URL: ${{ secrets.BACKUP_DATABASE_URL }}
       BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
     steps:
-      - name: Check secrets
+      - name: Choose source
         id: check
         run: |
-          if [ -z "$BACKUP_DATABASE_URL" ] || [ -z "$BACKUP_PASSPHRASE" ]; then
-            echo "::error::Database backup cannot run: configure BACKUP_DATABASE_URL and BACKUP_PASSPHRASE secrets (docs/operations/backups.md)."
-            exit 1
+          if [ -n "$VPS_HOST" ] && [ -n "$VPS_SSH_KEY" ] && [ -n "$VPS_KNOWN_HOSTS" ]; then
+            mode=vps
+          elif [ -n "$BACKUP_DATABASE_URL" ]; then
+            mode=url
           else
-            echo "configured=true" >> "$GITHUB_OUTPUT"
+            echo "::error::Database backup cannot run: configure VPS_HOST, VPS_SSH_KEY and VPS_KNOWN_HOSTS (own server) or BACKUP_DATABASE_URL (docs/operations/backups.md)."
+            exit 1
           fi
+          if [ -z "$BACKUP_PASSPHRASE" ]; then
+            echo "::error::Database backup cannot run: configure BACKUP_PASSPHRASE (docs/operations/backups.md)."
+            exit 1
+          fi
+          echo "configured=true" >> "$GITHUB_OUTPUT"
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+      - name: Dump from VPS
+        if: steps.check.outputs.mode == 'vps'
+        run: |
+          set -euo pipefail
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$VPS_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh -o BatchMode=yes deploy@"$VPS_HOST" backup > db.dump
+          test -s db.dump
       - name: Install PostgreSQL 17 client
-        if: steps.check.outputs.configured == 'true'
+        if: steps.check.outputs.mode == 'url'
         run: |
           sudo install -d /usr/share/postgresql-common/pgdg
           sudo curl -fsSL -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
           echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
           sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client-17
-      - name: Dump and encrypt
-        if: steps.check.outputs.configured == 'true'
+      - name: Dump from URL
+        if: steps.check.outputs.mode == 'url'
         run: |
           set -euo pipefail
-          stamp=$(date -u +%Y-%m-%dT%H%MZ)
           /usr/lib/postgresql/17/bin/pg_dump "$BACKUP_DATABASE_URL" --format=custom --no-owner --no-privileges \
             --schema=public --file=db.dump
           test -s db.dump
+      - name: Encrypt
+        if: steps.check.outputs.mode != ''
+        run: |
+          set -euo pipefail
+          stamp=$(date -u +%Y-%m-%dT%H%MZ)
           gpg --batch --yes --pinentry-mode loopback --passphrase "$BACKUP_PASSPHRASE" \
             --symmetric --cipher-algo AES256 --output "ee-db-$stamp.dump.gpg" db.dump
           shred -u db.dump
           ls -lh ee-db-*.dump.gpg
       - uses: actions/upload-artifact@v4
-        if: steps.check.outputs.configured == 'true'
+        if: steps.check.outputs.mode != ''
         with:
           name: database-backup
           path: ee-db-*.dump.gpg

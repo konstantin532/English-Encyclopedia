@@ -34,7 +34,7 @@ layers:
   body: 'Джейк заполняет анкету в кулинарную школу. Вопросы о прошлом — значит, пора собрать вместе всё, что вы знаете о прошедшем времени.
 
 
-    > [P6]Of[/] [O4]course[/]! [T8]I[/] [D1]am[/] [T1]a[/] [S9]teacher[/]. [D5]Tell[/] [T8]me[/] [A6]about[/] [T9]yourself[/]. [A6]Where[/] [D1]did[/] [T8]you[/] [D2]grow[/] [X3]up[/]? — Конечно! Я же учительница. Расскажи о себе. Где ты вырос?
+    > [P6]Of[/] [O4]course[/]! [T8]I[/] [D1]am[/] [T1]a[/] [S9]teacher[/]. [D5]Tell[/] [T8]me[/] [P6]about[/] [T9]yourself[/]. [A6]Where[/] [D1]did[/] [T8]you[/] [D2]grow[/] [X3]up[/]? — Конечно! Я же учительница. Расскажи о себе. Где ты вырос?
 
     > [T8]I[/] [D1]was[/] [J7]born[/] [P1]in[/] [T2]this[/] [S4]town[/], [C1]and[/] [T8]I[/] [D2]grew[/] [X3]up[/] [A3]here[/]. — Я родился в этом городе и вырос здесь.
 
@@ -47,7 +47,7 @@ layers:
   body: 'Схема:
 
 
-    > [O4]Yes[/]! [T8]I[/] [D2]worked[/] [P1]in[/] [T1]a[/] [J1]small[/] [S4]restaurant[/] [P5]for[/] [N1]one[/] [S7]year[/]. [T8]I[/] [D2]cooked[/] [T5]every[/] [S7]day[/]. — Да! Год работал в маленьком ресторане. Готовил каждый день.
+    > [O4]Yes[/]! [T8]I[/] [D2]worked[/] [P1]in[/] [T1]a[/] [J1]small[/] [S4]restaurant[/] [P3]for[/] [N1]one[/] [S7]year[/]. [T8]I[/] [D2]cooked[/] [T5]every[/] [S7]day[/]. — Да! Год работал в маленьком ресторане. Готовил каждый день.
 
 
     - Был: **I was born… / We were at school.**
@@ -62,10 +62,10 @@ layers:
 
     '
 - number: 4
-  body: '**Почему «I was born», а не «I born»?** По-английски рождение — это то, что с вами «сделали»: вас родили. Поэтому всегда **was / were born**: *She was born in May. We were born in Russia.*
+  body: '**Почему «I was born», а не «I born»?** По-английски рождение — это то, что с вами «сделали»: вас родили. Рассказывая о рождении в прошлом, используйте **was / were born**: *She was born in May. We were born in Russia.* В вопросе и отрицании работает сам be: **Were you born here? I wasn''t born here.** Did сюда не добавляют.
 
 
-    > [J3]Great[/]. [C1]And[/] [A6]why[/] [D1]did[/] [T8]you[/] [D6]decide[/] [P2]to[/] [D5]apply[/]? — Отлично. А почему ты решил поступать?
+    > [J3]Great[/]. [C1]And[/] [A6]why[/] [D1]did[/] [T8]you[/] [D6]decide[/] [X2]to[/] [D5]apply[/]? — Отлично. А почему ты решил поступать?
 
 
     **Диагностика понимания:** что верно: *Where did you grew up?* или *Where did you grow up?*
@@ -120,7 +120,7 @@ exercises:
   - I am born in this town.
   answer: I was born in this town.
   hint_ru: was + born.
-  explanation_ru: I was born… — всегда с was.
+  explanation_ru: О своём рождении в прошлом говорим I was born. С we / you / they — were born.
   units:
   - LX-00947
   - LX-00951

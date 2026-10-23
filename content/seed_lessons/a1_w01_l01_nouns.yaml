@@ -160,7 +160,7 @@ exercises:
     uid: EX-00004
     kind: fill
     stage: transfer
-    prompt_ru: "Новая ситуация: вы показываете гостю книгу и говорите, что она новая. Можно ответить одной или двумя короткими фразами."
+    prompt_ru: "Новая ситуация: вы показываете гостю свою книгу и говорите, что она новая. Можно ответить одной или двумя короткими фразами."
     prompt_en: "___"
     answer: "This is my book. It is new."
     accepted: ["This is my book. It's new.", "This is my book. It is new", "This is my new book."]

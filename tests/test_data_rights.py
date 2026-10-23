@@ -31,6 +31,19 @@ class DataRightsTests(TestCase):
         self.assertEqual(answers, ["mine"])
         self.assertNotIn("password", response.content.decode())
 
+    def test_export_preserves_selected_current_level(self):
+        from apps.curriculum.models import Level
+
+        level = Level.objects.get(code="A1")
+        self.user.current_level = level
+        self.user.save(update_fields=["current_level"])
+        self.client.force_login(self.user)
+
+        response = self.client.get("/accounts/my-data/")
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.content)
+        self.assertEqual(data["profile"]["current_level_id"], level.pk)
+
     def test_export_requires_login(self):
         self.assertEqual(self.client.get("/accounts/my-data/").status_code, 302)
 

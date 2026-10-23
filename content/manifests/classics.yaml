@@ -1,9 +1,12 @@
 # «Классика»: легендарные скороговорки и стихи, которые знает каждый американец.
 # Это культурный бонус, а не основа курса: слова здесь сложнее программы A1,
 # поэтому у каждой строки есть перевод, а у трудных слов — сноска.
-# Все тексты народные или опубликованы до 1929 года (свободны от авторских прав в США).
+# Права проверяются отдельно для России и США в apps/core/classics.py.
+# Скороговорки здесь — распространённые фольклорные устные формулы,
+# а не более поздние авторские песни/переработки.
 twisters:
   - slug: which-witch
+    author: folk
     text: "Which witch is which?"
     ru: "Какая ведьма — какая?"
     sounds: "w и wh"
@@ -12,6 +15,7 @@ twisters:
     why_ru: "Русскоязычные часто заменяют w на «в»: west звучит как vest. Здесь w трижды за секунду."
     glossary: {witch: ведьма, which: который}
   - slug: toy-boat
+    author: folk
     text: "Toy boat. Toy boat. Toy boat."
     ru: "Игрушечная лодка. Игрушечная лодка. Игрушечная лодка."
     sounds: "oi и oʊ"
@@ -20,6 +24,7 @@ twisters:
     why_ru: "Два коротких слова, но язык путает «ой» и «оу» уже на третьем повторе. Короче её нет, а сложнее мало."
     glossary: {toy: игрушка, boat: лодка}
   - slug: red-leather
+    author: folk
     text: "Red leather, yellow leather."
     ru: "Красная кожа, жёлтая кожа."
     sounds: "r и l"
@@ -28,6 +33,7 @@ twisters:
     why_ru: "Русское «р» дрожит, американское — нет. А r и l рядом заставляют язык прыгать между двумя положениями."
     glossary: {leather: кожа (материал), yellow: жёлтый}
   - slug: big-black-bug
+    author: folk
     text: "A big black bug bit a big black bear."
     ru: "Большой чёрный жук укусил большого чёрного медведя."
     sounds: "æ и b"
@@ -36,6 +42,9 @@ twisters:
     why_ru: "Различать bad и bed — классическая трудность. Здесь три разные гласные в словах, которые начинаются одинаково."
     glossary: {bug: жук, bit: укусил, bear: медведь}
   - slug: she-sells
+    author: folk
+    # Традиционная скороговорка засвидетельствована до песни Т. Салливана (1908).
+    # https://blogs.loc.gov/folklife/2017/07/she-sells-seashells-and-mary-anning-metafolklore-with-a-twist/
     text: "She sells seashells by the seashore."
     ru: "Она продаёт ракушки на морском берегу."
     sounds: "s и sh"
@@ -44,6 +53,7 @@ twisters:
     why_ru: "Самая известная английская скороговорка в мире. Её знает каждый американец, она звучит в фильмах и мультфильмах."
     glossary: {sells: продаёт, seashells: ракушки, seashore: морской берег}
   - slug: woodchuck
+    author: folk
     text: "How much wood would a woodchuck chuck if a woodchuck could chuck wood?"
     ru: "Сколько дерева бросил бы сурок, если бы сурок умел бросать дерево?"
     sounds: "w и ʊ"
@@ -52,6 +62,7 @@ twisters:
     why_ru: "Американская классика: её учат дети в школе. Тренирует w и короткое «у», которого нет в русском."
     glossary: {wood: дерево (древесина), woodchuck: сурок, chuck: бросать (разг.)}
   - slug: unique-new-york
+    author: folk
     text: "Unique New York. Unique New York. Unique New York."
     ru: "Неповторимый Нью-Йорк."
     sounds: "ju и n"
@@ -60,6 +71,7 @@ twisters:
     why_ru: "Три слова, но на скорости язык спотыкается почти у всех. Любимая разминка актёров."
     glossary: {unique: "уникальный, неповторимый"}
   - slug: good-blood
+    author: folk
     text: "Good blood, bad blood."
     ru: "Хорошая кровь, плохая кровь."
     sounds: "ʊ, ʌ и æ"
@@ -69,39 +81,81 @@ twisters:
     glossary: {blood: кровь}
 
 poems:
-  - slug: dreams
-    title: "Dreams"
-    author: "Langston Hughes"
-    year: 1923
+  - slug: who-has-seen-the-wind
+    title: "Who Has Seen the Wind?"
+    author: "Christina Rossetti"
+    author_death_year: 1894
+    year: 1893
+    source_edition: "Sing-Song: A Nursery Rhyme Book, new and enlarged edition (Macmillan, 1893); originally published 1872"
+    source_url: "https://digital.library.upenn.edu/women/rossetti/singsong/singsong.html"
     lines:
-      - ["Hold fast to dreams", "Держись за мечты,"]
-      - ["For if dreams die", "Ведь если мечты умрут,"]
-      - ["Life is a broken-winged bird", "Жизнь — птица со сломанным крылом,"]
-      - ["That cannot fly.", "Что не может летать."]
-      - ["Hold fast to dreams", "Держись за мечты,"]
-      - ["For when dreams go", "Ведь когда мечты уходят,"]
-      - ["Life is a barren field", "Жизнь — голое поле,"]
-      - ["Frozen with snow.", "Скованное снегом."]
-    about_ru: "Лэнгстон Хьюз — один из главных американских поэтов XX века, голос Гарлемского ренессанса. Восемь строк, почти все слова простые, а смысл — на всю жизнь."
-    learn_ru: "cannot fly — то же cannot, что в неделе 11 (I cannot sleep). Hold fast — «держись крепко»."
-    glossary: {hold fast: держаться крепко, broken-winged: со сломанным крылом, barren: "бесплодный, голый", frozen: замёрзший}
-  - slug: fog
-    title: "Fog"
-    author: "Carl Sandburg"
-    year: 1916
+      - ["Who has seen the wind?", "Кто видел ветер?"]
+      - ["Neither I nor you:", "Ни я, ни ты:"]
+      - ["But when the leaves hang trembling", "Но когда листья дрожат на ветках,"]
+      - ["The wind is passing thro'.", "Это ветер проходит сквозь них."]
+      - ["Who has seen the wind?", "Кто видел ветер?"]
+      - ["Neither you nor I:", "Ни ты, ни я:"]
+      - ["But when the trees bow down their heads", "Но когда деревья склоняют головы,"]
+      - ["The wind is passing by.", "Это ветер проносится мимо."]
+    about_ru: "Кристина Россетти — английская поэтесса XIX века. Здесь ветер нельзя увидеть, но его присутствие узнаётся по деревьям. Сохранено написание thro' из прижизненного издания 1893 года."
+    learn_ru: "Neither ... nor — «ни ... ни». But when — «но когда». Is passing — Present Continuous: действие происходит в момент наблюдения; эту форму подробно изучают после A1."
+    glossary: {neither: "ни один (из двух)", trembling: дрожащие, "thro'": "сокращённое through (сквозь)", "bow down": наклоняться}
+
+  - slug: im-nobody
+    title: "I'm Nobody! Who are you?"
+    author: "Emily Dickinson"
+    author_death_year: 1886
+    year: 1891
+    source_edition: "Poems by Emily Dickinson, Second Series (Roberts Brothers, Boston, 1891), Life, poem I (first posthumous publication)"
+    source_url: "https://en.wikisource.org/wiki/Page:Emily_Dickinson_Poems_-_second_series_(1891).djvu/33"
     lines:
-      - ["The fog comes", "Туман приходит"]
-      - ["on little cat feet.", "на маленьких кошачьих лапах."]
-      - ["It sits looking", "Он сидит и смотрит"]
-      - ["over harbor and city", "на гавань и город"]
-      - ["on silent haunches", "на бесшумных задних лапах"]
-      - ["and then moves on.", "и уходит дальше."]
-    about_ru: "Карл Сэндберг — поэт Чикаго. Здесь туман ведёт себя как кот: тихо приходит, садится, смотрит и уходит. Совсем как Box."
-    learn_ru: "The fog comes, it sits, it moves — Present Simple с -s, как в неделе 7 (he works)."
-    glossary: {fog: туман, harbor: гавань, silent: бесшумный, haunches: задние лапы (когда животное сидит)}
+      - ["I'M nobody! Who are you?", "Я — никто! А ты кто?"]
+      - ["Are you nobody, too?", "Ты тоже никто?"]
+      - ["Then there's a pair of us—don't tell!", "Тогда нас двое — только не рассказывай!"]
+      - ["They'd banish us, you know.", "Нас бы прогнали, знаешь."]
+      - ["How dreary to be somebody!", "Как уныло быть знаменитостью!"]
+      - ["How public, like a frog", "Как выставляться напоказ, словно лягушка,"]
+      - ["To tell your name the livelong day", "Весь долгий день повторять своё имя"]
+      - ["To an admiring bog!", "Перед восхищённым болотом!"]
+    about_ru: "Эмили Дикинсон — американская поэтесса XIX века. Стихотворение впервые напечатали после её смерти. Здесь автор иронизирует над стремлением быть знаменитым."
+    learn_ru: "There's a pair of us — «нас двое». They'd = they would. В оригинальном издании сохранено написание don't и тире."
+    glossary: {nobody: никто, pair: пара, banish: изгнать, dreary: унылый, livelong: "весь (день)", bog: болото}
+
+  - slug: annas-map
+    title: "A Circle on the Map"
+    author: original
+    year: 2026
+    lines:
+      - ["At the corner café, Anna unfolds a map.", "В кафе на углу Анна разворачивает карту."]
+      - ["She marks a place she has never been.", "Она отмечает место, где ещё не бывала."]
+      - ["The coffee cools beside her pencil.", "Кофе остывает рядом с карандашом."]
+      - ["Outside, the morning bus turns east.", "Снаружи утренний автобус поворачивает на восток."]
+      - ["One small circle shines in blue ink.", "На карте синими чернилами сияет маленький кружок."]
+      - ["Tomorrow has no address yet,", "У завтрашнего дня пока нет адреса,"]
+      - ["but today she knows where to begin.", "но сегодня она знает, с чего начать."]
+    about_ru: "Новое авторское стихотворение о мечте Анны отправиться в неизведанное. Не перевод и не переработка чужих произведений."
+    learn_ru: "She marks — Present Simple с -s; has never been — опыт; where to begin — «с чего начать»."
+    glossary: {unfolds: разворачивает, marks: отмечает, east: восток, ink: чернила, begin: начинать}
+
+  - slug: annas-misty-morning
+    title: "The Morning Without Edges"
+    author: original
+    year: 2026
+    lines:
+      - ["By the bakery, the street signs fade.", "У пекарни дорожные знаки теряют чёткость."]
+      - ["Anna waits beneath a yellow awning.", "Анна ждёт под жёлтым навесом."]
+      - ["Beyond the glass, the traffic lights glow softly.", "За стеклом мягко светятся светофоры."]
+      - ["The town becomes a quiet watercolor.", "Городок превращается в тихую акварель."]
+      - ["She hears the first bus before she sees it.", "Она слышит первый автобус прежде, чем видит его."]
+      - ["Then a door opens across the square,", "Затем на другой стороне площади открывается дверь,"]
+      - ["and warm voices give the morning its shape.", "и тёплые голоса придают утру очертания."]
+    about_ru: "Новое авторское стихотворение о туманном утре в городке Анны — без заимствований из чужих стихов."
+    learn_ru: "Before she sees it — «до того, как увидит». Beneath — «под»; across the square — «на другой стороне площади»."
+    glossary: {bakery: пекарня, fade: тускнеть, awning: навес, glow: светиться, watercolor: акварель, shape: форма}
+
   - slug: hickory-dickory-dock
     title: "Hickory, Dickory, Dock"
-    author: "Детская песенка"
+    author: folk
     year: 1744
     lines:
       - ["Hickory, dickory, dock,", "Хикори-дикори-док,"]
@@ -114,7 +168,7 @@ poems:
     glossary: {mouse: мышь, ran up: взбежала, struck one: пробили час}
   - slug: buckle-my-shoe
     title: "One, Two, Buckle My Shoe"
-    author: "Детский стишок"
+    author: folk
     year: 1805
     lines:
       - ["One, two, buckle my shoe;", "Раз, два — застегни туфлю;"]
@@ -127,7 +181,7 @@ poems:
     glossary: {buckle: застегнуть пряжку, shoe: туфля, knock: стучать, sticks: палочки, straight: ровно, hen: курица}
   - slug: mondays-child
     title: "Monday's Child"
-    author: "Народный стишок"
+    author: folk
     year: 1838
     lines:
       - ["Monday's child is fair of face,", "Дитя понедельника — красиво лицом,"]

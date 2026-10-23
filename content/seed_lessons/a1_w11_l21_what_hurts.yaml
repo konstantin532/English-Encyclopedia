@@ -47,7 +47,7 @@ layers:
       > [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — У меня болит голова.
       > [T3]My[/] [S5]back[/] [D3]hurts[/]. — У меня болит спина.
 
-      - I have a + боль: a headache, a stomachache.
+      - **I have + название недомогания**: I have a headache, I have a stomachache. С этими двумя словами нужен **a**, но это не схема для любого слова со значением «боль»: ниже сравним с pain.
       - My + часть тела + hurts: my head hurts, my back hurts.
       - **Hurts** с **-s** в обычном Present Simple, когда подлежащее — **одна** часть тела: *my back hurts*. Если подлежащее множественное, *my feet hurt*, без -s.
       - Вопрос: Does your head hurt? — с does, hurt без -s.
@@ -137,7 +137,7 @@ exercises:
     uid: EX-00119
     kind: fill
     stage: transfer
-    prompt_ru: "Новая ситуация: в поездке у вас заболел живот. Скажите аптекарю."
+    prompt_ru: "Новая ситуация: в поездке у вас заболел живот. Сообщите аптекарю, используя My + часть тела + hurts."
     prompt_en: "Can I help you? — ___"
     answer: "My stomach hurts."
     accepted: ["My stomach hurts", "Yes, my stomach hurts.", "Yes, please. My stomach hurts.", "Yes. My stomach hurts."]

@@ -38,6 +38,10 @@
 
 План ситуаций и грамматики — content/manifests/weeks_plan.yaml. Диалоги и скороговорки — content/seed_weeks/*.yaml. Фразы входят в seed_lexicon как единицы типа phrase; их слова известны с недели введения фразы.
 
+## Свой сервер в России (основной вариант)
+
+Сайт, база PostgreSQL и https на одном VPS в Docker, автообновление после слияния в `main`, ночная зашифрованная копия базы — `docs/deploy/vps-moscow.md`.
+
 ## Render: запуск сайта с телефона
 
 Подготовлен Blueprint `render.yaml` и руководство `docs/deploy/render-a1.md`.
@@ -82,6 +86,8 @@
 | `uv run python manage.py audit_course` | Аудит: квоты 6200/60/60, реестр маркеров, разметка, незарегистрированные слова |
 | `uv run python manage.py test tests --exclude-tag slow --parallel auto` | Быстрые тесты во время работы (около минуты) |
 | `uv run python manage.py test tests --parallel auto` | Все тесты — перед слиянием (или `uv run pytest`) |
+
+Снять все блокировки входа вручную: `python manage.py axes_reset`.
 
 ## Проверка готовности A1 перед A1+
 
