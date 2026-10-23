@@ -224,7 +224,7 @@ practice:
   prompt_ru: Было очень интересно.
   answer: It was very interesting.
   hint_ru: It was + very + interesting.
-  explanation_ru: It was very interesting. Без it по-английски нельзя.
+  explanation_ru: It was very interesting. В таком полном предложении об общем впечатлении нужно подлежащее it; короткие самостоятельные реплики, например Very interesting!, устроены иначе.
   review_of: 2
   units:
   - LX-00576

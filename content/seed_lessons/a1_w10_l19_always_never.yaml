@@ -21,7 +21,7 @@ contractions:
   - full: "do not"
     short: "don't"
     ipa: "/doʊnt/"
-    note_ru: "I don't walk = I never walk? Нет: don't — «не гуляю (сейчас, обычно)», never — «никогда»."
+    note_ru: "I don't walk on Sundays — «по воскресеньям я не гуляю» (обычная привычка); never подчёркивает «никогда». Present Simple сам по себе не описывает процесс прямо сейчас."
 layers:
   - number: 1
     body: |
@@ -75,6 +75,8 @@ layers:
   - number: 4
     body: |
       **Почему не I don't never walk?** В **стандартном американском английском**, который мы изучаем, **never** само выражает отрицание: *I never walk*. Добавлять к нему **don't** для обычного отрицательного утверждения не нужно. Но нельзя утверждать, будто двойное отрицание «всегда взаимно уничтожается»: в некоторых диалектах английского оно реально встречается с отрицательным смыслом. В курсе используем нормативную конструкцию *I never…*.
+
+      **Don't и never не равны по силе утверждения.** *I don't work on Sundays* — «По воскресеньям я не работаю» (обычный режим). *I never work on Sundays* — «Я никогда не работаю по воскресеньям»: **never** подчёркивает отсутствие исключений. Здесь обе фразы — о регулярности, не о действии в данную секунду. Как описывать происходящее сейчас, разберём в A1+.
 
       > [T8]You[/] [A1]never[/] [D4]walk[/]? [A1]Never[/]? — Ты никогда не гуляешь? Совсем никогда?
 
@@ -135,6 +137,7 @@ exercises:
     prompt_ru: "Соберите: «Иногда я играю на гитаре»."
     options: [guitar, sometimes, the, I, play]
     answer: "I sometimes play the guitar"
+    accepted: ["Sometimes I play the guitar"]
     hint_ru: "Слово частоты перед глаголом play."
     explanation_ru: "I sometimes play the guitar. Можно и Sometimes I play the guitar."
     units: [LX-00198]
