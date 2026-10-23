@@ -51,7 +51,7 @@ layers:
   body: 'Схема:
 
 
-    > [P5]For[/] [N3]five[/] [S7]days[/]. [D2]Read[/] [T1]the[/] [S2]label[/] [A4]carefully[/]. [C1]And[/] [D2]drink[/] [S3]tea[/] [P4]with[/] [S3]honey[/] [N1]three[/] [S7]times[/] [T1]a[/] [S7]day[/]. — Пять дней. Внимательно прочитайте инструкцию. И пейте чай с мёдом три раза в день.
+    > [P3]For[/] [N1]five[/] [S7]days[/]. [D2]Read[/] [T1]the[/] [S2]label[/] [A4]carefully[/]. [C1]And[/] [D2]drink[/] [S3]tea[/] [P4]with[/] [S3]honey[/] [N1]three[/] [S7]times[/] [T1]a[/] [S7]day[/]. — Пять дней. Внимательно прочитайте инструкцию. И пейте чай с мёдом три раза в день.
 
 
     - Вопрос: **How often + do / does + кто + глагол?**
@@ -60,7 +60,7 @@ layers:
 
     - Слова частоты: **always** — всегда, **often** — часто, **sometimes** — иногда, **never** — никогда.
 
-    - Они стоят **перед глаголом**: I **often** forget. Но **после be**: I am **always** tired.
+    - Обычное место в простом утверждении — **перед смысловым глаголом**: I **often** forget. Но **после be**: I am **always** tired. С модальным глаголом — после него: I can **always** help. Выражение **twice a day** обычно ставят в конце: I take it **twice a day**.
 
     '
 - number: 4
@@ -98,9 +98,9 @@ layers:
 
     - «two times a day» — понятно, но обычно говорят **twice**.
 
-    - «twice in a day» — без in: **twice a day**.
+    - Для регулярного режима: **twice a day**. **Twice in a day** возможно, если речь о двух случаях в пределах одного дня, но это не обычная формулировка расписания.
 
-    - «I forget often» — **I often forget**.
+    - **I often forget my medicine** — удобный нейтральный порядок. **Often** бывает и в конце: *I go there often.* Поэтому положение в конце само по себе не ошибка; не вставляйте often между forget и my medicine.
 
     - «How much often» — просто **How often**.
 

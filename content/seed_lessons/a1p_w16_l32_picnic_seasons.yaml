@@ -70,7 +70,7 @@ layers:
     > [D6]Look[/]! [T1]An[/] [J2]old[/] [S1]man[/] [D1]is[/] [D4]walking[/] [A4]slowly[/] [P2]across[/] [T1]the[/] [S6]grass[/]. — Смотрите! Через лужайку медленно идёт старик.
 
 
-    - Времена года: **spring, summer, fall, winter** — с **in the**: in the summer.
+    - Времена года: **spring, summer, fall, winter**. Обычно **in (the)**: in summer / in the summer. С this / next / last предлог не нужен: this summer, next winter.
 
     - Пикник: **basket, blanket, grill, napkin, lemonade, watermelon, strawberries**.
 
@@ -82,7 +82,7 @@ layers:
 
     '
 - number: 4
-  body: '**Почему «What a great day!», а не «How great day!»?** Перед существительным — **What a…**: *What a great day!* Перед одним прилагательным — **How…**: *How nice!*
+  body: '**Почему «What a great day!», а не «How great day!»?** Перед исчисляемым существительным в единственном числе используем **What a/an + (прилагательное) + существительное**: *What a great day!* Во множественном числе и с неисчисляемым существительным a/an не нужен: *What lovely songs! What lovely weather!* Если существительного нет, удобно **How + прилагательное**: *How nice!*
 
 
     **Почему «in the summer», а не «in summer»?** Можно и так, и так. В разговоре в США чаще с **the**: *in the summer, in the fall*.
@@ -125,7 +125,7 @@ layers:
   body: 'Шесть заданий: назвать время года, выбрать What a…, собрать фразу о пикнике, рассказать о любимом сезоне, найти лишнее и сказать тост.
 
 
-    **Проверка маленького шага:** in the summer / in the fall; What a + прилагательное + слово!
+    **Проверка маленького шага:** in (the) summer / in (the) fall; What a great day! — один день, What lovely weather! — неисчисляемое weather.
 
     '
 exercises:

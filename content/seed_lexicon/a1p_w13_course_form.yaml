@@ -284,7 +284,7 @@ units:
   example_en: '[T8]I[/] [D1]was[/] [J7]born[/] [P1]in[/] [S1]Russia[/].'
   example_ru: Я родилась в России.
   situation: Рассказываете о себе
-  usage_note: 'По-английски «я был рождён»: I was born — всегда с was / were.'
+  usage_note: 'Рассказывая, где или когда человек родился, используйте was / were born: I was born in Russia. — Я родилась в России. В вопросе: Where were you born? Это схема рассказа о своём рождении в прошлом, а не правило, что born во всех контекстах бывает только с was / were.'
   typical_error: '«I born in…» — неверно. Нужно: I was born in…'
 - uid: LX-00948
   lemma: proud

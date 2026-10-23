@@ -14,7 +14,7 @@ units:
   example_en: '[T8]It[/] [D1]is[/] [X1]not[/] [J2]warm[/] [A5]enough[/].'
   example_ru: Недостаточно тепло.
   situation: Говорите о погоде
-  usage_note: 'enough стоит ПОСЛЕ прилагательного: warm enough. gh = «ф»: «инАф».'
+  usage_note: 'С прилагательным enough ставим после него: warm enough — достаточно тёплый. С существительным обычный порядок обратный: enough time — достаточно времени. Сравните: warm enough, но enough water. gh = «ф»: «инАф».'
   typical_error: '«enough warm» — неверно. Нужно: warm enough.'
 - uid: LX-00896
   lemma: instead

@@ -55,7 +55,7 @@ layers:
       - Время: What time is the next bus? — At six.
   - number: 4
     body: |
-      Почему Does this bus go…, а не Is this bus go…? Автобус «ходит» — это обычный глагол go, привычка. А для привычек с he, she, it нужен does (неделя 9). Поэтому: Does this bus go…? — Yes, it does.
+      Почему **Does this bus go…?**, а не *Is this bus go…?* Мы спрашиваем о маршруте, используя обычный глагол **go** в Present Simple. Это время подходит не только для привычек людей, но и для маршрутов и расписаний. Подлежащее **this bus** — как **it**, поэтому в таком вопросе нужен **does**, а **go** остаётся в начальной форме. Ответ: **Yes, it does**.
 
       > [T9]What[/] [S7]time[/] [D1]is[/] [T1]the[/] [J8]next[/] [S4]bus[/] [A3]back[/]? — А во сколько обратный автобус?
 
@@ -78,14 +78,14 @@ layers:
       > [T1]The[/] [S4]bus[/] [D4]leaves[/] [P3]at[/] [N3]five[/]. — Автобус отправляется в пять.
       > [T8]I[/] [D3]want[/] [X2]to[/] [D2]buy[/] [T1]a[/] [S2]ticket[/]. — Я хочу купить билет.
 
-      **Leave** — отправляться, **arrive** — прибывать: это разные моменты поездки. После does глагол без -s: **What time does the train arrive?** Прибыть на станцию — **arrive at the station**, не arrive to. **Travel** — ездить, путешествовать; **trip** — отдельная поездка.
+      **Leave** — отправляться, **arrive** — прибывать: это разные моменты поездки. После does глагол без -s: **What time does the train arrive?** Прибыть на станцию — **arrive at the station**, в город — **arrive in the city**. Для этих обычных значений учим **at / in**, а не *arrive to*. **Travel** — ездить, путешествовать; **trip** — отдельная поездка.
 
       Сумка — **bag**, место для сидения — **seat**. **Take a seat, please.** — приглашение сесть; sit — само действие, seat здесь предмет или место. Цены и время в сценках вымышленные, а способ оплаты и правила провоза вещей зависят от перевозчика.
   - number: 6
     body: |
       Ловушки:
 
-      - «on bus» — нужен артикль: on the bus или by bus.
+      - **By bus** обозначает способ поездки: I travel by bus — «Я езжу на автобусе». **On the bus** обозначает нахождение или поездку в автобусе: I am on the bus — «Я в автобусе». Нельзя механически менять одно на другое: *I am by bus* не передаёт «Я в автобусе».
       - «Two ticket» — нужно -s: two tickets.
       - stop — и «остановка», и «останавливаться»: The bus stops here — автобус здесь останавливается.
   - number: 7
@@ -110,7 +110,7 @@ exercises:
     prompt_en: "Two ___, please."
     answer: "tickets"
     hint_ru: "Билетов два — нужно -s."
-    explanation_ru: "Two tickets, please — после two существительное с -s."
+    explanation_ru: "Two tickets, please — нужно множественное число tickets. У ticket оно образуется с -s; не все существительные образуют множественное число так."
     units: [LX-00253, LX-00257]
   - order: 3
     uid: EX-00154

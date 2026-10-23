@@ -76,7 +76,7 @@ layers:
 
       **Question** — вопрос; **answer** — ответ. **Sentence** — предложение, **page** — страница, **exercise** — отдельное учебное упражнение, **test** — проверочная работа. **Easy** и **difficult** говорят о сложности, а знакомые light и heavy — о весе.
 
-      Указания на уроке: **Open your book at page ten.** — «Откройте книгу на странице десять». **Repeat the sentence, please.** — «Повторите предложение, пожалуйста». Тетрадь — notebook, бумага — paper; домашняя работа — homework: **I do my homework**.
+      Указания на уроке: **Open your book to page ten.** — «Откройте книгу на странице десять». **Repeat the sentence, please.** — «Повторите предложение, пожалуйста». Тетрадь — notebook, бумага — paper; домашняя работа — homework: **I do my homework**.
 
       **I study English because my friend speaks English.** — «Я изучаю английский, потому что мой друг говорит по-английски». В вопросе **Why do you study English?** нужен do, но с be — **Why is the exercise difficult?** без do. Причину после because называйте целой мыслью: кто что делает или какой предмет каков.
   - number: 6
@@ -99,7 +99,7 @@ exercises:
     prompt_ru: "Анна спрашивает: Why, Tom? Что ей ответить?"
     options: ["Because I like Russian music.", "Yes, I can.", "On Saturday at ten."]
     answer: "Because I like Russian music."
-    hint_ru: "На why отвечают с because."
+    hint_ru: "Выберите объяснение причины; в нашем образце оно начинается с because."
     explanation_ru: "Why? спрашивает о причине или цели. Because I like Russian music объясняет причину. В этом упражнении удобный ответ начинается с because, но в разговоре возможны и другие формы."
     units: [LX-00241, LX-00250]
   - order: 2

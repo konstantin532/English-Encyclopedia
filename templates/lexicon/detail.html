@@ -20,6 +20,16 @@
       {% if unit.example_ru %}<p style="color:var(--ink-soft); margin-top:calc(-1 * var(--space-3))">{{ unit.example_ru }}</p>{% endif %}
       <dl>
         <dt>Значение</dt><dd lang="en">{{ unit.meaning }}</dd>
+        {% if unit.part_of_speech.code == 'D' %}
+        <dt>Тип изменения форм</dt>
+        <dd>
+          {% if 'irregular' in unit.grammar_features %}Неправильный глагол: формы изменяются не только по обычному правилу -ed.
+          {% elif 'regular' in unit.grammar_features %}Правильный глагол: прошедшая форма обычно образуется с -ed.
+          {% elif 'modal' in unit.grammar_features %}Модальный глагол: у него особые грамматические правила.
+          {% else %}Тип образования форм пока не размечен. По цвету определить его нельзя.
+          {% endif %}
+        </dd>
+        {% endif %}
         {% if unit.forms %}<dt>Формы</dt><dd class="subs" lang="en">{% for f in unit.forms %}<span>{{ f }}</span>{% endfor %}</dd>{% endif %}
         {% if unit.stress_note %}<dt>Произношение</dt><dd>{{ unit.stress_note }}</dd>{% endif %}
         {% if unit.collocations %}<dt>Сочетания</dt><dd class="subs" lang="en">{% for c in unit.collocations %}<span>{{ c }}</span>{% endfor %}</dd>{% endif %}
@@ -37,12 +47,13 @@
         <h2>Паспорт единицы</h2>
         <dl style="grid-template-columns: 1fr 1fr; gap: var(--space-2) var(--space-3)">
           <dt>ID</dt><dd class="uid">{{ unit.uid }}</dd>
-          <dt>Класс</dt><dd><span class="swatch" style="--sw: var(--class-{{ unit.semantic_class.number }})"></span> {{ unit.semantic_class.class_id }}</dd>
+          <dt>Учебный класс</dt><dd><span class="swatch" style="--sw: var(--class-{{ unit.semantic_class.number }})"></span> {{ unit.semantic_class.class_id }} — {{ unit.semantic_class.name_ru }}</dd>
           <dt>Уровень курса</dt><dd>{{ unit.internal_level.code }}</dd>
           <dt>CEFR</dt><dd>{{ unit.get_cefr_display }}{% if unit.verification_status != 'verified' %} <strong>(оценка, не подтверждена для значения)</strong>{% endif %}</dd>
           <dt>Проверка</dt><dd>{{ unit.get_verification_status_display }}</dd>
           <dt>Учебная последовательность</dt><dd>{{ unit.internal_level.code }} — внутренняя ступень курса, не сертификат CEFR</dd>
         </dl>
+        <p class="drill-hint">Линия обозначает учебную категорию ({{ unit.part_of_speech.name_ru }}), цвет — тематический класс. Это не признак правильного или неправильного глагола. В разных предложениях одно слово может выполнять разные роли. <a href="{% url 'taxonomy:legend' %}">Как работают цвета и линии</a>.</p>
         {% if unit.verification_note %}<p class="drill-hint">{{ unit.verification_note }}</p>{% endif %}
       </div>
       {% if lessons %}<div class="aside-box"><h2>В уроках</h2><ul class="toc">{% for l in lessons %}<li><a href="{% url 'lessons:detail' l.slug %}">{{ l.title }}</a></li>{% endfor %}</ul></div>{% endif %}

@@ -14,8 +14,8 @@ units:
   example_en: '[D1]Is[/] [T9]there[/] [T4]any[/] [S3]fish[/]?'
   example_ru: Есть рыба?
   situation: Спрашиваете в ресторане
-  usage_note: 'some — в утверждении, any — в вопросе и с not: We do not have any fish.'
-  typical_error: «We don't have some fish» — с not нужно any.
+  usage_note: 'Когда количество не названо, some обычно встречается в утверждении, а any — в нейтральном вопросе о наличии и в отрицании: Is there any fish? We do not have any fish. Но в просьбах и предложениях тоже бывает some: Can I have some bread? Выбирайте по смыслу, а не только по вопросительному знаку.'
+  typical_error: 'Для смысла «у нас совсем нет рыбы» скажите We do not have any fish. Правило не означает, что some запрещено во всех вопросах или отрицаниях: у других употреблений другой смысл.'
 - uid: LX-00734
   lemma: more
   meaning: a bigger amount
@@ -466,7 +466,7 @@ units:
   example_en: Is there any…?
   example_ru: Есть…?
   situation: Спрашиваете в ресторане
-  usage_note: 'О неисчисляемом и единственном: Is there any fish? О многих: Are there any…?'
+  usage_note: 'Когда спрашиваем о наличии еды как вещества: Is there any fish? — Есть рыба? Для отдельных предметов во множественном числе нужно are: Are there any potatoes? — Есть картофелины? Здесь fish — рыба как еда; из этой схемы нельзя выводить правило для всех значений any.'
 - uid: LX-00767
   lemma: Can we have the check, please?
   meaning: Asking to pay in a restaurant

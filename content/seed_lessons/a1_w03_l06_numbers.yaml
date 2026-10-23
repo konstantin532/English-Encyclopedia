@@ -124,8 +124,6 @@ practice:
   kind: translate
   prompt_ru: Два кофе и один чай, пожалуйста.
   answer: Two coffees and one tea, please.
-  accepted:
-  - Two coffee and one tea, please.
   hint_ru: После two — множественное число.
   explanation_ru: Two coffees and one tea, please. В кафе coffee считают чашками, поэтому two coffees.
   review_of: 3
@@ -137,8 +135,6 @@ practice:
   kind: translate
   prompt_ru: Три чая, пожалуйста.
   answer: Three teas, please.
-  accepted:
-  - Three tea, please.
   hint_ru: three — th, кончик языка между зубами.
   explanation_ru: 'Three teas, please. Следите за th в three: не «сри» и не «фри».'
   review_of: 3

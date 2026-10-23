@@ -376,7 +376,7 @@ units:
   example_en: '[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/] [D7]will[/] [D2]eat[/] [P1]in[/] [T1]the[/] [S2]kitchen[/].'
   example_ru: Если пойдёт дождь, мы поедим на кухне.
   situation: Говорите о планах при условии
-  usage_note: 'После will глагол без to: we will eat. В речи сокращается: we''ll, I''ll. После if will не ставят: If it rains (не «If it will rain»).'
+  usage_note: 'После will используйте начальную форму без to: we will eat; he will go, без -s. В речи: we''ll, I''ll. В изучаемой схеме будущего условия после if ставим Present Simple: If it rains, we will eat in the kitchen. Дождь ещё впереди, но rains здесь — настоящее время. Это правило данной схемы, а не запрет на will после if во всех значениях.'
   typical_error: '«If it will rain, we will…» — will после if лишнее. Нужно: If it rains, we will…'
 - uid: LX-01047
   lemma: guidebook

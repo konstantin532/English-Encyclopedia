@@ -6,6 +6,7 @@ units:
   lemma: eat
   meaning: to put food in your mouth and swallow it
   class: D2
+  grammar_features: [irregular]
   forms:
   - eats
   - ate

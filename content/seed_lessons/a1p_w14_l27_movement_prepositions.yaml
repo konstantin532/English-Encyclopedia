@@ -47,7 +47,7 @@ layers:
 
     '
 - number: 2
-  body: 'В русском «через» одно на всё: через улицу, через парк, через мост. А английский различает: **across** — по поверхности с одной стороны на другую (*across the street*), **through** — сквозь, внутри чего-то (*through the park*, *through the door*), **over** — сверху, над (*over the bridge*). Это как три разных картинки.
+  body: 'В русском «через» одно на всё: через улицу, через парк, через мост. А английский различает: **across** — по поверхности с одной стороны на другую (*across the street*), **through** — сквозь, внутри чего-то (*through the park*, *through the door*), **over** — через препятствие или над ним; *go over the bridge* обычно означает пройти **по мосту** на другую сторону, а не пролететь над мостом. Это как три разных картинки.
 
     '
 - number: 3
@@ -61,7 +61,7 @@ layers:
 
     - **through** — сквозь (парк, лес, дверь): through the park.
 
-    - **over** — через сверху (мост): over the bridge.
+    - **over** — через препятствие; **over the bridge** — по мосту на другую сторону. С мостом возможно и **across the bridge**.
 
     - **along** — вдоль: along the river.
 
@@ -81,7 +81,7 @@ layers:
     **Диагностика понимания:** вы идёте сквозь парк. Что сказать: *across the park* или *through the park*?
 
 
-    **Разбор:** *through the park* — сквозь, между деревьями. Across — если парк — просто открытая площадь.
+    **Разбор:** *through the park* подчёркивает маршрут внутри парка, например между деревьями. *Across the park* тоже возможно: оно выделяет переход с одной стороны парка на другую. Парк не обязан быть пустой площадью; разница в том, как говорящий представляет путь.
 
     '
 - number: 5
@@ -104,18 +104,18 @@ layers:
 
     - «through the street» — по улице на другую сторону: **across the street**.
 
-    - «go in the garden» — движение: **go into the garden**.
+    - Чтобы ясно сказать «войти в сад», выбирайте **go into the garden**. Движение бывает и внутри места: **walk in the garden** — гулять в саду. Поэтому не заменяйте in на into после любого глагола движения.
 
     - «go past of the church» — без of: **past the church**.
 
-    - «towards» — британское; в США **toward**.
+    - **Toward** и **towards** оба допустимы. В американском английском чаще выбирают **toward**; -s не меняет смысл направления.
 
     '
 - number: 7
   body: 'Шесть заданий: выбрать across или through, сказать «мимо», собрать маршрут, объяснить дорогу до магазина, выбрать into и позвать за собой.
 
 
-    **Проверка маленького шага:** across — по поверхности, through — сквозь, over — сверху, along — вдоль, past — мимо.
+    **Проверка маленького шага:** across — с одной стороны на другую, through — через внутреннюю часть, over — через препятствие или над ним, along — вдоль, past — мимо.
 
     '
 exercises:
@@ -166,8 +166,6 @@ exercises:
   prompt_ru: 'Новая ситуация: турист спрашивает, как пройти к банку. Банк на другой стороне улицы. Скажите: «Перейдите улицу».'
   prompt_en: Go ___ the street.
   answer: across
-  accepted:
-  - Cross the street.
   hint_ru: Через улицу — across.
   explanation_ru: 'Go across the street. (Или: Cross the street.)'
   units:
@@ -208,6 +206,8 @@ practice:
   answer: Go through the park.
   accepted:
   - Walk through the park.
+  - Go across the park.
+  - Walk across the park.
   hint_ru: through — сквозь.
   explanation_ru: Go through the park.
   review_of: 1
@@ -231,7 +231,9 @@ practice:
   accepted:
   - Cross the bridge.
   - Walk over the bridge.
-  hint_ru: over — через сверху.
+  - Go across the bridge.
+  - Walk across the bridge.
+  hint_ru: over the bridge — по мосту на другую сторону.
   explanation_ru: Go over the bridge.
   review_of: 3
   units:

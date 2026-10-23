@@ -100,7 +100,7 @@ exercises:
     prompt_ru: "Как правильно сказать «Я люблю читать»?"
     options: ["I like reading.", "I like read.", "I am like reading."]
     answer: "I like reading."
-    hint_ru: "После like действие получает -ing."
+    hint_ru: "Здесь выбираем like + форму на -ing; вариант с to тоже возможен."
     explanation_ru: "I like reading. Можно и I like to read, но не I like read."
     units: [LX-00200, LX-00208]
   - order: 2
@@ -131,7 +131,7 @@ exercises:
     prompt_ru: "Новая ситуация: на встрече вас спрашивают о хобби. Вы любите музыку и играете на гитаре. Скажите одну из фраз."
     prompt_en: "What do you like? — ___"
     answer: "I like music."
-    accepted: ["I like music", "I like music. I play the guitar.", "I like playing the guitar.", "I like playing the guitar"]
+    accepted: ["I like music", "I like music. I play the guitar.", "I like playing the guitar.", "I like playing the guitar", "I like to play the guitar.", "I like playing guitar.", "I like to play guitar."]
     hint_ru: "На What do you like? ответьте I like + вещь или I like + действие с -ing."
     explanation_ru: "What do you like? спрашивает именно о том, что нравится. Поэтому I like music или I like playing the guitar — прямые ответы. I play the guitar описывает занятие, но само по себе не говорит, что оно вам нравится."
     units: [LX-00203, LX-00211]
@@ -197,8 +197,10 @@ practice:
   kind: translate
   prompt_ru: Я играю на гитаре по воскресеньям.
   answer: I play the guitar on Sundays.
+  accepted:
+  - I play guitar on Sundays.
   hint_ru: play the guitar
-  explanation_ru: I play the guitar on Sundays. Перед инструментом — the.
+  explanation_ru: I play the guitar on Sundays. Здесь учим play the guitar; американский вариант play guitar без the тоже принимается.
   review_of: 3
   units:
   - LX-00202

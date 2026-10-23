@@ -74,18 +74,17 @@ layers:
 
     '
 - number: 4
-  body: '**my или mine?** **My** всегда стоит перед словом: *my umbrella*. **Mine** заменяет «моё + слово», после него ничего нет: *That''s mine!* Так же *yours, his, hers*.
+  body: |
+    **my или mine?** **My** определяет существительное: *my umbrella, my pink umbrella*. Между my и существительным может стоять прилагательное. **Mine** заменяет всю группу «мой зонт»: *That's mine!* После mine не повторяют название вещи.
 
+    Это не правило «mine всегда в конце»: **Mine is pink** — «мой — розовый» — тоже правильно. Пары: **my — mine, your — yours, her — hers**. У **his** обе формы совпадают: **his umbrella — it is his**. У самостоятельных yours / hers нет апострофа.
 
     > [O4]No[/], [T2]that[/] [D1]is[/] [X1]not[/] [T9]mine[/]. [T3]My[/] [S2]umbrella[/] [D1]is[/] [J3]different[/]. — Нет, это не мой. Мой другой.
 
-
     **Диагностика понимания:** что верно: *That umbrella is my* или *That umbrella is mine*?
 
+    **Разбор:** *That umbrella is mine.* Здесь название вещи не повторяется: **mine** заменяет «мой зонт».
 
-    **Разбор:** *That umbrella is mine.* В конце, без слова — mine.
-
-    '
 - number: 5
   body: 'Так говорят американцы:
 
@@ -135,7 +134,7 @@ exercises:
   - That's me!
   answer: That's mine!
   hint_ru: Без слова после — mine.
-  explanation_ru: 'That''s mine! My ставят только перед словом: my umbrella.'
+  explanation_ru: 'That''s mine! Mine заменяет my umbrella. My употребляется с существительным: my umbrella, my pink umbrella.'
   units:
   - LX-00689
   - LX-00698

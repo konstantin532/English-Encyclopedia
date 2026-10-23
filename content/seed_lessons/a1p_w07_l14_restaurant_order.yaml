@@ -49,7 +49,7 @@ layers:
   body: 'Американский ресторан: вас встречают, сажают за столик, приносят меню, а потом спрашивают, готовы ли вы заказать. В конце просят счёт и оставляют чаевые.
 
 
-    > [J3]Good[/] [S7]evening[/]! [D1]Are[/] [T8]you[/] [J4]ready[/] [P2]to[/] [D2]order[/]? — Добрый вечер! Готовы сделать заказ?
+    > [J3]Good[/] [S7]evening[/]! [D1]Are[/] [T8]you[/] [J4]ready[/] [X2]to[/] [D2]order[/]? — Добрый вечер! Готовы сделать заказ?
 
     > [A2]Then[/] [T8]I[/] [D7]would[/] [D3]like[/] [T1]the[/] [S3]chicken[/] [P4]with[/] [S3]rice[/], [O8]please[/]. — Тогда мне курицу с рисом, пожалуйста.
 
@@ -62,7 +62,7 @@ layers:
   body: 'Схема ужина:
 
 
-    > [N1]Two[/] [S3]pies[/], [O8]please[/]. [C1]And[/] [D7]can[/] [T8]we[/] [D1]have[/] [T1]the[/] [D6]check[/], [O8]please[/]? — Два пирога, пожалуйста. И можно счёт?
+    > [N1]Two[/] [S3]pies[/], [O8]please[/]. [C1]And[/] [D7]can[/] [T8]we[/] [D1]have[/] [T1]the[/] [S2]check[/], [O8]please[/]? — Два пирога, пожалуйста. И можно счёт?
 
 
     1. Вход: **A table for two, please.**
@@ -81,23 +81,22 @@ layers:
 
     '
 - number: 4
-  body: '**Почему «I would like», а не «I want»?** *I want* — «я хочу» — звучит слишком прямо, почти грубо. **I would like** (или **I''d like**) — «я бы хотел»: так вежливо говорят с официантом.
+  body: |
+    **Почему «I would like», а не «I want»?** **I want** — грамматически правильное «я хочу», но при заказе может звучать прямолинейно. **I would like** (или **I'd like**) — удобный нейтрально-вежливый вариант. Вежливость зависит и от интонации, please и ситуации, поэтому I want не означает грубость автоматически.
 
+    После **would like** можно назвать еду: **I'd like the chicken**, или действие с **to**: **I'd like to order**. Это отличается от **I like chicken** — «мне нравится курица вообще».
 
-    **Чаевые в США** — не подарок, а часть зарплаты официанта. Обычно оставляют 15–20 процентов от счёта.
-
+    **Keep the change** означает «оставьте сдачу себе»: так можно оставить чаевые при оплате наличными. Эта реплика подходит, только если вы действительно не ждёте сдачи; она не означает просто «спасибо» и не подходит автоматически к оплате картой.
 
     **Диагностика понимания:** что вежливее сказать официанту: *I want the chicken* или *I would like the chicken*?
 
-
     **Разбор:** *I would like the chicken.* — вежливая форма.
 
-    '
 - number: 5
   body: 'Так говорят американцы:
 
 
-    > [A3]Here[/] [D1]are[/] [N1]sixty[/] [N6]dollars[/]. [D2]Keep[/] [T1]the[/] [D2]change[/]! — Вот шестьдесят долларов. Сдачи не надо!
+    > [A3]Here[/] [D1]are[/] [N1]sixty[/] [N6]dollars[/]. [D2]Keep[/] [T1]the[/] [S2]change[/]! — Вот шестьдесят долларов. Сдачи не надо!
 
 
     - **Here you go. Enjoy your meal!** — пожалуйста, приятного аппетита.
@@ -111,18 +110,14 @@ layers:
 
     '
 - number: 6
-  body: 'Ловушки:
+  body: |
+    Ловушки:
 
-
-    - «I want the chicken» официанту — грубовато; лучше **I would like**.
-
+    - При заказе **I would like the chicken, please** — надёжный вежливый образец. **I want the chicken** может звучать слишком прямо, но оценка зависит от ситуации и интонации.
     - «Give me the bill» — в США **Can we have the check, please?**
-
-    - «very delicious» — delicious уже значит «очень вкусный».
-
+    - **Delicious** уже выражает сильную положительную оценку. Для обычной похвалы достаточно **It was delicious**; усилить можно **really delicious**. Сочетание very delicious обычно не выбирают как учебный образец, но это вопрос сочетаемости, а не особого запрета слова very перед любым прилагательным.
     - dessert (ss, десерт) и desert (пустыня) — разные слова.
 
-    '
 - number: 7
   body: 'Шесть заданий: вежливо заказать, спросить совет, собрать просьбу о счёте, заказать в новом месте, похвалить еду и оставить чаевые.
 
@@ -191,11 +186,11 @@ exercises:
   prompt_ru: Ужин был очень вкусный. Что сказать?
   options:
   - Everything was delicious!
-  - Everything was very delicious!
+  - Everything were delicious!
   - Everything was dessert!
   answer: Everything was delicious!
-  hint_ru: delicious уже значит «очень вкусный».
-  explanation_ru: Everything was delicious! Very перед delicious не ставят.
+  hint_ru: Для «всё» здесь нужен was; «очень вкусный» — delicious.
+  explanation_ru: Everything was delicious! Everything согласуется с was. Dessert — десерт, а delicious — очень вкусный.
   units:
   - LX-00760
 - order: 6

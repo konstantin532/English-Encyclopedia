@@ -73,21 +73,17 @@ layers:
 
     '
 - number: 4
-  body: '**Почему you were, даже если «ты» один?** Так же, как **you are**: у you всегда форма множественного числа — и в настоящем, и в прошлом. *You were at home* — «ты был» и «вы были».
-
+  body: |
+    **Почему you were, даже если «ты» один?** Так же, как **you are**: у you всегда форма множественного числа — и в настоящем, и в прошлом. *You were at home* — «ты был» и «вы были».
 
     > [D1]Were[/] [T8]you[/] [P3]at[/] [S2]home[/] [J8]last[/] [S7]night[/]? — А вчера вечером вы были дома?
 
-
-    **Last night** — «вчера вечером». Не говорите *yesterday night*: так звучит непривычно. **Yesterday** — вчера (днём), **the day before yesterday** — позавчера.
-
+    **Last night** — «вчера вечером» или «прошлой ночью», по контексту. **Yesterday evening** — точнее «вчера вечером». Вместо *yesterday night* в обычной речи выбирайте **last night**. **Yesterday** означает весь вчерашний день, а не только светлое время суток; **the day before yesterday** — позавчера.
 
     **Диагностика понимания:** вы рассказываете, что Мия была в кафе одна. Что верно: *Mia were alone* или *Mia was alone*?
 
-
     **Разбор:** *Mia was alone.* Одна Мия — как she, значит **was**.
 
-    '
 - number: 5
   body: 'Так говорят американцы:
 
@@ -179,7 +175,7 @@ exercises:
   - I was at the gym
   - Yesterday I was at the gym.
   hint_ru: I was + at the gym.
-  explanation_ru: I was at the gym (yesterday). С местом — at.
+  explanation_ru: 'I was at the gym (yesterday). Для спортзала здесь употребляем at the gym. Не переносите at на все места: in the kitchen, on the bus.'
   units:
   - LX-00569
   - LX-00501
@@ -187,7 +183,7 @@ exercises:
   uid: EX-00180
   kind: choice
   stage: recognition
-  prompt_ru: Как сказать «вчера вечером»?
+  prompt_ru: Какое из этих выражений естественно означает «вчера вечером / прошлой ночью»?
   options:
   - last night
   - yesterday night
@@ -230,6 +226,10 @@ practice:
   units:
   - LX-00593
   - LX-00592
+  accepted:
+  - Were you home last night?
+  - Were you at home yesterday evening?
+  - Were you home yesterday evening?
 - order: 3
   kind: translate
   prompt_ru: Я был в музее два часа.
@@ -248,6 +248,8 @@ practice:
   answer: I wasn't at home.
   accepted:
   - I was not at home.
+  - I wasn't home.
+  - I was not home.
   hint_ru: I + wasn't + at home.
   explanation_ru: I wasn't at home. Отрицание с was — wasn't.
   review_of: 6

@@ -87,7 +87,7 @@ layers:
   body: 'Так говорят американцы:
 
 
-    > [S1]Tom[/], [C4]if[/] [T8]it[/] [D1]is[/] [S1]Sam[/], [T8]he[/] [D7]will[/] [D5]tell[/] [T8]us[/] [A6]about[/] [S1]Rose[/]. [S7]Time[/] [D4]flies[/]. [N1]Sixty[/] [S7]years[/]! — Том, если это Сэм, он расскажет нам о Роуз. Как летит время. Шестьдесят лет!
+    > [S1]Tom[/], [C4]if[/] [T8]it[/] [D1]is[/] [S1]Sam[/], [T8]he[/] [D7]will[/] [D5]tell[/] [T8]us[/] [P6]about[/] [S1]Rose[/]. [S7]Time[/] [D4]flies[/]. [N1]Sixty[/] [S7]years[/]! — Том, если это Сэм, он расскажет нам о Роуз. Как летит время. Шестьдесят лет!
 
 
     - **Time flies!** — время летит!
@@ -108,9 +108,9 @@ layers:
 
     - «He have to» — **He has to**.
 
-    - «If it will rain» — **If it rains**.
+    - В изученном условии о будущем: не «If it will rain», а **If it rains**.
 
-    - «We don''t have some» — **We don''t have any**.
+    - Для нейтрального «у нас нет» — **We don''t have any**. Some в отрицании возможно при другом смысле, например «нет некоторых», поэтому это не запрет some во всех отрицаниях.
 
     - «Play quiet» — **Play quietly**.
 

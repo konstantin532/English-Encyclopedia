@@ -64,7 +64,7 @@ layers:
       - Выбор **his / her** зависит от того, **о каком владельце мы говорим**, а не от пола названной вещи или человека: *her brother* — «её брат», хотя брат мужчина.
       - После **his / her** в этих примерах стоит существительное (*name, family, brother*). Сами **he / she** могут быть подлежащими предложения.
 
-      Теперь вся таблица — кто и чьё:
+      Теперь сопоставим изученные формы — кто и чьё:
 
       - [T8]I[/] — [T3]my[/], [T8]you[/] — [T3]your[/]
       - [T8]he[/] — [T3]his[/], [T8]she[/] — [T3]her[/]
@@ -76,7 +76,7 @@ layers:
       > [A6]How[/] [J2]old[/] [D1]are[/] [T8]they[/]? — Сколько им лет?
       > [T3]Their[/] [S2]house[/] [D1]is[/] [J1]big[/]. — Их дом большой.
 
-      С we и they глагол be всегда **are**: we are, they are.
+      В настоящем времени с we и they выбираем **are**: we are, they are. Форма зависит от подлежащего всей фразы: *their house* — один дом, поэтому *Their house is big*, хотя владельцев несколько.
   - number: 4
     body: |
       **Почему нет отдельного слова для русского «свой» в наших примерах?** Когда по-русски говорим «Он показывает свою книгу», английское притяжательное слово обычно выбирают **по владельцу**, например *his book* («его/свою книгу»). Английский может уточнять принадлежность словом **own** («собственный»), но обязательного универсального соответствия русскому «свой» нет. Поэтому правило «в английском вообще нет способа сказать свой» — неверное.
@@ -98,7 +98,7 @@ layers:
       > [A3]Here[/][D1]'s[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.
 
       - Here is в быстрой речи — here's.
-      - 's бывает двух видов: he's = he is, Mia's photo = фото Мии. Различают по смыслу.
+      - Сегодня различаем два употребления 's: he's = he is, Mia's photo = фото Мии. Это не полный список всех значений 's в английском: здесь выбирайте по смыслу всей фразы.
   - number: 6
     body: |
       **Зачем один и тот же знак 's?** Апостроф с **s** может обозначать разные конструкции:
@@ -163,7 +163,7 @@ exercises:
     prompt_en: "How old ___ they?"
     answer: "are"
     hint_ru: "С they глагол be в форме…"
-    explanation_ru: "How old are they? — с we и they всегда are."
+    explanation_ru: "How old are they? — в настоящем времени подлежащему they соответствует are."
     units: [LX-00264]
   - order: 6
     uid: EX-00043
@@ -172,7 +172,7 @@ exercises:
     prompt_ru: "Вы показываете фото своей семьи, затем фото дома бабушки и дедушки. Скажите: «У нас большая семья. Их дом большой»."
     prompt_en: "___"
     answer: "We are a big family. Their house is big."
-    accepted: ["We're a big family. Their house is big.", "We are a big family. Their house is big"]
+    accepted: ["We're a big family. Their house is big.", "We are a big family. Their house is big", "We have a big family. Their house is big."]
     hint_ru: "мы — we, их — their."
     explanation_ru: "We are a big family — we («мы») требует are. Their house is big — their («их») стоит перед house и относится к бабушке и дедушке, о которых мы уже говорим."
     units: [LX-00263, LX-00265, LX-00279]

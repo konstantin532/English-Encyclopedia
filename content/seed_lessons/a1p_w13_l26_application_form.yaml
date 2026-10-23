@@ -52,7 +52,7 @@ layers:
 
     > [D1]Do[/] [T8]you[/] [D1]have[/] [T4]any[/] [S9]experience[/]? — У тебя есть опыт?
 
-    > [T8]It[/] [D1]is[/] [T3]my[/] [S8]dream[/]. [T8]I[/] [D3]want[/] [P2]to[/] [D1]be[/] [T1]a[/] [S9]chef[/]. [T3]My[/] [S1]grandmother[/] [D5]taught[/] [T8]me[/]. — Это моя мечта. Хочу стать шеф-поваром. Меня научила бабушка.
+    > [T8]It[/] [D1]is[/] [T3]my[/] [S8]dream[/]. [T8]I[/] [D3]want[/] [X2]to[/] [D1]be[/] [T1]a[/] [S9]chef[/]. [T3]My[/] [S1]grandmother[/] [D5]taught[/] [T8]me[/]. — Это моя мечта. Хочу стать шеф-поваром. Меня научила бабушка.
 
     '
 - number: 2
@@ -78,7 +78,7 @@ layers:
 
     '
 - number: 4
-  body: '**Почему «I want to be a chef», а не «I want be chef»?** После want нужен **to**, а перед профессией — **a**: *I want to be a teacher.* По-русски «хочу стать поваром» без артикля, а по-английски без *a* нельзя.
+  body: '**Почему «I want to be a chef», а не «I want be chef»?** Если после **want** стоит другой глагол, используйте **to + глагол**: *I want to be a teacher.* Но перед существительным to не нужен: *I want a job.* Когда называем профессию одного человека, обычно нужны **a / an**: *a chef, an engineer*. Выбор a или an зависит от первого звука следующего слова. Во множественном числе артикля a/an нет: *They are teachers.*
 
 
     **experience** в значении «опыт» — без -s и без a: *I have experience.*

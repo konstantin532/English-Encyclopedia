@@ -5,7 +5,7 @@ order: 13
 focus: T
 minutes: 40
 title: 'Some и any: есть ли рыба?'
-summary: 'Some — в утверждении и просьбе, any — в вопросе и с not. Исчисляемое (a pie, two pies) и неисчисляемое (rice, water, bread): что можно сосчитать, а что нет.'
+summary: 'Some и any в сообщениях о наличии, просьбах и предложениях: выбор зависит от смысла. Исчисляемое (a pie, two pies) и неисчисляемое (rice, water, bread): как обозначать количество.'
 units:
 - LX-00733
 - LX-00734
@@ -54,38 +54,30 @@ layers:
 
     '
 - number: 3
-  body: 'Схема:
-
+  body: |
+    Схема:
 
     > [T1]A[/] [J1]little[/]. [D1]Do[/] [T8]you[/] [D3]want[/] [T4]some[/] [S3]salad[/] [P4]with[/] [T8]it[/]? — Немного. Хотите к ней салат?
 
-
     - Утверждение: **some** — We have some fresh apple pie.
-
     - Просьба и предложение: тоже **some** — Some bread, please. Do you want some salad?
-
     - Обычный вопрос: **any** — Is there any fish?
-
-    - С not: **any** — We don''t have any fish.
-
+    - Полное отсутствие продукта: **not … any** — We don't have any fish.
     - Считаем: **a pie, two pies, a potato, potatoes**.
+    - В обычном значении продукта **rice, bread, water, meat, fruit, sugar, salt** употребляются как неисчисляемые: **some rice, some bread**. Нельзя механически переносить это на все значения слова: отдельные порции и виды продукта могут обозначаться иначе.
 
-    - Не считаем: **rice, bread, water, meat, fruit, sugar, salt** — без a и без -s: some rice.
-
-    '
 - number: 4
-  body: '**Почему в предложении «Do you want some salad?» стоит some, хотя это вопрос?** Когда вы что-то предлагаете или просите, вы ждёте ответа «да». Тогда остаётся **some**. Any — для настоящего вопроса, когда ответ может быть и «нет».
+  body: |
+    **Почему в предложении «Do you want some salad?» стоит some, хотя это вопрос?** В предложении угощения **some** естественно: говорящий предлагает имеющийся салат. В просьбе **Can I have some bread?** это обычный способ попросить немного хлеба. **Some** также бывает в вопросе, если говорящий предполагает наличие чего-то.
 
+    **Any** удобно для нейтрального вопроса о наличии: **Is there any fish?** Это различие в ситуации, а не между «настоящим» и «ненастоящим» вопросом: в обоих случаях собеседник может ответить «нет».
 
-    **Почему нельзя «a rice»?** Рис не считают по зёрнышку. Так же и хлеб, вода, мясо. Если нужно сосчитать — берут ёмкость: **a glass of water**, **two glasses of water**.
+    **Почему для порции риса здесь не «a rice»?** Слово **rice** в значении продукта неисчисляемое; дело в английском употреблении, а не в возможности физически посчитать зёрна. Так же и хлеб, вода, мясо. Если нужно сосчитать — берут ёмкость: **a glass of water**, **two glasses of water**.
 
+    **Диагностика понимания:** рыбы совсем нет. Как передать этот смысл: *We don't have some fish* или *We don't have any fish*?
 
-    **Диагностика понимания:** что верно: *We don''t have some fish* или *We don''t have any fish*?
+    **Разбор:** *We don't have any fish* — рыбы нет совсем. Здесь any передаёт отсутствие любого количества.
 
-
-    **Разбор:** *We don''t have any fish.* С not — any.
-
-    '
 - number: 5
   body: 'Так говорят американцы:
 
@@ -104,25 +96,20 @@ layers:
 
     '
 - number: 6
-  body: 'Ловушки:
+  body: |
+    Ловушки:
 
-
-    - «We don''t have some fish» — с not **any**.
-
+    - Для смысла «рыбы нет совсем» выбирайте **We don't have any fish**. Это не запрет на some во всех отрицательных фразах.
     - «a rice», «breads» — неисчисляемые: **some rice, some bread**.
+    - Для обычной просьбы немного хлеба выбирайте **Can I have some bread?** Вопрос с **any** тоже возможен, например если сомневаетесь, можно ли получить хоть какой-нибудь хлеб. Не считайте его ошибкой во всех ситуациях.
+    - **Two glasses of water** прямо называет две порции. В кафе можно услышать **two waters** — «две воды», то есть две порции или бутылки. Это контекстное счётное употребление, а не отмена обычного неисчисляемого water.
 
-    - «Can I have any bread?» — в просьбе **some**: Can I have some bread?
-
-    - «two waters» — лучше **two glasses of water**.
-
-    '
 - number: 7
-  body: 'Шесть заданий: выбрать some или any, сказать, чего нет, собрать просьбу, заказать ужин другу, отличить исчисляемое и попросить ещё.
+  body: |
+    Шесть заданий: выбрать some или any, сказать, чего нет, собрать просьбу, заказать ужин другу, отличить исчисляемое и попросить ещё.
 
+    **Проверка маленького шага:** в изучаемых нейтральных фразах: утверждение — some, отсутствие — not … any, вопрос о наличии — any. В обычной просьбе и предложении угощения часто some. Это стартовая схема с учётом смысла, а не запрет других употреблений.
 
-    **Проверка маленького шага:** утверждение и просьба — some; вопрос и not — any.
-
-    '
 exercises:
 - order: 1
   uid: EX-00236
@@ -134,8 +121,8 @@ exercises:
   - We don't have some fish.
   - We have any fish.
   answer: We don't have any fish.
-  hint_ru: С not — any.
-  explanation_ru: We don't have any fish. В отрицании — any.
+  hint_ru: Для смысла «рыбы нет совсем» — not … any.
+  explanation_ru: We don't have any fish. Здесь not … any передаёт полное отсутствие рыбы; это не правило для всех отрицательных фраз.
   units:
   - LX-00733
   - LX-00742
@@ -146,8 +133,10 @@ exercises:
   prompt_ru: Вы просите хлеб. Закончите просьбу.
   prompt_en: Can I have ___ bread, please?
   answer: some
-  hint_ru: Просьба — some.
-  explanation_ru: Can I have some bread? В просьбе — some.
+  accepted:
+  - any
+  hint_ru: В обычной просьбе немного хлеба естественно some.
+  explanation_ru: 'Can I have some bread? — обычная просьба немного хлеба. Any тоже допустимо, если спрашиваем, можно ли получить хоть какой-нибудь хлеб. Без дополнительного контекста оба варианта возможны.'
   units:
   - LX-00733
 - order: 3
@@ -182,13 +171,13 @@ exercises:
   uid: EX-00240
   kind: choice
   stage: recognition
-  prompt_ru: Какое слово нельзя сказать с a?
+  prompt_ru: Какое слово в обычном значении продукта употребляется без a, в отличие от двух остальных?
   options:
   - rice
   - potato
   - plate
   answer: rice
-  hint_ru: Что не считают по одному?
+  hint_ru: Рис как продукт — неисчисляемое существительное.
   explanation_ru: 'rice — неисчисляемое: some rice. A potato, a plate — можно.'
   units:
   - LX-00746
@@ -234,6 +223,8 @@ practice:
   answer: Is there any apple pie?
   accepted:
   - Do you have any apple pie?
+  - Is there some apple pie?
+  - Do you have some apple pie?
   hint_ru: Is there any…?
   explanation_ru: Is there any apple pie?
   review_of: 3

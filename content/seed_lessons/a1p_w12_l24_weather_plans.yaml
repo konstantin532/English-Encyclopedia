@@ -49,9 +49,9 @@ layers:
   body: 'Субботнее утро. Прежде чем куда-то идти, американцы смотрят прогноз — **the forecast**. А температуру считают в градусах Фаренгейта.
 
 
-    > [T9]What[/] [D1]is[/] [T1]the[/] [S6]weather[/] [D3]like[/]? — А какая погода?
+    > [T9]What[/] [D1]is[/] [T1]the[/] [S6]weather[/] [P6]like[/]? — А какая погода?
 
-    > [T1]The[/] [S10]forecast[/] [D5]says[/] [S6]rain[/] [P1]in[/] [T1]the[/] [S7]afternoon[/]. [C1]And[/] [T8]it[/] [D1]is[/] [A5]only[/] [N9]forty[/] [N9]degrees[/]. — По прогнозу днём дождь. И всего сорок градусов.
+    > [T1]The[/] [S10]forecast[/] [D5]says[/] [S6]rain[/] [P3]in[/] [T1]the[/] [S7]afternoon[/]. [C1]And[/] [T8]it[/] [D1]is[/] [A5]only[/] [N9]forty[/] [N9]degrees[/]. — По прогнозу днём дождь. И всего сорок градусов.
 
     '
 - number: 2
@@ -62,7 +62,7 @@ layers:
   body: 'Схема:
 
 
-    > [A6]How[/] [A6]about[/] [T1]a[/] [J1]short[/] [D4]walk[/] [P4]by[/] [T1]the[/] [S6]river[/] [A7]instead[/]? [T8]It[/] [D1]is[/] [X1]not[/] [J1]far[/]. — Может, лучше короткая прогулка у реки? Это недалеко.
+    > [A6]How[/] [A6]about[/] [T1]a[/] [J1]short[/] [S10]walk[/] [P1]by[/] [T1]the[/] [S6]river[/] [A7]instead[/]? [T8]It[/] [D1]is[/] [X1]not[/] [J1]far[/]. — Может, лучше короткая прогулка у реки? Это недалеко.
 
 
     - Вопрос: **What''s the weather like?**
@@ -79,10 +79,10 @@ layers:
 
     '
 - number: 4
-  body: '**Почему «What''s the weather like?», а не «How is the weather?»** Оба вопроса верны, но **What''s … like?** — самый частый: «какой он?». *What''s your city like? What''s Leo like?*
+  body: '**Почему «What''s the weather like?», а не «How is the weather?»** Оба вопроса естественны. **What''s … like?** просит описать: «какой / какая?». Здесь **like** — предлог, а не глагол «нравиться»: поэтому у него другая линия и цвет. Вопрос строится с **is**, без do. Сравните: **Do you like the weather?** — «Тебе нравится погода?»; **What''s the weather like?** — «Какая погода?». *What''s your city like? What''s Leo like?*
 
 
-    > [D6]Look[/] [P3]at[/] [T1]the[/] [S6]sky[/]. [T9]There[/] [D1]are[/] [J1]big[/] [J2]dark[/] [S6]clouds[/]. [T8]It[/] [D6]looks[/] [D3]like[/] [S6]rain[/]. — Посмотри на небо. Большие тёмные тучи. Похоже, будет дождь.
+    > [D6]Look[/] [P7]at[/] [T1]the[/] [S6]sky[/]. [T9]There[/] [D1]are[/] [J1]big[/] [J2]dark[/] [S6]clouds[/]. [T8]It[/] [D6]looks[/] [P6]like[/] [S6]rain[/]. — Посмотри на небо. Большие тёмные тучи. Похоже, будет дождь.
 
 
     **Диагностика понимания:** что верно: *How about go to the lake?* или *How about the lake?*
@@ -113,7 +113,7 @@ layers:
 
     - «How about go…?» — **How about going…?**
 
-    - «instead» в начале — обычно **в конце**: Let''s go to the lake instead.
+    - **Instead** возможно и в начале, и в конце предложения. Здесь удобно закончить им предложение: Let''s go to the lake instead. Не путайте его с **instead of + существительное / -ing** — «вместо чего-то».
 
     - 40 degrees в США — это холодно (около +4 °C)!
 
@@ -137,7 +137,7 @@ exercises:
   - What weather is?
   answer: What's the weather like?
   hint_ru: What's … like?
-  explanation_ru: What's the weather like? — самый частый вопрос о погоде.
+  explanation_ru: What's the weather like? — естественный вопрос, когда просят описать погоду.
   units:
   - LX-00921
 - order: 2
