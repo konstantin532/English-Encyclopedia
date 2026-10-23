@@ -229,8 +229,12 @@ practice:
   answer: She is writing a letter.
   accepted:
   - She's writing a letter.
+  - She is writing a letter right now.
+  - She's writing a letter right now.
+  - She is writing a letter now.
+  - She's writing a letter now.
   hint_ru: She is + write без e + -ing.
-  explanation_ru: 'She is writing a letter. write → writing: e пропадает.'
+  explanation_ru: 'She is writing a letter. Можно добавить right now или now, если нужно подчеркнуть «прямо сейчас»; write → writing: e пропадает.'
   review_of: 2
   units:
   - LX-00529
@@ -249,8 +253,12 @@ practice:
   answer: We are cleaning the kitchen.
   accepted:
   - We're cleaning the kitchen.
+  - We are cleaning the kitchen now.
+  - We're cleaning the kitchen now.
+  - We are cleaning the kitchen right now.
+  - We're cleaning the kitchen right now.
   hint_ru: We are + clean + -ing.
-  explanation_ru: We are cleaning the kitchen. С we — are.
+  explanation_ru: We are cleaning the kitchen. С we — are; now или right now можно добавить для усиления.
   review_of: 4
   units:
   - LX-00535
