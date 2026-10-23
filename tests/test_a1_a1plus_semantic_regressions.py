@@ -35,7 +35,7 @@ class A1A1PlusSemanticRegressions(SimpleTestCase):
         explanation = data["layers"][3]["body"]
         self.assertIn("единицу периода", explanation)
         self.assertIn("twice in one day", explanation)
-        self.assertIn("дважды в пределах одного дня", explanation)
+        self.assertIn("два события **в пределах одного дня**", explanation)
 
     def test_first_conditional_rule_is_scoped(self):
         data = lesson("a1p_w15_l29_if_will.yaml")
