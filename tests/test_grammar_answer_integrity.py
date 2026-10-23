@@ -38,6 +38,18 @@ class GrammarAnswerIntegrityTests(TestCase):
                 item = PracticeItem.objects.get(lesson__slug=slug, order=order)
                 self.check_answer("practice", item, answer, True)
 
+    def test_reordered_frequency_adverb_is_accepted_without_accepting_bad_agreement(self):
+        # EX-00106's own explanation teaches both positions of sometimes.
+        item = Exercise.objects.get(uid="EX-00106")
+        self.check_answer("exercises", item, "I sometimes play the guitar.", True)
+        self.check_answer("exercises", item, "Sometimes I play the guitar.", True)
+        self.check_answer("exercises", item, "Sometimes I plays the guitar.", False)
+
+    def test_if_will_key_checks_the_taught_first_conditional(self):
+        item = Exercise.objects.get(uid="EX-00332")
+        self.check_answer("exercises", item, "If it rains, we will stay in the cabin.", True)
+        self.check_answer("exercises", item, "If it will rain, we will stay in the cabin.", False)
+
     def test_movement_blank_requires_a_word_not_a_second_sentence(self):
         item = Exercise.objects.get(uid="EX-00323")
         self.check_answer("exercises", item, "across", True)
