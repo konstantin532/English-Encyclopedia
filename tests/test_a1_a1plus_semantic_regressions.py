@@ -34,7 +34,7 @@ class A1A1PlusSemanticRegressions(SimpleTestCase):
         data = lesson("a1p_w11_l21_how_often.yaml")
         explanation = data["layers"][3]["body"]
         self.assertIn("единицу периода", explanation)
-        self.assertIn("twice in one day", explanation)
+        self.assertIn("twice in one day", explanation.casefold())
         self.assertIn("два события **в пределах одного дня**", explanation)
 
     def test_first_conditional_rule_is_scoped(self):
@@ -45,4 +45,8 @@ class A1A1PlusSemanticRegressions(SimpleTestCase):
 
     def test_impersonal_it_applies_to_a_full_statement(self):
         data = lesson("a1p_w02_l04_there_was.yaml")
-        self.assertIn("В таком полном предложении", str(data["exercises"]))
+        practice = next(e for e in data["practice"] if e["answer"] == "It was very interesting.")
+        explanation = practice["explanation_ru"]
+        self.assertIn("В таком полном предложении", explanation)
+        self.assertIn("подлежащее it", explanation)
+        self.assertIn("короткие самостоятельные реплики", explanation)
