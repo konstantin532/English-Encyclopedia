@@ -149,6 +149,40 @@ class OralReviewTests(TestCase):
         self.assertContains(dashboard, "Речевые повторения (1)")
         self.assertNotContains(dashboard, "Речевые повторения (121)")
 
+    def test_next_future_review_ignores_removed_unpublished_and_invalid_fragments(self):
+        start = timezone.now() + timedelta(days=1)
+        # Old user history may outlive the content it referred to.
+        SpeechPracticeProgress.objects.create(
+            user=self.user, content_key="lesson:removed-future",
+            fragment=0, next_review_at=start,
+        )
+        hidden_lesson = Lesson.objects.get(level__code="A1", order=2)
+        SpeechPracticeProgress.objects.create(
+            user=self.user, content_key="lesson:" + hidden_lesson.slug,
+            fragment=0, next_review_at=start + timedelta(minutes=5),
+        )
+        hidden_lesson.is_published = False
+        hidden_lesson.save(update_fields=["is_published"])
+        SpeechPracticeProgress.objects.create(
+            user=self.user, content_key=self.key,
+            fragment=999, next_review_at=start + timedelta(minutes=10),
+        )
+        expected = SpeechPracticeProgress.objects.create(
+            user=self.user, content_key=self.key,
+            fragment=0, next_review_at=start + timedelta(days=1),
+        )
+
+        response = self.client.get(reverse("learning:speech_review"))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["upcoming"].pk, expected.pk)
+        self.assertContains(response, "Ближайшее следующее повторение:")
+
+        expected.delete()
+        response = self.client.get(reverse("learning:speech_review"))
+        self.assertEqual(response.status_code, 200)
+        self.assertIsNone(response.context["upcoming"])
+        self.assertNotContains(response, "Ближайшее следующее повторение:")
+
     def test_anonymous_and_csrf_requirements(self):
         self.client.logout()
         self.assertEqual(self.send().status_code, 302)

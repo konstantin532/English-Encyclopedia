@@ -21,3 +21,5 @@ node_modules/
 /db.sqlite3.before-zap
 /zap-report.html
 /security-report.txt
+# Generated Graphify knowledge graph output (keep local only)
+/graphify-out/
