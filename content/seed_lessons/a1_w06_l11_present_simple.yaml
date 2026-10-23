@@ -127,6 +127,7 @@ exercises:
     prompt_ru: "Соберите фразу: «Я пью кофе в семь»."
     options: [seven, drink, I, at, coffee]
     answer: "I drink coffee at seven"
+    accepted: ["At seven, I drink coffee"]
     hint_ru: "Кто — что делает — что — когда."
     explanation_ru: "I drink coffee at seven. Здесь время стоит в конце. At seven можно поставить и в начало, когда выделяем время; перед точным временем события используем at."
     units: [LX-00129, LX-00139]
