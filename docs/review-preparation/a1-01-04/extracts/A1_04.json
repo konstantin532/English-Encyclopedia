@@ -1,0 +1,2843 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "lesson_source_path": "content/seed_lessons/a1_w02_l04_have_like_can.yaml",
+  "editorial_status": "NOT_REVIEWED",
+  "lesson_full": {
+    "slug": "a1-have-like-can-do",
+    "level": "A1",
+    "week": 2,
+    "order": 4,
+    "focus": "D",
+    "minutes": 45,
+    "title": "have, like, can и вопросы с do",
+    "summary": "Как сказать «у меня есть», «мне нравится» и «можно мне», и зачем английским вопросам маленький помощник do.",
+    "units": [
+      "LX-00033",
+      "LX-00034",
+      "LX-00035",
+      "LX-00036",
+      "LX-00029",
+      "LX-00031",
+      "LX-00032",
+      "LX-00491",
+      "LX-00492",
+      "LX-00493",
+      "LX-00494",
+      "LX-00495",
+      "LX-00496",
+      "LX-00497",
+      "LX-00498",
+      "LX-00499",
+      "LX-00500"
+    ],
+    "sound_notes": [
+      {
+        "text": "Do you like it?",
+        "ipa": "/də jə ˈlaɪk‿ɪt/, быстро /dʒə ˈlaɪk‿ɪt/",
+        "note_ru": "do you сжимается до «джа»"
+      },
+      {
+        "text": "Can I have water, please?",
+        "ipa": "/kən‿aɪ hæv ˈwɑt̬ɚ ˈpliz/",
+        "note_ru": "can без ударения: /kən/"
+      },
+      {
+        "text": "No, I don't.",
+        "ipa": "/ˈnoʊ aɪ ˈdoʊnt/",
+        "note_ru": "don't часто выделяют в отрицании, но ударение зависит от фразы"
+      }
+    ],
+    "contractions": [
+      {
+        "full": "do not",
+        "short": "don't",
+        "ipa": "/doʊnt/",
+        "note_ru": "Не теряйте дифтонг /oʊ/ и конечное /nt/."
+      },
+      {
+        "full": "can not",
+        "short": "can't",
+        "ipa": "/kænt/",
+        "note_ru": "Отрицательная форма обычно под ударением; ясно произносите /æ/."
+      }
+    ],
+    "layers": [
+      {
+        "number": 1,
+        "body": "Гости в новом доме: Том просит воды, Анна спрашивает, нравится ли гостям дом, а Мия хвалит стул. Три глагола — **have**, **like**, **can** — помогут рассказать о том, что у вас есть, выразить отношение и обратиться с просьбой.\n\n> [O4]Yes[/], [T8]you[/] [D7]can[/]. [T8]I[/] [D1]have[/] [S3]water[/]. [D1]Do[/] [T8]you[/] [D3]like[/] [T1]the[/] [S2]house[/]? — Да, конечно. У меня есть вода. Вам нравится дом?\n\nТри глагола, без которых не обойтись в первый же день:\n\n> [T8]I[/] [D1]have[/] [T1]a[/] [S2]phone[/]. — У меня есть телефон.\n> [T8]I[/] [D3]like[/] [S3]coffee[/]. — Я люблю кофе.\n> [D7]Can[/] [T8]I[/] [D1]have[/] [S3]water[/], [O8]please[/]? — Можно мне воды, пожалуйста?\n\n**have** сообщает о том, что у человека что-то есть; **like** — что кому-то что-то нравится; **can** — возможность, умение или разрешение в зависимости от ситуации. **Can** особенный: это **модальный глагол**, который добавляет такой смысл к другому глаголу. В вопросе *Can I have water, please?* мы просим дать воду, а не спрашиваем, умеем ли мы её иметь.\n\n**Почему I have, а не «me have»?** В русском говорим «**у меня** есть телефон» и «**мне** нравится кофе», а в английском владельца и того, кому нравится, ставят подлежащим: **I have**, **I like**. Но **I** не обязательно всегда: *You like coffee* — «Тебе нравится кофе». Подлежащее зависит от того, о ком говорим.\n"
+      },
+      {
+        "number": 2,
+        "body": "**Три слова — три разные задачи.** Представьте, что Том зашёл к Анне и просит воды. Сравните:\n\n- *I have water.* — «У меня есть вода»: сообщаю, что вода имеется.\n- *I like water.* — «Мне нравится вода»: говорю о своём отношении, а не о том, есть ли она у меня.\n- *Can I have water, please?* — «Можно мне воды, пожалуйста?»: прошу дать воду. Здесь **can** помогает построить просьбу, а **have** уточняет, что я хочу получить.\n\n**Почему не Do you have water?** Это тоже правильная английская фраза, но вопрос другой: «У тебя есть вода?» Собеседник может ответить, есть ли она, даже если пока не предлагает её. *Can I have water, please?* сразу выражает просьбу.\n\n**А как ответить на просьбу?** *Yes, you can* грамматически даёт разрешение. Но если гость просит воды, в живом разговоре полезнее не ограничиваться разрешением, а действительно предложить воду. Не запоминайте *Yes, you can* как обязательный ответ на каждое *Can I have…?*.\n\nДальше разберём схему **I / you + have или like**, а затем узнаем, зачем **do** появляется в вопросах.\n"
+      },
+      {
+        "number": 3,
+        "body": "В первых двух примерах схема похожа: **кто → have / like → что**. Но с **can** добавляется ещё один глагол-действие: **кто → can → действие → остальное**. Сравните: *I have a phone* и *You can have my book*.\n\n> [T8]I[/] [D1]have[/] [T1]a[/] [J1]big[/] [S1]family[/]. — У меня большая семья.\n> [T8]I[/] [D3]like[/] [T2]this[/] [S2]room[/]. — Мне нравится эта комната.\n> [T8]You[/] [D7]can[/] [D1]have[/] [T3]my[/] [S2]book[/]. — Можешь взять мою книгу.\n\n- [D1]have[/] — владелец становится первым словом: не «у меня», а I.\n- [D3]like[/] — тот, кому нравится, тоже встаёт первым.\n- [D7]can[/] — после него нужен **глагол действия без to**: *can have*. Нельзя *can to have* или *can has*. Само **can** не заменяет действие в обычной фразе; в коротком ответе *Yes, you can* оно возможно самостоятельно, потому что действие уже назвали.\n"
+      },
+      {
+        "number": 4,
+        "body": "В предыдущем уроке мы переставляли **be**: *It is new → Is it new?* Но с обычными глаголами **have** и **like** в таких вопросах иначе: в начало добавляем **do**, а **have / like** оставляем после подлежащего.\n\n**Do** здесь — **вспомогательный глагол**: он показывает, что перед нами вопрос, и **не переводится отдельным словом**. Это не означает, что *do* вообще ничего не значит: в других фразах оно может быть смысловым глаголом «делать» (это изучим позже).\n\n> [D1]Do[/] [T8]you[/] [D3]like[/] [S3]coffee[/]? — Ты любишь кофе?\n> [O4]Yes[/], [T8]I[/] [D1]do[/]. — Да.\n> [D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S2]phone[/]? — У тебя есть телефон?\n> [O4]No[/], [T8]I[/] [D1]do[/][X1]n't[/]. — Нет.\n\n**Почему не Do you can...?** В таких вопросах **can** сам выходит перед подлежащим, как **be**, поэтому дополнительный помощник **do** не нужен. Сравните: *Do you like coffee?* и *Can I have coffee?*.\n\n> [D7]Can[/] [T8]I[/] [D1]have[/] [S3]coffee[/]? — Можно мне кофе?\n\n**Диагностика понимания:** Вы спрашиваете друга, нравится ли ему кофе. Что верно: *Do you like coffee?* или *Do you coffee like?*?\n\n**Разбор:** *Do you like coffee?* — после помощника **do** сначала идёт **you** (о ком спрашиваем), затем **like** (действие), затем **coffee** (что нравится). Переставить предмет перед глаголом, как в *Do you coffee like?*, в таком нейтральном вопросе нельзя. Форму помощника для **he / she** разберём позже.\n"
+      },
+      {
+        "number": 5,
+        "body": "Самая полезная фраза для поездки в США — вежливая просьба с can:\n\n> [D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]coffee[/], [O8]please[/]? — Можно мне кофе, пожалуйста?\n> [T8]I[/] [D3]like[/] [T8]it[/]! — Мне нравится!\n> [D1]Do[/] [T8]you[/] [D3]like[/] [T8]it[/]? — Тебе нравится?\n\n- В заказе *a coffee* обычно означает **одну порцию** кофе. Когда речь о напитке вообще: *I like coffee*.\n- Безударное **can** в американской речи нередко звучит /kən/. **Can't** обычно выделяют заметнее, но оно не всегда ударное; отличать их нужно по контексту и произношению **целой фразы**, а не только по одному звуку.\n- На вопросы с **do** часто отвечают кратко: *Yes, I do* / *No, I don't*. Просто *Yes* или *No* тоже возможно, но ответ с помощником точнее.\n\n**Дом: маленькие группы слов для практики**\n\n- **lamp** — лампа; светильник. Lamp — отдельная лампа или светильник, не освещение вообще.\n- **desk** — письменный стол. Desk — стол для письма или работы; table — более общее слово.\n- **shelf** — полка. Одна полка — shelf; несколько — shelves. Во второй неделе используем единственное число.\n- **mirror** — зеркало. Одно зеркало — a mirror.\n- **pillow** — подушка для сна. Pillow обычно означает подушку для сна; диванные подушки могут называться иначе.\n- **blanket** — одеяло. Blanket — одеяло или плед; здесь предмет дома.\n- **towel** — полотенце. Towel — полотенце; произнесите начало /taʊ/, как один переход звука.\n- **clock** — часы. Здесь clock — настенные или настольные часы; одна вещь по-английски: a clock.\n- **fridge** — холодильник. Fridge — разговорное слово, употребляется и в США; полное название — refrigerator. Не называем его отдельной изученной единицей.\n- **rug** — коврик; небольшой ковёр. Rug — отдельный ковёр или коврик; не покрытие пола во всей комнате.\n\nПопробуйте сначала lamp / desk, затем pillow / blanket / towel. Остальные предметы верните в следующих коротких подходах. В запросе назовите предмет после have, а не после can.\n\n> [T8]I[/] [D1]have[/] [T1]a[/] [S2]lamp[/]. — У меня есть лампа.\n> [D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S2]desk[/]? — У тебя есть письменный стол?\n> [D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S2]towel[/], [O8]please[/]? — Можно мне полотенце, пожалуйста?\n\nОдну неопределённую вещь называем с a: a lamp, a towel. Если вещь уже понятна собеседнику, возможен the; если называем владельца, используем my без артикля. Часы — это одна вещь: a clock, хотя русский перевод имеет множественное число. Сейчас тренируем единственное число, не новые правила множественного.\n"
+      },
+      {
+        "number": 6,
+        "body": "**Только с I и you?** Пока мы строили фразы с **I / you**: *I like*, *you have*. Когда говорим об **одном другом человеке** (*Anna*, *Tom*, *he*, *she*), в настоящем времени формы могут измениться: *Anna likes coffee*; *Tom has a phone*. Почему **likes**, но **has**, разберём в уроке о Present Simple. Сейчас важно **не ставить -s после I и you**.\n\n**Can — исключение:** у него нет окончания -s в форме *he can*; после него другой глагол остаётся в начальной форме: *he can have*.\n\n«Мне нравится» и «я люблю» о еде и вещах переводятся одинаково: like. Глагол love («любить») сильнее, о нём позже.\n\nДля американского английского **I have** — обычный нейтральный способ сообщить о наличии. **Have got** также встречается в американской разговорной речи: это не запрещённый британский вариант. Пока строим вопросы по изученной схеме **Do you have…?**; другие конструкции разберём отдельно.\n"
+      },
+      {
+        "number": 7,
+        "body": "**Шесть заданий:** распознать *I like*, выбрать помощник в коротком ответе, найти вежливую просьбу, собрать вопрос с **do** и задать похожий вопрос в новой ситуации.\n\nСамопроверка: если вопрос с *like / have*, объясните, зачем в начале **do**; если просьба с **can**, объясните, почему после него стоит **have**.\n\n**Проверка маленького шага:** *I have a phone* сообщает о **наличии телефона у меня**. А *Can I have a phone?* с тем же **have** работает как **просьба**. Значение отдельного слова узнавайте вместе с типом высказывания: сообщение или вопрос-просьба.\n\nШестое задание переносит знакомую схему на новые предметы дома.\n"
+      }
+    ],
+    "exercises": [
+      {
+        "order": 1,
+        "uid": "EX-00016",
+        "kind": "choice",
+        "stage": "recognition",
+        "prompt_ru": "Как правильно сказать «Мне нравится кофе»?",
+        "options": [
+          "I like coffee.",
+          "I likes coffee.",
+          "I coffee like."
+        ],
+        "answer": "I like coffee.",
+        "hint_ru": "Кто первым словом — тот, кому нравится.",
+        "explanation_ru": "По-английски «мне нравится» строится от человека: I like coffee. После I нужен like без -s. Обычный порядок слов: кто — глагол — что.",
+        "units": [
+          "LX-00034"
+        ]
+      },
+      {
+        "order": 2,
+        "uid": "EX-00017",
+        "kind": "fill",
+        "stage": "substitution",
+        "prompt_ru": "Вас спросили: «У тебя есть телефон?» Ответьте «Да» коротким хвостом.",
+        "prompt_en": "Do you have a phone? — Yes, I ___.",
+        "answer": "do",
+        "hint_ru": "Повторите глагол-помощник из вопроса.",
+        "explanation_ru": "В коротком ответе повторяют помощника из вопроса: Do you…? — Yes, I do.",
+        "units": [
+          "LX-00036",
+          "LX-00031"
+        ]
+      },
+      {
+        "order": 3,
+        "uid": "EX-00018",
+        "kind": "choice",
+        "stage": "substitution",
+        "prompt_ru": "Вы в кафе и хотите вежливо попросить воды.",
+        "options": [
+          "Can I have water, please?",
+          "I can water, please?",
+          "Do I water, please?"
+        ],
+        "answer": "Can I have water, please?",
+        "hint_ru": "Нужны can и глагол have.",
+        "explanation_ru": "Can I have …, please? — стандартная вежливая просьба. После can нужен глагол: have.",
+        "units": [
+          "LX-00035",
+          "LX-00033",
+          "LX-00029"
+        ]
+      },
+      {
+        "order": 4,
+        "uid": "EX-00019",
+        "kind": "build",
+        "stage": "production",
+        "prompt_ru": "Соберите вопрос: «У тебя есть книга?»",
+        "options": [
+          "have",
+          "a",
+          "Do",
+          "book",
+          "you"
+        ],
+        "answer": "Do you have a book",
+        "hint_ru": "Вопрос начинается с помощника.",
+        "explanation_ru": "Do — помощник для вопроса с have. После do сохраняем порядок you + have + a book; поэтому Do you have a book?, а не Have you a book? в обычном учебном варианте американского английского.",
+        "units": [
+          "LX-00036",
+          "LX-00033"
+        ]
+      },
+      {
+        "order": 5,
+        "uid": "EX-00020",
+        "kind": "fill",
+        "stage": "transfer",
+        "prompt_ru": "Новая ситуация: спросите друга, есть ли у него кот.",
+        "prompt_en": "___",
+        "answer": "Do you have a cat?",
+        "accepted": [
+          "Do you have a cat"
+        ],
+        "hint_ru": "Вопрос с have начинается с do.",
+        "explanation_ru": "Do you have a cat? — do в начале, дальше обычный порядок.",
+        "units": [
+          "LX-00036",
+          "LX-00033",
+          "LX-00041"
+        ]
+      },
+      {
+        "order": 6,
+        "uid": "EX-00021",
+        "kind": "fill",
+        "stage": "transfer",
+        "prompt_en": "___",
+        "prompt_ru": "Новая ситуация: вы гость и хотите вежливо попросить одно полотенце. Используйте Can I have… и please.",
+        "answer": "Can I have a towel, please?",
+        "accepted": [
+          "Can I have a towel please",
+          "Can I have the towel, please?"
+        ],
+        "hint_ru": "После can нужен have, а перед одним полотенцем — a.",
+        "explanation_ru": "Can I have a towel, please? — просьба об одном полотенце. The towel допустимо, если собеседники понимают, какое полотенце имеется в виду.",
+        "units": [
+          "LX-00497",
+          "LX-00035",
+          "LX-00033"
+        ]
+      }
+    ],
+    "practice": [
+      {
+        "order": 1,
+        "kind": "translate",
+        "prompt_ru": "Можно мне воды, пожалуйста?",
+        "answer": "Can I have water, please?",
+        "accepted": [
+          "Can I have a water, please?"
+        ],
+        "hint_ru": "Просьба начинается с Can I have…",
+        "explanation_ru": "Can I have water, please? — вежливая просьба. Порядок как в вопросе: can впереди.",
+        "review_of": 4,
+        "units": [
+          "LX-00033",
+          "LX-00035",
+          "LX-00029"
+        ]
+      },
+      {
+        "order": 2,
+        "kind": "translate",
+        "prompt_ru": "Вы с другом смотрите на один конкретный дом. Спросите: «Тебе нравится этот дом?»",
+        "answer": "Do you like this house?",
+        "accepted": [
+          "Do you like the house?"
+        ],
+        "hint_ru": "Сначала Do you like, потом название дома с this или the.",
+        "explanation_ru": "Do you like this house? — вы показываете на конкретный дом. Do you like the house? тоже подходит, если обоим ясно, какой дом обсуждают. С like вопрос начинается с do; the home не является нейтральной заменой house во всякой ситуации.",
+        "review_of": 4,
+        "units": [
+          "LX-00034",
+          "LX-00036"
+        ]
+      },
+      {
+        "order": 3,
+        "kind": "translate",
+        "prompt_ru": "У меня есть кот.",
+        "answer": "I have a cat.",
+        "hint_ru": "«У меня есть» — I have.",
+        "explanation_ru": "I have a cat. Русское «у меня есть» по-английски — I have, «я имею».",
+        "review_of": 4,
+        "units": [
+          "LX-00033"
+        ]
+      },
+      {
+        "order": 4,
+        "kind": "translate",
+        "prompt_ru": "Да, нравится. (ответ на «Do you like it?»)",
+        "answer": "Yes, I do.",
+        "hint_ru": "Короткий ответ повторяет do.",
+        "explanation_ru": "Yes, I do. Короткий ответ берёт помощника из вопроса: Do you…? — Yes, I do.",
+        "review_of": 4,
+        "units": [
+          "LX-00036",
+          "LX-00031"
+        ]
+      }
+    ]
+  },
+  "week_full": {
+    "source_path": "content/seed_weeks/a1_w02.yaml",
+    "source": {
+      "level": "A1",
+      "week": 2,
+      "can_do_ru": "Я смогу показать свой дом, назвать комнаты и предметы, сказать, чьи они, и вежливо попросить воды или нужную вещь.",
+      "mission_ru": "Покажите комнату и два предмета дома. Скажите, чьи они: This is my… Спросите у гостя: Do you like my…? Попросите полотенце: Can I have a towel, please?",
+      "ambience": "morning_home",
+      "chunks": [
+        "LX-00049",
+        "LX-00050",
+        "LX-00051",
+        "LX-00052",
+        "LX-00053",
+        "LX-00054"
+      ],
+      "story_beat": {
+        "intro_ru": "Анна показывает Тому и Мие свой новый дом.",
+        "outcome_ru": "Гостям нравится дом. Только большая коробка — ничья: она не Анны и не Тома.",
+        "next_hook_ru": "Что внутри коробки? Ответ — в истории «Not My Box»."
+      },
+      "script": [
+        {
+          "speaker": "anna",
+          "emotion": "happy",
+          "text": "[T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]. [T2]This[/] [D1]is[/] [T3]my[/] [S2]kitchen[/].",
+          "ru": "Это мой новый дом. Это моя кухня."
+        },
+        {
+          "speaker": "tom",
+          "emotion": "excited",
+          "text": "[T1]The[/] [S2]kitchen[/] [D1]is[/] [J3]nice[/], [S1]Anna[/]. [D1]Is[/] [T2]that[/] [T3]your[/] [S2]phone[/]?",
+          "ru": "Хорошая кухня, Анна. Это твой телефон?"
+        },
+        {
+          "speaker": "anna",
+          "emotion": "happy",
+          "text": "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T2]That[/] [D1]is[/] [T3]my[/] [S2]phone[/]. [T8]I[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]book[/]. [T2]This[/] [D1]is[/] [T3]my[/] [S2]table[/].",
+          "spoken": "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T2]That[/][D1]'s[/] [T3]my[/] [S2]phone[/]. [T8]I[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]book[/]. [T2]This[/] [D1]is[/] [T3]my[/] [S2]table[/].",
+          "ru": "Да. Это мой телефон. У меня новая книга. Это мой стол."
+        },
+        {
+          "speaker": "mia",
+          "emotion": "surprised",
+          "text": "[T8]I[/] [D3]like[/] [T1]the[/] [S2]book[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S2]box[/], [S1]Anna[/]?",
+          "ru": "Мне нравится книга. Это твоя коробка, Анна?"
+        },
+        {
+          "speaker": "anna",
+          "emotion": "worried",
+          "text": "[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/]. [S1]Tom[/] [D1]has[/] [T1]a[/] [J1]big[/] [S2]box[/].",
+          "spoken": "[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]box[/]. [S1]Tom[/] [D1]has[/] [T1]a[/] [J1]big[/] [S2]box[/].",
+          "ru": "Нет, это не моя коробка. У Тома большая коробка."
+        },
+        {
+          "speaker": "tom",
+          "emotion": "surprised",
+          "text": "[T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/]! [D7]Can[/] [T8]I[/] [D1]have[/] [S3]water[/], [O8]please[/]?",
+          "spoken": "[T8]It[/][D1]'s[/] [X1]not[/] [T3]my[/] [S2]box[/]! [D7]Can[/] [T8]I[/] [D1]have[/] [S3]water[/], [O8]please[/]?",
+          "ru": "Это не моя коробка! Можно мне воды, пожалуйста?"
+        },
+        {
+          "speaker": "anna",
+          "emotion": "happy",
+          "text": "[O4]Yes[/], [T8]you[/] [D7]can[/]. [T8]I[/] [D1]have[/] [S3]water[/]. [D1]Do[/] [T8]you[/] [D3]like[/] [T1]the[/] [S2]house[/]?",
+          "ru": "Да, конечно. У меня есть вода. Вам нравится дом?"
+        },
+        {
+          "speaker": "mia",
+          "emotion": "happy",
+          "text": "[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]It[/] [D1]is[/] [T1]a[/] [J3]nice[/] [S2]house[/]! [T8]I[/] [D3]like[/] [T3]your[/] [S2]chair[/].",
+          "spoken": "[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]It[/][D1]'s[/] [T1]a[/] [J3]nice[/] [S2]house[/]! [T8]I[/] [D3]like[/] [T3]your[/] [S2]chair[/].",
+          "ru": "Да. Хороший дом! Мне нравится твой стул."
+        }
+      ],
+      "twister": {
+        "number": 2,
+        "series": "sounds",
+        "text": "[T2]That[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]desk[/], [T2]that[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]lamp[/], [T2]that[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]shelf[/]!",
+        "ru": "Этот кот занял мой стол, этот кот занял мою лампу, этот кот занял мою полку!",
+        "ipa": "/ˈðæt ˈkæt həz maɪ ˈdɛsk | ˈðæt ˈkæt həz maɪ ˈlæmp | ˈðæt ˈkæt həz maɪ ˈʃɛlf/",
+        "focus_sounds": [
+          "ae"
+        ],
+        "source": "original",
+        "goal_ru": "Широкое /æ/ (that, cat, has, lamp) против узкого /ɛ/ (desk, shelf). Для американца bad и bed — разные слова.",
+        "tip_ru": "В cat рот открыт широко, челюсть опущена — звук между «э» и «а». В desk рот почти закрыт, обычное «э». Чередуйте: cat — desk, lamp — shelf.",
+        "warmup": [
+          "[S6]cat[/], [S2]desk[/]",
+          "[T2]that[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]lamp[/]",
+          "[T2]That[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]desk[/], [T2]that[/] [S6]cat[/] [D1]has[/] [T3]my[/] [S2]lamp[/].",
+          "[S1]Tom[/] [D1]has[/] [T1]a[/] [J1]big[/] [S2]box[/]."
+        ],
+        "target_line": "Tom has a big box.",
+        "own_ru": "Скажите, что есть у вас или у друга: I have a… / Tom has a…"
+      }
+    },
+    "plan": {
+      "level": "A1",
+      "week": 2,
+      "situation_ru": "Мой новый дом",
+      "sphere": "home",
+      "grammar_ru": "a / the, this / that, my / your; have, like, can; комнаты и предметы дома",
+      "grammar_markers": [
+        "T1",
+        "T2",
+        "T3"
+      ]
+    }
+  },
+  "scheduled_stories": [
+    {
+      "source_path": "content/seed_stories/s01_not_my_box.yaml",
+      "plan_entry": {
+        "number": 1,
+        "level": "A1",
+        "week": 2,
+        "title": "Not My Box",
+        "hook_ru": "Утром Том приносит Анне большую коробку. Чья она и что внутри?",
+        "focus": "SDJTPXO"
+      },
+      "source": {
+        "number": 1,
+        "characters": [
+          "Anna",
+          "Tom"
+        ],
+        "grammar_ru": "be (am, is), have, like в Present Simple; вопросы Is it…?, отрицание is not",
+        "prediction_ru": "Посмотрите на название и описания картинок. Как вы думаете, чья это коробка и что в ней?",
+        "visual_cues": [
+          "Утро. На пороге нового дома стоит Том с огромной картонной коробкой в руках.",
+          "Из приоткрытой коробки выглядывает рыжий кот. Рядом на столе — чашка кофе."
+        ],
+        "new_units": [
+          "LX-00040",
+          "LX-00041"
+        ],
+        "ambience": "morning_home",
+        "script": [
+          {
+            "speaker": "anna",
+            "kind": "narration",
+            "emotion": "neutral",
+            "music": "morning",
+            "text": "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]. [S2]Boxes[/], [S2]boxes[/], [S2]boxes[/]!",
+            "spoken": "[T3]My[/] [S9]name[/][D1]'s[/] [S1]Anna[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]. [S2]Boxes[/], [S2]boxes[/], [S2]boxes[/]!"
+          },
+          {
+            "speaker": "anna",
+            "kind": "narration",
+            "emotion": "tired",
+            "text": "[T3]My[/] [S2]box[/]. [T3]My[/] [S2]box[/]. [T3]My[/] [S2]box[/]… [T3]My[/] [S2]sofa[/]! [J3]Good[/] [S7]morning[/], [S2]sofa[/]!"
+          },
+          {
+            "speaker": "tom",
+            "kind": "speech",
+            "emotion": "happy",
+            "text": "“[J3]Good[/] [S7]morning[/]! [T8]I[/] [D1]am[/] [S1]Tom[/], [T3]your[/] [S1]neighbor[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S2]box[/]?”",
+            "spoken": "“[J3]Good[/] [S7]morning[/]! [T8]I[/][D1]'m[/] [S1]Tom[/], [T3]your[/] [S1]neighbor[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S2]box[/]?”"
+          },
+          {
+            "speaker": "anna",
+            "kind": "speech",
+            "emotion": "surprised",
+            "text": "“[T3]My[/] [S2]box[/]? [O4]No[/]! [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/].”",
+            "spoken": "“[T3]My[/] [S2]box[/]? [O4]No[/]! [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]box[/].”"
+          },
+          {
+            "speaker": "anna",
+            "kind": "narration",
+            "emotion": "worried",
+            "text": "[D1]Is[/] [T8]it[/] [T1]a[/] [S2]lamp[/]? [O4]No[/]. [T1]A[/] [S2]clock[/]? [O4]No[/]."
+          },
+          {
+            "speaker": "anna",
+            "kind": "narration",
+            "emotion": "excited",
+            "music": "happy",
+            "text": "[T8]It[/] [D1]is[/] [T1]a[/] [S6]cat[/]!",
+            "spoken": "[T8]It[/][D1]'s[/] [T1]a[/] [S6]cat[/]!"
+          },
+          {
+            "speaker": "anna",
+            "kind": "speech",
+            "emotion": "angry",
+            "text": "“[T3]My[/] [S3]coffee[/]! [T2]That[/] [D1]is[/] [T3]my[/] [S3]coffee[/]!”",
+            "spoken": "“[T3]My[/] [S3]coffee[/]! [T2]That[/][D1]'s[/] [T3]my[/] [S3]coffee[/]!”"
+          },
+          {
+            "speaker": "tom",
+            "kind": "speech",
+            "emotion": "happy",
+            "text": "“[T8]It[/] [D3]likes[/] [T3]your[/] [S3]coffee[/]. [T8]It[/] [D3]likes[/] [T8]you[/]!”"
+          },
+          {
+            "speaker": "anna",
+            "kind": "speech",
+            "emotion": "surprised",
+            "text": "“[D1]Is[/] [T8]it[/] [T3]your[/] [S6]cat[/], [S1]Tom[/]?”"
+          },
+          {
+            "speaker": "tom",
+            "kind": "speech",
+            "emotion": "surprised",
+            "text": "“[O4]No[/]! [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S6]cat[/].”",
+            "spoken": "“[O4]No[/]! [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S6]cat[/].”"
+          },
+          {
+            "speaker": "anna",
+            "kind": "speech",
+            "emotion": "happy",
+            "text": "“[T8]It[/] [D1]is[/] [X1]not[/] [T3]your[/] [S6]cat[/]. [T8]It[/] [D1]is[/] [T3]my[/] [S6]cat[/]! [T8]It[/] [D1]has[/] [T1]a[/] [S9]name[/]: [S1]Box[/].”",
+            "spoken": "“[T8]It[/] [D1]is[/][X1]n't[/] [T3]your[/] [S6]cat[/]. [T8]It[/][D1]'s[/] [T3]my[/] [S6]cat[/]! [T8]It[/] [D1]has[/] [T1]a[/] [S9]name[/]: [S1]Box[/].”"
+          },
+          {
+            "speaker": "tom",
+            "kind": "speech",
+            "emotion": "surprised",
+            "text": "“[S1]Box[/]? [T8]It[/] [D1]is[/] [X1]not[/] [T3]your[/] [S2]box[/]!”",
+            "spoken": "“[S1]Box[/]? [T8]It[/] [D1]is[/][X1]n't[/] [T3]your[/] [S2]box[/]!”"
+          },
+          {
+            "speaker": "anna",
+            "kind": "speech",
+            "emotion": "happy",
+            "music": "calm",
+            "text": "“[O4]No[/]. [T8]It[/] [D1]is[/] [T3]my[/] [S6]cat[/]. [T3]My[/] [S1]Box[/].”",
+            "spoken": "“[O4]No[/]. [T8]It[/][D1]'s[/] [T3]my[/] [S6]cat[/]. [T3]My[/] [S1]Box[/].”"
+          }
+        ],
+        "questions": [
+          {
+            "q": "Где происходит история?",
+            "a": "This is my new house. — В новом доме Анны, среди коробок."
+          },
+          {
+            "q": "Чья большая коробка?",
+            "a": "It is not my box. — Не Анны. И не Тома."
+          },
+          {
+            "q": "Что в коробке?",
+            "a": "It is a cat! — Кот. И он сразу пьёт кофе Анны."
+          },
+          {
+            "q": "В чём шутка в конце?",
+            "a": "Том говорит «It is not your box!», а Анна отвечает «It is my cat. My Box.» Коробка была не её, а кот — теперь её."
+          }
+        ],
+        "phrase_hunt": [
+          {
+            "phrase": "Good morning!",
+            "function": "Приветствие утром"
+          },
+          {
+            "phrase": "Is this your box?",
+            "function": "Вопрос: чья это вещь?"
+          },
+          {
+            "phrase": "It is not my box.",
+            "function": "Отрицание с be"
+          },
+          {
+            "phrase": "Is it a lamp?",
+            "function": "Угадывание: вопрос с be впереди"
+          },
+          {
+            "phrase": "It has a name: Box.",
+            "function": "Как назвать предмет или питомца"
+          }
+        ],
+        "retell_words": [
+          "house",
+          "coffee",
+          "box",
+          "cat",
+          "name"
+        ],
+        "retell_steps": [
+          "Восстановите историю по пяти словам: house, coffee, box, cat, name. По одной фразе на слово.",
+          "Перескажите без подсказок, 5–6 фраз, от лица Анны: My name is Anna. This is my new house…"
+        ],
+        "creative_ru": "На следующий день Том приходит снова. Придумайте 2–3 его фразы и ответ Анны из знакомых слов. Например: Is it your cat, Anna?"
+      },
+      "relationship": "same scheduled week, not a direct lesson foreign key"
+    }
+  ],
+  "scheduled_poems": [
+    {
+      "source_path": "content/seed_poems/p01_my_new_home.yaml",
+      "plan_entry": {
+        "number": 1,
+        "level": "A1",
+        "week": 2,
+        "title": "That Cat",
+        "rhyme_scheme": "ABCB",
+        "theme_ru": "Чей это кот? Утро в новом доме, кот из коробки Тома",
+        "phonetic_goals": [
+          "широкое /æ/: that, cat, has, lamp",
+          "вопрос с повышением и ответ с понижением: Is it your cat? — No, it is not!",
+          "ударный короткий ответ в конце строки: Yes, I DO!"
+        ]
+      },
+      "source": {
+        "number": 1,
+        "target_units": [
+          "LX-00033",
+          "LX-00034",
+          "LX-00036",
+          "LX-00038",
+          "LX-00039",
+          "LX-00486",
+          "LX-00490",
+          "LX-00491",
+          "LX-00500",
+          "LX-00040"
+        ],
+        "body": "[T2]That[/] [S6]cat[/], [T2]that[/] [S6]cat[/],\n[T2]that[/] [J1]big[/], [J1]big[/] [S6]cat[/]!\n[D1]Is[/] [T8]it[/] [T3]your[/] [S6]cat[/]?\n[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/]!\n\n[T8]It[/] [D1]has[/] [T3]my[/] [S2]chair[/],\n[T8]it[/] [D1]has[/] [T3]my[/] [S2]lamp[/],\n[T8]it[/] [D1]has[/] [T3]my[/] [S2]sofa[/],\n[T8]it[/] [D1]has[/] [T3]my[/] [S2]rug[/]!\n\n[D1]Do[/] [T8]you[/] [D3]like[/] [T3]my[/] [S3]coffee[/]?\n[O4]Yes[/], [T8]I[/] [D1]do[/]!\n[D1]Do[/] [T8]you[/] [D3]like[/] [T3]my[/] [S2]house[/]?\n[O4]Yes[/], [T8]I[/] [D1]do[/]!\n\n[D1]Is[/] [T2]that[/] [T3]your[/] [S6]cat[/], [S1]Tom[/]?\n[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/]!\n[D1]Is[/] [T2]that[/] [T3]my[/] [S6]cat[/]?\n[O4]Yes[/], [T2]that[/] [D1]is[/] [T3]my[/] [S6]cat[/]!\n\n[J3]Good[/] [S7]morning[/], [S6]cat[/]!\n[J3]Good[/] [S7]morning[/], [S1]Box[/]!\n[T8]You[/] [D1]have[/] [T3]my[/] [S2]house[/],\n[T8]I[/] [D1]have[/] [T3]your[/] [S2]box[/]!\n",
+        "pronunciation": [
+          {
+            "stress": "THAT CAT | THAT CAT",
+            "ipa": "/ˈðæt ˈkæt | ˈðæt ˈkæt/"
+          },
+          {
+            "stress": "THAT BIG | BIG CAT!",
+            "ipa": "/ˈðæt ˈbɪɡ | ˈbɪɡ ˈkæt/"
+          },
+          {
+            "stress": "is it your CAT?",
+            "ipa": "/ɪz ɪt jɚ ˈkæt/"
+          },
+          {
+            "stress": "NO | it is NOT!",
+            "ipa": "/ˈnoʊ | ɪt ɪz ˈnɑt/"
+          },
+          {
+            "stress": "it has my CHAIR",
+            "ipa": "/ɪt həz maɪ ˈtʃɛr/"
+          },
+          {
+            "stress": "it has my LAMP",
+            "ipa": "/ɪt həz maɪ ˈlæmp/"
+          },
+          {
+            "stress": "it has my SOFA",
+            "ipa": "/ɪt həz maɪ ˈsoʊfə/"
+          },
+          {
+            "stress": "it has my RUG!",
+            "ipa": "/ɪt həz maɪ ˈrʌɡ/"
+          },
+          {
+            "stress": "do you LIKE my COFFEE?",
+            "ipa": "/də jə ˈlaɪk maɪ ˈkɔːfi/"
+          },
+          {
+            "stress": "YES | I DO!",
+            "ipa": "/ˈjes | aɪ ˈdu/"
+          },
+          {
+            "stress": "do you LIKE my HOUSE?",
+            "ipa": "/də jə ˈlaɪk maɪ ˈhaʊs/"
+          },
+          {
+            "stress": "YES | I DO!",
+            "ipa": "/ˈjes | aɪ ˈdu/"
+          },
+          {
+            "stress": "is THAT your CAT | TOM?",
+            "ipa": "/ɪz ˈðæt jɚ ˈkæt | ˈtɑm/"
+          },
+          {
+            "stress": "NO | it is NOT!",
+            "ipa": "/ˈnoʊ | ɪt ɪz ˈnɑt/"
+          },
+          {
+            "stress": "is THAT my CAT?",
+            "ipa": "/ɪz ˈðæt maɪ ˈkæt/"
+          },
+          {
+            "stress": "YES | THAT is my CAT!",
+            "ipa": "/ˈjes | ˈðæt ɪz maɪ ˈkæt/"
+          },
+          {
+            "stress": "GOOD MORNING | CAT!",
+            "ipa": "/ˈɡʊd ˈmɔrnɪŋ | ˈkæt/"
+          },
+          {
+            "stress": "GOOD MORNING | BOX!",
+            "ipa": "/ˈɡʊd ˈmɔrnɪŋ | ˈbɑks/"
+          },
+          {
+            "stress": "you have my HOUSE",
+            "ipa": "/jə həv maɪ ˈhaʊs/"
+          },
+          {
+            "stress": "I have your BOX!",
+            "ipa": "/aɪ həv jɚ ˈbɑks/"
+          }
+        ],
+        "gaps": [
+          {
+            "line": 2,
+            "word": "cat"
+          },
+          {
+            "line": 6,
+            "word": "lamp"
+          },
+          {
+            "line": 10,
+            "word": "do"
+          },
+          {
+            "line": 14,
+            "word": "not"
+          },
+          {
+            "line": 20,
+            "word": "box"
+          }
+        ]
+      },
+      "relationship": "same scheduled week, not a direct lesson foreign key"
+    }
+  ],
+  "active_topic_full": {
+    "n": 4,
+    "week": 2,
+    "slug": "a1-have-like-can-do",
+    "title": "Have, like и вопрос с do",
+    "scene": "Мия ищет свой телефон и обращается к Анне",
+    "context": "Научитесь отличать наличие и вопрос в одной понятной ситуации.",
+    "dialogue": [
+      [
+        "Mia",
+        "Do you have my phone?",
+        "У тебя мой телефон?"
+      ],
+      [
+        "Anna",
+        "Yes, I do.",
+        "Да."
+      ],
+      [
+        "Mia",
+        "Can I have it, please?",
+        "Можно мне его, пожалуйста?"
+      ]
+    ],
+    "question": "Зачем Мия говорит do в первом вопросе?",
+    "options": [
+      "Обозначить прошедшее время",
+      "Помочь построить вопрос с have",
+      "Сказать «иметь» вместо have"
+    ],
+    "correct": 1,
+    "feedback": "Do здесь вспомогательный глагол для вопроса с have. Сам смысл «иметь» передаёт have.",
+    "prompt": "Спросите друга: «У тебя есть мой телефон?»",
+    "answer": "Do you have my phone?",
+    "alternatives": [],
+    "hint": "Вопрос: Do + you + have…?",
+    "transfer": "Попросите телефон у друга вежливо, не приказывая.",
+    "transfer_example": "Can I have my phone, please?",
+    "why": "I have a phone сообщает о наличии, I like coffee — о предпочтении. Can I have…? в кафе или просьбе меняет задачу всей фразы: это запрос получить вещь. Do you have…? — вопрос об обладании; do здесь помощник и не переводится отдельно. После can требуется глагол действия без to.",
+    "sound": "В Can I have…? can часто произносится с ослабленным гласным /kən/; главные слова выделяются ударением."
+  },
+  "spoken_scenarios_full": {
+    "n": 4,
+    "missions": [
+      {
+        "id": 1,
+        "title": "Пропавший телефон",
+        "scene": "Анна не находит телефон и подходит к Мие.",
+        "prompt": "Узнайте, есть ли у Мии телефон Анны.",
+        "example": "Do you have my phone?",
+        "coach": "Вопрос Present Simple с you начинается с Do."
+      },
+      {
+        "id": 2,
+        "title": "Любимая книга",
+        "scene": "Мия спрашивает, нравится ли вам книга на столе.",
+        "prompt": "Скажите, что вам нравится эта книга.",
+        "example": "I like the book.",
+        "coach": "Like сообщает об отношении к предмету или напитку."
+      },
+      {
+        "id": 3,
+        "title": "Полотенце для гостя",
+        "scene": "Вы в гостях и хотите попросить одно полотенце.",
+        "prompt": "Попросите полотенце вежливо.",
+        "example": "Can I have a towel, please?",
+        "coach": "Can I…? можно использовать как вежливую просьбу."
+      },
+      {
+        "id": 4,
+        "title": "Да, он у меня",
+        "scene": "Друг спрашивает: Do you have my phone?",
+        "prompt": "Коротко ответьте утвердительно.",
+        "example": "Yes, I do.",
+        "coach": "На do-вопрос отвечают Yes, I do, а не Yes, I have."
+      },
+      {
+        "id": 5,
+        "title": "Ваш напиток",
+        "scene": "Том спрашивает, какой напиток вам нравится.",
+        "prompt": "Скажите, что вам нравится кофе.",
+        "example": "I like coffee.",
+        "coach": "Like + существительное; здесь не нужен вспомогательный do."
+      },
+      {
+        "id": 6,
+        "title": "Импровизация: просьба соседу",
+        "scene": "Вам срочно нужна знакомая вещь соседа.",
+        "prompt": "Сначала спросите, есть ли она у него, потом вежливо попросите.",
+        "example": "Do you have my book? Can I have it, please?",
+        "coach": "Соедините do-вопрос о наличии и can-просьбу."
+      }
+    ],
+    "twists": [
+      {
+        "scene": "Сосед не видел книгу, спросите о телефоне.",
+        "example": "Do you have my phone?"
+      },
+      {
+        "scene": "Вместо вещи хотите узнать о вкусе собеседника.",
+        "example": "Do you like coffee?"
+      }
+    ]
+  },
+  "error_repair_full": {
+    "n": 4,
+    "wrong": "Do you has my phone?",
+    "correct": "Do you have my phone?",
+    "hint": "После do используется базовая форма глагола.",
+    "reason": "В вопросе с do главный глагол остаётся have. Форма has используется в других конструкциях с he/she/it."
+  },
+  "retry_guidance_full": {
+    "1": {
+      "focus": "После I обычный глагол like не получает -s; в утверждении сначала идёт тот, кому нравится.",
+      "choices": {
+        "I likes coffee.": "С I используется like без -s; окончание -s здесь лишнее.",
+        "I coffee like.": "В обычном утверждении объект coffee стоит после глагола."
+      }
+    },
+    "2": {
+      "focus": "В коротком ответе повторяется вспомогательный глагол из вопроса, а не have."
+    },
+    "3": {
+      "focus": "Для просьбы нужен глагол действия после can. Проверьте также вежливое завершение.",
+      "choices": {
+        "I can water, please?": "Can сам по себе не означает «получить»: после него нужен глагол действия.",
+        "Do I water, please?": "Здесь нужен вежливый запрос, а не вопрос с do без подходящего глагола."
+      }
+    },
+    "4": {
+      "focus": "Начните вопрос с вспомогательного глагола; после него назовите собеседника и само действие."
+    },
+    "5": {
+      "focus": "Это вопрос с have о другом человеке. Проверьте начало вопроса и порядок подлежащего и глагола."
+    },
+    "6": {
+      "focus": "Проверьте вопросительную просьбу с can, глагол получения, указатель перед одним предметом и вежливость."
+    }
+  },
+  "delayed_review_full": {
+    "1": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "«Мне нравится чай». Какой порядок верный?",
+          "",
+          [
+            "I tea like.",
+            "I like tea.",
+            "I likes tea."
+          ],
+          1
+        ],
+        "prompt_ru": "«Мне нравится чай». Какой порядок верный?",
+        "prompt_en": "",
+        "options": [
+          "I tea like.",
+          "I like tea.",
+          "I likes tea."
+        ],
+        "correct_index": 1,
+        "answer": "I like tea.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00016",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "«Мне нравится моя книга». Что сказать?",
+          "",
+          [
+            "I like my book.",
+            "I likes my book.",
+            "My book like I."
+          ],
+          0
+        ],
+        "prompt_ru": "«Мне нравится моя книга». Что сказать?",
+        "prompt_en": "",
+        "options": [
+          "I like my book.",
+          "I likes my book.",
+          "My book like I."
+        ],
+        "correct_index": 0,
+        "answer": "I like my book.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00016",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "«Мне нравится кофе». Выберите предложение.",
+          "",
+          [
+            "I coffee like.",
+            "I likes coffee.",
+            "I like coffee."
+          ],
+          2
+        ],
+        "prompt_ru": "«Мне нравится кофе». Выберите предложение.",
+        "prompt_en": "",
+        "options": [
+          "I coffee like.",
+          "I likes coffee.",
+          "I like coffee."
+        ],
+        "correct_index": 2,
+        "answer": "I like coffee.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00016",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Вы говорите, что вам нравится дом.",
+          "",
+          [
+            "I like this house.",
+            "I likes this house.",
+            "I house this like."
+          ],
+          0
+        ],
+        "prompt_ru": "Вы говорите, что вам нравится дом.",
+        "prompt_en": "",
+        "options": [
+          "I like this house.",
+          "I likes this house.",
+          "I house this like."
+        ],
+        "correct_index": 0,
+        "answer": "I like this house.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00016",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Вы говорите, что вам нравится комната.",
+          "",
+          [
+            "I room like.",
+            "I like my room.",
+            "I likes my room."
+          ],
+          1
+        ],
+        "prompt_ru": "Вы говорите, что вам нравится комната.",
+        "prompt_en": "",
+        "options": [
+          "I room like.",
+          "I like my room.",
+          "I likes my room."
+        ],
+        "correct_index": 1,
+        "answer": "I like my room.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00016",
+        "source_exercise_order": 1
+      }
+    ],
+    "2": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "Вопрос: «Do you like coffee?» — ответ «Да».",
+          "Yes, I ___.",
+          [
+            "am",
+            "do",
+            "is"
+          ],
+          1
+        ],
+        "prompt_ru": "Вопрос: «Do you like coffee?» — ответ «Да».",
+        "prompt_en": "Yes, I ___.",
+        "options": [
+          "am",
+          "do",
+          "is"
+        ],
+        "correct_index": 1,
+        "answer": "do",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00017",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Вопрос: «Do you have a book?» — ответ «Да».",
+          "Yes, I ___.",
+          [
+            "have",
+            "is",
+            "do"
+          ],
+          2
+        ],
+        "prompt_ru": "Вопрос: «Do you have a book?» — ответ «Да».",
+        "prompt_en": "Yes, I ___.",
+        "options": [
+          "have",
+          "is",
+          "do"
+        ],
+        "correct_index": 2,
+        "answer": "do",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00017",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Вопрос: «Do you like tea?» — ответ «Нет».",
+          "No, I ___.",
+          [
+            "don't",
+            "not",
+            "am"
+          ],
+          0
+        ],
+        "prompt_ru": "Вопрос: «Do you like tea?» — ответ «Нет».",
+        "prompt_en": "No, I ___.",
+        "options": [
+          "don't",
+          "not",
+          "am"
+        ],
+        "correct_index": 0,
+        "answer": "don't",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00017",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Вопрос: «Do you have a phone?» — ответ «Да».",
+          "Yes, I ___.",
+          [
+            "do",
+            "is",
+            "can"
+          ],
+          0
+        ],
+        "prompt_ru": "Вопрос: «Do you have a phone?» — ответ «Да».",
+        "prompt_en": "Yes, I ___.",
+        "options": [
+          "do",
+          "is",
+          "can"
+        ],
+        "correct_index": 0,
+        "answer": "do",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00017",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Вопрос: «Do you like this house?» — ответ «Нет».",
+          "No, I ___.",
+          [
+            "am not",
+            "don't",
+            "is not"
+          ],
+          1
+        ],
+        "prompt_ru": "Вопрос: «Do you like this house?» — ответ «Нет».",
+        "prompt_en": "No, I ___.",
+        "options": [
+          "am not",
+          "don't",
+          "is not"
+        ],
+        "correct_index": 1,
+        "answer": "don't",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00017",
+        "source_exercise_order": 2
+      }
+    ],
+    "3": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "Попросите книгу вежливо.",
+          "",
+          [
+            "I can a book, please?",
+            "Do I book, please?",
+            "Can I have a book, please?"
+          ],
+          2
+        ],
+        "prompt_ru": "Попросите книгу вежливо.",
+        "prompt_en": "",
+        "options": [
+          "I can a book, please?",
+          "Do I book, please?",
+          "Can I have a book, please?"
+        ],
+        "correct_index": 2,
+        "answer": "Can I have a book, please?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00018",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Попросите чай у гостеприимного соседа.",
+          "",
+          [
+            "Can I have tea, please?",
+            "Can I tea, please?",
+            "I can tea, please?"
+          ],
+          0
+        ],
+        "prompt_ru": "Попросите чай у гостеприимного соседа.",
+        "prompt_en": "",
+        "options": [
+          "Can I have tea, please?",
+          "Can I tea, please?",
+          "I can tea, please?"
+        ],
+        "correct_index": 0,
+        "answer": "Can I have tea, please?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00018",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Попросите воду вежливо.",
+          "",
+          [
+            "Can have I water, please?",
+            "Can I have water, please?",
+            "Do I water, please?"
+          ],
+          1
+        ],
+        "prompt_ru": "Попросите воду вежливо.",
+        "prompt_en": "",
+        "options": [
+          "Can have I water, please?",
+          "Can I have water, please?",
+          "Do I water, please?"
+        ],
+        "correct_index": 1,
+        "answer": "Can I have water, please?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00018",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Попросите телефон, чтобы позвонить.",
+          "",
+          [
+            "Can I a phone, please?",
+            "I can phone, please?",
+            "Can I have a phone, please?"
+          ],
+          2
+        ],
+        "prompt_ru": "Попросите телефон, чтобы позвонить.",
+        "prompt_en": "",
+        "options": [
+          "Can I a phone, please?",
+          "I can phone, please?",
+          "Can I have a phone, please?"
+        ],
+        "correct_index": 2,
+        "answer": "Can I have a phone, please?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00018",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Попросите чашку кофе.",
+          "",
+          [
+            "I can a coffee, please?",
+            "Can I have a coffee, please?",
+            "Do I a coffee, please?"
+          ],
+          1
+        ],
+        "prompt_ru": "Попросите чашку кофе.",
+        "prompt_en": "",
+        "options": [
+          "I can a coffee, please?",
+          "Can I have a coffee, please?",
+          "Do I a coffee, please?"
+        ],
+        "correct_index": 1,
+        "answer": "Can I have a coffee, please?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00018",
+        "source_exercise_order": 3
+      }
+    ],
+    "4": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "Спросите: «У тебя есть телефон?»",
+          "",
+          [
+            "Do you have a phone?",
+            "You do have a phone?",
+            "Do have you a phone?"
+          ],
+          0
+        ],
+        "prompt_ru": "Спросите: «У тебя есть телефон?»",
+        "prompt_en": "",
+        "options": [
+          "Do you have a phone?",
+          "You do have a phone?",
+          "Do have you a phone?"
+        ],
+        "correct_index": 0,
+        "answer": "Do you have a phone?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00019",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Спросите: «У тебя есть книга?»",
+          "",
+          [
+            "Have you do a book?",
+            "You have do a book?",
+            "Do you have a book?"
+          ],
+          2
+        ],
+        "prompt_ru": "Спросите: «У тебя есть книга?»",
+        "prompt_en": "",
+        "options": [
+          "Have you do a book?",
+          "You have do a book?",
+          "Do you have a book?"
+        ],
+        "correct_index": 2,
+        "answer": "Do you have a book?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00019",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Спросите: «У тебя есть кот?»",
+          "",
+          [
+            "Do you a cat have?",
+            "Do you have a cat?",
+            "You do have a cat?"
+          ],
+          1
+        ],
+        "prompt_ru": "Спросите: «У тебя есть кот?»",
+        "prompt_en": "",
+        "options": [
+          "Do you a cat have?",
+          "Do you have a cat?",
+          "You do have a cat?"
+        ],
+        "correct_index": 1,
+        "answer": "Do you have a cat?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00019",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Спросите: «У тебя есть вода?»",
+          "",
+          [
+            "Do you have water?",
+            "You do water have?",
+            "Do water you have?"
+          ],
+          0
+        ],
+        "prompt_ru": "Спросите: «У тебя есть вода?»",
+        "prompt_en": "",
+        "options": [
+          "Do you have water?",
+          "You do water have?",
+          "Do water you have?"
+        ],
+        "correct_index": 0,
+        "answer": "Do you have water?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00019",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Спросите: «У тебя есть кофе?»",
+          "",
+          [
+            "Do have you coffee?",
+            "Do coffee you have?",
+            "Do you have coffee?"
+          ],
+          2
+        ],
+        "prompt_ru": "Спросите: «У тебя есть кофе?»",
+        "prompt_en": "",
+        "options": [
+          "Do have you coffee?",
+          "Do coffee you have?",
+          "Do you have coffee?"
+        ],
+        "correct_index": 2,
+        "answer": "Do you have coffee?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00019",
+        "source_exercise_order": 4
+      }
+    ],
+    "5": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "Вы хотите узнать, есть ли у Тома книга. Спросите его напрямую.",
+          "",
+          [
+            "You do have a book?",
+            "Do you have a book?",
+            "Do you book have?"
+          ],
+          1
+        ],
+        "prompt_ru": "Вы хотите узнать, есть ли у Тома книга. Спросите его напрямую.",
+        "prompt_en": "",
+        "options": [
+          "You do have a book?",
+          "Do you have a book?",
+          "Do you book have?"
+        ],
+        "correct_index": 1,
+        "answer": "Do you have a book?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00020",
+        "source_exercise_order": 5
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Спросите друга, есть ли у него телефон.",
+          "",
+          [
+            "Do you have a phone?",
+            "Have do you a phone?",
+            "You have do a phone?"
+          ],
+          0
+        ],
+        "prompt_ru": "Спросите друга, есть ли у него телефон.",
+        "prompt_en": "",
+        "options": [
+          "Do you have a phone?",
+          "Have do you a phone?",
+          "You have do a phone?"
+        ],
+        "correct_index": 0,
+        "answer": "Do you have a phone?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00020",
+        "source_exercise_order": 5
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Спросите гостя, есть ли у него вода.",
+          "",
+          [
+            "Do you water have?",
+            "Do have you water?",
+            "Do you have water?"
+          ],
+          2
+        ],
+        "prompt_ru": "Спросите гостя, есть ли у него вода.",
+        "prompt_en": "",
+        "options": [
+          "Do you water have?",
+          "Do have you water?",
+          "Do you have water?"
+        ],
+        "correct_index": 2,
+        "answer": "Do you have water?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00020",
+        "source_exercise_order": 5
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Спросите нового соседа, есть ли у него дом.",
+          "",
+          [
+            "Do you have a house?",
+            "Do you house have?",
+            "Have you do a house?"
+          ],
+          0
+        ],
+        "prompt_ru": "Спросите нового соседа, есть ли у него дом.",
+        "prompt_en": "",
+        "options": [
+          "Do you have a house?",
+          "Do you house have?",
+          "Have you do a house?"
+        ],
+        "correct_index": 0,
+        "answer": "Do you have a house?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00020",
+        "source_exercise_order": 5
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Спросите знакомого, есть ли у него друг.",
+          "",
+          [
+            "You do have a friend?",
+            "Do you have a friend?",
+            "Do you a friend have?"
+          ],
+          1
+        ],
+        "prompt_ru": "Спросите знакомого, есть ли у него друг.",
+        "prompt_en": "",
+        "options": [
+          "You do have a friend?",
+          "Do you have a friend?",
+          "Do you a friend have?"
+        ],
+        "correct_index": 1,
+        "answer": "Do you have a friend?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00020",
+        "source_exercise_order": 5
+      }
+    ],
+    "6": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "Попросите один стул, если какой именно — неважно.",
+          "",
+          [
+            "Can I chair have, please?",
+            "Can I have a chair, please?",
+            "Can have I a chair, please?"
+          ],
+          1
+        ],
+        "prompt_ru": "Попросите один стул, если какой именно — неважно.",
+        "prompt_en": "",
+        "options": [
+          "Can I chair have, please?",
+          "Can I have a chair, please?",
+          "Can have I a chair, please?"
+        ],
+        "correct_index": 1,
+        "answer": "Can I have a chair, please?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00021",
+        "source_exercise_order": 6
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Попросите одну книгу вежливо.",
+          "",
+          [
+            "Can I have a book, please?",
+            "Do I have book, please?",
+            "Can I a book, please?"
+          ],
+          0
+        ],
+        "prompt_ru": "Попросите одну книгу вежливо.",
+        "prompt_en": "",
+        "options": [
+          "Can I have a book, please?",
+          "Do I have book, please?",
+          "Can I a book, please?"
+        ],
+        "correct_index": 0,
+        "answer": "Can I have a book, please?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00021",
+        "source_exercise_order": 6
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Попросите один телефон вежливо.",
+          "",
+          [
+            "I can have phone please?",
+            "Can I phone a please?",
+            "Can I have a phone, please?"
+          ],
+          2
+        ],
+        "prompt_ru": "Попросите один телефон вежливо.",
+        "prompt_en": "",
+        "options": [
+          "I can have phone please?",
+          "Can I phone a please?",
+          "Can I have a phone, please?"
+        ],
+        "correct_index": 2,
+        "answer": "Can I have a phone, please?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00021",
+        "source_exercise_order": 6
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Попросите стакан воды, используя известные слова.",
+          "",
+          [
+            "Can I have water, please?",
+            "Can I water, please?",
+            "Have I can water, please?"
+          ],
+          0
+        ],
+        "prompt_ru": "Попросите стакан воды, используя известные слова.",
+        "prompt_en": "",
+        "options": [
+          "Can I have water, please?",
+          "Can I water, please?",
+          "Have I can water, please?"
+        ],
+        "correct_index": 0,
+        "answer": "Can I have water, please?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00021",
+        "source_exercise_order": 6
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Попросите один стол, который вам нужен, но не определён заранее.",
+          "",
+          [
+            "Can I a table have, please?",
+            "Can I have a table, please?",
+            "Can I table, please?"
+          ],
+          1
+        ],
+        "prompt_ru": "Попросите один стол, который вам нужен, но не определён заранее.",
+        "prompt_en": "",
+        "options": [
+          "Can I a table have, please?",
+          "Can I have a table, please?",
+          "Can I table, please?"
+        ],
+        "correct_index": 1,
+        "answer": "Can I have a table, please?",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00021",
+        "source_exercise_order": 6
+      }
+    ]
+  },
+  "understanding_full": {
+    "slug": "a1-have-like-can-do",
+    "plain": "Have — иметь; like — нравиться; can — мочь.",
+    "why": "С can можно вежливо попросить действие, а с do спросить о привычке.",
+    "pattern": "Do you like...? / Can I have...?",
+    "mistake": "Говорить Can I tea? без have.",
+    "fix": "Для просьбы поставьте have после Can I.",
+    "example": "Can I have water, please?",
+    "translation": "Можно мне воды, пожалуйста?",
+    "tasks": {
+      "meaning": {
+        "prompt": "Передайте по-русски смысл: «Do you like coffee?».",
+        "model": "Тебе нравится кофе?",
+        "accepted": [
+          "Тебе нравится кофе?"
+        ]
+      },
+      "writing": {
+        "prompt": "Напишите вежливую просьбу о воде.",
+        "model": "Can I have some water, please?",
+        "accepted": [
+          "Can I have some water, please?",
+          "Can I have water, please?",
+          "May I have some water, please?"
+        ]
+      },
+      "transfer": {
+        "prompt": "В кафе попросите чай, затем поблагодарите.",
+        "model": "Can I have tea, please? Thank you."
+      },
+      "explain": {
+        "prompt": "В кафе человек говорит: «Can I water, please?». Чего не хватает в просьбе и почему?",
+        "model": "Can I have some water, please? После can нужен глагол have; some делает просьбу о воде более естественной."
+      }
+    },
+    "contrast": {
+      "a_en": "Do you like tea?",
+      "a_ru": "Тебе нравится чай?",
+      "b_en": "Can I have tea, please?",
+      "b_ru": "Можно мне чаю, пожалуйста?",
+      "why": "Первый вопрос интересуется предпочтением собеседника. Второй — просьба дать чай. Одни и те же слова по теме, но разные цели."
+    }
+  },
+  "scaffold_full": {
+    "slug": "a1-have-like-can-do",
+    "steps": [
+      {
+        "example_en": "I have tea.",
+        "example_ru": "У меня есть чай.",
+        "why_ru": "Have говорит о наличии; это не то же самое, что любить чай."
+      },
+      {
+        "example_en": "Do you like tea?",
+        "example_ru": "Тебе нравится чай?",
+        "why_ru": "Для вопроса о предпочтении с like используется do."
+      },
+      {
+        "example_en": "Can I have tea, please?",
+        "example_ru": "Можно мне чаю, пожалуйста?",
+        "why_ru": "Can I have — вежливая просьба; после can нужен глагол have."
+      }
+    ],
+    "transfer_variants": [
+      {
+        "prompt": "В гостях вы хотите попросить стакан воды. Скажите одну вежливую фразу.",
+        "model": "Can I have a glass of water, please?"
+      },
+      {
+        "prompt": "Вы в гостях. Вежливо попросите немного молока для чая.",
+        "model": "Can I have some milk, please?"
+      }
+    ]
+  },
+  "links": {
+    "week": {
+      "source_path": "content/seed_weeks/a1_w02.yaml",
+      "level": "A1",
+      "week": 2,
+      "basis": "YAML level+week, load_content._week; lesson_detail selects lesson.week"
+    },
+    "stories": [
+      {
+        "number": 1,
+        "source_path": "content/seed_stories/s01_not_my_box.yaml",
+        "basis": "same scheduled week, not a direct lesson foreign key"
+      }
+    ],
+    "poems": [
+      {
+        "number": 1,
+        "source_path": "content/seed_poems/p01_my_new_home.yaml",
+        "basis": "same scheduled week, not a direct lesson foreign key"
+      }
+    ],
+    "active_topic": {
+      "source_path": "content/active_a1/topics_01_08.json",
+      "match": {
+        "slug": "a1-have-like-can-do",
+        "n": 4
+      },
+      "basis": "apps.lessons.views.lesson_detail + apps.core.a1_active._load_topics"
+    },
+    "spoken_missions": {
+      "source_path": "content/active_a1/scenarios_01_06.json",
+      "match": {
+        "n": 4
+      },
+      "basis": "active topics indexed by lesson.order, slug checked; content_details lesson key",
+      "count": 6
+    },
+    "error_repair": {
+      "source_path": "content/active_a1/error_repairs_01_18.json",
+      "match": {
+        "n": 4
+      },
+      "basis": "_load_topics attaches repair by n"
+    },
+    "retry_guidance": {
+      "source_path": "content/manifests/a1_retry_guidance.json",
+      "match": {
+        "slug": "a1-have-like-can-do"
+      },
+      "basis": "retry_guidance: slug then str(exercise.order)"
+    },
+    "delayed_review": {
+      "source_path": "content/manifests/a1_delayed_review_04.json",
+      "match": {
+        "slug": "a1-have-like-can-do"
+      },
+      "basis": "question_bank: slug then str(exercise.order), five cards per exercise",
+      "card_count": 30
+    },
+    "understanding": {
+      "source_path": "content/manifests/a1_understanding_checks.json",
+      "match": {
+        "slug": "a1-have-like-can-do"
+      },
+      "basis": "understanding_bank/get_guide by slug"
+    },
+    "scaffold": {
+      "source_path": "content/manifests/a1_scaffold_transfer.json",
+      "match": {
+        "slug": "a1-have-like-can-do"
+      },
+      "basis": "understanding_bank merges steps and transfer_variants by slug"
+    },
+    "practice_review_links": [
+      {
+        "practice_order": 1,
+        "review_of_exercise_order": 4,
+        "review_of_exercise_uid": "EX-00019"
+      },
+      {
+        "practice_order": 2,
+        "review_of_exercise_order": 4,
+        "review_of_exercise_uid": "EX-00019"
+      },
+      {
+        "practice_order": 3,
+        "review_of_exercise_order": 4,
+        "review_of_exercise_uid": "EX-00019"
+      },
+      {
+        "practice_order": 4,
+        "review_of_exercise_order": 4,
+        "review_of_exercise_uid": "EX-00019"
+      }
+    ],
+    "browser_retrieval": {
+      "source_code": "static/js/a1-active.js",
+      "selector": "retrievalLine(topic): (topic.n - 1) % topic.dialogue.length",
+      "dialogue_index": 0,
+      "selected_line": [
+        "Mia",
+        "Do you have my phone?",
+        "У тебя мой телефон?"
+      ],
+      "tasks": [
+        "dictation",
+        "back_translation"
+      ],
+      "persistence": "browser only; not a PracticeItem database row",
+      "phonetic_quality": "NOT_VERIFIED"
+    },
+    "optional_transfer_pilot": {
+      "source_path": "apps/learning/transfer_pilot.py",
+      "present": true,
+      "basis": "literal PILOTS dict keys; linked via learning/dashboard.html, separate opt-in workflow, not ordinary lesson tasks"
+    }
+  },
+  "answer_checking": {
+    "main": "Exercise.normalize/is_correct; API uses is_open_pilot_response for open A1 fill/transfer tasks",
+    "practice": "PracticeItem.normalize/is_correct expands configured contractions; accepted in source is finite, not all English answers",
+    "open_tasks": "Guide transfer/explain and spoken missions are model/self/teacher review, not an exhaustive grammar validator",
+    "listen_dictation": "DB PracticeItem permits only translate. The active A1 lab separately generates one dictation and one back-translation from a selected dialogue line in browser JavaScript; see browser_retrieval below"
+  },
+  "browser_retrieval": {
+    "source_code": "static/js/a1-active.js",
+    "selector": "retrievalLine(topic): (topic.n - 1) % topic.dialogue.length",
+    "dialogue_index": 0,
+    "selected_line": [
+      "Mia",
+      "Do you have my phone?",
+      "У тебя мой телефон?"
+    ],
+    "tasks": [
+      "dictation",
+      "back_translation"
+    ],
+    "persistence": "browser only; not a PracticeItem database row",
+    "phonetic_quality": "NOT_VERIFIED"
+  },
+  "prerequisites": {
+    "prior_lessons_in_course_order": [
+      "a1-nouns-first-words",
+      "a1-verb-be",
+      "a1-determiners-a-the-this-my"
+    ],
+    "status": "ORDER_ONLY_NOT_A_PEDAGOGICAL_PROOF",
+    "grammar_dependencies_from_dictionary": [],
+    "reviewer_questions": [
+      "Does the learner encounter unknown grammar before it is explained?",
+      "Are early full sentences explicitly taught as chunks rather than presumed prior knowledge?"
+    ]
+  },
+  "explicit_dictionary_records": [
+    {
+      "uid": "LX-00029",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/13",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00029",
+        "lemma": "please",
+        "meaning": "used to make a request polite",
+        "class": "O8",
+        "grammar_features": [
+          "politeness_marker"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): please exclam. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/pliz/",
+        "stress_note": "Долгое /i/, на конце звонкое /z/",
+        "translation_ru": "пожалуйста (при просьбе)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "water please",
+          "yes please",
+          "please"
+        ],
+        "chunks": [
+          "Yes, please.",
+          "Water, please."
+        ],
+        "example_en": "[S3]Coffee[/], [O8]please[/].",
+        "example_ru": "Кофе, пожалуйста.",
+        "pattern": "___, please.",
+        "substitutions": [
+          "Coffee",
+          "Water"
+        ],
+        "situation": "Заказываете",
+        "usage_note": "please — только для просьбы. В ответ на «спасибо» говорят You're welcome, а не please.",
+        "typical_error": "Отвечают please на thank you. Это ошибка: please означает «прошу»."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/4",
+        "/lesson_full/exercises/2/units/2",
+        "/lesson_full/practice/0/units/2"
+      ]
+    },
+    {
+      "uid": "LX-00031",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/15",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00031",
+        "lemma": "yes",
+        "meaning": "used to give a positive answer",
+        "class": "O4",
+        "grammar_features": [
+          "answer_word"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): yes exclam. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/jes/",
+        "stress_note": "Как «йес»; в разговоре часто yeah /jeə/",
+        "translation_ru": "да",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "yes please",
+          "yes I do",
+          "yes it is"
+        ],
+        "chunks": [
+          "Yes, please.",
+          "Yes, it is."
+        ],
+        "example_en": "[O4]Yes[/], [T8]it[/] [D1]is[/].",
+        "example_ru": "Да.",
+        "pattern": "Yes, ___.",
+        "substitutions": [
+          "it is",
+          "I am",
+          "I do",
+          "please"
+        ],
+        "situation": "Отвечаете на вопрос",
+        "usage_note": "Голое Yes звучит сухо. Американцы добавляют короткий хвост: Yes, it is. Yes, I do.",
+        "typical_error": "Отвечают одним Yes на любой вопрос. Короткий ответ с глаголом звучит естественнее."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/5",
+        "/lesson_full/exercises/1/units/1",
+        "/lesson_full/practice/3/units/1"
+      ]
+    },
+    {
+      "uid": "LX-00032",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/16",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00032",
+        "lemma": "no",
+        "meaning": "used to give a negative answer",
+        "class": "O4",
+        "grammar_features": [
+          "answer_word"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): no exclam., det. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/noʊ/",
+        "stress_note": "Дифтонг /oʊ/ — «ноу», а не «но»",
+        "translation_ru": "нет",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "no thanks",
+          "no it isn't",
+          "no I don't"
+        ],
+        "chunks": [
+          "No, it isn't."
+        ],
+        "example_en": "[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/].",
+        "example_ru": "Нет.",
+        "pattern": "No, ___.",
+        "substitutions": [
+          "it isn't",
+          "I'm not",
+          "I don't"
+        ],
+        "situation": "Отвечаете отрицательно",
+        "typical_error": "Произносят «но» — по-английски это звучит как know без дифтонга. Нужно /noʊ/."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/6"
+      ]
+    },
+    {
+      "uid": "LX-00033",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00033",
+        "lemma": "have",
+        "meaning": "to own or possess something",
+        "class": "D1",
+        "forms": [
+          "has",
+          "'ve",
+          "had",
+          "having"
+        ],
+        "grammar_features": [
+          "irregular",
+          "possession"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): have v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/hæv/",
+        "stress_note": "Открытое /æ/ — между «э» и «а». В he/she/it — has /hæz/",
+        "translation_ru": "иметь; «у меня есть»",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "have a phone",
+          "have a busy week",
+          "have a nice day"
+        ],
+        "chunks": [
+          "Have a nice day!",
+          "Can I have water, please?"
+        ],
+        "example_en": "[T8]I[/] [D1]have[/] [T1]a[/] [S1]friend[/].",
+        "example_ru": "У меня есть друг.",
+        "pattern": "I have a ___.",
+        "substitutions": [
+          "friend",
+          "phone",
+          "big family",
+          "new book"
+        ],
+        "situation": "Рассказываете, что у вас есть",
+        "usage_note": "Русское «у меня есть» по-английски строится от владельца: I have.",
+        "typical_error": "«At me is a phone» — дословный перевод. Нужно: I have a phone."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/0",
+        "/lesson_full/exercises/2/units/1",
+        "/lesson_full/exercises/3/units/1",
+        "/lesson_full/exercises/4/units/1",
+        "/lesson_full/exercises/5/units/2",
+        "/lesson_full/practice/0/units/0",
+        "/lesson_full/practice/2/units/0",
+        "/scheduled_poems/0/source/target_units/0"
+      ]
+    },
+    {
+      "uid": "LX-00034",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00034",
+        "lemma": "like",
+        "meaning": "to enjoy something or think it is nice",
+        "class": "D3",
+        "forms": [
+          "likes",
+          "liked",
+          "liking"
+        ],
+        "grammar_features": [
+          "state_verb"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): like (find sb/sth pleasant) v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/laɪk/",
+        "stress_note": "Дифтонг /aɪ/, глухое /k/",
+        "translation_ru": "нравиться; любить (о вкусах)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "like coffee",
+          "like it",
+          "I like my room"
+        ],
+        "chunks": [
+          "I like it!"
+        ],
+        "example_en": "[T8]I[/] [D3]like[/] [T2]this[/] [S2]room[/].",
+        "example_ru": "Мне нравится эта комната.",
+        "pattern": "I like ___.",
+        "substitutions": [
+          "coffee",
+          "this room",
+          "my house",
+          "it"
+        ],
+        "situation": "Говорите о вкусах",
+        "usage_note": "«Мне нравится X» → I like X: тот, кому нравится, становится первым словом.",
+        "typical_error": "«Me like» или «To me likes». Нужно: I like."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/1",
+        "/lesson_full/exercises/0/units/0",
+        "/lesson_full/practice/1/units/0",
+        "/scheduled_poems/0/source/target_units/1"
+      ]
+    },
+    {
+      "uid": "LX-00035",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00035",
+        "lemma": "can",
+        "meaning": "to be able to or be allowed to do something",
+        "class": "D7",
+        "forms": [
+          "could"
+        ],
+        "grammar_features": [
+          "modal",
+          "no_to"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): can1 modal v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/kæn/",
+        "stress_note": "В утверждении слабое /kən/: I can /aɪ kən/. Отрицание can't /kænt/ всегда ударное",
+        "translation_ru": "мочь, уметь; можно",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "can I have",
+          "you can have",
+          "I can't"
+        ],
+        "chunks": [
+          "Can I have water, please?"
+        ],
+        "example_en": "[D7]Can[/] [T8]I[/] [D1]have[/] [S3]coffee[/], [O8]please[/]?",
+        "example_ru": "Можно мне кофе, пожалуйста?",
+        "pattern": "Can I have ___, please?",
+        "substitutions": [
+          "coffee",
+          "water",
+          "my phone",
+          "your phone"
+        ],
+        "situation": "Вежливо просите что-то",
+        "usage_note": "После can глагол идёт без to: can have, а не can to have.",
+        "typical_error": "«I can to have» — после can частица to не нужна."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/2",
+        "/lesson_full/exercises/2/units/0",
+        "/lesson_full/exercises/5/units/1",
+        "/lesson_full/practice/0/units/1"
+      ]
+    },
+    {
+      "uid": "LX-00036",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00036",
+        "lemma": "do",
+        "meaning": "used to make questions and negatives in the present simple",
+        "class": "D1",
+        "forms": [
+          "does",
+          "did",
+          "doing"
+        ],
+        "grammar_features": [
+          "auxiliary",
+          "irregular"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): do1 v., auxiliary v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/du/",
+        "stress_note": "В вопросе обычно слабое /də/: Do you /dəjə/. Отрицание don't /doʊnt/",
+        "translation_ru": "вспомогательный глагол для вопросов и отрицаний (не переводится)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "do you like",
+          "do you have",
+          "I don't"
+        ],
+        "chunks": [
+          "Yes, I do.",
+          "No, I don't."
+        ],
+        "example_en": "[D1]Do[/] [T8]you[/] [D3]like[/] [S3]coffee[/]?",
+        "example_ru": "Ты любишь кофе?",
+        "pattern": "Do you like ___?",
+        "substitutions": [
+          "coffee",
+          "water",
+          "your room",
+          "it"
+        ],
+        "situation": "Спрашиваете о вкусах",
+        "usage_note": "В вопросах с обычными глаголами do встаёт в начало. С be и can do не нужен.",
+        "typical_error": "«You like coffee?» с вопросительной интонацией — понятно, но правильный вопрос: Do you like coffee?"
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/3",
+        "/lesson_full/exercises/1/units/0",
+        "/lesson_full/exercises/3/units/0",
+        "/lesson_full/exercises/4/units/0",
+        "/lesson_full/practice/1/units/1",
+        "/lesson_full/practice/3/units/0",
+        "/scheduled_poems/0/source/target_units/2"
+      ]
+    },
+    {
+      "uid": "LX-00038",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00038",
+        "lemma": "that",
+        "meaning": "used for a person or thing that is not near you",
+        "class": "T2",
+        "grammar_features": [
+          "determiner",
+          "pronoun_use"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): that det., pron., conj. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ðæt/",
+        "stress_note": "Открытое /æ/; that's = /ðæts/",
+        "translation_ru": "тот, та, то (далеко); это",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "that house",
+          "that's nice",
+          "that is"
+        ],
+        "chunks": [
+          "That's nice!"
+        ],
+        "example_en": "[T2]That[/] [S2]house[/] [D1]is[/] [J2]new[/].",
+        "example_ru": "Тот дом новый.",
+        "pattern": "That ___ is new.",
+        "substitutions": [
+          "house",
+          "phone",
+          "book"
+        ],
+        "situation": "Показываете на то, что далеко",
+        "usage_note": "That's nice! — «Как здорово!» Так реагируют на новость собеседника.",
+        "typical_error": "Путают this и that. This — рядом со мной, that — дальше."
+      },
+      "referenced_at_json_pointers": [
+        "/scheduled_poems/0/source/target_units/3"
+      ]
+    },
+    {
+      "uid": "LX-00039",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/6",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00039",
+        "lemma": "your",
+        "meaning": "belonging to the person you are speaking to",
+        "class": "T3",
+        "grammar_features": [
+          "possessive_determiner"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): your det. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/jʊr/",
+        "stress_note": "Также /jɔr/; в быстрой речи /jɚ/ — звучит как you're",
+        "translation_ru": "твой, ваш",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "your name",
+          "your phone",
+          "your family"
+        ],
+        "chunks": [
+          "Is this your phone?"
+        ],
+        "example_en": "[D1]Is[/] [T2]this[/] [T3]your[/] [S2]phone[/]?",
+        "example_ru": "Это твой телефон?",
+        "pattern": "Is this your ___?",
+        "substitutions": [
+          "phone",
+          "book",
+          "room"
+        ],
+        "situation": "Находите чужую вещь",
+        "usage_note": "your (твой) и you're (ты есть) звучат почти одинаково, но пишутся по-разному.",
+        "typical_error": "Пишут you're вместо your. Your phone — твой телефон."
+      },
+      "referenced_at_json_pointers": [
+        "/scheduled_poems/0/source/target_units/4"
+      ]
+    },
+    {
+      "uid": "LX-00040",
+      "source_path": "content/seed_lexicon/a1_w02_story01.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00040",
+        "lemma": "box",
+        "meaning": "a container with flat sides, often made of cardboard",
+        "class": "S2",
+        "grammar_features": [
+          "countable",
+          "plural_es"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): box n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/bɑks/",
+        "stress_note": "Американское открытое /ɑ/ — ближе к «бакс». Множественное число boxes /ˈbɑksɪz/",
+        "translation_ru": "коробка, ящик",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a big box",
+          "a new box",
+          "my box"
+        ],
+        "chunks": [
+          "Is this your box?"
+        ],
+        "example_en": "[T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/].",
+        "example_ru": "Это не моя коробка.",
+        "pattern": "Is this your ___?",
+        "substitutions": [
+          "box",
+          "book",
+          "phone"
+        ],
+        "situation": "Курьер принёс не ту посылку",
+        "typical_error": "Произносят «бокс» с русским «о». В американском — открытое /ɑ/."
+      },
+      "referenced_at_json_pointers": [
+        "/scheduled_stories/0/source/new_units/0",
+        "/scheduled_poems/0/source/target_units/9"
+      ]
+    },
+    {
+      "uid": "LX-00041",
+      "source_path": "content/seed_lexicon/a1_w02_story01.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00041",
+        "lemma": "cat",
+        "meaning": "a small animal with soft fur, often kept as a pet",
+        "class": "S6",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): cat n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/kæt/",
+        "stress_note": "Открытое /æ/ — между «э» и «а»; t на конце короткое",
+        "translation_ru": "кошка, кот",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a big cat",
+          "my cat",
+          "a nice cat"
+        ],
+        "chunks": [
+          "It is my cat."
+        ],
+        "example_en": "[T8]I[/] [D1]have[/] [T1]a[/] [J1]big[/] [S6]cat[/].",
+        "example_ru": "У меня большой кот.",
+        "pattern": "I have a ___ cat.",
+        "substitutions": [
+          "big",
+          "nice",
+          "new"
+        ],
+        "situation": "Рассказываете о питомце",
+        "usage_note": "cat не различает пол: и «кот», и «кошка». О своём питомце американцы часто говорят he или she, о чужом — it.",
+        "typical_error": "Произносят «кэт» с узким э или «кет». Нужно открытое /æ/."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/exercises/4/units/2",
+        "/scheduled_stories/0/source/new_units/1"
+      ]
+    },
+    {
+      "uid": "LX-00049",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00049",
+        "lemma": "This is my home.",
+        "meaning": "Showing your home",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/ðɪs ɪz maɪ ˈhoʊm/",
+        "translation_ru": "Это мой дом.",
+        "example_en": "This is my home.",
+        "example_ru": "Это мой дом.",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/0"
+      ]
+    },
+    {
+      "uid": "LX-00050",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00050",
+        "lemma": "That is your room.",
+        "meaning": "Showing someone their room",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/ðæt ɪz jɚ ˈrum/",
+        "translation_ru": "Это ваша комната.",
+        "example_en": "That is your room.",
+        "example_ru": "Это ваша комната.",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/1"
+      ]
+    },
+    {
+      "uid": "LX-00051",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00051",
+        "lemma": "Do you like it?",
+        "meaning": "Asking whether someone likes something",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/də jə ˈlaɪk ɪt/",
+        "translation_ru": "Вам это нравится?",
+        "example_en": "Do you like it?",
+        "example_ru": "Вам это нравится?",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/2"
+      ]
+    },
+    {
+      "uid": "LX-00052",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00052",
+        "lemma": "Yes, I do.",
+        "meaning": "A short positive answer with do",
+        "class": "O4",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/jes aɪ ˈdu/",
+        "translation_ru": "Да.",
+        "example_en": "Yes, I do.",
+        "example_ru": "Да.",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/3"
+      ]
+    },
+    {
+      "uid": "LX-00053",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/4",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00053",
+        "lemma": "Can I have water, please?",
+        "meaning": "Politely asking for water",
+        "class": "D7",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/kən aɪ hæv ˈwɑt̬ɚ pliz/",
+        "translation_ru": "Можно мне воды, пожалуйста?",
+        "example_en": "Can I have water, please?",
+        "example_ru": "Можно мне воды, пожалуйста?",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/4"
+      ]
+    },
+    {
+      "uid": "LX-00054",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00054",
+        "lemma": "It is not my box.",
+        "meaning": "Saying that a box is not yours",
+        "class": "X1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/ɪt ɪz nɑt maɪ ˈbɑks/",
+        "translation_ru": "Это не моя коробка.",
+        "example_en": "It is not my box.",
+        "example_ru": "Это не моя коробка.",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/5"
+      ]
+    },
+    {
+      "uid": "LX-00486",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00486",
+        "lemma": "chair",
+        "class": "S2",
+        "ipa_us": "/tʃɛr/",
+        "translation_ru": "стул",
+        "meaning": "a seat with a back for one person",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]chair[/].",
+        "example_ru": "Это мой стул.",
+        "usage_note": "Chair — отдельный стул; перед одним неопределённым предметом нужно a.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/scheduled_poems/0/source/target_units/5"
+      ]
+    },
+    {
+      "uid": "LX-00490",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/9",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00490",
+        "lemma": "sofa",
+        "class": "S2",
+        "ipa_us": "/ˈsoʊfə/",
+        "translation_ru": "диван",
+        "meaning": "a long soft seat for more than one person",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]sofa[/].",
+        "example_ru": "Это мой диван.",
+        "usage_note": "Sofa — диван; в американской речи также встречается couch, это слово пока не проверяем.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/scheduled_poems/0/source/target_units/6"
+      ]
+    },
+    {
+      "uid": "LX-00491",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/10",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00491",
+        "lemma": "lamp",
+        "class": "S2",
+        "ipa_us": "/læmp/",
+        "translation_ru": "лампа; светильник",
+        "meaning": "a device that gives light",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]lamp[/].",
+        "example_ru": "Это моя лампа.",
+        "usage_note": "Lamp — отдельная лампа или светильник, не освещение вообще.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/7",
+        "/scheduled_poems/0/source/target_units/7"
+      ]
+    },
+    {
+      "uid": "LX-00492",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/11",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00492",
+        "lemma": "desk",
+        "class": "S2",
+        "ipa_us": "/dɛsk/",
+        "translation_ru": "письменный стол",
+        "meaning": "a table used for writing or working",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]desk[/].",
+        "example_ru": "Это мой письменный стол.",
+        "usage_note": "Desk — стол для письма или работы; table — более общее слово.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/8"
+      ]
+    },
+    {
+      "uid": "LX-00493",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/12",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00493",
+        "lemma": "shelf",
+        "class": "S2",
+        "ipa_us": "/ʃɛlf/",
+        "translation_ru": "полка",
+        "meaning": "a flat board for keeping things on",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]shelf[/].",
+        "example_ru": "Это моя полка.",
+        "usage_note": "Одна полка — shelf; несколько — shelves. Во второй неделе используем единственное число.",
+        "forms": [
+          "shelves"
+        ],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/9"
+      ]
+    },
+    {
+      "uid": "LX-00494",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/13",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00494",
+        "lemma": "mirror",
+        "class": "S2",
+        "ipa_us": "/ˈmɪrɚ/",
+        "translation_ru": "зеркало",
+        "meaning": "a surface that shows your reflection",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]mirror[/].",
+        "example_ru": "Это моё зеркало.",
+        "usage_note": "Одно зеркало — a mirror.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/10"
+      ]
+    },
+    {
+      "uid": "LX-00495",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/14",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00495",
+        "lemma": "pillow",
+        "class": "S2",
+        "ipa_us": "/ˈpɪloʊ/",
+        "translation_ru": "подушка для сна",
+        "meaning": "a soft support for your head in bed",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]pillow[/].",
+        "example_ru": "Это моя подушка.",
+        "usage_note": "Pillow обычно означает подушку для сна; диванные подушки могут называться иначе.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/11"
+      ]
+    },
+    {
+      "uid": "LX-00496",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/15",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00496",
+        "lemma": "blanket",
+        "class": "S2",
+        "ipa_us": "/ˈblæŋkɪt/",
+        "translation_ru": "одеяло",
+        "meaning": "a covering that keeps a person warm",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]blanket[/].",
+        "example_ru": "Это моё одеяло.",
+        "usage_note": "Blanket — одеяло или плед; здесь предмет дома.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/12"
+      ]
+    },
+    {
+      "uid": "LX-00497",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/16",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00497",
+        "lemma": "towel",
+        "class": "S2",
+        "ipa_us": "/ˈtaʊəl/",
+        "translation_ru": "полотенце",
+        "meaning": "a cloth used for drying",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]towel[/].",
+        "example_ru": "Это моё полотенце.",
+        "usage_note": "Towel — полотенце; произнесите начало /taʊ/, как один переход звука.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/13",
+        "/lesson_full/exercises/5/units/0"
+      ]
+    },
+    {
+      "uid": "LX-00498",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/17",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00498",
+        "lemma": "clock",
+        "class": "S2",
+        "ipa_us": "/klɑk/",
+        "translation_ru": "часы",
+        "meaning": "a device that shows the time",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]clock[/].",
+        "example_ru": "Это мои часы.",
+        "usage_note": "Здесь clock — настенные или настольные часы; одна вещь по-английски: a clock.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/14"
+      ]
+    },
+    {
+      "uid": "LX-00499",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/18",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00499",
+        "lemma": "fridge",
+        "class": "S2",
+        "ipa_us": "/frɪdʒ/",
+        "translation_ru": "холодильник",
+        "meaning": "an appliance that keeps food cold",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]fridge[/].",
+        "example_ru": "Это мой холодильник.",
+        "usage_note": "Fridge — разговорное слово, употребляется и в США; полное название — refrigerator. Не называем его отдельной изученной единицей.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/15"
+      ]
+    },
+    {
+      "uid": "LX-00500",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/19",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00500",
+        "lemma": "rug",
+        "class": "S2",
+        "ipa_us": "/rʌɡ/",
+        "translation_ru": "коврик; небольшой ковёр",
+        "meaning": "a piece of material covering part of a floor",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]rug[/].",
+        "example_ru": "Это мой коврик.",
+        "usage_note": "Rug — отдельный ковёр или коврик; не покрытие пола во всей комнате.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/16",
+        "/scheduled_poems/0/source/target_units/8"
+      ]
+    }
+  ],
+  "dictionary_caveat": "Explicit UID references are exact. Implicit mentions in free prose are not exhaustive semantic links. Full target-week dictionary packets are included for contextual lookup."
+}

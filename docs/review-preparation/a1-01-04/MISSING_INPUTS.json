@@ -1,0 +1,43 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "text_packet_complete": true,
+  "missing_requested_source_paths": [],
+  "unresolved_explicit_uid_refs": [],
+  "not_provided_old_companions": [
+    "old COURSE_MAP.json",
+    "old MISSING_INPUTS.json",
+    "old SOURCE_MANIFEST.json",
+    "old archive"
+  ],
+  "replacement": "New maps/snapshots regenerated from Git; old companion files not claimed received",
+  "blocked": [
+    {
+      "check": "freshPostgreSQL",
+      "reason": "No PostgreSQL server binaries or Docker available"
+    },
+    {
+      "check": "visualDesktop390KeyboardReducedMotion",
+      "reason": "Chromium unavailable; official download failed"
+    },
+    {
+      "check": "realAudioPronunciation",
+      "reason": "Expected audio assets not in checkout;no real listening/OSvoice check"
+    },
+    {
+      "check": "freshCoverageRatchet",
+      "reason": "pytest-cov not in locked environment; no unpinned dependency installed"
+    }
+  ],
+  "interrupted_runs": [
+    {
+      "name": "pytest-full",
+      "reason": "Process disappeared before an exit result or final pytest summary; cause not established. Partial log preserved, not PASS and not a demonstrated test failure.",
+      "exit_code": null
+    }
+  ],
+  "not_reviewed": [
+    "GPT-6 Pro editorial review",
+    "learner comprehension",
+    "other 56 lessons"
+  ]
+}

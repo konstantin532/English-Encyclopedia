@@ -1,0 +1,2495 @@
+{
+  "schema_version": 1,
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "source_tree": "e08283b42f46d32ac1a2e50c9020852ac4bed0b2",
+  "snapshot_file_count": 163,
+  "snapshot_total_bytes": 1508921,
+  "byte_verification": "All snapshot files compared to git show; all Git blob hashes verified",
+  "files": [
+    {
+      "source_path": ".github/workflows/atlas-browser.yml",
+      "snapshot_path": "snapshot/.github/workflows/atlas-browser.yml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "84700adf8310ef72440ccd2a4faff343f9c5c138",
+      "sha256": "9a07213767b4fad8e9cd5e0583706a8c3b80c8002eedd844d9f4745611bdedf3",
+      "bytes": 2569,
+      "lines": 51,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/.github/workflows/atlas-browser.yml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": ".github/workflows/ci.yml",
+      "snapshot_path": "snapshot/.github/workflows/ci.yml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "8c4c55eec3a8e76130a5655570d784418c098727",
+      "sha256": "1c158615693a0b24565865bd6078d1a3f00e0651ff5ccc69f45cd51ae61adb5e",
+      "bytes": 4302,
+      "lines": 77,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/.github/workflows/ci.yml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": ".github/workflows/quality-evolution.yml",
+      "snapshot_path": "snapshot/.github/workflows/quality-evolution.yml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "e929a32c0abee5ccf5c4a34c05560057a2a5b52f",
+      "sha256": "67160596a81886dfd69d22c9a9be8a2ad32b5da978a6cb2835337e9a55f69fb3",
+      "bytes": 2603,
+      "lines": 64,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/.github/workflows/quality-evolution.yml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": ".python-version",
+      "snapshot_path": "snapshot/.python-version",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "24ee5b1be9961e38a503c8e764b7385dbb6ba124",
+      "sha256": "02e735b3dfe1c32833eb550b7ff8ffa17f5f2bc3fa1e7bae61a8f5a3883ce398",
+      "bytes": 5,
+      "lines": 1,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/.python-version",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "AGENTS.md",
+      "snapshot_path": "snapshot/AGENTS.md",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "1a606b3be9461379b5c7676c004213149e0ff99b",
+      "sha256": "3443039fbb336dbd79a168435c3e552adce8038b2878d422ad6ecbe5c0327b15",
+      "bytes": 10572,
+      "lines": 60,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/AGENTS.md",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "CLAUDE.md",
+      "snapshot_path": "snapshot/CLAUDE.md",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "61628ab1eb084065e04661f3240bbc1b97d4655d",
+      "sha256": "3000cff47f50131841eb27a893433c08def4e1712e70300889400ea83b8ffc1f",
+      "bytes": 4143,
+      "lines": 17,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/CLAUDE.md",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/api/urls.py",
+      "snapshot_path": "snapshot/apps/api/urls.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "0b84fbc8e27deb517148f79d92c848d075658a42",
+      "sha256": "450048494b8b4fa3eeec481a80e93bb69d28754105df92124585d52e81cd1949",
+      "bytes": 424,
+      "lines": 11,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/api/urls.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/api/validation.py",
+      "snapshot_path": "snapshot/apps/api/validation.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f5f22c1e8cd4b68bca274ac1c369dc753b8524cb",
+      "sha256": "5a6bac88d63d498f13387512418b35937a1dfad55732b8625318fc74ddfbf452",
+      "bytes": 1429,
+      "lines": 31,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/api/validation.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/api/views.py",
+      "snapshot_path": "snapshot/apps/api/views.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "79d705bd6436bb37d4ab51a5cd708e4d9baf3204",
+      "sha256": "acc3955d99defe912730a98d2f7c030c38e66dbbdf54899ebf7f22a64bc8a70c",
+      "bytes": 5793,
+      "lines": 118,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/api/views.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/core/a1_active.py",
+      "snapshot_path": "snapshot/apps/core/a1_active.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "c6a8e5ced36b8901018dbefd82a5b7dc131b0c8f",
+      "sha256": "7e34718ab680f447a73b335d94f06de76c68e34ce937fe0e38c6dc68aa18156d",
+      "bytes": 4589,
+      "lines": 111,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/core/a1_active.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/core/management/commands/load_content.py",
+      "snapshot_path": "snapshot/apps/core/management/commands/load_content.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "7742ae657f69f9cb66cfa07228d7cae8fb464aa6",
+      "sha256": "8e39eba6a25433510e8d20d64b4191c6a771d997001222a2dbe54b8c149deb21",
+      "bytes": 25226,
+      "lines": 409,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/core/management/commands/load_content.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/core/templatetags/ru.py",
+      "snapshot_path": "snapshot/apps/core/templatetags/ru.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "cc8b1b92df78802914a90c0b4aa6dc322a79e094",
+      "sha256": "789cbf4bc301341d8cbcb371c802ee51513a0942cd6ac582608813cc8cdc5770",
+      "bytes": 1605,
+      "lines": 43,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/core/templatetags/ru.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/core/urls.py",
+      "snapshot_path": "snapshot/apps/core/urls.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "7359b77a81469525bc146ff68788a9de36ad48ef",
+      "sha256": "b1a3ec04d4a24f6859f04f647b4cfc0b8c38ddb0721422d0bbd7ed2202fa038c",
+      "bytes": 564,
+      "lines": 14,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/core/urls.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/curriculum/models.py",
+      "snapshot_path": "snapshot/apps/curriculum/models.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "c183167d081f7cde270deea5d8b4fc21cbf4a069",
+      "sha256": "8c5a72c62714a4de6216579810e44257ad5d67faac88ccd25ca820f5247be879",
+      "bytes": 5277,
+      "lines": 106,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/curriculum/models.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/curriculum/registry.py",
+      "snapshot_path": "snapshot/apps/curriculum/registry.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f36bd95a315a8e84ef40ba4657ed989953799a8d",
+      "sha256": "1f2662cbeb67172e9927d4c3c15047aeb621f3f95c301677edf568ed755f1c9a",
+      "bytes": 6560,
+      "lines": 134,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/curriculum/registry.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/curriculum/urls.py",
+      "snapshot_path": "snapshot/apps/curriculum/urls.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "a6a122356b8cbae6afd86aaafc6a922e5f443a50",
+      "sha256": "5e536154c2be50179903125fa4f0654b1b1727bb36b31f51f242327283f68398",
+      "bytes": 230,
+      "lines": 9,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/curriculum/urls.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/curriculum/views.py",
+      "snapshot_path": "snapshot/apps/curriculum/views.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "ee6bed5231f4bbeed1c808f332c396ab616c605f",
+      "sha256": "6439b8023e1e959fedac5b48df9275ebbf5d7b46fb8977c0ab64d45bd963ea80",
+      "bytes": 6602,
+      "lines": 115,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/curriculum/views.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/drills/models.py",
+      "snapshot_path": "snapshot/apps/drills/models.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "a34c0a00dc1d1e3d743e1723c99620e8744141e7",
+      "sha256": "5c3b353264cd95177e4b829d9da3dfee765df3008e75bc917c52b9c4e8b05e59",
+      "bytes": 6780,
+      "lines": 132,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/drills/models.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/drills/retry_guidance.py",
+      "snapshot_path": "snapshot/apps/drills/retry_guidance.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "ff55d31bfa03227f7210ad4e186fb7fc2b66e844",
+      "sha256": "1d93b4e9fdfd83a4ddbeb98a02a020ff7edce92aeaf55b4786da6759eac8f388",
+      "bytes": 2326,
+      "lines": 73,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/drills/retry_guidance.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/learning/cafe_mission.py",
+      "snapshot_path": "snapshot/apps/learning/cafe_mission.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "b8d9bb040c95d1745ea2e8241f40b40d2a0b0508",
+      "sha256": "a135488ce9497792a16f881ff76313e323271b161f6ba5755a9d56d173b0e885",
+      "bytes": 12780,
+      "lines": 256,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/learning/cafe_mission.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/learning/delayed_review_views.py",
+      "snapshot_path": "snapshot/apps/learning/delayed_review_views.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "2c3b5762e969f5a0594e2ea7679979c0844738dd",
+      "sha256": "433114fe829eacd7bbf7cad1d57771e2b783521d03f9f0f877b33df787c27942",
+      "bytes": 6252,
+      "lines": 123,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/learning/delayed_review_views.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/learning/independent_views.py",
+      "snapshot_path": "snapshot/apps/learning/independent_views.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "a225445b7c874e9ef2191c27bbe44b776d97bcc8",
+      "sha256": "66b9ddaf563413dc964855c4f2b3603b2d800426a1393a4fca146df343570119",
+      "bytes": 15226,
+      "lines": 266,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/learning/independent_views.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/learning/micro_review.py",
+      "snapshot_path": "snapshot/apps/learning/micro_review.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "0eff945a9a4ce5e7b4e2b6995ae1f484ea4cd0f5",
+      "sha256": "7d4df422e9c090a2dc610e6f87371e0f1e03accfb8dc60d358afb1b191940ee4",
+      "bytes": 3344,
+      "lines": 74,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/learning/micro_review.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/learning/mistake_review.py",
+      "snapshot_path": "snapshot/apps/learning/mistake_review.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "6652b0b7393764d4206af8a8ddb38eb56cf39257",
+      "sha256": "7245368487ecbd710b4ff980997cfc1c4fa8afce94597c4df8de8acaea2d6807",
+      "bytes": 6979,
+      "lines": 151,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/learning/mistake_review.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/learning/models.py",
+      "snapshot_path": "snapshot/apps/learning/models.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "63f60432235ff311ba7a9c0dfdc06814653cfb83",
+      "sha256": "befa768921550f495703ab002e63db3f0cb38a9dcae1a41a9fd17f126979d754",
+      "bytes": 13242,
+      "lines": 265,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/learning/models.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/learning/services.py",
+      "snapshot_path": "snapshot/apps/learning/services.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "114694f1785da818a26312084748c615e83d7ff3",
+      "sha256": "87838260828fa389ea8b274cece53889d35ad4c7f9d902901887d9c6ebc51be2",
+      "bytes": 4437,
+      "lines": 112,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/learning/services.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/learning/speech_practice.py",
+      "snapshot_path": "snapshot/apps/learning/speech_practice.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "047b41defebbac4cd1270fd2ac3010772ea0db73",
+      "sha256": "4f05be1dd1de0f74652cef6d5354e2c73234cfe6bc77d87ae974fa74819b8e11",
+      "bytes": 8929,
+      "lines": 193,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/learning/speech_practice.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/learning/transfer_pilot.py",
+      "snapshot_path": "snapshot/apps/learning/transfer_pilot.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "ac4cf828cfd82685e18184a1c4e56168fb4c0dfc",
+      "sha256": "2e70008cd4eaf59a0abfcf21ddb7626e3e9719d298a946d59c8b473a65b6b764",
+      "bytes": 10128,
+      "lines": 191,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/learning/transfer_pilot.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/learning/understanding.py",
+      "snapshot_path": "snapshot/apps/learning/understanding.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "8542cc008c5886003223a01f8f19d9b496ca9250",
+      "sha256": "07a12ea43ee1c766db10ff1db73f9fea00ec908ac9933811f788bed46d03b82f",
+      "bytes": 7711,
+      "lines": 151,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/learning/understanding.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/learning/urls.py",
+      "snapshot_path": "snapshot/apps/learning/urls.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "738d9ea902b1fc47c564fa0aa1814c7ad4a154a6",
+      "sha256": "98b8a35f17b52f3afaa34a04753e44dd65f7d1637f5fb61dc13e9a513dd4eed9",
+      "bytes": 1206,
+      "lines": 19,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/learning/urls.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/lessons/models.py",
+      "snapshot_path": "snapshot/apps/lessons/models.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "2fd94b48e42c94b16288c386f1c66fef5770b6b8",
+      "sha256": "d7712dfc7d3fe518606547ec7e0d051ea1819aed4d1b0cc2fb8eba35c0c1a9ab",
+      "bytes": 2554,
+      "lines": 62,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/lessons/models.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/lessons/urls.py",
+      "snapshot_path": "snapshot/apps/lessons/urls.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "7e4d6e3c9e4aeab67f895adac31fcd57c8ddfc0c",
+      "sha256": "46027e43f25ed6417183decf5d65a72d1976a262e73f6076d09598080148bc40",
+      "bytes": 145,
+      "lines": 6,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/lessons/urls.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/lessons/views.py",
+      "snapshot_path": "snapshot/apps/lessons/views.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "ce50ea2113ea372aedba0b5013c5a46f82c60c8d",
+      "sha256": "626cd2e362ad7867de1d0fd9fcaafa89ea0cc9446643c23020526a40f2a7e392",
+      "bytes": 1481,
+      "lines": 31,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/lessons/views.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/lexicon/models.py",
+      "snapshot_path": "snapshot/apps/lexicon/models.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "b6e4cbb52518707ccae408d4a5c6be16e6e7b9bb",
+      "sha256": "12c025e7a6121ea62e6b0aaf5943aa4199103d7f814ade8b1aadf24bccdfbe2d",
+      "bytes": 5258,
+      "lines": 100,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/lexicon/models.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/lexicon/phonetics.py",
+      "snapshot_path": "snapshot/apps/lexicon/phonetics.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "b003abc920ee2bbf72f4b94f451be8da088e11e9",
+      "sha256": "31f20d16afe94f4cc6b2f3063eaaf15b01dc4c09fb134c6784b66217801800c4",
+      "bytes": 6423,
+      "lines": 142,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/lexicon/phonetics.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/lexicon/urls.py",
+      "snapshot_path": "snapshot/apps/lexicon/urls.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "faf2dab7a52999566fa895a47cf5baeb672b56aa",
+      "sha256": "69b3996803d2647e8bb4a381502821b97916e87f66e5814d388f9ffc7e0caabc",
+      "bytes": 192,
+      "lines": 9,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/lexicon/urls.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/lexicon/views.py",
+      "snapshot_path": "snapshot/apps/lexicon/views.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "0b73c04d2a65464087fc8447b03fbc258e2de687",
+      "sha256": "225aa0cdeea51b50df43bea623ebab0a56b5d706ec4b57a80bf9591386d651f9",
+      "bytes": 1448,
+      "lines": 35,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/lexicon/views.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/poems/models.py",
+      "snapshot_path": "snapshot/apps/poems/models.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "7f9c8bfb1b3985ed58b57ad7af4ec9ca0e67ad41",
+      "sha256": "4df88c6542739a248d120e6e2f34e17429bdd1ccef1590577657665e78fa303f",
+      "bytes": 1568,
+      "lines": 28,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/poems/models.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/publishing/audit.py",
+      "snapshot_path": "snapshot/apps/publishing/audit.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "c215e569364c467113c54d9a80d771b2b75c60db",
+      "sha256": "fa6247099694a9dcbd4e3f62b72bd69af5c42c684901de58fae2ac005ad119ec",
+      "bytes": 22999,
+      "lines": 411,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/publishing/audit.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/publishing/audit_weeks.py",
+      "snapshot_path": "snapshot/apps/publishing/audit_weeks.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f61f1edd731145053cb245afd17116cd1365a02b",
+      "sha256": "1a468cf6ea0c231ef2775963f45ec85f5c7eb3e6047ba2ee16a80aba0b615602",
+      "bytes": 14374,
+      "lines": 274,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/publishing/audit_weeks.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/publishing/management/commands/audit_course.py",
+      "snapshot_path": "snapshot/apps/publishing/management/commands/audit_course.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "260ae519919eb570dedfbd007de6d58541cd7e00",
+      "sha256": "3b02270379508bbe98fbe093de0b96a5dc2a1851cff6cc5f938debd02f4c27d6",
+      "bytes": 753,
+      "lines": 19,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/publishing/management/commands/audit_course.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/stories/models.py",
+      "snapshot_path": "snapshot/apps/stories/models.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "2a27dfcffe18fc8c580f9198dd99a4ad30828285",
+      "sha256": "455c84a4b02a2f4a690e1d812b7cfbe479db54c97a893e1bde287e68948784b9",
+      "bytes": 2572,
+      "lines": 41,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/stories/models.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/stories/script.py",
+      "snapshot_path": "snapshot/apps/stories/script.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "8c53474b2b5aff1c9db6ea3b5eda770ca75b9c89",
+      "sha256": "586f0d73d296c3e42ac765a0f3f538dc36b659855ce099fa2a6d40d209dc3d67",
+      "bytes": 1627,
+      "lines": 35,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/stories/script.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/stories/urls.py",
+      "snapshot_path": "snapshot/apps/stories/urls.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "5792d06b8582af1836934f80eb0811c92074156c",
+      "sha256": "e8939d59763a14428dcd5c7c52ae9710bad536db454dbe2d214cf1e3c5da8a6c",
+      "bytes": 261,
+      "lines": 10,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/stories/urls.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/stories/views.py",
+      "snapshot_path": "snapshot/apps/stories/views.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "27eb1225586ca528f9cc8095977aa2a565d90e79",
+      "sha256": "936ee0cd2e354463e74f84ec16008c687e9cc5860d35c6f45f2dded40b948167",
+      "bytes": 4084,
+      "lines": 97,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/stories/views.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/taxonomy/markup.py",
+      "snapshot_path": "snapshot/apps/taxonomy/markup.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "e3c70898c204e79a81210f14756a73473a91dce2",
+      "sha256": "bb3d46fa18974f3e80bd9b656b3cf52df54be86294d54faad074355a742fadbf",
+      "bytes": 5063,
+      "lines": 113,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/taxonomy/markup.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/taxonomy/models.py",
+      "snapshot_path": "snapshot/apps/taxonomy/models.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "5f15db518273b5f4d6039fbacd62c456a5c9baee",
+      "sha256": "a68aef8f7451e048b4c7f5aab82e5d1dd4030b8b8448d4d4e62f6d1a7c4ade31",
+      "bytes": 2312,
+      "lines": 60,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/taxonomy/models.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/taxonomy/registry.py",
+      "snapshot_path": "snapshot/apps/taxonomy/registry.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "fae2641474e72b184a1f209bf428ee8bf50d9957",
+      "sha256": "a883b714ff7ac38acdfdf42a6295339ab06274a085339b500cfea4d1f068f2c9",
+      "bytes": 12582,
+      "lines": 215,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/taxonomy/registry.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/taxonomy/templatetags/markers.py",
+      "snapshot_path": "snapshot/apps/taxonomy/templatetags/markers.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "ce4ffa81244b0c86e03dd6ff2d701dbd0aa67394",
+      "sha256": "6fad3f70cd35250565df5cc4031c406c20df76345bb655ef11bd51045c371caf",
+      "bytes": 522,
+      "lines": 26,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/taxonomy/templatetags/markers.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/taxonomy/urls.py",
+      "snapshot_path": "snapshot/apps/taxonomy/urls.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "05f6492d9c3afc6b1eaee6a45b6dd141369c5208",
+      "sha256": "3cd2fe6c31d739def0480344e94de3408f92d3dbacf52b4b731f4b5ad23115b4",
+      "bytes": 127,
+      "lines": 6,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/taxonomy/urls.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "apps/taxonomy/views.py",
+      "snapshot_path": "snapshot/apps/taxonomy/views.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "39ea451c7341e858d875fc88522217780ec6beb5",
+      "sha256": "aab4dcef1825bd242804f5c4a2a8cde4456d32a7a33ad8872a7d131a6f43c3f0",
+      "bytes": 332,
+      "lines": 11,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/apps/taxonomy/views.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "config/settings/base.py",
+      "snapshot_path": "snapshot/config/settings/base.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "4000f9bf435f65f6e4e1d16c91d53a21d9bc1f66",
+      "sha256": "812d932d0dde8f7ecd164a9fc155903d5b51bce58e5716fed8060a938bca96c3",
+      "bytes": 5505,
+      "lines": 143,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/config/settings/base.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "config/settings/local.py",
+      "snapshot_path": "snapshot/config/settings/local.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "d411bde4e4ff066a9554d529020142b97e92eea3",
+      "sha256": "a651517c7a81d5a9730367007250bbe3dba71c9f2b1abafdf50bdff28a3a8be6",
+      "bytes": 53,
+      "lines": 3,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/config/settings/local.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "config/settings/test.py",
+      "snapshot_path": "snapshot/config/settings/test.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "642426e5fecbaa184a71546373985de3632c587a",
+      "sha256": "5e440f53d86c30a32ae7b1433082b0cb5c31d920b3d7c2cc8a513e7d57aa0efd",
+      "bytes": 845,
+      "lines": 17,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/config/settings/test.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "config/urls.py",
+      "snapshot_path": "snapshot/config/urls.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "1f20bf62346e0b2ddb1ac8253524da0d1ca350f5",
+      "sha256": "d91099484abe8332821416c1524783a711eb92a807ce974611b83ced55ae59bb",
+      "bytes": 756,
+      "lines": 19,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/config/urls.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/active_a1/error_repairs_01_18.json",
+      "snapshot_path": "snapshot/content/active_a1/error_repairs_01_18.json",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "4835ce5dd59a5511da54fb0c3f71a6d7b5384af6",
+      "sha256": "1408bdccf04c853f81f35c1840ce1a13ab76fc3f096da7868aaf0dcd871d0806",
+      "bytes": 7168,
+      "lines": 128,
+      "roles": [
+        "full source of target-linked supplement (also contains other lesson records)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/active_a1/error_repairs_01_18.json",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/active_a1/scenarios_01_06.json",
+      "snapshot_path": "snapshot/content/active_a1/scenarios_01_06.json",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "72d3b265afe0b85489b6640ec3163e8b25885e24",
+      "sha256": "31dee6e1d6d2ea4e02999d333c33cd16c8178a6566f911b01e9f6388655b082e",
+      "bytes": 17738,
+      "lines": 380,
+      "roles": [
+        "full source of target-linked supplement (also contains other lesson records)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/active_a1/scenarios_01_06.json",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/active_a1/topics_01_08.json",
+      "snapshot_path": "snapshot/content/active_a1/topics_01_08.json",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "4c6c6f6f6e86571843d5708c7d9d9e8a61d84b68",
+      "sha256": "4ddf7835ed6d774029765fb581cc1a22caaef83f45588cae283acac420f3a8ea",
+      "bytes": 16537,
+      "lines": 347,
+      "roles": [
+        "full source of target-linked supplement (also contains other lesson records)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/active_a1/topics_01_08.json",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/manifests/a1_delayed_review_01.json",
+      "snapshot_path": "snapshot/content/manifests/a1_delayed_review_01.json",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "2761cce3907a73c5447a4a522ce99ef9e62b4eb9",
+      "sha256": "9000f09bb40b6d3a946dfafc6a42fc52b51130b88b8fd6813cce59c9167a83e1",
+      "bytes": 4679,
+      "lines": 212,
+      "roles": [
+        "five delayed questions per target exercise, matched by slug then exercise order"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/manifests/a1_delayed_review_01.json",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/manifests/a1_delayed_review_02.json",
+      "snapshot_path": "snapshot/content/manifests/a1_delayed_review_02.json",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "0c5651b7812ef5cd80ce2029d3cbd51ff52f1b13",
+      "sha256": "2f35b1693e19fd8446f06594821262003d739024abf902d45b336d20e5594c60",
+      "bytes": 5330,
+      "lines": 264,
+      "roles": [
+        "five delayed questions per target exercise, matched by slug then exercise order"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/manifests/a1_delayed_review_02.json",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/manifests/a1_delayed_review_03.json",
+      "snapshot_path": "snapshot/content/manifests/a1_delayed_review_03.json",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "fcab63fabb93ba22741fc228c557e8b8b6903b16",
+      "sha256": "61652ad20b5263ba4675c83849de96d2ff472f3209b10604b1f271f9cf7435a1",
+      "bytes": 7779,
+      "lines": 316,
+      "roles": [
+        "five delayed questions per target exercise, matched by slug then exercise order"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/manifests/a1_delayed_review_03.json",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/manifests/a1_delayed_review_04.json",
+      "snapshot_path": "snapshot/content/manifests/a1_delayed_review_04.json",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "a7f288a8d25a5a6b3ddf4931af885e8c8f0e68dd",
+      "sha256": "8d3b1793bacbba4d52a8586b00c56279cd06063f771728c7ec8f436de4e5a5a3",
+      "bytes": 7120,
+      "lines": 316,
+      "roles": [
+        "five delayed questions per target exercise, matched by slug then exercise order"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/manifests/a1_delayed_review_04.json",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/manifests/a1_retry_guidance.json",
+      "snapshot_path": "snapshot/content/manifests/a1_retry_guidance.json",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "b81965a04d3af633762de0f6054f92d7ad781cae",
+      "sha256": "7228f18747f75dd54b43fadd980482c46874f34add4cf5d98175b3a0728166aa",
+      "bytes": 12146,
+      "lines": 198,
+      "roles": [
+        "full source of target-linked supplement (also contains other lesson records)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/manifests/a1_retry_guidance.json",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/manifests/a1_scaffold_transfer.json",
+      "snapshot_path": "snapshot/content/manifests/a1_scaffold_transfer.json",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "7499fcfa9c719182502fdf299f7f2949533b8f98",
+      "sha256": "a03f3cb01437c731bfb435f3ddb810de0a108f2e5427b15ff640d047b2a86f8f",
+      "bytes": 36743,
+      "lines": 847,
+      "roles": [
+        "full source of target-linked supplement (also contains other lesson records)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/manifests/a1_scaffold_transfer.json",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/manifests/a1_understanding_checks.json",
+      "snapshot_path": "snapshot/content/manifests/a1_understanding_checks.json",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "1b97d1d458b79492c33a03d3a7ff27b72375fc5d",
+      "sha256": "acd48af6b661120a2c5d538114f797180ee87ace79a070b5e794c43df89d9b43",
+      "bytes": 58135,
+      "lines": 1170,
+      "roles": [
+        "full source of target-linked supplement (also contains other lesson records)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/manifests/a1_understanding_checks.json",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/manifests/characters.yaml",
+      "snapshot_path": "snapshot/content/manifests/characters.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "91916af7c22144a2e67556f3bb419da62ac2b32d",
+      "sha256": "bfe021af832e9f6b8c439b05e7094f7a36837c0dbddc8f493271ca6cdf1fb939",
+      "bytes": 2322,
+      "lines": 24,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/manifests/characters.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/manifests/course_map.yaml",
+      "snapshot_path": "snapshot/content/manifests/course_map.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "44416aed6cb84b00fd51654a7a1dab1727a978b5",
+      "sha256": "79cb91bd93596b47f7b6821edb958fcbc06c75ebaf86449c0bd89c52f4262828",
+      "bytes": 23252,
+      "lines": 891,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/manifests/course_map.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/manifests/voices.yaml",
+      "snapshot_path": "snapshot/content/manifests/voices.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f9d648e107964261b3a5fc1905be878d68372204",
+      "sha256": "cf196bd8a1b80e39df9bef9159aad448e3e74a8ac7d976c6d8f62fd92c648775",
+      "bytes": 4303,
+      "lines": 127,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/manifests/voices.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/manifests/weeks_plan.yaml",
+      "snapshot_path": "snapshot/content/manifests/weeks_plan.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "9af95d368a443bc37a512db16bacd20ffaf59cb0",
+      "sha256": "2ecda81a3d5bd3c8860e386ced0017711ef3a060914f7f0d1313fa64192f98ba",
+      "bytes": 6747,
+      "lines": 34,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/manifests/weeks_plan.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_lessons/a1_w01_l01_nouns.yaml",
+      "snapshot_path": "snapshot/content/seed_lessons/a1_w01_l01_nouns.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "1ffd6d9948d0c3c4160b12913ec7c6d50d532704",
+      "sha256": "668fe32f65a93c458784af5eb450fb8dd911ad991f880a083af43d79e5703def",
+      "bytes": 19289,
+      "lines": 215,
+      "roles": [
+        "full canonical lesson, all seven layers, exercises, practice, hints and keys"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_lessons/a1_w01_l01_nouns.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_lessons/a1_w01_l02_be.yaml",
+      "snapshot_path": "snapshot/content/seed_lessons/a1_w01_l02_be.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "3726d5cfbacd7af774d99de395827e70d8140901",
+      "sha256": "1457925c7b7580c79c6425fca23544086fd2cb447049e1e312926a973d9e772a",
+      "bytes": 19967,
+      "lines": 250,
+      "roles": [
+        "full canonical lesson, all seven layers, exercises, practice, hints and keys"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_lessons/a1_w01_l02_be.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_lessons/a1_w02_l03_determiners.yaml",
+      "snapshot_path": "snapshot/content/seed_lessons/a1_w02_l03_determiners.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "62ad208fb3cfc347f5a6219170132bd9e0e61155",
+      "sha256": "2b1497157b945050c0714ddea0a10f311364378d0fe8482652d235bb05b57f73",
+      "bytes": 20876,
+      "lines": 257,
+      "roles": [
+        "full canonical lesson, all seven layers, exercises, practice, hints and keys"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_lessons/a1_w02_l03_determiners.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_lessons/a1_w02_l04_have_like_can.yaml",
+      "snapshot_path": "snapshot/content/seed_lessons/a1_w02_l04_have_like_can.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "166e03b13622c2fd382b981b6ad3755d9bb9f2a8",
+      "sha256": "5e91c0767dc3f59af5155091cc4db000fa5814dfb5296d7c7ef4b739cd80d63c",
+      "bytes": 21158,
+      "lines": 252,
+      "roles": [
+        "full canonical lesson, all seven layers, exercises, practice, hints and keys"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_lessons/a1_w02_l04_have_like_can.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "snapshot_path": "snapshot/content/seed_lexicon/a1_w01_core.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "d94f42e1409708b729b154c656862a2714f4aaa1",
+      "sha256": "b313f4e043fcbfa72ed1a32dddcd78ba31f4223935659672b220a1fb0187673a",
+      "bytes": 19898,
+      "lines": 359,
+      "roles": [
+        "whole dictionary packet introduced in target weeks",
+        "whole dictionary packet containing an explicit target reference"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_lexicon/a1_w01_core.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "snapshot_path": "snapshot/content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "cf337da6968db24ca51d057aac936ea82de8d1fc",
+      "sha256": "27b05c77b6be4d49ca991b1f1fbfa1fd81ed26ad597cf68e316ed8f52b2560ff",
+      "bytes": 17493,
+      "lines": 315,
+      "roles": [
+        "whole dictionary packet introduced in target weeks",
+        "whole dictionary packet containing an explicit target reference"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_lexicon/a1_w01_nouns.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "snapshot_path": "snapshot/content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "925b0b23d4dfa95da3b64c0d9cfe575a4f2947c2",
+      "sha256": "2d2336ddb44ec0b6eabd035c3147925ca717762cc638e296353319afed7ba2b5",
+      "bytes": 4045,
+      "lines": 95,
+      "roles": [
+        "whole dictionary packet introduced in target weeks",
+        "whole dictionary packet containing an explicit target reference"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_lexicon/a1_w01_phrases.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "snapshot_path": "snapshot/content/seed_lexicon/a1_w02_core.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "124840227fd9ea8cf714903f7414513a2f723c94",
+      "sha256": "0fea44f3f8a94e34127e66a7e45a283b069a796e6cf1ab8d7ed98039131392d1",
+      "bytes": 8891,
+      "lines": 155,
+      "roles": [
+        "whole dictionary packet introduced in target weeks",
+        "whole dictionary packet containing an explicit target reference"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_lexicon/a1_w02_core.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "snapshot_path": "snapshot/content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "fc80cd7879de37b1ba259d6acad1c3ce9dc3dd37",
+      "sha256": "2b39f36c57763beec7a2c46af354466becdc332a9addceec9d0915f7f91679a6",
+      "bytes": 12684,
+      "lines": 286,
+      "roles": [
+        "whole dictionary packet introduced in target weeks",
+        "whole dictionary packet containing an explicit target reference"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_lexicon/a1_w02_home_plus.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "snapshot_path": "snapshot/content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "6c322d73f91814488187ca7716c58532d39d3e2f",
+      "sha256": "de1e324b102fecc526dd4527c59b389fa7eec06e7e7450b40ccbfa4e9c03a5b6",
+      "bytes": 3442,
+      "lines": 82,
+      "roles": [
+        "whole dictionary packet introduced in target weeks",
+        "whole dictionary packet containing an explicit target reference"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_lexicon/a1_w02_phrases.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_lexicon/a1_w02_story01.yaml",
+      "snapshot_path": "snapshot/content/seed_lexicon/a1_w02_story01.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "457b2d0b58c8041e499786ffc788a6c65db7e2a1",
+      "sha256": "240fe80bcfc8fe0ec5d5818c68d9f0f9f71ce27c0bdecbbefc2e08430cd9ba1a",
+      "bytes": 2540,
+      "lines": 45,
+      "roles": [
+        "whole dictionary packet introduced in target weeks",
+        "whole dictionary packet containing an explicit target reference"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_lexicon/a1_w02_story01.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_poems/p01_my_new_home.yaml",
+      "snapshot_path": "snapshot/content/seed_poems/p01_my_new_home.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "b6935ced69f207aa384359881980738e2464218e",
+      "sha256": "f01e254c895c261a1bef4efc3b0ce705d93ec37a916c704c782712593c2ca9ce",
+      "bytes": 2472,
+      "lines": 89,
+      "roles": [
+        "full poems source bound to A1 week 2 by course_map.yaml number"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_poems/p01_my_new_home.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_stories/s01_not_my_box.yaml",
+      "snapshot_path": "snapshot/content/seed_stories/s01_not_my_box.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "75f52f8b1df78b97a6626f63a59a0d631f380df6",
+      "sha256": "e4b088f78bfeaad4f0aba65aeee16423219e167162ea903fd990b49adb7a8604",
+      "bytes": 5276,
+      "lines": 108,
+      "roles": [
+        "full stories source bound to A1 week 2 by course_map.yaml number"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_stories/s01_not_my_box.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_weeks/a1_w01.yaml",
+      "snapshot_path": "snapshot/content/seed_weeks/a1_w01.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "2a36f3f4d247697f74dd20776743c8c3db23146d",
+      "sha256": "3445858513eb91fae520c3efe7db0729141c8c79e6dd4f725ae982cae7fa722b",
+      "bytes": 4796,
+      "lines": 66,
+      "roles": [
+        "full week dialogue, translations, mission and twister"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_weeks/a1_w01.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "content/seed_weeks/a1_w02.yaml",
+      "snapshot_path": "snapshot/content/seed_weeks/a1_w02.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "abe0e2ecbd8fc753db69f4be8c9b88cdab819417",
+      "sha256": "fbc774b41bbc40110edd14c522c4018d8cd94ca4fca8fa8454cccf348e84e55f",
+      "bytes": 4926,
+      "lines": 79,
+      "roles": [
+        "full week dialogue, translations, mission and twister"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/content/seed_weeks/a1_w02.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "docs/pilots/a1-four-weeks/assessment.yaml",
+      "snapshot_path": "snapshot/docs/pilots/a1-four-weeks/assessment.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "0b969e0c1e69fc2c427fb7b8c04d49ba2701259e",
+      "sha256": "b06cd82e49672e2920342f8ef56e37783750e8119d3596772c0e328dbb585d18",
+      "bytes": 11816,
+      "lines": 205,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/docs/pilots/a1-four-weeks/assessment.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "docs/pilots/a1-four-weeks/guide.md",
+      "snapshot_path": "snapshot/docs/pilots/a1-four-weeks/guide.md",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "c1e96dad0b24a975f2b4eb270a79bdf9a9b54c2e",
+      "sha256": "42da6dc30618380eef8d3c621efdbc50ca74b861a9aec4b780a8f6a4465d85eb",
+      "bytes": 8362,
+      "lines": 91,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/docs/pilots/a1-four-weeks/guide.md",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "docs/plans/2026-10-14-situation-weeks.md",
+      "snapshot_path": "snapshot/docs/plans/2026-10-14-situation-weeks.md",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "bc2a366ff0ca201d895ccc70aa4b18a5cb46ade8",
+      "sha256": "f5bb2a111d2f2b2ec12763cfc2e7b370fd02b36bf879f6ea5e156a59a0ee1962",
+      "bytes": 39181,
+      "lines": 430,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/docs/plans/2026-10-14-situation-weeks.md",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "docs/plans/2026-10-14-situation-weeks.progress.md",
+      "snapshot_path": "snapshot/docs/plans/2026-10-14-situation-weeks.progress.md",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "320aed06cff513d724186d413fe031d2ca4841d5",
+      "sha256": "76d6e17c1c881ee409b2b1679589a898ffc6803cfd9960296c526a550fc9700a",
+      "bytes": 178468,
+      "lines": 725,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/docs/plans/2026-10-14-situation-weeks.progress.md",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "docs/reference-curriculum/EDITORIAL_POLICY.md",
+      "snapshot_path": "snapshot/docs/reference-curriculum/EDITORIAL_POLICY.md",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "2bff28838578f9d01e43e13bd91990f491105a9b",
+      "sha256": "7b48dcedf324a609181a04c65178fcd45290bf3b05ddb671ba68eea5953623fb",
+      "bytes": 12488,
+      "lines": 84,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/docs/reference-curriculum/EDITORIAL_POLICY.md",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "docs/reference-curriculum/LEVEL_MAP_A1_A1PLUS.md",
+      "snapshot_path": "snapshot/docs/reference-curriculum/LEVEL_MAP_A1_A1PLUS.md",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "177ec0da0f138aa720a5f55ff4cd6dac29a3c1b2",
+      "sha256": "7722f0cab408ae42faa100cde651eb53952083d32c6e197c39fbd9d162a643ce",
+      "bytes": 9269,
+      "lines": 67,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/docs/reference-curriculum/LEVEL_MAP_A1_A1PLUS.md",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "docs/specs/2026-10-14-foundation.md",
+      "snapshot_path": "snapshot/docs/specs/2026-10-14-foundation.md",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "c5fe1a0095a253ec52b1c345465d2deffcb63a6b",
+      "sha256": "d036cd110af7dffc7a797cee6197a28d015ce66850d85a6fb7f3e9e73a00c075",
+      "bytes": 4227,
+      "lines": 36,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/docs/specs/2026-10-14-foundation.md",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "docs/specs/2026-10-14-situation-weeks.md",
+      "snapshot_path": "snapshot/docs/specs/2026-10-14-situation-weeks.md",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "8d471935ced89144b131a35272d9907d9cb9bc8c",
+      "sha256": "1e329927c938649fc48cfc38335081c5cd0478ae1921d3482da9b23adb9246fb",
+      "bytes": 25523,
+      "lines": 250,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/docs/specs/2026-10-14-situation-weeks.md",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "package.json",
+      "snapshot_path": "snapshot/package.json",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "17ebd2ab4f8460f855df28b7a6109ca3a1c997f2",
+      "sha256": "ca0f425a7f249b5ba397458fd9d49f2d7253cbdbac23aec219ebbe995edcee79",
+      "bytes": 322,
+      "lines": 13,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/package.json",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "pnpm-lock.yaml",
+      "snapshot_path": "snapshot/pnpm-lock.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "63a8d08800d48bc88bd2a28ee2caf27279d37e0e",
+      "sha256": "1d02befae4fad9dbd066fc185778d7b57a0df3592adc4d2476fb225a7398a741",
+      "bytes": 7023,
+      "lines": 230,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/pnpm-lock.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "pnpm-workspace.yaml",
+      "snapshot_path": "snapshot/pnpm-workspace.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "696c82511087175dcd55a9420896204c028761eb",
+      "sha256": "a163b61e37f1daa123161260633de4b01a2629668b216281944f71f7d6d85cb2",
+      "bytes": 40,
+      "lines": 2,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/pnpm-workspace.yaml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "pyproject.toml",
+      "snapshot_path": "snapshot/pyproject.toml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "774b8c158b40fc7c19588e89f270241bce0db625",
+      "sha256": "ac472885d248e9c63be7af6efbbd650df6ea1b0b8624fe4cdfaa65e831c9aea5",
+      "bytes": 1065,
+      "lines": 37,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/pyproject.toml",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "scripts/audio_readiness.py",
+      "snapshot_path": "snapshot/scripts/audio_readiness.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "0428b4b0f78e2dc545fa04c5a49d6a15811ed5bd",
+      "sha256": "8bf77fb9726d4592097bd49f01c85b9e3e95bb8f02b4804c6cb49b0250ee479d",
+      "bytes": 7813,
+      "lines": 163,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/scripts/audio_readiness.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "scripts/audit_cefr_evidence.py",
+      "snapshot_path": "snapshot/scripts/audit_cefr_evidence.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "423a4ad7294cb6ee969604c4916561e02fcccaa7",
+      "sha256": "827e9584bc1340e1da19d0bc950e28727a6a8514c3a4edefc8d472e15fd8c2e3",
+      "bytes": 6692,
+      "lines": 150,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/scripts/audit_cefr_evidence.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "scripts/generate_story_audio.py",
+      "snapshot_path": "snapshot/scripts/generate_story_audio.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "29b575a7ff29c63fa4221a69ff36fcf077c3153c",
+      "sha256": "a58ee7863a988c6b6a15d3f27e6b0ad668b9f5527d8d50f22b002b32ed7cc09b",
+      "bytes": 23822,
+      "lines": 470,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/scripts/generate_story_audio.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "scripts/verify_atlas.cjs",
+      "snapshot_path": "snapshot/scripts/verify_atlas.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "1c4655deb77080ed0579fcf890671c28d0950067",
+      "sha256": "f284077accaaa28101d7045faf4009dd559968952e8818038a829f0b5b58639b",
+      "bytes": 7470,
+      "lines": 103,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/scripts/verify_atlas.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "static/js/a1-active.js",
+      "snapshot_path": "snapshot/static/js/a1-active.js",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "26d5075c7a93e72a8ba3c6b503bf5baabde67b13",
+      "sha256": "a7f5a49b0eb05347e45bde37e8c47d0e07df4627aa488c4ce671ffdd214c2348",
+      "bytes": 22735,
+      "lines": 471,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/static/js/a1-active.js",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "static/js/a1-learning-route.js",
+      "snapshot_path": "snapshot/static/js/a1-learning-route.js",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "a17c6ec541eb84da80311dda3f0b91e93950429f",
+      "sha256": "06ca02a3fa6fcac083f190ba9ff55a3703089c9fbc257e7da52b5524f3f88c21",
+      "bytes": 3543,
+      "lines": 76,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/static/js/a1-learning-route.js",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "static/js/audio-player.js",
+      "snapshot_path": "snapshot/static/js/audio-player.js",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "b0e8d4fefc358c5009f73a0af6b55fe8268b0164",
+      "sha256": "e43f46091979b0e4a0b2b0a3b2e579aeeb3aad7b434cafb3723e98ff2352ad21",
+      "bytes": 11066,
+      "lines": 213,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/static/js/audio-player.js",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "static/js/independent-check.js",
+      "snapshot_path": "snapshot/static/js/independent-check.js",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "4cdca7753e3b50758c1ffb6d148617954b9d5499",
+      "sha256": "f78066696dc7573b5ba5e0736176595ff5c8f3018b43deec727380fb0b25d597",
+      "bytes": 3416,
+      "lines": 72,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/static/js/independent-check.js",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "static/js/learning-player.js",
+      "snapshot_path": "snapshot/static/js/learning-player.js",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "eec12f8b33c24d24c02d60af1825ad28980e7361",
+      "sha256": "81eb4cf7ba2ed1b7deb3d9f0ea013f33b65fbd73545d3cfcc8d9469ed46c724d",
+      "bytes": 8095,
+      "lines": 152,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/static/js/learning-player.js",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "static/js/speech-review.js",
+      "snapshot_path": "snapshot/static/js/speech-review.js",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f19a812db7e3ace15ebc229e286d5633f17427f4",
+      "sha256": "e4d1ed1d20a5471ffe4d6ffafaf837f9a51226e7e976f4c22677abcb83828185",
+      "bytes": 6317,
+      "lines": 113,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/static/js/speech-review.js",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "static/js/speech-shadowing.js",
+      "snapshot_path": "snapshot/static/js/speech-shadowing.js",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f44ae33b77ba569c5726e7bde6dcabd44dbcd1df",
+      "sha256": "248f86865a4ea01acd175ec2e74080a6b5966f9e2a0a4be8c5218bce4b8434ab",
+      "bytes": 4690,
+      "lines": 96,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/static/js/speech-shadowing.js",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "static/js/speech-stress.js",
+      "snapshot_path": "snapshot/static/js/speech-stress.js",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "5a961014426be401d4c8ba9cc206a3237cd0ec9a",
+      "sha256": "e8b55be1445f95c252f3cd81c33a56fd8d36d43e053354f5953ad1ee568aecab",
+      "bytes": 4559,
+      "lines": 90,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/static/js/speech-stress.js",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "static/js/speech-studio.js",
+      "snapshot_path": "snapshot/static/js/speech-studio.js",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "96ed9ea9ccb332b81d5759967c29ed6c67114c4c",
+      "sha256": "0c572b41b10f8e91b06cd5835abd397284246658f0449a1f40025b21b7925a6b",
+      "bytes": 10996,
+      "lines": 169,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/static/js/speech-studio.js",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "static/js/story-player.js",
+      "snapshot_path": "snapshot/static/js/story-player.js",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "7d35b4bb9321407b470417b26aa2d33de30eb3be",
+      "sha256": "16f77a90b59a70e585d7db94ea893aae310bdd63431a2fb8505ca645f24b357f",
+      "bytes": 6421,
+      "lines": 126,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/static/js/story-player.js",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "static/js/studio-reader.js",
+      "snapshot_path": "snapshot/static/js/studio-reader.js",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "cf30a36eeded3ebf9c23567719386ed6a39d5f2d",
+      "sha256": "d2ade5acd978e33273b0449b30d1ca315e60ce5d18f8fcd5e35eabbf73b86f35",
+      "bytes": 1438,
+      "lines": 24,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/static/js/studio-reader.js",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/base.html",
+      "snapshot_path": "snapshot/templates/base.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "c9a05f95b4296bd432bd5b0e086134815ffe635d",
+      "sha256": "8707b7ac27045e879685244c60c45720649656776690c7299d4fd6f2e38a09b2",
+      "bytes": 3894,
+      "lines": 54,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/base.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/components/a1_rubric_form.html",
+      "snapshot_path": "snapshot/templates/components/a1_rubric_form.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "06bf9dd1f29644669a4ab26d7802ad7f20c2928e",
+      "sha256": "a5b0044a1ea83413826dda2461516ea2d45012d1a9ed301bae2c6d17be2bba98",
+      "bytes": 3923,
+      "lines": 34,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/components/a1_rubric_form.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/components/contractions.html",
+      "snapshot_path": "snapshot/templates/components/contractions.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "57289d5c5972d67b7fc333d60ecc9424d315efce",
+      "sha256": "4e6f5da8b5617a8dd77f0e317fc37cdb8ba7e9eb3d18f1afabc86635c48de980",
+      "bytes": 716,
+      "lines": 13,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/components/contractions.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/components/drill.html",
+      "snapshot_path": "snapshot/templates/components/drill.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "4663b1a54462f70757e9876d1a9709af6bfc0bdd",
+      "sha256": "2e03c1b044da6743f7c95261394fda447b8d18ef5bd8c8be6acf5bfa3325606a",
+      "bytes": 2520,
+      "lines": 27,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/components/drill.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/components/script_player.html",
+      "snapshot_path": "snapshot/templates/components/script_player.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "35b7362d883c676cbd5eb28704012186c51f6f08",
+      "sha256": "6ccab71a561cf2043b48d1b12b9b060a3450d9685f90f20a509ffb41d8807941",
+      "bytes": 6501,
+      "lines": 56,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/components/script_player.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/components/sound_legend.html",
+      "snapshot_path": "snapshot/templates/components/sound_legend.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "e7976a4d4f745b77bcfe39385ee2fcc7e7f09804",
+      "sha256": "4486f4e8a33225d7daad04fce7715d8c1568536580ea0ab9097e752acd194de8",
+      "bytes": 1086,
+      "lines": 9,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/components/sound_legend.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/components/speech_studio_controls.html",
+      "snapshot_path": "snapshot/templates/components/speech_studio_controls.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "29b332acdb3a5453c696ce9a7301d749087314b6",
+      "sha256": "9e8ece9c5046beb0a425aa6223609638f0f984ed5b4d6dad8243c032dc09541a",
+      "bytes": 5914,
+      "lines": 57,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/components/speech_studio_controls.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/components/translate_drill.html",
+      "snapshot_path": "snapshot/templates/components/translate_drill.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "192e2d2e54de2339e4f8596b14e8a4f952073dcb",
+      "sha256": "2fc9a3bd193155e5a7d2ec957695c3c9448a14242186725f71a2809b10c63cd5",
+      "bytes": 1484,
+      "lines": 13,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/components/translate_drill.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/components/twister_trainer.html",
+      "snapshot_path": "snapshot/templates/components/twister_trainer.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "b3bf0c85550e4046f858fb377fbaf152ad438b91",
+      "sha256": "e3f38dc2194c30193b41c6f2640b0ffb375919532c18d581a13af4eccdc7f9fa",
+      "bytes": 7436,
+      "lines": 82,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/components/twister_trainer.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/core/a1_active_topic.html",
+      "snapshot_path": "snapshot/templates/core/a1_active_topic.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "9bcda578398682f22216b7420b9a197533f1d44d",
+      "sha256": "72f0adb23f74402a09148914daa9a8e0a2ed71994030a6d063e222749757dae5",
+      "bytes": 18927,
+      "lines": 220,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/core/a1_active_topic.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/curriculum/week.html",
+      "snapshot_path": "snapshot/templates/curriculum/week.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "74824b16a4c317ebf21b51b729ccdd6f2a276061",
+      "sha256": "1348732967be2b67a0815b331fda6dc61491b5902d88b56d4ae5fcb01755bb8e",
+      "bytes": 6302,
+      "lines": 63,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/curriculum/week.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/learning/dashboard.html",
+      "snapshot_path": "snapshot/templates/learning/dashboard.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "5ed7bc5c80056c232098c5ee0f8f5bb5acc0d082",
+      "sha256": "c5d8cd4ec87cb3ecbb9fe5b5286346ab8aeadd34615a6efffb26d88f6d5972f0",
+      "bytes": 7491,
+      "lines": 85,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/learning/dashboard.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/learning/independent_check.html",
+      "snapshot_path": "snapshot/templates/learning/independent_check.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "fbbc1f47745c6479ef445f3d0e36e5f12c40691c",
+      "sha256": "c88ce3ed2dc588a43dcce9675a22a593493c6ec0bb7c085537bd17910649b116",
+      "bytes": 13077,
+      "lines": 150,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/learning/independent_check.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/learning/mistake_review.html",
+      "snapshot_path": "snapshot/templates/learning/mistake_review.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "a817859c21bf6baad5169141c85c991399a41958",
+      "sha256": "6cb0476fe842ccb21e2d320e9eab6b680f4d08a4518f9966f277418efef9a6f6",
+      "bytes": 4695,
+      "lines": 72,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/learning/mistake_review.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/learning/speech_review.html",
+      "snapshot_path": "snapshot/templates/learning/speech_review.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "326daaa1c7bde97c423468a260a2b8915fd1110f",
+      "sha256": "d1770c97757e1a484c1c88e0c21d8c748d3854fa139c90fb3003ade0fe4d672e",
+      "bytes": 2249,
+      "lines": 34,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/learning/speech_review.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/learning/transfer_pilot.html",
+      "snapshot_path": "snapshot/templates/learning/transfer_pilot.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "fd49417ff405bded13242bbe3582f8310164d573",
+      "sha256": "d39d3d24878b1eac9168d9464f65df1198433df504242162cc653d903c400af9",
+      "bytes": 5467,
+      "lines": 71,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/learning/transfer_pilot.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/lessons/detail.html",
+      "snapshot_path": "snapshot/templates/lessons/detail.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "aeb4a1ad0cfb9107c2becb9ceeec567e792c859d",
+      "sha256": "2500d4ad8190b60a7ba27098ccd584d902a36be7d7504545f099bf81228dea37",
+      "bytes": 14146,
+      "lines": 187,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/lessons/detail.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/lexicon/detail.html",
+      "snapshot_path": "snapshot/templates/lexicon/detail.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "9b4c58c8a2f1e17065d41664a2d47b88d6f9f91f",
+      "sha256": "be974da446e79c9f19a7f3d7d0aa5257554f770802656658a37dfc84f2cad4b4",
+      "bytes": 5311,
+      "lines": 63,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/lexicon/detail.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/poems/detail.html",
+      "snapshot_path": "snapshot/templates/poems/detail.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "53101dbbcd8e56c8b5edd8ce75aa1a0a081ec93d",
+      "sha256": "4c62355c581d0efe96a45d95097ff6235ba941f8b69381e2abf8a112fefe2718",
+      "bytes": 8221,
+      "lines": 88,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/poems/detail.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/stories/detail.html",
+      "snapshot_path": "snapshot/templates/stories/detail.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "4a0f4224218c96fe899db58ab6800bf8e21538c7",
+      "sha256": "3a680107937e6016a3c31efdc3550e7c5e49b348d8ceb88a1b2b31947f80d194",
+      "bytes": 5662,
+      "lines": 89,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/stories/detail.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "templates/taxonomy/legend.html",
+      "snapshot_path": "snapshot/templates/taxonomy/legend.html",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "a0d9c2b3035876906bdbfde55e58d3277705c3bc",
+      "sha256": "e15d007815dd13029c9683b6e1ba288629f91ce61f229bb18f5e160cc39daf89",
+      "bytes": 2716,
+      "lines": 40,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/templates/taxonomy/legend.html",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/a1-active-browser.test.cjs",
+      "snapshot_path": "snapshot/tests/js/a1-active-browser.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "18f6585c8fadb7719fb4ce62ca8d051f3fbe9641",
+      "sha256": "d489354883e75014ad1327f7c8d0cdb37d8f6c744a320b9f38422163ba092b81",
+      "bytes": 9671,
+      "lines": 205,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/a1-active-browser.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/a1-active.test.cjs",
+      "snapshot_path": "snapshot/tests/js/a1-active.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f3ce819d338a5fa5f9f6e550d83e978ec2206c6e",
+      "sha256": "5b0f31e4bdc9a5b2f5c62f2d1ed026de81c6a6c9c1b77acbe1e7a1ca14faf67d",
+      "bytes": 9269,
+      "lines": 166,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/a1-active.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/a1-learning-route.test.cjs",
+      "snapshot_path": "snapshot/tests/js/a1-learning-route.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "a440fcd71451f55738773b29844da874fcbc579e",
+      "sha256": "1a7978a10dcf564629c110933a6da0bcb62b1eb0cb9c9b182ad683654be224a3",
+      "bytes": 3511,
+      "lines": 83,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/a1-learning-route.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/audio-player-keyboard.test.cjs",
+      "snapshot_path": "snapshot/tests/js/audio-player-keyboard.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "29cce9e75ac2ffc1ff195d15821da009b8d47cd9",
+      "sha256": "41f1f1a0da87e0c14bba768ae03a6e9300b05006ffb23cb7615d52e94a90ddd0",
+      "bytes": 4719,
+      "lines": 119,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/audio-player-keyboard.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/audio-player.test.cjs",
+      "snapshot_path": "snapshot/tests/js/audio-player.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "d7c0a571baf58f453afe5ab8ef597e2acf69576b",
+      "sha256": "c476dd9ca0d13b28e7f0fd471e766e8d271982e10d8fdd445a21a3f02c807537",
+      "bytes": 2046,
+      "lines": 33,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/audio-player.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/independent-check.test.cjs",
+      "snapshot_path": "snapshot/tests/js/independent-check.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "76effbba0f06e072982eab4e1efe76f6eceb97d4",
+      "sha256": "1aa38aba7bfeef42e6716229ce5c08d142676fb66c468cde1e1252e8ad52f393",
+      "bytes": 3829,
+      "lines": 96,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/independent-check.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/speech-review-browser.test.cjs",
+      "snapshot_path": "snapshot/tests/js/speech-review-browser.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "82601b1da3dbc90fdd96e6db63dbfe9d335ca2d5",
+      "sha256": "2388af8700ae305d0f5c9ca9db4a6c957f2c274aa431d2839260a51d989abbbd",
+      "bytes": 4943,
+      "lines": 107,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/speech-review-browser.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/speech-review.test.cjs",
+      "snapshot_path": "snapshot/tests/js/speech-review.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "aa10f2814f1cf82ea010a4b3c8c9847622437a55",
+      "sha256": "ac329dc1a9cfa769e84abd16781858c9844f0fbffac7644f33ab286781921d15",
+      "bytes": 3135,
+      "lines": 63,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/speech-review.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/speech-shadowing.test.cjs",
+      "snapshot_path": "snapshot/tests/js/speech-shadowing.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "e2040662999ad3a5c1aeb3227726313fba76cbd3",
+      "sha256": "659f3af7e94ff6913daa00497ee514510e49eafea0fb9053423e2a94112d2856",
+      "bytes": 4400,
+      "lines": 91,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/speech-shadowing.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/speech-studio-browser.test.cjs",
+      "snapshot_path": "snapshot/tests/js/speech-studio-browser.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "5d6537d298861c1b4b8c5483d257cfd1556db478",
+      "sha256": "d70c2ea77f3e3a53a812034d2b12abfd42e45d97e2635b0aa8de8f939bd4eae9",
+      "bytes": 5604,
+      "lines": 114,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/speech-studio-browser.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/speech-studio.test.cjs",
+      "snapshot_path": "snapshot/tests/js/speech-studio.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "e04b6b74af915c8597ba7a98a2eb77cd05c7d638",
+      "sha256": "e7bfbc537da5576698bb0aae0f0717d95d4a364deb29bebeecba049de4e77bd4",
+      "bytes": 3205,
+      "lines": 65,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/speech-studio.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/js/story-player-accessibility.test.cjs",
+      "snapshot_path": "snapshot/tests/js/story-player-accessibility.test.cjs",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "49019241927a56b174b045e79d8027554870ee32",
+      "sha256": "49465e9c58778cd3c16f9bf2e7829c11141440d6f81b139e386ab43534af06b4",
+      "bytes": 1198,
+      "lines": 22,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/js/story-player-accessibility.test.cjs",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/runner.py",
+      "snapshot_path": "snapshot/tests/runner.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "d9820cf6810939dbe3d6fd22a94b2c552e21f9a5",
+      "sha256": "c60e92fcf822674a229bffa2e2d202012bcf9bebe74daf35b6caeccb535145d2",
+      "bytes": 2142,
+      "lines": 43,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/runner.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_a1_active_quality.py",
+      "snapshot_path": "snapshot/tests/test_a1_active_quality.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "9f2befc8c4e82777bde40eafdae6d6b7053eda07",
+      "sha256": "b78f191da056c0dabef15a34b879d43c8cdf2cb825aceb528fd469057593eb1a",
+      "bytes": 4872,
+      "lines": 86,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_a1_active_quality.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_a1_active_studio.py",
+      "snapshot_path": "snapshot/tests/test_a1_active_studio.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "0e9a547913ff40c7ce2d4d308cbe24583aa43e73",
+      "sha256": "31d8742ee2129789d34025b7fa2f2fb850eb4522181dace893ddcac1e3a4c6b7",
+      "bytes": 13292,
+      "lines": 229,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_a1_active_studio.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_a1_editorial_week01_02.py",
+      "snapshot_path": "snapshot/tests/test_a1_editorial_week01_02.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "bda59bc818750740f78d17c0d41295434ef82689",
+      "sha256": "5ce374e52cb8394d253a6fc0031dc9ee1bbbcbe4f9e1bf7d024837fa64038ce3",
+      "bytes": 4632,
+      "lines": 115,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_a1_editorial_week01_02.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_a1_independent_understanding.py",
+      "snapshot_path": "snapshot/tests/test_a1_independent_understanding.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f81959fab9d64c62ee56e58c9a6c2970bf48e8e9",
+      "sha256": "1b18728e9504ccf10af56b63af43abb6af9e2ed0bf0cb10235bb020bb4aca22a",
+      "bytes": 14061,
+      "lines": 248,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_a1_independent_understanding.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_a1_mistake_review.py",
+      "snapshot_path": "snapshot/tests/test_a1_mistake_review.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f72beb4bf6ed95326563ab1eec03cd785e3d19ce",
+      "sha256": "839ddddb2b3d0508d5e14737b88a963e4dbbe8b8086383377a1013388518cc04",
+      "bytes": 18805,
+      "lines": 340,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_a1_mistake_review.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_a1_retry_feedback.py",
+      "snapshot_path": "snapshot/tests/test_a1_retry_feedback.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "b1c51f15c4c2ecc3246f5f26b1ce2acd80615cf1",
+      "sha256": "6b83eadccf79b7f8623883b5fd1095a9fe93367854771ad5f96301fc92cc6ac1",
+      "bytes": 3283,
+      "lines": 64,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_a1_retry_feedback.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_a1_scaffold_variants.py",
+      "snapshot_path": "snapshot/tests/test_a1_scaffold_variants.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "d8a87c17132caa206a6f2a2ea1257d91ce3e1aad",
+      "sha256": "1094493210bfbff6df88b2799e7bc61d0fc7b97319eaac05faf89e8f64be761a",
+      "bytes": 25045,
+      "lines": 444,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_a1_scaffold_variants.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_a1_transfer_retention_pilot.py",
+      "snapshot_path": "snapshot/tests/test_a1_transfer_retention_pilot.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "00716e669ddcbe2f710a8cb4e22bda04adef3fab",
+      "sha256": "dff44c40e6e88ef7128e6b0efdf0687546e40cfda8be1db7d6cf3f11539dfb53",
+      "bytes": 9818,
+      "lines": 199,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_a1_transfer_retention_pilot.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_a1_translation.py",
+      "snapshot_path": "snapshot/tests/test_a1_translation.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "cff749d2ea18cf3795045020f8c6577a47b06be3",
+      "sha256": "5f589511ceb174aeeefb00e835e77bc5419cc655dbf3d9033a930b1ec6c0efb7",
+      "bytes": 6345,
+      "lines": 133,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_a1_translation.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_adversarial_content.py",
+      "snapshot_path": "snapshot/tests/test_adversarial_content.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "80c48ab931aec4a91fda3aadb35e9253a7aa3ef6",
+      "sha256": "1a6b8d3934af148bad52cca7d61e0a3120a1e795ee596b99ff1b01c4fd0c097b",
+      "bytes": 5216,
+      "lines": 106,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_adversarial_content.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_atomic_exercise_review.py",
+      "snapshot_path": "snapshot/tests/test_atomic_exercise_review.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "49c2d39aa642e49361404885d63e972af2738919",
+      "sha256": "0184f7bef7453586d83a824d1f88261e5a80a900ac2019ba7dc4e59ddb496b14",
+      "bytes": 2500,
+      "lines": 57,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_atomic_exercise_review.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_content_and_learning.py",
+      "snapshot_path": "snapshot/tests/test_content_and_learning.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "a595bb6c4bcfdeeedbb7c1c02408b2752ec37adc",
+      "sha256": "350159480ec5eb7b83b459188379185f2b383410fccaf82fe849470b36a9bb3c",
+      "bytes": 22448,
+      "lines": 458,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_content_and_learning.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_grammar_answer_integrity.py",
+      "snapshot_path": "snapshot/tests/test_grammar_answer_integrity.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "b10607bd82b8ae7eb5f17591ebc11e0351f6b2d2",
+      "sha256": "22d79702affd031b99e6f3c04a12ec3d43c8a56ef128a8cf504fc64778ceb89c",
+      "bytes": 2995,
+      "lines": 63,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_grammar_answer_integrity.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_player.py",
+      "snapshot_path": "snapshot/tests/test_player.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "6ff6ff4803d2be58d5500770e6dfca29fa819684",
+      "sha256": "831948a88e5225ed7ad398641a939d52f0ecf2a7de50208e4f9a443072ba2290",
+      "bytes": 2201,
+      "lines": 56,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_player.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_speech_review.py",
+      "snapshot_path": "snapshot/tests/test_speech_review.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "0b873704f1185c646e76442d1ed7d1ac96ca7d43",
+      "sha256": "5f237d6879f900263c5e86332d878e46a0ef62deb393bfd53218eea8a23a2b5d",
+      "bytes": 10889,
+      "lines": 220,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_speech_review.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_speech_shadowing.py",
+      "snapshot_path": "snapshot/tests/test_speech_shadowing.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "61b51bbae88787eaba0557a1b29be404a8bb24c5",
+      "sha256": "34d2bbccb8c0e1ee942d633e1790527e68a149e8a23f24ffcb47b5633f41c1c2",
+      "bytes": 3792,
+      "lines": 67,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_speech_shadowing.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "tests/test_speech_studio.py",
+      "snapshot_path": "snapshot/tests/test_speech_studio.py",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "b46f68863a4a32bfb7e9fea11cec0b5a7f0290a2",
+      "sha256": "1fe5bf43b32c418edc82063cf31fdeabcd7589ceb0fa398958da42fcd8f76ab8",
+      "bytes": 4069,
+      "lines": 75,
+      "roles": [
+        "runtime renderer, answer checking, loader, supporting code or existing regression test"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/tests/test_speech_studio.py",
+      "full_source": true,
+      "truncated": false
+    },
+    {
+      "source_path": "uv.lock",
+      "snapshot_path": "snapshot/uv.lock",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "87021ac0c8f2ff14a3f588c59a101dae51f64821",
+      "sha256": "19c829d8a3f08ebc02ca2693681be4e51ae0123914d58022464a8fbcbd2704bf",
+      "bytes": 88970,
+      "lines": 625,
+      "roles": [
+        "reference/instruction/lockfile/authoring plan (not automatically current learning content)"
+      ],
+      "source_url": "https://github.com/konstantin532/English-Encyclopedia/blob/8d3a41d9aa61cbf074caff602d53b22920ca3efa/uv.lock",
+      "full_source": true,
+      "truncated": false
+    }
+  ],
+  "historical_input_files": [
+    {
+      "path": "inputs/English_Encyclopedia_A1_01_02_PARTIAL_PACKET.md",
+      "bytes_local": 49135,
+      "sha256": "2f355ed1e4f5c462263dc88f6950b05d1e8c38838e4d58947b925e17df1e8b5e",
+      "role": "Received historical input, not a fresh verification log"
+    },
+    {
+      "path": "inputs/English_Encyclopedia_CI_BASELINE.md",
+      "bytes_local": 4818,
+      "sha256": "12a15e712567298ece651dcea1cbaa5474a3f03ecea95b80473c788833602c3c",
+      "role": "Received historical input, not a fresh verification log"
+    },
+    {
+      "path": "inputs/English_Encyclopedia_Preparation_STATUS.md",
+      "bytes_local": 9172,
+      "sha256": "ca15cbbfb31d38a3749885327089ca3a0f8246b2277516096dff9b08aaefcbbb",
+      "role": "Received historical input, not a fresh verification log"
+    }
+  ],
+  "not_found_requested_paths": [],
+  "audio_boundary": {
+    "production": "NOT_ACCESSED",
+    "tracked_audio_files": [],
+    "expected_target_manifests": [
+      "static/audio/weeks/a1-w01/manifest.json",
+      "static/audio/weeks/a1-w02/manifest.json",
+      "static/audio/stories/s01/manifest.json",
+      "static/audio/twisters/t001/manifest.json",
+      "static/audio/twisters/t002/manifest.json"
+    ],
+    "caveat": "Git absence is not proof of absence on the separately deployed site; fresh audio diagnostic is recorded by root in evidence/"
+  }
+}

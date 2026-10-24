@@ -1,0 +1,58 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "status": "PASS",
+  "validation_scope": "Packet byte/hash integrity and exact data retention; NOT linguistic or pedagogical verification",
+  "full_snapshots_verified": 163,
+  "snapshot_total_bytes": 1508921,
+  "inventory_lesson_count": 60,
+  "inventory_counts": {
+    "A1": 28,
+    "A1+": 32
+  },
+  "prepared_lesson_count": 4,
+  "dictionary_context_records": 74,
+  "unresolved_explicit_uid_refs": [],
+  "missing_requested_source_paths": [],
+  "lessons": [
+    {
+      "order": 1,
+      "slug": "a1-nouns-first-words",
+      "all_source_fields_retained": true,
+      "exercises": 4,
+      "translations": 4,
+      "delayed_cards": 20,
+      "spoken_missions": 6,
+      "explicit_uid_references_resolved": 23
+    },
+    {
+      "order": 2,
+      "slug": "a1-verb-be",
+      "all_source_fields_retained": true,
+      "exercises": 5,
+      "translations": 4,
+      "delayed_cards": 25,
+      "spoken_missions": 6,
+      "explicit_uid_references_resolved": 17
+    },
+    {
+      "order": 3,
+      "slug": "a1-determiners-a-the-this-my",
+      "all_source_fields_retained": true,
+      "exercises": 6,
+      "translations": 4,
+      "delayed_cards": 30,
+      "spoken_missions": 6,
+      "explicit_uid_references_resolved": 34
+    },
+    {
+      "order": 4,
+      "slug": "a1-have-like-can-do",
+      "all_source_fields_retained": true,
+      "exercises": 6,
+      "translations": 4,
+      "delayed_cards": 30,
+      "spoken_missions": 6,
+      "explicit_uid_references_resolved": 29
+    }
+  ]
+}

@@ -1,0 +1,1120 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "branch": "prepare/a1-01-04-review-20261025",
+  "scope": "Preparation only, A1 lessons1–4; editorial NOT_REVIEWED",
+  "all_text_sources_unabridged": true,
+  "source_manifest": "SOURCE_MANIFEST.json",
+  "manifest_self_excluded_from_hashes": true,
+  "files": [
+    {
+      "path": "CHECKS.md",
+      "bytes": 12061,
+      "sha256": "09419d767a33175babe029234e27695b7fcccd4b2e94fe99c52694fbf3957159"
+    },
+    {
+      "path": "COURSE_MAP.json",
+      "bytes": 86508,
+      "sha256": "3b49b6c5ec25e5f3bce0ca9fc19937d0064691092474d70f0c86e000402cbd07"
+    },
+    {
+      "path": "MISSING_INPUTS.json",
+      "bytes": 1360,
+      "sha256": "14d75ce3efbeffdc9c8b6152290b944006818ef865952e628d93e61c43c35728"
+    },
+    {
+      "path": "REVIEW_PACKET.md",
+      "bytes": 16645,
+      "sha256": "b6f83a02cbcd876b90c7a8e4b3b6045ffd78f0fb3caccae915f041d47bacdbbd"
+    },
+    {
+      "path": "RUNTIME_LINKS.md",
+      "bytes": 26699,
+      "sha256": "83f31d16f50d451eb10bbe6a65a980f5373301e0b8125ba487a53f07676876da"
+    },
+    {
+      "path": "SOURCE_LINKS.md",
+      "bytes": 4673,
+      "sha256": "62c56e7b55afc8053d27a62c641580437299e1acd167c287a1214e53617f80ff"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "bytes": 119663,
+      "sha256": "640b7c1408cd6426363f461033baa78b753a53c704d368cd8ec76169055a1fab"
+    },
+    {
+      "path": "STATUS.md",
+      "bytes": 4536,
+      "sha256": "c7316189a95b2d55cc304974daa1a5b926efe08637a5b47a9efb278b53892493"
+    },
+    {
+      "path": "build_packet.py",
+      "bytes": 29450,
+      "sha256": "0d9cbe9ea7163c7656612688d07cfa0f088cb7504ff62017f6fb19dcde90754a"
+    },
+    {
+      "path": "evidence/HISTORICAL_CI.json",
+      "bytes": 6598,
+      "sha256": "60439a48efc687a3681ec13307ecc9357c6b5dbf7defe73c56bd987c20a728b0"
+    },
+    {
+      "path": "evidence/historical-postgres.log",
+      "bytes": 41541,
+      "sha256": "0cdd41dc30d8532ced292cac81fc8c5088dae32e38819664c5c7b4128b8ca2d3"
+    },
+    {
+      "path": "evidence/historical-sqlite.log",
+      "bytes": 55915,
+      "sha256": "87c20150c2ac28a176b958766ab0cc908c05204615c33f8537149fb259ea4c2a"
+    },
+    {
+      "path": "evidence/local/ENVIRONMENT.json",
+      "bytes": 1936,
+      "sha256": "3ba2bb2802eb3d6a3c0fc00466b90664269ef9068cd733f23cb9e8837fe19e64"
+    },
+    {
+      "path": "evidence/local/PREPARATION_VERIFICATION.json",
+      "bytes": 411,
+      "sha256": "acc3736f0ea4bacb4e201407efca2d5e3f669f09d6cf9b3a8462338fc4c84f73"
+    },
+    {
+      "path": "evidence/local/QA_RESULTS.json",
+      "bytes": 1002,
+      "sha256": "a00b5d082949d53b97bbbce41d4109265fc362d2ca6856f5f5abee9773d47312"
+    },
+    {
+      "path": "evidence/local/RESULTS.json",
+      "bytes": 9377,
+      "sha256": "bcd72bba9983c3808a7ddecf357572a678591cb7545c00f01862b62d6542bc1c"
+    },
+    {
+      "path": "evidence/local/audio-readiness.log",
+      "bytes": 1659,
+      "sha256": "2c5e746038d85d0af573b8f5769f92a918b728b4a4cda0a64f4fa56c7d6431b0"
+    },
+    {
+      "path": "evidence/local/audit-course-isolated.log",
+      "bytes": 3291,
+      "sha256": "3ad76dff5c60f30ff97e4730eb941987ba1976d990a3c13d6d7d6eb0f671e93f"
+    },
+    {
+      "path": "evidence/local/browser-launch.log",
+      "bytes": 932,
+      "sha256": "96433d6cfa3df5cf55c9c6e457fbc3d6797c380972a52bea4096d894cd466195"
+    },
+    {
+      "path": "evidence/local/cefr-evidence.log",
+      "bytes": 280,
+      "sha256": "3ba73a2f6c860a2a681b8c49137c06b3e209d32cd62086d9da24ef1d0eba3f3f"
+    },
+    {
+      "path": "evidence/local/collectstatic.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/local/compileall.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/local/css.log",
+      "bytes": 65,
+      "sha256": "f44c37ebf4bffa827775202de064209865f3dacd116d1bb4b9001cc5c053848b"
+    },
+    {
+      "path": "evidence/local/database-isolation.log",
+      "bytes": 498,
+      "sha256": "cde7246bf964e9c652745d3df8c9f5542ae69c479ed05bced0a23eed2218a15b"
+    },
+    {
+      "path": "evidence/local/django-check.log",
+      "bytes": 48,
+      "sha256": "1e3e63f221bde88816c4a4ef7367691607b20cc1d194028a02ec9ae0586cf9b1"
+    },
+    {
+      "path": "evidence/local/django-full.log",
+      "bytes": 24467,
+      "sha256": "deeef73452b06b6f2a001b8ee23ef55f217e5f5da1eefc05a5d33e37769d1ffa"
+    },
+    {
+      "path": "evidence/local/fuzz.log",
+      "bytes": 66,
+      "sha256": "aa49b40d7b18fb7f9d148c2d802203ad8ef4c130017ae318323433d1fafc9623"
+    },
+    {
+      "path": "evidence/local/javascript.log",
+      "bytes": 10370,
+      "sha256": "9f6e058f1e64a21d4cf7f69e3f86f2671c02bd9fa389df0609aaee0a580f1364"
+    },
+    {
+      "path": "evidence/local/load-content-isolated.log",
+      "bytes": 148,
+      "sha256": "ff55650edad7a7a3f096804ee1e491bb21fdd0c7357db6eee027db2abb4fc958"
+    },
+    {
+      "path": "evidence/local/migrate-isolated.log",
+      "bytes": 3348,
+      "sha256": "84acd11fc9f37ad62c8ff0d6c2bd8aefdfb1ef2198db38c4919a048d2c2592bc"
+    },
+    {
+      "path": "evidence/local/migration-drift.log",
+      "bytes": 20,
+      "sha256": "a2bfa7b376c38062f77ce2b1e703876aaa04662f96355cdf5dc9d0d075302b05"
+    },
+    {
+      "path": "evidence/local/mutation-report.md",
+      "bytes": 417,
+      "sha256": "8442a1974546560bc01b7d8bcf583c2aaeb68044fa11f5df917a5bdee5a46bb0"
+    },
+    {
+      "path": "evidence/local/mutation-sentinels.log",
+      "bytes": 418,
+      "sha256": "e5e8fd78c382be2acf3e8fb5b191a4b568bef43ac56f73616cb103a6b3068824"
+    },
+    {
+      "path": "evidence/local/pnpm-install-frozen.log",
+      "bytes": 53,
+      "sha256": "84f1244b112a99cf799d51601b268338b578d8f3522000e52011e989fd79c4fb"
+    },
+    {
+      "path": "evidence/local/pytest-full-retry.log",
+      "bytes": 981,
+      "sha256": "d152fdca11851d2cb04076da681fd18372268e65fc0d08afc376a1d6703edb9e"
+    },
+    {
+      "path": "evidence/local/pytest-full.log",
+      "bytes": 841,
+      "sha256": "6f07322bdebee2a14c6e3ef761804335dd3f16c15f2b219f6f5f5137de2efe77"
+    },
+    {
+      "path": "evidence/local/review-structure.log",
+      "bytes": 94,
+      "sha256": "09af702d3bcbfc149cfca6e7e7570b01d2444215941319b5199a7d9de2b8d6a5"
+    },
+    {
+      "path": "evidence/local/runtime-data-consistency.json",
+      "bytes": 1348,
+      "sha256": "e63331c1c5f8551c0720a32d3e730703f7c985d098830223f8e305bd0dbc86cd"
+    },
+    {
+      "path": "evidence/local/runtime-data-consistency.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/local/runtime-smoke.json",
+      "bytes": 31678,
+      "sha256": "ad7412c8c038ee08d68f60c61bca4655906afaff6d72fa696a7b727051fd9296"
+    },
+    {
+      "path": "evidence/local/runtime-smoke.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/local/understanding-structure.log",
+      "bytes": 100,
+      "sha256": "7599a81778a183d5f4f5900edf245aa950ab61a8ff4f758b145fbadbaebd2118"
+    },
+    {
+      "path": "evidence/local/uv-sync-frozen.log",
+      "bytes": 30,
+      "sha256": "070cf0876738f85bc6b361bac3d6b5fe1521e9b434717290f7dc49ab7018d0b3"
+    },
+    {
+      "path": "extracts/A1_01.json",
+      "bytes": 92158,
+      "sha256": "95dfd194be0e45f01b1f865df6977e3cc7f30d0088b5682ccc7def421c7339cc"
+    },
+    {
+      "path": "extracts/A1_01_04_FULL_TEXT.md",
+      "bytes": 100218,
+      "sha256": "54c3ad9ff3545b6f0269c5841a43f570762983ce6acf390c54a6aa5527102320"
+    },
+    {
+      "path": "extracts/A1_02.json",
+      "bytes": 84663,
+      "sha256": "440a303a151157cfe93f026ac5ecaa0d3c680e2a8160bdb53341d29239b302f0"
+    },
+    {
+      "path": "extracts/A1_03.json",
+      "bytes": 130851,
+      "sha256": "19fa65627bd01bad8b906cb71b003e55f95e2d8e17d92c467b28ed35bc7f5932"
+    },
+    {
+      "path": "extracts/A1_04.json",
+      "bytes": 120849,
+      "sha256": "1e7283a42971a86b0ac47c6dd041defae088572731a984c0c6623b1c8471876d"
+    },
+    {
+      "path": "extracts/HISTORICAL_SOURCE_COMPARISON.json",
+      "bytes": 1022,
+      "sha256": "711e26f63ed8738b976ff08e487df2ad1f233a164fb24b98fe4c71cdd1699bf0"
+    },
+    {
+      "path": "extracts/PACKET_VALIDATION.json",
+      "bytes": 1557,
+      "sha256": "13dd07f46827bd59384c2893abdf55f02af13b5ada64e5e5c8364219afc6c4c4"
+    },
+    {
+      "path": "extracts/WEEK_01_02_DICTIONARY.json",
+      "bytes": 102250,
+      "sha256": "f9d2d08ce1e2f067e10280c212c8e36c4151411a653ba1c35f0a9ed0940c4945"
+    },
+    {
+      "path": "inputs/English_Encyclopedia_A1_01_02_PARTIAL_PACKET.md",
+      "bytes": 49135,
+      "sha256": "2f355ed1e4f5c462263dc88f6950b05d1e8c38838e4d58947b925e17df1e8b5e"
+    },
+    {
+      "path": "inputs/English_Encyclopedia_CI_BASELINE.md",
+      "bytes": 4818,
+      "sha256": "12a15e712567298ece651dcea1cbaa5474a3f03ecea95b80473c788833602c3c"
+    },
+    {
+      "path": "inputs/English_Encyclopedia_Preparation_STATUS.md",
+      "bytes": 9172,
+      "sha256": "ca15cbbfb31d38a3749885327089ca3a0f8246b2277516096dff9b08aaefcbbb"
+    },
+    {
+      "path": "retry_pytest.py",
+      "bytes": 2963,
+      "sha256": "e18470efd5bf16af4bbe00a6280c91071f4774a48709788e5df4766cc247af38"
+    },
+    {
+      "path": "run_baseline.py",
+      "bytes": 5710,
+      "sha256": "96e00a0882a394b9bcacb1ea07c08365235f34f7294d20d57b057ba9c682c1f8"
+    },
+    {
+      "path": "runtime_data_consistency.py",
+      "bytes": 3421,
+      "sha256": "240de45e988cb707ec733a679b82af55610d023c23beb9af351f39cca19c45bc"
+    },
+    {
+      "path": "runtime_smoke.py",
+      "bytes": 14170,
+      "sha256": "b81d949855b87acb91c88682c16338a34be273961d68d39f7c15823e35721032"
+    },
+    {
+      "path": "snapshot/.github/workflows/atlas-browser.yml",
+      "bytes": 2569,
+      "sha256": "9a07213767b4fad8e9cd5e0583706a8c3b80c8002eedd844d9f4745611bdedf3"
+    },
+    {
+      "path": "snapshot/.github/workflows/ci.yml",
+      "bytes": 4302,
+      "sha256": "1c158615693a0b24565865bd6078d1a3f00e0651ff5ccc69f45cd51ae61adb5e"
+    },
+    {
+      "path": "snapshot/.github/workflows/quality-evolution.yml",
+      "bytes": 2603,
+      "sha256": "67160596a81886dfd69d22c9a9be8a2ad32b5da978a6cb2835337e9a55f69fb3"
+    },
+    {
+      "path": "snapshot/.python-version",
+      "bytes": 5,
+      "sha256": "02e735b3dfe1c32833eb550b7ff8ffa17f5f2bc3fa1e7bae61a8f5a3883ce398"
+    },
+    {
+      "path": "snapshot/AGENTS.md",
+      "bytes": 10572,
+      "sha256": "3443039fbb336dbd79a168435c3e552adce8038b2878d422ad6ecbe5c0327b15"
+    },
+    {
+      "path": "snapshot/CLAUDE.md",
+      "bytes": 4143,
+      "sha256": "3000cff47f50131841eb27a893433c08def4e1712e70300889400ea83b8ffc1f"
+    },
+    {
+      "path": "snapshot/apps/api/urls.py",
+      "bytes": 424,
+      "sha256": "450048494b8b4fa3eeec481a80e93bb69d28754105df92124585d52e81cd1949"
+    },
+    {
+      "path": "snapshot/apps/api/validation.py",
+      "bytes": 1429,
+      "sha256": "5a6bac88d63d498f13387512418b35937a1dfad55732b8625318fc74ddfbf452"
+    },
+    {
+      "path": "snapshot/apps/api/views.py",
+      "bytes": 5793,
+      "sha256": "acc3955d99defe912730a98d2f7c030c38e66dbbdf54899ebf7f22a64bc8a70c"
+    },
+    {
+      "path": "snapshot/apps/core/a1_active.py",
+      "bytes": 4589,
+      "sha256": "7e34718ab680f447a73b335d94f06de76c68e34ce937fe0e38c6dc68aa18156d"
+    },
+    {
+      "path": "snapshot/apps/core/management/commands/load_content.py",
+      "bytes": 25226,
+      "sha256": "8e39eba6a25433510e8d20d64b4191c6a771d997001222a2dbe54b8c149deb21"
+    },
+    {
+      "path": "snapshot/apps/core/templatetags/ru.py",
+      "bytes": 1605,
+      "sha256": "789cbf4bc301341d8cbcb371c802ee51513a0942cd6ac582608813cc8cdc5770"
+    },
+    {
+      "path": "snapshot/apps/core/urls.py",
+      "bytes": 564,
+      "sha256": "b1a3ec04d4a24f6859f04f647b4cfc0b8c38ddb0721422d0bbd7ed2202fa038c"
+    },
+    {
+      "path": "snapshot/apps/curriculum/models.py",
+      "bytes": 5277,
+      "sha256": "8c5a72c62714a4de6216579810e44257ad5d67faac88ccd25ca820f5247be879"
+    },
+    {
+      "path": "snapshot/apps/curriculum/registry.py",
+      "bytes": 6560,
+      "sha256": "1f2662cbeb67172e9927d4c3c15047aeb621f3f95c301677edf568ed755f1c9a"
+    },
+    {
+      "path": "snapshot/apps/curriculum/urls.py",
+      "bytes": 230,
+      "sha256": "5e536154c2be50179903125fa4f0654b1b1727bb36b31f51f242327283f68398"
+    },
+    {
+      "path": "snapshot/apps/curriculum/views.py",
+      "bytes": 6602,
+      "sha256": "6439b8023e1e959fedac5b48df9275ebbf5d7b46fb8977c0ab64d45bd963ea80"
+    },
+    {
+      "path": "snapshot/apps/drills/models.py",
+      "bytes": 6780,
+      "sha256": "5c3b353264cd95177e4b829d9da3dfee765df3008e75bc917c52b9c4e8b05e59"
+    },
+    {
+      "path": "snapshot/apps/drills/retry_guidance.py",
+      "bytes": 2326,
+      "sha256": "1d93b4e9fdfd83a4ddbeb98a02a020ff7edce92aeaf55b4786da6759eac8f388"
+    },
+    {
+      "path": "snapshot/apps/learning/cafe_mission.py",
+      "bytes": 12780,
+      "sha256": "a135488ce9497792a16f881ff76313e323271b161f6ba5755a9d56d173b0e885"
+    },
+    {
+      "path": "snapshot/apps/learning/delayed_review_views.py",
+      "bytes": 6252,
+      "sha256": "433114fe829eacd7bbf7cad1d57771e2b783521d03f9f0f877b33df787c27942"
+    },
+    {
+      "path": "snapshot/apps/learning/independent_views.py",
+      "bytes": 15226,
+      "sha256": "66b9ddaf563413dc964855c4f2b3603b2d800426a1393a4fca146df343570119"
+    },
+    {
+      "path": "snapshot/apps/learning/micro_review.py",
+      "bytes": 3344,
+      "sha256": "7d4df422e9c090a2dc610e6f87371e0f1e03accfb8dc60d358afb1b191940ee4"
+    },
+    {
+      "path": "snapshot/apps/learning/mistake_review.py",
+      "bytes": 6979,
+      "sha256": "7245368487ecbd710b4ff980997cfc1c4fa8afce94597c4df8de8acaea2d6807"
+    },
+    {
+      "path": "snapshot/apps/learning/models.py",
+      "bytes": 13242,
+      "sha256": "befa768921550f495703ab002e63db3f0cb38a9dcae1a41a9fd17f126979d754"
+    },
+    {
+      "path": "snapshot/apps/learning/services.py",
+      "bytes": 4437,
+      "sha256": "87838260828fa389ea8b274cece53889d35ad4c7f9d902901887d9c6ebc51be2"
+    },
+    {
+      "path": "snapshot/apps/learning/speech_practice.py",
+      "bytes": 8929,
+      "sha256": "4f05be1dd1de0f74652cef6d5354e2c73234cfe6bc77d87ae974fa74819b8e11"
+    },
+    {
+      "path": "snapshot/apps/learning/transfer_pilot.py",
+      "bytes": 10128,
+      "sha256": "2e70008cd4eaf59a0abfcf21ddb7626e3e9719d298a946d59c8b473a65b6b764"
+    },
+    {
+      "path": "snapshot/apps/learning/understanding.py",
+      "bytes": 7711,
+      "sha256": "07a12ea43ee1c766db10ff1db73f9fea00ec908ac9933811f788bed46d03b82f"
+    },
+    {
+      "path": "snapshot/apps/learning/urls.py",
+      "bytes": 1206,
+      "sha256": "98b8a35f17b52f3afaa34a04753e44dd65f7d1637f5fb61dc13e9a513dd4eed9"
+    },
+    {
+      "path": "snapshot/apps/lessons/models.py",
+      "bytes": 2554,
+      "sha256": "d7712dfc7d3fe518606547ec7e0d051ea1819aed4d1b0cc2fb8eba35c0c1a9ab"
+    },
+    {
+      "path": "snapshot/apps/lessons/urls.py",
+      "bytes": 145,
+      "sha256": "46027e43f25ed6417183decf5d65a72d1976a262e73f6076d09598080148bc40"
+    },
+    {
+      "path": "snapshot/apps/lessons/views.py",
+      "bytes": 1481,
+      "sha256": "626cd2e362ad7867de1d0fd9fcaafa89ea0cc9446643c23020526a40f2a7e392"
+    },
+    {
+      "path": "snapshot/apps/lexicon/models.py",
+      "bytes": 5258,
+      "sha256": "12c025e7a6121ea62e6b0aaf5943aa4199103d7f814ade8b1aadf24bccdfbe2d"
+    },
+    {
+      "path": "snapshot/apps/lexicon/phonetics.py",
+      "bytes": 6423,
+      "sha256": "31f20d16afe94f4cc6b2f3063eaaf15b01dc4c09fb134c6784b66217801800c4"
+    },
+    {
+      "path": "snapshot/apps/lexicon/urls.py",
+      "bytes": 192,
+      "sha256": "69b3996803d2647e8bb4a381502821b97916e87f66e5814d388f9ffc7e0caabc"
+    },
+    {
+      "path": "snapshot/apps/lexicon/views.py",
+      "bytes": 1448,
+      "sha256": "225aa0cdeea51b50df43bea623ebab0a56b5d706ec4b57a80bf9591386d651f9"
+    },
+    {
+      "path": "snapshot/apps/poems/models.py",
+      "bytes": 1568,
+      "sha256": "4df88c6542739a248d120e6e2f34e17429bdd1ccef1590577657665e78fa303f"
+    },
+    {
+      "path": "snapshot/apps/publishing/audit.py",
+      "bytes": 22999,
+      "sha256": "fa6247099694a9dcbd4e3f62b72bd69af5c42c684901de58fae2ac005ad119ec"
+    },
+    {
+      "path": "snapshot/apps/publishing/audit_weeks.py",
+      "bytes": 14374,
+      "sha256": "1a468cf6ea0c231ef2775963f45ec85f5c7eb3e6047ba2ee16a80aba0b615602"
+    },
+    {
+      "path": "snapshot/apps/publishing/management/commands/audit_course.py",
+      "bytes": 753,
+      "sha256": "3b02270379508bbe98fbe093de0b96a5dc2a1851cff6cc5f938debd02f4c27d6"
+    },
+    {
+      "path": "snapshot/apps/stories/models.py",
+      "bytes": 2572,
+      "sha256": "455c84a4b02a2f4a690e1d812b7cfbe479db54c97a893e1bde287e68948784b9"
+    },
+    {
+      "path": "snapshot/apps/stories/script.py",
+      "bytes": 1627,
+      "sha256": "586f0d73d296c3e42ac765a0f3f538dc36b659855ce099fa2a6d40d209dc3d67"
+    },
+    {
+      "path": "snapshot/apps/stories/urls.py",
+      "bytes": 261,
+      "sha256": "e8939d59763a14428dcd5c7c52ae9710bad536db454dbe2d214cf1e3c5da8a6c"
+    },
+    {
+      "path": "snapshot/apps/stories/views.py",
+      "bytes": 4084,
+      "sha256": "936ee0cd2e354463e74f84ec16008c687e9cc5860d35c6f45f2dded40b948167"
+    },
+    {
+      "path": "snapshot/apps/taxonomy/markup.py",
+      "bytes": 5063,
+      "sha256": "bb3d46fa18974f3e80bd9b656b3cf52df54be86294d54faad074355a742fadbf"
+    },
+    {
+      "path": "snapshot/apps/taxonomy/models.py",
+      "bytes": 2312,
+      "sha256": "a68aef8f7451e048b4c7f5aab82e5d1dd4030b8b8448d4d4e62f6d1a7c4ade31"
+    },
+    {
+      "path": "snapshot/apps/taxonomy/registry.py",
+      "bytes": 12582,
+      "sha256": "a883b714ff7ac38acdfdf42a6295339ab06274a085339b500cfea4d1f068f2c9"
+    },
+    {
+      "path": "snapshot/apps/taxonomy/templatetags/markers.py",
+      "bytes": 522,
+      "sha256": "6fad3f70cd35250565df5cc4031c406c20df76345bb655ef11bd51045c371caf"
+    },
+    {
+      "path": "snapshot/apps/taxonomy/urls.py",
+      "bytes": 127,
+      "sha256": "3cd2fe6c31d739def0480344e94de3408f92d3dbacf52b4b731f4b5ad23115b4"
+    },
+    {
+      "path": "snapshot/apps/taxonomy/views.py",
+      "bytes": 332,
+      "sha256": "aab4dcef1825bd242804f5c4a2a8cde4456d32a7a33ad8872a7d131a6f43c3f0"
+    },
+    {
+      "path": "snapshot/config/settings/base.py",
+      "bytes": 5505,
+      "sha256": "812d932d0dde8f7ecd164a9fc155903d5b51bce58e5716fed8060a938bca96c3"
+    },
+    {
+      "path": "snapshot/config/settings/local.py",
+      "bytes": 53,
+      "sha256": "a651517c7a81d5a9730367007250bbe3dba71c9f2b1abafdf50bdff28a3a8be6"
+    },
+    {
+      "path": "snapshot/config/settings/test.py",
+      "bytes": 845,
+      "sha256": "5e440f53d86c30a32ae7b1433082b0cb5c31d920b3d7c2cc8a513e7d57aa0efd"
+    },
+    {
+      "path": "snapshot/config/urls.py",
+      "bytes": 756,
+      "sha256": "d91099484abe8332821416c1524783a711eb92a807ce974611b83ced55ae59bb"
+    },
+    {
+      "path": "snapshot/content/active_a1/error_repairs_01_18.json",
+      "bytes": 7168,
+      "sha256": "1408bdccf04c853f81f35c1840ce1a13ab76fc3f096da7868aaf0dcd871d0806"
+    },
+    {
+      "path": "snapshot/content/active_a1/scenarios_01_06.json",
+      "bytes": 17738,
+      "sha256": "31dee6e1d6d2ea4e02999d333c33cd16c8178a6566f911b01e9f6388655b082e"
+    },
+    {
+      "path": "snapshot/content/active_a1/topics_01_08.json",
+      "bytes": 16537,
+      "sha256": "4ddf7835ed6d774029765fb581cc1a22caaef83f45588cae283acac420f3a8ea"
+    },
+    {
+      "path": "snapshot/content/manifests/a1_delayed_review_01.json",
+      "bytes": 4679,
+      "sha256": "9000f09bb40b6d3a946dfafc6a42fc52b51130b88b8fd6813cce59c9167a83e1"
+    },
+    {
+      "path": "snapshot/content/manifests/a1_delayed_review_02.json",
+      "bytes": 5330,
+      "sha256": "2f35b1693e19fd8446f06594821262003d739024abf902d45b336d20e5594c60"
+    },
+    {
+      "path": "snapshot/content/manifests/a1_delayed_review_03.json",
+      "bytes": 7779,
+      "sha256": "61652ad20b5263ba4675c83849de96d2ff472f3209b10604b1f271f9cf7435a1"
+    },
+    {
+      "path": "snapshot/content/manifests/a1_delayed_review_04.json",
+      "bytes": 7120,
+      "sha256": "8d3b1793bacbba4d52a8586b00c56279cd06063f771728c7ec8f436de4e5a5a3"
+    },
+    {
+      "path": "snapshot/content/manifests/a1_retry_guidance.json",
+      "bytes": 12146,
+      "sha256": "7228f18747f75dd54b43fadd980482c46874f34add4cf5d98175b3a0728166aa"
+    },
+    {
+      "path": "snapshot/content/manifests/a1_scaffold_transfer.json",
+      "bytes": 36743,
+      "sha256": "a03f3cb01437c731bfb435f3ddb810de0a108f2e5427b15ff640d047b2a86f8f"
+    },
+    {
+      "path": "snapshot/content/manifests/a1_understanding_checks.json",
+      "bytes": 58135,
+      "sha256": "acd48af6b661120a2c5d538114f797180ee87ace79a070b5e794c43df89d9b43"
+    },
+    {
+      "path": "snapshot/content/manifests/characters.yaml",
+      "bytes": 2322,
+      "sha256": "bfe021af832e9f6b8c439b05e7094f7a36837c0dbddc8f493271ca6cdf1fb939"
+    },
+    {
+      "path": "snapshot/content/manifests/course_map.yaml",
+      "bytes": 23252,
+      "sha256": "79cb91bd93596b47f7b6821edb958fcbc06c75ebaf86449c0bd89c52f4262828"
+    },
+    {
+      "path": "snapshot/content/manifests/voices.yaml",
+      "bytes": 4303,
+      "sha256": "cf196bd8a1b80e39df9bef9159aad448e3e74a8ac7d976c6d8f62fd92c648775"
+    },
+    {
+      "path": "snapshot/content/manifests/weeks_plan.yaml",
+      "bytes": 6747,
+      "sha256": "2ecda81a3d5bd3c8860e386ced0017711ef3a060914f7f0d1313fa64192f98ba"
+    },
+    {
+      "path": "snapshot/content/seed_lessons/a1_w01_l01_nouns.yaml",
+      "bytes": 19289,
+      "sha256": "668fe32f65a93c458784af5eb450fb8dd911ad991f880a083af43d79e5703def"
+    },
+    {
+      "path": "snapshot/content/seed_lessons/a1_w01_l02_be.yaml",
+      "bytes": 19967,
+      "sha256": "1457925c7b7580c79c6425fca23544086fd2cb447049e1e312926a973d9e772a"
+    },
+    {
+      "path": "snapshot/content/seed_lessons/a1_w02_l03_determiners.yaml",
+      "bytes": 20876,
+      "sha256": "2b1497157b945050c0714ddea0a10f311364378d0fe8482652d235bb05b57f73"
+    },
+    {
+      "path": "snapshot/content/seed_lessons/a1_w02_l04_have_like_can.yaml",
+      "bytes": 21158,
+      "sha256": "5e91c0767dc3f59af5155091cc4db000fa5814dfb5296d7c7ef4b739cd80d63c"
+    },
+    {
+      "path": "snapshot/content/seed_lexicon/a1_w01_core.yaml",
+      "bytes": 19898,
+      "sha256": "b313f4e043fcbfa72ed1a32dddcd78ba31f4223935659672b220a1fb0187673a"
+    },
+    {
+      "path": "snapshot/content/seed_lexicon/a1_w01_nouns.yaml",
+      "bytes": 17493,
+      "sha256": "27b05c77b6be4d49ca991b1f1fbfa1fd81ed26ad597cf68e316ed8f52b2560ff"
+    },
+    {
+      "path": "snapshot/content/seed_lexicon/a1_w01_phrases.yaml",
+      "bytes": 4045,
+      "sha256": "2d2336ddb44ec0b6eabd035c3147925ca717762cc638e296353319afed7ba2b5"
+    },
+    {
+      "path": "snapshot/content/seed_lexicon/a1_w02_core.yaml",
+      "bytes": 8891,
+      "sha256": "0fea44f3f8a94e34127e66a7e45a283b069a796e6cf1ab8d7ed98039131392d1"
+    },
+    {
+      "path": "snapshot/content/seed_lexicon/a1_w02_home_plus.yaml",
+      "bytes": 12684,
+      "sha256": "2b39f36c57763beec7a2c46af354466becdc332a9addceec9d0915f7f91679a6"
+    },
+    {
+      "path": "snapshot/content/seed_lexicon/a1_w02_phrases.yaml",
+      "bytes": 3442,
+      "sha256": "de1e324b102fecc526dd4527c59b389fa7eec06e7e7450b40ccbfa4e9c03a5b6"
+    },
+    {
+      "path": "snapshot/content/seed_lexicon/a1_w02_story01.yaml",
+      "bytes": 2540,
+      "sha256": "240fe80bcfc8fe0ec5d5818c68d9f0f9f71ce27c0bdecbbefc2e08430cd9ba1a"
+    },
+    {
+      "path": "snapshot/content/seed_poems/p01_my_new_home.yaml",
+      "bytes": 2472,
+      "sha256": "f01e254c895c261a1bef4efc3b0ce705d93ec37a916c704c782712593c2ca9ce"
+    },
+    {
+      "path": "snapshot/content/seed_stories/s01_not_my_box.yaml",
+      "bytes": 5276,
+      "sha256": "e4b088f78bfeaad4f0aba65aeee16423219e167162ea903fd990b49adb7a8604"
+    },
+    {
+      "path": "snapshot/content/seed_weeks/a1_w01.yaml",
+      "bytes": 4796,
+      "sha256": "3445858513eb91fae520c3efe7db0729141c8c79e6dd4f725ae982cae7fa722b"
+    },
+    {
+      "path": "snapshot/content/seed_weeks/a1_w02.yaml",
+      "bytes": 4926,
+      "sha256": "fbc774b41bbc40110edd14c522c4018d8cd94ca4fca8fa8454cccf348e84e55f"
+    },
+    {
+      "path": "snapshot/docs/pilots/a1-four-weeks/assessment.yaml",
+      "bytes": 11816,
+      "sha256": "b06cd82e49672e2920342f8ef56e37783750e8119d3596772c0e328dbb585d18"
+    },
+    {
+      "path": "snapshot/docs/pilots/a1-four-weeks/guide.md",
+      "bytes": 8362,
+      "sha256": "42da6dc30618380eef8d3c621efdbc50ca74b861a9aec4b780a8f6a4465d85eb"
+    },
+    {
+      "path": "snapshot/docs/plans/2026-10-14-situation-weeks.md",
+      "bytes": 39181,
+      "sha256": "f5bb2a111d2f2b2ec12763cfc2e7b370fd02b36bf879f6ea5e156a59a0ee1962"
+    },
+    {
+      "path": "snapshot/docs/plans/2026-10-14-situation-weeks.progress.md",
+      "bytes": 178468,
+      "sha256": "76d6e17c1c881ee409b2b1679589a898ffc6803cfd9960296c526a550fc9700a"
+    },
+    {
+      "path": "snapshot/docs/reference-curriculum/EDITORIAL_POLICY.md",
+      "bytes": 12488,
+      "sha256": "7b48dcedf324a609181a04c65178fcd45290bf3b05ddb671ba68eea5953623fb"
+    },
+    {
+      "path": "snapshot/docs/reference-curriculum/LEVEL_MAP_A1_A1PLUS.md",
+      "bytes": 9269,
+      "sha256": "7722f0cab408ae42faa100cde651eb53952083d32c6e197c39fbd9d162a643ce"
+    },
+    {
+      "path": "snapshot/docs/specs/2026-10-14-foundation.md",
+      "bytes": 4227,
+      "sha256": "d036cd110af7dffc7a797cee6197a28d015ce66850d85a6fb7f3e9e73a00c075"
+    },
+    {
+      "path": "snapshot/docs/specs/2026-10-14-situation-weeks.md",
+      "bytes": 25523,
+      "sha256": "1e329927c938649fc48cfc38335081c5cd0478ae1921d3482da9b23adb9246fb"
+    },
+    {
+      "path": "snapshot/package.json",
+      "bytes": 322,
+      "sha256": "ca0f425a7f249b5ba397458fd9d49f2d7253cbdbac23aec219ebbe995edcee79"
+    },
+    {
+      "path": "snapshot/pnpm-lock.yaml",
+      "bytes": 7023,
+      "sha256": "1d02befae4fad9dbd066fc185778d7b57a0df3592adc4d2476fb225a7398a741"
+    },
+    {
+      "path": "snapshot/pnpm-workspace.yaml",
+      "bytes": 40,
+      "sha256": "a163b61e37f1daa123161260633de4b01a2629668b216281944f71f7d6d85cb2"
+    },
+    {
+      "path": "snapshot/pyproject.toml",
+      "bytes": 1065,
+      "sha256": "ac472885d248e9c63be7af6efbbd650df6ea1b0b8624fe4cdfaa65e831c9aea5"
+    },
+    {
+      "path": "snapshot/scripts/audio_readiness.py",
+      "bytes": 7813,
+      "sha256": "8bf77fb9726d4592097bd49f01c85b9e3e95bb8f02b4804c6cb49b0250ee479d"
+    },
+    {
+      "path": "snapshot/scripts/audit_cefr_evidence.py",
+      "bytes": 6692,
+      "sha256": "827e9584bc1340e1da19d0bc950e28727a6a8514c3a4edefc8d472e15fd8c2e3"
+    },
+    {
+      "path": "snapshot/scripts/generate_story_audio.py",
+      "bytes": 23822,
+      "sha256": "a58ee7863a988c6b6a15d3f27e6b0ad668b9f5527d8d50f22b002b32ed7cc09b"
+    },
+    {
+      "path": "snapshot/scripts/verify_atlas.cjs",
+      "bytes": 7470,
+      "sha256": "f284077accaaa28101d7045faf4009dd559968952e8818038a829f0b5b58639b"
+    },
+    {
+      "path": "snapshot/static/js/a1-active.js",
+      "bytes": 22735,
+      "sha256": "a7f5a49b0eb05347e45bde37e8c47d0e07df4627aa488c4ce671ffdd214c2348"
+    },
+    {
+      "path": "snapshot/static/js/a1-learning-route.js",
+      "bytes": 3543,
+      "sha256": "06ca02a3fa6fcac083f190ba9ff55a3703089c9fbc257e7da52b5524f3f88c21"
+    },
+    {
+      "path": "snapshot/static/js/audio-player.js",
+      "bytes": 11066,
+      "sha256": "e43f46091979b0e4a0b2b0a3b2e579aeeb3aad7b434cafb3723e98ff2352ad21"
+    },
+    {
+      "path": "snapshot/static/js/independent-check.js",
+      "bytes": 3416,
+      "sha256": "f78066696dc7573b5ba5e0736176595ff5c8f3018b43deec727380fb0b25d597"
+    },
+    {
+      "path": "snapshot/static/js/learning-player.js",
+      "bytes": 8095,
+      "sha256": "81eb4cf7ba2ed1b7deb3d9f0ea013f33b65fbd73545d3cfcc8d9469ed46c724d"
+    },
+    {
+      "path": "snapshot/static/js/speech-review.js",
+      "bytes": 6317,
+      "sha256": "e4d1ed1d20a5471ffe4d6ffafaf837f9a51226e7e976f4c22677abcb83828185"
+    },
+    {
+      "path": "snapshot/static/js/speech-shadowing.js",
+      "bytes": 4690,
+      "sha256": "248f86865a4ea01acd175ec2e74080a6b5966f9e2a0a4be8c5218bce4b8434ab"
+    },
+    {
+      "path": "snapshot/static/js/speech-stress.js",
+      "bytes": 4559,
+      "sha256": "e8b55be1445f95c252f3cd81c33a56fd8d36d43e053354f5953ad1ee568aecab"
+    },
+    {
+      "path": "snapshot/static/js/speech-studio.js",
+      "bytes": 10996,
+      "sha256": "0c572b41b10f8e91b06cd5835abd397284246658f0449a1f40025b21b7925a6b"
+    },
+    {
+      "path": "snapshot/static/js/story-player.js",
+      "bytes": 6421,
+      "sha256": "16f77a90b59a70e585d7db94ea893aae310bdd63431a2fb8505ca645f24b357f"
+    },
+    {
+      "path": "snapshot/static/js/studio-reader.js",
+      "bytes": 1438,
+      "sha256": "d2ade5acd978e33273b0449b30d1ca315e60ce5d18f8fcd5e35eabbf73b86f35"
+    },
+    {
+      "path": "snapshot/templates/base.html",
+      "bytes": 3894,
+      "sha256": "8707b7ac27045e879685244c60c45720649656776690c7299d4fd6f2e38a09b2"
+    },
+    {
+      "path": "snapshot/templates/components/a1_rubric_form.html",
+      "bytes": 3923,
+      "sha256": "a5b0044a1ea83413826dda2461516ea2d45012d1a9ed301bae2c6d17be2bba98"
+    },
+    {
+      "path": "snapshot/templates/components/contractions.html",
+      "bytes": 716,
+      "sha256": "4e6f5da8b5617a8dd77f0e317fc37cdb8ba7e9eb3d18f1afabc86635c48de980"
+    },
+    {
+      "path": "snapshot/templates/components/drill.html",
+      "bytes": 2520,
+      "sha256": "2e03c1b044da6743f7c95261394fda447b8d18ef5bd8c8be6acf5bfa3325606a"
+    },
+    {
+      "path": "snapshot/templates/components/script_player.html",
+      "bytes": 6501,
+      "sha256": "6ccab71a561cf2043b48d1b12b9b060a3450d9685f90f20a509ffb41d8807941"
+    },
+    {
+      "path": "snapshot/templates/components/sound_legend.html",
+      "bytes": 1086,
+      "sha256": "4486f4e8a33225d7daad04fce7715d8c1568536580ea0ab9097e752acd194de8"
+    },
+    {
+      "path": "snapshot/templates/components/speech_studio_controls.html",
+      "bytes": 5914,
+      "sha256": "9e8ece9c5046beb0a425aa6223609638f0f984ed5b4d6dad8243c032dc09541a"
+    },
+    {
+      "path": "snapshot/templates/components/translate_drill.html",
+      "bytes": 1484,
+      "sha256": "2fc9a3bd193155e5a7d2ec957695c3c9448a14242186725f71a2809b10c63cd5"
+    },
+    {
+      "path": "snapshot/templates/components/twister_trainer.html",
+      "bytes": 7436,
+      "sha256": "e3f38dc2194c30193b41c6f2640b0ffb375919532c18d581a13af4eccdc7f9fa"
+    },
+    {
+      "path": "snapshot/templates/core/a1_active_topic.html",
+      "bytes": 18927,
+      "sha256": "72f0adb23f74402a09148914daa9a8e0a2ed71994030a6d063e222749757dae5"
+    },
+    {
+      "path": "snapshot/templates/curriculum/week.html",
+      "bytes": 6302,
+      "sha256": "1348732967be2b67a0815b331fda6dc61491b5902d88b56d4ae5fcb01755bb8e"
+    },
+    {
+      "path": "snapshot/templates/learning/dashboard.html",
+      "bytes": 7491,
+      "sha256": "c5d8cd4ec87cb3ecbb9fe5b5286346ab8aeadd34615a6efffb26d88f6d5972f0"
+    },
+    {
+      "path": "snapshot/templates/learning/independent_check.html",
+      "bytes": 13077,
+      "sha256": "c88ce3ed2dc588a43dcce9675a22a593493c6ec0bb7c085537bd17910649b116"
+    },
+    {
+      "path": "snapshot/templates/learning/mistake_review.html",
+      "bytes": 4695,
+      "sha256": "6cb0476fe842ccb21e2d320e9eab6b680f4d08a4518f9966f277418efef9a6f6"
+    },
+    {
+      "path": "snapshot/templates/learning/speech_review.html",
+      "bytes": 2249,
+      "sha256": "d1770c97757e1a484c1c88e0c21d8c748d3854fa139c90fb3003ade0fe4d672e"
+    },
+    {
+      "path": "snapshot/templates/learning/transfer_pilot.html",
+      "bytes": 5467,
+      "sha256": "d39d3d24878b1eac9168d9464f65df1198433df504242162cc653d903c400af9"
+    },
+    {
+      "path": "snapshot/templates/lessons/detail.html",
+      "bytes": 14146,
+      "sha256": "2500d4ad8190b60a7ba27098ccd584d902a36be7d7504545f099bf81228dea37"
+    },
+    {
+      "path": "snapshot/templates/lexicon/detail.html",
+      "bytes": 5311,
+      "sha256": "be974da446e79c9f19a7f3d7d0aa5257554f770802656658a37dfc84f2cad4b4"
+    },
+    {
+      "path": "snapshot/templates/poems/detail.html",
+      "bytes": 8221,
+      "sha256": "4c62355c581d0efe96a45d95097ff6235ba941f8b69381e2abf8a112fefe2718"
+    },
+    {
+      "path": "snapshot/templates/stories/detail.html",
+      "bytes": 5662,
+      "sha256": "3a680107937e6016a3c31efdc3550e7c5e49b348d8ceb88a1b2b31947f80d194"
+    },
+    {
+      "path": "snapshot/templates/taxonomy/legend.html",
+      "bytes": 2716,
+      "sha256": "e15d007815dd13029c9683b6e1ba288629f91ce61f229bb18f5e160cc39daf89"
+    },
+    {
+      "path": "snapshot/tests/js/a1-active-browser.test.cjs",
+      "bytes": 9671,
+      "sha256": "d489354883e75014ad1327f7c8d0cdb37d8f6c744a320b9f38422163ba092b81"
+    },
+    {
+      "path": "snapshot/tests/js/a1-active.test.cjs",
+      "bytes": 9269,
+      "sha256": "5b0f31e4bdc9a5b2f5c62f2d1ed026de81c6a6c9c1b77acbe1e7a1ca14faf67d"
+    },
+    {
+      "path": "snapshot/tests/js/a1-learning-route.test.cjs",
+      "bytes": 3511,
+      "sha256": "1a7978a10dcf564629c110933a6da0bcb62b1eb0cb9c9b182ad683654be224a3"
+    },
+    {
+      "path": "snapshot/tests/js/audio-player-keyboard.test.cjs",
+      "bytes": 4719,
+      "sha256": "41f1f1a0da87e0c14bba768ae03a6e9300b05006ffb23cb7615d52e94a90ddd0"
+    },
+    {
+      "path": "snapshot/tests/js/audio-player.test.cjs",
+      "bytes": 2046,
+      "sha256": "c476dd9ca0d13b28e7f0fd471e766e8d271982e10d8fdd445a21a3f02c807537"
+    },
+    {
+      "path": "snapshot/tests/js/independent-check.test.cjs",
+      "bytes": 3829,
+      "sha256": "1aa38aba7bfeef42e6716229ce5c08d142676fb66c468cde1e1252e8ad52f393"
+    },
+    {
+      "path": "snapshot/tests/js/speech-review-browser.test.cjs",
+      "bytes": 4943,
+      "sha256": "2388af8700ae305d0f5c9ca9db4a6c957f2c274aa431d2839260a51d989abbbd"
+    },
+    {
+      "path": "snapshot/tests/js/speech-review.test.cjs",
+      "bytes": 3135,
+      "sha256": "ac329dc1a9cfa769e84abd16781858c9844f0fbffac7644f33ab286781921d15"
+    },
+    {
+      "path": "snapshot/tests/js/speech-shadowing.test.cjs",
+      "bytes": 4400,
+      "sha256": "659f3af7e94ff6913daa00497ee514510e49eafea0fb9053423e2a94112d2856"
+    },
+    {
+      "path": "snapshot/tests/js/speech-studio-browser.test.cjs",
+      "bytes": 5604,
+      "sha256": "d70c2ea77f3e3a53a812034d2b12abfd42e45d97e2635b0aa8de8f939bd4eae9"
+    },
+    {
+      "path": "snapshot/tests/js/speech-studio.test.cjs",
+      "bytes": 3205,
+      "sha256": "e7bfbc537da5576698bb0aae0f0717d95d4a364deb29bebeecba049de4e77bd4"
+    },
+    {
+      "path": "snapshot/tests/js/story-player-accessibility.test.cjs",
+      "bytes": 1198,
+      "sha256": "49465e9c58778cd3c16f9bf2e7829c11141440d6f81b139e386ab43534af06b4"
+    },
+    {
+      "path": "snapshot/tests/runner.py",
+      "bytes": 2142,
+      "sha256": "c60e92fcf822674a229bffa2e2d202012bcf9bebe74daf35b6caeccb535145d2"
+    },
+    {
+      "path": "snapshot/tests/test_a1_active_quality.py",
+      "bytes": 4872,
+      "sha256": "b78f191da056c0dabef15a34b879d43c8cdf2cb825aceb528fd469057593eb1a"
+    },
+    {
+      "path": "snapshot/tests/test_a1_active_studio.py",
+      "bytes": 13292,
+      "sha256": "31d8742ee2129789d34025b7fa2f2fb850eb4522181dace893ddcac1e3a4c6b7"
+    },
+    {
+      "path": "snapshot/tests/test_a1_editorial_week01_02.py",
+      "bytes": 4632,
+      "sha256": "5ce374e52cb8394d253a6fc0031dc9ee1bbbcbe4f9e1bf7d024837fa64038ce3"
+    },
+    {
+      "path": "snapshot/tests/test_a1_independent_understanding.py",
+      "bytes": 14061,
+      "sha256": "1b18728e9504ccf10af56b63af43abb6af9e2ed0bf0cb10235bb020bb4aca22a"
+    },
+    {
+      "path": "snapshot/tests/test_a1_mistake_review.py",
+      "bytes": 18805,
+      "sha256": "839ddddb2b3d0508d5e14737b88a963e4dbbe8b8086383377a1013388518cc04"
+    },
+    {
+      "path": "snapshot/tests/test_a1_retry_feedback.py",
+      "bytes": 3283,
+      "sha256": "6b83eadccf79b7f8623883b5fd1095a9fe93367854771ad5f96301fc92cc6ac1"
+    },
+    {
+      "path": "snapshot/tests/test_a1_scaffold_variants.py",
+      "bytes": 25045,
+      "sha256": "1094493210bfbff6df88b2799e7bc61d0fc7b97319eaac05faf89e8f64be761a"
+    },
+    {
+      "path": "snapshot/tests/test_a1_transfer_retention_pilot.py",
+      "bytes": 9818,
+      "sha256": "dff44c40e6e88ef7128e6b0efdf0687546e40cfda8be1db7d6cf3f11539dfb53"
+    },
+    {
+      "path": "snapshot/tests/test_a1_translation.py",
+      "bytes": 6345,
+      "sha256": "5f589511ceb174aeeefb00e835e77bc5419cc655dbf3d9033a930b1ec6c0efb7"
+    },
+    {
+      "path": "snapshot/tests/test_adversarial_content.py",
+      "bytes": 5216,
+      "sha256": "1a6b8d3934af148bad52cca7d61e0a3120a1e795ee596b99ff1b01c4fd0c097b"
+    },
+    {
+      "path": "snapshot/tests/test_atomic_exercise_review.py",
+      "bytes": 2500,
+      "sha256": "0184f7bef7453586d83a824d1f88261e5a80a900ac2019ba7dc4e59ddb496b14"
+    },
+    {
+      "path": "snapshot/tests/test_content_and_learning.py",
+      "bytes": 22448,
+      "sha256": "350159480ec5eb7b83b459188379185f2b383410fccaf82fe849470b36a9bb3c"
+    },
+    {
+      "path": "snapshot/tests/test_grammar_answer_integrity.py",
+      "bytes": 2995,
+      "sha256": "22d79702affd031b99e6f3c04a12ec3d43c8a56ef128a8cf504fc64778ceb89c"
+    },
+    {
+      "path": "snapshot/tests/test_player.py",
+      "bytes": 2201,
+      "sha256": "831948a88e5225ed7ad398641a939d52f0ecf2a7de50208e4f9a443072ba2290"
+    },
+    {
+      "path": "snapshot/tests/test_speech_review.py",
+      "bytes": 10889,
+      "sha256": "5f237d6879f900263c5e86332d878e46a0ef62deb393bfd53218eea8a23a2b5d"
+    },
+    {
+      "path": "snapshot/tests/test_speech_shadowing.py",
+      "bytes": 3792,
+      "sha256": "34d2bbccb8c0e1ee942d633e1790527e68a149e8a23f24ffcb47b5633f41c1c2"
+    },
+    {
+      "path": "snapshot/tests/test_speech_studio.py",
+      "bytes": 4069,
+      "sha256": "1fe5bf43b32c418edc82063cf31fdeabcd7589ceb0fa398958da42fcd8f76ab8"
+    },
+    {
+      "path": "snapshot/uv.lock",
+      "bytes": 88970,
+      "sha256": "19c829d8a3f08ebc02ca2693681be4e51ae0123914d58022464a8fbcbd2704bf"
+    },
+    {
+      "path": "write_status.py",
+      "bytes": 17762,
+      "sha256": "e69061ce4e69518316c70fcf2c6e3639d00e77f3e0bd7ee300c5688737b7cf6d"
+    }
+  ]
+}

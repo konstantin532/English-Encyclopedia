@@ -1,0 +1,40 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "status": "PASS",
+  "scope": "Runtime source selection and compiled data equality; NOT language verification",
+  "database_mode": "read-only isolated fixture",
+  "lessons": [
+    {
+      "slug": "a1-nouns-first-words",
+      "compiled_cards": 20,
+      "guide_exact_match": true,
+      "active_topic_exact_match": true,
+      "loaded_exercise_keys_hints_explanations_match": true,
+      "loaded_translation_keys_hints_explanations_match": true
+    },
+    {
+      "slug": "a1-verb-be",
+      "compiled_cards": 25,
+      "guide_exact_match": true,
+      "active_topic_exact_match": true,
+      "loaded_exercise_keys_hints_explanations_match": true,
+      "loaded_translation_keys_hints_explanations_match": true
+    },
+    {
+      "slug": "a1-determiners-a-the-this-my",
+      "compiled_cards": 30,
+      "guide_exact_match": true,
+      "active_topic_exact_match": true,
+      "loaded_exercise_keys_hints_explanations_match": true,
+      "loaded_translation_keys_hints_explanations_match": true
+    },
+    {
+      "slug": "a1-have-like-can-do",
+      "compiled_cards": 30,
+      "guide_exact_match": true,
+      "active_topic_exact_match": true,
+      "loaded_exercise_keys_hints_explanations_match": true,
+      "loaded_translation_keys_hints_explanations_match": true
+    }
+  ]
+}

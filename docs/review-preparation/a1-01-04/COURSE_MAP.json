@@ -1,0 +1,2272 @@
+{
+  "schema_version": 1,
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "prepared_group": "A1-01-04",
+  "counts_from_parsed_yaml": {
+    "A1": 28,
+    "A1+": 32
+  },
+  "editorial_status": "NOT_REVIEWED",
+  "meaning_of_null": "Not prepared in this group, not a claim that source material is absent",
+  "inventory_scope": "All 60 lesson YAML headers parsed; only A1 lessons1–4 have detailed link extracts",
+  "lessons": [
+    {
+      "level": "A1",
+      "week": 1,
+      "order": 1,
+      "slug": "a1-nouns-first-words",
+      "title": "Существительное: слово, которое называет",
+      "source_path": "content/seed_lessons/a1_w01_l01_nouns.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "1ffd6d9948d0c3c4160b12913ec7c6d50d532704",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "A1-01-04",
+      "detail": {
+        "extract_path": "extracts/A1_01.json",
+        "links": {
+          "week": {
+            "source_path": "content/seed_weeks/a1_w01.yaml",
+            "level": "A1",
+            "week": 1,
+            "basis": "YAML level+week, load_content._week; lesson_detail selects lesson.week"
+          },
+          "stories": [],
+          "poems": [],
+          "active_topic": {
+            "source_path": "content/active_a1/topics_01_08.json",
+            "match": {
+              "slug": "a1-nouns-first-words",
+              "n": 1
+            },
+            "basis": "apps.lessons.views.lesson_detail + apps.core.a1_active._load_topics"
+          },
+          "spoken_missions": {
+            "source_path": "content/active_a1/scenarios_01_06.json",
+            "match": {
+              "n": 1
+            },
+            "basis": "active topics indexed by lesson.order, slug checked; content_details lesson key",
+            "count": 6
+          },
+          "error_repair": {
+            "source_path": "content/active_a1/error_repairs_01_18.json",
+            "match": {
+              "n": 1
+            },
+            "basis": "_load_topics attaches repair by n"
+          },
+          "retry_guidance": {
+            "source_path": "content/manifests/a1_retry_guidance.json",
+            "match": {
+              "slug": "a1-nouns-first-words"
+            },
+            "basis": "retry_guidance: slug then str(exercise.order)"
+          },
+          "delayed_review": {
+            "source_path": "content/manifests/a1_delayed_review_01.json",
+            "match": {
+              "slug": "a1-nouns-first-words"
+            },
+            "basis": "question_bank: slug then str(exercise.order), five cards per exercise",
+            "card_count": 20
+          },
+          "understanding": {
+            "source_path": "content/manifests/a1_understanding_checks.json",
+            "match": {
+              "slug": "a1-nouns-first-words"
+            },
+            "basis": "understanding_bank/get_guide by slug"
+          },
+          "scaffold": {
+            "source_path": "content/manifests/a1_scaffold_transfer.json",
+            "match": {
+              "slug": "a1-nouns-first-words"
+            },
+            "basis": "understanding_bank merges steps and transfer_variants by slug"
+          },
+          "practice_review_links": [
+            {
+              "practice_order": 1,
+              "review_of_exercise_order": 3,
+              "review_of_exercise_uid": "EX-00003"
+            },
+            {
+              "practice_order": 2,
+              "review_of_exercise_order": 3,
+              "review_of_exercise_uid": "EX-00003"
+            },
+            {
+              "practice_order": 3,
+              "review_of_exercise_order": 3,
+              "review_of_exercise_uid": "EX-00003"
+            },
+            {
+              "practice_order": 4,
+              "review_of_exercise_order": 3,
+              "review_of_exercise_uid": "EX-00003"
+            }
+          ],
+          "browser_retrieval": {
+            "source_code": "static/js/a1-active.js",
+            "selector": "retrievalLine(topic): (topic.n - 1) % topic.dialogue.length",
+            "dialogue_index": 0,
+            "selected_line": [
+              "Tom",
+              "This is my phone.",
+              "Это мой телефон."
+            ],
+            "tasks": [
+              "dictation",
+              "back_translation"
+            ],
+            "persistence": "browser only; not a PracticeItem database row",
+            "phonetic_quality": "NOT_VERIFIED"
+          },
+          "optional_transfer_pilot": {
+            "source_path": "apps/learning/transfer_pilot.py",
+            "present": false,
+            "basis": "literal PILOTS dict keys; linked via learning/dashboard.html, separate opt-in workflow, not ordinary lesson tasks"
+          }
+        },
+        "lesson_units": [
+          "LX-00001",
+          "LX-00002",
+          "LX-00003",
+          "LX-00004",
+          "LX-00005",
+          "LX-00006",
+          "LX-00007",
+          "LX-00008",
+          "LX-00009",
+          "LX-00010",
+          "LX-00011",
+          "LX-00012",
+          "LX-00013",
+          "LX-00014",
+          "LX-00015"
+        ],
+        "layer_count": 7,
+        "exercises": [
+          {
+            "order": 1,
+            "uid": "EX-00001",
+            "kind": "choice",
+            "stage": "recognition",
+            "prompt_ru": "Какое слово в этой фразе — существительное?",
+            "prompt_en": "This is my new phone.",
+            "options": [
+              "This",
+              "is",
+              "new",
+              "phone"
+            ],
+            "answer": "phone",
+            "hint_ru": "Задайте вопрос «что это?» к каждому слову.",
+            "explanation_ru": "Phone называет предмет, поэтому это существительное. New описывает, какой телефон; is связывает части фразы, This указывает на предмет.",
+            "units": [
+              "LX-00009"
+            ]
+          },
+          {
+            "order": 2,
+            "uid": "EX-00002",
+            "kind": "fill",
+            "stage": "substitution",
+            "prompt_ru": "Вы представляете подругу: «Это моя подруга». Вставьте слово.",
+            "prompt_en": "This is my ___.",
+            "answer": "friend",
+            "hint_ru": "Одно слово и для «друга», и для «подруги».",
+            "explanation_ru": "Friend не различает пол. Перед ним стоит my, поэтому a не нужен.",
+            "units": [
+              "LX-00004"
+            ]
+          },
+          {
+            "order": 3,
+            "uid": "EX-00003",
+            "kind": "build",
+            "stage": "production",
+            "prompt_ru": "Соберите фразу: «Меня зовут Анна».",
+            "options": [
+              "name",
+              "Anna",
+              "My",
+              "is"
+            ],
+            "answer": "My name is Anna",
+            "hint_ru": "Сначала My name («моё имя»), затем is и имя человека.",
+            "explanation_ru": "My — «моё», name — «имя», is связывает их с Anna. Готовая фраза My name is Anna означает «Меня зовут Анна», хотя дословный порядок другой.",
+            "units": [
+              "LX-00015"
+            ]
+          },
+          {
+            "order": 4,
+            "uid": "EX-00004",
+            "kind": "fill",
+            "stage": "transfer",
+            "prompt_ru": "Новая ситуация: вы показываете гостю свою книгу и говорите, что она новая. Можно ответить одной или двумя короткими фразами.",
+            "prompt_en": "___",
+            "answer": "This is my book. It is new.",
+            "accepted": [
+              "This is my book. It's new.",
+              "This is my book. It is new",
+              "This is my new book."
+            ],
+            "hint_ru": "Сначала This is my…, потом It is…",
+            "explanation_ru": "This is my book. It is new. Сначала назвали книгу, потом сказали о её свойстве. Можно объединить: This is my new book — указатель my стоит перед new book.",
+            "units": [
+              "LX-00008",
+              "LX-00027"
+            ]
+          }
+        ],
+        "practice": [
+          {
+            "order": 1,
+            "kind": "translate",
+            "prompt_ru": "Это мой дом.",
+            "answer": "This is my house.",
+            "accepted": [
+              "This is my home."
+            ],
+            "hint_ru": "Начните с This is…",
+            "explanation_ru": "This is my house: this — «это», my — «мой», house — существительное. В английском перед существительным стоит маленькое слово-указатель my.",
+            "review_of": 3,
+            "units": [
+              "LX-00006"
+            ]
+          },
+          {
+            "order": 2,
+            "kind": "translate",
+            "prompt_ru": "Доброе утро! Как вас зовут?",
+            "answer": "Good morning! What is your name?",
+            "hint_ru": "Вопрос об имени начинается с What.",
+            "explanation_ru": "Good morning! What is your name? По-английски спрашивают «Какое ваше имя?», а не «Как вас зовут?».",
+            "review_of": 3,
+            "units": [
+              "LX-00014",
+              "LX-00015"
+            ]
+          },
+          {
+            "order": 3,
+            "kind": "translate",
+            "prompt_ru": "Меня зовут Анна.",
+            "answer": "My name is Anna.",
+            "accepted": [
+              "I am Anna."
+            ],
+            "hint_ru": "«Моё имя — Анна».",
+            "explanation_ru": "My name is Anna. Буквально «Моё имя есть Анна». Можно и короче: I'm Anna.",
+            "review_of": 3,
+            "units": [
+              "LX-00015"
+            ]
+          },
+          {
+            "order": 4,
+            "kind": "translate",
+            "prompt_ru": "Хорошего дня!",
+            "answer": "Have a nice day!",
+            "hint_ru": "Готовая фраза недели.",
+            "explanation_ru": "Have a nice day! — готовая фраза: её говорят на прощание в магазине, в кафе, соседу.",
+            "review_of": 3,
+            "units": [
+              "LX-00012"
+            ]
+          }
+        ],
+        "sound_notes": [
+          {
+            "text": "I'm home.",
+            "ipa": "/aɪm ˈhoʊm/",
+            "note_ru": "I am сливается в одно слово"
+          },
+          {
+            "text": "Have a nice day!",
+            "ipa": "/hæv‿ə ˈnaɪs ˈdeɪ/",
+            "note_ru": "v прилипает к a, a звучит как короткое /ə/"
+          },
+          {
+            "text": "water",
+            "ipa": "/ˈwɑt̬ɚ/",
+            "note_ru": "американское t между гласными звучит как быстрое d"
+          }
+        ],
+        "contractions": [],
+        "explicit_dictionary_uids": [
+          "LX-00001",
+          "LX-00002",
+          "LX-00003",
+          "LX-00004",
+          "LX-00005",
+          "LX-00006",
+          "LX-00007",
+          "LX-00008",
+          "LX-00009",
+          "LX-00010",
+          "LX-00011",
+          "LX-00012",
+          "LX-00013",
+          "LX-00014",
+          "LX-00015",
+          "LX-00027",
+          "LX-00042",
+          "LX-00043",
+          "LX-00044",
+          "LX-00045",
+          "LX-00046",
+          "LX-00047",
+          "LX-00048"
+        ],
+        "dictionary_source_paths": [
+          "content/seed_lexicon/a1_w01_core.yaml",
+          "content/seed_lexicon/a1_w01_nouns.yaml",
+          "content/seed_lexicon/a1_w01_phrases.yaml"
+        ],
+        "prerequisites": {
+          "prior_lessons_in_course_order": [],
+          "status": "ORDER_ONLY_NOT_A_PEDAGOGICAL_PROOF",
+          "grammar_dependencies_from_dictionary": [],
+          "reviewer_questions": [
+            "Does the learner encounter unknown grammar before it is explained?",
+            "Are early full sentences explicitly taught as chunks rather than presumed prior knowledge?"
+          ]
+        }
+      }
+    },
+    {
+      "level": "A1",
+      "week": 1,
+      "order": 2,
+      "slug": "a1-verb-be",
+      "title": "Глагол be: «есть», который русский прячет",
+      "source_path": "content/seed_lessons/a1_w01_l02_be.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "3726d5cfbacd7af774d99de395827e70d8140901",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "A1-01-04",
+      "detail": {
+        "extract_path": "extracts/A1_02.json",
+        "links": {
+          "week": {
+            "source_path": "content/seed_weeks/a1_w01.yaml",
+            "level": "A1",
+            "week": 1,
+            "basis": "YAML level+week, load_content._week; lesson_detail selects lesson.week"
+          },
+          "stories": [],
+          "poems": [],
+          "active_topic": {
+            "source_path": "content/active_a1/topics_01_08.json",
+            "match": {
+              "slug": "a1-verb-be",
+              "n": 2
+            },
+            "basis": "apps.lessons.views.lesson_detail + apps.core.a1_active._load_topics"
+          },
+          "spoken_missions": {
+            "source_path": "content/active_a1/scenarios_01_06.json",
+            "match": {
+              "n": 2
+            },
+            "basis": "active topics indexed by lesson.order, slug checked; content_details lesson key",
+            "count": 6
+          },
+          "error_repair": {
+            "source_path": "content/active_a1/error_repairs_01_18.json",
+            "match": {
+              "n": 2
+            },
+            "basis": "_load_topics attaches repair by n"
+          },
+          "retry_guidance": {
+            "source_path": "content/manifests/a1_retry_guidance.json",
+            "match": {
+              "slug": "a1-verb-be"
+            },
+            "basis": "retry_guidance: slug then str(exercise.order)"
+          },
+          "delayed_review": {
+            "source_path": "content/manifests/a1_delayed_review_02.json",
+            "match": {
+              "slug": "a1-verb-be"
+            },
+            "basis": "question_bank: slug then str(exercise.order), five cards per exercise",
+            "card_count": 25
+          },
+          "understanding": {
+            "source_path": "content/manifests/a1_understanding_checks.json",
+            "match": {
+              "slug": "a1-verb-be"
+            },
+            "basis": "understanding_bank/get_guide by slug"
+          },
+          "scaffold": {
+            "source_path": "content/manifests/a1_scaffold_transfer.json",
+            "match": {
+              "slug": "a1-verb-be"
+            },
+            "basis": "understanding_bank merges steps and transfer_variants by slug"
+          },
+          "practice_review_links": [
+            {
+              "practice_order": 1,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00008"
+            },
+            {
+              "practice_order": 2,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00008"
+            },
+            {
+              "practice_order": 3,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00008"
+            },
+            {
+              "practice_order": 4,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00008"
+            }
+          ],
+          "browser_retrieval": {
+            "source_code": "static/js/a1-active.js",
+            "selector": "retrievalLine(topic): (topic.n - 1) % topic.dialogue.length",
+            "dialogue_index": 1,
+            "selected_line": [
+              "Mia",
+              "Yes, Tom is home.",
+              "Да, Том дома."
+            ],
+            "tasks": [
+              "dictation",
+              "back_translation"
+            ],
+            "persistence": "browser only; not a PracticeItem database row",
+            "phonetic_quality": "NOT_VERIFIED"
+          },
+          "optional_transfer_pilot": {
+            "source_path": "apps/learning/transfer_pilot.py",
+            "present": true,
+            "basis": "literal PILOTS dict keys; linked via learning/dashboard.html, separate opt-in workflow, not ordinary lesson tasks"
+          }
+        },
+        "lesson_units": [
+          "LX-00016",
+          "LX-00017",
+          "LX-00018",
+          "LX-00019",
+          "LX-00030",
+          "LX-00031",
+          "LX-00032",
+          "LX-00023",
+          "LX-00028"
+        ],
+        "layer_count": 7,
+        "exercises": [
+          {
+            "order": 1,
+            "uid": "EX-00005",
+            "kind": "choice",
+            "stage": "recognition",
+            "prompt_ru": "Какое слово в этой фразе — глагол be?",
+            "prompt_en": "Anna is my friend.",
+            "options": [
+              "Anna",
+              "is",
+              "my",
+              "friend"
+            ],
+            "answer": "is",
+            "hint_ru": "Ищите слово, которого нет в русском переводе «Анна — моя подруга».",
+            "explanation_ru": "Is — форма be для Anna (одного человека). В русском «Анна — моя подруга» отдельного глагола обычно нет: вместо него на письме можно поставить тире.",
+            "units": [
+              "LX-00016"
+            ]
+          },
+          {
+            "order": 2,
+            "uid": "EX-00006",
+            "kind": "choice",
+            "stage": "substitution",
+            "prompt_ru": "Выберите форму be: «Ты мой друг».",
+            "prompt_en": "You ___ my friend.",
+            "options": [
+              "am",
+              "is",
+              "are"
+            ],
+            "answer": "are",
+            "hint_ru": "С you (ты или вы) используется are. Сравните I am, you are, it is.",
+            "explanation_ru": "В этой фразе подлежащее you, поэтому выбираем are. С I было бы am, с it — is.",
+            "units": [
+              "LX-00016",
+              "LX-00018"
+            ]
+          },
+          {
+            "order": 3,
+            "uid": "EX-00007",
+            "kind": "fill",
+            "stage": "substitution",
+            "prompt_ru": "Впишите форму be: «Я дома».",
+            "prompt_en": "I ___ at home.",
+            "answer": "am",
+            "hint_ru": "Начало I означает «я». В таблице ему соответствует am.",
+            "explanation_ru": "Подлежащее I требует форму am: I am at home. В разговоре возможна форма I'm at home. Сравните: Anna is at home.",
+            "units": [
+              "LX-00016",
+              "LX-00017",
+              "LX-00023"
+            ]
+          },
+          {
+            "order": 4,
+            "uid": "EX-00008",
+            "kind": "build",
+            "stage": "production",
+            "prompt_ru": "Соберите фразу: «Это не телефон».",
+            "options": [
+              "not",
+              "phone",
+              "It",
+              "a",
+              "is"
+            ],
+            "answer": "It is not a phone",
+            "accepted": [
+              "It isn't a phone",
+              "It's not a phone"
+            ],
+            "hint_ru": "Сначала It, затем is, сразу после него not, потом a phone.",
+            "explanation_ru": "В полном отрицательном предложении с be порядок такой: It → is → not → a phone. Сокращение сохраняет смысл: It isn't a phone.",
+            "units": [
+              "LX-00016",
+              "LX-00019",
+              "LX-00030"
+            ]
+          },
+          {
+            "order": 5,
+            "uid": "EX-00009",
+            "kind": "fill",
+            "stage": "transfer",
+            "prompt_ru": "Новая ситуация: гость спрашивает «Is it your room?», а это не ваша комната. Ответьте полностью.",
+            "prompt_en": "Is it your room? — ___",
+            "answer": "No, it is not my room.",
+            "accepted": [
+              "No, it isn't my room.",
+              "No, it's not my room.",
+              "No, it is not my room"
+            ],
+            "hint_ru": "No, затем it is not и чья комната.",
+            "explanation_ru": "Вопрос начинается Is it your room? Для ответа меняем your («твоя») на my («моя»): No, it is not my room. В разговоре: No, it isn't my room.",
+            "units": [
+              "LX-00030",
+              "LX-00007"
+            ]
+          }
+        ],
+        "practice": [
+          {
+            "order": 1,
+            "kind": "translate",
+            "prompt_ru": "Я дома.",
+            "answer": "I am at home.",
+            "accepted": [
+              "I am home."
+            ],
+            "hint_ru": "В русском «есть» спрятано. В английском — нет.",
+            "explanation_ru": "I am at home. Без am не обойтись: в английском be не прячется. В разговоре: I'm home.",
+            "review_of": 4,
+            "units": [
+              "LX-00016",
+              "LX-00017",
+              "LX-00023"
+            ]
+          },
+          {
+            "order": 2,
+            "kind": "translate",
+            "prompt_ru": "Ты мой друг.",
+            "answer": "You are my friend.",
+            "hint_ru": "С you — are.",
+            "explanation_ru": "You are my friend. В настоящем времени в этой конструкции с you используется are: you are, you're.",
+            "review_of": 4,
+            "units": [
+              "LX-00016",
+              "LX-00018"
+            ]
+          },
+          {
+            "order": 3,
+            "kind": "translate",
+            "prompt_ru": "Это не мой телефон.",
+            "answer": "It is not my phone.",
+            "accepted": [
+              "This is not my phone."
+            ],
+            "hint_ru": "not ставим сразу после is.",
+            "explanation_ru": "It is not my phone. Отрицание: is + not. В разговоре: It isn't my phone.",
+            "review_of": 4,
+            "units": [
+              "LX-00016",
+              "LX-00019",
+              "LX-00030"
+            ]
+          },
+          {
+            "order": 4,
+            "kind": "translate",
+            "prompt_ru": "Ты из России?",
+            "answer": "Are you from Russia?",
+            "hint_ru": "В вопросе are встаёт впереди.",
+            "explanation_ru": "Are you from Russia? Вопрос с be — перестановка: you are → are you.",
+            "review_of": 4,
+            "units": [
+              "LX-00016",
+              "LX-00018"
+            ]
+          }
+        ],
+        "sound_notes": [
+          {
+            "text": "It's nice.",
+            "ipa": "/ɪts ˈnaɪs/",
+            "note_ru": "it is → it's"
+          },
+          {
+            "text": "You're my friend.",
+            "ipa": "/jɚ maɪ ˈfrend/",
+            "note_ru": "you're звучит как your"
+          },
+          {
+            "text": "It isn't my book.",
+            "ipa": "/ɪt ˈɪzənt maɪ ˈbʊk/",
+            "note_ru": "n't звучит как слабое /ənt/"
+          }
+        ],
+        "contractions": [
+          {
+            "full": "I am",
+            "short": "I'm",
+            "ipa": "/aɪm/",
+            "note_ru": "am присоединяется к I: произносите слитно."
+          },
+          {
+            "full": "you are",
+            "short": "you're",
+            "ipa": "/jɚ/",
+            "note_ru": "Без ударения звучит как your."
+          },
+          {
+            "full": "it is",
+            "short": "it's",
+            "ipa": "/ɪts/",
+            "note_ru": "is сокращается до /s/ после it."
+          },
+          {
+            "full": "is not",
+            "short": "isn't",
+            "ipa": "/ˈɪzənt/",
+            "note_ru": "Отрицание присоединяется к is; слышно слабое /ənt/."
+          },
+          {
+            "full": "are not",
+            "short": "aren't",
+            "ipa": "/ɑrnt/",
+            "note_ru": "В американском варианте сохраняется звук /r/."
+          }
+        ],
+        "explicit_dictionary_uids": [
+          "LX-00007",
+          "LX-00016",
+          "LX-00017",
+          "LX-00018",
+          "LX-00019",
+          "LX-00023",
+          "LX-00028",
+          "LX-00030",
+          "LX-00031",
+          "LX-00032",
+          "LX-00042",
+          "LX-00043",
+          "LX-00044",
+          "LX-00045",
+          "LX-00046",
+          "LX-00047",
+          "LX-00048"
+        ],
+        "dictionary_source_paths": [
+          "content/seed_lexicon/a1_w01_core.yaml",
+          "content/seed_lexicon/a1_w01_nouns.yaml",
+          "content/seed_lexicon/a1_w01_phrases.yaml"
+        ],
+        "prerequisites": {
+          "prior_lessons_in_course_order": [
+            "a1-nouns-first-words"
+          ],
+          "status": "ORDER_ONLY_NOT_A_PEDAGOGICAL_PROOF",
+          "grammar_dependencies_from_dictionary": [],
+          "reviewer_questions": [
+            "Does the learner encounter unknown grammar before it is explained?",
+            "Are early full sentences explicitly taught as chunks rather than presumed prior knowledge?"
+          ]
+        }
+      }
+    },
+    {
+      "level": "A1",
+      "week": 2,
+      "order": 3,
+      "slug": "a1-determiners-a-the-this-my",
+      "title": "a, the, this, my: маленькие указатели",
+      "source_path": "content/seed_lessons/a1_w02_l03_determiners.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "62ad208fb3cfc347f5a6219170132bd9e0e61155",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "A1-01-04",
+      "detail": {
+        "extract_path": "extracts/A1_03.json",
+        "links": {
+          "week": {
+            "source_path": "content/seed_weeks/a1_w02.yaml",
+            "level": "A1",
+            "week": 2,
+            "basis": "YAML level+week, load_content._week; lesson_detail selects lesson.week"
+          },
+          "stories": [
+            {
+              "number": 1,
+              "source_path": "content/seed_stories/s01_not_my_box.yaml",
+              "basis": "same scheduled week, not a direct lesson foreign key"
+            }
+          ],
+          "poems": [
+            {
+              "number": 1,
+              "source_path": "content/seed_poems/p01_my_new_home.yaml",
+              "basis": "same scheduled week, not a direct lesson foreign key"
+            }
+          ],
+          "active_topic": {
+            "source_path": "content/active_a1/topics_01_08.json",
+            "match": {
+              "slug": "a1-determiners-a-the-this-my",
+              "n": 3
+            },
+            "basis": "apps.lessons.views.lesson_detail + apps.core.a1_active._load_topics"
+          },
+          "spoken_missions": {
+            "source_path": "content/active_a1/scenarios_01_06.json",
+            "match": {
+              "n": 3
+            },
+            "basis": "active topics indexed by lesson.order, slug checked; content_details lesson key",
+            "count": 6
+          },
+          "error_repair": {
+            "source_path": "content/active_a1/error_repairs_01_18.json",
+            "match": {
+              "n": 3
+            },
+            "basis": "_load_topics attaches repair by n"
+          },
+          "retry_guidance": {
+            "source_path": "content/manifests/a1_retry_guidance.json",
+            "match": {
+              "slug": "a1-determiners-a-the-this-my"
+            },
+            "basis": "retry_guidance: slug then str(exercise.order)"
+          },
+          "delayed_review": {
+            "source_path": "content/manifests/a1_delayed_review_03.json",
+            "match": {
+              "slug": "a1-determiners-a-the-this-my"
+            },
+            "basis": "question_bank: slug then str(exercise.order), five cards per exercise",
+            "card_count": 30
+          },
+          "understanding": {
+            "source_path": "content/manifests/a1_understanding_checks.json",
+            "match": {
+              "slug": "a1-determiners-a-the-this-my"
+            },
+            "basis": "understanding_bank/get_guide by slug"
+          },
+          "scaffold": {
+            "source_path": "content/manifests/a1_scaffold_transfer.json",
+            "match": {
+              "slug": "a1-determiners-a-the-this-my"
+            },
+            "basis": "understanding_bank merges steps and transfer_variants by slug"
+          },
+          "practice_review_links": [
+            {
+              "practice_order": 1,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00013"
+            },
+            {
+              "practice_order": 2,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00013"
+            },
+            {
+              "practice_order": 3,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00013"
+            },
+            {
+              "practice_order": 4,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00013"
+            }
+          ],
+          "browser_retrieval": {
+            "source_code": "static/js/a1-active.js",
+            "selector": "retrievalLine(topic): (topic.n - 1) % topic.dialogue.length",
+            "dialogue_index": 2,
+            "selected_line": [
+              "Tom",
+              "It's my book.",
+              "Это моя книга."
+            ],
+            "tasks": [
+              "dictation",
+              "back_translation"
+            ],
+            "persistence": "browser only; not a PracticeItem database row",
+            "phonetic_quality": "NOT_VERIFIED"
+          },
+          "optional_transfer_pilot": {
+            "source_path": "apps/learning/transfer_pilot.py",
+            "present": false,
+            "basis": "literal PILOTS dict keys; linked via learning/dashboard.html, separate opt-in workflow, not ordinary lesson tasks"
+          }
+        },
+        "lesson_units": [
+          "LX-00022",
+          "LX-00037",
+          "LX-00020",
+          "LX-00038",
+          "LX-00021",
+          "LX-00039",
+          "LX-00017",
+          "LX-00018",
+          "LX-00019",
+          "LX-00481",
+          "LX-00482",
+          "LX-00483",
+          "LX-00484",
+          "LX-00485",
+          "LX-00486",
+          "LX-00487",
+          "LX-00488",
+          "LX-00489",
+          "LX-00490"
+        ],
+        "layer_count": 7,
+        "exercises": [
+          {
+            "order": 1,
+            "uid": "EX-00010",
+            "kind": "choice",
+            "stage": "recognition",
+            "prompt_ru": "Вы представляете собеседнику одну пока неизвестную ему книгу: «У меня есть книга». Что вставить?",
+            "prompt_en": "I have ___ book.",
+            "options": [
+              "a",
+              "the"
+            ],
+            "answer": "a",
+            "hint_ru": "Собеседник ещё ничего не знает об этой книге.",
+            "explanation_ru": "Говорящий представляет одну пока неопределённую книгу, поэтому a. Когда собеседник уже понимает, какая это книга, можно сказать the book. Не всякое первое упоминание автоматически требует a.",
+            "units": [
+              "LX-00022",
+              "LX-00037"
+            ]
+          },
+          {
+            "order": 2,
+            "uid": "EX-00011",
+            "kind": "choice",
+            "stage": "substitution",
+            "prompt_ru": "Вы показываете на дом на другой стороне улицы: «Тот дом новый».",
+            "prompt_en": "___ house is new.",
+            "options": [
+              "This",
+              "That"
+            ],
+            "answer": "That",
+            "hint_ru": "Дом далеко от вас.",
+            "explanation_ru": "That — о том, что подальше. This — о том, что рядом.",
+            "units": [
+              "LX-00038"
+            ]
+          },
+          {
+            "order": 3,
+            "uid": "EX-00012",
+            "kind": "fill",
+            "stage": "substitution",
+            "prompt_ru": "Вы нашли чужой телефон: «Это твой телефон?»",
+            "prompt_en": "Is this ___ phone?",
+            "answer": "your",
+            "hint_ru": "Не you're: нужно слово «твой».",
+            "explanation_ru": "Your — притяжательный детерминатив «твой, ваш». You're — это сокращение от you are.",
+            "units": [
+              "LX-00039"
+            ]
+          },
+          {
+            "order": 4,
+            "uid": "EX-00013",
+            "kind": "build",
+            "stage": "production",
+            "prompt_ru": "Соберите фразу: «Эта комната большая».",
+            "options": [
+              "big",
+              "room",
+              "This",
+              "is"
+            ],
+            "answer": "This room is big",
+            "hint_ru": "Указатель стоит перед существительным.",
+            "explanation_ru": "This room — группа «указатель + существительное», затем be и признак: This room is big.",
+            "units": [
+              "LX-00020",
+              "LX-00024"
+            ]
+          },
+          {
+            "order": 5,
+            "uid": "EX-00014",
+            "kind": "fill",
+            "stage": "transfer",
+            "prompt_ru": "Новая ситуация: вы показываете две комнаты — рядом большую, подальше новую. Скажите об обеих.",
+            "prompt_en": "___",
+            "answer": "This room is big. That room is new.",
+            "accepted": [
+              "This room is big and that room is new.",
+              "This room is big. That room is new"
+            ],
+            "hint_ru": "Рядом — this, подальше — that.",
+            "explanation_ru": "This room is big. That room is new. this — то, что рядом, that — то, что подальше.",
+            "units": [
+              "LX-00020",
+              "LX-00038",
+              "LX-00007"
+            ]
+          },
+          {
+            "order": 6,
+            "uid": "EX-00015",
+            "kind": "fill",
+            "stage": "transfer",
+            "prompt_en": "___",
+            "prompt_ru": "Новая ситуация: вы показываете гостю один незнакомый ему стол. Представьте стол и скажите, что он новый, двумя предложениями.",
+            "answer": "This is a table. The table is new.",
+            "accepted": [
+              "This is a table. It is new.",
+              "This is a table. It’s new.",
+              "This is a table. It's new."
+            ],
+            "hint_ru": "Сначала This is a…, затем The… is new или It is new.",
+            "explanation_ru": "This is a table. The table is new. Сначала вводим неопределённый предмет с a, затем говорим об уже определённом предмете с the. It is new тоже передаёт нужный смысл.",
+            "units": [
+              "LX-00485"
+            ]
+          }
+        ],
+        "practice": [
+          {
+            "order": 1,
+            "kind": "translate",
+            "prompt_ru": "Это моя кухня.",
+            "answer": "This is my kitchen.",
+            "hint_ru": "this — то, что рядом.",
+            "explanation_ru": "This is my kitchen. My показывает, чья кухня. В этой полной фразе перед kitchen нужен определитель: my сохраняет смысл «моя», а a kitchen означало бы просто «кухня».",
+            "review_of": 4,
+            "units": [
+              "LX-00020",
+              "LX-00021",
+              "LX-00481"
+            ]
+          },
+          {
+            "order": 2,
+            "kind": "translate",
+            "prompt_ru": "То — твоя комната.",
+            "answer": "That is your room.",
+            "hint_ru": "that — то, что дальше.",
+            "explanation_ru": "That is your room. This — рядом с говорящим, that — подальше.",
+            "review_of": 4,
+            "units": [
+              "LX-00038",
+              "LX-00039",
+              "LX-00484"
+            ]
+          },
+          {
+            "order": 3,
+            "kind": "translate",
+            "prompt_ru": "У меня есть стол. Стол большой.",
+            "answer": "I have a table. The table is big.",
+            "accepted": [
+              "I have a table. It is big.",
+              "I have a table. It's big."
+            ],
+            "hint_ru": "Сначала a, потом the.",
+            "explanation_ru": "I have a table. The table is big. Здесь a table представляет один стол, а the table отсылает к нему же во второй фразе. Выбор зависит от понятности предмета собеседнику, а не только от номера упоминания.",
+            "review_of": 4,
+            "units": [
+              "LX-00022",
+              "LX-00037",
+              "LX-00017",
+              "LX-00485"
+            ]
+          },
+          {
+            "order": 4,
+            "kind": "translate",
+            "prompt_ru": "Это не моя коробка.",
+            "answer": "It is not my box.",
+            "accepted": [
+              "This is not my box."
+            ],
+            "hint_ru": "Как в первой истории про Box.",
+            "explanation_ru": "It is not my box — помните первую историю? В разговоре: It isn't my box.",
+            "review_of": 4,
+            "units": [
+              "LX-00021",
+              "LX-00019"
+            ]
+          }
+        ],
+        "sound_notes": [
+          {
+            "text": "the book",
+            "ipa": "/ðə ˈbʊk/",
+            "note_ru": "the перед согласным звуком: /ðə/"
+          },
+          {
+            "text": "That's nice!",
+            "ipa": "/ðæts ˈnaɪs/",
+            "note_ru": "that is → that's"
+          },
+          {
+            "text": "Is this your phone?",
+            "ipa": "/ɪz ðɪʃ jɚ ˈfoʊn/",
+            "note_ru": "в быстрой речи s + y сливаются в /ʃ/"
+          }
+        ],
+        "contractions": [
+          {
+            "full": "that is",
+            "short": "that's",
+            "ipa": "/ðæts/",
+            "note_ru": "is сокращается до /s/ после that."
+          }
+        ],
+        "explicit_dictionary_uids": [
+          "LX-00007",
+          "LX-00017",
+          "LX-00018",
+          "LX-00019",
+          "LX-00020",
+          "LX-00021",
+          "LX-00022",
+          "LX-00024",
+          "LX-00033",
+          "LX-00034",
+          "LX-00036",
+          "LX-00037",
+          "LX-00038",
+          "LX-00039",
+          "LX-00040",
+          "LX-00041",
+          "LX-00049",
+          "LX-00050",
+          "LX-00051",
+          "LX-00052",
+          "LX-00053",
+          "LX-00054",
+          "LX-00481",
+          "LX-00482",
+          "LX-00483",
+          "LX-00484",
+          "LX-00485",
+          "LX-00486",
+          "LX-00487",
+          "LX-00488",
+          "LX-00489",
+          "LX-00490",
+          "LX-00491",
+          "LX-00500"
+        ],
+        "dictionary_source_paths": [
+          "content/seed_lexicon/a1_w01_core.yaml",
+          "content/seed_lexicon/a1_w01_nouns.yaml",
+          "content/seed_lexicon/a1_w02_core.yaml",
+          "content/seed_lexicon/a1_w02_home_plus.yaml",
+          "content/seed_lexicon/a1_w02_phrases.yaml",
+          "content/seed_lexicon/a1_w02_story01.yaml"
+        ],
+        "prerequisites": {
+          "prior_lessons_in_course_order": [
+            "a1-nouns-first-words",
+            "a1-verb-be"
+          ],
+          "status": "ORDER_ONLY_NOT_A_PEDAGOGICAL_PROOF",
+          "grammar_dependencies_from_dictionary": [],
+          "reviewer_questions": [
+            "Does the learner encounter unknown grammar before it is explained?",
+            "Are early full sentences explicitly taught as chunks rather than presumed prior knowledge?"
+          ]
+        }
+      }
+    },
+    {
+      "level": "A1",
+      "week": 2,
+      "order": 4,
+      "slug": "a1-have-like-can-do",
+      "title": "have, like, can и вопросы с do",
+      "source_path": "content/seed_lessons/a1_w02_l04_have_like_can.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "166e03b13622c2fd382b981b6ad3755d9bb9f2a8",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "A1-01-04",
+      "detail": {
+        "extract_path": "extracts/A1_04.json",
+        "links": {
+          "week": {
+            "source_path": "content/seed_weeks/a1_w02.yaml",
+            "level": "A1",
+            "week": 2,
+            "basis": "YAML level+week, load_content._week; lesson_detail selects lesson.week"
+          },
+          "stories": [
+            {
+              "number": 1,
+              "source_path": "content/seed_stories/s01_not_my_box.yaml",
+              "basis": "same scheduled week, not a direct lesson foreign key"
+            }
+          ],
+          "poems": [
+            {
+              "number": 1,
+              "source_path": "content/seed_poems/p01_my_new_home.yaml",
+              "basis": "same scheduled week, not a direct lesson foreign key"
+            }
+          ],
+          "active_topic": {
+            "source_path": "content/active_a1/topics_01_08.json",
+            "match": {
+              "slug": "a1-have-like-can-do",
+              "n": 4
+            },
+            "basis": "apps.lessons.views.lesson_detail + apps.core.a1_active._load_topics"
+          },
+          "spoken_missions": {
+            "source_path": "content/active_a1/scenarios_01_06.json",
+            "match": {
+              "n": 4
+            },
+            "basis": "active topics indexed by lesson.order, slug checked; content_details lesson key",
+            "count": 6
+          },
+          "error_repair": {
+            "source_path": "content/active_a1/error_repairs_01_18.json",
+            "match": {
+              "n": 4
+            },
+            "basis": "_load_topics attaches repair by n"
+          },
+          "retry_guidance": {
+            "source_path": "content/manifests/a1_retry_guidance.json",
+            "match": {
+              "slug": "a1-have-like-can-do"
+            },
+            "basis": "retry_guidance: slug then str(exercise.order)"
+          },
+          "delayed_review": {
+            "source_path": "content/manifests/a1_delayed_review_04.json",
+            "match": {
+              "slug": "a1-have-like-can-do"
+            },
+            "basis": "question_bank: slug then str(exercise.order), five cards per exercise",
+            "card_count": 30
+          },
+          "understanding": {
+            "source_path": "content/manifests/a1_understanding_checks.json",
+            "match": {
+              "slug": "a1-have-like-can-do"
+            },
+            "basis": "understanding_bank/get_guide by slug"
+          },
+          "scaffold": {
+            "source_path": "content/manifests/a1_scaffold_transfer.json",
+            "match": {
+              "slug": "a1-have-like-can-do"
+            },
+            "basis": "understanding_bank merges steps and transfer_variants by slug"
+          },
+          "practice_review_links": [
+            {
+              "practice_order": 1,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00019"
+            },
+            {
+              "practice_order": 2,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00019"
+            },
+            {
+              "practice_order": 3,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00019"
+            },
+            {
+              "practice_order": 4,
+              "review_of_exercise_order": 4,
+              "review_of_exercise_uid": "EX-00019"
+            }
+          ],
+          "browser_retrieval": {
+            "source_code": "static/js/a1-active.js",
+            "selector": "retrievalLine(topic): (topic.n - 1) % topic.dialogue.length",
+            "dialogue_index": 0,
+            "selected_line": [
+              "Mia",
+              "Do you have my phone?",
+              "У тебя мой телефон?"
+            ],
+            "tasks": [
+              "dictation",
+              "back_translation"
+            ],
+            "persistence": "browser only; not a PracticeItem database row",
+            "phonetic_quality": "NOT_VERIFIED"
+          },
+          "optional_transfer_pilot": {
+            "source_path": "apps/learning/transfer_pilot.py",
+            "present": true,
+            "basis": "literal PILOTS dict keys; linked via learning/dashboard.html, separate opt-in workflow, not ordinary lesson tasks"
+          }
+        },
+        "lesson_units": [
+          "LX-00033",
+          "LX-00034",
+          "LX-00035",
+          "LX-00036",
+          "LX-00029",
+          "LX-00031",
+          "LX-00032",
+          "LX-00491",
+          "LX-00492",
+          "LX-00493",
+          "LX-00494",
+          "LX-00495",
+          "LX-00496",
+          "LX-00497",
+          "LX-00498",
+          "LX-00499",
+          "LX-00500"
+        ],
+        "layer_count": 7,
+        "exercises": [
+          {
+            "order": 1,
+            "uid": "EX-00016",
+            "kind": "choice",
+            "stage": "recognition",
+            "prompt_ru": "Как правильно сказать «Мне нравится кофе»?",
+            "options": [
+              "I like coffee.",
+              "I likes coffee.",
+              "I coffee like."
+            ],
+            "answer": "I like coffee.",
+            "hint_ru": "Кто первым словом — тот, кому нравится.",
+            "explanation_ru": "По-английски «мне нравится» строится от человека: I like coffee. После I нужен like без -s. Обычный порядок слов: кто — глагол — что.",
+            "units": [
+              "LX-00034"
+            ]
+          },
+          {
+            "order": 2,
+            "uid": "EX-00017",
+            "kind": "fill",
+            "stage": "substitution",
+            "prompt_ru": "Вас спросили: «У тебя есть телефон?» Ответьте «Да» коротким хвостом.",
+            "prompt_en": "Do you have a phone? — Yes, I ___.",
+            "answer": "do",
+            "hint_ru": "Повторите глагол-помощник из вопроса.",
+            "explanation_ru": "В коротком ответе повторяют помощника из вопроса: Do you…? — Yes, I do.",
+            "units": [
+              "LX-00036",
+              "LX-00031"
+            ]
+          },
+          {
+            "order": 3,
+            "uid": "EX-00018",
+            "kind": "choice",
+            "stage": "substitution",
+            "prompt_ru": "Вы в кафе и хотите вежливо попросить воды.",
+            "options": [
+              "Can I have water, please?",
+              "I can water, please?",
+              "Do I water, please?"
+            ],
+            "answer": "Can I have water, please?",
+            "hint_ru": "Нужны can и глагол have.",
+            "explanation_ru": "Can I have …, please? — стандартная вежливая просьба. После can нужен глагол: have.",
+            "units": [
+              "LX-00035",
+              "LX-00033",
+              "LX-00029"
+            ]
+          },
+          {
+            "order": 4,
+            "uid": "EX-00019",
+            "kind": "build",
+            "stage": "production",
+            "prompt_ru": "Соберите вопрос: «У тебя есть книга?»",
+            "options": [
+              "have",
+              "a",
+              "Do",
+              "book",
+              "you"
+            ],
+            "answer": "Do you have a book",
+            "hint_ru": "Вопрос начинается с помощника.",
+            "explanation_ru": "Do — помощник для вопроса с have. После do сохраняем порядок you + have + a book; поэтому Do you have a book?, а не Have you a book? в обычном учебном варианте американского английского.",
+            "units": [
+              "LX-00036",
+              "LX-00033"
+            ]
+          },
+          {
+            "order": 5,
+            "uid": "EX-00020",
+            "kind": "fill",
+            "stage": "transfer",
+            "prompt_ru": "Новая ситуация: спросите друга, есть ли у него кот.",
+            "prompt_en": "___",
+            "answer": "Do you have a cat?",
+            "accepted": [
+              "Do you have a cat"
+            ],
+            "hint_ru": "Вопрос с have начинается с do.",
+            "explanation_ru": "Do you have a cat? — do в начале, дальше обычный порядок.",
+            "units": [
+              "LX-00036",
+              "LX-00033",
+              "LX-00041"
+            ]
+          },
+          {
+            "order": 6,
+            "uid": "EX-00021",
+            "kind": "fill",
+            "stage": "transfer",
+            "prompt_en": "___",
+            "prompt_ru": "Новая ситуация: вы гость и хотите вежливо попросить одно полотенце. Используйте Can I have… и please.",
+            "answer": "Can I have a towel, please?",
+            "accepted": [
+              "Can I have a towel please",
+              "Can I have the towel, please?"
+            ],
+            "hint_ru": "После can нужен have, а перед одним полотенцем — a.",
+            "explanation_ru": "Can I have a towel, please? — просьба об одном полотенце. The towel допустимо, если собеседники понимают, какое полотенце имеется в виду.",
+            "units": [
+              "LX-00497",
+              "LX-00035",
+              "LX-00033"
+            ]
+          }
+        ],
+        "practice": [
+          {
+            "order": 1,
+            "kind": "translate",
+            "prompt_ru": "Можно мне воды, пожалуйста?",
+            "answer": "Can I have water, please?",
+            "accepted": [
+              "Can I have a water, please?"
+            ],
+            "hint_ru": "Просьба начинается с Can I have…",
+            "explanation_ru": "Can I have water, please? — вежливая просьба. Порядок как в вопросе: can впереди.",
+            "review_of": 4,
+            "units": [
+              "LX-00033",
+              "LX-00035",
+              "LX-00029"
+            ]
+          },
+          {
+            "order": 2,
+            "kind": "translate",
+            "prompt_ru": "Вы с другом смотрите на один конкретный дом. Спросите: «Тебе нравится этот дом?»",
+            "answer": "Do you like this house?",
+            "accepted": [
+              "Do you like the house?"
+            ],
+            "hint_ru": "Сначала Do you like, потом название дома с this или the.",
+            "explanation_ru": "Do you like this house? — вы показываете на конкретный дом. Do you like the house? тоже подходит, если обоим ясно, какой дом обсуждают. С like вопрос начинается с do; the home не является нейтральной заменой house во всякой ситуации.",
+            "review_of": 4,
+            "units": [
+              "LX-00034",
+              "LX-00036"
+            ]
+          },
+          {
+            "order": 3,
+            "kind": "translate",
+            "prompt_ru": "У меня есть кот.",
+            "answer": "I have a cat.",
+            "hint_ru": "«У меня есть» — I have.",
+            "explanation_ru": "I have a cat. Русское «у меня есть» по-английски — I have, «я имею».",
+            "review_of": 4,
+            "units": [
+              "LX-00033"
+            ]
+          },
+          {
+            "order": 4,
+            "kind": "translate",
+            "prompt_ru": "Да, нравится. (ответ на «Do you like it?»)",
+            "answer": "Yes, I do.",
+            "hint_ru": "Короткий ответ повторяет do.",
+            "explanation_ru": "Yes, I do. Короткий ответ берёт помощника из вопроса: Do you…? — Yes, I do.",
+            "review_of": 4,
+            "units": [
+              "LX-00036",
+              "LX-00031"
+            ]
+          }
+        ],
+        "sound_notes": [
+          {
+            "text": "Do you like it?",
+            "ipa": "/də jə ˈlaɪk‿ɪt/, быстро /dʒə ˈlaɪk‿ɪt/",
+            "note_ru": "do you сжимается до «джа»"
+          },
+          {
+            "text": "Can I have water, please?",
+            "ipa": "/kən‿aɪ hæv ˈwɑt̬ɚ ˈpliz/",
+            "note_ru": "can без ударения: /kən/"
+          },
+          {
+            "text": "No, I don't.",
+            "ipa": "/ˈnoʊ aɪ ˈdoʊnt/",
+            "note_ru": "don't часто выделяют в отрицании, но ударение зависит от фразы"
+          }
+        ],
+        "contractions": [
+          {
+            "full": "do not",
+            "short": "don't",
+            "ipa": "/doʊnt/",
+            "note_ru": "Не теряйте дифтонг /oʊ/ и конечное /nt/."
+          },
+          {
+            "full": "can not",
+            "short": "can't",
+            "ipa": "/kænt/",
+            "note_ru": "Отрицательная форма обычно под ударением; ясно произносите /æ/."
+          }
+        ],
+        "explicit_dictionary_uids": [
+          "LX-00029",
+          "LX-00031",
+          "LX-00032",
+          "LX-00033",
+          "LX-00034",
+          "LX-00035",
+          "LX-00036",
+          "LX-00038",
+          "LX-00039",
+          "LX-00040",
+          "LX-00041",
+          "LX-00049",
+          "LX-00050",
+          "LX-00051",
+          "LX-00052",
+          "LX-00053",
+          "LX-00054",
+          "LX-00486",
+          "LX-00490",
+          "LX-00491",
+          "LX-00492",
+          "LX-00493",
+          "LX-00494",
+          "LX-00495",
+          "LX-00496",
+          "LX-00497",
+          "LX-00498",
+          "LX-00499",
+          "LX-00500"
+        ],
+        "dictionary_source_paths": [
+          "content/seed_lexicon/a1_w01_core.yaml",
+          "content/seed_lexicon/a1_w02_core.yaml",
+          "content/seed_lexicon/a1_w02_home_plus.yaml",
+          "content/seed_lexicon/a1_w02_phrases.yaml",
+          "content/seed_lexicon/a1_w02_story01.yaml"
+        ],
+        "prerequisites": {
+          "prior_lessons_in_course_order": [
+            "a1-nouns-first-words",
+            "a1-verb-be",
+            "a1-determiners-a-the-this-my"
+          ],
+          "status": "ORDER_ONLY_NOT_A_PEDAGOGICAL_PROOF",
+          "grammar_dependencies_from_dictionary": [],
+          "reviewer_questions": [
+            "Does the learner encounter unknown grammar before it is explained?",
+            "Are early full sentences explicitly taught as chunks rather than presumed prior knowledge?"
+          ]
+        }
+      }
+    },
+    {
+      "level": "A1",
+      "week": 3,
+      "order": 5,
+      "slug": "a1-cafe-order",
+      "title": "В кафе: I'd like…, Can I have…?, want и просьба повторить",
+      "source_path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "59e473c5ebf9b2fe6cf41998cc968633141bc45d",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 3,
+      "order": 6,
+      "slug": "a1-numbers-1-20",
+      "title": "Числа от 1 до 20: сколько чашек и печений",
+      "source_path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "798c5f0497ee08d897fd17678ebd0fa4ead93ee0",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 4,
+      "order": 7,
+      "slug": "a1-family-photo",
+      "title": "Семья на фото: кто это и сколько лет — Who is this? How old are you?",
+      "source_path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "8f08d6873af17d4ddbdab543b08db97f0fda092a",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 4,
+      "order": 8,
+      "slug": "a1-family-possession",
+      "title": "Кто и чьё: he, she, we, they; his, her, their и 's",
+      "source_path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "89e7afb43181b7b1a6d018f5f617964801bfdf78",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 5,
+      "order": 9,
+      "slug": "a1-there-is-some",
+      "title": "В магазине: there is, there are, some и цвета",
+      "source_path": "content/seed_lessons/a1_w05_l09_there_is.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "6a0cce465887d5fee2a1effa42ca7f79dc9b27ab",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 5,
+      "order": 10,
+      "slug": "a1-how-much-prices",
+      "title": "Сколько стоит: How much is it? и цены в долларах",
+      "source_path": "content/seed_lessons/a1_w05_l10_how_much.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "8596e85cf13959050c7c97e0259be978744949f5",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 6,
+      "order": 11,
+      "slug": "a1-present-simple-i-you",
+      "title": "Мой день: I get up, I eat, I go to bed — настоящее простое время",
+      "source_path": "content/seed_lessons/a1_w06_l11_present_simple.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "2d239cfedf3bc72fd74feafa13e368e7465bdf45",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 6,
+      "order": 12,
+      "slug": "a1-time-at-seven",
+      "title": "Время: at seven, in the evening, lunch и dinner",
+      "source_path": "content/seed_lessons/a1_w06_l12_time.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "b649d554c49c8bf59e75fac378075e769d168d72",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 7,
+      "order": 13,
+      "slug": "a1-he-she-works",
+      "title": "Он работает: he works, she works — окончание -s",
+      "source_path": "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "21f165bad2359a8e0eb1b6c9e24f0527d2b621ab",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 7,
+      "order": 14,
+      "slug": "a1-jobs-what-do-you-do",
+      "title": "Профессии и места: I am a nurse, I work in an office",
+      "source_path": "content/seed_lessons/a1_w07_l14_jobs.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "91d30610f05d31c587fb9a8ba4214f5f3bcb1152",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 8,
+      "order": 15,
+      "slug": "a1-where-is-prepositions",
+      "title": "Где это: Where is…? и предлоги in, on, near, next to, between",
+      "source_path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "50542c43abb1edd647761fecb1dbe3ba58896e49",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 8,
+      "order": 16,
+      "slug": "a1-directions-turn-left",
+      "title": "Как пройти: go straight, turn left — просьбы и указания",
+      "source_path": "content/seed_lessons/a1_w08_l16_directions.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "3f29311719b3f254dd7d50103362005c30d06e95",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 9,
+      "order": 17,
+      "slug": "a1-questions-do-does",
+      "title": "Вопросы с do и does: What, when, which — Do you…? What time does…?",
+      "source_path": "content/seed_lessons/a1_w09_l17_do_does.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "1903b1823abdf8d43b28f61fd5479564c6ba66c9",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 9,
+      "order": 18,
+      "slug": "a1-spelling-phone-numbers",
+      "title": "По буквам, по цифрам и по телефону: Can you spell…?, call, text",
+      "source_path": "content/seed_lessons/a1_w09_l18_spelling.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "5d5de1b6b8fb3969c7ea39e2d1d3b912771b76f0",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 10,
+      "order": 19,
+      "slug": "a1-always-never",
+      "title": "Как часто: always, usually, sometimes, never",
+      "source_path": "content/seed_lessons/a1_w10_l19_always_never.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "5db7894bc1fbd8eea489d15ba6421943849eb7f3",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 10,
+      "order": 20,
+      "slug": "a1-like-doing",
+      "title": "Что я люблю делать: I like reading и I like to read",
+      "source_path": "content/seed_lessons/a1_w10_l20_like_doing.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "5b900fa9b8ef34d9cc98e5d838e83edf783b33d0",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 11,
+      "order": 21,
+      "slug": "a1-what-hurts",
+      "title": "Что болит: I have a headache и my back hurts",
+      "source_path": "content/seed_lessons/a1_w11_l21_what_hurts.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "d3fa7f5616b4551619d563746d0baf55b2546667",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 11,
+      "order": 22,
+      "slug": "a1-cant-cannot",
+      "title": "Не могу: can't и cannot",
+      "source_path": "content/seed_lessons/a1_w11_l22_cant.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "240e342ae90971f41eddacbeb0fa183e9040dea4",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 12,
+      "order": 23,
+      "slug": "a1-dont-doesnt",
+      "title": "Не делаю: don't и doesn't",
+      "source_path": "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "791db65006e689b4eaab01452638e4d99b9b3757",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 12,
+      "order": 24,
+      "slug": "a1-letters-address",
+      "title": "На почте: письмо, марка и американский адрес",
+      "source_path": "content/seed_lessons/a1_w12_l24_address.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "ee4b66fecfa971c1301d9cf5d490fd02d387f6d1",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 13,
+      "order": 25,
+      "slug": "a1-can-skills",
+      "title": "Умею и не умею: can, can't и языки",
+      "source_path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "90042305240430be670d3f4592b0a2c8d2c00035",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 13,
+      "order": 26,
+      "slug": "a1-why-because",
+      "title": "Почему? Потому что: Why? и because",
+      "source_path": "content/seed_lessons/a1_w13_l26_why_because.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "4c814bce03331b5f1a3f6a1780f5158fd5ee8ede",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 14,
+      "order": 27,
+      "slug": "a1-bus-ticket",
+      "title": "В автобусе: билет, остановка и Does this bus go…?",
+      "source_path": "content/seed_lessons/a1_w14_l27_bus.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "24b4586fc3b9d5c9032c1abb266bdcd4da257087",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1",
+      "week": 14,
+      "order": 28,
+      "slug": "a1-review-everything",
+      "title": "Итог A1: что вы уже умеете по-английски",
+      "source_path": "content/seed_lessons/a1_w14_l28_review.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "66fd2a114729f0d9ce4ca39bcf3ffa37ec64b512",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 1,
+      "order": 1,
+      "slug": "a1p-present-continuous",
+      "title": "Что я делаю сейчас: Present Continuous",
+      "source_path": "content/seed_lessons/a1p_w01_l01_present_continuous.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "8332bbb113f7b7e59422ac320ea157ad93c4e247",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 1,
+      "order": 2,
+      "slug": "a1p-video-call-feelings",
+      "title": "Звонок близким: слышать, скучать, любить",
+      "source_path": "content/seed_lessons/a1p_w01_l02_video_call.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "ab8aaac6e564f2457faa4a1612a9ac038a83e718",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 2,
+      "order": 3,
+      "slug": "a1p-was-were",
+      "title": "Где ты был: was и were",
+      "source_path": "content/seed_lessons/a1p_w02_l03_was_were.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f128fa8fd37764aa4f0ebd53c6c73ba6e6074149",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 2,
+      "order": 4,
+      "slug": "a1p-there-was-how-was",
+      "title": "Что там было: there was / there were и впечатления",
+      "source_path": "content/seed_lessons/a1p_w02_l04_there_was.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "5e7613441887434aa86ca1c4ddc88794c6b2520b",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 3,
+      "order": 5,
+      "slug": "a1p-past-simple-ed",
+      "title": "Что я делал: прошедшее время на -ed",
+      "source_path": "content/seed_lessons/a1p_w03_l05_past_simple_ed.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "de4cc9cfb28d1532ef6e1c7d1dbb1593abcc672b",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 3,
+      "order": 6,
+      "slug": "a1p-weekend-small-talk",
+      "title": "Разговор в понедельник: Not bad. What about you?",
+      "source_path": "content/seed_lessons/a1p_w03_l06_weekend_small_talk.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "4ccdc736d9feac7c12c3b6825d4beb194fe9651e",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 4,
+      "order": 7,
+      "slug": "a1p-irregular-past",
+      "title": "Неправильные глаголы: went, bought, paid",
+      "source_path": "content/seed_lessons/a1p_w04_l07_irregular_past.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "61dfc8ce4f70007f11628ebf25480e7186b6e51c",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 4,
+      "order": 8,
+      "slug": "a1p-paying-and-prices",
+      "title": "Цена и оплата: How much was it? I paid by card.",
+      "source_path": "content/seed_lessons/a1p_w04_l08_paying_prices.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "397ca348ba4ede92b787ace0d511a88b69eb7a30",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 5,
+      "order": 9,
+      "slug": "a1p-did-didnt",
+      "title": "Did you…? — вопросы и отрицания в прошлом",
+      "source_path": "content/seed_lessons/a1p_w05_l09_did_didnt.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "8b3e1503ad5a7b7ea35487f8942fb60b6f5a728c",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 5,
+      "order": 10,
+      "slug": "a1p-describe-things",
+      "title": "Описать вещь: It's pink, with a long handle. That's mine!",
+      "source_path": "content/seed_lessons/a1p_w05_l10_describe_things.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "23c075e0e30e544b4c2f6b94ef19aea261187992",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 6,
+      "order": 11,
+      "slug": "a1p-object-pronouns",
+      "title": "Me, him, her, them: кому и кого",
+      "source_path": "content/seed_lessons/a1p_w06_l11_object_pronouns.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f9aedb3951229b2d22da8b767a6044090b03c73e",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 6,
+      "order": 12,
+      "slug": "a1p-phone-and-feelings",
+      "title": "Телефон и чувства: The battery is dead. I was nervous.",
+      "source_path": "content/seed_lessons/a1p_w06_l12_phone_feelings.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "18cee1f53709830fa27fa092b288ba28b7408549",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 7,
+      "order": 13,
+      "slug": "a1p-some-any",
+      "title": "Some и any: есть ли рыба?",
+      "source_path": "content/seed_lessons/a1p_w07_l13_some_any.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "228dfc0e55c1dd59e9ac7aa7124aa080e73f67f6",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 7,
+      "order": 14,
+      "slug": "a1p-restaurant-order",
+      "title": "В ресторане: заказ, счёт и чаевые",
+      "source_path": "content/seed_lessons/a1p_w07_l14_restaurant_order.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "0586bfbf3bdac2e073fd5699ae97ae02437db6a7",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 8,
+      "order": 15,
+      "slug": "a1p-must-mustnt",
+      "title": "Must и must not: правила",
+      "source_path": "content/seed_lessons/a1p_w08_l15_must_mustnt.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "1147fcc1f562e4f4133c4ae927bf41ca0064e49a",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 8,
+      "order": 16,
+      "slug": "a1p-first-day-work",
+      "title": "Первый день на работе: Welcome to the team!",
+      "source_path": "content/seed_lessons/a1p_w08_l16_first_day_work.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "828c38d4fd42d5c31a844492c56fcca063a2ba9e",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 9,
+      "order": 17,
+      "slug": "a1p-have-to",
+      "title": "Have to и don't have to: надо и не обязательно",
+      "source_path": "content/seed_lessons/a1p_w09_l17_have_to.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f5803fe00db1924ff2ca491bd64841e0d5962fab",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 9,
+      "order": 18,
+      "slug": "a1p-home-repairs",
+      "title": "Что сломалось: The pipe is leaking!",
+      "source_path": "content/seed_lessons/a1p_w09_l18_home_repairs.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "f93ab9c27217325e217287ed8e29aadf9bbf3f0d",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 10,
+      "order": 19,
+      "slug": "a1p-could-you",
+      "title": "Could you…? — вежливая просьба",
+      "source_path": "content/seed_lessons/a1p_w10_l19_could_you.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "7fd058bd68f4ddab94b1114668492e82871cf3f5",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 10,
+      "order": 20,
+      "slug": "a1p-adverbs-ly",
+      "title": "Как? Quietly, loudly, badly — наречия на -ly",
+      "source_path": "content/seed_lessons/a1p_w10_l20_adverbs_ly.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "c2b9bcdfa4eedecf883b55c5e975d137330d092b",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 11,
+      "order": 21,
+      "slug": "a1p-how-often",
+      "title": "How often? Once, twice, three times a day",
+      "source_path": "content/seed_lessons/a1p_w11_l21_how_often.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "8f905959243fc372bdc7499399c90ae06bbabaf6",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 11,
+      "order": 22,
+      "slug": "a1p-at-the-pharmacy",
+      "title": "В аптеке: I have a sore throat",
+      "source_path": "content/seed_lessons/a1p_w11_l22_at_the_pharmacy.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "881fa758d269bb9a867e821cfeaa8ececc39dc4e",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 12,
+      "order": 23,
+      "slug": "a1p-too-enough",
+      "title": "Too cold, warm enough: и порядок прилагательных",
+      "source_path": "content/seed_lessons/a1p_w12_l23_too_enough.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "773b75b9f72ec7636f5f057ff433b7a42f3b194e",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 12,
+      "order": 24,
+      "slug": "a1p-weather-plans",
+      "title": "Погода и план: What's the weather like?",
+      "source_path": "content/seed_lessons/a1p_w12_l24_weather_plans.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "5c67c9ff46e4b7a2b686eecc8ce512431d7d381e",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 13,
+      "order": 25,
+      "slug": "a1p-past-review",
+      "title": "Повторяем прошлое: was, -ed, неправильные, did",
+      "source_path": "content/seed_lessons/a1p_w13_l25_past_review.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "93ba073012f2e4c12a4b786d344c039660c5a402",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 13,
+      "order": 26,
+      "slug": "a1p-application-form",
+      "title": "Анкета и собеседование: date of birth, experience",
+      "source_path": "content/seed_lessons/a1p_w13_l26_application_form.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "c435c44249d7c5dcd577fa30f62962583de06954",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 14,
+      "order": 27,
+      "slug": "a1p-movement-prepositions",
+      "title": "Across, past, through, along: куда и как идти",
+      "source_path": "content/seed_lessons/a1p_w14_l27_movement_prepositions.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "750aa6638b977ddb9b6d7cfae3aa3cb6a5c0a806",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 14,
+      "order": 28,
+      "slug": "a1p-city-directions",
+      "title": "Город и дорога: How do I get to…? If we…",
+      "source_path": "content/seed_lessons/a1p_w14_l28_city_directions.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "51cccaa57a4969fd12fc939f853bf1a38c977520",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 15,
+      "order": 29,
+      "slug": "a1p-if-will",
+      "title": "If it rains, we'll…: условие и будущее",
+      "source_path": "content/seed_lessons/a1p_w15_l29_if_will.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "cb481692834da60604a75e248ad0e1efd67b47a0",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 15,
+      "order": 30,
+      "slug": "a1p-travel-packing",
+      "title": "Чемодан и аэропорт: passport, boarding pass, flight",
+      "source_path": "content/seed_lessons/a1p_w15_l30_travel_packing.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "5eed7117526c86c9d33dd7801f27f7c24a214670",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 16,
+      "order": 31,
+      "slug": "a1p-review-a1plus",
+      "title": "Итог A1+: прошлое, правила, условия, просьбы",
+      "source_path": "content/seed_lessons/a1p_w16_l31_review_a1plus.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "34bffb75d81234f29a75b97402c217b8f47e58ab",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    },
+    {
+      "level": "A1+",
+      "week": 16,
+      "order": 32,
+      "slug": "a1p-picnic-seasons",
+      "title": "Пикник и времена года: in the summer, What a great day!",
+      "source_path": "content/seed_lessons/a1p_w16_l32_picnic_seasons.yaml",
+      "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "git_blob_sha": "92e0e471b94dd6d54e953fed733c64f118f37890",
+      "editorial_status": "NOT_REVIEWED",
+      "preparation_scope": "INVENTORY_ONLY",
+      "detail": null
+    }
+  ]
+}

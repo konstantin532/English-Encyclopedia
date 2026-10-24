@@ -1,0 +1,77 @@
+name: CI
+# Ветки проверяются через pull_request; push — только в main.
+# Раньше каждый коммит в ветке с PR запускал CI дважды (push + pull_request).
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+# Pushing many rapid commits should not leave dozens of obsolete pipelines
+# competing with the newest one. Preserve the definitive main check.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "24"
+      - run: npm install --global pnpm@11.25.0
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: pnpm check:css
+      - run: uv sync --frozen
+      - run: uv run python -m compileall -q apps config tests
+      - run: uv run python manage.py check
+      # Exercise static asset discovery and provide the WhiteNoise directory
+      # before any Django test client request initializes middleware.
+      - run: uv run python manage.py collectstatic --noinput --verbosity 0
+      # Diagnostic only: missing voices do not become a false human approval.
+      - run: uv run python scripts/audio_readiness.py
+      - run: uv run python scripts/audit_cefr_evidence.py --strict
+      - run: uv run python manage.py makemigrations --check --dry-run
+      # Validate every authored delayed-review card before running the slower suite.
+      - run: |
+          uv run python manage.py shell -c "from apps.learning.mistake_review import question_bank; b=question_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.mistake_review import COUNT; assert set(b)==set(PILOT_SLUGS); assert all(exercises and all(len(cards)==COUNT for cards in exercises.values()) for exercises in b.values()); print('A1 review structure OK:', len(b), 'lessons')"
+      # Fail before the slower suite when a beginner explanation or open
+      # independent task violates one of the 15 educational data contracts.
+      - run: |
+          uv run python manage.py shell -c "from apps.learning.understanding import understanding_bank; b=understanding_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.understanding import SKILLS; assert set(b)==set(PILOT_SLUGS); assert all(set(guide['tasks'])==set(SKILLS) for guide in b.values()); print('A1 understanding structure OK:', len(b), 'guides')"
+      # Failed test names and messages also appear as annotations on the run page.
+      - run: |
+          set -o pipefail
+          uv run pytest -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR|SUBFAIL|SUBERROR|[A-Z]+FAIL) |^E  +" pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }
+      - run: node --test tests/js/*.test.cjs
+      - run: |
+          uv run python manage.py migrate -v0
+          uv run python manage.py load_content
+          uv run python manage.py audit_course
+
+  postgres:
+    # The same suite on real PostgreSQL (production engine): row locks, constraints, JSON.
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: ee_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/ee_test
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+      - run: uv sync --frozen
+      - run: uv run python manage.py collectstatic --noinput --verbosity 0
+      - run: |
+          set -o pipefail
+          uv run pytest -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR|SUBFAIL|SUBERROR|[A-Z]+FAIL) |^E  +" pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }

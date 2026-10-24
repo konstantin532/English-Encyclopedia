@@ -1,0 +1,11 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "independent_recheck": "163 snapshot bytes/SHA256/Git blob SHA checked independently by root",
+  "status": "PASS",
+  "application_and_course_diff": [],
+  "application_and_course_unchanged": true,
+  "input_documents_complete": true,
+  "old_companion_archive_received": false,
+  "missing_source_paths": [],
+  "unresolved_explicit_uid_refs": []
+}

@@ -1,0 +1,89 @@
+number: 1
+target_units:
+- LX-00033
+- LX-00034
+- LX-00036
+- LX-00038
+- LX-00039
+- LX-00486
+- LX-00490
+- LX-00491
+- LX-00500
+- LX-00040
+body: |
+  [T2]That[/] [S6]cat[/], [T2]that[/] [S6]cat[/],
+  [T2]that[/] [J1]big[/], [J1]big[/] [S6]cat[/]!
+  [D1]Is[/] [T8]it[/] [T3]your[/] [S6]cat[/]?
+  [O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/]!
+
+  [T8]It[/] [D1]has[/] [T3]my[/] [S2]chair[/],
+  [T8]it[/] [D1]has[/] [T3]my[/] [S2]lamp[/],
+  [T8]it[/] [D1]has[/] [T3]my[/] [S2]sofa[/],
+  [T8]it[/] [D1]has[/] [T3]my[/] [S2]rug[/]!
+
+  [D1]Do[/] [T8]you[/] [D3]like[/] [T3]my[/] [S3]coffee[/]?
+  [O4]Yes[/], [T8]I[/] [D1]do[/]!
+  [D1]Do[/] [T8]you[/] [D3]like[/] [T3]my[/] [S2]house[/]?
+  [O4]Yes[/], [T8]I[/] [D1]do[/]!
+
+  [D1]Is[/] [T2]that[/] [T3]your[/] [S6]cat[/], [S1]Tom[/]?
+  [O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/]!
+  [D1]Is[/] [T2]that[/] [T3]my[/] [S6]cat[/]?
+  [O4]Yes[/], [T2]that[/] [D1]is[/] [T3]my[/] [S6]cat[/]!
+
+  [J3]Good[/] [S7]morning[/], [S6]cat[/]!
+  [J3]Good[/] [S7]morning[/], [S1]Box[/]!
+  [T8]You[/] [D1]have[/] [T3]my[/] [S2]house[/],
+  [T8]I[/] [D1]have[/] [T3]your[/] [S2]box[/]!
+pronunciation:
+- stress: THAT CAT | THAT CAT
+  ipa: /ˈðæt ˈkæt | ˈðæt ˈkæt/
+- stress: THAT BIG | BIG CAT!
+  ipa: /ˈðæt ˈbɪɡ | ˈbɪɡ ˈkæt/
+- stress: is it your CAT?
+  ipa: /ɪz ɪt jɚ ˈkæt/
+- stress: NO | it is NOT!
+  ipa: /ˈnoʊ | ɪt ɪz ˈnɑt/
+- stress: it has my CHAIR
+  ipa: /ɪt həz maɪ ˈtʃɛr/
+- stress: it has my LAMP
+  ipa: /ɪt həz maɪ ˈlæmp/
+- stress: it has my SOFA
+  ipa: /ɪt həz maɪ ˈsoʊfə/
+- stress: it has my RUG!
+  ipa: /ɪt həz maɪ ˈrʌɡ/
+- stress: do you LIKE my COFFEE?
+  ipa: /də jə ˈlaɪk maɪ ˈkɔːfi/
+- stress: YES | I DO!
+  ipa: /ˈjes | aɪ ˈdu/
+- stress: do you LIKE my HOUSE?
+  ipa: /də jə ˈlaɪk maɪ ˈhaʊs/
+- stress: YES | I DO!
+  ipa: /ˈjes | aɪ ˈdu/
+- stress: is THAT your CAT | TOM?
+  ipa: /ɪz ˈðæt jɚ ˈkæt | ˈtɑm/
+- stress: NO | it is NOT!
+  ipa: /ˈnoʊ | ɪt ɪz ˈnɑt/
+- stress: is THAT my CAT?
+  ipa: /ɪz ˈðæt maɪ ˈkæt/
+- stress: YES | THAT is my CAT!
+  ipa: /ˈjes | ˈðæt ɪz maɪ ˈkæt/
+- stress: GOOD MORNING | CAT!
+  ipa: /ˈɡʊd ˈmɔrnɪŋ | ˈkæt/
+- stress: GOOD MORNING | BOX!
+  ipa: /ˈɡʊd ˈmɔrnɪŋ | ˈbɑks/
+- stress: you have my HOUSE
+  ipa: /jə həv maɪ ˈhaʊs/
+- stress: I have your BOX!
+  ipa: /aɪ həv jɚ ˈbɑks/
+gaps:
+- line: 2
+  word: cat
+- line: 6
+  word: lamp
+- line: 10
+  word: do
+- line: 14
+  word: not
+- line: 20
+  word: box

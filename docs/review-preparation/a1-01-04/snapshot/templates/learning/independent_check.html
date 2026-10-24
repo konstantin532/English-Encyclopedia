@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Самостоятельная проверка · {{ lesson.title }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% endblock %}
+{% block content %}
+<div class="wrap independent-check">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'lessons:detail' lesson.slug %}">Урок {{ lesson.order }}</a> / самостоятельная проверка</p>
+    <h1>Проверяю, что могу сам</h1>
+    <p>{{ lesson.title }}</p>
+    <p>Здесь нет готовых слов для выбора. Сначала попробуйте самостоятельно, без подсказок и готовых вариантов. Образец откроется только после отправки. Допустимы разные естественные ответы: если ваш вариант не совпадёт, мы не будем автоматически называть его ошибкой.</p>
+    <p><strong>Важно:</strong> совпадение с образцом — не подтверждение свободного владения языком. Произношение и аудирование здесь не оцениваются.</p>
+    <p><strong>Безопасность:</strong> используйте вымышленные имена, адреса и номера телефонов, не вводите реальные личные данные.</p>
+    <p>Хотите проверить речь? <a href="{% url 'lessons:detail' lesson.slug %}#spoken-coach">Вернитесь к речевой мастерской</a>: пока она сохраняет вашу самооценку, а не оценивает произношение автоматически.</p>
+  </header>
+
+  {% if result %}
+  <section class="section independent-result" aria-labelledby="ind-result-t" aria-live="polite">
+    <h2 id="ind-result-t">Результат попытки</h2>
+    <p>{{ result.label }}</p>
+    {% if result.attempt.prompt_snapshot %}<p><strong>Исходный вопрос:</strong> {{ result.attempt.prompt_snapshot }}</p>{% endif %}
+    <p>Ваш ответ: <strong lang="{% if result.skill == 'meaning' or result.skill == 'explain' %}ru{% else %}en{% endif %}">{{ result.attempt.submitted }}</strong></p>
+    <p>Один возможный образец: <strong lang="{% if result.skill == 'meaning' or result.skill == 'explain' %}ru{% else %}en{% endif %}">{{ result.model }}</strong></p>
+    <details class="independent-explanation">
+      <summary>Почему здесь так? Разобрать правило</summary>
+      <p><strong>Причина:</strong> {{ guide.why }}</p>
+      <p><strong>Как себя проверить:</strong> {{ guide.fix }}</p>
+      <p><strong>Типичная ловушка:</strong> {{ guide.mistake }}</p>
+      <p>Ваш вариант может отличаться от образца и оставаться правильным. При сомнении потребуется проверка человеком.</p>
+    </details>
+    {% if result.attempt.outcome == "self_reported" and not result.attempt.self_rubric %}
+      {% include "components/a1_rubric_form.html" with attempt=result.attempt %}
+    {% endif %}
+  </section>
+  <p class="independent-new-variant"><a class="btn btn-quiet" href="{% url 'learning:independent_check' lesson.slug %}#blind-four-title">Начать новую независимую попытку →</a></p>
+  {% endif %}
+
+  {% if batch_results %}
+  <section class="section independent-result" aria-labelledby="batch-results-title" aria-live="polite">
+    <h2 id="batch-results-title">Разбор всех четырёх ответов</h2>
+    <p>Это ваша практика, а не официальный экзамен. Совпадение с образцом не означает подтверждённое знание языка.</p>
+    {% for entry in batch_results %}
+    <div class="independent-result-item">
+      <h3>{{ forloop.counter }}. {{ entry.title }}</h3>
+      <p>{{ entry.label }}</p>
+      <p><strong>Условия выполнения (по словам ученика):</strong> {{ entry.attempt.get_assistance_display }}</p>
+      <p><strong>Исходный вопрос:</strong> {{ entry.attempt.prompt_snapshot }}</p>
+      <p>Вы написали: <strong lang="{% if entry.skill == 'meaning' or entry.skill == 'explain' %}ru{% else %}en{% endif %}">{{ entry.attempt.submitted }}</strong></p>
+      <p>Один возможный образец: <strong lang="{% if entry.skill == 'meaning' or entry.skill == 'explain' %}ru{% else %}en{% endif %}">{{ entry.model }}</strong></p>
+      {% if entry.attempt.outcome == "self_reported" and not entry.attempt.self_rubric %}
+        {% include "components/a1_rubric_form.html" with attempt=entry.attempt %}
+      {% endif %}
+    </div>
+    {% endfor %}
+    <details class="independent-explanation"><summary>Разобрать правило после четырёх ответов</summary>
+      <p><strong>Почему:</strong> {{ guide.why }}</p>
+      <p><strong>Как проверить себя:</strong> {{ guide.fix }}</p>
+      <p><strong>Типичная ошибка:</strong> {{ guide.mistake }}</p>
+    </details>
+  </section>
+  {% endif %}
+
+  {% if not result and not batch_results %}
+  <section class="section" aria-labelledby="blind-four-title">
+    <h2 id="blind-four-title">Сначала все четыре ответа — потом разбор</h2>
+    {% if transfer_variant_seen %}
+    <p class="independent-repeat-notice" role="note"><strong>Это повторная ситуация.</strong> Вы уже отвечали на этот вариант раньше. Повторение полезно, но его нельзя считать новой независимой проверкой.</p>
+    {% else %}
+    <p class="independent-fresh-notice">Эта ситуация ещё не встречалась в ваших сохранённых попытках.</p>
+    {% endif %}
+    {% if batch_error %}
+      <div class="independent-form-error" role="alert" aria-live="assertive" tabindex="-1">
+        <strong>Ответы пока не сохранены.</strong>
+        <p>{{ batch_error }}</p>
+        <p>Написанный текст восстановлен ниже. Если ситуация изменилась, скопируйте текст перед повторной попыткой.</p>
+      </div>
+    {% endif %}
+    <p>Отвечайте на задания по порядку без готовых вариантов. До отправки всех четырёх ответов образцы не показываются. После отправки откроется следующий вариант; когда три варианта закончатся, задания повторятся. Это помогает не запоминать один образец. Оценка открытого ответа остаётся вашей или преподавателя.</p>
+    <form method="post" class="independent-batch" data-blind-batch autocomplete="off">
+      {% csrf_token %}
+      <input type="hidden" name="transfer_variant" value="{{ transfer_variant }}">
+      <input type="hidden" name="batch_token" value="{{ batch_token }}">
+      <input type="hidden" name="action" value="batch">
+      <fieldset class="independent-conditions" aria-describedby="assistance-note">
+        <legend>Как вы выполняете эту попытку?</legend>
+        <p id="assistance-note">Выберите фактические условия до отправки. Это ваш самоотчёт, он не считается проверенным результатом.</p>
+        <label class="independent-option"><input type="radio" name="assistance" value="no_help" required {% if assistance_selected == "no_help" %}checked{% endif %}><span>Без конспекта и переводчика</span></label>
+        <label class="independent-option"><input type="radio" name="assistance" value="notes" {% if assistance_selected == "notes" %}checked{% endif %}><span>Пользовался объяснениями или конспектом</span></label>
+        <label class="independent-option"><input type="radio" name="assistance" value="translator" {% if assistance_selected == "translator" %}checked{% endif %}><span>Пользовался переводчиком или готовыми ответами</span></label>
+      </fieldset>
+      <div class="independent-grid">
+      {% for task in tasks %}
+    <section class="section independent-task" aria-labelledby="skill-{{ task.key }}" id="task-{{ task.key }}">
+      <h2 id="skill-{{ task.key }}">{{ task.title }}</h2>
+      {% if task.key == "meaning" %}
+        <p>Передайте смысл по-русски. Точный перевод — не единственный допустимый.</p>
+      {% elif task.key == "writing" %}
+        <p>Напишите английскую фразу по памяти, без набора готовых слов.</p>
+      {% elif task.key == "transfer" %}
+        <p>Решите новую ситуацию своими словами. Автомат не оценивает смысл вашего свободного ответа.</p>
+      {% else %}
+        <p>Объясните своими словами, почему работает правило. Не подглядывайте в конспект: система не выдаёт компьютерную оценку естественного объяснения.</p>
+      {% endif %}
+      <p class="independent-prompt" id="prompt-{{ task.key }}">{{ task.item.prompt }}</p>
+      <label for="ind-answer-{{ task.key }}">Ваш ответ на задание «{{ task.title }}»</label>
+      <textarea id="ind-answer-{{ task.key }}" name="answer_{{ task.key }}" rows="3" maxlength="400" required aria-describedby="prompt-{{ task.key }} count-{{ task.key }}" placeholder="Напишите свой вариант здесь" lang="{% if task.key == 'meaning' or task.key == 'explain' %}ru{% else %}en{% endif %}" spellcheck="{% if task.key == 'meaning' or task.key == 'explain' %}true{% else %}false{% endif %}" autocorrect="off" autocapitalize="sentences">{{ task.saved_answer|default:"" }}</textarea>
+      <small class="independent-count" id="count-{{ task.key }}" aria-live="off">До 400 символов</small>
+    </section>
+    {% endfor %}
+    </div>
+    <button class="btn btn-primary independent-batch-submit" type="submit" data-batch-submit>Отправить четыре ответа и открыть разбор</button>
+    <p class="independent-submit-status" data-batch-status role="status" aria-live="polite" aria-atomic="true"></p>
+    <p class="independent-network-hint">Не закрывайте эту вкладку до появления результатов. При отсутствии связи не обновляйте страницу: ответы в открытой форме можно отправить после восстановления соединения.</p>
+    </form>
+  </section>
+
+  {% endif %}
+
+  {% if batch_results %}
+  <p class="independent-new-variant"><a class="btn btn-quiet" href="{% url 'learning:independent_check' lesson.slug %}#task-transfer">Начать следующую независимую попытку →</a></p>
+  {% endif %}
+
+  {% if attempts %}
+  <section class="section">
+    <h2>Мои последние попытки</h2>
+    <p>Эти записи показывают практику, но не являются официальной оценкой вашего уровня.</p>
+    <ul class="independent-history">
+    {% for item in attempts %}
+      <li>
+        {{ item.created_at|date:"j E H:i" }} — {{ item.get_outcome_display }}
+        {% if item.self_rating %} (самооценка: {{ item.self_rating }}){% endif %}
+        {% if item.assistance != "not_stated" %}<p>Условия: {{ item.get_assistance_display }} — самоотчёт</p>{% endif %}
+        {% if item.teacher_verdict != "unreviewed" %}
+          <p><strong>Проверено преподавателем:</strong> {{ item.get_teacher_verdict_display }}</p>
+          {% if item.teacher_note %}<p>{{ item.teacher_note }}</p>{% endif %}
+        {% else %}
+          <span class="uid"> · преподаватель ещё не проверил</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+  <p><a class="btn btn-quiet" href="{% url 'lessons:detail' lesson.slug %}">Вернуться к объяснениям урока</a></p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/independent-check.js' %}" defer></script>
+{% endblock %}

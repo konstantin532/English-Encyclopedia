@@ -1,0 +1,2088 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "lesson_source_path": "content/seed_lessons/a1_w01_l01_nouns.yaml",
+  "editorial_status": "NOT_REVIEWED",
+  "lesson_full": {
+    "slug": "a1-nouns-first-words",
+    "level": "A1",
+    "week": 1,
+    "order": 1,
+    "focus": "S",
+    "minutes": 40,
+    "title": "Существительное: слово, которое называет",
+    "summary": "Первые слова о семье, доме, еде и времени: как узнать существительное в фразе, зачем рядом стоят a / my и почему перевод с русского устроен иначе.",
+    "units": [
+      "LX-00001",
+      "LX-00002",
+      "LX-00003",
+      "LX-00004",
+      "LX-00005",
+      "LX-00006",
+      "LX-00007",
+      "LX-00008",
+      "LX-00009",
+      "LX-00010",
+      "LX-00011",
+      "LX-00012",
+      "LX-00013",
+      "LX-00014",
+      "LX-00015"
+    ],
+    "sound_notes": [
+      {
+        "text": "I'm home.",
+        "ipa": "/aɪm ˈhoʊm/",
+        "note_ru": "I am сливается в одно слово"
+      },
+      {
+        "text": "Have a nice day!",
+        "ipa": "/hæv‿ə ˈnaɪs ˈdeɪ/",
+        "note_ru": "v прилипает к a, a звучит как короткое /ə/"
+      },
+      {
+        "text": "water",
+        "ipa": "/ˈwɑt̬ɚ/",
+        "note_ru": "американское t между гласными звучит как быстрое d"
+      }
+    ],
+    "layers": [
+      {
+        "number": 1,
+        "body": "Первое утро Анны в Америке. Вокруг коробки, а сосед Том уже стоит на пороге. Чтобы ответить ему, Анне хватит десятка слов, и почти все они — существительные: *house, coffee, morning, name*. С них начинается любой язык: сначала мы называем мир, потом говорим о нём.\n\n> [J3]Good[/] [S7]morning[/]! [T8]I[/] [D1]am[/] [S1]Tom[/]. [T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]? — Доброе утро! Я Том. Как вас зовут?\n\nНачнём не с правила, а со знакомых вещей: книга, телефон, мама, вода, утро. Слова, которые **называют** людей, предметы, вещества, места, время и даже идеи, называются **существительными**.\n\n> [S2]book[/] — книга\n> [S1]mother[/] — мама\n> [S7]morning[/] — утро\n\n**Как найти существительное?** Попробуйте спросить о слове «кто?» или «что?»: «кто?» — мама, «что?» — книга. Это первая подсказка, а не правило без исключений: важно, какую работу слово выполняет в конкретной фразе.\n\n**Зачем цветная линия?** Одна сплошная линия **снизу** означает существительное. Цвет уточняет его смысловую группу: люди, предметы, еда, время. Линия показывает роль слова в нашем учебном разборе, а не меняет правила английского.\n"
+      },
+      {
+        "number": 2,
+        "body": "**Почему book, name и Anna — существительные?** *Book* называет предмет, *name* — то, что есть у человека, а *Anna* — конкретного человека. Существительное не обязательно обозначает вещь, которую можно потрогать.\n\n**Обычное название и имя человека — не одно и то же.** *Friend* означает «друг или подруга» вообще; *Anna* называет определённого человека. Оба слова — существительные, но **Anna** пишется с заглавной буквы как собственное имя.\n\nСравните работу двух слов в *my new book*: **book** называет предмет, а **new** сообщает, какой он. Поэтому *book* — существительное, а *new* — прилагательное. Не судите только по вопросу «что?»: смотрите, что слово делает во фразе.\n\n**Noun** — английское название существительного. Оно исторически связано с латинским *nomen* («имя, название»), но это не значит, что существительные — только имена людей. Для практики важнее различить название предмета и его признак.\n"
+      },
+      {
+        "number": 3,
+        "body": "Рассмотрим одно короткое предложение и разберём **каждое** слово:\n\n> [T2]This[/] [D1]is[/] [T3]my[/] [S2]book[/]. — Это моя книга.\n\n- [T2]This[/] — «это»: мы показываем на предмет. Здесь слово стоит **самостоятельно**, без существительного сразу после него.\n- [D1]is[/] — форма глагола **be**, которая соединяет «это» с описанием предмета. В русском «Это моя книга» обычно обходится без отдельного «есть». Подробно разберём is в следующем уроке.\n- [T3]my[/] — «мой / моя / моё»: показывает принадлежность. В английском **my не меняется** из-за того, как по-русски называется вещь.\n- [S2]book[/] — «книга»: существительное, то есть название предмета.\n\n**Что такое «детерминатив»?** Пока называйте его «словом-указателем». Оно помогает понять, **о каком** предмете речь: *my* указывает на владельца, *a* — на один неопределённый предмет. Более строгий термин и другие указатели будут во второй неделе.\n\nСравните две конструкции — у них разная работа слова **this**:\n\n> [T2]This[/] [D1]is[/] [T3]my[/] [S2]book[/]. — Это моя книга.\n> [T2]This[/] [S2]book[/] [D1]is[/] [J2]new[/]. — Эта книга новая.\n\nВ первой строке **this** самостоятельно указывает на вещь (местоименное употребление); во второй стоит **перед book** и уточняет, какую книгу мы имеем в виду (употребление как детерминатива). Разметка T2 объединяет оба употребления.\n\n**Как добавить вторую мысль о книге?** Назовём предмет, а затем заменим повторное слово *book* на **it** — «она» в русском переводе, но **it** в английской фразе:\n\n> [T2]This[/] [D1]is[/] [T3]my[/] [S2]book[/]. [T8]It[/] [D1]is[/] [J2]new[/]. — Это моя книга. Она новая.\n\nТак вы уже видели образец для четвёртого задания. Использование **it** разберём подробнее в следующем уроке.\n\nЗаменяем только последнее существительное — и сохраняем смысл каркаса:\n\n> [T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/]. — Это моя мама.\n> [T2]This[/] [D1]is[/] [T3]my[/] [S2]room[/]. — Это моя комната.\n> [T2]This[/] [D1]is[/] [T3]my[/] [S1]friend[/]. — Это мой друг.\n"
+      },
+      {
+        "number": 4,
+        "body": "**Почему перед book бывает a, а иногда my?** Посмотрите:\n\n> [T2]This[/] [D1]is[/] [T1]a[/] [S2]book[/]. — Это книга.\n> [T2]This[/] [D1]is[/] [T3]my[/] [S2]book[/]. — Это моя книга.\n\nВ первом случае **a** помогает представить одну книгу без уточнения, чья она. Во втором **my** уже объясняет, что книга моя. Сказать *a my book* нельзя: эти два указателя не ставят вместе перед одним существительным.\n\nВ обычном полном утверждении **исчисляемому существительному в единственном числе** нужен подходящий указатель: *a book*, *my book*. Поэтому *This is book* — ошибка. Но имена людей (*Anna*) не требуют артикля; неисчисляемые слова вроде *water* и *coffee* работают иначе.\n\n**Почему русскому переводу не нужен a?** В русском нет системы артиклей, и смысл нередко понятен из ситуации. Английский чаще выражает определённость отдельными словами. Это не то же самое, что русские падежные окончания.\n\nЕщё один указатель — **the**, когда предмет уже известен собеседникам. Здесь достаточно заметить разницу между *a* и *my*; выбор *a / the* подробно объясняется в третьем уроке.\n\n**Диагностика понимания:** Вы хотите сказать «Это моя книга». Что верно: *This is my book* или *This is a my book*?\n\n**Разбор:** *This is my book*. **My** уже указывает, чья книга. Дополнительное **a** перед ним не требуется. Это правило о сочетании этих определителей, а не о том, что перед всяким существительным обязательно есть *my*.\n"
+      },
+      {
+        "number": 5,
+        "body": "В живой американской речи полезно сначала услышать и запомнить несколько **готовых фраз**. Не обязательно уже уметь объяснить грамматику каждого слова:\n\n> [J3]Good[/] [S7]morning[/]! — Доброе утро!\n> [D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/]! — Хорошего дня!\n> [T8]I[/][D1]'m[/] [S2]home[/]! — Я дома!\n> [S3]Water[/], please. — Воды, пожалуйста.\n\n- *Have a nice day!* произносят при прощании. Здесь **have** входит в пожелание, а не буквально означает «владей днём». Можно ответить таким же пожеланием.\n- *I'm home!* часто говорят, когда вернулись домой. Здесь не нужно вставлять *at*: сочетание *at home* разберём в следующем уроке.\n- В разговоре о родителях часто используют **mom** и **dad**; **mother** и **father** тоже правильны, но нередко звучат нейтральнее или официальнее в зависимости от ситуации.\n- **House** обычно означает отдельный дом как здание, **apartment** — квартиру. Значение **home** разберём ниже.\n\n**Не путайте:** готовые реплики вроде *Water, please* — нормальная разговорная просьба, хотя это не полное предложение с глаголом.\n"
+      },
+      {
+        "number": 6,
+        "body": "**Почему a book, но coffee без a?** Книги можно посчитать по одной: одна книга, две книги. Воду и кофе как вещество обычно не считают по штукам. Поэтому:\n\n> [T8]I[/] [D3]like[/] [S3]coffee[/]. — Я люблю кофе.\n\nЗдесь **coffee** — неисчисляемое существительное, и артикль **a** не нужен. Но *a coffee* тоже возможно, если речь об **одной порции кофе**, например в кафе. Это не ошибка и не правило только для заказа: значение слова меняется вместе с ситуацией.\n\n**Home или house?** **House** — здание, **home** — место, где человек живёт и которое считает своим домом. В доме-квартире тоже может быть **home**. Поэтому в готовой фразе говорят *I'm home*, а не *I'm house*.\n\n**А почему нет is в I like coffee?** Потому что **like** уже глагол со своим значением «люблю». **Is** не надо добавлять в каждое английское предложение — оно нужно для определённых конструкций. Разберём это в следующем уроке.\n\nНа будущее: *My family is big.* Слово **family** здесь означает одну семью как группу, поэтому стоит **is**. Это дополнительная тонкость; пока достаточно узнавать слово **family**.\n"
+      },
+      {
+        "number": 7,
+        "body": "Теперь четыре задания: сначала найдите существительное, затем подставьте слово, соберите знакомую фразу и используйте её в новой ситуации.\n\n**Как себя проверять:** не только выбирайте ответ, но и спрашивайте себя «какое слово называет предмет?» и «почему здесь my, а не a?». Если пока неясно — вернитесь к короткому сравнению выше. Подсказку можно открыть после попытки.\n\n**Проверка маленького шага:** В *This is my room* слово *room* **называет** место, а *my* лишь указывает, кому оно принадлежит. Если убрать *room*, изменится не только длина фразы, но и её смысл. Поэтому не называйте каждое слово перед существительным существительным.\n"
+      }
+    ],
+    "exercises": [
+      {
+        "order": 1,
+        "uid": "EX-00001",
+        "kind": "choice",
+        "stage": "recognition",
+        "prompt_ru": "Какое слово в этой фразе — существительное?",
+        "prompt_en": "This is my new phone.",
+        "options": [
+          "This",
+          "is",
+          "new",
+          "phone"
+        ],
+        "answer": "phone",
+        "hint_ru": "Задайте вопрос «что это?» к каждому слову.",
+        "explanation_ru": "Phone называет предмет, поэтому это существительное. New описывает, какой телефон; is связывает части фразы, This указывает на предмет.",
+        "units": [
+          "LX-00009"
+        ]
+      },
+      {
+        "order": 2,
+        "uid": "EX-00002",
+        "kind": "fill",
+        "stage": "substitution",
+        "prompt_ru": "Вы представляете подругу: «Это моя подруга». Вставьте слово.",
+        "prompt_en": "This is my ___.",
+        "answer": "friend",
+        "hint_ru": "Одно слово и для «друга», и для «подруги».",
+        "explanation_ru": "Friend не различает пол. Перед ним стоит my, поэтому a не нужен.",
+        "units": [
+          "LX-00004"
+        ]
+      },
+      {
+        "order": 3,
+        "uid": "EX-00003",
+        "kind": "build",
+        "stage": "production",
+        "prompt_ru": "Соберите фразу: «Меня зовут Анна».",
+        "options": [
+          "name",
+          "Anna",
+          "My",
+          "is"
+        ],
+        "answer": "My name is Anna",
+        "hint_ru": "Сначала My name («моё имя»), затем is и имя человека.",
+        "explanation_ru": "My — «моё», name — «имя», is связывает их с Anna. Готовая фраза My name is Anna означает «Меня зовут Анна», хотя дословный порядок другой.",
+        "units": [
+          "LX-00015"
+        ]
+      },
+      {
+        "order": 4,
+        "uid": "EX-00004",
+        "kind": "fill",
+        "stage": "transfer",
+        "prompt_ru": "Новая ситуация: вы показываете гостю свою книгу и говорите, что она новая. Можно ответить одной или двумя короткими фразами.",
+        "prompt_en": "___",
+        "answer": "This is my book. It is new.",
+        "accepted": [
+          "This is my book. It's new.",
+          "This is my book. It is new",
+          "This is my new book."
+        ],
+        "hint_ru": "Сначала This is my…, потом It is…",
+        "explanation_ru": "This is my book. It is new. Сначала назвали книгу, потом сказали о её свойстве. Можно объединить: This is my new book — указатель my стоит перед new book.",
+        "units": [
+          "LX-00008",
+          "LX-00027"
+        ]
+      }
+    ],
+    "practice": [
+      {
+        "order": 1,
+        "kind": "translate",
+        "prompt_ru": "Это мой дом.",
+        "answer": "This is my house.",
+        "accepted": [
+          "This is my home."
+        ],
+        "hint_ru": "Начните с This is…",
+        "explanation_ru": "This is my house: this — «это», my — «мой», house — существительное. В английском перед существительным стоит маленькое слово-указатель my.",
+        "review_of": 3,
+        "units": [
+          "LX-00006"
+        ]
+      },
+      {
+        "order": 2,
+        "kind": "translate",
+        "prompt_ru": "Доброе утро! Как вас зовут?",
+        "answer": "Good morning! What is your name?",
+        "hint_ru": "Вопрос об имени начинается с What.",
+        "explanation_ru": "Good morning! What is your name? По-английски спрашивают «Какое ваше имя?», а не «Как вас зовут?».",
+        "review_of": 3,
+        "units": [
+          "LX-00014",
+          "LX-00015"
+        ]
+      },
+      {
+        "order": 3,
+        "kind": "translate",
+        "prompt_ru": "Меня зовут Анна.",
+        "answer": "My name is Anna.",
+        "accepted": [
+          "I am Anna."
+        ],
+        "hint_ru": "«Моё имя — Анна».",
+        "explanation_ru": "My name is Anna. Буквально «Моё имя есть Анна». Можно и короче: I'm Anna.",
+        "review_of": 3,
+        "units": [
+          "LX-00015"
+        ]
+      },
+      {
+        "order": 4,
+        "kind": "translate",
+        "prompt_ru": "Хорошего дня!",
+        "answer": "Have a nice day!",
+        "hint_ru": "Готовая фраза недели.",
+        "explanation_ru": "Have a nice day! — готовая фраза: её говорят на прощание в магазине, в кафе, соседу.",
+        "review_of": 3,
+        "units": [
+          "LX-00012"
+        ]
+      }
+    ]
+  },
+  "week_full": {
+    "source_path": "content/seed_weeks/a1_w01.yaml",
+    "source": {
+      "level": "A1",
+      "week": 1,
+      "can_do_ru": "Я смогу представиться, сказать, откуда я, и спросить имя собеседника.",
+      "mission_ru": "1. Без готового образца представьтесь вслух новому соседу и скажите, откуда вы. 2. Представьте знакомство с другим человеком: поздоровайтесь, спросите его имя и ответьте на встречный вопрос. Говорите своими словами, без вариантов ответа.",
+      "ambience": "morning_home",
+      "chunks": [
+        "LX-00042",
+        "LX-00043",
+        "LX-00044",
+        "LX-00045",
+        "LX-00046",
+        "LX-00047",
+        "LX-00048"
+      ],
+      "story_beat": {
+        "intro_ru": "Первое утро Анны в новом доме. На крыльце её встречает сосед.",
+        "outcome_ru": "Анна и Том познакомились: Том — сосед, Анна — из России. Анна очень занята переездом, и Том желает ей хорошего дня.",
+        "next_hook_ru": "Скоро у Анны будут первые гости."
+      },
+      "script": [
+        {
+          "speaker": "tom",
+          "emotion": "happy",
+          "text": "[J3]Good[/] [S7]morning[/]! [T8]I[/] [D1]am[/] [S1]Tom[/]. [T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]?",
+          "spoken": "[J3]Good[/] [S7]morning[/]! [T8]I[/][D1]'m[/] [S1]Tom[/]. [T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]?",
+          "ru": "Доброе утро! Я Том. Как вас зовут?"
+        },
+        {
+          "speaker": "anna",
+          "emotion": "happy",
+          "text": "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]. [J3]Nice[/] [X2]to[/] [D5]meet[/] [T8]you[/], [S1]Tom[/]!",
+          "ru": "Меня зовут Анна. Приятно познакомиться, Том!"
+        },
+        {
+          "speaker": "tom",
+          "emotion": "surprised",
+          "text": "[T8]I[/] [D1]am[/] [T3]your[/] [S1]neighbor[/], [S1]Anna[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?",
+          "spoken": "[T8]I[/][D1]'m[/] [T3]your[/] [S1]neighbor[/], [S1]Anna[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?",
+          "ru": "Я ваш сосед, Анна. Вы из России?"
+        },
+        {
+          "speaker": "anna",
+          "emotion": "happy",
+          "text": "[O4]Yes[/], [T8]I[/] [D1]am[/]. [T8]I[/] [D1]am[/] [P2]from[/] [S4]Russia[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/].",
+          "spoken": "[O4]Yes[/], [T8]I[/] [D1]am[/]. [T8]I[/][D1]'m[/] [P2]from[/] [S4]Russia[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/].",
+          "ru": "Да. Я из России. Это мой новый дом."
+        },
+        {
+          "speaker": "tom",
+          "emotion": "excited",
+          "text": "[T8]It[/] [D1]is[/] [T1]a[/] [J3]nice[/] [S2]house[/], [S1]Anna[/]! [T8]It[/] [D1]is[/] [J1]big[/]!",
+          "spoken": "[T8]It[/][D1]'s[/] [T1]a[/] [J3]nice[/] [S2]house[/], [S1]Anna[/]! [T8]It[/][D1]'s[/] [J1]big[/]!",
+          "ru": "Какой хороший дом, Анна! И большой!"
+        },
+        {
+          "speaker": "anna",
+          "emotion": "tired",
+          "text": "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T8]I[/] [D1]am[/] [J4]busy[/].",
+          "spoken": "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T8]I[/][D1]'m[/] [J4]busy[/].",
+          "ru": "Да. У меня много дел."
+        },
+        {
+          "speaker": "tom",
+          "emotion": "happy",
+          "text": "[D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/], [S1]Anna[/]!",
+          "ru": "Хорошего дня, Анна!"
+        },
+        {
+          "speaker": "anna",
+          "emotion": "happy",
+          "text": "[D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/], [S1]Tom[/]!",
+          "ru": "Хорошего дня, Том!"
+        }
+      ],
+      "twister": {
+        "number": 1,
+        "series": "sounds",
+        "text": "[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]family[/], [T2]this[/], [T2]this[/], [T2]this[/]!",
+        "ru": "Это моя мама, это мой папа, это моя семья — это, это, это!",
+        "ipa": "/ˈðɪs ɪz maɪ ˈmʌðɚ | ˈðɪs ɪz maɪ ˈfɑðɚ | ˈðɪs ɪz maɪ ˈfæməli | ˈðɪs | ˈðɪs | ˈðɪs/",
+        "focus_sounds": [
+          "dh"
+        ],
+        "source": "original",
+        "goal_ru": "Звонкое th /ð/ восемь раз подряд: this, mother, father. Русскому языку хочется сказать «зис» и «мазэр».",
+        "tip_ru": "Кончик языка слегка между зубами, воздух идёт непрерывно, голос звучит. Не прикусывайте язык и не превращайте звук в «з» или «д». Начните медленно, потом ускоряйтесь на this, this, this.",
+        "warmup": [
+          "[T2]this[/], [T2]this[/], [T2]this[/]",
+          "[T2]this[/] [D1]is[/] [T3]my[/] [S1]mother[/]",
+          "[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/].",
+          "[T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]."
+        ],
+        "target_line": "This is my new house.",
+        "own_ru": "Скажите о своём доме или комнате: This room is… / This house is…"
+      }
+    },
+    "plan": {
+      "level": "A1",
+      "week": 1,
+      "situation_ru": "Знакомство с соседом",
+      "sphere": "meet",
+      "grammar_ru": "существительные; be: I'm, you're, it's",
+      "grammar_markers": [
+        "D1"
+      ]
+    }
+  },
+  "scheduled_stories": [],
+  "scheduled_poems": [],
+  "active_topic_full": {
+    "n": 1,
+    "week": 1,
+    "slug": "a1-nouns-first-words",
+    "title": "Имя предмета",
+    "scene": "Том показывает вещи в новом доме",
+    "context": "Не перечисляйте слова отдельно: называйте предмет в настоящем предложении.",
+    "dialogue": [
+      [
+        "Tom",
+        "This is my phone.",
+        "Это мой телефон."
+      ],
+      [
+        "Anna",
+        "This is my book.",
+        "Это моя книга."
+      ],
+      [
+        "Tom",
+        "It's a new book.",
+        "Это новая книга."
+      ]
+    ],
+    "question": "Какое слово в первой реплике называет предмет?",
+    "options": [
+      "phone",
+      "this",
+      "my"
+    ],
+    "correct": 0,
+    "feedback": "Phone — существительное: название предмета. This указывает, my показывает принадлежность.",
+    "prompt": "Покажите гостю свою книгу. Скажите: «Это моя книга».",
+    "answer": "This is my book.",
+    "alternatives": [],
+    "hint": "Начните с This is…, перед book поставьте my.",
+    "transfer": "Теперь у двери стоит ваша подруга. Представьте её: «Это моя подруга».",
+    "transfer_example": "This is my friend.",
+    "why": "Noun («существительное») исторически связано с латинским nomen («имя, название»). Но в уроке важнее функция: phone называет предмет, а this указывает и my сообщает принадлежность. В полной фразе This is my phone нужна форма be — is. Короткие реплики вроде Hello! могут быть без глагола, поэтому не заучивайте «каждая английская фраза обязана иметь глагол».",
+    "sound": "В phone слышен дифтонг /oʊ/. Не добавляйте отдельный звук после конечного n."
+  },
+  "spoken_scenarios_full": {
+    "n": 1,
+    "missions": [
+      {
+        "id": 1,
+        "title": "Путаница в коробках",
+        "scene": "Том подписал коробки, но перепутал телефон и книгу.",
+        "prompt": "Вы показываете книгу Анне. Назовите её полным английским предложением.",
+        "example": "This is my book.",
+        "coach": "В английском нельзя пропустить is в This is…"
+      },
+      {
+        "id": 2,
+        "title": "Гость у двери",
+        "scene": "К вам пришла Мия и спрашивает, чей телефон на столе.",
+        "prompt": "Ответьте, что это ваш телефон.",
+        "example": "This is my phone.",
+        "coach": "My сообщает, кому принадлежит вещь."
+      },
+      {
+        "id": 3,
+        "title": "Кот и записка",
+        "scene": "Кот Box сел рядом с книгой. Анна просит назвать предмет, не имя кота.",
+        "prompt": "Назовите книгу одним простым предложением.",
+        "example": "It's a book.",
+        "coach": "Называя один неизвестный предмет, часто используем a."
+      },
+      {
+        "id": 4,
+        "title": "Маленькая выставка",
+        "scene": "Том ставит рядом новую книгу и старый телефон.",
+        "prompt": "Представьте гостю именно новую книгу.",
+        "example": "This is a new book.",
+        "coach": "New описывает book и стоит перед ним."
+      },
+      {
+        "id": 5,
+        "title": "Не тот предмет",
+        "scene": "Мия протягивает телефон вместо книги.",
+        "prompt": "Вежливо уточните, что нужна ваша книга.",
+        "example": "My book, please.",
+        "coach": "Короткие фразы уместны, когда предметы уже видны."
+      },
+      {
+        "id": 6,
+        "title": "Импровизация: вещь из кармана",
+        "scene": "Вы показываете Мие новый телефон, который только что достали из кармана.",
+        "prompt": "Представьте именно новый телефон полным предложением.",
+        "example": "This is a new phone.",
+        "coach": "Покажите вещь через This is a… и добавьте new перед phone."
+      }
+    ],
+    "twists": [
+      {
+        "scene": "В коробке вместо телефона лежит книга. Назовите её.",
+        "example": "This is my book."
+      },
+      {
+        "scene": "Книга новая. Как сказать это про один предмет?",
+        "example": "It's a new book."
+      }
+    ]
+  },
+  "error_repair_full": {
+    "n": 1,
+    "wrong": "This my phone.",
+    "correct": "This is my phone.",
+    "hint": "Между this и my нужен глагол.",
+    "reason": "В полном английском предложении «Это мой телефон» нужна форма be: This is my phone. В русском такой глагол обычно опущен."
+  },
+  "retry_guidance_full": {
+    "1": {
+      "focus": "Ищите слово, которое называет предмет, а не указывает на него и не описывает его.",
+      "choices": {
+        "This": "This указывает на предмет, но не называет его.",
+        "is": "Is соединяет части предложения; это форма be.",
+        "new": "New описывает признак предмета, но не является его названием."
+      }
+    },
+    "2": {
+      "focus": "После my нужно название человека, которого вы представляете, а не описание."
+    },
+    "3": {
+      "focus": "Проверьте порядок: сначала обозначаем своё имя, затем соединяем его с именем человека."
+    },
+    "4": {
+      "focus": "Проверьте, что вы назвали именно свою книгу и сказали, что она новая. Допустимы разные фразы."
+    }
+  },
+  "delayed_review_full": {
+    "1": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "В предложении «This is my book» какое слово называет предмет?",
+          "This is my book.",
+          [
+            "This",
+            "book",
+            "is"
+          ],
+          1
+        ],
+        "prompt_ru": "В предложении «This is my book» какое слово называет предмет?",
+        "prompt_en": "This is my book.",
+        "options": [
+          "This",
+          "book",
+          "is"
+        ],
+        "correct_index": 1,
+        "answer": "book",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00001",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Найдите существительное: «Anna has a phone».",
+          "Anna has a phone.",
+          [
+            "has",
+            "a",
+            "phone"
+          ],
+          2
+        ],
+        "prompt_ru": "Найдите существительное: «Anna has a phone».",
+        "prompt_en": "Anna has a phone.",
+        "options": [
+          "has",
+          "a",
+          "phone"
+        ],
+        "correct_index": 2,
+        "answer": "phone",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00001",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Какое слово называет человека?",
+          "Tom is my friend.",
+          [
+            "my",
+            "friend",
+            "is"
+          ],
+          1
+        ],
+        "prompt_ru": "Какое слово называет человека?",
+        "prompt_en": "Tom is my friend.",
+        "options": [
+          "my",
+          "friend",
+          "is"
+        ],
+        "correct_index": 1,
+        "answer": "friend",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00001",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Какое слово называет помещение?",
+          "This room is new.",
+          [
+            "This",
+            "new",
+            "room"
+          ],
+          2
+        ],
+        "prompt_ru": "Какое слово называет помещение?",
+        "prompt_en": "This room is new.",
+        "options": [
+          "This",
+          "new",
+          "room"
+        ],
+        "correct_index": 2,
+        "answer": "room",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00001",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Какое слово называет напиток?",
+          "I have coffee.",
+          [
+            "coffee",
+            "have",
+            "I"
+          ],
+          0
+        ],
+        "prompt_ru": "Какое слово называет напиток?",
+        "prompt_en": "I have coffee.",
+        "options": [
+          "coffee",
+          "have",
+          "I"
+        ],
+        "correct_index": 0,
+        "answer": "coffee",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00001",
+        "source_exercise_order": 1
+      }
+    ],
+    "2": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "Вы представляете гостю маму. Вставьте название человека.",
+          "This is my ___.",
+          [
+            "is",
+            "mother",
+            "new"
+          ],
+          1
+        ],
+        "prompt_ru": "Вы представляете гостю маму. Вставьте название человека.",
+        "prompt_en": "This is my ___.",
+        "options": [
+          "is",
+          "mother",
+          "new"
+        ],
+        "correct_index": 1,
+        "answer": "mother",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00002",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Это мой сосед. Вставьте подходящее слово.",
+          "This is my ___.",
+          [
+            "neighbor",
+            "have",
+            "nice"
+          ],
+          0
+        ],
+        "prompt_ru": "Это мой сосед. Вставьте подходящее слово.",
+        "prompt_en": "This is my ___.",
+        "options": [
+          "neighbor",
+          "have",
+          "nice"
+        ],
+        "correct_index": 0,
+        "answer": "neighbor",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00002",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Представьте другу своего друга.",
+          "This is my ___.",
+          [
+            "friend",
+            "am",
+            "big"
+          ],
+          0
+        ],
+        "prompt_ru": "Представьте другу своего друга.",
+        "prompt_en": "This is my ___.",
+        "options": [
+          "friend",
+          "am",
+          "big"
+        ],
+        "correct_index": 0,
+        "answer": "friend",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00002",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Вы показываете собственный телефон. Назовите предмет.",
+          "This is my ___.",
+          [
+            "my",
+            "phone",
+            "are"
+          ],
+          1
+        ],
+        "prompt_ru": "Вы показываете собственный телефон. Назовите предмет.",
+        "prompt_en": "This is my ___.",
+        "options": [
+          "my",
+          "phone",
+          "are"
+        ],
+        "correct_index": 1,
+        "answer": "phone",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00002",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Вы знакомите Анну со своим домом. Назовите предмет.",
+          "This is my ___.",
+          [
+            "house",
+            "is",
+            "new"
+          ],
+          0
+        ],
+        "prompt_ru": "Вы знакомите Анну со своим домом. Назовите предмет.",
+        "prompt_en": "This is my ___.",
+        "options": [
+          "house",
+          "is",
+          "new"
+        ],
+        "correct_index": 0,
+        "answer": "house",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00002",
+        "source_exercise_order": 2
+      }
+    ],
+    "3": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "Том представляется новому соседу. Выберите нормальный порядок.",
+          "",
+          [
+            "My is name Tom.",
+            "My name is Tom.",
+            "Name my Tom is."
+          ],
+          1
+        ],
+        "prompt_ru": "Том представляется новому соседу. Выберите нормальный порядок.",
+        "prompt_en": "",
+        "options": [
+          "My is name Tom.",
+          "My name is Tom.",
+          "Name my Tom is."
+        ],
+        "correct_index": 1,
+        "answer": "My name is Tom.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00003",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Анна представляется по телефону.",
+          "",
+          [
+            "Anna my is name.",
+            "Name is my Anna.",
+            "My name is Anna."
+          ],
+          2
+        ],
+        "prompt_ru": "Анна представляется по телефону.",
+        "prompt_en": "",
+        "options": [
+          "Anna my is name.",
+          "Name is my Anna.",
+          "My name is Anna."
+        ],
+        "correct_index": 2,
+        "answer": "My name is Anna.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00003",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Как правильно сказать «Моё имя — Том»?",
+          "",
+          [
+            "My name is Tom.",
+            "I name am Tom.",
+            "My is Tom name."
+          ],
+          0
+        ],
+        "prompt_ru": "Как правильно сказать «Моё имя — Том»?",
+        "prompt_en": "",
+        "options": [
+          "My name is Tom.",
+          "I name am Tom.",
+          "My is Tom name."
+        ],
+        "correct_index": 0,
+        "answer": "My name is Tom.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00003",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Анна отвечает на вопрос «Как тебя зовут?»",
+          "",
+          [
+            "Name my is Anna.",
+            "My Anna is name.",
+            "My name is Anna."
+          ],
+          2
+        ],
+        "prompt_ru": "Анна отвечает на вопрос «Как тебя зовут?»",
+        "prompt_en": "",
+        "options": [
+          "Name my is Anna.",
+          "My Anna is name.",
+          "My name is Anna."
+        ],
+        "correct_index": 2,
+        "answer": "My name is Anna.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00003",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Том повторяет своё имя для гостя.",
+          "",
+          [
+            "My name is Tom.",
+            "My name Tom is.",
+            "Name is Tom my."
+          ],
+          0
+        ],
+        "prompt_ru": "Том повторяет своё имя для гостя.",
+        "prompt_en": "",
+        "options": [
+          "My name is Tom.",
+          "My name Tom is.",
+          "Name is Tom my."
+        ],
+        "correct_index": 0,
+        "answer": "My name is Tom.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00003",
+        "source_exercise_order": 3
+      }
+    ],
+    "4": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "Вы показываете гостю новый телефон. Что сказать?",
+          "",
+          [
+            "This is my phone new.",
+            "This is my new phone.",
+            "This my new is phone."
+          ],
+          1
+        ],
+        "prompt_ru": "Вы показываете гостю новый телефон. Что сказать?",
+        "prompt_en": "",
+        "options": [
+          "This is my phone new.",
+          "This is my new phone.",
+          "This my new is phone."
+        ],
+        "correct_index": 1,
+        "answer": "This is my new phone.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00004",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Вы показываете большую комнату. Что сказать?",
+          "",
+          [
+            "This is my big room.",
+            "My this big room is.",
+            "This is room my big."
+          ],
+          0
+        ],
+        "prompt_ru": "Вы показываете большую комнату. Что сказать?",
+        "prompt_en": "",
+        "options": [
+          "This is my big room.",
+          "My this big room is.",
+          "This is room my big."
+        ],
+        "correct_index": 0,
+        "answer": "This is my big room.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00004",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Вы рассказываете о новой книге.",
+          "",
+          [
+            "This is my book. It new.",
+            "This is my book. It is new.",
+            "This my book. Is new."
+          ],
+          1
+        ],
+        "prompt_ru": "Вы рассказываете о новой книге.",
+        "prompt_en": "",
+        "options": [
+          "This is my book. It new.",
+          "This is my book. It is new.",
+          "This my book. Is new."
+        ],
+        "correct_index": 1,
+        "answer": "This is my book. It is new.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00004",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Вы показываете гостю свой большой дом.",
+          "",
+          [
+            "This is my house big.",
+            "My big is house.",
+            "This is my big house."
+          ],
+          2
+        ],
+        "prompt_ru": "Вы показываете гостю свой большой дом.",
+        "prompt_en": "",
+        "options": [
+          "This is my house big.",
+          "My big is house.",
+          "This is my big house."
+        ],
+        "correct_index": 2,
+        "answer": "This is my big house.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00004",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Вы показываете другу свой новый дом.",
+          "",
+          [
+            "This my new house.",
+            "This is my new house.",
+            "This is new my house."
+          ],
+          1
+        ],
+        "prompt_ru": "Вы показываете другу свой новый дом.",
+        "prompt_en": "",
+        "options": [
+          "This my new house.",
+          "This is my new house.",
+          "This is new my house."
+        ],
+        "correct_index": 1,
+        "answer": "This is my new house.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00004",
+        "source_exercise_order": 4
+      }
+    ]
+  },
+  "understanding_full": {
+    "slug": "a1-nouns-first-words",
+    "plain": "Существительное — слово, которое называет человека, предмет или место.",
+    "why": "Назвать вещь — значит помочь собеседнику понять, о чём речь.",
+    "pattern": "This is my + название.",
+    "mistake": "Путать new с названием предмета.",
+    "fix": "Спросите себя: слово называет что-то или описывает его?",
+    "example": "This is my book.",
+    "translation": "Это моя книга.",
+    "tasks": {
+      "meaning": {
+        "prompt": "Передайте по-русски смысл: «This is my phone.».",
+        "model": "Это мой телефон.",
+        "accepted": [
+          "Это мой телефон."
+        ]
+      },
+      "writing": {
+        "prompt": "Без подсказок напишите «Это моя книга».",
+        "model": "This is my book.",
+        "accepted": [
+          "This is my book."
+        ]
+      },
+      "transfer": {
+        "prompt": "Покажите гостю новый телефон двумя фразами.",
+        "model": "This is my phone. It is new."
+      },
+      "explain": {
+        "prompt": "Ученик хочет показать телефон и говорит: «This is my new». Какого слова ему не хватает? Объясните разницу между названием предмета и его признаком.",
+        "model": "Нужно назвать предмет: This is my new phone. Слово phone — существительное (вещь), new — прилагательное (признак)."
+      }
+    },
+    "contrast": {
+      "a_en": "This is my phone.",
+      "a_ru": "Это мой телефон.",
+      "b_en": "My phone is new.",
+      "b_ru": "Мой телефон новый.",
+      "why": "В первом предложении phone называет предмет. Во втором new сообщает о нём новое свойство. Предмет и его признак выполняют разную работу."
+    }
+  },
+  "scaffold_full": {
+    "slug": "a1-nouns-first-words",
+    "steps": [
+      {
+        "example_en": "a phone",
+        "example_ru": "телефон",
+        "why_ru": "В выражении a phone артикль a употребляется с одним исчисляемым предметом, который здесь ещё не определён для слушателя."
+      },
+      {
+        "example_en": "my phone",
+        "example_ru": "мой телефон",
+        "why_ru": "My уточняет, кому принадлежит предмет; после my не ставьте a."
+      },
+      {
+        "example_en": "This is my phone.",
+        "example_ru": "Это мой телефон.",
+        "why_ru": "This указывает на предмет, is связывает его с названием, а my уточняет владельца."
+      }
+    ],
+    "transfer_variants": [
+      {
+        "prompt": "На столе ваша новая книга. Представьте её гостю и добавьте отдельной фразой, что она новая.",
+        "model": "This is my book. It is new."
+      },
+      {
+        "prompt": "В комнате ваш новый рюкзак. Покажите его другу и скажите, что он новый.",
+        "model": "This is my backpack. It is new."
+      }
+    ]
+  },
+  "links": {
+    "week": {
+      "source_path": "content/seed_weeks/a1_w01.yaml",
+      "level": "A1",
+      "week": 1,
+      "basis": "YAML level+week, load_content._week; lesson_detail selects lesson.week"
+    },
+    "stories": [],
+    "poems": [],
+    "active_topic": {
+      "source_path": "content/active_a1/topics_01_08.json",
+      "match": {
+        "slug": "a1-nouns-first-words",
+        "n": 1
+      },
+      "basis": "apps.lessons.views.lesson_detail + apps.core.a1_active._load_topics"
+    },
+    "spoken_missions": {
+      "source_path": "content/active_a1/scenarios_01_06.json",
+      "match": {
+        "n": 1
+      },
+      "basis": "active topics indexed by lesson.order, slug checked; content_details lesson key",
+      "count": 6
+    },
+    "error_repair": {
+      "source_path": "content/active_a1/error_repairs_01_18.json",
+      "match": {
+        "n": 1
+      },
+      "basis": "_load_topics attaches repair by n"
+    },
+    "retry_guidance": {
+      "source_path": "content/manifests/a1_retry_guidance.json",
+      "match": {
+        "slug": "a1-nouns-first-words"
+      },
+      "basis": "retry_guidance: slug then str(exercise.order)"
+    },
+    "delayed_review": {
+      "source_path": "content/manifests/a1_delayed_review_01.json",
+      "match": {
+        "slug": "a1-nouns-first-words"
+      },
+      "basis": "question_bank: slug then str(exercise.order), five cards per exercise",
+      "card_count": 20
+    },
+    "understanding": {
+      "source_path": "content/manifests/a1_understanding_checks.json",
+      "match": {
+        "slug": "a1-nouns-first-words"
+      },
+      "basis": "understanding_bank/get_guide by slug"
+    },
+    "scaffold": {
+      "source_path": "content/manifests/a1_scaffold_transfer.json",
+      "match": {
+        "slug": "a1-nouns-first-words"
+      },
+      "basis": "understanding_bank merges steps and transfer_variants by slug"
+    },
+    "practice_review_links": [
+      {
+        "practice_order": 1,
+        "review_of_exercise_order": 3,
+        "review_of_exercise_uid": "EX-00003"
+      },
+      {
+        "practice_order": 2,
+        "review_of_exercise_order": 3,
+        "review_of_exercise_uid": "EX-00003"
+      },
+      {
+        "practice_order": 3,
+        "review_of_exercise_order": 3,
+        "review_of_exercise_uid": "EX-00003"
+      },
+      {
+        "practice_order": 4,
+        "review_of_exercise_order": 3,
+        "review_of_exercise_uid": "EX-00003"
+      }
+    ],
+    "browser_retrieval": {
+      "source_code": "static/js/a1-active.js",
+      "selector": "retrievalLine(topic): (topic.n - 1) % topic.dialogue.length",
+      "dialogue_index": 0,
+      "selected_line": [
+        "Tom",
+        "This is my phone.",
+        "Это мой телефон."
+      ],
+      "tasks": [
+        "dictation",
+        "back_translation"
+      ],
+      "persistence": "browser only; not a PracticeItem database row",
+      "phonetic_quality": "NOT_VERIFIED"
+    },
+    "optional_transfer_pilot": {
+      "source_path": "apps/learning/transfer_pilot.py",
+      "present": false,
+      "basis": "literal PILOTS dict keys; linked via learning/dashboard.html, separate opt-in workflow, not ordinary lesson tasks"
+    }
+  },
+  "answer_checking": {
+    "main": "Exercise.normalize/is_correct; API uses is_open_pilot_response for open A1 fill/transfer tasks",
+    "practice": "PracticeItem.normalize/is_correct expands configured contractions; accepted in source is finite, not all English answers",
+    "open_tasks": "Guide transfer/explain and spoken missions are model/self/teacher review, not an exhaustive grammar validator",
+    "listen_dictation": "DB PracticeItem permits only translate. The active A1 lab separately generates one dictation and one back-translation from a selected dialogue line in browser JavaScript; see browser_retrieval below"
+  },
+  "browser_retrieval": {
+    "source_code": "static/js/a1-active.js",
+    "selector": "retrievalLine(topic): (topic.n - 1) % topic.dialogue.length",
+    "dialogue_index": 0,
+    "selected_line": [
+      "Tom",
+      "This is my phone.",
+      "Это мой телефон."
+    ],
+    "tasks": [
+      "dictation",
+      "back_translation"
+    ],
+    "persistence": "browser only; not a PracticeItem database row",
+    "phonetic_quality": "NOT_VERIFIED"
+  },
+  "prerequisites": {
+    "prior_lessons_in_course_order": [],
+    "status": "ORDER_ONLY_NOT_A_PEDAGOGICAL_PROOF",
+    "grammar_dependencies_from_dictionary": [],
+    "reviewer_questions": [
+      "Does the learner encounter unknown grammar before it is explained?",
+      "Are early full sentences explicitly taught as chunks rather than presumed prior knowledge?"
+    ]
+  },
+  "explicit_dictionary_records": [
+    {
+      "uid": "LX-00001",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00001",
+        "lemma": "family",
+        "meaning": "a group of people related to each other, such as parents and children",
+        "class": "S1",
+        "grammar_features": [
+          "countable",
+          "singular_agreement_us"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): family n., adj. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈfæməli/",
+        "stress_note": "Ударение на первый слог: FAM-i-ly; средний звук часто почти исчезает: /ˈfæmli/",
+        "translation_ru": "семья",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my family",
+          "a big family",
+          "family photo"
+        ],
+        "chunks": [
+          "This is my family.",
+          "My family is big."
+        ],
+        "example_en": "[T3]My[/] [S1]family[/] [D1]is[/] big.",
+        "example_ru": "Моя семья большая.",
+        "pattern": "My family is ___.",
+        "substitutions": [
+          "big",
+          "nice",
+          "busy",
+          "at home"
+        ],
+        "situation": "Показываете фото на телефоне",
+        "typical_error": "«My family are big» — в американском английском family обычно согласуется как единственное число: My family is big."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/0"
+      ]
+    },
+    {
+      "uid": "LX-00002",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00002",
+        "lemma": "mother",
+        "meaning": "a female parent",
+        "class": "S1",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): mother n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈmʌðɚ/",
+        "stress_note": "MOTH-er; th звонкое /ð/, кончик языка между зубами",
+        "translation_ru": "мать, мама",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my mother",
+          "a mother of two",
+          "mother and father"
+        ],
+        "chunks": [
+          "This is my mother."
+        ],
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/].",
+        "example_ru": "Это моя мама.",
+        "pattern": "This is my ___.",
+        "substitutions": [
+          "mother",
+          "father",
+          "friend",
+          "family"
+        ],
+        "situation": "Знакомите гостя с родными",
+        "usage_note": "В разговоре американцы чаще говорят mom: mother звучит официальнее.",
+        "typical_error": "Произносят th как /з/ или /в/. Нужен межзубный звук /ð/."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/1"
+      ]
+    },
+    {
+      "uid": "LX-00003",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00003",
+        "lemma": "father",
+        "meaning": "a male parent",
+        "class": "S1",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): father n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈfɑːðɚ/",
+        "stress_note": "FA-ther; первый гласный — открытое /ɑː/, как в «па»",
+        "translation_ru": "отец, папа",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my father",
+          "mother and father",
+          "a good father"
+        ],
+        "chunks": [
+          "My father is at home."
+        ],
+        "example_en": "[T3]My[/] [S1]father[/] [D1]is[/] [P1]at[/] [S2]home[/].",
+        "example_ru": "Мой папа дома.",
+        "pattern": "My father is ___.",
+        "substitutions": [
+          "at home",
+          "nice",
+          "busy",
+          "my friend"
+        ],
+        "situation": "Отвечаете, где родители",
+        "usage_note": "В разговоре чаще dad.",
+        "typical_error": "«My father is home work» — пропуск предлога. Говорят: at home, at work."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/2"
+      ]
+    },
+    {
+      "uid": "LX-00004",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00004",
+        "lemma": "friend",
+        "meaning": "a person you know well and like",
+        "class": "S1",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): friend n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/frend/",
+        "stress_note": "Одна гласная /e/: буква i не читается",
+        "translation_ru": "друг, подруга",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my friend",
+          "a good friend",
+          "best friend"
+        ],
+        "chunks": [
+          "This is my friend Tom."
+        ],
+        "example_en": "[S1]Anna[/] [D1]is[/] [T3]my[/] [S1]friend[/].",
+        "example_ru": "Анна — моя подруга.",
+        "pattern": "___ is my friend.",
+        "substitutions": [
+          "Anna",
+          "Tom",
+          "Mia"
+        ],
+        "situation": "Представляете друга",
+        "usage_note": "Friend не различает пол: и «друг», и «подруга».",
+        "typical_error": "Читают «фриенд». Правильно одна гласная: /frend/."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/3",
+        "/lesson_full/exercises/1/units/0"
+      ]
+    },
+    {
+      "uid": "LX-00005",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/4",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00005",
+        "lemma": "home",
+        "meaning": "the place where you live",
+        "class": "S2",
+        "grammar_features": [
+          "countable",
+          "adverb_use"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): home n., adv. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/hoʊm/",
+        "stress_note": "Дифтонг /oʊ/ — «оу», а не чистое «о»",
+        "translation_ru": "дом (место, где живёшь), домой",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "at home",
+          "my home",
+          "go home"
+        ],
+        "chunks": [
+          "I'm home!",
+          "I am at home."
+        ],
+        "example_en": "[T8]I[/] [D1]am[/] [P1]at[/] [S2]home[/].",
+        "example_ru": "Я дома.",
+        "pattern": "___ is at home.",
+        "substitutions": [
+          "Tom",
+          "Anna",
+          "My family",
+          "My friend"
+        ],
+        "situation": "Звоните и говорите, где вы",
+        "usage_note": "Home — место, где вы живёте, будь то дом или квартира; house — само здание. I'm home! часто говорят, вернувшись домой, но I'm home и I'm at home могут просто означать «я дома». Разница между фразами не в том, находитесь ли вы внутри здания или рядом с ним. Go home — «идти домой», без to.",
+        "typical_error": "«I go to home» — с home в значении «домой» предлог to не нужен: go home."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/4"
+      ]
+    },
+    {
+      "uid": "LX-00006",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00006",
+        "lemma": "house",
+        "meaning": "a building where people live, usually one family",
+        "class": "S2",
+        "grammar_features": [
+          "countable",
+          "plural_voiced_s"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): house n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/haʊs/",
+        "stress_note": "Дифтонг /aʊ/ — «ау». Во множественном числе houses /ˈhaʊzɪz/ звук s превращается в z",
+        "translation_ru": "дом (здание)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a big house",
+          "my house",
+          "a white house"
+        ],
+        "chunks": [
+          "This is my house."
+        ],
+        "example_en": "[T8]It[/] [D1]is[/] [T1]a[/] big [S2]house[/].",
+        "example_ru": "Это большой дом.",
+        "pattern": "It is a ___ house.",
+        "substitutions": [
+          "big",
+          "nice",
+          "new",
+          "good"
+        ],
+        "situation": "Описываете, где живёте",
+        "usage_note": "Квартира — apartment. House — отдельный дом.",
+        "typical_error": "Называют квартиру house. В США квартира — apartment."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/5",
+        "/lesson_full/practice/0/units/0"
+      ]
+    },
+    {
+      "uid": "LX-00007",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/6",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00007",
+        "lemma": "room",
+        "meaning": "a part of a building with walls, a floor and a ceiling",
+        "class": "S2",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): room n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ruːm/",
+        "stress_note": "Долгое /uː/",
+        "translation_ru": "комната",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my room",
+          "a big room",
+          "a room with a view"
+        ],
+        "chunks": [
+          "This is my room."
+        ],
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]room[/].",
+        "example_ru": "Это моя комната.",
+        "pattern": "This is my ___.",
+        "substitutions": [
+          "room",
+          "house",
+          "book",
+          "phone"
+        ],
+        "situation": "Показываете квартиру",
+        "typical_error": "Room — это не «рум» с коротким у: гласная долгая /uː/."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/6"
+      ]
+    },
+    {
+      "uid": "LX-00008",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/7",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00008",
+        "lemma": "book",
+        "meaning": "a set of printed pages fastened together inside a cover",
+        "class": "S2",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): book n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/bʊk/",
+        "stress_note": "Короткое /ʊ/, хотя пишется oo",
+        "translation_ru": "книга",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a good book",
+          "my book",
+          "read a book"
+        ],
+        "chunks": [
+          "This is my book."
+        ],
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]book[/].",
+        "example_ru": "Это моя книга.",
+        "pattern": "This is my ___.",
+        "substitutions": [
+          "book",
+          "phone",
+          "room",
+          "house"
+        ],
+        "situation": "Находите свою вещь на столе",
+        "typical_error": "«This is book» — пропущен определитель. Нужно a, my или the: This is a book."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/7",
+        "/lesson_full/exercises/3/units/0"
+      ]
+    },
+    {
+      "uid": "LX-00009",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/8",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00009",
+        "lemma": "phone",
+        "meaning": "a device for talking to people far away; a mobile phone",
+        "class": "S2",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): phone n., v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/foʊn/",
+        "stress_note": "ph читается как /f/; дифтонг /oʊ/",
+        "translation_ru": "телефон",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my phone",
+          "a new phone",
+          "phone number"
+        ],
+        "chunks": [
+          "My phone is new."
+        ],
+        "example_en": "[T8]I[/] [D1]have[/] [T1]a[/] new [S2]phone[/].",
+        "example_ru": "У меня новый телефон.",
+        "pattern": "I have a new ___.",
+        "substitutions": [
+          "phone",
+          "book",
+          "house",
+          "friend"
+        ],
+        "situation": "Хвастаетесь покупкой",
+        "usage_note": "Мобильный телефон в США — cell phone или просто phone.",
+        "typical_error": "«I have new phone» — пропуск a перед исчисляемым существительным в единственном числе."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/8",
+        "/lesson_full/exercises/0/units/0"
+      ]
+    },
+    {
+      "uid": "LX-00010",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/9",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00010",
+        "lemma": "water",
+        "meaning": "the clear liquid that falls as rain and that people drink",
+        "class": "S3",
+        "grammar_features": [
+          "uncountable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): water n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈwɑːt̬ɚ/",
+        "stress_note": "WA-ter; t между гласными в американском звучит мягко, почти как быстрое /d/ (flap)",
+        "translation_ru": "вода",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "cold water",
+          "a glass of water",
+          "drink water"
+        ],
+        "chunks": [
+          "Water, please."
+        ],
+        "example_en": "[S3]Water[/], please.",
+        "example_ru": "Воды, пожалуйста.",
+        "pattern": "___, please.",
+        "substitutions": [
+          "Water",
+          "Coffee",
+          "A coffee"
+        ],
+        "situation": "Просите в кафе",
+        "usage_note": "Water неисчисляемое: не «a water», а some water или a glass of water.",
+        "typical_error": "«two waters» в значении «два литра воды». Говорят: two glasses of water."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/9"
+      ]
+    },
+    {
+      "uid": "LX-00011",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/10",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00011",
+        "lemma": "coffee",
+        "meaning": "a hot drink made from roasted coffee beans",
+        "class": "S3",
+        "grammar_features": [
+          "uncountable",
+          "countable_in_cafe"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): coffee n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈkɔːfi/",
+        "stress_note": "CO-ffee; во многих районах США /ˈkɑːfi/",
+        "translation_ru": "кофе",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "hot coffee",
+          "a cup of coffee",
+          "coffee with milk"
+        ],
+        "chunks": [
+          "Coffee, please."
+        ],
+        "example_en": "[T8]I[/] [D3]like[/] [S3]coffee[/].",
+        "example_ru": "Я люблю кофе.",
+        "pattern": "I like ___.",
+        "substitutions": [
+          "coffee",
+          "water",
+          "my room",
+          "my family"
+        ],
+        "situation": "Говорите о вкусах",
+        "usage_note": "Как напиток вообще — без a: I like coffee. В кафе a coffee = чашка кофе.",
+        "typical_error": "Ставят ударение на второй слог (коФЕ). В английском — на первый: CO-ffee."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/10"
+      ]
+    },
+    {
+      "uid": "LX-00012",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/11",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00012",
+        "lemma": "day",
+        "meaning": "a period of 24 hours",
+        "class": "S7",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): day n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/deɪ/",
+        "stress_note": "Дифтонг /eɪ/ — «эй»",
+        "translation_ru": "день",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a good day",
+          "every day",
+          "have a nice day"
+        ],
+        "chunks": [
+          "Have a nice day!"
+        ],
+        "example_en": "[D1]Have[/] [T1]a[/] nice [S7]day[/]!",
+        "example_ru": "Хорошего дня!",
+        "pattern": "Have a nice ___!",
+        "substitutions": [
+          "day",
+          "week",
+          "morning"
+        ],
+        "situation": "Прощаетесь с кассиром",
+        "usage_note": "Have a nice day! — стандартное американское прощание в магазине.",
+        "typical_error": "Произносят «дэ». Нужен дифтонг /eɪ/."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/11",
+        "/lesson_full/practice/3/units/0"
+      ]
+    },
+    {
+      "uid": "LX-00013",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/12",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00013",
+        "lemma": "week",
+        "meaning": "a period of seven days",
+        "class": "S7",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): week n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/wiːk/",
+        "stress_note": "Губы округлены на /w/, потом долгое /iː/",
+        "translation_ru": "неделя",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "this week",
+          "next week",
+          "a busy week"
+        ],
+        "chunks": [
+          "I have a busy week."
+        ],
+        "example_en": "[T8]I[/] [D1]have[/] [T1]a[/] busy [S7]week[/].",
+        "example_ru": "У меня загруженная неделя.",
+        "pattern": "I have a busy ___.",
+        "substitutions": [
+          "week",
+          "day",
+          "morning"
+        ],
+        "situation": "Объясняете, почему нет времени",
+        "typical_error": "Начальное w заменяют на /в/. Губы трубочкой, зубы не касаются губы."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/12"
+      ]
+    },
+    {
+      "uid": "LX-00014",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/13",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00014",
+        "lemma": "morning",
+        "meaning": "the early part of the day, from when the sun rises until noon",
+        "class": "S7",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): morning n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈmɔːrnɪŋ/",
+        "stress_note": "MOR-ning; американское r звучит; -ing заканчивается носовым /ŋ/ без «г»",
+        "translation_ru": "утро",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "good morning",
+          "in the morning",
+          "every morning"
+        ],
+        "chunks": [
+          "Good morning!"
+        ],
+        "example_en": "Good [S7]morning[/], [S1]Tom[/]!",
+        "example_ru": "Доброе утро, Том!",
+        "pattern": "Good morning, ___!",
+        "substitutions": [
+          "Tom",
+          "Anna",
+          "Mia",
+          "my friend"
+        ],
+        "situation": "Здороваетесь утром",
+        "typical_error": "Произносят «морнинг» с г на конце. Окончание -ing — носовое /ŋ/, без «г»."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/13",
+        "/lesson_full/practice/1/units/0"
+      ]
+    },
+    {
+      "uid": "LX-00015",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/14",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00015",
+        "lemma": "name",
+        "meaning": "the word that someone or something is called",
+        "class": "S9",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): name n., v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/neɪm/",
+        "stress_note": "Дифтонг /eɪ/; e на конце не читается",
+        "translation_ru": "имя, название",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my name",
+          "your name",
+          "first name"
+        ],
+        "chunks": [
+          "My name is Anna.",
+          "My name is Tom."
+        ],
+        "example_en": "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/].",
+        "example_ru": "Меня зовут Анна.",
+        "pattern": "My name is ___.",
+        "substitutions": [
+          "Anna",
+          "Tom",
+          "Mia"
+        ],
+        "situation": "Знакомитесь",
+        "usage_note": "Русское «меня зовут» по-английски строится через существительное: My name is…",
+        "typical_error": "«Me name is» или «I am name Anna». Нужно: My name is Anna."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/14",
+        "/lesson_full/exercises/2/units/0",
+        "/lesson_full/practice/1/units/1",
+        "/lesson_full/practice/2/units/0"
+      ]
+    },
+    {
+      "uid": "LX-00027",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/11",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00027",
+        "lemma": "new",
+        "meaning": "recently made, bought or started",
+        "class": "J2",
+        "grammar_features": [
+          "gradable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): new adj. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/nu/",
+        "stress_note": "В американском — /nu/, как «ну»; британское /njuː/ — «нью»",
+        "translation_ru": "новый",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a new phone",
+          "new house",
+          "New York"
+        ],
+        "chunks": [
+          "It's new!"
+        ],
+        "example_en": "[T8]I[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]phone[/].",
+        "example_ru": "У меня новый телефон.",
+        "pattern": "I have a new ___.",
+        "substitutions": [
+          "phone",
+          "book",
+          "house"
+        ],
+        "situation": "Рассказываете о покупке",
+        "typical_error": "Говорят «нью» — это британский вариант. Американцы чаще говорят /nu/."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/exercises/3/units/1"
+      ]
+    },
+    {
+      "uid": "LX-00042",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00042",
+        "lemma": "Good morning!",
+        "meaning": "A morning greeting",
+        "class": "O1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/ɡʊd ˈmɔrnɪŋ/",
+        "translation_ru": "Доброе утро!",
+        "example_en": "Good morning!",
+        "example_ru": "Доброе утро!",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/0"
+      ]
+    },
+    {
+      "uid": "LX-00043",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00043",
+        "lemma": "My name is Anna.",
+        "meaning": "Introducing yourself by name",
+        "class": "F1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/maɪ ˈneɪm ɪz ˈænə/",
+        "translation_ru": "Меня зовут Анна.",
+        "example_en": "My name is Anna.",
+        "example_ru": "Меня зовут Анна.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/1"
+      ]
+    },
+    {
+      "uid": "LX-00044",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00044",
+        "lemma": "What is your name?",
+        "meaning": "Asking for a name",
+        "class": "F1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/wʌt ɪz jɚ ˈneɪm/",
+        "translation_ru": "Как вас зовут?",
+        "example_en": "What is your name?",
+        "example_ru": "Как вас зовут?",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/2"
+      ]
+    },
+    {
+      "uid": "LX-00045",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00045",
+        "lemma": "I am from Russia.",
+        "meaning": "Saying where you are from",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/aɪ æm frəm ˈrʌʃə/",
+        "translation_ru": "Я из России.",
+        "example_en": "I am from Russia.",
+        "example_ru": "Я из России.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/3"
+      ]
+    },
+    {
+      "uid": "LX-00046",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/4",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00046",
+        "lemma": "Nice to meet you.",
+        "meaning": "A polite greeting on first meeting",
+        "class": "O1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/naɪs tə ˈmit ju/",
+        "translation_ru": "Приятно познакомиться.",
+        "example_en": "Nice to meet you.",
+        "example_ru": "Приятно познакомиться.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/4"
+      ]
+    },
+    {
+      "uid": "LX-00047",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00047",
+        "lemma": "I am your neighbor.",
+        "meaning": "Introducing yourself as a neighbor",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/aɪ æm jɚ ˈneɪbɚ/",
+        "translation_ru": "Я ваш сосед.",
+        "example_en": "I am your neighbor.",
+        "example_ru": "Я ваш сосед.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/5"
+      ]
+    },
+    {
+      "uid": "LX-00048",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/6",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00048",
+        "lemma": "Have a nice day!",
+        "meaning": "A polite daytime farewell",
+        "class": "O1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/hæv ə naɪs ˈdeɪ/",
+        "translation_ru": "Хорошего дня!",
+        "example_en": "Have a nice day!",
+        "example_ru": "Хорошего дня!",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/6"
+      ]
+    }
+  ],
+  "dictionary_caveat": "Explicit UID references are exact. Implicit mentions in free prose are not exhaustive semantic links. Full target-week dictionary packets are included for contextual lookup."
+}
