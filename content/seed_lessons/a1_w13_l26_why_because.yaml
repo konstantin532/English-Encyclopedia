@@ -5,12 +5,12 @@ order: 26
 focus: C
 minutes: 40
 title: "Почему? Потому что: Why? и because"
-summary: "Как спросить о причине и ответить: Why? — Because I like Russian music. Чем why отличается от what for и как звучит разговорное ’cause."
+summary: "Как спросить о причине и ответить: Why? — Because I like Russian music. Как построить вопрос с do или be и назвать причину полной мыслью."
 units: [LX-00241, LX-00242, LX-00245, LX-00250, LX-00434, LX-00435, LX-00436, LX-00437, LX-00438, LX-00439, LX-00440, LX-00441, LX-00442, LX-00443, LX-00444, LX-00445, LX-00446, LX-00447, LX-00448, LX-00449, LX-00450, LX-00451, LX-00452, LX-00453, LX-00454, LX-00455, LX-00456]
 sound_notes:
   - text: "Why, Mia?"
     ipa: "/ˈwaɪ ˈmiə/"
-    note_ru: "why — как буква Y: «уай»; голос опускается в конце"
+    note_ru: "why звучит как название буквы Y. В нейтральном вопросе тон часто понижается; переспрос может звучать иначе."
   - text: "Because I like Russian music."
     ipa: "/bɪˈkɔz aɪ ˈlaɪk ˈrʌʃən ˈmjuzɪk/"
     note_ru: "ударение на второй слог: «бикОз»"
@@ -35,9 +35,11 @@ layers:
       **Why** спрашивает о причине **или цели** («почему?» / «зачем?») в зависимости от ситуации. **Because** вводит **причину**, объясняющую ответ. Не любой вопрос с *why* требует начинать ответ строго с *because*: это удобный тренировочный каркас, а не обязательный закон разговора.
   - number: 2
     body: |
-      **because** — сложение двух слов: by + cause, «по причине». Так же в русском «потому что» = «по тому, что».
+      **Добавьте вопрос к знакомому утверждению.** *You like music.* → *Why do you like music?* С обычным **like** нужен помощник **do**.
 
-      **Why** — старое вопросительное слово германского происхождения, исторически связанное с вопросительными формами вроде **what**. Но считать **why** просто «формой от who и what» неточно. Слова **what, where, who, why** действительно имеют древнее родство, однако в современном английском у каждого **собственная функция**: причина, место, лицо или предмет.
+      *You are tired.* → *Why are you tired?* С **be** переставляем **are** перед **you**, без **do**.
+
+      В ответе назовите причину: *Because I work at night.* — «Потому что я работаю ночью». **Why** задаёт вопрос, **because** начинает объяснение.
   - number: 3
     body: |
       Схема:
@@ -51,13 +53,15 @@ layers:
       - Ответ: Because + полная мысль: Because I like music.
   - number: 4
     body: |
-      **Почему после because обычно целая мысль?** **Because** вводит **придаточную часть причины**, часто с подлежащим и сказуемым: *because I like music*. В коротком разговоре возможны и неполные ответы, но здесь мы тренируем **полную причину**, чтобы ученик понимал структуру. Не путайте с **because of**: это сочетание ставят перед именной группой (*because of the music*), а не перед фразой *I like music*.
+      **После because в наших ответах — целая мысль.** *Because I like music* сообщает, **кто** (*I*) и **что делает** (*like music*). В *Because the exercise is difficult* сказано, **что** (*the exercise*) и **какое оно** (*is difficult*). В грамматике because вводит **придаточную часть причины** — часть предложения, которая объясняет «почему».
 
-      На вопрос **Why?** естественно ответить **Because I like music** — отдельной репликой. В полном предложении причина может идти **после основной мысли**: *I learn Russian because I like the music*. Поэтому начало предложения с *Because…* **не является ошибкой само по себе**; важно, чтобы мысль была понятна в контексте.
+      На вопрос **Why?** можно ответить отдельной репликой: *Because I like music.* Причину можно присоединить к основной мысли: *I learn Russian because I like the music.* Начало реплики с **Because** само по себе не ошибка; важно, чтобы собеседнику было понятно, что вы объясняете.
 
-      **Диагностика понимания:** Вы объясняете причину целым предложением. Что верно: *Because I like music* или *Because of I like music*?
+      **Не добавляйте of перед I like.** Сравните: *because I like music* — «потому что я люблю музыку»; *because of the music* — «из-за музыки». После **because of** здесь только название причины, **the music**. Форму **because of I like music** не используем.
 
-      **Разбор:** *Because I like music*. После **because** здесь есть полноценная мысль (*I + like*). В **because of the music** после **of** стоит **именная группа**, а не *I like music*. Обе формы полезны, но их устройство разное.
+      **Диагностика понимания:** вы хотите сказать «Потому что я люблю музыку». Что подходит: *Because I like music* или *Because of I like music*?
+
+      **Разбор:** *Because I like music*. После because здесь идёт целая мысль, а не только название причины; перед I like слово of лишнее.
   - number: 5
     body: |
       Так объясняют причины американцы:
@@ -84,11 +88,11 @@ layers:
       Ловушки:
 
       - «Why you like it?» — пропущен do. Правильно: Why do you like it?
-      - **Because I like music** — за ним идёт **целая мысль** (*I like music*). **Because of the music** — после *because of* идёт **именная группа** (*the music*). Поэтому *because of I like…* неверно: после *of* здесь не подходит личная форма *I like*.
+      - Не смешивайте **because I like music** и **because of the music**. Первая конструкция содержит целую мысль, вторая — только название причины. Перед **I like** слово **of** лишнее.
       - Русское «зачем» и «почему» по-английски часто оба — why.
   - number: 7
     body: |
-      Шесть заданий: понять вопрос о причине, вставить because, собрать вопрос, объяснить свою причину, выбрать фразу о трудности и объяснить непонимание слова.
+      Шесть заданий: понять вопрос о причине, вставить because, собрать вопрос, назвать причину по условию, выбрать фразу о трудности и объяснить непонимание слова.
 
       **Проверка маленького шага:** *Because I like music* — после **because** идёт целая мысль: **кто** (*I*) и **что делает** (*like*). *Because of the music* — после **because of** только группа с существительным. Похожий русский перевод «из-за музыки / потому что…» не делает английские конструкции взаимозаменяемыми.
 exercises:
@@ -126,12 +130,12 @@ exercises:
     uid: EX-00149
     kind: fill
     stage: transfer
-    prompt_ru: "Новая ситуация: на курсах вас спрашивают, почему вам нравится английский. Объясните одной фразой с because."
+    prompt_ru: "Новая ситуация: на курсах вас спрашивают, почему вам нравится английский. Ответьте по условию: «Потому что мне нравится английская музыка»."
     prompt_en: "Why do you like English? — ___"
     answer: "Because I like English music."
-    accepted: ["Because I like English music.", "Because my friend speaks English.", "Because I work in English.", "Because I can speak English."]
+    accepted: ["Because I like English music"]
     hint_ru: "Because + полная мысль."
-    explanation_ru: "Because I like English music — возможная причина интереса к языку. Здесь тренируем because + подлежащее + сказуемое, но причина должна по смыслу отвечать на вопрос. Фраза Because I like English повторяет исходный вопрос, не объясняя почему; Because I like music не обязательно связана с английским."
+    explanation_ru: "Because I like English music — причина, заданная в условии. После because здесь идёт целая мысль I like English music. В свободном разговоре можно назвать другую правдивую причину."
     units: [LX-00242]
   - order: 5
     uid: EX-00150
@@ -181,10 +185,11 @@ practice:
   answer: Because I cannot sleep.
   hint_ru: Because + причина.
   explanation_ru: Because I can't sleep. Because вводит причину.
-  review_of: 3
+  review_of: 4
   units:
   - LX-00242
-  - LX-00250
+  - LX-00218
+  - LX-00217
 - order: 3
   kind: translate
   prompt_ru: Почему ты хочешь учить русский?
@@ -194,15 +199,16 @@ practice:
   review_of: 3
   units:
   - LX-00241
-  - LX-00250
+  - LX-00280
   - LX-00434
+  - LX-00244
 - order: 4
   kind: translate
   prompt_ru: Потому что мне нравится русская музыка.
   answer: Because I like Russian music.
   hint_ru: Because I like…
   explanation_ru: Because I like Russian music. Russian — с большой буквы.
-  review_of: 3
+  review_of: 1
   units:
   - LX-00242
   - LX-00250

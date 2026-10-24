@@ -130,7 +130,7 @@
       [
         "What time is the next bus?",
         "What time the next bus is?",
-        "What is the next bus time?"
+        "What time are the next bus?"
       ],
       0
     ],
@@ -157,12 +157,12 @@
   ],
   "a1-review-everything": [
     [
-      "Ваша подруга Мия работает в школе. Выберите правильную фразу.",
+      "Ваша подруга Анна работает в школе. Выберите правильную фразу.",
       "",
       [
-        "Mia works at a school.",
-        "Mia work at a school.",
-        "Mia is work at a school."
+        "Anna works at a school.",
+        "Anna work at a school.",
+        "Anna is work at a school."
       ],
       0
     ],

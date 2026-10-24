@@ -161,38 +161,44 @@
       "keys": [
         "ru",
         "subject",
-        "act"
+        "act",
+        "wrong_act"
       ],
       "cases": [
         [
           "она умеет рисовать",
           "She",
-          "draw"
+          "draw",
+          "draws"
         ],
         [
           "он умеет плавать",
           "He",
-          "swim"
+          "swim",
+          "swims"
         ],
         [
           "она умеет петь",
           "She",
-          "sing"
+          "sing",
+          "sings"
         ],
         [
           "он умеет читать",
           "He",
-          "read"
+          "read",
+          "reads"
         ],
         [
           "она умеет говорить по-русски",
           "She",
-          "speak Russian"
+          "speak Russian",
+          "speaks Russian"
         ]
       ],
       "options": [
         "{subject} can {act}.",
-        "{subject} can {act}s.",
+        "{subject} can {wrong_act}.",
         "{subject} can to {act}."
       ],
       "reason": "После can глагол не получает -s даже с he/she.",
@@ -390,34 +396,40 @@
       "prompt": "Вам трудно {ru}. Ответьте на Why? полной причиной.",
       "keys": [
         "ru",
-        "action"
+        "action",
+        "wrong_negative"
       ],
       "cases": [
         [
           "понять слово",
-          "don't understand the word"
+          "don't understand the word",
+          "doesn't understand the word"
         ],
         [
           "сделать упражнение",
-          "don't understand the exercise"
+          "don't understand the exercise",
+          "doesn't understand the exercise"
         ],
         [
-          "говорить по-английски",
-          "don't speak English well"
+          "понять вопрос",
+          "don't understand the question",
+          "doesn't understand the question"
         ],
         [
           "найти банк",
-          "don't know where the bank is"
+          "don't know the address",
+          "doesn't know the address"
         ],
         [
           "назвать адрес",
-          "don't know the address"
+          "don't know the address",
+          "doesn't know the address"
         ]
       ],
       "options": [
         "Because I {action}.",
         "Why I {action}.",
-        "Because I doesn't {action}."
+        "Because I {wrong_negative}."
       ],
       "reason": "На Why? отвечайте Because + причина. С I используем don't, не doesn't.",
       "en": ""
@@ -426,33 +438,39 @@
       "prompt": "Учитель спрашивает Why? Вы хотите сказать «Потому что {ru}».",
       "keys": [
         "ru",
-        "text"
+        "text",
+        "wrong_negative"
       ],
       "cases": [
         [
           "я не понимаю это слово",
-          "don't understand the word"
+          "don't understand the word",
+          "doesn't understand the word"
         ],
         [
           "я не знаю адрес",
-          "don't know the address"
+          "don't know the address",
+          "doesn't know the address"
         ],
         [
           "я не знаю ответ",
-          "don't know the answer"
+          "don't know the answer",
+          "doesn't know the answer"
         ],
         [
           "я не понимаю вопрос",
-          "don't understand the question"
+          "don't understand the question",
+          "doesn't understand the question"
         ],
         [
           "я не знаю это имя",
-          "don't know the name"
+          "don't know the name",
+          "doesn't know the name"
         ]
       ],
       "options": [
         "Because I {text}.",
-        "Because I doesn't {text}.",
+        "Because I {wrong_negative}.",
         "Why I {text}."
       ],
       "reason": "Потому что — because. С I отрицание — don't.",
@@ -563,7 +581,7 @@
       "options": [
         "What time is the next {transport}?",
         "What time the next {transport} is?",
-        "What is the next {transport} time?"
+        "What time are the next {transport}?"
       ],
       "reason": "В вопросе с be слово is идёт перед the next bus/train.",
       "en": ""
@@ -699,8 +717,8 @@
       ],
       "cases": [
         [
-          "Мия работает в школе",
-          "Mia",
+          "Анна работает в школе",
+          "Anna",
           "works at a school"
         ],
         [
@@ -805,43 +823,49 @@
       "en": ""
     },
     "4": {
-      "prompt": "Вас спрашивают о стране и языке. Вы из {country}, умеете говорить по-{language_ru}.",
+      "prompt": "В {place} вы отвечаете за героя: он из {country} и умеет говорить по-{language_ru}.",
       "keys": [
         "country",
         "language_ru",
         "country_en",
-        "lang"
+        "lang",
+        "place"
       ],
       "cases": [
         [
           "России",
           "английски",
           "Russia",
-          "English"
+          "English",
+          "автобусе"
         ],
         [
           "России",
           "русски",
           "Russia",
-          "Russian"
+          "Russian",
+          "кафе"
         ],
         [
-          "Канады",
+          "России",
           "английски",
-          "Canada",
-          "English"
+          "Russia",
+          "English",
+          "школе"
         ],
         [
-          "США",
+          "России",
+          "русски",
+          "Russia",
+          "Russian",
+          "отеле"
+        ],
+        [
+          "России",
           "английски",
-          "the USA",
-          "English"
-        ],
-        [
-          "Франции",
-          "французски",
-          "France",
-          "French"
+          "Russia",
+          "English",
+          "магазине"
         ]
       ],
       "options": [
@@ -867,8 +891,8 @@
         ],
         [
           "парке",
-          "дождливо",
-          "rainy"
+          "облачно",
+          "cloudy"
         ],
         [
           "городе",

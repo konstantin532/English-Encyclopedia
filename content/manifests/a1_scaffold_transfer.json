@@ -808,8 +808,8 @@
           "model": "What time does the train leave?"
         },
         {
-          "prompt": "У водителя спросите, идёт ли этот автобус в центр города.",
-          "model": "Does this bus go downtown?"
+          "prompt": "У водителя спросите, идёт ли этот автобус до банка.",
+          "model": "Does this bus go to the bank?"
         }
       ]
     },
