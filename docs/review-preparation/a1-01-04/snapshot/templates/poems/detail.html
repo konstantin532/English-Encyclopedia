@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load markers static ru %}
+{% block title %}{{ poem.title }} · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'stories:map' %}">Истории и стихи</a> / {{ poem.level.code }}, неделя {{ poem.week.number }} / стихотворение {{ poem.number }}</p>
+    <h1 lang="en">{{ poem.title }}</h1>
+    <p>{{ poem.theme_ru }}. Рифма {{ poem.rhyme_scheme }}. Стихотворение не вводит новых слов: оно тренирует произношение на знакомых.</p>
+  </header>
+  <div class="lesson-grid">
+    <article class="prose">
+      <section class="layer" aria-labelledby="pt1">
+        <h2 id="pt1"><span class="layer-num">1</span>Послушайте ритм</h2>
+        <p>Аудио пока нет. Прочитайте стихотворение вслух медленно и отстучите ритм: на каждое ударение — хлопок. Сначала поймите, что происходит: это маленькая история.</p>
+        <div class="poem annotated" lang="en">{% for row in rows %}<p{% if row.stanza %} class="stanza-start"{% endif %}>{{ row.line|annotate }}</p>{% endfor %}</div>
+      </section>
+      <section class="layer" aria-labelledby="pt2">
+        <h2 id="pt2"><span class="layer-num">2</span>Ударения, паузы, связки</h2>
+        <p>Заглавные буквы — смысловое ударение на слове, <span class="ipa">|</span> — пауза, <span class="ipa">‿</span> — слова сливаются.</p>
+        <ol class="pron">
+          {% for row in rows %}{% if row.pr %}<li><span class="pron-stress" lang="en">{{ row.pr.stress|annotate }}</span><span class="ipa">{{ row.pr.ipa }}</span>{{ row.pr|ru_tr }}</li>{% endif %}{% endfor %}
+        </ol>
+        <section class="speech-stress-lab" data-stress-lab aria-labelledby="stress-lab-heading">
+          <h3 id="stress-lab-heading">Найди главные слова в строке</h3>
+          <p>Сначала прочитайте строку и выделите слова, на которые падает смысловое ударение. Затем сравните свой выбор с <strong>разметкой преподавателя</strong>. Это текстовая тренировка внимания к ритму, а не тест на слух.</p>
+          <div data-stress-bank hidden>
+            {% for row in rows %}{% if row.pr %}
+            <span data-stress-entry data-stress-plain="{{ row.line|plain }}" data-stress-model="{{ row.pr.stress }}"></span>
+            {% endif %}{% endfor %}
+          </div>
+          <div data-stress-controls>
+            <p data-stress-position aria-live="polite">Строка 1</p>
+            <div class="speech-stress-choices" data-stress-choices role="group" aria-label="Выберите ударные слова"></div>
+            <div class="speech-actions">
+              <button type="button" class="btn btn-primary btn-small" data-stress-check>Сверить ударения</button>
+              <button type="button" class="btn btn-quiet btn-small" data-stress-reveal>Показать разметку</button>
+              <button type="button" class="btn btn-quiet btn-small" data-stress-next>Следующая строка →</button>
+            </div>
+            <p data-stress-feedback role="status" aria-live="polite">Выберите ударные слова самостоятельно.</p>
+            <p data-stress-answer class="pron-stress" lang="en" hidden></p>
+          </div>
+        </section>
+        <p><strong>Фонетические задачи:</strong></p>
+        <ul>{% for g in poem.phonetic_goals %}<li>{{ g }}</li>{% endfor %}</ul>
+      </section>
+      <section class="layer" aria-labelledby="pt3">
+        <h2 id="pt3"><span class="layer-num">3</span>Построчно</h2>
+        <p>Произнесите каждую строку сначала медленно, затем в естественном темпе. Сохраняйте чёткость звуков и смысловое ударение; скорость не является целью.</p>
+      </section>
+      <section class="layer" id="speech-studio" aria-labelledby="speech-studio-title">
+        <h2 id="speech-studio-title"><span class="layer-num">4</span>Речевая мастерская: от строки к свободной речи</h2>
+        <div class="speech-studio" data-speech-studio data-speech-kind="poem" data-speech-key="poem:{{ poem.number }}" data-speech-persist="{% if user.is_authenticated %}true{% else %}false{% endif %}" data-speech-endpoint="{% url 'learning:speech_practice' %}">
+          <p>Здесь работают старые приёмы декламации и современные способы тренировки памяти, ударения и ритма. Обычный текст стихотворения остаётся доступным выше.</p>
+          <div data-speech-bank hidden>{% for row in rows %}
+            <div data-speech-entry>
+              <span data-speech-source lang="en">{{ row.line|annotate }}</span>
+              <span data-speech-accent>{{ row.pr.stress|default:"" }}</span>
+            </div>{% endfor %}
+          </div>
+          {% include "components/speech_studio_controls.html" %}
+        </div>
+      </section>
+      <section class="layer" aria-labelledby="pt4">
+        <h2 id="pt4"><span class="layer-num">5</span>Восстановите пропуски</h2>
+        <div class="poem-gaps" lang="en" data-poem="{{ poem.number }}">
+          {% for row in gapped %}
+          <p{% if row.stanza %} class="stanza-start"{% endif %}>{{ row.before }}{% if row.gap is not None %}<label class="visually-hidden" for="g{{ row.gap }}">Пропущенное слово в строке {{ forloop.counter }}</label><input class="fill-input gap-input" id="g{{ row.gap }}" data-gap="{{ row.gap }}" data-url="{% url 'api:check_poem_gap' poem.number row.gap %}" autocomplete="off" autocapitalize="off" spellcheck="false" size="9"><span class="gap-mark" aria-live="polite"></span>{{ row.after }}{% endif %}</p>
+          {% endfor %}
+        </div>
+        <div class="drill-actions"><button class="btn btn-primary btn-small" type="button" data-gaps-check>Проверить</button><button class="btn btn-quiet btn-small" type="button" data-gaps-reveal hidden>Показать ответы</button></div>
+        <p class="drill-feedback" data-gaps-status role="status" aria-live="polite">Введите пропущенные английские слова и нажмите «Проверить».</p>
+      </section>
+      <section class="layer" aria-labelledby="pt5">
+        <h2 id="pt5"><span class="layer-num">6</span>Прочитайте с выражением</h2>
+        <p>Прочитайте стихотворение целиком по памяти. Затем выразительно расскажите его как историю. При желании запишите голос в речевой мастерской выше: запись остаётся только на вашем устройстве, пока открыта страница.</p>
+      </section>
+    </article>
+    <aside class="aside">
+      <div class="aside-box">
+        <h2>Закрепляем слова</h2>
+        <div class="word-chips annotated" lang="en">{% for u in targets %}<a href="{% url 'lexicon:detail' u.uid %}"><span class="mk" data-cat="{{ u.semantic_class.category.code }}" data-cls="{{ u.semantic_class.number }}" data-label="{{ u.translation_ru }}">{{ u.lemma }}</span></a>{% endfor %}</div>
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'js/story-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script><script src="{% static 'js/speech-stress.js' %}" defer></script>{% endblock %}

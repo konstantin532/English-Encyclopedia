@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Практика A1 №{{ topic.n }} — {{ topic.title }}{% endblock %}
+{% block description %}Дополнительная интерактивная практика A1: слушайте, объясняйте, отвечайте и переносите знания в новую ситуацию.{% endblock %}
+{% block content %}
+<div class="wrap active-a1" data-active-a1>
+  <nav class="active-a1-breadcrumb" aria-label="Навигация">
+    <a href="{% url 'curriculum:level' 'a1' %}">Курс A1</a> /
+    <a href="{% url 'lessons:detail' topic.slug %}">Исходный урок №{{ topic.n }}</a> /
+    <span>Дополнительная практика</span>
+  </nav>
+  <header class="active-a1-hero">
+    <p class="active-a1-tag">A1 · Неделя {{ topic.week }} · Тема {{ topic.n }} из {{ topic_limit }} · Бета-практика</p>
+    <h1>{{ topic.title }}</h1>
+    <p>{{ topic.scene }}. {{ topic.context }}</p>
+    <p class="active-a1-note">Не заучивайте готовый ответ. Сначала слушайте, затем пробуйте сами. Эта дополнительная практика не сохраняет прогресс. Озвучка зависит от наличия синтезированного голоса en-US в браузере.</p>
+  </header>
+
+  <nav class="active-a1-steps" aria-label="Шаги практики">
+    <a href="#a1-listen">01 Слушаем</a>
+    <a href="#a1-retrieve">02 Вспоминаем и записываем</a>
+    <a href="#a1-understand">03 Проверяем</a>
+    <a href="#a1-why">03 Понимаем</a>
+    <a href="#a1-answer">04 Отвечаем</a>
+    <a href="#a1-transfer">05 Применяем</a>
+    <a href="#a1-missions">06 Шесть новых ситуаций</a>
+  </nav>
+
+  <section class="active-a1-panel" id="a1-listen" aria-labelledby="a1-listen-title">
+    <p class="active-a1-kicker">ШАГ 01 / СЛУШАЕМ СИТУАЦИЮ</p>
+    <h2 id="a1-listen-title">Сначала попробуйте понять разговор</h2>
+    <div class="active-a1-actions">
+      <button type="button" class="active-a1-btn active-a1-btn-primary" data-a1-play>▶ Прослушать диалог</button>
+      <button type="button" class="active-a1-btn" data-a1-stop>■ Остановить</button>
+      <label>Скорость
+        <select data-a1-speed aria-label="Скорость озвучки">
+          <option value="0.75">Медленно</option>
+          <option value="0.9" selected>Умеренно</option>
+          <option value="1">Естественно</option>
+        </select>
+      </label>
+    </div>
+    <p data-a1-audio-status class="active-a1-subtle" role="status" aria-live="polite">Озвучка доступна при наличии американского голоса en-US на устройстве.</p>
+    <button type="button" class="active-a1-btn" data-a1-reveal-transcript aria-controls="active-a1-transcript" aria-expanded="false">Показать текст диалога</button>
+    <div id="active-a1-transcript" class="active-a1-transcript" hidden>
+      {% for line in topic.dialogue %}
+      <div class="active-a1-line"><strong>{{ line.0 }}</strong><span lang="en">{{ line.1 }}</span><span class="active-a1-ru">{{ line.2 }}</span><button class="active-a1-line-btn" type="button" data-a1-play-line="{{ forloop.counter0 }}" aria-label="Прослушать реплику {{ forloop.counter }}">▶</button></div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="active-a1-panel" id="a1-retrieve" aria-labelledby="a1-retrieve-title">
+    <p class="active-a1-kicker">НОВЫЕ ФОРМАТЫ: СЛУШАЕМ И ВОССТАНАВЛИВАЕМ</p>
+    <h2 id="a1-retrieve-title">Два дополнительных задания без готовых вариантов</h2>
+    <p>Сначала попробуйте сами. Это самостоятельная практика, но не формальный тест аудирования или свободного владения языком. Проверка сравнивает с одним образцом.</p>
+    <div class="active-a1-retrieval-grid">
+      <form data-a1-dictation>
+        <h3>1. Запишите услышанную реплику</h3>
+        <p>Послушайте короткую реплику, не открывая текст диалога выше, затем напишите услышанное.</p>
+        <button type="button" class="active-a1-btn" data-a1-dictation-play>▶ Прослушать фразу</button>
+        <p data-a1-dictation-availability class="active-a1-subtle" role="status">Нужен системный голос en-US.</p>
+        <label for="active-a1-dictation-input">Что вы услышали?</label>
+        <input id="active-a1-dictation-input" data-a1-dictation-input lang="en" maxlength="240" required autocomplete="off" autocapitalize="off" spellcheck="false">
+        <button type="submit" class="active-a1-btn active-a1-btn-primary">Сверить запись</button>
+        <p data-a1-dictation-feedback role="status" aria-live="polite" class="active-a1-feedback" hidden></p>
+        <p data-a1-dictation-model lang="en" hidden></p>
+      </form>
+      <form data-a1-backtranslation>
+        <h3>2. Восстановите английскую фразу по смыслу</h3>
+        <p lang="ru" data-a1-backtranslation-prompt></p>
+        <label for="active-a1-backtranslation-input">Как бы вы сказали это по-английски?</label>
+        <input id="active-a1-backtranslation-input" data-a1-backtranslation-input lang="en" maxlength="240" required autocomplete="off" autocapitalize="off" spellcheck="false">
+        <button type="submit" class="active-a1-btn active-a1-btn-primary">Посмотреть один образец</button>
+        <p data-a1-backtranslation-feedback role="status" aria-live="polite" class="active-a1-feedback" hidden></p>
+        <p data-a1-backtranslation-model lang="en" hidden></p>
+      </form>
+    </div>
+    <noscript><div role="note"><p>JavaScript отключён: интерактивная проверка недоступна, но диалог и перевод можно прочитать:</p>
+      <ol>{% for line in topic.dialogue %}<li><strong>{{ line.0 }}</strong>: <span lang="en">{{ line.1 }}</span> — {{ line.2 }}</li>{% endfor %}</ol>
+      <p>Основной урок доступен без интерактивных скриптов.</p></div></noscript>
+  </section>
+
+  <section class="active-a1-panel" id="a1-understand" aria-labelledby="a1-understand-title">
+    <p class="active-a1-kicker">ШАГ 02 / ПОНИМАЕМ СМЫСЛ</p>
+    <h2 id="a1-understand-title">{{ topic.question }}</h2>
+    <form data-a1-quiz>
+      <fieldset>
+        <legend class="sr-only">Выберите один ответ</legend>
+        {% for option in topic.options %}
+        <label class="active-a1-option"><input type="radio" name="quiz" value="{{ forloop.counter0 }}" required> {{ option }}</label>
+        {% endfor %}
+      </fieldset>
+      <button type="submit" class="active-a1-btn active-a1-btn-primary">Проверить понимание</button>
+      <p class="active-a1-feedback" data-a1-quiz-feedback role="status" aria-live="polite" hidden></p>
+    </form>
+  </section>
+
+  <section class="active-a1-panel" id="a1-why" aria-labelledby="a1-why-title">
+    <p class="active-a1-kicker">ШАГ 03 / ПОЧЕМУ АНГЛИЙСКИЙ ТАК РАБОТАЕТ</p>
+    <h2 id="a1-why-title">Объяснение, а не правило для зубрёжки</h2>
+    <p>{{ topic.why }}</p>
+    <details><summary>Как это произносится в американском английском?</summary><p>{{ topic.sound }}</p></details>
+    <p class="active-a1-subtle">Подробную грамматику, историю и разметку частей речи ищите в <a href="{% url 'lessons:detail' topic.slug %}">основном уроке №{{ topic.n }}</a>.</p>
+  </section>
+
+  <section class="active-a1-panel" id="a1-answer" aria-labelledby="a1-answer-title">
+    <p class="active-a1-kicker">ШАГ 04 / СОЗДАЁМ СВОЮ РЕПЛИКУ</p>
+    <h2 id="a1-answer-title">{{ topic.prompt }}</h2>
+    <form data-a1-production>
+      <label for="active-a1-response">Ваш английский ответ</label>
+      <input id="active-a1-response" data-a1-production-answer type="text" maxlength="240" required autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Напишите короткую фразу по-английски">
+      <button type="submit" class="active-a1-btn active-a1-btn-primary">Сравнить с образцом</button>
+      <div class="active-a1-feedback" data-a1-production-feedback role="status" aria-live="polite" hidden></div>
+      <div class="active-a1-model" data-a1-model hidden>
+        <p><strong>Один подходящий ответ:</strong> <span lang="en" data-a1-model-text></span></p>
+        <p data-a1-hint></p>
+        <button type="button" class="active-a1-btn" data-a1-play-model>▶ Послушать образец</button>
+      </div>
+      <div class="active-a1-builder" data-a1-builder hidden>
+        <h3>Соберите фразу из слов</h3>
+        <p>Уже ответили самостоятельно? Теперь закрепите английский порядок слов: нажимайте на элементы по очереди. Можно отменить последний выбор.</p>
+        <div data-a1-builder-pool class="active-a1-builder-pool" role="group" aria-label="Слова для составления фразы"></div>
+        <p class="active-a1-builder-label">Ваша собранная фраза:</p>
+        <p data-a1-builder-selected lang="en" aria-live="polite" class="active-a1-builder-result">—</p>
+        <div class="active-a1-actions">
+          <button type="button" class="active-a1-btn" data-a1-builder-undo disabled>↶ Отменить слово</button>
+          <button type="button" class="active-a1-btn" data-a1-builder-reset>Начать заново</button>
+          <button type="button" class="active-a1-btn active-a1-btn-primary" data-a1-builder-check>Проверить порядок</button>
+        </div>
+        <p class="active-a1-feedback" data-a1-builder-feedback role="status" aria-live="polite" hidden></p>
+      </div>
+    </form>
+    <div class="active-a1-repair" data-a1-repair hidden>
+      <h3>Найдите и исправьте ошибку</h3>
+      <p>В следующей фразе есть ошибка. Напишите правильную версию прежде, чем смотреть объяснение.</p>
+      <p class="active-a1-repair-wrong" lang="en">{{ topic.repair.wrong }}</p>
+      <form data-a1-repair-form>
+        <label for="active-a1-repair-answer">Как сказать правильно?</label>
+        <input type="text" id="active-a1-repair-answer" data-a1-repair-answer maxlength="250" required autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Исправленная английская фраза…">
+        <button type="submit" class="active-a1-btn active-a1-btn-primary">Проверить исправление</button>
+        <p class="active-a1-feedback" data-a1-repair-feedback role="status" aria-live="polite" hidden></p>
+        <button type="button" class="active-a1-btn" data-a1-repair-reveal hidden>Показать правильную фразу и объяснение</button>
+        <div class="active-a1-feedback" data-a1-repair-explanation role="status" aria-live="polite" hidden>
+          <p><strong>Корректный вариант:</strong> <span lang="en">{{ topic.repair.correct }}</span></p>
+          <p>{{ topic.repair.reason }}</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="active-a1-panel" id="a1-transfer" aria-labelledby="a1-transfer-title">
+    <p class="active-a1-kicker">ШАГ 05 / ПЕРЕНОС В НОВУЮ СИТУАЦИЮ</p>
+    <h2 id="a1-transfer-title">{{ topic.transfer }}</h2>
+    <form data-a1-transfer>
+      <label for="active-a1-transfer-answer">Ответьте самостоятельно, не открывая пример</label>
+      <textarea id="active-a1-transfer-answer" data-a1-transfer-answer rows="3" maxlength="350" required placeholder="Ваш ответ…"></textarea>
+      <button type="submit" class="active-a1-btn active-a1-btn-primary">Показать пример и критерии</button>
+      <div class="active-a1-feedback" data-a1-transfer-feedback hidden role="status" aria-live="polite">
+        <p><strong>Возможный вариант:</strong> <span lang="en">{{ topic.transfer_example }}</span></p>
+        <p>Самопроверка: ① Собеседник поймёт смысл? ② Вы правильно выбрали ключевые слова? ③ Просьба или ответ подходят к ситуации? Другие верные фразы возможны — автоматической оценки здесь нет.</p>
+      </div>
+    </form>
+  </section>
+
+  <section class="active-a1-panel active-a1-missions" id="a1-missions" aria-labelledby="a1-missions-title" data-a1-missions data-start-mission="{{ start_mission }}">
+    <p class="active-a1-kicker">ШАГ 06 / ШЕСТЬ ДОПОЛНИТЕЛЬНЫХ СИТУАЦИЙ</p>
+    <h2 id="a1-missions-title">Маленькие приключения — большая практика</h2>
+    <p>В этом уроке ещё шесть разных ситуаций. Представьте себя участником истории, напишите или произнесите собственную реплику, и только потом посмотрите один возможный вариант. У импровизации есть два неожиданных поворота.</p>
+    <div class="active-a1-mission-head">
+      <p class="active-a1-subtle" data-a1-mission-progress role="status" aria-live="polite">Ситуация 1 из 6</p>
+      <div data-a1-mission-nav class="active-a1-mission-nav" role="group" aria-label="Выбор ситуации">
+        {% for mission in topic.missions %}
+        <button class="active-a1-mission-tab" data-a1-mission-index="{{ forloop.counter0 }}" type="button" aria-label="Ситуация {{ forloop.counter }}: {{ mission.title }}" {% if forloop.first %}aria-current="step"{% endif %}>{{ forloop.counter }}</button>
+        {% endfor %}
+      </div>
+    </div>
+    <article class="active-a1-mission-card" aria-labelledby="a1-mission-title">
+      <p class="active-a1-kicker" data-a1-mission-type>ИСТОРИЯ 1 / 6</p>
+      <h3 id="a1-mission-title" data-a1-mission-title>{{ topic.missions.0.title }}</h3>
+      <p class="active-a1-mission-scene" data-a1-mission-scene>{{ topic.missions.0.scene }}</p>
+      <p class="active-a1-mission-task" data-a1-mission-prompt>{{ topic.missions.0.prompt }}</p>
+      <div data-a1-mission-twist-controls class="active-a1-mission-twist-controls" hidden>
+        <button type="button" data-a1-mission-twist class="active-a1-btn">🎲 Неожиданный поворот</button>
+        <p class="active-a1-subtle" data-a1-mission-twist-note>Придумайте свой ответ на новое условие, не заучивая предыдущий.</p>
+      </div>
+      <form data-a1-mission-form>
+        <label for="active-a1-mission-answer">Ваша реплика на английском</label>
+        <textarea id="active-a1-mission-answer" data-a1-mission-answer rows="3" minlength="1" maxlength="350" required spellcheck="false" autocapitalize="off" placeholder="Ваш вариант на английском…"></textarea>
+        <div class="active-a1-actions">
+          <button type="submit" class="active-a1-btn active-a1-btn-primary">Сравнить с примером</button>
+          <button type="button" class="active-a1-btn" data-a1-mission-hint>Подсказка по конструкции</button>
+        </div>
+        <p data-a1-mission-hint-text class="active-a1-feedback" hidden></p>
+        <div data-a1-mission-result class="active-a1-feedback active-a1-mission-result" aria-live="polite" role="status" hidden>
+          <p><strong>Один возможный вариант:</strong> <span lang="en" data-a1-mission-example></span></p>
+          <p data-a1-mission-coach></p>
+          <p>Самопроверка: смысл подходит ситуации? Слова из урока использованы правильно? Реплика звучит вежливо там, где это нужно? Другие верные формулировки тоже возможны; система не оценивает свободную речь автоматически.</p>
+          <button type="button" class="active-a1-btn" data-a1-mission-speak>▶ Послушать образец</button>
+        </div>
+      </form>
+    </article>
+    <div class="active-a1-actions active-a1-mission-bottom">
+      <button type="button" class="active-a1-btn" data-a1-mission-prev disabled>← Предыдущая ситуация</button>
+      <button type="button" class="active-a1-btn active-a1-btn-primary" data-a1-mission-next>Следующая ситуация →</button>
+    </div>
+    <p class="active-a1-subtle">Ответы остаются только на этой открытой странице и исчезнут после обновления. Эти шесть ситуаций — дополнение, а не замена основного урока.</p>
+  </section>
+
+  <nav class="active-a1-next" aria-label="Переходы между дополнительными занятиями">
+    {% if topic_previous %}<a class="active-a1-btn" href="{% url 'core:active_a1_topic' topic_previous %}">← Предыдущее занятие</a>{% endif %}
+    <a class="active-a1-btn" href="{% url 'lessons:detail' topic.slug %}">В основной урок</a>
+    {% if topic_next %}<a class="active-a1-btn active-a1-btn-primary" href="{% url 'core:active_a1_topic' topic_next %}">Следующее занятие →</a>{% else %}<span>Все 28 тем дополнительной практики A1 доступны.</span>{% endif %}
+  </nav>
+</div>
+{% endblock %}
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'css/a1-active.css' %}">
+{{ topic|json_script:"a1-active-topic-data" }}
+<script src="{% static 'js/a1-active.js' %}" defer></script>
+{% endblock %}

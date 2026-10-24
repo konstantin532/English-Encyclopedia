@@ -1,0 +1,340 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "started_at_utc": "2026-10-24T18:53:41.896298+00:00",
+  "database": {
+    "engine": "sqlite",
+    "path": "/tmp/ee-preparation-test-6gzxob6_/baseline.sqlite3",
+    "fresh_directory": "/tmp/ee-preparation-test-6gzxob6_"
+  },
+  "environment_overrides": {
+    "DJANGO_SETTINGS_MODULE": "config.settings.test",
+    "DJANGO_ALLOWED_HOSTS": "localhost,127.0.0.1,testserver",
+    "DJANGO_TEST_PROCESSES": "4"
+  },
+  "lockfiles_before": {
+    "uv.lock": "19c829d8a3f08ebc02ca2693681be4e51ae0123914d58022464a8fbcbd2704bf",
+    "pnpm-lock.yaml": "1d02befae4fad9dbd066fc185778d7b57a0df3592adc4d2476fb225a7398a741"
+  },
+  "checks": [
+    {
+      "name": "uv-sync-frozen",
+      "argv": [
+        "uv",
+        "sync",
+        "--frozen"
+      ],
+      "started_at_utc": "2026-10-24T18:53:41.896700+00:00",
+      "log": "evidence/local/uv-sync-frozen.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.114
+    },
+    {
+      "name": "pnpm-install-frozen",
+      "argv": [
+        "pnpm",
+        "install",
+        "--frozen-lockfile",
+        "--ignore-scripts"
+      ],
+      "started_at_utc": "2026-10-24T18:53:42.011554+00:00",
+      "log": "evidence/local/pnpm-install-frozen.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.466
+    },
+    {
+      "name": "database-isolation",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "manage.py",
+        "shell",
+        "-c",
+        "from django.conf import settings; import json; d=settings.DATABASES['default']; assert d['ENGINE']=='django.db.backends.sqlite3'; assert str(d['NAME'])=='/tmp/ee-preparation-test-6gzxob6_/baseline.sqlite3'; print(json.dumps(d)); print('ISOLATED SQLITE VERIFIED')"
+      ],
+      "started_at_utc": "2026-10-24T18:53:42.477822+00:00",
+      "log": "evidence/local/database-isolation.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 1.167
+    },
+    {
+      "name": "compileall",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "apps",
+        "config",
+        "tests"
+      ],
+      "started_at_utc": "2026-10-24T18:53:43.645847+00:00",
+      "log": "evidence/local/compileall.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.215
+    },
+    {
+      "name": "django-check",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "manage.py",
+        "check"
+      ],
+      "started_at_utc": "2026-10-24T18:53:43.861527+00:00",
+      "log": "evidence/local/django-check.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.415
+    },
+    {
+      "name": "collectstatic",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "manage.py",
+        "collectstatic",
+        "--noinput",
+        "--verbosity",
+        "0"
+      ],
+      "started_at_utc": "2026-10-24T18:53:44.277343+00:00",
+      "log": "evidence/local/collectstatic.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.365
+    },
+    {
+      "name": "audio-readiness",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/audio_readiness.py"
+      ],
+      "started_at_utc": "2026-10-24T18:53:44.643053+00:00",
+      "log": "evidence/local/audio-readiness.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.064
+    },
+    {
+      "name": "cefr-evidence",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/audit_cefr_evidence.py",
+        "--strict"
+      ],
+      "started_at_utc": "2026-10-24T18:53:44.707812+00:00",
+      "log": "evidence/local/cefr-evidence.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.716
+    },
+    {
+      "name": "migration-drift",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "manage.py",
+        "makemigrations",
+        "--check",
+        "--dry-run"
+      ],
+      "started_at_utc": "2026-10-24T18:53:45.424411+00:00",
+      "log": "evidence/local/migration-drift.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.365
+    },
+    {
+      "name": "review-structure",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "manage.py",
+        "shell",
+        "-c",
+        "from apps.learning.mistake_review import question_bank,COUNT; from apps.drills.retry_guidance import PILOT_SLUGS; b=question_bank(); assert set(b)==set(PILOT_SLUGS); assert all(exercises and all(len(cards)==COUNT for cards in exercises.values()) for exercises in b.values()); print('A1 review structure OK:',len(b),'lessons')"
+      ],
+      "started_at_utc": "2026-10-24T18:53:45.790098+00:00",
+      "log": "evidence/local/review-structure.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.315
+    },
+    {
+      "name": "understanding-structure",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "manage.py",
+        "shell",
+        "-c",
+        "from apps.learning.understanding import understanding_bank,SKILLS; from apps.drills.retry_guidance import PILOT_SLUGS; b=understanding_bank(); assert set(b)==set(PILOT_SLUGS); assert all(set(guide['tasks'])==set(SKILLS) for guide in b.values()); print('A1 understanding structure OK:',len(b),'guides')"
+      ],
+      "started_at_utc": "2026-10-24T18:53:46.106059+00:00",
+      "log": "evidence/local/understanding-structure.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.315
+    },
+    {
+      "name": "migrate-isolated",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "manage.py",
+        "migrate",
+        "--noinput",
+        "-v",
+        "1"
+      ],
+      "started_at_utc": "2026-10-24T18:53:46.422089+00:00",
+      "log": "evidence/local/migrate-isolated.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 2.27
+    },
+    {
+      "name": "load-content-isolated",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "manage.py",
+        "load_content"
+      ],
+      "started_at_utc": "2026-10-24T18:53:48.693141+00:00",
+      "log": "evidence/local/load-content-isolated.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 5.632
+    },
+    {
+      "name": "audit-course-isolated",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "manage.py",
+        "audit_course"
+      ],
+      "started_at_utc": "2026-10-24T18:53:54.326764+00:00",
+      "log": "evidence/local/audit-course-isolated.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 6.896
+    },
+    {
+      "name": "css",
+      "argv": [
+        "pnpm",
+        "check:css"
+      ],
+      "started_at_utc": "2026-10-24T18:54:01.223922+00:00",
+      "log": "evidence/local/css.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.968
+    },
+    {
+      "name": "javascript",
+      "argv": [
+        "pnpm",
+        "test:ui"
+      ],
+      "started_at_utc": "2026-10-24T18:54:02.193063+00:00",
+      "log": "evidence/local/javascript.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 2.325
+    },
+    {
+      "name": "django-full",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "manage.py",
+        "test",
+        "tests",
+        "--parallel",
+        "auto",
+        "--noinput"
+      ],
+      "started_at_utc": "2026-10-24T18:54:04.518909+00:00",
+      "log": "evidence/local/django-full.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 239.902
+    },
+    {
+      "name": "pytest-full",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "pytest",
+        "-q",
+        "-rfE"
+      ],
+      "started_at_utc": "2026-10-24T18:58:04.424503+00:00",
+      "log": "evidence/local/pytest-full.log",
+      "status": "BLOCKED",
+      "exit_code": null,
+      "reason": "Process disappeared before an exit result or final pytest summary; cause not established. Partial log preserved, not PASS and not a demonstrated test failure.",
+      "last_log_modified_utc": "2026-10-24T19:13:15.995287+00:00"
+    },
+    {
+      "name": "pytest-full-retry",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "pytest",
+        "-q",
+        "-rfE"
+      ],
+      "started_at_utc": "2026-10-24T19:17:33.433686+00:00",
+      "log": "evidence/local/pytest-full-retry.log",
+      "status": "PASS",
+      "reason_for_retry": "Process disappeared before an exit result or final pytest summary; cause not established. Partial log preserved, not PASS and not a demonstrated test failure.",
+      "exit_code": 0,
+      "duration_seconds": 888.936
+    }
+  ],
+  "lockfiles_after": {
+    "uv.lock": "19c829d8a3f08ebc02ca2693681be4e51ae0123914d58022464a8fbcbd2704bf",
+    "pnpm-lock.yaml": "1d02befae4fad9dbd066fc185778d7b57a0df3592adc4d2476fb225a7398a741"
+  },
+  "lockfiles_unchanged": true,
+  "finished_at_utc": "2026-10-24T19:32:22.370345+00:00"
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "n": 1,
+    "wrong": "This my phone.",
+    "correct": "This is my phone.",
+    "hint": "Между this и my нужен глагол.",
+    "reason": "В полном английском предложении «Это мой телефон» нужна форма be: This is my phone. В русском такой глагол обычно опущен."
+  },
+  {
+    "n": 2,
+    "wrong": "Tom are home.",
+    "correct": "Tom is home.",
+    "hint": "Tom — один человек; выберите форму is.",
+    "reason": "С именем одного человека используется is: Tom is home. С you используется are, а с I — am."
+  },
+  {
+    "n": 3,
+    "wrong": "This is book.",
+    "correct": "This is a book.",
+    "hint": "Книга одна, и собеседник пока не знает, о какой именно книге речь. Как представить её?",
+    "reason": "В полном предложении This is a book существительное book исчисляемое и стоит в единственном числе, поэтому нужен определитель. A показывает один пока неопределённый предмет. Если оба собеседника знают, какая книга имеется в виду, даже при первом упоминании может быть the."
+  },
+  {
+    "n": 4,
+    "wrong": "Do you has my phone?",
+    "correct": "Do you have my phone?",
+    "hint": "После do используется базовая форма глагола.",
+    "reason": "В вопросе с do главный глагол остаётся have. Форма has используется в других конструкциях с he/she/it."
+  },
+  {
+    "n": 5,
+    "wrong": "I'd likes tea, please.",
+    "correct": "I'd like tea, please.",
+    "hint": "I'd = I would. Что идёт после would?",
+    "reason": "После модального would ставят исходную форму like, без -s. I'd like… — вежливая просьба."
+  },
+  {
+    "n": 6,
+    "wrong": "Three coffee, please.",
+    "correct": "Three coffees, please.",
+    "hint": "Здесь речь о трёх порциях.",
+    "reason": "Когда coffee обозначает порции, после three употребляется coffees с -s. Название вещества в других контекстах может быть неисчисляемым."
+  },
+  {
+    "n": 7,
+    "wrong": "She fifty.",
+    "correct": "She is fifty.",
+    "hint": "Возраст выражается через be.",
+    "reason": "С возрастом в английском обязательно используется be: She is fifty. По-русски мы говорим «Ей пятьдесят» без подобного глагола."
+  },
+  {
+    "n": 8,
+    "wrong": "This is Anna book.",
+    "correct": "This is Anna's book.",
+    "hint": "Как по-английски показать, что книга принадлежит Анне?",
+    "reason": "Чтобы обозначить принадлежность с именем владельца, используйте 's: Anna's book. Не путайте с her book."
+  },
+  {
+    "n": 9,
+    "wrong": "There are milk.",
+    "correct": "There is milk.",
+    "hint": "Milk — вещество, его здесь не считают по штукам.",
+    "reason": "Milk обычно неисчисляемое, поэтому в конструкции наличия используется there is. С исчисляемыми apples во множественном числе — there are."
+  },
+  {
+    "n": 10,
+    "wrong": "How much are the milk?",
+    "correct": "How much is the milk?",
+    "hint": "Молоко — неисчисляемое существительное; нужна форма единственного числа.",
+    "reason": "В вопросе о цене молока используют is: How much is the milk? Форму are используют с множественным числом, например с apples."
+  },
+  {
+    "n": 11,
+    "wrong": "Do you works every day?",
+    "correct": "Do you work every day?",
+    "hint": "Вспомогательный do уже строит вопрос.",
+    "reason": "После do используется work без -s. He works — утверждение с третьим лицом, но Do you work? — вопрос с you."
+  },
+  {
+    "n": 12,
+    "wrong": "I get up in seven.",
+    "correct": "I get up at seven.",
+    "hint": "Перед конкретным часом — не in.",
+    "reason": "С конкретным временем используют at: at seven. Для части суток обычно in: in the morning."
+  },
+  {
+    "n": 13,
+    "wrong": "Does she works at home?",
+    "correct": "Does she work at home?",
+    "hint": "Does уже содержит показатель третьего лица.",
+    "reason": "После does не добавляют ещё одно -s к смысловому глаголу: Does she work? В утверждении: She works."
+  },
+  {
+    "n": 14,
+    "wrong": "I am teacher.",
+    "correct": "I am a teacher.",
+    "hint": "Учитель — одна исчисляемая профессия.",
+    "reason": "Перед названием профессии в единственном числе обычно ставят a/an: I'm a teacher."
+  },
+  {
+    "n": 15,
+    "wrong": "The bank is next the cafe.",
+    "correct": "The bank is next to the cafe.",
+    "hint": "Выражение «рядом с» состоит из двух слов.",
+    "reason": "В выражении расположения next to нужно to: next to the cafe. Near the cafe — другой корректный способ."
+  },
+  {
+    "n": 16,
+    "wrong": "Turn to left.",
+    "correct": "Turn left.",
+    "hint": "В простом указании направления после turn не нужно to.",
+    "reason": "Краткое указание звучит Turn left. В варианте Turn to the left нужны другие слова: the left."
+  },
+  {
+    "n": 17,
+    "wrong": "What time does the shop opens?",
+    "correct": "What time does the shop open?",
+    "hint": "После does нельзя снова добавлять окончание -s.",
+    "reason": "Показатель лица уже есть в does, поэтому используйте исходную форму open. В утверждении: The shop opens at nine."
+  },
+  {
+    "n": 18,
+    "wrong": "Can you spell you last name?",
+    "correct": "Can you spell your last name?",
+    "hint": "Вопрос о том, чья фамилия, требует притяжательного слова.",
+    "reason": "You — «ты/вы», your — «твой/ваш» перед существительным: your last name. Вежливая просьба: Can you spell your last name, please?"
+  }
+]

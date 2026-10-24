@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load markers static ru %}
+{% block title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
+{% block social_title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% endblock %}
+{% block content %}
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'curriculum:level' lesson.level.slug %}">{{ lesson.level.code }}</a>{% if lesson.week %} / неделя {{ lesson.week.number }}{% endif %} / урок {{ lesson.order }}</p>
+    <h1>{{ lesson.title }}</h1>
+    <p>{{ lesson.summary }}</p>
+  </header>
+  <div class="lesson-grid">
+    <article>
+      {% if a1_pilot %}
+      <section class="a1-learning-route" data-a1-learning-route aria-labelledby="a1-route-heading" hidden>
+        <h2 id="a1-route-heading">Выберите глубину объяснения</h2>
+        <p>Полный урок остаётся без изменений. Эти кнопки только помогают читать его в удобном порядке; все семь шагов можно вернуть в любой момент.</p>
+        <div class="a1-learning-route-actions" role="group" aria-label="Глубина объяснения">
+          <button type="button" data-a1-route-mode="essentials" aria-pressed="false">Суть</button>
+          <button type="button" data-a1-route-mode="reasons" aria-pressed="false">Почему</button>
+          <button type="button" data-a1-route-mode="full" aria-pressed="true">Полностью</button>
+        </div>
+        <p class="a1-learning-route-status" data-a1-route-status aria-live="polite">Полностью: доступны все семь шагов урока и дополнительная практика.</p>
+      </section>
+      {% endif %}
+      {% if a1_guide %}
+      <section class="a1-clarity-bridge" aria-labelledby="a1-clarity-title">
+        <h2 id="a1-clarity-title">Понять за минуту — без сложных терминов</h2>
+        <p>Короткая опора перед подробным уроком. Ниже сохраняются все семь слоёв объяснения, примеры и практика.</p>
+        <dl>
+          <dt>Что это?</dt><dd>{{ a1_guide.plain }}</dd>
+          <dt>Почему работает?</dt><dd>{{ a1_guide.why }}</dd>
+          <dt>Простая схема</dt><dd><strong lang="en">{{ a1_guide.pattern }}</strong></dd>
+          <dt>Типичная ошибка</dt><dd>{{ a1_guide.mistake }}</dd>
+          <dt>Как исправить</dt><dd>{{ a1_guide.fix }}</dd>
+        </dl>
+        <blockquote><span lang="en">{{ a1_guide.example }}</span> — {{ a1_guide.translation }}</blockquote>
+        <div class="a1-contrast" aria-label="Сравните два похожих выражения">
+          <h3>Сравните — почему смысл меняется?</h3>
+          <div class="a1-contrast-pairs">
+            <p><strong lang="en">{{ a1_guide.contrast.a_en }}</strong><span>{{ a1_guide.contrast.a_ru }}</span></p>
+            <p><strong lang="en">{{ a1_guide.contrast.b_en }}</strong><span>{{ a1_guide.contrast.b_ru }}</span></p>
+          </div>
+          <p><strong>В чём разница:</strong> {{ a1_guide.contrast.why }}</p>
+        </div>
+        <details class="a1-step-ladder" id="beginner-steps">
+          <summary>Разобрать ещё проще: три коротких шага с примерами</summary>
+          <p>Сначала прочитайте английскую фразу и её смысл, затем посмотрите, почему выбран именно такой порядок слов.</p>
+          <ol class="a1-step-list">
+            {% for step in a1_guide.steps %}
+            <li>
+              <strong>Шаг {{ forloop.counter }}</strong>
+              <p class="a1-step-en" lang="en">{{ step.example_en }}</p>
+              <p>{{ step.example_ru }}</p>
+              <p><strong>Почему:</strong> {{ step.why_ru }}</p>
+            </li>
+            {% endfor %}
+          </ol>
+        </details>
+        <p>Когда почувствуете, что поняли, попробуйте <a href="{% url 'learning:independent_check' lesson.slug %}">самостоятельно ответить без готовых вариантов</a>.</p>
+      </section>
+      {% endif %}
+      <div class="prose" data-lesson-reader>
+        {% for layer in layers %}
+        <section class="layer" id="layer-{{ layer.number }}" aria-labelledby="layer-{{ layer.number }}-t">
+          <h2 id="layer-{{ layer.number }}-t"><span class="layer-num">{{ layer.number }}</span>{{ layer.title }}</h2>
+          <div class="annotated">{{ layer.body|annotate_block }}</div>
+        </section>
+        {% if layer.number == 5 and lesson.sound_notes %}
+        <section class="layer" id="sound-notes" aria-labelledby="sound-notes-t">
+          <h2 id="sound-notes-t">Как это звучит</h2>
+          {% for item in lesson.sound_notes %}
+          <p><span lang="en">{{ item.text }}</span> <span class="ipa">{{ item.ipa }}</span> {{ item|ru_tr }}<br>{{ item.note_ru }}</p>
+          {% endfor %}
+          {% include "components/sound_legend.html" %}
+        </section>
+        {% endif %}
+        {% if layer.number == 5 and lesson.contractions %}{% include "components/contractions.html" %}{% endif %}
+        {% endfor %}
+      </div>
+
+      {% if exercises %}
+      <section class="section" id="practice" data-lesson-practice aria-labelledby="practice-t" style="padding-top: var(--space-6)">
+        <div class="section-head"><h2 id="practice-t">Практика</h2>
+          <p>{% if user.is_authenticated %}Ответы сохраняются в ваш прогресс и возвращаются на повторение по расписанию.{% else %}Чтобы ответы сохранялись и возвращались на повторение, <a href="{% url 'accounts:signup' %}">зарегистрируйтесь</a>.{% endif %}</p>
+        </div>
+        <div class="drills">
+          {% for ex in exercises %}
+          {% include "components/drill.html" with ex=ex number=forloop.counter total=exercises|length %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+      {% if translations %}
+      <section class="section" id="translate" data-lesson-translate aria-labelledby="translate-t" style="padding-top: var(--space-6)">
+        <div class="section-head"><h2 id="translate-t">Скажите сами: перевод</h2>
+          <p>Здесь нет готовых слов — фразу строите вы. Сокращения и полные формы засчитываются одинаково: <span lang="en">I'm</span> = <span lang="en">I am</span>. Если ваш вариант отличается от образца, это ещё не ошибка: сравните его с образцом.</p>
+        </div>
+        <div class="drills">
+          {% for item in translations %}
+          {% include "components/translate_drill.html" with item=item number=forloop.counter total=translations|length %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+      {% if a1_guide %}
+      <section class="section" aria-label="Независимая проверка понимания">
+        <h2>Проверка без готовых ответов</h2>
+        <p>Четыре независимые задачи: смысл, письмо, новый жизненный контекст и объяснение ошибки. Это не угадывание кнопкой и не автоматический экзамен по разговорной речи.</p>
+        <a class="btn btn-primary" href="{% url 'learning:independent_check' lesson.slug %}">Проверить себя самостоятельно →</a>
+      </section>
+      {% endif %}
+      {% if extra_missions %}
+      <section class="section" id="spoken-coach" aria-labelledby="spoken-coach-title">
+        <h2 id="spoken-coach-title">Речевая мастерская — шесть ситуаций без подсказки</h2>
+        <p>Узнайте смысл, произнесите, восстановите без текста и ответьте по-своему. Текст образца можно скрыть. Это тренировка, а не оценка акцента.</p>
+        <div class="speech-studio" data-speech-studio data-speech-kind="lesson" data-speech-key="lesson:{{ lesson.slug }}" data-speech-persist="{% if user.is_authenticated %}true{% else %}false{% endif %}" data-speech-endpoint="{% url 'learning:speech_practice' %}">
+          <div data-speech-bank hidden>
+          {% for mission in extra_missions %}<div data-speech-entry>
+            <span data-speech-task-source>{{ mission.scene }}. {{ mission.prompt }}</span>
+            <span data-speech-source lang="en">{{ mission.example }}</span>
+            <span data-speech-accent></span>
+          </div>{% endfor %}
+          </div>
+          {% include "components/speech_studio_controls.html" %}
+        </div>
+      </section>
+      <section class="section a1-active-invite" aria-label="Дополнительная авторская практика A1">
+        <h2>Практика в новой ситуации</h2>
+        <p>Слушание, объяснения, конструктор, исправление ошибок — и ещё шесть оригинальных ситуаций с возможностью импровизировать. Дополнение к уроку без сохранения ответов.</p>
+        <a class="btn btn-primary" href="{% url 'core:active_a1_topic' lesson.order %}">Открыть практику урока №{{ lesson.order }} →</a>
+        {% if extra_missions %}
+        <h3>Шесть дополнительных историй этого урока</h3>
+        <ol class="a1-mission-previews">
+          {% for mission in extra_missions %}
+          <li>
+            <strong>{{ mission.title }}</strong>
+            <p>{{ mission.scene }}</p>
+            <a href="{% url 'core:active_a1_topic' lesson.order %}?mission={{ forloop.counter }}#a1-missions" aria-label="Попробовать ситуацию {{ forloop.counter }}: {{ mission.title }}">Попробовать ситуацию {{ forloop.counter }} →</a>
+          </li>
+          {% endfor %}
+        </ol>
+        {% endif %}
+        <a class="btn btn-quiet" href="{% url 'core:active_a1_topic' lesson.order %}#a1-missions">Ещё 6 ситуаций и импровизация →</a>
+      </section>
+      {% endif %}
+      {% if lesson.slug == "a1-cafe-order" %}
+      <section class="section cafe-lab-invite" aria-label="Дополнительная экспериментальная практика">
+        <h2>Попробуйте разговор в кафе по-новому</h2>
+        <p>Дополнительная самостоятельная лаборатория: исправьте неверно услышанный заказ, измените предложение и произнесите ответ. Прогресс не сохраняется.</p>
+        <a class="btn btn-primary" href="{% url 'core:cafe_lab' %}">Открыть интерактивную лабораторию →</a>
+      </section>
+      {% endif %}
+      {% if next_lesson %}
+      <nav class="section" aria-label="Следующий урок" style="padding-top: var(--space-6)">
+        <p style="color: var(--ink-soft); margin-bottom: var(--space-3)">Следующий урок</p>
+        <a class="btn btn-primary" href="{% url 'lessons:detail' next_lesson.slug %}">{{ next_lesson.title }}</a>
+      </nav>
+      {% endif %}
+    </article>
+
+    <aside class="aside">
+      <div class="aside-box">
+        <h2>Шаги урока</h2>
+        <ol class="toc">
+          {% for layer in layers %}
+          <li><a href="#layer-{{ layer.number }}">{{ layer.number }}. {{ layer.title }}</a></li>
+          {% if layer.number == 5 and lesson.sound_notes %}<li><a href="#sound-notes">Как это звучит</a></li>{% endif %}
+          {% if layer.number == 5 and lesson.contractions %}<li><a href="#contractions">Как сокращают</a></li>{% endif %}
+          {% endfor %}
+          {% if exercises %}<li><a href="#practice">Практика</a></li>{% endif %}
+          {% if translations %}<li><a href="#translate">Перевод</a></li>{% endif %}
+        </ol>
+        <div class="studio-reader-tools" aria-label="Размер текста урока"><span>Размер текста</span><button type="button" data-reader-smaller aria-label="Уменьшить текст">A−</button><button type="button" data-reader-larger aria-label="Увеличить текст">A+</button><output data-reader-size aria-live="polite">18</output></div>
+      </div>
+      <div class="aside-box">
+        <h2>Слова урока</h2>
+        <div class="word-chips annotated" lang="en">
+          {% for u in units %}<a href="{% url 'lexicon:detail' u.uid %}"><span class="mk" data-cat="{{ u.semantic_class.category.code }}" data-cls="{{ u.semantic_class.number }}" data-label="{{ u.translation_ru }}">{{ u.lemma }}</span></a>{% endfor %}
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}{% if a1_pilot %}<link rel="stylesheet" href="{% static 'css/a1-learning-route.css' %}"><script src="{% static 'js/a1-learning-route.js' %}" defer></script>{% endif %}{% if extra_missions %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}"><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script>{% endif %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}

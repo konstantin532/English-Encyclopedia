@@ -1,0 +1,316 @@
+{
+  "a1-determiners-a-the-this-my": {
+    "1": [
+      [
+        "Гость не знает, какая у вас книга. Вы просто сообщаете, что у вас есть одна книга.",
+        "I have ___ book.",
+        [
+          "a",
+          "the",
+          "an"
+        ],
+        0
+      ],
+      [
+        "Друг не знает, какие у вас стулья. Сообщите, что у вас есть один стул.",
+        "I have ___ chair.",
+        [
+          "the",
+          "a",
+          "your"
+        ],
+        1
+      ],
+      [
+        "Вы уже указали на книгу, и друг знает, о какой идёт речь.",
+        "___ book is new.",
+        [
+          "A",
+          "The",
+          "An"
+        ],
+        1
+      ],
+      [
+        "Вы сообщаете о наличии одного стола, не уточняя, какого именно.",
+        "I have ___ table.",
+        [
+          "the",
+          "an",
+          "a"
+        ],
+        2
+      ],
+      [
+        "Собеседники обсуждают уже известный им дом.",
+        "___ house is big.",
+        [
+          "The",
+          "A",
+          "An"
+        ],
+        0
+      ]
+    ],
+    "2": [
+      [
+        "Вы держите книгу в руках: «Эта книга новая».",
+        "___ book is new.",
+        [
+          "That",
+          "This",
+          "It"
+        ],
+        1
+      ],
+      [
+        "Вы указываете на дом вдали.",
+        "___ house is big.",
+        [
+          "This",
+          "It",
+          "That"
+        ],
+        2
+      ],
+      [
+        "Вы стоите рядом с комнатой и показываете её.",
+        "___ room is new.",
+        [
+          "This",
+          "That",
+          "It"
+        ],
+        0
+      ],
+      [
+        "Вы смотрите на далёкий стол через комнату.",
+        "___ table is new.",
+        [
+          "This",
+          "It",
+          "That"
+        ],
+        2
+      ],
+      [
+        "Телефон прямо у вас в руке.",
+        "___ phone is new.",
+        [
+          "It",
+          "This",
+          "That"
+        ],
+        1
+      ]
+    ],
+    "3": [
+      [
+        "Что нужно перед phone, если телефон собеседника?",
+        "Is it ___ phone?",
+        [
+          "you're",
+          "your",
+          "you"
+        ],
+        1
+      ],
+      [
+        "Вы спрашиваете, новая ли комната собеседника.",
+        "Is ___ room new?",
+        [
+          "your",
+          "you're",
+          "you"
+        ],
+        0
+      ],
+      [
+        "Вы спрашиваете «Это твой дом?»",
+        "Is this ___ house?",
+        [
+          "you",
+          "you're",
+          "your"
+        ],
+        2
+      ],
+      [
+        "Вы обращаетесь к другу: «Твой стол большой».",
+        "___ table is big.",
+        [
+          "Your",
+          "You're",
+          "You"
+        ],
+        0
+      ],
+      [
+        "Вы спрашиваете о книге собеседника.",
+        "Is this ___ book?",
+        [
+          "you're",
+          "your",
+          "you"
+        ],
+        1
+      ]
+    ],
+    "4": [
+      [
+        "Вы показываете новую комнату.",
+        "",
+        [
+          "This room new is.",
+          "This room is new.",
+          "This is room new."
+        ],
+        1
+      ],
+      [
+        "Вы показываете большой дом.",
+        "",
+        [
+          "This house is big.",
+          "This is house big.",
+          "House this is big."
+        ],
+        0
+      ],
+      [
+        "Вам нужно сказать «Эта книга новая».",
+        "",
+        [
+          "This is book new.",
+          "Book this new is.",
+          "This book is new."
+        ],
+        2
+      ],
+      [
+        "Вы рассказываете «Эта комната большая».",
+        "",
+        [
+          "This big room is.",
+          "This room is big.",
+          "This room big is."
+        ],
+        1
+      ],
+      [
+        "Вы показываете новый телефон.",
+        "",
+        [
+          "This phone is new.",
+          "This is phone new.",
+          "This new is phone."
+        ],
+        0
+      ]
+    ],
+    "5": [
+      [
+        "Рядом новая комната, а вдали большая. Выберите верное описание.",
+        "",
+        [
+          "That room is new. This room is big.",
+          "This room is new. That room is big.",
+          "This is new room. That is big room."
+        ],
+        1
+      ],
+      [
+        "Рядом большой дом, вдали новый дом.",
+        "",
+        [
+          "This house is big. That house is new.",
+          "That house is big. This house is new.",
+          "This house big. That house new."
+        ],
+        0
+      ],
+      [
+        "Рядом новая книга, а вдали большая книга. Опишите их правильно.",
+        "",
+        [
+          "That book is new. This book is big.",
+          "This is book new. That book big.",
+          "This book is new. That book is big."
+        ],
+        2
+      ],
+      [
+        "У вас рядом большой стол, а на другой стороне комнаты новый.",
+        "",
+        [
+          "This table is new. That table is big.",
+          "This table is big. That table is new.",
+          "This table big is. That table new is."
+        ],
+        1
+      ],
+      [
+        "Рядом новый телефон, вдали большой дом.",
+        "",
+        [
+          "This phone is new. That house is big.",
+          "That phone is new. This house is big.",
+          "This phone new. That house big."
+        ],
+        0
+      ]
+    ],
+    "6": [
+      [
+        "Вы впервые называете одну книгу, потом описываете эту книгу.",
+        "",
+        [
+          "This is the book. A book is new.",
+          "This is a book. The book is new.",
+          "This is book. Book is new."
+        ],
+        1
+      ],
+      [
+        "Вы впервые показываете другу стол, а потом говорите, что он большой.",
+        "",
+        [
+          "This is a table. The table is big.",
+          "This is the table. A table is big.",
+          "This is table. Table big."
+        ],
+        0
+      ],
+      [
+        "Вы сначала представляете комнату, а потом сообщаете, что она новая.",
+        "",
+        [
+          "This a room. The room new.",
+          "This is the room. A room is new.",
+          "This is a room. The room is new."
+        ],
+        2
+      ],
+      [
+        "Вы представляете один телефон, затем описываете его.",
+        "",
+        [
+          "This is the phone. A phone is new.",
+          "This is a phone. It is new.",
+          "This phone a. Phone is new."
+        ],
+        1
+      ],
+      [
+        "Сначала называете новый для гостя дом, потом говорите о его размере.",
+        "",
+        [
+          "This is a house. The house is big.",
+          "This is the house. A house is big.",
+          "This house. House is big."
+        ],
+        0
+      ]
+    ]
+  }
+}

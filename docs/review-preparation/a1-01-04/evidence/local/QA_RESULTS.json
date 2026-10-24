@@ -1,0 +1,35 @@
+[
+  {
+    "name": "fuzz",
+    "argv": [
+      ".venv/bin/python",
+      "scripts/qa_evolution.py",
+      "fuzz",
+      "--run-number",
+      "0",
+      "--seed",
+      "20261025"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.303,
+    "database_engine": "isolated SQLite",
+    "database_path": "/tmp/ee-preparation-test-6gzxob6_/baseline.sqlite3",
+    "note": "Deterministic seed, minimum regular run budget; not deep fuzz"
+  },
+  {
+    "name": "mutation-sentinels",
+    "argv": [
+      ".venv/bin/python",
+      "scripts/qa_mutation_probe.py",
+      "--report",
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/docs/review-preparation/a1-01-04/evidence/local/mutation-report.md"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 2.21,
+    "database_engine": "isolated SQLite",
+    "database_path": "/tmp/ee-preparation-test-6gzxob6_/baseline.sqlite3",
+    "note": "Mutation probes change only a disposable copy, not source checkout"
+  }
+]

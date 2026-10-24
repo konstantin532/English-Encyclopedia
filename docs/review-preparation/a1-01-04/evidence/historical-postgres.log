@@ -1,0 +1,446 @@
+﻿2026-10-24T16:24:42.2691077Z Current runner version: '2.338.0'
+2026-10-24T16:24:42.2707466Z ##[group]Runner Image Provisioner
+2026-10-24T16:24:42.2708118Z Hosted Compute Agent
+2026-10-24T16:24:42.2708480Z Version: 20261021.618
+2026-10-24T16:24:42.2708897Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-24T16:24:42.2709382Z Build Date: 2026-10-21T00:45:21Z
+2026-10-24T16:24:42.2709793Z Worker ID: {73c83621-38de-4878-a000-6bb8a03871ca}
+2026-10-24T16:24:42.2710302Z Region: centralus
+2026-10-24T16:24:42.2710652Z Cloud: Azure
+2026-10-24T16:24:42.2711017Z ##[endgroup]
+2026-10-24T16:24:42.2712129Z ##[group]Operating System
+2026-10-24T16:24:42.2712693Z Ubuntu
+2026-10-24T16:24:42.2713271Z 26.04.1
+2026-10-24T16:24:42.2713736Z LTS
+2026-10-24T16:24:42.2714455Z ##[endgroup]
+2026-10-24T16:24:42.2715016Z ##[group]Runner Image
+2026-10-24T16:24:42.2715597Z Image: ubuntu-26.04
+2026-10-24T16:24:42.2716208Z Version: 20261012.163.1
+2026-10-24T16:24:42.2717527Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261012.163/images/ubuntu/Ubuntu2604-Readme.md
+2026-10-24T16:24:42.2719043Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261012.163
+2026-10-24T16:24:42.2719893Z ##[endgroup]
+2026-10-24T16:24:42.2720733Z ##[group]GITHUB_TOKEN Permissions
+2026-10-24T16:24:42.2722261Z Contents: read
+2026-10-24T16:24:42.2722663Z Metadata: read
+2026-10-24T16:24:42.2723170Z ##[endgroup]
+2026-10-24T16:24:42.2724711Z Secret source: Actions
+2026-10-24T16:24:42.2725357Z Cache mode: write
+2026-10-24T16:24:42.2725799Z Prepare workflow directory
+2026-10-24T16:24:42.3026598Z Prepare all required actions
+2026-10-24T16:24:42.3062378Z Getting action download info
+2026-10-24T16:24:42.5242932Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-24T16:24:42.6508833Z Download action repository 'astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884' (SHA:1c37ad07a6a961277cf70c0d37d6f313000f5884)
+2026-10-24T16:24:43.1928551Z Complete job name: postgres
+2026-10-24T16:24:43.2316354Z ##[group]Checking docker version
+2026-10-24T16:24:43.2325307Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2026-10-24T16:24:43.3333169Z '1.54'
+2026-10-24T16:24:43.3350056Z Docker daemon API version: '1.54'
+2026-10-24T16:24:43.3350517Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2026-10-24T16:24:43.3504895Z '1.54'
+2026-10-24T16:24:43.3519648Z Docker client API version: '1.54'
+2026-10-24T16:24:43.3522937Z ##[endgroup]
+2026-10-24T16:24:43.3524225Z ##[group]Clean up resources from previous jobs
+2026-10-24T16:24:43.3528055Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=b72887"
+2026-10-24T16:24:43.3647897Z ##[command]/usr/bin/docker network prune --force --filter "label=b72887"
+2026-10-24T16:24:43.3764154Z ##[endgroup]
+2026-10-24T16:24:43.3764458Z ##[group]Create local container network
+2026-10-24T16:24:43.3771234Z ##[command]/usr/bin/docker network create --label b72887 github_network_1f3d00d45cbf495f87d0f7bedbad8a95
+2026-10-24T16:24:43.4132308Z 8f705d3e3a59b761c94d5d4f5fd9cf5e3a3e2489bf206d5cb9531453b7c4c999
+2026-10-24T16:24:43.4153359Z ##[endgroup]
+2026-10-24T16:24:43.4171814Z ##[group]Starting postgres service container
+2026-10-24T16:24:43.4186611Z ##[command]/usr/bin/docker pull postgres:16
+2026-10-24T16:24:43.9333574Z 16: Pulling from library/postgres
+2026-10-24T16:24:44.1502481Z f2be67225471: Pulling fs layer
+2026-10-24T16:24:44.1503270Z 46109ed24d00: Pulling fs layer
+2026-10-24T16:24:44.1504073Z e9da7c9f979b: Pulling fs layer
+2026-10-24T16:24:44.1504869Z ef42abb17c7a: Pulling fs layer
+2026-10-24T16:24:44.1505541Z f2010d5c8971: Pulling fs layer
+2026-10-24T16:24:44.1506140Z c79a7210985e: Pulling fs layer
+2026-10-24T16:24:44.1506904Z b1c4822f4553: Pulling fs layer
+2026-10-24T16:24:44.1507601Z 852f46917486: Pulling fs layer
+2026-10-24T16:24:44.1508269Z c85ce0e29e80: Pulling fs layer
+2026-10-24T16:24:44.1508937Z d9b4aee93490: Pulling fs layer
+2026-10-24T16:24:44.1509713Z 393ce45a5829: Pulling fs layer
+2026-10-24T16:24:44.1510818Z 48eee0ea92d8: Pulling fs layer
+2026-10-24T16:24:44.1511614Z 9fbbdc3bcbff: Pulling fs layer
+2026-10-24T16:24:44.1512365Z 25140b6d6501: Pulling fs layer
+2026-10-24T16:24:44.2329997Z 25140b6d6501: Download complete
+2026-10-24T16:24:44.3351481Z 852f46917486: Download complete
+2026-10-24T16:24:44.3352032Z 9fbbdc3bcbff: Download complete
+2026-10-24T16:24:44.3352276Z c85ce0e29e80: Download complete
+2026-10-24T16:24:44.3357738Z d9b4aee93490: Download complete
+2026-10-24T16:24:44.3358256Z 393ce45a5829: Download complete
+2026-10-24T16:24:44.3361335Z f2010d5c8971: Download complete
+2026-10-24T16:24:44.3373401Z e9da7c9f979b: Download complete
+2026-10-24T16:24:44.4338904Z b1c4822f4553: Download complete
+2026-10-24T16:24:44.4348711Z ef42abb17c7a: Download complete
+2026-10-24T16:24:44.9344608Z 48eee0ea92d8: Download complete
+2026-10-24T16:24:44.9345903Z 46109ed24d00: Download complete
+2026-10-24T16:24:44.9346567Z 29e2244f39ca: Download complete
+2026-10-24T16:24:44.9347662Z 22f39cf62ad6: Download complete
+2026-10-24T16:24:44.9350067Z f2be67225471: Download complete
+2026-10-24T16:24:45.9328872Z c79a7210985e: Download complete
+2026-10-24T16:24:45.9378375Z d9b4aee93490: Pull complete
+2026-10-24T16:24:45.9459290Z f2be67225471: Pull complete
+2026-10-24T16:24:46.0390313Z b1c4822f4553: Pull complete
+2026-10-24T16:24:46.0411691Z 46109ed24d00: Pull complete
+2026-10-24T16:24:46.1366320Z ef42abb17c7a: Pull complete
+2026-10-24T16:24:46.1374915Z 48eee0ea92d8: Pull complete
+2026-10-24T16:24:46.2335648Z 9fbbdc3bcbff: Pull complete
+2026-10-24T16:24:46.2340718Z c85ce0e29e80: Pull complete
+2026-10-24T16:24:47.6365815Z c79a7210985e: Pull complete
+2026-10-24T16:24:47.7327462Z 852f46917486: Pull complete
+2026-10-24T16:24:47.7337954Z 393ce45a5829: Pull complete
+2026-10-24T16:24:47.7354293Z e9da7c9f979b: Pull complete
+2026-10-24T16:24:47.8328099Z 25140b6d6501: Pull complete
+2026-10-24T16:24:47.8778737Z f2010d5c8971: Pull complete
+2026-10-24T16:24:47.8779639Z Digest: sha256:9e2cf6287f25c3151f4c9421ccce2b17f3e60061c111a29165e0d2cdd9ff0a97
+2026-10-24T16:24:47.8780082Z Status: Downloaded newer image for postgres:16
+2026-10-24T16:24:47.8825119Z docker.io/library/postgres:16
+2026-10-24T16:24:47.8899685Z ##[command]/usr/bin/docker create --name e64eafc962ea45abba38f958db54bb08_postgres16_f7e2e7 --label b72887 --network github_network_1f3d00d45cbf495f87d0f7bedbad8a95 --network-alias postgres -p 5432:5432 --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10 -e "POSTGRES_PASSWORD=postgres" -e "POSTGRES_DB=ee_test" -e GITHUB_ACTIONS=true -e CI=true postgres:16
+2026-10-24T16:24:50.9480107Z 497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822
+2026-10-24T16:24:50.9503594Z ##[command]/usr/bin/docker start 497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822
+2026-10-24T16:24:51.1398315Z 497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822
+2026-10-24T16:24:51.1418033Z ##[command]/usr/bin/docker ps --all --filter id=497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2026-10-24T16:24:51.1631420Z 497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822 Up Less than a second (health: starting)
+2026-10-24T16:24:51.1665241Z ##[command]/usr/bin/docker port 497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822
+2026-10-24T16:24:51.1800605Z 5432/tcp -> 0.0.0.0:5432
+2026-10-24T16:24:51.1813221Z 5432/tcp -> [::]:5432
+2026-10-24T16:24:51.1845251Z ##[endgroup]
+2026-10-24T16:24:51.1852999Z ##[group]Waiting for all services to be ready
+2026-10-24T16:24:51.1864811Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822
+2026-10-24T16:24:51.1979774Z starting
+2026-10-24T16:24:51.2000490Z postgres service is starting, waiting 2 seconds before checking again.
+2026-10-24T16:24:53.2006350Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822
+2026-10-24T16:24:53.2119693Z starting
+2026-10-24T16:24:53.2135072Z postgres service is starting, waiting 4 seconds before checking again.
+2026-10-24T16:24:57.3753841Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822
+2026-10-24T16:24:57.3863439Z healthy
+2026-10-24T16:24:57.3882928Z postgres service is healthy.
+2026-10-24T16:24:57.3883377Z ##[endgroup]
+2026-10-24T16:24:57.4061889Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-24T16:24:57.4062214Z with:
+2026-10-24T16:24:57.4062364Z   repository: konstantin532/English-Encyclopedia
+2026-10-24T16:24:57.4063838Z   token: ***
+2026-10-24T16:24:57.4063965Z   ssh-strict: true
+2026-10-24T16:24:57.4064090Z   ssh-user: git
+2026-10-24T16:24:57.4064225Z   persist-credentials: true
+2026-10-24T16:24:57.4064377Z   clean: true
+2026-10-24T16:24:57.4064527Z   sparse-checkout-cone-mode: true
+2026-10-24T16:24:57.4064683Z   fetch-depth: 1
+2026-10-24T16:24:57.4064808Z   fetch-tags: false
+2026-10-24T16:24:57.4064939Z   show-progress: true
+2026-10-24T16:24:57.4065073Z   lfs: false
+2026-10-24T16:24:57.4065188Z   submodules: false
+2026-10-24T16:24:57.4065324Z   set-safe-directory: true
+2026-10-24T16:24:57.4065474Z   allow-unsafe-pr-checkout: false
+2026-10-24T16:24:57.4126955Z env:
+2026-10-24T16:24:57.4127401Z   TEST_DATABASE_URL: ***localhost:5432/ee_test
+2026-10-24T16:24:57.4127585Z ##[endgroup]
+2026-10-24T16:24:57.4835616Z Syncing repository: konstantin532/English-Encyclopedia
+2026-10-24T16:24:57.4836474Z ##[group]Getting Git version info
+2026-10-24T16:24:57.4837027Z Working directory is '/home/runner/work/English-Encyclopedia/English-Encyclopedia'
+2026-10-24T16:24:57.4837601Z [command]/usr/bin/git version
+2026-10-24T16:24:57.4871971Z git version 2.55.0
+2026-10-24T16:24:57.4885533Z ##[endgroup]
+2026-10-24T16:24:57.4902799Z Temporarily overriding HOME='/home/runner/work/_temp/16691d3b-9f07-4a22-9c08-0e759661a1b4' before making global git config changes
+2026-10-24T16:24:57.4907574Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-24T16:24:57.4908211Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/English-Encyclopedia/English-Encyclopedia
+2026-10-24T16:24:57.4962564Z Deleting the contents of '/home/runner/work/English-Encyclopedia/English-Encyclopedia'
+2026-10-24T16:24:57.4964697Z ##[group]Determining repository object format
+2026-10-24T16:24:57.4965817Z ##[endgroup]
+2026-10-24T16:24:57.4966051Z ##[group]Initializing the repository
+2026-10-24T16:24:57.4969892Z [command]/usr/bin/git init /home/runner/work/English-Encyclopedia/English-Encyclopedia
+2026-10-24T16:24:57.5085870Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-24T16:24:57.5086357Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-24T16:24:57.5086941Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-24T16:24:57.5087285Z hint: call:
+2026-10-24T16:24:57.5087463Z hint:
+2026-10-24T16:24:57.5087763Z hint: 	git config --global init.defaultBranch <name>
+2026-10-24T16:24:57.5088049Z hint:
+2026-10-24T16:24:57.5088313Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-24T16:24:57.5088753Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-24T16:24:57.5089082Z hint:
+2026-10-24T16:24:57.5089275Z hint: 	git branch -m <name>
+2026-10-24T16:24:57.5089529Z hint:
+2026-10-24T16:24:57.5089814Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-24T16:24:57.5090594Z Initialized empty Git repository in /home/runner/work/English-Encyclopedia/English-Encyclopedia/.git/
+2026-10-24T16:24:57.5097646Z [command]/usr/bin/git remote add origin https://github.com/konstantin532/English-Encyclopedia
+2026-10-24T16:24:57.5153533Z ##[endgroup]
+2026-10-24T16:24:57.5154161Z ##[group]Disabling automatic garbage collection
+2026-10-24T16:24:57.5156717Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-24T16:24:57.5189918Z ##[endgroup]
+2026-10-24T16:24:57.5190256Z ##[group]Setting up auth
+2026-10-24T16:24:57.5190606Z Removing SSH command configuration
+2026-10-24T16:24:57.5195217Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-24T16:24:57.5224996Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-24T16:24:57.5594770Z Removing HTTP extra header
+2026-10-24T16:24:57.5599425Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-24T16:24:57.5627330Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-24T16:24:57.5841153Z Removing includeIf entries pointing to credentials config files
+2026-10-24T16:24:57.5845489Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-24T16:24:57.5873584Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-24T16:24:57.6092112Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-1840e2ce-41bf-4a7c-824b-433f8da030e8.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-24T16:24:57.6122129Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git.path /home/runner/work/_temp/git-credentials-1840e2ce-41bf-4a7c-824b-433f8da030e8.config
+2026-10-24T16:24:57.6149044Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-1840e2ce-41bf-4a7c-824b-433f8da030e8.config
+2026-10-24T16:24:57.6178543Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-1840e2ce-41bf-4a7c-824b-433f8da030e8.config
+2026-10-24T16:24:57.6205786Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-1840e2ce-41bf-4a7c-824b-433f8da030e8.config
+2026-10-24T16:24:57.6231804Z ##[endgroup]
+2026-10-24T16:24:57.6232103Z ##[group]Fetching the repository
+2026-10-24T16:24:57.6236503Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8d3a41d9aa61cbf074caff602d53b22920ca3efa:refs/remotes/origin/main
+2026-10-24T16:24:58.2375149Z From https://github.com/konstantin532/English-Encyclopedia
+2026-10-24T16:24:58.2375511Z  * [new ref]         8d3a41d9aa61cbf074caff602d53b22920ca3efa -> origin/main
+2026-10-24T16:24:58.2383755Z [command]/usr/bin/git branch --list --remote origin/main
+2026-10-24T16:24:58.2410998Z   origin/main
+2026-10-24T16:24:58.2416029Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-10-24T16:24:58.2437595Z 8d3a41d9aa61cbf074caff602d53b22920ca3efa
+2026-10-24T16:24:58.2440457Z ##[endgroup]
+2026-10-24T16:24:58.2441472Z ##[group]Determining the checkout info
+2026-10-24T16:24:58.2441837Z ##[endgroup]
+2026-10-24T16:24:58.2444802Z [command]/usr/bin/git sparse-checkout disable
+2026-10-24T16:24:58.2494498Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-24T16:24:58.2521315Z ##[group]Checking out the ref
+2026-10-24T16:24:58.2524641Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-24T16:24:58.3246917Z Switched to a new branch 'main'
+2026-10-24T16:24:58.3248040Z branch 'main' set up to track 'origin/main'.
+2026-10-24T16:24:58.3255510Z ##[endgroup]
+2026-10-24T16:24:58.3299203Z [command]/usr/bin/git log -1 --format=%H
+2026-10-24T16:24:58.3322147Z 8d3a41d9aa61cbf074caff602d53b22920ca3efa
+2026-10-24T16:24:58.3528494Z ##[group]Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
+2026-10-24T16:24:58.3528725Z with:
+2026-10-24T16:24:58.3528855Z   activate-environment: false
+2026-10-24T16:24:58.3529005Z   no-project: false
+2026-10-24T16:24:58.3529218Z   working-directory: /home/runner/work/English-Encyclopedia/English-Encyclopedia
+2026-10-24T16:24:58.3530663Z   github-token: ***
+2026-10-24T16:24:58.3530790Z   enable-cache: auto
+2026-10-24T16:24:58.3531115Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-10-24T16:24:58.3531461Z   restore-cache: true
+2026-10-24T16:24:58.3531586Z   save-cache: auto
+2026-10-24T16:24:58.3531710Z   prune-cache: false
+2026-10-24T16:24:58.3531839Z   cache-python: false
+2026-10-24T16:24:58.3531976Z   ignore-nothing-to-cache: false
+2026-10-24T16:24:58.3532138Z   ignore-empty-workdir: false
+2026-10-24T16:24:58.3532313Z   download-from-astral-mirror: true
+2026-10-24T16:24:58.3532506Z   add-problem-matchers: true
+2026-10-24T16:24:58.3532653Z   quiet: false
+2026-10-24T16:24:58.3532780Z   resolution-strategy: highest
+2026-10-24T16:24:58.3532928Z env:
+2026-10-24T16:24:58.3533168Z   TEST_DATABASE_URL: ***localhost:5432/ee_test
+2026-10-24T16:24:58.3533336Z ##[endgroup]
+2026-10-24T16:24:58.4677045Z Trying to find version for uv in: /home/runner/work/English-Encyclopedia/English-Encyclopedia/uv.toml
+2026-10-24T16:24:58.4678100Z Could not find file: /home/runner/work/English-Encyclopedia/English-Encyclopedia/uv.toml
+2026-10-24T16:24:58.4678948Z Trying to find version for uv in: /home/runner/work/English-Encyclopedia/English-Encyclopedia/pyproject.toml
+2026-10-24T16:24:58.4680536Z Could not determine uv version from uv.toml or pyproject.toml. Falling back to latest.
+2026-10-24T16:24:58.4684527Z Fetching manifest data from https://raw.githubusercontent.com/astral-sh/versions/main/v1/uv.ndjson ...
+2026-10-24T16:24:58.5451482Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.13.5/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-10-24T16:24:58.6991675Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/fe0eb684-db85-4aef-8f94-473692858bc7 -f /home/runner/work/_temp/568f249c-d266-4e7f-af7f-239d8e360234
+2026-10-24T16:24:58.9799946Z Added /home/runner/.local/bin to the path
+2026-10-24T16:24:58.9801535Z Added /opt/hostedtoolcache/uv/0.13.5/x86_64 to the path
+2026-10-24T16:24:58.9802301Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:58.9802572Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-10-24T16:24:58.9818620Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:58.9818850Z Successfully installed uv version 0.13.5
+2026-10-24T16:24:59.0548058Z Searching files using cache dependency glob: /home/runner/work/English-Encyclopedia/English-Encyclopedia/**/*requirements*.txt,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/*requirements*.in,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/*constraints*.txt,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/*constraints*.in,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/pyproject.toml,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/uv.lock,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/*.py.lock
+2026-10-24T16:24:59.1134022Z /home/runner/work/English-Encyclopedia/English-Encyclopedia/pyproject.toml
+2026-10-24T16:24:59.1307045Z /home/runner/work/English-Encyclopedia/English-Encyclopedia/uv.lock
+2026-10-24T16:24:59.1311662Z Found 2 files to hash.
+2026-10-24T16:24:59.1374139Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-26.04-unknown-0863c72389c70dcad029fb71f57f0b4155b3d44a580a3a41363dd5c77074bb57
+2026-10-24T16:24:59.2703496Z Cache hit for: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-26.04-unknown-0863c72389c70dcad029fb71f57f0b4155b3d44a580a3a41363dd5c77074bb57
+2026-10-24T16:25:00.0167326Z Received 27568869 of 27568869 (100.0%), 43.6 MBs/sec
+2026-10-24T16:25:00.0167615Z Cache Size: ~26 MB (27568869 B)
+2026-10-24T16:25:00.0188472Z [command]/usr/bin/tar -xf /home/runner/work/_temp/b44cc9dc-13a6-4e02-9d9f-d2e49439c29a/cache.tzst -P -C /home/runner/work/English-Encyclopedia/English-Encyclopedia --use-compress-program unzstd
+2026-10-24T16:25:00.3261390Z Cache restored successfully
+2026-10-24T16:25:00.3278946Z cache restored from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-26.04-unknown-0863c72389c70dcad029fb71f57f0b4155b3d44a580a3a41363dd5c77074bb57
+2026-10-24T16:25:00.4435475Z ##[group]Run uv sync --frozen
+2026-10-24T16:25:00.4435712Z [36;1muv sync --frozen[0m
+2026-10-24T16:25:00.4586250Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:25:00.4586423Z env:
+2026-10-24T16:25:00.4586909Z   TEST_DATABASE_URL: ***localhost:5432/ee_test
+2026-10-24T16:25:00.4587150Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:25:00.4587400Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:25:00.4587585Z ##[endgroup]
+2026-10-24T16:25:00.5447585Z Downloading cpython-3.13.17-linux-x86_64-gnu (download) (33.7MiB)
+2026-10-24T16:25:00.9787731Z  Downloaded cpython-3.13.17-linux-x86_64-gnu (download)
+2026-10-24T16:25:01.0875818Z Using CPython 3.13.17
+2026-10-24T16:25:01.0876218Z Creating virtual environment at: .venv
+2026-10-24T16:25:01.2849495Z Installed 19 packages in 195ms
+2026-10-24T16:25:01.2849803Z  + asgiref==3.12.1
+2026-10-24T16:25:01.2850071Z  + dj-database-url==3.1.2
+2026-10-24T16:25:01.2850304Z  + django==5.2.18
+2026-10-24T16:25:01.2850591Z  + django-axes==8.3.1
+2026-10-24T16:25:01.2850813Z  + django-csp==4.0
+2026-10-24T16:25:01.2851024Z  + iniconfig==2.3.1
+2026-10-24T16:25:01.2851225Z  + numpy==2.5.4
+2026-10-24T16:25:01.2851426Z  + packaging==26.3
+2026-10-24T16:25:01.2851626Z  + pluggy==1.6.0
+2026-10-24T16:25:01.2852082Z  + psycopg==3.3.6
+2026-10-24T16:25:01.2852332Z  + psycopg-binary==3.3.6
+2026-10-24T16:25:01.2852642Z  + pygments==2.21.0
+2026-10-24T16:25:01.2852944Z  + pytest==9.1.1
+2026-10-24T16:25:01.2853284Z  + pytest-django==4.14.0
+2026-10-24T16:25:01.2853583Z  + python-dotenv==1.2.4
+2026-10-24T16:25:01.2853899Z  + pyyaml==6.0.3
+2026-10-24T16:25:01.2854238Z  + sqlparse==0.6.0
+2026-10-24T16:25:01.2854562Z  + tblib==3.2.2
+2026-10-24T16:25:01.2854893Z  + whitenoise==6.12.0
+2026-10-24T16:25:01.2919038Z ##[group]Run uv run python manage.py collectstatic --noinput --verbosity 0
+2026-10-24T16:25:01.2919375Z [36;1muv run python manage.py collectstatic --noinput --verbosity 0[0m
+2026-10-24T16:25:01.2974576Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:25:01.2974727Z env:
+2026-10-24T16:25:01.2975059Z   TEST_DATABASE_URL: ***localhost:5432/ee_test
+2026-10-24T16:25:01.2975289Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:25:01.2975516Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:25:01.2975702Z ##[endgroup]
+2026-10-24T16:25:02.3632322Z ##[group]Run set -o pipefail
+2026-10-24T16:25:02.3632541Z [36;1mset -o pipefail[0m
+2026-10-24T16:25:02.3632920Z [36;1muv run pytest -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR|SUBFAIL|SUBERROR|[A-Z]+FAIL) |^E  +" pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }[0m
+2026-10-24T16:25:02.3687245Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:25:02.3687399Z env:
+2026-10-24T16:25:02.3687731Z   TEST_DATABASE_URL: ***localhost:5432/ee_test
+2026-10-24T16:25:02.3687959Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:25:02.3688195Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:25:02.3688379Z ##[endgroup]
+2026-10-24T16:25:12.8055070Z .... [  0%]
+2026-10-24T16:25:15.3975097Z .................................................................. [  8%]
+2026-10-24T16:32:49.2752294Z ...................................................................................................................................................................................... [ 31%]
+2026-10-24T16:33:36.7407875Z ............................................ [ 36%]
+2026-10-24T16:33:44.5258930Z ............ [ 38%]
+2026-10-24T16:35:19.1352424Z ..................................................................................................... [ 50%]
+2026-10-24T16:35:19.9892075Z ............................. [ 54%]
+2026-10-24T16:37:51.5909453Z ................................ [ 58%]
+2026-10-24T16:38:21.2699520Z ................................ [ 62%]
+2026-10-24T16:38:55.8441875Z ........................................................................ [ 71%]
+2026-10-24T16:38:58.3112670Z ............................................. [ 76%]
+2026-10-24T16:39:07.3182903Z ......................................................................................................................................... [ 93%]
+2026-10-24T16:39:08.9191175Z ....................................................     [100%]
+2026-10-24T16:39:08.9191572Z 808 passed, 4948 subtests passed in 845.70s (0:14:05)
+2026-10-24T16:39:09.3869340Z Post job cleanup.
+2026-10-24T16:39:09.4600923Z UV_CACHE_DIR is already set to /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:39:09.4603655Z UV_PYTHON_INSTALL_DIR is already set to /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:39:09.4605287Z Cache hit occurred on key setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-26.04-unknown-0863c72389c70dcad029fb71f57f0b4155b3d44a580a3a41363dd5c77074bb57, not saving cache.
+2026-10-24T16:39:09.5710744Z Post job cleanup.
+2026-10-24T16:39:09.6309093Z [command]/usr/bin/git version
+2026-10-24T16:39:09.6349847Z git version 2.55.0
+2026-10-24T16:39:09.6371954Z Temporarily overriding HOME='/home/runner/work/_temp/eb4fac2c-ba46-4c69-93d2-603e10e9fd55' before making global git config changes
+2026-10-24T16:39:09.6372665Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-24T16:39:09.6375281Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/English-Encyclopedia/English-Encyclopedia
+2026-10-24T16:39:09.6405914Z Removing SSH command configuration
+2026-10-24T16:39:09.6410010Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-24T16:39:09.6449030Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-24T16:39:09.6697635Z Removing HTTP extra header
+2026-10-24T16:39:09.6702164Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-24T16:39:09.6734777Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-24T16:39:09.7001682Z Removing includeIf entries pointing to credentials config files
+2026-10-24T16:39:09.7007274Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-24T16:39:09.7030744Z includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git.path
+2026-10-24T16:39:09.7031521Z includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git/worktrees/*.path
+2026-10-24T16:39:09.7032131Z includeif.gitdir:/github/workspace/.git.path
+2026-10-24T16:39:09.7032585Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-24T16:39:09.7037171Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git.path
+2026-10-24T16:39:09.7059379Z /home/runner/work/_temp/git-credentials-1840e2ce-41bf-4a7c-824b-433f8da030e8.config
+2026-10-24T16:39:09.7065238Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-1840e2ce\-41bf\-4a7c\-824b\-433f8da030e8\.config
+2026-10-24T16:39:09.7095591Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git/worktrees/*.path
+2026-10-24T16:39:09.7117681Z /home/runner/work/_temp/git-credentials-1840e2ce-41bf-4a7c-824b-433f8da030e8.config
+2026-10-24T16:39:09.7129388Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-1840e2ce\-41bf\-4a7c\-824b\-433f8da030e8\.config
+2026-10-24T16:39:09.7156341Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-24T16:39:09.7175926Z /github/runner_temp/git-credentials-1840e2ce-41bf-4a7c-824b-433f8da030e8.config
+2026-10-24T16:39:09.7180317Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-1840e2ce\-41bf\-4a7c\-824b\-433f8da030e8\.config
+2026-10-24T16:39:09.7208235Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-24T16:39:09.7228518Z /github/runner_temp/git-credentials-1840e2ce-41bf-4a7c-824b-433f8da030e8.config
+2026-10-24T16:39:09.7232348Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-1840e2ce\-41bf\-4a7c\-824b\-433f8da030e8\.config
+2026-10-24T16:39:09.7260678Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-24T16:39:09.7481712Z Removing credentials config '/home/runner/work/_temp/git-credentials-1840e2ce-41bf-4a7c-824b-433f8da030e8.config'
+2026-10-24T16:39:09.7594737Z Print service container logs: e64eafc962ea45abba38f958db54bb08_postgres16_f7e2e7
+2026-10-24T16:39:09.7598526Z ##[command]/usr/bin/docker logs --details 497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822
+2026-10-24T16:39:09.7707201Z  The files belonging to this database system will be owned by user "postgres".
+2026-10-24T16:39:09.7707951Z  This user must also own the server process.
+2026-10-24T16:39:09.7710268Z  initdb: warning: enabling "trust" authentication for local connections
+2026-10-24T16:39:09.7710576Z  
+2026-10-24T16:39:09.7717396Z  initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+2026-10-24T16:39:09.7718056Z  The database cluster will be initialized with locale "en_US.utf8".
+2026-10-24T16:39:09.7718507Z  The default database encoding has accordingly been set to "UTF8".
+2026-10-24T16:39:09.7718946Z  The default text search configuration will be set to "english".
+2026-10-24T16:39:09.7719507Z  
+2026-10-24T16:39:09.7719756Z  Data page checksums are disabled.
+2026-10-24T16:39:09.7720088Z  
+2026-10-24T16:39:09.7720421Z  fixing permissions on existing directory /var/lib/postgresql/data ... ok
+2026-10-24T16:39:09.7720840Z  creating subdirectories ... ok
+2026-10-24T16:39:09.7721187Z  selecting dynamic shared memory implementation ... posix
+2026-10-24T16:39:09.7721564Z  selecting default max_connections ... 100
+2026-10-24T16:39:09.7721896Z  selecting default shared_buffers ... 128MB
+2026-10-24T16:39:09.7722228Z  selecting default time zone ... Etc/UTC
+2026-10-24T16:39:09.7722544Z  creating configuration files ... ok
+2026-10-24T16:39:09.7722853Z  running bootstrap script ... ok
+2026-10-24T16:39:09.7723180Z  performing post-bootstrap initialization ... ok
+2026-10-24T16:39:09.7723507Z  syncing data to disk ... ok
+2026-10-24T16:39:09.7723763Z  
+2026-10-24T16:39:09.7723982Z  
+2026-10-24T16:39:09.7724242Z  Success. You can now start the database server using:
+2026-10-24T16:39:09.7724553Z  
+2026-10-24T16:39:09.7724819Z      pg_ctl -D /var/lib/postgresql/data -l logfile start
+2026-10-24T16:39:09.7725138Z  
+2026-10-24T16:39:09.7725742Z  waiting for server to start....2026-10-24 16:24:51.854 UTC [49] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-24T16:39:09.7727090Z  2026-10-24 16:24:52.238 UTC [1] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-24T16:39:09.7734448Z  2026-10-24 16:24:52.238 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-24T16:39:09.7734961Z  2026-10-24 16:24:52.238 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-10-24T16:39:09.7735517Z  2026-10-24 16:24:52.239 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-10-24T16:39:09.7735998Z  2026-10-24 16:24:52.241 UTC [65] LOG:  database system was shut down at 2026-10-24 16:24:52 UTC
+2026-10-24T16:39:09.7736477Z  2026-10-24 16:24:52.245 UTC [1] LOG:  database system is ready to accept connections
+2026-10-24T16:39:09.7737158Z  2026-10-24 16:25:18.325 UTC [127] ERROR:  duplicate key value violates unique constraint "unique_independent_batch_skill_token"
+2026-10-24T16:39:09.7737925Z  2026-10-24 16:25:18.325 UTC [127] DETAIL:  Key (user_id, lesson_id, skill, batch_token)=(67, 13, transfer, dxIzf1RvQpT6LkgwmRKjl3lJK66mzXfw) already exists.
+2026-10-24T16:39:09.7739532Z  2026-10-24 16:25:18.325 UTC [127] STATEMENT:  INSERT INTO "learning_independentattempt" ("user_id", "lesson_id", "skill", "submitted", "prompt_snapshot", "model_snapshot", "outcome", "self_rating", "assistance", "task_variant", "batch_token", "self_rubric", "teacher_verdict", "teacher_rubric", "teacher_note", "reviewed_by_id", "reviewed_at", "created_at") VALUES (67, 13, 'transfer', 'A repeated message', '', '', 'self_reported', '', 'not_stated', 0, 'dxIzf1RvQpT6LkgwmRKjl3lJK66mzXfw', '{}'::jsonb, 'unreviewed', '{}'::jsonb, '', NULL, NULL, '2026-10-24 16:25:18.325617+00:00'::timestamptz) RETURNING "learning_independentattempt"."id"
+2026-10-24T16:39:09.7740739Z  2026-10-24 16:25:19.010 UTC [129] ERROR:  duplicate key value violates unique constraint "unique_pilot_stage_per_learner"
+2026-10-24T16:39:09.7741152Z  2026-10-24 16:25:19.010 UTC [129] DETAIL:  Key (user_id, lesson_id, skill, task_variant)=(111, 2, transfer, 100) already exists.
+2026-10-24T16:39:09.7742311Z  2026-10-24 16:25:19.010 UTC [129] STATEMENT:  INSERT INTO "learning_independentattempt" ("user_id", "lesson_id", "skill", "submitted", "prompt_snapshot", "model_snapshot", "outcome", "self_rating", "assistance", "task_variant", "batch_token", "self_rubric", "teacher_verdict", "teacher_rubric", "teacher_note", "reviewed_by_id", "reviewed_at", "created_at") VALUES (111, 2, 'transfer', 'Another answer', '', '', 'self_reported', '', 'not_stated', 100, 'pilot-anotherdevice', '{}'::jsonb, 'unreviewed', '{}'::jsonb, '', NULL, NULL, '2026-10-24 16:25:19.009664+00:00'::timestamptz) RETURNING "learning_independentattempt"."id"
+2026-10-24T16:39:09.7743379Z  2026-10-24 16:29:52.268 UTC [63] LOG:  checkpoint starting: time
+2026-10-24T16:39:09.7743737Z  2026-10-24 16:34:02.384 UTC [1039] ERROR:  new row for relation "learning_mistakereview" violates check constraint "mistake_review_counts_in_range"
+2026-10-24T16:39:09.7744255Z  2026-10-24 16:34:02.384 UTC [1039] DETAIL:  Failing row contains (61, 2026-10-24 16:34:02.384215+00, 6, 0, null, 2026-10-24 16:34:02.384245+00, 2026-10-24 16:34:02.384317+00, 1, 185).
+2026-10-24T16:39:09.7745161Z  2026-10-24 16:34:02.384 UTC [1039] STATEMENT:  INSERT INTO "learning_mistakereview" ("user_id", "exercise_id", "due_at", "current_index", "correct_count", "completed_at", "created_at", "updated_at") VALUES (185, 1, '2026-10-24 16:34:02.384215+00:00'::timestamptz, 6, 0, NULL, '2026-10-24 16:34:02.384245+00:00'::timestamptz, '2026-10-24 16:34:02.384317+00:00'::timestamptz) RETURNING "learning_mistakereview"."id"
+2026-10-24T16:39:09.7746021Z  2026-10-24 16:34:02.387 UTC [1039] ERROR:  new row for relation "learning_unitprogress" violates check constraint "unit_progress_stage_in_range"
+2026-10-24T16:39:09.7746456Z  2026-10-24 16:34:02.387 UTC [1039] DETAIL:  Failing row contains (87, new, 9, null, 0, 0, [], 2026-10-24 16:34:02.38733+00, 18, 185).
+2026-10-24T16:39:09.7747428Z  2026-10-24 16:34:02.387 UTC [1039] STATEMENT:  INSERT INTO "learning_unitprogress" ("user_id", "unit_id", "status", "stage", "next_review_at", "correct_count", "wrong_count", "contexts_used", "updated_at") VALUES (185, 18, 'new', 9, NULL, 0, 0, '[]'::jsonb, '2026-10-24 16:34:02.387330+00:00'::timestamptz) RETURNING "learning_unitprogress"."id"
+2026-10-24T16:39:09.7748544Z  2026-10-24 16:34:22.062 UTC [63] LOG:  checkpoint complete: wrote 4377 buffers (26.7%); 0 WAL file(s) added, 0 removed, 9 recycled; write=269.783 s, sync=0.008 s, total=269.795 s; sync files=662, longest=0.001 s, average=0.001 s; distance=152959 kB, estimate=152959 kB; lsn=0/EF7AC30, redo lsn=0/AE7EEF8
+2026-10-24T16:39:09.7749141Z  2026-10-24 16:34:52.083 UTC [63] LOG:  checkpoint starting: time
+2026-10-24T16:39:09.7749446Z  2026-10-24 16:38:23.332 UTC [1514] ERROR:  duplicate key value violates unique constraint "uniq_goal_per_week"
+2026-10-24T16:39:09.7749774Z  2026-10-24 16:38:23.332 UTC [1514] DETAIL:  Key (user_id, week_id)=(201, 1) already exists.
+2026-10-24T16:39:09.7750295Z  2026-10-24 16:38:23.332 UTC [1514] STATEMENT:  INSERT INTO "learning_weekgoal" ("user_id", "week_id", "status", "updated_at") VALUES (201, 1, 'not_yet', '2026-10-24 16:38:23.331951+00:00'::timestamptz) RETURNING "learning_weekgoal"."id"
+2026-10-24T16:39:09.7751135Z  2026-10-24 16:39:08.526 UTC [63] LOG:  checkpoint complete: wrote 3320 buffers (20.3%); 0 WAL file(s) added, 0 removed, 4 recycled; write=256.441 s, sync=0.001 s, total=256.444 s; sync files=14, longest=0.001 s, average=0.001 s; distance=66818 kB, estimate=144345 kB; lsn=0/1490C2D0, redo lsn=0/EFBF7F0
+2026-10-24T16:39:09.7751822Z  2026-10-24 16:39:08.527 UTC [63] LOG:  checkpoint starting: immediate force wait
+2026-10-24T16:39:09.7752410Z  2026-10-24 16:39:08.531 UTC [63] LOG:  checkpoint complete: wrote 22 buffers (0.1%); 0 WAL file(s) added, 0 removed, 6 recycled; write=0.001 s, sync=0.002 s, total=0.004 s; sync files=4, longest=0.001 s, average=0.001 s; distance=91442 kB, estimate=139055 kB; lsn=0/1490C380, redo lsn=0/1490C348
+2026-10-24T16:39:09.7753022Z  2026-10-24 16:24:51.855 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-10-24T16:39:09.7753336Z  2026-10-24 16:24:51.857 UTC [52] LOG:  database system was shut down at 2026-10-24 16:24:51 UTC
+2026-10-24T16:39:09.7753632Z  2026-10-24 16:24:51.860 UTC [49] LOG:  database system is ready to accept connections
+2026-10-24T16:39:09.7753845Z   done
+2026-10-24T16:39:09.7753960Z  server started
+2026-10-24T16:39:09.7754086Z  CREATE DATABASE
+2026-10-24T16:39:09.7754204Z  
+2026-10-24T16:39:09.7754310Z  
+2026-10-24T16:39:09.7754502Z  /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+2026-10-24T16:39:09.7754725Z  
+2026-10-24T16:39:09.7754931Z  waiting for server to shut down...2026-10-24 16:24:52.022 UTC [49] LOG:  received fast shutdown request
+2026-10-24T16:39:09.7755227Z  .2026-10-24 16:24:52.022 UTC [49] LOG:  aborting any active transactions
+2026-10-24T16:39:09.7755555Z  2026-10-24 16:24:52.024 UTC [49] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+2026-10-24T16:39:09.7755854Z  2026-10-24 16:24:52.024 UTC [50] LOG:  shutting down
+2026-10-24T16:39:09.7756080Z  2026-10-24 16:24:52.025 UTC [50] LOG:  checkpoint starting: shutdown immediate
+2026-10-24T16:39:09.7756657Z  2026-10-24 16:24:52.121 UTC [50] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.066 s, sync=0.031 s, total=0.097 s; sync files=301, longest=0.029 s, average=0.001 s; distance=4273 kB, estimate=4273 kB; lsn=0/191F0E8, redo lsn=0/191F0E8
+2026-10-24T16:39:09.7757362Z  2026-10-24 16:24:52.128 UTC [49] LOG:  database system is shut down
+2026-10-24T16:39:09.7757553Z   done
+2026-10-24T16:39:09.7757661Z  server stopped
+2026-10-24T16:39:09.7757778Z  
+2026-10-24T16:39:09.7757920Z  PostgreSQL init process complete; ready for start up.
+2026-10-24T16:39:09.7758095Z  
+2026-10-24T16:39:09.7761342Z Stop and remove container: e64eafc962ea45abba38f958db54bb08_postgres16_f7e2e7
+2026-10-24T16:39:09.7764017Z ##[command]/usr/bin/docker rm --force 497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822
+2026-10-24T16:39:09.9033538Z 497bb935f5685566cfa6b147359f91be6119e793635364da1e677b5c4a679822
+2026-10-24T16:39:09.9060737Z Remove container network: github_network_1f3d00d45cbf495f87d0f7bedbad8a95
+2026-10-24T16:39:09.9063299Z ##[command]/usr/bin/docker network rm github_network_1f3d00d45cbf495f87d0f7bedbad8a95
+2026-10-24T16:39:09.9667304Z github_network_1f3d00d45cbf495f87d0f7bedbad8a95
+2026-10-24T16:39:09.9722077Z Cleaning up orphan processes
+

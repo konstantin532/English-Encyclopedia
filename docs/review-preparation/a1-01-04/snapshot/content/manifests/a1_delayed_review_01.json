@@ -1,0 +1,212 @@
+{
+  "a1-nouns-first-words": {
+    "1": [
+      [
+        "В предложении «This is my book» какое слово называет предмет?",
+        "This is my book.",
+        [
+          "This",
+          "book",
+          "is"
+        ],
+        1
+      ],
+      [
+        "Найдите существительное: «Anna has a phone».",
+        "Anna has a phone.",
+        [
+          "has",
+          "a",
+          "phone"
+        ],
+        2
+      ],
+      [
+        "Какое слово называет человека?",
+        "Tom is my friend.",
+        [
+          "my",
+          "friend",
+          "is"
+        ],
+        1
+      ],
+      [
+        "Какое слово называет помещение?",
+        "This room is new.",
+        [
+          "This",
+          "new",
+          "room"
+        ],
+        2
+      ],
+      [
+        "Какое слово называет напиток?",
+        "I have coffee.",
+        [
+          "coffee",
+          "have",
+          "I"
+        ],
+        0
+      ]
+    ],
+    "2": [
+      [
+        "Вы представляете гостю маму. Вставьте название человека.",
+        "This is my ___.",
+        [
+          "is",
+          "mother",
+          "new"
+        ],
+        1
+      ],
+      [
+        "Это мой сосед. Вставьте подходящее слово.",
+        "This is my ___.",
+        [
+          "neighbor",
+          "have",
+          "nice"
+        ],
+        0
+      ],
+      [
+        "Представьте другу своего друга.",
+        "This is my ___.",
+        [
+          "friend",
+          "am",
+          "big"
+        ],
+        0
+      ],
+      [
+        "Вы показываете собственный телефон. Назовите предмет.",
+        "This is my ___.",
+        [
+          "my",
+          "phone",
+          "are"
+        ],
+        1
+      ],
+      [
+        "Вы знакомите Анну со своим домом. Назовите предмет.",
+        "This is my ___.",
+        [
+          "house",
+          "is",
+          "new"
+        ],
+        0
+      ]
+    ],
+    "3": [
+      [
+        "Том представляется новому соседу. Выберите нормальный порядок.",
+        "",
+        [
+          "My is name Tom.",
+          "My name is Tom.",
+          "Name my Tom is."
+        ],
+        1
+      ],
+      [
+        "Анна представляется по телефону.",
+        "",
+        [
+          "Anna my is name.",
+          "Name is my Anna.",
+          "My name is Anna."
+        ],
+        2
+      ],
+      [
+        "Как правильно сказать «Моё имя — Том»?",
+        "",
+        [
+          "My name is Tom.",
+          "I name am Tom.",
+          "My is Tom name."
+        ],
+        0
+      ],
+      [
+        "Анна отвечает на вопрос «Как тебя зовут?»",
+        "",
+        [
+          "Name my is Anna.",
+          "My Anna is name.",
+          "My name is Anna."
+        ],
+        2
+      ],
+      [
+        "Том повторяет своё имя для гостя.",
+        "",
+        [
+          "My name is Tom.",
+          "My name Tom is.",
+          "Name is Tom my."
+        ],
+        0
+      ]
+    ],
+    "4": [
+      [
+        "Вы показываете гостю новый телефон. Что сказать?",
+        "",
+        [
+          "This is my phone new.",
+          "This is my new phone.",
+          "This my new is phone."
+        ],
+        1
+      ],
+      [
+        "Вы показываете большую комнату. Что сказать?",
+        "",
+        [
+          "This is my big room.",
+          "My this big room is.",
+          "This is room my big."
+        ],
+        0
+      ],
+      [
+        "Вы рассказываете о новой книге.",
+        "",
+        [
+          "This is my book. It new.",
+          "This is my book. It is new.",
+          "This my book. Is new."
+        ],
+        1
+      ],
+      [
+        "Вы показываете гостю свой большой дом.",
+        "",
+        [
+          "This is my house big.",
+          "My big is house.",
+          "This is my big house."
+        ],
+        2
+      ],
+      [
+        "Вы показываете другу свой новый дом.",
+        "",
+        [
+          "This my new house.",
+          "This is my new house.",
+          "This is new my house."
+        ],
+        1
+      ]
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+number: 1
+characters:
+- Anna
+- Tom
+grammar_ru: be (am, is), have, like в Present Simple; вопросы Is it…?, отрицание is not
+prediction_ru: Посмотрите на название и описания картинок. Как вы думаете, чья это коробка и что в ней?
+visual_cues:
+- Утро. На пороге нового дома стоит Том с огромной картонной коробкой в руках.
+- Из приоткрытой коробки выглядывает рыжий кот. Рядом на столе — чашка кофе.
+new_units:
+- LX-00040
+- LX-00041
+ambience: morning_home
+script:
+- speaker: anna
+  kind: narration
+  emotion: neutral
+  music: morning
+  text: '[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]. [S2]Boxes[/], [S2]boxes[/], [S2]boxes[/]!'
+  spoken: '[T3]My[/] [S9]name[/][D1]''s[/] [S1]Anna[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]. [S2]Boxes[/], [S2]boxes[/], [S2]boxes[/]!'
+- speaker: anna
+  kind: narration
+  emotion: tired
+  text: '[T3]My[/] [S2]box[/]. [T3]My[/] [S2]box[/]. [T3]My[/] [S2]box[/]… [T3]My[/] [S2]sofa[/]! [J3]Good[/] [S7]morning[/], [S2]sofa[/]!'
+- speaker: tom
+  kind: speech
+  emotion: happy
+  text: “[J3]Good[/] [S7]morning[/]! [T8]I[/] [D1]am[/] [S1]Tom[/], [T3]your[/] [S1]neighbor[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S2]box[/]?”
+  spoken: “[J3]Good[/] [S7]morning[/]! [T8]I[/][D1]'m[/] [S1]Tom[/], [T3]your[/] [S1]neighbor[/]. [D1]Is[/] [T2]this[/] [T3]your[/] [S2]box[/]?”
+- speaker: anna
+  kind: speech
+  emotion: surprised
+  text: “[T3]My[/] [S2]box[/]? [O4]No[/]! [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/].”
+  spoken: “[T3]My[/] [S2]box[/]? [O4]No[/]! [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]box[/].”
+- speaker: anna
+  kind: narration
+  emotion: worried
+  text: '[D1]Is[/] [T8]it[/] [T1]a[/] [S2]lamp[/]? [O4]No[/]. [T1]A[/] [S2]clock[/]? [O4]No[/].'
+- speaker: anna
+  kind: narration
+  emotion: excited
+  music: happy
+  text: '[T8]It[/] [D1]is[/] [T1]a[/] [S6]cat[/]!'
+  spoken: '[T8]It[/][D1]''s[/] [T1]a[/] [S6]cat[/]!'
+- speaker: anna
+  kind: speech
+  emotion: angry
+  text: “[T3]My[/] [S3]coffee[/]! [T2]That[/] [D1]is[/] [T3]my[/] [S3]coffee[/]!”
+  spoken: “[T3]My[/] [S3]coffee[/]! [T2]That[/][D1]'s[/] [T3]my[/] [S3]coffee[/]!”
+- speaker: tom
+  kind: speech
+  emotion: happy
+  text: “[T8]It[/] [D3]likes[/] [T3]your[/] [S3]coffee[/]. [T8]It[/] [D3]likes[/] [T8]you[/]!”
+- speaker: anna
+  kind: speech
+  emotion: surprised
+  text: “[D1]Is[/] [T8]it[/] [T3]your[/] [S6]cat[/], [S1]Tom[/]?”
+- speaker: tom
+  kind: speech
+  emotion: surprised
+  text: “[O4]No[/]! [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S6]cat[/].”
+  spoken: “[O4]No[/]! [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S6]cat[/].”
+- speaker: anna
+  kind: speech
+  emotion: happy
+  text: '“[T8]It[/] [D1]is[/] [X1]not[/] [T3]your[/] [S6]cat[/]. [T8]It[/] [D1]is[/] [T3]my[/] [S6]cat[/]! [T8]It[/] [D1]has[/] [T1]a[/] [S9]name[/]: [S1]Box[/].”'
+  spoken: '“[T8]It[/] [D1]is[/][X1]n''t[/] [T3]your[/] [S6]cat[/]. [T8]It[/][D1]''s[/] [T3]my[/] [S6]cat[/]! [T8]It[/] [D1]has[/] [T1]a[/] [S9]name[/]: [S1]Box[/].”'
+- speaker: tom
+  kind: speech
+  emotion: surprised
+  text: “[S1]Box[/]? [T8]It[/] [D1]is[/] [X1]not[/] [T3]your[/] [S2]box[/]!”
+  spoken: “[S1]Box[/]? [T8]It[/] [D1]is[/][X1]n't[/] [T3]your[/] [S2]box[/]!”
+- speaker: anna
+  kind: speech
+  emotion: happy
+  music: calm
+  text: “[O4]No[/]. [T8]It[/] [D1]is[/] [T3]my[/] [S6]cat[/]. [T3]My[/] [S1]Box[/].”
+  spoken: “[O4]No[/]. [T8]It[/][D1]'s[/] [T3]my[/] [S6]cat[/]. [T3]My[/] [S1]Box[/].”
+questions:
+- q: Где происходит история?
+  a: This is my new house. — В новом доме Анны, среди коробок.
+- q: Чья большая коробка?
+  a: It is not my box. — Не Анны. И не Тома.
+- q: Что в коробке?
+  a: It is a cat! — Кот. И он сразу пьёт кофе Анны.
+- q: В чём шутка в конце?
+  a: Том говорит «It is not your box!», а Анна отвечает «It is my cat. My Box.» Коробка была не её, а кот — теперь её.
+phrase_hunt:
+- phrase: Good morning!
+  function: Приветствие утром
+- phrase: Is this your box?
+  function: 'Вопрос: чья это вещь?'
+- phrase: It is not my box.
+  function: Отрицание с be
+- phrase: Is it a lamp?
+  function: 'Угадывание: вопрос с be впереди'
+- phrase: 'It has a name: Box.'
+  function: Как назвать предмет или питомца
+retell_words:
+- house
+- coffee
+- box
+- cat
+- name
+retell_steps:
+- 'Восстановите историю по пяти словам: house, coffee, box, cat, name. По одной фразе на слово.'
+- 'Перескажите без подсказок, 5–6 фраз, от лица Анны: My name is Anna. This is my new house…'
+creative_ru: 'На следующий день Том приходит снова. Придумайте 2–3 его фразы и ответ Анны из знакомых слов. Например: Is it your cat, Anna?'

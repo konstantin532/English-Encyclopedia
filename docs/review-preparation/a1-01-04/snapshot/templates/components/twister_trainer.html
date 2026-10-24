@@ -1,0 +1,82 @@
+{% load markers static ru %}
+{% comment %}Тренажёр скороговорки по шагам: цель → звук отдельно → лесенка → целиком → темп → обратно в разговор.{% endcomment %}
+<div class="twister-trainer">
+  {% if twister.goal_ru %}<p class="twister-goal"><strong>Цель.</strong> {{ twister.goal_ru }}</p>{% endif %}
+  <ol class="twister-steps">
+    <li class="twister-step">
+      <h3>Послушайте и поймите</h3>
+      <p class="annotated twister-text" lang="en">{{ twister.text|annotate }}</p>
+      <p><span class="ipa">{{ twister.ipa }}</span> {{ twister.ipa|ru_ipa:twister.ru }}</p>
+      {% if twister.full_form %}<p lang="en">{{ twister.full_form }}</p>{% endif %}
+      {% if twister.audio %}
+      <div data-twister-player><audio controls preload="metadata" aria-label="Скороговорка" src="{% static twister.audio.very_slow.file %}"></audio>
+        <div class="player-modes" aria-label="Темп скороговорки">
+          <button class="btn btn-quiet btn-small" type="button" data-twister-src="{% static twister.audio.very_slow.file %}" aria-pressed="true">Очень медленно</button>
+          <button class="btn btn-quiet btn-small" type="button" data-twister-src="{% static twister.audio.slow.file %}" aria-pressed="false">Медленно</button>
+          <button class="btn btn-quiet btn-small" type="button" data-twister-src="{% static twister.audio.natural.file %}" aria-pressed="false">Как в жизни</button>
+        </div>
+      </div>{% else %}<p class="drill-hint">Озвучка скороговорки ещё не записана. Ориентируйтесь на транскрипцию и подсказку ниже.</p>{% endif %}
+    </li>
+    {% if twister.tip_ru %}<li class="twister-step">
+      <h3>Попробуйте звук отдельно</h3>
+      <p>{{ twister.tip_ru }}</p>
+      {% include "components/sound_legend.html" %}
+    </li>{% endif %}
+    {% if twister.warmup %}<li class="twister-step">
+      <h3>Соберите по кусочкам</h3>
+      <p>Слово, потом пара слов, потом строка. Не спешите: каждый шаг — медленно и чётко.</p>
+      <ol class="twister-ladder annotated" lang="en">{% for line in twister.warmup %}<li>{{ line|annotate }}</li>{% endfor %}</ol>
+    </li>{% endif %}
+    <li class="twister-step">
+      <h3>Целиком, потом быстрее</h3>
+      <p>Произнесите всю скороговорку, сохраняя каждое слово и окончание. Ускоряйтесь маленькими шагами. Если звуки начали смешиваться или слова пропадают — вернитесь к медленному темпу.</p>
+      <ul class="twister-check">
+        <li><strong>Точность</strong> — нужный звук на месте?</li>
+        <li><strong>Чёткость</strong> — слова можно различить?</li>
+        <li><strong>Плавность</strong> — без лишних остановок?</li>
+      </ul>
+      <p class="drill-hint">Скорость — в последнюю очередь. Медленно и чётко лучше, чем быстро и с пропусками. Идеальный акцент с первой попытки не нужен.</p>
+    </li>
+    {% if twister.target_line %}<li class="twister-step">
+      <h3>Вернитесь к разговору</h3>
+      <p>Теперь скажите реплику из диалога недели — увереннее, чем до тренировки:</p>
+      <p class="twister-target" lang="en">{{ twister.target_line }}</p>
+      {% if twister.own_ru %}<p>{{ twister.own_ru }}</p>{% endif %}
+    </li>{% endif %}
+  </ol>
+  <div class="speech-studio" data-speech-studio data-speech-kind="twister" data-speech-key="twister:{{ twister.number }}" data-speech-persist="{% if user.is_authenticated %}true{% else %}false{% endif %}" data-speech-endpoint="{% url 'learning:speech_practice' %}">
+    <h3>Интерактивная тренировка звука и речи</h3>
+    <p>Лесенка → точность → по памяти → обычная реплика. Один целевой звук за раз; скорость необязательна.</p>
+    <div data-speech-bank hidden>
+      {% for line in twister.warmup %}<div data-speech-entry>
+        <span data-speech-source lang="en">{{ line|annotate }}</span>
+        <span data-speech-accent></span>
+      </div>{% endfor %}
+      <div data-speech-entry><span data-speech-source lang="en">{{ twister.text|annotate }}</span><span data-speech-accent>{{ twister.ipa }}</span></div>
+      {% if twister.target_line %}<div data-speech-entry><span data-speech-source lang="en">{{ twister.target_line }}</span><span data-speech-accent>Вернитесь к естественной реплике из диалога</span></div>{% endif %}
+    </div>
+    {% include "components/speech_studio_controls.html" %}
+    <section class="speech-reference" aria-label="Слушаем и повторяем с паузой" data-speech-reference>
+      <h4>Послушай → пауза → твоя очередь</h4>
+      {% if twister.audio.natural.file %}
+      <p>Сначала послушайте скороговорку. После окончания записи произнесите её самостоятельно, затем сравните со звучанием снова.</p>
+      {% if not twister.audio.verified %}
+      <p class="speech-reference-caution">Запись синтезирована и ещё не проверена преподавателем. Используйте её только как предварительный образец, сверяйтесь с IPA и подсказкой; не считайте все особенности нормативными.</p>
+      {% endif %}
+      <div data-speech-reference-player
+           data-reference-natural="{% static twister.audio.natural.file %}"
+           {% if twister.audio.slow.file %}data-reference-slow="{% static twister.audio.slow.file %}"{% endif %}
+           data-reference-verified="{% if twister.audio.verified %}true{% else %}false{% endif %}">
+        <div class="speech-actions">
+          <button type="button" class="btn btn-quiet btn-small" data-reference-play="slow">Послушать медленно</button>
+          <button type="button" class="btn btn-primary btn-small" data-reference-play="natural">Послушать как в жизни</button>
+          <button type="button" class="btn btn-quiet btn-small" data-reference-stop>Остановить звук</button>
+        </div>
+        <p data-reference-status role="status" aria-live="polite">Выберите темп. После воспроизведения — ваша очередь говорить.</p>
+      </div>
+      {% else %}
+      <p class="speech-reference-caution">Озвучка для этой скороговорки ещё не подготовлена. Не заменяем её случайным голосом браузера: пока пользуйтесь артикуляционной лесенкой и IPA.</p>
+      {% endif %}
+    </section>
+  </div>
+</div>

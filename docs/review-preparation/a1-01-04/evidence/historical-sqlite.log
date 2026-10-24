@@ -1,0 +1,608 @@
+﻿2026-10-24T16:24:43.1095322Z Current runner version: '2.338.0'
+2026-10-24T16:24:43.1123521Z ##[group]Runner Image Provisioner
+2026-10-24T16:24:43.1124574Z Hosted Compute Agent
+2026-10-24T16:24:43.1125284Z Version: 20261021.618
+2026-10-24T16:24:43.1125947Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-24T16:24:43.1126764Z Build Date: 2026-10-21T00:45:21Z
+2026-10-24T16:24:43.1127550Z Worker ID: {15627522-81e0-4ceb-af5c-998a7b5555fc}
+2026-10-24T16:24:43.1128277Z Region: westcentralus
+2026-10-24T16:24:43.1128965Z Cloud: Azure
+2026-10-24T16:24:43.1129764Z ##[endgroup]
+2026-10-24T16:24:43.1131264Z ##[group]Operating System
+2026-10-24T16:24:43.1131944Z Ubuntu
+2026-10-24T16:24:43.1132534Z 26.04.1
+2026-10-24T16:24:43.1133583Z LTS
+2026-10-24T16:24:43.1134195Z ##[endgroup]
+2026-10-24T16:24:43.1134801Z ##[group]Runner Image
+2026-10-24T16:24:43.1135492Z Image: ubuntu-26.04
+2026-10-24T16:24:43.1136077Z Version: 20261012.163.1
+2026-10-24T16:24:43.1137444Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261012.163/images/ubuntu/Ubuntu2604-Readme.md
+2026-10-24T16:24:43.1139040Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261012.163
+2026-10-24T16:24:43.1140421Z ##[endgroup]
+2026-10-24T16:24:43.1141634Z ##[group]GITHUB_TOKEN Permissions
+2026-10-24T16:24:43.1143663Z Contents: read
+2026-10-24T16:24:43.1144285Z Metadata: read
+2026-10-24T16:24:43.1144965Z ##[endgroup]
+2026-10-24T16:24:43.1147214Z Secret source: Actions
+2026-10-24T16:24:43.1148279Z Cache mode: write
+2026-10-24T16:24:43.1149006Z Prepare workflow directory
+2026-10-24T16:24:43.1570458Z Prepare all required actions
+2026-10-24T16:24:43.1620883Z Getting action download info
+2026-10-24T16:24:43.4498148Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-24T16:24:43.5447656Z Download action repository 'astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884' (SHA:1c37ad07a6a961277cf70c0d37d6f313000f5884)
+2026-10-24T16:24:44.0923322Z Download action repository 'actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-24T16:24:44.2748959Z Complete job name: test
+2026-10-24T16:24:44.3737180Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-24T16:24:44.3738777Z with:
+2026-10-24T16:24:44.3739485Z   repository: konstantin532/English-Encyclopedia
+2026-10-24T16:24:44.3747042Z   token: ***
+2026-10-24T16:24:44.3747707Z   ssh-strict: true
+2026-10-24T16:24:44.3748355Z   ssh-user: git
+2026-10-24T16:24:44.3749020Z   persist-credentials: true
+2026-10-24T16:24:44.3749902Z   clean: true
+2026-10-24T16:24:44.3750370Z   sparse-checkout-cone-mode: true
+2026-10-24T16:24:44.3750898Z   fetch-depth: 1
+2026-10-24T16:24:44.3751332Z   fetch-tags: false
+2026-10-24T16:24:44.3751772Z   show-progress: true
+2026-10-24T16:24:44.3752217Z   lfs: false
+2026-10-24T16:24:44.3752637Z   submodules: false
+2026-10-24T16:24:44.3753084Z   set-safe-directory: true
+2026-10-24T16:24:44.3753607Z   allow-unsafe-pr-checkout: false
+2026-10-24T16:24:44.3754597Z ##[endgroup]
+2026-10-24T16:24:44.4891167Z Syncing repository: konstantin532/English-Encyclopedia
+2026-10-24T16:24:44.4894169Z ##[group]Getting Git version info
+2026-10-24T16:24:44.4895596Z Working directory is '/home/runner/work/English-Encyclopedia/English-Encyclopedia'
+2026-10-24T16:24:44.4897533Z [command]/usr/bin/git version
+2026-10-24T16:24:44.4898442Z git version 2.55.0
+2026-10-24T16:24:44.4907228Z ##[endgroup]
+2026-10-24T16:24:44.4921614Z Temporarily overriding HOME='/home/runner/work/_temp/75c1b66d-ebf9-4db3-8c7e-fd797fe2bdd0' before making global git config changes
+2026-10-24T16:24:44.4924401Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-24T16:24:44.4926821Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/English-Encyclopedia/English-Encyclopedia
+2026-10-24T16:24:44.4995049Z Deleting the contents of '/home/runner/work/English-Encyclopedia/English-Encyclopedia'
+2026-10-24T16:24:44.4998273Z ##[group]Determining repository object format
+2026-10-24T16:24:44.5000025Z ##[endgroup]
+2026-10-24T16:24:44.5001115Z ##[group]Initializing the repository
+2026-10-24T16:24:44.5004923Z [command]/usr/bin/git init /home/runner/work/English-Encyclopedia/English-Encyclopedia
+2026-10-24T16:24:44.5119784Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-24T16:24:44.5121730Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-24T16:24:44.5123891Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-24T16:24:44.5125232Z hint: call:
+2026-10-24T16:24:44.5126019Z hint:
+2026-10-24T16:24:44.5126973Z hint: 	git config --global init.defaultBranch <name>
+2026-10-24T16:24:44.5128114Z hint:
+2026-10-24T16:24:44.5129179Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-24T16:24:44.5131015Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-24T16:24:44.5132423Z hint:
+2026-10-24T16:24:44.5133225Z hint: 	git branch -m <name>
+2026-10-24T16:24:44.5134123Z hint:
+2026-10-24T16:24:44.5135288Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-24T16:24:44.5137507Z Initialized empty Git repository in /home/runner/work/English-Encyclopedia/English-Encyclopedia/.git/
+2026-10-24T16:24:44.5141526Z [command]/usr/bin/git remote add origin https://github.com/konstantin532/English-Encyclopedia
+2026-10-24T16:24:44.5185502Z ##[endgroup]
+2026-10-24T16:24:44.5186698Z ##[group]Disabling automatic garbage collection
+2026-10-24T16:24:44.5189995Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-24T16:24:44.5231582Z ##[endgroup]
+2026-10-24T16:24:44.5232713Z ##[group]Setting up auth
+2026-10-24T16:24:44.5233567Z Removing SSH command configuration
+2026-10-24T16:24:44.5238395Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-24T16:24:44.5281281Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-24T16:24:44.5751919Z Removing HTTP extra header
+2026-10-24T16:24:44.5758411Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-24T16:24:44.5800511Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-24T16:24:44.6101584Z Removing includeIf entries pointing to credentials config files
+2026-10-24T16:24:44.6209318Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-24T16:24:44.6214774Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-24T16:24:44.6469135Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-8c884273-a87e-4f74-b4c7-49ef5eff69f9.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-24T16:24:44.6537839Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git.path /home/runner/work/_temp/git-credentials-8c884273-a87e-4f74-b4c7-49ef5eff69f9.config
+2026-10-24T16:24:44.6606082Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-8c884273-a87e-4f74-b4c7-49ef5eff69f9.config
+2026-10-24T16:24:44.6648427Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-8c884273-a87e-4f74-b4c7-49ef5eff69f9.config
+2026-10-24T16:24:44.6687661Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-8c884273-a87e-4f74-b4c7-49ef5eff69f9.config
+2026-10-24T16:24:44.6727030Z ##[endgroup]
+2026-10-24T16:24:44.6728118Z ##[group]Fetching the repository
+2026-10-24T16:24:44.6740110Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8d3a41d9aa61cbf074caff602d53b22920ca3efa:refs/remotes/origin/main
+2026-10-24T16:24:45.5777694Z From https://github.com/konstantin532/English-Encyclopedia
+2026-10-24T16:24:45.5780180Z  * [new ref]         8d3a41d9aa61cbf074caff602d53b22920ca3efa -> origin/main
+2026-10-24T16:24:45.5787748Z [command]/usr/bin/git branch --list --remote origin/main
+2026-10-24T16:24:45.5818939Z   origin/main
+2026-10-24T16:24:45.5827547Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-10-24T16:24:45.5854032Z 8d3a41d9aa61cbf074caff602d53b22920ca3efa
+2026-10-24T16:24:45.5859842Z ##[endgroup]
+2026-10-24T16:24:45.5861615Z ##[group]Determining the checkout info
+2026-10-24T16:24:45.5864112Z ##[endgroup]
+2026-10-24T16:24:45.5865429Z [command]/usr/bin/git sparse-checkout disable
+2026-10-24T16:24:45.5917086Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-24T16:24:45.5953121Z ##[group]Checking out the ref
+2026-10-24T16:24:45.5956013Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-24T16:24:45.6940875Z Switched to a new branch 'main'
+2026-10-24T16:24:45.6943304Z branch 'main' set up to track 'origin/main'.
+2026-10-24T16:24:45.6953461Z ##[endgroup]
+2026-10-24T16:24:45.7012240Z [command]/usr/bin/git log -1 --format=%H
+2026-10-24T16:24:45.7043230Z 8d3a41d9aa61cbf074caff602d53b22920ca3efa
+2026-10-24T16:24:45.7351723Z ##[group]Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
+2026-10-24T16:24:45.7352234Z with:
+2026-10-24T16:24:45.7352526Z   activate-environment: false
+2026-10-24T16:24:45.7352847Z   no-project: false
+2026-10-24T16:24:45.7353354Z   working-directory: /home/runner/work/English-Encyclopedia/English-Encyclopedia
+2026-10-24T16:24:45.7356370Z   github-token: ***
+2026-10-24T16:24:45.7356661Z   enable-cache: auto
+2026-10-24T16:24:45.7357344Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-10-24T16:24:45.7358038Z   restore-cache: true
+2026-10-24T16:24:45.7358326Z   save-cache: auto
+2026-10-24T16:24:45.7358610Z   prune-cache: false
+2026-10-24T16:24:45.7358920Z   cache-python: false
+2026-10-24T16:24:45.7359270Z   ignore-nothing-to-cache: false
+2026-10-24T16:24:45.7359734Z   ignore-empty-workdir: false
+2026-10-24T16:24:45.7360088Z   download-from-astral-mirror: true
+2026-10-24T16:24:45.7360485Z   add-problem-matchers: true
+2026-10-24T16:24:45.7360793Z   quiet: false
+2026-10-24T16:24:45.7361079Z   resolution-strategy: highest
+2026-10-24T16:24:45.7361392Z ##[endgroup]
+2026-10-24T16:24:45.9206356Z Trying to find version for uv in: /home/runner/work/English-Encyclopedia/English-Encyclopedia/uv.toml
+2026-10-24T16:24:45.9217192Z Could not find file: /home/runner/work/English-Encyclopedia/English-Encyclopedia/uv.toml
+2026-10-24T16:24:45.9219221Z Trying to find version for uv in: /home/runner/work/English-Encyclopedia/English-Encyclopedia/pyproject.toml
+2026-10-24T16:24:45.9221481Z Could not determine uv version from uv.toml or pyproject.toml. Falling back to latest.
+2026-10-24T16:24:45.9224076Z Fetching manifest data from https://raw.githubusercontent.com/astral-sh/versions/main/v1/uv.ndjson ...
+2026-10-24T16:24:46.0275817Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.13.5/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-10-24T16:24:46.3455314Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/8306a43d-ab99-4cfb-9f75-834d6ba2c64c -f /home/runner/work/_temp/fdef1bae-8833-4d0d-9b48-637c60201f44
+2026-10-24T16:24:46.5859931Z Added /home/runner/.local/bin to the path
+2026-10-24T16:24:46.5860523Z Added /opt/hostedtoolcache/uv/0.13.5/x86_64 to the path
+2026-10-24T16:24:46.5861026Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:46.5862228Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-10-24T16:24:46.5884115Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:46.5884639Z Successfully installed uv version 0.13.5
+2026-10-24T16:24:46.6918394Z Searching files using cache dependency glob: /home/runner/work/English-Encyclopedia/English-Encyclopedia/**/*requirements*.txt,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/*requirements*.in,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/*constraints*.txt,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/*constraints*.in,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/pyproject.toml,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/uv.lock,/home/runner/work/English-Encyclopedia/English-Encyclopedia/**/*.py.lock
+2026-10-24T16:24:46.8076004Z /home/runner/work/English-Encyclopedia/English-Encyclopedia/pyproject.toml
+2026-10-24T16:24:46.8419292Z /home/runner/work/English-Encyclopedia/English-Encyclopedia/uv.lock
+2026-10-24T16:24:46.8430636Z Found 2 files to hash.
+2026-10-24T16:24:46.8512438Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-26.04-unknown-0863c72389c70dcad029fb71f57f0b4155b3d44a580a3a41363dd5c77074bb57
+2026-10-24T16:24:47.0139745Z Cache hit for: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-26.04-unknown-0863c72389c70dcad029fb71f57f0b4155b3d44a580a3a41363dd5c77074bb57
+2026-10-24T16:24:48.1877459Z Received 27568869 of 27568869 (100.0%), 36.9 MBs/sec
+2026-10-24T16:24:48.1879049Z Cache Size: ~26 MB (27568869 B)
+2026-10-24T16:24:48.1958814Z [command]/usr/bin/tar -xf /home/runner/work/_temp/7a7ab8e6-384c-400e-87b3-57220f70987f/cache.tzst -P -C /home/runner/work/English-Encyclopedia/English-Encyclopedia --use-compress-program unzstd
+2026-10-24T16:24:48.5994745Z Cache restored successfully
+2026-10-24T16:24:48.6017449Z cache restored from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-26.04-unknown-0863c72389c70dcad029fb71f57f0b4155b3d44a580a3a41363dd5c77074bb57
+2026-10-24T16:24:48.7295510Z ##[group]Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+2026-10-24T16:24:48.7295960Z with:
+2026-10-24T16:24:48.7296200Z   node-version: 24
+2026-10-24T16:24:48.7296440Z   always-auth: false
+2026-10-24T16:24:48.7296673Z   check-latest: false
+2026-10-24T16:24:48.7299375Z   token: ***
+2026-10-24T16:24:48.7299853Z env:
+2026-10-24T16:24:48.7300152Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:48.7300564Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:48.7300882Z ##[endgroup]
+2026-10-24T16:24:48.8809083Z Found in cache @ /opt/hostedtoolcache/node/24.21.0/x64
+2026-10-24T16:24:48.8813140Z (node:2435) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-24T16:24:48.8813867Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-24T16:24:48.8816138Z ##[group]Environment details
+2026-10-24T16:24:49.2508209Z node: v24.21.0
+2026-10-24T16:24:49.2508814Z npm: 11.19.0
+2026-10-24T16:24:49.2509119Z yarn: 1.22.22
+2026-10-24T16:24:49.2509983Z ##[endgroup]
+2026-10-24T16:24:49.2671411Z ##[group]Run npm install --global pnpm@11.25.0
+2026-10-24T16:24:49.2671907Z [36;1mnpm install --global pnpm@11.25.0[0m
+2026-10-24T16:24:49.2833433Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:49.2833781Z env:
+2026-10-24T16:24:49.2834114Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:49.2834551Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:49.2834872Z ##[endgroup]
+2026-10-24T16:24:50.6725808Z 
+2026-10-24T16:24:50.6733724Z added 1 package in 1s
+2026-10-24T16:24:50.6734077Z 
+2026-10-24T16:24:50.6734577Z 1 package is looking for funding
+2026-10-24T16:24:50.6735733Z   run `npm fund` for details
+2026-10-24T16:24:50.7034376Z ##[group]Run pnpm install --frozen-lockfile --ignore-scripts
+2026-10-24T16:24:50.7034885Z [36;1mpnpm install --frozen-lockfile --ignore-scripts[0m
+2026-10-24T16:24:50.7115028Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:50.7115305Z env:
+2026-10-24T16:24:50.7115609Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:50.7116016Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:50.7116343Z ##[endgroup]
+2026-10-24T16:24:52.1957925Z ? Verifying lockfile against supply-chain policies (23 entries)...
+2026-10-24T16:24:52.2029939Z Lockfile is up to date, resolution step is skipped
+2026-10-24T16:24:52.2612646Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-10-24T16:24:52.2685363Z Packages: +12
+2026-10-24T16:24:52.2686275Z ++++++++++++
+2026-10-24T16:24:52.4861598Z Packages are hard linked from the content-addressable store to the virtual store.
+2026-10-24T16:24:52.4881295Z   Content-addressable store is at: /home/runner/.local/share/pnpm/store/v11
+2026-10-24T16:24:52.4882432Z   Virtual store is at:             node_modules/.pnpm
+2026-10-24T16:24:52.5300202Z ✓ Lockfile passes supply-chain policies (23 entries in 335ms)
+2026-10-24T16:24:52.6179794Z Progress: resolved 12, reused 0, downloaded 12, added 12, done
+2026-10-24T16:24:52.6426858Z 
+2026-10-24T16:24:52.6427822Z devDependencies:
+2026-10-24T16:24:52.6433552Z + sass 1.105.2
+2026-10-24T16:24:52.6433778Z 
+2026-10-24T16:24:52.6559188Z Done in 1.8s using pnpm v11.25.0
+2026-10-24T16:24:52.6938371Z ##[group]Run pnpm check:css
+2026-10-24T16:24:52.6938694Z [36;1mpnpm check:css[0m
+2026-10-24T16:24:52.7009949Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:52.7010231Z env:
+2026-10-24T16:24:52.7010544Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:52.7010958Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:52.7011283Z ##[endgroup]
+2026-10-24T16:24:53.1796583Z $ node scripts/build_styles.mjs --check
+2026-10-24T16:24:53.8156983Z Stylesheets verified: 17
+2026-10-24T16:24:53.8527206Z ##[group]Run uv sync --frozen
+2026-10-24T16:24:53.8527689Z [36;1muv sync --frozen[0m
+2026-10-24T16:24:53.8715293Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:53.8715734Z env:
+2026-10-24T16:24:53.8716220Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:53.8716864Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:53.8717372Z ##[endgroup]
+2026-10-24T16:24:54.0328163Z Downloading cpython-3.13.17-linux-x86_64-gnu (download) (33.7MiB)
+2026-10-24T16:24:54.7430249Z  Downloaded cpython-3.13.17-linux-x86_64-gnu (download)
+2026-10-24T16:24:54.9008017Z Using CPython 3.13.17
+2026-10-24T16:24:54.9008659Z Creating virtual environment at: .venv
+2026-10-24T16:24:55.0538574Z Installed 19 packages in 150ms
+2026-10-24T16:24:55.0539076Z  + asgiref==3.12.1
+2026-10-24T16:24:55.0539507Z  + dj-database-url==3.1.2
+2026-10-24T16:24:55.0540071Z  + django==5.2.18
+2026-10-24T16:24:55.0540418Z  + django-axes==8.3.1
+2026-10-24T16:24:55.0540887Z  + django-csp==4.0
+2026-10-24T16:24:55.0541239Z  + iniconfig==2.3.1
+2026-10-24T16:24:55.0541722Z  + numpy==2.5.4
+2026-10-24T16:24:55.0542065Z  + packaging==26.3
+2026-10-24T16:24:55.0542440Z  + pluggy==1.6.0
+2026-10-24T16:24:55.0542891Z  + psycopg==3.3.6
+2026-10-24T16:24:55.0543249Z  + psycopg-binary==3.3.6
+2026-10-24T16:24:55.0543638Z  + pygments==2.21.0
+2026-10-24T16:24:55.0543973Z  + pytest==9.1.1
+2026-10-24T16:24:55.0544314Z  + pytest-django==4.14.0
+2026-10-24T16:24:55.0544691Z  + python-dotenv==1.2.4
+2026-10-24T16:24:55.0545044Z  + pyyaml==6.0.3
+2026-10-24T16:24:55.0545372Z  + sqlparse==0.6.0
+2026-10-24T16:24:55.0545690Z  + tblib==3.2.2
+2026-10-24T16:24:55.0546031Z  + whitenoise==6.12.0
+2026-10-24T16:24:55.0629525Z ##[group]Run uv run python -m compileall -q apps config tests
+2026-10-24T16:24:55.0630551Z [36;1muv run python -m compileall -q apps config tests[0m
+2026-10-24T16:24:55.0698500Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:55.0698778Z env:
+2026-10-24T16:24:55.0699079Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:55.0699507Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:55.0700137Z ##[endgroup]
+2026-10-24T16:24:55.6096723Z ##[group]Run uv run python manage.py check
+2026-10-24T16:24:55.6097126Z [36;1muv run python manage.py check[0m
+2026-10-24T16:24:55.6170197Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:55.6170520Z env:
+2026-10-24T16:24:55.6170853Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:55.6171318Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:55.6171654Z ##[endgroup]
+2026-10-24T16:24:56.9155444Z System check identified no issues (0 silenced).
+2026-10-24T16:24:57.0100788Z ##[group]Run uv run python manage.py collectstatic --noinput --verbosity 0
+2026-10-24T16:24:57.0101797Z [36;1muv run python manage.py collectstatic --noinput --verbosity 0[0m
+2026-10-24T16:24:57.0174797Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:57.0175099Z env:
+2026-10-24T16:24:57.0175411Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:57.0175855Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:57.0176203Z ##[endgroup]
+2026-10-24T16:24:57.4091993Z ##[group]Run uv run python scripts/audio_readiness.py
+2026-10-24T16:24:57.4092687Z [36;1muv run python scripts/audio_readiness.py[0m
+2026-10-24T16:24:57.4188048Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:57.4188485Z env:
+2026-10-24T16:24:57.4188960Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:57.4189913Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:57.4190426Z ##[endgroup]
+2026-10-24T16:24:57.4693506Z {
+2026-10-24T16:24:57.4693994Z   "expected": 33,
+2026-10-24T16:24:57.4694389Z   "files_present": 0,
+2026-10-24T16:24:57.4694774Z   "missing": [
+2026-10-24T16:24:57.4695205Z     "static/audio/stories/s01/manifest.json",
+2026-10-24T16:24:57.4695749Z     "static/audio/stories/s02/manifest.json",
+2026-10-24T16:24:57.4696271Z     "static/audio/stories/s03/manifest.json",
+2026-10-24T16:24:57.4696770Z     "static/audio/stories/s04/manifest.json",
+2026-10-24T16:24:57.4697388Z     "static/audio/stories/s05/manifest.json",
+2026-10-24T16:24:57.4698057Z     "static/audio/weeks/a1-w01/manifest.json",
+2026-10-24T16:24:57.4698648Z     "static/audio/weeks/a1-w02/manifest.json",
+2026-10-24T16:24:57.4699240Z     "static/audio/weeks/a1-w03/manifest.json",
+2026-10-24T16:24:57.4700027Z     "static/audio/weeks/a1-w04/manifest.json",
+2026-10-24T16:24:57.4700602Z     "static/audio/weeks/a1-w05/manifest.json",
+2026-10-24T16:24:57.4701161Z     "static/audio/weeks/a1-w06/manifest.json",
+2026-10-24T16:24:57.4701715Z     "static/audio/weeks/a1-w07/manifest.json",
+2026-10-24T16:24:57.4702290Z     "static/audio/weeks/a1-w08/manifest.json",
+2026-10-24T16:24:57.4702846Z     "static/audio/weeks/a1-w09/manifest.json",
+2026-10-24T16:24:57.4703384Z     "static/audio/weeks/a1-w10/manifest.json",
+2026-10-24T16:24:57.4703911Z     "static/audio/weeks/a1-w11/manifest.json",
+2026-10-24T16:24:57.4704503Z     "static/audio/weeks/a1-w12/manifest.json",
+2026-10-24T16:24:57.4705009Z     "static/audio/weeks/a1-w13/manifest.json",
+2026-10-24T16:24:57.4705502Z     "static/audio/weeks/a1-w14/manifest.json",
+2026-10-24T16:24:57.4706020Z     "static/audio/twisters/t001/manifest.json",
+2026-10-24T16:24:57.4706567Z     "static/audio/twisters/t002/manifest.json",
+2026-10-24T16:24:57.4707114Z     "static/audio/twisters/t003/manifest.json",
+2026-10-24T16:24:57.4707689Z     "static/audio/twisters/t004/manifest.json",
+2026-10-24T16:24:57.4708267Z     "static/audio/twisters/t005/manifest.json",
+2026-10-24T16:24:57.4708932Z     "static/audio/twisters/t006/manifest.json",
+2026-10-24T16:24:57.4709500Z     "static/audio/twisters/t007/manifest.json",
+2026-10-24T16:24:57.4710220Z     "static/audio/twisters/t008/manifest.json",
+2026-10-24T16:24:57.4710807Z     "static/audio/twisters/t009/manifest.json",
+2026-10-24T16:24:57.4711353Z     "static/audio/twisters/t010/manifest.json",
+2026-10-24T16:24:57.4711892Z     "static/audio/twisters/t011/manifest.json",
+2026-10-24T16:24:57.4712467Z     "static/audio/twisters/t012/manifest.json",
+2026-10-24T16:24:57.4713584Z     "static/audio/twisters/t013/manifest.json",
+2026-10-24T16:24:57.4714173Z     "static/audio/twisters/t014/manifest.json"
+2026-10-24T16:24:57.4714633Z   ],
+2026-10-24T16:24:57.4714938Z   "invalid": [],
+2026-10-24T16:24:57.4715336Z   "unreviewed": []
+2026-10-24T16:24:57.4715685Z }
+2026-10-24T16:24:57.4792114Z ##[group]Run uv run python scripts/audit_cefr_evidence.py --strict
+2026-10-24T16:24:57.4792609Z [36;1muv run python scripts/audit_cefr_evidence.py --strict[0m
+2026-10-24T16:24:57.4860162Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:57.4860442Z env:
+2026-10-24T16:24:57.4860755Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:57.4861194Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:57.4861521Z ##[endgroup]
+2026-10-24T16:24:58.2433836Z A1 lexicon evidence: {'total': 500, 'status_partial': 41, 'cefr_A1': 43, 'status_pending': 457, 'cefr_unverified': 457, 'status_verified': 2, 'documented_sense_claims': 2}
+2026-10-24T16:24:58.2434854Z Sense-specific documented verification claims (not independently certified): 2
+2026-10-24T16:24:58.2435395Z Unresolved evidence items: 0
+2026-10-24T16:24:58.2552360Z ##[group]Run uv run python manage.py makemigrations --check --dry-run
+2026-10-24T16:24:58.2552873Z [36;1muv run python manage.py makemigrations --check --dry-run[0m
+2026-10-24T16:24:58.2621663Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:58.2621941Z env:
+2026-10-24T16:24:58.2622266Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:58.2622693Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:58.2623010Z ##[endgroup]
+2026-10-24T16:24:58.5990832Z No changes detected
+2026-10-24T16:24:58.6896114Z ##[group]Run uv run python manage.py shell -c "from apps.learning.mistake_review import question_bank; b=question_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.mistake_review import COUNT; assert set(b)==set(PILOT_SLUGS); assert all(exercises and all(len(cards)==COUNT for cards in exercises.values()) for exercises in b.values()); print('A1 review structure OK:', len(b), 'lessons')"
+2026-10-24T16:24:58.6898757Z [36;1muv run python manage.py shell -c "from apps.learning.mistake_review import question_bank; b=question_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.mistake_review import COUNT; assert set(b)==set(PILOT_SLUGS); assert all(exercises and all(len(cards)==COUNT for cards in exercises.values()) for exercises in b.values()); print('A1 review structure OK:', len(b), 'lessons')"[0m
+2026-10-24T16:24:58.6969135Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:58.6969442Z env:
+2026-10-24T16:24:58.6970012Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:58.6970466Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:58.6970803Z ##[endgroup]
+2026-10-24T16:24:58.9727576Z 29 objects imported automatically (use -v 2 for details).
+2026-10-24T16:24:58.9728062Z 
+2026-10-24T16:24:58.9728296Z A1 review structure OK: 28 lessons
+2026-10-24T16:24:59.0447002Z ##[group]Run uv run python manage.py shell -c "from apps.learning.understanding import understanding_bank; b=understanding_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.understanding import SKILLS; assert set(b)==set(PILOT_SLUGS); assert all(set(guide['tasks'])==set(SKILLS) for guide in b.values()); print('A1 understanding structure OK:', len(b), 'guides')"
+2026-10-24T16:24:59.0451466Z [36;1muv run python manage.py shell -c "from apps.learning.understanding import understanding_bank; b=understanding_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.understanding import SKILLS; assert set(b)==set(PILOT_SLUGS); assert all(set(guide['tasks'])==set(SKILLS) for guide in b.values()); print('A1 understanding structure OK:', len(b), 'guides')"[0m
+2026-10-24T16:24:59.0529732Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:59.0530104Z env:
+2026-10-24T16:24:59.0530479Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:59.0531246Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:59.0531580Z ##[endgroup]
+2026-10-24T16:24:59.3177701Z 29 objects imported automatically (use -v 2 for details).
+2026-10-24T16:24:59.3178193Z 
+2026-10-24T16:24:59.3178463Z A1 understanding structure OK: 28 guides
+2026-10-24T16:24:59.3866778Z ##[group]Run set -o pipefail
+2026-10-24T16:24:59.3867119Z [36;1mset -o pipefail[0m
+2026-10-24T16:24:59.3867794Z [36;1muv run pytest -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR|SUBFAIL|SUBERROR|[A-Z]+FAIL) |^E  +" pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }[0m
+2026-10-24T16:24:59.3935718Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:24:59.3936005Z env:
+2026-10-24T16:24:59.3936320Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:24:59.3936734Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:24:59.3937049Z ##[endgroup]
+2026-10-24T16:25:09.5487116Z .... [  0%]
+2026-10-24T16:25:12.6680259Z .................................................................. [  8%]
+2026-10-24T16:34:17.5572224Z ...................................................................................................................................................................................... [ 31%]
+2026-10-24T16:35:29.7555661Z ............................................ [ 36%]
+2026-10-24T16:35:42.2645130Z ............ [ 38%]
+2026-10-24T16:37:57.6858571Z ....................................ss............................................................... [ 50%]
+2026-10-24T16:37:58.8076375Z ............................. [ 54%]
+2026-10-24T16:41:11.6789520Z ................................ [ 58%]
+2026-10-24T16:41:40.8285819Z ................................ [ 62%]
+2026-10-24T16:42:19.0859869Z ........................................................................ [ 71%]
+2026-10-24T16:42:23.3534417Z ............................................. [ 76%]
+2026-10-24T16:42:39.0338752Z ......................................................................................................................................... [ 93%]
+2026-10-24T16:42:41.5337035Z ....................................................     [100%]
+2026-10-24T16:42:41.5337667Z 806 passed, 2 skipped, 4948 subtests passed in 1061.00s (0:17:40)
+2026-10-24T16:42:42.6089980Z ##[group]Run node --test tests/js/*.test.cjs
+2026-10-24T16:42:42.6090448Z [36;1mnode --test tests/js/*.test.cjs[0m
+2026-10-24T16:42:42.6163079Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:42:42.6163366Z env:
+2026-10-24T16:42:42.6163690Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:42:42.6164111Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:42:42.6164435Z ##[endgroup]
+2026-10-24T16:42:42.7832106Z ✔ late en-US voice makes first click play without requiring a second click (8.550316ms)
+2026-10-24T16:42:42.7850739Z ✔ stopping cancels pending voice request and cannot start stale audio later (2.369653ms)
+2026-10-24T16:42:42.7890891Z ✔ voice timeout falls back to readable transcript without crashing (1.332725ms)
+2026-10-24T16:42:42.7892237Z ✔ six situations are navigable and model text stays hidden until each attempt (1.657393ms)
+2026-10-24T16:42:42.7893670Z ✔ last story has two unique improvisation twists, each requires a new attempt (1.429989ms)
+2026-10-24T16:42:42.7894892Z ✔ blank input cannot reveal sample and new page does not remember answers (2.22516ms)
+2026-10-24T16:42:42.7896075Z ✔ extended topic 19 starts its missions and hides every new twist model (1.552619ms)
+2026-10-24T16:42:42.7897204Z ✔ extended topic 20 starts its missions and hides every new twist model (1.311313ms)
+2026-10-24T16:42:42.7898300Z ✔ extended topic 21 starts its missions and hides every new twist model (1.109676ms)
+2026-10-24T16:42:42.7899423Z ✔ extended topic 22 starts its missions and hides every new twist model (1.75689ms)
+2026-10-24T16:42:42.7900759Z ✔ extended topic 23 starts its missions and hides every new twist model (1.633488ms)
+2026-10-24T16:42:42.7902408Z ✔ extended topic 24 starts its missions and hides every new twist model (2.188847ms)
+2026-10-24T16:42:42.7903534Z ✔ extended topic 25 starts its missions and hides every new twist model (1.498749ms)
+2026-10-24T16:42:42.7904671Z ✔ extended topic 26 starts its missions and hides every new twist model (1.385803ms)
+2026-10-24T16:42:42.7905754Z ✔ extended topic 27 starts its missions and hides every new twist model (1.516656ms)
+2026-10-24T16:42:42.7906895Z ✔ extended topic 28 starts its missions and hides every new twist model (2.985651ms)
+2026-10-24T16:42:42.7908034Z ✔ like to read is accepted as a natural alternative in error repair (1.640749ms)
+2026-10-24T16:42:42.8046989Z ✔ 28 connected original topics, and no topic past situation-weeks (1.982603ms)
+2026-10-24T16:42:42.8070996Z ✔ prepared model answer accepts spelling variants and limited alternatives (0.763105ms)
+2026-10-24T16:42:42.8072312Z ✔ each model answer is accepted and wrong unrelated words are rejected (0.715926ms)
+2026-10-24T16:42:42.8073523Z ✔ prefer a real en-US voice; do not silently choose other languages (1.631545ms)
+2026-10-24T16:42:42.8074841Z ✔ learners are warned that exact model match is not full linguistic assessment (0.463453ms)
+2026-10-24T16:42:42.8076152Z ✔ missing apostrophes and surrounding quotes count as the same target words (0.25129ms)
+2026-10-24T16:42:42.8077423Z ✔ word-order builder keeps duplicated words as distinct selectable buttons (0.348333ms)
+2026-10-24T16:42:42.8078667Z ✔ letter-spelling builder preserves T-O-M rather than one unmovable block (0.294875ms)
+2026-10-24T16:42:42.8080125Z ✔ all twenty-eight model answers support at least two builder elements (0.584372ms)
+2026-10-24T16:42:42.8081330Z ✔ each lesson has its own correctable grammar error and explanation (1.335799ms)
+2026-10-24T16:42:42.8082579Z ✔ each of twenty-eight lessons adds exactly six bespoke scenarios and two twists (3.396367ms)
+2026-10-24T16:42:42.8083916Z ✔ mission validator rejects incomplete, duplicated or malformed mission slots (0.670809ms)
+2026-10-24T16:42:42.8085244Z ✔ the six open-ended situations never pretend to auto-grade creative language (0.560536ms)
+2026-10-24T16:42:42.8086539Z ✔ every A1 lesson can provide a listening and reverse-translation retrieval item (0.680083ms)
+2026-10-24T16:42:42.8088358Z ✔ retrieval interface conceals answer until user submits a nonempty response (0.449232ms)
+2026-10-24T16:42:42.8089525Z ✔ routes only select original layers, not audio supplements (2.867347ms)
+2026-10-24T16:42:42.8090755Z ✔ all original sections visible until explicit learner action (1.011822ms)
+2026-10-24T16:42:42.8091801Z ✔ short and reasons routes are reversible and always keep sound (0.447881ms)
+2026-10-24T16:42:42.8092835Z ✔ a deep link into hidden text restores the complete lesson (0.300062ms)
+2026-10-24T16:42:42.8093861Z ✔ malformed pilot markup fails open with full lesson intact (0.276708ms)
+2026-10-24T16:42:42.8432489Z ✔ unchanged annotated text round trips byte for byte (1.683522ms)
+2026-10-24T16:42:42.8440463Z ✔ editing one word preserves other word annotations (0.620876ms)
+2026-10-24T16:42:42.8442224Z ✔ insertion shifts later annotations without losing contraction boundaries (0.28444ms)
+2026-10-24T16:42:42.8511427Z ✔ removing a mark leaves readable words and adjacent marks intact (0.241275ms)
+2026-10-24T16:42:42.8542429Z ✔ pasted multiline text stays plain and serializable (1.549895ms)
+2026-10-24T16:42:42.8543850Z ✔ class reassignment cannot nest annotations (0.445287ms)
+2026-10-24T16:42:42.8544882Z ✔ browser controller syntax is valid (1.33639ms)
+2026-10-24T16:42:42.8546181Z ✔ bulk text becomes plain narration paragraphs without overwriting metadata (1.774807ms)
+2026-10-24T16:42:42.8547656Z ✔ poem insertion moves hints and gaps with unchanged lines (1.367316ms)
+2026-10-24T16:42:42.8548998Z ✔ changed poem lines lose stale hints but other lines retain metadata (0.767982ms)
+2026-10-24T16:42:42.8550426Z ✔ stanzas and markup do not change exercise numbering (0.538955ms)
+2026-10-24T16:42:42.8633663Z ✔ editorial finish is part of the normal template pipeline (1.385612ms)
+2026-10-24T16:42:42.8635841Z ✔ editorial treatment preserves existing component geometry and learning markers (0.435522ms)
+2026-10-24T16:42:42.8686997Z ✔ pointer lighting respects motion, accessibility and input capabilities (1.062366ms)
+2026-10-24T16:42:42.8688927Z ✔ spotlight coordinates are scoped to the target and clamped (1.150226ms)
+2026-10-24T16:42:42.8690599Z ✔ JS and compiled CSS are wired to the existing Sass design system (0.857554ms)
+2026-10-24T16:42:42.9351986Z ✔ word and caption discovery share state without replacing the translation (4.465232ms)
+2026-10-24T16:42:42.9411608Z ✔ touch toggle, outside press, focus departure and resize dismiss discovery (6.85107ms)
+2026-10-24T16:42:42.9440815Z ✔ pedagogical interaction works without GSAP and respects reduced motion (5.971303ms)
+2026-10-24T16:42:42.9442449Z ✔ focus-induced mobile scroll keeps the explanation open and aligned (1.244214ms)
+2026-10-24T16:42:42.9574776Z ✔ language atlas exposes accurate explanations and ignores unknown roles (1.595543ms)
+2026-10-24T16:42:42.9576128Z ✔ the grammar controls animate only when motion is explicitly full (0.277018ms)
+2026-10-24T16:42:42.9577346Z ✔ the design progressively enhances rather than hiding text or changing markers (0.824035ms)
+2026-10-24T16:42:42.9578170Z ✔ all fourteen original SVG covers exist and catalogue/chapter reference them (4.656214ms)
+2026-10-24T16:42:42.9578952Z ✔ speaker portraits reuse existing dialogue badges and keep labels accessible (0.734252ms)
+2026-10-24T16:42:42.9590399Z ✔ audio transcript lines are real keyboard-operable accessible controls (5.057395ms)
+2026-10-24T16:42:42.9591630Z ✔ moving between transcript lines clears stale speaker and current markers (2.080177ms)
+2026-10-24T16:42:43.0308579Z ✔ waveform position and total time follow the actual audio clock (8.155554ms)
+2026-10-24T16:42:43.0328383Z ✔ unknown audio duration never creates invalid progress (8.248601ms)
+2026-10-24T16:42:43.0521909Z ✔ one vs two portions use singular and plural correctly (1.433494ms)
+2026-10-24T16:42:43.0523494Z ✔ sentence builder selects alternative polite question (0.20355ms)
+2026-10-24T16:42:43.0524559Z ✔ invalid selections are rejected rather than interpreted (0.684749ms)
+2026-10-24T16:42:43.0525652Z ✔ translation tracks the chosen product and count (1.408917ms)
+2026-10-24T16:42:43.0527357Z ✔ dialogue comprehension does not accept the order Tom actually wanted (0.26467ms)
+2026-10-24T16:42:43.0528489Z ✔ speech synthesis chooses an en-US voice only (0.282647ms)
+2026-10-24T16:42:43.0530584Z ✔ sample dialogue is original and contains both misunderstood and corrected orders (0.323637ms)
+2026-10-24T16:42:43.0531958Z ✔ test-tone manifests cannot be used as speech (0.412958ms)
+2026-10-24T16:42:43.0533033Z ✔ line highlighting only selects the actual spoken interval (0.604852ms)
+2026-10-24T16:42:43.0534257Z ✔ dictation checks exact words but ignores punctuation, spacing and case (0.612643ms)
+2026-10-24T16:42:43.0535458Z ✔ dictation only permits the two purposely selected lines (0.356445ms)
+2026-10-24T16:42:43.0544395Z ✔ editorial experience is real SCSS + CSS + JS, using existing GSAP (1.829387ms)
+2026-10-24T16:42:43.0545781Z ✔ the optional scene treatment respects reduced motion and high contrast (0.329136ms)
+2026-10-24T16:42:43.0547207Z ✔ editorial improvements do not redefine the learning marker colors or grids (3.182982ms)
+2026-10-24T16:42:43.1129478Z ✔ submit announces pending transfer and blocks double tap (1.609883ms)
+2026-10-24T16:42:43.1131414Z ✔ restored Android browser tab unlocks the submit button (0.275286ms)
+2026-10-24T16:42:43.1132909Z ✔ no-JavaScript page stays usable, incomplete markup fails open (0.242227ms)
+2026-10-24T16:42:43.1134220Z ✔ server-side validation error receives keyboard/TalkBack focus (0.276929ms)
+2026-10-24T16:42:43.1135686Z ✔ offline Android submission keeps fields editable and reports recovery steps (0.355404ms)
+2026-10-24T16:42:43.1137125Z ✔ connection lost during pending submission unlocks the button (0.255857ms)
+2026-10-24T16:42:43.1138413Z ✔ character counter handles pasted text and restored drafts (0.387712ms)
+2026-10-24T16:42:43.1289412Z ✔ expressive entry plays once per page in a tab (1.257594ms)
+2026-10-24T16:42:43.1298718Z ✔ unavailable session storage safely omits decorative entry (0.354453ms)
+2026-10-24T16:42:43.1300256Z ✔ blocked browser sessionStorage getter does not abort motion initialization (3.074593ms)
+2026-10-24T16:42:43.1332968Z ✔ motion policy defaults to balanced and never overrides system reduced motion (0.852627ms)
+2026-10-24T16:42:43.1334537Z ✔ two responsive controls synchronize and store only explicit changes (2.381601ms)
+2026-10-24T16:42:43.1335971Z ✔ OS reduced motion enforces Minimal and never restores Full automatically (2.003684ms)
+2026-10-24T16:42:43.1337183Z ✔ motion layer doesn't hide content or require GSAP (1.154362ms)
+2026-10-24T16:42:43.2228555Z ✔ anonymous review grades and moves to a new phrase without any network (42.796814ms)
+2026-10-24T16:42:43.2251605Z ✔ signed-in review loads only the user's own data and posts CSRF-protected rating (2.007359ms)
+2026-10-24T16:42:43.2281183Z ✔ late initial GET must not overwrite a rating already saved by POST (6.748509ms)
+2026-10-24T16:42:43.2401712Z ✔ an independent oral response is revisited at longer spacing intervals (1.386854ms)
+2026-10-24T16:42:43.2405494Z ✔ difficulty makes a segment easier to review without penalizing speech accents (0.403665ms)
+2026-10-24T16:42:43.2407205Z ✔ next due cycles past completed segments, preferring new or genuinely due items (0.243589ms)
+2026-10-24T16:42:43.2408654Z ✔ ratings, not recordings, are the only data submitted to the private endpoint (0.429854ms)
+2026-10-24T16:42:43.2410296Z ✔ review controls exist in all three speech surfaces and open the signed-in dashboard (1.788046ms)
+2026-10-24T16:42:43.2411845Z ✔ only actually supplied course audio is eligible, with an optional slow version (0.914098ms)
+2026-10-24T16:42:43.2413198Z ✔ slow listening uses existing clip and asks for an independent echo (2.167605ms)
+2026-10-24T16:42:43.2414514Z ✔ verified audio is explicitly distinguished and stops on hiding tab (1.023849ms)
+2026-10-24T16:42:43.2416128Z ✔ missing course audio does not construct a fake TTS speaker (0.974246ms)
+2026-10-24T16:42:43.2668314Z ✔ word stress exercise follows editorial prominence, not spelling capitalization (1.852942ms)
+2026-10-24T16:42:43.2679820Z ✔ all seven A1 poems have exactly aligned original stress models (3.049465ms)
+2026-10-24T16:42:43.2711025Z ✔ only text is evaluated, not a fabricated audio speech rating (0.350467ms)
+2026-10-24T16:42:43.2712582Z ✔ tap on words predicts stress; check reveals editorial model; next resets (2.164361ms)
+2026-10-24T16:42:43.2816933Z ✔ lesson voice ladder starts with a model, recall removes it from current card (4.446826ms)
+2026-10-24T16:42:43.2818526Z ✔ transfer hides the provided line and allows a reversible personal mark (1.353956ms)
+2026-10-24T16:42:43.2820008Z ✔ tap tempo is reported as tempo of taps only (2.915528ms)
+2026-10-24T16:42:43.2821299Z ✔ optional microphone stays local and releases tracks after explicit deletion (1.85153ms)
+2026-10-24T16:42:43.3060924Z ✔ all four stages train understanding, echo, recall and independent transfer (2.05498ms)
+2026-10-24T16:42:43.3062549Z ✔ line navigation cannot escape the source material (0.269617ms)
+2026-10-24T16:42:43.3078911Z ✔ rhythm indicator is only a tap tempo, never a fake speaking score (0.317268ms)
+2026-10-24T16:42:43.3087933Z ✔ no cloud speech APIs, telemetry, hidden storage or uploading recordings (0.348113ms)
+2026-10-24T16:42:43.3104502Z ✔ all three training surfaces include the actual script and reusable controls (1.819262ms)
+2026-10-24T16:42:43.3302338Z ✔ poem gap verification handles network failures, input focus and async double click (1.21447ms)
+2026-10-24T16:42:43.3304580Z ✔ no-JS supplementary lessons display real text, not a blank listening area (0.326752ms)
+2026-10-24T16:42:44.7412198Z ✔ stylesheet build detects and repairs stale deployed CSS (1402.301987ms)
+2026-10-24T16:42:44.7686541Z ℹ tests 122
+2026-10-24T16:42:44.7686905Z ℹ suites 0
+2026-10-24T16:42:44.7687652Z ℹ pass 122
+2026-10-24T16:42:44.7687881Z ℹ fail 0
+2026-10-24T16:42:44.7688126Z ℹ cancelled 0
+2026-10-24T16:42:44.7688382Z ℹ skipped 0
+2026-10-24T16:42:44.7688609Z ℹ todo 0
+2026-10-24T16:42:44.7688889Z ℹ duration_ms 2108.969352
+2026-10-24T16:42:44.7805234Z ##[group]Run uv run python manage.py migrate -v0
+2026-10-24T16:42:44.7805648Z [36;1muv run python manage.py migrate -v0[0m
+2026-10-24T16:42:44.7805992Z [36;1muv run python manage.py load_content[0m
+2026-10-24T16:42:44.7806323Z [36;1muv run python manage.py audit_course[0m
+2026-10-24T16:42:44.7875416Z shell: /usr/bin/bash -e {0}
+2026-10-24T16:42:44.7875720Z env:
+2026-10-24T16:42:44.7876037Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:42:44.7876464Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:42:44.7876786Z ##[endgroup]
+2026-10-24T16:42:53.0361360Z Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+2026-10-24T16:42:59.9409201Z   Единиц в корпусе: 1047 из 6200.
+2026-10-24T16:42:59.9410062Z   A1: 500 из 500.
+2026-10-24T16:42:59.9410436Z   A1+: 547 из 550.
+2026-10-24T16:42:59.9411166Z   CEFR подтверждён на уровне слова (Oxford 3000) у 41 единиц; сверка значений по EVP впереди.
+2026-10-24T16:42:59.9411990Z   Историй в карте: 60 из 60, с текстом: 11.
+2026-10-24T16:42:59.9412513Z   Стихов в карте: 60 из 60, с текстом: 7.
+2026-10-24T16:42:59.9413054Z   История 1: 105 слов, знакомых 94%, новых единиц 2.
+2026-10-24T16:42:59.9413616Z   История 2: 97 слов, знакомых 99%, новых единиц 1.
+2026-10-24T16:42:59.9414153Z   История 3: 91 слов, знакомых 92%, новых единиц 3.
+2026-10-24T16:42:59.9414675Z   История 4: 93 слов, знакомых 98%, новых единиц 2.
+2026-10-24T16:42:59.9415224Z   История 5: 99 слов, знакомых 95%, новых единиц 4.
+2026-10-24T16:42:59.9415764Z   История 6: 397 слов, знакомых 96%, новых единиц 5.
+2026-10-24T16:42:59.9416311Z   История 7: 300 слов, знакомых 98%, новых единиц 5.
+2026-10-24T16:42:59.9416873Z   История 8: 300 слов, знакомых 97%, новых единиц 4.
+2026-10-24T16:42:59.9417455Z   История 9: 299 слов, знакомых 99%, новых единиц 5.
+2026-10-24T16:42:59.9418016Z   История 10: 296 слов, знакомых 96%, новых единиц 5.
+2026-10-24T16:42:59.9418619Z   История 11: 297 слов, знакомых 97%, новых единиц 4.
+2026-10-24T16:42:59.9419314Z   Повторение A1 в A1+: 221 из 500 единиц (44%) встречаются не меньше 2 раз, цель 70%.
+2026-10-24T16:42:59.9420419Z Предупреждение: CEFR не сверен у 1004 единиц — нужна проверка по Oxford 3000/5000 и EVP.
+2026-10-24T16:42:59.9421198Z Предупреждение: История 1: 105 слов, норма уровня 60–80.
+2026-10-24T16:42:59.9421833Z Предупреждение: История 2: 97 слов, норма уровня 60–80.
+2026-10-24T16:42:59.9422463Z Предупреждение: История 3: 91 слов, норма уровня 60–80.
+2026-10-24T16:42:59.9423111Z Предупреждение: История 4: 93 слов, норма уровня 60–80.
+2026-10-24T16:42:59.9423721Z Предупреждение: История 5: 99 слов, норма уровня 60–80.
+2026-10-24T16:42:59.9430890Z Предупреждение: Повторение A1 в A1+: ниже цели. Ещё не встречались (223): A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, April, August, Because I like Russian music., Call me later., Can I have some apples, please?, Can I have water, please?, Can I speak to Tom, please?, Can you help us?, Can you speak Russian?, Can you spell your last name, please?, Can you teach me?, Coffee or tea?, December, Do you have breakfast?, Do you have letters for our house?, Do you like it?, Do you like walking?, Does he work at a school?, Does this bus go to Park Street?, Does your head hurt?, English, February, Go straight and turn left., Have a nice day!, He works at night., Here is your photo., His name is Tom., How are you?, How much is a ticket?, How much is it?, How old are you?, I always read on Saturdays., I am from Russia., I am happy!, I am your neighbor., I cannot sleep., I cannot speak Russian., I do not have a stamp., I drink coffee at seven. и ещё 183.
+2026-10-24T16:42:59.9436623Z Предупреждение: Опережающие слова в сочетаниях (допустимо, но их нужно ввести позже): best (LX-00004), view (LX-00007), york (LX-00027).
+2026-10-24T16:42:59.9437365Z Ошибок нет.
+2026-10-24T16:43:00.0324086Z Post job cleanup.
+2026-10-24T16:43:00.1659194Z (node:3090) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-24T16:43:00.1660319Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-24T16:43:00.1837306Z Post job cleanup.
+2026-10-24T16:43:00.3146832Z UV_CACHE_DIR is already set to /home/runner/work/_temp/setup-uv-cache
+2026-10-24T16:43:00.3152329Z UV_PYTHON_INSTALL_DIR is already set to /home/runner/work/_temp/uv-python-dir
+2026-10-24T16:43:00.3155172Z Cache hit occurred on key setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-26.04-unknown-0863c72389c70dcad029fb71f57f0b4155b3d44a580a3a41363dd5c77074bb57, not saving cache.
+2026-10-24T16:43:00.4313126Z Post job cleanup.
+2026-10-24T16:43:00.5188184Z [command]/usr/bin/git version
+2026-10-24T16:43:00.5261277Z git version 2.55.0
+2026-10-24T16:43:00.5287428Z Temporarily overriding HOME='/home/runner/work/_temp/08b07e24-6fd3-46cc-ad63-1e50dd901e4e' before making global git config changes
+2026-10-24T16:43:00.5288915Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-24T16:43:00.5293358Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/English-Encyclopedia/English-Encyclopedia
+2026-10-24T16:43:00.5337360Z Removing SSH command configuration
+2026-10-24T16:43:00.5344737Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-24T16:43:00.5410740Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-24T16:43:00.5768033Z Removing HTTP extra header
+2026-10-24T16:43:00.5776435Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-24T16:43:00.5824810Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-24T16:43:00.6163595Z Removing includeIf entries pointing to credentials config files
+2026-10-24T16:43:00.6171132Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-24T16:43:00.6201601Z includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git.path
+2026-10-24T16:43:00.6202773Z includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git/worktrees/*.path
+2026-10-24T16:43:00.6203368Z includeif.gitdir:/github/workspace/.git.path
+2026-10-24T16:43:00.6203850Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-24T16:43:00.6210816Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git.path
+2026-10-24T16:43:00.6237640Z /home/runner/work/_temp/git-credentials-8c884273-a87e-4f74-b4c7-49ef5eff69f9.config
+2026-10-24T16:43:00.6248637Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-8c884273\-a87e\-4f74\-b4c7\-49ef5eff69f9\.config
+2026-10-24T16:43:00.6301164Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git/worktrees/*.path
+2026-10-24T16:43:00.6321540Z /home/runner/work/_temp/git-credentials-8c884273-a87e-4f74-b4c7-49ef5eff69f9.config
+2026-10-24T16:43:00.6344017Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/English-Encyclopedia/English-Encyclopedia/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-8c884273\-a87e\-4f74\-b4c7\-49ef5eff69f9\.config
+2026-10-24T16:43:00.6383224Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-24T16:43:00.6415459Z /github/runner_temp/git-credentials-8c884273-a87e-4f74-b4c7-49ef5eff69f9.config
+2026-10-24T16:43:00.6424950Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-8c884273\-a87e\-4f74\-b4c7\-49ef5eff69f9\.config
+2026-10-24T16:43:00.6467859Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-24T16:43:00.6497261Z /github/runner_temp/git-credentials-8c884273-a87e-4f74-b4c7-49ef5eff69f9.config
+2026-10-24T16:43:00.6506814Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-8c884273\-a87e\-4f74\-b4c7\-49ef5eff69f9\.config
+2026-10-24T16:43:00.6550661Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-24T16:43:00.6852139Z Removing credentials config '/home/runner/work/_temp/git-credentials-8c884273-a87e-4f74-b4c7-49ef5eff69f9.config'
+2026-10-24T16:43:00.7030395Z Cleaning up orphan processes
+2026-10-24T16:43:00.7427229Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

@@ -1,0 +1,127 @@
+# Голоса ролей для синтеза (движок Kokoro, американские голоса).
+# Один герой = один голос на весь курс. Голоса синтезированы и не копируют реальных людей.
+engine: kokoro
+model_version: "1.0"
+roles:
+  anna:
+    name_ru: Анна
+    name_en: Anna
+    voice: af_heart
+    speed: 1.0
+  tom:
+    name_ru: Том
+    name_en: Tom
+    voice: am_michael
+    speed: 1.05
+  mia:
+    name_ru: Мия
+    name_en: Mia
+    voice: af_bella
+    speed: 1.05
+  rose:
+    name_ru: Роуз
+    name_en: Rose
+    voice: af_nicole
+    speed: 0.92
+    effect: old_radio
+  neighbor:
+    name_ru: Сосед сверху
+    name_en: The man upstairs
+    voice: am_onyx
+    speed: 0.9
+  barista:
+    name_ru: Бариста
+    name_en: Barista
+    voice: af_sarah
+    speed: 1.0
+  clerk:
+    name_ru: Продавщица
+    name_en: Store clerk
+    voice: af_jessica
+    speed: 1.0
+  passerby:
+    name_ru: Прохожий
+    name_en: Passerby
+    voice: am_liam
+    speed: 1.0
+  locksmith:
+    name_ru: Мастер
+    name_en: Locksmith
+    voice: am_fenrir
+    speed: 0.95
+  doctor:
+    name_ru: Врач
+    name_en: Doctor
+    voice: af_river
+    speed: 0.95
+  postal:
+    name_ru: Почтальон
+    name_en: Postal worker
+    voice: am_adam
+    speed: 1.0
+  busdriver:
+    name_ru: Водитель автобуса
+    name_en: Bus driver
+    voice: am_echo
+    speed: 1.0
+  photographer:
+    name_ru: Рут, фотограф
+    name_en: Ruth, the photographer
+    voice: af_aoede
+    speed: 0.9
+  boss:
+    name_ru: Начальник Мии
+    name_en: Mia's boss
+    voice: am_puck
+    speed: 1.0
+  linda:
+    name_ru: Линда, мама Тома
+    name_en: Linda, Tom's mom
+    voice: af_kore
+    speed: 0.98
+  kate:
+    name_ru: Кейт, коллега Тома
+    name_en: Kate, Tom's colleague
+    voice: af_alloy
+    speed: 1.0
+  agent:
+    name_ru: Сотрудница бюро находок
+    name_en: Lost and found agent
+    voice: af_sky
+    speed: 0.98
+  server:
+    name_ru: Официантка
+    name_en: Server
+    voice: af_nova
+    speed: 1.0
+  jake:
+    name_ru: Джейк, новый помощник Мии
+    name_en: Jake, Mia's new helper
+    voice: am_santa
+    speed: 1.02
+# Пул для эпизодических героев: водитель, продавщица, судья и т. д.
+extras: [am_eric]  # am_eric читает скороговорки; af_sarah — barista, af_jessica — clerk, am_liam — passerby, am_fenrir — locksmith, af_river — doctor, am_adam — postal, am_echo — busdriver
+# Фон сцены: громкость относительно голоса по уровням (дБ). На A1 фон едва слышен.
+ambience_gain_db: {A1: -30, A1+: -28, A2: -24, A2+: -22, B1: -20, B1+: -19, B2: -18, B2+: -17}
+# Эмоции реплик. Kokoro передаёт их скоростью, громкостью и паузой после реплики.
+emotions:
+  neutral: {name_ru: спокойно, speed: 1.0, gain_db: 0, pause: 1.0}
+  happy: {name_ru: радостно, speed: 1.05, gain_db: 1, pause: 1.0}
+  surprised: {name_ru: удивлённо, speed: 1.08, gain_db: 2, pause: 1.2}
+  sad: {name_ru: грустно, speed: 0.9, gain_db: -2, pause: 1.3}
+  tired: {name_ru: устало, speed: 0.88, gain_db: -3, pause: 1.3}
+  angry: {name_ru: сердито, speed: 1.05, gain_db: 3, pause: 0.9}
+  worried: {name_ru: тревожно, speed: 1.0, gain_db: -1, pause: 1.1}
+  whisper: {name_ru: шёпотом, speed: 0.92, gain_db: -8, pause: 1.2}
+  excited: {name_ru: восторженно, speed: 1.1, gain_db: 2, pause: 0.9}
+# Настроения музыки в историях. Музыку сочиняет программа озвучки.
+music_moods:
+  none: без музыки
+  calm: спокойно
+  morning: утро
+  mystery: загадка
+  sad: грусть
+  happy: радость
+  tense: напряжение
+# Громкость музыки относительно голоса по уровням (дБ). На темпе «очень медленно» ещё −4 дБ.
+music_gain_db: {A1: -26, A1+: -25, A2: -24, A2+: -23, B1: -22, B1+: -21, B2: -20, B2+: -19}

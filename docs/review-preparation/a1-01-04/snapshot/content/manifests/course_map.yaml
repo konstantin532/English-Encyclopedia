@@ -1,0 +1,891 @@
+stories:
+- number: 1
+  level: A1
+  week: 2
+  title: Not My Box
+  hook_ru: Утром Том приносит Анне большую коробку. Чья она и что внутри?
+  focus: SDJTPXO
+- number: 2
+  level: A1
+  week: 6
+  title: The Café on the Corner
+  hook_ru: Анна заходит к Мие на работу, в кафе на углу. Кот Box исчезает.
+  focus: SDANTPCOF
+- number: 3
+  level: A1
+  week: 8
+  title: Whose Key?
+  hook_ru: Том находит под дверью старый ключ. Он не подходит ни к одной двери в доме.
+  focus: SDJANTXCF
+- number: 4
+  level: A1
+  week: 12
+  title: A Letter With No Name
+  hook_ru: 'В почтовом ящике письмо без имени. Внутри одно слово: Rose.'
+  focus: SDJANPXCOF
+- number: 5
+  level: A1
+  week: 14
+  title: The Big Family Photo
+  hook_ru: За шкафом Анна находит фото большой семьи. Это не её семья.
+  focus: SDANTPCOF
+- number: 6
+  level: A1+
+  week: 2
+  title: Yesterday at Nine
+  hook_ru: Вчера в девять вечера в пустой квартире наверху горел свет.
+  focus: SDJANTP
+- number: 7
+  level: A1+
+  week: 6
+  title: The Lost Phone
+  hook_ru: Том потерял телефон. Ему звонит незнакомец и называет его по имени.
+  focus: SDJXCOF
+- number: 8
+  level: A1+
+  week: 8
+  title: Mia's Bad Day
+  hook_ru: Мия опоздала на работу, и начальник даёт ей странное поручение.
+  focus: SDANTPX
+- number: 9
+  level: A1+
+  week: 10
+  title: The Man Upstairs
+  hook_ru: Сосед сверху ходит только ночью и ни с кем не здоровается.
+  focus: SDJACOF
+- number: 10
+  level: A1+
+  week: 14
+  title: A Map in the Book
+  hook_ru: В библиотечной книге лежит нарисованная от руки карта района.
+  focus: SDNTPXC
+- number: 11
+  level: A1+
+  week: 16
+  title: If It Rains
+  hook_ru: Пикник под угрозой дождя. На скамейке — второе письмо для Rose.
+  focus: SDJANOF
+- number: 12
+  level: A2
+  week: 2
+  title: Going to the Station
+  hook_ru: Друзья едут по адресу из письма. Что они найдут на вокзале?
+  focus: SDJANTP
+- number: 13
+  level: A2
+  week: 6
+  title: The Better Pizza
+  hook_ru: Спор о лучшей пиццерии города заканчивается неожиданной подсказкой.
+  focus: SDJXCOF
+- number: 14
+  level: A2
+  week: 8
+  title: Who Was Rose?
+  hook_ru: Старая продавщица цветов помнит девушку по имени Rose.
+  focus: SDANTPX
+- number: 15
+  level: A2
+  week: 10
+  title: The Bus Driver Remembers
+  hook_ru: Водитель автобуса сорок лет возит людей по одному маршруту.
+  focus: SDJACOF
+- number: 16
+  level: A2
+  week: 14
+  title: A Gift for the Wrong Person
+  hook_ru: Анна дарит подарок не тому человеку, и это открывает новую дверь.
+  focus: SDNTPXC
+- number: 17
+  level: A2
+  week: 16
+  title: The Garden Door
+  hook_ru: Дверь в сад за домом заперта сорок лет. Ключ Тома подходит.
+  focus: SDJANOF
+- number: 18
+  level: A2+
+  week: 4
+  title: The House Was Built in 1952
+  hook_ru: 'В саду найдена табличка: кем и для кого был построен дом.'
+  focus: SDJANTPX
+- number: 19
+  level: A2+
+  week: 8
+  title: Tom Gets an Interview
+  hook_ru: Тома зовут на собеседование, но в тот же день нужно спасать Box.
+  focus: SDJANCOF
+- number: 20
+  level: A2+
+  week: 10
+  title: A Storm in the City
+  hook_ru: Гроза отключает свет во всём доме. Соседи впервые сидят вместе.
+  focus: SDTPXCOF
+- number: 21
+  level: A2+
+  week: 14
+  title: The Old Radio
+  hook_ru: Старое радио из подвала ловит голос, читающий письма.
+  focus: SDJANTPX
+- number: 22
+  level: A2+
+  week: 18
+  title: Rose's Letter Is Found
+  hook_ru: В радио спрятано последнее письмо Rose. Его так и не отправили.
+  focus: SDJANCOF
+- number: 23
+  level: B1
+  week: 2
+  title: Have You Ever Seen This Man?
+  hook_ru: На фото рядом с Rose мужчина. Его видели все, но никто не знает.
+  focus: SDJANT
+- number: 24
+  level: B1
+  week: 4
+  title: Mia's New Job
+  hook_ru: Мия устраивается на радиостанцию и получает доступ к архиву.
+  focus: SDPXCO
+- number: 25
+  level: B1
+  week: 6
+  title: The Podcast
+  hook_ru: Анна и Мия начинают подкаст об истории дома.
+  focus: SDJANF
+- number: 26
+  level: B1
+  week: 8
+  title: If I Were Rich
+  hook_ru: Том мечтает выкупить дом, пока его не продали застройщику.
+  focus: SDTPXC
+- number: 27
+  level: B1
+  week: 12
+  title: An Email from Chicago
+  hook_ru: 'Слушательница из Чикаго пишет: «Rose — моя бабушка».'
+  focus: SDJAOF
+- number: 28
+  level: B1
+  week: 14
+  title: The Neighbor's Secret
+  hook_ru: Сосед сверху оказывается сыном того самого мужчины с фото.
+  focus: SDNTPX
+- number: 29
+  level: B1
+  week: 16
+  title: Lost in Translation
+  hook_ru: Письмо на старом английском понимают совсем не так.
+  focus: SDJCOF
+- number: 30
+  level: B1
+  week: 18
+  title: A Problem at Work
+  hook_ru: 'У Мии конфликт с редактором: подкаст хотят закрыть.'
+  focus: SDANTP
+- number: 31
+  level: B1
+  week: 20
+  title: The Interview Goes Wrong
+  hook_ru: Интервью с соседом в эфире идёт не по плану.
+  focus: SDXCOF
+- number: 32
+  level: B1
+  week: 22
+  title: What Rose Wanted
+  hook_ru: Из писем становится ясно, чего хотела Rose для этого дома.
+  focus: SDJANT
+- number: 33
+  level: B1+
+  week: 2
+  title: She Said She Would Come
+  hook_ru: Внучка Rose обещала приехать, но не приезжает.
+  focus: SDJANT
+- number: 34
+  level: B1+
+  week: 4
+  title: We Used to Live Here
+  hook_ru: Пожилая пара рассказывает, каким дом был в 1970-х.
+  focus: SDPXCO
+- number: 35
+  level: B1+
+  week: 6
+  title: The Town Meeting
+  hook_ru: На собрании жильцов решают судьбу дома.
+  focus: SDJANF
+- number: 36
+  level: B1+
+  week: 8
+  title: Fake News
+  hook_ru: В сети появляется фальшивая история о доме.
+  focus: SDTPXC
+- number: 37
+  level: B1+
+  week: 12
+  title: A Second Chance
+  hook_ru: Том получает второй шанс на работе мечты.
+  focus: SDJAOF
+- number: 38
+  level: B1+
+  week: 14
+  title: The Volunteer
+  hook_ru: Анна становится волонтёром в местном архиве.
+  focus: SDNTPX
+- number: 39
+  level: B1+
+  week: 16
+  title: Tom Lets Everyone Down
+  hook_ru: Том подводит друзей в самый важный день.
+  focus: SDJCOF
+- number: 40
+  level: B1+
+  week: 18
+  title: For Good
+  hook_ru: Сосед сверху уезжает навсегда и оставляет коробку.
+  focus: SDANTP
+- number: 41
+  level: B1+
+  week: 20
+  title: If Only We Had Known
+  hook_ru: Документы в коробке меняют всё, но слишком поздно ли?
+  focus: SDXCOF
+- number: 42
+  level: B1+
+  week: 22
+  title: The Return of the Cat
+  hook_ru: Box пропадает и возвращается с запиской на ошейнике.
+  focus: SDJANT
+- number: 43
+  level: B2
+  week: 2
+  title: The Offer
+  hook_ru: Застройщик предлагает жильцам деньги за выезд.
+  focus: SDJANTP
+- number: 44
+  level: B2
+  week: 4
+  title: We Should Have Asked
+  hook_ru: Друзья понимают, что не задали главный вопрос.
+  focus: SDJXCOF
+- number: 45
+  level: B2
+  week: 6
+  title: Getting the House Repaired
+  hook_ru: Жильцы чинят дом сами, чтобы его не признали аварийным.
+  focus: SDANTPX
+- number: 46
+  level: B2
+  week: 8
+  title: Under Pressure
+  hook_ru: 'Мию давят на работе: подкаст мешает рекламодателю.'
+  focus: SDJACOF
+- number: 47
+  level: B2
+  week: 12
+  title: The Startup
+  hook_ru: Том запускает приложение для экскурсий по старым домам.
+  focus: SDNTPXC
+- number: 48
+  level: B2
+  week: 14
+  title: Wish You Were Here
+  hook_ru: Внучка Rose наконец приезжает.
+  focus: SDJANOF
+- number: 49
+  level: B2
+  week: 16
+  title: Polite Disagreement
+  hook_ru: Внучка хочет продать свою долю. Друзья учатся спорить вежливо.
+  focus: SDTPXCO
+- number: 50
+  level: B2
+  week: 18
+  title: The Court Letter
+  hook_ru: Приходит официальное письмо из суда.
+  focus: SDJANTF
+- number: 51
+  level: B2
+  week: 20
+  title: Rose's Granddaughter
+  hook_ru: Внучка находит в письмах то, что меняет её решение.
+  focus: SDPXCOF
+- number: 52
+  level: B2+
+  week: 2
+  title: The Proposal
+  hook_ru: Жильцы готовят официальное предложение городу.
+  focus: SDJANTP
+- number: 53
+  level: B2+
+  week: 4
+  title: In Terms of Money
+  hook_ru: Как доказать, что дом ценнее денег застройщика?
+  focus: SDJXCOF
+- number: 54
+  level: B2+
+  week: 8
+  title: With Regard to the House
+  hook_ru: Анна пишет официальное письмо в мэрию.
+  focus: SDANTPX
+- number: 55
+  level: B2+
+  week: 10
+  title: The Hearing
+  hook_ru: 'Публичные слушания: каждый должен выступить.'
+  focus: SDJACOF
+- number: 56
+  level: B2+
+  week: 12
+  title: Arguably the Best Decision
+  hook_ru: Неожиданный союзник меняет ход слушаний.
+  focus: SDNTPXC
+- number: 57
+  level: B2+
+  week: 14
+  title: Not Only Rose, But Also...
+  hook_ru: В архиве находится имя второго автора писем.
+  focus: SDJANOF
+- number: 58
+  level: B2+
+  week: 18
+  title: The Speech
+  hook_ru: Анна произносит речь, к которой готовилась весь курс.
+  focus: SDTPXCO
+- number: 59
+  level: B2+
+  week: 20
+  title: Nevertheless
+  hook_ru: Решение принято. Но не то, которого все ждали.
+  focus: SDJANTF
+- number: 60
+  level: B2+
+  week: 22
+  title: The Key, Again
+  hook_ru: 'Финал: старый ключ Тома открывает последнюю дверь.'
+  focus: SDPXCOF
+poems:
+- number: 1
+  level: A1
+  week: 2
+  title: That Cat
+  rhyme_scheme: ABCB
+  theme_ru: Чей это кот? Утро в новом доме, кот из коробки Тома
+  phonetic_goals:
+  - 'широкое /æ/: that, cat, has, lamp'
+  - 'вопрос с повышением и ответ с понижением: Is it your cat? — No, it is not!'
+  - 'ударный короткий ответ в конце строки: Yes, I DO!'
+- number: 2
+  level: A1
+  week: 4
+  title: Who Is This?
+  rhyme_scheme: ABCB
+  theme_ru: 'Семейное фото: кто это и сколько им лет'
+  phonetic_goals:
+  - 'звонкое th /ð/: this, that, mother, father, brother'
+  - 'лёгкое /h/: he, happy, how'
+  - 'вопросительная интонация: Who is this? How old is she?'
+- number: 3
+  level: A1
+  week: 6
+  title: What Time Is It?
+  rhyme_scheme: ABCB
+  theme_ru: День по часам — и большой кот, который приходит ровно в семь
+  phonetic_goals:
+  - /aɪ/ в time и five
+  - 'ударение в числах: SEVen, TWELVE'
+  - 'ритм вопроса-припева: what TIME is it?'
+- number: 4
+  level: A1
+  week: 8
+  title: One for You and One for Me
+  rhyme_scheme: ABCB
+  theme_ru: Старый ключ, дорога к мастерской и почтовый ящик
+  phonetic_goals:
+  - '/i/: key, me, street'
+  - 'переключение r и l: turn right, turn left'
+  - '/aɪ/ и /eɪ/: right — straight'
+- number: 5
+  level: A1
+  week: 10
+  title: Read, Walk and Play
+  rhyme_scheme: ABCB
+  theme_ru: Выходные Анны, гитара Тома и кот Box
+  phonetic_goals:
+  - 'носовой ŋ: reading, walking, playing'
+  - 'дни недели с ударением на первом слоге: SATurdays, SUNdays'
+  - always и never под ударением
+- number: 6
+  level: A1
+  week: 12
+  title: Who Knows?
+  rhyme_scheme: ABCB
+  theme_ru: Белое письмо без имени и адреса и слово Rose
+  phonetic_goals:
+  - '/aɪ/: white, night'
+  - '/oʊ/: Rose, know, no'
+  - 'ударное not: I do NOT know'
+- number: 7
+  level: A1
+  week: 14
+  title: The Bus to Park Street
+  rhyme_scheme: ABCB
+  theme_ru: Поездка на Park Street и закрытое фотоателье
+  phonetic_goals:
+  - /ʌ/ в bus против /ɑ/ в stop, shop
+  - 'долгое /i/: please, me, street'
+  - 'падающая интонация вопроса: Where do you live?'
+- number: 8
+  level: A1+
+  week: 2
+  title: Yesterday
+  rhyme_scheme: AABB
+  theme_ru: Что было вчера
+  phonetic_goals:
+  - 'окончание -ed: /t/, /d/, /ɪd/'
+- number: 9
+  level: A1+
+  week: 4
+  title: I Had to Go
+  rhyme_scheme: AABB
+  theme_ru: Обязанности
+  phonetic_goals:
+  - have to /hæf tə/
+  - слабое to
+- number: 10
+  level: A1+
+  week: 6
+  title: Where Is My Key?
+  rhyme_scheme: ABAB
+  theme_ru: Потеря и поиск
+  phonetic_goals:
+  - вопросительная интонация wh-
+  - /iː/ key
+- number: 11
+  level: A1+
+  week: 10
+  title: Walking Home
+  rhyme_scheme: AABB
+  theme_ru: Дорога домой
+  phonetic_goals:
+  - -ing /ɪŋ/ без «г»
+  - связывание согласный+гласный
+- number: 12
+  level: A1+
+  week: 12
+  title: Monday Morning
+  rhyme_scheme: AABB
+  theme_ru: Дни недели
+  phonetic_goals:
+  - ударение в днях недели
+  - /ʌ/ Monday
+- number: 13
+  level: A1+
+  week: 14
+  title: If It Rains
+  rhyme_scheme: ABAB
+  theme_ru: Условие
+  phonetic_goals:
+  - связывание if‿it
+  - паузы в сложном предложении
+- number: 14
+  level: A1+
+  week: 16
+  title: The Man Upstairs
+  rhyme_scheme: AABB
+  theme_ru: Сосед
+  phonetic_goals:
+  - /ʌ/ upstairs
+  - ударение в составных словах
+- number: 15
+  level: A2
+  week: 2
+  title: Going To
+  rhyme_scheme: AABB
+  theme_ru: Планы
+  phonetic_goals:
+  - gonna как разговорная форма
+  - слабое to
+- number: 16
+  level: A2
+  week: 4
+  title: Better and Best
+  rhyme_scheme: AABB
+  theme_ru: Сравнение
+  phonetic_goals:
+  - 'flap t: better'
+  - /e/ best
+- number: 17
+  level: A2
+  week: 6
+  title: Rose
+  rhyme_scheme: ABAB
+  theme_ru: Имя на письме
+  phonetic_goals:
+  - /oʊz/ Rose
+  - звонкое s
+- number: 18
+  level: A2
+  week: 10
+  title: The Bus
+  rhyme_scheme: AABB
+  theme_ru: Город
+  phonetic_goals:
+  - /ʌ/ bus
+  - ритм перечисления
+- number: 19
+  level: A2
+  week: 12
+  title: A Gift
+  rhyme_scheme: AABB
+  theme_ru: Подарок
+  phonetic_goals:
+  - /ɪ/ gift
+  - конечные кластеры -ft
+- number: 20
+  level: A2
+  week: 14
+  title: Behind the Door
+  rhyme_scheme: ABAB
+  theme_ru: Тайна сада
+  phonetic_goals:
+  - /ɔr/ door
+  - американское r
+- number: 21
+  level: A2
+  week: 16
+  title: Weekend
+  rhyme_scheme: AABB
+  theme_ru: Выходные
+  phonetic_goals:
+  - ударение WEEK-end
+  - /iː/
+- number: 22
+  level: A2+
+  week: 2
+  title: Built in 1952
+  rhyme_scheme: AABB
+  theme_ru: Годы
+  phonetic_goals:
+  - чтение годов
+  - 'пассив: was built'
+- number: 23
+  level: A2+
+  week: 6
+  title: Water, Butter, Better
+  rhyme_scheme: AABB
+  theme_ru: Американский flap t
+  phonetic_goals:
+  - flap t между гласными
+- number: 24
+  level: A2+
+  week: 8
+  title: The Storm
+  rhyme_scheme: ABAB
+  theme_ru: Гроза
+  phonetic_goals:
+  - /ɔr/ storm
+  - интонация восклицания
+- number: 25
+  level: A2+
+  week: 10
+  title: Old Radio
+  rhyme_scheme: AABB
+  theme_ru: Голос из прошлого
+  phonetic_goals:
+  - /eɪ/ radio
+  - три слога RA-di-o
+- number: 26
+  level: A2+
+  week: 12
+  title: Can and Can't
+  rhyme_scheme: AABB
+  theme_ru: Умения
+  phonetic_goals:
+  - can /kən/ и can't /kænt/
+- number: 27
+  level: A2+
+  week: 16
+  title: Questions
+  rhyme_scheme: ABAB
+  theme_ru: Вопросы
+  phonetic_goals:
+  - восходящая интонация yes/no
+- number: 28
+  level: A2+
+  week: 18
+  title: The Letter
+  rhyme_scheme: AABB
+  theme_ru: Последнее письмо
+  phonetic_goals:
+  - flap t letter
+  - /ɚ/
+- number: 29
+  level: B1
+  week: 2
+  title: Have You Ever
+  rhyme_scheme: AABB
+  theme_ru: Опыт
+  phonetic_goals:
+  - слабое have /əv/
+  - ритм вопроса
+- number: 30
+  level: B1
+  week: 6
+  title: Nine to Five
+  rhyme_scheme: ABAB
+  theme_ru: Работа
+  phonetic_goals:
+  - /aɪ/
+  - ударение в устойчивых фразах
+- number: 31
+  level: B1
+  week: 8
+  title: On Air
+  rhyme_scheme: AABB
+  theme_ru: Радиоэфир
+  phonetic_goals:
+  - 'linking r: on air'
+  - /ɛr/
+- number: 32
+  level: B1
+  week: 12
+  title: If I Were You
+  rhyme_scheme: ABAB
+  theme_ru: Мечты
+  phonetic_goals:
+  - were /wɚ/
+  - слабые формы
+- number: 33
+  level: B1
+  week: 14
+  title: Chicago
+  rhyme_scheme: AABB
+  theme_ru: Письмо издалека
+  phonetic_goals:
+  - ударение Chi-CA-go
+  - /ʃ/
+- number: 34
+  level: B1
+  week: 16
+  title: Upstairs, Downstairs
+  rhyme_scheme: AABB
+  theme_ru: Тайна соседа
+  phonetic_goals:
+  - контрастное ударение
+- number: 35
+  level: B1
+  week: 20
+  title: Lost Words
+  rhyme_scheme: ABAB
+  theme_ru: Перевод
+  phonetic_goals:
+  - редукция гласных
+  - шва /ə/
+- number: 36
+  level: B1
+  week: 22
+  title: Deadline
+  rhyme_scheme: AABB
+  theme_ru: Работа под давлением
+  phonetic_goals:
+  - кластеры -dl-
+  - ритм
+- number: 37
+  level: B1+
+  week: 2
+  title: She Said
+  rhyme_scheme: AABB
+  theme_ru: Чужие слова
+  phonetic_goals:
+  - /ɛ/ said
+  - интонация косвенной речи
+- number: 38
+  level: B1+
+  week: 6
+  title: We Used to
+  rhyme_scheme: ABAB
+  theme_ru: Прошлое
+  phonetic_goals:
+  - used to /juːstə/
+- number: 39
+  level: B1+
+  week: 8
+  title: The Meeting
+  rhyme_scheme: AABB
+  theme_ru: Собрание
+  phonetic_goals:
+  - flap t meeting
+  - ударение в перечислении
+- number: 40
+  level: B1+
+  week: 12
+  title: Fake or Real
+  rhyme_scheme: AABB
+  theme_ru: Новости
+  phonetic_goals:
+  - /iː/ — /ɪə/ real
+- number: 41
+  level: B1+
+  week: 14
+  title: Second Chance
+  rhyme_scheme: ABAB
+  theme_ru: Шанс
+  phonetic_goals:
+  - /æ/ chance
+  - кластеры -nd-
+- number: 42
+  level: B1+
+  week: 16
+  title: Volunteer
+  rhyme_scheme: AABB
+  theme_ru: Помощь
+  phonetic_goals:
+  - ударение vol-un-TEER
+- number: 43
+  level: B1+
+  week: 20
+  title: Let Down
+  rhyme_scheme: AABB
+  theme_ru: Подвёл
+  phonetic_goals:
+  - 'фразовые глаголы: ударение на частице'
+- number: 44
+  level: B1+
+  week: 22
+  title: For Good
+  rhyme_scheme: ABAB
+  theme_ru: Навсегда
+  phonetic_goals:
+  - слабое for /fɚ/
+- number: 45
+  level: B2
+  week: 2
+  title: If Only
+  rhyme_scheme: AABB
+  theme_ru: Сожаление
+  phonetic_goals:
+  - интонация сожаления
+  - ритм
+- number: 46
+  level: B2
+  week: 4
+  title: The Offer
+  rhyme_scheme: AABB
+  theme_ru: Предложение застройщика
+  phonetic_goals:
+  - /ɔ/ — /ɑ/ в американском
+- number: 47
+  level: B2
+  week: 8
+  title: Should Have
+  rhyme_scheme: ABAB
+  theme_ru: Упущенное
+  phonetic_goals:
+  - should have /ʃʊdəv/
+- number: 48
+  level: B2
+  week: 10
+  title: Repairs
+  rhyme_scheme: AABB
+  theme_ru: Ремонт
+  phonetic_goals:
+  - кластеры -rz
+- number: 49
+  level: B2
+  week: 12
+  title: Under Pressure
+  rhyme_scheme: AABB
+  theme_ru: Давление
+  phonetic_goals:
+  - /ʃ/ pressure
+  - ударение
+- number: 50
+  level: B2
+  week: 16
+  title: Startup
+  rhyme_scheme: ABAB
+  theme_ru: Новое дело
+  phonetic_goals:
+  - составные слова
+- number: 51
+  level: B2
+  week: 18
+  title: Wish You Were Here
+  rhyme_scheme: AABB
+  theme_ru: Встреча
+  phonetic_goals:
+  - слияние wish‿you /wɪʃu/
+- number: 52
+  level: B2
+  week: 20
+  title: Fair Enough
+  rhyme_scheme: AABB
+  theme_ru: Вежливый спор
+  phonetic_goals:
+  - интонация уступки
+- number: 53
+  level: B2+
+  week: 2
+  title: Limerick of the Court
+  rhyme_scheme: AABBA
+  theme_ru: Лимерик о суде
+  phonetic_goals:
+  - ритм лимерика
+  - ударение
+- number: 54
+  level: B2+
+  week: 6
+  title: In Terms of Money
+  rhyme_scheme: ABAB
+  theme_ru: Деньги
+  phonetic_goals:
+  - слабое of
+  - ритм формальной речи
+- number: 55
+  level: B2+
+  week: 8
+  title: With Regard
+  rhyme_scheme: AABB
+  theme_ru: Официальное письмо
+  phonetic_goals:
+  - формальное произношение
+  - паузы
+- number: 56
+  level: B2+
+  week: 12
+  title: The Hearing
+  rhyme_scheme: ABAB
+  theme_ru: Слушания
+  phonetic_goals:
+  - контрастное ударение в аргументе
+- number: 57
+  level: B2+
+  week: 14
+  title: Arguably
+  rhyme_scheme: AABB
+  theme_ru: Аргумент
+  phonetic_goals:
+  - ударение AR-gu-a-bly
+- number: 58
+  level: B2+
+  week: 16
+  title: Not Only, But Also
+  rhyme_scheme: ABAB
+  theme_ru: Риторика
+  phonetic_goals:
+  - поэтическая инверсия
+  - параллелизм
+- number: 59
+  level: B2+
+  week: 20
+  title: The Speech
+  rhyme_scheme: AABB
+  theme_ru: Речь
+  phonetic_goals:
+  - интонация публичной речи
+  - паузы
+- number: 60
+  level: B2+
+  week: 22
+  title: The Key
+  rhyme_scheme: ABAB
+  theme_ru: Финал
+  phonetic_goals:
+  - рефрен
+  - ритм и пауза финала

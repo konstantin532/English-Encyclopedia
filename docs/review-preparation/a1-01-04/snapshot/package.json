@@ -1,0 +1,13 @@
+{
+  "name": "english-encyclopedia-ui",
+  "private": true,
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "build:css": "node scripts/build_styles.mjs",
+    "check:css": "node scripts/build_styles.mjs --check",
+    "test:ui": "node --test tests/js/*.test.cjs"
+  },
+  "devDependencies": {
+    "sass": "1.105.2"
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "path": "content/seed_lessons/a1_w01_l01_nouns.yaml",
+    "claimed_blob_sha": "1ffd6d9948d0c3c4160b12913ec7c6d50d532704",
+    "actual_blob_sha": "1ffd6d9948d0c3c4160b12913ec7c6d50d532704",
+    "claimed_sha_matches": true,
+    "embedded_exact_bytes": false,
+    "embedded_matches_after_one_final_lf": true,
+    "source_bytes": 19289
+  },
+  {
+    "path": "content/seed_lessons/a1_w01_l02_be.yaml",
+    "claimed_blob_sha": "3726d5cfbacd7af774d99de395827e70d8140901",
+    "actual_blob_sha": "3726d5cfbacd7af774d99de395827e70d8140901",
+    "claimed_sha_matches": true,
+    "embedded_exact_bytes": false,
+    "embedded_matches_after_one_final_lf": true,
+    "source_bytes": 19967
+  },
+  {
+    "path": "content/seed_weeks/a1_w01.yaml",
+    "claimed_blob_sha": "2a36f3f4d247697f74dd20776743c8c3db23146d",
+    "actual_blob_sha": "2a36f3f4d247697f74dd20776743c8c3db23146d",
+    "claimed_sha_matches": true,
+    "embedded_exact_bytes": false,
+    "embedded_matches_after_one_final_lf": true,
+    "source_bytes": 4796
+  }
+]
