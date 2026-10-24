@@ -13,7 +13,7 @@ sound_notes:
     note_ru: "where и is сливаются: «уэриз»; в разговоре — where's"
   - text: "It's next to the cafe."
     ipa: "/ɪts ˈnɛks tə ðə kæˈfeɪ/"
-    note_ru: "t в next пропадает: «нэкс тэ»"
+    note_ru: "В быстрой речи next to может звучать слитно, без отдельного взрыва каждого t. В отчётливой речи t можно сохранить."
   - text: "It's on the right."
     ipa: "/ɪts ɑn ðə ˈraɪt/"
     note_ru: "on — открытое «а»: «ан», не «он»"
@@ -21,7 +21,7 @@ contractions:
   - full: "where is"
     short: "where's"
     ipa: "/wɛrz/"
-    note_ru: "В разговоре почти всегда where's: Where's the bank?"
+    note_ru: "В разговоре where is можно сократить до where's: Where's the bank?"
   - full: "it is"
     short: "it's"
     ipa: "/ɪts/"
@@ -33,7 +33,7 @@ layers:
 
       В новом городе главный вопрос — «Где?». По-английски — **Where**.
 
-      > [O2]Sorry[/], [D7]can[/] [T8]you[/] [D2]help[/] [T8]us[/]? [A6]Where[/] [D1]is[/] [T1]the[/] [S4]bank[/]? — Простите, не поможете нам? Где банк?
+      > [O2]Excuse me[/]! [T8]I[/] [D1]have[/] [T1]an[/] [J2]old[/] [S2]key[/]. [A6]Where[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/], [O8]please[/]? — Извините! У меня старый ключ. Где мастерская по ключам?
       > [T1]The[/] [S2]key[/] [S4]shop[/]? [T8]It[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]bank[/]. — Мастерская? Она рядом с банком.
 
       В **этих** ответах место уточняет предлог (*near*, *next to*, *on*, *in*). Но на вопрос **Where?** можно ответить и иначе, например названием места или наречием; не нужно искать предлог в **каждом** возможном ответе.
@@ -41,9 +41,13 @@ layers:
       **Готовая фраза из диалога:** *Can you help us?* — «Можете нам помочь?» Здесь **us** означает «нам»; отличие от **we** («мы») будет разбираться в следующем уроке. Пока можно использовать весь вопрос целиком, без дополнительных терминов.
   - number: 2
     body: |
-      **Where / here / there** — старые германские слова о месте. Они близки по значению, но не являются одним современным словом с разными окончаниями: **where** спрашивает, **here** указывает «здесь», а **there** может указывать «там» или выполнять другую функцию в *there is*. Для ученика важнее различать **работу** слов в контексте, чем заучивать их историю.
+      Русское «Где банк?» обходится без слова «есть». В английском вопросе о месте нужна форма глагола be — здесь **is**: **Where is the bank?** Сначала **Where is**, затем то, что ищем.
 
-      **near** когда-то значило «ближе» — сравнительная форма от слова «близко». Позже стало просто «рядом».
+      В ответе порядок другой: **The bank is near the cafe.** — Банк недалеко от кафе. Сначала называем банк, затем **is**, затем место. Банк уже назван в вопросе, поэтому можно заменить **the bank** на **it**: **It is near the cafe.**
+
+      Предлог выбираем по расположению: **in the box** — внутри коробки; **on the box** — на коробке; **near the cafe** — недалеко от кафе; **next to the cafe** — непосредственно рядом. Само is не сообщает, где находится предмет: это уточняет следующая часть ответа.
+
+      Можно ответить и коротко: **Near the cafe.** Полная фраза помогает увидеть устройство предложения, а краткий ответ понятен из вопроса.
   - number: 3
     body: |
       Схема вопроса и ответа:
@@ -170,7 +174,7 @@ practice:
   answer: Where is the bank?
   hint_ru: Where — «где».
   explanation_ru: 'Where is the bank? В разговоре: Where''s the bank?'
-  review_of: 3
+  review_of: 1
   units:
   - LX-00157
   - LX-00162
@@ -199,7 +203,7 @@ practice:
   answer: The bank is on the right.
   hint_ru: «Справа» — on the right.
   explanation_ru: The bank is on the right. On the right — справа, on the left — слева.
-  review_of: 3
+  review_of: 4
   units:
   - LX-00162
   - LX-00172
@@ -209,9 +213,11 @@ practice:
   kind: translate
   prompt_ru: Банк между кафе и гостиницей.
   answer: The bank is between the cafe and the hotel.
+  accepted:
+  - The bank is between the hotel and the cafe.
   hint_ru: between … and …
   explanation_ru: The bank is between the cafe and the hotel. Between — «между».
-  review_of: 3
+  review_of: 5
   units:
   - LX-00162
   - LX-00176

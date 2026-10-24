@@ -10,13 +10,13 @@ units: [LX-00131, LX-00132, LX-00133, LX-00135, LX-00136, LX-00140, LX-00124, LX
 sound_notes:
   - text: "It's seven o'clock."
     ipa: "/ɪts ˈsɛvən əˈklɑk/"
-    note_ru: "o'clock — «экЛАК»: первый звук короткий, ударение на clock"
+    note_ru: "Первый слог o'clock безударный, ударение на clock; сверяйтесь с аудио и транскрипцией."
   - text: "What time do you get up?"
     ipa: "/ˌwʌt ˈtaɪm də jə ɡɛt ˈʌp/"
-    note_ru: "t в what почти не слышно перед time: «уа тайм»"
+    note_ru: "На стыке what time соседние t часто звучат слитно; не вставляйте между ними гласную."
   - text: "at seven"
     ipa: "/ət ˈsɛvən/"
-    note_ru: "at без ударения звучит как короткое «эт»"
+    note_ru: "Безударное at произносится с нейтральным кратким гласным /ə/"
 contractions:
   - full: "it is"
     short: "it's"
@@ -35,9 +35,9 @@ layers:
       Числа вы знаете с недели 3. Осталось научиться ставить их рядом с at и o'clock.
   - number: 2
     body: |
-      **o'clock** — сокращение старого выражения `of the clock`, «по часам». Когда часы на башнях были новинкой, люди уточняли: время по часам, а не по солнцу.
+      **o'clock** произошло от старого выражения *of the clock*. Сегодня оно помогает назвать ровный час: *seven o'clock*. В ответе о времени действия нужен предлог: *at seven*.
 
-      **time** — древнее `tīma`, «отрезок, пора». Отсюда же английское tide — прилив, который приходит в своё время.
+      **time** связано с древнеанглийским *tīma* — «время, период». В этом уроке важно различать вопрос *What time is it?* («Который час?») и *What time do you get up?* («Во сколько ты встаёшь?»).
   - number: 3
     body: |
       Две формы:
@@ -77,7 +77,7 @@ layers:
       Русское «в» перед временем — ловушка. Сравните:
 
       - в семь — at seven (не in seven);
-      - в кафе — at the cafe;
+      - в кафе — at the cafe (если речь о месте встречи; внутри кафе также возможно in the cafe);
       - дома — at home.
 
       **Seven o'clock** обозначает время на часах, а **seven hours** — продолжительность («семь часов»). Оба выражения правильны, но отвечают на **разные вопросы**.
@@ -169,7 +169,7 @@ practice:
   - It is seven.
   hint_ru: Ровное время — o'clock.
   explanation_ru: It's seven o'clock. O'clock — только для ровного часа.
-  review_of: 3
+  review_of: 1
   units:
   - LX-00132
   - LX-00140
@@ -179,16 +179,16 @@ practice:
   answer: I eat at twelve.
   hint_ru: «Во сколько» — at.
   explanation_ru: I eat at twelve. Время действия — с at.
-  review_of: 3
+  review_of: 2
   units:
   - LX-00136
 - order: 3
   kind: translate
   prompt_ru: Который час?
   answer: What time is it?
-  hint_ru: «Какое время это?»
+  hint_ru: Вопрос о времени сейчас — What time…?
   explanation_ru: What time is it? Вопрос о том, который час сейчас.
-  review_of: 3
+  review_of: 1
   units:
   - LX-00133
   - LX-00135
