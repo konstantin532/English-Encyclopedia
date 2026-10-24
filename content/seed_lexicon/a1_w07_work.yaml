@@ -184,7 +184,7 @@ units:
   example_en: Does he work at a school?
   example_ru: Он работает в школе?
   situation: Кто где работает
-  usage_note: '-s переходит в does, а work остаётся без -s.'
+  usage_note: 'Does показывает форму для he; основной глагол work остаётся без -s.'
 - uid: LX-00155
   lemma: No, he does not.
   meaning: A short no answer about he or she
