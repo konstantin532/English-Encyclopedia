@@ -39,9 +39,12 @@ layers:
       В разговоре — **don't** и **doesn't**.
   - number: 2
     body: |
-      Раньше отрицание ставили прямо после глагола: «I know not», «I have not a stamp». Такие фразы ещё встречаются у Шекспира. Позже вместо этого стали говорить через do: I do not know. Глагол остался на своём месте, а «не» встало рядом с помощником.
+      **I have a stamp. → I don't have a stamp.** — У меня есть марка. → У меня нет марки. После I ставим **do not**, сокращённо **don't**; основной глагол остаётся **have**.
+      **She lives here. → She doesn't live here.** — Она живёт здесь. → Она не живёт здесь. С she нужен **does not**, сокращённо **doesn't**. Форму для she уже показывает does, поэтому дальше **live**, без -s.
 
-      **know** когда-то читали со звуком k — «кноу». Звук исчез, а буква осталась, как память о прошлом.
+      В этих фразах **do / does — помощники**, а не отдельное действие «делать». Сравните знакомый вопрос и новое отрицание: **Does she live here? / She doesn't live here.** В обоих случаях после does основной глагол — **live**.
+
+      Не выбирайте форму только по русскому «не». **I am not tired** отрицает состояние с be. **I can't work** говорит, что я не могу работать. **I don't work** говорит, что я не работаю. Это три разные конструкции и разные смыслы; don't не заменяет am not или can't.
   - number: 3
     body: |
       Схема:
@@ -70,7 +73,7 @@ layers:
 
       > [A1]Never[/]. [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]! — Никогда. Сам не знаю почему!
 
-      - I don't know — самая частая фраза для «не знаю». Можно смягчить: Sorry, I don't know.
+      - I don't know — готовая фраза для «не знаю». Можно смягчить: Sorry, I don't know.
       - I don't have… — «у меня нет…»: I don't have a stamp, I don't have time.
       - Полные **do not / does not** тоже правильны и естественны, особенно при смысловом выделении. Сокращения **don't / doesn't** очень часты в разговорном американском английском.
 
@@ -111,7 +114,7 @@ exercises:
     uid: EX-00129
     kind: fill
     stage: substitution
-    prompt_ru: "У Анны нет марки. Вставьте отрицание (сокращённо)."
+    prompt_ru: "У Анны нет марки. Вставьте отрицание: сокращённое или полное."
     prompt_en: "I ___ have a stamp."
     answer: "don't"
     accepted: ["do not"]
@@ -135,7 +138,7 @@ exercises:
     prompt_ru: "Новая ситуация: прохожий спрашивает, где банк. Вы не знаете. Вежливо ответьте."
     prompt_en: "Where is the bank? — ___"
     answer: "Sorry, I don't know."
-    accepted: ["Sorry, I don't know", "I don't know.", "I don't know", "Sorry, I do not know.", "Sorry. I don't know."]
+    accepted: ["Sorry, I don't know", "I don't know.", "I don't know", "Sorry, I do not know.", "Sorry. I don't know.", "I do not know."]
     hint_ru: "Sorry + I don't know."
     explanation_ru: "Sorry, I don't know — вежливо и по-американски."
     units: [LX-00229, LX-00236]
@@ -151,9 +154,7 @@ exercises:
     answer: Tom doesn't have an envelope.
     hint_ru: Tom — он; после does не добавляйте -s к have.
     explanation_ru: 'Tom doesn''t have an envelope: does уже выражает третье лицо, поэтому have, не has.'
-    units:
-    - LX-00416
-    - LX-00233
+    units: [LX-00416, LX-00230, LX-00033]
   - order: 6
     uid: EX-00133
     kind: fill
@@ -178,11 +179,8 @@ practice:
   answer: I do not have a stamp.
   hint_ru: I + don't have
   explanation_ru: I don't have a stamp. С обычным глаголом отрицание через don't.
-  review_of: 3
-  units:
-  - LX-00233
-  - LX-00235
-  - LX-00236
+  review_of: 2
+  units: [LX-00233, LX-00226]
 - order: 2
   kind: translate
   prompt_ru: Старый ящик не получает писем.
@@ -191,23 +189,16 @@ practice:
   - The mailbox does not get letters.
   hint_ru: mailbox = it → doesn't.
   explanation_ru: The old mailbox doesn't get letters. С it — doesn't, а get без -s.
-  review_of: 3
-  units:
-  - LX-00233
-  - LX-00235
-  - LX-00236
+  review_of: 1
+  units: [LX-00180, LX-00225, LX-00235]
 - order: 3
   kind: translate
   prompt_ru: Я не знаю.
   answer: I do not know.
   hint_ru: don't know
   explanation_ru: I don't know. Одна из самых нужных фраз.
-  review_of: 3
-  units:
-  - LX-00229
-  - LX-00233
-  - LX-00235
-  - LX-00236
+  review_of: 4
+  units: [LX-00229, LX-00236]
 - order: 4
   kind: translate
   prompt_ru: Том не любит гулять.
@@ -217,7 +208,4 @@ practice:
   hint_ru: Tom → doesn't like.
   explanation_ru: Tom doesn't like walking. После doesn't — like без -s.
   review_of: 3
-  units:
-  - LX-00233
-  - LX-00235
-  - LX-00236
+  units: [LX-00034, LX-00201]

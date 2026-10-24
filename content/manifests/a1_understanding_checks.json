@@ -854,7 +854,8 @@
           "prompt": "Напишите «У меня болит голова».",
           "model": "My head hurts.",
           "accepted": [
-            "My head hurts."
+            "My head hurts.",
+            "I have a headache."
           ]
         },
         "transfer": {

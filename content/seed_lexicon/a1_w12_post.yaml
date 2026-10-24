@@ -16,7 +16,7 @@ units:
   example_en: '[T8]I[/] [D1]have[/] [T1]a[/] [S9]letter[/] [P5]for[/] [T3]my[/] [S1]mother[/].'
   example_ru: У меня письмо для мамы.
   situation: Отправляете письмо
-  usage_note: 'Два значения: письмо и буква. t между гласными мягкая: «лэдэр».'
+  usage_note: 'Два значения: письмо и буква. В этом американском образце t — короткое касание языка /t̬/; это не русское мягкое т.'
 - uid: LX-00226
   lemma: stamp
   meaning: a small paper you put on a letter to pay for sending it
@@ -45,7 +45,7 @@ units:
   example_en: '[T9]What[/] [D1]is[/] [T1]the[/] [S9]address[/]?'
   example_ru: Какой адрес?
   situation: Отправляете письмо
-  usage_note: 'Американцы ставят ударение на первый слог: Ædress. Пишется с двумя d и двумя s.'
+  usage_note: 'В этом американском словарном образце существительное address имеет ударение на первом слоге: /ˈædrɛs/. Пишется с двумя d и двумя s.'
 - uid: LX-00228
   lemma: street
   meaning: a road in a town with houses along it
@@ -127,7 +127,7 @@ units:
   unit_type: phrase
   cefr: unverified
   verification_status: pending
-  ipa_us: /aɪ ˈdoʊnt hæv ə ˈstæmp/
+  ipa_us: /aɪ du ˈnɑt hæv ə ˈstæmp/
   translation_ru: У меня нет марки.
   example_en: I do not have a stamp.
   example_ru: У меня нет марки.
@@ -152,7 +152,7 @@ units:
   unit_type: phrase
   cefr: unverified
   verification_status: pending
-  ipa_us: /ɪt ˈdʌzənt ɡɛt ˈlɛt̬ɚz/
+  ipa_us: /ɪt dəz ˈnɑt ɡɛt ˈlɛt̬ɚz/
   translation_ru: Туда не приходят письма.
   example_en: It does not get letters.
   example_ru: Туда не приходят письма.
@@ -165,7 +165,7 @@ units:
   unit_type: phrase
   cefr: unverified
   verification_status: pending
-  ipa_us: /aɪ ˈdoʊnt ˈnoʊ/
+  ipa_us: /aɪ du ˈnɑt ˈnoʊ/
   translation_ru: Я не знаю.
   example_en: I do not know.
   example_ru: Я не знаю.

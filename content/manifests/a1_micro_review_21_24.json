@@ -37,31 +37,31 @@
       "en": ""
     },
     "2": {
-      "prompt": "Вы сообщаете, что {ru}. Какое слово вставить?",
+      "prompt": "Ситуация: {ru}. Вы хотите назвать головную боль. Вставьте слово.",
       "keys": [
         "ru",
         "condition"
       ],
       "cases": [
         [
-          "болит голова",
+          "вы пришли на приём утром",
           "headache"
         ],
         [
-          "есть простуда",
-          "cold"
+          "вы рассказываете аптекарю о самочувствии",
+          "headache"
         ],
         [
-          "болит зуб",
-          "toothache"
+          "вы отвечаете на вопрос врача",
+          "headache"
         ],
         [
-          "есть температура",
-          "fever"
+          "вы объясняете другу причину отдыха",
+          "headache"
         ],
         [
-          "болит живот",
-          "stomachache"
+          "вы звоните в клинику",
+          "headache"
         ]
       ],
       "options": [
@@ -363,7 +363,7 @@
       "en": ""
     },
     "5": {
-      "prompt": "Вы чувствуете себя {ru}. Выберите фразу.",
+      "prompt": "Ситуация: {ru}. Выберите фразу об указанном состоянии.",
       "keys": [
         "ru",
         "feeling",
@@ -372,31 +372,31 @@
       ],
       "cases": [
         [
-          "жаждущим",
+          "вы хотите пить",
           "thirsty",
           "hungry",
           "tired"
         ],
         [
-          "голодным",
+          "вы голодны",
           "hungry",
           "thirsty",
           "tired"
         ],
         [
-          "уставшим",
+          "вы устали",
           "tired",
           "hungry",
           "thirsty"
         ],
         [
-          "снова хотите пить",
+          "Том хочет пить; ответьте от его лица",
           "thirsty",
           "tired",
           "hungry"
         ],
         [
-          "очень голодным",
+          "Анна голодна; ответьте от её лица",
           "hungry",
           "tired",
           "thirsty"
@@ -460,44 +460,50 @@
         "who",
         "ru",
         "subj",
-        "act"
+        "act",
+        "wrong_act"
       ],
       "cases": [
         [
           "Томе",
           "он не получает письма",
           "He",
-          "get letters"
+          "get letters",
+          "gets letters"
         ],
         [
           "Анне",
           "она не пьёт кофе",
           "She",
-          "drink coffee"
+          "drink coffee",
+          "drinks coffee"
         ],
         [
           "Мие",
           "она не работает ночью",
           "She",
-          "work at night"
+          "work at night",
+          "works at night"
         ],
         [
           "Томе",
           "он не живёт здесь",
           "He",
-          "live here"
+          "live here",
+          "lives here"
         ],
         [
           "Анне",
           "она не смотрит телевизор",
           "She",
-          "watch TV"
+          "watch TV",
+          "watches TV"
         ]
       ],
       "options": [
         "{subj} doesn't {act}.",
         "{subj} don't {act}.",
-        "{subj} doesn't {act}s."
+        "{subj} doesn't {wrong_act}."
       ],
       "reason": "He/she требует doesn't + основной глагол без -s.",
       "en": ""
@@ -543,39 +549,45 @@
       "keys": [
         "who",
         "ru",
-        "act"
+        "act",
+        "wrong_act"
       ],
       "cases": [
         [
           "Том",
           "живёт в России",
-          "live in Russia"
+          "live in Russia",
+          "lives in Russia"
         ],
         [
           "Анна",
           "работает ночью",
-          "work at night"
+          "work at night",
+          "works at night"
         ],
         [
           "Мия",
           "любит чай",
-          "like tea"
+          "like tea",
+          "likes tea"
         ],
         [
           "Том",
           "смотрит телевизор",
-          "watch TV"
+          "watch TV",
+          "watches TV"
         ],
         [
           "Анна",
           "знает этот адрес",
-          "know this address"
+          "know this address",
+          "knows this address"
         ]
       ],
       "options": [
         "My friend doesn't {act}.",
         "My friend don't {act}.",
-        "My friend doesn't {act}s."
+        "My friend doesn't {wrong_act}."
       ],
       "reason": "В отрицании с my friend: doesn't + начальная форма глагола.",
       "en": ""
