@@ -21,7 +21,7 @@ contractions:
   - full: "it is"
     short: "it's"
     ipa: "/ɪts/"
-    note_ru: "Цену почти всегда называют с it's: It's two dollars."
+    note_ru: "It's — сокращение it is: It's two dollars. Можно ответить и коротко: Two dollars."
   - full: "that is"
     short: "that's"
     ipa: "/ðæts/"
@@ -29,7 +29,7 @@ contractions:
 layers:
   - number: 1
     body: |
-      Американские цены — отдельное приключение: доллары, центы и налог, который часто добавляют прямо на кассе. Но главный вопрос всегда один: *How much is it?* Научитесь задавать его и понимать ответ — и вы купите всё, что нужно.
+      Американские цены — отдельное приключение: доллары, центы и налог, который часто добавляют прямо на кассе. Но главный вопрос всегда один: *How much is it?* Научитесь задавать его и понимать ответ — и сможете уточнить цену покупки.
 
       Чтобы купить что-то, нужно понять цену. Для этого хватит одного вопроса и одного ответа.
 
@@ -39,12 +39,15 @@ layers:
       Числа 1–20 вы уже изучили в кафе. Теперь переносим знакомые числа в **новую ситуацию** — узнать и назвать цену. Дополнительное слово здесь — **dollars**.
   - number: 2
     body: |
-      **dollar** пришло из немецкого `Taler` — так называли большую серебряную монету из долины Йоахимсталь в Чехии. Голландцы произносили «далер», от них слово попало в Америку.
+      В магазине нужны два разных вопроса:
 
-      **How much** означает «сколько»: им спрашивают **количество вещества** (*how much milk?*) или **цену** (*How much is it?*). В этом уроке учимся спрашивать цену. Не путайте с **how many**, когда нужно узнать **число предметов**.
+      - *How much is the milk?* — «Сколько стоит молоко?»: спрашиваем **цену**.
+      - *How much milk?* — «Сколько молока?»: спрашиваем **количество**.
+
+      Цена яблок тоже спрашивается через **how much**: *How much are the apples?* Яблок несколько, поэтому ставим **are**. Для сравнения: *How many apples?* — «Сколько яблок?»: здесь нас интересует число яблок, а не цена.
   - number: 3
     body: |
-      **Как спросить цену с be?** Сначала идёт *How much*, затем форма **be**, которая согласуется с предметом, затем название предмета:
+      **Как спросить цену с be?** Сначала идёт *How much*, затем **is** для одной вещи или продукта вроде молока, **are** — для нескольких вещей. После **is / are** называем товар:
 
       > [A6]How[/] [T4]much[/] [D1]is[/] [T8]it[/]? — Сколько это стоит?
       > [A6]How[/] [T4]much[/] [D1]are[/] [T1]the[/] [S3]apples[/]? — Сколько стоят яблоки?
@@ -66,7 +69,7 @@ layers:
 
       **Диагностика понимания:** Вы спрашиваете цену **нескольких яблок**. Что верно: *How much are the apples?* или *How much is the apples?*?
 
-      **Разбор:** *How much are the apples?* — **are** согласуется с **apples**, хотя **how much** здесь относится к **цене**, а не к числу яблок. Чтобы спросить их количество, используйте *How many apples?*.
+      **Разбор:** *How much are the apples?* — выбираем **are**, потому что яблок несколько. При этом **how much** относится к **цене**, а не к числу яблок. Чтобы спросить их количество, используйте *How many apples?*.
   - number: 5
     body: |
       Так называют цену в американском магазине:
@@ -97,9 +100,9 @@ layers:
       В русском после разных чисел окончания меняются сложнее. В наших примерах с **целыми числами** правило короткое: *one dollar* и *two / three / ten dollars*. Цены вроде *$1.50* читаются иначе, их изучим отдельно.
   - number: 7
     body: |
-      Шесть заданий: узнать вопрос о цене, прочитать ценник, собрать вопрос, ответить продавцу, оценить цену и заказать маленький напиток.
+      Шесть заданий: узнать вопрос о цене, прочитать ценник, собрать вопрос, назвать цену яблок, оценить цену и заказать маленький напиток.
 
-      **Проверка маленького шага:** *How much is the milk?* спрашивает **цену молока**, а *How much milk?* — его **количество**. Одни слова **how much** не определяют смысл: ищите, что следует за ними — **is/are + предмет** или само название вещества.
+      **Проверка маленького шага:** *How much is the milk?* спрашивает **цену молока**, а *How much milk?* — его **количество**. В этих двух примерах различайте **«сколько стоит»** и **«сколько молока»**. Это сравнение двух вопросов, а не общее правило для всех фраз с how much.
 exercises:
   - order: 1
     uid: EX-00050
@@ -135,12 +138,12 @@ exercises:
     uid: EX-00053
     kind: fill
     stage: transfer
-    prompt_ru: "Новая ситуация: вы продаёте яблоки на школьной ярмарке. Покупатель спрашивает цену, а на ценнике $5. Ответьте."
-    prompt_en: "How much is it? — ___"
-    answer: "It is five dollars."
-    accepted: ["It's five dollars.", "Five dollars.", "It is five dollars", "It's five dollars", "Five dollars", "That's five dollars.", "That is five dollars."]
-    hint_ru: "It is или It's, потом число и dollars."
-    explanation_ru: "It is five dollars. В разговоре — It's five dollars или просто Five dollars."
+    prompt_ru: "Новая ситуация: вы продаёте яблоки на школьной ярмарке. Все эти яблоки стоят $5. Ответьте полным предложением о яблоках, начните с They."
+    prompt_en: "How much are the apples? — ___"
+    answer: "They are five dollars."
+    accepted: ["They're five dollars."]
+    hint_ru: "They относится к яблокам: после they выберите are, затем назовите цену."
+    explanation_ru: "They are five dollars. They относится к apples, поэтому are. They're five dollars тоже подходит. Five dollars — естественный короткий ответ, но здесь по условию нужно полное предложение о яблоках с They."
     units: [LX-00116, LX-00123]
   - order: 5
     uid: EX-00054
@@ -166,10 +169,12 @@ exercises:
 practice:
 - order: 1
   kind: translate
-  prompt_ru: Сколько стоит молоко?
+  prompt_ru: Сколько стоит молоко? Используйте вопрос с is.
   answer: How much is the milk?
+  accepted:
+  - How much is milk?
   hint_ru: How much is…?
-  explanation_ru: How much is the milk? Цену спрашивают через How much…?
+  explanation_ru: How much is the milk? — вопрос о цене конкретного молока. How much is milk? тоже спрашивает цену молока. В этом задании используем вопрос с is, как указано в условии.
   review_of: 3
   units:
   - LX-00114
@@ -186,7 +191,7 @@ practice:
   - That is two dollars.
   hint_ru: two dollars — с -s.
   explanation_ru: It's two dollars. После two — dollars с -s.
-  review_of: 3
+  review_of: 4
   units:
   - LX-00116
   - LX-00122
@@ -194,10 +199,10 @@ practice:
   - LX-00302
 - order: 3
   kind: translate
-  prompt_ru: Сколько стоят яблоки?
+  prompt_ru: Сколько стоят яблоки? Используйте вопрос с are.
   answer: How much are the apples?
-  hint_ru: Яблок много — are.
-  explanation_ru: How much are the apples? Apples — много, поэтому are.
+  hint_ru: Яблок несколько — are.
+  explanation_ru: How much are the apples? Apples — множественное число, поэтому are. В этом задании используем вопрос с are, как указано в условии.
   review_of: 3
   units:
   - LX-00114
@@ -210,6 +215,6 @@ practice:
   answer: They are cheap!
   hint_ru: «Они» — they.
   explanation_ru: They are cheap! Cheap — дешёвый, expensive — дорогой.
-  review_of: 3
+  review_of: 5
   units:
   - LX-00293

@@ -1,7 +1,7 @@
 level: A1
 week: 6
 can_do_ru: "Я смогу рассказать о своём обычном дне — утро, обед, вечер: во сколько встаю, ем, работаю и ложусь спать — и спросить: What time do you get up?"
-mission_ru: "Расскажите вслух по-английски о своём дне пятью фразами: I get up at… I have breakfast at… I have lunch at… In the evening I… I go to bed at… Спросите кого-нибудь: What time do you get up?"
+mission_ru: "Расскажите вслух по-английски о своём дне пятью фразами: I get up at… I have breakfast at… I have lunch at… In the evening I… I go to bed at… Спросите кого-нибудь: What time do you get up? Если занимаетесь один, задайте вопрос вслух и ответьте за воображаемого собеседника."
 chunks: [LX-00135, LX-00136, LX-00137, LX-00138, LX-00139, LX-00140, LX-00318]
 story_beat:
   intro_ru: "Box так и не вернулся домой. Утром Анна и Том заходят к Мие на работу — в кафе на углу."
@@ -66,4 +66,4 @@ twister:
   - '[T8]We[/] [D2]work[/] [T5]every[/] [S7]week[/]. [T8]We[/] [D6]watch[/] [S2]TV[/] [T5]every[/] [S7]evening[/].'
   - '[T8]I[/] [D2]work[/] [A3]here[/] [T5]every[/] [S7]day[/].'
   target_line: I work here every day.
-  own_ru: 'Скажите, во сколько вы начинаете работать или учиться: I work at…'
+  own_ru: 'Скажите, в какое время вы обычно работаете: I work at…'

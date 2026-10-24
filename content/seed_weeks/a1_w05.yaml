@@ -1,7 +1,7 @@
 level: A1
 week: 5
 can_do_ru: "Я смогу спросить в магазине, есть ли нужный товар, выбрать по цвету, узнать цену (How much is it?) и сказать, дёшево это или дорого."
-mission_ru: "Дома или в магазине назовите по-английски три продукта с цветом: There are red apples. There is white milk… Спросите кого-нибудь: How much is it? — ответьте ценой и скажите: It is cheap! или That is expensive!"
+mission_ru: "Назовите три продукта дома или в магазине: There is milk. There are red apples… Назначьте цены в долларах. Спросите цены и ответьте за продавца: How much is the milk? — It is two dollars. How much are the apples? — They are three dollars. Оцените цену: That is cheap! или That is expensive!"
 chunks: [LX-00118, LX-00119, LX-00120, LX-00121, LX-00122, LX-00123, LX-00301, LX-00302]
 story_beat:
   intro_ru: "Утро. Анна и Том идут в маленький магазин у дома. Нужно молоко, яблоки и корм для кота Box."
@@ -38,7 +38,7 @@ script:
   - speaker: tom
     emotion: surprised
     text: "[T4]No[/] [S6]cat[/] [S3]food[/]? [S1]Box[/] [D3]likes[/] [S3]milk[/]! [S6]Cat[/] [S3]food[/] [D1]is[/] [J3]expensive[/]!"
-    ru: "Корма нет? Ничего, Box любит молоко! А корм всё равно дорогой!"
+    ru: "Корма для кошек нет? Box любит молоко! Корм для кошек дорогой!"
   - speaker: anna
     text: "[A6]How[/] [T4]much[/] [D1]is[/] [T1]the[/] [S3]milk[/]?"
     ru: "Сколько стоит молоко?"
