@@ -1,0 +1,120 @@
+Found 40 test(s).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: messages, runserver_nostatic, staticfiles
+  Apply all migrations: accounts, admin, auth, axes, contenttypes, curriculum, drills, learning, lessons, lexicon, poems, sessions, stories, taxonomy
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying curriculum.0001_initial... OK
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying accounts.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying axes.0001_initial... OK
+  Applying axes.0002_auto_20151217_2044... OK
+  Applying axes.0003_auto_20160322_0929... OK
+  Applying axes.0004_auto_20181024_1538... OK
+  Applying axes.0005_remove_accessattempt_trusted... OK
+  Applying axes.0006_remove_accesslog_trusted... OK
+  Applying axes.0007_alter_accessattempt_unique_together... OK
+  Applying axes.0008_accessfailurelog... OK
+  Applying axes.0009_add_session_hash... OK
+  Applying axes.0010_accessattemptexpiration... OK
+  Applying taxonomy.0001_initial... OK
+  Applying lexicon.0001_initial... OK
+  Applying lexicon.0002_unit_forms... OK
+  Applying lexicon.0003_unit_search_text... OK
+  Applying lexicon.0004_unit_ipa_ru... OK
+  Applying curriculum.0002_week_grammar_markers_week_grammar_ru_and_more... OK
+  Applying curriculum.0003_scene_story_beat... OK
+  Applying curriculum.0004_twister_method... OK
+  Applying lessons.0001_initial... OK
+  Applying lessons.0002_lesson_sound_notes... OK
+  Applying lessons.0003_lesson_contractions... OK
+  Applying drills.0001_initial... OK
+  Applying drills.0002_practiceitem... OK
+  Applying drills.0003_exercise_uid_archive... OK
+  Applying lexicon.0005_longer_ipa_and_verification_note... OK
+  Applying learning.0001_initial... OK
+  Applying learning.0002_weekgoal... OK
+  Applying learning.0003_speechpracticeprogress... OK
+  Applying learning.0004_mistakereview... OK
+  Applying learning.0005_independentattempt... OK
+  Applying learning.0006_independentattempt_rubric... OK
+  Applying learning.0007_independent_teacher_review... OK
+  Applying learning.0008_independent_batch_idempotency... OK
+  Applying learning.0009_independent_assistance... OK
+  Applying learning.0010_independent_prompt_snapshot... OK
+  Applying learning.0011_pilot_stage_idempotency... OK
+  Applying learning.0012_protect_learner_history_and_ranges... OK
+  Applying poems.0001_initial... OK
+  Applying poems.0002_poem_gaps_poem_pronunciation_poem_target_units_and_more... OK
+  Applying sessions.0001_initial... OK
+  Applying stories.0001_initial... OK
+  Applying stories.0002_story_characters_story_creative_ru_story_focus_and_more... OK
+  Applying stories.0003_story_script_audio... OK
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).
+test_early_quiz_options_use_plain_russian (tests.test_a1_active_quality.ActiveA1ContentQualityTests.test_early_quiz_options_use_plain_russian) ... ok
+test_english_models_use_vocabulary_known_in_their_week (tests.test_a1_active_quality.ActiveA1ContentQualityTests.test_english_models_use_vocabulary_known_in_their_week) ... ok
+test_in_is_introduced_before_the_time_lesson (tests.test_a1_active_quality.ActiveA1ContentQualityTests.test_in_is_introduced_before_the_time_lesson) ... ok
+test_interactive_explanations_match_the_corrected_course (tests.test_a1_active_quality.ActiveA1ContentQualityTests.test_interactive_explanations_match_the_corrected_course)
+Интерактив не должен отменять правило, уже уточнённое в YAML-уроке. ... ok
+test_mia_gets_up_at_five (tests.test_a1_active_quality.ActiveA1ContentQualityTests.test_mia_gets_up_at_five) ... ok
+test_renamed_source_lesson_has_no_dead_practice_invitation (tests.test_a1_active_quality.ActiveA1ContentQualityTests.test_renamed_source_lesson_has_no_dead_practice_invitation) ... ok
+test_six_mission_models_are_distinct_within_each_lesson (tests.test_a1_active_quality.ActiveA1ContentQualityTests.test_six_mission_models_are_distinct_within_each_lesson) ... ok
+test_toms_mother_has_her_own_age (tests.test_a1_active_quality.ActiveA1ContentQualityTests.test_toms_mother_has_her_own_age) ... ok
+test_all_twenty_eight_error_repairs_are_original_and_present (tests.test_a1_active_studio.ActiveA1CatalogTests.test_all_twenty_eight_error_repairs_are_original_and_present) ... ok
+test_builder_is_hidden_before_first_independent_response (tests.test_a1_active_studio.ActiveA1CatalogTests.test_builder_is_hidden_before_first_independent_response) ... ok
+test_catalog_source_files_are_bounded_and_present (tests.test_a1_active_studio.ActiveA1CatalogTests.test_catalog_source_files_are_bounded_and_present) ... ok
+test_content_meets_five_step_minimum (tests.test_a1_active_studio.ActiveA1CatalogTests.test_content_meets_five_step_minimum) ... ok
+test_deleted_source_slug_does_not_show_stale_practice (tests.test_a1_active_studio.ActiveA1CatalogTests.test_deleted_source_slug_does_not_show_stale_practice) ... ok
+test_every_topic_is_accessible_by_get (tests.test_a1_active_studio.ActiveA1CatalogTests.test_every_topic_is_accessible_by_get) ... ok
+test_existing_lesson_and_mission_are_both_linked (tests.test_a1_active_studio.ActiveA1CatalogTests.test_existing_lesson_and_mission_are_both_linked) ... ok
+test_has_exactly_twenty_eight_distinct_topics_and_valid_order (tests.test_a1_active_studio.ActiveA1CatalogTests.test_has_exactly_twenty_eight_distinct_topics_and_valid_order) ... ok
+test_links_on_existing_lessons_are_bounded (tests.test_a1_active_studio.ActiveA1CatalogTests.test_links_on_existing_lessons_are_bounded) ... ok
+test_missions_render_on_every_topic_page_without_exposing_models (tests.test_a1_active_studio.ActiveA1CatalogTests.test_missions_render_on_every_topic_page_without_exposing_models) ... ok
+test_new_material_does_not_replace_original_cafe_lab (tests.test_a1_active_studio.ActiveA1CatalogTests.test_new_material_does_not_replace_original_cafe_lab) ... ok
+test_new_topics_train_week_ten_and_accept_the_infinitive_alternative (tests.test_a1_active_studio.ActiveA1CatalogTests.test_new_topics_train_week_ten_and_accept_the_infinitive_alternative) ... ok
+test_no_server_side_submission_or_private_audio (tests.test_a1_active_studio.ActiveA1CatalogTests.test_no_server_side_submission_or_private_audio) ... ok
+test_out_of_range_topic_is_404 (tests.test_a1_active_studio.ActiveA1CatalogTests.test_out_of_range_topic_is_404) ... ok
+test_six_new_scenarios_per_lesson_and_two_improv_twists (tests.test_a1_active_studio.ActiveA1CatalogTests.test_six_new_scenarios_per_lesson_and_two_improv_twists) ... ok
+test_six_story_cards_are_visible_below_the_canonical_lesson (tests.test_a1_active_studio.ActiveA1CatalogTests.test_six_story_cards_are_visible_below_the_canonical_lesson) ... ok
+test_source_lesson_deep_links_select_only_valid_mission_numbers (tests.test_a1_active_studio.ActiveA1CatalogTests.test_source_lesson_deep_links_select_only_valid_mission_numbers) ... ok
+test_unpublished_lesson_hides_its_supplemental_page (tests.test_a1_active_studio.ActiveA1CatalogTests.test_unpublished_lesson_hides_its_supplemental_page) ... ok
+test_first_conditional_rule_is_scoped (tests.test_a1_a1plus_semantic_regressions.A1A1PlusSemanticRegressions.test_first_conditional_rule_is_scoped) ... ok
+test_impersonal_it_applies_to_a_full_statement (tests.test_a1_a1plus_semantic_regressions.A1A1PlusSemanticRegressions.test_impersonal_it_applies_to_a_full_statement) ... ok
+test_per_day_is_not_misdescribed_as_literal_each (tests.test_a1_a1plus_semantic_regressions.A1A1PlusSemanticRegressions.test_per_day_is_not_misdescribed_as_literal_each) ... ok
+test_present_simple_not_conflated_with_right_now (tests.test_a1_a1plus_semantic_regressions.A1A1PlusSemanticRegressions.test_present_simple_not_conflated_with_right_now) ... ok
+test_you_is_both_singular_and_plural (tests.test_a1_a1plus_semantic_regressions.A1A1PlusSemanticRegressions.test_you_is_both_singular_and_plural) ... ok
+test_500_entries_have_usable_bilingual_identity_and_honest_cefr (tests.test_a1_linguistic_integrity.A1LinguisticIntegrityTests.test_500_entries_have_usable_bilingual_identity_and_honest_cefr) ... ok
+test_dictionary_examples_do_not_change_the_proposition (tests.test_a1_linguistic_integrity.A1LinguisticIntegrityTests.test_dictionary_examples_do_not_change_the_proposition) ... ok
+test_full_a1_material_inventory_and_unique_ids (tests.test_a1_linguistic_integrity.A1LinguisticIntegrityTests.test_full_a1_material_inventory_and_unique_ids) ... ok
+test_poem_generator_and_poem_agree_on_temporal_on_and_plural_ipa (tests.test_a1_linguistic_integrity.A1LinguisticIntegrityTests.test_poem_generator_and_poem_agree_on_temporal_on_and_plural_ipa) ... ok
+test_recurring_days_are_explicit_and_forms_registered (tests.test_a1_linguistic_integrity.A1LinguisticIntegrityTests.test_recurring_days_are_explicit_and_forms_registered) ... ok
+test_some_is_not_taught_as_necessarily_a_small_amount (tests.test_a1_linguistic_integrity.A1LinguisticIntegrityTests.test_some_is_not_taught_as_necessarily_a_small_amount) ... ok
+test_28_lessons_and_163_exercises_have_solvable_unambiguous_keys (tests.test_a1_corpus_alignment.A1CorpusAlignmentTests.test_28_lessons_and_163_exercises_have_solvable_unambiguous_keys) ... ok
+test_500_entries_demonstrate_the_target_lemma_or_declared_form (tests.test_a1_corpus_alignment.A1CorpusAlignmentTests.test_500_entries_demonstrate_the_target_lemma_or_declared_form) ... ok
+test_500_examples_preserve_explicit_negation_in_russian (tests.test_a1_corpus_alignment.A1CorpusAlignmentTests.test_500_examples_preserve_explicit_negation_in_russian) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 7.563s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

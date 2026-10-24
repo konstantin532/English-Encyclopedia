@@ -1,0 +1,14 @@
+{
+  "status": "INTERRUPTED_SUPERSEDED",
+  "wrapper_exit_code": 130,
+  "pytest_exit_code": null,
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "pytest",
+    "-q",
+    "-rfE"
+  ],
+  "note": "Intermediate draft run had displayed a failure. Deliberately interrupted after final corrected suite was started; no complete summary. Never a PASS; final pytest is separate."
+}

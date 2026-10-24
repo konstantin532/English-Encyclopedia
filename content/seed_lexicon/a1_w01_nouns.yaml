@@ -64,7 +64,7 @@ units:
     substitutions: [at home, nice, busy, my friend]
     situation: Отвечаете, где родители
     usage_note: "В разговоре чаще dad."
-    typical_error: "«My father is home work» — пропуск предлога. Говорят: at home, at work."
+    typical_error: "Если вы хотите сказать «Мой отец дома», нужна форма is: My father is at home. В американском английском также правильно My father is home. В записи My father at home пропущено is; предлог at можно опустить в сочетании is home, но сам глагол в обычном полном предложении остаётся."
   - uid: LX-00004
     lemma: friend
     meaning: a person you know well and like
@@ -137,7 +137,7 @@ units:
     verification_status: partial
     verification_note: "Oxford 3000 (American English): room n. — A1. Уровень дан для слова, значение отдельно не сверялось"
     ipa_us: "/ruːm/"
-    stress_note: "Долгое /uː/"
+    stress_note: "Учебный образец — /ruːm/, один слог. В американском английском также встречается /rʊm/."
     translation_ru: комната
     frequency_source: "NGSL — требует проверки"
     collocations: [my room, a big room, a room with a view]
@@ -147,7 +147,7 @@ units:
     pattern: "This is my ___."
     substitutions: [room, house, book, phone]
     situation: Показываете квартиру
-    typical_error: "Room — это не «рум» с коротким у: гласная долгая /uː/."
+    typical_error: "Слушайте английский образец, а не читайте слово по русским буквам. Мы тренируем /ruːm/, но словарный вариант /rʊm/ тоже допустим; более короткий гласный сам по себе не делает произношение ошибочным."
   - uid: LX-00008
     lemma: book
     meaning: a set of printed pages fastened together inside a cover
@@ -208,8 +208,8 @@ units:
     pattern: "___, please."
     substitutions: [Water, Coffee, A coffee]
     situation: Просите в кафе
-    usage_note: "Water неисчисляемое: не «a water», а some water или a glass of water."
-    typical_error: "«two waters» в значении «два литра воды». Говорят: two glasses of water."
+    usage_note: "Когда water означает воду как вещество, обычно говорим water без a: I like water. В просьбе возможны Can I have water, please? и Can I have some water, please? В заказе a water может означать одну порцию или бутылку воды, если это понятно из ситуации. Это не делает water исчисляемым во всех значениях."
+    typical_error: "Не переводите two waters как «два литра воды». В заказе это может быть две порции или две бутылки; объём не указан. «Два литра воды» — two liters of water, а two glasses of water — «два стакана воды». Эти сочетания различаются по смыслу."
   - uid: LX-00011
     lemma: coffee
     meaning: a hot drink made from roasted coffee beans

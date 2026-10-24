@@ -1,0 +1,21 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "branch": "editorial/a1-01-04-review-implementation",
+  "initial_branch": "prepare/a1-01-04-review-20261025",
+  "initial_head": "944e01c93b0c212124a3aa4a914527e44ea85efc",
+  "initial_worktree": "clean",
+  "reviewed_lessons": 4,
+  "applied_findings": 27,
+  "partial_findings": [
+    "R16",
+    "R17"
+  ],
+  "deferred_optional": [
+    "R09",
+    "R25",
+    "R32"
+  ],
+  "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+  "django_summary": "Ran 818 tests in 431.135s\n\nOK (skipped=2)",
+  "pytest_summary": "820 passed, 2 skipped, 5015 subtests passed in 1368.33s (0:22:48)"
+}

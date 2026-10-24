@@ -1,0 +1,871 @@
+[
+  {
+    "id": "R01",
+    "title": "Термин об исчисляемости появляется раньше простого объяснения",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/layers/3/body",
+        "resolved_pointer": "/layers/3/body",
+        "before_match": true,
+        "identities": [
+          {
+            "number": 4
+          }
+        ]
+      },
+      {
+        "pointer": "/exercises/0/hint_ru",
+        "resolved_pointer": "/exercises/0/hint_ru",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "EX-00001"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false,
+    "decision_note": "После бытового объяснения сохранён точный термин «исчисляемому существительному в единственном числе». Старый защитный тест выявил потерю терминологического моста; тест не менялся. Уточнение не возвращает термин до его объяснения."
+  },
+  {
+    "id": "R02",
+    "title": "EX-00004: естественное объединение двух мыслей не узнаётся",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/exercises/3/accepted",
+        "resolved_pointer": "/exercises/3/accepted",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "EX-00004"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R03",
+    "title": "Перевод имени не принимает сокращение, звучащее в самой истории",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/practice/2/accepted",
+        "resolved_pointer": "/practice/2/accepted",
+        "before_match": true,
+        "identities": [
+          {
+            "order": 3
+          }
+        ]
+      },
+      {
+        "pointer": "/practice/2/explanation_ru",
+        "resolved_pointer": "/practice/2/explanation_ru",
+        "before_match": true,
+        "identities": [
+          {
+            "order": 3
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R04",
+    "title": "Независимый перенос незаметно проверяет новую лексику",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/lessons/0/transfer_variants/1",
+        "resolved_pointer": "/lessons/0/transfer_variants/1",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-nouns-first-words"
+          },
+          {
+            "exact_legacy_record": true
+          }
+        ]
+      },
+      {
+        "pointer": "/lessons/2/transfer_variants/1",
+        "resolved_pointer": "/lessons/2/transfer_variants/1",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-determiners-a-the-this-my"
+          },
+          {
+            "exact_legacy_record": true
+          }
+        ]
+      },
+      {
+        "pointer": "/lessons/3/transfer_variants/0",
+        "resolved_pointer": "/lessons/3/transfer_variants/0",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-have-like-can-do"
+          },
+          {
+            "exact_legacy_record": true
+          }
+        ]
+      },
+      {
+        "pointer": "/lessons/3/transfer_variants/1",
+        "resolved_pointer": "/lessons/3/transfer_variants/1",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-have-like-can-do"
+          },
+          {
+            "exact_legacy_record": true
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R05",
+    "title": "Like и глаголы после can ошибочно сводятся к действиям",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/layers/1/body",
+        "resolved_pointer": "/layers/1/body",
+        "before_match": true,
+        "identities": [
+          {
+            "number": 2
+          }
+        ]
+      },
+      {
+        "pointer": "/layers/2/body",
+        "resolved_pointer": "/layers/2/body",
+        "before_match": true,
+        "identities": [
+          {
+            "number": 3
+          }
+        ]
+      },
+      {
+        "pointer": "/layers/3/body",
+        "resolved_pointer": "/layers/3/body",
+        "before_match": true,
+        "identities": [
+          {
+            "number": 4
+          }
+        ]
+      },
+      {
+        "pointer": "/3/why",
+        "resolved_pointer": "/3/why",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-have-like-can-do"
+          }
+        ]
+      },
+      {
+        "pointer": "/a1-have-like-can-do/3/focus",
+        "resolved_pointer": "/a1-have-like-can-do/3/focus",
+        "before_match": true,
+        "identities": []
+      },
+      {
+        "pointer": "/a1-have-like-can-do/3/choices/I can water, please?",
+        "resolved_pointer": "/a1-have-like-can-do/3/choices/I can water, please?",
+        "before_match": true,
+        "identities": []
+      },
+      {
+        "pointer": "/a1-have-like-can-do/4/focus",
+        "resolved_pointer": "/a1-have-like-can-do/4/focus",
+        "before_match": true,
+        "identities": []
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R06",
+    "title": "Подсказка your → my меняет владельца вместо точки зрения",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/a1-verb-be/5/focus",
+        "resolved_pointer": "/a1-verb-be/5/focus",
+        "before_match": true,
+        "identities": []
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R07",
+    "title": "Независимое письмо не узнаёт изученное I’m home",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/lessons/1/tasks/writing/accepted",
+        "resolved_pointer": "/lessons/1/tasks/writing/accepted",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-verb-be"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R08",
+    "title": "Перевод смысла необоснованно ограничен одной русской формулировкой",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/lessons/1/tasks/meaning/accepted",
+        "resolved_pointer": "/lessons/1/tasks/meaning/accepted",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-verb-be"
+          }
+        ]
+      },
+      {
+        "pointer": "/lessons/3/tasks/meaning/accepted",
+        "resolved_pointer": "/lessons/3/tasks/meaning/accepted",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-have-like-can-do"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R09",
+    "title": "Последняя реплика лабораторного диалога не продолжает ситуацию",
+    "status": "DEFERRED_OPTIONAL",
+    "fields": [],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": null
+  },
+  {
+    "id": "R10",
+    "title": "A book после is ошибочно объясняется неизвестностью указанного предмета",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/layers/1/body",
+        "resolved_pointer": "/layers/1/body",
+        "before_match": true,
+        "identities": [
+          {
+            "number": 2
+          }
+        ]
+      },
+      {
+        "pointer": "/layers/3/body",
+        "resolved_pointer": "/layers/3/body",
+        "before_match": true,
+        "identities": [
+          {
+            "number": 4
+          }
+        ]
+      },
+      {
+        "pointer": "/layers/4/body",
+        "resolved_pointer": "/layers/4/body",
+        "before_match": true,
+        "identities": [
+          {
+            "number": 5
+          }
+        ]
+      },
+      {
+        "pointer": "/lessons/2/contrast/a_ru",
+        "resolved_pointer": "/lessons/2/contrast/a_ru",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-determiners-a-the-this-my"
+          }
+        ]
+      },
+      {
+        "pointer": "/lessons/2/contrast/why",
+        "resolved_pointer": "/lessons/2/contrast/why",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-determiners-a-the-this-my"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "decision_note": "Дополнительно уточнён оставшийся пункт a book в layer2: название вида предмета в This is a book. Буквальный after оставлял противоречие с новым абзацем; независимая проверка подтвердила необходимость.",
+    "already_present": false
+  },
+  {
+    "id": "R11",
+    "title": "Один фонетический образец смешивает базовую форму и пояснение об ассимиляции",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/sound_notes/2/ipa",
+        "resolved_pointer": "/sound_notes/2/ipa",
+        "before_match": true,
+        "identities": [
+          {
+            "text": "Is this your phone?"
+          }
+        ]
+      },
+      {
+        "pointer": "/sound_notes/2/note_ru",
+        "resolved_pointer": "/sound_notes/2/note_ru",
+        "before_match": true,
+        "identities": [
+          {
+            "text": "Is this your phone?"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R12",
+    "title": "EX-00014 не узнаёт ответ с правильными свойствами в обратном порядке",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/exercises/4/accepted",
+        "resolved_pointer": "/exercises/4/accepted",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "EX-00014"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R13",
+    "title": "Перевод обычной комнаты связан со словарной единицей «гостиная»",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/practice/1/units",
+        "resolved_pointer": "/practice/1/units",
+        "before_match": true,
+        "identities": [
+          {
+            "order": 2
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R14",
+    "title": "Краткая справка сводит вопросы с do к привычкам",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/lessons/3/why",
+        "resolved_pointer": "/lessons/3/why",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-have-like-can-do"
+          }
+        ]
+      },
+      {
+        "pointer": "/lessons/3/tasks/explain/model",
+        "resolved_pointer": "/lessons/3/tasks/explain/model",
+        "before_match": true,
+        "identities": [
+          {
+            "slug": "a1-have-like-can-do"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R15",
+    "title": "Для cannot выбран не основной орфографический образец",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/contractions/1/full",
+        "resolved_pointer": "/contractions/1/full",
+        "before_match": true,
+        "identities": [
+          {
+            "full": "can not"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R16",
+    "title": "Основной перевод не узнаёт some water из соседней проверки",
+    "status": "PARTIAL_BLOCKED_PROGRAMME_CONTRACT",
+    "fields": [
+      {
+        "pointer": "/practice/0/accepted",
+        "resolved_pointer": "/practice/0/accepted",
+        "before_match": true,
+        "identities": [
+          {
+            "order": 1
+          }
+        ]
+      },
+      {
+        "pointer": "/practice/0/explanation_ru",
+        "resolved_pointer": "/practice/0/explanation_ru",
+        "before_match": true,
+        "identities": [
+          {
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false,
+    "decision_note": "Пояснения внедрены. Расширение accepted не внедрено: some вводится в словаре с недели 5, got — форма get с недели 6. test_answers_use_only_vocabulary_known_by_the_lesson_week запрещает будущую лексику и в accepted. Исходный тест не изменён, whitelist/ложные forms/перенос слов между неделями не использованы. Свободный ответ остаётся needs_review, не доказанной грамматической ошибкой. Для полного закрытия нужно отдельно решить контракт распознавания факультативных ответов."
+  },
+  {
+    "id": "R17",
+    "title": "Разрешённое в объяснении have got отсутствует в свободном переводе",
+    "status": "PARTIAL_BLOCKED_PROGRAMME_CONTRACT",
+    "fields": [
+      {
+        "pointer": "/practice/2",
+        "resolved_pointer": "/practice/2",
+        "before_match": true,
+        "identities": [
+          {
+            "order": 3
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false,
+    "decision_note": "Пояснения внедрены. Расширение accepted не внедрено: some вводится в словаре с недели 5, got — форма get с недели 6. test_answers_use_only_vocabulary_known_by_the_lesson_week запрещает будущую лексику и в accepted. Исходный тест не изменён, whitelist/ложные forms/перенос слов между неделями не использованы. Свободный ответ остаётся needs_review, не доказанной грамматической ошибкой. Для полного закрытия нужно отдельно решить контракт распознавания факультативных ответов."
+  },
+  {
+    "id": "R18",
+    "title": "Допустимые разговорные вопросы используются как безусловно неправильные",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/units/3/typical_error",
+        "resolved_pointer": "/units/3/typical_error",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "LX-00036"
+          }
+        ]
+      },
+      {
+        "pointer": "/a1-have-like-can-do/4/0",
+        "resolved_pointer": "/a1-have-like-can-do/4/0",
+        "before_match": true,
+        "identities": [
+          {
+            "exact_legacy_record": true
+          }
+        ]
+      },
+      {
+        "pointer": "/a1-have-like-can-do/4/2",
+        "resolved_pointer": "/a1-have-like-can-do/4/2",
+        "before_match": true,
+        "identities": [
+          {
+            "exact_legacy_record": true
+          }
+        ]
+      },
+      {
+        "pointer": "/a1-have-like-can-do/5/0",
+        "resolved_pointer": "/a1-have-like-can-do/5/0",
+        "before_match": true,
+        "identities": [
+          {
+            "exact_legacy_record": true
+          }
+        ]
+      },
+      {
+        "pointer": "/a1-have-like-can-do/5/4",
+        "resolved_pointer": "/a1-have-like-can-do/5/4",
+        "before_match": true,
+        "identities": [
+          {
+            "exact_legacy_record": true
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R19",
+    "title": "Вопрос требует стакан, а ключ сообщает только о воде",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/a1-have-like-can-do/6/3",
+        "resolved_pointer": "/a1-have-like-can-do/6/3",
+        "before_match": true,
+        "identities": [
+          {
+            "exact_legacy_record": true
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R20",
+    "title": "В устных миссиях не совпадают роль ученика, владелец и my",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/3/missions/0",
+        "resolved_pointer": "/3/missions/0",
+        "before_match": true,
+        "identities": [
+          {
+            "n": 4
+          },
+          {
+            "id": 1
+          }
+        ]
+      },
+      {
+        "pointer": "/3/missions/5",
+        "resolved_pointer": "/3/missions/5",
+        "before_match": true,
+        "identities": [
+          {
+            "n": 4
+          },
+          {
+            "id": 6
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R21",
+    "title": "Пилот отсроченного переноса добавляет не подготовленное Would you like",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "locator": "PILOTS[\"a1-have-like-can-do\"][\"missions\"][2]",
+        "before_match": true,
+        "identity": {
+          "slug": "a1-have-like-can-do",
+          "stage": "day_30",
+          "variant": 102
+        }
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R22",
+    "title": "Словарь запрещает a water и подменяет литры стаканами",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/units/9/usage_note",
+        "resolved_pointer": "/units/9/usage_note",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "LX-00010"
+          }
+        ]
+      },
+      {
+        "pointer": "/units/9/typical_error",
+        "resolved_pointer": "/units/9/typical_error",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "LX-00010"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R23",
+    "title": "Непонятная ошибка с father мешает различить home и at home",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/units/2/typical_error",
+        "resolved_pointer": "/units/2/typical_error",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "LX-00003"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R24",
+    "title": "Допустимый американский вариант room объявлен ошибочным",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/units/6/stress_note",
+        "resolved_pointer": "/units/6/stress_note",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "LX-00007"
+          }
+        ]
+      },
+      {
+        "pointer": "/units/6/typical_error",
+        "resolved_pointer": "/units/6/typical_error",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "LX-00007"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R25",
+    "title": "Сравнение no с ещё не объяснённым know затрудняет подсказку",
+    "status": "DEFERRED_OPTIONAL",
+    "fields": [],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": null
+  },
+  {
+    "id": "R26",
+    "title": "Словарь требует ударения на can’t всегда, урок — нет",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/units/2/stress_note",
+        "resolved_pointer": "/units/2/stress_note",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "LX-00035"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false,
+    "decision_note": "Предложенные 244 символа не помещаются в stress_note(max_length=120). Внесена 112-символьная версия с теми же ключевыми ограничениями; схема базы и защитный тест не менялись."
+  },
+  {
+    "id": "R27",
+    "title": "Yes без продолжения необоснованно объявляется сухим",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/units/15/usage_note",
+        "resolved_pointer": "/units/15/usage_note",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "LX-00031"
+          }
+        ]
+      },
+      {
+        "pointer": "/units/15/typical_error",
+        "resolved_pointer": "/units/15/typical_error",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "LX-00031"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R28",
+    "title": "Английское определение bathroom не покрывает объяснённое US-значение",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/units/1/meaning",
+        "resolved_pointer": "/units/1/meaning",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "LX-00482"
+          }
+        ]
+      },
+      {
+        "pointer": "/units/1/usage_note",
+        "resolved_pointer": "/units/1/usage_note",
+        "before_match": true,
+        "identities": [
+          {
+            "uid": "LX-00482"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R29",
+    "title": "Неизвестный хозяин коробки превращён в отсутствие хозяина",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/story_beat/outcome_ru",
+        "resolved_pointer": "/story_beat/outcome_ru",
+        "before_match": true,
+        "identities": []
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R30",
+    "title": "Ответы по истории смешивают её факты с контекстом и догадкой",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/questions/1",
+        "resolved_pointer": "/questions/1",
+        "before_match": true,
+        "identities": [
+          {
+            "q": "Чья большая коробка?"
+          }
+        ]
+      },
+      {
+        "pointer": "/questions/2",
+        "resolved_pointer": "/questions/2",
+        "before_match": true,
+        "identities": [
+          {
+            "q": "Что в коробке?"
+          }
+        ]
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R31",
+    "title": "Цель скороговорки про /æ/ не согласована с has /həz/ в IPA",
+    "status": "APPLIED",
+    "fields": [
+      {
+        "pointer": "/twister/ipa",
+        "resolved_pointer": "/twister/ipa",
+        "before_match": true,
+        "identities": []
+      },
+      {
+        "pointer": "/twister/tip_ru",
+        "resolved_pointer": "/twister/tip_ru",
+        "before_match": true,
+        "identities": []
+      }
+    ],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": false
+  },
+  {
+    "id": "R32",
+    "title": "Картинка заранее отвечает на вопрос-предсказание",
+    "status": "DEFERRED_OPTIONAL",
+    "fields": [],
+    "acceptance": "PENDING_REPEAT_EDITORIAL_REVIEW",
+    "already_present": null
+  }
+]

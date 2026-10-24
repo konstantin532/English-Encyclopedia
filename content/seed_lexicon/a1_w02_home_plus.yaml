@@ -20,10 +20,10 @@ units:
   class: S2
   ipa_us: /ˈbæθˌrum/
   translation_ru: ванная; санузел
-  meaning: a room with a bath or shower and often a toilet
+  meaning: "a room with a toilet, usually a sink, and sometimes a bath or shower"
   example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]bathroom[/].'
   example_ru: Это моя ванная.
-  usage_note: В США bathroom может означать санузел, даже без ванны.
+  usage_note: "В США bathroom может означать санузел с туалетом, даже если там нет ванны или душа. По-русски перевод выбирают по ситуации: «ванная», «санузел» или «туалет»."
   forms: []
   cefr: unverified
   verification_status: pending

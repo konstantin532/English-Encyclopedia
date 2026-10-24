@@ -1,0 +1,19 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "manage.py",
+    "test",
+    "tests.test_a1_editorial_01_04",
+    "tests.test_a1_editorial_history",
+    "--noinput"
+  ],
+  "exit_code": 0,
+  "seconds": 28.780716080000275,
+  "test_sha256": {
+    "tests/test_a1_editorial_01_04.py": "78f630ec5da21ffa3c3d7703832beeed41dda6ddf5698aa022b709a6ea35da7e",
+    "tests/test_a1_editorial_history.py": "e9db9e0e44ab8021d110928806eaf1f6d375ee04ffbc6401a7868cae05bd4f80"
+  }
+}

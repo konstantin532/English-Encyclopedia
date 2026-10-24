@@ -1,0 +1,186 @@
+Found 818 test(s).
+Creating test database for alias 'default'...
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+System check identified no issues (0 silenced).
+......................................................................................................................................................................................................Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+........Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+....................................................................Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+.............................AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+........ss...............AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+......AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+............Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+..............audit: упражнение EX-00001 убрано из курса и сохранено в архиве вместе с ответами учеников.
+audit: упражнение EX-00001 убрано из курса и сохранено в архиве вместе с ответами учеников.
+audit: упражнение EX-00001 убрано из курса и сохранено в архиве вместе с ответами учеников.
+audit: упражнение EX-00001 убрано из курса и сохранено в архиве вместе с ответами учеников.
+...........................................................................................................Пропущен повреждённый manifest.json: a1-w01. Запустите generate_audio.bat.
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Пропущен повреждённый manifest.json: a1-w01. Запустите generate_audio.bat.
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Пропущен повреждённый manifest.json: a1-w01. Запустите generate_audio.bat.
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Пропущен повреждённый manifest.json: a1-w01. Запустите generate_audio.bat.
+....Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+.......................Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+..........................Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+......................Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+........................................................Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+...................................................................A1 audio archive not configured; text-only deploy.
+....Installed 132 files; 33 real Kokoro bundles. Need human listening review: 33.
+......................Пропущен аудиокомплект s01: отсутствует дорожка very_slow.
+........Скачиваю заново: model.onnx, 0.0 МБ…
+Скачиваю заново: model.onnx, 0.0 МБ…
+Готово: model.onnx (размер и SHA256 совпали).
+Скачиваю заново: model.onnx, 0.0 МБ…
+Готово: model.onnx (размер и SHA256 совпали).
+Скачиваю заново: model.onnx, 0.0 МБ…
+Проверен: model.onnx (размер и SHA256).
+Скачиваю заново: model.onnx, 0.0 МБ…
+..............................................usage: manage.py [-h] [--engine {kokoro,test}] --output OUTPUT
+                 [--models MODELS]
+manage.py: error: the following arguments are required: --output
+....usage: manage.py [-h] [--engine {kokoro,test}] --output OUTPUT
+                 [--models MODELS]
+manage.py: error: the following arguments are required: --output
+Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 1
+Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+......usage: manage.py [-h] [--engine {kokoro,test}] --output OUTPUT
+                 [--models MODELS]
+manage.py: error: the following arguments are required: --output
+Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+...QA fuzz passed: cases=136 max_length=15 seed=38811173329 tier=regular
+................................Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+............Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 1
+.....Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+....Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+.......
+----------------------------------------------------------------------
+Ran 818 tests in 431.135s
+
+OK (skipped=2)
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...

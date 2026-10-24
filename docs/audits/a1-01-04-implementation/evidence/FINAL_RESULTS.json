@@ -1,0 +1,68 @@
+[
+  {
+    "name": "load-content-final",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "load_content"
+    ],
+    "exit_code": 0,
+    "seconds": 7.171,
+    "status": "PASS"
+  },
+  {
+    "name": "audit-course-final",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "audit_course"
+    ],
+    "exit_code": 0,
+    "seconds": 8.258,
+    "status": "PASS"
+  },
+  {
+    "name": "targeted-final",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "test",
+      "tests.test_a1_editorial_01_04",
+      "tests.test_a1_editorial_history",
+      "tests.test_a1_translation",
+      "tests.test_progress_safety",
+      "tests.test_a1_microsteps",
+      "--noinput"
+    ],
+    "exit_code": 0,
+    "seconds": 41.487,
+    "status": "PASS"
+  },
+  {
+    "name": "django-full-final",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "test",
+      "tests",
+      "--parallel",
+      "auto",
+      "--noinput"
+    ],
+    "exit_code": 0,
+    "seconds": 441.317,
+    "status": "PASS"
+  }
+]

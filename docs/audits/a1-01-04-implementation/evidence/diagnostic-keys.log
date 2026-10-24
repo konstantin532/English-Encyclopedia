@@ -1,0 +1,41 @@
+Found 54 test(s).
+Creating test database for alias 'default'...
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+System check identified no issues (0 silenced).
+..F...................................................
+======================================================================
+FAIL: test_noun_lesson_introduces_labels_and_demonstrative_contrast (tests.test_a1_microsteps.A1MicrostepTests.test_noun_lesson_introduces_labels_and_demonstrative_contrast)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 58, in testPartExecutor
+    yield
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 651, in run
+    self._callTestMethod(testMethod)
+    
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 606, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/tests/test_a1_microsteps.py", line 61, in test_noun_lesson_introduces_labels_and_demonstrative_contrast
+    self.assertIn("исчисляемому существительному в единственном числе", article)
+    ^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 1174, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+    ^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 732, in fail
+    raise self.failureException(msg)
+    ^^^^^^^^^^^^^^^
+AssertionError: 'исчисляемому существительному в единственном числе' not found in '**Почему перед book бывает a, а иногда my?** Посмотрите:\n\n> [T2]This[/] [D1]is[/] [T1]a[/] [S2]book[/]. — Это книга.\n> [T2]This[/] [D1]is[/] [T3]my[/] [S2]book[/]. — Это моя книга.\n\nВ первом случае **a** помогает представить одну книгу без уточнения, чья она. Во втором **my** уже объясняет, что книга моя. Сказать *a my book* нельзя: эти два указателя не ставят вместе перед одним существительным.\n\n**Книги можно посчитать по одной:** одна книга, две книги. Поэтому слово **book** называют **исчисляемым**. Когда говорим об одной книге, это **единственное число**. В наших обычных полных фразах перед таким словом нужен подходящий указатель: *a book*, *my book*. Поэтому *This is book* — ошибка. Но имена людей (*Anna*) не требуют артикля; неисчисляемые слова вроде *water* и *coffee* работают иначе.\n\n**Почему русскому переводу не нужен a?** В русском нет системы артиклей, и смысл нередко понятен из ситуации. Английский чаще выражает определённость отдельными словами. Это не то же самое, что русские падежные окончания.\n\nЕщё один указатель — **the**, когда предмет уже известен собеседникам. Здесь достаточно заметить разницу между *a* и *my*; выбор *a / the* подробно объясняется в третьем уроке.\n\n**Диагностика понимания:** Вы хотите сказать «Это моя книга». Что верно: *This is my book* или *This is a my book*?\n\n**Разбор:** *This is my book*. **My** уже указывает, чья книга. Дополнительное **a** перед ним не требуется. Это правило о сочетании этих определителей, а не о том, что перед всяким существительным обязательно есть *my*.\n'
+
+----------------------------------------------------------------------
+Ran 54 tests in 2.263s
+
+FAILED (failures=1)
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...

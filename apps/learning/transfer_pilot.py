@@ -57,9 +57,9 @@ PILOTS = {
                 "model": "I have a small table. It is new.",
             },
             {
-                "prompt": "Гость впервые у вас дома. Покажите одну вещь и вежливо предложите "
-                          "воду. Напишите 1–3 простые английские фразы.",
-                "model": "This is my room. Would you like some water?",
+                "prompt": "Гость впервые у вас дома. Покажите одну свою вещь и спросите, "
+                          "нравится ли она ему. Напишите 1–3 простые английские фразы.",
+                "model": "This is my new table. Do you like it?",
             },
         ),
     },

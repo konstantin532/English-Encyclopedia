@@ -1,0 +1,273 @@
+Isolated SQLite directory: /tmp/ee-editorial-before-final-sbsokbtr
+Creating test database for alias 'default'...
+/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-review-tests/staticfiles/
+  mw_instance = middleware(adapted_handler)
+FFFFFFFFFFFFFFFFFFFFF.
+======================================================================
+FAIL: test_book_transfer_preserves_both_ownership_and_newness (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_book_transfer_preserves_both_ownership_and_newness) (answer='This is my book and it is new.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 57, in test_book_transfer_preserves_both_ownership_and_newness
+    self.assert_answer("exercises", item, text, True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : This is my book and it is new.
+
+======================================================================
+FAIL: test_book_transfer_preserves_both_ownership_and_newness (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_book_transfer_preserves_both_ownership_and_newness) (answer="This is my book and it's new.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 57, in test_book_transfer_preserves_both_ownership_and_newness
+    self.assert_answer("exercises", item, text, True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : This is my book and it's new.
+
+======================================================================
+FAIL: test_book_transfer_preserves_both_ownership_and_newness (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_book_transfer_preserves_both_ownership_and_newness) (answer='It is my new book.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 57, in test_book_transfer_preserves_both_ownership_and_newness
+    self.assert_answer("exercises", item, text, True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : It is my new book.
+
+======================================================================
+FAIL: test_book_transfer_preserves_both_ownership_and_newness (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_book_transfer_preserves_both_ownership_and_newness) (answer='It’s my new book.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 57, in test_book_transfer_preserves_both_ownership_and_newness
+    self.assert_answer("exercises", item, text, True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : It’s my new book.
+
+======================================================================
+FAIL: test_cat_translation_accepts_taught_have_got_without_changing_tense (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_cat_translation_accepts_taught_have_got_without_changing_tense) (answer='I have got a cat.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 102, in test_cat_translation_accepts_taught_have_got_without_changing_tense
+    self.assert_answer("practice", item, text, correct)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I have got a cat.
+
+======================================================================
+FAIL: test_cat_translation_accepts_taught_have_got_without_changing_tense (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_cat_translation_accepts_taught_have_got_without_changing_tense) (answer="I've got a cat.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 102, in test_cat_translation_accepts_taught_have_got_without_changing_tense
+    self.assert_answer("practice", item, text, correct)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I've got a cat.
+
+======================================================================
+FAIL: test_cat_translation_accepts_taught_have_got_without_changing_tense (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_cat_translation_accepts_taught_have_got_without_changing_tense) (answer='I’ve got a cat.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 102, in test_cat_translation_accepts_taught_have_got_without_changing_tense
+    self.assert_answer("practice", item, text, correct)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I’ve got a cat.
+
+======================================================================
+FAIL: test_name_translation_accepts_explicit_noun_contraction (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_name_translation_accepts_explicit_noun_contraction) (answer="My name's Anna.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 81, in test_name_translation_accepts_explicit_noun_contraction
+    self.assert_answer("practice", item, text, correct)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : My name's Anna.
+
+======================================================================
+FAIL: test_name_translation_accepts_explicit_noun_contraction (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_name_translation_accepts_explicit_noun_contraction) (answer='My name’s Anna.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 81, in test_name_translation_accepts_explicit_noun_contraction
+    self.assert_answer("practice", item, text, correct)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : My name’s Anna.
+
+======================================================================
+FAIL: test_room_transfer_accepts_reordered_thoughts_but_not_swapped_properties (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_room_transfer_accepts_reordered_thoughts_but_not_swapped_properties) (answer='That room is new. This room is big.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 68, in test_room_transfer_accepts_reordered_thoughts_but_not_swapped_properties
+    self.assert_answer("exercises", item, text, True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : That room is new. This room is big.
+
+======================================================================
+FAIL: test_room_transfer_accepts_reordered_thoughts_but_not_swapped_properties (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_room_transfer_accepts_reordered_thoughts_but_not_swapped_properties) (answer='That room is new and this room is big.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 68, in test_room_transfer_accepts_reordered_thoughts_but_not_swapped_properties
+    self.assert_answer("exercises", item, text, True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : That room is new and this room is big.
+
+======================================================================
+FAIL: test_room_translation_tracks_room_and_not_living_room (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_room_translation_tracks_room_and_not_living_room)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 106, in test_room_translation_tracks_room_and_not_living_room
+    self.assertIn("LX-00007", set(item.units.values_list("uid", flat=True)))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'LX-00007' not found in {'LX-00039', 'LX-00484', 'LX-00038'}
+
+======================================================================
+FAIL: test_water_translation_preserves_request_and_recipient (tests.test_a1_editorial_01_04.EditorialAnswerKeyTests.test_water_translation_preserves_request_and_recipient) (answer='Can I have some water, please?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 93, in test_water_translation_preserves_request_and_recipient
+    self.assert_answer("practice", item, text, correct)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 46, in assert_answer
+    self.assertEqual(data["correct"], expected, submitted)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Can I have some water, please?
+
+======================================================================
+FAIL: test_coffee_meaning_accepts_address_and_translation_variants (tests.test_a1_editorial_01_04.EditorialIndependentAndReviewTests.test_coffee_meaning_accepts_address_and_translation_variants) (answer='Вам нравится кофе?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 162, in test_coffee_meaning_accepts_address_and_translation_variants
+    self.independent(HAVE, "meaning", text, matches)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 137, in independent
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_coffee_meaning_accepts_address_and_translation_variants (tests.test_a1_editorial_01_04.EditorialIndependentAndReviewTests.test_coffee_meaning_accepts_address_and_translation_variants) (answer='Ты любишь кофе?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 162, in test_coffee_meaning_accepts_address_and_translation_variants
+    self.independent(HAVE, "meaning", text, matches)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 137, in independent
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_coffee_meaning_accepts_address_and_translation_variants (tests.test_a1_editorial_01_04.EditorialIndependentAndReviewTests.test_coffee_meaning_accepts_address_and_translation_variants) (answer='Вы любите кофе?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 162, in test_coffee_meaning_accepts_address_and_translation_variants
+    self.independent(HAVE, "meaning", text, matches)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 137, in independent
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_delayed_cards_grade_the_requested_order_and_serve_their_own_reason (tests.test_a1_editorial_01_04.EditorialIndependentAndReviewTests.test_delayed_cards_grade_the_requested_order_and_serve_their_own_reason)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 176, in test_delayed_cards_grade_the_requested_order_and_serve_their_own_reason
+    self.assertEqual(len(card), 5, "Ambiguous cards need their own contextual explanation")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4 != 5 : Ambiguous cards need their own contextual explanation
+
+======================================================================
+FAIL: test_friend_meaning_preserves_person_and_owner (tests.test_a1_editorial_01_04.EditorialIndependentAndReviewTests.test_friend_meaning_preserves_person_and_owner) (answer='Ты моя подруга.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 155, in test_friend_meaning_preserves_person_and_owner
+    self.independent(BE, "meaning", text, matches)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 137, in independent
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_friend_meaning_preserves_person_and_owner (tests.test_a1_editorial_01_04.EditorialIndependentAndReviewTests.test_friend_meaning_preserves_person_and_owner) (answer='Вы моя подруга.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 155, in test_friend_meaning_preserves_person_and_owner
+    self.independent(BE, "meaning", text, matches)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 137, in independent
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_home_writing_accepts_both_taught_location_forms (tests.test_a1_editorial_01_04.EditorialIndependentAndReviewTests.test_home_writing_accepts_both_taught_location_forms) (answer='I am home.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 148, in test_home_writing_accepts_both_taught_location_forms
+    self.independent(BE, "writing", text, matches)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 137, in independent
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_home_writing_accepts_both_taught_location_forms (tests.test_a1_editorial_01_04.EditorialIndependentAndReviewTests.test_home_writing_accepts_both_taught_location_forms) (answer="I'm home.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 148, in test_home_writing_accepts_both_taught_location_forms
+    self.independent(BE, "writing", text, matches)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_01_04.py", line 137, in independent
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.520s
+
+FAILED (failures=21)
+Destroying test database for alias 'default'...
+Found 11 test(s).
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).

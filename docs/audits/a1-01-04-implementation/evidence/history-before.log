@@ -1,0 +1,35 @@
+Creating test database for alias 'default'...
+/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-review-tests/staticfiles/
+  mw_instance = middleware(adapted_handler)
+F.
+======================================================================
+FAIL: test_day_thirty_uses_revised_task_and_preserves_schedule_and_skill (tests.test_a1_editorial_history.EditorialHistoryTests.test_day_thirty_uses_revised_task_and_preserves_schedule_and_skill)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-review-tests/tests/test_a1_editorial_history.py", line 101, in test_day_thirty_uses_revised_task_and_preserves_schedule_and_skill
+    self.assertEqual(page.context["mission"], {"prompt": CURRENT_PROMPT, "model": CURRENT_MODEL})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'pro[42 chars]одну вещь и вежливо предложите воду. Напишите [82 chars]er?'} != {'pro[42 chars]одну свою вещь и спросите, нравится ли она ему[87 chars]it?'}
+- {'model': 'This is my room. Would you like some water?',
++ {'model': 'This is my new table. Do you like it?',
+-  'prompt': 'Гость впервые у вас дома. Покажите одну вещь и вежливо предложите '
+?                                                            ^^^^^^^^  --- ^
+
++  'prompt': 'Гость впервые у вас дома. Покажите одну свою вещь и спросите, '
+?                                                     +++++       ^   ^   +
+
+-            'воду. Напишите 1–3 простые английские фразы.'}
+?               ^
+
++            'нравится ли она ему. Напишите 1–3 простые английские фразы.'}
+?             +++ ++++++++ ^^^^^
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 7.185s
+
+FAILED (failures=1)
+Destroying test database for alias 'default'...
+Found 2 test(s).
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).
