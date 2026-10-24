@@ -21,6 +21,7 @@ contractions:
   - full: "it is"
     short: "it's"
     ipa: "/ɪts/"
+    note_ru: "It's two dollars — частая разговорная форма; полное It is two dollars тоже правильно."
     note_ru: "It's — сокращение it is: It's two dollars. Можно ответить и коротко: Two dollars."
   - full: "that is"
     short: "that's"
@@ -39,6 +40,14 @@ layers:
       Числа 1–20 вы уже изучили в кафе. Теперь переносим знакомые числа в **новую ситуацию** — узнать и назвать цену. Дополнительное слово здесь — **dollars**.
   - number: 2
     body: |
+      **Сколько молока или сколько стоит молоко?** В русском оба вопроса начинаются со слова «сколько». Английский различает их по тому, **что стоит после how much**:
+
+      - *How much milk?* — **Сколько молока?** Говорим о количестве напитка, а не о деньгах.
+      - *How much is the milk?* — **Сколько стоит молоко?** Спрашиваем цену конкретного молока, которое видим в магазине.
+      - *How many apples?* — **Сколько яблок?** Считаем штуки.
+      - *How much are the apples?* — **Сколько стоят яблоки?** Спрашиваем стоимость яблок.
+
+      **Почему после How much бывает is или are?** В вопросе о цене форму глагола выбираем по **предмету покупки**: *milk* здесь неисчисляемое, поэтому **is**; *apples* во множественном числе, поэтому **are**. **Much** само по себе не требует **is**: сначала определите, что вы хотите узнать — количество или цену.
       В магазине нужны два разных вопроса:
 
       - *How much is the milk?* — «Сколько стоит молоко?»: спрашиваем **цену**.
@@ -138,6 +147,12 @@ exercises:
     uid: EX-00053
     kind: fill
     stage: transfer
+    prompt_ru: "Новая ситуация: вы продаёте один пакет яблок на школьной ярмарке. Покупатель показывает на пакет и спрашивает общую цену: How much is it? На ценнике $5. Ответьте."
+    prompt_en: "How much is it? — ___"
+    answer: "It is five dollars."
+    accepted: ["It's five dollars.", "Five dollars.", "It is five dollars", "It's five dollars", "Five dollars", "That's five dollars.", "That is five dollars."]
+    hint_ru: "It is или It's, потом число и dollars."
+    explanation_ru: "It is five dollars. В разговоре — It's five dollars или просто Five dollars."
     prompt_ru: "Новая ситуация: вы продаёте яблоки на школьной ярмарке. Все эти яблоки стоят $5. Ответьте полным предложением о яблоках, начните с They."
     prompt_en: "How much are the apples? — ___"
     answer: "They are five dollars."
@@ -173,6 +188,8 @@ practice:
   answer: How much is the milk?
   accepted:
   - How much is milk?
+  hint_ru: How much is…? Для конкретного молока в магазине можно использовать the.
+  explanation_ru: How much is the milk? — сколько стоит конкретное молоко, которое видите. How much is milk? — сколько вообще стоит молоко. Обе фразы спрашивают цену, но контекст определяет необходимость the.
   hint_ru: How much is…?
   explanation_ru: How much is the milk? — вопрос о цене конкретного молока. How much is milk? тоже спрашивает цену молока. В этом задании используем вопрос с is, как указано в условии.
   review_of: 3

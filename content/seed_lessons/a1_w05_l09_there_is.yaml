@@ -16,7 +16,7 @@ sound_notes:
     note_ru: "are почти пропадает: «зэр эр эпэлз», слова сливаются"
   - text: "Can I have some apples, please?"
     ipa: "/kən aɪ hæv səm ˈæpəlz ˈpliz/"
-    note_ru: "some без ударения звучит как короткое «сэм»"
+    note_ru: "безударное some — /səm/ со слабым гласным /ə/, а не ударное /sʌm/"
 contractions:
   - full: "there is"
     short: "there's"
@@ -25,6 +25,7 @@ contractions:
   - full: "is not"
     short: "isn't"
     ipa: "/ˈɪzənt/"
+    note_ru: "There isn't — «нет, не имеется». There's no cat food — ещё один знакомый способ сказать, что товара нет."
     note_ru: "There isn't… — «нет, не имеется». Другой способ выразить отсутствие — There's no…"
 layers:
   - number: 1
@@ -40,6 +41,13 @@ layers:
       **Не путайте два способа сказать «есть».** *I have a book* — «У меня есть книга»: здесь называем **того, у кого есть книга**, поэтому используем *have*. *There is a book* — «Есть книга»: мы сообщаем **о наличии**, не называя владельца. Этот оборот пригодится в магазине, доме и городе. Продавца можно спросить и *Do you have milk?* — «У вас есть молоко?»: в магазине **have** тоже помогает узнать о наличии товара.
   - number: 2
     body: |
+      **Два значения there — две разные задачи.** Если Анна спрашивает *Is there milk?*, она хочет узнать, **имеется ли** молоко в магазине. А когда продавец отвечает *The milk is there*, он показывает, **где именно** оно находится. Одно слово *there* звучит одинаково, но в первой фразе входит в оборот о наличии, а во второй значит «там».
+
+      **Почему there is, но there are?** Смотрите на то, о чём сообщаете: *There is milk* — молоко как вещество; *There are apples* — несколько яблок. Слово *there* не обозначает ни одного, ни многих предметов, поэтому форму **is / are** выбирают не по нему.
+
+      **А зачем some?** *There are apples* сообщает, что яблоки есть. *There are some apples* дополнительно выделяет **некоторое количество**, без точного числа. В просьбе *Can I have some apples, please?* слово **some** помогает попросить неопределённое количество яблок; это не означает «обязательно мало». Если нужно ровно шесть яблок, лучше назвать число: *six apples*.
+
+      Сейчас достаточно различать вопрос о наличии *Is there milk?*, утверждение о наличии *There are apples* и просьбу о количестве *Can I have some apples, please?*.
       **There is milk.** — «Есть молоко»: сообщаем о наличии. Здесь **there** отдельно не переводим — весь оборот **there is** помогает сказать «есть, имеется».
 
       **The milk is there.** — «Молоко там»: говорим, где находится молоко. Здесь **there** означает **«там»**.
@@ -190,6 +198,9 @@ practice:
   answer: There are apples.
   accepted:
   - There are some apples.
+  hint_ru: Для нескольких яблок используйте there are; some можно добавить, если подразумеваете некоторое количество.
+  explanation_ru: There are apples сообщает о наличии яблок. There are some apples подчёркивает неопределённое количество яблок. В обоих случаях are согласуется с apples.
+  review_of: 3
   hint_ru: Яблок больше одного — there are.
   explanation_ru: There are apples. Один предмет — there is, несколько — there are.
   review_of: 2
@@ -215,6 +226,11 @@ practice:
   kind: translate
   prompt_ru: Яблоки красные.
   answer: The apples are red.
+  accepted:
+  - Apples are red.
+  hint_ru: Нужны apples, are и red. Артикль the уместен, если говорим о конкретных яблоках.
+  explanation_ru: 'The apples are red — конкретные яблоки красные. Apples are red — яблоки красные вообще (общее утверждение). В обоих случаях после множественного apples стоит are. Без контекста русская фраза допускает оба смысла.'
+  review_of: 3
   hint_ru: Цвет после are.
   explanation_ru: 'The apples are red. Цвет описывает яблоки, поэтому нужен be: are.'
   review_of: 5
