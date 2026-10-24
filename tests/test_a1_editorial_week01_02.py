@@ -45,7 +45,7 @@ class A1FirstFourEditorialStaticTests(SimpleTestCase):
                 )
                 body = "\n".join(layer["body"] for layer in data["layers"])
                 self.assertEqual(
-                    len(re.findall(r"\\[[A-Z]\\d+\\]", body)),
+                    len(re.findall(r"\[[A-Z]\d+\]", body)),
                     body.count("[/]"),
                 )
                 self.assertEqual(
