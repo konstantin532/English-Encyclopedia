@@ -5,7 +5,7 @@ order: 9
 focus: T
 minutes: 40
 title: "В магазине: there is, there are, some и цвета"
-summary: "Как сказать «есть, имеется» (there is milk, there are apples), попросить яблоки без точного количества (some) и выбрать по цвету: red apples, cold milk."
+summary: "Как сказать «есть, имеется» (there is milk, there are apples), попросить яблоки без точного количества (some) и описать продукт: red apples, cold milk."
 units: [LX-00107, LX-00108, LX-00109, LX-00110, LX-00111, LX-00112, LX-00113, LX-00117, LX-00118, LX-00119, LX-00120, LX-00121, LX-00286, LX-00287, LX-00288, LX-00289, LX-00290, LX-00291, LX-00292, LX-00296, LX-00297, LX-00298, LX-00299, LX-00300, LX-00301]
 sound_notes:
   - text: "Is there milk?"
@@ -25,11 +25,11 @@ contractions:
   - full: "is not"
     short: "isn't"
     ipa: "/ˈɪzənt/"
-    note_ru: "There isn't — «нет, не имеется»; рядом с there's no звучит одинаково часто."
+    note_ru: "There isn't… — «нет, не имеется». Другой способ выразить отсутствие — There's no…"
 layers:
   - number: 1
     body: |
-      Утро, пустой холодильник, кот Box ждёт завтрак. В магазине у дома Анне нужно спросить: молоко есть? А корм? Одна конструкция — **there is** — и вы можете спросить о чём угодно в любом магазине.
+      Утро, пустой холодильник, кот Box ждёт завтрак. В магазине у дома Анне нужно спросить: молоко есть? А корм? Одна конструкция — **there is** — поможет спросить, есть ли нужный товар.
 
       По-русски мы говорим «Молоко есть?», «Есть яблоки». По-английски для этого есть готовый оборот **there is / there are**.
 
@@ -37,12 +37,14 @@ layers:
       > [O4]Yes[/], [T9]there[/] [D1]is[/]. — Да, есть.
       > [T9]There[/] [D1]are[/] [S3]apples[/]. — Есть яблоки.
 
-      **Не путайте два способа сказать «есть».** *I have a book* — «У меня есть книга»: здесь **есть владелец**, поэтому используем *have*. *There is a book* — «Есть книга»: мы сообщаем **о наличии**, не называя владельца. Этот оборот пригодится в магазине, доме и городе.
+      **Не путайте два способа сказать «есть».** *I have a book* — «У меня есть книга»: здесь называем **того, у кого есть книга**, поэтому используем *have*. *There is a book* — «Есть книга»: мы сообщаем **о наличии**, не называя владельца. Этот оборот пригодится в магазине, доме и городе. Продавца можно спросить и *Do you have milk?* — «У вас есть молоко?»: в магазине **have** тоже помогает узнать о наличии товара.
   - number: 2
     body: |
-      **There** раньше обозначало место — «там», и сегодня сохраняет это значение в *The milk is there* («Молоко там»). Но в конструкции **there is / there are** оно выполняет **грамматическую функцию**: помогает начать сообщение о наличии чего-то. «Пустое» здесь означает «не указывает на конкретное место», а не «лишнее слово».
+      **There is milk.** — «Есть молоко»: сообщаем о наличии. Здесь **there** отдельно не переводим — весь оборот **there is** помогает сказать «есть, имеется».
 
-      **some** — древнее `sum`, «некий, какой-то». Поэтому some apples — «какие-то яблоки, сколько-то яблок», без точного числа.
+      **The milk is there.** — «Молоко там»: говорим, где находится молоко. Здесь **there** означает **«там»**.
+
+      **Some** позволяет не называть точное количество: *some apples* — яблоки без уточнения числа; *some milk* — молоко без уточнения объёма. Это не обязательно маленькое количество.
   - number: 3
     body: |
       **Как выбрать is или are?** Важен **предмет, который существует или имеется**, а не само слово *there*. Для одной исчисляемой вещи или вещества в общем значении обычно **there is**, для нескольких вещей — **there are**. Сравните:
@@ -73,7 +75,7 @@ layers:
       Так звучит разговор в американском магазине у дома:
 
       > [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]? — Чем могу помочь?
-      > [O4]Yes[/], [O8]please[/]. [D1]Is[/] [T9]there[/] [S3]milk[/]? — Да, пожалуйста. Молоко есть?
+      > [O4]Yes[/], [O8]please[/]. [D1]Is[/] [T9]there[/] [S6]cat[/] [S3]food[/]? — Да, пожалуйста. Корм для кошек есть?
       > [O2]Sorry[/], [T9]there[/] [D1]is[/] [T4]no[/] [S6]cat[/] [S3]food[/]. — Извините, корма для кошек нет.
 
       - Продавцы часто встречают покупателя фразой Can I help you?
@@ -118,7 +120,7 @@ exercises:
     uid: EX-00045
     kind: fill
     stage: substitution
-    prompt_ru: "Яблок несколько. Вставьте нужную форму be."
+    prompt_ru: "Яблок несколько. Вставьте is или are."
     prompt_en: "There ___ apples."
     answer: "are"
     hint_ru: "Яблок больше одного."
@@ -138,7 +140,7 @@ exercises:
     uid: EX-00047
     kind: fill
     stage: transfer
-    prompt_ru: "Новая ситуация: Том спрашивает, есть ли дома вода. Вода есть. Ответьте коротко."
+    prompt_ru: "Новая ситуация: Том спрашивает, есть ли дома вода. Вода есть. Сообщите об этом."
     prompt_en: "Is there water? — ___"
     answer: "Yes, there is."
     accepted: ["Yes there is", "Yes, there is", "Yes, there is water.", "Yes, there is water", "There is water.", "Yes. There is water."]
@@ -159,12 +161,12 @@ exercises:
     uid: EX-00049
     kind: fill
     stage: transfer
-    prompt_ru: "Новая ситуация: в магазине есть жёлтые бананы. Вежливо попросите бананы, не называя точного количества."
+    prompt_ru: "Новая ситуация: в магазине есть жёлтые бананы. Вежливо попросите именно жёлтые бананы без точного числа. Используйте some."
     prompt_en: "___"
     answer: "Can I have some yellow bananas, please?"
     accepted: ["Can I have some yellow bananas please?", "Some yellow bananas, please.", "I would like some yellow bananas, please.", "I'd like some yellow bananas, please."]
     hint_ru: "Can I have some…, please? Цвет — перед словом."
-    explanation_ru: "Can I have some yellow bananas, please? — some выражает неопределённое количество, yellow стоит перед bananas. Без some просьба может быть вежливой, но уже не тренирует количество из условия."
+    explanation_ru: "Can I have some yellow bananas, please? — some выражает неопределённое количество, yellow стоит перед bananas. Просьба без some тоже возможна. В этом задании тренируем some + цвет + продукт, как указано в условии."
     units: [LX-00288, LX-00299]
 # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
 practice:
@@ -176,7 +178,7 @@ practice:
   - Do you have milk?
   hint_ru: Есть ли где-то — Is there…?
   explanation_ru: Is there milk? Это вопрос о наличии молока. Можно спросить и Do you have milk?, обращаясь к продавцу; в этом задании тренируем there is.
-  review_of: 3
+  review_of: 1
   units:
   - LX-00108
   - LX-00112
@@ -186,9 +188,11 @@ practice:
   kind: translate
   prompt_ru: Есть яблоки.
   answer: There are apples.
-  hint_ru: Много — there are.
+  accepted:
+  - There are some apples.
+  hint_ru: Яблок больше одного — there are.
   explanation_ru: There are apples. Один предмет — there is, несколько — there are.
-  review_of: 3
+  review_of: 2
   units:
   - LX-00109
   - LX-00112
@@ -197,11 +201,11 @@ practice:
   - LX-00121
 - order: 3
   kind: translate
-  prompt_ru: Корма для кошек нет.
+  prompt_ru: Корма для кошек нет. Используйте there is no.
   answer: There is no cat food.
   hint_ru: «Нет» — there is no.
-  explanation_ru: There is no cat food. There is no — «нет, отсутствует».
-  review_of: 3
+  explanation_ru: There is no cat food. There is no — «нет, отсутствует». В этом задании используем изученный оборот; сокращение There’s no cat food тоже подходит.
+  review_of: 1
   units:
   - LX-00111
   - LX-00112
@@ -213,7 +217,7 @@ practice:
   answer: The apples are red.
   hint_ru: Цвет после are.
   explanation_ru: 'The apples are red. Цвет описывает яблоки, поэтому нужен be: are.'
-  review_of: 3
+  review_of: 5
   units:
   - LX-00109
   - LX-00121
