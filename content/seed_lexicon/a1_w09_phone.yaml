@@ -14,7 +14,7 @@ units:
   example_en: '[O1]Hello[/]! [T2]This[/] [D1]is[/] [S1]Anna[/].'
   example_ru: Алло! Это Анна.
   situation: Отвечаете на звонок
-  usage_note: 'По телефону называют себя так: This is Anna — не I am Anna.'
+  usage_note: 'Для представления по телефону используйте This is Anna. I am Anna грамматически возможно, но это не основной образец для данного звонка.'
 - uid: LX-00183
   lemma: spell
   meaning: to say the letters of a word in the right order
@@ -100,7 +100,7 @@ units:
   example_en: This is Anna.
   example_ru: Это Анна.
   situation: Телефон и сообщения
-  usage_note: 'По телефону не говорят I am Anna — только This is Anna.'
+  usage_note: 'This is Anna — удобная формула представления по телефону. Это различие употребления, а не грамматический запрет I am Anna.'
 - uid: LX-00189
   lemma: Can you spell your last name, please?
   meaning: Asking someone to say their family name letter by letter

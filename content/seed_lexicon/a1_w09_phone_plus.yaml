@@ -278,7 +278,7 @@ units:
   example_en: '[T3]My[/] [S9]first name[/] [D1]is[/] [S1]Anna[/].'
   example_ru: Моё имя — Анна.
   situation: Называете имя и фамилию
-  usage_note: first name — имя, last name — фамилия. В анкетах в США всегда так.
+  usage_note: first name — имя, last name — фамилия. Такие названия полей встречаются в анкетах; конкретная форма может использовать другие обозначения.
 - uid: LX-00367
   lemma: Can I speak to Tom, please?
   meaning: Asking for a person on the phone
@@ -304,4 +304,4 @@ units:
   example_en: Call me later.
   example_ru: Перезвоните мне позже.
   situation: Говорите по телефону и в сообщениях
-  usage_note: Короче и мягче — Text me! (напиши мне).
+  usage_note: Call me later, please — вежливая просьба позвонить позже. Text me просит написать сообщение и меняет действие.

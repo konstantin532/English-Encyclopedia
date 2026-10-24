@@ -131,38 +131,44 @@
       "keys": [
         "ru",
         "name",
-        "action"
+        "action",
+        "wrong_action"
       ],
       "cases": [
         [
           "работает ли Мия каждый день",
           "Mia",
-          "work every day"
+          "work every day",
+          "works every day"
         ],
         [
           "пьёт ли Том чай утром",
           "Tom",
-          "drink tea in the morning"
+          "drink tea in the morning",
+          "drinks tea in the morning"
         ],
         [
           "читает ли Анна вечером",
           "Anna",
-          "read in the evening"
+          "read in the evening",
+          "reads in the evening"
         ],
         [
           "живёт ли Том здесь",
           "Tom",
-          "live here"
+          "live here",
+          "lives here"
         ],
         [
           "любит ли Мия кофе",
           "Mia",
-          "like coffee"
+          "like coffee",
+          "likes coffee"
         ]
       ],
       "options": [
         "Does {name} {action}?",
-        "Does {name} {action}s?",
+        "Does {name} {wrong_action}?",
         "Do {name} {action}?"
       ],
       "reason": "Перед именем одного человека используйте Does; основной глагол после does без -s.",
@@ -353,7 +359,7 @@
         "{other1}",
         "{other2}"
       ],
-      "reason": "Английское название буквы не равно её звучанию в русской азбуке. Прислушайтесь к названному звуку.",
+      "reason": "Английское название буквы не равно её названию в русской азбуке. Сопоставьте транскрипцию с названием английской буквы.",
       "en": ""
     },
     "3": {
