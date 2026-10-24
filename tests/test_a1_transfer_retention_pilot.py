@@ -83,6 +83,126 @@ class A1TransferRetentionPilotTests(TestCase):
         self.assertEqual(UnitProgress.objects.filter(user=self.user).count(), 0)
         self.assertContains(self.client.get(self.url), "Следующий этап пока закрыт")
 
+    def test_ordinary_self_assessment_cannot_overwrite_pilot_provenance(self):
+        first = self._first()
+        ordinary_url = reverse('learning:independent_check', args=[self.lesson.slug])
+        before = IndependentAttempt.objects.filter(pk=first.pk).values().get()
+        due_before = self.client.get(self.url).context['due_at']
+        for payload in (
+            {'action': 'rubric', 'attempt_id': first.pk,
+             'rubric_meaning': 'yes', 'rubric_form': 'yes', 'rubric_context': 'yes',
+             'rubric_independence': 'independent'},
+            {'action': 'rate', 'attempt_id': first.pk, 'rating': 'helped'},
+        ):
+            with self.subTest(action=payload['action']):
+                self.assertEqual(self.client.post(ordinary_url, payload).status_code, 404)
+                self.assertEqual(IndependentAttempt.objects.filter(pk=first.pk).values().get(), before)
+        self.assertEqual(self.client.get(self.url).context['due_at'], due_before)
+        self.assertEqual(UnitProgress.objects.filter(user=self.user).count(), 0)
+
+    def test_ordinary_history_keeps_legacy_and_batch_answers_separate_from_pilot(self):
+        pilot = self._first()
+        ordinary_url = reverse('learning:independent_check', args=[self.lesson.slug])
+        legacy = IndependentAttempt.objects.create(
+            user=self.user, lesson=self.lesson, skill='transfer',
+            submitted='Legacy ordinary reply', outcome='self_reported')
+        batch = IndependentAttempt.objects.create(
+            user=self.user, lesson=self.lesson, skill='explain',
+            batch_token='ordinary-batch', submitted='A regular explanation', outcome='self_reported')
+        page = self.client.get(ordinary_url)
+        self.assertEqual({row.pk for row in page.context['attempts']}, {legacy.pk, batch.pk})
+        self.assertEqual([row.pk for row in self.client.get(self.url).context['attempts']], [pilot.pk])
+        self.assertEqual(self.client.post(ordinary_url, {
+            'action': 'rubric', 'attempt_id': legacy.pk,
+            'rubric_meaning': 'yes', 'rubric_form': 'partly', 'rubric_context': 'yes',
+            'rubric_independence': 'helped',
+        }).status_code, 200)
+        legacy.refresh_from_db()
+        self.assertEqual(legacy.self_rubric['form'], 'partly')
+        self.assertEqual(self.client.post(ordinary_url, {
+            'action': 'rate', 'attempt_id': batch.pk, 'rating': 'helped',
+        }).status_code, 200)
+        batch.refresh_from_db()
+        self.assertEqual(batch.self_rating, 'helped')
+
+    def test_either_pilot_marker_excludes_a_record_from_ordinary_controls(self):
+        ordinary_url = reverse('learning:independent_check', args=[self.lesson.slug])
+        for variant, token in ((100, ''), (0, 'pilot-legacy'), (200, ''), (1, 'cafe-legacy')):
+            with self.subTest(variant=variant, token=token):
+                row = IndependentAttempt.objects.create(
+                    user=self.user, lesson=self.lesson, skill='transfer',
+                    task_variant=variant, batch_token=token, outcome='self_reported',
+                    submitted='Pilot-origin record', self_rubric={'pilot_stage': 'initial'})
+                self.assertEqual(self.client.post(ordinary_url, {
+                    'action': 'rubric', 'attempt_id': row.pk,
+                    'rubric_meaning': 'yes', 'rubric_form': 'yes', 'rubric_context': 'yes',
+                    'rubric_independence': 'independent',
+                }).status_code, 404)
+                self.assertEqual(self.client.post(ordinary_url, {
+                    'action': 'rate', 'attempt_id': row.pk, 'rating': 'helped',
+                }).status_code, 404)
+                row.refresh_from_db()
+                self.assertEqual(row.self_rubric, {'pilot_stage': 'initial'})
+                self.assertEqual(row.self_rating, '')
+        page = self.client.get(ordinary_url)
+        self.assertEqual(list(page.context['attempts']), [])
+        self.assertFalse(page.context['transfer_variant_seen'])
+        error = self.client.post(ordinary_url, {
+            'action': 'batch', 'batch_token': page.context['batch_token'],
+            'transfer_variant': page.context['transfer_variant'],
+        })
+        self.assertEqual(error.status_code, 400)
+        self.assertFalse(error.context['transfer_variant_seen'])
+
+    def test_dashboard_counts_lesson_checks_without_experimental_evidence(self):
+        pilot = self._first()
+        cafe = IndependentAttempt.objects.create(
+            user=self.user, lesson=Lesson.objects.get(slug='a1-cafe-order'),
+            skill='transfer', task_variant=200, batch_token='cafe-completed',
+            submitted='A completed cafe dialogue', outcome='self_reported',
+            self_rubric={'transcript': ['One coffee, please.'], 'hint_count': 0})
+        regular = IndependentAttempt.objects.create(
+            user=self.user, lesson=self.lesson, skill='meaning',
+            submitted='A regular answer', outcome='model_match')
+        IndependentAttempt.objects.create(
+            user=self.other, lesson=self.lesson, skill='writing',
+            submitted='A different learner', outcome='model_match')
+        page = self.client.get(reverse('learning:dashboard'))
+        self.assertEqual(page.context['independent_attempt_count'], 1)
+        self.assertEqual(page.context['independent_lessons_tried'], 1)
+        self.assertTrue(IndependentAttempt.objects.filter(pk=cafe.pk).exists())
+        self.assertTrue(IndependentAttempt.objects.filter(pk=regular.pk).exists())
+        # A UI-specific scope must not hide a learner's experimental records
+        # from their complete export or the shared model's default manager.
+        from apps.accounts.data_rights import export_data
+        exported = export_data(self.user)['tables']['learning.independentattempt']
+        self.assertEqual({row['id'] for row in exported}, {pilot.pk, cafe.pk, regular.pk})
+        self.assertEqual(next(row for row in exported if row['id'] == pilot.pk)['self_rubric'],
+                         pilot.self_rubric)
+        self.assertEqual(next(row for row in exported if row['id'] == cafe.pk)['self_rubric'],
+                         cafe.self_rubric)
+
+    def test_ordinary_rubric_still_rejects_other_learner_and_other_lesson(self):
+        ordinary_url = reverse('learning:independent_check', args=[self.lesson.slug])
+        for owner, lesson in (
+            (self.other, self.lesson),
+            (self.user, Lesson.objects.get(slug='a1-have-like-can-do')),
+        ):
+            with self.subTest(owner=owner.pk, lesson=lesson.slug):
+                row = IndependentAttempt.objects.create(
+                    user=owner, lesson=lesson, skill='transfer',
+                    submitted='Private ordinary reply', outcome='self_reported')
+                for action in ('rate', 'rubric'):
+                    response = self.client.post(ordinary_url, {
+                        'action': action, 'attempt_id': row.pk, 'rating': 'independent',
+                        'rubric_meaning': 'yes', 'rubric_form': 'yes', 'rubric_context': 'yes',
+                        'rubric_independence': 'independent',
+                    })
+                    self.assertEqual(response.status_code, 404)
+                row.refresh_from_db()
+                self.assertEqual(row.self_rubric, {})
+                self.assertEqual(row.self_rating, '')
+
     def test_seven_and_thirty_days_require_real_elapsed_time_and_new_prompts(self):
         first = self._first()
         self.assertEqual(self.client.get(self.url).context["ready"], False)
