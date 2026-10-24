@@ -76,7 +76,7 @@ units:
   example_en: '[T3]My[/] [S5]back[/] [D3]hurts[/].'
   example_ru: У меня болит спина.
   situation: Жалуетесь врачу
-  usage_note: 'Болит часть тела, поэтому hurts с -s: my back hurts.'
+  usage_note: 'Одна часть тела в Present Simple: my back hurts. Несколько: my feet hurt, без -s у hurt.'
 - uid: LX-00217
   lemma: sleep
   meaning: to rest with your eyes closed at night
@@ -131,7 +131,7 @@ units:
   example_en: How are you?
   example_ru: Как дела?
   situation: У врача
-  usage_note: 'В обычной жизни это приветствие — отвечают Fine, thanks! У врача на него отвечают честно.'
+  usage_note: 'How are you может быть приветствием или настоящим вопросом о самочувствии. Выбор ответа зависит от ситуации; Fine, thanks не обязательный ответ во всех разговорах.'
 - uid: LX-00221
   lemma: I have a headache.
   meaning: Saying your head hurts
