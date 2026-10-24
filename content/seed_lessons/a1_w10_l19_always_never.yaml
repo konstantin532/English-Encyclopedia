@@ -10,7 +10,7 @@ units: [LX-00193, LX-00194, LX-00195, LX-00196, LX-00197, LX-00198, LX-00199, LX
 sound_notes:
   - text: "I always read on Saturdays."
     ipa: "/aɪ ˈɔlweɪz ˈrid ɑn ˈsæt̬ɚˌdeɪz/"
-    note_ru: "always — «олуэйз», l мягкая и короткая; t в Saturday почти «д»"
+    note_ru: "В always ударение на первом слоге, на конце /z/. Не заменяйте l русским мягким «ль»; t в Saturdays здесь произносится коротким ударом языка."
   - text: "I never walk!"
     ipa: "/aɪ ˈnɛvɚ ˈwɔk/"
     note_ru: "never с сильным ударением на первом слоге, l в walk не читается"
@@ -37,11 +37,16 @@ layers:
       **Маленький шаг на будущее:** *I like reading* в истории значит «Я люблю читать». Пока запомните сочетание как готовую фразу; почему у *read* появляется окончание **-ing** после *like*, подробно узнаете **в следующем уроке**. Здесь тренируем только положение *always / never*.
   - number: 2
     body: |
-      **always** — слияние двух слов: all way, «весь путь». Сначала — «всю дорогу», потом — «всё время».
+      Эти слова уточняют, **как часто повторяется действие**. Сравните:
 
-      **never** — тоже два слова: ne + ever, «не когда-либо». Отрицание уже спрятано внутри, поэтому второе «не» ему не нужно.
+      **I read.** — Я читаю. Мы называем привычное занятие, но не говорим, как часто.
+      **I always read on Saturdays.** — По субботам я всегда читаю. Always относится к субботам: фраза не означает, что человек читает каждую минуту всей недели.
+      **I sometimes read.** — Я иногда читаю. Это случается время от времени.
+      **I never read.** — Я никогда не читаю. Never само выражает отрицание; don't к нему в этой фразе не добавляем.
 
-      **weekend** — week + end, «конец недели». Слово американцы произносят с двумя ударениями.
+      Найдите глагол, прежде чем выбирать место слова частоты. Перед обычным смысловым глаголом: **I always read**. После am/is/are: **I am always busy**. Это базовый нейтральный порядок, а не запрет других позиций во всех контекстах.
+
+      Для sometimes доступны и другие места: **Sometimes I play the guitar** и **I play the guitar sometimes**. В начале или конце меняется расположение слова, но сохраняется смысл «иногда».
   - number: 3
     body: |
       Место слова частоты:
@@ -90,7 +95,7 @@ layers:
       Так говорят о выходных американцы:
 
       > [T9]What[/] [D1]do[/] [T8]you[/] [D2]do[/] [P3]on[/] [T1]the[/] [S7]weekend[/], [S1]Anna[/]? — Анна, а что ты делаешь в выходные?
-      > [T8]I[/] [D2]work[/] [P3]on[/] [S7]Sunday[/]. [T8]I[/] [A1]always[/] [D2]work[/] [P3]at[/] [N3]five[/]! — А я работаю в воскресенье. Всегда с пяти!
+      > [T8]I[/] [D2]work[/] [P3]on[/] [S7]Sundays[/]. [T8]I[/] [A1]always[/] [D8]start[/] [P3]at[/] [N3]five[/]! — А я работаю по воскресеньям. Всегда начинаю в пять!
 
       - **В американском английском** очень распространено **on the weekend**. Для привычных действий также встречается **on weekends**. Британский вариант *at the weekend* приводится лишь для узнавания, а основной образец нашего курса — американский.
       - Для коротких ответов хватит одного слова: Always! Never! Sometimes.
@@ -137,9 +142,9 @@ exercises:
     prompt_ru: "Соберите: «Иногда я играю на гитаре»."
     options: [guitar, sometimes, the, I, play]
     answer: "I sometimes play the guitar"
-    accepted: ["Sometimes I play the guitar"]
-    hint_ru: "Слово частоты перед глаголом play."
-    explanation_ru: "I sometimes play the guitar. Можно и Sometimes I play the guitar."
+    accepted: ["Sometimes I play the guitar", "I play the guitar sometimes"]
+    hint_ru: "Sometimes можно поставить перед play, в начале или в конце фразы."
+    explanation_ru: "I sometimes play the guitar. Также верно Sometimes I play the guitar или I play the guitar sometimes: sometimes допускает несколько позиций."
     units: [LX-00198]
   - order: 4
     uid: EX-00107
@@ -179,9 +184,12 @@ practice:
   kind: translate
   prompt_ru: Я всегда читаю по субботам.
   answer: I always read on Saturdays.
+  accepted:
+  - On Saturdays, I always read.
+  - I always read Saturdays.
   hint_ru: always — перед глаголом.
-  explanation_ru: I always read on Saturdays. Always стоит перед глаголом; дни недели — с on.
-  review_of: 3
+  explanation_ru: I always read on Saturdays. Always стоит перед read; on Saturdays можно перенести в начало. В неформальном американском варианте перед днём допустимо опустить on.
+  review_of: 2
   units:
   - LX-00194
   - LX-00196
@@ -194,7 +202,7 @@ practice:
   answer: Tom never walks.
   hint_ru: never уже значит «не».
   explanation_ru: Tom never walks. Never — уже отрицание, второе not не нужно.
-  review_of: 3
+  review_of: 1
   units:
   - LX-00197
   - LX-00210
@@ -204,7 +212,7 @@ practice:
   answer: I walk in the park on Sundays.
   hint_ru: on Sundays
   explanation_ru: I walk in the park on Sundays. On + день недели.
-  review_of: 3
+  review_of: 4
   units:
   - LX-00195
   - LX-00206
@@ -216,7 +224,7 @@ practice:
   answer: Mia always starts at five.
   hint_ru: always + starts.
   explanation_ru: Mia always starts at five. Always перед глаголом, -s остаётся.
-  review_of: 3
+  review_of: 2
   units:
   - LX-00196
   - LX-00207
