@@ -10,14 +10,16 @@ from apps.curriculum.models import Week
 
 from django.views.decorators.csrf import ensure_csrf_cookie
 
-from .models import ExerciseAttempt, Status, UnitProgress, WeekGoal, IndependentAttempt
+from .models import ExerciseAttempt, Status, UnitProgress, WeekGoal
 from .mistake_review import available_reviews
 from .speech_practice import valid_due_speech_items
 from .services import build_review
+from .evidence import lesson_check_attempts
 
 
 @login_required
 def dashboard(request):
+    independent = lesson_check_attempts(request.user)
     progress = UnitProgress.objects.filter(user=request.user).select_related("unit__semantic_class__category")
     now = timezone.now()
     due = [p for p in progress if p.next_review_at and p.next_review_at <= now]
@@ -33,8 +35,8 @@ def dashboard(request):
         "mistakes": ExerciseAttempt.objects.filter(user=request.user, is_correct=False).select_related("exercise__lesson")[:10],
         "next_lesson": next_lesson,
         "speech_due_count": sum(1 for _ in valid_due_speech_items(request.user, now=now)),
-        "independent_attempt_count": IndependentAttempt.objects.filter(user=request.user).count(),
-        "independent_lessons_tried": (IndependentAttempt.objects.filter(user=request.user)
+        "independent_attempt_count": independent.count(),
+        "independent_lessons_tried": (independent
                                        .values("lesson_id").distinct().count()),
         "mistake_review_due_count": available_reviews(request.user).filter(due_at__lte=now).count(),
         "mistake_review_waiting": available_reviews(request.user).filter(
