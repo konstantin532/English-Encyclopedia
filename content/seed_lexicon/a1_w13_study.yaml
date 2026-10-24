@@ -18,7 +18,7 @@ units:
   example_en: '[D7]Can[/] [T8]you[/] [D5]speak[/] [S10]Russian[/]?'
   example_ru: Ты говоришь по-русски?
   situation: Говорите о языках
-  usage_note: 'О языке — speak: speak English. Просто «говорить, сказать» — say или talk.'
+  usage_note: "В сочетании с названием языка используем speak: speak English, speak Russian. У speak есть и другие значения; здесь тренируем владение языком."
 - uid: LX-00240
   lemma: teach
   meaning: to help someone learn something
@@ -61,7 +61,7 @@ units:
   example_en: '[C3]Because[/] [T8]I[/] [D3]like[/] [S10]Russian[/] [S10]music[/].'
   example_ru: Потому что мне нравится русская музыка.
   situation: Объясняете причину
-  usage_note: 'В разговоре часто сокращают до ’cause — «коз».'
+  usage_note: "В быстрой речи можно услышать ’cause. На этой ступени используйте полное because; сокращённое слияние изучим позже."
 - uid: LX-00243
   lemma: English
   meaning: the language of the USA, the UK and many other countries
@@ -130,7 +130,7 @@ units:
   example_en: Can you speak Russian?
   example_ru: Ты говоришь по-русски?
   situation: Курсы английского
-  usage_note: 'По-русски «говоришь», а по-английски «можешь говорить»: умение — через can.'
+  usage_note: "Can you speak Russian? подчёркивает умение. Do you speak Russian? тоже подходит для вопроса о владении языком. Короткие ответы различаются: Yes, I can / Yes, I do."
 - uid: LX-00248
   lemma: Yes, I can.
   meaning: A short yes answer to Can you…?

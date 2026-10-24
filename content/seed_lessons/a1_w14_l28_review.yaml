@@ -33,13 +33,13 @@ contractions:
 layers:
   - number: 1
     body: |
-      Загадка Rose ещё не раскрыта, а вы уже прошли путь от *My name is Anna* до самостоятельной поездки по городу. Эта страница — карта всего, что вы умеете. Посмотрите на неё и почувствуйте, как много уже за плечами.
+      Загадка Rose ещё не раскрыта. Герои начали со знакомства и теперь едут по городу. Эта страница собирает конструкции A1 и помогает проверить, какие из них вы уже можете использовать сами.
 
-      14 недель назад вы знали несколько английских слов. Теперь вы можете познакомиться, заказать кофе, купить продукты, спросить дорогу, сходить к врачу, отправить письмо и проехать на автобусе.
+      Закройте примеры и попробуйте представиться, заказать кофе, спросить дорогу и узнать время автобуса. Если нужная фраза не вспоминается, найдите её ниже, затем снова скажите без образца. Темп прохождения курса у каждого свой.
 
       > [O2]Excuse me[/]! [D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]? — Извините! Этот автобус идёт до Парк-стрит?
 
-      Эта страница собирает всю грамматику A1 в одну карту.
+      Это карта для повторения, а самостоятельное применение нужно проверять отдельными заданиями.
   - number: 2
     body: |
       Три частые грамматические опоры уровня:
@@ -70,7 +70,7 @@ layers:
       > [T9]What[/] [S7]time[/] [D1]is[/] [T1]the[/] [J8]next[/] [S4]bus[/] [A3]back[/]? — А во сколько обратный автобус?
   - number: 5
     body: |
-      Фразы-спасатели, которые работают в любой поездке:
+      Полезные фразы для знакомых ситуаций в поездке:
 
       > [A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]? — Сколько стоит билет?
 
@@ -80,7 +80,7 @@ layers:
       - I don't know. — не знаете.
       - Can you spell it, please? — не поняли имя.
 
-      Погода и вещи в поездке:
+      Новые слова этой недели — погода и вещи в поездке. Соедините их со знакомыми конструкциями:
 
       > [T8]It[/] [D1]is[/] [J2]sunny[/] [C1]and[/] [J2]warm[/] [A2]today[/]. — Сегодня солнечно и тепло.
       > [T8]I[/] [D1]have[/] [T1]an[/] [S2]umbrella[/]. — У меня есть зонт.
@@ -99,7 +99,7 @@ layers:
       **Train / car / taxi / plane** — транспорт, **station / airport** — места. **Leave** — отправляться, **arrive** — прибывать, **travel** — ездить, **trip** — отдельная поездка, **seat** — место для сидения. Повторение помогает соединить навыки, но эта страница не заменяет отдельный итоговый тест A1.
   - number: 6
     body: |
-      Пять ошибок, которые чаще всего остаются после A1:
+      Пять ошибок для самопроверки:
 
       - «I am work» → I work.
       - «He work» → He works.
@@ -121,12 +121,12 @@ exercises:
     answer: "She works at a school."
     hint_ru: "she — глагол с -s, без is."
     explanation_ru: "She works — неделя 7: с he и she глагол получает -s."
-    units: [LX-00255]
+    units: [LX-00128, LX-00143]
   - order: 2
     uid: EX-00159
     kind: fill
     stage: substitution
-    prompt_ru: "Вы не знаете ответа. Вставьте помощника (сокращённо)."
+    prompt_ru: "Вы не знаете ответа. Вставьте отрицание с помощником do; полная и сокращённая формы подходят."
     prompt_en: "I ___ know."
     answer: "don't"
     accepted: ["do not"]
@@ -150,10 +150,10 @@ exercises:
     prompt_ru: "Итоговая ролевая ситуация: вы отвечаете за Анну из России. Скажите незнакомцу в автобусе, откуда вы и что говорите по-английски. Сообщите оба факта за свою героиню."
     prompt_en: "Where are you from? — ___"
     answer: "I am from Russia. I can speak English."
-    accepted: ["I'm from Russia. I can speak English.", "I'm from Russia. I speak English.", "I am from Russia. I speak English.", "I'm from Russia. I can speak English"]
+    accepted: ["I'm from Russia. I can speak English.", "I'm from Russia. I speak English.", "I am from Russia. I speak English.", "I'm from Russia. I can speak English", "I am from Russia and I can speak English.", "I'm from Russia and I can speak English.", "I am from Russia and I speak English.", "I'm from Russia and I speak English."]
     hint_ru: "I am from… + I can speak…"
     explanation_ru: "I'm from Russia. I can speak English — ответ за Анну по условию роли. В настоящем знакомстве называйте свою страну и свои реальные умения."
-    units: [LX-00255]
+    units: [LX-00045, LX-00239, LX-00243]
   - order: 5
     uid: EX-00162
     kind: choice
@@ -181,6 +181,7 @@ exercises:
     - I want to buy an umbrella because I don't like the rain
     - I want to buy an umbrella because I do not like the rain.
     - I want to buy an umbrella because I don't like rain.
+    - I want to buy an umbrella because I do not like rain.
     hint_ru: I want to buy an umbrella + because + I don’t like the rain.
     explanation_ru: Want to buy — желание купить. После because укажите полную причину; umbrella начинается с гласного
       звука, поэтому an.
@@ -197,14 +198,12 @@ practice:
   answer: My name is Anna. I am from Russia.
   accepted:
   - I am Anna. I am from Russia.
+  - My name's Anna. I'm from Russia.
   hint_ru: Как в первый день.
   explanation_ru: My name's Anna. I'm from Russia. Вы начинали с этого — теперь говорите это сами.
-  review_of: 3
+  review_of: 4
   units:
-  - LX-00256
-  - LX-00258
-  - LX-00176
-  - LX-00236
+  - LX-00045
 - order: 2
   kind: translate
   prompt_ru: Можно мне кофе, пожалуйста?
@@ -213,10 +212,11 @@ practice:
   - Can I have coffee, please?
   hint_ru: Can I have…?
   explanation_ru: Can I have a coffee, please? Вежливая просьба из недели 3.
-  review_of: 3
+  review_of: 4
   units:
-  - LX-00256
-  - LX-00236
+  - LX-00011
+  - LX-00035
+  - LX-00033
 - order: 3
   kind: translate
   prompt_ru: Где банк? — Он справа.
@@ -225,15 +225,16 @@ practice:
   explanation_ru: Where's the bank? It's on the right. Вопрос и ответ из недели 8.
   review_of: 3
   units:
-  - LX-00256
-  - LX-00258
   - LX-00176
+  - LX-00178
 - order: 4
   kind: translate
   prompt_ru: Я не знаю, но я могу спросить.
   answer: I do not know, but I can ask.
   hint_ru: don't know + can
   explanation_ru: I don't know, but I can ask. Don't и can в одной фразе — итог A1.
-  review_of: 3
+  review_of: 2
   units:
   - LX-00236
+  - LX-00357
+  - LX-00035

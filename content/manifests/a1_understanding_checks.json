@@ -1062,7 +1062,8 @@
           "prompt": "Друг спрашивает «Why are you at home?». Напишите короткий ответ «Потому что я устал».",
           "model": "Because I am tired.",
           "accepted": [
-            "Because I am tired."
+            "Because I am tired.",
+            "Because I'm tired."
           ]
         },
         "transfer": {

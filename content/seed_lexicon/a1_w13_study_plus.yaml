@@ -61,7 +61,7 @@ units:
   meaning: to know what words or an idea mean
   example_en: '[T8]I[/] [D1]do[/] [X1]not[/] [D6]understand[/] [T1]the[/] [S9]word[/].'
   example_ru: Я не понимаю это слово.
-  usage_note: I don’t understand — полезная просьба остановиться и объяснить.
+  usage_note: "I don’t understand сообщает о непонимании. Чтобы попросить повторить, добавьте Can you repeat it, please?"
   forms:
   - understands
   - understanding

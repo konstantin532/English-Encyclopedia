@@ -10,7 +10,7 @@ units: [LX-00239, LX-00240, LX-00243, LX-00244, LX-00246, LX-00247, LX-00248, LX
 sound_notes:
   - text: "Can you speak Russian?"
     ipa: "/kən jə ˈspik ˈrʌʃən/"
-    note_ru: "can в вопросе безударное — «кэн», почти «кн»"
+    note_ru: "В этом нейтральном вопросе can без ударения: /kən/. При подчёркивании умения возможно ударное /kæn/."
   - text: "Yes, I can."
     ipa: "/ˈjɛs aɪ ˈkæn/"
     note_ru: "в конце фразы can полное и ударное: «кЭн»"
@@ -38,9 +38,11 @@ layers:
       Это **образец для Анны**, которая в истории говорит по-русски и по-английски. О себе используйте его **только если он правдив**: *I can speak…* означает реальное умение, а не просто желание выучить язык.
   - number: 2
     body: |
-      **can** — родственник слов know и cunning. В древнеанглийском `cunnan` значило «знать, уметь». Поэтому can до сих пор значит «умею»: знать, как это делается.
+      **Умение и предпочтение — разные сообщения.** *I can swim* — «Я умею плавать», а *I like music* — «Мне нравится музыка». Не нужно уметь играть, чтобы любить музыку.
 
-      **English** — «язык англов», одного из германских племён, пришедших в Британию около 1500 лет назад. От них же — название England.
+      **Выберите каркас вопроса:** *Can you swim? — Yes, I can.* Но *Do you like music? — Yes, I do.* Короткий ответ повторяет помощник из вопроса.
+
+      **Кто учит кого?** *Can you teach me?* — «Ты можешь меня научить?» Другой человек помогает мне. *I want to learn* — «Я хочу научиться»: знания или умение получаю я.
   - number: 3
     body: |
       Схема:
@@ -80,6 +82,8 @@ layers:
       > [T8]She[/] [D7]can[/] [D2]dance[/]. — Она умеет танцевать.
 
       **Draw** — рисовать, **swim** — плавать, **drive** — водить автомобиль, **dance** — танцевать. После can эти действия остаются без to и без -s.
+
+      **Can you teach me to read?** — «Научишь меня читать?» После can стоит **teach** без to; второе действие **to read** показывает, чему научить.
 
       **Learn** — осваивать знания или умение самому, **teach** — учить другого, **study** — заниматься предметом. **Understand** — понимать, **repeat** — повторять. Если не поняли вопрос: **I don't understand. Can you repeat it, please?**
 
@@ -137,7 +141,7 @@ exercises:
     accepted: ["Yes, I can.", "Yes, I can", "Yes, I can. I speak Russian and English.", "Yes, I can speak English.", "Yes. I can speak Russian and English.", "Yes, I can. I can speak Russian and English"]
     hint_ru: "На Can you…? достаточно Yes, I can. Фразу о двух языках добавьте только по желанию."
     explanation_ru: "На Can you speak English? достаточно Yes, I can. Если вы хотите назвать оба языка, можно добавить I can speak Russian and English. Это образец по условию задания, а не предположение об умениях ученика."
-    units: [LX-00239, LX-00243, LX-00244]
+    units: [LX-00248]
   - order: 5
     uid: EX-00144
     kind: choice
@@ -175,14 +179,11 @@ practice:
   answer: I can speak Russian.
   hint_ru: «Умею» — тоже can.
   explanation_ru: I can speak Russian. Can — и «могу», и «умею». Языки — с большой буквы.
-  review_of: 3
+  review_of: 1
   units:
   - LX-00239
   - LX-00244
-  - LX-00247
-  - LX-00248
-  - LX-00249
-  - LX-00251
+  - LX-00035
 - order: 2
   kind: translate
   prompt_ru: Ты говоришь по-английски?
@@ -191,14 +192,10 @@ practice:
   - Do you speak English?
   hint_ru: Can you…?
   explanation_ru: 'Can you speak English? Или: Do you speak English?'
-  review_of: 3
+  review_of: 1
   units:
   - LX-00239
   - LX-00243
-  - LX-00247
-  - LX-00248
-  - LX-00249
-  - LX-00251
 - order: 3
   kind: translate
   prompt_ru: Я не умею играть на гитаре.
@@ -207,10 +204,11 @@ practice:
   - I cannot play guitar.
   hint_ru: can't play
   explanation_ru: I can't play the guitar. Can't — «не умею».
-  review_of: 3
+  review_of: 5
   units:
-  - LX-00248
-  - LX-00251
+  - LX-00218
+  - LX-00202
+  - LX-00204
 - order: 4
   kind: translate
   prompt_ru: Научишь меня?
@@ -220,6 +218,4 @@ practice:
   review_of: 3
   units:
   - LX-00240
-  - LX-00247
-  - LX-00248
   - LX-00249

@@ -5,18 +5,18 @@ order: 27
 focus: S
 minutes: 40
 title: "В автобусе: билет, остановка и Does this bus go…?"
-summary: "Как самостоятельно проехать на автобусе в американском городе: спросить, куда он идёт, купить билет и узнать время следующего. Всё — из слов, которые вы уже знаете."
+summary: "Как самостоятельно проехать на автобусе в американском городе: спросить, куда он идёт, купить билет и узнать время следующего. Знакомые вопросы и новые слова для поездки."
 units: [LX-00252, LX-00253, LX-00254, LX-00255, LX-00256, LX-00257, LX-00258, LX-00464, LX-00465, LX-00466, LX-00467, LX-00468, LX-00469, LX-00470, LX-00471, LX-00472, LX-00473, LX-00474, LX-00478, LX-00480]
 sound_notes:
   - text: "Does this bus go to Park Street?"
     ipa: "/dəz ðɪs ˈbʌs ɡoʊ tə ˈpɑrk ˌstrit/"
-    note_ru: "does this — «дэз зис», to без ударения — «тэ»"
+    note_ru: "В does this подряд идут /z/ и /ð/: для /ð/ кончик языка у зубов. Безударное to звучит /tə/."
   - text: "How much is a ticket?"
     ipa: "/ˌhaʊ ˈmʌtʃ ɪz ə ˈtɪkɪt/"
     note_ru: "is a сливаются: «изэ»; ticket — «тИкит»"
   - text: "What time is the next bus?"
     ipa: "/ˌwʌt ˈtaɪm ɪz ðə ˈnɛks ˈbʌs/"
-    note_ru: "t в next перед b пропадает: «нэкс бас»"
+    note_ru: "В быстрой речи /t/ в next перед bus может не звучать отчётливо. Чёткое произнесение /t/ тоже допустимо."
 contractions:
   - full: "it is"
     short: "it's"
@@ -29,19 +29,23 @@ contractions:
 layers:
   - number: 1
     body: |
-      Финальное приключение A1: Анна и Том едут на автобусе на Park Street — по адресу со старой фотографии. Вам понадобится всё, что вы выучили: числа, цены, время и вопросы. Это ваш первый самостоятельный выезд в английский город.
+      Финальное приключение A1: Анна и Том едут на автобусе на Park Street — по адресу со старой фотографии. Вам понадобится всё, что вы выучили: числа, цены, время и вопросы. Попробуйте применить знакомые конструкции в новой сцене поездки.
 
-      Поездка на автобусе — экзамен на самостоятельность. Нужны три вопроса: куда идёт автобус, сколько стоит билет и когда следующий.
+      В учебной поездке нужны три вопроса: куда идёт автобус, сколько стоит билет и когда следующий.
 
       > [O2]Excuse me[/]! [D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]? — Извините! Этот автобус идёт до Парк-стрит?
       > [A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]? — Сколько стоит билет?
 
-      Почти все слова здесь вы уже знаете с прошлых недель.
+      Вопросы о цене и времени уже знакомы. На этой неделе добавим bus, ticket, stop и другие слова для поездки.
   - number: 2
     body: |
-      **bus** — короткая форма латинского `omnibus`, «для всех». Так в XIX веке называли повозку, куда мог сесть любой. От длинного слова осталось только окончание.
+      **Три цели — три вопроса.** Не выбирайте помощник только по слову **bus**: сначала решите, что хотите узнать.
 
-      **ticket** пришло из старофранцузского `estiquet` — «записка, ярлык». От того же слова — русское «этикетка».
+      - **Маршрут:** *Does this bus go to Park Street?* Есть действие **go**; с **this bus**, как с **it**, используем **does**. После него **go** без -s.
+      - **Цена:** *How much is a ticket?* Здесь нет действия **go**. Цена одного билета — вопрос с **is**.
+      - **Время:** *What time is the next bus?* В этом готовом вопросе тоже **is**, хотя речь снова об автобусе.
+
+      Проверьте цель перед вопросом. Ответ *Yes, it does* подходит к маршруту; *It's two dollars* сообщает цену; *At six* — время.
   - number: 3
     body: |
       Схема поездки:
@@ -159,6 +163,8 @@ exercises:
     accepted:
     - Where is the train station
     - Excuse me, where is the train station?
+    - Where's the train station?
+    - Excuse me, where's the train station?
     hint_ru: Where is + the train station?
     explanation_ru: Where is the train station? — вопрос о месте. Можно добавить Excuse me.
     units:
@@ -172,11 +178,10 @@ practice:
   answer: Does this bus go to Park Street?
   hint_ru: bus = it → Does…go?
   explanation_ru: Does this bus go to Park Street? Вопрос через does, go без -s.
-  review_of: 3
+  review_of: 1
   units:
   - LX-00252
   - LX-00255
-  - LX-00258
 - order: 2
   kind: translate
   prompt_ru: Сколько стоит билет?
@@ -185,18 +190,17 @@ practice:
   - How much is the ticket?
   hint_ru: How much is…?
   explanation_ru: 'How much is a ticket? Как в магазине: How much…?'
-  review_of: 3
+  review_of: 2
   units:
   - LX-00253
   - LX-00256
-  - LX-00258
 - order: 3
   kind: translate
   prompt_ru: Два билета, пожалуйста.
   answer: Two tickets, please.
   hint_ru: two tickets — с -s.
   explanation_ru: Two tickets, please. Коротко и вежливо.
-  review_of: 3
+  review_of: 2
   units:
   - LX-00253
   - LX-00257
@@ -209,6 +213,4 @@ practice:
   review_of: 3
   units:
   - LX-00252
-  - LX-00255
-  - LX-00256
   - LX-00258
