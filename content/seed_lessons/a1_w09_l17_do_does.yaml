@@ -13,7 +13,7 @@ sound_notes:
     note_ru: "do you сливаются в «дэ ю», ударение на have и key"
   - text: "What time does the shop open?"
     ipa: "/ˌwʌt ˈtaɪm dəz ðə ˈʃɑp ˈoʊpən/"
-    note_ru: "does без ударения — «дэз»; голос опускается в конце, как в любом вопросе с what"
+    note_ru: "В этом нейтральном вопросе тон обычно понижается к концу. Безударное does может звучать /dəz/; интонация зависит от ситуации, а не только от слова what."
   - text: "It opens at nine."
     ipa: "/ɪt ˈoʊpənz ət ˈnaɪn/"
     note_ru: "-s после n звонкое: «оупэнз»"
@@ -25,7 +25,7 @@ contractions:
   - full: "what is"
     short: "what's"
     ipa: "/wʌts/"
-    note_ru: "What's your phone number? — так спрашивают почти всегда."
+    note_ru: "What's your phone number? — сокращённый вариант What is your phone number? Обе формы правильны."
 layers:
   - number: 1
     body: |
@@ -39,9 +39,14 @@ layers:
       В **обычных вопросах с have / work / open** помощник **do** или **does** ставят **перед подлежащим**: *Do you have…?*, *Does the shop open…?*. Но не всякий вопрос в английском требует **do**: с **be** и **can** вопросы строятся иначе.
   - number: 2
     body: |
-      **do** — одно из древнейших английских слов, родственное немецкому `tun`. Сначала оно значило «класть, ставить», потом «делать». В вопросах do начали использовать около 500 лет назад, во времена Шекспира. Раньше спрашивали, просто переставляя глагол: «Have you my key?».
+      Сначала решите, что вы хотите узнать: ответ **да / нет** или конкретную подробность.
 
-      **hello** — молодое слово. Широко его стали говорить вместе с изобретением телефона: Эдисон советовал начинать разговор именно с него.
+      **You have my key. → Do you have my key?** — У вас мой ключ. → Мой ключ у вас? Помощник **do** показывает, что это вопрос; слово you — о ком мы спрашиваем — идёт после него.
+      **The shop opens at nine. → Does the shop open at nine?** — Мастерская открывается в девять. → Мастерская открывается в девять? Shop — одна мастерская, поэтому **does**. Основной глагол остаётся **open**, без -s.
+
+      Если неизвестно само время, вместо at nine спрашиваем **what time** и ставим эти слова в начало: **What time does the shop open?** — Во сколько открывается мастерская? Ответ: **It opens at nine.** В ответе помощника does нет, поэтому снова **opens**.
+
+      Не добавляйте do ко всем вопросам подряд. **Is it your key?** — «Это ваш ключ?» — уже начинается с **is**, формы be. **Do you have my key?** — «Мой ключ у вас?» — содержит смысловой глагол have и требует помощника do. **Can you help me?** уже начинается с can, помощник do ему не нужен.
   - number: 3
     body: |
       Схема вопроса:
@@ -54,7 +59,7 @@ layers:
       - После do / does — начальная форма смыслового глагола: does the shop open, does she have. Для have это **have**, не **has**.
       - Для вопросов, где спрашиваем **не о подлежащем**, вопросительное выражение ставим **перед помощником**: *What time does…?*, *Where do you…?*. Позже вы встретите вопросы вроде *Who works here?*, в которых **do/does не нужны**.
 
-      Вопросительное слово ставят **перед** do / does. Вот все, что вы уже знаете:
+      Сравните вопросительные слова: одни уже знакомы, другие ещё будут возвращаться в курсе. Сначала выберите, **что хотите узнать**, затем каркас вопроса:
 
       - [T9]what[/] — что, какой: What time does the shop open?
       - [A6]when[/] — когда: When does the shop close?
@@ -123,7 +128,7 @@ exercises:
     answer: "Do"
     hint_ru: "С you — do."
     explanation_ru: "Do you have my key? — с you помощник do."
-    units: [LX-00188]
+    units: [LX-00033, LX-00160]
   - order: 3
     uid: EX-00094
     kind: build
@@ -144,7 +149,7 @@ exercises:
     accepted: ["Does Mia work every day", "Tom, does Mia work every day?", "Does she work every day?", "Does she work every day"]
     hint_ru: "Mia — один человек: does."
     explanation_ru: "Does Mia work every day? — с Mia помощник does, work без -s."
-    units: [LX-00186]
+    units: [LX-00128]
   - order: 5
     uid: EX-00096
     kind: choice
@@ -173,9 +178,8 @@ practice:
   answer: Do you have my key?
   hint_ru: «У вас есть мой ключ?»
   explanation_ru: Do you have my key? Вопрос с have строится через do.
-  review_of: 3
-  units:
-  - LX-00192
+  review_of: 2
+  units: [LX-00033, LX-00160]
 - order: 2
   kind: translate
   prompt_ru: Во сколько открывается мастерская?
@@ -195,15 +199,13 @@ practice:
   answer: Do you work at home?
   hint_ru: you → do.
   explanation_ru: Do you work at home? С you — do.
-  review_of: 3
-  units:
-  - LX-00192
+  review_of: 2
+  units: [LX-00128, LX-00005]
 - order: 4
   kind: translate
   prompt_ru: Мия встаёт в пять?
   answer: Does Mia get up at five?
   hint_ru: Mia → does.
   explanation_ru: 'Does Mia get up at five? Does выражает третье лицо; после него — начальная форма get up.'
-  review_of: 3
-  units:
-  - LX-00191
+  review_of: 4
+  units: [LX-00126]
