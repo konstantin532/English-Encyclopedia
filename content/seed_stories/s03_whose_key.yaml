@@ -19,7 +19,7 @@ script:
   text: '[T8]It[/] [D1]is[/] [N3]seven o''clock[/]. [T9]There[/] [D1]is[/] [T1]an[/] [J2]old[/] [S2]key[/] [P1]next to[/] [T3]my[/] [S2]door[/].'
   spoken: '[T8]It[/][D1]''s[/] [N3]seven o''clock[/]. [T9]There[/][D1]''s[/] [T1]an[/] [J2]old[/] [S2]key[/] [P1]next to[/] [T3]my[/] [S2]door[/].'
 - speaker: tom
-  kind: narration
+  kind: speech
   emotion: worried
   text: '[T3]My[/] [S2]key[/]? [O4]No[/]. [T3]My[/] [S2]keys[/] [D1]are[/]… [P1]in[/] [T1]the[/] [S2]fridge[/]. [A2]Again[/]!'
 - speaker: tom
@@ -68,7 +68,7 @@ questions:
 - q: К чему подходит старый ключ?
   a: The key is for the mailbox! — К старому почтовому ящику.
 - q: Какой вопрос остаётся в конце?
-  a: Who has a key to our mailbox? — У кого ещё есть ключ от их ящика? Это пока загадка.
+  a: Who has a key to our mailbox? — У кого есть ключ от их почтового ящика? Это пока загадка.
 phrase_hunt:
 - phrase: There is an old key next to my door.
   function: Где что-то лежит

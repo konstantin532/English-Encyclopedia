@@ -67,9 +67,9 @@ script:
   spoken: "[T9]Who[/] [D1]are[/] [T8]they[/]? [C1]And[/] [T9]who[/][D1]'s[/] [S1]Rose[/]?"
 questions:
 - q: Что Анна и Том делают в субботу?
-  a: Tom and I move the old cupboard. — Двигают тяжёлый старый шкаф.
+  a: Tom and I move the old cupboard. — Двигают старый шкаф.
 - q: Что за шкафом?
-  a: There is a photo behind the cupboard! — Старое фото.
+  a: There is a photo behind the cupboard! — Фото.
 - q: Кто на фото?
   a: There is a mother, a father, and six children. — Большая семья.
 - q: Почему Анна удивлена?
