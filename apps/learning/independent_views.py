@@ -14,6 +14,7 @@ from django.views.decorators.http import require_http_methods
 
 from apps.lessons.models import Lesson
 from .models import IndependentAttempt
+from .evidence import lesson_check_attempts
 from .understanding import get_guide, model_agreement
 
 RATINGS = {
@@ -34,6 +35,9 @@ def independent_check(request, slug):
     guide = get_guide(lesson.slug)
     if guide is None:
         return HttpResponseBadRequest("Самостоятельная проверка для урока ещё не подготовлена.")
+    # A shared model stores pilot provenance and cafe transcripts too. Only
+    # ordinary lesson checks may appear in this history or its rating forms.
+    lesson_attempts = lesson_check_attempts(request.user).filter(lesson=lesson)
 
     # Keep a fresh transfer scenario stable during the whole four-answer
     # attempt. Rotate only AFTER a successful batch; models stay on the server.
@@ -82,8 +86,8 @@ def independent_check(request, slug):
             "assistance_selected": request.POST.get("assistance", ""),
             "transfer_variant": variant,
             "transfer_variant_total": len(choices),
-            "transfer_variant_seen": IndependentAttempt.objects.filter(
-                user=request.user, lesson=lesson, skill="transfer",
+            "transfer_variant_seen": lesson_attempts.filter(
+                skill="transfer",
                 task_variant=variant,
             ).exists(),
             "batch_token": request.session[token_key],
@@ -103,8 +107,7 @@ def independent_check(request, slug):
             except (TypeError, ValueError):
                 return HttpResponseBadRequest("Некорректный номер попытки.")
             attempt = get_object_or_404(
-                IndependentAttempt, pk=attempt_id, user=request.user,
-                lesson=lesson, skill__in=("transfer", "explain"),
+                lesson_attempts, pk=attempt_id, skill__in=("transfer", "explain"),
                 outcome=IndependentAttempt.Outcome.SELF_REPORTED,
             )
             if (independence == "independent" and
@@ -132,8 +135,7 @@ def independent_check(request, slug):
             if rating not in RATINGS:
                 return HttpResponseBadRequest("Выберите один из трёх вариантов.")
             attempt = get_object_or_404(
-                IndependentAttempt, pk=attempt_id, user=request.user,
-                lesson=lesson, skill__in=("transfer", "explain"),
+                lesson_attempts, pk=attempt_id, skill__in=("transfer", "explain"),
                 outcome=IndependentAttempt.Outcome.SELF_REPORTED,
             )
             if (rating == "independent" and attempt.assistance in (
@@ -244,12 +246,11 @@ def independent_check(request, slug):
                 "Для самостоятельной проверки нужно отправить все четыре ответа сразу."
             )
     # On a repeat visit, do not market a previously seen situation as new.
-    variant_seen = IndependentAttempt.objects.filter(
-        user=request.user, lesson=lesson, skill="transfer",
+    variant_seen = lesson_attempts.filter(
+        skill="transfer",
         task_variant=variant,
     ).exists()
-    attempts = (IndependentAttempt.objects.filter(user=request.user, lesson=lesson)
-                .order_by("-created_at")[:12])
+    attempts = lesson_attempts.order_by("-created_at")[:12]
     return render(request, "learning/independent_check.html", {
         "lesson": lesson, "guide": guide, "tasks": [
             {"key": key, "item": guide["tasks"][key],
