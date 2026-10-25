@@ -32,3 +32,13 @@ INTEGRITY*.json подтверждают идентичности и поряд�
 ## Ограничения
 
 Окончательный полный CI и реальная браузерная проверка этого tree до публикации PENDING. Локальный Chromium ранее недоступен из-за повреждённой загрузки, PostgreSQL локально недоступен; их результаты заменять старыми журналами нельзя. Настоящее аудио, пилот и повторная содержательная приёмка BLOCKED/не проведены. Английские записанные week/twister/story/poem тексты и IPA сохраняются; L15 explanatory example/LX00340 example и supplementary models изменены: если внешняя озвучка этих полей существует, её нужно обновить. Несвязанные предупреждения общего аудита сохранены.
+
+## Итог локальной проверки опубликованных исходников
+
+Source commit **f755656dbf8d76f56fed1f9bd5a0888d9df3be1a**,63source/test SHA256 совпадают. Полный конечный `manage.py test tests --parallel auto --noinput`: **899 tests OK, skipped=2**,441.714s тела. Настройки config.settings.test, оба URL явно изолированы; skips только PostgreSQL-specific. Первый898tests/2FAIL сохранён целиком отдельно, не заменён новым журналом.
+
+Реальный Chromium **PASS**,run40186265539:58page/viewportchecks,errors=[], seven layers/keyboard/reduced-motion/overflow и исходныйgeometrygate. Снимки L14/L20 explanation, poem7, story3 при390 и L28desktop реально просмотрены. Provenance и report.json сохранены в evidence/browser; полныйPNGartifact12596183379 доступен до2026-11-08.
+
+Дополнительно две загрузки контента сохраняют1047/60/355/240 PK и ExerciseAttempt, IndependentAttempt snapshots, UnitProgress, SpeechPracticeProgress без изменения строк. Script/журнал сохранены. Старый прогресс не пересчитывается; новые bindings применяются к будущим попыткам.
+
+На момент записи remote CI40186265546 и Quality Evolution40186265540 ещё выполняются; их нельзя считать PASS. Последующий коммит сохраняет только документы/журналы и не меняет63проверенныхsource/tests. Настоящая озвучка/пилот/повторная содержательная приёмка не выполнены. PR121 остаётся draft, merge не выполнялся.

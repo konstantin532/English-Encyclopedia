@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/tmp/ee-a1-13-28/.venv/bin/python",
+    "manage.py",
+    "test",
+    "tests",
+    "--parallel",
+    "auto",
+    "--noinput"
+  ],
+  "exit_code": 0,
+  "seconds": 451.331,
+  "commit": "f755656dbf8d76f56fed1f9bd5a0888d9df3be1a",
+  "database": "/tmp/ee-a1-final-jtwqx6rd/fixture.sqlite3",
+  "settings": "config.settings.test"
+}

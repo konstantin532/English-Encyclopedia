@@ -24,7 +24,7 @@ def walk(a,z,path):
  if isinstance(a,dict) and isinstance(z,dict):
   for k in identities:
    if k in a:assert a[k]==z.get(k),(path,k)
-  for k in set(a)|set(z):walk(a.get(k),z.get(k),path+'/'+k)
+  for k in sorted(set(a)|set(z)):walk(a.get(k),z.get(k),path+'/'+k)
  elif isinstance(a,list) and isinstance(z,list):
   # Validate record lists. Answer/units arrays can intentionally grow or narrow.
   if a and isinstance(a[0],dict):

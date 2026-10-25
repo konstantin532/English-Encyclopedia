@@ -265,5 +265,23 @@
     "exit_code": 0,
     "seconds": 4.656,
     "status": "PASS"
+  },
+  {
+    "name": "django-full",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "test",
+      "tests",
+      "--parallel",
+      "auto",
+      "--noinput"
+    ],
+    "exit_code": 1,
+    "seconds": 444.37,
+    "status": "FAIL"
   }
 ]

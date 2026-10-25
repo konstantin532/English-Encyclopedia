@@ -10,24 +10,24 @@
     "after": "Вы встретили знакомого Мии вне кафе."
   },
   {
-    "path": "content/active_a1/scenarios_13_18.json/1/missions/2/example",
-    "before": "I work at a school.",
-    "after": "I'm a teacher."
-  },
-  {
     "path": "content/active_a1/scenarios_13_18.json/1/missions/2/coach",
     "before": "Место работы отвечает на вопрос «где?». На What do you do? естественнее назвать профессию, а место добавить отдельной фразой.",
-    "after": "На вопрос о профессии здесь отвечаем I am a teacher; место работы можно добавить отдельно."
+    "after": "I am a teacher называет профессию. Место работы добавляем через at a school: обе части отвечают на ситуацию, но одна профессия тоже была бы прямым ответом на What do you do?"
+  },
+  {
+    "path": "content/active_a1/scenarios_13_18.json/1/missions/2/example",
+    "before": "I work at a school.",
+    "after": "I'm a teacher at a school."
+  },
+  {
+    "path": "content/active_a1/scenarios_13_18.json/1/missions/2/prompt",
+    "before": "Объясните свою работу одним предложением.",
+    "after": "Назовите профессию и место работы одним предложением: вы учитель в школе."
   },
   {
     "path": "content/active_a1/scenarios_13_18.json/2/missions/2/coach",
     "before": "Near означает близость без обязательного соприкосновения.",
     "after": "Near означает близость, но не обязательно непосредственное соседство."
-  },
-  {
-    "path": "content/active_a1/scenarios_13_18.json/3/twists/1/scene",
-    "before": "Сначала нужна вежливая просьба, затем маршрут.",
-    "after": "Сначала привлеките внимание, затем дайте указание идти прямо."
   },
   {
     "path": "content/active_a1/scenarios_13_18.json/3/missions/0/coach",
@@ -38,6 +38,11 @@
     "path": "content/active_a1/scenarios_13_18.json/3/missions/2/scene",
     "before": "Банк находится справа от перекрёстка.",
     "after": "На перекрёстке маршрут к банку требует поворота направо."
+  },
+  {
+    "path": "content/active_a1/scenarios_13_18.json/3/twists/1/scene",
+    "before": "Сначала нужна вежливая просьба, затем маршрут.",
+    "after": "Сначала привлеките внимание, затем дайте указание идти прямо."
   },
   {
     "path": "content/active_a1/scenarios_19_20.json/0/missions/0/coach",
@@ -460,6 +465,235 @@
     ]
   },
   {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-he-she-works/1/cases",
+    "before": [
+      [
+        "Мии: работает в кафе",
+        "Mia",
+        "works at the cafe"
+      ],
+      [
+        "Томе: работает дома",
+        "Tom",
+        "works at home"
+      ],
+      [
+        "Анне: читает каждый день",
+        "Anna",
+        "reads every day"
+      ],
+      [
+        "Томе: живёт здесь",
+        "Tom",
+        "lives here"
+      ],
+      [
+        "Мии: любит чай",
+        "Mia",
+        "likes tea"
+      ]
+    ],
+    "after": [
+      [
+        "Мии: работает в кафе",
+        "Mia",
+        "works at the cafe"
+      ],
+      [
+        "Томе: работает дома",
+        "Tom",
+        "works at home"
+      ],
+      [
+        "Анне: работает каждый день",
+        "Anna",
+        "works every day"
+      ],
+      [
+        "Томе: работает здесь",
+        "Tom",
+        "works here"
+      ],
+      [
+        "Мии: любит чай",
+        "Mia",
+        "likes tea"
+      ]
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-he-she-works/1/reason",
+    "before": "В Present Simple с именем одного человека у смыслового глагола появляется -s или -es; дополнительное is не требуется.",
+    "after": "В этих утвердительных примерах с именем одного человека используются works или likes; is перед ними не добавляем."
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-he-she-works/2/reason",
+    "before": "В вопросах с he/she и обычным действием нужен Does; далее глагол без -s.",
+    "after": "В этих вопросах с work и he/she нужен Does; work после помощника без -s."
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-he-she-works/3/reason",
+    "before": "В повествовании He/She + глагол с -s, затем обстоятельство; не ставьте is перед смысловым глаголом.",
+    "after": "В этих утвердительных фразах He/She + глагол с -s/-es, затем место или время; is к works, starts и finishes не добавляем."
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-he-she-works/4/cases",
+    "before": [
+      [
+        "she",
+        "at the cafe"
+      ],
+      [
+        "he",
+        "at the bank"
+      ],
+      [
+        "she",
+        "here"
+      ],
+      [
+        "he",
+        "at night"
+      ],
+      [
+        "she",
+        "every day"
+      ]
+    ],
+    "after": [
+      [
+        "she",
+        "at the cafe"
+      ],
+      [
+        "he",
+        "at a hospital"
+      ],
+      [
+        "she",
+        "here"
+      ],
+      [
+        "he",
+        "at night"
+      ],
+      [
+        "she",
+        "every day"
+      ]
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-jobs-what-do-you-do/3/cases",
+    "before": [
+      [
+        "в школе",
+        "a school"
+      ],
+      [
+        "в кафе",
+        "a cafe"
+      ],
+      [
+        "в банке",
+        "a bank"
+      ],
+      [
+        "в магазине",
+        "a shop"
+      ],
+      [
+        "в больнице",
+        "a hospital"
+      ]
+    ],
+    "after": [
+      [
+        "в школе",
+        "a school"
+      ],
+      [
+        "в кафе",
+        "a cafe"
+      ],
+      [
+        "в ресторане",
+        "a restaurant"
+      ],
+      [
+        "в офисе",
+        "an office"
+      ],
+      [
+        "в больнице",
+        "a hospital"
+      ]
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-jobs-what-do-you-do/5/cases",
+    "before": [
+      [
+        "Он инженер",
+        "engineer"
+      ],
+      [
+        "Он актёр",
+        "actor"
+      ],
+      [
+        "Он художник",
+        "artist"
+      ],
+      [
+        "Он офисный работник",
+        "office worker"
+      ],
+      [
+        "Он инженер из России",
+        "engineer from Russia"
+      ]
+    ],
+    "after": [
+      [
+        "с соседом",
+        "engineer"
+      ],
+      [
+        "с коллегой",
+        "engineer"
+      ],
+      [
+        "в кафе",
+        "engineer"
+      ],
+      [
+        "в школе",
+        "engineer"
+      ],
+      [
+        "в больнице",
+        "engineer"
+      ]
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-jobs-what-do-you-do/5/keys",
+    "before": [
+      "ru",
+      "job"
+    ],
+    "after": [
+      "situation",
+      "job"
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-jobs-what-do-you-do/5/prompt",
+    "before": "Как сказать «{ru}» о мужчине?",
+    "after": "При знакомстве {situation} вы говорите о мужчине-инженере. Назовите его профессию."
+  },
+  {
     "path": "content/manifests/a1_micro_review_13_16.json/a1-jobs-what-do-you-do/6/cases",
     "before": [
       [
@@ -527,235 +761,6 @@
     ]
   },
   {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-jobs-what-do-you-do/5/prompt",
-    "before": "Как сказать «{ru}» о мужчине?",
-    "after": "При знакомстве {situation} вы говорите о мужчине-инженере. Назовите его профессию."
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-jobs-what-do-you-do/5/keys",
-    "before": [
-      "ru",
-      "job"
-    ],
-    "after": [
-      "situation",
-      "job"
-    ]
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-jobs-what-do-you-do/5/cases",
-    "before": [
-      [
-        "Он инженер",
-        "engineer"
-      ],
-      [
-        "Он актёр",
-        "actor"
-      ],
-      [
-        "Он художник",
-        "artist"
-      ],
-      [
-        "Он офисный работник",
-        "office worker"
-      ],
-      [
-        "Он инженер из России",
-        "engineer from Russia"
-      ]
-    ],
-    "after": [
-      [
-        "с соседом",
-        "engineer"
-      ],
-      [
-        "с коллегой",
-        "engineer"
-      ],
-      [
-        "в кафе",
-        "engineer"
-      ],
-      [
-        "в школе",
-        "engineer"
-      ],
-      [
-        "в больнице",
-        "engineer"
-      ]
-    ]
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-jobs-what-do-you-do/3/cases",
-    "before": [
-      [
-        "в школе",
-        "a school"
-      ],
-      [
-        "в кафе",
-        "a cafe"
-      ],
-      [
-        "в банке",
-        "a bank"
-      ],
-      [
-        "в магазине",
-        "a shop"
-      ],
-      [
-        "в больнице",
-        "a hospital"
-      ]
-    ],
-    "after": [
-      [
-        "в школе",
-        "a school"
-      ],
-      [
-        "в кафе",
-        "a cafe"
-      ],
-      [
-        "в ресторане",
-        "a restaurant"
-      ],
-      [
-        "в офисе",
-        "an office"
-      ],
-      [
-        "в больнице",
-        "a hospital"
-      ]
-    ]
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-he-she-works/1/reason",
-    "before": "В Present Simple с именем одного человека у смыслового глагола появляется -s или -es; дополнительное is не требуется.",
-    "after": "В этих утвердительных примерах с именем одного человека используются works или likes; is перед ними не добавляем."
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-he-she-works/1/cases",
-    "before": [
-      [
-        "Мии: работает в кафе",
-        "Mia",
-        "works at the cafe"
-      ],
-      [
-        "Томе: работает дома",
-        "Tom",
-        "works at home"
-      ],
-      [
-        "Анне: читает каждый день",
-        "Anna",
-        "reads every day"
-      ],
-      [
-        "Томе: живёт здесь",
-        "Tom",
-        "lives here"
-      ],
-      [
-        "Мии: любит чай",
-        "Mia",
-        "likes tea"
-      ]
-    ],
-    "after": [
-      [
-        "Мии: работает в кафе",
-        "Mia",
-        "works at the cafe"
-      ],
-      [
-        "Томе: работает дома",
-        "Tom",
-        "works at home"
-      ],
-      [
-        "Анне: работает каждый день",
-        "Anna",
-        "works every day"
-      ],
-      [
-        "Томе: работает здесь",
-        "Tom",
-        "works here"
-      ],
-      [
-        "Мии: любит чай",
-        "Mia",
-        "likes tea"
-      ]
-    ]
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-he-she-works/4/cases",
-    "before": [
-      [
-        "she",
-        "at the cafe"
-      ],
-      [
-        "he",
-        "at the bank"
-      ],
-      [
-        "she",
-        "here"
-      ],
-      [
-        "he",
-        "at night"
-      ],
-      [
-        "she",
-        "every day"
-      ]
-    ],
-    "after": [
-      [
-        "she",
-        "at the cafe"
-      ],
-      [
-        "he",
-        "at a hospital"
-      ],
-      [
-        "she",
-        "here"
-      ],
-      [
-        "he",
-        "at night"
-      ],
-      [
-        "she",
-        "every day"
-      ]
-    ]
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-he-she-works/3/reason",
-    "before": "В повествовании He/She + глагол с -s, затем обстоятельство; не ставьте is перед смысловым глаголом.",
-    "after": "В этих утвердительных фразах He/She + глагол с -s/-es, затем место или время; is к works, starts и finishes не добавляем."
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-he-she-works/2/reason",
-    "before": "В вопросах с he/she и обычным действием нужен Does; далее глагол без -s.",
-    "after": "В этих вопросах с work и he/she нужен Does; work после помощника без -s."
-  },
-  {
     "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/1/cases",
     "before": [
       [
@@ -813,9 +818,200 @@
     ]
   },
   {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/6/reason",
-    "before": "Across from — напротив, через улицу; это не внутри и не позади.",
-    "after": "В этой ситуации across from — напротив, через дорогу; дорога задана условием, а не обязательна в любом употреблении across from."
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/2/cases",
+    "before": [
+      [
+        "книга внутри коробки",
+        "book",
+        "box"
+      ],
+      [
+        "телефон внутри сумки",
+        "phone",
+        "bag"
+      ],
+      [
+        "ключ внутри коробки",
+        "key",
+        "box"
+      ],
+      [
+        "сок внутри коробки",
+        "juice",
+        "box"
+      ],
+      [
+        "книга внутри сумки",
+        "book",
+        "bag"
+      ]
+    ],
+    "after": [
+      [
+        "книга внутри коробки",
+        "book",
+        "box"
+      ],
+      [
+        "телефон внутри коробки",
+        "phone",
+        "box"
+      ],
+      [
+        "ключ внутри коробки",
+        "key",
+        "box"
+      ],
+      [
+        "сок внутри коробки",
+        "juice",
+        "box"
+      ],
+      [
+        "книга внутри холодильника",
+        "book",
+        "fridge"
+      ]
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/3/cases",
+    "before": [
+      [
+        "банк рядом с кафе",
+        "bank",
+        "cafe"
+      ],
+      [
+        "магазин рядом с банком",
+        "shop",
+        "bank"
+      ],
+      [
+        "кафе рядом со школой",
+        "cafe",
+        "school"
+      ],
+      [
+        "отель рядом с парком",
+        "hotel",
+        "park"
+      ],
+      [
+        "школа рядом с магазином",
+        "school",
+        "shop"
+      ]
+    ],
+    "after": [
+      [
+        "банк рядом с кафе",
+        "bank",
+        "cafe"
+      ],
+      [
+        "магазин рядом с банком",
+        "shop",
+        "bank"
+      ],
+      [
+        "кафе рядом со школой",
+        "cafe",
+        "school"
+      ],
+      [
+        "отель рядом с больницей",
+        "hotel",
+        "hospital"
+      ],
+      [
+        "школа рядом с магазином",
+        "school",
+        "shop"
+      ]
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/3/reason",
+    "before": "Next to означает непосредственную близость; between требует две опорные точки.",
+    "after": "В этом образце next to означает непосредственное соседство. Для between X and Y здесь нужно назвать оба ориентира и соединить их and; это не правило, что between возможно только с двумя объектами."
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/5/cases",
+    "before": [
+      [
+        "кафе между банком и отелем",
+        "cafe",
+        "bank",
+        "hotel"
+      ],
+      [
+        "магазина между кафе и банком",
+        "shop",
+        "cafe",
+        "bank"
+      ],
+      [
+        "школы между парком и магазином",
+        "school",
+        "park",
+        "shop"
+      ],
+      [
+        "банка между кафе и отелем",
+        "bank",
+        "cafe",
+        "hotel"
+      ],
+      [
+        "отеля между банком и школой",
+        "hotel",
+        "bank",
+        "school"
+      ]
+    ],
+    "after": [
+      [
+        "кафе между банком и отелем",
+        "cafe",
+        "bank",
+        "hotel"
+      ],
+      [
+        "магазина между кафе и банком",
+        "shop",
+        "cafe",
+        "bank"
+      ],
+      [
+        "школы между больницей и магазином",
+        "school",
+        "hospital",
+        "shop"
+      ],
+      [
+        "банка между кафе и отелем",
+        "bank",
+        "cafe",
+        "hotel"
+      ],
+      [
+        "отеля между банком и школой",
+        "hotel",
+        "bank",
+        "school"
+      ]
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/5/prompt",
+    "before": "Как описать расположение {ru}?",
+    "after": "Передайте положение {ru} именно с between ... and ...; не заменяйте его сообщением только о близости."
+  },
+  {
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/5/reason",
+    "before": "Between ... and ... указывает на положение между двумя местами.",
+    "after": "Здесь требуется between ... and ...: назвать оба ориентира и положение между ними. Фраза с next to может быть грамматически правильной и описывать соседство, но не передаёт указанную конструкцию between."
   },
   {
     "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/6/cases",
@@ -895,200 +1091,9 @@
     ]
   },
   {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/5/prompt",
-    "before": "Как описать расположение {ru}?",
-    "after": "Передайте положение {ru} именно с between ... and ...; не заменяйте его сообщением только о близости."
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/5/reason",
-    "before": "Between ... and ... указывает на положение между двумя местами.",
-    "after": "Здесь требуется between ... and ...: назвать оба ориентира и положение между ними. Фраза с next to может быть грамматически правильной и описывать соседство, но не передаёт указанную конструкцию between."
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/5/cases",
-    "before": [
-      [
-        "кафе между банком и отелем",
-        "cafe",
-        "bank",
-        "hotel"
-      ],
-      [
-        "магазина между кафе и банком",
-        "shop",
-        "cafe",
-        "bank"
-      ],
-      [
-        "школы между парком и магазином",
-        "school",
-        "park",
-        "shop"
-      ],
-      [
-        "банка между кафе и отелем",
-        "bank",
-        "cafe",
-        "hotel"
-      ],
-      [
-        "отеля между банком и школой",
-        "hotel",
-        "bank",
-        "school"
-      ]
-    ],
-    "after": [
-      [
-        "кафе между банком и отелем",
-        "cafe",
-        "bank",
-        "hotel"
-      ],
-      [
-        "магазина между кафе и банком",
-        "shop",
-        "cafe",
-        "bank"
-      ],
-      [
-        "школы между больницей и магазином",
-        "school",
-        "hospital",
-        "shop"
-      ],
-      [
-        "банка между кафе и отелем",
-        "bank",
-        "cafe",
-        "hotel"
-      ],
-      [
-        "отеля между банком и школой",
-        "hotel",
-        "bank",
-        "school"
-      ]
-    ]
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/3/reason",
-    "before": "Next to означает непосредственную близость; between требует две опорные точки.",
-    "after": "В этом образце next to означает непосредственное соседство. Для between X and Y здесь нужно назвать оба ориентира и соединить их and; это не правило, что between возможно только с двумя объектами."
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/3/cases",
-    "before": [
-      [
-        "банк рядом с кафе",
-        "bank",
-        "cafe"
-      ],
-      [
-        "магазин рядом с банком",
-        "shop",
-        "bank"
-      ],
-      [
-        "кафе рядом со школой",
-        "cafe",
-        "school"
-      ],
-      [
-        "отель рядом с парком",
-        "hotel",
-        "park"
-      ],
-      [
-        "школа рядом с магазином",
-        "school",
-        "shop"
-      ]
-    ],
-    "after": [
-      [
-        "банк рядом с кафе",
-        "bank",
-        "cafe"
-      ],
-      [
-        "магазин рядом с банком",
-        "shop",
-        "bank"
-      ],
-      [
-        "кафе рядом со школой",
-        "cafe",
-        "school"
-      ],
-      [
-        "отель рядом с больницей",
-        "hotel",
-        "hospital"
-      ],
-      [
-        "школа рядом с магазином",
-        "school",
-        "shop"
-      ]
-    ]
-  },
-  {
-    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/2/cases",
-    "before": [
-      [
-        "книга внутри коробки",
-        "book",
-        "box"
-      ],
-      [
-        "телефон внутри сумки",
-        "phone",
-        "bag"
-      ],
-      [
-        "ключ внутри коробки",
-        "key",
-        "box"
-      ],
-      [
-        "сок внутри коробки",
-        "juice",
-        "box"
-      ],
-      [
-        "книга внутри сумки",
-        "book",
-        "bag"
-      ]
-    ],
-    "after": [
-      [
-        "книга внутри коробки",
-        "book",
-        "box"
-      ],
-      [
-        "телефон внутри коробки",
-        "phone",
-        "box"
-      ],
-      [
-        "ключ внутри коробки",
-        "key",
-        "box"
-      ],
-      [
-        "сок внутри коробки",
-        "juice",
-        "box"
-      ],
-      [
-        "книга внутри холодильника",
-        "book",
-        "fridge"
-      ]
-    ]
+    "path": "content/manifests/a1_micro_review_13_16.json/a1-where-is-prepositions/6/reason",
+    "before": "Across from — напротив, через улицу; это не внутри и не позади.",
+    "after": "В этой ситуации across from — напротив, через дорогу; дорога задана условием, а не обязательна в любом употреблении across from."
   },
   {
     "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/1/cases",
@@ -1134,190 +1139,6 @@
       [
         "слушать музыку",
         "listening to music"
-      ]
-    ]
-  },
-  {
-    "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/6/cases",
-    "before": [
-      [
-        "мои синие туфли",
-        "blue",
-        "shoes"
-      ],
-      [
-        "моя красная рубашка",
-        "red",
-        "shirt"
-      ],
-      [
-        "моя зелёная куртка",
-        "green",
-        "jacket"
-      ],
-      [
-        "моя белая рубашка",
-        "white",
-        "shirt"
-      ],
-      [
-        "мои чёрные туфли",
-        "black",
-        "shoes"
-      ]
-    ],
-    "after": [
-      [
-        "мои синие туфли",
-        "blue",
-        "shoes"
-      ],
-      [
-        "моя красная рубашка",
-        "red",
-        "shirt"
-      ],
-      [
-        "моя зелёная куртка",
-        "green",
-        "jacket"
-      ],
-      [
-        "моя зелёная рубашка",
-        "green",
-        "shirt"
-      ],
-      [
-        "мои чёрные туфли",
-        "black",
-        "shoes"
-      ]
-    ]
-  },
-  {
-    "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/5/cases",
-    "before": [
-      [
-        "new",
-        "jacket",
-        "shirt",
-        "shoes"
-      ],
-      [
-        "blue",
-        "shoes",
-        "jacket",
-        "shirt"
-      ],
-      [
-        "green",
-        "shirt",
-        "hat",
-        "jacket"
-      ],
-      [
-        "red",
-        "jacket",
-        "shoes",
-        "coat"
-      ],
-      [
-        "new",
-        "hat",
-        "coat",
-        "shirt"
-      ]
-    ],
-    "after": [
-      [
-        "new",
-        "jacket",
-        "shirt",
-        "shoes"
-      ],
-      [
-        "blue",
-        "shoes",
-        "jacket",
-        "shirt"
-      ],
-      [
-        "green",
-        "shirt",
-        "shoes",
-        "jacket"
-      ],
-      [
-        "red",
-        "jacket",
-        "shoes",
-        "shirt"
-      ],
-      [
-        "green",
-        "shoes",
-        "jacket",
-        "shirt"
-      ]
-    ]
-  },
-  {
-    "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/3/options",
-    "before": [
-      "Do you like {verb}?",
-      "Does you like {verb}?",
-      "Do you like {verb}ing?"
-    ],
-    "after": [
-      "Do you like {verb}?",
-      "Does you like {verb}?",
-      "Do you likes {verb}?"
-    ]
-  },
-  {
-    "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/3/cases",
-    "before": [
-      [
-        "гулять",
-        "walking"
-      ],
-      [
-        "читать",
-        "reading"
-      ],
-      [
-        "играть на гитаре",
-        "playing the guitar"
-      ],
-      [
-        "петь",
-        "singing"
-      ],
-      [
-        "смотреть телевизор",
-        "watching TV"
-      ]
-    ],
-    "after": [
-      [
-        "гулять",
-        "walking"
-      ],
-      [
-        "читать",
-        "reading"
-      ],
-      [
-        "играть на гитаре",
-        "playing the guitar"
-      ],
-      [
-        "готовить",
-        "cooking"
-      ],
-      [
-        "смотреть телевизор",
-        "watching TV"
       ]
     ]
   },
@@ -1389,6 +1210,190 @@
     ]
   },
   {
+    "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/3/cases",
+    "before": [
+      [
+        "гулять",
+        "walking"
+      ],
+      [
+        "читать",
+        "reading"
+      ],
+      [
+        "играть на гитаре",
+        "playing the guitar"
+      ],
+      [
+        "петь",
+        "singing"
+      ],
+      [
+        "смотреть телевизор",
+        "watching TV"
+      ]
+    ],
+    "after": [
+      [
+        "гулять",
+        "walking"
+      ],
+      [
+        "читать",
+        "reading"
+      ],
+      [
+        "играть на гитаре",
+        "playing the guitar"
+      ],
+      [
+        "готовить",
+        "cooking"
+      ],
+      [
+        "смотреть телевизор",
+        "watching TV"
+      ]
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/3/options",
+    "before": [
+      "Do you like {verb}?",
+      "Does you like {verb}?",
+      "Do you like {verb}ing?"
+    ],
+    "after": [
+      "Do you like {verb}?",
+      "Does you like {verb}?",
+      "Do you likes {verb}?"
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/5/cases",
+    "before": [
+      [
+        "new",
+        "jacket",
+        "shirt",
+        "shoes"
+      ],
+      [
+        "blue",
+        "shoes",
+        "jacket",
+        "shirt"
+      ],
+      [
+        "green",
+        "shirt",
+        "hat",
+        "jacket"
+      ],
+      [
+        "red",
+        "jacket",
+        "shoes",
+        "coat"
+      ],
+      [
+        "new",
+        "hat",
+        "coat",
+        "shirt"
+      ]
+    ],
+    "after": [
+      [
+        "new",
+        "jacket",
+        "shirt",
+        "shoes"
+      ],
+      [
+        "blue",
+        "shoes",
+        "jacket",
+        "shirt"
+      ],
+      [
+        "green",
+        "shirt",
+        "shoes",
+        "jacket"
+      ],
+      [
+        "red",
+        "jacket",
+        "shoes",
+        "shirt"
+      ],
+      [
+        "green",
+        "shoes",
+        "jacket",
+        "shirt"
+      ]
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/6/cases",
+    "before": [
+      [
+        "мои синие туфли",
+        "blue",
+        "shoes"
+      ],
+      [
+        "моя красная рубашка",
+        "red",
+        "shirt"
+      ],
+      [
+        "моя зелёная куртка",
+        "green",
+        "jacket"
+      ],
+      [
+        "моя белая рубашка",
+        "white",
+        "shirt"
+      ],
+      [
+        "мои чёрные туфли",
+        "black",
+        "shoes"
+      ]
+    ],
+    "after": [
+      [
+        "мои синие туфли",
+        "blue",
+        "shoes"
+      ],
+      [
+        "моя красная рубашка",
+        "red",
+        "shirt"
+      ],
+      [
+        "моя зелёная куртка",
+        "green",
+        "jacket"
+      ],
+      [
+        "моя зелёная рубашка",
+        "green",
+        "shirt"
+      ],
+      [
+        "мои чёрные туфли",
+        "black",
+        "shoes"
+      ]
+    ]
+  },
+  {
     "path": "content/manifests/a1_micro_review_17_20.json/a1-questions-do-does/4/cases",
     "before": [
       [
@@ -1456,9 +1461,9 @@
     ]
   },
   {
-    "path": "content/manifests/a1_micro_review_25_28.json/a1-can-skills/1/prompt",
-    "before": "В {place} вы хотите узнать, умеет ли собеседник {ru}.",
-    "after": "{place} вы хотите узнать, умеет ли собеседник {ru}."
+    "path": "content/manifests/a1_micro_review_25_28.json/a1-bus-ticket/4/prompt",
+    "before": "Вам нужен {place}. Спросите, идёт ли автобус туда.",
+    "after": "Место назначения — {place}. Спросите, идёт ли автобус туда."
   },
   {
     "path": "content/manifests/a1_micro_review_25_28.json/a1-can-skills/1/cases",
@@ -1518,14 +1523,9 @@
     ]
   },
   {
-    "path": "content/manifests/a1_micro_review_25_28.json/a1-bus-ticket/4/prompt",
-    "before": "Вам нужен {place}. Спросите, идёт ли автобус туда.",
-    "after": "Место назначения — {place}. Спросите, идёт ли автобус туда."
-  },
-  {
-    "path": "content/manifests/a1_scaffold_transfer.json/lessons/12/transfer_variants/1/prompt",
-    "before": "Вы хотите узнать, читает ли Том книги каждый день. Спросите об этом.",
-    "after": "Спросите знакомого, работает ли Том дома каждый день."
+    "path": "content/manifests/a1_micro_review_25_28.json/a1-can-skills/1/prompt",
+    "before": "В {place} вы хотите узнать, умеет ли собеседник {ru}.",
+    "after": "{place} вы хотите узнать, умеет ли собеседник {ru}."
   },
   {
     "path": "content/manifests/a1_scaffold_transfer.json/lessons/12/transfer_variants/1/model",
@@ -1533,9 +1533,9 @@
     "after": "Does Tom work at home every day?"
   },
   {
-    "path": "content/manifests/a1_scaffold_transfer.json/lessons/14/transfer_variants/0/prompt",
-    "before": "Телефон лежит внутри сумки. Объясните другу, где он.",
-    "after": "Телефон лежит внутри коробки. Объясните другу, где он."
+    "path": "content/manifests/a1_scaffold_transfer.json/lessons/12/transfer_variants/1/prompt",
+    "before": "Вы хотите узнать, читает ли Том книги каждый день. Спросите об этом.",
+    "after": "Спросите знакомого, работает ли Том дома каждый день."
   },
   {
     "path": "content/manifests/a1_scaffold_transfer.json/lessons/14/transfer_variants/0/model",
@@ -1543,9 +1543,9 @@
     "after": "The phone is in the box."
   },
   {
-    "path": "content/manifests/a1_scaffold_transfer.json/lessons/16/steps/0/why_ru",
-    "before": "Do нужен для вопроса с you и обычным глаголом live.",
-    "after": "Do нужен для вопроса с you и обычным глаголом work."
+    "path": "content/manifests/a1_scaffold_transfer.json/lessons/14/transfer_variants/0/prompt",
+    "before": "Телефон лежит внутри сумки. Объясните другу, где он.",
+    "after": "Телефон лежит внутри коробки. Объясните другу, где он."
   },
   {
     "path": "content/manifests/a1_scaffold_transfer.json/lessons/16/steps/0/example_en",
@@ -1558,9 +1558,9 @@
     "after": "Ты здесь работаешь?"
   },
   {
-    "path": "content/manifests/a1_scaffold_transfer.json/lessons/16/steps/1/why_ru",
-    "before": "Does сочетается с she; live после него без -s.",
-    "after": "Does сочетается с she; work после него без -s."
+    "path": "content/manifests/a1_scaffold_transfer.json/lessons/16/steps/0/why_ru",
+    "before": "Do нужен для вопроса с you и обычным глаголом live.",
+    "after": "Do нужен для вопроса с you и обычным глаголом work."
   },
   {
     "path": "content/manifests/a1_scaffold_transfer.json/lessons/16/steps/1/example_en",
@@ -1573,14 +1573,14 @@
     "after": "Она здесь работает?"
   },
   {
+    "path": "content/manifests/a1_scaffold_transfer.json/lessons/16/steps/1/why_ru",
+    "before": "Does сочетается с she; live после него без -s.",
+    "after": "Does сочетается с she; work после него без -s."
+  },
+  {
     "path": "content/manifests/a1_scaffold_transfer.json/lessons/16/steps/2/why_ru",
     "before": "Короткий ответ повторяет вспомогательный does, а не основной live.",
     "after": "Короткий ответ повторяет вспомогательный does, а не основной work."
-  },
-  {
-    "path": "content/manifests/a1_scaffold_transfer.json/lessons/16/transfer_variants/0/prompt",
-    "before": "Узнайте, работает ли Том по воскресеньям.",
-    "after": "Узнайте, работает ли Том каждый день."
   },
   {
     "path": "content/manifests/a1_scaffold_transfer.json/lessons/16/transfer_variants/0/model",
@@ -1588,9 +1588,9 @@
     "after": "Does Tom work every day?"
   },
   {
-    "path": "content/manifests/a1_scaffold_transfer.json/lessons/19/transfer_variants/1/prompt",
-    "before": "Ваше любимое занятие — плавание. Расскажите об этом другу.",
-    "after": "Ваше любимое занятие — прогулки. Расскажите об этом другу."
+    "path": "content/manifests/a1_scaffold_transfer.json/lessons/16/transfer_variants/0/prompt",
+    "before": "Узнайте, работает ли Том по воскресеньям.",
+    "after": "Узнайте, работает ли Том каждый день."
   },
   {
     "path": "content/manifests/a1_scaffold_transfer.json/lessons/19/transfer_variants/1/model",
@@ -1598,9 +1598,9 @@
     "after": "I like walking."
   },
   {
-    "path": "content/manifests/a1_scaffold_transfer.json/lessons/23/steps/2/why_ru",
-    "before": "Repeat помогает уточнить услышанное; не обязательно диктовать всё по буквам.",
-    "after": "Не удалось разобрать написание адреса: попросите произнести его по буквам. Can you spell it, please? — знакомая просьба из урока 18; it отсылает к уже названному адресу."
+    "path": "content/manifests/a1_scaffold_transfer.json/lessons/19/transfer_variants/1/prompt",
+    "before": "Ваше любимое занятие — плавание. Расскажите об этом другу.",
+    "after": "Ваше любимое занятие — прогулки. Расскажите об этом другу."
   },
   {
     "path": "content/manifests/a1_scaffold_transfer.json/lessons/23/steps/2/example_en",
@@ -1613,9 +1613,9 @@
     "after": "Продиктуйте это по буквам, пожалуйста."
   },
   {
-    "path": "content/manifests/a1_scaffold_transfer.json/lessons/23/transfer_variants/0/prompt",
-    "before": "Вы не расслышали адрес. Попросите собеседника повторить его, не называя настоящих данных.",
-    "after": "Вы не разобрали написание адреса. Попросите продиктовать его по буквам; используйте знакомую просьбу со spell и it."
+    "path": "content/manifests/a1_scaffold_transfer.json/lessons/23/steps/2/why_ru",
+    "before": "Repeat помогает уточнить услышанное; не обязательно диктовать всё по буквам.",
+    "after": "Не удалось разобрать написание адреса: попросите произнести его по буквам. Can you spell it, please? — знакомая просьба из урока 18; it отсылает к уже названному адресу."
   },
   {
     "path": "content/manifests/a1_scaffold_transfer.json/lessons/23/transfer_variants/0/model",
@@ -1623,14 +1623,19 @@
     "after": "Can you spell it, please?"
   },
   {
-    "path": "content/manifests/a1_scaffold_transfer.json/lessons/23/transfer_variants/1/prompt",
-    "before": "На почте сотрудник быстро произнёс имя. Попросите повторить его по буквам.",
-    "after": "На почте сотрудник произнёс имя. Попросите назвать его по буквам, используя spell и your name."
+    "path": "content/manifests/a1_scaffold_transfer.json/lessons/23/transfer_variants/0/prompt",
+    "before": "Вы не расслышали адрес. Попросите собеседника повторить его, не называя настоящих данных.",
+    "after": "Вы не разобрали написание адреса. Попросите продиктовать его по буквам; используйте знакомую просьбу со spell и it."
   },
   {
     "path": "content/manifests/a1_scaffold_transfer.json/lessons/23/transfer_variants/1/model",
     "before": "Can you spell that again, please?",
     "after": "Can you spell your name, please?"
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json/lessons/23/transfer_variants/1/prompt",
+    "before": "На почте сотрудник быстро произнёс имя. Попросите повторить его по буквам.",
+    "after": "На почте сотрудник произнёс имя. Попросите назвать его по буквам, используя spell и your name."
   },
   {
     "path": "content/manifests/a1_understanding_checks.json/lessons/12/plain",
@@ -1661,14 +1666,14 @@
     "after": "В этом примере next to показывает непосредственное соседство. Схема between the bank and the cafe называет два ориентира; between может связывать и больше двух отдельных объектов."
   },
   {
-    "path": "content/manifests/a1_understanding_checks.json/lessons/14/tasks/transfer/prompt",
-    "before": "Магазин находится через дорогу от парка. Объясните туристу, где этот магазин.",
-    "after": "Магазин находится через дорогу от школы. Объясните туристу, где магазин."
-  },
-  {
     "path": "content/manifests/a1_understanding_checks.json/lessons/14/tasks/transfer/model",
     "before": "The shop is across from the park.",
     "after": "The shop is across from the school."
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json/lessons/14/tasks/transfer/prompt",
+    "before": "Магазин находится через дорогу от парка. Объясните туристу, где этот магазин.",
+    "after": "Магазин находится через дорогу от школы. Объясните туристу, где магазин."
   },
   {
     "path": "content/manifests/a1_understanding_checks.json/lessons/14/tasks/writing/accepted",
@@ -1693,14 +1698,14 @@
     "after": "В образце Go straight сначала называем действие (go), затем направление (straight)."
   },
   {
-    "path": "content/manifests/a1_understanding_checks.json/lessons/19/tasks/transfer/prompt",
-    "before": "Спросите друга, нравится ли ему рисовать, и скажите, что вам нравится читать.",
-    "after": "Спросите друга, нравится ли ему гулять, и скажите, что вам нравится читать."
-  },
-  {
     "path": "content/manifests/a1_understanding_checks.json/lessons/19/tasks/transfer/model",
     "before": "Do you like drawing? I like reading.",
     "after": "Do you like walking? I like reading."
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json/lessons/19/tasks/transfer/prompt",
+    "before": "Спросите друга, нравится ли ему рисовать, и скажите, что вам нравится читать.",
+    "after": "Спросите друга, нравится ли ему гулять, и скажите, что вам нравится читать."
   },
   {
     "path": "content/manifests/a1_understanding_checks.json/lessons/22/plain",
@@ -1923,14 +1928,14 @@
     ]
   },
   {
-    "path": "content/seed_lessons/a1_w08_l15_where_is.yaml/exercises/5/prompt_en",
-    "before": "The supermarket is ___ the park.",
-    "after": "The supermarket is ___ the school."
-  },
-  {
     "path": "content/seed_lessons/a1_w08_l15_where_is.yaml/exercises/5/explanation_ru",
     "before": "The supermarket is across from the park. — across from значит «напротив»; в условии между местами проходит дорога, но это не обязательная часть значения across from.",
     "after": "The supermarket is across from the school. Across from означает «напротив»; дорога задана ситуацией, а не обязательна для этого выражения. Opposite тоже употребляется в американском английском, но здесь тренируем изученный двухсловный предлог."
+  },
+  {
+    "path": "content/seed_lessons/a1_w08_l15_where_is.yaml/exercises/5/prompt_en",
+    "before": "The supermarket is ___ the park.",
+    "after": "The supermarket is ___ the school."
   },
   {
     "path": "content/seed_lessons/a1_w08_l15_where_is.yaml/exercises/5/prompt_ru",
@@ -2078,11 +2083,6 @@
     ]
   },
   {
-    "path": "content/seed_lessons/a1_w09_l18_spelling.yaml/sound_notes/1/note_ru",
-    "before": "номер делят на группы: 3 цифры, пауза, 4 цифры",
-    "after": "в этом семизначном фрагменте — группа из трёх цифр и группа из четырёх; полный американский номер обычно диктуют группами 3–3–4"
-  },
-  {
     "path": "content/seed_lessons/a1_w09_l18_spelling.yaml/exercises/1/units",
     "before": [
       "LX-00187"
@@ -2103,9 +2103,9 @@
     "after": "По телефону фамилию легко расслышать неточно. Названия букв помогают проверить запись: сегодня вы научитесь диктовать их по-английски и отличать эту задачу от диктовки номера.\n\nНезнакомую русскую фамилию собеседник в США **может записать по-разному**, потому что её звуки не всегда однозначно передаются английскими буквами. Поэтому полезно **назвать фамилию, а затем при необходимости продиктовать по буквам**. Телефонный номер обычно диктуют отдельными цифрами или короткими группами.\n\n> [O4]Yes[/]. [N7]B-E-L-O-V-A[/]. [S1]Anna[/] [S1]Belova[/]. — Да. B-E-L-O-V-A (латинскими буквами). Анна Белова.\n> [T8]It[/] [D1]is[/] [N7]five five five, two one four six[/]. — Пять-пять-пять, два-один-четыре-шесть.\n\nДля этого нужен английский алфавит — 26 букв.\n"
   },
   {
-    "path": "content/seed_lessons/a1_w10_l19_always_never.yaml/sound_notes/2/note_ru",
-    "before": "weekend — два ударения: «уИк-Энд»",
-    "after": "weekend /ˈwikˌɛnd/: главное ударение на первом слоге; второй может иметь более слабое, дополнительное ударение"
+    "path": "content/seed_lessons/a1_w09_l18_spelling.yaml/sound_notes/1/note_ru",
+    "before": "номер делят на группы: 3 цифры, пауза, 4 цифры",
+    "after": "в этом семизначном фрагменте — группа из трёх цифр и группа из четырёх; полный американский номер обычно диктуют группами 3–3–4"
   },
   {
     "path": "content/seed_lessons/a1_w10_l19_always_never.yaml/exercises/1/units",
@@ -2163,6 +2163,11 @@
     "after": [
       "LX-00196"
     ]
+  },
+  {
+    "path": "content/seed_lessons/a1_w10_l19_always_never.yaml/sound_notes/2/note_ru",
+    "before": "weekend — два ударения: «уИк-Энд»",
+    "after": "weekend /ˈwikˌɛnd/: главное ударение на первом слоге; второй может иметь более слабое, дополнительное ударение"
   },
   {
     "path": "content/seed_lessons/a1_w10_l20_like_doing.yaml/exercises/1/prompt_ru",
@@ -2235,11 +2240,6 @@
     ]
   },
   {
-    "path": "content/seed_lessons/a1_w11_l21_what_hurts.yaml/sound_notes/2/note_ru",
-    "before": "are почти пропадает: «хау эр Ю»",
-    "after": "В этом образце are без ударения: /ɚ/. При выделении слова оно может звучать полнее: /ɑr/."
-  },
-  {
     "path": "content/seed_lessons/a1_w11_l21_what_hurts.yaml/exercises/1/units",
     "before": [
       "LX-00212",
@@ -2263,6 +2263,11 @@
     "path": "content/seed_lessons/a1_w11_l21_what_hurts.yaml/layers/1/body",
     "before": "Одну жалобу можно выразить двумя способами:\n\n**I have a headache.** — У меня болит голова. После **have** называем недомогание: **a headache**.\n**My head hurts.** — У меня болит голова. Теперь сначала называем часть тела — **my head**, затем говорим, что она болит: **hurts**. Смысл тот же, а устройство фразы другое.\n\nДля спины используйте **My back hurts**. Не соединяйте половины двух схем: *I have back hurts* не подходит. Слово **my** показывает, чья часть тела болит, а **hurts** само выражает действие; дополнительное is не нужно.\n\nСравните число: **My foot hurts. → My feet hurt.** Одна ступня — **foot**, поэтому **hurts**; несколько — **feet**, поэтому **hurt**. В вопросе **Does your head hurt?** форму для одной части тела уже показывает does, и дальше **hurt** без -s.\n\nЭти примеры помогают сообщить, что болит. Они не заменяют слов для подробного рассказа о симптомах или общения со специалистом.\n",
     "after": "Одну жалобу можно выразить двумя способами:\n\n**I have a headache.** — У меня болит голова. После **have** называем недомогание: **a headache**.\n**My head hurts.** — У меня болит голова. Теперь сначала называем часть тела — **my head**, затем говорим, что она болит: **hurts**. Смысл тот же, а устройство фразы другое.\n\nДля спины используйте **My back hurts**. Не соединяйте половины двух схем: *I have back hurts* не подходит. Слово **my** показывает, чья часть тела болит, а **hurts** — уже глагол в Present Simple. Он описывает боль, а не обязательно действие. Дополнительное is перед ним не нужно: **My back hurts**, не *My back is hurts*.\n\nСравните число: **My foot hurts. → My feet hurt.** Одна ступня — **foot**, поэтому **hurts**; несколько — **feet**, поэтому **hurt**. В вопросе **Does your head hurt?** форму для одной части тела уже показывает does, и дальше **hurt** без -s.\n\nЭти примеры помогают сообщить, что болит. Они не заменяют слов для подробного рассказа о симптомах или общения со специалистом.\n"
+  },
+  {
+    "path": "content/seed_lessons/a1_w11_l21_what_hurts.yaml/sound_notes/2/note_ru",
+    "before": "are почти пропадает: «хау эр Ю»",
+    "after": "В этом образце are без ударения: /ɚ/. При выделении слова оно может звучать полнее: /ɑr/."
   },
   {
     "path": "content/seed_lessons/a1_w11_l22_cant.yaml/exercises/4/explanation_ru",
@@ -2313,6 +2318,11 @@
     "after": "Know — глагол «знать». В Present Simple с I его отрицание строится через do not, хотя знать — состояние, а не действие. ZIP code — индекс в США."
   },
   {
+    "path": "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml/practice/1/prompt_ru",
+    "before": "Старый ящик не получает писем.",
+    "after": "Речь об уже известном старом почтовом ящике. Скажите, что он не получает писем; назовите его словом mailbox. Слово old можно повторить."
+  },
+  {
     "path": "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml/practice/1/units",
     "before": [
       "LX-00180",
@@ -2325,11 +2335,6 @@
     ]
   },
   {
-    "path": "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml/practice/1/prompt_ru",
-    "before": "Старый ящик не получает писем.",
-    "after": "Речь об уже известном старом почтовом ящике. Скажите, что он не получает писем; назовите его словом mailbox. Слово old можно повторить."
-  },
-  {
     "path": "content/seed_lessons/a1_w12_l24_address.yaml/exercises/5/accepted",
     "before": [
       "My last name is Belova"
@@ -2338,11 +2343,6 @@
       "My last name is Belova",
       "My last name's Belova."
     ]
-  },
-  {
-    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml/sound_notes/1/note_ru",
-    "before": "в конце фразы can полное и ударное: «кЭн»",
-    "after": "В таком утвердительном коротком ответе can обычно ударное: /kæn/."
   },
   {
     "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml/exercises/3/accepted",
@@ -2375,6 +2375,11 @@
     "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml/layers/4/body",
     "before": "Так говорят об умениях американцы:\n\n> [S1]Anna[/], [D7]can[/] [T8]you[/] [D5]speak[/] [S10]Russian[/]? — Анна, ты говоришь по-русски?\n\n- Языки пишут с большой буквы и без the: speak English, speak Russian.\n- Краткий ответ на **Can you…?**: *Yes, I can* или *No, I can't*. На **Do you speak…?** отвечаем *Yes, I do / No, I don't*. Сохраняйте каркас заданного вопроса: одинаковый русский перевод не делает **can** и **do** взаимозаменяемыми в кратком ответе.\n- Чуть-чуть: I can speak a little Russian — «я немного говорю по-русски».\n\nУчебные действия и умения:\n\n> [T8]I[/] [D7]can[/] [D2]draw[/] [T1]a[/] [S6]cat[/]. — Я умею рисовать кота.\n> [D7]Can[/] [T8]you[/] [D4]swim[/]? — Ты умеешь плавать?\n> [T8]She[/] [D7]can[/] [D2]dance[/]. — Она умеет танцевать.\n\n**Draw** — рисовать, **swim** — плавать, **drive** — водить автомобиль, **dance** — танцевать. После can эти действия остаются без to и без -s.\n\n**Can you teach me to read?** — «Научишь меня читать?» После can стоит **teach** без to; второе действие **to read** показывает, чему научить.\n\n**Learn** — осваивать знания или умение самому, **teach** — учить другого, **study** — заниматься предметом. **Understand** — понимать, **repeat** — повторять. Если не поняли вопрос: **I don't understand. Can you repeat it, please?**\n\nНа урок понадобятся **notebook** — тетрадь, **pen** — ручка, **pencil** — карандаш. **Classroom** — помещение, **lesson** — отдельный урок, **course** — курс из нескольких уроков. **Language** — язык. **Homework** — домашняя работа в целом: **I do my homework**, без a и без -s. Написать предложение — **write a sentence**.\n",
     "after": "Так говорят об умениях американцы:\n\n> [S1]Anna[/], [D7]can[/] [T8]you[/] [D5]speak[/] [S10]Russian[/]? — Анна, ты говоришь по-русски?\n\n- Названия языков пишут с большой буквы. В сочетаниях speak English, speak Russian артикль не нужен; это не запрет на the перед любым сочетанием со словом English.\n- Краткий ответ на **Can you…?**: *Yes, I can* или *No, I can't*. На **Do you speak…?** отвечаем *Yes, I do / No, I don't*. Сохраняйте каркас заданного вопроса: одинаковый русский перевод не делает **can** и **do** взаимозаменяемыми в кратком ответе.\n- Чуть-чуть: I can speak a little Russian — «я немного говорю по-русски».\n\nУчебные действия и умения:\n\n> [T8]I[/] [D7]can[/] [D2]draw[/] [T1]a[/] [S6]cat[/]. — Я умею рисовать кота.\n> [D7]Can[/] [T8]you[/] [D4]swim[/]? — Ты умеешь плавать?\n> [T8]She[/] [D7]can[/] [D2]dance[/]. — Она умеет танцевать.\n\n**Draw** — рисовать, **swim** — плавать, **drive** — водить автомобиль, **dance** — танцевать. После can эти действия остаются без to и без -s.\n\n**Can you teach me to read?** — «Научишь меня читать?» После can стоит **teach** без to; второе действие **to read** показывает, чему научить.\n\n**Learn** — осваивать знания или умение самому, **teach** — учить другого, **study** — заниматься предметом. **Understand** — понимать, **repeat** — повторять. Если не поняли вопрос: **I don't understand. Can you repeat it, please?**\n\nНа урок понадобятся **notebook** — тетрадь, **pen** — ручка, **pencil** — карандаш. **Classroom** — помещение, **lesson** — отдельный урок, **course** — курс из нескольких уроков. **Language** — язык. **Homework** — домашняя работа в целом: **I do my homework**, без a и без -s. Написать предложение — **write a sentence**.\n"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml/sound_notes/1/note_ru",
+    "before": "в конце фразы can полное и ударное: «кЭн»",
+    "after": "В таком утвердительном коротком ответе can обычно ударное: /kæn/."
   },
   {
     "path": "content/seed_lessons/a1_w13_l26_why_because.yaml/layers/3/body",
@@ -2485,14 +2490,14 @@
     "after": "В turn left слово left показывает направление — это наречие. В on the left оно называет сторону — это существительное; всё сочетание означает «слева»."
   },
   {
-    "path": "content/seed_lexicon/a1_w08_city.yaml/units/12/usage_note",
-    "before": "right ещё значит «правильный»: That is right! — Верно!",
-    "after": "В turn right слово right показывает направление — это наречие. В on the right оно называет сторону — это существительное; всё сочетание означает «справа». Right ещё значит «правильный»: That is right! — Верно!"
-  },
-  {
     "path": "content/seed_lexicon/a1_w08_city.yaml/units/12/example_en",
     "before": "[T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/].",
     "after": "[T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]right[/]."
+  },
+  {
+    "path": "content/seed_lexicon/a1_w08_city.yaml/units/12/usage_note",
+    "before": "right ещё значит «правильный»: That is right! — Верно!",
+    "after": "В turn right слово right показывает направление — это наречие. В on the right оно называет сторону — это существительное; всё сочетание означает «справа». Right ещё значит «правильный»: That is right! — Верно!"
   },
   {
     "path": "content/seed_lexicon/a1_w08_city.yaml/units/16/usage_note",
@@ -2515,6 +2520,16 @@
     "after": "В образце between A and B два названия соединяются and. Возможны и другие дополнения: between the banks — «между банками». Не каждое сочетание с between содержит and."
   },
   {
+    "path": "content/seed_lexicon/a1_w08_city_plus.yaml/units/3/example_en",
+    "before": "[T1]The[/] [S4]bank[/] [D1]is[/] [P9]across from[/] [T1]the[/] [S4]park[/].",
+    "after": "[T1]The[/] [S4]bank[/] [D1]is[/] [P9]across from[/] [T1]the[/] [S4]school[/]."
+  },
+  {
+    "path": "content/seed_lexicon/a1_w08_city_plus.yaml/units/3/example_ru",
+    "before": "Банк напротив парка.",
+    "after": "Банк напротив школы."
+  },
+  {
     "path": "content/seed_lexicon/a1_w08_city_plus.yaml/units/3/meaning",
     "before": "on the other side of a street from something",
     "after": "on the opposite side from someone or something"
@@ -2523,16 +2538,6 @@
     "path": "content/seed_lexicon/a1_w08_city_plus.yaml/units/3/usage_note",
     "before": "Американский вариант «напротив». В учебниках встречается и opposite.",
     "after": "Across from — естественное американское «напротив», в том числе через дорогу или стол. Opposite тоже употребляется в американском английском; в этом уроке учим across from."
-  },
-  {
-    "path": "content/seed_lexicon/a1_w08_city_plus.yaml/units/3/example_ru",
-    "before": "Банк напротив парка.",
-    "after": "Банк напротив школы."
-  },
-  {
-    "path": "content/seed_lexicon/a1_w08_city_plus.yaml/units/3/example_en",
-    "before": "[T1]The[/] [S4]bank[/] [D1]is[/] [P9]across from[/] [T1]the[/] [S4]park[/].",
-    "after": "[T1]The[/] [S4]bank[/] [D1]is[/] [P9]across from[/] [T1]the[/] [S4]school[/]."
   },
   {
     "path": "content/seed_lexicon/a1_w08_city_plus.yaml/units/7/example_en",
@@ -2740,6 +2745,16 @@
     "after": "[D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]?\n[O4]Yes[/], [T8]it[/] [D1]does[/]! [O4]Yes[/], [T8]it[/] [D1]does[/]!\n[N1]Two[/] [S2]tickets[/], [O8]please[/],\n[N1]one[/] [P5]for[/] [T8]me[/], [N1]one[/] [P5]for[/] [T8]you[/]!\n\n[T1]The[/] [S4]bus[/], [T1]the[/] [S4]bus[/],\n[T1]the[/] [J1]big[/], [J1]big[/] [S4]bus[/]!\n[S4]Stop[/], [S4]stop[/], [S4]bus[/] [S4]stop[/],\n[T1]the[/] [J8]last[/] [S4]bus[/] [S4]stop[/]!\n\n[A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]?\n[N6]Two dollars[/], [N1]two[/]!\n[T9]What[/] [S7]time[/] [D1]is[/] [T1]the[/] [J8]next[/] [S4]bus[/]?\n[P3]At[/] [N1]six[/], [P3]at[/] [N1]six[/]!\n\n[S4]Park[/] [S4]Street[/], [S4]Park[/] [S4]Street[/],\n[T1]an[/] [J2]old[/] [S2]photo[/] [S4]shop[/].\n[D1]Is[/] [T8]it[/] [J2]open[/]? [O4]No[/].\n[T8]It[/] [D1]is[/] [S7]Saturday[/]. [S4]Stop[/].\n\n[S1]Rose[/], [S1]Rose[/], [S1]Rose[/],\n[A6]where[/] [D1]do[/] [T8]you[/] [D2]live[/]?\n[S4]Park[/] [S4]Street[/]? [S4]Park[/] [S4]Street[/]?\n[T8]We[/] [D1]do[/] [X1]not[/] [D6]know[/]!\n"
   },
   {
+    "path": "content/seed_stories/s03_whose_key.yaml/grammar_ru",
+    "before": "there is; вопросы Is it…?; притяжательное 's (Anna's door); for — «для, от»; whose — «чей»",
+    "after": "Is it…? — вопрос с be; Anna’s door — принадлежность. For в key for the mailbox показывает, к какому замку подходит ключ. Whose key is it? — «Чей это ключ?». Who has a key? — готовый вопрос «У кого есть ключ?»."
+  },
+  {
+    "path": "content/seed_stories/s03_whose_key.yaml/prediction_ru",
+    "before": "Посмотрите на название и описания картинок. Чей это ключ? К какой двери он подходит?",
+    "after": "Посмотрите на название и описания картинок. Чей это ключ? К какой двери он подходит? Again! означает «Опять!» — Том снова удивляется месту, где лежат его ключи."
+  },
+  {
     "path": "content/seed_stories/s03_whose_key.yaml/script/6/spoken",
     "before": "[T8]It[/] [D1]is[/][X1]n't[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna's[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?",
     "after": "[T8]It[/] [D1]is[/][X1]n't[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna[/][T3]'s[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?"
@@ -2758,16 +2773,6 @@
     "path": "content/seed_stories/s03_whose_key.yaml/script/9/text",
     "before": "“[T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P2]to[/] [T3]our[/] [S2]mailbox[/]?”",
     "after": "“[T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P6]to[/] [T3]our[/] [S2]mailbox[/]?”"
-  },
-  {
-    "path": "content/seed_stories/s03_whose_key.yaml/prediction_ru",
-    "before": "Посмотрите на название и описания картинок. Чей это ключ? К какой двери он подходит?",
-    "after": "Посмотрите на название и описания картинок. Чей это ключ? К какой двери он подходит? Again! означает «Опять!» — Том снова удивляется месту, где лежат его ключи."
-  },
-  {
-    "path": "content/seed_stories/s03_whose_key.yaml/grammar_ru",
-    "before": "there is; вопросы Is it…?; притяжательное 's (Anna's door); for — «для, от»; whose — «чей»",
-    "after": "Is it…? — вопрос с be; Anna’s door — принадлежность. For в key for the mailbox показывает, к какому замку подходит ключ. Whose key is it? — «Чей это ключ?». Who has a key? — готовый вопрос «У кого есть ключ?»."
   },
   {
     "path": "content/seed_stories/s04_letter_with_no_name.yaml/script/3/spoken",
@@ -2840,14 +2845,14 @@
     "after": "[P3]On[/] [S7]Sundays[/] [P3]in[/] [S7]October[/], [T8]I[/] [D4]walk[/] [P3]in[/] [T1]the[/] [S4]park[/] [P3]in[/] [T3]my[/] [S2]jacket[/]. [T8]I[/] [D3]like[/] [D4]walking[/]."
   },
   {
-    "path": "content/seed_weeks/a1_w10.yaml/twister/text",
-    "before": "[D2]Reading[/] [P1]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P1]in[/] [T1]the[/] [S7]morning[/], [D2]playing[/] [P3]on[/] [S7]Sunday[/], [A1]never[/], [A1]never[/], [A1]never[/]!",
-    "after": "[D2]Reading[/] [P3]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P3]in[/] [T1]the[/] [S7]morning[/], [D2]playing[/] [P3]on[/] [S7]Sunday[/], [A1]never[/], [A1]never[/], [A1]never[/]!"
-  },
-  {
     "path": "content/seed_weeks/a1_w10.yaml/twister/ru",
     "before": "Читаю вечером, гуляю утром, играю в воскресенье — никогда, никогда, никогда!",
     "after": "Чтение вечером, прогулки утром, игра в воскресенье — никогда, никогда, никогда!"
+  },
+  {
+    "path": "content/seed_weeks/a1_w10.yaml/twister/text",
+    "before": "[D2]Reading[/] [P1]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P1]in[/] [T1]the[/] [S7]morning[/], [D2]playing[/] [P3]on[/] [S7]Sunday[/], [A1]never[/], [A1]never[/], [A1]never[/]!",
+    "after": "[D2]Reading[/] [P3]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P3]in[/] [T1]the[/] [S7]morning[/], [D2]playing[/] [P3]on[/] [S7]Sunday[/], [A1]never[/], [A1]never[/], [A1]never[/]!"
   },
   {
     "path": "content/seed_weeks/a1_w10.yaml/twister/tip_ru",
