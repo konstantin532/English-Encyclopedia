@@ -9,8 +9,8 @@ target_units:
 body: |
   [T1]A[/] [J2]white[/] [S9]letter[/], [T1]a[/] [J2]white[/] [S9]letter[/]
   [P1]in[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]!
-  [O4]No[/] [S9]name[/], [O4]no[/] [S9]address[/],
-  [O4]no[/] [S2]stamp[/] [P3]on[/] [T1]the[/] [S9]letter[/].
+  [T4]No[/] [S9]name[/], [T4]no[/] [S9]address[/],
+  [T4]no[/] [S2]stamp[/] [P1]on[/] [T1]the[/] [S9]letter[/].
 
   [T9]Who[/] [D1]is[/] [S1]Rose[/]? [T9]Who[/] [D1]is[/] [S1]Rose[/]?
   [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/].
@@ -20,7 +20,7 @@ body: |
   [T1]The[/] [S4]post office[/] [D1]does[/] [X1]not[/] [D6]know[/],
   [T1]the[/] [J2]old[/] [S2]mailbox[/] [D1]does[/] [X1]not[/] [D9]get[/] [S9]letters[/].
   [A1]Never[/], [A1]never[/], [A1]never[/],
-  [O4]no[/] [S9]letters[/], [O4]no[/] [S9]letters[/]!
+  [T4]no[/] [S9]letters[/], [T4]no[/] [S9]letters[/]!
 
   [N1]One[/] [J2]white[/] [S9]letter[/],
   [N1]one[/] [S9]word[/]: [S1]Rose[/].

@@ -79,7 +79,7 @@ units:
   usage_note: 'Одна часть тела в Present Simple: my back hurts. Несколько: my feet hurt, без -s у hurt.'
 - uid: LX-00217
   lemma: sleep
-  meaning: to rest with your eyes closed at night
+  meaning: to be in the natural state of rest in which you are not awake
   class: D2
   forms:
   - sleeps
@@ -105,7 +105,7 @@ units:
   example_en: '[T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/].'
   example_ru: Я не могу спать.
   situation: Говорите, что не получается
-  usage_note: 'Пишут слитно: cannot. В разговоре — can''t, в Америке «кэнт».'
+  usage_note: 'Обычное полное отрицание can пишется cannot. Can''t — сокращение, удобное для разговора; полная форма тоже возможна. Произношение can''t зависит от темпа и контекста; один звук или ударение не всегда позволяют отличить его от can.'
 - uid: LX-00219
   lemma: but
   meaning: used to add something different

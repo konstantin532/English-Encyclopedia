@@ -74,7 +74,7 @@ units:
   example_en: '[T8]I[/] [D7]can[/] [D5]speak[/] [S10]English[/].'
   example_ru: Я говорю по-английски.
   situation: Говорите о языках
-  usage_note: 'Языки пишут с большой буквы и без the: speak English.'
+  usage_note: 'Название языка English пишется с большой буквы. В speak English артикля нет; в the English course слово English описывает курс, а артикль относится к course.'
 - uid: LX-00244
   lemma: Russian
   meaning: the language of Russia; from Russia

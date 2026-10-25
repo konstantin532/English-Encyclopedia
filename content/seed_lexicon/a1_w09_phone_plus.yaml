@@ -27,10 +27,10 @@ units:
   example_en: '[A6]When[/] [D1]does[/] [T1]the[/] [S4]shop[/] [D2]open[/]?'
   example_ru: Когда открывается магазин?
   situation: Задаёте вопрос
-  usage_note: when — «когда» вообще; what time — точное время.
+  usage_note: 'When спрашивает о времени в широком смысле: ответом может быть и день, и время на часах. What time прямо просит назвать время на часах; это не запрет точного ответа на when.'
 - uid: LX-00350
   lemma: which
-  meaning: what one of a small group
+  meaning: which one or ones of a known or limited set
   class: T9
   cefr: unverified
   verification_status: pending
@@ -109,7 +109,7 @@ units:
   usage_note: «мЭсидж», ударение в начале.
 - uid: LX-00355
   lemma: email
-  meaning: a message sent by computer
+  meaning: an electronic message sent through an email service
   class: S9
   forms:
   - emails
@@ -263,10 +263,10 @@ units:
   example_en: '[O2]Sorry[/], [T8]it[/] [D1]is[/] [T1]the[/] [J3]wrong[/] [S9]number[/].'
   example_ru: Извините, вы ошиблись номером.
   situation: Говорите по телефону и в сообщениях
-  usage_note: 'w не читается: «рон», носовой ŋ в конце. wrong number — «не туда попали».'
+  usage_note: 'w не произносится. В конце /ŋ/: задняя часть языка касается мягкого нёба, а не кончик языка, как для /n/. wrong number — «не туда попали».'
 - uid: LX-00366
   lemma: first name
-  meaning: the name given to you at birth, before your family name
+  meaning: a given name, as distinguished from a family name
   class: S9
   unit_type: phrase
   forms:
@@ -294,7 +294,7 @@ units:
   usage_note: 'Вместо Tom — любое имя. Ответ: Speaking! — «Это я».'
 - uid: LX-00368
   lemma: Call me later.
-  meaning: Asking someone to phone again
+  meaning: Asking someone to telephone at a later time
   class: D5
   unit_type: phrase
   cefr: unverified

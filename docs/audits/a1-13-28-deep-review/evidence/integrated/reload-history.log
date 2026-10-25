@@ -1,0 +1,8 @@
+29 objects imported automatically (use -v 2 for details).
+
+GUARD django.db.backends.sqlite3 /tmp/ee-a1-13-28-verification-07ft_u_u/fixture.sqlite3
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+PASS reload 1 all primary keys and four types of historical record unchanged; future EX113 unit=like
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+PASS reload 2 all primary keys and four types of historical record unchanged; future EX113 unit=like
+PASS {'units': 1047, 'lessons': 60, 'exercises': 355, 'practice': 240}

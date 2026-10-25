@@ -1,0 +1,29 @@
+Creating test database for alias 'default'...
+...F..F...................
+======================================================================
+FAIL: test_interactive_explanations_match_the_corrected_course (tests.test_a1_active_quality.ActiveA1ContentQualityTests.test_interactive_explanations_match_the_corrected_course)
+Интерактив не должен отменять правило, уже уточнённое в YAML-уроке.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-28/tests/test_a1_active_quality.py", line 57, in test_interactive_explanations_match_the_corrected_course
+    self.assertIn("Место работы", topics[14]["missions"][2]["coach"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Место работы' not found in 'На вопрос о профессии здесь отвечаем I am a teacher; место работы можно добавить отдельно.'
+
+======================================================================
+FAIL: test_six_mission_models_are_distinct_within_each_lesson (tests.test_a1_active_quality.ActiveA1ContentQualityTests.test_six_mission_models_are_distinct_within_each_lesson)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-28/tests/test_a1_active_quality.py", line 44, in test_six_mission_models_are_distinct_within_each_lesson
+    self.assertEqual(len(set(models)), 6, f"урок {number}: {models}")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 5 != 6 : урок 14: ["i'm a teacher", "she's a barista", "i'm a teacher", 'where do you work', "i'm not a doctor. i'm a teacher", 'anna is a teacher. mia is a barista']
+
+----------------------------------------------------------------------
+Ran 26 tests in 3.107s
+
+FAILED (failures=2)
+Destroying test database for alias 'default'...
+Found 26 test(s).
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).

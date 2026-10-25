@@ -1,0 +1,52 @@
+[
+  {
+    "path": "content/manifests/a1_micro_review_25_28.json",
+    "before_sha256": "e1483d3907406d3920c3e326be9d1258811603086ca134b07fed5e7ce6d3d002",
+    "after_sha256": "30d12c933b4c90dbdb4879a657d2129564b588e3d2996e3b9934432e802b54ba"
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json",
+    "before_sha256": "9c6345dda37fa904eccb573e9c99c80d372c4a4ea2624fadd3d2e3838f00e56f",
+    "after_sha256": "e3c398f985c4f52aa0b57698a5cdf96140073d4b2273b7229b6590731336cdd0"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "before_sha256": "6dbccb488a3df3dacdf9c76baa4e70172f58a3e83c425c258c532f70d5453e98",
+    "after_sha256": "ea1b081ad5361c58ae2f42483f37d0c6b9a35bb92b1632a2e7b77077c96c9b07"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l26_why_because.yaml",
+    "before_sha256": "cbc6c8990723d17a655bf79d6a48e196a2a0e931451dffcd1818abe808feb538",
+    "after_sha256": "71f0ecc8972f288382d708b165427b6db09b66c91148ca943391f42873894ff7"
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l27_bus.yaml",
+    "before_sha256": "0a6bf976214e6876e1ce99d223222292e3fa4927e24b7277b869cdec6e10bc2a",
+    "after_sha256": "26ffa4cb8d17c66e39b0ea4e07f4636a2a5968d9cc7c36bf44288b82be686a9a"
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l28_review.yaml",
+    "before_sha256": "21a7ab6debad0394b371d82d275ec99d2e4138a2ef0f62f9dcc5db96c792a1d5",
+    "after_sha256": "0e8b8aee6d68d3f98c691e1e39609024fadfdcbde3d1399af2b5af4e4acb3525"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w13_study.yaml",
+    "before_sha256": "65eaf60e131e76ae4bc0f7faddea2b3ac1bf9485d26136cbb672a6d90b80810d",
+    "after_sha256": "d2443fe52a2b59293c6437c64f6433491af8c14f4836ee5e734015ade93cf22f"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel.yaml",
+    "before_sha256": "21a134e132c75e7d0f26f60b85f1eea0838642802b937b66e48bcaee1cec66ed",
+    "after_sha256": "f4c9c610faab969a7547921431e6cf7cfd9cc0c0697c89208c69bbf687c37b0d"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel_plus.yaml",
+    "before_sha256": "f4a40dd5cbd20821d9662c8c3661066be244c29d09d86a4ed891262dec42fda6",
+    "after_sha256": "fd6b48ae5ba9d06c71b607f7cd5b81a54948bbd72c37ff573df2aed3b29096da"
+  },
+  {
+    "path": "content/seed_poems/p07_bus_to_park_street.yaml",
+    "before_sha256": "db107bca162c3ed2e1395592617f7e32024af68870e18afa559482fe5861df4d",
+    "after_sha256": "11516a3049468f1e48fdca6d9ad487277be2627910388cd5a30ccc613540f3d6"
+  }
+]

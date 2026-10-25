@@ -1,0 +1,386 @@
+[
+  {
+    "field": "content/active_a1/topics_21_22.json[slug=a1-cant-cannot]/context",
+    "before": "Для состояния используйте be или feel; после can’t ставьте начальную форму действия.",
+    "after": "Для прилагательных tired, sick, hungry и thirsty используйте здесь be или feel; после can’t ставьте глагол в начальной форме без to."
+  },
+  {
+    "field": "content/active_a1/topics_23_24.json[slug=a1-dont-doesnt]/context",
+    "before": "После don’t и doesn’t действие остаётся без -s. Различайте нет вещи и не знаю информацию.",
+    "after": "После don’t и doesn’t смысловой глагол остаётся в начальной форме без -s. Различайте отсутствие вещи (have) и незнание информации (know)."
+  },
+  {
+    "field": "content/manifests/a1_scaffold_transfer.json/lessons[slug=a1-letters-address]/steps",
+    "before": [
+      {
+        "example_en": "What is your address?",
+        "example_ru": "Какой у вас адрес?",
+        "why_ru": "Address — адрес. В личных заданиях используйте только вымышленные данные."
+      },
+      {
+        "example_en": "My address is 10 Park Street.",
+        "example_ru": "Мой адрес — Парк-стрит, дом 10.",
+        "why_ru": "В англоязычном адресе номер дома обычно указывают перед названием улицы."
+      },
+      {
+        "example_en": "Can you repeat the address, please?",
+        "example_ru": "Повторите адрес, пожалуйста.",
+        "why_ru": "Repeat помогает уточнить услышанное; не обязательно диктовать всё по буквам."
+      }
+    ],
+    "after": [
+      {
+        "example_en": "What is your address?",
+        "example_ru": "Какой у вас адрес?",
+        "why_ru": "Address — адрес. В личных заданиях используйте только вымышленные данные."
+      },
+      {
+        "example_en": "My address is 10 Park Street.",
+        "example_ru": "Мой адрес — Парк-стрит, дом 10.",
+        "why_ru": "В англоязычном адресе номер дома обычно указывают перед названием улицы."
+      },
+      {
+        "example_en": "Can you spell it, please?",
+        "example_ru": "Продиктуйте это по буквам, пожалуйста.",
+        "why_ru": "Не удалось разобрать написание адреса: попросите произнести его по буквам. Can you spell it, please? — знакомая просьба из урока 18; it отсылает к уже названному адресу."
+      }
+    ]
+  },
+  {
+    "field": "content/manifests/a1_scaffold_transfer.json/lessons[slug=a1-letters-address]/transfer_variants",
+    "before": [
+      {
+        "prompt": "Вы не расслышали адрес. Попросите собеседника повторить его, не называя настоящих данных.",
+        "model": "Can you repeat the address, please?"
+      },
+      {
+        "prompt": "На почте сотрудник быстро произнёс имя. Попросите повторить его по буквам.",
+        "model": "Can you spell that again, please?"
+      }
+    ],
+    "after": [
+      {
+        "prompt": "Вы не разобрали написание адреса. Попросите продиктовать его по буквам; используйте знакомую просьбу со spell и it.",
+        "model": "Can you spell it, please?"
+      },
+      {
+        "prompt": "На почте сотрудник произнёс имя. Попросите назвать его по буквам, используя spell и your name.",
+        "model": "Can you spell your name, please?"
+      }
+    ]
+  },
+  {
+    "field": "content/manifests/a1_understanding_checks.json/lessons[slug=a1-dont-doesnt]/plain",
+    "before": "Don't/doesn't делают обычные действия отрицательными.",
+    "after": "Don't/doesn't образуют отрицание обычного глагола в Present Simple: и действия work, и состояния know."
+  },
+  {
+    "field": "content/seed_lessons/a1_w11_l21_what_hurts.yaml/exercises[uid=EX-00117]/units",
+    "before": [
+      "LX-00212",
+      "LX-00221"
+    ],
+    "after": [
+      "LX-00212"
+    ]
+  },
+  {
+    "field": "content/seed_lessons/a1_w11_l21_what_hurts.yaml/exercises[uid=EX-00121]/units",
+    "before": [
+      "LX-00400",
+      "LX-00408"
+    ],
+    "after": [
+      "LX-00400"
+    ]
+  },
+  {
+    "field": "content/seed_lessons/a1_w11_l21_what_hurts.yaml/layers[number=2]/body",
+    "before": "Одну жалобу можно выразить двумя способами:\n\n**I have a headache.** — У меня болит голова. После **have** называем недомогание: **a headache**.\n**My head hurts.** — У меня болит голова. Теперь сначала называем часть тела — **my head**, затем говорим, что она болит: **hurts**. Смысл тот же, а устройство фразы другое.\n\nДля спины используйте **My back hurts**. Не соединяйте половины двух схем: *I have back hurts* не подходит. Слово **my** показывает, чья часть тела болит, а **hurts** само выражает действие; дополнительное is не нужно.\n\nСравните число: **My foot hurts. → My feet hurt.** Одна ступня — **foot**, поэтому **hurts**; несколько — **feet**, поэтому **hurt**. В вопросе **Does your head hurt?** форму для одной части тела уже показывает does, и дальше **hurt** без -s.\n\nЭти примеры помогают сообщить, что болит. Они не заменяют слов для подробного рассказа о симптомах или общения со специалистом.\n",
+    "after": "Одну жалобу можно выразить двумя способами:\n\n**I have a headache.** — У меня болит голова. После **have** называем недомогание: **a headache**.\n**My head hurts.** — У меня болит голова. Теперь сначала называем часть тела — **my head**, затем говорим, что она болит: **hurts**. Смысл тот же, а устройство фразы другое.\n\nДля спины используйте **My back hurts**. Не соединяйте половины двух схем: *I have back hurts* не подходит. Слово **my** показывает, чья часть тела болит, а **hurts** — уже глагол в Present Simple. Он описывает боль, а не обязательно действие. Дополнительное is перед ним не нужно: **My back hurts**, не *My back is hurts*.\n\nСравните число: **My foot hurts. → My feet hurt.** Одна ступня — **foot**, поэтому **hurts**; несколько — **feet**, поэтому **hurt**. В вопросе **Does your head hurt?** форму для одной части тела уже показывает does, и дальше **hurt** без -s.\n\nЭти примеры помогают сообщить, что болит. Они не заменяют слов для подробного рассказа о симптомах или общения со специалистом.\n"
+  },
+  {
+    "field": "content/seed_lessons/a1_w11_l21_what_hurts.yaml/sound_notes",
+    "before": [
+      {
+        "text": "I have a headache.",
+        "ipa": "/aɪ ˈhæv ə ˈhɛdeɪk/",
+        "note_ru": "ache — «эйк»: «хЭдэйк», ударение на head"
+      },
+      {
+        "text": "My back hurts.",
+        "ipa": "/maɪ ˈbæk ˈhɝts/",
+        "note_ru": "hurts — американское r внутри: «хёртс», h выдыхается"
+      },
+      {
+        "text": "How are you?",
+        "ipa": "/ˌhaʊ ɚ ˈju/",
+        "note_ru": "are почти пропадает: «хау эр Ю»"
+      }
+    ],
+    "after": [
+      {
+        "text": "I have a headache.",
+        "ipa": "/aɪ ˈhæv ə ˈhɛdeɪk/",
+        "note_ru": "ache — «эйк»: «хЭдэйк», ударение на head"
+      },
+      {
+        "text": "My back hurts.",
+        "ipa": "/maɪ ˈbæk ˈhɝts/",
+        "note_ru": "hurts — американское r внутри: «хёртс», h выдыхается"
+      },
+      {
+        "text": "How are you?",
+        "ipa": "/ˌhaʊ ɚ ˈju/",
+        "note_ru": "В этом образце are без ударения: /ɚ/. При выделении слова оно может звучать полнее: /ɑr/."
+      }
+    ]
+  },
+  {
+    "field": "content/seed_lessons/a1_w11_l22_cant.yaml/exercises[uid=EX-00126]/explanation_ru",
+    "before": "I am thirsty. О состоянии говорят с am / is / are или feel.",
+    "after": "I am thirsty. Thirsty — прилагательное: в этой конструкции перед ним нужен am. Можно также сказать I feel thirsty."
+  },
+  {
+    "field": "content/seed_lessons/a1_w11_l22_cant.yaml/exercises[uid=EX-00126]/units",
+    "before": [
+      "LX-00403",
+      "LX-00404",
+      "LX-00405"
+    ],
+    "after": [
+      "LX-00405"
+    ]
+  },
+  {
+    "field": "content/seed_lessons/a1_w11_l22_cant.yaml/exercises[uid=EX-00127]/hint_ru",
+    "before": "Сначала I am + состояние, затем and и I can't + действие.",
+    "after": "Сначала I am + прилагательное tired, затем and и I can't + глагол sleep."
+  },
+  {
+    "field": "content/seed_lessons/a1_w11_l22_cant.yaml/layers[number=2]/body",
+    "before": "**I can sleep.** — Я могу спать.\n**I cannot sleep. / I can't sleep.** — Я не могу спать. Смысл меняет отрицание; слово **sleep** остаётся той же формой.\n\nПосле **can't** называем действие: **sleep, work, walk**. С другим человеком схема сохраняется: **Tom can't sleep**, без *cans* и без *sleeps*. Не добавляем to: **can't sleep**, а не *can't to sleep*.\n\n**I am tired** сообщает о состоянии: «Я устал». **I can't sleep** сообщает, какое действие не получается: «Я не могу спать». Чтобы соединить обе мысли, скажите **I am tired and I can't sleep.** Не смешивайте схемы: *I am can't sleep* и *I can tired* не подходят.\n\n**Cannot** — полная форма, обычно пишется слитно. **Can't** — её сокращение. Обе формы передают отрицание; сокращение не меняет действие на другое. В другом контексте can't может выражать и запрет, поэтому выбирайте смысл по всей ситуации.\n",
+    "after": "**I can sleep.** — Я могу спать.\n**I cannot sleep. / I can't sleep.** — Я не могу спать. Смысл меняет отрицание; слово **sleep** остаётся той же формой.\n\nПосле **can't** ставим глагол в начальной форме: **sleep, work, walk**. С другим человеком схема сохраняется: **Tom can't sleep**, без *cans* и без *sleeps*. Не добавляем to: **can't sleep**, а не *can't to sleep*.\n\n**I am tired** сообщает о состоянии: «Я устал». **I can't sleep** сообщает, какое действие не получается: «Я не могу спать». Чтобы соединить обе мысли, скажите **I am tired and I can't sleep.** Не смешивайте схемы: *I am can't sleep* и *I can tired* не подходят.\n\n**Cannot** — полная форма, обычно пишется слитно. **Can't** — её сокращение. Обе формы передают отрицание; сокращение не меняет действие на другое. В другом контексте can't может выражать и запрет, поэтому выбирайте смысл по всей ситуации.\n"
+  },
+  {
+    "field": "content/seed_lessons/a1_w11_l22_cant.yaml/layers[number=3]/body",
+    "before": "Схема:\n\n> [T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/]. — Я не могу спать.\n\n- Отрицание: I cannot / I can't + глагол: I can't sleep.\n- Глагол после can't без to и без -s: he can't sleep.\n- Вопрос: Can you sleep? — Yes, I can. / No, I can't.\n- **but** показывает контраст: My head is OK, but my back hurts. Не обязательно искать слова-антонимы: достаточно, что вторая мысль расходится с первой или с ожиданием.\n\n**Самочувствие и действие — разные вещи.** Sick — нездоровый, tired — уставший, hungry — голодный, thirsty — испытывающий жажду, well — здоровый. О состоянии говорят с be или feel — «чувствовать себя»:\n\n> [T8]I[/] [D3]feel[/] [J4]sick[/] [C1]and[/] [J4]tired[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — Мне нехорошо, и я устал. У меня болит голова.\n> [T8]I[/] [D1]am[/] [J4]hungry[/]. — Я голоден.\n> [T8]I[/] [D3]feel[/] [J4]thirsty[/]. — Я хочу пить.\n> [T8]I[/] [D1]am[/] [J4]well[/]. — Я здоров.\n\nНе смешивайте схемы: I am tired или I feel tired, без «I am feel». Well здесь описывает здоровье человека.\n\nRest — отдыхать, sit — сидеть, sleep — спать. После can / can't нужен **глагол** в начальной форме: sleep, sit. Само прилагательное не подходит: нельзя *I can tired*. Глагол **be** тоже может стоять после can: **can be**, а не *can am*; эту схему разберём подробнее позже.\n\n> [T8]I[/] [D7]can[/] [D2]sit[/], [C5]but[/] [T8]I[/] [D7]ca[/][X1]n't[/] [D2]sleep[/]. — Я могу сидеть, но не могу спать.\n> [D2]Rest[/] [P1]at[/] [S4]home[/] [T5]every[/] [S7]day[/] [C1]and[/] [D2]drink[/] [S3]water[/]. — Отдыхайте дома каждый день и пейте воду.\n\nMedicine — лекарство, обычно без a в общем значении. Здесь мы учим слово, а не выбираем лечение:\n\n> [T8]I[/] [D1]have[/] [S5]medicine[/]. — У меня есть лекарство.\n",
+    "after": "Схема:\n\n> [T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/]. — Я не могу спать.\n\n- Отрицание: I cannot / I can't + глагол: I can't sleep.\n- Глагол после can't без to и без -s: he can't sleep.\n- Вопрос: Can you sleep? — Yes, I can. / No, I can't.\n- **but** показывает контраст: My head is OK, but my back hurts. Не обязательно искать слова-антонимы: достаточно, что вторая мысль расходится с первой или с ожиданием.\n\n**Сравним две конструкции.** Sick — нездоровый, tired — уставший, hungry — голодный, thirsty — испытывающий жажду, well — здоровый в этих примерах. Здесь это прилагательные: для сообщения о самочувствии поставьте перед ними be или feel — «чувствовать себя». Это правило для этих сочетаний, а не для любого состояния: знакомое **I like tea** тоже описывает отношение, но like — самостоятельный глагол.\n\n> [T8]I[/] [D3]feel[/] [J4]sick[/] [C1]and[/] [J4]tired[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — Мне нехорошо, и я устал. У меня болит голова.\n> [T8]I[/] [D1]am[/] [J4]hungry[/]. — Я голоден.\n> [T8]I[/] [D3]feel[/] [J4]thirsty[/]. — Я хочу пить.\n> [T8]I[/] [D1]am[/] [J4]well[/]. — Я здоров.\n\nНе смешивайте схемы: I am tired или I feel tired, без «I am feel». Well здесь описывает здоровье человека.\n\nRest — отдыхать, sit — сидеть, sleep — спать. После can / can't нужен **глагол** в начальной форме: sleep, sit. Само прилагательное не подходит: нельзя *I can tired*. Глагол **be** тоже может стоять после can: **can be**, а не *can am*; эту схему разберём подробнее позже.\n\n> [T8]I[/] [D7]can[/] [D2]sit[/], [C5]but[/] [T8]I[/] [D7]ca[/][X1]n't[/] [D2]sleep[/]. — Я могу сидеть, но не могу спать.\n> [D2]Rest[/] [P1]at[/] [S4]home[/] [T5]every[/] [S7]day[/] [C1]and[/] [D2]drink[/] [S3]water[/]. — Отдыхайте дома каждый день и пейте воду.\n\nMedicine — лекарство, обычно без a в общем значении. Здесь мы учим слово, а не выбираем лечение:\n\n> [T8]I[/] [D1]have[/] [S5]medicine[/]. — У меня есть лекарство.\n"
+  },
+  {
+    "field": "content/seed_lessons/a1_w11_l22_cant.yaml/practice[order=1]/explanation_ru",
+    "before": "I can't sleep. Cannot пишут одним словом; в речи — can't.",
+    "after": "I can't sleep. Обычную полную форму cannot пишут одним словом. Can't — разговорное сокращение; cannot тоже можно произнести, например для подчёркивания."
+  },
+  {
+    "field": "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml/exercises[uid=EX-00129]/units",
+    "before": [
+      "LX-00233"
+    ],
+    "after": []
+  },
+  {
+    "field": "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml/exercises[uid=EX-00133]/explanation_ru",
+    "before": "Отрицайте действие know через do not; ZIP code — индекс в США.",
+    "after": "Know — глагол «знать». В Present Simple с I его отрицание строится через do not, хотя знать — состояние, а не действие. ZIP code — индекс в США."
+  },
+  {
+    "field": "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml/practice[order=2]/prompt_ru",
+    "before": "Старый ящик не получает писем.",
+    "after": "Речь об уже известном старом почтовом ящике. Скажите, что он не получает писем; назовите его словом mailbox. Слово old можно повторить."
+  },
+  {
+    "field": "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml/practice[order=2]/units",
+    "before": [
+      "LX-00180",
+      "LX-00225",
+      "LX-00235"
+    ],
+    "after": [
+      "LX-00180",
+      "LX-00225"
+    ]
+  },
+  {
+    "field": "content/seed_lessons/a1_w12_l24_address.yaml/exercises[uid=EX-00139]/accepted",
+    "before": [
+      "My last name is Belova"
+    ],
+    "after": [
+      "My last name is Belova",
+      "My last name's Belova."
+    ]
+  },
+  {
+    "field": "content/seed_lexicon/a1_w11_health.yaml/units[uid=LX-00217]/meaning",
+    "before": "to rest with your eyes closed at night",
+    "after": "to be in the natural state of rest in which you are not awake"
+  },
+  {
+    "field": "content/seed_lexicon/a1_w11_health.yaml/units[uid=LX-00218]/usage_note",
+    "before": "Пишут слитно: cannot. В разговоре — can't, в Америке «кэнт».",
+    "after": "Обычное полное отрицание can пишется cannot. Can't — сокращение, удобное для разговора; полная форма тоже возможна. Произношение can't зависит от темпа и контекста; один звук или ударение не всегда позволяют отличить его от can."
+  },
+  {
+    "field": "content/seed_lexicon/a1_w11_health_plus.yaml/units[uid=LX-00403]/usage_note",
+    "before": "Состояние выражают с be или feel: I am tired, I feel tired.",
+    "after": "Tired — прилагательное. Здесь для сообщения об усталости: I am tired или I feel tired. Это не универсальное правило для всех состояний."
+  },
+  {
+    "field": "content/seed_lexicon/a1_w11_health_plus.yaml/units[uid=LX-00411]/usage_note",
+    "before": "Feel + состояние: feel sick, feel tired. Не добавляйте am перед feel.",
+    "after": "В этих сочетаниях после feel — прилагательное: feel sick, feel tired. В изучаемом Present Simple: I feel tired, без am перед feel."
+  },
+  {
+    "field": "content/seed_lexicon/a1_w12_post.yaml/units[uid=LX-00232]/usage_note",
+    "before": "Перед гласным звуком the звучит «зи»: the address — «зи эдрес».",
+    "after": "В этом образце перед гласным используется the /ði/: the address. Звук /ð/ произносится с кончиком языка у зубов; это не русское з. Не заменяйте английское произношение русской записью."
+  },
+  {
+    "field": "content/seed_lexicon/a1_w12_story04.yaml/units[uid=LX-00237]/meaning",
+    "before": "having the colour of snow or milk",
+    "after": "having the color of snow or milk"
+  },
+  {
+    "field": "content/seed_poems/p06_who_knows.yaml/body",
+    "before": "[T1]A[/] [J2]white[/] [S9]letter[/], [T1]a[/] [J2]white[/] [S9]letter[/]\n[P1]in[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]!\n[O4]No[/] [S9]name[/], [O4]no[/] [S9]address[/],\n[O4]no[/] [S2]stamp[/] [P3]on[/] [T1]the[/] [S9]letter[/].\n\n[T9]Who[/] [D1]is[/] [S1]Rose[/]? [T9]Who[/] [D1]is[/] [S1]Rose[/]?\n[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/].\n[D1]Does[/] [S1]Tom[/] [D6]know[/]? [D1]Does[/] [S1]Mia[/] [D6]know[/]?\n[O4]No[/], [O4]no[/], [O4]no[/]!\n\n[T1]The[/] [S4]post office[/] [D1]does[/] [X1]not[/] [D6]know[/],\n[T1]the[/] [J2]old[/] [S2]mailbox[/] [D1]does[/] [X1]not[/] [D9]get[/] [S9]letters[/].\n[A1]Never[/], [A1]never[/], [A1]never[/],\n[O4]no[/] [S9]letters[/], [O4]no[/] [S9]letters[/]!\n\n[N1]One[/] [J2]white[/] [S9]letter[/],\n[N1]one[/] [S9]word[/]: [S1]Rose[/].\n[T9]Who[/] [D1]is[/] [S1]Rose[/]?\n[T9]Who[/] [D6]knows[/]? [T9]Who[/] [D6]knows[/]?\n\n[T8]I[/] [D7]cannot[/] [D2]sleep[/],\n[T8]it[/] [D1]is[/] [A2]late[/] [P3]at[/] [S7]night[/].\n[T8]I[/] [D1]have[/] [T1]the[/] [S9]letter[/],\n[J2]white[/], [J2]white[/], [J2]white[/].\n",
+    "after": "[T1]A[/] [J2]white[/] [S9]letter[/], [T1]a[/] [J2]white[/] [S9]letter[/]\n[P1]in[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]!\n[T4]No[/] [S9]name[/], [T4]no[/] [S9]address[/],\n[T4]no[/] [S2]stamp[/] [P1]on[/] [T1]the[/] [S9]letter[/].\n\n[T9]Who[/] [D1]is[/] [S1]Rose[/]? [T9]Who[/] [D1]is[/] [S1]Rose[/]?\n[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/].\n[D1]Does[/] [S1]Tom[/] [D6]know[/]? [D1]Does[/] [S1]Mia[/] [D6]know[/]?\n[O4]No[/], [O4]no[/], [O4]no[/]!\n\n[T1]The[/] [S4]post office[/] [D1]does[/] [X1]not[/] [D6]know[/],\n[T1]the[/] [J2]old[/] [S2]mailbox[/] [D1]does[/] [X1]not[/] [D9]get[/] [S9]letters[/].\n[A1]Never[/], [A1]never[/], [A1]never[/],\n[T4]no[/] [S9]letters[/], [T4]no[/] [S9]letters[/]!\n\n[N1]One[/] [J2]white[/] [S9]letter[/],\n[N1]one[/] [S9]word[/]: [S1]Rose[/].\n[T9]Who[/] [D1]is[/] [S1]Rose[/]?\n[T9]Who[/] [D6]knows[/]? [T9]Who[/] [D6]knows[/]?\n\n[T8]I[/] [D7]cannot[/] [D2]sleep[/],\n[T8]it[/] [D1]is[/] [A2]late[/] [P3]at[/] [S7]night[/].\n[T8]I[/] [D1]have[/] [T1]the[/] [S9]letter[/],\n[J2]white[/], [J2]white[/], [J2]white[/].\n"
+  },
+  {
+    "field": "content/seed_stories/s04_letter_with_no_name.yaml/script",
+    "before": [
+      {
+        "speaker": "anna",
+        "kind": "narration",
+        "emotion": "neutral",
+        "music": "mystery",
+        "text": "[T8]It[/] [D1]is[/] [N3]eight o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]. [T5]Every[/] [S7]evening[/].",
+        "spoken": "[T8]It[/][D1]'s[/] [N3]eight o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]. [T5]Every[/] [S7]evening[/]."
+      },
+      {
+        "speaker": "tom",
+        "kind": "speech",
+        "emotion": "happy",
+        "text": "“[S1]Anna[/], [T1]the[/] [S2]mailbox[/] [D1]does[/] [X1]not[/] [D9]get[/] [S9]letters[/]. [A1]Never[/]!”",
+        "spoken": "“[S1]Anna[/], [T1]the[/] [S2]mailbox[/] [D1]does[/][X1]n't[/] [D9]get[/] [S9]letters[/]. [A1]Never[/]!”"
+      },
+      {
+        "speaker": "anna",
+        "kind": "narration",
+        "emotion": "surprised",
+        "text": "[T9]There[/] [D1]is[/] [T1]a[/] [S9]letter[/] [P1]in[/] [T1]the[/] [S2]mailbox[/]! [T8]It[/] [D1]is[/] [J2]white[/].",
+        "spoken": "[T9]There[/][D1]'s[/] [T1]a[/] [S9]letter[/] [P1]in[/] [T1]the[/] [S2]mailbox[/]! [T8]It[/][D1]'s[/] [J2]white[/]."
+      },
+      {
+        "speaker": "anna",
+        "kind": "narration",
+        "emotion": "worried",
+        "text": "[T9]There[/] [D1]is[/] [O4]no[/] [S9]name[/] [P3]on[/] [T1]the[/] [S9]letter[/]. [O4]No[/] [S9]address[/]. [O4]No[/] [S2]stamp[/].",
+        "spoken": "[T9]There[/][D1]'s[/] [O4]no[/] [S9]name[/] [P3]on[/] [T1]the[/] [S9]letter[/]. [O4]No[/] [S9]address[/]. [O4]No[/] [S2]stamp[/]."
+      },
+      {
+        "speaker": "tom",
+        "kind": "speech",
+        "emotion": "surprised",
+        "text": "“[T1]A[/] [S9]letter[/]? [A3]Here[/]? [C5]But[/] [T8]it[/] [D1]is[/] [X1]not[/] [P2]from[/] [T1]the[/] [S4]post office[/]!”",
+        "spoken": "“[T1]A[/] [S9]letter[/]? [A3]Here[/]? [C5]But[/] [T8]it[/] [D1]is[/][X1]n't[/] [P2]from[/] [T1]the[/] [S4]post office[/]!”"
+      },
+      {
+        "speaker": "anna",
+        "kind": "narration",
+        "emotion": "whisper",
+        "text": "[P1]In[/] [T1]the[/] [S9]letter[/], [T9]there[/] [D1]is[/] [N1]one[/] [S9]word[/]: [S1]Rose[/].",
+        "spoken": "[P1]In[/] [T1]the[/] [S9]letter[/], [T9]there[/][D1]'s[/] [N1]one[/] [S9]word[/]: [S1]Rose[/]."
+      },
+      {
+        "speaker": "tom",
+        "kind": "speech",
+        "emotion": "whisper",
+        "text": "“[S1]Rose[/]? [T9]Who[/] [D1]is[/] [S1]Rose[/]?”",
+        "spoken": "“[S1]Rose[/]? [T9]Who[/][D1]'s[/] [S1]Rose[/]?”"
+      },
+      {
+        "speaker": "anna",
+        "kind": "speech",
+        "emotion": "worried",
+        "text": "“[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S9]name[/]. [T8]It[/] [D1]is[/] [X1]not[/] [S1]Mia's[/] [S9]name[/].”",
+        "spoken": "“[T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]. [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S9]name[/]. [T8]It[/] [D1]is[/][X1]n't[/] [S1]Mia's[/] [S9]name[/].”"
+      },
+      {
+        "speaker": "anna",
+        "kind": "narration",
+        "emotion": "neutral",
+        "music": "tense",
+        "text": "[S1]Box[/] [D1]does[/] [X1]not[/] [D3]like[/] [T1]the[/] [S9]letter[/]. [C1]And[/] [T8]I[/] [D1]do[/] [X1]not[/] [D3]like[/] [T1]the[/] [J2]old[/] [S2]mailbox[/] [A2]now[/].",
+        "spoken": "[S1]Box[/] [D1]does[/][X1]n't[/] [D3]like[/] [T1]the[/] [S9]letter[/]. [C1]And[/] [T8]I[/] [D1]do[/][X1]n't[/] [D3]like[/] [T1]the[/] [J2]old[/] [S2]mailbox[/] [A2]now[/]."
+      }
+    ],
+    "after": [
+      {
+        "speaker": "anna",
+        "kind": "narration",
+        "emotion": "neutral",
+        "music": "mystery",
+        "text": "[T8]It[/] [D1]is[/] [N3]eight o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]. [T5]Every[/] [S7]evening[/].",
+        "spoken": "[T8]It[/][D1]'s[/] [N3]eight o'clock[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]. [T5]Every[/] [S7]evening[/]."
+      },
+      {
+        "speaker": "tom",
+        "kind": "speech",
+        "emotion": "happy",
+        "text": "“[S1]Anna[/], [T1]the[/] [S2]mailbox[/] [D1]does[/] [X1]not[/] [D9]get[/] [S9]letters[/]. [A1]Never[/]!”",
+        "spoken": "“[S1]Anna[/], [T1]the[/] [S2]mailbox[/] [D1]does[/][X1]n't[/] [D9]get[/] [S9]letters[/]. [A1]Never[/]!”"
+      },
+      {
+        "speaker": "anna",
+        "kind": "narration",
+        "emotion": "surprised",
+        "text": "[T9]There[/] [D1]is[/] [T1]a[/] [S9]letter[/] [P1]in[/] [T1]the[/] [S2]mailbox[/]! [T8]It[/] [D1]is[/] [J2]white[/].",
+        "spoken": "[T9]There[/][D1]'s[/] [T1]a[/] [S9]letter[/] [P1]in[/] [T1]the[/] [S2]mailbox[/]! [T8]It[/][D1]'s[/] [J2]white[/]."
+      },
+      {
+        "speaker": "anna",
+        "kind": "narration",
+        "emotion": "worried",
+        "text": "[T9]There[/] [D1]is[/] [T4]no[/] [S9]name[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [T4]No[/] [S9]address[/]. [T4]No[/] [S2]stamp[/].",
+        "spoken": "[T9]There[/][D1]'s[/] [T4]no[/] [S9]name[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [T4]No[/] [S9]address[/]. [T4]No[/] [S2]stamp[/]."
+      },
+      {
+        "speaker": "tom",
+        "kind": "speech",
+        "emotion": "surprised",
+        "text": "“[T1]A[/] [S9]letter[/]? [A3]Here[/]? [C5]But[/] [T8]it[/] [D1]is[/] [X1]not[/] [P2]from[/] [T1]the[/] [S4]post office[/]!”",
+        "spoken": "“[T1]A[/] [S9]letter[/]? [A3]Here[/]? [C5]But[/] [T8]it[/] [D1]is[/][X1]n't[/] [P2]from[/] [T1]the[/] [S4]post office[/]!”"
+      },
+      {
+        "speaker": "anna",
+        "kind": "narration",
+        "emotion": "whisper",
+        "text": "[P1]In[/] [T1]the[/] [S9]letter[/], [T9]there[/] [D1]is[/] [N1]one[/] [S9]word[/]: [S1]Rose[/].",
+        "spoken": "[P1]In[/] [T1]the[/] [S9]letter[/], [T9]there[/][D1]'s[/] [N1]one[/] [S9]word[/]: [S1]Rose[/]."
+      },
+      {
+        "speaker": "tom",
+        "kind": "speech",
+        "emotion": "whisper",
+        "text": "“[S1]Rose[/]? [T9]Who[/] [D1]is[/] [S1]Rose[/]?”",
+        "spoken": "“[S1]Rose[/]? [T9]Who[/][D1]'s[/] [S1]Rose[/]?”"
+      },
+      {
+        "speaker": "anna",
+        "kind": "speech",
+        "emotion": "worried",
+        "text": "“[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S9]name[/]. [T8]It[/] [D1]is[/] [X1]not[/] [S1]Mia's[/] [S9]name[/].”",
+        "spoken": "“[T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]. [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S9]name[/]. [T8]It[/] [D1]is[/][X1]n't[/] [S1]Mia's[/] [S9]name[/].”"
+      },
+      {
+        "speaker": "anna",
+        "kind": "narration",
+        "emotion": "neutral",
+        "music": "tense",
+        "text": "[S1]Box[/] [D1]does[/] [X1]not[/] [D3]like[/] [T1]the[/] [S9]letter[/]. [C1]And[/] [T8]I[/] [D1]do[/] [X1]not[/] [D3]like[/] [T1]the[/] [J2]old[/] [S2]mailbox[/] [A2]now[/].",
+        "spoken": "[S1]Box[/] [D1]does[/][X1]n't[/] [D3]like[/] [T1]the[/] [S9]letter[/]. [C1]And[/] [T8]I[/] [D1]do[/][X1]n't[/] [D3]like[/] [T1]the[/] [J2]old[/] [S2]mailbox[/] [A2]now[/]."
+      }
+    ]
+  }
+]

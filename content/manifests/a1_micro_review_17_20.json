@@ -148,16 +148,16 @@
           "drinks tea in the morning"
         ],
         [
-          "читает ли Анна вечером",
+          "ужинает ли Анна вечером",
           "Anna",
-          "read in the evening",
-          "reads in the evening"
+          "have dinner in the evening",
+          "has dinner in the evening"
         ],
         [
-          "живёт ли Том здесь",
+          "работает ли Том здесь",
           "Tom",
-          "live here",
-          "lives here"
+          "work here",
+          "works here"
         ],
         [
           "любит ли Мия кофе",
@@ -746,8 +746,8 @@
           "playing the guitar"
         ],
         [
-          "петь",
-          "singing"
+          "готовить",
+          "cooking"
         ],
         [
           "слушать музыку",
@@ -790,16 +790,16 @@
           "plays"
         ],
         [
-          "петь",
-          "singing",
-          "sing",
-          "sings"
+          "готовить",
+          "cooking",
+          "cook",
+          "cooks"
         ],
         [
-          "плавать",
-          "swimming",
-          "swim",
-          "swims"
+          "смотреть телевизор",
+          "watching TV",
+          "watch TV",
+          "watches TV"
         ]
       ],
       "options": [
@@ -830,8 +830,8 @@
           "playing the guitar"
         ],
         [
-          "петь",
-          "singing"
+          "готовить",
+          "cooking"
         ],
         [
           "смотреть телевизор",
@@ -841,7 +841,7 @@
       "options": [
         "Do you like {verb}?",
         "Does you like {verb}?",
-        "Do you like {verb}ing?"
+        "Do you likes {verb}?"
       ],
       "reason": "К you задайте вопрос через Do you like + -ing форму.",
       "en": ""
@@ -906,19 +906,19 @@
         [
           "green",
           "shirt",
-          "hat",
+          "shoes",
           "jacket"
         ],
         [
           "red",
           "jacket",
           "shoes",
-          "coat"
+          "shirt"
         ],
         [
-          "new",
-          "hat",
-          "coat",
+          "green",
+          "shoes",
+          "jacket",
           "shirt"
         ]
       ],
@@ -954,8 +954,8 @@
           "jacket"
         ],
         [
-          "моя белая рубашка",
-          "white",
+          "моя зелёная рубашка",
+          "green",
           "shirt"
         ],
         [

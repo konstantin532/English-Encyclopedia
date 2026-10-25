@@ -194,7 +194,7 @@ units:
   example_en: "[T8]I[/] [D3]feel[/] [J4]tired[/]."
   example_ru: "Я чувствую усталость."
   situation: Говорите о самочувствии и возможностях
-  usage_note: "Состояние выражают с be или feel: I am tired, I feel tired."
+  usage_note: "Tired — прилагательное. Здесь для сообщения об усталости: I am tired или I feel tired. Это не универсальное правило для всех состояний."
 - uid: LX-00404
   lemma: hungry
   meaning: "wanting to eat"
@@ -293,4 +293,4 @@ units:
   example_en: "[T8]I[/] [D3]feel[/] [J4]tired[/]."
   example_ru: "Я чувствую усталость."
   situation: Говорите о самочувствии и возможностях
-  usage_note: "Feel + состояние: feel sick, feel tired. Не добавляйте am перед feel."
+  usage_note: "В этих сочетаниях после feel — прилагательное: feel sick, feel tired. В изучаемом Present Simple: I feel tired, без am перед feel."

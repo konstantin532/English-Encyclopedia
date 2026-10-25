@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "a1-questions-do-does",
+    "steps": [
+      {
+        "example_en": "Do you live here?",
+        "example_ru": "Ты здесь живёшь?",
+        "why_ru": "Do нужен для вопроса с you и обычным глаголом live."
+      },
+      {
+        "example_en": "Does she live here?",
+        "example_ru": "Она здесь живёт?",
+        "why_ru": "Does сочетается с she; live после него без -s."
+      },
+      {
+        "example_en": "Yes, she does.",
+        "example_ru": "Да.",
+        "why_ru": "Короткий ответ повторяет вспомогательный does, а не основной live."
+      }
+    ],
+    "transfer_variants": [
+      {
+        "prompt": "Узнайте, работает ли Том по воскресеньям.",
+        "model": "Does Tom work on Sundays?"
+      },
+      {
+        "prompt": "Спросите у Тома, нравится ли Мии чай. Задайте об этом вопрос.",
+        "model": "Does Mia like tea?"
+      }
+    ]
+  },
+  {
+    "slug": "a1-spelling-phone-numbers",
+    "steps": [
+      {
+        "example_en": "My name is Mia.",
+        "example_ru": "Меня зовут Миа.",
+        "why_ru": "Сначала говорим имя обычным словом."
+      },
+      {
+        "example_en": "M-I-A",
+        "example_ru": "Эм — ай — эй.",
+        "why_ru": "Если просят spell, назовите именно отдельные буквы в правильном порядке."
+      },
+      {
+        "example_en": "Can you spell it, please?",
+        "example_ru": "Можете произнести это по буквам?",
+        "why_ru": "Это просьба уточнить написание; не путайте spell с say again."
+      }
+    ],
+    "transfer_variants": [
+      {
+        "prompt": "Вы не поняли, как пишется имя собеседника. Вежливо попросите назвать его по буквам.",
+        "model": "Can you spell your name, please?"
+      },
+      {
+        "prompt": "Сотрудник произнёс своё имя, но вы не поняли, как оно пишется. Вежливо попросите назвать его по буквам.",
+        "model": "Can you spell that, please?"
+      }
+    ]
+  },
+  {
+    "slug": "a1-always-never",
+    "steps": [
+      {
+        "example_en": "I read.",
+        "example_ru": "Я читаю.",
+        "why_ru": "Это сообщение о привычном действии без указания частоты."
+      },
+      {
+        "example_en": "I always read at night.",
+        "example_ru": "Я всегда читаю по ночам.",
+        "why_ru": "Always обычно ставят перед смысловым глаголом read."
+      },
+      {
+        "example_en": "She never works on Sundays.",
+        "example_ru": "Она никогда не работает по воскресеньям.",
+        "why_ru": "Never выражает отрицание и стоит перед works; с she форма works сохраняет -s, потому что помощника does здесь нет."
+      }
+    ],
+    "transfer_variants": [
+      {
+        "prompt": "Расскажите, что вы никогда не пьёте кофе.",
+        "model": "I never drink coffee."
+      },
+      {
+        "prompt": "Вы всегда пьёте воду по утрам. Расскажите об этой привычке.",
+        "model": "I always drink water in the morning."
+      }
+    ]
+  },
+  {
+    "slug": "a1-like-doing",
+    "steps": [
+      {
+        "example_en": "I like books.",
+        "example_ru": "Мне нравятся книги.",
+        "why_ru": "Books — вещи; здесь речь о предметах, а не обязательно о процессе чтения."
+      },
+      {
+        "example_en": "I like reading.",
+        "example_ru": "Мне нравится читать.",
+        "why_ru": "Reading обозначает занятие; после like оно естественно."
+      },
+      {
+        "example_en": "I like to read.",
+        "example_ru": "Мне нравится читать.",
+        "why_ru": "После like возможно и to read. Это не ошибка и не полный синоним в каждом контексте."
+      }
+    ],
+    "transfer_variants": [
+      {
+        "prompt": "Скажите другу, что вам нравится готовить (занятие, а не еда).",
+        "model": "I like cooking."
+      },
+      {
+        "prompt": "Ваше любимое занятие — плавание. Расскажите об этом другу.",
+        "model": "I like swimming."
+      }
+    ]
+  }
+]

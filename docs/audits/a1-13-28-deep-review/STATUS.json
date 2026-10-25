@@ -1,0 +1,58 @@
+{
+  "parent": "8788aac996c5010060b47cca6f12f0480c2d492c",
+  "branch": "editorial/a1-13-28-deep-review-20261025",
+  "scope": {
+    "A1": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "A1+": []
+  },
+  "status": "technical_review_local_full_and_browser_PASS_remote_ci_pending",
+  "merge": "not performed; after #119 only",
+  "new_combined_targeted": "115 PASS before addenda;32 PASS after addenda; not additive",
+  "full_django": {
+    "tests": 899,
+    "skipped": 2,
+    "status": "PASS",
+    "body_seconds": 441.714,
+    "command": [
+      "/tmp/ee-a1-13-28/.venv/bin/python",
+      "manage.py",
+      "test",
+      "tests",
+      "--parallel",
+      "auto",
+      "--noinput"
+    ]
+  },
+  "audio": "BLOCKED actual recordings/listening",
+  "human_acceptance": "not performed",
+  "verified_source_commit": "f755656dbf8d76f56fed1f9bd5a0888d9df3be1a",
+  "browser": {
+    "status": "PASS",
+    "run": 40186265539,
+    "page_viewport_checks": 58,
+    "errors": []
+  },
+  "reload_history": "PASS twice; allPKs and four types of history unchanged",
+  "remote_ci": {
+    "run": 40186265546,
+    "status": "in_progress; NOT PASS"
+  },
+  "changed_fields": 244
+}

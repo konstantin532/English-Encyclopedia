@@ -30,8 +30,8 @@ script:
 - speaker: anna
   kind: narration
   emotion: worried
-  text: '[T9]There[/] [D1]is[/] [O4]no[/] [S9]name[/] [P3]on[/] [T1]the[/] [S9]letter[/]. [O4]No[/] [S9]address[/]. [O4]No[/] [S2]stamp[/].'
-  spoken: '[T9]There[/][D1]''s[/] [O4]no[/] [S9]name[/] [P3]on[/] [T1]the[/] [S9]letter[/]. [O4]No[/] [S9]address[/]. [O4]No[/] [S2]stamp[/].'
+  text: '[T9]There[/] [D1]is[/] [T4]no[/] [S9]name[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [T4]No[/] [S9]address[/]. [T4]No[/] [S2]stamp[/].'
+  spoken: '[T9]There[/][D1]''s[/] [T4]no[/] [S9]name[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [T4]No[/] [S9]address[/]. [T4]No[/] [S2]stamp[/].'
 - speaker: tom
   kind: speech
   emotion: surprised

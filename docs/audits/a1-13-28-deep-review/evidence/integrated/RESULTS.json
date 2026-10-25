@@ -1,0 +1,87 @@
+{
+  "parent": "8788aac996c5010060b47cca6f12f0480c2d492c",
+  "database": "/tmp/ee-integrated-a1-a7eirbef/fixture.sqlite3",
+  "checks": [
+    {
+      "name": "guard",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "shell",
+        "-c",
+        "from django.conf import settings;d=settings.DATABASES['default'];assert d['ENGINE']=='django.db.backends.sqlite3' and d['NAME']=='/tmp/ee-integrated-a1-a7eirbef/fixture.sqlite3';print(d['ENGINE'],d['NAME'])"
+      ],
+      "exit_code": 0,
+      "seconds": 0.452
+    },
+    {
+      "name": "check",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.461
+    },
+    {
+      "name": "migrate",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "migrate",
+        "--noinput",
+        "-v0"
+      ],
+      "exit_code": 0,
+      "seconds": 2.85
+    },
+    {
+      "name": "load",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "load_content"
+      ],
+      "exit_code": 0,
+      "seconds": 7.305
+    },
+    {
+      "name": "audit",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "audit_course"
+      ],
+      "exit_code": 0,
+      "seconds": 7.71
+    },
+    {
+      "name": "targeted",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "test",
+        "tests.test_a1_editorial_deep_13_16",
+        "tests.test_a1_side_context_13_16",
+        "tests.test_a1_deep_13_16_shared",
+        "tests.test_a1_deep_13_16_shared_sides",
+        "tests.test_a1_deep_17_20",
+        "tests.test_a1_editorial_deep_21_24",
+        "tests.test_a1_deep_25_28",
+        "tests.test_audit_latin_tokens",
+        "tests.test_a1_translation",
+        "tests.test_grammar_answer_integrity",
+        "tests.test_a1_pedagogical_continuity",
+        "tests.test_a1_second_pass",
+        "tests.test_a1_editorial_week07_08",
+        "tests.test_a1_editorial_week09_10",
+        "tests.test_a1_editorial_week11_12",
+        "tests.test_a1_editorial_week13_14",
+        "--noinput"
+      ],
+      "exit_code": 0,
+      "seconds": 31.835
+    }
+  ]
+}

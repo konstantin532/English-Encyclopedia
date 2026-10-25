@@ -1,0 +1,97 @@
+GUARD PASS django.db.backends.sqlite3 /tmp/a1-25-28-evidence/fixture.sqlite3
+COMMAND migrate
+Operations to perform:
+  Apply all migrations: accounts, admin, auth, axes, contenttypes, curriculum, drills, learning, lessons, lexicon, poems, sessions, stories, taxonomy
+Running migrations:
+  Applying curriculum.0001_initial... OK
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying accounts.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying axes.0001_initial... OK
+  Applying axes.0002_auto_20151217_2044... OK
+  Applying axes.0003_auto_20160322_0929... OK
+  Applying axes.0004_auto_20181024_1538... OK
+  Applying axes.0005_remove_accessattempt_trusted... OK
+  Applying axes.0006_remove_accesslog_trusted... OK
+  Applying axes.0007_alter_accessattempt_unique_together... OK
+  Applying axes.0008_accessfailurelog... OK
+  Applying axes.0009_add_session_hash... OK
+  Applying axes.0010_accessattemptexpiration... OK
+  Applying taxonomy.0001_initial... OK
+  Applying lexicon.0001_initial... OK
+  Applying lexicon.0002_unit_forms... OK
+  Applying lexicon.0003_unit_search_text... OK
+  Applying lexicon.0004_unit_ipa_ru... OK
+  Applying curriculum.0002_week_grammar_markers_week_grammar_ru_and_more... OK
+  Applying curriculum.0003_scene_story_beat... OK
+  Applying curriculum.0004_twister_method... OK
+  Applying lessons.0001_initial... OK
+  Applying lessons.0002_lesson_sound_notes... OK
+  Applying lessons.0003_lesson_contractions... OK
+  Applying drills.0001_initial... OK
+  Applying drills.0002_practiceitem... OK
+  Applying drills.0003_exercise_uid_archive... OK
+  Applying lexicon.0005_longer_ipa_and_verification_note... OK
+  Applying learning.0001_initial... OK
+  Applying learning.0002_weekgoal... OK
+  Applying learning.0003_speechpracticeprogress... OK
+  Applying learning.0004_mistakereview... OK
+  Applying learning.0005_independentattempt... OK
+  Applying learning.0006_independentattempt_rubric... OK
+  Applying learning.0007_independent_teacher_review... OK
+  Applying learning.0008_independent_batch_idempotency... OK
+  Applying learning.0009_independent_assistance... OK
+  Applying learning.0010_independent_prompt_snapshot... OK
+  Applying learning.0011_pilot_stage_idempotency... OK
+  Applying learning.0012_protect_learner_history_and_ranges... OK
+  Applying poems.0001_initial... OK
+  Applying poems.0002_poem_gaps_poem_pronunciation_poem_target_units_and_more... OK
+  Applying sessions.0001_initial... OK
+  Applying stories.0001_initial... OK
+  Applying stories.0002_story_characters_story_creative_ru_story_focus_and_more... OK
+  Applying stories.0003_story_script_audio... OK
+COMMAND load_content
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+COMMAND audit_course
+  Единиц в корпусе: 1047 из 6200.
+  A1: 500 из 500.
+  A1+: 547 из 550.
+  CEFR подтверждён на уровне слова (Oxford 3000) у 41 единиц; сверка значений по EVP впереди.
+  Историй в карте: 60 из 60, с текстом: 11.
+  Стихов в карте: 60 из 60, с текстом: 7.
+  История 1: 105 слов, знакомых 94%, новых единиц 2.
+  История 2: 97 слов, знакомых 99%, новых единиц 1.
+  История 3: 91 слов, знакомых 92%, новых единиц 3.
+  История 4: 93 слов, знакомых 98%, новых единиц 2.
+  История 5: 99 слов, знакомых 95%, новых единиц 4.
+  История 6: 397 слов, знакомых 96%, новых единиц 5.
+  История 7: 300 слов, знакомых 98%, новых единиц 5.
+  История 8: 300 слов, знакомых 97%, новых единиц 4.
+  История 9: 299 слов, знакомых 99%, новых единиц 5.
+  История 10: 296 слов, знакомых 96%, новых единиц 5.
+  История 11: 297 слов, знакомых 97%, новых единиц 4.
+  Повторение A1 в A1+: 221 из 500 единиц (44%) встречаются не меньше 2 раз, цель 70%.
+Предупреждение: CEFR не сверен у 1004 единиц — нужна проверка по Oxford 3000/5000 и EVP.
+Предупреждение: История 1: 105 слов, норма уровня 60–80.
+Предупреждение: История 2: 97 слов, норма уровня 60–80.
+Предупреждение: История 3: 91 слов, норма уровня 60–80.
+Предупреждение: История 4: 93 слов, норма уровня 60–80.
+Предупреждение: История 5: 99 слов, норма уровня 60–80.
+Предупреждение: Повторение A1 в A1+: ниже цели. Ещё не встречались (223): A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, April, August, Because I like Russian music., Call me later., Can I have some apples, please?, Can I have water, please?, Can I speak to Tom, please?, Can you help us?, Can you speak Russian?, Can you spell your last name, please?, Can you teach me?, Coffee or tea?, December, Do you have breakfast?, Do you have letters for our house?, Do you like it?, Do you like walking?, Does he work at a school?, Does this bus go to Park Street?, Does your head hurt?, English, February, Go straight and turn left., Have a nice day!, He works at night., Here is your photo., His name is Tom., How are you?, How much is a ticket?, How much is it?, How old are you?, I always read on Saturdays., I am from Russia., I am happy!, I am your neighbor., I cannot sleep., I cannot speak Russian., I do not have a stamp., I drink coffee at seven. и ещё 183.
+Предупреждение: Опережающие слова в сочетаниях (допустимо, но их нужно ввести позже): best (LX-00004), view (LX-00007), york (LX-00027).
+Ошибок нет.

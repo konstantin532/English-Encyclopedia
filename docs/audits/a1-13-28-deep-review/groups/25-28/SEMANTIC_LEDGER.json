@@ -1,0 +1,332 @@
+[
+  {
+    "path": "content/manifests/a1_micro_review_25_28.json",
+    "field": [
+      "a1-bus-ticket",
+      "4",
+      "prompt"
+    ],
+    "before": "Вам нужен {place}. Спросите, идёт ли автобус туда.",
+    "after": "Место назначения — {place}. Спросите, идёт ли автобус туда."
+  },
+  {
+    "path": "content/manifests/a1_micro_review_25_28.json",
+    "field": [
+      "a1-can-skills",
+      "1",
+      "cases"
+    ],
+    "before": [
+      [
+        "поездке",
+        "говорить по-русски",
+        "Russian"
+      ],
+      [
+        "школе",
+        "говорить по-английски",
+        "English"
+      ],
+      [
+        "магазине",
+        "говорить по-русски",
+        "Russian"
+      ],
+      [
+        "встрече",
+        "говорить по-английски",
+        "English"
+      ],
+      [
+        "кафе",
+        "говорить по-русски",
+        "Russian"
+      ]
+    ],
+    "after": [
+      [
+        "В поездке",
+        "говорить по-русски",
+        "Russian"
+      ],
+      [
+        "В школе",
+        "говорить по-английски",
+        "English"
+      ],
+      [
+        "В магазине",
+        "говорить по-русски",
+        "Russian"
+      ],
+      [
+        "На встрече",
+        "говорить по-английски",
+        "English"
+      ],
+      [
+        "В кафе",
+        "говорить по-русски",
+        "Russian"
+      ]
+    ]
+  },
+  {
+    "path": "content/manifests/a1_micro_review_25_28.json",
+    "field": [
+      "a1-can-skills",
+      "1",
+      "prompt"
+    ],
+    "before": "В {place} вы хотите узнать, умеет ли собеседник {ru}.",
+    "after": "{place} вы хотите узнать, умеет ли собеседник {ru}."
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json",
+    "field": [
+      "lessons",
+      {
+        "slug": "a1-can-skills"
+      },
+      "plain"
+    ],
+    "before": "Can + глагол рассказывает, что вы умеете.",
+    "after": "В этом уроке can + глагол рассказывает, что вы умеете; can также встречается в просьбах."
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json",
+    "field": [
+      "lessons",
+      {
+        "slug": "a1-bus-ticket"
+      },
+      "why"
+    ],
+    "before": "Автобус — it, поэтому для вопроса о действии нужен does.",
+    "after": "В вопросе о маршруте this bus — как it: Does this bus go…? После does ставим go без -s. Вопрос с be строится иначе: Is this the bus?"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "field": [
+      "exercises",
+      {
+        "uid": "EX-00143",
+        "order": 4
+      },
+      "accepted"
+    ],
+    "before": [
+      "Yes, I can.",
+      "Yes, I can",
+      "Yes, I can. I speak Russian and English.",
+      "Yes, I can speak English.",
+      "Yes. I can speak Russian and English.",
+      "Yes, I can. I can speak Russian and English"
+    ],
+    "after": [
+      "Yes, I can.",
+      "Yes, I can",
+      "Yes, I can. I speak Russian and English.",
+      "Yes, I can speak English.",
+      "Yes. I can speak Russian and English.",
+      "Yes, I can. I can speak Russian and English",
+      "Yes, I can. I can speak English and Russian.",
+      "Yes, I can. I speak English and Russian.",
+      "Yes. I can speak English and Russian."
+    ]
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "field": [
+      "layers",
+      {
+        "number": 4
+      },
+      "body"
+    ],
+    "before": "**Чем I can speak Russian отличается от I speak Russian?** Первая фраза подчёркивает **возможность и умение** говорить по-русски; вторая сообщает **факт владения языком** или привычного употребления. В реальном разговоре обе могут подходить, но это **не полностью одинаковые смыслы**. Вопрос *Can you speak…?* проверяет способность, а *Do you speak…?* обычно интересуется владением языком; вежливость зависит от тона и контекста.\n\n> [T8]I[/] [D7]can[/][X1]not[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]? [T8]I[/] [D3]want[/] [X2]to[/] [D6]learn[/]. — А я не говорю по-русски. Научишь меня? Я хочу учиться.\n\nПосле модального **can** смысловой глагол в наших примерах стоит в **начальной форме без to**: *can speak, can swim*. Это отдельное правило сочетания **can + действие**, а не правило для всех глаголов английского языка.\n\n**Диагностика понимания:** Вы хотите сказать, что **она умеет плавать**. Что верно: *She can swim* или *She cans swim*?\n\n**Разбор:** *She can swim*. У модального **can** нет окончания **-s** с **she**; и **swim** после него тоже остаётся в начальной форме. Сравните с обычным глаголом: *She works*.\n",
+    "after": "**Чем I can speak Russian отличается от I speak Russian?** Первая фраза подчёркивает **возможность и умение** говорить по-русски; вторая сообщает **факт владения языком** или привычного употребления. В реальном разговоре обе могут подходить, но это **не полностью одинаковые смыслы**. Вопрос *Can you speak…?* проверяет способность, а *Do you speak…?* обычно интересуется владением языком; вежливость зависит от тона и контекста.\n\n> [T8]I[/] [D7]can[/][X1]not[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]? [T8]I[/] [D3]want[/] [X2]to[/] [D6]learn[/]. — А я не говорю по-русски. Научишь меня? Я хочу учиться.\n\nПосле модального **can** смысловой глагол в наших примерах стоит в **начальной форме без to**: *can speak, can swim*. Это отдельное правило сочетания **can + глагол в начальной форме**, а не правило для всех глаголов английского языка.\n\n**Диагностика понимания:** Вы хотите сказать, что **она умеет плавать**. Что верно: *She can swim* или *She cans swim*?\n\n**Разбор:** *She can swim*. У модального **can** нет окончания **-s** с **she**; и **swim** после него тоже остаётся в начальной форме. Сравните с обычным глаголом: *She works*.\n"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "field": [
+      "layers",
+      {
+        "number": 5
+      },
+      "body"
+    ],
+    "before": "Так говорят об умениях американцы:\n\n> [S1]Anna[/], [D7]can[/] [T8]you[/] [D5]speak[/] [S10]Russian[/]? — Анна, ты говоришь по-русски?\n\n- Языки пишут с большой буквы и без the: speak English, speak Russian.\n- Краткий ответ на **Can you…?**: *Yes, I can* или *No, I can't*. На **Do you speak…?** отвечаем *Yes, I do / No, I don't*. Сохраняйте каркас заданного вопроса: одинаковый русский перевод не делает **can** и **do** взаимозаменяемыми в кратком ответе.\n- Чуть-чуть: I can speak a little Russian — «я немного говорю по-русски».\n\nУчебные действия и умения:\n\n> [T8]I[/] [D7]can[/] [D2]draw[/] [T1]a[/] [S6]cat[/]. — Я умею рисовать кота.\n> [D7]Can[/] [T8]you[/] [D4]swim[/]? — Ты умеешь плавать?\n> [T8]She[/] [D7]can[/] [D2]dance[/]. — Она умеет танцевать.\n\n**Draw** — рисовать, **swim** — плавать, **drive** — водить автомобиль, **dance** — танцевать. После can эти действия остаются без to и без -s.\n\n**Can you teach me to read?** — «Научишь меня читать?» После can стоит **teach** без to; второе действие **to read** показывает, чему научить.\n\n**Learn** — осваивать знания или умение самому, **teach** — учить другого, **study** — заниматься предметом. **Understand** — понимать, **repeat** — повторять. Если не поняли вопрос: **I don't understand. Can you repeat it, please?**\n\nНа урок понадобятся **notebook** — тетрадь, **pen** — ручка, **pencil** — карандаш. **Classroom** — помещение, **lesson** — отдельный урок, **course** — курс из нескольких уроков. **Language** — язык. **Homework** — домашняя работа в целом: **I do my homework**, без a и без -s. Написать предложение — **write a sentence**.\n",
+    "after": "Так говорят об умениях американцы:\n\n> [S1]Anna[/], [D7]can[/] [T8]you[/] [D5]speak[/] [S10]Russian[/]? — Анна, ты говоришь по-русски?\n\n- Названия языков пишут с большой буквы. В сочетаниях speak English, speak Russian артикль не нужен; это не запрет на the перед любым сочетанием со словом English.\n- Краткий ответ на **Can you…?**: *Yes, I can* или *No, I can't*. На **Do you speak…?** отвечаем *Yes, I do / No, I don't*. Сохраняйте каркас заданного вопроса: одинаковый русский перевод не делает **can** и **do** взаимозаменяемыми в кратком ответе.\n- Чуть-чуть: I can speak a little Russian — «я немного говорю по-русски».\n\nУчебные действия и умения:\n\n> [T8]I[/] [D7]can[/] [D2]draw[/] [T1]a[/] [S6]cat[/]. — Я умею рисовать кота.\n> [D7]Can[/] [T8]you[/] [D4]swim[/]? — Ты умеешь плавать?\n> [T8]She[/] [D7]can[/] [D2]dance[/]. — Она умеет танцевать.\n\n**Draw** — рисовать, **swim** — плавать, **drive** — водить автомобиль, **dance** — танцевать. После can эти действия остаются без to и без -s.\n\n**Can you teach me to read?** — «Научишь меня читать?» После can стоит **teach** без to; второе действие **to read** показывает, чему научить.\n\n**Learn** — осваивать знания или умение самому, **teach** — учить другого, **study** — заниматься предметом. **Understand** — понимать, **repeat** — повторять. Если не поняли вопрос: **I don't understand. Can you repeat it, please?**\n\nНа урок понадобятся **notebook** — тетрадь, **pen** — ручка, **pencil** — карандаш. **Classroom** — помещение, **lesson** — отдельный урок, **course** — курс из нескольких уроков. **Language** — язык. **Homework** — домашняя работа в целом: **I do my homework**, без a и без -s. Написать предложение — **write a sentence**.\n"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "field": [
+      "sound_notes",
+      {},
+      "note_ru"
+    ],
+    "before": "в конце фразы can полное и ударное: «кЭн»",
+    "after": "В таком утвердительном коротком ответе can обычно ударное: /kæn/."
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l26_why_because.yaml",
+    "field": [
+      "layers",
+      {
+        "number": 4
+      },
+      "body"
+    ],
+    "before": "**После because в наших ответах — целая мысль.** *Because I like music* сообщает, **кто** (*I*) и **что делает** (*like music*). В *Because the exercise is difficult* сказано, **что** (*the exercise*) и **какое оно** (*is difficult*). В грамматике because вводит **придаточную часть причины** — часть предложения, которая объясняет «почему».\n\nНа вопрос **Why?** можно ответить отдельной репликой: *Because I like music.* Причину можно присоединить к основной мысли: *I learn Russian because I like the music.* Начало реплики с **Because** само по себе не ошибка; важно, чтобы собеседнику было понятно, что вы объясняете.\n\n**Не добавляйте of перед I like.** Сравните: *because I like music* — «потому что я люблю музыку»; *because of the music* — «из-за музыки». После **because of** здесь только название причины, **the music**. Форму **because of I like music** не используем.\n\n**Диагностика понимания:** вы хотите сказать «Потому что я люблю музыку». Что подходит: *Because I like music* или *Because of I like music*?\n\n**Разбор:** *Because I like music*. После because здесь идёт целая мысль, а не только название причины; перед I like слово of лишнее.\n",
+    "after": "**После because в наших ответах — целая мысль.** *Because I like music* сообщает, **кто** (*I*) и **что ему нравится** (*like music*). В *Because the exercise is difficult* сказано, **что** (*the exercise*) и **какое оно** (*is difficult*). В грамматике because вводит **придаточную часть причины** — часть предложения, которая объясняет «почему».\n\nНа вопрос **Why?** можно ответить отдельной репликой: *Because I like music.* Причину можно присоединить к основной мысли: *I learn Russian because I like the music.* Начало реплики с **Because** само по себе не ошибка; важно, чтобы собеседнику было понятно, что вы объясняете.\n\n**Не добавляйте of перед I like.** Сравните: *because I like music* — «потому что я люблю музыку»; *because of the music* — «из-за музыки». После **because of** здесь только название причины, **the music**. Форму **because of I like music** не используем.\n\n**Диагностика понимания:** вы хотите сказать «Потому что я люблю музыку». Что подходит: *Because I like music* или *Because of I like music*?\n\n**Разбор:** *Because I like music*. После because здесь идёт целая мысль, а не только название причины; перед I like слово of лишнее.\n"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l26_why_because.yaml",
+    "field": [
+      "layers",
+      {
+        "number": 6
+      },
+      "body"
+    ],
+    "before": "Ловушки:\n\n- «Why you like it?» — пропущен do. Правильно: Why do you like it?\n- Не смешивайте **because I like music** и **because of the music**. Первая конструкция содержит целую мысль, вторая — только название причины. Перед **I like** слово **of** лишнее.\n- Русское «зачем» и «почему» по-английски часто оба — why.\n",
+    "after": "Ловушки:\n\n- В обычном полном вопросе «Почему тебе это нравится?» нужен do: Why do you like it? Форму Why you like it? здесь не тренируем.\n- Не смешивайте **because I like music** и **because of the music**. Первая конструкция содержит целую мысль, вторая — только название причины. Перед **I like** слово **of** лишнее.\n- Русское «зачем» и «почему» по-английски часто оба — why.\n"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l26_why_because.yaml",
+    "field": [
+      "practice",
+      {
+        "order": 1
+      },
+      "explanation_ru"
+    ],
+    "before": "Why are you tired? После why — обычный порядок вопроса.",
+    "after": "Why are you tired? Здесь вопрос с be: Why + are + you + tired? Помощник do не нужен."
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l27_bus.yaml",
+    "field": [
+      "exercises",
+      {
+        "uid": "EX-00155",
+        "order": 4
+      },
+      "units"
+    ],
+    "before": [
+      "LX-00252",
+      "LX-00255"
+    ],
+    "after": [
+      "LX-00252"
+    ]
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l27_bus.yaml",
+    "field": [
+      "exercises",
+      {
+        "uid": "EX-00156",
+        "order": 5
+      },
+      "units"
+    ],
+    "before": [
+      "LX-00464",
+      "LX-00472",
+      "LX-00473"
+    ],
+    "after": [
+      "LX-00464",
+      "LX-00472"
+    ]
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l28_review.yaml",
+    "field": [
+      "exercises",
+      {
+        "uid": "EX-00162",
+        "order": 5
+      },
+      "units"
+    ],
+    "before": [
+      "LX-00458",
+      "LX-00457"
+    ],
+    "after": [
+      "LX-00458"
+    ]
+  },
+  {
+    "path": "content/seed_lexicon/a1_w13_study.yaml",
+    "field": [
+      "units",
+      {
+        "uid": "LX-00243"
+      },
+      "usage_note"
+    ],
+    "before": "Языки пишут с большой буквы и без the: speak English.",
+    "after": "Название языка English пишется с большой буквы. В speak English артикля нет; в the English course слово English описывает курс, а артикль относится к course."
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel.yaml",
+    "field": [
+      "units",
+      {
+        "uid": "LX-00255"
+      },
+      "usage_note"
+    ],
+    "before": "Главный вопрос в чужом городе: вставьте любую остановку вместо Park Street.",
+    "after": "Вопрос о маршруте: Does this bus go to Park Street? Для другого места учитывайте артикль: to Park Street, но to the park."
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel.yaml",
+    "field": [
+      "units",
+      {
+        "uid": "LX-00258"
+      },
+      "usage_note"
+    ],
+    "before": "next — следующий: next bus, next stop. t в next перед согласным почти не слышно.",
+    "after": "next — следующий: next bus, next stop. В быстрой речи t перед согласным может быть ослаблено или опущено; чёткое t тоже допустимо."
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel_plus.yaml",
+    "field": [
+      "units",
+      {
+        "uid": "LX-00470"
+      },
+      "meaning"
+    ],
+    "before": "a journey to a place and back",
+    "after": "a journey from one place to another"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel_plus.yaml",
+    "field": [
+      "units",
+      {
+        "uid": "LX-00477"
+      },
+      "usage_note"
+    ],
+    "before": "Перед umbrella — an, потому что слово начинается с гласного звука.",
+    "after": "В an umbrella выбираем an, а не a, перед гласным звуком. Это не обязательный артикль перед каждым umbrella: my umbrella — мой зонт, the umbrella — уже известный зонт."
+  },
+  {
+    "path": "content/seed_poems/p07_bus_to_park_street.yaml",
+    "field": [
+      "body"
+    ],
+    "before": "[D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]?\n[O4]Yes[/], [T8]it[/] [D1]does[/]! [O4]Yes[/], [T8]it[/] [D1]does[/]!\n[N1]Two[/] [S2]tickets[/], [O8]please[/],\n[N1]one[/] [P5]for[/] [T8]me[/], [N1]one[/] [P5]for[/] [T8]you[/]!\n\n[T1]The[/] [S4]bus[/], [T1]the[/] [S4]bus[/],\n[T1]the[/] [J1]big[/], [J1]big[/] [S4]bus[/]!\n[S4]Stop[/], [S4]stop[/], [S4]bus[/] [S4]stop[/],\n[T1]the[/] [J8]last[/] [S4]bus[/] [S4]stop[/]!\n\n[A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]?\n[N6]Two dollars[/], [N1]two[/]!\n[T9]What[/] [S7]time[/] [D1]is[/] [T1]the[/] [J8]next[/] [S4]bus[/]?\n[P3]At[/] [N1]six[/], [P3]at[/] [N1]six[/]!\n\n[S4]Park[/] [S4]Street[/], [S4]Park[/] [S4]Street[/],\n[T1]an[/] [J2]old[/] [S2]photo[/] [S4]shop[/].\n[D1]Is[/] [T8]it[/] [D2]open[/]? [O4]No[/].\n[T8]It[/] [D1]is[/] [S7]Saturday[/]. [S4]Stop[/].\n\n[S1]Rose[/], [S1]Rose[/], [S1]Rose[/],\n[A6]where[/] [D1]do[/] [T8]you[/] [D2]live[/]?\n[S4]Park[/] [S4]Street[/]? [S4]Park[/] [S4]Street[/]?\n[T8]We[/] [D1]do[/] [X1]not[/] [D6]know[/]!\n",
+    "after": "[D1]Does[/] [T2]this[/] [S4]bus[/] [D4]go[/] [P2]to[/] [S4]Park[/] [S4]Street[/]?\n[O4]Yes[/], [T8]it[/] [D1]does[/]! [O4]Yes[/], [T8]it[/] [D1]does[/]!\n[N1]Two[/] [S2]tickets[/], [O8]please[/],\n[N1]one[/] [P5]for[/] [T8]me[/], [N1]one[/] [P5]for[/] [T8]you[/]!\n\n[T1]The[/] [S4]bus[/], [T1]the[/] [S4]bus[/],\n[T1]the[/] [J1]big[/], [J1]big[/] [S4]bus[/]!\n[S4]Stop[/], [S4]stop[/], [S4]bus[/] [S4]stop[/],\n[T1]the[/] [J8]last[/] [S4]bus[/] [S4]stop[/]!\n\n[A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]?\n[N6]Two dollars[/], [N1]two[/]!\n[T9]What[/] [S7]time[/] [D1]is[/] [T1]the[/] [J8]next[/] [S4]bus[/]?\n[P3]At[/] [N1]six[/], [P3]at[/] [N1]six[/]!\n\n[S4]Park[/] [S4]Street[/], [S4]Park[/] [S4]Street[/],\n[T1]an[/] [J2]old[/] [S2]photo[/] [S4]shop[/].\n[D1]Is[/] [T8]it[/] [J2]open[/]? [O4]No[/].\n[T8]It[/] [D1]is[/] [S7]Saturday[/]. [S4]Stop[/].\n\n[S1]Rose[/], [S1]Rose[/], [S1]Rose[/],\n[A6]where[/] [D1]do[/] [T8]you[/] [D2]live[/]?\n[S4]Park[/] [S4]Street[/]? [S4]Park[/] [S4]Street[/]?\n[T8]We[/] [D1]do[/] [X1]not[/] [D6]know[/]!\n"
+  }
+]

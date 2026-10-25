@@ -8,7 +8,7 @@
         "scene": "Мия спрашивает о вашей неизменной субботней привычке.",
         "prompt": "Скажите, что по субботам вы всегда читаете.",
         "example": "I always read on Saturdays.",
-        "coach": "Always ставьте перед read; перед днём недели нужен on."
+        "coach": "Always ставьте перед read. Здесь используем on Saturdays; разговорное I always read Saturdays тоже возможно."
       },
       {
         "id": 2,

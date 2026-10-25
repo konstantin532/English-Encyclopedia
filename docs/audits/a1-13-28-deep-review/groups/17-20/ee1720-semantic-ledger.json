@@ -1,0 +1,986 @@
+{
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "changes": [
+    {
+      "path": "content/active_a1/scenarios_19_20.json[0]/missions[0]/coach",
+      "before": "Always ставьте перед read; перед днём недели нужен on.",
+      "after": "Always ставьте перед read. Здесь используем on Saturdays; разговорное I always read Saturdays тоже возможно."
+    },
+    {
+      "path": "content/active_a1/topics_19_20.json[a1-always-never]/context",
+      "before": "Назовите действие и добавьте, как часто оно происходит. Дни недели идут с on, месяцы — с in.",
+      "after": "Назовите действие и добавьте, как часто оно происходит. В наших примерах перед днями недели стоит on, перед месяцами — in; в разговорном американском английском on перед днём можно опустить."
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_topics_17_20.json/a1-like-doing",
+      "before": [
+        [
+          "Вы любите читать книги. Выберите правильную фразу.",
+          "",
+          [
+            "I like read books.",
+            "I like reading books.",
+            "I am like reading books."
+          ],
+          1
+        ],
+        [
+          "Анна любит гулять. Выберите подходящую форму.",
+          "I like ___.",
+          [
+            "walk",
+            "walked",
+            "walking"
+          ],
+          2
+        ],
+        [
+          "Вы хотите спросить, любит ли друг играть на гитаре.",
+          "",
+          [
+            "Do you like playing the guitar?",
+            "Do you like play the guitar?",
+            "Does you like playing the guitar?"
+          ],
+          0
+        ],
+        [
+          "Как естественно сказать, что вам нравится музыка?",
+          "",
+          [
+            "I liking music.",
+            "I like music.",
+            "I am like music."
+          ],
+          1
+        ],
+        [
+          "Вам нравятся ваши синие туфли. Что сказать?",
+          "",
+          [
+            "I like blue my shoes.",
+            "I my like blue shoes.",
+            "I like my blue shoes."
+          ],
+          2
+        ]
+      ],
+      "after": [
+        [
+          "Вы любите читать книги. Выберите правильную фразу.",
+          "",
+          [
+            "I like read books.",
+            "I like reading books.",
+            "I am like reading books."
+          ],
+          1
+        ],
+        [
+          "Вы играете роль Анны и говорите о себе. Выберите подходящую форму.",
+          "I like ___.",
+          [
+            "walk",
+            "walked",
+            "walking"
+          ],
+          2
+        ],
+        [
+          "Вы хотите спросить, любит ли друг играть на гитаре.",
+          "",
+          [
+            "Do you like playing the guitar?",
+            "Do you like play the guitar?",
+            "Does you like playing the guitar?"
+          ],
+          0
+        ],
+        [
+          "Как естественно сказать, что вам нравится музыка?",
+          "",
+          [
+            "I liking music.",
+            "I like music.",
+            "I am like music."
+          ],
+          1
+        ],
+        [
+          "Вам нравятся ваши синие туфли. Что сказать?",
+          "",
+          [
+            "I like blue my shoes.",
+            "I my like blue shoes.",
+            "I like my blue shoes."
+          ],
+          2
+        ]
+      ]
+    },
+    {
+      "path": "content/manifests/a1_micro_review_17_20.json/a1-questions-do-does/4/cases",
+      "before": [
+        [
+          "работает ли Мия каждый день",
+          "Mia",
+          "work every day",
+          "works every day"
+        ],
+        [
+          "пьёт ли Том чай утром",
+          "Tom",
+          "drink tea in the morning",
+          "drinks tea in the morning"
+        ],
+        [
+          "читает ли Анна вечером",
+          "Anna",
+          "read in the evening",
+          "reads in the evening"
+        ],
+        [
+          "живёт ли Том здесь",
+          "Tom",
+          "live here",
+          "lives here"
+        ],
+        [
+          "любит ли Мия кофе",
+          "Mia",
+          "like coffee",
+          "likes coffee"
+        ]
+      ],
+      "after": [
+        [
+          "работает ли Мия каждый день",
+          "Mia",
+          "work every day",
+          "works every day"
+        ],
+        [
+          "пьёт ли Том чай утром",
+          "Tom",
+          "drink tea in the morning",
+          "drinks tea in the morning"
+        ],
+        [
+          "ужинает ли Анна вечером",
+          "Anna",
+          "have dinner in the evening",
+          "has dinner in the evening"
+        ],
+        [
+          "работает ли Том здесь",
+          "Tom",
+          "work here",
+          "works here"
+        ],
+        [
+          "любит ли Мия кофе",
+          "Mia",
+          "like coffee",
+          "likes coffee"
+        ]
+      ]
+    },
+    {
+      "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/2/cases",
+      "before": [
+        [
+          "гулять",
+          "walking",
+          "walk",
+          "walks"
+        ],
+        [
+          "читать",
+          "reading",
+          "read",
+          "reads"
+        ],
+        [
+          "играть",
+          "playing",
+          "play",
+          "plays"
+        ],
+        [
+          "петь",
+          "singing",
+          "sing",
+          "sings"
+        ],
+        [
+          "плавать",
+          "swimming",
+          "swim",
+          "swims"
+        ]
+      ],
+      "after": [
+        [
+          "гулять",
+          "walking",
+          "walk",
+          "walks"
+        ],
+        [
+          "читать",
+          "reading",
+          "read",
+          "reads"
+        ],
+        [
+          "играть",
+          "playing",
+          "play",
+          "plays"
+        ],
+        [
+          "готовить",
+          "cooking",
+          "cook",
+          "cooks"
+        ],
+        [
+          "смотреть телевизор",
+          "watching TV",
+          "watch TV",
+          "watches TV"
+        ]
+      ]
+    },
+    {
+      "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/3/options",
+      "before": [
+        "Do you like {verb}?",
+        "Does you like {verb}?",
+        "Do you like {verb}ing?"
+      ],
+      "after": [
+        "Do you like {verb}?",
+        "Does you like {verb}?",
+        "Do you likes {verb}?"
+      ]
+    },
+    {
+      "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/3/cases",
+      "before": [
+        [
+          "гулять",
+          "walking"
+        ],
+        [
+          "читать",
+          "reading"
+        ],
+        [
+          "играть на гитаре",
+          "playing the guitar"
+        ],
+        [
+          "петь",
+          "singing"
+        ],
+        [
+          "смотреть телевизор",
+          "watching TV"
+        ]
+      ],
+      "after": [
+        [
+          "гулять",
+          "walking"
+        ],
+        [
+          "читать",
+          "reading"
+        ],
+        [
+          "играть на гитаре",
+          "playing the guitar"
+        ],
+        [
+          "готовить",
+          "cooking"
+        ],
+        [
+          "смотреть телевизор",
+          "watching TV"
+        ]
+      ]
+    },
+    {
+      "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/5/cases",
+      "before": [
+        [
+          "new",
+          "jacket",
+          "shirt",
+          "shoes"
+        ],
+        [
+          "blue",
+          "shoes",
+          "jacket",
+          "shirt"
+        ],
+        [
+          "green",
+          "shirt",
+          "hat",
+          "jacket"
+        ],
+        [
+          "red",
+          "jacket",
+          "shoes",
+          "coat"
+        ],
+        [
+          "new",
+          "hat",
+          "coat",
+          "shirt"
+        ]
+      ],
+      "after": [
+        [
+          "new",
+          "jacket",
+          "shirt",
+          "shoes"
+        ],
+        [
+          "blue",
+          "shoes",
+          "jacket",
+          "shirt"
+        ],
+        [
+          "green",
+          "shirt",
+          "shoes",
+          "jacket"
+        ],
+        [
+          "red",
+          "jacket",
+          "shoes",
+          "shirt"
+        ],
+        [
+          "green",
+          "shoes",
+          "jacket",
+          "shirt"
+        ]
+      ]
+    },
+    {
+      "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/6/cases",
+      "before": [
+        [
+          "мои синие туфли",
+          "blue",
+          "shoes"
+        ],
+        [
+          "моя красная рубашка",
+          "red",
+          "shirt"
+        ],
+        [
+          "моя зелёная куртка",
+          "green",
+          "jacket"
+        ],
+        [
+          "моя белая рубашка",
+          "white",
+          "shirt"
+        ],
+        [
+          "мои чёрные туфли",
+          "black",
+          "shoes"
+        ]
+      ],
+      "after": [
+        [
+          "мои синие туфли",
+          "blue",
+          "shoes"
+        ],
+        [
+          "моя красная рубашка",
+          "red",
+          "shirt"
+        ],
+        [
+          "моя зелёная куртка",
+          "green",
+          "jacket"
+        ],
+        [
+          "моя зелёная рубашка",
+          "green",
+          "shirt"
+        ],
+        [
+          "мои чёрные туфли",
+          "black",
+          "shoes"
+        ]
+      ]
+    },
+    {
+      "path": "content/manifests/a1_micro_review_17_20.json/a1-like-doing/1/cases",
+      "before": [
+        [
+          "читать",
+          "reading"
+        ],
+        [
+          "гулять",
+          "walking"
+        ],
+        [
+          "играть на гитаре",
+          "playing the guitar"
+        ],
+        [
+          "петь",
+          "singing"
+        ],
+        [
+          "слушать музыку",
+          "listening to music"
+        ]
+      ],
+      "after": [
+        [
+          "читать",
+          "reading"
+        ],
+        [
+          "гулять",
+          "walking"
+        ],
+        [
+          "играть на гитаре",
+          "playing the guitar"
+        ],
+        [
+          "готовить",
+          "cooking"
+        ],
+        [
+          "слушать музыку",
+          "listening to music"
+        ]
+      ]
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json/lessons[a1-questions-do-does]/transfer_variants[0]/prompt",
+      "before": "Узнайте, работает ли Том по воскресеньям.",
+      "after": "Узнайте, работает ли Том каждый день."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json/lessons[a1-questions-do-does]/transfer_variants[0]/model",
+      "before": "Does Tom work on Sundays?",
+      "after": "Does Tom work every day?"
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json/lessons[a1-questions-do-does]/steps[0]/why_ru",
+      "before": "Do нужен для вопроса с you и обычным глаголом live.",
+      "after": "Do нужен для вопроса с you и обычным глаголом work."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json/lessons[a1-questions-do-does]/steps[0]/example_en",
+      "before": "Do you live here?",
+      "after": "Do you work here?"
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json/lessons[a1-questions-do-does]/steps[0]/example_ru",
+      "before": "Ты здесь живёшь?",
+      "after": "Ты здесь работаешь?"
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json/lessons[a1-questions-do-does]/steps[1]/why_ru",
+      "before": "Does сочетается с she; live после него без -s.",
+      "after": "Does сочетается с she; work после него без -s."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json/lessons[a1-questions-do-does]/steps[1]/example_en",
+      "before": "Does she live here?",
+      "after": "Does she work here?"
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json/lessons[a1-questions-do-does]/steps[1]/example_ru",
+      "before": "Она здесь живёт?",
+      "after": "Она здесь работает?"
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json/lessons[a1-questions-do-does]/steps[2]/why_ru",
+      "before": "Короткий ответ повторяет вспомогательный does, а не основной live.",
+      "after": "Короткий ответ повторяет вспомогательный does, а не основной work."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json/lessons[a1-like-doing]/transfer_variants[1]/prompt",
+      "before": "Ваше любимое занятие — плавание. Расскажите об этом другу.",
+      "after": "Ваше любимое занятие — прогулки. Расскажите об этом другу."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json/lessons[a1-like-doing]/transfer_variants[1]/model",
+      "before": "I like swimming.",
+      "after": "I like walking."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json/lessons[a1-like-doing]/tasks/transfer/prompt",
+      "before": "Спросите друга, нравится ли ему рисовать, и скажите, что вам нравится читать.",
+      "after": "Спросите друга, нравится ли ему гулять, и скажите, что вам нравится читать."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json/lessons[a1-like-doing]/tasks/transfer/model",
+      "before": "Do you like drawing? I like reading.",
+      "after": "Do you like walking? I like reading."
+    },
+    {
+      "path": "content/seed_lessons/a1_w09_l17_do_does.yaml/exercises[EX-00094]/units",
+      "before": [
+        "LX-00186",
+        "LX-00191"
+      ],
+      "after": [
+        "LX-00186"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w09_l18_spelling.yaml/layers[1]/body",
+      "before": "По телефону фамилию легко расслышать неточно. Названия букв помогают проверить запись: сегодня вы научитесь диктовать их по-английски и отличать эту задачу от диктовки номера.\n\nНезнакомую русскую фамилию собеседник в США **может записать по-разному**, потому что её звуки не всегда однозначно передаются английскими буквами. Поэтому полезно **назвать фамилию, а затем при необходимости продиктовать по буквам**. Телефонный номер обычно диктуют отдельными цифрами или короткими группами.\n\n> [O4]Yes[/]. [N7]B-E-L-O-V-A[/]. [S1]Anna[/] [S1]Belova[/]. — Да. Б-Е-Л-О-В-А. Анна Белова.\n> [T8]It[/] [D1]is[/] [N7]five five five, two one four six[/]. — Пять-пять-пять, два-один-четыре-шесть.\n\nДля этого нужен английский алфавит — 26 букв.\n",
+      "after": "По телефону фамилию легко расслышать неточно. Названия букв помогают проверить запись: сегодня вы научитесь диктовать их по-английски и отличать эту задачу от диктовки номера.\n\nНезнакомую русскую фамилию собеседник в США **может записать по-разному**, потому что её звуки не всегда однозначно передаются английскими буквами. Поэтому полезно **назвать фамилию, а затем при необходимости продиктовать по буквам**. Телефонный номер обычно диктуют отдельными цифрами или короткими группами.\n\n> [O4]Yes[/]. [N7]B-E-L-O-V-A[/]. [S1]Anna[/] [S1]Belova[/]. — Да. B-E-L-O-V-A (латинскими буквами). Анна Белова.\n> [T8]It[/] [D1]is[/] [N7]five five five, two one four six[/]. — Пять-пять-пять, два-один-четыре-шесть.\n\nДля этого нужен английский алфавит — 26 букв.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w09_l18_spelling.yaml/sound_notes[1]/note_ru",
+      "before": "номер делят на группы: 3 цифры, пауза, 4 цифры",
+      "after": "в этом семизначном фрагменте — группа из трёх цифр и группа из четырёх; полный американский номер обычно диктуют группами 3–3–4"
+    },
+    {
+      "path": "content/seed_lessons/a1_w09_l18_spelling.yaml/exercises[EX-00099]/units",
+      "before": [
+        "LX-00187"
+      ],
+      "after": []
+    },
+    {
+      "path": "content/seed_lessons/a1_w09_l18_spelling.yaml/exercises[EX-00101]/units",
+      "before": [
+        "LX-00183",
+        "LX-00187"
+      ],
+      "after": []
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l19_always_never.yaml/sound_notes[2]/note_ru",
+      "before": "weekend — два ударения: «уИк-Энд»",
+      "after": "weekend /ˈwikˌɛnd/: главное ударение на первом слоге; второй может иметь более слабое, дополнительное ударение"
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l19_always_never.yaml/practice[1]/units",
+      "before": [
+        "LX-00194",
+        "LX-00196",
+        "LX-00206",
+        "LX-00207",
+        "LX-00210"
+      ],
+      "after": [
+        "LX-00194",
+        "LX-00196",
+        "LX-00207"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l19_always_never.yaml/practice[2]/units",
+      "before": [
+        "LX-00197",
+        "LX-00210"
+      ],
+      "after": [
+        "LX-00197"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l19_always_never.yaml/practice[3]/units",
+      "before": [
+        "LX-00195",
+        "LX-00206",
+        "LX-00207",
+        "LX-00210"
+      ],
+      "after": [
+        "LX-00195"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l19_always_never.yaml/practice[4]/units",
+      "before": [
+        "LX-00196",
+        "LX-00207"
+      ],
+      "after": [
+        "LX-00196"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l19_always_never.yaml/exercises[EX-00105]/units",
+      "before": [
+        "LX-00196",
+        "LX-00207"
+      ],
+      "after": [
+        "LX-00196"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l20_like_doing.yaml/layers[6]/body",
+      "before": "Как пишется -ing:\n\n- чаще всего просто добавляют: read → reading, walk → walking, play → playing;\n- немое e в конце уходит: write → writing, make → making;\n- У некоторых коротких глаголов с одним конечным согласным **после ударной краткой гласной** согласную удваивают: *swim → swimming*, *get → getting*. Но не все слова с короткой записью работают так: правило зависит от ударения и структуры слова. Сначала узнавайте часто встречающиеся формы.\n\nИ не путайте: I like walking — «люблю гулять» (вообще), I am walking — «я сейчас гуляю». Вторую форму вы узнаете позже.\n",
+      "after": "Как пишется -ing:\n\n- чаще всего просто добавляют: read → reading, walk → walking, play → playing;\n- в примерах с одним конечным немым e его убираем: write → writing, make → making. Это не правило «убрать любую конечную e»: другие написания проверяем отдельно;\n- У некоторых коротких глаголов с одним конечным согласным **после ударной краткой гласной** согласную удваивают: *swim → swimming*, *get → getting*. Но не все слова с короткой записью работают так: правило зависит от ударения и структуры слова. Сначала узнавайте часто встречающиеся формы.\n\nИ не путайте: I like walking — «люблю гулять» (вообще), I am walking — «я сейчас гуляю». Вторую форму вы узнаете позже.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l20_like_doing.yaml/practice[1]/units",
+      "before": [
+        "LX-00200",
+        "LX-00208",
+        "LX-00209",
+        "LX-00211"
+      ],
+      "after": [
+        "LX-00200",
+        "LX-00208"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l20_like_doing.yaml/practice[3]/units",
+      "before": [
+        "LX-00201",
+        "LX-00208",
+        "LX-00209"
+      ],
+      "after": [
+        "LX-00201",
+        "LX-00209"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l20_like_doing.yaml/practice[4]/units",
+      "before": [
+        "LX-00202",
+        "LX-00204",
+        "LX-00208",
+        "LX-00211"
+      ],
+      "after": [
+        "LX-00202",
+        "LX-00204",
+        "LX-00211"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l20_like_doing.yaml/exercises[EX-00111]/prompt_ru",
+      "before": "Анна любит гулять. Допишите глагол walk в нужной форме.",
+      "after": "Вы играете роль Анны. Скажите о себе «Я люблю гулять»: допишите walk в подходящей форме."
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l20_like_doing.yaml/exercises[EX-00113]/units",
+      "before": [
+        "LX-00203",
+        "LX-00211"
+      ],
+      "after": [
+        "LX-00203"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w10_l20_like_doing.yaml/exercises[EX-00114]/units",
+      "before": [
+        "LX-00386",
+        "LX-00387",
+        "LX-00388"
+      ],
+      "after": [
+        "LX-00387"
+      ]
+    },
+    {
+      "path": "content/seed_lexicon/a1_w09_phone_plus.yaml/units[LX-00349]/usage_note",
+      "before": "when — «когда» вообще; what time — точное время.",
+      "after": "When спрашивает о времени в широком смысле: ответом может быть и день, и время на часах. What time прямо просит назвать время на часах; это не запрет точного ответа на when."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w09_phone_plus.yaml/units[LX-00350]/meaning",
+      "before": "what one of a small group",
+      "after": "which one or ones of a known or limited set"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w09_phone_plus.yaml/units[LX-00355]/meaning",
+      "before": "a message sent by computer",
+      "after": "an electronic message sent through an email service"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w09_phone_plus.yaml/units[LX-00365]/usage_note",
+      "before": "w не читается: «рон», носовой ŋ в конце. wrong number — «не туда попали».",
+      "after": "w не произносится. В конце /ŋ/: задняя часть языка касается мягкого нёба, а не кончик языка, как для /n/. wrong number — «не туда попали»."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w09_phone_plus.yaml/units[LX-00366]/meaning",
+      "before": "the name given to you at birth, before your family name",
+      "after": "a given name, as distinguished from a family name"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w09_phone_plus.yaml/units[LX-00368]/meaning",
+      "before": "Asking someone to phone again",
+      "after": "Asking someone to telephone at a later time"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free.yaml/units[LX-00193]/usage_note",
+      "before": "В Америке — on the weekend, в Британии — at the weekend.",
+      "after": "В американском английском обычно on the weekend; at the weekend характерно для британского варианта, но не является грамматической ошибкой."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free.yaml/units[LX-00196]/usage_note",
+      "before": "Стоит перед обычным глаголом (I always read), но после be (I am always busy).",
+      "after": "В нейтральном простом утверждении обычно стоит перед смысловым глаголом (I always read), а с be — после него (I am always busy). Это базовая позиция, не запрет иных контекстов."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free.yaml/units[LX-00202]/usage_note",
+      "before": "На инструменте — с the: play the guitar. В игру — без the: play chess.",
+      "after": "С инструментом здесь тренируем play the guitar; в американском английском play guitar без the тоже естественно. С названием игры обычно без the: play chess."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00369]/usage_note",
+      "before": "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями).",
+      "after": "День недели пишется с заглавной буквы. On Mondays явно обозначает повторение по понедельникам. On Monday может называть конкретный понедельник, а в подходящем контексте — привычку; разговорное Mondays возможно и без on (так же с другими днями)."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00370]/usage_note",
+      "before": "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями).",
+      "after": "День недели пишется с заглавной буквы. On Mondays явно обозначает повторение по понедельникам. On Monday может называть конкретный понедельник, а в подходящем контексте — привычку; разговорное Mondays возможно и без on (так же с другими днями)."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00371]/usage_note",
+      "before": "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями).",
+      "after": "День недели пишется с заглавной буквы. On Mondays явно обозначает повторение по понедельникам. On Monday может называть конкретный понедельник, а в подходящем контексте — привычку; разговорное Mondays возможно и без on (так же с другими днями)."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00372]/usage_note",
+      "before": "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями).",
+      "after": "День недели пишется с заглавной буквы. On Mondays явно обозначает повторение по понедельникам. On Monday может называть конкретный понедельник, а в подходящем контексте — привычку; разговорное Mondays возможно и без on (так же с другими днями)."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00373]/usage_note",
+      "before": "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями).",
+      "after": "День недели пишется с заглавной буквы. On Mondays явно обозначает повторение по понедельникам. On Monday может называть конкретный понедельник, а в подходящем контексте — привычку; разговорное Mondays возможно и без on (так же с другими днями)."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00374]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00375]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00376]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00377]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00378]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00379]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00380]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00381]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00382]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00383]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00384]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w10_free_plus.yaml/units[LX-00385]/usage_note",
+      "before": "Месяцы пишут с большой буквы; перед месяцем ставят in.",
+      "after": "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+    },
+    {
+      "path": "content/seed_weeks/a1_w09.yaml/script[3]/ru",
+      "before": "Да. Б-Е-Л-О-В-А. Анна Белова.",
+      "after": "Да. B-E-L-O-V-A (латинскими буквами). Анна Белова."
+    },
+    {
+      "path": "content/seed_weeks/a1_w09.yaml/twister/text",
+      "before": "[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]. [S2]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [S2]phone[/] [P3]at[/] [N3]five[/]!",
+      "after": "[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]. [D5]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [D5]phone[/] [P3]at[/] [N3]five[/]!"
+    },
+    {
+      "path": "content/seed_weeks/a1_w09.yaml/twister/warmup",
+      "before": [
+        "[D2]open[/], [D2]close[/]",
+        "[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]!",
+        "[S2]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [S2]phone[/] [P3]at[/] [N3]five[/]!",
+        "[T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/] [C1]and[/] [D2]closes[/] [P3]at[/] [N3]five[/]."
+      ],
+      "after": [
+        "[D2]open[/], [D2]close[/]",
+        "[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]!",
+        "[D5]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [D5]phone[/] [P3]at[/] [N3]five[/]!",
+        "[T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/] [C1]and[/] [D2]closes[/] [P3]at[/] [N3]five[/]."
+      ]
+    },
+    {
+      "path": "content/seed_weeks/a1_w10.yaml/script[3]/text",
+      "before": "[P3]On[/] [S7]Sundays[/] [P3]in[/] [S7]October[/], [T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/] [P1]in[/] [T3]my[/] [S2]jacket[/]. [T8]I[/] [D3]like[/] [D4]walking[/].",
+      "after": "[P3]On[/] [S7]Sundays[/] [P3]in[/] [S7]October[/], [T8]I[/] [D4]walk[/] [P3]in[/] [T1]the[/] [S4]park[/] [P3]in[/] [T3]my[/] [S2]jacket[/]. [T8]I[/] [D3]like[/] [D4]walking[/]."
+    },
+    {
+      "path": "content/seed_weeks/a1_w10.yaml/twister/text",
+      "before": "[D2]Reading[/] [P1]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P1]in[/] [T1]the[/] [S7]morning[/], [D2]playing[/] [P3]on[/] [S7]Sunday[/], [A1]never[/], [A1]never[/], [A1]never[/]!",
+      "after": "[D2]Reading[/] [P3]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P3]in[/] [T1]the[/] [S7]morning[/], [D2]playing[/] [P3]on[/] [S7]Sunday[/], [A1]never[/], [A1]never[/], [A1]never[/]!"
+    },
+    {
+      "path": "content/seed_weeks/a1_w10.yaml/twister/warmup",
+      "before": [
+        "[D2]reading[/], [P1]in[/]",
+        "[D2]reading[/] [P1]in[/] [T1]the[/] [S7]evening[/]",
+        "[D2]Reading[/] [P1]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P1]in[/] [T1]the[/] [S7]morning[/].",
+        "[T8]I[/] [D3]like[/] [D2]reading[/]."
+      ],
+      "after": [
+        "[D2]reading[/], [P3]in[/]",
+        "[D2]reading[/] [P3]in[/] [T1]the[/] [S7]evening[/]",
+        "[D2]Reading[/] [P3]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P3]in[/] [T1]the[/] [S7]morning[/].",
+        "[T8]I[/] [D3]like[/] [D2]reading[/]."
+      ]
+    },
+    {
+      "path": "content/seed_weeks/a1_w10.yaml/twister/tip_ru",
+      "before": "ŋ — задняя часть языка прижата к нёбу, звук идёт в нос, в конце нет «г». n — кончик языка за верхними зубами. В reading нужен /ŋ/: задняя часть языка касается мягкого нёба, кончик не поднимается как для /n/. Не добавляйте отдельный /g/ и не заменяйте /ŋ/ на /n/.",
+      "after": "ŋ — задняя часть языка прижата к нёбу, звук идёт в нос, в конце нет «г». n — кончик языка за верхними зубами. Здесь reading, walking и playing — ритмический список занятий, а не полные предложения «я читаю / гуляю / играю». В reading нужен /ŋ/: задняя часть языка касается мягкого нёба, кончик не поднимается как для /n/. Не добавляйте отдельный /g/ и не заменяйте /ŋ/ на /n/."
+    },
+    {
+      "path": "content/seed_weeks/a1_w10.yaml/twister/ru",
+      "before": "Читаю вечером, гуляю утром, играю в воскресенье — никогда, никогда, никогда!",
+      "after": "Чтение вечером, прогулки утром, игра в воскресенье — никогда, никогда, никогда!"
+    }
+  ],
+  "hashes": [
+    {
+      "file": "content/active_a1/scenarios_19_20.json",
+      "before_sha256": "93edb0633dcbdbd237038ba6a459b194e74e27f315081a1785604d2d93242151",
+      "after_sha256": "a649c75be55be2ad57c747b0ad78bfc1b9eeafecce44fa664f4fb4dc8d8f3764"
+    },
+    {
+      "file": "content/active_a1/topics_19_20.json",
+      "before_sha256": "eadb54af36d31d578364bcac457c1a6f1b1f548c7137ae13a7af9c204fba2654",
+      "after_sha256": "c27903cc7c9f85765d2c59368028528779508bc35e3e93738bc4d402c929154f"
+    },
+    {
+      "file": "content/manifests/a1_delayed_review_topics_17_20.json",
+      "before_sha256": "0fb7614f2d4302982704772738c5ddd30c594dbb8f097c578c1d2c98b098db8e",
+      "after_sha256": "fde4fa7541b622e70e6c0ae58e2cc92d0a6eec0d3cd4dd653585e0ffe90e8d03"
+    },
+    {
+      "file": "content/manifests/a1_micro_review_17_20.json",
+      "before_sha256": "b7a8dffa6c36b36961936a680bf5b4271a90bb906522acece9975fda5ed5c7b8",
+      "after_sha256": "451c6c59bab99baa1c3b7943e338ca43a92c75908f03dd503f3ceb93aa59b129"
+    },
+    {
+      "file": "content/manifests/a1_scaffold_transfer.json",
+      "before_sha256": "5f0429b66cd8029f89a89d315601b5d5a79439b396919a3a278261bba9f8a3ea",
+      "after_sha256": "a71069ecc0a24897f3f9d24b78aba96361bae10ed30016c57f7f724d9fcefafb"
+    },
+    {
+      "file": "content/manifests/a1_understanding_checks.json",
+      "before_sha256": "9c6345dda37fa904eccb573e9c99c80d372c4a4ea2624fadd3d2e3838f00e56f",
+      "after_sha256": "569693c37e6d4681b216f02631bbeb523cafe20dae59d9ec4cd34b9ec64fc9d1"
+    },
+    {
+      "file": "content/seed_lessons/a1_w09_l17_do_does.yaml",
+      "before_sha256": "ee3c65ec42b1aa6cffc2aa925e4a6cd1410f906b71e6e3faf75e3798ec8e50a1",
+      "after_sha256": "7e3e65edfa8f34c7f446fba5a4cc96d795bb42310c6d9b4d69d61202b9011629"
+    },
+    {
+      "file": "content/seed_lessons/a1_w09_l18_spelling.yaml",
+      "before_sha256": "e6a076d53e40d3888a3f84a4050942c0d6e68ba2cd9bc6b609d1eac03afbb6b1",
+      "after_sha256": "6ff1dd9357a564f8ff2a1bc55c67237775edf0f2b9d5f164762b1806e78312af"
+    },
+    {
+      "file": "content/seed_lessons/a1_w10_l19_always_never.yaml",
+      "before_sha256": "9af83c5d07981e4ce6f594082e78c4ba39bab46cb3cd4265cdd9518f1168e86e",
+      "after_sha256": "d9bb7e5e10fdc35d250fa80683260746e1bc48d33c95fa7628bf262be35a8ca2"
+    },
+    {
+      "file": "content/seed_lessons/a1_w10_l20_like_doing.yaml",
+      "before_sha256": "e2c59be5ef441cc0ac5aea7421736a0dc8a61b9aa5eb4ca5092401be96dfef42",
+      "after_sha256": "6ae9951b004cddea6312fe77aa7b2eabacae551c471540000e48cf715c788b30"
+    },
+    {
+      "file": "content/seed_lexicon/a1_w09_phone_plus.yaml",
+      "before_sha256": "01a344f99faee24b2f93fff329fc86509529d8421a056d56f82441857864f408",
+      "after_sha256": "8cc8f00704c5f3ad01f98e174fb569f5c6c56ccfd139087c48d29a2d95fe219b"
+    },
+    {
+      "file": "content/seed_lexicon/a1_w10_free.yaml",
+      "before_sha256": "e93441ca31c0d833d9e8a33819264888a462cd4b293edd5017188df59220e582",
+      "after_sha256": "1a204e61a1e01eb53b8f705bd7775045b22bc5dcd8630e6b2ef260c1c5db52dc"
+    },
+    {
+      "file": "content/seed_lexicon/a1_w10_free_plus.yaml",
+      "before_sha256": "3eac9364c5c5f48cf3c094737c167b6f56ac79b3a026eddb95e57911f2941bc6",
+      "after_sha256": "0961c538d2ed1e1a23ba0eecacdc31ee2536e832ee18bef5ab7dd98a950b7b66"
+    },
+    {
+      "file": "content/seed_weeks/a1_w09.yaml",
+      "before_sha256": "21852d8e2ea49109e84377f7ccdf3de942e469c09afc5e8f900dab322655a5fb",
+      "after_sha256": "7fa25e239ab574c4771c4fc3e1deb89eb6560f6872118dc2f1a0bb3245d780b9"
+    },
+    {
+      "file": "content/seed_weeks/a1_w10.yaml",
+      "before_sha256": "57d415fc1c352ff4b873fb91c8afd3ecead212320a3ce3a0690a5f4838020aaa",
+      "after_sha256": "ea5f8f51fc06f19a7931722ef6329a132021f5cf9ae7c5803f5d327f2ebc93b3"
+    }
+  ]
+}

@@ -20,7 +20,7 @@ script:
     ru: "Да. Продиктуйте, пожалуйста, фамилию по буквам."
   - speaker: anna
     text: "[O4]Yes[/]. [N7]B-E-L-O-V-A[/]. [S1]Anna[/] [S1]Belova[/]."
-    ru: "Да. Б-Е-Л-О-В-А. Анна Белова."
+    ru: "Да. B-E-L-O-V-A (латинскими буквами). Анна Белова."
   - speaker: locksmith
     text: "[O2]Thank you[/]! [C1]And[/] [T9]what[/] [D1]is[/] [T3]your[/] [S2]phone[/] [S9]number[/]?"
     spoken: "[O2]Thank you[/]! [C1]And[/] [T9]what[/][D1]'s[/] [T3]your[/] [S2]phone[/] [S9]number[/]?"
@@ -46,7 +46,7 @@ script:
 twister:
   number: 9
   series: sounds
-  text: '[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]. [S2]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [S2]phone[/] [P3]at[/] [N3]five[/]!'
+  text: '[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]. [D5]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [D5]phone[/] [P3]at[/] [N3]five[/]!'
   ru: Открываемся в девять, закрываемся в пять. Звонить в девять? Нет, звонить в пять!
   ipa: /ˈoʊpən ət ˈnaɪn | ˈkloʊz ət ˈfaɪv | ˈfoʊn ət ˈnaɪn | ˈnoʊ | ˈfoʊn ət ˈfaɪv/
   focus_sounds:
@@ -58,7 +58,7 @@ twister:
   warmup:
   - '[D2]open[/], [D2]close[/]'
   - '[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]!'
-  - '[S2]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [S2]phone[/] [P3]at[/] [N3]five[/]!'
+  - '[D5]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [D5]phone[/] [P3]at[/] [N3]five[/]!'
   - '[T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/] [C1]and[/] [D2]closes[/] [P3]at[/] [N3]five[/].'
   target_line: It opens at nine and closes at five.
   own_ru: 'Скажите, во сколько открывается и закрывается ваше любимое кафе или магазин: It opens at … and closes at …'

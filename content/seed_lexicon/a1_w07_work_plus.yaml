@@ -4,7 +4,7 @@ week: 7
 units:
 - uid: LX-00319
   lemma: nurse
-  meaning: a person who cares for sick people in a hospital
+  meaning: "a person trained to care for sick or injured people"
   class: S9
   forms:
   - nurses
@@ -109,7 +109,7 @@ units:
   usage_note: 'Ударение в начале: MAnager, широкое /æ/.'
 - uid: LX-00326
   lemma: farmer
-  meaning: a person who has a farm
+  meaning: "a person who grows crops or raises animals on a farm"
   class: S9
   forms:
   - farmers
@@ -136,7 +136,7 @@ units:
   example_en: '[T8]I[/] [D3]like[/] [T3]my[/] [S9]job[/].'
   example_ru: Мне нравится моя работа.
   situation: Рассказываете, кем работаете
-  usage_note: job — конкретное место работы, work — работа вообще. «джаб».
+  usage_note: "Job — исчисляемое название работы или должности: a job, two jobs. Work в значении работы вообще обычно неисчисляемое. Job не обязательно обозначает помещение или здание."
 - uid: LX-00328
   lemma: boss
   meaning: the person who tells you what to do at work
@@ -166,7 +166,7 @@ units:
   example_en: '[T3]My[/] [S1]mom[/] [D2]works[/] [P1]at[/] [T1]a[/] [S4]hospital[/].'
   example_ru: Мама работает в больнице.
   situation: Говорите, где работаете
-  usage_note: 'Ударение в начале: HOSpital. В США — in the hospital.'
+  usage_note: "Ударение в начале: HOSpital. В США о пациенте говорят in the hospital. О работе возможны work at a hospital и work in a hospital: артикль зависит от контекста, а не только от слова hospital."
 - uid: LX-00330
   lemma: office
   meaning: a room or building where people work at desks
@@ -181,7 +181,7 @@ units:
   example_en: '[T8]I[/] [D2]work[/] [P1]in[/] [T1]an[/] [S4]office[/].'
   example_ru: Я работаю в офисе.
   situation: Говорите, где работаете
-  usage_note: «Офис», ударение в начале. in an office — внутри здания.
+  usage_note: "Ударение в начале. I work in an office называет офис как рабочую среду; это не обязательно сообщение, что человек сейчас физически внутри здания."
 - uid: LX-00331
   lemma: restaurant
   meaning: a place where you buy and eat meals
@@ -273,4 +273,4 @@ units:
   example_en: I work in an office.
   example_ru: Я работаю в офисе.
   situation: Говорите, где работаете
-  usage_note: 'in — внутри здания: in an office, in a hospital. at — место как точка: at a school, at home.'
+  usage_note: "I work in an office — обычное место работы, не обязательно нахождение внутри сейчас. At и in выбирают по ситуации; это не жёсткое правило «точка против помещения»."
