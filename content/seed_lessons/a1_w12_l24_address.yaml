@@ -173,6 +173,7 @@ exercises:
     answer: My last name is Belova.
     accepted:
     - My last name is Belova
+    - My last name's Belova.
     hint_ru: My last name + is + фамилия.
     explanation_ru: Last name — фамилия; first name — имя. Не перепутайте поля анкеты.
     units:

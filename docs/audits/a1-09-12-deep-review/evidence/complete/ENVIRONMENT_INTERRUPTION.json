@@ -1,0 +1,7 @@
+{
+  "status": "BLOCKED",
+  "source_commit": "9749fab5af2e9fa72c472b5dc2b9f8823733281d",
+  "full_django_exit_code": null,
+  "full_pytest_started": false,
+  "reason": "exec-server transport disconnected/recovery timed out; process list subsequently contained no verification/Django/pytest process; django log had no final summary. No PASS inferred from partial output."
+}

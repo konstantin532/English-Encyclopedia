@@ -1,0 +1,367 @@
+Creating test database for alias 'default'...
+FFFFFFFFFFFFFFFFF/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-a1-13-16-shared/staticfiles/
+  mw_instance = middleware(adapted_handler)
+FFFFFFFFFF
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00068', slot=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['reads'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'reads'
+
+- ['reads']
++ []
+
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00068', slot=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['lives'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'lives'
+
+- ['lives']
++ []
+
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00076', slot=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['bank'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'bank'
+
+- ['bank']
++ []
+
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00076', slot=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['shop'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'shop'
+
+- ['shop']
++ []
+
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00078', slot=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['actor'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'actor'
+
+- ['actor']
++ []
+
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00078', slot=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['artist'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'artist'
+
+- ['artist']
++ []
+
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00078', slot=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['worker'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'worker'
+
+- ['worker']
++ []
+
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00079', slot=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['city'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'city'
+
+- ['city']
++ []
+
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00082', slot=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['park'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'park'
+
+- ['park']
++ []
+
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00084', slot=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['park'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'park'
+
+- ['park']
++ []
+
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00085', slot=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['park'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'park'
+
+- ['park']
++ []
+
+======================================================================
+FAIL: test_all_compiled_correct_micro_answers_use_known_words (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_all_compiled_correct_micro_answers_use_known_words) (uid='EX-00085', slot=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 47, in test_all_compiled_correct_micro_answers_use_known_words
+    self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['park'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'park'
+
+- ['park']
++ []
+
+======================================================================
+FAIL: test_between_review_disambiguates_grammatical_neighboring_option_and_keeps_keys (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_between_review_disambiguates_grammatical_neighboring_option_and_keeps_keys)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 80, in test_between_review_disambiguates_grammatical_neighboring_option_and_keeps_keys
+    self.assertIn('between',card[0])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 'between' not found in 'Как описать расположение кафе между банком и отелем?'
+
+======================================================================
+FAIL: test_cold_models_use_known_lexical_meanings (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_cold_models_use_known_lexical_meanings) (slug='a1-he-she-works', model='Does Tom read books every day?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 32, in test_cold_models_use_known_lexical_meanings
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['read'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'read'
+
+- ['read']
++ []
+
+======================================================================
+FAIL: test_cold_models_use_known_lexical_meanings (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_cold_models_use_known_lexical_meanings) (slug='a1-jobs-what-do-you-do', model='I am a cook. I work at a café.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 32, in test_cold_models_use_known_lexical_meanings
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['caf'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'caf'
+
+- ['caf']
++ []
+
+======================================================================
+FAIL: test_cold_models_use_known_lexical_meanings (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_cold_models_use_known_lexical_meanings) (slug='a1-where-is-prepositions', model='The shop is across from the park.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 32, in test_cold_models_use_known_lexical_meanings
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['park'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'park'
+
+- ['park']
++ []
+
+======================================================================
+FAIL: test_cold_models_use_known_lexical_meanings (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_cold_models_use_known_lexical_meanings) (slug='a1-where-is-prepositions', model='The phone is in the bag.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 32, in test_cold_models_use_known_lexical_meanings
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t,known)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['bag'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'bag'
+
+- ['bag']
++ []
+
+======================================================================
+FAIL: test_near_is_valid_for_unspecified_nearby_bank_but_not_inside_or_negated (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_near_is_valid_for_unspecified_nearby_bank_but_not_inside_or_negated) (answer='The bank is near the cafe.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 64, in _writing
+    self.assertEqual(attempt.outcome,expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_near_is_valid_for_unspecified_nearby_bank_but_not_inside_or_negated (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_near_is_valid_for_unspecified_nearby_bank_but_not_inside_or_negated) (answer='The cafe is near the bank.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 64, in _writing
+    self.assertEqual(attempt.outcome,expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_near_is_valid_for_unspecified_nearby_bank_but_not_inside_or_negated (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_near_is_valid_for_unspecified_nearby_bank_but_not_inside_or_negated) (answer='The cafe is next to the bank.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 64, in _writing
+    self.assertEqual(attempt.outcome,expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_poem_spatial_on_label_is_place_and_all_targets_have_a_real_word (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_poem_spatial_on_label_is_place_and_all_targets_have_a_real_word)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 93, in test_poem_spatial_on_label_is_place_and_all_targets_have_a_real_word
+    self.assertTrue(all(cat=='P'and label.endswith('Место') for _,cat,label in on),on)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [('on', 'P', 'Предлоги: Время'), ('on', 'P', 'Предлоги: Время')]
+
+======================================================================
+FAIL: test_school_work_place_variants_do_not_swap_person_or_work_for_be (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_school_work_place_variants_do_not_swap_person_or_work_for_be) (answer='I work in a school.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 64, in _writing
+    self.assertEqual(attempt.outcome,expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_school_work_place_variants_do_not_swap_person_or_work_for_be (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_school_work_place_variants_do_not_swap_person_or_work_for_be) (answer='I work at the school.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 64, in _writing
+    self.assertEqual(attempt.outcome,expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_school_work_place_variants_do_not_swap_person_or_work_for_be (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_school_work_place_variants_do_not_swap_person_or_work_for_be) (answer='I work in the school.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 64, in _writing
+    self.assertEqual(attempt.outcome,expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_school_work_place_variants_do_not_swap_person_or_work_for_be (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_school_work_place_variants_do_not_swap_person_or_work_for_be) (answer='I work at school.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 64, in _writing
+    self.assertEqual(attempt.outcome,expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_story_possessive_suffix_is_separate_and_key_to_is_relationship (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_story_possessive_suffix_is_separate_and_key_to_is_relationship)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 120, in test_story_possessive_suffix_is_separate_and_key_to_is_relationship
+    self.assertTrue(any(word=="'s"and cat=='T'and label.endswith('Притяжательные детерминативы')for word,cat,label in rows),rows)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [('It', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ("seven o'clock", 'N', 'Числительные: Время на часах'), ('There', 'T', 'Детерминативы: Притяжательные и другие местоимения (pronouns)'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('an', 'T', 'Детерминативы: Артикли'), ('old', 'J', 'Прилагательные: Физические свойства'), ('key', 'S', 'Существительные: Дом и предметы'), ('next to', 'P', 'Предлоги: Место'), ('my', 'T', 'Детерминативы: Притяжательные детерминативы'), ('door', 'S', 'Существительные: Дом и предметы'), ('It', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ("'s", 'D', 'Глаголы: Опорные и вспомогательные'), ("seven o'clock", 'N', 'Числительные: Время на часах'), ('There', 'T', 'Детерминативы: Притяжательные и другие местоимения (pronouns)'), ("'s", 'D', 'Глаголы: Опорные и вспомогательные'), ('an', 'T', 'Детерминативы: Артикли'), ('old', 'J', 'Прилагательные: Физические свойства'), ('key', 'S', 'Существительные: Дом и предметы'), ('next to', 'P', 'Предлоги: Место'), ('my', 'T', 'Детерминативы: Притяжательные детерминативы'), ('door', 'S', 'Существительные: Дом и предметы'), ('My', 'T', 'Детерминативы: Притяжательные детерминативы'), ('key', 'S', 'Существительные: Дом и предметы'), ('No', 'O', 'Междометия и реакции: Согласие и несогласие'), ('My', 'T', 'Детерминативы: Притяжательные детерминативы'), ('keys', 'S', 'Существительные: Дом и предметы'), ('are', 'D', 'Глаголы: Опорные и вспомогательные'), ('in', 'P', 'Предлоги: Место'), ('the', 'T', 'Детерминативы: Артикли'), ('fridge', 'S', 'Существительные: Дом и предметы'), ('Again', 'A', 'Наречия: Время'), ('It', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('old', 'J', 'Прилагательные: Физические свойства'), ('Old', 'J', 'Прилагательные: Физические свойства'), ('old', 'J', 'Прилагательные: Физические свойства'), ('old', 'J', 'Прилагательные: Физические свойства'), ('It', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ("'s", 'D', 'Глаголы: Опорные и вспомогательные'), ('old', 'J', 'Прилагательные: Физические свойства'), ('Old', 'J', 'Прилагательные: Физические свойства'), ('old', 'J', 'Прилагательные: Физические свойства'), ('old', 'J', 'Прилагательные: Физические свойства'), ('Anna', 'S', 'Существительные: Люди и семья'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('this', 'T', 'Детерминативы: Указательные'), ('your', 'T', 'Детерминативы: Притяжательные детерминативы'), ('key', 'S', 'Существительные: Дом и предметы'), ('No', 'O', 'Междометия и реакции: Согласие и несогласие'), ('it', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('not', 'X', 'Частицы: Отрицание'), ('my', 'T', 'Детерминативы: Притяжательные детерминативы'), ('key', 'S', 'Существительные: Дом и предметы'), ('Tom', 'S', 'Существительные: Люди и семья'), ('your', 'T', 'Детерминативы: Притяжательные детерминативы'), ('keys', 'S', 'Существительные: Дом и предметы'), ('are', 'D', 'Глаголы: Опорные и вспомогательные'), ('in', 'P', 'Предлоги: Место'), ('the', 'T', 'Детерминативы: Артикли'), ('fridge', 'S', 'Существительные: Дом и предметы'), ('No', 'O', 'Междометия и реакции: Согласие и несогласие'), ('it', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ("n't", 'X', 'Частицы: Отрицание'), ('my', 'T', 'Детерминативы: Притяжательные детерминативы'), ('key', 'S', 'Существительные: Дом и предметы'), ('Tom', 'S', 'Существительные: Люди и семья'), ('your', 'T', 'Детерминативы: Притяжательные детерминативы'), ('keys', 'S', 'Существительные: Дом и предметы'), ('are', 'D', 'Глаголы: Опорные и вспомогательные'), ('in', 'P', 'Предлоги: Место'), ('the', 'T', 'Детерминативы: Артикли'), ('fridge', 'S', 'Существительные: Дом и предметы'), ('Yes', 'O', 'Междометия и реакции: Согласие и несогласие'), ('Every', 'T', 'Детерминативы: Распределительные'), ('day', 'S', 'Существительные: Время и календарь'), ('It', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('not', 'X', 'Частицы: Отрицание'), ('for', 'P', 'Предлоги: Причина и цель'), ('my', 'T', 'Детерминативы: Притяжательные детерминативы'), ('door', 'S', 'Существительные: Дом и предметы'), ('or', 'C', 'Союзы: Сочинительные'), ("Anna's", 'S', 'Существительные: Люди и семья'), ('door', 'S', 'Существительные: Дом и предметы'), ('Whose', 'T', 'Детерминативы: Притяжательные и другие местоимения (pronouns)'), ('key', 'S', 'Существительные: Дом и предметы'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('it', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('It', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ("n't", 'X', 'Частицы: Отрицание'), ('for', 'P', 'Предлоги: Причина и цель'), ('my', 'T', 'Детерминативы: Притяжательные детерминативы'), ('door', 'S', 'Существительные: Дом и предметы'), ('or', 'C', 'Союзы: Сочинительные'), ("Anna's", 'S', 'Существительные: Люди и семья'), ('door', 'S', 'Существительные: Дом и предметы'), ('Whose', 'T', 'Детерминативы: Притяжательные и другие местоимения (pronouns)'), ('key', 'S', 'Существительные: Дом и предметы'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('it', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('Tom', 'S', 'Существительные: Люди и семья'), ('There', 'T', 'Детерминативы: Притяжательные и другие местоимения (pronouns)'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('an', 'T', 'Детерминативы: Артикли'), ('old', 'J', 'Прилагательные: Физические свойства'), ('mailbox', 'S', 'Существительные: Дом и предметы'), ('here', 'A', 'Наречия: Место'), ('next to', 'P', 'Предлоги: Место'), ('the', 'T', 'Детерминативы: Артикли'), ('door', 'S', 'Существительные: Дом и предметы'), ('Tom', 'S', 'Существительные: Люди и семья'), ('There', 'T', 'Детерминативы: Притяжательные и другие местоимения (pronouns)'), ("'s", 'D', 'Глаголы: Опорные и вспомогательные'), ('an', 'T', 'Детерминативы: Артикли'), ('old', 'J', 'Прилагательные: Физические свойства'), ('mailbox', 'S', 'Существительные: Дом и предметы'), ('here', 'A', 'Наречия: Место'), ('next to', 'P', 'Предлоги: Место'), ('the', 'T', 'Детерминативы: Артикли'), ('door', 'S', 'Существительные: Дом и предметы'), ('The', 'T', 'Детерминативы: Артикли'), ('key', 'S', 'Существительные: Дом и предметы'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('for', 'P', 'Предлоги: Причина и цель'), ('the', 'T', 'Детерминативы: Артикли'), ('mailbox', 'S', 'Существительные: Дом и предметы'), ('It', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('our', 'T', 'Детерминативы: Притяжательные детерминативы'), ('mailbox', 'S', 'Существительные: Дом и предметы'), ('Who', 'T', 'Детерминативы: Притяжательные и другие местоимения (pronouns)'), ('has', 'D', 'Глаголы: Опорные и вспомогательные'), ('a', 'T', 'Детерминативы: Артикли'), ('key', 'S', 'Существительные: Дом и предметы'), ('to', 'P', 'Предлоги: Направление и движение'), ('our', 'T', 'Детерминативы: Притяжательные детерминативы'), ('mailbox', 'S', 'Существительные: Дом и предметы'), ('It', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ("'s", 'D', 'Глаголы: Опорные и вспомогательные'), ('our', 'T', 'Детерминативы: Притяжательные детерминативы'), ('mailbox', 'S', 'Существительные: Дом и предметы'), ('Who', 'T', 'Детерминативы: Притяжательные и другие местоимения (pronouns)'), ('has', 'D', 'Глаголы: Опорные и вспомогательные'), ('a', 'T', 'Детерминативы: Артикли'), ('key', 'S', 'Существительные: Дом и предметы'), ('to', 'P', 'Предлоги: Направление и движение'), ('our', 'T', 'Детерминативы: Притяжательные детерминативы'), ('mailbox', 'S', 'Существительные: Дом и предметы')]
+
+======================================================================
+FAIL: test_week_twister_right_door_is_adjective_and_on_is_spatial (tests.test_a1_deep_13_16_shared.Shared1316Tests.test_week_twister_right_door_is_adjective_and_on_is_spatial)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-shared/tests/test_a1_deep_13_16_shared.py", line 114, in test_week_twister_right_door_is_adjective_and_on_is_spatial
+    self.assertTrue(any(word=='right'and cat=='J'and label.endswith('Оценка') for word,cat,label in rows),rows)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [('Excuse me', 'O', 'Междометия и реакции: Благодарность и извинение'), ('I', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('have', 'D', 'Глаголы: Опорные и вспомогательные'), ('an', 'T', 'Детерминативы: Артикли'), ('old', 'J', 'Прилагательные: Физические свойства'), ('key', 'S', 'Существительные: Дом и предметы'), ('Where', 'A', 'Наречия: Вопросительные'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('the', 'T', 'Детерминативы: Артикли'), ('key', 'S', 'Существительные: Дом и предметы'), ('shop', 'S', 'Существительные: Места и город'), ('please', 'O', 'Междометия и реакции: Смягчение'), ('The', 'T', 'Детерминативы: Артикли'), ('key', 'S', 'Существительные: Дом и предметы'), ('shop', 'S', 'Существительные: Места и город'), ('It', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('near', 'P', 'Предлоги: Место'), ('the', 'T', 'Детерминативы: Артикли'), ('bank', 'S', 'Существительные: Места и город'), ('The', 'T', 'Детерминативы: Артикли'), ('key', 'S', 'Существительные: Дом и предметы'), ('shop', 'S', 'Существительные: Места и город'), ('It', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ("'s", 'D', 'Глаголы: Опорные и вспомогательные'), ('near', 'P', 'Предлоги: Место'), ('the', 'T', 'Детерминативы: Артикли'), ('bank', 'S', 'Существительные: Места и город'), ('Sorry', 'O', 'Междометия и реакции: Благодарность и извинение'), ('can', 'D', 'Глаголы: Модальные'), ('you', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('help', 'D', 'Глаголы: Повседневные действия'), ('us', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('Where', 'A', 'Наречия: Вопросительные'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('the', 'T', 'Детерминативы: Артикли'), ('bank', 'S', 'Существительные: Места и город'), ('Sorry', 'O', 'Междометия и реакции: Благодарность и извинение'), ('can', 'D', 'Глаголы: Модальные'), ('you', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('help', 'D', 'Глаголы: Повседневные действия'), ('us', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('Where', 'A', 'Наречия: Вопросительные'), ("'s", 'D', 'Глаголы: Опорные и вспомогательные'), ('the', 'T', 'Детерминативы: Артикли'), ('bank', 'S', 'Существительные: Места и город'), ('Go', 'D', 'Глаголы: Движение'), ('straight', 'A', 'Наречия: Место'), ('and', 'C', 'Союзы: Сочинительные'), ('turn', 'D', 'Глаголы: Движение'), ('left', 'A', 'Наречия: Место'), ('The', 'T', 'Детерминативы: Артикли'), ('bank', 'S', 'Существительные: Места и город'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('on', 'P', 'Предлоги: Место'), ('the', 'T', 'Детерминативы: Артикли'), ('right', 'A', 'Наречия: Место'), ('On', 'P', 'Предлоги: Место'), ('the', 'T', 'Детерминативы: Артикли'), ('right', 'A', 'Наречия: Место'), ('Next to', 'P', 'Предлоги: Место'), ('Mia', 'S', 'Существительные: Люди и семья'), ("'s", 'T', 'Детерминативы: Притяжательные детерминативы'), ('cafe', 'S', 'Существительные: Места и город'), ('Yes', 'O', 'Междометия и реакции: Согласие и несогласие'), ('And', 'C', 'Союзы: Сочинительные'), ('the', 'T', 'Детерминативы: Артикли'), ('key', 'S', 'Существительные: Дом и предметы'), ('shop', 'S', 'Существительные: Места и город'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('between', 'P', 'Предлоги: Место'), ('the', 'T', 'Детерминативы: Артикли'), ('bank', 'S', 'Существительные: Места и город'), ('and', 'C', 'Союзы: Сочинительные'), ('the', 'T', 'Детерминативы: Артикли'), ('hotel', 'S', 'Существительные: Места и город'), ('Thank you', 'O', 'Междометия и реакции: Благодарность и извинение'), ('Straight', 'A', 'Наречия: Место'), ('left', 'A', 'Наречия: Место'), ('and', 'C', 'Союзы: Сочинительные'), ('on', 'P', 'Предлоги: Место'), ('the', 'T', 'Детерминативы: Артикли'), ('right', 'A', 'Наречия: Место'), ('You', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ('are', 'D', 'Глаголы: Опорные и вспомогательные'), ('welcome', 'J', 'Прилагательные: Оценка'), ('Have', 'D', 'Глаголы: Опорные и вспомогательные'), ('a', 'T', 'Детерминативы: Артикли'), ('nice', 'J', 'Прилагательные: Оценка'), ('day', 'S', 'Существительные: Время и календарь'), ('You', 'T', 'Детерминативы: Личные местоимения (pronouns)'), ("'re", 'D', 'Глаголы: Опорные и вспомогательные'), ('welcome', 'J', 'Прилагательные: Оценка'), ('Have', 'D', 'Глаголы: Опорные и вспомогательные'), ('a', 'T', 'Детерминативы: Артикли'), ('nice', 'J', 'Прилагательные: Оценка'), ('day', 'S', 'Существительные: Время и календарь'), ('Anna', 'S', 'Существительные: Люди и семья'), ('Here', 'A', 'Наречия: Место'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('the', 'T', 'Детерминативы: Артикли'), ('key', 'S', 'Существительные: Дом и предметы'), ('shop', 'S', 'Существительные: Места и город'), ('Anna', 'S', 'Существительные: Люди и семья'), ('Here', 'A', 'Наречия: Место'), ("'s", 'D', 'Глаголы: Опорные и вспомогательные'), ('the', 'T', 'Детерминативы: Артикли'), ('key', 'S', 'Существительные: Дом и предметы'), ('shop', 'S', 'Существительные: Места и город'), ('Turn', 'D', 'Глаголы: Движение'), ('right', 'A', 'Наречия: Место'), ('turn', 'D', 'Глаголы: Движение'), ('left', 'A', 'Наречия: Место'), ('right', 'A', 'Наречия: Место'), ('left', 'A', 'Наречия: Место'), ('left', 'A', 'Наречия: Место'), ('right', 'A', 'Наречия: Место'), ('The', 'T', 'Детерминативы: Артикли'), ('right', 'A', 'Наречия: Место'), ('door', 'S', 'Существительные: Дом и предметы'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('on', 'P', 'Предлоги: Время'), ('the', 'T', 'Детерминативы: Артикли'), ('left', 'A', 'Наречия: Место'), ('right', 'A', 'Наречия: Место'), ('left', 'A', 'Наречия: Место'), ('turn', 'D', 'Глаголы: Движение'), ('right', 'A', 'Наречия: Место'), ('turn', 'D', 'Глаголы: Движение'), ('left', 'A', 'Наречия: Место'), ('Turn', 'D', 'Глаголы: Движение'), ('right', 'A', 'Наречия: Место'), ('turn', 'D', 'Глаголы: Движение'), ('left', 'A', 'Наречия: Место'), ('right', 'A', 'Наречия: Место'), ('left', 'A', 'Наречия: Место'), ('left', 'A', 'Наречия: Место'), ('right', 'A', 'Наречия: Место'), ('Go', 'D', 'Глаголы: Движение'), ('straight', 'A', 'Наречия: Место'), ('and', 'C', 'Союзы: Сочинительные'), ('turn', 'D', 'Глаголы: Движение'), ('left', 'A', 'Наречия: Место'), ('right', 'A', 'Наречия: Место'), ('left', 'A', 'Наречия: Место'), ('turn', 'D', 'Глаголы: Движение'), ('right', 'A', 'Наречия: Место'), ('turn', 'D', 'Глаголы: Движение'), ('left', 'A', 'Наречия: Место'), ('Turn', 'D', 'Глаголы: Движение'), ('right', 'A', 'Наречия: Место'), ('turn', 'D', 'Глаголы: Движение'), ('left', 'A', 'Наречия: Место'), ('right', 'A', 'Наречия: Место'), ('left', 'A', 'Наречия: Место'), ('left', 'A', 'Наречия: Место'), ('right', 'A', 'Наречия: Место'), ('Go', 'D', 'Глаголы: Движение'), ('straight', 'A', 'Наречия: Место'), ('and', 'C', 'Союзы: Сочинительные'), ('turn', 'D', 'Глаголы: Движение'), ('left', 'A', 'Наречия: Место'), ('Turn', 'D', 'Глаголы: Движение'), ('right', 'A', 'Наречия: Место'), ('turn', 'D', 'Глаголы: Движение'), ('left', 'A', 'Наречия: Место'), ('right', 'A', 'Наречия: Место'), ('left', 'A', 'Наречия: Место'), ('left', 'A', 'Наречия: Место'), ('right', 'A', 'Наречия: Место'), ('The', 'T', 'Детерминативы: Артикли'), ('right', 'A', 'Наречия: Место'), ('door', 'S', 'Существительные: Дом и предметы'), ('is', 'D', 'Глаголы: Опорные и вспомогательные'), ('on', 'P', 'Предлоги: Время'), ('the', 'T', 'Детерминативы: Артикли'), ('left', 'A', 'Наречия: Место')]
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.152s
+
+FAILED (failures=27)
+Destroying test database for alias 'default'...
+Found 8 test(s).
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).

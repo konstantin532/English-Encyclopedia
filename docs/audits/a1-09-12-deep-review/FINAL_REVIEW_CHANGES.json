@@ -1,0 +1,78 @@
+{
+  "author": "Codex",
+  "date": "2026-10-25",
+  "reason": "Independent current-source review before full verification; examples and audio English unchanged",
+  "changes": [
+    {
+      "path": "content/seed_lessons/a1_w05_l10_how_much.yaml",
+      "before": "dollars — «далэрз»: первый звук открытый, как «а», американское r в конце",
+      "after": "В dollars ударный гласный /ɑ/ открытый, отдалённо похож на русское «а»; после /ɚ/ произносится /z/; русская подсказка приблизительная"
+    },
+    {
+      "path": "content/seed_lessons/a1_w06_l11_present_simple.yaml",
+      "before": "**Present Simple** называют «простым настоящим» не потому, что **помощники никогда не нужны**, а потому, что в простом **утвердительном предложении** о привычке основной глагол обычно стоит в своей простой форме: *I work*. Но для **вопроса и отрицания** часто нужен **do**.",
+      "after": "**Present Simple** — название грамматической формы, а не обещание, что помощники никогда не нужны. С изучаемыми здесь work, drink и have в утвердительной фразе с I о привычке используем форму как в словаре: *I work*. Для вопроса и отрицания с work нужен помощник **do**: *Do you work? I do not work.*"
+    },
+    {
+      "path": "content/seed_lessons/a1_w06_l11_present_simple.yaml",
+      "before": "Сравните с *Are you busy?*: там основное слово **busy** описывает состояние, поэтому нужен **be**.",
+      "after": "Сравните с *Are you busy?*: **busy** — прилагательное «занят», а не глагол. В полном вопросе с этим прилагательным нужна форма **be**: *Are you busy?* Глагол **work** строит вопрос с **do**: *Do you work?* Дело не в различии действия и состояния: например, о предпочтении говорим *I like coffee*, без be."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w06_day_plus.yaml",
+      "before": "meaning: to do an action such as a shower or a bus",
+      "after": "meaning: \"to perform an action, as in take a shower\""
+    },
+    {
+      "path": "content/seed_lexicon/a1_w06_day_plus.yaml",
+      "before": "in the afternoon — с 12 до 5–6 вечера. Ударение в конце: afterNOON.",
+      "after": "in the afternoon — после полудня, до вечера; точная граница зависит от ситуации. Ударение в конце: afterNOON."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "before": "С I перед обычным действием не нужен am.",
+      "after": "В Present Simple о привычке с I и work используем I work, без am. Это правило для изучаемой формы, а не запрет на любую конструкцию с be и действием."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "before": "Busy описывает состояние и требует am. Work сообщает обычное действие и с I не требует am.",
+      "after": "Busy — прилагательное «занят»: в полном предложении I am busy перед ним нужна форма be. Work — глагол «работать»: о привычке с I говорим I work, без am. Различаем строение этих фраз, а не просто состояние и действие."
+    },
+    {
+      "path": "content/active_a1/scenarios_07_12.json",
+      "identity": {
+        "n": 10,
+        "mission_id": 5
+      },
+      "before": "Продавец сказал «three dollars», а вам послышалось two.",
+      "after": "Вы не уверены, правильно ли расслышали цену three dollars."
+    },
+    {
+      "path": "content/active_a1/scenarios_07_12.json",
+      "identity": {
+        "n": 10,
+        "mission_id": 5
+      },
+      "before": "Переспросите названную цену.",
+      "after": "Уточните с вопросительной интонацией: «Три доллара?»"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_09_12.json",
+      "identity": {
+        "slug": "a1-there-is-some",
+        "exercise_order": 2
+      },
+      "before": "После множественного существительного в конструкции There ... используется are.",
+      "after": "Для существительного во множественном числе в конструкции There ... выбираем are: There are apples. Форма are стоит перед apples."
+    },
+    {
+      "path": "content/manifests/a1_micro_review_09_12.json",
+      "identity": {
+        "slug": "a1-there-is-some",
+        "exercise_order": 6
+      },
+      "before": "Неконкретное множество предметов: some + цвет + существительное во множественном числе.",
+      "after": "Без точного числа предметов: some + прилагательное (цвет или размер) + существительное во множественном числе."
+    }
+  ]
+}

@@ -95,7 +95,7 @@ layers:
       > [D7]Can[/] [T8]I[/] [D1]have[/] [T4]some[/] [J2]red[/] [S3]apples[/], [O8]please[/]? — Можно мне красных яблок?
       > [J2]Red[/] [C1]or[/] [J2]green[/]? — Красные или зелёные?
 
-      - [J2]red[/] [J2]green[/] [J2]yellow[/] [J2]orange[/] [J2]blue[/] [J2]black[/] [J2]white[/] [J2]brown[/]
+      - [J2]red[/] [J2]green[/] [J2]yellow[/] [J2]orange[/] [J2]blue[/] [J2]black[/] [J2]brown[/]
       - [J2]hot[/] [S3]tea[/] — горячий чай, [J2]cold[/] [S3]milk[/] — холодное молоко
       - Ещё продукты: [S3]bread[/] (хлеб), [S3]cheese[/] (сыр), [S3]banana[/] (банан)
 
@@ -143,9 +143,9 @@ exercises:
     prompt_ru: "Новая ситуация: Том спрашивает, есть ли дома вода. Вода есть. Сообщите об этом."
     prompt_en: "Is there water? — ___"
     answer: "Yes, there is."
-    accepted: ["Yes there is", "Yes, there is", "Yes, there is water.", "Yes, there is water", "There is water.", "Yes. There is water."]
+    accepted: ["Yes there is", "Yes, there is", "Yes, there is water.", "Yes, there is water", "There is water.", "Yes. There is water.", "Yes, there's water.", "There's water."]
     hint_ru: "Короткий ответ повторяет there и be."
-    explanation_ru: "Yes, there is. — короткий ответ без сокращения: в конце фразы there's не говорят."
+    explanation_ru: "Yes, there is. — короткий ответ: в нём is не сокращаем. Если после is называем воду, сокращение возможно: Yes, there's water. / There's water."
     units: [LX-00120]
   - order: 5
     uid: EX-00048
@@ -179,11 +179,7 @@ practice:
   hint_ru: Есть ли где-то — Is there…?
   explanation_ru: Is there milk? Это вопрос о наличии молока. Можно спросить и Do you have milk?, обращаясь к продавцу; в этом задании тренируем there is.
   review_of: 1
-  units:
-  - LX-00108
-  - LX-00112
-  - LX-00119
-  - LX-00120
+  units: ["LX-00108", "LX-00112", "LX-00119"]
 - order: 2
   kind: translate
   prompt_ru: Есть яблоки.
@@ -193,12 +189,7 @@ practice:
   hint_ru: Яблок больше одного — there are.
   explanation_ru: There are apples. Один предмет — there is, несколько — there are.
   review_of: 2
-  units:
-  - LX-00109
-  - LX-00112
-  - LX-00119
-  - LX-00120
-  - LX-00121
+  units: ["LX-00109", "LX-00112"]
 - order: 3
   kind: translate
   prompt_ru: Корма для кошек нет. Используйте there is no.
@@ -206,11 +197,7 @@ practice:
   hint_ru: «Нет» — there is no.
   explanation_ru: There is no cat food. There is no — «нет, отсутствует». В этом задании используем изученный оборот; сокращение There’s no cat food тоже подходит.
   review_of: 1
-  units:
-  - LX-00111
-  - LX-00112
-  - LX-00119
-  - LX-00120
+  units: ["LX-00111", "LX-00112"]
 - order: 4
   kind: translate
   prompt_ru: Яблоки красные.
@@ -218,8 +205,4 @@ practice:
   hint_ru: Цвет после are.
   explanation_ru: 'The apples are red. Цвет описывает яблоки, поэтому нужен be: are.'
   review_of: 5
-  units:
-  - LX-00109
-  - LX-00121
-  - LX-00286
-  - LX-00301
+  units: ["LX-00109", "LX-00286"]

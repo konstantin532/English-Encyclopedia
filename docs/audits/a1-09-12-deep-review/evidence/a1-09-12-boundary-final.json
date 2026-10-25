@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+    "manage.py",
+    "test",
+    "tests.test_a1_editorial_deep_09_12",
+    "tests.test_a1_editorial_week06",
+    "tests.test_grammar_answer_integrity",
+    "tests.test_a1_pedagogical_continuity",
+    "tests.test_a1_second_pass",
+    "--noinput"
+  ],
+  "exit_code": 0,
+  "seconds": 20.363,
+  "database_url": "sqlite:////tmp/ee-a1-09-12-boundary-after-kncejgvo/test.sqlite3",
+  "test_sha256": "a8733a4a3c4605e437c74ab4191d0de17fc07f12a98b75c53fb413ac3fdd6e37"
+}

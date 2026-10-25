@@ -27,7 +27,7 @@ units:
   example_en: '[O2]Excuse me[/]!'
   example_ru: Извините!
   situation: Обращаетесь к незнакомому человеку
-  usage_note: 'I — «я» в начале фразы, me — «меня, мне» после глагола.'
+  usage_note: "I — форма подлежащего: I am here. Me — форма дополнения: Can you help me? Выбор зависит от роли, а не просто от позиции в начале или конце фразы."
 - uid: LX-00159
   lemma: excuse
   meaning: to forgive someone for a small mistake
@@ -168,7 +168,7 @@ units:
   example_en: '[D4]Turn[/] [A3]left[/].'
   example_ru: Поверните налево.
   situation: Объясняете дорогу
-  usage_note: 'on the left — слева, turn left — налево.'
+  usage_note: 'В turn left слово left показывает направление — это наречие. В on the left оно называет сторону — это существительное; всё сочетание означает «слева».'
 - uid: LX-00169
   lemma: right
   meaning: on or to the opposite side from left
@@ -178,10 +178,10 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /raɪt/
   translation_ru: направо; справа
-  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/].'
+  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]right[/].'
   example_ru: Банк справа.
   situation: Объясняете дорогу
-  usage_note: 'right ещё значит «правильный»: That is right! — Верно!'
+  usage_note: 'В turn right слово right показывает направление — это наречие. В on the right оно называет сторону — это существительное; всё сочетание означает «справа». Right ещё значит «правильный»: That is right! — Верно!'
 - uid: LX-00170
   lemma: straight
   meaning: in a line, without turning
@@ -231,7 +231,7 @@ units:
   example_en: The bank is next to the cafe.
   example_ru: Банк рядом с кафе.
   situation: Как пройти
-  usage_note: 't в next почти не слышно: «нэкс ту».'
+  usage_note: "В быстрой речи next to может звучать слитно, без отдельного взрыва каждого t. В отчётливой речи t можно сохранить."
 - uid: LX-00175
   lemma: Excuse me!
   meaning: Getting a stranger's attention politely
@@ -244,7 +244,7 @@ units:
   example_en: Excuse me!
   example_ru: Извините!
   situation: Как пройти
-  usage_note: 'Так начинают разговор с незнакомым человеком. Sorry — когда уже извиняются за ошибку.'
+  usage_note: "Excuse me удобно для вежливого привлечения внимания незнакомца. Sorry тоже может предварять обращение или переспрос; оно не ограничено извинением за уже совершённую ошибку."
 - uid: LX-00176
   lemma: Where is the bank?
   meaning: Asking for a place

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+    "manage.py",
+    "test",
+    "tests.test_a1_editorial_deep_13_16",
+    "--noinput"
+  ],
+  "exit_code": 1,
+  "seconds": 12.462,
+  "database": "/tmp/ee-a1-13-16-before-final-h17pt1s0/fixture.sqlite3",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "test_sha256": "68e28df57f388d74475ff73bc3dc88216ff106e6cc645291a46b61a1e8bb8adf"
+}

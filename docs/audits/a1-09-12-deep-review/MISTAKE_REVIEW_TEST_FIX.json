@@ -1,0 +1,10 @@
+{
+  "author": "Codex",
+  "date": "2026-10-25",
+  "path": "tests/test_a1_mistake_review.py",
+  "method": "test_specific_rule_explanation_comes_from_the_new_question",
+  "before": "        checked = self.client.post(reverse(\"learning:mistake_review\"), {\n            \"review_id\": item.pk, \"index\": 0, \"choice\": 1,\n        })\n        self.assertEqual(checked.status_code, 200)\n        self.assertContains(checked, \"С неисчисляемым напитком\")\n        item.refresh_from_db()\n        self.assertEqual(item.current_index, 1)\n",
+  "after": "        question = variants_for(ex)[0]\n        self.assertTrue(question[4])\n        self.assertNotEqual(question[4], variants_for(other)[0][4])\n        self.assertNotContains(page, question[4])\n        # A review must explain this new card, never the original exercise.\n        original_reason = \"Original exercise explanation must not leak into a review card.\"\n        ex.explanation_ru = original_reason\n        ex.save(update_fields=[\"explanation_ru\"])\n        checked = self.client.post(reverse(\"learning:mistake_review\"), {\n            \"review_id\": item.pk, \"index\": 0, \"choice\": 1,\n        })\n        self.assertEqual(checked.status_code, 200)\n        result = checked.context[\"answer_result\"]\n        self.assertFalse(result[\"correct\"])\n        self.assertEqual(result[\"chosen\"], question[2][1])\n        self.assertEqual(result[\"model\"], question[2][question[3]])\n        self.assertEqual(result[\"reason\"], question[4])\n        self.assertContains(checked, question[4])\n        self.assertNotContains(checked, original_reason)\n        item.refresh_from_db()\n        self.assertEqual(item.current_index, 1)\n        self.assertEqual(item.correct_count, 0)\n",
+  "reason": "Full845run had one stale literal prose assertion. Replacement checks actual card-specific response, reveal timing, wrong choice/model, original-explanation isolation and progress; does not change content or production handler.",
+  "baseline_log": "evidence/final/django-full.log"
+}

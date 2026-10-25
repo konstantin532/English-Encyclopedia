@@ -16,7 +16,7 @@ sound_notes:
     note_ru: "never с сильным ударением на первом слоге, l в walk не читается"
   - text: "What do you do on the weekend?"
     ipa: "/ˌwʌt də jə ˈdu ɑn ðə ˈwikˌɛnd/"
-    note_ru: "weekend — два ударения: «уИк-Энд»"
+    note_ru: "weekend /ˈwikˌɛnd/: главное ударение на первом слоге; второй может иметь более слабое, дополнительное ударение"
 contractions:
   - full: "do not"
     short: "don't"
@@ -134,7 +134,7 @@ exercises:
     answer: "always"
     hint_ru: "Каждый раз — всегда."
     explanation_ru: "I always read on Saturdays — always перед глаголом read."
-    units: [LX-00196, LX-00207]
+    units: [LX-00196]
   - order: 3
     uid: EX-00106
     kind: build
@@ -193,9 +193,7 @@ practice:
   units:
   - LX-00194
   - LX-00196
-  - LX-00206
   - LX-00207
-  - LX-00210
 - order: 2
   kind: translate
   prompt_ru: Том никогда не гуляет.
@@ -205,7 +203,6 @@ practice:
   review_of: 1
   units:
   - LX-00197
-  - LX-00210
 - order: 3
   kind: translate
   prompt_ru: Я гуляю в парке по воскресеньям.
@@ -215,9 +212,6 @@ practice:
   review_of: 4
   units:
   - LX-00195
-  - LX-00206
-  - LX-00207
-  - LX-00210
 - order: 4
   kind: translate
   prompt_ru: Мия всегда начинает в пять.
@@ -227,4 +221,3 @@ practice:
   review_of: 2
   units:
   - LX-00196
-  - LX-00207

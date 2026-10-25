@@ -1,0 +1,26 @@
+{
+  "before_snapshot": "shared v1 after initial corrections, before contextual noun-side addendum; not the unmodified entire base",
+  "parent_base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "hash_provenance": "before hashes reconstructed by exact reverse of the saved scoped side-addendum; after hashes read from final source",
+  "before_content_sha256": {
+    "content/seed_weeks/a1_w08.yaml": "bb0c845b1b0f818a579c764b583fab8ca0431d5260998ca798cd8d44975eb38b",
+    "content/seed_poems/p04_one_for_you.yaml": "4f87e8b6d9ec1d46166046e25d429081191c4207914fca5f68bb2a4b01509cc3"
+  },
+  "after_content_sha256": {
+    "content/seed_weeks/a1_w08.yaml": "509c786cf67baa305ca29672b3b623ca3699d8e1ebf443df7079acc128c4128a",
+    "content/seed_poems/p04_one_for_you.yaml": "936079456c80456011c16936f17edd30e0b0722299701c976e0761b3cf628748"
+  },
+  "test_sha256": "102cae3223a9a6a5b7d235edf17b4f327e11c59db9629bba6df6f55e35b110ae",
+  "before": {
+    "tests": 2,
+    "failures": 6,
+    "errors": 0,
+    "metadata": "/tmp/a1-13-16-shared-sides-before.json"
+  },
+  "after": {
+    "tests": 2,
+    "exit_code": 0,
+    "metadata": "/tmp/a1-13-16-shared-sides-after-final.json"
+  },
+  "draft_after": "/tmp/a1-13-16-shared-sides-after.log ran before source edits because an editing-script syntax error prevented them; not final after evidence"
+}

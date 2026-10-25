@@ -58,7 +58,7 @@ layers:
 
       - [T1]a[/] [S9]nurse[/] — медсестра, [T1]a[/] [S9]waiter[/] — официант, [T1]a[/] [S9]student[/] — студент
       - [T1]an[/] [S9]engineer[/] — инженер, [T1]a[/] [S9]manager[/] — менеджер, [T1]a[/] [S9]farmer[/] — фермер
-      - [T1]a[/] [S9]writer[/] — писатель, [T1]a[/] [S9]singer[/] — певец: глагол + -er = «тот, кто делает»
+      - [T1]a[/] [S9]writer[/] — писатель, [T1]a[/] [S9]singer[/] — певец. В этих названиях -er помогает назвать того, кто выполняет действие: write → writer, sing → singer. Так образуются не все названия профессий.
 
       **At или in?** *At a school* говорит о месте работы как об учреждении; *in an office* называет офис как рабочую среду и может описывать обычное место работы. Это не обязательно акцент на физическом нахождении внутри здания прямо сейчас. Это **подсказка для контекста**, а не железное правило: *work at a hospital* и *work in a hospital* оба возможны, с разным акцентом.
 
@@ -140,7 +140,7 @@ exercises:
     accepted: ["I'm a doctor.", "I am a doctor", "I'm a doctor", "A doctor."]
     hint_ru: "I am a + профессия."
     explanation_ru: "I am a doctor — в разговоре I'm a doctor."
-    units: [LX-00144, LX-00152]
+    units: ["LX-00144"]
   - order: 5
     uid: EX-00078
     kind: choice
@@ -158,7 +158,7 @@ exercises:
     prompt_ru: "Ваша мама — медсестра, работает в больнице. Скажите это двумя фразами."
     prompt_en: "___"
     answer: "My mom is a nurse. She works at a hospital."
-    accepted: ["My mom is a nurse. She works in a hospital.", "My mother is a nurse. She works at a hospital.", "My mother is a nurse. She works in a hospital.", "My mom's a nurse. She works at a hospital."]
+    accepted: ["My mom is a nurse. She works in a hospital.", "My mother is a nurse. She works at a hospital.", "My mother is a nurse. She works in a hospital.", "My mom's a nurse. She works at a hospital.", "My mom's a nurse. She works in a hospital.", "My mother's a nurse. She works at a hospital.", "My mother's a nurse. She works in a hospital."]
     hint_ru: "a nurse; she works…"
     explanation_ru: "My mom is a nurse. She works at a hospital. — a перед профессией, -s после she. in a hospital тоже верно."
     units: [LX-00319, LX-00329]
@@ -171,10 +171,7 @@ practice:
   hint_ru: Перед профессией — a.
   explanation_ru: I'm a teacher. Перед профессией в английском нужен a.
   review_of: 2
-  units:
-  - LX-00142
-  - LX-00152
-  - LX-00336
+  units: ["LX-00142", "LX-00152"]
 - order: 2
   kind: translate
   prompt_ru: Я работаю в школе.
@@ -184,11 +181,7 @@ practice:
   hint_ru: work at…
   explanation_ru: I work at a school. Место работы — at или in.
   review_of: 3
-  units:
-  - LX-00143
-  - LX-00152
-  - LX-00335
-  - LX-00336
+  units: ["LX-00128", "LX-00143"]
 - order: 3
   kind: translate
   prompt_ru: Кем ты работаешь?
@@ -196,9 +189,7 @@ practice:
   hint_ru: "Вопрос о занятии: What + do + you + do?"
   explanation_ru: 'What do you do? Так американцы спрашивают о работе. Ответ: I''m a teacher.'
   review_of: 1
-  units:
-  - LX-00151
-  - LX-00335
+  units: ["LX-00151"]
 - order: 4
   kind: translate
   prompt_ru: Мия — бариста.
@@ -206,6 +197,4 @@ practice:
   hint_ru: "Mia — один человек: Mia is a + профессия."
   explanation_ru: Mia is a barista. В этой полной фразе is связывает Mia с профессией, а a стоит перед исчисляемым barista в единственном числе. Это правило конструкции, а не замена любого русского тире.
   review_of: 2
-  units:
-  - LX-00146
-  - LX-00152
+  units: ["LX-00146"]

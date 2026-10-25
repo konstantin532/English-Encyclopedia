@@ -136,7 +136,7 @@ exercises:
     accepted: ["Does this bus go to the park", "Excuse me, does this bus go to the park?", "Excuse me! Does this bus go to the park?", "Does the bus go to the park?"]
     hint_ru: "Does this bus go to + место."
     explanation_ru: "Does this bus go to the park? Можно начать с Excuse me."
-    units: [LX-00252, LX-00255]
+    units: [LX-00252]
   - order: 5
     uid: EX-00156
     kind: choice
@@ -152,7 +152,6 @@ exercises:
     units:
     - LX-00464
     - LX-00472
-    - LX-00473
   - order: 6
     uid: EX-00157
     kind: fill

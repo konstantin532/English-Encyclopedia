@@ -1,0 +1,308 @@
+Creating test database for alias 'default'...
+/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-a1-09-12-regression-base/staticfiles/
+  mw_instance = middleware(adapted_handler)
+FFFFFFFFFFFFFFFFFFFFFF.FFF
+======================================================================
+FAIL: test_apple_price_keeps_the_requested_subject_and_five_dollars (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_apple_price_keeps_the_requested_subject_and_five_dollars) (answer='They are 5 dollars.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 49, in test_apple_price_keeps_the_requested_subject_and_five_dollars
+    self.check('exercises', item, text, expected)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 29, in check
+    self.assertEqual(data['correct'], expected, text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : They are 5 dollars.
+
+======================================================================
+FAIL: test_apple_price_keeps_the_requested_subject_and_five_dollars (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_apple_price_keeps_the_requested_subject_and_five_dollars) (answer="They're 5 dollars.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 49, in test_apple_price_keeps_the_requested_subject_and_five_dollars
+    self.check('exercises', item, text, expected)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 29, in check
+    self.assertEqual(data['correct'], expected, text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : They're 5 dollars.
+
+======================================================================
+FAIL: test_breakfast_at_eight_does_not_credit_i_get_up_at_five (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_breakfast_at_eight_does_not_credit_i_get_up_at_five)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 133, in test_breakfast_at_eight_does_not_credit_i_get_up_at_five
+    self.main_credits('EX-00065', ['LX-00130'])
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 118, in main_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00136'
+
+======================================================================
+FAIL: test_breakfast_time_allows_digits_but_not_different_time_or_meal (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_breakfast_time_allows_digits_but_not_different_time_or_meal) (answer='I have breakfast at 8.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 71, in test_breakfast_time_allows_digits_but_not_different_time_or_meal
+    self.check('exercises', item, text, expected)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 29, in check
+    self.assertEqual(data['correct'], expected, text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I have breakfast at 8.
+
+======================================================================
+FAIL: test_breakfast_time_allows_digits_but_not_different_time_or_meal (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_breakfast_time_allows_digits_but_not_different_time_or_meal) (answer="I have breakfast at 8 o'clock.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 71, in test_breakfast_time_allows_digits_but_not_different_time_or_meal
+    self.check('exercises', item, text, expected)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 29, in check
+    self.assertEqual(data['correct'], expected, text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I have breakfast at 8 o'clock.
+
+======================================================================
+FAIL: test_breakfast_time_allows_digits_but_not_different_time_or_meal (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_breakfast_time_allows_digits_but_not_different_time_or_meal) (answer="At 8 o'clock.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 71, in test_breakfast_time_allows_digits_but_not_different_time_or_meal
+    self.check('exercises', item, text, expected)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 29, in check
+    self.assertEqual(data['correct'], expected, text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : At 8 o'clock.
+
+======================================================================
+FAIL: test_clock_question_does_not_credit_a_waking_question_or_clock_answer (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_clock_question_does_not_credit_a_waking_question_or_clock_answer) (lesson='a1-time-at-seven', translation=2, submitted='I eat at twelve.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00136'
+Items in the second set but not the first:
+'LX-00303'
+
+======================================================================
+FAIL: test_clock_question_does_not_credit_a_waking_question_or_clock_answer (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_clock_question_does_not_credit_a_waking_question_or_clock_answer) (lesson='a1-time-at-seven', translation=3, submitted='What time is it?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00140'
+'LX-00135'
+
+======================================================================
+FAIL: test_clock_question_does_not_credit_a_waking_question_or_clock_answer (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_clock_question_does_not_credit_a_waking_question_or_clock_answer) (lesson='a1-time-at-seven', translation=4, submitted='What time do you get up?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00136'
+Items in the second set but not the first:
+'LX-00125'
+
+======================================================================
+FAIL: test_daily_routine_translations_do_not_credit_unrelated_full_phrases (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_daily_routine_translations_do_not_credit_unrelated_full_phrases) (lesson='a1-present-simple-i-you', translation=1, submitted='I get up at six.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00137'
+'LX-00318'
+'LX-00139'
+
+======================================================================
+FAIL: test_daily_routine_translations_do_not_credit_unrelated_full_phrases (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_daily_routine_translations_do_not_credit_unrelated_full_phrases) (lesson='a1-present-simple-i-you', translation=2, submitted='I work every day.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00137'
+'LX-00318'
+'LX-00139'
+
+======================================================================
+FAIL: test_daily_routine_translations_do_not_credit_unrelated_full_phrases (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_daily_routine_translations_do_not_credit_unrelated_full_phrases) (lesson='a1-present-simple-i-you', translation=4, submitted='I drink coffee at seven.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00137'
+'LX-00318'
+
+======================================================================
+FAIL: test_evening_actions_allow_shared_i_but_keep_both_actions (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_evening_actions_allow_shared_i_but_keep_both_actions) (answer='I watch TV and go to bed early.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 60, in test_evening_actions_allow_shared_i_but_keep_both_actions
+    self.check('exercises', item, text, expected)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 29, in check
+    self.assertEqual(data['correct'], expected, text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I watch TV and go to bed early.
+
+======================================================================
+FAIL: test_filling_at_does_not_claim_an_entire_five_oclock_waking_phrase (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_filling_at_does_not_claim_an_entire_five_oclock_waking_phrase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 130, in test_filling_at_does_not_claim_an_entire_five_oclock_waking_phrase
+    self.main_credits('EX-00063', [])
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 118, in main_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00136'
+
+======================================================================
+FAIL: test_five_dollar_apple_answer_does_not_credit_it_is_two_dollars (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_five_dollar_apple_answer_does_not_credit_it_is_two_dollars)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 124, in test_five_dollar_apple_answer_does_not_credit_it_is_two_dollars
+    self.main_credits('EX-00053', ['LX-00116'])
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 118, in main_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00123'
+
+======================================================================
+FAIL: test_price_questions_do_not_credit_a_price_answer_or_expensive_reaction (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_price_questions_do_not_credit_a_price_answer_or_expensive_reaction) (lesson='a1-how-much-prices', translation=1, submitted='How much is the milk?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00123'
+'LX-00302'
+'LX-00122'
+
+======================================================================
+FAIL: test_price_questions_do_not_credit_a_price_answer_or_expensive_reaction (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_price_questions_do_not_credit_a_price_answer_or_expensive_reaction) (lesson='a1-how-much-prices', translation=2, submitted='It is two dollars.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00302'
+'LX-00122'
+
+======================================================================
+FAIL: test_price_questions_do_not_credit_a_price_answer_or_expensive_reaction (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_price_questions_do_not_credit_a_price_answer_or_expensive_reaction) (lesson='a1-how-much-prices', translation=3, submitted='How much are the apples?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00122'
+
+======================================================================
+FAIL: test_shop_translations_do_not_credit_unspoken_milk_question_or_request (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_shop_translations_do_not_credit_unspoken_milk_question_or_request) (lesson='a1-there-is-some', translation=1, submitted='Is there milk?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00120'
+
+======================================================================
+FAIL: test_shop_translations_do_not_credit_unspoken_milk_question_or_request (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_shop_translations_do_not_credit_unspoken_milk_question_or_request) (lesson='a1-there-is-some', translation=2, submitted='There are apples.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00119'
+'LX-00120'
+'LX-00121'
+
+======================================================================
+FAIL: test_shop_translations_do_not_credit_unspoken_milk_question_or_request (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_shop_translations_do_not_credit_unspoken_milk_question_or_request) (lesson='a1-there-is-some', translation=3, submitted='There is no cat food.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00119'
+'LX-00120'
+
+======================================================================
+FAIL: test_shop_translations_do_not_credit_unspoken_milk_question_or_request (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_shop_translations_do_not_credit_unspoken_milk_question_or_request) (lesson='a1-there-is-some', translation=4, submitted='The apples are red.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 80, in check_practice_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00121'
+'LX-00301'
+
+======================================================================
+FAIL: test_water_presence_allows_full_contracted_reply_not_changed_polarity (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_water_presence_allows_full_contracted_reply_not_changed_polarity) (answer="Yes, there's water.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 40, in test_water_presence_allows_full_contracted_reply_not_changed_polarity
+    self.check('exercises', item, text, expected)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 29, in check
+    self.assertEqual(data['correct'], expected, text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Yes, there's water.
+
+======================================================================
+FAIL: test_water_presence_allows_full_contracted_reply_not_changed_polarity (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_water_presence_allows_full_contracted_reply_not_changed_polarity) (answer="There's water.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 40, in test_water_presence_allows_full_contracted_reply_not_changed_polarity
+    self.check('exercises', item, text, expected)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 29, in check
+    self.assertEqual(data['correct'], expected, text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : There's water.
+
+======================================================================
+FAIL: test_yes_i_do_records_attempt_without_claiming_a_work_or_every_word (tests.test_a1_editorial_deep_09_12.A1DeepNineTwelveTests.test_yes_i_do_records_attempt_without_claiming_a_work_or_every_word)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 127, in test_yes_i_do_records_attempt_without_claiming_a_work_or_every_word
+    self.main_credits('EX-00059', [])
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-09-12-regression-base/tests/test_a1_editorial_deep_09_12.py", line 118, in main_credits
+    self.assertEqual(actual, set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00128'
+'LX-00134'
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.846s
+
+FAILED (failures=25)
+Destroying test database for alias 'default'...
+Found 13 test(s).
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).

@@ -1,0 +1,4 @@
+{
+  "status": "STOPPED",
+  "reason": "Sanitized environment dropped network proxies; pnpm could not fetch locked packages. Dependencies then installed successfully with normal network environment. No full test result from this attempt."
+}

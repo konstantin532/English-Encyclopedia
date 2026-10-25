@@ -1,0 +1,38 @@
+{
+  "author": "Codex browser QA sub-agent",
+  "reviewed_by": "actual browser installation and launch attempts",
+  "verification_status": "technical_review",
+  "date": "2026-10-25",
+  "source_notes": "runtime-installed Playwright; official Chromium installer; no source/lockfile changes",
+  "status": "BLOCKED",
+  "playwright_version": "1.62.1",
+  "install_command": [
+    "node",
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/cli.js",
+    "install",
+    "chromium"
+  ],
+  "install_exit_code": 1,
+  "install_failure": "Official Chromium151.0.7922.34 archive returned0MiB/truncated ZIP, repeated by official installer; final Download failure code1.",
+  "launch_exit_code": 1,
+  "launch_failure": "Chromium/headless-shell executable absent",
+  "normal_proxy_environment_used": true,
+  "checked": [
+    "Playwright runtime availability",
+    "official browser installation",
+    "headless launch"
+  ],
+  "not_checked": [
+    "desktop rendering",
+    "390px rendering",
+    "keyboard navigation",
+    "prefers-reduced-motion",
+    "screenshots",
+    "actual audio"
+  ],
+  "temporary_database_created": false,
+  "database_operations_performed": false,
+  "site_or_production_accessed": false,
+  "source_files_changed": false,
+  "screenshot_artifacts": []
+}

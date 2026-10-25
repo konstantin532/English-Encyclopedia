@@ -1,5 +1,6 @@
 """Аудит курса (/аудит): количества, реестр, разметка, незарегистрированная лексика."""
 import re
+import unicodedata
 from itertools import pairwise
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -17,7 +18,8 @@ from apps.stories.models import Story
 from apps.taxonomy.markup import find_issues, strip_markup
 from apps.taxonomy.registry import validate_registry
 
-WORD = re.compile(r"[A-Za-z][A-Za-z'’]*")
+# Candidates preserve accents and mixed-script misspellings as whole words.
+WORD = re.compile(r"[^\W\d_](?:[^\W\d_]|['’\u0300-\u036f])*")
 # Отдельный [X1]n't[/] допустим; основа и отрицание требуют разных маркеров.
 UNSPLIT_NEGATIVE = re.compile(r"\[([A-Z]\d+)(?:-#[0-9a-fA-F]{6})?\]([^\[]*n['’]t[^\[]*)\[/\]", re.IGNORECASE)
 # Окончания форм: books, houses, Anna's — формы слова не плодят новые единицы (раздел 4).
@@ -57,7 +59,8 @@ def known_vocabulary() -> set[str]:
 
 
 def unit_words(unit) -> set[str]:
-    words = {unit.lemma.lower(), *(f.lower() for f in unit.forms or [])}
+    words = {unicodedata.normalize("NFC", word).lower()
+             for word in (unit.lemma, *(unit.forms or []))}
     if unit.unit_type == UnitType.PHRASE:
         words.update(token.lower() for token in text_tokens(unit.lemma))
     return words
@@ -74,11 +77,16 @@ def vocab_until(level, week_number: int, exclude_ids=()) -> set[str]:
 
 
 def text_tokens(text: str) -> list[str]:
-    return WORD.findall(strip_markup(text))
+    text = unicodedata.normalize("NFC", strip_markup(text))
+    # Ignore pure Russian explanations, but keep cаfe with a Cyrillic а:
+    # silently dropping a mixed-script word would hide a real unknown token.
+    return [token for token in WORD.findall(text) if any(
+        "LATIN" in unicodedata.name(char, "") for char in token
+    )]
 
 
 def is_known(token: str, vocab: set[str]) -> bool:
-    t = token.lower().replace("’", "'")
+    t = unicodedata.normalize("NFC", token).lower().replace("’", "'")
     if t in vocab:
         return True
     for c in CONTRACTIONS:
@@ -232,17 +240,17 @@ def run_audit() -> AuditReport:
             audit_contractions(r, where, text)
             for issue in find_issues(text):
                 r.errors.append(f"{where}: {issue.token} — {issue.problem}")
-        for tok in WORD.findall(strip_markup(text)):
+        for tok in text_tokens(text):
             if not is_known(tok, vocab):
                 r.unknown_words.setdefault(tok.lower(), set()).add(where)
     preview: dict[str, set[str]] = {}
     for u in LexicalUnit.objects.all():
         for sub_text in u.substitutions or []:
-            for tok in WORD.findall(sub_text):
+            for tok in text_tokens(sub_text):
                 if not is_known(tok, vocab):
                     r.errors.append(f"{u.uid}: подстановка «{sub_text}» содержит неизученное слово {tok}.")
         for col in u.collocations or []:
-            for tok in WORD.findall(col):
+            for tok in text_tokens(col):
                 if not is_known(tok, vocab):
                     preview.setdefault(tok.lower(), set()).add(u.uid)
     if preview:
@@ -337,7 +345,7 @@ def audit_stories_and_poems(r: AuditReport) -> None:
 
 def token_keys(token: str) -> set[str]:
     """Все основы, по которым токен считается знакомым (как в is_known): сам токен, без сокращения, без окончания."""
-    t = token.lower().replace("’", "'")
+    t = unicodedata.normalize("NFC", token).lower().replace("’", "'")
     keys = {t}
     for c in CONTRACTIONS:
         if t.endswith(c) and len(t) > len(c):
@@ -367,7 +375,7 @@ def recycling_counts(prev_units, texts: list[str]) -> dict[str, int]:
         if u.unit_type == UnitType.PHRASE or len(text_tokens(u.lemma)) != 1:  # T-shirt, ice cream
             phrases.append((u.uid, " ".join(text_tokens(u.lemma)).lower()))
         else:
-            for w in {u.lemma.lower(), *(f.lower() for f in u.forms or [])}:
+            for w in unit_words(u):
                 by_word.setdefault(w, set()).add(u.uid)
     for text in texts:
         tokens = text_tokens(text)

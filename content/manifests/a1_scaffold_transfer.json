@@ -257,19 +257,19 @@
           "why_ru": "Water обычно неисчисляемое. Some здесь говорит о неопределённом количестве воды, не обязательно именно о «немного»."
         },
         {
-          "example_en": "Is there any water?",
+          "example_en": "Is there water?",
           "example_ru": "Есть вода?",
-          "why_ru": "Для вопроса is выходит вперёд; any — обычный выбор в нейтральном вопросе."
+          "why_ru": "Чтобы спросить о наличии воды, поставьте is перед there. Water здесь означает вещество; вопрос не задаёт объём."
         }
       ],
       "transfer_variants": [
         {
-          "prompt": "В кухне есть молоко. Сообщите это гостю простым предложением.",
-          "model": "There is some milk in the kitchen."
+          "prompt": "Вы на кухне. Сообщите гостю, что есть молоко; само место называть не нужно.",
+          "model": "There is some milk."
         },
         {
-          "prompt": "Гость спрашивает, сколько стульев в комнате. Скажите, что их два.",
-          "model": "There are two chairs in the room."
+          "prompt": "Вы с гостем в комнате. Скажите, что здесь есть два стула.",
+          "model": "There are two chairs here."
         }
       ]
     },
@@ -277,19 +277,19 @@
       "slug": "a1-how-much-prices",
       "steps": [
         {
-          "example_en": "A ticket, please.",
-          "example_ru": "Билет, пожалуйста.",
+          "example_en": "A sandwich, please.",
+          "example_ru": "Сэндвич, пожалуйста.",
           "why_ru": "Сначала называем, что хотим купить."
         },
         {
-          "example_en": "How much is a ticket?",
-          "example_ru": "Сколько стоит билет?",
-          "why_ru": "How much спрашивает цену. Для одного ticket подходит is."
+          "example_en": "How much is a sandwich?",
+          "example_ru": "Сколько стоит сэндвич?",
+          "why_ru": "How much спрашивает цену. Для одного sandwich подходит is."
         },
         {
           "example_en": "It is five dollars.",
           "example_ru": "Он стоит пять долларов.",
-          "why_ru": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве билетов."
+          "why_ru": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве сэндвичей."
         }
       ],
       "transfer_variants": [
@@ -298,8 +298,8 @@
           "model": "How much is this book?"
         },
         {
-          "prompt": "Вы видите куртку в магазине. Спросите, сколько она стоит.",
-          "model": "How much is the jacket?"
+          "prompt": "На полке лежит один телефон. Спросите продавца, сколько он стоит.",
+          "model": "How much is the phone?"
         }
       ]
     },
@@ -317,19 +317,19 @@
           "why_ru": "После you обычный глагол не получает -s."
         },
         {
-          "example_en": "Do you work on Saturdays?",
-          "example_ru": "Ты работаешь по субботам?",
-          "why_ru": "Do открывает вопрос о привычке; work сохраняет начальную форму."
+          "example_en": "Do you work every day?",
+          "example_ru": "Ты работаешь каждый день?",
+          "why_ru": "Do стоит перед you и помогает спросить о привычке; work остаётся в начальной форме."
         }
       ],
       "transfer_variants": [
         {
-          "prompt": "Вы хотите узнать, читает ли ваш друг книги по вечерам. Задайте вопрос.",
-          "model": "Do you read books in the evening?"
+          "prompt": "Спросите друга, пьёт ли он кофе каждый день.",
+          "model": "Do you drink coffee every day?"
         },
         {
-          "prompt": "Вы рассказываете о привычке. Скажите, что читаете книги каждый день.",
-          "model": "I read books every day."
+          "prompt": "Расскажите о привычке: вы пьёте чай каждый день.",
+          "model": "I drink tea every day."
         }
       ]
     },
@@ -388,8 +388,8 @@
           "model": "Does Anna work here?"
         },
         {
-          "prompt": "Вы хотите узнать, читает ли Том книги каждый день. Спросите об этом.",
-          "model": "Does Tom read books every day?"
+          "prompt": "Спросите знакомого, работает ли Том дома каждый день.",
+          "model": "Does Tom work at home every day?"
         }
       ]
     },
@@ -444,8 +444,8 @@
       ],
       "transfer_variants": [
         {
-          "prompt": "Телефон лежит внутри сумки. Объясните другу, где он.",
-          "model": "The phone is in the bag."
+          "prompt": "Телефон лежит внутри коробки. Объясните другу, где он.",
+          "model": "The phone is in the box."
         },
         {
           "prompt": "Книга находится под стулом. Объясните, где она лежит.",
@@ -487,25 +487,25 @@
       "slug": "a1-questions-do-does",
       "steps": [
         {
-          "example_en": "Do you live here?",
-          "example_ru": "Ты здесь живёшь?",
-          "why_ru": "Do нужен для вопроса с you и обычным глаголом live."
+          "example_en": "Do you work here?",
+          "example_ru": "Ты здесь работаешь?",
+          "why_ru": "Do нужен для вопроса с you и обычным глаголом work."
         },
         {
-          "example_en": "Does she live here?",
-          "example_ru": "Она здесь живёт?",
-          "why_ru": "Does сочетается с she; live после него без -s."
+          "example_en": "Does she work here?",
+          "example_ru": "Она здесь работает?",
+          "why_ru": "Does сочетается с she; work после него без -s."
         },
         {
           "example_en": "Yes, she does.",
           "example_ru": "Да.",
-          "why_ru": "Короткий ответ повторяет вспомогательный does, а не основной live."
+          "why_ru": "Короткий ответ повторяет вспомогательный does, а не основной work."
         }
       ],
       "transfer_variants": [
         {
-          "prompt": "Узнайте, работает ли Том по воскресеньям.",
-          "model": "Does Tom work on Sundays?"
+          "prompt": "Узнайте, работает ли Том каждый день.",
+          "model": "Does Tom work every day?"
         },
         {
           "prompt": "Спросите у Тома, нравится ли Мии чай. Задайте об этом вопрос.",
@@ -598,8 +598,8 @@
           "model": "I like cooking."
         },
         {
-          "prompt": "Ваше любимое занятие — плавание. Расскажите об этом другу.",
-          "model": "I like swimming."
+          "prompt": "Ваше любимое занятие — прогулки. Расскажите об этом другу.",
+          "model": "I like walking."
         }
       ]
     },
@@ -707,19 +707,19 @@
           "why_ru": "В англоязычном адресе номер дома обычно указывают перед названием улицы."
         },
         {
-          "example_en": "Can you repeat the address, please?",
-          "example_ru": "Повторите адрес, пожалуйста.",
-          "why_ru": "Repeat помогает уточнить услышанное; не обязательно диктовать всё по буквам."
+          "example_en": "Can you spell it, please?",
+          "example_ru": "Продиктуйте это по буквам, пожалуйста.",
+          "why_ru": "Не удалось разобрать написание адреса: попросите произнести его по буквам. Can you spell it, please? — знакомая просьба из урока 18; it отсылает к уже названному адресу."
         }
       ],
       "transfer_variants": [
         {
-          "prompt": "Вы не расслышали адрес. Попросите собеседника повторить его, не называя настоящих данных.",
-          "model": "Can you repeat the address, please?"
+          "prompt": "Вы не разобрали написание адреса. Попросите продиктовать его по буквам; используйте знакомую просьбу со spell и it.",
+          "model": "Can you spell it, please?"
         },
         {
-          "prompt": "На почте сотрудник быстро произнёс имя. Попросите повторить его по буквам.",
-          "model": "Can you spell that again, please?"
+          "prompt": "На почте сотрудник произнёс имя. Попросите назвать его по буквам, используя spell и your name.",
+          "model": "Can you spell your name, please?"
         }
       ]
     },

@@ -1,0 +1,464 @@
+{
+  "identity_changes": [],
+  "answer_changes": [
+    [
+      "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "EX-00073",
+      "accepted",
+      [
+        "starts at seven",
+        "starts at 7.",
+        "starts at 7",
+        "starts work at seven.",
+        "starts work at seven"
+      ],
+      [
+        "starts at seven",
+        "starts at 7.",
+        "starts at 7",
+        "starts work at seven.",
+        "starts work at seven",
+        "starts work at 7.",
+        "starts at seven o'clock.",
+        "starts work at 7 o'clock.",
+        "starts at 7 o'clock.",
+        "starts work at seven o'clock."
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w07_l14_jobs.yaml",
+      "EX-00079",
+      "accepted",
+      [
+        "My mom is a nurse. She works in a hospital.",
+        "My mother is a nurse. She works at a hospital.",
+        "My mother is a nurse. She works in a hospital.",
+        "My mom's a nurse. She works at a hospital."
+      ],
+      [
+        "My mom is a nurse. She works in a hospital.",
+        "My mother is a nurse. She works at a hospital.",
+        "My mother is a nurse. She works in a hospital.",
+        "My mom's a nurse. She works at a hospital.",
+        "My mom's a nurse. She works in a hospital.",
+        "My mother's a nurse. She works at a hospital.",
+        "My mother's a nurse. She works in a hospital."
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "EX-00083",
+      "accepted",
+      [
+        "It's on the right.",
+        "On the right.",
+        "It is on the right",
+        "It's on the right",
+        "On the right",
+        "The cafe is on the right."
+      ],
+      [
+        "It's on the right.",
+        "On the right.",
+        "It is on the right",
+        "It's on the right",
+        "On the right",
+        "The cafe is on the right.",
+        "The cafe's on the right.",
+        "The café is on the right.",
+        "The café's on the right."
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w12_l24_address.yaml",
+      "EX-00139",
+      "accepted",
+      [
+        "My last name is Belova"
+      ],
+      [
+        "My last name is Belova",
+        "My last name's Belova."
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+      "EX-00143",
+      "accepted",
+      [
+        "Yes, I can.",
+        "Yes, I can",
+        "Yes, I can. I speak Russian and English.",
+        "Yes, I can speak English.",
+        "Yes. I can speak Russian and English.",
+        "Yes, I can. I can speak Russian and English"
+      ],
+      [
+        "Yes, I can.",
+        "Yes, I can",
+        "Yes, I can. I speak Russian and English.",
+        "Yes, I can speak English.",
+        "Yes. I can speak Russian and English.",
+        "Yes, I can. I can speak Russian and English",
+        "Yes, I can. I can speak English and Russian.",
+        "Yes, I can. I speak English and Russian.",
+        "Yes. I can speak English and Russian."
+      ]
+    ]
+  ],
+  "lexical_binding_changes": [
+    [
+      "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "EX-00073",
+      "units",
+      [
+        "LX-00332",
+        "LX-00319"
+      ],
+      [
+        "LX-00332"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "EX-00068",
+      "units",
+      [
+        "LX-00153"
+      ],
+      [
+        "LX-00128",
+        "LX-00131"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "EX-00071",
+      "units",
+      [
+        "LX-00155"
+      ],
+      []
+    ],
+    [
+      "content/seed_lessons/a1_w07_l14_jobs.yaml",
+      "EX-00077",
+      "units",
+      [
+        "LX-00144",
+        "LX-00152"
+      ],
+      [
+        "LX-00144"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w09_l17_do_does.yaml",
+      "EX-00094",
+      "units",
+      [
+        "LX-00186",
+        "LX-00191"
+      ],
+      [
+        "LX-00186"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w09_l18_spelling.yaml",
+      "EX-00099",
+      "units",
+      [
+        "LX-00187"
+      ],
+      []
+    ],
+    [
+      "content/seed_lessons/a1_w09_l18_spelling.yaml",
+      "EX-00101",
+      "units",
+      [
+        "LX-00183",
+        "LX-00187"
+      ],
+      []
+    ],
+    [
+      "content/seed_lessons/a1_w10_l19_always_never.yaml",
+      "EX-00105",
+      "units",
+      [
+        "LX-00196",
+        "LX-00207"
+      ],
+      [
+        "LX-00196"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w10_l20_like_doing.yaml",
+      "EX-00113",
+      "units",
+      [
+        "LX-00203",
+        "LX-00211"
+      ],
+      [
+        "LX-00203"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w10_l20_like_doing.yaml",
+      "EX-00114",
+      "units",
+      [
+        "LX-00386",
+        "LX-00387",
+        "LX-00388"
+      ],
+      [
+        "LX-00387"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w11_l21_what_hurts.yaml",
+      "EX-00117",
+      "units",
+      [
+        "LX-00212",
+        "LX-00221"
+      ],
+      [
+        "LX-00212"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w11_l21_what_hurts.yaml",
+      "EX-00121",
+      "units",
+      [
+        "LX-00400",
+        "LX-00408"
+      ],
+      [
+        "LX-00400"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w11_l22_cant.yaml",
+      "EX-00126",
+      "units",
+      [
+        "LX-00403",
+        "LX-00404",
+        "LX-00405"
+      ],
+      [
+        "LX-00405"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml",
+      "EX-00129",
+      "units",
+      [
+        "LX-00233"
+      ],
+      []
+    ],
+    [
+      "content/seed_lessons/a1_w14_l27_bus.yaml",
+      "EX-00155",
+      "units",
+      [
+        "LX-00252",
+        "LX-00255"
+      ],
+      [
+        "LX-00252"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w14_l27_bus.yaml",
+      "EX-00156",
+      "units",
+      [
+        "LX-00464",
+        "LX-00472",
+        "LX-00473"
+      ],
+      [
+        "LX-00464",
+        "LX-00472"
+      ]
+    ],
+    [
+      "content/seed_lessons/a1_w14_l28_review.yaml",
+      "EX-00162",
+      "units",
+      [
+        "LX-00458",
+        "LX-00457"
+      ],
+      [
+        "LX-00458"
+      ]
+    ]
+  ],
+  "lexical_identity_changes": [
+    [
+      "content/seed_lexicon/a1_w06_day.yaml",
+      "LX-00131",
+      "forms",
+      [
+        "cafes"
+      ],
+      [
+        "cafes",
+        "café",
+        "cafés"
+      ]
+    ],
+    [
+      "content/seed_lexicon/a1_w07_work.yaml",
+      "LX-00155",
+      "meaning",
+      "A short no answer about he or she",
+      "A short negative answer to a question with Does he…?"
+    ],
+    [
+      "content/seed_lexicon/a1_w07_work_plus.yaml",
+      "LX-00319",
+      "meaning",
+      "a person who cares for sick people in a hospital",
+      "a person trained to care for sick or injured people"
+    ],
+    [
+      "content/seed_lexicon/a1_w07_work_plus.yaml",
+      "LX-00326",
+      "meaning",
+      "a person who has a farm",
+      "a person who grows crops or raises animals on a farm"
+    ],
+    [
+      "content/seed_lexicon/a1_w08_city_plus.yaml",
+      "LX-00338",
+      "meaning",
+      "in the space in the middle of two things",
+      "in the space separating things"
+    ],
+    [
+      "content/seed_lexicon/a1_w08_city_plus.yaml",
+      "LX-00340",
+      "meaning",
+      "on the other side of a street from something",
+      "on the opposite side from someone or something"
+    ],
+    [
+      "content/seed_lexicon/a1_w09_phone_plus.yaml",
+      "LX-00350",
+      "meaning",
+      "what one of a small group",
+      "which one or ones of a known or limited set"
+    ],
+    [
+      "content/seed_lexicon/a1_w09_phone_plus.yaml",
+      "LX-00368",
+      "meaning",
+      "Asking someone to phone again",
+      "Asking someone to telephone at a later time"
+    ],
+    [
+      "content/seed_lexicon/a1_w09_phone_plus.yaml",
+      "LX-00355",
+      "meaning",
+      "a message sent by computer",
+      "an electronic message sent through an email service"
+    ],
+    [
+      "content/seed_lexicon/a1_w09_phone_plus.yaml",
+      "LX-00366",
+      "meaning",
+      "the name given to you at birth, before your family name",
+      "a given name, as distinguished from a family name"
+    ],
+    [
+      "content/seed_lexicon/a1_w11_health.yaml",
+      "LX-00217",
+      "meaning",
+      "to rest with your eyes closed at night",
+      "to be in the natural state of rest in which you are not awake"
+    ],
+    [
+      "content/seed_lexicon/a1_w12_story04.yaml",
+      "LX-00237",
+      "meaning",
+      "having the colour of snow or milk",
+      "having the color of snow or milk"
+    ],
+    [
+      "content/seed_lexicon/a1_w14_travel_plus.yaml",
+      "LX-00470",
+      "meaning",
+      "a journey to a place and back",
+      "a journey from one place to another"
+    ]
+  ],
+  "files": [
+    "apps/publishing/audit.py",
+    "content/active_a1/scenarios_13_18.json",
+    "content/active_a1/scenarios_19_20.json",
+    "content/active_a1/topics_09_13.json",
+    "content/active_a1/topics_19_20.json",
+    "content/active_a1/topics_21_22.json",
+    "content/active_a1/topics_23_24.json",
+    "content/manifests/a1_delayed_review_topics_13_16.json",
+    "content/manifests/a1_delayed_review_topics_17_20.json",
+    "content/manifests/a1_micro_review_13_16.json",
+    "content/manifests/a1_micro_review_17_20.json",
+    "content/manifests/a1_micro_review_25_28.json",
+    "content/manifests/a1_scaffold_transfer.json",
+    "content/manifests/a1_understanding_checks.json",
+    "content/seed_lessons/a1_w07_l13_he_works.yaml",
+    "content/seed_lessons/a1_w07_l14_jobs.yaml",
+    "content/seed_lessons/a1_w08_l15_where_is.yaml",
+    "content/seed_lessons/a1_w08_l16_directions.yaml",
+    "content/seed_lessons/a1_w09_l17_do_does.yaml",
+    "content/seed_lessons/a1_w09_l18_spelling.yaml",
+    "content/seed_lessons/a1_w10_l19_always_never.yaml",
+    "content/seed_lessons/a1_w10_l20_like_doing.yaml",
+    "content/seed_lessons/a1_w11_l21_what_hurts.yaml",
+    "content/seed_lessons/a1_w11_l22_cant.yaml",
+    "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml",
+    "content/seed_lessons/a1_w12_l24_address.yaml",
+    "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "content/seed_lessons/a1_w13_l26_why_because.yaml",
+    "content/seed_lessons/a1_w14_l27_bus.yaml",
+    "content/seed_lessons/a1_w14_l28_review.yaml",
+    "content/seed_lexicon/a1_w06_day.yaml",
+    "content/seed_lexicon/a1_w07_work.yaml",
+    "content/seed_lexicon/a1_w07_work_plus.yaml",
+    "content/seed_lexicon/a1_w08_city.yaml",
+    "content/seed_lexicon/a1_w08_city_plus.yaml",
+    "content/seed_lexicon/a1_w09_phone_plus.yaml",
+    "content/seed_lexicon/a1_w10_free.yaml",
+    "content/seed_lexicon/a1_w10_free_plus.yaml",
+    "content/seed_lexicon/a1_w11_health.yaml",
+    "content/seed_lexicon/a1_w11_health_plus.yaml",
+    "content/seed_lexicon/a1_w12_post.yaml",
+    "content/seed_lexicon/a1_w12_story04.yaml",
+    "content/seed_lexicon/a1_w13_study.yaml",
+    "content/seed_lexicon/a1_w14_travel.yaml",
+    "content/seed_lexicon/a1_w14_travel_plus.yaml",
+    "content/seed_poems/p04_one_for_you.yaml",
+    "content/seed_poems/p06_who_knows.yaml",
+    "content/seed_poems/p07_bus_to_park_street.yaml",
+    "content/seed_stories/s03_whose_key.yaml",
+    "content/seed_stories/s04_letter_with_no_name.yaml",
+    "content/seed_weeks/a1_w07.yaml",
+    "content/seed_weeks/a1_w08.yaml",
+    "content/seed_weeks/a1_w09.yaml",
+    "content/seed_weeks/a1_w10.yaml",
+    "scripts/verify_atlas.cjs"
+  ]
+}

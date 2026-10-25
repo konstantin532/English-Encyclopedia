@@ -29,7 +29,7 @@ units:
   example_en: '[D1]Is[/] [T9]there[/] [S3]milk[/]?'
   example_ru: Молоко есть?
   situation: Покупаете продукты
-  usage_note: 'milk не считают штуками: нельзя a milk или two milks в значении «два молока».'
+  usage_note: "Когда milk означает молоко как вещество, его не считают штуками: some milk, there is milk. В заказе a milk / two milks может обозначать одну или две порции. В этом уроке тренируем общее значение вещества."
 - uid: LX-00109
   lemma: apple
   meaning: a round red or green fruit

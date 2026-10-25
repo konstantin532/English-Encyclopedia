@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+    "manage.py",
+    "test",
+    "tests.test_a1_editorial_deep_09_12",
+    "--noinput"
+  ],
+  "exit_code": 1,
+  "seconds": 11.882,
+  "source_commit": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "test_sha256": "a8733a4a3c4605e437c74ab4191d0de17fc07f12a98b75c53fb413ac3fdd6e37",
+  "database_url": "sqlite:////tmp/ee-a1-09-12-comparable-before-22_660i3/test.sqlite3"
+}

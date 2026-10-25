@@ -1,0 +1,29 @@
+[
+  {
+    "name": "database-guard",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "shell",
+      "-c",
+      "from django.conf import settings; d=settings.DATABASES['default']; assert d['ENGINE']=='django.db.backends.sqlite3' and d['NAME']=='/tmp/ee-a1-09-12-verification-mzufiut6/fixture.sqlite3'; print(d['ENGINE'],d['NAME'])"
+    ],
+    "exit_code": 0,
+    "seconds": 1.645,
+    "status": "PASS"
+  },
+  {
+    "name": "uv-sync",
+    "command": [
+      "uv",
+      "sync",
+      "--frozen"
+    ],
+    "exit_code": 0,
+    "seconds": 0.02,
+    "status": "PASS"
+  }
+]

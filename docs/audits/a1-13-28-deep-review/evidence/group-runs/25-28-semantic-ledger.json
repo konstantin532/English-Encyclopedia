@@ -1,0 +1,246 @@
+[
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "before": "в конце фразы can полное и ударное: «кЭн»",
+    "after": "В таком утвердительном коротком ответе can обычно ударное: /kæn/."
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "before": "**can + действие**",
+    "after": "**can + глагол в начальной форме**"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "before": "Языки пишут с большой буквы и без the: speak English, speak Russian.",
+    "after": "Названия языков пишут с большой буквы. В сочетаниях speak English, speak Russian артикль не нужен; это не запрет на the перед любым сочетанием со словом English."
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "before": "\"Yes, I can. I can speak Russian and English\"]",
+    "after": "\"Yes, I can. I can speak Russian and English\", \"Yes, I can. I can speak English and Russian.\", \"Yes, I can. I speak English and Russian.\", \"Yes. I can speak English and Russian.\"]"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w13_study.yaml",
+    "before": "Языки пишут с большой буквы и без the: speak English.",
+    "after": "Название языка English пишется с большой буквы. В speak English артикля нет; в the English course слово English описывает курс, а артикль относится к course."
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l26_why_because.yaml",
+    "before": "«Why you like it?» — пропущен do. Правильно: Why do you like it?",
+    "after": "В обычном полном вопросе «Почему тебе это нравится?» нужен do: Why do you like it? Форму Why you like it? здесь не тренируем."
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l26_why_because.yaml",
+    "before": "Why are you tired? После why — обычный порядок вопроса.",
+    "after": "Why are you tired? Здесь вопрос с be: Why + are + you + tired? Помощник do не нужен."
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l27_bus.yaml",
+    "before": "units: [LX-00252, LX-00255]",
+    "after": "units: [LX-00252]"
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l27_bus.yaml",
+    "before": "    - LX-00472\n    - LX-00473",
+    "after": "    - LX-00472"
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l28_review.yaml",
+    "before": "    - LX-00458\n    - LX-00457",
+    "after": "    - LX-00458"
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l28_review.yaml",
+    "before": "  - My name's Anna. I'm from Russia.\n",
+    "after": "  - My name's Anna. I'm from Russia.\n  - My name's Anna. I am from Russia.\n"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel_plus.yaml",
+    "before": "meaning: a journey to a place and back",
+    "after": "meaning: a journey from one place to another"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel_plus.yaml",
+    "before": "Перед umbrella — an, потому что слово начинается с гласного звука.",
+    "after": "В an umbrella выбираем an, а не a, перед гласным звуком. Это не обязательный артикль перед каждым umbrella: my umbrella — мой зонт, the umbrella — уже известный зонт."
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel.yaml",
+    "before": "Главный вопрос в чужом городе: вставьте любую остановку вместо Park Street.",
+    "after": "Вопрос о маршруте: Does this bus go to Park Street? Для другого места учитывайте артикль: to Park Street, но to the park."
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel.yaml",
+    "before": "next — следующий: next bus, next stop. t в next перед согласным почти не слышно.",
+    "after": "next — следующий: next bus, next stop. В быстрой речи t перед согласным может быть ослаблено или опущено; чёткое t тоже допустимо."
+  },
+  {
+    "path": "content/seed_poems/p07_bus_to_park_street.yaml",
+    "before": "[D1]Is[/] [T8]it[/] [D2]open[/]?",
+    "after": "[D1]Is[/] [T8]it[/] [J2]open[/]?"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_25_28.json",
+    "selector": "a1-can-skills/1",
+    "before": {
+      "prompt": "В {place} вы хотите узнать, умеет ли собеседник {ru}.",
+      "keys": [
+        "place",
+        "ru",
+        "lang"
+      ],
+      "cases": [
+        [
+          "поездке",
+          "говорить по-русски",
+          "Russian"
+        ],
+        [
+          "школе",
+          "говорить по-английски",
+          "English"
+        ],
+        [
+          "магазине",
+          "говорить по-русски",
+          "Russian"
+        ],
+        [
+          "встрече",
+          "говорить по-английски",
+          "English"
+        ],
+        [
+          "кафе",
+          "говорить по-русски",
+          "Russian"
+        ]
+      ],
+      "options": [
+        "Can you speak {lang}?",
+        "Can you to speak {lang}?",
+        "Are you speak {lang}?"
+      ],
+      "reason": "После can употребляется speak без to.",
+      "en": ""
+    },
+    "after": {
+      "prompt": "{place} вы хотите узнать, умеет ли собеседник {ru}.",
+      "keys": [
+        "place",
+        "ru",
+        "lang"
+      ],
+      "cases": [
+        [
+          "В поездке",
+          "говорить по-русски",
+          "Russian"
+        ],
+        [
+          "В школе",
+          "говорить по-английски",
+          "English"
+        ],
+        [
+          "В магазине",
+          "говорить по-русски",
+          "Russian"
+        ],
+        [
+          "На встрече",
+          "говорить по-английски",
+          "English"
+        ],
+        [
+          "В кафе",
+          "говорить по-русски",
+          "Russian"
+        ]
+      ],
+      "options": [
+        "Can you speak {lang}?",
+        "Can you to speak {lang}?",
+        "Are you speak {lang}?"
+      ],
+      "reason": "После can употребляется speak без to.",
+      "en": ""
+    }
+  },
+  {
+    "path": "content/manifests/a1_micro_review_25_28.json",
+    "selector": "a1-bus-ticket/4",
+    "before": {
+      "prompt": "Вам нужен {place}. Спросите, идёт ли автобус туда.",
+      "keys": [
+        "place",
+        "dest"
+      ],
+      "cases": [
+        [
+          "парк",
+          "the park"
+        ],
+        [
+          "банк",
+          "the bank"
+        ],
+        [
+          "отель",
+          "the hotel"
+        ],
+        [
+          "школа",
+          "the school"
+        ],
+        [
+          "станция",
+          "the station"
+        ]
+      ],
+      "options": [
+        "Does this bus go to {dest}?",
+        "Does this bus goes to {dest}?",
+        "Do this bus go to {dest}?"
+      ],
+      "reason": "Does + bus + go ...; после does не добавляем -s к go.",
+      "en": ""
+    },
+    "after": {
+      "prompt": "Место назначения — {place}. Спросите, идёт ли автобус туда.",
+      "keys": [
+        "place",
+        "dest"
+      ],
+      "cases": [
+        [
+          "парк",
+          "the park"
+        ],
+        [
+          "банк",
+          "the bank"
+        ],
+        [
+          "отель",
+          "the hotel"
+        ],
+        [
+          "школа",
+          "the school"
+        ],
+        [
+          "станция",
+          "the station"
+        ]
+      ],
+      "options": [
+        "Does this bus go to {dest}?",
+        "Does this bus goes to {dest}?",
+        "Do this bus go to {dest}?"
+      ],
+      "reason": "Does + bus + go ...; после does не добавляем -s к go.",
+      "en": ""
+    }
+  }
+]

@@ -1,0 +1,169 @@
+[
+  {
+    "slug": "a1-questions-do-does",
+    "plain": "Do/does помогают спрашивать о действиях.",
+    "why": "You → do, he/she/it → does; после does глагол без -s.",
+    "pattern": "Do you work? / Does Tom work?",
+    "mistake": "Писать Does Tom works?",
+    "fix": "После does уберите -s у work.",
+    "example": "Does she work here?",
+    "translation": "Она здесь работает?",
+    "tasks": {
+      "meaning": {
+        "prompt": "Передайте по-русски смысл: «Do you have a book?».",
+        "model": "У тебя есть книга?",
+        "accepted": [
+          "У тебя есть книга?"
+        ]
+      },
+      "writing": {
+        "prompt": "Напишите вопрос «Том здесь работает?»",
+        "model": "Does Tom work here?",
+        "accepted": [
+          "Does Tom work here?"
+        ]
+      },
+      "transfer": {
+        "prompt": "Спросите, когда открывается магазин.",
+        "model": "What time does the shop open?"
+      },
+      "explain": {
+        "prompt": "Новичок хочет узнать, работает ли Том: «Do Tom work here?». Исправьте вопрос и объясните форму.",
+        "model": "Does Tom work here? Tom — один человек, поэтому в вопросе используется does; глагол work без -s."
+      }
+    },
+    "contrast": {
+      "a_en": "Do you work?",
+      "a_ru": "Ты работаешь?",
+      "b_en": "Does Tom work?",
+      "b_ru": "Том работает?",
+      "why": "С you нужен do; с одним человеком по имени Tom — does. В обоих вопросах основной глагол work без -s."
+    }
+  },
+  {
+    "slug": "a1-spelling-phone-numbers",
+    "plain": "Spell значит назвать слово по буквам.",
+    "why": "Чтобы записать имя правильно, диктуйте отдельные буквы.",
+    "pattern": "Can you spell your name? / T-O-M.",
+    "mistake": "Просто повторять Tom вместо T-O-M.",
+    "fix": "Spell требует последовательности букв.",
+    "example": "Can you spell your name?",
+    "translation": "Можете продиктовать имя по буквам?",
+    "tasks": {
+      "meaning": {
+        "prompt": "Передайте по-русски смысл: «Call me later.».",
+        "model": "Позвони мне позже.",
+        "accepted": [
+          "Позвони мне позже.",
+          "Позвоните мне позже."
+        ]
+      },
+      "writing": {
+        "prompt": "Без подсказок напишите имя Tom по буквам, разделяя буквы дефисами.",
+        "model": "T-O-M",
+        "accepted": [
+          "T-O-M",
+          "T O M"
+        ]
+      },
+      "transfer": {
+        "prompt": "Друг попросил продиктовать имя Mia по буквам. Напишите именно последовательность букв, а не просто имя.",
+        "model": "M-I-A"
+      },
+      "explain": {
+        "prompt": "Вас просят назвать имя Tom по буквам, а вы просто говорите «Tom». Почему этого может быть недостаточно? Как ответить?",
+        "model": "Нужно назвать буквы по порядку: T-O-M. Spell означает продиктовать написание по буквам, а не повторить слово."
+      }
+    },
+    "contrast": {
+      "a_en": "My name is Tom.",
+      "a_ru": "Меня зовут Том.",
+      "b_en": "T-O-M.",
+      "b_ru": "Ти — оу — эм (по буквам).",
+      "why": "Первое предложение называет человека. Второе сообщает написание его имени по отдельным английским буквам."
+    }
+  },
+  {
+    "slug": "a1-always-never",
+    "plain": "Always, sometimes, never показывают частоту.",
+    "why": "В простом утверждении они обычно стоят перед смысловым глаголом.",
+    "pattern": "I always read. / I never drink coffee.",
+    "mistake": "Дважды отрицать I don't never.",
+    "fix": "Never уже означает «никогда».",
+    "example": "I never drink coffee.",
+    "translation": "Я никогда не пью кофе.",
+    "tasks": {
+      "meaning": {
+        "prompt": "Передайте по-русски смысл: «I always read.».",
+        "model": "Я всегда читаю.",
+        "accepted": [
+          "Я всегда читаю."
+        ]
+      },
+      "writing": {
+        "prompt": "Напишите «Я иногда гуляю».",
+        "model": "I sometimes walk.",
+        "accepted": [
+          "I sometimes walk."
+        ]
+      },
+      "transfer": {
+        "prompt": "Скажите, чего не делаете по воскресеньям.",
+        "model": "I never work on Sundays."
+      },
+      "explain": {
+        "prompt": "Новичок пишет: «I don't never work on Sundays». Как выразить «Я никогда не работаю по воскресеньям» нейтрально?",
+        "model": "I never work on Sundays. В стандартном английском never уже выражает отрицание, don't здесь не нужно."
+      }
+    },
+    "contrast": {
+      "a_en": "I always read.",
+      "a_ru": "Я всегда читаю.",
+      "b_en": "I never read.",
+      "b_ru": "Я никогда не читаю.",
+      "why": "Always и never меняют частоту и смысл всей привычки; never уже передаёт отрицание, поэтому don't обычно не нужно."
+    }
+  },
+  {
+    "slug": "a1-like-doing",
+    "plain": "Like + -ing рассказывает о любимом занятии.",
+    "why": "Для занятия reading можно использовать форму -ing после like. Это один из способов: I like to read тоже правильно.",
+    "pattern": "I like reading. / I like books.",
+    "mistake": "Путать I like a book и I like reading без учёта смысла.",
+    "fix": "Для хобби тренируйте -ing после like.",
+    "example": "I like reading.",
+    "translation": "Мне нравится читать.",
+    "tasks": {
+      "meaning": {
+        "prompt": "Передайте по-русски смысл: «I like walking.».",
+        "model": "Мне нравится гулять.",
+        "accepted": [
+          "Мне нравится гулять."
+        ]
+      },
+      "writing": {
+        "prompt": "Напишите «Мне нравится играть на гитаре».",
+        "model": "I like playing the guitar.",
+        "accepted": [
+          "I like playing the guitar.",
+          "I like to play the guitar."
+        ]
+      },
+      "transfer": {
+        "prompt": "Спросите друга, нравится ли ему рисовать, и скажите, что вам нравится читать.",
+        "model": "Do you like drawing? I like reading."
+      },
+      "explain": {
+        "prompt": "Сравните «I like books» и «I like reading». Объясните разницу: что нравится в каждом случае?",
+        "model": "I like books — нравятся книги как предметы; I like reading — нравится само занятие читать. Оба предложения правильные."
+      }
+    },
+    "contrast": {
+      "a_en": "I like books.",
+      "a_ru": "Мне нравятся книги.",
+      "b_en": "I like reading.",
+      "b_ru": "Мне нравится читать.",
+      "why": "Books — предметы, reading — занятие. Можно также сказать I like to read; не нужно считать это ошибкой."
+    }
+  }
+]

@@ -16,7 +16,7 @@ units:
   example_en: '[T8]I[/] [D1]am[/] [T1]a[/] [S9]teacher[/].'
   example_ru: Я учитель.
   situation: Рассказываете о своей работе
-  usage_note: 'Перед профессией — a: I am a teacher. Без a — ошибка.'
+  usage_note: "В полном ответе о профессии: I am a teacher. В этой конструкции перед teacher нужен определитель; здесь это a. Кратко можно ответить A teacher."
 - uid: LX-00143
   lemma: school
   meaning: a place where children learn
@@ -187,7 +187,7 @@ units:
   usage_note: 'Does показывает форму для he; основной глагол work остаётся без -s.'
 - uid: LX-00155
   lemma: No, he does not.
-  meaning: A short no answer about he or she
+  meaning: "A short negative answer to a question with Does he…?"
   class: D1
   unit_type: phrase
   cefr: unverified

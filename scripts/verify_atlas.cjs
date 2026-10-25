@@ -71,6 +71,70 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
     if(process.env.ATLAS_REDESIGN!=='1'){assert.equal(changed.length,0,`${name} ${width}: ${changed.join(', ')}`);assert.ok(maxDelta<=1,`${name} ${width}: geometry changed ${maxDelta}px`);}
    }
   }
+  // Editorial9–28: actual changed reading pages, in addition to the
+  // existing before/after geometry gate above (which remains unchanged).
+  const editorialPages=[
+   ['lesson09','/lessons/a1-there-is-some/',true],
+   ['lesson10','/lessons/a1-how-much-prices/',true],
+   ['lesson11','/lessons/a1-present-simple-i-you/',true],
+   ['lesson12','/lessons/a1-time-at-seven/',true],
+   ['story02','/stories/2/',false],['poem03','/stories/poems/3/',false],
+   ['lesson13','/lessons/a1-he-she-works/',true],
+   ['lesson14','/lessons/a1-jobs-what-do-you-do/',true],
+   ['lesson15','/lessons/a1-where-is-prepositions/',true],
+   ['lesson16','/lessons/a1-directions-turn-left/',true],
+   ['lesson17','/lessons/a1-questions-do-does/',true],
+   ['lesson18','/lessons/a1-spelling-phone-numbers/',true],
+   ['lesson19','/lessons/a1-always-never/',true],
+   ['lesson20','/lessons/a1-like-doing/',true],
+   ['lesson21','/lessons/a1-what-hurts/',true],
+   ['lesson22','/lessons/a1-cant-cannot/',true],
+   ['lesson23','/lessons/a1-dont-doesnt/',true],
+   ['lesson24','/lessons/a1-letters-address/',true],
+   ['lesson25','/lessons/a1-can-skills/',true],
+   ['lesson26','/lessons/a1-why-because/',true],
+   ['lesson27','/lessons/a1-bus-ticket/',true],
+   ['lesson28','/lessons/a1-review-everything/',true],
+   ['story03','/stories/3/',false],
+   ['story04','/stories/4/',false],
+   ['story05','/stories/5/',false],
+   ['poem04','/stories/poems/4/',false],
+   ['poem05','/stories/poems/5/',false],
+   ['poem06','/stories/poems/6/',false],
+   ['poem07','/stories/poems/7/',false]
+  ];
+  report.editorialPages=[];
+  for(const [width,height] of [[1440,900],[390,844]]){
+   const editorial=await browser.newContext({viewport:{width,height},reducedMotion:'reduce',isMobile:width<700,hasTouch:width<700});
+   try{
+    for(const [name,route,isLesson] of editorialPages){
+     const p=await editorial.newPage();
+     p.on('pageerror',error=>report.errors.push({name,state:'editorial',width,message:error.message}));
+     await ready(p,`http://127.0.0.1:8124${route}`);
+     assert.equal(new URL(p.url()).pathname,route,`${name}: unexpected redirect`);
+     assert.equal(await p.locator('h1').count(),1,`${name}: missing reading title`);
+     assert.equal(await p.locator('html').getAttribute('data-motion'),'minimal',`${name}: reduced motion ignored`);
+     const o=await overflow(p);assert.ok(o.scroll<=o.width+1,`${name} ${width}: horizontal overflow ${JSON.stringify(o)}`);
+     await p.screenshot({path:path.join(output,`editorial-${name}-${width}.png`)});
+     if(isLesson){
+      const fullMode=p.locator('[data-a1-route-mode="full"]');
+      if(await fullMode.count()){
+       await fullMode.focus();await fullMode.press('Enter');
+       assert.equal(await fullMode.getAttribute('aria-pressed'),'true',`${name}: full lesson inaccessible by keyboard`);
+      }
+      assert.equal(await p.locator('[data-lesson-reader] section[id^="layer-"]').count(),7,`${name}: seven layers lost`);
+      for(let n=1;n<=7;n++)assert.equal(await p.locator(`#layer-${n}`).isVisible(),true,`${name}: hidden layer${n}`);
+      const summary=p.locator('#beginner-steps > summary');await summary.focus();await summary.press('Enter');
+      assert.equal(await summary.evaluate(el=>el.parentElement.open),true,`${name}: keyboard explanation did not open`);
+      assert.equal(await p.locator('#beginner-steps .a1-step-list > li').count(),3,`${name}: incomplete explanation`);
+      await p.screenshot({path:path.join(output,`editorial-${name}-${width}-explanation.png`)});
+     }
+     report.editorialPages.push({name,route,width,height,reducedMotion:true,overflow:o,keyboardExplanation:isLesson});
+     await p.close();
+    }
+   }finally{await editorial.close();}
+  }
+  report.checks.push('Editorial9–12 lessons, story2 and poem3 readable at1440/390; seven layers and keyboard explanations accessible; reduced-motion and overflow checked');
   // All chapter covers load; each has a stable, explicitly sized image box.
   const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'});
   const page=await context.newPage();

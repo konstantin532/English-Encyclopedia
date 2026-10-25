@@ -1,0 +1,23 @@
+{
+  "baseline": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "source_files": [
+    "content/active_a1/scenarios_07_12.json",
+    "content/active_a1/topics_09_13.json",
+    "content/manifests/a1_micro_review_09_12.json",
+    "content/manifests/a1_scaffold_transfer.json",
+    "content/manifests/a1_understanding_checks.json",
+    "content/seed_poems/p03_what_time_is_it.yaml",
+    "content/seed_stories/s02_cafe_on_the_corner.yaml",
+    "content/seed_weeks/a1_w05.yaml",
+    "content/manifests/course_map.yaml",
+    "templates/poems/detail.html",
+    "tests/test_a1_scaffold_variants.py",
+    "tests/test_a1_deep_09_12_shared.py"
+  ],
+  "semantic_fields": 53,
+  "recorded_English_IPA_gaps_unchanged": true,
+  "other_course_map_entries_unchanged": true,
+  "only_removed_poem_target": "LX-00128 verb work; not taught by noun work in poem",
+  "story_and_poem_metadata_within_limits": true,
+  "old_test_contract_changed_separately": true
+}

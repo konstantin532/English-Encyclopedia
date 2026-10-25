@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+    "manage.py",
+    "test",
+    "tests.test_a1_deep_09_12_shared",
+    "tests.test_a1_editorial_deep_09_12",
+    "tests.test_a1_translation",
+    "tests.test_a1_scaffold_variants",
+    "tests.test_a1_microsteps",
+    "tests.test_a1_independent_understanding",
+    "--noinput"
+  ],
+  "database": "/tmp/ee-a1-09-12-integrated-targeted-ezuyr10m/fixture.sqlite3",
+  "exit_code": 0,
+  "seconds": 14.116
+}

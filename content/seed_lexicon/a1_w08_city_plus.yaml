@@ -17,7 +17,7 @@ units:
   usage_note: «Андэр», американское r в конце.
 - uid: LX-00338
   lemma: between
-  meaning: in the space in the middle of two things
+  meaning: "in the space separating things"
   class: P1
   cefr: unverified
   verification_status: pending
@@ -27,7 +27,7 @@ units:
   example_en: '[T1]The[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/].'
   example_ru: Мастерская между банком и гостиницей.
   situation: Объясняете, где что находится
-  usage_note: 'between A and B — всегда с and. Ударение в конце: beTWEEN.'
+  usage_note: "В образце between A and B два названия соединяются and. Возможны и другие дополнения: between the banks — «между банками». Не каждое сочетание с between содержит and."
 - uid: LX-00339
   lemma: in front of
   meaning: facing the front part of something
@@ -44,17 +44,17 @@ units:
   unit_type: phrase
 - uid: LX-00340
   lemma: across from
-  meaning: on the other side of a street from something
+  meaning: "on the opposite side from someone or something"
   class: P9
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки
   ipa_us: /əˈkrɔs frəm/
   translation_ru: напротив
-  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P9]across from[/] [T1]the[/] [S4]park[/].'
-  example_ru: Банк напротив парка.
+  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P9]across from[/] [T1]the[/] [S4]school[/].'
+  example_ru: Банк напротив школы.
   situation: Объясняете, где что находится
-  usage_note: Американский вариант «напротив». В учебниках встречается и opposite.
+  usage_note: "Across from — естественное американское «напротив», в том числе через дорогу или стол. Opposite тоже употребляется в американском английском; в этом уроке учим across from."
   unit_type: phrase
 - uid: LX-00341
   lemma: him
@@ -106,7 +106,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /hoʊˈtɛl/
   translation_ru: гостиница, отель
-  example_en: '[T1]The[/] [S4]hotel[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]left[/].'
+  example_en: '[T1]The[/] [S4]hotel[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]left[/].'
   example_ru: Гостиница слева.
   situation: Объясняете, где что находится
   usage_note: 'Ударение в конце: hoTEL.'

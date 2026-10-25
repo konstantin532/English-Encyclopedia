@@ -1,0 +1,12 @@
+Creating test database for alias 'default'...
+/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-a1-13-16-owned/staticfiles/
+  mw_instance = middleware(adapted_handler)
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.120s
+
+OK
+Destroying test database for alias 'default'...
+Found 2 test(s).
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).

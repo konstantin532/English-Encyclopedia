@@ -3,7 +3,6 @@ target_units:
 - LX-00124
 - LX-00125
 - LX-00127
-- LX-00128
 - LX-00129
 - LX-00132
 - LX-00133
@@ -19,15 +18,15 @@ body: |
   [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?
   [T8]It[/] [D1]is[/] [N3]seven o'clock[/]!
   [T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/],
-  [C1]and[/] [T8]I[/] [D4]go[/] [P2]to[/] [D2]work[/].
+  [C1]and[/] [T8]I[/] [D4]go[/] [P2]to[/] [S9]work[/].
 
   [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Twelve[/]!
   [T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/].
-  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N1]Ten[/]?
+  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Ten[/]?
   [S3]Coffee[/] [A2]again[/]!
 
   [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Seven[/]!
-  [T1]A[/] [J1]big[/] [S6]cat[/] [D4]comes[/] [P1]in[/].
+  [T1]A[/] [J1]big[/] [S6]cat[/] [D4]comes[/] [X3]in[/].
   [T5]Every[/] [S7]day[/] [P3]at[/] [N3]seven[/]
   [T1]the[/] [S6]cat[/] [D2]drinks[/] [T3]my[/] [S3]milk[/]!
 

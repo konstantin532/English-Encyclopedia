@@ -118,6 +118,8 @@ units:
   class: S4
   forms:
   - cafes
+  - café
+  - cafés
   cefr: unverified
   verification_status: pending
   frequency_source: NGSL — требует проверки

@@ -1,0 +1,1 @@
+Raw group executions, including unsuccessful/intermediate attempts. Use the corresponding group report and frozen before/after names to interpret results; these are not combined-tree tests. Final combined runs live in evidence/integrated/.

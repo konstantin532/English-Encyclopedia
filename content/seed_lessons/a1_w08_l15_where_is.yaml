@@ -67,7 +67,7 @@ layers:
       - [P1]under[/] — под: under the box
       - [P1]between[/] — между: between the bank **and** the hotel
       - [P9]in front of[/] — перед: in front of the cafe
-      - [P9]across from[/] — напротив: across from the park. На городской карте между местами часто проходит дорога, но сама фраза не требует дороги: можно сидеть напротив человека за столом.
+      - [P9]across from[/] — напротив: across from the school. На городской карте между местами часто проходит дорога, но сама фраза не требует дороги: можно сидеть напротив человека за столом.
 
       В городе ещё пригодятся [S4]hotel[/] (гостиница), [S4]supermarket[/] (супермаркет) и [S4]map[/] (карта).
   - number: 4
@@ -76,7 +76,7 @@ layers:
 
       **Near** означает «недалеко», без конкретного расстояния. **Next to** — непосредственно рядом, обычно по соседству. *Near* не означает строго «в двух шагах»: это расстояние зависит от ситуации.
 
-      > [P1]On[/] [T1]the[/] [A3]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]? — Справа? Рядом с кафе Мии?
+      > [P1]On[/] [T1]the[/] [S4]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]? — Справа? Рядом с кафе Мии?
 
       **Диагностика понимания:** Банк **непосредственно рядом**, но не **внутри** кафе. Что верно: *The bank is next to the cafe* или *The bank is in the cafe*?
 
@@ -142,7 +142,7 @@ exercises:
     prompt_ru: "Новая ситуация: турист спрашивает, где кафе. Оно справа. Ответьте."
     prompt_en: "Where is the cafe? — ___"
     answer: "It is on the right."
-    accepted: ["It's on the right.", "On the right.", "It is on the right", "It's on the right", "On the right", "The cafe is on the right."]
+    accepted: ["It's on the right.", "On the right.", "It is on the right", "It's on the right", "On the right", "The cafe is on the right.", "The cafe's on the right.", "The café is on the right.", "The café's on the right."]
     hint_ru: "Справа — on the right."
     explanation_ru: "It is on the right — в разговоре It's on the right или просто On the right."
     units: [LX-00178]
@@ -160,11 +160,11 @@ exercises:
     uid: EX-00085
     kind: fill
     stage: transfer
-    prompt_ru: "Супермаркет — через дорогу от парка. Скажите это по-американски."
-    prompt_en: "The supermarket is ___ the park."
+    prompt_ru: "Супермаркет — через дорогу от школы. Заполните пропуск изученным двухсловным предлогом «напротив»."
+    prompt_en: "The supermarket is ___ the school."
     answer: "across from"
     hint_ru: "Американское «напротив» — два слова."
-    explanation_ru: "The supermarket is across from the park. — across from значит «напротив»; в условии между местами проходит дорога, но это не обязательная часть значения across from."
+    explanation_ru: "The supermarket is across from the school. Across from означает «напротив»; дорога задана ситуацией, а не обязательна для этого выражения. Opposite тоже употребляется в американском английском, но здесь тренируем изученный двухсловный предлог."
     units: [LX-00340, LX-00345]
 # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
 practice:
@@ -175,11 +175,7 @@ practice:
   hint_ru: Where — «где».
   explanation_ru: 'Where is the bank? В разговоре: Where''s the bank?'
   review_of: 1
-  units:
-  - LX-00157
-  - LX-00162
-  - LX-00176
-  - LX-00178
+  units: ["LX-00157", "LX-00162", "LX-00176"]
 - order: 2
   kind: translate
   prompt_ru: Мастерская рядом с банком.
@@ -191,12 +187,7 @@ practice:
   hint_ru: «Рядом» — near или next to.
   explanation_ru: The key shop is near the bank. Near — поблизости, next to — прямо рядом.
   review_of: 3
-  units:
-  - LX-00162
-  - LX-00171
-  - LX-00176
-  - LX-00178
-  - LX-00160
+  units: ["LX-00160", "LX-00161", "LX-00162", "LX-00171"]
 - order: 3
   kind: translate
   prompt_ru: Банк справа.
@@ -204,11 +195,7 @@ practice:
   hint_ru: «Справа» — on the right.
   explanation_ru: The bank is on the right. On the right — справа, on the left — слева.
   review_of: 4
-  units:
-  - LX-00162
-  - LX-00172
-  - LX-00176
-  - LX-00178
+  units: ["LX-00162", "LX-00169", "LX-00172"]
 - order: 4
   kind: translate
   prompt_ru: Банк между кафе и гостиницей.
@@ -218,9 +205,4 @@ practice:
   hint_ru: between … and …
   explanation_ru: The bank is between the cafe and the hotel. Between — «между».
   review_of: 5
-  units:
-  - LX-00162
-  - LX-00176
-  - LX-00178
-  - LX-00338
-  - LX-00344
+  units: ["LX-00162", "LX-00338", "LX-00131", "LX-00344"]

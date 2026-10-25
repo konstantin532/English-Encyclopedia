@@ -1,0 +1,67 @@
+[
+  {
+    "kind": "main",
+    "uid": "EX-00047",
+    "submitted": "Yes, there's water.",
+    "actual": false,
+    "expected": true
+  },
+  {
+    "kind": "main",
+    "uid": "EX-00053",
+    "submitted": "They are 5 dollars.",
+    "actual": false,
+    "expected": true
+  },
+  {
+    "kind": "main",
+    "uid": "EX-00061",
+    "submitted": "I watch TV and go to bed early.",
+    "actual": false,
+    "expected": true
+  },
+  {
+    "kind": "main",
+    "uid": "EX-00065",
+    "submitted": "I have breakfast at 8.",
+    "actual": false,
+    "expected": true
+  },
+  {
+    "kind": "independent writing",
+    "slug": "a1-how-much-prices",
+    "submitted": "It's three dollars.",
+    "actual": false,
+    "expected": true
+  },
+  {
+    "kind": "independent writing",
+    "slug": "a1-how-much-prices",
+    "submitted": "That is three dollars.",
+    "actual": false,
+    "expected": true
+  },
+  {
+    "kind": "independent writing",
+    "slug": "a1-present-simple-i-you",
+    "submitted": "I have breakfast at home.",
+    "actual": true,
+    "expected": true
+  },
+  {
+    "kind": "micro actual learner card",
+    "slug": "a1-there-is-some",
+    "order": 1,
+    "card": [
+      "Вы в магазине. Как спросить, есть ли молоко? ",
+      "",
+      [
+        "Is there milk?",
+        "Are there milk?",
+        "There is milk?"
+      ],
+      0,
+      "С неисчисляемым напитком задавайте вопрос Is there ...?; форма are предназначена для множественного числа."
+    ]
+  }
+]

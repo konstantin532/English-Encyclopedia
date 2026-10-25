@@ -1,0 +1,18 @@
+{
+  "commit": "f755656dbf8d76f56fed1f9bd5a0888d9df3be1a",
+  "run": 40186265539,
+  "artifact": 12596183379,
+  "expires": "2026-11-08",
+  "artifact_digest": "sha256:cc25f390f0242b01dccbd61f478c88bfe70c5f86d62505b3aa42ece76ac96f4d",
+  "passed": true,
+  "editorial_page_viewport_checks": 58,
+  "errors": [],
+  "viewed_images": [
+    "editorial-lesson14-390-explanation.png",
+    "editorial-lesson20-390-explanation.png",
+    "editorial-poem07-390.png",
+    "editorial-story03-390.png",
+    "editorial-lesson28-1440.png"
+  ],
+  "audio": "not validated"
+}

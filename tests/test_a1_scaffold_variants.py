@@ -132,7 +132,11 @@ class ThreeStepEditorialTests(SimpleTestCase):
         self.assertEqual(book["model"], "The book is here.")
         water = guides["a1-there-is-some"]["tasks"]["transfer"]
         self.assertIn("есть ли вода", water["prompt"])
-        self.assertIn("any water", water["model"])
+        # The ordinary presence question does not require any. That word is
+        # not introduced in A1 week5; lexical prerequisites are checked by
+        # the shared 9–12 behavioral suite, rather than forced by this shape test.
+        question = water["model"].split("?", 1)[0] + "?"
+        self.assertRegex(question, r"^Is there (?:some |any )?water\?$")
         self.assertIn("some water", water["model"])
 
     def test_phone_readability_and_accessibility_contracts(self):

@@ -1,0 +1,27 @@
+{
+  "parent": "8788aac996c5010060b47cca6f12f0480c2d492c",
+  "lesson_identity_and_seven_layers": "PASS",
+  "lessons": 16,
+  "checked": [
+    "content/seed_lessons/a1_w07_l13_he_works.yaml",
+    "content/seed_lessons/a1_w07_l14_jobs.yaml",
+    "content/seed_lessons/a1_w08_l15_where_is.yaml",
+    "content/seed_lessons/a1_w08_l16_directions.yaml",
+    "content/seed_lessons/a1_w09_l17_do_does.yaml",
+    "content/seed_lessons/a1_w09_l18_spelling.yaml",
+    "content/seed_lessons/a1_w10_l19_always_never.yaml",
+    "content/seed_lessons/a1_w10_l20_like_doing.yaml",
+    "content/seed_lessons/a1_w11_l21_what_hurts.yaml",
+    "content/seed_lessons/a1_w11_l22_cant.yaml",
+    "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml",
+    "content/seed_lessons/a1_w12_l24_address.yaml",
+    "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "content/seed_lessons/a1_w13_l26_why_because.yaml",
+    "content/seed_lessons/a1_w14_l27_bus.yaml",
+    "content/seed_lessons/a1_w14_l28_review.yaml"
+  ],
+  "level_counts": {
+    "A1": 28,
+    "A1+": 32
+  }
+}

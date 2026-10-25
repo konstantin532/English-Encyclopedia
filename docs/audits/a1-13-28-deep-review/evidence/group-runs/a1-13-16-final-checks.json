@@ -1,0 +1,69 @@
+[
+  {
+    "name": "guard",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "shell",
+      "-c",
+      "from django.conf import settings; d=settings.DATABASES['default']; assert d['ENGINE']=='django.db.backends.sqlite3' and d['NAME']=='/tmp/ee-a1-13-16-verification-6lv715t8/fixture.sqlite3'; print(d['ENGINE'],d['NAME'])"
+    ],
+    "exit_code": 0,
+    "seconds": 0.399,
+    "database": "/tmp/ee-a1-13-16-verification-6lv715t8/fixture.sqlite3"
+  },
+  {
+    "name": "migrate",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "migrate",
+      "--noinput",
+      "-v0"
+    ],
+    "exit_code": 0,
+    "seconds": 3.916,
+    "database": "/tmp/ee-a1-13-16-verification-6lv715t8/fixture.sqlite3"
+  },
+  {
+    "name": "load-content",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "load_content"
+    ],
+    "exit_code": 0,
+    "seconds": 7.484,
+    "database": "/tmp/ee-a1-13-16-verification-6lv715t8/fixture.sqlite3"
+  },
+  {
+    "name": "audit-course",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "audit_course"
+    ],
+    "exit_code": 0,
+    "seconds": 10.089,
+    "database": "/tmp/ee-a1-13-16-verification-6lv715t8/fixture.sqlite3"
+  },
+  {
+    "name": "related",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "test",
+      "tests.test_a1_editorial_deep_13_16",
+      "tests.test_a1_side_context_13_16",
+      "tests.test_a1_editorial_week07_08",
+      "tests.test_a1_translation",
+      "tests.test_grammar_answer_integrity",
+      "tests.test_a1_pedagogical_continuity",
+      "tests.test_a1_second_pass",
+      "--noinput"
+    ],
+    "exit_code": 0,
+    "seconds": 19.832,
+    "database": "/tmp/ee-a1-13-16-verification-6lv715t8/fixture.sqlite3"
+  }
+]

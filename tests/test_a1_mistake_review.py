@@ -267,13 +267,28 @@ class A1MistakeReviewTests(TestCase):
         self.assertContains(page, "Is there")
         # The answer index is deliberately NOT visible until an attempt.
         self.assertNotContains(page, "data-answer=")
+        question = variants_for(ex)[0]
+        self.assertTrue(question[4])
+        self.assertNotEqual(question[4], variants_for(other)[0][4])
+        self.assertNotContains(page, question[4])
+        # A review must explain this new card, never the original exercise.
+        original_reason = "Original exercise explanation must not leak into a review card."
+        ex.explanation_ru = original_reason
+        ex.save(update_fields=["explanation_ru"])
         checked = self.client.post(reverse("learning:mistake_review"), {
             "review_id": item.pk, "index": 0, "choice": 1,
         })
         self.assertEqual(checked.status_code, 200)
-        self.assertContains(checked, "С неисчисляемым напитком")
+        result = checked.context["answer_result"]
+        self.assertFalse(result["correct"])
+        self.assertEqual(result["chosen"], question[2][1])
+        self.assertEqual(result["model"], question[2][question[3]])
+        self.assertEqual(result["reason"], question[4])
+        self.assertContains(checked, question[4])
+        self.assertNotContains(checked, original_reason)
         item.refresh_from_db()
         self.assertEqual(item.current_index, 1)
+        self.assertEqual(item.correct_count, 0)
 
     def test_lesson_twenty_eight_confirmed_error_does_not_schedule_immediately(self):
         ex = Exercise.objects.get(lesson__slug="a1-review-everything", order=1)

@@ -1,0 +1,134 @@
+[
+  {
+    "snapshot": "before",
+    "name": "guard",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "shell",
+      "-c",
+      "from django.conf import settings; d=settings.DATABASES['default']; assert d['ENGINE']=='django.db.backends.sqlite3' and d['NAME']=='/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3'; print(d['NAME'])"
+    ],
+    "exit_code": 0,
+    "seconds": 0.826,
+    "database": "/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3"
+  },
+  {
+    "snapshot": "before",
+    "name": "migrate",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "migrate",
+      "--noinput",
+      "-v0"
+    ],
+    "exit_code": 0,
+    "seconds": 4.44,
+    "database": "/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3"
+  },
+  {
+    "snapshot": "before",
+    "name": "load",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "load_content"
+    ],
+    "exit_code": 0,
+    "seconds": 7.611,
+    "database": "/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3"
+  },
+  {
+    "snapshot": "before",
+    "name": "inject-key",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "shell",
+      "-c",
+      "from apps.drills.models import Exercise; e=Exercise.objects.get(uid='EX-00083'); e.accepted=list(dict.fromkeys([*e.accepted, \"The café's on the right.\"])); e.save(update_fields=['accepted']); print(e.uid,e.accepted)"
+    ],
+    "exit_code": 0,
+    "seconds": 0.371,
+    "database": "/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3"
+  },
+  {
+    "snapshot": "before",
+    "name": "audit",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "audit_course"
+    ],
+    "exit_code": 0,
+    "seconds": 13.003,
+    "database": "/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3"
+  },
+  {
+    "snapshot": "after",
+    "name": "guard",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "shell",
+      "-c",
+      "from django.conf import settings; d=settings.DATABASES['default']; assert d['ENGINE']=='django.db.backends.sqlite3' and d['NAME']=='/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3'; print(d['NAME'])"
+    ],
+    "exit_code": 0,
+    "seconds": 0.556,
+    "database": "/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3"
+  },
+  {
+    "snapshot": "after",
+    "name": "migrate",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "migrate",
+      "--noinput",
+      "-v0"
+    ],
+    "exit_code": 0,
+    "seconds": 3.961,
+    "database": "/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3"
+  },
+  {
+    "snapshot": "after",
+    "name": "load",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "load_content"
+    ],
+    "exit_code": 0,
+    "seconds": 11.111,
+    "database": "/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3"
+  },
+  {
+    "snapshot": "after",
+    "name": "inject-key",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "shell",
+      "-c",
+      "from apps.drills.models import Exercise; e=Exercise.objects.get(uid='EX-00083'); e.accepted=list(dict.fromkeys([*e.accepted, \"The café's on the right.\"])); e.save(update_fields=['accepted']); print(e.uid,e.accepted)"
+    ],
+    "exit_code": 0,
+    "seconds": 0.418,
+    "database": "/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3"
+  },
+  {
+    "snapshot": "after",
+    "name": "audit",
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "audit_course"
+    ],
+    "exit_code": 0,
+    "seconds": 8.669,
+    "database": "/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3"
+  }
+]

@@ -2,8 +2,8 @@ number: 3
 characters:
 - Tom
 - Anna
-grammar_ru: there is; вопросы Is it…?; притяжательное 's (Anna's door); for — «для, от»; whose — «чей»
-prediction_ru: Посмотрите на название и описания картинок. Чей это ключ? К какой двери он подходит?
+grammar_ru: 'Is it…? — вопрос с be; Anna’s door — принадлежность. For в key for the mailbox показывает, к какому замку подходит ключ. Whose key is it? — «Чей это ключ?». Who has a key? — готовый вопрос «У кого есть ключ?».'
+prediction_ru: Посмотрите на название и описания картинок. Чей это ключ? К какой двери он подходит? Again! означает «Опять!» — Том снова удивляется месту, где лежат его ключи.
 visual_cues:
 - Утро. У двери Тома на коврике лежит маленький старый ключ, тёмный, с круглой головкой.
 - У калитки — старый синий почтовый ящик с крошечной замочной скважиной.
@@ -43,8 +43,8 @@ script:
 - speaker: tom
   kind: narration
   emotion: worried
-  text: '[T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna''s[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?'
-  spoken: '[T8]It[/] [D1]is[/][X1]n''t[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna''s[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?'
+  text: '[T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna[/][T3]''s[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?'
+  spoken: '[T8]It[/] [D1]is[/][X1]n''t[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna[/][T3]''s[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?'
 - speaker: anna
   kind: speech
   emotion: excited
@@ -59,8 +59,8 @@ script:
   kind: speech
   emotion: happy
   music: calm
-  text: “[T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P2]to[/] [T3]our[/] [S2]mailbox[/]?”
-  spoken: “[T8]It[/][D1]'s[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P2]to[/] [T3]our[/] [S2]mailbox[/]?”
+  text: “[T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P6]to[/] [T3]our[/] [S2]mailbox[/]?”
+  spoken: “[T8]It[/][D1]'s[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P6]to[/] [T3]our[/] [S2]mailbox[/]?”
 questions:
 - q: Где Том находит ключ?
   a: There is an old key next to my door. — У своей двери.

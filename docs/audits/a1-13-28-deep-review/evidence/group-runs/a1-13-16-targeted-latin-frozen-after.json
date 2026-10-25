@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+    "manage.py",
+    "test",
+    "tests.test_audit_latin_tokens",
+    "--noinput"
+  ],
+  "exit_code": 0,
+  "seconds": 19.702,
+  "database": "/tmp/ee-a1-13-16-latin-frozen-after-p266i1_0/fixture.sqlite3",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "test_sha256": "608ffc2a07e5af1a7a1d8b74cbf73f763d17a606309c2187d31d37c39d360211"
+}

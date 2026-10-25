@@ -56,7 +56,7 @@ units:
   example_en: '[T8]I[/] [D6]watch[/] [S2]TV[/] [P1]in[/] [T1]the[/] [S7]evening[/].'
   example_ru: Вечером я смотрю телевизор.
   situation: Рассказываете о своём дне
-  usage_note: 'watch — смотреть то, что движется: TV, фильм. Без артикля: watch TV.'
+  usage_note: "Watch — внимательно смотреть или наблюдать некоторое время. Объект не обязательно движется. В watch TV речь о просмотре телепередач; перед TV артикль не ставим."
 - uid: LX-00306
   lemma: listen
   meaning: to pay attention to a sound
@@ -73,7 +73,7 @@ units:
   example_en: '[T8]I[/] [D6]listen[/] [P2]to[/] [S10]music[/] [P1]in[/] [T1]the[/] [S7]evening[/].'
   example_ru: Вечером я слушаю музыку.
   situation: Рассказываете о своём дне
-  usage_note: 't не читается: «лисн». После listen нужен to: listen to.'
+  usage_note: "Listen — внимательно слушать. Если называем, кого или что слушаем, обычно добавляем to: listen to music. Без дополнения можно сказать Listen! или I listen."
 - uid: LX-00307
   lemma: come
   meaning: to move towards the speaker or a place
@@ -93,7 +93,7 @@ units:
   usage_note: Пишется с o, звучит «кам». come home — без to.
 - uid: LX-00308
   lemma: take
-  meaning: to do an action such as a shower or a bus
+  meaning: "to perform an action, as in take a shower"
   class: D2
   forms:
   - takes
@@ -125,7 +125,7 @@ units:
   usage_note: 'Как и breakfast — без артикля: have lunch.'
 - uid: LX-00310
   lemma: dinner
-  meaning: the main meal of the evening
+  meaning: "the main meal of the day, often eaten in the evening"
   class: S3
   forms:
   - dinners
@@ -137,7 +137,7 @@ units:
   example_en: '[T8]I[/] [D2]have[/] [S3]dinner[/] [P3]at[/] [N3]seven[/].'
   example_ru: Я ужинаю в семь.
   situation: Рассказываете о своём дне
-  usage_note: В США dinner — вечерняя еда, около шести-семи.
+  usage_note: "Dinner — основной приём пищи дня, часто вечером. В этом уроке переводим как «ужин»; время зависит от семьи и ситуации. Например, Sunday dinner может быть днём."
 - uid: LX-00311
   lemma: afternoon
   meaning: the time from midday to evening
@@ -152,7 +152,7 @@ units:
   example_en: '[T8]I[/] [D2]work[/] [P1]in[/] [T1]the[/] [S7]afternoon[/].'
   example_ru: Днём я работаю.
   situation: Рассказываете о своём дне
-  usage_note: 'in the afternoon — с 12 до 5–6 вечера. Ударение в конце: afterNOON.'
+  usage_note: 'in the afternoon — после полудня, до вечера; точная граница зависит от ситуации. Ударение в конце: afterNOON.'
 - uid: LX-00312
   lemma: evening
   meaning: the time from about six until night

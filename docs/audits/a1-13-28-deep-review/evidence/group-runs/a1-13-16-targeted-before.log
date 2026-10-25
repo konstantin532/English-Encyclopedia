@@ -1,0 +1,367 @@
+Creating test database for alias 'default'...
+/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-a1-13-16-owned/staticfiles/
+  mw_instance = middleware(adapted_handler)
+FFFFFFFFFFFFFFFFFFFFFF.FFFFFFFF
+======================================================================
+FAIL: test_cafe_location_allows_explicit_noun_contraction_but_not_wrong_side (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_cafe_location_allows_explicit_noun_contraction_but_not_wrong_side) (answer="The cafe's on the right.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 39, in test_cafe_location_allows_explicit_noun_contraction_but_not_wrong_side
+    with self.subTest(answer=text):self.check('exercises',item,text,expected)
+                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 23, in check
+    self.assertEqual(response.json()['correct'],expected,text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : The cafe's on the right.
+
+======================================================================
+FAIL: test_cafe_location_allows_explicit_noun_contraction_but_not_wrong_side (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_cafe_location_allows_explicit_noun_contraction_but_not_wrong_side) (answer='The café is on the right.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 39, in test_cafe_location_allows_explicit_noun_contraction_but_not_wrong_side
+    with self.subTest(answer=text):self.check('exercises',item,text,expected)
+                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 23, in check
+    self.assertEqual(response.json()['correct'],expected,text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : The café is on the right.
+
+======================================================================
+FAIL: test_directions_practice_does_not_claim_turn_left_when_turning_right (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_directions_practice_does_not_claim_turn_left_when_turning_right) (lesson='a1-directions-turn-left', order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00177'
+
+======================================================================
+FAIL: test_directions_practice_does_not_claim_turn_left_when_turning_right (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_directions_practice_does_not_claim_turn_left_when_turning_right) (lesson='a1-directions-turn-left', order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00177'
+
+======================================================================
+FAIL: test_directions_practice_does_not_claim_turn_left_when_turning_right (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_directions_practice_does_not_claim_turn_left_when_turning_right) (lesson='a1-directions-turn-left', order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00177'
+
+======================================================================
+FAIL: test_doctor_reply_does_not_certify_teacher_phrase (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_doctor_reply_does_not_certify_teacher_phrase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 65, in test_doctor_reply_does_not_certify_teacher_phrase
+    def test_doctor_reply_does_not_certify_teacher_phrase(self):self.main_credits('EX-00077',['LX-00144'])
+                                                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 60, in main_credits
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00152'
+
+======================================================================
+FAIL: test_jobs_practice_does_not_claim_office_or_a_different_job (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_jobs_practice_does_not_claim_office_or_a_different_job) (lesson='a1-jobs-what-do-you-do', order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00336'
+
+======================================================================
+FAIL: test_jobs_practice_does_not_claim_office_or_a_different_job (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_jobs_practice_does_not_claim_office_or_a_different_job) (lesson='a1-jobs-what-do-you-do', order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00152'
+'LX-00335'
+'LX-00336'
+Items in the second set but not the first:
+'LX-00128'
+
+======================================================================
+FAIL: test_jobs_practice_does_not_claim_office_or_a_different_job (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_jobs_practice_does_not_claim_office_or_a_different_job) (lesson='a1-jobs-what-do-you-do', order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00335'
+
+======================================================================
+FAIL: test_jobs_practice_does_not_claim_office_or_a_different_job (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_jobs_practice_does_not_claim_office_or_a_different_job) (lesson='a1-jobs-what-do-you-do', order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00152'
+
+======================================================================
+FAIL: test_locations_practice_does_not_claim_a_question_or_unspoken_right_answer (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_locations_practice_does_not_claim_a_question_or_unspoken_right_answer) (lesson='a1-where-is-prepositions', order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00178'
+
+======================================================================
+FAIL: test_locations_practice_does_not_claim_a_question_or_unspoken_right_answer (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_locations_practice_does_not_claim_a_question_or_unspoken_right_answer) (lesson='a1-where-is-prepositions', order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00176'
+'LX-00178'
+Items in the second set but not the first:
+'LX-00161'
+
+======================================================================
+FAIL: test_locations_practice_does_not_claim_a_question_or_unspoken_right_answer (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_locations_practice_does_not_claim_a_question_or_unspoken_right_answer) (lesson='a1-where-is-prepositions', order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00176'
+'LX-00178'
+Items in the second set but not the first:
+'LX-00169'
+
+======================================================================
+FAIL: test_locations_practice_does_not_claim_a_question_or_unspoken_right_answer (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_locations_practice_does_not_claim_a_question_or_unspoken_right_answer) (lesson='a1-where-is-prepositions', order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00176'
+'LX-00178'
+Items in the second set but not the first:
+'LX-00131'
+
+======================================================================
+FAIL: test_mia_cafe_does_not_certify_tom_home_phrase (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_mia_cafe_does_not_certify_tom_home_phrase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 62, in test_mia_cafe_does_not_certify_tom_home_phrase
+    def test_mia_cafe_does_not_certify_tom_home_phrase(self):self.main_credits('EX-00068',['LX-00128','LX-00131'])
+                                                             ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 60, in main_credits
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00153'
+Items in the second set but not the first:
+'LX-00128'
+'LX-00131'
+
+======================================================================
+FAIL: test_mother_job_keys_allow_local_contractions_without_changing_owner_or_job (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_mother_job_keys_allow_local_contractions_without_changing_owner_or_job) (answer="My mom's a nurse. She works in a hospital.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 35, in test_mother_job_keys_allow_local_contractions_without_changing_owner_or_job
+    with self.subTest(answer=text):self.check('exercises',item,text,text in good)
+                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 23, in check
+    self.assertEqual(response.json()['correct'],expected,text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : My mom's a nurse. She works in a hospital.
+
+======================================================================
+FAIL: test_mother_job_keys_allow_local_contractions_without_changing_owner_or_job (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_mother_job_keys_allow_local_contractions_without_changing_owner_or_job) (answer="My mother's a nurse. She works at a hospital.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 35, in test_mother_job_keys_allow_local_contractions_without_changing_owner_or_job
+    with self.subTest(answer=text):self.check('exercises',item,text,text in good)
+                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 23, in check
+    self.assertEqual(response.json()['correct'],expected,text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : My mother's a nurse. She works at a hospital.
+
+======================================================================
+FAIL: test_mother_job_keys_allow_local_contractions_without_changing_owner_or_job (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_mother_job_keys_allow_local_contractions_without_changing_owner_or_job) (answer="My mother's a nurse. She works in a hospital.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 35, in test_mother_job_keys_allow_local_contractions_without_changing_owner_or_job
+    with self.subTest(answer=text):self.check('exercises',item,text,text in good)
+                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 23, in check
+    self.assertEqual(response.json()['correct'],expected,text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : My mother's a nurse. She works in a hospital.
+
+======================================================================
+FAIL: test_object_her_and_map_are_rendered_with_actual_function_labels (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_object_her_and_map_are_rendered_with_actual_function_labels) (word='her')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 78, in test_object_her_and_map_are_rendered_with_actual_function_labels
+    with self.subTest(word=word):self.assertTrue(labels);self.assertTrue(all(label.endswith(suffix) for label in labels),labels)
+                                                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Детерминативы: Притяжательные детерминативы']
+
+======================================================================
+FAIL: test_object_her_and_map_are_rendered_with_actual_function_labels (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_object_her_and_map_are_rendered_with_actual_function_labels) (word='map')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 78, in test_object_her_and_map_are_rendered_with_actual_function_labels
+    with self.subTest(word=word):self.assertTrue(labels);self.assertTrue(all(label.endswith(suffix) for label in labels),labels)
+                                                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Существительные: Места и город', 'карта (города)']
+
+======================================================================
+FAIL: test_object_her_and_map_are_rendered_with_actual_function_labels (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_object_her_and_map_are_rendered_with_actual_function_labels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 79, in test_object_her_and_map_are_rendered_with_actual_function_labels
+    self.assertEqual(LexicalUnit.objects.get(uid='LX-00346').semantic_class.number,2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4 != 2
+
+======================================================================
+FAIL: test_she_reply_does_not_certify_he_reply_but_keeps_attempt (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_she_reply_does_not_certify_he_reply_but_keeps_attempt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 63, in test_she_reply_does_not_certify_he_reply_but_keeps_attempt
+    def test_she_reply_does_not_certify_he_reply_but_keeps_attempt(self):self.main_credits('EX-00071',[])
+                                                                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 60, in main_credits
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00155'
+
+======================================================================
+FAIL: test_start_completion_does_not_certify_nurse_word (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_start_completion_does_not_certify_nurse_word)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 64, in test_start_completion_does_not_certify_nurse_word
+    def test_start_completion_does_not_certify_nurse_word(self):self.main_credits('EX-00073',['LX-00332'])
+                                                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 60, in main_credits
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00319'
+
+======================================================================
+FAIL: test_start_time_slot_accepts_digits_and_clock_without_changing_subject_or_hour (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_start_time_slot_accepts_digits_and_clock_without_changing_subject_or_hour) (answer='starts work at 7.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 29, in test_start_time_slot_accepts_digits_and_clock_without_changing_subject_or_hour
+    with self.subTest(answer=text):self.check('exercises',item,text,expected)
+                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 23, in check
+    self.assertEqual(response.json()['correct'],expected,text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : starts work at 7.
+
+======================================================================
+FAIL: test_start_time_slot_accepts_digits_and_clock_without_changing_subject_or_hour (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_start_time_slot_accepts_digits_and_clock_without_changing_subject_or_hour) (answer="starts at seven o'clock.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 29, in test_start_time_slot_accepts_digits_and_clock_without_changing_subject_or_hour
+    with self.subTest(answer=text):self.check('exercises',item,text,expected)
+                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 23, in check
+    self.assertEqual(response.json()['correct'],expected,text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : starts at seven o'clock.
+
+======================================================================
+FAIL: test_start_time_slot_accepts_digits_and_clock_without_changing_subject_or_hour (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_start_time_slot_accepts_digits_and_clock_without_changing_subject_or_hour) (answer="starts work at 7 o'clock.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 29, in test_start_time_slot_accepts_digits_and_clock_without_changing_subject_or_hour
+    with self.subTest(answer=text):self.check('exercises',item,text,expected)
+                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 23, in check
+    self.assertEqual(response.json()['correct'],expected,text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : starts work at 7 o'clock.
+
+======================================================================
+FAIL: test_third_person_practice_credits_only_its_target_words_and_phrases (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_third_person_practice_credits_only_its_target_words_and_phrases) (lesson='a1-he-she-works', order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00154'
+'LX-00156'
+Items in the second set but not the first:
+'LX-00128'
+
+======================================================================
+FAIL: test_third_person_practice_credits_only_its_target_words_and_phrases (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_third_person_practice_credits_only_its_target_words_and_phrases) (lesson='a1-he-she-works', order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00154'
+'LX-00153'
+'LX-00156'
+Items in the second set but not the first:
+'LX-00128'
+'LX-00131'
+
+======================================================================
+FAIL: test_third_person_practice_credits_only_its_target_words_and_phrases (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_third_person_practice_credits_only_its_target_words_and_phrases) (lesson='a1-he-she-works', order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00154'
+'LX-00153'
+'LX-00155'
+Items in the second set but not the first:
+'LX-00128'
+
+======================================================================
+FAIL: test_third_person_practice_credits_only_its_target_words_and_phrases (tests.test_a1_editorial_deep_13_16.A1DeepThirteenSixteenTests.test_third_person_practice_credits_only_its_target_words_and_phrases) (lesson='a1-he-she-works', order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-13-16-owned/tests/test_a1_editorial_deep_13_16.py", line 49, in practice_credits
+    with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
+                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00154'
+'LX-00153'
+'LX-00156'
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.696s
+
+FAILED (failures=30)
+Destroying test database for alias 'default'...
+Found 13 test(s).
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).

@@ -1,0 +1,1226 @@
+diff --git a/content/active_a1/scenarios_07_12.json b/content/active_a1/scenarios_07_12.json
+index 70246a0..7f151ae 100644
+--- a/content/active_a1/scenarios_07_12.json
++++ b/content/active_a1/scenarios_07_12.json
+@@ -226,8 +226,8 @@
+       {
+         "id": 5,
+         "title": "Цена на слух",
+-        "scene": "Продавец сказал «three dollars», а вам послышалось two.",
+-        "prompt": "Переспросите названную цену.",
++        "scene": "Вы не уверены, правильно ли расслышали цену three dollars.",
++        "prompt": "Уточните с вопросительной интонацией: «Три доллара?»",
+         "example": "Three dollars?",
+         "coach": "С вопросительной интонацией можно повторить сумму."
+       },
+@@ -300,7 +300,7 @@
+         "scene": "Том спрашивает, что вы делаете утром и вечером.",
+         "prompt": "Расскажите о двух повседневных действиях простыми предложениями.",
+         "example": "I work in the morning. I watch TV in the evening.",
+-        "coach": "В Present Simple можно соединить два привычных действия без сложных времён."
++        "coach": "Используйте готовые сочетания in the morning — «утром», in the evening — «вечером»; подробнее они разбираются в уроке 12. В Present Simple можно сообщить два привычных действия."
+       }
+     ],
+     "twists": [
+diff --git a/content/active_a1/topics_09_13.json b/content/active_a1/topics_09_13.json
+index bd816be..23a6185 100644
+--- a/content/active_a1/topics_09_13.json
++++ b/content/active_a1/topics_09_13.json
+@@ -44,7 +44,7 @@
+     "hint": "There + are + apples.",
+     "transfer": "Теперь скажите: «Есть молоко».",
+     "transfer_example": "There is milk.",
+-    "why": "There is / there are сообщает о наличии чего-то в ситуации: «имеется». Here there — часть конструкции, а не обязательно «там»; some обычно обозначает некоторое количество.",
++    "why": "There is / there are сообщает о наличии чего-то в ситуации: «имеется». Здесь there — часть конструкции, а не обязательно «там»; some обычно обозначает некоторое количество.",
+     "sound": "Различайте there /ðɛr/ и they're /ðɛr/: они звучат одинаково, но пишутся по-разному и работают по-разному."
+   },
+   {
+@@ -101,7 +101,7 @@
+     "slug": "a1-present-simple-i-you",
+     "title": "Мой обычный день",
+     "scene": "Анна встречает Тома утром",
+-    "context": "Говорите о повторяющемся распорядке, а не о действии прямо сейчас.",
++    "context": "Говорите о повторяющемся распорядке, а не о действии прямо сейчас. In the morning — «утром», in the evening — «вечером». Здесь это готовые сочетания; подробно разберём их в уроке 12.",
+     "dialogue": [
+       [
+         "Anna",
+diff --git a/content/manifests/a1_micro_review_09_12.json b/content/manifests/a1_micro_review_09_12.json
+index 440b2ca..0ade0d8 100644
+--- a/content/manifests/a1_micro_review_09_12.json
++++ b/content/manifests/a1_micro_review_09_12.json
+@@ -1,7 +1,7 @@
+ {
+   "a1-there-is-some": {
+     "1": {
+-      "prompt": "Вы в {place}. Как спросить, есть ли {ru}? ",
++      "prompt": "Вы в {place}. Узнайте, есть ли {ru}. Выберите обычный вопрос по схеме Is + there + продукт, а не разговорный переспрос с порядком утверждения.",
+       "keys": [
+         "place",
+         "ru",
+@@ -39,7 +39,7 @@
+         "Are there {en}?",
+         "There is {en}?"
+       ],
+-      "reason": "С неисчисляемым напитком задавайте вопрос Is there ...?; форма are предназначена для множественного числа.",
++      "reason": "Здесь нужен обычный вопрос о наличии: Is there…? Фраза There is…? с вопросительной интонацией возможна как уточнение, но не соответствует указанной схеме. С названием вещества используем is, не are.",
+       "en": ""
+     },
+     "2": {
+@@ -81,7 +81,7 @@
+         "is",
+         "am"
+       ],
+-      "reason": "После множественного существительного в конструкции There ... используется are.",
++      "reason": "Для существительного во множественном числе в конструкции There ... выбираем are: There are apples. Форма are стоит перед apples.",
+       "en": "There ___ {en}."
+     },
+     "3": {
+@@ -197,9 +197,9 @@
+           "blue"
+         ],
+         [
+-          "белые дома",
++          "коричневые дома",
+           "houses",
+-          "white"
++          "brown"
+         ]
+       ],
+       "options": [
+@@ -255,7 +255,7 @@
+         "Can I have a {color} {en}, please?",
+         "I can some {color} {en}, please?"
+       ],
+-      "reason": "Неконкретное множество предметов: some + цвет + существительное во множественном числе.",
++      "reason": "Без точного числа предметов: some + прилагательное (цвет или размер) + существительное во множественном числе.",
+       "en": ""
+     }
+   },
+@@ -514,12 +514,12 @@
+           "work here every day"
+         ],
+         [
+-          "вы пьёте кофе утром",
+-          "drink coffee in the morning"
++          "вы пьёте кофе каждое утро",
++          "drink coffee every morning"
+         ],
+         [
+-          "вы смотрите телевизор вечером",
+-          "watch TV in the evening"
++          "вы смотрите телевизор каждый вечер",
++          "watch TV every evening"
+         ],
+         [
+           "вы завтракаете дома",
+@@ -562,8 +562,8 @@
+           "watch TV"
+         ],
+         [
+-          "читаешь ли ты книги",
+-          "read books"
++          "пьёшь ли ты воду",
++          "drink water"
+         ]
+       ],
+       "options": [
+@@ -593,8 +593,8 @@
+           "eight"
+         ],
+         [
+-          "вы читаете книги в девять",
+-          "read books",
++          "вы пьёте чай в девять",
++          "drink tea",
+           "nine"
+         ],
+         [
+@@ -701,13 +701,13 @@
+           "drink coffee"
+         ],
+         [
+-          "я работаю и читаю книги",
++          "я работаю и пью воду",
+           "work",
+-          "read books"
++          "drink water"
+         ],
+         [
+-          "я гуляю и ложусь спать",
+-          "walk",
++          "я работаю и ложусь спать",
++          "work",
+           "go to bed"
+         ],
+         [
+diff --git a/content/manifests/a1_scaffold_transfer.json b/content/manifests/a1_scaffold_transfer.json
+index d0ec55a..a5ad3f5 100644
+--- a/content/manifests/a1_scaffold_transfer.json
++++ b/content/manifests/a1_scaffold_transfer.json
+@@ -257,19 +257,19 @@
+           "why_ru": "Water обычно неисчисляемое. Some здесь говорит о неопределённом количестве воды, не обязательно именно о «немного»."
+         },
+         {
+-          "example_en": "Is there any water?",
++          "example_en": "Is there water?",
+           "example_ru": "Есть вода?",
+-          "why_ru": "Для вопроса is выходит вперёд; any — обычный выбор в нейтральном вопросе."
++          "why_ru": "Чтобы спросить о наличии воды, поставьте is перед there. Water здесь означает вещество; вопрос не задаёт объём."
+         }
+       ],
+       "transfer_variants": [
+         {
+-          "prompt": "В кухне есть молоко. Сообщите это гостю простым предложением.",
+-          "model": "There is some milk in the kitchen."
++          "prompt": "Вы на кухне. Сообщите гостю, что есть молоко; само место называть не нужно.",
++          "model": "There is some milk."
+         },
+         {
+-          "prompt": "Гость спрашивает, сколько стульев в комнате. Скажите, что их два.",
+-          "model": "There are two chairs in the room."
++          "prompt": "Вы с гостем в комнате. Скажите, что здесь есть два стула.",
++          "model": "There are two chairs here."
+         }
+       ]
+     },
+@@ -277,19 +277,19 @@
+       "slug": "a1-how-much-prices",
+       "steps": [
+         {
+-          "example_en": "A ticket, please.",
+-          "example_ru": "Билет, пожалуйста.",
++          "example_en": "A sandwich, please.",
++          "example_ru": "Сэндвич, пожалуйста.",
+           "why_ru": "Сначала называем, что хотим купить."
+         },
+         {
+-          "example_en": "How much is a ticket?",
+-          "example_ru": "Сколько стоит билет?",
+-          "why_ru": "How much спрашивает цену. Для одного ticket подходит is."
++          "example_en": "How much is a sandwich?",
++          "example_ru": "Сколько стоит сэндвич?",
++          "why_ru": "How much спрашивает цену. Для одного sandwich подходит is."
+         },
+         {
+           "example_en": "It is five dollars.",
+           "example_ru": "Он стоит пять долларов.",
+-          "why_ru": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве билетов."
++          "why_ru": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве сэндвичей."
+         }
+       ],
+       "transfer_variants": [
+@@ -298,8 +298,8 @@
+           "model": "How much is this book?"
+         },
+         {
+-          "prompt": "Вы видите куртку в магазине. Спросите, сколько она стоит.",
+-          "model": "How much is the jacket?"
++          "prompt": "На полке лежит один телефон. Спросите продавца, сколько он стоит.",
++          "model": "How much is the phone?"
+         }
+       ]
+     },
+@@ -317,19 +317,19 @@
+           "why_ru": "После you обычный глагол не получает -s."
+         },
+         {
+-          "example_en": "Do you work on Saturdays?",
+-          "example_ru": "Ты работаешь по субботам?",
+-          "why_ru": "Do открывает вопрос о привычке; work сохраняет начальную форму."
++          "example_en": "Do you work every day?",
++          "example_ru": "Ты работаешь каждый день?",
++          "why_ru": "Do стоит перед you и помогает спросить о привычке; work остаётся в начальной форме."
+         }
+       ],
+       "transfer_variants": [
+         {
+-          "prompt": "Вы хотите узнать, читает ли ваш друг книги по вечерам. Задайте вопрос.",
+-          "model": "Do you read books in the evening?"
++          "prompt": "Спросите друга, пьёт ли он кофе каждый день.",
++          "model": "Do you drink coffee every day?"
+         },
+         {
+-          "prompt": "Вы рассказываете о привычке. Скажите, что читаете книги каждый день.",
+-          "model": "I read books every day."
++          "prompt": "Расскажите о привычке: вы пьёте чай каждый день.",
++          "model": "I drink tea every day."
+         }
+       ]
+     },
+diff --git a/content/manifests/a1_understanding_checks.json b/content/manifests/a1_understanding_checks.json
+index 2ff77a1..e1bda25 100644
+--- a/content/manifests/a1_understanding_checks.json
++++ b/content/manifests/a1_understanding_checks.json
+@@ -361,15 +361,16 @@
+           ]
+         },
+         "writing": {
+-          "prompt": "Напишите «В комнате две книги».",
+-          "model": "There are two books in the room.",
++          "prompt": "Вы описываете комнату гостю. Напишите, что здесь есть две книги; само место повторять не нужно.",
++          "model": "There are two books.",
+           "accepted": [
+-            "There are two books in the room."
++            "There are two books in the room.",
++            "There are two books."
+           ]
+         },
+         "transfer": {
+-          "prompt": "Во время поездки спросите у друга, есть ли вода, и затем вежливо попросите немного.",
+-          "model": "Is there any water? Can I have some water, please?"
++          "prompt": "Во время поездки спросите у друга, есть ли вода, и затем вежливо попросите воды, не уточняя объём.",
++          "model": "Is there water? Can I have some water, please?"
+         },
+         "explain": {
+           "prompt": "На столе две книги. Ученик говорит: «There is two books». Исправьте форму и объясните.",
+@@ -405,7 +406,14 @@
+           "prompt": "Напишите «Это стоит три доллара».",
+           "model": "It is three dollars.",
+           "accepted": [
+-            "It is three dollars."
++            "It is three dollars.",
++            "It's three dollars.",
++            "That is three dollars.",
++            "That's three dollars.",
++            "It is 3 dollars.",
++            "It's 3 dollars.",
++            "That is 3 dollars.",
++            "That's 3 dollars."
+           ]
+         },
+         "transfer": {
+@@ -431,7 +439,7 @@
+       "why": "I work описывает обычное действие; do помогает спросить о нём.",
+       "pattern": "I work. / Do you work?",
+       "mistake": "Писать I am work.",
+-      "fix": "С I перед обычным действием не нужен am.",
++      "fix": "В Present Simple о привычке с I и work используем I work, без am. Это правило для изучаемой формы, а не запрет на любую конструкцию с be и действием.",
+       "example": "I work every day.",
+       "translation": "Я работаю каждый день.",
+       "tasks": {
+@@ -464,7 +472,7 @@
+         "a_ru": "Я занят.",
+         "b_en": "I work every day.",
+         "b_ru": "Я работаю каждый день.",
+-        "why": "Busy описывает состояние и требует am. Work сообщает обычное действие и с I не требует am."
++        "why": "Busy — прилагательное «занят»: в полном предложении I am busy перед ним нужна форма be. Work — глагол «работать»: о привычке с I говорим I work, без am. Различаем строение этих фраз, а не просто состояние и действие."
+       }
+     },
+     {
+diff --git a/content/manifests/course_map.yaml b/content/manifests/course_map.yaml
+index 44416ae..3933a60 100644
+--- a/content/manifests/course_map.yaml
++++ b/content/manifests/course_map.yaml
+@@ -385,7 +385,7 @@ poems:
+   week: 6
+   title: What Time Is It?
+   rhyme_scheme: ABCB
+-  theme_ru: День по часам — и большой кот, который приходит ровно в семь
++  theme_ru: 'День по часам и кот. Готовые выражения: go to work — идти на работу; coffee again — снова кофе; comes in — входит. Comes/drinks — формы для he/she/it: пока узнавайте их по смыслу; подробный разбор — урок 13'
+   phonetic_goals:
+   - /aɪ/ в time и five
+   - 'ударение в числах: SEVen, TWELVE'
+diff --git a/content/seed_lessons/a1_w05_l09_there_is.yaml b/content/seed_lessons/a1_w05_l09_there_is.yaml
+index 6a0cce4..d9bba3d 100644
+--- a/content/seed_lessons/a1_w05_l09_there_is.yaml
++++ b/content/seed_lessons/a1_w05_l09_there_is.yaml
+@@ -95,7 +95,7 @@ layers:
+       > [D7]Can[/] [T8]I[/] [D1]have[/] [T4]some[/] [J2]red[/] [S3]apples[/], [O8]please[/]? — Можно мне красных яблок?
+       > [J2]Red[/] [C1]or[/] [J2]green[/]? — Красные или зелёные?
+ 
+-      - [J2]red[/] [J2]green[/] [J2]yellow[/] [J2]orange[/] [J2]blue[/] [J2]black[/] [J2]white[/] [J2]brown[/]
++      - [J2]red[/] [J2]green[/] [J2]yellow[/] [J2]orange[/] [J2]blue[/] [J2]black[/] [J2]brown[/]
+       - [J2]hot[/] [S3]tea[/] — горячий чай, [J2]cold[/] [S3]milk[/] — холодное молоко
+       - Ещё продукты: [S3]bread[/] (хлеб), [S3]cheese[/] (сыр), [S3]banana[/] (банан)
+ 
+@@ -143,9 +143,9 @@ exercises:
+     prompt_ru: "Новая ситуация: Том спрашивает, есть ли дома вода. Вода есть. Сообщите об этом."
+     prompt_en: "Is there water? — ___"
+     answer: "Yes, there is."
+-    accepted: ["Yes there is", "Yes, there is", "Yes, there is water.", "Yes, there is water", "There is water.", "Yes. There is water."]
++    accepted: ["Yes there is", "Yes, there is", "Yes, there is water.", "Yes, there is water", "There is water.", "Yes. There is water.", "Yes, there's water.", "There's water."]
+     hint_ru: "Короткий ответ повторяет there и be."
+-    explanation_ru: "Yes, there is. — короткий ответ без сокращения: в конце фразы there's не говорят."
++    explanation_ru: "Yes, there is. — короткий ответ: в нём is не сокращаем. Если после is называем воду, сокращение возможно: Yes, there's water. / There's water."
+     units: [LX-00120]
+   - order: 5
+     uid: EX-00048
+@@ -179,11 +179,7 @@ practice:
+   hint_ru: Есть ли где-то — Is there…?
+   explanation_ru: Is there milk? Это вопрос о наличии молока. Можно спросить и Do you have milk?, обращаясь к продавцу; в этом задании тренируем there is.
+   review_of: 1
+-  units:
+-  - LX-00108
+-  - LX-00112
+-  - LX-00119
+-  - LX-00120
++  units: ["LX-00108", "LX-00112", "LX-00119"]
+ - order: 2
+   kind: translate
+   prompt_ru: Есть яблоки.
+@@ -193,12 +189,7 @@ practice:
+   hint_ru: Яблок больше одного — there are.
+   explanation_ru: There are apples. Один предмет — there is, несколько — there are.
+   review_of: 2
+-  units:
+-  - LX-00109
+-  - LX-00112
+-  - LX-00119
+-  - LX-00120
+-  - LX-00121
++  units: ["LX-00109", "LX-00112"]
+ - order: 3
+   kind: translate
+   prompt_ru: Корма для кошек нет. Используйте there is no.
+@@ -206,11 +197,7 @@ practice:
+   hint_ru: «Нет» — there is no.
+   explanation_ru: There is no cat food. There is no — «нет, отсутствует». В этом задании используем изученный оборот; сокращение There’s no cat food тоже подходит.
+   review_of: 1
+-  units:
+-  - LX-00111
+-  - LX-00112
+-  - LX-00119
+-  - LX-00120
++  units: ["LX-00111", "LX-00112"]
+ - order: 4
+   kind: translate
+   prompt_ru: Яблоки красные.
+@@ -218,8 +205,4 @@ practice:
+   hint_ru: Цвет после are.
+   explanation_ru: 'The apples are red. Цвет описывает яблоки, поэтому нужен be: are.'
+   review_of: 5
+-  units:
+-  - LX-00109
+-  - LX-00121
+-  - LX-00286
+-  - LX-00301
++  units: ["LX-00109", "LX-00286"]
+diff --git a/content/seed_lessons/a1_w05_l10_how_much.yaml b/content/seed_lessons/a1_w05_l10_how_much.yaml
+index 8596e85..e4dac3b 100644
+--- a/content/seed_lessons/a1_w05_l10_how_much.yaml
++++ b/content/seed_lessons/a1_w05_l10_how_much.yaml
+@@ -13,7 +13,7 @@ sound_notes:
+     note_ru: "ударение на much; is it сливаются: «изит»"
+   - text: "It's two dollars."
+     ipa: "/ɪts ˈtu ˈdɑlɚz/"
+-    note_ru: "dollars — «далэрз»: первый звук открытый, как «а», американское r в конце"
++    note_ru: "В dollars ударный гласный /ɑ/ открытый, отдалённо похож на русское «а»; после /ɚ/ произносится /z/; русская подсказка приблизительная"
+   - text: "That's three dollars."
+     ipa: "/ðæts ˈθri ˈdɑlɚz/"
+     note_ru: "в three язык между зубами и глухой звук, в that's — звонкий"
+@@ -141,10 +141,10 @@ exercises:
+     prompt_ru: "Новая ситуация: вы продаёте яблоки на школьной ярмарке. Все эти яблоки стоят $5. Ответьте полным предложением о яблоках, начните с They."
+     prompt_en: "How much are the apples? — ___"
+     answer: "They are five dollars."
+-    accepted: ["They're five dollars."]
++    accepted: ["They're five dollars.", "They are 5 dollars.", "They're 5 dollars."]
+     hint_ru: "They относится к яблокам: после they выберите are, затем назовите цену."
+     explanation_ru: "They are five dollars. They относится к apples, поэтому are. They're five dollars тоже подходит. Five dollars — естественный короткий ответ, но здесь по условию нужно полное предложение о яблоках с They."
+-    units: [LX-00116, LX-00123]
++    units: ["LX-00116"]
+   - order: 5
+     uid: EX-00054
+     kind: choice
+@@ -176,13 +176,7 @@ practice:
+   hint_ru: How much is…?
+   explanation_ru: How much is the milk? — вопрос о цене конкретного молока. How much is milk? тоже спрашивает цену молока. В этом задании используем вопрос с is, как указано в условии.
+   review_of: 3
+-  units:
+-  - LX-00114
+-  - LX-00115
+-  - LX-00122
+-  - LX-00123
+-  - LX-00108
+-  - LX-00302
++  units: ["LX-00114", "LX-00115", "LX-00108"]
+ - order: 2
+   kind: translate
+   prompt_ru: Это два доллара.
+@@ -192,11 +186,7 @@ practice:
+   hint_ru: two dollars — с -s.
+   explanation_ru: It's two dollars. После two — dollars с -s.
+   review_of: 4
+-  units:
+-  - LX-00116
+-  - LX-00122
+-  - LX-00123
+-  - LX-00302
++  units: ["LX-00116", "LX-00123"]
+ - order: 3
+   kind: translate
+   prompt_ru: Сколько стоят яблоки? Используйте вопрос с are.
+@@ -204,11 +194,7 @@ practice:
+   hint_ru: Яблок несколько — are.
+   explanation_ru: How much are the apples? Apples — множественное число, поэтому are. В этом задании используем вопрос с are, как указано в условии.
+   review_of: 3
+-  units:
+-  - LX-00114
+-  - LX-00115
+-  - LX-00122
+-  - LX-00109
++  units: ["LX-00114", "LX-00115", "LX-00109"]
+ - order: 4
+   kind: translate
+   prompt_ru: Они дешёвые!
+diff --git a/content/seed_lessons/a1_w06_l11_present_simple.yaml b/content/seed_lessons/a1_w06_l11_present_simple.yaml
+index 2d239cf..19ea587 100644
+--- a/content/seed_lessons/a1_w06_l11_present_simple.yaml
++++ b/content/seed_lessons/a1_w06_l11_present_simple.yaml
+@@ -21,7 +21,7 @@ contractions:
+   - full: "do not"
+     short: "don't"
+     ipa: "/doʊnt/"
+-    note_ru: "I don't work at five — «Я не работаю в пять». В разговоре почти всегда don't."
++    note_ru: "I don't work at five — «Я не работаю в пять». В обычном разговоре часто используют don't. Полная форма do not тоже возможна, например для подчёркнутого отрицания."
+ layers:
+   - number: 1
+     body: |
+@@ -34,7 +34,7 @@ layers:
+       С **I** и **you** в простом утверждении о привычке глагол обычно без окончания **-s**: *I work*, *you work*. Перед точным временем действия ставьте **at**: *at five* — «в пять». Почему используется этот предлог, объяснит следующий урок. Главное действие здесь — *get up* («вставать»).
+   - number: 2
+     body: |
+-      **Present Simple** называют «простым настоящим» не потому, что **помощники никогда не нужны**, а потому, что в простом **утвердительном предложении** о привычке основной глагол обычно стоит в своей простой форме: *I work*. Но для **вопроса и отрицания** часто нужен **do**. Смысл времени — привычки, факты и регулярные действия, а не обязательно то, что происходит именно сейчас.
++      **Present Simple** — название грамматической формы, а не обещание, что помощники никогда не нужны. С изучаемыми здесь work, drink и have в утвердительной фразе с I о привычке используем форму как в словаре: *I work*. Для вопроса и отрицания с work нужен помощник **do**: *Do you work? I do not work.* Смысл времени — привычки, факты и регулярные действия, а не обязательно то, что происходит именно сейчас.
+ 
+       **breakfast** состоит из break («прервать») и fast («поститься»): после ночи без еды наступает завтрак.
+   - number: 3
+@@ -59,7 +59,7 @@ layers:
+ 
+       **Диагностика понимания:** Вы хотите узнать, работает ли человек обычно. Что верно: *Do you work?* или *Do you are work?*?
+ 
+-      **Разбор:** *Do you work?* В таком вопросе **do** уже вспомогательный глагол; **are** сюда не добавляют. Сравните с *Are you busy?*: там основное слово **busy** описывает состояние, поэтому нужен **be**.
++      **Разбор:** *Do you work?* В таком вопросе **do** уже вспомогательный глагол; **are** сюда не добавляют. Сравните с *Are you busy?*: **busy** — прилагательное «занят», а не глагол. В полном вопросе с этим прилагательным нужна форма **be**: *Are you busy?* Глагол **work** строит вопрос с **do**: *Do you work?* Дело не в различии действия и состояния: например, о предпочтении говорим *I like coffee*, без be.
+   - number: 5
+     body: |
+       Так звучит разговор о дне в Америке:
+@@ -93,7 +93,7 @@ layers:
+       - *You work?* может звучать как **короткий разговорный переспрос или удивление**, но для обычного вопроса о привычке учим *Do you work?*. Это **не** означает, что первый вариант невозможен во всех ситуациях.
+       - «go to home» — домой идут без to: I go home.
+ 
+-      С **he / she** (а также с **it** и одним названным человеком) обычный глагол в Present Simple получает форму с **-s**: *she works*. В этой неделе достаточно освоить I / you; -s подробно изучим в следующем уроке.
++      В **утверждении о привычке** с **he / she / it** или именем одного человека у большинства глаголов появляется **-s / -es**: *she works*. У некоторых глаголов формы особые; например, у знакомого **be** — *is*. Подробно формы, вопросы и отрицания с **he / she / it** разберём в **уроке 13**, на следующей неделе. Здесь тренируем **I / you**.
+   - number: 7
+     body: |
+       Шесть заданий: узнать вопрос о привычке, вставить do, собрать фразу о своём утре, ответить в новой ситуации, выбрать глагол для душа и описать свой вечер.
+@@ -141,7 +141,7 @@ exercises:
+     accepted: ["Yes I do", "Yes, I do", "Yes. I do."]
+     hint_ru: "Короткий ответ повторяет помощника do."
+     explanation_ru: "Yes, I do. Повторять work не нужно — короткий ответ строится на do."
+-    units: [LX-00128, LX-00134]
++    units: []
+   - order: 5
+     uid: EX-00060
+     kind: choice
+@@ -156,10 +156,10 @@ exercises:
+     uid: EX-00061
+     kind: fill
+     stage: transfer
+-    prompt_ru: "Расскажите о своём вечере двумя фразами: «Я смотрю телевизор. Я рано ложусь спать»."
++    prompt_ru: "Передайте две мысли о своём обычном вечере: «Я смотрю телевизор. Я рано ложусь спать». Можно соединить их с and."
+     prompt_en: "___"
+     answer: "I watch TV. I go to bed early."
+-    accepted: ["I watch TV. I go to bed early", "I watch TV, and I go to bed early."]
++    accepted: ["I watch TV. I go to bed early", "I watch TV, and I go to bed early.", "I watch TV and go to bed early."]
+     hint_ru: "watch TV — без артикля; go to bed early."
+     explanation_ru: "I watch TV. I go to bed early. — после I глагол без -s, а TV и bed без артикля."
+     units: [LX-00305, LX-00313, LX-00318]
+@@ -172,13 +172,7 @@ practice:
+   hint_ru: «Встаю» — get up.
+   explanation_ru: I get up at six. Привычка — Present Simple; время — at six.
+   review_of: 3
+-  units:
+-  - LX-00124
+-  - LX-00125
+-  - LX-00126
+-  - LX-00137
+-  - LX-00139
+-  - LX-00318
++  units: ["LX-00124", "LX-00125", "LX-00126"]
+ - order: 2
+   kind: translate
+   prompt_ru: Я работаю каждый день.
+@@ -186,18 +180,13 @@ practice:
+   hint_ru: every day — в конце.
+   explanation_ru: I work every day. С I глагол без -s.
+   review_of: 1
+-  units:
+-  - LX-00128
+-  - LX-00134
+-  - LX-00137
+-  - LX-00139
+-  - LX-00318
++  units: ["LX-00128", "LX-00134"]
+ - order: 3
+   kind: translate
+   prompt_ru: Ты завтракаешь?
+   answer: Do you have breakfast?
+   hint_ru: «Завтракать» — have breakfast.
+-  explanation_ru: 'Do you have breakfast? Завтракать по-английски — «иметь завтрак»: have breakfast.'
++  explanation_ru: "Do you have breakfast? Have breakfast — устойчивое сочетание «завтракать». Здесь have сообщает о приёме пищи, а не о владении завтраком."
+   review_of: 2
+   units:
+   - LX-00130
+@@ -209,8 +198,4 @@ practice:
+   hint_ru: 'Время в конце: at seven.'
+   explanation_ru: I drink coffee at seven. Время обычно ставят в конец фразы.
+   review_of: 3
+-  units:
+-  - LX-00129
+-  - LX-00137
+-  - LX-00139
+-  - LX-00318
++  units: ["LX-00129", "LX-00139"]
+diff --git a/content/seed_lessons/a1_w06_l12_time.yaml b/content/seed_lessons/a1_w06_l12_time.yaml
+index b649d55..f5e7138 100644
+--- a/content/seed_lessons/a1_w06_l12_time.yaml
++++ b/content/seed_lessons/a1_w06_l12_time.yaml
+@@ -117,7 +117,7 @@ exercises:
+     answer: "at"
+     hint_ru: "Точный час — точка на часах."
+     explanation_ru: "at six — at ставят перед точным временем."
+-    units: [LX-00136]
++    units: []
+   - order: 3
+     uid: EX-00064
+     kind: build
+@@ -135,10 +135,10 @@ exercises:
+     prompt_ru: "Новая ситуация: друг спрашивает, во сколько вы завтракаете. Вы завтракаете в восемь. Ответьте."
+     prompt_en: "What time do you have breakfast? — ___"
+     answer: "I have breakfast at eight."
+-    accepted: ["At eight.", "At eight", "I have breakfast at eight", "At eight o'clock.", "I have breakfast at eight o'clock.", "Eight o'clock.", "At 8."]
++    accepted: ["At eight.", "At eight", "I have breakfast at eight", "At eight o'clock.", "I have breakfast at eight o'clock.", "Eight o'clock.", "At 8.", "I have breakfast at 8.", "I have breakfast at 8 o'clock.", "At 8 o'clock."]
+     hint_ru: "at + число."
+     explanation_ru: "I have breakfast at eight. Коротко — At eight."
+-    units: [LX-00130, LX-00136]
++    units: ["LX-00130"]
+   - order: 5
+     uid: EX-00066
+     kind: choice
+@@ -180,8 +180,7 @@ practice:
+   hint_ru: «Во сколько» — at.
+   explanation_ru: I eat at twelve. Время действия — с at.
+   review_of: 2
+-  units:
+-  - LX-00136
++  units: ["LX-00303"]
+ - order: 3
+   kind: translate
+   prompt_ru: Который час?
+@@ -189,10 +188,7 @@ practice:
+   hint_ru: Вопрос о времени сейчас — What time…?
+   explanation_ru: What time is it? Вопрос о том, который час сейчас.
+   review_of: 1
+-  units:
+-  - LX-00133
+-  - LX-00135
+-  - LX-00140
++  units: ["LX-00133"]
+ - order: 4
+   kind: translate
+   prompt_ru: Во сколько ты встаёшь?
+@@ -200,9 +196,4 @@ practice:
+   hint_ru: What time + do you…?
+   explanation_ru: What time do you get up? Вопрос о привычке строится через do.
+   review_of: 3
+-  units:
+-  - LX-00133
+-  - LX-00135
+-  - LX-00136
+-  - LX-00124
+-  - LX-00126
++  units: ["LX-00133", "LX-00135", "LX-00124", "LX-00125", "LX-00126"]
+diff --git a/content/seed_lexicon/a1_w05_shop.yaml b/content/seed_lexicon/a1_w05_shop.yaml
+index b3dec5d..435f55e 100644
+--- a/content/seed_lexicon/a1_w05_shop.yaml
++++ b/content/seed_lexicon/a1_w05_shop.yaml
+@@ -29,7 +29,7 @@ units:
+   example_en: '[D1]Is[/] [T9]there[/] [S3]milk[/]?'
+   example_ru: Молоко есть?
+   situation: Покупаете продукты
+-  usage_note: 'milk не считают штуками: нельзя a milk или two milks в значении «два молока».'
++  usage_note: "Когда milk означает молоко как вещество, его не считают штуками: some milk, there is milk. В заказе a milk / two milks может обозначать одну или две порции. В этом уроке тренируем общее значение вещества."
+ - uid: LX-00109
+   lemma: apple
+   meaning: a round red or green fruit
+diff --git a/content/seed_lexicon/a1_w06_day_plus.yaml b/content/seed_lexicon/a1_w06_day_plus.yaml
+index 8f7d1c7..b31210d 100644
+--- a/content/seed_lexicon/a1_w06_day_plus.yaml
++++ b/content/seed_lexicon/a1_w06_day_plus.yaml
+@@ -56,7 +56,7 @@ units:
+   example_en: '[T8]I[/] [D6]watch[/] [S2]TV[/] [P1]in[/] [T1]the[/] [S7]evening[/].'
+   example_ru: Вечером я смотрю телевизор.
+   situation: Рассказываете о своём дне
+-  usage_note: 'watch — смотреть то, что движется: TV, фильм. Без артикля: watch TV.'
++  usage_note: "Watch — внимательно смотреть или наблюдать некоторое время. Объект не обязательно движется. В watch TV речь о просмотре телепередач; перед TV артикль не ставим."
+ - uid: LX-00306
+   lemma: listen
+   meaning: to pay attention to a sound
+@@ -73,7 +73,7 @@ units:
+   example_en: '[T8]I[/] [D6]listen[/] [P2]to[/] [S10]music[/] [P1]in[/] [T1]the[/] [S7]evening[/].'
+   example_ru: Вечером я слушаю музыку.
+   situation: Рассказываете о своём дне
+-  usage_note: 't не читается: «лисн». После listen нужен to: listen to.'
++  usage_note: "Listen — внимательно слушать. Если называем, кого или что слушаем, обычно добавляем to: listen to music. Без дополнения можно сказать Listen! или I listen."
+ - uid: LX-00307
+   lemma: come
+   meaning: to move towards the speaker or a place
+@@ -93,7 +93,7 @@ units:
+   usage_note: Пишется с o, звучит «кам». come home — без to.
+ - uid: LX-00308
+   lemma: take
+-  meaning: to do an action such as a shower or a bus
++  meaning: "to perform an action, as in take a shower"
+   class: D2
+   forms:
+   - takes
+@@ -125,7 +125,7 @@ units:
+   usage_note: 'Как и breakfast — без артикля: have lunch.'
+ - uid: LX-00310
+   lemma: dinner
+-  meaning: the main meal of the evening
++  meaning: "the main meal of the day, often eaten in the evening"
+   class: S3
+   forms:
+   - dinners
+@@ -137,7 +137,7 @@ units:
+   example_en: '[T8]I[/] [D2]have[/] [S3]dinner[/] [P3]at[/] [N3]seven[/].'
+   example_ru: Я ужинаю в семь.
+   situation: Рассказываете о своём дне
+-  usage_note: В США dinner — вечерняя еда, около шести-семи.
++  usage_note: "Dinner — основной приём пищи дня, часто вечером. В этом уроке переводим как «ужин»; время зависит от семьи и ситуации. Например, Sunday dinner может быть днём."
+ - uid: LX-00311
+   lemma: afternoon
+   meaning: the time from midday to evening
+@@ -152,7 +152,7 @@ units:
+   example_en: '[T8]I[/] [D2]work[/] [P1]in[/] [T1]the[/] [S7]afternoon[/].'
+   example_ru: Днём я работаю.
+   situation: Рассказываете о своём дне
+-  usage_note: 'in the afternoon — с 12 до 5–6 вечера. Ударение в конце: afterNOON.'
++  usage_note: 'in the afternoon — после полудня, до вечера; точная граница зависит от ситуации. Ударение в конце: afterNOON.'
+ - uid: LX-00312
+   lemma: evening
+   meaning: the time from about six until night
+diff --git a/content/seed_poems/p03_what_time_is_it.yaml b/content/seed_poems/p03_what_time_is_it.yaml
+index a90184d..c18bef6 100644
+--- a/content/seed_poems/p03_what_time_is_it.yaml
++++ b/content/seed_poems/p03_what_time_is_it.yaml
+@@ -3,7 +3,6 @@ target_units:
+ - LX-00124
+ - LX-00125
+ - LX-00127
+-- LX-00128
+ - LX-00129
+ - LX-00132
+ - LX-00133
+@@ -19,15 +18,15 @@ body: |
+   [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?
+   [T8]It[/] [D1]is[/] [N3]seven o'clock[/]!
+   [T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/],
+-  [C1]and[/] [T8]I[/] [D4]go[/] [P2]to[/] [D2]work[/].
++  [C1]and[/] [T8]I[/] [D4]go[/] [P2]to[/] [S9]work[/].
+ 
+   [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Twelve[/]!
+   [T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/].
+-  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N1]Ten[/]?
++  [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Ten[/]?
+   [S3]Coffee[/] [A2]again[/]!
+ 
+   [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Seven[/]!
+-  [T1]A[/] [J1]big[/] [S6]cat[/] [D4]comes[/] [P1]in[/].
++  [T1]A[/] [J1]big[/] [S6]cat[/] [D4]comes[/] [X3]in[/].
+   [T5]Every[/] [S7]day[/] [P3]at[/] [N3]seven[/]
+   [T1]the[/] [S6]cat[/] [D2]drinks[/] [T3]my[/] [S3]milk[/]!
+ 
+diff --git a/content/seed_stories/s02_cafe_on_the_corner.yaml b/content/seed_stories/s02_cafe_on_the_corner.yaml
+index 84b5b45..94556b2 100644
+--- a/content/seed_stories/s02_cafe_on_the_corner.yaml
++++ b/content/seed_stories/s02_cafe_on_the_corner.yaml
+@@ -2,8 +2,8 @@ number: 2
+ characters:
+ - Anna
+ - Mia
+-grammar_ru: Present Simple с I и you; время at seven, seven o'clock; there is; притяжательное 's (Mia's milk)
+-prediction_ru: Посмотрите на название и описания картинок. Кто этот кот в кафе? И куда он потом исчезнет?
++grammar_ru: 'Настоящее в рассказе и привычках; время at seven; there is. Comes, drinks, likes и has пока узнаём по смыслу; самостоятельно строить формы для he/she/it научимся в уроке 13.'
++prediction_ru: I go в рассказе — «иду» в цепочке событий, Every day — привычка. Comes/drinks/likes — формы для he/she/it; has — форма have. Пока узнавайте их по смыслу; подробный разбор — урок 13. Кто кот в кафе и куда он исчезнет?
+ visual_cues:
+ - Раннее утро. Небольшое кафе на углу улицы, в окне горит свет. Часы над дверью показывают ровно семь.
+ - У стойки большой рыжий кот пьёт молоко из блюдца. Мия за стойкой улыбается.
+diff --git a/content/seed_weeks/a1_w05.yaml b/content/seed_weeks/a1_w05.yaml
+index f89af51..fbd6865 100644
+--- a/content/seed_weeks/a1_w05.yaml
++++ b/content/seed_weeks/a1_w05.yaml
+@@ -55,7 +55,6 @@ twister:
+   ipa: /ɪz ˈðɪs ˈtʃiz ˈtʃip | ɪz ˈðɪs ˈmɪlk ˈtʃip | ˈðɪs ˈtʃiz ɪz ˈtʃip | ˈðɪs ˈmɪlk ɪz ɪkˈspɛnsɪv/
+   focus_sounds:
+   - dh
+-  - ae
+   source: original
+   goal_ru: 'Короткое /ɪ/ (is, this, milk) против долгого /i/ (cheese, cheap). Ошибка №1 у русскоязычных: ship и sheep звучат одинаково.'
+   tip_ru: В cheese и cheap — улыбка и долгое «и-и». В is, this, milk — губы расслаблены, звук короткий, ближе к «ы». Утрируйте разницу.
+diff --git a/scripts/verify_atlas.cjs b/scripts/verify_atlas.cjs
+index 1c4655d..c478e56 100644
+--- a/scripts/verify_atlas.cjs
++++ b/scripts/verify_atlas.cjs
+@@ -71,6 +71,47 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
+     if(process.env.ATLAS_REDESIGN!=='1'){assert.equal(changed.length,0,`${name} ${width}: ${changed.join(', ')}`);assert.ok(maxDelta<=1,`${name} ${width}: geometry changed ${maxDelta}px`);}
+    }
+   }
++  // Editorial9–12: actual changed reading pages, in addition to the
++  // existing before/after geometry gate above (which remains unchanged).
++  const editorialPages=[
++   ['lesson09','/lessons/a1-there-is-some/',true],
++   ['lesson10','/lessons/a1-how-much-prices/',true],
++   ['lesson11','/lessons/a1-present-simple-i-you/',true],
++   ['lesson12','/lessons/a1-time-at-seven/',true],
++   ['story02','/stories/2/',false],['poem03','/stories/poems/3/',false]
++  ];
++  report.editorialPages=[];
++  for(const [width,height] of [[1440,900],[390,844]]){
++   const editorial=await browser.newContext({viewport:{width,height},reducedMotion:'reduce',isMobile:width<700,hasTouch:width<700});
++   try{
++    for(const [name,route,isLesson] of editorialPages){
++     const p=await editorial.newPage();
++     p.on('pageerror',error=>report.errors.push({name,state:'editorial',width,message:error.message}));
++     await ready(p,`http://127.0.0.1:8124${route}`);
++     assert.equal(new URL(p.url()).pathname,route,`${name}: unexpected redirect`);
++     assert.equal(await p.locator('h1').count(),1,`${name}: missing reading title`);
++     assert.equal(await p.locator('html').getAttribute('data-motion'),'minimal',`${name}: reduced motion ignored`);
++     const o=await overflow(p);assert.ok(o.scroll<=o.width+1,`${name} ${width}: horizontal overflow ${JSON.stringify(o)}`);
++     await p.screenshot({path:path.join(output,`editorial-${name}-${width}.png`)});
++     if(isLesson){
++      const fullMode=p.locator('[data-a1-route-mode="full"]');
++      if(await fullMode.count()){
++       await fullMode.focus();await fullMode.press('Enter');
++       assert.equal(await fullMode.getAttribute('aria-pressed'),'true',`${name}: full lesson inaccessible by keyboard`);
++      }
++      assert.equal(await p.locator('[data-lesson-reader] section[id^="layer-"]').count(),7,`${name}: seven layers lost`);
++      for(let n=1;n<=7;n++)assert.equal(await p.locator(`#layer-${n}`).isVisible(),true,`${name}: hidden layer${n}`);
++      const summary=p.locator('#beginner-steps > summary');await summary.focus();await summary.press('Enter');
++      assert.equal(await summary.evaluate(el=>el.parentElement.open),true,`${name}: keyboard explanation did not open`);
++      assert.equal(await p.locator('#beginner-steps .a1-step-list > li').count(),3,`${name}: incomplete explanation`);
++      await p.screenshot({path:path.join(output,`editorial-${name}-${width}-explanation.png`)});
++     }
++     report.editorialPages.push({name,route,width,height,reducedMotion:true,overflow:o,keyboardExplanation:isLesson});
++     await p.close();
++    }
++   }finally{await editorial.close();}
++  }
++  report.checks.push('Editorial9–12 lessons, story2 and poem3 readable at1440/390; seven layers and keyboard explanations accessible; reduced-motion and overflow checked');
+   // All chapter covers load; each has a stable, explicitly sized image box.
+   const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'});
+   const page=await context.newPage();
+diff --git a/templates/poems/detail.html b/templates/poems/detail.html
+index 53101db..6402b80 100644
+--- a/templates/poems/detail.html
++++ b/templates/poems/detail.html
+@@ -6,7 +6,7 @@
+   <header class="page-head">
+     <p class="crumbs"><a href="{% url 'stories:map' %}">Истории и стихи</a> / {{ poem.level.code }}, неделя {{ poem.week.number }} / стихотворение {{ poem.number }}</p>
+     <h1 lang="en">{{ poem.title }}</h1>
+-    <p>{{ poem.theme_ru }}. Рифма {{ poem.rhyme_scheme }}. Стихотворение не вводит новых слов: оно тренирует произношение на знакомых.</p>
++    <p>{{ poem.theme_ru }}. Рифма {{ poem.rhyme_scheme }}. {% if poem.number == 3 and poem.level.code == "A1" %}Повторяем лексику и тренируем произношение. Готовые выражения выше даны для понимания; самостоятельно строить их пока не требуется.{% else %}Стихотворение не вводит новых слов: оно тренирует произношение на знакомых.{% endif %}</p>
+   </header>
+   <div class="lesson-grid">
+     <article class="prose">
+diff --git a/tests/test_a1_deep_09_12_shared.py b/tests/test_a1_deep_09_12_shared.py
+new file mode 100644
+index 0000000..1b59096
+--- /dev/null
++++ b/tests/test_a1_deep_09_12_shared.py
+@@ -0,0 +1,192 @@
++"""Real prerequisite, answer, review and contextual-marker checks for A1 9–12."""
++from datetime import timedelta
++import json
++from html.parser import HTMLParser
++
++from django.contrib.auth import get_user_model
++from django.test import TestCase
++from django.urls import reverse
++from django.utils import timezone
++
++from apps.curriculum.models import TongueTwister
++from apps.drills.models import Exercise
++from apps.learning.mistake_review import variants_for
++from apps.learning.models import IndependentAttempt, MistakeReview, UnitProgress
++from apps.learning.understanding import understanding_bank
++from apps.lessons.models import Lesson
++from apps.lexicon.phonetics import IPA_OF_HINT
++from apps.poems.models import Poem
++from apps.publishing.audit import is_known, text_tokens, vocab_until
++from tests.runner import ensure_content
++
++SLUGS = ('a1-there-is-some', 'a1-how-much-prices', 'a1-present-simple-i-you', 'a1-time-at-seven')
++
++
++class SharedDeepA10912Tests(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        ensure_content()
++
++    def test_cold_transfer_models_use_vocabulary_available_at_the_week(self):
++        for slug in SLUGS:
++            lesson = Lesson.objects.select_related('level', 'week').get(slug=slug)
++            vocabulary = vocab_until(lesson.level, lesson.week.number)
++            guide = understanding_bank()[slug]
++            for task in (guide['tasks']['writing'], guide['tasks']['transfer'], *guide['transfer_variants']):
++                with self.subTest(slug=slug, model=task['model']):
++                    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
++
++    def test_micro_correct_answers_use_available_vocabulary(self):
++        for slug in SLUGS:
++            lesson = Lesson.objects.select_related('level', 'week').get(slug=slug)
++            vocabulary = vocab_until(lesson.level, lesson.week.number)
++            for exercise in lesson.exercises.all():
++                for slot, card in enumerate(variants_for(exercise)):
++                    with self.subTest(uid=exercise.uid, slot=slot):
++                        self.assertEqual([t for t in text_tokens(card[2][card[3]]) if not is_known(t, vocabulary)], [])
++
++    def test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning(self):
++        user = get_user_model().objects.create_user(email='deep-price-shared@example.test', password='Example-pass-123!')
++        self.client.force_login(user)
++        lesson = Lesson.objects.get(slug='a1-how-much-prices')
++        url = reverse('learning:independent_check', args=[lesson.slug])
++        good = ('It is three dollars.', "It's three dollars.", 'That is three dollars.', "That's three dollars.",
++                'It is 3 dollars.', "It's 3 dollars.", 'That is 3 dollars.', "That's 3 dollars.")
++        bad = ('It is four dollars.', 'It is not three dollars.', 'Is it three dollars?',
++               'It three dollars is.', 'That is three dollar.', 'You are three dollars.')
++        for answer in (*good, *bad):
++            with self.subTest(answer=answer):
++                page = self.client.get(url)
++                guide = page.context['guide']
++                form = {'action': 'batch', 'assistance': 'no_help',
++                        'batch_token': page.context['batch_token'],
++                        'transfer_variant': str(page.context['transfer_variant']),
++                        **{'answer_' + key: guide['tasks'][key]['model'] for key in ('meaning','writing','transfer','explain')}}
++                form['answer_writing'] = answer
++                response = self.client.post(url, form)
++                self.assertEqual(response.status_code, 200)
++                attempt = IndependentAttempt.objects.filter(user=user, lesson=lesson, skill='writing').latest('pk')
++                self.assertEqual(attempt.submitted, answer)
++                self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if answer in good else IndependentAttempt.Outcome.NEEDS_REVIEW)
++        self.assertFalse(UnitProgress.objects.filter(user=user).exists())
++
++    def test_poem_clock_and_work_labels_reflect_their_contextual_functions(self):
++        poem = Poem.objects.get(number=3)
++        response = self.client.get(reverse('stories:poem', args=[3]))
++        self.assertEqual(response.status_code, 200)
++        class Labels(HTMLParser):
++            def __init__(self):
++                super().__init__(); self.span = None; self.rows = []
++            def handle_starttag(self, tag, attrs):
++                if tag == 'span': self.span = dict(attrs)
++            def handle_data(self, data):
++                if self.span and data.strip() in ('Ten', 'work', 'in'):
++                    self.rows.append((data.strip(), self.span.get('data-cat'), self.span.get('data-label','')))
++            def handle_endtag(self, tag):
++                if tag == 'span': self.span = None
++        parser = Labels(); parser.feed(response.content.decode())
++        times = [r for r in parser.rows if r[0]=='Ten']; jobs = [r for r in parser.rows if r[0]=='work']
++        self.assertTrue(times); self.assertTrue(jobs)
++        particles = [r for r in parser.rows if r[0]=='in']
++        self.assertTrue(particles)
++        for word, category, suffix, records in (
++            ('Ten','N','Время на часах',times),
++            ('work','S','Работа, учёба, общение',jobs),
++            ('in','X','Частицы фразовых глаголов: направление',particles)):
++            with self.subTest(contextual_word=word):
++                self.assertTrue(all(cat==category and label.endswith(suffix) for _,cat,label in records),records)
++        # This lexical UID is only the verb "to do a job"; the poem contains its noun counterpart.
++        with self.subTest(contextual_word='verb lexical target'):
++            self.assertNotIn('LX-00128', {u.uid for u in response.context['targets']})
++        # Removing the unrelated glossary link must not remove a gap or change its solution.
++        self.assertEqual(sum(r['gap'] is not None for r in response.context['gapped']),len(poem.gaps))
++        self.assertEqual([g['word'] for g in poem.gaps], ['five','seven','twelve','time','bed'])
++
++    def test_twister_declared_simple_focus_sounds_occur_in_its_ipa(self):
++        twister = TongueTwister.objects.get(number=5)
++        self.assertTrue(twister.focus_sounds)
++        for hint in twister.focus_sounds:
++            sound = IPA_OF_HINT[hint]
++            with self.subTest(hint=hint):
++                self.assertIn(sound, twister.ipa)
++
++    def test_all_five_milk_question_contexts_keep_rotated_keys_and_real_feedback(self):
++        user = get_user_model().objects.create_user(email='micro-shared@example.test', password='Example-pass-123!')
++        self.client.force_login(user)
++        exercise = Exercise.objects.get(lesson__slug='a1-there-is-some', order=1)
++        cards = variants_for(exercise)
++        self.assertEqual(len(cards),5)
++        self.assertEqual(len({r[0] for r in cards}),5)
++        for slot, card in enumerate(cards):
++            self.assertEqual(card[3],(-slot)%3)
++            for choice in range(3):
++                with self.subTest(slot=slot,choice=choice):
++                    review,_=MistakeReview.objects.update_or_create(user=user,exercise=exercise,
++                        defaults={'due_at':timezone.now()-timedelta(seconds=1),'current_index':slot,'correct_count':0,'completed_at':None})
++                    response=self.client.post(reverse('learning:mistake_review'),{'review_id':review.pk,'index':slot,'choice':choice})
++                    self.assertEqual(response.status_code,200)
++                    result=response.context['answer_result']
++                    self.assertEqual(result['correct'],choice==card[3])
++                    self.assertEqual(result['model'],card[2][card[3]])
++                    self.assertEqual(result['reason'],card[4])
++
++    def test_poem_gap_api_still_checks_the_five_original_words_without_vocabulary_progress(self):
++        user = get_user_model().objects.create_user(email='poem-gap-shared@example.test', password='Example-pass-123!')
++        self.client.force_login(user)
++        for index, word in enumerate(('five', 'seven', 'twelve', 'time', 'bed')):
++            for submitted, expected in ((word, True), ('wrong', False)):
++                with self.subTest(index=index, submitted=submitted):
++                    response = self.client.post(reverse('api:check_poem_gap', args=[3,index]),
++                        json.dumps({'answer':submitted}),content_type='application/json')
++                    self.assertEqual(response.status_code,200)
++                    self.assertEqual(response.json()['correct'],expected)
++        self.assertFalse(UnitProgress.objects.filter(user=user).exists())
++
++    def test_poem_three_prepares_its_chunks_and_other_intro_text_stays_the_same(self):
++        class Intro(HTMLParser):
++            def __init__(self):
++                super().__init__(); self.header=False; self.in_p=False; self.text=[]; self.paragraphs=[]
++            def handle_starttag(self, tag, attrs):
++                if tag=='header' and 'page-head' in dict(attrs).get('class','').split(): self.header=True
++                if self.header and tag=='p': self.in_p=True; self.text=[]
++            def handle_data(self, text):
++                if self.in_p: self.text.append(text)
++            def handle_endtag(self, tag):
++                if self.in_p and tag=='p': self.paragraphs.append(''.join(self.text)); self.in_p=False
++                if tag=='header': self.header=False
++        def intro(poem):
++            response=self.client.get(reverse('stories:poem',args=[poem.number]))
++            self.assertEqual(response.status_code,200)
++            parsed=Intro();parsed.feed(response.content.decode())
++            return next(text for text in parsed.paragraphs if text.startswith(poem.theme_ru))
++        poem=Poem.objects.get(number=3)
++        prepared=intro(poem)
++        for pairing in ('go to work — идти на работу','coffee again — снова кофе','comes in — входит'):
++            self.assertIn(pairing,prepared)
++        self.assertNotIn('не вводит новых слов',prepared)
++        self.assertIn('для понимания',prepared)
++        # Other-level route is made renderable only in this transactional test;
++        # no unpublished A1+ text is represented as actually reviewed content.
++        next_level=Poem.objects.filter(level__code='A1+').first()
++        self.assertIsNotNone(next_level)
++        next_level.is_published=True;next_level.body='[T8]I[/] [D1]am[/] [A3]here[/].';next_level.save(update_fields=['is_published','body'])
++        for other in (Poem.objects.get(number=2),next_level):
++            self.assertEqual(intro(other),f'{other.theme_ru}. Рифма {other.rhyme_scheme}. Стихотворение не вводит новых слов: оно тренирует произношение на знакомых.')
++
++    def test_water_transfer_model_is_a_known_question_plus_request_and_stays_self_reported(self):
++        user=get_user_model().objects.create_user(email='water-shared@example.test',password='Example-pass-123!')
++        self.client.force_login(user)
++        lesson=Lesson.objects.select_related('level','week').get(slug='a1-there-is-some')
++        url=reverse('learning:independent_check',args=[lesson.slug])
++        page=self.client.get(url);guide=page.context['guide'];task=guide['tasks']['transfer'];vocabulary=vocab_until(lesson.level,lesson.week.number)
++        self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t,vocabulary)],[])
++        question,request=task['model'].split('?',1)
++        self.assertRegex(question+'?',r'^Is there (?:some |any )?water\?$')
++        self.assertRegex(request.strip(),r'^Can I have (?:some )?water, please\?$')
++        form={'action':'batch','assistance':'no_help','batch_token':page.context['batch_token'],'transfer_variant':str(page.context['transfer_variant']),
++            **{'answer_'+key:guide['tasks'][key]['model'] for key in ('meaning','writing','transfer','explain')}}
++        form['answer_transfer']=task['model']
++        response=self.client.post(url,form);self.assertEqual(response.status_code,200)
++        saved=IndependentAttempt.objects.get(user=user,skill='transfer')
++        self.assertEqual(saved.submitted,task['model']);self.assertEqual(saved.outcome,IndependentAttempt.Outcome.SELF_REPORTED)
++        self.assertFalse(UnitProgress.objects.filter(user=user).exists())
+diff --git a/tests/test_a1_editorial_deep_09_12.py b/tests/test_a1_editorial_deep_09_12.py
+new file mode 100644
+index 0000000..5fb30fd
+--- /dev/null
++++ b/tests/test_a1_editorial_deep_09_12.py
+@@ -0,0 +1,146 @@
++"""Behavior regressions for A1 9–12: local keys and honest progress evidence."""
++import json
++
++from django.test import TestCase
++
++from apps.accounts.models import User
++from apps.drills.models import Exercise, PracticeItem
++from apps.learning.models import ExerciseAttempt, UnitProgress
++from tests.runner import ensure_content
++
++SLUGS = ('a1-there-is-some', 'a1-how-much-prices',
++         'a1-present-simple-i-you', 'a1-time-at-seven')
++
++
++class A1DeepNineTwelveTests(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        ensure_content()
++        cls.user = User.objects.create_user('deep-nine@example.com', 'test-nine-only')
++
++    def setUp(self):
++        self.client.force_login(self.user)
++
++    def check(self, collection, item, text, expected):
++        response = self.client.post(f'/api/{collection}/{item.pk}/check/',
++                                   json.dumps({'answer': text}), content_type='application/json')
++        self.assertEqual(response.status_code, 200)
++        data = response.json()
++        self.assertEqual(data['correct'], expected, text)
++        if collection == 'practice' or item.stage == Exercise.Stage.TRANSFER:
++            self.assertEqual(data['assessment'], 'model_match' if expected else 'needs_review')
++
++    def test_water_presence_allows_full_contracted_reply_not_changed_polarity(self):
++        item = Exercise.objects.get(uid='EX-00047')
++        for text, expected in (("Yes, there's water.", True), ("There's water.", True),
++                               ('Yes, there is.', True), ("Yes, there's.", False),
++                               ("There's no water.", False), ('Yes, there are water.', False),
++                               ("There's milk.", False)):
++            with self.subTest(answer=text):
++                self.check('exercises', item, text, expected)
++
++    def test_apple_price_keeps_the_requested_subject_and_five_dollars(self):
++        item = Exercise.objects.get(uid='EX-00053')
++        for text, expected in (('They are 5 dollars.', True), ("They're 5 dollars.", True),
++                               ("They're five dollars.", True), ('They are four dollars.', False),
++                               ('They are not five dollars.', False), ('It is five dollars.', False),
++                               ('Five dollars.', False), ('They five dollars are.', False)):
++            with self.subTest(answer=text):
++                self.check('exercises', item, text, expected)
++
++    def test_evening_actions_allow_shared_i_but_keep_both_actions(self):
++        item = Exercise.objects.get(uid='EX-00061')
++        for text, expected in (('I watch TV and go to bed early.', True),
++                               ('I watch TV. I go to bed early.', True),
++                               ('I watch TV and I go to bed early.', True),
++                               ('I watch TV and go to bed late.', False),
++                               ("I don't watch TV and go to bed early.", False),
++                               ('I watch TV.', False), ('You watch TV and go to bed early.', False)):
++            with self.subTest(answer=text):
++                self.check('exercises', item, text, expected)
++
++    def test_breakfast_time_allows_digits_but_not_different_time_or_meal(self):
++        item = Exercise.objects.get(uid='EX-00065')
++        for text, expected in (('I have breakfast at 8.', True),
++                               ("I have breakfast at 8 o'clock.", True),
++                               ("At 8 o'clock.", True), ('At eight.', True),
++                               ('I have breakfast at 9.', False), ('I have lunch at 8.', False),
++                               ('I have breakfast in 8.', False),
++                               ("I don't have breakfast at 8.", False)):
++            with self.subTest(answer=text):
++                self.check('exercises', item, text, expected)
++
++    def check_practice_credits(self, slug, expected):
++        for order, uids in expected.items():
++            item = PracticeItem.objects.get(lesson__slug=slug, order=order)
++            UnitProgress.objects.filter(user=self.user).delete()
++            self.check('practice', item, item.answer, True)
++            actual = set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid', flat=True))
++            with self.subTest(lesson=slug, translation=order, submitted=item.answer):
++                self.assertEqual(actual, set(uids))
++
++    def test_shop_translations_do_not_credit_unspoken_milk_question_or_request(self):
++        self.check_practice_credits(SLUGS[0], {
++            1: ['LX-00108', 'LX-00112', 'LX-00119'],
++            2: ['LX-00109', 'LX-00112'],
++            3: ['LX-00111', 'LX-00112'],
++            4: ['LX-00109', 'LX-00286'],
++        })
++
++    def test_price_questions_do_not_credit_a_price_answer_or_expensive_reaction(self):
++        self.check_practice_credits(SLUGS[1], {
++            1: ['LX-00114', 'LX-00115', 'LX-00108'],
++            2: ['LX-00116', 'LX-00123'],
++            3: ['LX-00114', 'LX-00115', 'LX-00109'],
++            4: ['LX-00293'],
++        })
++
++    def test_daily_routine_translations_do_not_credit_unrelated_full_phrases(self):
++        self.check_practice_credits(SLUGS[2], {
++            1: ['LX-00124', 'LX-00125', 'LX-00126'],
++            2: ['LX-00128', 'LX-00134'],
++            3: ['LX-00130', 'LX-00138'],
++            4: ['LX-00129', 'LX-00139'],
++        })
++
++    def test_clock_question_does_not_credit_a_waking_question_or_clock_answer(self):
++        self.check_practice_credits(SLUGS[3], {
++            1: ['LX-00132', 'LX-00140'],
++            2: ['LX-00303'],
++            3: ['LX-00133'],
++            4: ['LX-00133', 'LX-00135', 'LX-00124', 'LX-00125', 'LX-00126'],
++        })
++
++    def main_credits(self, uid, uids):
++        item = Exercise.objects.get(uid=uid)
++        self.check('exercises', item, item.answer, True)
++        actual = set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid', flat=True))
++        self.assertEqual(actual, set(uids))
++        saved = ExerciseAttempt.objects.get(user=self.user, exercise=item)
++        self.assertEqual(saved.exercise.uid, uid)
++        self.assertTrue(saved.is_correct)
++
++    def test_five_dollar_apple_answer_does_not_credit_it_is_two_dollars(self):
++        self.main_credits('EX-00053', ['LX-00116'])
++
++    def test_yes_i_do_records_attempt_without_claiming_a_work_or_every_word(self):
++        self.main_credits('EX-00059', [])
++
++    def test_filling_at_does_not_claim_an_entire_five_oclock_waking_phrase(self):
++        self.main_credits('EX-00063', [])
++
++    def test_breakfast_at_eight_does_not_credit_i_get_up_at_five(self):
++        self.main_credits('EX-00065', ['LX-00130'])
++
++    def test_targeted_build_tasks_reject_changed_order_negation_and_subject(self):
++        cases = {
++            'EX-00046': ('Can I have some apples please', 'Can have I some apples please'),
++            'EX-00052': ('How much is the milk', 'How much the milk is'),
++            'EX-00058': ('At seven I drink coffee', 'I drink at coffee seven'),
++            'EX-00064': ('What time do you get up', 'What time you do get up'),
++        }
++        for uid, (good, bad) in cases.items():
++            item = Exercise.objects.get(uid=uid)
++            with self.subTest(uid=uid):
++                self.check('exercises', item, good, True)
++                self.check('exercises', item, bad, False)
+diff --git a/tests/test_a1_mistake_review.py b/tests/test_a1_mistake_review.py
+index f72beb4..3a3e3c0 100644
+--- a/tests/test_a1_mistake_review.py
++++ b/tests/test_a1_mistake_review.py
+@@ -267,13 +267,28 @@ class A1MistakeReviewTests(TestCase):
+         self.assertContains(page, "Is there")
+         # The answer index is deliberately NOT visible until an attempt.
+         self.assertNotContains(page, "data-answer=")
++        question = variants_for(ex)[0]
++        self.assertTrue(question[4])
++        self.assertNotEqual(question[4], variants_for(other)[0][4])
++        self.assertNotContains(page, question[4])
++        # A review must explain this new card, never the original exercise.
++        original_reason = "Original exercise explanation must not leak into a review card."
++        ex.explanation_ru = original_reason
++        ex.save(update_fields=["explanation_ru"])
+         checked = self.client.post(reverse("learning:mistake_review"), {
+             "review_id": item.pk, "index": 0, "choice": 1,
+         })
+         self.assertEqual(checked.status_code, 200)
+-        self.assertContains(checked, "С неисчисляемым напитком")
++        result = checked.context["answer_result"]
++        self.assertFalse(result["correct"])
++        self.assertEqual(result["chosen"], question[2][1])
++        self.assertEqual(result["model"], question[2][question[3]])
++        self.assertEqual(result["reason"], question[4])
++        self.assertContains(checked, question[4])
++        self.assertNotContains(checked, original_reason)
+         item.refresh_from_db()
+         self.assertEqual(item.current_index, 1)
++        self.assertEqual(item.correct_count, 0)
+ 
+     def test_lesson_twenty_eight_confirmed_error_does_not_schedule_immediately(self):
+         ex = Exercise.objects.get(lesson__slug="a1-review-everything", order=1)
+diff --git a/tests/test_a1_scaffold_variants.py b/tests/test_a1_scaffold_variants.py
+index d8a87c1..e823fd7 100644
+--- a/tests/test_a1_scaffold_variants.py
++++ b/tests/test_a1_scaffold_variants.py
+@@ -132,7 +132,11 @@ class ThreeStepEditorialTests(SimpleTestCase):
+         self.assertEqual(book["model"], "The book is here.")
+         water = guides["a1-there-is-some"]["tasks"]["transfer"]
+         self.assertIn("есть ли вода", water["prompt"])
+-        self.assertIn("any water", water["model"])
++        # The ordinary presence question does not require any. That word is
++        # not introduced in A1 week5; lexical prerequisites are checked by
++        # the shared 9–12 behavioral suite, rather than forced by this shape test.
++        question = water["model"].split("?", 1)[0] + "?"
++        self.assertRegex(question, r"^Is there (?:some |any )?water\?$")
+         self.assertIn("some water", water["model"])
+ 
+     def test_phone_readability_and_accessibility_contracts(self):

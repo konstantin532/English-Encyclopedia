@@ -1,0 +1,143 @@
+{
+  "author": "Codex independent read-only reviewer",
+  "date": "2026-10-25",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "checkpoint": "902ffccab6cf09927134e7be31ebabfe7b483e76",
+  "scope": {
+    "A1_lessons": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "core_exercises": 24,
+    "practice": 16,
+    "micro_specs": 24,
+    "micro_cases": 120,
+    "related": "six lexical packs, weeks5/6, poem3, story2, guides/scaffolds/active scenarios/error repairs"
+  },
+  "method": "Fresh current-source reading and before/after diff, stable identifier checks; no DB, browser or audio used",
+  "findings": [
+    {
+      "id": "FR01",
+      "type": "confirmed phonetic explanation inaccuracy",
+      "where": "L10 sound_notes Its two dollars",
+      "before": "первый звук открытый, как а",
+      "reason": "First sound is /d/, target is stressed vowel /ɑ/.",
+      "status": "parent applied; after read and accepted"
+    },
+    {
+      "id": "FR02",
+      "type": "methodological false generalization",
+      "where": "L11 layer4 busy explanation",
+      "reason": "State is not a criterion for selecting be: busy adjective vs work lexical verb is the relevant distinction; I like is a state without be.",
+      "status": "parent applied; after read and accepted",
+      "source": "https://www.ahdictionary.com/word/search.html?q=busy"
+    },
+    {
+      "id": "FR03",
+      "type": "unsupported explanatory derivation",
+      "where": "L11 layer2 Present Simple nomenclature",
+      "reason": "The name should not be explained as causal derivation from base verb form; preserve operational rule without a speculative name origin.",
+      "status": "parent applied; after read; final scope clarification FR11 pending"
+    },
+    {
+      "id": "FR04",
+      "type": "imprecise lexical definition",
+      "where": "LX-00308 take meaning",
+      "before": "to do an action such as a shower or a bus",
+      "reason": "A bus is not an action; it conflates a shower activity with a different usage.",
+      "status": "parent applied; after read and accepted"
+    },
+    {
+      "id": "FR05",
+      "type": "scope clarification",
+      "where": "LX-00311 afternoon usage_note",
+      "before": "с12до5–6вечера",
+      "reason": "Mark broad approximate period rather than a prescribed exact time boundary. This is a minor clarification, not an independent major grammar defect.",
+      "status": "parent applied; after read and accepted"
+    },
+    {
+      "id": "FR06",
+      "type": "linked false generalization",
+      "where": "understanding L11 fix",
+      "reason": "Scope no am to Present Simple with work; do not prohibit any be+action construction.",
+      "status": "parent applied; after read and accepted"
+    },
+    {
+      "id": "FR07",
+      "type": "linked false generalization",
+      "where": "understanding L11 contrast.why",
+      "reason": "Same busy state=>be problem as core layer; fix consistently.",
+      "status": "parent applied; after read and accepted"
+    },
+    {
+      "id": "FR08",
+      "type": "context/model mismatch",
+      "where": "scenario L10 mission5 scene",
+      "before": "seller says3, learner mishears2, model asks3",
+      "reason": "Role learner who hears2 can legitimately echo2. State uncertainty hearing3 instead if model is3.",
+      "status": "parent applied; after read and accepted"
+    },
+    {
+      "id": "FR09",
+      "type": "context/model mismatch",
+      "where": "scenario L10 mission5 prompt",
+      "reason": "Ask the precise intended price clarification after correcting scene, preserving existing English/audio model.",
+      "status": "parent applied; after read and accepted"
+    },
+    {
+      "id": "FR10",
+      "type": "confirmed word-order explanation error",
+      "where": "micro L9 exercise2 reason",
+      "before": "После множественного существительного ... используется are",
+      "reason": "In There are apples, are is before apples.",
+      "status": "parent applied; after read and accepted"
+    },
+    {
+      "id": "FR11",
+      "type": "remaining boundary of updated explanation",
+      "where": "L11 layer2 updated I+base-form sentence",
+      "reason": "Narrow wording to the taught work/drink/have pattern so it cannot teach I be busy. No new grammar topic needed.",
+      "status": "sent to parent before final freeze"
+    },
+    {
+      "id": "FR12",
+      "type": "minor meaning/classification mismatch",
+      "where": "micro L9 exercise6 reason",
+      "before": "some + цвет + plural noun",
+      "reason": "Two cases are small cookies and big books: size, not color. Use adjective or color/size.",
+      "status": "sent to parent before final freeze"
+    }
+  ],
+  "not_defects_after_verification": [
+    {
+      "item": "orange marked adjective in orange juice",
+      "source": "https://www.ahdictionary.com/word/search.html?q=orange",
+      "decision": "AHD explicitly permits adjectival made-from-oranges and flavor uses; do not mechanically relabel it a noun or call it a confirmed grammatical error."
+    },
+    {
+      "item": "shop small-store/workshop preference",
+      "sources": [
+        "https://www.merriam-webster.com/dictionary/shop",
+        "https://www.ahdictionary.com/word/search.html?q=shop"
+      ],
+      "decision": "AHD primary retail sense is small store/specialty department. Existing beginner preference is supportable; broader optional nuance is not a must-fix."
+    },
+    {
+      "item": "story narrative present",
+      "decision": "Contextual present narration is valid, now previewed. No need to change recorded story into continuous or past."
+    },
+    {
+      "item": "poem whimsical greeting to cat/bed",
+      "decision": "Poetic anthropomorphism is not a grammatical defect; not treated as neutral bedtime dialogue."
+    }
+  ],
+  "limits": [
+    "No new tests, DB operations, browser, audio or human pilot by this reviewer. Parent full verification remains independent evidence.",
+    "Fixed per-exercise lexical bindings describe target tasks, not semantic proof of every accepted paraphrase; old Do you have milk? answer remains valid but does not itself produce the there-is phrase.",
+    "There are/water/full-response variants and digit forms are locally scoped; no global apostrophe expansion was introduced.",
+    "Lexical in is in week6 pack, including temporal/place meaning; detailed spatial instruction is week8. L9 week5 cold models still precede both. Do not conflate lexical week with detailed grammar lesson.",
+    "Article, tense and register rules are accepted in their lesson context, not as universal declarations covering every later construction."
+  ]
+}

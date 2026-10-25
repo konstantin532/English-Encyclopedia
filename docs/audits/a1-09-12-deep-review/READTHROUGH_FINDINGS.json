@@ -1,0 +1,1131 @@
+{
+  "baseline": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "scope": "READ ONLY A1 lessons 9–12, not course acceptance",
+  "findings": [
+    {
+      "id": "N01",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "methodological sequence",
+      "path": "content/seed_lessons/a1_w06_l11_present_simple.yaml",
+      "identity": {
+        "slug": "a1-present-simple-i-you",
+        "layer": 6
+      },
+      "field": "body",
+      "before": "Три частые ошибки:\n\n- *I am work* — ошибка **для значения «я работаю (вообще, регулярно)»**: правильно *I work*. Но правило «be никогда не бывает рядом с действием» неверно: позднее вы узнаете другую конструкцию *I am working* («я работаю сейчас»). Пока тренируем **Present Simple**.\n- *You work?* может звучать как **короткий разговорный переспрос или удивление**, но для обычного вопроса о привычке учим *Do you work?*. Это **не** означает, что первый вариант невозможен во всех ситуациях.\n- «go to home» — домой идут без to: I go home.\n\nС **he / she** (а также с **it** и одним названным человеком) обычный глагол в Present Simple получает форму с **-s**: *she works*. В этой неделе достаточно освоить I / you; -s подробно изучим в следующем уроке.\n",
+      "proposed_after": "Три частые ошибки:\n\n- *I am work* — ошибка **для значения «я работаю (вообще, регулярно)»**: правильно *I work*. Но правило «be никогда не бывает рядом с действием» неверно: позднее вы узнаете другую конструкцию *I am working* («я работаю сейчас»). Пока тренируем **Present Simple**.\n- *You work?* может звучать как **короткий разговорный переспрос или удивление**, но для обычного вопроса о привычке учим *Do you work?*. Это **не** означает, что первый вариант невозможен во всех ситуациях.\n- «go to home» — домой идут без to: I go home.\n\nС **he / she** (а также с **it** и одним названным человеком) обычный глагол в Present Simple получает форму с **-s**: *she works*. В этой неделе достаточно освоить I / you; форму с -s подробно изучим в уроке 13, на следующей неделе.\n",
+      "why": "Следующий урок12 посвящён времени; -s вводитсяL13. Ложный указатель мешает найти объяснение.",
+      "regression_scenario": "Проверить реальную карту L11→L12→L13, оставить общий мост I/you→he/she.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N02",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "overgeneralization / cross-source contradiction",
+      "path": "content/seed_lexicon/a1_w05_shop.yaml",
+      "identity": {
+        "uid": "LX-00108"
+      },
+      "field": "usage_note",
+      "before": "milk не считают штуками: нельзя a milk или two milks в значении «два молока».",
+      "proposed_after": "Когда milk означает молоко как вещество, его не считают штуками: some milk, there is milk. В заказе a milk / two milks может обозначать одну или две порции; здесь тренируем значение вещества.",
+      "why": "Сам урок9 уже объясняет порции, словарь по-прежнему подаёт запрет. Русское «два молока» тоже может означать упаковки; жёсткая калька не разграничивает значения.",
+      "regression_scenario": "Сопоставить substance vs serving; не принимать a milk для задания, явно требующего вещество.",
+      "source": "L9 layer6; Purdue count/noncount https://owl.purdue.edu/owl/general_writing/grammar/count_and_noncount_nouns/index.html (general noncount, serving-specific claim already scoped in lesson)"
+    },
+    {
+      "id": "N03",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "unprepared vocabulary",
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "identity": {
+        "slug": "a1-there-is-some",
+        "step": 3
+      },
+      "field": "steps[2]",
+      "before": {
+        "example_en": "Is there any water?",
+        "example_ru": "Есть вода?",
+        "why_ru": "Для вопроса is выходит вперёд; any — обычный выбор в нейтральном вопросе."
+      },
+      "proposed_after": {
+        "example_en": "Is there water?",
+        "example_ru": "Есть вода?",
+        "why_ru": "Чтобы спросить о наличии воды, поставьте is перед there. Water здесь означает вещество; вопрос не задаёт объём."
+      },
+      "why": "Any introduced onlyA1+week7/LX00733; L9 requires producing it without preparation. Same futureword in understanding transfer model.",
+      "regression_scenario": "Use compiled guide and cold-transfer models; no any requirement atL9.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N04",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "unprepared vocabulary",
+      "path": "content/manifests/a1_understanding_checks.json",
+      "identity": {
+        "slug": "a1-there-is-some",
+        "skill": "transfer"
+      },
+      "field": "tasks.transfer.model",
+      "before": "Is there any water? Can I have some water, please?",
+      "proposed_after": "Is there water? Can I have some water, please?",
+      "why": "Согласовать сN03, сохранив вопрос+просьбу. Some water не обязательно мало, поэтому условие «немного» можно заменить на «воды, не уточняя объём».",
+      "regression_scenario": "Cold independent task uses onlyintroducedwater/some, not any.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N05",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "unprepared vocabulary",
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "identity": {
+        "slug": "a1-how-much-prices"
+      },
+      "field": "steps and transfer_variants",
+      "before": {
+        "steps": [
+          {
+            "example_en": "A ticket, please.",
+            "example_ru": "Билет, пожалуйста.",
+            "why_ru": "Сначала называем, что хотим купить."
+          },
+          {
+            "example_en": "How much is a ticket?",
+            "example_ru": "Сколько стоит билет?",
+            "why_ru": "How much спрашивает цену. Для одного ticket подходит is."
+          },
+          {
+            "example_en": "It is five dollars.",
+            "example_ru": "Он стоит пять долларов.",
+            "why_ru": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве билетов."
+          }
+        ],
+        "transfer_variants": [
+          {
+            "prompt": "Вы видите одну книгу в магазине. Спросите продавца, сколько она стоит.",
+            "model": "How much is this book?"
+          },
+          {
+            "prompt": "Вы видите куртку в магазине. Спросите, сколько она стоит.",
+            "model": "How much is the jacket?"
+          }
+        ]
+      },
+      "proposed_after": {
+        "steps": [
+          {
+            "example_en": "A sandwich, please.",
+            "example_ru": "Сэндвич, пожалуйста.",
+            "why_ru": "Сначала называем один знакомый товар, который хотим купить."
+          },
+          {
+            "example_en": "How much is a sandwich?",
+            "example_ru": "Сколько стоит сэндвич?",
+            "why_ru": "Вопрос How much is…? помогает узнать цену одной вещи."
+          },
+          {
+            "example_en": "It is five dollars.",
+            "example_ru": "Он стоит пять долларов.",
+            "why_ru": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве билетов."
+          }
+        ],
+        "transfer_variants": [
+          {
+            "prompt": "Вы видите одну книгу в магазине. Спросите продавца, сколько она стоит.",
+            "model": "How much is this book?"
+          },
+          {
+            "prompt": "Вы видите молоко в магазине. Спросите продавца, сколько оно стоит.",
+            "model": "How much is the milk?"
+          }
+        ]
+      },
+      "why": "Ticket introducedweek14, jacketweek10. Neither prepared here; replacewithknownfood/objects rather thanmovelevelscope.",
+      "regression_scenario": "No ticket/jacket in L10requiredmodels; preserve3steps/2variants distinctbaseline model.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N06",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "unprepared vocabulary",
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "identity": {
+        "slug": "a1-present-simple-i-you"
+      },
+      "field": "steps[2] and transfer_variants",
+      "before": {
+        "step": {
+          "example_en": "Do you work on Saturdays?",
+          "example_ru": "Ты работаешь по субботам?",
+          "why_ru": "Do открывает вопрос о привычке; work сохраняет начальную форму."
+        },
+        "transfer_variants": [
+          {
+            "prompt": "Вы хотите узнать, читает ли ваш друг книги по вечерам. Задайте вопрос.",
+            "model": "Do you read books in the evening?"
+          },
+          {
+            "prompt": "Вы рассказываете о привычке. Скажите, что читаете книги каждый день.",
+            "model": "I read books every day."
+          }
+        ]
+      },
+      "proposed_after": {
+        "step": {
+          "example_en": "Do you work every day?",
+          "example_ru": "Ты работаешь каждый день?",
+          "why_ru": "Do стоит перед you и помогает спросить о привычке; work остаётся в начальной форме."
+        },
+        "transfer_variants": [
+          {
+            "prompt": "Спросите друга, пьёт ли он кофе каждый день.",
+            "model": "Do you drink coffee every day?"
+          },
+          {
+            "prompt": "Расскажите о привычке: вы пьёте чай каждый день.",
+            "model": "I drink tea every day."
+          }
+        ]
+      },
+      "why": "Saturdays/read introducedweek10. Replacewithoutinventingnewunits orunknownweekdays.",
+      "regression_scenario": "No Saturday/read in cold L11models; retain questions+assertion.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N07",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "narrow answer inventory",
+      "path": "content/seed_lessons/a1_w05_l09_there_is.yaml",
+      "identity": {
+        "uid": "EX-00047"
+      },
+      "field": "accepted",
+      "before": [
+        "Yes there is",
+        "Yes, there is",
+        "Yes, there is water.",
+        "Yes, there is water",
+        "There is water.",
+        "Yes. There is water."
+      ],
+      "proposed_after": [
+        "Yes there is",
+        "Yes, there is",
+        "Yes, there is water.",
+        "Yes, there is water",
+        "There is water.",
+        "Yes. There is water.",
+        "Yes, there's water.",
+        "There's water."
+      ],
+      "why": "Полные ответы сwateralreadyaccepted; contractedfullanswerisvalid. Нельзя сокращать bareYes there is, но здесьпослеis естьwater.",
+      "regression_scenario": "RealAPI: acceptlistedforms; rejectwrongnumber/negation/subject orwrongwordorderwhenrequested. Nonmatchingopenresponseisneeds_review, notproofwronggrammar.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N08",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "narrow answer inventory",
+      "path": "content/seed_lessons/a1_w05_l10_how_much.yaml",
+      "identity": {
+        "uid": "EX-00053"
+      },
+      "field": "accepted",
+      "before": [
+        "They're five dollars."
+      ],
+      "proposed_after": [
+        "They're five dollars.",
+        "They are 5 dollars.",
+        "They're 5 dollars."
+      ],
+      "why": "Цифра5 передаёт ровно тужецену и сохраняетполноеThey-предложение; отвергатьдругиечисла.",
+      "regression_scenario": "RealAPI: acceptlistedforms; rejectwrongnumber/negation/subject orwrongwordorderwhenrequested. Nonmatchingopenresponseisneeds_review, notproofwronggrammar.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N09",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "narrow answer inventory",
+      "path": "content/seed_lessons/a1_w06_l11_present_simple.yaml",
+      "identity": {
+        "uid": "EX-00061"
+      },
+      "field": "accepted",
+      "before": [
+        "I watch TV. I go to bed early",
+        "I watch TV, and I go to bed early."
+      ],
+      "proposed_after": [
+        "I watch TV. I go to bed early",
+        "I watch TV, and I go to bed early.",
+        "I watch TV and go to bed early."
+      ],
+      "why": "КоординациясобщимIпередаётобадействия; существующийacceptedуже допускаетand, поэтому требование«двумяфразами»неисключаетсоюз.",
+      "regression_scenario": "RealAPI: acceptlistedforms; rejectwrongnumber/negation/subject orwrongwordorderwhenrequested. Nonmatchingopenresponseisneeds_review, notproofwronggrammar.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N10",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "narrow answer inventory",
+      "path": "content/seed_lessons/a1_w06_l12_time.yaml",
+      "identity": {
+        "uid": "EX-00065"
+      },
+      "field": "accepted",
+      "before": [
+        "At eight.",
+        "At eight",
+        "I have breakfast at eight",
+        "At eight o'clock.",
+        "I have breakfast at eight o'clock.",
+        "Eight o'clock.",
+        "At 8."
+      ],
+      "proposed_after": [
+        "At eight.",
+        "At eight",
+        "I have breakfast at eight",
+        "At eight o'clock.",
+        "I have breakfast at eight o'clock.",
+        "Eight o'clock.",
+        "At 8.",
+        "I have breakfast at 8.",
+        "I have breakfast at 8 o'clock.",
+        "At 8 o'clock."
+      ],
+      "why": "Число8неизменяетвремя; существующийacceptedуже допускаетAt8, но полныйответсцифройнеизвестенключу.",
+      "regression_scenario": "RealAPI: acceptlistedforms; rejectwrongnumber/negation/subject orwrongwordorderwhenrequested. Nonmatchingopenresponseisneeds_review, notproofwronggrammar.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N11",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "narrow independent answer inventory",
+      "path": "content/manifests/a1_understanding_checks.json",
+      "identity": {
+        "slug": "a1-how-much-prices",
+        "skill": "writing"
+      },
+      "field": "tasks.writing.accepted",
+      "before": [
+        "It is three dollars."
+      ],
+      "proposed_after": [
+        "It is three dollars.",
+        "It's three dollars.",
+        "That is three dollars.",
+        "That's three dollars.",
+        "This is three dollars.",
+        "It is 3 dollars.",
+        "It's 3 dollars."
+      ],
+      "why": "Prompt«Этостоиттридоллара»незадаётit; Exercise.normalizeне раскрываетсокращения. Неизвестнаяформастановитсяneeds_reviewвместоknownmatch.",
+      "regression_scenario": "SubmitthroughindependentAPIandpreservewrongnumber/negationrejection; no globalapostropheexpansion.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N12",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "false lexical progress",
+      "path": "content/seed_lessons/a1_w05_l09_there_is.yaml",
+      "identity": {
+        "slug": "a1-there-is-some"
+      },
+      "field": "units bindings",
+      "before": [
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 1,
+          "answer": "Is there milk?",
+          "before": [
+            "LX-00108",
+            "LX-00112",
+            "LX-00119",
+            "LX-00120"
+          ],
+          "after": [
+            "LX-00108",
+            "LX-00112",
+            "LX-00119"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 2,
+          "answer": "There are apples.",
+          "before": [
+            "LX-00109",
+            "LX-00112",
+            "LX-00119",
+            "LX-00120",
+            "LX-00121"
+          ],
+          "after": [
+            "LX-00109",
+            "LX-00112"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 3,
+          "answer": "There is no cat food.",
+          "before": [
+            "LX-00111",
+            "LX-00112",
+            "LX-00119",
+            "LX-00120"
+          ],
+          "after": [
+            "LX-00111",
+            "LX-00112"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 4,
+          "answer": "The apples are red.",
+          "before": [
+            "LX-00109",
+            "LX-00121",
+            "LX-00286",
+            "LX-00301"
+          ],
+          "after": [
+            "LX-00109",
+            "LX-00286"
+          ]
+        }
+      ],
+      "proposed_after": [
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 1,
+          "answer": "Is there milk?",
+          "before": [
+            "LX-00108",
+            "LX-00112",
+            "LX-00119",
+            "LX-00120"
+          ],
+          "after": [
+            "LX-00108",
+            "LX-00112",
+            "LX-00119"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 2,
+          "answer": "There are apples.",
+          "before": [
+            "LX-00109",
+            "LX-00112",
+            "LX-00119",
+            "LX-00120",
+            "LX-00121"
+          ],
+          "after": [
+            "LX-00109",
+            "LX-00112"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 3,
+          "answer": "There is no cat food.",
+          "before": [
+            "LX-00111",
+            "LX-00112",
+            "LX-00119",
+            "LX-00120"
+          ],
+          "after": [
+            "LX-00111",
+            "LX-00112"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 4,
+          "answer": "The apples are red.",
+          "before": [
+            "LX-00109",
+            "LX-00121",
+            "LX-00286",
+            "LX-00301"
+          ],
+          "after": [
+            "LX-00109",
+            "LX-00286"
+          ]
+        }
+      ],
+      "why": "record_attempt/record_practiceсоздаютUnitProgressдлякаждогоunitsID независимо оттогоупотреблена лифраза. Много постороннихготовыхфраз: молоковопросvsутверждение/ценавопросvsответ/подъёмvsсон/clockquestionvsgetup. Предложеныузкиепривязки; EX63одинответatнедоказываетвсюготовуюфразуIgetupatfive. Условныйпустойunitsсписокбезновойлексемыбезопаснее; добавлениеatUID00023требуетотдельносверитьтемпоральноезначениетаккаксейчаслексиконописываетместо.  Для EX59YesIdo emptyunitsдопустимовместозачётаwork/every.",
+      "regression_scenario": "Realauthenticatedmain/practiceAPI: correctanswercreatesonlyjustifiedunitprogress; nofuturefalsephrasecredit; wronganswerdoesnotmarkmastery. Existinghistoryunchanged.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N13",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "false lexical progress",
+      "path": "content/seed_lessons/a1_w05_l10_how_much.yaml",
+      "identity": {
+        "slug": "a1-how-much-prices"
+      },
+      "field": "units bindings",
+      "before": [
+        {
+          "section": "exercises",
+          "uid": "EX-00053",
+          "order": 4,
+          "answer": "They are five dollars.",
+          "before": [
+            "LX-00116",
+            "LX-00123"
+          ],
+          "after": [
+            "LX-00116"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 1,
+          "answer": "How much is the milk?",
+          "before": [
+            "LX-00114",
+            "LX-00115",
+            "LX-00122",
+            "LX-00123",
+            "LX-00108",
+            "LX-00302"
+          ],
+          "after": [
+            "LX-00114",
+            "LX-00115",
+            "LX-00108"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 2,
+          "answer": "It is two dollars.",
+          "before": [
+            "LX-00116",
+            "LX-00122",
+            "LX-00123",
+            "LX-00302"
+          ],
+          "after": [
+            "LX-00116",
+            "LX-00123"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 3,
+          "answer": "How much are the apples?",
+          "before": [
+            "LX-00114",
+            "LX-00115",
+            "LX-00122",
+            "LX-00109"
+          ],
+          "after": [
+            "LX-00114",
+            "LX-00115",
+            "LX-00109"
+          ]
+        }
+      ],
+      "proposed_after": [
+        {
+          "section": "exercises",
+          "uid": "EX-00053",
+          "order": 4,
+          "answer": "They are five dollars.",
+          "before": [
+            "LX-00116",
+            "LX-00123"
+          ],
+          "after": [
+            "LX-00116"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 1,
+          "answer": "How much is the milk?",
+          "before": [
+            "LX-00114",
+            "LX-00115",
+            "LX-00122",
+            "LX-00123",
+            "LX-00108",
+            "LX-00302"
+          ],
+          "after": [
+            "LX-00114",
+            "LX-00115",
+            "LX-00108"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 2,
+          "answer": "It is two dollars.",
+          "before": [
+            "LX-00116",
+            "LX-00122",
+            "LX-00123",
+            "LX-00302"
+          ],
+          "after": [
+            "LX-00116",
+            "LX-00123"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 3,
+          "answer": "How much are the apples?",
+          "before": [
+            "LX-00114",
+            "LX-00115",
+            "LX-00122",
+            "LX-00109"
+          ],
+          "after": [
+            "LX-00114",
+            "LX-00115",
+            "LX-00109"
+          ]
+        }
+      ],
+      "why": "record_attempt/record_practiceсоздаютUnitProgressдлякаждогоunitsID независимо оттогоупотреблена лифраза. Много постороннихготовыхфраз: молоковопросvsутверждение/ценавопросvsответ/подъёмvsсон/clockquestionvsgetup. Предложеныузкиепривязки; EX63одинответatнедоказываетвсюготовуюфразуIgetupatfive. Условныйпустойunitsсписокбезновойлексемыбезопаснее; добавлениеatUID00023требуетотдельносверитьтемпоральноезначениетаккаксейчаслексиконописываетместо.  Для EX59YesIdo emptyunitsдопустимовместозачётаwork/every.",
+      "regression_scenario": "Realauthenticatedmain/practiceAPI: correctanswercreatesonlyjustifiedunitprogress; nofuturefalsephrasecredit; wronganswerdoesnotmarkmastery. Existinghistoryunchanged.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N14",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "false lexical progress",
+      "path": "content/seed_lessons/a1_w06_l11_present_simple.yaml",
+      "identity": {
+        "slug": "a1-present-simple-i-you"
+      },
+      "field": "units bindings",
+      "before": [
+        {
+          "section": "exercises",
+          "uid": "EX-00059",
+          "order": 4,
+          "answer": "Yes, I do.",
+          "before": [
+            "LX-00128",
+            "LX-00134"
+          ],
+          "after": []
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 1,
+          "answer": "I get up at six.",
+          "before": [
+            "LX-00124",
+            "LX-00125",
+            "LX-00126",
+            "LX-00137",
+            "LX-00139",
+            "LX-00318"
+          ],
+          "after": [
+            "LX-00124",
+            "LX-00125",
+            "LX-00126"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 2,
+          "answer": "I work every day.",
+          "before": [
+            "LX-00128",
+            "LX-00134",
+            "LX-00137",
+            "LX-00139",
+            "LX-00318"
+          ],
+          "after": [
+            "LX-00128",
+            "LX-00134"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 4,
+          "answer": "I drink coffee at seven.",
+          "before": [
+            "LX-00129",
+            "LX-00137",
+            "LX-00139",
+            "LX-00318"
+          ],
+          "after": [
+            "LX-00129",
+            "LX-00139"
+          ]
+        }
+      ],
+      "proposed_after": [
+        {
+          "section": "exercises",
+          "uid": "EX-00059",
+          "order": 4,
+          "answer": "Yes, I do.",
+          "before": [
+            "LX-00128",
+            "LX-00134"
+          ],
+          "after": []
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 1,
+          "answer": "I get up at six.",
+          "before": [
+            "LX-00124",
+            "LX-00125",
+            "LX-00126",
+            "LX-00137",
+            "LX-00139",
+            "LX-00318"
+          ],
+          "after": [
+            "LX-00124",
+            "LX-00125",
+            "LX-00126"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 2,
+          "answer": "I work every day.",
+          "before": [
+            "LX-00128",
+            "LX-00134",
+            "LX-00137",
+            "LX-00139",
+            "LX-00318"
+          ],
+          "after": [
+            "LX-00128",
+            "LX-00134"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 4,
+          "answer": "I drink coffee at seven.",
+          "before": [
+            "LX-00129",
+            "LX-00137",
+            "LX-00139",
+            "LX-00318"
+          ],
+          "after": [
+            "LX-00129",
+            "LX-00139"
+          ]
+        }
+      ],
+      "why": "record_attempt/record_practiceсоздаютUnitProgressдлякаждогоunitsID независимо оттогоупотреблена лифраза. Много постороннихготовыхфраз: молоковопросvsутверждение/ценавопросvsответ/подъёмvsсон/clockquestionvsgetup. Предложеныузкиепривязки; EX63одинответatнедоказываетвсюготовуюфразуIgetupatfive. Условныйпустойunitsсписокбезновойлексемыбезопаснее; добавлениеatUID00023требуетотдельносверитьтемпоральноезначениетаккаксейчаслексиконописываетместо.  Для EX59YesIdo emptyunitsдопустимовместозачётаwork/every.",
+      "regression_scenario": "Realauthenticatedmain/practiceAPI: correctanswercreatesonlyjustifiedunitprogress; nofuturefalsephrasecredit; wronganswerdoesnotmarkmastery. Existinghistoryunchanged.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N15",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "false lexical progress",
+      "path": "content/seed_lessons/a1_w06_l12_time.yaml",
+      "identity": {
+        "slug": "a1-time-at-seven"
+      },
+      "field": "units bindings",
+      "before": [
+        {
+          "section": "exercises",
+          "uid": "EX-00063",
+          "order": 2,
+          "answer": "at",
+          "before": [
+            "LX-00136"
+          ],
+          "after": []
+        },
+        {
+          "section": "exercises",
+          "uid": "EX-00065",
+          "order": 4,
+          "answer": "I have breakfast at eight.",
+          "before": [
+            "LX-00130",
+            "LX-00136"
+          ],
+          "after": [
+            "LX-00130"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 2,
+          "answer": "I eat at twelve.",
+          "before": [
+            "LX-00136"
+          ],
+          "after": [
+            "LX-00303"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 3,
+          "answer": "What time is it?",
+          "before": [
+            "LX-00133",
+            "LX-00135",
+            "LX-00140"
+          ],
+          "after": [
+            "LX-00133"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 4,
+          "answer": "What time do you get up?",
+          "before": [
+            "LX-00133",
+            "LX-00135",
+            "LX-00136",
+            "LX-00124",
+            "LX-00126"
+          ],
+          "after": [
+            "LX-00133",
+            "LX-00135",
+            "LX-00124",
+            "LX-00125",
+            "LX-00126"
+          ]
+        }
+      ],
+      "proposed_after": [
+        {
+          "section": "exercises",
+          "uid": "EX-00063",
+          "order": 2,
+          "answer": "at",
+          "before": [
+            "LX-00136"
+          ],
+          "after": []
+        },
+        {
+          "section": "exercises",
+          "uid": "EX-00065",
+          "order": 4,
+          "answer": "I have breakfast at eight.",
+          "before": [
+            "LX-00130",
+            "LX-00136"
+          ],
+          "after": [
+            "LX-00130"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 2,
+          "answer": "I eat at twelve.",
+          "before": [
+            "LX-00136"
+          ],
+          "after": [
+            "LX-00303"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 3,
+          "answer": "What time is it?",
+          "before": [
+            "LX-00133",
+            "LX-00135",
+            "LX-00140"
+          ],
+          "after": [
+            "LX-00133"
+          ]
+        },
+        {
+          "section": "practice",
+          "uid": null,
+          "order": 4,
+          "answer": "What time do you get up?",
+          "before": [
+            "LX-00133",
+            "LX-00135",
+            "LX-00136",
+            "LX-00124",
+            "LX-00126"
+          ],
+          "after": [
+            "LX-00133",
+            "LX-00135",
+            "LX-00124",
+            "LX-00125",
+            "LX-00126"
+          ]
+        }
+      ],
+      "why": "record_attempt/record_practiceсоздаютUnitProgressдлякаждогоunitsID независимо оттогоупотреблена лифраза. Много постороннихготовыхфраз: молоковопросvsутверждение/ценавопросvsответ/подъёмvsсон/clockquestionvsgetup. Предложеныузкиепривязки; EX63одинответatнедоказываетвсюготовуюфразуIgetupatfive. Условныйпустойunitsсписокбезновойлексемыбезопаснее; добавлениеatUID00023требуетотдельносверитьтемпоральноезначениетаккаксейчаслексиконописываетместо.  Для EX59YesIdo emptyunitsдопустимовместозачётаwork/every.",
+      "regression_scenario": "Realauthenticatedmain/practiceAPI: correctanswercreatesonlyjustifiedunitprogress; nofuturefalsephrasecredit; wronganswerdoesnotmarkmastery. Existinghistoryunchanged.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N16",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "lexical overgeneralization",
+      "path": "content/seed_lexicon/a1_w06_day_plus.yaml",
+      "identity": {
+        "uids": [
+          "LX-00305",
+          "LX-00306",
+          "LX-00310"
+        ]
+      },
+      "field": "usage_note",
+      "before": [
+        {
+          "uid": "LX-00305",
+          "field": "usage_note",
+          "before": "watch — смотреть то, что движется: TV, фильм. Без артикля: watch TV.",
+          "after": "Watch — внимательно смотреть или наблюдать некоторое время. В watch TV речь о просмотре телепередач; движения объекта не требуется. Перед TV в этом сочетании артикль не ставим."
+        },
+        {
+          "uid": "LX-00306",
+          "field": "usage_note",
+          "before": "t не читается: «лисн». После listen нужен to: listen to.",
+          "after": "Listen — слушать внимательно. Если называем, кого или что слушаем, обычно добавляем to: listen to music. Без дополнения можно сказать Listen! или I listen."
+        },
+        {
+          "uid": "LX-00310",
+          "field": "usage_note",
+          "before": "В США dinner — вечерняя еда, около шести-семи.",
+          "after": "Dinner — основной приём пищи дня, часто вечером. В этом уроке переводим как «ужин»; время зависит от семьи и ситуации, например Sunday dinner может быть днём."
+        }
+      ],
+      "proposed_after": [
+        {
+          "uid": "LX-00305",
+          "field": "usage_note",
+          "before": "watch — смотреть то, что движется: TV, фильм. Без артикля: watch TV.",
+          "after": "Watch — внимательно смотреть или наблюдать некоторое время. В watch TV речь о просмотре телепередач; движения объекта не требуется. Перед TV в этом сочетании артикль не ставим."
+        },
+        {
+          "uid": "LX-00306",
+          "field": "usage_note",
+          "before": "t не читается: «лисн». После listen нужен to: listen to.",
+          "after": "Listen — слушать внимательно. Если называем, кого или что слушаем, обычно добавляем to: listen to music. Без дополнения можно сказать Listen! или I listen."
+        },
+        {
+          "uid": "LX-00310",
+          "field": "usage_note",
+          "before": "В США dinner — вечерняя еда, около шести-семи.",
+          "after": "Dinner — основной приём пищи дня, часто вечером. В этом уроке переводим как «ужин»; время зависит от семьи и ситуации, например Sunday dinner может быть днём."
+        }
+      ],
+      "why": "Watchнеограничиваетсядвижущимсяобъектом;listenдопускаетбезобъектноеупотребление;dinnerнеуниверсально18–19часов. Урок12ужеотрицаетобщеерасписаниеСША,словарьпротиворечит.",
+      "regression_scenario": "ReadlexiconcardalongsideL11/L12; constrainlessonmeaningwithoutdeclaringalternativeswrong.",
+      "source": "https://www.ahdictionary.com/word/search.html?q=watch ; https://www.merriam-webster.com/dictionary/dinner ; Cambridge listen grammar searchresult example I’m listening (full403)"
+    },
+    {
+      "id": "N17",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "contextually valid distractor",
+      "path": "content/manifests/a1_micro_review_09_12.json",
+      "identity": {
+        "slug": "a1-there-is-some",
+        "exercise_order": 1
+      },
+      "field": "prompt and reason",
+      "before": {
+        "prompt": "Вы в {place}. Как спросить, есть ли {ru}? ",
+        "keys": [
+          "place",
+          "ru",
+          "en"
+        ],
+        "cases": [
+          [
+            "магазине",
+            "молоко",
+            "milk"
+          ],
+          [
+            "кафе",
+            "вода",
+            "water"
+          ],
+          [
+            "магазине",
+            "чай",
+            "tea"
+          ],
+          [
+            "кафе",
+            "кофе",
+            "coffee"
+          ],
+          [
+            "магазине",
+            "сок",
+            "juice"
+          ]
+        ],
+        "options": [
+          "Is there {en}?",
+          "Are there {en}?",
+          "There is {en}?"
+        ],
+        "reason": "С неисчисляемым напитком задавайте вопрос Is there ...?; форма are предназначена для множественного числа.",
+        "en": ""
+      },
+      "proposed_after": {
+        "prompt": "Вы в {place}. Узнайте, есть ли {ru}. Выберите обычный вопрос по схеме Is + there + продукт, а не разговорный переспрос с порядком утверждения.",
+        "reason": "Здесь нужен обычный вопрос о наличии: Is there…? Фраза There is…? с вопросительной интонацией возможна как уточнение, но не соответствует указанной схеме."
+      },
+      "why": "There is milk?возможнокакудивлённыйпереспрос,небезусловнаяошибка. Все5кейсовнаследуютнеуточнённоеусловие. Необходимаформулировкасхемы,неискусственныйзапрет.",
+      "regression_scenario": "Compileactual5cardsandexerciseAPI; verifycontextualreasonforwrongchoiceandkeypositionrotationsunchanged.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N18",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "wrong contextual markers",
+      "path": "content/seed_poems/p03_what_time_is_it.yaml",
+      "identity": {
+        "number": 3
+      },
+      "field": "body",
+      "before": "[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?\n[T8]It[/] [D1]is[/] [N3]five[/], [T8]it[/] [D1]is[/] [N3]five[/]!\n[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/],\n[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?\n[T8]It[/] [D1]is[/] [N3]seven o'clock[/]!\n[T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/],\n[C1]and[/] [T8]I[/] [D4]go[/] [P2]to[/] [D2]work[/].\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Twelve[/]!\n[T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/].\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N1]Ten[/]?\n[S3]Coffee[/] [A2]again[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Seven[/]!\n[T1]A[/] [J1]big[/] [S6]cat[/] [D4]comes[/] [P1]in[/].\n[T5]Every[/] [S7]day[/] [P3]at[/] [N3]seven[/]\n[T1]the[/] [S6]cat[/] [D2]drinks[/] [T3]my[/] [S3]milk[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [A2]Late[/]!\n[T8]I[/] [D4]go[/] [P2]to[/] [S2]bed[/].\n[J3]Good[/] [S7]evening[/], [S6]cat[/]!\n[J3]Good[/] [S7]evening[/], [S2]bed[/]!\n",
+      "proposed_after": "[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?\n[T8]It[/] [D1]is[/] [N3]five[/], [T8]it[/] [D1]is[/] [N3]five[/]!\n[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/],\n[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?\n[T8]It[/] [D1]is[/] [N3]seven o'clock[/]!\n[T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/],\n[C1]and[/] [T8]I[/] [D4]go[/] [P2]to[/] [S9]work[/].\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Twelve[/]!\n[T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/].\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Ten[/]?\n[S3]Coffee[/] [A2]again[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Seven[/]!\n[T1]A[/] [J1]big[/] [S6]cat[/] [D4]comes[/] [P1]in[/].\n[T5]Every[/] [S7]day[/] [P3]at[/] [N3]seven[/]\n[T1]the[/] [S6]cat[/] [D2]drinks[/] [T3]my[/] [S3]milk[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [A2]Late[/]!\n[T8]I[/] [D4]go[/] [P2]to[/] [S2]bed[/].\n[J3]Good[/] [S7]evening[/], [S6]cat[/]!\n[J3]Good[/] [S7]evening[/], [S2]bed[/]!\n",
+      "why": "TenanswersWhattimeisit→clockN3. Go to work meansgoingtoworkplace;workhereisnoun,notbareverb. Registryvaluesunchanged; targetuidworkverb006? LX00128currentlyverbshouldnotautomaticallygive masteryofnounsense. Need nounmeaninglayerorpreparedphrasewithoutnewIDs.",
+      "regression_scenario": "ActualpoemHTMLTenlabelClocktime, worknounlabel; English/IPA/gapsunchanged; assess lexicaltargetnounmeaningwithoutIDrepurpose.",
+      "source": "apps/taxonomy/registry.py; https://www.ahdictionary.com/word/search.html?q=work"
+    },
+    {
+      "id": "N19",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "unprepared vocabulary in micro review",
+      "path": "content/manifests/a1_micro_review_09_12.json",
+      "identity": {
+        "slugs": [
+          "a1-there-is-some",
+          "a1-present-simple-i-you"
+        ]
+      },
+      "field": "cases",
+      "before": {
+        "white_house": [
+          "белые дома",
+          "houses",
+          "white"
+        ],
+        "read_case": [
+          "читаешь ли ты книги",
+          "read books"
+        ],
+        "walk_case": [
+          "я гуляю и ложусь спать",
+          "walk",
+          "go to bed"
+        ]
+      },
+      "proposed_after": {
+        "white_house": [
+          "коричневые дома",
+          "houses",
+          "brown"
+        ],
+        "read_case": [
+          "пьёшь ли ты воду",
+          "drink water"
+        ],
+        "walk_case": [
+          "я работаю и ложусь спать",
+          "work",
+          "go to bed"
+        ]
+      },
+      "why": "Whiteintroducedweek12LX00237;read/walkweek10. Alsoread appearsotherL11microcases3,6:rewriteallconsistentcases,notonlyshownsamples. L9layer6colorlistwhitealsofuture;removefromlist ratherthanmovelexicalID.",
+      "regression_scenario": "Allgeneratedcardsvocabknownlessoncutoff; compare5distinctpromptsstillholds.",
+      "source": "Repository source and current checker contract"
+    },
+    {
+      "id": "N20",
+      "status": "CONFIRMED_READ_ONLY",
+      "kind": "wrong phonetic metadata",
+      "path": "content/seed_weeks/a1_w05.yaml",
+      "identity": {
+        "week": 5,
+        "twister": 5
+      },
+      "field": "twister.focus_sounds",
+      "before": [
+        "dh",
+        "ae"
+      ],
+      "proposed_after": [
+        "dh"
+      ],
+      "why": "ae означает /æ/, но в тексте и IPA скороговорки5 этого звука нет. Упражнение фактически сравнивает /ɪ/ и /i/ плюсзвонкийth; дляпарыгласныхнетготовогоHINTSкода. Не вводитьновыефонетическиекодывэтойправке, снятьложныйae.",
+      "regression_scenario": "Loadtwistermetadataandassert all claimedhintIPAoccursin targetlinewherevalid; preserve text/IPA/audio. Не утверждатьчтоэтоlabelпоказывалсяученику: точныйфронтендпутьfocus_soundsнеподтверждён.",
+      "source": "apps/lexicon/phonetics.py HINTS/IPA_OF_HINT; actualtwisterIPA"
+    }
+  ],
+  "behavior_evidence": "/tmp/a1-09-12-readonly-behavior.json",
+  "limits": [
+    "No repository edits, migrations, DB connection, full tests, browser or audio listening performed.",
+    "Pure model checking ran with explicit isolated SQLite settings; no database query was needed.",
+    "Proposals require implementation review, exact current-before comparison, vocabulary gates and regression tests.",
+    "Do not treat a finite open-response mismatch as grammatical incorrectness."
+  ]
+}

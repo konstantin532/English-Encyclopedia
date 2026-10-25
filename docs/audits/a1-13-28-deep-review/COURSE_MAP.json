@@ -1,0 +1,422 @@
+[
+  {
+    "path": "content/seed_lessons/a1_w01_l01_nouns.yaml",
+    "level": "A1",
+    "order": 1,
+    "slug": "a1-nouns-first-words",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w01_l02_be.yaml",
+    "level": "A1",
+    "order": 2,
+    "slug": "a1-verb-be",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w02_l03_determiners.yaml",
+    "level": "A1",
+    "order": 3,
+    "slug": "a1-determiners-a-the-this-my",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w02_l04_have_like_can.yaml",
+    "level": "A1",
+    "order": 4,
+    "slug": "a1-have-like-can-do",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+    "level": "A1",
+    "order": 5,
+    "slug": "a1-cafe-order",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+    "level": "A1",
+    "order": 6,
+    "slug": "a1-numbers-1-20",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+    "level": "A1",
+    "order": 7,
+    "slug": "a1-family-photo",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+    "level": "A1",
+    "order": 8,
+    "slug": "a1-family-possession",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w05_l09_there_is.yaml",
+    "level": "A1",
+    "order": 9,
+    "slug": "a1-there-is-some",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w05_l10_how_much.yaml",
+    "level": "A1",
+    "order": 10,
+    "slug": "a1-how-much-prices",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w06_l11_present_simple.yaml",
+    "level": "A1",
+    "order": 11,
+    "slug": "a1-present-simple-i-you",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w06_l12_time.yaml",
+    "level": "A1",
+    "order": 12,
+    "slug": "a1-time-at-seven",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1_w07_l13_he_works.yaml",
+    "level": "A1",
+    "order": 13,
+    "slug": "a1-he-she-works",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w07_l14_jobs.yaml",
+    "level": "A1",
+    "order": 14,
+    "slug": "a1-jobs-what-do-you-do",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+    "level": "A1",
+    "order": 15,
+    "slug": "a1-where-is-prepositions",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w08_l16_directions.yaml",
+    "level": "A1",
+    "order": 16,
+    "slug": "a1-directions-turn-left",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w09_l17_do_does.yaml",
+    "level": "A1",
+    "order": 17,
+    "slug": "a1-questions-do-does",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w09_l18_spelling.yaml",
+    "level": "A1",
+    "order": 18,
+    "slug": "a1-spelling-phone-numbers",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w10_l19_always_never.yaml",
+    "level": "A1",
+    "order": 19,
+    "slug": "a1-always-never",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w10_l20_like_doing.yaml",
+    "level": "A1",
+    "order": 20,
+    "slug": "a1-like-doing",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w11_l21_what_hurts.yaml",
+    "level": "A1",
+    "order": 21,
+    "slug": "a1-what-hurts",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w11_l22_cant.yaml",
+    "level": "A1",
+    "order": 22,
+    "slug": "a1-cant-cannot",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w12_l23_dont_doesnt.yaml",
+    "level": "A1",
+    "order": 23,
+    "slug": "a1-dont-doesnt",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w12_l24_address.yaml",
+    "level": "A1",
+    "order": 24,
+    "slug": "a1-letters-address",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "level": "A1",
+    "order": 25,
+    "slug": "a1-can-skills",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l26_why_because.yaml",
+    "level": "A1",
+    "order": 26,
+    "slug": "a1-why-because",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l27_bus.yaml",
+    "level": "A1",
+    "order": 27,
+    "slug": "a1-bus-ticket",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l28_review.yaml",
+    "level": "A1",
+    "order": 28,
+    "slug": "a1-review-everything",
+    "status": "technical_review_pending_combined_verification"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w01_l01_present_continuous.yaml",
+    "level": "A1+",
+    "order": 1,
+    "slug": "a1p-present-continuous",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w01_l02_video_call.yaml",
+    "level": "A1+",
+    "order": 2,
+    "slug": "a1p-video-call-feelings",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w02_l03_was_were.yaml",
+    "level": "A1+",
+    "order": 3,
+    "slug": "a1p-was-were",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w02_l04_there_was.yaml",
+    "level": "A1+",
+    "order": 4,
+    "slug": "a1p-there-was-how-was",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w03_l05_past_simple_ed.yaml",
+    "level": "A1+",
+    "order": 5,
+    "slug": "a1p-past-simple-ed",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w03_l06_weekend_small_talk.yaml",
+    "level": "A1+",
+    "order": 6,
+    "slug": "a1p-weekend-small-talk",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w04_l07_irregular_past.yaml",
+    "level": "A1+",
+    "order": 7,
+    "slug": "a1p-irregular-past",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w04_l08_paying_prices.yaml",
+    "level": "A1+",
+    "order": 8,
+    "slug": "a1p-paying-and-prices",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w05_l09_did_didnt.yaml",
+    "level": "A1+",
+    "order": 9,
+    "slug": "a1p-did-didnt",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w05_l10_describe_things.yaml",
+    "level": "A1+",
+    "order": 10,
+    "slug": "a1p-describe-things",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w06_l11_object_pronouns.yaml",
+    "level": "A1+",
+    "order": 11,
+    "slug": "a1p-object-pronouns",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w06_l12_phone_feelings.yaml",
+    "level": "A1+",
+    "order": 12,
+    "slug": "a1p-phone-and-feelings",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w07_l13_some_any.yaml",
+    "level": "A1+",
+    "order": 13,
+    "slug": "a1p-some-any",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w07_l14_restaurant_order.yaml",
+    "level": "A1+",
+    "order": 14,
+    "slug": "a1p-restaurant-order",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w08_l15_must_mustnt.yaml",
+    "level": "A1+",
+    "order": 15,
+    "slug": "a1p-must-mustnt",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w08_l16_first_day_work.yaml",
+    "level": "A1+",
+    "order": 16,
+    "slug": "a1p-first-day-work",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w09_l17_have_to.yaml",
+    "level": "A1+",
+    "order": 17,
+    "slug": "a1p-have-to",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w09_l18_home_repairs.yaml",
+    "level": "A1+",
+    "order": 18,
+    "slug": "a1p-home-repairs",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w10_l19_could_you.yaml",
+    "level": "A1+",
+    "order": 19,
+    "slug": "a1p-could-you",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w10_l20_adverbs_ly.yaml",
+    "level": "A1+",
+    "order": 20,
+    "slug": "a1p-adverbs-ly",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w11_l21_how_often.yaml",
+    "level": "A1+",
+    "order": 21,
+    "slug": "a1p-how-often",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w11_l22_at_the_pharmacy.yaml",
+    "level": "A1+",
+    "order": 22,
+    "slug": "a1p-at-the-pharmacy",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w12_l23_too_enough.yaml",
+    "level": "A1+",
+    "order": 23,
+    "slug": "a1p-too-enough",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w12_l24_weather_plans.yaml",
+    "level": "A1+",
+    "order": 24,
+    "slug": "a1p-weather-plans",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w13_l25_past_review.yaml",
+    "level": "A1+",
+    "order": 25,
+    "slug": "a1p-past-review",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w13_l26_application_form.yaml",
+    "level": "A1+",
+    "order": 26,
+    "slug": "a1p-application-form",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w14_l27_movement_prepositions.yaml",
+    "level": "A1+",
+    "order": 27,
+    "slug": "a1p-movement-prepositions",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w14_l28_city_directions.yaml",
+    "level": "A1+",
+    "order": 28,
+    "slug": "a1p-city-directions",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w15_l29_if_will.yaml",
+    "level": "A1+",
+    "order": 29,
+    "slug": "a1p-if-will",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w15_l30_travel_packing.yaml",
+    "level": "A1+",
+    "order": 30,
+    "slug": "a1p-travel-packing",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w16_l31_review_a1plus.yaml",
+    "level": "A1+",
+    "order": 31,
+    "slug": "a1p-review-a1plus",
+    "status": "outside_this_change"
+  },
+  {
+    "path": "content/seed_lessons/a1p_w16_l32_picnic_seasons.yaml",
+    "level": "A1+",
+    "order": 32,
+    "slug": "a1p-picnic-seasons",
+    "status": "outside_this_change"
+  }
+]

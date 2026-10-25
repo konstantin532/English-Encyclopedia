@@ -1,0 +1,882 @@
+{
+  "author": "Codex",
+  "date": "2026-10-25",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "changes": [
+    {
+      "path": "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "pointer": "/contractions/0/note_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-he-she-works"
+        }
+      ],
+      "before": "No, he doesn't. В разговоре почти всегда doesn't.",
+      "after": "No, he doesn't. — обычная разговорная форма. Полная does not тоже возможна, например для подчёркнутого отрицания."
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "pointer": "/exercises/0/units",
+      "identity_chain": [
+        {
+          "slug": "a1-he-she-works"
+        },
+        {
+          "uid": "EX-00068"
+        }
+      ],
+      "before": [
+        "LX-00153"
+      ],
+      "after": [
+        "LX-00128",
+        "LX-00131"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "pointer": "/exercises/3/units",
+      "identity_chain": [
+        {
+          "slug": "a1-he-she-works"
+        },
+        {
+          "uid": "EX-00071"
+        }
+      ],
+      "before": [
+        "LX-00155"
+      ],
+      "after": []
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "pointer": "/exercises/5/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-he-she-works"
+        },
+        {
+          "uid": "EX-00073"
+        }
+      ],
+      "before": [
+        "starts at seven",
+        "starts at 7.",
+        "starts at 7",
+        "starts work at seven.",
+        "starts work at seven"
+      ],
+      "after": [
+        "starts at seven",
+        "starts at 7.",
+        "starts at 7",
+        "starts work at seven.",
+        "starts work at seven",
+        "starts work at 7.",
+        "starts at seven o'clock.",
+        "starts work at 7 o'clock.",
+        "starts at 7 o'clock.",
+        "starts work at seven o'clock."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "pointer": "/exercises/5/units",
+      "identity_chain": [
+        {
+          "slug": "a1-he-she-works"
+        },
+        {
+          "uid": "EX-00073"
+        }
+      ],
+      "before": [
+        "LX-00332",
+        "LX-00319"
+      ],
+      "after": [
+        "LX-00332"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "pointer": "/practice/0/units",
+      "identity_chain": [
+        {
+          "slug": "a1-he-she-works"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": [
+        "LX-00153",
+        "LX-00154",
+        "LX-00156"
+      ],
+      "after": [
+        "LX-00128",
+        "LX-00153"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "pointer": "/practice/1/units",
+      "identity_chain": [
+        {
+          "slug": "a1-he-she-works"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": [
+        "LX-00153",
+        "LX-00154",
+        "LX-00156"
+      ],
+      "after": [
+        "LX-00128",
+        "LX-00131"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "pointer": "/practice/2/units",
+      "identity_chain": [
+        {
+          "slug": "a1-he-she-works"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": [
+        "LX-00150",
+        "LX-00153",
+        "LX-00154",
+        "LX-00155",
+        "LX-00156"
+      ],
+      "after": [
+        "LX-00128",
+        "LX-00150",
+        "LX-00156"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l13_he_works.yaml",
+      "pointer": "/practice/3/units",
+      "identity_chain": [
+        {
+          "slug": "a1-he-she-works"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": [
+        "LX-00153",
+        "LX-00154",
+        "LX-00156",
+        "LX-00332"
+      ],
+      "after": [
+        "LX-00332"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l14_jobs.yaml",
+      "pointer": "/exercises/3/units",
+      "identity_chain": [
+        {
+          "slug": "a1-jobs-what-do-you-do"
+        },
+        {
+          "uid": "EX-00077"
+        }
+      ],
+      "before": [
+        "LX-00144",
+        "LX-00152"
+      ],
+      "after": [
+        "LX-00144"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l14_jobs.yaml",
+      "pointer": "/exercises/5/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-jobs-what-do-you-do"
+        },
+        {
+          "uid": "EX-00079"
+        }
+      ],
+      "before": [
+        "My mom is a nurse. She works in a hospital.",
+        "My mother is a nurse. She works at a hospital.",
+        "My mother is a nurse. She works in a hospital.",
+        "My mom's a nurse. She works at a hospital."
+      ],
+      "after": [
+        "My mom is a nurse. She works in a hospital.",
+        "My mother is a nurse. She works at a hospital.",
+        "My mother is a nurse. She works in a hospital.",
+        "My mom's a nurse. She works at a hospital.",
+        "My mom's a nurse. She works in a hospital.",
+        "My mother's a nurse. She works at a hospital.",
+        "My mother's a nurse. She works in a hospital."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l14_jobs.yaml",
+      "pointer": "/layers/2/body",
+      "identity_chain": [
+        {
+          "slug": "a1-jobs-what-do-you-do"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "before": "Схема ответа:\n\n> [T8]I[/] [D1]am[/] [T1]a[/] [S9]barista[/]! — Я бариста!\n\n- Профессия: I am a + профессия: I am a doctor.\n- Перед гласным звуком — an: an engineer.\n- Место: I work at a school, at a cafe, at home.\n- О другом человеке: She is a teacher. He works at a school.\n\nЕщё профессии — запоминайте сразу с a или an:\n\n- [T1]a[/] [S9]nurse[/] — медсестра, [T1]a[/] [S9]waiter[/] — официант, [T1]a[/] [S9]student[/] — студент\n- [T1]an[/] [S9]engineer[/] — инженер, [T1]a[/] [S9]manager[/] — менеджер, [T1]a[/] [S9]farmer[/] — фермер\n- [T1]a[/] [S9]writer[/] — писатель, [T1]a[/] [S9]singer[/] — певец: глагол + -er = «тот, кто делает»\n\n**At или in?** *At a school* говорит о месте работы как об учреждении; *in an office* называет офис как рабочую среду и может описывать обычное место работы. Это не обязательно акцент на физическом нахождении внутри здания прямо сейчас. Это **подсказка для контекста**, а не железное правило: *work at a hospital* и *work in a hospital* оба возможны, с разным акцентом.\n\n> [A6]Where[/] [D1]do[/] [T8]you[/] [D2]work[/]? — Где ты работаешь?\n> [T8]I[/] [D2]work[/] [P1]in[/] [T1]an[/] [S4]office[/]. — Я работаю в офисе.\n> [T8]She[/] [D2]works[/] [P1]at[/] [T1]a[/] [S4]hospital[/]. — Она работает в больнице.\n\n[S9]job[/] — работа-должность (I like my job), [S9]boss[/] — начальник.\n",
+      "after": "Схема ответа:\n\n> [T8]I[/] [D1]am[/] [T1]a[/] [S9]barista[/]! — Я бариста!\n\n- Профессия: I am a + профессия: I am a doctor.\n- Перед гласным звуком — an: an engineer.\n- Место: I work at a school, at a cafe, at home.\n- О другом человеке: She is a teacher. He works at a school.\n\nЕщё профессии — запоминайте сразу с a или an:\n\n- [T1]a[/] [S9]nurse[/] — медсестра, [T1]a[/] [S9]waiter[/] — официант, [T1]a[/] [S9]student[/] — студент\n- [T1]an[/] [S9]engineer[/] — инженер, [T1]a[/] [S9]manager[/] — менеджер, [T1]a[/] [S9]farmer[/] — фермер\n- [T1]a[/] [S9]writer[/] — писатель, [T1]a[/] [S9]singer[/] — певец. В этих названиях -er помогает назвать того, кто выполняет действие: write → writer, sing → singer. Так образуются не все названия профессий.\n\n**At или in?** *At a school* говорит о месте работы как об учреждении; *in an office* называет офис как рабочую среду и может описывать обычное место работы. Это не обязательно акцент на физическом нахождении внутри здания прямо сейчас. Это **подсказка для контекста**, а не железное правило: *work at a hospital* и *work in a hospital* оба возможны, с разным акцентом.\n\n> [A6]Where[/] [D1]do[/] [T8]you[/] [D2]work[/]? — Где ты работаешь?\n> [T8]I[/] [D2]work[/] [P1]in[/] [T1]an[/] [S4]office[/]. — Я работаю в офисе.\n> [T8]She[/] [D2]works[/] [P1]at[/] [T1]a[/] [S4]hospital[/]. — Она работает в больнице.\n\n[S9]job[/] — работа-должность (I like my job), [S9]boss[/] — начальник.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l14_jobs.yaml",
+      "pointer": "/practice/0/units",
+      "identity_chain": [
+        {
+          "slug": "a1-jobs-what-do-you-do"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": [
+        "LX-00142",
+        "LX-00152",
+        "LX-00336"
+      ],
+      "after": [
+        "LX-00142",
+        "LX-00152"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l14_jobs.yaml",
+      "pointer": "/practice/1/units",
+      "identity_chain": [
+        {
+          "slug": "a1-jobs-what-do-you-do"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": [
+        "LX-00143",
+        "LX-00152",
+        "LX-00335",
+        "LX-00336"
+      ],
+      "after": [
+        "LX-00128",
+        "LX-00143"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l14_jobs.yaml",
+      "pointer": "/practice/2/units",
+      "identity_chain": [
+        {
+          "slug": "a1-jobs-what-do-you-do"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": [
+        "LX-00151",
+        "LX-00335"
+      ],
+      "after": [
+        "LX-00151"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w07_l14_jobs.yaml",
+      "pointer": "/practice/3/units",
+      "identity_chain": [
+        {
+          "slug": "a1-jobs-what-do-you-do"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": [
+        "LX-00146",
+        "LX-00152"
+      ],
+      "after": [
+        "LX-00146"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "pointer": "/exercises/3/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-where-is-prepositions"
+        },
+        {
+          "uid": "EX-00083"
+        }
+      ],
+      "before": [
+        "It's on the right.",
+        "On the right.",
+        "It is on the right",
+        "It's on the right",
+        "On the right",
+        "The cafe is on the right."
+      ],
+      "after": [
+        "It's on the right.",
+        "On the right.",
+        "It is on the right",
+        "It's on the right",
+        "On the right",
+        "The cafe is on the right.",
+        "The cafe's on the right.",
+        "The café is on the right.",
+        "The café's on the right."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "pointer": "/exercises/5/explanation_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-where-is-prepositions"
+        },
+        {
+          "uid": "EX-00085"
+        }
+      ],
+      "before": "The supermarket is across from the park. — across from значит «напротив»; в условии между местами проходит дорога, но это не обязательная часть значения across from.",
+      "after": "The supermarket is across from the school. Across from означает «напротив»; дорога задана ситуацией, а не обязательна для этого выражения. Opposite тоже употребляется в американском английском, но здесь тренируем изученный двухсловный предлог."
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "pointer": "/exercises/5/prompt_en",
+      "identity_chain": [
+        {
+          "slug": "a1-where-is-prepositions"
+        },
+        {
+          "uid": "EX-00085"
+        }
+      ],
+      "before": "The supermarket is ___ the park.",
+      "after": "The supermarket is ___ the school."
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "pointer": "/exercises/5/prompt_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-where-is-prepositions"
+        },
+        {
+          "uid": "EX-00085"
+        }
+      ],
+      "before": "Супермаркет — через дорогу от парка. Скажите это по-американски.",
+      "after": "Супермаркет — через дорогу от школы. Заполните пропуск изученным двухсловным предлогом «напротив»."
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "pointer": "/layers/2/body",
+      "identity_chain": [
+        {
+          "slug": "a1-where-is-prepositions"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "before": "Схема вопроса и ответа:\n\n> [A6]Where[/] [D1]is[/] [T1]the[/] [S4]bank[/]? — Где банк?\n> [T8]It[/] [D1]is[/] [P1]next to[/] [T1]the[/] [S4]cafe[/]. — Он рядом с кафе.\n\n- **in** — внутри: in the box, in the house.\n- **on** — на поверхности: on the box. Сочетание **on the right** («справа») запоминаем отдельно: оно не означает поверхность.\n- **near** — недалеко: near the bank.\n- **next to** — непосредственно рядом, по соседству: next to the cafe. Предметы не обязательно соприкасаются.\n\nЕщё четыре предлога места:\n\n> [T1]The[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]. — Мастерская между банком и гостиницей.\n\n- [P1]under[/] — под: under the box\n- [P1]between[/] — между: between the bank **and** the hotel\n- [P9]in front of[/] — перед: in front of the cafe\n- [P9]across from[/] — напротив: across from the park. На городской карте между местами часто проходит дорога, но сама фраза не требует дороги: можно сидеть напротив человека за столом.\n\nВ городе ещё пригодятся [S4]hotel[/] (гостиница), [S4]supermarket[/] (супермаркет) и [S4]map[/] (карта).\n",
+      "after": "Схема вопроса и ответа:\n\n> [A6]Where[/] [D1]is[/] [T1]the[/] [S4]bank[/]? — Где банк?\n> [T8]It[/] [D1]is[/] [P1]next to[/] [T1]the[/] [S4]cafe[/]. — Он рядом с кафе.\n\n- **in** — внутри: in the box, in the house.\n- **on** — на поверхности: on the box. Сочетание **on the right** («справа») запоминаем отдельно: оно не означает поверхность.\n- **near** — недалеко: near the bank.\n- **next to** — непосредственно рядом, по соседству: next to the cafe. Предметы не обязательно соприкасаются.\n\nЕщё четыре предлога места:\n\n> [T1]The[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]. — Мастерская между банком и гостиницей.\n\n- [P1]under[/] — под: under the box\n- [P1]between[/] — между: between the bank **and** the hotel\n- [P9]in front of[/] — перед: in front of the cafe\n- [P9]across from[/] — напротив: across from the school. На городской карте между местами часто проходит дорога, но сама фраза не требует дороги: можно сидеть напротив человека за столом.\n\nВ городе ещё пригодятся [S4]hotel[/] (гостиница), [S4]supermarket[/] (супермаркет) и [S4]map[/] (карта).\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "pointer": "/layers/3/body",
+      "identity_chain": [
+        {
+          "slug": "a1-where-is-prepositions"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "before": "**Почему нельзя переводить русский предлог один к одному?** В русском сочетания «в коробке» и «у банка» включают **предлог и форму существительного**. В английском в наших примерах отношения места часто показывает предлог *in / near / next to*. Но правило «предлог всегда стоит перед любым словом» неверно: здесь мы изучаем лишь простые предложные сочетания, например *near the bank*.\n\n**Near** означает «недалеко», без конкретного расстояния. **Next to** — непосредственно рядом, обычно по соседству. *Near* не означает строго «в двух шагах»: это расстояние зависит от ситуации.\n\n> [P1]On[/] [T1]the[/] [A3]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]? — Справа? Рядом с кафе Мии?\n\n**Диагностика понимания:** Банк **непосредственно рядом**, но не **внутри** кафе. Что верно: *The bank is next to the cafe* или *The bank is in the cafe*?\n\n**Разбор:** *The bank is next to the cafe*. **Next to** обозначает соседство; **in** означает внутри. Обе фразы грамматически возможны, но **только первая** соответствует описанному расположению. Это различие смысла, а не запрет слова *in*.\n",
+      "after": "**Почему нельзя переводить русский предлог один к одному?** В русском сочетания «в коробке» и «у банка» включают **предлог и форму существительного**. В английском в наших примерах отношения места часто показывает предлог *in / near / next to*. Но правило «предлог всегда стоит перед любым словом» неверно: здесь мы изучаем лишь простые предложные сочетания, например *near the bank*.\n\n**Near** означает «недалеко», без конкретного расстояния. **Next to** — непосредственно рядом, обычно по соседству. *Near* не означает строго «в двух шагах»: это расстояние зависит от ситуации.\n\n> [P1]On[/] [T1]the[/] [S4]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]? — Справа? Рядом с кафе Мии?\n\n**Диагностика понимания:** Банк **непосредственно рядом**, но не **внутри** кафе. Что верно: *The bank is next to the cafe* или *The bank is in the cafe*?\n\n**Разбор:** *The bank is next to the cafe*. **Next to** обозначает соседство; **in** означает внутри. Обе фразы грамматически возможны, но **только первая** соответствует описанному расположению. Это различие смысла, а не запрет слова *in*.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "pointer": "/practice/0/units",
+      "identity_chain": [
+        {
+          "slug": "a1-where-is-prepositions"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": [
+        "LX-00157",
+        "LX-00162",
+        "LX-00176",
+        "LX-00178"
+      ],
+      "after": [
+        "LX-00157",
+        "LX-00162",
+        "LX-00176"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "pointer": "/practice/1/units",
+      "identity_chain": [
+        {
+          "slug": "a1-where-is-prepositions"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": [
+        "LX-00162",
+        "LX-00171",
+        "LX-00176",
+        "LX-00178",
+        "LX-00160"
+      ],
+      "after": [
+        "LX-00160",
+        "LX-00161",
+        "LX-00162",
+        "LX-00171"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "pointer": "/practice/2/units",
+      "identity_chain": [
+        {
+          "slug": "a1-where-is-prepositions"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": [
+        "LX-00162",
+        "LX-00172",
+        "LX-00176",
+        "LX-00178"
+      ],
+      "after": [
+        "LX-00162",
+        "LX-00169",
+        "LX-00172"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l15_where_is.yaml",
+      "pointer": "/practice/3/units",
+      "identity_chain": [
+        {
+          "slug": "a1-where-is-prepositions"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": [
+        "LX-00162",
+        "LX-00176",
+        "LX-00178",
+        "LX-00338",
+        "LX-00344"
+      ],
+      "after": [
+        "LX-00162",
+        "LX-00338",
+        "LX-00131",
+        "LX-00344"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l16_directions.yaml",
+      "pointer": "/layers/0/body",
+      "identity_chain": [
+        {
+          "slug": "a1-directions-turn-left"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "before": "Прохожий объясняет дорогу быстро: *Go straight, turn left!* Если вы понимаете эти короткие команды, город становится вашим. Сегодня вы научитесь понимать указания и давать их сами.\n\nОбъясняя дорогу, мы даём указания: «идите», «поверните». По-английски для этого берут глагол прямо из словаря и ставят его первым.\n\n> [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/]. — Идите прямо и поверните налево. Банк будет справа.\n\nЗдесь используется **повелительное наклонение** — форма для указаний. Подлежащее **you** («вы/ты») обычно **не произносится**, но понятно из ситуации: указание обращено к слушателю. В этом уроке тренируем короткий вариант *Go straight*. В живом объяснении маршрута бывает и *You go straight*: настоящее простое время тоже может использоваться для указаний. Поэтому наличие **you** само по себе не превращает маршрут в рассказ о привычке.\n",
+      "after": "Прохожий объясняет дорогу быстро: *Go straight, turn left!* Если вы понимаете эти короткие команды, город становится вашим. Сегодня вы научитесь понимать указания и давать их сами.\n\nОбъясняя дорогу, мы даём указания: «идите», «поверните». По-английски для этого берут глагол прямо из словаря и ставят его первым.\n\n> [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]right[/]. — Идите прямо и поверните налево. Банк будет справа.\n\nЗдесь используется **повелительное наклонение** — форма для указаний. Подлежащее **you** («вы/ты») обычно **не произносится**, но понятно из ситуации: указание обращено к слушателю. В этом уроке тренируем короткий вариант *Go straight*. В живом объяснении маршрута бывает и *You go straight*: настоящее простое время тоже может использоваться для указаний. Поэтому наличие **you** само по себе не превращает маршрут в рассказ о привычке.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l16_directions.yaml",
+      "pointer": "/layers/1/body",
+      "identity_chain": [
+        {
+          "slug": "a1-directions-turn-left"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "before": "**Turn left.** — Поверните налево. Вы просите человека **сделать действие**: сначала глагол turn, затем направление left.\n**The bank is on the left.** — Банк слева. Вы **описываете место**: сначала банк, затем is и on the left.\n\nВ первом случае **left** отвечает на вопрос «куда повернуть?», во втором **on the left** — «где находится банк?». Не добавляйте on the в команду *Turn left* и не убирайте is из полной фразы *The bank is on the left*.\n\nТак же с правой стороной: **Turn right** — поверните направо; **on the right** — справа. Для движения прямо: **Go straight.** Выбирайте команду по маршруту, а описание — по расположению места.\n",
+      "after": "**Turn left.** — Поверните налево. Вы просите человека **сделать действие**: сначала глагол turn, затем направление left.\n**The bank is on the left.** — Банк слева. Вы **описываете место**: сначала банк, затем is и on the left.\n\nВ первом случае **left** отвечает на вопрос «куда повернуть?», во втором **on the left** — «где находится банк?». Не добавляйте on the в команду *Turn left* и не убирайте is из полной фразы *The bank is on the left*.\n\n**Слово и всё сочетание — не одно и то же.** В *Turn left* слово **left** показывает направление — это наречие. В *on the left / on the right* слова **left / right** называют сторону — это существительные. Всё сочетание с **on** отвечает на вопрос «где?», но отдельное название стороны остаётся существительным.\n\nТак же с правой стороной: **Turn right** — поверните направо; **on the right** — справа. Для движения прямо: **Go straight.** Выбирайте команду по маршруту, а описание — по расположению места.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l16_directions.yaml",
+      "pointer": "/layers/4/body",
+      "identity_chain": [
+        {
+          "slug": "a1-directions-turn-left"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "before": "Так объясняют дорогу на американской улице:\n\n> [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/]. — Идите прямо и поверните налево. Банк будет справа.\n> [O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [A3]right[/]. — Спасибо! Прямо, налево и справа.\n\n- Хороший приём: повторить дорогу вслух. Так вы проверяете, что поняли, а собеседник поправит, если что.\n- Американцы часто считают кварталы: go two blocks — «пройдите два квартала».\n",
+      "after": "Так объясняют дорогу на американской улице:\n\n> [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]right[/]. — Идите прямо и поверните налево. Банк будет справа.\n> [O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [S4]right[/]. — Спасибо! Прямо, налево и справа.\n\n- Хороший приём: повторить дорогу вслух. Так вы проверяете, что поняли, а собеседник поправит, если что.\n- Американцы часто считают кварталы: go two blocks — «пройдите два квартала».\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l16_directions.yaml",
+      "pointer": "/layers/5/body",
+      "identity_chain": [
+        {
+          "slug": "a1-directions-turn-left"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "before": "Три пары, которые путают:\n\n- turn left — поверните налево; on the left — слева.\n- go straight — идите прямо; straight ahead — прямо вперёд / прямо впереди, в зависимости от фразы. В указании *Go straight ahead* речь тоже о движении, а не только о месте.\n- **Excuse me** удобно, чтобы привлечь внимание незнакомца; **sorry** — чтобы извиниться или вежливо переспросить. Оба выражения имеют и другие применения, поэтому не превращайте это сравнение в правило «только так».\n\n**Почему Can you help us?, а не Can you help we?** Некоторые английские местоимения меняют форму в зависимости от **роли** в предложении. Когда человек сам выполняет действие, употребляют форму **подлежащего** (*we*). Когда помощь направлена **на него**, нужна форма **дополнения** (*us*):\n\n- [T8]I[/] → [T8]me[/]: Excuse me!\n- [T8]he[/] → [T8]him[/], [T8]she[/] → [T3]her[/]\n- [T8]we[/] → [T8]us[/], [T8]they[/] → [T8]them[/]\n\n> [O2]Sorry[/], [D7]can[/] [T8]you[/] [D2]help[/] [T8]us[/]? — Простите, не поможете нам? (Анна — прохожему)\n\nДля прямого дополнения после *help* в нашем примере выбираем **us**, не **we**: *Can you help us?*. Но это не значит, что после любого глагола всегда стоит именно одна из этих форм: выбор зависит от **того, кто действует и на кого направлено действие**.\n",
+      "after": "Три пары, которые путают:\n\n- turn left — поверните налево; on the left — слева.\n- go straight — идите прямо; straight ahead — прямо вперёд / прямо впереди, в зависимости от фразы. В указании *Go straight ahead* речь тоже о движении, а не только о месте.\n- **Excuse me** удобно, чтобы привлечь внимание незнакомца; **sorry** — чтобы извиниться или вежливо переспросить. Оба выражения имеют и другие применения, поэтому не превращайте это сравнение в правило «только так».\n\n**Почему Can you help us?, а не Can you help we?** Некоторые английские местоимения меняют форму в зависимости от **роли** в предложении. Когда человек сам выполняет действие, употребляют форму **подлежащего** (*we*). Когда помощь направлена **на него**, нужна форма **дополнения** (*us*):\n\n- [T8]I[/] → [T8]me[/]: Excuse me!\n- [T8]he[/] → [T8]him[/], [T8]she[/] → [T8]her[/]\n- [T8]we[/] → [T8]us[/], [T8]they[/] → [T8]them[/]\n\n> [O2]Sorry[/], [D7]can[/] [T8]you[/] [D2]help[/] [T8]us[/]? — Простите, не поможете нам? (Анна — прохожему)\n\nДля прямого дополнения после *help* в нашем примере выбираем **us**, не **we**: *Can you help us?*. Но это не значит, что после любого глагола всегда стоит именно одна из этих форм: выбор зависит от **того, кто действует и на кого направлено действие**.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l16_directions.yaml",
+      "pointer": "/practice/0/units",
+      "identity_chain": [
+        {
+          "slug": "a1-directions-turn-left"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": [
+        "LX-00166",
+        "LX-00170",
+        "LX-00177"
+      ],
+      "after": [
+        "LX-00166",
+        "LX-00170"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l16_directions.yaml",
+      "pointer": "/practice/1/units",
+      "identity_chain": [
+        {
+          "slug": "a1-directions-turn-left"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": [
+        "LX-00167",
+        "LX-00168",
+        "LX-00177"
+      ],
+      "after": [
+        "LX-00167",
+        "LX-00168"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w08_l16_directions.yaml",
+      "pointer": "/practice/2/units",
+      "identity_chain": [
+        {
+          "slug": "a1-directions-turn-left"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": [
+        "LX-00166",
+        "LX-00167",
+        "LX-00169",
+        "LX-00170",
+        "LX-00177"
+      ],
+      "after": [
+        "LX-00166",
+        "LX-00167",
+        "LX-00169",
+        "LX-00170"
+      ]
+    },
+    {
+      "path": "content/seed_lexicon/a1_w07_work.yaml",
+      "pointer": "/units/0/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00142"
+        }
+      ],
+      "before": "Перед профессией — a: I am a teacher. Без a — ошибка.",
+      "after": "В полном ответе о профессии: I am a teacher. В этой конструкции перед teacher нужен определитель; здесь это a. Кратко можно ответить A teacher."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w07_work.yaml",
+      "pointer": "/units/13/meaning",
+      "identity_chain": [
+        {
+          "uid": "LX-00155"
+        }
+      ],
+      "before": "A short no answer about he or she",
+      "after": "A short negative answer to a question with Does he…?"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w07_work_plus.yaml",
+      "pointer": "/units/0/meaning",
+      "identity_chain": [
+        {
+          "uid": "LX-00319"
+        }
+      ],
+      "before": "a person who cares for sick people in a hospital",
+      "after": "a person trained to care for sick or injured people"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w07_work_plus.yaml",
+      "pointer": "/units/7/meaning",
+      "identity_chain": [
+        {
+          "uid": "LX-00326"
+        }
+      ],
+      "before": "a person who has a farm",
+      "after": "a person who grows crops or raises animals on a farm"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w07_work_plus.yaml",
+      "pointer": "/units/8/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00327"
+        }
+      ],
+      "before": "job — конкретное место работы, work — работа вообще. «джаб».",
+      "after": "Job — исчисляемое название работы или должности: a job, two jobs. Work в значении работы вообще обычно неисчисляемое. Job не обязательно обозначает помещение или здание."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w07_work_plus.yaml",
+      "pointer": "/units/10/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00329"
+        }
+      ],
+      "before": "Ударение в начале: HOSpital. В США — in the hospital.",
+      "after": "Ударение в начале: HOSpital. В США о пациенте говорят in the hospital. О работе возможны work at a hospital и work in a hospital: артикль зависит от контекста, а не только от слова hospital."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w07_work_plus.yaml",
+      "pointer": "/units/11/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00330"
+        }
+      ],
+      "before": "«Офис», ударение в начале. in an office — внутри здания.",
+      "after": "Ударение в начале. I work in an office называет офис как рабочую среду; это не обязательно сообщение, что человек сейчас физически внутри здания."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w07_work_plus.yaml",
+      "pointer": "/units/17/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00336"
+        }
+      ],
+      "before": "in — внутри здания: in an office, in a hospital. at — место как точка: at a school, at home.",
+      "after": "I work in an office — обычное место работы, не обязательно нахождение внутри сейчас. At и in выбирают по ситуации; это не жёсткое правило «точка против помещения»."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city.yaml",
+      "pointer": "/units/1/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00158"
+        }
+      ],
+      "before": "I — «я» в начале фразы, me — «меня, мне» после глагола.",
+      "after": "I — форма подлежащего: I am here. Me — форма дополнения: Can you help me? Выбор зависит от роли, а не просто от позиции в начале или конце фразы."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city.yaml",
+      "pointer": "/units/11/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00168"
+        }
+      ],
+      "before": "on the left — слева, turn left — налево.",
+      "after": "В turn left слово left показывает направление — это наречие. В on the left оно называет сторону — это существительное; всё сочетание означает «слева»."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city.yaml",
+      "pointer": "/units/12/example_en",
+      "identity_chain": [
+        {
+          "uid": "LX-00169"
+        }
+      ],
+      "before": "[T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/].",
+      "after": "[T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]right[/]."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city.yaml",
+      "pointer": "/units/12/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00169"
+        }
+      ],
+      "before": "right ещё значит «правильный»: That is right! — Верно!",
+      "after": "В turn right слово right показывает направление — это наречие. В on the right оно называет сторону — это существительное; всё сочетание означает «справа». Right ещё значит «правильный»: That is right! — Верно!"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city.yaml",
+      "pointer": "/units/16/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00174"
+        }
+      ],
+      "before": "t в next почти не слышно: «нэкс ту».",
+      "after": "В быстрой речи next to может звучать слитно, без отдельного взрыва каждого t. В отчётливой речи t можно сохранить."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city.yaml",
+      "pointer": "/units/17/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00175"
+        }
+      ],
+      "before": "Так начинают разговор с незнакомым человеком. Sorry — когда уже извиняются за ошибку.",
+      "after": "Excuse me удобно для вежливого привлечения внимания незнакомца. Sorry тоже может предварять обращение или переспрос; оно не ограничено извинением за уже совершённую ошибку."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city_plus.yaml",
+      "pointer": "/units/1/meaning",
+      "identity_chain": [
+        {
+          "uid": "LX-00338"
+        }
+      ],
+      "before": "in the space in the middle of two things",
+      "after": "in the space separating things"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city_plus.yaml",
+      "pointer": "/units/1/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00338"
+        }
+      ],
+      "before": "between A and B — всегда с and. Ударение в конце: beTWEEN.",
+      "after": "В образце between A and B два названия соединяются and. Возможны и другие дополнения: between the banks — «между банками». Не каждое сочетание с between содержит and."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city_plus.yaml",
+      "pointer": "/units/3/example_en",
+      "identity_chain": [
+        {
+          "uid": "LX-00340"
+        }
+      ],
+      "before": "[T1]The[/] [S4]bank[/] [D1]is[/] [P9]across from[/] [T1]the[/] [S4]park[/].",
+      "after": "[T1]The[/] [S4]bank[/] [D1]is[/] [P9]across from[/] [T1]the[/] [S4]school[/]."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city_plus.yaml",
+      "pointer": "/units/3/example_ru",
+      "identity_chain": [
+        {
+          "uid": "LX-00340"
+        }
+      ],
+      "before": "Банк напротив парка.",
+      "after": "Банк напротив школы."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city_plus.yaml",
+      "pointer": "/units/3/meaning",
+      "identity_chain": [
+        {
+          "uid": "LX-00340"
+        }
+      ],
+      "before": "on the other side of a street from something",
+      "after": "on the opposite side from someone or something"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city_plus.yaml",
+      "pointer": "/units/3/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00340"
+        }
+      ],
+      "before": "Американский вариант «напротив». В учебниках встречается и opposite.",
+      "after": "Across from — естественное американское «напротив», в том числе через дорогу или стол. Opposite тоже употребляется в американском английском; в этом уроке учим across from."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w08_city_plus.yaml",
+      "pointer": "/units/7/example_en",
+      "identity_chain": [
+        {
+          "uid": "LX-00344"
+        }
+      ],
+      "before": "[T1]The[/] [S4]hotel[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]left[/].",
+      "after": "[T1]The[/] [S4]hotel[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]left[/]."
+    }
+  ]
+}

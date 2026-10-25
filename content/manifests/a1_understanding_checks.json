@@ -389,15 +389,16 @@
           ]
         },
         "writing": {
-          "prompt": "Напишите «В комнате две книги».",
-          "model": "There are two books in the room.",
+          "prompt": "Вы описываете комнату гостю. Напишите, что здесь есть две книги; само место повторять не нужно.",
+          "model": "There are two books.",
           "accepted": [
-            "There are two books in the room."
+            "There are two books in the room.",
+            "There are two books."
           ]
         },
         "transfer": {
-          "prompt": "Во время поездки спросите у друга, есть ли вода, и затем вежливо попросите немного.",
-          "model": "Is there any water? Can I have some water, please?"
+          "prompt": "Во время поездки спросите у друга, есть ли вода, и затем вежливо попросите воды, не уточняя объём.",
+          "model": "Is there water? Can I have some water, please?"
         },
         "explain": {
           "prompt": "На столе две книги. Ученик говорит: «There is two books». Исправьте форму и объясните.",
@@ -433,7 +434,14 @@
           "prompt": "Напишите «Это стоит три доллара».",
           "model": "It is three dollars.",
           "accepted": [
-            "It is three dollars."
+            "It is three dollars.",
+            "It's three dollars.",
+            "That is three dollars.",
+            "That's three dollars.",
+            "It is 3 dollars.",
+            "It's 3 dollars.",
+            "That is 3 dollars.",
+            "That's 3 dollars."
           ]
         },
         "transfer": {
@@ -459,7 +467,7 @@
       "why": "I work описывает обычное действие; do помогает спросить о нём.",
       "pattern": "I work. / Do you work?",
       "mistake": "Писать I am work.",
-      "fix": "С I перед обычным действием не нужен am.",
+      "fix": "В Present Simple о привычке с I и work используем I work, без am. Это правило для изучаемой формы, а не запрет на любую конструкцию с be и действием.",
       "example": "I work every day.",
       "translation": "Я работаю каждый день.",
       "tasks": {
@@ -492,7 +500,7 @@
         "a_ru": "Я занят.",
         "b_en": "I work every day.",
         "b_ru": "Я работаю каждый день.",
-        "why": "Busy описывает состояние и требует am. Work сообщает обычное действие и с I не требует am."
+        "why": "Busy — прилагательное «занят»: в полном предложении I am busy перед ним нужна форма be. Work — глагол «работать»: о привычке с I говорим I work, без am. Различаем строение этих фраз, а не просто состояние и действие."
       }
     },
     {
@@ -538,8 +546,8 @@
     },
     {
       "slug": "a1-he-she-works",
-      "plain": "С he/she и одним человеком глагол привычки часто получает -s.",
-      "why": "В вопросе does забирает окончание: Does she work?",
+      "plain": "В утвердительной фразе с he/she и именем одного человека у большинства смысловых глаголов появляется -s или -es.",
+      "why": "В вопросе с work используем does для he/she; после помощника work остаётся без -s.",
       "pattern": "She works. / Does she work?",
       "mistake": "Писать Does she works?",
       "fix": "После does оставляйте work без -s.",
@@ -598,7 +606,11 @@
           "prompt": "Напишите «Я работаю в школе».",
           "model": "I work at a school.",
           "accepted": [
-            "I work at a school."
+            "I work at a school.",
+            "I work in a school.",
+            "I work at the school.",
+            "I work in the school.",
+            "I work at school."
           ]
         },
         "transfer": {
@@ -621,7 +633,7 @@
     {
       "slug": "a1-where-is-prepositions",
       "plain": "Where is...? спрашивает о месте.",
-      "why": "In — внутри, next to — рядом, between — между двумя.",
+      "why": "In в нашем примере — внутри, next to — непосредственно рядом. В схеме between X and Y называем два ориентира; это не запрет других употреблений between.",
       "pattern": "Where is the bank? / It is near the cafe.",
       "mistake": "Писать Where the bank is?",
       "fix": "В прямом вопросе поставьте is перед названием.",
@@ -639,12 +651,15 @@
           "prompt": "Напишите «Банк рядом с кафе».",
           "model": "The bank is next to the cafe.",
           "accepted": [
-            "The bank is next to the cafe."
+            "The bank is next to the cafe.",
+            "The bank is near the cafe.",
+            "The cafe is near the bank.",
+            "The cafe is next to the bank."
           ]
         },
         "transfer": {
-          "prompt": "Магазин находится через дорогу от парка. Объясните туристу, где этот магазин.",
-          "model": "The shop is across from the park."
+          "prompt": "Магазин находится через дорогу от школы. Объясните туристу, где магазин.",
+          "model": "The shop is across from the school."
         },
         "explain": {
           "prompt": "Вы ищете банк и спрашиваете: «Where the bank is?». Почему прямой вопрос построен неверно?",
@@ -656,13 +671,13 @@
         "a_ru": "Магазин рядом с банком.",
         "b_en": "The shop is between the bank and the cafe.",
         "b_ru": "Магазин между банком и кафе.",
-        "why": "Next to связывает магазин с одним местом, between ... and ... показывает положение между двумя местами."
+        "why": "В этом примере next to показывает непосредственное соседство. Схема between the bank and the cafe называет два ориентира; between может связывать и больше двух отдельных объектов."
       }
     },
     {
       "slug": "a1-directions-turn-left",
       "plain": "Go straight и turn left/right помогают указать дорогу.",
-      "why": "В короткой команде глагол идёт первым.",
+      "why": "В образце Go straight сначала называем действие (go), затем направление (straight).",
       "pattern": "Go straight. / Turn right.",
       "mistake": "Путать right и left.",
       "fix": "Right — направо, left — налево.",
@@ -852,8 +867,8 @@
           ]
         },
         "transfer": {
-          "prompt": "Спросите друга, нравится ли ему рисовать, и скажите, что вам нравится читать.",
-          "model": "Do you like drawing? I like reading."
+          "prompt": "Спросите друга, нравится ли ему гулять, и скажите, что вам нравится читать.",
+          "model": "Do you like walking? I like reading."
         },
         "explain": {
           "prompt": "Сравните «I like books» и «I like reading». Объясните разницу: что нравится в каждом случае?",
@@ -954,7 +969,7 @@
     },
     {
       "slug": "a1-dont-doesnt",
-      "plain": "Don't/doesn't делают обычные действия отрицательными.",
+      "plain": "Don't/doesn't образуют отрицание обычного глагола в Present Simple: и действия work, и состояния know.",
       "why": "I/you → don't; he/she → doesn't.",
       "pattern": "I don't know. / Tom doesn't live here.",
       "mistake": "Писать He doesn't knows.",
@@ -1037,7 +1052,7 @@
     },
     {
       "slug": "a1-can-skills",
-      "plain": "Can + глагол рассказывает, что вы умеете.",
+      "plain": "В этом уроке can + глагол рассказывает, что вы умеете; can также встречается в просьбах.",
       "why": "После can не нужен to, и глагол не получает -s.",
       "pattern": "I can speak English. / She can draw.",
       "mistake": "Говорить She can draws.",
@@ -1121,7 +1136,7 @@
     {
       "slug": "a1-bus-ticket",
       "plain": "В автобусе нужны вопросы о маршруте, билете и времени.",
-      "why": "Автобус — it, поэтому для вопроса о действии нужен does.",
+      "why": "В вопросе о маршруте this bus — как it: Does this bus go…? После does ставим go без -s. Вопрос с be строится иначе: Is this the bus?",
       "pattern": "Does this bus go to the park?",
       "mistake": "Писать Does this bus goes?",
       "fix": "После does используйте go без -s.",

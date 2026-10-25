@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "source_files": 21,
+  "four_lessons": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "source_hashes": true,
+  "scope_and_ids": true,
+  "recorded_English_IPA_poem_gaps_unchanged": true,
+  "old_correct_answers_retained": true,
+  "unrelated_rows_and_levels_unchanged": true,
+  "schema_auth_ci_lockfiles_registry_unchanged": true,
+  "dependency_on_unmerged_5_8": "none detected"
+}

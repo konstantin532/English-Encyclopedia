@@ -6,7 +6,7 @@
   <header class="page-head">
     <p class="crumbs"><a href="{% url 'stories:map' %}">Истории и стихи</a> / {{ poem.level.code }}, неделя {{ poem.week.number }} / стихотворение {{ poem.number }}</p>
     <h1 lang="en">{{ poem.title }}</h1>
-    <p>{{ poem.theme_ru }}. Рифма {{ poem.rhyme_scheme }}. Стихотворение не вводит новых слов: оно тренирует произношение на знакомых.</p>
+    <p>{{ poem.theme_ru }}. Рифма {{ poem.rhyme_scheme }}. {% if poem.number == 3 and poem.level.code == "A1" %}Повторяем лексику и тренируем произношение. Готовые выражения выше даны для понимания; самостоятельно строить их пока не требуется.{% else %}Стихотворение не вводит новых слов: оно тренирует произношение на знакомых.{% endif %}</p>
   </header>
   <div class="lesson-grid">
     <article class="prose">

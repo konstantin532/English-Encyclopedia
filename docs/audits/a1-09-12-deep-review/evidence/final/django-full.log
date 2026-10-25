@@ -1,0 +1,210 @@
+Found 845 test(s).
+Creating test database for alias 'default'...
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+System check identified no issues (0 silenced).
+..........................................................................................................F......................................................................................................................Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+........Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+....................................................................Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+.............................AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+........ss...............AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+......AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: New login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", user_agent: "<unknown>", path_info: "/accounts/login/"} after repeated login failures.
+............Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+..............audit: упражнение EX-00001 убрано из курса и сохранено в архиве вместе с ответами учеников.
+audit: упражнение EX-00001 убрано из курса и сохранено в архиве вместе с ответами учеников.
+audit: упражнение EX-00001 убрано из курса и сохранено в архиве вместе с ответами учеников.
+audit: упражнение EX-00001 убрано из курса и сохранено в архиве вместе с ответами учеников.
+...........................................................................................................Пропущен повреждённый manifest.json: a1-w01. Запустите generate_audio.bat.
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Пропущен повреждённый manifest.json: a1-w01. Запустите generate_audio.bat.
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Пропущен повреждённый manifest.json: a1-w01. Запустите generate_audio.bat.
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Пропущен повреждённый manifest.json: a1-w01. Запустите generate_audio.bat.
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+...........................Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+..........................Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+......................Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+...Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+........................................................................................................................A1 audio archive not configured; text-only deploy.
+....Installed 132 files; 33 real Kokoro bundles. Need human listening review: 33.
+......................Пропущен аудиокомплект s01: отсутствует дорожка very_slow.
+........Скачиваю заново: model.onnx, 0.0 МБ…
+Скачиваю заново: model.onnx, 0.0 МБ…
+Готово: model.onnx (размер и SHA256 совпали).
+Скачиваю заново: model.onnx, 0.0 МБ…
+Готово: model.onnx (размер и SHA256 совпали).
+Скачиваю заново: model.onnx, 0.0 МБ…
+Проверен: model.onnx (размер и SHA256).
+Скачиваю заново: model.onnx, 0.0 МБ…
+........................................usage: manage.py [-h] [--engine {kokoro,test}] --output OUTPUT
+                 [--models MODELS]
+manage.py: error: the following arguments are required: --output
+Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+usage: manage.py [-h] [--engine {kokoro,test}] --output OUTPUT
+                 [--models MODELS]
+manage.py: error: the following arguments are required: --output
+..........Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 1
+Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+......usage: manage.py [-h] [--engine {kokoro,test}] --output OUTPUT
+                 [--models MODELS]
+manage.py: error: the following arguments are required: --output
+Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+...QA fuzz passed: cases=136 max_length=15 seed=38811173329 tier=regular
+................................Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+............Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+Проба w01: very_slow 21.4 с, slow 17.0 с, natural 14.1 с
+Проба w02: very_slow 24.3 с, slow 19.2 с, natural 16.0 с
+Проба w03: very_slow 21.2 с, slow 16.6 с, natural 14.0 с
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 1
+.....Проба w04: very_slow 19.0 с, slow 15.0 с, natural 12.6 с
+Проба pre: very_slow 24.1 с, slow 19.0 с, natural 16.0 с
+Проба post: very_slow 22.2 с, slow 17.5 с, natural 14.6 с
+Проба delayed: very_slow 24.5 с, slow 19.4 с, natural 16.3 с
+....Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+.......
+======================================================================
+FAIL: test_specific_rule_explanation_comes_from_the_new_question (tests.test_a1_mistake_review.A1MistakeReviewTests.test_specific_rule_explanation_comes_from_the_new_question)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 58, in testPartExecutor
+    yield
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 651, in run
+    self._callTestMethod(testMethod)
+    
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 606, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/tests/test_a1_mistake_review.py", line 274, in test_specific_rule_explanation_comes_from_the_new_question
+    self.assertContains(checked, "С неисчисляемым напитком")
+    ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/test/testcases.py", line 633, in assertContains
+    self.assertTrue(
+    ^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 744, in assertTrue
+    raise self.failureException(msg)
+    ^^^^^^^^^^^
+AssertionError: False is not true : Couldn't find 'С неисчисляемым напитком' in the following response
+b'<!doctype html>\n<html lang="ru" data-theme="light">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <title>\xd0\x9f\xd0\xbe\xd0\xb2\xd1\x82\xd0\xbe\xd1\x80\xd0\xb8\xd1\x82\xd1\x8c \xd0\xbd\xd0\xb5\xd0\xbf\xd0\xbe\xd0\xbd\xd1\x8f\xd1\x82\xd0\xbd\xd0\xbe\xd0\xb5 \xc2\xb7 English Encyclopedia</title>\n  <meta name="description" content="\xd0\x98\xd0\xbd\xd1\x82\xd0\xb5\xd1\x80\xd0\xb0\xd0\xba\xd1\x82\xd0\xb8\xd0\xb2\xd0\xbd\xd0\xb0\xd1\x8f \xd1\x8d\xd0\xbd\xd1\x86\xd0\xb8\xd0\xba\xd0\xbb\xd0\xbe\xd0\xbf\xd0\xb5\xd0\xb4\xd0\xb8\xd1\x8f \xd0\xb0\xd0\xbc\xd0\xb5\xd1\x80\xd0\xb8\xd0\xba\xd0\xb0\xd0\xbd\xd1\x81\xd0\xba\xd0\xbe\xd0\xb3\xd0\xbe \xd0\xb0\xd0\xbd\xd0\xb3\xd0\xbb\xd0\xb8\xd0\xb9\xd1\x81\xd0\xba\xd0\xbe\xd0\xb3\xd0\xbe: \xd0\xbe\xd1\x82 \xd0\xbf\xd0\xb5\xd1\x80\xd0\xb2\xd0\xbe\xd0\xb3\xd0\xbe \xd1\x81\xd0\xbb\xd0\xbe\xd0\xb2\xd0\xb0 \xd0\xb4\xd0\xbe B2+, \xd1\x81 \xd0\xbe\xd0\xb1\xd1\x8a\xd1\x8f\xd1\x81\xd0\xbd\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xb5\xd0\xbc, \xd0\xba\xd0\xb0\xd0\xba \xd1\x83\xd1\x81\xd1\x82\xd1\x80\xd0\xbe\xd0\xb5\xd0\xbd \xd1\x8f\xd0\xb7\xd1\x8b\xd0\xba.">\n  <meta name="robots" content="noindex, follow">\n  <link rel="stylesheet" href="/static/css/foundation.css">\n  <link rel="preload" href="/static/fonts/GolosText-Variable.woff2" as="font" type="font/woff2" crossorigin>\n  <link rel="stylesheet" href="/static/css/fonts.css">\n  <link rel="stylesheet" href="/static/css/design-tokens.css">\n  <link rel="stylesheet" href="/static/css/linguistic-markers.css">\n  <link rel="stylesheet" href="/static/css/accessibility.css">\n  <link rel="stylesheet" href="/static/css/app.css">\n  <link rel="stylesheet" href="/static/css/studio.css">\n  <link rel="stylesheet" href="/static/css/cinematic-studio.css">\n  <link rel="stylesheet" href="/static/css/motion-system.css">\n  <link rel="stylesheet" href="/static/css/mistake-review.css">\n  \n  <link rel="stylesheet" href="/static/css/art-direction.css">\n  <link rel="stylesheet" href="/static/css/art-light.css">\n  <link rel="stylesheet" href="/static/css/editorial-world.css">\n  \n  <link rel="stylesheet" href="/static/css/living-atlas.css">\n  <script nonce="">try{var eeMode=localStorage.getItem("ee-motion-mode");document.documentElement.dataset.motion=matchMedia("(prefers-reduced-motion: reduce)").matches?"minimal":(["full","balanced","minimal"].includes(eeMode)?eeMode:"balanced")}catch(e){document.documentElement.dataset.motion="balanced"}</script>\n  \n</head>\n<body>\n  <a class="skip-link" href="#main">\xd0\x9a \xd1\x81\xd0\xbe\xd0\xb4\xd0\xb5\xd1\x80\xd0\xb6\xd0\xb0\xd0\xbd\xd0\xb8\xd1\x8e</a>\n  <div class="studio-shell">\n    \n<aside class="studio-sidebar atlas-sidebar" aria-label="\xd0\xa0\xd0\xb0\xd0\xb7\xd0\xb4\xd0\xb5\xd0\xbb\xd1\x8b \xd1\x8d\xd0\xbd\xd1\x86\xd0\xb8\xd0\xba\xd0\xbb\xd0\xbe\xd0\xbf\xd0\xb5\xd0\xb4\xd0\xb8\xd0\xb8">\n  <a class="studio-brand atlas-brand" href="/">\n    <svg class="atlas-brand-book" viewBox="0 0 48 40" aria-hidden="true"><path d="M24 9c-5-4-12-5-20-4v27c8-1 15 0 20 4 5-4 12-5 20-4V5c-8-1-15 0-20 4Z"/><path d="M24 9v27M9 12c4 0 8 1 11 3M9 18c4 0 8 1 11 3M28 15c3-2 7-3 11-3M28 21c3-2 7-3 11-3"/></svg>\n    <span>English <br>Encyclopedia<small>\xd0\x90\xd1\x82\xd0\xbb\xd0\xb0\xd1\x81 \xd0\xb6\xd0\xb8\xd0\xb2\xd0\xbe\xd0\xb3\xd0\xbe \xd0\xb0\xd0\xbd\xd0\xb3\xd0\xbb\xd0\xb8\xd0\xb9\xd1\x81\xd0\xba\xd0\xbe\xd0\xb3\xd0\xbe</small></span>\n  </a>\n  <nav class="studio-nav atlas-nav" aria-label="\xd0\x9e\xd1\x81\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xbd\xd0\xb0\xd1\x8f \xd0\xbd\xd0\xb0\xd0\xb2\xd0\xb8\xd0\xb3\xd0\xb0\xd1\x86\xd0\xb8\xd1\x8f">\n    <a href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z"/></svg>\xd0\x93\xd0\xbb\xd0\xb0\xd0\xb2\xd0\xbd\xd0\xb0\xd1\x8f</a>\n    <a href="/levels/a1/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h6a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h6z"/></svg>\xd0\x9a\xd1\x83\xd1\x80\xd1\x81</a>\n    <a href="/words/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>\xd0\xa1\xd0\xbb\xd0\xbe\xd0\xb2\xd0\xb0\xd1\x80\xd1\x8c</a>\n    <a href="/markers/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17h7M4 21h16M13 17h7M4 13c3-6 13-6 16 0"/></svg>\xd0\x9c\xd0\xb0\xd1\x80\xd0\xba\xd0\xb5\xd1\x80\xd1\x8b</a>\n    <a href="/stories/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v13H5zM9 9h6M9 13h6M9 17h4"/></svg>\xd0\x98\xd1\x81\xd1\x82\xd0\xbe\xd1\x80\xd0\xb8\xd0\xb8 \xd0\xb8 \xd1\x81\xd1\x82\xd0\xb8\xd1\x85\xd0\xb8</a>\n    <a href="/classics/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>\xd0\x9a\xd0\xbb\xd0\xb0\xd1\x81\xd1\x81\xd0\xb8\xd0\xba\xd0\xb0</a>\n    \n      <a href="/learning/review/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></svg>\xd0\x9f\xd0\xbe\xd0\xb2\xd1\x82\xd0\xbe\xd1\x80\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xb5</a>\n      <a href="/learning/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>\xd0\x9c\xd0\xbe\xd0\xb9 \xd0\xbf\xd1\x80\xd0\xbe\xd0\xb3\xd1\x80\xd0\xb5\xd1\x81\xd1\x81</a>\n    \n  </nav>\n  <div class="studio-sidebar-bottom atlas-sidebar-bottom">\n    <img class="atlas-sidebar-vine" src="/static/img/atlas/ivy-vine.webp" alt="" width="360" height="640" loading="lazy" decoding="async">\n    <p class="atlas-sidebar-motto" lang="en">A world you can read, explore and understand.</p>\n    <p class="studio-sidebar-caption">\xd0\x90\xd0\xbc\xd0\xb5\xd1\x80\xd0\xb8\xd0\xba\xd0\xb0\xd0\xbd\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xb0\xd0\xbd\xd0\xb3\xd0\xbb\xd0\xb8\xd0\xb9\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9<br>\xd0\xb4\xd0\xbb\xd1\x8f \xd1\x80\xd1\x83\xd1\x81\xd1\x81\xd0\xba\xd0\xbe\xd1\x8f\xd0\xb7\xd1\x8b\xd1\x87\xd0\xbd\xd1\x8b\xd1\x85</p>\n  </div>\n</aside>\n\n\n    <div class="studio-workspace">\n      \n<header class="site-header">\n  <div class="wrap">\n    <p class="studio-breadcrumb"><a href="/">\xd0\xad\xd0\xbd\xd1\x86\xd0\xb8\xd0\xba\xd0\xbb\xd0\xbe\xd0\xbf\xd0\xb5\xd0\xb4\xd0\xb8\xd1\x8f</a><span>/</span><strong>\xd0\x9c\xd0\xbe\xd0\xb9 \xd0\xbf\xd1\x80\xd0\xbe\xd0\xb3\xd1\x80\xd0\xb5\xd1\x81\xd1\x81</strong></p>\n    <div class="studio-top-actions">\n      <form class="studio-search-form" method="get" action="/words/" role="search"><label class="visually-hidden" for="studio-search">\xd0\x9d\xd0\xb0\xd0\xb9\xd1\x82\xd0\xb8 \xd1\x81\xd0\xbb\xd0\xbe\xd0\xb2\xd0\xbe</label><input id="studio-search" type="search" name="q" placeholder="\xd0\x9d\xd0\xb0\xd0\xb9\xd1\x82\xd0\xb8 \xd1\x81\xd0\xbb\xd0\xbe\xd0\xb2\xd0\xbe \xd0\xb8\xd0\xbb\xd0\xb8 \xd0\xbf\xd0\xb5\xd1\x80\xd0\xb5\xd0\xb2\xd0\xbe\xd0\xb4\xe2\x80\xa6" autocomplete="off"><button type="submit" aria-label="\xd0\x9d\xd0\xb0\xd0\xb9\xd1\x82\xd0\xb8 \xd1\x81\xd0\xbb\xd0\xbe\xd0\xb2\xd0\xbe">\xe2\x8c\x95</button></form>\n      \n        <a class="studio-account" href="/learning/"><span class="studio-avatar" aria-hidden="true">\xd0\xaf</span><span>\xd0\x9c\xd0\xbe\xd0\xb9 \xd0\xba\xd0\xb0\xd0\xb1\xd0\xb8\xd0\xbd\xd0\xb5\xd1\x82</span></a>\n        <form method="post" action="/accounts/logout/"><input type="hidden" name="csrfmiddlewaretoken" value="u3ghlKa9D2jR7E6CxR0KOhaD5qePMCEVY4TIFLXWDcHj465QzBq6l4puopFC3Q5M"><button class="btn btn-quiet btn-small" type="submit">\xd0\x92\xd1\x8b\xd0\xb9\xd1\x82\xd0\xb8</button></form>\n      \n      <label class="motion-control"><span>\xd0\x94\xd0\xb2\xd0\xb8\xd0\xb6\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xb5</span><select data-motion-control aria-label="\xd0\x98\xd0\xbd\xd1\x82\xd0\xb5\xd0\xbd\xd1\x81\xd0\xb8\xd0\xb2\xd0\xbd\xd0\xbe\xd1\x81\xd1\x82\xd1\x8c \xd0\xb0\xd0\xbd\xd0\xb8\xd0\xbc\xd0\xb0\xd1\x86\xd0\xb8\xd0\xb8" disabled><option value="full">\xd0\x9a\xd0\xb8\xd0\xbd\xd0\xbe</option><option value="balanced" selected>\xd0\x91\xd0\xb0\xd0\xbb\xd0\xb0\xd0\xbd\xd1\x81</option><option value="minimal">\xd0\x9c\xd0\xb8\xd0\xbd\xd0\xb8\xd0\xbc\xd1\x83\xd0\xbc</option></select></label>\n      <span class="visually-hidden" id="motion-mode-hint" role="status" aria-live="polite">\xd0\xa0\xd0\xb5\xd0\xb6\xd0\xb8\xd0\xbc \xd0\xb4\xd0\xb2\xd0\xb8\xd0\xb6\xd0\xb5\xd0\xbd\xd0\xb8\xd1\x8f \xd0\xbe\xd0\xb1\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xb8\xd1\x82\xd1\x81\xd1\x8f \xd0\xbf\xd0\xbe\xd1\x81\xd0\xbb\xd0\xb5 \xd0\xb7\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xba\xd0\xb8 \xd1\x81\xd1\x82\xd1\x80\xd0\xb0\xd0\xbd\xd0\xb8\xd1\x86\xd1\x8b.</span>\n      <button class="btn btn-quiet btn-small toggle" type="button" data-markers-toggle aria-label="\xd0\x9f\xd0\xb5\xd1\x80\xd0\xb5\xd0\xba\xd0\xbb\xd1\x8e\xd1\x87\xd0\xb8\xd1\x82\xd1\x8c \xd1\x86\xd0\xb2\xd0\xb5\xd1\x82 \xd0\xbc\xd0\xb0\xd1\x80\xd0\xba\xd0\xb5\xd1\x80\xd0\xbe\xd0\xb2"\n              aria-pressed="true"\n              data-save-url="/learning/markers/">\n        <span class="toggle-on">\xd0\x9c\xd0\xb0\xd1\x80\xd0\xba\xd0\xb5\xd1\x80\xd1\x8b \xd0\xb2 \xd1\x86\xd0\xb2\xd0\xb5\xd1\x82\xd0\xb5</span><span class="toggle-off">\xd0\x9c\xd0\xb0\xd1\x80\xd0\xba\xd0\xb5\xd1\x80\xd1\x8b \xd0\xb1\xd0\xb5\xd0\xb7 \xd1\x86\xd0\xb2\xd0\xb5\xd1\x82\xd0\xb0</span><span class="toggle-short" aria-hidden="true">\xd0\xa6\xd0\xb2\xd0\xb5\xd1\x82</span><span class="studio-switch" aria-hidden="true"></span>\n      </button>\n    </div>\n  </div>\n</header>\n\n\n      <main id="main">\n<div class="wrap mistake-review-page">\n  <header class="page-head">\n    <p class="crumbs"><a href="/learning/">\xd0\x9c\xd0\xbe\xd0\xb9 \xd0\xbf\xd1\x80\xd0\xbe\xd0\xb3\xd1\x80\xd0\xb5\xd1\x81\xd1\x81</a> / \xd0\xbf\xd0\xbe\xd0\xb2\xd1\x82\xd0\xbe\xd1\x80\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xb5 \xd0\xbe\xd1\x88\xd0\xb8\xd0\xb1\xd0\xbe\xd0\xba</p>\n    <h1>\xd0\x9f\xd0\xbe\xd0\xb2\xd1\x82\xd0\xbe\xd1\x80\xd0\xb8\xd1\x82\xd1\x8c \xd1\x82\xd0\xbe, \xd1\x87\xd1\x82\xd0\xbe \xd0\xb1\xd1\x8b\xd0\xbb\xd0\xbe \xd1\x82\xd1\x80\xd1\x83\xd0\xb4\xd0\xbd\xd0\xbe</h1>\n    <p>\xd0\xa7\xd0\xb5\xd1\x80\xd0\xb5\xd0\xb7 \xd0\xb4\xd0\xb2\xd0\xb0 \xd0\xb4\xd0\xbd\xd1\x8f \xd0\xbf\xd0\xbe\xd1\x81\xd0\xbb\xd0\xb5 \xd0\xbe\xd1\x88\xd0\xb8\xd0\xb1\xd0\xba\xd0\xb8 \xd0\xbf\xd0\xbe\xd1\x8f\xd0\xb2\xd0\xbb\xd1\x8f\xd1\x8e\xd1\x82\xd1\x81\xd1\x8f \xd0\xbf\xd1\x8f\xd1\x82\xd1\x8c \xd0\xbd\xd0\xbe\xd0\xb2\xd1\x8b\xd1\x85 \xd0\xb2\xd0\xbe\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbe\xd0\xb2 \xd0\xbd\xd0\xb0 \xd1\x82\xd0\xbe\xd1\x82 \xd0\xb6\xd0\xb5 \xd0\xbd\xd0\xb0\xd0\xb2\xd1\x8b\xd0\xba. \xd0\xa1\xd1\x82\xd0\xb0\xd1\x80\xd1\x8b\xd0\xb9 \xd0\xb2\xd0\xbe\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81 \xd0\xbd\xd0\xb5 \xd0\xbf\xd0\xbe\xd0\xb2\xd1\x82\xd0\xbe\xd1\x80\xd1\x8f\xd0\xb5\xd0\xbc \xd1\x81\xd1\x80\xd0\xb0\xd0\xb7\xd1\x83. \xd0\x9e\xd1\x82\xd0\xb2\xd0\xb5\xd1\x82\xd1\x8b \xd0\xb2 \xd1\x8d\xd1\x82\xd0\xbe\xd0\xb9 \xd1\x82\xd1\x80\xd0\xb5\xd0\xbd\xd0\xb8\xd1\x80\xd0\xbe\xd0\xb2\xd0\xba\xd0\xb5 \xd0\xbd\xd0\xb5 \xd0\xbc\xd0\xb5\xd0\xbd\xd1\x8f\xd1\x8e\xd1\x82 \xd0\xbe\xd1\x86\xd0\xb5\xd0\xbd\xd0\xba\xd1\x83 \xd0\xb2\xd0\xb0\xd1\x88\xd0\xb5\xd0\xb3\xd0\xbe \xd1\x83\xd1\x80\xd0\xbe\xd0\xb2\xd0\xbd\xd1\x8f \xd0\xb0\xd0\xbd\xd0\xb3\xd0\xbb\xd0\xb8\xd0\xb9\xd1\x81\xd0\xba\xd0\xbe\xd0\xb3\xd0\xbe.</p>\n  </header>\n\n  \n    <section class="section mistake-review-card" aria-live="polite">\n      <h2>\xd0\x92\xd0\xbe\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81 1 \xd0\xb8\xd0\xb7 5</h2>\n      \n        <p>\xd0\x9f\xd0\xbe\xd0\xba\xd0\xb0 \xd0\xbd\xd0\xb5 \xd1\x81\xd0\xbe\xd0\xb2\xd0\xbf\xd0\xb0\xd0\xbb\xd0\xbe \xd1\x81 \xd0\xbf\xd1\x80\xd0\xb0\xd0\xb2\xd0\xb8\xd0\xbb\xd1\x8c\xd0\xbd\xd1\x8b\xd0\xbc \xd0\xb2\xd0\xb0\xd1\x80\xd0\xb8\xd0\xb0\xd0\xbd\xd1\x82\xd0\xbe\xd0\xbc. \xd0\x9f\xd0\xbe\xd1\x81\xd0\xbc\xd0\xbe\xd1\x82\xd1\x80\xd0\xb8\xd1\x82\xd0\xb5, \xd0\xbf\xd0\xbe\xd1\x87\xd0\xb5\xd0\xbc\xd1\x83.</p>\n      \n      <p>\xd0\x92\xd0\xb0\xd1\x88 \xd0\xb2\xd1\x8b\xd0\xb1\xd0\xbe\xd1\x80: <strong lang="en">Are there milk?</strong></p>\n      <p>\xd0\x92\xd0\xb5\xd1\x80\xd0\xbd\xd1\x8b\xd0\xb9 \xd0\xb2\xd0\xb0\xd1\x80\xd0\xb8\xd0\xb0\xd0\xbd\xd1\x82: <strong lang="en">Is there milk?</strong></p>\n      <p><strong>\xd0\xa0\xd0\xb0\xd0\xb7\xd0\xb1\xd0\xbe\xd1\x80:</strong> \xd0\x97\xd0\xb4\xd0\xb5\xd1\x81\xd1\x8c \xd0\xbd\xd1\x83\xd0\xb6\xd0\xb5\xd0\xbd \xd0\xbe\xd0\xb1\xd1\x8b\xd1\x87\xd0\xbd\xd1\x8b\xd0\xb9 \xd0\xb2\xd0\xbe\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81 \xd0\xbe \xd0\xbd\xd0\xb0\xd0\xbb\xd0\xb8\xd1\x87\xd0\xb8\xd0\xb8: Is there\xe2\x80\xa6? \xd0\xa4\xd1\x80\xd0\xb0\xd0\xb7\xd0\xb0 There is\xe2\x80\xa6? \xd1\x81 \xd0\xb2\xd0\xbe\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xb8\xd1\x82\xd0\xb5\xd0\xbb\xd1\x8c\xd0\xbd\xd0\xbe\xd0\xb9 \xd0\xb8\xd0\xbd\xd1\x82\xd0\xbe\xd0\xbd\xd0\xb0\xd1\x86\xd0\xb8\xd0\xb5\xd0\xb9 \xd0\xb2\xd0\xbe\xd0\xb7\xd0\xbc\xd0\xbe\xd0\xb6\xd0\xbd\xd0\xb0 \xd0\xba\xd0\xb0\xd0\xba \xd1\x83\xd1\x82\xd0\xbe\xd1\x87\xd0\xbd\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xb5, \xd0\xbd\xd0\xbe \xd0\xbd\xd0\xb5 \xd1\x81\xd0\xbe\xd0\xbe\xd1\x82\xd0\xb2\xd0\xb5\xd1\x82\xd1\x81\xd1\x82\xd0\xb2\xd1\x83\xd0\xb5\xd1\x82 \xd1\x83\xd0\xba\xd0\xb0\xd0\xb7\xd0\xb0\xd0\xbd\xd0\xbd\xd0\xbe\xd0\xb9 \xd1\x81\xd1\x85\xd0\xb5\xd0\xbc\xd0\xb5. \xd0\xa1 \xd0\xbd\xd0\xb0\xd0\xb7\xd0\xb2\xd0\xb0\xd0\xbd\xd0\xb8\xd0\xb5\xd0\xbc \xd0\xb2\xd0\xb5\xd1\x89\xd0\xb5\xd1\x81\xd1\x82\xd0\xb2\xd0\xb0 \xd0\xb8\xd1\x81\xd0\xbf\xd0\xbe\xd0\xbb\xd1\x8c\xd0\xb7\xd1\x83\xd0\xb5\xd0\xbc is, \xd0\xbd\xd0\xb5 are.</p>\n      \n        <a class="btn btn-primary" href="/learning/mistake-review/">\xd0\xa1\xd0\xbb\xd0\xb5\xd0\xb4\xd1\x83\xd1\x8e\xd1\x89\xd0\xb8\xd0\xb9 \xd0\xbd\xd0\xbe\xd0\xb2\xd1\x8b\xd0\xb9 \xd0\xb2\xd0\xbe\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81 \xe2\x86\x92</a>\n      \n    </section>\n  \n</div>\n</main>\n      <footer class="site-footer">\n  <div class="wrap">\n    <span>English Encyclopedia. \xd0\xa3\xd1\x87\xd0\xb8 \xd0\xb0\xd0\xbd\xd0\xb3\xd0\xbb\xd0\xb8\xd0\xb9\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xbf\xd1\x80\xd0\xb0\xd0\xb2\xd0\xb8\xd0\xbb\xd1\x8c\xd0\xbd\xd0\xbe. \xd0\x9d\xd0\xb5 \xd1\x82\xd0\xb0\xd0\xba, \xd0\xba\xd0\xb0\xd0\xba \xd0\xb2 \xd1\x80\xd0\xbe\xd1\x81\xd1\x81\xd0\xb8\xd0\xb9\xd1\x81\xd0\xba\xd0\xb8\xd1\x85 \xd1\x88\xd0\xba\xd0\xbe\xd0\xbb\xd0\xb0\xd1\x85.</span>\n    <span>\xd0\x90\xd0\xbc\xd0\xb5\xd1\x80\xd0\xb8\xd0\xba\xd0\xb0\xd0\xbd\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xb0\xd0\xbd\xd0\xb3\xd0\xbb\xd0\xb8\xd0\xb9\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9, \xd0\xbe\xd0\xb1\xd1\x8a\xd1\x8f\xd1\x81\xd0\xbd\xd0\xb5\xd0\xbd\xd0\xb8\xd1\x8f \xd0\xbd\xd0\xb0 \xd1\x80\xd1\x83\xd1\x81\xd1\x81\xd0\xba\xd0\xbe\xd0\xbc</span>\n    <label class="motion-control motion-control-mobile"><span>\xd0\x90\xd0\xbd\xd0\xb8\xd0\xbc\xd0\xb0\xd1\x86\xd0\xb8\xd0\xb8</span><select data-motion-control aria-label="\xd0\x98\xd0\xbd\xd1\x82\xd0\xb5\xd0\xbd\xd1\x81\xd0\xb8\xd0\xb2\xd0\xbd\xd0\xbe\xd1\x81\xd1\x82\xd1\x8c \xd0\xb0\xd0\xbd\xd0\xb8\xd0\xbc\xd0\xb0\xd1\x86\xd0\xb8\xd0\xb8" disabled><option value="full">\xd0\x9a\xd0\xb8\xd0\xbd\xd0\xbe</option><option value="balanced" selected>\xd0\x91\xd0\xb0\xd0\xbb\xd0\xb0\xd0\xbd\xd1\x81</option><option value="minimal">\xd0\x9c\xd0\xb8\xd0\xbd\xd0\xb8\xd0\xbc\xd1\x83\xd0\xbc</option></select></label>\n    <span class="site-copyright">\xc2\xa9 2026 konstantin532. \xd0\x92\xd1\x81\xd0\xb5 \xd0\xbf\xd1\x80\xd0\xb0\xd0\xb2\xd0\xb0 \xd0\xb7\xd0\xb0\xd1\x89\xd0\xb8\xd1\x89\xd0\xb5\xd0\xbd\xd1\x8b. \xd0\x9a\xd0\xbe\xd0\xbf\xd0\xb8\xd1\x80\xd0\xbe\xd0\xb2\xd0\xb0\xd0\xbd\xd0\xb8\xd0\xb5 \xd0\xbc\xd0\xb0\xd1\x82\xd0\xb5\xd1\x80\xd0\xb8\xd0\xb0\xd0\xbb\xd0\xbe\xd0\xb2 \xd0\xb1\xd0\xb5\xd0\xb7 \xd1\x80\xd0\xb0\xd0\xb7\xd1\x80\xd0\xb5\xd1\x88\xd0\xb5\xd0\xbd\xd0\xb8\xd1\x8f \xd0\xb0\xd0\xb2\xd1\x82\xd0\xbe\xd1\x80\xd0\xb0 \xd0\xb7\xd0\xb0\xd0\xbf\xd1\x80\xd0\xb5\xd1\x89\xd0\xb5\xd0\xbd\xd0\xbe.</span>\n  </div>\n</footer>\n\n    </div>\n  </div>\n  <script src="/static/vendor/gsap/gsap.min.js" defer></script>\n  <script src="/static/js/motion-system.js" defer></script>\n  <script src="/static/js/art-light.js" defer></script>\n  <script src="/static/js/editorial-world.js" defer></script>\n  <script src="/static/js/atlas-language.js" defer></script>\n  <script src="/static/js/annotations.js" defer></script>\n  \n</body>\n</html>\n'
+
+----------------------------------------------------------------------
+Ran 845 tests in 442.880s
+
+FAILED (failures=1, skipped=2)
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...

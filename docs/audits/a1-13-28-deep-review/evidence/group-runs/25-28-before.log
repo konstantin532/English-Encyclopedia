@@ -1,0 +1,72 @@
+Creating test database for alias 'default'...
+/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-a1-25-28/staticfiles/
+  mw_instance = middleware(adapted_handler)
+FFFFF..F
+======================================================================
+FAIL: test_answered_destination_arrival_and_weather_only (tests.test_a1_deep_25_28.FinalA1DeepAPI.test_answered_destination_arrival_and_weather_only) (uid='EX-00155')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-25-28/tests/test_a1_deep_25_28.py", line 59, in test_answered_destination_arrival_and_weather_only
+    self.assertFalse(forbidden & trained, trained)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00255'} is not false : {'LX-00252', 'LX-00255'}
+
+======================================================================
+FAIL: test_answered_destination_arrival_and_weather_only (tests.test_a1_deep_25_28.FinalA1DeepAPI.test_answered_destination_arrival_and_weather_only) (uid='EX-00156')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-25-28/tests/test_a1_deep_25_28.py", line 59, in test_answered_destination_arrival_and_weather_only
+    self.assertFalse(forbidden & trained, trained)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00473'} is not false : {'LX-00464', 'LX-00472', 'LX-00473'}
+
+======================================================================
+FAIL: test_answered_destination_arrival_and_weather_only (tests.test_a1_deep_25_28.FinalA1DeepAPI.test_answered_destination_arrival_and_weather_only) (uid='EX-00162')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-25-28/tests/test_a1_deep_25_28.py", line 59, in test_answered_destination_arrival_and_weather_only
+    self.assertFalse(forbidden & trained, trained)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00457'} is not false : {'LX-00457', 'LX-00458'}
+
+======================================================================
+FAIL: test_language_order_does_not_change_ability (tests.test_a1_deep_25_28.FinalA1DeepAPI.test_language_order_does_not_change_ability) (text='Yes, I can. I can speak English and Russian.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-25-28/tests/test_a1_deep_25_28.py", line 33, in test_language_order_does_not_change_ability
+    self.check(item, text, expected)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-25-28/tests/test_a1_deep_25_28.py", line 20, in check
+    self.assertEqual(result.json()['correct'], expected, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Yes, I can. I can speak English and Russian.
+
+======================================================================
+FAIL: test_language_order_does_not_change_ability (tests.test_a1_deep_25_28.FinalA1DeepAPI.test_language_order_does_not_change_ability) (text='Yes, I can. I speak English and Russian.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-25-28/tests/test_a1_deep_25_28.py", line 33, in test_language_order_does_not_change_ability
+    self.check(item, text, expected)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-25-28/tests/test_a1_deep_25_28.py", line 20, in check
+    self.assertEqual(result.json()['correct'], expected, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Yes, I can. I speak English and Russian.
+
+======================================================================
+FAIL: test_generated_contexts_have_russian_case_and_preposition (tests.test_a1_deep_25_28.FinalA1DeepGeneratedReview.test_generated_contexts_have_russian_case_and_preposition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-25-28/tests/test_a1_deep_25_28.py", line 76, in test_generated_contexts_have_russian_case_and_preposition
+    self.assertFalse(any('В встрече' in row[0] for row in bank['a1-can-skills']['1']))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.154s
+
+FAILED (failures=6)
+Destroying test database for alias 'default'...
+Found 5 test(s).
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).
