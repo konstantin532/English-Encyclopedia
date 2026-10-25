@@ -1,0 +1,9 @@
+{% load ru %}{% sound_hints as hints %}
+<details class="sound-legend" id="sound-legend">
+  <summary>Как читать русскую транскрипцию</summary>
+  <p>Русские буквы — подсказка, а не точная запись: некоторых английских звуков в русском нет. Ударный слог отмечен чёрточкой над гласной: ма́зэр. Подчёркнутые пунктиром буквы — трудные звуки: наведите или нажмите на них, чтобы увидеть подсказку. Главный образец — голос.</p>
+  <table>
+    <thead><tr><th scope="col">Буква</th><th scope="col">IPA</th><th scope="col">Звук</th><th scope="col">Как произносить</th></tr></thead>
+    <tbody>{% for key, letter, ipa, label, tip in hints %}<tr><td><span class="snd" data-snd="{{ key }}">{{ letter }}</span></td><td class="ipa">{{ ipa }}</td><td>{{ label }}</td><td>{{ tip }}</td></tr>{% endfor %}</tbody>
+  </table>
+</details>

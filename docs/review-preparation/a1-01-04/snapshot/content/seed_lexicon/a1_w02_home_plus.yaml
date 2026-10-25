@@ -1,0 +1,286 @@
+level: A1
+week: 2
+units:
+- uid: LX-00481
+  lemma: kitchen
+  class: S2
+  ipa_us: /ˈkɪtʃən/
+  translation_ru: кухня
+  meaning: a room for preparing food
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]kitchen[/].'
+  example_ru: Это моя кухня.
+  usage_note: Kitchen — комната, а не кухонная мебель.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00482
+  lemma: bathroom
+  class: S2
+  ipa_us: /ˈbæθˌrum/
+  translation_ru: ванная; санузел
+  meaning: a room with a bath or shower and often a toilet
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]bathroom[/].'
+  example_ru: Это моя ванная.
+  usage_note: В США bathroom может означать санузел, даже без ванны.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00483
+  lemma: bedroom
+  class: S2
+  ipa_us: /ˈbɛdˌrum/
+  translation_ru: спальня
+  meaning: a room used for sleeping
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]bedroom[/].'
+  example_ru: Это моя спальня.
+  usage_note: Bedroom пишется слитно.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00484
+  lemma: living room
+  class: S2
+  ipa_us: /ˈlɪvɪŋ ˌrum/
+  translation_ru: гостиная
+  meaning: a room for relaxing at home
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]living room[/].'
+  example_ru: Это моя гостиная.
+  usage_note: Living room — одно название комнаты из двух слов; a относится ко всему названию.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+  unit_type: phrase
+- uid: LX-00485
+  lemma: table
+  class: S2
+  ipa_us: /ˈteɪbəl/
+  translation_ru: стол
+  meaning: a piece of furniture with a flat top
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]table[/].'
+  example_ru: Это мой стол.
+  usage_note: Table — обычный стол, например обеденный; письменный стол — desk.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00486
+  lemma: chair
+  class: S2
+  ipa_us: /tʃɛr/
+  translation_ru: стул
+  meaning: a seat with a back for one person
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]chair[/].'
+  example_ru: Это мой стул.
+  usage_note: Chair — отдельный стул; перед одним неопределённым предметом нужно a.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00487
+  lemma: window
+  class: S2
+  ipa_us: /ˈwɪndoʊ/
+  translation_ru: окно
+  meaning: an opening in a wall with glass
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]window[/].'
+  example_ru: Это моё окно.
+  usage_note: Одно окно — a window; известное собеседнику — the window.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00488
+  lemma: wall
+  class: S2
+  ipa_us: /wɔl/
+  translation_ru: стена
+  meaning: an upright part of a building or room
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]wall[/].'
+  example_ru: Это моя стена.
+  usage_note: Wall — стена; floor — пол.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00489
+  lemma: floor
+  class: S2
+  ipa_us: /flɔr/
+  translation_ru: пол
+  meaning: the lower surface of a room
+  example_en: '[T1]The[/] [S2]floor[/] [D1]is[/] [J2]new[/].'
+  example_ru: Пол новый.
+  usage_note: Здесь floor — пол комнаты; значение «этаж» пока не вводим.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00490
+  lemma: sofa
+  class: S2
+  ipa_us: /ˈsoʊfə/
+  translation_ru: диван
+  meaning: a long soft seat for more than one person
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]sofa[/].'
+  example_ru: Это мой диван.
+  usage_note: Sofa — диван; в американской речи также встречается couch, это слово пока не проверяем.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00491
+  lemma: lamp
+  class: S2
+  ipa_us: /læmp/
+  translation_ru: лампа; светильник
+  meaning: a device that gives light
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]lamp[/].'
+  example_ru: Это моя лампа.
+  usage_note: Lamp — отдельная лампа или светильник, не освещение вообще.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00492
+  lemma: desk
+  class: S2
+  ipa_us: /dɛsk/
+  translation_ru: письменный стол
+  meaning: a table used for writing or working
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]desk[/].'
+  example_ru: Это мой письменный стол.
+  usage_note: Desk — стол для письма или работы; table — более общее слово.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00493
+  lemma: shelf
+  class: S2
+  ipa_us: /ʃɛlf/
+  translation_ru: полка
+  meaning: a flat board for keeping things on
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]shelf[/].'
+  example_ru: Это моя полка.
+  usage_note: Одна полка — shelf; несколько — shelves. Во второй неделе используем единственное число.
+  forms:
+  - shelves
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00494
+  lemma: mirror
+  class: S2
+  ipa_us: /ˈmɪrɚ/
+  translation_ru: зеркало
+  meaning: a surface that shows your reflection
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]mirror[/].'
+  example_ru: Это моё зеркало.
+  usage_note: Одно зеркало — a mirror.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00495
+  lemma: pillow
+  class: S2
+  ipa_us: /ˈpɪloʊ/
+  translation_ru: подушка для сна
+  meaning: a soft support for your head in bed
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]pillow[/].'
+  example_ru: Это моя подушка.
+  usage_note: Pillow обычно означает подушку для сна; диванные подушки могут называться иначе.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00496
+  lemma: blanket
+  class: S2
+  ipa_us: /ˈblæŋkɪt/
+  translation_ru: одеяло
+  meaning: a covering that keeps a person warm
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]blanket[/].'
+  example_ru: Это моё одеяло.
+  usage_note: Blanket — одеяло или плед; здесь предмет дома.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00497
+  lemma: towel
+  class: S2
+  ipa_us: /ˈtaʊəl/
+  translation_ru: полотенце
+  meaning: a cloth used for drying
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]towel[/].'
+  example_ru: Это моё полотенце.
+  usage_note: Towel — полотенце; произнесите начало /taʊ/, как один переход звука.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00498
+  lemma: clock
+  class: S2
+  ipa_us: /klɑk/
+  translation_ru: часы
+  meaning: a device that shows the time
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]clock[/].'
+  example_ru: Это мои часы.
+  usage_note: 'Здесь clock — настенные или настольные часы; одна вещь по-английски: a clock.'
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00499
+  lemma: fridge
+  class: S2
+  ipa_us: /frɪdʒ/
+  translation_ru: холодильник
+  meaning: an appliance that keeps food cold
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]fridge[/].'
+  example_ru: Это мой холодильник.
+  usage_note: Fridge — разговорное слово, употребляется и в США; полное название — refrigerator. Не называем его
+    отдельной изученной единицей.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома
+- uid: LX-00500
+  lemma: rug
+  class: S2
+  ipa_us: /rʌɡ/
+  translation_ru: коврик; небольшой ковёр
+  meaning: a piece of material covering part of a floor
+  example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]rug[/].'
+  example_ru: Это мой коврик.
+  usage_note: Rug — отдельный ковёр или коврик; не покрытие пола во всей комнате.
+  forms: []
+  cefr: unverified
+  verification_status: pending
+  frequency_source: Тематический добор дома; частотность не сверена.
+  situation: Показать комнаты и предметы своего дома

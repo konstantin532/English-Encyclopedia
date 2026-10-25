@@ -1,0 +1,196 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "evidence_kind": "Previously completed GitHub Actions; re-read now; NOT a new run",
+  "run_id": 40111428333,
+  "url": "https://github.com/konstantin532/English-Encyclopedia/actions/runs/40111428333",
+  "jobs": [
+    {
+      "id": 120923794281,
+      "name": "postgres",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Initialize containers",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv sync --frozen",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python manage.py collectstatic --noinput --verbosity 0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run set -o pipefail",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Stop containers",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 120923794589,
+      "name": "test",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm install --global pnpm@11.25.0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile --ignore-scripts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm check:css",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv sync --frozen",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python -m compileall -q apps config tests",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python manage.py check",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python manage.py collectstatic --noinput --verbosity 0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python scripts/audio_readiness.py",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python scripts/audit_cefr_evidence.py --strict",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python manage.py makemigrations --check --dry-run",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python manage.py shell -c \"from apps.learning.mistake_review import question_bank; b=question_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.mistake_review import COUNT; assert set(b)==set(PILOT_SLUGS); assert all(exercises and all(len(cards)==COUNT for cards in exercises.values()) for exercises in b.values()); print('A1 review structure OK:', len(b), 'lessons')\"",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python manage.py shell -c \"from apps.learning.understanding import understanding_bank; b=understanding_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.understanding import SKILLS; assert set(b)==set(PILOT_SLUGS); assert all(set(guide['tasks'])==set(SKILLS) for guide in b.values()); print('A1 understanding structure OK:', len(b), 'guides')\"",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run set -o pipefail",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node --test tests/js/*.test.cjs",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python manage.py migrate -v0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2551 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "selection": "all lexical packets with level=A1 and week=1 or2, not only lesson.units",
+  "count": 74,
+  "editorial_status": "NOT_REVIEWED",
+  "records": [
+    {
+      "uid": "LX-00001",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00001",
+        "lemma": "family",
+        "meaning": "a group of people related to each other, such as parents and children",
+        "class": "S1",
+        "grammar_features": [
+          "countable",
+          "singular_agreement_us"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): family n., adj. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈfæməli/",
+        "stress_note": "Ударение на первый слог: FAM-i-ly; средний звук часто почти исчезает: /ˈfæmli/",
+        "translation_ru": "семья",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my family",
+          "a big family",
+          "family photo"
+        ],
+        "chunks": [
+          "This is my family.",
+          "My family is big."
+        ],
+        "example_en": "[T3]My[/] [S1]family[/] [D1]is[/] big.",
+        "example_ru": "Моя семья большая.",
+        "pattern": "My family is ___.",
+        "substitutions": [
+          "big",
+          "nice",
+          "busy",
+          "at home"
+        ],
+        "situation": "Показываете фото на телефоне",
+        "typical_error": "«My family are big» — в американском английском family обычно согласуется как единственное число: My family is big."
+      }
+    },
+    {
+      "uid": "LX-00002",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00002",
+        "lemma": "mother",
+        "meaning": "a female parent",
+        "class": "S1",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): mother n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈmʌðɚ/",
+        "stress_note": "MOTH-er; th звонкое /ð/, кончик языка между зубами",
+        "translation_ru": "мать, мама",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my mother",
+          "a mother of two",
+          "mother and father"
+        ],
+        "chunks": [
+          "This is my mother."
+        ],
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/].",
+        "example_ru": "Это моя мама.",
+        "pattern": "This is my ___.",
+        "substitutions": [
+          "mother",
+          "father",
+          "friend",
+          "family"
+        ],
+        "situation": "Знакомите гостя с родными",
+        "usage_note": "В разговоре американцы чаще говорят mom: mother звучит официальнее.",
+        "typical_error": "Произносят th как /з/ или /в/. Нужен межзубный звук /ð/."
+      }
+    },
+    {
+      "uid": "LX-00003",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00003",
+        "lemma": "father",
+        "meaning": "a male parent",
+        "class": "S1",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): father n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈfɑːðɚ/",
+        "stress_note": "FA-ther; первый гласный — открытое /ɑː/, как в «па»",
+        "translation_ru": "отец, папа",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my father",
+          "mother and father",
+          "a good father"
+        ],
+        "chunks": [
+          "My father is at home."
+        ],
+        "example_en": "[T3]My[/] [S1]father[/] [D1]is[/] [P1]at[/] [S2]home[/].",
+        "example_ru": "Мой папа дома.",
+        "pattern": "My father is ___.",
+        "substitutions": [
+          "at home",
+          "nice",
+          "busy",
+          "my friend"
+        ],
+        "situation": "Отвечаете, где родители",
+        "usage_note": "В разговоре чаще dad.",
+        "typical_error": "«My father is home work» — пропуск предлога. Говорят: at home, at work."
+      }
+    },
+    {
+      "uid": "LX-00004",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00004",
+        "lemma": "friend",
+        "meaning": "a person you know well and like",
+        "class": "S1",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): friend n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/frend/",
+        "stress_note": "Одна гласная /e/: буква i не читается",
+        "translation_ru": "друг, подруга",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my friend",
+          "a good friend",
+          "best friend"
+        ],
+        "chunks": [
+          "This is my friend Tom."
+        ],
+        "example_en": "[S1]Anna[/] [D1]is[/] [T3]my[/] [S1]friend[/].",
+        "example_ru": "Анна — моя подруга.",
+        "pattern": "___ is my friend.",
+        "substitutions": [
+          "Anna",
+          "Tom",
+          "Mia"
+        ],
+        "situation": "Представляете друга",
+        "usage_note": "Friend не различает пол: и «друг», и «подруга».",
+        "typical_error": "Читают «фриенд». Правильно одна гласная: /frend/."
+      }
+    },
+    {
+      "uid": "LX-00005",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/4",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00005",
+        "lemma": "home",
+        "meaning": "the place where you live",
+        "class": "S2",
+        "grammar_features": [
+          "countable",
+          "adverb_use"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): home n., adv. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/hoʊm/",
+        "stress_note": "Дифтонг /oʊ/ — «оу», а не чистое «о»",
+        "translation_ru": "дом (место, где живёшь), домой",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "at home",
+          "my home",
+          "go home"
+        ],
+        "chunks": [
+          "I'm home!",
+          "I am at home."
+        ],
+        "example_en": "[T8]I[/] [D1]am[/] [P1]at[/] [S2]home[/].",
+        "example_ru": "Я дома.",
+        "pattern": "___ is at home.",
+        "substitutions": [
+          "Tom",
+          "Anna",
+          "My family",
+          "My friend"
+        ],
+        "situation": "Звоните и говорите, где вы",
+        "usage_note": "Home — место, где вы живёте, будь то дом или квартира; house — само здание. I'm home! часто говорят, вернувшись домой, но I'm home и I'm at home могут просто означать «я дома». Разница между фразами не в том, находитесь ли вы внутри здания или рядом с ним. Go home — «идти домой», без to.",
+        "typical_error": "«I go to home» — с home в значении «домой» предлог to не нужен: go home."
+      }
+    },
+    {
+      "uid": "LX-00006",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00006",
+        "lemma": "house",
+        "meaning": "a building where people live, usually one family",
+        "class": "S2",
+        "grammar_features": [
+          "countable",
+          "plural_voiced_s"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): house n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/haʊs/",
+        "stress_note": "Дифтонг /aʊ/ — «ау». Во множественном числе houses /ˈhaʊzɪz/ звук s превращается в z",
+        "translation_ru": "дом (здание)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a big house",
+          "my house",
+          "a white house"
+        ],
+        "chunks": [
+          "This is my house."
+        ],
+        "example_en": "[T8]It[/] [D1]is[/] [T1]a[/] big [S2]house[/].",
+        "example_ru": "Это большой дом.",
+        "pattern": "It is a ___ house.",
+        "substitutions": [
+          "big",
+          "nice",
+          "new",
+          "good"
+        ],
+        "situation": "Описываете, где живёте",
+        "usage_note": "Квартира — apartment. House — отдельный дом.",
+        "typical_error": "Называют квартиру house. В США квартира — apartment."
+      }
+    },
+    {
+      "uid": "LX-00007",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/6",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00007",
+        "lemma": "room",
+        "meaning": "a part of a building with walls, a floor and a ceiling",
+        "class": "S2",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): room n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ruːm/",
+        "stress_note": "Долгое /uː/",
+        "translation_ru": "комната",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my room",
+          "a big room",
+          "a room with a view"
+        ],
+        "chunks": [
+          "This is my room."
+        ],
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]room[/].",
+        "example_ru": "Это моя комната.",
+        "pattern": "This is my ___.",
+        "substitutions": [
+          "room",
+          "house",
+          "book",
+          "phone"
+        ],
+        "situation": "Показываете квартиру",
+        "typical_error": "Room — это не «рум» с коротким у: гласная долгая /uː/."
+      }
+    },
+    {
+      "uid": "LX-00008",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/7",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00008",
+        "lemma": "book",
+        "meaning": "a set of printed pages fastened together inside a cover",
+        "class": "S2",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): book n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/bʊk/",
+        "stress_note": "Короткое /ʊ/, хотя пишется oo",
+        "translation_ru": "книга",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a good book",
+          "my book",
+          "read a book"
+        ],
+        "chunks": [
+          "This is my book."
+        ],
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]book[/].",
+        "example_ru": "Это моя книга.",
+        "pattern": "This is my ___.",
+        "substitutions": [
+          "book",
+          "phone",
+          "room",
+          "house"
+        ],
+        "situation": "Находите свою вещь на столе",
+        "typical_error": "«This is book» — пропущен определитель. Нужно a, my или the: This is a book."
+      }
+    },
+    {
+      "uid": "LX-00009",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/8",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00009",
+        "lemma": "phone",
+        "meaning": "a device for talking to people far away; a mobile phone",
+        "class": "S2",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): phone n., v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/foʊn/",
+        "stress_note": "ph читается как /f/; дифтонг /oʊ/",
+        "translation_ru": "телефон",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my phone",
+          "a new phone",
+          "phone number"
+        ],
+        "chunks": [
+          "My phone is new."
+        ],
+        "example_en": "[T8]I[/] [D1]have[/] [T1]a[/] new [S2]phone[/].",
+        "example_ru": "У меня новый телефон.",
+        "pattern": "I have a new ___.",
+        "substitutions": [
+          "phone",
+          "book",
+          "house",
+          "friend"
+        ],
+        "situation": "Хвастаетесь покупкой",
+        "usage_note": "Мобильный телефон в США — cell phone или просто phone.",
+        "typical_error": "«I have new phone» — пропуск a перед исчисляемым существительным в единственном числе."
+      }
+    },
+    {
+      "uid": "LX-00010",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/9",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00010",
+        "lemma": "water",
+        "meaning": "the clear liquid that falls as rain and that people drink",
+        "class": "S3",
+        "grammar_features": [
+          "uncountable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): water n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈwɑːt̬ɚ/",
+        "stress_note": "WA-ter; t между гласными в американском звучит мягко, почти как быстрое /d/ (flap)",
+        "translation_ru": "вода",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "cold water",
+          "a glass of water",
+          "drink water"
+        ],
+        "chunks": [
+          "Water, please."
+        ],
+        "example_en": "[S3]Water[/], please.",
+        "example_ru": "Воды, пожалуйста.",
+        "pattern": "___, please.",
+        "substitutions": [
+          "Water",
+          "Coffee",
+          "A coffee"
+        ],
+        "situation": "Просите в кафе",
+        "usage_note": "Water неисчисляемое: не «a water», а some water или a glass of water.",
+        "typical_error": "«two waters» в значении «два литра воды». Говорят: two glasses of water."
+      }
+    },
+    {
+      "uid": "LX-00011",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/10",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00011",
+        "lemma": "coffee",
+        "meaning": "a hot drink made from roasted coffee beans",
+        "class": "S3",
+        "grammar_features": [
+          "uncountable",
+          "countable_in_cafe"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): coffee n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈkɔːfi/",
+        "stress_note": "CO-ffee; во многих районах США /ˈkɑːfi/",
+        "translation_ru": "кофе",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "hot coffee",
+          "a cup of coffee",
+          "coffee with milk"
+        ],
+        "chunks": [
+          "Coffee, please."
+        ],
+        "example_en": "[T8]I[/] [D3]like[/] [S3]coffee[/].",
+        "example_ru": "Я люблю кофе.",
+        "pattern": "I like ___.",
+        "substitutions": [
+          "coffee",
+          "water",
+          "my room",
+          "my family"
+        ],
+        "situation": "Говорите о вкусах",
+        "usage_note": "Как напиток вообще — без a: I like coffee. В кафе a coffee = чашка кофе.",
+        "typical_error": "Ставят ударение на второй слог (коФЕ). В английском — на первый: CO-ffee."
+      }
+    },
+    {
+      "uid": "LX-00012",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/11",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00012",
+        "lemma": "day",
+        "meaning": "a period of 24 hours",
+        "class": "S7",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): day n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/deɪ/",
+        "stress_note": "Дифтонг /eɪ/ — «эй»",
+        "translation_ru": "день",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a good day",
+          "every day",
+          "have a nice day"
+        ],
+        "chunks": [
+          "Have a nice day!"
+        ],
+        "example_en": "[D1]Have[/] [T1]a[/] nice [S7]day[/]!",
+        "example_ru": "Хорошего дня!",
+        "pattern": "Have a nice ___!",
+        "substitutions": [
+          "day",
+          "week",
+          "morning"
+        ],
+        "situation": "Прощаетесь с кассиром",
+        "usage_note": "Have a nice day! — стандартное американское прощание в магазине.",
+        "typical_error": "Произносят «дэ». Нужен дифтонг /eɪ/."
+      }
+    },
+    {
+      "uid": "LX-00013",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/12",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00013",
+        "lemma": "week",
+        "meaning": "a period of seven days",
+        "class": "S7",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): week n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/wiːk/",
+        "stress_note": "Губы округлены на /w/, потом долгое /iː/",
+        "translation_ru": "неделя",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "this week",
+          "next week",
+          "a busy week"
+        ],
+        "chunks": [
+          "I have a busy week."
+        ],
+        "example_en": "[T8]I[/] [D1]have[/] [T1]a[/] busy [S7]week[/].",
+        "example_ru": "У меня загруженная неделя.",
+        "pattern": "I have a busy ___.",
+        "substitutions": [
+          "week",
+          "day",
+          "morning"
+        ],
+        "situation": "Объясняете, почему нет времени",
+        "typical_error": "Начальное w заменяют на /в/. Губы трубочкой, зубы не касаются губы."
+      }
+    },
+    {
+      "uid": "LX-00014",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/13",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00014",
+        "lemma": "morning",
+        "meaning": "the early part of the day, from when the sun rises until noon",
+        "class": "S7",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): morning n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈmɔːrnɪŋ/",
+        "stress_note": "MOR-ning; американское r звучит; -ing заканчивается носовым /ŋ/ без «г»",
+        "translation_ru": "утро",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "good morning",
+          "in the morning",
+          "every morning"
+        ],
+        "chunks": [
+          "Good morning!"
+        ],
+        "example_en": "Good [S7]morning[/], [S1]Tom[/]!",
+        "example_ru": "Доброе утро, Том!",
+        "pattern": "Good morning, ___!",
+        "substitutions": [
+          "Tom",
+          "Anna",
+          "Mia",
+          "my friend"
+        ],
+        "situation": "Здороваетесь утром",
+        "typical_error": "Произносят «морнинг» с г на конце. Окончание -ing — носовое /ŋ/, без «г»."
+      }
+    },
+    {
+      "uid": "LX-00015",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/14",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00015",
+        "lemma": "name",
+        "meaning": "the word that someone or something is called",
+        "class": "S9",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): name n., v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/neɪm/",
+        "stress_note": "Дифтонг /eɪ/; e на конце не читается",
+        "translation_ru": "имя, название",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my name",
+          "your name",
+          "first name"
+        ],
+        "chunks": [
+          "My name is Anna.",
+          "My name is Tom."
+        ],
+        "example_en": "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/].",
+        "example_ru": "Меня зовут Анна.",
+        "pattern": "My name is ___.",
+        "substitutions": [
+          "Anna",
+          "Tom",
+          "Mia"
+        ],
+        "situation": "Знакомитесь",
+        "usage_note": "Русское «меня зовут» по-английски строится через существительное: My name is…",
+        "typical_error": "«Me name is» или «I am name Anna». Нужно: My name is Anna."
+      }
+    },
+    {
+      "uid": "LX-00016",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00016",
+        "lemma": "be",
+        "meaning": "to exist, to have a quality, or to be in a place",
+        "class": "D1",
+        "forms": [
+          "am",
+          "is",
+          "are",
+          "'m",
+          "'s",
+          "'re",
+          "was",
+          "were",
+          "being"
+        ],
+        "grammar_features": [
+          "irregular",
+          "linking_verb"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): be v., auxiliary v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/bi/",
+        "stress_note": "Формы в речи обычно безударные и сокращаются: I'm /aɪm/, it's /ɪts/, you're /jɚ/",
+        "translation_ru": "быть, находиться, являться",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "be at home",
+          "be busy",
+          "be my friend"
+        ],
+        "chunks": [
+          "I'm home.",
+          "It's nice!"
+        ],
+        "example_en": "[T8]I[/] [D1]am[/] [P1]at[/] [S2]home[/].",
+        "example_ru": "Я дома.",
+        "pattern": "I am ___.",
+        "substitutions": [
+          "at home",
+          "busy",
+          "Anna",
+          "Tom"
+        ],
+        "situation": "Говорите, где вы и какой вы",
+        "usage_note": "I am, you are, it is — формы be. В обычном полном утверждении о том, кто человек, какой предмет или где кто-то находится, be нужен: I am busy, Anna is at home. Но во фразе I like coffee уже есть глагол like, поэтому be не добавляют.",
+        "typical_error": "«I busy», «Anna my friend» — пропущен be. Нужно: I am busy, Anna is my friend."
+      }
+    },
+    {
+      "uid": "LX-00017",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00017",
+        "lemma": "I",
+        "meaning": "the person who is speaking",
+        "class": "T8",
+        "grammar_features": [
+          "pronoun",
+          "subject",
+          "always_capital"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): I pron. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/aɪ/",
+        "stress_note": "Дифтонг /aɪ/ — «ай»",
+        "translation_ru": "я",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "I am",
+          "I have",
+          "I like"
+        ],
+        "chunks": [
+          "I'm home!"
+        ],
+        "example_en": "[T8]I[/] [D1]am[/] [S1]Anna[/].",
+        "example_ru": "Я Анна.",
+        "pattern": "I am ___.",
+        "substitutions": [
+          "Anna",
+          "Tom",
+          "at home",
+          "busy"
+        ],
+        "situation": "Представляетесь",
+        "usage_note": "Местоимение (pronoun). Всегда пишется с большой буквы, даже в середине фразы.",
+        "typical_error": "Пишут i маленькой буквой. В английском только I."
+      }
+    },
+    {
+      "uid": "LX-00018",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00018",
+        "lemma": "you",
+        "meaning": "the person or people you are speaking to",
+        "class": "T8",
+        "grammar_features": [
+          "pronoun",
+          "subject",
+          "object",
+          "singular_and_plural"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): you pron. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ju/",
+        "stress_note": "Как «ю»; в быстрой речи ослабляется до /jə/",
+        "translation_ru": "ты, вы",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "you are",
+          "do you",
+          "you can"
+        ],
+        "chunks": [
+          "Do you like it?",
+          "You are my friend."
+        ],
+        "example_en": "[T8]You[/] [D1]are[/] [T3]my[/] [S1]friend[/].",
+        "example_ru": "Ты мой друг.",
+        "pattern": "You are ___.",
+        "substitutions": [
+          "my friend",
+          "busy",
+          "at home",
+          "nice"
+        ],
+        "situation": "Обращаетесь к собеседнику",
+        "usage_note": "Одно слово и для «ты», и для «вы». Вежливость передают тоном и словами вроде please.",
+        "typical_error": "«You is» — с you всегда are: you are."
+      }
+    },
+    {
+      "uid": "LX-00019",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00019",
+        "lemma": "it",
+        "meaning": "a thing, an animal or a situation already mentioned",
+        "class": "T8",
+        "grammar_features": [
+          "pronoun",
+          "subject",
+          "object"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): it pron. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ɪt/",
+        "stress_note": "Короткое /ɪ/. it's = /ɪts/",
+        "translation_ru": "он, она, оно (о предмете); это",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "it is",
+          "I like it",
+          "it's nice"
+        ],
+        "chunks": [
+          "It's nice!",
+          "I like it."
+        ],
+        "example_en": "[T8]It[/] [D1]is[/] [T1]a[/] [S2]book[/].",
+        "example_ru": "Это книга.",
+        "pattern": "It is ___.",
+        "substitutions": [
+          "a book",
+          "a phone",
+          "nice",
+          "big"
+        ],
+        "situation": "Говорите о предмете",
+        "usage_note": "Книга, дом, телефон по-английски не «он» и не «она», а it.",
+        "typical_error": "«The book… she is good» — о предмете говорят it: It is good."
+      }
+    },
+    {
+      "uid": "LX-00020",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/4",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00020",
+        "lemma": "this",
+        "meaning": "used for a person or thing that is near you",
+        "class": "T2",
+        "grammar_features": [
+          "determiner",
+          "pronoun_use"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): this det./pron. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ðɪs/",
+        "stress_note": "Звонкое межзубное /ð/ и короткое /ɪ/",
+        "translation_ru": "этот, эта, это (рядом)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "this is",
+          "this room",
+          "this week"
+        ],
+        "chunks": [
+          "This is my friend."
+        ],
+        "example_en": "[T2]This[/] [S2]room[/] [D1]is[/] [J1]big[/].",
+        "example_ru": "Эта комната большая.",
+        "pattern": "This ___ is big.",
+        "substitutions": [
+          "room",
+          "house",
+          "book"
+        ],
+        "situation": "Показываете на то, что рядом",
+        "usage_note": "Перед существительным this — детерминатив (this room). Без существительного — местоимение (This is Tom).",
+        "typical_error": "Произносят «зис». Нужно межзубное /ð/."
+      }
+    },
+    {
+      "uid": "LX-00021",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00021",
+        "lemma": "my",
+        "meaning": "belonging to the person who is speaking",
+        "class": "T3",
+        "grammar_features": [
+          "possessive_determiner"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): my det. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/maɪ/",
+        "stress_note": "Дифтонг /aɪ/",
+        "translation_ru": "мой, моя, моё, мои",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my family",
+          "my friend",
+          "my phone"
+        ],
+        "chunks": [
+          "This is my friend."
+        ],
+        "example_en": "[T3]My[/] [S2]phone[/] [D1]is[/] [J2]new[/].",
+        "example_ru": "Мой телефон новый.",
+        "pattern": "My ___ is new.",
+        "substitutions": [
+          "phone",
+          "house",
+          "book"
+        ],
+        "situation": "Говорите о своём",
+        "usage_note": "Притяжательный детерминатив: стоит перед существительным и заменяет a и the.",
+        "typical_error": "«a my book», «the my book» — my уже работает как указатель, a и the не нужны."
+      }
+    },
+    {
+      "uid": "LX-00022",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/6",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00022",
+        "lemma": "a",
+        "meaning": "one, used before a singular countable noun that is not specific",
+        "class": "T1",
+        "forms": [
+          "an"
+        ],
+        "grammar_features": [
+          "indefinite_article"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): a, an indefinite article — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ə/",
+        "stress_note": "Почти всегда слабое /ə/, сливается со следующим словом: a book /əˈbʊk/",
+        "translation_ru": "один, какой-то (часто не переводится)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a book",
+          "a big house",
+          "a nice day"
+        ],
+        "chunks": [
+          "Have a nice day!"
+        ],
+        "example_en": "[T8]It[/] [D1]is[/] [T1]a[/] [S2]phone[/].",
+        "example_ru": "Это телефон.",
+        "pattern": "It is a ___.",
+        "substitutions": [
+          "phone",
+          "book",
+          "house",
+          "room"
+        ],
+        "situation": "Называете предмет впервые",
+        "usage_note": "Перед гласным звуком — an: an apple. Выбор зависит от звука, а не от буквы.",
+        "typical_error": "Произносят a как «эй» в каждой фразе. В обычной речи это короткое /ə/."
+      }
+    },
+    {
+      "uid": "LX-00023",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/7",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00023",
+        "lemma": "at",
+        "meaning": "used to say where someone or something is",
+        "class": "P1",
+        "grammar_features": [
+          "preposition_place"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): at prep. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/æt/",
+        "stress_note": "В речи обычно слабое /ət/: at home /ət ˈhoʊm/",
+        "translation_ru": "в, на (в точке, месте)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "at home",
+          "at work",
+          "at school"
+        ],
+        "chunks": [
+          "My father is at home."
+        ],
+        "example_en": "[S1]Tom[/] [D1]is[/] [P1]at[/] [S2]home[/].",
+        "example_ru": "Том дома.",
+        "pattern": "___ is at home.",
+        "substitutions": [
+          "Tom",
+          "Anna",
+          "My father",
+          "My mother"
+        ],
+        "situation": "Говорите, где человек",
+        "usage_note": "At помогает обозначить местонахождение: at home, at work. В американском английском I'm at home и I'm home оба могут означать «я дома»; вариант без at часто используют, когда сообщают о возвращении. Различие не в том, внутри человек или снаружи.",
+        "typical_error": "«I am in home» — устойчиво говорят at home."
+      }
+    },
+    {
+      "uid": "LX-00024",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/8",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00024",
+        "lemma": "big",
+        "meaning": "large in size",
+        "class": "J1",
+        "grammar_features": [
+          "gradable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): big adj. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/bɪɡ/",
+        "stress_note": "Короткое /ɪ/; звонкое /ɡ/ на конце не оглушайте",
+        "translation_ru": "большой",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a big house",
+          "a big family",
+          "a big room"
+        ],
+        "chunks": [
+          "It's big!"
+        ],
+        "example_en": "[T3]My[/] [S1]family[/] [D1]is[/] [J1]big[/].",
+        "example_ru": "Моя семья большая.",
+        "pattern": "It is a big ___.",
+        "substitutions": [
+          "house",
+          "room",
+          "family"
+        ],
+        "situation": "Описываете размер",
+        "typical_error": "Оглушают конец: «бик». Звук /ɡ/ звонкий."
+      }
+    },
+    {
+      "uid": "LX-00025",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/9",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00025",
+        "lemma": "good",
+        "meaning": "of high quality; pleasant",
+        "class": "J3",
+        "grammar_features": [
+          "gradable",
+          "irregular_comparison"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): good adj. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ɡʊd/",
+        "stress_note": "Короткое /ʊ/, хотя пишется oo",
+        "translation_ru": "хороший",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "good morning",
+          "a good friend",
+          "a good book"
+        ],
+        "chunks": [
+          "Good morning!"
+        ],
+        "example_en": "[T1]The[/] [S2]book[/] [D1]is[/] [J3]good[/].",
+        "example_ru": "Книга хорошая.",
+        "pattern": "It is a good ___.",
+        "substitutions": [
+          "book",
+          "day",
+          "week"
+        ],
+        "situation": "Хвалите",
+        "typical_error": "Читают «гуд» с долгим у. Гласная короткая /ʊ/."
+      }
+    },
+    {
+      "uid": "LX-00026",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/10",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00026",
+        "lemma": "nice",
+        "meaning": "pleasant, attractive or kind",
+        "class": "J3",
+        "grammar_features": [
+          "gradable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): nice adj. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/naɪs/",
+        "stress_note": "Дифтонг /aɪ/, глухое /s/ на конце",
+        "translation_ru": "приятный, милый, хороший",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a nice day",
+          "nice room",
+          "very nice"
+        ],
+        "chunks": [
+          "Have a nice day!",
+          "That's nice!"
+        ],
+        "example_en": "[T8]It[/][D1]'s[/] [J3]nice[/]!",
+        "example_ru": "Как мило!",
+        "pattern": "Have a nice ___!",
+        "substitutions": [
+          "day",
+          "week",
+          "morning"
+        ],
+        "situation": "Реагируете на хорошее",
+        "usage_note": "Одно из самых частых слов американской вежливости: Nice! — «Здорово!»",
+        "typical_error": "Пишут nice как «найс» и считают, что это сленг. Это нейтральное слово."
+      }
+    },
+    {
+      "uid": "LX-00027",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/11",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00027",
+        "lemma": "new",
+        "meaning": "recently made, bought or started",
+        "class": "J2",
+        "grammar_features": [
+          "gradable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): new adj. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/nu/",
+        "stress_note": "В американском — /nu/, как «ну»; британское /njuː/ — «нью»",
+        "translation_ru": "новый",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a new phone",
+          "new house",
+          "New York"
+        ],
+        "chunks": [
+          "It's new!"
+        ],
+        "example_en": "[T8]I[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]phone[/].",
+        "example_ru": "У меня новый телефон.",
+        "pattern": "I have a new ___.",
+        "substitutions": [
+          "phone",
+          "book",
+          "house"
+        ],
+        "situation": "Рассказываете о покупке",
+        "typical_error": "Говорят «нью» — это британский вариант. Американцы чаще говорят /nu/."
+      }
+    },
+    {
+      "uid": "LX-00028",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/12",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00028",
+        "lemma": "busy",
+        "meaning": "having a lot to do",
+        "class": "J4",
+        "grammar_features": [
+          "gradable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): busy adj. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈbɪzi/",
+        "stress_note": "BI-zy: буква u читается как /ɪ/, s — как /z/",
+        "translation_ru": "занятой, загруженный",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a busy week",
+          "busy day",
+          "I'm busy"
+        ],
+        "chunks": [
+          "I'm busy."
+        ],
+        "example_en": "[T8]I[/][D1]'m[/] [J4]busy[/].",
+        "example_ru": "Я занят.",
+        "pattern": "I'm busy this ___.",
+        "substitutions": [
+          "week",
+          "morning"
+        ],
+        "situation": "Отказываетесь от встречи",
+        "typical_error": "Читают «бузи» по буквам. Правильно /ˈbɪzi/ — «бизи»."
+      }
+    },
+    {
+      "uid": "LX-00029",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/13",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00029",
+        "lemma": "please",
+        "meaning": "used to make a request polite",
+        "class": "O8",
+        "grammar_features": [
+          "politeness_marker"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): please exclam. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/pliz/",
+        "stress_note": "Долгое /i/, на конце звонкое /z/",
+        "translation_ru": "пожалуйста (при просьбе)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "water please",
+          "yes please",
+          "please"
+        ],
+        "chunks": [
+          "Yes, please.",
+          "Water, please."
+        ],
+        "example_en": "[S3]Coffee[/], [O8]please[/].",
+        "example_ru": "Кофе, пожалуйста.",
+        "pattern": "___, please.",
+        "substitutions": [
+          "Coffee",
+          "Water"
+        ],
+        "situation": "Заказываете",
+        "usage_note": "please — только для просьбы. В ответ на «спасибо» говорят You're welcome, а не please.",
+        "typical_error": "Отвечают please на thank you. Это ошибка: please означает «прошу»."
+      }
+    },
+    {
+      "uid": "LX-00030",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/14",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00030",
+        "lemma": "not",
+        "meaning": "used to make a sentence negative",
+        "class": "X1",
+        "grammar_features": [
+          "negative_particle"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): not adv. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/nɑt/",
+        "stress_note": "Американское /ɑ/ — открытое «а». Сокращается до n't: isn't /ˈɪzənt/",
+        "translation_ru": "не",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "not busy",
+          "is not",
+          "not at home"
+        ],
+        "chunks": [
+          "It's not my phone."
+        ],
+        "example_en": "[T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]phone[/].",
+        "example_ru": "Это не мой телефон.",
+        "pattern": "It is not my ___.",
+        "substitutions": [
+          "phone",
+          "book",
+          "room"
+        ],
+        "situation": "Возвращаете чужую вещь",
+        "usage_note": "not ставится после am, is, are: I am not, it is not.",
+        "typical_error": "«It not my phone» — пропущен be. Нужно: It is not / It isn't."
+      }
+    },
+    {
+      "uid": "LX-00031",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/15",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00031",
+        "lemma": "yes",
+        "meaning": "used to give a positive answer",
+        "class": "O4",
+        "grammar_features": [
+          "answer_word"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): yes exclam. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/jes/",
+        "stress_note": "Как «йес»; в разговоре часто yeah /jeə/",
+        "translation_ru": "да",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "yes please",
+          "yes I do",
+          "yes it is"
+        ],
+        "chunks": [
+          "Yes, please.",
+          "Yes, it is."
+        ],
+        "example_en": "[O4]Yes[/], [T8]it[/] [D1]is[/].",
+        "example_ru": "Да.",
+        "pattern": "Yes, ___.",
+        "substitutions": [
+          "it is",
+          "I am",
+          "I do",
+          "please"
+        ],
+        "situation": "Отвечаете на вопрос",
+        "usage_note": "Голое Yes звучит сухо. Американцы добавляют короткий хвост: Yes, it is. Yes, I do.",
+        "typical_error": "Отвечают одним Yes на любой вопрос. Короткий ответ с глаголом звучит естественнее."
+      }
+    },
+    {
+      "uid": "LX-00032",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/16",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00032",
+        "lemma": "no",
+        "meaning": "used to give a negative answer",
+        "class": "O4",
+        "grammar_features": [
+          "answer_word"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): no exclam., det. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/noʊ/",
+        "stress_note": "Дифтонг /oʊ/ — «ноу», а не «но»",
+        "translation_ru": "нет",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "no thanks",
+          "no it isn't",
+          "no I don't"
+        ],
+        "chunks": [
+          "No, it isn't."
+        ],
+        "example_en": "[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/].",
+        "example_ru": "Нет.",
+        "pattern": "No, ___.",
+        "substitutions": [
+          "it isn't",
+          "I'm not",
+          "I don't"
+        ],
+        "situation": "Отвечаете отрицательно",
+        "typical_error": "Произносят «но» — по-английски это звучит как know без дифтонга. Нужно /noʊ/."
+      }
+    },
+    {
+      "uid": "LX-00033",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00033",
+        "lemma": "have",
+        "meaning": "to own or possess something",
+        "class": "D1",
+        "forms": [
+          "has",
+          "'ve",
+          "had",
+          "having"
+        ],
+        "grammar_features": [
+          "irregular",
+          "possession"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): have v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/hæv/",
+        "stress_note": "Открытое /æ/ — между «э» и «а». В he/she/it — has /hæz/",
+        "translation_ru": "иметь; «у меня есть»",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "have a phone",
+          "have a busy week",
+          "have a nice day"
+        ],
+        "chunks": [
+          "Have a nice day!",
+          "Can I have water, please?"
+        ],
+        "example_en": "[T8]I[/] [D1]have[/] [T1]a[/] [S1]friend[/].",
+        "example_ru": "У меня есть друг.",
+        "pattern": "I have a ___.",
+        "substitutions": [
+          "friend",
+          "phone",
+          "big family",
+          "new book"
+        ],
+        "situation": "Рассказываете, что у вас есть",
+        "usage_note": "Русское «у меня есть» по-английски строится от владельца: I have.",
+        "typical_error": "«At me is a phone» — дословный перевод. Нужно: I have a phone."
+      }
+    },
+    {
+      "uid": "LX-00034",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00034",
+        "lemma": "like",
+        "meaning": "to enjoy something or think it is nice",
+        "class": "D3",
+        "forms": [
+          "likes",
+          "liked",
+          "liking"
+        ],
+        "grammar_features": [
+          "state_verb"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): like (find sb/sth pleasant) v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/laɪk/",
+        "stress_note": "Дифтонг /aɪ/, глухое /k/",
+        "translation_ru": "нравиться; любить (о вкусах)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "like coffee",
+          "like it",
+          "I like my room"
+        ],
+        "chunks": [
+          "I like it!"
+        ],
+        "example_en": "[T8]I[/] [D3]like[/] [T2]this[/] [S2]room[/].",
+        "example_ru": "Мне нравится эта комната.",
+        "pattern": "I like ___.",
+        "substitutions": [
+          "coffee",
+          "this room",
+          "my house",
+          "it"
+        ],
+        "situation": "Говорите о вкусах",
+        "usage_note": "«Мне нравится X» → I like X: тот, кому нравится, становится первым словом.",
+        "typical_error": "«Me like» или «To me likes». Нужно: I like."
+      }
+    },
+    {
+      "uid": "LX-00035",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00035",
+        "lemma": "can",
+        "meaning": "to be able to or be allowed to do something",
+        "class": "D7",
+        "forms": [
+          "could"
+        ],
+        "grammar_features": [
+          "modal",
+          "no_to"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): can1 modal v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/kæn/",
+        "stress_note": "В утверждении слабое /kən/: I can /aɪ kən/. Отрицание can't /kænt/ всегда ударное",
+        "translation_ru": "мочь, уметь; можно",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "can I have",
+          "you can have",
+          "I can't"
+        ],
+        "chunks": [
+          "Can I have water, please?"
+        ],
+        "example_en": "[D7]Can[/] [T8]I[/] [D1]have[/] [S3]coffee[/], [O8]please[/]?",
+        "example_ru": "Можно мне кофе, пожалуйста?",
+        "pattern": "Can I have ___, please?",
+        "substitutions": [
+          "coffee",
+          "water",
+          "my phone",
+          "your phone"
+        ],
+        "situation": "Вежливо просите что-то",
+        "usage_note": "После can глагол идёт без to: can have, а не can to have.",
+        "typical_error": "«I can to have» — после can частица to не нужна."
+      }
+    },
+    {
+      "uid": "LX-00036",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00036",
+        "lemma": "do",
+        "meaning": "used to make questions and negatives in the present simple",
+        "class": "D1",
+        "forms": [
+          "does",
+          "did",
+          "doing"
+        ],
+        "grammar_features": [
+          "auxiliary",
+          "irregular"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): do1 v., auxiliary v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/du/",
+        "stress_note": "В вопросе обычно слабое /də/: Do you /dəjə/. Отрицание don't /doʊnt/",
+        "translation_ru": "вспомогательный глагол для вопросов и отрицаний (не переводится)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "do you like",
+          "do you have",
+          "I don't"
+        ],
+        "chunks": [
+          "Yes, I do.",
+          "No, I don't."
+        ],
+        "example_en": "[D1]Do[/] [T8]you[/] [D3]like[/] [S3]coffee[/]?",
+        "example_ru": "Ты любишь кофе?",
+        "pattern": "Do you like ___?",
+        "substitutions": [
+          "coffee",
+          "water",
+          "your room",
+          "it"
+        ],
+        "situation": "Спрашиваете о вкусах",
+        "usage_note": "В вопросах с обычными глаголами do встаёт в начало. С be и can do не нужен.",
+        "typical_error": "«You like coffee?» с вопросительной интонацией — понятно, но правильный вопрос: Do you like coffee?"
+      }
+    },
+    {
+      "uid": "LX-00037",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/4",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00037",
+        "lemma": "the",
+        "meaning": "used before a noun when it is clear which one you mean",
+        "class": "T1",
+        "grammar_features": [
+          "definite_article"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): the definite article — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ðə/",
+        "stress_note": "Перед согласным звуком /ðə/, перед гласным /ði/",
+        "translation_ru": "тот самый (часто не переводится)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "the book",
+          "the room",
+          "the house"
+        ],
+        "chunks": [
+          "The book is good."
+        ],
+        "example_en": "[T1]The[/] [S2]room[/] [D1]is[/] [J1]big[/].",
+        "example_ru": "Комната большая.",
+        "pattern": "The ___ is big.",
+        "substitutions": [
+          "room",
+          "house",
+          "family"
+        ],
+        "situation": "Говорите о том, что уже понятно обоим",
+        "usage_note": "the — «тот, о котором мы оба знаем». Самое частое слово английского языка.",
+        "typical_error": "Произносят «зе». Нужно межзубное /ð/ и короткое /ə/."
+      }
+    },
+    {
+      "uid": "LX-00038",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00038",
+        "lemma": "that",
+        "meaning": "used for a person or thing that is not near you",
+        "class": "T2",
+        "grammar_features": [
+          "determiner",
+          "pronoun_use"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): that det., pron., conj. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ðæt/",
+        "stress_note": "Открытое /æ/; that's = /ðæts/",
+        "translation_ru": "тот, та, то (далеко); это",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "that house",
+          "that's nice",
+          "that is"
+        ],
+        "chunks": [
+          "That's nice!"
+        ],
+        "example_en": "[T2]That[/] [S2]house[/] [D1]is[/] [J2]new[/].",
+        "example_ru": "Тот дом новый.",
+        "pattern": "That ___ is new.",
+        "substitutions": [
+          "house",
+          "phone",
+          "book"
+        ],
+        "situation": "Показываете на то, что далеко",
+        "usage_note": "That's nice! — «Как здорово!» Так реагируют на новость собеседника.",
+        "typical_error": "Путают this и that. This — рядом со мной, that — дальше."
+      }
+    },
+    {
+      "uid": "LX-00039",
+      "source_path": "content/seed_lexicon/a1_w02_core.yaml",
+      "source_pointer": "/units/6",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00039",
+        "lemma": "your",
+        "meaning": "belonging to the person you are speaking to",
+        "class": "T3",
+        "grammar_features": [
+          "possessive_determiner"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): your det. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/jʊr/",
+        "stress_note": "Также /jɔr/; в быстрой речи /jɚ/ — звучит как you're",
+        "translation_ru": "твой, ваш",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "your name",
+          "your phone",
+          "your family"
+        ],
+        "chunks": [
+          "Is this your phone?"
+        ],
+        "example_en": "[D1]Is[/] [T2]this[/] [T3]your[/] [S2]phone[/]?",
+        "example_ru": "Это твой телефон?",
+        "pattern": "Is this your ___?",
+        "substitutions": [
+          "phone",
+          "book",
+          "room"
+        ],
+        "situation": "Находите чужую вещь",
+        "usage_note": "your (твой) и you're (ты есть) звучат почти одинаково, но пишутся по-разному.",
+        "typical_error": "Пишут you're вместо your. Your phone — твой телефон."
+      }
+    },
+    {
+      "uid": "LX-00040",
+      "source_path": "content/seed_lexicon/a1_w02_story01.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00040",
+        "lemma": "box",
+        "meaning": "a container with flat sides, often made of cardboard",
+        "class": "S2",
+        "grammar_features": [
+          "countable",
+          "plural_es"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): box n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/bɑks/",
+        "stress_note": "Американское открытое /ɑ/ — ближе к «бакс». Множественное число boxes /ˈbɑksɪz/",
+        "translation_ru": "коробка, ящик",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a big box",
+          "a new box",
+          "my box"
+        ],
+        "chunks": [
+          "Is this your box?"
+        ],
+        "example_en": "[T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/].",
+        "example_ru": "Это не моя коробка.",
+        "pattern": "Is this your ___?",
+        "substitutions": [
+          "box",
+          "book",
+          "phone"
+        ],
+        "situation": "Курьер принёс не ту посылку",
+        "typical_error": "Произносят «бокс» с русским «о». В американском — открытое /ɑ/."
+      }
+    },
+    {
+      "uid": "LX-00041",
+      "source_path": "content/seed_lexicon/a1_w02_story01.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00041",
+        "lemma": "cat",
+        "meaning": "a small animal with soft fur, often kept as a pet",
+        "class": "S6",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): cat n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/kæt/",
+        "stress_note": "Открытое /æ/ — между «э» и «а»; t на конце короткое",
+        "translation_ru": "кошка, кот",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a big cat",
+          "my cat",
+          "a nice cat"
+        ],
+        "chunks": [
+          "It is my cat."
+        ],
+        "example_en": "[T8]I[/] [D1]have[/] [T1]a[/] [J1]big[/] [S6]cat[/].",
+        "example_ru": "У меня большой кот.",
+        "pattern": "I have a ___ cat.",
+        "substitutions": [
+          "big",
+          "nice",
+          "new"
+        ],
+        "situation": "Рассказываете о питомце",
+        "usage_note": "cat не различает пол: и «кот», и «кошка». О своём питомце американцы часто говорят he или she, о чужом — it.",
+        "typical_error": "Произносят «кэт» с узким э или «кет». Нужно открытое /æ/."
+      }
+    },
+    {
+      "uid": "LX-00042",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00042",
+        "lemma": "Good morning!",
+        "meaning": "A morning greeting",
+        "class": "O1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/ɡʊd ˈmɔrnɪŋ/",
+        "translation_ru": "Доброе утро!",
+        "example_en": "Good morning!",
+        "example_ru": "Доброе утро!",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00043",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00043",
+        "lemma": "My name is Anna.",
+        "meaning": "Introducing yourself by name",
+        "class": "F1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/maɪ ˈneɪm ɪz ˈænə/",
+        "translation_ru": "Меня зовут Анна.",
+        "example_en": "My name is Anna.",
+        "example_ru": "Меня зовут Анна.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00044",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00044",
+        "lemma": "What is your name?",
+        "meaning": "Asking for a name",
+        "class": "F1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/wʌt ɪz jɚ ˈneɪm/",
+        "translation_ru": "Как вас зовут?",
+        "example_en": "What is your name?",
+        "example_ru": "Как вас зовут?",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00045",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00045",
+        "lemma": "I am from Russia.",
+        "meaning": "Saying where you are from",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/aɪ æm frəm ˈrʌʃə/",
+        "translation_ru": "Я из России.",
+        "example_en": "I am from Russia.",
+        "example_ru": "Я из России.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00046",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/4",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00046",
+        "lemma": "Nice to meet you.",
+        "meaning": "A polite greeting on first meeting",
+        "class": "O1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/naɪs tə ˈmit ju/",
+        "translation_ru": "Приятно познакомиться.",
+        "example_en": "Nice to meet you.",
+        "example_ru": "Приятно познакомиться.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00047",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00047",
+        "lemma": "I am your neighbor.",
+        "meaning": "Introducing yourself as a neighbor",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/aɪ æm jɚ ˈneɪbɚ/",
+        "translation_ru": "Я ваш сосед.",
+        "example_en": "I am your neighbor.",
+        "example_ru": "Я ваш сосед.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00048",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/6",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00048",
+        "lemma": "Have a nice day!",
+        "meaning": "A polite daytime farewell",
+        "class": "O1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/hæv ə naɪs ˈdeɪ/",
+        "translation_ru": "Хорошего дня!",
+        "example_en": "Have a nice day!",
+        "example_ru": "Хорошего дня!",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00049",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00049",
+        "lemma": "This is my home.",
+        "meaning": "Showing your home",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/ðɪs ɪz maɪ ˈhoʊm/",
+        "translation_ru": "Это мой дом.",
+        "example_en": "This is my home.",
+        "example_ru": "Это мой дом.",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00050",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00050",
+        "lemma": "That is your room.",
+        "meaning": "Showing someone their room",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/ðæt ɪz jɚ ˈrum/",
+        "translation_ru": "Это ваша комната.",
+        "example_en": "That is your room.",
+        "example_ru": "Это ваша комната.",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00051",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00051",
+        "lemma": "Do you like it?",
+        "meaning": "Asking whether someone likes something",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/də jə ˈlaɪk ɪt/",
+        "translation_ru": "Вам это нравится?",
+        "example_en": "Do you like it?",
+        "example_ru": "Вам это нравится?",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00052",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00052",
+        "lemma": "Yes, I do.",
+        "meaning": "A short positive answer with do",
+        "class": "O4",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/jes aɪ ˈdu/",
+        "translation_ru": "Да.",
+        "example_en": "Yes, I do.",
+        "example_ru": "Да.",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00053",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/4",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00053",
+        "lemma": "Can I have water, please?",
+        "meaning": "Politely asking for water",
+        "class": "D7",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/kən aɪ hæv ˈwɑt̬ɚ pliz/",
+        "translation_ru": "Можно мне воды, пожалуйста?",
+        "example_en": "Can I have water, please?",
+        "example_ru": "Можно мне воды, пожалуйста?",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00054",
+      "source_path": "content/seed_lexicon/a1_w02_phrases.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00054",
+        "lemma": "It is not my box.",
+        "meaning": "Saying that a box is not yours",
+        "class": "X1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/ɪt ɪz nɑt maɪ ˈbɑks/",
+        "translation_ru": "Это не моя коробка.",
+        "example_en": "It is not my box.",
+        "example_ru": "Это не моя коробка.",
+        "situation": "Мой новый дом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      }
+    },
+    {
+      "uid": "LX-00481",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00481",
+        "lemma": "kitchen",
+        "class": "S2",
+        "ipa_us": "/ˈkɪtʃən/",
+        "translation_ru": "кухня",
+        "meaning": "a room for preparing food",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]kitchen[/].",
+        "example_ru": "Это моя кухня.",
+        "usage_note": "Kitchen — комната, а не кухонная мебель.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00482",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00482",
+        "lemma": "bathroom",
+        "class": "S2",
+        "ipa_us": "/ˈbæθˌrum/",
+        "translation_ru": "ванная; санузел",
+        "meaning": "a room with a bath or shower and often a toilet",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]bathroom[/].",
+        "example_ru": "Это моя ванная.",
+        "usage_note": "В США bathroom может означать санузел, даже без ванны.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00483",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00483",
+        "lemma": "bedroom",
+        "class": "S2",
+        "ipa_us": "/ˈbɛdˌrum/",
+        "translation_ru": "спальня",
+        "meaning": "a room used for sleeping",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]bedroom[/].",
+        "example_ru": "Это моя спальня.",
+        "usage_note": "Bedroom пишется слитно.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00484",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00484",
+        "lemma": "living room",
+        "class": "S2",
+        "ipa_us": "/ˈlɪvɪŋ ˌrum/",
+        "translation_ru": "гостиная",
+        "meaning": "a room for relaxing at home",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]living room[/].",
+        "example_ru": "Это моя гостиная.",
+        "usage_note": "Living room — одно название комнаты из двух слов; a относится ко всему названию.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома",
+        "unit_type": "phrase"
+      }
+    },
+    {
+      "uid": "LX-00485",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/4",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00485",
+        "lemma": "table",
+        "class": "S2",
+        "ipa_us": "/ˈteɪbəl/",
+        "translation_ru": "стол",
+        "meaning": "a piece of furniture with a flat top",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]table[/].",
+        "example_ru": "Это мой стол.",
+        "usage_note": "Table — обычный стол, например обеденный; письменный стол — desk.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00486",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00486",
+        "lemma": "chair",
+        "class": "S2",
+        "ipa_us": "/tʃɛr/",
+        "translation_ru": "стул",
+        "meaning": "a seat with a back for one person",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]chair[/].",
+        "example_ru": "Это мой стул.",
+        "usage_note": "Chair — отдельный стул; перед одним неопределённым предметом нужно a.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00487",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/6",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00487",
+        "lemma": "window",
+        "class": "S2",
+        "ipa_us": "/ˈwɪndoʊ/",
+        "translation_ru": "окно",
+        "meaning": "an opening in a wall with glass",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]window[/].",
+        "example_ru": "Это моё окно.",
+        "usage_note": "Одно окно — a window; известное собеседнику — the window.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00488",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/7",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00488",
+        "lemma": "wall",
+        "class": "S2",
+        "ipa_us": "/wɔl/",
+        "translation_ru": "стена",
+        "meaning": "an upright part of a building or room",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]wall[/].",
+        "example_ru": "Это моя стена.",
+        "usage_note": "Wall — стена; floor — пол.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00489",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/8",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00489",
+        "lemma": "floor",
+        "class": "S2",
+        "ipa_us": "/flɔr/",
+        "translation_ru": "пол",
+        "meaning": "the lower surface of a room",
+        "example_en": "[T1]The[/] [S2]floor[/] [D1]is[/] [J2]new[/].",
+        "example_ru": "Пол новый.",
+        "usage_note": "Здесь floor — пол комнаты; значение «этаж» пока не вводим.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00490",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/9",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00490",
+        "lemma": "sofa",
+        "class": "S2",
+        "ipa_us": "/ˈsoʊfə/",
+        "translation_ru": "диван",
+        "meaning": "a long soft seat for more than one person",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]sofa[/].",
+        "example_ru": "Это мой диван.",
+        "usage_note": "Sofa — диван; в американской речи также встречается couch, это слово пока не проверяем.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00491",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/10",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00491",
+        "lemma": "lamp",
+        "class": "S2",
+        "ipa_us": "/læmp/",
+        "translation_ru": "лампа; светильник",
+        "meaning": "a device that gives light",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]lamp[/].",
+        "example_ru": "Это моя лампа.",
+        "usage_note": "Lamp — отдельная лампа или светильник, не освещение вообще.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00492",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/11",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00492",
+        "lemma": "desk",
+        "class": "S2",
+        "ipa_us": "/dɛsk/",
+        "translation_ru": "письменный стол",
+        "meaning": "a table used for writing or working",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]desk[/].",
+        "example_ru": "Это мой письменный стол.",
+        "usage_note": "Desk — стол для письма или работы; table — более общее слово.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00493",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/12",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00493",
+        "lemma": "shelf",
+        "class": "S2",
+        "ipa_us": "/ʃɛlf/",
+        "translation_ru": "полка",
+        "meaning": "a flat board for keeping things on",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]shelf[/].",
+        "example_ru": "Это моя полка.",
+        "usage_note": "Одна полка — shelf; несколько — shelves. Во второй неделе используем единственное число.",
+        "forms": [
+          "shelves"
+        ],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00494",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/13",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00494",
+        "lemma": "mirror",
+        "class": "S2",
+        "ipa_us": "/ˈmɪrɚ/",
+        "translation_ru": "зеркало",
+        "meaning": "a surface that shows your reflection",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]mirror[/].",
+        "example_ru": "Это моё зеркало.",
+        "usage_note": "Одно зеркало — a mirror.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00495",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/14",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00495",
+        "lemma": "pillow",
+        "class": "S2",
+        "ipa_us": "/ˈpɪloʊ/",
+        "translation_ru": "подушка для сна",
+        "meaning": "a soft support for your head in bed",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]pillow[/].",
+        "example_ru": "Это моя подушка.",
+        "usage_note": "Pillow обычно означает подушку для сна; диванные подушки могут называться иначе.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00496",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/15",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00496",
+        "lemma": "blanket",
+        "class": "S2",
+        "ipa_us": "/ˈblæŋkɪt/",
+        "translation_ru": "одеяло",
+        "meaning": "a covering that keeps a person warm",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]blanket[/].",
+        "example_ru": "Это моё одеяло.",
+        "usage_note": "Blanket — одеяло или плед; здесь предмет дома.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00497",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/16",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00497",
+        "lemma": "towel",
+        "class": "S2",
+        "ipa_us": "/ˈtaʊəl/",
+        "translation_ru": "полотенце",
+        "meaning": "a cloth used for drying",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]towel[/].",
+        "example_ru": "Это моё полотенце.",
+        "usage_note": "Towel — полотенце; произнесите начало /taʊ/, как один переход звука.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00498",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/17",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00498",
+        "lemma": "clock",
+        "class": "S2",
+        "ipa_us": "/klɑk/",
+        "translation_ru": "часы",
+        "meaning": "a device that shows the time",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]clock[/].",
+        "example_ru": "Это мои часы.",
+        "usage_note": "Здесь clock — настенные или настольные часы; одна вещь по-английски: a clock.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00499",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/18",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00499",
+        "lemma": "fridge",
+        "class": "S2",
+        "ipa_us": "/frɪdʒ/",
+        "translation_ru": "холодильник",
+        "meaning": "an appliance that keeps food cold",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]fridge[/].",
+        "example_ru": "Это мой холодильник.",
+        "usage_note": "Fridge — разговорное слово, употребляется и в США; полное название — refrigerator. Не называем его отдельной изученной единицей.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    },
+    {
+      "uid": "LX-00500",
+      "source_path": "content/seed_lexicon/a1_w02_home_plus.yaml",
+      "source_pointer": "/units/19",
+      "internal_level": "A1",
+      "introduction_week": 2,
+      "record": {
+        "uid": "LX-00500",
+        "lemma": "rug",
+        "class": "S2",
+        "ipa_us": "/rʌɡ/",
+        "translation_ru": "коврик; небольшой ковёр",
+        "meaning": "a piece of material covering part of a floor",
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]rug[/].",
+        "example_ru": "Это мой коврик.",
+        "usage_note": "Rug — отдельный ковёр или коврик; не покрытие пола во всей комнате.",
+        "forms": [],
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "frequency_source": "Тематический добор дома; частотность не сверена.",
+        "situation": "Показать комнаты и предметы своего дома"
+      }
+    }
+  ],
+  "caveat": "Forms in the current lexical record may include forms taught in later lessons. Assignment to a week does not prove that every form was already explained."
+}

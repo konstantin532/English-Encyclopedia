@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load markers ru %}
+{% block title %}{{ unit.lemma }} · {{ SITE_NAME }}{% endblock %}
+{% block social_title %}{{ unit.lemma }} · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap">
+  <header class="page-head" style="padding-bottom:0">
+    <p class="crumbs"><a href="{% url 'lexicon:list' %}">Слова</a> / {{ unit.internal_level.code }} / {{ unit.uid }}</p>
+  </header>
+  <article class="entry">
+    <div>
+      <h1 class="entry-word annotated" lang="en"><span class="mk" data-cat="{{ unit.part_of_speech.code }}" data-cls="{{ unit.semantic_class.number }}" data-label="{{ unit.part_of_speech.name_ru }}: {{ unit.semantic_class.name_ru }}">{{ unit.lemma }}</span></h1>
+      <div class="entry-sub">
+        <span class="ipa">{{ unit.ipa_us }}</span>
+        {{ unit|ru_tr }}
+        <span>{{ unit.translation_ru }}</span>
+        <span>{{ unit.part_of_speech.grammar_term_ru }}</span>
+      </div>
+      <div class="example annotated" lang="en"><p>{{ unit.example_en|annotate }}</p></div>
+      {% if unit.example_ru %}<p style="color:var(--ink-soft); margin-top:calc(-1 * var(--space-3))">{{ unit.example_ru }}</p>{% endif %}
+      <dl>
+        <dt>Значение</dt><dd lang="en">{{ unit.meaning }}</dd>
+        {% if unit.part_of_speech.code == 'D' %}
+        <dt>Тип изменения форм</dt>
+        <dd>
+          {% if 'irregular' in unit.grammar_features %}Неправильный глагол: формы изменяются не только по обычному правилу -ed.
+          {% elif 'regular' in unit.grammar_features %}Правильный глагол: прошедшая форма обычно образуется с -ed.
+          {% elif 'modal' in unit.grammar_features %}Модальный глагол: у него особые грамматические правила.
+          {% else %}Тип образования форм пока не размечен. По цвету определить его нельзя.
+          {% endif %}
+        </dd>
+        {% endif %}
+        {% if unit.forms %}<dt>Формы</dt><dd class="subs" lang="en">{% for f in unit.forms %}<span>{{ f }}</span>{% endfor %}</dd>{% endif %}
+        {% if unit.stress_note %}<dt>Произношение</dt><dd>{{ unit.stress_note }}</dd>{% endif %}
+        {% if unit.collocations %}<dt>Сочетания</dt><dd class="subs" lang="en">{% for c in unit.collocations %}<span>{{ c }}</span>{% endfor %}</dd>{% endif %}
+        {% if unit.chunks %}<dt>Готовые фразы</dt><dd lang="en">{% for c in unit.chunks %}{{ c }}{% if not forloop.last %}<br>{% endif %}{% endfor %}</dd>{% endif %}
+        {% if unit.pattern %}<dt>Каркас</dt><dd lang="en"><strong>{{ unit.pattern }}</strong></dd>{% endif %}
+        {% if unit.substitutions %}<dt>Подставьте</dt><dd class="subs" lang="en">{% for s in unit.substitutions %}<span>{{ s }}</span>{% endfor %}</dd>{% endif %}
+        {% if unit.situation %}<dt>Ситуация</dt><dd>{{ unit.situation }}</dd>{% endif %}
+        {% if unit.usage_note %}<dt>Как употребляют</dt><dd>{{ unit.usage_note }}</dd>{% endif %}
+        {% if unit.typical_error %}<dt>Типичная ошибка</dt><dd class="error-note">{{ unit.typical_error }}</dd>{% endif %}
+      </dl>
+      {% include "components/sound_legend.html" %}
+    </div>
+    <aside class="aside">
+      <div class="aside-box">
+        <h2>Паспорт единицы</h2>
+        <dl style="grid-template-columns: 1fr 1fr; gap: var(--space-2) var(--space-3)">
+          <dt>ID</dt><dd class="uid">{{ unit.uid }}</dd>
+          <dt>Учебный класс</dt><dd><span class="swatch" style="--sw: var(--class-{{ unit.semantic_class.number }})"></span> {{ unit.semantic_class.class_id }} — {{ unit.semantic_class.name_ru }}</dd>
+          <dt>Уровень курса</dt><dd>{{ unit.internal_level.code }}</dd>
+          <dt>CEFR</dt><dd>{{ unit.get_cefr_display }}{% if unit.verification_status != 'verified' %} <strong>(оценка, не подтверждена для значения)</strong>{% endif %}</dd>
+          <dt>Проверка</dt><dd>{{ unit.get_verification_status_display }}</dd>
+          <dt>Учебная последовательность</dt><dd>{{ unit.internal_level.code }} — внутренняя ступень курса, не сертификат CEFR</dd>
+        </dl>
+        <p class="drill-hint">Линия обозначает учебную категорию ({{ unit.part_of_speech.name_ru }}), цвет — тематический класс. Это не признак правильного или неправильного глагола. В разных предложениях одно слово может выполнять разные роли. <a href="{% url 'taxonomy:legend' %}">Как работают цвета и линии</a>.</p>
+        {% if unit.verification_note %}<p class="drill-hint">{{ unit.verification_note }}</p>{% endif %}
+      </div>
+      {% if lessons %}<div class="aside-box"><h2>В уроках</h2><ul class="toc">{% for l in lessons %}<li><a href="{% url 'lessons:detail' l.slug %}">{{ l.title }}</a></li>{% endfor %}</ul></div>{% endif %}
+    </aside>
+  </article>
+</div>
+{% endblock %}

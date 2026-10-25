@@ -1,0 +1,66 @@
+level: A1
+week: 1
+can_do_ru: "Я смогу представиться, сказать, откуда я, и спросить имя собеседника."
+mission_ru: "1. Без готового образца представьтесь вслух новому соседу и скажите, откуда вы. 2. Представьте знакомство с другим человеком: поздоровайтесь, спросите его имя и ответьте на встречный вопрос. Говорите своими словами, без вариантов ответа."
+ambience: morning_home
+chunks: [LX-00042, LX-00043, LX-00044, LX-00045, LX-00046, LX-00047, LX-00048]
+story_beat:
+  intro_ru: "Первое утро Анны в новом доме. На крыльце её встречает сосед."
+  outcome_ru: "Анна и Том познакомились: Том — сосед, Анна — из России. Анна очень занята переездом, и Том желает ей хорошего дня."
+  next_hook_ru: "Скоро у Анны будут первые гости."
+script:
+  - speaker: tom
+    emotion: happy
+    text: "[J3]Good[/] [S7]morning[/]! [T8]I[/] [D1]am[/] [S1]Tom[/]. [T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]?"
+    spoken: "[J3]Good[/] [S7]morning[/]! [T8]I[/][D1]'m[/] [S1]Tom[/]. [T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]?"
+    ru: "Доброе утро! Я Том. Как вас зовут?"
+  - speaker: anna
+    emotion: happy
+    text: "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]. [J3]Nice[/] [X2]to[/] [D5]meet[/] [T8]you[/], [S1]Tom[/]!"
+    ru: "Меня зовут Анна. Приятно познакомиться, Том!"
+  - speaker: tom
+    emotion: surprised
+    text: "[T8]I[/] [D1]am[/] [T3]your[/] [S1]neighbor[/], [S1]Anna[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?"
+    spoken: "[T8]I[/][D1]'m[/] [T3]your[/] [S1]neighbor[/], [S1]Anna[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?"
+    ru: "Я ваш сосед, Анна. Вы из России?"
+  - speaker: anna
+    emotion: happy
+    text: "[O4]Yes[/], [T8]I[/] [D1]am[/]. [T8]I[/] [D1]am[/] [P2]from[/] [S4]Russia[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]."
+    spoken: "[O4]Yes[/], [T8]I[/] [D1]am[/]. [T8]I[/][D1]'m[/] [P2]from[/] [S4]Russia[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]."
+    ru: "Да. Я из России. Это мой новый дом."
+  - speaker: tom
+    emotion: excited
+    text: "[T8]It[/] [D1]is[/] [T1]a[/] [J3]nice[/] [S2]house[/], [S1]Anna[/]! [T8]It[/] [D1]is[/] [J1]big[/]!"
+    spoken: "[T8]It[/][D1]'s[/] [T1]a[/] [J3]nice[/] [S2]house[/], [S1]Anna[/]! [T8]It[/][D1]'s[/] [J1]big[/]!"
+    ru: "Какой хороший дом, Анна! И большой!"
+  - speaker: anna
+    emotion: tired
+    text: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T8]I[/] [D1]am[/] [J4]busy[/]."
+    spoken: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T8]I[/][D1]'m[/] [J4]busy[/]."
+    ru: "Да. У меня много дел."
+  - speaker: tom
+    emotion: happy
+    text: "[D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/], [S1]Anna[/]!"
+    ru: "Хорошего дня, Анна!"
+  - speaker: anna
+    emotion: happy
+    text: "[D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/], [S1]Tom[/]!"
+    ru: "Хорошего дня, Том!"
+twister:
+  number: 1
+  series: sounds
+  text: '[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]family[/], [T2]this[/], [T2]this[/], [T2]this[/]!'
+  ru: Это моя мама, это мой папа, это моя семья — это, это, это!
+  ipa: /ˈðɪs ɪz maɪ ˈmʌðɚ | ˈðɪs ɪz maɪ ˈfɑðɚ | ˈðɪs ɪz maɪ ˈfæməli | ˈðɪs | ˈðɪs | ˈðɪs/
+  focus_sounds:
+  - dh
+  source: original
+  goal_ru: 'Звонкое th /ð/ восемь раз подряд: this, mother, father. Русскому языку хочется сказать «зис» и «мазэр».'
+  tip_ru: Кончик языка слегка между зубами, воздух идёт непрерывно, голос звучит. Не прикусывайте язык и не превращайте звук в «з» или «д». Начните медленно, потом ускоряйтесь на this, this, this.
+  warmup:
+  - '[T2]this[/], [T2]this[/], [T2]this[/]'
+  - '[T2]this[/] [D1]is[/] [T3]my[/] [S1]mother[/]'
+  - '[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/].'
+  - '[T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/].'
+  target_line: This is my new house.
+  own_ru: 'Скажите о своём доме или комнате: This room is… / This house is…'

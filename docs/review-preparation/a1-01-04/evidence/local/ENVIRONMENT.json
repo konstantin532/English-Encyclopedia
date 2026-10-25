@@ -1,0 +1,90 @@
+{
+  "python": "Python 3.13.16",
+  "node": "v24.22.1",
+  "pnpm": "11.25.0",
+  "uv": "uv 0.13.4 (x86_64-unknown-linux-gnu)",
+  "postgres_server_available": false,
+  "docker_available": false,
+  "browser_automation_version": "playwright1.62.1 (runtime, same as browser CI workflow)",
+  "browser_executable_available": false,
+  "browser_install_attempt": "node \"$CODEX_PRIMARY_RUNTIME_NODE_MODULES/playwright/cli.js\" install chromium",
+  "browser_install_result": "Exit1: Downloaded archive was0MiB/truncated; End of central directory record signature not found. Download attempt console was not saved as a full log; subsequent launch diagnostic is recorded separately.",
+  "dependency_versions": [
+    {
+      "name": "asgiref",
+      "version": "3.12.1"
+    },
+    {
+      "name": "dj-database-url",
+      "version": "3.1.2"
+    },
+    {
+      "name": "django",
+      "version": "5.2.18"
+    },
+    {
+      "name": "django-axes",
+      "version": "8.3.1"
+    },
+    {
+      "name": "django-csp",
+      "version": "4.0"
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.1"
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.4"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pluggy",
+      "version": "1.6.0"
+    },
+    {
+      "name": "psycopg",
+      "version": "3.3.6"
+    },
+    {
+      "name": "psycopg-binary",
+      "version": "3.3.6"
+    },
+    {
+      "name": "pygments",
+      "version": "2.21.0"
+    },
+    {
+      "name": "pytest",
+      "version": "9.1.1"
+    },
+    {
+      "name": "pytest-django",
+      "version": "4.14.0"
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.4"
+    },
+    {
+      "name": "pyyaml",
+      "version": "6.0.3"
+    },
+    {
+      "name": "sqlparse",
+      "version": "0.6.0"
+    },
+    {
+      "name": "tblib",
+      "version": "3.2.2"
+    },
+    {
+      "name": "whitenoise",
+      "version": "6.12.0"
+    }
+  ]
+}

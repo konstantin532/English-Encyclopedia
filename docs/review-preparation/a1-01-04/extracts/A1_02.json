@@ -1,0 +1,2044 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "lesson_source_path": "content/seed_lessons/a1_w01_l02_be.yaml",
+  "editorial_status": "NOT_REVIEWED",
+  "lesson_full": {
+    "slug": "a1-verb-be",
+    "level": "A1",
+    "week": 1,
+    "order": 2,
+    "focus": "D",
+    "minutes": 40,
+    "title": "Глагол be: «есть», который русский прячет",
+    "summary": "Почему «Я дома» по-английски нельзя сказать без глагола, как работают am, is, are и как с их помощью отрицать и спрашивать.",
+    "units": [
+      "LX-00016",
+      "LX-00017",
+      "LX-00018",
+      "LX-00019",
+      "LX-00030",
+      "LX-00031",
+      "LX-00032",
+      "LX-00023",
+      "LX-00028"
+    ],
+    "sound_notes": [
+      {
+        "text": "It's nice.",
+        "ipa": "/ɪts ˈnaɪs/",
+        "note_ru": "it is → it's"
+      },
+      {
+        "text": "You're my friend.",
+        "ipa": "/jɚ maɪ ˈfrend/",
+        "note_ru": "you're звучит как your"
+      },
+      {
+        "text": "It isn't my book.",
+        "ipa": "/ɪt ˈɪzənt maɪ ˈbʊk/",
+        "note_ru": "n't звучит как слабое /ənt/"
+      }
+    ],
+    "contractions": [
+      {
+        "full": "I am",
+        "short": "I'm",
+        "ipa": "/aɪm/",
+        "note_ru": "am присоединяется к I: произносите слитно."
+      },
+      {
+        "full": "you are",
+        "short": "you're",
+        "ipa": "/jɚ/",
+        "note_ru": "Без ударения звучит как your."
+      },
+      {
+        "full": "it is",
+        "short": "it's",
+        "ipa": "/ɪts/",
+        "note_ru": "is сокращается до /s/ после it."
+      },
+      {
+        "full": "is not",
+        "short": "isn't",
+        "ipa": "/ˈɪzənt/",
+        "note_ru": "Отрицание присоединяется к is; слышно слабое /ənt/."
+      },
+      {
+        "full": "are not",
+        "short": "aren't",
+        "ipa": "/ɑrnt/",
+        "note_ru": "В американском варианте сохраняется звук /r/."
+      }
+    ],
+    "layers": [
+      {
+        "number": 1,
+        "body": "Первое, что Анна скажет соседу: *I'm Anna. I'm from Russia.* Два раза одно и то же крошечное *'m*: это сокращённое **am**. В русском «Я Анна» обычно обходится без глагола, а в обычной полной английской фразе нужно *I am Anna*. Короткие разговорные реплики устроены иначе — их рассмотрим отдельно. Разберётесь сегодня с глаголом **be** — и сможете сказать о себе сотни фраз.\n\n> [T8]It[/] [D1]is[/] [J3]nice[/]. [T8]It[/] [D1]is[/] [T1]a[/] [J1]big[/] [S2]house[/]! — Какой хороший дом! И большой!\n\nВ русском мы часто говорим «Я дома», «Анна — моя подруга», «Телефон новый» без отдельного слова «есть». В английских **полных утверждениях о том, кто человек, какой предмет или где он находится**, обычно нужен глагол **be**.\n\n> [T8]I[/] [D1]am[/] [P1]at[/] [S2]home[/]. — Я дома.\n> [S1]Anna[/] [D1]is[/] [T3]my[/] [S1]friend[/]. — Анна — моя подруга.\n\n**Почему am в первой строке и is во второй?** Это не два разных действия: **am** и **is** — формы одного глагола **be**. Его форма зависит от того, о ком или о чём идёт речь.\n\n**В каждом ли английском предложении есть be?** Нет. В знакомой фразе *I like coffee* уже есть глагол **like**, поэтому **is** туда не нужен. А короткие реплики вроде *Hello!* и *Water, please* вообще могут обходиться без глагола. Сейчас мы изучаем именно **полные фразы с be**.\n\nДвойная линия под словом в нашей разметке означает глагол. В следующем слое посмотрим, почему у **be** такие разные формы.\n"
+      },
+      {
+        "number": 2,
+        "body": "**Почему глагол называется be, хотя мы говорим I am и it is?** **Be** — форма, по которой этот глагол ищут в словаре. В обычном утверждении о настоящем времени вместо неё выбирают **am**, **is** или **are**. Не нужно ставить *be* рядом с ними: *I am* — уже нужная форма.\n\n**Что делает be во фразе?** Он связывает человека или предмет с информацией о нём: *I am Tom* — кто я; *I am busy* — какой я сейчас; *Anna is at home* — где Анна. Это не отдельное действие вроде *like* («нравиться»). Поэтому *I am busy* и *I like coffee* устроены по-разному: в первом случае нужен **am**, во втором **like** само является глаголом.\n\nВ русском обычно можно сказать «Я занят» без слова «есть». В английском *I busy* не становится полной нейтральной фразой: между **I** и **busy** нужна форма **be**. Но не переводите каждое русское «есть» как **is**: например, «у меня есть телефон» позже будет *I have a phone*.\n\n**Какую форму выбрать?** Сначала выясните, **о ком** говорится. Затем подберите **am / is / are**. В следующем слое разберём это на примерах.\n"
+      },
+      {
+        "number": 3,
+        "body": "У **be** в настоящем времени три главные формы. Их удобно связывать не с переводом, а с тем, **о ком говорится**:\n\n> [T8]I[/] [D1]am[/] [S1]Tom[/]. — Я Том.\n> [T8]You[/] [D1]are[/] [T3]my[/] [S1]friend[/]. — Ты мой друг.\n> [T8]It[/] [D1]is[/] [T1]a[/] [S2]book[/]. — Это книга.\n> [S1]Anna[/] [D1]is[/] [P1]at[/] [S2]home[/]. — Анна дома.\n\n- С **I** («я») выбираем **am**.\n- С **you** («ты» и «вы») выбираем **are**. Это одна и та же форма для одного собеседника и нескольких.\n- С **it** («это / оно») или с одним человеком по имени выбираем **is**.\n\n**Что ставим перед глаголом?** В этих фразах сначала называем того, о ком говорим: *I*, *you*, *it*, *Anna*. Это называется **подлежащим**. Пока достаточно простого вопроса «кто или что?».\n\n**This или it?** *This* помогает **показать или представить** предмет: *This is my book*. Когда уже говорим об этой книге, можно использовать *it*: *It is new*. Поэтому *it* не надо механически переводить как «оно» в каждой фразе.\n\nКаркас **обычного утверждения с be**: подлежащее → am / is / are → информация о человеке или предмете. Для вопроса порядок изменится — об этом следующий слой.\n"
+      },
+      {
+        "number": 4,
+        "body": "**Как сказать «не»?** Начинаем с утвердительной фразы, затем ставим **not** сразу после формы **be**:\n\n> [T8]It[/] [D1]is[/] [T3]my[/] [S2]phone[/]. — Это мой телефон.\n> [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]phone[/]. — Это не мой телефон.\n\nЗдесь **not** отрицает всё утверждение. Нельзя просто поставить его перед **phone** и оставить прежний смысл.\n\n**Как сделать вопрос «Это книга?»** В предложении с **be** переставляем **is** перед подлежащим **it**:\n\n> [T8]It[/] [D1]is[/] [T1]a[/] [S2]book[/]. — Это книга.\n> [D1]Is[/] [T8]it[/] [T1]a[/] [S2]book[/]? — Это книга?\n> [O4]Yes[/], [T8]it[/] [D1]is[/]. — Да.\n> [O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/]. — Нет.\n\n**Обратите внимание на три разных порядка:** *It is ...* — сообщение; *It is not ...* — отрицание; *Is it ...?* — вопрос. Для такого вопроса не нужно дополнительное слово **do**: с **be** вопрос строится перестановкой.\n\n**Почему ответ длиннее одного Yes?** *Yes* и *No* тоже возможны сами по себе, но короткий ответ *Yes, it is* или *No, it isn't* показывает, **на какой вопрос** вы отвечаете.\n\n**Диагностика понимания:** Вы хотите сказать «Я занят». Что верно: *I am busy* или *I busy*?\n\n**Разбор:** *I am busy*. **Busy** описывает состояние, поэтому в обычном полном английском предложении здесь нужна форма **be**: с **I** — **am**. Сравните с *I like coffee*: там **like** уже глагол.\n"
+      },
+      {
+        "number": 5,
+        "body": "В разговоре формы **be** часто сокращают, особенно когда на них нет ударения. Полные формы тоже совершенно нормальны: их используют для ясности, акцента и в самых разных ситуациях.\n\n> [T8]I[/][D1]'m[/] [J4]busy[/]. — Я занят.\n> [T8]It[/][D1]'s[/] [J3]nice[/]! — Как мило!\n> [T8]You[/][D1]'re[/] [T3]my[/] [S1]friend[/]. — Ты мой друг.\n> [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]book[/]. — Это не моя книга.\n\n**Что скрывает апостроф?** *I'm* = *I am*, *it's* = *it is*, *you're* = *you are*. Апостроф показывает, что часть звуков и букв опущена. Сами слова не меняют смысл.\n\n**Почему you're и your звучат похоже?** В быстрой речи они нередко произносятся одинаково, но на письме различаются: **you're** = «ты есть / ты являешься», а **your** = «твой» перед существительным. Например, в *You're my friend* первое слово — сокращённый глагол с местоимением, а *my* — указатель принадлежности.\n\n**Как отрицать с I?** *I am not busy* сокращается до *I'm not busy*. **Isn't** относится к **is**, поэтому *I isn't busy* не подходит. В наших обычных утверждениях выбираем *I'm not*, *you aren't* или *it isn't* по подлежащему.\n\n**Можно ли сказать Yes, it's?** Как самостоятельный краткий ответ обычно **нет**: здесь говорят *Yes, it is*. Но *It's nice* нормально, потому что после сокращения есть продолжение. В отрицательном ответе естественно *No, it isn't*.\n"
+      },
+      {
+        "number": 6,
+        "body": "**Почему говорят I'm home и I'm at home?** Обе фразы могут означать «Я дома». Но ситуация помогает выбрать естественный вариант:\n\n- *I'm home!* особенно часто говорят, когда только что вернулись домой: «Я дома!».\n- *I'm at home* (полная форма *I am at home*) удобно использовать, когда просто объясняете, где находитесь: «Я дома».\n\n**Можно ли поменять варианты местами?** Часто да: в американском английском *I'm home* также может быть обычным сообщением о местонахождении. Разница не в том, находитесь ли вы внутри здания или рядом с ним. Главное — контекст разговора.\n\n**Почему нет at в I'm home?** Слово **home** употребляется по-особому: оно может обозначать местонахождение без предлога. Не путайте это с фразой **go home** («идти домой»), где home обозначает направление.\n\n**Как сказать возраст?** Английский использует **be**: *I am thirty* — «Мне тридцать». Русскому «мне» здесь соответствует английское **I** («я»); подробности о числах будут позже.\n\n**Как заметить ошибку?** Если вы пытаетесь сказать «Я занят» как *I busy* или «Анна моя подруга» как *Anna my friend*, между человеком и описанием пропущена форма **be**. Но не добавляйте **is** автоматически во фразу *I like coffee*: в ней уже есть глагол **like**.\n\nПроверяйте **смысл** фразы, а не только наличие глагола: вы называете человека, описываете состояние, указываете место или говорите о действии?\n"
+      },
+      {
+        "number": 7,
+        "body": "Пять заданий: найдите **is**, выберите **are** и **am** в двух примерах, соберите отрицание и ответьте на вопрос гостя.\n\nПосле каждого ответа объясните себе одну маленькую причину: **почему именно эта форма be? почему not стоит здесь? почему в вопросе is впереди?** Если объяснение пока не получается — вернитесь к соответствующей паре примеров.\n\n**Проверка маленького шага:** *I am Tom* и *Tom is at home* относятся к одному времени, но форма **be** разная: с **I** — **am**, с именем одного человека — **is**. Чтобы выбрать форму, сперва найдите **о ком говорите**, а затем посмотрите в таблицу, а не переводите русское «есть».\n"
+      }
+    ],
+    "exercises": [
+      {
+        "order": 1,
+        "uid": "EX-00005",
+        "kind": "choice",
+        "stage": "recognition",
+        "prompt_ru": "Какое слово в этой фразе — глагол be?",
+        "prompt_en": "Anna is my friend.",
+        "options": [
+          "Anna",
+          "is",
+          "my",
+          "friend"
+        ],
+        "answer": "is",
+        "hint_ru": "Ищите слово, которого нет в русском переводе «Анна — моя подруга».",
+        "explanation_ru": "Is — форма be для Anna (одного человека). В русском «Анна — моя подруга» отдельного глагола обычно нет: вместо него на письме можно поставить тире.",
+        "units": [
+          "LX-00016"
+        ]
+      },
+      {
+        "order": 2,
+        "uid": "EX-00006",
+        "kind": "choice",
+        "stage": "substitution",
+        "prompt_ru": "Выберите форму be: «Ты мой друг».",
+        "prompt_en": "You ___ my friend.",
+        "options": [
+          "am",
+          "is",
+          "are"
+        ],
+        "answer": "are",
+        "hint_ru": "С you (ты или вы) используется are. Сравните I am, you are, it is.",
+        "explanation_ru": "В этой фразе подлежащее you, поэтому выбираем are. С I было бы am, с it — is.",
+        "units": [
+          "LX-00016",
+          "LX-00018"
+        ]
+      },
+      {
+        "order": 3,
+        "uid": "EX-00007",
+        "kind": "fill",
+        "stage": "substitution",
+        "prompt_ru": "Впишите форму be: «Я дома».",
+        "prompt_en": "I ___ at home.",
+        "answer": "am",
+        "hint_ru": "Начало I означает «я». В таблице ему соответствует am.",
+        "explanation_ru": "Подлежащее I требует форму am: I am at home. В разговоре возможна форма I'm at home. Сравните: Anna is at home.",
+        "units": [
+          "LX-00016",
+          "LX-00017",
+          "LX-00023"
+        ]
+      },
+      {
+        "order": 4,
+        "uid": "EX-00008",
+        "kind": "build",
+        "stage": "production",
+        "prompt_ru": "Соберите фразу: «Это не телефон».",
+        "options": [
+          "not",
+          "phone",
+          "It",
+          "a",
+          "is"
+        ],
+        "answer": "It is not a phone",
+        "accepted": [
+          "It isn't a phone",
+          "It's not a phone"
+        ],
+        "hint_ru": "Сначала It, затем is, сразу после него not, потом a phone.",
+        "explanation_ru": "В полном отрицательном предложении с be порядок такой: It → is → not → a phone. Сокращение сохраняет смысл: It isn't a phone.",
+        "units": [
+          "LX-00016",
+          "LX-00019",
+          "LX-00030"
+        ]
+      },
+      {
+        "order": 5,
+        "uid": "EX-00009",
+        "kind": "fill",
+        "stage": "transfer",
+        "prompt_ru": "Новая ситуация: гость спрашивает «Is it your room?», а это не ваша комната. Ответьте полностью.",
+        "prompt_en": "Is it your room? — ___",
+        "answer": "No, it is not my room.",
+        "accepted": [
+          "No, it isn't my room.",
+          "No, it's not my room.",
+          "No, it is not my room"
+        ],
+        "hint_ru": "No, затем it is not и чья комната.",
+        "explanation_ru": "Вопрос начинается Is it your room? Для ответа меняем your («твоя») на my («моя»): No, it is not my room. В разговоре: No, it isn't my room.",
+        "units": [
+          "LX-00030",
+          "LX-00007"
+        ]
+      }
+    ],
+    "practice": [
+      {
+        "order": 1,
+        "kind": "translate",
+        "prompt_ru": "Я дома.",
+        "answer": "I am at home.",
+        "accepted": [
+          "I am home."
+        ],
+        "hint_ru": "В русском «есть» спрятано. В английском — нет.",
+        "explanation_ru": "I am at home. Без am не обойтись: в английском be не прячется. В разговоре: I'm home.",
+        "review_of": 4,
+        "units": [
+          "LX-00016",
+          "LX-00017",
+          "LX-00023"
+        ]
+      },
+      {
+        "order": 2,
+        "kind": "translate",
+        "prompt_ru": "Ты мой друг.",
+        "answer": "You are my friend.",
+        "hint_ru": "С you — are.",
+        "explanation_ru": "You are my friend. В настоящем времени в этой конструкции с you используется are: you are, you're.",
+        "review_of": 4,
+        "units": [
+          "LX-00016",
+          "LX-00018"
+        ]
+      },
+      {
+        "order": 3,
+        "kind": "translate",
+        "prompt_ru": "Это не мой телефон.",
+        "answer": "It is not my phone.",
+        "accepted": [
+          "This is not my phone."
+        ],
+        "hint_ru": "not ставим сразу после is.",
+        "explanation_ru": "It is not my phone. Отрицание: is + not. В разговоре: It isn't my phone.",
+        "review_of": 4,
+        "units": [
+          "LX-00016",
+          "LX-00019",
+          "LX-00030"
+        ]
+      },
+      {
+        "order": 4,
+        "kind": "translate",
+        "prompt_ru": "Ты из России?",
+        "answer": "Are you from Russia?",
+        "hint_ru": "В вопросе are встаёт впереди.",
+        "explanation_ru": "Are you from Russia? Вопрос с be — перестановка: you are → are you.",
+        "review_of": 4,
+        "units": [
+          "LX-00016",
+          "LX-00018"
+        ]
+      }
+    ]
+  },
+  "week_full": {
+    "source_path": "content/seed_weeks/a1_w01.yaml",
+    "source": {
+      "level": "A1",
+      "week": 1,
+      "can_do_ru": "Я смогу представиться, сказать, откуда я, и спросить имя собеседника.",
+      "mission_ru": "1. Без готового образца представьтесь вслух новому соседу и скажите, откуда вы. 2. Представьте знакомство с другим человеком: поздоровайтесь, спросите его имя и ответьте на встречный вопрос. Говорите своими словами, без вариантов ответа.",
+      "ambience": "morning_home",
+      "chunks": [
+        "LX-00042",
+        "LX-00043",
+        "LX-00044",
+        "LX-00045",
+        "LX-00046",
+        "LX-00047",
+        "LX-00048"
+      ],
+      "story_beat": {
+        "intro_ru": "Первое утро Анны в новом доме. На крыльце её встречает сосед.",
+        "outcome_ru": "Анна и Том познакомились: Том — сосед, Анна — из России. Анна очень занята переездом, и Том желает ей хорошего дня.",
+        "next_hook_ru": "Скоро у Анны будут первые гости."
+      },
+      "script": [
+        {
+          "speaker": "tom",
+          "emotion": "happy",
+          "text": "[J3]Good[/] [S7]morning[/]! [T8]I[/] [D1]am[/] [S1]Tom[/]. [T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]?",
+          "spoken": "[J3]Good[/] [S7]morning[/]! [T8]I[/][D1]'m[/] [S1]Tom[/]. [T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]?",
+          "ru": "Доброе утро! Я Том. Как вас зовут?"
+        },
+        {
+          "speaker": "anna",
+          "emotion": "happy",
+          "text": "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]. [J3]Nice[/] [X2]to[/] [D5]meet[/] [T8]you[/], [S1]Tom[/]!",
+          "ru": "Меня зовут Анна. Приятно познакомиться, Том!"
+        },
+        {
+          "speaker": "tom",
+          "emotion": "surprised",
+          "text": "[T8]I[/] [D1]am[/] [T3]your[/] [S1]neighbor[/], [S1]Anna[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?",
+          "spoken": "[T8]I[/][D1]'m[/] [T3]your[/] [S1]neighbor[/], [S1]Anna[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?",
+          "ru": "Я ваш сосед, Анна. Вы из России?"
+        },
+        {
+          "speaker": "anna",
+          "emotion": "happy",
+          "text": "[O4]Yes[/], [T8]I[/] [D1]am[/]. [T8]I[/] [D1]am[/] [P2]from[/] [S4]Russia[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/].",
+          "spoken": "[O4]Yes[/], [T8]I[/] [D1]am[/]. [T8]I[/][D1]'m[/] [P2]from[/] [S4]Russia[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/].",
+          "ru": "Да. Я из России. Это мой новый дом."
+        },
+        {
+          "speaker": "tom",
+          "emotion": "excited",
+          "text": "[T8]It[/] [D1]is[/] [T1]a[/] [J3]nice[/] [S2]house[/], [S1]Anna[/]! [T8]It[/] [D1]is[/] [J1]big[/]!",
+          "spoken": "[T8]It[/][D1]'s[/] [T1]a[/] [J3]nice[/] [S2]house[/], [S1]Anna[/]! [T8]It[/][D1]'s[/] [J1]big[/]!",
+          "ru": "Какой хороший дом, Анна! И большой!"
+        },
+        {
+          "speaker": "anna",
+          "emotion": "tired",
+          "text": "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T8]I[/] [D1]am[/] [J4]busy[/].",
+          "spoken": "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T8]I[/][D1]'m[/] [J4]busy[/].",
+          "ru": "Да. У меня много дел."
+        },
+        {
+          "speaker": "tom",
+          "emotion": "happy",
+          "text": "[D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/], [S1]Anna[/]!",
+          "ru": "Хорошего дня, Анна!"
+        },
+        {
+          "speaker": "anna",
+          "emotion": "happy",
+          "text": "[D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/], [S1]Tom[/]!",
+          "ru": "Хорошего дня, Том!"
+        }
+      ],
+      "twister": {
+        "number": 1,
+        "series": "sounds",
+        "text": "[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]family[/], [T2]this[/], [T2]this[/], [T2]this[/]!",
+        "ru": "Это моя мама, это мой папа, это моя семья — это, это, это!",
+        "ipa": "/ˈðɪs ɪz maɪ ˈmʌðɚ | ˈðɪs ɪz maɪ ˈfɑðɚ | ˈðɪs ɪz maɪ ˈfæməli | ˈðɪs | ˈðɪs | ˈðɪs/",
+        "focus_sounds": [
+          "dh"
+        ],
+        "source": "original",
+        "goal_ru": "Звонкое th /ð/ восемь раз подряд: this, mother, father. Русскому языку хочется сказать «зис» и «мазэр».",
+        "tip_ru": "Кончик языка слегка между зубами, воздух идёт непрерывно, голос звучит. Не прикусывайте язык и не превращайте звук в «з» или «д». Начните медленно, потом ускоряйтесь на this, this, this.",
+        "warmup": [
+          "[T2]this[/], [T2]this[/], [T2]this[/]",
+          "[T2]this[/] [D1]is[/] [T3]my[/] [S1]mother[/]",
+          "[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/], [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/].",
+          "[T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]."
+        ],
+        "target_line": "This is my new house.",
+        "own_ru": "Скажите о своём доме или комнате: This room is… / This house is…"
+      }
+    },
+    "plan": {
+      "level": "A1",
+      "week": 1,
+      "situation_ru": "Знакомство с соседом",
+      "sphere": "meet",
+      "grammar_ru": "существительные; be: I'm, you're, it's",
+      "grammar_markers": [
+        "D1"
+      ]
+    }
+  },
+  "scheduled_stories": [],
+  "scheduled_poems": [],
+  "active_topic_full": {
+    "n": 2,
+    "week": 1,
+    "slug": "a1-verb-be",
+    "title": "Глагол be в живой беседе",
+    "scene": "Анна ищет Тома",
+    "context": "Русское «Анна дома» обходится без глагола. Английский ответ использует be.",
+    "dialogue": [
+      [
+        "Anna",
+        "Is Tom home?",
+        "Том дома?"
+      ],
+      [
+        "Mia",
+        "Yes, Tom is home.",
+        "Да, Том дома."
+      ],
+      [
+        "Anna",
+        "I'm home.",
+        "Я дома."
+      ]
+    ],
+    "question": "Какую форму be использовали с Tom?",
+    "options": [
+      "am",
+      "are",
+      "is"
+    ],
+    "correct": 2,
+    "feedback": "Tom — один человек, поэтому Is Tom home? Для I нужна am; для you — are.",
+    "prompt": "Скажите: «Мия дома».",
+    "answer": "Mia is home.",
+    "alternatives": [
+      "Mia is at home."
+    ],
+    "hint": "Имя одного человека + is + home.",
+    "transfer": "Вы спрашиваете, дома ли Анна. Составьте вопрос.",
+    "transfer_example": "Is Anna home?",
+    "why": "Be связывает человека с его состоянием или местом. С I используется am, с you — are, с именем одного человека — is. В разговоре I am сокращают до I'm. В коротком ответе Yes, I am форму am сохраняют полностью.",
+    "sound": "В I'm /aɪm/ два слова сливаются в один слог. В коротком ответе Yes, I am форму am произносят полностью."
+  },
+  "spoken_scenarios_full": {
+    "n": 2,
+    "missions": [
+      {
+        "id": 1,
+        "title": "Где Том?",
+        "scene": "Анна заходит в дом, а Том уже внутри.",
+        "prompt": "Скажите Анне, что Том дома.",
+        "example": "Tom is home.",
+        "coach": "После имени одного человека нужна is."
+      },
+      {
+        "id": 2,
+        "title": "Сообщение от Мии",
+        "scene": "На телефоне вопрос: Is Anna home?",
+        "prompt": "Ответьте полным предложением, что Анна дома.",
+        "example": "Yes, Anna is home.",
+        "coach": "Повторите имя Анны: с одним человеком используем is."
+      },
+      {
+        "id": 3,
+        "title": "Вы на связи",
+        "scene": "Друг спрашивает, где вы.",
+        "prompt": "Ответьте одним предложением: «Я дома».",
+        "example": "I'm home.",
+        "coach": "I'm — разговорное сокращение I am."
+      },
+      {
+        "id": 4,
+        "title": "Не тот собеседник",
+        "scene": "По телефону вас приняли за Тома.",
+        "prompt": "Скажите, что вы не Том.",
+        "example": "I'm not Tom.",
+        "coach": "Not стоит после формы be."
+      },
+      {
+        "id": 5,
+        "title": "Друг на пороге",
+        "scene": "Вы стоите за закрытой дверью дома Тома и не знаете, внутри ли он.",
+        "prompt": "Спросите самого Тома, дома ли он.",
+        "example": "Are you home?",
+        "coach": "Вопрос с you начинается с Are."
+      },
+      {
+        "id": 6,
+        "title": "Импровизация: забытый адрес",
+        "scene": "Друг не понимает, дома ли вы. Вы ещё хотите узнать, дома ли Том.",
+        "prompt": "Сообщите, что вы дома, затем спросите о Томе.",
+        "example": "I'm home. Is Tom home?",
+        "coach": "О себе — I am или сокращённо I'm; в вопросе про Тома — Is Tom…?"
+      }
+    ],
+    "twists": [
+      {
+        "scene": "Спросите Тома по телефону, дома ли он.",
+        "example": "Are you home?"
+      },
+      {
+        "scene": "Говорите о Мие: она не дома.",
+        "example": "Mia isn't home."
+      }
+    ]
+  },
+  "error_repair_full": {
+    "n": 2,
+    "wrong": "Tom are home.",
+    "correct": "Tom is home.",
+    "hint": "Tom — один человек; выберите форму is.",
+    "reason": "С именем одного человека используется is: Tom is home. С you используется are, а с I — am."
+  },
+  "retry_guidance_full": {
+    "1": {
+      "focus": "Найдите форму глагола, которая связывает человека с описанием.",
+      "choices": {
+        "Anna": "Anna — имя человека, не форма глагола.",
+        "my": "My указывает на принадлежность, не выполняет работу глагола.",
+        "friend": "Friend называет человека, не связывает части предложения."
+      }
+    },
+    "2": {
+      "focus": "Выберите форму be по подлежащему you, а не по слову friend.",
+      "choices": {
+        "am": "Am употребляется с I, а не с you.",
+        "is": "Is обычно употребляется с he, she, it или одним названным человеком."
+      }
+    },
+    "3": {
+      "focus": "Сверьте подлежащее I с формами be. В русском слову «я» не всегда соответствует отдельное «есть»."
+    },
+    "4": {
+      "focus": "В отрицании not стоит после формы be. Проверьте порядок слов и указатель перед phone."
+    },
+    "5": {
+      "focus": "Ответьте отрицательно и замените принадлежность собеседника на свою: your и my обозначают разных владельцев."
+    }
+  },
+  "delayed_review_full": {
+    "1": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "В предложении «Tom is home» какая форма be?",
+          "Tom is home.",
+          [
+            "Tom",
+            "is",
+            "home"
+          ],
+          1
+        ],
+        "prompt_ru": "В предложении «Tom is home» какая форма be?",
+        "prompt_en": "Tom is home.",
+        "options": [
+          "Tom",
+          "is",
+          "home"
+        ],
+        "correct_index": 1,
+        "answer": "is",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00005",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "В предложении «I am Anna» какая форма be?",
+          "I am Anna.",
+          [
+            "am",
+            "Anna",
+            "I"
+          ],
+          0
+        ],
+        "prompt_ru": "В предложении «I am Anna» какая форма be?",
+        "prompt_en": "I am Anna.",
+        "options": [
+          "am",
+          "Anna",
+          "I"
+        ],
+        "correct_index": 0,
+        "answer": "am",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00005",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "В предложении «You are my friend» какая форма be?",
+          "You are my friend.",
+          [
+            "my",
+            "friend",
+            "are"
+          ],
+          2
+        ],
+        "prompt_ru": "В предложении «You are my friend» какая форма be?",
+        "prompt_en": "You are my friend.",
+        "options": [
+          "my",
+          "friend",
+          "are"
+        ],
+        "correct_index": 2,
+        "answer": "are",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00005",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "В предложении «It is new» какая форма be?",
+          "It is new.",
+          [
+            "new",
+            "It",
+            "is"
+          ],
+          2
+        ],
+        "prompt_ru": "В предложении «It is new» какая форма be?",
+        "prompt_en": "It is new.",
+        "options": [
+          "new",
+          "It",
+          "is"
+        ],
+        "correct_index": 2,
+        "answer": "is",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00005",
+        "source_exercise_order": 1
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "В предложении «This is my house» какая форма be?",
+          "This is my house.",
+          [
+            "This",
+            "is",
+            "house"
+          ],
+          1
+        ],
+        "prompt_ru": "В предложении «This is my house» какая форма be?",
+        "prompt_en": "This is my house.",
+        "options": [
+          "This",
+          "is",
+          "house"
+        ],
+        "correct_index": 1,
+        "answer": "is",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00005",
+        "source_exercise_order": 1
+      }
+    ],
+    "2": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "Выберите форму be с I.",
+          "I ___ Tom.",
+          [
+            "are",
+            "am",
+            "is"
+          ],
+          1
+        ],
+        "prompt_ru": "Выберите форму be с I.",
+        "prompt_en": "I ___ Tom.",
+        "options": [
+          "are",
+          "am",
+          "is"
+        ],
+        "correct_index": 1,
+        "answer": "am",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00006",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Выберите форму be с you.",
+          "You ___ my friend.",
+          [
+            "is",
+            "are",
+            "am"
+          ],
+          1
+        ],
+        "prompt_ru": "Выберите форму be с you.",
+        "prompt_en": "You ___ my friend.",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "correct_index": 1,
+        "answer": "are",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00006",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Выберите форму be с it.",
+          "It ___ new.",
+          [
+            "am",
+            "are",
+            "is"
+          ],
+          2
+        ],
+        "prompt_ru": "Выберите форму be с it.",
+        "prompt_en": "It ___ new.",
+        "options": [
+          "am",
+          "are",
+          "is"
+        ],
+        "correct_index": 2,
+        "answer": "is",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00006",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Выберите форму be с Anna.",
+          "Anna ___ home.",
+          [
+            "is",
+            "are",
+            "am"
+          ],
+          0
+        ],
+        "prompt_ru": "Выберите форму be с Anna.",
+        "prompt_en": "Anna ___ home.",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "correct_index": 0,
+        "answer": "is",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00006",
+        "source_exercise_order": 2
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Выберите форму be с Tom.",
+          "Tom ___ my neighbor.",
+          [
+            "are",
+            "is",
+            "am"
+          ],
+          1
+        ],
+        "prompt_ru": "Выберите форму be с Tom.",
+        "prompt_en": "Tom ___ my neighbor.",
+        "options": [
+          "are",
+          "is",
+          "am"
+        ],
+        "correct_index": 1,
+        "answer": "is",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00006",
+        "source_exercise_order": 2
+      }
+    ],
+    "3": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "Заполните предложение «Я — Том».",
+          "I ___ Tom.",
+          [
+            "is",
+            "am",
+            "are"
+          ],
+          1
+        ],
+        "prompt_ru": "Заполните предложение «Я — Том».",
+        "prompt_en": "I ___ Tom.",
+        "options": [
+          "is",
+          "am",
+          "are"
+        ],
+        "correct_index": 1,
+        "answer": "am",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00007",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Как сказать «Я дома»?",
+          "I ___ home.",
+          [
+            "are",
+            "is",
+            "am"
+          ],
+          2
+        ],
+        "prompt_ru": "Как сказать «Я дома»?",
+        "prompt_en": "I ___ home.",
+        "options": [
+          "are",
+          "is",
+          "am"
+        ],
+        "correct_index": 2,
+        "answer": "am",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00007",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Вы представляете себя как Анну.",
+          "I ___ Anna.",
+          [
+            "am",
+            "is",
+            "are"
+          ],
+          0
+        ],
+        "prompt_ru": "Вы представляете себя как Анну.",
+        "prompt_en": "I ___ Anna.",
+        "options": [
+          "am",
+          "is",
+          "are"
+        ],
+        "correct_index": 0,
+        "answer": "am",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00007",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Вы сообщаете, что вы заняты.",
+          "I ___ busy.",
+          [
+            "is",
+            "are",
+            "am"
+          ],
+          2
+        ],
+        "prompt_ru": "Вы сообщаете, что вы заняты.",
+        "prompt_en": "I ___ busy.",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "correct_index": 2,
+        "answer": "am",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00007",
+        "source_exercise_order": 3
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Вы рассказываете, что вы из России.",
+          "I ___ from Russia.",
+          [
+            "am",
+            "are",
+            "is"
+          ],
+          0
+        ],
+        "prompt_ru": "Вы рассказываете, что вы из России.",
+        "prompt_en": "I ___ from Russia.",
+        "options": [
+          "am",
+          "are",
+          "is"
+        ],
+        "correct_index": 0,
+        "answer": "am",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00007",
+        "source_exercise_order": 3
+      }
+    ],
+    "4": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "Как отрицать фразу «It is a book»?",
+          "",
+          [
+            "It is not a book.",
+            "It not is a book.",
+            "It is a not book."
+          ],
+          0
+        ],
+        "prompt_ru": "Как отрицать фразу «It is a book»?",
+        "prompt_en": "",
+        "options": [
+          "It is not a book.",
+          "It not is a book.",
+          "It is a not book."
+        ],
+        "correct_index": 0,
+        "answer": "It is not a book.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00008",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Скажите, что комната не новая.",
+          "",
+          [
+            "My room not is new.",
+            "My room is not new.",
+            "My room is new not."
+          ],
+          1
+        ],
+        "prompt_ru": "Скажите, что комната не новая.",
+        "prompt_en": "",
+        "options": [
+          "My room not is new.",
+          "My room is not new.",
+          "My room is new not."
+        ],
+        "correct_index": 1,
+        "answer": "My room is not new.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00008",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Скажите, что Том не Анна.",
+          "",
+          [
+            "Tom is Anna not.",
+            "Tom not is Anna.",
+            "Tom is not Anna."
+          ],
+          2
+        ],
+        "prompt_ru": "Скажите, что Том не Анна.",
+        "prompt_en": "",
+        "options": [
+          "Tom is Anna not.",
+          "Tom not is Anna.",
+          "Tom is not Anna."
+        ],
+        "correct_index": 2,
+        "answer": "Tom is not Anna.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00008",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Скажите, что это не мой телефон.",
+          "",
+          [
+            "It is not my phone.",
+            "It not is my phone.",
+            "It is my not phone."
+          ],
+          0
+        ],
+        "prompt_ru": "Скажите, что это не мой телефон.",
+        "prompt_en": "",
+        "options": [
+          "It is not my phone.",
+          "It not is my phone.",
+          "It is my not phone."
+        ],
+        "correct_index": 0,
+        "answer": "It is not my phone.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00008",
+        "source_exercise_order": 4
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Скажите, что дом не большой.",
+          "",
+          [
+            "The house not is big.",
+            "The house is not big.",
+            "The house is big not."
+          ],
+          1
+        ],
+        "prompt_ru": "Скажите, что дом не большой.",
+        "prompt_en": "",
+        "options": [
+          "The house not is big.",
+          "The house is not big.",
+          "The house is big not."
+        ],
+        "correct_index": 1,
+        "answer": "The house is not big.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00008",
+        "source_exercise_order": 4
+      }
+    ],
+    "5": [
+      {
+        "source_index": 0,
+        "raw_card": [
+          "На вопрос «Is this your book?» ответьте «Нет, это не моя книга».",
+          "",
+          [
+            "No, is not my book.",
+            "No, it is not my book.",
+            "No, it not my book."
+          ],
+          1
+        ],
+        "prompt_ru": "На вопрос «Is this your book?» ответьте «Нет, это не моя книга».",
+        "prompt_en": "",
+        "options": [
+          "No, is not my book.",
+          "No, it is not my book.",
+          "No, it not my book."
+        ],
+        "correct_index": 1,
+        "answer": "No, it is not my book.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00009",
+        "source_exercise_order": 5
+      },
+      {
+        "source_index": 1,
+        "raw_card": [
+          "Гость ошибся: это не ваш телефон. Что ответить?",
+          "",
+          [
+            "No, it is not my phone.",
+            "No, not it is my phone.",
+            "No, it my phone is not."
+          ],
+          0
+        ],
+        "prompt_ru": "Гость ошибся: это не ваш телефон. Что ответить?",
+        "prompt_en": "",
+        "options": [
+          "No, it is not my phone.",
+          "No, not it is my phone.",
+          "No, it my phone is not."
+        ],
+        "correct_index": 0,
+        "answer": "No, it is not my phone.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00009",
+        "source_exercise_order": 5
+      },
+      {
+        "source_index": 2,
+        "raw_card": [
+          "Вас спрашивают о комнате, которая не ваша.",
+          "",
+          [
+            "No, it not is my room.",
+            "No, it is my not room.",
+            "No, it is not my room."
+          ],
+          2
+        ],
+        "prompt_ru": "Вас спрашивают о комнате, которая не ваша.",
+        "prompt_en": "",
+        "options": [
+          "No, it not is my room.",
+          "No, it is my not room.",
+          "No, it is not my room."
+        ],
+        "correct_index": 2,
+        "answer": "No, it is not my room.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00009",
+        "source_exercise_order": 5
+      },
+      {
+        "source_index": 3,
+        "raw_card": [
+          "Вас спрашивают «Is it your house?» — это не ваш дом.",
+          "",
+          [
+            "No, it is not my house.",
+            "No, it not my house.",
+            "No, is it not my house."
+          ],
+          0
+        ],
+        "prompt_ru": "Вас спрашивают «Is it your house?» — это не ваш дом.",
+        "prompt_en": "",
+        "options": [
+          "No, it is not my house.",
+          "No, it not my house.",
+          "No, is it not my house."
+        ],
+        "correct_index": 0,
+        "answer": "No, it is not my house.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00009",
+        "source_exercise_order": 5
+      },
+      {
+        "source_index": 4,
+        "raw_card": [
+          "Вас спрашивают о вашей книге, но книга чужая.",
+          "",
+          [
+            "No, my book it not is.",
+            "No, it is not my book.",
+            "No, is not it my book."
+          ],
+          1
+        ],
+        "prompt_ru": "Вас спрашивают о вашей книге, но книга чужая.",
+        "prompt_en": "",
+        "options": [
+          "No, my book it not is.",
+          "No, it is not my book.",
+          "No, is not it my book."
+        ],
+        "correct_index": 1,
+        "answer": "No, it is not my book.",
+        "explanation_ru": null,
+        "source_exercise_uid": "EX-00009",
+        "source_exercise_order": 5
+      }
+    ]
+  },
+  "understanding_full": {
+    "slug": "a1-verb-be",
+    "plain": "Am, is и are связывают человека с описанием.",
+    "why": "Русскому «Я дома» по-английски соответствует фраза с am.",
+    "pattern": "I am / you are / she is.",
+    "mistake": "Говорить I is или you is.",
+    "fix": "Найдите подлежащее: I → am, you → are, she → is.",
+    "example": "I am at home.",
+    "translation": "Я дома.",
+    "tasks": {
+      "meaning": {
+        "prompt": "Передайте по-русски смысл: «You are my friend.».",
+        "model": "Ты мой друг.",
+        "accepted": [
+          "Ты мой друг.",
+          "Вы мой друг."
+        ]
+      },
+      "writing": {
+        "prompt": "Напишите «Я дома».",
+        "model": "I am at home.",
+        "accepted": [
+          "I am at home.",
+          "I'm at home."
+        ]
+      },
+      "transfer": {
+        "prompt": "Представьтесь и скажите, что вы заняты.",
+        "model": "I am Anna. I am busy."
+      },
+      "explain": {
+        "prompt": "Новичок написал: «I is at home». Исправьте одну ошибку и объясните свой выбор.",
+        "model": "I am at home. С местоимением I употребляют am, а не is."
+      }
+    },
+    "contrast": {
+      "a_en": "I am at home.",
+      "a_ru": "Я дома.",
+      "b_en": "She is at home.",
+      "b_ru": "Она дома.",
+      "why": "Меняется не значение «дома», а форма be: рядом с I нужна am, а с she — is."
+    }
+  },
+  "scaffold_full": {
+    "slug": "a1-verb-be",
+    "steps": [
+      {
+        "example_en": "I am ready.",
+        "example_ru": "Я готов.",
+        "why_ru": "С I выбираем am: английская фраза требует связующего глагола."
+      },
+      {
+        "example_en": "She is ready.",
+        "example_ru": "Она готова.",
+        "why_ru": "С she используем is, а не am: форма be зависит от того, о ком говорим."
+      },
+      {
+        "example_en": "Are you ready?",
+        "example_ru": "Ты готов?",
+        "why_ru": "Для вопроса ставим are перед you; не добавляем do к be."
+      }
+    ],
+    "transfer_variants": [
+      {
+        "prompt": "Вы в классе. Спросите друга, готов ли он начинать занятие.",
+        "model": "Are you ready?"
+      },
+      {
+        "prompt": "Друг ищет Анну. Спросите его, дома ли Анна.",
+        "model": "Is Anna at home?"
+      }
+    ]
+  },
+  "links": {
+    "week": {
+      "source_path": "content/seed_weeks/a1_w01.yaml",
+      "level": "A1",
+      "week": 1,
+      "basis": "YAML level+week, load_content._week; lesson_detail selects lesson.week"
+    },
+    "stories": [],
+    "poems": [],
+    "active_topic": {
+      "source_path": "content/active_a1/topics_01_08.json",
+      "match": {
+        "slug": "a1-verb-be",
+        "n": 2
+      },
+      "basis": "apps.lessons.views.lesson_detail + apps.core.a1_active._load_topics"
+    },
+    "spoken_missions": {
+      "source_path": "content/active_a1/scenarios_01_06.json",
+      "match": {
+        "n": 2
+      },
+      "basis": "active topics indexed by lesson.order, slug checked; content_details lesson key",
+      "count": 6
+    },
+    "error_repair": {
+      "source_path": "content/active_a1/error_repairs_01_18.json",
+      "match": {
+        "n": 2
+      },
+      "basis": "_load_topics attaches repair by n"
+    },
+    "retry_guidance": {
+      "source_path": "content/manifests/a1_retry_guidance.json",
+      "match": {
+        "slug": "a1-verb-be"
+      },
+      "basis": "retry_guidance: slug then str(exercise.order)"
+    },
+    "delayed_review": {
+      "source_path": "content/manifests/a1_delayed_review_02.json",
+      "match": {
+        "slug": "a1-verb-be"
+      },
+      "basis": "question_bank: slug then str(exercise.order), five cards per exercise",
+      "card_count": 25
+    },
+    "understanding": {
+      "source_path": "content/manifests/a1_understanding_checks.json",
+      "match": {
+        "slug": "a1-verb-be"
+      },
+      "basis": "understanding_bank/get_guide by slug"
+    },
+    "scaffold": {
+      "source_path": "content/manifests/a1_scaffold_transfer.json",
+      "match": {
+        "slug": "a1-verb-be"
+      },
+      "basis": "understanding_bank merges steps and transfer_variants by slug"
+    },
+    "practice_review_links": [
+      {
+        "practice_order": 1,
+        "review_of_exercise_order": 4,
+        "review_of_exercise_uid": "EX-00008"
+      },
+      {
+        "practice_order": 2,
+        "review_of_exercise_order": 4,
+        "review_of_exercise_uid": "EX-00008"
+      },
+      {
+        "practice_order": 3,
+        "review_of_exercise_order": 4,
+        "review_of_exercise_uid": "EX-00008"
+      },
+      {
+        "practice_order": 4,
+        "review_of_exercise_order": 4,
+        "review_of_exercise_uid": "EX-00008"
+      }
+    ],
+    "browser_retrieval": {
+      "source_code": "static/js/a1-active.js",
+      "selector": "retrievalLine(topic): (topic.n - 1) % topic.dialogue.length",
+      "dialogue_index": 1,
+      "selected_line": [
+        "Mia",
+        "Yes, Tom is home.",
+        "Да, Том дома."
+      ],
+      "tasks": [
+        "dictation",
+        "back_translation"
+      ],
+      "persistence": "browser only; not a PracticeItem database row",
+      "phonetic_quality": "NOT_VERIFIED"
+    },
+    "optional_transfer_pilot": {
+      "source_path": "apps/learning/transfer_pilot.py",
+      "present": true,
+      "basis": "literal PILOTS dict keys; linked via learning/dashboard.html, separate opt-in workflow, not ordinary lesson tasks"
+    }
+  },
+  "answer_checking": {
+    "main": "Exercise.normalize/is_correct; API uses is_open_pilot_response for open A1 fill/transfer tasks",
+    "practice": "PracticeItem.normalize/is_correct expands configured contractions; accepted in source is finite, not all English answers",
+    "open_tasks": "Guide transfer/explain and spoken missions are model/self/teacher review, not an exhaustive grammar validator",
+    "listen_dictation": "DB PracticeItem permits only translate. The active A1 lab separately generates one dictation and one back-translation from a selected dialogue line in browser JavaScript; see browser_retrieval below"
+  },
+  "browser_retrieval": {
+    "source_code": "static/js/a1-active.js",
+    "selector": "retrievalLine(topic): (topic.n - 1) % topic.dialogue.length",
+    "dialogue_index": 1,
+    "selected_line": [
+      "Mia",
+      "Yes, Tom is home.",
+      "Да, Том дома."
+    ],
+    "tasks": [
+      "dictation",
+      "back_translation"
+    ],
+    "persistence": "browser only; not a PracticeItem database row",
+    "phonetic_quality": "NOT_VERIFIED"
+  },
+  "prerequisites": {
+    "prior_lessons_in_course_order": [
+      "a1-nouns-first-words"
+    ],
+    "status": "ORDER_ONLY_NOT_A_PEDAGOGICAL_PROOF",
+    "grammar_dependencies_from_dictionary": [],
+    "reviewer_questions": [
+      "Does the learner encounter unknown grammar before it is explained?",
+      "Are early full sentences explicitly taught as chunks rather than presumed prior knowledge?"
+    ]
+  },
+  "explicit_dictionary_records": [
+    {
+      "uid": "LX-00007",
+      "source_path": "content/seed_lexicon/a1_w01_nouns.yaml",
+      "source_pointer": "/units/6",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00007",
+        "lemma": "room",
+        "meaning": "a part of a building with walls, a floor and a ceiling",
+        "class": "S2",
+        "grammar_features": [
+          "countable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): room n. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ruːm/",
+        "stress_note": "Долгое /uː/",
+        "translation_ru": "комната",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "my room",
+          "a big room",
+          "a room with a view"
+        ],
+        "chunks": [
+          "This is my room."
+        ],
+        "example_en": "[T2]This[/] [D1]is[/] [T3]my[/] [S2]room[/].",
+        "example_ru": "Это моя комната.",
+        "pattern": "This is my ___.",
+        "substitutions": [
+          "room",
+          "house",
+          "book",
+          "phone"
+        ],
+        "situation": "Показываете квартиру",
+        "typical_error": "Room — это не «рум» с коротким у: гласная долгая /uː/."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/exercises/4/units/1"
+      ]
+    },
+    {
+      "uid": "LX-00016",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00016",
+        "lemma": "be",
+        "meaning": "to exist, to have a quality, or to be in a place",
+        "class": "D1",
+        "forms": [
+          "am",
+          "is",
+          "are",
+          "'m",
+          "'s",
+          "'re",
+          "was",
+          "were",
+          "being"
+        ],
+        "grammar_features": [
+          "irregular",
+          "linking_verb"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): be v., auxiliary v. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/bi/",
+        "stress_note": "Формы в речи обычно безударные и сокращаются: I'm /aɪm/, it's /ɪts/, you're /jɚ/",
+        "translation_ru": "быть, находиться, являться",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "be at home",
+          "be busy",
+          "be my friend"
+        ],
+        "chunks": [
+          "I'm home.",
+          "It's nice!"
+        ],
+        "example_en": "[T8]I[/] [D1]am[/] [P1]at[/] [S2]home[/].",
+        "example_ru": "Я дома.",
+        "pattern": "I am ___.",
+        "substitutions": [
+          "at home",
+          "busy",
+          "Anna",
+          "Tom"
+        ],
+        "situation": "Говорите, где вы и какой вы",
+        "usage_note": "I am, you are, it is — формы be. В обычном полном утверждении о том, кто человек, какой предмет или где кто-то находится, be нужен: I am busy, Anna is at home. Но во фразе I like coffee уже есть глагол like, поэтому be не добавляют.",
+        "typical_error": "«I busy», «Anna my friend» — пропущен be. Нужно: I am busy, Anna is my friend."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/0",
+        "/lesson_full/exercises/0/units/0",
+        "/lesson_full/exercises/1/units/0",
+        "/lesson_full/exercises/2/units/0",
+        "/lesson_full/exercises/3/units/0",
+        "/lesson_full/practice/0/units/0",
+        "/lesson_full/practice/1/units/0",
+        "/lesson_full/practice/2/units/0",
+        "/lesson_full/practice/3/units/0"
+      ]
+    },
+    {
+      "uid": "LX-00017",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00017",
+        "lemma": "I",
+        "meaning": "the person who is speaking",
+        "class": "T8",
+        "grammar_features": [
+          "pronoun",
+          "subject",
+          "always_capital"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): I pron. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/aɪ/",
+        "stress_note": "Дифтонг /aɪ/ — «ай»",
+        "translation_ru": "я",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "I am",
+          "I have",
+          "I like"
+        ],
+        "chunks": [
+          "I'm home!"
+        ],
+        "example_en": "[T8]I[/] [D1]am[/] [S1]Anna[/].",
+        "example_ru": "Я Анна.",
+        "pattern": "I am ___.",
+        "substitutions": [
+          "Anna",
+          "Tom",
+          "at home",
+          "busy"
+        ],
+        "situation": "Представляетесь",
+        "usage_note": "Местоимение (pronoun). Всегда пишется с большой буквы, даже в середине фразы.",
+        "typical_error": "Пишут i маленькой буквой. В английском только I."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/1",
+        "/lesson_full/exercises/2/units/1",
+        "/lesson_full/practice/0/units/1"
+      ]
+    },
+    {
+      "uid": "LX-00018",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00018",
+        "lemma": "you",
+        "meaning": "the person or people you are speaking to",
+        "class": "T8",
+        "grammar_features": [
+          "pronoun",
+          "subject",
+          "object",
+          "singular_and_plural"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): you pron. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ju/",
+        "stress_note": "Как «ю»; в быстрой речи ослабляется до /jə/",
+        "translation_ru": "ты, вы",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "you are",
+          "do you",
+          "you can"
+        ],
+        "chunks": [
+          "Do you like it?",
+          "You are my friend."
+        ],
+        "example_en": "[T8]You[/] [D1]are[/] [T3]my[/] [S1]friend[/].",
+        "example_ru": "Ты мой друг.",
+        "pattern": "You are ___.",
+        "substitutions": [
+          "my friend",
+          "busy",
+          "at home",
+          "nice"
+        ],
+        "situation": "Обращаетесь к собеседнику",
+        "usage_note": "Одно слово и для «ты», и для «вы». Вежливость передают тоном и словами вроде please.",
+        "typical_error": "«You is» — с you всегда are: you are."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/2",
+        "/lesson_full/exercises/1/units/1",
+        "/lesson_full/practice/1/units/1",
+        "/lesson_full/practice/3/units/1"
+      ]
+    },
+    {
+      "uid": "LX-00019",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00019",
+        "lemma": "it",
+        "meaning": "a thing, an animal or a situation already mentioned",
+        "class": "T8",
+        "grammar_features": [
+          "pronoun",
+          "subject",
+          "object"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): it pron. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ɪt/",
+        "stress_note": "Короткое /ɪ/. it's = /ɪts/",
+        "translation_ru": "он, она, оно (о предмете); это",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "it is",
+          "I like it",
+          "it's nice"
+        ],
+        "chunks": [
+          "It's nice!",
+          "I like it."
+        ],
+        "example_en": "[T8]It[/] [D1]is[/] [T1]a[/] [S2]book[/].",
+        "example_ru": "Это книга.",
+        "pattern": "It is ___.",
+        "substitutions": [
+          "a book",
+          "a phone",
+          "nice",
+          "big"
+        ],
+        "situation": "Говорите о предмете",
+        "usage_note": "Книга, дом, телефон по-английски не «он» и не «она», а it.",
+        "typical_error": "«The book… she is good» — о предмете говорят it: It is good."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/3",
+        "/lesson_full/exercises/3/units/1",
+        "/lesson_full/practice/2/units/1"
+      ]
+    },
+    {
+      "uid": "LX-00023",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/7",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00023",
+        "lemma": "at",
+        "meaning": "used to say where someone or something is",
+        "class": "P1",
+        "grammar_features": [
+          "preposition_place"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): at prep. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/æt/",
+        "stress_note": "В речи обычно слабое /ət/: at home /ət ˈhoʊm/",
+        "translation_ru": "в, на (в точке, месте)",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "at home",
+          "at work",
+          "at school"
+        ],
+        "chunks": [
+          "My father is at home."
+        ],
+        "example_en": "[S1]Tom[/] [D1]is[/] [P1]at[/] [S2]home[/].",
+        "example_ru": "Том дома.",
+        "pattern": "___ is at home.",
+        "substitutions": [
+          "Tom",
+          "Anna",
+          "My father",
+          "My mother"
+        ],
+        "situation": "Говорите, где человек",
+        "usage_note": "At помогает обозначить местонахождение: at home, at work. В американском английском I'm at home и I'm home оба могут означать «я дома»; вариант без at часто используют, когда сообщают о возвращении. Различие не в том, внутри человек или снаружи.",
+        "typical_error": "«I am in home» — устойчиво говорят at home."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/7",
+        "/lesson_full/exercises/2/units/2",
+        "/lesson_full/practice/0/units/2"
+      ]
+    },
+    {
+      "uid": "LX-00028",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/12",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00028",
+        "lemma": "busy",
+        "meaning": "having a lot to do",
+        "class": "J4",
+        "grammar_features": [
+          "gradable"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): busy adj. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/ˈbɪzi/",
+        "stress_note": "BI-zy: буква u читается как /ɪ/, s — как /z/",
+        "translation_ru": "занятой, загруженный",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "a busy week",
+          "busy day",
+          "I'm busy"
+        ],
+        "chunks": [
+          "I'm busy."
+        ],
+        "example_en": "[T8]I[/][D1]'m[/] [J4]busy[/].",
+        "example_ru": "Я занят.",
+        "pattern": "I'm busy this ___.",
+        "substitutions": [
+          "week",
+          "morning"
+        ],
+        "situation": "Отказываетесь от встречи",
+        "typical_error": "Читают «бузи» по буквам. Правильно /ˈbɪzi/ — «бизи»."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/8"
+      ]
+    },
+    {
+      "uid": "LX-00030",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/14",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00030",
+        "lemma": "not",
+        "meaning": "used to make a sentence negative",
+        "class": "X1",
+        "grammar_features": [
+          "negative_particle"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): not adv. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/nɑt/",
+        "stress_note": "Американское /ɑ/ — открытое «а». Сокращается до n't: isn't /ˈɪzənt/",
+        "translation_ru": "не",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "not busy",
+          "is not",
+          "not at home"
+        ],
+        "chunks": [
+          "It's not my phone."
+        ],
+        "example_en": "[T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]phone[/].",
+        "example_ru": "Это не мой телефон.",
+        "pattern": "It is not my ___.",
+        "substitutions": [
+          "phone",
+          "book",
+          "room"
+        ],
+        "situation": "Возвращаете чужую вещь",
+        "usage_note": "not ставится после am, is, are: I am not, it is not.",
+        "typical_error": "«It not my phone» — пропущен be. Нужно: It is not / It isn't."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/4",
+        "/lesson_full/exercises/3/units/2",
+        "/lesson_full/exercises/4/units/0",
+        "/lesson_full/practice/2/units/2"
+      ]
+    },
+    {
+      "uid": "LX-00031",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/15",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00031",
+        "lemma": "yes",
+        "meaning": "used to give a positive answer",
+        "class": "O4",
+        "grammar_features": [
+          "answer_word"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): yes exclam. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/jes/",
+        "stress_note": "Как «йес»; в разговоре часто yeah /jeə/",
+        "translation_ru": "да",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "yes please",
+          "yes I do",
+          "yes it is"
+        ],
+        "chunks": [
+          "Yes, please.",
+          "Yes, it is."
+        ],
+        "example_en": "[O4]Yes[/], [T8]it[/] [D1]is[/].",
+        "example_ru": "Да.",
+        "pattern": "Yes, ___.",
+        "substitutions": [
+          "it is",
+          "I am",
+          "I do",
+          "please"
+        ],
+        "situation": "Отвечаете на вопрос",
+        "usage_note": "Голое Yes звучит сухо. Американцы добавляют короткий хвост: Yes, it is. Yes, I do.",
+        "typical_error": "Отвечают одним Yes на любой вопрос. Короткий ответ с глаголом звучит естественнее."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/5"
+      ]
+    },
+    {
+      "uid": "LX-00032",
+      "source_path": "content/seed_lexicon/a1_w01_core.yaml",
+      "source_pointer": "/units/16",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00032",
+        "lemma": "no",
+        "meaning": "used to give a negative answer",
+        "class": "O4",
+        "grammar_features": [
+          "answer_word"
+        ],
+        "cefr": "A1",
+        "verification_status": "partial",
+        "verification_note": "Oxford 3000 (American English): no exclam., det. — A1. Уровень дан для слова, значение отдельно не сверялось",
+        "ipa_us": "/noʊ/",
+        "stress_note": "Дифтонг /oʊ/ — «ноу», а не «но»",
+        "translation_ru": "нет",
+        "frequency_source": "NGSL — требует проверки",
+        "collocations": [
+          "no thanks",
+          "no it isn't",
+          "no I don't"
+        ],
+        "chunks": [
+          "No, it isn't."
+        ],
+        "example_en": "[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/].",
+        "example_ru": "Нет.",
+        "pattern": "No, ___.",
+        "substitutions": [
+          "it isn't",
+          "I'm not",
+          "I don't"
+        ],
+        "situation": "Отвечаете отрицательно",
+        "typical_error": "Произносят «но» — по-английски это звучит как know без дифтонга. Нужно /noʊ/."
+      },
+      "referenced_at_json_pointers": [
+        "/lesson_full/units/6"
+      ]
+    },
+    {
+      "uid": "LX-00042",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/0",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00042",
+        "lemma": "Good morning!",
+        "meaning": "A morning greeting",
+        "class": "O1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/ɡʊd ˈmɔrnɪŋ/",
+        "translation_ru": "Доброе утро!",
+        "example_en": "Good morning!",
+        "example_ru": "Доброе утро!",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/0"
+      ]
+    },
+    {
+      "uid": "LX-00043",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/1",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00043",
+        "lemma": "My name is Anna.",
+        "meaning": "Introducing yourself by name",
+        "class": "F1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/maɪ ˈneɪm ɪz ˈænə/",
+        "translation_ru": "Меня зовут Анна.",
+        "example_en": "My name is Anna.",
+        "example_ru": "Меня зовут Анна.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/1"
+      ]
+    },
+    {
+      "uid": "LX-00044",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/2",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00044",
+        "lemma": "What is your name?",
+        "meaning": "Asking for a name",
+        "class": "F1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/wʌt ɪz jɚ ˈneɪm/",
+        "translation_ru": "Как вас зовут?",
+        "example_en": "What is your name?",
+        "example_ru": "Как вас зовут?",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/2"
+      ]
+    },
+    {
+      "uid": "LX-00045",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/3",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00045",
+        "lemma": "I am from Russia.",
+        "meaning": "Saying where you are from",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/aɪ æm frəm ˈrʌʃə/",
+        "translation_ru": "Я из России.",
+        "example_en": "I am from Russia.",
+        "example_ru": "Я из России.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/3"
+      ]
+    },
+    {
+      "uid": "LX-00046",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/4",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00046",
+        "lemma": "Nice to meet you.",
+        "meaning": "A polite greeting on first meeting",
+        "class": "O1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/naɪs tə ˈmit ju/",
+        "translation_ru": "Приятно познакомиться.",
+        "example_en": "Nice to meet you.",
+        "example_ru": "Приятно познакомиться.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/4"
+      ]
+    },
+    {
+      "uid": "LX-00047",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/5",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00047",
+        "lemma": "I am your neighbor.",
+        "meaning": "Introducing yourself as a neighbor",
+        "class": "D1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/aɪ æm jɚ ˈneɪbɚ/",
+        "translation_ru": "Я ваш сосед.",
+        "example_en": "I am your neighbor.",
+        "example_ru": "Я ваш сосед.",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/5"
+      ]
+    },
+    {
+      "uid": "LX-00048",
+      "source_path": "content/seed_lexicon/a1_w01_phrases.yaml",
+      "source_pointer": "/units/6",
+      "internal_level": "A1",
+      "introduction_week": 1,
+      "record": {
+        "uid": "LX-00048",
+        "lemma": "Have a nice day!",
+        "meaning": "A polite daytime farewell",
+        "class": "O1",
+        "unit_type": "phrase",
+        "cefr": "unverified",
+        "verification_status": "pending",
+        "ipa_us": "/hæv ə naɪs ˈdeɪ/",
+        "translation_ru": "Хорошего дня!",
+        "example_en": "Have a nice day!",
+        "example_ru": "Хорошего дня!",
+        "situation": "Знакомство с соседом",
+        "usage_note": "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
+      },
+      "referenced_at_json_pointers": [
+        "/week_full/source/chunks/6"
+      ]
+    }
+  ],
+  "dictionary_caveat": "Explicit UID references are exact. Implicit mentions in free prose are not exhaustive semantic links. Full target-week dictionary packets are included for contextual lookup."
+}

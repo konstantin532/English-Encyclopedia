@@ -1,0 +1,1045 @@
+{
+  "source_sha": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "mode": "isolated_sqlite_transaction_rollback",
+  "limitations": [
+    "Django test client, not a real browser",
+    "No audio listening or pronunciation validation",
+    "Sentinel negatives verify key mismatch behavior, not grammatical coverage",
+    "SQLite cannot prove PostgreSQL row-lock or concurrent transaction behavior"
+  ],
+  "lessons": [
+    {
+      "slug": "a1-nouns-first-words",
+      "lesson_pk_fixture_only": 1,
+      "url": "/lessons/a1-nouns-first-words/",
+      "exercise_count": 4,
+      "translation_count": 4,
+      "rendered_layer_count": 7,
+      "missions_count": 6,
+      "exercises": [
+        {
+          "uid": "EX-00001",
+          "order": 1,
+          "pk_fixture_only": 1,
+          "check_url": "/api/exercises/1/check/",
+          "checked_answers": [
+            "phone"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "Ищите слово, которое называет предмет, а не указывает на него и не описывает его."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00002",
+          "order": 2,
+          "pk_fixture_only": 2,
+          "check_url": "/api/exercises/2/check/",
+          "checked_answers": [
+            "friend"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "После my нужно название человека, которого вы представляете, а не описание."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00003",
+          "order": 3,
+          "pk_fixture_only": 3,
+          "check_url": "/api/exercises/3/check/",
+          "checked_answers": [
+            "My name is Anna"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "Проверьте порядок: сначала обозначаем своё имя, затем соединяем его с именем человека."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00004",
+          "order": 4,
+          "pk_fixture_only": 4,
+          "check_url": "/api/exercises/4/check/",
+          "checked_answers": [
+            "This is my book. It is new.",
+            "This is my book. It's new.",
+            "This is my book. It is new",
+            "This is my new book."
+          ],
+          "open_transfer": true,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Проверьте, что вы назвали именно свою книгу и сказали, что она новая. Допустимы разные фразы."
+          },
+          "delayed_card_count": 5
+        }
+      ],
+      "practice": [
+        {
+          "order": 1,
+          "pk_fixture_only": 1,
+          "check_url": "/api/practice/1/check/",
+          "review_of": 3,
+          "checked_answers": [
+            "This is my house.",
+            "This is my home."
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Начните с This is…"
+          }
+        },
+        {
+          "order": 2,
+          "pk_fixture_only": 2,
+          "check_url": "/api/practice/2/check/",
+          "review_of": 3,
+          "checked_answers": [
+            "Good morning! What is your name?"
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Вопрос об имени начинается с What."
+          }
+        },
+        {
+          "order": 3,
+          "pk_fixture_only": 3,
+          "check_url": "/api/practice/3/check/",
+          "review_of": 3,
+          "checked_answers": [
+            "My name is Anna.",
+            "I am Anna."
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "«Моё имя — Анна»."
+          }
+        },
+        {
+          "order": 4,
+          "pk_fixture_only": 4,
+          "check_url": "/api/practice/4/check/",
+          "review_of": 3,
+          "checked_answers": [
+            "Have a nice day!"
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Готовая фраза недели."
+          }
+        }
+      ],
+      "unit_urls": [
+        {
+          "uid": "LX-00001",
+          "url": "/words/LX-00001/"
+        },
+        {
+          "uid": "LX-00002",
+          "url": "/words/LX-00002/"
+        },
+        {
+          "uid": "LX-00003",
+          "url": "/words/LX-00003/"
+        },
+        {
+          "uid": "LX-00004",
+          "url": "/words/LX-00004/"
+        },
+        {
+          "uid": "LX-00005",
+          "url": "/words/LX-00005/"
+        },
+        {
+          "uid": "LX-00006",
+          "url": "/words/LX-00006/"
+        },
+        {
+          "uid": "LX-00007",
+          "url": "/words/LX-00007/"
+        },
+        {
+          "uid": "LX-00008",
+          "url": "/words/LX-00008/"
+        },
+        {
+          "uid": "LX-00009",
+          "url": "/words/LX-00009/"
+        },
+        {
+          "uid": "LX-00010",
+          "url": "/words/LX-00010/"
+        },
+        {
+          "uid": "LX-00011",
+          "url": "/words/LX-00011/"
+        },
+        {
+          "uid": "LX-00012",
+          "url": "/words/LX-00012/"
+        },
+        {
+          "uid": "LX-00013",
+          "url": "/words/LX-00013/"
+        },
+        {
+          "uid": "LX-00014",
+          "url": "/words/LX-00014/"
+        },
+        {
+          "uid": "LX-00015",
+          "url": "/words/LX-00015/"
+        }
+      ],
+      "active_url": "/lab/a1/1/",
+      "active_dialogue_lines": 3,
+      "active_retrieval_line_index_zero_based": 0,
+      "active_retrieval_line": [
+        "Tom",
+        "This is my phone.",
+        "Это мой телефон."
+      ],
+      "active_mission_count": 6,
+      "independent_url": "/learning/independent/a1-nouns-first-words/",
+      "independent_outcomes": {
+        "meaning": "model_match",
+        "writing": "model_match",
+        "transfer": "self_reported",
+        "explain": "self_reported"
+      },
+      "speech_key": "lesson:a1-nouns-first-words",
+      "scheduled_delay_seconds_approx": 172800
+    },
+    {
+      "slug": "a1-verb-be",
+      "lesson_pk_fixture_only": 2,
+      "url": "/lessons/a1-verb-be/",
+      "exercise_count": 5,
+      "translation_count": 4,
+      "rendered_layer_count": 7,
+      "missions_count": 6,
+      "exercises": [
+        {
+          "uid": "EX-00005",
+          "order": 1,
+          "pk_fixture_only": 5,
+          "check_url": "/api/exercises/5/check/",
+          "checked_answers": [
+            "is"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "Найдите форму глагола, которая связывает человека с описанием."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00006",
+          "order": 2,
+          "pk_fixture_only": 6,
+          "check_url": "/api/exercises/6/check/",
+          "checked_answers": [
+            "are"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "Выберите форму be по подлежащему you, а не по слову friend."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00007",
+          "order": 3,
+          "pk_fixture_only": 7,
+          "check_url": "/api/exercises/7/check/",
+          "checked_answers": [
+            "am"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "Сверьте подлежащее I с формами be. В русском слову «я» не всегда соответствует отдельное «есть»."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00008",
+          "order": 4,
+          "pk_fixture_only": 8,
+          "check_url": "/api/exercises/8/check/",
+          "checked_answers": [
+            "It is not a phone",
+            "It isn't a phone",
+            "It's not a phone"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "В отрицании not стоит после формы be. Проверьте порядок слов и указатель перед phone."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00009",
+          "order": 5,
+          "pk_fixture_only": 9,
+          "check_url": "/api/exercises/9/check/",
+          "checked_answers": [
+            "No, it is not my room.",
+            "No, it isn't my room.",
+            "No, it's not my room.",
+            "No, it is not my room"
+          ],
+          "open_transfer": true,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Ответьте отрицательно и замените принадлежность собеседника на свою: your и my обозначают разных владельцев."
+          },
+          "delayed_card_count": 5
+        }
+      ],
+      "practice": [
+        {
+          "order": 1,
+          "pk_fixture_only": 5,
+          "check_url": "/api/practice/5/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "I am at home.",
+            "I am home."
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "В русском «есть» спрятано. В английском — нет."
+          }
+        },
+        {
+          "order": 2,
+          "pk_fixture_only": 6,
+          "check_url": "/api/practice/6/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "You are my friend."
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "С you — are."
+          }
+        },
+        {
+          "order": 3,
+          "pk_fixture_only": 7,
+          "check_url": "/api/practice/7/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "It is not my phone.",
+            "This is not my phone."
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "not ставим сразу после is."
+          }
+        },
+        {
+          "order": 4,
+          "pk_fixture_only": 8,
+          "check_url": "/api/practice/8/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "Are you from Russia?"
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "В вопросе are встаёт впереди."
+          }
+        }
+      ],
+      "unit_urls": [
+        {
+          "uid": "LX-00016",
+          "url": "/words/LX-00016/"
+        },
+        {
+          "uid": "LX-00017",
+          "url": "/words/LX-00017/"
+        },
+        {
+          "uid": "LX-00018",
+          "url": "/words/LX-00018/"
+        },
+        {
+          "uid": "LX-00019",
+          "url": "/words/LX-00019/"
+        },
+        {
+          "uid": "LX-00023",
+          "url": "/words/LX-00023/"
+        },
+        {
+          "uid": "LX-00028",
+          "url": "/words/LX-00028/"
+        },
+        {
+          "uid": "LX-00030",
+          "url": "/words/LX-00030/"
+        },
+        {
+          "uid": "LX-00031",
+          "url": "/words/LX-00031/"
+        },
+        {
+          "uid": "LX-00032",
+          "url": "/words/LX-00032/"
+        }
+      ],
+      "active_url": "/lab/a1/2/",
+      "active_dialogue_lines": 3,
+      "active_retrieval_line_index_zero_based": 1,
+      "active_retrieval_line": [
+        "Mia",
+        "Yes, Tom is home.",
+        "Да, Том дома."
+      ],
+      "active_mission_count": 6,
+      "independent_url": "/learning/independent/a1-verb-be/",
+      "independent_outcomes": {
+        "meaning": "model_match",
+        "writing": "model_match",
+        "transfer": "self_reported",
+        "explain": "self_reported"
+      },
+      "speech_key": "lesson:a1-verb-be",
+      "transfer_pilot_url": "/learning/transfer-pilot/a1-verb-be/",
+      "scheduled_delay_seconds_approx": 172800
+    },
+    {
+      "slug": "a1-determiners-a-the-this-my",
+      "lesson_pk_fixture_only": 3,
+      "url": "/lessons/a1-determiners-a-the-this-my/",
+      "exercise_count": 6,
+      "translation_count": 4,
+      "rendered_layer_count": 7,
+      "missions_count": 6,
+      "exercises": [
+        {
+          "uid": "EX-00010",
+          "order": 1,
+          "pk_fixture_only": 10,
+          "check_url": "/api/exercises/10/check/",
+          "checked_answers": [
+            "a"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "Вспомните, знает ли собеседник, о какой именно книге идёт речь."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00011",
+          "order": 2,
+          "pk_fixture_only": 11,
+          "check_url": "/api/exercises/11/check/",
+          "checked_answers": [
+            "That"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "Выберите указатель по расстоянию между вами и домом."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00012",
+          "order": 3,
+          "pk_fixture_only": 12,
+          "check_url": "/api/exercises/12/check/",
+          "checked_answers": [
+            "your"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "Перед phone нужно слово принадлежности, а не сокращение you are."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00013",
+          "order": 4,
+          "pk_fixture_only": 13,
+          "check_url": "/api/exercises/13/check/",
+          "checked_answers": [
+            "This room is big"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "Проверьте группу «указатель + существительное», затем форму be и признак комнаты."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00014",
+          "order": 5,
+          "pk_fixture_only": 14,
+          "check_url": "/api/exercises/14/check/",
+          "checked_answers": [
+            "This room is big. That room is new.",
+            "This room is big and that room is new.",
+            "This room is big. That room is new"
+          ],
+          "open_transfer": true,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Сопоставьте два расстояния: первая комната рядом, вторая — дальше. Не перепутайте их свойства."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00015",
+          "order": 6,
+          "pk_fixture_only": 15,
+          "check_url": "/api/exercises/15/check/",
+          "checked_answers": [
+            "This is a table. The table is new.",
+            "This is a table. It is new.",
+            "This is a table. It’s new.",
+            "This is a table. It's new."
+          ],
+          "open_transfer": true,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Сначала представьте один неизвестный предмет, затем опишите уже понятный собеседнику предмет."
+          },
+          "delayed_card_count": 5
+        }
+      ],
+      "practice": [
+        {
+          "order": 1,
+          "pk_fixture_only": 9,
+          "check_url": "/api/practice/9/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "This is my kitchen."
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "this — то, что рядом."
+          }
+        },
+        {
+          "order": 2,
+          "pk_fixture_only": 10,
+          "check_url": "/api/practice/10/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "That is your room."
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "that — то, что дальше."
+          }
+        },
+        {
+          "order": 3,
+          "pk_fixture_only": 11,
+          "check_url": "/api/practice/11/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "I have a table. The table is big.",
+            "I have a table. It is big.",
+            "I have a table. It's big."
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Сначала a, потом the."
+          }
+        },
+        {
+          "order": 4,
+          "pk_fixture_only": 12,
+          "check_url": "/api/practice/12/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "It is not my box.",
+            "This is not my box."
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Как в первой истории про Box."
+          }
+        }
+      ],
+      "unit_urls": [
+        {
+          "uid": "LX-00017",
+          "url": "/words/LX-00017/"
+        },
+        {
+          "uid": "LX-00018",
+          "url": "/words/LX-00018/"
+        },
+        {
+          "uid": "LX-00019",
+          "url": "/words/LX-00019/"
+        },
+        {
+          "uid": "LX-00020",
+          "url": "/words/LX-00020/"
+        },
+        {
+          "uid": "LX-00021",
+          "url": "/words/LX-00021/"
+        },
+        {
+          "uid": "LX-00022",
+          "url": "/words/LX-00022/"
+        },
+        {
+          "uid": "LX-00037",
+          "url": "/words/LX-00037/"
+        },
+        {
+          "uid": "LX-00038",
+          "url": "/words/LX-00038/"
+        },
+        {
+          "uid": "LX-00039",
+          "url": "/words/LX-00039/"
+        },
+        {
+          "uid": "LX-00481",
+          "url": "/words/LX-00481/"
+        },
+        {
+          "uid": "LX-00482",
+          "url": "/words/LX-00482/"
+        },
+        {
+          "uid": "LX-00483",
+          "url": "/words/LX-00483/"
+        },
+        {
+          "uid": "LX-00484",
+          "url": "/words/LX-00484/"
+        },
+        {
+          "uid": "LX-00485",
+          "url": "/words/LX-00485/"
+        },
+        {
+          "uid": "LX-00486",
+          "url": "/words/LX-00486/"
+        },
+        {
+          "uid": "LX-00487",
+          "url": "/words/LX-00487/"
+        },
+        {
+          "uid": "LX-00488",
+          "url": "/words/LX-00488/"
+        },
+        {
+          "uid": "LX-00489",
+          "url": "/words/LX-00489/"
+        },
+        {
+          "uid": "LX-00490",
+          "url": "/words/LX-00490/"
+        }
+      ],
+      "active_url": "/lab/a1/3/",
+      "active_dialogue_lines": 3,
+      "active_retrieval_line_index_zero_based": 2,
+      "active_retrieval_line": [
+        "Tom",
+        "It's my book.",
+        "Это моя книга."
+      ],
+      "active_mission_count": 6,
+      "independent_url": "/learning/independent/a1-determiners-a-the-this-my/",
+      "independent_outcomes": {
+        "meaning": "model_match",
+        "writing": "model_match",
+        "transfer": "self_reported",
+        "explain": "self_reported"
+      },
+      "speech_key": "lesson:a1-determiners-a-the-this-my",
+      "scheduled_delay_seconds_approx": 172800
+    },
+    {
+      "slug": "a1-have-like-can-do",
+      "lesson_pk_fixture_only": 4,
+      "url": "/lessons/a1-have-like-can-do/",
+      "exercise_count": 6,
+      "translation_count": 4,
+      "rendered_layer_count": 7,
+      "missions_count": 6,
+      "exercises": [
+        {
+          "uid": "EX-00016",
+          "order": 1,
+          "pk_fixture_only": 16,
+          "check_url": "/api/exercises/16/check/",
+          "checked_answers": [
+            "I like coffee."
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "После I обычный глагол like не получает -s; в утверждении сначала идёт тот, кому нравится."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00017",
+          "order": 2,
+          "pk_fixture_only": 17,
+          "check_url": "/api/exercises/17/check/",
+          "checked_answers": [
+            "do"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "В коротком ответе повторяется вспомогательный глагол из вопроса, а не have."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00018",
+          "order": 3,
+          "pk_fixture_only": 18,
+          "check_url": "/api/exercises/18/check/",
+          "checked_answers": [
+            "Can I have water, please?"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "Для просьбы нужен глагол действия после can. Проверьте также вежливое завершение."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00019",
+          "order": 4,
+          "pk_fixture_only": 19,
+          "check_url": "/api/exercises/19/check/",
+          "checked_answers": [
+            "Do you have a book"
+          ],
+          "open_transfer": false,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "feedback_ru": "Начните вопрос с вспомогательного глагола; после него назовите собеседника и само действие."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00020",
+          "order": 5,
+          "pk_fixture_only": 20,
+          "check_url": "/api/exercises/20/check/",
+          "checked_answers": [
+            "Do you have a cat?",
+            "Do you have a cat"
+          ],
+          "open_transfer": true,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Это вопрос с have о другом человеке. Проверьте начало вопроса и порядок подлежащего и глагола."
+          },
+          "delayed_card_count": 5
+        },
+        {
+          "uid": "EX-00021",
+          "order": 6,
+          "pk_fixture_only": 21,
+          "check_url": "/api/exercises/21/check/",
+          "checked_answers": [
+            "Can I have a towel, please?",
+            "Can I have a towel please",
+            "Can I have the towel, please?"
+          ],
+          "open_transfer": true,
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Проверьте вопросительную просьбу с can, глагол получения, указатель перед одним предметом и вежливость."
+          },
+          "delayed_card_count": 5
+        }
+      ],
+      "practice": [
+        {
+          "order": 1,
+          "pk_fixture_only": 13,
+          "check_url": "/api/practice/13/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "Can I have water, please?",
+            "Can I have a water, please?"
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Просьба начинается с Can I have…"
+          }
+        },
+        {
+          "order": 2,
+          "pk_fixture_only": 14,
+          "check_url": "/api/practice/14/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "Do you like this house?",
+            "Do you like the house?"
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Сначала Do you like, потом название дома с this или the."
+          }
+        },
+        {
+          "order": 3,
+          "pk_fixture_only": 15,
+          "check_url": "/api/practice/15/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "I have a cat."
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "«У меня есть» — I have."
+          }
+        },
+        {
+          "order": 4,
+          "pk_fixture_only": 16,
+          "check_url": "/api/practice/16/check/",
+          "review_of": 4,
+          "checked_answers": [
+            "Yes, I do."
+          ],
+          "mismatch_response": {
+            "correct": false,
+            "saved": false,
+            "assessment": "needs_review",
+            "self_review_available": false,
+            "feedback_ru": "Короткий ответ повторяет do."
+          }
+        }
+      ],
+      "unit_urls": [
+        {
+          "uid": "LX-00029",
+          "url": "/words/LX-00029/"
+        },
+        {
+          "uid": "LX-00031",
+          "url": "/words/LX-00031/"
+        },
+        {
+          "uid": "LX-00032",
+          "url": "/words/LX-00032/"
+        },
+        {
+          "uid": "LX-00033",
+          "url": "/words/LX-00033/"
+        },
+        {
+          "uid": "LX-00034",
+          "url": "/words/LX-00034/"
+        },
+        {
+          "uid": "LX-00035",
+          "url": "/words/LX-00035/"
+        },
+        {
+          "uid": "LX-00036",
+          "url": "/words/LX-00036/"
+        },
+        {
+          "uid": "LX-00491",
+          "url": "/words/LX-00491/"
+        },
+        {
+          "uid": "LX-00492",
+          "url": "/words/LX-00492/"
+        },
+        {
+          "uid": "LX-00493",
+          "url": "/words/LX-00493/"
+        },
+        {
+          "uid": "LX-00494",
+          "url": "/words/LX-00494/"
+        },
+        {
+          "uid": "LX-00495",
+          "url": "/words/LX-00495/"
+        },
+        {
+          "uid": "LX-00496",
+          "url": "/words/LX-00496/"
+        },
+        {
+          "uid": "LX-00497",
+          "url": "/words/LX-00497/"
+        },
+        {
+          "uid": "LX-00498",
+          "url": "/words/LX-00498/"
+        },
+        {
+          "uid": "LX-00499",
+          "url": "/words/LX-00499/"
+        },
+        {
+          "uid": "LX-00500",
+          "url": "/words/LX-00500/"
+        }
+      ],
+      "active_url": "/lab/a1/4/",
+      "active_dialogue_lines": 3,
+      "active_retrieval_line_index_zero_based": 0,
+      "active_retrieval_line": [
+        "Mia",
+        "Do you have my phone?",
+        "У тебя мой телефон?"
+      ],
+      "active_mission_count": 6,
+      "independent_url": "/learning/independent/a1-have-like-can-do/",
+      "independent_outcomes": {
+        "meaning": "model_match",
+        "writing": "model_match",
+        "transfer": "self_reported",
+        "explain": "self_reported"
+      },
+      "speech_key": "lesson:a1-have-like-can-do",
+      "transfer_pilot_url": "/learning/transfer-pilot/a1-have-like-can-do/",
+      "scheduled_delay_seconds_approx": 172800
+    }
+  ],
+  "routes": [
+    {
+      "name": "curriculum:week",
+      "url": "/levels/a1/weeks/1/",
+      "status_code": 200
+    },
+    {
+      "name": "curriculum:week",
+      "url": "/levels/a1/weeks/2/",
+      "status_code": 200
+    },
+    {
+      "name": "stories:detail",
+      "url": "/stories/1/",
+      "status_code": 200
+    },
+    {
+      "name": "stories:poem",
+      "url": "/stories/poems/1/",
+      "status_code": 200
+    },
+    {
+      "name": "taxonomy:legend",
+      "url": "/markers/",
+      "status_code": 200
+    }
+  ],
+  "assertions": 448,
+  "temporary_rows_rolled_back": true,
+  "status": "PASS"
+}

@@ -1,0 +1,37 @@
+[project]
+name = "english-encyclopedia"
+version = "0.1.0"
+description = "English Encyclopedia — интерактивная энциклопедия и курс американского английского A0–B2+"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    "django>=5.2,<6",
+    "dj-database-url>=2.3",
+    "psycopg[binary]>=3.2",
+    "pyyaml>=6.0",
+    "whitenoise>=6.9",
+    "python-dotenv>=1.0",
+    "django-axes>=8.3.1",
+    "django-csp>=4,<5",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-django>=4.9",
+    "numpy>=1.26",  # тесты генератора озвучки
+    "tblib>=3.0",  # --parallel: передаёт подробности упавшего теста из параллельного процесса
+]
+
+audio = [
+    "kokoro-onnx>=0.4",
+    "soundfile>=0.12",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.test"
+python_files = ["test_*.py", "tests.py"]
+testpaths = ["tests", "apps"]
+markers = ["slow: long-running course integration or smoke check"]
+
+[tool.uv]
+package = false

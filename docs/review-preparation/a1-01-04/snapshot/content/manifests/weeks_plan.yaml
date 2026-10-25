@@ -1,0 +1,34 @@
+# План недель: ситуация, сфера жизни, грамматика и маркеры, которые обязаны встретиться в диалоге.
+# Спецификация: docs/specs/2026-10-14-situation-weeks.md, раздел 5.
+weeks:
+- {level: A1, week: 1, situation_ru: "Знакомство с соседом", sphere: meet, grammar_ru: "существительные; be: I'm, you're, it's", grammar_markers: [D1]}
+- {level: A1, week: 2, situation_ru: "Мой новый дом", sphere: home, grammar_ru: "a / the, this / that, my / your; have, like, can; комнаты и предметы дома", grammar_markers: [T1, T2, T3]}
+- {level: A1, week: 3, situation_ru: "В кафе: заказать", sphere: food, grammar_ru: "Can I have…?; числа 1–20; please, thanks; I'd like и want", grammar_markers: [D1, N1, O2]}
+- {level: A1, week: 4, situation_ru: "Семья на фото", sphere: meet, grammar_ru: "his / her / their; 's (Tom's); we / they; возраст и числа до 100; вопросы с be", grammar_markers: [T3, D1]}
+- {level: A1, week: 5, situation_ru: "Магазин у дома", sphere: shop, grammar_ru: "there is / there are; How much…?; some; цвета; cheap / expensive", grammar_markers: [D1, N6]}
+- {level: A1, week: 6, situation_ru: "Мой обычный день", sphere: home, grammar_ru: "Present Simple: I / you; время (at seven)", grammar_markers: [D2, N3]}
+- {level: A1, week: 7, situation_ru: "Кто где работает", sphere: work, grammar_ru: "Present Simple: he / she + -s; профессии", grammar_markers: [D2]}
+- {level: A1, week: 8, situation_ru: "Как пройти?", sphere: city, grammar_ru: "предлоги места; Where is…?; Turn left", grammar_markers: [P1, A6]}
+- {level: A1, week: 9, situation_ru: "Телефон и сообщения", sphere: connect, grammar_ru: "вопросы с do / does; диктовка по буквам", grammar_markers: [D1, N7]}
+- {level: A1, week: 10, situation_ru: "Выходные и хобби", sphere: free, grammar_ru: "always / never; like + действие; on + день недели, in + месяц; одежда для прогулки", grammar_markers: [A1, D3]}
+- {level: A1, week: 11, situation_ru: "У врача", sphere: health, grammar_ru: "I have a headache; can't; …hurts; части тела, hurt / hurts; be / feel + самочувствие", grammar_markers: [S5, X1]}
+- {level: A1, week: 12, situation_ru: "На почте", sphere: service, grammar_ru: "don't / doesn't; город, штат и ZIP code; анкета и почта", grammar_markers: [X1]}
+- {level: A1, week: 13, situation_ru: "Курсы английского", sphere: study, grammar_ru: "can / can't — умения; Why? Because…; учебные предметы, просьба повторить, easy / difficult", grammar_markers: [D1, C3]}
+- {level: A1, week: 14, situation_ru: "Поездка на автобусе", sphere: travel, grammar_ru: "повторение A1: билет, прибытие и отправление; транспорт, погода и вещи для поездки", grammar_markers: []}
+# A1+: 16 недель. План — «План 16 недель A1+» (документ автора); все 12 сфер, истории 6–11 на неделях 2, 6, 8, 10, 14, 16.
+- {level: A1+, week: 1, situation_ru: "Видеозвонок: что я делаю сейчас", sphere: connect, grammar_ru: "Present Continuous: I'm doing, he's doing, are you…?; now, right now", grammar_markers: [D1, D2]}
+- {level: A1+, week: 2, situation_ru: "Где ты был вчера?", sphere: meet, grammar_ru: "was / were; there was / there were; yesterday, last night", grammar_markers: [D1, A2]}
+- {level: A1+, week: 3, situation_ru: "Как прошли выходные: разговор с коллегой", sphere: work, grammar_ru: "Past Simple: правильные глаголы на -ed; last weekend", grammar_markers: [D2]}
+- {level: A1+, week: 4, situation_ru: "Поездка в торговый центр", sphere: shop, grammar_ru: "Past Simple: неправильные глаголы (went, bought, saw)", grammar_markers: [D2, D4]}
+- {level: A1+, week: 5, situation_ru: "Бюро находок", sphere: service, grammar_ru: "did / didn't; вопросы в прошлом: Where did you…?", grammar_markers: [D1, X1]}
+- {level: A1+, week: 6, situation_ru: "Потерянный телефон: звонок незнакомцу", sphere: connect, grammar_ru: "me / him / her / them; повторение Past Simple", grammar_markers: [T8]}
+- {level: A1+, week: 7, situation_ru: "Ужин в ресторане: заказ, счёт, чаевые", sphere: food, grammar_ru: "some / any; исчисляемые и неисчисляемые", grammar_markers: [T4]}
+- {level: A1+, week: 8, situation_ru: "Первый рабочий день: правила", sphere: work, grammar_ru: "must / must not", grammar_markers: [D7, X1]}
+- {level: A1+, week: 9, situation_ru: "Аренда квартиры и мелкий ремонт", sphere: home, grammar_ru: "have to / don't have to", grammar_markers: [D1, X2]}
+- {level: A1+, week: 10, situation_ru: "Соседи: шум, просьба, доброта", sphere: meet, grammar_ru: "Could you…?; наречия образа действия: quietly, quickly", grammar_markers: [D7, A4]}
+- {level: A1+, week: 11, situation_ru: "Аптека и инструкция к лекарству", sphere: health, grammar_ru: "How often…?; once / twice a day", grammar_markers: [A6, A1]}
+- {level: A1+, week: 12, situation_ru: "Погода и планы на день", sphere: free, grammar_ru: "прилагательные и их порядок; too / enough", grammar_markers: [J2, A5]}
+- {level: A1+, week: 13, situation_ru: "Анкета на курсы: расскажи о себе", sphere: study, grammar_ru: "повторение Past Simple в анкете и рассказе", grammar_markers: [D2]}
+- {level: A1+, week: 14, situation_ru: "Прогулка по карте района", sphere: city, grammar_ru: "предлоги движения: across, past, to; первое if", grammar_markers: [P2]}
+- {level: A1+, week: 15, situation_ru: "Сборы в путешествие: чемодан и погода", sphere: travel, grammar_ru: "реальное if: If…, I will…", grammar_markers: [C4, D7]}
+- {level: A1+, week: 16, situation_ru: "Пикник под угрозой дождя; итог A1+", sphere: free, grammar_ru: "повторение A1+: прошедшее время, must / have to, if", grammar_markers: []}

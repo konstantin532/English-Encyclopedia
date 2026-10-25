@@ -1,0 +1,13 @@
+{% load ru %}
+<section class="layer" id="contractions" aria-labelledby="contractions-t">
+  <h2 id="contractions-t">Как сокращают</h2>
+  <div class="contractions-table-wrap">
+    <table class="contractions-table">
+      <thead><tr><th scope="col">Полностью</th><th scope="col">Как говорят</th><th scope="col">Транскрипция</th><th scope="col">Заметка</th></tr></thead>
+      <tbody>{% for pair in lesson.contractions %}<tr>
+        <td lang="en">{{ pair.full }}</td><td lang="en">{{ pair.short }}</td>
+        <td><span class="ipa">{{ pair.ipa }}</span> {{ pair|ru_tr }}</td><td>{{ pair.note_ru }}</td>
+      </tr>{% endfor %}</tbody>
+    </table>
+  </div>
+</section>

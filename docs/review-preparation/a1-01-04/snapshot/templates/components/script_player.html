@@ -1,0 +1,56 @@
+{% load markers static %}
+{% comment %}Плеер реплик по ролям: истории и диалоги недель. Нужны audio (манифест), lines и speakers (build_lines).{% endcomment %}
+{% if audio %}
+<div class="story-player" data-story-player
+     {% if audio.very_slow %}data-very-slow="{% static audio.very_slow.file %}"{% endif %} data-slow="{% static audio.slow.file %}" data-natural="{% static audio.natural.file %}"
+     {% if audio.ambience %}data-ambience="{% static audio.ambience %}" data-ambience-db="{{ audio.ambience_gain_db }}"{% endif %}
+     {% if audio.slow.music %}{% if audio.very_slow.music %}data-music-very_slow="{% static audio.very_slow.music %}" data-music-db-very_slow="{{ audio.very_slow.music_gain_db }}"{% endif %}
+     data-music-slow="{% static audio.slow.music %}" data-music-db-slow="{{ audio.slow.music_gain_db }}"
+     data-music-natural="{% static audio.natural.music %}" data-music-db-natural="{{ audio.natural.music_gain_db }}"{% endif %}>
+  {% if audio.very_slow %}{{ audio.very_slow.timings|json_script:"timings-very_slow" }}{% endif %}{{ audio.slow.timings|json_script:"timings-slow" }}{{ audio.natural.timings|json_script:"timings-natural" }}
+  <div class="player-row">
+    <button class="btn btn-primary btn-small" type="button" data-play aria-pressed="false"><svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg><svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3v14H7zm7 0h3v14h-3z"/></svg><span data-play-label class="visually-hidden">Слушать</span></button>
+    <div class="player-wave" aria-hidden="true"><svg viewBox="0 0 352 48" preserveAspectRatio="none"><path class="wave-base" d="M4 20v8 M12 16v16 M20 10v28 M28 18v12 M36 6v36 M44 14v20 M52 9v30 M60 3v42 M68 13v22 M76 16v16 M84 7v34 M92 12v24 M100 4v40 M108 15v18 M116 10v28 M124 18v12 M132 8v32 M140 2v44 M148 14v20 M156 7v34 M164 17v14 M172 11v26 M180 20v8 M188 16v16 M196 10v28 M204 18v12 M212 6v36 M220 14v20 M228 9v30 M236 3v42 M244 13v22 M252 16v16 M260 7v34 M268 12v24 M276 4v40 M284 15v18 M292 10v28 M300 18v12 M308 8v32 M316 2v44 M324 14v20 M332 7v34 M340 17v14 M348 11v26"/><path class="wave-progress" d="M4 20v8 M12 16v16 M20 10v28 M28 18v12 M36 6v36 M44 14v20 M52 9v30 M60 3v42 M68 13v22 M76 16v16 M84 7v34 M92 12v24 M100 4v40 M108 15v18 M116 10v28 M124 18v12 M132 8v32 M140 2v44 M148 14v20 M156 7v34 M164 17v14 M172 11v26 M180 20v8 M188 16v16 M196 10v28 M204 18v12 M212 6v36 M220 14v20 M228 9v30 M236 3v42 M244 13v22 M252 16v16 M260 7v34 M268 12v24 M276 4v40 M284 15v18 M292 10v28 M300 18v12 M308 8v32 M316 2v44 M324 14v20 M332 7v34 M340 17v14 M348 11v26"/></svg></div>
+    <div class="player-modes" role="radiogroup" aria-label="Темп">
+      {% if audio.very_slow %}<label><input type="radio" name="tempo" value="very_slow" checked> Очень медленно</label>{% endif %}
+      <label><input type="radio" name="tempo" value="slow"{% if not audio.very_slow %} checked{% endif %}> Медленно</label>
+      <label><input type="radio" name="tempo" value="natural"> Как в жизни</label>
+    </div>
+    <div class="player-clock"><span class="player-time" data-time aria-live="off">0:00</span><span aria-hidden="true"> / </span><span data-duration>—</span></div>
+  </div>
+  <details class="player-settings"><summary>Настройки звука</summary>
+  <div class="player-row player-mix">
+    <label>Скорость <input type="range" min="50" max="125" step="5" value="100" data-rate> <output data-rate-out>1.0×</output></label>
+    <label><input type="checkbox" data-pause-lines> Пауза после каждой реплики</label>
+    <label>Голос <input type="range" min="0" max="100" value="100" data-voice-vol></label>
+    {% if audio.ambience %}<label>Фон сцены <input type="range" min="0" max="100" value="0" data-amb-vol></label>{% endif %}
+    {% if audio.slow.music %}<label>Музыка <input type="range" min="0" max="100" value="100" data-music-vol></label>{% endif %}
+    {% if not role_section and speakers|length > 1 %}<label>Сыграть роль
+      <select data-role-mute><option value="">— слушать всех —</option>{% for s in speakers %}<option value="{{ s.id }}">{{ s.name }}</option>{% endfor %}</select></label>{% endif %}
+  </div>
+  </details>
+  <p class="drill-hint">Голоса синтезированы нейросетью{% if not audio.verified %}, произношение ещё не проверено человеком{% endif %}. Нажмите на реплику, чтобы послушать её.</p>
+</div>
+{% endif %}
+{% if lines %}
+{% if listen_modes %}
+<div class="player-modes listen-modes" role="radiogroup" aria-label="Как слушать" data-listen-modes>
+  <label><input type="radio" name="listen" value="hidden"> Без текста</label>
+  <label><input type="radio" name="listen" value="text"> С текстом</label>
+  <label><input type="radio" name="listen" value="marked" checked> С разметкой</label>
+</div>
+{% endif %}
+{% if lines|has_spoken %}
+<div class="player-modes speech-modes" role="radiogroup" aria-label="Вариант речи" data-speech-modes>
+  <label><input type="radio" name="speech" value="spoken" checked> Как говорят</label>
+  <label><input type="radio" name="speech" value="written"> Как написано</label>
+</div>
+{% endif %}
+<div class="story-text story-script annotated{% if lines|has_spoken %} speech-spoken{% endif %}" lang="en" data-story-text data-script-lines>
+  {% for l in lines %}<p class="script-line script-{{ l.kind }}" data-line="{{ l.i }}" data-speaker="{{ l.speaker }}"><span class="speaker speaker-{{ l.speaker }}" data-initial="{{ l.name|first }}" lang="ru">{{ l.name }}{% if l.kind == "narration" %} · рассказ{% endif %}{% if l.emotion_ru %}<span class="emotion"> · {{ l.emotion_ru }}</span>{% endif %}</span><span class="line-text">{% if l.spoken %}<span class="line-written">{{ l.text|annotate }}</span><span class="line-spoken">{{ l.spoken|annotate }}</span><span class="line-full"><span lang="ru">полностью:</span> {{ l.text|plain }}</span>{% else %}{{ l.text|annotate }}{% endif %}</span>{% if l.ru %}<span class="line-ru" lang="ru">{{ l.ru }}</span>{% endif %}</p>{% endfor %}
+</div>
+{% elif paragraphs %}
+<div class="story-text annotated" lang="en" data-story-text>
+  {% for p in paragraphs %}<p>{{ p|annotate }}</p>{% endfor %}
+</div>
+{% endif %}
