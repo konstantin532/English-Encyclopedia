@@ -1,0 +1,54 @@
+[
+  {
+    "name": "uv-sync",
+    "command": [
+      "uv",
+      "sync",
+      "--frozen"
+    ],
+    "exit_code": 0,
+    "seconds": 0.026743526999780443
+  },
+  {
+    "name": "pnpm-install",
+    "command": [
+      "pnpm",
+      "install",
+      "--frozen-lockfile",
+      "--ignore-scripts"
+    ],
+    "exit_code": 0,
+    "seconds": 0.8553771070000948
+  },
+  {
+    "name": "fuzz",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "scripts/qa_evolution.py",
+      "fuzz",
+      "--run-number",
+      "0",
+      "--seed",
+      "20261025"
+    ],
+    "exit_code": 0,
+    "seconds": 0.6729031539998687
+  },
+  {
+    "name": "mutation",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "scripts/qa_mutation_probe.py",
+      "--report",
+      "docs/audits/a1-01-04-implementation/evidence/mutation-report.md"
+    ],
+    "exit_code": 0,
+    "seconds": 3.9575742630004243
+  }
+]

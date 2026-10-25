@@ -28,8 +28,8 @@
           "model": "This is my book. It is new."
         },
         {
-          "prompt": "В комнате ваш новый рюкзак. Покажите его другу и скажите, что он новый.",
-          "model": "This is my backpack. It is new."
+          "prompt": "В комнате ваш новый телефон. Покажите его другу и скажите, что он новый.",
+          "model": "This is my new phone."
         }
       ]
     },
@@ -88,8 +88,8 @@
           "model": "The book is here."
         },
         {
-          "prompt": "Вы показываете другу ручку. Сначала назовите предмет, затем скажите, что ручка ваша.",
-          "model": "This is a pen. It is my pen."
+          "prompt": "Вы показываете другу стул. Сначала назовите предмет, затем скажите, что стул ваш.",
+          "model": "This is a chair. It is my chair."
         }
       ]
     },
@@ -114,12 +114,12 @@
       ],
       "transfer_variants": [
         {
-          "prompt": "В гостях вы хотите попросить стакан воды. Скажите одну вежливую фразу.",
-          "model": "Can I have a glass of water, please?"
+          "prompt": "В гостях вы хотите попросить воды. Скажите одну вежливую фразу, не уточняя посуду и количество.",
+          "model": "Can I have water, please?"
         },
         {
-          "prompt": "Вы в гостях. Вежливо попросите немного молока для чая.",
-          "model": "Can I have some milk, please?"
+          "prompt": "Ваш телефон у соседа. Вежливо попросите вернуть его, назвав телефон своим.",
+          "model": "Can I have my phone, please?"
         }
       ]
     },

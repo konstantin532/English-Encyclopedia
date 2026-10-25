@@ -1,0 +1,21 @@
+{
+  "apps/learning/transfer_pilot.py": "95346416ad6a23e0201d3e5ec694b6a0faccf3b71cb317aace9817f2de37ae19",
+  "content/active_a1/scenarios_01_06.json": "7157b5e77eac114edee496e587c0b3b62791e4890b3e228b33b3373861fe84c2",
+  "content/active_a1/topics_01_08.json": "b96d61bbd2730a91197e086125592667ab6da8165c61b16d15a4b4e4b7f5175a",
+  "content/manifests/a1_delayed_review_04.json": "441cdf6b778f099c852a569beb7d503f4a7386645622d54d471dc47233906d4d",
+  "content/manifests/a1_retry_guidance.json": "2addee98602bfbb678ef33a23f89c3318ef79c77b20ab53d5ad5d6a0a0c99723",
+  "content/manifests/a1_scaffold_transfer.json": "5f0429b66cd8029f89a89d315601b5d5a79439b396919a3a278261bba9f8a3ea",
+  "content/manifests/a1_understanding_checks.json": "9c6345dda37fa904eccb573e9c99c80d372c4a4ea2624fadd3d2e3838f00e56f",
+  "content/seed_lessons/a1_w01_l01_nouns.yaml": "c4042d9b4c13840955066fc8d59766676974da3b166bcce3ee5521a3d6897d2f",
+  "content/seed_lessons/a1_w01_l02_be.yaml": "5fafab7bacbb83f766d78876a49543b2b76f305178c809e034c8f3a527e00aab",
+  "content/seed_lessons/a1_w02_l03_determiners.yaml": "93d61e92ee295319e23e3718220ac68622b630fe38480f7bb8b578d6e2e97d57",
+  "content/seed_lessons/a1_w02_l04_have_like_can.yaml": "eab9aab1324cba7d6b730a32c234feaa93f706a56142d9ba38a9564e54266aa2",
+  "content/seed_lexicon/a1_w01_core.yaml": "6dcc10694e16f589e0245b47e44e77e863545a7119dadf5aa114d7dc3ba9b763",
+  "content/seed_lexicon/a1_w01_nouns.yaml": "56b41c8fb10d8b0497b83144cda37992cab56f7ce80e3f8751130a81e635f1e9",
+  "content/seed_lexicon/a1_w02_core.yaml": "e96aa2978b0cc7794268fafe0d716f817f56efc071ab625e4e50985af3798cdb",
+  "content/seed_lexicon/a1_w02_home_plus.yaml": "845876ccd6d9179da4966359227d3e40ee18941471444d876d944ad9f1013bc6",
+  "content/seed_stories/s01_not_my_box.yaml": "05f0dd5849c418e57f06dab878c374c6baa7899ebeb6fa87c304c780e11ba2eb",
+  "content/seed_weeks/a1_w02.yaml": "8b264901a12cbb6901b0e162c9086437b74980addd7cce15e61db7d6f1b5697e",
+  "tests/test_a1_editorial_01_04.py": "78f630ec5da21ffa3c3d7703832beeed41dda6ddf5698aa022b709a6ea35da7e",
+  "tests/test_a1_editorial_history.py": "e9db9e0e44ab8021d110928806eaf1f6d375ee04ffbc6401a7868cae05bd4f80"
+}

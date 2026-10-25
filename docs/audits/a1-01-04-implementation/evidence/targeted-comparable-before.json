@@ -1,0 +1,21 @@
+{
+  "source_commit": "8d3a41d9aa61cbf074caff602d53b22920ca3efa",
+  "command": [
+    "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+    "manage.py",
+    "test",
+    "tests.test_a1_editorial_01_04",
+    "tests.test_a1_editorial_history",
+    "--noinput"
+  ],
+  "cwd": "/tmp/ee-editorial-final-before",
+  "database_urls": {
+    "DATABASE_URL": "sqlite:////tmp/ee-editorial-final-before-db-ch51nolf/baseline.sqlite3",
+    "TEST_DATABASE_URL": "sqlite:////tmp/ee-editorial-final-before-db-ch51nolf/test.sqlite3"
+  },
+  "test_sha256": {
+    "test_a1_editorial_01_04.py": "78f630ec5da21ffa3c3d7703832beeed41dda6ddf5698aa022b709a6ea35da7e",
+    "test_a1_editorial_history.py": "e9db9e0e44ab8021d110928806eaf1f6d375ee04ffbc6401a7868cae05bd4f80"
+  },
+  "exit_code": 1
+}

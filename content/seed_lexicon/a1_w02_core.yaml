@@ -56,7 +56,7 @@ units:
     verification_status: partial
     verification_note: "Oxford 3000 (American English): can1 modal v. — A1. Уровень дан для слова, значение отдельно не сверялось"
     ipa_us: "/kæn/"
-    stress_note: "В утверждении слабое /kən/: I can /aɪ kən/. Отрицание can't /kænt/ всегда ударное"
+    stress_note: "Can часто /kən/; при выделении и в кратком ответе /kæn/. Can't — /kænt/. Слушайте всю фразу, не только ударение."
     translation_ru: мочь, уметь; можно
     frequency_source: "NGSL — требует проверки"
     collocations: [can I have, you can have, I can't]
@@ -89,7 +89,7 @@ units:
     substitutions: [coffee, water, your room, it]
     situation: Спрашиваете о вкусах
     usage_note: "В вопросах с обычными глаголами do встаёт в начало. С be и can do не нужен."
-    typical_error: "«You like coffee?» с вопросительной интонацией — понятно, но правильный вопрос: Do you like coffee?"
+    typical_error: "You like coffee? может быть разговорным уточняющим вопросом с подходящей интонацией. В этом уроке тренируем обычный вопрос с помощником: Do you like coffee? Не переносите порядок слов из утверждения в задания, где требуется именно эта схема."
   - uid: LX-00037
     lemma: the
     meaning: "used before a noun when it is clear which one you mean"

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "pytest",
+    "-q",
+    "-rfE"
+  ],
+  "exit_code": 0,
+  "seconds": 1369.706429372999,
+  "status": "PASS"
+}

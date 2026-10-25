@@ -1,0 +1,34 @@
+{
+  "checks": [
+    {
+      "url": "/lessons/a1-nouns-first-words/",
+      "status": 200,
+      "diagnostic_present": true
+    },
+    {
+      "url": "/lessons/a1-verb-be/",
+      "status": 200,
+      "diagnostic_present": true
+    },
+    {
+      "url": "/lessons/a1-determiners-a-the-this-my/",
+      "status": 200,
+      "diagnostic_present": true
+    },
+    {
+      "url": "/lessons/a1-have-like-can-do/",
+      "status": 200,
+      "diagnostic_present": true
+    },
+    {
+      "url": "/levels/a1/weeks/2/",
+      "status": 200
+    },
+    {
+      "url": "/stories/1/",
+      "status": 200
+    }
+  ],
+  "visual": "BLOCKED: no Chromium",
+  "audio": "NOT_LISTENED"
+}
