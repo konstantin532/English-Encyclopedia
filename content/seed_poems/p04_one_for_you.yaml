@@ -24,7 +24,7 @@ body: |
   [O2]Excuse me[/]! [O2]Excuse me[/]!
   [P1]Near[/] [T1]the[/] [S4]bank[/]? [P1]Next to[/] [T1]the[/] [S4]bank[/]?
   [P1]Between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]?
-  [O4]Yes[/], [P3]on[/] [T1]the[/] [A3]right[/]!
+  [O4]Yes[/], [P1]on[/] [T1]the[/] [S4]right[/]!
 
   [T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/],
   [T8]it[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]your[/] [S2]door[/].

@@ -1,0 +1,147 @@
+Creating test database for alias 'default'...
+/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee1720-before/staticfiles/
+  mw_instance = middleware(adapted_handler)
+FFFFF.FFFFFFF.F
+======================================================================
+FAIL: test_exercises_do_not_credit_distractors_or_whole_alphabet (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_exercises_do_not_credit_distractors_or_whole_alphabet) (uid='EX-00094')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 79, in test_exercises_do_not_credit_distractors_or_whole_alphabet
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00191'
+
+======================================================================
+FAIL: test_exercises_do_not_credit_distractors_or_whole_alphabet (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_exercises_do_not_credit_distractors_or_whole_alphabet) (uid='EX-00099')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 79, in test_exercises_do_not_credit_distractors_or_whole_alphabet
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00187'
+
+======================================================================
+FAIL: test_exercises_do_not_credit_distractors_or_whole_alphabet (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_exercises_do_not_credit_distractors_or_whole_alphabet) (uid='EX-00101')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 79, in test_exercises_do_not_credit_distractors_or_whole_alphabet
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00183'
+'LX-00187'
+
+======================================================================
+FAIL: test_exercises_do_not_credit_distractors_or_whole_alphabet (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_exercises_do_not_credit_distractors_or_whole_alphabet) (uid='EX-00105')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 79, in test_exercises_do_not_credit_distractors_or_whole_alphabet
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00207'
+
+======================================================================
+FAIL: test_exercises_do_not_credit_distractors_or_whole_alphabet (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_exercises_do_not_credit_distractors_or_whole_alphabet) (uid='EX-00114')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 79, in test_exercises_do_not_credit_distractors_or_whole_alphabet
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00386'
+'LX-00388'
+
+======================================================================
+FAIL: test_practice_only_credits_demonstrated_units (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_practice_only_credits_demonstrated_units) (slug='a1-always-never', order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 68, in test_practice_only_credits_demonstrated_units
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid', flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00210'
+'LX-00206'
+
+======================================================================
+FAIL: test_practice_only_credits_demonstrated_units (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_practice_only_credits_demonstrated_units) (slug='a1-always-never', order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 68, in test_practice_only_credits_demonstrated_units
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid', flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00210'
+
+======================================================================
+FAIL: test_practice_only_credits_demonstrated_units (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_practice_only_credits_demonstrated_units) (slug='a1-always-never', order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 68, in test_practice_only_credits_demonstrated_units
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid', flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00206'
+'LX-00210'
+'LX-00207'
+
+======================================================================
+FAIL: test_practice_only_credits_demonstrated_units (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_practice_only_credits_demonstrated_units) (slug='a1-always-never', order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 68, in test_practice_only_credits_demonstrated_units
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid', flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00207'
+
+======================================================================
+FAIL: test_practice_only_credits_demonstrated_units (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_practice_only_credits_demonstrated_units) (slug='a1-like-doing', order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 68, in test_practice_only_credits_demonstrated_units
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid', flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00211'
+'LX-00209'
+
+======================================================================
+FAIL: test_practice_only_credits_demonstrated_units (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_practice_only_credits_demonstrated_units) (slug='a1-like-doing', order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 68, in test_practice_only_credits_demonstrated_units
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid', flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00208'
+
+======================================================================
+FAIL: test_practice_only_credits_demonstrated_units (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_practice_only_credits_demonstrated_units) (slug='a1-like-doing', order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 68, in test_practice_only_credits_demonstrated_units
+    self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid', flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00208'
+
+======================================================================
+FAIL: test_published_pages_preserve_layers_and_role_of_the_speaker (tests.test_a1_deep_17_20.A1DeepSeventeenTwentyTests.test_published_pages_preserve_layers_and_role_of_the_speaker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee1720-before/tests/test_a1_deep_17_20.py", line 91, in test_published_pages_preserve_layers_and_role_of_the_speaker
+    self.assertIn('о себе',exercise.prompt_ru)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'о себе' not found in 'Анна любит гулять. Допишите глагол walk в нужной форме.'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.410s
+
+FAILED (failures=13)
+Destroying test database for alias 'default'...
+Found 5 test(s).
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).

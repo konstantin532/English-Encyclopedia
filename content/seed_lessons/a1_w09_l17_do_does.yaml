@@ -138,7 +138,7 @@ exercises:
     answer: "What time does the cafe open"
     hint_ru: "What time, потом does, потом кафе и open."
     explanation_ru: "What time does the cafe open? — кафе одно, поэтому does."
-    units: [LX-00186, LX-00191]
+    units: [LX-00186]
   - order: 4
     uid: EX-00095
     kind: fill

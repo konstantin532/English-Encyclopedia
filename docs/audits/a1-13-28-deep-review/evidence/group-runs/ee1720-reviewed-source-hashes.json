@@ -1,0 +1,126 @@
+[
+  {
+    "file": "AGENTS.md",
+    "sha256": "3443039fbb336dbd79a168435c3e552adce8038b2878d422ad6ecbe5c0327b15"
+  },
+  {
+    "file": "CLAUDE.md",
+    "sha256": "3000cff47f50131841eb27a893433c08def4e1712e70300889400ea83b8ffc1f"
+  },
+  {
+    "file": "apps/api/views.py",
+    "sha256": "acc3955d99defe912730a98d2f7c030c38e66dbbdf54899ebf7f22a64bc8a70c"
+  },
+  {
+    "file": "apps/drills/models.py",
+    "sha256": "5c3b353264cd95177e4b829d9da3dfee765df3008e75bc917c52b9c4e8b05e59"
+  },
+  {
+    "file": "apps/learning/micro_review.py",
+    "sha256": "7d4df422e9c090a2dc610e6f87371e0f1e03accfb8dc60d358afb1b191940ee4"
+  },
+  {
+    "file": "apps/learning/mistake_review.py",
+    "sha256": "7245368487ecbd710b4ff980997cfc1c4fa8afce94597c4df8de8acaea2d6807"
+  },
+  {
+    "file": "apps/learning/understanding.py",
+    "sha256": "07a12ea43ee1c766db10ff1db73f9fea00ec908ac9933811f788bed46d03b82f"
+  },
+  {
+    "file": "content/active_a1/error_repairs_01_18.json",
+    "sha256": "1408bdccf04c853f81f35c1840ce1a13ab76fc3f096da7868aaf0dcd871d0806"
+  },
+  {
+    "file": "content/active_a1/error_repairs_19_20.json",
+    "sha256": "489416a9fe076af28b1d6ccbae5e8a42d368543fcc884e8eabf5673d02160966"
+  },
+  {
+    "file": "content/active_a1/scenarios_13_18.json",
+    "sha256": "527e5f8056f00fd14f12850715c9f97c34e54cb0fbbb7f71dbf2c7cb52f59b23"
+  },
+  {
+    "file": "content/active_a1/scenarios_19_20.json",
+    "sha256": "a649c75be55be2ad57c747b0ad78bfc1b9eeafecce44fa664f4fb4dc8d8f3764"
+  },
+  {
+    "file": "content/active_a1/topics_14_18.json",
+    "sha256": "b4c099a68f2d42fce401e5db097585ba9c9e8c4c739a638111ddeaf5b8ef9a4a"
+  },
+  {
+    "file": "content/active_a1/topics_19_20.json",
+    "sha256": "c27903cc7c9f85765d2c59368028528779508bc35e3e93738bc4d402c929154f"
+  },
+  {
+    "file": "content/manifests/a1_delayed_review_topics_17_20.json",
+    "sha256": "fde4fa7541b622e70e6c0ae58e2cc92d0a6eec0d3cd4dd653585e0ffe90e8d03"
+  },
+  {
+    "file": "content/manifests/a1_micro_review_17_20.json",
+    "sha256": "451c6c59bab99baa1c3b7943e338ca43a92c75908f03dd503f3ceb93aa59b129"
+  },
+  {
+    "file": "content/manifests/a1_retry_guidance.json",
+    "sha256": "2addee98602bfbb678ef33a23f89c3318ef79c77b20ab53d5ad5d6a0a0c99723"
+  },
+  {
+    "file": "content/manifests/a1_scaffold_transfer.json",
+    "sha256": "a71069ecc0a24897f3f9d24b78aba96361bae10ed30016c57f7f724d9fcefafb"
+  },
+  {
+    "file": "content/manifests/a1_understanding_checks.json",
+    "sha256": "569693c37e6d4681b216f02631bbeb523cafe20dae59d9ec4cd34b9ec64fc9d1"
+  },
+  {
+    "file": "content/manifests/course_map.yaml",
+    "sha256": "79cb91bd93596b47f7b6821edb958fcbc06c75ebaf86449c0bd89c52f4262828"
+  },
+  {
+    "file": "content/seed_lessons/a1_w09_l17_do_does.yaml",
+    "sha256": "7e3e65edfa8f34c7f446fba5a4cc96d795bb42310c6d9b4d69d61202b9011629"
+  },
+  {
+    "file": "content/seed_lessons/a1_w09_l18_spelling.yaml",
+    "sha256": "6ff1dd9357a564f8ff2a1bc55c67237775edf0f2b9d5f164762b1806e78312af"
+  },
+  {
+    "file": "content/seed_lessons/a1_w10_l19_always_never.yaml",
+    "sha256": "d9bb7e5e10fdc35d250fa80683260746e1bc48d33c95fa7628bf262be35a8ca2"
+  },
+  {
+    "file": "content/seed_lessons/a1_w10_l20_like_doing.yaml",
+    "sha256": "6ae9951b004cddea6312fe77aa7b2eabacae551c471540000e48cf715c788b30"
+  },
+  {
+    "file": "content/seed_lexicon/a1_w09_phone.yaml",
+    "sha256": "fa2d8bbb1413f0ad8018dd2b446537477178c16609dec60761020b240709a126"
+  },
+  {
+    "file": "content/seed_lexicon/a1_w09_phone_plus.yaml",
+    "sha256": "8cc8f00704c5f3ad01f98e174fb569f5c6c56ccfd139087c48d29a2d95fe219b"
+  },
+  {
+    "file": "content/seed_lexicon/a1_w10_free.yaml",
+    "sha256": "1a204e61a1e01eb53b8f705bd7775045b22bc5dcd8630e6b2ef260c1c5db52dc"
+  },
+  {
+    "file": "content/seed_lexicon/a1_w10_free_plus.yaml",
+    "sha256": "0961c538d2ed1e1a23ba0eecacdc31ee2536e832ee18bef5ab7dd98a950b7b66"
+  },
+  {
+    "file": "content/seed_poems/p05_read_walk_play.yaml",
+    "sha256": "02878513b17129fb8c73e9a900a0bbae94930165dae9483bd40229ea2f3ecf03"
+  },
+  {
+    "file": "content/seed_weeks/a1_w09.yaml",
+    "sha256": "7fa25e239ab574c4771c4fc3e1deb89eb6560f6872118dc2f1a0bb3245d780b9"
+  },
+  {
+    "file": "content/seed_weeks/a1_w10.yaml",
+    "sha256": "ea5f8f51fc06f19a7931722ef6329a132021f5cf9ae7c5803f5d327f2ebc93b3"
+  },
+  {
+    "file": "tests/test_a1_deep_17_20.py",
+    "sha256": "26a74de9cfd8268cc17667f7263444fedb1cfb9e7cf723e30cfc59eaa1cfd2fd"
+  }
+]

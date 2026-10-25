@@ -1,0 +1,132 @@
+[
+  {
+    "path": "apps/drills/models.py",
+    "sha256": "5c3b353264cd95177e4b829d9da3dfee765df3008e75bc917c52b9c4e8b05e59",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/active_a1/error_repairs_25_26.json",
+    "sha256": "55381affe238285733ca77b83f12a3817a7cd6de841e987a5c376106423c783b",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/active_a1/error_repairs_27_28.json",
+    "sha256": "0f01e64fa0a7697e9d76bb920717a66711e859084b2318178a4fb3070c0f8bea",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/active_a1/scenarios_25_26.json",
+    "sha256": "4510585721fd97f0d1e45c047df1ca82cfc3550edaa2cba5366ef8e861ad6425",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/active_a1/scenarios_27_28.json",
+    "sha256": "65c3ea7eeab90bb91dd46eeef789779acf13c5c00ba29bfbef12b29ed963ff98",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/active_a1/topics_25_26.json",
+    "sha256": "4d1267337050e2cfc9ca280da06cdb98fe8bb999bdb8eb1f9d2148c4a3a02a8a",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/active_a1/topics_27_28.json",
+    "sha256": "75edcf734cf3c19d3dd093839017045efb54d2967ab9cd4c080f73cc4208f04b",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/manifests/a1_delayed_review_topics_25_28.json",
+    "sha256": "f3f8e57436729417dbc36c86350cf5fce5db1c896c76e2047620aa527ef4770f",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_25_28.json",
+    "sha256": "30d12c933b4c90dbdb4879a657d2129564b588e3d2996e3b9934432e802b54ba",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "sha256": "5f0429b66cd8029f89a89d315601b5d5a79439b396919a3a278261bba9f8a3ea",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json",
+    "sha256": "e3c398f985c4f52aa0b57698a5cdf96140073d4b2273b7229b6590731336cdd0",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/manifests/course_map.yaml",
+    "sha256": "79cb91bd93596b47f7b6821edb958fcbc06c75ebaf86449c0bd89c52f4262828",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l25_can_skills.yaml",
+    "sha256": "ea1b081ad5361c58ae2f42483f37d0c6b9a35bb92b1632a2e7b77077c96c9b07",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_lessons/a1_w13_l26_why_because.yaml",
+    "sha256": "71f0ecc8972f288382d708b165427b6db09b66c91148ca943391f42873894ff7",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l27_bus.yaml",
+    "sha256": "26ffa4cb8d17c66e39b0ea4e07f4636a2a5968d9cc7c36bf44288b82be686a9a",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_lessons/a1_w14_l28_review.yaml",
+    "sha256": "0e8b8aee6d68d3f98c691e1e39609024fadfdcbde3d1399af2b5af4e4acb3525",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w13_study.yaml",
+    "sha256": "d2443fe52a2b59293c6437c64f6433491af8c14f4836ee5e734015ade93cf22f",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w13_study_plus.yaml",
+    "sha256": "4cb71eb517fa01af13f0d4efc8d625e34cc0e62521e2766e0bb16faf666053ee",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_story05.yaml",
+    "sha256": "09ba25c50e7c79b1e9c08edda36bad95b3a6741a1c73b67b88275632b363a782",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel.yaml",
+    "sha256": "f4c9c610faab969a7547921431e6cf7cfd9cc0c0697c89208c69bbf687c37b0d",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_lexicon/a1_w14_travel_plus.yaml",
+    "sha256": "fd6b48ae5ba9d06c71b607f7cd5b81a54948bbd72c37ff573df2aed3b29096da",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_poems/p07_bus_to_park_street.yaml",
+    "sha256": "11516a3049468f1e48fdca6d9ad487277be2627910388cd5a30ccc613540f3d6",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_stories/s05_big_family_photo.yaml",
+    "sha256": "ea44ecea35b54694d9ceb7729c69b094e878cfa8a26b77b6b7323752689bc042",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_weeks/a1_w13.yaml",
+    "sha256": "8ce2550dfeee2cf485e97e81e4c15938db0e1f55b99200c001fc6dd4e797d9f5",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "content/seed_weeks/a1_w14.yaml",
+    "sha256": "7b9f9253780cbe6e2ba0908e1485fe86bd0dd2969a848b1e22b7e2f9ba69b041",
+    "scope": "Own lesson records only in shared manifests"
+  },
+  {
+    "path": "tests/test_a1_editorial_week13_14.py",
+    "sha256": "8eae1d9c49117ac47d806ecce7deafc4f126153ea5a4911068ddb7e81feb9196",
+    "scope": "Own lesson records only in shared manifests"
+  }
+]

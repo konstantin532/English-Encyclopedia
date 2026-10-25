@@ -1,0 +1,12 @@
+{
+  "content/seed_poems/p04_one_for_you.yaml": "plain_body_pronunciation_gaps_targets_unchanged",
+  "content/seed_poems/p06_who_knows.yaml": "plain_body_pronunciation_gaps_targets_unchanged",
+  "content/seed_poems/p07_bus_to_park_street.yaml": "plain_body_pronunciation_gaps_targets_unchanged",
+  "content/seed_weeks/a1_w07.yaml": "recorded_script_plain_text_unchanged",
+  "content/seed_weeks/a1_w08.yaml": "recorded_script_plain_text_unchanged",
+  "content/seed_weeks/a1_w09.yaml": "recorded_script_plain_text_unchanged",
+  "content/seed_weeks/a1_w10.yaml": "recorded_script_plain_text_unchanged",
+  "record_identities": "PASS",
+  "changed_parsed_fields": 243,
+  "protected_scope": "PASS"
+}

@@ -1,0 +1,795 @@
+{
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "author": "Codex shared editorial pass",
+  "reviewed_by": "frozen real API/HTML regressions; human acceptance pending",
+  "verification_status": "technical_review",
+  "date": "2026-10-25",
+  "source_notes": "Actual source fields, existing registry, primary Merriam-Webster/Rachel sources. Array-only cases have no UID; stable lesson slug/exercise order, old contextual values and slot identify them.",
+  "changes": [
+    {
+      "path": "content/active_a1/scenarios_13_18.json",
+      "pointer": "/0/missions/1/prompt",
+      "identity": {
+        "n": 13
+      },
+      "before": "Спросите, где она работает.",
+      "after": "Спросите у него, где работает Мия."
+    },
+    {
+      "path": "content/active_a1/scenarios_13_18.json",
+      "pointer": "/0/missions/1/scene",
+      "identity": {
+        "n": 13
+      },
+      "before": "Вы встретили баристу вне кафе.",
+      "after": "Вы встретили знакомого Мии вне кафе."
+    },
+    {
+      "path": "content/active_a1/scenarios_13_18.json",
+      "pointer": "/1/missions/2/coach",
+      "identity": {
+        "n": 14
+      },
+      "before": "Место работы отвечает на вопрос «где?». На What do you do? естественнее назвать профессию, а место добавить отдельной фразой.",
+      "after": "На вопрос о профессии здесь отвечаем I am a teacher; место работы можно добавить отдельно."
+    },
+    {
+      "path": "content/active_a1/scenarios_13_18.json",
+      "pointer": "/1/missions/2/example",
+      "identity": {
+        "n": 14
+      },
+      "before": "I work at a school.",
+      "after": "I'm a teacher."
+    },
+    {
+      "path": "content/active_a1/scenarios_13_18.json",
+      "pointer": "/2/missions/2/coach",
+      "identity": {
+        "n": 15
+      },
+      "before": "Near означает близость без обязательного соприкосновения.",
+      "after": "Near означает близость, но не обязательно непосредственное соседство."
+    },
+    {
+      "path": "content/active_a1/scenarios_13_18.json",
+      "pointer": "/3/missions/0/coach",
+      "identity": {
+        "n": 16
+      },
+      "before": "Короткий императив не включает you.",
+      "after": "В коротком образце Go straight обычно не произносим you; оно понятно из ситуации."
+    },
+    {
+      "path": "content/active_a1/scenarios_13_18.json",
+      "pointer": "/3/missions/2/scene",
+      "identity": {
+        "n": 16
+      },
+      "before": "Банк находится справа от перекрёстка.",
+      "after": "На перекрёстке маршрут к банку требует поворота направо."
+    },
+    {
+      "path": "content/active_a1/scenarios_13_18.json",
+      "pointer": "/3/twists/1/scene",
+      "identity": {
+        "n": 16
+      },
+      "before": "Сначала нужна вежливая просьба, затем маршрут.",
+      "after": "Сначала привлеките внимание, затем дайте указание идти прямо."
+    },
+    {
+      "path": "content/active_a1/topics_09_13.json",
+      "pointer": "/4/sound",
+      "identity": {
+        "slug": "a1-he-she-works",
+        "n": 13,
+        "week": 7
+      },
+      "before": "Слышны три варианта конечного -s: /s/ после глухих, /z/ после звонких, /ɪz/ после шипящих. В works — /s/.",
+      "after": "Окончание звучит /ɪz/ после /s, z, ʃ, ʒ, tʃ, dʒ/ (watches); после остальных глухих — /s/ (works), после остальных звонких и гласных — /z/ (goes)."
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_topics_13_16.json",
+      "pointer": "/a1-where-is-prepositions/4/0",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "Вы объясняете, что магазин напротив парка, через дорогу.",
+      "after": "Вы объясняете, что магазин напротив школы, через дорогу."
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_topics_13_16.json",
+      "pointer": "/a1-where-is-prepositions/4/2/0",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "The shop is across from the park.",
+      "after": "The shop is across from the school."
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_topics_13_16.json",
+      "pointer": "/a1-where-is-prepositions/4/2/1",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "The shop is in the park.",
+      "after": "The shop is in the school."
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_topics_13_16.json",
+      "pointer": "/a1-where-is-prepositions/4/2/2",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "The shop is under the park.",
+      "after": "The shop is under the school."
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-directions-turn-left/1/cases/1/0",
+      "identity": {
+        "slug": "a1-directions-turn-left"
+      },
+      "before": "парке",
+      "after": "школе"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-directions-turn-left/4/cases/4/0",
+      "identity": {
+        "slug": "a1-directions-turn-left"
+      },
+      "before": "парка",
+      "after": "отеля"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-directions-turn-left/5/cases/0/0",
+      "identity": {
+        "slug": "a1-directions-turn-left"
+      },
+      "before": "парке",
+      "after": "школе"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-he-she-works/1/cases/2/0",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "Анне: читает каждый день",
+      "after": "Анне: работает каждый день"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-he-she-works/1/cases/2/2",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "reads every day",
+      "after": "works every day"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-he-she-works/1/cases/3/0",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "Томе: живёт здесь",
+      "after": "Томе: работает здесь"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-he-she-works/1/cases/3/2",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "lives here",
+      "after": "works here"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-he-she-works/1/reason",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "В Present Simple с именем одного человека у смыслового глагола появляется -s или -es; дополнительное is не требуется.",
+      "after": "В этих утвердительных примерах с именем одного человека используются works или likes; is перед ними не добавляем."
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-he-she-works/2/reason",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "В вопросах с he/she и обычным действием нужен Does; далее глагол без -s.",
+      "after": "В этих вопросах с work и he/she нужен Does; work после помощника без -s."
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-he-she-works/3/reason",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "В повествовании He/She + глагол с -s, затем обстоятельство; не ставьте is перед смысловым глаголом.",
+      "after": "В этих утвердительных фразах He/She + глагол с -s/-es, затем место или время; is к works, starts и finishes не добавляем."
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-he-she-works/4/cases/1/1",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "at the bank",
+      "after": "at a hospital"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/3/cases/2/0",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "в банке",
+      "after": "в ресторане"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/3/cases/2/1",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "a bank",
+      "after": "a restaurant"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/3/cases/3/0",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "в магазине",
+      "after": "в офисе"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/3/cases/3/1",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "a shop",
+      "after": "an office"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/5/cases/0/0",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "Он инженер",
+      "after": "с соседом"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/5/cases/1/0",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "Он актёр",
+      "after": "с коллегой"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/5/cases/1/1",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "actor",
+      "after": "engineer"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/5/cases/2/0",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "Он художник",
+      "after": "в кафе"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/5/cases/2/1",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "artist",
+      "after": "engineer"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/5/cases/3/0",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "Он офисный работник",
+      "after": "в школе"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/5/cases/3/1",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "office worker",
+      "after": "engineer"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/5/cases/4/0",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "Он инженер из России",
+      "after": "в больнице"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/5/cases/4/1",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "engineer from Russia",
+      "after": "engineer"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/5/keys/0",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "ru",
+      "after": "situation"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/5/prompt",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "Как сказать «{ru}» о мужчине?",
+      "after": "При знакомстве {situation} вы говорите о мужчине-инженере. Назовите его профессию."
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/6/cases/4/2",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "в городе",
+      "after": "ночью"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-jobs-what-do-you-do/6/cases/4/3",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "in the city",
+      "after": "at night"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/1/cases/3/0",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "рядом с парком",
+      "after": "рядом со школой"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/2/cases/1/0",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "телефон внутри сумки",
+      "after": "телефон внутри коробки"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/2/cases/1/2",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "bag",
+      "after": "box"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/2/cases/4/0",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "книга внутри сумки",
+      "after": "книга внутри холодильника"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/2/cases/4/2",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "bag",
+      "after": "fridge"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/3/cases/3/0",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "отель рядом с парком",
+      "after": "отель рядом с больницей"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/3/cases/3/2",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "park",
+      "after": "hospital"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/3/reason",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "Next to означает непосредственную близость; between требует две опорные точки.",
+      "after": "В этом образце next to означает непосредственное соседство. Для between X and Y здесь нужно назвать оба ориентира и соединить их and; это не правило, что between возможно только с двумя объектами."
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/5/cases/2/0",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "школы между парком и магазином",
+      "after": "школы между больницей и магазином"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/5/cases/2/2",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "park",
+      "after": "hospital"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/5/prompt",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "Как описать расположение {ru}?",
+      "after": "Передайте положение {ru} именно с between ... and ...; не заменяйте его сообщением только о близости."
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/5/reason",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "Between ... and ... указывает на положение между двумя местами.",
+      "after": "Здесь требуется between ... and ...: назвать оба ориентира и положение между ними. Фраза с next to может быть грамматически правильной и описывать соседство, но не передаёт указанную конструкцию between."
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/6/cases/0/2",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "парка",
+      "after": "школы"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/6/cases/0/4",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "park",
+      "after": "school"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/6/cases/3/2",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "парка",
+      "after": "больницы"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/6/cases/3/4",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "park",
+      "after": "hospital"
+    },
+    {
+      "path": "content/manifests/a1_micro_review_13_16.json",
+      "pointer": "/a1-where-is-prepositions/6/reason",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "Across from — напротив, через улицу; это не внутри и не позади.",
+      "after": "В этой ситуации across from — напротив, через дорогу; дорога задана условием, а не обязательна в любом употреблении across from."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/12/transfer_variants/1/model",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "Does Tom read books every day?",
+      "after": "Does Tom work at home every day?"
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/12/transfer_variants/1/prompt",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "Вы хотите узнать, читает ли Том книги каждый день. Спросите об этом.",
+      "after": "Спросите знакомого, работает ли Том дома каждый день."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/13/transfer_variants/0/model",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": "I am a cook. I work at a café.",
+      "after": "I am a cook. I work at a cafe."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/14/transfer_variants/0/model",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "The phone is in the bag.",
+      "after": "The phone is in the box."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/14/transfer_variants/0/prompt",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "Телефон лежит внутри сумки. Объясните другу, где он.",
+      "after": "Телефон лежит внутри коробки. Объясните другу, где он."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/12/plain",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "С he/she и одним человеком глагол привычки часто получает -s.",
+      "after": "В утвердительной фразе с he/she и именем одного человека у большинства смысловых глаголов появляется -s или -es."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/12/why",
+      "identity": {
+        "slug": "a1-he-she-works"
+      },
+      "before": "В вопросе does забирает окончание: Does she work?",
+      "after": "В вопросе с work используем does для he/she; после помощника work остаётся без -s."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/13/tasks/writing/accepted",
+      "identity": {
+        "slug": "a1-jobs-what-do-you-do"
+      },
+      "before": [
+        "I work at a school."
+      ],
+      "after": [
+        "I work at a school.",
+        "I work in a school.",
+        "I work at the school.",
+        "I work in the school.",
+        "I work at school."
+      ]
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/14/contrast/why",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "Next to связывает магазин с одним местом, between ... and ... показывает положение между двумя местами.",
+      "after": "В этом примере next to показывает непосредственное соседство. Схема between the bank and the cafe называет два ориентира; between может связывать и больше двух отдельных объектов."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/14/tasks/transfer/model",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "The shop is across from the park.",
+      "after": "The shop is across from the school."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/14/tasks/transfer/prompt",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "Магазин находится через дорогу от парка. Объясните туристу, где этот магазин.",
+      "after": "Магазин находится через дорогу от школы. Объясните туристу, где магазин."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/14/tasks/writing/accepted",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": [
+        "The bank is next to the cafe."
+      ],
+      "after": [
+        "The bank is next to the cafe.",
+        "The bank is near the cafe.",
+        "The cafe is near the bank.",
+        "The cafe is next to the bank."
+      ]
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/14/why",
+      "identity": {
+        "slug": "a1-where-is-prepositions"
+      },
+      "before": "In — внутри, next to — рядом, between — между двумя.",
+      "after": "In в нашем примере — внутри, next to — непосредственно рядом. В схеме between X and Y называем два ориентира; это не запрет других употреблений between."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/15/why",
+      "identity": {
+        "slug": "a1-directions-turn-left"
+      },
+      "before": "В короткой команде глагол идёт первым.",
+      "after": "В образце Go straight сначала называем действие (go), затем направление (straight)."
+    },
+    {
+      "path": "content/seed_poems/p04_one_for_you.yaml",
+      "pointer": "/body",
+      "identity": {
+        "number": 4
+      },
+      "before": "[A3]Here[/] [D1]is[/] [T1]a[/] [S2]key[/],\n[T1]an[/] [J2]old[/], [J2]old[/] [S2]key[/].\n[D1]Is[/] [T8]it[/] [P5]for[/] [T8]you[/]?\n[D1]Is[/] [T8]it[/] [P5]for[/] [T8]me[/]?\n\n[A6]Where[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/]?\n[D4]Turn[/] [A3]right[/], [D4]turn[/] [A3]left[/],\n[D4]go[/] [A3]straight[/], [D4]go[/] [A3]straight[/],\n[T8]it[/] [D1]is[/] [P1]next to[/] [T1]the[/] [S4]bank[/]!\n\n[O2]Excuse me[/]! [O2]Excuse me[/]!\n[P1]Near[/] [T1]the[/] [S4]bank[/]? [P1]Next to[/] [T1]the[/] [S4]bank[/]?\n[P1]Between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]?\n[O4]Yes[/], [P3]on[/] [T1]the[/] [A3]right[/]!\n\n[T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/],\n[T8]it[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]your[/] [S2]door[/].\n[T9]Whose[/] [S2]key[/]? [T9]Whose[/] [S2]key[/]?\n[T8]It[/] [D1]is[/] [P5]for[/] [T3]our[/] [S2]mailbox[/]!\n\n[N1]One[/] [S2]key[/] [P5]for[/] [T8]you[/],\n[N1]one[/] [S2]key[/] [P5]for[/] [T8]me[/],\n[T3]our[/] [J2]old[/] [S2]mailbox[/],\n[T3]our[/] [J2]old[/] [S2]key[/]!\n",
+      "after": "[A3]Here[/] [D1]is[/] [T1]a[/] [S2]key[/],\n[T1]an[/] [J2]old[/], [J2]old[/] [S2]key[/].\n[D1]Is[/] [T8]it[/] [P5]for[/] [T8]you[/]?\n[D1]Is[/] [T8]it[/] [P5]for[/] [T8]me[/]?\n\n[A6]Where[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/]?\n[D4]Turn[/] [A3]right[/], [D4]turn[/] [A3]left[/],\n[D4]go[/] [A3]straight[/], [D4]go[/] [A3]straight[/],\n[T8]it[/] [D1]is[/] [P1]next to[/] [T1]the[/] [S4]bank[/]!\n\n[O2]Excuse me[/]! [O2]Excuse me[/]!\n[P1]Near[/] [T1]the[/] [S4]bank[/]? [P1]Next to[/] [T1]the[/] [S4]bank[/]?\n[P1]Between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]?\n[O4]Yes[/], [P1]on[/] [T1]the[/] [S4]right[/]!\n\n[T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/],\n[T8]it[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]your[/] [S2]door[/].\n[T9]Whose[/] [S2]key[/]? [T9]Whose[/] [S2]key[/]?\n[T8]It[/] [D1]is[/] [P5]for[/] [T3]our[/] [S2]mailbox[/]!\n\n[N1]One[/] [S2]key[/] [P5]for[/] [T8]you[/],\n[N1]one[/] [S2]key[/] [P5]for[/] [T8]me[/],\n[T3]our[/] [J2]old[/] [S2]mailbox[/],\n[T3]our[/] [J2]old[/] [S2]key[/]!\n"
+    },
+    {
+      "path": "content/seed_stories/s03_whose_key.yaml",
+      "pointer": "/grammar_ru",
+      "identity": {
+        "number": 3
+      },
+      "before": "there is; вопросы Is it…?; притяжательное 's (Anna's door); for — «для, от»; whose — «чей»",
+      "after": "Is it…? — вопрос с be; Anna’s door — принадлежность. For в key for the mailbox показывает, к какому замку подходит ключ. Whose key is it? — «Чей это ключ?». Who has a key? — готовый вопрос «У кого есть ключ?»."
+    },
+    {
+      "path": "content/seed_stories/s03_whose_key.yaml",
+      "pointer": "/prediction_ru",
+      "identity": {
+        "number": 3
+      },
+      "before": "Посмотрите на название и описания картинок. Чей это ключ? К какой двери он подходит?",
+      "after": "Посмотрите на название и описания картинок. Чей это ключ? К какой двери он подходит? Again! означает «Опять!» — Том снова удивляется месту, где лежат его ключи."
+    },
+    {
+      "path": "content/seed_stories/s03_whose_key.yaml",
+      "pointer": "/script/6/spoken",
+      "identity": {
+        "number": 3
+      },
+      "before": "[T8]It[/] [D1]is[/][X1]n't[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna's[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?",
+      "after": "[T8]It[/] [D1]is[/][X1]n't[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna[/][T3]'s[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?"
+    },
+    {
+      "path": "content/seed_stories/s03_whose_key.yaml",
+      "pointer": "/script/6/text",
+      "identity": {
+        "number": 3
+      },
+      "before": "[T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna's[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?",
+      "after": "[T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna[/][T3]'s[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?"
+    },
+    {
+      "path": "content/seed_stories/s03_whose_key.yaml",
+      "pointer": "/script/9/spoken",
+      "identity": {
+        "number": 3
+      },
+      "before": "“[T8]It[/][D1]'s[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P2]to[/] [T3]our[/] [S2]mailbox[/]?”",
+      "after": "“[T8]It[/][D1]'s[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P6]to[/] [T3]our[/] [S2]mailbox[/]?”"
+    },
+    {
+      "path": "content/seed_stories/s03_whose_key.yaml",
+      "pointer": "/script/9/text",
+      "identity": {
+        "number": 3
+      },
+      "before": "“[T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P2]to[/] [T3]our[/] [S2]mailbox[/]?”",
+      "after": "“[T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P6]to[/] [T3]our[/] [S2]mailbox[/]?”"
+    },
+    {
+      "path": "content/seed_weeks/a1_w07.yaml",
+      "pointer": "/twister/goal_ru",
+      "identity": {
+        "week": 7,
+        "number": 7
+      },
+      "before": "Американское r в конце слова шесть раз подряд: teacher, farmer, driver. Плюс w в where и work.",
+      "after": "Шесть слов с американским r: в nurse оно внутри слова, в teacher, singer, farmer, driver, writer — в окончании -er. Затем w в where и work."
+    },
+    {
+      "path": "content/seed_weeks/a1_w07.yaml",
+      "pointer": "/twister/tip_ru",
+      "identity": {
+        "week": 7,
+        "number": 7
+      },
+      "before": "В конце -er язык не касается нёба и не дрожит, кончик слегка загнут назад: «тичэр», а не «тичер» с русским р. Не проглатывайте r: в американском оно слышно всегда.",
+      "after": "Для выбранного американского произношения сохраняйте r в этих словах. Кончик языка не дрожит и не ударяет по нёбу; его можно немного поднять либо оставить ниже, приподняв среднюю часть языка. Не требуется единственное положение кончика."
+    },
+    {
+      "path": "content/seed_weeks/a1_w08.yaml",
+      "pointer": "/script/3/text",
+      "identity": {
+        "week": 8
+      },
+      "before": "[D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/].",
+      "after": "[D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]right[/]."
+    },
+    {
+      "path": "content/seed_weeks/a1_w08.yaml",
+      "pointer": "/script/4/text",
+      "identity": {
+        "week": 8
+      },
+      "before": "[P1]On[/] [T1]the[/] [A3]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]?",
+      "after": "[P1]On[/] [T1]the[/] [S4]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]?"
+    },
+    {
+      "path": "content/seed_weeks/a1_w08.yaml",
+      "pointer": "/script/6/text",
+      "identity": {
+        "week": 8
+      },
+      "before": "[O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [A3]right[/].",
+      "after": "[O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [S4]right[/]."
+    },
+    {
+      "path": "content/seed_weeks/a1_w08.yaml",
+      "pointer": "/twister/text",
+      "identity": {
+        "week": 8,
+        "number": 8
+      },
+      "before": "[D4]Turn[/] [A3]right[/], [D4]turn[/] [A3]left[/], [A3]right[/], [A3]left[/], [A3]left[/], [A3]right[/]. [T1]The[/] [A3]right[/] [S2]door[/] [D1]is[/] [P3]on[/] [T1]the[/] [A3]left[/]!",
+      "after": "[D4]Turn[/] [A3]right[/], [D4]turn[/] [A3]left[/], [A3]right[/], [A3]left[/], [A3]left[/], [A3]right[/]. [T1]The[/] [J3]right[/] [S2]door[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]left[/]!"
+    }
+  ]
+}

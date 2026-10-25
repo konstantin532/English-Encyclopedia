@@ -1,0 +1,133 @@
+Creating test database for alias 'default'...
+FFF..FFFF
+======================================================================
+FAIL: test_loaded_existing_cafe_unit_declares_its_spellings_without_another_uid (tests.test_audit_latin_tokens.RealLatinCourseAuditTests.test_loaded_existing_cafe_unit_declares_its_spellings_without_another_uid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-audit-latin-helper/tests/test_audit_latin_tokens.py", line 49, in test_loaded_existing_cafe_unit_declares_its_spellings_without_another_uid
+    self.assertTrue({'café','cafés'}<=set(unit.forms))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_real_audit_keeps_valid_cafe_and_still_reports_whole_unknown_words (tests.test_audit_latin_tokens.RealLatinCourseAuditTests.test_real_audit_keeps_valid_cafe_and_still_reports_whole_unknown_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-audit-latin-helper/tests/test_audit_latin_tokens.py", line 60, in test_real_audit_keeps_valid_cafe_and_still_reports_whole_unknown_words
+    self.assertNotIn('caf',report.unknown_words)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'caf' unexpectedly found in {'caf': {'a1-where-is-prepositions/задание 4'}, 'pi': {'a1-where-is-prepositions/задание 4'}, 'ata': {'a1-where-is-prepositions/задание 4'}}
+
+======================================================================
+FAIL: test_accented_words_are_single_tokens_and_russian_explanations_are_ignored (tests.test_audit_latin_tokens.LatinAuditTokenTests.test_accented_words_are_single_tokens_and_russian_explanations_are_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-audit-latin-helper/tests/test_audit_latin_tokens.py", line 12, in test_accented_words_are_single_tokens_and_russian_explanations_are_ignored
+    self.assertEqual(text_tokens('Кофе: café, piñata; résumé и naïve.'),['café','piñata','résumé','naïve'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['caf', 'pi', 'ata', 'r', 'sum', 'na', 've'] != ['café', 'piñata', 'résumé', 'naïve']
+
+First differing element 0:
+'caf'
+'café'
+
+First list contains 3 additional elements.
+First extra element 4:
+'sum'
+
+- ['caf', 'pi', 'ata', 'r', 'sum', 'na', 've']
+?            ^^^^        ^^^^         ^^^^
+
++ ['café', 'piñata', 'résumé', 'naïve']
+?      +      ^        ^   +      ^
+
+
+======================================================================
+FAIL: test_nfd_and_nfc_have_one_identity_without_losing_accents (tests.test_audit_latin_tokens.LatinAuditTokenTests.test_nfd_and_nfc_have_one_identity_without_losing_accents)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-audit-latin-helper/tests/test_audit_latin_tokens.py", line 16, in test_nfd_and_nfc_have_one_identity_without_losing_accents
+    self.assertEqual(text_tokens(unicodedata.normalize('NFD',text)),text.split())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['cafe', 'i', 'ntegro', 're', 'sume'] != ['café', 'íntegro', 'résumé']
+
+First differing element 0:
+'cafe'
+'café'
+
+First list contains 2 additional elements.
+First extra element 3:
+'re'
+
+- ['cafe', 'i', 'ntegro', 're', 'sume']
+?      ^    ^^^^^           ^^^^^   ^
+
++ ['café', 'íntegro', 'résumé']
+?      ^    ^           ^   ^
+
+
+======================================================================
+FAIL: test_resume_and_resume_with_accents_remain_distinct_words (tests.test_audit_latin_tokens.LatinAuditTokenTests.test_resume_and_resume_with_accents_remain_distinct_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-audit-latin-helper/tests/test_audit_latin_tokens.py", line 37, in test_resume_and_resume_with_accents_remain_distinct_words
+    self.assertEqual(text_tokens('résumé resume'),['résumé','resume'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['r', 'sum', 'resume'] != ['résumé', 'resume']
+
+First differing element 0:
+'r'
+'résumé'
+
+First list contains 1 additional elements.
+First extra element 2:
+'resume'
+
+- ['r', 'sum', 'resume']
+?    ^^^^
+
++ ['résumé', 'resume']
+?    ^   +
+
+
+======================================================================
+FAIL: test_stored_nfd_forms_are_canonically_normalized (tests.test_audit_latin_tokens.LatinAuditTokenTests.test_stored_nfd_forms_are_canonically_normalized)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-audit-latin-helper/tests/test_audit_latin_tokens.py", line 29, in test_stored_nfd_forms_are_canonically_normalized
+    self.assertIn('café',unit_words(unit))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'café' not found in {'café', 'cafe'}
+
+======================================================================
+FAIL: test_unknown_pinata_does_not_become_two_known_ascii_fragments (tests.test_audit_latin_tokens.LatinAuditTokenTests.test_unknown_pinata_does_not_become_two_known_ascii_fragments)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-audit-latin-helper/tests/test_audit_latin_tokens.py", line 32, in test_unknown_pinata_does_not_become_two_known_ascii_fragments
+    self.assertEqual(words,['piñata'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['pi', 'ata'] != ['piñata']
+
+First differing element 0:
+'pi'
+'piñata'
+
+First list contains 1 additional elements.
+First extra element 1:
+'ata'
+
+- ['pi', 'ata']
+?     ^^^^
+
++ ['piñata']
+?     ^
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 7.823s
+
+FAILED (failures=7)
+Destroying test database for alias 'default'...
+Found 9 test(s).
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).

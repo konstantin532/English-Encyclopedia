@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+    "manage.py",
+    "test",
+    "tests.test_a1_deep_13_16_shared",
+    "--noinput"
+  ],
+  "exit_code": 1,
+  "seconds": 15.764,
+  "database_url": "sqlite:////tmp/ee-1316-shared-before-kjgtc5xs/fixture.sqlite3"
+}

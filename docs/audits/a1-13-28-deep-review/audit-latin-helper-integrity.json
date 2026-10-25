@@ -1,0 +1,188 @@
+{
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "files": {
+    "apps/publishing/audit.py": "c956bd9079ff019b741ed5ec22a1fded172dbca332d4fd6457ac6f0f99ee40ef",
+    "content/seed_lexicon/a1_w06_day.yaml": "166972b13483aaa594d36a1be853790c63e1f6f005fe50133b272c75412464d6",
+    "tests/test_audit_latin_tokens.py": "608ffc2a07e5af1a7a1d8b74cbf73f763d17a606309c2187d31d37c39d360211"
+  },
+  "tests_before": {
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "test",
+      "tests.test_audit_latin_tokens",
+      "--noinput"
+    ],
+    "exit_code": 1,
+    "seconds": 22.68,
+    "database": "/tmp/ee-a1-13-16-latin-frozen-before-rh_6olh9/fixture.sqlite3",
+    "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+    "test_sha256": "608ffc2a07e5af1a7a1d8b74cbf73f763d17a606309c2187d31d37c39d360211"
+  },
+  "tests_after": {
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "test",
+      "tests.test_audit_latin_tokens",
+      "--noinput"
+    ],
+    "exit_code": 0,
+    "seconds": 19.702,
+    "database": "/tmp/ee-a1-13-16-latin-frozen-after-p266i1_0/fixture.sqlite3",
+    "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+    "test_sha256": "608ffc2a07e5af1a7a1d8b74cbf73f763d17a606309c2187d31d37c39d360211"
+  },
+  "actual_course_audit": [
+    {
+      "snapshot": "before",
+      "name": "guard",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "shell",
+        "-c",
+        "from django.conf import settings; d=settings.DATABASES['default']; assert d['ENGINE']=='django.db.backends.sqlite3' and d['NAME']=='/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3'; print(d['NAME'])"
+      ],
+      "exit_code": 0,
+      "seconds": 0.826,
+      "database": "/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3"
+    },
+    {
+      "snapshot": "before",
+      "name": "migrate",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "migrate",
+        "--noinput",
+        "-v0"
+      ],
+      "exit_code": 0,
+      "seconds": 4.44,
+      "database": "/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3"
+    },
+    {
+      "snapshot": "before",
+      "name": "load",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "load_content"
+      ],
+      "exit_code": 0,
+      "seconds": 7.611,
+      "database": "/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3"
+    },
+    {
+      "snapshot": "before",
+      "name": "inject-key",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "shell",
+        "-c",
+        "from apps.drills.models import Exercise; e=Exercise.objects.get(uid='EX-00083'); e.accepted=list(dict.fromkeys([*e.accepted, \"The caf\u00e9's on the right.\"])); e.save(update_fields=['accepted']); print(e.uid,e.accepted)"
+      ],
+      "exit_code": 0,
+      "seconds": 0.371,
+      "database": "/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3"
+    },
+    {
+      "snapshot": "before",
+      "name": "audit",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "audit_course"
+      ],
+      "exit_code": 0,
+      "seconds": 13.003,
+      "database": "/tmp/ee-audit-latin-before-125vgvzy/fixture.sqlite3"
+    },
+    {
+      "snapshot": "after",
+      "name": "guard",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "shell",
+        "-c",
+        "from django.conf import settings; d=settings.DATABASES['default']; assert d['ENGINE']=='django.db.backends.sqlite3' and d['NAME']=='/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3'; print(d['NAME'])"
+      ],
+      "exit_code": 0,
+      "seconds": 0.556,
+      "database": "/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3"
+    },
+    {
+      "snapshot": "after",
+      "name": "migrate",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "migrate",
+        "--noinput",
+        "-v0"
+      ],
+      "exit_code": 0,
+      "seconds": 3.961,
+      "database": "/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3"
+    },
+    {
+      "snapshot": "after",
+      "name": "load",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "load_content"
+      ],
+      "exit_code": 0,
+      "seconds": 11.111,
+      "database": "/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3"
+    },
+    {
+      "snapshot": "after",
+      "name": "inject-key",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "shell",
+        "-c",
+        "from apps.drills.models import Exercise; e=Exercise.objects.get(uid='EX-00083'); e.accepted=list(dict.fromkeys([*e.accepted, \"The caf\u00e9's on the right.\"])); e.save(update_fields=['accepted']); print(e.uid,e.accepted)"
+      ],
+      "exit_code": 0,
+      "seconds": 0.418,
+      "database": "/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3"
+    },
+    {
+      "snapshot": "after",
+      "name": "audit",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "audit_course"
+      ],
+      "exit_code": 0,
+      "seconds": 8.669,
+      "database": "/tmp/ee-audit-latin-after-dsbtipgu/fixture.sqlite3"
+    }
+  ],
+  "related_tests": {
+    "command": [
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+      "manage.py",
+      "test",
+      "tests.test_audit_latin_tokens",
+      "tests.test_a1_recycling",
+      "tests.test_p0_audit_regressions",
+      "tests.test_audit_weeks",
+      "tests.test_audit_fifteen",
+      "--noinput"
+    ],
+    "exit_code": 0,
+    "seconds": 149.236,
+    "database": "/tmp/ee-a1-13-16-latin-related-dr4pa0hh/fixture.sqlite3",
+    "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+    "test_sha256": "608ffc2a07e5af1a7a1d8b74cbf73f763d17a606309c2187d31d37c39d360211"
+  }
+}

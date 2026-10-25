@@ -1,0 +1,49 @@
+{
+  "database_url": "sqlite:////tmp/ee-1316-integrated-audit-lt9rd26z/fixture.sqlite3",
+  "steps": [
+    {
+      "name": "guard",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "shell",
+        "-c",
+        "from django.conf import settings; d=settings.DATABASES['default']; assert d['ENGINE']=='django.db.backends.sqlite3' and d['NAME']=='/tmp/ee-1316-integrated-audit-lt9rd26z/fixture.sqlite3'; print(d['NAME'])"
+      ],
+      "exit_code": 0,
+      "seconds": 0.589
+    },
+    {
+      "name": "migrate",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "migrate",
+        "--noinput",
+        "-v0"
+      ],
+      "exit_code": 0,
+      "seconds": 3.114
+    },
+    {
+      "name": "load",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "load_content"
+      ],
+      "exit_code": 0,
+      "seconds": 8.533
+    },
+    {
+      "name": "audit",
+      "command": [
+        "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+        "manage.py",
+        "audit_course"
+      ],
+      "exit_code": 0,
+      "seconds": 7.631
+    }
+  ]
+}

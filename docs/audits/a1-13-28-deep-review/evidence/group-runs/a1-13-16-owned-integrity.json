@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "content_files": 8,
+  "semantic_fields": 54,
+  "stable_ids": true,
+  "seven_layers": true,
+  "old_answers_retained": true,
+  "registry_unchanged": true,
+  "map_original_class_and_marker_retained": true,
+  "audio_english_change": "LX00340 example and L15 explanatory example/exercise place park→school; no recorded dialogue/story/IPA touched",
+  "source_sha256": {
+    "content/seed_lessons/a1_w07_l13_he_works.yaml": "24b1ce2fa2cbc4b58106c1cdf8eeeabc04066aa5d228c76bed0cf165d92b4f39",
+    "content/seed_lessons/a1_w07_l14_jobs.yaml": "8b1a89ace5fb2658bf6902294d40e709609243343b583c5e73afb8c706d1f5df",
+    "content/seed_lessons/a1_w08_l15_where_is.yaml": "de150c7ae74991af5081eda40d5c729ad1f3af24cbee35cc967e1bdc2dd8cb21",
+    "content/seed_lessons/a1_w08_l16_directions.yaml": "f0d41be0f1bacfc22b21dd43dd668eda69ce220e038235dcb1a289c8157446d8",
+    "content/seed_lexicon/a1_w07_work.yaml": "797a1c3e71988c4f2c7ec3a65075f4d182d93d3d33bbf78b2bff06f0e81a21c7",
+    "content/seed_lexicon/a1_w07_work_plus.yaml": "9b8da95f95e0210218ca59dbe99ee9fae66091e84cc2b0c3aeecb810e0b09bbe",
+    "content/seed_lexicon/a1_w08_city.yaml": "378a6f2e768ad36467173430d4061bd7be82d56854b93dacb4c2c4898b7328c7",
+    "content/seed_lexicon/a1_w08_city_plus.yaml": "30f96208a04e43454677035a1c99511682c816128dbee572b72d7d7cdab59cc1",
+    "tests/test_a1_editorial_deep_13_16.py": "de2e0b41e5b0cfead4740de9932f6299573acf62aa3ed30b48858ec97b519188",
+    "tests/test_a1_side_context_13_16.py": "84d4e218f23a440ebe4e7a6fbe99977f72c4391e12023cb5ab4a59d8c8337ba2"
+  }
+}

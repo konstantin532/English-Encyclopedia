@@ -120,7 +120,7 @@ exercises:
     accepted: ["do not"]
     hint_ru: "С I — don't."
     explanation_ru: "I don't have a stamp — «у меня нет марки»."
-    units: [LX-00233]
+    units: []
   - order: 3
     uid: EX-00130
     kind: build
@@ -167,7 +167,7 @@ exercises:
     - Sorry, I do not know the ZIP code.
     - Sorry, I do not know the ZIP code
     hint_ru: Sorry + I don't know + the ZIP code.
-    explanation_ru: Отрицайте действие know через do not; ZIP code — индекс в США.
+    explanation_ru: Know — глагол «знать». В Present Simple с I его отрицание строится через do not, хотя знать — состояние, а не действие. ZIP code — индекс в США.
     units:
     - LX-00415
     - LX-00236
@@ -183,14 +183,14 @@ practice:
   units: [LX-00233, LX-00226]
 - order: 2
   kind: translate
-  prompt_ru: Старый ящик не получает писем.
+  prompt_ru: Речь об уже известном старом почтовом ящике. Скажите, что он не получает писем; назовите его словом mailbox. Слово old можно повторить.
   answer: The old mailbox does not get letters.
   accepted:
   - The mailbox does not get letters.
   hint_ru: mailbox = it → doesn't.
   explanation_ru: The old mailbox doesn't get letters. С it — doesn't, а get без -s.
   review_of: 1
-  units: [LX-00180, LX-00225, LX-00235]
+  units: [LX-00180, LX-00225]
 - order: 3
   kind: translate
   prompt_ru: Я не знаю.

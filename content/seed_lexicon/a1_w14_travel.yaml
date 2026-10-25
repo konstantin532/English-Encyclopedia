@@ -58,7 +58,7 @@ units:
   example_en: Does this bus go to Park Street?
   example_ru: Этот автобус идёт до Парк-стрит?
   situation: Поездка на автобусе
-  usage_note: 'Главный вопрос в чужом городе: вставьте любую остановку вместо Park Street.'
+  usage_note: 'Вопрос о маршруте: Does this bus go to Park Street? Для другого места учитывайте артикль: to Park Street, но to the park.'
 - uid: LX-00256
   lemma: How much is a ticket?
   meaning: Asking the price of a trip
@@ -95,4 +95,4 @@ units:
   example_en: What time is the next bus?
   example_ru: Во сколько следующий автобус?
   situation: Поездка на автобусе
-  usage_note: 'next — следующий: next bus, next stop. t в next перед согласным почти не слышно.'
+  usage_note: 'next — следующий: next bus, next stop. В быстрой речи t перед согласным может быть ослаблено или опущено; чёткое t тоже допустимо.'

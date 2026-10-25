@@ -145,12 +145,12 @@
       2
     ],
     [
-      "Вы объясняете, что магазин напротив парка, через дорогу.",
+      "Вы объясняете, что магазин напротив школы, через дорогу.",
       "",
       [
-        "The shop is across from the park.",
-        "The shop is in the park.",
-        "The shop is under the park."
+        "The shop is across from the school.",
+        "The shop is in the school.",
+        "The shop is under the school."
       ],
       0
     ]

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+    "manage.py",
+    "test",
+    "tests.test_a1_deep_13_16_shared",
+    "--noinput"
+  ],
+  "exit_code": 0,
+  "seconds": 21.245,
+  "database_url": "sqlite:////tmp/ee-1316-shared-after-final-3qt3bve5/fixture.sqlite3",
+  "frozen_shared_test_sha256": "1ce1639c45e451a7cfe39b6e14687ae1f879cc022a4d33590ad58527ab948919",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "frozen_sides_test_sha256": "102cae3223a9a6a5b7d235edf17b4f327e11c59db9629bba6df6f55e35b110ae"
+}

@@ -71,14 +71,37 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
     if(process.env.ATLAS_REDESIGN!=='1'){assert.equal(changed.length,0,`${name} ${width}: ${changed.join(', ')}`);assert.ok(maxDelta<=1,`${name} ${width}: geometry changed ${maxDelta}px`);}
    }
   }
-  // Editorial9–12: actual changed reading pages, in addition to the
+  // Editorial9–28: actual changed reading pages, in addition to the
   // existing before/after geometry gate above (which remains unchanged).
   const editorialPages=[
    ['lesson09','/lessons/a1-there-is-some/',true],
    ['lesson10','/lessons/a1-how-much-prices/',true],
    ['lesson11','/lessons/a1-present-simple-i-you/',true],
    ['lesson12','/lessons/a1-time-at-seven/',true],
-   ['story02','/stories/2/',false],['poem03','/stories/poems/3/',false]
+   ['story02','/stories/2/',false],['poem03','/stories/poems/3/',false],
+   ['lesson13','/lessons/a1-he-she-works/',true],
+   ['lesson14','/lessons/a1-jobs-what-do-you-do/',true],
+   ['lesson15','/lessons/a1-where-is-prepositions/',true],
+   ['lesson16','/lessons/a1-directions-turn-left/',true],
+   ['lesson17','/lessons/a1-questions-do-does/',true],
+   ['lesson18','/lessons/a1-spelling-phone-numbers/',true],
+   ['lesson19','/lessons/a1-always-never/',true],
+   ['lesson20','/lessons/a1-like-doing/',true],
+   ['lesson21','/lessons/a1-what-hurts/',true],
+   ['lesson22','/lessons/a1-cant-cannot/',true],
+   ['lesson23','/lessons/a1-dont-doesnt/',true],
+   ['lesson24','/lessons/a1-letters-address/',true],
+   ['lesson25','/lessons/a1-can-skills/',true],
+   ['lesson26','/lessons/a1-why-because/',true],
+   ['lesson27','/lessons/a1-bus-ticket/',true],
+   ['lesson28','/lessons/a1-review-everything/',true],
+   ['story03','/stories/3/',false],
+   ['story04','/stories/4/',false],
+   ['story05','/stories/5/',false],
+   ['poem04','/stories/poems/4/',false],
+   ['poem05','/stories/poems/5/',false],
+   ['poem06','/stories/poems/6/',false],
+   ['poem07','/stories/poems/7/',false]
   ];
   report.editorialPages=[];
   for(const [width,height] of [[1440,900],[390,844]]){

@@ -1,0 +1,16 @@
+[
+  {
+    "n": 17,
+    "wrong": "What time does the shop opens?",
+    "correct": "What time does the shop open?",
+    "hint": "После does нельзя снова добавлять окончание -s.",
+    "reason": "Показатель лица уже есть в does, поэтому используйте исходную форму open. В утверждении: The shop opens at nine."
+  },
+  {
+    "n": 18,
+    "wrong": "Can you spell you last name?",
+    "correct": "Can you spell your last name?",
+    "hint": "Вопрос о том, чья фамилия, требует притяжательного слова.",
+    "reason": "You — «ты/вы», your — «твой/ваш» перед существительным: your last name. Вежливая просьба: Can you spell your last name, please?"
+  }
+]

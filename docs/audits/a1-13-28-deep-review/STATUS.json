@@ -1,0 +1,31 @@
+{
+  "parent": "8788aac996c5010060b47cca6f12f0480c2d492c",
+  "branch": "editorial/a1-13-28-deep-review-20261025",
+  "scope": {
+    "A1": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "A1+": []
+  },
+  "status": "technical_review_pending_full_ci_and_browser",
+  "merge": "not performed; after #119 only",
+  "new_combined_targeted": "115 PASS before addenda;32 PASS after addenda; not additive",
+  "full_django": "running historical pre-addenda;2 observed failures corrected; not PASS",
+  "audio": "BLOCKED actual recordings/listening",
+  "human_acceptance": "not performed"
+}

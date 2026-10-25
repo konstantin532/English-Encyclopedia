@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "content_files": 10,
+  "source_files": 12,
+  "semantic_fields": 85,
+  "English_audio_IPA_unchanged": true,
+  "poem_targets_gaps_unchanged": true,
+  "other_lesson_rows_unchanged": true,
+  "story_field_lengths_valid": true,
+  "source_hashes": {
+    "content/active_a1/scenarios_13_18.json": "4057abe4adf72c58e3957dd7c5ede32f972ef4153c6476d495231a00f244baf8",
+    "content/active_a1/topics_09_13.json": "a4d8d5b92ab9f611979ab7a37a92f35a970d7881c3484b8274c9a98dfe634545",
+    "content/manifests/a1_delayed_review_topics_13_16.json": "9d306096fbc7f1893877c009afce1c2572467530b2a65a669741e3c1a677014c",
+    "content/manifests/a1_micro_review_13_16.json": "8c9df390a39cb17b0771d62c3b0e5d76bf8d1f995cb84825c3e053da52420f4a",
+    "content/manifests/a1_scaffold_transfer.json": "548a4b4979e0925f07c8c77e571f158c4309c9ad253068b285804c84d431c612",
+    "content/manifests/a1_understanding_checks.json": "2b29b6a254b99c8dec23179dccba739373f7e0272337061ba226e47fa23ba772",
+    "content/seed_poems/p04_one_for_you.yaml": "936079456c80456011c16936f17edd30e0b0722299701c976e0761b3cf628748",
+    "content/seed_stories/s03_whose_key.yaml": "b81399f40063679cac31d641b22a6248c06a8dba71415a830b412aa3de178102",
+    "content/seed_weeks/a1_w07.yaml": "0896f73158b52634e712dbb8e5c5a808b86f3e4fb842fca2a8894b6e1b084502",
+    "content/seed_weeks/a1_w08.yaml": "509c786cf67baa305ca29672b3b623ca3699d8e1ebf443df7079acc128c4128a",
+    "tests/test_a1_deep_13_16_shared.py": "1ce1639c45e451a7cfe39b6e14687ae1f879cc022a4d33590ad58527ab948919",
+    "tests/test_a1_deep_13_16_shared_sides.py": "102cae3223a9a6a5b7d235edf17b4f327e11c59db9629bba6df6f55e35b110ae"
+  },
+  "frozen_test_sha256": "1ce1639c45e451a7cfe39b6e14687ae1f879cc022a4d33590ad58527ab948919",
+  "frozen_sides_test_sha256": "102cae3223a9a6a5b7d235edf17b4f327e11c59db9629bba6df6f55e35b110ae"
+}

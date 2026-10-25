@@ -13,7 +13,7 @@ sound_notes:
     note_ru: "В этом нейтральном вопросе can без ударения: /kən/. При подчёркивании умения возможно ударное /kæn/."
   - text: "Yes, I can."
     ipa: "/ˈjɛs aɪ ˈkæn/"
-    note_ru: "в конце фразы can полное и ударное: «кЭн»"
+    note_ru: "В таком утвердительном коротком ответе can обычно ударное: /kæn/."
   - text: "I can speak Russian and English."
     ipa: "/aɪ kən ˈspik ˈrʌʃən ən ˈɪŋɡlɪʃ/"
     note_ru: "English — «Ингльш», с носовым ŋ перед g"
@@ -60,7 +60,7 @@ layers:
 
       > [T8]I[/] [D7]can[/][X1]not[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]? [T8]I[/] [D3]want[/] [X2]to[/] [D6]learn[/]. — А я не говорю по-русски. Научишь меня? Я хочу учиться.
 
-      После модального **can** смысловой глагол в наших примерах стоит в **начальной форме без to**: *can speak, can swim*. Это отдельное правило сочетания **can + действие**, а не правило для всех глаголов английского языка.
+      После модального **can** смысловой глагол в наших примерах стоит в **начальной форме без to**: *can speak, can swim*. Это отдельное правило сочетания **can + глагол в начальной форме**, а не правило для всех глаголов английского языка.
 
       **Диагностика понимания:** Вы хотите сказать, что **она умеет плавать**. Что верно: *She can swim* или *She cans swim*?
 
@@ -71,7 +71,7 @@ layers:
 
       > [S1]Anna[/], [D7]can[/] [T8]you[/] [D5]speak[/] [S10]Russian[/]? — Анна, ты говоришь по-русски?
 
-      - Языки пишут с большой буквы и без the: speak English, speak Russian.
+      - Названия языков пишут с большой буквы. В сочетаниях speak English, speak Russian артикль не нужен; это не запрет на the перед любым сочетанием со словом English.
       - Краткий ответ на **Can you…?**: *Yes, I can* или *No, I can't*. На **Do you speak…?** отвечаем *Yes, I do / No, I don't*. Сохраняйте каркас заданного вопроса: одинаковый русский перевод не делает **can** и **do** взаимозаменяемыми в кратком ответе.
       - Чуть-чуть: I can speak a little Russian — «я немного говорю по-русски».
 
@@ -138,7 +138,7 @@ exercises:
     prompt_ru: "Новая ситуация: в поездке вас спрашивают, говорите ли вы по-английски. По условию вы говорите и по-русски, и по-английски. Ответьте коротко; если хотите, добавьте вторую фразу об обоих языках."
     prompt_en: "Can you speak English? — ___"
     answer: "Yes, I can. I can speak Russian and English."
-    accepted: ["Yes, I can.", "Yes, I can", "Yes, I can. I speak Russian and English.", "Yes, I can speak English.", "Yes. I can speak Russian and English.", "Yes, I can. I can speak Russian and English"]
+    accepted: ["Yes, I can.", "Yes, I can", "Yes, I can. I speak Russian and English.", "Yes, I can speak English.", "Yes. I can speak Russian and English.", "Yes, I can. I can speak Russian and English", "Yes, I can. I can speak English and Russian.", "Yes, I can. I speak English and Russian.", "Yes. I can speak English and Russian."]
     hint_ru: "На Can you…? достаточно Yes, I can. Фразу о двух языках добавьте только по желанию."
     explanation_ru: "На Can you speak English? достаточно Yes, I can. Если вы хотите назвать оба языка, можно добавить I can speak Russian and English. Это образец по условию задания, а не предположение об умениях ученика."
     units: [LX-00248]

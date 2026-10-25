@@ -168,7 +168,6 @@ exercises:
     explanation_ru: It is sunny today — полное предложение. В английском здесь нужен глагол is и подлежащее it.
     units:
     - LX-00458
-    - LX-00457
   - order: 6
     uid: EX-00163
     kind: fill

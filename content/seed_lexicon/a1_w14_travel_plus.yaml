@@ -195,7 +195,7 @@ units:
   class: S4
   ipa_us: /trɪp/
   translation_ru: поездка
-  meaning: a journey to a place and back
+  meaning: a journey from one place to another
   example_en: '[T3]Our[/] [S4]trip[/] [D8]starts[/] [P3]on[/] [S7]Monday[/].'
   example_ru: Наша поездка начинается в понедельник.
   usage_note: 'Trip — отдельная поездка, которую можно посчитать: a trip, two trips.'
@@ -310,7 +310,7 @@ units:
   meaning: an object held over you to keep rain off
   example_en: '[T8]I[/] [D1]have[/] [T1]an[/] [S2]umbrella[/].'
   example_ru: У меня есть зонт.
-  usage_note: Перед umbrella — an, потому что слово начинается с гласного звука.
+  usage_note: "В an umbrella выбираем an, а не a, перед гласным звуком. Это не обязательный артикль перед каждым umbrella: my umbrella — мой зонт, the umbrella — уже известный зонт."
   forms:
   - umbrellas
   cefr: unverified

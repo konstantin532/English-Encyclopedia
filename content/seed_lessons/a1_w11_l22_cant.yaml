@@ -37,7 +37,7 @@ layers:
       **I can sleep.** — Я могу спать.
       **I cannot sleep. / I can't sleep.** — Я не могу спать. Смысл меняет отрицание; слово **sleep** остаётся той же формой.
 
-      После **can't** называем действие: **sleep, work, walk**. С другим человеком схема сохраняется: **Tom can't sleep**, без *cans* и без *sleeps*. Не добавляем to: **can't sleep**, а не *can't to sleep*.
+      После **can't** ставим глагол в начальной форме: **sleep, work, walk**. С другим человеком схема сохраняется: **Tom can't sleep**, без *cans* и без *sleeps*. Не добавляем to: **can't sleep**, а не *can't to sleep*.
 
       **I am tired** сообщает о состоянии: «Я устал». **I can't sleep** сообщает, какое действие не получается: «Я не могу спать». Чтобы соединить обе мысли, скажите **I am tired and I can't sleep.** Не смешивайте схемы: *I am can't sleep* и *I can tired* не подходят.
 
@@ -53,7 +53,7 @@ layers:
       - Вопрос: Can you sleep? — Yes, I can. / No, I can't.
       - **but** показывает контраст: My head is OK, but my back hurts. Не обязательно искать слова-антонимы: достаточно, что вторая мысль расходится с первой или с ожиданием.
 
-      **Самочувствие и действие — разные вещи.** Sick — нездоровый, tired — уставший, hungry — голодный, thirsty — испытывающий жажду, well — здоровый. О состоянии говорят с be или feel — «чувствовать себя»:
+      **Сравним две конструкции.** Sick — нездоровый, tired — уставший, hungry — голодный, thirsty — испытывающий жажду, well — здоровый в этих примерах. Здесь это прилагательные: для сообщения о самочувствии поставьте перед ними be или feel — «чувствовать себя». Это правило для этих сочетаний, а не для любого состояния: знакомое **I like tea** тоже описывает отношение, но like — самостоятельный глагол.
 
       > [T8]I[/] [D3]feel[/] [J4]sick[/] [C1]and[/] [J4]tired[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — Мне нехорошо, и я устал. У меня болит голова.
       > [T8]I[/] [D1]am[/] [J4]hungry[/]. — Я голоден.
@@ -157,8 +157,8 @@ exercises:
     options: ["I am thirsty.", "I am hungry.", "I am tired."]
     answer: "I am thirsty."
     hint_ru: "Thirsty — хочется пить, hungry — хочется есть."
-    explanation_ru: "I am thirsty. О состоянии говорят с am / is / are или feel."
-    units: [LX-00403, LX-00404, LX-00405]
+    explanation_ru: "I am thirsty. Thirsty — прилагательное: в этой конструкции перед ним нужен am. Можно также сказать I feel thirsty."
+    units: [LX-00405]
   - order: 6
     uid: EX-00127
     kind: build
@@ -166,7 +166,7 @@ exercises:
     prompt_ru: "Новая ситуация: друг не понимает, почему вы отдыхаете. Соберите: «Я устал и не могу спать»."
     options: ["sleep", "tired", "I", "can't", "and", "am", "I"]
     answer: "I am tired and I can't sleep"
-    hint_ru: "Сначала I am + состояние, затем and и I can't + действие."
+    hint_ru: "Сначала I am + прилагательное tired, затем and и I can't + глагол sleep."
     explanation_ru: "I am tired and I can't sleep. Перед tired — am, после can't — sleep без to."
     units: [LX-00403, LX-00218]
 # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
@@ -176,7 +176,7 @@ practice:
   prompt_ru: Я не могу спать.
   answer: I cannot sleep.
   hint_ru: «Не могу» — cannot или can't.
-  explanation_ru: I can't sleep. Cannot пишут одним словом; в речи — can't.
+  explanation_ru: I can't sleep. Обычную полную форму cannot пишут одним словом. Can't — разговорное сокращение; cannot тоже можно произнести, например для подчёркивания.
   review_of: 2
   units:
   - LX-00217

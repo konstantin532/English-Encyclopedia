@@ -1,0 +1,77 @@
+Creating test database for alias 'default'...
+/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-a1-21-24-before/staticfiles/
+  mw_instance = middleware(adapted_handler)
+FFFF..F
+======================================================================
+FAIL: test_dont_gap_does_not_certify_supplied_stamp_phrase (tests.test_a1_editorial_deep_21_24.Editorial2124Tests.test_dont_gap_does_not_certify_supplied_stamp_phrase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-21-24-before/tests/test_a1_editorial_deep_21_24.py", line 41, in test_dont_gap_does_not_certify_supplied_stamp_phrase
+    self.progress('EX-00129',"don't",set())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-21-24-before/tests/test_a1_editorial_deep_21_24.py", line 27, in progress
+    self.assertEqual(set(UnitProgress.objects.filter(user=user).values_list('unit__uid',flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00233'
+
+======================================================================
+FAIL: test_headache_gap_progress (tests.test_a1_editorial_deep_21_24.Editorial2124Tests.test_headache_gap_progress)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-21-24-before/tests/test_a1_editorial_deep_21_24.py", line 19, in test_headache_gap_progress
+    def test_headache_gap_progress(self): self.progress('EX-00117','headache',{'LX-00212'})
+                                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-21-24-before/tests/test_a1_editorial_deep_21_24.py", line 27, in progress
+    self.assertEqual(set(UnitProgress.objects.filter(user=user).values_list('unit__uid',flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00221'
+
+======================================================================
+FAIL: test_leg_progress (tests.test_a1_editorial_deep_21_24.Editorial2124Tests.test_leg_progress)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-21-24-before/tests/test_a1_editorial_deep_21_24.py", line 22, in test_leg_progress
+    self.progress('EX-00121','My leg hurts.',{'LX-00400'})
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-21-24-before/tests/test_a1_editorial_deep_21_24.py", line 27, in progress
+    self.assertEqual(set(UnitProgress.objects.filter(user=user).values_list('unit__uid',flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00408'
+
+======================================================================
+FAIL: test_local_contraction_owner_negation_and_order (tests.test_a1_editorial_deep_21_24.Editorial2124Tests.test_local_contraction_owner_negation_and_order) (answer="My last name's Belova.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-21-24-before/tests/test_a1_editorial_deep_21_24.py", line 18, in test_local_contraction_owner_negation_and_order
+    with self.subTest(answer=answer): self.post('EX-00139',answer,expected)
+                                      ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-21-24-before/tests/test_a1_editorial_deep_21_24.py", line 15, in post
+    self.assertEqual(r.json()['correct'],expected,answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : My last name's Belova.
+
+======================================================================
+FAIL: test_thirst_choice_progress (tests.test_a1_editorial_deep_21_24.Editorial2124Tests.test_thirst_choice_progress)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-21-24-before/tests/test_a1_editorial_deep_21_24.py", line 20, in test_thirst_choice_progress
+    def test_thirst_choice_progress(self): self.progress('EX-00126','I am thirsty.',{'LX-00405'})
+                                           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-21-24-before/tests/test_a1_editorial_deep_21_24.py", line 27, in progress
+    self.assertEqual(set(UnitProgress.objects.filter(user=user).values_list('unit__uid',flat=True)),expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'LX-00404'
+'LX-00403'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.248s
+
+FAILED (failures=5)
+Destroying test database for alias 'default'...
+Found 7 test(s).
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).

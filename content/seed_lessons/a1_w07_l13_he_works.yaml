@@ -21,7 +21,7 @@ contractions:
   - full: "does not"
     short: "doesn't"
     ipa: "/ˈdʌzənt/"
-    note_ru: "No, he doesn't. В разговоре почти всегда doesn't."
+    note_ru: "No, he doesn't. — обычная разговорная форма. Полная does not тоже возможна, например для подчёркнутого отрицания."
 layers:
   - number: 1
     body: |
@@ -113,7 +113,7 @@ exercises:
     answer: "Mia works at the cafe."
     hint_ru: "Один человек — глагол с -s."
     explanation_ru: "Mia works — с одним человеком глагол получает -s. is рядом с work лишний."
-    units: [LX-00153]
+    units: ["LX-00128", "LX-00131"]
   - order: 2
     uid: EX-00069
     kind: fill
@@ -144,7 +144,7 @@ exercises:
     accepted: ["No, she doesn't.", "No she doesn't", "No, she does not", "No she does not"]
     hint_ru: "Короткий ответ на Does she…? строится на does."
     explanation_ru: "No, she does not — в разговоре No, she doesn't. Повторять work не нужно."
-    units: [LX-00155]
+    units: []
   - order: 5
     uid: EX-00072
     kind: choice
@@ -162,10 +162,10 @@ exercises:
     prompt_ru: "Ваш друг — медбрат. Он начинает в семь. Скажите вторую фразу."
     prompt_en: "My friend is a nurse. He ___"
     answer: "starts at seven."
-    accepted: ["starts at seven", "starts at 7.", "starts at 7", "starts work at seven.", "starts work at seven"]
+    accepted: ["starts at seven", "starts at 7.", "starts at 7", "starts work at seven.", "starts work at seven", "starts work at 7.", "starts at seven o'clock.", "starts work at 7 o'clock.", "starts at 7 o'clock.", "starts work at seven o'clock."]
     hint_ru: "he + глагол с -s + at + время."
     explanation_ru: "He starts at seven. — с he глагол получает -s."
-    units: [LX-00332, LX-00319]
+    units: ["LX-00332"]
 # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
 practice:
 - order: 1
@@ -177,10 +177,7 @@ practice:
   hint_ru: Tom = he → works.
   explanation_ru: Tom works at home. С he, she и одним именем глагол получает -s.
   review_of: 1
-  units:
-  - LX-00153
-  - LX-00154
-  - LX-00156
+  units: ["LX-00128", "LX-00153"]
 - order: 2
   kind: translate
   prompt_ru: Мия работает в кафе.
@@ -190,10 +187,7 @@ practice:
   hint_ru: works, а не work.
   explanation_ru: 'Mia works at the cafe. Не забудьте -s: works.'
   review_of: 1
-  units:
-  - LX-00153
-  - LX-00154
-  - LX-00156
+  units: ["LX-00128", "LX-00131"]
 - order: 3
   kind: translate
   prompt_ru: Он работает по ночам.
@@ -201,12 +195,7 @@ practice:
   hint_ru: «Ночью» — at night.
   explanation_ru: He works at night. At night — «ночью, по ночам».
   review_of: 3
-  units:
-  - LX-00150
-  - LX-00153
-  - LX-00154
-  - LX-00155
-  - LX-00156
+  units: ["LX-00128", "LX-00150", "LX-00156"]
 - order: 4
   kind: translate
   prompt_ru: Она начинает в пять.
@@ -214,8 +203,4 @@ practice:
   hint_ru: she → starts.
   explanation_ru: 'She starts at five. She — значит -s: starts.'
   review_of: 6
-  units:
-  - LX-00153
-  - LX-00154
-  - LX-00156
-  - LX-00332
+  units: ["LX-00332"]

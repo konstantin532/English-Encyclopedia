@@ -388,8 +388,8 @@
           "model": "Does Anna work here?"
         },
         {
-          "prompt": "Вы хотите узнать, читает ли Том книги каждый день. Спросите об этом.",
-          "model": "Does Tom read books every day?"
+          "prompt": "Спросите знакомого, работает ли Том дома каждый день.",
+          "model": "Does Tom work at home every day?"
         }
       ]
     },
@@ -444,8 +444,8 @@
       ],
       "transfer_variants": [
         {
-          "prompt": "Телефон лежит внутри сумки. Объясните другу, где он.",
-          "model": "The phone is in the bag."
+          "prompt": "Телефон лежит внутри коробки. Объясните другу, где он.",
+          "model": "The phone is in the box."
         },
         {
           "prompt": "Книга находится под стулом. Объясните, где она лежит.",
@@ -487,25 +487,25 @@
       "slug": "a1-questions-do-does",
       "steps": [
         {
-          "example_en": "Do you live here?",
-          "example_ru": "Ты здесь живёшь?",
-          "why_ru": "Do нужен для вопроса с you и обычным глаголом live."
+          "example_en": "Do you work here?",
+          "example_ru": "Ты здесь работаешь?",
+          "why_ru": "Do нужен для вопроса с you и обычным глаголом work."
         },
         {
-          "example_en": "Does she live here?",
-          "example_ru": "Она здесь живёт?",
-          "why_ru": "Does сочетается с she; live после него без -s."
+          "example_en": "Does she work here?",
+          "example_ru": "Она здесь работает?",
+          "why_ru": "Does сочетается с she; work после него без -s."
         },
         {
           "example_en": "Yes, she does.",
           "example_ru": "Да.",
-          "why_ru": "Короткий ответ повторяет вспомогательный does, а не основной live."
+          "why_ru": "Короткий ответ повторяет вспомогательный does, а не основной work."
         }
       ],
       "transfer_variants": [
         {
-          "prompt": "Узнайте, работает ли Том по воскресеньям.",
-          "model": "Does Tom work on Sundays?"
+          "prompt": "Узнайте, работает ли Том каждый день.",
+          "model": "Does Tom work every day?"
         },
         {
           "prompt": "Спросите у Тома, нравится ли Мии чай. Задайте об этом вопрос.",
@@ -598,8 +598,8 @@
           "model": "I like cooking."
         },
         {
-          "prompt": "Ваше любимое занятие — плавание. Расскажите об этом другу.",
-          "model": "I like swimming."
+          "prompt": "Ваше любимое занятие — прогулки. Расскажите об этом другу.",
+          "model": "I like walking."
         }
       ]
     },
@@ -707,19 +707,19 @@
           "why_ru": "В англоязычном адресе номер дома обычно указывают перед названием улицы."
         },
         {
-          "example_en": "Can you repeat the address, please?",
-          "example_ru": "Повторите адрес, пожалуйста.",
-          "why_ru": "Repeat помогает уточнить услышанное; не обязательно диктовать всё по буквам."
+          "example_en": "Can you spell it, please?",
+          "example_ru": "Продиктуйте это по буквам, пожалуйста.",
+          "why_ru": "Не удалось разобрать написание адреса: попросите произнести его по буквам. Can you spell it, please? — знакомая просьба из урока 18; it отсылает к уже названному адресу."
         }
       ],
       "transfer_variants": [
         {
-          "prompt": "Вы не расслышали адрес. Попросите собеседника повторить его, не называя настоящих данных.",
-          "model": "Can you repeat the address, please?"
+          "prompt": "Вы не разобрали написание адреса. Попросите продиктовать его по буквам; используйте знакомую просьбу со spell и it.",
+          "model": "Can you spell it, please?"
         },
         {
-          "prompt": "На почте сотрудник быстро произнёс имя. Попросите повторить его по буквам.",
-          "model": "Can you spell that again, please?"
+          "prompt": "На почте сотрудник произнёс имя. Попросите назвать его по буквам, используя spell и your name.",
+          "model": "Can you spell your name, please?"
         }
       ]
     },

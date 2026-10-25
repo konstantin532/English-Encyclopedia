@@ -1,0 +1,3154 @@
+diff --git a/apps/publishing/audit.py b/apps/publishing/audit.py
+index c215e56..4872ef0 100644
+--- a/apps/publishing/audit.py
++++ b/apps/publishing/audit.py
+@@ -1,5 +1,6 @@
+ """Аудит курса (/аудит): количества, реестр, разметка, незарегистрированная лексика."""
+ import re
++import unicodedata
+ from itertools import pairwise
+ from dataclasses import dataclass, field
+ from pathlib import Path
+@@ -17,7 +18,8 @@ from apps.stories.models import Story
+ from apps.taxonomy.markup import find_issues, strip_markup
+ from apps.taxonomy.registry import validate_registry
+ 
+-WORD = re.compile(r"[A-Za-z][A-Za-z'’]*")
++# Candidates preserve accents and mixed-script misspellings as whole words.
++WORD = re.compile(r"[^\W\d_](?:[^\W\d_]|['’\u0300-\u036f])*")
+ # Отдельный [X1]n't[/] допустим; основа и отрицание требуют разных маркеров.
+ UNSPLIT_NEGATIVE = re.compile(r"\[([A-Z]\d+)(?:-#[0-9a-fA-F]{6})?\]([^\[]*n['’]t[^\[]*)\[/\]", re.IGNORECASE)
+ # Окончания форм: books, houses, Anna's — формы слова не плодят новые единицы (раздел 4).
+@@ -57,7 +59,8 @@ def known_vocabulary() -> set[str]:
+ 
+ 
+ def unit_words(unit) -> set[str]:
+-    words = {unit.lemma.lower(), *(f.lower() for f in unit.forms or [])}
++    words = {unicodedata.normalize("NFC", word).lower()
++             for word in (unit.lemma, *(unit.forms or []))}
+     if unit.unit_type == UnitType.PHRASE:
+         words.update(token.lower() for token in text_tokens(unit.lemma))
+     return words
+@@ -74,11 +77,16 @@ def vocab_until(level, week_number: int, exclude_ids=()) -> set[str]:
+ 
+ 
+ def text_tokens(text: str) -> list[str]:
+-    return WORD.findall(strip_markup(text))
++    text = unicodedata.normalize("NFC", strip_markup(text))
++    # Ignore pure Russian explanations, but keep cаfe with a Cyrillic а:
++    # silently dropping a mixed-script word would hide a real unknown token.
++    return [token for token in WORD.findall(text) if any(
++        "LATIN" in unicodedata.name(char, "") for char in token
++    )]
+ 
+ 
+ def is_known(token: str, vocab: set[str]) -> bool:
+-    t = token.lower().replace("’", "'")
++    t = unicodedata.normalize("NFC", token).lower().replace("’", "'")
+     if t in vocab:
+         return True
+     for c in CONTRACTIONS:
+@@ -232,17 +240,17 @@ def run_audit() -> AuditReport:
+             audit_contractions(r, where, text)
+             for issue in find_issues(text):
+                 r.errors.append(f"{where}: {issue.token} — {issue.problem}")
+-        for tok in WORD.findall(strip_markup(text)):
++        for tok in text_tokens(text):
+             if not is_known(tok, vocab):
+                 r.unknown_words.setdefault(tok.lower(), set()).add(where)
+     preview: dict[str, set[str]] = {}
+     for u in LexicalUnit.objects.all():
+         for sub_text in u.substitutions or []:
+-            for tok in WORD.findall(sub_text):
++            for tok in text_tokens(sub_text):
+                 if not is_known(tok, vocab):
+                     r.errors.append(f"{u.uid}: подстановка «{sub_text}» содержит неизученное слово {tok}.")
+         for col in u.collocations or []:
+-            for tok in WORD.findall(col):
++            for tok in text_tokens(col):
+                 if not is_known(tok, vocab):
+                     preview.setdefault(tok.lower(), set()).add(u.uid)
+     if preview:
+@@ -337,7 +345,7 @@ def audit_stories_and_poems(r: AuditReport) -> None:
+ 
+ def token_keys(token: str) -> set[str]:
+     """Все основы, по которым токен считается знакомым (как в is_known): сам токен, без сокращения, без окончания."""
+-    t = token.lower().replace("’", "'")
++    t = unicodedata.normalize("NFC", token).lower().replace("’", "'")
+     keys = {t}
+     for c in CONTRACTIONS:
+         if t.endswith(c) and len(t) > len(c):
+@@ -367,7 +375,7 @@ def recycling_counts(prev_units, texts: list[str]) -> dict[str, int]:
+         if u.unit_type == UnitType.PHRASE or len(text_tokens(u.lemma)) != 1:  # T-shirt, ice cream
+             phrases.append((u.uid, " ".join(text_tokens(u.lemma)).lower()))
+         else:
+-            for w in {u.lemma.lower(), *(f.lower() for f in u.forms or [])}:
++            for w in unit_words(u):
+                 by_word.setdefault(w, set()).add(u.uid)
+     for text in texts:
+         tokens = text_tokens(text)
+diff --git a/content/active_a1/scenarios_13_18.json b/content/active_a1/scenarios_13_18.json
+index 76c5fa2..34dbc47 100644
+--- a/content/active_a1/scenarios_13_18.json
++++ b/content/active_a1/scenarios_13_18.json
+@@ -13,8 +13,8 @@
+       {
+         "id": 2,
+         "title": "Где работает Мия?",
+-        "scene": "Вы встретили баристу вне кафе.",
+-        "prompt": "Спросите, где она работает.",
++        "scene": "Вы встретили знакомого Мии вне кафе.",
++        "prompt": "Спросите у него, где работает Мия.",
+         "example": "Where does she work?",
+         "coach": "После does смысловой глагол без -s."
+       },
+@@ -85,9 +85,9 @@
+         "id": 3,
+         "title": "Неловкий вопрос",
+         "scene": "Мия спросила: What do you do?",
+-        "prompt": "Объясните свою работу одним предложением.",
+-        "example": "I work at a school.",
+-        "coach": "Место работы отвечает на вопрос «где?». На What do you do? естественнее назвать профессию, а место добавить отдельной фразой."
++        "prompt": "Назовите профессию и место работы одним предложением: вы учитель в школе.",
++        "example": "I'm a teacher at a school.",
++        "coach": "I am a teacher называет профессию. Место работы добавляем через at a school: обе части отвечают на ситуацию, но одна профессия тоже была бы прямым ответом на What do you do?"
+       },
+       {
+         "id": 4,
+@@ -150,7 +150,7 @@
+         "scene": "Мия говорит, что магазин расположен недалеко, но не рядом.",
+         "prompt": "Скажите, что магазин возле кафе.",
+         "example": "The shop is near the cafe.",
+-        "coach": "Near означает близость без обязательного соприкосновения."
++        "coach": "Near означает близость, но не обязательно непосредственное соседство."
+       },
+       {
+         "id": 4,
+@@ -197,7 +197,7 @@
+         "scene": "На улице вас спросили, как дойти до банка.",
+         "prompt": "Попросите его идти прямо.",
+         "example": "Go straight.",
+-        "coach": "Короткий императив не включает you."
++        "coach": "В коротком образце Go straight обычно не произносим you; оно понятно из ситуации."
+       },
+       {
+         "id": 2,
+@@ -210,7 +210,7 @@
+       {
+         "id": 3,
+         "title": "Нужный поворот",
+-        "scene": "Банк находится справа от перекрёстка.",
++        "scene": "На перекрёстке маршрут к банку требует поворота направо.",
+         "prompt": "Скажите: «Поверните направо».",
+         "example": "Turn right.",
+         "coach": "Right — направо, left — налево."
+@@ -246,7 +246,7 @@
+         "example": "Turn right."
+       },
+       {
+-        "scene": "Сначала нужна вежливая просьба, затем маршрут.",
++        "scene": "Сначала привлеките внимание, затем дайте указание идти прямо.",
+         "example": "Excuse me. Go straight."
+       }
+     ]
+diff --git a/content/active_a1/scenarios_19_20.json b/content/active_a1/scenarios_19_20.json
+index b0e73c0..7bb1c56 100644
+--- a/content/active_a1/scenarios_19_20.json
++++ b/content/active_a1/scenarios_19_20.json
+@@ -8,7 +8,7 @@
+         "scene": "Мия спрашивает о вашей неизменной субботней привычке.",
+         "prompt": "Скажите, что по субботам вы всегда читаете.",
+         "example": "I always read on Saturdays.",
+-        "coach": "Always ставьте перед read; перед днём недели нужен on."
++        "coach": "Always ставьте перед read. Здесь используем on Saturdays; разговорное I always read Saturdays тоже возможно."
+       },
+       {
+         "id": 2,
+diff --git a/content/active_a1/topics_09_13.json b/content/active_a1/topics_09_13.json
+index 23a6185..9c3312b 100644
+--- a/content/active_a1/topics_09_13.json
++++ b/content/active_a1/topics_09_13.json
+@@ -237,6 +237,6 @@
+     "transfer": "Спросите: «Где она работает?»",
+     "transfer_example": "Where does she work?",
+     "why": "-s — показатель согласования глагола с he/she/it в Present Simple, не множественное число. После does используется базовая форма: Does she work? (не works).",
+-    "sound": "Слышны три варианта конечного -s: /s/ после глухих, /z/ после звонких, /ɪz/ после шипящих. В works — /s/."
++    "sound": "Окончание звучит /ɪz/ после /s, z, ʃ, ʒ, tʃ, dʒ/ (watches); после остальных глухих — /s/ (works), после остальных звонких и гласных — /z/ (goes)."
+   }
+ ]
+diff --git a/content/active_a1/topics_19_20.json b/content/active_a1/topics_19_20.json
+index fa5737a..293c43c 100644
+--- a/content/active_a1/topics_19_20.json
++++ b/content/active_a1/topics_19_20.json
+@@ -5,7 +5,7 @@
+     "slug": "a1-always-never",
+     "title": "Как часто: планы на выходные",
+     "scene": "Анна и Том обсуждают выходные с Мией",
+-    "context": "Назовите действие и добавьте, как часто оно происходит. Дни недели идут с on, месяцы — с in.",
++    "context": "Назовите действие и добавьте, как часто оно происходит. В наших примерах перед днями недели стоит on, перед месяцами — in; в разговорном американском английском on перед днём можно опустить.",
+     "dialogue": [
+       [
+         "Mia",
+diff --git a/content/active_a1/topics_21_22.json b/content/active_a1/topics_21_22.json
+index f13b5d0..a083ef8 100644
+--- a/content/active_a1/topics_21_22.json
++++ b/content/active_a1/topics_21_22.json
+@@ -51,7 +51,7 @@
+     "slug": "a1-cant-cannot",
+     "title": "Как я себя чувствую и чего не могу",
+     "scene": "Том рассказывает о самочувствии на приёме",
+-    "context": "Для состояния используйте be или feel; после can’t ставьте начальную форму действия.",
++    "context": "Для прилагательных tired, sick, hungry и thirsty используйте здесь be или feel; после can’t ставьте глагол в начальной форме без to.",
+     "dialogue": [
+       [
+         "Doctor",
+diff --git a/content/active_a1/topics_23_24.json b/content/active_a1/topics_23_24.json
+index 09e6712..2a99c4d 100644
+--- a/content/active_a1/topics_23_24.json
++++ b/content/active_a1/topics_23_24.json
+@@ -5,7 +5,7 @@
+     "slug": "a1-dont-doesnt",
+     "title": "Чего нет и чего я не знаю",
+     "scene": "Учебная ситуация: Анна и Том отправляют другое письмо внутри США",
+-    "context": "После don’t и doesn’t действие остаётся без -s. Различайте нет вещи и не знаю информацию.",
++    "context": "После don’t и doesn’t смысловой глагол остаётся в начальной форме без -s. Различайте отсутствие вещи (have) и незнание информации (know).",
+     "dialogue": [
+       [
+         "Postal worker",
+diff --git a/content/manifests/a1_delayed_review_topics_13_16.json b/content/manifests/a1_delayed_review_topics_13_16.json
+index 2191aad..3aeed1e 100644
+--- a/content/manifests/a1_delayed_review_topics_13_16.json
++++ b/content/manifests/a1_delayed_review_topics_13_16.json
+@@ -145,12 +145,12 @@
+       2
+     ],
+     [
+-      "Вы объясняете, что магазин напротив парка, через дорогу.",
++      "Вы объясняете, что магазин напротив школы, через дорогу.",
+       "",
+       [
+-        "The shop is across from the park.",
+-        "The shop is in the park.",
+-        "The shop is under the park."
++        "The shop is across from the school.",
++        "The shop is in the school.",
++        "The shop is under the school."
+       ],
+       0
+     ]
+diff --git a/content/manifests/a1_delayed_review_topics_17_20.json b/content/manifests/a1_delayed_review_topics_17_20.json
+index 868d631..6bba8ca 100644
+--- a/content/manifests/a1_delayed_review_topics_17_20.json
++++ b/content/manifests/a1_delayed_review_topics_17_20.json
+@@ -167,7 +167,7 @@
+       1
+     ],
+     [
+-      "Анна любит гулять. Выберите подходящую форму.",
++      "Вы играете роль Анны и говорите о себе. Выберите подходящую форму.",
+       "I like ___.",
+       [
+         "walk",
+diff --git a/content/manifests/a1_micro_review_13_16.json b/content/manifests/a1_micro_review_13_16.json
+index c7b3345..49ca35a 100644
+--- a/content/manifests/a1_micro_review_13_16.json
++++ b/content/manifests/a1_micro_review_13_16.json
+@@ -19,14 +19,14 @@
+           "works at home"
+         ],
+         [
+-          "Анне: читает каждый день",
++          "Анне: работает каждый день",
+           "Anna",
+-          "reads every day"
++          "works every day"
+         ],
+         [
+-          "Томе: живёт здесь",
++          "Томе: работает здесь",
+           "Tom",
+-          "lives here"
++          "works here"
+         ],
+         [
+           "Мии: любит чай",
+@@ -39,7 +39,7 @@
+         "{name} is {action}.",
+         "{name} {action} is."
+       ],
+-      "reason": "В Present Simple с именем одного человека у смыслового глагола появляется -s или -es; дополнительное is не требуется.",
++      "reason": "В этих утвердительных примерах с именем одного человека используются works или likes; is перед ними не добавляем.",
+       "en": ""
+     },
+     "2": {
+@@ -81,7 +81,7 @@
+         "Do",
+         "Is"
+       ],
+-      "reason": "В вопросах с he/she и обычным действием нужен Does; далее глагол без -s.",
++      "reason": "В этих вопросах с work и he/she нужен Does; work после помощника без -s.",
+       "en": "___ {who} work {where}?"
+     },
+     "3": {
+@@ -129,7 +129,7 @@
+         "{subj} {action} is {time}.",
+         "{subj} {action} at {time} is."
+       ],
+-      "reason": "В повествовании He/She + глагол с -s, затем обстоятельство; не ставьте is перед смысловым глаголом.",
++      "reason": "В этих утвердительных фразах He/She + глагол с -s/-es, затем место или время; is к works, starts и finishes не добавляем.",
+       "en": ""
+     },
+     "4": {
+@@ -145,7 +145,7 @@
+         ],
+         [
+           "he",
+-          "at the bank"
++          "at a hospital"
+         ],
+         [
+           "she",
+@@ -336,12 +336,12 @@
+           "a cafe"
+         ],
+         [
+-          "в банке",
+-          "a bank"
++          "в ресторане",
++          "a restaurant"
+         ],
+         [
+-          "в магазине",
+-          "a shop"
++          "в офисе",
++          "an office"
+         ],
+         [
+           "в больнице",
+@@ -393,31 +393,31 @@
+       "en": ""
+     },
+     "5": {
+-      "prompt": "Как сказать «{ru}» о мужчине?",
++      "prompt": "При знакомстве {situation} вы говорите о мужчине-инженере. Назовите его профессию.",
+       "keys": [
+-        "ru",
++        "situation",
+         "job"
+       ],
+       "cases": [
+         [
+-          "Он инженер",
++          "с соседом",
+           "engineer"
+         ],
+         [
+-          "Он актёр",
+-          "actor"
++          "с коллегой",
++          "engineer"
+         ],
+         [
+-          "Он художник",
+-          "artist"
++          "в кафе",
++          "engineer"
+         ],
+         [
+-          "Он офисный работник",
+-          "office worker"
++          "в школе",
++          "engineer"
+         ],
+         [
+-          "Он инженер из России",
+-          "engineer from Russia"
++          "в больнице",
++          "engineer"
+         ]
+       ],
+       "options": [
+@@ -464,8 +464,8 @@
+         [
+           "водитель",
+           "driver",
+-          "в городе",
+-          "in the city"
++          "ночью",
++          "at night"
+         ]
+       ],
+       "options": [
+@@ -502,7 +502,7 @@
+           "school"
+         ],
+         [
+-          "рядом с парком",
++          "рядом со школой",
+           "магазин",
+           "shop"
+         ],
+@@ -534,9 +534,9 @@
+           "box"
+         ],
+         [
+-          "телефон внутри сумки",
++          "телефон внутри коробки",
+           "phone",
+-          "bag"
++          "box"
+         ],
+         [
+           "ключ внутри коробки",
+@@ -549,9 +549,9 @@
+           "box"
+         ],
+         [
+-          "книга внутри сумки",
++          "книга внутри холодильника",
+           "book",
+-          "bag"
++          "fridge"
+         ]
+       ],
+       "options": [
+@@ -586,9 +586,9 @@
+           "school"
+         ],
+         [
+-          "отель рядом с парком",
++          "отель рядом с больницей",
+           "hotel",
+-          "park"
++          "hospital"
+         ],
+         [
+           "школа рядом с магазином",
+@@ -601,7 +601,7 @@
+         "The {first} is in the {second}.",
+         "The {first} is between the {second}."
+       ],
+-      "reason": "Next to означает непосредственную близость; between требует две опорные точки.",
++      "reason": "В этом образце next to означает непосредственное соседство. Для between X and Y здесь нужно назвать оба ориентира и соединить их and; это не правило, что between возможно только с двумя объектами.",
+       "en": ""
+     },
+     "4": {
+@@ -647,7 +647,7 @@
+       "en": ""
+     },
+     "5": {
+-      "prompt": "Как описать расположение {ru}?",
++      "prompt": "Передайте положение {ru} именно с between ... and ...; не заменяйте его сообщением только о близости.",
+       "keys": [
+         "ru",
+         "center",
+@@ -668,9 +668,9 @@
+           "bank"
+         ],
+         [
+-          "школы между парком и магазином",
++          "школы между больницей и магазином",
+           "school",
+-          "park",
++          "hospital",
+           "shop"
+         ],
+         [
+@@ -691,7 +691,7 @@
+         "The {center} is in the {left} and the {right}.",
+         "The {center} is next to the {left} and the {right}."
+       ],
+-      "reason": "Between ... and ... указывает на положение между двумя местами.",
++      "reason": "Здесь требуется between ... and ...: назвать оба ориентира и положение между ними. Фраза с next to может быть грамматически правильной и описывать соседство, но не передаёт указанную конструкцию between.",
+       "en": ""
+     },
+     "6": {
+@@ -707,9 +707,9 @@
+         [
+           "городе",
+           "магазин",
+-          "парка",
++          "школы",
+           "shop",
+-          "park"
++          "school"
+         ],
+         [
+           "городе",
+@@ -728,9 +728,9 @@
+         [
+           "городе",
+           "школа",
+-          "парка",
++          "больницы",
+           "school",
+-          "park"
++          "hospital"
+         ],
+         [
+           "поездке",
+@@ -745,7 +745,7 @@
+         "The {first} is inside the {second}.",
+         "The {first} is behind the {second}."
+       ],
+-      "reason": "Across from — напротив, через улицу; это не внутри и не позади.",
++      "reason": "В этой ситуации across from — напротив, через дорогу; дорога задана условием, а не обязательна в любом употреблении across from.",
+       "en": ""
+     }
+   },
+@@ -768,7 +768,7 @@
+           "Идти прямо"
+         ],
+         [
+-          "парке",
++          "школе",
+           "left",
+           "Повернуть налево",
+           "Повернуть направо",
+@@ -905,7 +905,7 @@
+           "left"
+         ],
+         [
+-          "парка",
++          "отеля",
+           "направо",
+           "right"
+         ]
+@@ -926,7 +926,7 @@
+       ],
+       "cases": [
+         [
+-          "парке",
++          "школе",
+           "Томом"
+         ],
+         [
+diff --git a/content/manifests/a1_micro_review_17_20.json b/content/manifests/a1_micro_review_17_20.json
+index 618ca58..893e5ea 100644
+--- a/content/manifests/a1_micro_review_17_20.json
++++ b/content/manifests/a1_micro_review_17_20.json
+@@ -148,16 +148,16 @@
+           "drinks tea in the morning"
+         ],
+         [
+-          "читает ли Анна вечером",
++          "ужинает ли Анна вечером",
+           "Anna",
+-          "read in the evening",
+-          "reads in the evening"
++          "have dinner in the evening",
++          "has dinner in the evening"
+         ],
+         [
+-          "живёт ли Том здесь",
++          "работает ли Том здесь",
+           "Tom",
+-          "live here",
+-          "lives here"
++          "work here",
++          "works here"
+         ],
+         [
+           "любит ли Мия кофе",
+@@ -746,8 +746,8 @@
+           "playing the guitar"
+         ],
+         [
+-          "петь",
+-          "singing"
++          "готовить",
++          "cooking"
+         ],
+         [
+           "слушать музыку",
+@@ -790,16 +790,16 @@
+           "plays"
+         ],
+         [
+-          "петь",
+-          "singing",
+-          "sing",
+-          "sings"
++          "готовить",
++          "cooking",
++          "cook",
++          "cooks"
+         ],
+         [
+-          "плавать",
+-          "swimming",
+-          "swim",
+-          "swims"
++          "смотреть телевизор",
++          "watching TV",
++          "watch TV",
++          "watches TV"
+         ]
+       ],
+       "options": [
+@@ -830,8 +830,8 @@
+           "playing the guitar"
+         ],
+         [
+-          "петь",
+-          "singing"
++          "готовить",
++          "cooking"
+         ],
+         [
+           "смотреть телевизор",
+@@ -841,7 +841,7 @@
+       "options": [
+         "Do you like {verb}?",
+         "Does you like {verb}?",
+-        "Do you like {verb}ing?"
++        "Do you likes {verb}?"
+       ],
+       "reason": "К you задайте вопрос через Do you like + -ing форму.",
+       "en": ""
+@@ -906,19 +906,19 @@
+         [
+           "green",
+           "shirt",
+-          "hat",
++          "shoes",
+           "jacket"
+         ],
+         [
+           "red",
+           "jacket",
+           "shoes",
+-          "coat"
++          "shirt"
+         ],
+         [
+-          "new",
+-          "hat",
+-          "coat",
++          "green",
++          "shoes",
++          "jacket",
+           "shirt"
+         ]
+       ],
+@@ -954,8 +954,8 @@
+           "jacket"
+         ],
+         [
+-          "моя белая рубашка",
+-          "white",
++          "моя зелёная рубашка",
++          "green",
+           "shirt"
+         ],
+         [
+diff --git a/content/manifests/a1_micro_review_25_28.json b/content/manifests/a1_micro_review_25_28.json
+index c32db50..0485b21 100644
+--- a/content/manifests/a1_micro_review_25_28.json
++++ b/content/manifests/a1_micro_review_25_28.json
+@@ -1,7 +1,7 @@
+ {
+   "a1-can-skills": {
+     "1": {
+-      "prompt": "В {place} вы хотите узнать, умеет ли собеседник {ru}.",
++      "prompt": "{place} вы хотите узнать, умеет ли собеседник {ru}.",
+       "keys": [
+         "place",
+         "ru",
+@@ -9,27 +9,27 @@
+       ],
+       "cases": [
+         [
+-          "поездке",
++          "В поездке",
+           "говорить по-русски",
+           "Russian"
+         ],
+         [
+-          "школе",
++          "В школе",
+           "говорить по-английски",
+           "English"
+         ],
+         [
+-          "магазине",
++          "В магазине",
+           "говорить по-русски",
+           "Russian"
+         ],
+         [
+-          "встрече",
++          "На встрече",
+           "говорить по-английски",
+           "English"
+         ],
+         [
+-          "кафе",
++          "В кафе",
+           "говорить по-русски",
+           "Russian"
+         ]
+@@ -587,7 +587,7 @@
+       "en": ""
+     },
+     "4": {
+-      "prompt": "Вам нужен {place}. Спросите, идёт ли автобус туда.",
++      "prompt": "Место назначения — {place}. Спросите, идёт ли автобус туда.",
+       "keys": [
+         "place",
+         "dest"
+diff --git a/content/manifests/a1_scaffold_transfer.json b/content/manifests/a1_scaffold_transfer.json
+index a5ad3f5..52f5ebf 100644
+--- a/content/manifests/a1_scaffold_transfer.json
++++ b/content/manifests/a1_scaffold_transfer.json
+@@ -388,8 +388,8 @@
+           "model": "Does Anna work here?"
+         },
+         {
+-          "prompt": "Вы хотите узнать, читает ли Том книги каждый день. Спросите об этом.",
+-          "model": "Does Tom read books every day?"
++          "prompt": "Спросите знакомого, работает ли Том дома каждый день.",
++          "model": "Does Tom work at home every day?"
+         }
+       ]
+     },
+@@ -444,8 +444,8 @@
+       ],
+       "transfer_variants": [
+         {
+-          "prompt": "Телефон лежит внутри сумки. Объясните другу, где он.",
+-          "model": "The phone is in the bag."
++          "prompt": "Телефон лежит внутри коробки. Объясните другу, где он.",
++          "model": "The phone is in the box."
+         },
+         {
+           "prompt": "Книга находится под стулом. Объясните, где она лежит.",
+@@ -487,25 +487,25 @@
+       "slug": "a1-questions-do-does",
+       "steps": [
+         {
+-          "example_en": "Do you live here?",
+-          "example_ru": "Ты здесь живёшь?",
+-          "why_ru": "Do нужен для вопроса с you и обычным глаголом live."
++          "example_en": "Do you work here?",
++          "example_ru": "Ты здесь работаешь?",
++          "why_ru": "Do нужен для вопроса с you и обычным глаголом work."
+         },
+         {
+-          "example_en": "Does she live here?",
+-          "example_ru": "Она здесь живёт?",
+-          "why_ru": "Does сочетается с she; live после него без -s."
++          "example_en": "Does she work here?",
++          "example_ru": "Она здесь работает?",
++          "why_ru": "Does сочетается с she; work после него без -s."
+         },
+         {
+           "example_en": "Yes, she does.",
+           "example_ru": "Да.",
+-          "why_ru": "Короткий ответ повторяет вспомогательный does, а не основной live."
++          "why_ru": "Короткий ответ повторяет вспомогательный does, а не основной work."
+         }
+       ],
+       "transfer_variants": [
+         {
+-          "prompt": "Узнайте, работает ли Том по воскресеньям.",
+-          "model": "Does Tom work on Sundays?"
++          "prompt": "Узнайте, работает ли Том каждый день.",
++          "model": "Does Tom work every day?"
+         },
+         {
+           "prompt": "Спросите у Тома, нравится ли Мии чай. Задайте об этом вопрос.",
+@@ -598,8 +598,8 @@
+           "model": "I like cooking."
+         },
+         {
+-          "prompt": "Ваше любимое занятие — плавание. Расскажите об этом другу.",
+-          "model": "I like swimming."
++          "prompt": "Ваше любимое занятие — прогулки. Расскажите об этом другу.",
++          "model": "I like walking."
+         }
+       ]
+     },
+@@ -707,19 +707,19 @@
+           "why_ru": "В англоязычном адресе номер дома обычно указывают перед названием улицы."
+         },
+         {
+-          "example_en": "Can you repeat the address, please?",
+-          "example_ru": "Повторите адрес, пожалуйста.",
+-          "why_ru": "Repeat помогает уточнить услышанное; не обязательно диктовать всё по буквам."
++          "example_en": "Can you spell it, please?",
++          "example_ru": "Продиктуйте это по буквам, пожалуйста.",
++          "why_ru": "Не удалось разобрать написание адреса: попросите произнести его по буквам. Can you spell it, please? — знакомая просьба из урока 18; it отсылает к уже названному адресу."
+         }
+       ],
+       "transfer_variants": [
+         {
+-          "prompt": "Вы не расслышали адрес. Попросите собеседника повторить его, не называя настоящих данных.",
+-          "model": "Can you repeat the address, please?"
++          "prompt": "Вы не разобрали написание адреса. Попросите продиктовать его по буквам; используйте знакомую просьбу со spell и it.",
++          "model": "Can you spell it, please?"
+         },
+         {
+-          "prompt": "На почте сотрудник быстро произнёс имя. Попросите повторить его по буквам.",
+-          "model": "Can you spell that again, please?"
++          "prompt": "На почте сотрудник произнёс имя. Попросите назвать его по буквам, используя spell и your name.",
++          "model": "Can you spell your name, please?"
+         }
+       ]
+     },
+diff --git a/content/manifests/a1_understanding_checks.json b/content/manifests/a1_understanding_checks.json
+index e1bda25..80d4236 100644
+--- a/content/manifests/a1_understanding_checks.json
++++ b/content/manifests/a1_understanding_checks.json
+@@ -518,8 +518,8 @@
+     },
+     {
+       "slug": "a1-he-she-works",
+-      "plain": "С he/she и одним человеком глагол привычки часто получает -s.",
+-      "why": "В вопросе does забирает окончание: Does she work?",
++      "plain": "В утвердительной фразе с he/she и именем одного человека у большинства смысловых глаголов появляется -s или -es.",
++      "why": "В вопросе с work используем does для he/she; после помощника work остаётся без -s.",
+       "pattern": "She works. / Does she work?",
+       "mistake": "Писать Does she works?",
+       "fix": "После does оставляйте work без -s.",
+@@ -578,7 +578,11 @@
+           "prompt": "Напишите «Я работаю в школе».",
+           "model": "I work at a school.",
+           "accepted": [
+-            "I work at a school."
++            "I work at a school.",
++            "I work in a school.",
++            "I work at the school.",
++            "I work in the school.",
++            "I work at school."
+           ]
+         },
+         "transfer": {
+@@ -601,7 +605,7 @@
+     {
+       "slug": "a1-where-is-prepositions",
+       "plain": "Where is...? спрашивает о месте.",
+-      "why": "In — внутри, next to — рядом, between — между двумя.",
++      "why": "In в нашем примере — внутри, next to — непосредственно рядом. В схеме between X and Y называем два ориентира; это не запрет других употреблений between.",
+       "pattern": "Where is the bank? / It is near the cafe.",
+       "mistake": "Писать Where the bank is?",
+       "fix": "В прямом вопросе поставьте is перед названием.",
+@@ -619,12 +623,15 @@
+           "prompt": "Напишите «Банк рядом с кафе».",
+           "model": "The bank is next to the cafe.",
+           "accepted": [
+-            "The bank is next to the cafe."
++            "The bank is next to the cafe.",
++            "The bank is near the cafe.",
++            "The cafe is near the bank.",
++            "The cafe is next to the bank."
+           ]
+         },
+         "transfer": {
+-          "prompt": "Магазин находится через дорогу от парка. Объясните туристу, где этот магазин.",
+-          "model": "The shop is across from the park."
++          "prompt": "Магазин находится через дорогу от школы. Объясните туристу, где магазин.",
++          "model": "The shop is across from the school."
+         },
+         "explain": {
+           "prompt": "Вы ищете банк и спрашиваете: «Where the bank is?». Почему прямой вопрос построен неверно?",
+@@ -636,13 +643,13 @@
+         "a_ru": "Магазин рядом с банком.",
+         "b_en": "The shop is between the bank and the cafe.",
+         "b_ru": "Магазин между банком и кафе.",
+-        "why": "Next to связывает магазин с одним местом, between ... and ... показывает положение между двумя местами."
++        "why": "В этом примере next to показывает непосредственное соседство. Схема between the bank and the cafe называет два ориентира; between может связывать и больше двух отдельных объектов."
+       }
+     },
+     {
+       "slug": "a1-directions-turn-left",
+       "plain": "Go straight и turn left/right помогают указать дорогу.",
+-      "why": "В короткой команде глагол идёт первым.",
++      "why": "В образце Go straight сначала называем действие (go), затем направление (straight).",
+       "pattern": "Go straight. / Turn right.",
+       "mistake": "Путать right и left.",
+       "fix": "Right — направо, left — налево.",
+@@ -832,8 +839,8 @@
+           ]
+         },
+         "transfer": {
+-          "prompt": "Спросите друга, нравится ли ему рисовать, и скажите, что вам нравится читать.",
+-          "model": "Do you like drawing? I like reading."
++          "prompt": "Спросите друга, нравится ли ему гулять, и скажите, что вам нравится читать.",
++          "model": "Do you like walking? I like reading."
+         },
+         "explain": {
+           "prompt": "Сравните «I like books» и «I like reading». Объясните разницу: что нравится в каждом случае?",
+@@ -934,7 +941,7 @@
+     },
+     {
+       "slug": "a1-dont-doesnt",
+-      "plain": "Don't/doesn't делают обычные действия отрицательными.",
++      "plain": "Don't/doesn't образуют отрицание обычного глагола в Present Simple: и действия work, и состояния know.",
+       "why": "I/you → don't; he/she → doesn't.",
+       "pattern": "I don't know. / Tom doesn't live here.",
+       "mistake": "Писать He doesn't knows.",
+@@ -1017,7 +1024,7 @@
+     },
+     {
+       "slug": "a1-can-skills",
+-      "plain": "Can + глагол рассказывает, что вы умеете.",
++      "plain": "В этом уроке can + глагол рассказывает, что вы умеете; can также встречается в просьбах.",
+       "why": "После can не нужен to, и глагол не получает -s.",
+       "pattern": "I can speak English. / She can draw.",
+       "mistake": "Говорить She can draws.",
+@@ -1101,7 +1108,7 @@
+     {
+       "slug": "a1-bus-ticket",
+       "plain": "В автобусе нужны вопросы о маршруте, билете и времени.",
+-      "why": "Автобус — it, поэтому для вопроса о действии нужен does.",
++      "why": "В вопросе о маршруте this bus — как it: Does this bus go…? После does ставим go без -s. Вопрос с be строится иначе: Is this the bus?",
+       "pattern": "Does this bus go to the park?",
+       "mistake": "Писать Does this bus goes?",
+       "fix": "После does используйте go без -s.",
+diff --git a/content/seed_lessons/a1_w07_l13_he_works.yaml b/content/seed_lessons/a1_w07_l13_he_works.yaml
+index 21f165b..786ac27 100644
+--- a/content/seed_lessons/a1_w07_l13_he_works.yaml
++++ b/content/seed_lessons/a1_w07_l13_he_works.yaml
+@@ -21,7 +21,7 @@ contractions:
+   - full: "does not"
+     short: "doesn't"
+     ipa: "/ˈdʌzənt/"
+-    note_ru: "No, he doesn't. В разговоре почти всегда doesn't."
++    note_ru: "No, he doesn't. — обычная разговорная форма. Полная does not тоже возможна, например для подчёркнутого отрицания."
+ layers:
+   - number: 1
+     body: |
+@@ -113,7 +113,7 @@ exercises:
+     answer: "Mia works at the cafe."
+     hint_ru: "Один человек — глагол с -s."
+     explanation_ru: "Mia works — с одним человеком глагол получает -s. is рядом с work лишний."
+-    units: [LX-00153]
++    units: ["LX-00128", "LX-00131"]
+   - order: 2
+     uid: EX-00069
+     kind: fill
+@@ -144,7 +144,7 @@ exercises:
+     accepted: ["No, she doesn't.", "No she doesn't", "No, she does not", "No she does not"]
+     hint_ru: "Короткий ответ на Does she…? строится на does."
+     explanation_ru: "No, she does not — в разговоре No, she doesn't. Повторять work не нужно."
+-    units: [LX-00155]
++    units: []
+   - order: 5
+     uid: EX-00072
+     kind: choice
+@@ -162,10 +162,10 @@ exercises:
+     prompt_ru: "Ваш друг — медбрат. Он начинает в семь. Скажите вторую фразу."
+     prompt_en: "My friend is a nurse. He ___"
+     answer: "starts at seven."
+-    accepted: ["starts at seven", "starts at 7.", "starts at 7", "starts work at seven.", "starts work at seven"]
++    accepted: ["starts at seven", "starts at 7.", "starts at 7", "starts work at seven.", "starts work at seven", "starts work at 7.", "starts at seven o'clock.", "starts work at 7 o'clock.", "starts at 7 o'clock.", "starts work at seven o'clock."]
+     hint_ru: "he + глагол с -s + at + время."
+     explanation_ru: "He starts at seven. — с he глагол получает -s."
+-    units: [LX-00332, LX-00319]
++    units: ["LX-00332"]
+ # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+ practice:
+ - order: 1
+@@ -177,10 +177,7 @@ practice:
+   hint_ru: Tom = he → works.
+   explanation_ru: Tom works at home. С he, she и одним именем глагол получает -s.
+   review_of: 1
+-  units:
+-  - LX-00153
+-  - LX-00154
+-  - LX-00156
++  units: ["LX-00128", "LX-00153"]
+ - order: 2
+   kind: translate
+   prompt_ru: Мия работает в кафе.
+@@ -190,10 +187,7 @@ practice:
+   hint_ru: works, а не work.
+   explanation_ru: 'Mia works at the cafe. Не забудьте -s: works.'
+   review_of: 1
+-  units:
+-  - LX-00153
+-  - LX-00154
+-  - LX-00156
++  units: ["LX-00128", "LX-00131"]
+ - order: 3
+   kind: translate
+   prompt_ru: Он работает по ночам.
+@@ -201,12 +195,7 @@ practice:
+   hint_ru: «Ночью» — at night.
+   explanation_ru: He works at night. At night — «ночью, по ночам».
+   review_of: 3
+-  units:
+-  - LX-00150
+-  - LX-00153
+-  - LX-00154
+-  - LX-00155
+-  - LX-00156
++  units: ["LX-00128", "LX-00150", "LX-00156"]
+ - order: 4
+   kind: translate
+   prompt_ru: Она начинает в пять.
+@@ -214,8 +203,4 @@ practice:
+   hint_ru: she → starts.
+   explanation_ru: 'She starts at five. She — значит -s: starts.'
+   review_of: 6
+-  units:
+-  - LX-00153
+-  - LX-00154
+-  - LX-00156
+-  - LX-00332
++  units: ["LX-00332"]
+diff --git a/content/seed_lessons/a1_w07_l14_jobs.yaml b/content/seed_lessons/a1_w07_l14_jobs.yaml
+index 91d3061..004caee 100644
+--- a/content/seed_lessons/a1_w07_l14_jobs.yaml
++++ b/content/seed_lessons/a1_w07_l14_jobs.yaml
+@@ -58,7 +58,7 @@ layers:
+ 
+       - [T1]a[/] [S9]nurse[/] — медсестра, [T1]a[/] [S9]waiter[/] — официант, [T1]a[/] [S9]student[/] — студент
+       - [T1]an[/] [S9]engineer[/] — инженер, [T1]a[/] [S9]manager[/] — менеджер, [T1]a[/] [S9]farmer[/] — фермер
+-      - [T1]a[/] [S9]writer[/] — писатель, [T1]a[/] [S9]singer[/] — певец: глагол + -er = «тот, кто делает»
++      - [T1]a[/] [S9]writer[/] — писатель, [T1]a[/] [S9]singer[/] — певец. В этих названиях -er помогает назвать того, кто выполняет действие: write → writer, sing → singer. Так образуются не все названия профессий.
+ 
+       **At или in?** *At a school* говорит о месте работы как об учреждении; *in an office* называет офис как рабочую среду и может описывать обычное место работы. Это не обязательно акцент на физическом нахождении внутри здания прямо сейчас. Это **подсказка для контекста**, а не железное правило: *work at a hospital* и *work in a hospital* оба возможны, с разным акцентом.
+ 
+@@ -140,7 +140,7 @@ exercises:
+     accepted: ["I'm a doctor.", "I am a doctor", "I'm a doctor", "A doctor."]
+     hint_ru: "I am a + профессия."
+     explanation_ru: "I am a doctor — в разговоре I'm a doctor."
+-    units: [LX-00144, LX-00152]
++    units: ["LX-00144"]
+   - order: 5
+     uid: EX-00078
+     kind: choice
+@@ -158,7 +158,7 @@ exercises:
+     prompt_ru: "Ваша мама — медсестра, работает в больнице. Скажите это двумя фразами."
+     prompt_en: "___"
+     answer: "My mom is a nurse. She works at a hospital."
+-    accepted: ["My mom is a nurse. She works in a hospital.", "My mother is a nurse. She works at a hospital.", "My mother is a nurse. She works in a hospital.", "My mom's a nurse. She works at a hospital."]
++    accepted: ["My mom is a nurse. She works in a hospital.", "My mother is a nurse. She works at a hospital.", "My mother is a nurse. She works in a hospital.", "My mom's a nurse. She works at a hospital.", "My mom's a nurse. She works in a hospital.", "My mother's a nurse. She works at a hospital.", "My mother's a nurse. She works in a hospital."]
+     hint_ru: "a nurse; she works…"
+     explanation_ru: "My mom is a nurse. She works at a hospital. — a перед профессией, -s после she. in a hospital тоже верно."
+     units: [LX-00319, LX-00329]
+@@ -171,10 +171,7 @@ practice:
+   hint_ru: Перед профессией — a.
+   explanation_ru: I'm a teacher. Перед профессией в английском нужен a.
+   review_of: 2
+-  units:
+-  - LX-00142
+-  - LX-00152
+-  - LX-00336
++  units: ["LX-00142", "LX-00152"]
+ - order: 2
+   kind: translate
+   prompt_ru: Я работаю в школе.
+@@ -184,11 +181,7 @@ practice:
+   hint_ru: work at…
+   explanation_ru: I work at a school. Место работы — at или in.
+   review_of: 3
+-  units:
+-  - LX-00143
+-  - LX-00152
+-  - LX-00335
+-  - LX-00336
++  units: ["LX-00128", "LX-00143"]
+ - order: 3
+   kind: translate
+   prompt_ru: Кем ты работаешь?
+@@ -196,9 +189,7 @@ practice:
+   hint_ru: "Вопрос о занятии: What + do + you + do?"
+   explanation_ru: 'What do you do? Так американцы спрашивают о работе. Ответ: I''m a teacher.'
+   review_of: 1
+-  units:
+-  - LX-00151
+-  - LX-00335
++  units: ["LX-00151"]
+ - order: 4
+   kind: translate
+   prompt_ru: Мия — бариста.
+@@ -206,6 +197,4 @@ practice:
+   hint_ru: "Mia — один человек: Mia is a + профессия."
+   explanation_ru: Mia is a barista. В этой полной фразе is связывает Mia с профессией, а a стоит перед исчисляемым barista в единственном числе. Это правило конструкции, а не замена любого русского тире.
+   review_of: 2
+-  units:
+-  - LX-00146
+-  - LX-00152
++  units: ["LX-00146"]
+diff --git a/content/seed_lessons/a1_w08_l15_where_is.yaml b/content/seed_lessons/a1_w08_l15_where_is.yaml
+index 50542c4..33b1abb 100644
+--- a/content/seed_lessons/a1_w08_l15_where_is.yaml
++++ b/content/seed_lessons/a1_w08_l15_where_is.yaml
+@@ -67,7 +67,7 @@ layers:
+       - [P1]under[/] — под: under the box
+       - [P1]between[/] — между: between the bank **and** the hotel
+       - [P9]in front of[/] — перед: in front of the cafe
+-      - [P9]across from[/] — напротив: across from the park. На городской карте между местами часто проходит дорога, но сама фраза не требует дороги: можно сидеть напротив человека за столом.
++      - [P9]across from[/] — напротив: across from the school. На городской карте между местами часто проходит дорога, но сама фраза не требует дороги: можно сидеть напротив человека за столом.
+ 
+       В городе ещё пригодятся [S4]hotel[/] (гостиница), [S4]supermarket[/] (супермаркет) и [S4]map[/] (карта).
+   - number: 4
+@@ -76,7 +76,7 @@ layers:
+ 
+       **Near** означает «недалеко», без конкретного расстояния. **Next to** — непосредственно рядом, обычно по соседству. *Near* не означает строго «в двух шагах»: это расстояние зависит от ситуации.
+ 
+-      > [P1]On[/] [T1]the[/] [A3]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]? — Справа? Рядом с кафе Мии?
++      > [P1]On[/] [T1]the[/] [S4]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]? — Справа? Рядом с кафе Мии?
+ 
+       **Диагностика понимания:** Банк **непосредственно рядом**, но не **внутри** кафе. Что верно: *The bank is next to the cafe* или *The bank is in the cafe*?
+ 
+@@ -142,7 +142,7 @@ exercises:
+     prompt_ru: "Новая ситуация: турист спрашивает, где кафе. Оно справа. Ответьте."
+     prompt_en: "Where is the cafe? — ___"
+     answer: "It is on the right."
+-    accepted: ["It's on the right.", "On the right.", "It is on the right", "It's on the right", "On the right", "The cafe is on the right."]
++    accepted: ["It's on the right.", "On the right.", "It is on the right", "It's on the right", "On the right", "The cafe is on the right.", "The cafe's on the right.", "The café is on the right.", "The café's on the right."]
+     hint_ru: "Справа — on the right."
+     explanation_ru: "It is on the right — в разговоре It's on the right или просто On the right."
+     units: [LX-00178]
+@@ -160,11 +160,11 @@ exercises:
+     uid: EX-00085
+     kind: fill
+     stage: transfer
+-    prompt_ru: "Супермаркет — через дорогу от парка. Скажите это по-американски."
+-    prompt_en: "The supermarket is ___ the park."
++    prompt_ru: "Супермаркет — через дорогу от школы. Заполните пропуск изученным двухсловным предлогом «напротив»."
++    prompt_en: "The supermarket is ___ the school."
+     answer: "across from"
+     hint_ru: "Американское «напротив» — два слова."
+-    explanation_ru: "The supermarket is across from the park. — across from значит «напротив»; в условии между местами проходит дорога, но это не обязательная часть значения across from."
++    explanation_ru: "The supermarket is across from the school. Across from означает «напротив»; дорога задана ситуацией, а не обязательна для этого выражения. Opposite тоже употребляется в американском английском, но здесь тренируем изученный двухсловный предлог."
+     units: [LX-00340, LX-00345]
+ # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+ practice:
+@@ -175,11 +175,7 @@ practice:
+   hint_ru: Where — «где».
+   explanation_ru: 'Where is the bank? В разговоре: Where''s the bank?'
+   review_of: 1
+-  units:
+-  - LX-00157
+-  - LX-00162
+-  - LX-00176
+-  - LX-00178
++  units: ["LX-00157", "LX-00162", "LX-00176"]
+ - order: 2
+   kind: translate
+   prompt_ru: Мастерская рядом с банком.
+@@ -191,12 +187,7 @@ practice:
+   hint_ru: «Рядом» — near или next to.
+   explanation_ru: The key shop is near the bank. Near — поблизости, next to — прямо рядом.
+   review_of: 3
+-  units:
+-  - LX-00162
+-  - LX-00171
+-  - LX-00176
+-  - LX-00178
+-  - LX-00160
++  units: ["LX-00160", "LX-00161", "LX-00162", "LX-00171"]
+ - order: 3
+   kind: translate
+   prompt_ru: Банк справа.
+@@ -204,11 +195,7 @@ practice:
+   hint_ru: «Справа» — on the right.
+   explanation_ru: The bank is on the right. On the right — справа, on the left — слева.
+   review_of: 4
+-  units:
+-  - LX-00162
+-  - LX-00172
+-  - LX-00176
+-  - LX-00178
++  units: ["LX-00162", "LX-00169", "LX-00172"]
+ - order: 4
+   kind: translate
+   prompt_ru: Банк между кафе и гостиницей.
+@@ -218,9 +205,4 @@ practice:
+   hint_ru: between … and …
+   explanation_ru: The bank is between the cafe and the hotel. Between — «между».
+   review_of: 5
+-  units:
+-  - LX-00162
+-  - LX-00176
+-  - LX-00178
+-  - LX-00338
+-  - LX-00344
++  units: ["LX-00162", "LX-00338", "LX-00131", "LX-00344"]
+diff --git a/content/seed_lessons/a1_w08_l16_directions.yaml b/content/seed_lessons/a1_w08_l16_directions.yaml
+index 3f29311..a91d787 100644
+--- a/content/seed_lessons/a1_w08_l16_directions.yaml
++++ b/content/seed_lessons/a1_w08_l16_directions.yaml
+@@ -29,7 +29,7 @@ layers:
+ 
+       Объясняя дорогу, мы даём указания: «идите», «поверните». По-английски для этого берут глагол прямо из словаря и ставят его первым.
+ 
+-      > [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/]. — Идите прямо и поверните налево. Банк будет справа.
++      > [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]right[/]. — Идите прямо и поверните налево. Банк будет справа.
+ 
+       Здесь используется **повелительное наклонение** — форма для указаний. Подлежащее **you** («вы/ты») обычно **не произносится**, но понятно из ситуации: указание обращено к слушателю. В этом уроке тренируем короткий вариант *Go straight*. В живом объяснении маршрута бывает и *You go straight*: настоящее простое время тоже может использоваться для указаний. Поэтому наличие **you** само по себе не превращает маршрут в рассказ о привычке.
+   - number: 2
+@@ -39,6 +39,8 @@ layers:
+ 
+       В первом случае **left** отвечает на вопрос «куда повернуть?», во втором **on the left** — «где находится банк?». Не добавляйте on the в команду *Turn left* и не убирайте is из полной фразы *The bank is on the left*.
+ 
++      **Слово и всё сочетание — не одно и то же.** В *Turn left* слово **left** показывает направление — это наречие. В *on the left / on the right* слова **left / right** называют сторону — это существительные. Всё сочетание с **on** отвечает на вопрос «где?», но отдельное название стороны остаётся существительным.
++
+       Так же с правой стороной: **Turn right** — поверните направо; **on the right** — справа. Для движения прямо: **Go straight.** Выбирайте команду по маршруту, а описание — по расположению места.
+   - number: 3
+     body: |
+@@ -66,8 +68,8 @@ layers:
+     body: |
+       Так объясняют дорогу на американской улице:
+ 
+-      > [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/]. — Идите прямо и поверните налево. Банк будет справа.
+-      > [O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [A3]right[/]. — Спасибо! Прямо, налево и справа.
++      > [D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]right[/]. — Идите прямо и поверните налево. Банк будет справа.
++      > [O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [S4]right[/]. — Спасибо! Прямо, налево и справа.
+ 
+       - Хороший приём: повторить дорогу вслух. Так вы проверяете, что поняли, а собеседник поправит, если что.
+       - Американцы часто считают кварталы: go two blocks — «пройдите два квартала».
+@@ -82,7 +84,7 @@ layers:
+       **Почему Can you help us?, а не Can you help we?** Некоторые английские местоимения меняют форму в зависимости от **роли** в предложении. Когда человек сам выполняет действие, употребляют форму **подлежащего** (*we*). Когда помощь направлена **на него**, нужна форма **дополнения** (*us*):
+ 
+       - [T8]I[/] → [T8]me[/]: Excuse me!
+-      - [T8]he[/] → [T8]him[/], [T8]she[/] → [T3]her[/]
++      - [T8]he[/] → [T8]him[/], [T8]she[/] → [T8]her[/]
+       - [T8]we[/] → [T8]us[/], [T8]they[/] → [T8]them[/]
+ 
+       > [O2]Sorry[/], [D7]can[/] [T8]you[/] [D2]help[/] [T8]us[/]? — Простите, не поможете нам? (Анна — прохожему)
+@@ -164,10 +166,7 @@ practice:
+   hint_ru: Указание — глагол первым.
+   explanation_ru: Go straight. В этом коротком указании подлежащее you обычно не произносят; оно понятно из ситуации.
+   review_of: 2
+-  units:
+-  - LX-00166
+-  - LX-00170
+-  - LX-00177
++  units: ["LX-00166", "LX-00170"]
+ - order: 2
+   kind: translate
+   prompt_ru: Поверните налево.
+@@ -175,10 +174,7 @@ practice:
+   hint_ru: turn + left.
+   explanation_ru: Turn left. Turn — «поверните».
+   review_of: 1
+-  units:
+-  - LX-00167
+-  - LX-00168
+-  - LX-00177
++  units: ["LX-00167", "LX-00168"]
+ - order: 3
+   kind: translate
+   prompt_ru: Идите прямо и поверните направо.
+@@ -186,12 +182,7 @@ practice:
+   hint_ru: Два указания через and.
+   explanation_ru: Go straight and turn right. Два указания подряд соединяет and.
+   review_of: 3
+-  units:
+-  - LX-00166
+-  - LX-00167
+-  - LX-00169
+-  - LX-00170
+-  - LX-00177
++  units: ["LX-00166", "LX-00167", "LX-00169", "LX-00170"]
+ - order: 4
+   kind: translate
+   prompt_ru: Извините, где банк?
+diff --git a/content/seed_lessons/a1_w09_l17_do_does.yaml b/content/seed_lessons/a1_w09_l17_do_does.yaml
+index 1903b18..56de180 100644
+--- a/content/seed_lessons/a1_w09_l17_do_does.yaml
++++ b/content/seed_lessons/a1_w09_l17_do_does.yaml
+@@ -138,7 +138,7 @@ exercises:
+     answer: "What time does the cafe open"
+     hint_ru: "What time, потом does, потом кафе и open."
+     explanation_ru: "What time does the cafe open? — кафе одно, поэтому does."
+-    units: [LX-00186, LX-00191]
++    units: [LX-00186]
+   - order: 4
+     uid: EX-00095
+     kind: fill
+diff --git a/content/seed_lessons/a1_w09_l18_spelling.yaml b/content/seed_lessons/a1_w09_l18_spelling.yaml
+index 5d5de1b..096fe02 100644
+--- a/content/seed_lessons/a1_w09_l18_spelling.yaml
++++ b/content/seed_lessons/a1_w09_l18_spelling.yaml
+@@ -13,7 +13,7 @@ sound_notes:
+     note_ru: "E — «и», A — «эй»: самые коварные буквы"
+   - text: "five five five, two one four six"
+     ipa: "/faɪv faɪv faɪv tu wʌn fɔr sɪks/"
+-    note_ru: "номер делят на группы: 3 цифры, пауза, 4 цифры"
++    note_ru: "в этом семизначном фрагменте — группа из трёх цифр и группа из четырёх; полный американский номер обычно диктуют группами 3–3–4"
+   - text: "Can you spell your last name, please?"
+     ipa: "/kən jə ˈspɛl jɚ ˈlæst ˌneɪm ˈpliz/"
+     note_ru: "your без ударения звучит как «йэр»"
+@@ -33,7 +33,7 @@ layers:
+ 
+       Незнакомую русскую фамилию собеседник в США **может записать по-разному**, потому что её звуки не всегда однозначно передаются английскими буквами. Поэтому полезно **назвать фамилию, а затем при необходимости продиктовать по буквам**. Телефонный номер обычно диктуют отдельными цифрами или короткими группами.
+ 
+-      > [O4]Yes[/]. [N7]B-E-L-O-V-A[/]. [S1]Anna[/] [S1]Belova[/]. — Да. Б-Е-Л-О-В-А. Анна Белова.
++      > [O4]Yes[/]. [N7]B-E-L-O-V-A[/]. [S1]Anna[/] [S1]Belova[/]. — Да. B-E-L-O-V-A (латинскими буквами). Анна Белова.
+       > [T8]It[/] [D1]is[/] [N7]five five five, two one four six[/]. — Пять-пять-пять, два-один-четыре-шесть.
+ 
+       Для этого нужен английский алфавит — 26 букв.
+@@ -133,7 +133,7 @@ exercises:
+     answer: "E"
+     hint_ru: "I звучит «ай», Y — «уай»."
+     explanation_ru: "E называется «и». Это главная ловушка для русскоязычных."
+-    units: [LX-00187]
++    units: []
+   - order: 3
+     uid: EX-00100
+     kind: build
+@@ -154,7 +154,7 @@ exercises:
+     accepted: ["T-O-M.", "T O M", "T, O, M", "T-O-M, Tom.", "T O M."]
+     hint_ru: "Три буквы: T, O, M."
+     explanation_ru: "T-O-M — «ти, оу, эм». По буквам диктуют медленно, с короткими паузами."
+-    units: [LX-00183, LX-00187]
++    units: []
+   - order: 5
+     uid: EX-00102
+     kind: choice
+diff --git a/content/seed_lessons/a1_w10_l19_always_never.yaml b/content/seed_lessons/a1_w10_l19_always_never.yaml
+index 5db7894..60c1a99 100644
+--- a/content/seed_lessons/a1_w10_l19_always_never.yaml
++++ b/content/seed_lessons/a1_w10_l19_always_never.yaml
+@@ -16,7 +16,7 @@ sound_notes:
+     note_ru: "never с сильным ударением на первом слоге, l в walk не читается"
+   - text: "What do you do on the weekend?"
+     ipa: "/ˌwʌt də jə ˈdu ɑn ðə ˈwikˌɛnd/"
+-    note_ru: "weekend — два ударения: «уИк-Энд»"
++    note_ru: "weekend /ˈwikˌɛnd/: главное ударение на первом слоге; второй может иметь более слабое, дополнительное ударение"
+ contractions:
+   - full: "do not"
+     short: "don't"
+@@ -134,7 +134,7 @@ exercises:
+     answer: "always"
+     hint_ru: "Каждый раз — всегда."
+     explanation_ru: "I always read on Saturdays — always перед глаголом read."
+-    units: [LX-00196, LX-00207]
++    units: [LX-00196]
+   - order: 3
+     uid: EX-00106
+     kind: build
+@@ -193,9 +193,7 @@ practice:
+   units:
+   - LX-00194
+   - LX-00196
+-  - LX-00206
+   - LX-00207
+-  - LX-00210
+ - order: 2
+   kind: translate
+   prompt_ru: Том никогда не гуляет.
+@@ -205,7 +203,6 @@ practice:
+   review_of: 1
+   units:
+   - LX-00197
+-  - LX-00210
+ - order: 3
+   kind: translate
+   prompt_ru: Я гуляю в парке по воскресеньям.
+@@ -215,9 +212,6 @@ practice:
+   review_of: 4
+   units:
+   - LX-00195
+-  - LX-00206
+-  - LX-00207
+-  - LX-00210
+ - order: 4
+   kind: translate
+   prompt_ru: Мия всегда начинает в пять.
+@@ -227,4 +221,3 @@ practice:
+   review_of: 2
+   units:
+   - LX-00196
+-  - LX-00207
+diff --git a/content/seed_lessons/a1_w10_l20_like_doing.yaml b/content/seed_lessons/a1_w10_l20_like_doing.yaml
+index 5b900fa..e2f4b4c 100644
+--- a/content/seed_lessons/a1_w10_l20_like_doing.yaml
++++ b/content/seed_lessons/a1_w10_l20_like_doing.yaml
+@@ -87,7 +87,7 @@ layers:
+       Как пишется -ing:
+ 
+       - чаще всего просто добавляют: read → reading, walk → walking, play → playing;
+-      - немое e в конце уходит: write → writing, make → making;
++      - в примерах с одним конечным немым e его убираем: write → writing, make → making. Это не правило «убрать любую конечную e»: другие написания проверяем отдельно;
+       - У некоторых коротких глаголов с одним конечным согласным **после ударной краткой гласной** согласную удваивают: *swim → swimming*, *get → getting*. Но не все слова с короткой записью работают так: правило зависит от ударения и структуры слова. Сначала узнавайте часто встречающиеся формы.
+ 
+       И не путайте: I like walking — «люблю гулять» (вообще), I am walking — «я сейчас гуляю». Вторую форму вы узнаете позже.
+@@ -111,7 +111,7 @@ exercises:
+     uid: EX-00111
+     kind: fill
+     stage: substitution
+-    prompt_ru: "Анна любит гулять. Допишите глагол walk в нужной форме."
++    prompt_ru: "Вы играете роль Анны. Скажите о себе «Я люблю гулять»: допишите walk в подходящей форме."
+     prompt_en: "I like ___."
+     answer: "walking"
+     accepted: ["to walk"]
+@@ -138,7 +138,7 @@ exercises:
+     accepted: ["I like music", "I like music. I play the guitar.", "I like playing the guitar.", "I like playing the guitar", "I like to play the guitar.", "I like playing guitar.", "I like to play guitar."]
+     hint_ru: "На What do you like? ответьте I like + вещь или I like + действие с -ing."
+     explanation_ru: "What do you like? спрашивает именно о том, что нравится. Поэтому I like music или I like playing the guitar — прямые ответы. I play the guitar описывает занятие, но само по себе не говорит, что оно вам нравится."
+-    units: [LX-00203, LX-00211]
++    units: [LX-00034]
+   - order: 5
+     uid: EX-00114
+     kind: choice
+@@ -148,7 +148,7 @@ exercises:
+     answer: "jacket"
+     hint_ru: "Найдите слово «куртка»."
+     explanation_ru: "jacket — куртка; shirt — рубашка; shoes — обувь, туфли."
+-    units: [LX-00386, LX-00387, LX-00388]
++    units: [LX-00387]
+   - order: 6
+     uid: EX-00115
+     kind: build
+@@ -173,8 +173,6 @@ practice:
+   units:
+   - LX-00200
+   - LX-00208
+-  - LX-00209
+-  - LX-00211
+ - order: 2
+   kind: translate
+   prompt_ru: Том любит музыку.
+@@ -195,7 +193,6 @@ practice:
+   review_of: 3
+   units:
+   - LX-00201
+-  - LX-00208
+   - LX-00209
+ - order: 4
+   kind: translate
+@@ -209,5 +206,4 @@ practice:
+   units:
+   - LX-00202
+   - LX-00204
+-  - LX-00208
+   - LX-00211
+diff --git a/content/seed_lessons/a1_w11_l21_what_hurts.yaml b/content/seed_lessons/a1_w11_l21_what_hurts.yaml
+index d3fa7f5..71d2022 100644
+--- a/content/seed_lessons/a1_w11_l21_what_hurts.yaml
++++ b/content/seed_lessons/a1_w11_l21_what_hurts.yaml
+@@ -16,7 +16,7 @@ sound_notes:
+     note_ru: "hurts — американское r внутри: «хёртс», h выдыхается"
+   - text: "How are you?"
+     ipa: "/ˌhaʊ ɚ ˈju/"
+-    note_ru: "are почти пропадает: «хау эр Ю»"
++    note_ru: "В этом образце are без ударения: /ɚ/. При выделении слова оно может звучать полнее: /ɑr/."
+ contractions:
+   - full: "does not"
+     short: "doesn't"
+@@ -42,7 +42,7 @@ layers:
+       **I have a headache.** — У меня болит голова. После **have** называем недомогание: **a headache**.
+       **My head hurts.** — У меня болит голова. Теперь сначала называем часть тела — **my head**, затем говорим, что она болит: **hurts**. Смысл тот же, а устройство фразы другое.
+ 
+-      Для спины используйте **My back hurts**. Не соединяйте половины двух схем: *I have back hurts* не подходит. Слово **my** показывает, чья часть тела болит, а **hurts** само выражает действие; дополнительное is не нужно.
++      Для спины используйте **My back hurts**. Не соединяйте половины двух схем: *I have back hurts* не подходит. Слово **my** показывает, чья часть тела болит, а **hurts** — уже глагол в Present Simple. Он описывает боль, а не обязательно действие. Дополнительное is перед ним не нужно: **My back hurts**, не *My back is hurts*.
+ 
+       Сравните число: **My foot hurts. → My feet hurt.** Одна ступня — **foot**, поэтому **hurts**; несколько — **feet**, поэтому **hurt**. В вопросе **Does your head hurt?** форму для одной части тела уже показывает does, и дальше **hurt** без -s.
+ 
+@@ -129,7 +129,7 @@ exercises:
+     answer: "headache"
+     hint_ru: "head + ache."
+     explanation_ru: "I have a headache — «у меня головная боль»."
+-    units: [LX-00212, LX-00221]
++    units: [LX-00212]
+   - order: 3
+     uid: EX-00118
+     kind: build
+@@ -171,7 +171,7 @@ exercises:
+     accepted: ["My leg hurts", "I have pain in my leg.", "I have pain in my leg"]
+     hint_ru: "Нога — leg; одна часть тела — hurts."
+     explanation_ru: "My leg hurts. Можно и I have pain in my leg. Leg — вся нога, foot — ступня."
+-    units: [LX-00400, LX-00408]
++    units: [LX-00400]
+ # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+ practice:
+ - order: 1
+diff --git a/content/seed_lessons/a1_w11_l22_cant.yaml b/content/seed_lessons/a1_w11_l22_cant.yaml
+index 240e342..0f6c35d 100644
+--- a/content/seed_lessons/a1_w11_l22_cant.yaml
++++ b/content/seed_lessons/a1_w11_l22_cant.yaml
+@@ -37,7 +37,7 @@ layers:
+       **I can sleep.** — Я могу спать.
+       **I cannot sleep. / I can't sleep.** — Я не могу спать. Смысл меняет отрицание; слово **sleep** остаётся той же формой.
+ 
+-      После **can't** называем действие: **sleep, work, walk**. С другим человеком схема сохраняется: **Tom can't sleep**, без *cans* и без *sleeps*. Не добавляем to: **can't sleep**, а не *can't to sleep*.
++      После **can't** ставим глагол в начальной форме: **sleep, work, walk**. С другим человеком схема сохраняется: **Tom can't sleep**, без *cans* и без *sleeps*. Не добавляем to: **can't sleep**, а не *can't to sleep*.
+ 
+       **I am tired** сообщает о состоянии: «Я устал». **I can't sleep** сообщает, какое действие не получается: «Я не могу спать». Чтобы соединить обе мысли, скажите **I am tired and I can't sleep.** Не смешивайте схемы: *I am can't sleep* и *I can tired* не подходят.
+ 
+@@ -53,7 +53,7 @@ layers:
+       - Вопрос: Can you sleep? — Yes, I can. / No, I can't.
+       - **but** показывает контраст: My head is OK, but my back hurts. Не обязательно искать слова-антонимы: достаточно, что вторая мысль расходится с первой или с ожиданием.
+ 
+-      **Самочувствие и действие — разные вещи.** Sick — нездоровый, tired — уставший, hungry — голодный, thirsty — испытывающий жажду, well — здоровый. О состоянии говорят с be или feel — «чувствовать себя»:
++      **Сравним две конструкции.** Sick — нездоровый, tired — уставший, hungry — голодный, thirsty — испытывающий жажду, well — здоровый в этих примерах. Здесь это прилагательные: для сообщения о самочувствии поставьте перед ними be или feel — «чувствовать себя». Это правило для этих сочетаний, а не для любого состояния: знакомое **I like tea** тоже описывает отношение, но like — самостоятельный глагол.
+ 
+       > [T8]I[/] [D3]feel[/] [J4]sick[/] [C1]and[/] [J4]tired[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]. — Мне нехорошо, и я устал. У меня болит голова.
+       > [T8]I[/] [D1]am[/] [J4]hungry[/]. — Я голоден.
+@@ -157,8 +157,8 @@ exercises:
+     options: ["I am thirsty.", "I am hungry.", "I am tired."]
+     answer: "I am thirsty."
+     hint_ru: "Thirsty — хочется пить, hungry — хочется есть."
+-    explanation_ru: "I am thirsty. О состоянии говорят с am / is / are или feel."
+-    units: [LX-00403, LX-00404, LX-00405]
++    explanation_ru: "I am thirsty. Thirsty — прилагательное: в этой конструкции перед ним нужен am. Можно также сказать I feel thirsty."
++    units: [LX-00405]
+   - order: 6
+     uid: EX-00127
+     kind: build
+@@ -166,7 +166,7 @@ exercises:
+     prompt_ru: "Новая ситуация: друг не понимает, почему вы отдыхаете. Соберите: «Я устал и не могу спать»."
+     options: ["sleep", "tired", "I", "can't", "and", "am", "I"]
+     answer: "I am tired and I can't sleep"
+-    hint_ru: "Сначала I am + состояние, затем and и I can't + действие."
++    hint_ru: "Сначала I am + прилагательное tired, затем and и I can't + глагол sleep."
+     explanation_ru: "I am tired and I can't sleep. Перед tired — am, после can't — sleep без to."
+     units: [LX-00403, LX-00218]
+ # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+@@ -176,7 +176,7 @@ practice:
+   prompt_ru: Я не могу спать.
+   answer: I cannot sleep.
+   hint_ru: «Не могу» — cannot или can't.
+-  explanation_ru: I can't sleep. Cannot пишут одним словом; в речи — can't.
++  explanation_ru: I can't sleep. Обычную полную форму cannot пишут одним словом. Can't — разговорное сокращение; cannot тоже можно произнести, например для подчёркивания.
+   review_of: 2
+   units:
+   - LX-00217
+diff --git a/content/seed_lessons/a1_w12_l23_dont_doesnt.yaml b/content/seed_lessons/a1_w12_l23_dont_doesnt.yaml
+index 791db65..2c3a786 100644
+--- a/content/seed_lessons/a1_w12_l23_dont_doesnt.yaml
++++ b/content/seed_lessons/a1_w12_l23_dont_doesnt.yaml
+@@ -120,7 +120,7 @@ exercises:
+     accepted: ["do not"]
+     hint_ru: "С I — don't."
+     explanation_ru: "I don't have a stamp — «у меня нет марки»."
+-    units: [LX-00233]
++    units: []
+   - order: 3
+     uid: EX-00130
+     kind: build
+@@ -167,7 +167,7 @@ exercises:
+     - Sorry, I do not know the ZIP code.
+     - Sorry, I do not know the ZIP code
+     hint_ru: Sorry + I don't know + the ZIP code.
+-    explanation_ru: Отрицайте действие know через do not; ZIP code — индекс в США.
++    explanation_ru: Know — глагол «знать». В Present Simple с I его отрицание строится через do not, хотя знать — состояние, а не действие. ZIP code — индекс в США.
+     units:
+     - LX-00415
+     - LX-00236
+@@ -183,14 +183,14 @@ practice:
+   units: [LX-00233, LX-00226]
+ - order: 2
+   kind: translate
+-  prompt_ru: Старый ящик не получает писем.
++  prompt_ru: Речь об уже известном старом почтовом ящике. Скажите, что он не получает писем; назовите его словом mailbox. Слово old можно повторить.
+   answer: The old mailbox does not get letters.
+   accepted:
+   - The mailbox does not get letters.
+   hint_ru: mailbox = it → doesn't.
+   explanation_ru: The old mailbox doesn't get letters. С it — doesn't, а get без -s.
+   review_of: 1
+-  units: [LX-00180, LX-00225, LX-00235]
++  units: [LX-00180, LX-00225]
+ - order: 3
+   kind: translate
+   prompt_ru: Я не знаю.
+diff --git a/content/seed_lessons/a1_w12_l24_address.yaml b/content/seed_lessons/a1_w12_l24_address.yaml
+index ee4b66f..0a55606 100644
+--- a/content/seed_lessons/a1_w12_l24_address.yaml
++++ b/content/seed_lessons/a1_w12_l24_address.yaml
+@@ -173,6 +173,7 @@ exercises:
+     answer: My last name is Belova.
+     accepted:
+     - My last name is Belova
++    - My last name's Belova.
+     hint_ru: My last name + is + фамилия.
+     explanation_ru: Last name — фамилия; first name — имя. Не перепутайте поля анкеты.
+     units:
+diff --git a/content/seed_lessons/a1_w13_l25_can_skills.yaml b/content/seed_lessons/a1_w13_l25_can_skills.yaml
+index 9004230..6ada6f2 100644
+--- a/content/seed_lessons/a1_w13_l25_can_skills.yaml
++++ b/content/seed_lessons/a1_w13_l25_can_skills.yaml
+@@ -13,7 +13,7 @@ sound_notes:
+     note_ru: "В этом нейтральном вопросе can без ударения: /kən/. При подчёркивании умения возможно ударное /kæn/."
+   - text: "Yes, I can."
+     ipa: "/ˈjɛs aɪ ˈkæn/"
+-    note_ru: "в конце фразы can полное и ударное: «кЭн»"
++    note_ru: "В таком утвердительном коротком ответе can обычно ударное: /kæn/."
+   - text: "I can speak Russian and English."
+     ipa: "/aɪ kən ˈspik ˈrʌʃən ən ˈɪŋɡlɪʃ/"
+     note_ru: "English — «Ингльш», с носовым ŋ перед g"
+@@ -60,7 +60,7 @@ layers:
+ 
+       > [T8]I[/] [D7]can[/][X1]not[/] [D5]speak[/] [S10]Russian[/]. [D7]Can[/] [T8]you[/] [D5]teach[/] [T8]me[/]? [T8]I[/] [D3]want[/] [X2]to[/] [D6]learn[/]. — А я не говорю по-русски. Научишь меня? Я хочу учиться.
+ 
+-      После модального **can** смысловой глагол в наших примерах стоит в **начальной форме без to**: *can speak, can swim*. Это отдельное правило сочетания **can + действие**, а не правило для всех глаголов английского языка.
++      После модального **can** смысловой глагол в наших примерах стоит в **начальной форме без to**: *can speak, can swim*. Это отдельное правило сочетания **can + глагол в начальной форме**, а не правило для всех глаголов английского языка.
+ 
+       **Диагностика понимания:** Вы хотите сказать, что **она умеет плавать**. Что верно: *She can swim* или *She cans swim*?
+ 
+@@ -71,7 +71,7 @@ layers:
+ 
+       > [S1]Anna[/], [D7]can[/] [T8]you[/] [D5]speak[/] [S10]Russian[/]? — Анна, ты говоришь по-русски?
+ 
+-      - Языки пишут с большой буквы и без the: speak English, speak Russian.
++      - Названия языков пишут с большой буквы. В сочетаниях speak English, speak Russian артикль не нужен; это не запрет на the перед любым сочетанием со словом English.
+       - Краткий ответ на **Can you…?**: *Yes, I can* или *No, I can't*. На **Do you speak…?** отвечаем *Yes, I do / No, I don't*. Сохраняйте каркас заданного вопроса: одинаковый русский перевод не делает **can** и **do** взаимозаменяемыми в кратком ответе.
+       - Чуть-чуть: I can speak a little Russian — «я немного говорю по-русски».
+ 
+@@ -138,7 +138,7 @@ exercises:
+     prompt_ru: "Новая ситуация: в поездке вас спрашивают, говорите ли вы по-английски. По условию вы говорите и по-русски, и по-английски. Ответьте коротко; если хотите, добавьте вторую фразу об обоих языках."
+     prompt_en: "Can you speak English? — ___"
+     answer: "Yes, I can. I can speak Russian and English."
+-    accepted: ["Yes, I can.", "Yes, I can", "Yes, I can. I speak Russian and English.", "Yes, I can speak English.", "Yes. I can speak Russian and English.", "Yes, I can. I can speak Russian and English"]
++    accepted: ["Yes, I can.", "Yes, I can", "Yes, I can. I speak Russian and English.", "Yes, I can speak English.", "Yes. I can speak Russian and English.", "Yes, I can. I can speak Russian and English", "Yes, I can. I can speak English and Russian.", "Yes, I can. I speak English and Russian.", "Yes. I can speak English and Russian."]
+     hint_ru: "На Can you…? достаточно Yes, I can. Фразу о двух языках добавьте только по желанию."
+     explanation_ru: "На Can you speak English? достаточно Yes, I can. Если вы хотите назвать оба языка, можно добавить I can speak Russian and English. Это образец по условию задания, а не предположение об умениях ученика."
+     units: [LX-00248]
+diff --git a/content/seed_lessons/a1_w13_l26_why_because.yaml b/content/seed_lessons/a1_w13_l26_why_because.yaml
+index 4c814bc..c6d9366 100644
+--- a/content/seed_lessons/a1_w13_l26_why_because.yaml
++++ b/content/seed_lessons/a1_w13_l26_why_because.yaml
+@@ -53,7 +53,7 @@ layers:
+       - Ответ: Because + полная мысль: Because I like music.
+   - number: 4
+     body: |
+-      **После because в наших ответах — целая мысль.** *Because I like music* сообщает, **кто** (*I*) и **что делает** (*like music*). В *Because the exercise is difficult* сказано, **что** (*the exercise*) и **какое оно** (*is difficult*). В грамматике because вводит **придаточную часть причины** — часть предложения, которая объясняет «почему».
++      **После because в наших ответах — целая мысль.** *Because I like music* сообщает, **кто** (*I*) и **что ему нравится** (*like music*). В *Because the exercise is difficult* сказано, **что** (*the exercise*) и **какое оно** (*is difficult*). В грамматике because вводит **придаточную часть причины** — часть предложения, которая объясняет «почему».
+ 
+       На вопрос **Why?** можно ответить отдельной репликой: *Because I like music.* Причину можно присоединить к основной мысли: *I learn Russian because I like the music.* Начало реплики с **Because** само по себе не ошибка; важно, чтобы собеседнику было понятно, что вы объясняете.
+ 
+@@ -87,7 +87,7 @@ layers:
+     body: |
+       Ловушки:
+ 
+-      - «Why you like it?» — пропущен do. Правильно: Why do you like it?
++      - В обычном полном вопросе «Почему тебе это нравится?» нужен do: Why do you like it? Форму Why you like it? здесь не тренируем.
+       - Не смешивайте **because I like music** и **because of the music**. Первая конструкция содержит целую мысль, вторая — только название причины. Перед **I like** слово **of** лишнее.
+       - Русское «зачем» и «почему» по-английски часто оба — why.
+   - number: 7
+@@ -175,7 +175,7 @@ practice:
+   prompt_ru: Почему ты устал?
+   answer: Why are you tired?
+   hint_ru: Why + are you…?
+-  explanation_ru: Why are you tired? После why — обычный порядок вопроса.
++  explanation_ru: "Why are you tired? Здесь вопрос с be: Why + are + you + tired? Помощник do не нужен."
+   review_of: 3
+   units:
+   - LX-00241
+diff --git a/content/seed_lessons/a1_w14_l27_bus.yaml b/content/seed_lessons/a1_w14_l27_bus.yaml
+index 24b4586..6f5494d 100644
+--- a/content/seed_lessons/a1_w14_l27_bus.yaml
++++ b/content/seed_lessons/a1_w14_l27_bus.yaml
+@@ -136,7 +136,7 @@ exercises:
+     accepted: ["Does this bus go to the park", "Excuse me, does this bus go to the park?", "Excuse me! Does this bus go to the park?", "Does the bus go to the park?"]
+     hint_ru: "Does this bus go to + место."
+     explanation_ru: "Does this bus go to the park? Можно начать с Excuse me."
+-    units: [LX-00252, LX-00255]
++    units: [LX-00252]
+   - order: 5
+     uid: EX-00156
+     kind: choice
+@@ -152,7 +152,6 @@ exercises:
+     units:
+     - LX-00464
+     - LX-00472
+-    - LX-00473
+   - order: 6
+     uid: EX-00157
+     kind: fill
+diff --git a/content/seed_lessons/a1_w14_l28_review.yaml b/content/seed_lessons/a1_w14_l28_review.yaml
+index 66fd2a1..1851822 100644
+--- a/content/seed_lessons/a1_w14_l28_review.yaml
++++ b/content/seed_lessons/a1_w14_l28_review.yaml
+@@ -168,7 +168,6 @@ exercises:
+     explanation_ru: It is sunny today — полное предложение. В английском здесь нужен глагол is и подлежащее it.
+     units:
+     - LX-00458
+-    - LX-00457
+   - order: 6
+     uid: EX-00163
+     kind: fill
+diff --git a/content/seed_lexicon/a1_w06_day.yaml b/content/seed_lexicon/a1_w06_day.yaml
+index c8b1254..765dade 100644
+--- a/content/seed_lexicon/a1_w06_day.yaml
++++ b/content/seed_lexicon/a1_w06_day.yaml
+@@ -118,6 +118,8 @@ units:
+   class: S4
+   forms:
+   - cafes
++  - café
++  - cafés
+   cefr: unverified
+   verification_status: pending
+   frequency_source: NGSL — требует проверки
+diff --git a/content/seed_lexicon/a1_w07_work.yaml b/content/seed_lexicon/a1_w07_work.yaml
+index 981d914..230ea85 100644
+--- a/content/seed_lexicon/a1_w07_work.yaml
++++ b/content/seed_lexicon/a1_w07_work.yaml
+@@ -16,7 +16,7 @@ units:
+   example_en: '[T8]I[/] [D1]am[/] [T1]a[/] [S9]teacher[/].'
+   example_ru: Я учитель.
+   situation: Рассказываете о своей работе
+-  usage_note: 'Перед профессией — a: I am a teacher. Без a — ошибка.'
++  usage_note: "В полном ответе о профессии: I am a teacher. В этой конструкции перед teacher нужен определитель; здесь это a. Кратко можно ответить A teacher."
+ - uid: LX-00143
+   lemma: school
+   meaning: a place where children learn
+@@ -187,7 +187,7 @@ units:
+   usage_note: 'Does показывает форму для he; основной глагол work остаётся без -s.'
+ - uid: LX-00155
+   lemma: No, he does not.
+-  meaning: A short no answer about he or she
++  meaning: "A short negative answer to a question with Does he…?"
+   class: D1
+   unit_type: phrase
+   cefr: unverified
+diff --git a/content/seed_lexicon/a1_w07_work_plus.yaml b/content/seed_lexicon/a1_w07_work_plus.yaml
+index 73ad105..c8c5322 100644
+--- a/content/seed_lexicon/a1_w07_work_plus.yaml
++++ b/content/seed_lexicon/a1_w07_work_plus.yaml
+@@ -4,7 +4,7 @@ week: 7
+ units:
+ - uid: LX-00319
+   lemma: nurse
+-  meaning: a person who cares for sick people in a hospital
++  meaning: "a person trained to care for sick or injured people"
+   class: S9
+   forms:
+   - nurses
+@@ -109,7 +109,7 @@ units:
+   usage_note: 'Ударение в начале: MAnager, широкое /æ/.'
+ - uid: LX-00326
+   lemma: farmer
+-  meaning: a person who has a farm
++  meaning: "a person who grows crops or raises animals on a farm"
+   class: S9
+   forms:
+   - farmers
+@@ -136,7 +136,7 @@ units:
+   example_en: '[T8]I[/] [D3]like[/] [T3]my[/] [S9]job[/].'
+   example_ru: Мне нравится моя работа.
+   situation: Рассказываете, кем работаете
+-  usage_note: job — конкретное место работы, work — работа вообще. «джаб».
++  usage_note: "Job — исчисляемое название работы или должности: a job, two jobs. Work в значении работы вообще обычно неисчисляемое. Job не обязательно обозначает помещение или здание."
+ - uid: LX-00328
+   lemma: boss
+   meaning: the person who tells you what to do at work
+@@ -166,7 +166,7 @@ units:
+   example_en: '[T3]My[/] [S1]mom[/] [D2]works[/] [P1]at[/] [T1]a[/] [S4]hospital[/].'
+   example_ru: Мама работает в больнице.
+   situation: Говорите, где работаете
+-  usage_note: 'Ударение в начале: HOSpital. В США — in the hospital.'
++  usage_note: "Ударение в начале: HOSpital. В США о пациенте говорят in the hospital. О работе возможны work at a hospital и work in a hospital: артикль зависит от контекста, а не только от слова hospital."
+ - uid: LX-00330
+   lemma: office
+   meaning: a room or building where people work at desks
+@@ -181,7 +181,7 @@ units:
+   example_en: '[T8]I[/] [D2]work[/] [P1]in[/] [T1]an[/] [S4]office[/].'
+   example_ru: Я работаю в офисе.
+   situation: Говорите, где работаете
+-  usage_note: «Офис», ударение в начале. in an office — внутри здания.
++  usage_note: "Ударение в начале. I work in an office называет офис как рабочую среду; это не обязательно сообщение, что человек сейчас физически внутри здания."
+ - uid: LX-00331
+   lemma: restaurant
+   meaning: a place where you buy and eat meals
+@@ -273,4 +273,4 @@ units:
+   example_en: I work in an office.
+   example_ru: Я работаю в офисе.
+   situation: Говорите, где работаете
+-  usage_note: 'in — внутри здания: in an office, in a hospital. at — место как точка: at a school, at home.'
++  usage_note: "I work in an office — обычное место работы, не обязательно нахождение внутри сейчас. At и in выбирают по ситуации; это не жёсткое правило «точка против помещения»."
+diff --git a/content/seed_lexicon/a1_w08_city.yaml b/content/seed_lexicon/a1_w08_city.yaml
+index bd78214..7d6a050 100644
+--- a/content/seed_lexicon/a1_w08_city.yaml
++++ b/content/seed_lexicon/a1_w08_city.yaml
+@@ -27,7 +27,7 @@ units:
+   example_en: '[O2]Excuse me[/]!'
+   example_ru: Извините!
+   situation: Обращаетесь к незнакомому человеку
+-  usage_note: 'I — «я» в начале фразы, me — «меня, мне» после глагола.'
++  usage_note: "I — форма подлежащего: I am here. Me — форма дополнения: Can you help me? Выбор зависит от роли, а не просто от позиции в начале или конце фразы."
+ - uid: LX-00159
+   lemma: excuse
+   meaning: to forgive someone for a small mistake
+@@ -168,7 +168,7 @@ units:
+   example_en: '[D4]Turn[/] [A3]left[/].'
+   example_ru: Поверните налево.
+   situation: Объясняете дорогу
+-  usage_note: 'on the left — слева, turn left — налево.'
++  usage_note: 'В turn left слово left показывает направление — это наречие. В on the left оно называет сторону — это существительное; всё сочетание означает «слева».'
+ - uid: LX-00169
+   lemma: right
+   meaning: on or to the opposite side from left
+@@ -178,10 +178,10 @@ units:
+   frequency_source: NGSL — требует проверки
+   ipa_us: /raɪt/
+   translation_ru: направо; справа
+-  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/].'
++  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]right[/].'
+   example_ru: Банк справа.
+   situation: Объясняете дорогу
+-  usage_note: 'right ещё значит «правильный»: That is right! — Верно!'
++  usage_note: 'В turn right слово right показывает направление — это наречие. В on the right оно называет сторону — это существительное; всё сочетание означает «справа». Right ещё значит «правильный»: That is right! — Верно!'
+ - uid: LX-00170
+   lemma: straight
+   meaning: in a line, without turning
+@@ -231,7 +231,7 @@ units:
+   example_en: The bank is next to the cafe.
+   example_ru: Банк рядом с кафе.
+   situation: Как пройти
+-  usage_note: 't в next почти не слышно: «нэкс ту».'
++  usage_note: "В быстрой речи next to может звучать слитно, без отдельного взрыва каждого t. В отчётливой речи t можно сохранить."
+ - uid: LX-00175
+   lemma: Excuse me!
+   meaning: Getting a stranger's attention politely
+@@ -244,7 +244,7 @@ units:
+   example_en: Excuse me!
+   example_ru: Извините!
+   situation: Как пройти
+-  usage_note: 'Так начинают разговор с незнакомым человеком. Sorry — когда уже извиняются за ошибку.'
++  usage_note: "Excuse me удобно для вежливого привлечения внимания незнакомца. Sorry тоже может предварять обращение или переспрос; оно не ограничено извинением за уже совершённую ошибку."
+ - uid: LX-00176
+   lemma: Where is the bank?
+   meaning: Asking for a place
+diff --git a/content/seed_lexicon/a1_w08_city_plus.yaml b/content/seed_lexicon/a1_w08_city_plus.yaml
+index c8d5054..6be5803 100644
+--- a/content/seed_lexicon/a1_w08_city_plus.yaml
++++ b/content/seed_lexicon/a1_w08_city_plus.yaml
+@@ -17,7 +17,7 @@ units:
+   usage_note: «Андэр», американское r в конце.
+ - uid: LX-00338
+   lemma: between
+-  meaning: in the space in the middle of two things
++  meaning: "in the space separating things"
+   class: P1
+   cefr: unverified
+   verification_status: pending
+@@ -27,7 +27,7 @@ units:
+   example_en: '[T1]The[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/].'
+   example_ru: Мастерская между банком и гостиницей.
+   situation: Объясняете, где что находится
+-  usage_note: 'between A and B — всегда с and. Ударение в конце: beTWEEN.'
++  usage_note: "В образце between A and B два названия соединяются and. Возможны и другие дополнения: between the banks — «между банками». Не каждое сочетание с between содержит and."
+ - uid: LX-00339
+   lemma: in front of
+   meaning: facing the front part of something
+@@ -44,17 +44,17 @@ units:
+   unit_type: phrase
+ - uid: LX-00340
+   lemma: across from
+-  meaning: on the other side of a street from something
++  meaning: "on the opposite side from someone or something"
+   class: P9
+   cefr: unverified
+   verification_status: pending
+   frequency_source: NGSL — требует проверки
+   ipa_us: /əˈkrɔs frəm/
+   translation_ru: напротив
+-  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P9]across from[/] [T1]the[/] [S4]park[/].'
+-  example_ru: Банк напротив парка.
++  example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P9]across from[/] [T1]the[/] [S4]school[/].'
++  example_ru: Банк напротив школы.
+   situation: Объясняете, где что находится
+-  usage_note: Американский вариант «напротив». В учебниках встречается и opposite.
++  usage_note: "Across from — естественное американское «напротив», в том числе через дорогу или стол. Opposite тоже употребляется в американском английском; в этом уроке учим across from."
+   unit_type: phrase
+ - uid: LX-00341
+   lemma: him
+@@ -106,7 +106,7 @@ units:
+   frequency_source: NGSL — требует проверки
+   ipa_us: /hoʊˈtɛl/
+   translation_ru: гостиница, отель
+-  example_en: '[T1]The[/] [S4]hotel[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]left[/].'
++  example_en: '[T1]The[/] [S4]hotel[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]left[/].'
+   example_ru: Гостиница слева.
+   situation: Объясняете, где что находится
+   usage_note: 'Ударение в конце: hoTEL.'
+diff --git a/content/seed_lexicon/a1_w09_phone_plus.yaml b/content/seed_lexicon/a1_w09_phone_plus.yaml
+index 96b0c04..79b0fb0 100644
+--- a/content/seed_lexicon/a1_w09_phone_plus.yaml
++++ b/content/seed_lexicon/a1_w09_phone_plus.yaml
+@@ -27,10 +27,10 @@ units:
+   example_en: '[A6]When[/] [D1]does[/] [T1]the[/] [S4]shop[/] [D2]open[/]?'
+   example_ru: Когда открывается магазин?
+   situation: Задаёте вопрос
+-  usage_note: when — «когда» вообще; what time — точное время.
++  usage_note: 'When спрашивает о времени в широком смысле: ответом может быть и день, и время на часах. What time прямо просит назвать время на часах; это не запрет точного ответа на when.'
+ - uid: LX-00350
+   lemma: which
+-  meaning: what one of a small group
++  meaning: which one or ones of a known or limited set
+   class: T9
+   cefr: unverified
+   verification_status: pending
+@@ -109,7 +109,7 @@ units:
+   usage_note: «мЭсидж», ударение в начале.
+ - uid: LX-00355
+   lemma: email
+-  meaning: a message sent by computer
++  meaning: an electronic message sent through an email service
+   class: S9
+   forms:
+   - emails
+@@ -263,10 +263,10 @@ units:
+   example_en: '[O2]Sorry[/], [T8]it[/] [D1]is[/] [T1]the[/] [J3]wrong[/] [S9]number[/].'
+   example_ru: Извините, вы ошиблись номером.
+   situation: Говорите по телефону и в сообщениях
+-  usage_note: 'w не читается: «рон», носовой ŋ в конце. wrong number — «не туда попали».'
++  usage_note: 'w не произносится. В конце /ŋ/: задняя часть языка касается мягкого нёба, а не кончик языка, как для /n/. wrong number — «не туда попали».'
+ - uid: LX-00366
+   lemma: first name
+-  meaning: the name given to you at birth, before your family name
++  meaning: a given name, as distinguished from a family name
+   class: S9
+   unit_type: phrase
+   forms:
+@@ -294,7 +294,7 @@ units:
+   usage_note: 'Вместо Tom — любое имя. Ответ: Speaking! — «Это я».'
+ - uid: LX-00368
+   lemma: Call me later.
+-  meaning: Asking someone to phone again
++  meaning: Asking someone to telephone at a later time
+   class: D5
+   unit_type: phrase
+   cefr: unverified
+diff --git a/content/seed_lexicon/a1_w10_free.yaml b/content/seed_lexicon/a1_w10_free.yaml
+index bcb8cf6..1967048 100644
+--- a/content/seed_lexicon/a1_w10_free.yaml
++++ b/content/seed_lexicon/a1_w10_free.yaml
+@@ -16,7 +16,7 @@ units:
+   example_en: '[T9]What[/] [D1]do[/] [T8]you[/] [D2]do[/] [P3]on[/] [T1]the[/] [S7]weekend[/]?'
+   example_ru: Что ты делаешь в выходные?
+   situation: Рассказываете о выходных
+-  usage_note: 'В Америке — on the weekend, в Британии — at the weekend.'
++  usage_note: 'В американском английском обычно on the weekend; at the weekend характерно для британского варианта, но не является грамматической ошибкой.'
+ - uid: LX-00194
+   lemma: Saturday
+   meaning: the day after Friday
+@@ -56,7 +56,7 @@ units:
+   example_en: '[T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturdays[/].'
+   example_ru: По субботам я всегда читаю.
+   situation: Говорите, как часто что-то делаете
+-  usage_note: 'Стоит перед обычным глаголом (I always read), но после be (I am always busy).'
++  usage_note: 'В нейтральном простом утверждении обычно стоит перед смысловым глаголом (I always read), а с be — после него (I am always busy). Это базовая позиция, не запрет иных контекстов.'
+ - uid: LX-00197
+   lemma: never
+   meaning: not at any time
+@@ -144,7 +144,7 @@ units:
+   example_en: '[T8]I[/] [D2]play[/] [T1]the[/] [S2]guitar[/].'
+   example_ru: Я играю на гитаре.
+   situation: Рассказываете о хобби
+-  usage_note: 'На инструменте — с the: play the guitar. В игру — без the: play chess.'
++  usage_note: 'С инструментом здесь тренируем play the guitar; в американском английском play guitar без the тоже естественно. С названием игры обычно без the: play chess.'
+ - uid: LX-00203
+   lemma: music
+   meaning: sounds made by voices or instruments
+diff --git a/content/seed_lexicon/a1_w10_free_plus.yaml b/content/seed_lexicon/a1_w10_free_plus.yaml
+index f568918..b3ef4d4 100644
+--- a/content/seed_lexicon/a1_w10_free_plus.yaml
++++ b/content/seed_lexicon/a1_w10_free_plus.yaml
+@@ -14,7 +14,7 @@ units:
+   example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Mondays[/]."
+   example_ru: "По понедельникам я обычно работаю."
+   situation: Планируете выходные и называете время
+-  usage_note: "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями)."
++  usage_note: "День недели пишется с заглавной буквы. On Mondays явно обозначает повторение по понедельникам. On Monday может называть конкретный понедельник, а в подходящем контексте — привычку; разговорное Mondays возможно и без on (так же с другими днями)."
+ - uid: LX-00370
+   lemma: Tuesday
+   meaning: "a day of the week: Tuesday"
+@@ -27,7 +27,7 @@ units:
+   example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Tuesdays[/]."
+   example_ru: "По вторникам я обычно работаю."
+   situation: Планируете выходные и называете время
+-  usage_note: "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями)."
++  usage_note: "День недели пишется с заглавной буквы. On Mondays явно обозначает повторение по понедельникам. On Monday может называть конкретный понедельник, а в подходящем контексте — привычку; разговорное Mondays возможно и без on (так же с другими днями)."
+ - uid: LX-00371
+   lemma: Wednesday
+   meaning: "a day of the week: Wednesday"
+@@ -40,7 +40,7 @@ units:
+   example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Wednesdays[/]."
+   example_ru: "По средам я обычно работаю."
+   situation: Планируете выходные и называете время
+-  usage_note: "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями)."
++  usage_note: "День недели пишется с заглавной буквы. On Mondays явно обозначает повторение по понедельникам. On Monday может называть конкретный понедельник, а в подходящем контексте — привычку; разговорное Mondays возможно и без on (так же с другими днями)."
+ - uid: LX-00372
+   lemma: Thursday
+   meaning: "a day of the week: Thursday"
+@@ -53,7 +53,7 @@ units:
+   example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Thursdays[/]."
+   example_ru: "По четвергам я обычно работаю."
+   situation: Планируете выходные и называете время
+-  usage_note: "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями)."
++  usage_note: "День недели пишется с заглавной буквы. On Mondays явно обозначает повторение по понедельникам. On Monday может называть конкретный понедельник, а в подходящем контексте — привычку; разговорное Mondays возможно и без on (так же с другими днями)."
+ - uid: LX-00373
+   lemma: Friday
+   meaning: "a day of the week: Friday"
+@@ -66,7 +66,7 @@ units:
+   example_en: "[T8]I[/] [A1]usually[/] [D2]work[/] [P3]on[/] [S7]Fridays[/]."
+   example_ru: "По пятницам я обычно работаю."
+   situation: Планируете выходные и называете время
+-  usage_note: "День недели пишется с заглавной буквы. On Monday — в понедельник, on Mondays — по понедельникам (так же с другими днями)."
++  usage_note: "День недели пишется с заглавной буквы. On Mondays явно обозначает повторение по понедельникам. On Monday может называть конкретный понедельник, а в подходящем контексте — привычку; разговорное Mondays возможно и без on (так же с другими днями)."
+ - uid: LX-00374
+   lemma: January
+   meaning: "a month of the year: January"
+@@ -78,7 +78,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]January[/]."
+   example_ru: "Я люблю гулять в январе."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00375
+   lemma: February
+   meaning: "a month of the year: February"
+@@ -90,7 +90,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]February[/]."
+   example_ru: "Я люблю гулять в феврале."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00376
+   lemma: March
+   meaning: "a month of the year: March"
+@@ -102,7 +102,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]March[/]."
+   example_ru: "Я люблю гулять в марте."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00377
+   lemma: April
+   meaning: "a month of the year: April"
+@@ -114,7 +114,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]April[/]."
+   example_ru: "Я люблю гулять в апреле."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00378
+   lemma: May
+   meaning: "a month of the year: May"
+@@ -126,7 +126,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]May[/]."
+   example_ru: "Я люблю гулять в мае."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00379
+   lemma: June
+   meaning: "a month of the year: June"
+@@ -138,7 +138,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]June[/]."
+   example_ru: "Я люблю гулять в июне."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00380
+   lemma: July
+   meaning: "a month of the year: July"
+@@ -150,7 +150,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]July[/]."
+   example_ru: "Я люблю гулять в июле."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00381
+   lemma: August
+   meaning: "a month of the year: August"
+@@ -162,7 +162,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]August[/]."
+   example_ru: "Я люблю гулять в августе."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00382
+   lemma: September
+   meaning: "a month of the year: September"
+@@ -174,7 +174,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]September[/]."
+   example_ru: "Я люблю гулять в сентябре."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00383
+   lemma: October
+   meaning: "a month of the year: October"
+@@ -186,7 +186,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]October[/]."
+   example_ru: "Я люблю гулять в октябре."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00384
+   lemma: November
+   meaning: "a month of the year: November"
+@@ -198,7 +198,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]November[/]."
+   example_ru: "Я люблю гулять в ноябре."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00385
+   lemma: December
+   meaning: "a month of the year: December"
+@@ -210,7 +210,7 @@ units:
+   example_en: "[T8]I[/] [D3]like[/] [D4]walking[/] [P3]in[/] [S7]December[/]."
+   example_ru: "Я люблю гулять в декабре."
+   situation: Планируете выходные и называете время
+-  usage_note: "Месяцы пишут с большой буквы; перед месяцем ставят in."
++  usage_note: "Месяцы пишут с большой буквы. В примере время действия «в этом месяце» передаёт in + название месяца; само название месяца не требует in во всех предложениях."
+ - uid: LX-00386
+   lemma: shirt
+   meaning: "a piece of clothing for the upper body"
+diff --git a/content/seed_lexicon/a1_w11_health.yaml b/content/seed_lexicon/a1_w11_health.yaml
+index ce842c5..3b71be3 100644
+--- a/content/seed_lexicon/a1_w11_health.yaml
++++ b/content/seed_lexicon/a1_w11_health.yaml
+@@ -79,7 +79,7 @@ units:
+   usage_note: 'Одна часть тела в Present Simple: my back hurts. Несколько: my feet hurt, без -s у hurt.'
+ - uid: LX-00217
+   lemma: sleep
+-  meaning: to rest with your eyes closed at night
++  meaning: to be in the natural state of rest in which you are not awake
+   class: D2
+   forms:
+   - sleeps
+@@ -105,7 +105,7 @@ units:
+   example_en: '[T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/].'
+   example_ru: Я не могу спать.
+   situation: Говорите, что не получается
+-  usage_note: 'Пишут слитно: cannot. В разговоре — can''t, в Америке «кэнт».'
++  usage_note: 'Обычное полное отрицание can пишется cannot. Can''t — сокращение, удобное для разговора; полная форма тоже возможна. Произношение can''t зависит от темпа и контекста; один звук или ударение не всегда позволяют отличить его от can.'
+ - uid: LX-00219
+   lemma: but
+   meaning: used to add something different
+diff --git a/content/seed_lexicon/a1_w11_health_plus.yaml b/content/seed_lexicon/a1_w11_health_plus.yaml
+index fb8b62b..fade41a 100644
+--- a/content/seed_lexicon/a1_w11_health_plus.yaml
++++ b/content/seed_lexicon/a1_w11_health_plus.yaml
+@@ -194,7 +194,7 @@ units:
+   example_en: "[T8]I[/] [D3]feel[/] [J4]tired[/]."
+   example_ru: "Я чувствую усталость."
+   situation: Говорите о самочувствии и возможностях
+-  usage_note: "Состояние выражают с be или feel: I am tired, I feel tired."
++  usage_note: "Tired — прилагательное. Здесь для сообщения об усталости: I am tired или I feel tired. Это не универсальное правило для всех состояний."
+ - uid: LX-00404
+   lemma: hungry
+   meaning: "wanting to eat"
+@@ -293,4 +293,4 @@ units:
+   example_en: "[T8]I[/] [D3]feel[/] [J4]tired[/]."
+   example_ru: "Я чувствую усталость."
+   situation: Говорите о самочувствии и возможностях
+-  usage_note: "Feel + состояние: feel sick, feel tired. Не добавляйте am перед feel."
++  usage_note: "В этих сочетаниях после feel — прилагательное: feel sick, feel tired. В изучаемом Present Simple: I feel tired, без am перед feel."
+diff --git a/content/seed_lexicon/a1_w12_post.yaml b/content/seed_lexicon/a1_w12_post.yaml
+index 74b9e3a..f418af0 100644
+--- a/content/seed_lexicon/a1_w12_post.yaml
++++ b/content/seed_lexicon/a1_w12_post.yaml
+@@ -119,7 +119,7 @@ units:
+   example_en: What is the address?
+   example_ru: Какой адрес?
+   situation: На почте
+-  usage_note: 'Перед гласным звуком the звучит «зи»: the address — «зи эдрес».'
++  usage_note: 'В этом образце перед гласным используется the /ði/: the address. Звук /ð/ произносится с кончиком языка у зубов; это не русское з. Не заменяйте английское произношение русской записью.'
+ - uid: LX-00233
+   lemma: I do not have a stamp.
+   meaning: Saying you do not have something
+diff --git a/content/seed_lexicon/a1_w12_story04.yaml b/content/seed_lexicon/a1_w12_story04.yaml
+index 514a56a..d12fbfe 100644
+--- a/content/seed_lexicon/a1_w12_story04.yaml
++++ b/content/seed_lexicon/a1_w12_story04.yaml
+@@ -4,7 +4,7 @@ week: 12
+ units:
+ - uid: LX-00237
+   lemma: white
+-  meaning: having the colour of snow or milk
++  meaning: having the color of snow or milk
+   class: J2
+   cefr: unverified
+   verification_status: pending
+diff --git a/content/seed_lexicon/a1_w13_study.yaml b/content/seed_lexicon/a1_w13_study.yaml
+index 3eef235..faa3865 100644
+--- a/content/seed_lexicon/a1_w13_study.yaml
++++ b/content/seed_lexicon/a1_w13_study.yaml
+@@ -74,7 +74,7 @@ units:
+   example_en: '[T8]I[/] [D7]can[/] [D5]speak[/] [S10]English[/].'
+   example_ru: Я говорю по-английски.
+   situation: Говорите о языках
+-  usage_note: 'Языки пишут с большой буквы и без the: speak English.'
++  usage_note: 'Название языка English пишется с большой буквы. В speak English артикля нет; в the English course слово English описывает курс, а артикль относится к course.'
+ - uid: LX-00244
+   lemma: Russian
+   meaning: the language of Russia; from Russia
+diff --git a/content/seed_lexicon/a1_w14_travel.yaml b/content/seed_lexicon/a1_w14_travel.yaml
+index c252dd7..2a25bd8 100644
+--- a/content/seed_lexicon/a1_w14_travel.yaml
++++ b/content/seed_lexicon/a1_w14_travel.yaml
+@@ -58,7 +58,7 @@ units:
+   example_en: Does this bus go to Park Street?
+   example_ru: Этот автобус идёт до Парк-стрит?
+   situation: Поездка на автобусе
+-  usage_note: 'Главный вопрос в чужом городе: вставьте любую остановку вместо Park Street.'
++  usage_note: 'Вопрос о маршруте: Does this bus go to Park Street? Для другого места учитывайте артикль: to Park Street, но to the park.'
+ - uid: LX-00256
+   lemma: How much is a ticket?
+   meaning: Asking the price of a trip
+@@ -95,4 +95,4 @@ units:
+   example_en: What time is the next bus?
+   example_ru: Во сколько следующий автобус?
+   situation: Поездка на автобусе
+-  usage_note: 'next — следующий: next bus, next stop. t в next перед согласным почти не слышно.'
++  usage_note: 'next — следующий: next bus, next stop. В быстрой речи t перед согласным может быть ослаблено или опущено; чёткое t тоже допустимо.'
+diff --git a/content/seed_lexicon/a1_w14_travel_plus.yaml b/content/seed_lexicon/a1_w14_travel_plus.yaml
+index 28dbac1..f8f0eee 100644
+--- a/content/seed_lexicon/a1_w14_travel_plus.yaml
++++ b/content/seed_lexicon/a1_w14_travel_plus.yaml
+@@ -195,7 +195,7 @@ units:
+   class: S4
+   ipa_us: /trɪp/
+   translation_ru: поездка
+-  meaning: a journey to a place and back
++  meaning: a journey from one place to another
+   example_en: '[T3]Our[/] [S4]trip[/] [D8]starts[/] [P3]on[/] [S7]Monday[/].'
+   example_ru: Наша поездка начинается в понедельник.
+   usage_note: 'Trip — отдельная поездка, которую можно посчитать: a trip, two trips.'
+@@ -310,7 +310,7 @@ units:
+   meaning: an object held over you to keep rain off
+   example_en: '[T8]I[/] [D1]have[/] [T1]an[/] [S2]umbrella[/].'
+   example_ru: У меня есть зонт.
+-  usage_note: Перед umbrella — an, потому что слово начинается с гласного звука.
++  usage_note: "В an umbrella выбираем an, а не a, перед гласным звуком. Это не обязательный артикль перед каждым umbrella: my umbrella — мой зонт, the umbrella — уже известный зонт."
+   forms:
+   - umbrellas
+   cefr: unverified
+diff --git a/content/seed_poems/p04_one_for_you.yaml b/content/seed_poems/p04_one_for_you.yaml
+index e17c56e..a378b7f 100644
+--- a/content/seed_poems/p04_one_for_you.yaml
++++ b/content/seed_poems/p04_one_for_you.yaml
+@@ -24,7 +24,7 @@ body: |
+   [O2]Excuse me[/]! [O2]Excuse me[/]!
+   [P1]Near[/] [T1]the[/] [S4]bank[/]? [P1]Next to[/] [T1]the[/] [S4]bank[/]?
+   [P1]Between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]?
+-  [O4]Yes[/], [P3]on[/] [T1]the[/] [A3]right[/]!
++  [O4]Yes[/], [P1]on[/] [T1]the[/] [S4]right[/]!
+ 
+   [T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/],
+   [T8]it[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]your[/] [S2]door[/].
+diff --git a/content/seed_poems/p06_who_knows.yaml b/content/seed_poems/p06_who_knows.yaml
+index 4a1669d..d34979c 100644
+--- a/content/seed_poems/p06_who_knows.yaml
++++ b/content/seed_poems/p06_who_knows.yaml
+@@ -9,8 +9,8 @@ target_units:
+ body: |
+   [T1]A[/] [J2]white[/] [S9]letter[/], [T1]a[/] [J2]white[/] [S9]letter[/]
+   [P1]in[/] [T1]the[/] [J2]old[/] [S2]mailbox[/]!
+-  [O4]No[/] [S9]name[/], [O4]no[/] [S9]address[/],
+-  [O4]no[/] [S2]stamp[/] [P3]on[/] [T1]the[/] [S9]letter[/].
++  [T4]No[/] [S9]name[/], [T4]no[/] [S9]address[/],
++  [T4]no[/] [S2]stamp[/] [P1]on[/] [T1]the[/] [S9]letter[/].
+ 
+   [T9]Who[/] [D1]is[/] [S1]Rose[/]? [T9]Who[/] [D1]is[/] [S1]Rose[/]?
+   [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/].
+@@ -20,7 +20,7 @@ body: |
+   [T1]The[/] [S4]post office[/] [D1]does[/] [X1]not[/] [D6]know[/],
+   [T1]the[/] [J2]old[/] [S2]mailbox[/] [D1]does[/] [X1]not[/] [D9]get[/] [S9]letters[/].
+   [A1]Never[/], [A1]never[/], [A1]never[/],
+-  [O4]no[/] [S9]letters[/], [O4]no[/] [S9]letters[/]!
++  [T4]no[/] [S9]letters[/], [T4]no[/] [S9]letters[/]!
+ 
+   [N1]One[/] [J2]white[/] [S9]letter[/],
+   [N1]one[/] [S9]word[/]: [S1]Rose[/].
+diff --git a/content/seed_poems/p07_bus_to_park_street.yaml b/content/seed_poems/p07_bus_to_park_street.yaml
+index 138dfd7..43120fe 100644
+--- a/content/seed_poems/p07_bus_to_park_street.yaml
++++ b/content/seed_poems/p07_bus_to_park_street.yaml
+@@ -24,7 +24,7 @@ body: |
+ 
+   [S4]Park[/] [S4]Street[/], [S4]Park[/] [S4]Street[/],
+   [T1]an[/] [J2]old[/] [S2]photo[/] [S4]shop[/].
+-  [D1]Is[/] [T8]it[/] [D2]open[/]? [O4]No[/].
++  [D1]Is[/] [T8]it[/] [J2]open[/]? [O4]No[/].
+   [T8]It[/] [D1]is[/] [S7]Saturday[/]. [S4]Stop[/].
+ 
+   [S1]Rose[/], [S1]Rose[/], [S1]Rose[/],
+diff --git a/content/seed_stories/s03_whose_key.yaml b/content/seed_stories/s03_whose_key.yaml
+index cac855f..491c8a7 100644
+--- a/content/seed_stories/s03_whose_key.yaml
++++ b/content/seed_stories/s03_whose_key.yaml
+@@ -2,8 +2,8 @@ number: 3
+ characters:
+ - Tom
+ - Anna
+-grammar_ru: there is; вопросы Is it…?; притяжательное 's (Anna's door); for — «для, от»; whose — «чей»
+-prediction_ru: Посмотрите на название и описания картинок. Чей это ключ? К какой двери он подходит?
++grammar_ru: 'Is it…? — вопрос с be; Anna’s door — принадлежность. For в key for the mailbox показывает, к какому замку подходит ключ. Whose key is it? — «Чей это ключ?». Who has a key? — готовый вопрос «У кого есть ключ?».'
++prediction_ru: Посмотрите на название и описания картинок. Чей это ключ? К какой двери он подходит? Again! означает «Опять!» — Том снова удивляется месту, где лежат его ключи.
+ visual_cues:
+ - Утро. У двери Тома на коврике лежит маленький старый ключ, тёмный, с круглой головкой.
+ - У калитки — старый синий почтовый ящик с крошечной замочной скважиной.
+@@ -43,8 +43,8 @@ script:
+ - speaker: tom
+   kind: narration
+   emotion: worried
+-  text: '[T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna''s[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?'
+-  spoken: '[T8]It[/] [D1]is[/][X1]n''t[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna''s[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?'
++  text: '[T8]It[/] [D1]is[/] [X1]not[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna[/][T3]''s[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?'
++  spoken: '[T8]It[/] [D1]is[/][X1]n''t[/] [P5]for[/] [T3]my[/] [S2]door[/] [C1]or[/] [S1]Anna[/][T3]''s[/] [S2]door[/]. [T9]Whose[/] [S2]key[/] [D1]is[/] [T8]it[/]?'
+ - speaker: anna
+   kind: speech
+   emotion: excited
+@@ -59,8 +59,8 @@ script:
+   kind: speech
+   emotion: happy
+   music: calm
+-  text: “[T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P2]to[/] [T3]our[/] [S2]mailbox[/]?”
+-  spoken: “[T8]It[/][D1]'s[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P2]to[/] [T3]our[/] [S2]mailbox[/]?”
++  text: “[T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P6]to[/] [T3]our[/] [S2]mailbox[/]?”
++  spoken: “[T8]It[/][D1]'s[/] [T3]our[/] [S2]mailbox[/]. [T9]Who[/] [D1]has[/] [T1]a[/] [S2]key[/] [P6]to[/] [T3]our[/] [S2]mailbox[/]?”
+ questions:
+ - q: Где Том находит ключ?
+   a: There is an old key next to my door. — У своей двери.
+diff --git a/content/seed_stories/s04_letter_with_no_name.yaml b/content/seed_stories/s04_letter_with_no_name.yaml
+index 990eae5..e07b14a 100644
+--- a/content/seed_stories/s04_letter_with_no_name.yaml
++++ b/content/seed_stories/s04_letter_with_no_name.yaml
+@@ -30,8 +30,8 @@ script:
+ - speaker: anna
+   kind: narration
+   emotion: worried
+-  text: '[T9]There[/] [D1]is[/] [O4]no[/] [S9]name[/] [P3]on[/] [T1]the[/] [S9]letter[/]. [O4]No[/] [S9]address[/]. [O4]No[/] [S2]stamp[/].'
+-  spoken: '[T9]There[/][D1]''s[/] [O4]no[/] [S9]name[/] [P3]on[/] [T1]the[/] [S9]letter[/]. [O4]No[/] [S9]address[/]. [O4]No[/] [S2]stamp[/].'
++  text: '[T9]There[/] [D1]is[/] [T4]no[/] [S9]name[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [T4]No[/] [S9]address[/]. [T4]No[/] [S2]stamp[/].'
++  spoken: '[T9]There[/][D1]''s[/] [T4]no[/] [S9]name[/] [P1]on[/] [T1]the[/] [S9]letter[/]. [T4]No[/] [S9]address[/]. [T4]No[/] [S2]stamp[/].'
+ - speaker: tom
+   kind: speech
+   emotion: surprised
+diff --git a/content/seed_weeks/a1_w07.yaml b/content/seed_weeks/a1_w07.yaml
+index 5cb3f92..d4a18d5 100644
+--- a/content/seed_weeks/a1_w07.yaml
++++ b/content/seed_weeks/a1_w07.yaml
+@@ -58,8 +58,8 @@ twister:
+   - r
+   - w
+   source: original
+-  goal_ru: 'Американское r в конце слова шесть раз подряд: teacher, farmer, driver. Плюс w в where и work.'
+-  tip_ru: 'В конце -er язык не касается нёба и не дрожит, кончик слегка загнут назад: «тичэр», а не «тичер» с русским р. Не проглатывайте r: в американском оно слышно всегда.'
++  goal_ru: 'Шесть слов с американским r: в nurse оно внутри слова, в teacher, singer, farmer, driver, writer — в окончании -er. Затем w в where и work.'
++  tip_ru: 'Для выбранного американского произношения сохраняйте r в этих словах. Кончик языка не дрожит и не ударяет по нёбу; его можно немного поднять либо оставить ниже, приподняв среднюю часть языка. Не требуется единственное положение кончика.'
+   warmup:
+   - '[S9]teacher[/], [S9]farmer[/]'
+   - '[S9]nurse[/], [S9]teacher[/], [S9]singer[/]'
+diff --git a/content/seed_weeks/a1_w08.yaml b/content/seed_weeks/a1_w08.yaml
+index 003a94a..b8378e7 100644
+--- a/content/seed_weeks/a1_w08.yaml
++++ b/content/seed_weeks/a1_w08.yaml
+@@ -22,11 +22,11 @@ script:
+     spoken: "[O2]Sorry[/], [D7]can[/] [T8]you[/] [D2]help[/] [T8]us[/]? [A6]Where[/][D1]'s[/] [T1]the[/] [S4]bank[/]?"
+     ru: "Простите, не поможете нам? Где банк?"
+   - speaker: passerby
+-    text: "[D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [A3]right[/]."
++    text: "[D4]Go[/] [A3]straight[/] [C1]and[/] [D4]turn[/] [A3]left[/]. [T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]right[/]."
+     ru: "Идите прямо и поверните налево. Банк будет справа."
+   - speaker: tom
+     emotion: surprised
+-    text: "[P1]On[/] [T1]the[/] [A3]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]?"
++    text: "[P1]On[/] [T1]the[/] [S4]right[/]? [P1]Next to[/] [S1]Mia[/][T3]'s[/] [S4]cafe[/]?"
+     ru: "Справа? Рядом с кафе Мии?"
+   - speaker: passerby
+     emotion: happy
+@@ -34,7 +34,7 @@ script:
+     ru: "Да! А мастерская — между банком и гостиницей."
+   - speaker: anna
+     emotion: happy
+-    text: "[O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [A3]right[/]."
++    text: "[O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [S4]right[/]."
+     ru: "Спасибо! Прямо, налево и справа."
+   - speaker: passerby
+     emotion: happy
+@@ -49,7 +49,7 @@ script:
+ twister:
+   number: 8
+   series: sounds
+-  text: '[D4]Turn[/] [A3]right[/], [D4]turn[/] [A3]left[/], [A3]right[/], [A3]left[/], [A3]left[/], [A3]right[/]. [T1]The[/] [A3]right[/] [S2]door[/] [D1]is[/] [P3]on[/] [T1]the[/] [A3]left[/]!'
++  text: '[D4]Turn[/] [A3]right[/], [D4]turn[/] [A3]left[/], [A3]right[/], [A3]left[/], [A3]left[/], [A3]right[/]. [T1]The[/] [J3]right[/] [S2]door[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]left[/]!'
+   ru: Поверните направо, налево, направо, налево, налево, направо. Нужная дверь — слева!
+   ipa: /ˈtɝn ˈraɪt | ˈtɝn ˈlɛft | ˈraɪt | ˈlɛft | ˈlɛft | ˈraɪt | ðə ˈraɪt ˈdɔr ɪz ɑn ðə ˈlɛft/
+   focus_sounds:
+diff --git a/content/seed_weeks/a1_w09.yaml b/content/seed_weeks/a1_w09.yaml
+index 2538277..6542c8e 100644
+--- a/content/seed_weeks/a1_w09.yaml
++++ b/content/seed_weeks/a1_w09.yaml
+@@ -20,7 +20,7 @@ script:
+     ru: "Да. Продиктуйте, пожалуйста, фамилию по буквам."
+   - speaker: anna
+     text: "[O4]Yes[/]. [N7]B-E-L-O-V-A[/]. [S1]Anna[/] [S1]Belova[/]."
+-    ru: "Да. Б-Е-Л-О-В-А. Анна Белова."
++    ru: "Да. B-E-L-O-V-A (латинскими буквами). Анна Белова."
+   - speaker: locksmith
+     text: "[O2]Thank you[/]! [C1]And[/] [T9]what[/] [D1]is[/] [T3]your[/] [S2]phone[/] [S9]number[/]?"
+     spoken: "[O2]Thank you[/]! [C1]And[/] [T9]what[/][D1]'s[/] [T3]your[/] [S2]phone[/] [S9]number[/]?"
+@@ -46,7 +46,7 @@ script:
+ twister:
+   number: 9
+   series: sounds
+-  text: '[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]. [S2]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [S2]phone[/] [P3]at[/] [N3]five[/]!'
++  text: '[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]. [D5]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [D5]phone[/] [P3]at[/] [N3]five[/]!'
+   ru: Открываемся в девять, закрываемся в пять. Звонить в девять? Нет, звонить в пять!
+   ipa: /ˈoʊpən ət ˈnaɪn | ˈkloʊz ət ˈfaɪv | ˈfoʊn ət ˈnaɪn | ˈnoʊ | ˈfoʊn ət ˈfaɪv/
+   focus_sounds:
+@@ -58,7 +58,7 @@ twister:
+   warmup:
+   - '[D2]open[/], [D2]close[/]'
+   - '[D2]Open[/] [P3]at[/] [N3]nine[/], [D2]close[/] [P3]at[/] [N3]five[/]!'
+-  - '[S2]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [S2]phone[/] [P3]at[/] [N3]five[/]!'
++  - '[D5]Phone[/] [P3]at[/] [N3]nine[/]? [O4]No[/], [D5]phone[/] [P3]at[/] [N3]five[/]!'
+   - '[T8]It[/] [D2]opens[/] [P3]at[/] [N3]nine[/] [C1]and[/] [D2]closes[/] [P3]at[/] [N3]five[/].'
+   target_line: It opens at nine and closes at five.
+   own_ru: 'Скажите, во сколько открывается и закрывается ваше любимое кафе или магазин: It opens at … and closes at …'
+diff --git a/content/seed_weeks/a1_w10.yaml b/content/seed_weeks/a1_w10.yaml
+index 565eded..e539cf6 100644
+--- a/content/seed_weeks/a1_w10.yaml
++++ b/content/seed_weeks/a1_w10.yaml
+@@ -20,7 +20,7 @@ script:
+     ru: "А по воскресеньям в октябре?"
+   - speaker: anna
+     emotion: happy
+-    text: "[P3]On[/] [S7]Sundays[/] [P3]in[/] [S7]October[/], [T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/] [P1]in[/] [T3]my[/] [S2]jacket[/]. [T8]I[/] [D3]like[/] [D4]walking[/]."
++    text: "[P3]On[/] [S7]Sundays[/] [P3]in[/] [S7]October[/], [T8]I[/] [D4]walk[/] [P3]in[/] [T1]the[/] [S4]park[/] [P3]in[/] [T3]my[/] [S2]jacket[/]. [T8]I[/] [D3]like[/] [D4]walking[/]."
+     ru: "По воскресеньям в октябре я гуляю в парке в куртке. Люблю гулять."
+   - speaker: mia
+     text: "[S1]Tom[/], [D1]do[/] [T8]you[/] [D3]like[/] [D4]walking[/]?"
+@@ -48,18 +48,18 @@ script:
+ twister:
+   number: 10
+   series: sounds
+-  text: '[D2]Reading[/] [P1]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P1]in[/] [T1]the[/] [S7]morning[/], [D2]playing[/] [P3]on[/] [S7]Sunday[/], [A1]never[/], [A1]never[/], [A1]never[/]!'
+-  ru: Читаю вечером, гуляю утром, играю в воскресенье — никогда, никогда, никогда!
++  text: '[D2]Reading[/] [P3]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P3]in[/] [T1]the[/] [S7]morning[/], [D2]playing[/] [P3]on[/] [S7]Sunday[/], [A1]never[/], [A1]never[/], [A1]never[/]!'
++  ru: Чтение вечером, прогулки утром, игра в воскресенье — никогда, никогда, никогда!
+   ipa: /ˈridɪŋ ɪn ðə ˈivnɪŋ | ˈwɔkɪŋ ɪn ðə ˈmɔrnɪŋ | ˈpleɪɪŋ ɑn ˈsʌnˌdeɪ | ˈnɛvɚ | ˈnɛvɚ | ˈnɛvɚ/
+   focus_sounds:
+   - ng
+   source: original
+   goal_ru: Носовой ŋ (reading, evening, walking, morning, playing) против обычного n (in, never, Sunday).
+-  tip_ru: 'ŋ — задняя часть языка прижата к нёбу, звук идёт в нос, в конце нет «г». n — кончик языка за верхними зубами. В reading нужен /ŋ/: задняя часть языка касается мягкого нёба, кончик не поднимается как для /n/. Не добавляйте отдельный /g/ и не заменяйте /ŋ/ на /n/.'
++  tip_ru: 'ŋ — задняя часть языка прижата к нёбу, звук идёт в нос, в конце нет «г». n — кончик языка за верхними зубами. Здесь reading, walking и playing — ритмический список занятий, а не полные предложения «я читаю / гуляю / играю». В reading нужен /ŋ/: задняя часть языка касается мягкого нёба, кончик не поднимается как для /n/. Не добавляйте отдельный /g/ и не заменяйте /ŋ/ на /n/.'
+   warmup:
+-  - '[D2]reading[/], [P1]in[/]'
+-  - '[D2]reading[/] [P1]in[/] [T1]the[/] [S7]evening[/]'
+-  - '[D2]Reading[/] [P1]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P1]in[/] [T1]the[/] [S7]morning[/].'
++  - '[D2]reading[/], [P3]in[/]'
++  - '[D2]reading[/] [P3]in[/] [T1]the[/] [S7]evening[/]'
++  - '[D2]Reading[/] [P3]in[/] [T1]the[/] [S7]evening[/], [D4]walking[/] [P3]in[/] [T1]the[/] [S7]morning[/].'
+   - '[T8]I[/] [D3]like[/] [D2]reading[/].'
+   target_line: I like reading.
+   own_ru: 'Скажите, что вы любите делать: I like … -ing.'
+diff --git a/scripts/verify_atlas.cjs b/scripts/verify_atlas.cjs
+index c478e56..4922082 100644
+--- a/scripts/verify_atlas.cjs
++++ b/scripts/verify_atlas.cjs
+@@ -71,14 +71,37 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
+     if(process.env.ATLAS_REDESIGN!=='1'){assert.equal(changed.length,0,`${name} ${width}: ${changed.join(', ')}`);assert.ok(maxDelta<=1,`${name} ${width}: geometry changed ${maxDelta}px`);}
+    }
+   }
+-  // Editorial9–12: actual changed reading pages, in addition to the
++  // Editorial9–28: actual changed reading pages, in addition to the
+   // existing before/after geometry gate above (which remains unchanged).
+   const editorialPages=[
+    ['lesson09','/lessons/a1-there-is-some/',true],
+    ['lesson10','/lessons/a1-how-much-prices/',true],
+    ['lesson11','/lessons/a1-present-simple-i-you/',true],
+    ['lesson12','/lessons/a1-time-at-seven/',true],
+-   ['story02','/stories/2/',false],['poem03','/stories/poems/3/',false]
++   ['story02','/stories/2/',false],['poem03','/stories/poems/3/',false],
++   ['lesson13','/lessons/a1-he-she-works/',true],
++   ['lesson14','/lessons/a1-jobs-what-do-you-do/',true],
++   ['lesson15','/lessons/a1-where-is-prepositions/',true],
++   ['lesson16','/lessons/a1-directions-turn-left/',true],
++   ['lesson17','/lessons/a1-questions-do-does/',true],
++   ['lesson18','/lessons/a1-spelling-phone-numbers/',true],
++   ['lesson19','/lessons/a1-always-never/',true],
++   ['lesson20','/lessons/a1-like-doing/',true],
++   ['lesson21','/lessons/a1-what-hurts/',true],
++   ['lesson22','/lessons/a1-cant-cannot/',true],
++   ['lesson23','/lessons/a1-dont-doesnt/',true],
++   ['lesson24','/lessons/a1-letters-address/',true],
++   ['lesson25','/lessons/a1-can-skills/',true],
++   ['lesson26','/lessons/a1-why-because/',true],
++   ['lesson27','/lessons/a1-bus-ticket/',true],
++   ['lesson28','/lessons/a1-review-everything/',true],
++   ['story03','/stories/3/',false],
++   ['story04','/stories/4/',false],
++   ['story05','/stories/5/',false],
++   ['poem04','/stories/poems/4/',false],
++   ['poem05','/stories/poems/5/',false],
++   ['poem06','/stories/poems/6/',false],
++   ['poem07','/stories/poems/7/',false]
+   ];
+   report.editorialPages=[];
+   for(const [width,height] of [[1440,900],[390,844]]){
+diff --git a/tests/test_a1_deep_13_16_shared.py b/tests/test_a1_deep_13_16_shared.py
+new file mode 100644
+index 0000000..29cc219
+--- /dev/null
++++ b/tests/test_a1_deep_13_16_shared.py
+@@ -0,0 +1,121 @@
++"""Behavioral prerequisite, local-key and contextual-marker checks for A1 13–16."""
++from datetime import timedelta
++from html.parser import HTMLParser
++import json
++import re
++from django.contrib.auth import get_user_model
++from django.test import TestCase
++from django.urls import reverse
++from django.utils import timezone
++from apps.drills.models import Exercise
++from apps.learning.understanding import understanding_bank
++from apps.learning.mistake_review import variants_for
++from apps.learning.models import IndependentAttempt, UnitProgress, MistakeReview
++from apps.lessons.models import Lesson
++from apps.lexicon.models import LexicalUnit
++from apps.poems.models import Poem
++from tests.runner import ensure_content
++from apps.publishing.audit import vocab_until,is_known,text_tokens
++
++SLUGS=('a1-he-she-works','a1-jobs-what-do-you-do','a1-where-is-prepositions','a1-directions-turn-left')
++
++class Shared1316Tests(TestCase):
++    @classmethod
++    def setUpTestData(cls):ensure_content()
++
++    def test_cold_models_use_known_lexical_meanings(self):
++        for slug in SLUGS:
++            lesson=Lesson.objects.select_related('level','week').get(slug=slug)
++            known=vocab_until(lesson.level,lesson.week.number);g=understanding_bank()[slug]
++            for task in (g['tasks']['writing'],g['tasks']['transfer'],*g['transfer_variants']):
++                with self.subTest(slug=slug,model=task['model']):
++                    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t,known)],[])
++                    # Proper-name Park Street does not teach the common noun park.
++                    if lesson.week.number < 10:self.assertNotRegex(task['model'],r'\bthe park\b')
++
++    def test_all_compiled_correct_micro_answers_use_known_words(self):
++        for slug in SLUGS:
++            lesson=Lesson.objects.select_related('level','week').get(slug=slug)
++            known=vocab_until(lesson.level,lesson.week.number)
++            for ex in lesson.exercises.all():
++                cards=variants_for(ex)
++                self.assertEqual(len(cards),5)
++                self.assertEqual(len({c[0] for c in cards}),5)
++                for slot,card in enumerate(cards):
++                    with self.subTest(uid=ex.uid,slot=slot):
++                        model=card[2][card[3]]
++                        self.assertEqual([t for t in text_tokens(model) if not is_known(t,known)],[])
++                        if lesson.week.number<10:self.assertNotRegex(model,r'\bthe park\b')
++
++    def _writing(self,slug,good,bad):
++        user=get_user_model().objects.create_user(email=slug+'@example.test',password='Example-pass-123!')
++        self.client.force_login(user);lesson=Lesson.objects.get(slug=slug)
++        url=reverse('learning:independent_check',args=[slug])
++        for answer in (*good,*bad):
++            with self.subTest(answer=answer):
++                page=self.client.get(url);g=page.context['guide']
++                form={'action':'batch','assistance':'no_help','batch_token':page.context['batch_token'],
++                      'transfer_variant':str(page.context['transfer_variant']),
++                      **{'answer_'+k:g['tasks'][k]['model'] for k in ('meaning','writing','transfer','explain')}}
++                form['answer_writing']=answer
++                response=self.client.post(url,form);self.assertEqual(response.status_code,200)
++                attempt=IndependentAttempt.objects.filter(user=user,lesson=lesson,skill='writing').latest('pk')
++                expected=IndependentAttempt.Outcome.MODEL_MATCH if answer in good else IndependentAttempt.Outcome.NEEDS_REVIEW
++                self.assertEqual(attempt.outcome,expected)
++        self.assertFalse(UnitProgress.objects.filter(user=user).exists())
++
++    def test_near_is_valid_for_unspecified_nearby_bank_but_not_inside_or_negated(self):
++        self._writing(SLUGS[2],('The bank is next to the cafe.','The bank is near the cafe.','The cafe is near the bank.','The cafe is next to the bank.'),
++            ('The bank is in the cafe.','The bank is not near the cafe.','The bank near the cafe.'))
++
++    def test_school_work_place_variants_do_not_swap_person_or_work_for_be(self):
++        self._writing(SLUGS[1],('I work at a school.','I work in a school.','I work at the school.','I work in the school.','I work at school.'),
++            ('He works at a school.','I do not work at a school.','I am work at a school.','I work a school at.'))
++
++    def test_between_review_disambiguates_grammatical_neighboring_option_and_keeps_keys(self):
++        user=get_user_model().objects.create_user(email='micro1316@example.test',password='Example-pass-123!');self.client.force_login(user)
++        exercise=Exercise.objects.get(lesson__slug=SLUGS[2],order=5)
++        for slot,card in enumerate(variants_for(exercise)):
++            self.assertEqual(card[3],(-slot)%3)
++            self.assertIn('between',card[0])
++            for choice in range(3):
++                with self.subTest(slot=slot,choice=choice):
++                    review,_=MistakeReview.objects.update_or_create(user=user,exercise=exercise,defaults={
++                        'due_at':timezone.now()-timedelta(seconds=1),'current_index':slot,'correct_count':0,'completed_at':None})
++                    response=self.client.post(reverse('learning:mistake_review'),{'review_id':review.pk,'index':slot,'choice':choice})
++                    result=response.context['answer_result'];self.assertEqual(result['correct'],choice==card[3])
++                    self.assertEqual(result['reason'],card[4]);self.assertIn('грамматически правильной',result['reason'])
++
++    def test_poem_spatial_on_label_is_place_and_all_targets_have_a_real_word(self):
++        response=self.client.get(reverse('stories:poem',args=[4]));self.assertEqual(response.status_code,200)
++        rows=self._labels(response.content.decode())
++        on=[r for r in rows if r[0]=='on'];self.assertTrue(on)
++        self.assertTrue(all(cat=='P'and label.endswith('Место') for _,cat,label in on),on)
++        poem=Poem.objects.get(number=4);plain=re.sub(r'\[[A-Z]\d+\]|\[/\]','',poem.body).lower()
++        for unit in response.context['targets']:
++            with self.subTest(uid=unit.uid):self.assertIn(unit.lemma.lower(),plain)
++
++    @staticmethod
++    def _labels(html):
++        class Parser(HTMLParser):
++            def __init__(self):super().__init__();self.current=None;self.rows=[]
++            def handle_starttag(self,tag,attrs):
++                if tag=='span':self.current=dict(attrs)
++            def handle_endtag(self,tag):
++                if tag=='span':self.current=None
++            def handle_data(self,text):
++                if self.current and self.current.get('data-cat') and text.strip():
++                    self.rows.append((text.strip(),self.current.get('data-cat'),self.current.get('data-label','')))
++        p=Parser();p.feed(html);return p.rows
++
++    def test_week_twister_right_door_is_adjective_and_on_is_spatial(self):
++        response=self.client.get(reverse('curriculum:week',args=['a1',8]));self.assertEqual(response.status_code,200)
++        rows=self._labels(response.content.decode())
++        self.assertTrue(any(word=='right'and cat=='J'and label.endswith('Оценка') for word,cat,label in rows),rows)
++        self.assertFalse(any(word=='on'and label.endswith('Время') for word,cat,label in rows),rows)
++
++    def test_story_possessive_suffix_is_separate_and_key_to_is_relationship(self):
++        response=self.client.get(reverse('stories:detail',args=[3]));self.assertEqual(response.status_code,200)
++        rows=self._labels(response.content.decode())
++        self.assertTrue(any(word=="'s"and cat=='T'and label.endswith('Притяжательные детерминативы')for word,cat,label in rows),rows)
++        self.assertTrue(any(word=='to'and cat=='P'and label.endswith('Абстрактные отношения')for word,cat,label in rows),rows)
+diff --git a/tests/test_a1_deep_13_16_shared_sides.py b/tests/test_a1_deep_13_16_shared_sides.py
+new file mode 100644
+index 0000000..1493274
+--- /dev/null
++++ b/tests/test_a1_deep_13_16_shared_sides.py
+@@ -0,0 +1,51 @@
++"""Rendered contrasts: turn right (adverb), right door (adjective), on the right (noun)."""
++from html.parser import HTMLParser
++from django.test import TestCase
++from django.urls import reverse
++from apps.poems.models import Poem
++from tests.runner import ensure_content
++
++
++class SharedSideFunctionTests(TestCase):
++    @classmethod
++    def setUpTestData(cls):ensure_content()
++
++    def labels(self,response):
++        self.assertEqual(response.status_code,200)
++        class Parser(HTMLParser):
++            def __init__(self):super().__init__();self.current=None;self.rows=[]
++            def handle_starttag(self,tag,attrs):
++                if tag=='span':self.current=dict(attrs)
++            def handle_endtag(self,tag):
++                if tag=='span':self.current=None
++            def handle_data(self,text):
++                if self.current and self.current.get('data-cat')and text.strip():
++                    self.rows.append((text.strip().casefold(),self.current['data-cat'],self.current.get('data-label','')))
++        p=Parser();p.feed(response.content.decode());return p.rows
++
++    def sides(self,rows):
++        return [rows[i+2]for i in range(len(rows)-2)
++                if rows[i][0]=='on'and rows[i+1][0]in('the','your')and rows[i+2][0]in('right','left')]
++
++    def test_week_distinguishes_side_nouns_direction_adverbs_and_correct_door_adjective(self):
++        rows=self.labels(self.client.get(reverse('curriculum:week',args=['a1',8])))
++        sides=self.sides(rows);self.assertGreaterEqual(len(sides),4)
++        for side,category,label in sides:
++            with self.subTest(side=side,label=label):
++                self.assertEqual(category,'S');self.assertTrue(label.endswith('Места и город'),label)
++        commands=[rows[i+1]for i in range(len(rows)-1)if rows[i][0]=='turn'and rows[i+1][0]in('right','left')]
++        self.assertTrue(commands)
++        self.assertTrue(all(cat=='A'and label.endswith('Место')for _,cat,label in commands),commands)
++        right_door=[rows[i]for i in range(len(rows)-1)if rows[i][0]=='right'and rows[i+1][0]=='door']
++        self.assertTrue(right_door)
++        self.assertTrue(all(cat=='J'and label.endswith('Оценка')for _,cat,label in right_door),right_door)
++
++    def test_poem_side_noun_contrasts_with_turn_adverbs_and_keeps_original_gap_solutions(self):
++        response=self.client.get(reverse('stories:poem',args=[4]));rows=self.labels(response)
++        sides=self.sides(rows);self.assertTrue(sides)
++        self.assertTrue(all(cat=='S'and label.endswith('Места и город')for _,cat,label in sides),sides)
++        directions=[rows[i+1]for i in range(len(rows)-1)if rows[i][0]=='turn'and rows[i+1][0]in('right','left')]
++        self.assertTrue(directions);self.assertTrue(all(cat=='A'for _,cat,_ in directions),directions)
++        poem=Poem.objects.get(number=4)
++        self.assertEqual([(g['line'],g['word'])for g in poem.gaps],[(4,'me'),(6,'left'),(12,'right'),(15,'Whose'),(20,'key')])
++        self.assertEqual(sum(r['gap']is not None for r in response.context['gapped']),5)
+diff --git a/tests/test_a1_deep_17_20.py b/tests/test_a1_deep_17_20.py
+new file mode 100644
+index 0000000..12a7719
+--- /dev/null
++++ b/tests/test_a1_deep_17_20.py
+@@ -0,0 +1,103 @@
++"""Behavioral editorial regressions, frozen before the 17–20 corrections."""
++import json
++from django.test import TestCase
++from django.contrib.auth import get_user_model
++from apps.drills.models import Exercise, PracticeItem
++from apps.learning.models import UnitProgress
++from tests.runner import ensure_content
++
++class A1DeepSeventeenTwentyTests(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        ensure_content()
++        cls.user = get_user_model().objects.create_user(email='deep1720@example.test', password='testing')
++
++    def setUp(self):
++        self.client.force_login(self.user)
++
++    def submit(self, model, lookup, answer):
++        obj = model.objects.get(**lookup)
++        kind = 'practice' if model is PracticeItem else 'exercises'
++        response = self.client.post(f'/api/{kind}/{obj.pk}/check/', json.dumps({'answer':answer}), content_type='application/json')
++        self.assertEqual(response.status_code, 200)
++        return response.json()['correct']
++
++    def test_practice_semantics_and_ordinary_question_order(self):
++        cases = [
++            ('a1-questions-do-does', 1, 'Do you have my key?', True),
++            ('a1-questions-do-does', 1, 'Do you have your key?', False),
++            ('a1-questions-do-does', 1, 'Does you have my key?', False),
++            ('a1-questions-do-does', 1, 'You do have my key?', False),
++            ('a1-always-never', 2, 'Tom never walks.', True),
++            ('a1-always-never', 2, 'Tom always walks.', False),
++            ('a1-always-never', 2, "Tom doesn't never walk.", False),
++            ('a1-like-doing', 1, 'I like to read.', True),
++            ('a1-like-doing', 1, "I don't like reading.", False),
++            ('a1-like-doing', 2, 'Tom likes music.', True),
++            ('a1-like-doing', 2, 'I like music.', False),
++            ('a1-like-doing', 3, 'Do you like to walk?', True),
++            ('a1-like-doing', 3, 'Do you likes walking?', False),
++            ('a1-like-doing', 4, 'I play guitar on Sundays.', True),
++            ('a1-spelling-phone-numbers', 4, 'Call me later.', True),
++            ('a1-spelling-phone-numbers', 4, 'Text me later.', False),
++        ]
++        for slug, order, answer, expected in cases:
++            with self.subTest(slug=slug, order=order, answer=answer):
++                self.assertEqual(self.submit(PracticeItem, {'lesson__slug':slug,'order':order}, answer), expected)
++
++    def test_ordered_spelling_preserves_letters(self):
++        for answer, expected in [('T-O-M.',True), ('T O M',True), ('T, O, M',True), ('T-M-O',False),('M-O-T',False),('Tom',False)]:
++            with self.subTest(answer=answer):
++                self.assertEqual(self.submit(Exercise, {'uid':'EX-00101'},answer),expected)
++
++    def test_practice_only_credits_demonstrated_units(self):
++        cases = [
++            ('a1-questions-do-does',3,'Do you work at home?', {'LX-00128','LX-00005'}),
++            ('a1-always-never',1,'I always read on Saturdays.',{'LX-00194','LX-00196','LX-00207'}),
++            ('a1-always-never',2,'Tom never walks.',{'LX-00197'}),
++            ('a1-always-never',3,'I walk in the park on Sundays.',{'LX-00195'}),
++            ('a1-always-never',4,'Mia always starts at five.',{'LX-00196'}),
++            ('a1-like-doing',1,'I like reading.',{'LX-00200','LX-00208'}),
++            ('a1-like-doing',3,'Do you like walking?',{'LX-00201','LX-00209'}),
++            ('a1-like-doing',4,'I play the guitar on Sundays.',{'LX-00202','LX-00204','LX-00211'}),
++        ]
++        for slug,order,answer,expected in cases:
++            with self.subTest(slug=slug,order=order):
++                UnitProgress.objects.filter(user=self.user).delete()
++                self.assertTrue(self.submit(PracticeItem, {'lesson__slug':slug,'order':order},answer))
++                self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid', flat=True)),expected)
++
++    def test_exercises_do_not_credit_distractors_or_whole_alphabet(self):
++        cases = [('EX-00094','What time does the cafe open?',{'LX-00186'}),
++                 ('EX-00099','E',set()),('EX-00101','T-O-M.',set()),
++                 ('EX-00105','always',{'LX-00196'}),
++                 ('EX-00114','jacket',{'LX-00387'})]
++        for uid,answer,expected in cases:
++            with self.subTest(uid=uid):
++                UnitProgress.objects.filter(user=self.user).delete()
++                self.assertTrue(self.submit(Exercise, {'uid':uid},answer))
++                self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),expected)
++
++    def test_published_pages_preserve_layers_and_role_of_the_speaker(self):
++        for slug in ['a1-questions-do-does','a1-spelling-phone-numbers','a1-always-never','a1-like-doing']:
++            with self.subTest(slug=slug):
++                response=self.client.get(f'/lessons/{slug}/')
++                self.assertEqual(response.status_code,200)
++                self.assertEqual(response.context['layers'].count(),7)
++                self.assertEqual(response.context['lesson'].slug,slug)
++        response=self.client.get('/lessons/a1-like-doing/')
++        exercise=response.context['exercises'].get(uid='EX-00111')
++        self.assertEqual(exercise.prompt_en,'I like ___.')
++        self.assertIn('о себе',exercise.prompt_ru)
++        self.assertContains(response,'Вы играете роль Анны')
++
++    def test_hobby_alternatives_credit_only_their_shared_skill(self):
++        exercise = Exercise.objects.get(uid='EX-00113')
++        for answer in [exercise.answer, *exercise.accepted]:
++            with self.subTest(answer=answer):
++                UnitProgress.objects.filter(user=self.user).delete()
++                self.assertTrue(self.submit(Exercise, {'uid':'EX-00113'}, answer))
++                self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid', flat=True)), {'LX-00034'})
++        for answer in ['I play the guitar.', 'I likes music.', "I don't like music.", 'Tom likes music.']:
++            with self.subTest(wrong_answer=answer):
++                self.assertFalse(self.submit(Exercise, {'uid':'EX-00113'}, answer))
+diff --git a/tests/test_a1_deep_25_28.py b/tests/test_a1_deep_25_28.py
+new file mode 100644
+index 0000000..1780407
+--- /dev/null
++++ b/tests/test_a1_deep_25_28.py
+@@ -0,0 +1,109 @@
++"""Live answer/progress contracts for the final A1 group; same cases before/after."""
++import json
++from django.contrib.auth import get_user_model
++from django.test import TestCase, SimpleTestCase
++from apps.drills.models import Exercise, PracticeItem
++from apps.learning.models import UnitProgress
++from apps.learning.micro_review import micro_bank
++from tests.runner import ensure_content
++
++
++class FinalA1DeepAPI(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        ensure_content()
++
++    def check(self, item, answer, expected):
++        kind = 'practice' if isinstance(item, PracticeItem) else 'exercises'
++        result = self.client.post(f'/api/{kind}/{item.pk}/check/', json.dumps({'answer': answer}), content_type='application/json')
++        self.assertEqual(result.status_code, 200)
++        self.assertEqual(result.json()['correct'], expected, answer)
++
++    def test_language_order_does_not_change_ability(self):
++        item = Exercise.objects.get(uid='EX-00143')
++        for text, expected in [
++            ('Yes, I can. I can speak English and Russian.', True),
++            ('Yes, I can. I speak English and Russian.', True),
++            ('Yes, I can.', True),
++            ('No, I cannot speak English.', False),
++            ('Yes, I can. I can speak Russian.', False),
++            ('Yes, I can. I can speaks English and Russian.', False),
++        ]:
++            with self.subTest(text=text):
++                self.check(item, text, expected)
++
++    def test_name_contraction_is_local_and_preserves_owner_origin(self):
++        item = PracticeItem.objects.get(lesson__slug='a1-review-everything', order=1)
++        for text, expected in [
++            ("My name's Anna. I am from Russia.", True),
++            ("My name is Anna. I'm from Russia.", True),
++            ("Your name's Anna. I am from Russia.", False),
++            ("My name's Anna. I am not from Russia.", False),
++            ("My name's Anna. Russia is from me.", False),
++        ]:
++            with self.subTest(text=text):
++                self.check(item, text, expected)
++
++    def test_answered_destination_arrival_and_weather_only(self):
++        for i, (uid, answer, required, forbidden) in enumerate([
++            ('EX-00155', 'Does this bus go to the park?', {'LX-00252'}, {'LX-00255'}),
++            ('EX-00156', 'Поезд прибывает в шесть.', {'LX-00464', 'LX-00472'}, {'LX-00473'}),
++            ('EX-00162', 'It is sunny today.', {'LX-00458'}, {'LX-00457'}),
++        ]):
++            with self.subTest(uid=uid):
++                user = get_user_model().objects.create_user(email=f'final-deep-{i}@example.test', password='test-pass')
++                self.client.force_login(user)
++                self.check(Exercise.objects.get(uid=uid), answer, True)
++                trained = set(UnitProgress.objects.filter(user=user).values_list('unit__uid', flat=True))
++                self.assertTrue(required <= trained, trained)
++                self.assertFalse(forbidden & trained, trained)
++
++    def test_question_order_and_negative_reason_stay_required(self):
++        for uid, yes, no in [
++            ('EX-00142', 'Can you teach me', 'You can teach me'),
++            ('EX-00154', 'What time is the next bus', 'What time the next bus is'),
++            ('EX-00163', 'I want to buy an umbrella because I do not like rain.', 'I want to buy an umbrella because I like rain.'),
++        ]:
++            with self.subTest(uid=uid):
++                item = Exercise.objects.get(uid=uid)
++                self.check(item, yes, True)
++                self.check(item, no, False)
++
++
++class FinalA1DeepGeneratedReview(SimpleTestCase):
++    def test_generated_contexts_have_russian_case_and_preposition(self):
++        bank = micro_bank()
++        self.assertFalse(any('В встрече' in row[0] for row in bank['a1-can-skills']['1']))
++        self.assertFalse(any('Вам нужен школа' in row[0] or 'Вам нужен станция' in row[0] for row in bank['a1-bus-ticket']['4']))
++
++
++class FinalA1DeepPoemHTML(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        ensure_content()
++
++    def test_open_shop_has_adjective_marker_in_actual_page(self):
++        from html.parser import HTMLParser
++        from django.urls import reverse
++        user = get_user_model().objects.create_user(email='poem-final@example.test', password='test-pass')
++        self.client.force_login(user)
++        response = self.client.get(reverse('stories:poem', args=[7]))
++        self.assertEqual(response.status_code, 200)
++        class MarkedWords(HTMLParser):
++            def __init__(self):
++                super().__init__()
++                self.attrs = None
++                self.words = []
++            def handle_starttag(self, tag, attrs):
++                if tag == 'span':
++                    self.attrs = dict(attrs)
++            def handle_data(self, data):
++                if self.attrs and data == 'open':
++                    self.words.append((self.attrs.get('data-cat'), self.attrs.get('data-cls')))
++            def handle_endtag(self, tag):
++                if tag == 'span':
++                    self.attrs = None
++        parser = MarkedWords()
++        parser.feed(response.content.decode())
++        self.assertIn(('J', '2'), parser.words)
++        self.assertNotIn(('D', '2'), parser.words)
+diff --git a/tests/test_a1_editorial_deep_13_16.py b/tests/test_a1_editorial_deep_13_16.py
+new file mode 100644
+index 0000000..8da46b5
+--- /dev/null
++++ b/tests/test_a1_editorial_deep_13_16.py
+@@ -0,0 +1,77 @@
++"""Actual answer API, progress and rendered marker regressions for A1 13–16."""
++import json
++from html.parser import HTMLParser
++from django.test import TestCase
++from django.urls import reverse
++from apps.accounts.models import User
++from apps.drills.models import Exercise, PracticeItem
++from apps.learning.models import ExerciseAttempt, UnitProgress
++from tests.runner import ensure_content
++
++SLUGS=('a1-he-she-works','a1-jobs-what-do-you-do','a1-where-is-prepositions','a1-directions-turn-left')
++
++class A1DeepThirteenSixteenTests(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        ensure_content()
++        cls.user=User.objects.create_user('deep-thirteen@example.com','test-thirteen-only')
++    def setUp(self):self.client.force_login(self.user)
++    def check(self,collection,item,text,expected):
++        response=self.client.post(f'/api/{collection}/{item.pk}/check/',json.dumps({'answer':text}),content_type='application/json')
++        self.assertEqual(response.status_code,200)
++        self.assertEqual(response.json()['correct'],expected,text)
++        if collection=='practice' or item.stage==Exercise.Stage.TRANSFER:
++            self.assertEqual(response.json()['assessment'],'model_match' if expected else 'needs_review')
++    def test_start_time_slot_accepts_digits_and_clock_without_changing_subject_or_hour(self):
++        item=Exercise.objects.get(uid='EX-00073')
++        for text,expected in [('starts at seven.',True),('starts work at 7.',True),("starts at seven o'clock.",True),("starts work at 7 o'clock.",True),('start at seven.',False),('starts at eight.',False),("doesn't start at seven.",False),('He starts at seven.',False),('seven at starts.',False)]:
++            with self.subTest(answer=text):self.check('exercises',item,text,expected)
++    def test_mother_job_keys_allow_local_contractions_without_changing_owner_or_job(self):
++        item=Exercise.objects.get(uid='EX-00079')
++        good=["My mom is a nurse. She works at a hospital.","My mom's a nurse. She works in a hospital.","My mother's a nurse. She works at a hospital.","My mother's a nurse. She works in a hospital."]
++        bad=["Your mom's a nurse. She works in a hospital.","My mom's a doctor. She works in a hospital.","My mom's not a nurse. She works in a hospital.","My mom's a nurse. He works in a hospital.","My mom a nurse is. She works in a hospital."]
++        for text in good+bad:
++            with self.subTest(answer=text):self.check('exercises',item,text,text in good)
++    def test_cafe_location_allows_explicit_noun_contraction_but_not_wrong_side(self):
++        item=Exercise.objects.get(uid='EX-00083')
++        for text,expected in [("The cafe's on the right.",True),("The café is on the right.",True),("It's on the right.",True),("The cafe's on the left.",False),("The cafe's not on the right.",False),("The cafe on the right is.",False)]:
++            with self.subTest(answer=text):self.check('exercises',item,text,expected)
++    def test_she_short_reply_preserves_person_and_negation(self):
++        item=Exercise.objects.get(uid='EX-00071')
++        for text,expected in [("No, she doesn't.",True),('No, she does not.',True),("No, he doesn't.",False),('Yes, she does.',False),('No, she does.',False),("No, doesn't she.",False)]:
++            with self.subTest(answer=text):self.check('exercises',item,text,expected)
++    def practice_credits(self,slug,mapping):
++        for order,uids in mapping.items():
++            item=PracticeItem.objects.get(lesson__slug=slug,order=order)
++            UnitProgress.objects.filter(user=self.user).delete()
++            self.check('practice',item,item.answer,True)
++            with self.subTest(lesson=slug,order=order):self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
++    def test_third_person_practice_credits_only_its_target_words_and_phrases(self):
++        self.practice_credits(SLUGS[0],{1:['LX-00128','LX-00153'],2:['LX-00128','LX-00131'],3:['LX-00128','LX-00150','LX-00156'],4:['LX-00332']})
++    def test_jobs_practice_does_not_claim_office_or_a_different_job(self):
++        self.practice_credits(SLUGS[1],{1:['LX-00142','LX-00152'],2:['LX-00128','LX-00143'],3:['LX-00151'],4:['LX-00146']})
++    def test_locations_practice_does_not_claim_a_question_or_unspoken_right_answer(self):
++        self.practice_credits(SLUGS[2],{1:['LX-00157','LX-00162','LX-00176'],2:['LX-00160','LX-00161','LX-00162','LX-00171'],3:['LX-00162','LX-00169','LX-00172'],4:['LX-00162','LX-00338','LX-00131','LX-00344']})
++    def test_directions_practice_does_not_claim_turn_left_when_turning_right(self):
++        self.practice_credits(SLUGS[3],{1:['LX-00166','LX-00170'],2:['LX-00167','LX-00168'],3:['LX-00166','LX-00167','LX-00169','LX-00170'],4:['LX-00158','LX-00159','LX-00175']})
++    def main_credits(self,uid,uids):
++        item=Exercise.objects.get(uid=uid);self.check('exercises',item,item.answer,True)
++        self.assertEqual(set(UnitProgress.objects.filter(user=self.user).values_list('unit__uid',flat=True)),set(uids))
++        self.assertTrue(ExerciseAttempt.objects.get(user=self.user,exercise=item).is_correct)
++    def test_mia_cafe_does_not_certify_tom_home_phrase(self):self.main_credits('EX-00068',['LX-00128','LX-00131'])
++    def test_she_reply_does_not_certify_he_reply_but_keeps_attempt(self):self.main_credits('EX-00071',[])
++    def test_start_completion_does_not_certify_nurse_word(self):self.main_credits('EX-00073',['LX-00332'])
++    def test_doctor_reply_does_not_certify_teacher_phrase(self):self.main_credits('EX-00077',['LX-00144'])
++    def test_object_her_is_rendered_as_a_personal_pronoun(self):
++        class Labels(HTMLParser):
++            def __init__(self):super().__init__();self.span=None;self.rows=[]
++            def handle_starttag(self,tag,attrs):
++                if tag=='span':self.span=dict(attrs)
++            def handle_data(self,data):
++                if self.span and self.span.get('data-cat') and data.strip()=='her':self.rows.append((data.strip(),self.span.get('data-label','')))
++            def handle_endtag(self,tag):
++                if tag=='span':self.span=None
++        for slug,word,suffix in [(SLUGS[3],'her','Личные местоимения (pronouns)')]:
++            page=self.client.get(reverse('lessons:detail',args=[slug]));self.assertEqual(page.status_code,200)
++            parser=Labels();parser.feed(page.content.decode());labels=[label for token,label in parser.rows if token==word]
++            with self.subTest(word=word):self.assertTrue(labels);self.assertTrue(all(label.endswith(suffix) for label in labels),labels)
+diff --git a/tests/test_a1_editorial_deep_21_24.py b/tests/test_a1_editorial_deep_21_24.py
+new file mode 100644
+index 0000000..040c1b2
+--- /dev/null
++++ b/tests/test_a1_editorial_deep_21_24.py
+@@ -0,0 +1,41 @@
++"""Live grading and lexical progress, A1 lessons 21–24."""
++import json
++from django.test import TestCase
++from django.contrib.auth import get_user_model
++from apps.drills.models import Exercise
++from apps.learning.models import UnitProgress
++from tests.runner import ensure_content
++class Editorial2124Tests(TestCase):
++    @classmethod
++    def setUpTestData(cls): ensure_content()
++    def post(self, uid, answer, expected):
++        item=Exercise.objects.get(uid=uid)
++        r=self.client.post(f'/api/exercises/{item.pk}/check/',json.dumps({'answer':answer}),content_type='application/json')
++        self.assertEqual(r.status_code,200)
++        self.assertEqual(r.json()['correct'],expected,answer)
++    def test_local_contraction_owner_negation_and_order(self):
++        for answer,expected in [("My last name's Belova.",True),('My last name is Belova.',True),("Her last name's Belova.",False),("My first name's Belova.",False),('My last name is not Belova.',False),('My Belova is last name.',False)]:
++            with self.subTest(answer=answer): self.post('EX-00139',answer,expected)
++    def test_headache_gap_progress(self): self.progress('EX-00117','headache',{'LX-00212'})
++    def test_thirst_choice_progress(self): self.progress('EX-00126','I am thirsty.',{'LX-00405'})
++    def test_leg_progress(self):
++        self.progress('EX-00121','My leg hurts.',{'LX-00400'})
++        for answer in ['Your leg hurts.','My leg does not hurt.','My leg hurt is.']: self.post('EX-00121',answer,False)
++    def progress(self,uid,answer,expected):
++        user=get_user_model().objects.create_user(email=uid+'@example.test',password='test-pass')
++        self.client.force_login(user);self.post(uid,answer,True)
++        self.assertEqual(set(UnitProgress.objects.filter(user=user).values_list('unit__uid',flat=True)),expected)
++    def test_negative_auxiliary_keys(self):
++        for uid,answer,expected in [('EX-00123','cannot',True),('EX-00123',"can't",True),('EX-00123','can',False),('EX-00123','am not',False),('EX-00129',"don't",True),('EX-00129','do not',True),('EX-00129',"doesn't",False),('EX-00129','do',False)]:
++            with self.subTest(answer=answer): self.post(uid,answer,expected)
++    def test_student_pages_and_unchanged_body_agreement(self):
++        from django.urls import reverse
++        for slug in ['a1-what-hurts','a1-cant-cannot','a1-dont-doesnt','a1-letters-address']:
++            with self.subTest(slug=slug):
++                response=self.client.get(reverse('lessons:detail',kwargs={'slug':slug}))
++                self.assertEqual(response.status_code,200)
++                self.assertNotContains(response,'[T4]')
++        for answer,expected in [('My feet hurt.',True),('My feet hurts.',False),('Your feet hurt.',False)]:
++            self.post('EX-00120',answer,expected)
++    def test_dont_gap_does_not_certify_supplied_stamp_phrase(self):
++        self.progress('EX-00129',"don't",set())
+diff --git a/tests/test_a1_side_context_13_16.py b/tests/test_a1_side_context_13_16.py
+new file mode 100644
+index 0000000..918e9d0
+--- /dev/null
++++ b/tests/test_a1_side_context_13_16.py
+@@ -0,0 +1,46 @@
++"""Rendered contextual noun/adverb labels; primary directional UID remains stable."""
++from html.parser import HTMLParser
++from django.test import TestCase
++from django.urls import reverse
++from apps.lexicon.models import LexicalUnit
++from tests.runner import ensure_content
++
++class SideLabels(HTMLParser):
++    def __init__(self, layers_only=False):
++        super().__init__(); self.span=None; self.layer=None; self.rows=[]; self.layers_only=layers_only
++    def handle_starttag(self, tag, attrs):
++        attrs=dict(attrs)
++        if tag=='section' and attrs.get('id','').startswith('layer-'):
++            self.layer=attrs['id']
++        if tag=='span':self.span=attrs
++    def handle_data(self,data):
++        if (self.span and self.span.get('data-cat') and data.strip() in ('right','left')
++                and (self.layer or not self.layers_only)):
++            self.rows.append((data.strip(),self.span.get('data-cat'),self.span.get('data-cls'),self.span.get('data-label','')))
++    def handle_endtag(self,tag):
++        if tag=='span':self.span=None
++        if tag=='section':self.layer=None
++
++class A1SideContextTests(TestCase):
++    @classmethod
++    def setUpTestData(cls):ensure_content()
++    def test_location_heads_are_nouns_but_turn_left_keeps_directional_adverb(self):
++        for slug in ('a1-where-is-prepositions','a1-directions-turn-left'):
++            with self.subTest(lesson=slug):
++                page=self.client.get(reverse('lessons:detail',args=[slug]));self.assertEqual(page.status_code,200)
++                parser=SideLabels(layers_only=True);parser.feed(page.content.decode())
++                right=[r for r in parser.rows if r[0]=='right'];self.assertTrue(right)
++                self.assertTrue(all(r[1:3]==('S','4') for r in right),right)
++            if slug=='a1-directions-turn-left':
++                left=[r for r in parser.rows if r[0]=='left'];self.assertTrue(left)
++                self.assertTrue(all(r[1:3]==('A','3') for r in left),left)
++    def test_dictionary_examples_show_side_nouns_without_reassigning_directional_uid(self):
++        for uid,word in (('LX-00169','right'),('LX-00344','left')):
++            with self.subTest(entry=uid):
++                page=self.client.get(reverse('lexicon:detail',args=[uid]));self.assertEqual(page.status_code,200)
++                parser=SideLabels();parser.feed(page.content.decode())
++                matching=[r for r in parser.rows if r[0]==word and r[1:3]==('S','4')]
++                self.assertTrue(matching,parser.rows)
++        for uid in ('LX-00168','LX-00169'):
++            with self.subTest(primary_directional_uid=uid):
++                self.assertEqual(LexicalUnit.objects.get(uid=uid).semantic_class.class_id,'A3')
+diff --git a/tests/test_audit_latin_tokens.py b/tests/test_audit_latin_tokens.py
+new file mode 100644
+index 0000000..63a739b
+--- /dev/null
++++ b/tests/test_audit_latin_tokens.py
+@@ -0,0 +1,70 @@
++"""Audit vocabulary identity must preserve accents, not certify ASCII fragments."""
++import unicodedata
++from types import SimpleNamespace
++from django.test import SimpleTestCase, TestCase
++from apps.drills.models import Exercise
++from apps.lexicon.models import LexicalUnit, UnitType
++from apps.publishing.audit import text_tokens, is_known, unit_words, run_audit
++from tests.runner import ensure_content
++
++class LatinAuditTokenTests(SimpleTestCase):
++    def test_accented_words_are_single_tokens_and_russian_explanations_are_ignored(self):
++        self.assertEqual(text_tokens('Кофе: café, piñata; résumé и naïve.'),['café','piñata','résumé','naïve'])
++        self.assertEqual(text_tokens('Молоко, кофе, русский перевод.'),[])
++    def test_nfd_and_nfc_have_one_identity_without_losing_accents(self):
++        text='café íntegro résumé'
++        self.assertEqual(text_tokens(unicodedata.normalize('NFD',text)),text.split())
++        self.assertTrue(is_known(unicodedata.normalize('NFD','íntegro'),{'íntegro'}))
++        self.assertFalse(is_known('íntegro',{'integro'}))
++        # Not every Latin-letter/diacritic pair has a precomposed code point.
++        self.assertEqual(text_tokens('q\u0301a'),['q\u0301a'])
++    def test_cafe_variant_is_known_only_when_the_variant_is_declared(self):
++        plain=SimpleNamespace(lemma='cafe',forms=['cafes'],unit_type=UnitType.WORD)
++        declared=SimpleNamespace(lemma='cafe',forms=['cafes','café','cafés'],unit_type=UnitType.WORD)
++        self.assertFalse(is_known('café',unit_words(plain)))
++        for word in ['café','cafés',"café's"]:
++            with self.subTest(word=word):self.assertTrue(is_known(word,unit_words(declared)))
++    def test_stored_nfd_forms_are_canonically_normalized(self):
++        unit=SimpleNamespace(lemma='cafe',forms=[unicodedata.normalize('NFD','café')],unit_type=UnitType.WORD)
++        self.assertIn('café',unit_words(unit))
++    def test_unknown_pinata_does_not_become_two_known_ascii_fragments(self):
++        words=text_tokens('piñata')
++        self.assertEqual(words,['piñata'])
++        self.assertFalse(all(is_known(word,{'pi','ata'}) for word in words))
++    def test_resume_and_resume_with_accents_remain_distinct_words(self):
++        self.assertFalse(is_known('résumé',{'resume'}))
++        self.assertFalse(is_known('resume',{'résumé'}))
++        self.assertEqual(text_tokens('résumé resume'),['résumé','resume'])
++    def test_existing_contraction_and_punctuation_rules_are_preserved(self):
++        self.assertEqual(text_tokens("I’m, Anna's; can't! don't? books."),['I’m',"Anna's","can't","don't",'books'])
++        for text in ['I’m',"Anna's","can't","don't",'books']:
++            with self.subTest(word=text):self.assertTrue(is_known(text,{'i','anna','can','do','book'}))
++    def test_mixed_script_misspelling_is_not_silently_ignored(self):
++        bad='c\u0430fe'  # Cyrillic а between Latin letters.
++        self.assertEqual(text_tokens(bad),[bad])
++        self.assertFalse(is_known(bad,{'cafe'}))
++
++class RealLatinCourseAuditTests(TestCase):
++    @classmethod
++    def setUpTestData(cls):ensure_content()
++    def test_loaded_existing_cafe_unit_declares_its_spellings_without_another_uid(self):
++        unit=LexicalUnit.objects.get(uid='LX-00131')
++        self.assertEqual(unit.lemma,'cafe')
++        self.assertTrue({'café','cafés'}<=set(unit.forms))
++        self.assertFalse(LexicalUnit.objects.filter(lemma='café').exists())
++    def test_real_audit_keeps_valid_cafe_and_still_reports_whole_unknown_words(self):
++        unit=LexicalUnit.objects.get(uid='LX-00131')
++        # Same legitimate fixture both before and after, isolating tokenization.
++        unit.forms=list(dict.fromkeys([*unit.forms,'café','cafés']))
++        unit.save(update_fields=['forms'])
++        item=Exercise.objects.get(uid='EX-00083')
++        item.accepted=[*item.accepted,"The café's on the right.",'The piñata is on the right.']
++        item.save(update_fields=['accepted'])
++        report=run_audit()
++        self.assertNotIn('caf',report.unknown_words)
++        self.assertNotIn('café',report.unknown_words)
++        self.assertNotIn("café's",report.unknown_words)
++        self.assertIn('piñata',report.unknown_words)
++        self.assertIn('a1-where-is-prepositions/задание 4',report.unknown_words['piñata'])
++        self.assertNotIn('pi',report.unknown_words)
++        self.assertNotIn('ata',report.unknown_words)
