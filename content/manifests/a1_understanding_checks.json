@@ -191,14 +191,26 @@
           "prompt": "Передайте по-русски смысл: «I'd like coffee, please.».",
           "model": "Я бы хотел кофе, пожалуйста.",
           "accepted": [
-            "Я бы хотел кофе, пожалуйста."
+            "Я бы хотел кофе, пожалуйста.",
+            "Я бы хотела кофе, пожалуйста.",
+            "Я хотел бы кофе, пожалуйста.",
+            "Я хотела бы кофе, пожалуйста.",
+            "Мне кофе, пожалуйста.",
+            "Мне бы кофе, пожалуйста."
           ]
         },
         "writing": {
           "prompt": "Напишите вежливую просьбу о чае.",
           "model": "Can I have tea, please?",
           "accepted": [
-            "Can I have tea, please?"
+            "Can I have tea, please?",
+            "Can I have a tea, please?",
+            "I would like tea, please.",
+            "I would like a tea, please.",
+            "Tea, please.",
+            "A tea, please.",
+            "I'd like tea, please.",
+            "I'd like a tea, please."
           ]
         },
         "transfer": {
@@ -207,7 +219,7 @@
         },
         "explain": {
           "prompt": "У посетителя есть выбор: резко сказать «Tea!» или «Tea, please». Какая просьба обычно мягче и почему?",
-          "model": "Tea, please звучит вежливее благодаря слову please и спокойной интонации. Также можно сказать Can I have some tea, please?"
+          "model": "Tea, please обычно звучит мягче благодаря please и подходящей интонации. Можно также Can I have tea, please? Само название Tea! не является грамматической ошибкой; здесь сравниваем способы оформить просьбу."
         }
       },
       "contrast": {
@@ -221,7 +233,7 @@
     {
       "slug": "a1-numbers-1-20",
       "plain": "Числа нужны для возраста, цены, времени и количества.",
-      "why": "После two или three исчисляемые предметы часто получают -s.",
+      "why": "Число two или three задаёт количество, а исчисляемое существительное ставим во множественном числе: two cookies. Для порций напитка тоже возможно two coffees.",
       "pattern": "two coffees / three teas.",
       "mistake": "Говорить three cookie.",
       "fix": "С числом три назовите cookies, а не cookie.",
@@ -232,14 +244,22 @@
           "prompt": "Передайте по-русски смысл: «Three teas, please.».",
           "model": "Три чая, пожалуйста.",
           "accepted": [
-            "Три чая, пожалуйста."
+            "Три чая, пожалуйста.",
+            "Три порции чая, пожалуйста."
           ]
         },
         "writing": {
           "prompt": "Закажите два чая.",
           "model": "Two teas, please.",
           "accepted": [
-            "Two teas, please."
+            "Two teas, please.",
+            "2 teas, please.",
+            "Can I have two teas, please?",
+            "Can I have 2 teas, please?",
+            "I would like two teas, please.",
+            "I would like 2 teas, please.",
+            "I'd like two teas, please.",
+            "I'd like 2 teas, please."
           ]
         },
         "transfer": {
@@ -280,7 +300,11 @@
           "prompt": "Напишите «Это мой брат».",
           "model": "This is my brother.",
           "accepted": [
-            "This is my brother."
+            "This is my brother.",
+            "That is my brother.",
+            "He is my brother.",
+            "That's my brother.",
+            "He's my brother."
           ]
         },
         "transfer": {
@@ -304,7 +328,7 @@
       "slug": "a1-family-possession",
       "plain": "His, her, their и 's показывают владельца.",
       "why": "Tom's phone — телефон Тома; her phone — её телефон.",
-      "pattern": "his book / her bag / Tom's book.",
+      "pattern": "his book / her book / Tom's book.",
       "mistake": "Говорить she book.",
       "fix": "Перед предметом используйте her, а не she.",
       "example": "This is Tom's book.",
@@ -321,7 +345,11 @@
           "prompt": "Напишите «Это книга Тома».",
           "model": "This is Tom's book.",
           "accepted": [
-            "This is Tom's book."
+            "This is Tom's book.",
+            "That is Tom's book.",
+            "It is Tom's book.",
+            "That's Tom's book.",
+            "It's Tom's book."
           ]
         },
         "transfer": {
@@ -338,7 +366,7 @@
         "a_ru": "Она Анна.",
         "b_en": "This is her book.",
         "b_ru": "Это её книга.",
-        "why": "She — тот, о ком говорят как о действующем лице. Her перед book указывает, что книга принадлежит ей."
+        "why": "She самостоятельно обозначает человека и может быть подлежащим: She is Anna. Her перед book указывает, чья книга. Для этой разницы не требуется действие: is Anna сообщает, кто она."
       }
     },
     {

@@ -1,0 +1,47 @@
+{
+  "author": "Codex",
+  "reviewed_by": "AI editorial and behavioral checks; human pilot not performed",
+  "verification_status": "technical_review",
+  "date": "2026-10-25",
+  "source_notes": "actual frozen sources and recorded local commands",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "original_base": "fb79cd7a9b1a35ac55c7f5d0f1cf9dde73115f7e",
+  "tested_source_tree": "c10481196d4a4abc73ae7d7d4f1b50e27f49851e",
+  "deep_review_A1_lessons": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "other_changes": {
+    "lesson4_practice3": "R17 target construction specified; no answer checker expansion"
+  },
+  "R17": "resolved_by_explicit_target_construction",
+  "R16": "partial; some water in main translation remains needs_review under unchanged vocabulary contract",
+  "optional_R09_R25_R32": "not implemented",
+  "gates": {
+    "Correctness": "PASS in documented editorial and behavioral scope",
+    "Regression": "PASS on final source with full pytest; Django timing caveat below",
+    "Security": "N/A: no auth, endpoint, permission or business logic changes",
+    "DataIntegrity": "PASS: IDs, bindings, old answers, history behavior",
+    "UX": "BLOCKED: no installed browser",
+    "Integration": "PASS on isolated SQLite; PostgreSQL BLOCKED locally",
+    "Evidence": "PASS: before/after frozen tests and source hashes"
+  },
+  "limitations": [
+    "Django full began before final R17 wording change; final 47 targeted and full pytest use final source.",
+    "Browser desktop/390px/keyboard/reduced-motion unavailable",
+    "Actual audio not listened to",
+    "No local PostgreSQL or coverage job",
+    "No human pilot or final substantive acceptance",
+    "Known broader course audit warnings retained"
+  ],
+  "next_A1_group": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "next_group_status": "separate worktrees; not part of this PR",
+  "merge_deploy_performed": false
+}

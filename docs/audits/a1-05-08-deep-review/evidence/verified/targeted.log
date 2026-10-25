@@ -1,0 +1,10 @@
+Found 21 test(s).
+Creating test database for alias 'default'...
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).
+.....................
+----------------------------------------------------------------------
+Ran 21 tests in 2.102s
+
+OK
+Destroying test database for alias 'default'...

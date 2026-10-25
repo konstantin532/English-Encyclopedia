@@ -1,0 +1,4 @@
+{
+  "note": "R17 prompt/hint/explanation applied while django-full already running. That Django run is pre-R17; full pytest begins afterwards on final source. Repeat full Django after pipeline for exact final snapshot.",
+  "logic_changed": false
+}

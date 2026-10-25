@@ -21,7 +21,7 @@ contractions:
   - full: "I would"
     short: "I'd"
     ipa: "/aɪd/"
-    note_ru: "В заказе почти всегда I'd like — «айд лайк»."
+    note_ru: "В разговорном заказе I would like можно сократить до I'd like: /aɪd laɪk/. Полная форма тоже правильна."
 layers:
   - number: 1
     body: |
@@ -63,7 +63,7 @@ layers:
     body: |
       **Почему заказ похож на вопрос?** *Can I have…?* буквально спрашивает о возможности, а в кафе работает как **вежливая просьба**. Прямое *Give me…* без смягчения иногда может прозвучать резко, но оно **не всегда грубое**: важны интонация, близость людей и ситуация. Для начинающего надёжнее готовый каркас с *please*.
 
-      Переспросить тоже лучше вопросом, а не словом «Что?»:
+      Чтобы вежливо переспросить, используйте знакомые готовые фразы:
 
       > [O2]Sorry[/]? — Простите?
       > [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]? — Повторите, пожалуйста.
@@ -75,13 +75,13 @@ layers:
 
       - [D3]want[/] прямо выражает желание: *I want…*. Само слово **не грубое**, но короткий заказ без вежливых слов или подходящей интонации может звучать требовательно.
       - [D7]would[/] [D3]like[/] означает **«хотел(а) бы»**, мягкий и привычный вариант для заказа. **Would** здесь не делает просьбу прошедшим временем.
-      - В живой речи **I'd like** — сокращение от **I would like**; апостроф и **'d** заменяют **would**. В других конструкциях *I'd* может сокращать *I had*, но после **like** в этом заказе подразумевается **would**.
+      - В живой речи **I'd like** — сокращение от **I would like**; апостроф и **'d** заменяют **would**. В других конструкциях *I'd* может сокращать *I had*, но в сочетании **I'd like** из этого заказа сокращение раскрывается как **I would like**.
       - В *I want one* слово **one** заменяет уже названное исчисляемое существительное: здесь речь о печенье. Перевод «тоже хочу» естественен в этой сцене, но само **one** не означает «тоже».
       - Бариста тоже может спросить: [T9]What[/] [D7]would[/] [T8]you[/] [D3]like[/]? — Что будете?
 
       **Диагностика понимания:** Вы хотите попросить чай. Что верно: *Can I have a tea, please?* или *Can I a tea, please?*?
 
-      **Разбор:** *Can I have a tea, please?* После **can** требуется слово действия **have** — «получить» в этой просьбе. **A tea** здесь означает одну порцию чая.
+      **Разбор:** *Can I have a tea, please?* После **can** и подлежащего **I** нужен глагол **have** в начальной форме без **to**: в этой просьбе он означает «получить». **A tea** здесь означает одну порцию чая.
   - number: 5
     body: |
       Так звучит заказ в американском кафе:
@@ -103,7 +103,7 @@ layers:
 
       **Почему a tea, если чай нельзя посчитать как вещество?** В кафе **a coffee / a tea** — одна **порция** напитка. Поэтому *two coffees* — две порции, а *I like coffee* — кофе вообще. Это смена значения в зависимости от ситуации, а не превращение любого вещества в исчисляемый предмет.
 
-      В меню американского кафе ещё есть [S3]juice[/] (сок) и [S3]sandwich[/] (сэндвич):
+      В меню американского кафе ещё есть [S3]juice[/] (сок) и [S3]sandwich[/] (сэндвич). Если выбираете яблочный сок, **apple juice** — название напитка из двух слов. В заказе **an apple juice** означает одну порцию: **an** выбираем по первому звуку **apple**, а не по звуку **juice**.
 
       > [T8]I[/] [D7]would[/] [D3]like[/] [T1]a[/] [S3]sandwich[/] [C1]and[/] [T1]an[/] [S3]apple[/] [S3]juice[/], [O8]please[/]. — Мне сэндвич и яблочный сок.
   - number: 7
@@ -149,10 +149,10 @@ exercises:
     prompt_ru: "Новая ситуация: вам предлагают кофе или чай, а вы хотите чай. Ответьте коротко и вежливо."
     prompt_en: "Coffee or tea? — ___"
     answer: "Tea, please."
-    accepted: ["A tea, please.", "One tea, please.", "Can I have a tea, please?", "Can I have tea, please?", "Tea, thanks.", "Tea, thank you.", "A tea, thanks."]
+    accepted: ["A tea, please.", "One tea, please.", "Can I have a tea, please?", "Can I have tea, please?", "Tea, thanks.", "Tea, thank you.", "A tea, thanks.", "I'd like a tea, please.", "I would like a tea, please.", "I'd like tea, please.", "I would like tea, please."]
     hint_ru: "Назовите напиток и добавьте please."
     explanation_ru: "Достаточно назвать напиток и сказать please: Tea, please. Полная просьба Can I have a tea, please? тоже верна."
-    units: [LX-00055, LX-00082]
+    units: [LX-00055]
   - order: 5
     uid: EX-00026
     kind: choice
@@ -162,7 +162,7 @@ exercises:
     answer: "I would like a tea, please."
     hint_ru: "Нужна мягкая форма «я бы хотел»."
     explanation_ru: "I would like / I'd like — мягкий и надёжный способ заказать. I want tea грамматически верно, но без контекста и please может звучать прямолинейнее; Tea! без смягчения тоже зависит от интонации."
-    units: [LX-00281, LX-00285]
+    units: [LX-00281]
   - order: 6
     uid: EX-00027
     kind: fill
@@ -170,10 +170,10 @@ exercises:
     prompt_ru: "Новая ситуация: бариста спрашивает What would you like? Вы хотите сэндвич и сок. Ответьте вежливо."
     prompt_en: "What would you like? — ___"
     answer: "I would like a sandwich and a juice, please."
-    accepted: ["I'd like a sandwich and a juice, please.", "I would like a sandwich and juice, please.", "I'd like a sandwich and juice, please.", "A sandwich and a juice, please.", "A sandwich and juice, please.", "Can I have a sandwich and a juice, please?", "Can I have a sandwich and juice, please?"]
+    accepted: ["I'd like a sandwich and a juice, please.", "I would like a sandwich and juice, please.", "I'd like a sandwich and juice, please.", "A sandwich and a juice, please.", "A sandwich and juice, please.", "Can I have a sandwich and a juice, please?", "Can I have a sandwich and juice, please?", "I'd like a juice and a sandwich, please.", "I would like a juice and a sandwich, please.", "A juice and a sandwich, please.", "I'd like juice and a sandwich, please.", "I would like juice and a sandwich, please.", "Juice and a sandwich, please."]
     hint_ru: "Начните с I'd like…"
     explanation_ru: "I'd like = I would like («я бы хотел»). A sandwich — одна порция еды, a juice — одна порция сока. Можно сказать и короче: A sandwich and a juice, please."
-    units: [LX-00282, LX-00283, LX-00284, LX-00285]
+    units: [LX-00282, LX-00283]
 # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
 practice:
 - order: 1
@@ -185,8 +185,8 @@ practice:
   review_of: 3
   units:
   - LX-00056
-  - LX-00084
-  - LX-00285
+  - LX-00035
+  - LX-00029
 - order: 2
   kind: translate
   prompt_ru: Мне кофе, пожалуйста.
@@ -199,13 +199,10 @@ practice:
   - Coffee, please.
   hint_ru: 'Вежливо: I''d like…'
   explanation_ru: 'I''d like a coffee, please. I''d like — вежливое «я бы хотел». Коротко тоже можно: A coffee, please.'
-  review_of: 3
+  review_of: 5
   units:
-  - LX-00082
-  - LX-00084
-  - LX-00281
-  - LX-00284
-  - LX-00285
+  - LX-00011
+  - LX-00029
 - order: 3
   kind: translate
   prompt_ru: Простите? Повторите, пожалуйста.
@@ -214,15 +211,9 @@ practice:
   - Sorry? Can you say it again?
   hint_ru: Sorry? — и просьба повторить.
   explanation_ru: Sorry? Can you say it again, please? Переспросить — нормально, это не признак плохого английского.
-  review_of: 3
+  review_of: 1
   units:
-  - LX-00060
   - LX-00084
-  - LX-00085
-  - LX-00086
-  - LX-00087
-  - LX-00284
-  - LX-00285
 - order: 4
   kind: translate
   prompt_ru: Кофе или чай?
@@ -231,9 +222,9 @@ practice:
   - Tea or coffee?
   hint_ru: or — «или».
   explanation_ru: Coffee or tea? Так спрашивает бариста. Or — «или».
-  review_of: 3
+  review_of: 2
   units:
-  - LX-00055
-  - LX-00058
   - LX-00082
-  - LX-00285
+  - LX-00058
+  - LX-00011
+  - LX-00055

@@ -111,7 +111,7 @@ units:
   example_en: '[T8]I[/] [D1]am[/] [N5]thirty[/].'
   example_ru: Мне тридцать.
   situation: Называете возраст или цену
-  usage_note: 'Ударение в начале: THIRty. В thirteen ударение в конце: thirTEEN.'
+  usage_note: "В отдельном учебном образце THIRty имеет ударение в начале, thirTEEN — в конце. В связной речи ударение может меняться, поэтому слушайте также окончания -ty и -teen."
 - uid: LX-00271
   lemma: forty
   meaning: the number 40
@@ -137,7 +137,7 @@ units:
   example_en: '[T3]My[/] [S1]dad[/] [D1]is[/] [N5]fifty[/].'
   example_ru: Папе пятьдесят.
   situation: Называете возраст или цену
-  usage_note: 'Не путайте с fifteen: FIFty — ударение в начале, fifTEEN — в конце.'
+  usage_note: "В отдельном учебном образце FIFty имеет ударение в начале, fifTEEN — в конце. В связной речи ударение может меняться: различайте также -ty и -teen."
 - uid: LX-00273
   lemma: sixty
   meaning: the number 60

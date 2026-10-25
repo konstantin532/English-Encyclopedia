@@ -31,7 +31,7 @@ units:
   example_en: '[T8]I[/] [D7]would[/] [D3]like[/] [S3]water[/], [O8]please[/].'
   example_ru: Мне, пожалуйста, воды.
   situation: Вежливо заказываете в кафе
-  usage_note: 'l не читается: «вуд». В речи I would сокращают до I''d — «айд».'
+  usage_note: 'В would буква l не обозначает отдельного звука: /wʊd/. I would можно сократить до I''d /aɪd/; полная форма тоже правильна.'
 - uid: LX-00282
   lemma: juice
   meaning: a drink made from fruit
@@ -61,7 +61,7 @@ units:
   example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]sandwich[/], [O8]please[/]?'
   example_ru: Можно мне сэндвич?
   situation: Заказываете еду в кафе
-  usage_note: 'd не слышно: «сэнвич». Широкое /æ/ в начале.'
+  usage_note: 'Учебный образец /ˈsænwɪtʃ/ дан без /d/. Словарный американский вариант с /d/ тоже допустим. Во множественном числе — sandwiches.'
 - uid: LX-00284
   lemma: What would you like?
   meaning: A polite question about what someone wants to order
@@ -74,7 +74,7 @@ units:
   example_en: What would you like?
   example_ru: Что вам принести?
   situation: Бариста или официант принимает заказ
-  usage_note: 'Учите фразу целиком. В речи would you сливается: «вуджу».'
+  usage_note: 'Учите фразу целиком. В быстрой речи would you может звучать слитно; это вариант связной речи, а не требование специально заменять два слова одним русским «вуджу».'
 - uid: LX-00285
   lemma: I would like a coffee, please.
   meaning: A polite way to order
@@ -82,9 +82,9 @@ units:
   unit_type: phrase
   cefr: unverified
   verification_status: pending
-  ipa_us: /aɪd ˈlaɪk ə ˈkɔfi ˈpliz/
+  ipa_us: /aɪ wʊd ˈlaɪk ə ˈkɔfi ˈpliz/
   translation_ru: Мне кофе, пожалуйста.
   example_en: I would like a coffee, please.
   example_ru: Мне кофе, пожалуйста.
   situation: Заказ в кафе
-  usage_note: 'В речи почти всегда I''d like — «айд лайк». Вместо coffee ставьте что угодно: a tea, a sandwich.'
+  usage_note: 'В разговорном заказе I would like можно сократить до I''d like /aɪd laɪk/. Меняя заказ, заменяйте всю группу a coffee: a tea, a sandwich или water. Не добавляйте a перед любым названием автоматически.'

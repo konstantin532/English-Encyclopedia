@@ -1,0 +1,23 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "manage.py",
+    "test",
+    "tests.test_a1_editorial_deep_05_08",
+    "tests.test_a1_deep_05_08_support",
+    "tests.test_a1_editorial_week03_04",
+    "tests.test_a1_translation",
+    "tests.test_progress_safety",
+    "tests.test_a1_scaffold_variants",
+    "tests.test_a1_pedagogical_continuity",
+    "tests.test_a1_second_pass",
+    "--parallel",
+    "4",
+    "--noinput"
+  ],
+  "exit_code": 0,
+  "seconds": 37.27166112299892
+}

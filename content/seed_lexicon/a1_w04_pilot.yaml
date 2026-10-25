@@ -4,7 +4,7 @@ week: 4
 units:
 - uid: LX-00088
   lemma: brother
-  meaning: a son of the same parents
+  meaning: "a male family member who has one or both parents in common with you"
   class: S1
   forms:
   - brothers
@@ -19,7 +19,7 @@ units:
   usage_note: th звонкий и американское r в конце.
 - uid: LX-00089
   lemma: sister
-  meaning: a daughter of the same parents
+  meaning: "a female family member who has one or both parents in common with you"
   class: S1
   forms:
   - sisters
@@ -62,7 +62,7 @@ units:
   situation: Рассказываете о семье по фотографии
 - uid: LX-00092
   lemma: son
-  meaning: a male child
+  meaning: "someone's male child"
   class: S1
   forms:
   - sons
@@ -77,7 +77,7 @@ units:
   usage_note: Звучит так же, как sun — «солнце».
 - uid: LX-00093
   lemma: daughter
-  meaning: a female child
+  meaning: "someone's female child"
   class: S1
   forms:
   - daughters
@@ -102,7 +102,7 @@ units:
   ipa_us: /ˈbeɪbi/
   translation_ru: малыш, младенец
   example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S1]baby[/] [S1]brother[/].'
-  example_ru: Это мой младший братик.
+  example_ru: "Это мой совсем маленький братик."
   situation: Рассказываете о семье по фотографии
 - uid: LX-00095
   lemma: he
