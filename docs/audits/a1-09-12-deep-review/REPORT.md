@@ -45,3 +45,7 @@ source_notes: actual project sources, frozen before/after checks, primary dictio
 ## Ограничение рабочего окружения и публикация
 
 Повторный полный Django после усиления теста был прерван отключением exec-server. Итогового кода выхода нет; это BLOCKED, а не PASS. Локальный полный pytest в этой последовательности не начался. Все18команд до полного Django прошли; точные команды/выходы/время — CHECKS.md и evidence/complete/RESULTS.json. Штатный новый CI PR запускает полный pytest на SQLite и PostgreSQL. Его результат отслеживается отдельно от успешного CI PR118; чужой прогон не выдаётся за проверку9–12. Полные доступные логи, включая845/1FAIL, сохранены.
+
+## Реальная браузерная проверка в GitHub
+
+Общий Atlas browser acceptance на первом коммите этого PR успешно выполнился в Chromium: home/catalog/week13 и14обложек390px. Его охват не заменяет проверку изменённых страниц. В scripts/verify_atlas.cjs добавлены именно lesson9–12/story2/poem3 при1440/390: overflow, reduced-motion, семь слоёв, открытие пояснений клавиатурой и настоящие screenshots. Все прежние geometry checks сохранены; CI-конфигурация не менялась. Новый результат этой расширенной проверки ожидается отдельно. Node syntax-check и source-scope/hash verification PASS. Подробности BROWSER_CI_EXTENSION.md. Теперь учитывается21исходник (добавлен QA script); учебный Python/English контент после9749fab не менялся.

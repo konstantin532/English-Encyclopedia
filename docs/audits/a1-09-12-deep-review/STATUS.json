@@ -12,7 +12,7 @@
     11,
     12
   ],
-  "source_files": 20,
+  "source_files": 21,
   "targeted": {
     "tests": 86,
     "exit_code": 0,
@@ -145,5 +145,6 @@
     "UX": "BLOCKED browser installation unavailable",
     "Integration": "PASS isolated SQLite load/audit; remote PostgreSQL tracked in CI",
     "Evidence": "PASS within available complete and interrupted logs"
-  }
+  },
+  "browser_ci_extension": "Pending new Chromium acceptance on actual lesson9–12/story2/poem3 routes at1440/390; previous Atlas success only covered generic pages and14week covers"
 }

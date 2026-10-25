@@ -18,5 +18,6 @@
   "tests/test_a1_deep_09_12_shared.py": "9efd5a4c52fc02df5d88d7ad87b327951631d99bffd49c9c732eee43a708b16c",
   "tests/test_a1_editorial_deep_09_12.py": "a8733a4a3c4605e437c74ab4191d0de17fc07f12a98b75c53fb413ac3fdd6e37",
   "tests/test_a1_scaffold_variants.py": "9b16a9341d91cae536391bfead9a1121159049e484119203897b8c466c006fb4",
-  "tests/test_a1_mistake_review.py": "78f2022e59fc1e13e1356bb22375a31c276344615132ad160f671bace6f25390"
+  "tests/test_a1_mistake_review.py": "78f2022e59fc1e13e1356bb22375a31c276344615132ad160f671bace6f25390",
+  "scripts/verify_atlas.cjs": "edfbf6210de540579ce4fa2c9308251f91f6088ccb73ada9e3b473fb57587a82"
 }

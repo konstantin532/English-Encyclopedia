@@ -3,7 +3,7 @@
 author: Codex; reviewed_by: frozen-source integrity checks; verification_status: technical_review; date: 2026-10-25
 source_notes: exact source commit9749fab5af2e9fa72c472b5dc2b9f8823733281d; no excerpts replace full files.
 
-Все20исходников доступны целиком по постоянным ссылкам. Полный исходный diff — [SOURCE.patch](SOURCE.patch).
+Все21исходников доступны целиком по постоянным ссылкам. Полный исходный diff — [SOURCE.patch](SOURCE.patch).
 
 - [content/active_a1/scenarios_07_12.json](https://github.com/konstantin532/English-Encyclopedia/blob/9749fab5af2e9fa72c472b5dc2b9f8823733281d/content/active_a1/scenarios_07_12.json)
 - [content/active_a1/topics_09_13.json](https://github.com/konstantin532/English-Encyclopedia/blob/9749fab5af2e9fa72c472b5dc2b9f8823733281d/content/active_a1/topics_09_13.json)
@@ -26,3 +26,5 @@ source_notes: exact source commit9749fab5af2e9fa72c472b5dc2b9f8823733281d; no ex
 - [tests/test_a1_scaffold_variants.py](https://github.com/konstantin532/English-Encyclopedia/blob/9749fab5af2e9fa72c472b5dc2b9f8823733281d/tests/test_a1_scaffold_variants.py)
 
 - [tests/test_a1_mistake_review.py](https://github.com/konstantin532/English-Encyclopedia/blob/9749fab5af2e9fa72c472b5dc2b9f8823733281d/tests/test_a1_mistake_review.py)
+
+- [scripts/verify_atlas.cjs](https://github.com/konstantin532/English-Encyclopedia/blob/editorial/a1-09-12-deep-review-20261025/scripts/verify_atlas.cjs) — additional real Chromium acceptance; see BROWSER_CI_EXTENSION.md.
