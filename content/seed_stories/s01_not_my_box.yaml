@@ -21,7 +21,7 @@ script:
 - speaker: anna
   kind: narration
   emotion: tired
-  text: '[T3]My[/] [S2]box[/]. [T3]My[/] [S2]box[/]. [T3]My[/] [S2]box[/]… [T3]My[/] [S2]sofa[/]! [J3]Good[/] [S7]morning[/], [S2]sofa[/]!'
+  text: "[T3]My[/] [S2]sofa[/]!"
 - speaker: tom
   kind: speech
   emotion: happy
@@ -30,12 +30,12 @@ script:
 - speaker: anna
   kind: speech
   emotion: surprised
-  text: “[T3]My[/] [S2]box[/]? [O4]No[/]! [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/].”
-  spoken: “[T3]My[/] [S2]box[/]? [O4]No[/]! [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]box[/].”
+  text: "[O4]No[/]! [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/]."
+  spoken: "[O4]No[/]! [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]box[/]."
 - speaker: anna
   kind: narration
   emotion: worried
-  text: '[D1]Is[/] [T8]it[/] [T1]a[/] [S2]lamp[/]? [O4]No[/]. [T1]A[/] [S2]clock[/]? [O4]No[/].'
+  text: "[D1]Is[/] [T8]it[/] [T1]a[/] [S2]lamp[/]? [O4]No[/]."
 - speaker: anna
   kind: narration
   emotion: excited
@@ -45,12 +45,11 @@ script:
 - speaker: anna
   kind: speech
   emotion: angry
-  text: “[T3]My[/] [S3]coffee[/]! [T2]That[/] [D1]is[/] [T3]my[/] [S3]coffee[/]!”
-  spoken: “[T3]My[/] [S3]coffee[/]! [T2]That[/][D1]'s[/] [T3]my[/] [S3]coffee[/]!”
+  text: "[T3]My[/] [S3]coffee[/]!"
 - speaker: tom
   kind: speech
   emotion: happy
-  text: “[T8]It[/] [D3]likes[/] [T3]your[/] [S3]coffee[/]. [T8]It[/] [D3]likes[/] [T8]you[/]!”
+  text: "[T8]It[/] [D3]likes[/] [T3]your[/] [S3]coffee[/]."
 - speaker: anna
   kind: speech
   emotion: surprised
@@ -58,8 +57,7 @@ script:
 - speaker: tom
   kind: speech
   emotion: surprised
-  text: “[O4]No[/]! [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S6]cat[/].”
-  spoken: “[O4]No[/]! [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S6]cat[/].”
+  text: "[O4]No[/]!"
 - speaker: anna
   kind: speech
   emotion: happy

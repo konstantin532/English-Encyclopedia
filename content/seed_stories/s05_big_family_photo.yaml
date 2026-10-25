@@ -22,8 +22,7 @@ script:
 - speaker: tom
   kind: speech
   emotion: tired
-  text: “[N1]One[/], [N1]two[/], [N1]three[/]… [T8]It[/] [D1]is[/] [J1]big[/], [S1]Anna[/]!”
-  spoken: “[N1]One[/], [N1]two[/], [N1]three[/]… [T8]It[/][D1]'s[/] [J1]big[/], [S1]Anna[/]!”
+  text: "[N1]One[/], [N1]two[/], [N1]three[/]!"
 - speaker: anna
   kind: narration
   emotion: surprised
@@ -33,8 +32,8 @@ script:
 - speaker: anna
   kind: narration
   emotion: neutral
-  text: '[T8]It[/] [D1]is[/] [T1]an[/] [J2]old[/] [S2]photo[/]. [T9]There[/] [D1]is[/] [T1]a[/] [J1]big[/] [S1]family[/] [P1]in[/] [T1]the[/] [S2]photo[/].'
-  spoken: '[T8]It[/][D1]''s[/] [T1]an[/] [J2]old[/] [S2]photo[/]. [T9]There[/][D1]''s[/] [T1]a[/] [J1]big[/] [S1]family[/] [P1]in[/] [T1]the[/] [S2]photo[/].'
+  text: "[T9]There[/] [D1]is[/] [T1]a[/] [J1]big[/] [S1]family[/] [P1]in[/] [T1]the[/] [S2]photo[/]."
+  spoken: "[T9]There[/][D1]'s[/] [T1]a[/] [J1]big[/] [S1]family[/] [P1]in[/] [T1]the[/] [S2]photo[/]."
 - speaker: anna
   kind: narration
   emotion: neutral
@@ -47,25 +46,25 @@ script:
 - speaker: anna
   kind: speech
   emotion: worried
-  text: “[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S1]family[/]. [C5]But[/] [T8]it[/] [D1]is[/] [T3]my[/] [S2]house[/]!”
-  spoken: “[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/] [T3]my[/] [S1]family[/]. [C5]But[/] [T8]it[/][D1]'s[/] [T3]my[/] [S2]house[/]!”
+  text: “[O4]No[/]. [C5]But[/] [T8]it[/] [D1]is[/] [T3]my[/] [S2]house[/]!”
+  spoken: “[O4]No[/]. [C5]But[/] [T8]it[/][D1]'s[/] [T3]my[/] [S2]house[/]!”
 - speaker: anna
   kind: narration
   emotion: whisper
-  text: '[P3]On[/] [T1]the[/] [S5]back[/], [T9]there[/] [D1]is[/] [T1]a[/] [S9]name[/]: [S1]Rose[/]. [C1]And[/] [T9]there[/] [D1]is[/] [T1]an[/] [S9]address[/]: [S4]Park[/] [S4]Street[/].'
-  spoken: '[P3]On[/] [T1]the[/] [S5]back[/], [T9]there[/][D1]''s[/] [T1]a[/] [S9]name[/]: [S1]Rose[/]. [C1]And[/] [T9]there[/][D1]''s[/] [T1]an[/] [S9]address[/]: [S4]Park[/] [S4]Street[/].'
+  text: '[P1]On[/] [T1]the[/] [S5]back[/], [T9]there[/] [D1]is[/] [T1]a[/] [S9]name[/]: [S1]Rose[/]. [C1]And[/] [T9]there[/] [D1]is[/] [T1]an[/] [S9]address[/]: [S4]Park[/] [S4]Street[/].'
+  spoken: '[P1]On[/] [T1]the[/] [S5]back[/], [T9]there[/][D1]''s[/] [T1]a[/] [S9]name[/]: [S1]Rose[/]. [C1]And[/] [T9]there[/][D1]''s[/] [T1]an[/] [S9]address[/]: [S4]Park[/] [S4]Street[/].'
 - speaker: tom
   kind: speech
   emotion: excited
   music: happy
-  text: “[S4]Park[/] [S4]Street[/]? [T9]There[/] [D1]is[/] [T1]a[/] [S4]bus[/] [P2]to[/] [S4]Park[/] [S4]Street[/]! [T8]I[/] [D6]know[/] [S4]Park[/] [S4]Street[/]!”
-  spoken: “[S4]Park[/] [S4]Street[/]? [T9]There[/][D1]'s[/] [T1]a[/] [S4]bus[/] [P2]to[/] [S4]Park[/] [S4]Street[/]! [T8]I[/] [D6]know[/] [S4]Park[/] [S4]Street[/]!”
+  text: "[T9]There[/] [D1]is[/] [T1]a[/] [S4]bus[/] [P2]to[/] [S4]Park[/] [S4]Street[/]!"
+  spoken: "[T9]There[/][D1]'s[/] [T1]a[/] [S4]bus[/] [P2]to[/] [S4]Park[/] [S4]Street[/]!"
 - speaker: anna
   kind: narration
   emotion: neutral
   music: calm
-  text: '[T9]Who[/] [D1]is[/] [T1]the[/] [J1]big[/] [S1]family[/]? [C1]And[/] [T9]who[/] [D1]is[/] [S1]Rose[/]?'
-  spoken: '[T9]Who[/][D1]''s[/] [T1]the[/] [J1]big[/] [S1]family[/]? [C1]And[/] [T9]who[/][D1]''s[/] [S1]Rose[/]?'
+  text: "[T9]Who[/] [D1]are[/] [T8]they[/]? [C1]And[/] [T9]who[/] [D1]is[/] [S1]Rose[/]?"
+  spoken: "[T9]Who[/] [D1]are[/] [T8]they[/]? [C1]And[/] [T9]who[/][D1]'s[/] [S1]Rose[/]?"
 questions:
 - q: Что Анна и Том делают в субботу?
   a: Tom and I move the old cupboard. — Двигают тяжёлый старый шкаф.
@@ -74,7 +73,7 @@ questions:
 - q: Кто на фото?
   a: There is a mother, a father, and six children. — Большая семья.
 - q: Почему Анна удивлена?
-  a: It is not my family. But it is my house! — Семья чужая, а дом на фото — её.
+  a: No. But it is my house! — Семья чужая, а дом на фото — её.
 - q: Что написано на обороте и почему это важно?
   a: 'There is a name: Rose. And there is an address: Park Street. — То же имя, что в письме без подписи. Теперь у загадки есть адрес.'
 phrase_hunt:

@@ -98,6 +98,8 @@ class GeneratorTests(SimpleTestCase):
         msg = gen.generate(gen.TestEngine(), self.write("s01.yaml", STORY), VOICES)
         manifest = json.loads((self.tmp / "static/audio/stories/s01/manifest.json").read_text(encoding="utf-8"))
         self.assertIn("История 1", msg)
+        self.assertEqual(manifest["script_sha256"],
+                         gen.script_fingerprint(yaml.safe_load(STORY)["script"]))
         self.assertEqual(manifest["natural"]["music_gain_db"], -26)
         self.assertEqual(manifest["very_slow"]["music_gain_db"], -30)
         self.assertTrue((self.tmp / "static" / manifest["slow"]["music"]).exists())

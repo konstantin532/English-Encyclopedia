@@ -78,7 +78,24 @@ def review_evidence_problem(data: dict, static: Path) -> str | None:
     return None
 
 
-def validate_manifest(data: dict, static: Path) -> str | None:
+def script_fingerprint(script: list[dict]) -> str:
+    """Bind audio to narrated words and roles, ignoring translations and markers."""
+    def words(value):
+        value = re.sub(r"\[[^\]]+\]", "", value)
+        return " ".join(re.sub(r'[“”"]', "", value).split())
+
+    source = [{
+        "speaker": line["speaker"],
+        "text": words(line["text"]),
+        "spoken": words(line.get("spoken") or line["text"]),
+        "emotion": line.get("emotion", "neutral"),
+        "music": line.get("music", ""),
+    } for line in script]
+    encoded = json.dumps(source, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
+def validate_manifest(data: dict, static: Path, *, script: list[dict] | None = None) -> str | None:
     """Returns a reason to refuse this bundle. Checks existence, not spoken quality."""
     if not isinstance(data, dict) or data.get("engine") != "kokoro" or not str(data.get("model", "")).startswith("kokoro-v"):
         return "проверочный тон или неизвестный движок"
@@ -119,6 +136,11 @@ def validate_manifest(data: dict, static: Path) -> str | None:
         timeline_lengths.add(len(times))
     if len(timeline_lengths) != 1:
         return "разное количество реплик между скоростями"
+    if script is not None:
+        if data.get("script_sha256") != script_fingerprint(script):
+            return "сценарий аудио не подтверждён или изменён; запустите generate_audio.bat"
+        if timeline_lengths != {len(script)}:
+            return "число реплик аудио не совпадает со сценарием"
     if data.get("verified") is True:
         return review_evidence_problem(data, static)
     return None

@@ -25,7 +25,7 @@ class A1AtlasIllustrationsTests(SimpleTestCase):
         self.assertEqual(len(A1_ATLAS_ALT), 14)
         for week in (6, 7, 10, 13):
             with self.subTest(week=week):
-                narrative = yaml.safe_load((ROOT / "content/seed_weeks" / f"a1_w{week:02d}.yaml").read_text())
+                narrative = yaml.safe_load((ROOT / "content/seed_weeks" / f"a1_w{week:02d}.yaml").read_text(encoding="utf-8"))
                 self.assertIn("кафе", narrative["story_beat"]["intro_ru"])
                 self.assertIn("кафе", A1_ATLAS_ALT[week - 1].lower())
                 art = ET.parse(ROOT / "static/img/studio" / f"a1-week-{week:02d}.svg").getroot()

@@ -14,8 +14,8 @@ script:
   kind: narration
   emotion: worried
   music: morning
-  text: '[T8]It[/] [D1]is[/] [N3]seven o''clock[/]. [O4]No[/] [S1]Box[/] [P3]at[/] [S2]home[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [S4]corner[/] [S4]cafe[/].'
-  spoken: '[T8]It[/][D1]''s[/] [N3]seven o''clock[/]. [O4]No[/] [S1]Box[/] [P3]at[/] [S2]home[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [S4]corner[/] [S4]cafe[/].'
+  text: '[T8]It[/] [D1]is[/] [N3]seven o''clock[/]. [O4]No[/] [S1]Box[/] [P1]at[/] [S2]home[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [S4]corner[/] [S4]cafe[/].'
+  spoken: '[T8]It[/][D1]''s[/] [N3]seven o''clock[/]. [O4]No[/] [S1]Box[/] [P1]at[/] [S2]home[/]. [T8]I[/] [D4]go[/] [P2]to[/] [T1]the[/] [S4]corner[/] [S4]cafe[/].'
 - speaker: mia
   kind: speech
   emotion: angry
@@ -23,22 +23,21 @@ script:
 - speaker: anna
   kind: speech
   emotion: surprised
-  text: “[T5]Every[/] [S7]day[/]? [T1]A[/] [J1]big[/] [S6]cat[/]?”
+  text: "[T5]Every[/] [S7]day[/]?"
 - speaker: mia
   kind: speech
   emotion: angry
-  text: “[O4]Yes[/]! [T8]It[/] [D3]likes[/] [T3]my[/] [S3]milk[/]. [T5]Every[/] [S7]day[/]!”
+  text: "[O4]Yes[/]!"
 - speaker: anna
   kind: narration
   emotion: excited
   music: happy
-  text: '[T9]There[/] [D1]is[/] [T1]a[/] [J1]big[/] [S6]cat[/] [P1]in[/] [T1]the[/] [S4]cafe[/]. [T8]It[/] [D1]is[/] [S1]Box[/]!'
-  spoken: '[T9]There[/][D1]''s[/] [T1]a[/] [J1]big[/] [S6]cat[/] [P1]in[/] [T1]the[/] [S4]cafe[/]. [T8]It[/][D1]''s[/] [S1]Box[/]!'
+  text: "[T9]There[/] [D1]is[/] [T1]a[/] [S6]cat[/] [P1]in[/] [T1]the[/] [S4]cafe[/]."
+  spoken: "[T9]There[/][D1]'s[/] [T1]a[/] [S6]cat[/] [P1]in[/] [T1]the[/] [S4]cafe[/]."
 - speaker: anna
   kind: speech
   emotion: excited
-  text: “[S1]Box[/]! [T8]It[/] [D1]is[/] [T8]you[/]!”
-  spoken: “[S1]Box[/]! [T8]It[/][D1]'s[/] [T8]you[/]!”
+  text: "[S1]Box[/]!"
 - speaker: mia
   kind: speech
   emotion: surprised
@@ -46,11 +45,11 @@ script:
 - speaker: anna
   kind: speech
   emotion: tired
-  text: “[O4]Yes[/]. [P3]At[/] [S2]home[/], [S1]Box[/] [D1]has[/] [S3]water[/]. [A3]Here[/], [S1]Box[/] [D1]has[/] [S3]milk[/]!”
+  text: “[O4]Yes[/]. [P1]At[/] [S2]home[/], [S1]Box[/] [D1]has[/] [S3]water[/]. [A3]Here[/], [S1]Box[/] [D1]has[/] [S3]milk[/]!”
 - speaker: mia
   kind: speech
   emotion: happy
-  text: “[T3]Your[/] [S6]cat[/] [D1]has[/] [N1]two[/] [S2]homes[/], [S1]Anna[/].”
+  text: "[T3]Your[/] [S6]cat[/] [D1]has[/] [N1]two[/] [S2]homes[/]."
 - speaker: anna
   kind: narration
   emotion: worried
@@ -60,7 +59,7 @@ script:
   kind: narration
   emotion: happy
   music: calm
-  text: '[T8]I[/] [D4]go[/] [S2]home[/] [P3]at[/] [N3]eight[/]. [S1]Box[/] [D1]is[/] [P3]at[/] [S2]home[/]! [N1]Two[/] [S2]homes[/], [N1]two[/] [S3]breakfasts[/]!'
+  text: '[T8]I[/] [D4]go[/] [S2]home[/] [P3]at[/] [N3]eight[/]. [S1]Box[/] [D1]is[/] [P1]at[/] [S2]home[/]! [N1]Two[/] [S2]homes[/], [N1]two[/] [S3]breakfasts[/]!'
 questions:
 - q: Во сколько Анна идёт в кафе?
   a: 'It is seven o''clock. — Ровно в семь: Box нет дома.'

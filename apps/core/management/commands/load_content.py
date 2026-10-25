@@ -307,7 +307,7 @@ class Command(BaseCommand):
                     raise CommandError(f"{path.name}: роли {line['speaker']} нет в content/manifests/voices.yaml")
                 self._check_markup(f"{path.name}: реплика", line["text"], line.get("spoken", ""))
             story.body = "\n\n".join(line["text"] for line in story.script)
-        story.audio = self._audio_manifest("stories", f"s{story.number:02d}")
+        story.audio = self._audio_manifest("stories", f"s{story.number:02d}", script=story.script)
         story.is_published = True
         story.save()
         self._set_units(story.new_units, data.get("new_units", []), path.name)
@@ -338,7 +338,7 @@ class Command(BaseCommand):
         self._set_units(poem.target_units, data.get("target_units", []), path.name)
         return 1
 
-    def _audio_manifest(self, *parts: str) -> dict:
+    def _audio_manifest(self, *parts: str, script: list[dict] | None = None) -> dict:
         path = Path(settings.BASE_DIR) / "static" / "audio" / Path(*parts) / "manifest.json"
         if not path.exists():
             return {}
@@ -350,7 +350,7 @@ class Command(BaseCommand):
             # Озвучка необязательна: повреждённый манифест не должен останавливать загрузку курса.
             self.stdout.write(f"Пропущен повреждённый manifest.json: {path.parent.name}. Запустите generate_audio.bat.")
             return {}
-        problem = validate_manifest(data, Path(settings.BASE_DIR) / "static")
+        problem = validate_manifest(data, Path(settings.BASE_DIR) / "static", script=script)
         if problem:
             self.stdout.write(f"Пропущен аудиокомплект {path.parent.name}: {problem}.")
             return {}

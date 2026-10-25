@@ -35,8 +35,8 @@ script:
 - speaker: tom
   kind: speech
   emotion: surprised
-  text: “[T1]A[/] [S9]letter[/]? [A3]Here[/]? [C5]But[/] [T8]it[/] [D1]is[/] [X1]not[/] [P2]from[/] [T1]the[/] [S4]post office[/]!”
-  spoken: “[T1]A[/] [S9]letter[/]? [A3]Here[/]? [C5]But[/] [T8]it[/] [D1]is[/][X1]n't[/] [P2]from[/] [T1]the[/] [S4]post office[/]!”
+  text: "[T8]It[/] [D1]is[/] [X1]not[/] [P2]from[/] [T1]the[/] [S4]post office[/]!"
+  spoken: "[T8]It[/] [D1]is[/][X1]n't[/] [P2]from[/] [T1]the[/] [S4]post office[/]!"
 - speaker: anna
   kind: narration
   emotion: whisper
@@ -50,8 +50,8 @@ script:
 - speaker: anna
   kind: speech
   emotion: worried
-  text: “[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S9]name[/]. [T8]It[/] [D1]is[/] [X1]not[/] [S1]Mia's[/] [S9]name[/].”
-  spoken: “[T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]. [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S9]name[/]. [T8]It[/] [D1]is[/][X1]n't[/] [S1]Mia's[/] [S9]name[/].”
+  text: "[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]."
+  spoken: "[T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]."
 - speaker: anna
   kind: narration
   emotion: neutral
