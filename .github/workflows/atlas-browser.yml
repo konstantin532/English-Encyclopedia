@@ -2,9 +2,9 @@ name: Atlas browser acceptance
 on:
   push:
     branches: ['design/living-atlas-*']
-    paths: ['static/**', 'templates/**', 'apps/**', 'scripts/verify_atlas.cjs', '.github/workflows/atlas-browser.yml']
+    paths: ['static/**', 'templates/**', 'apps/**', 'scripts/verify_atlas.cjs', 'scripts/verify_lesson_bookpage.cjs', '.github/workflows/atlas-browser.yml']
   pull_request:
-    paths: ['static/**', 'templates/**', 'apps/**', 'scripts/verify_atlas.cjs', '.github/workflows/atlas-browser.yml']
+    paths: ['static/**', 'templates/**', 'apps/**', 'scripts/verify_atlas.cjs', 'scripts/verify_lesson_bookpage.cjs', '.github/workflows/atlas-browser.yml']
 permissions:
   contents: read
 concurrency:

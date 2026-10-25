@@ -31,3 +31,10 @@ User authorized local edits after discussion. Book-page is our chosen default, n
 Headless Chromium in the default sandbox fails on `socket() Operation not permitted`; reviewed escalation fails during bwrap setup on the denied sessions mount. No access or workaround for that path was attempted. Normal cloud CUA localhost navigation also cannot reach the app. A same-shell server/curl check returns HTTP200, but separate shell/CUA sessions report connection refused.
 
 Therefore before/after desktop and 390px screenshots, real keyboard traversal, 200% zoom, reduced-motion visual behavior and computed contrast are not verified. Unit tests are not substitutes for these checks. Do not call the pilot visually polished or publication-ready until reviewed in a browser.
+
+
+## Remote browser verification added after publication
+
+The original Atlas job does not visit lesson1. A narrow helper now visits the real noun lesson in the existing before/after checkouts at1440/390, records actual top/explanation/speech screenshots and computed contrast, checks depth membership/repeated switching/hash, focus/Enter and local Tab order, reader size, reduced-motion mode and no-JS. Existing Atlas coverage is preserved; only the helper path is added to existing workflow filters. No new permissions/secrets/dependencies.
+
+The helper's contrast calculation passed RED→GREEN unit tests; full Node suite is now132/132. Both scripts pass syntax checks; YAML parse/path/contents-read permissions and diff checks pass. Independent review found no substantial addition defect. Actual remote browser results are pending for the new exact commit; the local BLOCKED status above is not overwritten by an unrelated Atlas green run. Full-page Tab order, actual200% browser zoom and manual visual inspection are not yet verified.
