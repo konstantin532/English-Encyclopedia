@@ -2,7 +2,7 @@ const {test} = require('node:test');
 const assert = require('node:assert/strict');
 const {ROUTES, showSection, init} = require('../../static/js/a1-learning-route.js');
 
-function fixture() {
+function fixture(bookpage = false) {
   const sections = Array.from({length:7}, (_,i)=>({id:'layer-'+(i+1),hidden:false}));
   sections.push({id:'sound-notes',hidden:false},{id:'contractions',hidden:false});
   const buttons = ['essentials','reasons','full'].map(mode=>({
@@ -22,7 +22,7 @@ function fixture() {
   };
   const doc={
     querySelector(selector){
-      return {'[data-a1-learning-route]':guide,'[data-lesson-reader]':reader}[selector] || null;
+      return {'[data-a1-learning-route]':guide,'[data-lesson-reader]':reader,'[data-lesson-bookpage]':bookpage ? {} : null}[selector] || null;
     },
   };
   const listeners={};
@@ -80,4 +80,36 @@ test('malformed pilot markup fails open with full lesson intact',()=>{
   init(f.doc,f.win);
   assert.equal(f.guide.hidden,true);
   assert.deepEqual(hidden(f),[]);
+});
+
+
+test('bookpage feedback names the exact visible layers without changing routes',()=>{
+  const f=fixture(true);init(f.doc,f.win);
+  assert.match(f.status.textContent,/7 из 7/);
+  for (let repeat=0; repeat<2; repeat++) {
+    f.buttons[0].click();
+    assert.deepEqual(hidden(f),['layer-2','layer-4','layer-6']);
+    assert.match(f.status.textContent,/4 из 7/);
+    assert.match(f.status.textContent,/Скрыты шаги 2, 4, 6/);
+    assert.match(f.status.textContent,/Краткая опора и практика не меняются/);
+    f.buttons[1].click();
+    assert.deepEqual(hidden(f),['layer-6']);
+    assert.match(f.status.textContent,/6 из 7/);
+    assert.match(f.status.textContent,/Скрыт шаг 6/);
+    f.buttons[2].click();
+    assert.deepEqual(hidden(f),[]);
+    assert.match(f.status.textContent,/7 из 7/);
+  }
+});
+test('bookpage deep link restores full explanation and matching feedback',()=>{
+  const f=fixture(true);init(f.doc,f.win);f.buttons[0].click();
+  f.win.location.hash='#layer-4';f.listeners.hashchange();
+  assert.deepEqual(hidden(f),[]);
+  assert.equal(f.buttons[2].attrs['aria-pressed'],'true');
+  assert.match(f.status.textContent,/7 из 7/);
+});
+test('other lessons keep their existing reading feedback',()=>{
+  const f=fixture();init(f.doc,f.win);
+  f.buttons[0].click();
+  assert.equal(f.status.textContent,'Суть: основные примеры, разговорные формы и самостоятельная практика. Остальные шаги доступны в режиме «Полностью».');
 });

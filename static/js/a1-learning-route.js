@@ -26,6 +26,7 @@
     const sections = Array.from(reader.querySelectorAll("section.layer"));
     const buttons = Array.from(guide.querySelectorAll("[data-a1-route-mode]"));
     const message = guide.querySelector("[data-a1-route-status]");
+    const bookpage = doc.querySelector("[data-lesson-bookpage]");
     if (!message || sections.filter(s => /^layer-[1-7]$/.test(s.id)).length !== 7 ||
         buttons.length !== 3) return; // Incomplete markup: original view remains unchanged.
 
@@ -42,6 +43,13 @@
         reasons: "Почему: происхождение слов, логика грамматики и примеры. Исключения доступны в режиме «Полностью».",
         full: "Полностью: доступны все семь шагов урока и дополнительная практика.",
       }[mode];
+      if (bookpage) {
+        message.textContent = {
+          essentials: "Суть: показаны 4 из 7 шагов объяснения. Скрыты шаги 2, 4, 6 — откройте «Полностью», чтобы прочитать их. Краткая опора и практика не меняются.",
+          reasons: "Почему: показаны 6 из 7 шагов объяснения. Скрыт шаг 6 — откройте «Полностью», чтобы прочитать его. Краткая опора и практика не меняются.",
+          full: "Полностью: показаны 7 из 7 шагов объяснения. Краткая опора и практика не меняются.",
+        }[mode];
+      }
     }
 
     buttons.forEach(function (button) {
