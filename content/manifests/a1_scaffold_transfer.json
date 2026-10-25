@@ -257,19 +257,19 @@
           "why_ru": "Water обычно неисчисляемое. Some здесь говорит о неопределённом количестве воды, не обязательно именно о «немного»."
         },
         {
-          "example_en": "Is there any water?",
+          "example_en": "Is there water?",
           "example_ru": "Есть вода?",
-          "why_ru": "Для вопроса is выходит вперёд; any — обычный выбор в нейтральном вопросе."
+          "why_ru": "Чтобы спросить о наличии воды, поставьте is перед there. Water здесь означает вещество; вопрос не задаёт объём."
         }
       ],
       "transfer_variants": [
         {
-          "prompt": "В кухне есть молоко. Сообщите это гостю простым предложением.",
-          "model": "There is some milk in the kitchen."
+          "prompt": "Вы на кухне. Сообщите гостю, что есть молоко; само место называть не нужно.",
+          "model": "There is some milk."
         },
         {
-          "prompt": "Гость спрашивает, сколько стульев в комнате. Скажите, что их два.",
-          "model": "There are two chairs in the room."
+          "prompt": "Вы с гостем в комнате. Скажите, что здесь есть два стула.",
+          "model": "There are two chairs here."
         }
       ]
     },
@@ -277,19 +277,19 @@
       "slug": "a1-how-much-prices",
       "steps": [
         {
-          "example_en": "A ticket, please.",
-          "example_ru": "Билет, пожалуйста.",
+          "example_en": "A sandwich, please.",
+          "example_ru": "Сэндвич, пожалуйста.",
           "why_ru": "Сначала называем, что хотим купить."
         },
         {
-          "example_en": "How much is a ticket?",
-          "example_ru": "Сколько стоит билет?",
-          "why_ru": "How much спрашивает цену. Для одного ticket подходит is."
+          "example_en": "How much is a sandwich?",
+          "example_ru": "Сколько стоит сэндвич?",
+          "why_ru": "How much спрашивает цену. Для одного sandwich подходит is."
         },
         {
           "example_en": "It is five dollars.",
           "example_ru": "Он стоит пять долларов.",
-          "why_ru": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве билетов."
+          "why_ru": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве сэндвичей."
         }
       ],
       "transfer_variants": [
@@ -298,8 +298,8 @@
           "model": "How much is this book?"
         },
         {
-          "prompt": "Вы видите куртку в магазине. Спросите, сколько она стоит.",
-          "model": "How much is the jacket?"
+          "prompt": "На полке лежит один телефон. Спросите продавца, сколько он стоит.",
+          "model": "How much is the phone?"
         }
       ]
     },
@@ -317,19 +317,19 @@
           "why_ru": "После you обычный глагол не получает -s."
         },
         {
-          "example_en": "Do you work on Saturdays?",
-          "example_ru": "Ты работаешь по субботам?",
-          "why_ru": "Do открывает вопрос о привычке; work сохраняет начальную форму."
+          "example_en": "Do you work every day?",
+          "example_ru": "Ты работаешь каждый день?",
+          "why_ru": "Do стоит перед you и помогает спросить о привычке; work остаётся в начальной форме."
         }
       ],
       "transfer_variants": [
         {
-          "prompt": "Вы хотите узнать, читает ли ваш друг книги по вечерам. Задайте вопрос.",
-          "model": "Do you read books in the evening?"
+          "prompt": "Спросите друга, пьёт ли он кофе каждый день.",
+          "model": "Do you drink coffee every day?"
         },
         {
-          "prompt": "Вы рассказываете о привычке. Скажите, что читаете книги каждый день.",
-          "model": "I read books every day."
+          "prompt": "Расскажите о привычке: вы пьёте чай каждый день.",
+          "model": "I drink tea every day."
         }
       ]
     },

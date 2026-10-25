@@ -1,0 +1,21 @@
+Found 84 test(s).
+Creating test database for alias 'default'...
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).
+/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-a1-09-12-shared/staticfiles/
+  mw_instance = middleware(adapted_handler)
+......................................................................F.............
+======================================================================
+FAIL: test_fifth_pass_questions_match_speaker_and_situation (tests.test_a1_scaffold_variants.ThreeStepEditorialTests.test_fifth_pass_questions_match_speaker_and_situation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared/tests/test_a1_scaffold_variants.py", line 135, in test_fifth_pass_questions_match_speaker_and_situation
+    self.assertIn("any water", water["model"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'any water' not found in 'Is there water? Can I have some water, please?'
+
+----------------------------------------------------------------------
+Ran 84 tests in 5.551s
+
+FAILED (failures=1)
+Destroying test database for alias 'default'...

@@ -1,0 +1,23 @@
+{
+  "content/seed_lessons/a1_w05_l09_there_is.yaml": "3312b68c12ae04279846fe0a270491f67e8ac54e9591bc7a09aa6025bde0b9f4",
+  "content/seed_lessons/a1_w06_l11_present_simple.yaml": "b7220c8a14c43d3c670f4c6b640bb217b7bd167b042f3765729d018803dd7eaa",
+  "content/seed_lessons/a1_w06_l12_time.yaml": "3830d2aaac2764e48147c7422512ce1ca395852e0b29de218813bb9c018b1c31",
+  "content/seed_lessons/a1_w05_l10_how_much.yaml": "24f66294cccc396b313061af207bbc6fbada390f19a2c0580d4a87eac3b4cf31",
+  "content/seed_lexicon/a1_w05_shop.yaml": "e89e4a66515e5e4f5a448470bd14419847664abb7641db70201a68018c0e72c0",
+  "content/seed_lexicon/a1_w06_story02.yaml": "2805c071e921a332ac81f9e8b5e0bca62dc8045d0e727fe98e68d7fd2cb32819",
+  "content/seed_lexicon/a1_w05_shop_plus.yaml": "1b6bee6bfff2c6eda742cbc4f9792361a93626983129d51f5f3c5a43f30addb2",
+  "content/seed_lexicon/a1_w06_in.yaml": "f7bfc1db04e62ae76f2091ffe66ac6707a19505c567fb92f77ef082b1e711312",
+  "content/seed_lexicon/a1_w06_day.yaml": "bd9d60e0c6f989fcf0f4e4dce696d1fbe560783a4b3ae0307f3f84e02b26d27a",
+  "content/seed_lexicon/a1_w06_day_plus.yaml": "1410cc117a76963efb12db64ed21decc44d51e1b93060d0cd274109a072af80a",
+  "content/seed_weeks/a1_w06.yaml": "d5177466d61d07bc9ab1a352180230f127c85ade3380831ac31783b909e16b1b",
+  "content/seed_weeks/a1_w05.yaml": "77bb317ea5d33a5047f627cabdff60e30b06bb4c157c09cf03b1bbcba8b717c3",
+  "content/manifests/a1_understanding_checks.json": "9c6345dda37fa904eccb573e9c99c80d372c4a4ea2624fadd3d2e3838f00e56f",
+  "content/manifests/a1_scaffold_transfer.json": "5f0429b66cd8029f89a89d315601b5d5a79439b396919a3a278261bba9f8a3ea",
+  "content/manifests/a1_micro_review_09_12.json": "c392332da5aaf3c08246be3672e0debafb6458d378c16af32b2c8023bcdfc791",
+  "content/manifests/a1_delayed_review_topics_09_12.json": "e2f59c1c70c18dba13ff315a623567687d8f253af052613614c3a27cce070231",
+  "content/active_a1/topics_09_13.json": "d6ab12184949a49d8a7f319d8b62b5cfdf6ae7484106f7c719448bbcd999e364",
+  "content/active_a1/scenarios_07_12.json": "0df413da83324ade7039b3b34b9759977946800a6516a0c63c4f0e61f701c34f",
+  "content/active_a1/error_repairs_01_18.json": "1408bdccf04c853f81f35c1840ce1a13ab76fc3f096da7868aaf0dcd871d0806",
+  "content/seed_stories/s02_cafe_on_the_corner.yaml": "a4c5b0d2999eee2ef8d736179583494789cd20b746e4f906bfcae1b6258c07c4",
+  "content/seed_poems/p03_what_time_is_it.yaml": "fe87f0024b3521a45df702b07e6a03a816da6866f43dec0a9f7ff6e67a2cc808"
+}

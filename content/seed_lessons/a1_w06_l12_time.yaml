@@ -117,7 +117,7 @@ exercises:
     answer: "at"
     hint_ru: "Точный час — точка на часах."
     explanation_ru: "at six — at ставят перед точным временем."
-    units: [LX-00136]
+    units: []
   - order: 3
     uid: EX-00064
     kind: build
@@ -135,10 +135,10 @@ exercises:
     prompt_ru: "Новая ситуация: друг спрашивает, во сколько вы завтракаете. Вы завтракаете в восемь. Ответьте."
     prompt_en: "What time do you have breakfast? — ___"
     answer: "I have breakfast at eight."
-    accepted: ["At eight.", "At eight", "I have breakfast at eight", "At eight o'clock.", "I have breakfast at eight o'clock.", "Eight o'clock.", "At 8."]
+    accepted: ["At eight.", "At eight", "I have breakfast at eight", "At eight o'clock.", "I have breakfast at eight o'clock.", "Eight o'clock.", "At 8.", "I have breakfast at 8.", "I have breakfast at 8 o'clock.", "At 8 o'clock."]
     hint_ru: "at + число."
     explanation_ru: "I have breakfast at eight. Коротко — At eight."
-    units: [LX-00130, LX-00136]
+    units: ["LX-00130"]
   - order: 5
     uid: EX-00066
     kind: choice
@@ -180,8 +180,7 @@ practice:
   hint_ru: «Во сколько» — at.
   explanation_ru: I eat at twelve. Время действия — с at.
   review_of: 2
-  units:
-  - LX-00136
+  units: ["LX-00303"]
 - order: 3
   kind: translate
   prompt_ru: Который час?
@@ -189,10 +188,7 @@ practice:
   hint_ru: Вопрос о времени сейчас — What time…?
   explanation_ru: What time is it? Вопрос о том, который час сейчас.
   review_of: 1
-  units:
-  - LX-00133
-  - LX-00135
-  - LX-00140
+  units: ["LX-00133"]
 - order: 4
   kind: translate
   prompt_ru: Во сколько ты встаёшь?
@@ -200,9 +196,4 @@ practice:
   hint_ru: What time + do you…?
   explanation_ru: What time do you get up? Вопрос о привычке строится через do.
   review_of: 3
-  units:
-  - LX-00133
-  - LX-00135
-  - LX-00136
-  - LX-00124
-  - LX-00126
+  units: ["LX-00133", "LX-00135", "LX-00124", "LX-00125", "LX-00126"]

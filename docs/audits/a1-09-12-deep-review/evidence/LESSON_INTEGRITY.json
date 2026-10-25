@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "files": 6,
+  "semantic_fields": 32,
+  "seven_layers": true,
+  "lesson_identity_and_order": true,
+  "lexical_uid_lemma_class_forms_ipa_examples_unchanged": true,
+  "old_canonical_and_accepted_answers_retained": true,
+  "exercise_review_links_unchanged": true,
+  "source_sha256": {
+    "content/seed_lessons/a1_w05_l09_there_is.yaml": "c4da4d5ca8cb090be766208c8abbb4a9ba795e97e6b825adaf3a5facefb792d4",
+    "content/seed_lessons/a1_w05_l10_how_much.yaml": "15f07a9e7d79abacd113cfbeeb2c5698cb751657b3513d650ac1a5a69f971e18",
+    "content/seed_lessons/a1_w06_l11_present_simple.yaml": "4bd379a8c61216bd95cfddcc5ca5b67c5677f1b7ef9eadf35c9600a3bcb7e053",
+    "content/seed_lessons/a1_w06_l12_time.yaml": "242e3190a862b84177e9af1279b10524402c2c9f38af51564aaf4e52b31f0cee",
+    "content/seed_lexicon/a1_w05_shop.yaml": "3711760e6cc064d09873291cf18313b4b00bf0097f1e5b9d817edcbc5c7f58fb",
+    "content/seed_lexicon/a1_w06_day_plus.yaml": "2c75e512959e3636f324f120737243c39876376156ebbfad39ebcdc96d7ffe88"
+  },
+  "test_sha256": "a8733a4a3c4605e437c74ab4191d0de17fc07f12a98b75c53fb413ac3fdd6e37"
+}

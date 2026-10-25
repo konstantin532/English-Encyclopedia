@@ -1,0 +1,321 @@
+Found 9 test(s).
+Creating test database for alias 'default'...
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).
+/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-a1-09-12-shared-before/staticfiles/
+  mw_instance = middleware(adapted_handler)
+.FFFFFFFFFFFFFFFFFFFFFF.FFF
+======================================================================
+FAIL: test_cold_transfer_models_use_vocabulary_available_at_the_week (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_cold_transfer_models_use_vocabulary_available_at_the_week) (slug='a1-there-is-some', model='There are two books in the room.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 37, in test_cold_transfer_models_use_vocabulary_available_at_the_week
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['in'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'in'
+
+- ['in']
++ []
+
+======================================================================
+FAIL: test_cold_transfer_models_use_vocabulary_available_at_the_week (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_cold_transfer_models_use_vocabulary_available_at_the_week) (slug='a1-there-is-some', model='Is there any water? Can I have some water, please?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 37, in test_cold_transfer_models_use_vocabulary_available_at_the_week
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['any'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'any'
+
+- ['any']
++ []
+
+======================================================================
+FAIL: test_cold_transfer_models_use_vocabulary_available_at_the_week (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_cold_transfer_models_use_vocabulary_available_at_the_week) (slug='a1-there-is-some', model='There is some milk in the kitchen.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 37, in test_cold_transfer_models_use_vocabulary_available_at_the_week
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['in'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'in'
+
+- ['in']
++ []
+
+======================================================================
+FAIL: test_cold_transfer_models_use_vocabulary_available_at_the_week (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_cold_transfer_models_use_vocabulary_available_at_the_week) (slug='a1-there-is-some', model='There are two chairs in the room.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 37, in test_cold_transfer_models_use_vocabulary_available_at_the_week
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['in'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'in'
+
+- ['in']
++ []
+
+======================================================================
+FAIL: test_cold_transfer_models_use_vocabulary_available_at_the_week (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_cold_transfer_models_use_vocabulary_available_at_the_week) (slug='a1-how-much-prices', model='How much is the jacket?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 37, in test_cold_transfer_models_use_vocabulary_available_at_the_week
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['jacket'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'jacket'
+
+- ['jacket']
++ []
+
+======================================================================
+FAIL: test_cold_transfer_models_use_vocabulary_available_at_the_week (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_cold_transfer_models_use_vocabulary_available_at_the_week) (slug='a1-present-simple-i-you', model='Do you read books in the evening?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 37, in test_cold_transfer_models_use_vocabulary_available_at_the_week
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['read'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'read'
+
+- ['read']
++ []
+
+======================================================================
+FAIL: test_cold_transfer_models_use_vocabulary_available_at_the_week (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_cold_transfer_models_use_vocabulary_available_at_the_week) (slug='a1-present-simple-i-you', model='I read books every day.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 37, in test_cold_transfer_models_use_vocabulary_available_at_the_week
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['read'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'read'
+
+- ['read']
++ []
+
+======================================================================
+FAIL: test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning) (answer="It's three dollars.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 70, in test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if answer in good else IndependentAttempt.Outcome.NEEDS_REVIEW)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning) (answer='That is three dollars.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 70, in test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if answer in good else IndependentAttempt.Outcome.NEEDS_REVIEW)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning) (answer="That's three dollars.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 70, in test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if answer in good else IndependentAttempt.Outcome.NEEDS_REVIEW)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning) (answer='It is 3 dollars.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 70, in test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if answer in good else IndependentAttempt.Outcome.NEEDS_REVIEW)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning) (answer="It's 3 dollars.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 70, in test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if answer in good else IndependentAttempt.Outcome.NEEDS_REVIEW)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning) (answer='That is 3 dollars.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 70, in test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if answer in good else IndependentAttempt.Outcome.NEEDS_REVIEW)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning) (answer="That's 3 dollars.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 70, in test_independent_price_accepts_equivalent_full_forms_and_preserves_meaning
+    self.assertEqual(attempt.outcome, IndependentAttempt.Outcome.MODEL_MATCH if answer in good else IndependentAttempt.Outcome.NEEDS_REVIEW)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_micro_correct_answers_use_available_vocabulary (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_micro_correct_answers_use_available_vocabulary) (uid='EX-00048', slot=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 46, in test_micro_correct_answers_use_available_vocabulary
+    self.assertEqual([t for t in text_tokens(card[2][card[3]]) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['white'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'white'
+
+- ['white']
++ []
+
+======================================================================
+FAIL: test_micro_correct_answers_use_available_vocabulary (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_micro_correct_answers_use_available_vocabulary) (uid='EX-00058', slot=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 46, in test_micro_correct_answers_use_available_vocabulary
+    self.assertEqual([t for t in text_tokens(card[2][card[3]]) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['read'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'read'
+
+- ['read']
++ []
+
+======================================================================
+FAIL: test_micro_correct_answers_use_available_vocabulary (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_micro_correct_answers_use_available_vocabulary) (uid='EX-00061', slot=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 46, in test_micro_correct_answers_use_available_vocabulary
+    self.assertEqual([t for t in text_tokens(card[2][card[3]]) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['read'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'read'
+
+- ['read']
++ []
+
+======================================================================
+FAIL: test_micro_correct_answers_use_available_vocabulary (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_micro_correct_answers_use_available_vocabulary) (uid='EX-00061', slot=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 46, in test_micro_correct_answers_use_available_vocabulary
+    self.assertEqual([t for t in text_tokens(card[2][card[3]]) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['walk'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'walk'
+
+- ['walk']
++ []
+
+======================================================================
+FAIL: test_poem_clock_and_work_labels_reflect_their_contextual_functions (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_poem_clock_and_work_labels_reflect_their_contextual_functions) (contextual_word='Ten')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 97, in test_poem_clock_and_work_labels_reflect_their_contextual_functions
+    self.assertTrue(all(cat==category and label.endswith(suffix) for _,cat,label in records),records)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [('Ten', 'N', 'Числительные: Количественные'), ('Ten', 'N', 'Числительные: Количественные')]
+
+======================================================================
+FAIL: test_poem_clock_and_work_labels_reflect_their_contextual_functions (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_poem_clock_and_work_labels_reflect_their_contextual_functions) (contextual_word='work')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 97, in test_poem_clock_and_work_labels_reflect_their_contextual_functions
+    self.assertTrue(all(cat==category and label.endswith(suffix) for _,cat,label in records),records)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [('work', 'D', 'Глаголы: Повседневные действия'), ('work', 'D', 'Глаголы: Повседневные действия'), ('work', 'D', 'работать')]
+
+======================================================================
+FAIL: test_poem_clock_and_work_labels_reflect_their_contextual_functions (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_poem_clock_and_work_labels_reflect_their_contextual_functions) (contextual_word='in')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 97, in test_poem_clock_and_work_labels_reflect_their_contextual_functions
+    self.assertTrue(all(cat==category and label.endswith(suffix) for _,cat,label in records),records)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [('in', 'P', 'Предлоги: Место'), ('in', 'P', 'Предлоги: Место')]
+
+======================================================================
+FAIL: test_poem_clock_and_work_labels_reflect_their_contextual_functions (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_poem_clock_and_work_labels_reflect_their_contextual_functions) (contextual_word='verb lexical target')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 100, in test_poem_clock_and_work_labels_reflect_their_contextual_functions
+    self.assertNotIn('LX-00128', {u.uid for u in response.context['targets']})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'LX-00128' unexpectedly found in {'LX-00132', 'LX-00128', 'LX-00134', 'LX-00303', 'LX-00307', 'LX-00129', 'LX-00124', 'LX-00125', 'LX-00127', 'LX-00133'}
+
+======================================================================
+FAIL: test_poem_three_prepares_its_chunks_and_other_intro_text_stays_the_same (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_poem_three_prepares_its_chunks_and_other_intro_text_stays_the_same)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 165, in test_poem_three_prepares_its_chunks_and_other_intro_text_stays_the_same
+    self.assertIn(pairing,prepared)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: 'go to work — идти на работу' not found in 'День по часам — и большой кот, который приходит ровно в семь. Рифма ABCB. Стихотворение не вводит новых слов: оно тренирует произношение на знакомых.'
+
+======================================================================
+FAIL: test_twister_declared_simple_focus_sounds_occur_in_its_ipa (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_twister_declared_simple_focus_sounds_occur_in_its_ipa) (hint='ae')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 111, in test_twister_declared_simple_focus_sounds_occur_in_its_ipa
+    self.assertIn(sound, twister.ipa)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'æ' not found in '/ɪz ˈðɪs ˈtʃiz ˈtʃip | ɪz ˈðɪs ˈmɪlk ˈtʃip | ˈðɪs ˈtʃiz ɪz ˈtʃip | ˈðɪs ˈmɪlk ɪz ɪkˈspɛnsɪv/'
+
+======================================================================
+FAIL: test_water_transfer_model_is_a_known_question_plus_request_and_stays_self_reported (tests.test_a1_deep_09_12_shared.SharedDeepA10912Tests.test_water_transfer_model_is_a_known_question_plus_request_and_stays_self_reported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-09-12-shared-before/tests/test_a1_deep_09_12_shared.py", line 182, in test_water_transfer_model_is_a_known_question_plus_request_and_stays_self_reported
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t,vocabulary)],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['any'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'any'
+
+- ['any']
++ []
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.053s
+
+FAILED (failures=25)
+Destroying test database for alias 'default'...

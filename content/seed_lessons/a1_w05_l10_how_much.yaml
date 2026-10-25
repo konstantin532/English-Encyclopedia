@@ -141,10 +141,10 @@ exercises:
     prompt_ru: "Новая ситуация: вы продаёте яблоки на школьной ярмарке. Все эти яблоки стоят $5. Ответьте полным предложением о яблоках, начните с They."
     prompt_en: "How much are the apples? — ___"
     answer: "They are five dollars."
-    accepted: ["They're five dollars."]
+    accepted: ["They're five dollars.", "They are 5 dollars.", "They're 5 dollars."]
     hint_ru: "They относится к яблокам: после they выберите are, затем назовите цену."
     explanation_ru: "They are five dollars. They относится к apples, поэтому are. They're five dollars тоже подходит. Five dollars — естественный короткий ответ, но здесь по условию нужно полное предложение о яблоках с They."
-    units: [LX-00116, LX-00123]
+    units: ["LX-00116"]
   - order: 5
     uid: EX-00054
     kind: choice
@@ -176,13 +176,7 @@ practice:
   hint_ru: How much is…?
   explanation_ru: How much is the milk? — вопрос о цене конкретного молока. How much is milk? тоже спрашивает цену молока. В этом задании используем вопрос с is, как указано в условии.
   review_of: 3
-  units:
-  - LX-00114
-  - LX-00115
-  - LX-00122
-  - LX-00123
-  - LX-00108
-  - LX-00302
+  units: ["LX-00114", "LX-00115", "LX-00108"]
 - order: 2
   kind: translate
   prompt_ru: Это два доллара.
@@ -192,11 +186,7 @@ practice:
   hint_ru: two dollars — с -s.
   explanation_ru: It's two dollars. После two — dollars с -s.
   review_of: 4
-  units:
-  - LX-00116
-  - LX-00122
-  - LX-00123
-  - LX-00302
+  units: ["LX-00116", "LX-00123"]
 - order: 3
   kind: translate
   prompt_ru: Сколько стоят яблоки? Используйте вопрос с are.
@@ -204,11 +194,7 @@ practice:
   hint_ru: Яблок несколько — are.
   explanation_ru: How much are the apples? Apples — множественное число, поэтому are. В этом задании используем вопрос с are, как указано в условии.
   review_of: 3
-  units:
-  - LX-00114
-  - LX-00115
-  - LX-00122
-  - LX-00109
+  units: ["LX-00114", "LX-00115", "LX-00109"]
 - order: 4
   kind: translate
   prompt_ru: Они дешёвые!

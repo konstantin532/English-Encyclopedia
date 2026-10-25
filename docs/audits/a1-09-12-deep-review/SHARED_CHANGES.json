@@ -1,0 +1,568 @@
+[
+  {
+    "path": "content/active_a1/scenarios_07_12.json",
+    "pointer": "/4/missions/5/coach",
+    "identity": [
+      {
+        "n": 11
+      },
+      {
+        "id": 6
+      }
+    ],
+    "before": "В Present Simple можно соединить два привычных действия без сложных времён.",
+    "after": "Используйте готовые сочетания in the morning — «утром», in the evening — «вечером»; подробнее они разбираются в уроке 12. В Present Simple можно сообщить два привычных действия."
+  },
+  {
+    "path": "content/active_a1/topics_09_13.json",
+    "pointer": "/0/why",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      },
+      {
+        "n": 9
+      }
+    ],
+    "before": "There is / there are сообщает о наличии чего-то в ситуации: «имеется». Here there — часть конструкции, а не обязательно «там»; some обычно обозначает некоторое количество.",
+    "after": "There is / there are сообщает о наличии чего-то в ситуации: «имеется». Здесь there — часть конструкции, а не обязательно «там»; some обычно обозначает некоторое количество."
+  },
+  {
+    "path": "content/active_a1/topics_09_13.json",
+    "pointer": "/2/context",
+    "identity": [
+      {
+        "slug": "a1-present-simple-i-you"
+      },
+      {
+        "n": 11
+      }
+    ],
+    "before": "Говорите о повторяющемся распорядке, а не о действии прямо сейчас.",
+    "after": "Говорите о повторяющемся распорядке, а не о действии прямо сейчас. In the morning — «утром», in the evening — «вечером». Здесь это готовые сочетания; подробно разберём их в уроке 12."
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/1/cases/1/0",
+    "identity": [],
+    "before": "вы пьёте кофе утром",
+    "after": "вы пьёте кофе каждое утро"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/1/cases/1/1",
+    "identity": [],
+    "before": "drink coffee in the morning",
+    "after": "drink coffee every morning"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/1/cases/2/0",
+    "identity": [],
+    "before": "вы смотрите телевизор вечером",
+    "after": "вы смотрите телевизор каждый вечер"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/1/cases/2/1",
+    "identity": [],
+    "before": "watch TV in the evening",
+    "after": "watch TV every evening"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/2/cases/4/0",
+    "identity": [],
+    "before": "читаешь ли ты книги",
+    "after": "пьёшь ли ты воду"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/2/cases/4/1",
+    "identity": [],
+    "before": "read books",
+    "after": "drink water"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/3/cases/2/0",
+    "identity": [],
+    "before": "вы читаете книги в девять",
+    "after": "вы пьёте чай в девять"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/3/cases/2/1",
+    "identity": [],
+    "before": "read books",
+    "after": "drink tea"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/6/cases/2/0",
+    "identity": [],
+    "before": "я работаю и читаю книги",
+    "after": "я работаю и пью воду"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/6/cases/2/2",
+    "identity": [],
+    "before": "read books",
+    "after": "drink water"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/6/cases/3/0",
+    "identity": [],
+    "before": "я гуляю и ложусь спать",
+    "after": "я работаю и ложусь спать"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-present-simple-i-you/6/cases/3/1",
+    "identity": [],
+    "before": "walk",
+    "after": "work"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-there-is-some/1/prompt",
+    "identity": [],
+    "before": "Вы в {place}. Как спросить, есть ли {ru}? ",
+    "after": "Вы в {place}. Узнайте, есть ли {ru}. Выберите обычный вопрос по схеме Is + there + продукт, а не разговорный переспрос с порядком утверждения."
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-there-is-some/1/reason",
+    "identity": [],
+    "before": "С неисчисляемым напитком задавайте вопрос Is there ...?; форма are предназначена для множественного числа.",
+    "after": "Здесь нужен обычный вопрос о наличии: Is there…? Фраза There is…? с вопросительной интонацией возможна как уточнение, но не соответствует указанной схеме. С названием вещества используем is, не are."
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-there-is-some/5/cases/4/0",
+    "identity": [],
+    "before": "белые дома",
+    "after": "коричневые дома"
+  },
+  {
+    "path": "content/manifests/a1_micro_review_09_12.json",
+    "pointer": "/a1-there-is-some/5/cases/4/2",
+    "identity": [],
+    "before": "white",
+    "after": "brown"
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/8/steps/2/example_en",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      }
+    ],
+    "before": "Is there any water?",
+    "after": "Is there water?"
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/8/steps/2/why_ru",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      }
+    ],
+    "before": "Для вопроса is выходит вперёд; any — обычный выбор в нейтральном вопросе.",
+    "after": "Чтобы спросить о наличии воды, поставьте is перед there. Water здесь означает вещество; вопрос не задаёт объём."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/8/transfer_variants/0/model",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      }
+    ],
+    "before": "There is some milk in the kitchen.",
+    "after": "There is some milk."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/8/transfer_variants/0/prompt",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      }
+    ],
+    "before": "В кухне есть молоко. Сообщите это гостю простым предложением.",
+    "after": "Вы на кухне. Сообщите гостю, что есть молоко; само место называть не нужно."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/8/transfer_variants/1/model",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      }
+    ],
+    "before": "There are two chairs in the room.",
+    "after": "There are two chairs here."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/8/transfer_variants/1/prompt",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      }
+    ],
+    "before": "Гость спрашивает, сколько стульев в комнате. Скажите, что их два.",
+    "after": "Вы с гостем в комнате. Скажите, что здесь есть два стула."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/9/steps/0/example_en",
+    "identity": [
+      {
+        "slug": "a1-how-much-prices"
+      }
+    ],
+    "before": "A ticket, please.",
+    "after": "A sandwich, please."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/9/steps/0/example_ru",
+    "identity": [
+      {
+        "slug": "a1-how-much-prices"
+      }
+    ],
+    "before": "Билет, пожалуйста.",
+    "after": "Сэндвич, пожалуйста."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/9/steps/1/example_en",
+    "identity": [
+      {
+        "slug": "a1-how-much-prices"
+      }
+    ],
+    "before": "How much is a ticket?",
+    "after": "How much is a sandwich?"
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/9/steps/1/example_ru",
+    "identity": [
+      {
+        "slug": "a1-how-much-prices"
+      }
+    ],
+    "before": "Сколько стоит билет?",
+    "after": "Сколько стоит сэндвич?"
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/9/steps/1/why_ru",
+    "identity": [
+      {
+        "slug": "a1-how-much-prices"
+      }
+    ],
+    "before": "How much спрашивает цену. Для одного ticket подходит is.",
+    "after": "How much спрашивает цену. Для одного sandwich подходит is."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/9/steps/2/why_ru",
+    "identity": [
+      {
+        "slug": "a1-how-much-prices"
+      }
+    ],
+    "before": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве билетов.",
+    "after": "Цена пять: dollars во множественном числе. Это ответ о стоимости, а не о количестве сэндвичей."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/9/transfer_variants/1/model",
+    "identity": [
+      {
+        "slug": "a1-how-much-prices"
+      }
+    ],
+    "before": "How much is the jacket?",
+    "after": "How much is the phone?"
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/9/transfer_variants/1/prompt",
+    "identity": [
+      {
+        "slug": "a1-how-much-prices"
+      }
+    ],
+    "before": "Вы видите куртку в магазине. Спросите, сколько она стоит.",
+    "after": "На полке лежит один телефон. Спросите продавца, сколько он стоит."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/10/steps/2/example_en",
+    "identity": [
+      {
+        "slug": "a1-present-simple-i-you"
+      }
+    ],
+    "before": "Do you work on Saturdays?",
+    "after": "Do you work every day?"
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/10/steps/2/example_ru",
+    "identity": [
+      {
+        "slug": "a1-present-simple-i-you"
+      }
+    ],
+    "before": "Ты работаешь по субботам?",
+    "after": "Ты работаешь каждый день?"
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/10/steps/2/why_ru",
+    "identity": [
+      {
+        "slug": "a1-present-simple-i-you"
+      }
+    ],
+    "before": "Do открывает вопрос о привычке; work сохраняет начальную форму.",
+    "after": "Do стоит перед you и помогает спросить о привычке; work остаётся в начальной форме."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/10/transfer_variants/0/model",
+    "identity": [
+      {
+        "slug": "a1-present-simple-i-you"
+      }
+    ],
+    "before": "Do you read books in the evening?",
+    "after": "Do you drink coffee every day?"
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/10/transfer_variants/0/prompt",
+    "identity": [
+      {
+        "slug": "a1-present-simple-i-you"
+      }
+    ],
+    "before": "Вы хотите узнать, читает ли ваш друг книги по вечерам. Задайте вопрос.",
+    "after": "Спросите друга, пьёт ли он кофе каждый день."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/10/transfer_variants/1/model",
+    "identity": [
+      {
+        "slug": "a1-present-simple-i-you"
+      }
+    ],
+    "before": "I read books every day.",
+    "after": "I drink tea every day."
+  },
+  {
+    "path": "content/manifests/a1_scaffold_transfer.json",
+    "pointer": "/lessons/10/transfer_variants/1/prompt",
+    "identity": [
+      {
+        "slug": "a1-present-simple-i-you"
+      }
+    ],
+    "before": "Вы рассказываете о привычке. Скажите, что читаете книги каждый день.",
+    "after": "Расскажите о привычке: вы пьёте чай каждый день."
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json",
+    "pointer": "/lessons/8/tasks/transfer/model",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      }
+    ],
+    "before": "Is there any water? Can I have some water, please?",
+    "after": "Is there water? Can I have some water, please?"
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json",
+    "pointer": "/lessons/8/tasks/transfer/prompt",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      }
+    ],
+    "before": "Во время поездки спросите у друга, есть ли вода, и затем вежливо попросите немного.",
+    "after": "Во время поездки спросите у друга, есть ли вода, и затем вежливо попросите воды, не уточняя объём."
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json",
+    "pointer": "/lessons/8/tasks/writing/accepted",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      }
+    ],
+    "before": [
+      "There are two books in the room."
+    ],
+    "after": [
+      "There are two books in the room.",
+      "There are two books."
+    ]
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json",
+    "pointer": "/lessons/8/tasks/writing/model",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      }
+    ],
+    "before": "There are two books in the room.",
+    "after": "There are two books."
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json",
+    "pointer": "/lessons/8/tasks/writing/prompt",
+    "identity": [
+      {
+        "slug": "a1-there-is-some"
+      }
+    ],
+    "before": "Напишите «В комнате две книги».",
+    "after": "Вы описываете комнату гостю. Напишите, что здесь есть две книги; само место повторять не нужно."
+  },
+  {
+    "path": "content/manifests/a1_understanding_checks.json",
+    "pointer": "/lessons/9/tasks/writing/accepted",
+    "identity": [
+      {
+        "slug": "a1-how-much-prices"
+      }
+    ],
+    "before": [
+      "It is three dollars."
+    ],
+    "after": [
+      "It is three dollars.",
+      "It's three dollars.",
+      "That is three dollars.",
+      "That's three dollars.",
+      "It is 3 dollars.",
+      "It's 3 dollars.",
+      "That is 3 dollars.",
+      "That's 3 dollars."
+    ]
+  },
+  {
+    "path": "content/seed_poems/p03_what_time_is_it.yaml",
+    "pointer": "/body",
+    "identity": [
+      {
+        "number": 3
+      }
+    ],
+    "before": "[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?\n[T8]It[/] [D1]is[/] [N3]five[/], [T8]it[/] [D1]is[/] [N3]five[/]!\n[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/],\n[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?\n[T8]It[/] [D1]is[/] [N3]seven o'clock[/]!\n[T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/],\n[C1]and[/] [T8]I[/] [D4]go[/] [P2]to[/] [D2]work[/].\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Twelve[/]!\n[T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/].\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N1]Ten[/]?\n[S3]Coffee[/] [A2]again[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Seven[/]!\n[T1]A[/] [J1]big[/] [S6]cat[/] [D4]comes[/] [P1]in[/].\n[T5]Every[/] [S7]day[/] [P3]at[/] [N3]seven[/]\n[T1]the[/] [S6]cat[/] [D2]drinks[/] [T3]my[/] [S3]milk[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [A2]Late[/]!\n[T8]I[/] [D4]go[/] [P2]to[/] [S2]bed[/].\n[J3]Good[/] [S7]evening[/], [S6]cat[/]!\n[J3]Good[/] [S7]evening[/], [S2]bed[/]!\n",
+    "after": "[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?\n[T8]It[/] [D1]is[/] [N3]five[/], [T8]it[/] [D1]is[/] [N3]five[/]!\n[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/],\n[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]?\n[T8]It[/] [D1]is[/] [N3]seven o'clock[/]!\n[T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/],\n[C1]and[/] [T8]I[/] [D4]go[/] [P2]to[/] [S9]work[/].\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Twelve[/]!\n[T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/].\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Ten[/]?\n[S3]Coffee[/] [A2]again[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [N3]Seven[/]!\n[T1]A[/] [J1]big[/] [S6]cat[/] [D4]comes[/] [X3]in[/].\n[T5]Every[/] [S7]day[/] [P3]at[/] [N3]seven[/]\n[T1]the[/] [S6]cat[/] [D2]drinks[/] [T3]my[/] [S3]milk[/]!\n\n[T9]What[/] [S7]time[/] [D1]is[/] [T8]it[/]? [A2]Late[/]!\n[T8]I[/] [D4]go[/] [P2]to[/] [S2]bed[/].\n[J3]Good[/] [S7]evening[/], [S6]cat[/]!\n[J3]Good[/] [S7]evening[/], [S2]bed[/]!\n"
+  },
+  {
+    "path": "content/seed_poems/p03_what_time_is_it.yaml",
+    "pointer": "/target_units",
+    "identity": [
+      {
+        "number": 3
+      }
+    ],
+    "before": [
+      "LX-00124",
+      "LX-00125",
+      "LX-00127",
+      "LX-00128",
+      "LX-00129",
+      "LX-00132",
+      "LX-00133",
+      "LX-00134",
+      "LX-00303",
+      "LX-00307"
+    ],
+    "after": [
+      "LX-00124",
+      "LX-00125",
+      "LX-00127",
+      "LX-00129",
+      "LX-00132",
+      "LX-00133",
+      "LX-00134",
+      "LX-00303",
+      "LX-00307"
+    ]
+  },
+  {
+    "path": "content/seed_stories/s02_cafe_on_the_corner.yaml",
+    "pointer": "/grammar_ru",
+    "identity": [
+      {
+        "number": 2
+      }
+    ],
+    "before": "Present Simple с I и you; время at seven, seven o'clock; there is; притяжательное 's (Mia's milk)",
+    "after": "Настоящее в рассказе и привычках; время at seven; there is. Comes, drinks, likes и has пока узнаём по смыслу; самостоятельно строить формы для he/she/it научимся в уроке 13."
+  },
+  {
+    "path": "content/seed_stories/s02_cafe_on_the_corner.yaml",
+    "pointer": "/prediction_ru",
+    "identity": [
+      {
+        "number": 2
+      }
+    ],
+    "before": "Посмотрите на название и описания картинок. Кто этот кот в кафе? И куда он потом исчезнет?",
+    "after": "I go в рассказе — «иду» в цепочке событий, Every day — привычка. Comes/drinks/likes — формы для he/she/it; has — форма have. Пока узнавайте их по смыслу; подробный разбор — урок 13. Кто кот в кафе и куда он исчезнет?"
+  },
+  {
+    "path": "content/seed_weeks/a1_w05.yaml",
+    "pointer": "/twister/focus_sounds",
+    "identity": [
+      {
+        "number": 5
+      }
+    ],
+    "before": [
+      "dh",
+      "ae"
+    ],
+    "after": [
+      "dh"
+    ]
+  },
+  {
+    "path": "content/manifests/course_map.yaml",
+    "pointer": "/poems/2/theme_ru",
+    "identity": [
+      {
+        "number": 3
+      }
+    ],
+    "before": "День по часам — и большой кот, который приходит ровно в семь",
+    "after": "День по часам и кот. Готовые выражения: go to work — идти на работу; coffee again — снова кофе; comes in — входит. Comes/drinks — формы для he/she/it: пока узнавайте их по смыслу; подробный разбор — урок 13"
+  },
+  {
+    "path": "templates/poems/detail.html",
+    "pointer": "",
+    "identity": [],
+    "before": "{% extends \"base.html\" %}\n{% load markers static ru %}\n{% block title %}{{ poem.title }} · {{ SITE_NAME }}{% endblock %}\n{% block content %}\n<div class=\"wrap\">\n  <header class=\"page-head\">\n    <p class=\"crumbs\"><a href=\"{% url 'stories:map' %}\">Истории и стихи</a> / {{ poem.level.code }}, неделя {{ poem.week.number }} / стихотворение {{ poem.number }}</p>\n    <h1 lang=\"en\">{{ poem.title }}</h1>\n    <p>{{ poem.theme_ru }}. Рифма {{ poem.rhyme_scheme }}. Стихотворение не вводит новых слов: оно тренирует произношение на знакомых.</p>\n  </header>\n  <div class=\"lesson-grid\">\n    <article class=\"prose\">\n      <section class=\"layer\" aria-labelledby=\"pt1\">\n        <h2 id=\"pt1\"><span class=\"layer-num\">1</span>Послушайте ритм</h2>\n        <p>Аудио пока нет. Прочитайте стихотворение вслух медленно и отстучите ритм: на каждое ударение — хлопок. Сначала поймите, что происходит: это маленькая история.</p>\n        <div class=\"poem annotated\" lang=\"en\">{% for row in rows %}<p{% if row.stanza %} class=\"stanza-start\"{% endif %}>{{ row.line|annotate }}</p>{% endfor %}</div>\n      </section>\n      <section class=\"layer\" aria-labelledby=\"pt2\">\n        <h2 id=\"pt2\"><span class=\"layer-num\">2</span>Ударения, паузы, связки</h2>\n        <p>Заглавные буквы — смысловое ударение на слове, <span class=\"ipa\">|</span> — пауза, <span class=\"ipa\">‿</span> — слова сливаются.</p>\n        <ol class=\"pron\">\n          {% for row in rows %}{% if row.pr %}<li><span class=\"pron-stress\" lang=\"en\">{{ row.pr.stress|annotate }}</span><span class=\"ipa\">{{ row.pr.ipa }}</span>{{ row.pr|ru_tr }}</li>{% endif %}{% endfor %}\n        </ol>\n        <section class=\"speech-stress-lab\" data-stress-lab aria-labelledby=\"stress-lab-heading\">\n          <h3 id=\"stress-lab-heading\">Найди главные слова в строке</h3>\n          <p>Сначала прочитайте строку и выделите слова, на которые падает смысловое ударение. Затем сравните свой выбор с <strong>разметкой преподавателя</strong>. Это текстовая тренировка внимания к ритму, а не тест на слух.</p>\n          <div data-stress-bank hidden>\n            {% for row in rows %}{% if row.pr %}\n            <span data-stress-entry data-stress-plain=\"{{ row.line|plain }}\" data-stress-model=\"{{ row.pr.stress }}\"></span>\n            {% endif %}{% endfor %}\n          </div>\n          <div data-stress-controls>\n            <p data-stress-position aria-live=\"polite\">Строка 1</p>\n            <div class=\"speech-stress-choices\" data-stress-choices role=\"group\" aria-label=\"Выберите ударные слова\"></div>\n            <div class=\"speech-actions\">\n              <button type=\"button\" class=\"btn btn-primary btn-small\" data-stress-check>Сверить ударения</button>\n              <button type=\"button\" class=\"btn btn-quiet btn-small\" data-stress-reveal>Показать разметку</button>\n              <button type=\"button\" class=\"btn btn-quiet btn-small\" data-stress-next>Следующая строка →</button>\n            </div>\n            <p data-stress-feedback role=\"status\" aria-live=\"polite\">Выберите ударные слова самостоятельно.</p>\n            <p data-stress-answer class=\"pron-stress\" lang=\"en\" hidden></p>\n          </div>\n        </section>\n        <p><strong>Фонетические задачи:</strong></p>\n        <ul>{% for g in poem.phonetic_goals %}<li>{{ g }}</li>{% endfor %}</ul>\n      </section>\n      <section class=\"layer\" aria-labelledby=\"pt3\">\n        <h2 id=\"pt3\"><span class=\"layer-num\">3</span>Построчно</h2>\n        <p>Произнесите каждую строку сначала медленно, затем в естественном темпе. Сохраняйте чёткость звуков и смысловое ударение; скорость не является целью.</p>\n      </section>\n      <section class=\"layer\" id=\"speech-studio\" aria-labelledby=\"speech-studio-title\">\n        <h2 id=\"speech-studio-title\"><span class=\"layer-num\">4</span>Речевая мастерская: от строки к свободной речи</h2>\n        <div class=\"speech-studio\" data-speech-studio data-speech-kind=\"poem\" data-speech-key=\"poem:{{ poem.number }}\" data-speech-persist=\"{% if user.is_authenticated %}true{% else %}false{% endif %}\" data-speech-endpoint=\"{% url 'learning:speech_practice' %}\">\n          <p>Здесь работают старые приёмы декламации и современные способы тренировки памяти, ударения и ритма. Обычный текст стихотворения остаётся доступным выше.</p>\n          <div data-speech-bank hidden>{% for row in rows %}\n            <div data-speech-entry>\n              <span data-speech-source lang=\"en\">{{ row.line|annotate }}</span>\n              <span data-speech-accent>{{ row.pr.stress|default:\"\" }}</span>\n            </div>{% endfor %}\n          </div>\n          {% include \"components/speech_studio_controls.html\" %}\n        </div>\n      </section>\n      <section class=\"layer\" aria-labelledby=\"pt4\">\n        <h2 id=\"pt4\"><span class=\"layer-num\">5</span>Восстановите пропуски</h2>\n        <div class=\"poem-gaps\" lang=\"en\" data-poem=\"{{ poem.number }}\">\n          {% for row in gapped %}\n          <p{% if row.stanza %} class=\"stanza-start\"{% endif %}>{{ row.before }}{% if row.gap is not None %}<label class=\"visually-hidden\" for=\"g{{ row.gap }}\">Пропущенное слово в строке {{ forloop.counter }}</label><input class=\"fill-input gap-input\" id=\"g{{ row.gap }}\" data-gap=\"{{ row.gap }}\" data-url=\"{% url 'api:check_poem_gap' poem.number row.gap %}\" autocomplete=\"off\" autocapitalize=\"off\" spellcheck=\"false\" size=\"9\"><span class=\"gap-mark\" aria-live=\"polite\"></span>{{ row.after }}{% endif %}</p>\n          {% endfor %}\n        </div>\n        <div class=\"drill-actions\"><button class=\"btn btn-primary btn-small\" type=\"button\" data-gaps-check>Проверить</button><button class=\"btn btn-quiet btn-small\" type=\"button\" data-gaps-reveal hidden>Показать ответы</button></div>\n        <p class=\"drill-feedback\" data-gaps-status role=\"status\" aria-live=\"polite\">Введите пропущенные английские слова и нажмите «Проверить».</p>\n      </section>\n      <section class=\"layer\" aria-labelledby=\"pt5\">\n        <h2 id=\"pt5\"><span class=\"layer-num\">6</span>Прочитайте с выражением</h2>\n        <p>Прочитайте стихотворение целиком по памяти. Затем выразительно расскажите его как историю. При желании запишите голос в речевой мастерской выше: запись остаётся только на вашем устройстве, пока открыта страница.</p>\n      </section>\n    </article>\n    <aside class=\"aside\">\n      <div class=\"aside-box\">\n        <h2>Закрепляем слова</h2>\n        <div class=\"word-chips annotated\" lang=\"en\">{% for u in targets %}<a href=\"{% url 'lexicon:detail' u.uid %}\"><span class=\"mk\" data-cat=\"{{ u.semantic_class.category.code }}\" data-cls=\"{{ u.semantic_class.number }}\" data-label=\"{{ u.translation_ru }}\">{{ u.lemma }}</span></a>{% endfor %}</div>\n      </div>\n    </aside>\n  </div>\n</div>\n{% endblock %}\n{% block scripts %}<script src=\"{% static 'js/story-player.js' %}\" defer></script><script src=\"{% static 'js/speech-studio.js' %}\" defer></script><script src=\"{% static 'js/speech-review.js' %}\" defer></script><script src=\"{% static 'js/speech-stress.js' %}\" defer></script>{% endblock %}\n",
+    "after": "{% extends \"base.html\" %}\n{% load markers static ru %}\n{% block title %}{{ poem.title }} · {{ SITE_NAME }}{% endblock %}\n{% block content %}\n<div class=\"wrap\">\n  <header class=\"page-head\">\n    <p class=\"crumbs\"><a href=\"{% url 'stories:map' %}\">Истории и стихи</a> / {{ poem.level.code }}, неделя {{ poem.week.number }} / стихотворение {{ poem.number }}</p>\n    <h1 lang=\"en\">{{ poem.title }}</h1>\n    <p>{{ poem.theme_ru }}. Рифма {{ poem.rhyme_scheme }}. {% if poem.number == 3 and poem.level.code == \"A1\" %}Повторяем лексику и тренируем произношение. Готовые выражения выше даны для понимания; самостоятельно строить их пока не требуется.{% else %}Стихотворение не вводит новых слов: оно тренирует произношение на знакомых.{% endif %}</p>\n  </header>\n  <div class=\"lesson-grid\">\n    <article class=\"prose\">\n      <section class=\"layer\" aria-labelledby=\"pt1\">\n        <h2 id=\"pt1\"><span class=\"layer-num\">1</span>Послушайте ритм</h2>\n        <p>Аудио пока нет. Прочитайте стихотворение вслух медленно и отстучите ритм: на каждое ударение — хлопок. Сначала поймите, что происходит: это маленькая история.</p>\n        <div class=\"poem annotated\" lang=\"en\">{% for row in rows %}<p{% if row.stanza %} class=\"stanza-start\"{% endif %}>{{ row.line|annotate }}</p>{% endfor %}</div>\n      </section>\n      <section class=\"layer\" aria-labelledby=\"pt2\">\n        <h2 id=\"pt2\"><span class=\"layer-num\">2</span>Ударения, паузы, связки</h2>\n        <p>Заглавные буквы — смысловое ударение на слове, <span class=\"ipa\">|</span> — пауза, <span class=\"ipa\">‿</span> — слова сливаются.</p>\n        <ol class=\"pron\">\n          {% for row in rows %}{% if row.pr %}<li><span class=\"pron-stress\" lang=\"en\">{{ row.pr.stress|annotate }}</span><span class=\"ipa\">{{ row.pr.ipa }}</span>{{ row.pr|ru_tr }}</li>{% endif %}{% endfor %}\n        </ol>\n        <section class=\"speech-stress-lab\" data-stress-lab aria-labelledby=\"stress-lab-heading\">\n          <h3 id=\"stress-lab-heading\">Найди главные слова в строке</h3>\n          <p>Сначала прочитайте строку и выделите слова, на которые падает смысловое ударение. Затем сравните свой выбор с <strong>разметкой преподавателя</strong>. Это текстовая тренировка внимания к ритму, а не тест на слух.</p>\n          <div data-stress-bank hidden>\n            {% for row in rows %}{% if row.pr %}\n            <span data-stress-entry data-stress-plain=\"{{ row.line|plain }}\" data-stress-model=\"{{ row.pr.stress }}\"></span>\n            {% endif %}{% endfor %}\n          </div>\n          <div data-stress-controls>\n            <p data-stress-position aria-live=\"polite\">Строка 1</p>\n            <div class=\"speech-stress-choices\" data-stress-choices role=\"group\" aria-label=\"Выберите ударные слова\"></div>\n            <div class=\"speech-actions\">\n              <button type=\"button\" class=\"btn btn-primary btn-small\" data-stress-check>Сверить ударения</button>\n              <button type=\"button\" class=\"btn btn-quiet btn-small\" data-stress-reveal>Показать разметку</button>\n              <button type=\"button\" class=\"btn btn-quiet btn-small\" data-stress-next>Следующая строка →</button>\n            </div>\n            <p data-stress-feedback role=\"status\" aria-live=\"polite\">Выберите ударные слова самостоятельно.</p>\n            <p data-stress-answer class=\"pron-stress\" lang=\"en\" hidden></p>\n          </div>\n        </section>\n        <p><strong>Фонетические задачи:</strong></p>\n        <ul>{% for g in poem.phonetic_goals %}<li>{{ g }}</li>{% endfor %}</ul>\n      </section>\n      <section class=\"layer\" aria-labelledby=\"pt3\">\n        <h2 id=\"pt3\"><span class=\"layer-num\">3</span>Построчно</h2>\n        <p>Произнесите каждую строку сначала медленно, затем в естественном темпе. Сохраняйте чёткость звуков и смысловое ударение; скорость не является целью.</p>\n      </section>\n      <section class=\"layer\" id=\"speech-studio\" aria-labelledby=\"speech-studio-title\">\n        <h2 id=\"speech-studio-title\"><span class=\"layer-num\">4</span>Речевая мастерская: от строки к свободной речи</h2>\n        <div class=\"speech-studio\" data-speech-studio data-speech-kind=\"poem\" data-speech-key=\"poem:{{ poem.number }}\" data-speech-persist=\"{% if user.is_authenticated %}true{% else %}false{% endif %}\" data-speech-endpoint=\"{% url 'learning:speech_practice' %}\">\n          <p>Здесь работают старые приёмы декламации и современные способы тренировки памяти, ударения и ритма. Обычный текст стихотворения остаётся доступным выше.</p>\n          <div data-speech-bank hidden>{% for row in rows %}\n            <div data-speech-entry>\n              <span data-speech-source lang=\"en\">{{ row.line|annotate }}</span>\n              <span data-speech-accent>{{ row.pr.stress|default:\"\" }}</span>\n            </div>{% endfor %}\n          </div>\n          {% include \"components/speech_studio_controls.html\" %}\n        </div>\n      </section>\n      <section class=\"layer\" aria-labelledby=\"pt4\">\n        <h2 id=\"pt4\"><span class=\"layer-num\">5</span>Восстановите пропуски</h2>\n        <div class=\"poem-gaps\" lang=\"en\" data-poem=\"{{ poem.number }}\">\n          {% for row in gapped %}\n          <p{% if row.stanza %} class=\"stanza-start\"{% endif %}>{{ row.before }}{% if row.gap is not None %}<label class=\"visually-hidden\" for=\"g{{ row.gap }}\">Пропущенное слово в строке {{ forloop.counter }}</label><input class=\"fill-input gap-input\" id=\"g{{ row.gap }}\" data-gap=\"{{ row.gap }}\" data-url=\"{% url 'api:check_poem_gap' poem.number row.gap %}\" autocomplete=\"off\" autocapitalize=\"off\" spellcheck=\"false\" size=\"9\"><span class=\"gap-mark\" aria-live=\"polite\"></span>{{ row.after }}{% endif %}</p>\n          {% endfor %}\n        </div>\n        <div class=\"drill-actions\"><button class=\"btn btn-primary btn-small\" type=\"button\" data-gaps-check>Проверить</button><button class=\"btn btn-quiet btn-small\" type=\"button\" data-gaps-reveal hidden>Показать ответы</button></div>\n        <p class=\"drill-feedback\" data-gaps-status role=\"status\" aria-live=\"polite\">Введите пропущенные английские слова и нажмите «Проверить».</p>\n      </section>\n      <section class=\"layer\" aria-labelledby=\"pt5\">\n        <h2 id=\"pt5\"><span class=\"layer-num\">6</span>Прочитайте с выражением</h2>\n        <p>Прочитайте стихотворение целиком по памяти. Затем выразительно расскажите его как историю. При желании запишите голос в речевой мастерской выше: запись остаётся только на вашем устройстве, пока открыта страница.</p>\n      </section>\n    </article>\n    <aside class=\"aside\">\n      <div class=\"aside-box\">\n        <h2>Закрепляем слова</h2>\n        <div class=\"word-chips annotated\" lang=\"en\">{% for u in targets %}<a href=\"{% url 'lexicon:detail' u.uid %}\"><span class=\"mk\" data-cat=\"{{ u.semantic_class.category.code }}\" data-cls=\"{{ u.semantic_class.number }}\" data-label=\"{{ u.translation_ru }}\">{{ u.lemma }}</span></a>{% endfor %}</div>\n      </div>\n    </aside>\n  </div>\n</div>\n{% endblock %}\n{% block scripts %}<script src=\"{% static 'js/story-player.js' %}\" defer></script><script src=\"{% static 'js/speech-studio.js' %}\" defer></script><script src=\"{% static 'js/speech-review.js' %}\" defer></script><script src=\"{% static 'js/speech-stress.js' %}\" defer></script>{% endblock %}\n"
+  }
+]

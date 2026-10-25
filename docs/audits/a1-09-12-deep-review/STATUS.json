@@ -1,0 +1,45 @@
+{
+  "author": "Codex",
+  "reviewed_by": "automated targeted checks; human substantive acceptance pending",
+  "verification_status": "technical_review",
+  "date": "2026-10-25",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "branch": "editorial/a1-09-12-deep-review-20261025",
+  "checkpoint": "WIP branch checkpoint; full-suite and substantive acceptance pending",
+  "deep_review_lessons": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "source_files": 19,
+  "targeted": {
+    "tests": 86,
+    "exit_code": 0,
+    "body_seconds": 5.118,
+    "wrapper_seconds": 14.116
+  },
+  "regression_before_after": {
+    "owned": {
+      "tests": 13,
+      "before_failures": 25,
+      "after": "PASS",
+      "test_sha256": "a8733a4a3c4605e437c74ab4191d0de17fc07f12a98b75c53fb413ac3fdd6e37"
+    },
+    "shared": {
+      "tests": 9,
+      "before_failures": 25,
+      "after": "PASS",
+      "test_sha256": "9efd5a4c52fc02df5d88d7ad87b327951631d99bffd49c9c732eee43a708b16c"
+    }
+  },
+  "load_audit": "PASS isolated SQLite, final integrated state",
+  "full_django": "NOT_RUN",
+  "full_pytest": "NOT_RUN",
+  "browser_desktop_390_keyboard_reduced_motion": "BLOCKED: browser unavailable; not checked in this worktree",
+  "real_audio": "BLOCKED: no actual audio listening",
+  "postgres": "NOT_RUN",
+  "human_acceptance": "NOT_RUN",
+  "depends_on_a1_05_08": "No programmatic dependency found; shared JSON rows9–12 only; base predates5–8 edits",
+  "next_command": "python docs/audits/a1-09-12-deep-review/run_verification.py --output docs/audits/a1-09-12-deep-review/evidence/full --full-pytest"
+}

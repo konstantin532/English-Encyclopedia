@@ -1,0 +1,21 @@
+{
+  "content/active_a1/scenarios_07_12.json": "6321bd4238df7cda974274d88e193393672b56df709dc3ecb17bd7ae3fd36c3a",
+  "content/active_a1/topics_09_13.json": "52201408e4f882402adfb70cb694e9f93af51ba6995be6d51f37baffc06ddb15",
+  "content/manifests/a1_micro_review_09_12.json": "61f97966530557ff8638d408000068313044f50390ade9c1935628789ccb17c3",
+  "content/manifests/a1_scaffold_transfer.json": "79997ca858f41305fb9466f06cfe78920565b6ea3534a99fe3e8fe161b90ac06",
+  "content/manifests/a1_understanding_checks.json": "58c87bc4f8a710dbf22c66c2d3d2f793d3fb3c08ac7c78fd0db7165757927f07",
+  "content/manifests/course_map.yaml": "8032aa661c20fc67a64153ae98e32808d04111e869f51df7f6d1d89d0522180d",
+  "content/seed_lessons/a1_w05_l09_there_is.yaml": "c4da4d5ca8cb090be766208c8abbb4a9ba795e97e6b825adaf3a5facefb792d4",
+  "content/seed_lessons/a1_w05_l10_how_much.yaml": "15f07a9e7d79abacd113cfbeeb2c5698cb751657b3513d650ac1a5a69f971e18",
+  "content/seed_lessons/a1_w06_l11_present_simple.yaml": "4bd379a8c61216bd95cfddcc5ca5b67c5677f1b7ef9eadf35c9600a3bcb7e053",
+  "content/seed_lessons/a1_w06_l12_time.yaml": "242e3190a862b84177e9af1279b10524402c2c9f38af51564aaf4e52b31f0cee",
+  "content/seed_lexicon/a1_w05_shop.yaml": "3711760e6cc064d09873291cf18313b4b00bf0097f1e5b9d817edcbc5c7f58fb",
+  "content/seed_lexicon/a1_w06_day_plus.yaml": "2c75e512959e3636f324f120737243c39876376156ebbfad39ebcdc96d7ffe88",
+  "content/seed_poems/p03_what_time_is_it.yaml": "32c5b550a7d79a8ed0e81dbe21b2a3f6c236c4a211040c14ddd9ee47f72412c7",
+  "content/seed_stories/s02_cafe_on_the_corner.yaml": "a125653e6497da2e215aaf06a376838c05633070a80912676b2e6778b1a274ac",
+  "content/seed_weeks/a1_w05.yaml": "d63de820ba7abef18b7788116e7fb409b20d45b935882b6dd8408ff041573553",
+  "templates/poems/detail.html": "e98ca02e2b425f58155c9da58108754aa1d30ef980b07f0b8bfaf832f3b6f749",
+  "tests/test_a1_deep_09_12_shared.py": "9efd5a4c52fc02df5d88d7ad87b327951631d99bffd49c9c732eee43a708b16c",
+  "tests/test_a1_editorial_deep_09_12.py": "a8733a4a3c4605e437c74ab4191d0de17fc07f12a98b75c53fb413ac3fdd6e37",
+  "tests/test_a1_scaffold_variants.py": "9b16a9341d91cae536391bfead9a1121159049e484119203897b8c466c006fb4"
+}

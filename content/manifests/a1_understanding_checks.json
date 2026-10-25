@@ -361,15 +361,16 @@
           ]
         },
         "writing": {
-          "prompt": "Напишите «В комнате две книги».",
-          "model": "There are two books in the room.",
+          "prompt": "Вы описываете комнату гостю. Напишите, что здесь есть две книги; само место повторять не нужно.",
+          "model": "There are two books.",
           "accepted": [
-            "There are two books in the room."
+            "There are two books in the room.",
+            "There are two books."
           ]
         },
         "transfer": {
-          "prompt": "Во время поездки спросите у друга, есть ли вода, и затем вежливо попросите немного.",
-          "model": "Is there any water? Can I have some water, please?"
+          "prompt": "Во время поездки спросите у друга, есть ли вода, и затем вежливо попросите воды, не уточняя объём.",
+          "model": "Is there water? Can I have some water, please?"
         },
         "explain": {
           "prompt": "На столе две книги. Ученик говорит: «There is two books». Исправьте форму и объясните.",
@@ -405,7 +406,14 @@
           "prompt": "Напишите «Это стоит три доллара».",
           "model": "It is three dollars.",
           "accepted": [
-            "It is three dollars."
+            "It is three dollars.",
+            "It's three dollars.",
+            "That is three dollars.",
+            "That's three dollars.",
+            "It is 3 dollars.",
+            "It's 3 dollars.",
+            "That is 3 dollars.",
+            "That's 3 dollars."
           ]
         },
         "transfer": {
