@@ -1,0 +1,2 @@
+$ node scripts/build_styles.mjs --check
+Stylesheets verified: 17

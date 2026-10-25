@@ -1,0 +1,1714 @@
+diff --git a/content/active_a1/error_repairs_01_18.json b/content/active_a1/error_repairs_01_18.json
+index 4835ce5..12a39d2 100644
+--- a/content/active_a1/error_repairs_01_18.json
++++ b/content/active_a1/error_repairs_01_18.json
+@@ -46,14 +46,14 @@
+     "wrong": "She fifty.",
+     "correct": "She is fifty.",
+     "hint": "Возраст выражается через be.",
+-    "reason": "С возрастом в английском обязательно используется be: She is fifty. По-русски мы говорим «Ей пятьдесят» без подобного глагола."
++    "reason": "В обычном полном сообщении возраста нужна форма be: She is fifty. По-русски говорим «Ей пятьдесят» без такого глагола. Краткое Fifty возможно, если возраст уже спрашивали."
+   },
+   {
+     "n": 8,
+     "wrong": "This is Anna book.",
+     "correct": "This is Anna's book.",
+     "hint": "Как по-английски показать, что книга принадлежит Анне?",
+-    "reason": "Чтобы обозначить принадлежность с именем владельца, используйте 's: Anna's book. Не путайте с her book."
++    "reason": "Чтобы показать принадлежность с именем владельца, используйте 's: Anna's book. Если из разговора уже ясно, что речь об Анне, можно заменить её имя: her book."
+   },
+   {
+     "n": 9,
+diff --git a/content/active_a1/scenarios_01_06.json b/content/active_a1/scenarios_01_06.json
+index c600a56..a3ed2a5 100644
+--- a/content/active_a1/scenarios_01_06.json
++++ b/content/active_a1/scenarios_01_06.json
+@@ -258,7 +258,7 @@
+         "id": 1,
+         "title": "Заказ без спешки",
+         "scene": "У Мии в кафе свободная минутка.",
+-        "prompt": "Попросите одну чашку чая вежливо.",
++        "prompt": "Попросите одну порцию чая вежливо.",
+         "example": "I'd like a tea, please.",
+         "coach": "I'd like — мягкая формулировка заказа."
+       },
+@@ -274,7 +274,7 @@
+         "id": 3,
+         "title": "Два варианта",
+         "scene": "Мия спрашивает: Tea or coffee?",
+-        "prompt": "Выберите кофе одним предложением.",
++        "prompt": "Коротко и вежливо выберите кофе.",
+         "example": "Coffee, please.",
+         "coach": "Когда варианты названы, короткий ответ естественен."
+       },
+@@ -289,7 +289,7 @@
+       {
+         "id": 5,
+         "title": "Бариста переспросила",
+-        "scene": "Мия услышала Two coffees? вместо одного чая и кофе.",
++        "scene": "Мия переспросила «Two coffees?» («Два кофе?»), хотя вам нужны один чай и один кофе.",
+         "prompt": "Исправьте её, не сердясь.",
+         "example": "No, one tea and one coffee, please.",
+         "coach": "Повторить точное количество полезнее, чем просто сказать No."
+@@ -297,15 +297,15 @@
+       {
+         "id": 6,
+         "title": "Импровизация: новое меню",
+-        "scene": "Вы пришли в кафе без знакомого напитка в меню.",
+-        "prompt": "Придумайте вежливую просьбу о другом знакомом напитке и уточнение.",
+-        "example": "Can I have juice, please?",
++        "scene": "Вы просите сок, но бариста отвечает слишком быстро.",
++        "prompt": "Попросите сок вежливо. Затем попросите бариста повторить ответ.",
++        "example": "Can I have juice, please? Can you say it again, please?",
+         "coach": "Можно сказать I'd like… или Can I have…, с ясным названием напитка."
+       }
+     ],
+     "twists": [
+       {
+-        "scene": "Мия услышала two teas — исправьте на один чай.",
++        "scene": "Мия переспросила «two teas — два чая?»; исправьте заказ на одну порцию.",
+         "example": "One tea, please."
+       },
+       {
+diff --git a/content/active_a1/scenarios_07_12.json b/content/active_a1/scenarios_07_12.json
+index 70246a0..fc8e2ea 100644
+--- a/content/active_a1/scenarios_07_12.json
++++ b/content/active_a1/scenarios_07_12.json
+@@ -13,24 +13,24 @@
+       {
+         "id": 2,
+         "title": "Мама Тома",
+-        "scene": "Том указывает на маму.",
+-        "prompt": "Представьте маму друга одной фразой.",
+-        "example": "This is Tom's mom.",
+-        "coach": "Tom's сообщает, чей родственник."
++        "scene": "Вы играете Тома и показываете фотографию своей мамы.",
++        "prompt": "Представьте свою маму одной полной фразой.",
++        "example": "This is my mom.",
++        "coach": "My показывает отношение к говорящему: это мама Тома, чью роль вы играете."
+       },
+       {
+         "id": 3,
+         "title": "Возраст в разговоре",
+         "scene": "Анна спрашивает о возрасте брата Тома.",
+-        "prompt": "Ответьте за брата: ему двадцать лет.",
++        "prompt": "Ответьте Анне о брате Тома: ему двадцать лет.",
+         "example": "He is twenty.",
+         "coach": "Возраст по-английски выражают с be."
+       },
+       {
+         "id": 4,
+         "title": "На фото двое",
+-        "scene": "Том показывает родителей.",
+-        "prompt": "Скажите, что это его мама и папа.",
++        "scene": "Вы играете роль Тома и показываете своих родителей.",
++        "prompt": "Скажите, что это ваши мама и папа.",
+         "example": "This is my mom and dad.",
+         "coach": "My можно отнести к двум названным людям в одном выражении."
+       },
+@@ -38,7 +38,7 @@
+         "id": 5,
+         "title": "Сюрприз на фото",
+         "scene": "Мия думала, что женщине сорок лет, но ей тридцать.",
+-        "prompt": "Вежливо уточните возраст женщины.",
++        "prompt": "Сообщите Мие настоящий возраст женщины: ей тридцать.",
+         "example": "She is thirty.",
+         "coach": "Не забывайте is, называя возраст."
+       },
+@@ -83,7 +83,7 @@
+       },
+       {
+         "id": 3,
+-        "title": "Сумка под столом",
++        "title": "Книга Анны",
+         "scene": "Анна показала вам свою книгу.",
+         "prompt": "Скажите: «Это её книга».",
+         "example": "It's her book.",
+diff --git a/content/active_a1/topics_01_08.json b/content/active_a1/topics_01_08.json
+index 7e6dc19..4278d48 100644
+--- a/content/active_a1/topics_01_08.json
++++ b/content/active_a1/topics_01_08.json
+@@ -202,7 +202,10 @@
+     "alternatives": [
+       "I would like coffee, please.",
+       "Can I have coffee, please?",
+-      "I'd like a coffee, please."
++      "I'd like a coffee, please.",
++      "Coffee, please.",
++      "A coffee, please.",
++      "Can I have a coffee, please?"
+     ],
+     "hint": "Начните с I'd like… и закончите please.",
+     "transfer": "Мия решила, что вы хотите кофе, но нужен чай. Коротко исправьте её.",
+@@ -242,7 +245,7 @@
+     ],
+     "correct": 1,
+     "feedback": "Том заказал two, а Мия ошибочно услышала three. Для порций здесь естественно coffees.",
+-    "prompt": "Попросите три чашки кофе короткой фразой.",
++    "prompt": "Попросите три порции кофе короткой вежливой фразой.",
+     "answer": "Three coffees, please.",
+     "alternatives": [
+       "I'd like three coffees, please."
+@@ -250,7 +253,7 @@
+     "hint": "Three + coffees + please.",
+     "transfer": "У вас две книги. Скажите по-английски: «Две книги».",
+     "transfer_example": "Two books.",
+-    "why": "Numeral обозначает число. В английском после two/three обычно ставится множественное число исчисляемого существительного: two books, two coffees (порции).",
++    "why": "Числительное (numeral) сообщает количество. После two/three исчисляемое существительное ставится во множественном числе: two books. Two coffees означает две порции кофе.",
+     "sound": "Сопоставьте two /tuː/ и three /θriː/: в three язык касается зубов для /θ/."
+   },
+   {
+@@ -296,7 +299,7 @@
+       "This is my father."
+     ],
+     "hint": "This is my + слово о родственнике.",
+-    "transfer": "Спросите, сколько лет маме друга (обращайтесь на she).",
++    "transfer": "Спросите друга о возрасте его мамы. Говоря о ней, используйте she.",
+     "transfer_example": "How old is she?",
+     "why": "Mom/dad звучат разговорнее mother/father. Для возраста английский использует be: She is fifty, а не буквальное «ей есть пятьдесят».",
+     "sound": "В She's /ʃiːz/ слышны /ʃ/ и /z/. Не теряйте конечный /z/."
+diff --git a/content/manifests/a1_delayed_review_07.json b/content/manifests/a1_delayed_review_07.json
+index f4e1b20..4a1efb9 100644
+--- a/content/manifests/a1_delayed_review_07.json
++++ b/content/manifests/a1_delayed_review_07.json
+@@ -12,14 +12,15 @@
+         0
+       ],
+       [
+-        "Вы увидели человека на семейном снимке и хотите узнать его имя.",
++        "Вы показываете человека на фото. Выберите обычный полный вопрос «Кто это?» по схеме Who + is + this.",
+         "",
+         [
+           "Who this?",
+           "Who is this?",
+           "This is who?"
+         ],
+-        1
++        1,
++        "Who is this? просит назвать человека. Ответ может назвать имя или родство. This is who? возможно как удивлённый переспрос, но не соответствует заданной схеме."
+       ],
+       [
+         "Том указал на человека на фото. Как спросить «Кто это?»",
+@@ -106,17 +107,18 @@
+     ],
+     "3": [
+       [
+-        "Вы хотите узнать, мама ли это собеседника.",
++        "Узнайте, мама ли это собеседника. Выберите обычный вопрос по схеме Is + this + your + название родственника.",
+         "",
+         [
+           "Is this your mother?",
+           "This is your mother?",
+           "Is your this mother?"
+         ],
+-        0
++        0,
++        "Здесь требуется is перед this. Порядок This is your…? возможен как разговорный переспрос, но не соответствует указанной схеме."
+       ],
+       [
+-        "Уточните, брат ли это Анны.",
++        "Вы обращаетесь к Анне. Спросите её напрямую, её ли это брат.",
+         "",
+         [
+           "Is your this brother?",
+@@ -136,17 +138,18 @@
+         2
+       ],
+       [
+-        "Вы хотите узнать, сестра ли это собеседника.",
++        "Узнайте, сестра ли это собеседника. Выберите обычный вопрос по схеме Is + this + your + название родственника.",
+         "",
+         [
+           "Is this your sister?",
+           "This is your sister?",
+           "Is this sister your?"
+         ],
+-        0
++        0,
++        "Здесь требуется is перед this. Порядок This is your…? возможен как разговорный переспрос, но не соответствует указанной схеме."
+       ],
+       [
+-        "Вы спрашиваете, его ли это мама на фото.",
++        "Спросите друга напрямую, его ли это мама на фото.",
+         "",
+         [
+           "Is mother this your?",
+diff --git a/content/manifests/a1_delayed_review_08.json b/content/manifests/a1_delayed_review_08.json
+index 6125851..142765e 100644
+--- a/content/manifests/a1_delayed_review_08.json
++++ b/content/manifests/a1_delayed_review_08.json
+@@ -12,7 +12,7 @@
+         0
+       ],
+       [
+-        "Мия держит книгу. Как сказать «её книга»?",
++        "Книга принадлежит Мие. Как сказать «её книга»?",
+         "",
+         [
+           "his book",
+@@ -42,7 +42,7 @@
+         0
+       ],
+       [
+-        "Папа Мии держит книгу. Как сказать «его книга»?",
++        "Книга принадлежит папе Мии. Как сказать «его книга»?",
+         "",
+         [
+           "her book",
+@@ -94,7 +94,7 @@
+         0
+       ],
+       [
+-        "Вы показываете фотографию Анны.",
++        "Фотография принадлежит Анне. Дополните фразу о владельце.",
+         "This is ___ photo.",
+         [
+           "Annas",
+@@ -106,7 +106,7 @@
+     ],
+     "3": [
+       [
+-        "Как представить имя папы Мии?",
++        "Вы представляете знакомого мужчину по имени Том. Как сообщить его имя?",
+         "",
+         [
+           "His name is Tom.",
+@@ -116,7 +116,7 @@
+         0
+       ],
+       [
+-        "У брата Анны имя Том. Как рассказать об этом?",
++        "Мужчину на фотографии зовут Том. Как сообщить его имя?",
+         "",
+         [
+           "He name is Tom.",
+@@ -146,7 +146,7 @@
+         0
+       ],
+       [
+-        "Анна рассказывает имя своего отца — Том.",
++        "Анна сообщает собеседнику, что мужчину зовут Том. Выберите правильную фразу.",
+         "",
+         [
+           "Her name is Tom.",
+@@ -178,17 +178,17 @@
+         0
+       ],
+       [
+-        "На фото женщина, её зовут Сью.",
++        "Женщину на фото зовут Анна. Как сообщить её имя?",
+         "",
+         [
+-          "She name is Sue.",
+-          "His name is Sue.",
+-          "Her name is Sue."
++          "She name is Anna.",
++          "His name is Anna.",
++          "Her name is Anna."
+         ],
+         2
+       ],
+       [
+-        "Вы представляет подругу Мию по имени.",
++        "Вы представляете подругу Мию по имени.",
+         "",
+         [
+           "Her name is Mia.",
+@@ -262,7 +262,7 @@
+     ],
+     "6": [
+       [
+-        "Вы показываете большую семью и дом бабушки с дедушкой. Выберите правильное описание.",
++        "Вы показываете свою большую семью и большой дом бабушки с дедушкой. Выберите описание.",
+         "",
+         [
+           "We are a big family. Their house is big.",
+@@ -272,7 +272,7 @@
+         0
+       ],
+       [
+-        "Нас много, а дом наших друзей новый. Как сказать?",
++        "Ваша семья большая, а дом ваших друзей новый. Как сказать?",
+         "",
+         [
+           "We is a big family. Their house is new.",
+@@ -292,7 +292,7 @@
+         2
+       ],
+       [
+-        "Вы представляете своих родных, потом дом двух родственников.",
++        "Вы представляете своих родных: семья большая. Затем показываете новый дом двух родственников.",
+         "",
+         [
+           "We are a big family. Their house is new.",
+@@ -302,7 +302,7 @@
+         0
+       ],
+       [
+-        "Речь о вашей большой семье и доме двух друзей. Выберите верное.",
++        "Речь о вашей большой семье и большом доме двух друзей. Выберите верное.",
+         "",
+         [
+           "We are a big family. They house is big.",
+diff --git a/content/manifests/a1_scaffold_transfer.json b/content/manifests/a1_scaffold_transfer.json
+index d0ec55a..36d2486 100644
+--- a/content/manifests/a1_scaffold_transfer.json
++++ b/content/manifests/a1_scaffold_transfer.json
+@@ -148,8 +148,8 @@
+           "model": "That's all, thank you."
+         },
+         {
+-          "prompt": "В кафе попросите два кофе и вежливо поблагодарите бариста.",
+-          "model": "Two coffees, please. Thank you."
++          "prompt": "В кафе попросите кофе и вежливо поблагодарите бариста.",
++          "model": "A coffee, please. Thank you."
+         }
+       ]
+     },
+@@ -169,7 +169,7 @@
+         {
+           "example_en": "I need three books.",
+           "example_ru": "Мне нужны три книги.",
+-          "why_ru": "Need соединяет желание с количеством и предметом."
++          "why_ru": "Need означает «нуждаться»: I need three books — готовый образец «Мне нужны три книги». Он сообщает потребность, а не наличие. Здесь достаточно понять фразу целиком; в самостоятельном заказе используйте знакомые please / Can I have…?"
+         }
+       ],
+       "transfer_variants": [
+@@ -192,9 +192,9 @@
+           "why_ru": "Sister называет члена семьи, my показывает отношение к говорящему."
+         },
+         {
+-          "example_en": "She is a teacher.",
+-          "example_ru": "Она учитель.",
+-          "why_ru": "She заменяет повтор имени; с she берём is. Профессия требует a."
++          "example_en": "She is forty.",
++          "example_ru": "Ей сорок.",
++          "why_ru": "She заменяет повтор названия человека; с she выбираем is. Число forty сообщает возраст."
+         },
+         {
+           "example_en": "Is she your sister?",
+@@ -204,12 +204,12 @@
+       ],
+       "transfer_variants": [
+         {
+-          "prompt": "Показывая фотографию, представьте брата и скажите, что он студент.",
+-          "model": "This is my brother. He is a student."
++          "prompt": "Показывая вымышленную фотографию, представьте брата и скажите, что ему десять.",
++          "model": "This is my brother. He is ten."
+         },
+         {
+-          "prompt": "На фотографии ваша мама. Представьте её и скажите, что она врач.",
+-          "model": "This is my mom. She is a doctor."
++          "prompt": "На вымышленной фотографии ваша мама. Представьте её и скажите, что ей пятьдесят.",
++          "model": "This is my mom. She is fifty."
+         }
+       ]
+     },
+@@ -217,19 +217,19 @@
+       "slug": "a1-family-possession",
+       "steps": [
+         {
+-          "example_en": "This is Anna's bag.",
+-          "example_ru": "Это сумка Анны.",
+-          "why_ru": "Окончание 's у имени обычно обозначает владельца."
++          "example_en": "This is Anna's book.",
++          "example_ru": "Это книга Анны.",
++          "why_ru": "'s после имени Anna помогает указать, чья книга."
+         },
+         {
+-          "example_en": "It is her bag.",
+-          "example_ru": "Это её сумка.",
+-          "why_ru": "Her перед bag показывает владельца; слово bag остаётся существительным."
++          "example_en": "It is her book.",
++          "example_ru": "Это её книга.",
++          "why_ru": "Her перед book указывает на Анну; book называет вещь."
+         },
+         {
+-          "example_en": "Whose bag is this?",
+-          "example_ru": "Чья это сумка?",
+-          "why_ru": "Whose задаёт вопрос о владельце, а не о местонахождении."
++          "example_en": "Is this her book?",
++          "example_ru": "Это её книга?",
++          "why_ru": "В полном вопросе ставим is перед this; her по-прежнему показывает, чья книга."
+         }
+       ],
+       "transfer_variants": [
+@@ -238,8 +238,8 @@
+           "model": "This is Tom's phone."
+         },
+         {
+-          "prompt": "Вы нашли ключ своей сестры. Скажите другу, кому он принадлежит.",
+-          "model": "This is my sister's key."
++          "prompt": "Вы нашли книгу Мии. Назовите её владелицу по имени.",
++          "model": "This is Mia's book."
+         }
+       ]
+     },
+diff --git a/content/manifests/a1_understanding_checks.json b/content/manifests/a1_understanding_checks.json
+index 2ff77a1..df63148 100644
+--- a/content/manifests/a1_understanding_checks.json
++++ b/content/manifests/a1_understanding_checks.json
+@@ -191,14 +191,26 @@
+           "prompt": "Передайте по-русски смысл: «I'd like coffee, please.».",
+           "model": "Я бы хотел кофе, пожалуйста.",
+           "accepted": [
+-            "Я бы хотел кофе, пожалуйста."
++            "Я бы хотел кофе, пожалуйста.",
++            "Я бы хотела кофе, пожалуйста.",
++            "Я хотел бы кофе, пожалуйста.",
++            "Я хотела бы кофе, пожалуйста.",
++            "Мне кофе, пожалуйста.",
++            "Мне бы кофе, пожалуйста."
+           ]
+         },
+         "writing": {
+           "prompt": "Напишите вежливую просьбу о чае.",
+           "model": "Can I have tea, please?",
+           "accepted": [
+-            "Can I have tea, please?"
++            "Can I have tea, please?",
++            "Can I have a tea, please?",
++            "I would like tea, please.",
++            "I would like a tea, please.",
++            "Tea, please.",
++            "A tea, please.",
++            "I'd like tea, please.",
++            "I'd like a tea, please."
+           ]
+         },
+         "transfer": {
+@@ -207,7 +219,7 @@
+         },
+         "explain": {
+           "prompt": "У посетителя есть выбор: резко сказать «Tea!» или «Tea, please». Какая просьба обычно мягче и почему?",
+-          "model": "Tea, please звучит вежливее благодаря слову please и спокойной интонации. Также можно сказать Can I have some tea, please?"
++          "model": "Tea, please обычно звучит мягче благодаря please и подходящей интонации. Можно также Can I have tea, please? Само название Tea! не является грамматической ошибкой; здесь сравниваем способы оформить просьбу."
+         }
+       },
+       "contrast": {
+@@ -221,7 +233,7 @@
+     {
+       "slug": "a1-numbers-1-20",
+       "plain": "Числа нужны для возраста, цены, времени и количества.",
+-      "why": "После two или three исчисляемые предметы часто получают -s.",
++      "why": "Число two или three задаёт количество, а исчисляемое существительное ставим во множественном числе: two cookies. Для порций напитка тоже возможно two coffees.",
+       "pattern": "two coffees / three teas.",
+       "mistake": "Говорить three cookie.",
+       "fix": "С числом три назовите cookies, а не cookie.",
+@@ -232,14 +244,22 @@
+           "prompt": "Передайте по-русски смысл: «Three teas, please.».",
+           "model": "Три чая, пожалуйста.",
+           "accepted": [
+-            "Три чая, пожалуйста."
++            "Три чая, пожалуйста.",
++            "Три порции чая, пожалуйста."
+           ]
+         },
+         "writing": {
+           "prompt": "Закажите два чая.",
+           "model": "Two teas, please.",
+           "accepted": [
+-            "Two teas, please."
++            "Two teas, please.",
++            "2 teas, please.",
++            "Can I have two teas, please?",
++            "Can I have 2 teas, please?",
++            "I would like two teas, please.",
++            "I would like 2 teas, please.",
++            "I'd like two teas, please.",
++            "I'd like 2 teas, please."
+           ]
+         },
+         "transfer": {
+@@ -280,7 +300,11 @@
+           "prompt": "Напишите «Это мой брат».",
+           "model": "This is my brother.",
+           "accepted": [
+-            "This is my brother."
++            "This is my brother.",
++            "That is my brother.",
++            "He is my brother.",
++            "That's my brother.",
++            "He's my brother."
+           ]
+         },
+         "transfer": {
+@@ -304,7 +328,7 @@
+       "slug": "a1-family-possession",
+       "plain": "His, her, their и 's показывают владельца.",
+       "why": "Tom's phone — телефон Тома; her phone — её телефон.",
+-      "pattern": "his book / her bag / Tom's book.",
++      "pattern": "his book / her book / Tom's book.",
+       "mistake": "Говорить she book.",
+       "fix": "Перед предметом используйте her, а не she.",
+       "example": "This is Tom's book.",
+@@ -321,7 +345,11 @@
+           "prompt": "Напишите «Это книга Тома».",
+           "model": "This is Tom's book.",
+           "accepted": [
+-            "This is Tom's book."
++            "This is Tom's book.",
++            "That is Tom's book.",
++            "It is Tom's book.",
++            "That's Tom's book.",
++            "It's Tom's book."
+           ]
+         },
+         "transfer": {
+@@ -338,7 +366,7 @@
+         "a_ru": "Она Анна.",
+         "b_en": "This is her book.",
+         "b_ru": "Это её книга.",
+-        "why": "She — тот, о ком говорят как о действующем лице. Her перед book указывает, что книга принадлежит ей."
++        "why": "She самостоятельно обозначает человека и может быть подлежащим: She is Anna. Her перед book указывает, чья книга. Для этой разницы не требуется действие: is Anna сообщает, кто она."
+       }
+     },
+     {
+diff --git a/content/seed_lessons/a1_w02_l04_have_like_can.yaml b/content/seed_lessons/a1_w02_l04_have_like_can.yaml
+index 582886e..4e5d5e8 100644
+--- a/content/seed_lessons/a1_w02_l04_have_like_can.yaml
++++ b/content/seed_lessons/a1_w02_l04_have_like_can.yaml
+@@ -233,10 +233,10 @@ practice:
+   - LX-00036
+ - order: 3
+   kind: translate
+-  prompt_ru: У меня есть кот.
++  prompt_ru: 'Скажите «У меня есть кот», используя изученную конструкцию I have…'
+   answer: I have a cat.
+-  hint_ru: «У меня есть» — I have.
+-  explanation_ru: I have a cat — нейтральный способ сказать «У меня есть кот». В американской разговорной речи возможны I have got a cat и I've got a cat. В этом уроке основной образец — I have; другие правильные варианты не называем ошибками.
++  hint_ru: Начните с I have, затем назовите одного кота с артиклем a.
++  explanation_ru: 'I have a cat — нейтральный способ сказать «У меня есть кот». В этом задании тренируем именно I have. В американской разговорной речи также возможны I have got a cat и I''ve got a cat; они правильны, но относятся к другой конструкции, которую здесь не требуется строить.'
+   review_of: 4
+   units:
+   - LX-00033
+diff --git a/content/seed_lessons/a1_w03_l05_cafe.yaml b/content/seed_lessons/a1_w03_l05_cafe.yaml
+index 59e473c..83aa5f1 100644
+--- a/content/seed_lessons/a1_w03_l05_cafe.yaml
++++ b/content/seed_lessons/a1_w03_l05_cafe.yaml
+@@ -21,7 +21,7 @@ contractions:
+   - full: "I would"
+     short: "I'd"
+     ipa: "/aɪd/"
+-    note_ru: "В заказе почти всегда I'd like — «айд лайк»."
++    note_ru: "В разговорном заказе I would like можно сократить до I'd like: /aɪd laɪk/. Полная форма тоже правильна."
+ layers:
+   - number: 1
+     body: |
+@@ -63,7 +63,7 @@ layers:
+     body: |
+       **Почему заказ похож на вопрос?** *Can I have…?* буквально спрашивает о возможности, а в кафе работает как **вежливая просьба**. Прямое *Give me…* без смягчения иногда может прозвучать резко, но оно **не всегда грубое**: важны интонация, близость людей и ситуация. Для начинающего надёжнее готовый каркас с *please*.
+ 
+-      Переспросить тоже лучше вопросом, а не словом «Что?»:
++      Чтобы вежливо переспросить, используйте знакомые готовые фразы:
+ 
+       > [O2]Sorry[/]? — Простите?
+       > [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]? — Повторите, пожалуйста.
+@@ -75,13 +75,13 @@ layers:
+ 
+       - [D3]want[/] прямо выражает желание: *I want…*. Само слово **не грубое**, но короткий заказ без вежливых слов или подходящей интонации может звучать требовательно.
+       - [D7]would[/] [D3]like[/] означает **«хотел(а) бы»**, мягкий и привычный вариант для заказа. **Would** здесь не делает просьбу прошедшим временем.
+-      - В живой речи **I'd like** — сокращение от **I would like**; апостроф и **'d** заменяют **would**. В других конструкциях *I'd* может сокращать *I had*, но после **like** в этом заказе подразумевается **would**.
++      - В живой речи **I'd like** — сокращение от **I would like**; апостроф и **'d** заменяют **would**. В других конструкциях *I'd* может сокращать *I had*, но в сочетании **I'd like** из этого заказа сокращение раскрывается как **I would like**.
+       - В *I want one* слово **one** заменяет уже названное исчисляемое существительное: здесь речь о печенье. Перевод «тоже хочу» естественен в этой сцене, но само **one** не означает «тоже».
+       - Бариста тоже может спросить: [T9]What[/] [D7]would[/] [T8]you[/] [D3]like[/]? — Что будете?
+ 
+       **Диагностика понимания:** Вы хотите попросить чай. Что верно: *Can I have a tea, please?* или *Can I a tea, please?*?
+ 
+-      **Разбор:** *Can I have a tea, please?* После **can** требуется слово действия **have** — «получить» в этой просьбе. **A tea** здесь означает одну порцию чая.
++      **Разбор:** *Can I have a tea, please?* После **can** и подлежащего **I** нужен глагол **have** в начальной форме без **to**: в этой просьбе он означает «получить». **A tea** здесь означает одну порцию чая.
+   - number: 5
+     body: |
+       Так звучит заказ в американском кафе:
+@@ -103,7 +103,7 @@ layers:
+ 
+       **Почему a tea, если чай нельзя посчитать как вещество?** В кафе **a coffee / a tea** — одна **порция** напитка. Поэтому *two coffees* — две порции, а *I like coffee* — кофе вообще. Это смена значения в зависимости от ситуации, а не превращение любого вещества в исчисляемый предмет.
+ 
+-      В меню американского кафе ещё есть [S3]juice[/] (сок) и [S3]sandwich[/] (сэндвич):
++      В меню американского кафе ещё есть [S3]juice[/] (сок) и [S3]sandwich[/] (сэндвич). Если выбираете яблочный сок, **apple juice** — название напитка из двух слов. В заказе **an apple juice** означает одну порцию: **an** выбираем по первому звуку **apple**, а не по звуку **juice**.
+ 
+       > [T8]I[/] [D7]would[/] [D3]like[/] [T1]a[/] [S3]sandwich[/] [C1]and[/] [T1]an[/] [S3]apple[/] [S3]juice[/], [O8]please[/]. — Мне сэндвич и яблочный сок.
+   - number: 7
+@@ -149,10 +149,10 @@ exercises:
+     prompt_ru: "Новая ситуация: вам предлагают кофе или чай, а вы хотите чай. Ответьте коротко и вежливо."
+     prompt_en: "Coffee or tea? — ___"
+     answer: "Tea, please."
+-    accepted: ["A tea, please.", "One tea, please.", "Can I have a tea, please?", "Can I have tea, please?", "Tea, thanks.", "Tea, thank you.", "A tea, thanks."]
++    accepted: ["A tea, please.", "One tea, please.", "Can I have a tea, please?", "Can I have tea, please?", "Tea, thanks.", "Tea, thank you.", "A tea, thanks.", "I'd like a tea, please.", "I would like a tea, please.", "I'd like tea, please.", "I would like tea, please."]
+     hint_ru: "Назовите напиток и добавьте please."
+     explanation_ru: "Достаточно назвать напиток и сказать please: Tea, please. Полная просьба Can I have a tea, please? тоже верна."
+-    units: [LX-00055, LX-00082]
++    units: [LX-00055]
+   - order: 5
+     uid: EX-00026
+     kind: choice
+@@ -162,7 +162,7 @@ exercises:
+     answer: "I would like a tea, please."
+     hint_ru: "Нужна мягкая форма «я бы хотел»."
+     explanation_ru: "I would like / I'd like — мягкий и надёжный способ заказать. I want tea грамматически верно, но без контекста и please может звучать прямолинейнее; Tea! без смягчения тоже зависит от интонации."
+-    units: [LX-00281, LX-00285]
++    units: [LX-00281]
+   - order: 6
+     uid: EX-00027
+     kind: fill
+@@ -170,10 +170,10 @@ exercises:
+     prompt_ru: "Новая ситуация: бариста спрашивает What would you like? Вы хотите сэндвич и сок. Ответьте вежливо."
+     prompt_en: "What would you like? — ___"
+     answer: "I would like a sandwich and a juice, please."
+-    accepted: ["I'd like a sandwich and a juice, please.", "I would like a sandwich and juice, please.", "I'd like a sandwich and juice, please.", "A sandwich and a juice, please.", "A sandwich and juice, please.", "Can I have a sandwich and a juice, please?", "Can I have a sandwich and juice, please?"]
++    accepted: ["I'd like a sandwich and a juice, please.", "I would like a sandwich and juice, please.", "I'd like a sandwich and juice, please.", "A sandwich and a juice, please.", "A sandwich and juice, please.", "Can I have a sandwich and a juice, please?", "Can I have a sandwich and juice, please?", "I'd like a juice and a sandwich, please.", "I would like a juice and a sandwich, please.", "A juice and a sandwich, please.", "I'd like juice and a sandwich, please.", "I would like juice and a sandwich, please.", "Juice and a sandwich, please."]
+     hint_ru: "Начните с I'd like…"
+     explanation_ru: "I'd like = I would like («я бы хотел»). A sandwich — одна порция еды, a juice — одна порция сока. Можно сказать и короче: A sandwich and a juice, please."
+-    units: [LX-00282, LX-00283, LX-00284, LX-00285]
++    units: [LX-00282, LX-00283]
+ # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
+ practice:
+ - order: 1
+@@ -185,8 +185,8 @@ practice:
+   review_of: 3
+   units:
+   - LX-00056
+-  - LX-00084
+-  - LX-00285
++  - LX-00035
++  - LX-00029
+ - order: 2
+   kind: translate
+   prompt_ru: Мне кофе, пожалуйста.
+@@ -199,13 +199,10 @@ practice:
+   - Coffee, please.
+   hint_ru: 'Вежливо: I''d like…'
+   explanation_ru: 'I''d like a coffee, please. I''d like — вежливое «я бы хотел». Коротко тоже можно: A coffee, please.'
+-  review_of: 3
++  review_of: 5
+   units:
+-  - LX-00082
+-  - LX-00084
+-  - LX-00281
+-  - LX-00284
+-  - LX-00285
++  - LX-00011
++  - LX-00029
+ - order: 3
+   kind: translate
+   prompt_ru: Простите? Повторите, пожалуйста.
+@@ -214,15 +211,9 @@ practice:
+   - Sorry? Can you say it again?
+   hint_ru: Sorry? — и просьба повторить.
+   explanation_ru: Sorry? Can you say it again, please? Переспросить — нормально, это не признак плохого английского.
+-  review_of: 3
++  review_of: 1
+   units:
+-  - LX-00060
+   - LX-00084
+-  - LX-00085
+-  - LX-00086
+-  - LX-00087
+-  - LX-00284
+-  - LX-00285
+ - order: 4
+   kind: translate
+   prompt_ru: Кофе или чай?
+@@ -231,9 +222,9 @@ practice:
+   - Tea or coffee?
+   hint_ru: or — «или».
+   explanation_ru: Coffee or tea? Так спрашивает бариста. Or — «или».
+-  review_of: 3
++  review_of: 2
+   units:
+-  - LX-00055
+-  - LX-00058
+   - LX-00082
+-  - LX-00285
++  - LX-00058
++  - LX-00011
++  - LX-00055
+diff --git a/content/seed_lessons/a1_w03_l06_numbers.yaml b/content/seed_lessons/a1_w03_l06_numbers.yaml
+index 798c5f0..da7067c 100644
+--- a/content/seed_lessons/a1_w03_l06_numbers.yaml
++++ b/content/seed_lessons/a1_w03_l06_numbers.yaml
+@@ -37,6 +37,15 @@ layers:
+ 
+       **Не все числа строятся одинаково.** Числа *eleven* (11) и *twelve* (12) не оканчиваются на **-teen**. В некоторых числах меняется написание основы: *three → thirteen*, *five → fifteen*, *eight → eighteen*. Это не приглашение образовывать числа по догадке: для первых двадцати названий полезно сверять написание и звук.
+ 
++      **Названия от 1 до 20 — короткая опора для заказа:**
++
++      - **1–5:** one — 1, two — 2, three — 3, four — 4, five — 5.
++      - **6–10:** six — 6, seven — 7, eight — 8, nine — 9, ten — 10.
++      - **11–15:** eleven — 11, twelve — 12, thirteen — 13, fourteen — 14, fifteen — 15.
++      - **16–20:** sixteen — 16, seventeen — 17, eighteen — 18, nineteen — 19, twenty — 20.
++
++      Это справочник, а не просьба выучить двадцать слов за один подход. Начните с 1–5 и подставляйте числа в короткий заказ; затем переходите к следующей группе. Сверяйте произношение со словарными образцами.
++
+       **Перед заказом уточните количество.** *One tea* — одна порция, *two teas* — две, *three teas* — три. Сначала решите, сколько порций нужно, затем подберите число и форму существительного.
+   - number: 3
+     body: |
+@@ -48,6 +57,7 @@ layers:
+ 
+       - После **one** обычное исчисляемое слово в единственном числе: *one cookie*; после **two / three / five** — множественное: *two cookies*.
+       - Это **не означает**, что после любого числа любое существительное обязательно получает **-s**: неисчисляемые вещества (*water*) нельзя считать по штукам без уточнения порций, а у некоторых существительных есть необычные множественные формы — их изучим позже.
++      - На письме не всегда добавляется только буква **s**. У знакомого слова **sandwich** форма множественного числа — **sandwiches**, с **-es**. Это тоже обычное множественное число: *two sandwiches*.
+       - В русском «два печенья» и «пять печений» различаются по форме. Для обычных английских слов множественное число часто образуется одинаково — с **-s**.
+   - number: 4
+     body: |
+@@ -96,7 +106,7 @@ exercises:
+     prompt_ru: "Вы заказываете два чая. Допишите слово."
+     prompt_en: "Two ___, please."
+     answer: "teas"
+-    hint_ru: "Предметов больше одного — добавьте -s."
++    hint_ru: "Здесь считаем две порции чая: one tea → two… Добавьте к tea окончание -s."
+     explanation_ru: "В кафе считают две порции чая: one tea — two teas. Поэтому слово tea в значении порции здесь становится множественным с -s; о чае как напитке вообще можно сказать I like tea."
+     units: [LX-00063, LX-00055]
+   - order: 3
+@@ -116,7 +126,7 @@ exercises:
+     prompt_ru: "Новая ситуация: вас четверо, и всем нужен чай. Закажите."
+     prompt_en: "___"
+     answer: "Four teas, please."
+-    accepted: ["Can I have four teas, please?", "4 teas, please.", "Four teas, thanks.", "4 teas, thanks."]
++    accepted: ["Can I have four teas, please?", "4 teas, please.", "Four teas, thanks.", "4 teas, thanks.", "I'd like four teas, please.", "I would like four teas, please."]
+     hint_ru: "Число, предмет с -s и please."
+     explanation_ru: "Four teas, please. Можно и полной просьбой: Can I have four teas, please?"
+     units: [LX-00065, LX-00055]
+@@ -127,22 +137,30 @@ practice:
+   prompt_ru: Два кофе и один чай, пожалуйста.
+   answer: Two coffees and one tea, please.
+   hint_ru: После two — множественное число.
+-  explanation_ru: Two coffees and one tea, please. В кафе coffee считают чашками, поэтому two coffees.
++  explanation_ru: Two coffees and one tea, please. В кафе считаем порции, поэтому two coffees; после one — tea в единственном числе. Порядок двух напитков можно поменять, сохранив количество каждого.
+   review_of: 3
+   units:
+   - LX-00062
+   - LX-00063
+-  - LX-00083
++  - LX-00011
++  - LX-00055
++  accepted:
++  - Can I have two coffees and one tea, please?
++  - I would like two coffees and one tea, please.
++  - One tea and two coffees, please.
+ - order: 2
+   kind: translate
+   prompt_ru: Три чая, пожалуйста.
+   answer: Three teas, please.
+   hint_ru: three — th, кончик языка между зубами.
+   explanation_ru: 'Three teas, please. Следите за th в three: не «сри» и не «фри».'
+-  review_of: 3
++  review_of: 2
+   units:
+   - LX-00064
+-  - LX-00083
++  - LX-00055
++  accepted:
++  - Can I have three teas, please?
++  - I would like three teas, please.
+ - order: 3
+   kind: translate
+   prompt_ru: Двенадцать печений, пожалуйста.
+@@ -152,10 +170,10 @@ practice:
+   - I would like twelve cookies, please.
+   hint_ru: 12 — twelve. Можно назвать заказ коротко или использовать знакомую вежливую просьбу.
+   explanation_ru: Twelve cookies, please. Можно также сказать Can I have twelve cookies, please? или I'd like twelve cookies, please. После twelve слово cookies стоит во множественном числе.
+-  review_of: 3
++  review_of: 4
+   units:
+   - LX-00073
+-  - LX-00083
++  - LX-00056
+ - order: 4
+   kind: translate
+   prompt_ru: Мне пять печений.
+@@ -167,6 +185,7 @@ practice:
+   - Can I have five cookies, please?
+   hint_ru: I'd like + число.
+   explanation_ru: I'd like five cookies. После five — cookies с -s.
+-  review_of: 3
++  review_of: 4
+   units:
+   - LX-00066
++  - LX-00056
+diff --git a/content/seed_lessons/a1_w04_l07_family.yaml b/content/seed_lessons/a1_w04_l07_family.yaml
+index 8f08d68..76f9510 100644
+--- a/content/seed_lessons/a1_w04_l07_family.yaml
++++ b/content/seed_lessons/a1_w04_l07_family.yaml
+@@ -50,7 +50,7 @@ layers:
+     body: |
+       **Почему this, а не he или she?** Когда мы **показываем** человека на фотографии, удобно сказать *This is my brother*. Дальше, когда уже ясно, о ком речь, вместо повторения *my brother* можно сказать *he*. Это **удобный переход в разговоре**, а не правило, что при первом упоминании нельзя использовать *he* или *she*: всё зависит от контекста.
+ 
+-      > [T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/]. [T8]He[/] [D1]is[/] [N1]ten[/]. — Это мой брат. Ему десять.
++      > [T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/]. [T8]He[/] [D1]is[/] [N5]ten[/]. — Это мой брат. Ему десять.
+ 
+       **Почему He is ten, а не He has ten?** Английский сообщает возраст как **состояние человека** через форму **be**; русскому «ему десять» соответствует *He is ten*. **Has** здесь не употребляют. В английской фразе не нужно говорить *years old* каждый раз, если по контексту речь о возрасте.
+ 
+@@ -62,8 +62,9 @@ layers:
+ 
+       - [N1]thirty[/] 30, [N1]forty[/] 40, [N1]fifty[/] 50, [N1]sixty[/] 60
+       - [N1]seventy[/] 70, [N1]eighty[/] 80, [N1]ninety[/] 90, [N1]hundred[/] 100
++      - **Сто — a hundred или one hundred**, не просто hundred в этой конструкции: *He is a hundred years old* — «Ему сто лет».
+       - Между десятками и единицами — дефис: [N1]twenty[/]-[N1]five[/] 25, [N1]forty[/]-[N1]two[/] 42.
+-      - years old можно не говорить: I am thirty — уже полный ответ.
++      - **Возраст можно назвать с years old или без него:** *I am thirty years old* и *I am thirty* — оба варианта правильны. В полной форме после числа больше одного — **years**, во множественном числе: *She is twelve years old*, не *twelve year old*. Это схема сообщения возраста после **be**; другие сочетания со словом *year* здесь не рассматриваем.
+ 
+       **Диагностика понимания:** Девочке двенадцать лет. Что верно: *She is twelve* или *She has twelve*?
+ 
+@@ -74,7 +75,7 @@ layers:
+ 
+       > [T9]Who[/] [D1]is[/] [T2]this[/]? — Кто это?
+       > [T2]This[/] [D1]is[/] [T3]my[/] [S1]sister[/]. — Это моя сестра.
+-      > [T8]She[/] [D1]is[/] [N1]eleven[/]. — Ей одиннадцать.
++      > [T8]She[/] [D1]is[/] [N5]eleven[/]. — Ей одиннадцать.
+ 
+       - Who is в быстрой речи звучит как who's: «хуз».
+       - Вместо mother и father дома часто говорят mom и dad.
+@@ -97,11 +98,11 @@ exercises:
+     uid: EX-00032
+     kind: choice
+     stage: recognition
+-    prompt_ru: "Как спросить «Кто это?» о человеке на фото?"
++    prompt_ru: "Как спросить «Кто это?» о человеке на фото? Выберите обычный вопрос по схеме Who + is + this, а не переспрос."
+     options: ["Who is this?", "Who this?", "This is who?"]
+     answer: "Who is this?"
+     hint_ru: "Нужен глагол be."
+-    explanation_ru: "Who is this? — who первым, затем is и this. Без is фраза неполная."
++    explanation_ru: "Who is this? — обычный вопрос по указанной схеме: who, затем is и this. В Who this? не хватает is. This is who? возможно как удивлённый переспрос, но здесь требуется другой порядок слов."
+     units: [LX-00099, LX-00101]
+   - order: 2
+     uid: EX-00033
+@@ -117,12 +118,12 @@ exercises:
+     uid: EX-00034
+     kind: build
+     stage: production
+-    prompt_ru: "Соберите вопрос: «Это твоя мама?»"
++    prompt_ru: "Соберите обычный вопрос «Это твоя мама?». Начните с Is, затем поставьте this и your mother."
+     options: [your, Is, mother, this]
+     answer: "Is this your mother"
+     hint_ru: "В вопросе is стоит первым."
+     explanation_ru: "Is this your mother? — be выходит вперёд, дальше this your mother."
+-    units: [LX-00103]
++    units: ["LX-00002", "LX-00039"]
+   - order: 4
+     uid: EX-00035
+     kind: fill
+@@ -130,7 +131,7 @@ exercises:
+     prompt_ru: "Новое фото: на нём ваша сестра, ей двенадцать. Скажите это двумя короткими фразами."
+     prompt_en: "___"
+     answer: "This is my sister. She is twelve."
+-    accepted: ["This is my sister. She's twelve.", "This is my sister. She is 12.", "This is my sister. She's 12."]
++    accepted: ["This is my sister. She's twelve.", "This is my sister. She is 12.", "This is my sister. She's 12.", "This is my sister. She is twelve years old.", "This is my sister. She's twelve years old.", "This is my sister. She is 12 years old.", "This is my sister. She's 12 years old.", "It is my sister. She is twelve.", "It's my sister. She's twelve.", "It's my sister. She is twelve.", "It is my sister. She's twelve."]
+     hint_ru: "Сначала this is…, потом she is…"
+     explanation_ru: "This is my sister. She is twelve. — сначала показываем, потом говорим she и возраст через be."
+     units: [LX-00089, LX-00096, LX-00073]
+@@ -164,12 +165,10 @@ practice:
+   - Who is that?
+   hint_ru: Вопрос о человеке — Who.
+   explanation_ru: 'Who is this? Who — «кто». В разговоре: Who''s this?'
+-  review_of: 3
++  review_of: 1
+   units:
+   - LX-00099
+   - LX-00101
+-  - LX-00102
+-  - LX-00103
+ - order: 2
+   kind: translate
+   prompt_ru: 'Вы показываете на человека на фотографии. Скажите: «Это мой брат».'
+@@ -179,12 +178,10 @@ practice:
+   - That is my brother.
+   hint_ru: При представлении удобно сказать This is my brother. Если уже ясно, на кого указываете, можно сказать He is my brother.
+   explanation_ru: This is my brother — естественный способ представить человека на фото. He is my brother тоже подходит, когда собеседник уже понимает, о ком вы говорите; That is my brother возможно, если указываете на фото или на человека чуть дальше.
+-  review_of: 3
++  review_of: 2
+   units:
+   - LX-00088
+-  - LX-00101
+   - LX-00102
+-  - LX-00103
+ - order: 3
+   kind: translate
+   prompt_ru: Это твоя мама?
+@@ -195,18 +192,15 @@ practice:
+   explanation_ru: 'Is this your mother? (или mom). Вопрос с be: is встаёт первым.'
+   review_of: 3
+   units:
+-  - LX-00101
+-  - LX-00102
+-  - LX-00103
++  - LX-00002
++  - LX-00039
+ - order: 4
+   kind: translate
+   prompt_ru: Сколько ему лет?
+   answer: How old is he?
+-  hint_ru: «Насколько он старый?»
+-  explanation_ru: 'How old is he? По-английски спрашивают «насколько стар», а отвечают просто числом: He is ten.'
+-  review_of: 3
++  hint_ru: "Начните с How old, затем is и he."
++  explanation_ru: "How old is he? — «Сколько ему лет?» How old спрашивает о возрасте, а не обязательно о старости. С he нужна форма is. В ответе можно He is ten или He is ten years old."
++  review_of: 6
+   units:
+-  - LX-00101
+-  - LX-00102
+-  - LX-00103
++  - LX-00095
+   - LX-00278
+diff --git a/content/seed_lessons/a1_w04_l08_possession.yaml b/content/seed_lessons/a1_w04_l08_possession.yaml
+index 89e7afb..5bebdb3 100644
+--- a/content/seed_lessons/a1_w04_l08_possession.yaml
++++ b/content/seed_lessons/a1_w04_l08_possession.yaml
+@@ -21,7 +21,7 @@ contractions:
+   - full: "she is"
+     short: "she's"
+     ipa: "/ʃiz/"
+-    note_ru: "Не путайте she's (она есть) и her (её)."
++    note_ru: "She's = she is: She’s happy — «Она рада». Her перед существительным — «её»: her family."
+   - full: "he is"
+     short: "he's"
+     ipa: "/hiz/"
+@@ -41,12 +41,12 @@ layers:
+ 
+       Чтобы вернуть вещь хозяину, нужно сказать, чья она.
+ 
+-      > [S1]Mia[/][T3]'s[/] [S1]brother[/] [D1]is[/] [N1]ten[/]! — Брату Мии десять!
++      > [S1]Mia[/][T3]'s[/] [S1]brother[/] [D1]is[/] [N5]ten[/]! — Брату Мии десять!
+       > [T3]Her[/] [S1]family[/] [D1]is[/] [J3]nice[/]. — У неё хорошая семья.
+       > [T3]His[/] [S9]name[/] [D1]is[/] [S1]Tom[/]. — Его зовут Том.
+       > [A3]Here[/] [D1]is[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.
+ 
+-      **Что объединяет her, his и Mia's?** Все они помогают назвать **владельца**: *her family* — её семья, *Mia's brother* — брат Мии. В системе разметки курса верхняя линия T3 отмечает такие слова принадлежности. Но **he / she / we / they** — это уже **местоимения**: они называют людей, а не обозначают владельца перед существительным.
++      **Что объединяет her, his и Mia's?** Все они показывают **принадлежность или связь с человеком**: *her photo* — её фотография, *her family* — её семья, *Mia's brother* — брат Мии. Слова о семье обозначают родственные отношения, а не собственность на людей. В системе разметки курса верхняя линия T3 отмечает такие слова принадлежности. Но **he / she / we / they** — это уже **местоимения**: в наших примерах они обозначают людей самостоятельно, а не стоят перед существительным как слова принадлежности. Слово **they** может обозначать и предметы, а не только людей.
+   - number: 2
+     body: |
+       **Один и тот же человек — две разные формы слова.** Мия рада, потому что ей вернули фотографию. Сравните:
+@@ -99,7 +99,7 @@ layers:
+     body: |
+       В непринуждённой речи **he is** и **she is** часто сокращают, когда форма **is** безударна. Полные формы также правильны: выбор зависит от темпа и того, какое слово говорящий выделяет.
+ 
+-      > [T8]He[/][D1]'s[/] [N1]ten[/]. — Ему десять.
++      > [T8]He[/][D1]'s[/] [N5]ten[/]. — Ему десять.
+       > [T8]I[/][D1]'m[/] [J4]happy[/]! — Я рада!
+       > [A3]Here[/][D1]'s[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.
+ 
+@@ -112,7 +112,9 @@ layers:
+       - *Mia's photo* — **чья фотография?** Это принадлежность.
+       - *Mia's happy* — **какая Мия?** Здесь *Mia's = Mia is*.
+ 
+-      Чтобы не путать, ищите **работу всей фразы**: после имени идёт предмет, который ей принадлежит, или сообщение о её состоянии? Одинаковое написание не означает одинаковую грамматическую функцию.
++      **Не определяйте значение только по следующему существительному.** *Mia's my sister* означает *Mia is my sister* — «Мия — моя сестра»: после сокращения тоже есть существительное, но вся фраза **называет, кто такая Мия**. В *Mia's photo* сочетание **называет фотографию и указывает, чья она**, а глагол **is** в него не входит.
++
++      Смотрите на **работу всей фразы**, а не только на апостроф или одно соседнее слово. Одинаковое написание не означает одинаковую грамматическую функцию.
+   - number: 7
+     body: |
+       Шесть заданий: выбрать his или her, вставить 's, собрать фразу, сказать о новом человеке, выбрать are для they и сказать о своей семье.
+@@ -139,7 +141,7 @@ exercises:
+     accepted: ["Tom’s"]
+     hint_ru: "Владелец — 's — вещь."
+     explanation_ru: "Tom's photo: к владельцу добавляют 's."
+-    units: [LX-00097]
++    units: []
+   - order: 3
+     uid: EX-00040
+     kind: build
+@@ -154,7 +156,7 @@ exercises:
+     uid: EX-00041
+     kind: fill
+     stage: transfer
+-    prompt_ru: "Новая ситуация: вы показываете сестру друга. Её зовут Анна. Скажите «Её зовут Анна»."
++    prompt_ru: "Новая ситуация: вы показываете сестру друга. Её зовут Анна. Сообщите её имя, используя her name."
+     prompt_en: "___"
+     answer: "Her name is Anna."
+     accepted: ["Her name is Anna", "Her name's Anna."]
+@@ -186,36 +188,42 @@ exercises:
+ practice:
+ - order: 1
+   kind: translate
+-  prompt_ru: Её зовут Мия.
++  prompt_ru: Её зовут Мия. Используйте her name.
+   answer: Her name is Mia.
+   hint_ru: «Её имя — Мия».
+-  explanation_ru: Her name is Mia. Her — «её», his — «его».
+-  review_of: 3
++  explanation_ru: 'Her name is Mia — «Её зовут Мия». В разговоре можно Her name''s Mia: здесь ''s сокращает is. Her перед name указывает, о чьём имени речь; she вместо her здесь не подходит.'
++  review_of: 4
+   units:
+   - LX-00098
+-  - LX-00104
+-  - LX-00105
++  - LX-00015
++  accepted:
++  - Her name's Mia.
+ - order: 2
+   kind: translate
+   prompt_ru: Брату Мии десять.
+   answer: Mia's brother is ten.
+   hint_ru: Чей брат? — Mia's.
+   explanation_ru: 'Mia''s brother is ten. ''s отвечает на вопрос «чей?»: Mia''s brother — брат Мии.'
+-  review_of: 3
++  review_of: 2
+   units:
+-  - LX-00104
+-  - LX-00105
++  - LX-00088
++  - LX-00071
++  accepted:
++  - Mia's brother is 10.
++  - Mia's brother is ten years old.
++  - Mia's brother is 10 years old.
+ - order: 3
+   kind: translate
+-  prompt_ru: Его зовут Том.
++  prompt_ru: Его зовут Том. Используйте his name.
+   answer: His name is Tom.
+   hint_ru: his — «его».
+-  explanation_ru: His name is Tom. Не путайте his (его) и he's (он есть).
++  explanation_ru: 'His name is Tom — «Его зовут Том». Можно His name''s Tom: ''s после name сокращает is. His перед name означает «его»; he''s = he is, поэтому He''s name is Tom не подходит.'
+   review_of: 3
+   units:
+   - LX-00097
+   - LX-00104
+-  - LX-00105
++  accepted:
++  - His name's Tom.
+ - order: 4
+   kind: translate
+   prompt_ru: Вот твоё фото, Мия.
+@@ -224,5 +232,6 @@ practice:
+   explanation_ru: Here is your photo, Mia. Here is… — когда что-то протягиваете.
+   review_of: 3
+   units:
+-  - LX-00104
++  - LX-00039
++  - LX-00057
+   - LX-00105
+diff --git a/content/seed_lexicon/a1_w03_cafe_plus.yaml b/content/seed_lexicon/a1_w03_cafe_plus.yaml
+index 2a7c7de..9722fe6 100644
+--- a/content/seed_lexicon/a1_w03_cafe_plus.yaml
++++ b/content/seed_lexicon/a1_w03_cafe_plus.yaml
+@@ -31,7 +31,7 @@ units:
+   example_en: '[T8]I[/] [D7]would[/] [D3]like[/] [S3]water[/], [O8]please[/].'
+   example_ru: Мне, пожалуйста, воды.
+   situation: Вежливо заказываете в кафе
+-  usage_note: 'l не читается: «вуд». В речи I would сокращают до I''d — «айд».'
++  usage_note: 'В would буква l не обозначает отдельного звука: /wʊd/. I would можно сократить до I''d /aɪd/; полная форма тоже правильна.'
+ - uid: LX-00282
+   lemma: juice
+   meaning: a drink made from fruit
+@@ -61,7 +61,7 @@ units:
+   example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]sandwich[/], [O8]please[/]?'
+   example_ru: Можно мне сэндвич?
+   situation: Заказываете еду в кафе
+-  usage_note: 'd не слышно: «сэнвич». Широкое /æ/ в начале.'
++  usage_note: 'Учебный образец /ˈsænwɪtʃ/ дан без /d/. Словарный американский вариант с /d/ тоже допустим. Во множественном числе — sandwiches.'
+ - uid: LX-00284
+   lemma: What would you like?
+   meaning: A polite question about what someone wants to order
+@@ -74,7 +74,7 @@ units:
+   example_en: What would you like?
+   example_ru: Что вам принести?
+   situation: Бариста или официант принимает заказ
+-  usage_note: 'Учите фразу целиком. В речи would you сливается: «вуджу».'
++  usage_note: 'Учите фразу целиком. В быстрой речи would you может звучать слитно; это вариант связной речи, а не требование специально заменять два слова одним русским «вуджу».'
+ - uid: LX-00285
+   lemma: I would like a coffee, please.
+   meaning: A polite way to order
+@@ -82,9 +82,9 @@ units:
+   unit_type: phrase
+   cefr: unverified
+   verification_status: pending
+-  ipa_us: /aɪd ˈlaɪk ə ˈkɔfi ˈpliz/
++  ipa_us: /aɪ wʊd ˈlaɪk ə ˈkɔfi ˈpliz/
+   translation_ru: Мне кофе, пожалуйста.
+   example_en: I would like a coffee, please.
+   example_ru: Мне кофе, пожалуйста.
+   situation: Заказ в кафе
+-  usage_note: 'В речи почти всегда I''d like — «айд лайк». Вместо coffee ставьте что угодно: a tea, a sandwich.'
++  usage_note: 'В разговорном заказе I would like можно сократить до I''d like /aɪd laɪk/. Меняя заказ, заменяйте всю группу a coffee: a tea, a sandwich или water. Не добавляйте a перед любым названием автоматически.'
+diff --git a/content/seed_lexicon/a1_w03_pilot.yaml b/content/seed_lexicon/a1_w03_pilot.yaml
+index d320813..ebe78cd 100644
+--- a/content/seed_lexicon/a1_w03_pilot.yaml
++++ b/content/seed_lexicon/a1_w03_pilot.yaml
+@@ -19,7 +19,7 @@ units:
+   example_en: '[T8]I[/] [D3]like[/] [S3]tea[/].'
+   example_ru: Я люблю чай.
+   situation: Заказываете напиток
+-  usage_note: В заказе a tea — «чашка чая».
++  usage_note: "В заказе a tea означает одну порцию чая, часто чашку. О чае как напитке вообще говорим tea без a: I like tea."
+ - uid: LX-00056
+   lemma: cookie
+   meaning: a small sweet baked food
+@@ -37,7 +37,7 @@ units:
+   example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cookie[/], [O8]please[/]?'
+   example_ru: Можно мне печенье?
+   situation: Заказываете сладкое
+-  usage_note: В американском кафе к кофе обычно берут cookie — большое печенье.
++  usage_note: "Cookie — отдельное печенье: a cookie, two cookies. Размер бывает разным; само слово не означает обязательно большое печенье."
+ - uid: LX-00057
+   lemma: photo
+   meaning: a picture made with a camera
+@@ -55,7 +55,7 @@ units:
+   example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]photo[/].'
+   example_ru: Это моя фотография.
+   situation: Показываете или находите фото
+-  usage_note: 'Американское t между гласными звучит как быстрое d: «фоуДоу».'
++  usage_note: 'В выбранном американском образце photo звук /t/ произносится коротким касанием языка и напоминает быстрое /d/. Не переносите этот вариант на каждую букву t между гласными: важны положение ударения и окружение.'
+ - uid: LX-00058
+   lemma: or
+   meaning: used between two choices
+diff --git a/content/seed_lexicon/a1_w04_family_plus.yaml b/content/seed_lexicon/a1_w04_family_plus.yaml
+index 189371a..a2d59f1 100644
+--- a/content/seed_lexicon/a1_w04_family_plus.yaml
++++ b/content/seed_lexicon/a1_w04_family_plus.yaml
+@@ -111,7 +111,7 @@ units:
+   example_en: '[T8]I[/] [D1]am[/] [N5]thirty[/].'
+   example_ru: Мне тридцать.
+   situation: Называете возраст или цену
+-  usage_note: 'Ударение в начале: THIRty. В thirteen ударение в конце: thirTEEN.'
++  usage_note: "В отдельном учебном образце THIRty имеет ударение в начале, thirTEEN — в конце. В связной речи ударение может меняться, поэтому слушайте также окончания -ty и -teen."
+ - uid: LX-00271
+   lemma: forty
+   meaning: the number 40
+@@ -137,7 +137,7 @@ units:
+   example_en: '[T3]My[/] [S1]dad[/] [D1]is[/] [N5]fifty[/].'
+   example_ru: Папе пятьдесят.
+   situation: Называете возраст или цену
+-  usage_note: 'Не путайте с fifteen: FIFty — ударение в начале, fifTEEN — в конце.'
++  usage_note: "В отдельном учебном образце FIFty имеет ударение в начале, fifTEEN — в конце. В связной речи ударение может меняться: различайте также -ty и -teen."
+ - uid: LX-00273
+   lemma: sixty
+   meaning: the number 60
+diff --git a/content/seed_lexicon/a1_w04_pilot.yaml b/content/seed_lexicon/a1_w04_pilot.yaml
+index 8a1ad7e..7b8062f 100644
+--- a/content/seed_lexicon/a1_w04_pilot.yaml
++++ b/content/seed_lexicon/a1_w04_pilot.yaml
+@@ -4,7 +4,7 @@ week: 4
+ units:
+ - uid: LX-00088
+   lemma: brother
+-  meaning: a son of the same parents
++  meaning: "a male family member who has one or both parents in common with you"
+   class: S1
+   forms:
+   - brothers
+@@ -19,7 +19,7 @@ units:
+   usage_note: th звонкий и американское r в конце.
+ - uid: LX-00089
+   lemma: sister
+-  meaning: a daughter of the same parents
++  meaning: "a female family member who has one or both parents in common with you"
+   class: S1
+   forms:
+   - sisters
+@@ -62,7 +62,7 @@ units:
+   situation: Рассказываете о семье по фотографии
+ - uid: LX-00092
+   lemma: son
+-  meaning: a male child
++  meaning: "someone's male child"
+   class: S1
+   forms:
+   - sons
+@@ -77,7 +77,7 @@ units:
+   usage_note: Звучит так же, как sun — «солнце».
+ - uid: LX-00093
+   lemma: daughter
+-  meaning: a female child
++  meaning: "someone's female child"
+   class: S1
+   forms:
+   - daughters
+@@ -102,7 +102,7 @@ units:
+   ipa_us: /ˈbeɪbi/
+   translation_ru: малыш, младенец
+   example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S1]baby[/] [S1]brother[/].'
+-  example_ru: Это мой младший братик.
++  example_ru: "Это мой совсем маленький братик."
+   situation: Рассказываете о семье по фотографии
+ - uid: LX-00095
+   lemma: he
+diff --git a/content/seed_poems/p02_who_is_she.yaml b/content/seed_poems/p02_who_is_she.yaml
+index 06b62a2..5021711 100644
+--- a/content/seed_poems/p02_who_is_she.yaml
++++ b/content/seed_poems/p02_who_is_she.yaml
+@@ -16,7 +16,7 @@ body: |
+   [T2]That[/] [D1]is[/] [T3]my[/] [S1]brother[/]!
+ 
+   [A6]How[/] [J2]old[/] [D1]is[/] [T8]he[/]? [A6]How[/] [J2]old[/] [D1]is[/] [T8]he[/]?
+-  [T8]He[/] [D1]is[/] [N1]ten[/], [N1]ten[/], [N1]ten[/]!
++  [T8]He[/] [D1]is[/] [N5]ten[/], [N5]ten[/], [N5]ten[/]!
+   [A6]How[/] [J2]old[/] [D1]is[/] [T8]she[/]? [A6]How[/] [J2]old[/] [D1]is[/] [T8]she[/]?
+   [O2]Sorry[/]? [A2]Again[/]? [A2]Again[/]?
+ 
+diff --git a/content/seed_weeks/a1_w03.yaml b/content/seed_weeks/a1_w03.yaml
+index 4365919..ba835d5 100644
+--- a/content/seed_weeks/a1_w03.yaml
++++ b/content/seed_weeks/a1_w03.yaml
+@@ -59,7 +59,7 @@ twister:
+   - th
+   source: original
+   goal_ru: 'Глухое th /θ/ против t: three — tea, thirteen — two. Русские часто говорят «сри» или «фри».'
+-  tip_ru: В three и thank кончик языка между зубами, голоса нет, воздух шипит. В tea и two язык за зубами и резко отрывается. Не заменяйте th на «с» или «ф».
++  tip_ru: В three и thank кончик языка между зубами, голоса нет, воздух проходит через узкую щель. В tea и two язык за зубами и резко отрывается. Не заменяйте th на «с» или «ф».
+   warmup:
+   - '[N1]three[/], [S3]tea[/]'
+   - '[N1]three[/] [S3]teas[/], [N1]two[/] [S3]teas[/]'
+diff --git a/content/seed_weeks/a1_w04.yaml b/content/seed_weeks/a1_w04.yaml
+index 054d65a..0d7a8df 100644
+--- a/content/seed_weeks/a1_w04.yaml
++++ b/content/seed_weeks/a1_w04.yaml
+@@ -63,7 +63,7 @@ twister:
+   - h
+   - dh
+   source: original
+-  goal_ru: Лёгкое /h/ девять раз (his, her, happy, how, hundred) и звонкое th в mother, father, brother.
++  goal_ru: Лёгкое /h/ восемь раз (his, her, happy, how, hundred) и звонкое th в mother, father, brother.
+   tip_ru: h — тихий выдох, как будто греете стекло дыханием. Не «х» с хрипом. В mother — язык между зубами, с голосом.
+   warmup:
+   - '[T3]his[/], [T3]her[/], [J4]happy[/]'
+diff --git a/tests/js/a1-deep-05-08.test.cjs b/tests/js/a1-deep-05-08.test.cjs
+new file mode 100644
+index 0000000..5f8fee5
+--- /dev/null
++++ b/tests/js/a1-deep-05-08.test.cjs
+@@ -0,0 +1,30 @@
++const {test} = require('node:test');
++const assert = require('node:assert/strict');
++const fs = require('node:fs');
++const path = require('node:path');
++const active = require('../../static/js/a1-active.js');
++const rows = JSON.parse(fs.readFileSync(path.join(__dirname, '../../content/active_a1/topics_01_08.json'), 'utf8'));
++
++test('cafe local models accept a short taught request without changing its drink', () => {
++  const row = rows.find(row => row.n === 5);
++  for (const answer of ['Coffee, please.', 'A coffee, please.', 'Can I have a coffee, please?']) {
++    assert.equal(active.compareModelAnswer(answer, row.answer, row.alternatives), true, answer);
++  }
++  for (const answer of ['Tea, please.', 'I do not like coffee.', 'Coffee is my phone.']) {
++    assert.equal(active.compareModelAnswer(answer, row.answer, row.alternatives), false, answer);
++  }
++});
++
++test('active quantity and ownership answers preserve number, food and person', () => {
++  const quantity = rows.find(row => row.n === 6);
++  for (const answer of ['Three coffees, please.', "I'd like three coffees, please."]) {
++    assert.equal(active.compareModelAnswer(answer, quantity.answer, quantity.alternatives), true, answer);
++  }
++  for (const answer of ['Thirteen coffees, please.', 'Three teas, please.', 'Three coffee, please.']) {
++    assert.equal(active.compareModelAnswer(answer, quantity.answer, quantity.alternatives), false, answer);
++  }
++  const owner = rows.find(row => row.n === 8);
++  for (const answer of ["This is Tom's book.", "This is not Anna's book.", "This is Anna's phone."]) {
++    assert.equal(active.compareModelAnswer(answer, owner.answer, owner.alternatives), false, answer);
++  }
++});
+diff --git a/tests/test_a1_deep_05_08_support.py b/tests/test_a1_deep_05_08_support.py
+new file mode 100644
+index 0000000..82077cc
+--- /dev/null
++++ b/tests/test_a1_deep_05_08_support.py
+@@ -0,0 +1,89 @@
++"""Prerequisites and real contextual delayed-review feedback for A1 5–8."""
++from datetime import timedelta
++from html.parser import HTMLParser
++
++from django.contrib.auth import get_user_model
++from django.test import TestCase
++from django.urls import reverse
++from django.utils import timezone
++
++from apps.drills.models import Exercise
++from apps.learning.mistake_review import variants_for
++from apps.learning.models import MistakeReview
++from apps.learning.understanding import understanding_bank
++from apps.lessons.models import Lesson
++from apps.poems.models import Poem
++from apps.publishing.audit import is_known, text_tokens, vocab_until
++from tests.runner import ensure_content
++
++
++class DeepA1SupportTests(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        ensure_content()
++
++    def test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase(self):
++        guides = understanding_bank()
++        for slug in ('a1-cafe-order', 'a1-numbers-1-20', 'a1-family-photo', 'a1-family-possession'):
++            lesson = Lesson.objects.select_related('level', 'week').get(slug=slug)
++            vocabulary = vocab_until(lesson.level, lesson.week.number)
++            guide = guides[slug]
++            # A translated ready-made expression can precede its full grammar.
++            # Only that complete expression is allowed, not all its words globally.
++            prepared = {step['example_en'] for step in guide['steps']}
++            for task in (guide['tasks']['transfer'], *guide['transfer_variants']):
++                if task['model'] in prepared:
++                    continue
++                with self.subTest(slug=slug, model=task['model']):
++                    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
++
++    def test_poem_targets_are_actually_present_and_the_page_serves_the_same_units(self):
++        poem = Poem.objects.get(number=2)
++        words = {token.lower() for token in text_tokens(poem.body)}
++        targets = list(poem.target_units.all())
++        self.assertEqual({unit.lemma.lower() for unit in targets} - words, set())
++        response = self.client.get(reverse('stories:poem', args=[poem.number]))
++        self.assertEqual(response.status_code, 200)
++        served = {unit.uid for unit in response.context['targets']}
++        self.assertEqual(served, {unit.uid for unit in targets})
++        class AgeMarkers(HTMLParser):
++            def __init__(self):
++                super().__init__()
++                self.current = None
++                self.labels = []
++            def handle_starttag(self, tag, attrs):
++                if tag == 'span':
++                    self.current = dict(attrs)
++            def handle_data(self, data):
++                if data.strip() == 'ten' and self.current and self.current.get('data-cat') == 'N':
++                    self.labels.append(self.current.get('data-label'))
++            def handle_endtag(self, tag):
++                if tag == 'span':
++                    self.current = None
++        parser = AgeMarkers()
++        parser.feed(response.content.decode())
++        self.assertGreaterEqual(len(parser.labels), 3)
++        self.assertTrue(all(label.endswith('Возраст') for label in parser.labels), parser.labels)
++
++    def test_echo_distractors_get_card_specific_feedback_for_the_required_question_order(self):
++        user = get_user_model().objects.create_user(email='deep-card-context@example.test', password='Test-pass-123!')
++        self.client.force_login(user)
++        for uid, slot in (('EX-00032', 1), ('EX-00034', 0), ('EX-00034', 3)):
++            exercise = Exercise.objects.get(uid=uid)
++            card = variants_for(exercise)[slot]
++            # An explicit local explanation must distinguish the target question
++            # from a possible echo question. The actual view must serve that reason.
++            self.assertEqual(len(card), 5)
++            for choice in range(3):
++                with self.subTest(uid=uid, slot=slot, choice=choice):
++                    review, _ = MistakeReview.objects.update_or_create(
++                        user=user, exercise=exercise,
++                        defaults={'due_at': timezone.now() - timedelta(seconds=1),
++                                  'current_index': slot, 'correct_count': 0, 'completed_at': None})
++                    response = self.client.post(reverse('learning:mistake_review'),
++                                                {'review_id': review.pk, 'index': slot, 'choice': choice})
++                    self.assertEqual(response.status_code, 200)
++                    result = response.context['answer_result']
++                    self.assertEqual(result['correct'], choice == card[3])
++                    self.assertEqual(result['model'], card[2][card[3]])
++                    self.assertEqual(result['reason'], card[4])
+diff --git a/tests/test_a1_editorial_deep_05_08.py b/tests/test_a1_editorial_deep_05_08.py
+new file mode 100644
+index 0000000..8d2969d
+--- /dev/null
++++ b/tests/test_a1_editorial_deep_05_08.py
+@@ -0,0 +1,313 @@
++"""Live key and learning-evidence regressions for the deep A1 lessons 5–8 pass.
++
++Unmatched free answers remain needs_review; finite keys do not prove that an
++unlisted sentence is ungrammatical. These tests exercise the actual API/forms.
++"""
++import json
++from datetime import timedelta
++
++from django.contrib.auth import get_user_model
++from django.test import TestCase
++from django.urls import reverse
++from django.utils import timezone
++
++from apps.drills.models import Exercise, PracticeItem
++from apps.learning.models import ExerciseAttempt, IndependentAttempt, MistakeReview, UnitProgress
++from tests.runner import ensure_content
++
++CAFE = "a1-cafe-order"
++NUMBERS = "a1-numbers-1-20"
++PHOTO = "a1-family-photo"
++POSSESSION = "a1-family-possession"
++
++
++class DeepA1AnswerTests(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        ensure_content()
++
++    def check(self, item, answer, matches):
++        collection = "practice" if isinstance(item, PracticeItem) else "exercises"
++        response = self.client.post(
++            f"/api/{collection}/{item.pk}/check/", json.dumps({"answer": answer}),
++            content_type="application/json",
++        )
++        self.assertEqual(response.status_code, 200)
++        data = response.json()
++        self.assertEqual(data["correct"], matches, answer)
++        if collection == "practice" or item.stage == Exercise.Stage.TRANSFER:
++            self.assertEqual(data["assessment"], "model_match" if matches else "needs_review")
++        return data
++
++    def test_cafe_transfer_accepts_taught_requests_and_both_ordered_items(self):
++        for uid, good, bad in (
++            ("EX-00025", ("I'd like a tea, please.", "I would like a tea, please."),
++             ("I'd like a coffee, please.", "I don't like tea.", "I would tea, please.")),
++            ("EX-00027", ("I'd like a juice and a sandwich, please.",
++                          "I would like a juice and a sandwich, please.",
++                          "A juice and a sandwich, please."),
++             ("I'd like a sandwich, please.", "I'd like a juice, please.",
++              "I'd like a tea and a coffee, please.")),
++        ):
++            item = Exercise.objects.get(uid=uid)
++            for answer in good:
++                with self.subTest(uid=uid, answer=answer):
++                    self.check(item, answer, True)
++            for answer in bad:
++                with self.subTest(uid=uid, answer=answer):
++                    self.check(item, answer, False)
++
++    def test_four_servings_preserve_number_drink_and_plural(self):
++        item = Exercise.objects.get(uid="EX-00031")
++        for answer in ("I'd like four teas, please.", "I would like four teas, please.",
++                       "Can I have four teas, please?", "Four teas, please."):
++            with self.subTest(answer=answer):
++                self.check(item, answer, True)
++        for answer in ("I'd like three teas, please.", "I'd like four coffees, please.",
++                       "I'd like four tea, please.", "I don't like four teas."):
++            with self.subTest(answer=answer):
++                self.check(item, answer, False)
++
++    def test_number_translations_accept_requests_without_swapping_the_quantities(self):
++        for order, good, bad in (
++            (1, ("Can I have two coffees and one tea, please?",
++                 "I'd like two coffees and one tea, please.", "One tea and two coffees, please."),
++             ("One coffee and two teas, please.", "Two coffee and one tea, please.")),
++            (2, ("Can I have three teas, please?", "I'd like three teas, please."),
++             ("Can I have thirteen teas, please?", "Three tea, please.")),
++        ):
++            item = PracticeItem.objects.get(lesson__slug=NUMBERS, order=order)
++            for answer in good:
++                with self.subTest(order=order, answer=answer):
++                    self.check(item, answer, True)
++            for answer in bad:
++                with self.subTest(order=order, answer=answer):
++                    self.check(item, answer, False)
++
++    def test_photo_transfer_accepts_years_old_but_preserves_sister_and_age(self):
++        item = Exercise.objects.get(uid="EX-00035")
++        for answer in ("This is my sister. She is twelve years old.",
++                       "This is my sister. She is 12 years old.",
++                       "It is my sister. She is twelve.", "It's my sister. She is twelve."):
++            with self.subTest(answer=answer):
++                self.check(item, answer, True)
++        for answer in ("This is your sister. She is twelve.",
++                       "This is my sister. She is twenty.",
++                       "This is my brother. He is twelve.",
++                       "This is my sister. She has twelve."):
++            with self.subTest(answer=answer):
++                self.check(item, answer, False)
++
++    def test_name_translations_allow_only_the_explicit_noun_contractions(self):
++        for order, good, bad in (
++            (1, ("Her name's Mia.", "Her name’s Mia."),
++             ("His name is Mia.", "Her name is Anna.", "Her name Mia.")),
++            (3, ("His name's Tom.", "His name’s Tom."),
++             ("Her name is Tom.", "His name is Anna.", "His name Tom.")),
++        ):
++            item = PracticeItem.objects.get(lesson__slug=POSSESSION, order=order)
++            for answer in good:
++                with self.subTest(order=order, answer=answer):
++                    self.check(item, answer, True)
++            for answer in bad:
++                with self.subTest(order=order, answer=answer):
++                    self.check(item, answer, False)
++
++    def test_possessive_slot_does_not_accept_a_missing_apostrophe_or_a_copula(self):
++        item = Exercise.objects.get(uid="EX-00039")
++        for answer, matches in (("Tom's", True), ("Tom’s", True),
++                                ("Tom", False), ("Toms", False), ("Tom is", False)):
++            with self.subTest(answer=answer):
++                self.check(item, answer, matches)
++
++    def test_mias_brother_translation_preserves_possession_and_age(self):
++        item = PracticeItem.objects.get(lesson__slug=POSSESSION, order=2)
++        for answer in ("Mia's brother is 10.", "Mia's brother is ten years old.",
++                       "Mia's brother is 10 years old."):
++            with self.subTest(answer=answer):
++                self.check(item, answer, True)
++        for answer in ("Mia is brother is ten.", "Tom's brother is ten.",
++                       "Mia's brother is twenty.", "Mia's sister is ten.",
++                       "Mia's brother is not ten."):
++            with self.subTest(answer=answer):
++                self.check(item, answer, False)
++
++
++class DeepA1EvidenceTests(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        ensure_content()
++
++    def credit(self, collection, item, answer, required, forbidden, serial):
++        user = get_user_model().objects.create_user(email=f"deep-a1-{serial}@example.test", password="Test-pass-123!")
++        self.client.force_login(user)
++        response = self.client.post(f"/api/{collection}/{item.pk}/check/", json.dumps({"answer": answer}),
++                                    content_type="application/json")
++        self.assertEqual(response.status_code, 200)
++        self.assertTrue(response.json()["correct"])
++        credited = set(UnitProgress.objects.filter(user=user).values_list("unit__uid", flat=True))
++        self.assertTrue(set(required) <= credited, credited)
++        self.assertFalse(set(forbidden) & credited, credited)
++        if collection == "exercises":
++            attempt = ExerciseAttempt.objects.get(user=user, exercise=item)
++            self.assertTrue(attempt.is_correct)
++            self.assertEqual(attempt.exercise.uid, item.uid)
++            self.assertEqual(attempt.answer, answer)
++        return credited
++
++    def test_cafe_answers_do_not_credit_unspoken_requests_or_replies(self):
++        for order, required, forbidden in (
++            (1, {"LX-00056"}, {"LX-00084", "LX-00285"}),
++            (2, {"LX-00011"}, {"LX-00082", "LX-00084", "LX-00284", "LX-00285"}),
++            (3, {"LX-00084"}, {"LX-00085", "LX-00086", "LX-00087", "LX-00284", "LX-00285"}),
++            (4, {"LX-00058"}, {"LX-00285"}),
++        ):
++            item = PracticeItem.objects.get(lesson__slug=CAFE, order=order)
++            with self.subTest(order=order):
++                self.credit("practice", item, "Coffee, please." if order == 2 else item.answer,
++                            required, forbidden, f"cafe-{order}")
++
++    def test_quantity_answers_credit_the_actual_drink_or_food(self):
++        for order, required, forbidden in (
++            (1, {"LX-00062", "LX-00063", "LX-00011", "LX-00055"}, set()),
++            (2, {"LX-00064", "LX-00055"}, {"LX-00083"}),
++            (3, {"LX-00073", "LX-00056"}, {"LX-00083"}),
++            (4, {"LX-00066", "LX-00056"}, {"LX-00083"}),
++        ):
++            item = PracticeItem.objects.get(lesson__slug=NUMBERS, order=order)
++            with self.subTest(order=order):
++                self.credit("practice", item, item.answer, required, forbidden, f"number-{order}")
++
++    def test_family_translations_do_not_credit_unasked_family_questions(self):
++        for order, required, forbidden in (
++            (1, {"LX-00099"}, {"LX-00102", "LX-00103"}),
++            (2, {"LX-00088"}, {"LX-00101", "LX-00103"}),
++            (3, {"LX-00002", "LX-00039"}, {"LX-00101", "LX-00102", "LX-00103"}),
++            (4, {"LX-00095", "LX-00278"}, {"LX-00101", "LX-00102", "LX-00103"}),
++        ):
++            item = PracticeItem.objects.get(lesson__slug=PHOTO, order=order)
++            with self.subTest(order=order):
++                self.credit("practice", item, item.answer, required, forbidden, f"photo-{order}")
++
++    def test_possession_translations_do_not_credit_the_other_speakers_phrase(self):
++        for order, required, forbidden in (
++            (1, {"LX-00098", "LX-00015"}, {"LX-00104", "LX-00105"}),
++            (2, {"LX-00088", "LX-00071"}, {"LX-00104", "LX-00105"}),
++            (3, {"LX-00097", "LX-00104"}, {"LX-00105"}),
++            (4, {"LX-00039", "LX-00057", "LX-00105"}, {"LX-00104"}),
++        ):
++            item = PracticeItem.objects.get(lesson__slug=POSSESSION, order=order)
++            with self.subTest(order=order):
++                self.credit("practice", item, item.answer, required, forbidden, f"owner-{order}")
++
++    def test_recognition_and_transfer_credit_only_the_answered_skill(self):
++        for serial, (uid, required, forbidden) in enumerate((
++            ("EX-00025", {"LX-00055"}, {"LX-00082"}),
++            ("EX-00026", {"LX-00281"}, {"LX-00285"}),
++            ("EX-00027", {"LX-00282", "LX-00283"}, {"LX-00284", "LX-00285"}),
++            ("EX-00034", {"LX-00002", "LX-00039"}, {"LX-00103"}),
++            ("EX-00039", set(), {"LX-00097"}),
++        )):
++            item = Exercise.objects.get(uid=uid)
++            with self.subTest(uid=uid):
++                credited = self.credit("exercises", item, item.answer, required, forbidden, f"main-{serial}")
++                if uid == "EX-00039":
++                    self.assertEqual(credited, set(), "A grammatical suffix has no standalone lexical UID")
++
++
++    def test_optional_review_targets_the_translated_skill_without_false_error_evidence(self):
++        for slug, targets in (
++            (CAFE, ((1, "EX-00024"), (2, "EX-00026"), (3, "EX-00022"), (4, "EX-00023"))),
++            (NUMBERS, ((1, "EX-00030"), (2, "EX-00029"), (3, "EX-00031"), (4, "EX-00031"))),
++            (PHOTO, ((1, "EX-00032"), (2, "EX-00033"), (3, "EX-00034"), (4, "EX-00037"))),
++            (POSSESSION, ((1, "EX-00041"), (2, "EX-00039"), (3, "EX-00040"))),
++        ):
++            for order, expected_uid in targets:
++                with self.subTest(slug=slug, order=order):
++                    user = get_user_model().objects.create_user(
++                        email=f"review-{slug}-{order}@example.test", password="Test-pass-123!")
++                    self.client.force_login(user)
++                    item = PracticeItem.objects.get(lesson__slug=slug, order=order)
++                    before = timezone.now()
++                    response = self.client.post(reverse("learning:request_practice_review", args=[item.pk]))
++                    self.assertEqual(response.status_code, 200)
++                    self.assertEqual(response.json()["count"], 5)
++                    row = MistakeReview.objects.get(user=user)
++                    self.assertEqual(row.exercise.uid, expected_uid)
++                    self.assertEqual(row.exercise.lesson_id, item.lesson_id)
++                    self.assertGreaterEqual(row.due_at, before + timedelta(days=2))
++                    self.assertLessEqual(row.due_at, timezone.now() + timedelta(days=2))
++                    self.assertEqual((row.current_index, row.correct_count), (0, 0))
++                    self.assertFalse(ExerciseAttempt.objects.filter(user=user).exists())
++                    self.assertFalse(UnitProgress.objects.filter(user=user).exists())
++
++
++class DeepA1IndependentTests(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        ensure_content()
++        cls.user = get_user_model().objects.create_user(email="independent-deep-a1@example.test", password="Test-pass-123!")
++
++    def setUp(self):
++        self.client.force_login(self.user)
++
++    def submit(self, slug, skill, answer, matches):
++        url = reverse("learning:independent_check", args=[slug])
++        page = self.client.get(url)
++        self.assertEqual(page.status_code, 200)
++        guide = page.context["guide"]
++        data = {"action": "batch", "assistance": "no_help", "batch_token": page.context["batch_token"],
++                "transfer_variant": str(page.context["transfer_variant"]),
++                **{"answer_" + key: guide["tasks"][key]["model"]
++                   for key in ("meaning", "writing", "transfer", "explain")}}
++        data["answer_" + skill] = answer
++        before = set(IndependentAttempt.objects.values_list("pk", flat=True))
++        response = self.client.post(url, data)
++        self.assertEqual(response.status_code, 200)
++        saved = IndependentAttempt.objects.exclude(pk__in=before)
++        self.assertEqual(saved.count(), 4)
++        row = saved.get(skill=skill)
++        self.assertEqual(row.submitted, answer)
++        self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
++                         else IndependentAttempt.Outcome.NEEDS_REVIEW)
++        for key in ("transfer", "explain"):
++            self.assertEqual(saved.get(skill=key).outcome, IndependentAttempt.Outcome.SELF_REPORTED)
++
++    def test_tea_writing_recognizes_the_taught_polite_frames(self):
++        for answer, matches in (("Tea, please.", True), ("A tea, please.", True),
++                                ("I'd like a tea, please.", True), ("Can I have a tea, please?", True),
++                                ("Can I have coffee, please?", False), ("I don't like tea.", False),
++                                ("Can I tea, please?", False)):
++            with self.subTest(answer=answer):
++                self.submit(CAFE, "writing", answer, matches)
++
++    def test_coffee_meaning_accepts_the_speakers_gender_without_changing_the_drink(self):
++        for answer, matches in (("Я бы хотела кофе, пожалуйста.", True),
++                                ("Я бы хотел кофе, пожалуйста.", True),
++                                ("Я бы хотела чай, пожалуйста.", False),
++                                ("Мне не нравится кофе.", False)):
++            with self.subTest(answer=answer):
++                self.submit(CAFE, "meaning", answer, matches)
++
++    def test_two_teas_writing_preserves_number_plural_and_drink(self):
++        for answer, matches in (("Can I have two teas, please?", True),
++                                ("I'd like two teas, please.", True), ("Two teas, please.", True),
++                                ("Can I have twelve teas, please?", False),
++                                ("Two coffees, please.", False), ("Two tea, please.", False)):
++            with self.subTest(answer=answer):
++                self.submit(NUMBERS, "writing", answer, matches)
++
++    def test_brother_writing_preserves_the_relation_and_owner(self):
++        for answer, matches in (("That is my brother.", True), ("He is my brother.", True),
++                                ("This is my brother.", True), ("He is your brother.", False),
++                                ("This is my sister.", False), ("He is not my brother.", False)):
++            with self.subTest(answer=answer):
++                self.submit(PHOTO, "writing", answer, matches)
++
++    def test_book_writing_keeps_toms_possession_and_the_apostrophe(self):
++        for answer, matches in (("It is Tom's book.", True), ("That's Tom's book.", True),
++                                ("This is Tom’s book.", True), ("This is Anna's book.", False),
++                                ("This is Toms book.", False), ("This is Tom is book.", False),
++                                ("This is not Tom's book.", False)):
++            with self.subTest(answer=answer):
++                self.submit(POSSESSION, "writing", answer, matches)

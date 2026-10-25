@@ -148,8 +148,8 @@
           "model": "That's all, thank you."
         },
         {
-          "prompt": "В кафе попросите два кофе и вежливо поблагодарите бариста.",
-          "model": "Two coffees, please. Thank you."
+          "prompt": "В кафе попросите кофе и вежливо поблагодарите бариста.",
+          "model": "A coffee, please. Thank you."
         }
       ]
     },
@@ -169,7 +169,7 @@
         {
           "example_en": "I need three books.",
           "example_ru": "Мне нужны три книги.",
-          "why_ru": "Need соединяет желание с количеством и предметом."
+          "why_ru": "Need означает «нуждаться»: I need three books — готовый образец «Мне нужны три книги». Он сообщает потребность, а не наличие. Здесь достаточно понять фразу целиком; в самостоятельном заказе используйте знакомые please / Can I have…?"
         }
       ],
       "transfer_variants": [
@@ -192,9 +192,9 @@
           "why_ru": "Sister называет члена семьи, my показывает отношение к говорящему."
         },
         {
-          "example_en": "She is a teacher.",
-          "example_ru": "Она учитель.",
-          "why_ru": "She заменяет повтор имени; с she берём is. Профессия требует a."
+          "example_en": "She is forty.",
+          "example_ru": "Ей сорок.",
+          "why_ru": "She заменяет повтор названия человека; с she выбираем is. Число forty сообщает возраст."
         },
         {
           "example_en": "Is she your sister?",
@@ -204,12 +204,12 @@
       ],
       "transfer_variants": [
         {
-          "prompt": "Показывая фотографию, представьте брата и скажите, что он студент.",
-          "model": "This is my brother. He is a student."
+          "prompt": "Показывая вымышленную фотографию, представьте брата и скажите, что ему десять.",
+          "model": "This is my brother. He is ten."
         },
         {
-          "prompt": "На фотографии ваша мама. Представьте её и скажите, что она врач.",
-          "model": "This is my mom. She is a doctor."
+          "prompt": "На вымышленной фотографии ваша мама. Представьте её и скажите, что ей пятьдесят.",
+          "model": "This is my mom. She is fifty."
         }
       ]
     },
@@ -217,19 +217,19 @@
       "slug": "a1-family-possession",
       "steps": [
         {
-          "example_en": "This is Anna's bag.",
-          "example_ru": "Это сумка Анны.",
-          "why_ru": "Окончание 's у имени обычно обозначает владельца."
+          "example_en": "This is Anna's book.",
+          "example_ru": "Это книга Анны.",
+          "why_ru": "'s после имени Anna помогает указать, чья книга."
         },
         {
-          "example_en": "It is her bag.",
-          "example_ru": "Это её сумка.",
-          "why_ru": "Her перед bag показывает владельца; слово bag остаётся существительным."
+          "example_en": "It is her book.",
+          "example_ru": "Это её книга.",
+          "why_ru": "Her перед book указывает на Анну; book называет вещь."
         },
         {
-          "example_en": "Whose bag is this?",
-          "example_ru": "Чья это сумка?",
-          "why_ru": "Whose задаёт вопрос о владельце, а не о местонахождении."
+          "example_en": "Is this her book?",
+          "example_ru": "Это её книга?",
+          "why_ru": "В полном вопросе ставим is перед this; her по-прежнему показывает, чья книга."
         }
       ],
       "transfer_variants": [
@@ -238,8 +238,8 @@
           "model": "This is Tom's phone."
         },
         {
-          "prompt": "Вы нашли ключ своей сестры. Скажите другу, кому он принадлежит.",
-          "model": "This is my sister's key."
+          "prompt": "Вы нашли книгу Мии. Назовите её владелицу по имени.",
+          "model": "This is Mia's book."
         }
       ]
     },

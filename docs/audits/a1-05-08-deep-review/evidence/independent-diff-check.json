@@ -1,0 +1,25 @@
+{
+  "base": "fb79cd7a9b1a35ac55c7f5d0f1cf9dde73115f7e",
+  "status": "PASS",
+  "files": [
+    "content/active_a1/error_repairs_01_18.json",
+    "content/active_a1/scenarios_01_06.json",
+    "content/active_a1/scenarios_07_12.json",
+    "content/active_a1/topics_01_08.json",
+    "content/manifests/a1_delayed_review_07.json",
+    "content/manifests/a1_delayed_review_08.json",
+    "content/manifests/a1_scaffold_transfer.json",
+    "content/manifests/a1_understanding_checks.json",
+    "content/seed_lessons/a1_w03_l05_cafe.yaml",
+    "content/seed_lessons/a1_w03_l06_numbers.yaml",
+    "content/seed_lessons/a1_w04_l07_family.yaml",
+    "content/seed_lessons/a1_w04_l08_possession.yaml",
+    "content/seed_lexicon/a1_w03_cafe_plus.yaml",
+    "content/seed_lexicon/a1_w03_pilot.yaml",
+    "content/seed_lexicon/a1_w04_family_plus.yaml",
+    "content/seed_lexicon/a1_w04_pilot.yaml",
+    "content/seed_weeks/a1_w03.yaml",
+    "content/seed_weeks/a1_w04.yaml"
+  ],
+  "bounds": "structural/semantic diff only; no DB/browser/audio run"
+}

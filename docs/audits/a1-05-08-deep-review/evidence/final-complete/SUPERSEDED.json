@@ -1,0 +1,5 @@
+{
+  "status": "INTERRUPTED_SUPERSEDED",
+  "wrapper_exit_code": 130,
+  "reason": "Draft poem target hypothesis was disproved (LX-00100 is happy, not they). Correct original target list restored; final poem regression checks actual rendered age labels. No draft full PASS claimed; complete final run is under verified/."
+}

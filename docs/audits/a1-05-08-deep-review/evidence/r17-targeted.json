@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python",
+    "manage.py",
+    "test",
+    "tests.test_a1_editorial_01_04",
+    "tests.test_a1_translation",
+    "--noinput"
+  ],
+  "exit_code": 0,
+  "seconds": 18.006680796999717,
+  "baseline": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "database_url": "sqlite:////tmp/ee-117-r17-1xc112zy/fixture.sqlite3"
+}

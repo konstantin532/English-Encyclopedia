@@ -1,0 +1,13 @@
+# English-Encyclopedia mutation probes
+
+**Detected 4/4 deliberately introduced bugs.**
+
+| Mutated behavior | Result |
+|---|---|
+| Curly apostrophes | KILLED: detected by test |
+| Trailing punctuation | KILLED: detected by test |
+| Comma separation | KILLED: detected by test |
+| Accepted alternatives | KILLED: detected by test |
+
+This is a small smoke test, not a full mutation score. No project files were changed.
+

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "git",
+    "apply",
+    "--check",
+    "SOURCE.patch"
+  ],
+  "cwd": "clean detached worktree at5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "exit_code": 0
+}

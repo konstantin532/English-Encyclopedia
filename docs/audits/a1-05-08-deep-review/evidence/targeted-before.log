@@ -1,0 +1,851 @@
+Found 18 test(s).
+Creating test database for alias 'default'...
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).
+/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-a1-05-08-tests/staticfiles/
+  mw_instance = middleware(adapted_handler)
+FFFFFFFFFFFFFFFFFFFFFFF.FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+======================================================================
+FAIL: test_cafe_transfer_accepts_taught_requests_and_both_ordered_items (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_cafe_transfer_accepts_taught_requests_and_both_ordered_items) (uid='EX-00025', answer="I'd like a tea, please.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 55, in test_cafe_transfer_accepts_taught_requests_and_both_ordered_items
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I'd like a tea, please.
+
+======================================================================
+FAIL: test_cafe_transfer_accepts_taught_requests_and_both_ordered_items (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_cafe_transfer_accepts_taught_requests_and_both_ordered_items) (uid='EX-00025', answer='I would like a tea, please.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 55, in test_cafe_transfer_accepts_taught_requests_and_both_ordered_items
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I would like a tea, please.
+
+======================================================================
+FAIL: test_cafe_transfer_accepts_taught_requests_and_both_ordered_items (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_cafe_transfer_accepts_taught_requests_and_both_ordered_items) (uid='EX-00027', answer="I'd like a juice and a sandwich, please.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 55, in test_cafe_transfer_accepts_taught_requests_and_both_ordered_items
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I'd like a juice and a sandwich, please.
+
+======================================================================
+FAIL: test_cafe_transfer_accepts_taught_requests_and_both_ordered_items (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_cafe_transfer_accepts_taught_requests_and_both_ordered_items) (uid='EX-00027', answer='I would like a juice and a sandwich, please.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 55, in test_cafe_transfer_accepts_taught_requests_and_both_ordered_items
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I would like a juice and a sandwich, please.
+
+======================================================================
+FAIL: test_cafe_transfer_accepts_taught_requests_and_both_ordered_items (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_cafe_transfer_accepts_taught_requests_and_both_ordered_items) (uid='EX-00027', answer='A juice and a sandwich, please.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 55, in test_cafe_transfer_accepts_taught_requests_and_both_ordered_items
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : A juice and a sandwich, please.
+
+======================================================================
+FAIL: test_four_servings_preserve_number_drink_and_plural (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_four_servings_preserve_number_drink_and_plural) (answer="I'd like four teas, please.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 65, in test_four_servings_preserve_number_drink_and_plural
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I'd like four teas, please.
+
+======================================================================
+FAIL: test_four_servings_preserve_number_drink_and_plural (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_four_servings_preserve_number_drink_and_plural) (answer='I would like four teas, please.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 65, in test_four_servings_preserve_number_drink_and_plural
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I would like four teas, please.
+
+======================================================================
+FAIL: test_mias_brother_translation_preserves_possession_and_age (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_mias_brother_translation_preserves_possession_and_age) (answer="Mia's brother is 10.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 128, in test_mias_brother_translation_preserves_possession_and_age
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Mia's brother is 10.
+
+======================================================================
+FAIL: test_mias_brother_translation_preserves_possession_and_age (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_mias_brother_translation_preserves_possession_and_age) (answer="Mia's brother is ten years old.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 128, in test_mias_brother_translation_preserves_possession_and_age
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Mia's brother is ten years old.
+
+======================================================================
+FAIL: test_mias_brother_translation_preserves_possession_and_age (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_mias_brother_translation_preserves_possession_and_age) (answer="Mia's brother is 10 years old.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 128, in test_mias_brother_translation_preserves_possession_and_age
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Mia's brother is 10 years old.
+
+======================================================================
+FAIL: test_name_translations_allow_only_the_explicit_noun_contractions (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_name_translations_allow_only_the_explicit_noun_contractions) (order=1, answer="Her name's Mia.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 111, in test_name_translations_allow_only_the_explicit_noun_contractions
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Her name's Mia.
+
+======================================================================
+FAIL: test_name_translations_allow_only_the_explicit_noun_contractions (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_name_translations_allow_only_the_explicit_noun_contractions) (order=1, answer='Her name’s Mia.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 111, in test_name_translations_allow_only_the_explicit_noun_contractions
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Her name’s Mia.
+
+======================================================================
+FAIL: test_name_translations_allow_only_the_explicit_noun_contractions (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_name_translations_allow_only_the_explicit_noun_contractions) (order=3, answer="His name's Tom.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 111, in test_name_translations_allow_only_the_explicit_noun_contractions
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : His name's Tom.
+
+======================================================================
+FAIL: test_name_translations_allow_only_the_explicit_noun_contractions (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_name_translations_allow_only_the_explicit_noun_contractions) (order=3, answer='His name’s Tom.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 111, in test_name_translations_allow_only_the_explicit_noun_contractions
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : His name’s Tom.
+
+======================================================================
+FAIL: test_number_translations_accept_requests_without_swapping_the_quantities (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_number_translations_accept_requests_without_swapping_the_quantities) (order=1, answer='Can I have two coffees and one tea, please?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 82, in test_number_translations_accept_requests_without_swapping_the_quantities
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Can I have two coffees and one tea, please?
+
+======================================================================
+FAIL: test_number_translations_accept_requests_without_swapping_the_quantities (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_number_translations_accept_requests_without_swapping_the_quantities) (order=1, answer="I'd like two coffees and one tea, please.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 82, in test_number_translations_accept_requests_without_swapping_the_quantities
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I'd like two coffees and one tea, please.
+
+======================================================================
+FAIL: test_number_translations_accept_requests_without_swapping_the_quantities (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_number_translations_accept_requests_without_swapping_the_quantities) (order=1, answer='One tea and two coffees, please.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 82, in test_number_translations_accept_requests_without_swapping_the_quantities
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : One tea and two coffees, please.
+
+======================================================================
+FAIL: test_number_translations_accept_requests_without_swapping_the_quantities (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_number_translations_accept_requests_without_swapping_the_quantities) (order=2, answer='Can I have three teas, please?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 82, in test_number_translations_accept_requests_without_swapping_the_quantities
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : Can I have three teas, please?
+
+======================================================================
+FAIL: test_number_translations_accept_requests_without_swapping_the_quantities (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_number_translations_accept_requests_without_swapping_the_quantities) (order=2, answer="I'd like three teas, please.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 82, in test_number_translations_accept_requests_without_swapping_the_quantities
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : I'd like three teas, please.
+
+======================================================================
+FAIL: test_photo_transfer_accepts_years_old_but_preserves_sister_and_age (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_photo_transfer_accepts_years_old_but_preserves_sister_and_age) (answer='This is my sister. She is twelve years old.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 93, in test_photo_transfer_accepts_years_old_but_preserves_sister_and_age
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : This is my sister. She is twelve years old.
+
+======================================================================
+FAIL: test_photo_transfer_accepts_years_old_but_preserves_sister_and_age (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_photo_transfer_accepts_years_old_but_preserves_sister_and_age) (answer='This is my sister. She is 12 years old.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 93, in test_photo_transfer_accepts_years_old_but_preserves_sister_and_age
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : This is my sister. She is 12 years old.
+
+======================================================================
+FAIL: test_photo_transfer_accepts_years_old_but_preserves_sister_and_age (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_photo_transfer_accepts_years_old_but_preserves_sister_and_age) (answer='It is my sister. She is twelve.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 93, in test_photo_transfer_accepts_years_old_but_preserves_sister_and_age
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : It is my sister. She is twelve.
+
+======================================================================
+FAIL: test_photo_transfer_accepts_years_old_but_preserves_sister_and_age (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_photo_transfer_accepts_years_old_but_preserves_sister_and_age) (answer="It's my sister. She is twelve.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 93, in test_photo_transfer_accepts_years_old_but_preserves_sister_and_age
+    self.check(item, answer, True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : It's my sister. She is twelve.
+
+======================================================================
+FAIL: test_cafe_answers_do_not_credit_unspoken_requests_or_replies (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_cafe_answers_do_not_credit_unspoken_requests_or_replies) (order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 167, in test_cafe_answers_do_not_credit_unspoken_requests_or_replies
+    self.credit("practice", item, "Coffee, please." if order == 2 else item.answer,
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                required, forbidden, f"cafe-{order}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 150, in credit
+    self.assertFalse(set(forbidden) & credited, credited)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00084', 'LX-00285'} is not false : {'LX-00084', 'LX-00056', 'LX-00285'}
+
+======================================================================
+FAIL: test_cafe_answers_do_not_credit_unspoken_requests_or_replies (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_cafe_answers_do_not_credit_unspoken_requests_or_replies) (order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 167, in test_cafe_answers_do_not_credit_unspoken_requests_or_replies
+    self.credit("practice", item, "Coffee, please." if order == 2 else item.answer,
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                required, forbidden, f"cafe-{order}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 149, in credit
+    self.assertTrue(set(required) <= credited, credited)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'LX-00284', 'LX-00084', 'LX-00082', 'LX-00281', 'LX-00285'}
+
+======================================================================
+FAIL: test_cafe_answers_do_not_credit_unspoken_requests_or_replies (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_cafe_answers_do_not_credit_unspoken_requests_or_replies) (order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 167, in test_cafe_answers_do_not_credit_unspoken_requests_or_replies
+    self.credit("practice", item, "Coffee, please." if order == 2 else item.answer,
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                required, forbidden, f"cafe-{order}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 150, in credit
+    self.assertFalse(set(forbidden) & credited, credited)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00085', 'LX-00284', 'LX-00087', 'LX-00086', 'LX-00285'} is not false : {'LX-00085', 'LX-00284', 'LX-00084', 'LX-00060', 'LX-00087', 'LX-00086', 'LX-00285'}
+
+======================================================================
+FAIL: test_cafe_answers_do_not_credit_unspoken_requests_or_replies (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_cafe_answers_do_not_credit_unspoken_requests_or_replies) (order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 167, in test_cafe_answers_do_not_credit_unspoken_requests_or_replies
+    self.credit("practice", item, "Coffee, please." if order == 2 else item.answer,
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                required, forbidden, f"cafe-{order}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 150, in credit
+    self.assertFalse(set(forbidden) & credited, credited)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00285'} is not false : {'LX-00058', 'LX-00055', 'LX-00285', 'LX-00082'}
+
+======================================================================
+FAIL: test_family_translations_do_not_credit_unasked_family_questions (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_family_translations_do_not_credit_unasked_family_questions) (order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 190, in test_family_translations_do_not_credit_unasked_family_questions
+    self.credit("practice", item, item.answer, required, forbidden, f"photo-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 150, in credit
+    self.assertFalse(set(forbidden) & credited, credited)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00102', 'LX-00103'} is not false : {'LX-00103', 'LX-00102', 'LX-00101', 'LX-00099'}
+
+======================================================================
+FAIL: test_family_translations_do_not_credit_unasked_family_questions (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_family_translations_do_not_credit_unasked_family_questions) (order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 190, in test_family_translations_do_not_credit_unasked_family_questions
+    self.credit("practice", item, item.answer, required, forbidden, f"photo-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 150, in credit
+    self.assertFalse(set(forbidden) & credited, credited)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00101', 'LX-00103'} is not false : {'LX-00088', 'LX-00102', 'LX-00101', 'LX-00103'}
+
+======================================================================
+FAIL: test_family_translations_do_not_credit_unasked_family_questions (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_family_translations_do_not_credit_unasked_family_questions) (order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 190, in test_family_translations_do_not_credit_unasked_family_questions
+    self.credit("practice", item, item.answer, required, forbidden, f"photo-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 149, in credit
+    self.assertTrue(set(required) <= credited, credited)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'LX-00102', 'LX-00101', 'LX-00103'}
+
+======================================================================
+FAIL: test_family_translations_do_not_credit_unasked_family_questions (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_family_translations_do_not_credit_unasked_family_questions) (order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 190, in test_family_translations_do_not_credit_unasked_family_questions
+    self.credit("practice", item, item.answer, required, forbidden, f"photo-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 149, in credit
+    self.assertTrue(set(required) <= credited, credited)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'LX-00278', 'LX-00102', 'LX-00101', 'LX-00103'}
+
+======================================================================
+FAIL: test_optional_review_targets_the_translated_skill_without_false_error_evidence (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_optional_review_targets_the_translated_skill_without_false_error_evidence) (slug='a1-cafe-order', order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 236, in test_optional_review_targets_the_translated_skill_without_false_error_evidence
+    self.assertEqual(row.exercise.uid, expected_uid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EX-00024' != 'EX-00026'
+- EX-00024
+?        ^
++ EX-00026
+?        ^
+
+
+======================================================================
+FAIL: test_optional_review_targets_the_translated_skill_without_false_error_evidence (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_optional_review_targets_the_translated_skill_without_false_error_evidence) (slug='a1-cafe-order', order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 236, in test_optional_review_targets_the_translated_skill_without_false_error_evidence
+    self.assertEqual(row.exercise.uid, expected_uid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EX-00024' != 'EX-00022'
+- EX-00024
+?        ^
++ EX-00022
+?        ^
+
+
+======================================================================
+FAIL: test_optional_review_targets_the_translated_skill_without_false_error_evidence (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_optional_review_targets_the_translated_skill_without_false_error_evidence) (slug='a1-cafe-order', order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 236, in test_optional_review_targets_the_translated_skill_without_false_error_evidence
+    self.assertEqual(row.exercise.uid, expected_uid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EX-00024' != 'EX-00023'
+- EX-00024
+?        ^
++ EX-00023
+?        ^
+
+
+======================================================================
+FAIL: test_optional_review_targets_the_translated_skill_without_false_error_evidence (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_optional_review_targets_the_translated_skill_without_false_error_evidence) (slug='a1-numbers-1-20', order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 236, in test_optional_review_targets_the_translated_skill_without_false_error_evidence
+    self.assertEqual(row.exercise.uid, expected_uid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EX-00030' != 'EX-00029'
+- EX-00030
+?       ^^
++ EX-00029
+?       ^^
+
+
+======================================================================
+FAIL: test_optional_review_targets_the_translated_skill_without_false_error_evidence (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_optional_review_targets_the_translated_skill_without_false_error_evidence) (slug='a1-numbers-1-20', order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 236, in test_optional_review_targets_the_translated_skill_without_false_error_evidence
+    self.assertEqual(row.exercise.uid, expected_uid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EX-00030' != 'EX-00031'
+- EX-00030
+?        ^
++ EX-00031
+?        ^
+
+
+======================================================================
+FAIL: test_optional_review_targets_the_translated_skill_without_false_error_evidence (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_optional_review_targets_the_translated_skill_without_false_error_evidence) (slug='a1-numbers-1-20', order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 236, in test_optional_review_targets_the_translated_skill_without_false_error_evidence
+    self.assertEqual(row.exercise.uid, expected_uid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EX-00030' != 'EX-00031'
+- EX-00030
+?        ^
++ EX-00031
+?        ^
+
+
+======================================================================
+FAIL: test_optional_review_targets_the_translated_skill_without_false_error_evidence (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_optional_review_targets_the_translated_skill_without_false_error_evidence) (slug='a1-family-photo', order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 236, in test_optional_review_targets_the_translated_skill_without_false_error_evidence
+    self.assertEqual(row.exercise.uid, expected_uid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EX-00034' != 'EX-00032'
+- EX-00034
+?        ^
++ EX-00032
+?        ^
+
+
+======================================================================
+FAIL: test_optional_review_targets_the_translated_skill_without_false_error_evidence (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_optional_review_targets_the_translated_skill_without_false_error_evidence) (slug='a1-family-photo', order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 236, in test_optional_review_targets_the_translated_skill_without_false_error_evidence
+    self.assertEqual(row.exercise.uid, expected_uid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EX-00034' != 'EX-00033'
+- EX-00034
+?        ^
++ EX-00033
+?        ^
+
+
+======================================================================
+FAIL: test_optional_review_targets_the_translated_skill_without_false_error_evidence (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_optional_review_targets_the_translated_skill_without_false_error_evidence) (slug='a1-family-photo', order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 236, in test_optional_review_targets_the_translated_skill_without_false_error_evidence
+    self.assertEqual(row.exercise.uid, expected_uid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EX-00034' != 'EX-00037'
+- EX-00034
+?        ^
++ EX-00037
+?        ^
+
+
+======================================================================
+FAIL: test_optional_review_targets_the_translated_skill_without_false_error_evidence (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_optional_review_targets_the_translated_skill_without_false_error_evidence) (slug='a1-family-possession', order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 236, in test_optional_review_targets_the_translated_skill_without_false_error_evidence
+    self.assertEqual(row.exercise.uid, expected_uid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EX-00040' != 'EX-00041'
+- EX-00040
+?        ^
++ EX-00041
+?        ^
+
+
+======================================================================
+FAIL: test_optional_review_targets_the_translated_skill_without_false_error_evidence (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_optional_review_targets_the_translated_skill_without_false_error_evidence) (slug='a1-family-possession', order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 236, in test_optional_review_targets_the_translated_skill_without_false_error_evidence
+    self.assertEqual(row.exercise.uid, expected_uid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EX-00040' != 'EX-00039'
+- EX-00040
+?       ^^
++ EX-00039
+?       ^^
+
+
+======================================================================
+FAIL: test_possession_translations_do_not_credit_the_other_speakers_phrase (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_possession_translations_do_not_credit_the_other_speakers_phrase) (order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 201, in test_possession_translations_do_not_credit_the_other_speakers_phrase
+    self.credit("practice", item, item.answer, required, forbidden, f"owner-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 149, in credit
+    self.assertTrue(set(required) <= credited, credited)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'LX-00098', 'LX-00104', 'LX-00105'}
+
+======================================================================
+FAIL: test_possession_translations_do_not_credit_the_other_speakers_phrase (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_possession_translations_do_not_credit_the_other_speakers_phrase) (order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 201, in test_possession_translations_do_not_credit_the_other_speakers_phrase
+    self.credit("practice", item, item.answer, required, forbidden, f"owner-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 149, in credit
+    self.assertTrue(set(required) <= credited, credited)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'LX-00104', 'LX-00105'}
+
+======================================================================
+FAIL: test_possession_translations_do_not_credit_the_other_speakers_phrase (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_possession_translations_do_not_credit_the_other_speakers_phrase) (order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 201, in test_possession_translations_do_not_credit_the_other_speakers_phrase
+    self.credit("practice", item, item.answer, required, forbidden, f"owner-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 150, in credit
+    self.assertFalse(set(forbidden) & credited, credited)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00105'} is not false : {'LX-00097', 'LX-00104', 'LX-00105'}
+
+======================================================================
+FAIL: test_possession_translations_do_not_credit_the_other_speakers_phrase (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_possession_translations_do_not_credit_the_other_speakers_phrase) (order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 201, in test_possession_translations_do_not_credit_the_other_speakers_phrase
+    self.credit("practice", item, item.answer, required, forbidden, f"owner-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 149, in credit
+    self.assertTrue(set(required) <= credited, credited)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'LX-00104', 'LX-00105'}
+
+======================================================================
+FAIL: test_quantity_answers_credit_the_actual_drink_or_food (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_quantity_answers_credit_the_actual_drink_or_food) (order=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 179, in test_quantity_answers_credit_the_actual_drink_or_food
+    self.credit("practice", item, item.answer, required, forbidden, f"number-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 149, in credit
+    self.assertTrue(set(required) <= credited, credited)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'LX-00083', 'LX-00062', 'LX-00063'}
+
+======================================================================
+FAIL: test_quantity_answers_credit_the_actual_drink_or_food (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_quantity_answers_credit_the_actual_drink_or_food) (order=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 179, in test_quantity_answers_credit_the_actual_drink_or_food
+    self.credit("practice", item, item.answer, required, forbidden, f"number-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 149, in credit
+    self.assertTrue(set(required) <= credited, credited)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'LX-00083', 'LX-00064'}
+
+======================================================================
+FAIL: test_quantity_answers_credit_the_actual_drink_or_food (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_quantity_answers_credit_the_actual_drink_or_food) (order=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 179, in test_quantity_answers_credit_the_actual_drink_or_food
+    self.credit("practice", item, item.answer, required, forbidden, f"number-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 149, in credit
+    self.assertTrue(set(required) <= credited, credited)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'LX-00083', 'LX-00073'}
+
+======================================================================
+FAIL: test_quantity_answers_credit_the_actual_drink_or_food (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_quantity_answers_credit_the_actual_drink_or_food) (order=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 179, in test_quantity_answers_credit_the_actual_drink_or_food
+    self.credit("practice", item, item.answer, required, forbidden, f"number-{order}")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 149, in credit
+    self.assertTrue(set(required) <= credited, credited)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'LX-00066'}
+
+======================================================================
+FAIL: test_recognition_and_transfer_credit_only_the_answered_skill (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_recognition_and_transfer_credit_only_the_answered_skill) (uid='EX-00025')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 213, in test_recognition_and_transfer_credit_only_the_answered_skill
+    credited = self.credit("exercises", item, item.answer, required, forbidden, f"main-{serial}")
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 150, in credit
+    self.assertFalse(set(forbidden) & credited, credited)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00082'} is not false : {'LX-00055', 'LX-00082'}
+
+======================================================================
+FAIL: test_recognition_and_transfer_credit_only_the_answered_skill (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_recognition_and_transfer_credit_only_the_answered_skill) (uid='EX-00026')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 213, in test_recognition_and_transfer_credit_only_the_answered_skill
+    credited = self.credit("exercises", item, item.answer, required, forbidden, f"main-{serial}")
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 150, in credit
+    self.assertFalse(set(forbidden) & credited, credited)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00285'} is not false : {'LX-00285', 'LX-00281'}
+
+======================================================================
+FAIL: test_recognition_and_transfer_credit_only_the_answered_skill (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_recognition_and_transfer_credit_only_the_answered_skill) (uid='EX-00027')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 213, in test_recognition_and_transfer_credit_only_the_answered_skill
+    credited = self.credit("exercises", item, item.answer, required, forbidden, f"main-{serial}")
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 150, in credit
+    self.assertFalse(set(forbidden) & credited, credited)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00284', 'LX-00285'} is not false : {'LX-00282', 'LX-00284', 'LX-00283', 'LX-00285'}
+
+======================================================================
+FAIL: test_recognition_and_transfer_credit_only_the_answered_skill (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_recognition_and_transfer_credit_only_the_answered_skill) (uid='EX-00034')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 213, in test_recognition_and_transfer_credit_only_the_answered_skill
+    credited = self.credit("exercises", item, item.answer, required, forbidden, f"main-{serial}")
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 149, in credit
+    self.assertTrue(set(required) <= credited, credited)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'LX-00103'}
+
+======================================================================
+FAIL: test_recognition_and_transfer_credit_only_the_answered_skill (tests.test_a1_editorial_deep_05_08.DeepA1EvidenceTests.test_recognition_and_transfer_credit_only_the_answered_skill) (uid='EX-00039')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 213, in test_recognition_and_transfer_credit_only_the_answered_skill
+    credited = self.credit("exercises", item, item.answer, required, forbidden, f"main-{serial}")
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 150, in credit
+    self.assertFalse(set(forbidden) & credited, credited)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'LX-00097'} is not false : {'LX-00097'}
+
+======================================================================
+FAIL: test_book_writing_keeps_toms_possession_and_the_apostrophe (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_book_writing_keeps_toms_possession_and_the_apostrophe) (answer="It is Tom's book.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 313, in test_book_writing_keeps_toms_possession_and_the_apostrophe
+    self.submit(POSSESSION, "writing", answer, matches)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_book_writing_keeps_toms_possession_and_the_apostrophe (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_book_writing_keeps_toms_possession_and_the_apostrophe) (answer="That's Tom's book.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 313, in test_book_writing_keeps_toms_possession_and_the_apostrophe
+    self.submit(POSSESSION, "writing", answer, matches)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_brother_writing_preserves_the_relation_and_owner (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_brother_writing_preserves_the_relation_and_owner) (answer='That is my brother.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 305, in test_brother_writing_preserves_the_relation_and_owner
+    self.submit(PHOTO, "writing", answer, matches)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_brother_writing_preserves_the_relation_and_owner (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_brother_writing_preserves_the_relation_and_owner) (answer='He is my brother.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 305, in test_brother_writing_preserves_the_relation_and_owner
+    self.submit(PHOTO, "writing", answer, matches)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_coffee_meaning_accepts_the_speakers_gender_without_changing_the_drink (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_coffee_meaning_accepts_the_speakers_gender_without_changing_the_drink) (answer='Я бы хотела кофе, пожалуйста.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 290, in test_coffee_meaning_accepts_the_speakers_gender_without_changing_the_drink
+    self.submit(CAFE, "meaning", answer, matches)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_tea_writing_recognizes_the_taught_polite_frames (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_tea_writing_recognizes_the_taught_polite_frames) (answer='Tea, please.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 282, in test_tea_writing_recognizes_the_taught_polite_frames
+    self.submit(CAFE, "writing", answer, matches)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_tea_writing_recognizes_the_taught_polite_frames (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_tea_writing_recognizes_the_taught_polite_frames) (answer='A tea, please.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 282, in test_tea_writing_recognizes_the_taught_polite_frames
+    self.submit(CAFE, "writing", answer, matches)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_tea_writing_recognizes_the_taught_polite_frames (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_tea_writing_recognizes_the_taught_polite_frames) (answer="I'd like a tea, please.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 282, in test_tea_writing_recognizes_the_taught_polite_frames
+    self.submit(CAFE, "writing", answer, matches)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_tea_writing_recognizes_the_taught_polite_frames (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_tea_writing_recognizes_the_taught_polite_frames) (answer='Can I have a tea, please?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 282, in test_tea_writing_recognizes_the_taught_polite_frames
+    self.submit(CAFE, "writing", answer, matches)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_two_teas_writing_preserves_number_plural_and_drink (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_two_teas_writing_preserves_number_plural_and_drink) (answer='Can I have two teas, please?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 298, in test_two_teas_writing_preserves_number_plural_and_drink
+    self.submit(NUMBERS, "writing", answer, matches)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_two_teas_writing_preserves_number_plural_and_drink (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_two_teas_writing_preserves_number_plural_and_drink) (answer="I'd like two teas, please.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 298, in test_two_teas_writing_preserves_number_plural_and_drink
+    self.submit(NUMBERS, "writing", answer, matches)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ee-a1-05-08-tests/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     else IndependentAttempt.Outcome.NEEDS_REVIEW)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.296s
+
+FAILED (failures=66)
+Destroying test database for alias 'default'...

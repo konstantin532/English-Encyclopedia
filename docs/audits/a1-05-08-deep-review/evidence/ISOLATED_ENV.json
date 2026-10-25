@@ -1,0 +1,16 @@
+{
+  "database": "/tmp/ee-a1-05-08-isolated-u0ydp8lk/fixture.sqlite3",
+  "env": {
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "PATH": "/root/.codex/tmp/arg0/codex-arg07RZdG1:/opt/codex/codex-path:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "DJANGO_SETTINGS_MODULE": "config.settings.test",
+    "DATABASE_URL": "sqlite:////tmp/ee-a1-05-08-isolated-u0ydp8lk/fixture.sqlite3",
+    "TEST_DATABASE_URL": "sqlite:////tmp/ee-a1-05-08-isolated-u0ydp8lk/fixture.sqlite3",
+    "DJANGO_SECRET_KEY": "a1-05-08-isolated-only",
+    "DJANGO_ALLOWED_HOSTS": "localhost,127.0.0.1,testserver",
+    "DJANGO_TEST_PROCESSES": "4",
+    "PYTHONUNBUFFERED": "1"
+  }
+}

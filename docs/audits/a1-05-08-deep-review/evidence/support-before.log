@@ -1,0 +1,78 @@
+Found 3 test(s).
+Creating test database for alias 'default'...
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).
+FFFF/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/lib/python3.13/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /tmp/ee-a1-05-08-support-before/staticfiles/
+  mw_instance = middleware(adapted_handler)
+F
+======================================================================
+FAIL: test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase (tests.test_a1_deep_05_08_support.DeepA1SupportTests.test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase) (slug='a1-family-photo', model='This is my brother. He is a student.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-support-before/tests/test_a1_deep_05_08_support.py", line 38, in test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['student'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'student'
+
+- ['student']
++ []
+
+======================================================================
+FAIL: test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase (tests.test_a1_deep_05_08_support.DeepA1SupportTests.test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase) (slug='a1-family-photo', model='This is my mom. She is a doctor.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-support-before/tests/test_a1_deep_05_08_support.py", line 38, in test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['doctor'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'doctor'
+
+- ['doctor']
++ []
+
+======================================================================
+FAIL: test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase (tests.test_a1_deep_05_08_support.DeepA1SupportTests.test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase) (slug='a1-family-possession', model="This is my sister's key.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-support-before/tests/test_a1_deep_05_08_support.py", line 38, in test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['key'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'key'
+
+- ['key']
++ []
+
+======================================================================
+FAIL: test_echo_distractors_get_card_specific_feedback_for_the_required_question_order (tests.test_a1_deep_05_08_support.DeepA1SupportTests.test_echo_distractors_get_card_specific_feedback_for_the_required_question_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-support-before/tests/test_a1_deep_05_08_support.py", line 76, in test_echo_distractors_get_card_specific_feedback_for_the_required_question_order
+    self.assertEqual(len(card), 5)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 4 != 5
+
+======================================================================
+FAIL: test_poem_targets_are_actually_present_and_the_page_serves_the_same_units (tests.test_a1_deep_05_08_support.DeepA1SupportTests.test_poem_targets_are_actually_present_and_the_page_serves_the_same_units)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-support-before/tests/test_a1_deep_05_08_support.py", line 66, in test_poem_targets_are_actually_present_and_the_page_serves_the_same_units
+    self.assertTrue(all(label.endswith('Возраст') for label in parser.labels), parser.labels)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Числительные: Количественные', 'Числительные: Количественные', 'Числительные: Количественные', 'Числительные: Количественные', 'Числительные: Количественные', 'Числительные: Количественные']
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.413s
+
+FAILED (failures=5)
+Destroying test database for alias 'default'...
