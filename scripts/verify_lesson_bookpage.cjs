@@ -80,6 +80,9 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
           }
           await page.locator('[data-a1-route-mode="essentials"]').click();
           await page.locator('.toc a[href="#layer-2"]').click();
+          // The browser dispatches hashchange asynchronously after the click.
+          // Wait for its real outcome; a broken handler still fails this gate.
+          await page.locator('#layer-2').waitFor({state:'visible'});
           assert.equal(await page.locator('#layer-2').isVisible(),true);
           assert.equal(await page.locator('[data-a1-route-mode="full"]').getAttribute('aria-pressed'),'true');
           for(const mode of ['see','echo','recall','transfer']){
