@@ -5,6 +5,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 # Pushing many rapid commits should not leave dozens of obsolete pipelines
@@ -18,13 +19,28 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Classify change impact (fail closed)
+        id: scope
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -o pipefail
+          python scripts/ci_scope.py plan --event "$EVENT" --base "$BASE_SHA" --head "$HEAD_SHA" | tee ci-scope.json
       - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - if: steps.scope.outputs.scope != 'docs'
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: "24"
-      - run: npm install --global pnpm@11.25.0
-      - run: pnpm install --frozen-lockfile --ignore-scripts
-      - run: pnpm check:css
+      - if: steps.scope.outputs.scope != 'docs'
+        run: npm install --global pnpm@11.25.0
+      - if: steps.scope.outputs.scope != 'docs'
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - if: steps.scope.outputs.scope != 'docs'
+        run: pnpm check:css
       - run: uv sync --frozen
       - run: uv run python -m compileall -q apps config tests
       - run: uv run python manage.py check
@@ -32,8 +48,10 @@ jobs:
       # before any Django test client request initializes middleware.
       - run: uv run python manage.py collectstatic --noinput --verbosity 0
       # Diagnostic only: missing voices do not become a false human approval.
-      - run: uv run python scripts/audio_readiness.py
-      - run: uv run python scripts/audit_cefr_evidence.py --strict
+      - if: steps.scope.outputs.scope != 'docs'
+        run: uv run python scripts/audio_readiness.py
+      - if: steps.scope.outputs.scope != 'docs'
+        run: uv run python scripts/audit_cefr_evidence.py --strict
       - run: uv run python manage.py makemigrations --check --dry-run
       # Validate every authored delayed-review card before running the slower suite.
       - run: |
@@ -43,11 +61,15 @@ jobs:
       - run: |
           uv run python manage.py shell -c "from apps.learning.understanding import understanding_bank; b=understanding_bank(); from apps.drills.retry_guidance import PILOT_SLUGS; from apps.learning.understanding import SKILLS; assert set(b)==set(PILOT_SLUGS); assert all(set(guide['tasks'])==set(SKILLS) for guide in b.values()); print('A1 understanding structure OK:', len(b), 'guides')"
       # Failed test names and messages also appear as annotations on the run page.
-      - run: |
+      - env:
+          CI_SCOPE: ${{ steps.scope.outputs.scope }}
+        run: |
           set -o pipefail
-          uv run pytest -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR|SUBFAIL|SUBERROR|[A-Z]+FAIL) |^E  +" pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }
-      - run: node --test tests/js/*.test.cjs
-      - run: |
+          uv run python scripts/ci_scope.py pytest --scope "$CI_SCOPE" -- -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR|SUBFAIL|SUBERROR|[A-Z]+FAIL) |^E  +" pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }
+      - if: steps.scope.outputs.scope != 'docs'
+        run: node --test tests/js/*.test.cjs
+      - if: steps.scope.outputs.scope != 'docs'
+        run: |
           uv run python manage.py migrate -v0
           uv run python manage.py load_content
           uv run python manage.py audit_course
@@ -69,9 +91,22 @@ jobs:
       TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/ee_test
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Classify change impact (fail closed)
+        id: scope
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -o pipefail
+          python scripts/ci_scope.py plan --event "$EVENT" --base "$BASE_SHA" --head "$HEAD_SHA" | tee ci-scope.json
       - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
       - run: uv sync --frozen
       - run: uv run python manage.py collectstatic --noinput --verbosity 0
-      - run: |
+      - env:
+          CI_SCOPE: ${{ steps.scope.outputs.scope }}
+        run: |
           set -o pipefail
-          uv run pytest -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR|SUBFAIL|SUBERROR|[A-Z]+FAIL) |^E  +" pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }
+          uv run python scripts/ci_scope.py pytest --scope "$CI_SCOPE" -- -q -rfE 2>&1 | tee pytest.log || { grep -E "^(FAILED|ERROR|SUBFAIL|SUBERROR|[A-Z]+FAIL) |^E  +" pytest.log | head -40 | sed 's/^/::error::/'; exit 1; }
