@@ -1,3 +1,9 @@
+# A1 9–12 — внедрение для рецензии
+
+Текущее состояние: [REPORT.md](REPORT.md), [STATUS.json](STATUS.json), [CHECKS.md](CHECKS.md). Полный локальный повтор остановлен сбоем среды; не объявляется PASS. Полный pytest проверяется штатным GitHub CI этого PR.
+
+## История исходного checkpoint
+
 # A1 9–12 — локальный WIP checkpoint
 
 author: Codex

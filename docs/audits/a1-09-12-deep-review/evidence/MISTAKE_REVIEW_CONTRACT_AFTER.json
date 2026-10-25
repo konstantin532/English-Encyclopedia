@@ -1,0 +1,15 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "manage.py",
+    "test",
+    "tests.test_a1_mistake_review.A1MistakeReviewTests.test_specific_rule_explanation_comes_from_the_new_question",
+    "--noinput"
+  ],
+  "database": "/tmp/ee-09-12-test-contract-yh47dzt0/fixture.sqlite3",
+  "exit_code": 0,
+  "seconds": 17.854
+}

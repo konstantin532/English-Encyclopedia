@@ -5,14 +5,14 @@
   "date": "2026-10-25",
   "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
   "branch": "editorial/a1-09-12-deep-review-20261025",
-  "checkpoint": "WIP branch checkpoint; full-suite and substantive acceptance pending",
+  "checkpoint": "Implementation published for review; local long-run environment interruption documented",
   "deep_review_lessons": [
     9,
     10,
     11,
     12
   ],
-  "source_files": 19,
+  "source_files": 20,
   "targeted": {
     "tests": 86,
     "exit_code": 0,
@@ -34,12 +34,116 @@
     }
   },
   "load_audit": "PASS isolated SQLite, final integrated state",
-  "full_django": "NOT_RUN",
-  "full_pytest": "NOT_RUN",
-  "browser_desktop_390_keyboard_reduced_motion": "BLOCKED: browser unavailable; not checked in this worktree",
-  "real_audio": "BLOCKED: no actual audio listening",
+  "full_django": "BLOCKED: corrected repeat interrupted by exec-server/environment loss, no final result",
+  "full_pytest": "LOCAL_NOT_RUN: repeat stopped before pytest; full pytest delegated to standard GitHub CI",
+  "browser_desktop_390_keyboard_reduced_motion": "BLOCKED: official Chromium archive truncated; installation and launch exit1",
+  "real_audio": "BLOCKED: no listening performed",
   "postgres": "NOT_RUN",
   "human_acceptance": "NOT_RUN",
   "depends_on_a1_05_08": "No programmatic dependency found; shared JSON rows9–12 only; base predates5–8 edits",
-  "next_command": "python docs/audits/a1-09-12-deep-review/run_verification.py --output docs/audits/a1-09-12-deep-review/evidence/full --full-pytest"
+  "next_command": "python docs/audits/a1-09-12-deep-review/run_verification.py --output docs/audits/a1-09-12-deep-review/evidence/full --full-pytest",
+  "source_commit": "9749fab5af2e9fa72c472b5dc2b9f8823733281d",
+  "first_full_django": "FAIL:845 tests/1 stale literal assertion/2skipped; strengthened test then passed independently",
+  "github_ci": "Track PR checks separately; do not substitute PR118 results",
+  "final_new_checks": {
+    "database-guard": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.567
+    },
+    "uv-sync": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.016
+    },
+    "pnpm-install": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.73
+    },
+    "compileall": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.082
+    },
+    "check": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.45
+    },
+    "collectstatic": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.401
+    },
+    "makemigrations": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.741
+    },
+    "migrate": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 7.913
+    },
+    "load-content": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 7.29
+    },
+    "audit-course": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 7.897
+    },
+    "targeted": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 20.301
+    },
+    "review-contracts": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.426
+    },
+    "css": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 1.294
+    },
+    "js": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 2.348
+    },
+    "audio-readiness": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.069
+    },
+    "cefr": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.989
+    },
+    "fuzz": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.443
+    },
+    "mutation": {
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 4.481
+    }
+  },
+  "quality_gates": {
+    "Correctness": "PASS within editorial and targeted behavioral scope",
+    "Regression": "LOCAL_BLOCKED; full remote PR CI tracked separately",
+    "Security": "N/A no authentication/permission/business logic changes",
+    "DataIntegrity": "PASS frozen source IDs/relations/checkpoint verification",
+    "UX": "BLOCKED browser installation unavailable",
+    "Integration": "PASS isolated SQLite load/audit; remote PostgreSQL tracked in CI",
+    "Evidence": "PASS within available complete and interrupted logs"
+  }
 }

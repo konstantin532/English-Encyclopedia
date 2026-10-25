@@ -1,68 +1,37 @@
-# Проверки checkpoint A1 9–12
+# Новые проверки A1 9–12
 
-author: Codex
-reviewed_by: targeted automated regression; final full review pending
-verification_status: technical_review
-date: 2026-10-25
-source_notes: exact local process metadata and complete copied logs in evidence/
+author: Codex; reviewed_by: recorded process exits; verification_status: technical_review; date:2026-10-25
+source_notes: frozen source9749fab; all DB operations explicitly temporary SQLite; production unused.
 
-Baseline `5826785ee3f665fac765783ba9a95a5dd3b52655`. Все перечисленные мутации базы выполнены с config.settings.test и явно заданными DATABASE_URL / TEST_DATABASE_URL на отдельных временных SQLite. Production не использовалась.
-
-| Проверка | Точная команда | Результат | Wrapper seconds |
+| Проверка | Команда | Результат | Секунды |
 |---|---|---|---|
-| 13 новых тестов, before | `/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python manage.py test tests.test_a1_editorial_deep_09_12 --noinput` | FAIL: 25 failures, воспроизведение на исходнике (exit 1) | 11.882 |
-| 13 новых тестов, after | `/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python manage.py test tests.test_a1_editorial_deep_09_12 --noinput` | PASS: 13 tests; предшествует финальным текстовым уточнениям (exit 0) | 9.913 |
-| Owned финальная граница | `/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python manage.py test tests.test_a1_editorial_deep_09_12 tests.test_a1_editorial_week06 tests.test_grammar_answer_integrity tests.test_a1_pedagogical_continuity tests.test_a1_second_pass --noinput` | PASS: 34 targeted/related tests (exit 0) | 20.363 |
-| 9 новых shared-тестов, before | `/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python manage.py test tests.test_a1_deep_09_12_shared --noinput` | FAIL: 25 failures, воспроизведение на исходнике (exit 1) | 10.536 |
-| 9 новых shared-тестов, after | `/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python manage.py test tests.test_a1_deep_09_12_shared --noinput` | PASS: 9 tests (exit 0) | 11.414 |
-| Первый интегрированный прогон | `/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python manage.py test tests.test_a1_deep_09_12_shared tests.test_a1_editorial_deep_09_12 tests.test_a1_translation tests.test_a1_scaffold_variants tests.test_a1_microsteps tests.test_a1_independent_understanding --noinput` | FAIL: 84 tests, одна ошибочная старая проверка any water (exit 1) | 15.37 |
-| Финальный интегрированный прогон | `/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python manage.py test tests.test_a1_deep_09_12_shared tests.test_a1_editorial_deep_09_12 tests.test_a1_translation tests.test_a1_scaffold_variants tests.test_a1_microsteps tests.test_a1_independent_understanding --noinput` | PASS: 86 tests, 5.118s body (exit 0) | 14.116 |
+|database-guard|`uv run --frozen python manage.py shell -c from django.conf import settings; d=settings.DATABASES['default']; assert d['ENGINE']=='django.db.backends.sqlite3' and d['NAME']=='/tmp/ee-a1-09-12-verification-0wdpv_le/fixture.sqlite3'; print(d['ENGINE'],d['NAME'])`|PASS / exit0|0.567|
+|uv-sync|`uv sync --frozen`|PASS / exit0|0.016|
+|pnpm-install|`pnpm install --frozen-lockfile --ignore-scripts`|PASS / exit0|0.73|
+|compileall|`uv run --frozen python -m compileall -q apps config tests`|PASS / exit0|0.082|
+|check|`uv run --frozen python manage.py check`|PASS / exit0|0.45|
+|collectstatic|`uv run --frozen python manage.py collectstatic --noinput --verbosity 0`|PASS / exit0|0.401|
+|makemigrations|`uv run --frozen python manage.py makemigrations --check --dry-run`|PASS / exit0|0.741|
+|migrate|`uv run --frozen python manage.py migrate --noinput -v0`|PASS / exit0|7.913|
+|load-content|`uv run --frozen python manage.py load_content`|PASS / exit0|7.29|
+|audit-course|`uv run --frozen python manage.py audit_course`|PASS / exit0|7.897|
+|targeted|`uv run --frozen python manage.py test tests.test_a1_editorial_deep_09_12 tests.test_a1_deep_09_12_shared --noinput`|PASS / exit0|20.301|
+|review-contracts|`uv run --frozen python manage.py shell -c from apps.learning.mistake_review import question_bank,COUNT; from apps.learning.understanding import understanding_bank,SKILLS; from apps.drills.retry_guidance import PILOT_SLUGS; b=question_bank(); assert set(b)==set(PILOT_SLUGS); assert all(all(len(c)==COUNT for c in e.values()) for e in b.values()); u=understanding_bank(); assert set(u)==set(PILOT_SLUGS); assert all(set(g['tasks'])==set(SKILLS) for g in u.values()); print(len(b),len(u))`|PASS / exit0|0.426|
+|css|`pnpm check:css`|PASS / exit0|1.294|
+|js|`pnpm test:ui`|PASS / exit0|2.348|
+|audio-readiness|`uv run --frozen python scripts/audio_readiness.py`|PASS / exit0|0.069|
+|cefr|`uv run --frozen python scripts/audit_cefr_evidence.py --strict`|PASS / exit0|0.989|
+|fuzz|`uv run --frozen python scripts/qa_evolution.py fuzz --run-number 0 --seed 20261025`|PASS / exit0|0.443|
+|mutation|`uv run --frozen python scripts/qa_mutation_probe.py --report /workspace/scratch/6babac9ddb0c/English-Encyclopedia/docs/audits/a1-09-12-deep-review/evidence/complete/mutation-report.md`|PASS / exit0|4.481|
 
-Все полные `.log` расположены рядом с одноимёнными JSON. Два before/after набора используют одинаковые окончательные определения тестов; SHA в метаданных и STATUS.json. Ранние промежуточные сравнения не подменяют окончательное.
+First full Django:845 tests,1FAIL,2skipped; full raw log evidence/final/django-full.log. The stale literal test was strengthened, not disabled: MISTAKE_REVIEW_TEST_FIX.json; independent corrected test PASS.
 
-## Загрузка и аудит
+Corrected full Django repeat: BLOCKED by environment interruption, no final exit. Local full pytest: NOT_RUN. Standard GitHub CI will run full pytest on SQLite and PostgreSQL; results must be read from this PR, not PR118.
 
-| Проверка | Команда | Exit | Seconds |
-|---|---|---|---|
-| guard | `/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python manage.py shell -c from django.conf import settings;d=settings.DATABASES['default'];assert d['ENGINE']=='django.db.backends.sqlite3' and d['NAME']=='/tmp/ee-a1-09-12-shared-load-audit-xesvm7pv/fixture.sqlite3';print(d['ENGINE'],d['NAME'])` | 0 | 0.937 |
-| migrate | `/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python manage.py migrate --noinput -v0` | 0 | 3.272 |
-| load-content | `/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python manage.py load_content` | 0 | 11.49 |
-| audit-course | `/workspace/scratch/6babac9ddb0c/English-Encyclopedia/.venv/bin/python manage.py audit_course` | 0 | 7.866 |
+Earlier checkpoint86 targeted PASS and frozen13/9 before/after runs remain in evidence; the fresh targeted22 PASS is in evidence/complete. Frozen test definitions are unchanged.
 
-Guard проверил конкретный путь SQLite перед migrate. Load/audit — на финальном интегрированном источнике; audit «Ошибок нет», но общие предупреждения не скрыты.
+Browser desktop390/keyboard/reduced-motion BLOCKED: install/launch errors in evidence/browser. Actual audio BLOCKED. No human pilot. Local PostgreSQL/Docker unavailable; coverage not run locally. General audit warnings retained.
 
-## Исправленный старый тестовый контракт
+Initial evidence/full stopped during dependency setup because network proxies were omitted; dependencies then installed with normal env and runner corrected to preserve only network proxy settings plus explicit isolated DB. evidence/verified stopped before full tests for final editorial corrections. evidence/final is the completed845/1FAIL run, not PASS. evidence/complete is the interrupted corrected repeat.
 
-Исходный test_fifth_pass_questions_match_speaker_and_situation требовал именно any water. Слово any не вводится в A1 week5; нейтральный вопрос Is there water? грамматически допустим. Старый assert требовал будущую лексику вместо проверки наличия + просьбы. FAIL84/1 сохранён, не переименован в PASS.
-
-Заменена только ошибочная обязательность any: проверяется форма обычного вопроса, сохранено some water в просьбе. Новый отдельный behavioral тест проверяет actual loaded-guide model по словарю этой недели и отправляет вопрос+просьбу через blind independent endpoint; результат остаётся SELF_REPORTED без ложного UnitProgress. Отдельные тесты проверяют правильные и ошибочные цены, все микрокейсы, пять gap API, реальные HTML-классы и вступления. Это не отключение теста или изменение expected без подтверждённой причины. Полный diff старого контракта — OLD_TEST_CONTRACT.patch.
-
-## Что ещё не пройдено
-
-- Полный Django: NOT_RUN на этом пакете.
-- Полный pytest: NOT_RUN на этом пакете.
-- CSS/JS полный прогон: NOT_RUN на этом пакете.
-- Desktop/390px/keyboard/reduced-motion: BLOCKED — доступного браузерного прогона не было.
-- PostgreSQL: NOT_RUN.
-- Настоящая озвучка: BLOCKED — реальное прослушивание не выполнялось.
-- Пилот с людьми и повторная содержательная приёмка: NOT_RUN.
-
-86 targeted PASS не заменяет полный прогон. Старые журналы GitHub Actions и результаты группы5–8 не засчитываются этому checkpoint.
-
-## Следующий полный изолированный запуск
-
-Из корня этой ветки:
-
-```bash
-python docs/audits/a1-09-12-deep-review/run_verification.py --output docs/audits/a1-09-12-deep-review/evidence/full --full-pytest
-```
-
-Скрипт создаёт новый временный каталог SQLite, очищает окружение до базовых системных переменных, переопределяет оба URL базы и config.settings.test, проверяет конкретный путь до миграций, устанавливает frozen lockfile dependencies. Затем выполняет check/collectstatic/makemigrations/migrate/load/audit/targeted/контракты/CSS/JS/аудиодиагностику/CEFR/fuzz/mutation, полный `uv run --frozen python manage.py test tests --parallel auto --noinput` и полный `uv run --frozen pytest -q -rfE`. Логи и exit codes сохраняются; первый FAIL останавливает последовательность. Это подготовленная команда, её запуск здесь не заявлен.
-
-Перед ним можно проверить неизменность checkpoint:
-
-```bash
-uv run --frozen python docs/audits/a1-09-12-deep-review/verify_checkpoint.py
-```
-
-Наличие миграций в команде не означает изменений схемы: схема в этом пакете не менялась. Audio-readiness с exit0 будет только диагностикой, а не проверкой произношения.
+Source-only git diff --check PASS. Raw patch/log context spaces are preserved, not reformatted for whitespace output.

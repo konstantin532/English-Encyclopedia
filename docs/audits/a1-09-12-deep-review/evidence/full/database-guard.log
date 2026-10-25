@@ -1,0 +1,6 @@
+Using CPython 3.13.16
+Creating virtual environment at: .venv
+Installed 19 packages in 137ms
+29 objects imported automatically (use -v 2 for details).
+
+django.db.backends.sqlite3 /tmp/ee-a1-09-12-verification-mzufiut6/fixture.sqlite3
