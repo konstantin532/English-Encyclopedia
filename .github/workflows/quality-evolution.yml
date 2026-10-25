@@ -23,14 +23,34 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Classify change impact (fail closed)
+        id: scope
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -o pipefail
+          python scripts/ci_scope.py plan --event "$EVENT" --base "$BASE_SHA" --head "$HEAD_SHA" | tee ci-scope.json
       - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
       - name: Install locked dependencies
         run: uv sync --frozen
       - name: Full test suite with branch coverage
+        if: steps.scope.outputs.scope == 'full'
         run: uv run --with pytest-cov pytest -q --cov=apps --cov-branch --cov-report=json:coverage.json --cov-report=term-missing:skip-covered --junitxml=quality-junit.xml
+      - name: Scoped PR validation (not full coverage)
+        if: steps.scope.outputs.scope != 'full'
+        env:
+          CI_SCOPE: ${{ steps.scope.outputs.scope }}
+        run: |
+          uv run python scripts/ci_scope.py pytest --scope "$CI_SCOPE" -- -q --junitxml=scoped-junit.xml
+          printf 'Scoped PR validation: %s. No full coverage or ratchet claim; main/manual/schedule retain the full suite.\n' "$CI_SCOPE" > quality-report.md
       - name: Test new randomized combinations (repeatable by seed)
         run: uv run python scripts/qa_evolution.py fuzz --run-number "${{ github.run_number }}" --seed "${{ github.run_id }}" ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && '--deep' || '' }}
       - name: Compare coverage and test count to baseline
+        if: steps.scope.outputs.scope == 'full'
         run: uv run python scripts/qa_evolution.py report --coverage-json coverage.json --junit-xml quality-junit.xml --baseline tests/quality_baseline.json --output quality-report.md
       - name: Attach QA evidence
         if: always()
@@ -38,6 +58,8 @@ jobs:
         with:
           name: quality-evidence-${{ github.run_id }}
           path: |
+            ci-scope.json
+            scoped-junit.xml
             coverage.json
             quality-junit.xml
             quality-report.md
