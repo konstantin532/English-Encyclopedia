@@ -93,7 +93,7 @@ units:
   usage_note: Пишется с o, звучит «кам». come home — без to.
 - uid: LX-00308
   lemma: take
-  meaning: to do an action such as a shower or a bus
+  meaning: "to perform an action, as in take a shower"
   class: D2
   forms:
   - takes
@@ -152,7 +152,7 @@ units:
   example_en: '[T8]I[/] [D2]work[/] [P1]in[/] [T1]the[/] [S7]afternoon[/].'
   example_ru: Днём я работаю.
   situation: Рассказываете о своём дне
-  usage_note: 'in the afternoon — с 12 до 5–6 вечера. Ударение в конце: afterNOON.'
+  usage_note: 'in the afternoon — после полудня, до вечера; точная граница зависит от ситуации. Ударение в конце: afterNOON.'
 - uid: LX-00312
   lemma: evening
   meaning: the time from about six until night

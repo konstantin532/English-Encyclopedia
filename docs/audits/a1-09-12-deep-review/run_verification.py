@@ -15,7 +15,7 @@ args = parser.parse_args()
 out = args.output.resolve()
 out.mkdir(parents=True, exist_ok=True)
 fixture = Path(tempfile.mkdtemp(prefix='ee-a1-09-12-verification-')) / 'fixture.sqlite3'
-env = {k: v for k, v in os.environ.items() if k in ('PATH', 'HOME', 'LANG', 'LC_ALL', 'UV_CACHE_DIR', 'UV_PYTHON_INSTALL_DIR')}
+env = {k: v for k, v in os.environ.items() if k in ('PATH', 'HOME', 'LANG', 'LC_ALL', 'UV_CACHE_DIR', 'UV_PYTHON_INSTALL_DIR', 'HTTPS_PROXY', 'HTTP_PROXY', 'ALL_PROXY', 'NO_PROXY', 'https_proxy', 'http_proxy', 'all_proxy', 'no_proxy')}
 env.update(DJANGO_SETTINGS_MODULE='config.settings.test', DATABASE_URL='sqlite:///' + str(fixture),
            TEST_DATABASE_URL='sqlite:///' + str(fixture), DJANGO_SECRET_KEY='isolated-a1-09-12-checks-only',
            DJANGO_ALLOWED_HOSTS='localhost,127.0.0.1,testserver', DJANGO_TEST_PROCESSES='4', PYTHONUNBUFFERED='1')

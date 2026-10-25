@@ -19,3 +19,5 @@ source_notes: первичные справочники и фактическа�
 - [Merriam-Webster: come in](https://www.merriam-webster.com/dictionary/come%20in): полная статья, непереходные формы, включая comes in.
 
 Нет корпусной выборки, подтверждающей численную частотность. Такие показатели не добавлялись. CEFR-статусы не повышались до подтверждённых, неизвестные значения не присваивались занятым UID. Все русские объяснения и упражнения написаны для проекта, без длинных цитат или переработки единственного чужого учебника.
+
+Дополнительный текущий проход: [Collins, American English take](https://www.collinsdictionary.com/us/dictionary/english/take), раздел take used with nouns describing actions, подтверждает take a shower; [Oxford Advanced American afternoon](https://www.oxfordlearnersdictionaries.com/us/definition/american_english/afternoon) даёт приблизительную вечернюю границу. Собственные объяснения, не копирование определений. Различие busy (прилагательное) / work (глагол) проверено по синтаксису приведённых полных фраз; состояние само по себе не требует be.
