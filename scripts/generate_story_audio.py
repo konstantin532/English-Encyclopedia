@@ -30,6 +30,11 @@ from pathlib import Path
 import numpy as np
 import yaml
 
+try:
+    from scripts.audio_readiness import script_fingerprint
+except ModuleNotFoundError:  # Direct invocation: python scripts/generate_story_audio.py.
+    from audio_readiness import script_fingerprint
+
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 OUT = ROOT / "static" / "audio"
@@ -360,6 +365,7 @@ def render(engine, name: str, script: list[dict], roles: dict, voices: dict, fol
             entry["music_gain_db"] = gain - (4 if tempo == "very_slow" else 0)
         rendered[tempo] = entry
     manifest = {
+        "script_sha256": script_fingerprint(script),
         "engine": engine.name,
         "model": f"kokoro-v{voices.get('model_version', '1.0')}" if engine.name == "kokoro" else "test-tone",
         "generated_at": dt.datetime.now().isoformat(timespec="seconds"),

@@ -23,7 +23,7 @@
         <h2 id="st2"><span class="layer-num">2</span>Прочитайте</h2>
         {% if new_units %}<p class="drill-hint">Новые слова: {% for u in new_units %}<a href="{% url 'lexicon:detail' u.uid %}" lang="en">{{ u.lemma }}</a> — {{ u.translation_ru }}{% if not forloop.last %}, {% endif %}{% endfor %}.</p>{% endif %}
         {% include "components/script_player.html" with audio=audio lines=lines speakers=speakers paragraphs=paragraphs listen_modes=True %}
-        {% if not audio %}<p class="drill-hint">Аудио к этой истории ещё не создано. Читайте вслух и сверяйте произношение по карточкам слов.</p>{% endif %}
+        {% if not audio %}<p class="drill-hint">Аудио к этой истории пока недоступно. Читайте вслух и сверяйте произношение по карточкам слов.</p>{% endif %}
       </section>
 
       <section class="layer" id="step-3" aria-labelledby="st3">

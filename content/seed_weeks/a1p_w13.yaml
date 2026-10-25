@@ -30,7 +30,7 @@ script:
   ru: Я родился в этом городе и вырос здесь.
 - speaker: anna
   text: '[J3]Good[/]. [T9]What[/] [D1]did[/] [T8]you[/] [D6]study[/] [P1]at[/] [S4]school[/]?'
-  ru: Хорошо. Что ты любил в школе?
+  ru: Хорошо. Что ты изучал в школе?
 - speaker: jake
   emotion: sad
   text: '[T8]I[/] [D1]was[/] [J3]bad[/] [P8]at[/] [S9]math[/]. [C5]But[/] [T8]I[/] [D3]loved[/] [S10]art[/] [C1]and[/] [S9]history[/].'
