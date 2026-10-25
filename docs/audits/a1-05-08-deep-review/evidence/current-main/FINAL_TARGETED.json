@@ -1,0 +1,18 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "manage.py",
+    "test",
+    "tests.test_a1_editorial_01_04",
+    "tests.test_a1_translation",
+    "tests.test_a1_editorial_deep_05_08",
+    "tests.test_a1_deep_05_08_support",
+    "--noinput"
+  ],
+  "exit_code": 0,
+  "seconds": 14.856,
+  "database": "/tmp/ee-a1-05-08-final-targeted-x7zyvv6h/fixture.sqlite3"
+}

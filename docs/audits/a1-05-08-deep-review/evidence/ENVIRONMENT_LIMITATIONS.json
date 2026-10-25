@@ -1,0 +1,8 @@
+{
+  "postgres": null,
+  "initdb": null,
+  "docker": null,
+  "chromium": null,
+  "chromium-browser": null,
+  "google-chrome": null
+}

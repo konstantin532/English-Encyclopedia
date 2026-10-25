@@ -19,7 +19,7 @@ units:
   example_en: '[T8]I[/] [D3]like[/] [S3]tea[/].'
   example_ru: Я люблю чай.
   situation: Заказываете напиток
-  usage_note: В заказе a tea — «чашка чая».
+  usage_note: "В заказе a tea означает одну порцию чая, часто чашку. О чае как напитке вообще говорим tea без a: I like tea."
 - uid: LX-00056
   lemma: cookie
   meaning: a small sweet baked food
@@ -37,7 +37,7 @@ units:
   example_en: '[D7]Can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cookie[/], [O8]please[/]?'
   example_ru: Можно мне печенье?
   situation: Заказываете сладкое
-  usage_note: В американском кафе к кофе обычно берут cookie — большое печенье.
+  usage_note: "Cookie — отдельное печенье: a cookie, two cookies. Размер бывает разным; само слово не означает обязательно большое печенье."
 - uid: LX-00057
   lemma: photo
   meaning: a picture made with a camera
@@ -55,7 +55,7 @@ units:
   example_en: '[T2]This[/] [D1]is[/] [T3]my[/] [S2]photo[/].'
   example_ru: Это моя фотография.
   situation: Показываете или находите фото
-  usage_note: 'Американское t между гласными звучит как быстрое d: «фоуДоу».'
+  usage_note: 'В выбранном американском образце photo звук /t/ произносится коротким касанием языка и напоминает быстрое /d/. Не переносите этот вариант на каждую букву t между гласными: важны положение ударения и окружение.'
 - uid: LX-00058
   lemma: or
   meaning: used between two choices

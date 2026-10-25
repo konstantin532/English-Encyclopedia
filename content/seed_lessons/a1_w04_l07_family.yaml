@@ -50,7 +50,7 @@ layers:
     body: |
       **Почему this, а не he или she?** Когда мы **показываем** человека на фотографии, удобно сказать *This is my brother*. Дальше, когда уже ясно, о ком речь, вместо повторения *my brother* можно сказать *he*. Это **удобный переход в разговоре**, а не правило, что при первом упоминании нельзя использовать *he* или *she*: всё зависит от контекста.
 
-      > [T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/]. [T8]He[/] [D1]is[/] [N1]ten[/]. — Это мой брат. Ему десять.
+      > [T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/]. [T8]He[/] [D1]is[/] [N5]ten[/]. — Это мой брат. Ему десять.
 
       **Почему He is ten, а не He has ten?** Английский сообщает возраст как **состояние человека** через форму **be**; русскому «ему десять» соответствует *He is ten*. **Has** здесь не употребляют. В английской фразе не нужно говорить *years old* каждый раз, если по контексту речь о возрасте.
 
@@ -62,8 +62,9 @@ layers:
 
       - [N1]thirty[/] 30, [N1]forty[/] 40, [N1]fifty[/] 50, [N1]sixty[/] 60
       - [N1]seventy[/] 70, [N1]eighty[/] 80, [N1]ninety[/] 90, [N1]hundred[/] 100
+      - **Сто — a hundred или one hundred**, не просто hundred в этой конструкции: *He is a hundred years old* — «Ему сто лет».
       - Между десятками и единицами — дефис: [N1]twenty[/]-[N1]five[/] 25, [N1]forty[/]-[N1]two[/] 42.
-      - years old можно не говорить: I am thirty — уже полный ответ.
+      - **Возраст можно назвать с years old или без него:** *I am thirty years old* и *I am thirty* — оба варианта правильны. В полной форме после числа больше одного — **years**, во множественном числе: *She is twelve years old*, не *twelve year old*. Это схема сообщения возраста после **be**; другие сочетания со словом *year* здесь не рассматриваем.
 
       **Диагностика понимания:** Девочке двенадцать лет. Что верно: *She is twelve* или *She has twelve*?
 
@@ -74,7 +75,7 @@ layers:
 
       > [T9]Who[/] [D1]is[/] [T2]this[/]? — Кто это?
       > [T2]This[/] [D1]is[/] [T3]my[/] [S1]sister[/]. — Это моя сестра.
-      > [T8]She[/] [D1]is[/] [N1]eleven[/]. — Ей одиннадцать.
+      > [T8]She[/] [D1]is[/] [N5]eleven[/]. — Ей одиннадцать.
 
       - Who is в быстрой речи звучит как who's: «хуз».
       - Вместо mother и father дома часто говорят mom и dad.
@@ -97,11 +98,11 @@ exercises:
     uid: EX-00032
     kind: choice
     stage: recognition
-    prompt_ru: "Как спросить «Кто это?» о человеке на фото?"
+    prompt_ru: "Как спросить «Кто это?» о человеке на фото? Выберите обычный вопрос по схеме Who + is + this, а не переспрос."
     options: ["Who is this?", "Who this?", "This is who?"]
     answer: "Who is this?"
     hint_ru: "Нужен глагол be."
-    explanation_ru: "Who is this? — who первым, затем is и this. Без is фраза неполная."
+    explanation_ru: "Who is this? — обычный вопрос по указанной схеме: who, затем is и this. В Who this? не хватает is. This is who? возможно как удивлённый переспрос, но здесь требуется другой порядок слов."
     units: [LX-00099, LX-00101]
   - order: 2
     uid: EX-00033
@@ -117,12 +118,12 @@ exercises:
     uid: EX-00034
     kind: build
     stage: production
-    prompt_ru: "Соберите вопрос: «Это твоя мама?»"
+    prompt_ru: "Соберите обычный вопрос «Это твоя мама?». Начните с Is, затем поставьте this и your mother."
     options: [your, Is, mother, this]
     answer: "Is this your mother"
     hint_ru: "В вопросе is стоит первым."
     explanation_ru: "Is this your mother? — be выходит вперёд, дальше this your mother."
-    units: [LX-00103]
+    units: ["LX-00002", "LX-00039"]
   - order: 4
     uid: EX-00035
     kind: fill
@@ -130,7 +131,7 @@ exercises:
     prompt_ru: "Новое фото: на нём ваша сестра, ей двенадцать. Скажите это двумя короткими фразами."
     prompt_en: "___"
     answer: "This is my sister. She is twelve."
-    accepted: ["This is my sister. She's twelve.", "This is my sister. She is 12.", "This is my sister. She's 12."]
+    accepted: ["This is my sister. She's twelve.", "This is my sister. She is 12.", "This is my sister. She's 12.", "This is my sister. She is twelve years old.", "This is my sister. She's twelve years old.", "This is my sister. She is 12 years old.", "This is my sister. She's 12 years old.", "It is my sister. She is twelve.", "It's my sister. She's twelve.", "It's my sister. She is twelve.", "It is my sister. She's twelve."]
     hint_ru: "Сначала this is…, потом she is…"
     explanation_ru: "This is my sister. She is twelve. — сначала показываем, потом говорим she и возраст через be."
     units: [LX-00089, LX-00096, LX-00073]
@@ -164,12 +165,10 @@ practice:
   - Who is that?
   hint_ru: Вопрос о человеке — Who.
   explanation_ru: 'Who is this? Who — «кто». В разговоре: Who''s this?'
-  review_of: 3
+  review_of: 1
   units:
   - LX-00099
   - LX-00101
-  - LX-00102
-  - LX-00103
 - order: 2
   kind: translate
   prompt_ru: 'Вы показываете на человека на фотографии. Скажите: «Это мой брат».'
@@ -179,12 +178,10 @@ practice:
   - That is my brother.
   hint_ru: При представлении удобно сказать This is my brother. Если уже ясно, на кого указываете, можно сказать He is my brother.
   explanation_ru: This is my brother — естественный способ представить человека на фото. He is my brother тоже подходит, когда собеседник уже понимает, о ком вы говорите; That is my brother возможно, если указываете на фото или на человека чуть дальше.
-  review_of: 3
+  review_of: 2
   units:
   - LX-00088
-  - LX-00101
   - LX-00102
-  - LX-00103
 - order: 3
   kind: translate
   prompt_ru: Это твоя мама?
@@ -195,18 +192,15 @@ practice:
   explanation_ru: 'Is this your mother? (или mom). Вопрос с be: is встаёт первым.'
   review_of: 3
   units:
-  - LX-00101
-  - LX-00102
-  - LX-00103
+  - LX-00002
+  - LX-00039
 - order: 4
   kind: translate
   prompt_ru: Сколько ему лет?
   answer: How old is he?
-  hint_ru: «Насколько он старый?»
-  explanation_ru: 'How old is he? По-английски спрашивают «насколько стар», а отвечают просто числом: He is ten.'
-  review_of: 3
+  hint_ru: "Начните с How old, затем is и he."
+  explanation_ru: "How old is he? — «Сколько ему лет?» How old спрашивает о возрасте, а не обязательно о старости. С he нужна форма is. В ответе можно He is ten или He is ten years old."
+  review_of: 6
   units:
-  - LX-00101
-  - LX-00102
-  - LX-00103
+  - LX-00095
   - LX-00278

@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "url": "/lessons/a1-cafe-order/",
+      "status": 200,
+      "diagnostic_reveal": true
+    },
+    {
+      "url": "/lessons/a1-numbers-1-20/",
+      "status": 200,
+      "diagnostic_reveal": true
+    },
+    {
+      "url": "/lessons/a1-family-photo/",
+      "status": 200,
+      "diagnostic_reveal": true
+    },
+    {
+      "url": "/lessons/a1-family-possession/",
+      "status": 200,
+      "diagnostic_reveal": true
+    },
+    {
+      "url": "/levels/a1/weeks/3/",
+      "status": 200
+    },
+    {
+      "url": "/levels/a1/weeks/4/",
+      "status": 200
+    },
+    {
+      "url": "/stories/poems/2/",
+      "status": 200
+    }
+  ],
+  "visual_check": "BLOCKED: Chromium unavailable"
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "manage.py",
+    "test",
+    "tests.test_a1_editorial_deep_05_08",
+    "tests.test_a1_deep_05_08_support",
+    "--noinput"
+  ],
+  "exit_code": 1,
+  "seconds": 14.059277731001202
+}

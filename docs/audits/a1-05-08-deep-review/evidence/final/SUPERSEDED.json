@@ -1,0 +1,5 @@
+{
+  "status": "INTERRUPTED_SUPERSEDED",
+  "wrapper_exit_code": 130,
+  "reason": "Late linked poem2 target/marker correction added before final acceptance. This interrupted Django/pytest sequence is not a final full PASS. A fresh complete sequence runs under final-complete/."
+}

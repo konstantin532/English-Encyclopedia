@@ -202,7 +202,10 @@
     "alternatives": [
       "I would like coffee, please.",
       "Can I have coffee, please?",
-      "I'd like a coffee, please."
+      "I'd like a coffee, please.",
+      "Coffee, please.",
+      "A coffee, please.",
+      "Can I have a coffee, please?"
     ],
     "hint": "Начните с I'd like… и закончите please.",
     "transfer": "Мия решила, что вы хотите кофе, но нужен чай. Коротко исправьте её.",
@@ -242,7 +245,7 @@
     ],
     "correct": 1,
     "feedback": "Том заказал two, а Мия ошибочно услышала three. Для порций здесь естественно coffees.",
-    "prompt": "Попросите три чашки кофе короткой фразой.",
+    "prompt": "Попросите три порции кофе короткой вежливой фразой.",
     "answer": "Three coffees, please.",
     "alternatives": [
       "I'd like three coffees, please."
@@ -250,7 +253,7 @@
     "hint": "Three + coffees + please.",
     "transfer": "У вас две книги. Скажите по-английски: «Две книги».",
     "transfer_example": "Two books.",
-    "why": "Numeral обозначает число. В английском после two/three обычно ставится множественное число исчисляемого существительного: two books, two coffees (порции).",
+    "why": "Числительное (numeral) сообщает количество. После two/three исчисляемое существительное ставится во множественном числе: two books. Two coffees означает две порции кофе.",
     "sound": "Сопоставьте two /tuː/ и three /θriː/: в three язык касается зубов для /θ/."
   },
   {
@@ -296,7 +299,7 @@
       "This is my father."
     ],
     "hint": "This is my + слово о родственнике.",
-    "transfer": "Спросите, сколько лет маме друга (обращайтесь на she).",
+    "transfer": "Спросите друга о возрасте его мамы. Говоря о ней, используйте she.",
     "transfer_example": "How old is she?",
     "why": "Mom/dad звучат разговорнее mother/father. Для возраста английский использует be: She is fifty, а не буквальное «ей есть пятьдесят».",
     "sound": "В She's /ʃiːz/ слышны /ʃ/ и /z/. Не теряйте конечный /z/."

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "content_files": 20,
+  "semantic_fields": 155,
+  "deep_review_lessons": 4,
+  "r17_prompt_followup_lessons": 1,
+  "main_exercises": 22,
+  "translations": 16,
+  "delayed_cards": 110,
+  "seven_layers": true,
+  "stable_ids": true,
+  "old_canonical_and_accepted_answers_retained": true,
+  "unrelated_shared_rows_unchanged": true,
+  "weekly_recorded_dialogue_and_twister_texts_unchanged": true,
+  "lockfiles_and_registry_unchanged": true,
+  "application_schema_auth_ci_unchanged": true,
+  "poem_plain_text_and_ipa_unchanged": true
+}

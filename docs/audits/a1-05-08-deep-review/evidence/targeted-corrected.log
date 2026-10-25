@@ -1,0 +1,19 @@
+Found 21 test(s).
+Creating test database for alias 'default'...
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).
+....................F
+======================================================================
+FAIL: test_poem_targets_are_actually_present_and_the_page_serves_the_same_units (tests.test_a1_deep_05_08_support.DeepA1SupportTests.test_poem_targets_are_actually_present_and_the_page_serves_the_same_units)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/tests/test_a1_deep_05_08_support.py", line 65, in test_poem_targets_are_actually_present_and_the_page_serves_the_same_units
+    self.assertEqual(len(parser.labels), 3)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 6 != 3
+
+----------------------------------------------------------------------
+Ran 21 tests in 2.237s
+
+FAILED (failures=1)
+Destroying test database for alias 'default'...
