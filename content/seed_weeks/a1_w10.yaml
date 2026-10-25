@@ -20,7 +20,7 @@ script:
     ru: "А по воскресеньям в октябре?"
   - speaker: anna
     emotion: happy
-    text: "[P3]On[/] [S7]Sundays[/] [P3]in[/] [S7]October[/], [T8]I[/] [D4]walk[/] [P3]in[/] [T1]the[/] [S4]park[/] [P3]in[/] [T3]my[/] [S2]jacket[/]. [T8]I[/] [D3]like[/] [D4]walking[/]."
+    text: "[P3]On[/] [S7]Sundays[/] [P3]in[/] [S7]October[/], [T8]I[/] [D4]walk[/] [P1]in[/] [T1]the[/] [S4]park[/] [P3]in[/] [T3]my[/] [S2]jacket[/]. [T8]I[/] [D3]like[/] [D4]walking[/]."
     ru: "По воскресеньям в октябре я гуляю в парке в куртке. Люблю гулять."
   - speaker: mia
     text: "[S1]Tom[/], [D1]do[/] [T8]you[/] [D3]like[/] [D4]walking[/]?"
