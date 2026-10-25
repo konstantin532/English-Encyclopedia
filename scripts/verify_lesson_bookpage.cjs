@@ -99,9 +99,17 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
           const paragraph=page.locator('#layer-1 .annotated > p').first();
           // Use the guaranteed-minimum reader size so a stored/max size cannot mask A+.
           for(let i=0;i<12;i++)if(await page.locator('[data-reader-smaller]').isEnabled())await page.locator('[data-reader-smaller]').click();
+          const readerState=()=>page.evaluate(()=>{
+            const reader=document.querySelector('[data-lesson-reader]');
+            const layer=document.querySelector('#layer-1');
+            const paragraph=layer.querySelector('.annotated > p');
+            return {reader:getComputedStyle(reader).fontSize,inline:reader.style.fontSize,layer:getComputedStyle(layer).fontSize,parent:getComputedStyle(paragraph.parentElement).fontSize,paragraph:getComputedStyle(paragraph).fontSize,output:document.querySelector('[data-reader-size]').textContent,largerDisabled:document.querySelector('[data-reader-larger]').disabled};
+          });
+          entry.readerBefore=await readerState();
           const small=await paragraph.evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
           await page.locator('[data-reader-larger]').focus();await page.locator('[data-reader-larger]').press('Enter');
-          assert.ok(await paragraph.evaluate(el=>parseFloat(getComputedStyle(el).fontSize))>small,'reader scale no longer reaches paragraphs');
+          entry.readerAfter=await readerState();
+          assert.ok(await paragraph.evaluate(el=>parseFloat(getComputedStyle(el).fontSize))>small,'reader scale no longer reaches paragraphs: '+JSON.stringify({before:entry.readerBefore,after:entry.readerAfter}));
           entry.keyboard=true;entry.modes=true;entry.readerScale=true;
         }
         assert.deepEqual(errors,[],'uncaught noun-page JS errors');
