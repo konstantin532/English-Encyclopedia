@@ -2,9 +2,9 @@
 {% load markers static ru %}
 {% block title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
 {% block social_title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
-{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% if lesson.slug == 'a1-nouns-first-words' %}<link rel="stylesheet" href="{% static 'css/lesson-bookpage.css' %}">{% endif %}{% endblock %}
 {% block content %}
-<div class="wrap">
+<div class="wrap"{% if lesson.slug == "a1-nouns-first-words" %} data-lesson-bookpage{% endif %}>
   <header class="page-head">
     <p class="crumbs"><a href="{% url 'curriculum:level' lesson.level.slug %}">{{ lesson.level.code }}</a>{% if lesson.week %} / неделя {{ lesson.week.number }}{% endif %} / урок {{ lesson.order }}</p>
     <h1>{{ lesson.title }}</h1>

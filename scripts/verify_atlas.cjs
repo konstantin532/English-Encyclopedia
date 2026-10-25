@@ -7,6 +7,7 @@ const {spawn}=require('node:child_process');
 const fs=require('node:fs/promises');
 const path=require('node:path');
 const assert=require('node:assert/strict');
+const {verifyLessonBookpage}=require('./verify_lesson_bookpage.cjs');
 const root=path.resolve(__dirname,'..');
 const output=path.resolve(process.env.ATLAS_OUTPUT || 'atlas-browser-evidence');
 const sizes=[[1440,900],[1280,800],[390,844],[360,800]];
@@ -35,6 +36,8 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
  try{
   servers.push(await serve(process.env.ATLAS_BEFORE_DIR,8123));servers.push(await serve(root,8124));
   browser=await chromium.launch();
+  report.lessonBookpage={};
+  await verifyLessonBookpage(browser,{output,beforeBase:'http://127.0.0.1:8123',afterBase:'http://127.0.0.1:8124',report:report.lessonBookpage});
   for(const [width,height] of sizes){
    for(const [name,route] of screens){
     const measurements={};

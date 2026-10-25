@@ -1,0 +1,136 @@
+// One-lesson reading pilot. The outer layout, sidebar and lesson text are untouched.
+// Use the existing polish layer; marker/accessibility layers retain their priority.
+@layer ee-polish {
+  [data-lesson-bookpage] {
+    .a1-learning-route {
+      background: transparent;
+      border-color: transparent;
+      border-bottom-color: var(--rule);
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .a1-learning-route h2 {
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+
+    .a1-learning-route > p {
+      max-inline-size: 62ch;
+      font-size: var(--ee-type-small);
+      line-height: 1.65;
+    }
+
+    .a1-learning-route-actions button {
+      min-block-size: 44px;
+      border-radius: var(--radius-s);
+      white-space: normal;
+    }
+
+    .a1-learning-route-actions button[aria-pressed="true"] {
+      color: var(--surface);
+      background: var(--ink);
+      border-color: var(--ink);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: .25em;
+    }
+
+    .a1-learning-route .a1-learning-route-status {
+      color: var(--ink);
+      font-size: var(--ee-type-small);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .a1-clarity-bridge {
+      border-color: transparent;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      margin-block: var(--space-5) var(--space-7);
+    }
+
+    .a1-clarity-bridge > h2 {
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .a1-clarity-bridge > p,
+    .a1-step-ladder > p {
+      max-inline-size: 62ch;
+      font-size: var(--ee-type-small);
+      line-height: 1.7;
+    }
+
+    .a1-clarity-bridge dt { color: var(--ink); }
+    .a1-clarity-bridge dd { line-height: 1.8; }
+
+    // Keep the reader's existing padding and width: this changes hierarchy,
+    // not the positions of the catalog, sidebar, heading or text column.
+    [data-lesson-reader] {
+      border-color: transparent;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    [data-lesson-reader] .layer {
+      padding-block: var(--space-7);
+      border-color: var(--rule);
+    }
+    [data-lesson-reader] .layer:first-child { padding-block-start: 0; }
+    [data-lesson-reader] .layer:last-child { padding-block-end: 0; }
+
+    [data-lesson-reader] .layer h2 {
+      font-weight: 500;
+      line-height: 1.4;
+      margin-block-end: var(--space-5);
+    }
+    [data-lesson-reader] .layer-num {
+      color: var(--ink-soft);
+    }
+    [data-lesson-reader] .annotated > p,
+    [data-lesson-reader] .annotated > ul,
+    [data-lesson-reader] .annotated > ol {
+      max-inline-size: var(--ee-reading-measure);
+      line-height: 1.85;
+      margin-block-end: 1.2em;
+    }
+    [data-lesson-reader] .example {
+      margin-block: var(--space-5);
+      padding-block: var(--space-4);
+      border-radius: 0;
+      box-shadow: none;
+      background: var(--surface);
+    }
+
+    // Instruction text stays present, but is visually subordinate to the task.
+    .section-head > p,
+    #spoken-coach > p {
+      max-inline-size: 62ch;
+      font-size: var(--ee-type-small);
+      line-height: 1.7;
+    }
+    .speech-studio { box-shadow: none; }
+
+    // In the base layer, selected speech controls set a pale foreground.
+    // The later studio layer replaces btn-quiet's background only. Own both
+    // colors together here, scoped to this pilot rather than every speech widget.
+    .speech-mode-grid .btn[aria-pressed="true"] {
+      color: var(--surface);
+      background: var(--ink);
+      border-color: var(--ink);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: .25em;
+    }
+
+
+    @media (max-width: 600px) {
+      .a1-clarity-bridge dl { grid-template-columns: minmax(0, 1fr); gap: .35rem; }
+      .a1-clarity-bridge dd { margin-block-end: var(--space-4); }
+      [data-lesson-reader] .layer { padding-block: var(--space-6); }
+      [data-lesson-reader] .example { padding-inline: var(--space-3); }
+    }
+  }
+}

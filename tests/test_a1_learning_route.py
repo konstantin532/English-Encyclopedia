@@ -44,3 +44,30 @@ class A1LearningRouteTests(TestCase):
                 self.assertContains(response, 'id="practice"')
                 self.assertContains(response, 'class="a1-step-list"')
                 self.assertContains(response, 'class="a1-step-en"', count=3)
+
+
+    def test_bookpage_presentation_is_only_loaded_for_the_noun_pilot(self):
+        for order in (1, 2, 4, 28):
+            with self.subTest(order=order):
+                lesson = Lesson.objects.get(level__code="A1", order=order)
+                response = self.client.get(reverse("lessons:detail", args=[lesson.slug]))
+                if order == 1:
+                    self.assertContains(response, 'data-lesson-bookpage')
+                    self.assertContains(response, 'css/lesson-bookpage.css')
+                else:
+                    self.assertNotContains(response, 'data-lesson-bookpage')
+                    self.assertNotContains(response, 'css/lesson-bookpage.css')
+
+    def test_bookpage_preserves_every_annotated_explanation(self):
+        from apps.taxonomy.templatetags.markers import annotate_block
+
+        lesson = Lesson.objects.get(slug="a1-nouns-first-words")
+        response = self.client.get(reverse("lessons:detail", args=[lesson.slug]))
+        for layer in lesson.layers.all():
+            with self.subTest(layer=layer.number):
+                self.assertContains(response, annotate_block(layer.body))
+        self.assertContains(response, lesson.title)
+        self.assertContains(response, lesson.summary)
+        self.assertContains(response, 'class="aside"')
+        self.assertContains(response, 'data-reader-larger')
+        self.assertContains(response, 'data-speech-studio')
