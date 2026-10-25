@@ -105,9 +105,17 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
             const paragraph=layer.querySelector('.annotated > p');
             return {reader:getComputedStyle(reader).fontSize,inline:reader.style.fontSize,layer:getComputedStyle(layer).fontSize,parent:getComputedStyle(paragraph.parentElement).fontSize,paragraph:getComputedStyle(paragraph).fontSize,output:document.querySelector('[data-reader-size]').textContent,largerDisabled:document.querySelector('[data-reader-larger]').disabled};
           });
+          // Even reduced-motion's 0.01ms CSS transitions settle on a render frame.
+          // Do not compare a stale child size with the next parent-size update.
+          await page.waitForFunction(()=>{
+            const reader=document.querySelector('[data-lesson-reader]');
+            const paragraph=document.querySelector('#layer-1 .annotated > p');
+            return parseFloat(getComputedStyle(paragraph).fontSize)===parseFloat(reader.style.fontSize);
+          });
           entry.readerBefore=await readerState();
           const small=await paragraph.evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
           await page.locator('[data-reader-larger]').focus();await page.locator('[data-reader-larger]').press('Enter');
+          await page.waitForFunction(previous=>parseFloat(getComputedStyle(document.querySelector('#layer-1 .annotated > p')).fontSize)>previous,small);
           entry.readerAfter=await readerState();
           assert.ok(await paragraph.evaluate(el=>parseFloat(getComputedStyle(el).fontSize))>small,'reader scale no longer reaches paragraphs: '+JSON.stringify({before:entry.readerBefore,after:entry.readerAfter}));
           entry.keyboard=true;entry.modes=true;entry.readerScale=true;
