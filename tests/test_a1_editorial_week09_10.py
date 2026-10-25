@@ -3,6 +3,8 @@ import json
 from django.test import TestCase, SimpleTestCase
 from apps.drills.models import PracticeItem, Exercise
 from apps.learning.micro_review import micro_bank
+from apps.curriculum.models import WeekScene
+from apps.taxonomy.markup import TOKEN
 from tests.runner import ensure_content
 
 
@@ -17,6 +19,23 @@ class A1WeekNineTenAnswerTests(TestCase):
                                    json.dumps({'answer': answer}), content_type='application/json')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()['correct'], expected, answer)
+
+    def test_week_ten_in_distinguishes_place_from_time(self):
+        scene = WeekScene.objects.get(week__level__code='A1', week__number=10)
+        # Check the semantic class in context, not the surrounding dialogue prose.
+        for phrase, expected in ((('in', 'the', 'park'), 'P1'),
+                                 (('in', 'october'), 'P3')):
+            markers = []
+            for line in scene.script:
+                tokens = list(TOKEN.finditer(line['text']))
+                words = [token.group(4).casefold() for token in tokens]
+                for index in range(len(words) - len(phrase) + 1):
+                    if tuple(words[index:index + len(phrase)]) == phrase:
+                        token = tokens[index]
+                        markers.append(token.group(1) + token.group(2))
+            with self.subTest(phrase=phrase):
+                self.assertTrue(markers, f'Missing dialogue example: {phrase}')
+                self.assertEqual(set(markers), {expected})
 
     def test_polite_spelling_request(self):
         for answer, expected in (
