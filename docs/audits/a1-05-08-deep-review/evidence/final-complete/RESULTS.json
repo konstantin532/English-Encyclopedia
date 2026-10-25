@@ -1,0 +1,263 @@
+[
+  {
+    "name": "database-guard",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "shell",
+      "-c",
+      "from django.conf import settings; d=settings.DATABASES['default']; assert d['ENGINE']=='django.db.backends.sqlite3' and d['NAME']=='/tmp/ee-a1-05-08-verification-w6vf80ba/fixture.sqlite3'; print(d['ENGINE'],d['NAME'])"
+    ],
+    "exit_code": 0,
+    "seconds": 0.6,
+    "status": "PASS"
+  },
+  {
+    "name": "uv-sync",
+    "command": [
+      "uv",
+      "sync",
+      "--frozen"
+    ],
+    "exit_code": 0,
+    "seconds": 0.012,
+    "status": "PASS"
+  },
+  {
+    "name": "pnpm-install",
+    "command": [
+      "pnpm",
+      "install",
+      "--frozen-lockfile",
+      "--ignore-scripts"
+    ],
+    "exit_code": 0,
+    "seconds": 2.514,
+    "status": "PASS"
+  },
+  {
+    "name": "compileall",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "-m",
+      "compileall",
+      "-q",
+      "apps",
+      "config",
+      "tests"
+    ],
+    "exit_code": 0,
+    "seconds": 0.089,
+    "status": "PASS"
+  },
+  {
+    "name": "check",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.538,
+    "status": "PASS"
+  },
+  {
+    "name": "collectstatic",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "collectstatic",
+      "--noinput",
+      "--verbosity",
+      "0"
+    ],
+    "exit_code": 0,
+    "seconds": 0.406,
+    "status": "PASS"
+  },
+  {
+    "name": "makemigrations",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "makemigrations",
+      "--check",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "seconds": 0.758,
+    "status": "PASS"
+  },
+  {
+    "name": "migrate",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "migrate",
+      "--noinput",
+      "-v0"
+    ],
+    "exit_code": 0,
+    "seconds": 4.118,
+    "status": "PASS"
+  },
+  {
+    "name": "load-content",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "load_content"
+    ],
+    "exit_code": 0,
+    "seconds": 7.29,
+    "status": "PASS"
+  },
+  {
+    "name": "audit-course",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "audit_course"
+    ],
+    "exit_code": 0,
+    "seconds": 8.383,
+    "status": "PASS"
+  },
+  {
+    "name": "targeted",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "test",
+      "tests.test_a1_editorial_deep_05_08",
+      "tests.test_a1_deep_05_08_support",
+      "--noinput"
+    ],
+    "exit_code": 0,
+    "seconds": 14.537,
+    "status": "PASS"
+  },
+  {
+    "name": "review-contracts",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "shell",
+      "-c",
+      "from apps.learning.mistake_review import question_bank,COUNT; from apps.learning.understanding import understanding_bank,SKILLS; from apps.drills.retry_guidance import PILOT_SLUGS; b=question_bank(); assert set(b)==set(PILOT_SLUGS); assert all(all(len(c)==COUNT for c in e.values()) for e in b.values()); u=understanding_bank(); assert set(u)==set(PILOT_SLUGS); assert all(set(g['tasks'])==set(SKILLS) for g in u.values()); print(len(b),len(u))"
+    ],
+    "exit_code": 0,
+    "seconds": 0.394,
+    "status": "PASS"
+  },
+  {
+    "name": "css",
+    "command": [
+      "pnpm",
+      "check:css"
+    ],
+    "exit_code": 0,
+    "seconds": 1.247,
+    "status": "PASS"
+  },
+  {
+    "name": "js",
+    "command": [
+      "pnpm",
+      "test:ui"
+    ],
+    "exit_code": 0,
+    "seconds": 2.713,
+    "status": "PASS"
+  },
+  {
+    "name": "audio-readiness",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "scripts/audio_readiness.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.069,
+    "status": "PASS"
+  },
+  {
+    "name": "cefr",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "scripts/audit_cefr_evidence.py",
+      "--strict"
+    ],
+    "exit_code": 0,
+    "seconds": 0.977,
+    "status": "PASS"
+  },
+  {
+    "name": "fuzz",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "scripts/qa_evolution.py",
+      "fuzz",
+      "--run-number",
+      "0",
+      "--seed",
+      "20261025"
+    ],
+    "exit_code": 0,
+    "seconds": 0.408,
+    "status": "PASS"
+  },
+  {
+    "name": "mutation",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "scripts/qa_mutation_probe.py",
+      "--report",
+      "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/docs/audits/a1-05-08-deep-review/evidence/final-complete/mutation-report.md"
+    ],
+    "exit_code": 0,
+    "seconds": 3.316,
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,2657 @@
+{
+  "base": "5826785ee3f665fac765783ba9a95a5dd3b52655",
+  "author": "Codex",
+  "verification_status": "technical_review",
+  "changes": [
+    {
+      "path": "content/active_a1/error_repairs_01_18.json",
+      "pointer": "/6/reason",
+      "identity_chain": [
+        {
+          "n": 7
+        }
+      ],
+      "before": "С возрастом в английском обязательно используется be: She is fifty. По-русски мы говорим «Ей пятьдесят» без подобного глагола.",
+      "after": "В обычном полном сообщении возраста нужна форма be: She is fifty. По-русски говорим «Ей пятьдесят» без такого глагола. Краткое Fifty возможно, если возраст уже спрашивали."
+    },
+    {
+      "path": "content/active_a1/error_repairs_01_18.json",
+      "pointer": "/7/reason",
+      "identity_chain": [
+        {
+          "n": 8
+        }
+      ],
+      "before": "Чтобы обозначить принадлежность с именем владельца, используйте 's: Anna's book. Не путайте с her book.",
+      "after": "Чтобы показать принадлежность с именем владельца, используйте 's: Anna's book. Если из разговора уже ясно, что речь об Анне, можно заменить её имя: her book."
+    },
+    {
+      "path": "content/active_a1/scenarios_01_06.json",
+      "pointer": "/4/missions/0/prompt",
+      "identity_chain": [
+        {
+          "n": 5
+        },
+        {
+          "id": 1
+        }
+      ],
+      "before": "Попросите одну чашку чая вежливо.",
+      "after": "Попросите одну порцию чая вежливо."
+    },
+    {
+      "path": "content/active_a1/scenarios_01_06.json",
+      "pointer": "/4/missions/2/prompt",
+      "identity_chain": [
+        {
+          "n": 5
+        },
+        {
+          "id": 3
+        }
+      ],
+      "before": "Выберите кофе одним предложением.",
+      "after": "Коротко и вежливо выберите кофе."
+    },
+    {
+      "path": "content/active_a1/scenarios_01_06.json",
+      "pointer": "/4/missions/4/scene",
+      "identity_chain": [
+        {
+          "n": 5
+        },
+        {
+          "id": 5
+        }
+      ],
+      "before": "Мия услышала Two coffees? вместо одного чая и кофе.",
+      "after": "Мия переспросила «Two coffees?» («Два кофе?»), хотя вам нужны один чай и один кофе."
+    },
+    {
+      "path": "content/active_a1/scenarios_01_06.json",
+      "pointer": "/4/missions/5/example",
+      "identity_chain": [
+        {
+          "n": 5
+        },
+        {
+          "id": 6
+        }
+      ],
+      "before": "Can I have juice, please?",
+      "after": "Can I have juice, please? Can you say it again, please?"
+    },
+    {
+      "path": "content/active_a1/scenarios_01_06.json",
+      "pointer": "/4/missions/5/prompt",
+      "identity_chain": [
+        {
+          "n": 5
+        },
+        {
+          "id": 6
+        }
+      ],
+      "before": "Придумайте вежливую просьбу о другом знакомом напитке и уточнение.",
+      "after": "Попросите сок вежливо. Затем попросите бариста повторить ответ."
+    },
+    {
+      "path": "content/active_a1/scenarios_01_06.json",
+      "pointer": "/4/missions/5/scene",
+      "identity_chain": [
+        {
+          "n": 5
+        },
+        {
+          "id": 6
+        }
+      ],
+      "before": "Вы пришли в кафе без знакомого напитка в меню.",
+      "after": "Вы просите сок, но бариста отвечает слишком быстро."
+    },
+    {
+      "path": "content/active_a1/scenarios_01_06.json",
+      "pointer": "/4/twists/0/scene",
+      "identity_chain": [
+        {
+          "n": 5
+        }
+      ],
+      "before": "Мия услышала two teas — исправьте на один чай.",
+      "after": "Мия переспросила «two teas — два чая?»; исправьте заказ на одну порцию."
+    },
+    {
+      "path": "content/active_a1/scenarios_07_12.json",
+      "pointer": "/0/missions/1/coach",
+      "identity_chain": [
+        {
+          "n": 7
+        },
+        {
+          "id": 2
+        }
+      ],
+      "before": "Tom's сообщает, чей родственник.",
+      "after": "My показывает отношение к говорящему: это мама Тома, чью роль вы играете."
+    },
+    {
+      "path": "content/active_a1/scenarios_07_12.json",
+      "pointer": "/0/missions/1/example",
+      "identity_chain": [
+        {
+          "n": 7
+        },
+        {
+          "id": 2
+        }
+      ],
+      "before": "This is Tom's mom.",
+      "after": "This is my mom."
+    },
+    {
+      "path": "content/active_a1/scenarios_07_12.json",
+      "pointer": "/0/missions/1/prompt",
+      "identity_chain": [
+        {
+          "n": 7
+        },
+        {
+          "id": 2
+        }
+      ],
+      "before": "Представьте маму друга одной фразой.",
+      "after": "Представьте свою маму одной полной фразой."
+    },
+    {
+      "path": "content/active_a1/scenarios_07_12.json",
+      "pointer": "/0/missions/1/scene",
+      "identity_chain": [
+        {
+          "n": 7
+        },
+        {
+          "id": 2
+        }
+      ],
+      "before": "Том указывает на маму.",
+      "after": "Вы играете Тома и показываете фотографию своей мамы."
+    },
+    {
+      "path": "content/active_a1/scenarios_07_12.json",
+      "pointer": "/0/missions/2/prompt",
+      "identity_chain": [
+        {
+          "n": 7
+        },
+        {
+          "id": 3
+        }
+      ],
+      "before": "Ответьте за брата: ему двадцать лет.",
+      "after": "Ответьте Анне о брате Тома: ему двадцать лет."
+    },
+    {
+      "path": "content/active_a1/scenarios_07_12.json",
+      "pointer": "/0/missions/3/prompt",
+      "identity_chain": [
+        {
+          "n": 7
+        },
+        {
+          "id": 4
+        }
+      ],
+      "before": "Скажите, что это его мама и папа.",
+      "after": "Скажите, что это ваши мама и папа."
+    },
+    {
+      "path": "content/active_a1/scenarios_07_12.json",
+      "pointer": "/0/missions/3/scene",
+      "identity_chain": [
+        {
+          "n": 7
+        },
+        {
+          "id": 4
+        }
+      ],
+      "before": "Том показывает родителей.",
+      "after": "Вы играете роль Тома и показываете своих родителей."
+    },
+    {
+      "path": "content/active_a1/scenarios_07_12.json",
+      "pointer": "/0/missions/4/prompt",
+      "identity_chain": [
+        {
+          "n": 7
+        },
+        {
+          "id": 5
+        }
+      ],
+      "before": "Вежливо уточните возраст женщины.",
+      "after": "Сообщите Мие настоящий возраст женщины: ей тридцать."
+    },
+    {
+      "path": "content/active_a1/scenarios_07_12.json",
+      "pointer": "/1/missions/2/title",
+      "identity_chain": [
+        {
+          "n": 8
+        },
+        {
+          "id": 3
+        }
+      ],
+      "before": "Сумка под столом",
+      "after": "Книга Анны"
+    },
+    {
+      "path": "content/active_a1/topics_01_08.json",
+      "pointer": "/4/alternatives",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        }
+      ],
+      "before": [
+        "I would like coffee, please.",
+        "Can I have coffee, please?",
+        "I'd like a coffee, please."
+      ],
+      "after": [
+        "I would like coffee, please.",
+        "Can I have coffee, please?",
+        "I'd like a coffee, please.",
+        "Coffee, please.",
+        "A coffee, please.",
+        "Can I have a coffee, please?"
+      ]
+    },
+    {
+      "path": "content/active_a1/topics_01_08.json",
+      "pointer": "/5/prompt",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        }
+      ],
+      "before": "Попросите три чашки кофе короткой фразой.",
+      "after": "Попросите три порции кофе короткой вежливой фразой."
+    },
+    {
+      "path": "content/active_a1/topics_01_08.json",
+      "pointer": "/5/why",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        }
+      ],
+      "before": "Numeral обозначает число. В английском после two/three обычно ставится множественное число исчисляемого существительного: two books, two coffees (порции).",
+      "after": "Числительное (numeral) сообщает количество. После two/three исчисляемое существительное ставится во множественном числе: two books. Two coffees означает две порции кофе."
+    },
+    {
+      "path": "content/active_a1/topics_01_08.json",
+      "pointer": "/6/transfer",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        }
+      ],
+      "before": "Спросите, сколько лет маме друга (обращайтесь на she).",
+      "after": "Спросите друга о возрасте его мамы. Говоря о ней, используйте she."
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_07.json",
+      "pointer": "/a1-family-photo/1/1",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-photo"
+        },
+        {
+          "exercise_uid": "EX-00032"
+        },
+        {
+          "card_slot": 1
+        }
+      ],
+      "before": [
+        "Вы увидели человека на семейном снимке и хотите узнать его имя.",
+        "",
+        [
+          "Who this?",
+          "Who is this?",
+          "This is who?"
+        ],
+        1
+      ],
+      "after": [
+        "Вы показываете человека на фото. Выберите обычный полный вопрос «Кто это?» по схеме Who + is + this.",
+        "",
+        [
+          "Who this?",
+          "Who is this?",
+          "This is who?"
+        ],
+        1,
+        "Who is this? просит назвать человека. Ответ может назвать имя или родство. This is who? возможно как удивлённый переспрос, но не соответствует заданной схеме."
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_07.json",
+      "pointer": "/a1-family-photo/3/0",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-photo"
+        },
+        {
+          "exercise_uid": "EX-00034"
+        },
+        {
+          "card_slot": 0
+        }
+      ],
+      "before": [
+        "Вы хотите узнать, мама ли это собеседника.",
+        "",
+        [
+          "Is this your mother?",
+          "This is your mother?",
+          "Is your this mother?"
+        ],
+        0
+      ],
+      "after": [
+        "Узнайте, мама ли это собеседника. Выберите обычный вопрос по схеме Is + this + your + название родственника.",
+        "",
+        [
+          "Is this your mother?",
+          "This is your mother?",
+          "Is your this mother?"
+        ],
+        0,
+        "Здесь требуется is перед this. Порядок This is your…? возможен как разговорный переспрос, но не соответствует указанной схеме."
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_07.json",
+      "pointer": "/a1-family-photo/3/1",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-photo"
+        },
+        {
+          "exercise_uid": "EX-00034"
+        },
+        {
+          "card_slot": 1
+        }
+      ],
+      "before": [
+        "Уточните, брат ли это Анны.",
+        "",
+        [
+          "Is your this brother?",
+          "Is this your brother?",
+          "This your brother is?"
+        ],
+        1
+      ],
+      "after": [
+        "Вы обращаетесь к Анне. Спросите её напрямую, её ли это брат.",
+        "",
+        [
+          "Is your this brother?",
+          "Is this your brother?",
+          "This your brother is?"
+        ],
+        1
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_07.json",
+      "pointer": "/a1-family-photo/3/3",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-photo"
+        },
+        {
+          "exercise_uid": "EX-00034"
+        },
+        {
+          "card_slot": 3
+        }
+      ],
+      "before": [
+        "Вы хотите узнать, сестра ли это собеседника.",
+        "",
+        [
+          "Is this your sister?",
+          "This is your sister?",
+          "Is this sister your?"
+        ],
+        0
+      ],
+      "after": [
+        "Узнайте, сестра ли это собеседника. Выберите обычный вопрос по схеме Is + this + your + название родственника.",
+        "",
+        [
+          "Is this your sister?",
+          "This is your sister?",
+          "Is this sister your?"
+        ],
+        0,
+        "Здесь требуется is перед this. Порядок This is your…? возможен как разговорный переспрос, но не соответствует указанной схеме."
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_07.json",
+      "pointer": "/a1-family-photo/3/4",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-photo"
+        },
+        {
+          "exercise_uid": "EX-00034"
+        },
+        {
+          "card_slot": 4
+        }
+      ],
+      "before": [
+        "Вы спрашиваете, его ли это мама на фото.",
+        "",
+        [
+          "Is mother this your?",
+          "Is this your mom?",
+          "This your mom is?"
+        ],
+        1
+      ],
+      "after": [
+        "Спросите друга напрямую, его ли это мама на фото.",
+        "",
+        [
+          "Is mother this your?",
+          "Is this your mom?",
+          "This your mom is?"
+        ],
+        1
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/1/1",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00038"
+        },
+        {
+          "card_slot": 1
+        }
+      ],
+      "before": [
+        "Мия держит книгу. Как сказать «её книга»?",
+        "",
+        [
+          "his book",
+          "her book",
+          "she book"
+        ],
+        1
+      ],
+      "after": [
+        "Книга принадлежит Мие. Как сказать «её книга»?",
+        "",
+        [
+          "his book",
+          "her book",
+          "she book"
+        ],
+        1
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/1/4",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00038"
+        },
+        {
+          "card_slot": 4
+        }
+      ],
+      "before": [
+        "Папа Мии держит книгу. Как сказать «его книга»?",
+        "",
+        [
+          "her book",
+          "his book",
+          "he book"
+        ],
+        1
+      ],
+      "after": [
+        "Книга принадлежит папе Мии. Как сказать «его книга»?",
+        "",
+        [
+          "her book",
+          "his book",
+          "he book"
+        ],
+        1
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/2/4",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00039"
+        },
+        {
+          "card_slot": 4
+        }
+      ],
+      "before": [
+        "Вы показываете фотографию Анны.",
+        "This is ___ photo.",
+        [
+          "Annas",
+          "Anna's",
+          "Anna"
+        ],
+        1
+      ],
+      "after": [
+        "Фотография принадлежит Анне. Дополните фразу о владельце.",
+        "This is ___ photo.",
+        [
+          "Annas",
+          "Anna's",
+          "Anna"
+        ],
+        1
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/3/0",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00040"
+        },
+        {
+          "card_slot": 0
+        }
+      ],
+      "before": [
+        "Как представить имя папы Мии?",
+        "",
+        [
+          "His name is Tom.",
+          "Her name is Tom.",
+          "He name is Tom."
+        ],
+        0
+      ],
+      "after": [
+        "Вы представляете знакомого мужчину по имени Том. Как сообщить его имя?",
+        "",
+        [
+          "His name is Tom.",
+          "Her name is Tom.",
+          "He name is Tom."
+        ],
+        0
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/3/1",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00040"
+        },
+        {
+          "card_slot": 1
+        }
+      ],
+      "before": [
+        "У брата Анны имя Том. Как рассказать об этом?",
+        "",
+        [
+          "He name is Tom.",
+          "His name is Tom.",
+          "His is name Tom."
+        ],
+        1
+      ],
+      "after": [
+        "Мужчину на фотографии зовут Том. Как сообщить его имя?",
+        "",
+        [
+          "He name is Tom.",
+          "His name is Tom.",
+          "His is name Tom."
+        ],
+        1
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/3/4",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00040"
+        },
+        {
+          "card_slot": 4
+        }
+      ],
+      "before": [
+        "Анна рассказывает имя своего отца — Том.",
+        "",
+        [
+          "Her name is Tom.",
+          "His name is Tom.",
+          "His Tom name is."
+        ],
+        1
+      ],
+      "after": [
+        "Анна сообщает собеседнику, что мужчину зовут Том. Выберите правильную фразу.",
+        "",
+        [
+          "Her name is Tom.",
+          "His name is Tom.",
+          "His Tom name is."
+        ],
+        1
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/4/2",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00041"
+        },
+        {
+          "card_slot": 2
+        }
+      ],
+      "before": [
+        "На фото женщина, её зовут Сью.",
+        "",
+        [
+          "She name is Sue.",
+          "His name is Sue.",
+          "Her name is Sue."
+        ],
+        2
+      ],
+      "after": [
+        "Женщину на фото зовут Анна. Как сообщить её имя?",
+        "",
+        [
+          "She name is Anna.",
+          "His name is Anna.",
+          "Her name is Anna."
+        ],
+        2
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/4/3",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00041"
+        },
+        {
+          "card_slot": 3
+        }
+      ],
+      "before": [
+        "Вы представляет подругу Мию по имени.",
+        "",
+        [
+          "Her name is Mia.",
+          "His name is Mia.",
+          "She name Mia is."
+        ],
+        0
+      ],
+      "after": [
+        "Вы представляете подругу Мию по имени.",
+        "",
+        [
+          "Her name is Mia.",
+          "His name is Mia.",
+          "She name Mia is."
+        ],
+        0
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/6/0",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00043"
+        },
+        {
+          "card_slot": 0
+        }
+      ],
+      "before": [
+        "Вы показываете большую семью и дом бабушки с дедушкой. Выберите правильное описание.",
+        "",
+        [
+          "We are a big family. Their house is big.",
+          "We is a big family. Their house is big.",
+          "We are a big family. They house is big."
+        ],
+        0
+      ],
+      "after": [
+        "Вы показываете свою большую семью и большой дом бабушки с дедушкой. Выберите описание.",
+        "",
+        [
+          "We are a big family. Their house is big.",
+          "We is a big family. Their house is big.",
+          "We are a big family. They house is big."
+        ],
+        0
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/6/1",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00043"
+        },
+        {
+          "card_slot": 1
+        }
+      ],
+      "before": [
+        "Нас много, а дом наших друзей новый. Как сказать?",
+        "",
+        [
+          "We is a big family. Their house is new.",
+          "We are a big family. Their house is new.",
+          "We are a big family. They house is new."
+        ],
+        1
+      ],
+      "after": [
+        "Ваша семья большая, а дом ваших друзей новый. Как сказать?",
+        "",
+        [
+          "We is a big family. Their house is new.",
+          "We are a big family. Their house is new.",
+          "We are a big family. They house is new."
+        ],
+        1
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/6/3",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00043"
+        },
+        {
+          "card_slot": 3
+        }
+      ],
+      "before": [
+        "Вы представляете своих родных, потом дом двух родственников.",
+        "",
+        [
+          "We are a big family. Their house is new.",
+          "We is a big family. Their house is new.",
+          "We are a big family. They house is new."
+        ],
+        0
+      ],
+      "after": [
+        "Вы представляете своих родных: семья большая. Затем показываете новый дом двух родственников.",
+        "",
+        [
+          "We are a big family. Their house is new.",
+          "We is a big family. Their house is new.",
+          "We are a big family. They house is new."
+        ],
+        0
+      ]
+    },
+    {
+      "path": "content/manifests/a1_delayed_review_08.json",
+      "pointer": "/a1-family-possession/6/4",
+      "identity_chain": [
+        {
+          "lesson_slug": "a1-family-possession"
+        },
+        {
+          "exercise_uid": "EX-00043"
+        },
+        {
+          "card_slot": 4
+        }
+      ],
+      "before": [
+        "Речь о вашей большой семье и доме двух друзей. Выберите верное.",
+        "",
+        [
+          "We are a big family. They house is big.",
+          "We are a big family. Their house is big.",
+          "We is a big family. Their house big."
+        ],
+        1
+      ],
+      "after": [
+        "Речь о вашей большой семье и большом доме двух друзей. Выберите верное.",
+        "",
+        [
+          "We are a big family. They house is big.",
+          "We are a big family. Their house is big.",
+          "We is a big family. Their house big."
+        ],
+        1
+      ]
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/4/transfer_variants/1/model",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        }
+      ],
+      "before": "Two coffees, please. Thank you.",
+      "after": "A coffee, please. Thank you."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/4/transfer_variants/1/prompt",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        }
+      ],
+      "before": "В кафе попросите два кофе и вежливо поблагодарите бариста.",
+      "after": "В кафе попросите кофе и вежливо поблагодарите бариста."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/5/steps/2/why_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        }
+      ],
+      "before": "Need соединяет желание с количеством и предметом.",
+      "after": "Need означает «нуждаться»: I need three books — готовый образец «Мне нужны три книги». Он сообщает потребность, а не наличие. Здесь достаточно понять фразу целиком; в самостоятельном заказе используйте знакомые please / Can I have…?"
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/6/steps/1/example_en",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        }
+      ],
+      "before": "She is a teacher.",
+      "after": "She is forty."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/6/steps/1/example_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        }
+      ],
+      "before": "Она учитель.",
+      "after": "Ей сорок."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/6/steps/1/why_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        }
+      ],
+      "before": "She заменяет повтор имени; с she берём is. Профессия требует a.",
+      "after": "She заменяет повтор названия человека; с she выбираем is. Число forty сообщает возраст."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/6/transfer_variants/0/model",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        }
+      ],
+      "before": "This is my brother. He is a student.",
+      "after": "This is my brother. He is ten."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/6/transfer_variants/0/prompt",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        }
+      ],
+      "before": "Показывая фотографию, представьте брата и скажите, что он студент.",
+      "after": "Показывая вымышленную фотографию, представьте брата и скажите, что ему десять."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/6/transfer_variants/1/model",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        }
+      ],
+      "before": "This is my mom. She is a doctor.",
+      "after": "This is my mom. She is fifty."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/6/transfer_variants/1/prompt",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        }
+      ],
+      "before": "На фотографии ваша мама. Представьте её и скажите, что она врач.",
+      "after": "На вымышленной фотографии ваша мама. Представьте её и скажите, что ей пятьдесят."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/7/steps/0/example_en",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "This is Anna's bag.",
+      "after": "This is Anna's book."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/7/steps/0/example_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "Это сумка Анны.",
+      "after": "Это книга Анны."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/7/steps/0/why_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "Окончание 's у имени обычно обозначает владельца.",
+      "after": "'s после имени Anna помогает указать, чья книга."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/7/steps/1/example_en",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "It is her bag.",
+      "after": "It is her book."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/7/steps/1/example_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "Это её сумка.",
+      "after": "Это её книга."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/7/steps/1/why_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "Her перед bag показывает владельца; слово bag остаётся существительным.",
+      "after": "Her перед book указывает на Анну; book называет вещь."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/7/steps/2/example_en",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "Whose bag is this?",
+      "after": "Is this her book?"
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/7/steps/2/example_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "Чья это сумка?",
+      "after": "Это её книга?"
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/7/steps/2/why_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "Whose задаёт вопрос о владельце, а не о местонахождении.",
+      "after": "В полном вопросе ставим is перед this; her по-прежнему показывает, чья книга."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/7/transfer_variants/1/model",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "This is my sister's key.",
+      "after": "This is Mia's book."
+    },
+    {
+      "path": "content/manifests/a1_scaffold_transfer.json",
+      "pointer": "/lessons/7/transfer_variants/1/prompt",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "Вы нашли ключ своей сестры. Скажите другу, кому он принадлежит.",
+      "after": "Вы нашли книгу Мии. Назовите её владелицу по имени."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/4/tasks/explain/model",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        }
+      ],
+      "before": "Tea, please звучит вежливее благодаря слову please и спокойной интонации. Также можно сказать Can I have some tea, please?",
+      "after": "Tea, please обычно звучит мягче благодаря please и подходящей интонации. Можно также Can I have tea, please? Само название Tea! не является грамматической ошибкой; здесь сравниваем способы оформить просьбу."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/4/tasks/meaning/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        }
+      ],
+      "before": [
+        "Я бы хотел кофе, пожалуйста."
+      ],
+      "after": [
+        "Я бы хотел кофе, пожалуйста.",
+        "Я бы хотела кофе, пожалуйста.",
+        "Я хотел бы кофе, пожалуйста.",
+        "Я хотела бы кофе, пожалуйста.",
+        "Мне кофе, пожалуйста.",
+        "Мне бы кофе, пожалуйста."
+      ]
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/4/tasks/writing/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        }
+      ],
+      "before": [
+        "Can I have tea, please?"
+      ],
+      "after": [
+        "Can I have tea, please?",
+        "Can I have a tea, please?",
+        "I would like tea, please.",
+        "I would like a tea, please.",
+        "Tea, please.",
+        "A tea, please.",
+        "I'd like tea, please.",
+        "I'd like a tea, please."
+      ]
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/5/tasks/meaning/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        }
+      ],
+      "before": [
+        "Три чая, пожалуйста."
+      ],
+      "after": [
+        "Три чая, пожалуйста.",
+        "Три порции чая, пожалуйста."
+      ]
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/5/tasks/writing/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        }
+      ],
+      "before": [
+        "Two teas, please."
+      ],
+      "after": [
+        "Two teas, please.",
+        "2 teas, please.",
+        "Can I have two teas, please?",
+        "Can I have 2 teas, please?",
+        "I would like two teas, please.",
+        "I would like 2 teas, please.",
+        "I'd like two teas, please.",
+        "I'd like 2 teas, please."
+      ]
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/5/why",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        }
+      ],
+      "before": "После two или three исчисляемые предметы часто получают -s.",
+      "after": "Число two или three задаёт количество, а исчисляемое существительное ставим во множественном числе: two cookies. Для порций напитка тоже возможно two coffees."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/6/tasks/writing/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        }
+      ],
+      "before": [
+        "This is my brother."
+      ],
+      "after": [
+        "This is my brother.",
+        "That is my brother.",
+        "He is my brother.",
+        "That's my brother.",
+        "He's my brother."
+      ]
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/7/contrast/why",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "She — тот, о ком говорят как о действующем лице. Her перед book указывает, что книга принадлежит ей.",
+      "after": "She самостоятельно обозначает человека и может быть подлежащим: She is Anna. Her перед book указывает, чья книга. Для этой разницы не требуется действие: is Anna сообщает, кто она."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/7/pattern",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "his book / her bag / Tom's book.",
+      "after": "his book / her book / Tom's book."
+    },
+    {
+      "path": "content/manifests/a1_understanding_checks.json",
+      "pointer": "/lessons/7/tasks/writing/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": [
+        "This is Tom's book."
+      ],
+      "after": [
+        "This is Tom's book.",
+        "That is Tom's book.",
+        "It is Tom's book.",
+        "That's Tom's book.",
+        "It's Tom's book."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w02_l04_have_like_can.yaml",
+      "pointer": "/practice/2/explanation_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-have-like-can-do"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": "I have a cat — нейтральный способ сказать «У меня есть кот». В американской разговорной речи возможны I have got a cat и I've got a cat. В этом уроке основной образец — I have; другие правильные варианты не называем ошибками.",
+      "after": "I have a cat — нейтральный способ сказать «У меня есть кот». В этом задании тренируем именно I have. В американской разговорной речи также возможны I have got a cat и I've got a cat; они правильны, но относятся к другой конструкции, которую здесь не требуется строить."
+    },
+    {
+      "path": "content/seed_lessons/a1_w02_l04_have_like_can.yaml",
+      "pointer": "/practice/2/hint_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-have-like-can-do"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": "«У меня есть» — I have.",
+      "after": "Начните с I have, затем назовите одного кота с артиклем a."
+    },
+    {
+      "path": "content/seed_lessons/a1_w02_l04_have_like_can.yaml",
+      "pointer": "/practice/2/prompt_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-have-like-can-do"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": "У меня есть кот.",
+      "after": "Скажите «У меня есть кот», используя изученную конструкцию I have…"
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/contractions/0/note_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        }
+      ],
+      "before": "В заказе почти всегда I'd like — «айд лайк».",
+      "after": "В разговорном заказе I would like можно сократить до I'd like: /aɪd laɪk/. Полная форма тоже правильна."
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/exercises/3/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "uid": "EX-00025"
+        }
+      ],
+      "before": [
+        "A tea, please.",
+        "One tea, please.",
+        "Can I have a tea, please?",
+        "Can I have tea, please?",
+        "Tea, thanks.",
+        "Tea, thank you.",
+        "A tea, thanks."
+      ],
+      "after": [
+        "A tea, please.",
+        "One tea, please.",
+        "Can I have a tea, please?",
+        "Can I have tea, please?",
+        "Tea, thanks.",
+        "Tea, thank you.",
+        "A tea, thanks.",
+        "I'd like a tea, please.",
+        "I would like a tea, please.",
+        "I'd like tea, please.",
+        "I would like tea, please."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/exercises/3/units",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "uid": "EX-00025"
+        }
+      ],
+      "before": [
+        "LX-00055",
+        "LX-00082"
+      ],
+      "after": [
+        "LX-00055"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/exercises/4/units",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "uid": "EX-00026"
+        }
+      ],
+      "before": [
+        "LX-00281",
+        "LX-00285"
+      ],
+      "after": [
+        "LX-00281"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/exercises/5/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "uid": "EX-00027"
+        }
+      ],
+      "before": [
+        "I'd like a sandwich and a juice, please.",
+        "I would like a sandwich and juice, please.",
+        "I'd like a sandwich and juice, please.",
+        "A sandwich and a juice, please.",
+        "A sandwich and juice, please.",
+        "Can I have a sandwich and a juice, please?",
+        "Can I have a sandwich and juice, please?"
+      ],
+      "after": [
+        "I'd like a sandwich and a juice, please.",
+        "I would like a sandwich and juice, please.",
+        "I'd like a sandwich and juice, please.",
+        "A sandwich and a juice, please.",
+        "A sandwich and juice, please.",
+        "Can I have a sandwich and a juice, please?",
+        "Can I have a sandwich and juice, please?",
+        "I'd like a juice and a sandwich, please.",
+        "I would like a juice and a sandwich, please.",
+        "A juice and a sandwich, please.",
+        "I'd like juice and a sandwich, please.",
+        "I would like juice and a sandwich, please.",
+        "Juice and a sandwich, please."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/exercises/5/units",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "uid": "EX-00027"
+        }
+      ],
+      "before": [
+        "LX-00282",
+        "LX-00283",
+        "LX-00284",
+        "LX-00285"
+      ],
+      "after": [
+        "LX-00282",
+        "LX-00283"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/layers/3/body",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "before": "**Почему заказ похож на вопрос?** *Can I have…?* буквально спрашивает о возможности, а в кафе работает как **вежливая просьба**. Прямое *Give me…* без смягчения иногда может прозвучать резко, но оно **не всегда грубое**: важны интонация, близость людей и ситуация. Для начинающего надёжнее готовый каркас с *please*.\n\nПереспросить тоже лучше вопросом, а не словом «Что?»:\n\n> [O2]Sorry[/]? — Простите?\n> [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]? — Повторите, пожалуйста.\n\nЕсть два способа сказать «хочу», и в кафе важно не перепутать:\n\n> [T8]I[/] [D3]want[/] [N1]one[/]! — Я тоже хочу! (Анна — Тому, среди своих)\n> [T8]I[/] [D7]would[/] [D3]like[/] [N1]one[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]. — Мне кофе и чай, пожалуйста. (Том — бариста)\n\n- [D3]want[/] прямо выражает желание: *I want…*. Само слово **не грубое**, но короткий заказ без вежливых слов или подходящей интонации может звучать требовательно.\n- [D7]would[/] [D3]like[/] означает **«хотел(а) бы»**, мягкий и привычный вариант для заказа. **Would** здесь не делает просьбу прошедшим временем.\n- В живой речи **I'd like** — сокращение от **I would like**; апостроф и **'d** заменяют **would**. В других конструкциях *I'd* может сокращать *I had*, но после **like** в этом заказе подразумевается **would**.\n- В *I want one* слово **one** заменяет уже названное исчисляемое существительное: здесь речь о печенье. Перевод «тоже хочу» естественен в этой сцене, но само **one** не означает «тоже».\n- Бариста тоже может спросить: [T9]What[/] [D7]would[/] [T8]you[/] [D3]like[/]? — Что будете?\n\n**Диагностика понимания:** Вы хотите попросить чай. Что верно: *Can I have a tea, please?* или *Can I a tea, please?*?\n\n**Разбор:** *Can I have a tea, please?* После **can** требуется слово действия **have** — «получить» в этой просьбе. **A tea** здесь означает одну порцию чая.\n",
+      "after": "**Почему заказ похож на вопрос?** *Can I have…?* буквально спрашивает о возможности, а в кафе работает как **вежливая просьба**. Прямое *Give me…* без смягчения иногда может прозвучать резко, но оно **не всегда грубое**: важны интонация, близость людей и ситуация. Для начинающего надёжнее готовый каркас с *please*.\n\nЧтобы вежливо переспросить, используйте знакомые готовые фразы:\n\n> [O2]Sorry[/]? — Простите?\n> [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]? — Повторите, пожалуйста.\n\nЕсть два способа сказать «хочу», и в кафе важно не перепутать:\n\n> [T8]I[/] [D3]want[/] [N1]one[/]! — Я тоже хочу! (Анна — Тому, среди своих)\n> [T8]I[/] [D7]would[/] [D3]like[/] [N1]one[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/], [O8]please[/]. — Мне кофе и чай, пожалуйста. (Том — бариста)\n\n- [D3]want[/] прямо выражает желание: *I want…*. Само слово **не грубое**, но короткий заказ без вежливых слов или подходящей интонации может звучать требовательно.\n- [D7]would[/] [D3]like[/] означает **«хотел(а) бы»**, мягкий и привычный вариант для заказа. **Would** здесь не делает просьбу прошедшим временем.\n- В живой речи **I'd like** — сокращение от **I would like**; апостроф и **'d** заменяют **would**. В других конструкциях *I'd* может сокращать *I had*, но в сочетании **I'd like** из этого заказа сокращение раскрывается как **I would like**.\n- В *I want one* слово **one** заменяет уже названное исчисляемое существительное: здесь речь о печенье. Перевод «тоже хочу» естественен в этой сцене, но само **one** не означает «тоже».\n- Бариста тоже может спросить: [T9]What[/] [D7]would[/] [T8]you[/] [D3]like[/]? — Что будете?\n\n**Диагностика понимания:** Вы хотите попросить чай. Что верно: *Can I have a tea, please?* или *Can I a tea, please?*?\n\n**Разбор:** *Can I have a tea, please?* После **can** и подлежащего **I** нужен глагол **have** в начальной форме без **to**: в этой просьбе он означает «получить». **A tea** здесь означает одну порцию чая.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/layers/5/body",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "before": "Русское «пожалуйста» по-английски бывает тремя разными фразами:\n\n- просьба — please: A tea, please;\n- подаёте вещь — Here you are;\n- ответ на «спасибо» — You are welcome.\n\n**Почему a tea, если чай нельзя посчитать как вещество?** В кафе **a coffee / a tea** — одна **порция** напитка. Поэтому *two coffees* — две порции, а *I like coffee* — кофе вообще. Это смена значения в зависимости от ситуации, а не превращение любого вещества в исчисляемый предмет.\n\nВ меню американского кафе ещё есть [S3]juice[/] (сок) и [S3]sandwich[/] (сэндвич):\n\n> [T8]I[/] [D7]would[/] [D3]like[/] [T1]a[/] [S3]sandwich[/] [C1]and[/] [T1]an[/] [S3]apple[/] [S3]juice[/], [O8]please[/]. — Мне сэндвич и яблочный сок.\n",
+      "after": "Русское «пожалуйста» по-английски бывает тремя разными фразами:\n\n- просьба — please: A tea, please;\n- подаёте вещь — Here you are;\n- ответ на «спасибо» — You are welcome.\n\n**Почему a tea, если чай нельзя посчитать как вещество?** В кафе **a coffee / a tea** — одна **порция** напитка. Поэтому *two coffees* — две порции, а *I like coffee* — кофе вообще. Это смена значения в зависимости от ситуации, а не превращение любого вещества в исчисляемый предмет.\n\nВ меню американского кафе ещё есть [S3]juice[/] (сок) и [S3]sandwich[/] (сэндвич). Если выбираете яблочный сок, **apple juice** — название напитка из двух слов. В заказе **an apple juice** означает одну порцию: **an** выбираем по первому звуку **apple**, а не по звуку **juice**.\n\n> [T8]I[/] [D7]would[/] [D3]like[/] [T1]a[/] [S3]sandwich[/] [C1]and[/] [T1]an[/] [S3]apple[/] [S3]juice[/], [O8]please[/]. — Мне сэндвич и яблочный сок.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/practice/0/units",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": [
+        "LX-00056",
+        "LX-00084",
+        "LX-00285"
+      ],
+      "after": [
+        "LX-00056",
+        "LX-00035",
+        "LX-00029"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/practice/1/review_of",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": 3,
+      "after": 5
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/practice/1/units",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": [
+        "LX-00082",
+        "LX-00084",
+        "LX-00281",
+        "LX-00284",
+        "LX-00285"
+      ],
+      "after": [
+        "LX-00011",
+        "LX-00029"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/practice/2/review_of",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": 3,
+      "after": 1
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/practice/2/units",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": [
+        "LX-00060",
+        "LX-00084",
+        "LX-00085",
+        "LX-00086",
+        "LX-00087",
+        "LX-00284",
+        "LX-00285"
+      ],
+      "after": [
+        "LX-00084"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/practice/3/review_of",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": 3,
+      "after": 2
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l05_cafe.yaml",
+      "pointer": "/practice/3/units",
+      "identity_chain": [
+        {
+          "slug": "a1-cafe-order"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": [
+        "LX-00055",
+        "LX-00058",
+        "LX-00082",
+        "LX-00285"
+      ],
+      "after": [
+        "LX-00082",
+        "LX-00058",
+        "LX-00011",
+        "LX-00055"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/exercises/1/hint_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "uid": "EX-00029"
+        }
+      ],
+      "before": "Предметов больше одного — добавьте -s.",
+      "after": "Здесь считаем две порции чая: one tea → two… Добавьте к tea окончание -s."
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/exercises/3/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "uid": "EX-00031"
+        }
+      ],
+      "before": [
+        "Can I have four teas, please?",
+        "4 teas, please.",
+        "Four teas, thanks.",
+        "4 teas, thanks."
+      ],
+      "after": [
+        "Can I have four teas, please?",
+        "4 teas, please.",
+        "Four teas, thanks.",
+        "4 teas, thanks.",
+        "I'd like four teas, please.",
+        "I would like four teas, please."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/layers/1/body",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "before": "**Как отличить 3 от 13?** Сравните *three* («три») и *thirteen* («тринадцать»). У чисел **13–19** есть часть **-teen**, связанная с числом десять. Например, *four* — 4, *fourteen* — 14. Поэтому важно услышать слово **целиком**, а не только его начало.\n\n**Не все числа строятся одинаково.** Числа *eleven* (11) и *twelve* (12) не оканчиваются на **-teen**. В некоторых числах меняется написание основы: *three → thirteen*, *five → fifteen*, *eight → eighteen*. Это не приглашение образовывать числа по догадке: для первых двадцати названий полезно сверять написание и звук.\n\n**Перед заказом уточните количество.** *One tea* — одна порция, *two teas* — две, *three teas* — три. Сначала решите, сколько порций нужно, затем подберите число и форму существительного.\n",
+      "after": "**Как отличить 3 от 13?** Сравните *three* («три») и *thirteen* («тринадцать»). У чисел **13–19** есть часть **-teen**, связанная с числом десять. Например, *four* — 4, *fourteen* — 14. Поэтому важно услышать слово **целиком**, а не только его начало.\n\n**Не все числа строятся одинаково.** Числа *eleven* (11) и *twelve* (12) не оканчиваются на **-teen**. В некоторых числах меняется написание основы: *three → thirteen*, *five → fifteen*, *eight → eighteen*. Это не приглашение образовывать числа по догадке: для первых двадцати названий полезно сверять написание и звук.\n\n**Названия от 1 до 20 — короткая опора для заказа:**\n\n- **1–5:** one — 1, two — 2, three — 3, four — 4, five — 5.\n- **6–10:** six — 6, seven — 7, eight — 8, nine — 9, ten — 10.\n- **11–15:** eleven — 11, twelve — 12, thirteen — 13, fourteen — 14, fifteen — 15.\n- **16–20:** sixteen — 16, seventeen — 17, eighteen — 18, nineteen — 19, twenty — 20.\n\nЭто справочник, а не просьба выучить двадцать слов за один подход. Начните с 1–5 и подставляйте числа в короткий заказ; затем переходите к следующей группе. Сверяйте произношение со словарными образцами.\n\n**Перед заказом уточните количество.** *One tea* — одна порция, *two teas* — две, *three teas* — три. Сначала решите, сколько порций нужно, затем подберите число и форму существительного.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/layers/2/body",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "before": "**Как построить заказ?** Назовите число, затем предмет. Если считаем **обычные исчисляемые существительные** (или порции напитков) и их больше одного, часто добавляем окончание **-s**:\n\n> [N1]One[/] [S3]coffee[/], [O8]please[/]. — Один кофе.\n> [N1]Two[/] [S3]coffees[/], [O8]please[/]. — Два кофе.\n> [N1]Five[/] [S3]cookies[/], [O8]please[/]. — Пять печений.\n\n- После **one** обычное исчисляемое слово в единственном числе: *one cookie*; после **two / three / five** — множественное: *two cookies*.\n- Это **не означает**, что после любого числа любое существительное обязательно получает **-s**: неисчисляемые вещества (*water*) нельзя считать по штукам без уточнения порций, а у некоторых существительных есть необычные множественные формы — их изучим позже.\n- В русском «два печенья» и «пять печений» различаются по форме. Для обычных английских слов множественное число часто образуется одинаково — с **-s**.\n",
+      "after": "**Как построить заказ?** Назовите число, затем предмет. Если считаем **обычные исчисляемые существительные** (или порции напитков) и их больше одного, часто добавляем окончание **-s**:\n\n> [N1]One[/] [S3]coffee[/], [O8]please[/]. — Один кофе.\n> [N1]Two[/] [S3]coffees[/], [O8]please[/]. — Два кофе.\n> [N1]Five[/] [S3]cookies[/], [O8]please[/]. — Пять печений.\n\n- После **one** обычное исчисляемое слово в единственном числе: *one cookie*; после **two / three / five** — множественное: *two cookies*.\n- Это **не означает**, что после любого числа любое существительное обязательно получает **-s**: неисчисляемые вещества (*water*) нельзя считать по штукам без уточнения порций, а у некоторых существительных есть необычные множественные формы — их изучим позже.\n- На письме не всегда добавляется только буква **s**. У знакомого слова **sandwich** форма множественного числа — **sandwiches**, с **-es**. Это тоже обычное множественное число: *two sandwiches*.\n- В русском «два печенья» и «пять печений» различаются по форме. Для обычных английских слов множественное число часто образуется одинаково — с **-s**.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/practice/0/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": null,
+      "after": [
+        "Can I have two coffees and one tea, please?",
+        "I would like two coffees and one tea, please.",
+        "One tea and two coffees, please."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/practice/0/explanation_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": "Two coffees and one tea, please. В кафе coffee считают чашками, поэтому two coffees.",
+      "after": "Two coffees and one tea, please. В кафе считаем порции, поэтому two coffees; после one — tea в единственном числе. Порядок двух напитков можно поменять, сохранив количество каждого."
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/practice/0/units",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": [
+        "LX-00062",
+        "LX-00063",
+        "LX-00083"
+      ],
+      "after": [
+        "LX-00062",
+        "LX-00063",
+        "LX-00011",
+        "LX-00055"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/practice/1/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": null,
+      "after": [
+        "Can I have three teas, please?",
+        "I would like three teas, please."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/practice/1/review_of",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": 3,
+      "after": 2
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/practice/1/units",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": [
+        "LX-00064",
+        "LX-00083"
+      ],
+      "after": [
+        "LX-00064",
+        "LX-00055"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/practice/2/review_of",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": 3,
+      "after": 4
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/practice/2/units",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": [
+        "LX-00073",
+        "LX-00083"
+      ],
+      "after": [
+        "LX-00073",
+        "LX-00056"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/practice/3/review_of",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": 3,
+      "after": 4
+    },
+    {
+      "path": "content/seed_lessons/a1_w03_l06_numbers.yaml",
+      "pointer": "/practice/3/units",
+      "identity_chain": [
+        {
+          "slug": "a1-numbers-1-20"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": [
+        "LX-00066"
+      ],
+      "after": [
+        "LX-00066",
+        "LX-00056"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/exercises/0/explanation_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "uid": "EX-00032"
+        }
+      ],
+      "before": "Who is this? — who первым, затем is и this. Без is фраза неполная.",
+      "after": "Who is this? — обычный вопрос по указанной схеме: who, затем is и this. В Who this? не хватает is. This is who? возможно как удивлённый переспрос, но здесь требуется другой порядок слов."
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/exercises/0/prompt_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "uid": "EX-00032"
+        }
+      ],
+      "before": "Как спросить «Кто это?» о человеке на фото?",
+      "after": "Как спросить «Кто это?» о человеке на фото? Выберите обычный вопрос по схеме Who + is + this, а не переспрос."
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/exercises/2/prompt_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "uid": "EX-00034"
+        }
+      ],
+      "before": "Соберите вопрос: «Это твоя мама?»",
+      "after": "Соберите обычный вопрос «Это твоя мама?». Начните с Is, затем поставьте this и your mother."
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/exercises/2/units",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "uid": "EX-00034"
+        }
+      ],
+      "before": [
+        "LX-00103"
+      ],
+      "after": [
+        "LX-00002",
+        "LX-00039"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/exercises/3/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "uid": "EX-00035"
+        }
+      ],
+      "before": [
+        "This is my sister. She's twelve.",
+        "This is my sister. She is 12.",
+        "This is my sister. She's 12."
+      ],
+      "after": [
+        "This is my sister. She's twelve.",
+        "This is my sister. She is 12.",
+        "This is my sister. She's 12.",
+        "This is my sister. She is twelve years old.",
+        "This is my sister. She's twelve years old.",
+        "This is my sister. She is 12 years old.",
+        "This is my sister. She's 12 years old.",
+        "It is my sister. She is twelve.",
+        "It's my sister. She's twelve.",
+        "It's my sister. She is twelve.",
+        "It is my sister. She's twelve."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/layers/3/body",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "before": "**Почему this, а не he или she?** Когда мы **показываем** человека на фотографии, удобно сказать *This is my brother*. Дальше, когда уже ясно, о ком речь, вместо повторения *my brother* можно сказать *he*. Это **удобный переход в разговоре**, а не правило, что при первом упоминании нельзя использовать *he* или *she*: всё зависит от контекста.\n\n> [T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/]. [T8]He[/] [D1]is[/] [N1]ten[/]. — Это мой брат. Ему десять.\n\n**Почему He is ten, а не He has ten?** Английский сообщает возраст как **состояние человека** через форму **be**; русскому «ему десять» соответствует *He is ten*. **Has** здесь не употребляют. В английской фразе не нужно говорить *years old* каждый раз, если по контексту речь о возрасте.\n\n> [A6]How[/] [J2]old[/] [D1]are[/] [T8]you[/]? — Сколько тебе лет?\n> [T3]My[/] [S1]mom[/] [D1]is[/] [N5]forty[/], [C1]and[/] [T3]my[/] [S1]dad[/] [D1]is[/] [N5]fifty[/]. — Маме сорок, а папе пятьдесят.\n> [T8]I[/] [D1]am[/] [N5]thirty[/] [S7]years[/] [J2]old[/]. — Мне тридцать лет.\n\n**Что означает -ty?** У многих названий десятков есть окончание **-ty**: *sixty* — 60, *seventy* — 70. Но нельзя механически приклеить **-ty** к каждому числу: *thirty*, *forty*, *fifty*, *eighty* имеют исторически сложившееся написание, которое нужно узнавать. А **hundred** (100) вообще не относится к этой группе.\n\n- [N1]thirty[/] 30, [N1]forty[/] 40, [N1]fifty[/] 50, [N1]sixty[/] 60\n- [N1]seventy[/] 70, [N1]eighty[/] 80, [N1]ninety[/] 90, [N1]hundred[/] 100\n- Между десятками и единицами — дефис: [N1]twenty[/]-[N1]five[/] 25, [N1]forty[/]-[N1]two[/] 42.\n- years old можно не говорить: I am thirty — уже полный ответ.\n\n**Диагностика понимания:** Девочке двенадцать лет. Что верно: *She is twelve* или *She has twelve*?\n\n**Разбор:** *She is twelve*. Возраст человека по-английски сообщают через **be** (*is*), не через **have** (*has*). Русское «ей двенадцать» нельзя собирать слово за словом.\n",
+      "after": "**Почему this, а не he или she?** Когда мы **показываем** человека на фотографии, удобно сказать *This is my brother*. Дальше, когда уже ясно, о ком речь, вместо повторения *my brother* можно сказать *he*. Это **удобный переход в разговоре**, а не правило, что при первом упоминании нельзя использовать *he* или *she*: всё зависит от контекста.\n\n> [T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/]. [T8]He[/] [D1]is[/] [N5]ten[/]. — Это мой брат. Ему десять.\n\n**Почему He is ten, а не He has ten?** Английский сообщает возраст как **состояние человека** через форму **be**; русскому «ему десять» соответствует *He is ten*. **Has** здесь не употребляют. В английской фразе не нужно говорить *years old* каждый раз, если по контексту речь о возрасте.\n\n> [A6]How[/] [J2]old[/] [D1]are[/] [T8]you[/]? — Сколько тебе лет?\n> [T3]My[/] [S1]mom[/] [D1]is[/] [N5]forty[/], [C1]and[/] [T3]my[/] [S1]dad[/] [D1]is[/] [N5]fifty[/]. — Маме сорок, а папе пятьдесят.\n> [T8]I[/] [D1]am[/] [N5]thirty[/] [S7]years[/] [J2]old[/]. — Мне тридцать лет.\n\n**Что означает -ty?** У многих названий десятков есть окончание **-ty**: *sixty* — 60, *seventy* — 70. Но нельзя механически приклеить **-ty** к каждому числу: *thirty*, *forty*, *fifty*, *eighty* имеют исторически сложившееся написание, которое нужно узнавать. А **hundred** (100) вообще не относится к этой группе.\n\n- [N1]thirty[/] 30, [N1]forty[/] 40, [N1]fifty[/] 50, [N1]sixty[/] 60\n- [N1]seventy[/] 70, [N1]eighty[/] 80, [N1]ninety[/] 90, [N1]hundred[/] 100\n- **Сто — a hundred или one hundred**, не просто hundred в этой конструкции: *He is a hundred years old* — «Ему сто лет».\n- Между десятками и единицами — дефис: [N1]twenty[/]-[N1]five[/] 25, [N1]forty[/]-[N1]two[/] 42.\n- **Возраст можно назвать с years old или без него:** *I am thirty years old* и *I am thirty* — оба варианта правильны. В полной форме после числа больше одного — **years**, во множественном числе: *She is twelve years old*, не *twelve year old*. Это схема сообщения возраста после **be**; другие сочетания со словом *year* здесь не рассматриваем.\n\n**Диагностика понимания:** Девочке двенадцать лет. Что верно: *She is twelve* или *She has twelve*?\n\n**Разбор:** *She is twelve*. Возраст человека по-английски сообщают через **be** (*is*), не через **have** (*has*). Русское «ей двенадцать» нельзя собирать слово за словом.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/layers/4/body",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "before": "В разговоре о фото американцы говорят коротко:\n\n> [T9]Who[/] [D1]is[/] [T2]this[/]? — Кто это?\n> [T2]This[/] [D1]is[/] [T3]my[/] [S1]sister[/]. — Это моя сестра.\n> [T8]She[/] [D1]is[/] [N1]eleven[/]. — Ей одиннадцать.\n\n- Who is в быстрой речи звучит как who's: «хуз».\n- Вместо mother и father дома часто говорят mom и dad.\n",
+      "after": "В разговоре о фото американцы говорят коротко:\n\n> [T9]Who[/] [D1]is[/] [T2]this[/]? — Кто это?\n> [T2]This[/] [D1]is[/] [T3]my[/] [S1]sister[/]. — Это моя сестра.\n> [T8]She[/] [D1]is[/] [N5]eleven[/]. — Ей одиннадцать.\n\n- Who is в быстрой речи звучит как who's: «хуз».\n- Вместо mother и father дома часто говорят mom и dad.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/practice/0/review_of",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": 3,
+      "after": 1
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/practice/0/units",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": [
+        "LX-00099",
+        "LX-00101",
+        "LX-00102",
+        "LX-00103"
+      ],
+      "after": [
+        "LX-00099",
+        "LX-00101"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/practice/1/review_of",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": 3,
+      "after": 2
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/practice/1/units",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": [
+        "LX-00088",
+        "LX-00101",
+        "LX-00102",
+        "LX-00103"
+      ],
+      "after": [
+        "LX-00088",
+        "LX-00102"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/practice/2/units",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": [
+        "LX-00101",
+        "LX-00102",
+        "LX-00103"
+      ],
+      "after": [
+        "LX-00002",
+        "LX-00039"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/practice/3/explanation_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": "How old is he? По-английски спрашивают «насколько стар», а отвечают просто числом: He is ten.",
+      "after": "How old is he? — «Сколько ему лет?» How old спрашивает о возрасте, а не обязательно о старости. С he нужна форма is. В ответе можно He is ten или He is ten years old."
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/practice/3/hint_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": "«Насколько он старый?»",
+      "after": "Начните с How old, затем is и he."
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/practice/3/review_of",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": 3,
+      "after": 6
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l07_family.yaml",
+      "pointer": "/practice/3/units",
+      "identity_chain": [
+        {
+          "slug": "a1-family-photo"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": [
+        "LX-00101",
+        "LX-00102",
+        "LX-00103",
+        "LX-00278"
+      ],
+      "after": [
+        "LX-00095",
+        "LX-00278"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/contractions/0/note_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        }
+      ],
+      "before": "Не путайте she's (она есть) и her (её).",
+      "after": "She's = she is: She’s happy — «Она рада». Her перед существительным — «её»: her family."
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/exercises/1/units",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "uid": "EX-00039"
+        }
+      ],
+      "before": [
+        "LX-00097"
+      ],
+      "after": []
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/exercises/3/prompt_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "uid": "EX-00041"
+        }
+      ],
+      "before": "Новая ситуация: вы показываете сестру друга. Её зовут Анна. Скажите «Её зовут Анна».",
+      "after": "Новая ситуация: вы показываете сестру друга. Её зовут Анна. Сообщите её имя, используя her name."
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/layers/0/body",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "before": "Фото нашлось — осталось вернуть его хозяйке. Для этого нужно сказать, чьё оно: *her photo, Mia's brother*. Без этих слов разговор о людях превращается в «он, она, она, он», и никто не понимает, о ком речь.\n\nЧтобы вернуть вещь хозяину, нужно сказать, чья она.\n\n> [S1]Mia[/][T3]'s[/] [S1]brother[/] [D1]is[/] [N1]ten[/]! — Брату Мии десять!\n> [T3]Her[/] [S1]family[/] [D1]is[/] [J3]nice[/]. — У неё хорошая семья.\n> [T3]His[/] [S9]name[/] [D1]is[/] [S1]Tom[/]. — Его зовут Том.\n> [A3]Here[/] [D1]is[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.\n\n**Что объединяет her, his и Mia's?** Все они помогают назвать **владельца**: *her family* — её семья, *Mia's brother* — брат Мии. В системе разметки курса верхняя линия T3 отмечает такие слова принадлежности. Но **he / she / we / they** — это уже **местоимения**: они называют людей, а не обозначают владельца перед существительным.\n",
+      "after": "Фото нашлось — осталось вернуть его хозяйке. Для этого нужно сказать, чьё оно: *her photo, Mia's brother*. Без этих слов разговор о людях превращается в «он, она, она, он», и никто не понимает, о ком речь.\n\nЧтобы вернуть вещь хозяину, нужно сказать, чья она.\n\n> [S1]Mia[/][T3]'s[/] [S1]brother[/] [D1]is[/] [N5]ten[/]! — Брату Мии десять!\n> [T3]Her[/] [S1]family[/] [D1]is[/] [J3]nice[/]. — У неё хорошая семья.\n> [T3]His[/] [S9]name[/] [D1]is[/] [S1]Tom[/]. — Его зовут Том.\n> [A3]Here[/] [D1]is[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.\n\n**Что объединяет her, his и Mia's?** Все они показывают **принадлежность или связь с человеком**: *her photo* — её фотография, *her family* — её семья, *Mia's brother* — брат Мии. Слова о семье обозначают родственные отношения, а не собственность на людей. В системе разметки курса верхняя линия T3 отмечает такие слова принадлежности. Но **he / she / we / they** — это уже **местоимения**: в наших примерах они обозначают людей самостоятельно, а не стоят перед существительным как слова принадлежности. Слово **they** может обозначать и предметы, а не только людей.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/layers/4/body",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "before": "В непринуждённой речи **he is** и **she is** часто сокращают, когда форма **is** безударна. Полные формы также правильны: выбор зависит от темпа и того, какое слово говорящий выделяет.\n\n> [T8]He[/][D1]'s[/] [N1]ten[/]. — Ему десять.\n> [T8]I[/][D1]'m[/] [J4]happy[/]! — Я рада!\n> [A3]Here[/][D1]'s[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.\n\n- Here is в быстрой речи — here's.\n- Сегодня различаем два употребления 's: he's = he is, Mia's photo = фото Мии. Это не полный список всех значений 's в английском: здесь выбирайте по смыслу всей фразы.\n",
+      "after": "В непринуждённой речи **he is** и **she is** часто сокращают, когда форма **is** безударна. Полные формы также правильны: выбор зависит от темпа и того, какое слово говорящий выделяет.\n\n> [T8]He[/][D1]'s[/] [N5]ten[/]. — Ему десять.\n> [T8]I[/][D1]'m[/] [J4]happy[/]! — Я рада!\n> [A3]Here[/][D1]'s[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.\n\n- Here is в быстрой речи — here's.\n- Сегодня различаем два употребления 's: he's = he is, Mia's photo = фото Мии. Это не полный список всех значений 's в английском: здесь выбирайте по смыслу всей фразы.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/layers/5/body",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "before": "**Зачем один и тот же знак 's?** Апостроф с **s** может обозначать разные конструкции:\n\n- *Mia's photo* — **чья фотография?** Это принадлежность.\n- *Mia's happy* — **какая Мия?** Здесь *Mia's = Mia is*.\n\nЧтобы не путать, ищите **работу всей фразы**: после имени идёт предмет, который ей принадлежит, или сообщение о её состоянии? Одинаковое написание не означает одинаковую грамматическую функцию.\n",
+      "after": "**Зачем один и тот же знак 's?** Апостроф с **s** может обозначать разные конструкции:\n\n- *Mia's photo* — **чья фотография?** Это принадлежность.\n- *Mia's happy* — **какая Мия?** Здесь *Mia's = Mia is*.\n\n**Не определяйте значение только по следующему существительному.** *Mia's my sister* означает *Mia is my sister* — «Мия — моя сестра»: после сокращения тоже есть существительное, но вся фраза **называет, кто такая Мия**. В *Mia's photo* сочетание **называет фотографию и указывает, чья она**, а глагол **is** в него не входит.\n\nСмотрите на **работу всей фразы**, а не только на апостроф или одно соседнее слово. Одинаковое написание не означает одинаковую грамматическую функцию.\n"
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/0/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": null,
+      "after": [
+        "Her name's Mia."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/0/explanation_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": "Her name is Mia. Her — «её», his — «его».",
+      "after": "Her name is Mia — «Её зовут Мия». В разговоре можно Her name's Mia: здесь 's сокращает is. Her перед name указывает, о чьём имени речь; she вместо her здесь не подходит."
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/0/prompt_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": "Её зовут Мия.",
+      "after": "Её зовут Мия. Используйте her name."
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/0/review_of",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": 3,
+      "after": 4
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/0/units",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 1
+        }
+      ],
+      "before": [
+        "LX-00098",
+        "LX-00104",
+        "LX-00105"
+      ],
+      "after": [
+        "LX-00098",
+        "LX-00015"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/1/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": null,
+      "after": [
+        "Mia's brother is 10.",
+        "Mia's brother is ten years old.",
+        "Mia's brother is 10 years old."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/1/review_of",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": 3,
+      "after": 2
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/1/units",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 2
+        }
+      ],
+      "before": [
+        "LX-00104",
+        "LX-00105"
+      ],
+      "after": [
+        "LX-00088",
+        "LX-00071"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/2/accepted",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": null,
+      "after": [
+        "His name's Tom."
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/2/explanation_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": "His name is Tom. Не путайте his (его) и he's (он есть).",
+      "after": "His name is Tom — «Его зовут Том». Можно His name's Tom: 's после name сокращает is. His перед name означает «его»; he's = he is, поэтому He's name is Tom не подходит."
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/2/prompt_ru",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": "Его зовут Том.",
+      "after": "Его зовут Том. Используйте his name."
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/2/units",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 3
+        }
+      ],
+      "before": [
+        "LX-00097",
+        "LX-00104",
+        "LX-00105"
+      ],
+      "after": [
+        "LX-00097",
+        "LX-00104"
+      ]
+    },
+    {
+      "path": "content/seed_lessons/a1_w04_l08_possession.yaml",
+      "pointer": "/practice/3/units",
+      "identity_chain": [
+        {
+          "slug": "a1-family-possession"
+        },
+        {
+          "order": 4
+        }
+      ],
+      "before": [
+        "LX-00104",
+        "LX-00105"
+      ],
+      "after": [
+        "LX-00039",
+        "LX-00057",
+        "LX-00105"
+      ]
+    },
+    {
+      "path": "content/seed_lexicon/a1_w03_cafe_plus.yaml",
+      "pointer": "/units/1/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00281"
+        }
+      ],
+      "before": "l не читается: «вуд». В речи I would сокращают до I'd — «айд».",
+      "after": "В would буква l не обозначает отдельного звука: /wʊd/. I would можно сократить до I'd /aɪd/; полная форма тоже правильна."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w03_cafe_plus.yaml",
+      "pointer": "/units/3/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00283"
+        }
+      ],
+      "before": "d не слышно: «сэнвич». Широкое /æ/ в начале.",
+      "after": "Учебный образец /ˈsænwɪtʃ/ дан без /d/. Словарный американский вариант с /d/ тоже допустим. Во множественном числе — sandwiches."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w03_cafe_plus.yaml",
+      "pointer": "/units/4/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00284"
+        }
+      ],
+      "before": "Учите фразу целиком. В речи would you сливается: «вуджу».",
+      "after": "Учите фразу целиком. В быстрой речи would you может звучать слитно; это вариант связной речи, а не требование специально заменять два слова одним русским «вуджу»."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w03_cafe_plus.yaml",
+      "pointer": "/units/5/ipa_us",
+      "identity_chain": [
+        {
+          "uid": "LX-00285"
+        }
+      ],
+      "before": "/aɪd ˈlaɪk ə ˈkɔfi ˈpliz/",
+      "after": "/aɪ wʊd ˈlaɪk ə ˈkɔfi ˈpliz/"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w03_cafe_plus.yaml",
+      "pointer": "/units/5/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00285"
+        }
+      ],
+      "before": "В речи почти всегда I'd like — «айд лайк». Вместо coffee ставьте что угодно: a tea, a sandwich.",
+      "after": "В разговорном заказе I would like можно сократить до I'd like /aɪd laɪk/. Меняя заказ, заменяйте всю группу a coffee: a tea, a sandwich или water. Не добавляйте a перед любым названием автоматически."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w03_pilot.yaml",
+      "pointer": "/units/0/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00055"
+        }
+      ],
+      "before": "В заказе a tea — «чашка чая».",
+      "after": "В заказе a tea означает одну порцию чая, часто чашку. О чае как напитке вообще говорим tea без a: I like tea."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w03_pilot.yaml",
+      "pointer": "/units/1/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00056"
+        }
+      ],
+      "before": "В американском кафе к кофе обычно берут cookie — большое печенье.",
+      "after": "Cookie — отдельное печенье: a cookie, two cookies. Размер бывает разным; само слово не означает обязательно большое печенье."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w03_pilot.yaml",
+      "pointer": "/units/2/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00057"
+        }
+      ],
+      "before": "Американское t между гласными звучит как быстрое d: «фоуДоу».",
+      "after": "В выбранном американском образце photo звук /t/ произносится коротким касанием языка и напоминает быстрое /d/. Не переносите этот вариант на каждую букву t между гласными: важны положение ударения и окружение."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w04_family_plus.yaml",
+      "pointer": "/units/7/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00270"
+        }
+      ],
+      "before": "Ударение в начале: THIRty. В thirteen ударение в конце: thirTEEN.",
+      "after": "В отдельном учебном образце THIRty имеет ударение в начале, thirTEEN — в конце. В связной речи ударение может меняться, поэтому слушайте также окончания -ty и -teen."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w04_family_plus.yaml",
+      "pointer": "/units/9/usage_note",
+      "identity_chain": [
+        {
+          "uid": "LX-00272"
+        }
+      ],
+      "before": "Не путайте с fifteen: FIFty — ударение в начале, fifTEEN — в конце.",
+      "after": "В отдельном учебном образце FIFty имеет ударение в начале, fifTEEN — в конце. В связной речи ударение может меняться: различайте также -ty и -teen."
+    },
+    {
+      "path": "content/seed_lexicon/a1_w04_pilot.yaml",
+      "pointer": "/units/0/meaning",
+      "identity_chain": [
+        {
+          "uid": "LX-00088"
+        }
+      ],
+      "before": "a son of the same parents",
+      "after": "a male family member who has one or both parents in common with you"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w04_pilot.yaml",
+      "pointer": "/units/1/meaning",
+      "identity_chain": [
+        {
+          "uid": "LX-00089"
+        }
+      ],
+      "before": "a daughter of the same parents",
+      "after": "a female family member who has one or both parents in common with you"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w04_pilot.yaml",
+      "pointer": "/units/4/meaning",
+      "identity_chain": [
+        {
+          "uid": "LX-00092"
+        }
+      ],
+      "before": "a male child",
+      "after": "someone's male child"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w04_pilot.yaml",
+      "pointer": "/units/5/meaning",
+      "identity_chain": [
+        {
+          "uid": "LX-00093"
+        }
+      ],
+      "before": "a female child",
+      "after": "someone's female child"
+    },
+    {
+      "path": "content/seed_lexicon/a1_w04_pilot.yaml",
+      "pointer": "/units/6/example_ru",
+      "identity_chain": [
+        {
+          "uid": "LX-00094"
+        }
+      ],
+      "before": "Это мой младший братик.",
+      "after": "Это мой совсем маленький братик."
+    },
+    {
+      "path": "content/seed_poems/p02_who_is_she.yaml",
+      "pointer": "/body",
+      "identity_chain": [
+        {
+          "number": 2
+        }
+      ],
+      "before": "[T9]Who[/] [D1]is[/] [T2]this[/]? [T9]Who[/] [D1]is[/] [T2]this[/]?\n[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/]!\n[T9]Who[/] [D1]is[/] [T2]that[/]? [T9]Who[/] [D1]is[/] [T2]that[/]?\n[T2]That[/] [D1]is[/] [T3]my[/] [S1]brother[/]!\n\n[A6]How[/] [J2]old[/] [D1]is[/] [T8]he[/]? [A6]How[/] [J2]old[/] [D1]is[/] [T8]he[/]?\n[T8]He[/] [D1]is[/] [N1]ten[/], [N1]ten[/], [N1]ten[/]!\n[A6]How[/] [J2]old[/] [D1]is[/] [T8]she[/]? [A6]How[/] [J2]old[/] [D1]is[/] [T8]she[/]?\n[O2]Sorry[/]? [A2]Again[/]? [A2]Again[/]?\n\n[D1]Is[/] [T2]this[/] [T3]your[/] [S1]father[/]?\n[O4]Yes[/], [T8]he[/] [D1]is[/]!\n[T8]He[/] [D1]is[/] [N5]fifty[/],\n[C1]and[/] [T8]he[/] [D1]is[/] [J4]happy[/]!\n\n[C1]And[/] [T9]who[/] [D1]is[/] [T2]this[/]?\n[T2]This[/] [D1]is[/] [T1]the[/] [S1]baby[/]!\n[D1]Is[/] [T1]the[/] [S1]baby[/] [T3]your[/] [S1]sister[/]?\n[O4]No[/], [T8]I[/] [D1]am[/] [T1]the[/] [S1]baby[/]!\n\n[S1]Mother[/], [S1]father[/],\n[S1]sister[/], [S1]brother[/],\n[T8]we[/] [D1]are[/] [T1]a[/] [S1]family[/],\n[T1]a[/] [J1]big[/], [J4]happy[/] [S1]family[/]!\n",
+      "after": "[T9]Who[/] [D1]is[/] [T2]this[/]? [T9]Who[/] [D1]is[/] [T2]this[/]?\n[T2]This[/] [D1]is[/] [T3]my[/] [S1]mother[/]!\n[T9]Who[/] [D1]is[/] [T2]that[/]? [T9]Who[/] [D1]is[/] [T2]that[/]?\n[T2]That[/] [D1]is[/] [T3]my[/] [S1]brother[/]!\n\n[A6]How[/] [J2]old[/] [D1]is[/] [T8]he[/]? [A6]How[/] [J2]old[/] [D1]is[/] [T8]he[/]?\n[T8]He[/] [D1]is[/] [N5]ten[/], [N5]ten[/], [N5]ten[/]!\n[A6]How[/] [J2]old[/] [D1]is[/] [T8]she[/]? [A6]How[/] [J2]old[/] [D1]is[/] [T8]she[/]?\n[O2]Sorry[/]? [A2]Again[/]? [A2]Again[/]?\n\n[D1]Is[/] [T2]this[/] [T3]your[/] [S1]father[/]?\n[O4]Yes[/], [T8]he[/] [D1]is[/]!\n[T8]He[/] [D1]is[/] [N5]fifty[/],\n[C1]and[/] [T8]he[/] [D1]is[/] [J4]happy[/]!\n\n[C1]And[/] [T9]who[/] [D1]is[/] [T2]this[/]?\n[T2]This[/] [D1]is[/] [T1]the[/] [S1]baby[/]!\n[D1]Is[/] [T1]the[/] [S1]baby[/] [T3]your[/] [S1]sister[/]?\n[O4]No[/], [T8]I[/] [D1]am[/] [T1]the[/] [S1]baby[/]!\n\n[S1]Mother[/], [S1]father[/],\n[S1]sister[/], [S1]brother[/],\n[T8]we[/] [D1]are[/] [T1]a[/] [S1]family[/],\n[T1]a[/] [J1]big[/], [J4]happy[/] [S1]family[/]!\n"
+    },
+    {
+      "path": "content/seed_weeks/a1_w03.yaml",
+      "pointer": "/twister/tip_ru",
+      "identity_chain": [
+        {
+          "number": 3
+        }
+      ],
+      "before": "В three и thank кончик языка между зубами, голоса нет, воздух шипит. В tea и two язык за зубами и резко отрывается. Не заменяйте th на «с» или «ф».",
+      "after": "В three и thank кончик языка между зубами, голоса нет, воздух проходит через узкую щель. В tea и two язык за зубами и резко отрывается. Не заменяйте th на «с» или «ф»."
+    },
+    {
+      "path": "content/seed_weeks/a1_w04.yaml",
+      "pointer": "/twister/goal_ru",
+      "identity_chain": [
+        {
+          "number": 4
+        }
+      ],
+      "before": "Лёгкое /h/ девять раз (his, her, happy, how, hundred) и звонкое th в mother, father, brother.",
+      "after": "Лёгкое /h/ восемь раз (his, her, happy, how, hundred) и звонкое th в mother, father, brother."
+    }
+  ]
+}

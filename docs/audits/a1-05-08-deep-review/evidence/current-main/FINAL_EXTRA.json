@@ -1,0 +1,40 @@
+[
+  {
+    "name": "load-content-final",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "load_content"
+    ],
+    "exit_code": 0,
+    "seconds": 6.955
+  },
+  {
+    "name": "audit-course-final",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "manage.py",
+      "audit_course"
+    ],
+    "exit_code": 0,
+    "seconds": 6.964
+  },
+  {
+    "name": "http-final",
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "python",
+      "http_smoke.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.59
+  }
+]

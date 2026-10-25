@@ -1,0 +1,22 @@
+[
+  {
+    "name": "js-before",
+    "command": [
+      "node",
+      "--test",
+      "tests/js/a1-deep-05-08.test.cjs"
+    ],
+    "exit_code": 1,
+    "cwd": "/tmp/ee-a1-05-08-support-before"
+  },
+  {
+    "name": "js-after",
+    "command": [
+      "node",
+      "--test",
+      "tests/js/a1-deep-05-08.test.cjs"
+    ],
+    "exit_code": 0,
+    "cwd": "/workspace/scratch/6babac9ddb0c/English-Encyclopedia"
+  }
+]

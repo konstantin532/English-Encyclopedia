@@ -1,0 +1,67 @@
+Found 2 test(s).
+Creating test database for alias 'default'...
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+System check identified no issues (0 silenced).
+FFFF
+======================================================================
+FAIL: test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase (tests.test_a1_deep_05_08_support.DeepA1SupportTests.test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase) (slug='a1-family-photo', model='This is my brother. He is a student.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-support-before/tests/test_a1_deep_05_08_support.py", line 36, in test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['student'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'student'
+
+- ['student']
++ []
+
+======================================================================
+FAIL: test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase (tests.test_a1_deep_05_08_support.DeepA1SupportTests.test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase) (slug='a1-family-photo', model='This is my mom. She is a doctor.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-support-before/tests/test_a1_deep_05_08_support.py", line 36, in test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['doctor'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'doctor'
+
+- ['doctor']
++ []
+
+======================================================================
+FAIL: test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase (tests.test_a1_deep_05_08_support.DeepA1SupportTests.test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase) (slug='a1-family-possession', model="This is my sister's key.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-support-before/tests/test_a1_deep_05_08_support.py", line 36, in test_cold_transfer_uses_known_words_or_an_explicitly_prepared_whole_phrase
+    self.assertEqual([t for t in text_tokens(task['model']) if not is_known(t, vocabulary)], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['key'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'key'
+
+- ['key']
++ []
+
+======================================================================
+FAIL: test_echo_distractors_get_card_specific_feedback_for_the_required_question_order (tests.test_a1_deep_05_08_support.DeepA1SupportTests.test_echo_distractors_get_card_specific_feedback_for_the_required_question_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ee-a1-05-08-support-before/tests/test_a1_deep_05_08_support.py", line 46, in test_echo_distractors_get_card_specific_feedback_for_the_required_question_order
+    self.assertEqual(len(card), 5)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 4 != 5
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.316s
+
+FAILED (failures=4)
+Destroying test database for alias 'default'...

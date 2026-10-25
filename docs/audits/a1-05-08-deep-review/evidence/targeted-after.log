@@ -1,0 +1,106 @@
+Found 61 test(s).
+Creating test database for alias 'default'...
+Единиц: 1047, уроков: 60, историй с текстом: 11, стихов с текстом: 7, недель с диалогом: 30
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+Cloning test database for alias 'default'...
+System check identified no issues (0 silenced).
+.....F...........................F..FF.......................
+======================================================================
+FAIL: test_photo_transfer_accepts_years_old_but_preserves_sister_and_age (tests.test_a1_editorial_deep_05_08.DeepA1AnswerTests.test_photo_transfer_accepts_years_old_but_preserves_sister_and_age) [<object object at 0x7fb7aa4a7ef0>] (answer="It's my sister. She is twelve.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 58, in testPartExecutor
+    yield
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 556, in subTest
+    yield
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/tests/test_a1_editorial_deep_05_08.py", line 93, in test_photo_transfer_accepts_years_old_but_preserves_sister_and_age
+    self.check(item, answer, True)
+    ^^^^^^^
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/tests/test_a1_editorial_deep_05_08.py", line 37, in check
+    self.assertEqual(data["correct"], matches, answer)
+    ^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 907, in assertEqual
+    assertion_func(first, second, msg=msg)
+    ^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 900, in _baseAssertEqual
+    raise self.failureException(msg)
+    ^^^^^^^^^^^
+AssertionError: False != True : It's my sister. She is twelve.
+
+======================================================================
+FAIL: test_book_writing_keeps_toms_possession_and_the_apostrophe (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_book_writing_keeps_toms_possession_and_the_apostrophe) [<object object at 0x7fb7aa4a6fe0>] (answer="That's Tom's book.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 58, in testPartExecutor
+    yield
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 556, in subTest
+    yield
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/tests/test_a1_editorial_deep_05_08.py", line 313, in test_book_writing_keeps_toms_possession_and_the_apostrophe
+    self.submit(POSSESSION, "writing", answer, matches)
+    ^^^^^^^
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 907, in assertEqual
+    assertion_func(first, second, msg=msg)
+    ^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 900, in _baseAssertEqual
+    raise self.failureException(msg)
+    ^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_tea_writing_recognizes_the_taught_polite_frames (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_tea_writing_recognizes_the_taught_polite_frames) [<object object at 0x7fb7aa4a6fe0>] (answer="I'd like a tea, please.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 58, in testPartExecutor
+    yield
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 556, in subTest
+    yield
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/tests/test_a1_editorial_deep_05_08.py", line 282, in test_tea_writing_recognizes_the_taught_polite_frames
+    self.submit(CAFE, "writing", answer, matches)
+    ^^^^^^^
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 907, in assertEqual
+    assertion_func(first, second, msg=msg)
+    ^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 900, in _baseAssertEqual
+    raise self.failureException(msg)
+    ^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+======================================================================
+FAIL: test_two_teas_writing_preserves_number_plural_and_drink (tests.test_a1_editorial_deep_05_08.DeepA1IndependentTests.test_two_teas_writing_preserves_number_plural_and_drink) [<object object at 0x7fb7aa4a6fe0>] (answer="I'd like two teas, please.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 58, in testPartExecutor
+    yield
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 556, in subTest
+    yield
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/tests/test_a1_editorial_deep_05_08.py", line 298, in test_two_teas_writing_preserves_number_plural_and_drink
+    self.submit(NUMBERS, "writing", answer, matches)
+    ^^^^^^^
+  File "/workspace/scratch/6babac9ddb0c/English-Encyclopedia/tests/test_a1_editorial_deep_05_08.py", line 271, in submit
+    self.assertEqual(row.outcome, IndependentAttempt.Outcome.MODEL_MATCH if matches
+    ^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 907, in assertEqual
+    assertion_func(first, second, msg=msg)
+    ^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 900, in _baseAssertEqual
+    raise self.failureException(msg)
+    ^^^^^^^^^^^
+AssertionError: 'needs_review' != IndependentAttempt.Outcome.MODEL_MATCH
+
+----------------------------------------------------------------------
+Ran 61 tests in 25.278s
+
+FAILED (failures=4)
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...
+Destroying test database for alias 'default'...

@@ -21,7 +21,7 @@ contractions:
   - full: "she is"
     short: "she's"
     ipa: "/ʃiz/"
-    note_ru: "Не путайте she's (она есть) и her (её)."
+    note_ru: "She's = she is: She’s happy — «Она рада». Her перед существительным — «её»: her family."
   - full: "he is"
     short: "he's"
     ipa: "/hiz/"
@@ -41,12 +41,12 @@ layers:
 
       Чтобы вернуть вещь хозяину, нужно сказать, чья она.
 
-      > [S1]Mia[/][T3]'s[/] [S1]brother[/] [D1]is[/] [N1]ten[/]! — Брату Мии десять!
+      > [S1]Mia[/][T3]'s[/] [S1]brother[/] [D1]is[/] [N5]ten[/]! — Брату Мии десять!
       > [T3]Her[/] [S1]family[/] [D1]is[/] [J3]nice[/]. — У неё хорошая семья.
       > [T3]His[/] [S9]name[/] [D1]is[/] [S1]Tom[/]. — Его зовут Том.
       > [A3]Here[/] [D1]is[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.
 
-      **Что объединяет her, his и Mia's?** Все они помогают назвать **владельца**: *her family* — её семья, *Mia's brother* — брат Мии. В системе разметки курса верхняя линия T3 отмечает такие слова принадлежности. Но **he / she / we / they** — это уже **местоимения**: они называют людей, а не обозначают владельца перед существительным.
+      **Что объединяет her, his и Mia's?** Все они показывают **принадлежность или связь с человеком**: *her photo* — её фотография, *her family* — её семья, *Mia's brother* — брат Мии. Слова о семье обозначают родственные отношения, а не собственность на людей. В системе разметки курса верхняя линия T3 отмечает такие слова принадлежности. Но **he / she / we / they** — это уже **местоимения**: в наших примерах они обозначают людей самостоятельно, а не стоят перед существительным как слова принадлежности. Слово **they** может обозначать и предметы, а не только людей.
   - number: 2
     body: |
       **Один и тот же человек — две разные формы слова.** Мия рада, потому что ей вернули фотографию. Сравните:
@@ -99,7 +99,7 @@ layers:
     body: |
       В непринуждённой речи **he is** и **she is** часто сокращают, когда форма **is** безударна. Полные формы также правильны: выбор зависит от темпа и того, какое слово говорящий выделяет.
 
-      > [T8]He[/][D1]'s[/] [N1]ten[/]. — Ему десять.
+      > [T8]He[/][D1]'s[/] [N5]ten[/]. — Ему десять.
       > [T8]I[/][D1]'m[/] [J4]happy[/]! — Я рада!
       > [A3]Here[/][D1]'s[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.
 
@@ -112,7 +112,9 @@ layers:
       - *Mia's photo* — **чья фотография?** Это принадлежность.
       - *Mia's happy* — **какая Мия?** Здесь *Mia's = Mia is*.
 
-      Чтобы не путать, ищите **работу всей фразы**: после имени идёт предмет, который ей принадлежит, или сообщение о её состоянии? Одинаковое написание не означает одинаковую грамматическую функцию.
+      **Не определяйте значение только по следующему существительному.** *Mia's my sister* означает *Mia is my sister* — «Мия — моя сестра»: после сокращения тоже есть существительное, но вся фраза **называет, кто такая Мия**. В *Mia's photo* сочетание **называет фотографию и указывает, чья она**, а глагол **is** в него не входит.
+
+      Смотрите на **работу всей фразы**, а не только на апостроф или одно соседнее слово. Одинаковое написание не означает одинаковую грамматическую функцию.
   - number: 7
     body: |
       Шесть заданий: выбрать his или her, вставить 's, собрать фразу, сказать о новом человеке, выбрать are для they и сказать о своей семье.
@@ -139,7 +141,7 @@ exercises:
     accepted: ["Tom’s"]
     hint_ru: "Владелец — 's — вещь."
     explanation_ru: "Tom's photo: к владельцу добавляют 's."
-    units: [LX-00097]
+    units: []
   - order: 3
     uid: EX-00040
     kind: build
@@ -154,7 +156,7 @@ exercises:
     uid: EX-00041
     kind: fill
     stage: transfer
-    prompt_ru: "Новая ситуация: вы показываете сестру друга. Её зовут Анна. Скажите «Её зовут Анна»."
+    prompt_ru: "Новая ситуация: вы показываете сестру друга. Её зовут Анна. Сообщите её имя, используя her name."
     prompt_en: "___"
     answer: "Her name is Anna."
     accepted: ["Her name is Anna", "Her name's Anna."]
@@ -186,36 +188,42 @@ exercises:
 practice:
 - order: 1
   kind: translate
-  prompt_ru: Её зовут Мия.
+  prompt_ru: Её зовут Мия. Используйте her name.
   answer: Her name is Mia.
   hint_ru: «Её имя — Мия».
-  explanation_ru: Her name is Mia. Her — «её», his — «его».
-  review_of: 3
+  explanation_ru: 'Her name is Mia — «Её зовут Мия». В разговоре можно Her name''s Mia: здесь ''s сокращает is. Her перед name указывает, о чьём имени речь; she вместо her здесь не подходит.'
+  review_of: 4
   units:
   - LX-00098
-  - LX-00104
-  - LX-00105
+  - LX-00015
+  accepted:
+  - Her name's Mia.
 - order: 2
   kind: translate
   prompt_ru: Брату Мии десять.
   answer: Mia's brother is ten.
   hint_ru: Чей брат? — Mia's.
   explanation_ru: 'Mia''s brother is ten. ''s отвечает на вопрос «чей?»: Mia''s brother — брат Мии.'
-  review_of: 3
+  review_of: 2
   units:
-  - LX-00104
-  - LX-00105
+  - LX-00088
+  - LX-00071
+  accepted:
+  - Mia's brother is 10.
+  - Mia's brother is ten years old.
+  - Mia's brother is 10 years old.
 - order: 3
   kind: translate
-  prompt_ru: Его зовут Том.
+  prompt_ru: Его зовут Том. Используйте his name.
   answer: His name is Tom.
   hint_ru: his — «его».
-  explanation_ru: His name is Tom. Не путайте his (его) и he's (он есть).
+  explanation_ru: 'His name is Tom — «Его зовут Том». Можно His name''s Tom: ''s после name сокращает is. His перед name означает «его»; he''s = he is, поэтому He''s name is Tom не подходит.'
   review_of: 3
   units:
   - LX-00097
   - LX-00104
-  - LX-00105
+  accepted:
+  - His name's Tom.
 - order: 4
   kind: translate
   prompt_ru: Вот твоё фото, Мия.
@@ -224,5 +232,6 @@ practice:
   explanation_ru: Here is your photo, Mia. Here is… — когда что-то протягиваете.
   review_of: 3
   units:
-  - LX-00104
+  - LX-00039
+  - LX-00057
   - LX-00105

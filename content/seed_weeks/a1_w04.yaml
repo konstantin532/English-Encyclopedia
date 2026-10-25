@@ -63,7 +63,7 @@ twister:
   - h
   - dh
   source: original
-  goal_ru: Лёгкое /h/ девять раз (his, her, happy, how, hundred) и звонкое th в mother, father, brother.
+  goal_ru: Лёгкое /h/ восемь раз (his, her, happy, how, hundred) и звонкое th в mother, father, brother.
   tip_ru: h — тихий выдох, как будто греете стекло дыханием. Не «х» с хрипом. В mother — язык между зубами, с голосом.
   warmup:
   - '[T3]his[/], [T3]her[/], [J4]happy[/]'

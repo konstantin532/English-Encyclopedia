@@ -37,6 +37,15 @@ layers:
 
       **Не все числа строятся одинаково.** Числа *eleven* (11) и *twelve* (12) не оканчиваются на **-teen**. В некоторых числах меняется написание основы: *three → thirteen*, *five → fifteen*, *eight → eighteen*. Это не приглашение образовывать числа по догадке: для первых двадцати названий полезно сверять написание и звук.
 
+      **Названия от 1 до 20 — короткая опора для заказа:**
+
+      - **1–5:** one — 1, two — 2, three — 3, four — 4, five — 5.
+      - **6–10:** six — 6, seven — 7, eight — 8, nine — 9, ten — 10.
+      - **11–15:** eleven — 11, twelve — 12, thirteen — 13, fourteen — 14, fifteen — 15.
+      - **16–20:** sixteen — 16, seventeen — 17, eighteen — 18, nineteen — 19, twenty — 20.
+
+      Это справочник, а не просьба выучить двадцать слов за один подход. Начните с 1–5 и подставляйте числа в короткий заказ; затем переходите к следующей группе. Сверяйте произношение со словарными образцами.
+
       **Перед заказом уточните количество.** *One tea* — одна порция, *two teas* — две, *three teas* — три. Сначала решите, сколько порций нужно, затем подберите число и форму существительного.
   - number: 3
     body: |
@@ -48,6 +57,7 @@ layers:
 
       - После **one** обычное исчисляемое слово в единственном числе: *one cookie*; после **two / three / five** — множественное: *two cookies*.
       - Это **не означает**, что после любого числа любое существительное обязательно получает **-s**: неисчисляемые вещества (*water*) нельзя считать по штукам без уточнения порций, а у некоторых существительных есть необычные множественные формы — их изучим позже.
+      - На письме не всегда добавляется только буква **s**. У знакомого слова **sandwich** форма множественного числа — **sandwiches**, с **-es**. Это тоже обычное множественное число: *two sandwiches*.
       - В русском «два печенья» и «пять печений» различаются по форме. Для обычных английских слов множественное число часто образуется одинаково — с **-s**.
   - number: 4
     body: |
@@ -96,7 +106,7 @@ exercises:
     prompt_ru: "Вы заказываете два чая. Допишите слово."
     prompt_en: "Two ___, please."
     answer: "teas"
-    hint_ru: "Предметов больше одного — добавьте -s."
+    hint_ru: "Здесь считаем две порции чая: one tea → two… Добавьте к tea окончание -s."
     explanation_ru: "В кафе считают две порции чая: one tea — two teas. Поэтому слово tea в значении порции здесь становится множественным с -s; о чае как напитке вообще можно сказать I like tea."
     units: [LX-00063, LX-00055]
   - order: 3
@@ -116,7 +126,7 @@ exercises:
     prompt_ru: "Новая ситуация: вас четверо, и всем нужен чай. Закажите."
     prompt_en: "___"
     answer: "Four teas, please."
-    accepted: ["Can I have four teas, please?", "4 teas, please.", "Four teas, thanks.", "4 teas, thanks."]
+    accepted: ["Can I have four teas, please?", "4 teas, please.", "Four teas, thanks.", "4 teas, thanks.", "I'd like four teas, please.", "I would like four teas, please."]
     hint_ru: "Число, предмет с -s и please."
     explanation_ru: "Four teas, please. Можно и полной просьбой: Can I have four teas, please?"
     units: [LX-00065, LX-00055]
@@ -127,22 +137,30 @@ practice:
   prompt_ru: Два кофе и один чай, пожалуйста.
   answer: Two coffees and one tea, please.
   hint_ru: После two — множественное число.
-  explanation_ru: Two coffees and one tea, please. В кафе coffee считают чашками, поэтому two coffees.
+  explanation_ru: Two coffees and one tea, please. В кафе считаем порции, поэтому two coffees; после one — tea в единственном числе. Порядок двух напитков можно поменять, сохранив количество каждого.
   review_of: 3
   units:
   - LX-00062
   - LX-00063
-  - LX-00083
+  - LX-00011
+  - LX-00055
+  accepted:
+  - Can I have two coffees and one tea, please?
+  - I would like two coffees and one tea, please.
+  - One tea and two coffees, please.
 - order: 2
   kind: translate
   prompt_ru: Три чая, пожалуйста.
   answer: Three teas, please.
   hint_ru: three — th, кончик языка между зубами.
   explanation_ru: 'Three teas, please. Следите за th в three: не «сри» и не «фри».'
-  review_of: 3
+  review_of: 2
   units:
   - LX-00064
-  - LX-00083
+  - LX-00055
+  accepted:
+  - Can I have three teas, please?
+  - I would like three teas, please.
 - order: 3
   kind: translate
   prompt_ru: Двенадцать печений, пожалуйста.
@@ -152,10 +170,10 @@ practice:
   - I would like twelve cookies, please.
   hint_ru: 12 — twelve. Можно назвать заказ коротко или использовать знакомую вежливую просьбу.
   explanation_ru: Twelve cookies, please. Можно также сказать Can I have twelve cookies, please? или I'd like twelve cookies, please. После twelve слово cookies стоит во множественном числе.
-  review_of: 3
+  review_of: 4
   units:
   - LX-00073
-  - LX-00083
+  - LX-00056
 - order: 4
   kind: translate
   prompt_ru: Мне пять печений.
@@ -167,6 +185,7 @@ practice:
   - Can I have five cookies, please?
   hint_ru: I'd like + число.
   explanation_ru: I'd like five cookies. После five — cookies с -s.
-  review_of: 3
+  review_of: 4
   units:
   - LX-00066
+  - LX-00056
