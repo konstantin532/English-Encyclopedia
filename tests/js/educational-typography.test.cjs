@@ -18,3 +18,10 @@ test('every training template has a scoped minimal root, not just a stylesheet',
     assert.match(html,/<(?:div|main)[^>]*data-educational-reading[^>]*data-reading-theme="minimal"/,name);
   }
 });
+
+test('legacy pilot translations use the same scale instead of a tiny relative size',()=>{
+  const css=fs.readFileSync(path.resolve(__dirname,'../../static/css/lesson-design-pilot.css'),'utf8');
+  const rules=[...css.matchAll(/\.ex-ru\s*\{([^}]+)\}/g)].map(m=>m[1]).filter(s=>/font(?:-size)?:/.test(s));
+  assert.equal(rules.length,2);
+  for(const rule of rules) { assert.match(rule,/--edu-translation/); assert.match(rule,/--reader-scale/); }
+});

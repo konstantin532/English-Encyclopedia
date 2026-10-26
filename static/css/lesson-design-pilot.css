@@ -202,7 +202,7 @@
 [data-lesson-design-pilot] .prose[data-lesson-reader] .example .ex-ru {
   display: block;
   margin: 8px 0 20px;
-  font: 400 .62em/1.65 var(--font-ui);
+  font: 400 calc(var(--edu-translation, 17px) * var(--reader-scale, 1))/1.65 var(--font-ui);
   color: var(--pilot-muted);
 }
 [data-lesson-design-pilot] .prose[data-lesson-reader] .example .ex-ru:last-child { margin-bottom: 0; }
@@ -382,7 +382,7 @@
   [data-lesson-design-pilot] .prose .layer h2 { font-size: 25px; gap: 12px; margin-bottom: 22px; }
   [data-lesson-design-pilot] .layer-num { font-size: 30px; }
   [data-lesson-design-pilot] .prose[data-lesson-reader] .example { padding: 18px 16px; font-size: 1.25em; }
-  [data-lesson-design-pilot] .prose[data-lesson-reader] .example .ex-ru { font-size: .67em; }
+  [data-lesson-design-pilot] .prose[data-lesson-reader] .example .ex-ru { font-size: calc(var(--edu-translation, 17px) * var(--reader-scale, 1)); }
   [data-lesson-design-pilot] .drill { padding: 26px 20px; }
   [data-lesson-design-pilot] .drill .drill-prompt { font-size: calc(19px * var(--reader-scale, 1)); }
   [data-lesson-design-pilot] .drill .drill-en { font-size: calc(24px * var(--reader-scale, 1)); }
