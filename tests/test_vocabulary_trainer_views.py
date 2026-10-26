@@ -116,7 +116,7 @@ class TrainerViewsTests(TestCase):
                     self.assertEqual(UnitProgress.objects.get(user=self.user).next_review_at, due)
 
     def test_flag_off_all_entry_pages_avoid_new_tables(self):
-        paths = [self.url, '/learning/', '/learning/review/', reverse('lexicon:detail', args=[UNIT_UIDS[0]]),
+        paths = [self.url, '/learning/', '/learning/review/', reverse('lexicon:list'), reverse('lexicon:detail', args=[UNIT_UIDS[0]]),
                  reverse('curriculum:week', args=['a1', 3]), reverse('lessons:detail', args=[PILOT_SLUG])]
         with override_settings(EE_VOCABULARY_TRAINER_ENABLED=False), CaptureQueriesContext(connection) as queries:
             responses = [self.client.get(path) for path in paths]
@@ -199,6 +199,29 @@ class TrainerViewsTests(TestCase):
         self.assertContains(response, '&lt;script&gt;alert(1)&lt;/script&gt;')
         self.assertNotContains(response, '<script>alert(1)</script>')
         self.assertEqual(self.post(view, 'recall', answer='tea').status_code, 409)
+
+    def test_dictionary_search_registers_only_displayed_pilot_units(self):
+        view = self.start()
+        other = service.start_encounter(self.user, UNIT_UIDS[1])
+        response = self.client.get(reverse('lexicon:list'), {'q': 'tea'})
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(UNIT_UIDS[0], [u.uid for u in response.context['units']])
+        self.assertIn('legacy_model', self.current(view)['assistance'])
+        other.refresh_from_db()
+        self.assertEqual(other.assistance, [])
+
+    def test_dictionary_pagination_does_not_register_off_page_units(self):
+        from apps.lexicon.models import LexicalUnit
+        view = self.start()
+        ids = list(LexicalUnit.objects.values_list('uid', flat=True))
+        target_page = ids.index(UNIT_UIDS[0]) // 48 + 1
+        other_page = 1 if target_page != 1 else 2
+        response = self.client.get(reverse('lexicon:list'), {'page': other_page})
+        self.assertNotIn(UNIT_UIDS[0], [u.uid for u in response.context['units']])
+        self.assertEqual(self.current(view)['assistance'], [])
+        response = self.client.get(reverse('lexicon:list'), {'page': target_page})
+        self.assertIn(UNIT_UIDS[0], [u.uid for u in response.context['units']])
+        self.assertIn('legacy_model', self.current(view)['assistance'])
 
     def test_legacy_material_gets_register_sticky_help(self):
         for path in [reverse('lexicon:detail', args=[UNIT_UIDS[0]]),

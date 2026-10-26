@@ -193,3 +193,24 @@ for (const text of ['server-rendered unconfirmed note', '']) {
     assert.equal(h.requests.length, 4);
   });
 }
+
+for (const incomingHasNote of [true, false]) {
+  test('reconcile preserves edits made while canonical response body is pending: ' + incomingHasNote, async () => {
+    const h = browserStub({ incomingHasNote });
+    let release, bodyStarted;
+    const started = new Promise(resolve => { bodyStarted = resolve; });
+    h.win.fetch = async url => url.endsWith('/status/')
+      ? { ok: true, json: async () => ({ url: '/session/' }) }
+      : { ok: true, status: 200, text: () => { bodyStarted(); return new Promise(resolve => { release = resolve; }); } };
+    const pending = h.client.reconcile();
+    await started;
+    h.original.field.value = 'new answer typed while waiting';
+    h.original.note.value = 'new association typed while waiting';
+    release('<canonical>');
+    await pending;
+    assert.equal(h.incoming.field.value, 'new answer typed while waiting');
+    assert.equal(incomingHasNote ? h.incoming.note.value : h.incoming.recovered[0].value,
+      'new association typed while waiting');
+    assert.equal(h.client.transport.hasPending(), false);
+  });
+}
