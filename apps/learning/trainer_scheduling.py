@@ -60,7 +60,8 @@ def schedule_recall(session, assessment, mode, now):
                 progress.next_review_at = now + MIN_DELAY
         session.schedule_applied = True
     # This workflow does not award independent-use/mastery/CEFR statuses.
-    if progress.status == Status.NEW:
+    if (progress.status == Status.NEW and mode == 'text'
+            and assessment['outcome'] == 'correct' and not session.assistance):
         progress.status = Status.RECOGNITION
     progress.save()
     return {'scheduling': reason, 'schedule_eligible': bool(eligible)}

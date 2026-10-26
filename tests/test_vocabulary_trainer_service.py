@@ -533,3 +533,91 @@ class TrainerServiceTests(TestCase):
                                                 content_type='application/json')
                     self.assertEqual(response.status_code, 200)
                     self.assertIn('legacy_model', TrainerSession.objects.get(pk=view['session_id']).assistance)
+
+    def test_export_redacts_unfinished_assessment_models_but_keeps_own_evidence_and_completed_history(self):
+        from apps.lessons.models import Lesson
+        self.enroll()
+        completed = self.finish()
+        legacy = IndependentAttempt.objects.create(
+            user=self.user, lesson=Lesson.objects.get(slug='a1-cafe-order'), skill='meaning',
+            submitted='old answer', outcome='model_match', model_snapshot='legacy model remains')
+        due = self.progress().next_review_at
+        pending = self.start(now=due)
+        pending = self.action(pending, 'recall', answer='coffee', now=due)
+        self.assertEqual(pending['phase'], 'recall')
+        attempt = IndependentAttempt.objects.get(trainer_session_id=pending['session_id'])
+        exported = export_data(self.user)['tables']
+        sessions = {row['id']: row for row in exported['learning.trainersession']}
+        attempts = {row['id']: row for row in exported['learning.independentattempt']}
+        hidden_result = sessions[pending['session_id']]['result']
+        self.assertNotIn('canonical_answer', hidden_result)
+        self.assertNotIn('feedback', hidden_result)
+        self.assertEqual(hidden_result['outcome'], 'incorrect')
+        self.assertNotIn('model_snapshot', attempts[attempt.pk])
+        self.assertEqual(attempts[attempt.pk]['submitted'], 'coffee')
+        self.assertEqual(attempts[attempt.pk]['evidence'], attempt.evidence)
+        self.assertEqual(sessions[completed['session_id']]['result']['canonical_answer'], 'tea')
+        completed_recall = next(row for row in attempts.values()
+                                if row['trainer_session_id'] == completed['session_id'] and row['skill'] == 'recall')
+        self.assertEqual(completed_recall['model_snapshot'], 'tea')
+        self.assertEqual(attempts[legacy.pk]['model_snapshot'], 'legacy model remains')
+        # Redaction is an export projection; the stored historical snapshot stays intact.
+        attempt.refresh_from_db()
+        self.assertEqual(attempt.model_snapshot, 'tea')
+
+    def _historical_delivery_blocks_late_active_credit(self, *, replay):
+        self.enroll()
+        view = self.action(self.start(), 'begin')
+        view = self.action(view, 'recall', answer='tea')
+        application = self.action(view, 'continue')
+        completed = self.action(application, 'apply', answer='Tea, please.', self_rating='good')
+        due = self.progress().next_review_at
+        active = self.start(now=due)
+        if replay:
+            self.action(application, 'apply', answer='Tea, please.', self_rating='good', now=due)
+        else:
+            self.svc.encounter_view(self.user, completed['session_id'], now=due)
+        # Let the exposure clock age past 24h while keeping the same assessment
+        # open. Registered history help must remain sticky, not merely a delay.
+        later = due + timedelta(hours=25)
+        result = self.action(active, 'recall', answer='tea', now=later)
+        self.assertFalse(result['result']['schedule_eligible'])
+        self.assertEqual(result['result']['scheduling'], 'assisted')
+        self.assertIn('history_model', result['assistance'])
+        self.assertEqual(self.progress().stage, 0)
+
+    def test_historical_get_help_stays_sticky_after_24h_on_open_assessment(self):
+        self._historical_delivery_blocks_late_active_credit(replay=False)
+
+    def test_historical_replay_help_stays_sticky_after_24h_on_open_assessment(self):
+        self._historical_delivery_blocks_late_active_credit(replay=True)
+
+    def test_wrong_and_unknown_recall_do_not_promote_new_to_recognition(self):
+        self.enroll()
+        view = self.action(self.start(), 'begin')
+        view = self.action(view, 'recall', answer='coffee')
+        self.assertEqual(self.progress().status, 'new')
+        self.action(view, 'recall', answer='unlisted words')
+        self.assertEqual(self.progress().status, 'new')
+
+    def test_spoken_self_report_does_not_promote_new_to_recognition(self):
+        self.enroll()
+        view = self.action(self.start(), 'begin')
+        view = self.action(view, 'recall', mode='spoken')
+        self.action(view, 'rate_spoken', self_rating='good')
+        self.assertEqual(self.progress().status, 'new')
+
+    def test_helped_correct_recall_does_not_promote_new_to_recognition(self):
+        self.enroll()
+        view = self.action(self.start(), 'begin')
+        view = self.action(view, 'hint')
+        self.action(view, 'recall', answer='tea')
+        self.assertEqual(self.progress().status, 'new')
+
+    def test_unaided_correct_recall_can_promote_only_new_to_recognition(self):
+        self.enroll()
+        self.finish()
+        self.assertEqual(self.progress().status, 'recognition')
+        UnitProgress.objects.filter(user=self.user, unit=self.unit).update(status='active')
+        self.finish(self.progress().next_review_at)
+        self.assertEqual(self.progress().status, 'active')

@@ -257,6 +257,21 @@ class IndependentAttempt(models.Model):
     trainer_sequence = models.PositiveSmallIntegerField(default=0)
     evidence = models.JSONField(default=dict, blank=True)
 
+    @staticmethod
+    def redact_export_rows(rows, *, user):
+        trainer_rows = [row for row in rows if row['origin'] == 'trainer']
+        if trainer_rows:
+            completed = set(TrainerSession.objects.filter(
+                user=user, phase='complete',
+                pk__in=[row['trainer_session_id'] for row in trainer_rows],
+            ).values_list('pk', flat=True))
+            for row in trainer_rows:
+                if row['trainer_session_id'] not in completed:
+                    # Keep submitted text and server evidence, but do not make
+                    # an unfinished assessment's answer key an export shortcut.
+                    row.pop('model_snapshot', None)
+        return rows
+
     class Meta:
         indexes = [models.Index(fields=["user", "lesson", "-created_at"], name="independent_user_lesson_idx")]
         constraints = [
@@ -308,6 +323,18 @@ class TrainerSession(models.Model):
     # Data rights exports retain all learner submissions via IndependentAttempt.
     # Neither private future keys nor transport receipts are a user submission.
     export_excluded_fields = {'snapshot', 'receipts'}
+
+    @staticmethod
+    def redact_export_rows(rows, *, user):
+        evidence_keys = {'outcome', 'goal_achieved', 'target_used', 'task_id',
+                         'family_id', 'evidence_kind', 'scheduling', 'schedule_eligible'}
+        for row in rows:
+            if row['phase'] != 'complete':
+                # Feedback can name the withheld target too; export only its
+                # non-model evidence until this encounter has been completed.
+                row['result'] = {key: value for key, value in row['result'].items()
+                                 if key in evidence_keys}
+        return rows
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='trainer_sessions')
     unit = models.ForeignKey(LexicalUnit, on_delete=models.PROTECT, related_name='trainer_sessions')

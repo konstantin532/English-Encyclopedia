@@ -35,6 +35,9 @@ def export_data(user) -> dict:
                  if f.attname != rel.field.attname and f.name not in HIDDEN_FIELDS
                  and f.name not in getattr(model, "export_excluded_fields", ())]
         rows = list(model._default_manager.filter(**{rel.field.name: user}).values(*names))
+        redact = getattr(model, "redact_export_rows", None)
+        if redact is not None:
+            rows = redact(rows, user=user)
         data["tables"][f"{model._meta.app_label}.{model._meta.model_name}"] = rows
     return data
 

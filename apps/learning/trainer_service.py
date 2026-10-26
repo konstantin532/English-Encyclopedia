@@ -269,6 +269,17 @@ def _delivery(session, now):
         if session.last_material_at is None or now > session.last_material_at:
             session.last_material_at = now
             session.save(update_fields=['last_material_at'])
+        active = (TrainerSession.objects.filter(
+            user_id=session.user_id, unit_id=session.unit_id, completed_at__isnull=True,
+        ).exclude(pk=session.pk).first())
+        if active is not None:
+            # Reading an older model while a new assessment is open remains
+            # help for that whole assessment, even if the learner waits 24h.
+            if 'history_model' not in active.assistance:
+                active.assistance = [*active.assistance, 'history_model']
+            if active.last_material_at is None or now > active.last_material_at:
+                active.last_material_at = now
+            active.save(update_fields=['assistance', 'last_material_at'])
     return result
 
 
