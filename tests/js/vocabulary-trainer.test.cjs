@@ -70,37 +70,43 @@ test('back/pageshow revalidates canonical state, keeps answer and uses no persis
   assert.doesNotMatch(source, /localStorage|sessionStorage|innerHTML\s*=/);
   assert.match(source, /textContent/);
 });
-function browserStub({ incomingRevision = '3', local = 'unsaved words' } = {}) {
+function browserStub({ incomingRevision = '3', local = 'unsaved words', failPost = false, incomingHasNote = true } = {}) {
   const handlers = {}, requests = [];
   let focusCount = 0;
-  function makeRoot(revision, value) {
-    const field = { value, disabled: false };
+  function makeRoot(revision, value, hasNote = true) {
+    const recovered = [];
+    const field = { name: 'answer', id: 'trainer-answer', tagName: 'TEXTAREA', value, defaultValue: 'older saved draft', disabled: false };
+    const note = { name: 'mnemonic', id: 'trainer-mnemonic', tagName: 'TEXTAREA', value: 'server note', defaultValue: 'server note' };
     const status = { textContent: '', focus() { focusCount++; } };
-    return { dataset: { session: '1', revision, statusUrl: '/session/status/' }, field, status,
+    return { dataset: { session: '1', revision, statusUrl: '/session/status/' }, field, note, status, recovered,
       querySelector(selector) {
         if (selector === '#trainer-answer') return field;
+        if (selector === '#trainer-mnemonic') return hasNote ? note : null;
+        if (selector === '.trainer-header') return { after(section) { recovered.push(section.children[1]); } };
         if (selector === '[data-trainer-status]') return status;
         if (selector === '[data-trainer-heading]') return { focus() { focusCount++; } };
         if (selector === '[data-trainer-network]') return { hidden: true };
         return null;
       },
-      querySelectorAll() { return [field]; },
+      querySelectorAll(selector) { return selector === '[data-recovery-name]' ? recovered : [field, ...(hasNote ? [note] : [])]; },
       replaceWith(next) { current = next; }
     };
   }
   let current = makeRoot('2', local);
   const original = current;
-  const incoming = makeRoot(incomingRevision, 'older saved draft');
-  const doc = { querySelector() { return current; }, addEventListener(name, fn) { handlers[name] = fn; } };
+  const incoming = makeRoot(incomingRevision, 'older saved draft', incomingHasNote);
+  const doc = { querySelector() { return current; }, addEventListener(name, fn) { handlers[name] = fn; },
+    createElement(tag) { return { tagName: tag.toUpperCase(), dataset: {}, children: [], append(...items) { this.children.push(...items); } }; } };
   const win = { location: { href: 'https://preview.test/session/' }, history: { replaceState() {} },
-    fetch: async url => {
+    fetch: async (url, options) => {
       requests.push(url);
+      if (options?.method === 'POST' && failPost) { failPost = false; throw new Error('lost response'); }
       if (url.endsWith('/status/')) return { ok: true, json: async () => ({ url: '/session/' }) };
       return { ok: true, status: 200, text: async () => '<canonical>' };
     }, DOMParser: class { parseFromString() { return { querySelector: () => incoming }; } },
     addEventListener(name, fn) { handlers[name] = fn; }, setTimeout, clearTimeout, AbortController };
   const client = init(doc, win);
-  return { client, handlers, requests, incoming, original, current: () => current, focused: () => focusCount };
+  return { client, handlers, requests, incoming, original, doc, win, current: () => current, focused: () => focusCount };
 }
 test('actual pageshow handler fetches owner canonical status and preserves unsubmitted text including empty clear', async () => {
   for (const local of ['my unconfirmed idea', '']) {
@@ -119,4 +125,53 @@ test('stale canonical GET cannot replace newer phase/revision or learner text', 
   assert.equal(h.current(), h.original);
   assert.equal(h.original.field.value, 'unsaved words');
   assert.match(h.original.status.textContent, /Не удалось/);
+});
+
+test('named action control cannot clobber the POST URL in enhanced opt-in', async () => {
+  const h = browserStub();
+  h.win.FormData = function () { return new URLSearchParams('action=enroll&prerequisites=yes'); };
+  h.win.URLSearchParams = URLSearchParams;
+  const form = { action: { toString: () => '[object HTMLInputElement]' },
+    getAttribute: () => null, closest: () => h.original };
+  h.handlers.submit({ target: form, preventDefault() {}, submitter: { name: '' } });
+  await new Promise(setImmediate);
+  assert.equal(h.requests[0], 'https://preview.test/session/');
+});
+test('canonical recovery retains edited association including an explicit clear and note-editor context', async () => {
+  for (const text of ['unsaved association', '']) {
+    const h = browserStub();
+    h.original.note.value = text;
+    h.original.dataset.noteEditor = 'true';
+    h.win.location.href = 'https://preview.test/session/?notes=1';
+    await h.client.reconcile();
+    assert.equal(h.incoming.note.value, text);
+    assert.match(h.requests[1], /notes=1/);
+  }
+});
+
+test('ambiguous note save then reconcile keeps edited or cleared note without an automatic second POST', async () => {
+  for (const text of ['pending association', '']) {
+    const h = browserStub({ failPost: true });
+    h.original.note.value = text;
+    h.original.dataset.noteEditor = 'true';
+    await h.client.transport.send('/session/?notes=1', 'token=same&mnemonic=' + text);
+    assert.equal(h.client.transport.hasPending(), true);
+    await h.client.reconcile();
+    assert.equal(h.incoming.note.value, text);
+    assert.equal(h.requests.length, 3); // Original POST, owner status GET, canonical editor GET only.
+    assert.match(h.requests[2], /notes=1/);
+    assert.equal(h.client.transport.hasPending(), true);
+  }
+});
+
+test('if canonical phase removes note editor, unsent note remains copyable and is never submitted', async () => {
+  const h = browserStub({ incomingHasNote: false });
+  h.original.note.value = 'my association before another-device phase change';
+  h.original.dataset.noteEditor = 'true';
+  await h.client.reconcile();
+  assert.equal(h.incoming.recovered.length, 1);
+  assert.equal(h.incoming.recovered[0].value, 'my association before another-device phase change');
+  assert.equal(h.incoming.recovered[0].readOnly, true);
+  assert.equal(h.incoming.recovered[0].dataset.recoveryName, 'mnemonic');
+  assert.equal(h.requests.length, 2);
 });

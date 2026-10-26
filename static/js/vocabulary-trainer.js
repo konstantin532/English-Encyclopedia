@@ -57,6 +57,38 @@
       if (state.busy) announce('Отправляем. Ответ остаётся на странице до подтверждения.');
       else if (state.pending) announce('Подтверждение пока неизвестно. Повторите тот же запрос или проверьте состояние.', true);
     }
+    function editedFields(scope) {
+      const fields = Array.from(scope.querySelectorAll('textarea[name], input[name]:not([type="hidden"]), select[name]'));
+      const edited = fields.filter(field => {
+        if (field.type === 'radio') return fields.some(other => other.name === field.name && other.checked !== other.defaultChecked);
+        if (field.type === 'checkbox') return field.checked !== field.defaultChecked;
+        return field.value !== field.defaultValue;
+      }).map(field => ({ name: field.name, type: field.type, value: field.value,
+        checked: field.checked, label: field.name === 'mnemonic' ? 'Моя ассоциация' : 'Ваш неподтверждённый ответ' }));
+      scope.querySelectorAll('[data-recovery-name]').forEach(field => edited.push({
+        name: field.dataset.recoveryName, value: field.value, label: field.dataset.recoveryLabel, recovery: true
+      }));
+      return edited;
+    }
+    function restoreFields(incoming, fields) {
+      const controls = Array.from(incoming.querySelectorAll('textarea[name], input[name]:not([type="hidden"]), select[name]'));
+      fields.forEach(saved => {
+        const field = !saved.recovery && controls.find(control => control.name === saved.name &&
+          (saved.type !== 'radio' || control.value === saved.value));
+        if (field) {
+          if (saved.type === 'radio' || saved.type === 'checkbox') field.checked = saved.checked;
+          else field.value = saved.value;
+        } else {
+          const section = doc.createElement('section'); section.className = 'trainer-card';
+          const label = doc.createElement('label'); label.htmlFor = 'trainer-recovered-' + saved.name;
+          label.textContent = saved.label + ' — не отправлено, можно скопировать' + (saved.value === '' ? ' (поле очищено)' : '');
+          const recovered = doc.createElement('textarea'); recovered.id = label.htmlFor;
+          recovered.readOnly = true; recovered.value = saved.value;
+          recovered.dataset.recoveryName = saved.name; recovered.dataset.recoveryLabel = saved.label;
+          section.append(label, recovered); incoming.querySelector('.trainer-header').after(section);
+        }
+      });
+    }
     function render(html, status, preserve, canonicalURL) {
       const parsed = new win.DOMParser().parseFromString(html, 'text/html');
       const incoming = parsed.querySelector('[data-vocabulary-trainer]');
@@ -67,22 +99,9 @@
           Number(incoming.dataset.revision) < Number(previous.dataset.revision)) return false;
       previous.replaceWith(incoming);
       if (canonicalURL) win.history.replaceState(null, '', canonicalURL);
-      if (preserve !== undefined && preserve !== null) {
-        const field = incoming.querySelector('#trainer-answer');
-        if (field && field.value !== preserve) {
-          field.value = preserve;
-          announce('Актуальное состояние загружено. Ваш неподтверждённый текст оставлен в поле.');
-        } else if (!field && preserve) {
-          const section = doc.createElement('section');
-          section.className = 'trainer-card';
-          const label = doc.createElement('label');
-          label.htmlFor = 'trainer-recovered';
-          label.textContent = 'Ваш неподтверждённый текст — можно скопировать';
-          const saved = doc.createElement('textarea');
-          saved.id = 'trainer-recovered'; saved.readOnly = true; saved.value = preserve;
-          section.append(label, saved);
-          incoming.querySelector('.trainer-header').after(section);
-        }
+      if (preserve) {
+        restoreFields(incoming, preserve);
+        if (preserve.length) announce('Актуальное состояние загружено. Неподтверждённые поля сохранены на странице; они не отправлены.');
       }
       const focus = incoming.querySelector(status >= 400 ? '[data-trainer-status]' : '[data-trainer-heading]');
       focus?.focus();
@@ -95,9 +114,8 @@
     async function reconcile() {
       if (transport.isBusy() || reconciling) return;
       reconciling = true;
-      const field = root()?.querySelector('#trainer-answer') || root()?.querySelector('[data-trainer-unsent]');
-      const answer = field ? field.value : undefined;
-      const mode = root()?.querySelector('input[name="mode"]:checked')?.value;
+      const fields = editedFields(root());
+      const notesEditor = root()?.dataset.noteEditor === 'true';
       try {
         let url = win.location.href;
         const endpoint = root()?.dataset.statusUrl;
@@ -105,13 +123,15 @@
           const response = await win.fetch(endpoint, { credentials: 'same-origin', cache: 'no-store' });
           if (!response.ok) throw new Error('status');
           url = (await response.json()).url;
+          if (notesEditor) {
+            url += (url.includes('?') ? '&' : '?') + 'notes=1';
+            if (root().querySelector('input[name="mode"]')?.value === 'spoken') url += '&mode=spoken';
+            const rating = root().querySelector('input[name="self_rating"]')?.value;
+            if (['good', 'hard', 'again'].includes(rating)) url += '&rating=' + rating;
+          }
         }
         const response = await win.fetch(url, { credentials: 'same-origin', cache: 'no-store' });
-        if (!response.ok || !render(await response.text(), response.status, answer, response.url)) throw new Error('state');
-        if (mode === 'text' || mode === 'spoken') {
-          const selected = root()?.querySelector('input[name="mode"][value="' + mode + '"]');
-          if (selected) selected.checked = true;
-        }
+        if (!response.ok || !render(await response.text(), response.status, fields, response.url)) throw new Error('state');
         controls({ pending: transport.hasPending(), busy: false });
       } catch (_) {
         announce('Не удалось загрузить сохранённое состояние. Текст остаётся на странице; попробуйте снова.', true);
@@ -125,7 +145,7 @@
       const data = new win.FormData(form);
       if (event.submitter?.name) data.append(event.submitter.name, event.submitter.value);
       const payload = new win.URLSearchParams(data).toString();
-      transport.send(form.action || win.location.href, payload);
+      transport.send(form.getAttribute('action') || win.location.href, payload);
     });
     doc.addEventListener('click', event => {
       if (event.target.closest('[data-trainer-retry]')) transport.retry();

@@ -643,3 +643,22 @@ class TrainerServiceTests(TestCase):
         view = self.action(view, 'continue')
         view = self.action(view, 'reveal_application', answer='A different useful response')
         self.assertEqual(view['draft'], 'A different useful response')
+
+    def test_atomic_note_save_replay_preserves_newer_confirmed_fields_and_six_item_hash(self):
+        import hashlib
+        import json
+        from apps.learning.models import TrainerSession
+        self.enroll()
+        view = self.action(self.start(), 'begin')
+        view = self.action(view, 'hint', answer='first draft')
+        view = self.action(view, 'edit_note', answer='')
+        self.assertEqual(view['draft'], '')
+        old = view
+        view = self.action(view, 'save_note', answer='', mnemonic='first note')
+        expected = hashlib.sha256(json.dumps([old['revision'], 'save_note', '', 'text', '', 'first note'],
+                                            ensure_ascii=False).encode()).hexdigest()
+        self.assertEqual(TrainerSession.objects.get(pk=view['session_id']).receipts[old['token']]['fingerprint'], expected)
+        view = self.action(view, 'save_note', answer='newer draft', mnemonic='newer note')
+        replay = self.action(old, 'save_note', answer='', mnemonic='first note')
+        self.assertEqual((replay['draft'], replay['personal_mnemonic']), ('newer draft', 'newer note'))
+        self.assertEqual(replay['revision'], view['revision'])

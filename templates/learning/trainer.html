@@ -2,11 +2,12 @@
 {% block title %}Практика слов и фраз · {{ SITE_NAME }}{% endblock %}
 {% block page_styles %}<link rel="stylesheet" href="{% static 'css/vocabulary-trainer.css' %}">{% endblock %}
 {% block content %}
-<div class="wrap vocabulary-trainer" data-vocabulary-trainer{% if error %} data-error="true"{% endif %}{% if state %} data-phase="{{ state.phase }}" data-session="{{ state.session_id }}" data-revision="{{ state.revision }}" data-status-url="{% url 'learning:trainer_status' state.session_id %}"{% endif %}>
+<div class="wrap vocabulary-trainer" data-vocabulary-trainer{% if notes_editor %} data-note-editor="true"{% endif %}{% if error %} data-error="true"{% endif %}{% if state %} data-phase="{{ state.phase }}" data-session="{{ state.session_id }}" data-revision="{{ state.revision }}" data-status-url="{% url 'learning:trainer_status' state.session_id %}"{% endif %}>
   <header class="trainer-header"><p class="trainer-eyebrow">Добровольный пилот · после урока 5</p><h1 tabindex="-1" data-trainer-heading>Практика слов и фраз</h1><p>Вспомните сами, затем примените в новой ситуации. Каждая встреча сохраняется; можно вернуться позже.</p><nav aria-label="Навигация тренажёра"><a href="{% url 'learning:trainer' %}">Все три единицы</a> · <a href="{% url 'lessons:detail' lesson_slug %}">Урок 5</a> · <a href="{% url 'learning:dashboard' %}">Мой прогресс</a></nav></header>
   <div class="trainer-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1" data-trainer-status>{% if error %}{{ error }}{% else %}Состояние загружено с сервера.{% endif %}</div>
   <div class="trainer-network" data-trainer-network hidden><p>Подтверждение пока не получено. Ответ остаётся на этой странице. Повтор запроса безопасен.</p><button type="button" data-trainer-retry>Повторить тот же запрос</button><button type="button" data-trainer-reconcile>Проверить сохранённое состояние</button></div>
-  {% if unsent != None %}<section class="trainer-card"><h2>Ваш неподтверждённый ответ</h2><p>Скопируйте его в актуальное задание, если хотите отправить снова. Конфликт не считается ошибкой.</p><label for="trainer-unsent">Текст для восстановления</label><textarea id="trainer-unsent" readonly data-trainer-unsent>{{ unsent }}</textarea></section>{% endif %}
+  {% if unsent != None %}<section class="trainer-card"><h2>Ваш неподтверждённый ответ</h2><p>Скопируйте его в актуальное задание, если хотите отправить снова. Конфликт не считается ошибкой.</p><label for="trainer-unsent">Текст для восстановления</label><textarea id="trainer-unsent" readonly data-trainer-unsent data-recovery-name="answer" data-recovery-label="Ваш неподтверждённый ответ">{{ unsent }}</textarea></section>{% endif %}
+  {% if unsent_note != None and not notes_editor %}<section class="trainer-card"><label for="trainer-unsent-note">Ваша неподтверждённая ассоциация — можно скопировать</label><textarea id="trainer-unsent-note" readonly data-trainer-unsent-note data-recovery-name="mnemonic" data-recovery-label="Моя ассоциация">{{ unsent_note }}</textarea></section>{% endif %}
   {% if not state %}
     {% if not summary.enrolled %}
     <section class="trainer-card"><h2>Сначала — знакомство</h2><p>Пилот охватывает три единицы из урока 5. Мнемоника помогает связать смысл с формой; вспоминание проверяет, что осталось без образца; новая ситуация помогает переносу; проговаривание завершается вашей самооценкой.</p><p>Речь не записывается. Можно отвечать письменно. Отметки не подтверждают уровень или владение языком.</p>
@@ -17,6 +18,20 @@
     <form method="post" class="trainer-card">{% csrf_token %}<input type="hidden" name="action" value="unenroll"><p>Можно выйти из пилота; история сохранится.</p><button type="submit" class="trainer-secondary">Выключить тренажёр</button></form>
     {% endif %}
   {% else %}
+    {% if notes_editor %}
+    <section class="trainer-card" aria-labelledby="trainer-note-title">
+      <h2 id="trainer-note-title">Моя ассоциация</h2>
+      <p>Короткая собственная связь с формой или смыслом. Видна только вам. До 300 символов. Открытие редактора сохранило ваш черновик; оценка и этап встречи не изменились.</p>
+      {% if state.draft %}<label for="trainer-note-answer">Сохранённый письменный черновик</label><textarea id="trainer-note-answer" readonly>{{ state.draft }}</textarea>{% endif %}
+      <form method="post" data-trainer-action>{% csrf_token %}
+        <input type="hidden" name="token" value="{{ state.token }}"><input type="hidden" name="revision" value="{{ state.revision }}">
+        <input type="hidden" name="answer" value="{{ state.draft }}"><input type="hidden" name="mode" value="{{ preferred_mode }}"><input type="hidden" name="self_rating" value="{{ preferred_rating }}">
+        <label for="trainer-mnemonic">Текст моей ассоциации</label><textarea id="trainer-mnemonic" name="mnemonic" maxlength="300">{{ note_value }}</textarea>
+        <button type="submit" name="action" value="save_note">Сохранить ассоциацию и вернуться</button>
+      </form>
+      <p><a href="{% url 'learning:trainer_session' state.session_id %}">Вернуться без сохранения ассоциации</a></p>
+    </section>
+    {% else %}
     <section class="trainer-card" aria-labelledby="trainer-phase">
     <p class="trainer-eyebrow">Встреча {{ state.session_id }} · версия {{ state.content_version }}</p>
     <h2 id="trainer-phase">{% if state.phase == 'intro' %}Знакомство{% elif state.phase == 'recall' %}Вспомните без образца{% elif state.phase == 'spoken_compare' %}Сравните сказанное{% elif state.phase == 'feedback' %}Разбор ответа{% elif state.phase == 'application' %}Новая ситуация{% elif state.phase == 'complete' %}Встреча завершена{% else %}Встреча отложена{% endif %}</h2>
@@ -38,7 +53,8 @@
       <label for="trainer-answer">Ваш письменный ответ (до 400 символов)</label><textarea id="trainer-answer" name="answer" maxlength="400" rows="4" lang="en" aria-describedby="trainer-mode-note">{{ state.draft }}</textarea>
       <fieldset><legend>Как отвечаете?</legend><label class="trainer-check"><input type="radio" name="mode" value="text"{% if preferred_mode != 'spoken' %} checked{% endif %}> Письменно</label><label class="trainer-check"><input type="radio" name="mode" value="spoken"{% if preferred_mode == 'spoken' %} checked{% endif %}> Произнесу вслух сам</label></fieldset><p id="trainer-mode-note">{{ state.spoken_note }} Письменная альтернатива доступна в поле выше.</p>
       {% endif %}
-      {% if state.phase == 'spoken_compare' or state.phase == 'application' and state.valid_examples %}<fieldset><legend>После сравнения — ваша самооценка</legend><label class="trainer-check"><input type="radio" name="self_rating" value="good"> Получилось</label><label class="trainer-check"><input type="radio" name="self_rating" value="hard"> Было трудно</label><label class="trainer-check"><input type="radio" name="self_rating" value="again"> Попробую ещё</label></fieldset>{% endif %}
+      {% if state.phase == 'spoken_compare' or state.phase == 'application' and state.valid_examples %}<fieldset><legend>После сравнения — ваша самооценка</legend><label class="trainer-check"><input type="radio" name="self_rating" value="good"{% if preferred_rating == 'good' %} checked{% endif %}> Получилось</label><label class="trainer-check"><input type="radio" name="self_rating" value="hard"{% if preferred_rating == 'hard' %} checked{% endif %}> Было трудно</label><label class="trainer-check"><input type="radio" name="self_rating" value="again"{% if preferred_rating == 'again' %} checked{% endif %}> Попробую ещё</label></fieldset>{% endif %}
+      {% if can_mnemonic %}<section class="trainer-note-summary"><h3>Моя ассоциация</h3>{% if state.personal_mnemonic %}<p>{{ state.personal_mnemonic }}</p>{% else %}<p>Можно добавить собственную связь для памяти. Это необязательно.</p>{% endif %}<button name="action" value="edit_note" class="trainer-secondary">{% if state.phase == 'recall' or state.phase == 'application' %}Сохранить черновик и изменить мнемонику{% else %}Изменить мою ассоциацию{% endif %}</button></section>{% endif %}
       <div class="trainer-actions">
       {% if state.phase == 'intro' %}<button name="action" value="begin">Закрыть материал и вспомнить</button>{% endif %}
       {% if state.phase == 'recall' %}<button name="action" value="recall">{% if state.recall_tries %}Отправить повторную попытку{% else %}Ответить / сказал — показать образец{% endif %}</button><button name="action" value="dont_know" class="trainer-secondary">{% if state.model %}Перейти к разбору{% else %}Не помню — к разбору{% endif %}</button><button name="action" value="hint" class="trainer-secondary">Вспомнить мнемонику (помощь)</button><button name="action" value="reveal" class="trainer-secondary">Показать образец (помощь)</button>{% endif %}
@@ -46,11 +62,12 @@
       {% if state.phase == 'feedback' %}<button name="action" value="continue">Применить в новой ситуации</button>{% endif %}
       {% if state.phase == 'application' %}<p>Сначала скажите или напишите свой вариант. Затем откройте примеры, сравните цель и оцените ответ.</p><button name="action" value="reveal_application" class="trainer-secondary">Сказал / написал — показать примеры</button>{% if state.valid_examples %}<button name="action" value="apply">Сохранить ответ и самооценку</button>{% endif %}{% endif %}
       {% if state.phase == 'recall' or state.phase == 'application' %}<button name="action" value="save_draft" class="trainer-secondary">Сохранить черновик и остаться</button>{% endif %}
-      <button name="action" value="abandon" class="trainer-secondary">Закончить сейчас без оценки ошибки</button>
+      {% if 'abandon' in state.actions %}<button name="action" value="abandon" class="trainer-secondary">Закончить сейчас без оценки ошибки</button>{% endif %}
       </div>
     </form>{% else %}<p><a class="trainer-button" href="{% url 'learning:trainer' %}">К следующей встрече</a></p>{% endif %}
     </section>
-    {% if can_mnemonic %}<section class="trainer-card"><h2>Моя личная мнемоника</h2><p>Короткая собственная связь с формой или смыслом. Видна только вам. До 300 символов.</p><form method="post">{% csrf_token %}<input type="hidden" name="action" value="mnemonic"><label for="trainer-mnemonic">Текст мнемоники</label><textarea id="trainer-mnemonic" name="mnemonic" maxlength="300">{{ state.personal_mnemonic }}</textarea><button type="submit" class="trainer-secondary">Сохранить мнемонику</button></form></section>{% endif %}
+    {% if state.phase == 'complete' or state.phase == 'abandoned' %}<p><a class="trainer-button" href="{% url 'learning:trainer' %}">К следующей встрече</a></p>{% endif %}
+    {% endif %}
   {% endif %}
   <footer class="trainer-footer"><p>Черновики удаляются после 30 дней без сохранения. Подтверждённые ответы остаются в вашей истории. Помощь на страницах слов, недели 3, уроков и прогресса регистрируется; внешнюю помощь сайт не определяет.</p><p><a href="{% url 'accounts:my_data' %}">Скачать мои данные</a> · <a href="{% url 'accounts:delete_account' %}">Удалить аккаунт и данные</a></p></footer>
 </div>

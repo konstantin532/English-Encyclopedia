@@ -25,7 +25,15 @@ async function verify(context, { baseURL, outputDir, otherContext, noJS = true }
   }
   async function layout(width, textScale, name) {
     await page.setViewportSize({ width, height: 900 });
-    await page.evaluate(scale => { document.documentElement.style.fontSize = scale + '%'; }, textScale);
+    const fontSizes = await page.evaluate(scale => {
+      document.documentElement.style.fontSize = '100%';
+      const sample = document.querySelector('.trainer-prompt') || document.querySelector('[data-vocabulary-trainer] p');
+      const baseline = parseFloat(getComputedStyle(sample).fontSize);
+      document.documentElement.style.fontSize = scale + '%';
+      return { baseline, actual: parseFloat(getComputedStyle(sample).fontSize) };
+    }, textScale);
+    if (textScale === 200) assert.ok(Math.abs(fontSizes.actual / fontSizes.baseline - 2) < .05,
+      `Text did not double ${name}: ${JSON.stringify(fontSizes)}`);
     const result = await page.evaluate(() => {
       const scope = document.querySelector('[data-vocabulary-trainer]');
       const controls = [...scope.querySelectorAll('button, textarea, input:not([type=hidden]):not([type=radio]):not([type=checkbox])')]
@@ -51,10 +59,20 @@ async function verify(context, { baseURL, outputDir, otherContext, noJS = true }
     assert.equal(await root().count(), 1, 'Authenticated trainer entry must render');
     const optin = root().locator('input[name="prerequisites"]');
     if (await optin.count()) {
+      const clobber = await optin.evaluate(control => ({
+        actionControl: control.form.querySelector('input[name="action"]').value,
+        clobbered: control.form.action instanceof HTMLInputElement,
+        literalAction: control.form.getAttribute('action')
+      }));
+      assert.equal(clobber.actionControl, 'enroll');
+      assert.equal(clobber.clobbered, true, 'Actual DOM named-action fixture must exercise clobbering');
       await optin.check();
       await root().locator('input[name="timezone_name"]').fill('UTC');
       await root().getByRole('button', { name: 'Включить тренажёр', exact: true }).click();
-      await root().locator('input[name="uid"]').first().waitFor();
+      await root().locator('input[name="uid"]').first().waitFor({ state: 'attached' });
+      await root().locator('form:has(input[name="uid"]) button').first().waitFor({ state: 'visible' });
+      assert.doesNotMatch(page.url(), /HTMLInputElement|%20HTMLInputElement/);
+      checks.push({ check: 'actual-DOM-action-clobber:positive-opt-in', status: 'PASS' });
     }
     let privateSessionURL;
     for (let index = 0; index < UIDS.length; index++) {
@@ -63,10 +81,9 @@ async function verify(context, { baseURL, outputDir, otherContext, noJS = true }
       assert.equal(await start.count(), 1, 'Use a fresh disposable user with no open encounters');
       await start.click(); await phase('intro');
       assert.match(await root().innerText(), /AI-рецензию/);
-      await root().locator('textarea[name="mnemonic"]').fill('Моя связь <script>window.trainerInjected=true</script>');
-      const previousMnemonic = await root().locator('#trainer-mnemonic').elementHandle();
-      await root().getByRole('button', { name: 'Сохранить мнемонику', exact: true }).click();
-      await page.waitForFunction(element => !element.isConnected, previousMnemonic);
+      await action('edit_note');
+      await root().locator('#trainer-mnemonic').fill('Моя связь <script>window.trainerInjected=true</script>');
+      await action('save_note');
       await action('begin'); await phase('recall');
       privateSessionURL = page.url();
       assert.equal(await root().locator('.trainer-model, .trainer-memory, #trainer-mnemonic, [data-model]').count(), 0);
@@ -92,6 +109,28 @@ async function verify(context, { baseURL, outputDir, otherContext, noJS = true }
         assert.equal(posts[0], posts[1], 'Ambiguous accepted POST must replay the exact operation token/payload');
         await page.unroute('**/learning/vocabulary/*/');
         checks.push({ check: 'accepted-response-loss:same-token-retry', status: 'PASS' });
+        await root().locator('#trainer-answer').fill('Edited answer before my association');
+        await action('edit_note');
+        assert.match(page.url(), /notes=1/);
+        await root().locator('#trainer-mnemonic').fill('New unsaved association');
+        let noteFirst = true;
+        await page.route('**/learning/vocabulary/*/*', async route => {
+          if (route.request().method() !== 'POST') return route.continue();
+          if (noteFirst) { noteFirst = false; await route.fetch(); return route.abort('failed'); }
+          return route.continue();
+        });
+        await root().locator('button[value="save_note"]').click();
+        await root().locator('[data-trainer-network]').waitFor({ state: 'visible' });
+        const previousNote = await root().locator('#trainer-mnemonic').elementHandle();
+        await root().locator('[data-trainer-reconcile]').click();
+        await page.waitForFunction(element => !element.isConnected, previousNote);
+        assert.equal(await root().locator('#trainer-mnemonic').inputValue(), 'New unsaved association');
+        assert.match(page.url(), /notes=1/);
+        await root().locator('[data-trainer-retry]').click();
+        await root().locator('#trainer-answer').waitFor({ state: 'visible' });
+        assert.equal(await root().locator('#trainer-answer').inputValue(), 'Edited answer before my association');
+        await page.unroute('**/learning/vocabulary/*/*');
+        checks.push({ check: 'association:cross-field-save:ambiguous-recovery', status: 'PASS' });
         await action('reveal');
         await root().getByRole('link', { name: 'Урок 5', exact: true }).click();
         await page.goBack(); await phase('recall');
@@ -157,6 +196,18 @@ async function verify(context, { baseURL, outputDir, otherContext, noJS = true }
       const plainPage = await plain.newPage();
       await plainPage.goto(new URL('/learning/vocabulary/', baseURL).href);
       await plainPage.locator(`form:has(input[name="uid"][value="${UIDS[0]}"]) button`).click();
+      await plainPage.locator('#trainer-answer').fill('Normal HTML edited before association.');
+      await plainPage.locator('button[value="hint"]').click();
+      await plainPage.locator('button[value="edit_note"]').click();
+      await plainPage.locator('#trainer-mnemonic').fill('Normal HTML association');
+      await plainPage.locator('button[value="save_note"]').click();
+      assert.equal(await plainPage.locator('#trainer-answer').inputValue(), 'Normal HTML edited before association.');
+      await plainPage.locator('#trainer-answer').fill('');
+      await plainPage.locator('button[value="edit_note"]').click();
+      await plainPage.locator('#trainer-mnemonic').fill('');
+      await plainPage.locator('button[value="save_note"]').click();
+      assert.equal(await plainPage.locator('#trainer-answer').inputValue(), '');
+      checks.push({ check: 'no-JS:association-current-answer-and-explicit-clears', status: 'PASS' });
       await plainPage.locator('#trainer-answer').fill('Saved with normal HTML POST.');
       await plainPage.locator('button[value="save_draft"]').click();
       assert.equal(await plainPage.locator('#trainer-answer').inputValue(), 'Saved with normal HTML POST.');

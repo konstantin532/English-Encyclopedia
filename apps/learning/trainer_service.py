@@ -258,6 +258,7 @@ def _projection(session):
     if session.phase in ('intro', 'feedback', 'complete') or 'hint' in session.assistance:
         mnemonic = PersonalMnemonic.objects.filter(user_id=session.user_id, unit_id=session.unit_id).first()
         result['personal_mnemonic'] = mnemonic.text if mnemonic else ''
+        result['actions'].extend(['edit_note', 'save_note'])
     if session.result and session.phase in ('feedback', 'complete'):
         result['schedule_reason'] = SCHEDULE_LABELS.get(session.result.get('scheduling'), '')
     return result
@@ -325,7 +326,7 @@ def _record(session, answer, mode, self_rating, assessment, now, *, application=
 
 
 @trainer_mutation
-def perform_action(user, session_id, token, revision, action, *, answer='', mode='text', self_rating='', now=None):
+def perform_action(user, session_id, token, revision, action, *, answer='', mode='text', self_rating='', mnemonic=None, now=None):
     enrollment = _enrollment(user)
     now = _now(now)
     session = _session(user, session_id)
@@ -334,6 +335,10 @@ def perform_action(user, session_id, token, revision, action, *, answer='', mode
     if mode not in ('text', 'spoken') or self_rating not in ('', *RATINGS):
         raise ValueError('Неизвестный способ ответа или самооценка.')
     payload = [revision, action, answer, mode, self_rating]
+    if action == 'save_note':
+        if not isinstance(mnemonic, str) or len(mnemonic) > 300:
+            raise ValueError('Личная ассоциация — обычный текст до 300 символов.')
+        payload.append(mnemonic)  # New action only; existing five-item receipts stay compatible.
     fingerprint = hashlib.sha256(json.dumps(payload, ensure_ascii=False).encode()).hexdigest()
     receipt = session.receipts.get(str(token))
     if receipt:
@@ -349,6 +354,14 @@ def perform_action(user, session_id, token, revision, action, *, answer='', mode
     _rate(enrollment, now)
     if action == 'begin':
         session.phase = 'recall'
+    elif action in ('edit_note', 'save_note'):
+        # Explicitly opening/saving the note commits the current answer, including
+        # an empty clear. A stale revision/replay is resolved before any writes.
+        if session.phase in ('recall', 'application'):
+            session.draft = answer
+            session.draft_updated_at = now
+        if action == 'save_note':
+            PersonalMnemonic.objects.update_or_create(user=user, unit=session.unit, defaults={'text': mnemonic})
     elif action == 'save_draft':
         session.draft = answer
         session.draft_updated_at = now
