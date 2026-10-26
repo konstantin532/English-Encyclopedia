@@ -77,6 +77,14 @@ def _local_bounds(enrollment, now):
     return start, end
 
 
+def _due_display(due, timezone_name):
+    if due is None:
+        return ''
+    local = due.astimezone(ZoneInfo(timezone_name))
+    offset = local.strftime('%z')
+    return f'{local:%d.%m.%Y %H:%M} ({timezone_name}, UTC{offset[:3]}:{offset[3:]})'
+
+
 def _budget_used(user, enrollment, now):
     start, end = _local_bounds(enrollment, now)
     return TrainerSession.objects.filter(user=user, started_at__gte=start, started_at__lt=end).count()
@@ -168,6 +176,7 @@ def dashboard(user, *, now=None):
                               ('delayed_correct', 'initial_exposure', 'early_practice'))
         units.append({'uid': unit['uid'], 'label': f'Единица {index + 1}', 'state': state,
                       'needs_practice': needs_practice, 'next_review_at': due.isoformat() if due else None,
+                      'next_review_display': _due_display(due, enrollment.timezone_name),
                       'session_id': session.pk if session else None})
     units.sort(key=lambda u: (0 if u['state'] == 'due' else 1 if u['state'] == 'new' else 2,
                               u['next_review_at'] or '', UNIT_UIDS.index(u['uid'])))
@@ -225,6 +234,9 @@ def _projection(session):
               'revision': session.revision, 'token': session.token,
               'content_version': session.content_version, 'assistance': list(session.assistance),
               'recall_tries': session.recall_tries, 'draft': session.draft,
+              # Later application help must not regrade the persisted recall.
+              'independent_recall_confirmed': (session.result.get('schedule_eligible') is True
+                                               and session.result.get('scheduling') == 'delayed_correct'),
               'actions': [], 'spoken_note': 'Речь не записывается и не проверяется автоматически. Это самооценка.'}
     if session.phase == 'intro':
         result.update(title=content['title'], explanation=content['explanation'], examples=content['examples'],
@@ -250,9 +262,11 @@ def _projection(session):
             result['valid_examples'] = application['valid_examples']
     elif session.phase == 'complete':
         progress = UnitProgress.objects.filter(user_id=session.user_id, unit_id=session.unit_id).first()
+        due = progress.next_review_at if progress else None
+        enrollment = TrainerEnrollment.objects.get(user_id=session.user_id)
         result.update(valid_examples=application['valid_examples'], criteria=application['criteria'],
-                      result=session.result, next_review_at=(progress.next_review_at.isoformat()
-                          if progress and progress.next_review_at else None))
+                      result=session.result, next_review_at=due.isoformat() if due else None,
+                      next_review_display=_due_display(due, enrollment.timezone_name))
     if session.phase not in ('complete', 'abandoned'):
         result['actions'].append('abandon')
     if session.phase in ('intro', 'feedback', 'complete') or 'hint' in session.assistance:

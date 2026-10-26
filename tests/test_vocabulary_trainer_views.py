@@ -1,11 +1,14 @@
 """HTTP boundary and server rendered trainer: no browser or working database required."""
+from datetime import datetime, timedelta, timezone
+from unittest.mock import patch
+
 from django.db import connection
 from django.test import Client, TestCase, override_settings
 from django.test.utils import CaptureQueriesContext
 from django.urls import reverse
 from apps.accounts.models import User
 from apps.learning import trainer_service as service
-from apps.learning.models import IndependentAttempt, TrainerSession
+from apps.learning.models import IndependentAttempt, TrainerSession, UnitProgress
 from apps.learning.trainer_content import UNIT_UIDS, PILOT_SLUG
 from tests.runner import ensure_content
 
@@ -33,6 +36,84 @@ class TrainerViewsTests(TestCase):
 
     def current(self, view):
         return service.encounter_view(self.user, view['session_id'])
+
+    def complete_initial(self, uid):
+        session = service.start_encounter(self.user, uid)
+        view = service.encounter_view(self.user, session.pk)
+        for action, payload in [('begin', {}), ('recall', {'answer': 'tea'}), ('continue', {}),
+                                ('reveal_application', {}),
+                                ('apply', {'answer': 'A tea, please.', 'self_rating': 'good'})]:
+            self.assertEqual(self.post(view, action, **payload).status_code, 302)
+            view = self.current(view)
+        return view
+
+    def test_later_application_help_does_not_deny_saved_independent_recall(self):
+        initial = datetime(2026, 3, 7, 18, tzinfo=timezone.utc)
+        service.enroll(self.user, prerequisites_confirmed=True)
+        with patch('apps.learning.trainer_service.timezone.now', return_value=initial):
+            self.complete_initial(UNIT_UIDS[0])
+        with patch('apps.learning.trainer_service.timezone.now', return_value=initial + timedelta(hours=24)):
+            session = service.start_encounter(self.user, UNIT_UIDS[0])
+            view = service.encounter_view(self.user, session.pk)
+            self.assertEqual(self.post(view, 'recall', answer='tea').status_code, 302)
+            view = self.current(view)
+            self.assertEqual(view['result']['scheduling'], 'delayed_correct')
+            for action, payload in [('continue', {}), ('reveal_application', {}),
+                                    ('apply', {'answer': 'A tea, please.', 'self_rating': 'good'})]:
+                self.assertEqual(self.post(view, action, **payload).status_code, 302)
+                view = self.current(view)
+                if action != 'continue':
+                    response = self.client.get(f'{self.url}{session.pk}/')
+                    self.assertNotContains(response, 'Эта встреча не подтверждает самостоятельное отсроченное вспоминание')
+                    self.assertContains(response, 'Самостоятельное отсроченное вспоминание уже подтверждено')
+                    self.assertContains(response, 'Открыты примеры для новой ситуации')
+
+    def test_help_before_recall_still_denies_independent_credit_after_application(self):
+        initial = datetime(2026, 3, 7, 18, tzinfo=timezone.utc)
+        service.enroll(self.user, prerequisites_confirmed=True)
+        with patch('apps.learning.trainer_service.timezone.now', return_value=initial):
+            self.complete_initial(UNIT_UIDS[0])
+        with patch('apps.learning.trainer_service.timezone.now', return_value=initial + timedelta(hours=24)):
+            session = service.start_encounter(self.user, UNIT_UIDS[0])
+            view = service.encounter_view(self.user, session.pk)
+            for action, payload in [('hint', {}), ('recall', {'answer': 'tea'}), ('continue', {}),
+                                    ('reveal_application', {}),
+                                    ('apply', {'answer': 'A tea, please.', 'self_rating': 'good'})]:
+                self.assertEqual(self.post(view, action, **payload).status_code, 302)
+                view = self.current(view)
+            response = self.client.get(f'{self.url}{session.pk}/')
+            self.assertContains(response, 'Эта встреча не подтверждает самостоятельное отсроченное вспоминание')
+            self.assertNotContains(response, 'Самостоятельное отсроченное вспоминание уже подтверждено')
+            self.assertContains(response, 'Открыты примеры для новой ситуации')
+            self.assertEqual(view['result']['scheduling'], 'assisted')
+            self.assertFalse(view['result']['schedule_eligible'])
+            recall = IndependentAttempt.objects.get(trainer_session=session, skill='recall')
+            self.assertEqual(recall.evidence['assistance'], ['hint'])
+            self.assertFalse(recall.evidence['schedule_eligible'])
+            self.assertEqual(UnitProgress.objects.get(user=self.user, unit=session.unit).stage, 0)
+
+    def test_due_is_server_rendered_in_saved_timezone_with_utc_datetime_across_dst(self):
+        cases = [
+            ('Europe/Moscow', '2026-10-27T18:00:00+00:00', '27.10.2026 21:00 (Europe/Moscow, UTC+03:00)'),
+            ('America/New_York', '2026-03-08T06:30:00+00:00', '08.03.2026 01:30 (America/New_York, UTC-05:00)'),
+            ('America/New_York', '2026-03-08T07:30:00+00:00', '08.03.2026 03:30 (America/New_York, UTC-04:00)'),
+            ('America/New_York', '2026-11-01T05:30:00+00:00', '01.11.2026 01:30 (America/New_York, UTC-04:00)'),
+            ('America/New_York', '2026-11-01T06:30:00+00:00', '01.11.2026 01:30 (America/New_York, UTC-05:00)'),
+        ]
+        for index, (zone, canonical, displayed) in enumerate(cases):
+            with self.subTest(zone=zone, due=canonical):
+                self.user = User.objects.create_user(email=f'trainer-zone-{index}@example.test')
+                self.client.force_login(self.user)
+                service.enroll(self.user, prerequisites_confirmed=True, timezone_name=zone)
+                due = datetime.fromisoformat(canonical)
+                initial = due - timedelta(hours=24)
+                with patch('apps.learning.trainer_service.timezone.now', return_value=initial):
+                    view = self.complete_initial(UNIT_UIDS[0])
+                    for url in (self.url, f'{self.url}{view["session_id"]}/'):
+                        response = self.client.get(url)
+                        self.assertContains(response, f'<time datetime="{canonical}">{displayed}</time>', html=True)
+                    self.assertEqual(view['next_review_at'], canonical)
+                    self.assertEqual(UnitProgress.objects.get(user=self.user).next_review_at, due)
 
     def test_flag_off_all_entry_pages_avoid_new_tables(self):
         paths = [self.url, '/learning/', '/learning/review/', reverse('lexicon:detail', args=[UNIT_UIDS[0]]),
