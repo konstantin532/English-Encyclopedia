@@ -41,14 +41,14 @@ def require_user(user):
 
 
 def run_serialized(user, operation):
-    # Evaluate request.user's lazy authentication before starting a transaction:
-    # SQLite read-then-write upgrades otherwise make concurrent locks brittle.
-    authenticated = user.is_authenticated
-    user_pk = user.pk if authenticated else None
     outer = connection.in_atomic_block
     attempts = 1 if outer else 8
     for retry in range(attempts):
         try:
+            # Lazy authentication can encounter the same SQLite user-table lock.
+            # Retry it too, but resolve before atomic to avoid read/write upgrades.
+            authenticated = user.is_authenticated
+            user_pk = user.pk if authenticated else None
             with transaction.atomic():
                 if enabled() and authenticated:
                     users = get_user_model().objects.filter(pk=user_pk)
