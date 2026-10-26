@@ -12,6 +12,7 @@ const root=path.resolve(__dirname,'..');
 const output=path.resolve(process.env.ATLAS_OUTPUT || 'atlas-browser-evidence');
 const sizes=[[1440,900],[1280,800],[390,844],[360,800]];
 const screens=[['home','/'],['collection','/levels/a1/'],['chapter','/levels/a1/weeks/13/']];
+const {geometryDelta,assertChapterReadingFlow}=require('./atlas_geometry.cjs');
 const selectors=['.studio-sidebar','.site-header','.studio-home-hero','.studio-phrase-paper','.studio-lesson-card','.week-card','.week-hero','.week-route','.story-script'];
 async function serve(directory,port){
  const processHandle=spawn(process.env.ATLAS_PYTHON || 'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:directory,env:{...process.env,DJANGO_SETTINGS_MODULE:'config.settings.local'},stdio:['ignore','ignore','pipe']});
@@ -48,6 +49,18 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
      const o=await overflow(page);assert.ok(o.scroll<=o.width+1,`${name} ${state} ${width}: horizontal overflow ${JSON.stringify(o)}`);
      await page.screenshot({path:path.join(output,`${name}-${width}-${state}.png`),fullPage:false});
      measurements[state]=await bounds(page);
+     if(name==='chapter'){
+      const flow=await page.evaluate(()=>{
+       const script=document.querySelector('.story-script'),container=document.querySelector('.studio-lessons');
+       const lines=Array.from(script.querySelectorAll('.script-line'));
+       const rect=el=>{const r=el.getBoundingClientRect();return {y:r.y,height:r.height};};
+       const style=getComputedStyle(script),cs=getComputedStyle(container);
+       return {viewportWidth:innerWidth,article:rect(document.querySelector('.lesson-grid>article')),scriptVisible:style.display!=='none'&&style.visibility!=='hidden'&&Number(style.opacity)>0,
+        lineCount:lines.length,visibleLines:lines.filter(el=>{const t=el.querySelector('.line-text'),s=getComputedStyle(t);return s.display!=='none'&&s.visibility!=='hidden';}).length,
+        lines:lines.map(rect),lineHeight:parseFloat(style.lineHeight),cardsContainer:rect(container),paddingTop:parseFloat(cs.paddingTop)||0,paddingBottom:parseFloat(cs.paddingBottom)||0,cardGap:parseFloat(cs.rowGap)||0};
+      });
+      assertChapterReadingFlow(measurements[state],flow);
+     }
      if(state==='after'&&name==='home'){
       const original=await documentBox(page.locator('.studio-home-hero'));
       const word=page.locator('.studio-phrase [role=button]').first();await word.focus();await word.press('Enter');
@@ -67,7 +80,7 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
     for(const selector of selectors){
      const a=measurements.before[selector],b=measurements.after[selector];
      if(a.length!==b.length){changed.push(`${selector}: ${a.length}→${b.length}`);continue;}
-     a.forEach((rectangle,index)=>Object.keys(rectangle).forEach(key=>{maxDelta=Math.max(maxDelta,Math.abs(rectangle[key]-b[index][key]));}));
+     a.forEach((rectangle,index)=>{maxDelta=Math.max(maxDelta,geometryDelta(name,selector,rectangle,b[index],width));});
     }
     report.screens.push({name,width,height,maxGeometryDelta:maxDelta,changed,measurements});
     // Редизайн (ATLAS_REDESIGN=1) меняет раскладку намеренно: разница — в отчёте, скриншоты — в артефакте.

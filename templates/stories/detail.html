@@ -2,8 +2,9 @@
 {% load markers static %}
 {% block title %}{{ story.title }} · {{ SITE_NAME }}{% endblock %}
 {% block social_title %}{{ story.title }} · {{ SITE_NAME }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% endblock %}
 {% block content %}
-<div class="wrap">
+<div data-educational-reading data-reading-theme="academic" class="wrap">
   <header class="page-head">
     <p class="crumbs"><a href="{% url 'stories:map' %}">Истории</a> / {{ story.level.code }}, неделя {{ story.week.number }} / история {{ story.number }}</p>
     <h1 lang="en">{{ story.title }}</h1>

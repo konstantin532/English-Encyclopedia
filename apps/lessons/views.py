@@ -18,6 +18,7 @@ def lesson_detail(request, slug):
     units = lesson.units.select_related("semantic_class__category").order_by("uid")
     return render(request, "lessons/detail.html", {
         "lesson": lesson,
+        "lesson_design_pilot": lesson.slug in {"a1-nouns-first-words", "a1-verb-be"},
         "extra_missions": extra_missions,
         "a1_pilot": lesson.level.code == "A1" and 1 <= lesson.order <= 28,
         "a1_guide": get_guide(lesson.slug) if lesson.level.code == "A1" else None,

@@ -113,3 +113,45 @@ test('other lessons keep their existing reading feedback',()=>{
   f.buttons[0].click();
   assert.equal(f.status.textContent,'Суть: основные примеры, разговорные формы и самостоятельная практика. Остальные шаги доступны в режиме «Полностью».');
 });
+function pilotFixture() {
+  const f=fixture();
+  const links=f.sections.map(s=>({
+    hash:'#'+s.id, attrs:{}, tabIndex:0, listener:null,
+    parentElement:{dataset:{},appendChild(){}},
+    setAttribute(k,v){this.attrs[k]=v;},removeAttribute(k){delete this.attrs[k];},
+    addEventListener(event,fn){this.listener=fn;},
+  }));
+  const labels=links.map(()=>({textContent:'',hidden:true}));
+  links.forEach((a,i)=>{a.parentElement.querySelector=()=>labels[i];});
+  const original=f.doc.querySelector;
+  f.doc.querySelector=s=>s==='[data-lesson-design-pilot]'?{}:original(s);
+  f.doc.querySelectorAll=s=>links;
+  return Object.assign(f,{links,labels});
+}
+test('pilot contents explain unavailable layers and keep the selected depth',()=>{
+  const f=pilotFixture();init(f.doc,f.win);
+  assert.match(f.status.textContent,/7 из 7/);
+  for (let cycle=0;cycle<2;cycle++) {
+    f.buttons[0].click();
+    assert.equal(f.links[1].attrs['aria-disabled'],'true');
+    assert.match(f.status.textContent,/4 из 7/);
+    assert.equal(f.links[1].tabIndex,-1);
+    assert.match(f.labels[1].textContent,/Почему/);
+    assert.match(f.labels[5].textContent,/Полностью/);
+    let prevented=false;
+    f.links[1].listener({preventDefault(){prevented=true;}});
+    assert.equal(prevented,true);
+    f.win.location.hash='#layer-2';f.listeners.hashchange();
+    assert.deepEqual(hidden(f),['layer-2','layer-4','layer-6']);
+    assert.equal(f.buttons[0].attrs['aria-pressed'],'true');
+    f.buttons[1].click();
+    assert.equal(f.links[1].attrs['aria-disabled'],undefined);
+    assert.match(f.status.textContent,/6 из 7/);
+    assert.equal(f.links[1].tabIndex,0);
+    assert.equal(f.labels[1].hidden,true);
+    assert.equal(f.links[5].attrs['aria-disabled'],'true');
+    f.buttons[2].click();
+    assert.deepEqual(hidden(f),[]);
+    assert.ok(f.links.every(a=>!a.attrs['aria-disabled']));
+  }
+});

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Повторить непонятное · {{ SITE_NAME }}{% endblock %}
-{% block page_styles %}<link rel="stylesheet" href="{% static 'css/mistake-review.css' %}">{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/mistake-review.css' %}"><link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% endblock %}
 {% block content %}
-<div class="wrap mistake-review-page">
+<div data-educational-reading data-reading-theme="minimal" class="wrap mistake-review-page">
   <header class="page-head">
     <p class="crumbs"><a href="{% url 'learning:dashboard' %}">Мой прогресс</a> / повторение ошибок</p>
     <h1>Повторить то, что было трудно</h1>

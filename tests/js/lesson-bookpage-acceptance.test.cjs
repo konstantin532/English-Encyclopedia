@@ -12,3 +12,11 @@ test('unresolved or translucent color measurements cannot silently pass contrast
     assert.throws(()=>contrastRatio(color,'rgb(255, 255, 255)'),/opaque rgb/);
   }
 });
+
+test('geometry compares a visible layout box for flattened mobile contents',()=>{
+  const {visibleLayoutBounds}=require('../../scripts/verify_lesson_bookpage.cjs');
+  assert.equal(typeof visibleLayoutBounds,'function');
+  assert.deepEqual(visibleLayoutBounds('contents',{x:0,width:0},{x:16,width:343}),{x:16,width:343});
+  assert.deepEqual(visibleLayoutBounds('grid',{x:16,width:343},{x:32,width:311}),{x:16,width:343});
+  assert.throws(()=>visibleLayoutBounds('contents',{x:0,width:0},null),/visible child/);
+});

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Живой заказ в кафе · A1 Learning Engine{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% endblock %}
 {% block content %}
-<main class="wrap" style="max-width:760px; padding-bottom:2rem">
+<main data-educational-reading data-reading-theme="minimal" class="wrap" style="max-width:760px; padding-bottom:2rem">
   <header class="page-head">
     <p class="crumbs"><a href="{% url 'core:cafe_lab' %}">Лаборатория «В кафе»</a> / диалог</p>
     <h1>Миссия: заказ в кафе</h1>

@@ -20,12 +20,21 @@ async function colors(locator){
   const pair=await locator.evaluate(el=>{const c=getComputedStyle(el);return {foreground:c.color,background:c.backgroundColor};});
   return {...pair,ratio:contrastRatio(pair.foreground,pair.background)};
 }
+function visibleLayoutBounds(display,bounds,childBounds){
+  // display:contents has no own CSS box; compare the first visible panel instead.
+  const visible=display==='contents'?childBounds:bounds;
+  assert.ok(visible,'display:contents requires a visible child layout box');
+  assert.ok(visible.width>0,'visible layout box must have positive width');
+  return {x:visible.x,width:visible.width};
+}
 async function geometry(page){
-  return page.evaluate(()=>Object.fromEntries(['.studio-sidebar','.site-header','.page-head','.lesson-grid','.aside'].map(selector=>{
-    const r=document.querySelector(selector).getBoundingClientRect();
-    // Reading length changes intentionally; column position/width must not.
-    return [selector,{x:r.x,width:r.width}];
+  const boxes=await page.evaluate(()=>Object.fromEntries(['.studio-sidebar','.site-header','.page-head','.lesson-grid','.aside'].map(selector=>{
+    const el=document.querySelector(selector),r=el.getBoundingClientRect();
+    const display=getComputedStyle(el).display;
+    const child=display==='contents'?el.firstElementChild?.getBoundingClientRect():null;
+    return [selector,{display,bounds:{x:r.x,width:r.width},child:child?{x:child.x,width:child.width}:null}];
   })));
+  return Object.fromEntries(Object.entries(boxes).map(([selector,box])=>[selector,visibleLayoutBounds(box.display,box.bounds,box.child)]));
 }
 async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}){
   const route='/lessons/a1-nouns-first-words/';
@@ -79,12 +88,23 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
             assert.equal(focus.active,true);assert.notEqual(focus.style,'none');assert.ok(focus.width>=2);
           }
           await page.locator('[data-a1-route-mode="essentials"]').click();
-          await page.locator('.toc a[href="#layer-2"]').click();
-          // The browser dispatches hashchange asynchronously after the click.
-          // Wait for its real outcome; a broken handler still fails this gate.
-          await page.locator('#layer-2').waitFor({state:'visible'});
-          assert.equal(await page.locator('#layer-2').isVisible(),true);
-          assert.equal(await page.locator('[data-a1-route-mode="full"]').getAttribute('aria-pressed'),'true');
+          if(await page.locator('[data-lesson-design-pilot]').count()){
+            const unavailable=page.locator('.toc a[href="#layer-2"]');
+            assert.equal(await unavailable.getAttribute('aria-disabled'),'true');
+            assert.equal(await unavailable.getAttribute('tabindex'),'-1');
+            assert.match(await unavailable.locator('..').innerText(),/Почему/);
+            assert.equal(await page.locator('#layer-2').isVisible(),false);
+            // Available navigation must preserve the reader's explicit choice.
+            await page.locator('.toc a[href="#layer-3"]').click();
+            assert.equal(new URL(page.url()).hash,'#layer-3');
+            assert.equal(await page.locator('[data-a1-route-mode="essentials"]').getAttribute('aria-pressed'),'true');
+            assert.equal(await page.locator('#layer-2').isVisible(),false);
+          }else{
+            await page.locator('.toc a[href="#layer-2"]').click();
+            await page.locator('#layer-2').waitFor({state:'visible'});
+            assert.equal(await page.locator('#layer-2').isVisible(),true);
+            assert.equal(await page.locator('[data-a1-route-mode="full"]').getAttribute('aria-pressed'),'true');
+          }
           for(const mode of ['see','echo','recall','transfer']){
             const button=page.locator(`.speech-mode-grid [data-speech-mode="${mode}"]`);
             await button.focus();await button.press('Enter');
@@ -136,4 +156,4 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
   }finally{await nojs.close();}
   report.passed=true;
 }
-module.exports={contrastRatio,verifyLessonBookpage};
+module.exports={contrastRatio,visibleLayoutBounds,verifyLessonBookpage};
