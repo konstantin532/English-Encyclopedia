@@ -25,13 +25,28 @@ async function verify(context, { baseURL, outputDir, otherContext, noJS = true }
   }
   async function layout(width, textScale, name) {
     await page.setViewportSize({ width, height: 900 });
-    const fontSizes = await page.evaluate(scale => {
-      document.documentElement.style.fontSize = '100%';
+    const unscaled = await page.evaluate(() => {
+      const scale = parseFloat(document.documentElement.style.fontSize) || 100;
       const sample = document.querySelector('.trainer-prompt') || document.querySelector('[data-vocabulary-trainer] p');
-      const baseline = parseFloat(getComputedStyle(sample).fontSize);
-      document.documentElement.style.fontSize = scale + '%';
-      return { baseline, actual: parseFloat(getComputedStyle(sample).fontSize) };
-    }, textScale);
+      return { root: parseFloat(getComputedStyle(document.documentElement).fontSize) * 100 / scale,
+        sample: parseFloat(getComputedStyle(sample).fontSize) * 100 / scale };
+    });
+    async function waitForFontScale(scale) {
+      await page.waitForFunction(({ base, scale }) => {
+        const sample = document.querySelector('.trainer-prompt') || document.querySelector('[data-vocabulary-trainer] p');
+        return Math.abs(parseFloat(getComputedStyle(document.documentElement).fontSize) - base.root * scale / 100) < .1 &&
+          Math.abs(parseFloat(getComputedStyle(sample).fontSize) - base.sample * scale / 100) < .1;
+      }, { base: unscaled, scale });
+    }
+    await page.evaluate(() => { document.documentElement.style.fontSize = '100%'; });
+    await waitForFontScale(100);
+    const baseline = await page.evaluate(() => parseFloat(getComputedStyle(
+      document.querySelector('.trainer-prompt') || document.querySelector('[data-vocabulary-trainer] p')).fontSize));
+    await page.evaluate(scale => { document.documentElement.style.fontSize = scale + '%'; }, textScale);
+    await waitForFontScale(textScale);
+    const actual = await page.evaluate(() => parseFloat(getComputedStyle(
+      document.querySelector('.trainer-prompt') || document.querySelector('[data-vocabulary-trainer] p')).fontSize));
+    const fontSizes = { baseline, actual };
     if (textScale === 200) assert.ok(Math.abs(fontSizes.actual / fontSizes.baseline - 2) < .05,
       `Text did not double ${name}: ${JSON.stringify(fontSizes)}`);
     const result = await page.evaluate(() => {
