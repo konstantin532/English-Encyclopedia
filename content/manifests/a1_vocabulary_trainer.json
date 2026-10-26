@@ -1,0 +1,397 @@
+{
+  "pilot_id": "a1-vocabulary-phrase-pilot",
+  "pilot_slug": "a1-cafe-order",
+  "content_version": "1.0",
+  "assessment_revision": "1",
+  "level": "A1",
+  "prerequisites": {
+    "lesson_slug": "a1-cafe-order",
+    "lesson_order": 5,
+    "week": 3,
+    "exposure_only": true
+  },
+  "review_scope": "AI-рецензия смысловых опор и редакторская структурная проверка; без человеческой валидации и проверки результатов обучения.",
+  "compatibility": {
+    "1.0": {
+      "change": "initial",
+      "assessment_revision": "1",
+      "compatible_with": [],
+      "task_mapping": {},
+      "history_policy": "preserve"
+    }
+  },
+  "units": [
+    {
+      "uid": "LX-00055",
+      "title": "tea",
+      "meaning": "a hot drink made from leaves",
+      "source": {
+        "lexicon": "content/seed_lexicon/a1_w03_pilot.yaml",
+        "lesson": "content/seed_lessons/a1_w03_l05_cafe.yaml"
+      },
+      "prerequisites": {
+        "lesson_slug": "a1-cafe-order",
+        "lesson_order": 5,
+        "week": 3,
+        "exposure_only": true
+      },
+      "explanation": "Tea — чай как напиток. В заказе a tea означает одну порцию, часто чашку. О напитке вообще можно говорить tea без a. Здесь вспоминаем название напитка; целый заказ потренируем отдельно.",
+      "mnemonic": "Представьте чайные листья рядом с чашкой: слово tea связано с напитком. Это образ для памяти, без выдуманной этимологии.",
+      "mnemonic_review": "ai_reviewed_not_human_validated",
+      "reviewer_note": "Смысловая опора получила AI-рецензию при проектировании. Это не проверка преподавателем или носителем и не доказательство эффективности для учеников. Не подменяет произношение русским созвучием.",
+      "examples": [
+        {
+          "en": "I like tea.",
+          "ru": "Я люблю чай."
+        },
+        {
+          "en": "A tea, please.",
+          "ru": "Мне чай, пожалуйста."
+        }
+      ],
+      "recall_tasks": [
+        {
+          "task_id": "tea-drink-name",
+          "family_id": "tea-identify-drink",
+          "prompt": "Назовите одним английским словом напиток из чайных листьев. Нужен напиток, а не целый заказ.",
+          "model": "tea",
+          "accepted": [
+            "tea"
+          ],
+          "meaning_errors": [
+            {
+              "answer": "coffee",
+              "feedback": "Это кофе; здесь нужен напиток из чайных листьев."
+            },
+            {
+              "answer": "water",
+              "feedback": "Это вода; здесь нужен напиток из чайных листьев."
+            }
+          ],
+          "valid_alternatives": [],
+          "evidence_kind": "target_recall"
+        },
+        {
+          "task_id": "tea-choose-drink",
+          "family_id": "tea-select-after-choice",
+          "prompt": "Вам предложили кофе или чай. Вы выбираете чай. Напишите только английское название выбранного напитка.",
+          "model": "tea",
+          "accepted": [
+            "tea"
+          ],
+          "meaning_errors": [
+            {
+              "answer": "coffee",
+              "feedback": "Вы назвали кофе, а в этой ситуации выбираете чай."
+            },
+            {
+              "answer": "water",
+              "feedback": "Вы назвали воду, а в этой ситуации выбираете чай."
+            }
+          ],
+          "valid_alternatives": [],
+          "evidence_kind": "target_recall"
+        }
+      ],
+      "applications": [
+        {
+          "task_id": "tea-order-new-place",
+          "prompt": "Вы в другом кафе. Попросите чай так, чтобы собеседнику был понятен ваш выбор. Можно выбрать знакомый способ заказа.",
+          "valid_examples": [
+            "Tea, please.",
+            "A tea, please.",
+            "I'd like a tea, please."
+          ],
+          "criteria": [
+            "Понятно, что вы хотите чай.",
+            "Получился заказ, а не только сообщение о любви к чаю.",
+            "Слово tea использовано отдельно от оценки всей просьбы."
+          ],
+          "assessment": "self_report_only"
+        },
+        {
+          "task_id": "tea-preference-at-home",
+          "prompt": "Знакомый предлагает кофе или чай у себя дома. Выберите чай любым знакомым способом.",
+          "valid_examples": [
+            "Tea, please.",
+            "I'd like tea, please.",
+            "Can I have a tea, please?"
+          ],
+          "criteria": [
+            "Собеседник может понять ваш выбор напитка.",
+            "Ответ уместен для выбора и просьбы.",
+            "Другие понятные варианты допустимы; образцы не исчерпывают ответы."
+          ],
+          "assessment": "self_report_only"
+        }
+      ],
+      "spoken": {
+        "prompt": "Скажите ответ сами, затем откройте образец и сравните смысл и форму.",
+        "comparison": "Сравните со своим ответом. Произношение здесь автоматически не оценивается.",
+        "evidence": "self_report_only",
+        "text_alternative": "Если говорить сейчас неудобно, напишите ответ. Это текстовая практика, без свидетельства устной речи.",
+        "audio": null
+      }
+    },
+    {
+      "uid": "LX-00285",
+      "title": "I would like a coffee, please.",
+      "meaning": "A polite way to order",
+      "source": {
+        "lexicon": "content/seed_lexicon/a1_w03_cafe_plus.yaml",
+        "lesson": "content/seed_lessons/a1_w03_l05_cafe.yaml"
+      },
+      "prerequisites": {
+        "lesson_slug": "a1-cafe-order",
+        "lesson_order": 5,
+        "week": 3,
+        "exposure_only": true
+      },
+      "explanation": "I would like и сокращённое I’d like — мягкая просьба в заказе. I like coffee сообщает о предпочтении. В изученном заказе можно заменить всю группу a coffee на a tea или tea. Слова внутри фразы не получают отдельного доказательства знания.",
+      "mnemonic": "Сердце рядом с кофе — I like coffee: нравится вообще. Протянутая к стойке рука — I’d like a coffee: просьба сейчас.",
+      "mnemonic_review": "ai_reviewed_not_human_validated",
+      "reviewer_note": "Смысловая опора получила AI-рецензию при проектировании. Это не проверка преподавателем или носителем и не доказательство эффективности для учеников. Не подменяет произношение русским созвучием.",
+      "examples": [
+        {
+          "en": "I'd like a coffee, please.",
+          "ru": "Мне кофе, пожалуйста."
+        },
+        {
+          "en": "I would like a tea, please.",
+          "ru": "Мне чай, пожалуйста."
+        }
+      ],
+      "recall_tasks": [
+        {
+          "task_id": "order-at-counter",
+          "family_id": "order-counter",
+          "prompt": "Вы подошли к стойке кафе и заказываете себе кофе или чай. Используйте изученную мягкую просьбу «я хотел(а) бы» и добавьте «пожалуйста».",
+          "model": "I'd like a coffee, please.",
+          "accepted": [
+            "I'd like a coffee, please.",
+            "I would like a coffee, please.",
+            "I'd like a tea, please.",
+            "I would like a tea, please.",
+            "I'd like tea, please.",
+            "I would like tea, please."
+          ],
+          "meaning_errors": [
+            {
+              "answer": "I like coffee.",
+              "feedback": "Это предпочтение: «Мне нравится кофе». Для изученного заказа нужен would like."
+            },
+            {
+              "answer": "I like tea.",
+              "feedback": "Это предпочтение: «Мне нравится чай». Для изученного заказа нужен would like."
+            },
+            {
+              "answer": "I don't like coffee.",
+              "feedback": "Это «Мне не нравится кофе», а не просьба принести напиток."
+            }
+          ],
+          "valid_alternatives": [
+            "Tea, please.",
+            "A tea, please.",
+            "Coffee, please.",
+            "A coffee, please.",
+            "Can I have a coffee, please?",
+            "Can I have a tea, please?"
+          ],
+          "evidence_kind": "target_recall"
+        },
+        {
+          "task_id": "order-after-invitation",
+          "family_id": "order-table-invitation",
+          "prompt": "Официант у столика готов принять заказ. Попросите себе кофе или чай с помощью изученной фразы «я хотел(а) бы», вежливо.",
+          "model": "I'd like a coffee, please.",
+          "accepted": [
+            "I'd like a coffee, please.",
+            "I would like a coffee, please.",
+            "I'd like a tea, please.",
+            "I would like a tea, please.",
+            "I'd like tea, please.",
+            "I would like tea, please."
+          ],
+          "meaning_errors": [
+            {
+              "answer": "I like coffee.",
+              "feedback": "Это предпочтение: «Мне нравится кофе». Для изученного заказа нужен would like."
+            },
+            {
+              "answer": "I like tea.",
+              "feedback": "Это предпочтение: «Мне нравится чай». Для изученного заказа нужен would like."
+            },
+            {
+              "answer": "I don't like coffee.",
+              "feedback": "Это «Мне не нравится кофе», а не просьба принести напиток."
+            }
+          ],
+          "valid_alternatives": [
+            "Tea, please.",
+            "A tea, please.",
+            "Coffee, please.",
+            "A coffee, please.",
+            "Can I have a coffee, please?",
+            "Can I have a tea, please?"
+          ],
+          "evidence_kind": "target_pattern_transfer"
+        }
+      ],
+      "applications": [
+        {
+          "task_id": "order-choose-tea",
+          "prompt": "В новом кафе вы решили взять чай. Закажите его. Отдельно отметьте, удалось ли попросить напиток и использовали ли вы would like.",
+          "valid_examples": [
+            "I'd like a tea, please.",
+            "I would like tea, please.",
+            "Tea, please."
+          ],
+          "criteria": [
+            "Собеседнику понятно, что вы просите чай.",
+            "Коммуникативная цель может быть достигнута без would like.",
+            "Для целевого выражения проверьте I’d like или I would like отдельно."
+          ],
+          "assessment": "self_report_only"
+        },
+        {
+          "task_id": "order-coffee-at-table",
+          "prompt": "Вы сидите за столиком в другом кафе. Официант ждёт ваш заказ кофе. Ответьте самостоятельно.",
+          "valid_examples": [
+            "I'd like a coffee, please.",
+            "I would like a coffee, please.",
+            "Can I have a coffee, please?"
+          ],
+          "criteria": [
+            "Получилась просьба принести кофе.",
+            "Отметьте вежливость и уместность по своей оценке.",
+            "Не приравнивайте любой удачный заказ к извлечению would like."
+          ],
+          "assessment": "self_report_only"
+        }
+      ],
+      "spoken": {
+        "prompt": "Скажите ответ сами, затем откройте образец и сравните смысл и форму.",
+        "comparison": "Сравните со своим ответом. Произношение здесь автоматически не оценивается.",
+        "evidence": "self_report_only",
+        "text_alternative": "Если говорить сейчас неудобно, напишите ответ. Это текстовая практика, без свидетельства устной речи.",
+        "audio": null
+      }
+    },
+    {
+      "uid": "LX-00084",
+      "title": "Sorry? Can you say it again, please?",
+      "meaning": "Asking someone to repeat",
+      "source": {
+        "lexicon": "content/seed_lexicon/a1_w03_pilot.yaml",
+        "lesson": "content/seed_lessons/a1_w03_l05_cafe.yaml"
+      },
+      "prerequisites": {
+        "lesson_slug": "a1-cafe-order",
+        "lesson_order": 5,
+        "week": 3,
+        "exposure_only": true
+      },
+      "explanation": "Эта просьба возвращает слова собеседника: you — говорит другой человек, again — ещё раз. Sorry? может само работать как переспрос, но здесь вспоминаем полную просьбу. Please смягчает просьбу.",
+      "mnemonic": "Кофемашина заглушила реплику. Представьте мысленную кнопку ↻: она возвращает слова собеседника. Свяжите её с просьбой сказать ещё раз.",
+      "mnemonic_review": "ai_reviewed_not_human_validated",
+      "reviewer_note": "Смысловая опора получила AI-рецензию при проектировании. Это не проверка преподавателем или носителем и не доказательство эффективности для учеников. Не подменяет произношение русским созвучием.",
+      "examples": [
+        {
+          "en": "Sorry? Can you say it again, please?",
+          "ru": "Простите? Можете повторить, пожалуйста?"
+        },
+        {
+          "en": "Can you say it again, please?",
+          "ru": "Можете повторить, пожалуйста?"
+        }
+      ],
+      "recall_tasks": [
+        {
+          "task_id": "repeat-over-cafe-noise",
+          "family_id": "repeat-cafe-noise",
+          "prompt": "Кофемашина заглушила слова бариста. Попросите его повторить целой изученной просьбой с «можете сказать ещё раз» и «пожалуйста».",
+          "model": "Sorry? Can you say it again, please?",
+          "accepted": [
+            "Sorry? Can you say it again, please?",
+            "Can you say it again, please?",
+            "Sorry, can you please say it again?",
+            "Can you please say it again?"
+          ],
+          "meaning_errors": [
+            {
+              "answer": "I can say it again, please.",
+              "feedback": "Здесь вы говорите, что сами можете повторить. В ситуации нужно попросить собеседника повторить."
+            }
+          ],
+          "valid_alternatives": [
+            "Sorry?",
+            "Pardon?"
+          ],
+          "evidence_kind": "target_recall"
+        },
+        {
+          "task_id": "repeat-on-call",
+          "family_id": "repeat-phone-connection",
+          "prompt": "Во время звонка пропали слова собеседника. Попросите его повторить целой изученной просьбой с «можете сказать ещё раз» и «пожалуйста».",
+          "model": "Sorry? Can you say it again, please?",
+          "accepted": [
+            "Sorry? Can you say it again, please?",
+            "Can you say it again, please?",
+            "Sorry, can you please say it again?",
+            "Can you please say it again?"
+          ],
+          "meaning_errors": [
+            {
+              "answer": "I can say it again, please.",
+              "feedback": "Здесь вы говорите, что сами можете повторить. В ситуации нужно попросить собеседника повторить."
+            }
+          ],
+          "valid_alternatives": [
+            "Sorry?",
+            "Pardon?"
+          ],
+          "evidence_kind": "target_recall"
+        }
+      ],
+      "applications": [
+        {
+          "task_id": "repeat-unheard-name",
+          "prompt": "Знакомый назвал своё имя, а вы не расслышали. Попросите повторить удобным вам способом.",
+          "valid_examples": [
+            "Sorry? Can you say it again, please?",
+            "Can you say it again, please?",
+            "Sorry?"
+          ],
+          "criteria": [
+            "Вы просите повторить слова собеседника.",
+            "Короткий переспрос может достичь цели без полной целевой фразы.",
+            "Отдельно проверьте, употребили ли вы полную просьбу."
+          ],
+          "assessment": "self_report_only"
+        },
+        {
+          "task_id": "repeat-friend-on-phone",
+          "prompt": "На звонке вы не поняли последнюю реплику друга. Вежливо переспросите.",
+          "valid_examples": [
+            "Can you say it again, please?",
+            "Sorry? Can you say it again, please?",
+            "Can you please say it again?"
+          ],
+          "criteria": [
+            "Понятно, что повторить должен собеседник.",
+            "Вы не меняете просьбу на запрет или обещание повторить самим.",
+            "Неизвестный вариант требует самооценки или разбора, а не автоматической ошибки."
+          ],
+          "assessment": "self_report_only"
+        }
+      ],
+      "spoken": {
+        "prompt": "Скажите ответ сами, затем откройте образец и сравните смысл и форму.",
+        "comparison": "Сравните со своим ответом. Произношение здесь автоматически не оценивается.",
+        "evidence": "self_report_only",
+        "text_alternative": "Если говорить сейчас неудобно, напишите ответ. Это текстовая практика, без свидетельства устной речи.",
+        "audio": null
+      }
+    }
+  ]
+}
