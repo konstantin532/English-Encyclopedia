@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Самостоятельная проверка · {{ lesson.title }}{% endblock %}
-{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}"><link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% endblock %}
 {% block content %}
-<div class="wrap independent-check">
+<div data-educational-reading data-reading-theme="minimal" class="wrap independent-check">
   <header class="page-head">
     <p class="crumbs"><a href="{% url 'lessons:detail' lesson.slug %}">Урок {{ lesson.order }}</a> / самостоятельная проверка</p>
     <h1>Проверяю, что могу сам</h1>

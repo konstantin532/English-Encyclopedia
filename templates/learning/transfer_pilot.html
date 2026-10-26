@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Пилот переноса · {{ pilot.title }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% endblock %}
 {% block content %}
-<main class="wrap" style="max-width: 760px; padding-bottom: var(--space-8)">
+<main data-educational-reading data-reading-theme="minimal" class="wrap" style="max-width: 760px; padding-bottom: var(--space-8)">
   <header class="page-head">
     <p class="crumbs"><a href="{% url 'learning:dashboard' %}">Мой прогресс</a> / эксперимент</p>
     <h1>{{ pilot.title }}</h1>

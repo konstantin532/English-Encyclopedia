@@ -20,6 +20,7 @@
   --edu-focus: #88630c;
   --reader-scale: 1;
   color: var(--edu-ink);
+  font: var(--edu-body)/var(--edu-leading) var(--edu-font-body);
 
   &[data-reading-theme="academic"] {
     --edu-bg: #F5F4F0;
@@ -106,7 +107,7 @@
   button:disabled { color: #667168; background: #edf0eb; opacity: 1; cursor: default; }
   .speech-actions, .drill-actions { gap: .6rem; flex-wrap: wrap; }
   .speech-studio [data-speech-source], .speech-studio [data-speech-current] { font-family: var(--font-ui); }
-  .speech-modes button[aria-pressed="true"], .speech-actions button[aria-pressed="true"] { color: #fff; background: #194B3B; border-color: #194B3B; }
+  [data-speech-mode][aria-pressed="true"], .speech-modes button[aria-pressed="true"], .speech-actions button[aria-pressed="true"] { color: #fff; background: #194B3B; border-color: #194B3B; }
   .map-item > div > a { font: 500 1.35rem/1.4 var(--font-read); }
   .map-meta { font: 16px/1.65 var(--font-ui); margin-top: .45em; }
 

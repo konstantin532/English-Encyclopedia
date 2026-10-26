@@ -10,3 +10,8 @@ Task1: pilot preserved as9f8453e then rebased to25c9653 on origin/main ce533e12.
 Task1 checks: Node133/133. Django6 actual route/pilot tests passed; extra guessed module tests.test_lesson_bookpage caused ImportError and is being corrected to discovered real filename, not counted as passing.
 
 Ruling: preserve main bookpage hooks alongside the approved two-page pilot — avoids deleting merged behavior; cost if wrong is visual cascade conflict, checked explicitly on first lesson before rollout.
+
+Task1: complete — rebased25c9653 on ce533e12; Node133/133, Django6/6. The guessed nonexistent module was corrected; no tests weakened.
+Task2/3: base stylesheet and three template hooks committed b56c8f4. RED missing stylesheet/root observed; GREEN Node palette contract and3 Django preservation tests. Real wide story viewed; remaining responsive/state review continues before completion.
+Task4 in progress: RED root scale undefined observed; fix shares --reader-scale on nearest educational root while retaining practice fallback. RED missing transfer_pilot root observed; main wrappers corrected. Node136/136 and initial11 Django tests passed before extending dialogue checks to all30.
+Ruling: preview-only pilot.sqlite3 reloaded from fresh main seed — necessary to show current content after rebase; source/user DB untouched, cost if wrong limited to disposable guest preview state.

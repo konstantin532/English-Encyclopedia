@@ -2,6 +2,7 @@
 (() => {
   const reader = document.querySelector("[data-lesson-reader]");
   const practice = document.querySelector("[data-lesson-practice]");
+  const surface = reader && reader.closest("[data-educational-reading]");
   const smaller = document.querySelector("[data-reader-smaller]");
   const larger = document.querySelector("[data-reader-larger]");
   const output = document.querySelector("[data-reader-size]");
@@ -12,6 +13,7 @@
   try { const saved = parseInt(localStorage.getItem(KEY), 10); if (saved >= 15 && saved <= 24) size = saved; } catch (e) { /* хранилище недоступно */ }
   const update = () => {
     reader.style.fontSize = `${size}px`;
+    if (surface) surface.style.setProperty("--reader-scale", String(size / base));
     if (practice) practice.style.setProperty("--reader-scale", String(size / base));
     output.textContent = String(size);
     smaller.disabled = size <= 15;

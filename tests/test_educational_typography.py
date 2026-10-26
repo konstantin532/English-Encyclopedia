@@ -2,6 +2,8 @@
 from django.template import Context, Template
 from django.test import TestCase
 
+from apps.curriculum.models import Week
+from django.utils.html import escape
 from apps.lessons.models import Lesson
 from apps.stories.models import Story
 from apps.poems.models import Poem
@@ -59,13 +61,17 @@ class EducationalTypographyTests(TestCase):
             stanzas = sum(bool(row.get("stanza")) for row in response.context["rows"])
             self.assertContains(response, 'class="stanza-start"', count=stanzas * 2)
 
-    def test_dialogue_keeps_each_translation_and_role(self):
-        response = self.client.get("/levels/a1/weeks/1/")
-        self.assert_reading_surface(response)
-        for line in response.context["lines"]:
-            self.assertContains(response, annotated(line["text"]))
-            self.assertContains(response, line["ru"])
-            self.assertContains(response, f'data-speaker="{line["speaker"]}"')
+    def test_dialogues_keep_each_translation_and_role(self):
+        weeks = Week.objects.filter(scene__isnull=False).select_related("level")
+        self.assertEqual(weeks.count(), 30)
+        for week in weeks:
+            response = self.client.get(f"/levels/{week.level.slug}/weeks/{week.number}/")
+            self.assert_reading_surface(response)
+            for line in response.context["lines"]:
+                self.assertContains(response, annotated(line["text"]))
+                if line.get("ru"):
+                    self.assertContains(response, escape(line["ru"]))
+                self.assertContains(response, f'data-speaker="{line["speaker"]}"')
 
     def test_non_learning_pages_have_no_reading_theme(self):
         for url in ("/", "/levels/a1/", "/accounts/login/"):

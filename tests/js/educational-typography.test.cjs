@@ -11,3 +11,10 @@ test('educational reading has three scoped palettes without changing marker sema
   assert.doesNotMatch(css,/(?:^|\n)\s*(?:body|html|:root|\.studio-sidebar|\.mk)(?:\s|[{:])/);
   assert.match(css,/var\(--font-ipa\)/);
 });
+
+test('every training template has a scoped minimal root, not just a stylesheet',()=>{
+  for(const name of ['independent_check','mistake_review','review','speech_review','transfer_pilot','cafe_mission']) {
+    const html=fs.readFileSync(path.resolve(__dirname,'../../templates/learning/'+name+'.html'),'utf8');
+    assert.match(html,/<(?:div|main)[^>]*data-educational-reading[^>]*data-reading-theme="minimal"/,name);
+  }
+});

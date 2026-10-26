@@ -21,6 +21,7 @@
   --edu-focus: #88630c;
   --reader-scale: 1;
   color: var(--edu-ink);
+  font: var(--edu-body)/var(--edu-leading) var(--edu-font-body);
 }
 [data-educational-reading][data-reading-theme=academic] {
   --edu-bg: #F5F4F0;
@@ -352,7 +353,7 @@
 [data-educational-reading] .speech-studio [data-speech-source], [data-educational-reading] .speech-studio [data-speech-current] {
   font-family: var(--font-ui);
 }
-[data-educational-reading] .speech-modes button[aria-pressed=true], [data-educational-reading] .speech-actions button[aria-pressed=true] {
+[data-educational-reading] [data-speech-mode][aria-pressed=true], [data-educational-reading] .speech-modes button[aria-pressed=true], [data-educational-reading] .speech-actions button[aria-pressed=true] {
   color: #fff;
   background: #194B3B;
   border-color: #194B3B;
