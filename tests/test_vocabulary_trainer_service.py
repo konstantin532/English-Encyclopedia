@@ -621,3 +621,25 @@ class TrainerServiceTests(TestCase):
         UnitProgress.objects.filter(user=self.user, unit=self.unit).update(status='active')
         self.finish(self.progress().next_review_at)
         self.assertEqual(self.progress().status, 'active')
+
+    def test_help_comparison_preserves_typed_draft_and_legacy_receipt_fingerprint(self):
+        import hashlib
+        import json
+        from apps.learning.models import TrainerSession
+        self.enroll()
+        view = self.action(self.start(), 'begin')
+        old = view
+        view = self.action(view, 'hint', answer='My typed idea')
+        self.assertEqual(view['draft'], 'My typed idea')
+        expected = hashlib.sha256(json.dumps([old['revision'], 'hint', 'My typed idea', 'text', ''],
+                                            ensure_ascii=False).encode()).hexdigest()
+        self.assertEqual(TrainerSession.objects.get(pk=view['session_id']).receipts[old['token']]['fingerprint'], expected)
+        self.assertEqual(self.action(old, 'hint', answer='My typed idea')['revision'], view['revision'])
+        view = self.action(view, 'reveal')  # Historical callers omit answer; do not erase a saved draft.
+        self.assertEqual(view['draft'], 'My typed idea')
+        view = self.action(view, 'recall', mode='spoken', answer='Typed alternative')
+        self.assertEqual(view['draft'], 'Typed alternative')
+        view = self.action(view, 'rate_spoken', self_rating='hard')
+        view = self.action(view, 'continue')
+        view = self.action(view, 'reveal_application', answer='A different useful response')
+        self.assertEqual(view['draft'], 'A different useful response')

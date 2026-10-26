@@ -31,6 +31,7 @@
         <h2 id="lessons-t">Уроки недели</h2>
         <div class="studio-lessons">{% for lesson in lessons %}<a class="studio-lesson-card" href="{% url 'lessons:detail' lesson.slug %}"><span class="studio-lesson-no">{{ lesson.order|stringformat:'02d' }}</span><div><h3>{{ lesson.title }}</h3><p>{{ lesson.minutes }} минут · 7 слоёв</p></div><span class="studio-card-arrow" aria-hidden="true">↗</span></a>{% empty %}<p>Уроки готовятся.</p>{% endfor %}</div>
       </section>
+      {% if trainer_entry %}<section class="layer" data-trainer-entry><h2>Практика слов и фраз</h2><p>После знакомства с уроком 5 можно добровольно потренировать три единицы.</p><p><a href="{% url 'learning:trainer' %}">Открыть тренажёр</a></p></section>{% endif %}
       <section class="layer" id="chunks" aria-labelledby="chunks-t">
         <h2 id="chunks-t">Готовые фразы</h2>
         {% for unit in scene.chunks.all %}<p><a href="{% url 'lexicon:detail' unit.uid %}" lang="en">{{ unit.lemma }}</a> — {{ unit.translation_ru }}<br><span class="ipa">{{ unit.ipa_us }}</span> {{ unit|ru_tr }}</p>{% empty %}<p>Фразы готовятся.</p>{% endfor %}

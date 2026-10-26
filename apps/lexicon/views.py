@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator
+from django.conf import settings
 from django.shortcuts import get_object_or_404, render
 
 from apps.curriculum.models import Level
@@ -32,4 +33,10 @@ def unit_detail(request, uid):
     unit = get_object_or_404(
         LexicalUnit.objects.select_related("part_of_speech", "semantic_class__category", "internal_level"), uid=uid
     )
-    return render(request, "lexicon/detail.html", {"unit": unit, "lessons": unit.lessons.all()})
+    trainer_entry = (getattr(settings, "EE_VOCABULARY_TRAINER_ENABLED", False)
+                     and request.user.is_authenticated and uid in ("LX-00055", "LX-00285", "LX-00084"))
+    if trainer_entry:
+        from apps.learning.trainer_service import register_legacy_exposure
+        register_legacy_exposure(request.user, [unit])
+    return render(request, "lexicon/detail.html", {"unit": unit, "lessons": unit.lessons.all(),
+                                                  "trainer_entry": trainer_entry})

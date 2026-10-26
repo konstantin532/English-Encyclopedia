@@ -1,0 +1,58 @@
+{% extends "base.html" %}{% load static %}
+{% block title %}Практика слов и фраз · {{ SITE_NAME }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/vocabulary-trainer.css' %}">{% endblock %}
+{% block content %}
+<div class="wrap vocabulary-trainer" data-vocabulary-trainer{% if error %} data-error="true"{% endif %}{% if state %} data-phase="{{ state.phase }}" data-session="{{ state.session_id }}" data-revision="{{ state.revision }}" data-status-url="{% url 'learning:trainer_status' state.session_id %}"{% endif %}>
+  <header class="trainer-header"><p class="trainer-eyebrow">Добровольный пилот · после урока 5</p><h1 tabindex="-1" data-trainer-heading>Практика слов и фраз</h1><p>Вспомните сами, затем примените в новой ситуации. Каждая встреча сохраняется; можно вернуться позже.</p><nav aria-label="Навигация тренажёра"><a href="{% url 'learning:trainer' %}">Все три единицы</a> · <a href="{% url 'lessons:detail' lesson_slug %}">Урок 5</a> · <a href="{% url 'learning:dashboard' %}">Мой прогресс</a></nav></header>
+  <div class="trainer-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1" data-trainer-status>{% if error %}{{ error }}{% else %}Состояние загружено с сервера.{% endif %}</div>
+  <div class="trainer-network" data-trainer-network hidden><p>Подтверждение пока не получено. Ответ остаётся на этой странице. Повтор запроса безопасен.</p><button type="button" data-trainer-retry>Повторить тот же запрос</button><button type="button" data-trainer-reconcile>Проверить сохранённое состояние</button></div>
+  {% if unsent != None %}<section class="trainer-card"><h2>Ваш неподтверждённый ответ</h2><p>Скопируйте его в актуальное задание, если хотите отправить снова. Конфликт не считается ошибкой.</p><label for="trainer-unsent">Текст для восстановления</label><textarea id="trainer-unsent" readonly data-trainer-unsent>{{ unsent }}</textarea></section>{% endif %}
+  {% if not state %}
+    {% if not summary.enrolled %}
+    <section class="trainer-card"><h2>Сначала — знакомство</h2><p>Пилот охватывает три единицы из урока 5. Мнемоника помогает связать смысл с формой; вспоминание проверяет, что осталось без образца; новая ситуация помогает переносу; проговаривание завершается вашей самооценкой.</p><p>Речь не записывается. Можно отвечать письменно. Отметки не подтверждают уровень или владение языком.</p>
+    <form method="post">{% csrf_token %}<input type="hidden" name="action" value="enroll"><label class="trainer-check"><input type="checkbox" name="prerequisites" value="yes" required> Я познакомился с материалом урока 5.</label><label for="trainer-zone">Часовой пояс IANA</label><input id="trainer-zone" name="timezone_name" value="Europe/Moscow" maxlength="64" required><label for="trainer-limit">Новых встреч в день (1–10)</label><input id="trainer-limit" name="daily_limit" type="number" min="1" max="10" value="10" required><button type="submit">Включить тренажёр</button></form></section>
+    {% else %}
+    <section class="trainer-card"><h2>Ваши встречи</h2><p>Осталось новых встреч сегодня: {{ summary.remaining }}. Часовой пояс: {{ summary.timezone_name }}.</p><p>«Новое» — знакомство; «Пора повторить» — наступил срок; «Запланировано» — можно подождать или потренироваться раньше; «Нужна практика» — последняя встреча требует внимания. Просмотр и помощь сами по себе не повышают ступень.</p>
+    <ul class="trainer-units">{% for unit in summary.units %}<li><h3>{{ unit.label }}</h3><p>{% if unit.state == 'new' %}Новое{% elif unit.state == 'due' %}Пора повторить{% else %}Запланировано{% endif %}{% if unit.needs_practice %} · Нужна практика{% endif %}</p>{% if unit.next_review_at %}<p>Срок: <time datetime="{{ unit.next_review_at }}">{{ unit.next_review_at }}</time></p>{% endif %}{% if unit.session_id %}<a class="trainer-button" href="{% url 'learning:trainer_session' unit.session_id %}">Продолжить встречу</a>{% else %}<form method="post">{% csrf_token %}<input type="hidden" name="action" value="start"><input type="hidden" name="uid" value="{{ unit.uid }}"><button type="submit">{% if unit.state == 'new' %}Начать{% else %}Практиковаться{% endif %}</button></form>{% endif %}</li>{% endfor %}</ul></section>
+    <form method="post" class="trainer-card">{% csrf_token %}<input type="hidden" name="action" value="unenroll"><p>Можно выйти из пилота; история сохранится.</p><button type="submit" class="trainer-secondary">Выключить тренажёр</button></form>
+    {% endif %}
+  {% else %}
+    <section class="trainer-card" aria-labelledby="trainer-phase">
+    <p class="trainer-eyebrow">Встреча {{ state.session_id }} · версия {{ state.content_version }}</p>
+    <h2 id="trainer-phase">{% if state.phase == 'intro' %}Знакомство{% elif state.phase == 'recall' %}Вспомните без образца{% elif state.phase == 'spoken_compare' %}Сравните сказанное{% elif state.phase == 'feedback' %}Разбор ответа{% elif state.phase == 'application' %}Новая ситуация{% elif state.phase == 'complete' %}Встреча завершена{% else %}Встреча отложена{% endif %}</h2>
+    {% if state.assistance %}<p class="trainer-notice">Зарегистрирована помощь. Эта встреча не подтверждает самостоятельное отсроченное вспоминание.</p>{% endif %}
+    {% if state.phase == 'intro' %}<h3 lang="en">{{ state.title }}</h3><p>{{ state.explanation }}</p>{% for example in state.examples %}<blockquote><p lang="en">{{ example.en }}</p><p>{{ example.ru }}</p></blockquote>{% endfor %}{% endif %}
+    {% if state.prompt %}<p class="trainer-prompt">{{ state.prompt }}</p>{% endif %}
+    {% if state.mnemonic %}<section class="trainer-memory"><h3>Мнемоника — связь для памяти</h3><p>{{ state.mnemonic }}</p><p>{{ state.mnemonic_note }}</p></section>{% endif %}
+    {% if state.feedback %}<p class="trainer-notice">{{ state.feedback }}</p>{% endif %}
+    {% if state.model %}<section class="trainer-model"><h3>Образец для сравнения</h3><p lang="en">{{ state.model }}</p>{% if state.comparison %}<p>{{ state.comparison }}</p>{% endif %}</section>{% endif %}
+    {% if state.phase == 'spoken_compare' %}<p>{{ state.spoken_note }}</p>{% if state.draft %}<label for="trainer-spoken-draft">Ваш письменный черновик</label><textarea id="trainer-spoken-draft" readonly>{{ state.draft }}</textarea>{% endif %}{% endif %}
+    {% if state.criteria %}<h3>Сравните по смыслу</h3><ul>{% for criterion in state.criteria %}<li>{{ criterion }}</li>{% endfor %}</ul>{% endif %}
+    {% if state.valid_examples %}<h3>Несколько подходящих примеров</h3><ul>{% for example in state.valid_examples %}<li lang="en">{{ example }}</li>{% endfor %}</ul><p>Другой ответ тоже может достигать цели. Здесь нет проверки точного совпадения.</p>{% endif %}
+    {% if state.result.feedback and state.result.feedback != state.feedback %}<p>{{ state.result.feedback }}</p>{% endif %}
+    {% if state.schedule_reason %}<p class="trainer-notice">{{ state.schedule_reason }}</p>{% endif %}
+    {% if state.next_review_at %}<p>Следующая встреча: <time datetime="{{ state.next_review_at }}">{{ state.next_review_at }}</time>. Срок отсчитывается от сохранённой практики.</p>{% endif %}
+    {% if state.actions %}
+    <form method="post" data-trainer-action>{% csrf_token %}<input type="hidden" name="token" value="{{ state.token }}"><input type="hidden" name="revision" value="{{ state.revision }}">
+      {% if state.phase == 'recall' or state.phase == 'application' %}
+      <label for="trainer-answer">Ваш письменный ответ (до 400 символов)</label><textarea id="trainer-answer" name="answer" maxlength="400" rows="4" lang="en" aria-describedby="trainer-mode-note">{{ state.draft }}</textarea>
+      <fieldset><legend>Как отвечаете?</legend><label class="trainer-check"><input type="radio" name="mode" value="text"{% if preferred_mode != 'spoken' %} checked{% endif %}> Письменно</label><label class="trainer-check"><input type="radio" name="mode" value="spoken"{% if preferred_mode == 'spoken' %} checked{% endif %}> Произнесу вслух сам</label></fieldset><p id="trainer-mode-note">{{ state.spoken_note }} Письменная альтернатива доступна в поле выше.</p>
+      {% endif %}
+      {% if state.phase == 'spoken_compare' or state.phase == 'application' and state.valid_examples %}<fieldset><legend>После сравнения — ваша самооценка</legend><label class="trainer-check"><input type="radio" name="self_rating" value="good"> Получилось</label><label class="trainer-check"><input type="radio" name="self_rating" value="hard"> Было трудно</label><label class="trainer-check"><input type="radio" name="self_rating" value="again"> Попробую ещё</label></fieldset>{% endif %}
+      <div class="trainer-actions">
+      {% if state.phase == 'intro' %}<button name="action" value="begin">Закрыть материал и вспомнить</button>{% endif %}
+      {% if state.phase == 'recall' %}<button name="action" value="recall">{% if state.recall_tries %}Отправить повторную попытку{% else %}Ответить / сказал — показать образец{% endif %}</button><button name="action" value="dont_know" class="trainer-secondary">{% if state.model %}Перейти к разбору{% else %}Не помню — к разбору{% endif %}</button><button name="action" value="hint" class="trainer-secondary">Вспомнить мнемонику (помощь)</button><button name="action" value="reveal" class="trainer-secondary">Показать образец (помощь)</button>{% endif %}
+      {% if state.phase == 'spoken_compare' %}<button name="action" value="rate_spoken">Сохранить самооценку</button>{% endif %}
+      {% if state.phase == 'feedback' %}<button name="action" value="continue">Применить в новой ситуации</button>{% endif %}
+      {% if state.phase == 'application' %}<p>Сначала скажите или напишите свой вариант. Затем откройте примеры, сравните цель и оцените ответ.</p><button name="action" value="reveal_application" class="trainer-secondary">Сказал / написал — показать примеры</button>{% if state.valid_examples %}<button name="action" value="apply">Сохранить ответ и самооценку</button>{% endif %}{% endif %}
+      {% if state.phase == 'recall' or state.phase == 'application' %}<button name="action" value="save_draft" class="trainer-secondary">Сохранить черновик и остаться</button>{% endif %}
+      <button name="action" value="abandon" class="trainer-secondary">Закончить сейчас без оценки ошибки</button>
+      </div>
+    </form>{% else %}<p><a class="trainer-button" href="{% url 'learning:trainer' %}">К следующей встрече</a></p>{% endif %}
+    </section>
+    {% if can_mnemonic %}<section class="trainer-card"><h2>Моя личная мнемоника</h2><p>Короткая собственная связь с формой или смыслом. Видна только вам. До 300 символов.</p><form method="post">{% csrf_token %}<input type="hidden" name="action" value="mnemonic"><label for="trainer-mnemonic">Текст мнемоники</label><textarea id="trainer-mnemonic" name="mnemonic" maxlength="300">{{ state.personal_mnemonic }}</textarea><button type="submit" class="trainer-secondary">Сохранить мнемонику</button></form></section>{% endif %}
+  {% endif %}
+  <footer class="trainer-footer"><p>Черновики удаляются после 30 дней без сохранения. Подтверждённые ответы остаются в вашей истории. Помощь на страницах слов, недели 3, уроков и прогресса регистрируется; внешнюю помощь сайт не определяет.</p><p><a href="{% url 'accounts:my_data' %}">Скачать мои данные</a> · <a href="{% url 'accounts:delete_account' %}">Удалить аккаунт и данные</a></p></footer>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'js/vocabulary-trainer.js' %}" defer></script>{% endblock %}

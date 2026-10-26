@@ -357,6 +357,9 @@ def perform_action(user, session_id, token, revision, action, *, answer='', mode
         if marker not in session.assistance:
             session.assistance = [*session.assistance, marker]
         session.last_material_at = now
+        if answer:
+            session.draft = answer
+            session.draft_updated_at = now
     elif action == 'dont_know':
         session.recall_tries += 1
         result = assess_recall(session.snapshot, '', task_id=session.task_id)
@@ -369,6 +372,9 @@ def perform_action(user, session_id, token, revision, action, *, answer='', mode
         if session.recall_tries >= 2:
             raise TrainerConflict(canonical=_conflict_state(session))
         if mode == 'spoken':
+            if answer:
+                session.draft = answer
+                session.draft_updated_at = now
             session.phase = 'spoken_compare'
             session.last_material_at = now
         else:

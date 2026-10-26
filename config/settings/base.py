@@ -16,6 +16,8 @@ load_dotenv(BASE_DIR / ".env")
 def env_bool(name: str, default: bool = False) -> bool:
     return os.getenv(name, str(default)).strip().lower() in {"1", "true", "yes", "on"}
 
+EE_VOCABULARY_TRAINER_ENABLED = env_bool("EE_VOCABULARY_TRAINER_ENABLED", False)
+
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-only-insecure-key-change-me")
 DEBUG = env_bool("DJANGO_DEBUG", False)

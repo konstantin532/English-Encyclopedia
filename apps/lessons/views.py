@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import ensure_csrf_cookie
 
@@ -16,6 +17,9 @@ def lesson_detail(request, slug):
         if supplement["slug"] == lesson.slug:
             extra_missions = supplement["missions"]
     units = lesson.units.select_related("semantic_class__category").order_by("uid")
+    if getattr(settings, "EE_VOCABULARY_TRAINER_ENABLED", False) and request.user.is_authenticated:
+        from apps.learning.trainer_service import register_legacy_exposure
+        register_legacy_exposure(request.user, units)
     return render(request, "lessons/detail.html", {
         "lesson": lesson,
         "lesson_design_pilot": lesson.slug in {"a1-nouns-first-words", "a1-verb-be"},

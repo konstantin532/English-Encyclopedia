@@ -5,6 +5,7 @@
   <header class="page-head">
     <h1>{% if user.display_name %}{{ user.display_name }}, ваш прогресс{% else %}Ваш прогресс{% endif %}</h1>
   </header>
+  {% if trainer_enabled %}<section class="section" data-trainer-entry aria-labelledby="vocabulary-trainer-title"><h2 id="vocabulary-trainer-title">Практика слов и фраз</h2><p>Три единицы после урока 5: вспомнить самостоятельно, применить в новой ситуации, сравнить сказанное.</p><p><a class="btn btn-primary" href="{% url 'learning:trainer' %}">Открыть добровольный тренажёр</a></p></section>{% endif %}
   <div class="stats">
     <div class="stat"><b>{{ progress|length }}</b><span>единиц начато</span></div>
     <div class="stat"><b>{{ active_units|length }}</b><span>исторических отметок «активный»</span></div>

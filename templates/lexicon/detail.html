@@ -40,6 +40,7 @@
         {% if unit.usage_note %}<dt>Как употребляют</dt><dd>{{ unit.usage_note }}</dd>{% endif %}
         {% if unit.typical_error %}<dt>Типичная ошибка</dt><dd class="error-note">{{ unit.typical_error }}</dd>{% endif %}
       </dl>
+      {% if trainer_entry %}<p data-trainer-entry><a href="{% url 'learning:trainer' %}">Практика слов и фраз после урока 5</a></p>{% endif %}
       {% include "components/sound_legend.html" %}
     </div>
     <aside class="aside">

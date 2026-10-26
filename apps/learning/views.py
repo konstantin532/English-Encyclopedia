@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 from django.http import HttpResponseBadRequest, HttpResponseRedirect, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
@@ -23,6 +24,11 @@ def dashboard(request):
     progress = UnitProgress.objects.filter(user=request.user).select_related("unit__semantic_class__category")
     now = timezone.now()
     due = [p for p in progress if p.next_review_at and p.next_review_at <= now]
+    if getattr(settings, "EE_VOCABULARY_TRAINER_ENABLED", False):
+        from .trainer_service import register_legacy_exposure
+        # The progress table really displays these model lemmas to this owner.
+        register_legacy_exposure(request.user, [p.unit for p in progress
+            if p.unit.uid in ("LX-00055", "LX-00285", "LX-00084")])
     started = {p.unit_id for p in progress}
     lessons = Lesson.objects.filter(is_published=True).prefetch_related("units")
     next_lesson = next((lesson for lesson in lessons
@@ -61,9 +67,19 @@ def toggle_markers(request):
 @ensure_csrf_cookie
 def review(request):
     items = build_review(request.user)
+    trainer_summary = None
+    managed = set()
+    if getattr(settings, "EE_VOCABULARY_TRAINER_ENABLED", False):
+        from .trainer_service import dashboard as trainer_dashboard
+        trainer_summary = trainer_dashboard(request.user)
+        if trainer_summary.get("enrolled"):
+            managed = {unit["uid"] for unit in trainer_summary["units"]}
     upcoming = (UnitProgress.objects.filter(user=request.user, next_review_at__gt=timezone.now())
-                .order_by("next_review_at").first())
-    return render(request, "learning/review.html", {"items": items, "upcoming": upcoming})
+                .exclude(unit__uid__in=managed).order_by("next_review_at").first())
+    return render(request, "learning/review.html", {
+        "items": items, "upcoming": upcoming, "trainer_summary": trainer_summary,
+        "trainer_due_count": sum(unit["state"] == "due" for unit in (trainer_summary or {}).get("units", [])),
+    })
 
 
 @login_required
