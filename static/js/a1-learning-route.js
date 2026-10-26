@@ -30,10 +30,30 @@
     if (!message || sections.filter(s => /^layer-[1-7]$/.test(s.id)).length !== 7 ||
         buttons.length !== 3) return; // Incomplete markup: original view remains unchanged.
 
+    const pilot = Boolean(doc.querySelector("[data-lesson-design-pilot]"));
+    const contents = pilot ? Array.from(doc.querySelectorAll(".toc a[href^='#layer-']")) : [];
+    contents.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        if (sections.some(section => "#" + section.id === link.hash && section.hidden))
+          event.preventDefault();
+      });
+    });
+
     function setMode(mode) {
       if (!ROUTES[mode]) mode = "full";
       sections.forEach(function (section) {
         section.hidden = !showSection(mode, section.id);
+      });
+      contents.forEach(function (link) {
+        const unavailable = !showSection(mode, link.hash.slice(1));
+        const label = link.parentElement.querySelector("[data-route-availability]");
+        if (unavailable) link.setAttribute("aria-disabled", "true");
+        else link.removeAttribute("aria-disabled");
+        link.tabIndex = unavailable ? -1 : 0;
+        if (label) {
+          label.hidden = !unavailable;
+          label.textContent = link.hash === "#layer-6" ? 'В режиме «Полностью»' : 'В режиме «Почему» или «Полностью»';
+        }
       });
       buttons.forEach(function (button) {
         button.setAttribute("aria-pressed", String(button.dataset.a1RouteMode === mode));
@@ -50,6 +70,11 @@
           full: "Полностью: показаны 7 из 7 шагов объяснения. Краткая опора и практика не меняются.",
         }[mode];
       }
+      if (pilot) message.textContent = {
+        essentials: 'Суть: показаны шаги 1, 3, 5 и 7. Шаги 2 и 4 доступны в «Почему», шаг 6 — в «Полностью».',
+        reasons: 'Почему: показаны шаги 1–5 и 7. Шаг 6 доступен в «Полностью».',
+        full: 'Полностью: показаны все семь шагов урока.',
+      }[mode] + ' Произношение и практика доступны в любом режиме. Глубина меняется только кнопками выше.';
     }
 
     buttons.forEach(function (button) {
@@ -57,12 +82,13 @@
         setMode(button.dataset.a1RouteMode);
       });
     });
-    // A table-of-contents or deep link must never point into a hidden layer.
+    // Legacy lessons reveal deep-linked text; the design pilot preserves explicit depth.
     function openLinkedSection() {
       let anchor;
       try { anchor = decodeURIComponent(String(win.location.hash || "").replace(/^#/, "")); }
       catch (_) { return; }
       const target = sections.find(function (section) { return section.id === anchor; });
+      if (pilot) return; // Navigation never changes the depth chosen by the reader.
       if (target && target.hidden) {
         setMode("full");
         if (typeof target.scrollIntoView === "function") target.scrollIntoView();

@@ -2,9 +2,9 @@
 {% load markers static ru %}
 {% block title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
 {% block social_title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
-{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% if lesson.slug == 'a1-nouns-first-words' %}<link rel="stylesheet" href="{% static 'css/lesson-bookpage.css' %}">{% endif %}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% if lesson.slug == 'a1-nouns-first-words' %}<link rel="stylesheet" href="{% static 'css/lesson-bookpage.css' %}">{% endif %}{% if lesson_design_pilot %}<link rel="stylesheet" href="{% static 'css/lesson-design-pilot.css' %}">{% endif %}{% endblock %}
 {% block content %}
-<div class="wrap"{% if lesson.slug == "a1-nouns-first-words" %} data-lesson-bookpage{% endif %}>
+<div class="wrap"{% if lesson.slug == "a1-nouns-first-words" %} data-lesson-bookpage{% endif %}{% if lesson_design_pilot %} data-lesson-design-pilot{% endif %}>
   <header class="page-head">
     <p class="crumbs"><a href="{% url 'curriculum:level' lesson.level.slug %}">{{ lesson.level.code }}</a>{% if lesson.week %} / неделя {{ lesson.week.number }}{% endif %} / урок {{ lesson.order }}</p>
     <h1>{{ lesson.title }}</h1>
@@ -165,16 +165,17 @@
         <h2>Шаги урока</h2>
         <ol class="toc">
           {% for layer in layers %}
-          <li><a href="#layer-{{ layer.number }}">{{ layer.number }}. {{ layer.title }}</a></li>
+          <li><a href="#layer-{{ layer.number }}">{{ layer.number }}. {{ layer.title }}</a>{% if lesson_design_pilot %}<span class="route-availability" data-route-availability hidden></span>{% endif %}</li>
           {% if layer.number == 5 and lesson.sound_notes %}<li><a href="#sound-notes">Как это звучит</a></li>{% endif %}
           {% if layer.number == 5 and lesson.contractions %}<li><a href="#contractions">Как сокращают</a></li>{% endif %}
           {% endfor %}
           {% if exercises %}<li><a href="#practice">Практика</a></li>{% endif %}
           {% if translations %}<li><a href="#translate">Перевод</a></li>{% endif %}
+          {% if lesson_design_pilot %}{% if extra_missions %}<li><a href="#spoken-coach">Речевая мастерская</a></li>{% endif %}<li><a href="#lesson-vocabulary">Слова урока</a></li>{% endif %}
         </ol>
         <div class="studio-reader-tools" aria-label="Размер текста урока"><span>Размер текста</span><button type="button" data-reader-smaller aria-label="Уменьшить текст">A−</button><button type="button" data-reader-larger aria-label="Увеличить текст">A+</button><output data-reader-size aria-live="polite">18</output></div>
       </div>
-      <div class="aside-box">
+      <div class="aside-box"{% if lesson_design_pilot %} id="lesson-vocabulary"{% endif %}>
         <h2>Слова урока</h2>
         <div class="word-chips annotated" lang="en">
           {% for u in units %}<a href="{% url 'lexicon:detail' u.uid %}"><span class="mk" data-cat="{{ u.semantic_class.category.code }}" data-cls="{{ u.semantic_class.number }}" data-label="{{ u.translation_ru }}">{{ u.lemma }}</span></a>{% endfor %}
