@@ -12,6 +12,7 @@ const root=path.resolve(__dirname,'..');
 const output=path.resolve(process.env.ATLAS_OUTPUT || 'atlas-browser-evidence');
 const sizes=[[1440,900],[1280,800],[390,844],[360,800]];
 const screens=[['home','/'],['collection','/levels/a1/'],['chapter','/levels/a1/weeks/13/']];
+const {geometryDelta}=require('./atlas_geometry.cjs');
 const selectors=['.studio-sidebar','.site-header','.studio-home-hero','.studio-phrase-paper','.studio-lesson-card','.week-card','.week-hero','.week-route','.story-script'];
 async function serve(directory,port){
  const processHandle=spawn(process.env.ATLAS_PYTHON || 'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:directory,env:{...process.env,DJANGO_SETTINGS_MODULE:'config.settings.local'},stdio:['ignore','ignore','pipe']});
@@ -67,7 +68,7 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
     for(const selector of selectors){
      const a=measurements.before[selector],b=measurements.after[selector];
      if(a.length!==b.length){changed.push(`${selector}: ${a.length}→${b.length}`);continue;}
-     a.forEach((rectangle,index)=>Object.keys(rectangle).forEach(key=>{maxDelta=Math.max(maxDelta,Math.abs(rectangle[key]-b[index][key]));}));
+     a.forEach((rectangle,index)=>{maxDelta=Math.max(maxDelta,geometryDelta(name,selector,rectangle,b[index]));});
     }
     report.screens.push({name,width,height,maxGeometryDelta:maxDelta,changed,measurements});
     // Редизайн (ATLAS_REDESIGN=1) меняет раскладку намеренно: разница — в отчёте, скриншоты — в артефакте.

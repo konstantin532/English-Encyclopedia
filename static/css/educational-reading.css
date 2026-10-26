@@ -21,7 +21,6 @@
   --edu-focus: #88630c;
   --reader-scale: 1;
   color: var(--edu-ink);
-  font: var(--edu-body)/var(--edu-leading) var(--edu-font-body);
 }
 [data-educational-reading][data-reading-theme=academic] {
   --edu-bg: #F5F4F0;
@@ -37,6 +36,7 @@
   --edu-bg: #FAFAF7;
   --edu-body: 18px;
   --edu-leading: 1.65;
+  font: var(--edu-body)/var(--edu-leading) var(--edu-font-body);
 }
 [data-educational-reading] .page-head h1 {
   font-family: var(--edu-font-heading);
@@ -53,7 +53,7 @@
 [data-educational-reading] .lesson-grid > article, [data-educational-reading].independent-check > section {
   min-width: 0;
 }
-[data-educational-reading] .lesson-grid > article {
+[data-educational-reading]:not(.cinematic-week) .lesson-grid > article {
   background: #fffefa;
   border: 1px solid var(--edu-rule);
   border-radius: 0;
@@ -77,15 +77,15 @@
 [data-educational-reading] .layer > p, [data-educational-reading] .layer > ul, [data-educational-reading] .layer > ol {
   max-width: var(--edu-measure);
 }
-[data-educational-reading] .layer p, [data-educational-reading] .layer li {
+[data-educational-reading] .layer > p, [data-educational-reading] .layer > ul > li, [data-educational-reading] .layer > ol > li, [data-educational-reading] .layer .annotated > p {
   font-size: inherit;
   line-height: var(--edu-leading);
 }
-[data-educational-reading] .layer p {
+[data-educational-reading] .layer > p, [data-educational-reading] .layer .annotated > p {
   margin-top: 0;
   margin-bottom: var(--edu-gap);
 }
-[data-educational-reading] .layer p:last-child {
+[data-educational-reading] .layer > p:last-child, [data-educational-reading] .layer .annotated > p:last-child {
   margin-bottom: 0;
 }
 [data-educational-reading] .layer li + li {
@@ -100,7 +100,7 @@
   color: var(--edu-accent);
   letter-spacing: -0.02em;
 }
-[data-educational-reading] .layer h3 {
+[data-educational-reading] .layer > h3 {
   font: 600 1.15em/1.45 var(--font-ui);
   margin: 1.75em 0 0.75em;
 }
@@ -163,7 +163,7 @@
   box-shadow: none;
   border-color: var(--edu-rule);
 }
-[data-educational-reading] .aside-box h2 {
+[data-educational-reading]:not(.cinematic-week) .aside-box h2 {
   font-family: var(--font-ui);
   line-height: 1.5;
 }
@@ -375,7 +375,7 @@
   [data-educational-reading] .page-head > p:not(.crumbs) {
     font-size: 17px;
   }
-  [data-educational-reading] .lesson-grid > article {
+  [data-educational-reading]:not(.cinematic-week) .lesson-grid > article {
     padding: 1.2rem;
   }
   [data-educational-reading] .layer h2 {
