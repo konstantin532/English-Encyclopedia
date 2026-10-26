@@ -20,3 +20,7 @@ Task2/3/4 implementation complete at15d920c plus final translation fix. RED→GR
 Ruling: add pinned django-csp4.0 only to an executor-local target directory — fresh main requires it and sharedvenv predates it; cost if wrong limited to verification runtime, source8000 environment unchanged. CSP5/5 pass.
 Final broad run before dependency correction:958 tests,4 missing-csp errors,8 skipped. Rerunning final product tree with isolated dependency; no tests weakened.
 Browser QA stopped by Windows URL-policy capability restriction. No retry/automation bypass. Remaining visual coverage is explicitly recorded in docs/educational-typography-validation.md; draft PR will remain unmerged.
+
+Broad corrected run at c97509f:958 tests in259.609s, OK(skipped=8), exit0. Author read of existing CI browser acceptance found stale old-navigation expectation. Updated test to enforce user-approved disabled annotated TOC and available navigation retaining essentials; legacy fallback assertion retained. Restored visible4/6/7-of7 counts in pilot feedback under RED→GREEN Node test. No browser automation launched locally for this change. Final Node138/138.
+Task4: complete implementation and independent review; visual gaps remain BLOCKED as documented rather than claimed passed.
+Task5 in progress: final commit + full suite + authorized push/draftPR + exact-SHA CI.

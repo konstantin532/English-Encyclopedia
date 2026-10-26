@@ -130,9 +130,11 @@ function pilotFixture() {
 }
 test('pilot contents explain unavailable layers and keep the selected depth',()=>{
   const f=pilotFixture();init(f.doc,f.win);
+  assert.match(f.status.textContent,/7 из 7/);
   for (let cycle=0;cycle<2;cycle++) {
     f.buttons[0].click();
     assert.equal(f.links[1].attrs['aria-disabled'],'true');
+    assert.match(f.status.textContent,/4 из 7/);
     assert.equal(f.links[1].tabIndex,-1);
     assert.match(f.labels[1].textContent,/Почему/);
     assert.match(f.labels[5].textContent,/Полностью/);
@@ -144,6 +146,7 @@ test('pilot contents explain unavailable layers and keep the selected depth',()=
     assert.equal(f.buttons[0].attrs['aria-pressed'],'true');
     f.buttons[1].click();
     assert.equal(f.links[1].attrs['aria-disabled'],undefined);
+    assert.match(f.status.textContent,/6 из 7/);
     assert.equal(f.links[1].tabIndex,0);
     assert.equal(f.labels[1].hidden,true);
     assert.equal(f.links[5].attrs['aria-disabled'],'true');
