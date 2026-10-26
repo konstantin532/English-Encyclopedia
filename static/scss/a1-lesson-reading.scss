@@ -1,0 +1,43 @@
+/* The existing A1 brief uses the approved nouns/be opening spread.
+   Exact reference palette: pilot tint #f3f0e6 and gold #916d34. */
+[data-a1-full-lesson] .a1-clarity-bridge {
+  --a1-bridge-ink: #173a30;
+  --a1-bridge-muted: #52645c;
+  --a1-bridge-tint: #f3f0e6;
+  --a1-bridge-rule: #d6d4c5;
+  --a1-bridge-gold: #916d34;
+  padding: clamp(20px, 2.5vw, 32px);
+  margin-block: 0 40px;
+  color: var(--a1-bridge-ink);
+  background: var(--a1-bridge-tint);
+  border: 0;
+  border-top: 3px solid var(--a1-bridge-gold);
+  border-radius: 0;
+  box-shadow: none;
+  font: 16px/1.7 var(--font-ui);
+  h2 {
+    font: 450 clamp(25px, 2.2vw, 31px)/1.3 var(--font-read);
+    letter-spacing: -.025em;
+    text-wrap: balance;
+    color: var(--a1-bridge-ink);
+    margin-block: 0 20px;
+  }
+  > p:first-of-type { color: var(--a1-bridge-muted); font-size: 14px; }
+  dl { display: grid; grid-template-columns: minmax(100px, .32fr) 1fr; gap: 14px 24px; margin: 28px 0; }
+  dt { font: 600 13px/1.6 var(--font-ui); color: var(--a1-bridge-gold); }
+  dd { margin: 0; }
+  blockquote { margin: 24px 0; padding: 16px 0 16px 20px; border: 0; border-left: 2px solid var(--a1-bridge-ink); background: transparent; font: 400 21px/1.6 var(--font-read); }
+  .a1-contrast { padding: 24px 0 0; border: 0; border-top: 1px solid var(--a1-bridge-rule); border-radius: 0; background: transparent; }
+  .a1-contrast h3 { margin-top: 0; }
+  .a1-contrast-pairs { gap: 24px; }
+  .a1-contrast-pairs p { padding: 0 0 16px; border: 0; border-bottom: 1px solid var(--a1-bridge-rule); border-radius: 0; background: transparent; }
+  .a1-contrast-pairs strong { font: 450 22px/1.6 var(--font-read); }
+  .a1-contrast-pairs span { font: 15px/1.6 var(--font-ui); color: var(--a1-bridge-muted); margin-top: 6px; }
+}
+@media (max-width: 700px) {
+  [data-a1-full-lesson] .a1-clarity-bridge {
+    dl { display: block; }
+    dt { font-size: 12px; margin-top: 20px; }
+    dd { font-size: 16px; margin-top: 6px; }
+  }
+}

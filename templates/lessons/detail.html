@@ -2,9 +2,9 @@
 {% load markers static ru %}
 {% block title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
 {% block social_title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
-{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% if lesson.slug == 'a1-nouns-first-words' %}<link rel="stylesheet" href="{% static 'css/lesson-bookpage.css' %}">{% endif %}{% if lesson_design_pilot %}<link rel="stylesheet" href="{% static 'css/lesson-design-pilot.css' %}">{% endif %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% if lesson.slug == 'a1-nouns-first-words' %}<link rel="stylesheet" href="{% static 'css/lesson-bookpage.css' %}">{% endif %}{% if lesson_design_pilot %}<link rel="stylesheet" href="{% static 'css/lesson-design-pilot.css' %}">{% endif %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% if a1_pilot %}<link rel="stylesheet" href="{% static 'css/a1-lesson-reading.css' %}">{% endif %}{% endblock %}
 {% block content %}
-<div data-educational-reading data-reading-theme="{% if lesson.level.code == 'A1' %}friendly{% else %}academic{% endif %}" class="wrap"{% if lesson.slug == "a1-nouns-first-words" %} data-lesson-bookpage{% endif %}{% if lesson_design_pilot %} data-lesson-design-pilot{% endif %}>
+<div{% if a1_pilot %} data-a1-full-lesson{% endif %} data-educational-reading data-reading-theme="{% if lesson.level.code == 'A1' %}friendly{% else %}academic{% endif %}" class="wrap"{% if lesson.slug == "a1-nouns-first-words" %} data-lesson-bookpage{% endif %}{% if lesson_design_pilot %} data-lesson-design-pilot{% endif %}>
   <header class="page-head">
     <p class="crumbs"><a href="{% url 'curriculum:level' lesson.level.slug %}">{{ lesson.level.code }}</a>{% if lesson.week %} / неделя {{ lesson.week.number }}{% endif %} / урок {{ lesson.order }}</p>
     <h1>{{ lesson.title }}</h1>
@@ -12,18 +12,6 @@
   </header>
   <div class="lesson-grid">
     <article>
-      {% if a1_pilot %}
-      <section class="a1-learning-route" data-a1-learning-route aria-labelledby="a1-route-heading" hidden>
-        <h2 id="a1-route-heading">Выберите глубину объяснения</h2>
-        <p>Полный урок остаётся без изменений. Эти кнопки только помогают читать его в удобном порядке; все семь шагов можно вернуть в любой момент.</p>
-        <div class="a1-learning-route-actions" role="group" aria-label="Глубина объяснения">
-          <button type="button" data-a1-route-mode="essentials" aria-pressed="false">Суть</button>
-          <button type="button" data-a1-route-mode="reasons" aria-pressed="false">Почему</button>
-          <button type="button" data-a1-route-mode="full" aria-pressed="true">Полностью</button>
-        </div>
-        <p class="a1-learning-route-status" data-a1-route-status aria-live="polite">Полностью: доступны все семь шагов урока и дополнительная практика.</p>
-      </section>
-      {% endif %}
       {% if a1_guide %}
       <section class="a1-clarity-bridge" aria-labelledby="a1-clarity-title">
         <h2 id="a1-clarity-title">Понять за минуту — без сложных терминов</h2>
@@ -165,7 +153,7 @@
         <h2>Шаги урока</h2>
         <ol class="toc">
           {% for layer in layers %}
-          <li><a href="#layer-{{ layer.number }}">{{ layer.number }}. {{ layer.title }}</a>{% if lesson_design_pilot %}<span class="route-availability" data-route-availability hidden></span>{% endif %}</li>
+          <li><a href="#layer-{{ layer.number }}">{{ layer.number }}. {{ layer.title }}</a></li>
           {% if layer.number == 5 and lesson.sound_notes %}<li><a href="#sound-notes">Как это звучит</a></li>{% endif %}
           {% if layer.number == 5 and lesson.contractions %}<li><a href="#contractions">Как сокращают</a></li>{% endif %}
           {% endfor %}
@@ -185,4 +173,4 @@
   </div>
 </div>
 {% endblock %}
-{% block scripts %}{% if a1_pilot %}<link rel="stylesheet" href="{% static 'css/a1-learning-route.css' %}"><script src="{% static 'js/a1-learning-route.js' %}" defer></script>{% endif %}{% if extra_missions %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}"><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script>{% endif %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}
+{% block scripts %}{% if a1_pilot %}<script src="{% static 'js/a1-learning-route.js' %}" defer></script>{% endif %}{% if extra_missions %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}"><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script>{% endif %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}

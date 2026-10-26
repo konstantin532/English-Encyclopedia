@@ -185,7 +185,8 @@ class RotatingIndependentReviewTests(TestCase):
                 self.assertContains(response, 'class="a1-step-list"')
                 self.assertContains(response, 'class="a1-step-en"', count=3)
                 self.assertContains(response, "Разобрать ещё проще")
-                self.assertContains(response, 'data-a1-learning-route')
+                self.assertContains(response, 'data-a1-full-lesson')
+                self.assertNotContains(response, 'data-a1-route-mode')
 
     def test_baseline_then_fresh_transfer_are_rotated_only_after_full_batch(self):
         before = self.client.get(self.url)
