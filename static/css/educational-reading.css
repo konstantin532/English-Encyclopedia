@@ -167,7 +167,7 @@
   font-family: var(--font-ui);
   line-height: 1.5;
 }
-[data-educational-reading] .toc a {
+[data-educational-reading]:not(.cinematic-week) .toc a {
   line-height: 1.6;
 }
 [data-educational-reading] .passport {

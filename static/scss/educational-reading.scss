@@ -59,7 +59,7 @@
   .ru-tr, .ru-transcription { font-family: var(--font-ui); white-space: normal; line-height: 1.7; }
   .aside-box { border-radius: 0; box-shadow: none; border-color: var(--edu-rule); }
   &:not(.cinematic-week) .aside-box h2 { font-family: var(--font-ui); line-height: 1.5; }
-  .toc a { line-height: 1.6; }
+  &:not(.cinematic-week) .toc a { line-height: 1.6; }
   .passport { font: 15px/1.65 var(--font-ui); }
 
   /* Shared script: a continuous reading surface, explicit name and avatar, translation attached to its line. */
