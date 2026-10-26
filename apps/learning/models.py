@@ -248,6 +248,15 @@ class IndependentAttempt(models.Model):
     reviewed_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
 
+    # Empty/default values preserve the meaning of historical lesson evidence.
+    origin = models.CharField(max_length=16, default="lesson")
+    target = models.ForeignKey(LexicalUnit, on_delete=models.PROTECT, null=True, blank=True,
+                               related_name="independent_attempts")
+    trainer_session = models.ForeignKey("TrainerSession", on_delete=models.SET_NULL,
+                                        null=True, blank=True, related_name="attempts")
+    trainer_sequence = models.PositiveSmallIntegerField(default=0)
+    evidence = models.JSONField(default=dict, blank=True)
+
     class Meta:
         indexes = [models.Index(fields=["user", "lesson", "-created_at"], name="independent_user_lesson_idx")]
         constraints = [
@@ -261,5 +270,83 @@ class IndependentAttempt(models.Model):
                 condition=models.Q(skill="transfer", task_variant__in=[100, 101, 102]),
                 name="unique_pilot_stage_per_learner",
             ),
+            models.UniqueConstraint(
+                fields=["trainer_session", "skill", "trainer_sequence"],
+                condition=models.Q(trainer_session__isnull=False),
+                name="unique_trainer_logical_attempt",
+            ),
         ]
         ordering = ["-created_at"]
+
+
+def trainer_token():
+    import uuid
+    return uuid.uuid4().hex
+
+
+class TrainerEnrollment(models.Model):
+    """Opt-in preferences, never an additional vocabulary progress ledger."""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='trainer_enrollments')
+    enabled = models.BooleanField(default=True)
+    prerequisites_confirmed = models.BooleanField(default=False)
+    timezone_name = models.CharField(max_length=64, default='Europe/Moscow')
+    daily_limit = models.PositiveSmallIntegerField(default=10)
+    rate_window_at = models.DateTimeField(null=True, blank=True)
+    rate_count = models.PositiveSmallIntegerField(default=0)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['user'], name='unique_trainer_enrollment'),
+            models.CheckConstraint(condition=models.Q(daily_limit__gte=1, daily_limit__lte=10),
+                                   name='trainer_daily_limit_range'),
+        ]
+
+
+class TrainerSession(models.Model):
+    """One frozen encounter. Private keys never enter the assessment projection."""
+    # Data rights exports retain all learner submissions via IndependentAttempt.
+    # Neither private future keys nor transport receipts are a user submission.
+    export_excluded_fields = {'snapshot', 'receipts'}
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='trainer_sessions')
+    unit = models.ForeignKey(LexicalUnit, on_delete=models.PROTECT, related_name='trainer_sessions')
+    phase = models.CharField(max_length=20, default='intro')
+    revision = models.PositiveIntegerField(default=0)
+    token = models.CharField(max_length=32, default=trainer_token, unique=True)
+    snapshot = models.JSONField(default=dict)
+    content_version = models.CharField(max_length=32)
+    assessment_revision = models.CharField(max_length=32)
+    task_id = models.CharField(max_length=100)
+    family_id = models.CharField(max_length=100)
+    application_index = models.PositiveSmallIntegerField(default=0)
+    is_initial = models.BooleanField(default=True)
+    assistance = models.JSONField(default=list)
+    recall_tries = models.PositiveSmallIntegerField(default=0)
+    result = models.JSONField(default=dict)
+    schedule_applied = models.BooleanField(default=False)
+    receipts = models.JSONField(default=dict)
+    draft = models.CharField(max_length=400, blank=True, default='')
+    draft_updated_at = models.DateTimeField(null=True, blank=True)
+    started_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(default=timezone.now)
+    last_material_at = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['user', 'unit'], condition=models.Q(completed_at__isnull=True),
+                                    name='unique_open_trainer_session'),
+            models.CheckConstraint(condition=models.Q(recall_tries__lte=2), name='trainer_max_two_recalls'),
+        ]
+        indexes = [models.Index(fields=['user', 'started_at'], name='trainer_user_started_idx')]
+
+
+class PersonalMnemonic(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='personal_mnemonics')
+    unit = models.ForeignKey(LexicalUnit, on_delete=models.PROTECT, related_name='personal_mnemonics')
+    text = models.CharField(max_length=300)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=['user', 'unit'], name='unique_personal_mnemonic')]

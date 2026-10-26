@@ -32,7 +32,8 @@ def export_data(user) -> dict:
     for rel in learner_relations():
         model = rel.related_model
         names = [f.attname for f in model._meta.concrete_fields
-                 if f.attname != rel.field.attname and f.name not in HIDDEN_FIELDS]
+                 if f.attname != rel.field.attname and f.name not in HIDDEN_FIELDS
+                 and f.name not in getattr(model, "export_excluded_fields", ())]
         rows = list(model._default_manager.filter(**{rel.field.name: user}).values(*names))
         data["tables"][f"{model._meta.app_label}.{model._meta.model_name}"] = rows
     return data

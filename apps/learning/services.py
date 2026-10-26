@@ -1,7 +1,6 @@
 from dataclasses import dataclass, field
 from datetime import timedelta
 
-from django.db import transaction
 from django.db.models import Prefetch
 from django.urls import reverse
 from django.utils import timezone
@@ -9,15 +8,20 @@ from django.utils import timezone
 from apps.drills.models import Exercise
 
 from .models import ExerciseAttempt, UnitProgress, MistakeReview
+from .trainer_state import serialized
+from .trainer_service import legacy_managed_units
 
 
-@transaction.atomic
+@serialized
 def record_attempt(user, exercise: Exercise, answer: str, *, delay_wrong_days: int = 0) -> bool:
     correct = exercise.is_correct(answer)
     if user.is_authenticated:
         ExerciseAttempt.objects.create(user=user, exercise=exercise, answer=answer[:200], is_correct=correct)
         context = f"{exercise.lesson.slug}#{exercise.order}"
+        managed = legacy_managed_units(user)
         for unit in exercise.units.all():
+            if unit.uid in managed:
+                continue
             progress, _ = UnitProgress.objects.select_for_update().get_or_create(user=user, unit=unit)
             progress.register(correct, context)
             if not correct and delay_wrong_days:
@@ -27,13 +31,16 @@ def record_attempt(user, exercise: Exercise, answer: str, *, delay_wrong_days: i
     return correct
 
 
-@transaction.atomic
+@serialized
 def record_practice(user, item) -> None:
     """Верный перевод — свежее свидетельство самостоятельного употребления слов урока."""
     if not user.is_authenticated:
         return
     context = f"{item.lesson.slug}#t{item.order}"
+    managed = legacy_managed_units(user)
     for unit in item.units.all():
+        if unit.uid in managed:
+            continue
         progress, _ = UnitProgress.objects.select_for_update().get_or_create(user=user, unit=unit)
         progress.register(True, context)
         progress.save()
@@ -74,6 +81,7 @@ class RecallItem:
 def due_progress(user):
     available = Exercise.objects.filter(lesson__is_published=True).select_related("lesson")
     return (UnitProgress.objects.filter(user=user, next_review_at__lte=timezone.now())
+            .exclude(unit__uid__in=legacy_managed_units(user))
             .select_related("unit")
             .prefetch_related(Prefetch("unit__exercises", queryset=available))
             .order_by("next_review_at"))
@@ -100,11 +108,11 @@ def build_review(user) -> list:
     return items
 
 
-@transaction.atomic
+@serialized
 def record_recall(user, unit, answer: str) -> bool:
     accepted = [unit.lemma, *(unit.forms or [])]
     correct = Exercise.normalize(answer) in {Exercise.normalize(a) for a in accepted}
-    if user.is_authenticated:
+    if user.is_authenticated and unit.uid not in legacy_managed_units(user):
         progress, _ = UnitProgress.objects.select_for_update().get_or_create(user=user, unit=unit)
         progress.register(correct)  # вспоминание не считается новой конструкцией
         progress.save()
