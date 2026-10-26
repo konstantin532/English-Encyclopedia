@@ -37,10 +37,10 @@
 
 **Interfaces:** Produces `PILOT_ID`, `CONTENT_VERSION`, `PILOT_SLUG`, `UNIT_UIDS`, `pilot_content() -> dict`, `unit_content(uid: str) -> dict`, `normalize_answer(text: str) -> str`, `assess_recall(unit: dict, answer: str) -> dict`. Entries include source/prerequisites/explanation/mnemonic/reviewer note/examples,2authored recall context families with stabletask IDs, accepted variants/meaning-changing examples,2application scenarios with criteria and several valid examples. No dynamic AI or exact grading of open English.
 
-- [ ] Write tests for exact3UIDs/source/prereqs/required reviewed mnemonics, distinct context families, cosmetic/assessment version mapping, task-specific accepted variants/normalization and unknown-vs-definite-error.
-- [ ] Run failing tests: `uv run python manage.py test tests.test_vocabulary_trainer_content --settings=config.settings.test --noinput`.
-- [ ] Implement manifest and loader with fail-closed editorial validation and conservative assessment. `assess_recall` returns outcome (`correct|incorrect|uncertain`), RUfeedback and canonical answer only service may expose after assessment; valid alternative goal success is separate from target evidence. Tea word task accepted tea only; would task accepts I'd/I would with taught coffee/tea context; repeat task accepts reviewed full phrase variants. Preserve internal apostrophes/negations/hyphens; no global normalizer rewrite.
-- [ ] Run green tests and commit task files only. Report exact RED/GREEN commands/results.
+- [x] Write tests for exact3UIDs/source/prereqs/required reviewed mnemonics, distinct context families, cosmetic/assessment version mapping, task-specific accepted variants/normalization and unknown-vs-definite-error.
+- [x] Run failing tests: `uv run python manage.py test tests.test_vocabulary_trainer_content --settings=config.settings.test --noinput`.
+- [x] Implement manifest and loader with fail-closed editorial validation and conservative assessment. `assess_recall` returns outcome (`correct|incorrect|uncertain`), RUfeedback and canonical answer only service may expose after assessment; valid alternative goal success is separate from target evidence. Tea word task accepted tea only; would task accepts I'd/I would with taught coffee/tea context; repeat task accepts reviewed full phrase variants. Preserve internal apostrophes/negations/hyphens; no global normalizer rewrite.
+- [x] Run green tests and commit task files only. Report exact RED/GREEN commands/results.
 
 ### Task 2: Persisted evidence, resumable session and one schedule owner
 
