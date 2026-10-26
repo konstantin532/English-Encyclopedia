@@ -4,7 +4,7 @@ import json
 import threading
 from datetime import datetime, timedelta, timezone
 
-from django.db import close_old_connections, connection, connections
+from django.db import OperationalError, close_old_connections, connection, connections
 from django.test import Client, TransactionTestCase, override_settings
 from django.urls import reverse
 
@@ -170,6 +170,166 @@ class TrainerConcurrencyTests(TransactionTestCase):
         self.assertFalse(finished_while_locked, 'Cleanup must wait for the same user operation boundary')
         self.assertEqual(errors, [])
         self.assertEqual(TrainerSession.objects.get(pk=session.pk).draft, '')
+
+    def test_legacy_http_retries_lazy_auth_read_before_atomic_under_live_user_gate(self):
+        from django.utils import timezone as django_timezone
+        from apps.learning.trainer_state import run_serialized
+
+        self.due_view('LX-00084', 'Sorry? Can you say it again, please?')
+        progress = UnitProgress.objects.get(user=self.user, unit__uid='LX-00084')
+        before_schedule = (progress.stage, progress.next_review_at, progress.correct_count, progress.wrong_count)
+        exercise = Exercise.objects.filter(lesson__slug='a1-cafe-order', units__uid='LX-00084').first()
+        self.assertIsNotNone(exercise)
+        client = Client()
+        client.force_login(self.user)
+        auth_observed, released = threading.Event(), threading.Event()
+        auth_reads, auth_failures, attempt_inserts, results, errors, worker_connections = [], [], [], [], [], []
+
+        def observe_sql(execute, sql, params, many, context):
+            auth_read = sql.startswith('SELECT') and '"accounts_user"' in sql and 'FOR UPDATE' not in sql
+            if auth_read:
+                auth_reads.append(connection.in_atomic_block)
+            if sql.startswith('INSERT INTO "learning_exerciseattempt"'):
+                attempt_inserts.append(connection.in_atomic_block)
+            try:
+                return execute(sql, params, many, context)
+            except OperationalError as exc:
+                if auth_read:
+                    auth_failures.append(exc)
+                raise
+            finally:
+                if auth_read and not auth_observed.is_set():
+                    # Release only after the real read has encountered the held
+                    # gate; no timing-dependent sleep or synthetic DB failure.
+                    auth_observed.set()
+                    if not released.wait(timeout=10):
+                        raise AssertionError('User gate was not released')
+
+        def request():
+            close_old_connections()
+            try:
+                connection.ensure_connection()
+                worker_connections.append(connection.connection)
+                with connection.execute_wrapper(observe_sql):
+                    results.append(client.post(
+                        reverse('api:check_exercise', args=[exercise.pk]),
+                        json.dumps({'answer': 'definitely incorrect'}), content_type='application/json'))
+            except Exception as exc:
+                errors.append(exc)
+            finally:
+                connection.close()
+
+        thread = threading.Thread(target=request, daemon=True)
+
+        def hold_gate_until_auth_read():
+            thread.start()
+            self.assertTrue(auth_observed.wait(timeout=10), 'HTTP request never reached the auth read')
+
+        before = django_timezone.now()
+        try:
+            run_serialized(self.user, hold_gate_until_auth_read)
+        finally:
+            released.set()
+            if thread.ident is not None:
+                thread.join(timeout=15)
+        self.assertFalse(thread.is_alive(), 'HTTP request exceeded bounded join')
+        self.assertEqual(len(worker_connections), 1)
+        self.assertIsNot(worker_connections[0], connection.connection)
+        self.assertEqual(errors, [])
+        self.assertTrue(auth_reads)
+        self.assertFalse(any(auth_reads), 'Authentication must resolve before the write transaction')
+        self.assertEqual(len(auth_failures), 1 if connection.vendor == 'sqlite' else 0)
+        self.assertEqual(attempt_inserts, [True], 'The operation must write exactly once, atomically')
+        self.assertEqual(results[0].status_code, 200)
+        self.assertEqual(results[0].json()['retry_count'], 5)
+        self.assertEqual(self.user.attempts.count(), 1)
+        review = self.user.mistake_reviews.get()
+        self.assertGreaterEqual(review.due_at, before + timedelta(hours=48))
+        self.assertLessEqual(review.due_at, django_timezone.now() + timedelta(hours=48))
+        progress.refresh_from_db()
+        self.assertEqual((progress.stage, progress.next_review_at, progress.correct_count, progress.wrong_count),
+                         before_schedule)
+
+
+@override_settings(EE_VOCABULARY_TRAINER_ENABLED=True)
+class TrainerSerializationBoundaryTests(TransactionTestCase):
+    serialized_rollback = True
+
+    def test_exhausted_lazy_auth_lock_never_runs_operation(self):
+        from django.utils.functional import SimpleLazyObject
+        from apps.learning.trainer_state import TrainerConflict, run_serialized
+
+        failure = OperationalError('database table is locked: accounts_user')
+        reads, operations = [], []
+
+        def unavailable_auth():
+            reads.append(connection.in_atomic_block)
+            raise failure
+
+        expected = TrainerConflict if connection.vendor == 'sqlite' else OperationalError
+        with self.assertRaises(expected) as caught:
+            run_serialized(SimpleLazyObject(unavailable_auth), lambda: operations.append('ran'))
+        self.assertEqual(reads, [False] * (8 if connection.vendor == 'sqlite' else 1))
+        self.assertEqual(operations, [])
+        if connection.vendor == 'sqlite':
+            self.assertIs(caught.exception.__cause__, failure)
+        else:
+            self.assertIs(caught.exception, failure)
+
+    def test_nonlock_auth_failures_propagate_without_running_operation(self):
+        from django.utils.functional import SimpleLazyObject
+        from apps.learning.trainer_state import run_serialized
+
+        for failure in (OperationalError('no such table: accounts_user'), RuntimeError('auth backend failed')):
+            with self.subTest(failure=failure):
+                reads, operations = [], []
+
+                def failed_auth():
+                    reads.append(connection.in_atomic_block)
+                    raise failure
+
+                with self.assertRaises(type(failure)) as caught:
+                    run_serialized(SimpleLazyObject(failed_auth), lambda: operations.append('ran'))
+                self.assertIs(caught.exception, failure)
+                self.assertEqual(reads, [False])
+                self.assertEqual(operations, [])
+
+    def test_outer_atomic_auth_lock_propagates_without_retry_or_operation(self):
+        from django.db import transaction
+        from django.utils.functional import SimpleLazyObject
+        from apps.learning.trainer_state import run_serialized
+
+        failure = OperationalError('database table is locked: accounts_user')
+        reads, operations = [], []
+
+        def unavailable_auth():
+            reads.append(connection.in_atomic_block)
+            raise failure
+
+        with transaction.atomic():
+            with self.assertRaises(OperationalError) as caught:
+                run_serialized(SimpleLazyObject(unavailable_auth), lambda: operations.append('ran'))
+        self.assertIs(caught.exception, failure)
+        self.assertEqual(reads, [True])
+        self.assertEqual(operations, [])
+
+    def test_resolved_and_anonymous_users_run_once_with_flag_on_or_off(self):
+        from django.contrib.auth.models import AnonymousUser
+        from apps.learning.trainer_state import run_serialized
+
+        user = User.objects.create_user(email='serialized-boundary@example.test')
+        for flag in (False, True):
+            for principal in (user, AnonymousUser()):
+                with self.subTest(flag=flag, authenticated=principal.is_authenticated):
+                    operations = []
+
+                    def operation():
+                        operations.append((principal.is_authenticated, connection.in_atomic_block))
+                        return 'completed'
+
+                    with override_settings(EE_VOCABULARY_TRAINER_ENABLED=flag):
+                        self.assertEqual(run_serialized(principal, operation), 'completed')
+                    self.assertEqual(operations, [(principal.is_authenticated, True)])
 
 
 class TrainerMigrationPreservationTests(TransactionTestCase):
