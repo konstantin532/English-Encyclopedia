@@ -1,6 +1,6 @@
 # Точка продолжения: тренажёр слов и фраз
 
-**Пауза по прямому запросу пользователя, 2026-10-26. Не продолжать разработку до его сообщения о восстановлении связи и разрешении продолжить.**
+**Возобновлено 2026-10-26 по сообщению пользователя «Продолжай». Task1 и Task2 завершены и прошли независимое ревью; далее Task3 (интерфейс), Task4 (полная проверка/draft PR).**
 
 ## Репозиторий и границы
 
@@ -64,3 +64,9 @@ Assessment returns outcome(correct/incorrect/uncertain),feedback,canonical_answe
 - Ignored task artifacts: .superpowers/sdd/vocabulary-phrase-trainer/{progress.md,task-N-brief.md,task-1-report.md,task-1-review-package.diff}. Essential state is duplicated in this tracked checkpoint so scratch loss does not lose recovery information.
 
 DraftPR has not been created. Nothing has been merged or deployed.
+
+## Обновление после возобновления
+
+Task2 реализован08c62c6, исправленияревьюf234b94. Независимое scopedревью:SpecPASS/QualityApproved;3находкизакрыты. Последнийцелевойпрогон47PASS12.596s (server/data-rights/SQLitethreaded/migration). PostgreSQLещёBLOCKEDлокально, полныйfrozenintegrationrunиUI/browserpending.
+
+Удалённаяветка на моментвозобновления04cafb0, локальнаяисторияэквивалентнаподругимSHA:ce9649a→801eff9;05f77af→d6b918d;80e388d→04cafb0. Деревьяидентичны. Продолжениеведётсявпрежнемизолированномworktree; обычныйgitpushнеимеетcredentials, новыеcommitsбудутпереданычерезподключённыйGitHubсleaseбезforce.
