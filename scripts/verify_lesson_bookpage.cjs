@@ -63,48 +63,49 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
         await page.locator('.speech-mode-grid').screenshot({path:path.join(output,`noun-${width}-${state}-speech.png`)});
         entry.activatedSpeech=await colors(page.locator('.speech-mode-grid [data-speech-mode="see"]'));
         if(state==='after'){
-          await page.locator('[data-a1-route-mode="essentials"]').focus();
-          for(const mode of ['reasons','full']){
-            await page.keyboard.press('Tab');
-            assert.equal(await page.locator(`[data-a1-route-mode="${mode}"]`).evaluate(el=>el===document.activeElement),true,'depth keyboard order');
-          }
-          await page.keyboard.press('Shift+Tab');
-          assert.equal(await page.locator('[data-a1-route-mode="reasons"]').evaluate(el=>el===document.activeElement),true,'reverse depth keyboard order');
-          entry.keyboardControlOrder=true;
-          const expected={essentials:[2,4,6],reasons:[6],full:[]};
-          for(const mode of ['essentials','reasons','full','essentials','full']){
-            const button=page.locator(`[data-a1-route-mode="${mode}"]`);
-            await button.focus();await button.press('Enter');
-            assert.equal(await button.getAttribute('aria-pressed'),'true');
-            const hidden=[];
-            for(let n=1;n<=7;n++)if(!await page.locator(`#layer-${n}`).isVisible())hidden.push(n);
-            assert.deepEqual(hidden,expected[mode]);
-            assert.match(await page.locator('[data-a1-route-status]').innerText(),new RegExp(`${7-hidden.length} из 7`));
+          assert.equal(await page.locator('[data-a1-full-lesson]').count(),1);
+          assert.equal(await page.locator('[data-a1-learning-route], [data-a1-route-mode]').count(),0,'depth menu must be removed');
+          assert.equal(await page.locator('[data-route-availability]').count(),0,'contents must not advertise hidden depth');
+          const assertComplete=async()=>{
+            for(let n=1;n<=7;n++){
+              const layer=page.locator(`#layer-${n}`);
+              assert.equal(await layer.count(),1,`layer ${n} duplicated or missing`);
+              assert.equal(await layer.isVisible(),true,`layer ${n} hidden`);
+              const link=page.locator(`.toc a[href="#layer-${n}"]`);
+              assert.equal(await link.count(),1);
+              assert.notEqual(await link.getAttribute('aria-disabled'),'true');
+              assert.notEqual(await link.getAttribute('tabindex'),'-1');
+            }
             assert.equal(await page.locator('.a1-clarity-bridge').isVisible(),true);
             assert.equal(await page.locator('#practice').isVisible(),true);
-            const pair=await colors(button);entry.contrasts.push({control:'depth',mode,...pair});
-            assert.ok(pair.ratio>=4.5,`depth ${mode} contrast ${pair.ratio}`);
-            const focus=await button.evaluate(el=>({active:el===document.activeElement,style:getComputedStyle(el).outlineStyle,width:parseFloat(getComputedStyle(el).outlineWidth)}));
-            assert.equal(focus.active,true);assert.notEqual(focus.style,'none');assert.ok(focus.width>=2);
+          };
+          await assertComplete();
+          const bridge=await page.locator('.a1-clarity-bridge').evaluate(el=>{
+            const c=getComputedStyle(el);
+            return {background:c.backgroundColor,topColor:c.borderTopColor,topWidth:c.borderTopWidth};
+          });
+          assert.deepEqual(bridge,{background:'rgb(243, 240, 230)',topColor:'rgb(145, 109, 52)',topWidth:'3px'});
+          entry.clarityBridge=bridge;
+          const second=page.locator('.toc a[href="#layer-2"]');
+          await second.focus();
+          await page.keyboard.press('Tab');
+          const third=page.locator('.toc a[href="#layer-3"]');
+          assert.equal(await third.evaluate(el=>el===document.activeElement),true,'contents keyboard order');
+          await page.keyboard.press('Shift+Tab');
+          assert.equal(await second.evaluate(el=>el===document.activeElement),true,'reverse contents keyboard order');
+          const focus=await second.evaluate(el=>({style:getComputedStyle(el).outlineStyle,width:parseFloat(getComputedStyle(el).outlineWidth)}));
+          assert.notEqual(focus.style,'none');assert.ok(focus.width>=2);
+          await second.press('Enter');
+          assert.equal(new URL(page.url()).hash,'#layer-2');
+          for(const n of [6,2,3]){
+            await page.locator(`.toc a[href="#layer-${n}"]`).focus();
+            await page.keyboard.press('Enter');
+            assert.equal(new URL(page.url()).hash,`#layer-${n}`);
+            await assertComplete();
           }
-          await page.locator('[data-a1-route-mode="essentials"]').click();
-          if(await page.locator('[data-lesson-design-pilot]').count()){
-            const unavailable=page.locator('.toc a[href="#layer-2"]');
-            assert.equal(await unavailable.getAttribute('aria-disabled'),'true');
-            assert.equal(await unavailable.getAttribute('tabindex'),'-1');
-            assert.match(await unavailable.locator('..').innerText(),/Почему/);
-            assert.equal(await page.locator('#layer-2').isVisible(),false);
-            // Available navigation must preserve the reader's explicit choice.
-            await page.locator('.toc a[href="#layer-3"]').click();
-            assert.equal(new URL(page.url()).hash,'#layer-3');
-            assert.equal(await page.locator('[data-a1-route-mode="essentials"]').getAttribute('aria-pressed'),'true');
-            assert.equal(await page.locator('#layer-2').isVisible(),false);
-          }else{
-            await page.locator('.toc a[href="#layer-2"]').click();
-            await page.locator('#layer-2').waitFor({state:'visible'});
-            assert.equal(await page.locator('#layer-2').isVisible(),true);
-            assert.equal(await page.locator('[data-a1-route-mode="full"]').getAttribute('aria-pressed'),'true');
-          }
+          await page.reload({waitUntil:'networkidle'});
+          await assertComplete();
+          entry.keyboardContentsOrder=true;entry.completeLesson=true;
           for(const mode of ['see','echo','recall','transfer']){
             const button=page.locator(`.speech-mode-grid [data-speech-mode="${mode}"]`);
             await button.focus();await button.press('Enter');
@@ -151,7 +152,7 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
   try{
     const page=await nojs.newPage();const response=await page.goto(afterBase+route,{waitUntil:'networkidle'});assert.equal(response.status(),200);
     for(let n=1;n<=7;n++)assert.equal(await page.locator(`#layer-${n}`).isVisible(),true);
-    assert.equal(await page.locator('[data-a1-learning-route]').isVisible(),false);
+    assert.equal(await page.locator('[data-a1-learning-route], [data-a1-route-mode]').count(),0);
     await page.screenshot({path:path.join(output,'noun-390-after-no-js.png')});report.noJavaScript=true;
   }finally{await nojs.close();}
   report.passed=true;

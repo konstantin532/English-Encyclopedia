@@ -1,157 +1,33 @@
-const {test} = require('node:test');
-const assert = require('node:assert/strict');
-const {ROUTES, showSection, init} = require('../../static/js/a1-learning-route.js');
-
-function fixture(bookpage = false) {
-  const sections = Array.from({length:7}, (_,i)=>({id:'layer-'+(i+1),hidden:false}));
-  sections.push({id:'sound-notes',hidden:false},{id:'contractions',hidden:false});
-  const buttons = ['essentials','reasons','full'].map(mode=>({
-    dataset:{a1RouteMode:mode}, attrs:{}, listener:null,
-    setAttribute(key,value){this.attrs[key]=value;},
-    addEventListener(event,fn){assert.equal(event,'click');this.listener=fn;},
-    click(){this.listener();},
-  }));
-  const status={textContent:'Before initialization'};
-  const guide={
-    hidden:true,
-    querySelectorAll(selector){assert.equal(selector,'[data-a1-route-mode]');return buttons;},
-    querySelector(selector){assert.equal(selector,'[data-a1-route-status]');return status;},
-  };
-  const reader={
-    querySelectorAll(selector){assert.equal(selector,'section.layer');return sections;},
-  };
-  const doc={
-    querySelector(selector){
-      return {'[data-a1-learning-route]':guide,'[data-lesson-reader]':reader,'[data-lesson-bookpage]':bookpage ? {} : null}[selector] || null;
-    },
-  };
-  const listeners={};
-  const win={location:{hash:''},addEventListener(event,fn){listeners[event]=fn;}};
-  return {doc,win,guide,sections,buttons,status,listeners};
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const {init}=require('../../static/js/a1-learning-route.js');
+function fixture(a1=true){
+ const element=(id,hidden=true)=>({id,hidden,attrs:{'aria-hidden':'true'},style:{values:{display:'none'},removeProperty(k){delete this.values[k];}},removeAttribute(k){delete this.attrs[k];}});
+ const sections=Array.from({length:7},(_,i)=>element('layer-'+(i+1)));
+ sections.push(element('sound-notes'),element('contractions'));
+ const answer=element('answer-1'),written=element('written-variant');
+ const links=sections.slice(0,7).map(s=>({hash:'#'+s.id,attrs:{'aria-disabled':'true',tabindex:'-1'},removeAttribute(k){delete this.attrs[k];}}));
+ const reader={querySelectorAll(s){assert.equal(s,'section.layer');return [...sections,answer,written];}};
+ const root={querySelector(s){return s==='[data-lesson-reader]'?reader:null;},querySelectorAll(){return links;}};
+ const doc={querySelector(s){return s==='[data-a1-full-lesson]'&&a1?root:null;}};
+ const win={location:{hash:'#layer-6'},localStorage:{getItem(){throw Error('Reading old depth must not affect the lesson');},setItem(){throw Error('Do not change unrelated saved settings');}},addEventListener(){throw Error('Depth navigation no longer installs mode handlers');}};
+ return {doc,win,sections,links,answer,written};
 }
-const hidden=f=>f.sections.filter(s=>s.hidden).map(s=>s.id);
-
-test('routes only select original layers, not audio supplements',()=>{
-  assert.deepEqual(ROUTES.essentials,[1,3,5,7]);
-  assert.equal(showSection('essentials','layer-2'),false);
-  assert.equal(showSection('essentials','layer-5'),true);
-  assert.equal(showSection('reasons','layer-4'),true);
-  assert.equal(showSection('reasons','layer-6'),false);
-  assert.equal(showSection('full','layer-6'),true);
-  assert.equal(showSection('unexpected','layer-6'),true);
-  for(const mode of Object.keys(ROUTES)){
-    assert.equal(showSection(mode,'sound-notes'),true);
-    assert.equal(showSection(mode,'contractions'),true);
-    assert.equal(showSection(mode,'other'),true);
-  }
+test('stale depth cannot hide any A1 layer or disable its contents link',()=>{
+ const f=fixture();init(f.doc,f.win);
+ assert.ok(f.sections.every(s=>!s.hidden));
+ assert.ok(f.sections.every(s=>!s.style.values.display));
+ assert.ok(f.sections.every(s=>!s.attrs['aria-hidden']));
+ assert.ok(f.links.every(a=>!a.attrs['aria-disabled']&&!a.attrs.tabindex));
 });
-test('all original sections visible until explicit learner action',()=>{
-  const f=fixture();
-  assert.equal(f.guide.hidden,true); // no JavaScript = unchanged lesson
-  assert.deepEqual(hidden(f),[]);
-  init(f.doc,f.win);
-  assert.equal(f.guide.hidden,false);
-  assert.deepEqual(hidden(f),[]);
-  assert.equal(f.buttons[2].attrs['aria-pressed'],'true');
-  assert.match(f.status.textContent,/все семь шагов/);
+test('repeated initialization and old or malformed hashes keep the complete lesson',()=>{
+ const f=fixture();for(const hash of ['#layer-2','#layer-6','#%E0%A4%A','#essentials','']){
+  f.win.location.hash=hash;init(f.doc,f.win);assert.ok(f.sections.every(s=>!s.hidden));
+ }
 });
-test('short and reasons routes are reversible and always keep sound',()=>{
-  const f=fixture();init(f.doc,f.win);
-  f.buttons[0].click();
-  assert.deepEqual(hidden(f),['layer-2','layer-4','layer-6']);
-  assert.equal(f.buttons[0].attrs['aria-pressed'],'true');
-  f.buttons[1].click();
-  assert.deepEqual(hidden(f),['layer-6']);
-  f.buttons[2].click();
-  assert.deepEqual(hidden(f),[]);
+test('normalization never reveals exercise answers or independent reading variants',()=>{
+ const f=fixture();init(f.doc,f.win);assert.equal(f.answer.hidden,true);assert.equal(f.written.hidden,true);
 });
-test('a deep link into hidden text restores the complete lesson',()=>{
-  const f=fixture();init(f.doc,f.win);
-  f.buttons[0].click();
-  assert.equal(f.sections[1].hidden,true);
-  f.win.location.hash='#layer-2';
-  f.listeners.hashchange();
-  assert.deepEqual(hidden(f),[]);
-  assert.equal(f.buttons[2].attrs['aria-pressed'],'true');
-});
-test('malformed pilot markup fails open with full lesson intact',()=>{
-  const f=fixture();
-  f.sections.pop();f.sections.pop();f.sections.pop(); // only six numbered layers
-  init(f.doc,f.win);
-  assert.equal(f.guide.hidden,true);
-  assert.deepEqual(hidden(f),[]);
-});
-
-
-test('bookpage feedback names the exact visible layers without changing routes',()=>{
-  const f=fixture(true);init(f.doc,f.win);
-  assert.match(f.status.textContent,/7 из 7/);
-  for (let repeat=0; repeat<2; repeat++) {
-    f.buttons[0].click();
-    assert.deepEqual(hidden(f),['layer-2','layer-4','layer-6']);
-    assert.match(f.status.textContent,/4 из 7/);
-    assert.match(f.status.textContent,/Скрыты шаги 2, 4, 6/);
-    assert.match(f.status.textContent,/Краткая опора и практика не меняются/);
-    f.buttons[1].click();
-    assert.deepEqual(hidden(f),['layer-6']);
-    assert.match(f.status.textContent,/6 из 7/);
-    assert.match(f.status.textContent,/Скрыт шаг 6/);
-    f.buttons[2].click();
-    assert.deepEqual(hidden(f),[]);
-    assert.match(f.status.textContent,/7 из 7/);
-  }
-});
-test('bookpage deep link restores full explanation and matching feedback',()=>{
-  const f=fixture(true);init(f.doc,f.win);f.buttons[0].click();
-  f.win.location.hash='#layer-4';f.listeners.hashchange();
-  assert.deepEqual(hidden(f),[]);
-  assert.equal(f.buttons[2].attrs['aria-pressed'],'true');
-  assert.match(f.status.textContent,/7 из 7/);
-});
-test('other lessons keep their existing reading feedback',()=>{
-  const f=fixture();init(f.doc,f.win);
-  f.buttons[0].click();
-  assert.equal(f.status.textContent,'Суть: основные примеры, разговорные формы и самостоятельная практика. Остальные шаги доступны в режиме «Полностью».');
-});
-function pilotFixture() {
-  const f=fixture();
-  const links=f.sections.map(s=>({
-    hash:'#'+s.id, attrs:{}, tabIndex:0, listener:null,
-    parentElement:{dataset:{},appendChild(){}},
-    setAttribute(k,v){this.attrs[k]=v;},removeAttribute(k){delete this.attrs[k];},
-    addEventListener(event,fn){this.listener=fn;},
-  }));
-  const labels=links.map(()=>({textContent:'',hidden:true}));
-  links.forEach((a,i)=>{a.parentElement.querySelector=()=>labels[i];});
-  const original=f.doc.querySelector;
-  f.doc.querySelector=s=>s==='[data-lesson-design-pilot]'?{}:original(s);
-  f.doc.querySelectorAll=s=>links;
-  return Object.assign(f,{links,labels});
-}
-test('pilot contents explain unavailable layers and keep the selected depth',()=>{
-  const f=pilotFixture();init(f.doc,f.win);
-  assert.match(f.status.textContent,/7 из 7/);
-  for (let cycle=0;cycle<2;cycle++) {
-    f.buttons[0].click();
-    assert.equal(f.links[1].attrs['aria-disabled'],'true');
-    assert.match(f.status.textContent,/4 из 7/);
-    assert.equal(f.links[1].tabIndex,-1);
-    assert.match(f.labels[1].textContent,/Почему/);
-    assert.match(f.labels[5].textContent,/Полностью/);
-    let prevented=false;
-    f.links[1].listener({preventDefault(){prevented=true;}});
-    assert.equal(prevented,true);
-    f.win.location.hash='#layer-2';f.listeners.hashchange();
-    assert.deepEqual(hidden(f),['layer-2','layer-4','layer-6']);
-    assert.equal(f.buttons[0].attrs['aria-pressed'],'true');
-    f.buttons[1].click();
-    assert.equal(f.links[1].attrs['aria-disabled'],undefined);
-    assert.match(f.status.textContent,/6 из 7/);
-    assert.equal(f.links[1].tabIndex,0);
-    assert.equal(f.labels[1].hidden,true);
-    assert.equal(f.links[5].attrs['aria-disabled'],'true');
-    f.buttons[2].click();
-    assert.deepEqual(hidden(f),[]);
-    assert.ok(f.links.every(a=>!a.attrs['aria-disabled']));
-  }
+test('non-A1 pages are untouched',()=>{
+ const f=fixture(false);init(f.doc,f.win);assert.ok(f.sections.every(s=>s.hidden));
 });
