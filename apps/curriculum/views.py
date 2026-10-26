@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 from django.templatetags.static import static
@@ -104,7 +105,15 @@ def week_detail(request, slug, number):
     scene = WeekScene.objects.filter(week=week).prefetch_related("chunks__semantic_class__category").first()
     lines, speakers = build_lines(scene.script) if scene else ([], [])
     goal = WeekGoal.objects.filter(user=request.user, week=week).first() if request.user.is_authenticated else None
+    trainer_entry = (getattr(settings, "EE_VOCABULARY_TRAINER_ENABLED", False)
+                     and request.user.is_authenticated and level.code == "A1" and week.number == 3)
+    if trainer_entry and scene:
+        from apps.learning.trainer_service import register_legacy_exposure
+        # These three authored targets are visible in week 3 dialogue/chunks;
+        # tea is in the dialogue but is not a scene.chunks relation.
+        register_legacy_exposure(request.user, ["LX-00055", "LX-00285", "LX-00084"])
     return render(request, "curriculum/week.html", {
+        "trainer_entry": trainer_entry,
         "week": week, "scene": scene, "lines": lines, "speakers": speakers,
         "atlas_cover_url": (week_art(level.code, week.number) or {}).get("large"),
         "atlas_cover_alt": (week_art(level.code, week.number) or {}).get("alt", ""),

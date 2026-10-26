@@ -8,13 +8,14 @@
     <h1>Повторение</h1>
     <p>Слова возвращаются через 1, 3, 7 и 14 дней после правильного ответа. Ошибка сокращает интервал, и слово придёт раньше.</p>
   </header>
+  {% if trainer_summary.available %}<section class="layer" data-trainer-entry aria-labelledby="trainer-review-title"><h2 id="trainer-review-title">Практика слов и фраз</h2>{% if trainer_summary.enrolled %}<p>У трёх единиц пилота отдельные встречи с самостоятельным вспоминанием. {% if trainer_due_count %}Пора повторить: {{ trainer_due_count }}.{% else %}Новые встречи, продолжение и следующие сроки доступны в тренажёре.{% endif %}</p>{% else %}<p>После знакомства с уроком 5 можно добровольно включить тренажёр трёх единиц.</p>{% endif %}<p><a class="btn btn-primary" href="{% url 'learning:trainer' %}">Открыть тренажёр слов и фраз</a></p></section>{% endif %}
   {% if items %}
     <div class="drills" style="max-width: 46rem">
       {% for ex in items %}{% include "components/drill.html" with ex=ex number=forloop.counter total=items|length %}{% endfor %}
     </div>
     <p style="margin-top: var(--space-6)"><a class="btn btn-quiet" href="{% url 'learning:review' %}">Обновить список</a></p>
   {% else %}
-    <p>Сейчас повторять нечего.{% if upcoming %} Следующее слово, <span lang="en">{{ upcoming.unit.lemma }}</span>, вернётся {{ upcoming.next_review_at|date:"j E в H:i" }}.{% else %} Пройдите урок, и слова начнут приходить сюда по расписанию.{% endif %}</p>
+    {% if trainer_summary.enrolled %}<p>В обычной очереди сейчас нет заданий. {% if trainer_due_count %}Подошедшие встречи ждут в тренажёре слов и фраз.{% else %}Сроки трёх единиц пилота смотрите в тренажёре.{% endif %}{% if upcoming %} Следующее слово обычной очереди вернётся {{ upcoming.next_review_at|date:"j E в H:i" }}.{% endif %}</p>{% else %}<p>Сейчас повторять нечего.{% if upcoming %} Следующее слово, <span lang="en">{{ upcoming.unit.lemma }}</span>, вернётся {{ upcoming.next_review_at|date:"j E в H:i" }}.{% else %} Пройдите урок, и слова начнут приходить сюда по расписанию.{% endif %}</p>{% endif %}
     <p><a class="btn btn-primary" href="{% url 'learning:dashboard' %}">К моему прогрессу</a></p>
   {% endif %}
 </div>

@@ -14,4 +14,5 @@ def lesson_check_attempts(user):
         user=user, skill__in=('meaning', 'writing', 'transfer', 'explain'),
         task_variant__in=(0, 1, 2),
     ).exclude(batch_token__startswith='pilot-')
-      .exclude(batch_token__startswith='cafe-'))
+      .exclude(batch_token__startswith='cafe-')
+      .exclude(origin='trainer'))

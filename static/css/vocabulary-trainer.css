@@ -1,0 +1,194 @@
+/* Generated from static/scss/vocabulary-trainer.scss; run pnpm build:css. Do not edit. */
+.site-header .wrap {
+  flex-wrap: wrap;
+}
+
+.studio-top-actions {
+  flex-wrap: wrap;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.vocabulary-trainer {
+  --trainer-green: #225f42;
+  font-family: "Golos Text", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  padding-block: 2rem 4rem;
+  max-width: 60rem;
+}
+.vocabulary-trainer, .vocabulary-trainer * {
+  box-sizing: border-box;
+  min-width: 0;
+}
+.vocabulary-trainer h1, .vocabulary-trainer h2, .vocabulary-trainer h3 {
+  font-family: "Literata", Georgia, serif;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.vocabulary-trainer h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+.vocabulary-trainer h2 {
+  font-size: 1.5rem;
+}
+.vocabulary-trainer h3 {
+  font-size: 1.15rem;
+}
+.vocabulary-trainer p, .vocabulary-trainer li, .vocabulary-trainer a, .vocabulary-trainer label, .vocabulary-trainer button, .vocabulary-trainer time {
+  overflow-wrap: anywhere;
+}
+.vocabulary-trainer a {
+  color: var(--trainer-green);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.vocabulary-trainer .trainer-header {
+  margin-bottom: 1.5rem;
+}
+.vocabulary-trainer .trainer-eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.vocabulary-trainer .trainer-card, .vocabulary-trainer .trainer-status, .vocabulary-trainer .trainer-network {
+  background: #fffdf7;
+  border: 1px solid #b6b9a6;
+  border-radius: 1rem;
+  margin-block: 1rem;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+.vocabulary-trainer .trainer-status {
+  border-inline-start: 0.3rem solid var(--trainer-green);
+}
+.vocabulary-trainer .trainer-notice, .vocabulary-trainer .trainer-memory, .vocabulary-trainer .trainer-model {
+  border-inline-start: 0.25rem solid #80855c;
+  padding-inline-start: 1rem;
+  margin-block: 1.25rem;
+}
+.vocabulary-trainer .trainer-prompt {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.vocabulary-trainer blockquote {
+  margin-inline: 0;
+  padding-inline-start: 1rem;
+  border-inline-start: 0.25rem solid #c6d3be;
+}
+.vocabulary-trainer form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 100%;
+}
+.vocabulary-trainer label, .vocabulary-trainer legend {
+  font-weight: 600;
+}
+.vocabulary-trainer textarea, .vocabulary-trainer input:not([type=checkbox]):not([type=radio]) {
+  width: 100%;
+  max-width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem;
+  border: 1px solid #687966;
+  border-radius: 0.5rem;
+  font: inherit;
+  background: white;
+  color: #20352b;
+}
+.vocabulary-trainer textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+.vocabulary-trainer fieldset {
+  border: 1px solid #b6b9a6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+.vocabulary-trainer .trainer-check {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3rem;
+  font-weight: 400;
+}
+.vocabulary-trainer input[type=radio], .vocabulary-trainer input[type=checkbox] {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  accent-color: var(--trainer-green);
+}
+.vocabulary-trainer button, .vocabulary-trainer .trainer-button {
+  font: inherit;
+  font-weight: 600;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--trainer-green);
+  border-radius: 0.6rem;
+  background: var(--trainer-green);
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: normal;
+  max-width: 100%;
+  text-decoration: none;
+}
+.vocabulary-trainer .trainer-secondary {
+  color: var(--trainer-green);
+  background: #fffdf7;
+}
+.vocabulary-trainer button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.vocabulary-trainer :focus-visible {
+  outline: 3px solid #9b4d13;
+  outline-offset: 4px;
+}
+.vocabulary-trainer .trainer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+.vocabulary-trainer .trainer-actions > p {
+  flex-basis: 100%;
+}
+.vocabulary-trainer .trainer-actions > button {
+  flex: 1 1 15rem;
+}
+.vocabulary-trainer .trainer-units {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+.vocabulary-trainer .trainer-units > li {
+  border-top: 1px solid #b6b9a6;
+  padding-top: 1rem;
+}
+.vocabulary-trainer .trainer-footer {
+  margin-top: 2rem;
+}
+@media (max-width: 40rem) {
+  .vocabulary-trainer .trainer-actions {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .vocabulary-trainer .trainer-actions > p {
+    flex-basis: auto;
+  }
+  .vocabulary-trainer .trainer-actions > button {
+    flex: auto;
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vocabulary-trainer *, .vocabulary-trainer *::before, .vocabulary-trainer *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
