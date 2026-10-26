@@ -76,7 +76,7 @@ function browserStub({ incomingRevision = '3', local = 'unsaved words', failPost
   function makeRoot(revision, value, hasNote = true) {
     const recovered = [];
     const field = { name: 'answer', id: 'trainer-answer', tagName: 'TEXTAREA', value, defaultValue: 'older saved draft', disabled: false };
-    const note = { name: 'mnemonic', id: 'trainer-mnemonic', tagName: 'TEXTAREA', value: 'server note', defaultValue: 'server note' };
+    const note = { dataset: {}, name: 'mnemonic', id: 'trainer-mnemonic', tagName: 'TEXTAREA', value: 'server note', defaultValue: 'server note' };
     const status = { textContent: '', focus() { focusCount++; } };
     return { dataset: { session: '1', revision, statusUrl: '/session/status/' }, field, note, status, recovered,
       querySelector(selector) {
@@ -175,3 +175,21 @@ test('if canonical phase removes note editor, unsent note remains copyable and i
   assert.equal(h.incoming.recovered[0].dataset.recoveryName, 'mnemonic');
   assert.equal(h.requests.length, 2);
 });
+for (const text of ['server-rendered unconfirmed note', '']) {
+  test('rendered 400/409 note remains unconfirmed through repeated canonical GET: ' + JSON.stringify(text), async () => {
+    const h = browserStub();
+    h.original.note.value = text;
+    h.original.note.defaultValue = text; // A server-rendered failure, not a locally dirty field.
+    h.original.note.dataset = { unconfirmed: 'true' };
+    h.original.dataset.noteEditor = 'true';
+    await h.client.reconcile();
+    assert.equal(h.incoming.note.value, text);
+    assert.equal(h.incoming.note.dataset.unconfirmed, 'true');
+    assert.equal(h.requests.length, 2); // GET only, never a note/assessment submission.
+    h.incoming.note.defaultValue = text;
+    await h.client.reconcile();
+    assert.equal(h.incoming.note.value, text);
+    assert.equal(h.incoming.note.dataset.unconfirmed, 'true');
+    assert.equal(h.requests.length, 4);
+  });
+}

@@ -165,6 +165,10 @@
 @media (max-width: 40rem) {
   .vocabulary-trainer .trainer-actions {
     flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .vocabulary-trainer .trainer-actions > p {
+    flex-basis: auto;
   }
   .vocabulary-trainer .trainer-actions > button {
     flex: auto;

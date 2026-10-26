@@ -271,3 +271,18 @@ class TrainerViewsTests(TestCase):
         self.assertContains(stale, 'data-trainer-unsent-note', status_code=409)
         self.assertNotContains(stale, 'id="trainer-mnemonic"', status_code=409)
         self.assertEqual(IndependentAttempt.objects.filter(user=self.user).count(), 0)
+
+    def test_note_failure_editor_marks_unconfirmed_text_even_when_empty(self):
+        view = self.start()
+        self.post(view, 'save_note', mnemonic='newer confirmed note')
+        for text in ('stale note from another tab', ''):
+            response = self.post(view, 'save_note', mnemonic=text)
+            self.assertEqual(response.status_code, 409)
+            self.assertTrue(response.context['notes_editor'])
+            self.assertEqual(response.context['note_value'], text)
+            self.assertContains(response, 'data-unconfirmed="true"', status_code=409)
+        current = self.current(view)
+        response = self.post(current, 'save_note', mnemonic='x' * 301)
+        self.assertEqual(response.status_code, 400)
+        self.assertContains(response, 'data-unconfirmed="true"', status_code=400)
+        self.assertEqual(self.current(view)['personal_mnemonic'], 'newer confirmed note')

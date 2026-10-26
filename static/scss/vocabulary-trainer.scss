@@ -36,6 +36,10 @@
   .trainer-units { padding: 0; list-style: none; display: grid; gap: 1rem; }
   .trainer-units > li { border-top: 1px solid #b6b9a6; padding-top: 1rem; }
   .trainer-footer { margin-top: 2rem; }
-  @media (max-width: 40rem) { .trainer-actions { flex-direction: column; } .trainer-actions > button { flex: auto; width: 100%; } }
+  @media (max-width: 40rem) {
+    .trainer-actions { flex-direction: column; flex-wrap: nowrap; }
+    .trainer-actions > p { flex-basis: auto; }
+    .trainer-actions > button { flex: auto; width: 100%; }
+  }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 }

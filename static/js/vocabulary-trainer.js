@@ -60,11 +60,12 @@
     function editedFields(scope) {
       const fields = Array.from(scope.querySelectorAll('textarea[name], input[name]:not([type="hidden"]), select[name]'));
       const edited = fields.filter(field => {
+        if (field.dataset?.unconfirmed === 'true') return true;
         if (field.type === 'radio') return fields.some(other => other.name === field.name && other.checked !== other.defaultChecked);
         if (field.type === 'checkbox') return field.checked !== field.defaultChecked;
         return field.value !== field.defaultValue;
       }).map(field => ({ name: field.name, type: field.type, value: field.value,
-        checked: field.checked, label: field.name === 'mnemonic' ? 'Моя ассоциация' : 'Ваш неподтверждённый ответ' }));
+        checked: field.checked, unconfirmed: field.dataset?.unconfirmed === 'true', label: field.name === 'mnemonic' ? 'Моя ассоциация' : 'Ваш неподтверждённый ответ' }));
       scope.querySelectorAll('[data-recovery-name]').forEach(field => edited.push({
         name: field.dataset.recoveryName, value: field.value, label: field.dataset.recoveryLabel, recovery: true
       }));
@@ -78,6 +79,7 @@
         if (field) {
           if (saved.type === 'radio' || saved.type === 'checkbox') field.checked = saved.checked;
           else field.value = saved.value;
+          if (saved.unconfirmed) field.dataset.unconfirmed = 'true';
         } else {
           const section = doc.createElement('section'); section.className = 'trainer-card';
           const label = doc.createElement('label'); label.htmlFor = 'trainer-recovered-' + saved.name;

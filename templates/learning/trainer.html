@@ -26,7 +26,7 @@
       <form method="post" data-trainer-action>{% csrf_token %}
         <input type="hidden" name="token" value="{{ state.token }}"><input type="hidden" name="revision" value="{{ state.revision }}">
         <input type="hidden" name="answer" value="{{ state.draft }}"><input type="hidden" name="mode" value="{{ preferred_mode }}"><input type="hidden" name="self_rating" value="{{ preferred_rating }}">
-        <label for="trainer-mnemonic">Текст моей ассоциации</label><textarea id="trainer-mnemonic" name="mnemonic" maxlength="300">{{ note_value }}</textarea>
+        <label for="trainer-mnemonic">Текст моей ассоциации</label><textarea id="trainer-mnemonic" name="mnemonic" maxlength="300"{% if unsent_note != None %} data-unconfirmed="true"{% endif %}>{{ note_value }}</textarea>
         <button type="submit" name="action" value="save_note">Сохранить ассоциацию и вернуться</button>
       </form>
       <p><a href="{% url 'learning:trainer_session' state.session_id %}">Вернуться без сохранения ассоциации</a></p>
