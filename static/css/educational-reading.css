@@ -1,0 +1,415 @@
+/* Generated from static/scss/educational-reading.scss; run pnpm build:css. Do not edit. */
+/* Educational interiors only. Marker shapes/colors and player visibility stay owned by their components. */
+[data-educational-reading] {
+  --edu-bg: #F7F5EF;
+  --edu-ink: #26332F;
+  --edu-accent: #194B3B;
+  --edu-panel: #E7ECE6;
+  --edu-rule: #D8DED8;
+  --edu-ornament: #B99A68;
+  --edu-muted: #59665F;
+  --edu-font-body: var(--font-ui);
+  --edu-font-heading: var(--font-read);
+  --edu-body: 19px;
+  --edu-example: 1.15em;
+  --edu-translation: 17px;
+  --edu-ui: 16px;
+  --edu-leading: 1.75;
+  --edu-measure: 65ch;
+  --edu-gap: 1.25em;
+  --edu-section-gap: clamp(2.5rem, 5vw, 4rem);
+  --edu-focus: #88630c;
+  --reader-scale: 1;
+  color: var(--edu-ink);
+}
+[data-educational-reading][data-reading-theme=academic] {
+  --edu-bg: #F5F4F0;
+  --edu-ink: #202B30;
+  --edu-accent: #284B63;
+  --edu-panel: #E9EEF0;
+  --edu-rule: #D3DBDE;
+  --edu-font-body: var(--font-read);
+  --edu-body: 20px;
+  --edu-leading: 1.8;
+}
+[data-educational-reading][data-reading-theme=minimal] {
+  --edu-bg: #FAFAF7;
+  --edu-body: 18px;
+  --edu-leading: 1.65;
+}
+[data-educational-reading] .page-head h1 {
+  font-family: var(--edu-font-heading);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  max-width: 25ch;
+}
+[data-educational-reading] .page-head > p:not(.crumbs) {
+  font: 18px/1.7 var(--font-ui);
+  max-width: 68ch;
+  color: var(--edu-muted);
+}
+[data-educational-reading] .lesson-grid > article, [data-educational-reading].independent-check > section {
+  min-width: 0;
+}
+[data-educational-reading] .lesson-grid > article {
+  background: #fffefa;
+  border: 1px solid var(--edu-rule);
+  border-radius: 0;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+[data-educational-reading] .layer {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: var(--edu-ink);
+  font: var(--edu-body)/var(--edu-leading) var(--edu-font-body);
+}
+[data-educational-reading] .layer + .layer {
+  border-top: 1px solid var(--edu-rule);
+  padding-top: var(--edu-section-gap);
+  margin-top: var(--edu-section-gap);
+}
+[data-educational-reading] .layer > p, [data-educational-reading] .layer > ul, [data-educational-reading] .layer > ol {
+  max-width: var(--edu-measure);
+}
+[data-educational-reading] .layer p, [data-educational-reading] .layer li {
+  font-size: inherit;
+  line-height: var(--edu-leading);
+}
+[data-educational-reading] .layer p {
+  margin-top: 0;
+  margin-bottom: var(--edu-gap);
+}
+[data-educational-reading] .layer p:last-child {
+  margin-bottom: 0;
+}
+[data-educational-reading] .layer li + li {
+  margin-top: 0.55em;
+}
+[data-educational-reading] .layer h2 {
+  display: flex;
+  gap: 0.8em;
+  align-items: baseline;
+  font: 500 clamp(1.65rem, 1.35rem + 0.7vw, 2.1rem)/1.3 var(--edu-font-heading);
+  margin: 0 0 1.1em;
+  color: var(--edu-accent);
+  letter-spacing: -0.02em;
+}
+[data-educational-reading] .layer h3 {
+  font: 600 1.15em/1.45 var(--font-ui);
+  margin: 1.75em 0 0.75em;
+}
+[data-educational-reading] .layer-num {
+  flex: 0 0 auto;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: #8b7347;
+  font: inherit;
+}
+[data-educational-reading] [data-lesson-reader] {
+  font-family: var(--edu-font-body);
+  font-size: var(--edu-body);
+}
+[data-educational-reading] [data-lesson-reader] .layer, [data-educational-reading] [data-lesson-reader] .layer p, [data-educational-reading] [data-lesson-reader] .layer li {
+  font-size: inherit;
+  font-family: var(--edu-font-body);
+}
+[data-educational-reading] [data-lesson-reader] .layer + .layer {
+  margin-top: var(--edu-section-gap);
+}
+[data-educational-reading] .example {
+  background: color-mix(in srgb, var(--edu-panel) 48%, transparent);
+  border: 0;
+  border-left: 2px solid var(--edu-accent);
+  border-radius: 0;
+  padding: 1em 1.15em;
+  margin: 1.4em 0;
+  font-family: var(--edu-font-body);
+}
+[data-educational-reading] [data-lesson-reader] .example, [data-educational-reading] [data-lesson-reader] .layer .example {
+  font-size: var(--edu-example);
+  line-height: 1.95;
+  font-family: var(--edu-font-body);
+}
+[data-educational-reading] .example .ex-ru, [data-educational-reading] [data-lesson-reader] .example .ex-ru {
+  display: block;
+  margin-top: 0.5em;
+  color: var(--edu-muted);
+  font: calc(var(--edu-translation) * var(--reader-scale))/1.65 var(--font-ui);
+}
+[data-educational-reading] .drill-hint, [data-educational-reading] .layer .drill-hint {
+  color: var(--edu-muted);
+  font: calc(17px * var(--reader-scale))/1.65 var(--font-ui);
+}
+[data-educational-reading] .ipa {
+  font-family: var(--font-ipa);
+  line-height: 1.85;
+  letter-spacing: normal;
+  overflow-wrap: anywhere;
+}
+[data-educational-reading] .ru-tr, [data-educational-reading] .ru-transcription {
+  font-family: var(--font-ui);
+  white-space: normal;
+  line-height: 1.7;
+}
+[data-educational-reading] .aside-box {
+  border-radius: 0;
+  box-shadow: none;
+  border-color: var(--edu-rule);
+}
+[data-educational-reading] .aside-box h2 {
+  font-family: var(--font-ui);
+  line-height: 1.5;
+}
+[data-educational-reading] .toc a {
+  line-height: 1.6;
+}
+[data-educational-reading] .passport {
+  font: 15px/1.65 var(--font-ui);
+}
+[data-educational-reading] {
+  /* Shared script: a continuous reading surface, explicit name and avatar, translation attached to its line. */
+}
+[data-educational-reading] .story-script {
+  margin-top: 1.5rem;
+}
+[data-educational-reading] .story-script .script-line {
+  display: grid;
+  grid-template-columns: minmax(7rem, 8rem) minmax(0, 1fr);
+  gap: 0.25em 1.1em;
+  margin: 0;
+  padding: 1.15em 0;
+  border: 0;
+  border-bottom: 1px solid var(--edu-rule);
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  font: calc(var(--edu-body) * var(--reader-scale))/1.85 var(--edu-font-body);
+}
+[data-educational-reading] .story-script .speaker {
+  align-self: start;
+  min-width: 0;
+  padding-top: 0.2em;
+  font: 600 15px/1.6 var(--font-ui);
+  white-space: normal;
+  color: var(--edu-ink);
+}
+[data-educational-reading] .story-script .emotion {
+  font: 400 14px/1.6 var(--font-ui);
+  color: var(--edu-muted);
+}
+[data-educational-reading] .story-script .line-text {
+  min-width: 0;
+  font-family: var(--edu-font-body);
+  color: var(--edu-ink);
+}
+[data-educational-reading] .story-script .line-ru {
+  grid-column: 2;
+  margin: 0.35em 0 0;
+  font: calc(var(--edu-translation) * var(--reader-scale))/1.65 var(--font-ui);
+  color: var(--edu-muted);
+}
+[data-educational-reading] .story-script .line-full {
+  font: calc(17px * var(--reader-scale))/1.65 var(--font-ui);
+  color: var(--edu-muted);
+  margin-top: 0.5em;
+}
+[data-educational-reading] .story-script .script-line.is-speaking {
+  background: var(--edu-panel);
+}
+[data-educational-reading] .story-script .script-line.is-your-turn {
+  outline-color: var(--edu-accent);
+}
+[data-educational-reading] .player-modes {
+  gap: 0.5rem;
+  font: var(--edu-ui)/1.55 var(--font-ui);
+}
+[data-educational-reading] .player-modes label {
+  min-height: 44px;
+  padding: 0.55rem 0.9rem;
+  border-radius: 0.35rem;
+}
+[data-educational-reading] .player-modes label:has(input:checked) {
+  color: #fff;
+  background: var(--edu-accent);
+  border-color: var(--edu-accent);
+}
+[data-educational-reading] .player-modes label:focus-within {
+  outline: 3px solid var(--edu-focus);
+  outline-offset: 3px;
+}
+[data-educational-reading] {
+  /* Keep every poem row and stanza, including gap exercises, in its original DOM order. */
+}
+[data-educational-reading] .poem {
+  margin-top: 1.5em;
+  padding-left: clamp(0rem, 2vw, 1.5rem);
+  font: calc(22px * var(--reader-scale))/1.95 var(--font-read);
+}
+[data-educational-reading] .poem p, [data-educational-reading] .poem-gaps p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+[data-educational-reading] .poem .stanza-start, [data-educational-reading] .poem-gaps .stanza-start {
+  margin-top: 1.25em;
+}
+[data-educational-reading] .poem-gaps {
+  font: calc(21px * var(--reader-scale))/2 var(--font-read);
+}
+[data-educational-reading] .pron {
+  gap: 1.5em;
+}
+[data-educational-reading] .pron li {
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--edu-rule);
+}
+[data-educational-reading] .pron-stress {
+  font-family: var(--font-read);
+}
+[data-educational-reading] .pron .ipa {
+  font-size: 1.12em;
+}
+[data-educational-reading] {
+  /* Minimal training interior; no fixed sizes that break A−/A+. */
+}
+[data-educational-reading] :where(.drills, .speech-studio, .speech-stress-lab, .independent-task, .review-card, [data-lesson-practice], [data-lesson-translate]) {
+  --edu-bg: #FAFAF7;
+  --edu-ink: #26332F;
+  --edu-accent: #194B3B;
+  --edu-rule: #D8DED8;
+  --edu-font-body: var(--font-ui);
+  --edu-body: 18px;
+  --edu-leading: 1.65;
+  font-family: var(--font-ui);
+  color: var(--edu-ink);
+}
+[data-educational-reading] .drill {
+  border: 0;
+  border-top: 1px solid var(--edu-rule);
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--edu-bg);
+  padding: 1.5rem 0;
+  margin: 0 0 1rem;
+}
+[data-educational-reading] .drill-prompt, [data-educational-reading] .drill .drill-prompt {
+  font: 600 calc(19px * var(--reader-scale))/1.65 var(--font-ui);
+}
+[data-educational-reading] .drill .example {
+  font: calc(21px * var(--reader-scale))/1.9 var(--font-ui);
+}
+[data-educational-reading] .choice, [data-educational-reading] .drill .choice {
+  min-height: 44px;
+  border-radius: 0.3rem;
+  font: calc(18px * var(--reader-scale))/1.65 var(--font-ui);
+}
+[data-educational-reading] .fill-input, [data-educational-reading] .drill .fill-input {
+  font: calc(18px * var(--reader-scale))/1.65 var(--font-ui);
+  min-height: 44px;
+  max-width: 100%;
+}
+[data-educational-reading] .drill-feedback, [data-educational-reading] .drill .drill-feedback {
+  font: calc(17px * var(--reader-scale))/1.65 var(--font-ui);
+}
+[data-educational-reading] .btn {
+  min-height: 44px;
+  border-radius: 0.3rem;
+  font: 600 var(--edu-ui)/1.5 var(--font-ui);
+  letter-spacing: normal;
+}
+[data-educational-reading] .btn-primary {
+  background: var(--edu-accent);
+  border-color: var(--edu-accent);
+  color: #fff;
+  box-shadow: none;
+}
+[data-educational-reading] .btn-quiet {
+  background: transparent;
+  color: var(--edu-accent);
+  border-color: var(--edu-rule);
+  box-shadow: none;
+}
+[data-educational-reading] button:focus-visible, [data-educational-reading] input:focus-visible, [data-educational-reading] select:focus-visible, [data-educational-reading] a:focus-visible, [data-educational-reading] summary:focus-visible {
+  outline: 3px solid var(--edu-focus);
+  outline-offset: 3px;
+}
+[data-educational-reading] button:disabled {
+  color: #667168;
+  background: #edf0eb;
+  opacity: 1;
+  cursor: default;
+}
+[data-educational-reading] .speech-actions, [data-educational-reading] .drill-actions {
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+[data-educational-reading] .speech-studio [data-speech-source], [data-educational-reading] .speech-studio [data-speech-current] {
+  font-family: var(--font-ui);
+}
+[data-educational-reading] .speech-modes button[aria-pressed=true], [data-educational-reading] .speech-actions button[aria-pressed=true] {
+  color: #fff;
+  background: #194B3B;
+  border-color: #194B3B;
+}
+[data-educational-reading] .map-item > div > a {
+  font: 500 1.35rem/1.4 var(--font-read);
+}
+[data-educational-reading] .map-meta {
+  font: 16px/1.65 var(--font-ui);
+  margin-top: 0.45em;
+}
+@media (max-width: 700px) {
+  [data-educational-reading], [data-educational-reading][data-reading-theme=academic] {
+    --edu-body: 18px;
+  }
+  [data-educational-reading] .page-head h1 {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
+  }
+  [data-educational-reading] .page-head > p:not(.crumbs) {
+    font-size: 17px;
+  }
+  [data-educational-reading] .lesson-grid > article {
+    padding: 1.2rem;
+  }
+  [data-educational-reading] .layer h2 {
+    font-size: 1.65rem;
+  }
+  [data-educational-reading] .story-script .script-line {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.45em;
+    padding: 1.2em 0;
+  }
+  [data-educational-reading] .story-script .speaker {
+    font-size: 15px;
+  }
+  [data-educational-reading] .story-script .line-ru {
+    grid-column: 1;
+  }
+  [data-educational-reading] .poem {
+    font-size: calc(20px * var(--reader-scale));
+    padding-left: 0;
+  }
+  [data-educational-reading] .poem-gaps {
+    font-size: calc(19px * var(--reader-scale));
+  }
+  [data-educational-reading] .drill .example {
+    padding: 0.8em;
+  }
+  [data-educational-reading] .player-modes {
+    flex-wrap: wrap;
+  }
+  [data-educational-reading] .player-modes label {
+    white-space: normal;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-educational-reading] .script-line, [data-educational-reading] .btn, [data-educational-reading] .choice {
+    transition: none;
+  }
+}

@@ -2,8 +2,9 @@
 {% load markers static ru %}
 {% block title %}Неделя {{ week.number }} · {{ week.situation_ru }} · {{ SITE_NAME }}{% endblock %}
 {% block social_title %}Неделя {{ week.number }} · {{ week.situation_ru }} · {{ SITE_NAME }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% endblock %}
 {% block content %}
-<div class="wrap cinematic-week">
+<div data-educational-reading data-reading-theme="friendly" class="wrap cinematic-week">
   {% if scene %}
   <div class="lesson-grid">
     <article class="prose">

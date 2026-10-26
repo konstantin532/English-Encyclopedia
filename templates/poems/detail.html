@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load markers static ru %}
 {% block title %}{{ poem.title }} · {{ SITE_NAME }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% endblock %}
 {% block content %}
-<div class="wrap">
+<div data-educational-reading data-reading-theme="academic" class="wrap">
   <header class="page-head">
     <p class="crumbs"><a href="{% url 'stories:map' %}">Истории и стихи</a> / {{ poem.level.code }}, неделя {{ poem.week.number }} / стихотворение {{ poem.number }}</p>
     <h1 lang="en">{{ poem.title }}</h1>
