@@ -80,6 +80,9 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
           }
           await page.locator('[data-a1-route-mode="essentials"]').click();
           await page.locator('.toc a[href="#layer-2"]').click();
+          // The browser dispatches hashchange asynchronously after the click.
+          // Wait for its real outcome; a broken handler still fails this gate.
+          await page.locator('#layer-2').waitFor({state:'visible'});
           assert.equal(await page.locator('#layer-2').isVisible(),true);
           assert.equal(await page.locator('[data-a1-route-mode="full"]').getAttribute('aria-pressed'),'true');
           for(const mode of ['see','echo','recall','transfer']){
@@ -96,9 +99,25 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
           const paragraph=page.locator('#layer-1 .annotated > p').first();
           // Use the guaranteed-minimum reader size so a stored/max size cannot mask A+.
           for(let i=0;i<12;i++)if(await page.locator('[data-reader-smaller]').isEnabled())await page.locator('[data-reader-smaller]').click();
+          const readerState=()=>page.evaluate(()=>{
+            const reader=document.querySelector('[data-lesson-reader]');
+            const layer=document.querySelector('#layer-1');
+            const paragraph=layer.querySelector('.annotated > p');
+            return {reader:getComputedStyle(reader).fontSize,inline:reader.style.fontSize,layer:getComputedStyle(layer).fontSize,parent:getComputedStyle(paragraph.parentElement).fontSize,paragraph:getComputedStyle(paragraph).fontSize,output:document.querySelector('[data-reader-size]').textContent,largerDisabled:document.querySelector('[data-reader-larger]').disabled};
+          });
+          // Even reduced-motion's 0.01ms CSS transitions settle on a render frame.
+          // Do not compare a stale child size with the next parent-size update.
+          await page.waitForFunction(()=>{
+            const reader=document.querySelector('[data-lesson-reader]');
+            const paragraph=document.querySelector('#layer-1 .annotated > p');
+            return parseFloat(getComputedStyle(paragraph).fontSize)===parseFloat(reader.style.fontSize);
+          });
+          entry.readerBefore=await readerState();
           const small=await paragraph.evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
           await page.locator('[data-reader-larger]').focus();await page.locator('[data-reader-larger]').press('Enter');
-          assert.ok(await paragraph.evaluate(el=>parseFloat(getComputedStyle(el).fontSize))>small,'reader scale no longer reaches paragraphs');
+          await page.waitForFunction(previous=>parseFloat(getComputedStyle(document.querySelector('#layer-1 .annotated > p')).fontSize)>previous,small);
+          entry.readerAfter=await readerState();
+          assert.ok(await paragraph.evaluate(el=>parseFloat(getComputedStyle(el).fontSize))>small,'reader scale no longer reaches paragraphs: '+JSON.stringify({before:entry.readerBefore,after:entry.readerAfter}));
           entry.keyboard=true;entry.modes=true;entry.readerScale=true;
         }
         assert.deepEqual(errors,[],'uncaught noun-page JS errors');
