@@ -1,4 +1,14 @@
 /* Generated from static/scss/vocabulary-trainer.scss; run pnpm build:css. Do not edit. */
+.site-header .wrap {
+  flex-wrap: wrap;
+}
+
+.studio-top-actions {
+  flex-wrap: wrap;
+  min-width: 0;
+  max-width: 100%;
+}
+
 .vocabulary-trainer {
   --trainer-green: #225f42;
   font-family: "Golos Text", sans-serif;

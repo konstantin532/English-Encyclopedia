@@ -1,3 +1,8 @@
+// This stylesheet is loaded only by the trainer. Let the shared header reflow
+// when enlarged text needs more room, even above its viewport breakpoints.
+.site-header .wrap { flex-wrap: wrap; }
+.studio-top-actions { flex-wrap: wrap; min-width: 0; max-width: 100%; }
+
 .vocabulary-trainer {
   --trainer-green: #225f42;
   font-family: 'Golos Text', sans-serif;

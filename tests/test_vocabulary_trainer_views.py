@@ -103,6 +103,10 @@ class TrainerViewsTests(TestCase):
         view = self.current(view)
         self.assertEqual(view['phase'], 'complete')
         self.assertEqual(view['result']['outcome'], 'self_reported')
+        dashboard = self.client.get(self.url)
+        self.assertContains(dashboard, '<p>Повторим позже</p>', html=True)
+        self.assertContains(dashboard, '«Повторим позже» — можно подождать или потренироваться раньше')
+        self.assertNotContains(dashboard, 'Запланировано')
 
     def test_unknown_retry_bounds_dont_know_and_mnemonic_escaping(self):
         view = self.start(); self.post(view, 'begin'); view = self.current(view)
