@@ -1,6 +1,6 @@
 # Vocabulary and Phrase Trainer Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Выпустить добровольный трёхъединичный пилот внутри существующего Django-сайта с честными evidence и единым SRS.
 
@@ -61,12 +61,12 @@
 
 **Interfaces:** Uses Task2 service exactly. New `/learn/vocabulary/` (actual config prefix verified in task), user-only GET/POST forms and POST→redirect→GET; canonical resume/status, optional draft autosave server-owned no localStorage sensitive text; CSRF forms work without JS. Disabledflag default false (`EE_VOCABULARY_TRAINER_ENABLED` env boolean). Flag-off must avoid querying missing new tables. Links guarded flag and selected unit/week.
 
-- [ ] Write failing HTTP/HTML tests:flag-off404/no schema queries,login/owner/CSRF,prereq introduction,all4methods,hidden target before attempt (no answer markup/data/title),bounded retries,unknown alternatives,spoken self-report vs text,mnemonic escaping,version conflict,resume/back/status,network-safe same operationtoken,pending/status/nextaction,expiry/export regressions.
-- [ ] Run RED. Implement views and readable mobile-first form flow using existing visual language/brand/fonts. All user text escaped; private/no-store; aria labels/live statuses/focus/noncolor indicators and no lost controls at320/390px and200% text. Current phase server-only; model is never sent as hidden DOM before attempt. No fake listening/prosody/CEFR metrics. Distinguish introduction answer visibility from assessment state.
-- [ ] Add guarded entry links. Display explainable4states. No long four-method ritual on every review; review first recall, optionalassistance, proportionate changed-context task and self-speaking reachable for eachunit.
-- [ ] Generate CSS with `pnpm build:css`; run `pnpm check:css` and `pnpm test:ui`. Add browser script using disposable DB + local preview (root owns process/fixture) forfulljourney,simulateddelay via server tests,keyboard,390px/desktop,200%text,back/doubleclick/requestfailure. Report automatedbrowser vsmanualvisual vsHTTP separately.
-- [ ] Document safe preview (`flag on`, migrations onlydisposableDB unlesspermission), compatible backup/restore/rollout/rollback, version map procedure, retention/export/delete, voluntary human evaluation with predefined48h/7dtasks/criteria/limitations.
-- [ ] Run completeDjango suite, migrationcheck,contentaudit in disposableDB,Node/CSS and browserchecks. Commit taskfiles only and report.
+- [x] Write failing HTTP/HTML tests:flag-off404/no schema queries,login/owner/CSRF,prereq introduction,all4methods,hidden target before attempt (no answer markup/data/title),bounded retries,unknown alternatives,spoken self-report vs text,mnemonic escaping,version conflict,resume/back/status,network-safe same operationtoken,pending/status/nextaction,expiry/export regressions.
+- [x] Run RED. Implement views and readable mobile-first form flow using existing visual language/brand/fonts. All user text escaped; private/no-store; aria labels/live statuses/focus/noncolor indicators and no lost controls at320/390px and200% text. Current phase server-only; model is never sent as hidden DOM before attempt. No fake listening/prosody/CEFR metrics. Distinguish introduction answer visibility from assessment state.
+- [x] Add guarded entry links. Display explainable4states. No long four-method ritual on every review; review first recall, optionalassistance, proportionate changed-context task and self-speaking reachable for eachunit.
+- [x] Generate CSS with `pnpm build:css`; run `pnpm check:css` and `pnpm test:ui`. Add browser script using disposable DB + local preview (root owns process/fixture) forfulljourney,simulateddelay via server tests,keyboard,390px/desktop,200%text,back/doubleclick/requestfailure. Report automatedbrowser vsmanualvisual vsHTTP separately.
+- [x] Document safe preview (`flag on`, migrations onlydisposableDB unlesspermission), compatible backup/restore/rollout/rollback, version map procedure, retention/export/delete, voluntary human evaluation with predefined48h/7dtasks/criteria/limitations.
+- [x] Run completeDjango suite, migrationcheck,contentaudit in disposableDB,Node/CSS and browserchecks. Commit taskfiles only and report.
 
 ### Task 4: Whole-branch review, evidence and draft PR
 
@@ -74,8 +74,10 @@
 
 **Interfaces:** Entire branch compared with fbec572; no merging or auto-merge.
 
-- [ ] Independently review spec coverage, history/migrations/security/concurrency and actual frontendbehavior, with concrete changedfiles/tests.
-- [ ] Resolve material findings with scoped regressiontests and re-review; no weakening checks.
-- [ ] Run finalfresh verification and recordPASS/FAIL/BLOCKED/N/A forCorrectness,Regression,Security,DataIntegrity,UX,Integration,Evidence.
+- [x] Independently review spec coverage, history/migrations/security/concurrency and actual frontendbehavior, with concrete changedfiles/tests.
+- [x] Resolve material findings with scoped regressiontests and re-review; no weakening checks.
+- [x] Run finalfresh verification and recordPASS/FAIL/BLOCKED/N/A forCorrectness,Regression,Security,DataIntegrity,UX,Integration,Evidence.
 - [ ] Commit and push feat/vocabulary-phrase-pilot; create one draft PR to main via GitHub plugin. Verify remoteSHA and actualCI state; wait for checks and fix failures in samebranch as necessary. Do notmerge.
 - [ ] FinalreportRU:changedfiles,executedchecks/results,limitations,previewinstructions,PRlink and actualCI. Productionmigrationremainsseparatepermission.
+
+Checkpoint перед публикацией: 1038 Django, 152 Node, 21 CSS, 40 actual browser checks, controlled delayed review и ручной осмотр — PASS; whole-branch и scoped review завершены без открытых материальных замечаний. Операционные действия draftPR/actualCI выполняются после этого коммита; их окончательные факты фиксируются в описании PR и финальном ответе.

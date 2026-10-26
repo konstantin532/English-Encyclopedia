@@ -70,7 +70,7 @@ pnpm check:css
 pnpm test:ui
 ```
 
-Root после заморозки отвечает за полный suite, migration check, content audit, реальный browser run и ручной visual QA. Здесь не заявляется результат этих ещё не выполненных проверок. Full suite запускается только в disposable test DB; на существующей пользовательской БД не выполнять migrations/load_content ради QA.
+Завершённые проверки и их границы перечислены в итоговом разделе ниже. Full suite выполнялся только в disposable test DB; на существующей пользовательской БД не выполнять migrations/load_content ради QA.
 
 Ручная проверка: читаемость текста и опор, клавиатура Tab/Shift+Tab/Enter/Space, видимость фокуса, скринридерные labels/live state, 320/390/desktop и 200% текста без потери кнопок, reduced motion, обновление/back/два окна/повтор отправки, отключённый JS. Автоматические bounding boxes не заменяют оценку удобства человеком. При потере подтверждения письменный текст остаётся на странице, повтор отправляет прежний token/revision/payload, «Проверить состояние» запрашивает owner canonical state. Конфликт показывает актуальную фазу и отдельно неподтверждённый текст; он не считается ошибкой ученика. Браузерное закрытие/перезагрузка до подтверждённого save может потерять только несохранённый локальный ввод: долговременного клиентского хранилища текста нет. Для паузы использовать «Сохранить черновик» и дождаться подтверждения. Для очистки уже сохранённого текста использовать явный пустой save_draft; старые callers помощи без answer не стирают существующий draft. «Моя ассоциация» редактируется отдельно: кнопка в форме задания сначала явно сохраняет текущий черновик (включая очистку), затем открывает единственное поле заметки. Само открытие или сохранение заметки не оценивает ответ. До запроса мнемоники на unaided recall этот редактор и личный текст недоступны; зарегистрированная помощь остаётся sticky. При восстановлении сохраняются отредактированные поля, включая пустую заметку, без автоматической отправки; при смене серверной фазы текст остаётся отдельным полем для копирования.
 
@@ -100,3 +100,105 @@ Root после заморозки отвечает за полный suite, mig
 Предзаданные наблюдения: смог ли участник найти продолжение; не потерялся ли свой ответ при помощи/сбое/back; смог ли исправить неизвестный ответ без ложного «неверно»; достиг ли смысловой цели в новой ситуации; использовал ли target самостоятельно; сумел ли объяснить различие self-report и машинной проверки; частота запросов помощи и корректный интервал с последнего материала. Успех смысловой цели и target usage оценивать раздельно двумя согласованными людьми по rubric, разногласия фиксировать; речь оценивать человеком только с отдельным согласием и без незаявленной записи. Предварительные критерии продолжения: 0 воспроизведённых потерь подтверждённых ответов/чужих данных; все критические контролы доступны keyboard/200%; отсутствие систематических ложных exact-error для valid alternatives; большинство участников проходят маршрут без помощи исследователя. При нарушении остановить расширение и исправить причину.
 
 Отчёт разделяет HTTP/Node/browser/manual/людей; numerator/denominator, assistance/recent exposure и пропуски приводятся явно. Малый добровольный sample, отсутствие рандомизации/контроля и self-report не позволяют приписать рост тренажёру, доказать долговременное владение, CEFR или пользу каждой мнемоники. Для причинного вывода понадобится отдельное заранее спланированное сравнительное исследование.
+
+## Итог проверки реализации, 2026-10-26
+
+Проверен код `dc9a282b516cbf11dd9d89ec2d6547a5d12954bb` от согласованного main `fbec5724b67b9caf7045fa3a4da386607eedb759`. Ветка `feat/vocabulary-phrase-pilot`, отдельный worktree. PR129 проверен как merged; удалённый переключатель глубины не возвращён. Рабочая копия основного checkout и чужие изменения сохранены. Python3.13.16, Django5.2.18, Node24.22.1; lockfiles не менялись. Флаг остаётся выключенным, production/рабочие БД не открывались и не мигрировались.
+
+| Проверка | Фактический результат |
+|---|---|
+| `DJANGO_TEST_PROCESSES=4 uv run python manage.py test tests --parallel auto --settings=config.settings.test --noinput` | **PASS**: 1038 тестов, 327.355s, 0 ошибок, 2 пропуска PostgreSQL-only RLS в SQLite; exit0 |
+| Scoped final service/HTTP/content | **PASS**: 73; 4 новые регрессии сначала RED, затем GREEN |
+| `pnpm test:ui` | **PASS**: 152/152, 0 пропусков |
+| `pnpm check:css` | **PASS**: 21 stylesheet; generated CSS соответствует SCSS |
+| `manage.py check`; `makemigrations --check --dry-run`; compileall; `git diff --check` | **PASS**; несохранённых migrations нет |
+| Disposable in-memory migrate→load_content→audit_course | **PASS**, «Ошибок нет»; 1047 LX, 60 уроков, 11 историй, 7 стихов, 30 недель |
+| `scripts/audit_cefr_evidence.py --strict` | **PASS**; unresolved evidence items 0, не новая сертификация CEFR |
+| Реальные отдельные DB connections / threaded SQLite races и0012→0013 preservation | **PASS** в полном suite: duplicate, reveal/submit, budget/start, legacyHTTP/trainer, cleanup/writer; old attempt/progress сохранены |
+| Official Playwright + Chromium153.0.8010.0 | **PASS**: 40/40 проверок на финальном коде; три полных начальных встречи, private escaping, скрытые targets, lost accepted response + точный retry, back/sticky help, unknown, spoken self-report, changed application, другой owner404, no-JSPOST/PRG/draft/note/clear, keyboard, reduced-motion |
+| Layout/text resize | **PASS**: 320/390/1280 px при 100%/200%; computed шрифт действительно удвоен; fullpage overflow и границы всех controls проверены, без скрытия overflow |
+| Controlled delayed browser + DB readback | **PASS**: отдельный fakeuser, initial service fixture 26h назад→due browser recall в другой family→новая application→complete; stage 0→1, `schedule_eligible=true`, `delayed_correct`, assistance после recall не отменяет evidence |
+| Ручной визуальный осмотр | **PASS** в Chromium: desktop 100%, 320/390/1280 text 200%, шапка, читаемость задания/примеров, переносы и controls, сообщение о ранее подтверждённом recall; PNG просмотрены отдельно от автоматического verifier |
+| Контраст основных новых цветов | Расчёт относительной яркости: white/green 7.54:1, green/cream 7.42:1, input text/white 13.08:1, focus/cream 5.96:1; это не полный WCAG-аудит сайта |
+| PostgreSQL16 | Локально **BLOCKED**: сервера нет. Реальный итог job `postgres` проверяется в CI draftPR; SQLite не подменяет этот результат |
+
+Actual CI и окончательный remote SHA фиксируются в описании draftPR и финальном сообщении после публикации. Коммит с этим отчётом добавляет документацию к проверенному коду; CI проверяет итоговую удалённую ревизию. До зелёного PostgreSQL job не считать DB gate завершённым. Ничего не слито, auto-merge не включён, сайт не развёрнут.
+
+Полный suite на83089a0 до finalfix также прошёл 1034 теста за 342.525s, skip 2. Более ранние broad runs, прерванные или завершившиеся с ошибкой при изменении исходников, **не** являются PASS и не используются вместо финального 1038-run. Последние прогоны выполнялись с неизменяемыми исходниками; проверки не ослаблялись.
+
+### Исправления после независимого ревью
+
+Per-task review и whole-branch review выполнены разными агентами. Материальные замечания закрыты, scoped re-review: Spec PASS / Quality Approved, остаточных Critical/Important нет. Исправлены утечки скрытых моделей через незавершённый export, sticky помощь из истории, ложный recognition после ошибки/самооценки, потеря черновика/ассоциации при обычном POST и400/409 recovery, DOM `form.action` clobber, mobile flex overflow и шапка при200%. Финальная волна отдельно исправила противоречивое объяснение поздней application-помощи и отображение срока в IANA timezone (Moscow, обе стороны spring DST и оба fall hours). Исходная recall evidence и весь UnitProgress проверены неизменными после application help/completion.
+
+### Quality gates и границы
+
+| Gate | Статус и основание |
+|---|---|
+| Correctness | **PASS**:finalservice/HTTP/fullsuite + реальный полный путь |
+| Regression | **PASS** локально: 1038 Django / 152 Node; legacy SRS/48hMistakeReview/auth/data-rights в suite; окончательный CI см.PR |
+| Security | **PASS** в testedscope:owner/CSRF/escaping/export/delete/privileged server state; нет голоса/внешних API |
+| Data Integrity | **PASS SQLite**, включая настоящие races/rollback/migration; PostgreSQL требует отдельного CI PASS |
+| UX | **PASS** в Chromium/normalPOST/keyboard/text200/manual PNG; human usability test ещё не проводился |
+| Integration | **PASS**:один UnitProgress/journal, guardedexistinglinks, flagoff, история/версии сохранены |
+| Evidence | **PASS** отчётности:help/self-report/uncertain не названы verified retention; реальные границы указаны |
+
+Существующие общекурсовые audit warnings сохранены: 1004 unverified CEFR, A1→A1+recycling 221/500 (44%) при цели 70%, 3 forward collocations. Это отдельный долг курса, не новый результат пилота. Firefox/Safari, ручной screen reader, production restore rehearsal и добровольное исследование48h/7d **не выполнены**. AI-рецензия содержания не заменяет преподавателя/носителя. Simulated 26h и scripted spoken choice не доказывают память или реальное произношение человека. Аудио нет; text alternative и self-directed speaking работают без него.
+
+### Принятые решения и цена компромисса
+
+В порядке решений журнала:
+
+1. Продолжить утверждённую разработку без повторного запроса того же разрешения; merge/productionmigration остаются отдельными. Цена ошибки — выход за согласованный scope; scope здесь не расширен.
+2. Использовать существующие frozen Python/Node зависимости в изолированном окружении. Цена — локальное место и время установки; manifests не изменены.
+3. Перенести повтор broad Task1 на неизменяемый финальный integrationrun после уточнения manifest. Цена — более позднее обнаружение регрессии; окончательный 1038-run выполнен и заменяет ранние неполные доказательства.
+4. Сохранить локальную историю/worktree и передавать точные trees через GitHub connector с expectedSHA, потому что CLIpush не имел credentials. Цена — локальные/remote commitSHA различаются; каждый tree сравнен, force/перезапись истории не использованы. Для новой работы безопаснее свежий checkout удалённой ветки; старый worktree сохранён.
+5. Разрешить узкую редакцию server-private полей export. Цена — будущие модели незавершённой assessment не выдаются до завершения; свои ответы/evidence/история остаются.
+6. Обернуть legacyAPI целиком в общий atomic/serialized retry. Цена — сериализация операций одного пользователя; зато attempt/progress/48hqueue не расходятся при SQLite retry.
+7. При новой assessmentrevision даже с mapping требовать новую baseline-встречу, сохраняя историю/stage/futuredue. Цена — одна дополнительная практика; cosmetic same-revision continuity сохраняется.
+8. Ранняя добровольная ошибка сохраняет stage/due, но записывается честно. Цена — без немедленного штрафа за необязательную раннюю практику; due encounter обрабатывается обычными правилами.
+9. Регистрировать доставку выбранных существующих учебных материалов как помощь/exposure, не как grade. Цена — дополнительная серверная запись; внешняя/incognito и неинструментированная помощь остаётся ненаблюдаемой.
+10. Редактировать личную ассоциацию отдельно после явного atomic сохранения текущего draft, включая очистку. Старые operation fingerprints сохранены; новый save_note имеет свой payload. Цена — один необязательный переход, который сохраняет текст и работает без JS.
+
+### Изменённые файлы
+
+Полный список относительно согласованного base (включая документацию):
+
+- `README.md`
+- `apps/accounts/data_rights.py`
+- `apps/api/views.py`
+- `apps/core/context_processors.py`
+- `apps/curriculum/views.py`
+- `apps/learning/evidence.py`
+- `apps/learning/management/commands/expire_trainer_drafts.py`
+- `apps/learning/migrations/0013_vocabulary_trainer.py`
+- `apps/learning/models.py`
+- `apps/learning/services.py`
+- `apps/learning/trainer_content.py`
+- `apps/learning/trainer_scheduling.py`
+- `apps/learning/trainer_service.py`
+- `apps/learning/trainer_state.py`
+- `apps/learning/trainer_views.py`
+- `apps/learning/urls.py`
+- `apps/learning/views.py`
+- `apps/lessons/views.py`
+- `apps/lexicon/views.py`
+- `config/settings/base.py`
+- `content/manifests/a1_vocabulary_trainer.json`
+- `docs/qa/vocabulary-phrase-trainer-checkpoint.md`
+- `docs/qa/vocabulary-phrase-trainer.md`
+- `docs/superpowers/plans/2026-10-26-vocabulary-phrase-trainer.md`
+- `docs/superpowers/specs/2026-10-26-vocabulary-phrase-trainer-design.md`
+- `scripts/verify_vocabulary_trainer.cjs`
+- `static/css/vocabulary-trainer.css`
+- `static/js/vocabulary-trainer.js`
+- `static/scss/vocabulary-trainer.scss`
+- `templates/curriculum/week.html`
+- `templates/learning/dashboard.html`
+- `templates/learning/review.html`
+- `templates/learning/trainer.html`
+- `templates/lexicon/detail.html`
+- `tests/js/vocabulary-trainer.test.cjs`
+- `tests/test_vocabulary_trainer_concurrency.py`
+- `tests/test_vocabulary_trainer_content.py`
+- `tests/test_vocabulary_trainer_service.py`
+- `tests/test_vocabulary_trainer_views.py`
