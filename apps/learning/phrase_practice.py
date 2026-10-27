@@ -12,13 +12,13 @@ import random
 import uuid
 
 from django.db import transaction
-from django.db.models import Count, Max
+from django.db.models import Count, F, Max
 from django.utils import timezone
 
 from apps.lexicon.models import LexicalUnit, UnitType
 
 from . import memory
-from .models import UnitProgress
+from .models import PhraseStats, UnitProgress
 from .phrase_checker import check
 from .phrase_engine import engine
 from .phrase_engine.engine import STYPE_RU, make_phrase, tokenize
@@ -181,11 +181,17 @@ def _next_item(user, st, now):
         fams_seen = (prog.memory_evidence or {}).get("families", []) if prog else []
         if mode == "independent" and fams_seen and phrase.family not in fams_seen:
             mode = "transfer"
-        return _item_payload(ctx, phrase, mode, rng, st["i"], len(st["queue"]))
+        puzzle = rng.random() * 100 < memory.puzzle_percent(correct_total(user), cfg)
+        return _item_payload(ctx, phrase, mode, rng, st["i"], len(st["queue"]), puzzle)
     return None
 
 
-def _item_payload(ctx, phrase, mode, rng, number, total):
+def correct_total(user) -> int:
+    """Верных фраз за всё время (0, если тренировок ещё не было)."""
+    return (PhraseStats.objects.filter(user=user).values_list("correct_total", flat=True).first() or 0)
+
+
+def _item_payload(ctx, phrase, mode, rng, number, total, puzzle=False):
     words = tokenize(phrase.text)
     bank = list(words)
     if bank:  # заглавная буква первого слова — только из-за начала фразы (кроме I, TV, Monday …)
@@ -208,7 +214,9 @@ def _item_payload(ctx, phrase, mode, rng, number, total):
         "family": phrase.family, "family_name_ru": phrase.family_name_ru,
         "stype": phrase.stype, "stype_ru": STYPE_RU[phrase.stype],
         "target": phrase.target, "lemmas": phrase.lemmas, "accepted": phrase.accepted,
-        "mode": mode, "bank": shuffled if mode in ("full", "partial") else [],
+        # Пазл: все слова на карточках, засчитывается памяти как пазл (а не самостоятельный ответ).
+        "mode": "puzzle" if puzzle else mode, "input": "puzzle" if puzzle else "typing",
+        "bank": shuffled if puzzle or mode in ("full", "partial") else [],
         "first_word": words[0] if mode == "full" and words else "",
         "glosses": glosses, "answered": False, "advance": False, "result": None,
     }
@@ -233,6 +241,9 @@ def answer(request, item_id: str, text: str, now=None):
         "sample": res.sample, "lemma": res.lemma, "answer": text[:300], "changes": changes,
     }
     st["correct" if res.correct else "errors"] += 1
+    if res.correct:
+        stats, _ = PhraseStats.objects.get_or_create(user=request.user)
+        PhraseStats.objects.filter(pk=stats.pk).update(correct_total=F("correct_total") + 1)
     _save(request, st)
     return item["result"]
 

@@ -17,6 +17,8 @@
   </section>
   {% endif %}
 
+  {% if started %}<p class="trainer-notice">Верных фраз за всё время: {{ correct_total }} · пазлов сейчас: {{ puzzle_percent }}%{% if puzzle_percent == 100 %} (набор с клавиатуры начнёт появляться с 3000 верных фраз){% endif %}.</p>{% endif %}
+
   {% if not started %}
   <section class="trainer-card"><h2>Сначала — урок</h2><p>Тренировка появится после первого урока: она использует только изученные слова.</p><p><a class="trainer-button" href="{% url 'learning:dashboard' %}">К урокам</a></p></section>
   {% elif not item %}
@@ -27,18 +29,25 @@
     <h2 id="phrase-task-title">Составьте {{ item.stype_ru }}</h2>
     <h3>Слова фразы</h3>
     <ul>{% for g in item.glosses %}<li><span lang="en">{{ g.en }}</span> — {{ g.ru }}{% if g.target %} <strong>(тренируем)</strong>{% endif %}</li>{% endfor %}</ul>
-    {% if item.mode == 'full' or item.mode == 'partial' %}
+    {% if item.input == 'puzzle' %}
+    <h3>Пазл</h3>
+    <p>Нажимайте карточки по порядку — из них соберётся фраза.</p>
+    {% elif item.mode == 'full' or item.mode == 'partial' %}
     <h3>Карточки слов</h3>
     <p class="trainer-prompt" lang="en" id="phrase-bank">{{ item.bank|join:" · " }}</p>
     <p>Карточки перемешаны. Расставьте их в нужном порядке; нужные формы уже на карточках.</p>
     {% endif %}
     {% if item.first_word %}<p class="trainer-notice">Подсказка: фраза начинается со слова <span lang="en">«{{ item.first_word }}»</span>.</p>{% endif %}
-    {% if item.mode == 'independent' or item.mode == 'transfer' %}<p class="trainer-notice">Без карточек: соберите фразу сами — с нужными формами слов.</p>{% endif %}
+    {% if item.input == 'typing' and item.mode == 'independent' or item.input == 'typing' and item.mode == 'transfer' %}<p class="trainer-notice">Без карточек: соберите фразу сами — с нужными формами слов.</p>{% endif %}
 
     {% if not item.answered %}
-    <form method="post">{% csrf_token %}
+    <form method="post"{% if item.input == 'puzzle' %} data-phrase-puzzle{% endif %}>{% csrf_token %}
       <input type="hidden" name="item" value="{{ item.id }}">
-      <label for="phrase-answer">Ваша фраза по-английски</label>
+      {% if item.input == 'puzzle' %}
+      <div class="phrase-puzzle" data-puzzle-bank hidden>{% for w in item.bank %}<button type="button" class="trainer-secondary" lang="en" data-word="{{ w }}">{{ w }}</button>{% endfor %}</div>
+      <div class="phrase-puzzle" data-puzzle-tools hidden><button type="button" class="trainer-secondary" data-puzzle-undo>Убрать последнее</button><button type="button" class="trainer-secondary" data-puzzle-reset>Собрать заново</button></div>
+      {% endif %}
+      <label for="phrase-answer">{% if item.input == 'puzzle' %}Собранная фраза{% else %}Ваша фраза по-английски{% endif %}</label>
       <input id="phrase-answer" name="answer" type="text" maxlength="300" lang="en" autocomplete="off" autocapitalize="off" spellcheck="false" required{% if item.bank %} aria-describedby="phrase-bank"{% endif %}>
       <div class="trainer-actions">
         <button type="submit" name="action" value="check">Проверить</button>
@@ -63,3 +72,4 @@
   <footer class="trainer-footer"><p>Это пробная версия: фразы составляет программа по правилам, которые ещё проверяет редактор. Если фраза звучит неестественно, это ошибка программы, а не ваша.</p></footer>
 </div>
 {% endblock %}
+{% block scripts %}<script src="{% static 'js/phrase-puzzle.js' %}" defer></script>{% endblock %}

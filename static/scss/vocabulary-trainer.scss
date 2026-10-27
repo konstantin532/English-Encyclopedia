@@ -48,3 +48,7 @@
   }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 }
+.phrase-puzzle { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0; }
+.phrase-puzzle[hidden] { display: none; }
+.vocabulary-trainer .phrase-puzzle button { min-height: 2.75rem; padding: 0.5rem 0.85rem; }
+.vocabulary-trainer .phrase-puzzle button:disabled { opacity: 0.35; cursor: default; }

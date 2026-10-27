@@ -394,3 +394,13 @@ class PersonalMnemonic(models.Model):
 
     class Meta:
         constraints = [models.UniqueConstraint(fields=['user', 'unit'], name='unique_personal_mnemonic')]
+
+
+class PhraseStats(models.Model):
+    """Счётчик верных фраз ученика за всё время: от него зависит доля пазлов."""
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="phrase_stats")
+    correct_total = models.PositiveIntegerField(default=0)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.user} · верных фраз: {self.correct_total}"

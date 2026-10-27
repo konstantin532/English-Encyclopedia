@@ -49,5 +49,7 @@ def phrase_practice_view(request):
         "summary": phrase_practice.summary(request.user),
         "started": state.get("pos") is not None,
         "done": state.get("correct", 0) + state.get("errors", 0),
+        "correct_total": (total := phrase_practice.correct_total(request.user)),
+        "puzzle_percent": memory.puzzle_percent(total),
     }
     return render(request, "learning/phrases.html", context)
