@@ -1,12 +1,13 @@
 from django.urls import path
 
-from . import trainer_views, views, speech_practice, delayed_review_views, independent_views, transfer_pilot, cafe_mission
+from . import phrase_views, trainer_views, views, speech_practice, delayed_review_views, independent_views, transfer_pilot, cafe_mission
 
 app_name = "learning"
 urlpatterns = [
     path("vocabulary/", trainer_views.trainer, name="trainer"),
     path("vocabulary/<int:session_id>/", trainer_views.encounter, name="trainer_session"),
     path("vocabulary/<int:session_id>/status/", trainer_views.status, name="trainer_status"),
+    path("phrases/", phrase_views.phrase_practice_view, name="phrases"),
     path("", views.dashboard, name="dashboard"),
     path("markers/", views.toggle_markers, name="toggle_markers"),
     path("review/", views.review, name="review"),

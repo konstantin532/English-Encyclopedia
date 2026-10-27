@@ -1,0 +1,175 @@
+# ЧЕРНОВАЯ разметка глаголов A1 + A1+ (status: draft, автор: Claude, 2026-10-27).
+# Формат: лемма | рамки | continuous | прош.вр. | примечание
+# Рамки (через ;):
+#   T:<что>        — переходный: что может быть прямым дополнением (#тег = тип существительного, слово = конкретная лемма)
+#   I              — может стоять без дополнения
+#   P:<предлог>:<что> — дополнение через предлог (listen TO music)
+#   L:<предлог>:<что> — обязательное обстоятельство места (live IN a city)
+#   S:<кто>        — кто бывает подлежащим (по умолчанию #person)
+#   SI:<кто>       — неодушевлённое подлежащее без дополнения: The store opens at nine. My back hurts.
+#   X              — не использовать в свободной генерации (только в готовых фразах уроков)
+# continuous: yes / no (глагол состояния — в норме не ставится в -ing в этом значении)
+# прош.вр.: форма Past Simple; reg = правильный (-ed)
+
+## D1 опорные
+be | X | yes | was/were | вспомогательный и связка — отдельные шаблоны
+do | X | yes | did | вспомогательный — отдельные шаблоны
+have | T:#obj #wear #instrument #toy #device #vehicle_in #vehicle_on #home #animal #kin | no | had | have-1 «иметь» (состояние). have-2 «есть/принимать пищу» — отдельная рамка have_meal
+
+## D2 повседневные действия
+bake | T:#baked; I | yes | reg |
+borrow | T:book guidebook umbrella charger pen pencil camera bike car money | yes | reg | обычно + from
+break | T:#fragile | yes | broke |
+bring | T:#obj #wear #food #drink #dish #utensil friend guest | yes | brought |
+buy | T:#obj #wear #food #drink #dish #utensil #instrument #toy #device ticket car bike house apartment | yes | bought |
+carry | T:#container bag box suitcase baby #obj | yes | reg |
+celebrate | T:birthday | yes | reg |
+change | T:bulb battery password #wear seat | yes | reg | change money/clothes — отдельные устойчивые сочетания
+clean | T:#room #furniture #appliance floor window door sink toilet shower #dish car bike house apartment | yes | reg |
+close | T:door window box bag suitcase book notebook mailbox store; SI:store bank cafe pharmacy supermarket library museum mall shop restaurant | yes | reg | непереходное: The store closes at nine.
+cook | T:#cookable breakfast lunch dinner; I | yes | reg |
+dance | I | yes | reg |
+delay | X | yes | reg | обычно пассив: The flight is delayed.
+draw | T:picture map flower tree cat house car sun; I | yes | drew |
+drink | T:#drink | yes | drank |
+drop | T:#obj #dish #utensil #device | yes | reg |
+eat | T:#food breakfast lunch dinner; I; S:#person #animal | yes | ate | salt/sugar отсечены ниже правилом seasoning
+feed | T:#animal baby | yes | fed |
+fix | T:#fixable | yes | reg |
+get | X | yes | got | многозначный: get up, get a message, get home — только готовые фразы
+give | X | yes | gave | двупереходный (give me the key) — отдельный шаблон после A1+ нед. 6
+grow | T:flower vegetable plant tree potato strawberry; SI:#plant child baby | yes | grew |
+happen | X | yes | reg | подлежащее something/what — отдельный шаблон
+help | T:#person; I | yes | reg |
+hold | T:#obj #dish baby | yes | held |
+keep | T:receipt ticket money key passport photo | yes | kept | review: keep + место (keep it in the fridge)
+knock | P:on:door window | yes | reg |
+laugh | I | yes | reg |
+leak | SI:sink faucet pipe toilet ceiling | yes | reg |
+lend | X | yes | lent | двупереходный
+live | L:in:city town country state house apartment cabin | yes | reg | review: continuous — временно (I'm living in…)
+lose | T:key phone wallet passport ticket umbrella glasses ring card money bag camera | yes | lost |
+make | T:sandwich salad soup breakfast lunch dinner coffee tea cookie pie lemonade | yes | made | make a mess / make noise — устойчивые
+open | T:door window box bag suitcase book notebook package envelope letter email mailbox fridge; SI:store bank cafe pharmacy supermarket library museum mall shop restaurant | yes | reg | непереходное: The bank opens at nine.
+order | T:#food #drink dessert taxi | yes | reg |
+pack | T:bag suitcase backpack #wear sunscreen guidebook | yes | reg |
+paint | T:picture wall room house door; I | yes | reg |
+pay | T:rent cashier driver landlord; I | yes | paid | pay for — отдельная рамка
+play | T:#game #instrument ball music | yes | reg | инструмент с the: play the guitar
+print | T:photo ticket form report letter page application picture | yes | reg |
+put | X | yes | put | обязательное место: put the cup on the table — шаблон Imperative
+read | T:#readable | yes | read |
+relax | I | yes | reg |
+repair | T:#fixable | yes | reg |
+rest | I | yes | reg |
+sell | T:#obj #wear #food #instrument #device car bike house | yes | sold |
+send | T:#mail #mail_e photo video gift application report form | yes | sent |
+share | T:sandwich pie salad photo video room apartment umbrella | yes | reg |
+show | T:photo ticket passport picture album video map | yes | showed |
+sign | T:form application letter card receipt report | yes | reg |
+sing | T:song; I | yes | sang |
+sit | L:on:chair sofa bench floor bed grass; L:at:table desk window counter; I | yes | sat |
+sleep | I | yes | slept |
+smile | I | yes | reg |
+smoke | I | yes | reg |
+sneeze | I | yes | reg |
+spend | X | yes | spent | spend money on …, spend time — требует квантора
+stand | L:at:door window counter stop | yes | stood |
+stay | L:at:hotel; L:in:city town hotel | yes | reg |
+swallow | T:pill medicine | yes | reg |
+take | T:pill medicine bus train taxi photo umbrella shower | yes | took | несколько значений: take a pill / take the bus / take a photo — сочетания перечислены явно
+throw | T:ball | yes | threw |
+try | T:#food #drink | yes | reg | try + to — отдельная рамка
+use | T:phone computer knife fork spoon hammer tool camera map charger pen pencil towel sunscreen cream elevator stairs | yes | reg |
+wait | I; P:for:#person bus train taxi | yes | reg |
+wake | X | yes | woke | wake up — фразовый
+wash | T:#dish #utensil car shirt towel apron | yes | reg | review: wash my hands / your face — притяжательное должно совпадать с подлежащим, отдельное правило
+wear | T:#wear ring uniform | yes | wore |
+work | I; L:at:bank cafe hospital hotel office restaurant school store supermarket pharmacy library museum; L:in:office | yes | reg |
+
+## D3 состояния и чувства
+cost | X | no | cost | The ticket costs ten dollars — отдельный шаблон с ценой
+enjoy | T:#food #media #game party concert picnic vacation birthday adventure trip music class lesson | yes | reg |
+feel | X | yes | felt | связка: feel + прилагательное — отдельный шаблон
+hate | T:#food #drink #media #game #animal party concert picnic vacation birthday adventure trip music | no | reg |
+hope | X | yes | reg | hope + that/to
+hurt | SI:#body | yes | hurt | My back hurts.
+like | T:#food #drink #media #game #animal #kin party concert picnic vacation birthday adventure trip music | no | reg |
+love | T:#food #drink #media #game #animal #kin party concert picnic vacation birthday adventure trip music | no | reg |
+miss | T:#kin home bus train | no | reg | miss the bus и miss my mom — разные значения
+need | T:#obj #wear #medical #money doctor ticket help | no | reg |
+want | T:#food #drink #obj #wear #device #toy #instrument #animal | no | reg |
+worry | I; P:about:#kin exam test money | yes | reg |
+
+## D4 движение
+arrive | I; L:at:#building; L:in:city town country | yes | reg |
+come | I | yes | came | come home / come to … — отдельная рамка направления
+cross | T:street road bridge | yes | reg |
+drive | T:car bus taxi; I | yes | drove |
+fly | T:kite | yes | flew |
+follow | T:#person | yes | reg |
+go | X | yes | went | направление: go to the park / go home — шаблон Imperative и направления
+hike | I | yes | reg |
+hurry | I | yes | reg |
+leave | T:#building #home | yes | left |
+move | T:#furniture | yes | reg |
+return | T:#readable #obj; I | yes | reg |
+ride | T:bike bus train | yes | rode |
+swim | I | yes | swam |
+travel | I | yes | reg |
+turn | X | yes | reg | turn left/right — шаблон Imperative
+visit | T:#kin friend #building #area | yes | reg |
+walk | I | yes | reg |
+
+## D5 речь
+answer | T:question phone email message door | yes | reg |
+apply | X | yes | reg | apply for a job / to college
+ask | T:question #person | yes | reg |
+call | T:#person taxi | yes | reg |
+chat | I | yes | reg |
+describe | T:#person #room | yes | reg |
+excuse | X | no | reg | только Excuse me
+explain | T:rule problem question word sentence | yes | reg |
+invite | T:#person | yes | reg |
+promise | X | yes | reg | promise + to
+recommend | T:#food #drink restaurant hotel book movie | yes | reg | без притяжательных: recommend the fish
+repeat | T:question word sentence number name | yes | reg |
+say | X | yes | said | say + цитата/that
+speak | T:#lang; I | yes | spoke |
+spell | T:name word address | yes | reg |
+talk | I; P:to:#person | yes | reg |
+teach | T:#lang #subject | yes | taught |
+tell | T:story secret | yes | told |
+text | T:#kin #role | yes | reg |
+write | T:letter email message story report word sentence name address postcard song book | yes | wrote |
+
+## D6 мышление и восприятие
+check | T:email message phone address ticket price passport homework forecast mailbox | yes | reg |
+choose | T:color size dish gift seat #wear | yes | chose |
+decide | X | yes | reg | decide + to
+find | T:key phone wallet passport ticket umbrella glasses ring card bag camera | yes | found |
+forget | T:name password number word address umbrella passport ticket key | no | forgot |
+guess | T:word number name price | yes | reg |
+hear | T:noise music voice song bell | no | heard | review: can hear — в A1+ через can
+know | T:#person name address number word rule song #lang | no | knew |
+learn | T:#lang word song rule skill #subject | yes | reg |
+listen | P:to:music song #person story | yes | reg |
+look | P:at:photo picture map menu sky #person | yes | reg |
+mean | X | no | meant |
+plan | T:trip party vacation picnic | yes | reg |
+remember | T:name password number address word #kin | no | reg |
+see | T:#person #animal movie #building | no | saw |
+study | T:#lang #subject; I | yes | reg |
+understand | T:question rule word sentence #person #lang | no | understood |
+watch | T:TV movie video game | yes | reg |
+
+## D7 модальные — отдельные шаблоны
+can | X | no | could |
+cannot | X | no | - |
+must | X | no | - |
+will | X | no | - |
+would | X | no | - |
+
+## D8 фазовые
+finish | T:homework project report exercise test exam book breakfast lunch dinner | yes | reg |
+start | T:project job course car; SI:class lesson meeting course movie concert party | yes | reg | The class starts at nine.

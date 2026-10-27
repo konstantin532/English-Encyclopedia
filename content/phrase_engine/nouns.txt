@@ -1,0 +1,459 @@
+# ЧЕРНОВАЯ разметка существительных A1 + A1+ (status: draft, автор: Claude, 2026-10-27).
+# Формат: лемма | теги (тип значения) | исчисляемость | флаги
+# Исчисляемость: C — исчисляемое, U — неисчисляемое, CU — оба употребления, PL — лемма во мн. числе,
+#                P — имя собственное (без артикля, с заглавной).
+# Флаги: size=S/M/L/X — размер предмета; cap=S/M/L — вместимость (во что можно положить);
+#        holds=… — что именно бывает внутри; surf — на нём что-то лежит/сидят (on);
+#        under — под ним есть место (under); lm — ориентир для near/behind;
+#        wall — висит на стене; zero — без артикля в устойчивом сочетании (at home);
+#        coll — собирательное, в AmE согласуется в ед. ч.; review=… — требует решения редактора.
+#        rel — «свой» человек: естественно с my/your (my teacher); остальные люди — с the (the farmer).
+#        pl_ok — естественно во мн.ч. с притяжательным (my brothers, но не *my moms).
+#        public — общее, не «моё»: *my counter, *his taxi, *her stairs.
+#        nonagent — не бывает деятелем большинства действий: *The baby buys a bike.
+
+## S1 люди и семья
+baby | person kin | C | size=M rel nonagent
+boy | person | C |
+brother | person kin | C | rel pl_ok
+cashier | person role | C |
+child | person | C |
+classmate | person role | C | rel pl_ok
+customer | person role | C |
+dad | person kin | C | rel
+daughter | person kin | C | rel pl_ok
+family | person kin | C | coll rel
+father | person kin | C | rel
+friend | person kin | C | rel pl_ok
+girl | person | C |
+grandfather | person kin | C | rel
+grandmother | person kin | C | rel
+grandparent | person kin | C | rel pl_ok
+guest | person role | C |
+landlord | person role | C | rel
+man | person | C |
+mom | person kin | C | rel
+mother | person kin | C | rel
+owner | person role | C |
+person | person | C | review=мн.ч. people
+plumber | person role | C |
+server | person role | C |
+sister | person kin | C | rel pl_ok
+son | person kin | C | rel pl_ok
+stranger | person | C |
+tourist | person role | C |
+
+## S2 дом и предметы
+album | obj image | C | size=M
+apartment | building home | C | lm
+apron | wear | C | size=M
+backpack | obj container | C | size=M cap=M
+bag | obj container | C | size=M cap=M
+ball | obj toy | C | size=M
+basement | room | C |
+basket | obj container | C | size=M cap=M
+bathroom | room | C |
+battery | obj | C | size=S
+bed | furniture | C | surf under lm size=X
+bedroom | room | C |
+bell | fixture | C | review=звонок двери/колокольчик, вне шаблонов места
+blanket | obj textile | C | size=M
+book | obj readable | C | size=M
+boots | wear | PL | size=M
+box | obj container | C | size=M cap=M
+bucket | obj container | C | size=M cap=M holds=tool
+bulb | obj fragile | C | size=S
+camera | obj device fragile fixable | C | size=M
+card | obj readable money_item | C | size=S review=открытка/банковская карта — два значения
+ceiling | fixture | C | flat public
+chair | furniture | C | surf under lm size=X
+charger | obj device | C | size=S
+clock | obj fixable | C | size=M wall
+coat | wear | C | size=L
+color | abstract | C | review=вне шаблонов места
+computer | obj device fragile fixable | C | size=L lm
+counter | furniture | C | surf lm size=X public
+cup | dish fragile | C | size=S
+cupboard | furniture container | C | lm cap=L size=X
+desk | furniture | C | surf under lm size=X
+dish | dish | C | size=M review=тарелка/блюдо — два значения
+door | fixture | C | lm fixable public
+dress | wear | C | size=M
+drum | instrument | C | size=L
+envelope | obj mail | C | size=S
+faucet | fixture fixable | C | public
+floor | fixture | C | surf flat public
+fork | utensil | C | size=S
+fridge | appliance container | C | lm cap=L holds=food size=X fixable
+gift | obj | C | size=M
+glass | dish fragile | C | size=S review=стакан (C) / стекло (U)
+glasses | wear | PL | size=S review=очки, мн.ч.
+gloves | wear | PL | size=S
+grill | appliance | C | lm size=X public
+guidebook | obj readable | C | size=M
+guitar | instrument | C | size=L
+hammer | tool | C | size=M
+handle | part | C | review=часть предмета, вне шаблонов
+hat | wear | C | size=M
+heater | appliance fixable | C | lm size=L
+home | home | C | zero review=at home / go home без артикля
+house | building home | C | lm
+jacket | wear | C | size=M
+jeans | wear | PL | size=M
+key | obj | C | size=S
+kitchen | room | C |
+kite | obj toy | C | size=L
+knife | utensil | C | size=S
+label | part | C | review=вне шаблонов места
+lamp | obj fragile fixable | C | size=M lm
+lock | part fixable | C | review=вне шаблонов места
+luggage | obj | U | size=L
+machine | appliance fixable | C | lm size=X public
+mailbox | fixture container | C | lm cap=M holds=mail public
+mess | abstract | U | review=make a mess
+mirror | obj fragile | C | size=M wall lm
+napkin | obj | C | size=S
+notebook | obj readable | C | size=S
+package | obj mail | C | size=M
+paper | obj | U | size=S review=бумага (U) / газета (C)
+passport | obj readable | C | size=S
+pen | obj | C | size=S
+pencil | obj | C | size=S
+phone | obj device fragile fixable | C | size=S
+photo | obj image | C | size=S wall
+picture | obj image | C | size=M wall
+pillow | obj textile | C | size=M
+pipe | fixture fixable | C | public
+plate | dish fragile | C | size=M surf holds=food
+pocket | part container | C | cap=S
+receipt | obj readable | C | size=S
+ring | obj | C | size=S
+room | room | C |
+rug | furniture textile | C | surf under flat size=X
+scarf | wear | C | size=M
+screen | part | C | review=часть устройства
+seat | furniture | C | surf size=X public review=in/on the seat
+shelf | furniture | C | surf lm size=X
+shirt | wear | C | size=M
+shoes | wear | PL | size=M
+shower | fixture room_like | C | public review=take a shower / in the shower
+sink | fixture container fixable | C | under lm cap=M holds=dish public
+size | abstract | C | review=вне шаблонов места
+sofa | furniture | C | surf under lm size=X
+souvenir | obj | C | size=S
+spoon | utensil | C | size=S
+stairs | fixture | PL | surf flat public
+stamp | obj mail | C | size=S
+suitcase | obj container | C | size=L cap=L
+sunglasses | wear | PL | size=S
+sweater | wear | C | size=M
+swimsuit | wear | C | size=M
+switch | fixture | C | review=вне шаблонов места
+table | furniture | C | surf under lm size=X
+tent | building_like | C | lm size=X
+ticket | obj readable | C | size=S
+toilet | fixture fixable | C | lm public
+tool | tool | C | size=M
+towel | obj textile | C | size=M
+trash | container_mass | U | cap=M review=in the trash
+tray | obj | C | size=M surf
+TV | appliance fixable | C | lm size=L
+umbrella | obj | C | size=M
+uniform | wear | C | size=M
+wall | fixture | C | flat public
+wallet | obj container | C | size=S cap=S holds=money
+window | fixture fragile | C | lm public
+
+## S3 еда и напитки
+apple | food fruit | C | size=S
+banana | food fruit | C | size=S
+bread | food baked | U | size=M
+breakfast | meal | C | zero review=have breakfast без артикля
+cheese | food | U | size=S
+chicken | food cookable | U | size=M review=курица-еда (U) / курица-птица (C)
+coffee | drink hot_drink | CU |
+cookie | food baked sweet | C | size=S
+dessert | food sweet | C | size=S
+dinner | meal | C | zero
+egg | food cookable | C | size=S
+fish | food cookable | U | size=M review=рыба-еда (U) / рыба-животное (C, мн. fish) — второго значения в словаре нет
+food | food | U |
+fruit | food fruit | CU | size=S
+honey | food sweet | U | size=S
+juice | drink | CU |
+lemonade | drink | U |
+lunch | meal | C | zero
+meat | food cookable | U | size=M
+milk | drink | U |
+pasta | food cookable | U | size=M
+picnic | event | C |
+pie | food baked sweet | C | size=M
+potato | food cookable | C | size=S
+rice | food cookable | U | size=M
+salad | food | CU | size=M
+salt | food seasoning | U | size=S
+sandwich | food | C | size=S
+soup | food cookable | U | size=M
+strawberry | food fruit | C | size=S
+sugar | food seasoning | U | size=S
+tea | drink hot_drink | CU |
+vegetable | food cookable | C | size=S
+water | drink | U |
+watermelon | food fruit | C | size=L
+
+## S4 места и город (здесь же транспорт — семантическая группа S4 шире типа «место»)
+airport | building | C | lm
+avenue | street | C | review=обычно с названием: on Fifth Avenue
+bank | building | C | lm
+bench | furniture outdoor | C | surf under lm size=X public
+bike | vehicle_on | C | lm size=L fixable
+block | street | C | review=around the block / on my block
+boat | vehicle_on | C | lm size=X public
+bridge | street | C | lm
+building | building | C | lm
+bus | vehicle_on | C | lm public
+cabin | building | C | lm
+cafe | building | C | lm
+car | vehicle_in | C | lm size=X fixable
+church | building | C | lm
+city | area | C |
+classroom | room | C |
+corner | street | C | review=on the corner / at the corner
+country | area | C |
+crosswalk | street | C | lm public
+elevator | room_like | C | lm public review=in the elevator
+entrance | point | C | lm public
+flight | event | C | review=не место: the flight is delayed
+fountain | outdoor | C | lm public
+gate | point | C | lm public
+gym | building | C | lm
+hospital | building | C | lm
+hotel | building | C | lm
+library | building | C | lm
+mall | building | C | lm
+map | obj readable image | C | size=M wall
+museum | building | C | lm
+office | building room | C | lm
+park | area | C | lm
+pharmacy | building | C | lm
+plane | vehicle_on | C | public
+restaurant | building | C | lm
+road | street | C |
+school | building | C | lm
+shop | building | C | lm
+square | area | C | lm
+state | area | C | review=штат: in the state of …
+station | building | C | lm
+statue | outdoor | C | lm public
+stop | point | C | lm public review=bus stop
+store | building | C | lm
+street | street | C |
+supermarket | building | C | lm
+taxi | vehicle_in | C | public
+town | area | C |
+train | vehicle_on | C | public
+trip | event | C |
+
+## S5 тело и здоровье
+allergy | illness | C | review=have an allergy to …
+arm | body | C |
+back | body | C |
+bandage | medical obj | C | size=S
+body | body | C | review=вне шаблонов «у меня болит»
+cough | illness | C |
+cream | medical | U | size=S
+ear | body | C |
+eye | body | C |
+face | body | C |
+fever | illness | C |
+finger | body | C |
+flu | illness | U | review=AmE: have the flu
+foot | body | C |
+hair | body | U |
+hand | body | C |
+head | body | C |
+headache | illness | C |
+leg | body | C |
+medicine | medical | U | size=S
+mouth | body | C |
+neck | body | C |
+nose | body | C |
+pain | illness | CU | review=have a pain in … / pain (U)
+pill | medical obj | C | size=S
+prescription | medical readable | C | size=S
+stomach | body | C |
+sunscreen | medical | U | size=S
+temperature | abstract | C | review=have a temperature / the temperature is …
+thermometer | medical obj | C | size=S
+throat | body | C |
+tooth | body | C |
+
+## S6 природа и животные
+ant | animal | C | size=S
+beach | area outdoor | C | lm review=on/at the beach
+cat | animal | C | size=M
+cloud | nature | C |
+flower | plant | C | size=S
+garden | area | C | lm
+grass | plant | U | surf flat public
+hill | area outdoor | C | lm
+island | area | C |
+lake | area water | C | lm
+mountain | area outdoor | C | lm
+ocean | area water | C |
+pet | animal | C | size=M
+plant | plant | C | size=M lm
+rain | weather | U |
+river | area water | C | lm
+sand | nature | U | surf flat public
+sea | area water | C |
+shade | nature | U | review=in the shade
+sky | nature | C | review=in the sky, обычно the sky
+snow | weather | U |
+storm | weather | C |
+sun | nature | C | review=обычно the sun
+tree | plant outdoor | C | lm under
+weather | weather | U |
+wind | weather | CU |
+
+## S7 время и календарь
+afternoon | partday | C |
+April | month | P |
+August | month | P |
+bedtime | time | U |
+birth | abstract | U | review=date of birth
+birthday | event | C |
+date | time | C |
+day | time | C |
+December | month | P |
+evening | partday | C |
+fall | season | C |
+February | month | P |
+Friday | weekday | P |
+future | abstract | U | review=in the future
+hour | time | C |
+January | month | P |
+July | month | P |
+June | month | P |
+March | month | P |
+May | month | P |
+minute | time | C |
+Monday | weekday | P |
+month | time | C |
+morning | partday | C |
+night | partday | C |
+November | month | P |
+October | month | P |
+Saturday | weekday | P |
+season | time | C |
+September | month | P |
+spring | season | C |
+summer | season | C |
+Sunday | weekday | P |
+sunrise | time | C |
+sunset | time | C |
+Thursday | weekday | P |
+time | time | CU | review=time (U) / one time (C)
+Tuesday | weekday | P |
+vacation | event | C |
+Wednesday | weekday | P |
+week | time | C |
+weekend | time | C |
+winter | season | C |
+year | time | C |
+
+## S8 чувства и мысли
+dream | abstract | C |
+memory | abstract | C |
+
+## S9 работа, учёба, общение
+address | info | C |
+application | doc readable | C |
+barista | person role | C |
+boss | person role | C | rel
+chef | person role | C |
+class | event study | C |
+colleague | person role | C | rel pl_ok
+college | building study_place | C | lm review=go to college без артикля в AmE
+course | event study | C |
+direction | info | C | review=directions (мн.) — как пройти
+doctor | person role | C | rel
+driver | person role | C | rel
+email | doc readable mail_e | C |
+engineer | person role | C |
+exam | event study | C |
+exercise | doc study | C |
+experience | abstract | U |
+farmer | person role | C |
+form | doc readable | C |
+history | subject | U |
+homework | doc study | U |
+interview | event | C |
+job | abstract job | C |
+lesson | event study | C |
+letter | doc readable mail | C | size=S review=письмо / буква
+line | point | C | review=in line — очередь
+mail | mail_mass | U |
+manager | person role | C | rel
+math | subject | U |
+meeting | event | C |
+menu | doc readable | C | size=S
+message | doc readable mail_e | C |
+name | info | C |
+number | info | C |
+nurse | person role | C | rel
+page | doc readable | C |
+password | info | C |
+postcard | doc readable mail | C | size=S
+project | abstract work | C |
+question | info | C |
+report | doc readable work | C |
+rule | info | C |
+sentence | info | C |
+shift | event work | C |
+signature | info | C |
+singer | person role | C |
+skill | abstract | C |
+student | person role | C |
+subject | abstract | C | review=школьный предмет
+teacher | person role | C | rel
+team | person | C | coll rel
+test | event study | C |
+university | building study_place | C | lm
+video | doc media | C |
+voice | abstract | C |
+waiter | person role | C |
+word | info | C |
+writer | person role | C |
+
+## S10 общество и идеи
+adventure | event | C |
+art | subject | U |
+concert | event | C |
+emergency | event | C |
+English | lang | P |
+favor | abstract | C | review=do a favor / ask for a favor
+forecast | info | C |
+game | game | C |
+hobby | abstract | C |
+language | lang_common | C |
+movie | media | C |
+music | media | U |
+noise | sound | CU |
+party | event | C |
+problem | abstract | C |
+Russian | lang | P |
+secret | info | C |
+song | media | C |
+story | doc media | C |
+traffic | abstract | U |
+
+## N6 / N9 деньги и единицы (в разметке курса — числительные)
+cash | money | U |
+dollar | money | C |
+money | money | U |
+price | info | C |
+rent | money | U |
+sale | event | C |
+tip | money | C |
+degree | unit | C |

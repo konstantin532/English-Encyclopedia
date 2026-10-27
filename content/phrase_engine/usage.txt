@@ -1,0 +1,56 @@
+# ЧЕРНОВЫЕ правила употребления (status: draft, автор: Claude, 2026-10-27).
+# Это не грамматика, а сочетаемость и прагматика: какие слова естественны в конкретной конструкции.
+# Формат: имя_набора | слова через пробел | зачем
+
+habitual | drink eat cook bake read write watch play clean wash call text visit study teach speak learn buy make check use wear feed help order drive ride take listen pay paint draw sing open close start finish answer | Present Simple «привычка»: Mia drinks coffee every morning. Глаголы одноразовых действий (sell the phone, choose the sweater, describe the shop) в привычке звучат неестественно.
+
+baby_ok | eat drink sleep laugh smile sneeze play | Что естественно делает младенец; остальные действия с подлежащим baby не генерируются.
+
+rule_verbs | wear wash clean close open pay sign wait call check bring use smoke take finish start listen repeat spell write read turn | must / have to: правила и обязанности (You must wear a uniform). *The baristas must sell some shoes.
+
+polite_verbs | open close help call repeat spell explain bring wait fix check send print sign carry hold wash clean read answer move | Could you …, please?
+
+temporary_adj | afraid alone busy dizzy glad happy hungry lucky nervous proud ready sick sleepy sore sure thirsty tired well excited surprised wet dirty hot cold warm cool empty full noisy quiet cloudy foggy freezing rainy sunny windy | was/were + прилагательное с «вчера»: I was tired yesterday. Постоянные свойства (*The colleges were large two days ago) не генерируются.
+
+temporary_times | yesterday | для was/were и глаголов состояния — только «недавнее прошлое»: yesterday, yesterday morning, last night, last weekend, last + день недели
+
+habitual_buy | #food #drink | buy в привычке — только то, что покупают регулярно: She buys bread every day. *Your family buys a bike every evening.
+
+progressive_ok | wait sign pack carry hold | Present Continuous «прямо сейчас»: кроме habitual — эти действия естественны в моменте.
+
+this_adj | big small large little huge tiny long short tall black blue brown gray green orange pink purple red white yellow new old nice favorite beautiful pretty cheap expensive | This is my favorite song. *That is your happy ant.
+
+# too / enough: прилагательное → к чему естественно (про «мешает / хватает»)
+too:hot | #hot_drink soup #room #weather_time water | The soup is too hot.
+too:cold | #drink soup #room #weather_time water | The water is too cold.
+too:warm | #room #wear | The sweater is too warm.
+too:sweet | #drink #food | The juice is too sweet.
+too:spicy | #food | The soup is too spicy.
+too:big | #wear #room #container #home | The shoes are too big.
+too:small | #wear #room #container #home | The room is too small.
+too:large | #wear #room #home | The jacket is too large.
+too:long | dress scarf jeans line movie trip | The movie is too long.
+too:short | dress jeans trip | The dress is too short.
+too:heavy | #container luggage box suitcase | The suitcase is too heavy.
+too:expensive | #wear #obj #food #device ticket hotel restaurant | The ticket is too expensive.
+too:cheap | X | обычно не «слишком дёшево» — не генерируется
+too:difficult | #study question | The test is too difficult.
+too:easy | #study question | The test is too easy.
+too:noisy | #room #building street | The street is too noisy.
+too:dark | #room | The room is too dark.
+too:tired | #person | I am too tired.
+too:busy | #person | She is too busy.
+too:young | #person | He is too young.
+too:old | #wear #device #vehicle_in | The phone is too old.
+
+enough_ok | big large warm long cheap quiet old easy sweet | not … enough / … enough: «хватает ли»: The box is not big enough. *The ticket is not expensive enough.
+
+# if + will: погода → естественное действие
+if:sunny | swim hike walk relax | play ball | have a picnic | wear sunglasses | wear a hat | go to the beach | go to the park
+if:warm | swim hike walk | have a picnic | wear a hat | go to the lake | go to the park
+if:hot | swim relax | wear sunglasses | wear a hat | go to the beach | go to the lake
+if:rainy | rest | stay at home | take an umbrella | wear boots | watch TV | watch a movie | read a book
+if:cold | - | stay at home | wear a coat | wear a sweater | wear a scarf | wear gloves | watch TV
+if:freezing | - | stay at home | wear a coat | wear a scarf | wear gloves | watch a movie
+if:windy | - | stay at home | wear a jacket | play a game
+if:cloudy | - | watch a movie | read a book | play a game
