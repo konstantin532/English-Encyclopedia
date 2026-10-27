@@ -13,6 +13,7 @@
     <a href="{% url 'core:classics' %}"{% if path == '/classics/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>Классика</a>
     {% if user.is_authenticated %}
       <a href="{% url 'learning:review' %}"{% if path == '/learning/review/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></svg>Повторение{% if REVIEW_DUE %} <span class="badge">{{ REVIEW_DUE }}</span>{% endif %}</a>
+      {% if phrases_enabled %}<a href="{% url 'learning:phrases' %}"{% if path == '/learning/phrases/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/></svg>Тренировка фраз</a>{% endif %}
       <a href="{% url 'learning:dashboard' %}"{% if path == '/learning/' %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>Мой прогресс</a>
     {% endif %}
   </nav>
