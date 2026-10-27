@@ -1,5 +1,7 @@
 """Login-only, server-checked five-question practice after a 48-hour pause."""
 from django.contrib.auth.decorators import login_required
+
+from .request_serialization import serialized_learning_post
 from django.db import transaction
 from django.http import HttpResponseBadRequest, JsonResponse
 from django.shortcuts import get_object_or_404, render
@@ -13,6 +15,7 @@ from .mistake_review import COUNT, DELAY, available_reviews, due_reviews, varian
 
 @login_required
 @require_http_methods(["GET", "POST"])
+@serialized_learning_post
 def mistake_review(request):
     if request.method == "POST":
         try:

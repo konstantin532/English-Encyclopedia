@@ -3,6 +3,8 @@ import json
 import re
 
 from django.contrib.auth.decorators import login_required
+
+from .request_serialization import serialized_learning_post
 from django.db import transaction
 from django.http import HttpResponseBadRequest, JsonResponse
 from django.shortcuts import render
@@ -54,6 +56,7 @@ def content_details(key):
 
 @login_required
 @require_http_methods(["GET", "POST"])
+@serialized_learning_post
 def speech_practice_api(request):
     if request.method == "POST":
         # Bound parsing cost just like other JSON learning endpoints.
