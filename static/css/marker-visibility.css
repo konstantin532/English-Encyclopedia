@@ -1,0 +1,4 @@
+/* Visibility preference only; marker types and palette stay in linguistic-markers.css. */
+@layer ee-markers {
+  html[data-markers="off"] .mk { text-decoration: none; }
+}

@@ -1,0 +1,31 @@
+Found 21 test(s).
+System check identified no issues (0 silenced).
+
+.....................
+----------------------------------------------------------------------
+Ran 21 tests in 1.617s
+
+OK
+
+✔ lesson voice ladder starts with a model, recall removes it from current card (1.7254ms)
+✔ transfer hides the provided line and allows a reversible personal mark (1.0574ms)
+✔ tap tempo is reported as tempo of taps only (0.6123ms)
+✔ optional microphone stays local and releases tracks after explicit deletion (0.7963ms)
+✔ compact week recorder works independently of speech entries and modes (0.5935ms)
+✔ leaving while microphone permission is pending releases the late stream (0.5164ms)
+✔ recorder can be used again after returning to a preserved page (0.5078ms)
+✔ a late stop after recorder error does not stop a newer recording (1.2237ms)
+✔ all four stages train understanding, echo, recall and independent transfer (1.0844ms)
+✔ line navigation cannot escape the source material (0.1269ms)
+✔ rhythm indicator is only a tap tempo, never a fake speaking score (0.6885ms)
+✔ no cloud speech APIs, telemetry, hidden storage or uploading recordings (0.1954ms)
+✔ all three training surfaces include the actual script and reusable controls (0.9349ms)
+✔ lesson speech initializes and changes fragments without rhythm controls (1.4314ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 105.3658

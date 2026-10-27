@@ -1,6 +1,6 @@
 {% comment %}Единый речевой тренажёр: данные берутся из уже проверенных строк произведения. Без внешнего ИИ и обязательного микрофона.{% endcomment %}
 <div class="speech-controls" data-speech-controls>
-  <p class="speech-notice">Тренируйте один маленький фрагмент за раз. Скорость не оценивается: сначала чёткость и смысл. Результат отмечаете вы сами.</p>
+  <p class="speech-notice">Тренируйте по одному фрагменту.</p>
   <div class="speech-mode-grid" role="group" aria-label="Режим тренировки речи">
     <button type="button" class="btn btn-quiet btn-small" data-speech-mode="see" aria-pressed="true">1. Понять</button>
     <button type="button" class="btn btn-quiet btn-small" data-speech-mode="echo" aria-pressed="false">2. Произнести</button>
@@ -20,10 +20,11 @@
     <button class="btn btn-quiet btn-small" type="button" data-speech-reveal hidden>Открыть текст</button>
     <button class="btn btn-primary btn-small" type="button" data-speech-done>Мне удалось произнести</button>
   </div>
-  <p class="speech-check" data-speech-status role="status" aria-live="polite">Отметок пока нет. Они не являются автоматической оценкой речи.</p>
+  <p class="speech-check" data-speech-status role="status" aria-live="polite">Отметок пока нет.</p>
+  {% if not lesson_mode %}
   <div class="speech-review-panel" data-speech-review>
     <h4>Умное повторение фраз</h4>
-    <p>Сначала перейдите в «По памяти» или «Перенести». После устной попытки оцените только <strong>насколько самостоятельно получилось</strong>. Это не проверка произношения.</p>
+    <p>Сначала перейдите в «По памяти» или «Перенести». После устной попытки оцените только <strong>насколько самостоятельно получилось</strong>.</p>
     <div class="speech-actions" data-speech-grades hidden>
       <button type="button" class="btn btn-quiet btn-small" data-speech-grade="again">Пока трудно — ещё раз</button>
       <button type="button" class="btn btn-quiet btn-small" data-speech-grade="hard">Получилось с подсказкой</button>
@@ -33,25 +34,16 @@
       <button type="button" class="btn btn-quiet btn-small" data-speech-next-review>Следующая фраза для тренировки →</button>
       {% if user.is_authenticated %}<a class="btn btn-quiet btn-small" href="{% url 'learning:speech_review' %}">Мои речевые повторения</a>{% endif %}
     </div>
-    <p class="speech-check" data-speech-review-status role="status" aria-live="polite">Самооценка — не автоматическая оценка произношения.</p>
+    <p class="speech-check" data-speech-review-status role="status" aria-live="polite">Отметьте, как получилось.</p>
     {% if not user.is_authenticated %}<p>Чтобы сохранять речевые повторения между запусками, <a href="{% url 'accounts:login' %}">войдите в аккаунт</a>.</p>{% endif %}
   </div>
   <div class="speech-beat">
     <h4>Ритм фразы</h4>
-    <p>Нажимайте в момент ударения, пока произносите строку. Это измерит только темп нажатий, а не качество английского.</p>
+    <p>Нажимайте в момент ударения, пока произносите строку.</p>
     <button type="button" class="btn btn-quiet btn-small" data-speech-tap>Отстучать ударение</button>
     <button type="button" class="btn btn-quiet btn-small" data-speech-reset-beat>Сбросить ритм</button>
     <output data-speech-tempo aria-live="polite">Ритм ещё не задан.</output>
   </div>
-  <div class="speech-record">
-    <h4>Послушать себя <small>(по желанию)</small></h4>
-    <p>В браузерах с поддержкой микрофона можно записать голос и сравнить с подсказкой. Аудио остаётся только в памяти этой страницы: на сервер не отправляется и при закрытии страницы исчезает. Автоматическая оценка произношения не выполняется.</p>
-    <div class="speech-actions">
-      <button type="button" class="btn btn-quiet btn-small" data-speech-record>Записать себя</button>
-      <button type="button" class="btn btn-quiet btn-small" data-speech-stop hidden>Остановить</button>
-      <button type="button" class="btn btn-quiet btn-small" data-speech-delete hidden>Удалить запись</button>
-    </div>
-    <audio controls data-speech-playback hidden aria-label="Запись вашей речи"></audio>
-    <p data-speech-record-status role="status" aria-live="polite"></p>
-  </div>
+  {% endif %}
+  {% include "components/speech_recorder.html" %}
 </div>

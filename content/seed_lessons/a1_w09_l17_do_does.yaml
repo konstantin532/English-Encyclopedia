@@ -36,17 +36,17 @@ layers:
       > [O1]Hello[/]! [T2]This[/] [D1]is[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]my[/] [S2]key[/], [O8]please[/]? — Алло! Это Анна. Мой ключ у вас?
       > [T9]What[/] [S7]time[/] [D1]does[/] [T1]the[/] [S4]shop[/] [D2]open[/]? — А во сколько открывается мастерская?
 
-      В **обычных вопросах с have / work / open** помощник **do** или **does** ставят **перед подлежащим**: *Do you have…?*, *Does the shop open…?*. Но не всякий вопрос в английском требует **do**: с **be** и **can** вопросы строятся иначе.
+      В вопросах с **have / work / open** начинаем с **do / does**, затем называем, о ком или о чём спрашиваем: *Do you have…?*, *Does the shop open…?* Но **do** нужен не в каждом вопросе: с **be** и **can** используем другие знакомые образцы.
   - number: 2
     body: |
       Сначала решите, что вы хотите узнать: ответ **да / нет** или конкретную подробность.
 
       **You have my key. → Do you have my key?** — У вас мой ключ. → Мой ключ у вас? Помощник **do** показывает, что это вопрос; слово you — о ком мы спрашиваем — идёт после него.
-      **The shop opens at nine. → Does the shop open at nine?** — Мастерская открывается в девять. → Мастерская открывается в девять? Shop — одна мастерская, поэтому **does**. Основной глагол остаётся **open**, без -s.
+      **The shop opens at nine. → Does the shop open at nine?** — Мастерская открывается в девять. → Мастерская открывается в девять? Shop — одна мастерская, поэтому **does**. Глагол остаётся **open**, без -s.
 
       Если неизвестно само время, вместо at nine спрашиваем **what time** и ставим эти слова в начало: **What time does the shop open?** — Во сколько открывается мастерская? Ответ: **It opens at nine.** В ответе помощника does нет, поэтому снова **opens**.
 
-      Не добавляйте do ко всем вопросам подряд. **Is it your key?** — «Это ваш ключ?» — уже начинается с **is**, формы be. **Do you have my key?** — «Мой ключ у вас?» — содержит смысловой глагол have и требует помощника do. **Can you help me?** уже начинается с can, помощник do ему не нужен.
+      Не добавляйте do ко всем вопросам подряд. **Is it your key?** — «Это ваш ключ?» — уже начинается с **is**, формы be. **Do you have my key?** — «Мой ключ у вас?» — содержит глагол have и требует помощника do. **Can you help me?** уже начинается с can, помощник do ему не нужен.
   - number: 3
     body: |
       Схема вопроса:
@@ -55,9 +55,11 @@ layers:
       > [T9]What[/] [S7]time[/] [D1]does[/] [T1]the[/] [S4]shop[/] [D2]open[/]? — Во сколько открывается мастерская?
 
       - **I, you, we, they** — **do**: *Do you…?*
-      - he, she, it, одна вещь или человек — **does**: Does the shop…?
-      - После do / does — начальная форма смыслового глагола: does the shop open, does she have. Для have это **have**, не **has**.
-      - Для вопросов, где спрашиваем **не о подлежащем**, вопросительное выражение ставим **перед помощником**: *What time does…?*, *Where do you…?*. Позже вы встретите вопросы вроде *Who works here?*, в которых **do/does не нужны**.
+      - **he, she, it**, одна вещь или один человек — **does**: *Does the shop…?*
+      - После **do / does** используем **open**, **have**, без добавленного окончания: *does the shop open*, *does she have*. Нужно **have**, а не **has**.
+      - Если уточняем время или место, ставим эти слова в самое начало: *What time does…?*, *Where do you…?*
+
+      **Для любопытных:** Вопрос *Who works here?* построен иначе: спрашиваем, **кто** работает. В нём **do / does** не нужны. Такой образец разберём отдельно.
 
       Сравните вопросительные слова: одни уже знакомы, другие ещё будут возвращаться в курсе. Сначала выберите, **что хотите узнать**, затем каркас вопроса:
 
@@ -72,7 +74,7 @@ layers:
       [D2]open[/] и [D2]close[/] с he, she, it получают -s: it opens, it closes. Спросить разрешения задать вопрос: [D7]Can[/] [T8]I[/] [D5]ask[/] [T8]you[/]?
   - number: 4
     body: |
-      **Почему open без -s после does?** Форму третьего лица уже показывает **does**, поэтому смысловой глагол ставят в начальной форме. Образ «-s переходит к помощнику» полезен как подсказка, но не следует понимать его буквально. Сравните:
+      **Почему open без -s после does?** Форму третьего лица уже показывает **does**, поэтому глагол ставят как в словаре. Образ «-s переходит к помощнику» полезен как подсказка, но не следует понимать его буквально. Сравните:
 
       - The shop opens at nine. → Does the shop open?
       - Tom works at home. → Does Tom work at home?
@@ -117,7 +119,7 @@ exercises:
     options: ["What time does the shop open?", "What time does the shop opens?", "What time the shop opens?"]
     answer: "What time does the shop open?"
     hint_ru: "С the shop нужен does; после него — open."
-    explanation_ru: "Does уже показывает форму третьего лица с the shop, поэтому основной глагол open остаётся без -s: What time does the shop open?"
+    explanation_ru: "Does уже показывает форму третьего лица с the shop, поэтому глагол open остаётся без -s: What time does the shop open?"
     units: [LX-00191]
   - order: 2
     uid: EX-00093
@@ -168,7 +170,7 @@ exercises:
     options: [shop, What, the, close, does, time]
     answer: "What time does the shop close"
     hint_ru: "What time + does + the shop + глагол без -s."
-    explanation_ru: "What time does the shop close? — does показывает третье лицо, а смысловой глагол close остаётся в начальной форме."
+    explanation_ru: "What time does the shop close? — does показывает третье лицо, а глагол close остаётся как в словаре."
     units: [LX-00348, LX-00358]
 # Перевод с русского: ученик сам строит фразу. review_of — основное задание для добровольного повторения.
 practice:

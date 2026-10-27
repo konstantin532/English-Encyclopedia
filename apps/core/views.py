@@ -77,6 +77,7 @@ def home(request):
         "categories": PartOfSpeech.objects.prefetch_related("classes"),
         "levels": levels,
         "a1_weeks": a1_weeks,
+        "first_week": next((week for week in a1_weeks if week.number == 1), None),
         "characters": [{"key": k, "name": n, "about": a, "img": static(f"img/atlas/portrait-{k}.webp")}
                        for k, n, a in HOME_CHARACTERS],
         "first_lesson": Lesson.objects.filter(is_published=True).first(),

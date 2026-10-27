@@ -1,3 +1,6 @@
+import json
+
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
@@ -62,7 +65,7 @@ def check_exercise(request, pk):
         guidance = retry_guidance(exercise, answer)
         if guidance:
             data["feedback_ru"] = guidance
-    return JsonResponse(data)
+    return guest_result(request, data, "exercise", exercise, answer)
 
 
 @require_POST
@@ -117,11 +120,48 @@ def check_practice(request, pk):
     if item.is_correct(payload["answer"]):
         record_practice(request.user, item)
         register_legacy_exposure(request.user, item.units.all())
-        return JsonResponse({"correct": True, "saved": request.user.is_authenticated,
+        return guest_result(request, {"correct": True, "saved": request.user.is_authenticated,
                              "assessment": "model_match", "answer": item.answer,
-                             "explanation": item.explanation_ru})
+                             "explanation": item.explanation_ru}, "practice", item, payload["answer"])
     data = {"correct": False, "saved": False, "assessment": "needs_review",
             "self_review_available": request.user.is_authenticated}
     if item.hint_ru:
         data["feedback_ru"] = item.hint_ru
     return JsonResponse(data)
+
+
+def guest_result(request, data, kind, item, answer):
+    if not request.user.is_authenticated:
+        from apps.learning.guest_progress import make_receipt
+        receipt = make_receipt(kind, item, answer)
+        if receipt:
+            data['guest_receipt'] = receipt
+    return JsonResponse(data)
+
+
+@login_required
+@require_POST
+def import_guest_progress(request):
+    from apps.learning.guest_progress import import_results, MAX_ITEMS
+    if len(request.body) > MAX_ITEMS * 4200:
+        return JsonResponse({'error': 'Слишком много результатов.'}, status=400)
+    try:
+        payload = json.loads(request.body)
+        if not isinstance(payload, dict):
+            raise ValueError('Некорректные результаты.')
+        result = import_results(request.user, payload.get('receipts'))
+    except (ValueError, UnicodeDecodeError):
+        return JsonResponse({'error': 'Некорректные результаты.'}, status=400)
+    return JsonResponse(result)
+
+
+@require_POST
+def guest_week_goal(request, pk):
+    from apps.curriculum.models import Week
+    from apps.learning.guest_progress import make_goal_receipt
+    week = get_object_or_404(Week.objects.select_related('level'), pk=pk, number=1, level__code='A1')
+    status = request.POST.get('status')
+    receipt = make_goal_receipt(week, status)
+    if not receipt:
+        return JsonResponse({'error': 'Выберите отметку.'}, status=400)
+    return JsonResponse({'guest_receipt': receipt, 'status': status, 'saved': False})

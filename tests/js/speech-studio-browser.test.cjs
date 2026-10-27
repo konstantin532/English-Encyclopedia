@@ -18,7 +18,7 @@ class Element {
   cloneNode() {return new Element(this.textContent);}
   querySelector() {return null;}
 }
-function fixture(withMic=false) {
+function fixture(withMic=false, standalone=false, delayedMic=false, delayedStop=false) {
   const map=new Map();
   const find=(s)=>{if(!map.has(s))map.set(s,new Element());return map.get(s);};
   const modes=['see','echo','recall','transfer'].map(value=>{const x=new Element();x.dataset.speechMode=value;return x;});
@@ -32,29 +32,36 @@ function fixture(withMic=false) {
   }};
   let clock=0;
   const events={requested:0, stopped:0, created:0, revoked:0};
-  const document={readyState:'complete',querySelectorAll(){return [root];},createElement(){return new Element();}};
-  const window={navigator:{},addEventListener(){}};
+  const document={readyState:'complete',querySelectorAll(selector){
+    return selector==='[data-speech-studio]' ? (standalone ? [] : [root]) : selector==='[data-speech-recorder]' ? [root] : [];
+  },createElement(){return new Element();}};
+  const lifecycle={};
+  const recorders=[], pendingStops=[];
+  let allowMic;
+  const permission=new Promise(resolve=>{allowMic=resolve;});
+  const window={navigator:{},addEventListener(name,fn){lifecycle[name]=fn;}};
   if(withMic){
     window.navigator.mediaDevices={async getUserMedia(options){
       assert.equal(options.audio,true); assert.equal(options.video,false);
       events.requested++;
+      if(delayedMic) await permission;
       return {getTracks(){return [{stop(){events.stopped++;}}];}};
     }};
     window.MediaRecorder=class {
-      constructor(){this.state='inactive';this.mimeType='audio/webm';this.listeners={};}
+      constructor(){this.state='inactive';this.mimeType='audio/webm';this.listeners={};recorders.push(this);}
       addEventListener(name,cb){this.listeners[name]=cb;}
       start(){this.state='recording';}
       stop(){
         this.state='inactive';
-        this.listeners.dataavailable({data:{size:3}});
-        this.listeners.stop();
+        const finish=()=>{this.listeners.dataavailable({data:{size:3}});this.listeners.stop();};
+        if(delayedStop) pendingStops.push(finish); else finish();
       }
     };
   }
   const blobURL={createObjectURL(){events.created++;return 'blob:local-only';},
     revokeObjectURL(){events.revoked++;}};
   vm.runInNewContext(code,{document,window,Date:{now:()=>clock},URL:blobURL,Blob:class{},module:{exports:{}}});
-  return {find,modes,events,clock(n){clock=n;},get current(){return find('[data-speech-current]').childNodes.map(n=>n.textContent).join('');}};
+  return {find,modes,events,allowMic,finishStop(){pendingStops.shift()?.();},failRecording(){const r=recorders.at(-1);r.state='inactive';r.listeners.error();r.stop();},leave(){lifecycle.pagehide?.();},clock(n){clock=n;},get current(){return find('[data-speech-current]').childNodes.map(n=>n.textContent).join('');}};
 }
 
 test('lesson voice ladder starts with a model, recall removes it from current card',()=>{
@@ -111,4 +118,60 @@ test('optional microphone stays local and releases tracks after explicit deletio
   remove.dispatch('click');
   assert.equal(app.events.revoked,1);
   assert.equal(app.find('[data-speech-playback]').hidden,true);
+});
+
+
+test('compact week recorder works independently of speech entries and modes', async()=>{
+  const app=fixture(true,true);
+  assert.equal(app.events.requested,0);
+  await app.find('[data-speech-record]').dispatch('click');
+  assert.equal(app.events.requested,1);
+  app.find('[data-speech-stop]').dispatch('click');
+  assert.equal(app.events.stopped,1);
+  assert.equal(app.find('[data-speech-playback]').src,'blob:local-only');
+  app.leave();
+  assert.equal(app.events.revoked,1);
+});
+
+test('leaving while microphone permission is pending releases the late stream', async()=>{
+  const app=fixture(true,true,true);
+  const pending=app.find('[data-speech-record]').dispatch('click');
+  await app.find('[data-speech-record]').dispatch('click');
+  assert.equal(app.events.requested,1);
+  app.leave();
+  app.allowMic();
+  await pending;
+  assert.equal(app.events.stopped,1);
+  assert.equal(app.events.created,0);
+});
+
+
+test('recorder can be used again after returning to a preserved page', async()=>{
+  const app=fixture(true,true,true);
+  const pending=app.find('[data-speech-record]').dispatch('click');
+  app.leave();
+  app.allowMic();
+  await pending;
+  await app.find('[data-speech-record]').dispatch('click');
+  assert.equal(app.events.requested,2);
+  app.find('[data-speech-stop]').dispatch('click');
+  assert.equal(app.events.stopped,2);
+  assert.equal(app.events.created,1);
+});
+
+
+test('a late stop after recorder error does not stop a newer recording', async()=>{
+  const app=fixture(true,true,false,true);
+  await app.find('[data-speech-record]').dispatch('click');
+  app.failRecording();
+  assert.equal(app.find('[data-speech-record]').hidden,false);
+  await app.find('[data-speech-record]').dispatch('click');
+  app.finishStop();
+  assert.equal(app.events.stopped,1);
+  assert.equal(app.events.created,0);
+  assert.equal(app.find('[data-speech-record]').hidden,true);
+  app.find('[data-speech-stop]').dispatch('click');
+  app.finishStop();
+  assert.equal(app.events.stopped,2);
+  assert.equal(app.events.created,1);
 });

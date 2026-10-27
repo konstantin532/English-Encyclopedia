@@ -7,8 +7,8 @@
       "plain": "Существительное — слово, которое называет человека, предмет или место.",
       "why": "Назвать вещь — значит помочь собеседнику понять, о чём речь.",
       "pattern": "This is my + название.",
-      "mistake": "Путать new с названием предмета.",
-      "fix": "Спросите себя: слово называет что-то или описывает его?",
+      "mistake": "Говорить This is book, пропуская слово перед book.",
+      "fix": "Если это одна книга: This is a book. Если книга ваша: This is my book.",
       "example": "This is my book.",
       "translation": "Это моя книга.",
       "tasks": {
@@ -31,8 +31,8 @@
           "model": "This is my phone. It is new."
         },
         "explain": {
-          "prompt": "Ученик хочет показать телефон и говорит: «This is my new». Какого слова ему не хватает? Объясните разницу между названием предмета и его признаком.",
-          "model": "Нужно назвать предмет: This is my new phone. Слово phone — существительное (вещь), new — прилагательное (признак)."
+          "prompt": "Новичок показывает книгу и говорит: «This is book». Добавьте одно слово и объясните, зачем оно здесь.",
+          "model": "This is a book. Перед book нужно a, потому что называем одну книгу. Если книга моя, можно сказать This is my book."
         }
       },
       "contrast": {
@@ -47,9 +47,9 @@
       "slug": "a1-verb-be",
       "plain": "Am, is и are связывают человека с описанием.",
       "why": "Русскому «Я дома» по-английски соответствует фраза с am.",
-      "pattern": "I am / you are / she is.",
-      "mistake": "Говорить I is или you is.",
-      "fix": "Найдите подлежащее: I → am, you → are, she → is.",
+      "pattern": "I am / you are / it is.",
+      "mistake": "Говорить I from Russia, пропуская am.",
+      "fix": "Скажите I am from Russia. После I здесь нужно am — в русском отдельного слова на этом месте нет.",
       "example": "I am at home.",
       "translation": "Я дома.",
       "tasks": {
@@ -79,7 +79,7 @@
         },
         "explain": {
           "prompt": "Новичок написал: «I is at home». Исправьте одну ошибку и объясните свой выбор.",
-          "model": "I am at home. С местоимением I употребляют am, а не is."
+          "model": "I am at home. Со словом I употребляют am, а не is."
         }
       },
       "contrast": {
@@ -120,7 +120,7 @@
         },
         "explain": {
           "prompt": "Новичок показывает свою книгу: «This is a my book». Почему так не говорят? Исправьте фразу.",
-          "model": "This is my book. My уже определяет, чья это книга, поэтому артикль a перед my не ставят."
+          "model": "This is my book. My уже показывает, чья книга. Поэтому перед my не нужно ещё и a."
         }
       },
       "contrast": {
@@ -135,7 +135,7 @@
       "slug": "a1-have-like-can-do",
       "plain": "Have — иметь; like — нравиться; can — мочь.",
       "why": "Do you have…? помогает спросить, есть ли что-то у собеседника. Do you like…? — нравится ли ему это. Can I have…? в наших примерах выражает просьбу дать вещь или напиток.",
-      "pattern": "Do you like...? / Can I have...?",
+      "pattern": "Do you like…? / Can I have…?",
       "mistake": "Говорить Can I tea? без have.",
       "fix": "Для просьбы поставьте have после Can I.",
       "example": "Can I have water, please?",
@@ -180,10 +180,10 @@
     {
       "slug": "a1-cafe-order",
       "plain": "В кафе важно попросить, выбрать и переспросить.",
-      "why": "I'd like и Can I have... помогают сделать заказ вежливым.",
+      "why": "I'd like и Can I have… помогают сделать заказ вежливым.",
       "pattern": "I'd like a tea, please.",
-      "mistake": "Путать просьбу и сообщение I am tea.",
-      "fix": "Назовите желаемое и добавьте please.",
+      "mistake": "Добавлять am перед want: I am want a tea, please.",
+      "fix": "С want здесь am не нужно: I want a tea, please.",
       "example": "Tea, please.",
       "translation": "Чай, пожалуйста.",
       "tasks": {
@@ -233,7 +233,7 @@
     {
       "slug": "a1-numbers-1-20",
       "plain": "Числа нужны для возраста, цены, времени и количества.",
-      "why": "Число two или three задаёт количество, а исчисляемое существительное ставим во множественном числе: two cookies. Для порций напитка тоже возможно two coffees.",
+      "why": "Two и three говорят, сколько предметов. Когда печений несколько, говорим cookies: two cookies. В кафе так же называем несколько порций: two coffees.",
       "pattern": "two coffees / three teas.",
       "mistake": "Говорить three cookie.",
       "fix": "С числом три назовите cookies, а не cookie.",
@@ -268,7 +268,7 @@
         },
         "explain": {
           "prompt": "Посетитель просит три печенья: «Three cookie, please». Найдите ошибку и объясните исправление.",
-          "model": "Three cookies, please. После числа three исчисляемое cookie стоит во множественном числе cookies."
+          "model": "Three cookies, please. После three называем несколько печений: cookies, с -s."
         }
       },
       "contrast": {
@@ -276,12 +276,12 @@
         "a_ru": "Одно печенье, пожалуйста.",
         "b_en": "Three cookies, please.",
         "b_ru": "Три печенья, пожалуйста.",
-        "why": "One — одна штука, cookie в единственном числе. Three — несколько, поэтому cookies во множественном."
+        "why": "One cookie — одно печенье. Three cookies — несколько печений, поэтому к cookie добавили -s. Сначала решите, сколько предметов называете."
       }
     },
     {
       "slug": "a1-family-photo",
-      "plain": "This is my... знакомит с родственниками; Who is this? спрашивает о человеке.",
+      "plain": "This is my… знакомит с родственниками; Who is this? спрашивает о человеке.",
       "why": "В английском вопросе Who is this? нужен is.",
       "pattern": "Who is this? / This is my sister.",
       "mistake": "Говорить Who this?",
@@ -357,8 +357,8 @@
           "model": "This is their house."
         },
         "explain": {
-          "prompt": "Это телефон Тома. Ученик подписал фото «Toms phone». Исправьте надпись и объясните апостроф.",
-          "model": "Tom's phone. Притяжательное 's показывает, кому принадлежит телефон."
+          "prompt": "Это телефон Тома. Ученик подписал фото «Toms phone». Исправьте надпись и объясните, зачем нужен значок перед s.",
+          "model": "Tom's phone. Запись 's после Tom показывает, что телефон принадлежит Тому."
         }
       },
       "contrast": {
@@ -366,7 +366,7 @@
         "a_ru": "Она Анна.",
         "b_en": "This is her book.",
         "b_ru": "Это её книга.",
-        "why": "She самостоятельно обозначает человека и может быть подлежащим: She is Anna. Her перед book указывает, чья книга. Для этой разницы не требуется действие: is Anna сообщает, кто она."
+        "why": "She само называет человека: She is Anna. А her перед book показывает, чья книга. Не подменяйте одно другим: это два разных смысла."
       }
     },
     {
@@ -402,7 +402,7 @@
         },
         "explain": {
           "prompt": "На столе две книги. Ученик говорит: «There is two books». Исправьте форму и объясните.",
-          "model": "There are two books. С несколькими предметами в конструкции there ... используется are."
+          "model": "There are two books. С несколькими предметами в конструкции there … используется are."
         }
       },
       "contrast": {
@@ -458,7 +458,7 @@
         "a_ru": "Сколько это стоит?",
         "b_en": "How many books?",
         "b_ru": "Сколько книг?",
-        "why": "How much is it? — вопрос о цене. How many books? — о количестве исчисляемых книг. Не смешивайте эти два вопроса."
+        "why": "How much is it? — вопрос о цене. How many books? — о том, сколько книг. Сначала решите, что хотите узнать: стоимость или количество."
       }
     },
     {
@@ -467,7 +467,7 @@
       "why": "I work описывает обычное действие; do помогает спросить о нём.",
       "pattern": "I work. / Do you work?",
       "mistake": "Писать I am work.",
-      "fix": "В Present Simple о привычке с I и work используем I work, без am. Это правило для изучаемой формы, а не запрет на любую конструкцию с be и действием.",
+      "fix": "О привычке говорим I work, без am. Держите рядом два разных образца: I work и I am busy.",
       "example": "I work every day.",
       "translation": "Я работаю каждый день.",
       "tasks": {
@@ -500,7 +500,7 @@
         "a_ru": "Я занят.",
         "b_en": "I work every day.",
         "b_ru": "Я работаю каждый день.",
-        "why": "Busy — прилагательное «занят»: в полном предложении I am busy перед ним нужна форма be. Work — глагол «работать»: о привычке с I говорим I work, без am. Различаем строение этих фраз, а не просто состояние и действие."
+        "why": "Busy описывает человека: «занят». В полной фразе I am busy перед ним нужно am. А work означает «работать»: о привычке говорим I work, без am. Выбирайте по знакомому образцу всей фразы."
       }
     },
     {
@@ -619,7 +619,7 @@
         },
         "explain": {
           "prompt": "Новичок представляет себя: «I am teacher». Как звучит обычная полная фраза? Почему?",
-          "model": "I am a teacher. Перед названием одной исчисляемой профессии здесь нужен артикль a."
+          "model": "I am a teacher. Здесь называем одну профессию. Перед teacher нужно a."
         }
       },
       "contrast": {
@@ -632,7 +632,7 @@
     },
     {
       "slug": "a1-where-is-prepositions",
-      "plain": "Where is...? спрашивает о месте.",
+      "plain": "Where is…? спрашивает о месте.",
       "why": "In в нашем примере — внутри, next to — непосредственно рядом. В схеме between X and Y называем два ориентира; это не запрет других употреблений between.",
       "pattern": "Where is the bank? / It is near the cafe.",
       "mistake": "Писать Where the bank is?",
@@ -663,7 +663,7 @@
         },
         "explain": {
           "prompt": "Вы ищете банк и спрашиваете: «Where the bank is?». Почему прямой вопрос построен неверно?",
-          "model": "Where is the bank? В прямом вопросе с be глагол is ставится перед подлежащим the bank."
+          "model": "Where is the bank? В таком вопросе is стоит перед the bank."
         }
       },
       "contrast": {
@@ -679,8 +679,8 @@
       "plain": "Go straight и turn left/right помогают указать дорогу.",
       "why": "В образце Go straight сначала называем действие (go), затем направление (straight).",
       "pattern": "Go straight. / Turn right.",
-      "mistake": "Путать right и left.",
-      "fix": "Right — направо, left — налево.",
+      "mistake": "Добавлять to перед straight: Go to straight.",
+      "fix": "В этом указании to не нужно: Go straight.",
       "example": "Go straight and turn left.",
       "translation": "Идите прямо и поверните налево.",
       "tasks": {
@@ -846,8 +846,8 @@
       "plain": "Like + -ing рассказывает о любимом занятии.",
       "why": "Для занятия reading можно использовать форму -ing после like. Это один из способов: I like to read тоже правильно.",
       "pattern": "I like reading. / I like books.",
-      "mistake": "Путать I like a book и I like reading без учёта смысла.",
-      "fix": "Для хобби тренируйте -ing после like.",
+      "mistake": "Говорить о любимом занятии так: I like read.",
+      "fix": "О чтении как увлечении скажите I like reading или I like to read.",
       "example": "I like reading.",
       "translation": "Мне нравится читать.",
       "tasks": {
@@ -885,7 +885,7 @@
     },
     {
       "slug": "a1-what-hurts",
-      "plain": "My ... hurts сообщает, какая часть тела болит.",
+      "plain": "My … hurts сообщает, какая часть тела болит.",
       "why": "Одна часть тела — hurts, несколько — hurt.",
       "pattern": "My back hurts. / My feet hurt.",
       "mistake": "Говорить my feet hurts.",
@@ -914,7 +914,7 @@
         },
         "explain": {
           "prompt": "Болят обе ступни. Ученик говорит: «My feet hurts». Исправьте фразу и объясните.",
-          "model": "My feet hurt. Feet — множественное число, поэтому в Present Simple используется hurt без -s."
+          "model": "My feet hurt. Feet — ступни, их несколько, поэтому hurt без -s."
         }
       },
       "contrast": {
@@ -922,7 +922,7 @@
         "a_ru": "У меня болит нога.",
         "b_en": "My legs hurt.",
         "b_ru": "У меня болят ноги.",
-        "why": "Одна нога — leg hurts, две — legs hurt. В английском окончание глагола зависит от единственного и множественного числа."
+        "why": "Одна нога — leg hurts, две — legs hurt. Сравните обе пары: leg / legs и hurts / hurt. Так понятно, об одной ноге говорим или о двух."
       }
     },
     {
@@ -956,7 +956,7 @@
         },
         "explain": {
           "prompt": "Ученик отказывается работать сегодня: «I can't to work today». Исправьте и объясните.",
-          "model": "I can't work today. После модального can't следующий глагол work идёт без to."
+          "model": "I can't work today. В этой фразе после can't нужно work без to."
         }
       },
       "contrast": {
@@ -1014,8 +1014,8 @@
       "plain": "Адрес нужен, чтобы отправить письмо.",
       "why": "В американском адресе номер дома часто называют до улицы.",
       "pattern": "five Park Street / My last name is Belova.",
-      "mistake": "Путать имя и фамилию.",
-      "fix": "Last name означает фамилию.",
+      "mistake": "Писать Belova в поле First name.",
+      "fix": "В First name укажите имя, а фамилию Belova — в Last name.",
       "example": "My last name is Belova.",
       "translation": "Моя фамилия Белова.",
       "tasks": {
@@ -1096,8 +1096,8 @@
       "plain": "Why спрашивает почему; because объясняет причину.",
       "why": "Why — вопрос, because — часть ответа.",
       "pattern": "Why do you like it? Because it is new.",
-      "mistake": "Путать why и because.",
-      "fix": "В объяснении начинайте с because.",
+      "mistake": "Пропускать do: Why you like it?",
+      "fix": "В этом вопросе нужно do перед you: Why do you like it?",
       "example": "Because I am tired.",
       "translation": "Потому что я устал.",
       "tasks": {
@@ -1179,8 +1179,8 @@
       "plain": "Итоговый урок объединяет вопросы, просьбы, время и отрицания.",
       "why": "Самостоятельность — выбрать правило в новой ситуации, без банка слов.",
       "pattern": "I don't know. / Where is the bank? / I can help.",
-      "mistake": "Пытаться применить одно правило ко всем предложениям.",
-      "fix": "Сначала определите цель: спросить, объяснить или попросить.",
+      "mistake": "Спрашивать: Do he like it?",
+      "fix": "В этом вопросе с he нужно does: Does he like it?",
       "example": "I am from Russia.",
       "translation": "Я из России.",
       "tasks": {

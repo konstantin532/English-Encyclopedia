@@ -29,7 +29,7 @@
       <select data-role-mute><option value="">— слушать всех —</option>{% for s in speakers %}<option value="{{ s.id }}">{{ s.name }}</option>{% endfor %}</select></label>{% endif %}
   </div>
   </details>
-  <p class="drill-hint">Голоса синтезированы нейросетью{% if not audio.verified %}, произношение ещё не проверено человеком{% endif %}. Нажмите на реплику, чтобы послушать её.</p>
+  {% if week_audio_note %}<p class="drill-hint">Голоса созданы нейросетью.</p>{% else %}<p class="drill-hint">Голоса синтезированы нейросетью{% if not audio.verified %}, произношение ещё не проверено человеком{% endif %}. Нажмите на реплику, чтобы послушать её.</p>{% endif %}
 </div>
 {% endif %}
 {% if lines %}

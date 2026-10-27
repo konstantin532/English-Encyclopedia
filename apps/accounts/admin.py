@@ -38,7 +38,7 @@ class EmailUserAdmin(UserAdmin):
     readonly_fields = ("last_login", "date_joined")
     fieldsets = (
         ("Учётная запись", {"fields": ("email", "password"), "description": "Электронная почта используется для входа на платформу."}),
-        ("Профиль и обучение", {"fields": ("display_name", "current_level", "markers_in_color")}),
+        ("Профиль и обучение", {"fields": ("display_name", "current_level", "markers_enabled", "markers_in_color")}),
         ("Доступ к платформе", {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions"), "classes": ("collapse",), "description": "Права определяют, какие разделы доступны пользователю."}),
         ("История аккаунта", {"fields": ("date_joined", "last_login"), "classes": ("collapse",)}),
     )
@@ -87,7 +87,7 @@ class EmailUserAdmin(UserAdmin):
 
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
-        labels = {"email": "Электронная почта", "display_name": "Имя для обращения", "current_level": "Уровень английского", "markers_in_color": "Цветная разметка частей речи"}
+        labels = {"email": "Электронная почта", "display_name": "Имя для обращения", "current_level": "Уровень английского", "markers_enabled": "Маркеры в тексте", "markers_in_color": "Цветная разметка частей речи"}
         for name, label in labels.items():
             if name in form.base_fields:
                 form.base_fields[name].label = label
