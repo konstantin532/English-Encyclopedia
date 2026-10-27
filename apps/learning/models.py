@@ -32,6 +32,13 @@ class UnitProgress(models.Model):
     correct_count = models.PositiveIntegerField(default=0)
     wrong_count = models.PositiveIntegerField(default=0)
     contexts_used = models.JSONField(default=list, blank=True, help_text="Разные конструкции, где единица употреблена")
+    # Модуль «Память слов» (apps/learning/memory.py). Пусто — слово ещё не в модуле памяти.
+    # Не меняет stage/next_review_at: прежнее повторение работает как раньше.
+    memory_stability = models.FloatField(null=True, blank=True,
+                                         help_text="Прочность в днях: за сколько рейтинг опускается до 90%")
+    memory_reviewed_at = models.DateTimeField(null=True, blank=True)
+    memory_evidence = models.JSONField(default=dict, blank=True,
+                                       help_text="Дни и семейства верных ответов, серия ошибок, подсказки")
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
@@ -42,8 +49,9 @@ class UnitProgress(models.Model):
         ]
         indexes = [models.Index(fields=["user", "next_review_at"])]
 
-    def register(self, correct: bool, context: str = "") -> None:
+    def register(self, correct: bool, context: str = "", *, mode: str = "partial") -> None:
         now = timezone.now()
+        self._register_memory(correct, context, mode, now)
         if correct:
             self.correct_count += 1
             # A correct replay of the SAME exercise (or a lemma-only recall)
@@ -70,6 +78,15 @@ class UnitProgress(models.Model):
             if self.status == Status.ACTIVE:
                 self.status = Status.INDEPENDENT_USE
             self.next_review_at = now + timedelta(days=REVIEW_INTERVALS_DAYS[self.stage])
+
+
+    def _register_memory(self, correct, context, mode, now):
+        from . import memory
+
+        if not memory.enabled():
+            return
+        family = (context or "").split("#", 1)[0] or "recall"
+        memory.apply(self, correct=correct, mode=mode, error="wrong", family=f"lesson:{family}", now=now)
 
 
 class ExerciseAttempt(models.Model):

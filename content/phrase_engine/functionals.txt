@@ -1,0 +1,171 @@
+# ЧЕРНОВАЯ разметка служебных и закрытых классов A1 + A1+ (status: draft, автор: Claude, 2026-10-27).
+# Формат: лемма | роль в генераторе | примечание
+# Роль «-» = слово размечено, но в шаблонах генератора пока не используется.
+
+## Наречия
+always | freq | позиция: перед смысловым глаголом, после be
+never | freq | отрицательное по смыслу: *I don't never
+often | freq |
+once | freq_count | once a day — с A1+ нед. 11
+sometimes | freq |
+twice | freq_count |
+usually | freq |
+ago | past_ago | N days ago
+early | time_manner | I get up early
+late | time_manner |
+later | time_future | see you later — фраза
+now | time_now | для Present Continuous
+soon | time_future |
+then | sequence |
+today | time_today |
+tomorrow | time_future | нужно будущее: в A1 только в готовых фразах
+tonight | time_future |
+yesterday | time_past | с A1+ нед. 2
+abroad | place_adv | go abroad / live abroad
+down | direction |
+downstairs | place_adv |
+downtown | place_adv | AmE: go downtown, live downtown
+inside | place_adv |
+left | direction | turn left
+outside | place_adv |
+right | direction | turn right
+straight | direction | go straight
+upstairs | place_adv |
+badly | manner | после глагола/дополнения
+carefully | manner |
+easily | manner |
+loudly | manner |
+quickly | manner |
+quietly | manner |
+slowly | manner |
+together | manner |
+enough | degree_post | after adjective: big enough
+only | focus | -
+really | degree |
+too | degree_pre | «слишком» перед прил.; «тоже» — в конце фразы (второе значение)
+very | degree |
+how | wh |
+when | wh |
+where | wh |
+why | wh |
+instead | linking | -
+definitely | stance | -
+maybe | stance | -
+probably | stance | -
+
+## Союзы
+and | conj |
+or | conj |
+because | conj_reason |
+if | conj_if | шаблон if + will с A1+ нед. 15
+but | conj |
+so | discourse | -
+
+## Числительные
+one | num |
+two | num |
+three | num |
+four | num |
+five | num |
+six | num |
+seven | num |
+eight | num |
+nine | num |
+ten | num |
+eleven | num |
+twelve | num |
+thirteen | num |
+fourteen | num |
+fifteen | num |
+sixteen | num |
+seventeen | num |
+eighteen | num |
+nineteen | num |
+twenty | num |
+thirty | num |
+forty | num |
+fifty | num |
+sixty | num |
+seventy | num |
+eighty | num |
+ninety | num |
+hundred | num | a hundred / one hundred
+o'clock | clock |
+
+## Междометия и реакции
+bye | - | только реплика
+hello | - |
+sorry | - |
+thanks | - |
+no | answer | Yes, I am. / No, it isn't.
+okay | - |
+yes | answer |
+please | polite | в конце просьбы
+
+## Предлоги
+at | prep_place prep_time |
+behind | prep_place |
+between | prep_place | требует двух ориентиров
+in | prep_place prep_time |
+near | prep_place |
+on | prep_place prep_time |
+opposite | prep_place |
+under | prep_place |
+along | prep_move | -
+around | prep_move | -
+into | prep_move | -
+over | prep_move | -
+past | prep_move | -
+through | prep_move | -
+toward | prep_move | AmE toward (BrE towards)
+after | prep_time |
+before | prep_time |
+during | prep_time | -
+with | prep_with |
+for | prep_for |
+without | prep_without | -
+
+## Определители и местоимения
+a | article | a/an по первому звуку (ipa_us)
+the | article |
+that | demonstrative |
+this | demonstrative | these/those в словаре нет → только ед.ч.
+her | poss obj_pron | her — и притяжательное, и объектное
+his | poss |
+my | poss |
+our | poss |
+their | poss |
+your | poss |
+any | quantifier | с A1+ нед. 7
+more | quantifier | -
+much | quantifier | how much
+some | quantifier |
+another | quantifier | -
+every | quantifier_time | every day
+he | subj_pron |
+him | obj_pron |
+I | subj_pron |
+it | subj_pron obj_pron |
+me | obj_pron |
+she | subj_pron |
+them | obj_pron |
+they | subj_pron |
+us | obj_pron |
+we | subj_pron |
+you | subj_pron obj_pron |
+everyone | indef_pron | -
+everything | indef_pron | -
+mine | poss_pron | -
+nothing | indef_pron | -
+someone | indef_pron | -
+something | indef_pron | -
+there | existential | there is / there are
+what | wh |
+which | wh | -
+who | wh |
+whose | wh | -
+
+## Частицы
+not | negation |
+off | particle | -
+up | particle | -

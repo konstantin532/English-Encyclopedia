@@ -17,6 +17,8 @@ def env_bool(name: str, default: bool = False) -> bool:
     return os.getenv(name, str(default)).strip().lower() in {"1", "true", "yes", "on"}
 
 EE_VOCABULARY_TRAINER_ENABLED = env_bool("EE_VOCABULARY_TRAINER_ENABLED", False)
+# Модуль «Память слов» и тренировка сгенерированных фраз. Выключен по умолчанию.
+EE_PHRASE_MEMORY_ENABLED = env_bool("EE_PHRASE_MEMORY_ENABLED", False)
 
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-only-insecure-key-change-me")

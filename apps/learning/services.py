@@ -42,7 +42,7 @@ def record_practice(user, item) -> None:
         if unit.uid in managed:
             continue
         progress, _ = UnitProgress.objects.select_for_update().get_or_create(user=user, unit=unit)
-        progress.register(True, context)
+        progress.register(True, context, mode="independent")  # перевод без вариантов — самостоятельный ответ
         progress.save()
 
 
@@ -114,7 +114,7 @@ def record_recall(user, unit, answer: str) -> bool:
     correct = Exercise.normalize(answer) in {Exercise.normalize(a) for a in accepted}
     if user.is_authenticated and unit.uid not in legacy_managed_units(user):
         progress, _ = UnitProgress.objects.select_for_update().get_or_create(user=user, unit=unit)
-        progress.register(correct)  # вспоминание не считается новой конструкцией
+        progress.register(correct, mode="independent")  # вспоминание не считается новой конструкцией
         progress.save()
     return correct
 

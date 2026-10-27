@@ -361,11 +361,23 @@ class TrainerMigrationPreservationTests(TransactionTestCase):
         finally:
             executor = MigrationExecutor(connection)
             executor.migrate([target])
-        saved = IndependentAttempt.objects.get(pk=old.pk)
+        # Проверяем состояние ровно после 0013 — её моделями, а не текущими:
+        # более поздние аддитивные миграции (0014 и далее) добавляют колонки.
+        target_apps = MigrationExecutor(connection).loader.project_state([target]).apps
+        saved = target_apps.get_model('learning', 'IndependentAttempt').objects.get(pk=old.pk)
         self.assertEqual((saved.submitted, saved.prompt_snapshot, saved.model_snapshot), ('tea', 'original prompt', 'tea'))
         self.assertEqual((saved.origin, saved.evidence, saved.assistance), ('lesson', {}, 'not_stated'))
         self.assertIsNone(saved.trainer_session_id)
         self.assertIsNone(saved.target_id)
+        mid = target_apps.get_model('learning', 'UnitProgress').objects.get(pk=progress.pk)
+        self.assertEqual((mid.stage, mid.next_review_at, mid.correct_count, mid.wrong_count,
+                          mid.contexts_used), (3, due, 9, 2, ['old-context']))
+        # Дальше — до последней миграции: история и расписание по-прежнему не меняются.
+        executor = MigrationExecutor(connection)
+        executor.migrate(executor.loader.graph.leaf_nodes())
         progress = UnitProgress.objects.get(pk=progress.pk)
         self.assertEqual((progress.stage, progress.next_review_at, progress.correct_count, progress.wrong_count,
                           progress.contexts_used), (3, due, 9, 2, ['old-context']))
+        self.assertIsNone(progress.memory_stability)
+        self.assertEqual(progress.memory_evidence, {})
+        self.assertEqual(IndependentAttempt.objects.get(pk=old.pk).submitted, 'tea')

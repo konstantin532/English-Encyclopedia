@@ -1,0 +1,133 @@
+# ЧЕРНОВАЯ разметка прилагательных A1 + A1+ (status: draft, автор: Claude, 2026-10-27).
+# Формат: лемма | к чему применимо (#тег или лемма) | позиция | градуируемое | примечание
+# Позиция: both — и перед существительным (a big box), и после be (the box is big);
+#          pred — только после be (I am afraid, но не *an afraid boy);
+#          attr — только перед существительным (my favorite song, но не *the song is favorite)
+# Градуируемое: yes — сочетается с very/too/enough; no — нет (*very dead, *too wooden)
+# Группа PHYS = предметы, одежда, посуда, мебель, техника, транспорт, здания
+
+## J1 размер и форма
+big | #obj #wear #container #furniture #appliance #room #building #area #vehicle_in #vehicle_on #animal #home #food #instrument #toy | both | yes |
+deep | #water | both | yes |
+far | #building #area | pred | yes | наречное употребление: The park is far.
+huge | #obj #container #furniture #room #building #area #vehicle_on #vehicle_in #animal #home #food | both | no | «экстремальное»: *very huge
+large | #obj #container #room #building #area #home #food | both | yes |
+little | #person #animal #obj #room #home | attr | no | review: a little boy (attr); *The box is little — в AmE звучит неестественно
+long | #street hair line trip day week movie dress scarf story song | both | yes |
+narrow | #street bridge door window | both | yes |
+short | hair trip day movie story dress #person | both | yes |
+small | #obj #wear #container #furniture #appliance #room #building #area #vehicle_in #vehicle_on #animal #home #food #instrument #toy | both | yes |
+tall | #person tree building mountain | both | yes |
+tiny | #obj #room #home #animal #food | both | no |
+wide | #street bridge door window river | both | yes |
+
+## J2 физические свойства
+black | #obj #wear #furniture #appliance #vehicle_in #vehicle_on #animal | both | no | цвета: *very black — допустимо разговорно, генератор не использует
+blue | #obj #wear #furniture #appliance #vehicle_in #vehicle_on sky eye | both | no |
+bright | room sun #lamp color | both | yes |
+brown | #obj #wear #furniture #animal eye hair | both | no |
+cloudy | #weather_time | both | yes | It is cloudy. / a cloudy day
+cold | #drink #food #room #weather_time #person water #area_water | both | yes |
+cool | #drink #weather_time #room water | both | yes | review: cool = «классный» — второе значение
+dark | #room sky night hair | both | yes |
+dead | battery phone plant flower | both | no |
+dirty | #obj #wear #dish #room #fixture car #furniture hand face | both | yes |
+empty | #container #room #building #dish #vehicle_on street | both | no |
+fast | car train bus bike #person computer | both | yes |
+foggy | #weather_time | both | yes |
+freezing | #weather_time #room water | both | no | «экстремальное»
+fresh | #fruit bread fish meat egg #cookable salad juice | both | yes |
+full | #container #room #building #dish #vehicle_on | both | no |
+gray | #obj #wear #furniture #animal sky hair | both | no |
+green | #obj #wear #furniture #plant #fruit | both | no |
+heavy | #obj #container #furniture #instrument #device | both | yes |
+hot | #drink #food #room #weather_time water | both | yes | review: о человеке «жарко» (I'm hot) — двусмысленно, исключено
+light | #obj #container #wear #device | both | yes | лёгкий по весу; светлый — второе значение
+loud | #person music voice noise #device | both | yes |
+new | #obj #wear #furniture #appliance #vehicle_in #vehicle_on #building #home #device #instrument #person_role | both | no |
+noisy | #person #room #building street #area | both | yes |
+old | #obj #wear #furniture #appliance #vehicle_in #vehicle_on #building #home #device #instrument #person #animal | both | yes |
+orange | #obj #wear #furniture | both | no | review: orange = апельсин (сущ.) — второе значение
+pink | #obj #wear #furniture flower | both | no |
+purple | #obj #wear #furniture flower | both | no |
+quiet | #person #room #building street #area | both | yes |
+rainy | #weather_time | both | yes |
+red | #obj #wear #furniture #appliance #vehicle_in #vehicle_on apple flower | both | no |
+spicy | #cookable soup salad | both | yes |
+sunny | #weather_time #room | both | yes |
+sweet | #sweet #fruit #drink #person | both | yes | о человеке — «милый»
+warm | #drink #food #room #weather_time #wear water | both | yes |
+wet | #obj #wear #textile hair #person floor grass street | both | yes |
+white | #obj #wear #furniture #appliance #vehicle_in #animal | both | no |
+windy | #weather_time | both | yes |
+yellow | #obj #wear #furniture flower #fruit | both | no |
+young | #person #animal | both | yes |
+
+## J3 оценка
+awful | #food #drink #media #event #weather_time #room #building | both | no |
+bad | #food #drink #media #event #weather_time #doc | both | yes |
+cheap | #obj #wear #food #device #instrument #building ticket car bike | both | yes |
+correct | number word name address password sentence | both | no |
+delicious | #food #drink | both | no |
+different | X | both | yes | review: обычно с мн.ч. или + from
+difficult | #study #subject #lang question job word | both | yes |
+easy | #study #subject #lang question job word | both | yes |
+expensive | #obj #wear #food #device #instrument #building ticket car bike | both | yes |
+favorite | #food #drink #media #game #subject #building #area #wear #season #weekday | attr | no | AmE написание (BrE favourite)
+fine | #person | pred | no | review: I'm fine; «хороший» — второе значение
+free | ticket seat #building #event #person | both | no | review: бесплатный / свободный — два значения
+fun | #event #game #study | both | yes | fun — сущ./прил., в AmE: The party is fun.
+funny | #person #media #animal | both | yes |
+good | #food #drink #media #event #person_role #building #weather_time #study #doc | both | yes |
+great | #food #drink #media #event #building #weather_time #study | both | no |
+lovely | #room #home #building #area #weather_time #plant #wear | both | no |
+main | street road entrance | attr | no |
+nice | #food #drink #media #event #person #room #home #building #area #weather_time #wear | both | yes |
+perfect | #food #drink #weather_time #event #wear #home | both | no |
+same | X | attr | no | только the same …
+strange | noise #person story #media | both | yes |
+terrible | #food #drink #media #event #weather_time #room | both | no |
+wrong | number word name address password sentence | both | no |
+
+## J4 эмоции и состояния (почти всегда о людях)
+afraid | #person | pred | yes | review: afraid of …
+allergic | X | pred | no | требует to: allergic to cats
+alone | #person | pred | no |
+busy | #person #building street day | both | yes |
+dizzy | #person | pred | yes |
+glad | #person | pred | yes |
+happy | #person #animal | both | yes |
+hungry | #person #animal | both | yes |
+lucky | #person | both | yes |
+nervous | #person | both | yes |
+proud | #person | pred | yes | review: proud of …
+ready | #person #meal | pred | no |
+sick | #person #animal | both | yes |
+sleepy | #person #animal | both | yes |
+sore | throat back leg arm eye foot hand neck | both | yes | My throat is sore.
+sure | #person | pred | no |
+thirsty | #person #animal | both | yes |
+tired | #person #animal | both | yes |
+well | #person | pred | no | «здоров»; review: AmE I'm well / I'm good
+
+## J5 внешность
+beautiful | #person #room #home #building #area #plant #wear #weather_time | both | yes |
+pretty | #person #room #home #area #plant #wear | both | yes |
+
+## J6 характер
+careful | #person | both | yes |
+kind | #person | both | yes |
+lazy | #person #animal | both | yes |
+polite | #person | both | yes |
+rude | #person | both | yes |
+
+## J7 причастные
+boring | #media #event #study #subject #job #area #game | both | yes |
+born | X | pred | no | born in … — отдельный шаблон
+excited | #person | both | yes |
+exciting | #media #event #game #area | both | yes |
+interesting | #media #event #study #subject #job #area #game #person | both | yes |
+surprised | #person | both | yes |
+
+## J8
+last | X | attr | no | last week/night — используется в обстоятельствах времени
