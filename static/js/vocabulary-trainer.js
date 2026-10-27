@@ -116,7 +116,6 @@
     async function reconcile() {
       if (transport.isBusy() || reconciling) return;
       reconciling = true;
-      const fields = editedFields(root());
       const notesEditor = root()?.dataset.noteEditor === 'true';
       try {
         let url = win.location.href;
@@ -133,7 +132,11 @@
           }
         }
         const response = await win.fetch(url, { credentials: 'same-origin', cache: 'no-store' });
-        if (!response.ok || !render(await response.text(), response.status, fields, response.url)) throw new Error('state');
+        if (!response.ok) throw new Error('state');
+        const html = await response.text();
+        // Editing remains available during both requests and body decoding.
+        const fields = editedFields(root());
+        if (!render(html, response.status, fields, response.url)) throw new Error('state');
         controls({ pending: transport.hasPending(), busy: false });
       } catch (_) {
         announce('Не удалось загрузить сохранённое состояние. Текст остаётся на странице; попробуйте снова.', true);

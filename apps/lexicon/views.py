@@ -20,6 +20,10 @@ def unit_list(request):
     if cat:
         units = units.filter(part_of_speech__code=cat)
     page_obj = Paginator(units, 48).get_page(request.GET.get("page"))
+    if getattr(settings, "EE_VOCABULARY_TRAINER_ENABLED", False) and request.user.is_authenticated:
+        from apps.learning.trainer_service import register_legacy_exposure
+        # Evaluate only the rendered page, never the entire filtered queryset.
+        register_legacy_exposure(request.user, page_obj)
     params = request.GET.copy()
     params.pop("page", None)
     return render(request, "lexicon/list.html", {

@@ -204,9 +204,13 @@ def start_encounter(user, uid, *, now=None):
     except (ValueError, StopIteration, LexicalUnit.DoesNotExist, Lesson.DoesNotExist) as exc:
         raise TrainerUnavailable('Контент тренажёра пока недоступен.') from exc
     previous = TrainerSession.objects.filter(user=user, unit=unit).order_by('-started_at', '-pk').first()
-    # Different authored family, not a cosmetic variant of the same question.
+    # Match the scheduler's latest actual recall, not an unanswered encounter.
+    last_recall = (IndependentAttempt.objects.filter(user=user, target=unit,
+                   origin='trainer', skill='recall').order_by('-created_at', '-pk').first())
+    previous_family = (last_recall.evidence.get('family_id') if last_recall
+                       else previous.family_id if previous else None)
     index = next((i for i, t in enumerate(content['recall_tasks'])
-                  if not previous or t['family_id'] != previous.family_id), 0)
+                  if t['family_id'] != previous_family), 0)
     task = content['recall_tasks'][index]
     # A new assessment revision establishes fresh evidence even if an explicit
     # editorial task mapping exists. Historical rows are never reclassified.

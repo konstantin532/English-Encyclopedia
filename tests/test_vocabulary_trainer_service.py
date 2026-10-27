@@ -10,7 +10,7 @@ from django.test import TestCase, override_settings
 from apps.accounts.models import User
 from apps.accounts.data_rights import export_data
 from apps.drills.models import Exercise, PracticeItem
-from apps.learning.models import IndependentAttempt, UnitProgress
+from apps.learning.models import IndependentAttempt, TrainerSession, UnitProgress
 from apps.learning.trainer_content import UNIT_UIDS
 from apps.lexicon.models import LexicalUnit
 from tests.runner import ensure_content
@@ -59,6 +59,62 @@ class TrainerServiceTests(TestCase):
 
     def progress(self):
         return UnitProgress.objects.get(user=self.user, unit=self.unit)
+
+    def test_abandoned_unanswered_encounter_does_not_change_next_recall_family(self):
+        self.enroll()
+        completed = self.finish()
+        due = self.progress().next_review_at
+        abandoned = self.start(now=due)
+        family = lambda view: TrainerSession.objects.get(pk=view['session_id']).family_id
+        self.assertNotEqual(family(abandoned), family(completed))
+        self.action(abandoned, 'abandon', now=due)
+        resumed = self.start(now=due + timedelta(seconds=1))
+        self.assertEqual(family(resumed), family(abandoned))
+        result = self.action(resumed, 'recall', answer='tea', now=due + timedelta(seconds=1))
+        self.assertEqual(result['result']['scheduling'], 'delayed_correct')
+        self.assertEqual(self.progress().stage, 1)
+
+    def test_exported_historical_models_count_as_help_for_active_recall(self):
+        self.enroll()
+        completed = self.finish()
+        due = self.progress().next_review_at
+        pending = self.start(now=due)
+        unrelated = self.start(uid=UNIT_UIDS[1], now=due)
+        self.svc.enroll(self.other, prerequisites_confirmed=True)
+        other_session = self.svc.start_encounter(self.other, self.uid, now=due)
+        with patch('apps.learning.trainer_service.timezone.now', return_value=due):
+            exported = export_data(self.user)['tables']
+        historical = next(row for row in exported['learning.trainersession']
+                          if row['id'] == completed['session_id'])
+        self.assertEqual(historical['result']['canonical_answer'], 'tea')
+        result = self.action(pending, 'recall', answer='tea', now=due)
+        self.assertEqual(result['result']['scheduling'], 'assisted')
+        self.assertEqual(self.progress().stage, 0)
+        self.assertEqual(TrainerSession.objects.get(pk=unrelated['session_id']).assistance, [])
+        other_session.refresh_from_db()
+        self.assertEqual(other_session.assistance, [])
+
+    def test_exported_legacy_attempt_model_without_completed_session_counts_as_help(self):
+        from apps.lessons.models import Lesson
+        self.enroll()
+        view = self.action(self.start(), 'begin')
+        legacy = IndependentAttempt.objects.create(
+            user=self.user, lesson=Lesson.objects.get(slug='a1-cafe-order'),
+            target=self.unit, skill='meaning', submitted='my old answer',
+            outcome='model_match', model_snapshot='tea')
+        exported = export_data(self.user)['tables']
+        row = next(row for row in exported['learning.independentattempt'] if row['id'] == legacy.pk)
+        self.assertEqual(row['model_snapshot'], 'tea')
+        self.assertEqual(row['submitted'], 'my old answer')
+        self.assertFalse(any(row['result'].get('canonical_answer')
+                             for row in exported['learning.trainersession']))
+        self.assertIn('legacy_model', TrainerSession.objects.get(pk=view['session_id']).assistance)
+
+    def test_export_without_disclosed_model_does_not_mark_help(self):
+        self.enroll()
+        view = self.action(self.start(), 'begin')
+        export_data(self.user)
+        self.assertEqual(self.svc.encounter_view(self.user, view['session_id'])['assistance'], [])
 
     def test_flag_off_has_no_new_table_queries_and_anonymous_unavailable(self):
         with override_settings(EE_VOCABULARY_TRAINER_ENABLED=False), self.assertNumQueries(0):

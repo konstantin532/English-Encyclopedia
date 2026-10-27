@@ -39,6 +39,22 @@ def export_data(user) -> dict:
         if redact is not None:
             rows = redact(rows, user=user)
         data["tables"][f"{model._meta.app_label}.{model._meta.model_name}"] = rows
+    # Keep historical answers in the learner's export, but count their delivery
+    # as help for an active encounter just like reading a completed encounter.
+    from apps.learning.trainer_service import legacy_managed_units, register_legacy_exposure
+    if legacy_managed_units(user):
+        from apps.lexicon.models import LexicalUnit
+        tables = data["tables"]
+        exposed_ids = {
+            row["unit_id"] for row in tables.get("learning.trainersession", [])
+            if row.get("result", {}).get("canonical_answer")
+        }
+        exposed_ids.update(
+            row["target_id"] for row in tables.get("learning.independentattempt", [])
+            if row.get("target_id") and row.get("model_snapshot")
+        )
+        if exposed_ids:
+            register_legacy_exposure(user, LexicalUnit.objects.filter(pk__in=exposed_ids))
     return data
 
 
