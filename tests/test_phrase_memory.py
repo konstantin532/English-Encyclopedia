@@ -363,3 +363,23 @@ class PhrasePracticeViewTests(TestCase):
         self.client.get(self.url)
         self.client.post(self.url, {"action": "check", "item": "forged", "answer": "x"})
         self.assertFalse(UnitProgress.objects.filter(user=self.user, memory_stability__isnull=False).exists())
+
+
+class PhraseEntryLinkTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        ensure_content()
+
+    def setUp(self):
+        self.user = User.objects.create_user(email="phrases-link@example.test", password="password")
+        self.client.force_login(self.user)
+
+    def test_link_hidden_when_disabled(self):
+        r = self.client.get("/learning/")
+        self.assertNotContains(r, 'href="/learning/phrases/"')
+
+    @override_settings(EE_PHRASE_MEMORY_ENABLED=True)
+    def test_link_in_menu_and_dashboard_when_enabled(self):
+        r = self.client.get("/learning/")
+        self.assertContains(r, 'href="/learning/phrases/"', count=2)
+        self.assertContains(r, "Начать тренировку")
