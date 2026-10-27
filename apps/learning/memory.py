@@ -17,7 +17,7 @@ import yaml
 from django.conf import settings
 from django.utils import timezone
 
-MODES = ("full", "partial", "independent", "transfer")
+MODES = ("full", "puzzle", "partial", "independent", "transfer")
 ERRORS = ("typo", "form", "wrong", "dontknow")
 
 
@@ -173,7 +173,7 @@ def apply(progress, *, correct: bool, mode: str = "independent", error: str = "w
         ev["streak"] = int(ev.get("streak", 0)) + 1
         if ev["streak"] >= cfg["hint_after_errors"]:
             ev["hint_left"] = cfg["hint_phrases"]
-    if ev.get("hint_left") and mode == "full":
+    if ev.get("hint_left") and mode in ("full", "puzzle"):
         ev["hint_left"] = max(0, int(ev["hint_left"]) - 1)
     progress.memory_reviewed_at = now
     progress.memory_evidence = ev
@@ -195,3 +195,20 @@ def pick_mode(progress, r: float | None) -> str:
     if r < 60:
         return "partial"
     return "independent"
+
+
+# ─────────── способ ввода: пазл или набор ───────────
+def puzzle_percent(correct_total: int, cfg=None) -> int:
+    """Доля пазлов (0–100) для ученика с таким числом верных фраз за всё время."""
+    cfg = cfg or config()
+    share = 100
+    for start, percent in cfg["input"]["puzzle_steps"]:
+        if correct_total >= start:
+            share = percent
+    return share
+
+
+def puzzle_step(correct_total: int, cfg=None) -> int:
+    """Номер ступени перехода: 0 — только пазлы, последняя — постоянная доля пазлов."""
+    cfg = cfg or config()
+    return sum(1 for start, _ in cfg["input"]["puzzle_steps"][1:] if correct_total >= start)

@@ -8,7 +8,7 @@ from django.test import SimpleTestCase, TestCase, override_settings
 
 from apps.accounts.models import User
 from apps.learning import memory, phrase_practice
-from apps.learning.models import UnitProgress
+from apps.learning.models import PhraseStats, UnitProgress
 from apps.learning.phrase_checker import check, normalize
 from apps.learning.phrase_engine import engine, lexicon
 from apps.learning.trainer_content import UNIT_UIDS as PILOT_UIDS
@@ -363,6 +363,79 @@ class PhrasePracticeViewTests(TestCase):
         self.client.get(self.url)
         self.client.post(self.url, {"action": "check", "item": "forged", "answer": "x"})
         self.assertFalse(UnitProgress.objects.filter(user=self.user, memory_stability__isnull=False).exists())
+
+
+class PuzzleShareTests(SimpleTestCase):
+    def test_puzzle_share_follows_twelve_steps(self):
+        steps = memory.config()["input"]["puzzle_steps"]
+        self.assertEqual(len(steps), 14)  # старт + 12 ступеней + постоянная доля
+        self.assertEqual(memory.puzzle_percent(0), 100)
+        self.assertEqual(memory.puzzle_percent(2999), 100)
+        self.assertLess(memory.puzzle_percent(3000), 100)
+        self.assertEqual(memory.puzzle_percent(10000), 15)
+        self.assertEqual(memory.puzzle_percent(50000), 15)
+        shares = [memory.puzzle_percent(n) for n in range(0, 10001, 50)]
+        self.assertEqual(shares, sorted(shares, reverse=True))
+        self.assertEqual(memory.puzzle_step(2999), 0)
+        self.assertEqual(memory.puzzle_step(10000), 13)
+
+    def test_puzzle_grows_memory_less_than_independent(self):
+        def grown(mode):
+            p = fresh()
+            memory.apply(p, correct=True, mode="independent", family="f", now=T0)
+            memory.apply(p, correct=True, mode=mode, family="g", now=T0 + timedelta(days=3))
+            return p.memory_stability
+        self.assertLess(grown("puzzle"), grown("independent"))
+
+
+@override_settings(EE_PHRASE_MEMORY_ENABLED=True)
+class PuzzleInputViewTests(TestCase):
+    url = "/learning/phrases/"
+
+    @classmethod
+    def setUpTestData(cls):
+        ensure_content()
+
+    def setUp(self):
+        self.user = User.objects.create_user(email="puzzle@example.test", password="password")
+        self.client.force_login(self.user)
+        for lem in ["coffee", "tea", "water", "drink", "teacher", "book", "table", "cold", "big"]:
+            UnitProgress.objects.get_or_create(user=self.user, unit=LexicalUnit.objects.get(lemma=lem))
+
+    def test_beginner_always_gets_puzzle_and_counter_grows(self):
+        r = self.client.get(self.url)
+        item = self.client.session[phrase_practice.SESSION_KEY]["item"]
+        self.assertEqual(item["input"], "puzzle")
+        self.assertEqual(item["mode"], "puzzle")
+        self.assertEqual(len(item["bank"]), len(item["accepted"][0].rstrip(".?!").split()))
+        self.assertContains(r, "data-phrase-puzzle")
+        self.assertContains(r, "пазлов сейчас: 100%")
+        payload = {"action": "check", "item": item["id"], "answer": item["accepted"][0]}
+        self.client.post(self.url, payload)
+        self.client.post(self.url, payload)  # повтор не считается дважды
+        self.assertEqual(PhraseStats.objects.get(user=self.user).correct_total, 1)
+
+    def test_wrong_answer_does_not_count(self):
+        self.client.get(self.url)
+        item = self.client.session[phrase_practice.SESSION_KEY]["item"]
+        self.client.post(self.url, {"action": "dont_know", "item": item["id"]})
+        self.assertFalse(PhraseStats.objects.filter(user=self.user, correct_total__gt=0).exists())
+
+    def test_experienced_learner_mostly_types(self):
+        PhraseStats.objects.create(user=self.user, correct_total=20000)
+        ctx, fams, index = engine.build_cached(phrase_practice.content_version(), (0, 14))
+        ph = engine.Phrase("I like tea.", "F05", "x", "aff", "tea", ["I", "like", "tea"], [])
+        share = memory.puzzle_percent(phrase_practice.correct_total(self.user))
+        inputs = []
+        for i in range(200):
+            rng = random.Random(i)
+            puzzle = rng.random() * 100 < share
+            inputs.append(phrase_practice._item_payload(ctx, ph, "independent", rng, 1, 1, puzzle))
+        puzzles = [it for it in inputs if it["input"] == "puzzle"]
+        self.assertTrue(10 <= len(puzzles) <= 50)
+        self.assertTrue(all(it["mode"] == "puzzle" and it["bank"] for it in puzzles))
+        self.assertTrue(all(it["mode"] == "independent" and not it["bank"] for it in inputs if it["input"] == "typing"))
+        self.assertContains(self.client.get(self.url), "пазлов сейчас: 15%")
 
 
 class PhraseEntryLinkTests(TestCase):
