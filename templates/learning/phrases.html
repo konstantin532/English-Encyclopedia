@@ -21,11 +21,29 @@
 
   {% if not started %}
   <section class="trainer-card"><h2>Сначала — урок</h2><p>Тренировка появится после первого урока: она использует только изученные слова.</p><p><a class="trainer-button" href="{% url 'learning:dashboard' %}">К урокам</a></p></section>
+  {% elif state.round_break %}
+  <section class="trainer-card" role="status" aria-labelledby="round-title" data-phrase-round-break>
+    <h2 id="round-title">Раунд {{ round.number }} готов</h2>
+    <p>Верно {{ round.round_correct }} из {{ round.round_done }}. Сегодня сделано {{ round.done }} из {{ round.planned }}.</p>
+    <p>Короткий перерыв помогает запомнить лучше. Продолжите сейчас или вернитесь позже: план на сегодня сохранится.</p>
+    <form method="post">{% csrf_token %}
+      <div class="trainer-actions">
+        <button type="submit" name="action" value="more">Ещё {{ round.next }}</button>
+        <button type="submit" name="action" value="stop" class="trainer-secondary">На сегодня хватит</button>
+      </div>
+    </form>
+  </section>
+  {% elif state.stopped %}
+  <section class="trainer-card" role="status" aria-labelledby="pause-title" data-phrase-paused>
+    <h2 id="pause-title">Пауза</h2>
+    <p>Сегодня сделано {{ round.done }} фраз · верно: {{ state.correct }}. По плану на сегодня осталось {{ round.left }}.</p>
+    <form method="post">{% csrf_token %}<button type="submit" name="action" value="more">Продолжить тренировку</button></form>
+  </section>
   {% elif not item %}
   <section class="trainer-card" role="status"><h2>На сегодня всё</h2><p>Фраз сегодня: {{ done }} · верно: {{ state.correct }} · с ошибкой: {{ state.errors }}.</p><p>Завтра план тренировки составится заново по тому, какие слова начнут забываться.</p></section>
   {% else %}
   <section class="trainer-card" aria-labelledby="phrase-task-title">
-    <p class="trainer-eyebrow">Фраза {{ item.number }} из {{ item.total }} · {{ item.family_name_ru }}</p>
+    <p class="trainer-eyebrow">Раунд {{ round.number }} · фраза {{ round.position }} из {{ round.of }} · {{ item.family_name_ru }}</p>
     <h2 id="phrase-task-title">Составьте {{ item.stype_ru }}</h2>
     <h3>Слова фразы</h3>
     <ul>{% for g in item.glosses %}<li><span lang="en">{{ g.en }}</span> — {{ g.ru }}{% if g.target %} <strong>(тренируем)</strong>{% endif %}</li>{% endfor %}</ul>

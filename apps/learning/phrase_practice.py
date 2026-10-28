@@ -18,10 +18,11 @@ from django.utils import timezone
 from apps.lexicon.models import LexicalUnit, UnitType
 
 from . import memory
-from .models import PhraseStats, UnitProgress
+from .models import ExerciseAttempt, PhraseStats, UnitProgress
 from .phrase_checker import check
 from .phrase_engine import engine
 from .phrase_engine.engine import STYPE_RU, make_phrase, tokenize
+from .phrase_engine.spoken import spoken
 from .trainer_content import UNIT_UIDS as PILOT_UIDS
 
 SESSION_KEY = "phrase_practice"
@@ -68,6 +69,13 @@ def _usable_lemmas(fams):
     return out
 
 
+def days_learning(user, now=None) -> int:
+    """Стаж ученика в днях — от первого упражнения в уроке. Без упражнений — 0 (новичок)."""
+    now = now or timezone.now()
+    first = ExerciseAttempt.objects.filter(user=user).order_by("created_at").values_list("created_at", flat=True).first()
+    return max(0, (timezone.localdate(now) - timezone.localdate(first)).days) if first else 0
+
+
 def word_states(user, now=None):
     """[(UnitProgress, рейтинг или None)] для слов ученика."""
     now = now or timezone.now()
@@ -92,7 +100,8 @@ def plan_day(user, now=None, rng=None):
     sc = cfg["session"]
     rng = rng or random.Random(f"{user.pk}:{timezone.localdate(now)}")
     due = sum(1 for _, r in words if r is None or r < sc["due_below"])
-    n = max(sc["min_phrases"], min(sc["max_phrases"], math.ceil(due / sc["words_per_phrase"])))
+    lo, hi = memory.daily_range(days_learning(user, now), cfg)
+    n = max(lo, min(hi, math.ceil(due / sc["words_per_phrase"])))
     n = min(n, len(words) * sc["per_word_max"])
     eff = {p.unit.lemma: (30.0 if r is None else r) for p, r in words}
     low = [w for w in eff if eff[w] < 80]
@@ -153,8 +162,10 @@ def current(request, now=None):
     if st.get("day") != today or st.get("user") != user.pk:
         plan = plan_day(user, now)
         st = {"day": today, "user": user.pk, "pos": plan["pos"], "queue": plan["queue"], "i": 0,
-              "item": None, "correct": 0, "errors": 0}
-    if st.get("item") is None or st["item"].get("answered") and st["item"].get("advance"):
+              "item": None, "correct": 0, "errors": 0, "round_break": False, "stopped": False}
+    if st.get("round_break") or st.get("stopped"):
+        pass  # перерыв между раундами или «на сегодня хватит»: новую фразу не берём
+    elif st.get("item") is None or st["item"].get("answered") and st["item"].get("advance"):
         st["item"] = _next_item(user, st, now)
     _save(request, st)
     return st
@@ -166,13 +177,14 @@ def _next_item(user, st, now):
     ctx, fams, index = engine.build_cached(content_version(), tuple(st["pos"]))
     progress = {p.unit.lemma: p for p in _progress_words(user)}
     cfg = memory.config()
+    limit = memory.max_words(st["pos"], cfg)
     familiar = frozenset(l for l, p in progress.items()
                          if (r := memory.rating(p, now, cfg)) is not None and r >= cfg["session"]["familiar_from"])
     while st["i"] < len(st["queue"]):
         target = st["queue"][st["i"]]
         st["i"] += 1
         rng = random.Random(f"{user.pk}:{st['day']}:{st['i']}:{target}")
-        phrase = make_phrase(ctx, fams, target, rng, familiar, index)
+        phrase = make_phrase(ctx, fams, target, rng, familiar, index, max_words=limit)
         if phrase is None:
             continue
         prog = progress.get(target)
@@ -182,7 +194,8 @@ def _next_item(user, st, now):
         if mode == "independent" and fams_seen and phrase.family not in fams_seen:
             mode = "transfer"
         puzzle = rng.random() * 100 < memory.puzzle_percent(correct_total(user), cfg)
-        return _item_payload(ctx, phrase, mode, rng, st["i"], len(st["queue"]), puzzle)
+        done = st.get("correct", 0) + st.get("errors", 0)
+        return _item_payload(ctx, phrase, mode, rng, done + 1, len(st["queue"]), puzzle)
     return None
 
 
@@ -192,7 +205,8 @@ def correct_total(user) -> int:
 
 
 def _item_payload(ctx, phrase, mode, rng, number, total, puzzle=False):
-    words = tokenize(phrase.text)
+    # Ученик видит живую форму (I'm, don't); проверка сравнивает полную и принимает обе.
+    words = tokenize(spoken(phrase.text))
     bank = list(words)
     if bank:  # заглавная буква первого слова — только из-за начала фразы (кроме I, TV, Monday …)
         first_lemma = phrase.lemmas[0] if phrase.lemmas else None
@@ -237,10 +251,12 @@ def answer(request, item_id: str, text: str, now=None):
     item["answered"] = True
     item["result"] = {
         "status": res.status, "kind": res.kind, "correct": res.correct, "got": res.got,
-        "expected": res.expected, "confidence": res.confidence, "explanation_ru": res.explanation_ru,
-        "sample": res.sample, "lemma": res.lemma, "answer": text[:300], "changes": changes,
+        "expected": spoken(res.expected) if res.expected == res.sample else res.expected, "confidence": res.confidence, "explanation_ru": res.explanation_ru,
+        "sample": spoken(res.sample), "lemma": res.lemma, "answer": text[:300], "changes": changes,
     }
     st["correct" if res.correct else "errors"] += 1
+    key = "round_correct" if res.correct else "round_errors"
+    st[key] = st.get(key, 0) + 1
     if res.correct:
         stats, _ = PhraseStats.objects.get_or_create(user=request.user)
         PhraseStats.objects.filter(pk=stats.pk).update(correct_total=F("correct_total") + 1)
@@ -252,7 +268,42 @@ def advance(request):
     st = _state(request)
     if st.get("item") and st["item"].get("answered"):
         st["item"]["advance"] = True
+        done = st.get("correct", 0) + st.get("errors", 0)
+        if done and done % memory.round_size() == 0 and st["i"] < len(st.get("queue", [])):
+            st["round_break"] = True
         _save(request, st)
+
+
+def round_info(st):
+    """Где ученик в тренировке: раунд, место фразы в раунде, итог раунда."""
+    size = memory.round_size()
+    done = st.get("correct", 0) + st.get("errors", 0)
+    planned = max(len(st.get("queue", [])), done)
+    item = st.get("item")
+    resting = st.get("round_break") or st.get("stopped") or not item
+    n = done if resting else item["number"]
+    number = (n - 1) // size + 1 if n else 1
+    start = (number - 1) * size
+    return {"number": number, "size": size, "position": n - start, "of": max(1, min(size, planned - start)),
+            "done": done, "planned": planned, "next": max(0, min(size, planned - done)), "left": max(0, planned - done),
+            "round_correct": st.get("round_correct", 0), "round_done": st.get("round_correct", 0) + st.get("round_errors", 0)}
+
+
+def continue_rounds(request):
+    """«Ещё 10» и «Продолжить» после перерыва."""
+    st = _state(request)
+    if st.get("round_break"):
+        st["round_correct"] = st["round_errors"] = 0
+    st["round_break"] = False
+    st["stopped"] = False
+    _save(request, st)
+
+
+def stop_for_today(request):
+    st = _state(request)
+    st["round_break"] = False
+    st["stopped"] = True
+    _save(request, st)
 
 
 @transaction.atomic

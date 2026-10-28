@@ -212,3 +212,32 @@ def puzzle_step(correct_total: int, cfg=None) -> int:
     """Номер ступени перехода: 0 — только пазлы, последняя — постоянная доля пазлов."""
     cfg = cfg or config()
     return sum(1 for start, _ in cfg["input"]["puzzle_steps"][1:] if correct_total >= start)
+
+
+# ─────────── нагрузка, раунды, длина фразы ───────────
+def daily_range(days_learning: int, cfg=None) -> tuple[int, int]:
+    """(минимум, максимум) фраз в день для ученика, который учится столько дней."""
+    cfg = cfg or config()
+    lo, hi = cfg["daily_load"][0][1:]
+    for start, low, high in cfg["daily_load"]:
+        if days_learning >= start:
+            lo, hi = low, high
+    return lo, hi
+
+
+def round_size(cfg=None) -> int:
+    cfg = cfg or config()
+    return int(cfg.get("round_size", 10))
+
+
+def max_words(pos, cfg=None) -> int | None:
+    """Потолок длины фразы для позиции ученика (порядок уровня − 1, неделя)."""
+    from apps.curriculum.registry import LEVELS
+    cfg = cfg or config()
+    order = {lv.code: lv.order for lv in LEVELS}
+    best = None
+    for code, week, words in cfg.get("max_words", []):
+        start = (order[code] - 1, week) if code in order else None
+        if start is not None and start <= tuple(pos) and (best is None or start > best[0]):
+            best = (start, words)
+    return best[1] if best else None

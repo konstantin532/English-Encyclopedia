@@ -96,8 +96,8 @@ class MemoryMathTests(SimpleTestCase):
         self.assertEqual(memory.strength_step(400), 8)
 
     def test_level_override_falls_back_to_common(self):
-        self.assertEqual(memory.config("B2")["session"]["max_phrases"],
-                         memory.config()["session"]["max_phrases"])
+        self.assertEqual(memory.config("B2")["session"]["per_word_max"],
+                         memory.config()["session"]["per_word_max"])
 
 
 class CheckerTests(SimpleTestCase):
