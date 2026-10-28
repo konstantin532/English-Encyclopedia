@@ -1,0 +1,169 @@
+{
+  "rows": [
+    {
+      "name": "week3",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 1280,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 1280,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 360,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 360,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 360,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 360,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    }
+  ],
+  "errors": [],
+  "keyboard": "PASS",
+  "noJS": "PASS",
+  "forcedColors": "PASS",
+  "readerScale": "PASS"
+}

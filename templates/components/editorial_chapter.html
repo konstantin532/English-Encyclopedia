@@ -1,0 +1,8 @@
+<header class="editorial-chapter">
+  {% if atlas_cover_url %}<img class="editorial-chapter-art" src="{{ atlas_cover_url }}" alt="{{ atlas_cover_alt }}" width="1536" height="864" fetchpriority="high" decoding="async">{% endif %}
+  <div class="editorial-chapter-copy">
+    <p class="editorial-kicker">НЕДЕЛЯ {{ week.number|stringformat:'02d' }} · {{ week.theme_ru|default:week.situation_ru }}</p>
+    <h1>{{ week.situation_ru|default:week.theme_ru }}</h1>
+    <div class="editorial-chapter-footer"><span class="editorial-chapter-number" aria-hidden="true">{{ week.number|stringformat:'02d' }}</span><a href="{% url 'curriculum:level' week.level.slug %}">Все {{ week.level.weeks }} недель уровня {{ week.level.code }} ↗</a></div>
+  </div>
+</header>

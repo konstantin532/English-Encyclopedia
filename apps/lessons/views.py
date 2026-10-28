@@ -20,7 +20,12 @@ def lesson_detail(request, slug):
     if getattr(settings, "EE_VOCABULARY_TRAINER_ENABLED", False) and request.user.is_authenticated:
         from apps.learning.trainer_service import register_legacy_exposure
         register_legacy_exposure(request.user, units)
+    editorial_pilot = lesson.slug == "a1-cafe-order"
+    glossary_units = list(units) if editorial_pilot else []
     return render(request, "lessons/detail.html", {
+        "editorial_pilot": editorial_pilot,
+        "editorial_words": [u for u in glossary_units if u.unit_type == "word"],
+        "editorial_phrases": [u for u in glossary_units if u.unit_type != "word"],
         "lesson": lesson,
         "lesson_design_pilot": lesson.slug in {"a1-nouns-first-words", "a1-verb-be"},
         "extra_missions": extra_missions,

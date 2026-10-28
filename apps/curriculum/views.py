@@ -114,6 +114,7 @@ def week_detail(request, slug, number):
         register_legacy_exposure(request.user, ["LX-00055", "LX-00285", "LX-00084"])
     return render(request, "curriculum/week.html", {
         "trainer_entry": trainer_entry,
+        "editorial_pilot": level.code == "A1" and week.number == 3,
         "week": week, "scene": scene, "lines": lines, "speakers": speakers,
         "atlas_cover_url": (week_art(level.code, week.number) or {}).get("large"),
         "atlas_cover_alt": (week_art(level.code, week.number) or {}).get("alt", ""),

@@ -1,5 +1,7 @@
 // English Encyclopedia — Editorial Luxury × Living Language.
 // Extends ee-polish without changing the existing grids or component geometry.
+@use "system/editorial";
+
 @mixin editorial-raised {
   background: linear-gradient(153deg, var(--surface), color-mix(in srgb, var(--studio-mint) 20%, var(--surface)) 100%);
   border-color: color-mix(in srgb, var(--rule) 77%, var(--cinema-gold));
@@ -508,3 +510,5 @@
     }
   }
 }
+
+@layer ee-polish { @include editorial.pilot; }
