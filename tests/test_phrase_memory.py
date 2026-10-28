@@ -407,7 +407,8 @@ class PuzzleInputViewTests(TestCase):
         item = self.client.session[phrase_practice.SESSION_KEY]["item"]
         self.assertEqual(item["input"], "puzzle")
         self.assertEqual(item["mode"], "puzzle")
-        self.assertEqual(len(item["bank"]), len(item["accepted"][0].rstrip(".?!").split()))
+        # карточки — в живой форме (I'm, don't): столько же, сколько слов видит ученик
+        self.assertEqual(len(item["bank"]), engine.spoken_length(item["accepted"][0]))
         self.assertContains(r, "data-phrase-puzzle")
         self.assertContains(r, "пазлов сейчас: 100%")
         payload = {"action": "check", "item": item["id"], "answer": item["accepted"][0]}
