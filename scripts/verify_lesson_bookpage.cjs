@@ -91,7 +91,8 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
         await page.locator('#layer-1').screenshot({path:path.join(output,`noun-${width}-${state}-explanation.png`)});
         // The workshop is now optional: prove its initial closed state, then
         // open the real details control before measuring its speech controls.
-        if(state==='after')await openExtraPractice(page);
+        // Since PR #137 the base branch also folds the workshop; open it in any checkout that has it.
+        if(state==='after'||await page.locator('#lesson-extra-practice').count())await openExtraPractice(page);
         await page.locator('.speech-mode-grid').screenshot({path:path.join(output,`noun-${width}-${state}-speech.png`)});
         entry.activatedSpeech=await colors(page.locator('.speech-mode-grid [data-speech-mode="see"]'));
         if(state==='after'){
