@@ -32,6 +32,7 @@ class User(AbstractUser):
     current_level = models.ForeignKey(
         "curriculum.Level", on_delete=models.SET_NULL, null=True, blank=True, related_name="+"
     )
+    markers_enabled = models.BooleanField("маркеры в тексте", default=False, db_default=False)
     markers_in_color = models.BooleanField("маркеры в цвете", default=True)
 
     USERNAME_FIELD = "email"

@@ -62,16 +62,16 @@ class A1DeepThirteenSixteenTests(TestCase):
     def test_she_reply_does_not_certify_he_reply_but_keeps_attempt(self):self.main_credits('EX-00071',[])
     def test_start_completion_does_not_certify_nurse_word(self):self.main_credits('EX-00073',['LX-00332'])
     def test_doctor_reply_does_not_certify_teacher_phrase(self):self.main_credits('EX-00077',['LX-00144'])
-    def test_object_her_is_rendered_as_a_personal_pronoun(self):
+    def test_object_her_keeps_its_personal_pronoun_marker_with_a_beginner_label(self):
         class Labels(HTMLParser):
             def __init__(self):super().__init__();self.span=None;self.rows=[]
             def handle_starttag(self,tag,attrs):
                 if tag=='span':self.span=dict(attrs)
             def handle_data(self,data):
-                if self.span and self.span.get('data-cat') and data.strip()=='her':self.rows.append((data.strip(),self.span.get('data-label','')))
+                if self.span and self.span.get('data-cat') and data.strip()=='her':self.rows.append((data.strip(),self.span.get('data-cat'),self.span.get('data-cls'),self.span.get('data-label','')))
             def handle_endtag(self,tag):
                 if tag=='span':self.span=None
-        for slug,word,suffix in [(SLUGS[3],'her','Личные местоимения (pronouns)')]:
+        for slug,word in [(SLUGS[3],'her')]:
             page=self.client.get(reverse('lessons:detail',args=[slug]));self.assertEqual(page.status_code,200)
-            parser=Labels();parser.feed(page.content.decode());labels=[label for token,label in parser.rows if token==word]
-            with self.subTest(word=word):self.assertTrue(labels);self.assertTrue(all(label.endswith(suffix) for label in labels),labels)
+            parser=Labels();parser.feed(page.content.decode());markers=[(cat,cls,label) for token,cat,cls,label in parser.rows if token==word]
+            with self.subTest(word=word):self.assertTrue(markers);self.assertEqual(set(markers),{('T','8','Помогает указать на человека или вещь')})

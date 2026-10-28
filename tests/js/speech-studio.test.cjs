@@ -33,7 +33,7 @@ test('rhythm indicator is only a tap tempo, never a fake speaking score', () => 
   assert.equal(lib.tempoFromTaps([0, 100]), null);
   assert.equal(lib.tempoFromTaps([0, 20000]), null);
   assert.match(source, /темп нажатий/);
-  assert.match(source, /не автоматическая проверка/);
+  assert.doesNotMatch(source, /Это самооценка, а не автоматическая проверка/);
 });
 
 test('no cloud speech APIs, telemetry, hidden storage or uploading recordings', () => {
@@ -52,14 +52,57 @@ test('all three training surfaces include the actual script and reusable control
   const lesson = fs.readFileSync(path.join(root, 'templates/lessons/detail.html'), 'utf8');
   const twister = fs.readFileSync(path.join(root, 'templates/components/twister_trainer.html'), 'utf8');
   const controls = fs.readFileSync(path.join(root, 'templates/components/speech_studio_controls.html'), 'utf8');
+  const recorder = fs.readFileSync(path.join(root, 'templates/components/speech_recorder.html'), 'utf8');
   for (const template of [poem, week, lesson]) assert.match(template, /speech-studio\.js/);
   for (const template of [poem, lesson, twister]) {
     assert.match(template, /data-speech-studio/);
     assert.match(template, /speech_studio_controls\.html/);
     assert.match(template, /data-speech-entry/);
   }
-  assert.match(controls, /data-speech-record/);
+  assert.match(controls, /speech_recorder\.html/);
+  assert.match(recorder, /data-speech-record/);
   assert.match(controls, /data-speech-tap/);
   assert.match(controls, /data-speech-reveal/);
-  assert.match(controls, /на сервер не отправляется/);
+  assert.match(recorder, /Запись не отправляется на сервер\./);
+});
+
+// Lesson pages omit optional rhythm controls but keep speech navigation/recording.
+test('lesson speech initializes and changes fragments without rhythm controls', () => {
+  const vm = require('node:vm');
+  const element = () => ({
+    textContent: '', hidden: false, disabled: false, dataset: {}, childNodes: [],
+    listeners: {},
+    addEventListener(type, callback) { this.listeners[type] = callback; },
+    setAttribute() {},
+    replaceChildren() { this.childNodes = []; },
+    append(...children) { this.childNodes.push(...children); },
+  });
+  const fields = new Map();
+  for (const name of ['task', 'current', 'stress', 'position', 'instruction',
+    'prev', 'next', 'reveal', 'done', 'status', 'record', 'stop', 'delete',
+    'playback', 'record-status']) fields.set('[data-speech-' + name + ']', element());
+  const entries = ['This is my book.', 'This is my phone.'].map(text => ({
+    querySelector(selector) {
+      if (selector === '[data-speech-source]') return {childNodes: [{cloneNode() { return {textContent: text}; }}]};
+      return null;
+    }
+  }));
+  const modes = lib.MODES.map(mode => Object.assign(element(), {dataset: {speechMode: mode}}));
+  const studio = {
+    dataset: {speechKind: 'lesson'},
+    querySelector(selector) { return fields.get(selector) || null; },
+    querySelectorAll(selector) { return selector === '[data-speech-entry]' ? entries : modes; },
+    addEventListener() {},
+  };
+  const document = {readyState: 'complete', querySelectorAll() { return [studio]; }, createElement: element};
+  vm.runInNewContext(source, {document, window: {navigator: {}}});
+  assert.equal(fields.get('[data-speech-position]').textContent, 'Фрагмент 1 из 2');
+  assert.equal(fields.get('[data-speech-record]').disabled, true);
+  fields.get('[data-speech-next]').listeners.click();
+  assert.equal(fields.get('[data-speech-position]').textContent, 'Фрагмент 2 из 2');
+  modes[2].listeners.click();
+  assert.equal(studio.dataset.speechMode, 'recall');
+  assert.equal(fields.get('[data-speech-reveal]').hidden, false);
+  fields.get('[data-speech-done]').listeners.click();
+  assert.match(fields.get('[data-speech-status]').textContent, /Отмечено 1 из 2/);
 });

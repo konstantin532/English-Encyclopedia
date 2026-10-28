@@ -2,7 +2,7 @@
           <form class="drill" data-drill data-kind="{{ ex.kind }}" {% if not ex.check_url %}data-self-review-url="{% url 'learning:request_optional_review' ex.pk %}"{% endif %} data-url="{% if ex.check_url %}{{ ex.check_url }}{% else %}{% url 'api:check_exercise' ex.pk %}{% endif %}" novalidate>
             <p class="drill-stage">Задание {{ number }} из {{ total }}. {{ ex.get_stage_display }}</p>
             <p class="drill-prompt" id="q{{ ex.pk }}">{{ ex.prompt_ru }}</p>
-            {% if ex.prompt_en %}<p class="drill-en annotated" lang="en">{{ ex.prompt_en|annotate }}</p>{% endif %}
+            {% if ex.prompt_en %}<p class="drill-en annotated" lang="en">{% if lesson.level.code == "A1" %}{{ ex.prompt_en|annotate:True }}{% else %}{{ ex.prompt_en|annotate }}{% endif %}</p>{% endif %}
             {% if ex.kind == "choice" %}
               <div class="choice-row" role="group" aria-labelledby="q{{ ex.pk }}">
                 {% for o in ex.options %}<button type="button" class="choice" lang="en" aria-pressed="false" data-choice="{{ o }}">{{ o }}</button>{% endfor %}

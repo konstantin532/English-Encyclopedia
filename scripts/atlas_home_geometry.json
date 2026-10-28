@@ -1,0 +1,262 @@
+{
+  "description": "Beginner home at PR #137: no technical eyebrow, simpler phrase labels, marker-help link. Every selector, card count and rectangle axis stays pinned (1 CSS px tolerance).",
+  "source_commit": "18b86ca72296b751248d3c6ad81fbf7c910bd843",
+  "viewports": {
+    "1440": {
+      ".studio-sidebar": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 232,
+          "height": 900
+        }
+      ],
+      ".site-header": [
+        {
+          "x": 232,
+          "y": 0,
+          "width": 1208,
+          "height": 73
+        }
+      ],
+      ".studio-home-hero": [
+        {
+          "x": 264,
+          "y": 95,
+          "width": 1144,
+          "height": 604.65625
+        }
+      ],
+      ".studio-phrase-paper": [
+        {
+          "x": 670.375,
+          "y": 467.671875,
+          "width": 319.75,
+          "height": 264.984375
+        }
+      ],
+      ".studio-lesson-card": [],
+      ".week-card": [
+        {
+          "x": 264,
+          "y": 832.546875,
+          "width": 271,
+          "height": 300.6875
+        },
+        {
+          "x": 555,
+          "y": 832.546875,
+          "width": 271,
+          "height": 300.6875
+        },
+        {
+          "x": 846,
+          "y": 832.546875,
+          "width": 271,
+          "height": 300.6875
+        },
+        {
+          "x": 1137,
+          "y": 832.546875,
+          "width": 271,
+          "height": 300.6875
+        }
+      ],
+      ".week-hero": [],
+      ".week-route": [],
+      ".story-script": []
+    },
+    "1280": {
+      ".studio-sidebar": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 232,
+          "height": 800
+        }
+      ],
+      ".site-header": [
+        {
+          "x": 232,
+          "y": 0,
+          "width": 1048,
+          "height": 73
+        }
+      ],
+      ".studio-home-hero": [
+        {
+          "x": 264,
+          "y": 95,
+          "width": 984,
+          "height": 649.453125
+        }
+      ],
+      ".studio-phrase-paper": [
+        {
+          "x": 607.96875,
+          "y": 495.296875,
+          "width": 274.953125,
+          "height": 282.15625
+        }
+      ],
+      ".studio-lesson-card": [],
+      ".week-card": [
+        {
+          "x": 264,
+          "y": 876.34375,
+          "width": 314.65625,
+          "height": 302.75
+        },
+        {
+          "x": 598.65625,
+          "y": 876.34375,
+          "width": 314.671875,
+          "height": 302.75
+        },
+        {
+          "x": 933.328125,
+          "y": 876.34375,
+          "width": 314.65625,
+          "height": 302.75
+        },
+        {
+          "x": 264,
+          "y": 1199.09375,
+          "width": 314.65625,
+          "height": 302.734375
+        }
+      ],
+      ".week-hero": [],
+      ".week-route": [],
+      ".story-script": []
+    },
+    "390": {
+      ".studio-sidebar": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 145.21875
+        }
+      ],
+      ".site-header": [
+        {
+          "x": 0,
+          "y": 145.21875,
+          "width": 390,
+          "height": 119
+        }
+      ],
+      ".studio-home-hero": [
+        {
+          "x": 16,
+          "y": 286.21875,
+          "width": 358,
+          "height": 866.921875
+        }
+      ],
+      ".studio-phrase-paper": [
+        {
+          "x": 55,
+          "y": 858.671875,
+          "width": 280,
+          "height": 273.46875
+        }
+      ],
+      ".studio-lesson-card": [],
+      ".week-card": [
+        {
+          "x": 16,
+          "y": 1362.921875,
+          "width": 358,
+          "height": 308.28125
+        },
+        {
+          "x": 16,
+          "y": 1685.203125,
+          "width": 358,
+          "height": 327.125
+        },
+        {
+          "x": 16,
+          "y": 2026.328125,
+          "width": 358,
+          "height": 327.125
+        },
+        {
+          "x": 16,
+          "y": 2367.453125,
+          "width": 358,
+          "height": 327.125
+        }
+      ],
+      ".week-hero": [],
+      ".week-route": [],
+      ".story-script": []
+    },
+    "360": {
+      ".studio-sidebar": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 145.21875
+        }
+      ],
+      ".site-header": [
+        {
+          "x": 0,
+          "y": 145.21875,
+          "width": 360,
+          "height": 119
+        }
+      ],
+      ".studio-home-hero": [
+        {
+          "x": 12,
+          "y": 286.21875,
+          "width": 336,
+          "height": 866.921875
+        }
+      ],
+      ".studio-phrase-paper": [
+        {
+          "x": 40,
+          "y": 858.671875,
+          "width": 280,
+          "height": 273.46875
+        }
+      ],
+      ".studio-lesson-card": [],
+      ".week-card": [
+        {
+          "x": 12,
+          "y": 1362.921875,
+          "width": 336,
+          "height": 295.90625
+        },
+        {
+          "x": 12,
+          "y": 1672.828125,
+          "width": 336,
+          "height": 314.75
+        },
+        {
+          "x": 12,
+          "y": 2001.578125,
+          "width": 336,
+          "height": 314.75
+        },
+        {
+          "x": 12,
+          "y": 2330.328125,
+          "width": 336,
+          "height": 314.75
+        }
+      ],
+      ".week-hero": [],
+      ".week-route": [],
+      ".story-script": []
+    }
+  }
+}

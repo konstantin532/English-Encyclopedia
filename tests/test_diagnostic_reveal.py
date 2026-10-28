@@ -23,10 +23,12 @@ class DiagnosticRevealTests(SimpleTestCase):
                 layer = next(x["body"] for x in lesson["layers"] if x["number"] == 4)
                 html = str(render_block(layer))
                 self.assertEqual(html.count('<details class="lesson-diagnostic-answer">'), 1)
-                self.assertEqual(html.count("</details>"), 1)
+                self.assertEqual(html.count("</details>"), html.count("<details "))
                 self.assertIn("<summary>Показать разбор после своей попытки</summary>", html)
                 self.assertIn("<strong>Разбор:</strong>", html)
-                self.assertLess(html.index("Диагностика понимания:"), html.index("<details"))
+                question = "Проверьте себя:" if order in (1, 2) else "Диагностика понимания:"
+                self.assertLess(html.index(question),
+                                html.index('<details class="lesson-diagnostic-answer">'))
                 self.assertLess(html.index("<summary>"), html.index("<strong>Разбор:</strong>"))
                 self.assertNotIn("<details class=\"lesson-diagnostic-answer\" open", html)
 

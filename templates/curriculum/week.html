@@ -18,13 +18,20 @@
           <button type="submit" name="status" value="not_yet" class="btn btn-small {% if goal.status == 'not_yet' %}btn-primary{% else %}btn-quiet{% endif %}">Ещё нет</button>
           {% if goal %}<p role="status">Ваша отметка: {{ goal.get_status_display }}.</p>{% endif %}
         </form>
+        {% elif week.level.code == 'A1' and week.number == 1 %}
+        <form method="post" action="{% url 'api:guest_week_goal' week.pk %}" class="week-goal" data-guest-week-goal data-guest-goal-key="goal:{{ week.pk }}">
+          <p>В конце недели отметьте, как получилось.</p>
+          <button type="submit" name="status" value="done" class="btn btn-small btn-quiet" disabled>Получилось</button>
+          <button type="submit" name="status" value="not_yet" class="btn btn-small btn-quiet" disabled>Ещё нет</button>
+          <p data-guest-goal-status role="status" aria-live="polite"></p>
+        </form>
         {% else %}<p>Чтобы сохранить отметку, <a href="{% url 'accounts:signup' %}">зарегистрируйтесь</a> или <a href="{% url 'accounts:login' %}">войдите</a>.</p>{% endif %}
       </section>
       <section class="layer" id="dialogue" aria-labelledby="dialogue-t">
         <h2 id="dialogue-t">Диалог недели</h2>
         {% if scene.story_beat.intro_ru %}<p class="story-beat" id="story-intro">{{ scene.story_beat.intro_ru }}</p>{% endif %}
         <p>Послушайте без текста, затем с текстом и с разметкой.</p>
-        {% include "components/script_player.html" with listen_modes=True role_section=True %}
+        {% include "components/script_player.html" with listen_modes=True role_section=True week_audio_note=True %}
         {% if not audio %}<p class="drill-hint">Озвучка этой недели ещё не записана. Пока прочитайте диалог вслух по ролям.</p>{% endif %}
       </section>
       <section class="layer" id="lessons" aria-labelledby="lessons-t">
@@ -46,7 +53,7 @@
       <section class="layer" id="twister" aria-labelledby="twister-t">
         <h2 id="twister-t">Скороговорка недели</h2>
         {% if twister %}
-        {% include "components/twister_trainer.html" %}
+        {% include "components/twister_trainer.html" with week_mode=True %}
         {% else %}<p>Скороговорка готовится.</p>{% endif %}
       </section>
       <section class="layer" id="mission" aria-labelledby="mission-t"><h2 id="mission-t">Задание в жизнь</h2><p>{{ scene.mission_ru }}</p>{% include "components/story_beat.html" with beat=scene.story_beat %}</section>
@@ -62,4 +69,4 @@
   {% if next_week %}<p><a class="btn btn-quiet" href="{% url 'curriculum:week' week.level.slug next_week.number %}">Следующая неделя: {{ next_week.situation_ru|default:next_week.theme_ru }}</a></p>{% endif %}
 </div>
 {% endblock %}
-{% block scripts %}<script src="{% static 'js/audio-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script><script src="{% static 'js/speech-shadowing.js' %}" defer></script>{% endblock %}
+{% block scripts %}<script src="{% static 'js/audio-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script>{% endblock %}

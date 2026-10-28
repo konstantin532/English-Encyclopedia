@@ -57,7 +57,8 @@ class A1FirstFourEditorialStaticTests(SimpleTestCase):
         second = layer_text(lesson(LESSON_FILES[0]), 2)
         self.assertIn("Anna", second)
         self.assertIn("new", second)
-        self.assertIn("прилагательное", second)
+        self.assertIn("**new** сообщает, какой он", second)
+        self.assertNotIn("прилагательное", second)
         self.assertIn("существительные", second)
 
     def test_be_explanation_requires_a_link_only_when_needed(self):

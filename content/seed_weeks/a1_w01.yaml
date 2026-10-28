@@ -6,20 +6,21 @@ ambience: morning_home
 chunks: [LX-00042, LX-00043, LX-00044, LX-00045, LX-00046, LX-00047, LX-00048]
 story_beat:
   intro_ru: "Первое утро Анны в новом доме. На крыльце её встречает сосед."
-  outcome_ru: "Анна и Том познакомились: Том — сосед, Анна — из России. Анна очень занята переездом, и Том желает ей хорошего дня."
+  outcome_ru: "Анна и Том познакомились: Том — сосед, Анна — из России. Анна приглашает его на кофе. Том сначала занят, но для хорошего кофе время находится."
   next_hook_ru: "Скоро у Анны будут первые гости."
 script:
   - speaker: tom
     emotion: happy
     text: "[J3]Good[/] [S7]morning[/]! [T8]I[/] [D1]am[/] [S1]Tom[/]. [T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]?"
-    spoken: "[J3]Good[/] [S7]morning[/]! [T8]I[/][D1]'m[/] [S1]Tom[/]. [T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]?"
+    spoken: "[J3]Good[/] [S7]morning[/]! [T8]I[/][D1]'m[/] [S1]Tom[/]. [T9]What[/][D1]'s[/] [T3]your[/] [S9]name[/]?"
     ru: "Доброе утро! Я Том. Как вас зовут?"
   - speaker: anna
     emotion: happy
     text: "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]. [J3]Nice[/] [X2]to[/] [D5]meet[/] [T8]you[/], [S1]Tom[/]!"
+    spoken: "[T3]My[/] [S9]name[/][D1]'s[/] [S1]Anna[/]. [J3]Nice[/] [X2]to[/] [D5]meet[/] [T8]you[/], [S1]Tom[/]!"
     ru: "Меня зовут Анна. Приятно познакомиться, Том!"
   - speaker: tom
-    emotion: surprised
+    emotion: happy
     text: "[T8]I[/] [D1]am[/] [T3]your[/] [S1]neighbor[/], [S1]Anna[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?"
     spoken: "[T8]I[/][D1]'m[/] [T3]your[/] [S1]neighbor[/], [S1]Anna[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?"
     ru: "Я ваш сосед, Анна. Вы из России?"
@@ -34,18 +35,24 @@ script:
     spoken: "[T8]It[/][D1]'s[/] [T1]a[/] [J3]nice[/] [S2]house[/], [S1]Anna[/]! [T8]It[/][D1]'s[/] [J1]big[/]!"
     ru: "Какой хороший дом, Анна! И большой!"
   - speaker: anna
-    emotion: tired
-    text: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T8]I[/] [D1]am[/] [J4]busy[/]."
-    spoken: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [T8]I[/][D1]'m[/] [J4]busy[/]."
-    ru: "Да. У меня много дел."
-  - speaker: tom
     emotion: happy
-    text: "[D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/], [S1]Anna[/]!"
-    ru: "Хорошего дня, Анна!"
+    text: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [S3]Coffee[/], [S1]Tom[/]?"
+    ru: "Да! Будете кофе, Том?"
+  - speaker: tom
+    emotion: hesitant
+    text: "[T8]I[/] [D1]am[/] [J4]busy[/]…"
+    spoken: "[T8]I[/][D1]'m[/] [J4]busy[/]…"
+    ru: "Я сейчас занят…"
   - speaker: anna
     emotion: happy
-    text: "[D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/], [S1]Tom[/]!"
-    ru: "Хорошего дня, Том!"
+    text: "[T8]It[/] [D1]is[/] [J3]good[/] [S3]coffee[/]!"
+    spoken: "[T8]It[/][D1]'s[/] [J3]good[/] [S3]coffee[/]!"
+    ru: "Кофе отличный!"
+  - speaker: tom
+    emotion: happy
+    text: "[T8]I[/] [D1]am[/] [X1]not[/] [J4]busy[/]! [O4]Yes[/], [O8]please[/]!"
+    spoken: "[T8]I[/][D1]'m[/] [X1]not[/] [J4]busy[/]! [O4]Yes[/], [O8]please[/]!"
+    ru: "Уже свободен! С удовольствием!"
 twister:
   number: 1
   series: sounds

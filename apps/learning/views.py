@@ -14,6 +14,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from .models import ExerciseAttempt, Status, UnitProgress, WeekGoal
 from .mistake_review import available_reviews
 from .speech_practice import valid_due_speech_items
+from .trainer_state import run_serialized
 from .services import build_review
 from .evidence import lesson_check_attempts
 
@@ -53,10 +54,18 @@ def dashboard(request):
 @login_required
 @require_POST
 def toggle_markers(request):
-    request.user.markers_in_color = not request.user.markers_in_color
-    request.user.save(update_fields=["markers_in_color"])
+    if "enabled" in request.POST:
+        value = request.POST["enabled"]
+        if value not in ("true", "false"):
+            return HttpResponseBadRequest("Выберите состояние маркеров.")
+        request.user.markers_enabled = value == "true"
+        request.user.save(update_fields=["markers_enabled"])
+    else:
+        # Keep the existing color-only API compatible with earlier clients.
+        request.user.markers_in_color = not request.user.markers_in_color
+        request.user.save(update_fields=["markers_in_color"])
     if request.headers.get("X-Requested-With") == "fetch":
-        return JsonResponse({"color": request.user.markers_in_color})
+        return JsonResponse({"color": request.user.markers_in_color, "enabled": request.user.markers_enabled})
     destination = request.POST.get("next", "")
     if url_has_allowed_host_and_scheme(destination, allowed_hosts={request.get_host()}, require_https=request.is_secure()):
         return HttpResponseRedirect(destination)
@@ -89,5 +98,6 @@ def week_goal(request, week_id):
     status = request.POST.get("status")
     if status not in WeekGoal.GoalStatus.values:
         return HttpResponseBadRequest("Выберите «Получилось» или «Ещё нет».")
-    WeekGoal.objects.update_or_create(user=request.user, week=week, defaults={"status": status})
+    run_serialized(request.user, lambda: WeekGoal.objects.update_or_create(
+        user=request.user, week=week, defaults={"status": status}))
     return redirect("curriculum:week", slug=week.level.slug, number=week.number)

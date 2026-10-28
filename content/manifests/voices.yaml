@@ -106,6 +106,7 @@ ambience_gain_db: {A1: -30, A1+: -28, A2: -24, A2+: -22, B1: -20, B1+: -19, B2: 
 # Эмоции реплик. Kokoro передаёт их скоростью, громкостью и паузой после реплики.
 emotions:
   neutral: {name_ru: спокойно, speed: 1.0, gain_db: 0, pause: 1.0}
+  hesitant: {name_ru: нерешительно, speed: 0.96, gain_db: 0, pause: 1.35}
   happy: {name_ru: радостно, speed: 1.05, gain_db: 1, pause: 1.0}
   surprised: {name_ru: удивлённо, speed: 1.08, gain_db: 2, pause: 1.2}
   sad: {name_ru: грустно, speed: 0.9, gain_db: -2, pause: 1.3}

@@ -48,13 +48,14 @@ class A1SecondPassTests(SimpleTestCase):
             with self.subTest(lesson=number):
                 lesson_text = "\n".join(layer["body"] for layer in lesson["layers"])
                 theory = lesson["layers"][3]["body"]
-                self.assertEqual(lesson_text.count("**Диагностика понимания:**"), 1)
+                question = "**Проверьте себя:**" if number in (1, 2) else "**Диагностика понимания:**"
+                self.assertEqual(lesson_text.count(question), 1)
                 self.assertEqual(lesson_text.count("**Разбор:**"), 1)
-                self.assertIn("**Диагностика понимания:**", theory)
+                self.assertIn(question, theory)
                 self.assertIn("**Разбор:**", theory)
-                self.assertLess(theory.index("**Диагностика понимания:**"),
+                self.assertLess(theory.index(question),
                                 theory.index("**Разбор:**"))
-                self.assertIn(" или ", theory.split("**Диагностика понимания:**")[1])
+                self.assertIn(" или ", theory.split(question)[1])
                 self.assertIn("**Проверка маленького шага:**",
                               lesson["layers"][6]["body"])
 

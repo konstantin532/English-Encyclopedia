@@ -13,7 +13,9 @@
       body: JSON.stringify(body),
     });
     if (!res.ok) throw new Error(String(res.status));
-    return res.json();
+    const data = await res.json();
+    if (data.guest_receipt) window.GuestProgress?.remember(data.guest_receipt);
+    return data;
   }
 
   document.querySelectorAll("[data-drill]").forEach((form) => {

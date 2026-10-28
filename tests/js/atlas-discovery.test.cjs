@@ -27,7 +27,7 @@ function fixture({motion='balanced', reduced=false, gsap=true}={}) {
   return {card,note,words,buttons:roles.map(r=>r.replacement),panel:document.panel,document,window,calls};
 }
 test('word and caption discovery share state without replacing the translation',()=>{
- const f=fixture();f.buttons[0].listeners.click();assert.match(f.panel.textContent,/подлежащее/);assert.equal(f.words[0].attributes['aria-expanded'],'true');
+ const f=fixture();f.buttons[0].listeners.click();assert.equal(f.panel.textContent,'I — «я»: кто говорит.');assert.equal(f.words[0].attributes['aria-expanded'],'true');
  assert.equal(f.note.textContent,'Я дома. Два слова — целая мысль.');assert.equal(f.panel.style.left,'54px');
  f.words[1].listeners.keydown({key:'Enter',preventDefault(){}});assert.match(f.panel.textContent,/am/);assert.equal(f.buttons[0].attributes['aria-expanded'],'false');assert.equal(f.buttons[1].attributes['aria-expanded'],'true');
  f.document.listeners.keydown({key:'Escape'});assert.equal(f.panel.hidden,true);assert.equal(f.words[1].focused,true);

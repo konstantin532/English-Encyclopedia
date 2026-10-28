@@ -7,13 +7,13 @@ register = template.Library()
 
 
 @register.filter
-def annotate(text):
-    return mark_safe(render_inline(text or ""))
+def annotate(text, plain_labels=False):
+    return mark_safe(render_inline(text or "", plain_labels=plain_labels))
 
 
 @register.filter
-def annotate_block(text):
-    return render_block(text or "")
+def annotate_block(text, plain_labels=False):
+    return render_block(text or "", plain_labels=plain_labels)
 
 
 @register.filter

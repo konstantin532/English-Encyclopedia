@@ -34,7 +34,7 @@ class LessonDesignPilotTests(TestCase):
             self.assertEqual(lesson.layers.count(), 7)
             for layer in lesson.layers.all():
                 self.assertContains(response, f'id="layer-{layer.number}"')
-                rendered = Template("{% load markers %}{{ body|annotate_block }}").render(Context({"body": layer.body}))
+                rendered = Template("{% load markers %}{{ body|annotate_block:True }}").render(Context({"body": layer.body}))
                 self.assertContains(response, rendered, html=True)
             for exercise in lesson.exercises.all():
                 self.assertContains(response, f'id="q{exercise.pk}"')

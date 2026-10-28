@@ -24,16 +24,16 @@ class SpeechStudioIntegrationTests(TestCase):
                 self.assertContains(response, 'data-speech-entry', count=6)
                 self.assertContains(response, "speech-studio.js")
 
-    def test_week_twisters_have_oral_trainer_and_no_claim_to_grade_voice(self):
+    def test_week_twisters_keep_only_compact_local_recorder(self):
         for n in (1, 5, 10, 14):
             with self.subTest(week=n):
                 response = self.client.get(reverse("curriculum:week", args=["a1", n]))
                 self.assertEqual(response.status_code, 200)
-                self.assertContains(response, 'data-speech-kind="twister"')
-                self.assertContains(response, 'data-speech-entry')
+                self.assertNotContains(response, 'data-speech-studio')
+                self.assertNotContains(response, 'data-speech-entry')
+                self.assertContains(response, 'data-speech-recorder', count=1)
                 self.assertContains(response, "speech-studio.js")
-                self.assertContains(response, "на сервер не отправляется")
-                self.assertContains(response, "не выполняется")
+                self.assertContains(response, "Запись не отправляется на сервер.", count=1)
 
     def test_published_poems_have_line_by_line_trainer(self):
         poems = Poem.objects.filter(level__code="A1", is_published=True).order_by("number")

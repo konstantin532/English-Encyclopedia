@@ -10,5 +10,7 @@ def site(request):
         from apps.learning.models import UnitProgress
 
         due = UnitProgress.objects.filter(user=user, next_review_at__lte=timezone.now()).count()
-    return {"trainer_enabled": getattr(settings, "EE_VOCABULARY_TRAINER_ENABLED", False),
+    enabled = authed and getattr(user, "markers_enabled", True)
+    mode = ("color" if user.markers_in_color else "mono") if enabled else "off"
+    return {"MARKERS_MODE": mode, "MARKERS_ENABLED": enabled, "trainer_enabled": getattr(settings, "EE_VOCABULARY_TRAINER_ENABLED", False),
             "phrases_enabled": getattr(settings, "EE_PHRASE_MEMORY_ENABLED", False), "SITE_NAME": "English Encyclopedia", "MARKERS_MONO": authed and not user.markers_in_color, "REVIEW_DUE": due}

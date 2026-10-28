@@ -76,7 +76,7 @@
       prev.disabled = index === 0; next.disabled = index === entries.length - 1;
       reveal.hidden = !hidden;
       done.textContent = checked.has(index) ? "Отменить отметку" : "Мне удалось произнести";
-      status.textContent = "Отмечено " + checked.size + " из " + entries.length + ". Это самооценка, а не автоматическая проверка.";
+      status.textContent = "Отмечено " + checked.size + " из " + entries.length + ".";
       root.querySelectorAll("[data-speech-mode]").forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.speechMode === mode)));
       if (typeof root.dispatchEvent === "function" && typeof global.CustomEvent === "function")
         root.dispatchEvent(new global.CustomEvent("speech:changed"));
@@ -93,20 +93,31 @@
     reveal.addEventListener("click", () => { visible = true; paint(); });
     done.addEventListener("click", () => { if (checked.has(index)) checked.delete(index); else checked.add(index); paint(); });
     const tempo = one("[data-speech-tempo]");
-    one("[data-speech-tap]").addEventListener("click", () => {
+    one("[data-speech-tap]")?.addEventListener("click", () => {
       const now = Date.now();
       if (taps.length && now - taps[taps.length - 1] > 2300) taps = [];
       taps.push(now); if (taps.length > 8) taps.shift();
       const bpm = tempoFromTaps(taps);
       tempo.textContent = bpm ? "Примерно " + bpm + " ударов в минуту — только темп нажатий." : "Продолжайте отмечать удары ритма.";
     });
-    one("[data-speech-reset-beat]").addEventListener("click", () => { taps = []; tempo.textContent = "Ритм сброшен."; });
+    one("[data-speech-reset-beat]")?.addEventListener("click", () => { taps = []; tempo.textContent = "Ритм сброшен."; });
+    if (typeof root.addEventListener === "function") root.addEventListener("speech:jump", event => {
+      if (!event.detail || !Number.isInteger(event.detail.index)) return;
+      index = clampIndex(event.detail.index, entries.length);
+      mode = "recall"; visible = false; paint();
+    });
+    paint();
+  }
+  function initRecorder(root) {
+    const one = selector => root.querySelector(selector);
     const record = one("[data-speech-record]");
+    if (!record) return;
     const stop = one("[data-speech-stop]");
     const remove = one("[data-speech-delete]");
     const playback = one("[data-speech-playback]");
     const report = one("[data-speech-record-status]");
     let media = null, stream = null, audioUrl = null, chunks = [];
+    let starting = false, captureEpoch = 0;
     function forget() {
       playback.pause(); playback.removeAttribute("src"); playback.load();
       playback.hidden = true; remove.hidden = true;
@@ -119,16 +130,22 @@
     }
     if (!global.navigator || !global.navigator.mediaDevices || !global.navigator.mediaDevices.getUserMedia || typeof global.MediaRecorder !== "function") {
       record.disabled = true;
-      report.textContent = "Запись в этом браузере недоступна. Остальные упражнения работают без микрофона.";
+      report.textContent = "Запись в этом браузере недоступна.";
     } else {
       record.addEventListener("click", async () => {
-        if (media && media.state === "recording") return;
+        if (starting || (media && media.state === "recording")) return;
+        // Late events from an older recording must not affect the next one.
+        const epoch = ++captureEpoch;
+        starting = true;
         forget(); chunks = []; record.disabled = true;
         try {
-          stream = await global.navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+          const input = await global.navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+          if (epoch !== captureEpoch) { input.getTracks().forEach(track => track.stop()); return; }
+          stream = input;
           media = new global.MediaRecorder(stream);
-          media.addEventListener("dataavailable", event => { if (event.data && event.data.size) chunks.push(event.data); });
+          media.addEventListener("dataavailable", event => { if (epoch === captureEpoch && event.data && event.data.size) chunks.push(event.data); });
           media.addEventListener("stop", () => {
+            if (epoch !== captureEpoch) return;
             release(); record.disabled = false;
             if (chunks.length) {
               const blob = new Blob(chunks, { type: media.mimeType || "audio/webm" });
@@ -138,31 +155,32 @@
             } else report.textContent = "Запись пуста. Можно попробовать ещё раз.";
             chunks = [];
           }, { once: true });
-          media.addEventListener("error", () => { release(); record.disabled = false; report.textContent = "Запись прервана."; }, { once: true });
+          media.addEventListener("error", () => { if (epoch !== captureEpoch) return; release(); record.disabled = false; report.textContent = "Запись прервана."; }, { once: true });
           media.start(); record.hidden = true; stop.hidden = false;
           report.textContent = "Идёт запись только в памяти страницы.";
         } catch (_) {
+          if (epoch !== captureEpoch) return;
           release(); record.disabled = false;
           report.textContent = "Нет разрешения на микрофон или запись недоступна.";
+        } finally {
+          if (epoch === captureEpoch) { starting = false; record.disabled = false; }
         }
       });
       stop.addEventListener("click", () => { if (media && media.state === "recording") media.stop(); else release(); });
       remove.addEventListener("click", () => { forget(); report.textContent = "Запись удалена."; });
       global.addEventListener("pagehide", () => {
+        captureEpoch++; starting = false; record.disabled = false;
         if (media && media.state === "recording") media.stop();
-        release(); forget();
+        release(); forget(); chunks = [];
       });
     }
-    if (typeof root.addEventListener === "function") root.addEventListener("speech:jump", event => {
-      if (!event.detail || !Number.isInteger(event.detail.index)) return;
-      index = clampIndex(event.detail.index, entries.length);
-      mode = "recall"; visible = false; paint();
-    });
-    paint();
   }
   if (typeof module !== "undefined" && module.exports) module.exports = { MODES, INSTRUCTIONS, clampIndex, tempoFromTaps };
   if (typeof document !== "undefined") {
-    const boot = () => document.querySelectorAll("[data-speech-studio]").forEach(init);
+    const boot = () => {
+      document.querySelectorAll("[data-speech-studio]").forEach(init);
+      document.querySelectorAll("[data-speech-recorder]").forEach(initRecorder);
+    };
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot, { once: true });
     else boot();
   }

@@ -7,7 +7,8 @@ const root = path.resolve(__dirname, "../..");
 const read = (p) => fs.readFileSync(path.join(root, p), "utf8");
 
 test("language atlas exposes accurate explanations and ignores unknown roles", () => {
-  assert.match(atlas.describeRole("subject"), /подлежащее/);
+  assert.match(atlas.describeRole("subject"), /кто говорит/);
+  assert.doesNotMatch(atlas.describeRole("subject"), /подлежащее/);
   assert.match(atlas.describeRole("be"), /am/);
   assert.match(atlas.describeRole("place"), /без предлога/);
   assert.equal(atlas.describeRole("__proto__"), null);

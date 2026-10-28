@@ -1,4 +1,4 @@
-// Маркеры: подсказка с классом при наведении/фокусе и переключатель «в цвете / без цвета».
+// Видимость маркеров; сохранённый выбор цвета остаётся отдельной настройкой.
 (() => {
   const root = document.documentElement;
 
@@ -7,17 +7,47 @@
     return m ? decodeURIComponent(m[1]) : "";
   }
 
-  // --- Переключатель цвета ---
   const toggle = document.querySelector("[data-markers-toggle]");
-  const sync = () => toggle && toggle.setAttribute("aria-pressed", String(root.dataset.markers !== "mono"));
-  sync();
-  toggle?.addEventListener("click", () => {
-    const mono = root.dataset.markers !== "mono";
-    if (mono) root.dataset.markers = "mono"; else delete root.dataset.markers;
-    sync();
-    try { localStorage.setItem("ee-markers", mono ? "mono" : "color"); } catch (e) { /* хранилище недоступно */ }
+  const status = document.querySelector("[data-markers-status]");
+  const isEnabled = () => root.dataset.markers !== "off";
+  const apply = enabled => {
+    root.dataset.markers = enabled ? (root.dataset.markersColor === "mono" ? "mono" : "color") : "off";
+    toggle?.setAttribute("aria-pressed", String(enabled));
+  };
+  apply(isEnabled());
+  let saving = false;
+  toggle?.addEventListener("click", async () => {
+    if (saving) return;
+    const previous = isEnabled();
+    const enabled = !previous;
+    apply(enabled);
+    refreshFocus(); hide();
     const url = toggle.dataset.saveUrl;
-    if (url) fetch(url, { method: "POST", headers: { "X-CSRFToken": csrf(), "X-Requested-With": "fetch" } });
+    if (!url) {
+      try {
+        localStorage.setItem("ee-markers-enabled", String(enabled));
+        localStorage.setItem("ee-markers", root.dataset.markersColor === "mono" ? "mono" : "color");
+      } catch (e) { /* Режим работает и без доступа к хранилищу. */ }
+      return;
+    }
+    saving = true; toggle.disabled = true;
+    try {
+      const res = await fetch(url, {
+        method: "POST", credentials: "same-origin",
+        headers: {"X-CSRFToken": csrf(), "X-Requested-With": "fetch", "Content-Type": "application/x-www-form-urlencoded"},
+        body: "enabled=" + String(enabled),
+      });
+      if (!res.ok) throw new Error("Unable to save marker preference");
+      const result = await res.json();
+      if (typeof result.enabled !== "boolean") throw new Error("Invalid marker preference");
+      apply(result.enabled);
+      if (status) status.textContent = "";
+    } catch (e) {
+      apply(previous);
+      if (status) status.textContent = "Не удалось сохранить выбор. Попробуйте ещё раз.";
+    } finally {
+      saving = false; toggle.disabled = false; refreshFocus();
+    }
   });
 
   // --- Подсказка у маркера ---
@@ -28,7 +58,7 @@
 
   function show(el) {
     const label = el.dataset.label;
-    if (!label) return;
+    if (!label || (!isEnabled() && !el.closest("[data-language-atlas]"))) { hide(); return; }
     tip.textContent = label;
     const r = el.getBoundingClientRect();
     tip.style.left = "0px";
@@ -41,9 +71,13 @@
   }
   const hide = () => tip.removeAttribute("data-show");
 
-  document.querySelectorAll(".mk[data-label]").forEach((el) => {
-    if (!el.closest("a, button")) el.tabIndex = 0;
-  });
+  function refreshFocus() {
+    document.querySelectorAll(".mk[data-label]").forEach(el => {
+      if (el.closest("a, button, [data-language-atlas]")) return;
+      if (isEnabled()) el.tabIndex = 0; else el.removeAttribute("tabindex");
+    });
+  }
+  refreshFocus();
   document.addEventListener("pointerover", (e) => { const el = e.target.closest?.(".mk[data-label]"); el ? show(el) : hide(); });
   document.addEventListener("focusin", (e) => { const el = e.target.closest?.(".mk[data-label]") || e.target.querySelector?.(":scope > .mk[data-label]"); el ? show(el) : hide(); });
   document.addEventListener("focusout", hide);

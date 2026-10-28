@@ -1,4 +1,17 @@
 const assert=require('node:assert/strict');
+function assertGeometrySnapshot(actual,expected,label){
+  assert.ok(expected,`${label}: missing authored geometry snapshot`);
+  assert.deepEqual(Object.keys(actual).sort(),Object.keys(expected).sort(),`${label}: geometry selectors changed`);
+  for(const [selector,boxes] of Object.entries(expected)){
+    assert.equal(actual[selector].length,boxes.length,`${label}: ${selector} count changed`);
+    boxes.forEach((box,index)=>{
+      for(const axis of ['x','y','width','height']){
+        const value=actual[selector][index][axis];
+        assert.ok(Number.isFinite(value)&&Math.abs(value-box[axis])<=1,`${label}: ${selector}[${index}] ${axis}: expected ${box[axis]}, got ${value}`);
+      }
+    });
+  }
+}
 // Only authored reading height may change; shell and column geometry stay invariant.
 function geometryDelta(screen,selector,before,after,viewportWidth=Infinity){
   let keys=['x','y','width','height'];
@@ -24,4 +37,4 @@ function assertChapterReadingFlow(measurements,flow){
   const last=cards[cards.length-1];
   assert.ok(Math.abs(last.y+last.height-(flow.cardsContainer.y+flow.cardsContainer.height-flow.paddingBottom))<=1,'last card escapes its container');
 }
-module.exports={geometryDelta,assertChapterReadingFlow};
+module.exports={geometryDelta,assertChapterReadingFlow,assertGeometrySnapshot};

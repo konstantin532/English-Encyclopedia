@@ -396,6 +396,16 @@ class PersonalMnemonic(models.Model):
         constraints = [models.UniqueConstraint(fields=['user', 'unit'], name='unique_personal_mnemonic')]
 
 
+class ImportedGuestAnswer(models.Model):
+    """Idempotence ledger for guest results claimed after sign-in; no audio or tokens."""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='imported_guest_answers')
+    receipt_id = models.UUIDField()
+    imported_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=['user', 'receipt_id'], name='uniq_guest_answer_import')]
+
+
 class PhraseStats(models.Model):
     """Счётчик верных фраз ученика за всё время: от него зависит доля пазлов."""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="phrase_stats")

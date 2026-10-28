@@ -1,0 +1,498 @@
+diff --git a/apps/taxonomy/markup.py b/apps/taxonomy/markup.py
+index e3c70898..154412d3 100644
+--- a/apps/taxonomy/markup.py
++++ b/apps/taxonomy/markup.py
+@@ -92,6 +92,15 @@ def render_block(text: str) -> str:
+ 
+             items = "".join(example(line) for line in lines)
+             parts.append(f'<div class="example annotated">{items}</div>')
++        elif lines[0].startswith("**Для любопытных:** "):
++            # Optional nuance uses the same escaped inline format as the lesson.
++            content = " ".join(lines).removeprefix("**Для любопытных:** ")
++            parts.append(
++                '<details class="lesson-curiosity">'
++                '<summary>Для любопытных</summary>'
++                f'<p>{render_inline(content)}</p>'
++                '</details>'
++            )
+         elif lines[0].startswith("**Разбор:** "):
+             # Вопрос должен быть виден раньше правильного ответа.
+             # Нативный details доступен с клавиатуры и без JavaScript.
+diff --git a/content/manifests/a1_understanding_checks.json b/content/manifests/a1_understanding_checks.json
+index 5331df16..012dcfda 100644
+--- a/content/manifests/a1_understanding_checks.json
++++ b/content/manifests/a1_understanding_checks.json
+@@ -7,8 +7,8 @@
+       "plain": "Существительное — слово, которое называет человека, предмет или место.",
+       "why": "Назвать вещь — значит помочь собеседнику понять, о чём речь.",
+       "pattern": "This is my + название.",
+-      "mistake": "Путать new с названием предмета.",
+-      "fix": "Спросите себя: слово называет что-то или описывает его?",
++      "mistake": "Говорить This is book, пропуская слово перед book.",
++      "fix": "Если это одна книга: This is a book. Если книга ваша: This is my book.",
+       "example": "This is my book.",
+       "translation": "Это моя книга.",
+       "tasks": {
+@@ -31,8 +31,8 @@
+           "model": "This is my phone. It is new."
+         },
+         "explain": {
+-          "prompt": "Ученик хочет показать телефон и говорит: «This is my new». Какого слова ему не хватает? Объясните разницу между названием предмета и его признаком.",
+-          "model": "Нужно назвать предмет: This is my new phone. Слово phone — существительное (вещь), new — прилагательное (признак)."
++          "prompt": "Новичок показывает книгу и говорит: «This is book». Добавьте одно слово и объясните, зачем оно здесь.",
++          "model": "This is a book. Перед book нужно a, потому что называем одну книгу. Если книга моя, можно сказать This is my book."
+         }
+       },
+       "contrast": {
+@@ -47,9 +47,9 @@
+       "slug": "a1-verb-be",
+       "plain": "Am, is и are связывают человека с описанием.",
+       "why": "Русскому «Я дома» по-английски соответствует фраза с am.",
+-      "pattern": "I am / you are / she is.",
+-      "mistake": "Говорить I is или you is.",
+-      "fix": "Найдите подлежащее: I → am, you → are, she → is.",
++      "pattern": "I am / you are / it is.",
++      "mistake": "Говорить I from Russia, пропуская am.",
++      "fix": "Скажите I am from Russia. После I здесь нужно am — в русском отдельного слова на этом месте нет.",
+       "example": "I am at home.",
+       "translation": "Я дома.",
+       "tasks": {
+@@ -79,7 +79,7 @@
+         },
+         "explain": {
+           "prompt": "Новичок написал: «I is at home». Исправьте одну ошибку и объясните свой выбор.",
+-          "model": "I am at home. С местоимением I употребляют am, а не is."
++          "model": "I am at home. Со словом I употребляют am, а не is."
+         }
+       },
+       "contrast": {
+diff --git a/content/seed_lessons/a1_w01_l01_nouns.yaml b/content/seed_lessons/a1_w01_l01_nouns.yaml
+index 0543d599..b8f97529 100644
+--- a/content/seed_lessons/a1_w01_l01_nouns.yaml
++++ b/content/seed_lessons/a1_w01_l01_nouns.yaml
+@@ -37,11 +37,11 @@ layers:
+     body: |
+       **Почему book, name и Anna — существительные?** *Book* называет предмет, *name* — то, что есть у человека, а *Anna* — конкретного человека. Существительное не обязательно обозначает вещь, которую можно потрогать.
+ 
+-      **Обычное название и имя человека — не одно и то же.** *Friend* означает «друг или подруга» вообще; *Anna* называет определённого человека. Оба слова — существительные, но **Anna** пишется с заглавной буквы как собственное имя.
++      **Обычное название и имя человека — не одно и то же.** *Friend* означает «друг или подруга» вообще; *Anna* называет определённого человека. Оба слова — существительные, но **Anna** пишется с заглавной буквы потому что это имя человека.
++
++      Сравните работу двух слов в *my new book*: **book** называет предмет, а **new** сообщает, какой он. Слово *book* называет предмет, а *new* описывает его. Не судите только по вопросу «что?»: смотрите, что слово делает во фразе.
+ 
+-      Сравните работу двух слов в *my new book*: **book** называет предмет, а **new** сообщает, какой он. Поэтому *book* — существительное, а *new* — прилагательное. Не судите только по вопросу «что?»: смотрите, что слово делает во фразе.
+ 
+-      **Noun** — английское название существительного. Оно исторически связано с латинским *nomen* («имя, название»), но это не значит, что существительные — только имена людей. Для практики важнее различить название предмета и его признак.
+ 
+   - number: 3
+     body: |
+@@ -50,18 +50,18 @@ layers:
+       > [T2]This[/] [D1]is[/] [T3]my[/] [S2]book[/]. — Это моя книга.
+ 
+       - [T2]This[/] — «это»: мы показываем на предмет. Здесь слово стоит **самостоятельно**, без существительного сразу после него.
+-      - [D1]is[/] — форма глагола **be**, которая соединяет «это» с описанием предмета. В русском «Это моя книга» обычно обходится без отдельного «есть». Подробно разберём is в следующем уроке.
++      - [D1]is[/] — слово, которое соединяет «это» с описанием предмета. В русском «Это моя книга» обычно обходится без отдельного «есть». Подробно разберём is в следующем уроке.
+       - [T3]my[/] — «мой / моя / моё»: показывает принадлежность. В английском **my не меняется** из-за того, как по-русски называется вещь.
+       - [S2]book[/] — «книга»: существительное, то есть название предмета.
+ 
+-      **Что такое «детерминатив»?** Пока называйте его «словом-указателем». Оно помогает понять, **о каком** предмете речь: *my* указывает на владельца, *a* — на один неопределённый предмет. Более строгий термин и другие указатели будут во второй неделе.
++      **Зачем слово-указатель?** Оно помогает понять, **о каком** предмете речь: *my* показывает, чья это вещь, а *a* помогает назвать одну вещь без уточнения, чья она. Другие слова-указатели разберём во второй неделе.
+ 
+       Сравните две конструкции — у них разная работа слова **this**:
+ 
+       > [T2]This[/] [D1]is[/] [T3]my[/] [S2]book[/]. — Это моя книга.
+       > [T2]This[/] [S2]book[/] [D1]is[/] [J2]new[/]. — Эта книга новая.
+ 
+-      В первой строке **this** самостоятельно указывает на вещь (местоименное употребление); во второй стоит **перед book** и уточняет, какую книгу мы имеем в виду (употребление как детерминатива). Разметка T2 объединяет оба употребления.
++      В первой строке **this** означает «это»: мы показываем на вещь. Во второй **this** стоит **перед book** и означает «эта»: мы уточняем, какую книгу имеем в виду.
+ 
+       **Как добавить вторую мысль о книге?** Назовём предмет, а затем заменим повторное слово *book* на **it** — «она» в русском переводе, но **it** в английской фразе:
+ 
+@@ -83,15 +83,15 @@ layers:
+ 
+       В первом случае **a** помогает представить одну книгу без уточнения, чья она. Во втором **my** уже объясняет, что книга моя. Сказать *a my book* нельзя: эти два указателя не ставят вместе перед одним существительным.
+ 
+-      **Книги можно посчитать по одной:** одна книга, две книги. Поэтому слово **book** называют **исчисляемым**. Когда говорим об одной книге, это **единственное число**. В наших обычных полных фразах **исчисляемому существительному в единственном числе** нужен подходящий указатель: *a book*, *my book*. Поэтому *This is book* — ошибка. Но имена людей (*Anna*) не требуют артикля; неисчисляемые слова вроде *water* и *coffee* работают иначе.
++      **Книги можно посчитать по одной штуке:** одна книга, две книги. Когда называем одну книгу, перед **book** нужно слово-указатель: *a book* или *my book*. Поэтому *This is book* — ошибка: скажите *This is a book*. Если хотите сказать, что книга ваша, используйте *This is my book*. С именами людей (*Anna*) и словами *water* и *coffee* так не делают — их разберём ниже.
+ 
+-      **Почему русскому переводу не нужен a?** В русском нет системы артиклей, и смысл нередко понятен из ситуации. Английский чаще выражает определённость отдельными словами. Это не то же самое, что русские падежные окончания.
++      **Почему русскому переводу не нужен a?** По-русски можно сказать «Это книга» без отдельного слова перед «книга». В английском здесь нужно **a**. Если говорим «Это моя книга», место перед **book** уже занимает **my**.
+ 
+       Ещё один указатель — **the**, когда предмет уже известен собеседникам. Здесь достаточно заметить разницу между *a* и *my*; выбор *a / the* подробно объясняется в третьем уроке.
+ 
+-      **Диагностика понимания:** Вы хотите сказать «Это моя книга». Что верно: *This is my book* или *This is a my book*?
++      **Проверьте себя:** Вы хотите сказать «Это моя книга». Что верно: *This is my book* или *This is a my book*?
+ 
+-      **Разбор:** *This is my book*. **My** уже указывает, чья книга. Дополнительное **a** перед ним не требуется. Это правило о сочетании этих определителей, а не о том, что перед всяким существительным обязательно есть *my*.
++      **Разбор:** *This is my book*. **My** уже указывает, чья книга. Дополнительное **a** перед ним не требуется. Это правило о сочетании этих слов-указателей, а не о том, что перед всяким существительным обязательно есть *my*.
+   - number: 5
+     body: |
+       В живой американской речи полезно сначала услышать и запомнить несколько **готовых фраз**. Не обязательно уже уметь объяснить грамматику каждого слова:
+@@ -106,20 +106,20 @@ layers:
+       - В разговоре о родителях часто используют **mom** и **dad**; **mother** и **father** тоже правильны, но нередко звучат нейтральнее или официальнее в зависимости от ситуации.
+       - **House** обычно означает отдельный дом как здание, **apartment** — квартиру. Значение **home** разберём ниже.
+ 
+-      **Не путайте:** готовые реплики вроде *Water, please* — нормальная разговорная просьба, хотя это не полное предложение с глаголом.
++      **Не путайте:** готовые реплики вроде *Water, please* — нормальная разговорная просьба, хотя это не полная фраза.
+   - number: 6
+     body: |
+       **Почему a book, но coffee без a?** Книги можно посчитать по одной: одна книга, две книги. Воду и кофе как вещество обычно не считают по штукам. Поэтому:
+ 
+       > [T8]I[/] [D3]like[/] [S3]coffee[/]. — Я люблю кофе.
+ 
+-      Здесь **coffee** — неисчисляемое существительное, и артикль **a** не нужен. Но *a coffee* тоже возможно, если речь об **одной порции кофе**, например в кафе. Это не ошибка и не правило только для заказа: значение слова меняется вместе с ситуацией.
++      Здесь **coffee** — кофе как напиток вообще: его не считают по одной штуке, поэтому **a** не нужно. О порции кофе можно узнать в закрытом блоке ниже.
+ 
+       **Home или house?** **House** — здание, **home** — место, где человек живёт и которое считает своим домом. В доме-квартире тоже может быть **home**. Поэтому в готовой фразе говорят *I'm home*, а не *I'm house*.
+ 
+-      **А почему нет is в I like coffee?** Потому что **like** уже глагол со своим значением «люблю». **Is** не надо добавлять в каждое английское предложение — оно нужно для определённых конструкций. Разберём это в следующем уроке.
++      **А почему нет is в I like coffee?** Потому что **like** уже означает «люблю». **Is** не надо вставлять в каждую английскую фразу: оно нужно не всегда. Разберём это в следующем уроке.
+ 
+-      На будущее: *My family is big.* Слово **family** здесь означает одну семью как группу, поэтому стоит **is**. Это дополнительная тонкость; пока достаточно узнавать слово **family**.
++      **Для любопытных:** **Откуда слово noun?** Это английское название существительного; исторически оно связано с латинским *nomen* — «имя, название». **Одна порция кофе.** *A coffee* возможно, когда речь об **одной порции кофе**, например в кафе. Это не отдельное правило только для заказа: смысл слова зависит от ситуации. **Одна семья.** В *My family is big* слово **family** означает одну семью как группу, поэтому рядом стоит **is**. Пока достаточно узнавать слово **family**.
+   - number: 7
+     body: |
+       Теперь четыре задания: сначала найдите существительное, затем подставьте слово, соберите знакомую фразу и используйте её в новой ситуации.
+diff --git a/content/seed_lessons/a1_w01_l02_be.yaml b/content/seed_lessons/a1_w01_l02_be.yaml
+index ef434977..276ec565 100644
+--- a/content/seed_lessons/a1_w01_l02_be.yaml
++++ b/content/seed_lessons/a1_w01_l02_be.yaml
+@@ -33,7 +33,7 @@ contractions:
+   - full: "is not"
+     short: "isn't"
+     ipa: "/ˈɪzənt/"
+-    note_ru: "Отрицание присоединяется к is; слышно слабое /ənt/."
++    note_ru: "not присоединяется к is; слышно слабое /ənt/."
+   - full: "are not"
+     short: "aren't"
+     ipa: "/ɑrnt/"
+@@ -45,7 +45,7 @@ layers:
+ 
+       > [T8]It[/] [D1]is[/] [J3]nice[/]. [T8]It[/] [D1]is[/] [T1]a[/] [J1]big[/] [S2]house[/]! — Какой хороший дом! И большой!
+ 
+-      В русском мы часто говорим «Я дома», «Анна — моя подруга», «Телефон новый» без отдельного слова «есть». В английских **полных утверждениях о том, кто человек, какой предмет или где он находится**, обычно нужен глагол **be**.
++      В русском мы часто говорим «Я дома», «Анна — моя подруга», «Телефон новый» без отдельного слова «есть». В английских **полных сообщениях о том, кто человек, какой предмет или где он находится**, обычно нужен глагол **be**.
+ 
+       > [T8]I[/] [D1]am[/] [P1]at[/] [S2]home[/]. — Я дома.
+       > [S1]Anna[/] [D1]is[/] [T3]my[/] [S1]friend[/]. — Анна — моя подруга.
+@@ -57,16 +57,16 @@ layers:
+       Двойная линия под словом в нашей разметке означает глагол. В следующем слое посмотрим, почему у **be** такие разные формы.
+   - number: 2
+     body: |
+-      **Почему глагол называется be, хотя мы говорим I am и it is?** **Be** — форма, по которой этот глагол ищут в словаре. В обычном утверждении о настоящем времени вместо неё выбирают **am**, **is** или **are**. Не нужно ставить *be* рядом с ними: *I am* — уже нужная форма.
++      **Почему глагол называется be, хотя мы говорим I am и it is?** **Be** — форма, по которой этот глагол ищут в словаре. Когда говорим о том, что есть сейчас, вместо неё выбирают **am**, **is** или **are**. Не нужно ставить *be* рядом с ними: *I am* — уже нужная форма.
+ 
+-      **Что делает be во фразе?** Он связывает человека или предмет с информацией о нём: *I am Tom* — кто я; *I am busy* — какой я сейчас; *Anna is at home* — где Анна. **Глагол не обязательно называет действие.** В *I like coffee* глагол **like** выражает отношение: мне нравится кофе. В *I am busy* слово **busy** описывает меня, и перед ним нужна связка **am**. Поэтому эти фразы устроены по-разному: *I am busy*, но *I like coffee*, без дополнительного **am**.
++      **Что делает be во фразе?** Он связывает человека или предмет с информацией о нём: *I am Tom* — кто я; *I am busy* — какой я сейчас; *Anna is at home* — где Анна. **Глагол не обязательно называет действие.** В *I like coffee* глагол **like** выражает отношение: мне нравится кофе. В *I am busy* слово **busy** описывает меня, и перед ним нужно **am**. Поэтому эти фразы устроены по-разному: *I am busy*, но *I like coffee*, без дополнительного **am**.
+ 
+       В русском обычно можно сказать «Я занят» без слова «есть». В английском *I busy* не становится полной нейтральной фразой: между **I** и **busy** нужна форма **be**. Но не переводите каждое русское «есть» как **is**: например, «у меня есть телефон» позже будет *I have a phone*.
+ 
+       **Какую форму выбрать?** Сначала выясните, **о ком** говорится. Затем подберите **am / is / are**. В следующем слое разберём это на примерах.
+   - number: 3
+     body: |
+-      У **be** в настоящем времени три главные формы. Их удобно связывать не с переводом, а с тем, **о ком говорится**:
++      Когда говорим о том, что есть сейчас, у **be** три главные формы. Их удобно связывать не с переводом, а с тем, **о ком говорится**:
+ 
+       > [T8]I[/] [D1]am[/] [S1]Tom[/]. — Я Том.
+       > [T8]You[/] [D1]are[/] [T3]my[/] [S1]friend[/]. — Ты мой друг.
+@@ -77,32 +77,32 @@ layers:
+       - С **you** («ты» и «вы») выбираем **are**. Это одна и та же форма для одного собеседника и нескольких.
+       - С **it** («это / оно») или с одним человеком по имени выбираем **is**.
+ 
+-      **Что ставим перед глаголом?** В этих фразах сначала называем того, о ком говорим: *I*, *you*, *it*, *Anna*. Это называется **подлежащим**. Пока достаточно простого вопроса «кто или что?».
++      **Что ставим перед глаголом?** В этих фразах сначала называем того, о ком говорим: *I*, *you*, *it*, *Anna*. Спросите себя: «О ком или о чём я говорю?» — и выберите нужное слово.
+ 
+       **This или it?** *This* помогает **показать или представить** предмет: *This is my book*. Когда уже говорим об этой книге, можно использовать *it*: *It is new*. Поэтому *it* не надо механически переводить как «оно» в каждой фразе.
+ 
+-      Каркас **обычного утверждения с be**: подлежащее → am / is / are → информация о человеке или предмете. Для вопроса порядок изменится — об этом следующий слой.
++      Каркас **обычной фразы с be**: о ком или о чём говорим → am / is / are → что хотим сообщить. Для вопроса порядок изменится — об этом следующий слой.
+   - number: 4
+     body: |
+-      **Как сказать «не»?** Начинаем с утвердительной фразы, затем ставим **not** сразу после формы **be**:
++      **Как сказать «не»?** Начинаем с фразы без «не», затем ставим **not** сразу после формы **be**:
+ 
+       > [T8]It[/] [D1]is[/] [T3]my[/] [S2]phone[/]. — Это мой телефон.
+       > [T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]phone[/]. — Это не мой телефон.
+ 
+-      Здесь **not** отрицает всё утверждение. Нельзя просто поставить его перед **phone** и оставить прежний смысл.
++      Здесь **not** добавляет смысл «не» ко всей фразе. Нельзя просто поставить его перед **phone** и оставить прежний смысл.
+ 
+-      **Как сделать вопрос «Это книга?»** В предложении с **be** переставляем **is** перед подлежащим **it**:
++      **Как сделать вопрос «Это книга?»** В предложении с **be** переставляем **is** перед **it**:
+ 
+       > [T8]It[/] [D1]is[/] [T1]a[/] [S2]book[/]. — Это книга.
+       > [D1]Is[/] [T8]it[/] [T1]a[/] [S2]book[/]? — Это книга?
+       > [O4]Yes[/], [T8]it[/] [D1]is[/]. — Да.
+       > [O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/]. — Нет.
+ 
+-      **Обратите внимание на три разных порядка:** *It is ...* — сообщение; *It is not ...* — отрицание; *Is it ...?* — вопрос. Для такого вопроса не нужно дополнительное слово **do**: с **be** вопрос строится перестановкой.
++      **Обратите внимание на три разных порядка:** *It is …* — сообщение; *It is not …* — фраза с «не»; *Is it …?* — вопрос. Для такого вопроса не нужно дополнительное слово **do**: с **be** вопрос строится перестановкой.
+ 
+       **Почему ответ длиннее одного Yes?** *Yes* и *No* тоже возможны сами по себе, но короткий ответ *Yes, it is* или *No, it isn't* показывает, **на какой вопрос** вы отвечаете.
+ 
+-      **Диагностика понимания:** Вы хотите сказать «Я занят». Что верно: *I am busy* или *I busy*?
++      **Проверьте себя:** Вы хотите сказать «Я занят». Что верно: *I am busy* или *I busy*?
+ 
+       **Разбор:** *I am busy*. **Busy** описывает состояние, поэтому в обычном полном английском предложении здесь нужна форма **be**: с **I** — **am**. Сравните с *I like coffee*: там **like** уже глагол.
+   - number: 5
+@@ -114,11 +114,11 @@ layers:
+       > [T8]You[/][D1]'re[/] [T3]my[/] [S1]friend[/]. — Ты мой друг.
+       > [T8]It[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]book[/]. — Это не моя книга.
+ 
+-      **Что скрывает апостроф?** *I'm* = *I am*, *it's* = *it is*, *you're* = *you are*. Апостроф показывает, что часть звуков и букв опущена. Сами слова не меняют смысл.
++      **Что означает значок ’?** *I'm* = *I am*, *it's* = *it is*, *you're* = *you are*. Этот значок показывает, что слова записаны короче. Сами слова не меняют смысл.
+ 
+-      **Почему you're и your звучат похоже?** В быстрой речи они нередко произносятся одинаково, но на письме различаются: **you're** = «ты есть / ты являешься», а **your** = «твой» перед существительным. Например, в *You're my friend* первое слово — сокращённый глагол с местоимением, а *my* — указатель принадлежности.
++      **Почему you're и your звучат похоже?** В быстрой речи они нередко произносятся одинаково, но на письме различаются: **you're** = «ты есть / ты являешься», а **your** = «твой» перед названием предмета. Например, в *You're my friend* **you’re** — это два слова *you are*, записанные короче, а *my* — указатель принадлежности.
+ 
+-      **Как отрицать с I?** *I am not busy* сокращается до *I'm not busy*. **Isn't** относится к **is**, поэтому *I isn't busy* не подходит. В наших обычных утверждениях выбираем *I'm not*, *you aren't* или *it isn't* по подлежащему.
++      **Как отрицать с I?** *I am not busy* сокращается до *I'm not busy*. **Isn't** относится к **is**, поэтому *I isn't busy* не подходит. В наших обычных фразах выбираем *I'm not*, *you aren't* или *it isn't* по тому, о ком говорим.
+ 
+       **Можно ли сказать Yes, it's?** Как самостоятельный краткий ответ обычно **нет**: здесь говорят *Yes, it is*. Но *It's nice* нормально, потому что после сокращения есть продолжение. В отрицательном ответе естественно *No, it isn't*.
+   - number: 6
+@@ -128,9 +128,9 @@ layers:
+       - *I'm home!* особенно часто говорят, когда только что вернулись домой: «Я дома!».
+       - *I'm at home* (полная форма *I am at home*) удобно использовать, когда просто объясняете, где находитесь: «Я дома».
+ 
+-      **Можно ли поменять варианты местами?** Часто да: в американском английском *I'm home* также может быть обычным сообщением о местонахождении. Разница не в том, находитесь ли вы внутри здания или рядом с ним. Главное — контекст разговора.
++      **Оба варианта правильны.** Сначала запомните их как готовые фразы. Дополнительное пояснение можно открыть ниже.
+ 
+-      **Почему нет at в I'm home?** Слово **home** употребляется по-особому: оно может обозначать местонахождение без предлога. Не путайте это с фразой **go home** («идти домой»), где home обозначает направление.
++      **Для любопытных:** **Можно ли поменять варианты местами?** Часто да: в американском английском *I'm home* также может просто сообщать, где вы. Разница не в том, находитесь ли вы **внутри здания или рядом**. Главное — ситуация разговора. **Почему нет at?** Слово **home** может само означать «дома», без отдельного **at**. В знакомой фразе **go home** оно означает «домой».
+ 
+       **Как сказать возраст?** Английский использует **be**: *I am thirty* — «Мне тридцать». Русскому «мне» здесь соответствует английское **I** («я»); подробности о числах будут позже.
+ 
+@@ -139,7 +139,7 @@ layers:
+       Проверяйте **смысл** фразы, а не только наличие глагола: вы называете человека, описываете состояние, указываете место или говорите о действии?
+   - number: 7
+     body: |
+-      Пять заданий: найдите **is**, выберите **are** и **am** в двух примерах, соберите отрицание и ответьте на вопрос гостя.
++      Пять заданий: найдите **is**, выберите **are** и **am** в двух примерах, соберите фразу с **not** и ответьте на вопрос гостя.
+ 
+       После каждого ответа объясните себе одну маленькую причину: **почему именно эта форма be? почему not стоит здесь? почему в вопросе is впереди?** Если объяснение пока не получается — вернитесь к соответствующей паре примеров.
+ 
+@@ -165,7 +165,7 @@ exercises:
+     options: [am, is, are]
+     answer: are
+     hint_ru: "С you (ты или вы) используется are. Сравните I am, you are, it is."
+-    explanation_ru: "В этой фразе подлежащее you, поэтому выбираем are. С I было бы am, с it — is."
++    explanation_ru: "В этой фразе говорим you («ты» или «вы»), поэтому выбираем are. С I было бы am, с it — is."
+     units: [LX-00016, LX-00018]
+   - order: 3
+     uid: EX-00007
+@@ -175,7 +175,7 @@ exercises:
+     prompt_en: "I ___ at home."
+     answer: am
+     hint_ru: "Начало I означает «я». В таблице ему соответствует am."
+-    explanation_ru: "Подлежащее I требует форму am: I am at home. В разговоре возможна форма I'm at home. Сравните: Anna is at home."
++    explanation_ru: "С I нужна форма am: I am at home. В разговоре возможна форма I'm at home. Сравните: Anna is at home."
+     units: [LX-00016, LX-00017, LX-00023]
+   - order: 4
+     uid: EX-00008
+@@ -186,7 +186,7 @@ exercises:
+     answer: It is not a phone
+     accepted: ["It isn't a phone", "It's not a phone"]
+     hint_ru: "Сначала It, затем is, сразу после него not, потом a phone."
+-    explanation_ru: "В полном отрицательном предложении с be порядок такой: It → is → not → a phone. Сокращение сохраняет смысл: It isn't a phone."
++    explanation_ru: "В полной фразе с be и смыслом «не» порядок такой: It → is → not → a phone. Сокращение сохраняет смысл: It isn't a phone."
+     units: [LX-00016, LX-00019, LX-00030]
+   - order: 5
+     uid: EX-00009
+@@ -219,7 +219,7 @@ practice:
+   prompt_ru: Ты мой друг.
+   answer: You are my friend.
+   hint_ru: С you — are.
+-  explanation_ru: 'You are my friend. В настоящем времени в этой конструкции с you используется are: you are, you''re.'
++  explanation_ru: 'You are my friend. Когда говорим о том, что есть сейчас, с you используется are: you are, you''re.'
+   review_of: 4
+   units:
+   - LX-00016
+@@ -231,7 +231,7 @@ practice:
+   accepted:
+   - This is not my phone.
+   hint_ru: not ставим сразу после is.
+-  explanation_ru: 'It is not my phone. Отрицание: is + not. В разговоре: It isn''t my phone.'
++  explanation_ru: 'It is not my phone. Чтобы сказать «не»: is + not. В разговоре: It isn''t my phone.'
+   review_of: 4
+   units:
+   - LX-00016
+diff --git a/templates/lessons/detail.html b/templates/lessons/detail.html
+index ea83df78..9d1b4223 100644
+--- a/templates/lessons/detail.html
++++ b/templates/lessons/detail.html
+@@ -116,7 +116,7 @@
+         <div class="speech-studio" data-speech-studio data-speech-kind="lesson" data-speech-key="lesson:{{ lesson.slug }}" data-speech-persist="{% if user.is_authenticated %}true{% else %}false{% endif %}" data-speech-endpoint="{% url 'learning:speech_practice' %}">
+           <div data-speech-bank hidden>
+           {% for mission in extra_missions %}<div data-speech-entry>
+-            <span data-speech-task-source>{{ mission.scene }}. {{ mission.prompt }}</span>
++            <span data-speech-task-source>{{ mission.scene }} {{ mission.prompt }}</span>
+             <span data-speech-source lang="en">{{ mission.example }}</span>
+             <span data-speech-accent></span>
+           </div>{% endfor %}
+diff --git a/tests/test_a1_learner_text.py b/tests/test_a1_learner_text.py
+new file mode 100644
+index 00000000..6c9ed140
+--- /dev/null
++++ b/tests/test_a1_learner_text.py
+@@ -0,0 +1,109 @@
++"""Fast learner-text checks: render real A1 sources without a database."""
++import re
++from html.parser import HTMLParser
++from types import SimpleNamespace as NS
++
++import yaml
++from django.conf import settings
++from django.template.loader import render_to_string
++from django.test import SimpleTestCase
++
++from apps.core.a1_active import active_topics
++from apps.learning.understanding import get_guide
++from apps.taxonomy.markup import render_block
++
++# A1/A2 are also CEFR labels; other marker prefixes/classes are internal codes.
++CODE = re.compile(r'\b(?!A[12]\b)[SDJANTPXCOF]\d{1,2}\b')
++DOUBLE_DOT = re.compile(r'\.{2,}')
++
++
++class TextOnly(HTMLParser):
++    def __init__(self, include_collapsed=True):
++        super().__init__()
++        self.parts = []
++        self.suppressed = 0
++        self.include_collapsed = include_collapsed
++
++    def handle_starttag(self, tag, attrs):
++        if tag in ('script', 'style') or (tag == 'details' and not self.include_collapsed):
++            self.suppressed += 1
++
++    def handle_endtag(self, tag):
++        if tag in ('script', 'style') or (tag == 'details' and not self.include_collapsed):
++            self.suppressed -= 1
++
++    def handle_data(self, text):
++        if not self.suppressed:
++            self.parts.append(text)
++
++
++def text_only(html, include_collapsed=True):
++    parser = TextOnly(include_collapsed)
++    parser.feed(str(html))
++    return ''.join(parser.parts)
++
++
++def rendered_lesson(source):
++    lesson = NS(**{**source, 'level': NS(code='A1', slug='a1'), 'week': NS(number=source['week'])})
++    exercises = [NS(**{**ex, 'pk': n, 'get_stage_display': ex['stage']})
++                 for n, ex in enumerate(source.get('exercises', []), 1)]
++    translations = [NS(**{**item, 'pk': n})
++                    for n, item in enumerate(source.get('practice', []), 1)]
++    return render_to_string('lessons/detail.html', {
++        'lesson': lesson, 'user': NS(is_authenticated=False),
++        'a1_pilot': True, 'a1_guide': get_guide(source['slug']),
++        'layers': source['layers'], 'exercises': exercises, 'translations': translations,
++        'extra_missions': active_topics()[source['order']]['missions'],
++    })
++
++
++class A1LearnerTextTests(SimpleTestCase):
++    @classmethod
++    def setUpClass(cls):
++        super().setUpClass()
++        cls.lessons = [yaml.safe_load(path.read_text(encoding='utf-8'))
++                       for path in sorted((settings.CONTENT_DIR / 'seed_lessons').glob('a1_*.yaml'))]
++
++    def assert_clean(self, source):
++        text = text_only(rendered_lesson(source))
++        self.assertIsNone(CODE.search(text), f"{source['slug']}: internal code in learner text")
++        self.assertIsNone(DOUBLE_DOT.search(text), f"{source['slug']}: doubled ASCII period")
++
++    def test_week_one_has_no_code_leaks_or_double_periods(self):
++        for source in self.lessons:
++            if source['week'] == 1:
++                with self.subTest(slug=source['slug']):
++                    self.assert_clean(source)
++
++    def test_all_a1_lessons_have_no_code_leaks_or_double_periods(self):
++        self.assertEqual(len(self.lessons), 28)
++        for source in self.lessons:
++            with self.subTest(slug=source['slug']):
++                self.assert_clean(source)
++
++    def test_detector_checks_text_without_confusing_attributes_or_cefr(self):
++        text = text_only('<p>Урок A1. <span data-cat="T" data-cls="2">This</span>…</p>')
++        self.assertIsNone(CODE.search(text))
++        for leak in ('T1', 'T2', 'N3', 'S10', 'A3'):
++            self.assertRegex('Разметка ' + leak, CODE)
++        self.assertRegex('книгу..', DOUBLE_DOT)
++        self.assertNotRegex('книгу…', DOUBLE_DOT)
++
++    def test_curiosity_is_closed_and_keeps_escaped_content(self):
++        html = str(render_block('**Для любопытных:** **Семья.** My family is big. <script>bad</script>'))
++        self.assertIn('<details class="lesson-curiosity">', html)
++        self.assertIn('<summary>Для любопытных</summary>', html)
++        self.assertNotIn(' open', html)
++        self.assertIn('My family is big.', html)
++        self.assertNotIn('<script>', html)
++        self.assertNotIn('family', text_only(html, include_collapsed=False))
++
++    def test_week_one_replaces_extra_technical_terms(self):
++        forbidden = ('детерминатив', 'местоименное употребление', 'исчисляем',
++                     'единственное число', 'подлежащ', 'апостроф', 'падеж')
++        for source in self.lessons:
++            if source['week'] == 1:
++                with self.subTest(slug=source['slug']):
++                    text = text_only(rendered_lesson(source)).lower()
++                    for term in forbidden:
++                        self.assertNotIn(term, text)
+diff --git a/tests/test_a1_microsteps.py b/tests/test_a1_microsteps.py
+index f162d3f2..047f56fb 100644
+--- a/tests/test_a1_microsteps.py
++++ b/tests/test_a1_microsteps.py
+@@ -50,16 +50,16 @@ class A1MicrostepTests(SimpleTestCase):
+ 
+         self.assertIn("существительными", intro)
+         self.assertIn("не правило без исключений", intro)
+-        self.assertIn("Что такое «детерминатив»?", structure)
+-        self.assertIn("словом-указателем", structure)
+-        self.assertIn("местоименное употребление", structure)
++        self.assertNotIn("детерминатив", structure)
++        self.assertIn("слово-указатель", structure)
++        self.assertNotIn("местоименное употребление", structure)
+         self.assertIn("перед book", structure)
+         self.assertIn("my не меняется", structure)
+         self.assertIn("Так вы уже видели образец для четвёртого задания", structure)
+         self.assertIn("[T8]It[/] [D1]is[/] [J2]new[/]", structure)
+         self.assertIn("a my book", article)
+-        self.assertIn("исчисляемому существительному в единственном числе", article)
+-        self.assertIn("не то же самое, что русские падежные окончания", article)
++        self.assertIn("по одной штуке", article)
++        self.assertNotIn("падеж", article)
+         self.assertIn("одной порции кофе", meanings)
+         self.assertIn("I like coffee", meanings)
+ 
+@@ -82,10 +82,10 @@ class A1MicrostepTests(SimpleTestCase):
+         edge_cases = layer_text(lesson, 6)
+         guidance = layer_text(lesson, 7)
+ 
+-        self.assertIn("полных утверждениях", intro)
++        self.assertIn("полных сообщениях", intro)
+         self.assertIn("I like coffee", intro)
+         self.assertIn("Water, please", intro)
+-        self.assertIn("подлежащим", structure)
++        self.assertNotIn("подлежащ", structure)
+         self.assertIn("This или it?", structure)
+         self.assertIn("It is not", questions)
+         self.assertIn("Is it", questions)
+diff --git a/tests/test_diagnostic_reveal.py b/tests/test_diagnostic_reveal.py
+index 47525bde..febc0eb9 100644
+--- a/tests/test_diagnostic_reveal.py
++++ b/tests/test_diagnostic_reveal.py
+@@ -26,7 +26,8 @@ class DiagnosticRevealTests(SimpleTestCase):
+                 self.assertEqual(html.count("</details>"), 1)
+                 self.assertIn("<summary>Показать разбор после своей попытки</summary>", html)
+                 self.assertIn("<strong>Разбор:</strong>", html)
+-                self.assertLess(html.index("Диагностика понимания:"), html.index("<details"))
++                question = "Проверьте себя:" if order in (1, 2) else "Диагностика понимания:"
++                self.assertLess(html.index(question), html.index("<details"))
+                 self.assertLess(html.index("<summary>"), html.index("<strong>Разбор:</strong>"))
+                 self.assertNotIn("<details class=\"lesson-diagnostic-answer\" open", html)
+ 

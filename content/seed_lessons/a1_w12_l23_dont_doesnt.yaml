@@ -39,10 +39,10 @@ layers:
       В разговоре — **don't** и **doesn't**.
   - number: 2
     body: |
-      **I have a stamp. → I don't have a stamp.** — У меня есть марка. → У меня нет марки. После I ставим **do not**, сокращённо **don't**; основной глагол остаётся **have**.
+      **I have a stamp. → I don't have a stamp.** — У меня есть марка. → У меня нет марки. После I ставим **do not**, сокращённо **don't**; глагол остаётся **have**.
       **She lives here. → She doesn't live here.** — Она живёт здесь. → Она не живёт здесь. С she нужен **does not**, сокращённо **doesn't**. Форму для she уже показывает does, поэтому дальше **live**, без -s.
 
-      В этих фразах **do / does — помощники**, а не отдельное действие «делать». Сравните знакомый вопрос и новое отрицание: **Does she live here? / She doesn't live here.** В обоих случаях после does основной глагол — **live**.
+      В этих фразах **do / does — помощники**, а не отдельное действие «делать». Сравните знакомый вопрос и новое отрицание: **Does she live here? / She doesn't live here.** В обоих случаях после does глагол — **live**.
 
       Не выбирайте форму только по русскому «не». **I am not tired** отрицает состояние с be. **I can't work** говорит, что я не могу работать. **I don't work** говорит, что я не работаю. Это три разные конструкции и разные смыслы; don't не заменяет am not или can't.
   - number: 3
@@ -53,11 +53,11 @@ layers:
 
       - I, you, we, they — **don't**: I don't know.
       - he, she, it, одна вещь — **doesn't**: it doesn't get letters.
-      - После **don't / doesn't** смысловой глагол остаётся в **начальной форме**: *she doesn't live*. Не *doesn't lives*: форму третьего лица уже показывает *does*.
+      - После **don't / doesn't** глагол остаётся **как в словаре**: *she doesn't live*. Не *doesn't lives*: форму третьего лица уже показывает *does*.
       - Отрицание с be — без do: it is not, I am not.
   - number: 4
     body: |
-      **Почему doesn't live, а не doesn't lives?** Форму третьего лица выражает помощник **does**; **not** делает её отрицательной, а смысловой глагол остаётся в **начальной форме**. *Doesn't* — сокращение от *does not*, а не новый смысловой глагол. «-s переехало» — лишь удобный образ, не буквальное действие.
+      **Почему doesn't live, а не doesn't lives?** Форму третьего лица выражает помощник **does**; **not** делает её отрицательной, а глагол остаётся **как в словаре**. *Doesn't* — сокращение от *does not*, а не новый глагол. «-s переехало» — лишь удобный образ, не буквальное действие.
 
       - My mother lives in Russia. → My mother doesn't live in Russia.
       - The mailbox gets letters. → The mailbox doesn't get letters.
@@ -66,7 +66,7 @@ layers:
 
       **Диагностика понимания:** Вы хотите сказать «Она не живёт здесь». Что верно: *She doesn't live here* или *She doesn't lives here*?
 
-      **Разбор:** *She doesn't live here*. **Doesn't** уже обозначает третье лицо и отрицание, поэтому основной глагол **live** не получает **-s**. В утверждении: *She lives here*.
+      **Разбор:** *She doesn't live here*. **Doesn't** уже обозначает третье лицо и отрицание, поэтому глагол **live** не получает **-s**. В утверждении: *She lives here*.
   - number: 5
     body: |
       Так говорят американцы:
@@ -82,7 +82,7 @@ layers:
       > [T8]I[/] [D1]do[/][X1]n't[/] [D1]have[/] [T1]an[/] [S2]envelope[/]. — У меня нет конверта.
       > [T1]The[/] [S9]mail[/] [D1]does[/][X1]n't[/] [D4]come[/] [T5]every[/] [S7]day[/]. — Почта не приходит каждый день.
 
-      **Mail** в значении «почта, корреспонденция» — неисчисляемое существительное: с ним согласуем глагол как с **it**, поэтому **mail doesn't**. Даже если речь о нескольких письмах, не говорим *mail don't*; отдельные письма — **letters**, и с ними **letters don't**. **Package** — посылка; **postcard** — открытка, а **envelope** — конверт. Не меняйте -s у have: Tom doesn't **have** a package.
+      **Mail** — почта или вся корреспонденция вместе. В этом значении используем **mail doesn't**, как с **it**. Отдельные письма — **letters**: о нескольких письмах говорим **letters don't**. **Package** — посылка, **postcard** — открытка, **envelope** — конверт. После **doesn't** оставляем **have**, без **-s**: *Tom doesn't have a package*.
 
       В очереди (**line**) можно услышать **Wait, please.** — «Подождите, пожалуйста». Посылку описывают словами **large** (размер), **heavy** или **light** (вес). Адрес проверяют фразой **The address is correct.** — «Адрес правильный».
   - number: 6
@@ -129,7 +129,7 @@ exercises:
     options: [live, friend, doesn't, My, in, Russia]
     answer: "My friend doesn't live in Russia"
     hint_ru: "Один друг — значит форма третьего лица doesn't; после неё live без -s."
-    explanation_ru: "My friend doesn't live in Russia. Does выражает третье лицо; live после него остаётся в начальной форме."
+    explanation_ru: "My friend doesn't live in Russia. Does выражает третье лицо; live после него остаётся как в словаре."
     units: [LX-00230]
   - order: 4
     uid: EX-00131

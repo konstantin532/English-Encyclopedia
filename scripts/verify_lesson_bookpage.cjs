@@ -36,6 +36,34 @@ async function geometry(page){
   })));
   return Object.fromEntries(Object.entries(boxes).map(([selector,box])=>[selector,visibleLayoutBounds(box.display,box.bounds,box.child)]));
 }
+async function verifyBeginnerLesson(page,label='lesson'){
+  const card=page.locator('#beginner-steps.a1-clarity-bridge');
+  assert.equal(await card.count(),1,`${label}: minute card missing`);
+  assert.equal(await card.isVisible(),true,`${label}: minute card hidden`);
+  assert.deepEqual(await card.locator('dl > dt').allTextContents(),['Что это?','Почему работает?','Простая схема','Типичная ошибка','Как исправить']);
+  const explanations=await card.locator('dl > dd').allTextContents();
+  assert.equal(explanations.length,5,`${label}: minute card incomplete`);
+  assert.ok(explanations.every(text=>text.trim()),`${label}: empty explanation`);
+  assert.equal(await card.locator('blockquote [lang="en"]').count(),1);
+  assert.equal(await card.locator('.a1-contrast-pairs > p').count(),2);
+  assert.equal(await card.locator('.a1-step-list').count(),0,'removed ladder must not duplicate the minute card');
+  const flow=await page.evaluate(()=>{
+    const selectors=['#beginner-steps','[data-lesson-reader]','#practice','#translate','#lesson-complete','#lesson-extra-practice'];
+    const nodes=selectors.map(selector=>document.querySelector(selector));
+    return {present:nodes.every(Boolean),ordered:nodes.every((node,index)=>!index||Boolean(nodes[index-1]?.compareDocumentPosition(node)&Node.DOCUMENT_POSITION_FOLLOWING)),
+      completion:document.querySelector('#lesson-complete-title')?.textContent.trim(),
+      optionalTag:nodes[5]?.tagName,optionalOpen:nodes[5]?.open,
+      independentInside:Boolean(nodes[5]?.querySelector('a[href*="/independent/"]')),speechInside:Boolean(nodes[5]?.querySelector('#spoken-coach'))};
+  });
+  assert.deepEqual(flow,{present:true,ordered:true,completion:'Урок пройден ✓',optionalTag:'DETAILS',optionalOpen:false,independentInside:true,speechInside:true},`${label}: core → completion → closed optional practice`);
+  assert.equal(await page.locator('#lesson-extra-practice > summary').innerText(),'Ещё практика (по желанию)');
+}
+async function openExtraPractice(page){
+  const summary=page.locator('#lesson-extra-practice > summary');
+  await summary.focus();await summary.press('Enter');
+  assert.equal(await summary.evaluate(el=>el.parentElement.open),true,'optional practice must open from the keyboard');
+  assert.equal(await page.locator('#spoken-coach').isVisible(),true,'speech workshop hidden after opening optional practice');
+}
 async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}){
   const route='/lessons/a1-nouns-first-words/';
   report.screens=[];
@@ -57,9 +85,13 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
         entry.overflow=box;assert.ok(box.scroll<=box.width+1,`${state} noun ${width}: overflow`);
         measurements[state]=await geometry(page);
         entry.geometry=measurements[state];
+        if(state==='after')await verifyBeginnerLesson(page,`noun ${width}`);
         // Record the same three regions for each checkout, before interactions.
         await page.screenshot({path:path.join(output,`noun-${width}-${state}-top.png`)});
         await page.locator('#layer-1').screenshot({path:path.join(output,`noun-${width}-${state}-explanation.png`)});
+        // The workshop is now optional: prove its initial closed state, then
+        // open the real details control before measuring its speech controls.
+        if(state==='after')await openExtraPractice(page);
         await page.locator('.speech-mode-grid').screenshot({path:path.join(output,`noun-${width}-${state}-speech.png`)});
         entry.activatedSpeech=await colors(page.locator('.speech-mode-grid [data-speech-mode="see"]'));
         if(state==='after'){
@@ -105,6 +137,8 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
           }
           await page.reload({waitUntil:'networkidle'});
           await assertComplete();
+          await verifyBeginnerLesson(page,`noun ${width} after reload`);
+          await openExtraPractice(page);
           entry.keyboardContentsOrder=true;entry.completeLesson=true;
           for(const mode of ['see','echo','recall','transfer']){
             const button=page.locator(`.speech-mode-grid [data-speech-mode="${mode}"]`);
@@ -114,9 +148,7 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
             const pair=await colors(button);entry.contrasts.push({control:'speech',mode,...pair});
             assert.ok(pair.ratio>=4.5,`speech ${mode} contrast ${pair.ratio}`);
           }
-          const summary=page.locator('#beginner-steps > summary');
-          await summary.focus();await summary.press('Enter');
-          assert.equal(await summary.evaluate(el=>el.parentElement.open),true);
+          entry.minuteCard=true;entry.optionalPracticeKeyboard=true;
           const paragraph=page.locator('#layer-1 .annotated > p').first();
           // Use the guaranteed-minimum reader size so a stored/max size cannot mask A+.
           for(let i=0;i<12;i++)if(await page.locator('[data-reader-smaller]').isEnabled())await page.locator('[data-reader-smaller]').click();
@@ -152,9 +184,11 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
   try{
     const page=await nojs.newPage();const response=await page.goto(afterBase+route,{waitUntil:'networkidle'});assert.equal(response.status(),200);
     for(let n=1;n<=7;n++)assert.equal(await page.locator(`#layer-${n}`).isVisible(),true);
+    await verifyBeginnerLesson(page,'no-JS noun');
+    await openExtraPractice(page);
     assert.equal(await page.locator('[data-a1-learning-route], [data-a1-route-mode]').count(),0);
     await page.screenshot({path:path.join(output,'noun-390-after-no-js.png')});report.noJavaScript=true;
   }finally{await nojs.close();}
   report.passed=true;
 }
-module.exports={contrastRatio,visibleLayoutBounds,verifyLessonBookpage};
+module.exports={contrastRatio,visibleLayoutBounds,verifyBeginnerLesson,openExtraPractice,verifyLessonBookpage};

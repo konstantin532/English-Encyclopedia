@@ -1,0 +1,29 @@
+{
+  "scene_pk": 1,
+  "unchanged_other_rows": 5137,
+  "unchanged_tables": 42,
+  "scene_audit_errors": [],
+  "scene_audit_warnings": [],
+  "script_sha256": "51a61f8cde749946dd46d9367741f8d0b084f37cea173c73372152d8029d680f",
+  "engine": "kokoro",
+  "voices": {
+    "anna": "af_heart",
+    "tom": "am_michael"
+  },
+  "tracks": {
+    "very_slow": {
+      "file": "audio/weeks/a1-w01/warm-51a61f8cde74/voice_very_slow.mp3",
+      "seconds": 38.7
+    },
+    "slow": {
+      "file": "audio/weeks/a1-w01/warm-51a61f8cde74/voice_slow.mp3",
+      "seconds": 29.6
+    },
+    "natural": {
+      "file": "audio/weeks/a1-w01/warm-51a61f8cde74/voice_natural.mp3",
+      "seconds": 23.9
+    }
+  },
+  "original_audio_urls_preserved": true,
+  "human_audio_review": false
+}

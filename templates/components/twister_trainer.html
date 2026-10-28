@@ -44,6 +44,9 @@
       {% if twister.own_ru %}<p>{{ twister.own_ru }}</p>{% endif %}
     </li>{% endif %}
   </ol>
+  {% if week_mode %}
+  {% include "components/speech_recorder.html" %}
+  {% else %}
   <div class="speech-studio" data-speech-studio data-speech-kind="twister" data-speech-key="twister:{{ twister.number }}" data-speech-persist="{% if user.is_authenticated %}true{% else %}false{% endif %}" data-speech-endpoint="{% url 'learning:speech_practice' %}">
     <h3>Интерактивная тренировка звука и речи</h3>
     <p>Лесенка → точность → по памяти → обычная реплика. Один целевой звук за раз; скорость необязательна.</p>
@@ -79,4 +82,5 @@
       {% endif %}
     </section>
   </div>
+{% endif %}
 </div>

@@ -4,8 +4,8 @@
 (function (global) {
   "use strict";
   const ROLES = Object.freeze({
-    subject: "I — это подлежащее: я, тот, о ком говорится.",
-    be: "'m — сокращённая форма am от глагола be. Она связывает I и home.",
+    subject: "I — «я»: кто говорит.",
+    be: "'m — короткая запись am. Здесь помогает сказать «я дома».",
     place: "home — здесь означает «дома», без предлога at."
   });
   function describeRole(role) {
