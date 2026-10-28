@@ -2,6 +2,7 @@
 import json
 from unittest.mock import patch
 
+from django.db import connection
 from django.test import Client, TestCase, override_settings
 from django.urls import reverse
 
@@ -125,7 +126,12 @@ class GuestWeekOneTests(TestCase):
         with patch('apps.learning.trainer_state.get_user_model') as model:
             model.return_value._meta.pk.name='id'
             run_serialized(self.user, lambda: None)
-            model.return_value.objects.filter.return_value.update.assert_called_once()
+            users = model.return_value.objects.filter.return_value
+            # SQLite берёт блокировку записью, PostgreSQL — строкой пользователя.
+            if connection.vendor == 'sqlite':
+                users.update.assert_called_once()
+            else:
+                users.select_for_update.return_value.get.assert_called_once()
 
     def test_translation_deduplicates_the_exact_task_not_other_contexts(self):
         token=self.post_answer('practice',self.practice,self.practice.answer)['guest_receipt']['token']
