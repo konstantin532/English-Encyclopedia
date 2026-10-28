@@ -30,7 +30,7 @@ script:
     spoken: "[O4]Yes[/], [T8]I[/] [D1]am[/]. [T8]I[/][D1]'m[/] [P2]from[/] [S4]Russia[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]."
     ru: "Да. Я из России. Это мой новый дом."
   - speaker: tom
-    emotion: happy
+    emotion: excited
     text: "[T8]It[/] [D1]is[/] [T1]a[/] [J3]nice[/] [S2]house[/], [S1]Anna[/]! [T8]It[/] [D1]is[/] [J1]big[/]!"
     spoken: "[T8]It[/][D1]'s[/] [T1]a[/] [J3]nice[/] [S2]house[/], [S1]Anna[/]! [T8]It[/][D1]'s[/] [J1]big[/]!"
     ru: "Какой хороший дом, Анна! И большой!"

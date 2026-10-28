@@ -772,3 +772,11 @@ reviews and merges the PR; no automatic merge.
 - Регрессия читает загруженную `WeekScene`, проверяет контекстные классы всех примеров и не фиксирует целые реплики. До исправления — FAIL (`P3` вместо `P1`), после — 9 профильных тестов PASS. Независимая read-only рецензия: замечаний нет; ошибочные/отсутствующие park и October отвергнуты четырьмя мутационными проверками в памяти.
 - `UV_CACHE_DIR=/tmp/uv-week10-cache uv run python manage.py test tests --parallel auto`: 921 тест, OK, 2 PostgreSQL-only skips, 240.595 с. `load_content` и `audit_course`: ошибок нет, существующие предупреждения сохранены. Страница недели HTTP 200; HTML содержит «Место» для park и «Время» для обоих October. `git diff --check` и компиляция теста PASS.
 - Визуальная проверка desktop/390 px BLOCKED: sandbox запретил сокет Chromium; поддержанный запуск с повышенными разрешениями завершился ошибкой bwrap (read-only служебный путь), обход не выполнялся. HTTP/HTML не подменяют визуальную проверку. Удалённый CI проверяется на точном head PR; merge/deploy не разрешены.
+
+
+### 2026-10-28 — PR #137: утверждённая эмоция недели 1 и настоящая озвучка
+
+- Ветка `codex/beginner-changes-review-20261028`, база `7674985`. Автор выбрал `excited` для реплики Тома «It’s a nice house, Anna! It’s big!». Изменено только `script[4].emotion`; текст, spoken и перевод сохранены.
+- Kokoro v1.0, голоса af_heart/am_michael: диалог A1-1 заново создан во всех трёх темпах (38.2 / 29.4 / 23.8 с), без перегенерации других недель и скороговорки. Модель и voice pack сверены по SHA256; MP3 декодированы, тайминги девяти реплик и fingerprint проверены. Аудиоархив передан отдельно; verified=false до человеческого прослушивания.
+- После генерации: полный `uv run python manage.py test tests --parallel auto` — `Ran 1144 tests in 239.998s`, `OK (skipped=2)` (test settings, 8 процессов, UV_NO_SYNC=1). load_content и audit_course — ошибок нет. Реальное воспроизведение всех трёх темпов и клавиатура проверены на 1440/390 px; без переполнения и JS-ошибок.
+- Контрольные суммы и доказательства: `docs/reviews/2026-10-28-week-one-excited-audio.json`; текущий отчёт PR — `docs/reviews/2026-10-28-pr137-ci-repair.md`. main, force push и auto-merge не затрагиваются.

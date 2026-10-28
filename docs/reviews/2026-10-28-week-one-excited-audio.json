@@ -1,0 +1,119 @@
+{
+  "base_commit": "7674985238ed9aea07715347471cb39ea502e9d7",
+  "engine": "kokoro",
+  "model": "kokoro-v1.0",
+  "voices": {
+    "anna": "af_heart",
+    "tom": "am_michael"
+  },
+  "script_sha256": "9df9e4bbe408a9d2b5578053537bfb797c6b75d26a23ff5307fa9a505601c68b",
+  "changed_line": 4,
+  "emotion": "excited",
+  "dialogue_text_unchanged": true,
+  "human_audio_review": false,
+  "tracks": {
+    "very_slow": {
+      "file": "audio/weeks/a1-w01/voice_very_slow.mp3",
+      "seconds": 38.2,
+      "decoded_seconds": 38.236,
+      "bytes": 306669,
+      "sha256": "0a9d1c932bb5c386ef86f5f60f5934834dec1308b992019712f636612b3fb173",
+      "timed_lines": 9,
+      "compliment_emotion": "excited"
+    },
+    "slow": {
+      "file": "audio/weeks/a1-w01/voice_slow.mp3",
+      "seconds": 29.4,
+      "decoded_seconds": 29.438,
+      "bytes": 236205,
+      "sha256": "6c3a4c9d6178fa2bd63400ca3398c20ec4b6859672b1985db8bc769d05093e59",
+      "timed_lines": 9,
+      "compliment_emotion": "excited"
+    },
+    "natural": {
+      "file": "audio/weeks/a1-w01/voice_natural.mp3",
+      "seconds": 23.8,
+      "decoded_seconds": 23.814,
+      "bytes": 191277,
+      "sha256": "ae0e6430a4b02de0b81d16a4bd5083bfc267ddaddeb949228bf47085acce1866",
+      "timed_lines": 9,
+      "compliment_emotion": "excited"
+    }
+  },
+  "ambience": {
+    "file": "audio/ambience/morning_home.mp3",
+    "sha256": "4f791211daf4cb329cb81ba123eea66753dc94f1fb9d9c60ed0dcb8a3fe08119"
+  },
+  "archive": {
+    "filename": "A1-Week1-Excited-Audio.zip",
+    "bytes": 765536,
+    "sha256": "80cc33df4c5f6e068b5bfa332a69a90b409caaad80f1294f7f1c658eb8a5c21c",
+    "delivered_separately": true
+  },
+  "browser": {
+    "screens": [
+      {
+        "width": 1440,
+        "tempos": [
+          {
+            "tempo": "very_slow",
+            "duration": "0:38",
+            "playbackAdvanced": true,
+            "keyboard": true
+          },
+          {
+            "tempo": "slow",
+            "duration": "0:29",
+            "playbackAdvanced": true,
+            "keyboard": true
+          },
+          {
+            "tempo": "natural",
+            "duration": "0:23",
+            "playbackAdvanced": true,
+            "keyboard": true
+          }
+        ],
+        "overflow": {
+          "width": 1440,
+          "scroll": 1440
+        }
+      },
+      {
+        "width": 390,
+        "tempos": [
+          {
+            "tempo": "very_slow",
+            "duration": "0:38",
+            "playbackAdvanced": true,
+            "keyboard": true
+          },
+          {
+            "tempo": "slow",
+            "duration": "0:29",
+            "playbackAdvanced": true,
+            "keyboard": true
+          },
+          {
+            "tempo": "natural",
+            "duration": "0:23",
+            "playbackAdvanced": true,
+            "keyboard": true
+          }
+        ],
+        "overflow": {
+          "width": 390,
+          "scroll": 390
+        }
+      }
+    ],
+    "errors": [],
+    "passed": true
+  },
+  "full_django_suite": {
+    "command": "UV_NO_SYNC=1 DJANGO_SETTINGS_MODULE=config.settings.test DJANGO_TEST_PROCESSES=8 uv run python manage.py test tests --parallel auto",
+    "ran": 1144,
+    "seconds": 239.998,
+    "result": "OK (skipped=2)"
+  }
+}
