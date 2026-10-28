@@ -18,6 +18,7 @@ from functools import lru_cache
 
 from . import morph
 from .lexicon import markup_dir
+from .spoken import spoken
 
 # ─────────────────────────── 1. Точки разблокировки грамматики ───────────────────────────
 # (уровень, неделя). Основание: первое появление конструкции в сценарии недели
@@ -1403,9 +1404,22 @@ def row_mentions(row, lemma):
     return None
 
 
-def make_phrase(ctx, fams, target, rng, familiar=frozenset(), index=None, tries=40):
+def repeats_noun(lemmas, units):
+    """Одно существительное дважды (My mother has a mother) — фраза бессмысленна."""
+    nouns = [l for l in lemmas if l and l in units and units[l].cls.startswith("S")]
+    return len(nouns) != len(set(nouns))
+
+
+def spoken_length(text):
+    """Сколько слов видит ученик: сокращение (don't, I'm) — одно слово."""
+    return len(tokenize(spoken(text)))
+
+
+def make_phrase(ctx, fams, target, rng, familiar=frozenset(), index=None, tries=40, max_words=None):
     """Фраза, где целевое слово обязательно есть. Остальные знаменательные слова —
-    по возможности знакомые (в familiar); иначе — с наименьшим числом незнакомых."""
+    по возможности знакомые (в familiar); иначе — с наименьшим числом незнакомых.
+    max_words — потолок длины в живой форме (см. spoken); длиннее фраза не выдаётся.
+    Фразы с повтором существительного не выдаются никогда."""
     index = index or form_index(ctx.U)
     cands = []
     for fid, rows in fams.items():
@@ -1431,7 +1445,11 @@ def make_phrase(ctx, fams, target, rng, familiar=frozenset(), index=None, tries=
         if not text:
             continue
         text = " ".join(text.split())
+        if max_words is not None and spoken_length(text) > max_words:
+            continue
         lemmas = lemmas_for(text, index, ctx.U, target)
+        if repeats_noun(lemmas, ctx.U):
+            continue
         content = [l for l in lemmas if l and l != target and ctx.U[l].cls[0] in "SDJ" and ctx.U[l].cls != "D1"]
         bad = sum(1 for l in content if l not in familiar)
         if best is None or bad < best_bad:

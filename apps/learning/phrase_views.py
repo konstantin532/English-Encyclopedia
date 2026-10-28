@@ -36,6 +36,10 @@ def phrase_practice_view(request):
             phrase_practice.answer(request, request.POST.get("item", ""), text)
         elif action == "next":
             phrase_practice.advance(request)
+        elif action == "more":
+            phrase_practice.continue_rounds(request)
+        elif action == "stop":
+            phrase_practice.stop_for_today(request)
         return redirect("learning:phrases")
     state = phrase_practice.current(request)
     item = state.get("item")
@@ -51,5 +55,6 @@ def phrase_practice_view(request):
         "done": state.get("correct", 0) + state.get("errors", 0),
         "correct_total": (total := phrase_practice.correct_total(request.user)),
         "puzzle_percent": memory.puzzle_percent(total),
+        "round": phrase_practice.round_info(state),
     }
     return render(request, "learning/phrases.html", context)
