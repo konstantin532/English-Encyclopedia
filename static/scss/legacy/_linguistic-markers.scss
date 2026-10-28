@@ -1,12 +1,14 @@
 /* Маркеры 11 учебных категорий. Тип линии закреплён за категорией навсегда,
-   цвет — за номером класса. Без цвета линии остаются различимыми. */
+   цвет — за номером класса. Без цвета линии остаются различимыми.
+   Линии тонкие и приглушённые (80% цвета), чтобы не мешать чтению. */
 .mk {
   --mk-color: currentColor;
   --mk-reveal: 1;
+  --mk-strength: 0.8;
   text-decoration-line: var(--mk-line);
   text-decoration-style: var(--mk-style);
-  text-decoration-color: color-mix(in srgb, var(--mk-color) calc(var(--mk-reveal) * 100%), transparent);
-  text-decoration-thickness: var(--mk-thick, 2px);
+  text-decoration-color: color-mix(in srgb, var(--mk-color) calc(var(--mk-reveal) * var(--mk-strength) * 100%), transparent);
+  text-decoration-thickness: var(--mk-thick, 1px);
   text-underline-offset: 0.24em;
   text-decoration-skip-ink: none;
   -webkit-box-decoration-break: clone;
@@ -20,16 +22,24 @@
 }
 
 .mk[data-cat="S"] { --mk-line: underline;    --mk-style: solid; }
-.mk[data-cat="D"] { --mk-line: underline;    --mk-style: double; --mk-thick: 3px; }
-.mk[data-cat="J"] { --mk-line: underline;    --mk-style: wavy;   --mk-thick: 1.5px; }
-.mk[data-cat="A"] { --mk-line: underline;    --mk-style: dotted; --mk-thick: 2.5px; }
+.mk[data-cat="D"] { --mk-line: underline;    --mk-style: double; }
+.mk[data-cat="J"] { --mk-line: underline;    --mk-style: wavy; }
+.mk[data-cat="A"] { --mk-line: underline;    --mk-style: dotted; }
 .mk[data-cat="N"] { --mk-line: underline;    --mk-style: dashed; }
 .mk[data-cat="T"] { --mk-line: overline;     --mk-style: solid; }
-.mk[data-cat="P"] { --mk-line: overline;     --mk-style: double; --mk-thick: 3px; }
-.mk[data-cat="X"] { --mk-line: overline;     --mk-style: wavy;   --mk-thick: 1.5px; }
-.mk[data-cat="C"] { --mk-line: overline;     --mk-style: dotted; --mk-thick: 2.5px; }
+.mk[data-cat="P"] { --mk-line: overline;     --mk-style: double; }
+.mk[data-cat="X"] { --mk-line: overline;     --mk-style: wavy; }
+.mk[data-cat="C"] { --mk-line: overline;     --mk-style: dotted; }
 .mk[data-cat="O"] { --mk-line: overline;     --mk-style: dashed; }
-.mk[data-cat="F"] { --mk-line: line-through; --mk-style: dotted; --mk-thick: 2.5px; }
+.mk[data-cat="F"] { --mk-line: line-through; --mk-style: dotted; }
+
+/* Телефоны и Retina: 0.75px. Двойная и точечная остаются 1px, иначе рисунок пропадает. */
+@media (min-resolution: 2dppx) {
+  .mk[data-cat="S"], .mk[data-cat="J"], .mk[data-cat="N"], .mk[data-cat="T"], .mk[data-cat="X"], .mk[data-cat="O"] { --mk-thick: 0.75px; }
+}
+
+/* Логотип — знак, а не учебный текст: линии остаются плотными и яркими. */
+.wordmark .mk { --mk-thick: 2px; --mk-strength: 1; }
 
 .mk[data-cls="1"]  { --mk-color: var(--class-1); }
 .mk[data-cls="2"]  { --mk-color: var(--class-2); }
