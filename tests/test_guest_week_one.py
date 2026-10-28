@@ -1,45 +1,28 @@
-"""Small guest-week fixtures; no load_content and no browser."""
+"""Guest progress uses the authored week-one course fixtures; no browser."""
 import json
 from unittest.mock import patch
 
-import yaml
-from django.conf import settings
-from django.contrib.auth.models import AnonymousUser
-from django.core import signing
 from django.test import Client, TestCase, override_settings
 from django.urls import reverse
 
 from apps.accounts.models import User
-from apps.curriculum.models import Level, Week
+from apps.curriculum.models import Week
 from apps.drills.models import Exercise, PracticeItem
-from apps.learning.guest_progress import MAX_ITEMS, SALT, make_receipt
+from apps.learning.guest_progress import MAX_ITEMS, make_receipt
 from apps.learning.models import ExerciseAttempt, ImportedGuestAnswer, UnitProgress, WeekGoal
 from apps.lessons.models import Lesson
-from apps.lexicon.models import LexicalUnit
-from apps.taxonomy.models import PartOfSpeech, SemanticClass
+from tests.runner import ensure_content
 
 
 class GuestWeekOneTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        level = Level.objects.get(code='A1')
-        cls.week = Week.objects.get(level=level, number=1)
-        noun = PartOfSpeech.objects.get(code='S')
-        cls.unit = LexicalUnit.objects.create(uid='LX-99990', lemma='book', meaning='book',
-            part_of_speech=noun, semantic_class=SemanticClass.objects.get(category=noun,number=2),
-            internal_level=level, week=cls.week)
-        for path in sorted((settings.CONTENT_DIR/'seed_lessons').glob('a1_w01_*.yaml')):
-            source = yaml.safe_load(path.read_text(encoding='utf-8'))
-            lesson = Lesson.objects.create(slug=source['slug'], title=source['title'], level=level,
-                week=cls.week, order=source['order'], is_published=True,
-                focus=PartOfSpeech.objects.get(code=source['focus']))
-            for key, model in (('exercises',Exercise),('practice',PracticeItem)):
-                fields={f.name for f in model._meta.fields}-{'id','lesson'}
-                for row in source[key]:
-                    item=model.objects.create(lesson=lesson, **{k:v for k,v in row.items() if k in fields})
-                    item.units.add(cls.unit)
+        ensure_content()
+        cls.week = Week.objects.get(level__code='A1', number=1)
         cls.ex=Exercise.objects.get(lesson__slug='a1-nouns-first-words',order=1)
         cls.practice=PracticeItem.objects.get(lesson__slug='a1-nouns-first-words',order=1)
+        cls.unit=cls.ex.units.get()
+        cls.practice_unit=cls.practice.units.get()
 
     def post_answer(self, kind, item, answer):
         name='api:check_exercise' if kind=='exercise' else 'api:check_practice'
@@ -89,7 +72,7 @@ class GuestWeekOneTests(TestCase):
         self.sign_in()
         self.assertEqual(self.claim([translation,goal])['imported'],2)
         self.assertEqual(WeekGoal.objects.get(user=self.user,week=self.week).status,'done')
-        self.assertIn(f'{self.practice.lesson.slug}#t{self.practice.order}',UnitProgress.objects.get(user=self.user,unit=self.unit).contexts_used)
+        self.assertIn(f'{self.practice.lesson.slug}#t{self.practice.order}',UnitProgress.objects.get(user=self.user,unit=self.practice_unit).contexts_used)
         second=self.client.post(reverse('api:guest_week_goal',args=[self.week.pk]),{'status':'not_yet'}).json()['guest_receipt']['token']
         self.assertEqual(self.claim([second])['imported'],0)
         self.assertEqual(WeekGoal.objects.get(user=self.user,week=self.week).status,'done')
@@ -147,12 +130,12 @@ class GuestWeekOneTests(TestCase):
     def test_translation_deduplicates_the_exact_task_not_other_contexts(self):
         token=self.post_answer('practice',self.practice,self.practice.answer)['guest_receipt']['token']
         self.sign_in()
-        UnitProgress.objects.create(user=self.user,unit=self.unit,contexts_used=['another-lesson#t1'])
+        UnitProgress.objects.create(user=self.user,unit=self.practice_unit,contexts_used=['another-lesson#t1'])
         self.assertEqual(self.claim([token])['imported'],1)
-        count=UnitProgress.objects.get(user=self.user,unit=self.unit).correct_count
+        count=UnitProgress.objects.get(user=self.user,unit=self.practice_unit).correct_count
         repeat=make_receipt('practice',self.practice,self.practice.answer)['token']
         self.assertEqual(self.claim([repeat])['imported'],0)
-        self.assertEqual(UnitProgress.objects.get(user=self.user,unit=self.unit).correct_count,count)
+        self.assertEqual(UnitProgress.objects.get(user=self.user,unit=self.practice_unit).correct_count,count)
 
     def test_signup_rotates_csrf_then_imports_the_guest_result(self):
         client=Client(enforce_csrf_checks=True)

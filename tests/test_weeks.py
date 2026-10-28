@@ -183,10 +183,23 @@ class WeekPageTests(TestCase):
         self.assertEqual(self.client.get(url).status_code, 405)
         self.assertContains(self.client.get(reverse("curriculum:week", args=["a1", 1])), 'name="csrfmiddlewaretoken"')
 
-    def test_guest_sees_register_hint(self):
+    def test_guest_sees_week_one_goal_form_and_later_register_hint(self):
         response = self.client.get(reverse("curriculum:week", args=["a1", 1]))
+        self.assertContains(response, 'data-guest-week-goal', count=1)
+        self.assertContains(response, f'data-guest-goal-key="goal:{self.week.pk}"')
+        self.assertContains(response, f'action="{reverse("api:guest_week_goal", args=[self.week.pk])}"')
+        self.assertContains(response, "В конце недели отметьте, как получилось.")
+        for status, label in (("done", "Получилось"), ("not_yet", "Ещё нет")):
+            self.assertContains(response,
+                f'<button type="submit" name="status" value="{status}" class="btn btn-small btn-quiet" disabled>{label}</button>',
+                html=True)
+        self.assertNotContains(response, "Чтобы сохранить отметку,")
+
+        response = self.client.get(reverse("curriculum:week", args=["a1", 2]))
         self.assertContains(response, reverse("accounts:signup"))
         self.assertContains(response, "зарегистрируйтесь")
+        self.assertContains(response, reverse("accounts:login"))
+        self.assertNotContains(response, 'data-guest-week-goal')
 
     def test_goal_is_personal_and_missing_week_is_404(self):
         first = User.objects.create_user("first@example.com", "s3cret-pass-123")

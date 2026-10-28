@@ -4,6 +4,7 @@ from pathlib import Path
 from django.conf import settings
 from django.test import TestCase
 
+from apps.curriculum.models import Week
 from apps.lexicon.models import LexicalUnit
 from tests.runner import ensure_content
 
@@ -15,13 +16,18 @@ class LivingAtlasHomeTests(TestCase):
     def setUpTestData(cls):
         ensure_content()
 
-    def test_home_shows_real_weeks_heroes_and_counts(self):
-        html = self.client.get("/").content.decode()
+    def test_home_shows_real_weeks_heroes_and_ready_status(self):
+        response = self.client.get("/")
+        self.assertEqual(response.status_code, 200)
+        html = response.content.decode()
         self.assertIn("English <br>Encyclopedia", html)
         self.assertIn("Знакомство с соседом", html)          # неделя 1 из плана курса
         for name in ("Anna", "Tom", "Mia", "Box"):
             self.assertIn(f'<h3 lang="en">{name}</h3>', html)
-        self.assertIn(f"<dd>{LexicalUnit.objects.count()}</dd>", html)  # цифры из базы, а не с макета
+        self.assertIn("<p>14 недель A1 уже готовы</p>", html)
+        self.assertEqual(Week.objects.filter(level__code="A1", scene__isnull=False).count(), 14)
+        self.assertEqual(response.context["units_ready"], LexicalUnit.objects.count())
+        self.assertNotIn("atlas-band-stats", html)
         self.assertNotIn("рейтинг", html.lower())
 
     def test_phrase_widget_markup_survives(self):

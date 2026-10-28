@@ -1,5 +1,17 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
+test('authored home snapshot checks every rectangle axis and rejects missing cards',()=>{
+  const {assertGeometrySnapshot}=require('../../scripts/atlas_geometry.cjs');
+  assert.equal(typeof assertGeometrySnapshot,'function');
+  const expected={'.hero':[{x:16,y:95,width:358,height:867}],'.card':[{x:55,y:859,width:280,height:273}]};
+  assert.doesNotThrow(()=>assertGeometrySnapshot(structuredClone(expected),expected,'home 390'));
+  for(const selector of ['.hero','.card'])for(const axis of ['x','y','width','height']){
+    const actual=structuredClone(expected);actual[selector][0][axis]+=2;
+    assert.throws(()=>assertGeometrySnapshot(actual,expected,'home 390'),new RegExp(axis));
+  }
+  assert.throws(()=>assertGeometrySnapshot({...expected,'.card':[]},expected,'home 390'),/count/);
+  assert.throws(()=>assertGeometrySnapshot({'.hero':expected['.hero']},expected,'home 390'),/selectors/);
+});
 test('chapter reading may grow vertically while column alignment remains strict',()=>{
   const {geometryDelta}=require('../../scripts/atlas_geometry.cjs');
   const a={x:264,y:878,width:908,height:1374};

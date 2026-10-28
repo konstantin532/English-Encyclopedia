@@ -7,6 +7,7 @@ from django.test import override_settings
 from django.conf import settings
 from django.db import IntegrityError, transaction
 from django.test import SimpleTestCase, TestCase
+from django.test.html import parse_html
 from django.urls import reverse
 
 from apps.accounts.models import User
@@ -14,6 +15,13 @@ from apps.learning.models import IndependentAttempt, UnitProgress
 from apps.learning.understanding import scaffold_bank, understanding_bank
 from apps.lessons.models import Lesson
 from tests.runner import ensure_content
+
+
+def elements(node):
+    for child in node.children:
+        if not isinstance(child, str):
+            yield child
+            yield from elements(child)
 
 
 class ThreeStepEditorialTests(SimpleTestCase):
@@ -177,16 +185,39 @@ class RotatingIndependentReviewTests(TestCase):
             answers["transfer_variant"] = str(variant)
         return self.client.post(self.url, answers)
 
-    def test_all_28_lessons_render_three_steps(self):
-        for lesson in Lesson.objects.filter(level__code="A1"):
+    def test_all_28_lessons_keep_minute_card_core_and_optional_independent_review(self):
+        lessons = Lesson.objects.filter(level__code="A1")
+        self.assertEqual(lessons.count(), 28)
+        for lesson in lessons:
             with self.subTest(lesson=lesson.order):
                 response = self.client.get(
                     reverse("lessons:detail", args=[lesson.slug]))
-                self.assertContains(response, 'class="a1-step-list"')
-                self.assertContains(response, 'class="a1-step-en"', count=3)
-                self.assertContains(response, "Разобрать ещё проще")
+                self.assertEqual(response.status_code, 200)
+                self.assertContains(response, 'id="beginner-steps"', count=1)
+                self.assertContains(response, '<h2 id="a1-clarity-title">Понять за минуту — без сложных терминов</h2>', count=1, html=True)
+                self.assertNotContains(response, 'class="a1-step-list"')
+                self.assertNotContains(response, 'class="a1-step-en"')
+                self.assertNotContains(response, "Разобрать ещё проще")
                 self.assertContains(response, 'data-a1-full-lesson')
                 self.assertNotContains(response, 'data-a1-route-mode')
+                articles = [node for node in elements(parse_html(response.content.decode())) if node.name == "article"]
+                self.assertEqual(len(articles), 1)
+                blocks = [node for node in articles[0].children if not isinstance(node, str)]
+                self.assertEqual(
+                    [(node.name, dict(node.attributes).get("id")) for node in blocks],
+                    [("section", "beginner-steps"), ("div", None),
+                     ("section", "practice"), ("section", "translate"),
+                     ("section", "lesson-complete"),
+                     ("details", "lesson-extra-practice")],
+                )
+                self.assertIn("data-lesson-reader", dict(blocks[1].attributes))
+                completion, extra = blocks[-2:]
+                self.assertIn(parse_html('<h2 id="lesson-complete-title">Урок пройден ✓</h2>'), completion)
+                self.assertNotIn("open", dict(extra.attributes))
+                self.assertEqual(extra.children[0], parse_html("<summary>Ещё практика (по желанию)</summary>"))
+                self.assertIn(parse_html('<h2>Проверка без готовых ответов</h2>'), extra)
+                self.assertIn(parse_html(f'<a class="btn btn-primary" href="{reverse("learning:independent_check", args=[lesson.slug])}">Проверить себя самостоятельно →</a>'), extra)
+                self.assertEqual(sum(dict(node.attributes).get("id") == "spoken-coach" for node in elements(extra)), 1)
 
     def test_baseline_then_fresh_transfer_are_rotated_only_after_full_batch(self):
         before = self.client.get(self.url)

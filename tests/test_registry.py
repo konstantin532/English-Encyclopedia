@@ -87,7 +87,8 @@ class WeeksRegistryTests(SimpleTestCase):
     def test_voices_manifest_lists(self):
         v = yaml.safe_load((CONTENT / "manifests/voices.yaml").read_text(encoding="utf-8"))
         self.assertEqual(set(v["emotions"]),
-                         {"neutral", "happy", "surprised", "sad", "tired", "angry", "worried", "whisper", "excited"})
+                         {"neutral", "hesitant", "happy", "surprised", "sad", "tired", "angry", "worried", "whisper", "excited"})
+        self.assertEqual(v["emotions"]["hesitant"], {"name_ru": "нерешительно", "speed": 0.96, "gain_db": 0, "pause": 1.35})
         self.assertEqual(v["emotions"]["whisper"], {"name_ru": "шёпотом", "speed": 0.92, "gain_db": -8, "pause": 1.2})
         self.assertEqual(set(v["music_moods"]), {"none", "calm", "morning", "mystery", "sad", "happy", "tense"})
         self.assertEqual(v["music_gain_db"]["A1"], -26)

@@ -10,9 +10,9 @@ from apps.poems.models import Poem
 from tests.runner import ensure_content
 
 
-def annotated(value, block=False):
-    filter_name = "annotate_block" if block else "annotate"
-    return Template("{% load markers %}{{ value|" + filter_name + " }}").render(Context({"value": value}))
+def annotated(value, block=False, plain_labels=False):
+    filter_name = "annotate_block:plain_labels" if block else "annotate"
+    return Template("{% load markers %}{{ value|" + filter_name + " }}").render(Context({"value": value, "plain_labels": plain_labels}))
 
 
 class EducationalTypographyTests(TestCase):
@@ -33,7 +33,7 @@ class EducationalTypographyTests(TestCase):
                 response = self.client.get(f"/lessons/{lesson.slug}/")
                 self.assert_reading_surface(response)
                 for layer in lesson.layers.all():
-                    self.assertContains(response, annotated(layer.body, block=True))
+                    self.assertContains(response, annotated(layer.body, block=True, plain_labels=lesson.level.code == "A1"))
                 self.assertContains(response, 'data-lesson-design-pilot', count=1 if lesson.slug in {"a1-nouns-first-words", "a1-verb-be"} else 0)
 
     def test_stories_keep_each_speaker_and_both_forms(self):

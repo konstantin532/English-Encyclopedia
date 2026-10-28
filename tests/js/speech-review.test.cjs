@@ -50,14 +50,34 @@ test("ratings, not recordings, are the only data submitted to the private endpoi
   assert.match(source, /signedIn/);
 });
 
-test("review controls exist in all three speech surfaces and open the signed-in dashboard", () => {
+test("full speech controls keep private reviews while weeks use compact recording", () => {
   const root = path.join(__dirname, "../..");
   const controls = fs.readFileSync(path.join(root, "templates/components/speech_studio_controls.html"), "utf8");
   assert.match(controls, /data-speech-grade="again"/);
   assert.match(controls, /data-speech-grade="hard"/);
   assert.match(controls, /data-speech-grade="good"/);
   assert.match(controls, /data-speech-next-review/);
-  for (const file of ["templates/lessons/detail.html", "templates/poems/detail.html", "templates/curriculum/week.html"]) {
-    assert.match(fs.readFileSync(path.join(root, file), "utf8"), /speech-review\.js/);
+  assert.match(controls, /\{% if user\.is_authenticated %\}<a[^>]+learning:speech_review/);
+  for (const file of ["templates/lessons/detail.html", "templates/poems/detail.html"]) {
+    const template = fs.readFileSync(path.join(root, file), "utf8");
+    assert.match(template, /speech-review\.js/);
+    assert.match(template, /include "components\/speech_studio_controls\.html"/);
   }
+  const week = fs.readFileSync(path.join(root, "templates/curriculum/week.html"), "utf8");
+  assert.match(week, /include "components\/twister_trainer\.html" with week_mode=True/);
+  assert.match(week, /speech-studio\.js/);
+  assert.doesNotMatch(week, /speech-review\.js/);
+
+  const twister = fs.readFileSync(path.join(root, "templates/components/twister_trainer.html"), "utf8");
+  const branches = twister.match(/\{% if week_mode %\}([\s\S]*?)\{% else %\}([\s\S]*)/);
+  assert.ok(branches, "twister training must distinguish compact weeks and full speech controls");
+  const [, compact, full] = branches;
+  assert.match(compact, /include "components\/speech_recorder\.html"/);
+  assert.doesNotMatch(compact, /speech_studio_controls|data-speech-studio|data-speech-review/);
+  assert.match(full, /data-speech-key="twister:/);
+  assert.match(full, /include "components\/speech_studio_controls\.html"/);
+
+  const recorder = fs.readFileSync(path.join(root, "templates/components/speech_recorder.html"), "utf8");
+  assert.match(recorder, /data-speech-record>Записать себя/);
+  assert.match(recorder, /Запись не отправляется на сервер\./);
 });

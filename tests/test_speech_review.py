@@ -9,6 +9,7 @@ from django.test.utils import CaptureQueriesContext
 from django.urls import reverse
 from django.utils import timezone
 
+from apps.curriculum.models import TongueTwister
 from apps.learning.models import SpeechPracticeProgress
 from apps.learning.speech_practice import content_details, valid_due_speech_items
 from apps.lessons.models import Lesson
@@ -206,15 +207,23 @@ class OralReviewTests(TestCase):
         self.assertEqual(response.json()["items"], [])
         self.assertNotContains(self.client.get(reverse("learning:speech_review")), self.lesson.title)
 
-    def test_studios_expose_stable_keys_and_review_client(self):
+    def test_studios_expose_stable_keys_and_week_keeps_compact_recording(self):
         for n in (1, 13, 26):
             lesson = Lesson.objects.get(level__code="A1", order=n)
             response = self.client.get(reverse("lessons:detail", args=[lesson.slug]))
             self.assertContains(response, "data-speech-key=\"lesson:" + lesson.slug + "\"")
             self.assertContains(response, "speech-review.js")
+        TongueTwister.objects.filter(number=1).update(audio={})
         response = self.client.get(reverse("curriculum:week", args=["a1", 1]))
-        self.assertContains(response, 'data-speech-key="twister:1"')
-        self.assertContains(response, "speech-review.js")
+        self.assertContains(response, 'id="twister"')
+        self.assertContains(response, "Озвучка скороговорки ещё не записана. Ориентируйтесь на транскрипцию и подсказку ниже.")
+        self.assertNotContains(response, 'data-twister-player')
+        self.assertContains(response, 'data-speech-recorder', count=1)
+        self.assertContains(response, "Запись не отправляется на сервер.", count=1)
+        self.assertContains(response, "speech-studio.js")
+        self.assertNotContains(response, 'data-speech-key="twister:1"')
+        self.assertNotContains(response, "data-speech-review")
+        self.assertNotContains(response, "speech-review.js")
         response = self.client.get(reverse("stories:poem", args=[1]))
         self.assertContains(response, 'data-speech-key="poem:1"')
         self.assertContains(response, "speech-review.js")

@@ -7,12 +7,13 @@ const {spawn}=require('node:child_process');
 const fs=require('node:fs/promises');
 const path=require('node:path');
 const assert=require('node:assert/strict');
-const {verifyLessonBookpage}=require('./verify_lesson_bookpage.cjs');
+const {verifyLessonBookpage,verifyBeginnerLesson,openExtraPractice}=require('./verify_lesson_bookpage.cjs');
 const root=path.resolve(__dirname,'..');
 const output=path.resolve(process.env.ATLAS_OUTPUT || 'atlas-browser-evidence');
 const sizes=[[1440,900],[1280,800],[390,844],[360,800]];
 const screens=[['home','/'],['collection','/levels/a1/'],['chapter','/levels/a1/weeks/13/']];
-const {geometryDelta,assertChapterReadingFlow}=require('./atlas_geometry.cjs');
+const {geometryDelta,assertChapterReadingFlow,assertGeometrySnapshot}=require('./atlas_geometry.cjs');
+const homeGeometry=require('./atlas_home_geometry.json');
 const selectors=['.studio-sidebar','.site-header','.studio-home-hero','.studio-phrase-paper','.studio-lesson-card','.week-card','.week-hero','.week-route','.story-script'];
 async function serve(directory,port){
  const processHandle=spawn(process.env.ATLAS_PYTHON || 'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:directory,env:{...process.env,DJANGO_SETTINGS_MODULE:'config.settings.local'},stdio:['ignore','ignore','pipe']});
@@ -83,8 +84,10 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
      a.forEach((rectangle,index)=>{maxDelta=Math.max(maxDelta,geometryDelta(name,selector,rectangle,b[index],width));});
     }
     report.screens.push({name,width,height,maxGeometryDelta:maxDelta,changed,measurements});
-    // Редизайн (ATLAS_REDESIGN=1) меняет раскладку намеренно: разница — в отчёте, скриншоты — в артефакте.
-    if(process.env.ATLAS_REDESIGN!=='1'){assert.equal(changed.length,0,`${name} ${width}: ${changed.join(', ')}`);assert.ok(maxDelta<=1,`${name} ${width}: geometry changed ${maxDelta}px`);}
+    // Home copy changed deliberately in the beginner revision. Pin its new
+    // authored rectangles on all four axes; other screens retain before/after.
+    if(name==='home')assertGeometrySnapshot(measurements.after,homeGeometry.viewports[String(width)],`home ${width}`);
+    else if(process.env.ATLAS_REDESIGN!=='1'){assert.equal(changed.length,0,`${name} ${width}: ${changed.join(', ')}`);assert.ok(maxDelta<=1,`${name} ${width}: geometry changed ${maxDelta}px`);}
    }
   }
   // Editorial9–28: actual changed reading pages, in addition to the
@@ -140,17 +143,16 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
       }
       assert.equal(await p.locator('[data-lesson-reader] section[id^="layer-"]').count(),7,`${name}: seven layers lost`);
       for(let n=1;n<=7;n++)assert.equal(await p.locator(`#layer-${n}`).isVisible(),true,`${name}: hidden layer${n}`);
-      const summary=p.locator('#beginner-steps > summary');await summary.focus();await summary.press('Enter');
-      assert.equal(await summary.evaluate(el=>el.parentElement.open),true,`${name}: keyboard explanation did not open`);
-      assert.equal(await p.locator('#beginner-steps .a1-step-list > li').count(),3,`${name}: incomplete explanation`);
+      await verifyBeginnerLesson(p,name);
+      await openExtraPractice(p);
       await p.screenshot({path:path.join(output,`editorial-${name}-${width}-explanation.png`)});
      }
-     report.editorialPages.push({name,route,width,height,reducedMotion:true,overflow:o,keyboardExplanation:isLesson});
+     report.editorialPages.push({name,route,width,height,reducedMotion:true,overflow:o,minuteCard:isLesson,keyboardOptionalPractice:isLesson});
      await p.close();
     }
    }finally{await editorial.close();}
   }
-  report.checks.push('Editorial9–12 lessons, story2 and poem3 readable at1440/390; seven layers and keyboard explanations accessible; reduced-motion and overflow checked');
+  report.checks.push('Editorial9–28 lessons, stories and poems readable at1440/390; seven layers, complete minute cards and keyboard optional practice accessible; reduced-motion and overflow checked');
   // All chapter covers load; each has a stable, explicitly sized image box.
   const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'});
   const page=await context.newPage();
