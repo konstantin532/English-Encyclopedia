@@ -1,6 +1,8 @@
 {% load static %}
 {% comment %}A1: обложки «Атласа живого языка» для всех 14 недель (static/img/atlas).{% endcomment %}
-{% if editorial_pilot %}
+{% if week.level.code == 'A1' and week.number == 1 %}
+{% include "components/week_one_chapter.html" %}
+{% elif editorial_pilot %}
 {% include "components/editorial_chapter.html" %}
 {% else %}
 <header class="week-hero{% if atlas_cover_url %} week-hero-atlas{% endif %}">

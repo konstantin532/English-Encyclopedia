@@ -1,0 +1,12 @@
+<header class="week-one-chapter" data-week-one-chapter>
+  {% if atlas_cover_url %}<img class="week-one-chapter-art" src="{{ atlas_cover_url }}" alt="{{ atlas_cover_alt }}" width="1536" height="864" fetchpriority="high" decoding="async">{% endif %}
+  <div class="week-one-chapter-opening">
+    <p class="week-one-chapter-folio" aria-hidden="true">{{ week.number|stringformat:'02d' }}</p>
+    <div class="week-one-chapter-copy">
+      <p class="week-one-chapter-kicker">НЕДЕЛЯ {{ week.number|stringformat:'02d' }} · ЖИВОЙ АНГЛИЙСКИЙ</p>
+      <h1>{{ week.situation_ru|default:week.theme_ru }}</h1>
+      {% if scene.story_beat.intro_ru %}<p class="week-one-chapter-intro" id="story-intro">{{ scene.story_beat.intro_ru }}</p>{% endif %}
+      <a class="week-one-chapter-level" href="{% url 'curriculum:level' week.level.slug %}">Все {{ week.level.weeks }} недель уровня {{ week.level.code }} ↗</a>
+    </div>
+  </div>
+</header>

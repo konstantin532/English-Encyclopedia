@@ -6,6 +6,7 @@
   "pages": [
     {"name": "home", "title": "Главная", "route": "/", "main": "h1"},
     {"name": "level-a1", "title": "Курс A1", "route": "/levels/a1/", "main": ".week-list"},
+    {"name": "week-01", "title": "Неделя 1", "route": "/levels/a1/weeks/1/", "main": "#dialogue"},
     {"name": "week-03", "title": "Неделя 3", "route": "/levels/a1/weeks/3/", "main": "#dialogue"},
     {"name": "week-13", "title": "Неделя 13", "route": "/levels/a1/weeks/13/", "main": "#dialogue"},
     {"name": "lesson-cafe", "title": "Урок: кафе", "route": "/lessons/a1-cafe-order/", "main": "#beginner-steps, #layer-1"},
