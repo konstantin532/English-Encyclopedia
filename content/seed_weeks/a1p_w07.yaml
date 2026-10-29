@@ -24,39 +24,41 @@ script:
   text: '[O4]Yes[/], [O2]thank[/] [T8]you[/]. [D1]Is[/] [T9]there[/] [T4]any[/] [S3]fish[/] [A2]today[/]?'
   ru: Да, спасибо. Сегодня есть рыба?
 - speaker: server
-  text: '[O2]Sorry[/], [T8]we[/] [D1]do[/] [X1]not[/] [D1]have[/] [T4]any[/] [S3]fish[/] [A2]tonight[/]. [C5]But[/] [T1]the[/] [S3]chicken[/] [D1]is[/] [A5]very[/] [J3]good[/].'
-  spoken: '[O2]Sorry[/], [T8]we[/] [D1]do[/][X1]n''t[/] [D1]have[/] [T4]any[/] [S3]fish[/] [A2]tonight[/]. [C5]But[/] [T1]the[/] [S3]chicken[/] [D1]is[/] [A5]very[/] [J3]good[/].'
-  ru: Простите, сегодня рыбы нет. Но курица очень хорошая.
+  text: "[O2]Sorry[/], [T8]we[/] [D1]do[/] [X1]not[/] [D1]have[/] [T4]any[/] [S3]fish[/] [A2]tonight[/]. [C5]But[/] [T1]the[/] [S3]chicken[/] [D1]is[/] [A5]really[/] [J3]good[/]."
+  spoken: "[O2]Sorry[/], [T8]we[/] [D1]do[/][X1]n't[/] [D1]have[/] [T4]any[/] [S3]fish[/] [A2]tonight[/]. [C5]But[/] [T1]the[/] [S3]chicken[/] [D1]is[/] [A5]really[/] [J3]good[/]."
+  ru: "Простите, сегодня рыбы нет. Но курица очень хорошая."
 - speaker: anna
   emotion: happy
-  text: '[A2]Then[/] [T8]I[/] [D7]would[/] [D3]like[/] [T1]the[/] [S3]chicken[/] [P4]with[/] [S3]rice[/], [O8]please[/].'
-  ru: Тогда мне курицу с рисом, пожалуйста.
+  text: "[O4]Okay[/], [A2]then[/] [T8]I[/] [D7]would[/] [D3]like[/] [T1]the[/] [S3]chicken[/] [P4]with[/] [S3]rice[/], [O8]please[/]."
+  spoken: "[O4]Okay[/], [A2]then[/] [T8]I[/][D7]'d[/] [D3]like[/] [T1]the[/] [S3]chicken[/] [P4]with[/] [S3]rice[/], [O8]please[/]."
+  ru: "Хорошо, тогда мне курицу с рисом, пожалуйста."
 - speaker: tom
-  text: '[C1]And[/] [T8]I[/] [D7]would[/] [D3]like[/] [T1]the[/] [S3]pasta[/]. [D1]Is[/] [T8]it[/] [J2]spicy[/]?'
-  ru: А мне пасту. Она острая?
+  text: "[C1]And[/] [T8]I[/] [D7]would[/] [D3]like[/] [T1]the[/] [S3]pasta[/]. [D1]Is[/] [T8]it[/] [J2]spicy[/]?"
+  spoken: "[C1]And[/] [T8]I[/][D7]'d[/] [D3]like[/] [T1]the[/] [S3]pasta[/]. [D1]Is[/] [T8]it[/] [J2]spicy[/]?"
+  ru: "А мне пасту. Она острая?"
 - speaker: server
   text: '[T1]A[/] [J1]little[/]. [D1]Do[/] [T8]you[/] [D3]want[/] [T4]some[/] [S3]salad[/] [P4]with[/] [T8]it[/]?'
   ru: Немного. Хотите к ней салат?
 - speaker: tom
   emotion: happy
-  text: '[O4]Yes[/], [O8]please[/]. [C1]And[/] [T4]some[/] [S3]bread[/] [C1]and[/] [N1]two[/] [S2]glasses[/] [P6]of[/] [S3]water[/].'
-  ru: Да, пожалуйста. И хлеб, и два стакана воды.
+  text: "[J4]Sure[/]. [C1]And[/] [T4]some[/] [S3]bread[/] [C1]and[/] [N1]two[/] [S2]glasses[/] [P6]of[/] [S3]water[/], [O8]please[/]."
+  ru: "Давайте. И хлеб, и два стакана воды, пожалуйста."
 - speaker: server
   emotion: happy
   text: '[O9]Here[/] [T8]you[/] [O9]go[/]. [D3]Enjoy[/] [T3]your[/] [S3]meal[/]!'
   ru: Пожалуйста. Приятного аппетита!
 - speaker: anna
   emotion: happy
-  text: '[T9]Everything[/] [D1]was[/] [J3]delicious[/]! [D1]Do[/] [T8]you[/] [D1]have[/] [T4]any[/] [S3]apple[/] [S3]pie[/]?'
-  ru: Всё было очень вкусно! У вас есть яблочный пирог?
+  text: "[O5]Wow[/], [T9]everything[/] [D1]was[/] [J3]delicious[/]! [D1]Do[/] [T8]you[/] [D1]have[/] [T4]any[/] [S3]apple[/] [S3]pie[/]?"
+  ru: "Ого, всё было очень вкусно! У вас есть яблочный пирог?"
 - speaker: server
   emotion: happy
   text: '[O4]Yes[/], [T8]we[/] [D1]have[/] [T4]some[/] [J2]fresh[/] [S3]apple[/] [S3]pie[/]. [T9]Anything[/] [A7]else[/]?'
   ru: Да, есть свежий яблочный пирог. Что-нибудь ещё?
 - speaker: anna
   emotion: happy
-  text: '[N1]Two[/] [S3]pies[/], [O8]please[/]. [C1]And[/] [D7]can[/] [T8]we[/] [D1]have[/] [T1]the[/] [S2]check[/], [O8]please[/]?'
-  ru: Два пирога, пожалуйста. И можно счёт?
+  text: "[N1]Two[/] [S3]pies[/], [O8]please[/]. [C1]And[/] [D7]can[/] [T8]we[/] [D9]get[/] [T1]the[/] [S2]check[/]?"
+  ru: "Два пирога, пожалуйста. И можно счёт?"
 - speaker: tom
   emotion: happy
   text: '[A3]Here[/] [D1]are[/] [N6]sixty[/] [N6]dollars[/]. [D2]Keep[/] [T1]the[/] [S2]change[/]!'

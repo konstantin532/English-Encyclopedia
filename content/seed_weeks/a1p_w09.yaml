@@ -24,17 +24,17 @@ script:
   text: '[D2]Turn[/] [X3]off[/] [T1]the[/] [S3]water[/]! [D2]Put[/] [T1]a[/] [S2]bucket[/] [P1]under[/] [T1]the[/] [S2]pipe[/]. [T8]I[/] [D1]have[/] [X2]to[/] [D5]call[/] [T1]the[/] [S1]landlord[/].'
   ru: Перекрой воду! Поставь ведро под трубу. Мне надо позвонить хозяину.
 - speaker: locksmith
-  text: '[J3]Good[/] [S7]morning[/]. [T1]The[/] [S1]landlord[/] [D5]called[/] [T8]me[/]. [T9]What[/] [D1]is[/] [J3]wrong[/]?'
-  spoken: '[J3]Good[/] [S7]morning[/]. [T1]The[/] [S1]landlord[/] [D5]called[/] [T8]me[/]. [T9]What[/][D1]''s[/] [J3]wrong[/]?'
-  ru: Доброе утро. Мне позвонил хозяин. Что случилось?
+  text: "[S7]Morning[/]. [T1]The[/] [S1]landlord[/] [D5]called[/] [T8]me[/]. [T9]What[/] [D1]is[/] [J3]wrong[/]?"
+  spoken: "[S7]Morning[/]. [T1]The[/] [S1]landlord[/] [D5]called[/] [T8]me[/]. [T9]What[/][D1]'s[/] [J3]wrong[/]?"
+  ru: "Доброе утро. Мне позвонил хозяин. Что случилось?"
 - speaker: anna
   emotion: worried
   text: '[T1]The[/] [S2]pipe[/] [P1]under[/] [T1]the[/] [S2]sink[/] [D1]is[/] [D2]leaking[/]. [T8]It[/] [D1]is[/] [T1]an[/] [S10]emergency[/]!'
   spoken: '[T1]The[/] [S2]pipe[/] [P1]under[/] [T1]the[/] [S2]sink[/] [D1]is[/] [D2]leaking[/]. [T8]It[/][D1]''s[/] [T1]an[/] [S10]emergency[/]!'
   ru: Под раковиной течёт труба. Это срочно!
 - speaker: locksmith
-  text: '[D2]Let[/] [T8]me[/] [D6]check[/]. [T2]This[/] [S2]pipe[/] [D1]is[/] [A5]very[/] [J2]old[/]. [T8]I[/] [D1]have[/] [X2]to[/] [D2]change[/] [T8]it[/].'
-  ru: Сейчас посмотрю. Эта труба очень старая. Её надо заменить.
+  text: "[D2]Let[/] [T8]me[/] [D6]check[/]. [O7]Hmm[/]. [T2]This[/] [S2]pipe[/] [D1]is[/] [A5]really[/] [J2]old[/]. [T8]I[/] [D1]have[/] [X2]to[/] [D2]change[/] [T8]it[/]."
+  ru: "Сейчас посмотрю. Хм. Эта труба очень старая. Её надо заменить."
 - speaker: tom
   text: '[A6]How[/] [A6]long[/] [D1]does[/] [T8]it[/] [D2]take[/]?'
   ru: Сколько времени это займёт?
@@ -52,17 +52,17 @@ script:
   ru: Нет, вам платить не нужно. Платит хозяин.
 - speaker: tom
   emotion: happy
-  text: '[J3]Great[/]! [C1]And[/] [T1]the[/] [S2]light[/] [P1]in[/] [T1]the[/] [S2]bathroom[/] [D1]does[/] [X1]not[/] [D2]work[/].'
-  spoken: '[J3]Great[/]! [C1]And[/] [T1]the[/] [S2]light[/] [P1]in[/] [T1]the[/] [S2]bathroom[/] [D1]does[/][X1]n''t[/] [D2]work[/].'
-  ru: Отлично! А ещё в ванной не горит свет.
+  text: "[O3]Awesome[/]! [O3]Oh[/], [C1]and[/] [T1]the[/] [S2]light[/] [P1]in[/] [T1]the[/] [S2]bathroom[/] [D1]does[/] [X1]not[/] [D2]work[/]."
+  spoken: "[O3]Awesome[/]! [O3]Oh[/], [C1]and[/] [T1]the[/] [S2]light[/] [P1]in[/] [T1]the[/] [S2]bathroom[/] [D1]does[/][X1]n't[/] [D2]work[/]."
+  ru: "Класс! А, и в ванной не горит свет."
 - speaker: locksmith
   text: '[T2]That[/] [D1]is[/] [J3]fine[/]. [T8]I[/] [D7]can[/] [D2]change[/] [T1]the[/] [S2]bulb[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]bulb[/]?'
   spoken: '[T2]That[/][D1]''s[/] [J3]fine[/]. [T8]I[/] [D7]can[/] [D2]change[/] [T1]the[/] [S2]bulb[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [J2]new[/] [S2]bulb[/]?'
   ru: Ничего страшного. Я могу поменять лампочку. У вас есть новая?
 - speaker: anna
   emotion: happy
-  text: '[O4]Yes[/], [O9]here[/] [T8]you[/] [O9]go[/]. [O2]Thank[/] [T8]you[/] [F4]so[/] [A5]much[/]!'
-  ru: Да, вот, держите. Огромное спасибо!
+  text: "[O4]Yeah[/], [O9]here[/] [T8]you[/] [O9]go[/]. [O2]Thank you[/] [F4]so[/] [A5]much[/]!"
+  ru: "Ага, вот, держите. Огромное спасибо!"
 twister:
   number: 23
   series: contractions

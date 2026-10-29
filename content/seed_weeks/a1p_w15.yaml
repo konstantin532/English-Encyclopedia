@@ -21,21 +21,21 @@ script:
   text: '[S1]Tom[/], [T3]our[/] [S4]flight[/] [D1]is[/] [P3]at[/] [N3]seven[/] [A2]tomorrow[/]. [D1]Did[/] [T8]you[/] [D2]pack[/] [T3]your[/] [S2]suitcase[/]?'
   ru: Том, наш рейс завтра в семь. Ты собрал чемодан?
 - speaker: tom
-  text: '[O4]No[/], [X1]not[/] [A2]now[/]. [T9]What[/] [C4]if[/] [T8]it[/] [D2]rains[/] [T9]there[/]?'
-  ru: Нет, потом. А что, если там будет дождь?
+  text: "[X1]Not[/] [A2]now[/]. [T9]What[/] [C4]if[/] [T8]it[/] [D2]rains[/] [T9]there[/]?"
+  ru: "Потом. А что, если там будет дождь?"
 - speaker: anna
   text: '[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/] [D7]will[/] [D2]stay[/] [P1]in[/] [T1]the[/] [S4]cabin[/] [C1]and[/] [D2]read[/] [S2]books[/].'
   spoken: '[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/][D7]''ll[/] [D2]stay[/] [P1]in[/] [T1]the[/] [S4]cabin[/] [C1]and[/] [D2]read[/] [S2]books[/].'
   ru: Если пойдёт дождь, будем сидеть в домике и читать.
 - speaker: tom
   emotion: happy
-  text: '[C1]And[/] [C4]if[/] [T8]it[/] [D1]is[/] [J2]sunny[/], [T8]we[/] [D7]will[/] [D4]go[/] [P2]to[/] [T1]the[/] [S6]beach[/] [T5]every[/] [S7]day[/]!'
-  spoken: '[C1]And[/] [C4]if[/] [T8]it[/][D1]''s[/] [J2]sunny[/], [T8]we[/][D7]''ll[/] [D4]go[/] [P2]to[/] [T1]the[/] [S6]beach[/] [T5]every[/] [S7]day[/]!'
-  ru: А если будет солнце, будем каждый день ходить на пляж!
+  text: "[O3]Oh[/], [C1]and[/] [C4]if[/] [T8]it[/] [D1]is[/] [J2]sunny[/], [T8]we[/] [D7]will[/] [D4]go[/] [P2]to[/] [T1]the[/] [S6]beach[/] [T5]every[/] [S7]day[/]!"
+  spoken: "[O3]Oh[/], [C1]and[/] [C4]if[/] [T8]it[/][D1]'s[/] [J2]sunny[/], [T8]we[/][D7]'ll[/] [D4]go[/] [P2]to[/] [T1]the[/] [S6]beach[/] [T5]every[/] [S7]day[/]!"
+  ru: "О, а если будет солнце, будем каждый день ходить на пляж!"
 - speaker: anna
   emotion: happy
-  text: '[A2]Then[/] [D2]put[/] [T3]your[/] [S2]swimsuit[/] [C1]and[/] [T1]the[/] [S5]sunscreen[/] [P1]in[/] [T1]the[/] [S2]suitcase[/].'
-  ru: Тогда положи в чемодан плавки и крем от солнца.
+  text: "[O4]Okay[/], [A2]then[/] [D2]put[/] [T3]your[/] [S2]swimsuit[/] [C1]and[/] [T1]the[/] [S5]sunscreen[/] [P1]in[/] [T1]the[/] [S2]suitcase[/]."
+  ru: "Хорошо, тогда положи в чемодан плавки и крем от солнца."
 - speaker: tom
   emotion: worried
   text: '[T3]My[/] [S2]suitcase[/] [D1]is[/] [A5]too[/] [J2]heavy[/]. [C4]If[/] [T8]I[/] [D2]put[/] [T4]more[/] [P1]in[/] [T8]it[/], [T8]it[/] [D7]will[/] [D2]break[/]!'
@@ -50,13 +50,13 @@ script:
   ru: Паспорт, посадочный, телефон. А гитара?
 - speaker: anna
   emotion: happy
-  text: '[C4]If[/] [T1]the[/] [S2]guitar[/] [D2]stays[/] [A3]here[/], [S1]Leo[/] [D7]will[/] [D1]be[/] [A5]very[/] [J4]happy[/]!'
-  ru: Если гитара останется дома, Лео будет очень рад!
+  text: "[C4]If[/] [T1]the[/] [S2]guitar[/] [D2]stays[/] [A3]here[/], [S1]Leo[/] [D7]will[/] [D1]be[/] [A5]really[/] [J4]happy[/]!"
+  ru: "Если гитара останется дома, Лео будет очень рад!"
 - speaker: tom
   emotion: happy
-  text: '[O4]Okay[/], [T1]the[/] [S2]guitar[/] [D2]stays[/] [A3]here[/]. [T8]I[/] [D7]cannot[/] [D2]wait[/]!'
-  spoken: '[O4]Okay[/], [T1]the[/] [S2]guitar[/] [D2]stays[/] [A3]here[/]. [T8]I[/] [D7]ca[/][X1]n''t[/] [D2]wait[/]!'
-  ru: Ладно, гитара остаётся. Жду не дождусь!
+  text: "[O4]Okay[/], [O4]okay[/]. [T1]The[/] [S2]guitar[/] [D2]stays[/] [A3]here[/]. [T8]I[/] [D7]cannot[/] [D2]wait[/]!"
+  spoken: "[O4]Okay[/], [O4]okay[/]. [T1]The[/] [S2]guitar[/] [D2]stays[/] [A3]here[/]. [T8]I[/] [D7]ca[/][X1]n't[/] [D2]wait[/]!"
+  ru: "Ладно, ладно. Гитара остаётся. Жду не дождусь!"
 - speaker: neighbor
   emotion: happy
   text: '[D1]Have[/] [T1]a[/] [J3]nice[/] [S10]trip[/]! [T8]I[/] [D7]will[/] [D6]check[/] [T3]your[/] [S2]apartment[/].'
@@ -64,9 +64,9 @@ script:
   ru: Хорошей поездки! Я присмотрю за квартирой.
 - speaker: anna
   emotion: happy
-  text: '[O2]Thank[/] [T8]you[/], [S1]Leo[/]! [T8]We[/] [D7]will[/] [D2]bring[/] [T8]you[/] [T1]a[/] [S2]souvenir[/].'
-  spoken: '[O2]Thank[/] [T8]you[/], [S1]Leo[/]! [T8]We[/][D7]''ll[/] [D2]bring[/] [T8]you[/] [T1]a[/] [S2]souvenir[/].'
-  ru: Спасибо, Лео! Мы привезём вам сувенир.
+  text: "[O2]Thanks[/], [S1]Leo[/]! [T8]We[/] [D7]will[/] [D2]bring[/] [T8]you[/] [T1]a[/] [S2]souvenir[/]."
+  spoken: "[O2]Thanks[/], [S1]Leo[/]! [T8]We[/][D7]'ll[/] [D2]bring[/] [T8]you[/] [T1]a[/] [S2]souvenir[/]."
+  ru: "Спасибо, Лео! Мы привезём вам сувенир."
 twister:
   number: 29
   series: contractions

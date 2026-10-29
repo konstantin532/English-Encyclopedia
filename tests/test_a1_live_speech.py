@@ -15,10 +15,13 @@ CONTENT = Path(settings.BASE_DIR) / "content"
 MARKER = re.compile(r"\[[^\]]+\]")
 LIVE = ("oh", "wow", "yeah", "awesome", "aww", "hmm", "hey", "hi", "no kidding", "thanks a lot",
         "one second", "no way", "oh no", "take care", "i'm in", "have a good one", "sounds good")
+# В A1+ к ним добавляются реакции самого уровня.
+LIVE_A1PLUS = LIVE + ("got it", "no problem", "of course", "me too", "here you go", "sure", "really",
+                      "don't worry", "not bad", "come on", "any time", "time flies")
 
 
-def spoken_lines(week):
-    data = yaml.safe_load((CONTENT / "seed_weeks" / f"a1_w{week:02d}.yaml").read_text(encoding="utf-8"))
+def spoken_lines(week, prefix="a1"):
+    data = yaml.safe_load((CONTENT / "seed_weeks" / f"{prefix}_w{week:02d}.yaml").read_text(encoding="utf-8"))
     return [MARKER.sub("", line.get("spoken") or line["text"]).casefold() for line in data["script"]]
 
 
@@ -30,6 +33,13 @@ class A1LiveSpeechTests(SimpleTestCase):
                 text = " ".join(spoken_lines(week))
                 found = [r for r in LIVE if re.search(rf"(?<![a-z']){re.escape(r)}(?![a-z'])", text)]
                 self.assertTrue(found, f"в неделе {week} нет ни одной живой реакции")
+
+    def test_every_a1plus_week_has_live_reactions(self):
+        for week in range(1, 17):
+            with self.subTest(week=week):
+                text = " ".join(spoken_lines(week, "a1p"))
+                found = [r for r in LIVE_A1PLUS if re.search(rf"(?<![a-z']){re.escape(r)}(?![a-z'])", text)]
+                self.assertGreaterEqual(len(found), 2, f"в неделе A1+ {week} мало живых реакций: {found}")
 
     def test_live_pack_is_registered_once(self):
         lemmas = []
