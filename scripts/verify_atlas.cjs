@@ -158,7 +158,7 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
   const page=await context.newPage();
   for(let week=1;week<=14;week++){
    await ready(page,`http://127.0.0.1:8124/levels/a1/weeks/${week}/`);
-   const img=page.locator('.week-hero-image, [data-editorial-pilot="week"] .editorial-chapter-art');
+   const img=page.locator('[data-week-one-chapter] .week-one-chapter-art, .week-hero-image, [data-editorial-pilot="week"] .editorial-chapter-art');
    assert.equal(await img.count(),1,`week ${week}: expected one cover`);
    assert.equal(await img.evaluate(el=>el.complete&&el.naturalWidth>0),true,`week ${week}: missing image`);
    const o=await overflow(page);assert.ok(o.scroll<=o.width+1,`week ${week}: overflow`);
