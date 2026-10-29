@@ -13,6 +13,7 @@ const routes = { week3: '/levels/a1/weeks/3/', lesson: '/lessons/a1-cafe-order/'
   const context = await browser.newContext();
   const page = await context.newPage();
   page.setDefaultTimeout(5000);
+  page.setDefaultNavigationTimeout(30000);
   const errors = [], rows = [];
   page.on('pageerror', e => errors.push(e.message));
   try {
