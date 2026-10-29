@@ -27,7 +27,7 @@ script:
 - speaker: mia
   kind: speech
   emotion: angry
-  text: "[O4]Yes[/]!"
+  text: "[O4]Yeah[/]!"
 - speaker: anna
   kind: narration
   emotion: excited
@@ -49,7 +49,7 @@ script:
 - speaker: mia
   kind: speech
   emotion: happy
-  text: "[T3]Your[/] [S6]cat[/] [D1]has[/] [N1]two[/] [S2]homes[/]."
+  text: "[T3]Your[/] [S6]cat[/] [D1]has[/] [N1]two[/] [S2]homes[/]!"
 - speaker: anna
   kind: narration
   emotion: worried

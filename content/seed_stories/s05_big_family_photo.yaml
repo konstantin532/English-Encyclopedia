@@ -46,8 +46,8 @@ script:
 - speaker: anna
   kind: speech
   emotion: worried
-  text: “[O4]No[/]. [C5]But[/] [T8]it[/] [D1]is[/] [T3]my[/] [S2]house[/]!”
-  spoken: “[O4]No[/]. [C5]But[/] [T8]it[/][D1]'s[/] [T3]my[/] [S2]house[/]!”
+  text: "“[O4]No[/]! [C5]But[/] [T8]it[/] [D1]is[/] [T3]my[/] [S2]house[/]!”"
+  spoken: "“[O4]No[/]! [C5]But[/] [T8]it[/][D1]'s[/] [T3]my[/] [S2]house[/]!”"
 - speaker: anna
   kind: narration
   emotion: whisper
@@ -57,8 +57,8 @@ script:
   kind: speech
   emotion: excited
   music: happy
-  text: "[T9]There[/] [D1]is[/] [T1]a[/] [S4]bus[/] [P2]to[/] [S4]Park[/] [S4]Street[/]!"
-  spoken: "[T9]There[/][D1]'s[/] [T1]a[/] [S4]bus[/] [P2]to[/] [S4]Park[/] [S4]Street[/]!"
+  text: "[O1]Hey[/], [T9]there[/] [D1]is[/] [T1]a[/] [S4]bus[/] [P2]to[/] [S4]Park[/] [S4]Street[/]!"
+  spoken: "[O1]Hey[/], [T9]there[/][D1]'s[/] [T1]a[/] [S4]bus[/] [P2]to[/] [S4]Park[/] [S4]Street[/]!"
 - speaker: anna
   kind: narration
   emotion: neutral

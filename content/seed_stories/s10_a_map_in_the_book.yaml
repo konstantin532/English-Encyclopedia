@@ -88,7 +88,7 @@ script:
 - speaker: tom
   kind: speech
   emotion: surprised
-  text: “[T1]A[/] [S2]box[/] [P1]under[/] [S1]Box[/]!”
+  text: "“[O5]No way[/]! [T1]A[/] [S2]box[/] [P1]under[/] [S1]Box[/]!”"
 - speaker: anna
   kind: narration
   emotion: neutral

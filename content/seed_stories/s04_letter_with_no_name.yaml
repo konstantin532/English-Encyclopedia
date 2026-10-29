@@ -50,8 +50,8 @@ script:
 - speaker: anna
   kind: speech
   emotion: worried
-  text: "[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]."
-  spoken: "[T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]."
+  text: "[O7]Hmm[/]… [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]."
+  spoken: "[O7]Hmm[/]… [T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]."
 - speaker: anna
   kind: narration
   emotion: neutral

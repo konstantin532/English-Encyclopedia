@@ -47,8 +47,8 @@ script:
 - speaker: anna
   kind: speech
   emotion: neutral
-  text: “[O1]Hello[/]. [T8]I[/] [D1]am[/] [S1]Anna[/], [C1]and[/] [T2]this[/] [D1]is[/] [S1]Tom[/]. [T8]We[/] [D1]are[/] [T3]your[/] [S1]neighbors[/].”
-  spoken: “[O1]Hello[/]. [T8]I[/][D1]'m[/] [S1]Anna[/], [C1]and[/] [T2]this[/] [D1]is[/] [S1]Tom[/]. [T8]We[/][D1]'re[/] [T3]your[/] [S1]neighbors[/].”
+  text: "“[O1]Hi[/]. [T8]I[/] [D1]am[/] [S1]Anna[/], [C1]and[/] [T2]this[/] [D1]is[/] [S1]Tom[/]. [T8]We[/] [D1]are[/] [T3]your[/] [S1]neighbors[/].”"
+  spoken: "“[O1]Hi[/]. [T8]I[/][D1]'m[/] [S1]Anna[/], [C1]and[/] [T2]this[/] [D1]is[/] [S1]Tom[/]. [T8]We[/][D1]'re[/] [T3]your[/] [S1]neighbors[/].”"
 - speaker: neighbor
   kind: speech
   emotion: happy
@@ -94,7 +94,7 @@ script:
 - speaker: neighbor
   kind: speech
   emotion: neutral
-  text: “[A3]Here[/] [T8]you[/] [D1]are[/].”
+  text: "“[A3]Here[/] [T8]you[/] [D4]go[/].”"
 - speaker: anna
   kind: speech
   emotion: surprised

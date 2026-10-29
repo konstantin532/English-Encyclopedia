@@ -49,7 +49,7 @@ script:
 - speaker: tom
   kind: speech
   emotion: happy
-  text: "[T8]It[/] [D3]likes[/] [T3]your[/] [S3]coffee[/]."
+  text: "[O5]Wow[/], [T8]it[/] [D3]likes[/] [T3]your[/] [S3]coffee[/]!"
 - speaker: anna
   kind: speech
   emotion: surprised
