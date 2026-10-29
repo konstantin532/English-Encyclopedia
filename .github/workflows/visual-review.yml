@@ -38,15 +38,23 @@ jobs:
             BASE="$(git rev-parse FETCH_HEAD)"
           fi
           git worktree add --detach "$RUNNER_TEMP/vr-before" "$BASE"
-      - name: Seed one database for both versions
+      - name: Seed the before database from the base checkout
+        working-directory: ${{ runner.temp }}/vr-before
         env:
-          DATABASE_URL: sqlite:///${{ runner.temp }}/vr.sqlite3
+          DATABASE_URL: sqlite:///${{ runner.temp }}/vr-before.sqlite3
+        run: |
+          "$GITHUB_WORKSPACE/.venv/bin/python" manage.py migrate --noinput
+          "$GITHUB_WORKSPACE/.venv/bin/python" manage.py load_content
+      - name: Seed the after database from the PR checkout
+        env:
+          DATABASE_URL: sqlite:///${{ runner.temp }}/vr-after.sqlite3
         run: |
           uv run python manage.py migrate --noinput
           uv run python manage.py load_content
       - name: Screenshots and comparison
         env:
-          DATABASE_URL: sqlite:///${{ runner.temp }}/vr.sqlite3
+          ATLAS_BEFORE_DATABASE_URL: sqlite:///${{ runner.temp }}/vr-before.sqlite3
+          ATLAS_AFTER_DATABASE_URL: sqlite:///${{ runner.temp }}/vr-after.sqlite3
         run: |
           ATLAS_PYTHON="$PWD/.venv/bin/python" ATLAS_BEFORE_DIR="$RUNNER_TEMP/vr-before" NODE_PATH="$RUNNER_TEMP/vr-browser/node_modules" node scripts/visual_review.cjs
       - name: Job summary

@@ -94,3 +94,59 @@ test('every reviewed page has a route, a main-content selector and sane limits',
   }
   for(const viewport of pages.viewports)assert.ok(viewport.maxScreens>=1&&viewport.maxScreens<=4);
 });
+
+// Exercise the CLI with real child processes. The tiny HTTP servers expose only
+// the database selected at the process boundary; no Django/browser install is needed.
+function databaseFixture(t) {
+  const os=require('node:os');
+  const directory=fs.mkdtempSync(path.join(os.tmpdir(),'visual-review-db-'));
+  t.after(()=>fs.rmSync(directory,{recursive:true,force:true}));
+  const before=path.join(directory,'before'),after=path.join(directory,'after');
+  for(const checkout of [before,after]){
+    fs.mkdirSync(checkout,{recursive:true});
+    fs.writeFileSync(path.join(checkout,'manage.py'),
+      "require('node:http').createServer((req,res)=>res.end(JSON.stringify({database:process.env.DATABASE_URL,checkout:process.cwd()}))).listen(Number(process.argv[3].split(':').pop()),'127.0.0.1');");
+  }
+  fs.mkdirSync(path.join(after,'scripts'));
+  for(const file of ['visual_review.cjs','visual_review_lib.cjs','visual_review_pages.json']){
+    fs.copyFileSync(path.join(__dirname,'../../scripts',file),path.join(after,'scripts',file));
+  }
+  const modules=path.join(directory,'node_modules');
+  fs.mkdirSync(path.join(modules,'playwright'),{recursive:true});
+  fs.writeFileSync(path.join(modules,'playwright/index.js'),
+    "exports.chromium={launch:async()=>{const before=await(await fetch('http://127.0.0.1:8133')).json();const after=await(await fetch('http://127.0.0.1:8134')).json();require('node:fs').writeFileSync(process.env.VR_FIXTURE_OBSERVATIONS,JSON.stringify({before,after}));throw Error('Fixture stops before browser capture');}};");
+  const observations=path.join(directory,'observed.json');
+  return {before,after,observations,run(overrides){
+    return require('node:child_process').spawnSync(process.execPath,[path.join(after,'scripts/visual_review.cjs')],{
+      cwd:after,windowsHide:true,encoding:'utf8',timeout:20000,
+      env:{...process.env,NODE_PATH:modules,ATLAS_PYTHON:process.execPath,ATLAS_BEFORE_DIR:before,
+        DATABASE_URL:'sqlite:///inherited-shared.sqlite3',ATLAS_BEFORE_DATABASE_URL:'',ATLAS_AFTER_DATABASE_URL:'',
+        VR_BEFORE_URL:'',VR_AFTER_URL:'',VR_OUTPUT:path.join(directory,'report'),VR_FIXTURE_OBSERVATIONS:observations,...overrides},
+    });
+  }};
+}
+
+test('each checkout serves its own database even when a shared DATABASE_URL is inherited',t=>{
+  const fixture=databaseFixture(t);
+  const result=fixture.run({ATLAS_BEFORE_DATABASE_URL:'sqlite:///before.sqlite3',ATLAS_AFTER_DATABASE_URL:'sqlite:///after.sqlite3'});
+  assert.ifError(result.error);
+  assert.equal(result.status,1,'fixture intentionally stops after observing both running servers');
+  assert.ok(fs.existsSync(fixture.observations),result.stderr);
+  const actual=JSON.parse(fs.readFileSync(fixture.observations,'utf8'));
+  assert.deepEqual(actual,{
+    before:{database:'sqlite:///before.sqlite3',checkout:fixture.before},
+    after:{database:'sqlite:///after.sqlite3',checkout:fixture.after},
+  });
+});
+
+test('managed servers refuse missing or shared database URLs instead of inheriting one database',t=>{
+  for(const urls of [{},{ATLAS_BEFORE_DATABASE_URL:'sqlite:///same.sqlite3',ATLAS_AFTER_DATABASE_URL:'sqlite:///same.sqlite3'}]){
+    const fixture=databaseFixture(t);
+    const result=fixture.run(urls);
+    assert.ifError(result.error);
+    assert.equal(result.status,1);
+    assert.equal(fs.existsSync(fixture.observations),false,'database validation must stop before servers/browser start');
+    const report=JSON.parse(fs.readFileSync(path.join(path.dirname(fixture.observations),'report/report.json'),'utf8'));
+    assert.match(report[0].notes.join(' '),/ATLAS_BEFORE_DATABASE_URL.*ATLAS_AFTER_DATABASE_URL/);
+  }
+});

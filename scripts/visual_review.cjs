@@ -1,7 +1,8 @@
 /* Visual review: screenshots of key pages before/after a change, pixel difference,
  * and a check that the main learning content is not pushed off the first screens.
  *
- * CI:    ATLAS_PYTHON, ATLAS_BEFORE_DIR (checkout of the base) — two Django servers are started here.
+ * CI:    ATLAS_PYTHON, ATLAS_BEFORE_DIR (base checkout), ATLAS_BEFORE_DATABASE_URL and ATLAS_AFTER_DATABASE_URL.
+ *        Two Django servers are started here, each with its own migrated and seeded database.
  * Local: VR_BEFORE_URL and VR_AFTER_URL — compare two servers that are already running.
  * Output: visual-review/ (index.html, summary.md, report.json, JPEG comparisons). Exit code 1 on new breakage.
  * Requires playwright on NODE_PATH. Pages and limits: scripts/visual_review_pages.json.
@@ -19,9 +20,9 @@ const config = require('./visual_review_pages.json');
 const MAX_CAPTURE_HEIGHT = 30000;
 const STILL_CSS = '*,*::before,*::after{transition:none!important;animation:none!important;caret-color:transparent!important}';
 
-async function serve(directory, port) {
+async function serve(directory, port, databaseUrl) {
   const child = spawn(process.env.ATLAS_PYTHON || 'python', ['manage.py', 'runserver', `127.0.0.1:${port}`, '--noreload'],
-    {cwd: directory, env: {...process.env, DJANGO_SETTINGS_MODULE: 'config.settings.local'}, stdio: ['ignore', 'ignore', 'pipe']});
+    {cwd: directory, env: {...process.env, DATABASE_URL: databaseUrl, DJANGO_SETTINGS_MODULE: 'config.settings.local'}, stdio: ['ignore', 'ignore', 'pipe']});
   let error = '';
   child.stderr.on('data', d => { error += d; });
   for (let n = 0; n < 150; n++) {
@@ -176,7 +177,12 @@ ${r.files.change ? `<h3>Где изменилось (с ${r.change.y}px)</h3><im
   try {
     let beforeBase = process.env.VR_BEFORE_URL, afterBase = process.env.VR_AFTER_URL;
     if (!beforeBase || !afterBase) {
-      servers.push(await serve(process.env.ATLAS_BEFORE_DIR, 8133), await serve(root, 8134));
+      const beforeDatabase = process.env.ATLAS_BEFORE_DATABASE_URL, afterDatabase = process.env.ATLAS_AFTER_DATABASE_URL;
+      if (!beforeDatabase || !afterDatabase || beforeDatabase === afterDatabase) {
+        throw Error('Set different ATLAS_BEFORE_DATABASE_URL and ATLAS_AFTER_DATABASE_URL for the two checkouts');
+      }
+      servers.push(await serve(process.env.ATLAS_BEFORE_DIR, 8133, beforeDatabase));
+      servers.push(await serve(root, 8134, afterDatabase));
       beforeBase = 'http://127.0.0.1:8133'; afterBase = 'http://127.0.0.1:8134';
     }
     browser = await chromium.launch();
