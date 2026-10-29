@@ -9,15 +9,16 @@ story_beat:
   next_hook_ru: "Анна хочет отправить письмо маме в Россию. Пора на почту."
 script:
   - speaker: doctor
-    text: "[J3]Good[/] [S7]morning[/], [S1]Tom[/]. [A6]How[/] [D1]are[/] [T8]you[/]?"
-    ru: "Доброе утро, Том. Как вы себя чувствуете?"
+    text: "[O1]Hi[/], [S1]Tom[/]. [A6]How[/] [D1]are[/] [T8]you[/]?"
+    ru: "Здравствуйте, Том. Как вы себя чувствуете?"
   - speaker: tom
     emotion: tired
     text: "[T8]I[/] [D3]feel[/] [J4]sick[/] [C1]and[/] [J4]tired[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S5]headache[/]."
     ru: "Мне нехорошо, и я устал. У меня болит голова."
   - speaker: doctor
-    text: "[D1]Does[/] [T3]your[/] [S5]head[/] [D3]hurt[/] [T5]every[/] [S7]day[/]?"
-    ru: "Голова болит каждый день?"
+    emotion: worried
+    text: "[O6]Oh no[/]! [D1]Does[/] [T3]your[/] [S5]head[/] [D3]hurt[/] [T5]every[/] [S7]day[/]?"
+    ru: "Ой! Голова болит каждый день?"
   - speaker: tom
     emotion: tired
     text: "[O4]No[/], [T8]it[/] [D1]does[/] [X1]not[/]. [C5]But[/] [T3]my[/] [S5]back[/] [D3]hurts[/], [C1]and[/] [T8]I[/] [D7]can[/][X1]not[/] [D2]sleep[/]."
@@ -25,27 +26,27 @@ script:
     ru: "Нет. Но болит спина, и я не могу спать."
   - speaker: doctor
     emotion: worried
-    text: "[T8]You[/] [D7]can[/][X1]not[/] [D2]sleep[/]? [D1]Do[/] [T8]you[/] [D2]work[/] [P1]at[/] [T1]a[/] [S2]computer[/] [T5]every[/] [S7]day[/]?"
-    spoken: "[T8]You[/] [D7]ca[/][X1]n't[/] [D2]sleep[/]? [D1]Do[/] [T8]you[/] [D2]work[/] [P1]at[/] [T1]a[/] [S2]computer[/] [T5]every[/] [S7]day[/]?"
-    ru: "Не можете спать? Вы каждый день работаете за компьютером?"
+    text: "[T8]You[/] [D7]can[/][X1]not[/] [D2]sleep[/]? [O7]Hmm[/]. [D1]Do[/] [T8]you[/] [D2]work[/] [P1]at[/] [T1]a[/] [S2]computer[/] [T5]every[/] [S7]day[/]?"
+    spoken: "[T8]You[/] [D7]ca[/][X1]n't[/] [D2]sleep[/]? [O7]Hmm[/]. [D1]Do[/] [T8]you[/] [D2]work[/] [P1]at[/] [T1]a[/] [S2]computer[/] [T5]every[/] [S7]day[/]?"
+    ru: "Не можете спать? Хм. Вы каждый день работаете за компьютером?"
   - speaker: tom
-    text: "[O4]Yes[/], [T8]I[/] [D1]do[/]. [C1]And[/] [T8]I[/] [A1]never[/] [D4]walk[/]."
-    ru: "Да. И я никогда не гуляю."
+    text: "[O4]Yeah[/]. [C1]And[/] [T8]I[/] [A1]never[/] [D4]walk[/]."
+    ru: "Ага. И я никогда не гуляю."
   - speaker: doctor
     emotion: happy
-    text: "[D2]Rest[/] [P1]at[/] [S4]home[/] [T5]every[/] [S7]day[/] [C1]and[/] [D2]drink[/] [S3]water[/]."
-    ru: "Отдыхайте дома каждый день и пейте воду."
+    text: "[O4]Okay[/]. [D2]Rest[/] [P1]at[/] [S4]home[/] [C1]and[/] [D2]drink[/] [S3]water[/]. [C1]And[/] [T4]no[/] [S2]computer[/] [P3]at[/] [S7]night[/]!"
+    ru: "Хорошо. Отдыхайте дома и пейте воду. И никакого компьютера ночью!"
   - speaker: tom
     emotion: surprised
-    text: "[T5]Every[/] [S7]day[/]? [C5]But[/] [T8]I[/] [D3]like[/] [T3]my[/] [S2]computer[/]!"
-    ru: "Каждый день? Но я люблю свой компьютер!"
+    text: "[O4]No[/] [S2]computer[/]? [C5]But[/] [T8]I[/] [D3]like[/] [T3]my[/] [S2]computer[/]!"
+    ru: "Без компьютера? Но я люблю свой компьютер!"
   - speaker: doctor
     emotion: happy
-    text: "[C1]And[/] [T4]no[/] [S2]computer[/] [P3]at[/] [S7]night[/]!"
-    ru: "И никакого компьютера ночью!"
+    text: "[D2]Rest[/], [S1]Tom[/]! [O1]Take care[/]!"
+    ru: "Отдыхайте, Том! Берегите себя!"
   - speaker: tom
     emotion: happy
-    text: "[O4]Yes[/]! [O2]Thank you[/], [S9]doctor[/]!"
+    text: "[O4]Okay[/]! [O2]Thank you[/], [S9]doctor[/]!"
     ru: "Хорошо! Спасибо, доктор!"
 twister:
   number: 11

@@ -1,0 +1,17 @@
+# Живая разговорная речь A1, неделя 11: реакции и короткие разговорные фразы. CEFR не сверялся.
+level: A1
+week: 11
+units:
+  - uid: LX-01062
+    lemma: "Take care!"
+    meaning: "a warm way to say goodbye"
+    class: O1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ˈteɪk ˈkɛr/"
+    translation_ru: "Береги себя! / Всего хорошего!"
+    example_en: "[O1]Take care[/], [S1]Tom[/]!"
+    example_ru: "Береги себя, Том!"
+    situation: "Живой разговор"
+    usage_note: "Тёплое прощание: врачу, другу, соседу. Особенно уместно, если человек болеет."

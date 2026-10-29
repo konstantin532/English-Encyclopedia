@@ -1,0 +1,43 @@
+# Живая разговорная речь A1, неделя 9: реакции и короткие разговорные фразы. CEFR не сверялся.
+level: A1
+week: 9
+units:
+  - uid: LX-01059
+    lemma: "Sounds good."
+    meaning: "agreeing to an idea or a plan"
+    class: O4
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ˈsaʊndz ˈɡʊd/"
+    translation_ru: "Звучит отлично. / Давай!"
+    example_en: "[S3]Coffee[/] [A3]here[/]? [O4]Sounds good[/]!"
+    example_ru: "Кофе здесь? Давай!"
+    situation: "Живой разговор"
+    usage_note: "Так соглашаются с предложением: Coffee? — Sounds good! Подлежащее It в начале американцы обычно опускают."
+  - uid: LX-01060
+    lemma: "One second."
+    meaning: "asking someone to wait a moment"
+    class: F1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ˈwʌn ˈsɛkənd/"
+    translation_ru: "Секунду. / Минутку."
+    example_en: "[F1]One second[/], [O8]please[/]."
+    example_ru: "Секунду, пожалуйста."
+    situation: "Живой разговор"
+    usage_note: "Так просят подождать — по телефону, в магазине, в кафе."
+  - uid: LX-01061
+    lemma: "No way!"
+    meaning: "a strong reaction of surprise"
+    class: O5
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ˈnoʊ ˈweɪ/"
+    translation_ru: "Да ладно! / Не может быть!"
+    example_en: "[T8]You[/] [A1]never[/] [D4]walk[/]? [O5]No way[/]!"
+    example_ru: "Ты никогда не гуляешь? Да ладно!"
+    situation: "Живой разговор"
+    usage_note: "No way! — «да ладно, не может быть!». Это удивление, а не отказ."

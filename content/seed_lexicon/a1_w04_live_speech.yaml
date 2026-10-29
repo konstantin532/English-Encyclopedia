@@ -1,0 +1,16 @@
+# Живая разговорная речь A1, неделя 4: реакции и короткие разговорные фразы. CEFR не сверялся.
+level: A1
+week: 4
+units:
+  - uid: LX-01053
+    lemma: "aww"
+    meaning: "a reaction to something sweet or cute"
+    class: O6
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ɔ/"
+    translation_ru: "оу! (как мило!)"
+    example_en: "[O6]Aww[/]! [T3]Your[/] [S1]brother[/] [D1]is[/] [N3]ten[/]!"
+    example_ru: "Оу, как мило! Твоему брату десять!"
+    situation: "Живой разговор"
+    usage_note: "Aww — тёплая реакция на что-то милое: фото ребёнка, котика, подарок."

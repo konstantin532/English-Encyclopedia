@@ -16,7 +16,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED = {"weeks": 14, "lessons": 28, "units": 500, "stories": 5,
+EXPECTED = {"weeks": 14, "lessons": 28, "units": 516, "stories": 5,
             "poems": 7, "twisters": 14, "missions": 168, "twists": 56}
 SCENARIOS = sorted((ROOT / "content" / "active_a1").glob("scenarios_*.json"))
 

@@ -15,7 +15,7 @@ class WeekFourteenExpansionTests(TestCase):
     def test_travel_weather_and_clothing_words_are_taught(self):
         expected = {"weather","sunny","rain","snow","windy","cloudy","warm","train","car","taxi","station","airport","plane","trip","travel","arrive","leave","buy","coat","hat","umbrella","bag","sweater","seat"}
         week = LexicalUnit.objects.filter(internal_level__code='A1', week__number=14)
-        self.assertEqual(week.count(), 35)
+        self.assertEqual(week.count(), 36)
         self.assertTrue(expected <= set(week.values_list('lemma', flat=True)))
         for lesson in Lesson.objects.filter(level__code='A1', order__in=(27, 28)):
             self.assertEqual(list(lesson.exercises.order_by('order').values_list('order', flat=True)), [1, 2, 3, 4, 5, 6])

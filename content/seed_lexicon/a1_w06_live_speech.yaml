@@ -1,0 +1,16 @@
+# Живая разговорная речь A1, неделя 6: реакции и короткие разговорные фразы. CEFR не сверялся.
+level: A1
+week: 6
+units:
+  - uid: LX-01056
+    lemma: "hey"
+    meaning: "a casual greeting for friends"
+    class: O1
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/heɪ/"
+    translation_ru: "привет!, эй!"
+    example_en: "[O1]Hey[/], [S1]Mia[/]! [J3]Good[/] [S7]morning[/]!"
+    example_ru: "Привет, Мия! Доброе утро!"
+    situation: "Живой разговор"
+    usage_note: "Hey — приветствие для друзей и знакомых. Незнакомому человеку лучше сказать Hi."

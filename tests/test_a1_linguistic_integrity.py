@@ -40,8 +40,8 @@ class A1LinguisticIntegrityTests(SimpleTestCase):
         cls.by_id = {u["uid"]: u for u in cls.units}
 
     def test_full_a1_material_inventory_and_unique_ids(self):
-        self.assertEqual(len(self.units), 500)
-        self.assertEqual(set(self.by_id), {f"LX-{n:05d}" for n in range(1, 501)})
+        self.assertEqual(len(self.units), 516)
+        self.assertEqual(set(self.by_id), {f"LX-{n:05d}" for n in [*range(1, 501), *range(1049, 1065)]})
         self.assertEqual(len(list((CONTENT / "seed_weeks").glob("a1_w*.yaml"))), 14)
         lesson_files = sorted((CONTENT / "seed_lessons").glob("a1_w*.yaml"))
         self.assertEqual(len(lesson_files), 28)
@@ -70,7 +70,7 @@ class A1LinguisticIntegrityTests(SimpleTestCase):
                     self.assertNotEqual(entry.get("cefr"), "unverified")
                     self.assertTrue(entry.get("verification_note", "").strip())
         result = audit_cefr(ROOT)
-        self.assertEqual(result["counts"]["total"], 500)
+        self.assertEqual(result["counts"]["total"], 516)
         self.assertEqual(result["errors"], [])
         for uid, sense in (("LX-00113", "some determiner (UNKNOWN AMOUNT)"),
                            ("LX-00303", "eat verb (FOOD)")):

@@ -10,27 +10,27 @@ story_beat:
 script:
   - speaker: mia
     emotion: happy
-    text: "[J3]Good[/] [S7]morning[/]! [T8]You[/] [D1]are[/] [A3]here[/] [P3]at[/] [N3]seven[/]!"
-    spoken: "[J3]Good[/] [S7]morning[/]! [T8]You[/][D1]'re[/] [A3]here[/] [P3]at[/] [N3]seven[/]!"
-    ru: "Доброе утро! Вы здесь в семь!"
+    text: "[O1]Hey[/], [J3]good[/] [S7]morning[/]! [T8]You[/] [D1]are[/] [A3]here[/] [P3]at[/] [N3]seven[/]!"
+    spoken: "[O1]Hey[/], [J3]good[/] [S7]morning[/]! [T8]You[/][D1]'re[/] [A3]here[/] [P3]at[/] [N3]seven[/]!"
+    ru: "Привет, доброе утро! Вы здесь в семь!"
   - speaker: tom
     emotion: tired
-    text: "[O4]Yes[/]. [T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]six[/]. [T9]What[/] [S7]time[/] [D1]do[/] [T8]you[/] [D9]get[/] [X3]up[/], [S1]Mia[/]?"
+    text: "[O4]Yeah[/]. [T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]six[/]. [T9]What[/] [S7]time[/] [D1]do[/] [T8]you[/] [D9]get[/] [X3]up[/], [S1]Mia[/]?"
     ru: "Ага. Я встаю в шесть. А ты во сколько встаёшь, Мия?"
   - speaker: mia
     text: "[T8]I[/] [D9]get[/] [X3]up[/] [P3]at[/] [N3]five[/]. [T8]I[/] [D2]work[/] [A3]here[/] [T5]every[/] [S7]day[/]. [T8]I[/] [D4]go[/] [P2]to[/] [S2]bed[/] [A2]early[/]!"
-    ru: "Я встаю в пять. Я работаю здесь каждый день. И рано ложусь спать!"
+    ru: "Я встаю в пять. Работаю здесь каждый день. И рано ложусь спать!"
   - speaker: anna
     emotion: surprised
-    text: "[P3]At[/] [N3]five[/]! [D1]Do[/] [T8]you[/] [D2]have[/] [S3]breakfast[/]?"
-    ru: "В пять! А ты завтракаешь?"
+    text: "[O5]Wow[/], [P3]at[/] [N3]five[/]! [D1]Do[/] [T8]you[/] [D2]have[/] [S3]breakfast[/]?"
+    ru: "Ого, в пять! А ты завтракаешь?"
   - speaker: mia
     emotion: happy
-    text: "[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]I[/] [D2]have[/] [S3]breakfast[/] [P3]at[/] [N3]ten[/]: [S3]coffee[/] [C1]and[/] [T1]a[/] [S3]cookie[/]!"
-    ru: "Да. Я завтракаю в десять: кофе и печенье!"
+    text: "[O4]Yeah[/]. [T8]I[/] [D2]have[/] [S3]breakfast[/] [P3]at[/] [N3]ten[/]: [S3]coffee[/] [C1]and[/] [T1]a[/] [S3]cookie[/]!"
+    ru: "Ага. Завтракаю в десять: кофе и печенье!"
   - speaker: tom
-    text: "[T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/]. [T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/]."
-    ru: "А я в семь пью кофе. А ем в двенадцать."
+    text: "[T8]I[/] [D2]drink[/] [S3]coffee[/] [P3]at[/] [N3]seven[/], [C1]and[/] [T8]I[/] [D2]eat[/] [P3]at[/] [N3]twelve[/]."
+    ru: "А я пью кофе в семь, а ем в двенадцать."
   - speaker: anna
     emotion: worried
     text: "[S1]Mia[/], [T3]my[/] [S6]cat[/] [D1]is[/] [X1]not[/] [P1]at[/] [S2]home[/]."
@@ -38,17 +38,17 @@ script:
     ru: "Мия, моего кота нет дома."
   - speaker: mia
     emotion: surprised
-    text: "[T1]A[/] [J1]big[/] [S6]cat[/]? [T9]There[/] [D1]is[/] [T1]a[/] [J1]big[/] [S6]cat[/] [A3]here[/] [P3]at[/] [N3]seven[/] [T5]every[/] [S7]day[/]!"
-    spoken: "[T1]A[/] [J1]big[/] [S6]cat[/]? [T9]There[/][D1]'s[/] [T1]a[/] [J1]big[/] [S6]cat[/] [A3]here[/] [P3]at[/] [N3]seven[/] [T5]every[/] [S7]day[/]!"
-    ru: "Большой кот? Здесь каждый день в семь бывает большой кот!"
+    text: "[T1]A[/] [J1]big[/] [S6]cat[/]? [O7]Hmm[/]… [T9]there[/] [D1]is[/] [T1]a[/] [J1]big[/] [S6]cat[/] [A3]here[/] [T5]every[/] [S7]day[/]!"
+    spoken: "[T1]A[/] [J1]big[/] [S6]cat[/]? [O7]Hmm[/]… [T9]there[/][D1]'s[/] [T1]a[/] [J1]big[/] [S6]cat[/] [A3]here[/] [T5]every[/] [S7]day[/]!"
+    ru: "Большой кот? Хм… здесь каждый день бывает большой кот!"
   - speaker: tom
     emotion: excited
     text: "[D1]Is[/] [T8]it[/] [S1]Box[/]?"
     ru: "Это Box?"
   - speaker: mia
     emotion: happy
-    text: "[T8]It[/] [D3]likes[/] [T3]my[/] [S3]milk[/]!"
-    ru: "Он любит моё молоко!"
+    text: "[O4]Yeah[/]! [T8]He[/] [D3]likes[/] [T3]my[/] [S3]milk[/]!"
+    ru: "Ага! Он любит моё молоко!"
 twister:
   number: 6
   series: sounds

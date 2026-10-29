@@ -11,8 +11,8 @@ class WeekTwoExpansionTests(TestCase):
         ensure_content()
 
     def test_completed_inventory_and_weekly_home_vocabulary(self):
-        self.assertEqual(LexicalUnit.objects.filter(internal_level__code='A1').count(), 500)
-        self.assertEqual(LexicalUnit.objects.filter(internal_level__code='A1', week__number=2).count(), 35)
+        self.assertEqual(LexicalUnit.objects.filter(internal_level__code='A1').count(), 516)
+        self.assertEqual(LexicalUnit.objects.filter(internal_level__code='A1', week__number=2).count(), 39)
         for n in range(1, 15):
             count = LexicalUnit.objects.filter(internal_level__code='A1', week__number=n).count()
             self.assertTrue(30 <= count <= 39, (n, count))

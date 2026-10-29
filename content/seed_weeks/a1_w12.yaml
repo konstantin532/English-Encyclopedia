@@ -10,8 +10,8 @@ story_beat:
 script:
   - speaker: postal
     emotion: happy
-    text: "[J3]Good[/] [S7]morning[/]! [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?"
-    ru: "Доброе утро! Чем могу помочь?"
+    text: "[O1]Hi[/]! [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?"
+    ru: "Здравствуйте! Чем могу помочь?"
   - speaker: anna
     text: "[O4]Yes[/], [O8]please[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S9]letter[/] [P5]for[/] [T3]my[/] [S1]mother[/] [P1]in[/] [S4]Russia[/]."
     ru: "Да, пожалуйста. У меня письмо для мамы в России."
@@ -29,8 +29,8 @@ script:
     spoken: "[A3]Here[/][D1]'s[/] [T1]a[/] [S2]stamp[/]. [T8]It[/][D1]'s[/] [N6]two dollars[/]."
     ru: "Вот марка. Два доллара."
   - speaker: tom
-    text: "[D1]Do[/] [T8]you[/] [D1]have[/] [S9]letters[/] [P5]for[/] [T3]our[/] [S2]house[/]? [T3]Our[/] [S2]mailbox[/] [D1]is[/] [J2]old[/]."
-    ru: "А для нашего дома есть письма? У нас старый почтовый ящик."
+    text: "[O7]Hmm[/]… [D1]do[/] [T8]you[/] [D1]have[/] [S9]letters[/] [P5]for[/] [T3]our[/] [S2]house[/]? [T3]Our[/] [S2]mailbox[/] [D1]is[/] [J2]old[/]."
+    ru: "Хм… а для нашего дома есть письма? У нас старый почтовый ящик."
   - speaker: postal
     emotion: surprised
     text: "[T1]The[/] [J2]old[/] [S2]mailbox[/]? [T8]It[/] [D1]does[/] [X1]not[/] [D2]get[/] [S9]letters[/]."
@@ -48,8 +48,8 @@ script:
     ru: "Никогда. Сам не знаю почему!"
   - speaker: anna
     emotion: happy
-    text: "[O2]Thank you[/]! [D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/]!"
-    ru: "Спасибо! Хорошего дня!"
+    text: "[O4]Okay[/]. [O2]Thanks a lot[/]! [D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/]!"
+    ru: "Ясно. Большое спасибо! Хорошего дня!"
 twister:
   number: 12
   series: sounds

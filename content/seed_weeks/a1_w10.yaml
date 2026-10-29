@@ -10,8 +10,8 @@ story_beat:
 script:
   - speaker: mia
     emotion: happy
-    text: "[T9]What[/] [D1]do[/] [T8]you[/] [D2]do[/] [P3]on[/] [T1]the[/] [S7]weekend[/], [S1]Anna[/]?"
-    ru: "Анна, а что ты делаешь в выходные?"
+    text: "[O1]Hey[/], [S1]Anna[/]! [T9]What[/] [D1]do[/] [T8]you[/] [D2]do[/] [P3]on[/] [T1]the[/] [S7]weekend[/]?"
+    ru: "Привет, Анна! А что ты делаешь в выходные?"
   - speaker: anna
     text: "[T8]I[/] [A1]always[/] [D2]read[/] [P3]on[/] [S7]Saturdays[/]. [T8]I[/] [D3]like[/] [D2]reading[/]."
     ru: "По субботам я всегда читаю. Люблю читать."
@@ -31,8 +31,8 @@ script:
     ru: "Нет, я никогда не гуляю! Я люблю музыку. По воскресеньям играю на гитаре."
   - speaker: anna
     emotion: surprised
-    text: "[T8]You[/] [A1]never[/] [D4]walk[/]? [A1]Never[/]?"
-    ru: "Ты никогда не гуляешь? Совсем никогда?"
+    text: "[T8]You[/] [A1]never[/] [D4]walk[/]? [O5]No way[/]!"
+    ru: "Ты никогда не гуляешь? Да ладно!"
   - speaker: tom
     emotion: happy
     text: "[A1]Never[/]! [T8]I[/] [D2]play[/] [T1]the[/] [S2]guitar[/], [C1]and[/] [S1]Box[/] [D3]likes[/] [T8]it[/]."
@@ -43,8 +43,8 @@ script:
     ru: "А я работаю по воскресеньям. Всегда начинаю в пять утра!"
   - speaker: anna
     emotion: happy
-    text: "[O1]See you[/] [P3]on[/] [S7]Friday[/], [S1]Mia[/]!"
-    ru: "Увидимся в пятницу, Мия!"
+    text: "[O3]Oh[/], [S1]Mia[/]! [O1]See you[/] [P3]on[/] [S7]Friday[/]!"
+    ru: "Ох, Мия! Увидимся в пятницу!"
 twister:
   number: 10
   series: sounds

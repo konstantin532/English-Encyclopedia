@@ -14,7 +14,7 @@ script:
   - speaker: busdriver
     emotion: happy
     text: "[O4]Yes[/], [T8]it[/] [D1]does[/]. [S4]Park[/] [S4]Street[/] [D1]is[/] [T1]the[/] [J8]last[/] [S4]stop[/]. [T1]The[/] [S4]train[/] [S4]station[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]park[/]."
-    ru: "Да. Парк-стрит — конечная. Железнодорожная станция рядом с парком."
+    ru: "Да. Парк-стрит — конечная. Вокзал рядом с парком."
   - speaker: tom
     text: "[A6]How[/] [T4]much[/] [D1]is[/] [T1]a[/] [S2]ticket[/]?"
     ru: "Сколько стоит билет?"
@@ -27,8 +27,8 @@ script:
     ru: "Два билета, пожалуйста. Вот, держите."
   - speaker: busdriver
     emotion: happy
-    text: "[O2]Thank you[/]! [A3]Here[/] [D1]are[/] [T3]your[/] [S2]tickets[/]. [D2]Take[/] [T1]a[/] [S2]seat[/], [O8]please[/]."
-    ru: "Спасибо! Вот ваши билеты. Садитесь, пожалуйста."
+    text: "[O2]Thanks[/]! [A3]Here[/] [D1]are[/] [T3]your[/] [S2]tickets[/]. [D2]Take[/] [T1]a[/] [S2]seat[/]."
+    ru: "Спасибо! Вот ваши билеты. Садитесь."
   - speaker: tom
     text: "[T9]What[/] [S7]time[/] [D1]is[/] [T1]the[/] [J8]next[/] [S4]bus[/] [A3]back[/]?"
     spoken: "[T9]What[/] [S7]time[/][D1]'s[/] [T1]the[/] [J8]next[/] [S4]bus[/] [A3]back[/]?"
@@ -38,13 +38,13 @@ script:
     ru: "Следующий — в шесть."
   - speaker: anna
     emotion: worried
-    text: "[P3]At[/] [N3]six[/]? [D1]Is[/] [T1]the[/] [S2]photo[/] [S4]shop[/] [J2]open[/] [P3]on[/] [S7]Saturday[/]?"
-    ru: "В шесть? А фотоателье в субботу открыто?"
+    text: "[P3]At[/] [N3]six[/]? [O7]Hmm[/]. [D1]Is[/] [T1]the[/] [S2]photo[/] [S4]shop[/] [J2]open[/] [P3]on[/] [S7]Saturday[/]?"
+    ru: "В шесть? Хм. А фотоателье в субботу открыто?"
   - speaker: busdriver
     emotion: worried
-    text: "[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [O2]Sorry[/]!"
-    spoken: "[T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]. [O2]Sorry[/]!"
-    ru: "Не знаю. Извините!"
+    text: "[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [O2]Sorry[/]! [O1]Have a good one[/]!"
+    spoken: "[T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]. [O2]Sorry[/]! [O1]Have a good one[/]!"
+    ru: "Не знаю. Извините! Всего доброго!"
 twister:
   number: 14
   series: sounds

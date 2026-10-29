@@ -1,4 +1,4 @@
-"""Machine-checkable 500-word / 28-lesson editorial contracts.
+"""Machine-checkable 516-unit / 28-lesson editorial contracts.
 
 Passing this file does not confirm naturalness, pronunciation, CEFR level,
 or the semantic adequacy of translations. Those need independent review.
@@ -63,8 +63,8 @@ class A1CorpusAlignmentTests(SimpleTestCase):
                         demonstrates_target(examples, candidates, unit.get("unit_type")),
                         f"{path.name}: {uid} ({unit['lemma']}) not demonstrated in {examples!r}"
                     )
-        self.assertEqual(len(seen), 500)
-        self.assertEqual(len(set(seen)), 500)
+        self.assertEqual(len(seen), 516)
+        self.assertEqual(len(set(seen)), 516)
 
     def test_phrase_demonstration_accepts_contractions_and_preserves_target_words(self):
         cases = (
@@ -107,7 +107,7 @@ class A1CorpusAlignmentTests(SimpleTestCase):
                             f"{path.name}: {unit['uid']} negative {source!r} "
                             "requires a semantically negative Russian translation"
                         )
-        self.assertEqual(checked, 500)
+        self.assertEqual(checked, 516)
 
     def test_28_lessons_and_163_exercises_have_solvable_unambiguous_keys(self):
         lesson_count = 0

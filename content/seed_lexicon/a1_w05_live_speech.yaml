@@ -1,0 +1,29 @@
+# Живая разговорная речь A1, неделя 5: реакции и короткие разговорные фразы. CEFR не сверялся.
+level: A1
+week: 5
+units:
+  - uid: LX-01054
+    lemma: "Hi!"
+    meaning: "the most common friendly greeting"
+    class: O1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/haɪ/"
+    translation_ru: "Привет! / Здравствуйте!"
+    example_en: "[O1]Hi[/]! [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?"
+    example_ru: "Здравствуйте! Чем могу помочь?"
+    situation: "Живой разговор"
+    usage_note: "Hi — самое частое американское приветствие: подходит и соседу, и продавцу. Hello звучит чуть официальнее."
+  - uid: LX-01055
+    lemma: "hmm"
+    meaning: "a sound you make when you think"
+    class: O7
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/hm/"
+    translation_ru: "хм…"
+    example_en: "[O7]Hmm[/]… [D1]is[/] [T9]there[/] [S6]cat[/] [S3]food[/]?"
+    example_ru: "Хм… а корм для кошек есть?"
+    situation: "Живой разговор"
+    usage_note: "Hmm — пауза «дайте подумать». Помогает не молчать, пока вспоминаете слово."

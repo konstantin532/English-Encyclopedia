@@ -169,3 +169,12 @@ whose | wh | -
 not | negation |
 off | particle | -
 up | particle | -
+
+## Междометия и реакции (живая речь A1)
+oh | - | реакция: Oh, nice!
+wow | - | удивление
+yeah | - | разговорное yes
+awesome | - | «класс!»
+aww | - | «как мило!»
+hmm | - | пауза-раздумье
+hey | - | приветствие друзьям

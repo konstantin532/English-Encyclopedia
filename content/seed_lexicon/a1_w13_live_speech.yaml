@@ -1,0 +1,17 @@
+# Живая разговорная речь A1, неделя 13: реакции и короткие разговорные фразы. CEFR не сверялся.
+level: A1
+week: 13
+units:
+  - uid: LX-01063
+    lemma: "I'm in!"
+    meaning: "agreeing to join a plan"
+    class: O9
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/aɪm ˈɪn/"
+    translation_ru: "Я в деле! / Я с вами!"
+    example_en: "[T1]A[/] [S9]lesson[/] [P3]on[/] [S7]Saturday[/]? [O9]I'm in[/]!"
+    example_ru: "Урок в субботу? Я с вами!"
+    situation: "Живой разговор"
+    usage_note: "Короткое «я участвую». Отвечают на приглашение: Coffee on Friday? — I'm in!"

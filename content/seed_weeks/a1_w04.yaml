@@ -15,9 +15,9 @@ script:
     ru: "Мия, вот фотография. Это твоя семья?"
   - speaker: mia
     emotion: excited
-    text: "[O4]Yes[/]! [T2]This[/] [D1]is[/] [T3]my[/] [S1]family[/]! [T8]It[/] [D1]is[/] [T3]my[/] [S2]photo[/]!"
-    spoken: "[O4]Yes[/]! [T2]This[/] [D1]is[/] [T3]my[/] [S1]family[/]! [T8]It[/][D1]'s[/] [T3]my[/] [S2]photo[/]!"
-    ru: "Да! Это моя семья! Это моя фотография!"
+    text: "[O3]Oh[/], [O4]yes[/]! [T2]This[/] [D1]is[/] [T3]my[/] [S1]family[/]! [T8]It[/] [D1]is[/] [T3]my[/] [S2]photo[/]!"
+    spoken: "[O3]Oh[/], [O4]yes[/]! [T2]This[/] [D1]is[/] [T3]my[/] [S1]family[/]! [T8]It[/][D1]'s[/] [T3]my[/] [S2]photo[/]!"
+    ru: "О, да! Это моя семья! Это моя фотография!"
   - speaker: tom
     emotion: surprised
     text: "[T9]Who[/] [D1]is[/] [T2]this[/]?"
@@ -29,16 +29,17 @@ script:
     spoken: "[T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/]. [T8]He[/][D1]'s[/] [N5]ten[/]."
     ru: "Это мой брат. Ему десять."
   - speaker: anna
-    text: "[D1]Is[/] [T2]this[/] [T3]your[/] [S1]mother[/]?"
-    ru: "А это твоя мама?"
+    emotion: happy
+    text: "[O6]Aww[/]! [C1]And[/] [D1]is[/] [T2]this[/] [T3]your[/] [S1]mom[/]?"
+    ru: "Оу, как мило! А это твоя мама?"
   - speaker: mia
-    text: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [C1]And[/] [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/]. [T8]We[/] [D1]are[/] [T1]a[/] [J1]big[/] [S1]family[/]!"
-    spoken: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [C1]And[/] [T2]this[/] [D1]is[/] [T3]my[/] [S1]father[/]. [T8]We[/][D1]'re[/] [T1]a[/] [J1]big[/] [S1]family[/]!"
-    ru: "Да. А это мой папа. У нас большая семья!"
+    text: "[O4]Yeah[/]. [C1]And[/] [T2]this[/] [D1]is[/] [T3]my[/] [S1]dad[/]. [T8]We[/] [D1]are[/] [T1]a[/] [J1]big[/] [S1]family[/]!"
+    spoken: "[O4]Yeah[/]. [C1]And[/] [T2]this[/] [D1]is[/] [T3]my[/] [S1]dad[/]. [T8]We[/][D1]'re[/] [T1]a[/] [J1]big[/] [S1]family[/]!"
+    ru: "Ага. А это мой папа. У нас большая семья!"
   - speaker: tom
     emotion: surprised
-    text: "[T3]Your[/] [S1]mom[/] [D1]is[/] [J2]young[/]! [A6]How[/] [J2]old[/] [D1]are[/] [T8]they[/]?"
-    ru: "Твоя мама такая молодая! Сколько им лет?"
+    text: "[O5]Wow[/], [T3]your[/] [S1]mom[/] [D1]is[/] [J2]young[/]! [A6]How[/] [J2]old[/] [D1]are[/] [T8]they[/]?"
+    ru: "Ого, твоя мама такая молодая! Сколько им лет?"
   - speaker: mia
     emotion: happy
     text: "[T3]My[/] [S1]mom[/] [D1]is[/] [N5]forty[/], [C1]and[/] [T3]my[/] [S1]dad[/] [D1]is[/] [N5]fifty[/]."
@@ -50,9 +51,9 @@ script:
     ru: "Вот твоя фотография, Мия."
   - speaker: mia
     emotion: excited
-    text: "[O2]Thank you[/]! [T8]I[/] [D1]am[/] [J4]happy[/]!"
-    spoken: "[O2]Thank you[/]! [T8]I[/][D1]'m[/] [J4]happy[/]!"
-    ru: "Спасибо! Я так рада!"
+    text: "[O3]Oh[/], [O2]thank you[/]! [T8]I[/] [D1]am[/] [J4]happy[/]!"
+    spoken: "[O3]Oh[/], [O2]thank you[/]! [T8]I[/][D1]'m[/] [J4]happy[/]!"
+    ru: "Ой, спасибо! Я так рада!"
 twister:
   number: 4
   series: sounds

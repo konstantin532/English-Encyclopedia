@@ -10,14 +10,14 @@ story_beat:
 script:
   - speaker: locksmith
     emotion: happy
-    text: "[O1]Hello[/]! [S2]Key[/] [S4]shop[/]."
-    ru: "Алло! Мастерская ключей."
+    text: "[O1]Hello[/], [S2]Key[/] [S4]Shop[/]! [A6]How[/] [D7]can[/] [T8]I[/] [D2]help[/] [T8]you[/]?"
+    ru: "Алло, мастерская ключей! Чем могу помочь?"
   - speaker: anna
-    text: "[O1]Hello[/]! [T2]This[/] [D1]is[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]my[/] [S2]key[/], [O8]please[/]?"
-    ru: "Алло! Это Анна. Мой ключ у вас?"
+    text: "[O1]Hi[/]! [T2]This[/] [D1]is[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]my[/] [S2]key[/]?"
+    ru: "Здравствуйте! Это Анна. Мой ключ у вас?"
   - speaker: locksmith
-    text: "[O4]Yes[/], [T8]I[/] [D1]do[/]. [D7]Can[/] [T8]you[/] [D5]spell[/] [T3]your[/] [J8]last[/] [S9]name[/], [O8]please[/]?"
-    ru: "Да. Продиктуйте, пожалуйста, фамилию по буквам."
+    text: "[F1]One second[/]… [O4]Yes[/], [T8]I[/] [D1]do[/]. [D7]Can[/] [T8]you[/] [D5]spell[/] [T3]your[/] [S9]last name[/], [O8]please[/]?"
+    ru: "Секунду… Да, у нас. Продиктуйте, пожалуйста, фамилию по буквам."
   - speaker: anna
     text: "[O4]Yes[/]. [N7]B-E-L-O-V-A[/]. [S1]Anna[/] [S1]Belova[/]."
     ru: "Да. B-E-L-O-V-A (латинскими буквами). Анна Белова."
@@ -30,8 +30,8 @@ script:
     spoken: "[T8]It[/][D1]'s[/] [N7]five five five, two one four six[/]."
     ru: "Пять-пять-пять, два-один-четыре-шесть."
   - speaker: locksmith
-    text: "[N7]Five five five, two one four six[/]. [O2]Thank you[/]!"
-    ru: "Пять-пять-пять, два-один-четыре-шесть. Спасибо!"
+    text: "[N7]Five five five, two one four six[/]. [O4]Okay[/], [O2]thank you[/]!"
+    ru: "Пять-пять-пять, два-один-четыре-шесть. Хорошо, спасибо!"
   - speaker: anna
     text: "[T9]What[/] [S7]time[/] [D1]does[/] [T1]the[/] [S4]shop[/] [D2]open[/]?"
     ru: "А во сколько открывается мастерская?"
@@ -41,8 +41,8 @@ script:
     ru: "Открываемся в девять, закрываемся в пять. До завтра!"
   - speaker: anna
     emotion: happy
-    text: "[O4]Okay[/]! [O1]See you[/] [P3]at[/] [N3]nine[/]! [O1]Bye[/]!"
-    ru: "Хорошо! До встречи в девять! Пока!"
+    text: "[O4]Sounds good[/]! [O1]See you[/] [P3]at[/] [N3]nine[/]! [O1]Bye[/]!"
+    ru: "Отлично! До встречи в девять! Пока!"
 twister:
   number: 9
   series: sounds

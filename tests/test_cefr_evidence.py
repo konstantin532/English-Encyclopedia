@@ -16,11 +16,11 @@ spec.loader.exec_module(oxford)
 class CEFRIntegrityTests(SimpleTestCase):
     def test_real_a1_corpus_can_be_audited_without_certifying_it(self):
         report = inspect()
-        self.assertEqual(report["counts"]["total"], 500)
+        self.assertEqual(report["counts"]["total"], 516)
         self.assertFalse(report["errors"], report["errors"])
         self.assertEqual(report["counts"].get("status_verified", 0) +
                          report["counts"].get("status_partial", 0) +
-                         report["counts"].get("status_pending", 0), 500)
+                         report["counts"].get("status_pending", 0), 516)
 
     def test_verified_requires_specific_evidence_not_word_level_only(self):
         with TemporaryDirectory() as tmp:
