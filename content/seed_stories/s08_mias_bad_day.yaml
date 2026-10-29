@@ -80,8 +80,8 @@ script:
 - speaker: mia
   kind: speech
   emotion: neutral
-  text: “[T9]Who[/] [D1]is[/] [T2]this[/] [S1]girl[/]?”
-  spoken: “[T9]Who[/][D1]'s[/] [T2]this[/] [S1]girl[/]?”
+  text: "“[O7]Hmm[/]. [T9]Who[/] [D1]is[/] [T2]this[/] [S1]girl[/]?”"
+  spoken: "“[O7]Hmm[/]. [T9]Who[/][D1]'s[/] [T2]this[/] [S1]girl[/]?”"
 - speaker: boss
   kind: speech
   emotion: surprised
@@ -99,8 +99,8 @@ script:
 - speaker: boss
   kind: speech
   emotion: happy
-  text: “[C1]And[/] [S1]Mia[/]… [O2]thank[/] [T8]you[/] [P5]for[/] [T1]the[/] [J2]old[/] [S1]man[/] [P4]with[/] [T1]the[/] [S2]bag[/]. [T8]You[/] [D1]are[/] [T1]a[/] [J3]good[/] [S9]barista[/].”
-  spoken: “[C1]And[/] [S1]Mia[/]… [O2]thank[/] [T8]you[/] [P5]for[/] [T1]the[/] [J2]old[/] [S1]man[/] [P4]with[/] [T1]the[/] [S2]bag[/]. [T8]You[/][D1]'re[/] [T1]a[/] [J3]good[/] [S9]barista[/].”
+  text: "“[O3]Oh[/], [C1]and[/] [S1]Mia[/]… [O2]thanks[/] [P5]for[/] [D2]helping[/] [T1]the[/] [J2]old[/] [S1]man[/]. [T8]You[/] [D1]are[/] [T1]a[/] [J3]good[/] [S9]barista[/].”"
+  spoken: "“[O3]Oh[/], [C1]and[/] [S1]Mia[/]… [O2]thanks[/] [P5]for[/] [D2]helping[/] [T1]the[/] [J2]old[/] [S1]man[/]. [T8]You[/][D1]'re[/] [T1]a[/] [J3]good[/] [S9]barista[/].”"
 - speaker: mia
   kind: narration
   emotion: happy

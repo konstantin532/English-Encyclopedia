@@ -78,8 +78,8 @@ script:
   kind: speech
   emotion: happy
   music: happy
-  text: “[J3]Good[/] [S7]morning[/], [S1]Anna[/]! [D1]Is[/] [T9]there[/] [S3]coffee[/]? [D1]Is[/] [T9]there[/] [S3]bread[/]? [C1]And[/] [A6]where[/] [D1]is[/] [T3]my[/] [S2]shoe[/]?”
-  spoken: “[J3]Good[/] [S7]morning[/], [S1]Anna[/]! [D1]Is[/] [T9]there[/] [S3]coffee[/]? [D1]Is[/] [T9]there[/] [S3]bread[/]? [C1]And[/] [A6]where[/][D1]'s[/] [T3]my[/] [S2]shoe[/]?”
+  text: "“[S7]Morning[/], [S1]Anna[/]! [D1]Is[/] [T9]there[/] [S3]coffee[/]? [D1]Is[/] [T9]there[/] [S3]bread[/]? [O3]Oh[/], [C1]and[/] [A6]where[/] [D1]is[/] [T3]my[/] [S2]shoe[/]?”"
+  spoken: "“[S7]Morning[/], [S1]Anna[/]! [D1]Is[/] [T9]there[/] [S3]coffee[/]? [D1]Is[/] [T9]there[/] [S3]bread[/]? [O3]Oh[/], [C1]and[/] [A6]where[/][D1]'s[/] [T3]my[/] [S2]shoe[/]?”"
 - speaker: anna
   kind: speech
   emotion: neutral
@@ -117,7 +117,7 @@ script:
 - speaker: anna
   kind: speech
   emotion: whisper
-  text: '“[O4]Yes[/]. [C1]And[/] [P1]in[/] [T1]the[/] [S9]letter[/], [T9]there[/] [D1]was[/] [N1]one[/] [S9]word[/]: [S1]Rose[/].”'
+  text: "“[O4]Yeah[/]. [C1]And[/] [P1]in[/] [T1]the[/] [S9]letter[/], [T9]there[/] [D1]was[/] [N1]one[/] [S9]word[/]: [S1]Rose[/].”"
 - speaker: anna
   kind: narration
   emotion: neutral
@@ -134,7 +134,7 @@ script:
 - speaker: tom
   kind: speech
   emotion: happy
-  text: “[T8]I[/] [D7]can[/] [D2]cook[/] [S3]dinner[/]!”
+  text: "“[O3]Oh[/], [T8]I[/] [D7]can[/] [D2]cook[/] [S3]dinner[/]!”"
 - speaker: anna
   kind: narration
   emotion: happy

@@ -26,12 +26,12 @@ script:
 - speaker: mia
   kind: speech
   emotion: worried
-  text: “[C4]If[/] [T8]it[/] [D2]rains[/], [T3]our[/] [S3]picnic[/] [D7]will[/] [D1]be[/] [J3]bad[/].”
+  text: "“[O6]Oh no[/]. [C4]If[/] [T8]it[/] [D2]rains[/], [T3]our[/] [S3]picnic[/] [D7]will[/] [D1]be[/] [J3]bad[/].”"
 - speaker: tom
   kind: speech
   emotion: happy
-  text: “[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/] [D7]will[/] [D2]eat[/] [P1]in[/] [T1]the[/] [S2]kitchen[/]. [T8]It[/] [D1]is[/] [O4]okay[/]!”
-  spoken: “[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/][D7]'ll[/] [D2]eat[/] [P1]in[/] [T1]the[/] [S2]kitchen[/]. [T8]It[/][D1]'s[/] [O4]okay[/]!”
+  text: "“[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/] [D7]will[/] [D2]eat[/] [P1]in[/] [T1]the[/] [S2]kitchen[/]. [O4]No[/] [S10]problem[/]!”"
+  spoken: "“[C4]If[/] [T8]it[/] [D2]rains[/], [T8]we[/][D7]'ll[/] [D2]eat[/] [P1]in[/] [T1]the[/] [S2]kitchen[/]. [O4]No[/] [S10]problem[/]!”"
 - speaker: anna
   kind: narration
   emotion: happy

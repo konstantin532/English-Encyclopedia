@@ -38,7 +38,7 @@ script:
 - speaker: tom
   kind: speech
   emotion: tired
-  text: “[O4]Yes[/]. [T5]Every[/] [S7]day[/].”
+  text: "“[O4]Yeah[/]. [T5]Every[/] [S7]day[/].”"
 - speaker: tom
   kind: narration
   emotion: worried
@@ -48,8 +48,8 @@ script:
   kind: speech
   emotion: excited
   music: happy
-  text: "[S1]Tom[/]! [T9]There[/] [D1]is[/] [T1]an[/] [J2]old[/] [S2]mailbox[/] [A3]here[/]!"
-  spoken: "[S1]Tom[/]! [T9]There[/][D1]'s[/] [T1]an[/] [J2]old[/] [S2]mailbox[/] [A3]here[/]!"
+  text: "[O1]Hey[/], [S1]Tom[/]! [T9]There[/] [D1]is[/] [T1]an[/] [J2]old[/] [S2]mailbox[/] [A3]here[/]!"
+  spoken: "[O1]Hey[/], [S1]Tom[/]! [T9]There[/][D1]'s[/] [T1]an[/] [J2]old[/] [S2]mailbox[/] [A3]here[/]!"
 - speaker: tom
   kind: narration
   emotion: excited

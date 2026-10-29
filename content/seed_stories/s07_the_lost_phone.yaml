@@ -57,7 +57,7 @@ script:
 - speaker: tom
   kind: speech
   emotion: sad
-  text: “[O4]Yes[/], [C5]but[/] [T8]it[/] [D1]was[/] [D2]closed[/] [A2]again[/]. [T8]I[/] [D2]sat[/] [P3]at[/] [T1]the[/] [S4]bus[/] [S4]stop[/] [C1]and[/] [D2]waited[/]. [A2]Then[/] [T8]I[/] [D4]went[/] [S2]home[/].”
+  text: "“[O4]Yeah[/], [C5]but[/] [T8]it[/] [D1]was[/] [D2]closed[/] [A2]again[/]. [T8]I[/] [D2]sat[/] [P3]at[/] [T1]the[/] [S4]bus[/] [S4]stop[/] [C1]and[/] [D2]waited[/]. [A2]Then[/] [T8]I[/] [D4]went[/] [S2]home[/].”"
 - speaker: anna
   kind: narration
   emotion: neutral
@@ -70,12 +70,12 @@ script:
 - speaker: anna
   kind: speech
   emotion: surprised
-  text: “[O4]No[/], [T8]I[/] [D1]am[/] [T3]his[/] [S1]friend[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]his[/] [S2]phone[/]?”
-  spoken: “[O4]No[/], [T8]I[/][D1]'m[/] [T3]his[/] [S1]friend[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]his[/] [S2]phone[/]?”
+  text: "“[O4]No[/], [T2]this[/] [D1]is[/] [T3]his[/] [S1]friend[/] [S1]Anna[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T3]his[/] [S2]phone[/]?”"
 - speaker: photographer
   kind: speech
   emotion: neutral
-  text: “[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]I[/] [D6]found[/] [T8]it[/] [P3]at[/] [T3]my[/] [S2]door[/] [P3]on[/] [S4]Park[/] [S4]Street[/]. [T3]My[/] [S9]name[/] [D1]is[/] [S1]Ruth[/]. [T1]The[/] [S2]photo[/] [S4]shop[/] [D1]is[/] [T3]my[/] [S4]shop[/].”
+  text: "“[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]I[/] [D6]found[/] [T8]it[/] [P3]at[/] [T3]my[/] [S2]door[/] [P3]on[/] [S4]Park[/] [S4]Street[/]. [T3]My[/] [S9]name[/] [D1]is[/] [S1]Ruth[/]. [T1]The[/] [S2]photo[/] [S4]shop[/] [D1]is[/] [T9]mine[/].”"
+  spoken: "“[O4]Yes[/], [T8]I[/] [D1]do[/]. [T8]I[/] [D6]found[/] [T8]it[/] [P3]at[/] [T3]my[/] [S2]door[/] [P3]on[/] [S4]Park[/] [S4]Street[/]. [T3]My[/] [S9]name[/][D1]'s[/] [S1]Ruth[/]. [T1]The[/] [S2]photo[/] [S4]shop[/] [D1]is[/] [T9]mine[/].”"
 - speaker: anna
   kind: speech
   emotion: surprised
@@ -84,17 +84,17 @@ script:
 - speaker: photographer
   kind: speech
   emotion: tired
-  text: “[O4]Yes[/]. [T8]I[/] [D1]am[/] [J2]old[/], [C1]and[/] [T8]I[/] [D1]do[/] [X1]not[/] [D2]work[/] [A2]now[/]. [T8]I[/] [D2]live[/] [A3]upstairs[/].”
-  spoken: “[O4]Yes[/]. [T8]I[/][D1]'m[/] [J2]old[/], [C1]and[/] [T8]I[/] [D1]do[/][X1]n't[/] [D2]work[/] [A2]now[/]. [T8]I[/] [D2]live[/] [A3]upstairs[/].”
+  text: "“[T8]I[/] [D6]know[/]. [T8]I[/] [D1]am[/] [J2]old[/], [C1]and[/] [T8]I[/] [D1]do[/] [X1]not[/] [D2]work[/] [A2]now[/]. [T8]I[/] [D2]live[/] [A3]upstairs[/].”"
+  spoken: "“[T8]I[/] [D6]know[/]. [T8]I[/][D1]'m[/] [J2]old[/], [C1]and[/] [T8]I[/] [D1]do[/][X1]n't[/] [D2]work[/] [A2]now[/]. [T8]I[/] [D2]live[/] [A3]upstairs[/].”"
 - speaker: anna
   kind: speech
   emotion: happy
-  text: “[O2]Thank[/] [T8]you[/], [S1]Ruth[/]! [D7]Can[/] [S1]Tom[/] [D4]come[/] [P5]for[/] [T8]it[/] [A2]today[/]?”
+  text: "“[O3]Oh[/], [O2]thank you[/], [S1]Ruth[/]! [D7]Can[/] [S1]Tom[/] [D4]come[/] [P5]for[/] [T8]it[/] [A2]today[/]?”"
 - speaker: photographer
   kind: speech
   emotion: neutral
-  text: “[O4]Yes[/], [P3]at[/] [N3]four[/] [N3]o'clock[/]. [S1]Anna[/], [T9]there[/] [D1]is[/] [T1]a[/] [S2]photo[/] [P6]of[/] [T1]a[/] [J2]white[/] [S2]house[/] [P3]on[/] [T3]his[/] [S2]phone[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]house[/]?”
-  spoken: “[O4]Yes[/], [P3]at[/] [N3]four[/] [N3]o'clock[/]. [S1]Anna[/], [T9]there[/][D1]'s[/] [T1]a[/] [S2]photo[/] [P6]of[/] [T1]a[/] [J2]white[/] [S2]house[/] [P3]on[/] [T3]his[/] [S2]phone[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]house[/]?”
+  text: "“[J4]Sure[/], [P3]at[/] [N3]four[/] [N3]o'clock[/]. [S1]Anna[/], [T9]there[/] [D1]is[/] [T1]a[/] [S2]photo[/] [P6]of[/] [T1]a[/] [J2]white[/] [S2]house[/] [P3]on[/] [T3]his[/] [S2]phone[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]house[/]?”"
+  spoken: "“[J4]Sure[/], [P3]at[/] [N3]four[/] [N3]o'clock[/]. [S1]Anna[/], [T9]there[/][D1]'s[/] [T1]a[/] [S2]photo[/] [P6]of[/] [T1]a[/] [J2]white[/] [S2]house[/] [P3]on[/] [T3]his[/] [S2]phone[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]house[/]?”"
 - speaker: anna
   kind: speech
   emotion: neutral
@@ -121,17 +121,17 @@ script:
   kind: speech
   emotion: happy
   music: calm
-  text: “[F4]So[/] [T3]my[/] [S2]phone[/] [D1]is[/] [X1]not[/] [D2]lost[/]! [T8]It[/] [D1]is[/] [P3]on[/] [S4]Park[/] [S4]Street[/]!”
-  spoken: “[F4]So[/] [T3]my[/] [S2]phone[/] [D1]is[/][X1]n't[/] [D2]lost[/]! [T8]It[/][D1]'s[/] [P3]on[/] [S4]Park[/] [S4]Street[/]!”
+  text: "“[O5]Wow[/]! [F4]So[/] [T3]my[/] [S2]phone[/] [D1]is[/] [X1]not[/] [D2]lost[/]! [T8]It[/] [D1]is[/] [P3]on[/] [S4]Park[/] [S4]Street[/]!”"
+  spoken: "“[O5]Wow[/]! [F4]So[/] [T3]my[/] [S2]phone[/] [D1]is[/][X1]n't[/] [D2]lost[/]! [T8]It[/][D1]'s[/] [P3]on[/] [S4]Park[/] [S4]Street[/]!”"
 - speaker: anna
   kind: speech
   emotion: happy
-  text: “[O4]Yes[/], [S1]Tom[/]. [C1]And[/] [S1]Ruth[/] [D6]knew[/] [S1]Rose[/]!”
+  text: "“[O4]Yeah[/], [S1]Tom[/]. [C1]And[/] [S1]Ruth[/] [D6]knew[/] [S1]Rose[/]!”"
 - speaker: tom
   kind: speech
   emotion: happy
-  text: “[O2]Thank[/] [T8]you[/], [S1]Anna[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]. [T8]You[/] [D1]are[/] [T1]a[/] [J3]good[/] [S1]friend[/].”
-  spoken: “[O2]Thank[/] [T8]you[/], [S1]Anna[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]. [T8]You[/][D1]'re[/] [T1]a[/] [J3]good[/] [S1]friend[/].”
+  text: "“[O2]Thanks[/], [S1]Anna[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]! [T8]You[/] [D1]are[/] [T1]a[/] [J3]good[/] [S1]friend[/].”"
+  spoken: "“[O2]Thanks[/], [S1]Anna[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]! [T8]You[/][D1]'re[/] [T1]a[/] [J3]good[/] [S1]friend[/].”"
 - speaker: anna
   kind: narration
   emotion: neutral
