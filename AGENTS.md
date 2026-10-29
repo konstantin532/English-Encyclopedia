@@ -44,6 +44,12 @@
 
 Источники истины для ID, классов, маркеров и цветов: `apps/taxonomy/registry.py`, `apps/curriculum/registry.py`. Остальные специальные правила, включая IPA, сокращения, загрузку контента и тестовый раннер, обязательны согласно `CLAUDE.md`.
 
+**Навыки проекта** лежат в `.claude/skills/`. Codex не находит их автоматически (он ищет только `.agents/skills/`), поэтому перед работой по теме прочитай нужный `SKILL.md` сам:
+- анимации и GSAP — `.claude/skills/gsap-core/`, по задаче также `gsap-timeline`, `gsap-scrolltrigger`, `gsap-performance`, `gsap-plugins`, `gsap-utils`. `gsap-react` и `gsap-frameworks` не нужны: в проекте ванильный JS;
+- дизайн, вёрстка, типографика, доступность интерфейса — `.claude/skills/ui-ux-pro-max/`;
+- PostgreSQL: схема, миграции, индексы, запросы, права доступа — `.claude/skills/supabase-postgres-best-practices/`;
+- Supabase — `.claude/skills/supabase/`, только если задача касается именно Supabase.
+
 - **Лексика:** до добавления ищи `lemma` и `forms` во всём `content/seed_lexicon/`. Форма известного слова — не новая единица. Новое значение слова требует `grammar_features: [new_sense]`. Не обходи `audit_duplicate_words` из `apps/publishing/audit.py`.
 - **Истории:** доля знакомой лексики A1 — не менее 90%; A1+ и выше — не менее 95% (`STORY_KNOWN_SHARE`). Проверяй повторение единиц прошлых уровней, как описано в `CLAUDE.md`. Не выдавай непроверенный CEFR за подтверждённый.
 - **Python:** затронутые тесты; перед завершением этапа — `uv run python manage.py test tests --parallel auto` согласно `CLAUDE.md`, если окружение позволяет.
