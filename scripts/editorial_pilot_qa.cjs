@@ -24,6 +24,7 @@ const routes = { week3: '/levels/a1/weeks/3/', lesson: '/lessons/a1-cafe-order/'
         for (const [name, route] of Object.entries(routes)) {
           const response = await page.goto(base + route, { waitUntil: 'networkidle' });
           assert.equal(response.status(), 200);
+          await page.evaluate(() => document.fonts.ready);
           const state = await page.evaluate(({ width, theme, name }) => ({
             name, width, theme,
             overflow: document.documentElement.scrollWidth > innerWidth,
@@ -31,6 +32,10 @@ const routes = { week3: '/levels/a1/weeks/3/', lesson: '/lessons/a1-cafe-order/'
             themeAttribute: document.documentElement.dataset.theme,
             motion: document.documentElement.dataset.motion,
             font: getComputedStyle(document.querySelector('.editorial-specimen')).fontFamily,
+            firstContentTop: name === 'lesson' ? document.querySelector('#layer-1 .annotated p').getBoundingClientRect().top : null,
+            contentLineHeight: name === 'lesson' ? parseFloat(getComputedStyle(document.querySelector('#layer-1 .annotated p')).lineHeight) : null,
+            viewportHeight: innerHeight,
+            guideOpen: name === 'lesson' ? document.querySelector('[data-editorial-guide]').open : null,
           }), { width, theme, name });
           if (state.overflow) {
             state.overflowElements = await page.evaluate(() => [...document.querySelectorAll('body *')].map(e => ({tag:e.tagName,cls:e.className,x:e.getBoundingClientRect().x,right:e.getBoundingClientRect().right,width:e.getBoundingClientRect().width})).filter(e => e.width && (e.x < -1 || e.right > innerWidth+1)).slice(0,30));
@@ -38,9 +43,12 @@ const routes = { week3: '/levels/a1/weeks/3/', lesson: '/lessons/a1-cafe-order/'
           }
           console.log('EDITORIAL_STATE '+JSON.stringify(state));
           assert.equal(state.overflow, false, JSON.stringify(state));
+          if (name === 'lesson' && width <= 390) {
+            assert.ok(state.firstContentTop + 2 * state.contentLineHeight <= state.viewportHeight, 'The lesson must start on the first screen: ' + JSON.stringify(state));
+          }
           assert.equal(state.notesMatch, true);
+          if (name === 'lesson') assert.equal(state.guideOpen, width >= 1100);
           assert.equal(state.motion, 'minimal');
-          await page.evaluate(() => document.fonts.ready);
           assert.match(state.font, /Literata/);
           rows.push(state);
           await page.screenshot({ path: path.join(output, name + '-' + width + '-' + theme + '.png') });
@@ -61,6 +69,16 @@ const routes = { week3: '/levels/a1/weeks/3/', lesson: '/lessons/a1-cafe-order/'
             await page.screenshot({ path: path.join(output, 'lesson-reading-' + width + '-' + theme + '.png') });
           }
           if (width < 1100) {
+            if (name === 'lesson') {
+              const guide = page.locator('[data-editorial-guide]');
+              const summary = guide.locator(':scope > summary');
+              await summary.focus();
+              await page.keyboard.press('Enter');
+              assert.equal(await guide.evaluate(e => e.open), true);
+              await page.keyboard.press('Space');
+              assert.equal(await guide.evaluate(e => e.open), false);
+              await page.keyboard.press('Enter');
+            }
             const note = page.locator('[data-editorial-note]').first();
             await note.locator('summary').focus();
             await page.keyboard.press('Enter');
@@ -88,6 +106,17 @@ const routes = { week3: '/levels/a1/weeks/3/', lesson: '/lessons/a1-cafe-order/'
     for (const route of Object.values(routes)) {
       await fallback.goto(base + route, { waitUntil: 'networkidle' });
       assert.equal(await fallback.locator('[data-editorial-note]').evaluateAll(es => es.length > 0 && es.every(e => e.open)), true);
+      if (route === routes.lesson) {
+        await fallback.evaluate(() => document.fonts.ready);
+        const visibleStart = await fallback.locator('#layer-1 .annotated p').first().evaluate(e => e.getBoundingClientRect().top + 2 * parseFloat(getComputedStyle(e).lineHeight) <= innerHeight);
+        assert.equal(visibleStart, true, 'The lesson must also start on the first screen without JavaScript');
+        const guide = fallback.locator('[data-editorial-guide]');
+        assert.equal(await guide.evaluate(e => e.open), false);
+        await guide.locator(':scope > summary').focus();
+        await fallback.keyboard.press('Enter');
+        assert.equal(await guide.evaluate(e => e.open), true);
+        assert.ok(await fallback.locator('[data-editorial-note]:visible').count() > 0);
+      }
     }
     await nojs.close();
     assert.deepEqual(errors, []);

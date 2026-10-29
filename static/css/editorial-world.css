@@ -787,6 +787,23 @@
     display: grid;
     gap: 28px;
   }
+  [data-editorial-pilot] .editorial-guide {
+    margin-bottom: 20px;
+  }
+  [data-editorial-pilot] .editorial-guide > summary {
+    min-height: 44px;
+    padding-block: 12px;
+    border-block: 1px solid var(--rule);
+    color: var(--atlas-forest-2);
+    font: 600 16px/1.5 var(--font-ui);
+    cursor: pointer;
+  }
+  [data-editorial-pilot] .editorial-guide[open] > summary {
+    margin-bottom: 24px;
+  }
+  [data-editorial-pilot] .editorial-guide > .editorial-opening {
+    margin-bottom: 0;
+  }
   [data-editorial-pilot] .editorial-opening {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 185px;
@@ -892,6 +909,9 @@
     [data-editorial-pilot] .lesson-grid {
       grid-template-columns: minmax(0, 1fr);
     }
+    [data-editorial-pilot][data-editorial-pilot=lesson] .lesson-grid > .aside {
+      order: 0;
+    }
     [data-editorial-pilot] .story-script .script-line {
       grid-template-columns: 88px minmax(0, 1fr);
       gap: 12px 20px;
@@ -934,6 +954,11 @@
     [data-editorial-pilot] .editorial-kicker {
       font-size: 11px;
       letter-spacing: 0.1em;
+    }
+    [data-editorial-pilot] .page-head {
+      padding-top: 0;
+      padding-bottom: 16px;
+      margin-bottom: 12px;
     }
     [data-editorial-pilot] .page-head h1 {
       font-size: 30px;

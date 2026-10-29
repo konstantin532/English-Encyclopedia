@@ -13,7 +13,10 @@
   <div class="lesson-grid">
     <article>
       {% if a1_guide and editorial_pilot %}
-      {% include "components/editorial_opening.html" %}
+      <details class="editorial-guide" data-editorial-guide>
+        <summary>Краткая опора перед уроком</summary>
+        {% include "components/editorial_opening.html" %}
+      </details>
       {% elif a1_guide %}
       <section id="beginner-steps" class="a1-clarity-bridge" aria-labelledby="a1-clarity-title">
         <h2 id="a1-clarity-title">Понять за минуту — без сложных терминов</h2>

@@ -69,6 +69,10 @@
     .editorial-sidenote > div { padding-top: 8px; }
     .editorial-sidenote p { font-size: inherit; margin: 12px 0 0; }
     .editorial-margin { display: grid; gap: 28px; }
+    .editorial-guide { margin-bottom: 20px; }
+    .editorial-guide > summary { min-height: 44px; padding-block: 12px; border-block: 1px solid var(--rule); color: var(--atlas-forest-2); font: 600 16px/1.5 var(--font-ui); cursor: pointer; }
+    .editorial-guide[open] > summary { margin-bottom: 24px; }
+    .editorial-guide > .editorial-opening { margin-bottom: 0; }
     .editorial-opening { display: grid; grid-template-columns: minmax(0, 1fr) 185px; gap: 24px 32px; padding: 0 0 40px; margin-bottom: 44px; border-bottom: 1px solid var(--rule); }
     .editorial-opening h2 { font: 500 30px/1.4 var(--font-read); margin: 0 0 20px; }
     .editorial-opening-main > p:not(.editorial-kicker) { font-size: 15px; color: var(--muted); }
@@ -97,6 +101,8 @@
 
     @media (max-width: 1099px) {
       .lesson-grid { grid-template-columns: minmax(0, 1fr); }
+      // Keep the mobile glossary after the lesson, matching the document order.
+      &[data-editorial-pilot="lesson"] .lesson-grid > .aside { order: 0; }
       .story-script .script-line { grid-template-columns: 88px minmax(0, 1fr); gap: 12px 20px; }
       .editorial-dialogue-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
       .editorial-dialogue-row > .editorial-full-note { grid-column: 1; margin: 0 0 24px 108px; }
@@ -111,6 +117,7 @@
       .editorial-chapter-copy { padding: 24px 16px; }
       .editorial-chapter-number { font-size: 38px; }
       .editorial-kicker { font-size: 11px; letter-spacing: .1em; }
+      .page-head { padding-top: 0; padding-bottom: 16px; margin-bottom: 12px; }
       .page-head h1 { font-size: 30px; }
       .layer { font-size: calc(17px * var(--reader-scale)); }
       .editorial-specimen, .line-text, .example, .editorial-phrase > a[lang=en] { font-size: calc(22px * var(--reader-scale)); }
