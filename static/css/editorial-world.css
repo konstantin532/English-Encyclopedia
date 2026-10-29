@@ -8,7 +8,7 @@
     --editorial-halo: color-mix(in srgb, var(--cinema-gold) 12%, transparent);
     --editorial-shadow: color-mix(in srgb, var(--cinema-deep) 12%, transparent);
   }
-  /* Paper atmosphere - visible even with scripts and motion turned off. */
+  /* Paper atmosphere — visible even with scripts and motion turned off. */
   .studio-workspace > main {
     background: radial-gradient(ellipse 76% 32% at 22% 1%, var(--editorial-halo), transparent 84%), radial-gradient(ellipse 49% 26% at 91% 42%, color-mix(in srgb, var(--studio-mint) 34%, transparent), transparent 92%);
   }
@@ -313,7 +313,7 @@
   }
 }
 @layer ee-polish {
-  /* A1 illustrated chapter collection - art is absolutely positioned so card geometry stays intact. */
+  /* A1 illustrated chapter collection — art is absolutely positioned so card geometry stays intact. */
   .week-card-atlas {
     position: relative;
     isolation: isolate;

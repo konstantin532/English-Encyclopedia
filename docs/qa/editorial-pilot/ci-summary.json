@@ -1,0 +1,175 @@
+{
+  "head": "0eb894730a9703abdae2b7f38ef599d12c3b2e9d",
+  "base": "898e0f6f92132f28432e3a2a934c151d900d36a4",
+  "run": "https://github.com/konstantin532/English-Encyclopedia/actions/runs/40814712910",
+  "artifact": "https://github.com/konstantin532/English-Encyclopedia/actions/runs/40814712910/artifacts/12872470424",
+  "states": [
+    {
+      "name": "week3",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 1280,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 1280,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 360,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 360,
+      "theme": "light",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "week3",
+      "width": 360,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "lesson",
+      "width": 360,
+      "theme": "dark",
+      "overflow": false,
+      "notesMatch": true,
+      "themeAttribute": "light",
+      "motion": "minimal",
+      "font": "Literata, Georgia, \"Times New Roman\", serif"
+    }
+  ],
+  "lcpMediansMs": {
+    "week3_before": 460,
+    "week3_after": 400,
+    "lesson_before": 424,
+    "lesson_after": 424
+  },
+  "method": "Five paired unthrottled Chromium LCP samples, fresh contexts, 1440x900, reduced motion. Raw samples and screenshots in linked artifact; not production measurements."
+}
