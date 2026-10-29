@@ -32,7 +32,12 @@ const routes = { week3: '/levels/a1/weeks/3/', lesson: '/lessons/a1-cafe-order/'
             motion: document.documentElement.dataset.motion,
             font: getComputedStyle(document.querySelector('.editorial-specimen')).fontFamily,
           }), { width, theme, name });
-          assert.equal(state.overflow, false);
+          if (state.overflow) {
+            state.overflowElements = await page.evaluate(() => [...document.querySelectorAll('body *')].map(e => ({tag:e.tagName,cls:e.className,x:e.getBoundingClientRect().x,right:e.getBoundingClientRect().right,width:e.getBoundingClientRect().width})).filter(e => e.width && (e.x < -1 || e.right > innerWidth+1)).slice(0,30));
+            await page.screenshot({path:path.join(output, 'overflow-' + name + '-' + width + '-' + theme + '.png')});
+          }
+          console.log('EDITORIAL_STATE '+JSON.stringify(state));
+          assert.equal(state.overflow, false, JSON.stringify(state));
           assert.equal(state.notesMatch, true);
           assert.equal(state.motion, 'minimal');
           await page.evaluate(() => document.fonts.ready);
