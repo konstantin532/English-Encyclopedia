@@ -10,26 +10,27 @@ story_beat:
 script:
   - speaker: clerk
     emotion: happy
-    text: "[J3]Good[/] [S7]morning[/]! [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?"
-    ru: "Доброе утро! Чем могу помочь?"
+    text: "[O1]Hi[/]! [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?"
+    ru: "Здравствуйте! Чем могу помочь?"
   - speaker: anna
     text: "[O4]Yes[/], [O8]please[/]. [D1]Is[/] [T9]there[/] [S3]milk[/]?"
     ru: "Да, пожалуйста. Молоко есть?"
   - speaker: clerk
-    text: "[O4]Yes[/], [T9]there[/] [D1]is[/]. [T1]The[/] [S3]milk[/] [D1]is[/] [A3]here[/]."
-    ru: "Да, есть. Молоко вот здесь."
+    text: "[O4]Yes[/], [T9]there[/] [D1]is[/]. [T8]It[/] [D1]is[/] [A3]here[/]."
+    spoken: "[O4]Yes[/], [T9]there[/] [D1]is[/]. [T8]It[/][D1]'s[/] [A3]here[/]."
+    ru: "Да, есть. Вот здесь."
   - speaker: tom
     emotion: excited
-    text: "[C1]And[/] [T9]there[/] [D1]are[/] [S3]apples[/]! [D7]Can[/] [T8]I[/] [D1]have[/] [T4]some[/] [J2]red[/] [S3]apples[/], [O8]please[/]?"
-    ru: "А ещё есть яблоки! Можно мне красных яблок, пожалуйста?"
+    text: "[O3]Oh[/], [C1]and[/] [T9]there[/] [D1]are[/] [S3]apples[/]! [D7]Can[/] [T8]I[/] [D1]have[/] [T4]some[/] [J2]red[/] [S3]apples[/], [O8]please[/]?"
+    ru: "О, тут ещё и яблоки! Можно мне красных яблок, пожалуйста?"
   - speaker: clerk
     emotion: happy
     text: "[N1]Six[/] [J2]red[/] [S3]apples[/]. [T2]That[/] [D1]is[/] [N6]three dollars[/]. [T8]They[/] [D1]are[/] [J3]cheap[/]!"
     spoken: "[N1]Six[/] [J2]red[/] [S3]apples[/]. [T2]That[/][D1]'s[/] [N6]three dollars[/]. [T8]They[/][D1]'re[/] [J3]cheap[/]!"
     ru: "Шесть красных яблок. С вас три доллара. Они дешёвые!"
   - speaker: anna
-    text: "[D1]Is[/] [T9]there[/] [S6]cat[/] [S3]food[/], [O8]please[/]?"
-    ru: "А корм для кошек есть?"
+    text: "[O7]Hmm[/]… [D1]is[/] [T9]there[/] [S6]cat[/] [S3]food[/]?"
+    ru: "Хм… а корм для кошек есть?"
   - speaker: clerk
     emotion: sad
     text: "[O2]Sorry[/], [T9]there[/] [D1]is[/] [T4]no[/] [S6]cat[/] [S3]food[/]."
@@ -37,8 +38,8 @@ script:
     ru: "Извините, корма для кошек нет."
   - speaker: tom
     emotion: surprised
-    text: "[T4]No[/] [S6]cat[/] [S3]food[/]? [S1]Box[/] [D3]likes[/] [S3]milk[/]! [S6]Cat[/] [S3]food[/] [D1]is[/] [J3]expensive[/]!"
-    ru: "Корма для кошек нет? Box любит молоко! Корм для кошек дорогой!"
+    text: "[T4]No[/] [S6]cat[/] [S3]food[/]? [O3]Oh[/], [S6]cat[/] [S3]food[/] [D1]is[/] [J3]expensive[/]! [S1]Box[/] [D3]likes[/] [S3]milk[/]!"
+    ru: "Корма нет? Ну, корм для кошек дорогой! Box любит молоко!"
   - speaker: anna
     text: "[A6]How[/] [T4]much[/] [D1]is[/] [T1]the[/] [S3]milk[/]?"
     ru: "Сколько стоит молоко?"

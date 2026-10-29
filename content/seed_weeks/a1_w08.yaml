@@ -31,12 +31,12 @@ script:
     ru: "Справа? Рядом с кафе Мии?"
   - speaker: passerby
     emotion: happy
-    text: "[O4]Yes[/]! [C1]And[/] [T1]the[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]."
-    ru: "Да! А мастерская — между банком и гостиницей."
+    text: "[O4]Yeah[/]! [C1]And[/] [T1]the[/] [S2]key[/] [S4]shop[/] [D1]is[/] [P1]between[/] [T1]the[/] [S4]bank[/] [C1]and[/] [T1]the[/] [S4]hotel[/]."
+    ru: "Ага! А мастерская — между банком и гостиницей."
   - speaker: anna
     emotion: happy
-    text: "[O2]Thank you[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [S4]right[/]."
-    ru: "Спасибо! Прямо, налево и справа."
+    text: "[O2]Thanks a lot[/]! [A3]Straight[/], [A3]left[/], [C1]and[/] [P1]on[/] [T1]the[/] [S4]right[/]."
+    ru: "Большое спасибо! Прямо, налево и справа."
   - speaker: passerby
     emotion: happy
     text: "[T8]You[/] [D1]are[/] [J3]welcome[/]! [D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/]!"
@@ -44,9 +44,9 @@ script:
     ru: "Пожалуйста! Хорошего дня!"
   - speaker: tom
     emotion: excited
-    text: "[S1]Anna[/]! [A3]Here[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/]!"
-    spoken: "[S1]Anna[/]! [A3]Here[/][D1]'s[/] [T1]the[/] [S2]key[/] [S4]shop[/]!"
-    ru: "Анна! Вот мастерская!"
+    text: "[O3]Oh[/], [S1]Anna[/]! [A3]Here[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/]!"
+    spoken: "[O3]Oh[/], [S1]Anna[/]! [A3]Here[/][D1]'s[/] [T1]the[/] [S2]key[/] [S4]shop[/]!"
+    ru: "О, Анна! Вот мастерская!"
 twister:
   number: 8
   series: sounds

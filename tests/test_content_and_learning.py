@@ -37,7 +37,7 @@ class ContentTests(TestCase):
         ensure_content()
 
     def test_packages_loaded(self):
-        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 500)
+        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 516)
         self.assertEqual(Lesson.objects.filter(level__code="A1").count(), 28)
         for slug in ["a1-verb-be", "a1-determiners-a-the-this-my", "a1-have-like-can-do"]:
             lesson = Lesson.objects.get(slug=slug)
@@ -52,7 +52,7 @@ class ContentTests(TestCase):
         before = LexicalUnit.objects.count()
         call_command("load_content", verbosity=0)
         self.assertEqual(LexicalUnit.objects.count(), before)
-        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 500)
+        self.assertEqual(LexicalUnit.objects.filter(internal_level__code="A1").count(), 516)
 
     def test_cefr_only_with_source(self):
         # Lemma/POS evidence remains partial; verified senses require a direct source.

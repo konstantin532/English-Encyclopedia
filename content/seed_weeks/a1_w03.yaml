@@ -18,28 +18,28 @@ script:
     ru: "Мне один кофе и один чай, пожалуйста."
   - speaker: barista
     emotion: worried
-    text: "[O2]Sorry[/]? [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/], [O8]please[/]?"
-    ru: "Простите? Повторите, пожалуйста."
+    text: "[O2]Sorry[/]? [D7]Can[/] [T8]you[/] [D5]say[/] [T8]it[/] [A2]again[/]?"
+    ru: "Простите? Повторите, пожалуйста?"
   - speaker: tom
-    text: "[N1]One[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/]. [C1]And[/] [D7]can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cookie[/], [O8]please[/]?"
-    ru: "Один кофе и один чай. И можно мне печенье, пожалуйста?"
+    text: "[O3]Oh[/], [O2]sorry[/]! [N1]One[/] [S3]coffee[/] [C1]and[/] [N1]one[/] [S3]tea[/]. [C1]And[/] [D7]can[/] [T8]I[/] [D1]have[/] [T1]a[/] [S3]cookie[/], [O8]please[/]?"
+    ru: "Ой, извините! Один кофе и один чай. И можно мне печенье, пожалуйста?"
   - speaker: barista
     emotion: happy
     text: "[O4]Yes[/]! [A3]Here[/] [T8]you[/] [D1]are[/]."
     ru: "Конечно! Вот, пожалуйста."
   - speaker: anna
     emotion: excited
-    text: "[O2]Thank you[/]! [T1]The[/] [S3]cookie[/] [D1]is[/] [J1]big[/]! [T8]I[/] [D3]want[/] [N1]one[/]!"
-    ru: "Спасибо! Какое большое печенье! Я тоже такое хочу!"
+    text: "[O2]Thank you[/]! [O5]Wow[/], [T1]the[/] [S3]cookie[/] [D1]is[/] [J1]big[/]! [T8]I[/] [D3]want[/] [N1]one[/]!"
+    ru: "Спасибо! Ого, какое большое печенье! Я тоже такое хочу!"
   - speaker: tom
     emotion: surprised
     text: "[S1]Anna[/], [D1]is[/] [T2]this[/] [T3]your[/] [S2]photo[/]?"
     ru: "Анна, это твоя фотография?"
   - speaker: anna
     emotion: worried
-    text: "[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]photo[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]photo[/]?"
-    spoken: "[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/] [T3]my[/] [S2]photo[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]photo[/]?"
-    ru: "Нет, это не моя фотография. Может, твоя?"
+    text: "[O4]No[/], [T8]it[/] [D1]is[/] [X1]not[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]photo[/]?"
+    spoken: "[O4]No[/], [T8]it[/] [D1]is[/][X1]n't[/]. [D1]Is[/] [T8]it[/] [T3]your[/] [S2]photo[/]?"
+    ru: "Нет. Может, твоя?"
   - speaker: tom
     text: "[O4]No[/]. [T8]It[/] [D1]is[/] [T1]a[/] [S1]family[/] [S2]photo[/]."
     spoken: "[O4]No[/]. [T8]It[/][D1]'s[/] [T1]a[/] [S1]family[/] [S2]photo[/]."

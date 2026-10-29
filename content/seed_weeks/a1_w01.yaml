@@ -13,7 +13,7 @@ script:
     emotion: happy
     text: "[J3]Good[/] [S7]morning[/]! [T8]I[/] [D1]am[/] [S1]Tom[/]. [T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]?"
     spoken: "[J3]Good[/] [S7]morning[/]! [T8]I[/][D1]'m[/] [S1]Tom[/]. [T9]What[/][D1]'s[/] [T3]your[/] [S9]name[/]?"
-    ru: "Доброе утро! Я Том. Как вас зовут?"
+    ru: "Доброе утро! Я Том. Как тебя зовут?"
   - speaker: anna
     emotion: happy
     text: "[T3]My[/] [S9]name[/] [D1]is[/] [S1]Anna[/]. [J3]Nice[/] [X2]to[/] [D5]meet[/] [T8]you[/], [S1]Tom[/]!"
@@ -21,14 +21,14 @@ script:
     ru: "Меня зовут Анна. Приятно познакомиться, Том!"
   - speaker: tom
     emotion: happy
-    text: "[T8]I[/] [D1]am[/] [T3]your[/] [S1]neighbor[/], [S1]Anna[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?"
-    spoken: "[T8]I[/][D1]'m[/] [T3]your[/] [S1]neighbor[/], [S1]Anna[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?"
-    ru: "Я ваш сосед, Анна. Вы из России?"
+    text: "[J3]Nice[/] [X2]to[/] [D5]meet[/] [T8]you[/], [S1]Anna[/]! [T8]I[/] [D1]am[/] [T3]your[/] [S1]neighbor[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?"
+    spoken: "[J3]Nice[/] [X2]to[/] [D5]meet[/] [T8]you[/], [S1]Anna[/]! [T8]I[/][D1]'m[/] [T3]your[/] [S1]neighbor[/]. [D1]Are[/] [T8]you[/] [P2]from[/] [S4]Russia[/]?"
+    ru: "Приятно познакомиться, Анна! Я твой сосед. Ты из России?"
   - speaker: anna
     emotion: happy
-    text: "[O4]Yes[/], [T8]I[/] [D1]am[/]. [T8]I[/] [D1]am[/] [P2]from[/] [S4]Russia[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]."
-    spoken: "[O4]Yes[/], [T8]I[/] [D1]am[/]. [T8]I[/][D1]'m[/] [P2]from[/] [S4]Russia[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]."
-    ru: "Да. Я из России. Это мой новый дом."
+    text: "[O4]Yes[/], [T8]I[/] [D1]am[/] [P2]from[/] [S4]Russia[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]."
+    spoken: "[O4]Yes[/], [T8]I[/][D1]'m[/] [P2]from[/] [S4]Russia[/]. [T2]This[/] [D1]is[/] [T3]my[/] [J2]new[/] [S2]house[/]."
+    ru: "Да, я из России. Это мой новый дом."
   - speaker: tom
     emotion: excited
     text: "[T8]It[/] [D1]is[/] [T1]a[/] [J3]nice[/] [S2]house[/], [S1]Anna[/]! [T8]It[/] [D1]is[/] [J1]big[/]!"
@@ -36,8 +36,8 @@ script:
     ru: "Какой хороший дом, Анна! И большой!"
   - speaker: anna
     emotion: happy
-    text: "[O4]Yes[/], [T8]it[/] [D1]is[/]. [S3]Coffee[/], [S1]Tom[/]?"
-    ru: "Да! Будете кофе, Том?"
+    text: "[O4]Yes[/], [T8]it[/] [D1]is[/]! [S3]Coffee[/], [S1]Tom[/]?"
+    ru: "Да! Кофе будешь, Том?"
   - speaker: tom
     emotion: hesitant
     text: "[T8]I[/] [D1]am[/] [J4]busy[/]…"
@@ -47,12 +47,12 @@ script:
     emotion: happy
     text: "[T8]It[/] [D1]is[/] [J3]good[/] [S3]coffee[/]!"
     spoken: "[T8]It[/][D1]'s[/] [J3]good[/] [S3]coffee[/]!"
-    ru: "Кофе отличный!"
+    ru: "Кофе хороший!"
   - speaker: tom
     emotion: happy
     text: "[T8]I[/] [D1]am[/] [X1]not[/] [J4]busy[/]! [O4]Yes[/], [O8]please[/]!"
     spoken: "[T8]I[/][D1]'m[/] [X1]not[/] [J4]busy[/]! [O4]Yes[/], [O8]please[/]!"
-    ru: "Уже свободен! С удовольствием!"
+    ru: "Уже не занят! С удовольствием!"
 twister:
   number: 1
   series: sounds

@@ -1,0 +1,52 @@
+# Живая разговорная речь A1, неделя 2: реакции и короткие разговорные фразы. CEFR не сверялся.
+level: A1
+week: 2
+units:
+  - uid: LX-01049
+    lemma: "oh"
+    meaning: "a short reaction to news or a surprise"
+    class: O3
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/oʊ/"
+    translation_ru: "о!, ах!, ой!"
+    example_en: "[O3]Oh[/], [T8]it[/][D1]'s[/] [T3]your[/] [S2]phone[/]!"
+    example_ru: "О, это твой телефон!"
+    situation: "Живой разговор"
+    usage_note: "Oh — реакция на новость. Американцы говорят его постоянно: Oh, nice! Oh, sorry!"
+  - uid: LX-01050
+    lemma: "wow"
+    meaning: "a reaction of surprise or admiration"
+    class: O5
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/waʊ/"
+    translation_ru: "ого!, вау!"
+    example_en: "[O5]Wow[/], [T8]it[/][D1]'s[/] [T1]a[/] [J1]big[/] [S2]house[/]!"
+    example_ru: "Ого, какой большой дом!"
+    situation: "Живой разговор"
+    usage_note: "Wow — удивление и восхищение. Звучит «вау», губы округлены."
+  - uid: LX-01051
+    lemma: "yeah"
+    meaning: "an informal way to say yes"
+    class: O4
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/jɛ/"
+    translation_ru: "ага, да"
+    example_en: "[O4]Yeah[/], [T2]that[/][D1]'s[/] [T3]my[/] [S2]phone[/]."
+    example_ru: "Ага, это мой телефон."
+    situation: "Живой разговор"
+    usage_note: "Yeah — разговорное yes. С друзьями — yeah, с врачом или начальником лучше yes."
+  - uid: LX-01052
+    lemma: "awesome"
+    meaning: "a reaction meaning very good, great"
+    class: O3
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ˈɔsəm/"
+    translation_ru: "супер!, класс!"
+    example_en: "[O3]Awesome[/]! [T8]I[/] [D3]like[/] [T1]the[/] [S2]book[/]!"
+    example_ru: "Класс! Мне нравится книга!"
+    situation: "Живой разговор"
+    usage_note: "Очень американское слово: «отлично, круто». Произносится «Осэм»."

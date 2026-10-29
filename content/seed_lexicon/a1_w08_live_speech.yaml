@@ -1,0 +1,17 @@
+# Живая разговорная речь A1, неделя 8: реакции и короткие разговорные фразы. CEFR не сверялся.
+level: A1
+week: 8
+units:
+  - uid: LX-01058
+    lemma: "Thanks a lot!"
+    meaning: "a warm, informal thank you"
+    class: O2
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ˈθæŋks ə ˈlɑt/"
+    translation_ru: "Большое спасибо!"
+    example_en: "[O2]Thanks a lot[/]! [D1]Have[/] [T1]a[/] [J3]nice[/] [S7]day[/]!"
+    example_ru: "Большое спасибо! Хорошего дня!"
+    situation: "Живой разговор"
+    usage_note: "Тёплое разговорное «большое спасибо». В Америке звучит чаще, чем Thank you very much."

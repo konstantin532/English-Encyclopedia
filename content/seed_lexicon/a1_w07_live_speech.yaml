@@ -1,0 +1,17 @@
+# Живая разговорная речь A1, неделя 7: реакции и короткие разговорные фразы. CEFR не сверялся.
+level: A1
+week: 7
+units:
+  - uid: LX-01057
+    lemma: "No kidding!"
+    meaning: "a reaction to surprising news"
+    class: O5
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ˈnoʊ ˈkɪdɪŋ/"
+    translation_ru: "Серьёзно? / Без шуток!"
+    example_en: "[T8]He[/] [D2]works[/] [P3]at[/] [S7]night[/]? [O5]No kidding[/]!"
+    example_ru: "Он работает ночью? Не может быть!"
+    situation: "Живой разговор"
+    usage_note: "Реакция «да ты что!». С вопросительной интонацией — «серьёзно?», с утвердительной — «без шуток»."

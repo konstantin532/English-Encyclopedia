@@ -18,7 +18,7 @@ class WeekThirteenExpansionTests(TestCase):
                     'pencil', 'pen', 'page', 'sentence', 'question', 'exercise', 'test',
                     'language', 'easy', 'difficult'}
         week = LexicalUnit.objects.filter(internal_level__code='A1', week__number=13)
-        self.assertEqual(week.count(), 36)
+        self.assertEqual(week.count(), 37)
         self.assertTrue(expected <= set(week.values_list('lemma', flat=True)))
         for lesson in Lesson.objects.filter(level__code='A1', order__in=(25, 26)):
             self.assertEqual(list(lesson.exercises.order_by('order').values_list('order', flat=True)), [1, 2, 3, 4, 5, 6])

@@ -1,0 +1,17 @@
+# Живая разговорная речь A1, неделя 14: реакции и короткие разговорные фразы. CEFR не сверялся.
+level: A1
+week: 14
+units:
+  - uid: LX-01064
+    lemma: "Have a good one!"
+    meaning: "a friendly goodbye to anyone"
+    class: O1
+    unit_type: phrase
+    cefr: unverified
+    verification_status: pending
+    ipa_us: "/ˈhæv ə ˈɡʊd ˈwʌn/"
+    translation_ru: "Хорошего дня! / Всего доброго!"
+    example_en: "[O2]Thanks[/]! [O1]Have a good one[/]!"
+    example_ru: "Спасибо! Всего доброго!"
+    situation: "Живой разговор"
+    usage_note: "Очень американское прощание: кассиру, водителю, соседу. One значит day, evening — что угодно."
