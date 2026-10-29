@@ -1,0 +1,19 @@
+{
+  "viewports": [
+    {"width": 1440, "height": 900, "maxScreens": 2},
+    {"width": 390, "height": 844, "maxScreens": 2.5}
+  ],
+  "pages": [
+    {"name": "home", "title": "Главная", "route": "/", "main": "h1"},
+    {"name": "level-a1", "title": "Курс A1", "route": "/levels/a1/", "main": ".week-list"},
+    {"name": "week-03", "title": "Неделя 3", "route": "/levels/a1/weeks/3/", "main": "#dialogue"},
+    {"name": "week-13", "title": "Неделя 13", "route": "/levels/a1/weeks/13/", "main": "#dialogue"},
+    {"name": "lesson-cafe", "title": "Урок: кафе", "route": "/lessons/a1-cafe-order/", "main": "#beginner-steps, #layer-1"},
+    {"name": "lesson-nouns", "title": "Урок 1: существительные", "route": "/lessons/a1-nouns-first-words/", "main": "#beginner-steps, #layer-1"},
+    {"name": "lesson-a1plus", "title": "Урок A1+", "route": "/lessons/a1p-present-continuous/", "main": "#layer-1"},
+    {"name": "story-01", "title": "История 1", "route": "/stories/1/", "main": "#step-1"},
+    {"name": "poem-03", "title": "Стихотворение 3", "route": "/stories/poems/3/", "main": ".poem"},
+    {"name": "words", "title": "Словарь", "route": "/words/", "main": ".studio-word-grid"},
+    {"name": "classics", "title": "Классика", "route": "/classics/", "main": ".classics-list"}
+  ]
+}

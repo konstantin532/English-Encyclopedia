@@ -23,3 +23,6 @@ node_modules/
 /security-report.txt
 # Generated Graphify knowledge graph output (keep local only)
 /graphify-out/
+
+# Отчёт визуальной проверки (scripts/visual_review.cjs)
+/visual-review/
