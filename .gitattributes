@@ -1,3 +1,12 @@
+# Все текстовые файлы хранятся в репозитории с окончаниями LF (Unix),
+# независимо от настроек Git на Windows. Двоичные файлы Git определяет сам.
+* text=auto eol=lf
+
+# Командные файлы Windows работают надёжнее с CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
 # Generated CSS must be byte-stable on Windows and Linux.
 static/css/*.css text eol=lf
 static/scss/**/*.scss text eol=lf
