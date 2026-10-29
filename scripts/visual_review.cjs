@@ -32,22 +32,26 @@ async function serve(directory, port) {
   throw Error(`Django did not start in ${directory}: ${error}`);
 }
 
-/** Scroll the whole page once so lazy images load, then return to the top. */
+/** Load every image (lazy ones too) and wait until it is decoded, so slow CI machines
+ * do not photograph half-loaded covers. Then scroll once for scroll-triggered UI and return to the top. */
 async function settle(page) {
   await page.addStyleTag({content: STILL_CSS});
   await page.evaluate(async () => {
     await document.fonts.ready;
+    const images = Array.from(document.images);
+    images.forEach(img => { img.loading = 'eager'; });
     const step = Math.max(400, innerHeight);
     for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
       window.scrollTo(0, y);
       await new Promise(resolve => setTimeout(resolve, 60));
     }
     window.scrollTo(0, 0);
-    const pending = Array.from(document.images).filter(img => !img.complete);
     await Promise.race([
-      Promise.all(pending.map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))),
-      new Promise(resolve => setTimeout(resolve, 5000)),
+      Promise.all(images.map(img => (img.complete ? Promise.resolve() : new Promise(resolve => { img.addEventListener('load', resolve, {once: true}); img.addEventListener('error', resolve, {once: true}); }))
+        .then(() => img.decode().catch(() => {})))),
+      new Promise(resolve => setTimeout(resolve, 15000)),
     ]);
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
   });
   await page.waitForLoadState('networkidle').catch(() => {});
 }
