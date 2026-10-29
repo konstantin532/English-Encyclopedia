@@ -7,7 +7,8 @@
 - После изменений контента: `load_content`, `audit_course`, тесты.
 - Тесты: во время работы — быстрый прогон `uv run python manage.py test tests --exclude-tag slow --parallel auto` (или только файл с тестами изменённой части); перед завершением шага и перед слиянием — полный `uv run python manage.py test tests --parallel auto`. Курс грузится в тестовую базу один раз (`tests/runner.py`): в `setUpTestData` звать `ensure_content()`, а не `load_content`. Тест, который ломает или перезагружает весь курс, помечать `@tag("slow")`.
 - Перед завершением работы — проверка страниц в браузере.
-- Скиллы проекта лежат в `.claude/skills/` (GSAP, Supabase, UI/UX Pro Max). Перед любой новой или перерисованной картинкой (обложки, портреты, иллюстрации) прочитать `.agents/skills/ee-illustration/SKILL.md` — общий для Claude и Codex.
+- Общий протокол работы, Git и проверок — [AGENTS.md](AGENTS.md); он обязателен и для Claude. При расхождении с этим файлом сообщи автору.
+- Скиллы проекта лежат в `.agents/skills/` (общие для Claude и Codex); копии в `.claude/skills/` совпадают с ними, это проверяет `tests/test_agent_setup.py`. Перед работой с интерфейсом прочитать [DESIGN.md](DESIGN.md) и навык `encyclopedia-design`. Перед любой новой или перерисованной картинкой (обложки, портреты, иллюстрации) прочитать `.agents/skills/ee-illustration/SKILL.md`.
 - Русская транскрипция строится автоматически из IPA (`apps/lexicon/phonetics.py`, одна таблица на весь курс). Ручной вариант — поле `ipa_ru` у слова или ключ `ru` в `sound_notes` и `pronunciation` стихов. Новый символ IPA добавлять в таблицу, а не обходить вручную.
 
 - При работе с неделями читать спецификацию, план и журнал docs/{specs,plans}/2026-10-14-situation-weeks*.md; записывать решения и проверки в журнал. Контент недель — content/seed_weeks/*.yaml, план — content/manifests/weeks_plan.yaml.

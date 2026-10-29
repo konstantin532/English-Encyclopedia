@@ -1,0 +1,22 @@
+# Настройки Codex для проекта English Encyclopedia.
+# Действуют поверх личного ~/.codex/config.toml. Проверка: /debug-config.
+# Если твоя версия Codex не знает какой-то ключ — /debug-config это покажет.
+
+approval_policy = "on-request"     # спрашивает перед рискованными действиями
+sandbox_mode = "workspace-write"   # пишет только внутри проекта, без сети
+model_reasoning_effort = "high"    # для рискованных задач лучше думать дольше
+
+[features]
+skills = true   # скиллы из .agents/skills/
+undo = true     # /undo откатывает последнюю пачку правок
+
+# Секреты из окружения агенту не передаются.
+[shell_environment_policy]
+inherit = "core"
+exclude = [
+  "*KEY*",
+  "*SECRET*",
+  "*TOKEN*",
+  "*PASSWORD*",
+  "DATABASE_URL",
+]
