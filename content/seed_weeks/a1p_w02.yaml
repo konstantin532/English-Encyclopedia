@@ -25,12 +25,12 @@ script:
   ru: Отлично! В субботу мы с Томом были в музее.
 - speaker: tom
   emotion: tired
-  text: '[T8]It[/] [D1]was[/] [J7]boring[/]. [T9]There[/] [D1]were[/] [N1]twenty[/] [J2]old[/] [S2]chairs[/] [C1]and[/] [N1]one[/] [J2]old[/] [S2]clock[/].'
-  ru: Было скучно. Там были двадцать старых стульев и одни старые часы.
+  text: "[J7]Boring[/]! [T9]There[/] [D1]were[/] [N1]twenty[/] [J2]old[/] [S2]chairs[/] [C1]and[/] [N1]one[/] [J2]old[/] [S2]clock[/]."
+  ru: "Скукота! Там были двадцать старых стульев и одни старые часы."
 - speaker: anna
   emotion: happy
-  text: '[C5]But[/] [T9]there[/] [D1]was[/] [T1]a[/] [J1]big[/] [S4]map[/] [P6]of[/] [T3]our[/] [S4]town[/]! [T8]It[/] [D1]was[/] [A5]very[/] [J7]interesting[/].'
-  ru: Зато там была большая карта нашего города! Было очень интересно.
+  text: "[O3]Oh[/], [D4]come[/] [P3]on[/]! [T9]There[/] [D1]was[/] [T1]a[/] [J1]big[/] [S4]map[/] [P6]of[/] [T3]our[/] [S4]town[/]! [T8]It[/] [D1]was[/] [A5]really[/] [J7]interesting[/]."
+  ru: "Да ладно тебе! Там была большая карта нашего города! Было очень интересно."
 - speaker: mia
   text: '[C1]And[/] [A6]where[/] [D1]were[/] [T8]you[/] [P3]on[/] [S7]Sunday[/]? [T8]I[/] [D1]was[/] [J4]alone[/] [P1]in[/] [T1]the[/] [S4]cafe[/].'
   ru: А где вы были в воскресенье? Я была в кафе одна.
@@ -40,27 +40,27 @@ script:
   ru: Мы были на пляже. Солнце было жаркое, а ветер холодный.
 - speaker: mia
   emotion: surprised
-  text: '[P3]At[/] [T1]the[/] [S6]beach[/]? [D1]Was[/] [T1]the[/] [S3]water[/] [J2]cold[/]?'
-  ru: На пляже? Вода была холодная?
+  text: "[T1]The[/] [S6]beach[/]? [O5]Wow[/]! [D1]Was[/] [T1]the[/] [S3]water[/] [J2]cold[/]?"
+  ru: "На пляже? Ого! Вода была холодная?"
 - speaker: tom
-  text: '[O4]Yes[/], [T8]it[/] [D1]was[/]. [T8]I[/] [D1]was[/] [P1]in[/] [T1]the[/] [S3]water[/] [P5]for[/] [N1]one[/] [S7]minute[/]!'
-  ru: Да. Я был в воде целую минуту!
+  text: "[O4]Yeah[/], [T8]it[/] [D1]was[/]. [T8]I[/] [D1]was[/] [P1]in[/] [T1]the[/] [S3]water[/] [P5]for[/] [N1]one[/] [S7]minute[/]!"
+  ru: "Ага. Я был в воде целую минуту!"
 - speaker: mia
   emotion: happy
   text: '[D1]Were[/] [T8]you[/] [P3]at[/] [S2]home[/] [J8]last[/] [S7]night[/]?'
   ru: А вчера вечером вы были дома?
 - speaker: anna
   emotion: tired
-  text: '[O4]Yes[/], [T8]we[/] [D1]were[/]. [T8]We[/] [D1]were[/] [A5]very[/] [J4]tired[/] [P3]after[/] [T1]the[/] [S6]beach[/].'
-  ru: Да. Мы очень устали после пляжа.
+  text: "[O4]Yeah[/], [T8]we[/] [D1]were[/]. [T8]We[/] [D1]were[/] [A5]really[/] [J4]tired[/] [P3]after[/] [T1]the[/] [S6]beach[/]."
+  ru: "Да. Мы очень устали после пляжа."
 - speaker: mia
   emotion: happy
   text: '[O7]Well[/], [A2]today[/] [T1]the[/] [S4]cafe[/] [D1]is[/] [J2]full[/] [A2]again[/]! [S3]Coffee[/]?'
   ru: Ну а сегодня в кафе опять полно народу! Кофе?
 - speaker: tom
   emotion: happy
-  text: '[N1]Two[/] [S3]coffees[/], [O8]please[/]!'
-  ru: Два кофе, пожалуйста!
+  text: "[O3]Oh[/], [O4]yes[/]! [N1]Two[/] [S3]coffees[/], [O8]please[/]!"
+  ru: "О, да! Два кофе, пожалуйста!"
 twister:
   number: 16
   series: contractions

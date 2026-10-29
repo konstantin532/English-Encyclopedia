@@ -17,8 +17,8 @@ story_beat:
   next_hook_ru: Зонт нашёлся. А через неделю Анна потеряет кое-что поважнее — телефон. История 7.
 script:
 - speaker: agent
-  text: '[J3]Good[/] [S7]morning[/]. [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?'
-  ru: Доброе утро. Чем могу помочь?
+  text: "[O1]Hi[/]. [D7]Can[/] [T8]I[/] [D2]help[/] [T8]you[/]?"
+  ru: "Здравствуйте. Чем могу помочь?"
 - speaker: anna
   emotion: sad
   text: '[O4]Yes[/], [O8]please[/]. [T8]I[/] [D6]forgot[/] [T3]my[/] [S2]umbrella[/] [P1]on[/] [T1]the[/] [S4]bus[/] [A2]yesterday[/].'
@@ -44,22 +44,22 @@ script:
   spoken: '[T8]It[/][D1]''s[/] [J2]pink[/], [P4]with[/] [T1]a[/] [J1]long[/] [J2]black[/] [S2]handle[/]. [T8]It[/] [D1]was[/] [T1]a[/] [S2]gift[/].'
   ru: Розовый, с длинной чёрной ручкой. Это подарок.
 - speaker: agent
-  text: '[D2]Let[/] [T8]me[/] [D6]check[/]. [T2]This[/] [J2]pink[/] [S2]umbrella[/] [D1]has[/] [T1]a[/] [J1]short[/] [S2]handle[/].'
-  ru: Сейчас проверю. У этого розового зонта ручка короткая.
+  text: "[D2]Let[/] [T8]me[/] [D6]check[/]. [O7]Hmm[/]. [T2]This[/] [J2]pink[/] [S2]umbrella[/] [D1]has[/] [T1]a[/] [J1]short[/] [S2]handle[/]."
+  ru: "Сейчас проверю. Хм. У этого розового зонта ручка короткая."
 - speaker: anna
   emotion: sad
-  text: '[O4]No[/], [T2]that[/] [D1]is[/] [X1]not[/] [T9]mine[/]. [T3]My[/] [S2]umbrella[/] [D1]is[/] [J3]different[/].'
-  spoken: '[O4]No[/], [T2]that[/][D1]''s[/] [X1]not[/] [T9]mine[/]. [T3]My[/] [S2]umbrella[/] [D1]is[/] [J3]different[/].'
-  ru: Нет, это не мой. Мой другой.
+  text: "[O4]No[/], [T2]that[/] [D1]is[/] [X1]not[/] [T9]mine[/]. [T9]Mine[/] [D1]is[/] [J3]different[/]."
+  spoken: "[O4]No[/], [T2]that[/][D1]'s[/] [X1]not[/] [T9]mine[/]. [T9]Mine[/] [D1]is[/] [J3]different[/]."
+  ru: "Нет, это не мой. Мой другой."
 - speaker: agent
   emotion: happy
   text: '[D2]Wait[/]! [O9]Here[/] [T8]it[/] [D1]is[/]! [T1]A[/] [S9]driver[/] [D2]brought[/] [T8]it[/] [J8]last[/] [S7]night[/].'
   ru: Подождите! Вот он! Его принёс водитель вчера вечером.
 - speaker: anna
   emotion: happy
-  text: '[T2]That[/] [D1]is[/] [T9]mine[/]! [O2]Thank[/] [T8]you[/]! [T8]I[/] [D1]am[/] [A5]very[/] [J4]lucky[/].'
-  spoken: '[T2]That[/][D1]''s[/] [T9]mine[/]! [O2]Thank[/] [T8]you[/]! [T8]I[/][D1]''m[/] [A5]very[/] [J4]lucky[/].'
-  ru: Это мой! Спасибо! Мне очень повезло.
+  text: "[O3]Oh[/], [T2]that[/] [D1]is[/] [T9]mine[/]! [O2]Thank you[/]! [T8]I[/] [D1]am[/] [A5]really[/] [J4]lucky[/]."
+  spoken: "[O3]Oh[/], [T2]that[/][D1]'s[/] [T9]mine[/]! [O2]Thank you[/]! [T8]I[/][D1]'m[/] [A5]really[/] [J4]lucky[/]."
+  ru: "О, это мой! Спасибо! Мне очень повезло."
 twister:
   number: 19
   series: contractions

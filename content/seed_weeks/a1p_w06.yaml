@@ -18,9 +18,9 @@ story_beat:
 script:
 - speaker: tom
   emotion: worried
-  text: '[O1]Hello[/]! [T8]I[/] [D1]am[/] [S1]Tom[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]. [S1]Anna[/] [D5]called[/] [T8]you[/].'
-  spoken: '[O1]Hello[/]! [T8]I[/][D1]''m[/] [S1]Tom[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]. [S1]Anna[/] [D5]called[/] [T8]you[/].'
-  ru: Здравствуйте! Я Том. Вы нашли мой телефон. Анна вам звонила.
+  text: "[O1]Hi[/]! [T8]I[/] [D1]am[/] [S1]Tom[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]. [S1]Anna[/] [D5]called[/] [T8]you[/]."
+  spoken: "[O1]Hi[/]! [T8]I[/][D1]'m[/] [S1]Tom[/]. [T8]You[/] [D6]found[/] [T3]my[/] [S2]phone[/]. [S1]Anna[/] [D5]called[/] [T8]you[/]."
+  ru: "Здравствуйте! Я Том. Вы нашли мой телефон. Анна вам звонила."
 - speaker: photographer
   emotion: happy
   text: '[O4]Yes[/], [T8]she[/] [D5]called[/] [T8]me[/]. [D4]Come[/] [X3]in[/]! [O9]Here[/] [T8]it[/] [D1]is[/].'
@@ -51,9 +51,9 @@ script:
   spoken: '[T8]I[/] [D1]was[/] [J4]nervous[/]. [T8]I[/][D1]''m[/] [J2]old[/], [C1]and[/] [S1]Rose[/] [D1]was[/] [T3]my[/] [S1]friend[/]. [T8]I[/] [D3]miss[/] [T8]her[/].'
   ru: Я разволновалась. Я старая, а Роуз была моей подругой. Я по ней скучаю.
 - speaker: tom
-  text: '[T8]We[/] [D1]are[/] [O2]sorry[/]. [T8]We[/] [D7]can[/] [D4]come[/] [A2]again[/]. [D7]Can[/] [T8]you[/] [D2]show[/] [T8]us[/] [T3]her[/] [S2]photos[/] [A2]then[/]?'
-  spoken: '[T8]We[/][D1]''re[/] [O2]sorry[/]. [T8]We[/] [D7]can[/] [D4]come[/] [A2]again[/]. [D7]Can[/] [T8]you[/] [D2]show[/] [T8]us[/] [T3]her[/] [S2]photos[/] [A2]then[/]?'
-  ru: Простите. Мы можем прийти ещё раз. Тогда вы покажете нам её фотографии?
+  text: "[O3]Oh[/], [T8]we[/] [D1]are[/] [O2]sorry[/]. [T8]We[/] [D7]can[/] [D4]come[/] [A2]again[/]. [D7]Can[/] [T8]you[/] [D2]show[/] [T8]us[/] [T3]her[/] [S2]photos[/] [A2]then[/]?"
+  spoken: "[O3]Oh[/], [T8]we[/][D1]'re[/] [O2]sorry[/]. [T8]We[/] [D7]can[/] [D4]come[/] [A2]again[/]. [D7]Can[/] [T8]you[/] [D2]show[/] [T8]us[/] [T3]her[/] [S2]photos[/] [A2]then[/]?"
+  ru: "Ой, простите. Мы можем прийти ещё раз. Тогда вы покажете нам её фотографии?"
 - speaker: photographer
   emotion: happy
   text: '[O4]Yes[/]. [T8]I[/] [D1]have[/] [T1]an[/] [J2]old[/] [S2]album[/] [A3]downstairs[/]. [T8]I[/] [D7]can[/] [D2]show[/] [T8]it[/] [P2]to[/] [T8]you[/] [P3]on[/] [S7]Sunday[/].'

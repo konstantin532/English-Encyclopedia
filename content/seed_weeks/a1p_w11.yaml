@@ -17,21 +17,21 @@ story_beat:
   next_hook_ru: Анне лучше, а на выходные обещают солнце. Куда пойти? Неделя 12.
 script:
 - speaker: clerk
-  text: '[O1]Hello[/]. [A6]How[/] [D7]can[/] [T8]I[/] [D2]help[/] [T8]you[/]?'
-  ru: Здравствуйте. Чем могу помочь?
+  text: "[O1]Hi[/]. [A6]How[/] [D7]can[/] [T8]I[/] [D2]help[/] [T8]you[/]?"
+  ru: "Здравствуйте. Чем могу помочь?"
 - speaker: anna
   emotion: tired
-  text: '[O1]Hello[/]. [T8]I[/] [D1]have[/] [T1]a[/] [J4]sore[/] [S5]throat[/] [C1]and[/] [T1]a[/] [S5]cough[/]. [T8]I[/] [D2]slept[/] [A4]badly[/].'
-  ru: Здравствуйте. У меня болит горло и кашель. Я плохо спала.
+  text: "[O1]Hi[/]. [T8]I[/] [D1]have[/] [T1]a[/] [J4]sore[/] [S5]throat[/] [C1]and[/] [T1]a[/] [S5]cough[/]. [T8]I[/] [D2]slept[/] [A4]badly[/]."
+  ru: "Здравствуйте. У меня болит горло и кашель. Я плохо спала."
 - speaker: clerk
   emotion: worried
-  text: '[D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S5]fever[/]?'
-  ru: Температура есть?
+  text: "[O6]Oh no[/]. [D1]Do[/] [T8]you[/] [D1]have[/] [T1]a[/] [S5]fever[/]?"
+  ru: "Ой. Температура есть?"
 - speaker: anna
   emotion: tired
-  text: '[O4]No[/], [T8]I[/] [D1]do[/] [X1]not[/]. [C5]But[/] [T8]I[/] [D1]am[/] [A5]very[/] [J4]tired[/].'
-  spoken: '[O4]No[/], [T8]I[/] [D1]do[/][X1]n''t[/]. [C5]But[/] [T8]I[/][D1]''m[/] [A5]very[/] [J4]tired[/].'
-  ru: Нет. Но я очень устала.
+  text: "[O4]No[/], [T8]I[/] [D1]do[/] [X1]not[/]. [C5]But[/] [T8]I[/] [D1]am[/] [A5]really[/] [J4]tired[/]."
+  spoken: "[O4]No[/], [T8]I[/] [D1]do[/][X1]n't[/]. [C5]But[/] [T8]I[/][D1]'m[/] [A5]really[/] [J4]tired[/]."
+  ru: "Нет. Но я очень устала."
 - speaker: clerk
   text: '[D1]Are[/] [T8]you[/] [J4]allergic[/] [P8]to[/] [T4]any[/] [S5]medicine[/]?'
   ru: У вас есть аллергия на лекарства?
@@ -43,14 +43,14 @@ script:
   spoken: '[A1]Twice[/] [T1]a[/] [S7]day[/], [P3]after[/] [S3]breakfast[/] [C1]and[/] [P3]after[/] [S3]dinner[/]. [T8]You[/] [D1]do[/][X1]n''t[/] [D3]need[/] [T1]a[/] [S5]prescription[/].'
   ru: Два раза в день, после завтрака и после ужина. Рецепт не нужен.
 - speaker: anna
-  text: '[A6]How[/] [A6]long[/] [D1]do[/] [T8]I[/] [D2]take[/] [T8]it[/]?'
-  ru: А сколько дней его пить?
+  text: "[C1]And[/] [A6]how[/] [A6]long[/] [D1]do[/] [T8]I[/] [D2]take[/] [T8]it[/]?"
+  ru: "А сколько дней его пить?"
 - speaker: clerk
   text: '[P3]For[/] [N1]five[/] [S7]days[/]. [D2]Read[/] [T1]the[/] [S2]label[/] [A4]carefully[/]. [C1]And[/] [D2]drink[/] [S3]tea[/] [P4]with[/] [S3]honey[/] [N1]three[/] [S7]times[/] [T1]a[/] [S7]day[/].'
   ru: Пять дней. Внимательно прочитайте инструкцию. И пейте чай с мёдом три раза в день.
 - speaker: anna
-  text: '[T8]I[/] [A1]always[/] [D2]drink[/] [S3]tea[/] [P4]with[/] [S3]honey[/]. [C5]But[/] [T8]I[/] [A1]often[/] [D6]forget[/] [T3]my[/] [S5]medicine[/]!'
-  ru: Чай с мёдом я пью всегда. А вот лекарство часто забываю!
+  text: "[O3]Oh[/], [T8]I[/] [A1]always[/] [D2]drink[/] [S3]tea[/] [P4]with[/] [S3]honey[/]. [C5]But[/] [T8]I[/] [A1]often[/] [D6]forget[/] [T3]my[/] [S5]medicine[/]!"
+  ru: "О, чай с мёдом я пью всегда. А вот лекарство часто забываю!"
 - speaker: clerk
   emotion: happy
   text: '[A2]Then[/] [D2]put[/] [T1]the[/] [S5]pills[/] [P1]next[/] [P1]to[/] [T3]your[/] [S3]tea[/]! [D8]Get[/] [A4]well[/] [A2]soon[/]!'

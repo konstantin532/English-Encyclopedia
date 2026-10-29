@@ -18,13 +18,13 @@ story_beat:
 script:
 - speaker: linda
   emotion: happy
-  text: '[O1]Hello[/], [S1]Tom[/]! [D7]Can[/] [T8]you[/] [D6]hear[/] [T8]me[/]?'
-  ru: Привет, Том! Ты меня слышишь?
+  text: "[O1]Hi[/], [S1]Tom[/]! [D7]Can[/] [T8]you[/] [D6]hear[/] [T8]me[/]?"
+  ru: "Привет, Том! Ты меня слышишь?"
 - speaker: tom
   emotion: happy
-  text: '[O1]Hello[/], [S1]Mom[/]! [O4]Yes[/], [T8]I[/] [D7]can[/] [D6]hear[/] [T8]you[/]. [T8]I[/] [D1]am[/] [P1]in[/] [T1]the[/] [S4]cafe[/] [P3]on[/] [T1]the[/] [S4]corner[/].'
-  spoken: '[O1]Hello[/], [S1]Mom[/]! [O4]Yes[/], [T8]I[/] [D7]can[/] [D6]hear[/] [T8]you[/]. [T8]I[/][D1]''m[/] [P1]in[/] [T1]the[/] [S4]cafe[/] [P3]on[/] [T1]the[/] [S4]corner[/].'
-  ru: Привет, мама! Да, слышу. Я в кафе на углу.
+  text: "[O1]Hi[/], [S1]Mom[/]! [O4]Yeah[/], [T8]I[/] [D7]can[/] [D6]hear[/] [T8]you[/]. [T8]I[/] [D1]am[/] [P3]at[/] [T1]the[/] [S4]cafe[/] [P3]on[/] [T1]the[/] [S4]corner[/]."
+  spoken: "[O1]Hi[/], [S1]Mom[/]! [O4]Yeah[/], [T8]I[/] [D7]can[/] [D6]hear[/] [T8]you[/]. [T8]I[/][D1]'m[/] [P3]at[/] [T1]the[/] [S4]cafe[/] [P3]on[/] [T1]the[/] [S4]corner[/]."
+  ru: "Привет, мам! Ага, слышу. Я в кафе на углу."
 - speaker: linda
   text: '[T9]What[/] [D1]are[/] [T8]you[/] [D2]doing[/] [A5]right[/] [A2]now[/]?'
   ru: Что ты делаешь прямо сейчас?
@@ -35,27 +35,27 @@ script:
   ru: Пью кофе и разговариваю с тобой! Мия печёт печенье.
 - speaker: mia
   emotion: happy
-  text: '[O1]Hello[/]! [J3]Nice[/] [P2]to[/] [D2]meet[/] [T8]you[/]!'
-  ru: Здравствуйте! Приятно познакомиться!
+  text: "[O1]Hi[/]! [J3]Nice[/] [P2]to[/] [D2]meet[/] [T8]you[/]!"
+  ru: "Здравствуйте! Приятно познакомиться!"
 - speaker: linda
   emotion: surprised
-  text: '[J3]Nice[/] [P2]to[/] [D2]meet[/] [T8]you[/] [A5]too[/]! [C1]And[/] [T9]who[/] [D1]is[/] [T2]that[/]? [D1]Is[/] [T9]someone[/] [D2]laughing[/]?'
-  spoken: '[J3]Nice[/] [P2]to[/] [D2]meet[/] [T8]you[/] [A5]too[/]! [C1]And[/] [T9]who[/][D1]''s[/] [T2]that[/]? [D1]Is[/] [T9]someone[/] [D2]laughing[/]?'
-  ru: Мне тоже приятно! А это кто? Кто-то смеётся?
+  text: "[J3]Nice[/] [P2]to[/] [D2]meet[/] [T8]you[/] [A5]too[/]! [O3]Oh[/], [C1]and[/] [T9]who[/] [D1]is[/] [T2]that[/]? [D1]Is[/] [T9]someone[/] [D2]laughing[/]?"
+  spoken: "[J3]Nice[/] [P2]to[/] [D2]meet[/] [T8]you[/] [A5]too[/]! [O3]Oh[/], [C1]and[/] [T9]who[/][D1]'s[/] [T2]that[/]? [D1]Is[/] [T9]someone[/] [D2]laughing[/]?"
+  ru: "Мне тоже приятно! О, а это кто? Кто-то смеётся?"
 - speaker: tom
   text: '[T2]That[/] [D1]is[/] [S1]Anna[/]. [T8]She[/] [D1]is[/] [D2]sitting[/] [P3]at[/] [T1]the[/] [S2]window[/]. [T8]She[/] [D1]is[/] [D5]writing[/] [T1]a[/] [S9]letter[/] [P2]to[/] [T3]her[/] [S1]mom[/] [P1]in[/] [S4]Russia[/].'
   spoken: '[T2]That[/][D1]''s[/] [S1]Anna[/]. [T8]She[/][D1]''s[/] [D2]sitting[/] [P3]at[/] [T1]the[/] [S2]window[/]. [T8]She[/][D1]''s[/] [D5]writing[/] [T1]a[/] [S9]letter[/] [P2]to[/] [T3]her[/] [S1]mom[/] [P1]in[/] [S4]Russia[/].'
   ru: Это Анна. Она сидит у окна. Она пишет письмо маме в Россию.
 - speaker: anna
   emotion: happy
-  text: '[O1]Hello[/]! [O4]Yes[/], [T8]I[/] [D1]am[/] [D5]writing[/] [P2]to[/] [T3]my[/] [S1]mom[/]. [T8]I[/] [A5]really[/] [D3]miss[/] [T3]her[/].'
-  spoken: '[O1]Hello[/]! [O4]Yes[/], [T8]I[/][D1]''m[/] [D5]writing[/] [P2]to[/] [T3]my[/] [S1]mom[/]. [T8]I[/] [A5]really[/] [D3]miss[/] [T3]her[/].'
-  ru: Здравствуйте! Да, пишу маме. Я очень по ней скучаю.
+  text: "[O1]Hi[/]! [O4]Yeah[/], [T8]I[/] [D1]am[/] [D5]writing[/] [P2]to[/] [T3]my[/] [S1]mom[/]. [T8]I[/] [A5]really[/] [D3]miss[/] [T3]her[/]."
+  spoken: "[O1]Hi[/]! [O4]Yeah[/], [T8]I[/][D1]'m[/] [D5]writing[/] [P2]to[/] [T3]my[/] [S1]mom[/]. [T8]I[/] [A5]really[/] [D3]miss[/] [T3]her[/]."
+  ru: "Здравствуйте! Да, пишу маме. Я очень по ней скучаю."
 - speaker: linda
   emotion: happy
-  text: '[T2]That[/] [D1]is[/] [A5]very[/] [J3]nice[/], [S1]Anna[/]. [S1]Moms[/] [D3]love[/] [S9]letters[/].'
-  spoken: '[T2]That[/][D1]''s[/] [A5]very[/] [J3]nice[/], [S1]Anna[/]. [S1]Moms[/] [D3]love[/] [S9]letters[/].'
-  ru: Это очень мило, Анна. Мамы любят письма.
+  text: "[O6]Aww[/], [T2]that[/] [D1]is[/] [A5]really[/] [J3]nice[/], [S1]Anna[/]. [S1]Moms[/] [D3]love[/] [S9]letters[/]."
+  spoken: "[O6]Aww[/], [T2]that[/][D1]'s[/] [A5]really[/] [J3]nice[/], [S1]Anna[/]. [S1]Moms[/] [D3]love[/] [S9]letters[/]."
+  ru: "Оу, как мило, Анна. Мамы любят письма."
 - speaker: linda
   emotion: worried
   text: '[S1]Tom[/], [D1]are[/] [T8]you[/] [D2]wearing[/] [T3]your[/] [J2]blue[/] [S2]jacket[/]? [T8]It[/] [D1]is[/] [J2]cold[/] [A2]today[/]!'

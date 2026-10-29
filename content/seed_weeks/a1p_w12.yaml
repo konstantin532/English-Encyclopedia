@@ -18,22 +18,22 @@ story_beat:
 script:
 - speaker: tom
   emotion: excited
-  text: '[J3]Good[/] [S7]morning[/]! [T8]I[/] [D3]feel[/] [J3]great[/] [A2]today[/]. [D2]Let[/] [T8]us[/] [D4]go[/] [D4]hiking[/] [P1]in[/] [T1]the[/] [S6]mountains[/]!'
-  spoken: '[J3]Good[/] [S7]morning[/]! [T8]I[/] [D3]feel[/] [J3]great[/] [A2]today[/]. [D2]Let[/][T8]''s[/] [D4]go[/] [D4]hiking[/] [P1]in[/] [T1]the[/] [S6]mountains[/]!'
-  ru: Доброе утро! Я сегодня отлично себя чувствую. Пойдём в поход в горы!
+  text: "[S7]Morning[/]! [T8]I[/] [D3]feel[/] [J3]great[/] [A2]today[/]. [D2]Let[/] [T8]us[/] [D4]go[/] [D4]hiking[/] [P1]in[/] [T1]the[/] [S6]mountains[/]!"
+  spoken: "[S7]Morning[/]! [T8]I[/] [D3]feel[/] [J3]great[/] [A2]today[/]. [D2]Let[/][D1]'s[/] [D4]go[/] [D4]hiking[/] [P1]in[/] [T1]the[/] [S6]mountains[/]!"
+  ru: "Доброе утро! Я сегодня отлично себя чувствую. Пойдём в поход в горы!"
 - speaker: anna
-  text: '[T9]What[/] [D1]is[/] [T1]the[/] [S6]weather[/] [P6]like[/]?'
-  spoken: '[T9]What[/][D1]''s[/] [T1]the[/] [S6]weather[/] [P6]like[/]?'
-  ru: А какая погода?
+  text: "[O7]Hmm[/]. [T9]What[/] [D1]is[/] [T1]the[/] [S6]weather[/] [P6]like[/]?"
+  spoken: "[O7]Hmm[/]. [T9]What[/][D1]'s[/] [T1]the[/] [S6]weather[/] [P6]like[/]?"
+  ru: "Хм. А какая погода?"
 - speaker: tom
   text: '[T1]The[/] [S10]forecast[/] [D5]says[/] [S6]rain[/] [P3]in[/] [T1]the[/] [S7]afternoon[/]. [C1]And[/] [T8]it[/] [D1]is[/] [A5]only[/] [N9]forty[/] [N9]degrees[/].'
   spoken: '[T1]The[/] [S10]forecast[/] [D5]says[/] [S6]rain[/] [P3]in[/] [T1]the[/] [S7]afternoon[/]. [C1]And[/] [T8]it[/][D1]''s[/] [A5]only[/] [N9]forty[/] [N9]degrees[/].'
   ru: По прогнозу днём дождь. И всего сорок градусов.
 - speaker: anna
   emotion: worried
-  text: '[N9]Forty[/] [N9]degrees[/]? [T2]That[/] [D1]is[/] [A5]too[/] [J2]cold[/] [P5]for[/] [T1]the[/] [S6]mountains[/]. [T8]I[/] [D1]was[/] [J4]sick[/] [T2]this[/] [S7]week[/].'
-  spoken: '[N9]Forty[/] [N9]degrees[/]? [T2]That[/][D1]''s[/] [A5]too[/] [J2]cold[/] [P5]for[/] [T1]the[/] [S6]mountains[/]. [T8]I[/] [D1]was[/] [J4]sick[/] [T2]this[/] [S7]week[/].'
-  ru: Сорок по Фаренгейту? Для гор слишком холодно. Я на этой неделе болела.
+  text: "[N9]Forty[/] [N9]degrees[/]? [T2]That[/] [D1]is[/] [A5]too[/] [J2]cold[/] [P5]for[/] [T1]the[/] [S6]mountains[/]. [C1]And[/] [T8]I[/] [D1]was[/] [J4]sick[/] [T2]this[/] [S7]week[/]."
+  spoken: "[N9]Forty[/] [N9]degrees[/]? [T2]That[/][D1]'s[/] [A5]too[/] [J2]cold[/] [P5]for[/] [T1]the[/] [S6]mountains[/]. [C1]And[/] [T8]I[/] [D1]was[/] [J4]sick[/] [T2]this[/] [S7]week[/]."
+  ru: "Сорок по Фаренгейту? Для гор слишком холодно. И я на этой неделе болела."
 - speaker: tom
   emotion: sad
   text: '[O4]Okay[/]. [T1]The[/] [S6]mountains[/] [D1]are[/] [A5]too[/] [J1]far[/], [A5]too[/].'
@@ -49,8 +49,8 @@ script:
   ru: Может, лучше короткая прогулка у реки? Это недалеко.
 - speaker: anna
   emotion: happy
-  text: '[J3]Great[/]! [T8]I[/] [D7]can[/] [D2]wear[/] [T3]my[/] [J1]long[/] [J2]gray[/] [S2]coat[/] [C1]and[/] [T3]my[/] [J2]new[/] [S2]boots[/].'
-  ru: Отлично! Надену длинное серое пальто и новые ботинки.
+  text: "[O4]Sounds good[/]! [T8]I[/] [D7]can[/] [D2]wear[/] [T3]my[/] [J1]long[/] [J2]gray[/] [S2]coat[/] [C1]and[/] [T3]my[/] [J2]new[/] [S2]boots[/]."
+  ru: "Давай! Надену длинное серое пальто и новые ботинки."
 - speaker: tom
   text: '[D6]Look[/] [P7]at[/] [T1]the[/] [S6]sky[/]. [T9]There[/] [D1]are[/] [J1]big[/] [J2]dark[/] [S6]clouds[/]. [T8]It[/] [D6]looks[/] [P6]like[/] [S6]rain[/].'
   ru: Посмотри на небо. Большие тёмные тучи. Похоже, будет дождь.

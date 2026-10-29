@@ -26,8 +26,8 @@ script:
   ru: Я ездил в торговый центр. Купил подарок для Мии. У неё в пятницу день рождения.
 - speaker: anna
   emotion: happy
-  text: '[J3]Great[/]! [D7]Can[/] [T8]I[/] [D6]see[/] [T8]it[/]?'
-  ru: Отлично! Можно посмотреть?
+  text: "[O3]Oh[/], [J3]great[/]! [D7]Can[/] [T8]I[/] [D6]see[/] [T8]it[/]?"
+  ru: "О, отлично! Можно посмотреть?"
 - speaker: tom
   emotion: happy
   text: '[O9]Here[/] [T8]you[/] [O9]go[/]. [T8]I[/] [D6]chose[/] [T1]a[/] [S2]scarf[/]. [T8]It[/] [D1]was[/] [P1]on[/] [N6]sale[/]!'
@@ -38,15 +38,15 @@ script:
   ru: Зелёный шарф? Но Мия терпеть не может зелёный!
 - speaker: tom
   emotion: sad
-  text: '[O3]Oh[/] [O3]no[/]! [T8]I[/] [D6]forgot[/]. [T8]I[/] [D2]paid[/] [N1]twenty[/] [N6]dollars[/] [P4]by[/] [S2]card[/].'
-  ru: О нет! Я забыл. Я заплатил картой двадцать долларов.
+  text: "[O6]Oh no[/]! [T8]I[/] [D6]forgot[/]. [C1]And[/] [T8]I[/] [D2]paid[/] [N1]twenty[/] [N6]dollars[/] [P4]by[/] [S2]card[/]."
+  ru: "О нет! Я забыл. А я заплатил картой двадцать долларов."
 - speaker: anna
   text: '[D1]Do[/] [T8]you[/] [D1]have[/] [T1]the[/] [S2]receipt[/]?'
   ru: Чек у тебя есть?
 - speaker: tom
-  text: '[O4]Yes[/], [T8]it[/] [D1]is[/] [P1]in[/] [T3]my[/] [S2]wallet[/]. [T8]I[/] [D4]came[/] [S2]home[/] [P4]by[/] [S4]bus[/], [C1]and[/] [T8]I[/] [D2]took[/] [T1]the[/] [S2]receipt[/] [P4]with[/] [T8]me[/].'
-  spoken: '[O4]Yes[/], [T8]it[/][D1]''s[/] [P1]in[/] [T3]my[/] [S2]wallet[/]. [T8]I[/] [D4]came[/] [S2]home[/] [P4]by[/] [S4]bus[/], [C1]and[/] [T8]I[/] [D2]took[/] [T1]the[/] [S2]receipt[/] [P4]with[/] [T8]me[/].'
-  ru: Да, он в кошельке. Я приехал домой на автобусе и забрал чек с собой.
+  text: "[O4]Yeah[/], [T8]it[/] [D1]is[/] [P1]in[/] [T3]my[/] [S2]wallet[/]. [T8]I[/] [D4]came[/] [S2]home[/] [P4]by[/] [S4]bus[/], [C1]and[/] [T8]I[/] [D2]took[/] [T1]the[/] [S2]receipt[/] [P4]with[/] [T8]me[/]."
+  spoken: "[O4]Yeah[/], [T8]it[/][D1]'s[/] [P1]in[/] [T3]my[/] [S2]wallet[/]. [T8]I[/] [D4]came[/] [S2]home[/] [P4]by[/] [S4]bus[/], [C1]and[/] [T8]I[/] [D2]took[/] [T1]the[/] [S2]receipt[/] [P4]with[/] [T8]me[/]."
+  ru: "Ага, он в кошельке. Я приехал домой на автобусе и забрал чек с собой."
 - speaker: anna
   emotion: happy
   text: '[J3]Good[/]. [T8]We[/] [D7]can[/] [D2]change[/] [T8]it[/] [A2]tomorrow[/]. [J2]Blue[/] [D1]is[/] [T3]her[/] [J3]favorite[/] [S2]color[/].'

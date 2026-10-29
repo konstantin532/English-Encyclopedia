@@ -26,16 +26,16 @@ script:
   ru: Хорошо. Пойдём через парк. Это недалеко.
 - speaker: tom
   emotion: worried
-  text: '[T1]A[/] [S4]bridge[/]? [T1]A[/] [S4]church[/]? [S1]Anna[/], [A8]maybe[/] [T8]we[/] [D1]are[/] [J4]lost[/].'
-  spoken: '[T1]A[/] [S4]bridge[/]? [T1]A[/] [S4]church[/]? [S1]Anna[/], [A8]maybe[/] [T8]we[/][D1]''re[/] [J4]lost[/].'
-  ru: Мост? Церковь? Анна, похоже, мы заблудились.
+  text: "[T1]A[/] [S4]bridge[/]? [T1]A[/] [S4]church[/]? [O7]Hmm[/]. [S1]Anna[/], [A8]maybe[/] [T8]we[/] [D1]are[/] [J4]lost[/]."
+  spoken: "[T1]A[/] [S4]bridge[/]? [T1]A[/] [S4]church[/]? [O7]Hmm[/]. [S1]Anna[/], [A8]maybe[/] [T8]we[/][D1]'re[/] [J4]lost[/]."
+  ru: "Мост? Церковь? Хм. Анна, похоже, мы заблудились."
 - speaker: anna
   text: '[O2]Excuse[/] [T8]me[/]! [A6]How[/] [D1]do[/] [T8]I[/] [D9]get[/] [P2]to[/] [S4]Park[/] [S4]Street[/]?'
   ru: Простите! Как пройти на Парк-стрит?
 - speaker: passerby
   emotion: happy
-  text: '[S4]Park[/] [S4]Street[/]? [D4]Walk[/] [P2]along[/] [T1]the[/] [S6]river[/] [C1]and[/] [D4]go[/] [P2]over[/] [T1]the[/] [S4]bridge[/].'
-  ru: Парк-стрит? Идите вдоль реки и перейдите через мост.
+  text: "[S4]Park[/] [S4]Street[/]? [J4]Sure[/]. [D4]Walk[/] [P2]along[/] [T1]the[/] [S6]river[/] [C1]and[/] [D4]go[/] [P2]over[/] [T1]the[/] [S4]bridge[/]."
+  ru: "Парк-стрит? Конечно. Идите вдоль реки и перейдите через мост."
 - speaker: passerby
   text: '[A2]Then[/] [D4]go[/] [P2]past[/] [T1]the[/] [S4]church[/] [C1]and[/] [P2]across[/] [T1]the[/] [S4]square[/].'
   ru: Потом мимо церкви и через площадь.
@@ -56,8 +56,8 @@ script:
   ru: Нет. Десять минут пешком.
 - speaker: anna
   emotion: happy
-  text: '[O2]Thank[/] [T8]you[/]! [S1]Tom[/], [D4]follow[/] [T8]me[/]!'
-  ru: Спасибо! Том, за мной!
+  text: "[O2]Thanks a lot[/]! [S1]Tom[/], [D4]follow[/] [T8]me[/]!"
+  ru: "Большое спасибо! Том, за мной!"
 twister:
   number: 28
   series: contractions

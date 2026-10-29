@@ -22,34 +22,34 @@ script:
   ru: Доброе утро, Том! Как прошли выходные?
 - speaker: tom
   emotion: happy
-  text: '[X1]Not[/] [J3]bad[/]. [P3]On[/] [S7]Saturday[/] [T8]I[/] [D4]visited[/] [T3]my[/] [S1]grandparents[/]. [T8]I[/] [D2]cooked[/] [S3]dinner[/] [P5]for[/] [T8]them[/].'
-  ru: Неплохо. В субботу я навестил бабушку с дедушкой. Приготовил им ужин.
+  text: "[X1]Not[/] [J3]bad[/]! [P3]On[/] [S7]Saturday[/] [T8]I[/] [D4]visited[/] [T3]my[/] [S1]grandparents[/]. [T8]I[/] [D2]cooked[/] [S3]dinner[/] [P5]for[/] [T8]them[/]."
+  ru: "Неплохо! В субботу я навестил бабушку с дедушкой. Приготовил им ужин."
 - speaker: kate
   emotion: surprised
   text: '[T8]You[/] [D2]cooked[/]? [A5]Really[/]?'
   ru: Ты готовил? Правда?
 - speaker: tom
   emotion: happy
-  text: '[O4]Yes[/]! [C1]And[/] [P3]on[/] [S7]Sunday[/] [T8]I[/] [D2]cleaned[/] [T3]my[/] [S2]apartment[/] [C1]and[/] [D2]fixed[/] [T3]my[/] [J2]old[/] [S4]bike[/]. [P3]After[/] [T2]that[/] [T8]I[/] [D2]played[/] [T1]the[/] [S2]guitar[/] [A2]all[/] [S7]day[/].'
-  ru: Да! А в воскресенье я убрал квартиру и починил свой старый велосипед. После этого весь день играл на гитаре.
+  text: "[O4]Yeah[/]! [C1]And[/] [P3]on[/] [S7]Sunday[/] [T8]I[/] [D2]cleaned[/] [T3]my[/] [S2]apartment[/] [C1]and[/] [D2]fixed[/] [T3]my[/] [J2]old[/] [S4]bike[/]. [P3]After[/] [T2]that[/] [T8]I[/] [D2]played[/] [T1]the[/] [S2]guitar[/] [A2]all[/] [S7]day[/]."
+  ru: "Ага! А в воскресенье я убрал квартиру и починил свой старый велосипед. После этого весь день играл на гитаре."
 - speaker: kate
   emotion: happy
-  text: '[T1]A[/] [A5]very[/] [J4]busy[/] [S7]weekend[/]!'
-  ru: Очень насыщенные выходные!
+  text: "[O5]Wow[/], [J4]busy[/] [S7]weekend[/]!"
+  ru: "Ого, насыщенные выходные!"
 - speaker: tom
   text: '[T9]What[/] [A6]about[/] [T8]you[/]?'
   ru: А у тебя?
 - speaker: kate
   emotion: happy
-  text: '[T8]I[/] [D2]stayed[/] [P3]at[/] [S2]home[/]. [T8]I[/] [D6]watched[/] [N1]three[/] [S10]movies[/] [C1]and[/] [D2]relaxed[/].'
-  ru: Я сидела дома. Посмотрела три фильма и отдыхала.
+  text: "[T8]I[/] [D2]stayed[/] [S2]home[/]. [T8]I[/] [D6]watched[/] [N1]three[/] [S10]movies[/] [C1]and[/] [D2]relaxed[/]."
+  ru: "Я сидела дома. Посмотрела три фильма и отдыхала."
 - speaker: tom
   emotion: happy
   text: '[D1]Were[/] [T8]they[/] [J3]good[/]?'
   ru: Хорошие были?
 - speaker: kate
-  text: '[T8]I[/] [D3]enjoyed[/] [N1]two[/] [S10]movies[/]. [T8]I[/] [D3]hated[/] [N1]one[/]. [T8]It[/] [D1]was[/] [A5]very[/] [J7]boring[/]!'
-  ru: Два мне понравились. Один я терпеть не могла. Он был очень скучный!
+  text: "[T8]I[/] [D3]enjoyed[/] [N1]two[/] [S10]movies[/]. [C5]But[/] [T8]I[/] [D3]hated[/] [N1]one[/]. [T8]It[/] [D1]was[/] [A5]really[/] [J7]boring[/]!"
+  ru: "Два мне понравились. А один я терпеть не могла. Он был такой скучный!"
 - speaker: tom
   emotion: happy
   text: '[T1]A[/] [J6]lazy[/] [S7]weekend[/]. [T8]I[/] [D3]love[/] [T8]it[/]!'
@@ -59,8 +59,8 @@ script:
   ru: Я тоже. Но теперь — за работу! Совещание в десять. Нам нужен отчёт.
 - speaker: tom
   emotion: happy
-  text: '[T8]I[/] [D8]finished[/] [T8]it[/] [J8]last[/] [S7]night[/]. [T8]I[/] [A5]really[/] [D2]tried[/]!'
-  ru: Я закончил его вчера вечером. Я правда старался!
+  text: "[T8]I[/] [D8]finished[/] [T8]it[/] [J8]last[/] [S7]night[/]. [A3]Here[/] [T8]it[/] [D1]is[/]!"
+  ru: "Я закончил его вчера вечером. Вот он!"
 twister:
   number: 17
   series: contractions

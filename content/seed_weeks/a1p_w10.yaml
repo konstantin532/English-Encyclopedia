@@ -18,8 +18,8 @@ story_beat:
 script:
 - speaker: neighbor
   emotion: tired
-  text: '[O1]Hello[/], [S1]Tom[/]. [D7]Could[/] [T8]you[/] [D2]play[/] [A4]quietly[/], [O8]please[/]? [T8]I[/] [D2]work[/] [P3]at[/] [S7]night[/], [C1]and[/] [T8]I[/] [D2]sleep[/] [P3]during[/] [T1]the[/] [S7]day[/].'
-  ru: Здравствуй, Том. Не мог бы ты играть потише? Я работаю ночью, а днём сплю.
+  text: "[O1]Hey[/], [S1]Tom[/]. [D7]Could[/] [T8]you[/] [D2]play[/] [A4]quietly[/], [O8]please[/]? [T8]I[/] [D2]work[/] [P3]at[/] [S7]night[/], [C1]and[/] [T8]I[/] [D2]sleep[/] [P3]during[/] [T1]the[/] [S7]day[/]."
+  ru: "Привет, Том. Не мог бы ты играть потише? Я работаю ночью, а днём сплю."
 - speaker: tom
   emotion: sad
   text: '[O3]Oh[/], [S1]Leo[/], [T8]I[/] [D1]am[/] [F4]so[/] [O2]sorry[/]! [T8]I[/] [D7]can[/] [D2]turn[/] [T8]it[/] [X3]down[/].'
@@ -27,8 +27,8 @@ script:
   ru: Ой, Лео, прости, пожалуйста! Я сделаю тише.
 - speaker: neighbor
   emotion: tired
-  text: '[O2]Thank[/] [T8]you[/]. [T1]The[/] [S10]music[/] [D2]woke[/] [T8]me[/] [X3]up[/], [C1]and[/] [T8]I[/] [D2]slept[/] [A4]badly[/].'
-  ru: Спасибо. Музыка меня разбудила, и я плохо спал.
+  text: "[O2]Thanks[/]. [T1]The[/] [S10]music[/] [D2]woke[/] [T8]me[/] [X3]up[/], [C1]and[/] [T8]I[/] [D2]slept[/] [A4]badly[/]."
+  ru: "Спасибо. Музыка меня разбудила, и я плохо спал."
 - speaker: anna
   emotion: happy
   text: '[S1]Leo[/], [D4]come[/] [X3]in[/]! [D7]Would[/] [T8]you[/] [D3]like[/] [T4]some[/] [S3]tea[/] [C1]and[/] [S3]cookies[/]?'
@@ -55,8 +55,8 @@ script:
   ru: Конечно. Мне это легко.
 - speaker: tom
   emotion: happy
-  text: '[O2]Thank[/] [T8]you[/]! [T8]I[/] [D5]promise[/]. [X1]No[/] [J2]loud[/] [S10]music[/] [P3]in[/] [T1]the[/] [S7]day[/].'
-  ru: Спасибо! Обещаю. Днём никакой громкой музыки.
+  text: "[O2]Thank you[/]! [T8]I[/] [D5]promise[/]. [X1]No[/] [J2]loud[/] [S10]music[/] [P3]during[/] [T1]the[/] [S7]day[/]."
+  ru: "Спасибо! Обещаю. Днём никакой громкой музыки."
 - speaker: neighbor
   emotion: happy
   text: '[T4]Any[/] [S7]time[/]. [T8]You[/] [D7]can[/] [D2]play[/] [A4]loudly[/] [P3]in[/] [T1]the[/] [S7]evening[/]. [T8]I[/] [D1]am[/] [P1]at[/] [S9]work[/] [A2]then[/]!'
@@ -64,8 +64,8 @@ script:
   ru: Обращайтесь. Вечером можешь играть громко. Я тогда на работе!
 - speaker: anna
   emotion: happy
-  text: '[O2]Thank[/] [T8]you[/], [S1]Leo[/]. [D2]Sleep[/] [A4]well[/]!'
-  ru: Спасибо, Лео. Выспитесь!
+  text: "[O2]Thanks[/], [S1]Leo[/]. [D2]Sleep[/] [A4]well[/]!"
+  ru: "Спасибо, Лео. Выспитесь!"
 twister:
   number: 24
   series: contractions
