@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --no-sync python scripts/agent_hooks/guard.py command",
+            "statusMessage": "Проверка безопасности команды"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --no-sync python scripts/agent_hooks/guard.py stop",
+            "statusMessage": "Быстрая проверка перед «готово»"
+          }
+        ]
+      }
+    ]
+  }
+}

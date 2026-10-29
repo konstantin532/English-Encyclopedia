@@ -44,9 +44,10 @@
 
 Источники истины для ID, классов, маркеров и цветов: `apps/taxonomy/registry.py`, `apps/curriculum/registry.py`. Остальные специальные правила, включая IPA, сокращения, загрузку контента и тестовый раннер, обязательны согласно `CLAUDE.md`.
 
-**Навыки проекта** лежат в `.claude/skills/`. Codex не находит их автоматически (он ищет только `.agents/skills/`), поэтому перед работой по теме прочитай нужный `SKILL.md` сам:
+**Навыки проекта** лежат в `.agents/skills/` (их видят и Codex, и Claude). Копии в `.claude/skills/` должны совпадать с `.agents/skills/` байт в байт — это проверяет `tests/test_agent_setup.py`; новый навык добавляй в обе папки. Перед работой по теме используй нужный навык:
 - анимации и GSAP — `.claude/skills/gsap-core/`, по задаче также `gsap-timeline`, `gsap-scrolltrigger`, `gsap-performance`, `gsap-plugins`, `gsap-utils`. `gsap-react` и `gsap-frameworks` не нужны: в проекте ванильный JS;
 - дизайн, вёрстка, типографика, доступность интерфейса — `.claude/skills/ui-ux-pro-max/`;
+- **любая работа с интерфейсом, страницами, анимацией и редизайном** — сначала прочитай [DESIGN.md](DESIGN.md) (направление «живой атлас» и запрет шаблонного AI-дизайна) и используй навык `.agents/skills/encyclopedia-design/` (в Codex: `$encyclopedia-design`);
 - PostgreSQL: схема, миграции, индексы, запросы, права доступа — `.claude/skills/supabase-postgres-best-practices/`;
 - Supabase — `.claude/skills/supabase/`, только если задача касается именно Supabase.
 
@@ -57,6 +58,7 @@
 - **Контент:** `load_content`, `audit_course`, тесты последовательности курса.
 - **Frontend:** `pnpm check:css`, `pnpm test:ui`; после изменений интерфейса — проверка в браузере на desktop и ширине 390 px, клавиатурной доступности, `prefers-reduced-motion`. Не заявляй 60 FPS без измерений.
 - **Безопасность:** не раскрывай секреты/персональные данные; проверяй права доступа, особенно ученик A против ученика B. Не ломай регистрацию, авторизацию и сохранение прогресса.
+- **Ограничители агентов:** `scripts/agent_hooks/guard.py` подключён хуками Claude (`.claude/settings.json`) и Codex (`.codex/hooks.json`). Он блокирует force push, push в `main`, `reset --hard`, `clean -f`, `flush`, `DROP TABLE`, чтение `.env` и не даёт сказать «готово», если `manage.py check` или `makemigrations --check` падают. Не обходи его другой командой — спроси автора. Полные тесты по-прежнему обязательны и идут в CI.
 - Если тесты или браузер недоступны, помечай их **BLOCKED**, а не «пройдены». Отчёты CI касаются только реально запущенных проверок.
 
 ### Визуальная приёмка интерфейса
