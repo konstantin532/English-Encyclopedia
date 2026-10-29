@@ -8,8 +8,8 @@ title: "Семья на фото: кто это и сколько лет — Who
 summary: "Слова о семье, mom и dad, числа до ста и возраст: Who is this? How old are you? My mom is forty."
 units: [LX-00088, LX-00089, LX-00090, LX-00091, LX-00092, LX-00093, LX-00094, LX-00099, LX-00101, LX-00102, LX-00103, LX-00266, LX-00267, LX-00268, LX-00269, LX-00270, LX-00271, LX-00272, LX-00273, LX-00274, LX-00275, LX-00276, LX-00277, LX-00278]
 sound_notes:
-  - text: "Who is this?"
-    ipa: "/ˈhu ɪz ˈðɪs/"
+  - text: "Who's this?"
+    ipa: "/ˈhuz ˈðɪs/"
     note_ru: "who звучит «ху», w не читается"
   - text: "brother"
     ipa: "/ˈbrʌðɚ/"
@@ -24,7 +24,7 @@ layers:
 
       На семейном фото всегда хочется спросить: кто это?
 
-      > [T9]Who[/] [D1]is[/] [T2]this[/]? — Кто это?
+      > [T9]Who[/][D1]'s[/] [T2]this[/]? — Кто это?
       > [T2]This[/] [D1]is[/] [T3]my[/] [S1]brother[/]. — Это мой брат.
       > [D1]Is[/] [T2]this[/] [T3]your[/] [S1]mother[/]? — Это твоя мама?
 
@@ -75,7 +75,7 @@ layers:
 
       > [T9]Who[/] [D1]is[/] [T2]this[/]? — Кто это?
       > [T2]This[/] [D1]is[/] [T3]my[/] [S1]sister[/]. — Это моя сестра.
-      > [T8]She[/] [D1]is[/] [N5]eleven[/]. — Ей одиннадцать.
+      > [T8]She[/][D1]'s[/] [N5]eleven[/]. — Ей одиннадцать.
 
       - Who is в быстрой речи звучит как who's: «хуз».
       - Вместо mother и father дома часто говорят mom и dad.
@@ -130,8 +130,8 @@ exercises:
     stage: transfer
     prompt_ru: "Новое фото: на нём ваша сестра, ей двенадцать. Скажите это двумя короткими фразами."
     prompt_en: "___"
-    answer: "This is my sister. She is twelve."
-    accepted: ["This is my sister. She's twelve.", "This is my sister. She is 12.", "This is my sister. She's 12.", "This is my sister. She is twelve years old.", "This is my sister. She's twelve years old.", "This is my sister. She is 12 years old.", "This is my sister. She's 12 years old.", "It is my sister. She is twelve.", "It's my sister. She's twelve.", "It's my sister. She is twelve.", "It is my sister. She's twelve."]
+    answer: "This is my sister. She's twelve."
+    accepted: ["This is my sister. She is twelve.", "This is my sister. She's twelve.", "This is my sister. She is 12.", "This is my sister. She's 12.", "This is my sister. She is twelve years old.", "This is my sister. She's twelve years old.", "This is my sister. She is 12 years old.", "This is my sister. She's 12 years old.", "It is my sister. She is twelve.", "It's my sister. She's twelve.", "It's my sister. She is twelve.", "It is my sister. She's twelve."]
     hint_ru: "Сначала this is…, потом she is…"
     explanation_ru: "This is my sister. She is twelve. — сначала показываем, потом говорим she и возраст через be."
     units: [LX-00089, LX-00096, LX-00073]
@@ -160,7 +160,7 @@ practice:
 - order: 1
   kind: translate
   prompt_ru: Кто это?
-  answer: Who is this?
+  answer: Who's this?
   accepted:
   - Who is that?
   hint_ru: Вопрос о человеке — Who.

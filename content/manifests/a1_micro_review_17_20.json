@@ -385,11 +385,11 @@
         ]
       ],
       "options": [
-        "What is your phone number?",
+        "What's your phone number?",
         "What is your phone name?",
         "Who is your phone number?"
       ],
-      "reason": "Для телефонного номера спрашиваем What is your phone number?",
+      "reason": "Для телефонного номера спрашиваем What's your phone number?",
       "en": ""
     },
     "4": {

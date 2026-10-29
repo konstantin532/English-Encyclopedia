@@ -104,7 +104,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /tʃip/
   translation_ru: дешёвый
-  example_en: '[T8]They[/] [D1]are[/] [J3]cheap[/]!'
+  example_en: '[T8]They[/][D1]''re[/] [J3]cheap[/]!'
   example_ru: Они дешёвые!
   situation: Говорите о цене
   usage_note: 'Долгое «и»: «чи-ип». Не путайте с chip.'

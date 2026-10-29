@@ -10,6 +10,7 @@ story_beat:
 script:
   - speaker: tom
     text: "[O2]Excuse me[/]! [T8]I[/] [D1]have[/] [T1]an[/] [J2]old[/] [S2]key[/]. [A6]Where[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/], [O8]please[/]?"
+    spoken: "[O2]Excuse me[/]! [T8]I[/] [D1]have[/] [T1]an[/] [J2]old[/] [S2]key[/]. [A6]Where[/][D1]'s[/] [T1]the[/] [S2]key[/] [S4]shop[/], [O8]please[/]?"
     ru: "Извините! У меня старый ключ. Где мастерская по ключам?"
   - speaker: passerby
     emotion: happy

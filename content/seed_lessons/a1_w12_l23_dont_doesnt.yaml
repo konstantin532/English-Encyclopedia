@@ -71,7 +71,7 @@ layers:
     body: |
       Так говорят американцы:
 
-      > [A1]Never[/]. [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]! — Никогда. Сам не знаю почему!
+      > [A1]Never[/]. [T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]! — Никогда. Сам не знаю почему!
 
       - I don't know — готовая фраза для «не знаю». Можно смягчить: Sorry, I don't know.
       - I don't have… — «у меня нет…»: I don't have a stamp, I don't have time.
@@ -136,7 +136,7 @@ exercises:
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: прохожий спрашивает, где банк. Вы не знаете. Вежливо ответьте."
-    prompt_en: "Where is the bank? — ___"
+    prompt_en: "Where's the bank? — ___"
     answer: "Sorry, I don't know."
     accepted: ["Sorry, I don't know", "I don't know.", "I don't know", "Sorry, I do not know.", "Sorry. I don't know.", "I do not know."]
     hint_ru: "Sorry + I don't know."
@@ -160,7 +160,7 @@ exercises:
     kind: fill
     stage: transfer
     prompt_ru: 'В новой анкете спрашивают индекс. Вы его не знаете. Вежливо скажите: «Извините, я не знаю индекс».'
-    prompt_en: What is the ZIP code? — ___
+    prompt_en: What's the ZIP code? — ___
     answer: Sorry, I don't know the ZIP code.
     accepted:
     - Sorry, I don't know the ZIP code
@@ -194,7 +194,7 @@ practice:
 - order: 3
   kind: translate
   prompt_ru: Я не знаю.
-  answer: I do not know.
+  answer: I don't know.
   hint_ru: don't know
   explanation_ru: I don't know. Одна из самых нужных фраз.
   review_of: 4

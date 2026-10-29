@@ -65,7 +65,7 @@
     "dialogue": [
       [
         "Tom",
-        "It is windy today.",
+        "It's windy today.",
         "Сегодня ветрено."
       ],
       [
@@ -100,7 +100,7 @@
     ],
     "hint": "I have an umbrella + because + I don’t like the rain.",
     "transfer": "В вымышленной роли вы из России, говорите по-английски и хотите купить билет. Сообщите три факта тремя фразами.",
-    "transfer_example": "I am from Russia. I can speak English. I want to buy a ticket.",
+    "transfer_example": "I'm from Russia. I can speak English. I want to buy a ticket.",
     "why": "Be описывает погоду: It is sunny, warm, windy или cloudy. Have сообщает о вещах: I have a bag. Can — умение или возможность: I can drive. Для обычных действий нужны do/does в вопросах и don’t/doesn’t в отрицании. Because соединяет факт и причину. Rain и snow здесь существительные; новые времена для описания погоды пока не нужны. Свитер — sweater, пальто — coat, головной убор — hat.",
     "sound": "Umbrella /ʌmˈbrɛlə/ начинается с гласного звука: an umbrella. В weather /ˈwɛðɚ/ звук /ð/ произносится с кончиком языка у зубов. Buy /baɪ/ и bye звучат одинаково, но значат разное."
   }

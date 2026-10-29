@@ -62,7 +62,7 @@
     "dialogue": [
       [
         "Postal worker",
-        "What is your last name?",
+        "What's your last name?",
         "Какая у вас фамилия?"
       ],
       [
@@ -101,7 +101,7 @@
     ],
     "hint": "Fill out + the form + please.",
     "transfer": "Теперь вы хотите узнать индекс. Задайте вопрос: «Какой индекс?»",
-    "transfer_example": "What is the ZIP code?",
+    "transfer_example": "What's the ZIP code?",
     "why": "First name — имя, last name — фамилия. Для обычного адреса улицы в США номер дома стоит перед улицей, затем указывают квартиру, если она нужна. Город, штат и ZIP code пишут вместе на следующей строке. Country — страна. Mail и paper в этих значениях неисчисляемые: the mail is, I have paper.",
     "sound": "В sign /saɪn/ буква g не произносится. В американском form /fɔrm/ слышен r. ZIP code произносится как /ˈzɪp ˌkoʊd/."
   }

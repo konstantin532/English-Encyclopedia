@@ -780,3 +780,12 @@ reviews and merges the PR; no automatic merge.
 - Kokoro v1.0, голоса af_heart/am_michael: диалог A1-1 заново создан во всех трёх темпах (38.2 / 29.4 / 23.8 с), без перегенерации других недель и скороговорки. Модель и voice pack сверены по SHA256; MP3 декодированы, тайминги девяти реплик и fingerprint проверены. Аудиоархив передан отдельно; verified=false до человеческого прослушивания.
 - После генерации: полный `uv run python manage.py test tests --parallel auto` — `Ran 1144 tests in 239.998s`, `OK (skipped=2)` (test settings, 8 процессов, UV_NO_SYNC=1). load_content и audit_course — ошибок нет. Реальное воспроизведение всех трёх темпов и клавиатура проверены на 1440/390 px; без переполнения и JS-ошибок.
 - Контрольные суммы и доказательства: `docs/reviews/2026-10-28-week-one-excited-audio.json`; текущий отчёт PR — `docs/reviews/2026-10-28-pr137-ci-repair.md`. main, force push и auto-merge не затрагиваются.
+
+
+### 2026-10-29 — сокращения A1 по отчёту естественности
+
+- База main@c55d237, одна ветка fix/a1-natural-contractions-20261029. Из192 строк A1 course_contraction применены190 в67файлах; #112 и#167 сохранены как шаблон и точная ссылка, #139 частично с полным конечным No, it does not. A1+, формулировки, lemma/forms, ID и объяснения устройства фраз сохранены.
+- Все8 изменённых ключей и19 переводов принимают полную и краткую форму; добавлены API/JS-регрессии и контрпробы на изменение смысла. В теме22 два JS-вызова учитывают локальные retrieval_alternatives.
+- load_content/audit_course без ошибок (SQLite в памяти); targeted86+13PASS, JS34PASS, UI187PASS, CSS22PASS. Полный uv run python manage.py test tests --parallel auto:1166,OK(skipped=8),271.956с. EE_PHRASE_MEMORY_ENABLED=false только для команды: исходный HEAD подтверждает2предсуществующих failures при локальном true.
+- Браузер1440/390: обе формы приняты, отрицания отклонены,6режимов недели8 корректны, переполнения нет. Независимые read-only проверки границ и ключей замечаний P1/P2 не нашли. Claude и CI/Visual review ожидаются.
+- Добавлен spoken первой реплике недели8; text сохранён. PENDING: natural голос/тайминги/манифест нужно пересоздать и прослушать;16системных реплик браузер обновит из JSON. Все реплики и ограничения перечислены в docs/reviews/2026-10-29-a1-contractions.md. Main/merge/deploy не выполнялись.

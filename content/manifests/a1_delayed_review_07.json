@@ -5,7 +5,7 @@
         "Анна показывает незнакомца на фото. Как спросить, кто это?",
         "",
         [
-          "Who is this?",
+          "Who's this?",
           "How old is this?",
           "Is who this?"
         ],
@@ -28,7 +28,7 @@
         [
           "Who are this?",
           "How is this?",
-          "Who is this?"
+          "Who's this?"
         ],
         2
       ],
@@ -164,7 +164,7 @@
         "На фото ваша мама, ей сорок лет. Расскажите.",
         "",
         [
-          "This is my mom. She is forty.",
+          "This is my mom. She's forty.",
           "This is my mom. He is forty.",
           "This my mom. She forty."
         ],
@@ -175,7 +175,7 @@
         "",
         [
           "This is my sister. He is thirteen.",
-          "This is my sister. She is thirteen.",
+          "This is my sister. She's thirteen.",
           "This my sister. She thirteen."
         ],
         1
@@ -186,7 +186,7 @@
         [
           "This is my brother. She is ten.",
           "This is my brother. He ten.",
-          "This is my brother. He is ten."
+          "This is my brother. He's ten."
         ],
         2
       ],
@@ -194,7 +194,7 @@
         "В альбоме ваша сестра, ей двадцать.",
         "",
         [
-          "This is my sister. She is twenty.",
+          "This is my sister. She's twenty.",
           "This is my sister. He is twenty.",
           "This my sister. She are twenty."
         ],
@@ -205,7 +205,7 @@
         "",
         [
           "This is my dad. She is fifty.",
-          "This is my dad. He is fifty.",
+          "This is my dad. He's fifty.",
           "This is dad my. He fifty."
         ],
         1
@@ -217,7 +217,7 @@
         "",
         [
           "He is sixteen.",
-          "He is sixty.",
+          "He's sixty.",
           "He has sixty."
         ],
         1
@@ -226,7 +226,7 @@
         "Бабушке Анны шестнадцать? Нет, шестьдесят. Как сказать возраст 60?",
         "",
         [
-          "She is sixty.",
+          "She's sixty.",
           "She is sixteen.",
           "She has sixty."
         ],
@@ -238,7 +238,7 @@
         [
           "He is thirteen.",
           "He has thirty.",
-          "He is thirty."
+          "He's thirty."
         ],
         2
       ],
@@ -246,7 +246,7 @@
         "Маме Анны сорок. Как правильно сказать?",
         "",
         [
-          "She is forty.",
+          "She's forty.",
           "She is fourteen.",
           "She have forty."
         ],
@@ -257,7 +257,7 @@
         "",
         [
           "He is fifteen.",
-          "He is fifty.",
+          "He's fifty.",
           "He has fifty."
         ],
         1

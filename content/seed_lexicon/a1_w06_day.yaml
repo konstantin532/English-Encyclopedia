@@ -138,7 +138,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /əˈklɑk/
   translation_ru: (столько-то) часов ровно
-  example_en: "[T8]It[/] [D1]is[/] [N3]seven o'clock[/]."
+  example_en: "[T8]It[/][D1]'s[/] [N3]seven o'clock[/]."
   example_ru: Сейчас ровно семь.
   situation: Называете время
   usage_note: 'Только для ровного часа: seven o''clock. Сокращение от of the clock.'

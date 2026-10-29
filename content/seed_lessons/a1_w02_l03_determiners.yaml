@@ -219,7 +219,7 @@ practice:
 - order: 2
   kind: translate
   prompt_ru: То — твоя комната.
-  answer: That is your room.
+  answer: That's your room.
   hint_ru: that — то, что дальше.
   explanation_ru: That is your room. This — рядом с говорящим, that — подальше.
   review_of: 4
@@ -245,7 +245,7 @@ practice:
 - order: 4
   kind: translate
   prompt_ru: Это не моя коробка.
-  answer: It is not my box.
+  answer: It isn't my box.
   accepted:
   - This is not my box.
   hint_ru: Как в первой истории про Box.

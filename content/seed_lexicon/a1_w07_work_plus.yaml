@@ -43,7 +43,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈstudənt/
   translation_ru: студент, ученик
-  example_en: '[T8]I[/] [D1]am[/] [T1]a[/] [S9]student[/].'
+  example_en: '[T8]I[/][D1]''m[/] [T1]a[/] [S9]student[/].'
   example_ru: Я студент.
   situation: Рассказываете, кем работаете
   usage_note: «стУдэнт», без «ю».
@@ -73,7 +73,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈraɪt̬ɚ/
   translation_ru: писатель
-  example_en: '[T8]She[/] [D1]is[/] [T1]a[/] [S9]writer[/].'
+  example_en: '[T8]She[/][D1]''s[/] [T1]a[/] [S9]writer[/].'
   example_ru: Она писательница.
   situation: Рассказываете, кем работаете
   usage_note: 'w не читается: «райдэр».'
@@ -88,7 +88,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈsɪŋɚ/
   translation_ru: певец, певица
-  example_en: '[T8]He[/] [D1]is[/] [T1]a[/] [S9]singer[/].'
+  example_en: '[T8]He[/][D1]''s[/] [T1]a[/] [S9]singer[/].'
   example_ru: Он певец.
   situation: Рассказываете, кем работаете
   usage_note: 'Носовой ŋ без «г»: «сИнэр». -er = «тот, кто делает»: sing → singer.'

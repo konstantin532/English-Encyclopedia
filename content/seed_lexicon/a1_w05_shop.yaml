@@ -13,7 +13,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /stɔr/
   translation_ru: магазин
-  example_en: '[T9]There[/] [D1]is[/] [T1]a[/] [S4]store[/] [A3]here[/].'
+  example_en: '[T9]There[/][D1]''s[/] [T1]a[/] [S4]store[/] [A3]here[/].'
   example_ru: Здесь есть магазин.
   situation: Ищете магазин рядом с домом
   usage_note: 'В Америке обычно store, а shop — маленькая лавка или мастерская.'
@@ -138,7 +138,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈdɑlɚ/
   translation_ru: доллар
-  example_en: '[T8]It[/] [D1]is[/] [N6]two dollars[/].'
+  example_en: '[T8]It[/][D1]''s[/] [N6]two dollars[/].'
   example_ru: Это стоит два доллара.
   situation: Называете цену
   usage_note: 'Пишут $2, а читают two dollars. Значок ставят перед числом, а слово — после.'

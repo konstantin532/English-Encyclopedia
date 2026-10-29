@@ -57,7 +57,7 @@
     "dialogue": [
       [
         "Tom",
-        "Where is the key shop?",
+        "Where's the key shop?",
         "Где мастерская ключей?"
       ],
       [
@@ -91,7 +91,7 @@
     ],
     "hint": "It is / It's + next to + the bank.",
     "transfer": "Спросите, где находится кафе.",
-    "transfer_example": "Where is the cafe?",
+    "transfer_example": "Where's the cafe?",
     "why": "Предлоги задают пространственное отношение, но прямого совпадения с русскими «в/на/у» нет. Next to обозначает соседство, near — близость, in — нахождение внутри.",
     "sound": "В next to два слова произносят связно /ˈnɛkst tə/. Вопрос Where is…? имеет связанную речь."
   },
@@ -105,7 +105,7 @@
     "dialogue": [
       [
         "Tom",
-        "Excuse me. Where is the bank?",
+        "Excuse me. Where's the bank?",
         "Извините, где банк?"
       ],
       [

@@ -33,8 +33,8 @@ layers:
 
       В новом городе главный вопрос — «Где?». По-английски — **Where**.
 
-      > [O2]Excuse me[/]! [T8]I[/] [D1]have[/] [T1]an[/] [J2]old[/] [S2]key[/]. [A6]Where[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/], [O8]please[/]? — Извините! У меня старый ключ. Где мастерская по ключам?
-      > [T1]The[/] [S2]key[/] [S4]shop[/]? [T8]It[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]bank[/]. — Мастерская? Она рядом с банком.
+      > [O2]Excuse me[/]! [T8]I[/] [D1]have[/] [T1]an[/] [J2]old[/] [S2]key[/]. [A6]Where[/][D1]'s[/] [T1]the[/] [S2]key[/] [S4]shop[/], [O8]please[/]? — Извините! У меня старый ключ. Где мастерская по ключам?
+      > [T1]The[/] [S2]key[/] [S4]shop[/]? [T8]It[/][D1]'s[/] [P1]near[/] [T1]the[/] [S4]bank[/]. — Мастерская? Она рядом с банком.
 
       В **этих** ответах место уточняет предлог: *near*, *next to*, *on*, *in*. Но на **Where?** можно ответить и короче, например просто назвать место. Не ищите предлог в каждом возможном ответе.
 
@@ -140,7 +140,7 @@ exercises:
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: турист спрашивает, где кафе. Оно справа. Ответьте."
-    prompt_en: "Where is the cafe? — ___"
+    prompt_en: "Where's the cafe? — ___"
     answer: "It is on the right."
     accepted: ["It's on the right.", "On the right.", "It is on the right", "It's on the right", "On the right", "The cafe is on the right.", "The cafe's on the right.", "The café is on the right.", "The café's on the right."]
     hint_ru: "Справа — on the right."

@@ -11,7 +11,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /wi/
   translation_ru: мы
-  example_en: '[T8]We[/] [D1]are[/] [T1]a[/] [J1]big[/] [S1]family[/].'
+  example_en: '[T8]We[/][D1]''re[/] [T1]a[/] [J1]big[/] [S1]family[/].'
   example_ru: У нас большая семья.
   situation: Рассказываете о своей семье
   usage_note: 'w — губы трубочкой, не «ви»: «уи».'
@@ -24,7 +24,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ðeɪ/
   translation_ru: они
-  example_en: '[T8]They[/] [D1]are[/] [T3]my[/] [S1]mom[/] [C1]and[/] [S1]dad[/].'
+  example_en: '[T8]They[/][D1]''re[/] [T3]my[/] [S1]mom[/] [C1]and[/] [S1]dad[/].'
   example_ru: Это мои мама и папа.
   situation: Говорите о двух и более людях
   usage_note: 'Звонкий th, как в this: «зэй» с языком между зубами.'
@@ -82,7 +82,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /jɪr/
   translation_ru: год
-  example_en: '[T8]I[/] [D1]am[/] [N5]thirty[/] [S7]years[/] [J2]old[/].'
+  example_en: '[T8]I[/][D1]''m[/] [N5]thirty[/] [S7]years[/] [J2]old[/].'
   example_ru: Мне тридцать лет.
   situation: Называете возраст полностью
   usage_note: 'years old можно не говорить: I am thirty — тоже правильно.'
@@ -95,7 +95,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /jʌŋ/
   translation_ru: молодой
-  example_en: '[T3]My[/] [S1]mom[/] [D1]is[/] [J2]young[/]. [T8]She[/] [D1]is[/] [N5]thirty[/].'
+  example_en: '[T3]My[/] [S1]mom[/] [D1]is[/] [J2]young[/]. [T8]She[/][D1]''s[/] [N5]thirty[/].'
   example_ru: Мама молодая. Ей тридцать.
   situation: Описываете возраст человека
   usage_note: 'В конце носовой ŋ, как в -ing. Не говорите «янг» с «г».'
@@ -108,7 +108,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈθɝt̬i/
   translation_ru: тридцать
-  example_en: '[T8]I[/] [D1]am[/] [N5]thirty[/].'
+  example_en: '[T8]I[/][D1]''m[/] [N5]thirty[/].'
   example_ru: Мне тридцать.
   situation: Называете возраст или цену
   usage_note: "В отдельном учебном образце THIRty имеет ударение в начале, thirTEEN — в конце. В связной речи ударение может меняться, поэтому слушайте также окончания -ty и -teen."

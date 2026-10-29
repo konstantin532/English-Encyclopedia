@@ -203,3 +203,38 @@ test('like to read is accepted as a natural alternative in error repair', () => 
   assert.equal(app.find('[data-a1-repair-feedback]').dataset.state, 'ok');
   assert.equal(app.find('[data-a1-repair-explanation]').hidden, false);
 });
+
+
+test('topic 22 dictation and reverse translation accept both spellings and preserve not', () => {
+  for (const [answer, matches] of [
+    ["I am tired. I feel sick.", true],
+    ["I'm tired. I feel sick.", true],
+    ["I am not tired. I feel sick.", false],
+    ["I'm not tired. I feel sick.", false],
+  ]) {
+    const app = buildBrowser(22);
+    app.find('[data-a1-dictation-input]').value = answer;
+    app.find('[data-a1-dictation]').dispatch('submit');
+    assert.equal(app.find('[data-a1-dictation-feedback]').dataset.state, matches ? 'ok' : 'retry', answer);
+    app.find('[data-a1-backtranslation-input]').value = answer;
+    app.find('[data-a1-backtranslation]').dispatch('submit');
+    assert.match(app.find('[data-a1-backtranslation-feedback]').textContent, matches ? /совпал с образцом/ : /отличается от образца/, answer);
+  }
+});
+
+test('topic 22 production accepts full and contracted forms without losing the negative', () => {
+  for (const [answer, matches] of [
+    ["I am tired and I can't sleep.", true],
+    ["I'm tired and I can't sleep.", true],
+    ["I am tired and I cannot sleep.", true],
+    ["I'm tired and I cannot sleep.", true],
+    ["I'm tired and I can sleep.", false],
+    ["I am tired and I can sleep.", false],
+    ["I'm not tired and I can't sleep.", false],
+  ]) {
+    const app = buildBrowser(22);
+    app.find('[data-a1-production-answer]').value = answer;
+    app.find('[data-a1-production]').dispatch('submit');
+    assert.equal(app.find('[data-a1-production-feedback]').dataset.state, matches ? 'ok' : 'review', answer);
+  }
+});

@@ -30,7 +30,7 @@ layers:
       На почте нужны три вещи: письмо, адрес и марка.
 
       > [O4]Yes[/], [O8]please[/]. [T8]I[/] [D1]have[/] [T1]a[/] [S9]letter[/] [P5]for[/] [T3]my[/] [S1]mother[/] [P1]in[/] [S4]Russia[/]. — Да, пожалуйста. У меня письмо для мамы в России.
-      > [T9]What[/] [D1]is[/] [T1]the[/] [S9]address[/]? — Какой адрес?
+      > [T9]What[/][D1]'s[/] [T1]the[/] [S9]address[/]? — Какой адрес?
 
       Дальше посмотрим на **типичный почтовый адрес США**. Он может отличаться от привычного русского порядка записи, но не существует одного универсального русского формата, который всегда «перевёрнут» относительно американского.
   - number: 2
@@ -69,7 +69,7 @@ layers:
     body: |
       Так может звучать **учебная сцена на американской почте**:
 
-      > [A3]Here[/] [D1]is[/] [T1]a[/] [S2]stamp[/]. [T8]It[/] [D1]is[/] [N6]two dollars[/]. — Вот марка. Два доллара.
+      > [A3]Here[/][D1]'s[/] [T1]a[/] [S2]stamp[/]. [T8]It[/][D1]'s[/] [N6]two dollars[/]. — Вот марка. Два доллара.
 
       Two dollars — цена в учебной сцене, а не текущий почтовый тариф. Стоимость реального отправления уточняют отдельно.
 
@@ -120,7 +120,7 @@ exercises:
     kind: fill
     stage: substitution
     prompt_ru: "Для письма нужна марка. Вставьте слово."
-    prompt_en: "I do not have a ___."
+    prompt_en: "I don't have a ___."
     answer: "stamp"
     hint_ru: "Её клеят на конверт."
     explanation_ru: "I do not have a stamp — «у меня нет марки»."
@@ -140,8 +140,8 @@ exercises:
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: вы отправляете посылку другу в Россию. Почтальон спрашивает, кому. Ответьте: «Для друга в России»."
-    prompt_en: "Who is it for? — ___"
-    answer: "It is for my friend in Russia."
+    prompt_en: "Who's it for? — ___"
+    answer: "It's for my friend in Russia."
     accepted: ["It's for my friend in Russia.", "For my friend in Russia.", "It is for my friend in Russia", "For my friend in Russia", "It's for my friend in Russia"]
     hint_ru: "for my friend + in Russia."
     explanation_ru: "It is for my friend in Russia — for значит «для»."
@@ -169,7 +169,7 @@ exercises:
     stage: transfer
     prompt_ru: 'Новая ситуация: Анна заполняет анкету на курсах. Её фамилия — Белова. Ответьте за Анну: «Моя фамилия
       — Белова».'
-    prompt_en: What is your last name? — ___
+    prompt_en: What's your last name? — ___
     answer: My last name is Belova.
     accepted:
     - My last name is Belova
@@ -193,7 +193,7 @@ practice:
 - order: 2
   kind: translate
   prompt_ru: Какой адрес?
-  answer: What is the address?
+  answer: What's the address?
   hint_ru: What is…?
   explanation_ru: What's the address? Вопрос «какой?» о данных — what.
   review_of: 1

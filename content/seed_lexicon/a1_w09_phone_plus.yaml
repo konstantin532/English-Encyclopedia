@@ -11,7 +11,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /wʌt/
   translation_ru: что, какой
-  example_en: '[T9]What[/] [D1]is[/] [T3]your[/] [S9]name[/]?'
+  example_en: '[T9]What[/][D1]''s[/] [T3]your[/] [S9]name[/]?'
   example_ru: Как тебя зовут?
   situation: Задаёте вопрос
   usage_note: 'В американской речи t в конце часто глотают: «уа(т)».'
@@ -118,7 +118,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈimeɪl/
   translation_ru: электронное письмо, e-mail
-  example_en: '[T9]What[/] [D1]is[/] [T3]your[/] [S9]email[/]?'
+  example_en: '[T9]What[/][D1]''s[/] [T3]your[/] [S9]email[/]?'
   example_ru: Какой у тебя e-mail?
   situation: Говорите по телефону и в сообщениях
   usage_note: 'Адрес диктуют так: anna at mail dot com — @ это at, точка — dot.'
@@ -135,7 +135,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈænsɚ/
   translation_ru: отвечать
-  example_en: '[O2]Sorry[/], [T8]I[/] [D7]can[/][X1]not[/] [D5]answer[/] [A2]now[/].'
+  example_en: '[O2]Sorry[/], [T8]I[/] [D7]ca[/][X1]n''t[/] [D5]answer[/] [A2]now[/].'
   example_ru: Извините, сейчас не могу ответить.
   situation: Говорите по телефону и в сообщениях
   usage_note: 'w не читается: «Энсэр».'
@@ -182,7 +182,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /naʊ/
   translation_ru: сейчас
-  example_en: '[T8]I[/] [D1]am[/] [J4]busy[/] [A2]now[/].'
+  example_en: '[T8]I[/][D1]''m[/] [J4]busy[/] [A2]now[/].'
   example_ru: Я сейчас занят.
   situation: Говорите по телефону и в сообщениях
   usage_note: «нау». Можно в начале или в конце фразы.
@@ -260,7 +260,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /rɔŋ/
   translation_ru: неправильный, не тот
-  example_en: '[O2]Sorry[/], [T8]it[/] [D1]is[/] [T1]the[/] [J3]wrong[/] [S9]number[/].'
+  example_en: '[O2]Sorry[/], [T8]it[/][D1]''s[/] [T1]the[/] [J3]wrong[/] [S9]number[/].'
   example_ru: Извините, вы ошиблись номером.
   situation: Говорите по телефону и в сообщениях
   usage_note: 'w не произносится. В конце /ŋ/: задняя часть языка касается мягкого нёба, а не кончик языка, как для /n/. wrong number — «не туда попали».'

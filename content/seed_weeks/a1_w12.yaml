@@ -1,7 +1,7 @@
 level: A1
 week: 12
 can_do_ru: "Я смогу отправить письмо на почте, сказать, чего у меня нет (I don't have a stamp), назвать город и индекс, заполнить анкету и спросить о почте для дома."
-mission_ru: "Скажите вслух по-английски три фразы с don't и doesn't о себе и знакомых: I don't… My friend doesn't… Потом спросите кого-нибудь: What is your address?"
+mission_ru: "Скажите вслух по-английски три фразы с don't и doesn't о себе и знакомых: I don't… My friend doesn't… Потом спросите кого-нибудь: What's your address?"
 chunks: [LX-00232, LX-00233, LX-00234, LX-00235, LX-00236]
 story_beat:
   intro_ru: "Анна несёт на почту письмо маме в Россию. Том идёт с ней и заодно хочет спросить про старый почтовый ящик."
@@ -66,6 +66,6 @@ twister:
   - '[D9]get[/] [T1]a[/], [S9]letter[/]'
   - '[D9]get[/] [T1]a[/] [S9]letter[/]'
   - '[D9]Get[/] [T1]a[/] [S9]letter[/] [P3]at[/] [T1]a[/] [S4]city[/] [S4]post office[/].'
-  - '[T8]I[/] [D1]do[/] [X1]not[/] [D1]have[/] [T1]a[/] [S2]stamp[/].'
+  - '[T8]I[/] [D1]do[/][X1]n''t[/] [D1]have[/] [T1]a[/] [S2]stamp[/].'
   target_line: I do not have a stamp.
   own_ru: 'Скажите, чего у вас сейчас нет: I don''t have a…'

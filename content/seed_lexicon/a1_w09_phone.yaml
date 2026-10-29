@@ -55,7 +55,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈnʌmbɚ/
   translation_ru: номер; число
-  example_en: '[T9]What[/] [D1]is[/] [T3]your[/] [S2]phone[/] [S9]number[/]?'
+  example_en: '[T9]What[/][D1]''s[/] [T3]your[/] [S2]phone[/] [S9]number[/]?'
   example_ru: Какой у вас номер телефона?
   situation: Оставляете номер телефона
 - uid: LX-00186

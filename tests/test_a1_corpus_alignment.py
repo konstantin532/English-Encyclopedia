@@ -11,7 +11,7 @@ import yaml
 from django.conf import settings
 from django.test import SimpleTestCase
 
-from apps.drills.models import Exercise
+from apps.drills.models import Exercise, loose_normalize
 
 CONTENT = Path(settings.BASE_DIR) / "content"
 MARKER = re.compile(r"\[[^\]]+\]")
@@ -21,6 +21,17 @@ RU_NEGATION = re.compile(r"(?:^|[\s,.;:«—])(?:не|нет|никогда|не
 
 def plain(value):
     return MARKER.sub("", str(value)).replace("’", "'").casefold()
+
+
+def demonstrates_target(example, candidates, unit_type):
+    example = plain(example)
+    if unit_type == "phrase":
+        # A conversational contraction still demonstrates the same phrase.
+        # Keep every content word and require complete token boundaries.
+        example = f" {loose_normalize(example)} "
+        candidates = [loose_normalize(form) for form in candidates]
+        return any(form and f" {form} " in example for form in candidates)
+    return any(form and form in example for form in candidates)
 
 
 def corpus(directory):
@@ -49,11 +60,39 @@ class A1CorpusAlignmentTests(SimpleTestCase):
                 candidates = [target, *(str(form).casefold() for form in forms)]
                 with self.subTest(uid=uid):
                     self.assertTrue(
-                        any(form and form in examples for form in candidates),
+                        demonstrates_target(examples, candidates, unit.get("unit_type")),
                         f"{path.name}: {uid} ({unit['lemma']}) not demonstrated in {examples!r}"
                     )
         self.assertEqual(len(seen), 500)
         self.assertEqual(len(set(seen)), 500)
+
+    def test_phrase_demonstration_accepts_contractions_and_preserves_target_words(self):
+        cases = (
+            ("What is your name?", "What's your name?", "What's your address?"),
+            ("I am from Russia.", "I'm from Russia.", "I'm from Canada."),
+            ("I am your neighbor.", "I'm your neighbor.", "I'm your teacher."),
+            ("That is your room.", "That's your room.", "That's my room."),
+            ("It is not my box.", "It's not my box.", "It's my box."),
+            ("You are welcome.", "You're welcome.", "You're late."),
+            ("Who is this?", "Who's this?", "Who's that?"),
+            ("Here is your photo.", "Here's your photo.", "Here's my photo."),
+            ("I am happy!", "I'm happy!", "I'm unhappy!"),
+            ("What is the address?", "What's the address?", "What's the name?"),
+        )
+        for target, contracted, changed_meaning in cases:
+            with self.subTest(target=target):
+                self.assertTrue(demonstrates_target(target, [target], "phrase"))
+                self.assertTrue(demonstrates_target(contracted, [target], "phrase"))
+                self.assertFalse(demonstrates_target(changed_meaning, [target], "phrase"))
+        self.assertTrue(demonstrates_target(
+            "[T8]I[/][D1]'m[/] [J4]happy[/]!", ["I am happy!"], "phrase"
+        ))
+        self.assertFalse(demonstrates_target("I'm happyish.", ["I am happy"], "phrase"))
+
+    def test_word_demonstration_still_requires_the_target_or_a_declared_form(self):
+        self.assertTrue(demonstrates_target("He went home.", ["go", "went"], "word"))
+        self.assertFalse(demonstrates_target("He went home.", ["go"], "word"))
+        self.assertFalse(demonstrates_target("I'm happy.", ["am"], "word"))
 
     def test_500_examples_preserve_explicit_negation_in_russian(self):
         checked = 0
