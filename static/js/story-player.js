@@ -20,11 +20,26 @@
   document.querySelectorAll("[data-hunt]").forEach((btn) => btn.addEventListener("click", () => {
     text?.querySelectorAll("mark").forEach((m) => m.replaceWith(...m.childNodes));
     text?.normalize();
-    const phrase = btn.dataset.hunt.toLowerCase();
+    const phrases = [btn.dataset.hunt, btn.dataset.huntFull]
+      .filter(Boolean).map((phrase) => phrase.toLowerCase().replace(/[’‘]/g, "'").replace(/[.!?]$/, ""));
+    let found = false;
     for (const p of text?.querySelectorAll("p") || []) {
-      const plain = p.textContent.toLowerCase();
-      const at = plain.indexOf(phrase.replace(/[.!?]$/, ""));
-      if (at >= 0) { highlight(p, at, at + phrase.replace(/[.!?]$/, "").length); p.scrollIntoView({ block: "center", behavior: calm ? "smooth" : "auto" }); break; }
+      // A script paragraph contains hidden copies of the same line. Match the
+      // visible variant only; a full-form note remains a fallback for older hunts.
+      const variants = p.querySelectorAll(".line-written, .line-spoken, .line-full");
+      const targets = variants.length ? variants : [p.querySelector(".line-text") || p];
+      for (const target of targets) {
+        if (!target.getClientRects().length || getComputedStyle(target).visibility === "hidden") continue;
+        const plain = target.textContent.toLowerCase().replace(/[’‘]/g, "'");
+        const phrase = phrases.find((candidate) => plain.includes(candidate));
+        if (!phrase) continue;
+        const at = plain.indexOf(phrase);
+        highlight(target, at, at + phrase.length);
+        p.scrollIntoView({ block: "center", behavior: calm ? "smooth" : "auto" });
+        found = true;
+        break;
+      }
+      if (found) break;
     }
     document.querySelectorAll("[data-hunt]").forEach((other) => {
       other.setAttribute("aria-expanded", "false");
