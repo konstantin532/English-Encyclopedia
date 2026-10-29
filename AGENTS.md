@@ -47,6 +47,7 @@
 **Навыки проекта** лежат в `.claude/skills/`. Codex не находит их автоматически (он ищет только `.agents/skills/`), поэтому перед работой по теме прочитай нужный `SKILL.md` сам:
 - анимации и GSAP — `.claude/skills/gsap-core/`, по задаче также `gsap-timeline`, `gsap-scrolltrigger`, `gsap-performance`, `gsap-plugins`, `gsap-utils`. `gsap-react` и `gsap-frameworks` не нужны: в проекте ванильный JS;
 - дизайн, вёрстка, типографика, доступность интерфейса — `.claude/skills/ui-ux-pro-max/`;
+- **любая работа с интерфейсом, страницами, анимацией и редизайном** — сначала прочитай [DESIGN.md](DESIGN.md) (направление «живой атлас» и запрет шаблонного AI-дизайна) и используй навык `.agents/skills/encyclopedia-design/` (в Codex: `$encyclopedia-design`);
 - PostgreSQL: схема, миграции, индексы, запросы, права доступа — `.claude/skills/supabase-postgres-best-practices/`;
 - Supabase — `.claude/skills/supabase/`, только если задача касается именно Supabase.
 
