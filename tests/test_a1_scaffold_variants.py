@@ -203,9 +203,18 @@ class RotatingIndependentReviewTests(TestCase):
                 articles = [node for node in elements(parse_html(response.content.decode())) if node.name == "article"]
                 self.assertEqual(len(articles), 1)
                 blocks = [node for node in articles[0].children if not isinstance(node, str)]
+                opening_block = ("section", "beginner-steps")
+                if response.context["editorial_pilot"]:
+                    opening_block = ("details", None)
+                    self.assertIn("data-editorial-guide", dict(blocks[0].attributes))
+                    self.assertNotIn("open", dict(blocks[0].attributes))
+                    guide_sections = [node for node in elements(blocks[0])
+                                      if dict(node.attributes).get("id") == "beginner-steps"]
+                    self.assertEqual(len(guide_sections), 1)
+                    self.assertEqual(guide_sections[0].name, "section")
                 self.assertEqual(
                     [(node.name, dict(node.attributes).get("id")) for node in blocks],
-                    [("section", "beginner-steps"), ("div", None),
+                    [opening_block, ("div", None),
                      ("section", "practice"), ("section", "translate"),
                      ("section", "lesson-complete"),
                      ("details", "lesson-extra-practice")],

@@ -1,5 +1,8 @@
 {% load static %}
 {% comment %}A1: обложки «Атласа живого языка» для всех 14 недель (static/img/atlas).{% endcomment %}
+{% if editorial_pilot %}
+{% include "components/editorial_chapter.html" %}
+{% else %}
 <header class="week-hero{% if atlas_cover_url %} week-hero-atlas{% endif %}">
   <div class="week-hero-copy">
     <p class="studio-eyebrow">НЕДЕЛЯ {{ week.number|stringformat:'02d' }} · ЖИВОЙ АНГЛИЙСКИЙ</p>
@@ -9,3 +12,5 @@
   </div>
   {% if atlas_cover_url %}<img class="week-hero-image" src="{{ atlas_cover_url }}" alt="{{ atlas_cover_alt }}" width="1536" height="864" fetchpriority="high" decoding="async">{% else %}<span class="week-hero-letter" aria-hidden="true">{{ week.level.code }}</span>{% endif %}
 </header>
+
+{% endif %}

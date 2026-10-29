@@ -1,0 +1,14 @@
+<section id="beginner-steps" class="editorial-opening" aria-labelledby="a1-clarity-title">
+  <div class="editorial-opening-main">
+    <p class="editorial-kicker">ПЕРЕД НАЧАЛОМ</p>
+    <h2 id="a1-clarity-title">Понять за минуту — без сложных терминов</h2>
+    <p>Короткая опора перед подробным уроком. Ниже сохраняются все семь слоёв объяснения, примеры и практика.</p>
+    <dl><dt>Что это?</dt><dd>{{ a1_guide.plain }}</dd><dt>Простая схема</dt><dd class="editorial-specimen" lang="en">{{ a1_guide.pattern }}</dd></dl>
+    <blockquote><span class="editorial-specimen" lang="en">{{ a1_guide.example }}</span><span class="editorial-translation">{{ a1_guide.translation }}</span></blockquote>
+  </div>
+  <aside class="editorial-margin" aria-label="Заметки к объяснению">
+    {% include "components/editorial_sidenote.html" with note_title="Почему работает?" note_text=a1_guide.why only %}
+    {% include "components/editorial_sidenote.html" with note_title="Типичная ошибка" note_text=a1_guide.mistake note_followup=a1_guide.fix note_followup_title="Как исправить" only %}
+  </aside>
+  <div class="editorial-contrast"><h3>Сравните — почему смысл меняется?</h3><div class="editorial-contrast-pairs"><p><strong class="editorial-specimen" lang="en">{{ a1_guide.contrast.a_en }}</strong><span class="editorial-translation">{{ a1_guide.contrast.a_ru }}</span></p><p><strong class="editorial-specimen" lang="en">{{ a1_guide.contrast.b_en }}</strong><span class="editorial-translation">{{ a1_guide.contrast.b_ru }}</span></p></div><p><strong>В чём разница:</strong> {{ a1_guide.contrast.why }}</p></div>
+</section>

@@ -1,5 +1,5 @@
 /* Educational interiors only. Marker shapes/colors and player visibility stay owned by their components. */
-[data-educational-reading] {
+[data-educational-reading]:not([data-editorial-pilot]) {
   --edu-bg: #F7F5EF;
   --edu-ink: #26332F;
   --edu-accent: #194B3B;

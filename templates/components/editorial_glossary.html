@@ -1,0 +1,5 @@
+<section class="aside-box editorial-vocabulary" id="lesson-vocabulary" aria-labelledby="editorial-vocabulary-title">
+  <p class="editorial-kicker">СЛОВАРИК</p><h2 id="editorial-vocabulary-title">Слова урока</h2>
+  {% if editorial_words %}{% include "components/editorial_glossary_group.html" with glossary_units=editorial_words only %}{% endif %}
+  {% if editorial_phrases %}<h3>Фразы</h3>{% include "components/editorial_glossary_group.html" with glossary_units=editorial_phrases only %}{% endif %}
+</section>

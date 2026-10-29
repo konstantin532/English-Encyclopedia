@@ -1,0 +1,8 @@
+{% load markers %}
+<div class="editorial-dialogue-row">
+<div class="script-line script-{{ l.kind }} editorial-dialogue-line" data-line="{{ l.i }}" data-speaker="{{ l.speaker }}">
+  <span class="speaker speaker-{{ l.speaker }}" data-initial="{{ l.name|first }}" lang="ru">{{ l.name }}{% if l.kind == "narration" %} · рассказ{% endif %}{% if l.emotion_ru %}<span class="emotion">{{ l.emotion_ru }}</span>{% endif %}</span>
+  <div class="editorial-turn"><span class="line-text editorial-specimen">{% if l.spoken %}<span class="line-written">{{ l.text|annotate }}</span><span class="line-spoken">{{ l.spoken|annotate }}</span>{% else %}{{ l.text|annotate }}{% endif %}</span>{% if l.ru %}<span class="line-ru editorial-translation" lang="ru">{{ l.ru }}</span>{% endif %}</div>
+</div>
+  {% if l.spoken %}<details class="editorial-sidenote editorial-full-note" data-editorial-note open><summary lang="ru">Полная форма</summary><span class="line-full">{{ l.text|plain }}</span></details>{% endif %}
+</div>

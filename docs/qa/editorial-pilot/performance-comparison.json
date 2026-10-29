@@ -1,0 +1,122 @@
+[
+  {
+    "name": "week3",
+    "stage": "before",
+    "run": 0,
+    "lcp": 172
+  },
+  {
+    "name": "week3",
+    "stage": "after",
+    "run": 0,
+    "lcp": 124
+  },
+  {
+    "name": "lesson",
+    "stage": "before",
+    "run": 0,
+    "lcp": 108
+  },
+  {
+    "name": "lesson",
+    "stage": "after",
+    "run": 0,
+    "lcp": 188
+  },
+  {
+    "name": "week3",
+    "stage": "before",
+    "run": 1,
+    "lcp": 104
+  },
+  {
+    "name": "week3",
+    "stage": "after",
+    "run": 1,
+    "lcp": 88
+  },
+  {
+    "name": "lesson",
+    "stage": "before",
+    "run": 1,
+    "lcp": 104
+  },
+  {
+    "name": "lesson",
+    "stage": "after",
+    "run": 1,
+    "lcp": 112
+  },
+  {
+    "name": "week3",
+    "stage": "before",
+    "run": 2,
+    "lcp": 112
+  },
+  {
+    "name": "week3",
+    "stage": "after",
+    "run": 2,
+    "lcp": 120
+  },
+  {
+    "name": "lesson",
+    "stage": "before",
+    "run": 2,
+    "lcp": 84
+  },
+  {
+    "name": "lesson",
+    "stage": "after",
+    "run": 2,
+    "lcp": 120
+  },
+  {
+    "name": "week3",
+    "stage": "before",
+    "run": 3,
+    "lcp": 120
+  },
+  {
+    "name": "week3",
+    "stage": "after",
+    "run": 3,
+    "lcp": 116
+  },
+  {
+    "name": "lesson",
+    "stage": "before",
+    "run": 3,
+    "lcp": 100
+  },
+  {
+    "name": "lesson",
+    "stage": "after",
+    "run": 3,
+    "lcp": 216
+  },
+  {
+    "name": "week3",
+    "stage": "before",
+    "run": 4,
+    "lcp": 116
+  },
+  {
+    "name": "week3",
+    "stage": "after",
+    "run": 4,
+    "lcp": 88
+  },
+  {
+    "name": "lesson",
+    "stage": "before",
+    "run": 4,
+    "lcp": 112
+  },
+  {
+    "name": "lesson",
+    "stage": "after",
+    "run": 4,
+    "lcp": 112
+  }
+]

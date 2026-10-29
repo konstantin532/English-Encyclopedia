@@ -1,0 +1,510 @@
+{
+  "background": "#f8f1e3",
+  "scope": "Selected pilot text; conservative flat-paper comparison, not a full WCAG audit",
+  "samples": [
+    {
+      "name": "week3",
+      "selector": "editorial-kicker",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "H1",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "week3",
+      "selector": "emotion",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "line-text editorial-specimen",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "week3",
+      "selector": "line-ru editorial-translation",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "line-text editorial-specimen",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "week3",
+      "selector": "line-ru editorial-translation",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "SUMMARY",
+      "color": "rgb(31, 74, 54)",
+      "ratio": 8.93
+    },
+    {
+      "name": "week3",
+      "selector": "emotion",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "line-text editorial-specimen",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "week3",
+      "selector": "line-ru editorial-translation",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "line-text editorial-specimen",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "week3",
+      "selector": "line-ru editorial-translation",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "emotion",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "line-text editorial-specimen",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "week3",
+      "selector": "line-ru editorial-translation",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "emotion",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "line-text editorial-specimen",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "week3",
+      "selector": "line-ru editorial-translation",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "emotion",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "line-text editorial-specimen",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "week3",
+      "selector": "line-ru editorial-translation",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "emotion",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "line-text editorial-specimen",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "week3",
+      "selector": "line-ru editorial-translation",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "SUMMARY",
+      "color": "rgb(31, 74, 54)",
+      "ratio": 8.93
+    },
+    {
+      "name": "week3",
+      "selector": "line-text editorial-specimen",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "week3",
+      "selector": "line-ru editorial-translation",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "SUMMARY",
+      "color": "rgb(31, 74, 54)",
+      "ratio": 8.93
+    },
+    {
+      "name": "week3",
+      "selector": "emotion",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "line-text editorial-specimen",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "week3",
+      "selector": "line-ru editorial-translation",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "SUMMARY",
+      "color": "rgb(31, 74, 54)",
+      "ratio": 8.93
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "week3",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "H1",
+      "color": "rgb(28, 42, 33)",
+      "ratio": 13.32
+    },
+    {
+      "name": "lesson",
+      "selector": "editorial-kicker",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "SUMMARY",
+      "color": "rgb(31, 74, 54)",
+      "ratio": 8.93
+    },
+    {
+      "name": "lesson",
+      "selector": "SUMMARY",
+      "color": "rgb(31, 74, 54)",
+      "ratio": 8.93
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "editorial-kicker",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    },
+    {
+      "name": "lesson",
+      "selector": "ipa",
+      "color": "rgb(89, 98, 90)",
+      "ratio": 5.63
+    }
+  ]
+}

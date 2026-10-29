@@ -1,0 +1,3 @@
+<dl class="editorial-glossary annotated">
+{% for u in glossary_units %}<div><dt><a href="{% url 'lexicon:detail' u.uid %}" lang="en" class="editorial-specimen"><span class="mk" data-cat="{{ u.semantic_class.category.code }}" data-cls="{{ u.semantic_class.number }}" data-label="{{ u.translation_ru }}">{{ u.lemma }}</span></a></dt><dd>{% if u.ipa_us %}<span class="ipa" lang="en">{{ u.ipa_us }}</span>{% endif %}<span class="editorial-translation">{{ u.translation_ru }}</span></dd></div>{% endfor %}
+</dl>

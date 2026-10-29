@@ -2,9 +2,9 @@ name: Atlas browser acceptance
 on:
   push:
     branches: ['design/living-atlas-*']
-    paths: ['static/**', 'templates/**', 'apps/**', 'scripts/verify_atlas.cjs', 'scripts/atlas_geometry.cjs', 'tests/js/atlas-geometry.test.cjs', 'scripts/verify_lesson_bookpage.cjs', '.github/workflows/atlas-browser.yml']
+    paths: ['static/**', 'templates/**', 'apps/**', 'scripts/verify_atlas.cjs', 'scripts/editorial_pilot_qa.cjs', 'scripts/editorial_pilot_ci.cjs', 'scripts/atlas_geometry.cjs', 'tests/js/atlas-geometry.test.cjs', 'scripts/verify_lesson_bookpage.cjs', '.github/workflows/atlas-browser.yml']
   pull_request:
-    paths: ['static/**', 'templates/**', 'apps/**', 'scripts/verify_atlas.cjs', 'scripts/atlas_geometry.cjs', 'tests/js/atlas-geometry.test.cjs', 'scripts/verify_lesson_bookpage.cjs', '.github/workflows/atlas-browser.yml']
+    paths: ['static/**', 'templates/**', 'apps/**', 'scripts/verify_atlas.cjs', 'scripts/editorial_pilot_qa.cjs', 'scripts/editorial_pilot_ci.cjs', 'scripts/atlas_geometry.cjs', 'tests/js/atlas-geometry.test.cjs', 'scripts/verify_lesson_bookpage.cjs', '.github/workflows/atlas-browser.yml']
 permissions:
   contents: read
 concurrency:
@@ -39,6 +39,7 @@ jobs:
           uv run python manage.py migrate --noinput
           uv run python manage.py load_content
           ATLAS_PYTHON="$PWD/.venv/bin/python" ATLAS_BEFORE_DIR="$RUNNER_TEMP/atlas-before" NODE_PATH="$RUNNER_TEMP/atlas-browser/node_modules" node scripts/verify_atlas.cjs
+          ATLAS_PYTHON="$PWD/.venv/bin/python" ATLAS_BEFORE_DIR="$RUNNER_TEMP/atlas-before" NODE_PATH="$RUNNER_TEMP/atlas-browser/node_modules" node scripts/editorial_pilot_ci.cjs
         env:
           DATABASE_URL: sqlite:///${{ runner.temp }}/atlas.sqlite3
           # Ветки design/living-atlas-v* — намеренный редизайн: геометрию сравниваем, но не блокируем.

@@ -4,7 +4,7 @@
 {% block social_title %}Неделя {{ week.number }} · {{ week.situation_ru }} · {{ SITE_NAME }}{% endblock %}
 {% block page_styles %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% endblock %}
 {% block content %}
-<div data-educational-reading data-reading-theme="friendly" class="wrap cinematic-week">
+<div data-educational-reading{% if editorial_pilot %} data-editorial-pilot="week"{% endif %} data-reading-theme="friendly" class="wrap cinematic-week">
   {% if scene %}
   <div class="lesson-grid">
     <article class="prose">
@@ -41,7 +41,7 @@
       {% if trainer_entry %}<section class="layer" data-trainer-entry><h2>Практика слов и фраз</h2><p>После знакомства с уроком 5 можно добровольно потренировать три единицы.</p><p><a href="{% url 'learning:trainer' %}">Открыть тренажёр</a></p></section>{% endif %}
       <section class="layer" id="chunks" aria-labelledby="chunks-t">
         <h2 id="chunks-t">Готовые фразы</h2>
-        {% for unit in scene.chunks.all %}<p><a href="{% url 'lexicon:detail' unit.uid %}" lang="en">{{ unit.lemma }}</a> — {{ unit.translation_ru }}<br><span class="ipa">{{ unit.ipa_us }}</span> {{ unit|ru_tr }}</p>{% empty %}<p>Фразы готовятся.</p>{% endfor %}
+        {% for unit in scene.chunks.all %}<p{% if editorial_pilot %} class="editorial-phrase"{% endif %}><a href="{% url 'lexicon:detail' unit.uid %}" lang="en">{{ unit.lemma }}</a> — {{ unit.translation_ru }}<br><span class="ipa">{{ unit.ipa_us }}</span> {{ unit|ru_tr }}</p>{% empty %}<p>Фразы готовятся.</p>{% endfor %}
       </section>
       <section class="layer" id="role" aria-labelledby="role-t">
         <h2 id="role-t">Сыграть роль</h2>
@@ -69,4 +69,4 @@
   {% if next_week %}<p><a class="btn btn-quiet" href="{% url 'curriculum:week' week.level.slug next_week.number %}">Следующая неделя: {{ next_week.situation_ru|default:next_week.theme_ru }}</a></p>{% endif %}
 </div>
 {% endblock %}
-{% block scripts %}<script src="{% static 'js/audio-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script>{% endblock %}
+{% block scripts %}{% if editorial_pilot %}<script src="{% static 'js/editorial-notes.js' %}" defer></script>{% endif %}<script src="{% static 'js/audio-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script>{% endblock %}

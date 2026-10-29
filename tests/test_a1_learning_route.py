@@ -49,9 +49,20 @@ class A1LearningRouteTests(TestCase):
                     ("Типичная ошибка", "mistake"),
                     ("Как исправить", "fix"),
                 ):
-                    self.assertContains(response, f"<dt>{title}</dt><dd>{escape(guide[field])}</dd>", count=1, html=True)
-                self.assertContains(response, f'<dt>Простая схема</dt><dd><strong lang="en">{escape(guide["pattern"])}</strong></dd>', count=1, html=True)
-                self.assertContains(response, f'<blockquote><span lang="en">{escape(guide["example"])}</span> — {escape(guide["translation"])}</blockquote>', count=1, html=True)
+                    if response.context["editorial_pilot"]:
+                        # The same explanation is now a native margin note.
+                        self.assertContains(response, title)
+                        self.assertContains(response, escape(guide[field]))
+                    else:
+                        self.assertContains(response, f"<dt>{title}</dt><dd>{escape(guide[field])}</dd>", count=1, html=True)
+                if response.context["editorial_pilot"]:
+                    self.assertContains(response, escape(guide["pattern"]))
+                    self.assertContains(response, escape(guide["example"]))
+                    self.assertContains(response, escape(guide["translation"]))
+                else:
+                    self.assertContains(response, f'<dt>Простая схема</dt><dd><strong lang="en">{escape(guide["pattern"])}</strong></dd>', count=1, html=True)
+                    self.assertContains(response, f'<blockquote><span lang="en">{escape(guide["example"])}</span> — {escape(guide["translation"])}</blockquote>', count=1, html=True)
+
 
     def test_all_32_a1plus_lessons_keep_existing_structure_without_new_bridge(self):
         lessons = Lesson.objects.filter(level__code="A1+", is_published=True)
