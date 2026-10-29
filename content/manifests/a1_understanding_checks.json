@@ -28,7 +28,7 @@
         },
         "transfer": {
           "prompt": "Покажите гостю новый телефон двумя фразами.",
-          "model": "This is my phone. It is new."
+          "model": "This is my phone. It's new."
         },
         "explain": {
           "prompt": "Новичок показывает книгу и говорит: «This is book». Добавьте одно слово и объясните, зачем оно здесь.",
@@ -116,7 +116,7 @@
         },
         "transfer": {
           "prompt": "Вы впервые показываете гостю книгу, затем сообщаете, что она ваша.",
-          "model": "This is a book. It is my book."
+          "model": "This is a book. It's my book."
         },
         "explain": {
           "prompt": "Новичок показывает свою книгу: «This is a my book». Почему так не говорят? Исправьте фразу.",
@@ -309,7 +309,7 @@
         },
         "transfer": {
           "prompt": "Расскажите по фотографии о матери и её возрасте.",
-          "model": "This is my mom. She is forty."
+          "model": "This is my mom. She's forty."
         },
         "explain": {
           "prompt": "На фотографии незнакомый человек. Новичок спрашивает: «Who this?». Как исправить и почему?",
@@ -420,7 +420,7 @@
       "pattern": "How much is it? / It is five dollars.",
       "mistake": "Говорить How old о цене.",
       "fix": "Для цены спрашивайте how much, не how old.",
-      "example": "It is five dollars.",
+      "example": "It's five dollars.",
       "translation": "Это стоит пять долларов.",
       "tasks": {
         "meaning": {
@@ -432,7 +432,7 @@
         },
         "writing": {
           "prompt": "Напишите «Это стоит три доллара».",
-          "model": "It is three dollars.",
+          "model": "It's three dollars.",
           "accepted": [
             "It is three dollars.",
             "It's three dollars.",
@@ -446,7 +446,7 @@
         },
         "transfer": {
           "prompt": "Узнайте цену книги, затем оцените её как дорогую.",
-          "model": "How much is the book? It is expensive."
+          "model": "How much is the book? It's expensive."
         },
         "explain": {
           "prompt": "В магазине нужно спросить цену. Ученик спрашивает: «How old is this book?». Почему это не вопрос о цене?",
@@ -596,7 +596,7 @@
       "translation": "Я учитель.",
       "tasks": {
         "meaning": {
-          "prompt": "Передайте по-русски смысл: «He is a doctor.».",
+          "prompt": "Передайте по-русски смысл: «He's a doctor.».",
           "model": "Он врач.",
           "accepted": [
             "Он врач."
@@ -615,7 +615,7 @@
         },
         "transfer": {
           "prompt": "Представьтесь как учитель и расскажите, где работаете. Напишите две короткие фразы.",
-          "model": "I am a teacher. I work at a school."
+          "model": "I'm a teacher. I work at a school."
         },
         "explain": {
           "prompt": "Новичок представляет себя: «I am teacher». Как звучит обычная полная фраза? Почему?",
@@ -910,7 +910,7 @@
         },
         "transfer": {
           "prompt": "Объясните врачу, что болит нога и вы устали.",
-          "model": "My leg hurts. I am tired."
+          "model": "My leg hurts. I'm tired."
         },
         "explain": {
           "prompt": "Болят обе ступни. Ученик говорит: «My feet hurts». Исправьте фразу и объясните.",
@@ -952,7 +952,7 @@
         },
         "transfer": {
           "prompt": "Откажитесь от прогулки вежливо и назовите причину.",
-          "model": "Sorry, I can't. I am busy."
+          "model": "Sorry, I can't. I'm busy."
         },
         "explain": {
           "prompt": "Ученик отказывается работать сегодня: «I can't to work today». Исправьте и объясните.",
@@ -1110,7 +1110,7 @@
         },
         "writing": {
           "prompt": "Друг спрашивает «Why are you at home?». Напишите короткий ответ «Потому что я устал».",
-          "model": "Because I am tired.",
+          "model": "Because I'm tired.",
           "accepted": [
             "Because I am tired.",
             "Because I'm tired."
@@ -1181,7 +1181,7 @@
       "pattern": "I don't know. / Where is the bank? / I can help.",
       "mistake": "Спрашивать: Do he like it?",
       "fix": "В этом вопросе с he нужно does: Does he like it?",
-      "example": "I am from Russia.",
+      "example": "I'm from Russia.",
       "translation": "Я из России.",
       "tasks": {
         "meaning": {
@@ -1201,7 +1201,7 @@
         },
         "transfer": {
           "prompt": "Представьтесь, назовите страну и спросите дорогу к автобусной остановке.",
-          "model": "I am Anna. I am from Russia. Where is the bus stop?"
+          "model": "I'm Anna. I'm from Russia. Where's the bus stop?"
         },
         "explain": {
           "prompt": "Вы устали и не можете гулять. Ученик написал: «I is tired. I don't can walk». Исправьте обе фразы и назовите два разных правила.",

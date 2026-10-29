@@ -33,7 +33,7 @@ layers:
 
       Глагол **can** означает не только «могу», но и «умею». Им рассказывают о навыках: языках, спорте, музыке.
 
-      > [O4]Yes[/], [T8]I[/] [D7]can[/]. [T8]I[/] [D1]am[/] [P2]from[/] [S4]Russia[/]. [T8]I[/] [D7]can[/] [D5]speak[/] [S10]Russian[/] [C1]and[/] [S10]English[/]. — Да. Я из России. Я говорю по-русски и по-английски.
+      > [O4]Yes[/], [T8]I[/] [D7]can[/]. [T8]I[/][D1]'m[/] [P2]from[/] [S4]Russia[/]. [T8]I[/] [D7]can[/] [D5]speak[/] [S10]Russian[/] [C1]and[/] [S10]English[/]. — Да. Я из России. Я говорю по-русски и по-английски.
 
       Это **образец для Анны**, которая в истории говорит по-русски и по-английски. О себе используйте его **только если он правдив**: *I can speak…* означает реальное умение, а не просто желание выучить язык.
   - number: 2
@@ -199,7 +199,7 @@ practice:
 - order: 3
   kind: translate
   prompt_ru: Я не умею играть на гитаре.
-  answer: I cannot play the guitar.
+  answer: I can't play the guitar.
   accepted:
   - I cannot play guitar.
   hint_ru: can't play

@@ -218,7 +218,7 @@
     dictation.addEventListener("submit", function (event) {
       event.preventDefault();
       if (!firstAnswer.value.trim()) return;
-      const match = compareModelAnswer(firstAnswer.value, retrieval[1], []);
+      const match = compareModelAnswer(firstAnswer.value, retrieval[1], topic.retrieval_alternatives);
       firstFeedback.textContent = match
         ? "Запись совпала с текстом реплики. Это не оценка распознавания речи или произношения."
         : "Запись отличается от образца. Переслушайте фразу и сравните слова; отличия пунктуации могут быть допустимы.";
@@ -230,7 +230,7 @@
     backtranslation.addEventListener("submit", function (event) {
       event.preventDefault();
       if (!secondAnswer.value.trim()) return;
-      secondFeedback.textContent = compareModelAnswer(secondAnswer.value, retrieval[1], [])
+      secondFeedback.textContent = compareModelAnswer(secondAnswer.value, retrieval[1], topic.retrieval_alternatives)
         ? "Ваш ответ совпал с образцом."
         : "Вариант отличается от образца, но может быть естественным и правильным. Сравните смысл и грамматику.";
       secondFeedback.hidden = false;

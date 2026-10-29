@@ -11,7 +11,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /wɛr/
   translation_ru: где, куда
-  example_en: '[A6]Where[/] [D1]is[/] [T1]the[/] [S4]bank[/]?'
+  example_en: '[A6]Where[/][D1]''s[/] [T1]the[/] [S4]bank[/]?'
   example_ru: Где банк?
   situation: Спрашиваете дорогу
   usage_note: 'Губы трубочкой для w: «уэр». Не путайте с were.'
@@ -40,7 +40,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ɪkˈskjuz/
   translation_ru: извинять
-  example_en: '[O2]Excuse me[/], [A6]where[/] [D1]is[/] [T1]the[/] [S4]bank[/]?'
+  example_en: '[O2]Excuse me[/], [A6]where[/][D1]''s[/] [T1]the[/] [S4]bank[/]?'
   example_ru: Извините, где банк?
   situation: Обращаетесь к незнакомому человеку
 - uid: LX-00160
@@ -68,7 +68,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ʃɑp/
   translation_ru: магазин, мастерская
-  example_en: '[A6]Where[/] [D1]is[/] [T1]the[/] [S2]key[/] [S4]shop[/]?'
+  example_en: '[A6]Where[/][D1]''s[/] [T1]the[/] [S2]key[/] [S4]shop[/]?'
   example_ru: Где мастерская по ключам?
   situation: Ищете мастерскую в городе
   usage_note: 'В Америке обычный магазин — store, а shop — маленькая лавка или мастерская: key shop, coffee shop.'
@@ -109,7 +109,7 @@ units:
   ipa_us: /fɔr/
   ipa_ru: фор
   translation_ru: для
-  example_en: '[T8]It[/] [D1]is[/] [T1]a[/] [S2]key[/] [P5]for[/] [T1]the[/] [S2]door[/].'
+  example_en: '[T8]It[/][D1]''s[/] [T1]a[/] [S2]key[/] [P5]for[/] [T1]the[/] [S2]door[/].'
   example_ru: Это ключ от двери.
   situation: Говорите, для чего вещь
   usage_note: 'Без ударения звучит коротко: «фэр». Русское «ключ от двери» — a key for the door.'
@@ -181,7 +181,7 @@ units:
   example_en: '[T1]The[/] [S4]bank[/] [D1]is[/] [P1]on[/] [T1]the[/] [S4]right[/].'
   example_ru: Банк справа.
   situation: Объясняете дорогу
-  usage_note: 'В turn right слово right показывает направление — это наречие. В on the right оно называет сторону — это существительное; всё сочетание означает «справа». Right ещё значит «правильный»: That is right! — Верно!'
+  usage_note: 'В turn right слово right показывает направление — это наречие. В on the right оно называет сторону — это существительное; всё сочетание означает «справа». Right ещё значит «правильный»: That''s right! — Верно!'
 - uid: LX-00170
   lemma: straight
   meaning: in a line, without turning
@@ -203,7 +203,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /nɪr/
   translation_ru: рядом с, недалеко от
-  example_en: '[T8]It[/] [D1]is[/] [P1]near[/] [T1]the[/] [S4]bank[/].'
+  example_en: '[T8]It[/][D1]''s[/] [P1]near[/] [T1]the[/] [S4]bank[/].'
   example_ru: Это недалеко от банка.
   situation: Объясняете дорогу
 - uid: LX-00172

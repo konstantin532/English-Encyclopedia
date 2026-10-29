@@ -16,7 +16,7 @@ units:
     frequency_source: "NGSL — требует проверки"
     collocations: [a big box, a new box, my box]
     chunks: ["Is this your box?"]
-    example_en: "[T8]It[/] [D1]is[/] [X1]not[/] [T3]my[/] [S2]box[/]."
+    example_en: "[T8]It[/][D1]'s[/] [X1]not[/] [T3]my[/] [S2]box[/]."
     example_ru: "Это не моя коробка."
     pattern: "Is this your ___?"
     substitutions: [box, book, phone]
@@ -35,7 +35,7 @@ units:
     translation_ru: кошка, кот
     frequency_source: "NGSL — требует проверки"
     collocations: [a big cat, my cat, a nice cat]
-    chunks: ["It is my cat."]
+    chunks: ["It's my cat."]
     example_en: "[T8]I[/] [D1]have[/] [T1]a[/] [J1]big[/] [S6]cat[/]."
     example_ru: "У меня большой кот."
     pattern: "I have a ___ cat."

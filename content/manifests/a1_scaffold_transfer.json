@@ -25,7 +25,7 @@
       "transfer_variants": [
         {
           "prompt": "На столе ваша новая книга. Представьте её гостю и добавьте отдельной фразой, что она новая.",
-          "model": "This is my book. It is new."
+          "model": "This is my book. It's new."
         },
         {
           "prompt": "В комнате ваш новый телефон. Покажите его другу и скажите, что он новый.",
@@ -89,7 +89,7 @@
         },
         {
           "prompt": "Вы показываете другу стул. Сначала назовите предмет, затем скажите, что стул ваш.",
-          "model": "This is a chair. It is my chair."
+          "model": "This is a chair. It's my chair."
         }
       ]
     },
@@ -205,11 +205,11 @@
       "transfer_variants": [
         {
           "prompt": "Показывая вымышленную фотографию, представьте брата и скажите, что ему десять.",
-          "model": "This is my brother. He is ten."
+          "model": "This is my brother. He's ten."
         },
         {
           "prompt": "На вымышленной фотографии ваша мама. Представьте её и скажите, что ей пятьдесят.",
-          "model": "This is my mom. She is fifty."
+          "model": "This is my mom. She's fifty."
         }
       ]
     },
@@ -265,7 +265,7 @@
       "transfer_variants": [
         {
           "prompt": "Вы на кухне. Сообщите гостю, что есть молоко; само место называть не нужно.",
-          "model": "There is some milk."
+          "model": "There's some milk."
         },
         {
           "prompt": "Вы с гостем в комнате. Скажите, что здесь есть два стула.",
@@ -415,7 +415,7 @@
       "transfer_variants": [
         {
           "prompt": "Вам нужно сказать, что вы повар и работаете в кафе. Две короткие фразы.",
-          "model": "I am a cook. I work at a café."
+          "model": "I'm a cook. I work at a café."
         },
         {
           "prompt": "Том работает учителем в школе. Расскажите о его профессии и месте работы.",
@@ -697,7 +697,7 @@
       "slug": "a1-letters-address",
       "steps": [
         {
-          "example_en": "What is your address?",
+          "example_en": "What's your address?",
           "example_ru": "Какой у вас адрес?",
           "why_ru": "Address — адрес. В личных заданиях используйте только вымышленные данные."
         },
@@ -775,11 +775,11 @@
       "transfer_variants": [
         {
           "prompt": "Друг спрашивает, почему вы пьёте воду. Скажите, что вы хотите пить.",
-          "model": "I drink water because I am thirsty."
+          "model": "I drink water because I'm thirsty."
         },
         {
           "prompt": "Друг спрашивает, почему вы дома. Объясните, что вы заболели.",
-          "model": "I am at home because I am sick."
+          "model": "I'm at home because I'm sick."
         }
       ]
     },
@@ -835,7 +835,7 @@
       "transfer_variants": [
         {
           "prompt": "В вымышленной поездке скажите, что не знаете дорогу, и вежливо спросите, где станция.",
-          "model": "I don't know the way. Excuse me, where is the station?"
+          "model": "I don't know the way. Excuse me, where's the station?"
         },
         {
           "prompt": "В вымышленной поездке представьтесь, скажите, что не можете найти автобусную остановку, и спросите, где она.",

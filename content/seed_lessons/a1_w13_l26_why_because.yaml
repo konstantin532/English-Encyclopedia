@@ -182,7 +182,7 @@ practice:
 - order: 2
   kind: translate
   prompt_ru: Потому что я не могу спать.
-  answer: Because I cannot sleep.
+  answer: Because I can't sleep.
   hint_ru: Because + причина.
   explanation_ru: Because I can't sleep. Because вводит причину.
   review_of: 4

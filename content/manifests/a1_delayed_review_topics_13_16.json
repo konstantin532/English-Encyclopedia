@@ -67,7 +67,7 @@
       "",
       [
         "I am barista.",
-        "I am a barista.",
+        "I'm a barista.",
         "I am an barista."
       ],
       1
@@ -78,7 +78,7 @@
       [
         "He is engineer.",
         "He is a engineer.",
-        "He is an engineer."
+        "He's an engineer."
       ],
       2
     ],
@@ -110,7 +110,7 @@
       [
         "Who is the bank?",
         "What is the bank?",
-        "Excuse me, where is the bank?"
+        "Excuse me, where's the bank?"
       ],
       2
     ],

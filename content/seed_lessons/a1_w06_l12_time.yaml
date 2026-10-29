@@ -70,7 +70,7 @@ layers:
     body: |
       Так говорят о времени американцы:
 
-      > [J3]Good[/] [S7]morning[/]! [T8]You[/] [D1]are[/] [A3]here[/] [P3]at[/] [N3]seven[/]! — Доброе утро! Вы здесь в семь!
+      > [J3]Good[/] [S7]morning[/]! [T8]You[/][D1]'re[/] [A3]here[/] [P3]at[/] [N3]seven[/]! — Доброе утро! Вы здесь в семь!
       > [T9]What[/] [S7]time[/] [D1]do[/] [T8]you[/] [D9]get[/] [X3]up[/], [S1]Mia[/]? — Во сколько ты встаёшь, Мия?
 
       - В разговоре: It's seven o'clock — или совсем коротко: Seven.
@@ -168,7 +168,7 @@ practice:
 - order: 1
   kind: translate
   prompt_ru: Сейчас ровно семь.
-  answer: It is seven o'clock.
+  answer: It's seven o'clock.
   accepted:
   - It is seven.
   hint_ru: Ровное время — o'clock.

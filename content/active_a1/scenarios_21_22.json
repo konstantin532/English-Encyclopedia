@@ -86,7 +86,7 @@
         "title": "Время поесть",
         "scene": "Вы хотите есть и отвечаете другу на вопрос о самочувствии.",
         "prompt": "Сообщите, что голодны.",
-        "example": "I am hungry.",
+        "example": "I'm hungry.",
         "coach": "Hungry — голодный, а thirsty — испытывающий жажду."
       },
       {
@@ -110,18 +110,18 @@
         "title": "Импровизация: состояние и возможность",
         "scene": "Представьте приём: вы устали и можете сидеть, но не можете спать.",
         "prompt": "Опишите состояние и назовите одно доступное и одно недоступное действие.",
-        "example": "I am tired. I can sit, but I can't sleep.",
+        "example": "I'm tired. I can sit, but I can't sleep.",
         "coach": "После can и can’t нужна начальная форма действия; but соединяет противопоставление."
       }
     ],
     "twists": [
       {
         "scene": "Вместо усталости вы чувствуете себя хорошо. Скажите это со словом well.",
-        "example": "I am well."
+        "example": "I'm well."
       },
       {
         "scene": "Теперь вы можете спать, но хотите пить. Сообщите оба факта.",
-        "example": "I can sleep, but I am thirsty."
+        "example": "I can sleep, but I'm thirsty."
       }
     ]
   }

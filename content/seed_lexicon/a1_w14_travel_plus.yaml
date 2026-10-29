@@ -36,7 +36,7 @@ units:
   ipa_us: /reɪn/
   translation_ru: дождь
   meaning: water that falls from clouds
-  example_en: '[T8]I[/] [D1]do[/] [X1]not[/] [D3]like[/] [T1]the[/] [S6]rain[/].'
+  example_en: '[T8]I[/] [D1]do[/][X1]n''t[/] [D3]like[/] [T1]the[/] [S6]rain[/].'
   example_ru: Я не люблю дождь.
   usage_note: Здесь rain — существительное «дождь», не глагол. Обычно неисчисляемое.
   forms: []
@@ -78,7 +78,7 @@ units:
   ipa_us: /ˈklaʊdi/
   translation_ru: облачный
   meaning: having many clouds in the sky
-  example_en: '[T8]It[/] [D1]is[/] [J2]cloudy[/] [A2]today[/].'
+  example_en: '[T8]It[/][D1]''s[/] [J2]cloudy[/] [A2]today[/].'
   example_ru: Сегодня облачно.
   usage_note: Cloudy описывает облачную погоду; rainy здесь отдельно не вводится.
   forms: []
@@ -92,7 +92,7 @@ units:
   ipa_us: /wɔrm/
   translation_ru: тёплый
   meaning: having a pleasant, moderately high temperature
-  example_en: '[T8]It[/] [D1]is[/] [J2]warm[/] [C5]but[/] [J2]windy[/].'
+  example_en: '[T8]It[/][D1]''s[/] [J2]warm[/] [C5]but[/] [J2]windy[/].'
   example_ru: Тепло, но ветрено.
   usage_note: Warm — тепло, hot — жарко. В американском произношении слышен r.
   forms: []

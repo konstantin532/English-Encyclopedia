@@ -83,9 +83,11 @@ phrase_hunt:
   function: Что на фото — in the photo
 - phrase: Is it your family, Anna?
   function: 'Вопрос: чья семья?'
-- phrase: But it is my house!
+- phrase: But it's my house!
+  full_form: But it is my house!
   function: 'Удивление: но…'
-- phrase: And who is Rose?
+- phrase: And who's Rose?
+  full_form: And who is Rose?
   function: Главный вопрос истории
 retell_words:
 - cupboard

@@ -171,8 +171,8 @@ exercises:
     stage: transfer
     prompt_ru: "Новая ситуация: бариста спрашивает What would you like? Вы хотите сэндвич и сок. Ответьте вежливо."
     prompt_en: "What would you like? — ___"
-    answer: "I would like a sandwich and a juice, please."
-    accepted: ["I'd like a sandwich and a juice, please.", "I would like a sandwich and juice, please.", "I'd like a sandwich and juice, please.", "A sandwich and a juice, please.", "A sandwich and juice, please.", "Can I have a sandwich and a juice, please?", "Can I have a sandwich and juice, please?", "I'd like a juice and a sandwich, please.", "I would like a juice and a sandwich, please.", "A juice and a sandwich, please.", "I'd like juice and a sandwich, please.", "I would like juice and a sandwich, please.", "Juice and a sandwich, please."]
+    answer: "I'd like a sandwich and a juice, please."
+    accepted: ["I would like a sandwich and a juice, please.", "I'd like a sandwich and a juice, please.", "I would like a sandwich and juice, please.", "I'd like a sandwich and juice, please.", "A sandwich and a juice, please.", "A sandwich and juice, please.", "Can I have a sandwich and a juice, please?", "Can I have a sandwich and juice, please?", "I'd like a juice and a sandwich, please.", "I would like a juice and a sandwich, please.", "A juice and a sandwich, please.", "I'd like juice and a sandwich, please.", "I would like juice and a sandwich, please.", "Juice and a sandwich, please."]
     hint_ru: "Начните с I'd like…"
     explanation_ru: "I'd like = I would like («я бы хотел»). A sandwich — одна порция еды, a juice — одна порция сока. Можно сказать и короче: A sandwich and a juice, please."
     units: [LX-00282, LX-00283]
@@ -192,7 +192,7 @@ practice:
 - order: 2
   kind: translate
   prompt_ru: Мне кофе, пожалуйста.
-  answer: I would like a coffee, please.
+  answer: I'd like a coffee, please.
   accepted:
   - I would like coffee, please.
   - Can I have a coffee, please?

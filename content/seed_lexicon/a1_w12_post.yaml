@@ -28,7 +28,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /stæmp/
   translation_ru: марка
-  example_en: '[T8]I[/] [D1]do[/] [X1]not[/] [D1]have[/] [T1]a[/] [S2]stamp[/].'
+  example_en: '[T8]I[/] [D1]do[/][X1]n''t[/] [D1]have[/] [T1]a[/] [S2]stamp[/].'
   example_ru: У меня нет марки.
   situation: Отправляете письмо
 - uid: LX-00227
@@ -42,7 +42,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈædrɛs/
   translation_ru: адрес
-  example_en: '[T9]What[/] [D1]is[/] [T1]the[/] [S9]address[/]?'
+  example_en: '[T9]What[/][D1]''s[/] [T1]the[/] [S9]address[/]?'
   example_ru: Какой адрес?
   situation: Отправляете письмо
   usage_note: 'В этом американском словарном образце существительное address имеет ударение на первом слоге: /ˈædrɛs/. Пишется с двумя d и двумя s.'
@@ -74,7 +74,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /noʊ/
   translation_ru: знать
-  example_en: '[T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/].'
+  example_en: '[T8]I[/] [D1]do[/][X1]n''t[/] [D6]know[/].'
   example_ru: Я не знаю.
   situation: Не знаете ответа
   usage_note: 'k в начале не читается: know звучит как no — «ноу».'
@@ -103,7 +103,7 @@ units:
   verification_status: pending
   ipa_us: /ˈpoʊst ˌɔfɪs/
   translation_ru: почта, почтовое отделение
-  example_en: Where is the post office?
+  example_en: Where's the post office?
   example_ru: Где почта?
   situation: На почте
   usage_note: 'Американскую почту называют ещё USPS. Сама почта, которую приносят, — mail.'
@@ -116,7 +116,7 @@ units:
   verification_status: pending
   ipa_us: /ˈwʌt ɪz ði ˈædrɛs/
   translation_ru: Какой адрес?
-  example_en: What is the address?
+  example_en: What's the address?
   example_ru: Какой адрес?
   situation: На почте
   usage_note: 'В этом образце перед гласным используется the /ði/: the address. Звук /ð/ произносится с кончиком языка у зубов; это не русское з. Не заменяйте английское произношение русской записью.'

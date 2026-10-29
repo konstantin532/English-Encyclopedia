@@ -43,7 +43,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈdɑktɚ/
   translation_ru: врач
-  example_en: '[T8]She[/] [D1]is[/] [T1]a[/] [S9]doctor[/].'
+  example_en: '[T8]She[/][D1]''s[/] [T1]a[/] [S9]doctor[/].'
   example_ru: Она врач.
   situation: Рассказываете, кто кем работает
 - uid: LX-00145
@@ -57,7 +57,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈdraɪvɚ/
   translation_ru: водитель
-  example_en: '[T8]He[/] [D1]is[/] [T1]a[/] [S9]driver[/].'
+  example_en: '[T8]He[/][D1]''s[/] [T1]a[/] [S9]driver[/].'
   example_ru: Он водитель.
   situation: Рассказываете, кто кем работает
 - uid: LX-00146

@@ -113,7 +113,8 @@ class A1SecondPassTests(SimpleTestCase):
 
         pricing = next(e for e in lessons[10]["exercises"] if e["order"] == 5)
         self.assertIn("для вас", pricing["prompt_ru"])
-        self.assertEqual(pricing["answer"], "That is expensive!")
+        self.assertEqual(pricing["answer"], "That's expensive!")
+        self.assertIn("That is expensive!", pricing["accepted"])
 
         letters = next(e for e in lessons[18]["exercises"] if e["order"] == 2)
         self.assertNotIn("Вы слышите", letters["prompt_ru"])

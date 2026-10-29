@@ -68,7 +68,7 @@ layers:
     body: |
       Так ездят в американских городах:
 
-      > [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [O2]Sorry[/]! — Не знаю. Извините!
+      > [T8]I[/] [D1]do[/][X1]n't[/] [D6]know[/]. [O2]Sorry[/]! — Не знаю. Извините!
 
       - Способ оплаты, стоимость и правила провоза вещей зависят от города и перевозчика. Уточняйте их перед поездкой; два доллара в диалоге — цена в нашем вымышленном сюжете.
       - last stop — конечная остановка, next stop — следующая.
@@ -158,7 +158,7 @@ exercises:
     stage: transfer
     prompt_ru: 'В другом городе вы ищете железнодорожную станцию. Спросите: «Где железнодорожная станция?»'
     prompt_en: ___
-    answer: Where is the train station?
+    answer: Where's the train station?
     accepted:
     - Where is the train station
     - Excuse me, where is the train station?

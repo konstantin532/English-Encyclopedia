@@ -177,7 +177,7 @@ practice:
 - order: 4
   kind: translate
   prompt_ru: Мне пять печений.
-  answer: I would like five cookies.
+  answer: I'd like five cookies.
   accepted:
   - Five cookies, please.
   - I would like five cookies, please.

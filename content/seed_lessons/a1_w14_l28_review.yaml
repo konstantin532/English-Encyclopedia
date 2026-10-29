@@ -151,8 +151,8 @@ exercises:
     stage: transfer
     prompt_ru: "Итоговая ролевая ситуация: вы отвечаете за Анну из России. Скажите незнакомцу в автобусе, откуда вы и что говорите по-английски. Сообщите оба факта за свою героиню."
     prompt_en: "Where are you from? — ___"
-    answer: "I am from Russia. I can speak English."
-    accepted: ["I'm from Russia. I can speak English.", "I'm from Russia. I speak English.", "I am from Russia. I speak English.", "I'm from Russia. I can speak English", "I am from Russia and I can speak English.", "I'm from Russia and I can speak English.", "I am from Russia and I speak English.", "I'm from Russia and I speak English."]
+    answer: "I'm from Russia. I can speak English."
+    accepted: ["I am from Russia. I can speak English.", "I'm from Russia. I can speak English.", "I'm from Russia. I speak English.", "I am from Russia. I speak English.", "I'm from Russia. I can speak English", "I am from Russia and I can speak English.", "I'm from Russia and I can speak English.", "I am from Russia and I speak English.", "I'm from Russia and I speak English."]
     hint_ru: "I am from… + I can speak…"
     explanation_ru: "I'm from Russia. I can speak English — ответ за Анну по условию роли. В настоящем знакомстве называйте свою страну и свои реальные умения."
     units: [LX-00045, LX-00239, LX-00243]
@@ -196,7 +196,7 @@ practice:
 - order: 1
   kind: translate
   prompt_ru: Меня зовут Анна. Я из России.
-  answer: My name is Anna. I am from Russia.
+  answer: My name is Anna. I'm from Russia.
   accepted:
   - I am Anna. I am from Russia.
   - My name's Anna. I'm from Russia.
@@ -221,7 +221,7 @@ practice:
 - order: 3
   kind: translate
   prompt_ru: Где банк? — Он справа.
-  answer: Where is the bank? It is on the right.
+  answer: Where's the bank? It's on the right.
   hint_ru: Where is…? — It is on…
   explanation_ru: Where's the bank? It's on the right. Вопрос и ответ из недели 8.
   review_of: 3
@@ -231,7 +231,7 @@ practice:
 - order: 4
   kind: translate
   prompt_ru: Я не знаю, но я могу спросить.
-  answer: I do not know, but I can ask.
+  answer: I don't know, but I can ask.
   hint_ru: don't know + can
   explanation_ru: I don't know, but I can ask. Don't и can в одной фразе — итог A1.
   review_of: 2

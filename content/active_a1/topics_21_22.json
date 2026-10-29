@@ -60,7 +60,7 @@
       ],
       [
         "Tom",
-        "I am tired. I feel sick.",
+        "I'm tired. I feel sick.",
         "Я устал. Мне нехорошо."
       ],
       [
@@ -83,14 +83,15 @@
     "correct": 1,
     "feedback": "Том отвечает I can’t sleep. После can’t стоит sleep без to.",
     "prompt": "Скажите: «Я устал и не могу спать».",
-    "answer": "I am tired and I can't sleep.",
-    "alternatives": [
+    "answer": "I'm tired and I can't sleep.",
+    "retrieval_alternatives": ["I am tired. I feel sick."],
+    "alternatives": ["I am tired and I can't sleep.", "I'm tired and I cannot sleep.",
       "I'm tired and I can't sleep.",
       "I am tired and I cannot sleep."
     ],
     "hint": "I am tired + and + I can’t sleep.",
     "transfer": "Вы хотите пить. Скажите об этом, используя слово thirsty.",
-    "transfer_example": "I am thirsty.",
+    "transfer_example": "I'm thirsty.",
     "why": "I am tired и I feel tired описывают состояние. I can’t sleep говорит, что действие не получается. После can/can’t не добавляйте to и окончание -s. Sick — нездоровый, hungry — голодный, thirsty — испытывающий жажду; well здесь означает «здоров, хорошо себя чувствую».",
     "sound": "В tired /taɪrd/ один слог в обычной американской речи. Can’t /kænt/ может звучать с неотпущенным /t/; слушайте всю фразу, потому что ударение само по себе не отличает can от can’t."
   }

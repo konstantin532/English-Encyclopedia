@@ -213,7 +213,7 @@
         "Вы заказываете чай и хотите прозвучать мягко и вежливо.",
         "",
         [
-          "I would like a tea, please.",
+          "I'd like a tea, please.",
           "Tea!",
           "I want tea."
         ],
@@ -243,7 +243,7 @@
         "Вы заказываете кофе. Какая фраза подчёркивает вежливую просьбу?",
         "",
         [
-          "I would like a coffee, please.",
+          "I'd like a coffee, please.",
           "Coffee.",
           "I want coffee."
         ],

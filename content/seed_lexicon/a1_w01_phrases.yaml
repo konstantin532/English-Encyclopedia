@@ -37,7 +37,7 @@ units:
     verification_status: pending
     ipa_us: "/wʌt ɪz jɚ ˈneɪm/"
     translation_ru: "Как вас зовут?"
-    example_en: "What is your name?"
+    example_en: "What's your name?"
     example_ru: "Как вас зовут?"
     situation: "Знакомство с соседом"
     usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
@@ -50,7 +50,7 @@ units:
     verification_status: pending
     ipa_us: "/aɪ æm frəm ˈrʌʃə/"
     translation_ru: "Я из России."
-    example_en: "I am from Russia."
+    example_en: "I'm from Russia."
     example_ru: "Я из России."
     situation: "Знакомство с соседом"
     usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."
@@ -76,7 +76,7 @@ units:
     verification_status: pending
     ipa_us: "/aɪ æm jɚ ˈneɪbɚ/"
     translation_ru: "Я ваш сосед."
-    example_en: "I am your neighbor."
+    example_en: "I'm your neighbor."
     example_ru: "Я ваш сосед."
     situation: "Знакомство с соседом"
     usage_note: "Учите и произносите фразу целиком. Лексика внутри неё вводится с этой недели."

@@ -403,7 +403,7 @@
         ]
       ],
       "options": [
-        "I am {feeling}.",
+        "I'm {feeling}.",
         "I am {wrong1}.",
         "I am {wrong2}."
       ],
@@ -721,7 +721,7 @@
   },
   "a1-letters-address": {
     "1": {
-      "prompt": "В {place} вам задают вопрос: «What is the address?» Что хотят узнать?",
+      "prompt": "В {place} вам задают вопрос: «What's the address?» Что хотят узнать?",
       "keys": [
         "place"
       ],

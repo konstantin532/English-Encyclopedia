@@ -133,7 +133,7 @@
         "title": "Потерялся банк",
         "scene": "Том у незнакомого перекрёстка.",
         "prompt": "Спросите прохожего, где банк.",
-        "example": "Where is the bank?",
+        "example": "Where's the bank?",
         "coach": "Where is…? спрашивает место."
       },
       {
@@ -220,7 +220,7 @@
         "title": "Вежливое начало",
         "scene": "Вы хотите остановить незнакомого человека.",
         "prompt": "Начните просьбу о дороге вежливо.",
-        "example": "Excuse me. Where is the bank?",
+        "example": "Excuse me. Where's the bank?",
         "coach": "Excuse me помогает привлечь внимание."
       },
       {

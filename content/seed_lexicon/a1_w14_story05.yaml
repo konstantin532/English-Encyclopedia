@@ -29,7 +29,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈkʌbɚd/
   translation_ru: шкаф (для посуды, вещей)
-  example_en: '[T9]There[/] [D1]is[/] [T1]a[/] [S2]photo[/] [P1]behind[/] [T1]the[/] [S2]cupboard[/].'
+  example_en: '[T9]There[/][D1]''s[/] [T1]a[/] [S2]photo[/] [P1]behind[/] [T1]the[/] [S2]cupboard[/].'
   example_ru: За шкафом фото.
   situation: Находите вещь за мебелью
   usage_note: 'p не читается: «кАбэрд». Шкаф для одежды — closet.'
@@ -42,7 +42,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /bɪˈhaɪnd/
   translation_ru: за, позади
-  example_en: '[T9]There[/] [D1]is[/] [T1]a[/] [S2]photo[/] [P1]behind[/] [T1]the[/] [S2]cupboard[/].'
+  example_en: '[T9]There[/][D1]''s[/] [T1]a[/] [S2]photo[/] [P1]behind[/] [T1]the[/] [S2]cupboard[/].'
   example_ru: За шкафом фото.
   situation: Говорите, где вещь
 - uid: LX-00262

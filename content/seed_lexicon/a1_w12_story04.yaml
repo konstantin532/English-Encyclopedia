@@ -26,7 +26,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /wɝd/
   translation_ru: слово
-  example_en: '[T9]There[/] [D1]is[/] [N1]one[/] [S9]word[/]: [S1]Rose[/].'
+  example_en: '[T9]There[/][D1]''s[/] [N1]one[/] [S9]word[/]: [S1]Rose[/].'
   example_ru: "Там одно слово: Rose."
   situation: Читаете записку
   usage_note: 'Как work, но с d: «уёрд».'

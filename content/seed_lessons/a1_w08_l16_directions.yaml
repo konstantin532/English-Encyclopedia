@@ -133,7 +133,7 @@ exercises:
     kind: fill
     stage: transfer
     prompt_ru: "Новая ситуация: у вас спрашивают дорогу к банку. Нужно повернуть направо. Скажите это."
-    prompt_en: "Where is the bank? — ___"
+    prompt_en: "Where's the bank? — ___"
     answer: "Turn right."
     accepted: ["Turn right", "Turn right, please."]
     hint_ru: "Глагол turn и направление."
@@ -188,7 +188,7 @@ practice:
 - order: 4
   kind: translate
   prompt_ru: Извините, где банк?
-  answer: Excuse me, where is the bank?
+  answer: Excuse me, where's the bank?
   accepted:
   - Sorry, where is the bank?
   hint_ru: Чтобы обратиться к прохожему — Excuse me.

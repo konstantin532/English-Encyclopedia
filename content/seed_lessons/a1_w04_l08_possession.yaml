@@ -44,7 +44,7 @@ layers:
       > [S1]Mia[/][T3]'s[/] [S1]brother[/] [D1]is[/] [N5]ten[/]! — Брату Мии десять!
       > [T3]Her[/] [S1]family[/] [D1]is[/] [J3]nice[/]. — У неё хорошая семья.
       > [T3]His[/] [S9]name[/] [D1]is[/] [S1]Tom[/]. — Его зовут Том.
-      > [A3]Here[/] [D1]is[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.
+      > [A3]Here[/][D1]'s[/] [T3]your[/] [S2]photo[/], [S1]Mia[/]. — Вот твоя фотография, Мия.
 
       **Что объединяет her, his и Mia's?** Они показывают, **чья вещь или с кем связан человек**: *her photo* — её фотография, *her family* — её семья, *Mia's brother* — брат Мии. Родственники не являются чьей-то собственностью: слова помогают понять, о чьей семье речь. Верхняя линия помогает заметить такие слова. А **he / she / we / they** сами называют тех, о ком говорим, без названия вещи сразу после них. **They** может означать не только людей, но и предметы.
   - number: 2
@@ -181,7 +181,7 @@ exercises:
     stage: transfer
     prompt_ru: "Вы показываете фото своей семьи, затем фото дома бабушки и дедушки. Скажите: «У нас большая семья. Их дом большой»."
     prompt_en: "___"
-    answer: "We are a big family. Their house is big."
+    answer: "We're a big family. Their house is big."
     accepted: ["We're a big family. Their house is big.", "We are a big family. Their house is big", "We have a big family. Their house is big."]
     hint_ru: "мы — we, их — their."
     explanation_ru: "We are a big family — we («мы») требует are. Their house is big — their («их») стоит перед house и относится к бабушке и дедушке, о которых мы уже говорим."
@@ -229,7 +229,7 @@ practice:
 - order: 4
   kind: translate
   prompt_ru: Вот твоё фото, Мия.
-  answer: Here is your photo, Mia.
+  answer: Here's your photo, Mia.
   hint_ru: «Вот…» — Here is…
   explanation_ru: Here is your photo, Mia. Here is… — когда что-то протягиваете.
   review_of: 3

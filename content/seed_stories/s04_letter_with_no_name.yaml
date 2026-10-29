@@ -76,9 +76,11 @@ phrase_hunt:
   function: 'Чего-то нет: there is no'
 - phrase: the mailbox does not get letters
   function: Отрицание с doesn't
-- phrase: Who is Rose?
+- phrase: Who's Rose?
+  full_form: Who is Rose?
   function: Вопрос о человеке
-- phrase: I do not know.
+- phrase: I don't know.
+  full_form: I do not know.
   function: Нет ответа
 retell_words:
 - mailbox

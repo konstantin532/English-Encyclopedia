@@ -48,7 +48,7 @@
         <p>Найдите каждую фразу в тексте и подумайте, зачем она. Нажмите, чтобы подсветить и проверить.</p>
         <ul class="hunt">
           {% for h in story.phrase_hunt %}
-          <li><button class="choice" type="button" lang="en" data-hunt="{{ h.phrase }}" aria-expanded="false" aria-controls="hunt-function-{{ forloop.counter }}">{{ h.phrase }}</button> <span class="hunt-fn" id="hunt-function-{{ forloop.counter }}" hidden>{{ h.function }}</span></li>
+          <li><button class="choice" type="button" lang="en" data-hunt="{{ h.phrase }}"{% if h.full_form %} data-hunt-full="{{ h.full_form }}"{% endif %} aria-expanded="false" aria-controls="hunt-function-{{ forloop.counter }}">{{ h.phrase }}</button> <span class="hunt-fn" id="hunt-function-{{ forloop.counter }}" hidden>{{ h.function }}</span></li>
           {% endfor %}
         </ul>
       </section>

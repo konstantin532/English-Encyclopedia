@@ -39,7 +39,7 @@ units:
   frequency_source: NGSL — требует проверки
   ipa_us: /ˈaʊɚ/
   translation_ru: наш, наша, наше
-  example_en: '[T8]It[/] [D1]is[/] [T3]our[/] [S2]mailbox[/].'
+  example_en: '[T8]It[/][D1]''s[/] [T3]our[/] [S2]mailbox[/].'
   example_ru: Это наш почтовый ящик.
   situation: Говорите, что вещь общая
   usage_note: 'В быстрой речи часто звучит как «ар».'
