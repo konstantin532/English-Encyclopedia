@@ -29,7 +29,7 @@
       </section>
       <section class="layer" id="dialogue" aria-labelledby="dialogue-t">
         <h2 id="dialogue-t">Диалог недели</h2>
-        {% if scene.story_beat.intro_ru %}<p class="story-beat" id="story-intro">{{ scene.story_beat.intro_ru }}</p>{% endif %}
+        {% if week.level.code == 'A1' and week.number == 1 %}{% elif scene.story_beat.intro_ru %}<p class="story-beat" id="story-intro">{{ scene.story_beat.intro_ru }}</p>{% endif %}
         <p>Послушайте без текста, затем с текстом и с разметкой.</p>
         {% include "components/script_player.html" with listen_modes=True role_section=True week_audio_note=True %}
         {% if not audio %}<p class="drill-hint">Озвучка этой недели ещё не записана. Пока прочитайте диалог вслух по ролям.</p>{% endif %}

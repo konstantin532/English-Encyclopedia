@@ -1,0 +1,88 @@
+// The approved chapter opening belongs only to A1 week 1.
+@mixin opening {
+  [data-week-one-chapter] {
+    margin: 0 0 var(--space-6);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+
+    &, * {
+      animation: none;
+      transition: none;
+      transform: none;
+    }
+
+    .week-one-chapter-art {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: calc(var(--space-8) * 5);
+      aspect-ratio: 16 / 9;
+      margin-inline: auto;
+      object-fit: contain;
+    }
+    .week-one-chapter-opening {
+      display: grid;
+      grid-template-columns: var(--space-8) minmax(0, 1fr);
+      gap: var(--space-5);
+      align-items: start;
+      padding-block: var(--space-5);
+    }
+    .week-one-chapter-folio {
+      margin: 0;
+      font: 400 calc(var(--step-5) * 1.5)/1 var(--font-read);
+      font-variant-numeric: lining-nums;
+      color: var(--studio-green);
+    }
+    .week-one-chapter-copy { min-width: 0; }
+    .week-one-chapter-kicker {
+      margin: 0 0 var(--space-3);
+      font: 600 var(--step--1)/1.5 var(--font-ui);
+      letter-spacing: .1em;
+      color: var(--ink-soft);
+    }
+    h1 {
+      max-width: 24ch;
+      margin: 0;
+      font: 500 var(--step-5)/1.16 var(--font-read);
+      letter-spacing: -.025em;
+      text-wrap: balance;
+      overflow-wrap: normal;
+      hyphens: none;
+      color: var(--ink);
+      text-shadow: none;
+    }
+    .week-one-chapter-intro {
+      max-width: var(--measure);
+      margin: var(--space-4) 0 0;
+      font: 400 var(--step-0)/1.7 var(--font-ui);
+      color: var(--ink-soft);
+    }
+    .week-one-chapter-level {
+      display: inline-flex;
+      align-items: center;
+      min-height: var(--space-7);
+      margin-top: var(--space-4);
+      padding-block: var(--space-2);
+      font: 500 var(--step--1)/1.5 var(--font-ui);
+      color: var(--studio-green);
+      text-underline-offset: .2em;
+    }
+    .week-one-chapter-level:focus-visible {
+      outline: 3px solid var(--ee-focus);
+      outline-offset: var(--space-1);
+    }
+
+    @media (max-width: 700px) {
+      margin-bottom: var(--space-5);
+      .week-one-chapter-opening {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-2);
+        padding-block: var(--space-4);
+      }
+      .week-one-chapter-folio { font-size: var(--step-3); }
+      .week-one-chapter-kicker { margin-bottom: var(--space-2); }
+    }
+  }
+}
