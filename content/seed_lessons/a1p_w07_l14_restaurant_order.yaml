@@ -51,7 +51,7 @@ layers:
 
     > [J3]Good[/] [S7]evening[/]! [D1]Are[/] [T8]you[/] [J4]ready[/] [X2]to[/] [D2]order[/]? — Добрый вечер! Готовы сделать заказ?
 
-    > [A2]Then[/] [T8]I[/] [D7]would[/] [D3]like[/] [T1]the[/] [S3]chicken[/] [P4]with[/] [S3]rice[/], [O8]please[/]. — Тогда мне курицу с рисом, пожалуйста.
+    > [O4]Okay[/], [A2]then[/] [T8]I[/] [D7]would[/] [D3]like[/] [T1]the[/] [S3]chicken[/] [P4]with[/] [S3]rice[/], [O8]please[/]. — Хорошо, тогда мне курицу с рисом, пожалуйста.
 
     '
 - number: 2
@@ -62,7 +62,7 @@ layers:
   body: 'Схема ужина:
 
 
-    > [N1]Two[/] [S3]pies[/], [O8]please[/]. [C1]And[/] [D7]can[/] [T8]we[/] [D1]have[/] [T1]the[/] [S2]check[/], [O8]please[/]? — Два пирога, пожалуйста. И можно счёт?
+    > [N1]Two[/] [S3]pies[/], [O8]please[/]. [C1]And[/] [D7]can[/] [T8]we[/] [D9]get[/] [T1]the[/] [S2]check[/]? — Два пирога, пожалуйста. И можно счёт?
 
 
     1. Вход: **A table for two, please.**
@@ -96,7 +96,7 @@ layers:
   body: 'Так говорят американцы:
 
 
-    > [A3]Here[/] [D1]are[/] [N1]sixty[/] [N6]dollars[/]. [D2]Keep[/] [T1]the[/] [S2]change[/]! — Вот шестьдесят долларов. Сдачи не надо!
+    > [A3]Here[/] [D1]is[/] [N1]sixty[/] [N6]dollars[/]. [D2]Keep[/] [T1]the[/] [S2]change[/]! — Вот шестьдесят долларов. Сдачи не надо!
 
 
     - **Here you go. Enjoy your meal!** — пожалуйста, приятного аппетита.

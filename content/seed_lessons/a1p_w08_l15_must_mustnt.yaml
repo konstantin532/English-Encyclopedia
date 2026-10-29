@@ -53,7 +53,7 @@ layers:
   body: 'Схема:
 
 
-    > [A2]Yesterday[/] [T8]I[/] [D1]was[/] [A2]late[/], [C1]and[/] [T1]the[/] [S9]boss[/] [D1]was[/] [X1]not[/] [J4]happy[/]! [A2]Now[/], [T8]you[/] [D7]must[/] [D2]wash[/] [T3]your[/] [S5]hands[/]. — Вчера я опоздала, и начальник был недоволен! Так, нужно вымыть руки.
+    > [A2]Yesterday[/] [T8]I[/] [D1]was[/] [A2]late[/], [C1]and[/] [T1]the[/] [S9]boss[/] [D1]was[/] [X1]not[/] [J4]happy[/]! [O4]Okay[/], [A2]now[/] [T8]you[/] [D7]must[/] [D2]wash[/] [T3]your[/] [S5]hands[/]. — Вчера я опоздала, и начальник был недоволен! Так, теперь нужно вымыть руки.
 
 
     - Надо: **must + глагол** — You must wash your hands.

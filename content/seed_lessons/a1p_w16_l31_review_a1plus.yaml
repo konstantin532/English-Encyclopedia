@@ -37,7 +37,7 @@ layers:
   body: 'Шестнадцать недель позади. Последняя сцена A1+ — снова парк, снова скамейка, и в одной короткой сцене звучит почти вся грамматика уровня.
 
 
-    > [J3]Great[/]! [T8]I[/] [D2]made[/] [T1]the[/] [S3]sandwiches[/]. [C1]And[/] [T8]I[/] [D1]did[/] [X1]not[/] [D6]forget[/] [T9]anything[/]! — Отлично! Я сделал бутерброды. И ничего не забыл!
+    > [O3]Awesome[/]! [T8]I[/] [D2]made[/] [T1]the[/] [S3]sandwiches[/]. [C1]And[/] [T8]I[/] [D1]did[/] [X1]not[/] [D6]forget[/] [T9]anything[/]! — Класс! Я сделал бутерброды. И ничего не забыл!
 
     > [T8]It[/] [D1]is[/] [N3]ten[/] [N3]o''clock[/]. [C4]If[/] [S1]Sam[/] [D4]comes[/], [T8]we[/] [D7]will[/] [D6]see[/] [T8]him[/] [P1]by[/] [T1]the[/] [J2]old[/] [S4]bench[/]. — Десять часов. Если Сэм придёт, мы увидим его у старой скамейки.
 
@@ -74,7 +74,7 @@ layers:
   body: '**Как проверить себя?** Попробуйте пересказать пикник от лица Рут: *I came to the park. I knew Sam…* А потом скажите, что будет завтра: *If Sam tells us about Rose, we will…*
 
 
-    > [S1]Ruth[/], [D7]could[/] [T8]you[/] [D2]sit[/] [P1]in[/] [T1]the[/] [S6]shade[/]? [T8]It[/] [D1]is[/] [A5]very[/] [J2]hot[/] [A2]today[/]. — Рут, может, сядете в тень? Сегодня очень жарко.
+    > [S1]Ruth[/], [D7]would[/] [T8]you[/] [D3]like[/] [X2]to[/] [D2]sit[/] [P1]in[/] [T1]the[/] [S6]shade[/]? [T8]It[/] [D1]is[/] [A5]really[/] [J2]hot[/] [A2]today[/]. — Рут, может, сядете в тень? Сегодня очень жарко.
 
 
     **Диагностика понимания:** где ошибка? *If Sam will come, we see him.*
@@ -87,7 +87,7 @@ layers:
   body: 'Так говорят американцы:
 
 
-    > [S1]Tom[/], [C4]if[/] [T8]it[/] [D1]is[/] [S1]Sam[/], [T8]he[/] [D7]will[/] [D5]tell[/] [T8]us[/] [P6]about[/] [S1]Rose[/]. [S7]Time[/] [D4]flies[/]. [N1]Sixty[/] [S7]years[/]! — Том, если это Сэм, он расскажет нам о Роуз. Как летит время. Шестьдесят лет!
+    > [S1]Tom[/], [C4]if[/] [T8]it[/] [D1]is[/] [S1]Sam[/], [T8]he[/] [D7]will[/] [D5]tell[/] [T8]us[/] [P6]about[/] [S1]Rose[/]. [O5]Wow[/]. [N1]Sixty[/] [S7]years[/]! [S7]Time[/] [D4]flies[/]. — Том, если это Сэм, он расскажет нам о Роуз. Ого. Шестьдесят лет! Как летит время.
 
 
     - **Time flies!** — время летит!
@@ -169,7 +169,7 @@ exercises:
   uid: EX-00347
   kind: fill
   stage: transfer
-  prompt_ru: 'Новая ситуация: друг сидит на солнце. Вежливо предложите: «Не сядешь в тень?»'
+  prompt_ru: 'Новая ситуация: друг сидит на солнце. Вежливо попросите его: «Не мог бы ты сесть в тень?»'
   prompt_en: ___ you sit in the shade?
   answer: Could
   accepted:

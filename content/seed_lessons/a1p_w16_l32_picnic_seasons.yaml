@@ -54,9 +54,9 @@ layers:
   body: 'Американский пикник — это корзина с бутербродами, лимонад, арбуз, иногда гриль. А ещё мяч или воздушный змей.
 
 
-    > [J3]Good[/] [S7]morning[/]! [T8]I[/] [D2]brought[/] [T4]some[/] [S3]lemonade[/] [C1]and[/] [T1]a[/] [J1]huge[/] [S3]watermelon[/]. — Доброе утро! Я принесла лимонад и огромный арбуз.
+    > [S7]Morning[/]! [T8]I[/] [D2]brought[/] [T4]some[/] [S3]lemonade[/] [C1]and[/] [T1]a[/] [J1]huge[/] [S3]watermelon[/]. — Доброе утро! Я принесла лимонад и огромный арбуз.
 
-    > [S1]Ruth[/], [D7]could[/] [T8]you[/] [D2]sit[/] [P1]in[/] [T1]the[/] [S6]shade[/]? [T8]It[/] [D1]is[/] [A5]very[/] [J2]hot[/] [A2]today[/]. — Рут, может, сядете в тень? Сегодня очень жарко.
+    > [S1]Ruth[/], [D7]would[/] [T8]you[/] [D3]like[/] [X2]to[/] [D2]sit[/] [P1]in[/] [T1]the[/] [S6]shade[/]? [T8]It[/] [D1]is[/] [A5]really[/] [J2]hot[/] [A2]today[/]. — Рут, может, сядете в тень? Сегодня очень жарко.
 
     '
 - number: 2

@@ -55,7 +55,7 @@ layers:
     body: |
       Настоящее простое время — для привычек и фактов:
 
-      > [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [O2]Sorry[/]! — Не знаю. Извините!
+      > [T8]I[/] [D1]do[/] [X1]not[/] [D6]know[/]. [O2]Sorry[/]! [O1]Have a good one[/]! — Не знаю. Извините! Всего доброго!
 
       - I / you / we / they work. — he / she / it work**s**.
       - Вопрос: Do you…? / Does he…?

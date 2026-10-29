@@ -65,7 +65,7 @@ layers:
   body: 'Схема сборов:
 
 
-    > [A2]Then[/] [D2]put[/] [T3]your[/] [S2]swimsuit[/] [C1]and[/] [T1]the[/] [S5]sunscreen[/] [P1]in[/] [T1]the[/] [S2]suitcase[/]. — Тогда положи в чемодан плавки и крем от солнца.
+    > [O4]Okay[/], [A2]then[/] [D2]put[/] [T3]your[/] [S2]swimsuit[/] [C1]and[/] [T1]the[/] [S5]sunscreen[/] [P1]in[/] [T1]the[/] [S2]suitcase[/]. — Хорошо, тогда положи в чемодан плавки и крем от солнца.
 
 
     - Документы: **passport, boarding pass, ticket**.

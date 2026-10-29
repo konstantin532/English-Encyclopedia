@@ -95,7 +95,7 @@ layers:
   body: |
     **Почему «I miss you», а не «I miss for you»?** В русском «скучаю **по** тебе», а в английском человек — прямое дополнение, как в *I like you*. Предлог не нужен.
 
-    > [O1]Hello[/]! [O4]Yes[/], [T8]I[/] [D1]am[/] [D5]writing[/] [P2]to[/] [T3]my[/] [S1]mom[/]. [T8]I[/] [A5]really[/] [D3]miss[/] [T8]her[/]. — Здравствуйте! Да, пишу маме. Я очень по ней скучаю.
+    > [O1]Hi[/]! [O4]Yes[/], [T8]I[/] [D1]am[/] [D5]writing[/] [P2]to[/] [T3]my[/] [S1]mom[/]. [T8]I[/] [A5]really[/] [D3]miss[/] [T8]her[/]. — Здравствуйте! Да, пишу маме. Я очень по ней скучаю.
 
     **Someone, something, everyone** — слова-«заменители». **Some-** значит «какой-то»: someone — кто-то, something — что-то. **Every-** — «каждый, все»: everyone — все люди. После них глагол как после he: *Someone is laughing. Everyone is drinking coffee.*
 
@@ -107,7 +107,7 @@ layers:
   body: 'Так говорят американцы:
 
 
-    > [T2]That[/] [D1]is[/] [A5]very[/] [J3]nice[/], [S1]Anna[/]. [S1]Moms[/] [D3]love[/] [S9]letters[/]. — Это очень мило, Анна. Мамы любят письма.
+    > [O6]Aww[/], [T2]that[/] [D1]is[/] [A5]really[/] [J3]nice[/], [S1]Anna[/]. [S1]Moms[/] [D3]love[/] [S9]letters[/]. — Оу, как мило, Анна. Мамы любят письма.
 
     > [J3]Nice[/] [X2]to[/] [D2]meet[/] [T8]you[/] [A5]too[/]! — Мне тоже приятно!
 
