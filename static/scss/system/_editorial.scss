@@ -46,6 +46,7 @@
     // Grid tracks must shrink to the reading column instead of their min-content width.
     .twister-steps, .twister-ladder { grid-template-columns: minmax(0, 1fr); }
     .twister-step { min-width: 0; }
+    .ru-tr, .ru-transcription { white-space: normal; }
     .story-script { margin-top: 28px; }
     .editorial-dialogue-row { display: grid; grid-template-columns: minmax(0, 1fr) 165px; gap: 24px; align-items: start; }
     .story-script .script-line { display: grid; grid-template-columns: 98px minmax(0, 1fr); gap: 14px 24px; align-items: start; margin: 0; padding: 26px 0; border: 0; background: transparent; box-shadow: none; border-radius: 0; }

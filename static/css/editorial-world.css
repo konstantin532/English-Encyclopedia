@@ -672,6 +672,9 @@
   [data-editorial-pilot] .twister-step {
     min-width: 0;
   }
+  [data-editorial-pilot] .ru-tr, [data-editorial-pilot] .ru-transcription {
+    white-space: normal;
+  }
   [data-editorial-pilot] .story-script {
     margin-top: 28px;
   }
