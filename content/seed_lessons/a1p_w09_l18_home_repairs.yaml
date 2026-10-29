@@ -50,7 +50,7 @@ layers:
   body: 'Когда дома что-то сломалось, нужно быстро и понятно сказать, что и где. Мастер спрашивает, вы отвечаете.
 
 
-    > [J3]Good[/] [S7]morning[/]. [T1]The[/] [S1]landlord[/] [D5]called[/] [T8]me[/]. [T9]What[/] [D1]is[/] [J3]wrong[/]? — Доброе утро. Мне позвонил хозяин. Что случилось?
+    > [S7]Morning[/]. [T1]The[/] [S1]landlord[/] [D5]called[/] [T8]me[/]. [T9]What[/] [D1]is[/] [J3]wrong[/]? — Доброе утро. Мне позвонил хозяин. Что случилось?
 
     > [T1]The[/] [S2]pipe[/] [P1]under[/] [T1]the[/] [S2]sink[/] [D1]is[/] [D2]leaking[/]. [T8]It[/] [D1]is[/] [T1]an[/] [S10]emergency[/]! — Под раковиной течёт труба. Это срочно!
 
@@ -63,7 +63,7 @@ layers:
   body: 'Схема:
 
 
-    > [J3]Great[/]! [C1]And[/] [T1]the[/] [S2]light[/] [P1]in[/] [T1]the[/] [S2]bathroom[/] [D1]does[/] [X1]not[/] [D2]work[/]. — Отлично! А ещё в ванной не горит свет.
+    > [O3]Awesome[/]! [O3]Oh[/], [C1]and[/] [T1]the[/] [S2]light[/] [P1]in[/] [T1]the[/] [S2]bathroom[/] [D1]does[/] [X1]not[/] [D2]work[/]. — Класс! А, и в ванной не горит свет.
 
 
     - Что течёт: **The pipe / faucet is leaking.**

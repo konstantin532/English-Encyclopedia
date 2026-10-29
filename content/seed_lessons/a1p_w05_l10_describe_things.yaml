@@ -59,7 +59,7 @@ layers:
   body: 'Схема описания:
 
 
-    > [D2]Let[/] [T8]me[/] [D6]check[/]. [T2]This[/] [J2]pink[/] [S2]umbrella[/] [D1]has[/] [T1]a[/] [J1]short[/] [S2]handle[/]. — Сейчас проверю. У этого розового зонта ручка короткая.
+    > [D2]Let[/] [T8]me[/] [D6]check[/]. [O7]Hmm[/]. [T2]This[/] [J2]pink[/] [S2]umbrella[/] [D1]has[/] [T1]a[/] [J1]short[/] [S2]handle[/]. — Сейчас проверю. Хм. У этого розового зонта ручка короткая.
 
 
     - Цвет: **It''s pink / gray / purple.**

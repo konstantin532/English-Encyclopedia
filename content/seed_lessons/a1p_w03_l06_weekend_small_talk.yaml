@@ -58,7 +58,7 @@ layers:
   body: 'Схема разговора:
 
 
-    > [T8]I[/] [D3]enjoyed[/] [N1]two[/] [S10]movies[/]. [T8]I[/] [D3]hated[/] [N1]one[/]. [T8]It[/] [D1]was[/] [A5]very[/] [J7]boring[/]! — Два мне понравились. Один я терпеть не могла. Он был очень скучный!
+    > [T8]I[/] [D3]enjoyed[/] [N1]two[/] [S10]movies[/]. [C5]But[/] [T8]I[/] [D3]hated[/] [N1]one[/]. [T8]It[/] [D1]was[/] [A5]really[/] [J7]boring[/]! — Два мне понравились. Один я терпеть не могла. Он был очень скучный!
 
 
     - Вопрос: **How was your weekend?**

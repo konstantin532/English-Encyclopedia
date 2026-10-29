@@ -47,7 +47,7 @@ layers:
   body: 'Схема:
 
 
-    > [O4]Yes[/]! [T8]I[/] [D2]worked[/] [P1]in[/] [T1]a[/] [J1]small[/] [S4]restaurant[/] [P3]for[/] [N1]one[/] [S7]year[/]. [T8]I[/] [D2]cooked[/] [T5]every[/] [S7]day[/]. — Да! Год работал в маленьком ресторане. Готовил каждый день.
+    > [O4]Yes[/]! [T8]I[/] [D2]worked[/] [P3]at[/] [T1]a[/] [J1]small[/] [S4]restaurant[/] [P3]for[/] [N1]one[/] [S7]year[/]. [T8]I[/] [D2]cooked[/] [T5]every[/] [S7]day[/]. — Да! Год работал в маленьком ресторане. Готовил каждый день.
 
 
     - Был: **I was born… / We were at school.**
@@ -65,7 +65,7 @@ layers:
   body: '**Почему «I was born», а не «I born»?** По-английски рождение — это то, что с вами «сделали»: вас родили. Рассказывая о рождении в прошлом, используйте **was / were born**: *She was born in May. We were born in Russia.* В вопросе и отрицании работает сам be: **Were you born here? I wasn''t born here.** Did сюда не добавляют.
 
 
-    > [J3]Great[/]. [C1]And[/] [A6]why[/] [D1]did[/] [T8]you[/] [D6]decide[/] [X2]to[/] [D5]apply[/]? — Отлично. А почему ты решил поступать?
+    > [O3]Awesome[/]. [C1]And[/] [A6]why[/] [D1]did[/] [T8]you[/] [D6]decide[/] [X2]to[/] [D5]apply[/]? — Класс. А почему ты решил поступать?
 
 
     **Диагностика понимания:** что верно: *Where did you grew up?* или *Where did you grow up?*
