@@ -26,3 +26,6 @@ node_modules/
 
 # Отчёт визуальной проверки (scripts/visual_review.cjs)
 /visual-review/
+
+# Скриншоты локальной проверки Atlas (scripts/verify_atlas.cjs); в CI — артефакт
+/atlas-browser-evidence/
