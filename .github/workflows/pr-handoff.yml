@@ -1,0 +1,18 @@
+name: PR handoff
+# Описание PR — передача работы между Codex, Claude и автором (AGENTS.md §8).
+# Проверка идёт за секунды и перезапускается при правке описания.
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+concurrency:
+  group: pr-handoff-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  handoff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: python3 scripts/check_pr_handoff.py
