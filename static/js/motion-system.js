@@ -125,6 +125,7 @@
   }
 
   function intro() {
+    if (doc.querySelector("[data-week-motion]")) return;
     if (mode !== "full" || !global.gsap) return;
     if (!claimIntro(function () { return global.sessionStorage; }, global.location?.pathname || "/")) return;
     if (!doc.querySelector(".studio-home-hero")) {
@@ -148,7 +149,8 @@
   }
 
   function revealCards() {
-    const list = Array.from(doc.querySelectorAll(SELECTORS.cards + ", .active-a1-panel, .speech-studio"));
+    const list = Array.from(doc.querySelectorAll(SELECTORS.cards + ", .active-a1-panel, .speech-studio"))
+      .filter(function (el) { return !el.closest("[data-week-motion]"); });
     if (!list.length || !("IntersectionObserver" in global) || mode === "minimal") return;
     const observer = new global.IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -210,7 +212,7 @@
         tween(target, { scale: 0.985 }, { scale: 1, duration: 0.14 }, "micro");
       }
     });
-    doc.querySelectorAll("details").forEach(function (details) {
+    doc.querySelectorAll("details:not([data-week-flip])").forEach(function (details) {
       details.addEventListener("toggle", function () {
         if (!details.open || !shouldAnimate(mode, "component")) return;
         const elements = Array.from(details.children).filter(function (el) { return el.tagName !== "SUMMARY"; }).slice(0, 5);

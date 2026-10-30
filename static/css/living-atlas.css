@@ -405,6 +405,7 @@
   }
   .atlas-week-text strong {
     padding-right: 30px;
+    display: block;
   }
   .atlas-week-no {
     font-family: var(--atlas-serif);

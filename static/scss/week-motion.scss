@@ -4,6 +4,35 @@
     --week-motion-layout: 360ms;
   }
 
+  [data-week-motion] .week-hero { animation: none; }
+  [data-week-motion] .week-lesson-card {
+    display: block;
+    min-width: 0;
+    transform: none;
+    transition: none;
+  }
+  .week-lesson-summary {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--space-4);
+    cursor: pointer;
+    list-style: none;
+  }
+  .week-lesson-summary::-webkit-details-marker { display: none; }
+  .week-lesson-summary:focus-visible {
+    outline: 2px solid var(--studio-green);
+    outline-offset: var(--space-1);
+  }
+  .week-lesson-title { display: block; font: 600 1.125rem var(--font-read); }
+  .week-lesson-meta { display: block; font-size: var(--ee-type-small); }
+  .week-lesson-toggle { width: var(--space-5); height: var(--space-5); }
+  .week-lesson-toggle svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.5; }
+  .week-lesson-card[open] .week-lesson-toggle path { d: path("M5 12h14"); }
+  .week-lesson-body { padding-top: var(--space-3); }
+  .week-lesson-body > p { margin-top: 0; }
+  [data-week-flip-running] { overflow: clip; }
+
   /* Only the catalogue and the week opt into cross-document navigation. */
   @media (prefers-reduced-motion: no-preference) {
     @view-transition { navigation: auto; }

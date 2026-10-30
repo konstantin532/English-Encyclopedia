@@ -4,7 +4,7 @@
     <span class="atlas-week-no" aria-hidden="true">{{ week.number|stringformat:'02d' }}</span>
     <span class="atlas-week-text">
       {% if week.sphere %}<span class="atlas-week-sphere">{{ week.get_sphere_display }}</span>{% endif %}
-      <strong style="view-transition-name: week-{{ level_slug }}-{{ week.number }}-title">{% if week.situation_ru or week.theme_ru %}<span class="visually-hidden">Неделя {{ week.number }}: </span>{{ week.situation_ru|default:week.theme_ru }}{% else %}Неделя {{ week.number }}{% endif %}</strong>
+      <span class="atlas-week-title" style="view-transition-name: week-{{ level_slug }}-{{ week.number }}-title"><strong>{% if week.situation_ru or week.theme_ru %}<span class="visually-hidden">Неделя {{ week.number }}: </span>{{ week.situation_ru|default:week.theme_ru }}{% else %}Неделя {{ week.number }}{% endif %}</strong></span>
       {% if week.grammar_ru %}<span class="atlas-week-grammar">{{ week.grammar_ru|truncatechars:72 }}</span>{% endif %}
       {% if not week.scene %}<small>готовится</small>{% endif %}
     </span>

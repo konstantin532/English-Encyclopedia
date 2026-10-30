@@ -30,4 +30,19 @@ Context7: BLOCKED (Monthly quota exceeded); API сверены по официа
 
 `pnpm build:css` → Stylesheets verified: 23. Проверка версий/имён и существующей обложки (`tests.test_week_motion` два метода + `tests.test_week_one_cover`) → Ran 7 tests; OK.
 
-Следующий шаг: добавить раскрытие карточек, отдельный JS-runtime и браузерную проверку с настоящими плагинами.
+## Этап 2
+
+Добавлены открытые по умолчанию нативные карточки уроков с существующим описанием и ссылкой. Flip меняет размер без масштабирования текста; SplitText проявляет слова заголовка и возвращает исходный DOM; ScrollTrigger меняет только прозрачность заголовка раздела. Временные стили очищаются при прерывании, reduced motion и pagehide. Старая система не анимирует те же цели. Реальные ссылки не перехватываются.
+
+- `uv run python manage.py test tests.test_week_motion tests.test_motion_system tests.test_week_one_cover tests.test_planned_week_cards --settings=config.settings.test` → Ran 16 tests; OK.
+- `node --test tests/js/motion-system.test.cjs tests/js/intro-policy.test.cjs` → 7 pass, 0 fail.
+- `pnpm check:css` → Stylesheets verified: 23; `pnpm test:ui` → 201 pass, 0 fail. Первый UI-прогон столкнулся с нашими серверами на fixture-портах 8133/8134; серверы перенесены на 8243/8244 без изменения тестов, повтор зелёный.
+- `WEEK_MOTION_URL=http://127.0.0.1:8244 node scripts/check_week_motion.cjs` с Playwright на NODE_PATH → 10 checks PASS, 0 BLOCKED: настоящие Flip/ScrollTrigger/SplitText, повторные клавиатурные действия, смена режима во время Flip, отсутствие ядра/каждого плагина, отсутствие JS, Chromium View Transition и обычная навигация Firefox 153.0.
+- `impeccable detect --json <изменённые UI-файлы>` → `[]`, exit 0. Ограничение: детектор не понимает Django `{% static %}`, поэтому автоматическая проверка связей CSS/токенов неполна; в браузере подключённые стили проверены.
+- `uv run python manage.py check` → System check identified no issues; `makemigrations --check --dry-run` → No changes detected.
+
+Независимый `ui_reviewer`: 4 URL, 14 состояний ширины/базы, 0 новых P0–P2. Найденный P3 (inline strong внутри новой обёртки) исправлен в общем исходном `static/css/living-atlas.css`; файл написан вручную и не входит в SCSS-сборку. Повторная независимая проверка двух карточек каталога и главной на 390/1440 подтвердила нулевые изменения размеров. Шесть сочетаний переключателей диалога совпали с baseline, без JS обе карточки открыты. Отдельный API-review не нашёл ошибок runtime; скрипт приёмки явно добавлен через `git add -f` из-за Windows-правила `/Scripts/`.
+
+Полный набор запущен один раз: `uv run python manage.py test tests --parallel auto --settings=config.settings.test` → Ran 1264 tests in 331.746s; FAILED (failures=2, skipped=8). Сбои: `PhraseEntryLinkTests.test_link_hidden_when_disabled`, `RegisterHookTests.test_disabled_flag_writes_nothing`. Оба повторены на snapshot шаблонов main 46afcdab с неизменённым backend → Ran 2 tests; FAILED (failures=2). **BLOCKED:** полный набор остаётся красным из-за этих предсуществующих проблем, они не исправляются в задаче анимации.
+
+Следующий шаг: завершить итоговую Visual review после правки общей карточки, оформить HTML/CSV и PR. Физические устройства, Safari, Lighthouse и полная ручная проверка контраста пока не проверялись; калибровка UI-checker не выполнялась (независимый фактический проход выполнен).
