@@ -33,7 +33,7 @@ Baseline: `origin/main` = `17e6680adaa7b4c9ea0b4b8dfe2cda41e3d8bdc6` (PR #158 у
 
 ## Следующий шаг
 
-Завершить авторизованные Visual review/Atlas, независимую приёмку и полный прогон; подготовить PR.
+Завершить финальный editorial/CI в PR160; после проверки Claude решение о слиянии принимает автор.
 
 ## Этап 1: заявка и публичный вход
 
@@ -74,3 +74,11 @@ Baseline: `origin/main` = `17e6680adaa7b4c9ea0b4b8dfe2cda41e3d8bdc6` (PR #158 у
 
 - Runtime mainf88bca0 эквивалентен исходному17e6680a по apps/static/templates. В feature подтянуты текущие правила/skills/handoff и .gitignore. Единственный конфликт — конец lessons.md; сохранены source-ignore запись автора и все3записи этого PR.
 - Повтор Atlas завершилсяPASS:12строгихсравненийгеометрии,58редакционныхстраниц,14обложек,семьслоёвурока/клавиатура/no-JS/reduced/full-motion; JS errors0. Исторический snapshot и пороги не ослаблялись.
+
+## Финальный браузер и дополнительный gate CI
+
+- После перезапуска backend с текущими views/forms:12 браузерных проверок PASS. Login/signup375/390/768/1440, pending через /for-teachers/→login?next=/teacher/→request, обе same-version pending captures идентичны. HTML offline390/1440:18строк,external requests0,overflow0; CSV содержит ровно те же данные.
+- Последний core-набор с реальным admin requests filter:48tests in0.676s,OK. Проверка agent-setup после согласования main42tests in1.718s,OK.
+- CI на4d209ab9: Visual review PASS; Atlas core PASS, но отдельный editorial-first-screen gate обнаружил старую непроверенную learner-геометрию:390two-lines-bottom847.79>844,360878.39>844.
+- Новый student fixture воспроизвёл это локально. Под600px только у pilot lesson сокращены4положительныхвступительныхgaps на40px, токенами8/4px; шрифт,контент,навигация и desktop не изменены. Actualreload360:777.1875+61.2=838.3875≤844, overflowнет. Строгий gate не ослаблен; повторяется та же editorial matrix.
+- Другие результаты CI и проверка Claude фиксируются в описании PR160; локальный полный suite не запускается второй раз.

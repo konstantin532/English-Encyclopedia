@@ -131,6 +131,17 @@ class SignupRoleTests(TestCase):
         self.assertFalse(pending.teacher_access_requested)
         self.assertFalse(pending.teacher_sees_all)
 
+    def test_owner_can_find_only_pending_requests_in_admin(self):
+        pending = User.objects.create_user("pending-list@example.test", teacher_access_requested=True)
+        student = User.objects.create_user("student-list@example.test")
+        approved = User.objects.create_user("approved-list@example.test", is_teacher=True)
+        self.client.force_login(User.objects.create_superuser("owner-list@example.test"))
+        response = self.client.get(reverse("admin:accounts_user_changelist"), {"role": "requests"})
+        self.assertContains(response, pending.email)
+        self.assertContains(response, 'studio-badge-learner">Заявка учителя')
+        self.assertNotContains(response, student.email)
+        self.assertNotContains(response, approved.email)
+
 
 class GuestShellTests(TestCase):
     def test_guest_home_opens_separate_login(self):

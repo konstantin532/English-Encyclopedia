@@ -119,6 +119,13 @@
       .editorial-kicker { font-size: 11px; letter-spacing: .1em; }
       .page-head { padding-top: 0; padding-bottom: 16px; margin-bottom: 12px; }
       .page-head h1 { font-size: 30px; }
+      // The signed-in navigation is taller: keep two reading lines in the
+      // first phone viewport by tightening only the lesson's opening gaps.
+      &[data-editorial-pilot="lesson"] {
+        padding-top: var(--space-2);
+        .page-head { padding-bottom: var(--space-2); margin-bottom: var(--space-1); }
+        .editorial-guide { margin-bottom: var(--space-2); }
+      }
       .layer { font-size: calc(17px * var(--reader-scale)); }
       .editorial-specimen, .line-text, .example, .editorial-phrase > a[lang=en] { font-size: calc(22px * var(--reader-scale)); }
       .story-script .script-line { grid-template-columns: minmax(0, 1fr); gap: 12px; padding-block: 24px; }
