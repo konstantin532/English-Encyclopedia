@@ -21,6 +21,13 @@ class ContentLoadedRunner(DiscoverRunner):
                 print("Внимание: tblib не установлен (uv sync). Если тест упадёт, --parallel покажет "
                       "«cannot pickle 'traceback'» вместо ошибки — тогда запустите этот файл тестов без --parallel.")
 
+    def setup_test_environment(self, **kwargs):
+        super().setup_test_environment(**kwargs)
+        # Тесты содержимого страниц открывают их без входа. Замок курса
+        # проверяется отдельно: tests/test_course_access.py включает его явно.
+        from django.conf import settings
+        settings.EE_COURSE_LOGIN_REQUIRED = False
+
     def setup_databases(self, **kwargs):
         from django.db import connections
 

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Ученики · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <span class="studio-eyebrow">КАБИНЕТ УЧИТЕЛЯ</span>
+    <h1>Ученики</h1>
+    <p>{% if sees_all %}Все ученики платформы.{% else %}Ученики ваших групп.{% endif %} Цифры — за всё время, кроме ответов: они за последние 30 дней.</p>
+  </header>
+  {% include "teaching/_nav.html" with active="students" %}
+  {% if rows %}
+  <div class="table-scroll" role="region" aria-label="Таблица, листается вбок" tabindex="0" style="overflow-x:auto">
+  <table class="words-table">
+    <thead><tr><th scope="col">Ученик</th><th scope="col">Группа</th><th scope="col">Уровень</th><th scope="col">Слов начато</th><th scope="col">Уверенно</th><th scope="col">Пора повторить</th><th scope="col">Ответов за 30 дней</th><th scope="col">Последний вход</th></tr></thead>
+    <tbody>{% for s, sum in rows %}
+      <tr>
+        <td><a href="{% url 'teaching:student' s.pk %}">{{ s }}</a></td>
+        <td>{% if s.group_membership %}{{ s.group_membership.group.name }}{% else %}—{% endif %}</td>
+        <td>{{ s.current_level|default:"—" }}</td>
+        <td>{{ sum.units_started }}</td>
+        <td>{{ sum.units_strong }}</td>
+        <td>{{ sum.units_due }}</td>
+        <td>{{ sum.attempts_30d }}{% if sum.correct_share_30d is not None %} · {{ sum.correct_share_30d }}% верно{% endif %}</td>
+        <td>{% if s.last_login %}{{ s.last_login|date:"j E, H:i" }}{% else %}ещё не входил{% endif %}</td>
+      </tr>
+    {% endfor %}</tbody>
+  </table></div>
+  {% else %}
+  <p>Учеников пока нет. {% if not sees_all %}Создайте группу в разделе «Группы» и дайте ученикам код.{% endif %}</p>
+  {% endif %}
+</div>
+{% endblock %}

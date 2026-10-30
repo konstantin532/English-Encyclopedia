@@ -12,11 +12,13 @@ class StudioRoleFilter(admin.SimpleListFilter):
     parameter_name = "role"
 
     def lookups(self, request, model_admin):
-        return (("learners", "Ученики"), ("editors", "Команда"), ("admins", "Администраторы"))
+        return (("learners", "Ученики"), ("teachers", "Учителя"), ("editors", "Команда"), ("admins", "Администраторы"))
 
     def queryset(self, request, queryset):
         if self.value() == "learners":
-            return queryset.filter(is_staff=False, is_superuser=False)
+            return queryset.filter(is_staff=False, is_superuser=False, is_teacher=False)
+        if self.value() == "teachers":
+            return queryset.filter(is_teacher=True)
         if self.value() == "editors":
             return queryset.filter(is_staff=True, is_superuser=False)
         if self.value() == "admins":
@@ -39,6 +41,8 @@ class EmailUserAdmin(UserAdmin):
     fieldsets = (
         ("Учётная запись", {"fields": ("email", "password"), "description": "Электронная почта используется для входа на платформу."}),
         ("Профиль и обучение", {"fields": ("display_name", "current_level", "markers_enabled", "markers_in_color")}),
+        ("Учитель", {"fields": ("is_teacher", "teacher_sees_all"),
+                     "description": "Учитель видит кабинет учителя. Без «видит всех учеников» — только учеников своих групп."}),
         ("Доступ к платформе", {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions"), "classes": ("collapse",), "description": "Права определяют, какие разделы доступны пользователю."}),
         ("История аккаунта", {"fields": ("date_joined", "last_login"), "classes": ("collapse",)}),
     )
@@ -55,6 +59,8 @@ class EmailUserAdmin(UserAdmin):
     def role_badge(self, obj):
         if obj.is_superuser:
             tone, label = "owner", "Администратор"
+        elif obj.is_teacher:
+            tone, label = "editor", "Учитель"
         elif obj.is_staff:
             tone, label = "editor", "Команда"
         else:
@@ -81,9 +87,16 @@ class EmailUserAdmin(UserAdmin):
             current = request.GET.get("role", "")
             response.context_data["studio_role_tabs"] = [
                 {"label": label, "url": cl.get_query_string({"role": value or None}, remove=["p"]), "selected": current == value}
-                for value, label in (("", "Все пользователи"), ("learners", "Ученики"), ("editors", "Команда"), ("admins", "Администраторы"))
+                for value, label in (("", "Все пользователи"), ("learners", "Ученики"), ("teachers", "Учителя"), ("editors", "Команда"), ("admins", "Администраторы"))
             ]
         return response
+
+    def get_readonly_fields(self, request, obj=None):
+        # Роли назначает только владелец: команда не может сделать себя или других учителем.
+        fields = list(super().get_readonly_fields(request, obj))
+        if not request.user.is_superuser:
+            fields += ["is_teacher", "teacher_sees_all", "is_staff", "is_superuser", "groups", "user_permissions"]
+        return fields
 
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)

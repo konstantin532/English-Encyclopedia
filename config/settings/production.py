@@ -3,6 +3,8 @@ import os
 from .base import SECRET_KEY, env_bool
 
 DEBUG = False
+# Материалы курса на сайте закрыты всегда; переменная окружения это не отключит.
+EE_COURSE_LOGIN_REQUIRED = True
 # Free hosting has an ephemeral filesystem: learner progress MUST live in PostgreSQL.
 if not os.getenv("DATABASE_URL") or DATABASES["default"]["ENGINE"] != "django.db.backends.postgresql":
     raise RuntimeError("Для продакшена необходим PostgreSQL DATABASE_URL (SQLite запрещён).")

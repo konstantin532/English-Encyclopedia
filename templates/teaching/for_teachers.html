@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Для учителей · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <span class="studio-eyebrow">ДЛЯ УЧИТЕЛЕЙ</span>
+    <h1>Кабинет учителя</h1>
+    <p>Ведите своих учеников по курсу американского английского: видите, какие слова и уроки они прошли, где ошибаются и что пора повторить.</p>
+  </header>
+  <section class="section" aria-labelledby="how-title">
+    <div class="section-head"><h2 id="how-title">Как это устроено</h2></div>
+    <ol>
+      <li>Владелец платформы открывает вам роль учителя.</li>
+      <li>Вы создаёте группу и получаете код из восьми символов.</li>
+      <li>Ученики вводят код в разделе «Моя группа» — и вы видите их прогресс.</li>
+    </ol>
+  </section>
+  <section class="section">
+    {% if can_teach %}
+      <p><a class="btn btn-primary" href="{% url 'teaching:dashboard' %}">Открыть кабинет учителя →</a></p>
+    {% elif user.is_authenticated %}
+      <p>У вашего аккаунта пока нет роли учителя. Её назначает владелец платформы — напишите ему, указав почту, с которой вы вошли.</p>
+    {% else %}
+      <p><a class="btn btn-primary" href="{% url 'accounts:login' %}?next={% url 'teaching:dashboard' %}">Войти как учитель →</a></p>
+      <p>Нет аккаунта? <a href="{% url 'accounts:signup' %}">Зарегистрируйтесь</a>, а затем попросите владельца открыть роль учителя.</p>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}
