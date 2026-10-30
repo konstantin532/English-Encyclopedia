@@ -284,6 +284,33 @@ class AgentDefinitionsTests(SimpleTestCase):
                 self.assertIn("Файлы не меняй и не коммить", path.read_text(encoding="utf-8"))
 
 
+class DesignPipelineTests(SimpleTestCase):
+    """Просьба улучшить дизайн в любых словах запускает этапы строго по порядку."""
+
+    SKILL = ROOT / ".agents" / "skills" / "design-pipeline" / "SKILL.md"
+
+    def test_description_catches_everyday_wording(self):
+        description = _frontmatter(self.SKILL)["description"].casefold()
+        for phrase in ("улучши дизайн", "запили дизайн", "запили сайт", "сделай красиво", "редизайн", "improve the design"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, description)
+
+    def test_stages_run_in_order(self):
+        stages = self.SKILL.read_text(encoding="utf-8").split("## Этапы", 1)[1]
+        marks = ["encyclopedia-design", "$impeccable critique", "$design-taste-frontend", "gsap-core", "ui-acceptance"]
+        positions = [stages.index(mark) for mark in marks]
+        self.assertEqual(positions, sorted(positions), "Порядок: направление → Impeccable → Taste → GSAP → приёмка")
+
+    def test_guards_against_known_traps(self):
+        text = self.SKILL.read_text(encoding="utf-8")
+        self.assertIn("Команду `document` не запускай", text)  # перезаписала бы DESIGN.md
+        self.assertIn("`$motion-react` не используй", text)  # React в проекте нет
+        self.assertIn("новое из его 20 не выбирай", text)  # направление задаёт DESIGN.md
+
+    def test_agents_md_routes_design_requests(self):
+        self.assertIn("`design-pipeline` — любая просьба улучшить внешний вид", (ROOT / "AGENTS.md").read_text(encoding="utf-8"))
+
+
 def _load_handoff():
     spec = importlib.util.spec_from_file_location("pr_handoff", ROOT / "scripts" / "check_pr_handoff.py")
     module = importlib.util.module_from_spec(spec)
@@ -321,6 +348,20 @@ class PullRequestHandoffTests(SimpleTestCase):
     def test_bold_headings_are_accepted(self):
         body = "\n\n".join(f"**{name}:**\nнет" for name in self.handoff.SECTIONS)
         self.assertEqual(self.handoff.find_problems(body), [])
+
+    def test_nested_subheading_keeps_section_content(self):
+        # Найдено ревью Codex: подзаголовок внутри раздела делал заполненный раздел «пустым».
+        body = self.filled().replace(
+            "## Как проверено\n\nнет", "## Как проверено\n\n### Тесты\n`manage.py test` → OK"
+        )
+        self.assertIn("### Тесты", body)
+        self.assertEqual(self.handoff.find_problems(body), [])
+
+    def test_multiline_comment_is_not_content(self):
+        # Найдено ревью Codex: многострочный комментарий засчитывался как содержимое.
+        body = self.filled().replace("## Риски\n\nнет", "## Риски\n\n<!--\nподсказка\nв две строки\n-->")
+        self.assertIn("в две строки", body)
+        self.assertEqual(self.handoff.find_problems(body), ["раздел «Риски» пустой (если нечего сказать, напиши «нет»)"])
 
     def test_workflow_runs_the_check_on_description_edits(self):
         workflow = (ROOT / ".github" / "workflows" / "pr-handoff.yml").read_text(encoding="utf-8")

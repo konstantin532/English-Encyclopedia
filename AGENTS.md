@@ -84,7 +84,8 @@
 - `pr-review` — проверка PR и ответ на замечания; `long-run` — задача из нескольких этапов, работа без автора, облачная задача, продолжение после сжатия контекста;
 
 **Агенты проекта** — одна команда у обоих: `reviewer` (проверка PR), `course_editor` (учебный контент и живой английский), `ui_reviewer` (приёмка интерфейса). Описания: `.codex/agents/*.toml` и `.claude/agents/*.md`; имена и состав совпадают (`tests/test_agent_setup.py`). Агенты только проверяют и файлы не меняют. Зови их по имени: «пусть reviewer проверит PR #N».
-- `encyclopedia-design` (в Codex: `$encyclopedia-design`) — любой интерфейс и редизайн; `ee-illustration` — любая новая или перерисованная картинка;
+- **`design-pipeline` — любая просьба улучшить внешний вид, в каких бы словах** («улучши дизайн», «запили сайт», «сделай красиво», «редизайн»): этапы Impeccable → Taste Skill → GSAP → приёмка строго по порядку. Не начинай такую задачу в обход него;
+- `encyclopedia-design` (в Codex: `$encyclopedia-design`) — направление дизайна для любого интерфейса; `ee-illustration` — любая новая или перерисованная картинка;
 - `gsap-core` и по задаче `gsap-timeline`, `gsap-scrolltrigger`, `gsap-performance`, `gsap-plugins`, `gsap-utils` (не `gsap-react`/`gsap-frameworks`: в проекте ванильный JS); `ui-ux-pro-max` — вёрстка, типографика, доступность;
 - `supabase-postgres-best-practices` — схема, миграции, индексы, права; `supabase` — только для задач про Supabase.
 
