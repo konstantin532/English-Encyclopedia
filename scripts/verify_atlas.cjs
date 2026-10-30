@@ -16,7 +16,7 @@ const {geometryDelta,assertChapterReadingFlow,assertGeometrySnapshot}=require('.
 const homeGeometry=require('./atlas_home_geometry.json');
 const selectors=['.studio-sidebar','.site-header','.studio-home-hero','.studio-phrase-paper','.studio-lesson-card','.week-card','.week-hero','.week-route','.story-script'];
 async function serve(directory,port){
- const processHandle=spawn(process.env.ATLAS_PYTHON || 'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:directory,env:{...process.env,DJANGO_SETTINGS_MODULE:'config.settings.local'},stdio:['ignore','ignore','pipe']});
+ const processHandle=spawn(process.env.ATLAS_PYTHON || 'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:directory,env:{...process.env,DJANGO_SETTINGS_MODULE:'config.settings.local',EE_COURSE_LOGIN_REQUIRED:'0'},stdio:['ignore','ignore','pipe']});
  let error='';processHandle.stderr.on('data',d=>{error+=d;});
  for(let n=0;n<100;n++){
   try{if((await fetch(`http://127.0.0.1:${port}/`)).ok)return processHandle;}catch{}

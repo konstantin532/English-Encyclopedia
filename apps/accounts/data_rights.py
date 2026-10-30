@@ -76,6 +76,11 @@ def delete_account(request):
             error = "Впишите слово УДАЛИТЬ, чтобы подтвердить."
         elif not request.user.check_password(request.POST.get("password", "")):
             error = "Неверный пароль."
+        elif request.user.study_groups.exists():
+            # Группы защищены от удаления вместе с учителем: у них есть ученики.
+            # Выход не выполняем — аккаунт остаётся, человек видит, что сделать.
+            error = ("У вас есть группы учеников. Попросите владельца платформы передать их другому "
+                     "учителю или удалить — после этого аккаунт можно будет удалить.")
         else:
             user = request.user
             logout(request)

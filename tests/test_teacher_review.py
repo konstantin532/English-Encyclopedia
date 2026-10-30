@@ -126,3 +126,34 @@ class CourseIssueTests(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertIn(reverse("accounts:login"), response["Location"])
         self.assertFalse(CourseIssue.objects.exists())
+
+
+class CafeTranscriptReviewTests(TestCase):
+    """R7: учитель видит весь диалог миссии «кафе», а не только принятые реплики."""
+
+    @classmethod
+    def setUpTestData(cls):
+        ensure_content()
+        cls.teacher = User.objects.create_user("t@example.com", "pass-12345", is_teacher=True)
+        cls.student = User.objects.create_user("s@example.com", "pass-12345")
+        GroupMembership.objects.create(group=StudyGroup.objects.create(teacher=cls.teacher, name="G"), student=cls.student)
+        cls.attempt = IndependentAttempt.objects.create(
+            user=cls.student, lesson=Lesson.objects.filter(level__code="A1").first(), skill="transfer",
+            task_variant=200, submitted="I'd like a tea, please.",
+            outcome=IndependentAttempt.Outcome.SELF_REPORTED,
+            prompt_snapshot="Café information gap v1", model_snapshot="Criterion: plausible A1 communication",
+            self_rubric={"transcript": [
+                {"who": "Mia", "text": "Good morning! What would you like?"},
+                {"who": "You", "text": "tea give"},
+                {"who": "Mia", "text": "Sorry?"},
+                {"who": "You", "text": "I'd like a tea, please."},
+                {"who": "You", "text": "<script>alert(1)</script>"},
+            ]})
+
+    def test_full_dialogue_with_roles_and_rejected_turns_is_shown_escaped(self):
+        self.client.force_login(self.teacher)
+        html = self.client.get(reverse("teaching:review", args=[self.attempt.pk])).content.decode()
+        for text in ("Good morning! What would you like?", "tea give", "Sorry?", "Mia:", "Ученик:"):
+            self.assertIn(text, html)
+        self.assertNotIn("<script>alert(1)</script>", html)
+        self.assertIn("&lt;script&gt;", html)

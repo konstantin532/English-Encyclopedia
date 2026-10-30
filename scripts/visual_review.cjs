@@ -22,7 +22,9 @@ const STILL_CSS = '*,*::before,*::after{transition:none!important;animation:none
 
 async function serve(directory, port, databaseUrl) {
   const child = spawn(process.env.ATLAS_PYTHON || 'python', ['manage.py', 'runserver', `127.0.0.1:${port}`, '--noreload'],
-    {cwd: directory, env: {...process.env, DATABASE_URL: databaseUrl, DJANGO_SETTINGS_MODULE: 'config.settings.local'}, stdio: ['ignore', 'ignore', 'pipe']});
+    {cwd: directory, env: {...process.env, DATABASE_URL: databaseUrl, DJANGO_SETTINGS_MODULE: 'config.settings.local',
+      // Снимки страниц курса без входа: замок курса здесь выключен (на сайте он всегда включён).
+      EE_COURSE_LOGIN_REQUIRED: '0'}, stdio: ['ignore', 'ignore', 'pipe']});
   let error = '';
   child.stderr.on('data', d => { error += d; });
   for (let n = 0; n < 150; n++) {

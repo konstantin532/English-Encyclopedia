@@ -25,6 +25,11 @@
       </tr>
     {% endfor %}</tbody>
   </table></div>
+  {% if page.has_other_pages %}<nav class="section" aria-label="Страницы списка"><p>
+    {% if page.has_previous %}<a href="?page={{ page.previous_page_number }}">← Назад</a> · {% endif %}
+    Страница {{ page.number }} из {{ page.paginator.num_pages }}
+    {% if page.has_next %} · <a href="?page={{ page.next_page_number }}">Дальше →</a>{% endif %}
+  </p></nav>{% endif %}
   {% else %}
   <p>Учеников пока нет. {% if not sees_all %}Создайте группу в разделе «Группы» и дайте ученикам код.{% endif %}</p>
   {% endif %}

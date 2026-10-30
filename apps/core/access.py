@@ -9,8 +9,18 @@
 Решение принимается по имени маршрута, а не по тексту адреса: переименование
 адреса не откроет закрытую страницу случайно.
 """
+import time
+
 from django.conf import settings
 from django.contrib.auth.middleware import LoginRequiredMiddleware
+from django.db import OperationalError, connection
+from django.http import HttpResponse
+
+# Чтение пользователя здесь происходит раньше защитных повторов внутри
+# обработчиков (apps/learning/trainer_state.run_serialized). Поэтому временную
+# блокировку SQLite («database table is locked/busy») повторяем так же: 8 раз
+# с короткой растущей паузой. Другие ошибки не глотаем.
+AUTH_READ_ATTEMPTS = 8
 
 # Маршруты, открытые всем.
 PUBLIC_ROUTES = frozenset({
@@ -52,10 +62,35 @@ def is_public(request) -> bool:
     return _is_guest_week_route(match.view_name, match.kwargs)
 
 
+def _sqlite_lock(exc: OperationalError) -> bool:
+    return connection.vendor == "sqlite" and any(w in str(exc).lower() for w in ("locked", "busy"))
+
+
+def is_authenticated(request) -> bool | None:
+    """True/False — ответ; None — база так и осталась занятой после всех повторов."""
+    for attempt in range(AUTH_READ_ATTEMPTS):
+        try:
+            return bool(request.user.is_authenticated)
+        except OperationalError as exc:
+            # SimpleLazyObject не кэширует неудачу: следующая попытка читает заново.
+            if not _sqlite_lock(exc) or connection.in_atomic_block:
+                raise
+            time.sleep(0.01 * (attempt + 1))
+    return None
+
+
 class CourseAccessMiddleware(LoginRequiredMiddleware):
     """Встроенный LoginRequiredMiddleware Django + открытые маршруты курса."""
 
     def process_view(self, request, view_func, view_args, view_kwargs):
-        if not settings.EE_COURSE_LOGIN_REQUIRED or request.user.is_authenticated or is_public(request):
+        if not settings.EE_COURSE_LOGIN_REQUIRED or is_public(request):
+            return None
+        authenticated = is_authenticated(request)
+        if authenticated is None:
+            response = HttpResponse("Сервер занят. Повторите через секунду.", status=503,
+                                    content_type="text/plain; charset=utf-8")
+            response["Retry-After"] = "1"
+            return response
+        if authenticated:
             return None
         return super().process_view(request, view_func, view_args, view_kwargs)

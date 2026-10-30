@@ -28,7 +28,9 @@ class StudyGroupAdmin(admin.ModelAdmin):
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "teacher":
             from django.contrib.auth import get_user_model
-            kwargs["queryset"] = get_user_model().objects.filter(is_teacher=True)
+            from django.db.models import Q
+            # Те же, кто может вести группы в кабинете (apps/teaching/access.can_teach).
+            kwargs["queryset"] = get_user_model().objects.filter(Q(is_teacher=True) | Q(is_superuser=True))
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 
@@ -80,7 +82,7 @@ class ContentDraftAdmin(admin.ModelAdmin):
         parts = []
         for d in queryset.select_related("author"):
             week = f", неделя {d.week}" if d.week else ""
-            parts.append(f"# {d.title}\n\n{d.get_kind_display()} · {d.level}{week} · автор: {d.author} · "
+            parts.append(f"# {d.title}\n\n{d.get_kind_display()} · {d.level}{week} · автор: {d.author or 'аккаунт удалён'} · "
                          f"статус: {d.get_status_display()}\n\n{d.body}\n")
         response = HttpResponse("\n---\n\n".join(parts), content_type="text/markdown; charset=utf-8")
         response["Content-Disposition"] = 'attachment; filename="teacher-drafts.md"'

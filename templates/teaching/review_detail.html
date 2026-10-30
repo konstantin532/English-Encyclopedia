@@ -16,6 +16,13 @@
   <section class="section" aria-labelledby="answer-title">
     <div class="section-head"><h2 id="answer-title">Ответ ученика</h2></div>
     <blockquote lang="en" style="white-space:pre-wrap">{{ attempt.submitted }}</blockquote>
+    {% if transcript %}
+    <h3>Весь разговор</h3>
+    <p>Все реплики собеседника и ученика по порядку, включая ответы, которые не были приняты. Оценивайте ход разговора и уместность.</p>
+    <ol data-transcript>{% for m in transcript %}
+      <li><strong>{{ m.who }}:</strong> <span lang="en">{{ m.text }}</span></li>
+    {% endfor %}</ol>
+    {% endif %}
     {% if attempt.self_rating %}<p>Самооценка ученика: {{ attempt.self_rating }}</p>{% endif %}
   </section>
   {% if task %}<section class="section" aria-labelledby="model-title">

@@ -1,21 +1,21 @@
+from datetime import timedelta
+from urllib.parse import quote
+
 from django import forms
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.db import IntegrityError, transaction
-from urllib.parse import quote
-
 from django.shortcuts import get_object_or_404, redirect, render, resolve_url
-from django.views.decorators.http import require_POST
-
-from datetime import timedelta
-
 from django.utils import timezone
 from django.utils.http import url_has_allowed_host_and_scheme
+from django.views.decorators.http import require_POST
 
 from .access import can_teach, teacher_required, visible_students
 from .models import ContentDraft, CourseIssue, GroupMembership, StudyGroup
-from .progress import recent_attempts, summarize, week_goals
-from .review import DraftForm, IssueForm, TeacherReviewForm, review_queue, reviewable, save_review, task_for
+from .progress import recent_attempts, summarize, summarize_many, week_goals
+from .review import (DraftForm, IssueForm, TeacherReviewForm, review_queue, reviewable, save_review, task_for,
+                     transcript_for)
 
 ISSUES_PER_DAY = 20
 
@@ -49,12 +49,19 @@ def dashboard(request):
     })
 
 
+STUDENTS_PER_PAGE = 50
+
+
 @teacher_required
 def students(request):
-    rows = [(s, summarize(s)) for s in visible_students(request.user)
-            .select_related("current_level", "group_membership__group").order_by("display_name", "email")]
+    # Сначала страница (50 учеников), потом сводки только для неё — пачкой.
+    page = Paginator(visible_students(request.user)
+                     .select_related("current_level", "group_membership__group")
+                     .order_by("display_name", "email", "pk"), STUDENTS_PER_PAGE).get_page(request.GET.get("page"))
+    summaries = summarize_many(page.object_list)
     return render(request, "teaching/students.html", {
-        "rows": rows, "sees_all": request.user.is_superuser or request.user.teacher_sees_all,
+        "rows": [(s, summaries[s.pk]) for s in page.object_list], "page": page,
+        "sees_all": request.user.is_superuser or request.user.teacher_sees_all,
     })
 
 
@@ -124,7 +131,8 @@ def review_detail(request, pk):
         messages.success(request, "Проверка сохранена. Ученик увидит заключение и подсказку.")
         nxt = review_queue(request.user).exclude(pk=attempt.pk).first()
         return redirect("teaching:review", pk=nxt.pk) if nxt else redirect("teaching:review_list")
-    return render(request, "teaching/review_detail.html", {"attempt": attempt, "task": task, "form": form})
+    return render(request, "teaching/review_detail.html", {"attempt": attempt, "task": task, "form": form,
+                                                           "transcript": transcript_for(attempt)})
 
 
 def _safe_page(request, value: str) -> str:

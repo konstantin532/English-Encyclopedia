@@ -84,3 +84,12 @@ class TeacherDraftTests(TestCase):
         response = admin.download_markdown(request, ContentDraft.objects.filter(pk=self.foreign.pk))
         self.assertIn("# Theirs", response.content.decode())
         self.assertIn("attachment", response["Content-Disposition"])
+
+    def test_teacher_without_groups_can_delete_account_drafts_stay(self):
+        lone = User.objects.create_user("lone@example.com", "pass-12345", is_teacher=True)
+        draft = ContentDraft.objects.create(author=lone, title="Kept for owner", body="b", status="submitted")
+        self.client.force_login(lone)
+        self.client.post(reverse("accounts:delete_account"), {"confirm": "УДАЛИТЬ", "password": "pass-12345"})
+        self.assertFalse(User.objects.filter(pk=lone.pk).exists())
+        draft.refresh_from_db()
+        self.assertIsNone(draft.author)

@@ -98,7 +98,8 @@ class ContentDraft(models.Model):
 
     EDITABLE = (Status.DRAFT, Status.REJECTED)
 
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
+    # Удаление аккаунта учителя не блокируется: черновик остаётся у владельца без автора.
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
                                related_name="content_drafts", verbose_name="автор")
     kind = models.CharField("что это", max_length=8, choices=Kind.choices, default=Kind.LESSON)
     level = models.CharField("уровень", max_length=8, default="A1")
