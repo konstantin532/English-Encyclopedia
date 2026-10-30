@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Кабинет учителя · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <span class="studio-eyebrow">КАБИНЕТ УЧИТЕЛЯ</span>
+    <h1>{% if user.display_name %}{{ user.display_name }}, ваши группы{% else %}Ваши группы{% endif %}</h1>
+    <p>{% if sees_all %}Вам открыт прогресс всех учеников платформы.{% else %}Вы видите учеников своих групп.{% endif %} Сейчас доступно учеников: <strong>{{ student_count }}</strong>.</p>
+  </header>
+  {% include "teaching/_nav.html" with active="dashboard" %}
+  {% include "teaching/_messages.html" %}
+  <section class="section" aria-labelledby="groups-title">
+    <div class="section-head"><h2 id="groups-title">Группы и коды</h2><p>Дайте ученику код — он введёт его в разделе «Моя группа».</p></div>
+    {% if groups %}
+    <div class="table-scroll" role="region" aria-label="Таблица, листается вбок" tabindex="0" style="overflow-x:auto">
+    <table class="words-table">
+      <thead><tr><th scope="col">Группа</th><th scope="col">Код для учеников</th><th scope="col">Учеников</th><th scope="col">Приём</th></tr></thead>
+      <tbody>{% for g in groups %}
+        <tr><td>{{ g.name }}</td><td><code data-join-code>{{ g.join_code }}</code></td><td>{{ g.memberships.all|length }}</td><td>{% if g.is_open %}открыт{% else %}закрыт{% endif %}</td></tr>
+      {% endfor %}</tbody>
+    </table></div>
+    {% else %}<p>Групп пока нет. Создайте первую — и получите код.</p>{% endif %}
+  </section>
+  <section class="section" aria-labelledby="new-group-title">
+    <div class="section-head"><h2 id="new-group-title">Новая группа</h2></div>
+    <form method="post" novalidate>{% csrf_token %}
+      {% for field in form %}{% include "components/field.html" %}{% endfor %}
+      <button class="btn btn-primary" type="submit">Создать группу</button>
+    </form>
+  </section>
+</div>
+{% endblock %}

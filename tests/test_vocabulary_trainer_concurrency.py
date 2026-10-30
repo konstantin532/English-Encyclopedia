@@ -381,3 +381,12 @@ class TrainerMigrationPreservationTests(TransactionTestCase):
         self.assertIsNone(progress.memory_stability)
         self.assertEqual(progress.memory_evidence, {})
         self.assertEqual(IndependentAttempt.objects.get(pk=old.pk).submitted, 'tea')
+
+
+@override_settings(EE_COURSE_LOGIN_REQUIRED=True)
+class TrainerConcurrencyWithCourseLockTests(TrainerConcurrencyTests):
+    """Тот же гонка-тест, но с включённым замком курса, как на сайте.
+
+    Замок читает пользователя раньше обработчика (apps/core/access.py) —
+    временная блокировка SQLite должна повторяться и там, а не ронять запрос.
+    """

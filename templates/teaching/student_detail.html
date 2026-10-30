@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}{{ student }} · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <span class="studio-eyebrow">УЧЕНИК</span>
+    <h1>{{ student }}</h1>
+    <p>Уровень: {{ student.current_level|default:"не выбран" }}{% if membership %} · группа «{{ membership.group.name }}»{% endif %} · {% if student.last_login %}последний вход {{ student.last_login|date:"j E, H:i" }}{% else %}ещё не входил{% endif %}</p>
+  </header>
+  {% include "teaching/_nav.html" with active="students" %}
+  <div class="stats">
+    <div class="stat"><b>{{ summary.units_started }}</b><span>слов и фраз начато</span></div>
+    <div class="stat"><b>{{ summary.units_strong }}</b><span>использует уверенно</span></div>
+    <div class="stat"><b>{{ summary.units_due }}</b><span>пора повторить</span></div>
+    <div class="stat"><b>{{ summary.weeks_done }}</b><span>недель «Получилось»</span></div>
+  </div>
+  <section class="section" aria-labelledby="attempts-title">
+    <div class="section-head"><h2 id="attempts-title">Последние ответы</h2>
+      <p>{% if summary.correct_share_30d is not None %}За 30 дней: {{ summary.attempts_30d }} ответов, {{ summary.correct_share_30d }}% верно.{% else %}За 30 дней ответов не было.{% endif %}</p></div>
+    {% if attempts %}
+    <div class="table-scroll" role="region" aria-label="Таблица, листается вбок" tabindex="0" style="overflow-x:auto">
+    <table class="words-table">
+      <thead><tr><th scope="col">Когда</th><th scope="col">Урок</th><th scope="col">Ответ</th><th scope="col">Итог</th></tr></thead>
+      <tbody>{% for a in attempts %}
+        <tr><td>{{ a.created_at|date:"j E, H:i" }}</td><td>{{ a.exercise.lesson.title }}</td><td lang="en">{{ a.answer }}</td><td>{% if a.is_correct %}верно{% else %}ошибка{% endif %}</td></tr>
+      {% endfor %}</tbody>
+    </table></div>
+    {% else %}<p>Ответов пока нет.</p>{% endif %}
+  </section>
+  <section class="section" aria-labelledby="goals-title">
+    <div class="section-head"><h2 id="goals-title">Цели недель</h2><p>Самооценка ученика «Я смогу…».</p></div>
+    {% if goals %}<ul>{% for g in goals %}<li>{{ g.week.level.code }}, неделя {{ g.week.number }} — {{ g.get_status_display }}</li>{% endfor %}</ul>
+    {% else %}<p>Ученик ещё не отмечал цели недель.</p>{% endif %}
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,4 @@
+<nav class="section" aria-label="Кабинет учителя"><p>
+  <a href="{% url 'teaching:dashboard' %}"{% if active == 'dashboard' %} aria-current="page"{% endif %}>Группы</a> ·
+  <a href="{% url 'teaching:students' %}"{% if active == 'students' %} aria-current="page"{% endif %}>Ученики</a>
+</p></nav>

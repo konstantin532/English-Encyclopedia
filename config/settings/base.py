@@ -19,6 +19,10 @@ def env_bool(name: str, default: bool = False) -> bool:
 EE_VOCABULARY_TRAINER_ENABLED = env_bool("EE_VOCABULARY_TRAINER_ENABLED", False)
 # Модуль «Память слов» и тренировка сгенерированных фраз. Выключен по умолчанию.
 EE_PHRASE_MEMORY_ENABLED = env_bool("EE_PHRASE_MEMORY_ENABLED", False)
+# Материалы курса только после входа (apps/core/access.py). На сайте всегда True.
+# Выключается только в тестах содержимого страниц (tests/runner.py); сам замок
+# проверяют tests/test_course_access.py с включённой настройкой.
+EE_COURSE_LOGIN_REQUIRED = env_bool("EE_COURSE_LOGIN_REQUIRED", True)
 
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-only-insecure-key-change-me")
@@ -29,6 +33,7 @@ CSRF_TRUSTED_ORIGINS = [o for o in os.getenv("DJANGO_CSRF_TRUSTED_ORIGINS", "").
 PROJECT_APPS = [
     "apps.core",
     "apps.accounts",
+    "apps.teaching",
     "apps.taxonomy",
     "apps.lexicon",
     "apps.curriculum",
@@ -61,6 +66,8 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    # Материалы курса — только после входа; открытые страницы в apps/core/access.py.
+    "apps.core.access.CourseAccessMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "axes.middleware.AxesMiddleware",

@@ -2,7 +2,7 @@ from urllib.parse import urlsplit
 
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, resolve_url
 
 from .forms import LoginForm, SignupForm
 
@@ -30,3 +30,10 @@ class EmailLoginView(LoginView):
         if urlsplit(redirect_to).path == self.request.path:
             return ""
         return redirect_to
+
+    def get_default_redirect_url(self):
+        # Учитель после входа попадает в свой кабинет, ученик — в курс.
+        from apps.teaching.access import can_teach
+        if can_teach(self.request.user):
+            return resolve_url("teaching:dashboard")
+        return super().get_default_redirect_url()

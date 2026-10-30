@@ -11,6 +11,9 @@ if os.getenv("TEST_DATABASE_URL"):
 else:
     DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}}
 PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5PasswordHasher"]
+# Тесты содержимого открывают страницы курса без входа. Замок курса проверяют
+# tests/test_course_access.py — там он включён явно (override_settings).
+EE_COURSE_LOGIN_REQUIRED = False
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
     "staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"},

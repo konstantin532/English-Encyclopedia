@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Моя группа · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <h1>Моя группа</h1>
+    <p>Если вы занимаетесь с учителем, введите код группы — учитель увидит ваш прогресс и сможет подсказать, что повторить.</p>
+  </header>
+  {% include "teaching/_messages.html" %}
+  {% if membership %}
+  <section class="section">
+    <p>Вы в группе <strong>«{{ membership.group.name }}»</strong>, учитель — {{ membership.group.teacher }}.</p>
+    <form method="post" action="{% url 'teaching:leave' %}">{% csrf_token %}<button class="btn btn-quiet" type="submit">Выйти из группы</button></form>
+  </section>
+  {% endif %}
+  <section class="section" aria-labelledby="join-title">
+    <div class="section-head"><h2 id="join-title">{% if membership %}Перейти в другую группу{% else %}Вступить в группу{% endif %}</h2></div>
+    <form method="post" novalidate>{% csrf_token %}
+      {% if form.non_field_errors %}<ul class="errorlist">{% for e in form.non_field_errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+      {% for field in form %}{% include "components/field.html" %}{% endfor %}
+      <button class="btn btn-primary" type="submit">Вступить</button>
+    </form>
+  </section>
+</div>
+{% endblock %}

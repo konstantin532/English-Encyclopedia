@@ -34,6 +34,12 @@ class User(AbstractUser):
     )
     markers_enabled = models.BooleanField("маркеры в тексте", default=False, db_default=False)
     markers_in_color = models.BooleanField("маркеры в цвете", default=True)
+    # Роль «учитель» назначает только владелец (суперпользователь) в админке.
+    is_teacher = models.BooleanField("учитель", default=False, db_default=False,
+                                     help_text="Открывает кабинет учителя. Назначает только владелец.")
+    teacher_sees_all = models.BooleanField(
+        "видит всех учеников", default=False, db_default=False,
+        help_text="Выключено — учитель видит только учеников своих групп.")
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS: list[str] = []
@@ -43,6 +49,14 @@ class User(AbstractUser):
         # Почта без учёта регистра: Anna@Mail.ru и anna@mail.ru — один аккаунт.
         self.email = (self.email or "").strip().lower()
         super().save(*args, **kwargs)
+
+    @property
+    def is_owner(self) -> bool:
+        return self.is_superuser
+
+    @property
+    def is_learner(self) -> bool:
+        return not (self.is_teacher or self.is_staff or self.is_superuser)
 
     def __str__(self) -> str:
         return self.display_name or self.email

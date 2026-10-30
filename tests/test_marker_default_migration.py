@@ -27,21 +27,25 @@ class MarkerDefaultMigrationTests(TransactionTestCase):
             disabled = added_user.objects.create(email='already-upgraded@example.test', markers_in_color=False)
             self.assertFalse(disabled.markers_enabled)
 
-            MigrationExecutor(connection).migrate([target])
+            executor = MigrationExecutor(connection)
+            executor.migrate([target])
+            # Модель «той эпохи»: у текущей User могут быть поля из более поздних миграций.
+            target_user = executor.loader.project_state([target]).apps.get_model('accounts', 'User')
             for color in (False, True):
-                saved = User.objects.get(email=f'existing-{color}@example.test')
+                saved = target_user.objects.get(email=f'existing-{color}@example.test')
                 self.assertTrue(saved.markers_enabled)
                 self.assertEqual(saved.markers_in_color, color)
-            saved = User.objects.get(pk=disabled.pk)
+            saved = target_user.objects.get(pk=disabled.pk)
             self.assertFalse(saved.markers_enabled)
             self.assertFalse(saved.markers_in_color)
 
             # Other apps' older migration states do not know markers_enabled.
             # Their inserts must still work after the accounts upgrade.
             legacy = old_user.objects.create(email='historical-insert@example.test', markers_in_color=False)
-            saved = User.objects.get(pk=legacy.pk)
+            saved = target_user.objects.get(pk=legacy.pk)
             self.assertFalse(saved.markers_enabled)
             self.assertFalse(saved.markers_in_color)
+            MigrationExecutor(connection).migrate(latest)
             fresh = User.objects.create_user('fresh-default@example.test')
             self.assertFalse(fresh.markers_enabled)
         finally:

@@ -32,7 +32,8 @@ def metadata(request):
     namespaces = request.resolver_match.app_names if request.resolver_match else []
     private = any(
         name in {"accounts", "learning", "admin", "api"} for name in namespaces
-    )
+    ) or bool(request.resolver_match and request.resolver_match.app_name == "teaching"
+              and request.resolver_match.url_name != "for_teachers")
     origin = public_origin()
     return {
         "PRIVATE_PAGE": private,
@@ -47,6 +48,8 @@ def robots(request):
         "Disallow: /accounts/",
         "Disallow: /learning/",
         "Disallow: /api/",
+        "Disallow: /teacher/",
+        "Disallow: /group/",
         "Disallow: /healthz/",
     ]
     origin = public_origin()
@@ -67,6 +70,18 @@ def sitemap(request):
     origin = public_origin()
     if not origin:
         raise Http404("Public site origin is not configured")
+    if settings.EE_COURSE_LOGIN_REQUIRED:
+        # Курс закрыт: поисковикам показываем только открытые страницы.
+        from apps.core.access import GUEST_LEVEL, GUEST_WEEK
+
+        paths = [reverse(name) for name in ("core:home", "taxonomy:legend", "teaching:for_teachers")]
+        paths += [reverse("curriculum:week", args=[GUEST_LEVEL.lower(), GUEST_WEEK])]
+        paths += [reverse("lessons:detail", args=[slug]) for slug in Lesson.objects.filter(
+            is_published=True, level__code=GUEST_LEVEL, week__number=GUEST_WEEK).values_list("slug", flat=True)]
+        response = render(request, "core/sitemap.xml", {"locations": [origin + path for path in paths]},
+                          content_type="application/xml; charset=utf-8")
+        response["Cache-Control"] = "public, max-age=300"
+        return response
     paths = [
         reverse(name)
         for name in ("core:home", "lexicon:list", "stories:map", "taxonomy:legend")
