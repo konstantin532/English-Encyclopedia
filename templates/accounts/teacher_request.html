@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Заявка учителя · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<section class="ee-auth-status" aria-labelledby="request-title">
+  <span class="studio-eyebrow">ЗАЯВКА ОТПРАВЛЕНА</span>
+  <h1 id="request-title">Ждём подтверждения</h1>
+  <p>Вы выбрали роль учителя. Владелец проверит заявку и откроет кабинет: группы, работы учеников и обратную связь.</p>
+  <p>Пока заявка рассматривается, вам доступен курс для самостоятельного обучения. Подтверждение появится при следующем входе.</p>
+  <a class="btn btn-primary" href="{% url 'learning:dashboard' %}">Перейти к обучению <span aria-hidden="true">→</span></a>
+  <p><a href="{% url 'accounts:teacher_request' %}">Проверить статус заявки</a></p>
+</section>
+{% endblock %}

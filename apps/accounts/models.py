@@ -40,6 +40,9 @@ class User(AbstractUser):
     teacher_sees_all = models.BooleanField(
         "видит всех учеников", default=False, db_default=False,
         help_text="Выключено — учитель видит только учеников своих групп.")
+    teacher_access_requested = models.BooleanField(
+        "заявка на доступ учителя", default=False, db_default=False,
+        help_text="Заявка не даёт прав. Для одобрения владелец включает «учитель»; для отказа снимает заявку.")
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS: list[str] = []

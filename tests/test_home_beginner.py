@@ -45,7 +45,7 @@ class BeginnerHomeTemplateTests(SimpleTestCase):
         self.assertEqual(context['MARKERS_MODE'], 'off')
         html = render_to_string('base.html', {**context, 'user': request.user})
         self.assertIn('data-markers="off"', html.split('<head>')[0])
-        self.assertIn('aria-label="Маркеры в тексте"', html)
+        self.assertNotIn('aria-label="Маркеры в тексте"', html)
 
     def test_enabled_accounts_keep_color_or_monochrome_choice(self):
         for color, expected in ((True, 'color'), (False, 'mono')):

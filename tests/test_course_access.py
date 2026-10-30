@@ -32,7 +32,8 @@ class CourseLockTests(TestCase):
         self.assertIn("next=", response["Location"], url)
 
     def test_public_pages_open_without_login(self):
-        for name in ("core:home", "accounts:login", "accounts:signup", "teaching:for_teachers",
+        self.assertRedirects(self.client.get(reverse("core:home")), reverse("accounts:login"))
+        for name in ("accounts:login", "accounts:signup", "teaching:for_teachers",
                      "taxonomy:legend", "core:healthz", "core:robots"):
             with self.subTest(name=name):
                 self.assertNotEqual(self.client.get(reverse(name)).status_code, 302)

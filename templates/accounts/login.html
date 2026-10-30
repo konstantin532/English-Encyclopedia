@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 {% block title %}Вход · {{ SITE_NAME }}{% endblock %}
 {% block content %}
-<div class="wrap"><div class="studio-auth">
-  <aside class="studio-auth-story" aria-label="Добро пожаловать"><span class="studio-eyebrow">ВАШ АНГЛИЙСКИЙ ЖДЁТ</span><h2>Каждый шаг <br>делает язык <br><em>ближе.</em></h2><p>Продолжайте уроки, возвращайтесь к знакомым словам и замечайте свой прогресс.</p><div class="studio-auth-phrase" lang="en"><span class="mk" data-cat="T" data-cls="8">I</span><span class="mk" data-cat="D" data-cls="1">'m</span> <span class="mk" data-cat="S" data-cls="2">home</span>.<small lang="ru">Я дома. Здесь начинается понимание.</small></div></aside>
-  <div class="form-page studio-auth-form"><span class="studio-eyebrow">С ВОЗВРАЩЕНИЕМ</span><h1>Вход</h1><p class="studio-form-lede">{% if next %}Уроки, истории и словарь открываются после входа. Войдите — и вернётесь на ту страницу, которую открывали.{% else %}Войдите, чтобы продолжить с того места, где остановились.{% endif %}</p>
-  <form method="post" novalidate>{% csrf_token %}
-    {% if form.non_field_errors %}<ul class="errorlist">{% for e in form.non_field_errors %}<li>Почта или пароль не подходят. Проверьте раскладку и попробуйте ещё раз.</li>{% endfor %}</ul>{% endif %}
-    {% for field in form %}{% include "components/field.html" %}{% endfor %}
-    <input type="hidden" name="next" value="{{ next }}">
-    <button class="btn btn-primary studio-form-submit" type="submit">Войти <span aria-hidden="true">→</span></button>
-  </form>
-  <p class="studio-auth-alternate">Ещё нет аккаунта? <a href="{% url 'accounts:signup' %}">Зарегистрироваться</a></p>
-  <p class="studio-auth-alternate">Вы учитель? Входите с той же формы — кабинет учителя откроется сам. <a href="{% url 'teaching:for_teachers' %}">Подробнее</a></p>
-  </div>
-</div></div>
+<div class="ee-auth">
+  <aside class="ee-auth-note" aria-label="С возвращением"><span class="studio-eyebrow">ВАШ АНГЛИЙСКИЙ ЖДЁТ</span><h2>Каждый шаг<br>делает язык ближе.</h2><p>Возвращайтесь к урокам, знакомым словам и своему прогрессу.</p><span class="ee-auth-letter" aria-hidden="true">Aa</span></aside>
+  <section class="ee-auth-form" aria-labelledby="login-title">
+    <h1 id="login-title">Вход</h1>
+    <p class="ee-auth-lede">{% if next %}Войдите — и вернётесь на страницу, которую открывали.{% else %}Продолжите с того места, где остановились.{% endif %}</p>
+    <form method="post" novalidate>{% csrf_token %}
+      {% if form.non_field_errors %}<ul class="errorlist"><li>Почта или пароль не подходят. Проверьте раскладку и попробуйте ещё раз.</li></ul>{% endif %}
+      {% for field in form %}{% include "components/field.html" %}{% endfor %}
+      <input type="hidden" name="next" value="{{ next }}">
+      <button class="btn btn-primary ee-auth-submit" type="submit">Войти <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="ee-auth-alternate">Ещё нет аккаунта? <a href="{% url 'accounts:signup' %}{% if next %}?next={{ next|urlencode }}{% endif %}">Зарегистрироваться</a></p>
+    <p class="help">Вход для учеников и учителей общий. Кабинет определяется по правам вашего аккаунта.</p>
+  </section>
+</div>
 {% endblock %}

@@ -425,6 +425,7 @@ class ReviewFixesTests(TestCase):
         self.assertFalse([e for e in run_audit().errors if "подстановка" in e])
 
     def test_header_has_visible_marker_toggle_label(self):
+        self.client.force_login(User.objects.create_user("toggle-student@example.test"))
         self.assertContains(self.client.get("/"), 'class="toggle-short"')
 
 

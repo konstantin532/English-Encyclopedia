@@ -5,10 +5,33 @@ from .models import User
 
 
 class SignupForm(UserCreationForm):
+    role = forms.ChoiceField(
+        label="Как вы будете пользоваться энциклопедией?",
+        choices=(("student", "Ученик"), ("teacher", "Учитель")),
+        initial="student", required=False, widget=forms.RadioSelect,
+    )
+
     class Meta:
         model = User
-        fields = ("email", "display_name")
-        labels = {"email": "Почта", "display_name": "Как к вам обращаться"}
+        fields = ("email",)
+        labels = {"email": "Почта"}
+        widgets = {"email": forms.EmailInput(attrs={"autocomplete": "email"})}
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Выбор роли предшествует почте и не должен пропускаться автофокусом.
+        self.fields["email"].widget.attrs.pop("autofocus", None)
+
+    def clean_role(self):
+        # Старые клиенты без выбора роли по-прежнему создают ученика.
+        return self.cleaned_data.get("role") or "student"
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.teacher_access_requested = self.cleaned_data["role"] == "teacher"
+        if commit:
+            user.save()
+        return user
 
     def clean_email(self):
         email = self.cleaned_data["email"].strip().lower()

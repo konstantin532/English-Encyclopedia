@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.templatetags.static import static
 from django.db import connections, DatabaseError
 from django.http import JsonResponse
@@ -59,6 +59,8 @@ HOME_CHARACTERS = (
 
 
 def home(request):
+    if not request.user.is_authenticated:
+        return redirect("accounts:login")
     from apps.curriculum.views import week_art
 
     a1_weeks = list(Level.objects.get(code="A1").week_set.select_related("scene")[:4]) \

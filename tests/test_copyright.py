@@ -13,5 +13,5 @@ class CopyrightTests(TestCase):
         self.assertIn("SIL Open Font License", text)
 
     def test_footer_shows_copyright(self):
-        response = self.client.get(reverse("core:home"))
+        response = self.client.get(reverse("core:home"), follow=True)
         self.assertContains(response, "© 2026 konstantin532. Все права защищены.")
