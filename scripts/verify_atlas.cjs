@@ -14,6 +14,7 @@ const sizes=[[1440,900],[1280,800],[390,844],[360,800]];
 const screens=[['home','/'],['collection','/levels/a1/'],['chapter','/levels/a1/weeks/13/']];
 const {geometryDelta,assertChapterReadingFlow,assertGeometrySnapshot}=require('./atlas_geometry.cjs');
 const homeGeometry=require('./atlas_home_geometry.json');
+const weekMotionGeometry=require('./atlas_week_motion_geometry.json');
 const selectors=['.studio-sidebar','.site-header','.studio-home-hero','.studio-phrase-paper','.studio-lesson-card','.week-card','.week-hero','.week-route','.story-script'];
 async function serve(directory,port){
  const processHandle=spawn(process.env.ATLAS_PYTHON || 'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:directory,env:{...process.env,DJANGO_SETTINGS_MODULE:'config.settings.local',EE_COURSE_LOGIN_REQUIRED:'0'},stdio:['ignore','ignore','pipe']});
@@ -81,7 +82,11 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
     for(const selector of selectors){
      const a=measurements.before[selector],b=measurements.after[selector];
      if(a.length!==b.length){changed.push(`${selector}: ${a.length}→${b.length}`);continue;}
-     a.forEach((rectangle,index)=>{maxDelta=Math.max(maxDelta,geometryDelta(name,selector,rectangle,b[index],width));});
+     // Expanded lessons deliberately add visible text. Pin their new height;
+     // retain before/after alignment, widths, counts, and the full reading-flow gate.
+     const authoredCards=name==='chapter'&&selector==='.studio-lesson-card'?weekMotionGeometry.viewports[String(width)]:null;
+     if(authoredCards)assert.equal(b.length,authoredCards.length,'authored chapter card count changed');
+     a.forEach((rectangle,index)=>{maxDelta=Math.max(maxDelta,geometryDelta(name,selector,rectangle,b[index],width,authoredCards?.[index].height));});
     }
     report.screens.push({name,width,height,maxGeometryDelta:maxDelta,changed,measurements});
     // Home copy changed deliberately in the beginner revision. Pin its new
