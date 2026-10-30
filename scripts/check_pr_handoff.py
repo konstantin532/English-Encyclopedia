@@ -32,7 +32,8 @@ SECTIONS: tuple[str, ...] = (
 # PR, открытые раньше этой даты, жили по старым правилам: только предупреждение.
 REQUIRED_FROM = "2026-10-31T00:00:00Z"
 
-_HEADING = re.compile(r"^\s{0,3}(?:#{1,6}\s*|\*\*)(?P<title>[^*#\n]+?)(?:\*\*)?\s*:?\s*$")
+_HEADING = re.compile(r"^\s{0,3}(?:(?P<hashes>#{1,6})\s*|\*\*)(?P<title>[^*#\n]+?)(?:\*\*)?\s*:?\s*$")
+_COMMENT = re.compile(r"<!--.*?-->", re.S)
 
 
 def _normalise(title: str) -> str:
@@ -44,15 +45,26 @@ def find_problems(body: str) -> list[str]:
     wanted = {_normalise(name): name for name in SECTIONS}
     found: dict[str, list[str]] = {}
     current: str | None = None
-    for line in (body or "").splitlines():
+    current_level = 0  # уровень заголовка текущего раздела: число «#», 0 — жирная строка
+    # Комментарии-подсказки шаблона, в том числе многострочные, содержимым не считаются.
+    for line in _COMMENT.sub("", body or "").splitlines():
         match = _HEADING.match(line)
         if match:
+            level = len(match.group("hashes") or "")
             key = _normalise(match.group("title"))
-            current = next((k for k in wanted if key.startswith(k)), None)
-            if current is not None:
+            section = next((k for k in wanted if key.startswith(k)), None)
+            if section is not None:
+                current, current_level = section, level
                 found.setdefault(current, [])
+                continue
+            if current is not None and current_level and level > current_level:
+                continue  # подзаголовок внутри раздела: раздел продолжается
+            if current is not None and not level:
+                found[current].append(line.strip())  # жирная строка — обычный текст раздела
+                continue
+            current = None  # чужой заголовок того же или более высокого уровня
             continue
-        if current is not None and line.strip() and not line.strip().startswith("<!--"):
+        if current is not None and line.strip():
             found[current].append(line.strip())
 
     problems = []

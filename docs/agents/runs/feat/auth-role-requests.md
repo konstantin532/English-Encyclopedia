@@ -69,3 +69,8 @@ Baseline: `origin/main` = `17e6680adaa7b4c9ea0b4b8dfe2cda41e3d8bdc6` (PR #158 у
 - Четыре теста сохранили все исходные URL/контент/assertHTTP200: auth pages проверяются гостем, учебные страницы — вошедшим учеником. Добавлена явная проверка редиректа гостевой главной в sweep.
 - Повтор ровно пяти сценариев (PublicPageSweep,EditorialPilot,EducationalTypography,ContentTests,audio distribution) →Ran5tests in28.283s,OK. Timeout аудио не изменялся.
 - Полный набор локально второй раз не запускался по правилу автора; итоговый полный запуск ожидается в CI.
+
+## Согласование с main и итоговая визуальная проверка
+
+- Runtime mainf88bca0 эквивалентен исходному17e6680a по apps/static/templates. В feature подтянуты текущие правила/skills/handoff и .gitignore. Единственный конфликт — конец lessons.md; сохранены source-ignore запись автора и все3записи этого PR.
+- Повтор Atlas завершилсяPASS:12строгихсравненийгеометрии,58редакционныхстраниц,14обложек,семьслоёвурока/клавиатура/no-JS/reduced/full-motion; JS errors0. Исторический snapshot и пороги не ослаблялись.
