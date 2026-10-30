@@ -1,0 +1,33 @@
+/* Week motion is an enhancement: native navigation and visible text remain the baseline. */
+@layer ee-motion {
+  :root {
+    --week-motion-layout: 360ms;
+  }
+
+  /* Only the catalogue and the week opt into cross-document navigation. */
+  @media (prefers-reduced-motion: no-preference) {
+    @view-transition { navigation: auto; }
+  }
+
+  ::view-transition-group(*) {
+    animation-duration: var(--week-motion-layout);
+    animation-timing-function: var(--motion-ease-enter);
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: var(--motion-duration-standard);
+  }
+
+  html[data-motion="minimal"]::view-transition-group(*),
+  html[data-motion="minimal"]::view-transition-old(*),
+  html[data-motion="minimal"]::view-transition-new(*) {
+    animation: none !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) { animation: none !important; }
+  }
+}

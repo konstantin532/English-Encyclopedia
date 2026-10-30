@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Курс {{ level.code }}{% if level_title %} — {{ level_title }}{% endif %} · {{ SITE_NAME }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/week-motion.css' %}">{% endblock %}
 {% block content %}
 <div class="wrap atlas-level">
   <header class="page-head atlas-level-hero">

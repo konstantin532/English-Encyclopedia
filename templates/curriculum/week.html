@@ -2,7 +2,7 @@
 {% load markers static ru %}
 {% block title %}Неделя {{ week.number }} · {{ week.situation_ru }} · {{ SITE_NAME }}{% endblock %}
 {% block social_title %}Неделя {{ week.number }} · {{ week.situation_ru }} · {{ SITE_NAME }}{% endblock %}
-{% block page_styles %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}"><link rel="stylesheet" href="{% static 'css/week-motion.css' %}">{% endblock %}
 {% block content %}
 <div data-educational-reading{% if editorial_pilot %} data-editorial-pilot="week"{% endif %} data-reading-theme="friendly" class="wrap cinematic-week">
   {% if scene %}
