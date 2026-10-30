@@ -311,6 +311,88 @@ class DesignPipelineTests(SimpleTestCase):
         self.assertIn("`design-pipeline` — любая просьба улучшить внешний вид", (ROOT / "AGENTS.md").read_text(encoding="utf-8"))
 
 
+def _load_inventory():
+    spec = importlib.util.spec_from_file_location("skills_inventory", ROOT / "scripts" / "skills_inventory.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+class GapAuditTests(SimpleTestCase):
+    """Ревизия: вопросы по глубине → пробелы → свои навыки → find-skills только для непокрытого."""
+
+    SKILL = ROOT / ".agents" / "skills" / "gap-audit" / "SKILL.md"
+
+    def body(self) -> str:
+        return self.SKILL.read_text(encoding="utf-8").split("---\n", 2)[2]
+
+    def test_description_catches_everyday_wording(self):
+        description = _frontmatter(self.SKILL)["description"].casefold()
+        for phrase in ("чего не хватает проекту", "найди слабые места", "аудит", "подбери скиллы", "find skills"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, description)
+
+    def test_levels_run_in_order_and_search_comes_last(self):
+        body = self.body()
+        positions = [body.index(f"## Уровень {n}.") for n in range(7)]
+        self.assertEqual(positions, sorted(positions))
+        # Новые навыки ищутся только после сопоставления с уже установленными.
+        self.assertGreater(body.index("$find-skills"), body.index("## Уровень 5."))
+        self.assertIn("Ничего не устанавливай без решения автора", body)
+
+    def test_question_bank_covers_every_area(self):
+        bank = (self.SKILL.parent / "questions.md").read_text(encoding="utf-8")
+        for area in ("Учебный контент", "Дизайн и интерфейс", "Движок и данные",
+                     "Безопасность и доступ", "Скорость", "Настройка агентов"):
+            with self.subTest(area=area):
+                section = bank.split(f"## {area}\n", 1)[1].split("\n## ", 1)[0]
+                self.assertIn("Г2", section)
+                self.assertGreaterEqual(section.count("\n| "), 3, "Нужна хотя бы пара линз")
+
+    def test_agents_md_routes_audits(self):
+        self.assertIn("`gap-audit` — «чего не хватает проекту»", (ROOT / "AGENTS.md").read_text(encoding="utf-8"))
+
+
+class SkillsInventoryTests(SimpleTestCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.inv = _load_inventory()
+
+    def make_skill(self, folder: Path, name: str, description: str) -> None:
+        (folder / name).mkdir(parents=True)
+        (folder / name / "SKILL.md").write_text(f"---\nname: {name}\ndescription: {description}\n---\n", encoding="utf-8")
+
+    def test_flags_known_traps(self):
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmp:
+            project, home = Path(tmp) / "project", Path(tmp) / "home"
+            self.make_skill(project / ".agents" / "skills", "shared", "Works with vanilla JS")
+            self.make_skill(project / ".claude" / "skills", "shared", "Works with vanilla JS")
+            self.make_skill(project / ".agents" / "skills", "codex-only", "Plain HTML pages")
+            self.make_skill(home / ".agents" / "skills", "shared", "Works with vanilla JS")
+            self.make_skill(home / ".agents" / "skills", "motion-react", "Animations for React apps")
+            self.make_skill(home / ".agents" / "skills", "silent", "")
+            flags = {(i["name"], i["where"].split(":")[0]): i["flags"] for i in self.inv.inventory(project, home)}
+        self.assertEqual(flags[("shared", "личные Codex")], ["дубль"])
+        self.assertEqual(flags[("codex-only", "проект")], ["нет у Claude"])
+        self.assertEqual(flags[("motion-react", "личные Codex")], ["чужой стек"])
+        self.assertEqual(flags[("silent", "личные Codex")], ["без описания"])
+        self.assertEqual(flags[("shared", "проект")], [])
+
+    def test_real_project_inventory(self):
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as empty_home:
+            items = self.inv.inventory(ROOT, Path(empty_home))
+        names = {i["name"] for i in items}
+        self.assertLessEqual({"gap-audit", "design-pipeline", "reviewer", "ui_reviewer"}, names)
+        react = next(i for i in items if i["name"] == "gsap-react" and i["where"].startswith("проект: .agents"))
+        self.assertIn("чужой стек", react["flags"])
+        self.assertFalse([i["name"] for i in items if "нет у Claude" in i["flags"]])
+
+
 def _load_handoff():
     spec = importlib.util.spec_from_file_location("pr_handoff", ROOT / "scripts" / "check_pr_handoff.py")
     module = importlib.util.module_from_spec(spec)

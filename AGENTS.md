@@ -85,6 +85,7 @@
 
 **Агенты проекта** — одна команда у обоих: `reviewer` (проверка PR), `course_editor` (учебный контент и живой английский), `ui_reviewer` (приёмка интерфейса). Описания: `.codex/agents/*.toml` и `.claude/agents/*.md`; имена и состав совпадают (`tests/test_agent_setup.py`). Агенты только проверяют и файлы не меняют. Зови их по имени: «пусть reviewer проверит PR #N».
 - **`design-pipeline` — любая просьба улучшить внешний вид, в каких бы словах** («улучши дизайн», «запили сайт», «сделай красиво», «редизайн»): этапы Impeccable → Taste Skill → GSAP → приёмка строго по порядку. Не начинай такую задачу в обход него;
+- `gap-audit` — «чего не хватает проекту», аудит, подбор навыков: вопросы по глубине → пробелы → свои навыки → `$find-skills` только для непокрытого; без автора ничего не ставит;
 - `encyclopedia-design` (в Codex: `$encyclopedia-design`) — направление дизайна для любого интерфейса; `ee-illustration` — любая новая или перерисованная картинка;
 - `gsap-core` и по задаче `gsap-timeline`, `gsap-scrolltrigger`, `gsap-performance`, `gsap-plugins`, `gsap-utils` (не `gsap-react`/`gsap-frameworks`: в проекте ванильный JS); `ui-ux-pro-max` — вёрстка, типографика, доступность;
 - `supabase-postgres-best-practices` — схема, миграции, индексы, права; `supabase` — только для задач про Supabase.
