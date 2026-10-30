@@ -6,6 +6,7 @@ from apps.learning.admin import IndependentAttemptAdmin, IndependentAttemptRevie
 from apps.learning.models import IndependentAttempt
 
 from .access import visible_students
+from .models import ContentDraft
 
 NEEDS_HUMAN = (IndependentAttempt.Outcome.NEEDS_REVIEW, IndependentAttempt.Outcome.SELF_REPORTED)
 
@@ -58,3 +59,22 @@ class IssueForm(forms.Form):
         if len(text) < 5:
             raise forms.ValidationError("Напишите хотя бы пару слов, что не так.")
         return text
+
+
+class DraftForm(forms.ModelForm):
+    class Meta:
+        model = ContentDraft
+        fields = ["kind", "level", "week", "title", "body"]
+        widgets = {"body": forms.Textarea(attrs={"rows": 18})}
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        from apps.curriculum.registry import LEVELS
+        self.fields["level"] = forms.ChoiceField(label="Уровень", choices=[(lv.code, lv.code) for lv in LEVELS])
+        self.fields["week"].min_value = 1
+
+    def clean_week(self):
+        week = self.cleaned_data.get("week")
+        if week is not None and not 1 <= week <= 30:
+            raise forms.ValidationError("Номер недели — от 1 до 30.")
+        return week

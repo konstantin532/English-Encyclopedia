@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{% if draft %}{{ draft.title }}{% else %}Новый черновик{% endif %} · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <span class="studio-eyebrow">ЧЕРНОВИК</span>
+    <h1>{% if draft %}{{ draft.title }}{% else %}Новый черновик{% endif %}</h1>
+    {% if draft and draft.owner_note %}<p><strong>Ответ автора курса:</strong> {{ draft.owner_note|linebreaksbr }}</p>{% endif %}
+  </header>
+  {% include "teaching/_nav.html" with active="drafts" %}
+  <section class="section">
+    <p>Пишите живым американским английским и тёплым русским — без «правил из учебника». Не копируйте чужие тексты: только своё.</p>
+    <form method="post" novalidate>{% csrf_token %}
+      {% for field in form %}{% include "components/field.html" %}{% endfor %}
+      <button class="btn btn-quiet" type="submit" name="save">Сохранить черновик</button>
+      <button class="btn btn-primary" type="submit" name="submit">Отправить автору курса</button>
+    </form>
+  </section>
+</div>
+{% endblock %}

@@ -1,7 +1,8 @@
 from django.contrib import admin
+from django.http import HttpResponse
 from django.utils import timezone
 
-from .models import CourseIssue, GroupMembership, StudyGroup
+from .models import ContentDraft, CourseIssue, GroupMembership, StudyGroup
 
 
 class MembershipInline(admin.TabularInline):
@@ -59,3 +60,28 @@ class CourseIssueAdmin(admin.ModelAdmin):
     @admin.action(description="Отметить: не ошибка")
     def mark_rejected(self, request, queryset):
         queryset.update(status=CourseIssue.Status.REJECTED, resolved_at=timezone.now())
+
+
+@admin.register(ContentDraft)
+class ContentDraftAdmin(admin.ModelAdmin):
+    list_display = ["updated_at", "status", "kind", "level", "week", "title", "author"]
+    list_filter = ["status", "kind", "level"]
+    search_fields = ["title", "body", "author__email"]
+    readonly_fields = ["author", "kind", "level", "week", "title", "body", "created_at", "updated_at", "submitted_at"]
+    fields = ["status", "owner_note", "kind", "level", "week", "title", "body", "author",
+              "submitted_at", "created_at", "updated_at"]
+    actions = ["download_markdown"]
+
+    def has_add_permission(self, request):
+        return False
+
+    @admin.action(description="Скачать выбранные как .md (для переноса в курс)")
+    def download_markdown(self, request, queryset):
+        parts = []
+        for d in queryset.select_related("author"):
+            week = f", неделя {d.week}" if d.week else ""
+            parts.append(f"# {d.title}\n\n{d.get_kind_display()} · {d.level}{week} · автор: {d.author} · "
+                         f"статус: {d.get_status_display()}\n\n{d.body}\n")
+        response = HttpResponse("\n---\n\n".join(parts), content_type="text/markdown; charset=utf-8")
+        response["Content-Disposition"] = 'attachment; filename="teacher-drafts.md"'
+        return response

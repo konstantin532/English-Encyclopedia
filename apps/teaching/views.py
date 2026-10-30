@@ -13,9 +13,9 @@ from django.utils import timezone
 from django.utils.http import url_has_allowed_host_and_scheme
 
 from .access import can_teach, teacher_required, visible_students
-from .models import CourseIssue, GroupMembership, StudyGroup
+from .models import ContentDraft, CourseIssue, GroupMembership, StudyGroup
 from .progress import recent_attempts, summarize, week_goals
-from .review import IssueForm, TeacherReviewForm, review_queue, reviewable, save_review, task_for
+from .review import DraftForm, IssueForm, TeacherReviewForm, review_queue, reviewable, save_review, task_for
 
 ISSUES_PER_DAY = 20
 
@@ -154,3 +154,48 @@ def report_issue(request):
     mine = CourseIssue.objects.filter(reporter=request.user)[:10]
     return render(request, "teaching/report_issue.html", {"form": form, "page": page, "mine": mine,
                                                            "sent": request.GET.get("sent") == "1"})
+
+
+MAX_OPEN_DRAFTS = 30
+
+
+@teacher_required
+def draft_list(request):
+    drafts = ContentDraft.objects.filter(author=request.user)
+    return render(request, "teaching/draft_list.html", {"drafts": drafts})
+
+
+@teacher_required
+def draft_edit(request, pk=None):
+    # Только свои черновики; чужой — 404. Отправленный на проверку не редактируется.
+    draft = get_object_or_404(ContentDraft, pk=pk, author=request.user) if pk else None
+    if draft and not draft.editable:
+        messages.info(request, "Черновик на проверке или уже одобрен — изменить его нельзя.")
+        return redirect("teaching:drafts")
+    if draft is None and request.method == "POST" and ContentDraft.objects.filter(
+            author=request.user, status__in=ContentDraft.EDITABLE).count() >= MAX_OPEN_DRAFTS:
+        messages.info(request, "Слишком много незавершённых черновиков. Отправьте или удалите часть.")
+        return redirect("teaching:drafts")
+    form = DraftForm(request.POST or None, instance=draft)
+    if request.method == "POST" and form.is_valid():
+        draft = form.save(commit=False)
+        draft.author = request.user
+        submit = "submit" in request.POST
+        if submit:
+            draft.status, draft.submitted_at = ContentDraft.Status.SUBMITTED, timezone.now()
+        else:
+            draft.status = ContentDraft.Status.DRAFT
+        draft.save()
+        messages.success(request, "Отправлено автору курса." if submit else "Черновик сохранён.")
+        return redirect("teaching:drafts")
+    return render(request, "teaching/draft_edit.html", {"form": form, "draft": draft})
+
+
+@teacher_required
+@require_POST
+def draft_delete(request, pk):
+    draft = get_object_or_404(ContentDraft, pk=pk, author=request.user)
+    if draft.editable:
+        draft.delete()
+        messages.success(request, "Черновик удалён.")
+    return redirect("teaching:drafts")
