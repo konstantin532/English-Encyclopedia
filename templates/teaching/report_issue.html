@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Ошибка в курсе · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <h1>Нашли ошибку?</h1>
+    <p>Опечатка, неверный перевод, неестественная фраза — напишите, автор курса проверит и исправит.{% if page %} Страница: <a href="{{ page }}">{{ page }}</a>{% endif %}</p>
+  </header>
+  {% if sent %}<section class="section" role="status"><p><strong>Спасибо! Сообщение отправлено автору курса.</strong></p>
+    {% if page %}<p><a class="btn btn-primary" href="{{ page }}">← Вернуться к странице</a></p>{% endif %}</section>{% endif %}
+  <section class="section">
+    <form method="post" novalidate>{% csrf_token %}
+      <input type="hidden" name="page" value="{{ page }}">
+      {% if form.non_field_errors %}<ul class="errorlist">{% for e in form.non_field_errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+      {% for field in form %}{% include "components/field.html" %}{% endfor %}
+      <button class="btn btn-primary" type="submit">Отправить</button>
+    </form>
+  </section>
+  {% if mine %}<section class="section" aria-labelledby="mine-title">
+    <div class="section-head"><h2 id="mine-title">Ваши сообщения</h2></div>
+    <ul>{% for i in mine %}<li>{{ i.created_at|date:"j E" }} · <a href="{{ i.page }}">{{ i.page }}</a> · «{{ i.comment|truncatechars:70 }}» — <strong>{{ i.get_status_display }}</strong>{% if i.owner_note %}. Ответ автора: {{ i.owner_note }}{% endif %}</li>{% endfor %}</ul>
+  </section>{% endif %}
+</div>
+{% endblock %}

@@ -2,6 +2,7 @@
   <div class="wrap">
     <span>English Encyclopedia. Учи английский правильно. Не так, как в российских школах.</span>
     <span>Американский английский, объяснения на русском</span>
+    {% if user.is_authenticated %}<a href="{% url 'teaching:report_issue' %}?page={{ request.path|urlencode }}" data-report-issue>Нашли ошибку на этой странице?</a>{% endif %}
     {% if not user.is_authenticated %}<a href="{% url 'teaching:for_teachers' %}">Для учителей</a>{% endif %}
     <label class="motion-control motion-control-mobile"><span>Анимации</span><select data-motion-control aria-label="Интенсивность анимации" disabled><option value="full">Кино</option><option value="balanced" selected>Баланс</option><option value="minimal">Минимум</option></select></label>
     <span class="site-copyright">© 2026 konstantin532. Все права защищены. Копирование материалов без разрешения автора запрещено.</span>

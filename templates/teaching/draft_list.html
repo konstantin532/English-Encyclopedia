@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Черновики · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <span class="studio-eyebrow">КАБИНЕТ УЧИТЕЛЯ</span>
+    <h1>Черновики уроков и историй</h1>
+    <p>Напишите урок или историю так, как видите их. Автор курса проверит, ответит и, если одобрит, перенесёт в курс — с разметкой, озвучкой и проверкой слов.</p>
+  </header>
+  {% include "teaching/_nav.html" with active="drafts" %}
+  {% include "teaching/_messages.html" %}
+  <p><a class="btn btn-primary" href="{% url 'teaching:draft_new' %}">Новый черновик</a></p>
+  {% if drafts %}
+  <div class="table-scroll" role="region" aria-label="Таблица, листается вбок" tabindex="0" style="overflow-x:auto">
+  <table class="words-table">
+    <thead><tr><th scope="col">Название</th><th scope="col">Что</th><th scope="col">Уровень</th><th scope="col">Статус</th><th scope="col">Ответ автора</th><th scope="col"></th></tr></thead>
+    <tbody>{% for d in drafts %}
+      <tr><td>{{ d.title }}</td><td>{{ d.get_kind_display }}</td><td>{{ d.level }}{% if d.week %}, нед. {{ d.week }}{% endif %}</td>
+        <td><strong>{{ d.get_status_display }}</strong></td><td>{{ d.owner_note|default:"—"|linebreaksbr }}</td>
+        <td>{% if d.editable %}<a href="{% url 'teaching:draft_edit' d.pk %}">Изменить</a>
+          <form method="post" action="{% url 'teaching:draft_delete' d.pk %}">{% csrf_token %}<button class="btn btn-quiet btn-small" type="submit">Удалить</button></form>{% endif %}</td></tr>
+    {% endfor %}</tbody>
+  </table></div>
+  {% else %}<p>Черновиков пока нет.</p>{% endif %}
+</div>
+{% endblock %}

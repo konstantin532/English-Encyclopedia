@@ -47,3 +47,80 @@ class GroupMembership(models.Model):
 
     def __str__(self) -> str:
         return f"{self.student} → {self.group.name}"
+
+
+class CourseIssue(models.Model):
+    """Сообщение об ошибке в материалах курса от ученика или учителя. Разбирает владелец."""
+
+    class Status(models.TextChoices):
+        OPEN = "open", "Новое"
+        FIXED = "fixed", "Исправлено"
+        REJECTED = "rejected", "Не ошибка"
+
+    reporter = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
+                                 related_name="course_issues", verbose_name="кто сообщил")
+    reporter_is_teacher = models.BooleanField("сообщил учитель", default=False)
+    page = models.CharField("страница", max_length=300)
+    quote = models.CharField("цитата с ошибкой", max_length=300, blank=True)
+    comment = models.TextField("что не так", max_length=2000)
+    status = models.CharField("статус", max_length=10, choices=Status.choices, default=Status.OPEN)
+    owner_note = models.TextField("ответ владельца", blank=True)
+    created_at = models.DateTimeField("когда", auto_now_add=True)
+    resolved_at = models.DateTimeField("когда разобрано", null=True, blank=True)
+
+    class Meta:
+        verbose_name = "ошибка в курсе"
+        verbose_name_plural = "ошибки в курсе"
+        ordering = ["-created_at"]
+        indexes = [models.Index(fields=["status", "-created_at"], name="course_issue_status_idx")]
+
+    def __str__(self) -> str:
+        return f"{self.page}: {self.comment[:60]}"
+
+
+class ContentDraft(models.Model):
+    """Черновик урока или истории от учителя. На сайт сам не попадает.
+
+    Курс собирается из YAML-файлов репозитория (load_content). Одобренный
+    черновик владелец или агент переносит в YAML по правилам курса: лексика,
+    разметка, знакомые слова. Иначе следующая загрузка курса затёрла бы правки.
+    """
+
+    class Kind(models.TextChoices):
+        LESSON = "lesson", "Урок"
+        STORY = "story", "История"
+
+    class Status(models.TextChoices):
+        DRAFT = "draft", "Черновик"
+        SUBMITTED = "submitted", "На проверке у автора курса"
+        APPROVED = "approved", "Одобрено — будет перенесено в курс"
+        REJECTED = "rejected", "Нужно доработать"
+
+    EDITABLE = (Status.DRAFT, Status.REJECTED)
+
+    # Удаление аккаунта учителя не блокируется: черновик остаётся у владельца без автора.
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
+                               related_name="content_drafts", verbose_name="автор")
+    kind = models.CharField("что это", max_length=8, choices=Kind.choices, default=Kind.LESSON)
+    level = models.CharField("уровень", max_length=8, default="A1")
+    week = models.PositiveSmallIntegerField("неделя", null=True, blank=True)
+    title = models.CharField("название", max_length=120)
+    body = models.TextField("текст", max_length=20000,
+                            help_text="Объяснение на русском и примеры на английском — как вы видите урок или историю.")
+    status = models.CharField("статус", max_length=10, choices=Status.choices, default=Status.DRAFT)
+    owner_note = models.TextField("ответ автора курса", blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    submitted_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = "черновик учителя"
+        verbose_name_plural = "черновики учителей"
+        ordering = ["-updated_at"]
+
+    def __str__(self) -> str:
+        return f"{self.get_kind_display()}: {self.title}"
+
+    @property
+    def editable(self) -> bool:
+        return self.status in self.EDITABLE

@@ -1,4 +1,7 @@
 <nav class="section" aria-label="Кабинет учителя"><p>
   <a href="{% url 'teaching:dashboard' %}"{% if active == 'dashboard' %} aria-current="page"{% endif %}>Группы</a> ·
-  <a href="{% url 'teaching:students' %}"{% if active == 'students' %} aria-current="page"{% endif %}>Ученики</a>
+  <a href="{% url 'teaching:students' %}"{% if active == 'students' %} aria-current="page"{% endif %}>Ученики</a> ·
+  <a href="{% url 'teaching:review_list' %}"{% if active == 'review' %} aria-current="page"{% endif %}>Проверка ответов</a> ·
+  <a href="{% url 'teaching:drafts' %}"{% if active == 'drafts' %} aria-current="page"{% endif %}>Черновики уроков</a> ·
+  <a href="{% url 'teaching:report_issue' %}?page={{ request.path|urlencode }}">Сообщить об ошибке в курсе</a>
 </p></nav>

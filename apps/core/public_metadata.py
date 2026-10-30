@@ -50,6 +50,7 @@ def robots(request):
         "Disallow: /api/",
         "Disallow: /teacher/",
         "Disallow: /group/",
+        "Disallow: /report-issue/",
         "Disallow: /healthz/",
     ]
     origin = public_origin()

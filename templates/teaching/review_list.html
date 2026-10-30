@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Проверка ответов · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <span class="studio-eyebrow">КАБИНЕТ УЧИТЕЛЯ</span>
+    <h1>Проверка ответов</h1>
+    <p>Свободные ответы, которые машина не может оценить честно: ученик написал своё, а не выбрал вариант. Старые — сверху.</p>
+  </header>
+  {% include "teaching/_nav.html" with active="review" %}
+  {% include "teaching/_messages.html" %}
+  {% if queue %}
+  <div class="table-scroll" role="region" aria-label="Таблица, листается вбок" tabindex="0" style="overflow-x:auto">
+  <table class="words-table">
+    <thead><tr><th scope="col">Когда</th><th scope="col">Ученик</th><th scope="col">Урок</th><th scope="col">Ответ</th><th scope="col"></th></tr></thead>
+    <tbody>{% for a in queue %}
+      <tr><td>{{ a.created_at|date:"j E, H:i" }}</td><td>{{ a.user }}</td><td>{{ a.lesson.title }}</td>
+        <td lang="en">{{ a.submitted|truncatechars:60 }}</td><td><a href="{% url 'teaching:review' a.pk %}">Проверить →</a></td></tr>
+    {% endfor %}</tbody>
+  </table></div>
+  {% else %}<p>Все ответы проверены. Новые появятся здесь, когда ученики выполнят свободные задания.</p>{% endif %}
+</div>
+{% endblock %}

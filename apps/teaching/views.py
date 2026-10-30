@@ -1,14 +1,23 @@
+from datetime import timedelta
+from urllib.parse import quote
+
 from django import forms
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db import IntegrityError, transaction
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, redirect, render, resolve_url
+from django.utils import timezone
+from django.utils.http import url_has_allowed_host_and_scheme
 from django.views.decorators.http import require_POST
 
 from .access import can_teach, teacher_required, visible_students
-from .models import GroupMembership, StudyGroup
+from .models import ContentDraft, CourseIssue, GroupMembership, StudyGroup
 from .progress import recent_attempts, summarize, summarize_many, week_goals
+from .review import (DraftForm, IssueForm, TeacherReviewForm, review_queue, reviewable, save_review, task_for,
+                     transcript_for)
+
+ISSUES_PER_DAY = 20
 
 
 def for_teachers(request):
@@ -104,3 +113,97 @@ def leave_group(request):
     GroupMembership.objects.filter(student=request.user).delete()
     messages.success(request, "Вы вышли из группы.")
     return redirect("teaching:join")
+
+
+@teacher_required
+def review_list(request):
+    queue = list(review_queue(request.user)[:100])
+    return render(request, "teaching/review_list.html", {"queue": queue})
+
+
+@teacher_required
+def review_detail(request, pk):
+    attempt = get_object_or_404(reviewable(request.user), pk=pk)
+    task = task_for(attempt)
+    form = TeacherReviewForm(request.POST or None, instance=attempt)
+    if request.method == "POST" and form.is_valid():
+        save_review(form, request.user)
+        messages.success(request, "Проверка сохранена. Ученик увидит заключение и подсказку.")
+        nxt = review_queue(request.user).exclude(pk=attempt.pk).first()
+        return redirect("teaching:review", pk=nxt.pk) if nxt else redirect("teaching:review_list")
+    return render(request, "teaching/review_detail.html", {"attempt": attempt, "task": task, "form": form,
+                                                           "transcript": transcript_for(attempt)})
+
+
+def _safe_page(request, value: str) -> str:
+    value = (value or "").strip()[:300]
+    if value.startswith("/") and not value.startswith("//") and url_has_allowed_host_and_scheme(
+            value, allowed_hosts={request.get_host()}, require_https=request.is_secure()):
+        return value
+    return ""
+
+
+@login_required
+def report_issue(request):
+    """Ученик или учитель сообщает об ошибке в материалах курса."""
+    page = _safe_page(request, request.POST.get("page") or request.GET.get("page"))
+    form = IssueForm(request.POST or None, initial={"quote": request.GET.get("quote", "")[:300]})
+    if request.method == "POST" and form.is_valid():
+        recent = CourseIssue.objects.filter(reporter=request.user,
+                                            created_at__gte=timezone.now() - timedelta(days=1)).count()
+        if recent >= ISSUES_PER_DAY:
+            form.add_error(None, "Сегодня вы уже отправили много сообщений. Спасибо! Продолжите завтра.")
+        elif not page:
+            form.add_error(None, "Не удалось понять, о какой странице речь. Откройте сообщение со страницы с ошибкой.")
+        else:
+            CourseIssue.objects.create(reporter=request.user, reporter_is_teacher=can_teach(request.user),
+                                       page=page, quote=form.cleaned_data["quote"], comment=form.cleaned_data["comment"])
+            return redirect(f"{resolve_url('teaching:report_issue')}?sent=1&page={quote(page)}")
+    mine = CourseIssue.objects.filter(reporter=request.user)[:10]
+    return render(request, "teaching/report_issue.html", {"form": form, "page": page, "mine": mine,
+                                                           "sent": request.GET.get("sent") == "1"})
+
+
+MAX_OPEN_DRAFTS = 30
+
+
+@teacher_required
+def draft_list(request):
+    drafts = ContentDraft.objects.filter(author=request.user)
+    return render(request, "teaching/draft_list.html", {"drafts": drafts})
+
+
+@teacher_required
+def draft_edit(request, pk=None):
+    # Только свои черновики; чужой — 404. Отправленный на проверку не редактируется.
+    draft = get_object_or_404(ContentDraft, pk=pk, author=request.user) if pk else None
+    if draft and not draft.editable:
+        messages.info(request, "Черновик на проверке или уже одобрен — изменить его нельзя.")
+        return redirect("teaching:drafts")
+    if draft is None and request.method == "POST" and ContentDraft.objects.filter(
+            author=request.user, status__in=ContentDraft.EDITABLE).count() >= MAX_OPEN_DRAFTS:
+        messages.info(request, "Слишком много незавершённых черновиков. Отправьте или удалите часть.")
+        return redirect("teaching:drafts")
+    form = DraftForm(request.POST or None, instance=draft)
+    if request.method == "POST" and form.is_valid():
+        draft = form.save(commit=False)
+        draft.author = request.user
+        submit = "submit" in request.POST
+        if submit:
+            draft.status, draft.submitted_at = ContentDraft.Status.SUBMITTED, timezone.now()
+        else:
+            draft.status = ContentDraft.Status.DRAFT
+        draft.save()
+        messages.success(request, "Отправлено автору курса." if submit else "Черновик сохранён.")
+        return redirect("teaching:drafts")
+    return render(request, "teaching/draft_edit.html", {"form": form, "draft": draft})
+
+
+@teacher_required
+@require_POST
+def draft_delete(request, pk):
+    draft = get_object_or_404(ContentDraft, pk=pk, author=request.user)
+    if draft.editable:
+        draft.delete()
+        messages.success(request, "Черновик удалён.")
+    return redirect("teaching:drafts")
