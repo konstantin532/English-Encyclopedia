@@ -47,3 +47,32 @@ class GroupMembership(models.Model):
 
     def __str__(self) -> str:
         return f"{self.student} → {self.group.name}"
+
+
+class CourseIssue(models.Model):
+    """Сообщение об ошибке в материалах курса от ученика или учителя. Разбирает владелец."""
+
+    class Status(models.TextChoices):
+        OPEN = "open", "Новое"
+        FIXED = "fixed", "Исправлено"
+        REJECTED = "rejected", "Не ошибка"
+
+    reporter = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
+                                 related_name="course_issues", verbose_name="кто сообщил")
+    reporter_is_teacher = models.BooleanField("сообщил учитель", default=False)
+    page = models.CharField("страница", max_length=300)
+    quote = models.CharField("цитата с ошибкой", max_length=300, blank=True)
+    comment = models.TextField("что не так", max_length=2000)
+    status = models.CharField("статус", max_length=10, choices=Status.choices, default=Status.OPEN)
+    owner_note = models.TextField("ответ владельца", blank=True)
+    created_at = models.DateTimeField("когда", auto_now_add=True)
+    resolved_at = models.DateTimeField("когда разобрано", null=True, blank=True)
+
+    class Meta:
+        verbose_name = "ошибка в курсе"
+        verbose_name_plural = "ошибки в курсе"
+        ordering = ["-created_at"]
+        indexes = [models.Index(fields=["status", "-created_at"], name="course_issue_status_idx")]
+
+    def __str__(self) -> str:
+        return f"{self.page}: {self.comment[:60]}"

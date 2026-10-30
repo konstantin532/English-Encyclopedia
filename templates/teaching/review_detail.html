@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Проверка ответа · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap" style="padding-bottom: var(--space-8)">
+  <header class="page-head">
+    <span class="studio-eyebrow">ПРОВЕРКА ОТВЕТА</span>
+    <h1>{{ attempt.user }}</h1>
+    <p>{{ attempt.lesson.title }} · {{ attempt.created_at|date:"j E Y, H:i" }} · условия: {{ attempt.get_assistance_display }}</p>
+  </header>
+  {% include "teaching/_nav.html" with active="review" %}
+  <section class="section" aria-labelledby="task-title">
+    <div class="section-head"><h2 id="task-title">Задание</h2></div>
+    {% if task %}<p style="white-space:pre-wrap">{{ task.prompt }}</p>
+    {% else %}<p><strong>Не удалось восстановить задание этой версии.</strong> Не оценивайте вслепую — оставьте «Не проверено».</p>{% endif %}
+  </section>
+  <section class="section" aria-labelledby="answer-title">
+    <div class="section-head"><h2 id="answer-title">Ответ ученика</h2></div>
+    <blockquote lang="en" style="white-space:pre-wrap">{{ attempt.submitted }}</blockquote>
+    {% if attempt.self_rating %}<p>Самооценка ученика: {{ attempt.self_rating }}</p>{% endif %}
+  </section>
+  {% if task %}<section class="section" aria-labelledby="model-title">
+    <div class="section-head"><h2 id="model-title">Один возможный образец</h2><p>Не единственный верный ответ: оценивайте смысл, форму и уместность.</p></div>
+    <p lang="en" style="white-space:pre-wrap">{{ task.model }}</p>
+  </section>{% endif %}
+  <section class="section" aria-labelledby="verdict-title">
+    <div class="section-head"><h2 id="verdict-title">Ваше заключение</h2></div>
+    <form method="post" novalidate>{% csrf_token %}
+      {% if form.non_field_errors %}<ul class="errorlist">{% for e in form.non_field_errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+      {% for field in form %}{% include "components/field.html" %}{% endfor %}
+      <button class="btn btn-primary" type="submit">Сохранить и к следующему</button>
+    </form>
+  </section>
+</div>
+{% endblock %}

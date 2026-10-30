@@ -1,6 +1,7 @@
 from django.contrib import admin
+from django.utils import timezone
 
-from .models import GroupMembership, StudyGroup
+from .models import CourseIssue, GroupMembership, StudyGroup
 
 
 class MembershipInline(admin.TabularInline):
@@ -28,3 +29,33 @@ class StudyGroupAdmin(admin.ModelAdmin):
             from django.contrib.auth import get_user_model
             kwargs["queryset"] = get_user_model().objects.filter(is_teacher=True)
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
+
+
+
+@admin.register(CourseIssue)
+class CourseIssueAdmin(admin.ModelAdmin):
+    list_display = ["created_at", "status", "page", "short_comment", "reporter", "reporter_is_teacher"]
+    list_filter = ["status", "reporter_is_teacher"]
+    search_fields = ["page", "quote", "comment", "reporter__email"]
+    readonly_fields = ["reporter", "reporter_is_teacher", "page", "quote", "comment", "created_at", "resolved_at"]
+    fields = ["status", "owner_note", "page", "quote", "comment", "reporter", "reporter_is_teacher", "created_at", "resolved_at"]
+    actions = ["mark_fixed", "mark_rejected"]
+
+    @admin.display(description="Что не так")
+    def short_comment(self, obj):
+        return obj.comment[:80]
+
+    def has_add_permission(self, request):
+        return False
+
+    def save_model(self, request, obj, form, change):
+        obj.resolved_at = None if obj.status == CourseIssue.Status.OPEN else (obj.resolved_at or timezone.now())
+        super().save_model(request, obj, form, change)
+
+    @admin.action(description="Отметить: исправлено")
+    def mark_fixed(self, request, queryset):
+        queryset.update(status=CourseIssue.Status.FIXED, resolved_at=timezone.now())
+
+    @admin.action(description="Отметить: не ошибка")
+    def mark_rejected(self, request, queryset):
+        queryset.update(status=CourseIssue.Status.REJECTED, resolved_at=timezone.now())
