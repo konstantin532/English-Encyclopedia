@@ -8,7 +8,7 @@ const root=path.resolve(__dirname,'..');
 const output=path.resolve(process.env.EE_QA_OUTPUT||'atlas-browser-evidence/editorial-pilot');
 const servers=[];
 async function serve(dir,port){
- const child=spawn(process.env.ATLAS_PYTHON||'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:dir,env:process.env,stdio:['ignore','ignore','pipe']});
+ const child=spawn(process.env.ATLAS_PYTHON||'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:dir,env:{...process.env,EE_COURSE_LOGIN_REQUIRED:'0'},stdio:['ignore','ignore','pipe']});
  servers.push(child);let stderr='';child.stderr.on('data',d=>{stderr=(stderr+d).slice(-4000)});
  for(let i=0;i<150;i++){try{if((await fetch(`http://127.0.0.1:${port}/`,{signal:AbortSignal.timeout(2000)})).ok)return;}catch{}if(child.exitCode!==null)break;await new Promise(r=>setTimeout(r,200));}
  throw Error('Django failed to start: '+stderr);
