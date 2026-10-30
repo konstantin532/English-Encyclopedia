@@ -17,7 +17,14 @@ node_modules/
 
 # Локальные файлы установки pip и результаты сканирования безопасности
 /Lib/
-/Scripts/
+# pip на Windows кладёт программы в Scripts\ — на Windows это та же папка, что scripts/
+# с нашими скриптами. Прячем только сами программы, а не всю папку.
+/Scripts/*.exe
+/Scripts/*.dll
+/Scripts/*.pyd
+/Scripts/activate
+/Scripts/activate.*
+/Scripts/deactivate.*
 /db.sqlite3.before-zap
 /zap-report.html
 /security-report.txt

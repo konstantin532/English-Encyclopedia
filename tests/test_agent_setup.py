@@ -393,6 +393,34 @@ class SkillsInventoryTests(SimpleTestCase):
         self.assertFalse([i["name"] for i in items if "нет у Claude" in i["flags"]])
 
 
+class RepositoryHygieneTests(SimpleTestCase):
+    """На Windows регистр в .gitignore не различается: Scripts/ и scripts/ — одна папка."""
+
+    def ignored_on_windows(self, path: str) -> bool:
+        import shutil
+        import subprocess
+
+        if not shutil.which("git"):
+            self.skipTest("git недоступен")
+        result = subprocess.run(
+            ["git", "-c", "core.ignorecase=true", "check-ignore", "-q", "--no-index", path],
+            cwd=ROOT, capture_output=True,
+        )
+        return result.returncode == 0
+
+    def test_source_folders_are_not_ignored_on_windows(self):
+        # Урок source-ignore (журнал): правило /Scripts/ прятало новые скрипты проекта на Windows.
+        for path in ("scripts/new_tool.py", "scripts/new_check.cjs", "apps/core/new.py",
+                     "static/js/new.js", "templates/new.html", "tests/test_new.py", "docs/new.md"):
+            with self.subTest(path=path):
+                self.assertFalse(self.ignored_on_windows(path))
+
+    def test_pip_leftovers_stay_ignored(self):
+        for path in ("Scripts/pip.exe", "Scripts/activate", "Scripts/activate.bat", "Lib/site-packages/x.py"):
+            with self.subTest(path=path):
+                self.assertTrue(self.ignored_on_windows(path))
+
+
 def _load_handoff():
     spec = importlib.util.spec_from_file_location("pr_handoff", ROOT / "scripts" / "check_pr_handoff.py")
     module = importlib.util.module_from_spec(spec)
