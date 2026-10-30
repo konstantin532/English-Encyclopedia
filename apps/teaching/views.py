@@ -14,7 +14,8 @@ from django.views.decorators.http import require_POST
 from .access import can_teach, teacher_required, visible_students
 from .models import CourseIssue, GroupMembership, StudyGroup
 from .progress import recent_attempts, summarize, summarize_many, week_goals
-from .review import IssueForm, TeacherReviewForm, review_queue, reviewable, save_review, task_for
+from .review import (IssueForm, TeacherReviewForm, review_queue, reviewable, save_review, task_for,
+                     transcript_for)
 
 ISSUES_PER_DAY = 20
 
@@ -130,7 +131,8 @@ def review_detail(request, pk):
         messages.success(request, "Проверка сохранена. Ученик увидит заключение и подсказку.")
         nxt = review_queue(request.user).exclude(pk=attempt.pk).first()
         return redirect("teaching:review", pk=nxt.pk) if nxt else redirect("teaching:review_list")
-    return render(request, "teaching/review_detail.html", {"attempt": attempt, "task": task, "form": form})
+    return render(request, "teaching/review_detail.html", {"attempt": attempt, "task": task, "form": form,
+                                                           "transcript": transcript_for(attempt)})
 
 
 def _safe_page(request, value: str) -> str:

@@ -26,6 +26,21 @@ def task_for(attempt):
     return IndependentAttemptAdmin._task(attempt)
 
 
+def transcript_for(attempt) -> list[dict]:
+    """Полный диалог (например, миссия «кафе»): реплики собеседника и все попытки ученика.
+
+    В submitted хранятся только принятые реплики — для оценки уместности
+    учителю нужен весь ход разговора. Только чтение; шаблон экранирует текст.
+    """
+    rows = (attempt.self_rubric or {}).get("transcript") or []
+    out = []
+    for row in rows:
+        if isinstance(row, dict) and isinstance(row.get("text"), str):
+            who = "Ученик" if row.get("who") == "You" else str(row.get("who") or "")[:40]
+            out.append({"who": who, "text": row["text"][:400], "learner": row.get("who") == "You"})
+    return out
+
+
 class TeacherReviewForm(IndependentAttemptReviewForm):
     """Учитель меняет только заключение, три критерия и комментарий."""
 
