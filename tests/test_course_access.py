@@ -6,7 +6,7 @@
 from pathlib import Path
 
 from django.conf import settings
-from django.test import TestCase, override_settings
+from django.test import SimpleTestCase, TestCase, override_settings
 from django.urls import reverse
 
 from apps.accounts.models import User
@@ -100,3 +100,54 @@ class LockIsOnInRealSettingsTests(TestCase):
         self.assertIn("apps.core.access.CourseAccessMiddleware", settings.MIDDLEWARE)
         auth = settings.MIDDLEWARE.index("django.contrib.auth.middleware.AuthenticationMiddleware")
         self.assertGreater(settings.MIDDLEWARE.index("apps.core.access.CourseAccessMiddleware"), auth)
+
+
+class AuthReadRetryTests(SimpleTestCase):
+    """Раннее чтение пользователя переживает временную блокировку SQLite."""
+
+    def make_request(self, outcomes):
+        from django.test import RequestFactory
+        from django.utils.functional import SimpleLazyObject
+        from django.db import OperationalError
+        request = RequestFactory().get("/")
+        calls = []
+
+        def resolve():
+            outcome = outcomes[min(len(calls), len(outcomes) - 1)]
+            calls.append(outcome)
+            if isinstance(outcome, Exception):
+                raise outcome
+            return outcome
+        request.user = SimpleLazyObject(resolve)
+        return request, calls, OperationalError
+
+    def test_retries_lock_then_succeeds(self):
+        from django.db import OperationalError, connection
+        from apps.core.access import is_authenticated
+        if connection.vendor != "sqlite":
+            self.skipTest("повтор нужен только для SQLite")
+        lock = OperationalError("database table is locked: accounts_user")
+        user = User(email="x@example.com")
+        request, calls, _ = self.make_request([lock, lock, user])
+        self.assertTrue(is_authenticated(request))
+        self.assertEqual(len(calls), 3)
+
+    def test_persistent_lock_gives_503_not_500(self):
+        from django.db import OperationalError, connection
+        from apps.core.access import AUTH_READ_ATTEMPTS, CourseAccessMiddleware
+        if connection.vendor != "sqlite":
+            self.skipTest("повтор нужен только для SQLite")
+        request, calls, _ = self.make_request([OperationalError("database is locked")])
+        request.resolver_match = None
+        with override_settings(EE_COURSE_LOGIN_REQUIRED=True):
+            response = CourseAccessMiddleware(lambda r: None).process_view(request, lambda r: None, (), {})
+        self.assertEqual(response.status_code, 503)
+        self.assertEqual(len(calls), AUTH_READ_ATTEMPTS)
+
+    def test_other_database_errors_are_not_swallowed(self):
+        from django.db import OperationalError
+        from apps.core.access import is_authenticated
+        request, calls, _ = self.make_request([OperationalError("no such table: accounts_user")])
+        with self.assertRaises(OperationalError):
+            is_authenticated(request)
+        self.assertEqual(len(calls), 1)

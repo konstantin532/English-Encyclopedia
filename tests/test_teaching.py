@@ -144,3 +144,51 @@ class TeachingTests(TestCase):
         if user is not None:
             self.assertFalse(user.is_teacher)
             self.assertFalse(user.teacher_sees_all)
+
+
+class TeachingReviewFixesTests(TestCase):
+    """Находки ревью PR #153–155: R4 (группа владельца), R5 (удаление учителя), R6 (запросы списка)."""
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.owner = User.objects.create_superuser("owner@example.com", "pass-12345")
+        cls.teacher = User.objects.create_user("t@example.com", "pass-12345", is_teacher=True)
+
+    def test_owner_without_teacher_flag_can_run_a_group_in_cabinet_and_admin(self):
+        from apps.teaching.admin import StudyGroupAdmin
+        self.client.force_login(self.owner)
+        self.client.post(reverse("teaching:dashboard"), {"name": "Owner group"})
+        group = StudyGroup.objects.get(name="Owner group")
+        admin = StudyGroupAdmin(StudyGroup, AdminSite())
+        request = RequestFactory().get("/")
+        request.user = self.owner
+        field = admin.formfield_for_foreignkey(StudyGroup._meta.get_field("teacher"), request)
+        self.assertIn(group.teacher, field.queryset)
+
+    def test_teacher_with_groups_gets_a_clear_refusal_and_stays_logged_in(self):
+        StudyGroup.objects.create(teacher=self.teacher, name="Kept")
+        self.client.force_login(self.teacher)
+        response = self.client.post(reverse("accounts:delete_account"), {"confirm": "УДАЛИТЬ", "password": "pass-12345"})
+        self.assertEqual(response.status_code, 400)
+        self.assertIn("группы учеников", response.content.decode())
+        self.assertTrue(User.objects.filter(pk=self.teacher.pk).exists())
+        self.assertEqual(self.client.get(reverse("teaching:dashboard")).status_code, 200)
+
+    def test_student_list_query_count_does_not_grow_with_students(self):
+        group = StudyGroup.objects.create(teacher=self.teacher, name="Big")
+        self.client.force_login(self.teacher)
+
+        def add(n):
+            for i in range(n):
+                s = User.objects.create_user(f"s{User.objects.count()}-{i}@example.com", "pass-12345")
+                GroupMembership.objects.create(group=group, student=s)
+        add(2)
+        from django.db import connection
+        from django.test.utils import CaptureQueriesContext
+        with CaptureQueriesContext(connection) as few:
+            self.client.get(reverse("teaching:students"))
+        add(20)
+        with CaptureQueriesContext(connection) as many:
+            response = self.client.get(reverse("teaching:students"))
+        self.assertEqual(len(response.context["rows"]), 22)
+        self.assertEqual(len(few), len(many))

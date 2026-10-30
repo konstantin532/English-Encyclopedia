@@ -27,7 +27,9 @@ class StudyGroupAdmin(admin.ModelAdmin):
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "teacher":
             from django.contrib.auth import get_user_model
-            kwargs["queryset"] = get_user_model().objects.filter(is_teacher=True)
+            from django.db.models import Q
+            # Те же, кто может вести группы в кабинете (apps/teaching/access.can_teach).
+            kwargs["queryset"] = get_user_model().objects.filter(Q(is_teacher=True) | Q(is_superuser=True))
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 
