@@ -230,6 +230,60 @@ class LessonsLogTests(SimpleTestCase):
         self.assertEqual(missing, [])
 
 
+def _frontmatter(path: Path) -> dict:
+    """Поля заголовка ---…--- файла агента Claude Code (простой YAML без вложенных словарей)."""
+    import yaml
+
+    text = path.read_text(encoding="utf-8")
+    assert text.startswith("---\n"), f"{path.name}: нет заголовка ---"
+    head = text.split("---\n", 2)[1]
+    return yaml.safe_load(head)
+
+
+class AgentDefinitionsTests(SimpleTestCase):
+    """Агенты проекта одинаковы у Codex (.codex/agents/*.toml) и Claude Code (.claude/agents/*.md)."""
+
+    CODEX = ROOT / ".codex" / "agents"
+    CLAUDE = ROOT / ".claude" / "agents"
+    READ_ONLY_TOOLS = {"Read", "Grep", "Glob", "Bash"}
+
+    def codex_agents(self) -> dict[str, dict]:
+        return {p.stem: tomllib.loads(p.read_text(encoding="utf-8")) for p in sorted(self.CODEX.glob("*.toml"))}
+
+    def claude_agents(self) -> dict[str, dict]:
+        return {p.stem: _frontmatter(p) for p in sorted(self.CLAUDE.glob("*.md"))}
+
+    def test_both_agents_have_the_same_team(self):
+        codex, claude = self.codex_agents(), self.claude_agents()
+        self.assertTrue(codex)
+        self.assertEqual(set(codex), set(claude), "Агент должен быть и у Codex, и у Claude Code")
+
+    def test_codex_agents_are_complete(self):
+        for stem, agent in self.codex_agents().items():
+            with self.subTest(agent=stem):
+                self.assertEqual(agent["name"], stem)
+                self.assertTrue(agent["description"].strip())
+                self.assertTrue(agent["developer_instructions"].strip())
+                # Песочницу и подтверждения агент наследует; в его файле им не место.
+                self.assertNotIn("sandbox_mode", agent)
+                self.assertNotIn("approval_policy", agent)
+
+    def test_claude_agents_are_complete_and_read_only(self):
+        skills = {p.name for p in (ROOT / ".claude" / "skills").iterdir() if p.is_dir()}
+        for stem, agent in self.claude_agents().items():
+            with self.subTest(agent=stem):
+                self.assertEqual(agent["name"], stem)
+                self.assertTrue(agent["description"].strip())
+                tools = {t.strip() for t in str(agent["tools"]).split(",")}
+                self.assertLessEqual(tools, self.READ_ONLY_TOOLS, "Проверяющие агенты не правят файлы")
+                self.assertLessEqual(set(agent.get("skills") or []), skills)
+
+    def test_every_agent_promises_not_to_edit(self):
+        for path in [*self.CODEX.glob("*.toml"), *self.CLAUDE.glob("*.md")]:
+            with self.subTest(agent=path.name):
+                self.assertIn("Файлы не меняй и не коммить", path.read_text(encoding="utf-8"))
+
+
 def _load_handoff():
     spec = importlib.util.spec_from_file_location("pr_handoff", ROOT / "scripts" / "check_pr_handoff.py")
     module = importlib.util.module_from_spec(spec)
