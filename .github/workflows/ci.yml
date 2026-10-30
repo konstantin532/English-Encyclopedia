@@ -16,7 +16,9 @@ concurrency:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # Полный набор тестов уже идёт ~22–30 мин; 30 мин отрезали postgres на финише.
+    # 60 мин — запас на рост, но зависший прогон всё равно не съест 6 часов.
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -77,7 +79,9 @@ jobs:
   postgres:
     # The same suite on real PostgreSQL (production engine): row locks, constraints, JSON.
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # Полный набор тестов уже идёт ~22–30 мин; 30 мин отрезали postgres на финише.
+    # 60 мин — запас на рост, но зависший прогон всё равно не съест 6 часов.
+    timeout-minutes: 60
     services:
       postgres:
         image: postgres:16
