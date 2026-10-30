@@ -140,7 +140,11 @@ class PublicPageSweepTests(TestCase):
         call_command("load_content", stdout=StringIO())
 
     def test_all_published_content_and_planned_weeks_are_accessible(self):
-        urls = ["/", "/markers/", "/words/", "/stories/", "/accounts/login/", "/accounts/signup/"]
+        for url in ("/accounts/login/", "/accounts/signup/"):
+            self.assertEqual(self.client.get(url).status_code, 200, url)
+        self.assertRedirects(self.client.get("/"), reverse("accounts:login"))
+        self.client.force_login(User.objects.create_user("sweep-student@example.test"))
+        urls = ["/", "/markers/", "/words/", "/stories/"]
         urls += [reverse("curriculum:level", args=[level.slug]) for level in Level.objects.all()]
         urls += [reverse("curriculum:week", args=[week.level.slug, week.number])
                  for week in Week.objects.select_related("level")]
