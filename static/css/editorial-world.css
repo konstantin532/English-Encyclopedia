@@ -963,6 +963,16 @@
     [data-editorial-pilot] .page-head h1 {
       font-size: 30px;
     }
+    [data-editorial-pilot][data-editorial-pilot=lesson] {
+      padding-top: var(--space-2);
+    }
+    [data-editorial-pilot][data-editorial-pilot=lesson] .page-head {
+      padding-bottom: var(--space-2);
+      margin-bottom: var(--space-1);
+    }
+    [data-editorial-pilot][data-editorial-pilot=lesson] .editorial-guide {
+      margin-bottom: var(--space-2);
+    }
     [data-editorial-pilot] .layer {
       font-size: calc(17px * var(--reader-scale));
     }

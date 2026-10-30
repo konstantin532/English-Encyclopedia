@@ -1,15 +1,24 @@
 {% extends "base.html" %}
 {% block title %}Регистрация · {{ SITE_NAME }}{% endblock %}
 {% block content %}
-<div class="wrap"><div class="studio-auth">
-  <aside class="studio-auth-story" aria-label="Начало обучения"><span class="studio-eyebrow">НЕ ЗУБРИ. ПОЙМИ.</span><h2>Большой язык. <br>Маленькие шаги. <br><em>Ваш путь.</em></h2><p>Создайте аккаунт — и у каждого выученного слова появится своё место в вашем прогрессе.</p><ul class="studio-auth-benefits"><li>Уроки с понятными объяснениями</li><li>Сохранение ответов и прогресса</li><li>Повторение слов в нужный день</li></ul><span class="studio-auth-symbol" aria-hidden="true">Aa</span></aside>
-  <div class="form-page studio-auth-form"><span class="studio-eyebrow">ПЕРВЫЙ ШАГ</span><h1>Регистрация</h1><p class="studio-form-lede">Аккаунт нужен, чтобы сохранять прогресс и получать слова на повторение в нужный день.</p>
-  <form method="post" novalidate>{% csrf_token %}
-    {{ form.non_field_errors }}
-    {% for field in form %}{% include "components/field.html" %}{% endfor %}
-    <button class="btn btn-primary studio-form-submit" type="submit">Создать аккаунт <span aria-hidden="true">→</span></button>
-  </form>
-  <p class="studio-auth-alternate">Уже есть аккаунт? <a href="{% url 'accounts:login' %}">Войти</a></p>
-  </div>
-</div></div>
+<div class="ee-auth">
+  <aside class="ee-auth-note" aria-label="Ваш путь"><span class="studio-eyebrow">ПЕРВЫЙ ШАГ</span><h2>Большой язык.<br>Маленькие шаги.</h2><p>Учитесь сами или помогайте другим. Один аккаунт — свой путь в английском.</p><span class="ee-auth-letter" aria-hidden="true">Aa</span></aside>
+  <section class="ee-auth-form" aria-labelledby="signup-title">
+    <h1 id="signup-title">Регистрация</h1>
+    <p class="ee-auth-lede">Выберите роль и создайте аккаунт.</p>
+    <form method="post" novalidate>{% csrf_token %}
+      {{ form.non_field_errors }}
+      <fieldset class="ee-role-choice" aria-describedby="role-help{% if form.role.errors %} role-errors{% endif %}">
+        <legend>{{ form.role.label }}</legend>
+        <div class="ee-role-options">{% for radio in form.role %}<label class="ee-role-option">{{ radio.tag }}<span>{{ radio.choice_label }}</span></label>{% endfor %}</div>
+        <p id="role-help" class="help">Ученик сразу начинает учиться. Кабинет учителя откроется после подтверждения владельцем. Пока можно проходить курс самостоятельно.</p>
+        {% if form.role.errors %}<ul class="errorlist" id="role-errors">{% for error in form.role.errors %}<li>{{ error }}</li>{% endfor %}</ul>{% endif %}
+      </fieldset>
+      {% for field in form %}{% if field.name != 'role' %}{% include "components/field.html" %}{% endif %}{% endfor %}
+      <input type="hidden" name="next" value="{{ next }}">
+      <button class="btn btn-primary ee-auth-submit" type="submit">Создать аккаунт <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="ee-auth-alternate">Уже есть аккаунт? <a href="{% url 'accounts:login' %}{% if next %}?next={{ next|urlencode }}{% endif %}">Войти</a></p>
+  </section>
+</div>
 {% endblock %}

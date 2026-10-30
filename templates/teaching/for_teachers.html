@@ -10,7 +10,7 @@
   <section class="section" aria-labelledby="how-title">
     <div class="section-head"><h2 id="how-title">Как это устроено</h2></div>
     <ol>
-      <li>Владелец платформы открывает вам роль учителя.</li>
+      <li>При регистрации выберите «Учитель». Владелец проверит заявку и откроет кабинет.</li>
       <li>Вы создаёте группу и получаете код из восьми символов.</li>
       <li>Ученики вводят код в разделе «Моя группа» — и вы видите их прогресс.</li>
     </ol>
@@ -18,11 +18,13 @@
   <section class="section">
     {% if can_teach %}
       <p><a class="btn btn-primary" href="{% url 'teaching:dashboard' %}">Открыть кабинет учителя →</a></p>
+    {% elif user.teacher_access_requested %}
+      <p>Заявка отправлена. <a href="{% url 'accounts:teacher_request' %}">Проверить статус заявки</a></p>
     {% elif user.is_authenticated %}
       <p>У вашего аккаунта пока нет роли учителя. Её назначает владелец платформы — напишите ему, указав почту, с которой вы вошли.</p>
     {% else %}
       <p><a class="btn btn-primary" href="{% url 'accounts:login' %}?next={% url 'teaching:dashboard' %}">Войти как учитель →</a></p>
-      <p>Нет аккаунта? <a href="{% url 'accounts:signup' %}">Зарегистрируйтесь</a>, а затем попросите владельца открыть роль учителя.</p>
+      <p>Нет аккаунта? <a href="{% url 'accounts:signup' %}">Зарегистрируйтесь</a> и выберите «Учитель». Доступ откроется после подтверждения владельцем.</p>
     {% endif %}
   </section>
 </div>

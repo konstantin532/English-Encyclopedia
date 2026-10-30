@@ -72,8 +72,11 @@ class ContentTests(TestCase):
         self.assertTrue(all(u.startswith("LX-") and len(u) == 8 for u in uids))
 
     def test_pages_render(self):
+        for url in ("/accounts/signup/", "/accounts/login/"):
+            self.assertEqual(self.client.get(url).status_code, 200, url)
+        self.client.force_login(User.objects.create_user("render-student@example.test"))
         for url in ["/", "/markers/", "/words/", "/words/LX-00008/", "/levels/a1/", "/levels/b2-plus/",
-                    "/lessons/a1-nouns-first-words/", "/accounts/signup/", "/accounts/login/"]:
+                    "/lessons/a1-nouns-first-words/"]:
             self.assertEqual(self.client.get(url).status_code, 200, url)
 
     def test_lesson_html_does_not_leak_answers(self):
@@ -425,6 +428,7 @@ class ReviewFixesTests(TestCase):
         self.assertFalse([e for e in run_audit().errors if "подстановка" in e])
 
     def test_header_has_visible_marker_toggle_label(self):
+        self.client.force_login(User.objects.create_user("toggle-student@example.test"))
         self.assertContains(self.client.get("/"), 'class="toggle-short"')
 
 

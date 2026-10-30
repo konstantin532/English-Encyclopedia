@@ -176,5 +176,7 @@ class ClassicsPageTests(TestCase):
         self.assertIn("classics-speech.js", html)
 
     def test_sidebar_links_to_classics(self):
+        from apps.accounts.models import User
+        self.client.force_login(User.objects.create_user("classics-student@example.test"))
         html = self.client.get("/").content.decode()
         self.assertIn('href="/classics/"', html)

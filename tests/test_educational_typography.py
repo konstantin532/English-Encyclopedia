@@ -74,7 +74,11 @@ class EducationalTypographyTests(TestCase):
                 self.assertContains(response, f'data-speaker="{line["speaker"]}"')
 
     def test_non_learning_pages_have_no_reading_theme(self):
-        for url in ("/", "/levels/a1/", "/accounts/login/"):
-            response = self.client.get(url)
+        from django.test import Client
+        from apps.accounts.models import User
+
+        self.client.force_login(User.objects.create_user("typography-student@example.test"))
+        for client, url in ((self.client, "/"), (self.client, "/levels/a1/"), (Client(), "/accounts/login/")):
+            response = client.get(url)
             self.assertNotContains(response, 'data-educational-reading')
             self.assertNotContains(response, 'css/educational-reading.css')

@@ -90,6 +90,7 @@ test('every reviewed page has a route, a main-content selector and sane limits',
   for(const page of pages.pages){
     assert.match(page.route,/^\/[^\s]*\/$|^\/$/,page.name);
     assert.ok(page.main&&page.title,page.name);
+    assert.ok(['student','guest','pending'].includes(page.audience),page.name);
     assert.ok(!names.has(page.name),`duplicate ${page.name}`);names.add(page.name);
   }
   for(const viewport of pages.viewports)assert.ok(viewport.maxScreens>=1&&viewport.maxScreens<=4);
@@ -111,17 +112,20 @@ function databaseFixture(t) {
   for(const file of ['visual_review.cjs','visual_review_lib.cjs','visual_review_pages.json']){
     fs.copyFileSync(path.join(__dirname,'../../scripts',file),path.join(after,'scripts',file));
   }
+  // Record user seeding separately: this HTTP fixture has no Django installation.
+  const seeded=path.join(directory,'seeded.json');
+  fs.writeFileSync(path.join(after,'scripts/browser_auth.cjs'), "const fs=require('node:fs');exports.seedBrowserUser=(checkout,database,options={})=>{const p=process.env.VR_FIXTURE_SEEDED;const rows=fs.existsSync(p)?JSON.parse(fs.readFileSync(p)):[];rows.push({checkout,database,pending:!!options.pending});fs.writeFileSync(p,JSON.stringify(rows));};exports.learnerState=async()=>({cookies:[],origins:[]});");
   const modules=path.join(directory,'node_modules');
   fs.mkdirSync(path.join(modules,'playwright'),{recursive:true});
   fs.writeFileSync(path.join(modules,'playwright/index.js'),
     "exports.chromium={launch:async()=>{const before=await(await fetch('http://127.0.0.1:8133')).json();const after=await(await fetch('http://127.0.0.1:8134')).json();require('node:fs').writeFileSync(process.env.VR_FIXTURE_OBSERVATIONS,JSON.stringify({before,after}));throw Error('Fixture stops before browser capture');}};");
   const observations=path.join(directory,'observed.json');
-  return {before,after,observations,run(overrides){
+  return {before,after,observations,seeded,run(overrides){
     return require('node:child_process').spawnSync(process.execPath,[path.join(after,'scripts/visual_review.cjs')],{
       cwd:after,windowsHide:true,encoding:'utf8',timeout:20000,
       env:{...process.env,NODE_PATH:modules,ATLAS_PYTHON:process.execPath,ATLAS_BEFORE_DIR:before,
         DATABASE_URL:'sqlite:///inherited-shared.sqlite3',ATLAS_BEFORE_DATABASE_URL:'',ATLAS_AFTER_DATABASE_URL:'',
-        VR_BEFORE_URL:'',VR_AFTER_URL:'',VR_OUTPUT:path.join(directory,'report'),VR_FIXTURE_OBSERVATIONS:observations,...overrides},
+        VR_BEFORE_URL:'',VR_AFTER_URL:'',VR_OUTPUT:path.join(directory,'report'),VR_FIXTURE_OBSERVATIONS:observations,VR_FIXTURE_SEEDED:seeded,...overrides},
     });
   }};
 }
@@ -132,6 +136,8 @@ test('each checkout serves its own database even when a shared DATABASE_URL is i
   assert.ifError(result.error);
   assert.equal(result.status,1,'fixture intentionally stops after observing both running servers');
   assert.ok(fs.existsSync(fixture.observations),result.stderr);
+  const seeds=JSON.parse(fs.readFileSync(fixture.seeded,'utf8'));
+  assert.deepEqual(seeds,[{checkout:fixture.before,database:'sqlite:///before.sqlite3',pending:true},{checkout:fixture.after,database:'sqlite:///after.sqlite3',pending:true}]);
   const actual=JSON.parse(fs.readFileSync(fixture.observations,'utf8'));
   assert.deepEqual(actual,{
     before:{database:'sqlite:///before.sqlite3',checkout:fixture.before},

@@ -140,10 +140,11 @@ class TeachingTests(TestCase):
             "email": "new@example.com", "password1": "Long-pass-9876", "password2": "Long-pass-9876",
             "is_teacher": "on", "teacher_sees_all": "on",
         })
-        user = User.objects.filter(email="new@example.com").first()
-        if user is not None:
-            self.assertFalse(user.is_teacher)
-            self.assertFalse(user.teacher_sees_all)
+        user = User.objects.get(email="new@example.com")
+        self.assertFalse(user.is_teacher)
+        self.assertFalse(user.teacher_sees_all)
+        self.assertFalse(user.is_staff)
+        self.assertFalse(user.is_superuser)
 
 
 class TeachingReviewFixesTests(TestCase):

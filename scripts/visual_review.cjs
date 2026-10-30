@@ -13,6 +13,7 @@ const {spawn} = require('node:child_process');
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const lib = require('./visual_review_lib.cjs');
+const {seedBrowserUser, learnerState, stateForAudience} = require('./browser_auth.cjs');
 
 const root = path.resolve(__dirname, '..');
 const output = path.resolve(process.env.VR_OUTPUT || 'visual-review');
@@ -23,8 +24,7 @@ const STILL_CSS = '*,*::before,*::after{transition:none!important;animation:none
 async function serve(directory, port, databaseUrl) {
   const child = spawn(process.env.ATLAS_PYTHON || 'python', ['manage.py', 'runserver', `127.0.0.1:${port}`, '--noreload'],
     {cwd: directory, env: {...process.env, DATABASE_URL: databaseUrl, DJANGO_SETTINGS_MODULE: 'config.settings.local',
-      // Снимки страниц курса без входа: замок курса здесь выключен (на сайте он всегда включён).
-      EE_COURSE_LOGIN_REQUIRED: '0'}, stdio: ['ignore', 'ignore', 'pipe']});
+      EE_COURSE_LOGIN_REQUIRED: '1'}, stdio: ['ignore', 'ignore', 'pipe']});
   let error = '';
   child.stderr.on('data', d => { error += d; });
   for (let n = 0; n < 150; n++) {
@@ -59,9 +59,9 @@ async function settle(page) {
   await page.waitForLoadState('networkidle').catch(() => {});
 }
 
-async function capture(browser, base, route, viewport, mainSelector) {
+async function capture(browser, base, route, viewport, mainSelector, storageState) {
   const context = await browser.newContext({
-    viewport: {width: viewport.width, height: viewport.height},
+    storageState, viewport: {width: viewport.width, height: viewport.height},
     reducedMotion: 'reduce', isMobile: viewport.width < 700, hasTouch: viewport.width < 700,
   });
   const page = await context.newPage();
@@ -71,6 +71,7 @@ async function capture(browser, base, route, viewport, mainSelector) {
     const response = await page.goto(base + route, {waitUntil: 'networkidle'});
     const status = response ? response.status() : 0;
     if (status !== 200) return {status, errors, problems: [`HTTP ${status}`]};
+    if (new URL(page.url()).pathname !== new URL(base + route).pathname) return {status: 0, errors, problems: ['unexpected redirect: ' + new URL(page.url()).pathname]};
     await settle(page);
     const facts = await page.evaluate(selector => {
       const main = document.querySelector(selector);
@@ -183,16 +184,20 @@ ${r.files.change ? `<h3>Где изменилось (с ${r.change.y}px)</h3><im
       if (!beforeDatabase || !afterDatabase || beforeDatabase === afterDatabase) {
         throw Error('Set different ATLAS_BEFORE_DATABASE_URL and ATLAS_AFTER_DATABASE_URL for the two checkouts');
       }
+      seedBrowserUser(process.env.ATLAS_BEFORE_DIR, beforeDatabase, {pending: true});
+      seedBrowserUser(root, afterDatabase, {pending: true});
       servers.push(await serve(process.env.ATLAS_BEFORE_DIR, 8133, beforeDatabase));
       servers.push(await serve(root, 8134, afterDatabase));
       beforeBase = 'http://127.0.0.1:8133'; afterBase = 'http://127.0.0.1:8134';
     }
     browser = await chromium.launch();
+    const states = {before: await learnerState(browser, beforeBase), after: await learnerState(browser, afterBase), beforePending: await learnerState(browser, beforeBase, {pending: true}), afterPending: await learnerState(browser, afterBase, {pending: true})};
     const workbench = await (await browser.newContext()).newPage();
     for (const viewport of config.viewports) {
       for (const pageSpec of config.pages) {
-        const before = await capture(browser, beforeBase, pageSpec.route, viewport, pageSpec.main);
-        const after = await capture(browser, afterBase, pageSpec.route, viewport, pageSpec.main);
+        const audience = pageSpec.audience || 'student';
+        const before = await capture(browser, beforeBase, pageSpec.route, viewport, pageSpec.main, stateForAudience(states, audience, 'before'));
+        const after = await capture(browser, afterBase, pageSpec.route, viewport, pageSpec.main, stateForAudience(states, audience, 'after'));
         const row = {name: pageSpec.name, title: pageSpec.title, route: pageSpec.route, width: viewport.width, status: 'ok', notes: [], files: {}};
         const fresh = lib.newProblems(before.problems || [], after.problems || []);
         const old = (after.problems || []).filter(p => !fresh.includes(p));
@@ -219,6 +224,11 @@ ${r.files.change ? `<h3>Где изменилось (с ${r.change.y}px)</h3><im
             row.files.change = `${stem}-change.jpg`;
             row.change = {y: compared.change.y};
           }
+        }
+        if (!before.png && after.png) {
+          const stem = `${pageSpec.name}-${viewport.width}-after.png`;
+          await fs.writeFile(path.join(output, stem), after.png);
+          row.files.firstScreen = stem;
         }
         results.push(row);
         console.log(`${row.status.padEnd(4)} ${pageSpec.name} ${viewport.width}: ${row.diff ? lib.percent(row.diff.ratio) : '—'} ${row.notes.join('; ')}`);

@@ -4,6 +4,7 @@ from pathlib import Path
 from django.conf import settings
 from django.test import TestCase
 
+from apps.accounts.models import User
 from apps.curriculum.models import Week
 from apps.lexicon.models import LexicalUnit
 from tests.runner import ensure_content
@@ -15,6 +16,9 @@ class LivingAtlasHomeTests(TestCase):
     @classmethod
     def setUpTestData(cls):
         ensure_content()
+
+    def setUp(self):
+        self.client.force_login(User.objects.create_user("atlas-student@example.test"))
 
     def test_home_shows_real_weeks_heroes_and_ready_status(self):
         response = self.client.get("/")

@@ -1,0 +1,11 @@
+<header class="ee-public-header">
+  <a class="ee-public-brand" href="{% url 'core:home' %}"><span lang="en">English Encyclopedia</span><small>Атлас живого английского</small></a>
+  <nav aria-label="Учётная запись">
+    {% if user.is_authenticated %}
+    <form method="post" action="{% url 'accounts:logout' %}">{% csrf_token %}<button class="btn btn-quiet btn-small" type="submit">Выйти</button></form>
+    {% else %}
+    <a href="{% url 'accounts:login' %}{% if next %}?next={{ next|urlencode }}{% endif %}"{% if request.resolver_match.url_name == 'login' %} aria-current="page"{% endif %}>Вход</a>
+    <a href="{% url 'accounts:signup' %}{% if next %}?next={{ next|urlencode }}{% endif %}"{% if request.resolver_match.url_name == 'signup' %} aria-current="page"{% endif %}>Регистрация</a>
+    {% endif %}
+  </nav>
+</header>

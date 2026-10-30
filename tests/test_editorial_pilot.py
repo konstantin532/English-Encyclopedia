@@ -13,6 +13,8 @@ class EditorialPilotTests(TestCase):
         ensure_content()
 
     def test_pilot_is_limited_to_requested_week_and_lesson(self):
+        from apps.accounts.models import User
+        self.client.force_login(User.objects.create_user("pilot-student@example.test"))
         for url, enabled in [("/levels/a1/weeks/3/", True), ("/lessons/a1-cafe-order/", True), ("/levels/a1/weeks/2/", False), ("/levels/a1/weeks/4/", False), ("/lessons/a1-nouns-first-words/", False), ("/stories/1/", False), ("/levels/a1/", False), ("/", False)]:
             with self.subTest(url=url):
                 response = self.client.get(url)
