@@ -1,6 +1,6 @@
 ---
 name: encyclopedia-design
-description: Use for any UI, page, component, animation or visual redesign in English Encyclopedia. Forces the project's editorial-atlas design direction and blocks generic "AI-looking" design.
+description: Use for any UI, page, component or animation work in English Encyclopedia. Forces the project's editorial-atlas design direction and blocks generic "AI-looking" design. Requests to improve or redesign how the site looks go to design-pipeline first, which calls this skill as stage 0.
 ---
 
 # Encyclopedia design workflow

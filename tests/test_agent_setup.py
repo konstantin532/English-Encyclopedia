@@ -284,6 +284,143 @@ class AgentDefinitionsTests(SimpleTestCase):
                 self.assertIn("Файлы не меняй и не коммить", path.read_text(encoding="utf-8"))
 
 
+class DesignPipelineTests(SimpleTestCase):
+    """Просьба улучшить дизайн в любых словах запускает этапы строго по порядку."""
+
+    SKILL = ROOT / ".agents" / "skills" / "design-pipeline" / "SKILL.md"
+
+    def test_description_catches_everyday_wording(self):
+        description = _frontmatter(self.SKILL)["description"].casefold()
+        for phrase in ("улучши дизайн", "запили дизайн", "запили сайт", "сделай красиво", "редизайн", "improve the design"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, description)
+
+    def test_stages_run_in_order(self):
+        stages = self.SKILL.read_text(encoding="utf-8").split("## Этапы", 1)[1]
+        marks = ["encyclopedia-design", "$impeccable critique", "$design-taste-frontend", "gsap-core", "ui-acceptance"]
+        positions = [stages.index(mark) for mark in marks]
+        self.assertEqual(positions, sorted(positions), "Порядок: направление → Impeccable → Taste → GSAP → приёмка")
+
+    def test_guards_against_known_traps(self):
+        text = self.SKILL.read_text(encoding="utf-8")
+        self.assertIn("Команду `document` не запускай", text)  # перезаписала бы DESIGN.md
+        self.assertIn("`$motion-react` не используй", text)  # React в проекте нет
+        self.assertIn("новое из его 20 не выбирай", text)  # направление задаёт DESIGN.md
+
+    def test_agents_md_routes_design_requests(self):
+        self.assertIn("`design-pipeline` — любая просьба улучшить внешний вид", (ROOT / "AGENTS.md").read_text(encoding="utf-8"))
+
+
+def _load_inventory():
+    spec = importlib.util.spec_from_file_location("skills_inventory", ROOT / "scripts" / "skills_inventory.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+class GapAuditTests(SimpleTestCase):
+    """Ревизия: вопросы по глубине → пробелы → свои навыки → find-skills только для непокрытого."""
+
+    SKILL = ROOT / ".agents" / "skills" / "gap-audit" / "SKILL.md"
+
+    def body(self) -> str:
+        return self.SKILL.read_text(encoding="utf-8").split("---\n", 2)[2]
+
+    def test_description_catches_everyday_wording(self):
+        description = _frontmatter(self.SKILL)["description"].casefold()
+        for phrase in ("чего не хватает проекту", "найди слабые места", "аудит", "подбери скиллы", "find skills"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, description)
+
+    def test_levels_run_in_order_and_search_comes_last(self):
+        body = self.body()
+        positions = [body.index(f"## Уровень {n}.") for n in range(7)]
+        self.assertEqual(positions, sorted(positions))
+        # Новые навыки ищутся только после сопоставления с уже установленными.
+        self.assertGreater(body.index("$find-skills"), body.index("## Уровень 5."))
+        self.assertIn("Ничего не устанавливай без решения автора", body)
+
+    def test_question_bank_covers_every_area(self):
+        bank = (self.SKILL.parent / "questions.md").read_text(encoding="utf-8")
+        for area in ("Учебный контент", "Дизайн и интерфейс", "Движок и данные",
+                     "Безопасность и доступ", "Скорость", "Настройка агентов"):
+            with self.subTest(area=area):
+                section = bank.split(f"## {area}\n", 1)[1].split("\n## ", 1)[0]
+                self.assertIn("Г2", section)
+                self.assertGreaterEqual(section.count("\n| "), 3, "Нужна хотя бы пара линз")
+
+    def test_agents_md_routes_audits(self):
+        self.assertIn("`gap-audit` — «чего не хватает проекту»", (ROOT / "AGENTS.md").read_text(encoding="utf-8"))
+
+
+class SkillsInventoryTests(SimpleTestCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.inv = _load_inventory()
+
+    def make_skill(self, folder: Path, name: str, description: str) -> None:
+        (folder / name).mkdir(parents=True)
+        (folder / name / "SKILL.md").write_text(f"---\nname: {name}\ndescription: {description}\n---\n", encoding="utf-8")
+
+    def test_flags_known_traps(self):
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmp:
+            project, home = Path(tmp) / "project", Path(tmp) / "home"
+            self.make_skill(project / ".agents" / "skills", "shared", "Works with vanilla JS")
+            self.make_skill(project / ".claude" / "skills", "shared", "Works with vanilla JS")
+            self.make_skill(project / ".agents" / "skills", "codex-only", "Plain HTML pages")
+            self.make_skill(home / ".agents" / "skills", "shared", "Works with vanilla JS")
+            self.make_skill(home / ".agents" / "skills", "motion-react", "Animations for React apps")
+            self.make_skill(home / ".agents" / "skills", "silent", "")
+            flags = {(i["name"], i["where"].split(":")[0]): i["flags"] for i in self.inv.inventory(project, home)}
+        self.assertEqual(flags[("shared", "личные Codex")], ["дубль"])
+        self.assertEqual(flags[("codex-only", "проект")], ["нет у Claude"])
+        self.assertEqual(flags[("motion-react", "личные Codex")], ["чужой стек"])
+        self.assertEqual(flags[("silent", "личные Codex")], ["без описания"])
+        self.assertEqual(flags[("shared", "проект")], [])
+
+    def test_real_project_inventory(self):
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as empty_home:
+            items = self.inv.inventory(ROOT, Path(empty_home))
+        names = {i["name"] for i in items}
+        self.assertLessEqual({"gap-audit", "design-pipeline", "reviewer", "ui_reviewer"}, names)
+        react = next(i for i in items if i["name"] == "gsap-react" and i["where"].startswith("проект: .agents"))
+        self.assertIn("чужой стек", react["flags"])
+        self.assertFalse([i["name"] for i in items if "нет у Claude" in i["flags"]])
+
+
+class RepositoryHygieneTests(SimpleTestCase):
+    """На Windows регистр в .gitignore не различается: Scripts/ и scripts/ — одна папка."""
+
+    def ignored_on_windows(self, path: str) -> bool:
+        import shutil
+        import subprocess
+
+        if not shutil.which("git"):
+            self.skipTest("git недоступен")
+        result = subprocess.run(
+            ["git", "-c", "core.ignorecase=true", "check-ignore", "-q", "--no-index", path],
+            cwd=ROOT, capture_output=True,
+        )
+        return result.returncode == 0
+
+    def test_source_folders_are_not_ignored_on_windows(self):
+        # Урок source-ignore (журнал): правило /Scripts/ прятало новые скрипты проекта на Windows.
+        for path in ("scripts/new_tool.py", "scripts/new_check.cjs", "apps/core/new.py",
+                     "static/js/new.js", "templates/new.html", "tests/test_new.py", "docs/new.md"):
+            with self.subTest(path=path):
+                self.assertFalse(self.ignored_on_windows(path))
+
+    def test_pip_leftovers_stay_ignored(self):
+        for path in ("Scripts/pip.exe", "Scripts/activate", "Scripts/activate.bat", "Lib/site-packages/x.py"):
+            with self.subTest(path=path):
+                self.assertTrue(self.ignored_on_windows(path))
+
+
 def _load_handoff():
     spec = importlib.util.spec_from_file_location("pr_handoff", ROOT / "scripts" / "check_pr_handoff.py")
     module = importlib.util.module_from_spec(spec)
@@ -321,6 +458,20 @@ class PullRequestHandoffTests(SimpleTestCase):
     def test_bold_headings_are_accepted(self):
         body = "\n\n".join(f"**{name}:**\nнет" for name in self.handoff.SECTIONS)
         self.assertEqual(self.handoff.find_problems(body), [])
+
+    def test_nested_subheading_keeps_section_content(self):
+        # Найдено ревью Codex: подзаголовок внутри раздела делал заполненный раздел «пустым».
+        body = self.filled().replace(
+            "## Как проверено\n\nнет", "## Как проверено\n\n### Тесты\n`manage.py test` → OK"
+        )
+        self.assertIn("### Тесты", body)
+        self.assertEqual(self.handoff.find_problems(body), [])
+
+    def test_multiline_comment_is_not_content(self):
+        # Найдено ревью Codex: многострочный комментарий засчитывался как содержимое.
+        body = self.filled().replace("## Риски\n\nнет", "## Риски\n\n<!--\nподсказка\nв две строки\n-->")
+        self.assertIn("в две строки", body)
+        self.assertEqual(self.handoff.find_problems(body), ["раздел «Риски» пустой (если нечего сказать, напиши «нет»)"])
 
     def test_workflow_runs_the_check_on_description_edits(self):
         workflow = (ROOT / ".github" / "workflows" / "pr-handoff.yml").read_text(encoding="utf-8")
