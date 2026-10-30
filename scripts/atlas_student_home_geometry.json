@@ -1,0 +1,262 @@
+{
+  "description": "Authenticated student home, fixed baseline17e6680adaa7b4c9ea0b4b8dfe2cda41e3d8bdc6. Same selectors, four axes and1px tolerance as historical guest snapshot; fixture name Ученик, markers off.",
+  "baseline": "17e6680adaa7b4c9ea0b4b8dfe2cda41e3d8bdc6",
+  "viewports": {
+    "360": {
+      ".studio-sidebar": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 183.3125
+        }
+      ],
+      ".site-header": [
+        {
+          "x": 0,
+          "y": 183.3125,
+          "width": 360,
+          "height": 119
+        }
+      ],
+      ".studio-home-hero": [
+        {
+          "x": 12,
+          "y": 324.3125,
+          "width": 336,
+          "height": 866.921875
+        }
+      ],
+      ".studio-phrase-paper": [
+        {
+          "x": 40,
+          "y": 896.765625,
+          "width": 280,
+          "height": 273.46875
+        }
+      ],
+      ".studio-lesson-card": [],
+      ".week-card": [
+        {
+          "x": 12,
+          "y": 1401.015625,
+          "width": 336,
+          "height": 295.90625
+        },
+        {
+          "x": 12,
+          "y": 1710.921875,
+          "width": 336,
+          "height": 314.75
+        },
+        {
+          "x": 12,
+          "y": 2039.671875,
+          "width": 336,
+          "height": 314.75
+        },
+        {
+          "x": 12,
+          "y": 2368.421875,
+          "width": 336,
+          "height": 314.75
+        }
+      ],
+      ".week-hero": [],
+      ".week-route": [],
+      ".story-script": []
+    },
+    "390": {
+      ".studio-sidebar": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 183.3125
+        }
+      ],
+      ".site-header": [
+        {
+          "x": 0,
+          "y": 183.3125,
+          "width": 390,
+          "height": 119
+        }
+      ],
+      ".studio-home-hero": [
+        {
+          "x": 16,
+          "y": 324.3125,
+          "width": 358,
+          "height": 866.921875
+        }
+      ],
+      ".studio-phrase-paper": [
+        {
+          "x": 55,
+          "y": 896.765625,
+          "width": 280,
+          "height": 273.46875
+        }
+      ],
+      ".studio-lesson-card": [],
+      ".week-card": [
+        {
+          "x": 16,
+          "y": 1401.015625,
+          "width": 358,
+          "height": 308.28125
+        },
+        {
+          "x": 16,
+          "y": 1723.296875,
+          "width": 358,
+          "height": 327.125
+        },
+        {
+          "x": 16,
+          "y": 2064.421875,
+          "width": 358,
+          "height": 327.125
+        },
+        {
+          "x": 16,
+          "y": 2405.546875,
+          "width": 358,
+          "height": 327.125
+        }
+      ],
+      ".week-hero": [],
+      ".week-route": [],
+      ".story-script": []
+    },
+    "1280": {
+      ".studio-sidebar": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 232,
+          "height": 800
+        }
+      ],
+      ".site-header": [
+        {
+          "x": 232,
+          "y": 0,
+          "width": 1048,
+          "height": 73
+        }
+      ],
+      ".studio-home-hero": [
+        {
+          "x": 264,
+          "y": 95,
+          "width": 984,
+          "height": 649.453125
+        }
+      ],
+      ".studio-phrase-paper": [
+        {
+          "x": 607.96875,
+          "y": 495.296875,
+          "width": 274.953125,
+          "height": 282.15625
+        }
+      ],
+      ".studio-lesson-card": [],
+      ".week-card": [
+        {
+          "x": 264,
+          "y": 876.34375,
+          "width": 314.65625,
+          "height": 302.75
+        },
+        {
+          "x": 598.65625,
+          "y": 876.34375,
+          "width": 314.671875,
+          "height": 302.75
+        },
+        {
+          "x": 933.328125,
+          "y": 876.34375,
+          "width": 314.65625,
+          "height": 302.75
+        },
+        {
+          "x": 264,
+          "y": 1199.09375,
+          "width": 314.65625,
+          "height": 302.734375
+        }
+      ],
+      ".week-hero": [],
+      ".week-route": [],
+      ".story-script": []
+    },
+    "1440": {
+      ".studio-sidebar": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 232,
+          "height": 900
+        }
+      ],
+      ".site-header": [
+        {
+          "x": 232,
+          "y": 0,
+          "width": 1208,
+          "height": 73
+        }
+      ],
+      ".studio-home-hero": [
+        {
+          "x": 264,
+          "y": 95,
+          "width": 1144,
+          "height": 604.65625
+        }
+      ],
+      ".studio-phrase-paper": [
+        {
+          "x": 670.375,
+          "y": 467.671875,
+          "width": 319.75,
+          "height": 264.984375
+        }
+      ],
+      ".studio-lesson-card": [],
+      ".week-card": [
+        {
+          "x": 264,
+          "y": 832.546875,
+          "width": 271,
+          "height": 300.6875
+        },
+        {
+          "x": 555,
+          "y": 832.546875,
+          "width": 271,
+          "height": 300.6875
+        },
+        {
+          "x": 846,
+          "y": 832.546875,
+          "width": 271,
+          "height": 300.6875
+        },
+        {
+          "x": 1137,
+          "y": 832.546875,
+          "width": 271,
+          "height": 300.6875
+        }
+      ],
+      ".week-hero": [],
+      ".week-route": [],
+      ".story-script": []
+    }
+  }
+}

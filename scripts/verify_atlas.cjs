@@ -3,6 +3,7 @@
  * Screenshots are evidence of real Django pages, never generated mockups.
  */
 const {chromium}=require('playwright');
+const {seedBrowserUser,learnerState}=require('./browser_auth.cjs');
 const {spawn}=require('node:child_process');
 const fs=require('node:fs/promises');
 const path=require('node:path');
@@ -13,14 +14,15 @@ const output=path.resolve(process.env.ATLAS_OUTPUT || 'atlas-browser-evidence');
 const sizes=[[1440,900],[1280,800],[390,844],[360,800]];
 const screens=[['home','/'],['collection','/levels/a1/'],['chapter','/levels/a1/weeks/13/']];
 const {geometryDelta,assertChapterReadingFlow,assertGeometrySnapshot}=require('./atlas_geometry.cjs');
-const homeGeometry=require('./atlas_home_geometry.json');
+const homeGeometry=require('./atlas_student_home_geometry.json');
 const weekMotionGeometry=require('./atlas_week_motion_geometry.json');
 const selectors=['.studio-sidebar','.site-header','.studio-home-hero','.studio-phrase-paper','.studio-lesson-card','.week-card','.week-hero','.week-route','.story-script'];
 async function serve(directory,port){
- const processHandle=spawn(process.env.ATLAS_PYTHON || 'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:directory,env:{...process.env,DJANGO_SETTINGS_MODULE:'config.settings.local',EE_COURSE_LOGIN_REQUIRED:'0'},stdio:['ignore','ignore','pipe']});
+ const processHandle=spawn(process.env.ATLAS_PYTHON || 'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:directory,env:{...process.env,DJANGO_SETTINGS_MODULE:'config.settings.local',EE_COURSE_LOGIN_REQUIRED:'1'},stdio:['ignore','ignore','pipe']});
  let error='';processHandle.stderr.on('data',d=>{error+=d;});
- for(let n=0;n<100;n++){
-  try{if((await fetch(`http://127.0.0.1:${port}/`)).ok)return processHandle;}catch{}
+ for(let n=0;n<450;n++){
+  try{if((await fetch(`http://127.0.0.1:${port}/`,{signal:AbortSignal.timeout(2000)})).ok)return processHandle;}catch{}
+  if(processHandle.exitCode!==null)break;
   await new Promise(resolve=>setTimeout(resolve,100));
  }
  processHandle.kill();throw Error('Django did not start: '+error);
@@ -37,17 +39,20 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
  const report={baseline:process.env.ATLAS_BASELINE||'before-worktree',screens:[],checks:[],errors:[]};
  const servers=[];let browser;
  try{
+  seedBrowserUser(root,process.env.DATABASE_URL);
   servers.push(await serve(process.env.ATLAS_BEFORE_DIR,8123));servers.push(await serve(root,8124));
   browser=await chromium.launch();
+  const states={before:await learnerState(browser,'http://127.0.0.1:8123'),after:await learnerState(browser,'http://127.0.0.1:8124')};
   report.lessonBookpage={};
-  await verifyLessonBookpage(browser,{output,beforeBase:'http://127.0.0.1:8123',afterBase:'http://127.0.0.1:8124',report:report.lessonBookpage});
+  await verifyLessonBookpage(browser,{output,beforeBase:'http://127.0.0.1:8123',afterBase:'http://127.0.0.1:8124',states,report:report.lessonBookpage});
   for(const [width,height] of sizes){
    for(const [name,route] of screens){
     const measurements={};
     for(const [state,port] of [['before',8123],['after',8124]]){
-     const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce',isMobile:width<700,hasTouch:width<700});
+     const context=await browser.newContext({storageState:states[state],viewport:{width,height},reducedMotion:'reduce',isMobile:width<700,hasTouch:width<700});
      const page=await context.newPage();page.on('pageerror',error=>report.errors.push({name,state,width,message:error.message}));
      await ready(page,`http://127.0.0.1:${port}${route}`);
+     assert.equal(new URL(page.url()).pathname,route,'unexpected learner redirect');
      const o=await overflow(page);assert.ok(o.scroll<=o.width+1,`${name} ${state} ${width}: horizontal overflow ${JSON.stringify(o)}`);
      await page.screenshot({path:path.join(output,`${name}-${width}-${state}.png`),fullPage:false});
      measurements[state]=await bounds(page);
@@ -129,7 +134,7 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
   ];
   report.editorialPages=[];
   for(const [width,height] of [[1440,900],[390,844]]){
-   const editorial=await browser.newContext({viewport:{width,height},reducedMotion:'reduce',isMobile:width<700,hasTouch:width<700});
+   const editorial=await browser.newContext({storageState:states.after,viewport:{width,height},reducedMotion:'reduce',isMobile:width<700,hasTouch:width<700});
    try{
     for(const [name,route,isLesson] of editorialPages){
      const p=await editorial.newPage();
@@ -159,7 +164,7 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
   }
   report.checks.push('Editorial9–28 lessons, stories and poems readable at1440/390; seven layers, complete minute cards and keyboard optional practice accessible; reduced-motion and overflow checked');
   // All chapter covers load; each has a stable, explicitly sized image box.
-  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'});
+  const context=await browser.newContext({storageState:states.after,viewport:{width:390,height:844},reducedMotion:'reduce'});
   const page=await context.newPage();
   for(let week=1;week<=14;week++){
    await ready(page,`http://127.0.0.1:8124/levels/a1/weeks/${week}/`);
@@ -170,12 +175,12 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
   }
   report.checks.push('All 14 chapter cover images load at 390px');
   // No-JS and reduced-motion reading must remain usable.
-  const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
+  const nojs=await browser.newContext({storageState:states.after,javaScriptEnabled:false,viewport:{width:390,height:844}});
   const staticPage=await nojs.newPage();await ready(staticPage,'http://127.0.0.1:8124/');
   assert.match(await staticPage.locator('[data-atlas-explanation]').innerText(),/Я дома/);
   await staticPage.screenshot({path:path.join(output,'home-390-no-js.png')});await nojs.close();
   report.checks.push('No-JS phrase, translation and role captions readable');
-  const full=await browser.newContext({viewport:{width:1440,height:900}});
+  const full=await browser.newContext({storageState:states.after,viewport:{width:1440,height:900}});
   await full.addInitScript(()=>localStorage.setItem('ee-motion-mode','full'));
   const animated=await full.newPage();await ready(animated,'http://127.0.0.1:8124/');
   await animated.locator('.atlas-grammar-control').first().click();await animated.locator('.atlas-discovery').waitFor({state:'visible'});

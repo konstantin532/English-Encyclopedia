@@ -5,7 +5,7 @@ name: Visual review
 on:
   pull_request:
     paths: ['static/**', 'templates/**', 'apps/**', 'content/**', 'config/**',
-            'scripts/visual_review*', 'tests/js/visual-review.test.cjs', '.github/workflows/visual-review.yml']
+            'scripts/visual_review*', 'scripts/browser_auth.cjs', 'tests/js/visual-review.test.cjs', '.github/workflows/visual-review.yml']
   workflow_dispatch:
 permissions:
   contents: read

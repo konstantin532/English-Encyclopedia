@@ -64,13 +64,13 @@ async function openExtraPractice(page){
   assert.equal(await summary.evaluate(el=>el.parentElement.open),true,'optional practice must open from the keyboard');
   assert.equal(await page.locator('#spoken-coach').isVisible(),true,'speech workshop hidden after opening optional practice');
 }
-async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}){
+async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,states,report}){
   const route='/lessons/a1-nouns-first-words/';
   report.screens=[];
   for(const [width,height] of [[1440,900],[390,844]]){
     const measurements={};
     for(const [state,base] of [['before',beforeBase],['after',afterBase]]){
-      const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce',isMobile:width<700,hasTouch:width<700});
+      const context=await browser.newContext({storageState:states[state],viewport:{width,height},reducedMotion:'reduce',isMobile:width<700,hasTouch:width<700});
       const entry={state,width,contrasts:[]};report.screens.push(entry);
       try{
         const page=await context.newPage();
@@ -181,7 +181,7 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,report}
       assert.ok(Math.abs(measurements.before[selector][key]-measurements.after[selector][key])<=1,`noun ${width}: ${selector} ${key} changed`);
     }
   }
-  const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
+  const nojs=await browser.newContext({storageState:states.after,javaScriptEnabled:false,viewport:{width:390,height:844}});
   try{
     const page=await nojs.newPage();const response=await page.goto(afterBase+route,{waitUntil:'networkidle'});assert.equal(response.status(),200);
     for(let n=1;n<=7;n++)assert.equal(await page.locator(`#layer-${n}`).isVisible(),true);

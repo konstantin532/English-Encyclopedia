@@ -5,12 +5,14 @@ const assert = require('node:assert/strict');
 const { chromium } = require(process.env.EE_PLAYWRIGHT_MODULE || 'playwright');
 const base = process.env.EE_QA_URL || 'http://127.0.0.1:8017';
 const output = process.env.EE_QA_OUTPUT || path.resolve('artifacts/editorial-pilot');
+const {learnerState} = require('./browser_auth.cjs');
 const routes = { week3: '/levels/a1/weeks/3/', lesson: '/lessons/a1-cafe-order/' };
 (async () => {
   await fs.mkdir(output, { recursive: true });
   const browser = await chromium.launch({ headless: true,
     ...(process.env.EE_CHROMIUM_PATH ? { executablePath: process.env.EE_CHROMIUM_PATH } : {}) });
-  const context = await browser.newContext();
+  const storageState = await learnerState(browser, base);
+  const context = await browser.newContext({storageState});
   const page = await context.newPage();
   page.setDefaultTimeout(5000);
   page.setDefaultNavigationTimeout(30000);
@@ -24,6 +26,7 @@ const routes = { week3: '/levels/a1/weeks/3/', lesson: '/lessons/a1-cafe-order/'
         for (const [name, route] of Object.entries(routes)) {
           const response = await page.goto(base + route, { waitUntil: 'networkidle' });
           assert.equal(response.status(), 200);
+          assert.equal(new URL(page.url()).pathname, route, 'unexpected learner redirect');
           await page.evaluate(() => document.fonts.ready);
           const state = await page.evaluate(({ width, theme, name }) => ({
             name, width, theme,
@@ -101,7 +104,7 @@ const routes = { week3: '/levels/a1/weeks/3/', lesson: '/lessons/a1-cafe-order/'
     await page.locator('[data-reader-larger]').click();
     await page.waitForFunction(initial => parseFloat(getComputedStyle(document.querySelector('[data-lesson-reader]')).fontSize) > initial, initial);
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
-    const nojs = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
+    const nojs = await browser.newContext({ storageState, javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
     const fallback = await nojs.newPage();
     for (const route of Object.values(routes)) {
       await fallback.goto(base + route, { waitUntil: 'networkidle' });
