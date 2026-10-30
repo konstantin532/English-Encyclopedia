@@ -53,3 +53,12 @@ Baseline: `origin/main` = `17e6680adaa7b4c9ea0b4b8dfe2cda41e3d8bdc6` (PR #158 у
 - UI-тесты сначала обнаружили несовместимость имитации Django с новым helper. Имитация дополнена отдельной записью seed для каждой DB; старые assertions сохранены и добавлены проверки seed/audience. Итог202 tests,202 pass,0 fail (1.863s).
 - Первый локальный Atlas: запуск Django не уложился в10s под параллельной нагрузкой. Время ожидания ограничено45s, добавлены2s fetch timeout/ранний выход завершившегося процесса. Повтор выполняется.
 - Полный Django suite запущен один раз,4процесса. Visual review и Atlas ещё выполняются; их статус не считается PASS заранее.
+
+## Этап 3: независимое ревью и исправления
+
+- PR160 открыт draft, main не сливается. Пока работали, main стал f88bca0 (5коммитов про skills/rules/handoff, runtime apps/static/templates не изменились относительно baseline17e6680a).
+- P2 visual-role-baseline: обе стороны теперь создают/используют собственную pending session. Новый тест сначала FAILED (stateForAudience отсутствовал), затем весь UI suite203 tests PASS (22.365s). Старый base без страницы даёт404; будущий base с ней теперь сравнивается в правильной роли.
+- P2 pending-role-next: реальный тест сначала FAILED (redirect /teacher/ вместо status), исправлено перенаправление pending из учительских next на заявку, ученические next сохранены. Послефикса47 Django tests OK (0.628s).
+- Уточнён общий wall-clock deadline Atlas45s (вместо счётчика с возможным суммированиемfetch timeouts). Все3замечания занесены в docs/agents/lessons.md.
+- Независимый контраст:283 пары,0FAIL/0BLOCKED; минимальный текстовый контраст5.61:1. Mobile LCP (3сэмпла/сторона): login2156→2132ms,signup2244→2096ms; CLS~0.00038. Ускорение не заявляется (параллельная нагрузка). Lighthouse comparison BLOCKED:3/4 NO_NAVSTART, только signup-before96валиден.
+- Локальный Visual review:30снимков,0FAIL/0WARN;24учебныхснимка0%diff,4формыизмененыожидаемо,2новыхэкраназаявки. Основная версия650a с runtime-фиксами формы/next проверяется также текущими focused tests; финальный CI запустится после push.

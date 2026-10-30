@@ -61,4 +61,12 @@ async function learnerState(browser, base, {pending = false} = {}) {
     return await context.storageState();
   } finally { await context.close(); }
 }
-module.exports = {seedBrowserUser, learnerState};
+function stateForAudience(states, audience, side) {
+  assert.ok(side === 'before' || side === 'after', 'Unknown visual-review side');
+  if (audience === 'guest') return undefined;
+  assert.ok(audience === 'student' || audience === 'pending', 'Unknown visual-review audience');
+  const state = states[side + (audience === 'pending' ? 'Pending' : '')];
+  assert.ok(state, 'Missing role session for ' + side + '/' + audience);
+  return state;
+}
+module.exports = {seedBrowserUser, learnerState, stateForAudience};

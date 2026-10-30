@@ -13,7 +13,7 @@ const {spawn} = require('node:child_process');
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const lib = require('./visual_review_lib.cjs');
-const {seedBrowserUser, learnerState} = require('./browser_auth.cjs');
+const {seedBrowserUser, learnerState, stateForAudience} = require('./browser_auth.cjs');
 
 const root = path.resolve(__dirname, '..');
 const output = path.resolve(process.env.VR_OUTPUT || 'visual-review');
@@ -184,20 +184,20 @@ ${r.files.change ? `<h3>Где изменилось (с ${r.change.y}px)</h3><im
       if (!beforeDatabase || !afterDatabase || beforeDatabase === afterDatabase) {
         throw Error('Set different ATLAS_BEFORE_DATABASE_URL and ATLAS_AFTER_DATABASE_URL for the two checkouts');
       }
-      seedBrowserUser(process.env.ATLAS_BEFORE_DIR, beforeDatabase);
+      seedBrowserUser(process.env.ATLAS_BEFORE_DIR, beforeDatabase, {pending: true});
       seedBrowserUser(root, afterDatabase, {pending: true});
       servers.push(await serve(process.env.ATLAS_BEFORE_DIR, 8133, beforeDatabase));
       servers.push(await serve(root, 8134, afterDatabase));
       beforeBase = 'http://127.0.0.1:8133'; afterBase = 'http://127.0.0.1:8134';
     }
     browser = await chromium.launch();
-    const states = {before: await learnerState(browser, beforeBase), after: await learnerState(browser, afterBase), pending: await learnerState(browser, afterBase, {pending: true})};
+    const states = {before: await learnerState(browser, beforeBase), after: await learnerState(browser, afterBase), beforePending: await learnerState(browser, beforeBase, {pending: true}), afterPending: await learnerState(browser, afterBase, {pending: true})};
     const workbench = await (await browser.newContext()).newPage();
     for (const viewport of config.viewports) {
       for (const pageSpec of config.pages) {
         const audience = pageSpec.audience || 'student';
-        const before = await capture(browser, beforeBase, pageSpec.route, viewport, pageSpec.main, audience === 'guest' ? undefined : states.before);
-        const after = await capture(browser, afterBase, pageSpec.route, viewport, pageSpec.main, audience === 'guest' ? undefined : audience === 'pending' ? states.pending : states.after);
+        const before = await capture(browser, beforeBase, pageSpec.route, viewport, pageSpec.main, stateForAudience(states, audience, 'before'));
+        const after = await capture(browser, afterBase, pageSpec.route, viewport, pageSpec.main, stateForAudience(states, audience, 'after'));
         const row = {name: pageSpec.name, title: pageSpec.title, route: pageSpec.route, width: viewport.width, status: 'ok', notes: [], files: {}};
         const fresh = lib.newProblems(before.problems || [], after.problems || []);
         const old = (after.problems || []).filter(p => !fresh.includes(p));

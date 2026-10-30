@@ -20,8 +20,9 @@ const selectors=['.studio-sidebar','.site-header','.studio-home-hero','.studio-p
 async function serve(directory,port){
  const processHandle=spawn(process.env.ATLAS_PYTHON || 'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:directory,env:{...process.env,DJANGO_SETTINGS_MODULE:'config.settings.local',EE_COURSE_LOGIN_REQUIRED:'1'},stdio:['ignore','ignore','pipe']});
  let error='';processHandle.stderr.on('data',d=>{error+=d;});
- for(let n=0;n<450;n++){
-  try{if((await fetch(`http://127.0.0.1:${port}/`,{signal:AbortSignal.timeout(2000)})).ok)return processHandle;}catch{}
+ const deadline=Date.now()+45000;
+ while(Date.now()<deadline){
+  try{if((await fetch(`http://127.0.0.1:${port}/`,{signal:AbortSignal.timeout(Math.max(1,Math.min(2000,deadline-Date.now())))})).ok)return processHandle;}catch{}
   if(processHandle.exitCode!==null)break;
   await new Promise(resolve=>setTimeout(resolve,100));
  }

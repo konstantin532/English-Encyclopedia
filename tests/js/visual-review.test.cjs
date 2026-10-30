@@ -137,7 +137,7 @@ test('each checkout serves its own database even when a shared DATABASE_URL is i
   assert.equal(result.status,1,'fixture intentionally stops after observing both running servers');
   assert.ok(fs.existsSync(fixture.observations),result.stderr);
   const seeds=JSON.parse(fs.readFileSync(fixture.seeded,'utf8'));
-  assert.deepEqual(seeds,[{checkout:fixture.before,database:'sqlite:///before.sqlite3',pending:false},{checkout:fixture.after,database:'sqlite:///after.sqlite3',pending:true}]);
+  assert.deepEqual(seeds,[{checkout:fixture.before,database:'sqlite:///before.sqlite3',pending:true},{checkout:fixture.after,database:'sqlite:///after.sqlite3',pending:true}]);
   const actual=JSON.parse(fs.readFileSync(fixture.observations,'utf8'));
   assert.deepEqual(actual,{
     before:{database:'sqlite:///before.sqlite3',checkout:fixture.before},

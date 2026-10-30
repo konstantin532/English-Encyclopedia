@@ -49,6 +49,16 @@ class SignupRoleTests(TestCase):
         self.assertRedirects(response, reverse("accounts:teacher_request"))
         self.assertRedirects(self.client.get(reverse("accounts:signup")), reverse("accounts:teacher_request"))
 
+    def test_pending_teacher_login_next_shows_request_but_keeps_student_destinations(self):
+        user = User.objects.create_user("pending@example.test", "Local-long-pass-482!", teacher_access_requested=True)
+        for destination, expected in ((reverse("teaching:dashboard"), reverse("accounts:teacher_request")),
+                                      (reverse("learning:review"), reverse("learning:review"))):
+            self.client.logout()
+            response = self.client.post(reverse("accounts:login"), {
+                "username": user.email, "password": "Local-long-pass-482!", "next": destination,
+            })
+            self.assertRedirects(response, expected, fetch_redirect_response=False)
+
     def test_only_owner_can_decide_request_and_approval_then_revocation_routes_correctly(self):
         pending = User.objects.create_user("pending@example.test", teacher_access_requested=True)
         editor = User.objects.create_user("editor@example.test", is_staff=True)

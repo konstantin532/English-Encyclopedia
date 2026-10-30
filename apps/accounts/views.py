@@ -58,7 +58,12 @@ class EmailLoginView(LoginView):
     redirect_authenticated_user = True
 
     def get_redirect_url(self):
-        return safe_next(self.request)
+        destination = safe_next(self.request)
+        if (self.request.user.is_authenticated
+                and account_landing(self.request.user) == "accounts:teacher_request"
+                and urlsplit(destination).path.startswith(reverse("teaching:dashboard"))):
+            return reverse("accounts:teacher_request")
+        return destination
 
     def get_default_redirect_url(self):
         return resolve_url(account_landing(self.request.user))
