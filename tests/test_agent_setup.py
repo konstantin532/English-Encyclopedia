@@ -6,6 +6,7 @@
 import filecmp
 import importlib.util
 import json
+import re
 import tomllib
 from pathlib import Path
 
@@ -47,6 +48,15 @@ class SharedSkillsTests(SimpleTestCase):
                 continue
             problems += _tree_differences(skill, twin)
         self.assertEqual(problems, [], "Скопируй скилл в .agents/skills без изменений")
+
+    def test_every_agents_skill_is_visible_to_claude(self):
+        # Claude Code не читает .agents/: навык без копии в .claude/skills для него не существует.
+        claude_dir = ROOT / ".claude" / "skills"
+        agents_dir = ROOT / ".agents" / "skills"
+        missing = sorted(
+            p.name for p in agents_dir.iterdir() if p.is_dir() and not (claude_dir / p.name).is_dir()
+        )
+        self.assertEqual(missing, [], "Скопируй скилл в .claude/skills без изменений")
 
     def test_every_shared_skill_has_skill_md(self):
         agents_dir = ROOT / ".agents" / "skills"
@@ -104,6 +114,32 @@ class GuardCommandTests(SimpleTestCase):
 
     def test_stop_gate_does_not_loop(self):
         self.assertIsNone(self.guard.stop_gate({"stop_hook_active": True}))
+
+
+class InstructionFilesTests(SimpleTestCase):
+    """AGENTS.md — единственный источник правил для Codex, Claude Code и бота Codex на GitHub."""
+
+    # Codex читает не больше 32 КБ файлов правил (project_doc_max_bytes) и молча
+    # отбрасывает остальное; держим запас 8 КБ.
+    AGENTS_MD_MAX_BYTES = 24 * 1024
+
+    def test_agents_md_has_code_review_rules(self):
+        # Бот Codex на GitHub ищет именно такой заголовок.
+        text = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
+        self.assertIn("\n## Code Review Rules\n", text)
+
+    def test_agents_md_fits_codex_limit(self):
+        size = (ROOT / "AGENTS.md").stat().st_size
+        self.assertLessEqual(size, self.AGENTS_MD_MAX_BYTES, "Сократи AGENTS.md или вынеси процедуру в навык")
+
+    def test_instruction_links_point_to_existing_files(self):
+        missing = []
+        for name in ("AGENTS.md", "CLAUDE.md"):
+            text = (ROOT / name).read_text(encoding="utf-8")
+            for target in re.findall(r"\]\(([^)#\s]+)\)", text):
+                if "://" not in target and not (ROOT / target).exists():
+                    missing.append(f"{name}: {target}")
+        self.assertEqual(missing, [])
 
 
 class AgentConfigTests(SimpleTestCase):
