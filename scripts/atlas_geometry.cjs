@@ -13,11 +13,15 @@ function assertGeometrySnapshot(actual,expected,label){
   }
 }
 // Only authored reading height may change; shell and column geometry stay invariant.
-function geometryDelta(screen,selector,before,after,viewportWidth=Infinity){
+function geometryDelta(screen,selector,before,after,viewportWidth=Infinity,authoredLessonHeight){
+  if(authoredLessonHeight!==undefined){
+    assert.ok(screen==='chapter'&&selector==='.studio-lesson-card','authored height is only for chapter lesson cards');
+    assert.ok(Number.isFinite(authoredLessonHeight)&&authoredLessonHeight>0,'authored lesson height must be positive');
+  }
   let keys=['x','y','width','height'];
   if(screen==='chapter'&&selector==='.story-script')keys=['x','width'];
   else if(screen==='chapter'&&(selector==='.studio-lesson-card'||(selector==='.week-route'&&viewportWidth<700)))keys=['x','width','height'];
-  return Math.max(...keys.map(key=>Math.abs(before[key]-after[key])));
+  return Math.max(...keys.map(key=>Math.abs((key==='height'&&authoredLessonHeight!==undefined?authoredLessonHeight:before[key])-after[key])));
 }
 function assertChapterReadingFlow(measurements,flow){
   const script=measurements['.story-script'][0],hero=measurements['.week-hero'][0];

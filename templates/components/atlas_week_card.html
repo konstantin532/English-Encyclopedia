@@ -1,10 +1,10 @@
 <a class="week-card atlas-week-card{% if not week.scene %} is-planned{% endif %}" href="{% url 'curriculum:week' level_slug week.number %}">
-  <span class="atlas-week-art{% if week.art and not week.art.painted %} is-vector{% endif %}">{% if week.art %}<img src="{{ week.art.src }}" alt="" width="800" height="450" loading="lazy" decoding="async">{% else %}<span class="atlas-week-placeholder" aria-hidden="true">{{ week.number|stringformat:'02d' }}</span>{% endif %}</span>
+  <span class="atlas-week-art{% if week.art and not week.art.painted %} is-vector{% endif %}">{% if week.art %}<img style="view-transition-name: week-{{ level_slug }}-{{ week.number }}-cover" src="{{ week.art.src }}" alt="" width="800" height="450" loading="lazy" decoding="async">{% else %}<span class="atlas-week-placeholder" aria-hidden="true">{{ week.number|stringformat:'02d' }}</span>{% endif %}</span>
   <span class="atlas-week-body">
     <span class="atlas-week-no" aria-hidden="true">{{ week.number|stringformat:'02d' }}</span>
     <span class="atlas-week-text">
       {% if week.sphere %}<span class="atlas-week-sphere">{{ week.get_sphere_display }}</span>{% endif %}
-      <strong>{% if week.situation_ru or week.theme_ru %}<span class="visually-hidden">Неделя {{ week.number }}: </span>{{ week.situation_ru|default:week.theme_ru }}{% else %}Неделя {{ week.number }}{% endif %}</strong>
+      <span class="atlas-week-title" style="view-transition-name: week-{{ level_slug }}-{{ week.number }}-title"><strong>{% if week.situation_ru or week.theme_ru %}<span class="visually-hidden">Неделя {{ week.number }}: </span>{{ week.situation_ru|default:week.theme_ru }}{% else %}Неделя {{ week.number }}{% endif %}</strong></span>
       {% if week.grammar_ru %}<span class="atlas-week-grammar">{{ week.grammar_ru|truncatechars:72 }}</span>{% endif %}
       {% if not week.scene %}<small>готовится</small>{% endif %}
     </span>

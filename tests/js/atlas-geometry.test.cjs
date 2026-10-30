@@ -38,6 +38,19 @@ test('home and catalogue still compare all four rectangle dimensions',()=>{
   }
 });
 
+test('authored expanded lesson height replaces only the old chapter card height',()=>{
+  const {geometryDelta}=require('../../scripts/atlas_geometry.cjs');
+  const before={x:264,y:100,width:908,height:95};
+  const expanded={...before,y:400,height:187};
+  assert.equal(geometryDelta('chapter','.studio-lesson-card',before,expanded,1440,187),0);
+  for(const [axis,delta] of [['x',2],['width',2],['height',2]]) {
+    assert.equal(geometryDelta('chapter','.studio-lesson-card',before,{...expanded,[axis]:expanded[axis]+delta},1440,187),2);
+  }
+  assert.equal(geometryDelta('chapter','.studio-lesson-card',before,{...expanded,height:95},1440,187),92);
+  assert.throws(()=>geometryDelta('chapter','.week-hero',before,expanded,1440,187),/lesson/);
+  assert.throws(()=>geometryDelta('chapter','.studio-lesson-card',before,expanded,1440,0),/height/);
+});
+
 function flowFixture(){
   return {measurements:{'.week-hero':[{x:0,y:100,width:900,height:300}],'.story-script':[{x:0,y:500,width:900,height:200}],'.studio-lesson-card':[{x:0,y:800,width:900,height:95},{x:0,y:905,width:900,height:95}]},flow:{scriptVisible:true,lineCount:2,visibleLines:2,lineHeight:35,lines:[{y:500,height:90},{y:590,height:110}],cardsContainer:{y:800,height:200},paddingTop:0,paddingBottom:0,cardGap:10}};
 }

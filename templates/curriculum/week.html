@@ -2,9 +2,9 @@
 {% load markers static ru %}
 {% block title %}Неделя {{ week.number }} · {{ week.situation_ru }} · {{ SITE_NAME }}{% endblock %}
 {% block social_title %}Неделя {{ week.number }} · {{ week.situation_ru }} · {{ SITE_NAME }}{% endblock %}
-{% block page_styles %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}"><link rel="stylesheet" href="{% static 'css/week-motion.css' %}">{% endblock %}
 {% block content %}
-<div data-educational-reading{% if editorial_pilot %} data-editorial-pilot="week"{% endif %} data-reading-theme="friendly" class="wrap cinematic-week">
+<div data-week-motion data-educational-reading{% if editorial_pilot %} data-editorial-pilot="week"{% endif %} data-reading-theme="friendly" class="wrap cinematic-week">
   {% if scene %}
   <div class="lesson-grid">
     <article class="prose">
@@ -36,7 +36,14 @@
       </section>
       <section class="layer" id="lessons" aria-labelledby="lessons-t">
         <h2 id="lessons-t">Уроки недели</h2>
-        <div class="studio-lessons">{% for lesson in lessons %}<a class="studio-lesson-card" href="{% url 'lessons:detail' lesson.slug %}"><span class="studio-lesson-no">{{ lesson.order|stringformat:'02d' }}</span><div><h3>{{ lesson.title }}</h3><p>{{ lesson.minutes }} минут · 7 слоёв</p></div><span class="studio-card-arrow" aria-hidden="true">↗</span></a>{% empty %}<p>Уроки готовятся.</p>{% endfor %}</div>
+        <div class="studio-lessons">
+          {% for lesson in lessons %}
+          <details class="studio-lesson-card week-lesson-card" data-week-flip open>
+            <summary class="week-lesson-summary"><span class="studio-lesson-no">{{ lesson.order|stringformat:'02d' }}</span><span><span class="week-lesson-title">{{ lesson.title }}</span><span class="week-lesson-meta">{{ lesson.minutes }} минут · 7 слоёв</span></span><span class="week-lesson-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></svg></span></summary>
+            <div class="week-lesson-body" data-week-lesson-body><p>{{ lesson.summary }}</p><a href="{% url 'lessons:detail' lesson.slug %}">Открыть урок<span class="visually-hidden"> «{{ lesson.title }}»</span></a></div>
+          </details>
+          {% empty %}<p>Уроки готовятся.</p>{% endfor %}
+        </div>
       </section>
       {% if trainer_entry %}<section class="layer" data-trainer-entry><h2>Практика слов и фраз</h2><p>После знакомства с уроком 5 можно добровольно потренировать три единицы.</p><p><a href="{% url 'learning:trainer' %}">Открыть тренажёр</a></p></section>{% endif %}
       <section class="layer" id="chunks" aria-labelledby="chunks-t">
@@ -69,4 +76,4 @@
   {% if next_week %}<p><a class="btn btn-quiet" href="{% url 'curriculum:week' week.level.slug next_week.number %}">Следующая неделя: {{ next_week.situation_ru|default:next_week.theme_ru }}</a></p>{% endif %}
 </div>
 {% endblock %}
-{% block scripts %}{% if editorial_pilot %}<script src="{% static 'js/editorial-notes.js' %}" defer></script>{% endif %}<script src="{% static 'js/audio-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script>{% endblock %}
+{% block scripts %}<script src="{% static 'vendor/gsap/Flip.min.js' %}" defer></script><script src="{% static 'vendor/gsap/ScrollTrigger.min.js' %}" defer></script><script src="{% static 'vendor/gsap/SplitText.min.js' %}" defer></script><script src="{% static 'js/week-motion.js' %}" defer></script>{% if editorial_pilot %}<script src="{% static 'js/editorial-notes.js' %}" defer></script>{% endif %}<script src="{% static 'js/audio-player.js' %}" defer></script><script src="{% static 'js/speech-studio.js' %}" defer></script>{% endblock %}
