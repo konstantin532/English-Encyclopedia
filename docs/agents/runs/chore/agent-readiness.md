@@ -90,3 +90,16 @@ devcontainer, CODEOWNERS, шаблоны задач, поиск секретов
   не трогает базу); считаю тест нестабильным, его проверит полный прогон и workflow этапа 4.
 
 Следующий шаг: этап 4 — закоммитить поиск нестабильных тестов и метрики доставки.
+
+### Этап 4. Нестабильные тесты и метрики поставки
+
+- `flaky-tests.yml` (суббота): три прогона полного набора pytest в случайном порядке
+  (`pytest-randomly==5.0.0` только в этом workflow), `scripts/flaky_report.py` сравнивает JUnit-отчёты;
+  нестабильные тесты — в сводке и в задаче с меткой `flaky-test` (новая или комментарий в открытой).
+- `delivery-metrics.yml` (понедельник): `scripts/delivery_metrics.py` — медиана и 90-й процентиль CI
+  на PR, доля успешных, выкладки в неделю за 30 дней; только чтение API (`actions: read`).
+- `deploy-vps.yml`: шаг «Mark release in Sentry» — отмечает выкладку SHA, без секретов `SENTRY_*`
+  пропускается, ошибка Sentry выкладку не роняет.
+- Проверки: `tests.test_delivery_tools tests.test_ci_workflows` → 11 tests, OK; `ruff check .` → All checks passed.
+
+Следующий шаг: этап 5 — события PostHog в уроке и упражнениях, experiments, Droid review workflow.

@@ -38,3 +38,23 @@ jobs:
           printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
           printf '%s\n' "$VPS_KNOWN_HOSTS" > ~/.ssh/known_hosts
           ssh -o BatchMode=yes deploy@"$VPS_HOST" deploy
+      # Отметка выкладки в Sentry: ошибки видны «до» и «после» конкретной версии,
+      # а частота выкладок считается сама. Пропускается, пока нет секретов SENTRY_*.
+      - name: Mark release in Sentry
+        if: steps.check.outputs.configured == 'true'
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+          RELEASE: ${{ github.event.workflow_run.head_sha || github.sha }}
+        run: |
+          set -euo pipefail
+          if [ -z "$SENTRY_AUTH_TOKEN" ] || [ -z "$SENTRY_ORG" ] || [ -z "$SENTRY_PROJECT" ]; then
+            echo "::notice::Sentry не подключён — отметка выкладки пропущена."; exit 0
+          fi
+          api="https://sentry.io/api/0/organizations/$SENTRY_ORG/releases"
+          auth=(-H "Authorization: Bearer $SENTRY_AUTH_TOKEN" -H "Content-Type: application/json")
+          curl -sSf "${auth[@]}" -X POST "$api/" \
+            -d "{\"version\":\"$RELEASE\",\"projects\":[\"$SENTRY_PROJECT\"]}" >/dev/null || true
+          curl -sSf "${auth[@]}" -X POST "$api/$RELEASE/deploys/" -d '{"environment":"production"}' >/dev/null \
+            || echo "::warning::Sentry не принял отметку выкладки; сама выкладка прошла."

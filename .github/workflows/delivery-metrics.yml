@@ -1,0 +1,24 @@
+name: Delivery metrics
+# Раз в неделю: скорость CI на PR и частота выкладок за 30 дней (scripts/delivery_metrics.py).
+# Итог — в сводке запуска и в артефакте delivery-metrics.json.
+on:
+  schedule:
+    - cron: "5 6 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/delivery_metrics.py --days 30 --output metrics.md --json delivery-metrics.json && cat metrics.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: delivery-metrics
+          path: delivery-metrics.json
+          retention-days: 90

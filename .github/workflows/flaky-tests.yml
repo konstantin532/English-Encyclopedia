@@ -1,0 +1,70 @@
+name: Flaky tests
+# Раз в неделю: тот же код, три прогона полного набора в разном случайном порядке (pytest-randomly).
+# Тест, который то проходит, то падает, попадает в отчёт и в задачу с меткой flaky-test.
+on:
+  schedule:
+    - cron: "23 2 * * 6"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: flaky-tests
+  cancel-in-progress: false
+jobs:
+  shuffled:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [1, 2, 3]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+        with:
+          enable-cache: true
+      - run: uv sync --frozen
+      - run: uv run python manage.py collectstatic --noinput --verbosity 0
+      - name: Full suite in random order
+        env:
+          SEED: ${{ github.run_id }}${{ matrix.run }}
+        # Упавший тест — не повод останавливать сравнение: результат решает следующая задача.
+        run: uv run --with pytest-randomly==5.0.0 pytest -q --randomly-seed="$SEED" --junitxml=junit.xml || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: junit-${{ matrix.run }}
+          path: junit.xml
+          retention-days: 14
+
+  report:
+    needs: shuffled
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/download-artifact@v4
+        with:
+          path: runs
+      - name: Compare runs
+        id: compare
+        run: |
+          set +e
+          python3 scripts/flaky_report.py runs/*/junit.xml --output flaky.md
+          status=$?
+          [ "$status" -le 1 ] || exit "$status"
+          echo "flaky=$([ "$status" -eq 1 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          cat flaky.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Open or update the flaky-test issue
+        if: steps.compare.outputs.flaky == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          number=$(gh issue list --label flaky-test --state open --json number --jq '.[0].number')
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body-file flaky.md
+          else
+            gh issue create --title "Нестабильные тесты" --label flaky-test --label P2 --body-file flaky.md
+          fi
