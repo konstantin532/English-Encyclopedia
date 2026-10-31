@@ -1075,6 +1075,10 @@
     text-underline-offset: 0.22em;
     text-decoration-thickness: 1px;
   }
+  .atlas-site .skip-link {
+    background: var(--ink);
+    color: var(--surface);
+  }
   .atlas-site :where(input, select, textarea) {
     max-width: 100%;
     min-width: 0;
@@ -1179,6 +1183,12 @@
     transform: none;
     box-shadow: none;
   }
+  .atlas-site .btn-quiet:is([aria-pressed=true], [aria-selected=true]) {
+    background: #dbe6cf;
+    border-color: #55734c;
+    color: #173a2a;
+    box-shadow: inset 0 -2px #55734c;
+  }
   .atlas-site .btn-small {
     font-size: 0.875rem;
     padding: 0.5rem 0.85rem;
@@ -1207,6 +1217,9 @@
   .atlas-site .studio-workspace {
     min-width: 0;
     background: var(--paper);
+  }
+  .atlas-site .studio-workspace > main {
+    background: transparent;
   }
   .atlas-site .studio-workspace .wrap {
     width: min(100% - 5rem, var(--page));
@@ -1711,6 +1724,7 @@
   }
   .atlas-site .aside {
     min-width: 0;
+    display: block;
   }
   .atlas-site .aside-box {
     padding: 22px 0;
@@ -1934,6 +1948,7 @@
     padding: 20px 24px;
     border: 1px solid var(--rule);
     border-radius: 10px;
+    box-shadow: none;
     display: flex;
     gap: 16px;
     align-items: end;
@@ -2026,8 +2041,11 @@
   .atlas-site .classics-list {
     gap: 24px;
   }
+  .atlas-site .atlas-hero {
+    background: var(--surface);
+  }
   /* Working screens: assignments and the next learning action precede the library. */
-  .atlas-site:is(.atlas-dashboard, .atlas-teaching, .atlas-practice) .page-head h1 {
+  .atlas-site:is(.atlas-page-dashboard, .atlas-page-teaching, .atlas-page-practice) .page-head h1 {
     font-size: clamp(1.8rem, 2.3vw, 2.4rem);
   }
   .atlas-next-step {
@@ -2106,13 +2124,13 @@
     color: var(--atlas-forest);
     font-weight: 600;
   }
-  .atlas-teaching .section {
+  .atlas-page-teaching .section {
     border-bottom: 1px solid var(--rule);
   }
-  .atlas-teaching .section > ul {
+  .atlas-page-teaching .section > ul {
     padding-left: 24px;
   }
-  .atlas-teaching .section > ul li {
+  .atlas-page-teaching .section > ul li {
     padding: 12px 0;
   }
   .atlas-site .assignment-card {
@@ -2122,11 +2140,20 @@
     border: 1px solid var(--rule);
     box-shadow: none;
   }
-  .atlas-teaching form:not(.studio-search-form) {
+  .atlas-page-teaching form:not(.studio-search-form) {
     max-width: 48rem;
   }
-  .atlas-teaching .section > form {
+  .atlas-page-teaching .section > form {
     padding-top: 8px;
+  }
+  .atlas-teacher-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+  .atlas-teacher-actions > a {
+    display: inline-flex;
   }
   /* Public entry and account states belong to the same book. */
   .atlas-site .ee-public-shell {
@@ -2210,7 +2237,7 @@
       order: 1;
       position: static;
     }
-    .atlas-lesson .lesson-grid > aside {
+    .atlas-page-lesson .lesson-grid > aside {
       order: -1;
     }
     .atlas-site .atlas-reader-index > summary, .atlas-site .atlas-reader-index[open] > summary {

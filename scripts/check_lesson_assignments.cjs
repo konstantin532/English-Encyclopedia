@@ -81,7 +81,7 @@ async function submit(page, locator) {
       await new Promise(resolve => setTimeout(resolve, 100));
     }
     assert.ok(available, 'Disposable server did not start: ' + serverError);
-    browser = await chromium.launch();
+    browser = await chromium.launch({executablePath: process.env.ATLAS_BROWSER_EXECUTABLE || undefined});
     const studentState = await learnerState(browser, base);
     const teacherState = await learnerState(browser, base, {teacher: true});
     const teacherContext = await browser.newContext({storageState: teacherState, viewport: {width: 390, height: 844}, reducedMotion: 'reduce'});

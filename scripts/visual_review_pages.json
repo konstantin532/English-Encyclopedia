@@ -151,6 +151,153 @@
       "route": "/accounts/teacher-request/",
       "main": ".ee-auth-status",
       "audience": "pending"
+    },
+    {
+      "name": "level-b2",
+      "title": "План следующего уровня",
+      "route": "/levels/b2/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "stories-map",
+      "title": "Карта историй",
+      "route": "/stories/",
+      "main": ".map-list",
+      "audience": "student"
+    },
+    {
+      "name": "word-entry",
+      "title": "Словарная статья",
+      "route": "/words/LX-00001/",
+      "main": ".entry-word",
+      "audience": "student"
+    },
+    {
+      "name": "words-empty",
+      "title": "Поиск без результатов",
+      "route": "/words/?q=zzznomatchdesign",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "markers",
+      "title": "Легенда маркеров",
+      "route": "/markers/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "speech-review",
+      "title": "Речевое повторение",
+      "route": "/learning/speech-review/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "word-review",
+      "title": "Повторение слов",
+      "route": "/learning/review/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "mistake-review",
+      "title": "Повторение сложных мест",
+      "route": "/learning/mistake-review/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "independent-check",
+      "title": "Самостоятельная проверка",
+      "route": "/learning/independent/a1-nouns-first-words/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "transfer-pilot",
+      "title": "Пилот переноса",
+      "route": "/learning/transfer-pilot/a1-verb-be/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "cafe-mission",
+      "title": "Разговор в кафе",
+      "route": "/learning/cafe-mission/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "lab-cafe",
+      "title": "Лаборатория кафе",
+      "route": "/lab/cafe/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "lab-a1",
+      "title": "Дополнительная практика",
+      "route": "/lab/a1/1/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "teacher-students",
+      "title": "Ученики",
+      "route": "/teacher/students/",
+      "main": "h1",
+      "audience": "teacher"
+    },
+    {
+      "name": "teacher-review",
+      "title": "Очередь ответов",
+      "route": "/teacher/review/",
+      "main": "h1",
+      "audience": "teacher"
+    },
+    {
+      "name": "teacher-drafts",
+      "title": "Черновики учителя",
+      "route": "/teacher/drafts/",
+      "main": "h1",
+      "audience": "teacher"
+    },
+    {
+      "name": "teacher-draft-new",
+      "title": "Форма черновика",
+      "route": "/teacher/drafts/new/",
+      "main": "#id_title",
+      "audience": "teacher"
+    },
+    {
+      "name": "teacher-overdue",
+      "title": "Просроченные назначения",
+      "route": "/teacher/assignments/overdue/",
+      "main": "h1",
+      "audience": "teacher"
+    },
+    {
+      "name": "report-issue",
+      "title": "Сообщить об ошибке",
+      "route": "/report-issue/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
+      "name": "for-teachers",
+      "title": "О работе с учителем",
+      "route": "/for-teachers/",
+      "main": "h1",
+      "audience": "guest"
+    },
+    {
+      "name": "account-delete",
+      "title": "Управление данными",
+      "route": "/accounts/delete/",
+      "main": "h1",
+      "audience": "student"
     }
   ]
 }

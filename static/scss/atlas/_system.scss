@@ -42,6 +42,7 @@
     outline: 3px solid var(--focus); outline-offset: 4px;
   }
   .atlas-site a { text-underline-offset: .22em; text-decoration-thickness: 1px; }
+  .atlas-site .skip-link { background: var(--ink); color: var(--surface); }
   .atlas-site :where(input,select,textarea) {
     max-width: 100%; min-width: 0; font: inherit; color: var(--ink);
     background: var(--surface); border: 1px solid var(--rule-strong);
@@ -71,6 +72,7 @@
   .atlas-site .btn-primary:hover { background: #28563e; border-color: #28563e; transform: none; box-shadow: none; }
   .atlas-site .btn-quiet { color: var(--atlas-forest); background: transparent; border: 1px solid var(--rule-strong); }
   .atlas-site .btn-quiet:hover { background: #e5ebdc; transform: none; box-shadow: none; }
+  .atlas-site .btn-quiet:is([aria-pressed=true],[aria-selected=true]) { background: #dbe6cf; border-color: #55734c; color: #173a2a; box-shadow: inset 0 -2px #55734c; }
   .atlas-site .btn-small { font-size: .875rem; padding: .5rem .85rem; }
   .atlas-site .btn:disabled { background: #e5e8de; border-color: var(--rule); color: #62695f; }
   .atlas-site summary { cursor: pointer; min-height: 44px; padding-block: .65rem; font-weight: 550; }
@@ -80,6 +82,7 @@
   /* 1440 = 236px navigation + flexible workspace. The latter owns both gutters. */
   .atlas-site .studio-shell { grid-template-columns: 236px minmax(0,1fr); }
   .atlas-site .studio-workspace { min-width: 0; background: var(--paper); }
+  .atlas-site .studio-workspace > main { background: transparent; }
   .atlas-site .studio-workspace .wrap { width: min(calc(100% - 5rem),var(--page)); }
   .atlas-site .studio-sidebar.atlas-sidebar {
     width: 236px; padding: 28px 18px; overflow-y: auto;
