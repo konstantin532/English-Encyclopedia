@@ -1,7 +1,6 @@
 """Behavioral prerequisite, local-key and contextual-marker checks for A1 13–16."""
 from datetime import timedelta
 from html.parser import HTMLParser
-import json
 import re
 from django.contrib.auth import get_user_model
 from django.test import TestCase
@@ -12,7 +11,6 @@ from apps.learning.understanding import understanding_bank
 from apps.learning.mistake_review import variants_for
 from apps.learning.models import IndependentAttempt, UnitProgress, MistakeReview
 from apps.lessons.models import Lesson
-from apps.lexicon.models import LexicalUnit
 from apps.poems.models import Poem
 from tests.runner import ensure_content
 from apps.publishing.audit import vocab_until,is_known,text_tokens

@@ -1,6 +1,5 @@
 """Regression tests for malformed input, safe redirects and linguistic markup."""
 
-from django.core.management import call_command
 from django.test import SimpleTestCase, TestCase
 from django.urls import reverse
 

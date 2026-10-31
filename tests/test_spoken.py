@@ -2,7 +2,6 @@ import importlib.util
 from pathlib import Path
 
 import yaml
-from django.core.management import call_command
 from django.test import TestCase
 from django.urls import reverse
 

@@ -176,7 +176,7 @@ class RotatingIndependentReviewTests(TestCase):
     def batch(self, variant=None):
         page = self.client.get(self.url)
         guide = page.context["guide"]
-        current = page.context["transfer_variant"]
+        self.assertIn("transfer_variant", page.context)
         answers = {"action": "batch", "assistance": "no_help",
                    "batch_token": page.context["batch_token"],
                    **{"answer_" + key: guide["tasks"][key]["model"]

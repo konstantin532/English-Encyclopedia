@@ -14,8 +14,6 @@ from apps.accounts.models import User
 from apps.drills.models import Exercise, PracticeItem, loose_normalize
 from apps.learning.mistake_review import variants_for
 from apps.learning.models import IndependentAttempt, MistakeReview
-from apps.learning.understanding import understanding_bank
-from apps.lessons.models import Lesson
 from tests.runner import ensure_content
 
 NOUNS = "a1-nouns-first-words"

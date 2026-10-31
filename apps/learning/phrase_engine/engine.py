@@ -12,7 +12,6 @@
 """
 from __future__ import annotations
 
-import random
 from dataclasses import dataclass, field
 from functools import lru_cache
 
@@ -759,7 +758,6 @@ def obj_items(ctx, vu, spec, mode):
             v = [(x, "-") for x, _ in np_indef(ctx, u, numbers=None, some=False)] + [(f"the {u.lemma}", "-")]
         else:
             # дополнение «определённое»: the + сущ., my/your + сущ. Мн.ч. — только для предметов
-            big = bool(u.tags & {"building", "area", "street", "nature", "weather"})
             v = [(f"the {u.lemma}", "-")]
             if possessable(u):
                 v += [(f"{d} {u.lemma}", "-") for d in ("my", "your") if ctx.avail(d)]
@@ -970,7 +968,6 @@ def fam_have(ctx):
     objs = []
     for u in ctx.words("S", lambda u: matches(u, spec)):
         v = [x for x, _ in np_indef(ctx, u, numbers="have")]
-        adjs = [a.lemma for a in ctx.words("J", lambda a: a.position in ("both", "attr") and "X" not in a.applies and matches(u, a.applies))][:0]
         if u.lemma in ("bus", "train", "plane", "taxi"):
             continue  # *The tourist has some buses
         if u.count == "C" and not u.flags.get("pl_ok"):
@@ -1003,7 +1000,6 @@ def fam_like_want(ctx):
             if not ctx.has("ps_3sg"):
                 subj = [Item(i.key, [x for x in i.variants if x[1] != "3sg" or i.key in ("pron:he", "pron:she")], i.unit) for i in subj]
                 subj = [i for i in subj if i.variants]
-            agrs = {a for i in subj for _, a in i.variants}
             st = ["aff"] + (["neg"] if ctx.has("dont") else []) + (["q"] if ctx.has("do_q") else [])
             rows.append(Row([(subj, True), (objs, True)], lambda ch, s, vu=vu: clause_ps(ch[0][0], ch[0][1], vu, ch[1][0], s), st, note=lemma))
     return rows
@@ -1088,7 +1084,6 @@ def fam_imperative(ctx):
     if ctx.avail("turn") and dirs:
         rows.append(Row([([Item(d, [(d, "-")]) for d in dirs], True)], lambda ch, s: cap(f"turn {ch[0][0]}."), ["aff"], note="turn"))
     if ctx.has("put") and ctx.avail("put"):
-        put_rows = []
         for prep in ("in", "on", "under", "near"):
             if not ctx.avail(prep):
                 continue

@@ -1,0 +1,20 @@
+# Настройка gitleaks (поиск секретов). Стандартные правила + узкие исключения для
+# известных ложных срабатываний. Новое исключение — только с объяснением, почему это не секрет.
+title = "English Encyclopedia"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Сторонние пакеты pip, когда-то попавшие в историю (Lib/site-packages): публичные тестовые ключи библиотек"
+paths = ['''^Lib/''']
+
+[[allowlists]]
+description = "Пароли тестовых пользователей в тестах и их снимках для ревью"
+targetRules = ["generic-api-key"]
+paths = ['''^tests/.*\.py$''', '''^docs/review-preparation/.*/snapshot/tests/.*\.py$''']
+
+[[allowlists]]
+description = "SHA-256 файлов в доказательствах аудита: ключ JSON — имя файла со словом key или token"
+targetRules = ["generic-api-key"]
+paths = ['''^docs/audits/.*\.json$''']

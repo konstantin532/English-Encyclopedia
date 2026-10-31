@@ -89,7 +89,7 @@ class A1IndependentAssessmentTests(TestCase):
     def test_initial_independent_page_does_not_leak_any_of_four_models(self):
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
-        bank = understanding_bank()[self.lesson.slug]
+        self.assertIn(self.lesson.slug, understanding_bank())
         self.assertContains(response, "Проверяю, что могу сам")
         self.assertContains(response, "Пишу сам")
         self.assertContains(response, "Переношу в новую ситуацию")

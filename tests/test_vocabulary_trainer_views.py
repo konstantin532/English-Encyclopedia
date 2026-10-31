@@ -294,7 +294,7 @@ class TrainerViewsTests(TestCase):
         from datetime import timedelta
         from django.utils import timezone
         from apps.learning.models import UnitProgress
-        view = self.start()
+        self.start()
         UnitProgress.objects.filter(user=self.user).update(next_review_at=timezone.now() - timedelta(days=1))
         response = self.client.get('/learning/review/')
         self.assertEqual(response.status_code, 200)
@@ -311,7 +311,7 @@ class TrainerViewsTests(TestCase):
         self.assertIn('legacy_model', self.current(view)['assistance'])
 
     def test_legacy_review_excludes_pilot_future_model_from_upcoming(self):
-        view = self.start()
+        self.start()
         response = self.client.get('/learning/review/')
         self.assertEqual(response.status_code, 200)
         self.assertIsNone(response.context['upcoming'])

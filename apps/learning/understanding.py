@@ -14,7 +14,6 @@ def quality_gates(document):
     lessons = document.get("lessons", [])
     slugs = [x.get("slug") for x in lessons]
     all_tasks = [t for x in lessons for t in x.get("tasks", {}).values()]
-    flat = [x.get(k, "") for x in lessons for k in FIELDS]
     expected = set(PILOT_SLUGS)
     return {
         "01_manifest_version": document.get("version") == 1,

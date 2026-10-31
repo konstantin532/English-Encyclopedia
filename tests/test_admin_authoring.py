@@ -10,7 +10,7 @@ from django.forms.models import model_to_dict
 from django.test import RequestFactory, TestCase, tag
 from django.urls import reverse
 from apps.lessons.models import Lesson
-from apps.lessons.admin import ExerciseEditorForm, LessonEditorForm
+from apps.lessons.admin import LessonEditorForm
 from apps.poems.models import Poem
 from apps.stories.models import Story
 from apps.stories.admin import StoryEditorForm

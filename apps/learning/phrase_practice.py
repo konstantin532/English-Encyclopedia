@@ -123,7 +123,6 @@ def plan_day(user, now=None, rng=None):
     n_mid = round(n * sc["share_mid"])
     urgent = []
     for p, r in words:
-        ev = p.memory_evidence or {}
         if r is not None and r < sc["urgent_below"] and p.memory_reviewed_at and \
                 (now - p.memory_reviewed_at).days > sc["urgent_days"]:
             urgent.append(p.unit.lemma)

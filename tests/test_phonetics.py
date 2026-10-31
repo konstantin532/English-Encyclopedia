@@ -58,7 +58,6 @@ class RussianTranscriptionTests(SimpleTestCase):
         self.assertIn('data-snd="h"', out)
 
 
-from django.core.management import call_command
 from django.test import TestCase
 from django.urls import reverse
 

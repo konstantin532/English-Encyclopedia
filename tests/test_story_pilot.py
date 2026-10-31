@@ -238,7 +238,6 @@ class WeekThreeTests(WeekContentMixin, TestCase):
 
 
 from apps.poems.models import Poem
-from apps.stories.models import Story
 
 
 class WeekFourTests(WeekContentMixin, TestCase):

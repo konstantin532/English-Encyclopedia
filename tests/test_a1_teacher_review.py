@@ -3,7 +3,6 @@ from django.test import TestCase
 from django.urls import reverse
 
 from apps.accounts.models import User
-from apps.learning.admin import IndependentAttemptReviewForm
 from apps.learning.models import IndependentAttempt
 from apps.lessons.models import Lesson
 from tests.runner import ensure_content

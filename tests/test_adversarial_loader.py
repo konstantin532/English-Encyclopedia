@@ -12,8 +12,7 @@ from django.core.management import CommandError, call_command
 from django.test import TestCase, override_settings
 from django.test import tag
 
-from apps.curriculum.models import TongueTwister, WeekScene
-from apps.lessons.models import Lesson
+from apps.curriculum.models import TongueTwister
 from apps.lexicon.models import LexicalUnit
 
 

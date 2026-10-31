@@ -1,4 +1,3 @@
-from django.core.management import call_command
 from django.test import TestCase
 
 from apps.curriculum.models import TongueTwister, Week, WeekScene

@@ -29,7 +29,7 @@ class MobileMistakeReviewTests(TestCase):
 
     def test_during_due_review_html_has_accessible_touch_selection(self):
         source = Exercise.objects.get(lesson__slug="a1-review-everything", order=1)
-        item = MistakeReview.objects.create(
+        MistakeReview.objects.create(
             user=self.user, exercise=source, due_at=timezone.now()
         )
         page = self.client.get(reverse("learning:mistake_review"))

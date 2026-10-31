@@ -1,0 +1,42 @@
+name: Lint
+# Быстрые проверки за 1–2 минуты, до долгого набора тестов: линтер, формат, типы, CSS.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+        with:
+          enable-cache: true
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "24"
+      - name: Install pnpm
+        run: |
+          npm install --global pnpm@11.25.0
+          echo "PNPM_STORE=$(pnpm store path --silent)" >> "$GITHUB_ENV"
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ env.PNPM_STORE }}
+          key: pnpm-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: uv sync --frozen
+      - name: Ruff (lint)
+        run: uv run --no-sync ruff check --output-format github .
+      - name: Ruff (format)
+        run: uv run --no-sync ruff format --check .
+      - name: mypy (types)
+        run: uv run --no-sync mypy
+      - name: Stylesheets are built from SCSS
+        run: pnpm check:css

@@ -1,8 +1,5 @@
 import re
-from pathlib import Path
 
-import yaml
-from django.conf import settings
 from django.db.models import Prefetch
 
 from django.shortcuts import get_object_or_404, render
