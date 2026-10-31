@@ -225,6 +225,7 @@ class RegisterHookTests(TestCase):
         self.user = User.objects.create_user(email="memory-hook@example.test", password="password")
         self.unit = LexicalUnit.objects.get(lemma="coffee")
 
+    @override_settings(EE_PHRASE_MEMORY_ENABLED=False)
     def test_disabled_flag_writes_nothing(self):
         p = UnitProgress.objects.create(user=self.user, unit=self.unit)
         p.register(True, "lesson#1")
@@ -448,6 +449,7 @@ class PhraseEntryLinkTests(TestCase):
         self.user = User.objects.create_user(email="phrases-link@example.test", password="password")
         self.client.force_login(self.user)
 
+    @override_settings(EE_PHRASE_MEMORY_ENABLED=False)
     def test_link_hidden_when_disabled(self):
         r = self.client.get("/learning/")
         self.assertNotContains(r, 'href="/learning/phrases/"')
