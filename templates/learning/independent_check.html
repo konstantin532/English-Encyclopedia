@@ -80,6 +80,7 @@
       {% csrf_token %}
       <input type="hidden" name="transfer_variant" value="{{ transfer_variant }}">
       <input type="hidden" name="batch_token" value="{{ batch_token }}">
+      <input type="hidden" name="assignment_id" value="{{ assignment_progress.pk|default:'' }}">
       <input type="hidden" name="action" value="batch">
       <fieldset class="independent-conditions" aria-describedby="assistance-note">
         <legend>Как вы выполняете эту попытку?</legend>

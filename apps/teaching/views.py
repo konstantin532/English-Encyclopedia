@@ -12,6 +12,7 @@ from django.utils.http import url_has_allowed_host_and_scheme
 from django.views.decorators.http import require_POST
 
 from .access import can_teach, teacher_required, visible_students
+from .assignments import change_student_group
 from .models import ContentDraft, CourseIssue, GroupMembership, StudyGroup
 from .progress import recent_attempts, summarize, summarize_many, week_goals
 from .review import (DraftForm, IssueForm, TeacherReviewForm, review_queue, reviewable, save_review, task_for,
@@ -98,7 +99,7 @@ def join_group(request):
         else:
             try:
                 with transaction.atomic():
-                    GroupMembership.objects.update_or_create(student=request.user, defaults={"group": group})
+                    change_student_group(request.user, group)
             except IntegrityError:
                 form.add_error(None, "Не получилось вступить. Попробуйте ещё раз.")
             else:
@@ -110,7 +111,7 @@ def join_group(request):
 @login_required
 @require_POST
 def leave_group(request):
-    GroupMembership.objects.filter(student=request.user).delete()
+    change_student_group(request.user)
     messages.success(request, "Вы вышли из группы.")
     return redirect("teaching:join")
 

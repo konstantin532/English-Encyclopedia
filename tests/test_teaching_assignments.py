@@ -1,13 +1,23 @@
 """Модели и поток назначений уроков группы."""
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 
+from django.core.exceptions import PermissionDenied, ValidationError
 from django.db import IntegrityError, transaction
 from django.test import TestCase
+from django.urls import reverse
 
 from apps.accounts.models import User
 from apps.learning.models import IndependentAttempt
 from apps.lessons.models import Lesson
-from apps.teaching.models import AssignmentProgress, LessonAssignment, StudyGroup
+from apps.teaching.assignments import (
+    assignment_is_overdue,
+    complete_assignment,
+    create_lesson_assignment,
+    start_assignment,
+    withdraw_assignments_for_group,
+)
+from apps.teaching.models import AssignmentProgress, GroupMembership, LessonAssignment, StudyGroup
 from tests.runner import ensure_content
 
 
@@ -84,3 +94,240 @@ class AssignmentModelTests(TestCase):
         self.assertIsNone(historical.assignment_progress_id)
         self.assertEqual(assigned.assignment_progress, progress)
         self.assertEqual(progress.work.get(), assigned)
+
+
+class AssignmentRulesTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        ensure_content()
+        make_user = User.objects.create_user
+        cls.teacher = make_user("teacher-rules@example.com", "pass-12345", is_teacher=True)
+        cls.other_teacher = make_user("teacher-other@example.com", "pass-12345", is_teacher=True)
+        cls.student = make_user("student-rules@example.com", "pass-12345")
+        cls.late_student = make_user("late-student@example.com", "pass-12345")
+        cls.group = StudyGroup.objects.create(teacher=cls.teacher, name="Assignment group")
+        cls.other_group = StudyGroup.objects.create(teacher=cls.other_teacher, name="Other group")
+        GroupMembership.objects.create(group=cls.group, student=cls.student)
+        cls.lesson = Lesson.objects.filter(is_published=True, level__code="A1").first()
+
+    def assign(self, *, due_date=None):
+        return create_lesson_assignment(
+            teacher=self.teacher,
+            group=self.group,
+            lesson=self.lesson,
+            due_date=due_date,
+        )
+
+    def test_late_joiner_does_not_receive_an_existing_assignment(self):
+        assignment = self.assign()
+        GroupMembership.objects.create(group=self.group, student=self.late_student)
+
+        self.assertTrue(
+            AssignmentProgress.objects.filter(
+                assignment=assignment,
+                student=self.student,
+            ).exists()
+        )
+        self.assertFalse(
+            AssignmentProgress.objects.filter(
+                assignment=assignment,
+                student=self.late_student,
+            ).exists()
+        )
+
+    def test_reassigning_same_lesson_creates_a_new_instance(self):
+        first = self.assign(due_date=date(2026, 11, 5))
+        first_progress = first.progress_records.get(student=self.student)
+        first_progress = start_assignment(self.student, first_progress)
+        second = self.assign(due_date=date(2026, 11, 12))
+        second_progress = second.progress_records.get(student=self.student)
+
+        self.assertNotEqual(first.pk, second.pk)
+        self.assertEqual(first_progress.status, AssignmentProgress.Status.IN_PROGRESS)
+        self.assertEqual(second_progress.status, AssignmentProgress.Status.NOT_STARTED)
+        self.assertEqual(first.due_date, date(2026, 11, 5))
+        self.assertEqual(second.due_date, date(2026, 11, 12))
+
+    def test_due_date_is_not_overdue_until_the_local_day_ends(self):
+        due_date = date(2026, 11, 5)
+        assignment = self.assign(due_date=due_date)
+        progress = assignment.progress_records.get(student=self.student)
+        moscow = ZoneInfo("Europe/Moscow")
+        last_second = datetime(2026, 11, 5, 23, 59, 59, tzinfo=moscow)
+        next_midnight = datetime(2026, 11, 6, 0, 0, tzinfo=moscow)
+
+        self.assertFalse(assignment_is_overdue(progress, now=last_second))
+        self.assertTrue(assignment_is_overdue(progress, now=next_midnight))
+
+    def test_assignment_without_due_date_never_becomes_overdue(self):
+        assignment = self.assign()
+        progress = assignment.progress_records.get(student=self.student)
+
+        self.assertFalse(
+            assignment_is_overdue(
+                progress,
+                now=datetime(2027, 1, 1, 0, 0, tzinfo=ZoneInfo("Europe/Moscow")),
+            )
+        )
+
+    def test_previous_completion_is_explicit_and_not_inferred_from_old_attempts(self):
+        IndependentAttempt.objects.create(
+            user=self.student,
+            lesson=self.lesson,
+            skill="transfer",
+            submitted="I have a small room.",
+            outcome=IndependentAttempt.Outcome.SELF_REPORTED,
+        )
+        assignment = self.assign(due_date=date(2026, 10, 30))
+        progress = assignment.progress_records.get(student=self.student)
+        now = datetime(2026, 10, 31, 12, 0, tzinfo=ZoneInfo("Europe/Moscow"))
+
+        self.assertEqual(progress.status, AssignmentProgress.Status.NOT_STARTED)
+        self.assertTrue(assignment_is_overdue(progress, now=now))
+
+        complete_assignment(
+            self.student,
+            progress,
+            previously_completed=True,
+            now=now,
+        )
+
+        progress.refresh_from_db()
+        self.assertEqual(progress.status, AssignmentProgress.Status.COMPLETED)
+        self.assertEqual(
+            progress.completion_source,
+            AssignmentProgress.CompletionSource.PREVIOUSLY_COMPLETED,
+        )
+        self.assertFalse(assignment_is_overdue(progress, now=now))
+
+    def test_completed_or_withdrawn_assignment_is_not_overdue(self):
+        assignment = self.assign(due_date=date(2026, 10, 30))
+        progress = assignment.progress_records.get(student=self.student)
+        now = datetime(2026, 10, 31, 12, 0, tzinfo=ZoneInfo("Europe/Moscow"))
+
+        progress = complete_assignment(self.student, progress, now=now)
+        self.assertFalse(assignment_is_overdue(progress, now=now))
+
+        other_assignment = self.assign(due_date=date(2026, 10, 30))
+        withdrawn = other_assignment.progress_records.get(student=self.student)
+        withdraw_assignments_for_group(self.student, self.group, now=now)
+        withdrawn.refresh_from_db()
+        self.assertEqual(withdrawn.status, AssignmentProgress.Status.WITHDRAWN)
+        self.assertFalse(assignment_is_overdue(withdrawn, now=now))
+
+    def test_teacher_can_assign_only_own_groups_and_published_lessons(self):
+        with self.assertRaises(PermissionDenied):
+            create_lesson_assignment(
+                teacher=self.other_teacher,
+                group=self.group,
+                lesson=self.lesson,
+            )
+
+        self.lesson.is_published = False
+        self.lesson.save(update_fields=["is_published"])
+        with self.assertRaises(ValidationError):
+            self.assign()
+
+    def test_leaving_withdraws_open_work_but_preserves_completion_and_answers(self):
+        assignment = self.assign()
+        completed = complete_assignment(
+            self.student, assignment.progress_records.get(student=self.student),
+        )
+        open_progress = self.assign().progress_records.get(student=self.student)
+        attempt = IndependentAttempt.objects.create(
+            user=self.student, lesson=self.lesson, skill="transfer",
+            submitted="This is my room.", outcome="self_reported",
+            assignment_progress=open_progress,
+        )
+        self.client.force_login(self.student)
+        self.client.post(reverse("teaching:leave"))
+        completed.refresh_from_db()
+        open_progress.refresh_from_db()
+        self.assertEqual(completed.status, AssignmentProgress.Status.COMPLETED)
+        self.assertIsNotNone(completed.withdrawn_at)
+        self.assertEqual(open_progress.status, AssignmentProgress.Status.WITHDRAWN)
+        self.assertTrue(IndependentAttempt.objects.filter(pk=attempt.pk).exists())
+        self.assertFalse(GroupMembership.objects.filter(student=self.student).exists())
+
+        self.client.post(reverse("teaching:join"), {"code": self.group.join_code})
+        for progress in (completed, open_progress):
+            with self.assertRaises(PermissionDenied):
+                start_assignment(self.student, progress)
+
+    def test_switch_does_not_transfer_assigned_answers_to_new_teacher(self):
+        assignment = self.assign()
+        progress = assignment.progress_records.get(student=self.student)
+        attempt = IndependentAttempt.objects.create(
+            user=self.student, lesson=self.lesson, skill="transfer",
+            submitted="This is my room.", outcome="self_reported",
+            assignment_progress=progress,
+        )
+        self.client.force_login(self.student)
+        self.client.post(reverse("teaching:join"), {"code": self.other_group.join_code})
+        progress.refresh_from_db()
+        self.assertEqual(progress.status, AssignmentProgress.Status.WITHDRAWN)
+        for teacher in (self.teacher, self.other_teacher):
+            self.client.force_login(teacher)
+            self.assertEqual(
+                self.client.get(reverse("teaching:review", args=[attempt.pk])).status_code, 404,
+            )
+            self.assertNotContains(
+                self.client.get(reverse("teaching:review_list")), "This is my room.",
+            )
+        self.other_teacher.teacher_sees_all = True
+        self.other_teacher.save(update_fields=["teacher_sees_all"])
+        self.client.force_login(self.other_teacher)
+        self.assertEqual(
+            self.client.get(reverse("teaching:review", args=[attempt.pk])).status_code, 200,
+        )
+
+    def batch_form(self, page, *, progress=None):
+        return {
+            "action": "batch", "assistance": "no_help",
+            "batch_token": page.context["batch_token"],
+            "transfer_variant": str(page.context["transfer_variant"]),
+            "assignment_id": str(progress.pk) if progress else "",
+            "answer_meaning": "Это комната.", "answer_writing": "This is a room.",
+            "answer_transfer": "This is my room.",
+            "answer_explain": "Перед одним предметом ставлю артикль.",
+        }
+
+    def test_repeated_assignments_and_self_study_keep_separate_answer_batches(self):
+        first = self.assign().progress_records.get(student=self.student)
+        second = self.assign().progress_records.get(student=self.student)
+        url = reverse("learning:independent_check", args=[self.lesson.slug])
+        first_url, second_url = f"{url}?assignment={first.pk}", f"{url}?assignment={second.pk}"
+        self.client.force_login(self.student)
+        first_page = self.client.get(first_url)
+        second_page = self.client.get(second_url)
+        self_page = self.client.get(url)
+        for target, page, progress in (
+            (first_url, first_page, first),
+            (second_url, second_page, second),
+            (url, self_page, None),
+        ):
+            response = self.client.post(target, self.batch_form(page, progress=progress))
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(
+                IndependentAttempt.objects.filter(
+                    user=self.student, assignment_progress=progress,
+                ).count(), 4,
+            )
+
+    def test_assignment_context_cannot_be_forged_or_changed_on_submission(self):
+        assignment = self.assign()
+        own = assignment.progress_records.get(student=self.student)
+        foreign = AssignmentProgress.objects.create(
+            assignment=assignment, student=self.late_student,
+        )
+        self.client.force_login(self.student)
+        url = reverse("learning:independent_check", args=[self.lesson.slug])
+        for pk in (foreign.pk, "invalid"):
+            self.assertEqual(self.client.get(f"{url}?assignment={pk}").status_code, 404)
+        page = self.client.get(url)
+        data = self.batch_form(page, progress=own)
+        self.assertEqual(self.client.post(url, data).status_code, 400)
+        own_page = self.client.get(f"{url}?assignment={own.pk}")
+        data = self.batch_form(own_page)
+        self.assertEqual(self.client.post(url, data).status_code, 400)
+        self.assertEqual(IndependentAttempt.objects.filter(user=self.student).count(), 0)
