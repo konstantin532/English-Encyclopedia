@@ -56,3 +56,17 @@ devcontainer, CODEOWNERS, шаблоны задач, поиск секретов
   `mypy` → no issues in 138 files; быстрые тесты → 1274 tests, 315.9s, OK (skipped=8).
 
 Следующий шаг: этап 2 — devcontainer, CODEOWNERS, шаблоны задач, метки, `.factory/hooks.json` + тест.
+
+### Этап 2. Документация и процесс
+
+- `.devcontainer/`: Python 3.13 (как `.python-version`), uv, Node 24, pnpm, PostgreSQL 16 для
+  `TEST_DATABASE_URL`; установка — тот же `scripts/codex_cloud_setup.sh`, что в облаке Codex.
+  Окружение uv вынесено из рабочей папки (`UV_PROJECT_ENVIRONMENT`), чтобы не смешивать `.venv` Windows и Linux.
+- `.github/CODEOWNERS`, три шаблона задач, `.github/labels.json` + workflow `labels.yml` (через `gh label`,
+  без сторонних действий), `dependabot.yml` (uv, npm, GitHub Actions).
+- `.factory/hooks.json`: Droid вызывает тот же `guard.py`. Тест запускает `guard.py` с событием Droid
+  (`tool_input.command` + `riskLevel`) → код 2 для `git reset --hard`, 0 для `git status`.
+- Новый тест сразу нашёл ошибку YAML в шаблоне «Идея» (двоеточие в тексте) — исправлено.
+- Проверки: `tests.test_agent_setup tests.test_tooling` → OK; pre-commit на новых файлах → Passed.
+
+Следующий шаг: этап 3 — JSON-журналы, ID запроса, Sentry, `/metrics`; CodeQL и gitleaks уже написаны.

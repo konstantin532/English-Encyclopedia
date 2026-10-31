@@ -1,0 +1,25 @@
+{
+  "PreToolUse": [
+    {
+      "matcher": "Execute",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "uv run --no-sync python scripts/agent_hooks/guard.py command",
+          "timeout": 30
+        }
+      ]
+    }
+  ],
+  "Stop": [
+    {
+      "hooks": [
+        {
+          "type": "command",
+          "command": "uv run --no-sync python scripts/agent_hooks/guard.py stop",
+          "timeout": 240
+        }
+      ]
+    }
+  ]
+}

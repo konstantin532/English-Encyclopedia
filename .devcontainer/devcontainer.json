@@ -1,0 +1,25 @@
+{
+  "name": "English Encyclopedia",
+  "dockerComposeFile": "compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/english-encyclopedia",
+  "shutdownAction": "stopCompose",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "24" },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "containerEnv": {
+    "UV_LINK_MODE": "copy",
+    "UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv-ee"
+  },
+  "postCreateCommand": "bash scripts/codex_cloud_setup.sh && uv run --no-sync pre-commit install",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": { "label": "Django" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "charliermarsh.ruff", "ms-python.mypy-type-checker"]
+    }
+  }
+}

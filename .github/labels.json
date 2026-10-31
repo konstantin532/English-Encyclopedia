@@ -1,0 +1,18 @@
+[
+  {"name": "type:bug", "color": "d73a4a", "description": "Что-то работает не так"},
+  {"name": "type:content", "color": "0e8a16", "description": "Ошибка или улучшение учебного текста"},
+  {"name": "type:idea", "color": "a2eeef", "description": "Новая возможность"},
+  {"name": "type:chore", "color": "cfd3d7", "description": "Инфраструктура, CI, зависимости"},
+  {"name": "area:content", "color": "c2e0c6", "description": "Недели, уроки, истории, лексика"},
+  {"name": "area:ui", "color": "f9d0c4", "description": "Интерфейс и внешний вид"},
+  {"name": "area:engine", "color": "bfdadc", "description": "Django, модели, данные"},
+  {"name": "area:security", "color": "b60205", "description": "Доступ, права, секреты"},
+  {"name": "area:agents", "color": "5319e7", "description": "Настройка ИИ-агентов"},
+  {"name": "P0", "color": "b60205", "description": "Потеря данных, критическая уязвимость, массовая недоступность"},
+  {"name": "P1", "color": "d93f0b", "description": "Серьёзная функциональная или учебная неисправность"},
+  {"name": "P2", "color": "fbca04", "description": "Заметная проблема UX, производительности, архитектуры"},
+  {"name": "P3", "color": "fef2c0", "description": "Локальное улучшение"},
+  {"name": "needs-native-check", "color": "1d76db", "description": "Нужна проверка носителем языка"},
+  {"name": "flaky-test", "color": "e99695", "description": "Тест падает не каждый раз"},
+  {"name": "dependencies", "color": "0366d6", "description": "Обновление зависимостей (Dependabot)"}
+]

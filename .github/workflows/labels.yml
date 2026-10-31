@@ -1,0 +1,26 @@
+name: Sync labels
+# Метки задач живут в .github/labels.json; этот workflow создаёт и обновляет их на GitHub.
+# Лишние метки не удаляет.
+on:
+  push:
+    branches: [main]
+    paths: ['.github/labels.json', '.github/workflows/labels.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          for label in json.load(open(".github/labels.json", encoding="utf-8")):
+              subprocess.run(["gh", "label", "create", label["name"], "--color", label["color"],
+                              "--description", label["description"], "--force"], check=True)
+          PY

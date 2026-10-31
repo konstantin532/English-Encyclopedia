@@ -1,0 +1,31 @@
+# Dependabot раз в неделю предлагает обновления зависимостей отдельными PR.
+# Merge — только автор (AGENTS.md §3).
+version: 2
+updates:
+  - package-ecosystem: uv
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels: [dependencies, type:chore]
+    groups:
+      dev-tools:
+        dependency-type: development
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    labels: [dependencies, type:chore]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    labels: [dependencies, type:chore]
+    groups:
+      actions:
+        patterns: ["*"]

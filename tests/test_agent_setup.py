@@ -115,6 +115,28 @@ class GuardCommandTests(SimpleTestCase):
     def test_stop_gate_does_not_loop(self):
         self.assertIsNone(self.guard.stop_gate({"stop_hook_active": True}))
 
+    def test_blocks_droid_execute_event_end_to_end(self):
+        # Factory Droid передаёт команду в tool_input.command, рядом лежат свои поля (riskLevel).
+        import subprocess
+        import sys
+
+        event = {
+            "hook_event_name": "PreToolUse",
+            "tool_name": "Execute",
+            "tool_input": {"command": "git reset --hard HEAD~1", "riskLevel": "high", "summary": "x"},
+        }
+        result = subprocess.run(
+            [sys.executable, str(GUARD_PATH), "command"],
+            input=json.dumps(event), capture_output=True, text=True, encoding="utf-8", timeout=60,
+        )
+        self.assertEqual(result.returncode, 2, result.stderr)
+        event["tool_input"]["command"] = "git status"
+        allowed = subprocess.run(
+            [sys.executable, str(GUARD_PATH), "command"],
+            input=json.dumps(event), capture_output=True, text=True, encoding="utf-8", timeout=60,
+        )
+        self.assertEqual(allowed.returncode, 0, allowed.stderr)
+
 
 class InstructionFilesTests(SimpleTestCase):
     """AGENTS.md — единственный источник правил для Codex, Claude Code и бота Codex на GitHub."""
@@ -157,6 +179,15 @@ class AgentConfigTests(SimpleTestCase):
         hooks = (ROOT / ".codex" / "hooks.json").read_text(encoding="utf-8")
         self.assertIn("guard.py command", hooks)
         self.assertIn("guard.py stop", hooks)
+
+    def test_droid_hooks_use_guard(self):
+        # Factory Droid читает .factory/hooks.json: события на верхнем уровне, без ключа "hooks".
+        hooks = json.loads((ROOT / ".factory" / "hooks.json").read_text(encoding="utf-8"))
+        self.assertNotIn("hooks", hooks)
+        self.assertTrue(any(group.get("matcher") == "Execute" for group in hooks["PreToolUse"]))
+        commands = json.dumps(hooks)
+        self.assertIn("guard.py command", commands)
+        self.assertIn("guard.py stop", commands)
 
     def test_codex_approvals_go_to_auto_review(self):
         # Без автора работа не встаёт на ручном подтверждении. "never" отключил бы проверку

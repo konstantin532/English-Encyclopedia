@@ -1,0 +1,23 @@
+name: Идея
+description: Новая возможность или улучшение
+title: "[Идея] "
+labels: ["type:idea"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую задачу решает
+      description: Кому и в какой ситуации это поможет.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Что предлагается
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Как понять, что готово
+      description: "Измеримый результат: что ученик или учитель сможет сделать."

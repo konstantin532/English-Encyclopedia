@@ -1,0 +1,49 @@
+name: Ошибка на сайте
+description: Что-то сломалось или работает не так, как ожидалось
+title: "[Ошибка] "
+labels: ["type:bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: Что случилось
+      description: Что вы сделали и что увидели.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Что ожидалось
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Как повторить
+      description: Адрес страницы и шаги по порядку.
+      placeholder: |
+        1. Открыть /levels/a1/week/1/
+        2. Нажать …
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Устройство
+      options:
+        - Телефон
+        - Планшет
+        - Компьютер
+  - type: dropdown
+    id: area
+    attributes:
+      label: Область
+      options:
+        - Уроки и упражнения
+        - Вход и регистрация
+        - Кабинет учителя
+        - Внешний вид
+        - Другое
+  - type: markdown
+    attributes:
+      value: "Не прикладывайте пароли, почту и другие личные данные учеников."

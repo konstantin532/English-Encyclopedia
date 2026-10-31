@@ -56,3 +56,46 @@ class ToolingRatchetTests(SimpleTestCase):
                 self.assertIn(hook, config)
         # Окончания строк только проверяются: автоматическая правка переписала бы файлы целиком.
         self.assertRegex(config, re.compile(r"id: mixed-line-ending\s+args: \[--fix=no\]"))
+
+
+class RepositoryProcessTests(SimpleTestCase):
+    """Шаблоны задач, метки, владельцы кода и среда разработки согласованы между собой."""
+
+    def labels(self) -> set[str]:
+        import json
+
+        return {label["name"] for label in json.loads((ROOT / ".github" / "labels.json").read_text(encoding="utf-8"))}
+
+    def test_issue_templates_use_known_labels(self):
+        import yaml
+
+        templates = sorted((ROOT / ".github" / "ISSUE_TEMPLATE").glob("*.yml"))
+        forms = [t for t in templates if t.name != "config.yml"]
+        self.assertGreaterEqual(len(forms), 3)
+        for path in forms:
+            with self.subTest(template=path.name):
+                form = yaml.safe_load(path.read_text(encoding="utf-8"))
+                self.assertTrue(form["name"] and form["description"] and form["body"])
+                self.assertLessEqual(set(form.get("labels", [])), self.labels())
+
+    def test_dependabot_uses_known_labels(self):
+        import yaml
+
+        config = yaml.safe_load((ROOT / ".github" / "dependabot.yml").read_text(encoding="utf-8"))
+        ecosystems = {u["package-ecosystem"] for u in config["updates"]}
+        self.assertEqual(ecosystems, {"uv", "npm", "github-actions"})
+        for update in config["updates"]:
+            self.assertLessEqual(set(update.get("labels", [])), self.labels())
+
+    def test_codeowners_names_the_author(self):
+        self.assertIn("* @konstantin532", (ROOT / ".github" / "CODEOWNERS").read_text(encoding="utf-8"))
+
+    def test_devcontainer_matches_project_versions(self):
+        import json
+
+        config = json.loads((ROOT / ".devcontainer" / "devcontainer.json").read_text(encoding="utf-8"))
+        compose = (ROOT / ".devcontainer" / config["dockerComposeFile"]).read_text(encoding="utf-8")
+        python = (ROOT / ".python-version").read_text(encoding="utf-8").strip()
+        self.assertIn(f"devcontainers/python:{python}", compose)
+        self.assertIn("postgres:16", compose)
+        self.assertIn("codex_cloud_setup.sh", config["postCreateCommand"])

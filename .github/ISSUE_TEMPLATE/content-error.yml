@@ -1,0 +1,32 @@
+name: Ошибка в учебном тексте
+description: Неестественная фраза, опечатка, неверный перевод или объяснение
+title: "[Текст] "
+labels: ["type:content", "area:content"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Где
+      description: Уровень, неделя, урок или адрес страницы.
+      placeholder: A1, неделя 3, урок «В кафе»
+    validations:
+      required: true
+  - type: textarea
+    id: now
+    attributes:
+      label: Как сейчас
+    validations:
+      required: true
+  - type: textarea
+    id: better
+    attributes:
+      label: Как лучше и почему
+      description: Как сказал бы американец в этой ситуации (AGENTS.md §5.1).
+    validations:
+      required: true
+  - type: checkboxes
+    id: native
+    attributes:
+      label: Проверка
+      options:
+        - label: Нужна проверка носителем языка
