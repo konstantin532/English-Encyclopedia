@@ -99,3 +99,17 @@ class RepositoryProcessTests(SimpleTestCase):
         self.assertIn(f"devcontainers/python:{python}", compose)
         self.assertIn("postgres:16", compose)
         self.assertIn("codex_cloud_setup.sh", config["postCreateCommand"])
+
+    def test_droid_review_is_pinned_and_skips_without_key(self):
+        import yaml
+
+        path = ROOT / ".github" / "workflows" / "droid-review.yml"
+        workflow = yaml.load(path.read_text(encoding="utf-8"), Loader=yaml.BaseLoader)
+        job = workflow["jobs"]["review"]
+        self.assertIn("draft == false", job["if"])
+        action = next(step for step in job["steps"] if step.get("uses", "").startswith("Factory-AI/droid-action@"))
+        self.assertRegex(action["uses"], r"@[0-9a-f]{40}$")
+        self.assertEqual(action["with"]["automatic_review"], "true")
+        self.assertEqual(action["if"], "steps.check.outputs.configured == 'true'")
+        checkout = next(step for step in job["steps"] if step.get("uses", "").startswith("actions/checkout@"))
+        self.assertEqual(checkout["with"]["persist-credentials"], "false")

@@ -2,6 +2,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import ensure_csrf_cookie
 
+from apps.core import analytics
 from apps.core.a1_active import MAX_TOPIC, active_topics
 from apps.learning.understanding import get_guide
 
@@ -10,7 +11,8 @@ from .models import Lesson
 
 @ensure_csrf_cookie
 def lesson_detail(request, slug):
-    lesson = get_object_or_404(Lesson.objects.select_related("level", "focus"), slug=slug, is_published=True)
+    lesson = get_object_or_404(Lesson.objects.select_related("level", "focus", "week"), slug=slug, is_published=True)
+    analytics.capture(request, "lesson_opened", **analytics.lesson_properties(lesson))
     extra_missions = None
     if lesson.level.code == "A1" and 1 <= lesson.order <= MAX_TOPIC:
         supplement = active_topics()[lesson.order]

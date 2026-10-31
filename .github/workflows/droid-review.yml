@@ -1,0 +1,49 @@
+name: Droid review
+# Автоматическое ревью PR через Factory Droid (Factory-AI/droid-action), в дополнение к Claude и Codex.
+# Правила проверки Droid берёт из AGENTS.md (раздел «Code Review Rules»).
+# Пока нет секрета FACTORY_API_KEY, задача отмечается и завершается без ревью.
+on:
+  pull_request:
+    types: [opened, ready_for_review, reopened]
+permissions:
+  contents: read
+concurrency:
+  group: droid-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  review:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - name: Check Factory key
+        id: check
+        env:
+          FACTORY_API_KEY: ${{ secrets.FACTORY_API_KEY }}
+        run: |
+          if [ -z "$FACTORY_API_KEY" ]; then
+            echo "::notice::Нет секрета FACTORY_API_KEY — ревью Droid пропущено."
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.check.outputs.configured == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          # Токен не остаётся в .git/config, где его прочла бы любая команда Droid.
+          persist-credentials: false
+      - if: steps.check.outputs.configured == 'true'
+        uses: Factory-AI/droid-action@260eac443df653198ed70e9ea9d32980cfabde23 # v13
+        with:
+          factory_api_key: ${{ secrets.FACTORY_API_KEY }}
+          automatic_review: true
+          automatic_security_review: true
+          review_depth: deep
+          allowed_bots: factory-droid

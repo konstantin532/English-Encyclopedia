@@ -103,3 +103,24 @@ devcontainer, CODEOWNERS, шаблоны задач, поиск секретов
 - Проверки: `tests.test_delivery_tools tests.test_ci_workflows` → 11 tests, OK; `ruff check .` → All checks passed.
 
 Следующий шаг: этап 5 — события PostHog в уроке и упражнениях, experiments, Droid review workflow.
+
+### Этап 5. Аналитика, эксперименты, ревью Droid
+
+- `apps/core/analytics.py`: серверный PostHog, только при `POSTHOG_KEY`. События `lesson_opened`
+  (`lessons:detail`), `exercise_mistake` (проверенная ошибка, свободный ответ ошибкой не считается) и
+  `lesson_completed` (первое верное решение, после которого решены все упражнения урока) в
+  `api:check_exercise`. Имена событий и свойств проверяются и без ключа; без ключа `track_exercise`
+  не делает запросов к базе. ID — HMAC-псевдоним, профили не создаются, GeoIP выключен.
+- JS-скрипт PostHog в браузер не добавлен (в плане был): CSP и cookies не меняются, личных данных
+  меньше. Записано в «Решения без автора».
+- `apps/core/experiments.py`: флаг-пример `lesson-hint-style`, неизвестный вариант, сбой или нет ключа
+  → значение по умолчанию.
+- `droid-review.yml`: Factory-AI/droid-action по SHA (v13), автоматическое ревью и ревью безопасности
+  на не-черновых PR, без секрета `FACTORY_API_KEY` — пропуск с пометкой; `persist-credentials: false`.
+- Файл `apps/lessons/views.py` хранит смешанные окончания строк; правка сделана побайтно, чтобы diff
+  был в 2 строки, а не переписал соседние.
+- Проверки: `tests.test_analytics` → 8 tests OK; `tests.test_tooling tests.test_ci_workflows
+  tests.test_analytics tests.test_agent_setup` → 67 tests OK; ruff check / format --check / mypy → чисто;
+  быстрые тесты → 1307 tests, 369.0s, OK (skipped=8) — `test_two_domains` в этот раз прошёл.
+
+Следующий шаг: финал — readiness.md, строка в AGENTS.md, полный прогон, push, PR.

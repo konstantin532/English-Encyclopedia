@@ -5,6 +5,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
 
+from apps.core import analytics
 from apps.drills.models import Exercise, PracticeItem
 from apps.drills.retry_guidance import is_open_pilot_response, is_pilot_exercise, retry_guidance
 from apps.taxonomy.markup import strip_markup
@@ -20,7 +21,7 @@ from .validation import read_answer_payload
 
 @require_POST
 def check_exercise(request, pk):
-    exercise = get_object_or_404(Exercise.objects.select_related("lesson"), pk=pk, lesson__is_published=True)
+    exercise = get_object_or_404(Exercise.objects.select_related("lesson__level", "lesson__week"), pk=pk, lesson__is_published=True)
     try:
         payload = read_answer_payload(request)
     except ValueError as exc:
@@ -48,6 +49,7 @@ def check_exercise(request, pk):
         return correct, due_at
 
     correct, due_at = run_serialized(request.user, record_and_schedule)
+    analytics.track_exercise(request, exercise, correct=correct, verified=not unverified)
     data = {"correct": correct, "saved": request.user.is_authenticated and not unverified}
     if due_at:
         data["retry_scheduled_at"] = due_at.isoformat()

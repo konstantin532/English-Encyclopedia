@@ -46,6 +46,8 @@ services:
       SENTRY_RELEASE: ${SENTRY_RELEASE:-}
       SENTRY_ENVIRONMENT: ${SENTRY_ENVIRONMENT:-production}
       METRICS_TOKEN: ${METRICS_TOKEN:-}
+      POSTHOG_KEY: ${POSTHOG_KEY:-}
+      POSTHOG_HOST: ${POSTHOG_HOST:-https://eu.i.posthog.com}
     volumes:
       - media:/app/media
     healthcheck:

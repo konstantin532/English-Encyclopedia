@@ -192,3 +192,8 @@ init_sentry(
     release=SENTRY_RELEASE,
     traces_sample_rate=float(os.getenv("SENTRY_TRACES_SAMPLE_RATE", "0.1")),
 )
+
+# Аналитика урока и эксперименты (apps/core/analytics.py, apps/core/experiments.py) — только
+# если задан POSTHOG_KEY. События уходят с сервера, без имени, почты и текста ответов.
+POSTHOG_KEY = os.getenv("POSTHOG_KEY", "")
+POSTHOG_HOST = os.getenv("POSTHOG_HOST", "https://eu.i.posthog.com")
