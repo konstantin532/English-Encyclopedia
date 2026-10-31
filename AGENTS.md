@@ -74,6 +74,7 @@
 - **Интерфейс:** `pnpm check:css`, `pnpm test:ui`, затем навык `ui-acceptance` (390 px, переключатели, клавиатура, `prefers-reduced-motion`, комментарий Visual review в PR). Перед работой с интерфейсом — [DESIGN.md](DESIGN.md) и навык `encyclopedia-design`.
 - **Безопасность:** значения из `.env`, ключей и паролей не попадают в ответы, коммиты и PR — только имена переменных. Проверяй права (ученик A против ученика B, учитель и чужая группа). Не ломай регистрацию, вход и сохранение прогресса.
 - **Ограничители:** `guard.py` (хуки `.claude/settings.json` и `.codex/hooks.json`) блокирует force push, push в `main`, `reset --hard`, `clean -f`, `flush`, `DROP TABLE`, чтение `.env` и не даёт сказать «готово», если падают `manage.py check` или `makemigrations --check`. Не обходи его другой командой — спроси автора.
+- **Готовность к агентам** (сканеры, журналы, Sentry, PostHog, ревью Droid): что включено и какие секреты нужны — [docs/agents/readiness.md](docs/agents/readiness.md).
 - Недоступный тест или браузер — **BLOCKED**, а не «пройдено». Отчёт касается только реально запущенных проверок.
 
 ## 7. Навыки проекта

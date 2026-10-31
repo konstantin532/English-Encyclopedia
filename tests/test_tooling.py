@@ -12,6 +12,7 @@ PYPROJECT = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
 # Сколько старых файлов было до появления проверок (2026-10-31). Числа только уменьшаются.
 FORMAT_LEGACY_MAX = 282
 MYPY_LEGACY_MAX = 15
+MIXED_EOL_LEGACY_MAX = 6
 
 
 def _mypy_legacy_modules() -> list[str]:
@@ -56,6 +57,16 @@ class ToolingRatchetTests(SimpleTestCase):
                 self.assertIn(hook, config)
         # Окончания строк только проверяются: автоматическая правка переписала бы файлы целиком.
         self.assertRegex(config, re.compile(r"id: mixed-line-ending\s+args: \[--fix=no\]"))
+
+    def test_mixed_line_ending_legacy_list_only_shrinks(self):
+        import yaml
+
+        config = yaml.safe_load((ROOT / ".pre-commit-config.yaml").read_text(encoding="utf-8"))
+        hooks = [hook for repo in config["repos"] for hook in repo["hooks"]]
+        exclude = next(hook for hook in hooks if hook["id"] == "mixed-line-ending")["exclude"]
+        legacy = [path.replace("\\.", ".") for path in exclude.removeprefix("^(").removesuffix(")$").split("|")]
+        self.assertLessEqual(len(legacy), MIXED_EOL_LEGACY_MAX)
+        self.assertEqual([path for path in legacy if not (ROOT / path).is_file()], [])
 
 
 class RepositoryProcessTests(SimpleTestCase):

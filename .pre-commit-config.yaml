@@ -26,6 +26,9 @@ repos:
         args: [--maxkb=1024]
       - id: mixed-line-ending
         args: [--fix=no]
+        # Старые файлы со смешанными окончаниями: правка целиком переписала бы файл. Список только
+        # сокращается (tests/test_tooling.py); исправленный файл убери отсюда.
+        exclude: ^(apps/curriculum/views\.py|apps/lessons/views\.py|templates/components/week_hero\.html|templates/curriculum/week\.html|templates/lessons/detail\.html|tests/test_a1_learning_route\.py)$
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.30.1
     hooks:

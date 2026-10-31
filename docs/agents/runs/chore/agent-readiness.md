@@ -124,3 +124,20 @@ devcontainer, CODEOWNERS, шаблоны задач, поиск секретов
   быстрые тесты → 1307 tests, 369.0s, OK (skipped=8) — `test_two_domains` в этот раз прошёл.
 
 Следующий шаг: финал — readiness.md, строка в AGENTS.md, полный прогон, push, PR.
+
+### Финал
+
+- `docs/agents/readiness.md` — что включено, личные данные, шаги автора; в AGENTS.md одна строка в §6
+  (размер 23 829 байт из 24 576).
+- pre-commit на всех файлах ветки нашёл 6 старых файлов `main` со смешанными окончаниями строк
+  (`git ls-files --eol` → `i/mixed`), среди них правленный `apps/lessons/views.py`. Переписывать их
+  целиком нельзя (AGENTS.md §3), поэтому они в `exclude` хука `mixed-line-ending`, список только
+  сокращается (`MIXED_EOL_LEGACY_MAX = 6` в `tests/test_tooling.py`).
+- Проверки: `manage.py check` → no issues; `makemigrations --check --dry-run` → No changes detected;
+  `node scripts/build_styles.mjs --check` → Stylesheets verified: 24; `node --test tests/js/*.test.cjs` →
+  203 pass, 0 fail; `pre-commit run --files <файлы ветки>` → все Passed; полный
+  `uv run python manage.py test tests --parallel auto --settings=config.settings.test` → 1357 tests,
+  494.9s, OK (skipped=8).
+
+Следующий шаг: автор — настройки GitHub и секреты из `docs/agents/readiness.md`, слияние PR,
+`/readiness-report`.
