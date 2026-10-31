@@ -108,6 +108,8 @@ def change_student_group(student, group=None):
 
 def student_assignment(student, pk, *, lesson=None):
     """A writable context must be explicit, owned, and still in its original group."""
+    if not student.is_authenticated:
+        raise Http404
     try:
         pk = int(pk)
     except (TypeError, ValueError):
@@ -119,3 +121,16 @@ def student_assignment(student, pk, *, lesson=None):
     if lesson is not None:
         records = records.filter(assignment__lesson=lesson)
     return get_object_or_404(records, pk=pk)
+
+
+def student_assignment_cards(student):
+    group_id = GroupMembership.objects.filter(student=student).values_list("group_id", flat=True).first()
+    active, history = [], []
+    records = AssignmentProgress.objects.filter(student=student).select_related(
+        "assignment__lesson", "assignment__group",
+    ).order_by("-assignment__assigned_at", "-pk")
+    for progress in records:
+        writable = progress.withdrawn_at is None and progress.assignment.group_id == group_id
+        row = {"progress": progress, "overdue": assignment_is_overdue(progress), "writable": writable}
+        (active if writable and progress.status in OPEN_STATUSES else history).append(row)
+    return active, history

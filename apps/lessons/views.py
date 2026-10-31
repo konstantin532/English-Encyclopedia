@@ -4,6 +4,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 
 from apps.core.a1_active import MAX_TOPIC, active_topics
 from apps.learning.understanding import get_guide
+from apps.teaching.assignments import start_assignment, student_assignment
 
 from .models import Lesson
 
@@ -11,6 +12,10 @@ from .models import Lesson
 @ensure_csrf_cookie
 def lesson_detail(request, slug):
     lesson = get_object_or_404(Lesson.objects.select_related("level", "focus"), slug=slug, is_published=True)
+    progress = (
+        start_assignment(request.user, student_assignment(request.user, request.GET["assignment"], lesson=lesson))
+        if "assignment" in request.GET else None
+    )
     extra_missions = None
     if lesson.level.code == "A1" and 1 <= lesson.order <= MAX_TOPIC:
         supplement = active_topics()[lesson.order]
@@ -27,6 +32,7 @@ def lesson_detail(request, slug):
         "editorial_words": [u for u in glossary_units if u.unit_type == "word"],
         "editorial_phrases": [u for u in glossary_units if u.unit_type != "word"],
         "lesson": lesson,
+        "assignment_progress": progress,
         "lesson_design_pilot": lesson.slug in {"a1-nouns-first-words", "a1-verb-be"},
         "extra_missions": extra_missions,
         "a1_pilot": lesson.level.code == "A1" and 1 <= lesson.order <= 28,

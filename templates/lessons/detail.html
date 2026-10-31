@@ -9,6 +9,7 @@
     <p class="crumbs"><a href="{% url 'curriculum:level' lesson.level.slug %}">{{ lesson.level.code }}</a>{% if lesson.week %} / неделя {{ lesson.week.number }}{% endif %} / урок {{ lesson.order }}</p>
     <h1>{{ lesson.title }}</h1>
     <p>{{ lesson.summary }}</p>
+    {% if assignment_progress %}<p>Задание группы «{{ assignment_progress.assignment.group.name }}» от {{ assignment_progress.assignment.assigned_at|date:"j E Y H:i" }} · {% if assignment_progress.assignment.due_date %}срок {{ assignment_progress.assignment.due_date|date:"j E Y" }} (Москва){% else %}без срока{% endif %} · {{ assignment_progress.get_status_display }}</p>{% endif %}
   </header>
   <div class="lesson-grid">
     <article>
@@ -102,6 +103,20 @@
       <section class="lesson-complete" id="lesson-complete" aria-labelledby="lesson-complete-title">
         <h2 id="lesson-complete-title">Урок пройден ✓</h2>
         <p>Вы дошли до конца основной части. Дополнительная практика — по желанию.</p>
+        {% if assignment_progress %}
+          {% if assignment_progress.status == "completed" %}<p>Завершение назначения сохранено как ваша самоотметка.</p>
+          {% else %}
+          <form method="post" action="{% url 'teaching:assignment_complete' assignment_progress.pk %}">
+            {% csrf_token %}<input type="hidden" name="source" value="after_assignment">
+            <button class="btn btn-primary" type="submit">Отметить урок пройденным</button>
+          </form>
+          <form method="post" action="{% url 'teaching:assignment_complete' assignment_progress.pk %}">
+            {% csrf_token %}<input type="hidden" name="source" value="previously_completed">
+            <button class="btn btn-quiet" type="submit">Я уже проходил этот урок</button>
+          </form>
+          <p>Это самоотчёт, а не подтверждение владения материалом.</p>
+          {% endif %}
+        {% endif %}
         {% if next_lesson %}<a class="btn btn-primary" href="{% url 'lessons:detail' next_lesson.slug %}">Следующий урок →</a>{% endif %}
       </section>
       {% if a1_guide or extra_missions or lesson.slug == 'a1-cafe-order' %}
@@ -111,7 +126,7 @@
       <section class="section" aria-label="Независимая проверка понимания">
         <h2>Проверка без готовых ответов</h2>
         <p>Четыре независимые задачи: смысл, письмо, новый жизненный контекст и объяснение ошибки.</p>
-        <a class="btn btn-primary" href="{% url 'learning:independent_check' lesson.slug %}">Проверить себя самостоятельно →</a>
+        <a class="btn btn-primary" href="{% url 'learning:independent_check' lesson.slug %}{% if assignment_progress %}?assignment={{ assignment_progress.pk }}{% endif %}">Проверить себя самостоятельно →</a>
       </section>
       {% endif %}
       {% if extra_missions %}

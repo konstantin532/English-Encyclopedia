@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views
+from . import assignment_views, views
 
 app_name = "teaching"
 urlpatterns = [
@@ -17,4 +17,7 @@ urlpatterns = [
     path("report-issue/", views.report_issue, name="report_issue"),
     path("group/", views.join_group, name="join"),
     path("group/leave/", views.leave_group, name="leave"),
+    path("assignments/<int:pk>/open/", assignment_views.assignment_open, name="assignment_open"),
+    path("assignments/<int:pk>/complete/", assignment_views.assignment_complete, name="assignment_complete"),
+    path("assignments/<int:pk>/history/", assignment_views.assignment_history, name="assignment_history"),
 ]

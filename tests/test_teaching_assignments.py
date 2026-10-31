@@ -331,3 +331,73 @@ class AssignmentRulesTests(TestCase):
         data = self.batch_form(own_page)
         self.assertEqual(self.client.post(url, data).status_code, 400)
         self.assertEqual(IndependentAttempt.objects.filter(user=self.student).count(), 0)
+
+    def test_student_dashboard_and_lesson_preserve_explicit_assignment_context(self):
+        progress = self.assign().progress_records.get(student=self.student)
+        self.client.force_login(self.student)
+        dashboard = self.client.get(reverse("learning:dashboard"))
+        self.assertContains(dashboard, "Задания учителя")
+        open_url = reverse("teaching:assignment_open", args=[progress.pk])
+        self.assertContains(dashboard, open_url)
+        self.assertEqual(self.client.get(open_url).status_code, 405)
+        opened = self.client.post(open_url, follow=True)
+        progress.refresh_from_db()
+        self.assertEqual(progress.status, AssignmentProgress.Status.IN_PROGRESS)
+        check_url = reverse("learning:independent_check", args=[self.lesson.slug])
+        self.assertContains(opened, f'{check_url}?assignment={progress.pk}')
+        complete_url = reverse("teaching:assignment_complete", args=[progress.pk])
+        self.assertContains(opened, complete_url)
+        self.client.post(complete_url, {"source": "after_assignment"})
+        progress.refresh_from_db()
+        timestamp = progress.completed_at
+        self.assertEqual(progress.status, AssignmentProgress.Status.COMPLETED)
+        self.client.post(complete_url, {"source": "previously_completed"})
+        progress.refresh_from_db()
+        self.assertEqual(progress.completed_at, timestamp)
+        self.assertEqual(progress.completion_source, "after_assignment")
+        ordinary = self.client.get(reverse("lessons:detail", args=[self.lesson.slug]))
+        self.assertNotContains(ordinary, complete_url)
+
+    def test_foreign_progress_and_withdrawn_progress_cannot_be_changed_by_url(self):
+        progress = self.assign().progress_records.get(student=self.student)
+        self.client.force_login(self.late_student)
+        for name in ("assignment_open", "assignment_complete"):
+            url = reverse(f"teaching:{name}", args=[progress.pk])
+            self.assertEqual(self.client.post(url, {"source": "after_assignment"}).status_code, 404)
+        self.assertEqual(
+            self.client.get(reverse("teaching:assignment_history", args=[progress.pk])).status_code, 404,
+        )
+        self.client.force_login(self.student)
+        self.client.post(reverse("teaching:leave"))
+        for name in ("assignment_open", "assignment_complete"):
+            url = reverse(f"teaching:{name}", args=[progress.pk])
+            self.assertEqual(self.client.post(url, {"source": "after_assignment"}).status_code, 404)
+        page = self.client.get(reverse("learning:dashboard"))
+        self.assertContains(page, "Снято после выхода")
+        self.assertNotContains(page, reverse("teaching:assignment_open", args=[progress.pk]))
+
+    def test_student_keeps_review_after_exit_and_review_is_specific_to_one_answer(self):
+        first = self.assign().progress_records.get(student=self.student)
+        second = self.assign().progress_records.get(student=self.student)
+        attempts = [
+            IndependentAttempt.objects.create(
+                user=self.student, lesson=self.lesson, skill="transfer",
+                submitted="This is my room.", outcome="self_reported", assignment_progress=p,
+            )
+            for p in (first, second)
+        ]
+        self.client.force_login(self.teacher)
+        response = self.client.post(reverse("teaching:review", args=[attempts[0].pk]), {
+            "teacher_verdict": "meets_task", "teacher_note": "Вы хорошо передали смысл этой ситуации.",
+            "rubric_meaning": "yes", "rubric_form": "yes", "rubric_context": "yes",
+        })
+        self.assertEqual(response.status_code, 302)
+        attempts[1].refresh_from_db()
+        self.assertEqual(attempts[1].teacher_verdict, IndependentAttempt.TeacherVerdict.UNREVIEWED)
+        self.client.force_login(self.student)
+        self.client.post(reverse("teaching:leave"))
+        history = self.client.get(reverse("learning:independent_check", args=[self.lesson.slug]))
+        self.assertContains(history, "Вы хорошо передали смысл этой ситуации.")
+        exact_history = self.client.get(reverse("teaching:assignment_history", args=[first.pk]))
+        self.assertContains(exact_history, "Вы хорошо передали смысл этой ситуации.")
+        self.assertContains(exact_history, "только для чтения")
