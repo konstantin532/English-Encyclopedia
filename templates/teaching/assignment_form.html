@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Назначить урок · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap">
+  <header class="page-head"><h1>Назначить урок группе</h1><p>Задание получат только нынешние участники. Повторное назначение создаёт отдельное задание и не меняет старый срок.</p></header>
+  {% include "teaching/_nav.html" with active="assignments" %}
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {% for field in form %}{% include "components/field.html" %}{% endfor %}
+    <p>Без срока задание не просрочивается. Указанный день входит в срок целиком по московскому времени.</p>
+    <button class="btn btn-primary" type="submit">Назначить урок</button>
+  </form>
+</div>
+{% endblock %}

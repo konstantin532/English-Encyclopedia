@@ -1,10 +1,11 @@
 """Модели и поток назначений уроков группы."""
 from datetime import date, datetime
+from unittest.mock import patch
 from zoneinfo import ZoneInfo
 
 from django.core.exceptions import PermissionDenied, ValidationError
 from django.db import IntegrityError, transaction
-from django.test import TestCase
+from django.test import Client, TestCase
 from django.urls import reverse
 
 from apps.accounts.models import User
@@ -401,3 +402,99 @@ class AssignmentRulesTests(TestCase):
         exact_history = self.client.get(reverse("teaching:assignment_history", args=[first.pk]))
         self.assertContains(exact_history, "Вы хорошо передали смысл этой ситуации.")
         self.assertContains(exact_history, "только для чтения")
+
+    def test_teacher_assignment_form_rejects_foreign_group_and_unpublished_lesson(self):
+        self.client.force_login(self.teacher)
+        url = reverse("teaching:assignment_new")
+        page = self.client.get(url)
+        self.assertContains(page, self.group.name)
+        self.assertNotContains(page, self.other_group.name)
+        data = {"group": self.other_group.pk, "lesson": self.lesson.pk, "due_date": ""}
+        self.assertEqual(self.client.post(url, data).status_code, 200)
+        self.assertEqual(LessonAssignment.objects.count(), 0)
+        data["group"] = self.group.pk
+        self.lesson.is_published = False
+        self.lesson.save(update_fields=["is_published"])
+        self.assertEqual(self.client.post(url, data).status_code, 200)
+        self.assertEqual(LessonAssignment.objects.count(), 0)
+        self.lesson.is_published = True
+        self.lesson.save(update_fields=["is_published"])
+        data["due_date"] = "2026-11-05"
+        self.assertEqual(self.client.post(url, data).status_code, 302)
+        assignment = LessonAssignment.objects.get()
+        self.assertEqual(assignment.teacher, self.teacher)
+        self.assertEqual(assignment.due_date, date(2026, 11, 5))
+        self.assertEqual(list(assignment.progress_records.values_list("student_id", flat=True)), [self.student.pk])
+
+    def test_teacher_lists_repeated_assignments_but_cannot_read_foreign_assignment(self):
+        first, second = self.assign(), self.assign()
+        self.client.force_login(self.teacher)
+        page = self.client.get(reverse("teaching:assignments"))
+        for assignment in (first, second):
+            self.assertContains(page, reverse("teaching:assignment", args=[assignment.pk]))
+        detail_url = reverse("teaching:assignment", args=[first.pk])
+        self.assertContains(self.client.get(detail_url), self.student.email)
+        self.client.force_login(self.other_teacher)
+        self.assertEqual(self.client.get(detail_url).status_code, 404)
+        self.other_teacher.teacher_sees_all = True
+        self.other_teacher.save(update_fields=["teacher_sees_all"])
+        self.assertEqual(self.client.get(detail_url).status_code, 200)
+        self.client.force_login(self.student)
+        self.assertEqual(self.client.get(detail_url).status_code, 403)
+        self.assertEqual(self.client.get(reverse("teaching:assignment_new")).status_code, 403)
+
+    def test_attention_separates_overdue_from_pending_review_of_completed_work(self):
+        overdue = self.assign(due_date=date(2026, 11, 4)).progress_records.get(student=self.student)
+        due_today = self.assign(due_date=date(2026, 11, 5)).progress_records.get(student=self.student)
+        no_deadline = self.assign().progress_records.get(student=self.student)
+        completed = complete_assignment(
+            self.student, self.assign(due_date=date(2026, 11, 4)).progress_records.get(student=self.student),
+        )
+        pending = IndependentAttempt.objects.create(
+            user=self.student, lesson=self.lesson, skill="transfer",
+            submitted="This is my room.", outcome="self_reported", assignment_progress=completed,
+        )
+        self.client.force_login(self.teacher)
+        now = datetime(2026, 11, 5, 12, 0, tzinfo=ZoneInfo("Europe/Moscow"))
+        with patch("apps.teaching.assignments.timezone.now", return_value=now):
+            page = self.client.get(reverse("teaching:dashboard"))
+        self.assertEqual([p.pk for p in page.context["overdue_assignments"]], [overdue.pk])
+        self.assertNotIn(due_today, page.context["overdue_assignments"])
+        self.assertNotIn(no_deadline, page.context["overdue_assignments"])
+        self.assertContains(page, reverse("teaching:review", args=[pending.pk]))
+        self.assertContains(page, "Требуют внимания")
+        self.client.force_login(self.student)
+        self.client.post(reverse("teaching:leave"))
+        self.client.force_login(self.teacher)
+        detail = self.client.get(reverse("teaching:assignment", args=[overdue.assignment_id]))
+        self.assertNotContains(detail, self.student.email)
+
+    def test_complete_overdue_list_is_paginated_and_scoped_to_teacher(self):
+        for _ in range(21):
+            self.assign(due_date=date(2026, 1, 1))
+        self.client.force_login(self.teacher)
+        url = reverse("teaching:overdue_assignments")
+        first, second = self.client.get(url), self.client.get(f"{url}?page=2")
+        self.assertEqual(len(first.context["page"]), 20)
+        self.assertEqual(len(second.context["page"]), 1)
+        self.client.force_login(self.other_teacher)
+        self.assertEqual(len(self.client.get(url).context["page"]), 0)
+
+    def test_post_actions_require_csrf_and_answer_context_cannot_be_swapped(self):
+        first = self.assign().progress_records.get(student=self.student)
+        second = self.assign().progress_records.get(student=self.student)
+        protected = Client(enforce_csrf_checks=True)
+        protected.force_login(self.student)
+        self.assertEqual(
+            protected.post(reverse("teaching:assignment_complete", args=[first.pk]), {
+                "source": "previously_completed",
+            }).status_code, 403,
+        )
+        self.client.force_login(self.student)
+        url = reverse("learning:independent_check", args=[self.lesson.slug])
+        first_page = self.client.get(f"{url}?assignment={first.pk}")
+        self.client.get(f"{url}?assignment={second.pk}")
+        data = self.batch_form(first_page, progress=second)
+        response = self.client.post(f"{url}?assignment={second.pk}", data)
+        self.assertEqual(response.status_code, 400)
+        self.assertFalse(IndependentAttempt.objects.filter(user=self.student).exists())

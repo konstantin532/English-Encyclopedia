@@ -12,7 +12,7 @@ from django.utils.http import url_has_allowed_host_and_scheme
 from django.views.decorators.http import require_POST
 
 from .access import can_teach, teacher_required, visible_students
-from .assignments import change_student_group
+from .assignments import change_student_group, overdue_for_teacher
 from .models import ContentDraft, CourseIssue, GroupMembership, StudyGroup
 from .progress import recent_attempts, summarize, summarize_many, week_goals
 from .review import (DraftForm, IssueForm, TeacherReviewForm, review_queue, reviewable, save_review, task_for,
@@ -47,6 +47,8 @@ def dashboard(request):
         "groups": groups, "form": form,
         "student_count": visible_students(request.user).count(),
         "sees_all": request.user.is_superuser or request.user.teacher_sees_all,
+        "pending_reviews": review_queue(request.user)[:10],
+        "overdue_assignments": overdue_for_teacher(request.user)[:20],
     })
 
 

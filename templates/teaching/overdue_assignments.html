@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Просроченные назначения · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap">
+  <header class="page-head"><h1>Просроченные назначения</h1><p>Незавершённые задания после срока. День срока включён целиком, время московское.</p></header>
+  {% include "teaching/_nav.html" with active="assignments" %}
+  {% for progress in page %}
+  <article class="section">
+    <h2>{{ progress.student.display_name|default:progress.student.email }} · {{ progress.assignment.lesson.title }}</h2>
+    <p>Срок {{ progress.assignment.due_date|date:"j E Y" }} · {{ progress.get_status_display }}</p>
+    <p><a href="{% url 'teaching:assignment' progress.assignment_id %}#student-{{ progress.student_id }}">Открыть назначение →</a></p>
+  </article>
+  {% empty %}<p>Просроченных заданий нет.</p>{% endfor %}
+  <nav aria-label="Страницы просроченных назначений"><p>
+    {% if page.has_previous %}<a href="?page={{ page.previous_page_number }}">← Назад</a>{% endif %}
+    Страница {{ page.number }} из {{ page.paginator.num_pages }}
+    {% if page.has_next %}<a href="?page={{ page.next_page_number }}">Дальше →</a>{% endif %}
+  </p></nav>
+</div>
+{% endblock %}

@@ -9,6 +9,21 @@
   </header>
   {% include "teaching/_nav.html" with active="dashboard" %}
   {% include "teaching/_messages.html" %}
+  <section class="section" aria-labelledby="attention-title">
+    <h2 id="attention-title">Требуют внимания</h2>
+    <p><a class="btn btn-primary" href="{% url 'teaching:assignment_new' %}">Назначить урок группе</a> <a href="{% url 'teaching:assignments' %}">Все назначения →</a></p>
+    <h3>Ожидают проверки</h3>
+    <ul>{% for attempt in pending_reviews %}
+      <li>{{ attempt.user.display_name|default:attempt.user.email }} · {{ attempt.lesson.title }} · {{ attempt.created_at|date:"j E Y H:i" }} · <a href="{% url 'teaching:review' attempt.pk %}">Проверить эту работу: {{ attempt.get_skill_display }}</a></li>
+    {% empty %}<li>Непроверенных ответов нет.</li>{% endfor %}</ul>
+    <p><a href="{% url 'teaching:review_list' %}">Вся очередь проверки →</a></p>
+    <h3>Просрочено</h3>
+    <ul>{% for progress in overdue_assignments %}
+      <li>{{ progress.student.display_name|default:progress.student.email }} · {{ progress.assignment.lesson.title }} · срок {{ progress.assignment.due_date|date:"j E Y" }} · {{ progress.get_status_display }} · <a href="{% url 'teaching:assignment' progress.assignment_id %}#student-{{ progress.student_id }}">Открыть назначение</a></li>
+    {% empty %}<li>Просроченных заданий нет.</li>{% endfor %}</ul>
+    <p><a href="{% url 'teaching:overdue_assignments' %}">Все просроченные назначения →</a></p>
+    <p>Показаны первые 10 ответов и 20 просроченных заданий. Сроки указаны по Москве.</p>
+  </section>
   <section class="section" aria-labelledby="groups-title">
     <div class="section-head"><h2 id="groups-title">Группы и коды</h2><p>Дайте ученику код — он введёт его в разделе «Моя группа».</p></div>
     {% if groups %}

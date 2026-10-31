@@ -4,6 +4,7 @@ from zoneinfo import ZoneInfo
 from django.contrib.auth import get_user_model
 from django.core.exceptions import PermissionDenied, ValidationError
 from django.db import transaction
+from django.db.models import F
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
@@ -44,7 +45,8 @@ def create_lesson_assignment(*, teacher, group, lesson, due_date=None):
 
 def lock_writable_progress(student, progress):
     # The same user lock serializes completion, answer submission and group exit.
-    get_user_model().objects.select_for_update().get(pk=student.pk)
+    # NO KEY UPDATE also permits FK inserts while assignment creation holds the group lock.
+    get_user_model().objects.select_for_update(no_key=True).get(pk=student.pk)
     current = AssignmentProgress.objects.select_for_update().select_related("assignment").get(pk=progress.pk)
     if (current.student_id != student.pk or current.withdrawn_at is not None
             or current.status == AssignmentProgress.Status.WITHDRAWN
@@ -92,7 +94,7 @@ def withdraw_assignments_for_group(student, group, *, now=None):
 @transaction.atomic
 def change_student_group(student, group=None):
     """Serialize joins/exits with assignment creation and learner writes."""
-    get_user_model().objects.select_for_update().get(pk=student.pk)
+    get_user_model().objects.select_for_update(no_key=True).get(pk=student.pk)
     membership = GroupMembership.objects.filter(student=student).first()
     group_ids = {g for g in (membership.group_id if membership else None, group.pk if group else None) if g}
     list(StudyGroup.objects.select_for_update().filter(pk__in=group_ids).order_by("pk"))
@@ -134,3 +136,29 @@ def student_assignment_cards(student):
         row = {"progress": progress, "overdue": assignment_is_overdue(progress), "writable": writable}
         (active if writable and progress.status in OPEN_STATUSES else history).append(row)
     return active, history
+
+
+def teacher_assignments(teacher):
+    records = LessonAssignment.objects.select_related("lesson", "group")
+    if teacher.is_superuser or teacher.teacher_sees_all:
+        return records
+    return records.filter(group__teacher=teacher)
+
+
+def teacher_assignment_progress(teacher):
+    records = AssignmentProgress.objects.filter(
+        assignment__in=teacher_assignments(teacher), student__in=learners(),
+    ).select_related("student", "assignment__lesson", "assignment__group")
+    if not (teacher.is_superuser or teacher.teacher_sees_all):
+        records = records.filter(
+            withdrawn_at__isnull=True,
+            assignment__group__memberships__student=F("student_id"),
+        )
+    return records
+
+
+def overdue_for_teacher(teacher):
+    return teacher_assignment_progress(teacher).filter(
+        status__in=OPEN_STATUSES, withdrawn_at__isnull=True,
+        assignment__due_date__lt=timezone.localdate(timezone.now(), timezone=MOSCOW),
+    ).order_by("assignment__due_date", "pk")
