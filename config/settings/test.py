@@ -14,6 +14,9 @@ PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5PasswordHasher"]
 # Тесты содержимого открывают страницы курса без входа. Замок курса проверяют
 # tests/test_course_access.py — там он включён явно (override_settings).
 EE_COURSE_LOGIN_REQUIRED = False
+# Раньше (стандартный журнал Django при DEBUG=False) тесты ничего не печатали; сохраняем тишину.
+# assertLogs работает и так: он подключает свой обработчик.
+LOGGING["handlers"]["console"]["level"] = "CRITICAL"
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
     "staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"},

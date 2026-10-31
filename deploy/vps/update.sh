@@ -7,6 +7,9 @@ cd "$APP_DIR"
 git fetch --quiet origin main
 git reset --quiet --hard origin/main
 echo "Версия: $(git log -1 --format='%h %s')"
+# Версия для Sentry и /metrics/: ошибки привязываются к конкретной выкладке.
+SENTRY_RELEASE=$(git rev-parse HEAD)
+export SENTRY_RELEASE
 compose=(docker compose -f deploy/vps/compose.yml)
 "${compose[@]}" up -d --build --remove-orphans
 # Ждём, пока сайт ответит на /healthz/ (до 5 минут: первая загрузка курса небыстрая).

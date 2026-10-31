@@ -70,3 +70,23 @@ devcontainer, CODEOWNERS, шаблоны задач, поиск секретов
 - Проверки: `tests.test_agent_setup tests.test_tooling` → OK; pre-commit на новых файлах → Passed.
 
 Следующий шаг: этап 3 — JSON-журналы, ID запроса, Sentry, `/metrics`; CodeQL и gitleaks уже написаны.
+
+### Этап 3. Безопасность и наблюдаемость
+
+- `codeql.yml` (Python и JavaScript, действие закреплено по SHA, v4.39.1) и `secret-scan.yml`
+  (gitleaks 8.30.1 с проверкой SHA256 архива, тот же `.gitleaks.toml`).
+- `apps/core/observability.py`: `RequestIDMiddleware` (принимает безопасный `X-Request-ID` или
+  создаёт свой, возвращает в ответе), журнал строками JSON с ID запроса, счётчики запросов и времени
+  ответа, `/metrics/` в формате Prometheus только с `Authorization: Bearer $METRICS_TOKEN` (без
+  токена — 404, адрес не выдаёт себя), Sentry только при `SENTRY_DSN`, `send_default_pii=False`
+  и `scrub_event` (вырезает cookies, заголовки авторизации, тело запроса, e-mail).
+- `SENTRY_RELEASE` = SHA выкладки (`deploy/vps/update.sh`), переменные в `compose.yml` и примерах env.
+- `posthog` добавлен в зависимости вместе с `sentry-sdk` (один `uv.lock`); используется на этапе 5.
+- Проверки: `tests.test_observability` → OK; `ruff check .` → All checks passed; `mypy` → no issues
+  in 141 files; быстрые тесты → 1292 tests, 244.8s, FAILED (failures=1):
+  `test_nontrainer_audit.ConcurrencyAudit.test_two_domains` получил `[409, 409]` вместо `[200, 400]`.
+  Отдельно 3 прогона подряд → OK. Тест гоняет два потока на одной SQLite и зависит от времени: под
+  нагрузкой параллельного прогона оба запроса исчерпали повторы. Связи с этапом нет (middleware
+  не трогает базу); считаю тест нестабильным, его проверит полный прогон и workflow этапа 4.
+
+Следующий шаг: этап 4 — закоммитить поиск нестабильных тестов и метрики доставки.

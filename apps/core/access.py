@@ -25,6 +25,7 @@ AUTH_READ_ATTEMPTS = 8
 # Маршруты, открытые всем.
 PUBLIC_ROUTES = frozenset({
     "core:home", "core:healthz", "core:robots", "core:sitemap",
+    "core:metrics",  # закрыт своим токеном METRICS_TOKEN, без токена — 404
     "accounts:login", "accounts:signup", "accounts:logout",
     "teaching:for_teachers",
     "taxonomy:legend",  # объяснение цветных маркеров — справка, не материал курса

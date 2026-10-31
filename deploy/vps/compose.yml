@@ -41,6 +41,11 @@ services:
       DATABASE_SSLMODE: disable
       DATABASE_USES_TRANSACTION_POOLER: "false"
       WEB_CONCURRENCY: ${WEB_CONCURRENCY:-2}
+      # Наблюдаемость (необязательно): пустые значения выключают Sentry и /metrics/.
+      SENTRY_DSN: ${SENTRY_DSN:-}
+      SENTRY_RELEASE: ${SENTRY_RELEASE:-}
+      SENTRY_ENVIRONMENT: ${SENTRY_ENVIRONMENT:-production}
+      METRICS_TOKEN: ${METRICS_TOKEN:-}
     volumes:
       - media:/app/media
     healthcheck:

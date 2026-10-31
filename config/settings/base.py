@@ -5,6 +5,7 @@
 """
 import os
 from pathlib import Path
+from typing import Any
 
 import dj_database_url
 from dotenv import load_dotenv
@@ -60,6 +61,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # ID запроса, журнал и счётчики — первыми, чтобы охватить всю обработку (apps/core/observability.py).
+    "apps.core.observability.RequestIDMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -152,3 +155,40 @@ TEST_RUNNER = "tests.runner.ContentLoadedRunner"
 
 # Explicit public origin for canonical/social URLs; blank in local development.
 PUBLIC_SITE_URL = os.getenv("PUBLIC_SITE_URL", "")
+
+# --- Наблюдаемость (apps/core/observability.py) ------------------------------
+# На сервере журнал — строки JSON с ID запроса; локально с DJANGO_DEBUG — читаемый текст.
+LOG_LEVEL = os.getenv("DJANGO_LOG_LEVEL", "INFO").upper()
+LOG_FORMAT = os.getenv("DJANGO_LOG_FORMAT", "text" if DEBUG else "json")
+LOGGING: dict[str, Any] = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "filters": {"request_id": {"()": "apps.core.observability.RequestIDFilter"}},
+    "formatters": {
+        "json": {"()": "apps.core.observability.JsonFormatter"},
+        "text": {"format": "%(asctime)s %(levelname)s %(name)s [%(request_id)s] %(message)s"},
+    },
+    "handlers": {
+        "console": {"class": "logging.StreamHandler", "formatter": LOG_FORMAT, "filters": ["request_id"]},
+    },
+    "root": {"handlers": ["console"], "level": LOG_LEVEL},
+    "loggers": {
+        "django": {"handlers": ["console"], "level": LOG_LEVEL, "propagate": False},
+        "apps": {"handlers": ["console"], "level": LOG_LEVEL, "propagate": False},
+    },
+}
+
+# /metrics/ для Prometheus: без токена адрес отвечает 404.
+METRICS_TOKEN = os.getenv("METRICS_TOKEN", "")
+
+# Ошибки и время ответа в Sentry — только если задан SENTRY_DSN. Без личных данных:
+# сервис внешний, а сервер в России (152-ФЗ) — перед включением обновите политику конфиденциальности.
+SENTRY_RELEASE = os.getenv("SENTRY_RELEASE", "")
+from apps.core.observability import init_sentry  # noqa: E402
+
+init_sentry(
+    os.getenv("SENTRY_DSN", ""),
+    environment=os.getenv("SENTRY_ENVIRONMENT", "production"),
+    release=SENTRY_RELEASE,
+    traces_sample_rate=float(os.getenv("SENTRY_TRACES_SAMPLE_RATE", "0.1")),
+)
