@@ -70,6 +70,12 @@ def independent_check(request, slug):
             return choices[stored]["model"]
         return guide["tasks"][attempt.skill]["model"]
 
+    def save_self_report(attempt, fields):
+        with transaction.atomic():
+            if attempt.assignment_progress_id:
+                lock_writable_progress(request.user, attempt.assignment_progress)
+            attempt.save(update_fields=fields)
+
     def render_batch_error(message):
         """Return a useful 400 without discarding a mobile learner's typed work.
 
@@ -129,7 +135,7 @@ def independent_check(request, slug):
                 )
             attempt.self_rubric = {**values, "independence": independence}
             attempt.self_rating = independence
-            attempt.save(update_fields=["self_rubric", "self_rating"])
+            save_self_report(attempt, ["self_rubric", "self_rating"])
             result = {
                 "skill": attempt.skill, "model": model_for(attempt),
                 "label": "Самооценка сохранена отдельно от проверенных результатов.",
@@ -153,7 +159,7 @@ def independent_check(request, slug):
             )):
                 return HttpResponseBadRequest("Нельзя отметить работу с переводчиком как полностью самостоятельную.")
             attempt.self_rating = rating
-            attempt.save(update_fields=["self_rating"])
+            save_self_report(attempt, ["self_rating"])
             result = {"skill": attempt.skill, "model": model_for(attempt),
                       "label": RATINGS[rating], "attempt": attempt}
         elif request.POST.get("action") == "batch":

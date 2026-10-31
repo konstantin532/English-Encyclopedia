@@ -14,7 +14,7 @@ function credentials() {
 /** Automatic harnesses already own migrated disposable SQLite databases.
  * Only an explicitly supplied SQLite URL may be seeded; remote databases are rejected.
  * No staff/superuser or real accounts are created or changed. */
-function seedBrowserUser(directory, databaseUrl, {pending = false} = {}) {
+function seedBrowserUser(directory, databaseUrl, {pending = false, teacher = false} = {}) {
   assert.ok(databaseUrl && databaseUrl.startsWith('sqlite:///'), 'Browser fixtures require an explicit disposable SQLite DATABASE_URL');
   process.env.EE_BROWSER_USER_PASSWORD ||= randomUUID();
   const {email, password} = credentials();
@@ -37,6 +37,14 @@ function seedBrowserUser(directory, databaseUrl, {pending = false} = {}) {
       'pending.set_password(os.environ["EE_BROWSER_USER_PASSWORD"])',
       'pending.save()',
     ] : []),
+    ...(teacher ? [
+      'teacher, created = User.objects.get_or_create(email="browser-teacher@example.test")',
+      'assert not (teacher.is_staff or teacher.is_superuser)',
+      'teacher.is_teacher = True',
+      'teacher.display_name = "Учитель"',
+      'teacher.set_password(os.environ["EE_BROWSER_USER_PASSWORD"])',
+      'teacher.save()',
+    ] : []),
   ].join('\n');
   const result = spawnSync(process.env.ATLAS_PYTHON || 'python', ['manage.py', 'shell', '--command', code],
     {cwd: directory, env: {...process.env, DATABASE_URL: databaseUrl, DJANGO_SETTINGS_MODULE: 'config.settings.local',
@@ -44,13 +52,14 @@ function seedBrowserUser(directory, databaseUrl, {pending = false} = {}) {
   assert.equal(result.status, 0, 'Could not seed disposable browser user: ' + (result.stderr || result.error || ''));
 }
 
-async function learnerState(browser, base, {pending = false} = {}) {
+async function learnerState(browser, base, {pending = false, teacher = false} = {}) {
   const {email, password} = credentials();
   const context = await browser.newContext({reducedMotion: 'reduce'});
   try {
     const page = await context.newPage();
     await page.goto(base + '/accounts/login/?next=/learning/', {waitUntil: 'networkidle'});
-    await page.locator('[name="username"]').fill(pending ? 'browser-pending@example.test' : email);
+    await page.locator('[name="username"]').fill(
+      teacher ? 'browser-teacher@example.test' : pending ? 'browser-pending@example.test' : email);
     await page.locator('[name="password"]').fill(password);
     await Promise.all([
       page.waitForURL(url => url.pathname === '/learning/'),
@@ -64,8 +73,8 @@ async function learnerState(browser, base, {pending = false} = {}) {
 function stateForAudience(states, audience, side) {
   assert.ok(side === 'before' || side === 'after', 'Unknown visual-review side');
   if (audience === 'guest') return undefined;
-  assert.ok(audience === 'student' || audience === 'pending', 'Unknown visual-review audience');
-  const state = states[side + (audience === 'pending' ? 'Pending' : '')];
+  assert.ok(['student', 'pending', 'teacher'].includes(audience), 'Unknown visual-review audience');
+  const state = states[side + (audience === 'teacher' ? 'Teacher' : audience === 'pending' ? 'Pending' : '')];
   assert.ok(state, 'Missing role session for ' + side + '/' + audience);
   return state;
 }

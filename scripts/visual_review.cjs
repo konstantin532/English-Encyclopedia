@@ -184,14 +184,16 @@ ${r.files.change ? `<h3>Где изменилось (с ${r.change.y}px)</h3><im
       if (!beforeDatabase || !afterDatabase || beforeDatabase === afterDatabase) {
         throw Error('Set different ATLAS_BEFORE_DATABASE_URL and ATLAS_AFTER_DATABASE_URL for the two checkouts');
       }
-      seedBrowserUser(process.env.ATLAS_BEFORE_DIR, beforeDatabase, {pending: true});
-      seedBrowserUser(root, afterDatabase, {pending: true});
+      seedBrowserUser(process.env.ATLAS_BEFORE_DIR, beforeDatabase, {pending: true, teacher: true});
+      seedBrowserUser(root, afterDatabase, {pending: true, teacher: true});
       servers.push(await serve(process.env.ATLAS_BEFORE_DIR, 8133, beforeDatabase));
       servers.push(await serve(root, 8134, afterDatabase));
       beforeBase = 'http://127.0.0.1:8133'; afterBase = 'http://127.0.0.1:8134';
     }
     browser = await chromium.launch();
     const states = {before: await learnerState(browser, beforeBase), after: await learnerState(browser, afterBase), beforePending: await learnerState(browser, beforeBase, {pending: true}), afterPending: await learnerState(browser, afterBase, {pending: true})};
+    states.beforeTeacher = await learnerState(browser, beforeBase, {teacher: true});
+    states.afterTeacher = await learnerState(browser, afterBase, {teacher: true});
     const workbench = await (await browser.newContext()).newPage();
     for (const viewport of config.viewports) {
       for (const pageSpec of config.pages) {

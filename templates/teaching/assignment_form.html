@@ -1,10 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Назначить урок · {{ SITE_NAME }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/lesson-assignments.css' %}">{% endblock %}
 {% block content %}
 <div class="wrap">
   <header class="page-head"><h1>Назначить урок группе</h1><p>Задание получат только нынешние участники. Повторное назначение создаёт отдельное задание и не меняет старый срок.</p></header>
   {% include "teaching/_nav.html" with active="assignments" %}
-  <form method="post" novalidate>
+  <form method="post" class="assignment-form" novalidate>
     {% csrf_token %}
     {{ form.non_field_errors }}
     {% for field in form %}{% include "components/field.html" %}{% endfor %}

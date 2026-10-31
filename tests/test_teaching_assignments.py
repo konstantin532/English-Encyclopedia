@@ -402,6 +402,7 @@ class AssignmentRulesTests(TestCase):
         exact_history = self.client.get(reverse("teaching:assignment_history", args=[first.pk]))
         self.assertContains(exact_history, "Вы хорошо передали смысл этой ситуации.")
         self.assertContains(exact_history, "только для чтения")
+        self.assertContains(exact_history, "Перенос в новую ситуацию")
 
     def test_teacher_assignment_form_rejects_foreign_group_and_unpublished_lesson(self):
         self.client.force_login(self.teacher)
@@ -463,6 +464,7 @@ class AssignmentRulesTests(TestCase):
         self.assertNotIn(no_deadline, page.context["overdue_assignments"])
         self.assertContains(page, reverse("teaching:review", args=[pending.pk]))
         self.assertContains(page, "Требуют внимания")
+        self.assertContains(page, "Проверить эту работу: Перенос в новую ситуацию")
         self.client.force_login(self.student)
         self.client.post(reverse("teaching:leave"))
         self.client.force_login(self.teacher)
@@ -498,3 +500,22 @@ class AssignmentRulesTests(TestCase):
         response = self.client.post(f"{url}?assignment={second.pk}", data)
         self.assertEqual(response.status_code, 400)
         self.assertFalse(IndependentAttempt.objects.filter(user=self.student).exists())
+
+    def test_assigned_answer_stays_read_only_after_exit_even_through_self_study_url(self):
+        progress = self.assign().progress_records.get(student=self.student)
+        attempt = IndependentAttempt.objects.create(
+            user=self.student, lesson=self.lesson, skill="transfer",
+            submitted="This is my room.", outcome="self_reported", assignment_progress=progress,
+        )
+        self.client.force_login(self.student)
+        self.client.post(reverse("teaching:leave"))
+        url = reverse("learning:independent_check", args=[self.lesson.slug])
+        for data in (
+            {"action": "rate", "rating": "independent"},
+            {"action": "rubric", "rubric_meaning": "yes", "rubric_form": "yes",
+             "rubric_context": "yes", "rubric_independence": "independent"},
+        ):
+            self.assertEqual(self.client.post(url, {"attempt_id": attempt.pk, **data}).status_code, 403)
+        attempt.refresh_from_db()
+        self.assertEqual(attempt.self_rating, "")
+        self.assertEqual(attempt.self_rubric, {})

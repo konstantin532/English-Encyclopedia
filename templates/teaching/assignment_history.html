@@ -11,7 +11,7 @@
   </header>
   {% for item in work %}
   <article class="section">
-    <h2>{{ item.get_skill_display }} · {{ item.created_at|date:"j E Y H:i" }}</h2>
+    <h2>{{ item.skill_label }} · {{ item.created_at|date:"j E Y H:i" }}</h2>
     <p>{{ item.prompt_snapshot }}</p>
     <p>Ваш ответ: {{ item.submitted }}</p>
     <p>{{ item.get_outcome_display }}</p>

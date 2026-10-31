@@ -14,7 +14,7 @@
     <p><a class="btn btn-primary" href="{% url 'teaching:assignment_new' %}">Назначить урок группе</a> <a href="{% url 'teaching:assignments' %}">Все назначения →</a></p>
     <h3>Ожидают проверки</h3>
     <ul>{% for attempt in pending_reviews %}
-      <li>{{ attempt.user.display_name|default:attempt.user.email }} · {{ attempt.lesson.title }} · {{ attempt.created_at|date:"j E Y H:i" }} · <a href="{% url 'teaching:review' attempt.pk %}">Проверить эту работу: {{ attempt.get_skill_display }}</a></li>
+      <li>{{ attempt.user.display_name|default:attempt.user.email }} · {{ attempt.lesson.title }} · {{ attempt.created_at|date:"j E Y H:i" }} · <a href="{% url 'teaching:review' attempt.pk %}">Проверить эту работу: {{ attempt.skill_label }}</a></li>
     {% empty %}<li>Непроверенных ответов нет.</li>{% endfor %}</ul>
     <p><a href="{% url 'teaching:review_list' %}">Вся очередь проверки →</a></p>
     <h3>Просрочено</h3>

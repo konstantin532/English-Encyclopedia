@@ -282,6 +282,15 @@ class IndependentAttempt(models.Model):
     trainer_sequence = models.PositiveSmallIntegerField(default=0)
     evidence = models.JSONField(default=dict, blank=True)
 
+    @property
+    def skill_label(self):
+        return {
+            "meaning": "Понимание смысла",
+            "writing": "Самостоятельное письмо",
+            "transfer": "Перенос в новую ситуацию",
+            "explain": "Объяснение правила",
+        }.get(self.skill, "Ответ")
+
     @staticmethod
     def redact_export_rows(rows, *, user):
         trainer_rows = [row for row in rows if row['origin'] == 'trainer']

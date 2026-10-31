@@ -17,7 +17,7 @@
     {% if progress.completed_at %}<p>Завершено {{ progress.completed_at|date:"j E Y H:i" }}</p>{% endif %}
     <ul>
       {% for attempt in progress.visible_work %}
-      <li><a href="{% url 'teaching:review' attempt.pk %}">{{ attempt.get_skill_display }} · {{ attempt.created_at|date:"j E Y H:i" }}</a> · {{ attempt.get_teacher_verdict_display }}</li>
+      <li><a href="{% url 'teaching:review' attempt.pk %}">{{ attempt.skill_label }} · {{ attempt.created_at|date:"j E Y H:i" }}</a> · {{ attempt.get_teacher_verdict_display }}</li>
       {% empty %}<li>Ответов для проверки пока нет.</li>{% endfor %}
     </ul>
   </article>
