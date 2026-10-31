@@ -113,4 +113,9 @@ class EmailUserAdmin(UserAdmin):
         for name, label in labels.items():
             if name in form.base_fields:
                 form.base_fields[name].label = label
+        if "is_staff" in form.base_fields:
+            form.base_fields["is_staff"].label = "Служебный доступ в админку"
+            form.base_fields["is_staff"].help_text = (
+                "Для ученика оставьте выключенным: служебный аккаунт не сможет вступать в группы как ученик."
+            )
         return form

@@ -87,23 +87,23 @@ class JoinForm(forms.Form):
 def join_group(request):
     """Ученик вступает в группу по коду от учителя (одна группа за раз)."""
     membership = GroupMembership.objects.filter(student=request.user).select_related("group__teacher").first()
+    if not request.user.is_learner:
+        return render(request, "teaching/join.html", {"membership": membership},
+                      status=403 if request.method == "POST" else 200)
     form = JoinForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
-        if not request.user.is_learner:
-            form.add_error(None, "В группу вступают только ученики.")
+        group = StudyGroup.objects.filter(join_code=form.cleaned_data["code"], is_open=True).first()
+        if group is None:
+            form.add_error("code", "Такой группы нет или она закрыта для новых учеников. Проверьте код у учителя.")
         else:
-            group = StudyGroup.objects.filter(join_code=form.cleaned_data["code"], is_open=True).first()
-            if group is None:
-                form.add_error("code", "Такой группы нет или она закрыта для новых учеников. Проверьте код у учителя.")
+            try:
+                with transaction.atomic():
+                    GroupMembership.objects.update_or_create(student=request.user, defaults={"group": group})
+            except IntegrityError:
+                form.add_error(None, "Не получилось вступить. Попробуйте ещё раз.")
             else:
-                try:
-                    with transaction.atomic():
-                        GroupMembership.objects.update_or_create(student=request.user, defaults={"group": group})
-                except IntegrityError:
-                    form.add_error(None, "Не получилось вступить. Попробуйте ещё раз.")
-                else:
-                    messages.success(request, f"Вы в группе «{group.name}».")
-                    return redirect("teaching:join")
+                messages.success(request, f"Вы в группе «{group.name}».")
+                return redirect("teaching:join")
     return render(request, "teaching/join.html", {"form": form, "membership": membership})
 
 

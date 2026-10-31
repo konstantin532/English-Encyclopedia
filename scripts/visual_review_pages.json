@@ -13,6 +13,13 @@
   ],
   "pages": [
     {
+      "name": "my-group",
+      "title": "Моя группа: вступление по коду",
+      "route": "/group/",
+      "main": "#join-title",
+      "audience": "student"
+    },
+    {
       "name": "home",
       "title": "Главная",
       "route": "/",

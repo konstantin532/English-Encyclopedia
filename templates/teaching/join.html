@@ -4,7 +4,7 @@
 <div class="wrap" style="padding-bottom: var(--space-8)">
   <header class="page-head">
     <h1>Моя группа</h1>
-    <p>Если вы занимаетесь с учителем, введите код группы — учитель увидит ваш прогресс и сможет подсказать, что повторить.</p>
+    <p>Группы не публикуются в общем каталоге. Код для вступления даёт учитель. После вступления он увидит ваш прогресс и сможет подсказать, что повторить.</p>
   </header>
   {% include "teaching/_messages.html" %}
   {% if membership %}
@@ -13,6 +13,7 @@
     <form method="post" action="{% url 'teaching:leave' %}">{% csrf_token %}<button class="btn btn-quiet" type="submit">Выйти из группы</button></form>
   </section>
   {% endif %}
+  {% if user.is_learner %}
   <section class="section" aria-labelledby="join-title">
     <div class="section-head"><h2 id="join-title">{% if membership %}Перейти в другую группу{% else %}Вступить в группу{% endif %}</h2></div>
     <form method="post" novalidate>{% csrf_token %}
@@ -21,5 +22,16 @@
       <button class="btn btn-primary" type="submit">Вступить</button>
     </form>
   </section>
+  {% else %}
+  <section class="section" aria-labelledby="group-role-title" data-group-ineligible>
+    <h2 id="group-role-title">Вступление с ученического аккаунта</h2>
+    <p>Вы вошли с {% if user.is_superuser %}аккаунта владельца{% elif user.is_teacher %}аккаунта учителя{% else %}служебного аккаунта с доступом в админку{% endif %}. В группы вступают с отдельного ученического аккаунта.</p>
+    <p>Если этот аккаунт предназначен для ученика, владелец сайта может проверить его служебные права в настройках пользователя.</p>
+    <form method="post" action="{% url 'accounts:logout' %}">{% csrf_token %}
+      <input type="hidden" name="next" value="{% url 'accounts:login' %}?next={% url 'teaching:join' %}">
+      <button class="btn btn-primary" type="submit">Войти как ученик</button>
+    </form>
+  </section>
+  {% endif %}
 </div>
 {% endblock %}
