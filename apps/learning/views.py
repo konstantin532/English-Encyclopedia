@@ -8,6 +8,7 @@ from django.views.decorators.http import require_POST
 
 from apps.lessons.models import Lesson
 from apps.curriculum.models import Week
+from apps.teaching.assignments import student_assignment_cards
 
 from django.views.decorators.csrf import ensure_csrf_cookie
 
@@ -34,8 +35,10 @@ def dashboard(request):
     lessons = Lesson.objects.filter(is_published=True).prefetch_related("units")
     next_lesson = next((lesson for lesson in lessons
                         if any(unit.pk not in started for unit in lesson.units.all())), None)
+    assignments, assignment_history = student_assignment_cards(request.user)
     return render(request, "learning/dashboard.html", {
         "progress": progress,
+        "assignments": assignments, "assignment_history": assignment_history,
         "new_units": [p for p in progress if p.status != Status.ACTIVE],
         "active_units": [p for p in progress if p.status == Status.ACTIVE],
         "due": due,

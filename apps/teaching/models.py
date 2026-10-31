@@ -49,6 +49,99 @@ class GroupMembership(models.Model):
         return f"{self.student} → {self.group.name}"
 
 
+class LessonAssignment(models.Model):
+    """One issue of a published lesson to a teacher-owned group."""
+
+    teacher = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.PROTECT,
+        related_name="lesson_assignments",
+        verbose_name="назначивший учитель",
+    )
+    group = models.ForeignKey(
+        StudyGroup,
+        on_delete=models.PROTECT,
+        related_name="lesson_assignments",
+        verbose_name="группа",
+    )
+    lesson = models.ForeignKey(
+        "lessons.Lesson",
+        on_delete=models.PROTECT,
+        related_name="teacher_assignments",
+        verbose_name="урок",
+    )
+    assigned_at = models.DateTimeField(auto_now_add=True)
+    due_date = models.DateField(null=True, blank=True, verbose_name="срок")
+
+    class Meta:
+        ordering = ["-assigned_at", "-pk"]
+        verbose_name = "назначение урока"
+        verbose_name_plural = "назначения уроков"
+
+    def __str__(self) -> str:
+        return f"{self.lesson} → {self.group.name}"
+
+
+class AssignmentProgress(models.Model):
+    """Per-student state for one assignment instance."""
+
+    class Status(models.TextChoices):
+        NOT_STARTED = "not_started", "Не начато"
+        IN_PROGRESS = "in_progress", "В работе"
+        COMPLETED = "completed", "Завершено"
+        WITHDRAWN = "withdrawn", "Снято после выхода"
+
+    class CompletionSource(models.TextChoices):
+        AFTER_ASSIGNMENT = "after_assignment", "Пройдено после назначения"
+        PREVIOUSLY_COMPLETED = "previously_completed", "Пройдено до назначения"
+
+    assignment = models.ForeignKey(
+        LessonAssignment,
+        on_delete=models.CASCADE,
+        related_name="progress_records",
+    )
+    student = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="lesson_assignment_progress",
+    )
+    status = models.CharField(
+        max_length=16,
+        choices=Status.choices,
+        default=Status.NOT_STARTED,
+    )
+    completion_source = models.CharField(
+        max_length=24,
+        choices=CompletionSource.choices,
+        blank=True,
+    )
+    started_at = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    withdrawn_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["assignment_id", "student_id"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["assignment", "student"],
+                name="uniq_progress_per_lesson_assignment",
+            ),
+        ]
+        indexes = [
+            models.Index(
+                fields=["assignment", "status"],
+                name="lesson_assign_status_idx",
+            ),
+            models.Index(
+                fields=["student", "status"],
+                name="student_assign_status_idx",
+            ),
+        ]
+        verbose_name = "прогресс назначенного урока"
+        verbose_name_plural = "прогресс назначенных уроков"
+
+
 class CourseIssue(models.Model):
     """Сообщение об ошибке в материалах курса от ученика или учителя. Разбирает владелец."""
 

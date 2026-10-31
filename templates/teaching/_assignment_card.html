@@ -1,0 +1,18 @@
+<article class="section" data-assignment="{{ row.progress.pk }}">
+  <h3>{{ row.progress.assignment.lesson.title }}</h3>
+  <p>{{ row.progress.assignment.group.name }} · выдано {{ row.progress.assignment.assigned_at|date:"j E Y в H:i" }} · {% if row.progress.assignment.due_date %}срок {{ row.progress.assignment.due_date|date:"j E Y" }} (Москва){% else %}без срока{% endif %}</p>
+  <p><strong>{{ row.progress.get_status_display }}</strong>{% if row.overdue %} · Просрочено{% endif %}{% if row.progress.completion_source %} · {{ row.progress.get_completion_source_display }} (самоотметка){% endif %}</p>
+  {% if row.writable %}
+  <form method="post" action="{% url 'teaching:assignment_open' row.progress.pk %}">
+    {% csrf_token %}
+    <button class="btn btn-primary" type="submit">{% if row.progress.status == "not_started" %}Начать{% elif row.progress.status == "completed" %}Открыть урок{% else %}Продолжить{% endif %}</button>
+  </form>
+  {% if row.progress.status != "completed" %}
+  <form method="post" action="{% url 'teaching:assignment_complete' row.progress.pk %}">
+    {% csrf_token %}<input type="hidden" name="source" value="previously_completed">
+    <button class="btn btn-quiet" type="submit">Я уже проходил этот урок</button>
+  </form>
+  {% endif %}
+  {% else %}<p>История доступна только для чтения.</p>{% endif %}
+  <p><a href="{% url 'teaching:assignment_history' row.progress.pk %}">Ответы и отзывы по этому назначению →</a></p>
+</article>

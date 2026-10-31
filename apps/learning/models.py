@@ -218,6 +218,14 @@ class IndependentAttempt(models.Model):
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="independent_attempts")
     lesson = models.ForeignKey("lessons.Lesson", on_delete=models.PROTECT, related_name="independent_attempts")
+    assignment_progress = models.ForeignKey(
+        "teaching.AssignmentProgress",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="work",
+        help_text="Назначение, из которого отправлен ответ; пусто для старых и самостоятельных ответов.",
+    )
     skill = models.CharField(max_length=12)
     submitted = models.CharField(max_length=400)
     # Exact exercise shown when this response was created. Newer content edits
@@ -273,6 +281,15 @@ class IndependentAttempt(models.Model):
                                         null=True, blank=True, related_name="attempts")
     trainer_sequence = models.PositiveSmallIntegerField(default=0)
     evidence = models.JSONField(default=dict, blank=True)
+
+    @property
+    def skill_label(self):
+        return {
+            "meaning": "Понимание смысла",
+            "writing": "Самостоятельное письмо",
+            "transfer": "Перенос в новую ситуацию",
+            "explain": "Объяснение правила",
+        }.get(self.skill, "Ответ")
 
     @staticmethod
     def redact_export_rows(rows, *, user):

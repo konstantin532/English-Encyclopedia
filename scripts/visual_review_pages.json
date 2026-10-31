@@ -13,6 +13,27 @@
   ],
   "pages": [
     {
+      "name": "teacher-dashboard",
+      "title": "Учитель: группы и требующие внимания",
+      "route": "/teacher/",
+      "main": "h1",
+      "audience": "teacher"
+    },
+    {
+      "name": "teacher-assignments",
+      "title": "Учитель: назначения уроков",
+      "route": "/teacher/assignments/",
+      "main": "h1",
+      "audience": "teacher"
+    },
+    {
+      "name": "teacher-assignment-new",
+      "title": "Учитель: назначить урок",
+      "route": "/teacher/assignments/new/",
+      "main": "#id_group",
+      "audience": "teacher"
+    },
+    {
       "name": "my-group",
       "title": "Моя группа: вступление по коду",
       "route": "/group/",

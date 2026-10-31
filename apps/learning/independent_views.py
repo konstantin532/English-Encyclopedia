@@ -13,6 +13,7 @@ from django.utils.crypto import constant_time_compare
 from django.views.decorators.http import require_http_methods
 
 from apps.lessons.models import Lesson
+from apps.teaching.assignments import lock_writable_progress, student_assignment
 from .models import IndependentAttempt
 from .evidence import lesson_check_attempts
 from .understanding import get_guide, model_agreement
@@ -38,12 +39,19 @@ def independent_check(request, slug):
     # A shared model stores pilot provenance and cafe transcripts too. Only
     # ordinary lesson checks may appear in this history or its rating forms.
     lesson_attempts = lesson_check_attempts(request.user).filter(lesson=lesson)
+    progress = (
+        student_assignment(request.user, request.GET["assignment"], lesson=lesson)
+        if "assignment" in request.GET else None
+    )
+    if progress:
+        lesson_attempts = lesson_attempts.filter(assignment_progress=progress)
 
     # Keep a fresh transfer scenario stable during the whole four-answer
     # attempt. Rotate only AFTER a successful batch; models stay on the server.
     choices = (guide["tasks"]["transfer"], *guide.get("transfer_variants", []))
-    session_key = f"a1_independent_variant_{lesson.pk}"
-    token_key = f"a1_independent_token_{lesson.pk}"
+    scope = f"_assignment_{progress.pk}" if progress else ""
+    session_key = f"a1_independent_variant_{lesson.pk}{scope}"
+    token_key = f"a1_independent_token_{lesson.pk}{scope}"
     if token_key not in request.session:
         request.session[token_key] = secrets.token_urlsafe(24)
     try:
@@ -61,6 +69,12 @@ def independent_check(request, slug):
             stored = min(attempt.task_variant, len(choices) - 1)
             return choices[stored]["model"]
         return guide["tasks"][attempt.skill]["model"]
+
+    def save_self_report(attempt, fields):
+        with transaction.atomic():
+            if attempt.assignment_progress_id:
+                lock_writable_progress(request.user, attempt.assignment_progress)
+            attempt.save(update_fields=fields)
 
     def render_batch_error(message):
         """Return a useful 400 without discarding a mobile learner's typed work.
@@ -91,6 +105,7 @@ def independent_check(request, slug):
                 task_variant=variant,
             ).exists(),
             "batch_token": request.session[token_key],
+            "assignment_progress": progress,
         }, status=400)
 
     result = None
@@ -120,7 +135,7 @@ def independent_check(request, slug):
                 )
             attempt.self_rubric = {**values, "independence": independence}
             attempt.self_rating = independence
-            attempt.save(update_fields=["self_rubric", "self_rating"])
+            save_self_report(attempt, ["self_rubric", "self_rating"])
             result = {
                 "skill": attempt.skill, "model": model_for(attempt),
                 "label": "Самооценка сохранена отдельно от проверенных результатов.",
@@ -144,10 +159,12 @@ def independent_check(request, slug):
             )):
                 return HttpResponseBadRequest("Нельзя отметить работу с переводчиком как полностью самостоятельную.")
             attempt.self_rating = rating
-            attempt.save(update_fields=["self_rating"])
+            save_self_report(attempt, ["self_rating"])
             result = {"skill": attempt.skill, "model": model_for(attempt),
                       "label": RATINGS[rating], "attempt": attempt}
         elif request.POST.get("action") == "batch":
+            if request.POST.get("assignment_id", "") != (str(progress.pk) if progress else ""):
+                return render_batch_error("Назначение изменилось. Откройте задание заново из кабинета.")
             # Browser-generated form tokens are mandatory and single use:
             # omitting a token must never bypass DB-level idempotency.
             # The old individual-skill route remains separate for legacy clients.
@@ -188,6 +205,8 @@ def independent_check(request, slug):
             batch_results = []
             try:
                 with transaction.atomic():
+                    if progress:
+                        progress = lock_writable_progress(request.user, progress)
                     for skill in TASKS:
                         answer = answers[skill].strip()
                         open_response = skill in ("transfer", "explain")
@@ -206,6 +225,7 @@ def independent_check(request, slug):
                             assistance=assistance,
                             prompt_snapshot=guide["tasks"][skill]["prompt"],
                             model_snapshot=guide["tasks"][skill]["model"],
+                            assignment_progress=progress,
                         )
                         batch_results.append({
                             "skill": skill, "title": {
@@ -264,4 +284,5 @@ def independent_check(request, slug):
         "transfer_variant": variant, "transfer_variant_total": len(choices),
         "transfer_variant_seen": variant_seen,
         "batch_token": request.session[token_key],
+        "assignment_progress": progress,
     })

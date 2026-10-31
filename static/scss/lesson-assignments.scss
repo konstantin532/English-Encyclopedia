@@ -1,0 +1,20 @@
+.assignment-form {
+  max-width: 70ch;
+
+  .field {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  select {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 48px;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-s);
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+  }
+}

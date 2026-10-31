@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Назначения уроков · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap">
+  <header class="page-head"><h1>Назначения уроков</h1><p>Каждая выдача урока хранится отдельно, даже если урок уже назначали.</p></header>
+  {% include "teaching/_nav.html" with active="assignments" %}
+  <p><a class="btn btn-primary" href="{% url 'teaching:assignment_new' %}">Назначить урок группе</a></p>
+  {% for assignment in page %}
+  <article class="section">
+    <h2><a href="{% url 'teaching:assignment' assignment.pk %}">{{ assignment.lesson.title }}</a></h2>
+    <p>{{ assignment.group.name }} · выдано {{ assignment.assigned_at|date:"j E Y H:i" }} · {% if assignment.due_date %}срок {{ assignment.due_date|date:"j E Y" }} (Москва){% else %}без срока{% endif %}</p>
+  </article>
+  {% empty %}<p>Назначений пока нет.</p>{% endfor %}
+  <nav aria-label="Страницы назначений"><p>
+    {% if page.has_previous %}<a href="?page={{ page.previous_page_number }}">← Раньше</a>{% endif %}
+    Страница {{ page.number }} из {{ page.paginator.num_pages }}
+    {% if page.has_next %}<a href="?page={{ page.next_page_number }}">Дальше →</a>{% endif %}
+  </p></nav>
+</div>
+{% endblock %}

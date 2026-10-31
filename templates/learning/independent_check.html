@@ -8,6 +8,7 @@
     <p class="crumbs"><a href="{% url 'lessons:detail' lesson.slug %}">Урок {{ lesson.order }}</a> / самостоятельная проверка</p>
     <h1>Проверяю, что могу сам</h1>
     <p>{{ lesson.title }}</p>
+    {% if assignment_progress %}<p>Ответы сохраняются для назначения от {{ assignment_progress.assignment.assigned_at|date:"j E Y H:i" }} группы «{{ assignment_progress.assignment.group.name }}».</p>{% endif %}
     <p>Здесь нет готовых слов для выбора. Сначала попробуйте самостоятельно, без подсказок и готовых вариантов. Образец откроется только после отправки. Допустимы разные естественные ответы: если ваш вариант не совпадёт, мы не будем автоматически называть его ошибкой.</p>
     <p><strong>Важно:</strong> совпадение с образцом — не подтверждение свободного владения языком. Произношение и аудирование здесь не оцениваются.</p>
     <p><strong>Безопасность:</strong> используйте вымышленные имена, адреса и номера телефонов, не вводите реальные личные данные.</p>
@@ -32,7 +33,7 @@
       {% include "components/a1_rubric_form.html" with attempt=result.attempt %}
     {% endif %}
   </section>
-  <p class="independent-new-variant"><a class="btn btn-quiet" href="{% url 'learning:independent_check' lesson.slug %}#blind-four-title">Начать новую независимую попытку →</a></p>
+  <p class="independent-new-variant"><a class="btn btn-quiet" href="{% url 'learning:independent_check' lesson.slug %}{% if assignment_progress %}?assignment={{ assignment_progress.pk }}{% endif %}#blind-four-title">Начать новую независимую попытку →</a></p>
   {% endif %}
 
   {% if batch_results %}
@@ -80,6 +81,7 @@
       {% csrf_token %}
       <input type="hidden" name="transfer_variant" value="{{ transfer_variant }}">
       <input type="hidden" name="batch_token" value="{{ batch_token }}">
+      <input type="hidden" name="assignment_id" value="{{ assignment_progress.pk|default:'' }}">
       <input type="hidden" name="action" value="batch">
       <fieldset class="independent-conditions" aria-describedby="assistance-note">
         <legend>Как вы выполняете эту попытку?</legend>
@@ -117,7 +119,7 @@
   {% endif %}
 
   {% if batch_results %}
-  <p class="independent-new-variant"><a class="btn btn-quiet" href="{% url 'learning:independent_check' lesson.slug %}#task-transfer">Начать следующую независимую попытку →</a></p>
+  <p class="independent-new-variant"><a class="btn btn-quiet" href="{% url 'learning:independent_check' lesson.slug %}{% if assignment_progress %}?assignment={{ assignment_progress.pk }}{% endif %}#task-transfer">Начать следующую независимую попытку →</a></p>
   {% endif %}
 
   {% if attempts %}
@@ -141,7 +143,7 @@
     </ul>
   </section>
   {% endif %}
-  <p><a class="btn btn-quiet" href="{% url 'lessons:detail' lesson.slug %}">Вернуться к объяснениям урока</a></p>
+  <p><a class="btn btn-quiet" href="{% url 'lessons:detail' lesson.slug %}{% if assignment_progress %}?assignment={{ assignment_progress.pk }}{% endif %}">Вернуться к объяснениям урока</a></p>
 </div>
 {% endblock %}
 

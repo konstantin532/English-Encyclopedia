@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}История назначения · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="{% url 'learning:dashboard' %}">Мой прогресс</a> / история назначения</p>
+    <h1>{{ progress.assignment.lesson.title }}</h1>
+    <p>{{ progress.assignment.group.name }} · выдано {{ progress.assignment.assigned_at|date:"j E Y в H:i" }} · {{ progress.get_status_display }}</p>
+    {% if progress.completion_source %}<p>{{ progress.get_completion_source_display }}. Это самоотчёт, а не проверка владения материалом.</p>{% endif %}
+    {% if progress.withdrawn_at %}<p>После выхода из группы это назначение доступно только для чтения.</p>{% endif %}
+  </header>
+  {% for item in work %}
+  <article class="section">
+    <h2>{{ item.skill_label }} · {{ item.created_at|date:"j E Y H:i" }}</h2>
+    <p>{{ item.prompt_snapshot }}</p>
+    <p>Ваш ответ: {{ item.submitted }}</p>
+    <p>{{ item.get_outcome_display }}</p>
+    {% if item.teacher_verdict != "unreviewed" %}
+    <p><strong>Проверено преподавателем:</strong> {{ item.get_teacher_verdict_display }}</p>
+    <p>{{ item.teacher_note }}</p>
+    {% else %}<p>Преподаватель ещё не проверил.</p>{% endif %}
+  </article>
+  {% empty %}<p>Ответов по этому назначению пока нет.</p>{% endfor %}
+  <p><a href="{% url 'lessons:detail' progress.assignment.lesson.slug %}">Открыть урок самостоятельно →</a></p>
+</div>
+{% endblock %}
