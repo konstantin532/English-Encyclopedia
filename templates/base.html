@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="{% static 'img/atlas/favicon.svg' %}">
   <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
   <meta name="description" content="{% block description %}Интерактивная энциклопедия американского английского: от первого слова до B2+, с объяснением, как устроен язык.{% endblock %}">
   {% if PRIVATE_PAGE %}<meta name="robots" content="noindex, follow">{% else %}
@@ -30,12 +31,12 @@
   <link rel="stylesheet" href="{% static 'css/art-light.css' %}">
   <link rel="stylesheet" href="{% static 'css/editorial-world.css' %}">
   {# «Атлас живого языка»: отдельный слой ee-atlas поверх ee-polish; маркеры слов он не трогает. #}
-  <link rel="stylesheet" href="{% static 'css/living-atlas.css' %}">
   {% if not user.is_authenticated or auth_entry %}<link rel="stylesheet" href="{% static 'css/public-shell.css' %}">{% endif %}
+  <link rel="stylesheet" href="{% static 'css/living-atlas.css' %}">
   <script nonce="{{ request.csp_nonce }}">try{var eeMode=localStorage.getItem("ee-motion-mode");document.documentElement.dataset.motion=matchMedia("(prefers-reduced-motion: reduce)").matches?"minimal":(["full","balanced","minimal"].includes(eeMode)?eeMode:"balanced")}catch(e){document.documentElement.dataset.motion="balanced"}</script>
   {% if not user.is_authenticated %}<script nonce="{{ request.csp_nonce }}">try{var eeColor=localStorage.getItem("ee-markers");var eeEnabled=localStorage.getItem("ee-markers-enabled");var eeRoot=document.documentElement;eeRoot.dataset.markersColor=eeColor==="mono"?"mono":"color";eeRoot.dataset.markers=eeEnabled==="true"||(eeEnabled===null&&(eeColor==="mono"||eeColor==="color"))?eeRoot.dataset.markersColor:"off"}catch(e){}</script>{% endif %}
 </head>
-<body{% if user.is_authenticated %} data-guest-progress-import-url="{% url 'api:import_guest_progress' %}"{% endif %}>
+<body class="atlas-site atlas-page-{% block page_family %}reference{% endblock %}"{% if user.is_authenticated %} data-guest-progress-import-url="{% url 'api:import_guest_progress' %}"{% endif %}>
   <a class="skip-link" href="#main">К содержанию</a>
   <div {% if user.is_authenticated and not auth_entry %}class="studio-shell"{% else %}class="ee-public-shell" data-public-shell{% endif %}>
     {% if user.is_authenticated and not auth_entry %}{% include "components/sidebar.html" %}{% endif %}
@@ -50,6 +51,7 @@
   <script src="{% static 'js/art-light.js' %}" defer></script>
   <script src="{% static 'js/editorial-world.js' %}" defer></script>
   <script src="{% static 'js/atlas-language.js' %}" defer></script>
+  <script src="{% static 'js/atlas-shell.js' %}" defer></script>
   <script src="{% static 'js/annotations.js' %}" defer></script>
   <span class="visually-hidden" data-guest-progress-status role="status" aria-live="polite"></span>
   <script src="{% static 'js/guest-progress.js' %}" defer></script>

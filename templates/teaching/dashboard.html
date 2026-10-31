@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% block page_family %}teaching{% endblock %}
 {% block title %}Кабинет учителя · {{ SITE_NAME }}{% endblock %}
 {% block content %}
 <div class="wrap" style="padding-bottom: var(--space-8)">
   <header class="page-head">
-    <span class="studio-eyebrow">КАБИНЕТ УЧИТЕЛЯ</span>
+    
     <h1>{% if user.display_name %}{{ user.display_name }}, ваши группы{% else %}Ваши группы{% endif %}</h1>
     <p>{% if sees_all %}Вам открыт прогресс всех учеников платформы.{% else %}Вы видите учеников своих групп.{% endif %} Сейчас доступно учеников: <strong>{{ student_count }}</strong>.</p>
   </header>
@@ -11,7 +12,7 @@
   {% include "teaching/_messages.html" %}
   <section class="section" aria-labelledby="attention-title">
     <h2 id="attention-title">Требуют внимания</h2>
-    <p><a class="btn btn-primary" href="{% url 'teaching:assignment_new' %}">Назначить урок группе</a> <a href="{% url 'teaching:assignments' %}">Все назначения →</a></p>
+    <p class="atlas-teacher-actions"><a class="btn btn-primary" href="{% url 'teaching:assignment_new' %}">Назначить урок группе</a> <a href="{% url 'teaching:assignments' %}">Все назначения →</a></p>
     <h3>Ожидают проверки</h3>
     <ul>{% for attempt in pending_reviews %}
       <li>{{ attempt.user.display_name|default:attempt.user.email }} · {{ attempt.lesson.title }} · {{ attempt.created_at|date:"j E Y H:i" }} · <a href="{% url 'teaching:review' attempt.pk %}">Проверить эту работу: {{ attempt.skill_label }}</a></li>

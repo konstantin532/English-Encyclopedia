@@ -88,7 +88,11 @@ test('every reviewed page has a route, a main-content selector and sane limits',
   assert.ok(pages.pages.length>=8);
   const names=new Set();
   for(const page of pages.pages){
-    assert.match(page.route,/^\/[^\s]*\/$|^\/$/,page.name);
+    assert.match(page.route, /^\/(?!\/)\S*$/, page.name);
+    const url = new URL(page.route, 'https://atlas.example.test');
+    assert.equal(url.origin, 'https://atlas.example.test', page.name);
+    assert.match(url.pathname, /^\/[^\s]*\/$|^\/$/, page.name);
+    assert.equal(url.hash, '', page.name);
     assert.ok(page.main&&page.title,page.name);
     assert.ok(['student','guest','pending','teacher'].includes(page.audience),page.name);
     assert.ok(!names.has(page.name),`duplicate ${page.name}`);names.add(page.name);

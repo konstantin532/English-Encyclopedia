@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+{% block page_family %}practice{% endblock %}
 {% load static %}
 {% block title %}Практика A1 №{{ topic.n }} — {{ topic.title }}{% endblock %}
 {% block description %}Дополнительная интерактивная практика A1: слушайте, объясняйте, отвечайте и переносите знания в новую ситуацию.{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}">{% endblock %}
 {% block content %}
 <div class="wrap active-a1" data-active-a1>
   <nav class="active-a1-breadcrumb" aria-label="Навигация">
@@ -214,7 +216,7 @@
 </div>
 {% endblock %}
 {% block scripts %}
-<link rel="stylesheet" href="{% static 'css/a1-active.css' %}">
+
 {{ topic|json_script:"a1-active-topic-data" }}
 <script src="{% static 'js/a1-active.js' %}" defer></script>
 {% endblock %}

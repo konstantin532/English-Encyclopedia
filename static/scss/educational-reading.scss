@@ -1,3 +1,4 @@
+@layer ee-reading {
 /* Educational interiors only. Marker shapes/colors and player visibility stay owned by their components. */
 [data-educational-reading]:not([data-editorial-pilot]) {
   --edu-bg: #F7F5EF;
@@ -128,4 +129,6 @@
   @media (prefers-reduced-motion: reduce) {
     .script-line, .btn, .choice { transition: none; }
   }
+}
+
 }

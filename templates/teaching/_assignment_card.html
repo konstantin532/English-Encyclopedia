@@ -1,4 +1,4 @@
-<article class="section" data-assignment="{{ row.progress.pk }}">
+<article class="section assignment-card" data-assignment="{{ row.progress.pk }}">
   <h3>{{ row.progress.assignment.lesson.title }}</h3>
   <p>{{ row.progress.assignment.group.name }} · выдано {{ row.progress.assignment.assigned_at|date:"j E Y в H:i" }} · {% if row.progress.assignment.due_date %}срок {{ row.progress.assignment.due_date|date:"j E Y" }} (Москва){% else %}без срока{% endif %}</p>
   <p><strong>{{ row.progress.get_status_display }}</strong>{% if row.overdue %} · Просрочено{% endif %}{% if row.progress.completion_source %} · {{ row.progress.get_completion_source_display }} (самоотметка){% endif %}</p>

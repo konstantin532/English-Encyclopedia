@@ -1,416 +1,534 @@
-/* Authored stylesheet: a local trial for the nouns and be lessons only.
-   Every selector is scoped. The existing fonts, marker palette and outer grid remain intact. */
-[data-lesson-design-pilot] {
-  --pilot-ink: #173a30;
-  --pilot-muted: #52645c;
-  --pilot-paper: #fffefa;
-  --pilot-tint: #f3f0e6;
-  --pilot-rule: #d6d4c5;
-  --pilot-gold: #916d34;
+/* Generated from static/scss/lesson-design-pilot.scss; run pnpm build:css. Do not edit. */
+@layer ee-reading {
+  /* Authored stylesheet: a local trial for the nouns and be lessons only.
+     Every selector is scoped. The existing fonts, marker palette and outer grid remain intact. */
+  [data-lesson-design-pilot] {
+    --pilot-ink: #173a30;
+    --pilot-muted: #52645c;
+    --pilot-paper: #fffefa;
+    --pilot-tint: #f3f0e6;
+    --pilot-rule: #d6d4c5;
+    --pilot-gold: #916d34;
+  }
+  [data-lesson-design-pilot] .page-head {
+    border-bottom: 1px solid var(--pilot-rule);
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+  }
+  [data-lesson-design-pilot] .page-head h1 {
+    font-family: var(--font-read);
+    font-weight: 450;
+    line-height: 1.17;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+  [data-lesson-design-pilot] .page-head > p:last-child {
+    max-width: 70ch;
+    line-height: 1.75;
+    color: var(--pilot-muted);
+  }
+  [data-lesson-design-pilot] article > section {
+    margin-block: 0 40px;
+  }
+  [data-lesson-design-pilot] article h2 {
+    font: 450 clamp(25px, 2.2vw, 31px)/1.3 var(--font-read);
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+    color: var(--pilot-ink);
+    margin-block: 0 20px;
+  }
+  [data-lesson-design-pilot] article h3 {
+    font: 600 18px/1.5 var(--font-ui);
+    margin-block: 24px 14px;
+  }
+  [data-lesson-design-pilot] article h4 {
+    font: 600 17px/1.5 var(--font-ui);
+  }
+  [data-lesson-design-pilot] article p {
+    overflow-wrap: break-word;
+  }
+  /* Reading controls are a quiet index, rather than a competing feature card. */
+  [data-lesson-design-pilot] .a1-learning-route {
+    padding: 0 0 24px;
+    border: 0;
+    border-bottom: 1px solid var(--pilot-rule);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  [data-lesson-design-pilot] .a1-learning-route h2 {
+    font: 600 16px/1.5 var(--font-ui);
+    letter-spacing: 0;
+    margin-bottom: 8px;
+  }
+  [data-lesson-design-pilot] .a1-learning-route p {
+    font: 14px/1.65 var(--font-ui);
+    color: var(--pilot-muted);
+    margin-bottom: 16px;
+  }
+  [data-lesson-design-pilot] .a1-learning-route .a1-learning-route-status {
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+  [data-lesson-design-pilot] .a1-learning-route-actions button {
+    border-radius: 4px;
+    font: 500 15px/1.4 var(--font-ui);
+    box-shadow: none;
+  }
+  [data-lesson-design-pilot] .a1-learning-route-actions button[aria-pressed=true] {
+    color: var(--pilot-paper);
+    background: var(--pilot-ink);
+    border-color: var(--pilot-ink);
+  }
+  /* A concise opening spread with a recognisable key and paired examples. */
+  [data-lesson-design-pilot] .a1-clarity-bridge {
+    padding: clamp(20px, 2.5vw, 32px);
+    background: var(--pilot-tint);
+    border: 0;
+    border-top: 3px solid var(--pilot-gold);
+    border-radius: 0;
+    box-shadow: none;
+    font: 16px/1.7 var(--font-ui);
+  }
+  [data-lesson-design-pilot] .a1-clarity-bridge > p:first-of-type {
+    color: var(--pilot-muted);
+    font-size: 14px;
+  }
+  [data-lesson-design-pilot] .a1-clarity-bridge dl {
+    display: grid;
+    grid-template-columns: minmax(100px, 0.32fr) 1fr;
+    gap: 14px 24px;
+    margin: 28px 0;
+  }
+  [data-lesson-design-pilot] .a1-clarity-bridge dt {
+    font: 600 13px/1.6 var(--font-ui);
+    color: var(--pilot-gold);
+  }
+  [data-lesson-design-pilot] .a1-clarity-bridge dd {
+    margin: 0;
+  }
+  [data-lesson-design-pilot] .a1-clarity-bridge blockquote {
+    margin: 24px 0;
+    padding: 16px 0 16px 20px;
+    border: 0;
+    border-left: 2px solid var(--pilot-ink);
+    background: transparent;
+    font: 400 21px/1.6 var(--font-read);
+  }
+  [data-lesson-design-pilot] .a1-contrast {
+    padding: 24px 0 0;
+    border: 0;
+    border-top: 1px solid var(--pilot-rule);
+    border-radius: 0;
+    background: transparent;
+  }
+  [data-lesson-design-pilot] .a1-contrast h3 {
+    margin-top: 0;
+  }
+  [data-lesson-design-pilot] .a1-contrast-pairs {
+    gap: 24px;
+  }
+  [data-lesson-design-pilot] .a1-contrast-pairs p {
+    padding: 0 0 16px;
+    border: 0;
+    border-bottom: 1px solid var(--pilot-rule);
+    border-radius: 0;
+    background: transparent;
+  }
+  [data-lesson-design-pilot] .a1-contrast-pairs strong {
+    font: 450 22px/1.6 var(--font-read);
+  }
+  [data-lesson-design-pilot] .a1-contrast-pairs span {
+    font: 15px/1.6 var(--font-ui);
+    color: var(--pilot-muted);
+    margin-top: 6px;
+  }
+  /* The book: one paper surface, clear chapters, generous examples and readable translations. */
+  [data-lesson-design-pilot] .prose {
+    border: 0;
+    border-radius: 0;
+    padding: clamp(22px, 2.6vw, 40px);
+    background: var(--pilot-paper);
+    box-shadow: inset 0 3px var(--pilot-ink);
+    font: 400 19px/1.78 var(--font-read);
+    color: var(--pilot-ink);
+  }
+  [data-lesson-design-pilot] .prose .layer {
+    padding: 36px 0;
+    border: 0;
+    border-bottom: 1px solid var(--pilot-rule);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  [data-lesson-design-pilot] .prose .layer:first-child {
+    padding-top: 0;
+  }
+  [data-lesson-design-pilot] .prose .layer:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  [data-lesson-design-pilot] .prose .layer h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    font: 450 30px/1.3 var(--font-read);
+    margin-bottom: 28px;
+    letter-spacing: -0.025em;
+  }
+  [data-lesson-design-pilot] .layer-num {
+    flex: 0 0 auto;
+    color: var(--pilot-gold);
+    font: 400 38px/1 var(--font-read);
+    background: none;
+    border: 0;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  [data-lesson-design-pilot] .prose .annotated > p {
+    margin-block: 0 1.2em;
+  }
+  [data-lesson-design-pilot] .prose .annotated > p:last-child {
+    margin-bottom: 0;
+  }
+  [data-lesson-design-pilot] .prose strong {
+    font-weight: 600;
+  }
+  [data-lesson-design-pilot] .prose ul,
+  [data-lesson-design-pilot] .prose ol {
+    padding-left: 1.3em;
+    margin-block: 1.1em;
+  }
+  [data-lesson-design-pilot] .prose li {
+    padding-left: 0.15em;
+    margin-block: 0.65em;
+  }
+  [data-lesson-design-pilot] .prose[data-lesson-reader] .example {
+    padding: 20px 24px;
+    margin-block: 24px;
+    border: 0;
+    border-left: 2px solid var(--pilot-ink);
+    border-radius: 0;
+    background: var(--pilot-tint);
+    font: 400 1.32em/1.85 var(--font-read);
+  }
+  [data-lesson-design-pilot] .prose[data-lesson-reader] .example .ex-ru {
+    display: block;
+    margin: 8px 0 20px;
+    font: 400 calc(var(--edu-translation, 17px) * var(--reader-scale, 1))/1.65 var(--font-ui);
+    color: var(--pilot-muted);
+  }
+  [data-lesson-design-pilot] .prose[data-lesson-reader] .example .ex-ru:last-child {
+    margin-bottom: 0;
+  }
+  [data-lesson-design-pilot] .prose[data-lesson-reader] #sound-notes p {
+    font: 400 0.84em/1.7 var(--font-ui);
+    padding-block: 22px;
+  }
+  [data-lesson-design-pilot] .prose[data-lesson-reader] #sound-notes [lang=en] {
+    font: 450 1.7em/1.6 var(--font-read);
+  }
+  [data-lesson-design-pilot] .prose[data-lesson-reader] #sound-notes .ipa {
+    font-size: 1.3em;
+  }
+  /* Practice is the working section of the same book, with one primary action per task. */
+  [data-lesson-design-pilot] article > .section {
+    border-top: 1px solid var(--pilot-rule);
+    padding-top: 32px;
+    font: 16px/1.75 var(--font-ui);
+  }
+  [data-lesson-design-pilot] .section-head > p {
+    color: var(--pilot-muted);
+    font: 15px/1.7 var(--font-ui);
+  }
+  [data-lesson-design-pilot] .drills {
+    gap: 0;
+  }
+  [data-lesson-design-pilot] .drill {
+    padding: 32px clamp(20px, 2.6vw, 40px);
+    border: 0;
+    border-bottom: 1px solid var(--pilot-rule);
+    border-radius: 0;
+    background: var(--pilot-paper);
+    box-shadow: none;
+  }
+  [data-lesson-design-pilot] .drill-stage {
+    font: 500 12px/1.6 var(--font-ui);
+    letter-spacing: 0.04em;
+    color: var(--pilot-gold);
+    margin-bottom: 12px;
+  }
+  [data-lesson-design-pilot] .drill .drill-prompt {
+    font: 450 calc(20px * var(--reader-scale, 1))/1.6 var(--font-read);
+    margin-bottom: 20px;
+  }
+  [data-lesson-design-pilot] .drill .drill-en {
+    font: 400 calc(26px * var(--reader-scale, 1))/1.75 var(--font-read);
+    margin-block: 20px;
+  }
+  [data-lesson-design-pilot] .drill .fill-input {
+    width: 100%;
+    max-width: 100%;
+    min-height: 52px;
+    padding: 12px 16px;
+    font: 400 calc(20px * var(--reader-scale, 1))/1.5 var(--font-read);
+    border: 1px solid #a9b6ac;
+    border-radius: 3px;
+    background: var(--pilot-paper);
+  }
+  [data-lesson-design-pilot] .choice-row {
+    gap: 10px;
+  }
+  [data-lesson-design-pilot] .choice {
+    min-height: 48px;
+    padding: 9px 16px;
+    border-radius: 3px;
+    font: 400 calc(20px * var(--reader-scale, 1))/1.5 var(--font-read);
+    box-shadow: none;
+  }
+  [data-lesson-design-pilot] .choice[aria-pressed=true] {
+    color: var(--pilot-paper);
+    background: var(--pilot-ink);
+    border-color: var(--pilot-ink);
+  }
+  [data-lesson-design-pilot] .drill-actions {
+    gap: 10px;
+    margin-top: 24px;
+  }
+  [data-lesson-design-pilot] .btn {
+    min-height: 46px;
+    border-radius: 4px;
+    box-shadow: none;
+    font: 500 14px/1.5 var(--font-ui);
+    padding: 11px 18px;
+  }
+  [data-lesson-design-pilot] .btn-primary {
+    background: var(--pilot-ink);
+    color: var(--pilot-paper);
+    border-color: var(--pilot-ink);
+  }
+  [data-lesson-design-pilot] .btn-quiet {
+    background: transparent;
+    color: var(--pilot-ink);
+    border-color: var(--pilot-rule);
+  }
+  [data-lesson-design-pilot] .btn:disabled {
+    color: #66726b;
+    background: #eceee8;
+    border-color: #d6dcd5;
+    opacity: 1;
+    box-shadow: none;
+  }
+  [data-lesson-design-pilot] .btn:not(:disabled):hover {
+    filter: brightness(0.94);
+    transform: none;
+  }
+  [data-lesson-design-pilot] :is(button, a, input, summary):focus-visible {
+    outline: 3px solid var(--pilot-gold);
+    outline-offset: 4px;
+  }
+  [data-lesson-design-pilot] .drill .drill-feedback,
+  [data-lesson-design-pilot] .drill .drill-hint {
+    font: calc(15px * var(--reader-scale, 1))/1.75 var(--font-ui);
+    padding: 16px;
+  }
+  [data-lesson-design-pilot] article details {
+    border: 0;
+    border-block: 1px solid var(--pilot-rule);
+    border-radius: 0;
+    background: transparent;
+    padding: 14px 0;
+  }
+  [data-lesson-design-pilot] article summary {
+    font: 500 15px/1.6 var(--font-ui);
+    padding: 8px 0;
+    cursor: pointer;
+  }
+  /* Speech: mode, prompt, attempt and optional tools form distinct levels. */
+  [data-lesson-design-pilot] .speech-studio {
+    padding: 28px;
+    border: 0;
+    border-top: 3px solid var(--pilot-ink);
+    border-radius: 0;
+    background: var(--pilot-paper);
+    box-shadow: none;
+  }
+  [data-lesson-design-pilot] .speech-notice,
+  [data-lesson-design-pilot] .speech-check {
+    font: 14px/1.7 var(--font-ui);
+    color: var(--pilot-muted);
+  }
+  [data-lesson-design-pilot] .speech-mode-grid {
+    gap: 8px;
+    margin-block: 24px;
+  }
+  [data-lesson-design-pilot] .speech-mode-grid .btn {
+    background: var(--pilot-tint);
+  }
+  [data-lesson-design-pilot] .speech-mode-grid .btn[aria-pressed=true] {
+    background: var(--pilot-ink);
+    color: var(--pilot-paper);
+    border-color: var(--pilot-ink);
+    box-shadow: none;
+  }
+  [data-lesson-design-pilot] .speech-card {
+    padding: 24px;
+    border: 0;
+    border-left: 2px solid var(--pilot-ink);
+    border-radius: 0;
+    background: var(--pilot-tint);
+  }
+  [data-lesson-design-pilot] .speech-task {
+    font: 16px/1.75 var(--font-ui);
+  }
+  [data-lesson-design-pilot] .speech-current {
+    font: 400 28px/1.65 var(--font-read);
+  }
+  [data-lesson-design-pilot] .speech-review-panel,
+  [data-lesson-design-pilot] .speech-beat,
+  [data-lesson-design-pilot] .speech-record {
+    border: 0;
+    border-top: 1px solid var(--pilot-rule);
+    border-radius: 0;
+    margin-top: 28px;
+    padding: 24px 0 0;
+    background: transparent;
+  }
+  [data-lesson-design-pilot] .aside-box {
+    border-radius: 2px;
+    box-shadow: none;
+    border-color: var(--pilot-rule);
+  }
+  [data-lesson-design-pilot] .aside h2 {
+    color: var(--pilot-muted);
+  }
+  [data-lesson-design-pilot] .toc a {
+    font-size: 13px;
+  }
+  [data-lesson-design-pilot] .studio-reader-tools button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  [data-lesson-design-pilot] .studio-reader-tools > span {
+    flex-basis: 100%;
+  }
+  [data-lesson-design-pilot] .studio-reader-tools output {
+    font-size: 12px;
+  }
+  @media (max-width: 700px) {
+    [data-lesson-design-pilot] .lesson-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+    }
+    [data-lesson-design-pilot] .lesson-grid > article {
+      order: 2;
+    }
+    [data-lesson-design-pilot] .lesson-grid > .aside {
+      display: contents;
+    }
+    [data-lesson-design-pilot] .aside-box:first-child {
+      order: 1;
+    }
+    [data-lesson-design-pilot] .aside-box:nth-child(2) {
+      order: 3;
+    }
+    [data-lesson-design-pilot] .aside-box {
+      padding: 16px;
+    }
+    [data-lesson-design-pilot] .aside-box:first-child h2 {
+      margin-bottom: 8px;
+    }
+    [data-lesson-design-pilot] .studio-reader-tools {
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+    [data-lesson-design-pilot] .a1-clarity-bridge dl {
+      display: block;
+    }
+    [data-lesson-design-pilot] .a1-clarity-bridge dt {
+      font-size: 12px;
+      margin-top: 20px;
+    }
+    [data-lesson-design-pilot] .a1-clarity-bridge dd {
+      font-size: 16px;
+      margin-top: 6px;
+    }
+    [data-lesson-design-pilot] .prose {
+      padding: 24px 20px;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    [data-lesson-design-pilot] .prose .layer {
+      padding-block: 28px;
+    }
+    [data-lesson-design-pilot] .prose .layer h2 {
+      font-size: 25px;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    [data-lesson-design-pilot] .layer-num {
+      font-size: 30px;
+    }
+    [data-lesson-design-pilot] .prose[data-lesson-reader] .example {
+      padding: 18px 16px;
+      font-size: 1.25em;
+    }
+    [data-lesson-design-pilot] .prose[data-lesson-reader] .example .ex-ru {
+      font-size: calc(var(--edu-translation, 17px) * var(--reader-scale, 1));
+    }
+    [data-lesson-design-pilot] .drill {
+      padding: 26px 20px;
+    }
+    [data-lesson-design-pilot] .drill .drill-prompt {
+      font-size: calc(19px * var(--reader-scale, 1));
+    }
+    [data-lesson-design-pilot] .drill .drill-en {
+      font-size: calc(24px * var(--reader-scale, 1));
+    }
+    [data-lesson-design-pilot] .speech-studio {
+      padding: 24px 18px;
+    }
+    [data-lesson-design-pilot] .speech-card {
+      padding: 18px 16px;
+    }
+    [data-lesson-design-pilot] .speech-mode-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    [data-lesson-design-pilot] .speech-mode-grid .btn {
+      padding-inline: 8px;
+    }
+    [data-lesson-design-pilot] .speech-actions {
+      gap: 10px;
+    }
+    [data-lesson-design-pilot] .speech-current {
+      font-size: 25px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-lesson-design-pilot] *,
+    [data-lesson-design-pilot] *::before,
+    [data-lesson-design-pilot] *::after {
+      animation: none;
+      transition: none;
+      scroll-behavior: auto;
+    }
+  }
+  /* Keep the complete lesson map visible without changing the selected depth. */
+  [data-lesson-design-pilot] .toc a[aria-disabled=true] {
+    color: #746e62;
+    text-decoration: none;
+    cursor: default;
+  }
+  [data-lesson-design-pilot] .route-availability {
+    display: block;
+    margin: 0.15rem 0 0.55rem;
+    color: #746e62;
+    font-size: 0.78em;
+    line-height: 1.4;
+  }
+  [data-lesson-design-pilot] .route-availability[hidden] {
+    display: none;
+  }
 }
-
-[data-lesson-design-pilot] .page-head {
-  border-bottom: 1px solid var(--pilot-rule);
-  margin-bottom: 32px;
-  padding-bottom: 32px;
-}
-[data-lesson-design-pilot] .page-head h1 {
-  font-family: var(--font-read);
-  font-weight: 450;
-  line-height: 1.17;
-  letter-spacing: -.035em;
-  text-wrap: balance;
-}
-[data-lesson-design-pilot] .page-head > p:last-child {
-  max-width: 70ch;
-  line-height: 1.75;
-  color: var(--pilot-muted);
-}
-[data-lesson-design-pilot] article > section {
-  margin-block: 0 40px;
-}
-[data-lesson-design-pilot] article h2 {
-  font: 450 clamp(25px, 2.2vw, 31px)/1.3 var(--font-read);
-  letter-spacing: -.025em;
-  text-wrap: balance;
-  color: var(--pilot-ink);
-  margin-block: 0 20px;
-}
-[data-lesson-design-pilot] article h3 {
-  font: 600 18px/1.5 var(--font-ui);
-  margin-block: 24px 14px;
-}
-[data-lesson-design-pilot] article h4 {
-  font: 600 17px/1.5 var(--font-ui);
-}
-[data-lesson-design-pilot] article p {
-  overflow-wrap: break-word;
-}
-
-/* Reading controls are a quiet index, rather than a competing feature card. */
-[data-lesson-design-pilot] .a1-learning-route {
-  padding: 0 0 24px;
-  border: 0;
-  border-bottom: 1px solid var(--pilot-rule);
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-[data-lesson-design-pilot] .a1-learning-route h2 {
-  font: 600 16px/1.5 var(--font-ui);
-  letter-spacing: 0;
-  margin-bottom: 8px;
-}
-[data-lesson-design-pilot] .a1-learning-route p {
-  font: 14px/1.65 var(--font-ui);
-  color: var(--pilot-muted);
-  margin-bottom: 16px;
-}
-[data-lesson-design-pilot] .a1-learning-route .a1-learning-route-status {
-  margin-bottom: 0;
-  font-size: 13px;
-}
-[data-lesson-design-pilot] .a1-learning-route-actions button {
-  border-radius: 4px;
-  font: 500 15px/1.4 var(--font-ui);
-  box-shadow: none;
-}
-[data-lesson-design-pilot] .a1-learning-route-actions button[aria-pressed="true"] {
-  color: var(--pilot-paper);
-  background: var(--pilot-ink);
-  border-color: var(--pilot-ink);
-}
-
-/* A concise opening spread with a recognisable key and paired examples. */
-[data-lesson-design-pilot] .a1-clarity-bridge {
-  padding: clamp(20px, 2.5vw, 32px);
-  background: var(--pilot-tint);
-  border: 0;
-  border-top: 3px solid var(--pilot-gold);
-  border-radius: 0;
-  box-shadow: none;
-  font: 16px/1.7 var(--font-ui);
-}
-[data-lesson-design-pilot] .a1-clarity-bridge > p:first-of-type {
-  color: var(--pilot-muted);
-  font-size: 14px;
-}
-[data-lesson-design-pilot] .a1-clarity-bridge dl {
-  display: grid;
-  grid-template-columns: minmax(100px, .32fr) 1fr;
-  gap: 14px 24px;
-  margin: 28px 0;
-}
-[data-lesson-design-pilot] .a1-clarity-bridge dt {
-  font: 600 13px/1.6 var(--font-ui);
-  color: var(--pilot-gold);
-}
-[data-lesson-design-pilot] .a1-clarity-bridge dd {
-  margin: 0;
-}
-[data-lesson-design-pilot] .a1-clarity-bridge blockquote {
-  margin: 24px 0;
-  padding: 16px 0 16px 20px;
-  border: 0;
-  border-left: 2px solid var(--pilot-ink);
-  background: transparent;
-  font: 400 21px/1.6 var(--font-read);
-}
-[data-lesson-design-pilot] .a1-contrast {
-  padding: 24px 0 0;
-  border: 0;
-  border-top: 1px solid var(--pilot-rule);
-  border-radius: 0;
-  background: transparent;
-}
-[data-lesson-design-pilot] .a1-contrast h3 {
-  margin-top: 0;
-}
-[data-lesson-design-pilot] .a1-contrast-pairs {
-  gap: 24px;
-}
-[data-lesson-design-pilot] .a1-contrast-pairs p {
-  padding: 0 0 16px;
-  border: 0;
-  border-bottom: 1px solid var(--pilot-rule);
-  border-radius: 0;
-  background: transparent;
-}
-[data-lesson-design-pilot] .a1-contrast-pairs strong {
-  font: 450 22px/1.6 var(--font-read);
-}
-[data-lesson-design-pilot] .a1-contrast-pairs span {
-  font: 15px/1.6 var(--font-ui);
-  color: var(--pilot-muted);
-  margin-top: 6px;
-}
-
-/* The book: one paper surface, clear chapters, generous examples and readable translations. */
-[data-lesson-design-pilot] .prose {
-  border: 0;
-  border-radius: 0;
-  padding: clamp(22px, 2.6vw, 40px);
-  background: var(--pilot-paper);
-  box-shadow: inset 0 3px var(--pilot-ink);
-  font: 400 19px/1.78 var(--font-read);
-  color: var(--pilot-ink);
-}
-[data-lesson-design-pilot] .prose .layer {
-  padding: 36px 0;
-  border: 0;
-  border-bottom: 1px solid var(--pilot-rule);
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-[data-lesson-design-pilot] .prose .layer:first-child { padding-top: 0; }
-[data-lesson-design-pilot] .prose .layer:last-child { border-bottom: 0; padding-bottom: 0; }
-[data-lesson-design-pilot] .prose .layer h2 {
-  display: flex;
-  align-items: baseline;
-  gap: 18px;
-  font: 450 30px/1.3 var(--font-read);
-  margin-bottom: 28px;
-  letter-spacing: -.025em;
-}
-[data-lesson-design-pilot] .layer-num {
-  flex: 0 0 auto;
-  color: var(--pilot-gold);
-  font: 400 38px/1 var(--font-read);
-  background: none;
-  border: 0;
-  width: auto;
-  height: auto;
-  margin: 0;
-  padding: 0;
-}
-[data-lesson-design-pilot] .prose .annotated > p { margin-block: 0 1.2em; }
-[data-lesson-design-pilot] .prose .annotated > p:last-child { margin-bottom: 0; }
-[data-lesson-design-pilot] .prose strong { font-weight: 600; }
-[data-lesson-design-pilot] .prose ul,
-[data-lesson-design-pilot] .prose ol { padding-left: 1.3em; margin-block: 1.1em; }
-[data-lesson-design-pilot] .prose li { padding-left: .15em; margin-block: .65em; }
-[data-lesson-design-pilot] .prose[data-lesson-reader] .example {
-  padding: 20px 24px;
-  margin-block: 24px;
-  border: 0;
-  border-left: 2px solid var(--pilot-ink);
-  border-radius: 0;
-  background: var(--pilot-tint);
-  font: 400 1.32em/1.85 var(--font-read);
-}
-[data-lesson-design-pilot] .prose[data-lesson-reader] .example .ex-ru {
-  display: block;
-  margin: 8px 0 20px;
-  font: 400 calc(var(--edu-translation, 17px) * var(--reader-scale, 1))/1.65 var(--font-ui);
-  color: var(--pilot-muted);
-}
-[data-lesson-design-pilot] .prose[data-lesson-reader] .example .ex-ru:last-child { margin-bottom: 0; }
-[data-lesson-design-pilot] .prose[data-lesson-reader] #sound-notes p {
-  font: 400 .84em/1.7 var(--font-ui);
-  padding-block: 22px;
-}
-[data-lesson-design-pilot] .prose[data-lesson-reader] #sound-notes [lang="en"] {
-  font: 450 1.7em/1.6 var(--font-read);
-}
-[data-lesson-design-pilot] .prose[data-lesson-reader] #sound-notes .ipa { font-size: 1.3em; }
-
-/* Practice is the working section of the same book, with one primary action per task. */
-[data-lesson-design-pilot] article > .section {
-  border-top: 1px solid var(--pilot-rule);
-  padding-top: 32px;
-  font: 16px/1.75 var(--font-ui);
-}
-[data-lesson-design-pilot] .section-head > p {
-  color: var(--pilot-muted);
-  font: 15px/1.7 var(--font-ui);
-}
-[data-lesson-design-pilot] .drills { gap: 0; }
-[data-lesson-design-pilot] .drill {
-  padding: 32px clamp(20px, 2.6vw, 40px);
-  border: 0;
-  border-bottom: 1px solid var(--pilot-rule);
-  border-radius: 0;
-  background: var(--pilot-paper);
-  box-shadow: none;
-}
-[data-lesson-design-pilot] .drill-stage {
-  font: 500 12px/1.6 var(--font-ui);
-  letter-spacing: .04em;
-  color: var(--pilot-gold);
-  margin-bottom: 12px;
-}
-[data-lesson-design-pilot] .drill .drill-prompt {
-  font: 450 calc(20px * var(--reader-scale, 1))/1.6 var(--font-read);
-  margin-bottom: 20px;
-}
-[data-lesson-design-pilot] .drill .drill-en {
-  font: 400 calc(26px * var(--reader-scale, 1))/1.75 var(--font-read);
-  margin-block: 20px;
-}
-[data-lesson-design-pilot] .drill .fill-input {
-  width: 100%;
-  max-width: 100%;
-  min-height: 52px;
-  padding: 12px 16px;
-  font: 400 calc(20px * var(--reader-scale, 1))/1.5 var(--font-read);
-  border: 1px solid #a9b6ac;
-  border-radius: 3px;
-  background: var(--pilot-paper);
-}
-[data-lesson-design-pilot] .choice-row { gap: 10px; }
-[data-lesson-design-pilot] .choice {
-  min-height: 48px;
-  padding: 9px 16px;
-  border-radius: 3px;
-  font: 400 calc(20px * var(--reader-scale, 1))/1.5 var(--font-read);
-  box-shadow: none;
-}
-[data-lesson-design-pilot] .choice[aria-pressed="true"] {
-  color: var(--pilot-paper);
-  background: var(--pilot-ink);
-  border-color: var(--pilot-ink);
-}
-[data-lesson-design-pilot] .drill-actions { gap: 10px; margin-top: 24px; }
-[data-lesson-design-pilot] .btn {
-  min-height: 46px;
-  border-radius: 4px;
-  box-shadow: none;
-  font: 500 14px/1.5 var(--font-ui);
-  padding: 11px 18px;
-}
-[data-lesson-design-pilot] .btn-primary {
-  background: var(--pilot-ink);
-  color: var(--pilot-paper);
-  border-color: var(--pilot-ink);
-}
-[data-lesson-design-pilot] .btn-quiet {
-  background: transparent;
-  color: var(--pilot-ink);
-  border-color: var(--pilot-rule);
-}
-[data-lesson-design-pilot] .btn:disabled {
-  color: #66726b;
-  background: #eceee8;
-  border-color: #d6dcd5;
-  opacity: 1;
-  box-shadow: none;
-}
-[data-lesson-design-pilot] .btn:not(:disabled):hover { filter: brightness(.94); transform: none; }
-[data-lesson-design-pilot] :is(button, a, input, summary):focus-visible {
-  outline: 3px solid var(--pilot-gold);
-  outline-offset: 4px;
-}
-[data-lesson-design-pilot] .drill .drill-feedback,
-[data-lesson-design-pilot] .drill .drill-hint { font: calc(15px * var(--reader-scale, 1))/1.75 var(--font-ui); padding: 16px; }
-[data-lesson-design-pilot] article details {
-  border: 0;
-  border-block: 1px solid var(--pilot-rule);
-  border-radius: 0;
-  background: transparent;
-  padding: 14px 0;
-}
-[data-lesson-design-pilot] article summary {
-  font: 500 15px/1.6 var(--font-ui);
-  padding: 8px 0;
-  cursor: pointer;
-}
-
-/* Speech: mode, prompt, attempt and optional tools form distinct levels. */
-[data-lesson-design-pilot] .speech-studio {
-  padding: 28px;
-  border: 0;
-  border-top: 3px solid var(--pilot-ink);
-  border-radius: 0;
-  background: var(--pilot-paper);
-  box-shadow: none;
-}
-[data-lesson-design-pilot] .speech-notice,
-[data-lesson-design-pilot] .speech-check { font: 14px/1.7 var(--font-ui); color: var(--pilot-muted); }
-[data-lesson-design-pilot] .speech-mode-grid { gap: 8px; margin-block: 24px; }
-[data-lesson-design-pilot] .speech-mode-grid .btn { background: var(--pilot-tint); }
-[data-lesson-design-pilot] .speech-mode-grid .btn[aria-pressed="true"] {
-  background: var(--pilot-ink);
-  color: var(--pilot-paper);
-  border-color: var(--pilot-ink);
-  box-shadow: none;
-}
-[data-lesson-design-pilot] .speech-card {
-  padding: 24px;
-  border: 0;
-  border-left: 2px solid var(--pilot-ink);
-  border-radius: 0;
-  background: var(--pilot-tint);
-}
-[data-lesson-design-pilot] .speech-task { font: 16px/1.75 var(--font-ui); }
-[data-lesson-design-pilot] .speech-current { font: 400 28px/1.65 var(--font-read); }
-[data-lesson-design-pilot] .speech-review-panel,
-[data-lesson-design-pilot] .speech-beat,
-[data-lesson-design-pilot] .speech-record {
-  border: 0;
-  border-top: 1px solid var(--pilot-rule);
-  border-radius: 0;
-  margin-top: 28px;
-  padding: 24px 0 0;
-  background: transparent;
-}
-[data-lesson-design-pilot] .aside-box {
-  border-radius: 2px;
-  box-shadow: none;
-  border-color: var(--pilot-rule);
-}
-[data-lesson-design-pilot] .aside h2 { color: var(--pilot-muted); }
-[data-lesson-design-pilot] .toc a { font-size: 13px; }
-[data-lesson-design-pilot] .studio-reader-tools button { min-width: 44px; min-height: 44px; }
-[data-lesson-design-pilot] .studio-reader-tools > span { flex-basis: 100%; }
-[data-lesson-design-pilot] .studio-reader-tools output { font-size: 12px; }
-
-@media (max-width: 700px) {
-  [data-lesson-design-pilot] .lesson-grid { display: grid; grid-template-columns: minmax(0, 1fr); }
-  [data-lesson-design-pilot] .lesson-grid > article { order: 2; }
-  [data-lesson-design-pilot] .lesson-grid > .aside { display: contents; }
-  [data-lesson-design-pilot] .aside-box:first-child { order: 1; }
-  [data-lesson-design-pilot] .aside-box:nth-child(2) { order: 3; }
-  [data-lesson-design-pilot] .aside-box { padding: 16px; }
-  [data-lesson-design-pilot] .aside-box:first-child h2 { margin-bottom: 8px; }
-  [data-lesson-design-pilot] .studio-reader-tools { margin-top: 10px; padding-top: 10px; }
-  [data-lesson-design-pilot] .a1-clarity-bridge dl { display: block; }
-  [data-lesson-design-pilot] .a1-clarity-bridge dt { font-size: 12px; margin-top: 20px; }
-  [data-lesson-design-pilot] .a1-clarity-bridge dd { font-size: 16px; margin-top: 6px; }
-  [data-lesson-design-pilot] .prose { padding: 24px 20px; font-size: 18px; line-height: 1.8; }
-  [data-lesson-design-pilot] .prose .layer { padding-block: 28px; }
-  [data-lesson-design-pilot] .prose .layer h2 { font-size: 25px; gap: 12px; margin-bottom: 22px; }
-  [data-lesson-design-pilot] .layer-num { font-size: 30px; }
-  [data-lesson-design-pilot] .prose[data-lesson-reader] .example { padding: 18px 16px; font-size: 1.25em; }
-  [data-lesson-design-pilot] .prose[data-lesson-reader] .example .ex-ru { font-size: calc(var(--edu-translation, 17px) * var(--reader-scale, 1)); }
-  [data-lesson-design-pilot] .drill { padding: 26px 20px; }
-  [data-lesson-design-pilot] .drill .drill-prompt { font-size: calc(19px * var(--reader-scale, 1)); }
-  [data-lesson-design-pilot] .drill .drill-en { font-size: calc(24px * var(--reader-scale, 1)); }
-  [data-lesson-design-pilot] .speech-studio { padding: 24px 18px; }
-  [data-lesson-design-pilot] .speech-card { padding: 18px 16px; }
-  [data-lesson-design-pilot] .speech-mode-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  [data-lesson-design-pilot] .speech-mode-grid .btn { padding-inline: 8px; }
-  [data-lesson-design-pilot] .speech-actions { gap: 10px; }
-  [data-lesson-design-pilot] .speech-current { font-size: 25px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-lesson-design-pilot] *,
-  [data-lesson-design-pilot] *::before,
-  [data-lesson-design-pilot] *::after { animation: none; transition: none; scroll-behavior: auto; }
-}
-
-/* Keep the complete lesson map visible without changing the selected depth. */
-[data-lesson-design-pilot] .toc a[aria-disabled="true"] {
-  color: #746e62;
-  text-decoration: none;
-  cursor: default;
-}
-[data-lesson-design-pilot] .route-availability {
-  display: block;
-  margin: .15rem 0 .55rem;
-  color: #746e62;
-  font-size: .78em;
-  line-height: 1.4;
-}
-[data-lesson-design-pilot] .route-availability[hidden] { display: none; }

@@ -1,0 +1,38 @@
+{
+  "page": "/levels/a1/weeks/13/",
+  "state": "Linux; two lesson disclosures open, one42rem reading column, reduced motion",
+  "viewports": {
+    "360": [
+      {
+        "height": 308.375
+      },
+      {
+        "height": 284.578125
+      }
+    ],
+    "390": [
+      {
+        "height": 284.578125
+      },
+      {
+        "height": 260.78125
+      }
+    ],
+    "1280": [
+      {
+        "height": 235.53125
+      },
+      {
+        "height": 211.734375
+      }
+    ],
+    "1440": [
+      {
+        "height": 235.53125
+      },
+      {
+        "height": 211.734375
+      }
+    ]
+  }
+}

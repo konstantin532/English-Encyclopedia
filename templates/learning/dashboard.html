@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block page_family %}dashboard{% endblock %}
 {% block title %}Мой прогресс · {{ SITE_NAME }}{% endblock %}
 {% block content %}
 <div class="wrap" style="padding-bottom: var(--space-8)">
@@ -19,6 +20,20 @@
     {% endif %}
   </section>
   {% endif %}
+  <section class="atlas-next-step" aria-labelledby="next-step-title">
+    <div>
+      <h2 id="next-step-title">Следующий шаг</h2>
+      {% if next_lesson %}
+      <p class="atlas-next-title">{{ next_lesson.title }}</p>
+      <p><a class="btn btn-primary" href="{% url 'lessons:detail' next_lesson.slug %}">{% if progress %}Продолжить урок{% else %}Начать первый урок{% endif %} <span aria-hidden="true">→</span></a></p>
+      {% else %}<p>Выберите неделю и продолжите свой маршрут.</p><p><a class="btn btn-primary" href="{% url 'curriculum:level' 'a1' %}">Открыть курс</a></p>{% endif %}
+    </div>
+    <div class="atlas-next-review"><h3>Вернуться к знакомому</h3>
+      {% if due %}<p>Слов для повторения сегодня: <strong>{{ due|length }}</strong>.</p><a class="btn btn-quiet" href="{% url 'learning:review' %}">Повторить {{ due|length }}</a>
+      {% else %}<p>Сейчас нет слов, которым подошёл срок повторения.</p><a href="{% url 'learning:review' %}">Посмотреть повторения</a>{% endif %}
+    </div>
+  </section>
+  <div class="atlas-practice-grid">
   {% if trainer_enabled %}<section class="section" data-trainer-entry aria-labelledby="vocabulary-trainer-title"><h2 id="vocabulary-trainer-title">Практика слов и фраз</h2><p>Три единицы после урока 5: вспомнить самостоятельно, применить в новой ситуации, сравнить сказанное.</p><p><a class="btn btn-primary" href="{% url 'learning:trainer' %}">Открыть добровольный тренажёр</a></p></section>{% endif %}
   {% if phrases_enabled %}<section class="section" data-phrases-entry aria-labelledby="phrases-entry-title"><h2 id="phrases-entry-title">Тренировка фраз</h2><p>Фразы из изученных слов. Чаще попадаются слова, которые начинают забываться.</p><p><a class="btn btn-primary" href="{% url 'learning:phrases' %}">Начать тренировку</a></p></section>{% endif %}
   <div class="stats">
@@ -61,9 +76,7 @@
     <p><a href="{% url 'learning:transfer_pilot' 'a1-verb-be' %}">Неделя 1: знакомство →</a></p>
     <p><a href="{% url 'learning:transfer_pilot' 'a1-have-like-can-do' %}">Неделя 2: мой дом →</a></p>
   </section>
-  {% if next_lesson %}
-    <p><a class="btn btn-primary" href="{% url 'lessons:detail' next_lesson.slug %}">{% if progress %}Продолжить: {{ next_lesson.title }}{% else %}Начать первый урок{% endif %}</a></p>
-  {% endif %}
+  </div>
 
   {% if progress %}
   <section class="section" aria-labelledby="units-t" style="padding-top: var(--space-6)">

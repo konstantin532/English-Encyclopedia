@@ -1,0 +1,24 @@
+@layer ee-reading {
+/* «Классика»: карточки скороговорок и стихов в общей системе токенов. */
+.classics-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-4); }
+.classics-card { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-m); padding: var(--space-5); }
+.classics-poem { margin-top: var(--space-4); }
+.classics-text { font-family: var(--font-read); font-size: var(--step-2); line-height: 1.25; margin: 0 0 var(--space-2); color: var(--ink); }
+.classics-ru { color: var(--ink-soft); margin: 0 0 var(--space-2); }
+.classics-ipa { font-family: var(--font-ipa); color: var(--ink-faint); margin: 0 0 var(--space-3); }
+.classics-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-3) 0; }
+.classics-glossary { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); color: var(--ink-soft); font-size: var(--step--1); }
+.classics-poem h3 small { font-family: var(--font-ui); font-size: var(--step--1); color: var(--ink-soft); font-weight: 400; }
+.classics-lines { width: 100%; border-collapse: collapse; margin: var(--space-3) 0; }
+.classics-lines td { padding: var(--space-1) var(--space-3) var(--space-1) 0; vertical-align: top; border-bottom: 1px solid var(--rule); }
+.classics-lines td:first-child { font-family: var(--font-read); font-size: var(--step-1); color: var(--ink); width: 55%; }
+.classics-lines td:last-child { color: var(--ink-soft); }
+.classics-voice-note[hidden] { display: none; }
+@media (max-width: 640px) {
+  .classics-card { padding: var(--space-4); }
+  .classics-lines, .classics-lines tbody, .classics-lines tr, .classics-lines td { display: block; width: auto; }
+  .classics-lines td:first-child { border-bottom: 0; padding-bottom: 0; }
+  .classics-lines td:last-child { padding-top: 0; padding-bottom: var(--space-2); }
+}
+
+}

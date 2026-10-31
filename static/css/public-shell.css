@@ -1,247 +1,233 @@
 /* Generated from static/scss/public-shell.scss; run pnpm build:css. Do not edit. */
-/* Public entry keeps course navigation out of guest and pending-request screens. */
-.ee-public-shell {
-  min-height: 100svh;
-}
-.ee-public-shell .studio-workspace {
-  min-width: 0;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-}
-.ee-public-shell main {
-  flex: 1;
-  min-width: 0;
-  padding: var(--space-6) var(--space-4);
-}
-
-.ee-public-header, .ee-public-footer {
-  width: min(100% - var(--space-6), var(--page));
-  margin-inline: auto;
-  font-family: var(--font-ui);
-}
-.ee-public-header nav, .ee-public-footer nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-5);
-}
-.ee-public-header a, .ee-public-footer a {
-  color: var(--ink);
-  text-underline-offset: 0.25em;
-}
-
-.ee-public-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  padding-block: var(--space-5);
-  border-bottom: 1px solid var(--rule);
-}
-.ee-public-header form {
-  margin: 0;
-}
-.ee-public-header [aria-current] {
-  color: var(--studio-green);
-  font-weight: 650;
-}
-
-.ee-public-brand {
-  text-decoration: none;
-  font: 600 var(--step-1)/1.2 var(--font-read);
-}
-.ee-public-brand small {
-  display: block;
-  margin-top: var(--space-1);
-  font: var(--step--1)/1.5 var(--font-ui);
-  color: var(--ink-soft);
-}
-
-.ee-public-footer {
-  padding-block: var(--space-5);
-  border-top: 1px solid var(--rule);
-  font-size: var(--step--1);
-  color: var(--ink-soft);
-}
-.ee-public-footer p {
-  margin: var(--space-4) 0 0;
-  max-width: var(--measure);
-}
-
-.ee-auth {
-  display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
-  width: min(100%, 62rem);
-  margin: var(--space-4) auto;
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-m);
-  overflow: hidden;
-}
-
-.ee-auth-note {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  padding: var(--space-7);
-  background: var(--studio-green);
-  color: var(--surface);
-}
-.ee-auth-note .studio-eyebrow {
-  color: inherit;
-}
-.ee-auth-note h2 {
-  color: inherit;
-  font: 500 clamp(1.8rem, 3vw, 2.59rem)/1.2 var(--font-read);
-  margin: var(--space-6) 0 var(--space-5);
-}
-.ee-auth-note p {
-  font: var(--step-0)/1.7 var(--font-ui);
-  max-width: 28ch;
-}
-
-.ee-auth-letter {
-  margin-top: auto;
-  padding-top: var(--space-7);
-  font: italic 6rem/1 var(--font-read);
-  opacity: 0.7;
-  align-self: end;
-}
-
-.ee-auth-form, .ee-auth-status {
-  padding: var(--space-7);
-  font-family: var(--font-ui);
-}
-.ee-auth-form h1, .ee-auth-status h1 {
-  font: 500 clamp(2rem, 4vw, 2.59rem)/1.2 var(--font-read);
-  margin: 0 0 var(--space-4);
-  color: var(--ink);
-}
-.ee-auth-form .field, .ee-auth-status .field {
-  margin: 0 0 var(--space-5);
-}
-.ee-auth-form .field input, .ee-auth-status .field input {
-  width: 100%;
-  min-width: 0;
-  min-height: 48px;
-  font: 1rem var(--font-ui);
-}
-.ee-auth-form .field label, .ee-auth-form legend, .ee-auth-status .field label, .ee-auth-status legend {
-  font: 500 var(--step--1)/1.5 var(--font-ui);
-  color: var(--ink);
-}
-.ee-auth-form .help, .ee-auth-status .help {
-  color: var(--ink-soft);
-  font: var(--step--1)/1.5 var(--font-ui);
-}
-.ee-auth-form .help ul, .ee-auth-status .help ul {
-  padding-left: var(--space-5);
-}
-.ee-auth-form .errorlist, .ee-auth-status .errorlist {
-  color: var(--warn);
-  font: var(--step--1)/1.5 var(--font-ui);
-}
-
-.ee-auth-lede {
-  color: var(--ink-soft);
-  margin: 0 0 var(--space-6);
-  font: var(--step-0)/1.6 var(--font-ui);
-}
-
-.ee-role-choice {
-  padding: 0;
-  margin: 0 0 var(--space-5);
-  border: 0;
-  min-width: 0;
-}
-.ee-role-choice legend {
-  padding: 0;
-  margin-bottom: var(--space-3);
-}
-
-.ee-role-options {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-3);
-}
-
-.ee-role-option {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  min-height: 48px;
-  padding: var(--space-3);
-  border: 1px solid var(--rule-strong);
-  border-radius: var(--radius-s);
-  cursor: pointer;
-  color: var(--ink);
-  font: 500 1rem var(--font-ui);
-}
-.ee-role-option input {
-  margin: 0;
-  width: 1rem;
-  height: 1rem;
-  accent-color: var(--studio-green);
-}
-.ee-role-option:has(:checked) {
-  border-color: var(--studio-green);
-  background: var(--ok-surface);
-}
-.ee-role-option:focus-within {
-  outline: 2px solid var(--ee-focus);
-  outline-offset: 3px;
-}
-
-.ee-auth-submit {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  min-height: 48px;
-}
-
-.ee-auth-alternate {
-  text-align: center;
-  margin: var(--space-5) 0 0;
-  font-size: var(--step--1);
-}
-
-.ee-auth-status {
-  width: min(100%, 42rem);
-  margin: var(--space-7) auto;
-  border-block: 1px solid var(--rule-strong);
-}
-.ee-auth-status h1 {
-  margin-top: var(--space-5);
-}
-.ee-auth-status p {
-  line-height: 1.7;
-}
-
-@media (max-width: 700px) {
-  .ee-public-header {
-    align-items: start;
-    flex-direction: column;
-    padding-block: var(--space-4);
+@layer ee-reading {
+  /* Public entry keeps course navigation out of guest and pending-request screens. */
+  .ee-public-shell {
+    min-height: 100svh;
   }
-  .ee-public-header nav {
-    gap: var(--space-5);
+  .ee-public-shell .studio-workspace {
+    min-width: 0;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
   }
   .ee-public-shell main {
-    padding: var(--space-5) var(--space-4);
+    flex: 1;
+    min-width: 0;
+    padding: var(--space-6) var(--space-4);
+  }
+  .ee-public-header, .ee-public-footer {
+    width: min(100% - var(--space-6), var(--page));
+    margin-inline: auto;
+    font-family: var(--font-ui);
+  }
+  .ee-public-header nav, .ee-public-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-5);
+  }
+  .ee-public-header a, .ee-public-footer a {
+    color: var(--ink);
+    text-underline-offset: 0.25em;
+  }
+  .ee-public-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding-block: var(--space-5);
+    border-bottom: 1px solid var(--rule);
+  }
+  .ee-public-header form {
+    margin: 0;
+  }
+  .ee-public-header [aria-current] {
+    color: var(--studio-green);
+    font-weight: 650;
+  }
+  .ee-public-brand {
+    text-decoration: none;
+    font: 600 var(--step-1)/1.2 var(--font-read);
+  }
+  .ee-public-brand small {
+    display: block;
+    margin-top: var(--space-1);
+    font: var(--step--1)/1.5 var(--font-ui);
+    color: var(--ink-soft);
+  }
+  .ee-public-footer {
+    padding-block: var(--space-5);
+    border-top: 1px solid var(--rule);
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+  }
+  .ee-public-footer p {
+    margin: var(--space-4) 0 0;
+    max-width: var(--measure);
   }
   .ee-auth {
-    display: block;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    width: min(100%, 62rem);
+    margin: var(--space-4) auto;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-m);
+    overflow: hidden;
   }
   .ee-auth-note {
-    display: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: var(--space-7);
+    background: var(--studio-green);
+    color: var(--surface);
+  }
+  .ee-auth-note .studio-eyebrow {
+    color: inherit;
+  }
+  .ee-auth-note h2 {
+    color: inherit;
+    font: 500 clamp(1.8rem, 3vw, 2.59rem)/1.2 var(--font-read);
+    margin: var(--space-6) 0 var(--space-5);
+  }
+  .ee-auth-note p {
+    font: var(--step-0)/1.7 var(--font-ui);
+    max-width: 28ch;
+  }
+  .ee-auth-letter {
+    margin-top: auto;
+    padding-top: var(--space-7);
+    font: italic 6rem/1 var(--font-read);
+    opacity: 0.7;
+    align-self: end;
   }
   .ee-auth-form, .ee-auth-status {
-    padding: var(--space-5);
+    padding: var(--space-7);
+    font-family: var(--font-ui);
+  }
+  .ee-auth-form h1, .ee-auth-status h1 {
+    font: 500 clamp(2rem, 4vw, 2.59rem)/1.2 var(--font-read);
+    margin: 0 0 var(--space-4);
+    color: var(--ink);
+  }
+  .ee-auth-form .field, .ee-auth-status .field {
+    margin: 0 0 var(--space-5);
+  }
+  .ee-auth-form .field input, .ee-auth-status .field input {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    font: 1rem var(--font-ui);
+  }
+  .ee-auth-form .field label, .ee-auth-form legend, .ee-auth-status .field label, .ee-auth-status legend {
+    font: 500 var(--step--1)/1.5 var(--font-ui);
+    color: var(--ink);
+  }
+  .ee-auth-form .help, .ee-auth-status .help {
+    color: var(--ink-soft);
+    font: var(--step--1)/1.5 var(--font-ui);
+  }
+  .ee-auth-form .help ul, .ee-auth-status .help ul {
+    padding-left: var(--space-5);
+  }
+  .ee-auth-form .errorlist, .ee-auth-status .errorlist {
+    color: var(--warn);
+    font: var(--step--1)/1.5 var(--font-ui);
+  }
+  .ee-auth-lede {
+    color: var(--ink-soft);
+    margin: 0 0 var(--space-6);
+    font: var(--step-0)/1.6 var(--font-ui);
+  }
+  .ee-role-choice {
+    padding: 0;
+    margin: 0 0 var(--space-5);
+    border: 0;
+    min-width: 0;
+  }
+  .ee-role-choice legend {
+    padding: 0;
+    margin-bottom: var(--space-3);
+  }
+  .ee-role-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+  .ee-role-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 48px;
+    padding: var(--space-3);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-s);
+    cursor: pointer;
+    color: var(--ink);
+    font: 500 1rem var(--font-ui);
+  }
+  .ee-role-option input {
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--studio-green);
+  }
+  .ee-role-option:has(:checked) {
+    border-color: var(--studio-green);
+    background: var(--ok-surface);
+  }
+  .ee-role-option:focus-within {
+    outline: 2px solid var(--ee-focus);
+    outline-offset: 3px;
+  }
+  .ee-auth-submit {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 48px;
+  }
+  .ee-auth-alternate {
+    text-align: center;
+    margin: var(--space-5) 0 0;
+    font-size: var(--step--1);
   }
   .ee-auth-status {
-    margin-block: var(--space-4);
+    width: min(100%, 42rem);
+    margin: var(--space-7) auto;
+    border-block: 1px solid var(--rule-strong);
+  }
+  .ee-auth-status h1 {
+    margin-top: var(--space-5);
+  }
+  .ee-auth-status p {
+    line-height: 1.7;
+  }
+  @media (max-width: 700px) {
+    .ee-public-header {
+      align-items: start;
+      flex-direction: column;
+      padding-block: var(--space-4);
+    }
+    .ee-public-header nav {
+      gap: var(--space-5);
+    }
+    .ee-public-shell main {
+      padding: var(--space-5) var(--space-4);
+    }
+    .ee-auth {
+      display: block;
+      margin: 0 auto;
+    }
+    .ee-auth-note {
+      display: none;
+    }
+    .ee-auth-form, .ee-auth-status {
+      padding: var(--space-5);
+    }
+    .ee-auth-status {
+      margin-block: var(--space-4);
+    }
   }
 }

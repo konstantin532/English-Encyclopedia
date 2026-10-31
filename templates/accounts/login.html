@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% block page_family %}account{% endblock %}
 {% block title %}Вход · {{ SITE_NAME }}{% endblock %}
 {% block content %}
 <div class="ee-auth">
-  <aside class="ee-auth-note" aria-label="С возвращением"><span class="studio-eyebrow">ВАШ АНГЛИЙСКИЙ ЖДЁТ</span><h2>Каждый шаг<br>делает язык ближе.</h2><p>Возвращайтесь к урокам, знакомым словам и своему прогрессу.</p><span class="ee-auth-letter" aria-hidden="true">Aa</span></aside>
+  <aside class="ee-auth-note" aria-label="С возвращением"><h2>Каждый шаг<br>делает язык ближе.</h2><p>Возвращайтесь к урокам, знакомым словам и своему прогрессу.</p><span class="ee-auth-letter" aria-hidden="true">Aa</span></aside>
   <section class="ee-auth-form" aria-labelledby="login-title">
     <h1 id="login-title">Вход</h1>
     <p class="ee-auth-lede">{% if next %}Войдите — и вернётесь на страницу, которую открывали.{% else %}Продолжите с того места, где остановились.{% endif %}</p>

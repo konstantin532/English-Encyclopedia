@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block page_family %}course{% endblock %}
 {% load static %}
 {% block title %}Курс {{ level.code }}{% if level_title %} — {{ level_title }}{% endif %} · {{ SITE_NAME }}{% endblock %}
 {% block page_styles %}<link rel="stylesheet" href="{% static 'css/week-motion.css' %}">{% endblock %}
@@ -8,7 +9,6 @@
     <img class="atlas-level-art" src="{{ level_art }}" alt="" width="1600" height="900" fetchpriority="high" decoding="async">
     <div class="atlas-level-copy">
       <p class="crumbs"><a href="{% url 'core:home' %}">Главная</a> <span aria-hidden="true">›</span> Курс <span aria-hidden="true">›</span> {{ level.code }}</p>
-      <span class="studio-eyebrow">THE LIVING LANGUAGE ATLAS</span>
       <h1>Курс {{ level.code }}{% if level_title %} — {{ level_title }}{% endif %}</h1>
       <p class="atlas-level-sub">{{ level.weeks }} недель · {{ plan.story_count }} историй · {{ level.target_units }} слов и фраз</p>
       <p>{{ level.cefr_band }}. Грамматика уровня: {{ level.summary_ru }}.</p>
@@ -17,6 +17,7 @@
   <nav class="filters atlas-level-tabs" aria-label="Уровни">
     {% for lv in all_levels %}<a href="{% url 'curriculum:level' lv.slug %}" {% if lv.pk == level.pk %}aria-current="true"{% endif %}>{{ lv.code }}</a>{% endfor %}
   </nav>
+  <details class="atlas-course-facts"><summary>Что входит в уровень</summary>
   <dl class="stats atlas-level-stats">
     <div class="stat"><dt>учебных недель</dt><dd>{{ level.weeks }}</dd></div>
     <div class="stat"><dt>недель готово</dt><dd>{{ weeks_ready }}</dd></div>
@@ -24,6 +25,7 @@
     <div class="stat"><dt>стихотворений, № {{ plan.poems.0 }}–{{ plan.poems.1 }}</dt><dd>{{ plan.poem_count }}</dd></div>
     <div class="stat"><dt>единиц в словаре из {{ level.target_units }}</dt><dd>{{ units_ready }}</dd></div>
   </dl>
+  </details>
   <section class="section atlas-section" aria-labelledby="weeks-title">
     <div class="atlas-section-head"><h2 id="weeks-title">Недели курса</h2><p>Одна неделя — одна жизненная ситуация: диалог, уроки, слова и шаг сюжета.</p></div>
     <div class="week-list atlas-week-grid">{% for week in weeks %}{% include "components/atlas_week_card.html" with level_slug=level.slug %}{% endfor %}</div>

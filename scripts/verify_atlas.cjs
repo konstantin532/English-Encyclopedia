@@ -6,6 +6,7 @@ const {chromium}=require('playwright');
 const {seedBrowserUser,learnerState}=require('./browser_auth.cjs');
 const {spawn}=require('node:child_process');
 const fs=require('node:fs/promises');
+const {createHash}=require('node:crypto');
 const path=require('node:path');
 const assert=require('node:assert/strict');
 const {verifyLessonBookpage,verifyBeginnerLesson,openExtraPractice}=require('./verify_lesson_bookpage.cjs');
@@ -13,9 +14,10 @@ const root=path.resolve(__dirname,'..');
 const output=path.resolve(process.env.ATLAS_OUTPUT || 'atlas-browser-evidence');
 const sizes=[[1440,900],[1280,800],[390,844],[360,800]];
 const screens=[['home','/'],['collection','/levels/a1/'],['chapter','/levels/a1/weeks/13/']];
-const {geometryDelta,assertChapterReadingFlow,assertGeometrySnapshot}=require('./atlas_geometry.cjs');
-const homeGeometry=require('./atlas_student_home_geometry.json');
-const weekMotionGeometry=require('./atlas_week_motion_geometry.json');
+const {geometryDelta,assertChapterReadingFlow,assertGeometrySnapshot,loadGeometrySnapshot}=require('./atlas_geometry.cjs');
+const homeGeometry=loadGeometrySnapshot('student_home');
+const weekMotionGeometry=loadGeometrySnapshot('week_motion');
+const designGeometry=loadGeometrySnapshot('design');
 const selectors=['.studio-sidebar','.site-header','.studio-home-hero','.studio-phrase-paper','.studio-lesson-card','.week-card','.week-hero','.week-route','.story-script'];
 async function serve(directory,port){
  const processHandle=spawn(process.env.ATLAS_PYTHON || 'python',['manage.py','runserver',`127.0.0.1:${port}`,'--noreload'],{cwd:directory,env:{...process.env,DJANGO_SETTINGS_MODULE:'config.settings.local',EE_COURSE_LOGIN_REQUIRED:'1'},stdio:['ignore','ignore','pipe']});
@@ -37,12 +39,23 @@ async function documentBox(locator){return locator.evaluate(el=>{const r=el.getB
 async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));}
 (async()=>{
  await fs.mkdir(output,{recursive:true});
- const report={baseline:process.env.ATLAS_BASELINE||'before-worktree',screens:[],checks:[],errors:[]};
+ const report={baseline:process.env.ATLAS_BASELINE||'before-worktree',screens:[],checks:[],errors:[],geometryFailures:[]};
  const servers=[];let browser;
  try{
   seedBrowserUser(root,process.env.DATABASE_URL);
   servers.push(await serve(process.env.ATLAS_BEFORE_DIR,8123));servers.push(await serve(root,8124));
-  browser=await chromium.launch();
+  browser=await chromium.launch({executablePath:process.env.ATLAS_BROWSER_EXECUTABLE||undefined});
+  report.browserVersion=browser.version();
+  report.platform=process.platform;
+  report.fontAssetHashes={};
+  for(const name of ['GolosText-Variable.woff2','Literata-Variable.woff2']){
+   const response=await fetch('http://127.0.0.1:8124/static/fonts/'+name);assert.equal(response.status,200,'Font asset must load');
+   const deliveredHash=createHash('sha256').update(Buffer.from(await response.arrayBuffer())).digest('hex');
+   const sourceHash=createHash('sha256').update(await fs.readFile(path.join(root,'static/fonts',name))).digest('hex');
+   assert.equal(deliveredHash,sourceHash,'Browser server returned another font asset: '+name);
+   report.fontAssetHashes[name]=deliveredHash;
+  }
+  console.log('FONT_ASSETS '+JSON.stringify(report.fontAssetHashes));
   const states={before:await learnerState(browser,'http://127.0.0.1:8123'),after:await learnerState(browser,'http://127.0.0.1:8124')};
   report.lessonBookpage={};
   await verifyLessonBookpage(browser,{output,beforeBase:'http://127.0.0.1:8123',afterBase:'http://127.0.0.1:8124',states,report:report.lessonBookpage});
@@ -68,6 +81,17 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
         lines:lines.map(rect),lineHeight:parseFloat(style.lineHeight),cardsContainer:rect(container),paddingTop:parseFloat(cs.paddingTop)||0,paddingBottom:parseFloat(cs.paddingBottom)||0,cardGap:parseFloat(cs.rowGap)||0};
       });
       assertChapterReadingFlow(measurements[state],flow);
+      if(state==='after') {
+       const card=page.locator('.week-lesson-body > p').first();
+       const textMetrics=await card.evaluate(el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect(),range=document.createRange();range.selectNodeContents(el);return {text:el.textContent,font:s.font,textWrap:s.textWrap,letterSpacing:s.letterSpacing,width:r.width,height:r.height,lines:Array.from(range.getClientRects()).map(r=>({width:r.width,height:r.height}))};});
+       const cdp=await context.newCDPSession(page);await cdp.send('DOM.enable');await cdp.send('CSS.enable');
+       const {root:documentRoot}=await cdp.send('DOM.getDocument');
+       const {nodeId}=await cdp.send('DOM.querySelector',{nodeId:documentRoot.nodeId,selector:'.week-lesson-body > p'});
+       const platformFonts=await cdp.send('CSS.getPlatformFontsForNode',{nodeId});await cdp.detach();
+       (report.chapterText ||= []).push({width,textMetrics,platformFonts});
+       console.log('CHAPTER_TEXT '+JSON.stringify({width,textMetrics,platformFonts}));
+       await page.locator('#lessons').screenshot({path:path.join(output,`chapter-cards-${width}.png`)});
+      }
      }
      if(state==='after'&&name==='home'){
       const original=await documentBox(page.locator('.studio-home-hero'));
@@ -95,12 +119,15 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
      a.forEach((rectangle,index)=>{maxDelta=Math.max(maxDelta,geometryDelta(name,selector,rectangle,b[index],width,authoredCards?.[index].height));});
     }
     report.screens.push({name,width,height,maxGeometryDelta:maxDelta,changed,measurements});
-    // Home copy changed deliberately in the beginner revision. Pin its new
-    // authored rectangles on all four axes; other screens retain before/after.
-    if(name==='home')assertGeometrySnapshot(measurements.after,homeGeometry.viewports[String(width)],`home ${width}`);
-    else if(process.env.ATLAS_REDESIGN!=='1'){assert.equal(changed.length,0,`${name} ${width}: ${changed.join(', ')}`);assert.ok(maxDelta<=1,`${name} ${width}: geometry changed ${maxDelta}px`);}
+    // The complete-atlas redesign intentionally changes the old shell and columns.
+    // Keep a fixed, reviewed target on all four axes for every screen; no bypass flag.
+    try {
+    assertGeometrySnapshot(measurements.after,name==='home'?homeGeometry.viewports[String(width)]:designGeometry[name][String(width)],`${name} ${width}`);
+    } catch (error) { report.geometryFailures.push(error.message); }
    }
   }
+  // Collect every layout mismatch, then fail the gate; this never accepts a mismatch.
+  assert.deepEqual(report.geometryFailures, [], 'Authored geometry mismatches');
   // Editorial9–28: actual changed reading pages, in addition to the
   // existing before/after geometry gate above (which remains unchanged).
   const editorialPages=[

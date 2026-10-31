@@ -18,6 +18,11 @@ const {seedBrowserUser, learnerState, stateForAudience} = require('./browser_aut
 const root = path.resolve(__dirname, '..');
 const output = path.resolve(process.env.VR_OUTPUT || 'visual-review');
 const config = require('./visual_review_pages.json');
+const requestedPages = process.env.VR_PAGES ? process.env.VR_PAGES.split(',').map(name => name.trim()) : null;
+if (requestedPages && requestedPages.some(name => !config.pages.some(page => page.name === name))) {
+  throw Error('VR_PAGES contains an unknown page name');
+}
+const pages = requestedPages ? config.pages.filter(page => requestedPages.includes(page.name)) : config.pages;
 const MAX_CAPTURE_HEIGHT = 30000;
 const STILL_CSS = '*,*::before,*::after{transition:none!important;animation:none!important;caret-color:transparent!important}';
 
@@ -190,13 +195,13 @@ ${r.files.change ? `<h3>Где изменилось (с ${r.change.y}px)</h3><im
       servers.push(await serve(root, 8134, afterDatabase));
       beforeBase = 'http://127.0.0.1:8133'; afterBase = 'http://127.0.0.1:8134';
     }
-    browser = await chromium.launch();
+    browser = await chromium.launch({executablePath: process.env.ATLAS_BROWSER_EXECUTABLE || undefined});
     const states = {before: await learnerState(browser, beforeBase), after: await learnerState(browser, afterBase), beforePending: await learnerState(browser, beforeBase, {pending: true}), afterPending: await learnerState(browser, afterBase, {pending: true})};
     states.beforeTeacher = await learnerState(browser, beforeBase, {teacher: true});
     states.afterTeacher = await learnerState(browser, afterBase, {teacher: true});
     const workbench = await (await browser.newContext()).newPage();
     for (const viewport of config.viewports) {
-      for (const pageSpec of config.pages) {
+      for (const pageSpec of pages) {
         const audience = pageSpec.audience || 'student';
         const before = await capture(browser, beforeBase, pageSpec.route, viewport, pageSpec.main, stateForAudience(states, audience, 'before'));
         const after = await capture(browser, afterBase, pageSpec.route, viewport, pageSpec.main, stateForAudience(states, audience, 'after'));

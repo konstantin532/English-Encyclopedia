@@ -1,12 +1,13 @@
 {% extends "base.html" %}
+{% block page_family %}lesson{% endblock %}
 {% load markers static ru %}
 {% block title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
 {% block social_title %}{{ lesson.title }} · {{ SITE_NAME }}{% endblock %}
-{% block page_styles %}<link rel="stylesheet" href="{% static 'css/lesson-core.css' %}"><link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% if lesson.slug == 'a1-nouns-first-words' %}<link rel="stylesheet" href="{% static 'css/lesson-bookpage.css' %}">{% endif %}{% if lesson_design_pilot %}<link rel="stylesheet" href="{% static 'css/lesson-design-pilot.css' %}">{% endif %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% if a1_pilot %}<link rel="stylesheet" href="{% static 'css/a1-lesson-reading.css' %}">{% endif %}{% endblock %}
+{% block page_styles %}{% if extra_missions %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}">{% endif %}<link rel="stylesheet" href="{% static 'css/lesson-core.css' %}"><link rel="stylesheet" href="{% static 'css/independent-check.css' %}">{% if lesson.slug == 'a1-nouns-first-words' %}<link rel="stylesheet" href="{% static 'css/lesson-bookpage.css' %}">{% endif %}{% if lesson_design_pilot %}<link rel="stylesheet" href="{% static 'css/lesson-design-pilot.css' %}">{% endif %}<link rel="stylesheet" href="{% static 'css/educational-reading.css' %}">{% if a1_pilot %}<link rel="stylesheet" href="{% static 'css/a1-lesson-reading.css' %}">{% endif %}{% endblock %}
 {% block content %}
 <div data-lesson-core{% if a1_pilot %} data-a1-full-lesson{% endif %} data-educational-reading{% if editorial_pilot %} data-editorial-pilot="lesson"{% endif %} data-reading-theme="{% if lesson.level.code == 'A1' %}friendly{% else %}academic{% endif %}" class="wrap"{% if lesson.slug == "a1-nouns-first-words" %} data-lesson-bookpage{% endif %}{% if lesson_design_pilot %} data-lesson-design-pilot{% endif %}>
   <header class="page-head">
-    <p class="crumbs"><a href="{% url 'curriculum:level' lesson.level.slug %}">{{ lesson.level.code }}</a>{% if lesson.week %} / неделя {{ lesson.week.number }}{% endif %} / урок {{ lesson.order }}</p>
+    <p class="crumbs"><a href="{% url 'curriculum:level' lesson.level.slug %}">{{ lesson.level.code }}</a>{% if lesson.week %} / <a href="{% url 'curriculum:week' lesson.level.slug lesson.week.number %}">Неделя {{ lesson.week.number }}</a>{% endif %} / урок {{ lesson.order }}</p>
     <h1>{{ lesson.title }}</h1>
     <p>{{ lesson.summary }}</p>
     {% if assignment_progress %}<p>Задание группы «{{ assignment_progress.assignment.group.name }}» от {{ assignment_progress.assignment.assigned_at|date:"j E Y H:i" }} · {% if assignment_progress.assignment.due_date %}срок {{ assignment_progress.assignment.due_date|date:"j E Y" }} (Москва){% else %}без срока{% endif %} · {{ assignment_progress.get_status_display }}</p>{% endif %}
@@ -101,7 +102,7 @@
       </section>
       {% endif %}
       <section class="lesson-complete" id="lesson-complete" aria-labelledby="lesson-complete-title">
-        <h2 id="lesson-complete-title">Урок пройден ✓</h2>
+        <h2 id="lesson-complete-title">Дальше по курсу</h2>
         <p>Вы дошли до конца основной части. Дополнительная практика — по желанию.</p>
         {% if assignment_progress %}
           {% if assignment_progress.status == "completed" %}<p>Завершение назначения сохранено как ваша самоотметка.</p>
@@ -175,17 +176,23 @@
     </article>
 
     <aside class="aside">
+      <details class="atlas-reader-index" data-atlas-reader-index>
+        <summary>Оглавление и слова урока</summary>
       <div class="aside-box">
         <h2>Шаги урока</h2>
+        <h3 class="atlas-toc-group">Разобраться</h3>
         <ol class="toc">
           {% for layer in layers %}
           <li><a href="#layer-{{ layer.number }}">{{ layer.number }}. {{ layer.title }}</a></li>
           {% if layer.number == 5 and lesson.sound_notes %}<li><a href="#sound-notes">Как это звучит</a></li>{% endif %}
           {% if layer.number == 5 and lesson.contractions %}<li><a href="#contractions">Как сокращают</a></li>{% endif %}
           {% endfor %}
+        </ol>
+        <h3 class="atlas-toc-group">Потренироваться</h3>
+        <ol class="toc">
           {% if exercises %}<li><a href="#practice">Практика</a></li>{% endif %}
           {% if translations %}<li><a href="#translate">Перевод</a></li>{% endif %}
-          <li><a href="#lesson-complete">Урок пройден ✓</a></li>
+          <li><a href="#lesson-complete">Дальше по курсу</a></li>
           {% if a1_guide or extra_missions or lesson.slug == 'a1-cafe-order' %}<li><a href="#lesson-extra-practice">Ещё практика (по желанию)</a></li>{% endif %}
           {% if lesson_design_pilot %}<li><a href="#lesson-vocabulary">Слова урока</a></li>{% endif %}
         </ol>
@@ -201,8 +208,9 @@
         </div>
       </div>
       {% endif %}
+      </details>
     </aside>
   </div>
 </div>
 {% endblock %}
-{% block scripts %}{% if editorial_pilot %}<script src="{% static 'js/editorial-notes.js' %}" defer></script>{% endif %}{% if a1_pilot %}<script src="{% static 'js/a1-learning-route.js' %}" defer></script>{% endif %}{% if extra_missions %}<link rel="stylesheet" href="{% static 'css/a1-active.css' %}"><script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script>{% endif %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}
+{% block scripts %}{% if editorial_pilot %}<script src="{% static 'js/editorial-notes.js' %}" defer></script>{% endif %}{% if a1_pilot %}<script src="{% static 'js/a1-learning-route.js' %}" defer></script>{% endif %}{% if extra_missions %}<script src="{% static 'js/speech-studio.js' %}" defer></script><script src="{% static 'js/speech-review.js' %}" defer></script>{% endif %}<script src="{% static 'js/learning-player.js' %}" defer></script><script src="{% static 'js/studio-reader.js' %}" defer></script>{% endblock %}

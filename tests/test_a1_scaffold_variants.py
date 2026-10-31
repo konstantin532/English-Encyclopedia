@@ -221,7 +221,7 @@ class RotatingIndependentReviewTests(TestCase):
                 )
                 self.assertIn("data-lesson-reader", dict(blocks[1].attributes))
                 completion, extra = blocks[-2:]
-                self.assertIn(parse_html('<h2 id="lesson-complete-title">Урок пройден ✓</h2>'), completion)
+                self.assertIn(parse_html('<h2 id="lesson-complete-title">Дальше по курсу</h2>'), completion)
                 self.assertNotIn("open", dict(extra.attributes))
                 self.assertEqual(extra.children[0], parse_html("<summary>Ещё практика (по желанию)</summary>"))
                 self.assertIn(parse_html('<h2>Проверка без готовых ответов</h2>'), extra)

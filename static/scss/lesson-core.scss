@@ -1,3 +1,4 @@
+@layer ee-reading {
 // Clear boundary between the main lesson and optional practice.
 [data-lesson-core] {
   .lesson-complete {
@@ -36,4 +37,6 @@
     > .section { padding-block: var(--space-6); }
     > .section:first-of-type { padding-block-start: var(--space-4); }
   }
+}
+
 }

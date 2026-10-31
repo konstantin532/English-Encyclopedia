@@ -39,7 +39,8 @@ class LessonCoreTemplateTests(SimpleTestCase):
 
     def test_completion_follows_core_and_precedes_all_extras(self):
         html = self.page()
-        self.assertIn('Урок пройден ✓', html)
+        self.assertIn('Дальше по курсу', html)
+        self.assertNotIn('Урок пройден ✓', html)
         positions = [html.index(f'id="{anchor}"') for anchor in
                      ('layer-7', 'practice', 'translate', 'lesson-complete',
                       'lesson-extra-practice', 'spoken-coach')]
@@ -95,7 +96,7 @@ class LessonCoreTemplateTests(SimpleTestCase):
 
     def test_no_extras_or_next_lesson_has_no_empty_disclosure_or_broken_link(self):
         html = self.page(a1_guide=None, extra_missions=None, next_lesson=None)
-        self.assertIn('Урок пройден ✓', html)
+        self.assertIn('Дальше по курсу', html)
         self.assertNotIn('id="lesson-extra-practice"', html)
         self.assertNotIn('href="#lesson-extra-practice"', html)
         self.assertNotIn('Следующий урок →', html)

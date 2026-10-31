@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+{% block page_family %}practice{% endblock %}
 {% load static %}
 {% block title %}В кафе: услышать и исправить заказ · A1 эксперимент{% endblock %}
 {% block description %}Интерактивная учебная лаборатория A1: диалог, смысл слов, конструктор английской просьбы, проверка и собственная речь.{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/cafe-lab.css' %}">{% endblock %}
 {% block content %}
 <div class="wrap cafe-lab" data-cafe-lab>
   <nav class="cafe-crumbs" aria-label="Навигация">
@@ -158,7 +160,7 @@
 </div>
 {% endblock %}
 {% block scripts %}
-<link rel="stylesheet" href="{% static 'css/cafe-lab.css' %}">
+
 {{ cafe_audio|json_script:"cafe-audio-manifest" }}
 <script src="{% static 'js/cafe-lab.js' %}" defer></script>
 {% endblock %}

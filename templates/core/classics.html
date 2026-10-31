@@ -1,6 +1,8 @@
 {% extends "base.html" %}
+{% block page_family %}practice{% endblock %}
 {% load static %}
 {% block title %}Классика · {{ SITE_NAME }}{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{% static 'css/classics.css' %}">{% endblock %}
 {% block content %}
 <div class="wrap classics" style="padding-bottom: var(--space-8)">
   <header class="page-head">
@@ -54,4 +56,4 @@
   </section>
 </div>
 {% endblock %}
-{% block scripts %}<link rel="stylesheet" href="{% static 'css/classics.css' %}"><script src="{% static 'js/classics-speech.js' %}" defer></script>{% endblock %}
+{% block scripts %}<script src="{% static 'js/classics-speech.js' %}" defer></script>{% endblock %}

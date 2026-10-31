@@ -13,6 +13,7 @@
         <a class="studio-login-link" href="{% url 'accounts:login' %}">Войти</a>
         <a class="btn btn-primary btn-small" href="{% url 'accounts:signup' %}">Регистрация</a>
       {% endif %}
+      <details class="atlas-preferences"><summary>Настройки чтения</summary><div class="atlas-preferences-panel">
       <label class="motion-control"><span>Движение</span><select data-motion-control aria-label="Интенсивность анимации" disabled><option value="full">Кино</option><option value="balanced" selected>Баланс</option><option value="minimal">Минимум</option></select></label>
       <span class="visually-hidden" id="motion-mode-hint" role="status" aria-live="polite">Режим движения обновится после загрузки страницы.</span>
       <button class="btn btn-quiet btn-small toggle" type="button" data-markers-toggle aria-label="Маркеры в тексте"
@@ -21,6 +22,7 @@
         <span class="toggle-on">Маркеры в тексте</span><span class="toggle-off">Маркеры в тексте</span><span class="toggle-short" aria-hidden="true">Маркеры</span><span class="studio-switch" aria-hidden="true"></span>
       </button>
       <span class="visually-hidden" data-markers-status role="status" aria-live="polite"></span>
+      </div></details>
     </div>
   </div>
 </header>
