@@ -1,5 +1,6 @@
 """Проверка свободных ответов учителем. Те же правила, что в админке (apps/learning/admin.py)."""
 from django import forms
+from django.db.models import F, Q
 from django.utils import timezone
 
 from apps.learning.admin import IndependentAttemptAdmin, IndependentAttemptReviewForm
@@ -13,14 +14,22 @@ NEEDS_HUMAN = (IndependentAttempt.Outcome.NEEDS_REVIEW, IndependentAttempt.Outco
 
 def review_queue(teacher):
     """Непроверенные свободные ответы видимых учителю учеников, старые сверху."""
-    return (IndependentAttempt.objects
-            .filter(user__in=visible_students(teacher), outcome__in=NEEDS_HUMAN,
+    return (reviewable(teacher)
+            .filter(outcome__in=NEEDS_HUMAN,
                     teacher_verdict=IndependentAttempt.TeacherVerdict.UNREVIEWED)
             .select_related("user", "lesson").order_by("created_at"))
 
 
 def reviewable(teacher):
-    return IndependentAttempt.objects.filter(user__in=visible_students(teacher)).select_related("user", "lesson")
+    records = IndependentAttempt.objects.filter(user__in=visible_students(teacher))
+    if not (teacher.is_superuser or teacher.teacher_sees_all):
+        records = records.filter(
+            Q(assignment_progress__isnull=True)
+            | Q(assignment_progress__withdrawn_at__isnull=True,
+                assignment_progress__assignment__group__teacher=teacher,
+                assignment_progress__assignment__group__memberships__student=F("user_id"))
+        )
+    return records.select_related("user", "lesson")
 
 
 def task_for(attempt):

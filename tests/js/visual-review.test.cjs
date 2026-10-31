@@ -90,7 +90,7 @@ test('every reviewed page has a route, a main-content selector and sane limits',
   for(const page of pages.pages){
     assert.match(page.route,/^\/[^\s]*\/$|^\/$/,page.name);
     assert.ok(page.main&&page.title,page.name);
-    assert.ok(['student','guest','pending'].includes(page.audience),page.name);
+    assert.ok(['student','guest','pending','teacher'].includes(page.audience),page.name);
     assert.ok(!names.has(page.name),`duplicate ${page.name}`);names.add(page.name);
   }
   for(const viewport of pages.viewports)assert.ok(viewport.maxScreens>=1&&viewport.maxScreens<=4);
