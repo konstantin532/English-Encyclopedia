@@ -1,5 +1,5 @@
 /* Generated from static/scss/foundation.scss; run pnpm build:css. Do not edit. */
-@layer ee-accessibility, ee-fonts, ee-tokens, ee-base, ee-studio, ee-cinema, ee-pages, ee-motion, ee-polish, ee-markers;
+@layer ee-accessibility, ee-fonts, ee-tokens, ee-base, ee-studio, ee-cinema, ee-pages, ee-motion, ee-polish, ee-markers, ee-reading, ee-atlas;
 @layer ee-polish {
   :root {
     --ee-type-caption: 0.8125rem;

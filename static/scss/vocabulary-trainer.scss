@@ -1,3 +1,4 @@
+@layer ee-reading {
 // This stylesheet is loaded only by the trainer. Let the shared header reflow
 // when enlarged text needs more room, even above its viewport breakpoints.
 .site-header .wrap { flex-wrap: wrap; }
@@ -52,3 +53,5 @@
 .phrase-puzzle[hidden] { display: none; }
 .vocabulary-trainer .phrase-puzzle button { min-height: 2.75rem; padding: 0.5rem 0.85rem; }
 .vocabulary-trainer .phrase-puzzle button:disabled { opacity: 0.35; cursor: default; }
+
+}

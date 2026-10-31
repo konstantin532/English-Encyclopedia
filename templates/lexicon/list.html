@@ -1,11 +1,13 @@
 {% extends "base.html" %}
+{% block page_family %}lexicon{% endblock %}
 {% load ru %}
 {% block title %}Слова · {{ SITE_NAME }}{% endblock %}
 {% block content %}
 <div class="wrap">
   <header class="page-head">
     <h1>Слова и выражения</h1>
-    <p>Учебный корпус: у каждой единицы постоянный ID, конкретное значение, американское произношение и пример. Уровень CEFR, ещё не сверенный с Oxford 3000 и English Vocabulary Profile, помечен как «требует проверки».</p>
+    <p>Найдите слово, узнайте его значение и американское произношение, посмотрите пример.</p>
+    <details class="atlas-dictionary-note"><summary>О словаре и проверке уровней</summary><p>Учебный корпус: у каждой единицы постоянный ID, конкретное значение, американское произношение и пример. Уровень CEFR, ещё не сверенный с Oxford 3000 и English Vocabulary Profile, помечен как «требует проверки».</p></details>
   </header>
   <form class="studio-word-search" method="get" role="search" aria-label="Поиск по словарю">
     <label for="word-query">Слово или русский перевод<input id="word-query" type="search" name="q" value="{{ search_query }}" placeholder="Например, home или дом" maxlength="200"></label>
@@ -18,10 +20,12 @@
     <a href="?q={{ search_query|urlencode }}{% if active_cat %}&cat={{ active_cat }}{% endif %}" {% if not active_level %}aria-current="true"{% endif %}>Все уровни</a>
     {% for lv in levels %}<a href="?level={{ lv.code|urlencode }}&q={{ search_query|urlencode }}{% if active_cat %}&cat={{ active_cat }}{% endif %}" {% if active_level == lv.code %}aria-current="true"{% endif %}>{{ lv.code }}</a>{% endfor %}
   </nav>
+  <details class="atlas-category-filter"{% if active_cat %} open{% endif %}><summary>Категории слов{% if active_cat %} · фильтр включён{% endif %}</summary>
   <nav class="filters" aria-label="Категория">
     <a href="?q={{ search_query|urlencode }}{% if active_level %}&level={{ active_level|urlencode }}{% endif %}" {% if not active_cat %}aria-current="true"{% endif %}>Все категории</a>
     {% for c in categories %}<a href="?cat={{ c.code }}&q={{ search_query|urlencode }}{% if active_level %}&level={{ active_level|urlencode }}{% endif %}" {% if active_cat == c.code %}aria-current="true"{% endif %}>{{ c.name_ru }}</a>{% endfor %}
   </nav>
+  </details>
   {% if units %}
   <p class="studio-search-count">{{ total_units|plural_ru:"учебная единица,учебные единицы,учебных единиц" }}{% if search_query %} по запросу «{{ search_query }}»{% endif %}. Нажмите на слово, чтобы узнать больше.</p>
   <div class="studio-word-grid">

@@ -1,0 +1,159 @@
+@layer ee-atlas {
+  /* Reading spreads: one text column and a quieter reference margin. */
+  .atlas-site :where(.lesson-grid,.entry) { grid-template-columns: minmax(0,1fr) 240px; gap: clamp(28px,4vw,64px); align-items: start; }
+  .atlas-site :where(.lesson-grid > article,.entry > div) { min-width: 0; }
+  .atlas-site .lesson-grid > article { padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+  .atlas-site .prose { max-width: 68ch; font-size: var(--reader-size,1.0625rem); line-height: 1.85; }
+  .atlas-site .prose p { margin-block: 1.05em; }
+  .atlas-site .prose h2 { margin-top: 0; margin-bottom: 24px; }
+  .atlas-site .layer { padding-block: 34px; border-bottom: 1px solid var(--rule); background: transparent; box-shadow: none; }
+  .atlas-site .layer-num { font: 500 .875rem/1.5 var(--font-ui); color: var(--ink-soft); background: transparent; border: 1px solid var(--rule-strong); border-radius: 50%; min-width: 32px; height: 32px; display: inline-grid; place-items: center; vertical-align: middle; margin-right: 12px; }
+  .atlas-site :where(.prose blockquote,.example) { margin-inline: 0; padding: 22px 28px; border: 0; border-radius: 8px; background: #eaf0df; color: var(--ink); }
+  .atlas-site .prose blockquote { font-family: var(--font-read); line-height: 1.8; }
+  .atlas-site .aside { min-width: 0; }
+  .atlas-site .aside-box { padding: 22px 0; background: transparent; border: 0; border-top: 1px solid var(--rule-strong); border-radius: 0; margin-bottom: 18px; }
+  .atlas-site .aside-box h2 { font: 600 1rem/1.4 var(--font-ui); margin: 0 0 16px; }
+  .atlas-site .atlas-reader-index[open] > summary { display: none; }
+  .atlas-site .atlas-dictionary-note { margin-top: 14px; color: var(--ink-soft); font-size: .875rem; }
+  .atlas-site .atlas-category-filter { border-bottom: 1px solid var(--rule); margin-bottom: 20px; }
+  .atlas-site .atlas-category-filter summary { font-size: .875rem; }
+  .atlas-site .aside-box :where(p,li,dd,dt) { font-size: .875rem; }
+  .atlas-site .atlas-toc-group { margin: 24px 0 8px; color: var(--ink-soft); font: 500 .8125rem/1.5 var(--font-ui); }
+  .atlas-site .toc { list-style: none; padding: 0; margin: 0; }
+  .atlas-site .toc li { margin: 0; border: 0; }
+  .atlas-site .toc a { display: block; padding-block: 8px; color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+  .atlas-site .toc a:hover { text-decoration: underline; }
+  .atlas-site .studio-reader-tools { border-top: 1px solid var(--rule); padding-top: 18px; margin-top: 20px; gap: 8px; }
+  .atlas-site .studio-reader-tools button { min-width: 44px; min-height: 44px; border-radius: 6px; }
+  .atlas-site .word-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .atlas-site .word-chips a { padding: 6px 10px; background: #eaf0df; border: 0; border-radius: 4px; font-size: 1rem; }
+  .atlas-site .lesson-complete { margin: 36px 0; padding: 28px; background: #e9eddd; border: 1px solid #d2d9c5; border-radius: 10px; box-shadow: none; }
+  .atlas-site .lesson-complete form { display: inline-block; margin: 0 8px 12px 0; }
+  .atlas-site .lesson-extra-practice { border-block: 1px solid var(--rule); border-inline: 0; border-radius: 0; padding: 16px 0; background: transparent; }
+  .atlas-site .drill { padding: 24px; margin-block: 18px; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+  .atlas-site .drill :where(input,textarea) { margin-bottom: 12px; }
+  .atlas-site :where(.drill-feedback,.practice-feedback) { font-size: .9375rem; }
+  .atlas-site .speech-studio { background: #edf0e5; border: 1px solid var(--rule); border-radius: 10px; }
+  .atlas-site :where(.dialogue-line,.script-line) { border-radius: 6px; }
+  .atlas-site .entry { padding-block: 20px 48px; }
+  .atlas-site .entry-word { font-size: clamp(2.5rem,5vw,4.5rem); margin: 0 0 12px; }
+  .atlas-site .entry-sub { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 32px; font-size: 1rem; }
+  .atlas-site .entry dl { row-gap: 20px; }
+  .atlas-site .entry dt { font-size: .875rem; color: var(--ink-soft); }
+  .atlas-site .entry dd { margin: 0; min-width: 0; }
+  .atlas-site .entry .example { font: 1.5rem/1.7 var(--font-read); }
+
+  /* Catalogues have the rhythm of an index; illustrated chapters keep their covers. */
+  .atlas-site .atlas-level-hero { min-height: 300px; border-radius: 12px; box-shadow: none; }
+  .atlas-site .atlas-level-copy h1 { max-width: 22ch; font-size: clamp(2rem,3vw,3.1rem); }
+  .atlas-site .atlas-level-copy { padding: 36px; }
+  .atlas-site .atlas-course-facts { border-bottom: 1px solid var(--rule); margin-block: 8px 24px; }
+  .atlas-site .atlas-course-facts summary { color: var(--ink-soft); font-size: .9375rem; }
+  .atlas-site .atlas-course-facts .stats { border: 0; }
+  .atlas-site .atlas-section { margin-top: 36px; }
+  .atlas-site .studio-lessons { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 28px; }
+  .atlas-site .studio-lesson-card { display: flex; align-items: flex-start; gap: 18px; padding: 24px 0; background: transparent; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; box-shadow: none; transform: none; }
+  .atlas-site .studio-lesson-card:hover { background: transparent; transform: none; box-shadow: none; }
+  .atlas-site .studio-lesson-no { flex: none; font: 400 1.6rem/1.3 var(--font-read); color: var(--atlas-gold); }
+  .atlas-site .studio-lesson-card h3 { font: 550 1.1rem/1.5 var(--font-read); margin: 0; }
+  .atlas-site .studio-lesson-card p { margin: 8px 0 0; font-size: .875rem; color: var(--ink-soft); }
+  .atlas-site details.studio-lesson-card { display: block; }
+  .atlas-site .week-lesson-summary { padding: 0; }
+  .atlas-site .week-lesson-body { padding: 12px 0 0; }
+  .atlas-site .studio-word-search { background: var(--surface); padding: 20px 24px; border: 1px solid var(--rule); border-radius: 10px; display: flex; gap: 16px; align-items: end; }
+  .atlas-site .studio-word-search label { flex: 1; font-size: .875rem; font-weight: 550; }
+  .atlas-site .studio-word-search input { margin-top: 6px; width: 100%; }
+  .atlas-site .studio-search-count { font-size: .875rem; color: var(--ink-soft); margin: 24px 0 16px; }
+  .atlas-site .studio-word-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0 28px; }
+  .atlas-site .studio-word-card { padding: 24px 4px; background: transparent; border: 0; border-top: 1px solid var(--rule); border-radius: 0; box-shadow: none; transform: none; display: flex; flex-direction: column; }
+  .atlas-site .studio-word-card:hover { background: #edf0e4; box-shadow: none; transform: none; }
+  .atlas-site .studio-word-card h2 { font: 550 1.7rem/1.4 var(--font-read); margin: 12px 0; }
+  .atlas-site .studio-word-top { color: var(--ink-soft); font-size: .8125rem; }
+  .atlas-site .studio-word-bottom { margin-top: auto; padding-top: 16px; gap: 8px; font-size: .8125rem; }
+  .atlas-site .map-grid { gap: 48px; }
+  .atlas-site .map-list { padding: 0; }
+  .atlas-site .map-item { padding: 20px 0; background: transparent; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; box-shadow: none; }
+  .atlas-site .map-num { font: 400 1.6rem/1.4 var(--font-read); color: var(--atlas-gold); background: transparent; }
+  .atlas-site .map-item a { font: 550 1.2rem/1.5 var(--font-read); }
+  .atlas-site .map-meta { margin-top: 8px; font-size: .875rem; color: var(--ink-soft); }
+  .atlas-site .map-item.is-planned { opacity: 1; color: var(--ink-soft); }
+  .atlas-site .poem { font-family: var(--font-read); line-height: 2; font-size: 1.2rem; }
+  .atlas-site .classics-list { gap: 24px; }
+
+  /* Working screens: assignments and the next learning action precede the library. */
+  .atlas-site:is(.atlas-dashboard,.atlas-teaching,.atlas-practice) .page-head h1 { font-size: clamp(1.8rem,2.3vw,2.4rem); }
+  .atlas-next-step { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 32px; padding: 28px 32px; margin: 12px 0 32px; background: #e8eddb; border-radius: 12px; }
+  .atlas-next-step h2 { font: 550 1rem/1.4 var(--font-ui); margin: 0 0 16px; }
+  .atlas-next-step .atlas-next-title { font: 500 clamp(1.4rem,2.1vw,1.9rem)/1.4 var(--font-read); margin: 0 0 20px; }
+  .atlas-next-review { padding-left: 32px; border-left: 1px solid #bdc9ae; font-size: .9375rem; }
+  .atlas-next-review h3 { margin-top: 0; }
+  .atlas-practice-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 40px; }
+  .atlas-practice-grid .section { padding-block: 28px; border-bottom: 1px solid var(--rule); }
+  .atlas-practice-grid .section h2 { font-size: 1.4rem; }
+  .atlas-practice-grid .section p { font-size: .9375rem; }
+  .atlas-practice-grid .section .btn-primary { color: var(--atlas-forest); background: transparent; border-color: var(--rule-strong); }
+  .atlas-practice-grid > .stats { grid-column: 1 / -1; order: -1; }
+  .atlas-practice-grid > p { grid-column: 1 / -1; }
+  .atlas-work-nav { margin-bottom: 24px; border-bottom: 1px solid var(--rule-strong); }
+  .atlas-work-nav p { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; }
+  .atlas-work-nav a { display: inline-flex; align-items: center; min-height: 44px; padding-block: 10px; font-size: .875rem; text-decoration: none; border-bottom: 2px solid transparent; }
+  .atlas-work-nav a[aria-current] { border-color: var(--atlas-forest); color: var(--atlas-forest); font-weight: 600; }
+  .atlas-teaching .section { border-bottom: 1px solid var(--rule); }
+  .atlas-teaching .section > ul { padding-left: 24px; }
+  .atlas-teaching .section > ul li { padding: 12px 0; }
+  .atlas-site .assignment-card { padding: 24px; border-radius: 10px; background: var(--surface); border: 1px solid var(--rule); box-shadow: none; }
+  .atlas-teaching form:not(.studio-search-form) { max-width: 48rem; }
+  .atlas-teaching .section > form { padding-top: 8px; }
+
+  /* Public entry and account states belong to the same book. */
+  .atlas-site .ee-public-shell { background: var(--paper); }
+  .atlas-site .ee-public-header { max-width: 1280px; padding: 24px 32px; margin-inline: auto; background: transparent; border-color: var(--rule); }
+  .atlas-site .ee-public-brand { color: var(--atlas-forest); }
+  .atlas-site .ee-public-header nav a { min-height: 44px; display: inline-flex; align-items: center; font-size: .875rem; }
+  .atlas-site .ee-auth { margin-block: 48px; border: 1px solid var(--rule); border-radius: 12px; background: var(--surface); box-shadow: none; overflow: hidden; }
+  .atlas-site .ee-auth-note { background: #e5ebdb; color: var(--ink); padding: 40px; }
+  .atlas-site .ee-auth-note h2 { color: var(--ink); }
+  .atlas-site .ee-auth-form { padding: 40px; background: var(--surface); }
+  .atlas-site .ee-auth-form h1 { font-size: 2.25rem; }
+  .atlas-site .ee-auth-letter { color: #536d49; opacity: .6; }
+  .atlas-site .ee-auth-status { border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); box-shadow: none; }
+  .atlas-site .ee-public-footer { border-color: var(--rule); color: var(--ink-soft); }
+
+  @media (max-width: 1200px) {
+    .atlas-site :where(.lesson-grid,.entry) { grid-template-columns: minmax(0,1fr) 210px; gap: 28px; }
+    .atlas-site .studio-word-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width: 760px) {
+    .atlas-site :where(.lesson-grid,.entry) { display: flex; flex-direction: column; gap: 24px; }
+    .atlas-site :where(.lesson-grid > article,.lesson-grid > aside,.entry > div,.entry > aside) { width: 100%; }
+    .atlas-site .lesson-grid > article { order: 0; }
+    .atlas-site .lesson-grid > aside { order: 1; position: static; }
+    .atlas-lesson .lesson-grid > aside { order: -1; }
+    .atlas-site .atlas-reader-index > summary, .atlas-site .atlas-reader-index[open] > summary { display: list-item; padding: 12px 0; border-block: 1px solid var(--rule); font-size: .9375rem; }
+    .atlas-site .prose { font-size: 1rem; }
+    .atlas-site .layer { padding-block: 26px; }
+    .atlas-site .prose blockquote { padding: 20px; }
+    .atlas-site .studio-lessons { grid-template-columns: 1fr; }
+    .atlas-site .atlas-level-copy { padding: 24px; }
+    .atlas-site .atlas-level-hero { min-height: 0; }
+    .atlas-site .atlas-next-step { grid-template-columns: 1fr; padding: 24px; gap: 20px; }
+    .atlas-next-review { padding: 20px 0 0; border-left: 0; border-top: 1px solid #bdc9ae; }
+    .atlas-practice-grid { grid-template-columns: 1fr; }
+    .atlas-site .ee-auth { margin: 24px 18px; }
+    .atlas-site .ee-auth-note { padding: 24px; }
+    .atlas-site .ee-auth-form { padding: 28px 24px; }
+    .atlas-site .ee-public-header { padding: 18px; }
+    .atlas-site .map-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+  @media (max-width: 500px) {
+    .atlas-site .studio-word-grid { grid-template-columns: 1fr; }
+    .atlas-site .studio-word-search { flex-wrap: wrap; padding: 18px; gap: 12px; }
+    .atlas-site .studio-word-search label { flex-basis: 100%; }
+    .atlas-site .studio-word-card { padding: 20px 0; }
+    .atlas-site .drill { padding: 18px; }
+    .atlas-site .lesson-complete { padding: 22px; }
+    .atlas-site .entry dl { display: block; }
+    .atlas-site .entry dt { margin-top: 20px; margin-bottom: 5px; }
+    .atlas-site .atlas-work-nav p { gap: 4px 16px; }
+  }
+}

@@ -1,3 +1,4 @@
+@layer ee-reading {
 /* Public entry keeps course navigation out of guest and pending-request screens. */
 .ee-public-shell {
   min-height: 100svh;
@@ -60,4 +61,6 @@
   .ee-auth-note { display: none; }
   .ee-auth-form, .ee-auth-status { padding: var(--space-5); }
   .ee-auth-status { margin-block: var(--space-4); }
+}
+
 }

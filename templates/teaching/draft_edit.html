@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block page_family %}teaching{% endblock %}
 {% block title %}{% if draft %}{{ draft.title }}{% else %}Новый черновик{% endif %} · {{ SITE_NAME }}{% endblock %}
 {% block content %}
 <div class="wrap" style="padding-bottom: var(--space-8)">

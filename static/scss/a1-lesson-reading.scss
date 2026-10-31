@@ -1,3 +1,4 @@
+@layer ee-reading {
 /* The existing A1 brief uses the approved nouns/be opening spread.
    Exact reference palette: pilot tint #f3f0e6 and gold #916d34. */
 [data-a1-full-lesson] .a1-clarity-bridge {
@@ -40,4 +41,6 @@
     dt { font-size: 12px; margin-top: 20px; }
     dd { font-size: 16px; margin-top: 6px; }
   }
+}
+
 }

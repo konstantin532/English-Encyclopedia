@@ -1,0 +1,43 @@
+@use "atlas/admin-legacy";
+
+:root:not([data-theme="dark"]) {
+  --body-bg: #f6f2e8;
+  --body-fg: #24392f;
+  --body-quiet-color: #57645a;
+  --body-loud-color: #173a2a;
+  --studio-surface: #fffdf7;
+  --studio-soft: #edf0e6;
+  --studio-ink: #24392f;
+  --studio-muted: #57645a;
+  --studio-shadow: none;
+  --border-color: #dcdccd;
+  --header-bg: #edf0e6;
+  --header-color: #24392f;
+  --header-branding-color: #173a2a;
+  --header-link-color: #173a2a;
+  --breadcrumbs-bg: #f6f2e8;
+  --breadcrumbs-fg: #57645a;
+  --breadcrumbs-link-fg: #173a2a;
+  --button-bg: #173a2a;
+  --default-button-bg: #173a2a;
+  --link-fg: #24513b;
+  --hairline-color: #e0e1d5;
+}
+#header { border-bottom: 1px solid var(--border-color); }
+#header .studio-brand { color: var(--header-branding-color) !important; }
+#header .studio-brand small, #header .studio-account { color: var(--body-quiet-color); }
+#user-tools a, #logout-form button { color: var(--header-link-color); font-size: 13px; min-height: 44px; }
+#header .studio-monogram { border-color: var(--border-color); border-radius: 6px; }
+#nav-sidebar { background: var(--studio-soft); border-right: 1px solid var(--border-color); scrollbar-color: #a1ab9b var(--studio-soft); }
+#nav-sidebar :is(a,caption a,.studio-nav-note) { color: var(--body-quiet-color); }
+#nav-sidebar .studio-overview, #nav-sidebar .current-model th a { color: var(--body-loud-color); background: var(--selected-bg); border-left: 0; }
+#nav-sidebar th a { font-size: 13px; min-height: 44px; }
+#nav-sidebar th a:hover { background: var(--selected-bg); color: var(--body-loud-color); }
+#nav-filter { color: var(--body-fg); background: var(--studio-surface); border-color: var(--border-color); }
+#nav-filter::placeholder { color: var(--body-quiet-color); }
+#content > h1, .studio-title h1 { font-family: Literata, Georgia, serif; font-weight: 500; }
+:is(input,select,textarea) { font: inherit; border-radius: 6px; }
+:is(input[type=submit],button,.button) { min-height: 44px; border-radius: 6px; }
+:is(a,button,input,select,textarea,summary):focus-visible { outline: 3px solid var(--link-fg); outline-offset: 4px; }
+#result_list :is(td,th) { font-size: 13px; font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { transition-duration: 0s; animation-duration: 0s; scroll-behavior: auto; } }

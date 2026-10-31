@@ -1,19 +1,21 @@
 /* Generated from static/scss/lesson-assignments.scss; run pnpm build:css. Do not edit. */
-.assignment-form {
-  max-width: 70ch;
-}
-.assignment-form .field {
-  grid-template-columns: minmax(0, 1fr);
-}
-.assignment-form select {
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
-  min-height: 48px;
-  padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--rule-strong);
-  border-radius: var(--radius-s);
-  background: var(--surface);
-  color: var(--ink);
-  font: inherit;
+@layer ee-reading {
+  .assignment-form {
+    max-width: 70ch;
+  }
+  .assignment-form .field {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .assignment-form select {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 48px;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-s);
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+  }
 }
