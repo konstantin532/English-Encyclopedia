@@ -3,7 +3,8 @@
  */
 const assert=require('node:assert/strict');
 const path=require('node:path');
-const designGeometry=require('./atlas_design_geometry.json');
+const {loadGeometrySnapshot}=require('./atlas_geometry.cjs');
+const designGeometry=loadGeometrySnapshot('design');
 
 function contrastRatio(foreground,background){
   function luminance(color){

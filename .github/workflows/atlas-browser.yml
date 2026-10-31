@@ -42,8 +42,6 @@ jobs:
           ATLAS_PYTHON="$PWD/.venv/bin/python" ATLAS_BEFORE_DIR="$RUNNER_TEMP/atlas-before" NODE_PATH="$RUNNER_TEMP/atlas-browser/node_modules" node scripts/editorial_pilot_ci.cjs
         env:
           DATABASE_URL: sqlite:///${{ runner.temp }}/atlas.sqlite3
-          # Ветки design/living-atlas-v* — намеренный редизайн: геометрию сравниваем, но не блокируем.
-          ATLAS_REDESIGN: ${{ (startsWith(github.head_ref, 'design/living-atlas-v') || startsWith(github.ref_name, 'design/living-atlas-v')) && '1' || '0' }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:

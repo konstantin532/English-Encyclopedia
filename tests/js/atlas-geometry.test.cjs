@@ -78,3 +78,31 @@ test('mobile route follows the article but keeps its own size and alignment',()=
   assert.doesNotThrow(()=>assertChapterReadingFlow(f.measurements,f.flow));
   f.measurements['.week-route'][0].y=9999;assert.throws(()=>assertChapterReadingFlow(f.measurements,f.flow));
 });
+
+
+test('platform snapshots fail closed instead of using another operating system',()=>{
+ const {loadGeometrySnapshot}=require('../../scripts/atlas_geometry.cjs');
+ assert.throws(()=>loadGeometrySnapshot('design','darwin'),/No reviewed geometry snapshot/);
+ assert.throws(()=>loadGeometrySnapshot('missing','linux'),/Unknown geometry snapshot/);
+});
+test('reviewed Windows and Linux snapshots protect the same selectors, counts and axes',()=>{
+ const {loadGeometrySnapshot,assertGeometrySnapshot}=require('../../scripts/atlas_geometry.cjs');
+ const windows=loadGeometrySnapshot('design','win32'),linux=loadGeometrySnapshot('design','linux');
+ for(const name of ['collection','chapter']){
+  assert.deepEqual(Object.keys(windows[name]),Object.keys(linux[name]));
+  for(const width of Object.keys(windows[name])){
+   const a=windows[name][width],b=linux[name][width];
+   assert.deepEqual(Object.keys(a),Object.keys(b));
+   for(const selector of Object.keys(a)){
+    assert.equal(a[selector].length,b[selector].length);
+    for(const rectangle of b[selector]){assert.deepEqual(Object.keys(rectangle),['x','y','width','height']);for(const value of Object.values(rectangle))assert.ok(Number.isFinite(value));}
+   }
+   assertGeometrySnapshot(b,b,name+' '+width+' Linux');
+  }
+ }
+ for(const platform of ['win32','linux']){
+  const home=loadGeometrySnapshot('student_home',platform),motion=loadGeometrySnapshot('week_motion',platform);
+  assert.deepEqual(Object.keys(home.viewports),['360','390','1280','1440']);
+  assert.deepEqual(Object.keys(motion.viewports),Object.keys(home.viewports));
+ }
+});

@@ -1,4 +1,10 @@
 const assert=require('node:assert/strict');
+function loadGeometrySnapshot(name,platform=process.platform){
+  assert.ok(['win32','linux'].includes(platform),'No reviewed geometry snapshot for platform: '+platform);
+  assert.ok(['student_home','design','week_motion'].includes(name),'Unknown geometry snapshot: '+name);
+  const prefix=platform==='linux'?'linux_':'';
+  return require('./atlas_'+prefix+name+'_geometry.json');
+}
 function assertGeometrySnapshot(actual,expected,label){
   assert.ok(expected,`${label}: missing authored geometry snapshot`);
   assert.deepEqual(Object.keys(actual).sort(),Object.keys(expected).sort(),`${label}: geometry selectors changed`);
@@ -41,4 +47,4 @@ function assertChapterReadingFlow(measurements,flow){
   const last=cards[cards.length-1];
   assert.ok(Math.abs(last.y+last.height-(flow.cardsContainer.y+flow.cardsContainer.height-flow.paddingBottom))<=1,'last card escapes its container');
 }
-module.exports={geometryDelta,assertChapterReadingFlow,assertGeometrySnapshot};
+module.exports={loadGeometrySnapshot,geometryDelta,assertChapterReadingFlow,assertGeometrySnapshot};
