@@ -38,7 +38,7 @@ async function documentBox(locator){return locator.evaluate(el=>{const r=el.getB
 async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));}
 (async()=>{
  await fs.mkdir(output,{recursive:true});
- const report={baseline:process.env.ATLAS_BASELINE||'before-worktree',screens:[],checks:[],errors:[]};
+ const report={baseline:process.env.ATLAS_BASELINE||'before-worktree',screens:[],checks:[],errors:[],geometryFailures:[]};
  const servers=[];let browser;
  try{
   seedBrowserUser(root,process.env.DATABASE_URL);
@@ -110,9 +110,13 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
     report.screens.push({name,width,height,maxGeometryDelta:maxDelta,changed,measurements});
     // The complete-atlas redesign intentionally changes the old shell and columns.
     // Keep a fixed, reviewed target on all four axes for every screen; no bypass flag.
+    try {
     assertGeometrySnapshot(measurements.after,name==='home'?homeGeometry.viewports[String(width)]:designGeometry[name][String(width)],`${name} ${width}`);
+    } catch (error) { report.geometryFailures.push(error.message); }
    }
   }
+  // Collect every layout mismatch, then fail the gate; this never accepts a mismatch.
+  assert.deepEqual(report.geometryFailures, [], 'Authored geometry mismatches');
   // Editorial9–28: actual changed reading pages, in addition to the
   // existing before/after geometry gate above (which remains unchanged).
   const editorialPages=[
