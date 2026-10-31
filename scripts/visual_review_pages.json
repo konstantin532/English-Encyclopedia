@@ -13,6 +13,20 @@
   ],
   "pages": [
     {
+      "name": "my-group",
+      "title": "Моя группа: вступление по коду",
+      "route": "/group/",
+      "main": "#join-title",
+      "audience": "student"
+    },
+    {
+      "name": "my-progress",
+      "title": "Мой прогресс: вход в группу",
+      "route": "/learning/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
       "name": "home",
       "title": "Главная",
       "route": "/",
