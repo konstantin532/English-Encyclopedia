@@ -20,6 +20,13 @@
       "audience": "student"
     },
     {
+      "name": "my-progress",
+      "title": "Мой прогресс: вход в группу",
+      "route": "/learning/",
+      "main": "h1",
+      "audience": "student"
+    },
+    {
       "name": "home",
       "title": "Главная",
       "route": "/",
