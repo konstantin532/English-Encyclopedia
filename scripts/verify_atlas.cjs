@@ -44,6 +44,7 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
   seedBrowserUser(root,process.env.DATABASE_URL);
   servers.push(await serve(process.env.ATLAS_BEFORE_DIR,8123));servers.push(await serve(root,8124));
   browser=await chromium.launch({executablePath:process.env.ATLAS_BROWSER_EXECUTABLE||undefined});
+  report.browserVersion=browser.version();
   const states={before:await learnerState(browser,'http://127.0.0.1:8123'),after:await learnerState(browser,'http://127.0.0.1:8124')};
   report.lessonBookpage={};
   await verifyLessonBookpage(browser,{output,beforeBase:'http://127.0.0.1:8123',afterBase:'http://127.0.0.1:8124',states,report:report.lessonBookpage});
@@ -69,6 +70,17 @@ async function overflow(page){return page.evaluate(()=>({width:innerWidth,scroll
         lines:lines.map(rect),lineHeight:parseFloat(style.lineHeight),cardsContainer:rect(container),paddingTop:parseFloat(cs.paddingTop)||0,paddingBottom:parseFloat(cs.paddingBottom)||0,cardGap:parseFloat(cs.rowGap)||0};
       });
       assertChapterReadingFlow(measurements[state],flow);
+      if(state==='after') {
+       const card=page.locator('.week-lesson-body > p').first();
+       const textMetrics=await card.evaluate(el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect(),range=document.createRange();range.selectNodeContents(el);return {text:el.textContent,font:s.font,textWrap:s.textWrap,letterSpacing:s.letterSpacing,width:r.width,height:r.height,lines:Array.from(range.getClientRects()).map(r=>({width:r.width,height:r.height}))};});
+       const cdp=await context.newCDPSession(page);await cdp.send('DOM.enable');await cdp.send('CSS.enable');
+       const {root:documentRoot}=await cdp.send('DOM.getDocument');
+       const {nodeId}=await cdp.send('DOM.querySelector',{nodeId:documentRoot.nodeId,selector:'.week-lesson-body > p'});
+       const platformFonts=await cdp.send('CSS.getPlatformFontsForNode',{nodeId});await cdp.detach();
+       (report.chapterText ||= []).push({width,textMetrics,platformFonts});
+       console.log('CHAPTER_TEXT '+JSON.stringify({width,textMetrics,platformFonts}));
+       await page.locator('#lessons').screenshot({path:path.join(output,`chapter-cards-${width}.png`)});
+      }
      }
      if(state==='after'&&name==='home'){
       const original=await documentBox(page.locator('.studio-home-hero'));
