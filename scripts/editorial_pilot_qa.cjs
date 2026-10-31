@@ -100,6 +100,11 @@ const routes = { week3: '/levels/a1/weeks/3/', lesson: '/lessons/a1-cafe-order/'
     }
     await page.emulateMedia({ forcedColors: 'none' });
     await page.goto(base + routes.lesson, { waitUntil: 'networkidle' });
+    const index = page.locator('[data-atlas-reader-index]');
+    if (!await index.evaluate(e => e.open)) {
+      await index.locator('summary').focus(); await page.keyboard.press('Enter');
+      assert.equal(await index.evaluate(e => e.open), true, 'Reader controls must open by keyboard');
+    }
     const initial = await page.locator('[data-lesson-reader]').evaluate(e => parseFloat(getComputedStyle(e).fontSize));
     await page.locator('[data-reader-larger]').click();
     await page.waitForFunction(initial => parseFloat(getComputedStyle(document.querySelector('[data-lesson-reader]')).fontSize) > initial, initial);

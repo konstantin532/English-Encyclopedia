@@ -3,6 +3,7 @@
   .atlas-site :where(.lesson-grid,.entry) { grid-template-columns: minmax(0,1fr) 240px; gap: clamp(28px,4vw,64px); align-items: start; }
   .atlas-site :where(.lesson-grid > article,.entry > div) { min-width: 0; }
   .atlas-site .lesson-grid > article { padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+  .atlas-site .lesson-grid > article.prose { max-width: 42rem; }
   .atlas-site .prose { max-width: 68ch; font-size: var(--reader-size,1.0625rem); line-height: 1.85; }
   .atlas-site .prose p { margin-block: 1.05em; }
   .atlas-site .prose h2 { margin-top: 0; margin-bottom: 24px; }

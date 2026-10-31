@@ -1,6 +1,7 @@
 {% extends "admin/base.html" %}
 {% load static admin_studio %}
 {% block title %}{{ title }} · English Encyclopedia Studio{% endblock %}
+{% block extrahead %}{{ block.super }}<link rel="icon" type="image/svg+xml" href="{% static 'img/atlas/favicon.svg' %}">{% endblock %}
 {% block responsive %}{{ block.super }}<link rel="stylesheet" href="{% static 'css/admin-studio.css' %}">{% endblock %}
 {% block branding %}<a class="studio-brand" href="{% url 'admin:index' %}"><span class="studio-monogram" aria-hidden="true">Ee<span>.</span></span><span>English Encyclopedia<small>Редакторская студия</small></span></a>{% endblock %}
 {% block welcome-msg %}<span class="studio-account">{{ user.get_short_name|default:user.get_username }}</span>{% endblock %}

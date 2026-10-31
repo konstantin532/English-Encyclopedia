@@ -93,6 +93,7 @@
   .atlas-site .atlas-brand-book { fill: none; stroke: var(--atlas-forest); width: 38px; }
   .atlas-site .atlas-sidebar .atlas-brand small { font-size: 11px; color: var(--ink-soft); letter-spacing: 0; line-height: 1.4; }
   .atlas-menu > summary { display: none; }
+  .atlas-menu:not([open]) > summary { display: flex; align-items: center; gap: 10px; }
   .atlas-site .atlas-sidebar .atlas-nav { margin-top: 28px; gap: 2px; }
   .atlas-site .atlas-sidebar .atlas-nav > a { padding: 10px 11px; min-height: 44px; border-radius: 6px; color: var(--ink-soft); font-size: .875rem; }
   .atlas-site .atlas-sidebar .atlas-nav > a:hover { background: #e0e6d7; color: var(--atlas-forest); }
@@ -182,6 +183,7 @@
     .atlas-site .studio-avatar { width: 28px; height: 28px; }
     .atlas-site .studio-top-actions .btn-small { padding: .4rem .6rem; }
     .atlas-site .page-head { padding: 28px 0 24px; }
+    .atlas-page-lesson .page-head { padding-bottom: 12px; }
     .atlas-site .page-head h1 { font-size: clamp(1.8rem,7vw,2.35rem); }
     .atlas-site .page-head p { font-size: .9375rem; }
     .atlas-site .section { padding-block: 24px; }

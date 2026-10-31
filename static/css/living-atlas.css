@@ -1251,6 +1251,11 @@
   .atlas-menu > summary {
     display: none;
   }
+  .atlas-menu:not([open]) > summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
   .atlas-site .atlas-sidebar .atlas-nav {
     margin-top: 28px;
     gap: 2px;
@@ -1637,6 +1642,9 @@
     .atlas-site .page-head {
       padding: 28px 0 24px;
     }
+    .atlas-page-lesson .page-head {
+      padding-bottom: 12px;
+    }
     .atlas-site .page-head h1 {
       font-size: clamp(1.8rem, 7vw, 2.35rem);
     }
@@ -1678,6 +1686,9 @@
     border: 0;
     border-radius: 0;
     box-shadow: none;
+  }
+  .atlas-site .lesson-grid > article.prose {
+    max-width: 42rem;
   }
   .atlas-site .prose {
     max-width: 68ch;
