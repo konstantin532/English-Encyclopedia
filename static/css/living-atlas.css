@@ -1903,6 +1903,9 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0 28px;
   }
+  .atlas-site .lesson-grid .studio-lessons {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .atlas-site .studio-lesson-card {
     display: flex;
     align-items: flex-start;
@@ -2278,7 +2281,7 @@
       grid-template-columns: 1fr;
     }
     .atlas-site .ee-auth {
-      margin: 24px 18px;
+      margin: 24px auto;
     }
     .atlas-site .ee-auth-note {
       padding: 24px;

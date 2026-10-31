@@ -1,6 +1,6 @@
 {
-  "description": "Authenticated student home, fixed baseline17e6680adaa7b4c9ea0b4b8dfe2cda41e3d8bdc6. Same selectors, four axes and1px tolerance as historical guest snapshot; fixture name Ученик, markers off.",
-  "baseline": "17e6680adaa7b4c9ea0b4b8dfe2cda41e3d8bdc6",
+  "description": "Complete atlas, authored redesign after 57a9589e. Fixed selectors and 1px tolerance; synthetic learner Ученик, markers off, reduced motion. See design-complete-atlas journal.",
+  "baseline": "57a9589eec3f1cc18a8c9795bee9b2938010b83e",
   "viewports": {
     "360": {
       ".studio-sidebar": [
@@ -8,58 +8,58 @@
           "x": 0,
           "y": 0,
           "width": 360,
-          "height": 183.3125
+          "height": 65
         }
       ],
       ".site-header": [
         {
           "x": 0,
-          "y": 183.3125,
+          "y": 65,
           "width": 360,
-          "height": 119
+          "height": 165
         }
       ],
       ".studio-home-hero": [
         {
-          "x": 12,
-          "y": 324.3125,
-          "width": 336,
-          "height": 866.921875
+          "x": 18,
+          "y": 252,
+          "width": 324,
+          "height": 853.96875
         }
       ],
       ".studio-phrase-paper": [
         {
           "x": 40,
-          "y": 896.765625,
+          "y": 814.25,
           "width": 280,
-          "height": 273.46875
+          "height": 270.71875
         }
       ],
       ".studio-lesson-card": [],
       ".week-card": [
         {
-          "x": 12,
-          "y": 1401.015625,
-          "width": 336,
-          "height": 295.90625
+          "x": 18,
+          "y": 1316.09375,
+          "width": 324,
+          "height": 288.609375
         },
         {
-          "x": 12,
-          "y": 1710.921875,
-          "width": 336,
-          "height": 314.75
+          "x": 18,
+          "y": 1618.703125,
+          "width": 324,
+          "height": 307.453125
         },
         {
-          "x": 12,
-          "y": 2039.671875,
-          "width": 336,
-          "height": 314.75
+          "x": 18,
+          "y": 1940.15625,
+          "width": 324,
+          "height": 307.453125
         },
         {
-          "x": 12,
-          "y": 2368.421875,
-          "width": 336,
-          "height": 314.75
+          "x": 18,
+          "y": 2261.609375,
+          "width": 324,
+          "height": 307.453125
         }
       ],
       ".week-hero": [],
@@ -72,58 +72,58 @@
           "x": 0,
           "y": 0,
           "width": 390,
-          "height": 183.3125
+          "height": 65
         }
       ],
       ".site-header": [
         {
           "x": 0,
-          "y": 183.3125,
+          "y": 65,
           "width": 390,
-          "height": 119
+          "height": 115
         }
       ],
       ".studio-home-hero": [
         {
-          "x": 16,
-          "y": 324.3125,
-          "width": 358,
-          "height": 866.921875
+          "x": 18,
+          "y": 202,
+          "width": 354,
+          "height": 853.96875
         }
       ],
       ".studio-phrase-paper": [
         {
           "x": 55,
-          "y": 896.765625,
+          "y": 764.25,
           "width": 280,
-          "height": 273.46875
+          "height": 270.71875
         }
       ],
       ".studio-lesson-card": [],
       ".week-card": [
         {
-          "x": 16,
-          "y": 1401.015625,
-          "width": 358,
-          "height": 308.28125
+          "x": 18,
+          "y": 1266.09375,
+          "width": 354,
+          "height": 305.484375
         },
         {
-          "x": 16,
-          "y": 1723.296875,
-          "width": 358,
-          "height": 327.125
+          "x": 18,
+          "y": 1585.578125,
+          "width": 354,
+          "height": 324.328125
         },
         {
-          "x": 16,
-          "y": 2064.421875,
-          "width": 358,
-          "height": 327.125
+          "x": 18,
+          "y": 1923.90625,
+          "width": 354,
+          "height": 324.328125
         },
         {
-          "x": 16,
-          "y": 2405.546875,
-          "width": 358,
-          "height": 327.125
+          "x": 18,
+          "y": 2262.234375,
+          "width": 354,
+          "height": 324.328125
         }
       ],
       ".week-hero": [],
@@ -135,59 +135,59 @@
         {
           "x": 0,
           "y": 0,
-          "width": 232,
+          "width": 236,
           "height": 800
         }
       ],
       ".site-header": [
         {
-          "x": 232,
+          "x": 236,
           "y": 0,
-          "width": 1048,
-          "height": 73
+          "width": 1044,
+          "height": 85
         }
       ],
       ".studio-home-hero": [
         {
-          "x": 264,
-          "y": 95,
-          "width": 984,
-          "height": 649.453125
+          "x": 276,
+          "y": 107,
+          "width": 964,
+          "height": 654.796875
         }
       ],
       ".studio-phrase-paper": [
         {
-          "x": 607.96875,
-          "y": 495.296875,
-          "width": 274.953125,
-          "height": 282.15625
+          "x": 612.171875,
+          "y": 517.09375,
+          "width": 269.359375,
+          "height": 277.703125
         }
       ],
       ".studio-lesson-card": [],
       ".week-card": [
         {
-          "x": 264,
-          "y": 876.34375,
-          "width": 314.65625,
-          "height": 302.75
+          "x": 276,
+          "y": 891.375,
+          "width": 308,
+          "height": 320.953125
         },
         {
-          "x": 598.65625,
-          "y": 876.34375,
-          "width": 314.671875,
-          "height": 302.75
+          "x": 604,
+          "y": 891.375,
+          "width": 308,
+          "height": 320.953125
         },
         {
-          "x": 933.328125,
-          "y": 876.34375,
-          "width": 314.65625,
-          "height": 302.75
+          "x": 932,
+          "y": 891.375,
+          "width": 308,
+          "height": 320.953125
         },
         {
-          "x": 264,
-          "y": 1199.09375,
-          "width": 314.65625,
-          "height": 302.734375
+          "x": 276,
+          "y": 1232.328125,
+          "width": 308,
+          "height": 317.296875
         }
       ],
       ".week-hero": [],
@@ -199,59 +199,59 @@
         {
           "x": 0,
           "y": 0,
-          "width": 232,
+          "width": 236,
           "height": 900
         }
       ],
       ".site-header": [
         {
-          "x": 232,
+          "x": 236,
           "y": 0,
-          "width": 1208,
-          "height": 73
+          "width": 1204,
+          "height": 85
         }
       ],
       ".studio-home-hero": [
         {
-          "x": 264,
-          "y": 95,
-          "width": 1144,
-          "height": 604.65625
+          "x": 276,
+          "y": 107,
+          "width": 1124,
+          "height": 605.359375
         }
       ],
       ".studio-phrase-paper": [
         {
-          "x": 670.375,
-          "y": 467.671875,
-          "width": 319.75,
-          "height": 264.984375
+          "x": 674.578125,
+          "y": 484.125,
+          "width": 314.15625,
+          "height": 261.234375
         }
       ],
       ".studio-lesson-card": [],
       ".week-card": [
         {
-          "x": 264,
-          "y": 832.546875,
-          "width": 271,
-          "height": 300.6875
+          "x": 276,
+          "y": 843.75,
+          "width": 266,
+          "height": 297.328125
         },
         {
-          "x": 555,
-          "y": 832.546875,
-          "width": 271,
-          "height": 300.6875
+          "x": 562,
+          "y": 843.75,
+          "width": 266,
+          "height": 297.328125
         },
         {
-          "x": 846,
-          "y": 832.546875,
-          "width": 271,
-          "height": 300.6875
+          "x": 848,
+          "y": 843.75,
+          "width": 266,
+          "height": 297.328125
         },
         {
-          "x": 1137,
-          "y": 832.546875,
-          "width": 271,
-          "height": 300.6875
+          "x": 1134,
+          "y": 843.75,
+          "width": 266,
+          "height": 297.328125
         }
       ],
       ".week-hero": [],

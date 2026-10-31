@@ -1,10 +1,38 @@
 {
   "page": "/levels/a1/weeks/13/",
-  "state": "Both lesson disclosures open; descriptions and links visible; reduced motion",
+  "state": "Complete atlas: two lesson disclosures open, one reading column, reduced motion",
   "viewports": {
-    "360": [{"height": 274.984375}, {"height": 251.1875}],
-    "390": [{"height": 274.984375}, {"height": 251.1875}],
-    "1280": [{"height": 186.34375}, {"height": 186.34375}],
-    "1440": [{"height": 186.34375}, {"height": 186.34375}]
+    "360": [
+      {
+        "height": 308.375
+      },
+      {
+        "height": 284.578125
+      }
+    ],
+    "390": [
+      {
+        "height": 284.578125
+      },
+      {
+        "height": 260.78125
+      }
+    ],
+    "1280": [
+      {
+        "height": 211.734375
+      },
+      {
+        "height": 211.734375
+      }
+    ],
+    "1440": [
+      {
+        "height": 211.734375
+      },
+      {
+        "height": 211.734375
+      }
+    ]
   }
 }

@@ -3,6 +3,7 @@
  */
 const assert=require('node:assert/strict');
 const path=require('node:path');
+const designGeometry=require('./atlas_design_geometry.json');
 
 function contrastRatio(foreground,background){
   function luminance(color){
@@ -55,7 +56,7 @@ async function verifyBeginnerLesson(page,label='lesson'){
       optionalTag:nodes[5]?.tagName,optionalOpen:nodes[5]?.open,
       independentInside:Boolean(nodes[5]?.querySelector('a[href*="/independent/"]')),speechInside:Boolean(nodes[5]?.querySelector('#spoken-coach'))};
   });
-  assert.deepEqual(flow,{present:true,ordered:true,completion:'Урок пройден ✓',optionalTag:'DETAILS',optionalOpen:false,independentInside:true,speechInside:true},`${label}: core → completion → closed optional practice`);
+  assert.deepEqual(flow,{present:true,ordered:true,completion:'Дальше по курсу',optionalTag:'DETAILS',optionalOpen:false,independentInside:true,speechInside:true},`${label}: core → completion → closed optional practice`);
   assert.equal(await page.locator('#lesson-extra-practice > summary').innerText(),'Ещё практика (по желанию)');
 }
 async function openExtraPractice(page){
@@ -119,6 +120,11 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,states,
           });
           assert.deepEqual(bridge,{background:'rgb(243, 240, 230)',topColor:'rgb(145, 109, 52)',topWidth:'3px'});
           entry.clarityBridge=bridge;
+          const readerIndex=page.locator('[data-atlas-reader-index]');
+          if(!await readerIndex.evaluate(el=>el.open)){
+            await readerIndex.locator('summary').focus();await page.keyboard.press('Enter');
+            assert.equal(await readerIndex.evaluate(el=>el.open),true,'mobile contents must open by keyboard');
+          }
           const second=page.locator('.toc a[href="#layer-2"]');
           await second.focus();
           await page.keyboard.press('Tab');
@@ -139,6 +145,10 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,states,
           await page.reload({waitUntil:'networkidle'});
           await assertComplete();
           await verifyBeginnerLesson(page,`noun ${width} after reload`);
+          if(!await readerIndex.evaluate(el=>el.open)){
+            await readerIndex.locator('summary').focus();await page.keyboard.press('Enter');
+            assert.equal(await readerIndex.evaluate(el=>el.open),true,'contents must reopen after reload');
+          }
           await openExtraPractice(page);
           entry.keyboardContentsOrder=true;entry.completeLesson=true;
           for(const mode of ['see','echo','recall','transfer']){
@@ -177,8 +187,10 @@ async function verifyLessonBookpage(browser,{output,beforeBase,afterBase,states,
         assert.deepEqual(errors,[],'uncaught noun-page JS errors');
       }finally{await context.close();}
     }
-    for(const selector of Object.keys(measurements.before))for(const key of ['x','width']){
-      assert.ok(Math.abs(measurements.before[selector][key]-measurements.after[selector][key])<=1,`noun ${width}: ${selector} ${key} changed`);
+    const expected=designGeometry.lesson[String(width)];
+    assert.deepEqual(Object.keys(measurements.after).sort(),Object.keys(expected).sort(),'lesson geometry selectors changed');
+    for(const selector of Object.keys(expected))for(const key of ['x','width']){
+      assert.ok(Math.abs(expected[selector][key]-measurements.after[selector][key])<=1,`noun ${width}: ${selector} ${key} changed from authored atlas`);
     }
   }
   const nojs=await browser.newContext({storageState:states.after,javaScriptEnabled:false,viewport:{width:390,height:844}});
